@@ -1,0 +1,74 @@
+# Deploy Cellfie to GitHub Pages on every push to main.
+#
+# This workflow assumes the repository root IS the Vite project root —
+# i.e. `package.json` sits at the top level of the repo, not inside a
+# nested `cellfie/` folder. If you keep the nested folder instead, see
+# the commented `defaults.run.working-directory` line below and
+# docs/deployment.md for the full explanation.
+#
+# One-time setup required in the repo's GitHub settings before this will
+# work — see docs/deployment.md, "Enable Pages":
+#   Settings → Pages → Build and deployment → Source: "GitHub Actions"
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Lets you manually re-run a deploy from the Actions tab without a new push.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time; a new push cancels an in-flight one
+# rather than letting two deploys race each other.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # defaults:
+    #   run:
+    #     working-directory: cellfie   # ← uncomment if package.json is nested under cellfie/
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        env:
+          # GitHub Pages project sites are served from /<repo-name>/, not
+          # the domain root — vite.config.ts reads this to set `base`
+          # correctly. See docs/deployment.md for the full explanation.
+          BASE_PATH: /${{ github.event.repository.name }}/
+        run: npm run build
+
+      - name: Upload build output
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

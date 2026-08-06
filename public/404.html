@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cellfie</title>
+    <script>
+      // Single Page Apps for GitHub Pages — MIT licensed technique by
+      // Rafael Pedicini (github.com/rafgraph/spa-github-pages).
+      //
+      // GitHub Pages has no server-side rewriting: if you deep-link to
+      // /cellfie/library or refresh on it, GitHub serves this 404.html
+      // instead of index.html. This script encodes the requested path
+      // into a query string and redirects to the app's real base path;
+      // the matching snippet in index.html decodes it back into a normal
+      // History API path before React Router ever sees it.
+      //
+      // pathSegmentsToKeep = 1 because a GitHub Pages *project* site is
+      // served from "/<repo-name>/" — that one segment is the app's base
+      // path and must be preserved, not treated as part of the route.
+      var pathSegmentsToKeep = 1
+      var l = window.location
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      )
+    </script>
+  </head>
+  <body></body>
+</html>

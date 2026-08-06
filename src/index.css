@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Cellfie — Design Tokens (CSS Custom Properties)
+   Source of truth: cellfie-design-system.md §2 (Color), §12 (Motion)
+   Values are exact, never approximated.
+   ========================================================================== */
+
+:root,
+[data-theme='light'] {
+  --color-bg-canvas: #f6f1e7;
+  --color-bg-surface: #efe7d8;
+  --color-bg-surface-raised: #e7dcc7;
+  --color-border: #dccfb4;
+  --color-border-strong: #c7b999;
+  --color-text-primary: #3a2e22;
+  --color-text-secondary: #6c5a46;
+  --color-text-tertiary: #9c8a71;
+  --color-accent-olive: #6e7a41;
+  --color-accent-sage: #a6b48c;
+  --color-highlight-terracotta: #be6a48;
+  --color-success: #4c6b45;
+  --color-warning: #b8843c;
+  --color-error: #a24b3d;
+
+  --scrim: rgba(58, 46, 34, 0.4);
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --color-bg-canvas: #221e19;
+  --color-bg-surface: #2a251e;
+  --color-bg-surface-raised: #332c23;
+  --color-border: #413828;
+  --color-border-strong: #54492f;
+  --color-text-primary: #eee3d0;
+  --color-text-secondary: #c3b49b;
+  --color-text-tertiary: #8e7e67;
+  --color-accent-olive: #95a566;
+  --color-accent-sage: #b7c29e;
+  --color-highlight-terracotta: #d48861;
+  --color-success: #7a9a6e;
+  --color-warning: #d2a15e;
+  --color-error: #c26c5b;
+
+  --scrim: rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+
+/* Motion tokens — §12. Exposed as CSS variables so both Tailwind utilities
+   and hand-written transitions stay in sync with one source of truth. */
+:root {
+  --motion-micro: 120ms;
+  --motion-standard: 220ms;
+  --motion-page: 320ms;
+  --motion-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-entrance: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Theme switch itself animates surface/text tokens, per §11. */
+html {
+  transition: background-color var(--motion-page) var(--motion-ease-standard);
+}
+
+body {
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+  font-family: 'Karla', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background-color var(--motion-page) var(--motion-ease-standard),
+    color var(--motion-page) var(--motion-ease-standard);
+}
+
+/* Fraunces: headings only, per the design system's explicit rule (§3.1).
+   Never applied to body copy. */
+h1, h2, h3, h4, .font-display {
+  font-family: 'Fraunces', ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+  color: var(--color-text-primary);
+}
+
+/* Literata: reserved for content the user is reading, never UI chrome. */
+.font-body {
+  font-family: 'Literata', ui-serif, Georgia, serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+/* ==========================================================================
+   Accessibility — Focus States (§13)
+   2px terracotta outline, 2px offset. Never outline:none without replacement.
+   ========================================================================== */
+:focus-visible {
+  outline: 2px solid var(--color-highlight-terracotta);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip-to-content link — visually hidden until focused */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  padding: 12px 16px;
+  border-radius: 0 0 10px 0;
+  border: 1px solid var(--color-border-strong);
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* ==========================================================================
+   Reduced Motion (§12, §13)
+   Collapses everything to opacity-only micro fades, or removes entirely.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Large Text Mode (§13) — scales the type scale 1.15–1.3x without
+   breaking layout. Toggled by adding data-large-text to <html>.
+   ========================================================================== */
+[data-large-text='true'] {
+  font-size: 118%;
+}
+
+/* Custom scrollbar — quiet, warm-toned, not a default OS scrollbar slab */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-border-strong);
+  border-radius: 999px;
+}
+
+/* ==========================================================================
+   Page Transitions (§12) — crossfade + 8px upward drift, "turning a page."
+   Reduced-motion collapses this to an instant state via the global media
+   query above (animation-duration forced to 0.01ms).
+   ========================================================================== */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.page-enter {
+  animation: page-enter var(--motion-page) var(--motion-ease-entrance) both;
+}
+
+/* ==========================================================================
+   Accent "wash" utilities — soft tinted fills at low opacity, used for
+   active nav states, collection card swatches, and destructive-action
+   hovers. Implemented with color-mix() rather than Tailwind's slash-opacity
+   modifier, since our palette is CSS-variable driven rather than using
+   Tailwind's rgb-channel color function convention.
+   ========================================================================== */
+.wash-olive {
+  background-color: color-mix(in srgb, var(--color-accent-olive) 15%, transparent);
+}
+.wash-sage {
+  background-color: color-mix(in srgb, var(--color-accent-sage) 25%, transparent);
+}
+.wash-terracotta {
+  background-color: color-mix(in srgb, var(--color-highlight-terracotta) 15%, transparent);
+}
+.wash-error {
+  background-color: color-mix(in srgb, var(--color-error) 10%, transparent);
+}
+.hover-wash-error:hover {
+  background-color: color-mix(in srgb, var(--color-error) 10%, transparent);
+}
