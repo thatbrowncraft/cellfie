@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { AppShell } from './AppShell'
 import { DashboardPage } from '../modules/dashboard/DashboardPage'
 import { LibraryPage } from '../modules/library/LibraryPage'
+import { ReaderPage } from '../modules/library/reader/ReaderPage'
 import { ConceptsPage } from '../modules/concepts/ConceptsPage'
 import { OrganismExplorerPage } from '../modules/organism-explorer/OrganismExplorerPage'
 import { LaboratoryPage } from '../modules/laboratory/LaboratoryPage'
@@ -22,6 +23,7 @@ export function AppRouter() {
       <Routes>
         <Route path="/" element={<DashboardPage />} />
         <Route path="/library" element={<LibraryPage />} />
+        <Route path="/library/:id/read" element={<ReaderPage />} />
         <Route path="/concepts" element={<ConceptsPage />} />
         <Route path="/organisms" element={<OrganismExplorerPage />} />
         <Route path="/laboratory" element={<LaboratoryPage />} />
