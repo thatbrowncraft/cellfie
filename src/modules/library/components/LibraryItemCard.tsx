@@ -29,8 +29,13 @@ export function LibraryItemCard({ item, onEdit, onManageCollections, onOpen, onR
     { id: 'remove', label: 'Remove', icon: <Trash size={16} />, destructive: true, onSelect: onRemove }
   ]
 
+  const progress =
+    item.pageCount && item.lastPageRead
+      ? Math.min(100, Math.round((item.lastPageRead / item.pageCount) * 100))
+      : undefined
+
   return (
-    <Card interactive onClick={onEdit} className="flex flex-col gap-4" role="button" aria-label={`${item.title} — edit details`}>
+    <Card interactive onClick={onOpen} className="flex flex-col gap-4" role="button" aria-label={`Open ${item.title}`}>
       <div className="flex items-start justify-between gap-2">
         <div className="flex h-20 w-16 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-border bg-canvas">
           {thumbnailUrl ? (
@@ -72,6 +77,15 @@ export function LibraryItemCard({ item, onEdit, onManageCollections, onOpen, onR
           {indexingStatusLabels[item.indexingStatus]}
         </span>
       </div>
+
+      {progress !== undefined && (
+        <div className="flex items-center gap-2">
+          <div className="h-1 flex-1 overflow-hidden rounded-full bg-surface-raised" role="progressbar" aria-label="Reading progress" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
+            <div className="h-full rounded-full bg-terracotta" style={{ width: `${progress}%` }} />
+          </div>
+          <span className="font-ui text-micro text-ink-tertiary">{progress}%</span>
+        </div>
+      )}
 
       <div className="flex items-center justify-between border-t border-border pt-3 font-ui text-caption text-ink-tertiary">
         <span>{formatFileSize(item.fileSize)}</span>
