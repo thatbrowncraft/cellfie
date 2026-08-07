@@ -1,11 +1,10 @@
 import { useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { BookOpen, MagnifyingGlass } from '@phosphor-icons/react'
 import { DashboardLayout } from '@/shared/layouts'
 import { Button, SearchField, Dropdown, EmptyState } from '@/shared/components'
 import { db, documentTypeLabels, type Collection, type DocumentType, type LibraryItem } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
-import { readFile } from '@/core/file-storage'
-import { markOpened } from '@/core/db/library'
 
 import { LibraryItemCard } from './components/LibraryItemCard'
 import { ImportDialog } from './components/ImportDialog'
@@ -35,6 +34,7 @@ const typeFilterOptions = [
  * on-ramp without a schema migration.
  */
 export function LibraryPage() {
+  const navigate = useNavigate()
   const items = useLiveQuery<LibraryItem[]>(() => db.libraryItems.orderBy('createdAt').reverse().toArray(), [], [])
   const collections = useLiveQuery<Collection[]>(() => db.collections.orderBy('createdAt').toArray(), [], [])
 
@@ -81,11 +81,8 @@ export function LibraryPage() {
     return result
   }, [items, searchQuery, typeFilter, activeCollectionId, sortOrder])
 
-  async function handleOpen(item: LibraryItem) {
-    const blob = await readFile(item.filePath)
-    const url = URL.createObjectURL(blob)
-    window.open(url, '_blank', 'noopener')
-    void markOpened(item.id)
+  function handleOpen(item: LibraryItem) {
+    navigate(`/library/${item.id}/read`)
   }
 
   const isLibraryEmpty = items.length === 0
