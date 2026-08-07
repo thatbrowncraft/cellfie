@@ -35,11 +35,19 @@ export async function markOpened(id: string): Promise<void> {
   await db.libraryItems.update(id, { lastOpenedAt: Date.now() })
 }
 
-/** Removes a LibraryItem's record and its OPFS-backed file/thumbnail. Idempotent. */
+/** Reader milestone: persists the current page as reading progress / "last opened page". */
+export async function updateReadingProgress(id: string, page: number): Promise<void> {
+  await db.libraryItems.update(id, { lastPageRead: page })
+}
+
+/** Removes a LibraryItem's record, its OPFS-backed file/thumbnail, and its bookmarks. Idempotent. */
 export async function removeLibraryItem(item: LibraryItem): Promise<void> {
   await deleteFile(item.filePath)
   if (item.thumbnailPath) {
     await deleteFile(item.thumbnailPath)
   }
-  await db.libraryItems.delete(item.id)
+  await db.transaction('rw', db.libraryItems, db.readerBookmarks, async () => {
+    await db.libraryItems.delete(item.id)
+    await db.readerBookmarks.where('itemId').equals(item.id).delete()
+  })
 }

@@ -12,6 +12,15 @@
  * indexing fields (`indexingStatus`, `chunkCount`, `ocrProcessed`) exist so
  * a future indexing engine has a clean, additive on-ramp (spec §3, §18.3)
  * rather than a schema migration.
+ *
+ * PDF Reader milestone (still Personal Library Module scope) adds two
+ * things, both additive: `LibraryItem.lastPageRead` (reading progress /
+ * "remember last opened page") is a plain, non-indexed field, so it needs
+ * no schema bump — existing rows simply don't have it until first read.
+ * `ReaderBookmark` is a genuinely new table (one row per saved page per
+ * item), so it's introduced in a `version(2)` migration that repeats the
+ * v1 store definitions unchanged per Dexie's upgrade model — existing
+ * libraries upgrade in place with no data loss.
  */
 
 import Dexie, { type Table } from 'dexie'
@@ -47,12 +56,22 @@ export interface LibraryItem {
   createdAt: number
   updatedAt: number
   lastOpenedAt?: number
+  /** Reader milestone: last page viewed in the PDF reader — "remember last opened page". */
+  lastPageRead?: number
 }
 
 export interface Collection {
   id: string
   name: string
   accent: CollectionAccent
+  createdAt: number
+}
+
+/** Reader milestone: a saved page within a LibraryItem's PDF, shown in the reader sidebar. */
+export interface ReaderBookmark {
+  id: string
+  itemId: string
+  page: number
   createdAt: number
 }
 
@@ -65,6 +84,7 @@ class CellfieDB extends Dexie {
   libraryItems!: Table<LibraryItem, string>
   collections!: Table<Collection, string>
   appSettings!: Table<AppSettingsRecord, string>
+  readerBookmarks!: Table<ReaderBookmark, string>
 
   constructor() {
     super('cellfie')
@@ -75,6 +95,16 @@ class CellfieDB extends Dexie {
       libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
       collections: 'id, name, createdAt',
       appSettings: 'key'
+    })
+    // v2 — PDF Reader milestone: adds the bookmarks table only. v1 stores
+    // are repeated unchanged, per Dexie's per-version-snapshot schema
+    // model; existing rows in libraryItems/collections/appSettings are
+    // untouched by this upgrade.
+    this.version(2).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt'
     })
   }
 }
