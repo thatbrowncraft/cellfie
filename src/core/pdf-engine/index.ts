@@ -1,10 +1,16 @@
 /**
  * core/pdf-engine — thin wrapper over PDF.js (SDD v3 §4's chosen PDF
- * library). This task uses it only for import-time metadata extraction
+ * library). Originally used only for import-time metadata extraction
  * (title/author/page count) and a first-page cover thumbnail — the
  * `PdfParser` role described in Knowledge Engine Spec §4's Parser
- * Registry, minus chunking/indexing (out of scope here; see §4 steps
+ * Registry, minus chunking/indexing (still out of scope; see §4 steps
  * 4/7/8, intentionally not implemented by this module).
+ *
+ * Also now backs the Library reader (Personal Library Module, PDF Reader
+ * milestone): opening a document from an in-memory blob, rendering a
+ * given page onto a caller-supplied canvas at an arbitrary scale (used
+ * for both the main page view and sidebar thumbnails), and reading a
+ * page's natural (scale-1) size for fit-width/fit-page math.
  */
 
 import * as pdfjsLib from 'pdfjs-dist'
@@ -14,6 +20,8 @@ import * as pdfjsLib from 'pdfjs-dist'
 import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl
+
+export type { PDFDocumentProxy, RenderTask } from 'pdfjs-dist'
 
 export interface ParsedPdfMetadata {
   title?: string
@@ -63,4 +71,43 @@ async function renderThumbnail(doc: pdfjsLib.PDFDocumentProxy): Promise<Blob | u
   return new Promise<Blob | undefined>((resolve) => {
     canvas.toBlob((blob) => resolve(blob ?? undefined), 'image/png')
   })
+}
+
+/** Opens a PDF.js document from an in-memory blob (e.g. read back from OPFS). */
+export async function loadPdfDocument(blob: Blob): Promise<pdfjsLib.PDFDocumentProxy> {
+  const data = await blob.arrayBuffer()
+  return pdfjsLib.getDocument({ data }).promise
+}
+
+/** A page's natural size at scale 1 — the basis for fit-width/fit-page calculations. */
+export async function getPageSize(
+  doc: pdfjsLib.PDFDocumentProxy,
+  pageNumber: number
+): Promise<{ width: number; height: number }> {
+  const page = await doc.getPage(pageNumber)
+  const viewport = page.getViewport({ scale: 1 })
+  return { width: viewport.width, height: viewport.height }
+}
+
+/**
+ * Renders one page onto a caller-supplied canvas at the given scale and
+ * returns the underlying PDF.js `RenderTask`. Callers should hold onto it
+ * and call `.cancel()` on cleanup/re-render so rapid page/zoom changes
+ * don't pile up concurrent renders onto the same canvas — PDF.js throws
+ * a `RenderingCancelledException` in that case, which is expected and
+ * safe to ignore.
+ */
+export async function renderPageToCanvas(
+  doc: pdfjsLib.PDFDocumentProxy,
+  pageNumber: number,
+  canvas: HTMLCanvasElement,
+  scale: number
+): Promise<pdfjsLib.RenderTask> {
+  const page = await doc.getPage(pageNumber)
+  const viewport = page.getViewport({ scale })
+  const ctx = canvas.getContext('2d')
+  if (!ctx) throw new Error('Canvas 2D context unavailable')
+  canvas.width = Math.ceil(viewport.width)
+  canvas.height = Math.ceil(viewport.height)
+  return page.render({ canvasContext: ctx, viewport })
 }
