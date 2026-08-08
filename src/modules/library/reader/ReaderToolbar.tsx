@@ -6,7 +6,8 @@ import {
   CaretRight,
   List,
   MagnifyingGlassMinus,
-  MagnifyingGlassPlus
+  MagnifyingGlassPlus,
+  NotePencil
 } from '@phosphor-icons/react'
 import { Tooltip } from '@/shared/components'
 import { cn } from '@/shared/utils/cn'
@@ -30,6 +31,7 @@ interface ReaderToolbarProps {
   sidebarOpen: boolean
   bookmarked: boolean
   onToggleBookmark: () => void
+  onNewNote: () => void
 }
 
 const iconButton =
@@ -59,7 +61,8 @@ export function ReaderToolbar({
   onToggleSidebar,
   sidebarOpen,
   bookmarked,
-  onToggleBookmark
+  onToggleBookmark,
+  onNewNote
 }: ReaderToolbarProps) {
   const [pageInput, setPageInput] = useState(String(currentPage))
 
@@ -154,6 +157,12 @@ export function ReaderToolbar({
         </div>
 
         <div className="flex items-center gap-1 border-l border-border pl-4">
+          <Tooltip label="Write a note about this page">
+            <button type="button" onClick={onNewNote} aria-label="Write a note about this page" className={iconButton}>
+              <NotePencil size={20} />
+            </button>
+          </Tooltip>
+
           <Tooltip label={bookmarked ? 'Remove bookmark' : 'Bookmark this page'}>
             <button
               type="button"

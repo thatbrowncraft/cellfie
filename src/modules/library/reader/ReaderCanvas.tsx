@@ -1,6 +1,9 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from 'react'
 import type { PDFDocumentProxy, RenderTask } from 'pdfjs-dist'
 import { getPageSize, renderPageToCanvas } from '@/core/pdf-engine'
+import type { Highlight, HighlightRect } from '@/core/db'
+import { TextLayer } from './TextLayer'
+import { HighlightsLayer } from './HighlightsLayer'
 
 export type FitMode = 'width' | 'page' | 'custom'
 
@@ -12,6 +15,12 @@ interface ReaderCanvasProps {
   scale: number
   /** Reports the scale actually used to render — lets the toolbar show a live zoom %. */
   onScaleChange: (scale: number) => void
+  /** Highlights that live on the current page (Sprint 2 §1). */
+  highlights?: Highlight[]
+  /** Fires when the reader-user finishes selecting text — the reader turns this into a new Highlight. */
+  onSelectionFinalize?: (text: string, rects: HighlightRect[], anchor: { x: number; y: number }) => void
+  /** Fires when an existing highlight is clicked — the reader opens the edit popover, anchored at the click point. */
+  onSelectHighlight?: (highlight: Highlight, anchor: { x: number; y: number }) => void
 }
 
 // Breathing room around the page inside the scrollable viewport, so a
@@ -24,8 +33,18 @@ const PAGE_PADDING = 32
  * internally so a manually zoomed-in page can be panned without affecting
  * the rest of the reader.
  */
-export function ReaderCanvas({ doc, pageNumber, fitMode, scale, onScaleChange }: ReaderCanvasProps) {
+export function ReaderCanvas({
+  doc,
+  pageNumber,
+  fitMode,
+  scale,
+  onScaleChange,
+  highlights = [],
+  onSelectionFinalize,
+  onSelectHighlight
+}: ReaderCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const pageRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [naturalSize, setNaturalSize] = useState<{ width: number; height: number } | null>(null)
   const [containerSize, setContainerSize] = useState<{ width: number; height: number } | null>(null)
@@ -89,9 +108,57 @@ export function ReaderCanvas({ doc, pageNumber, fitMode, scale, onScaleChange }:
     }
   }, [doc, pageNumber, effectiveScale])
 
+  /**
+   * A single click that isn't the tail end of a text-drag-selection: test
+   * it against every highlight's stored rects (converted back from
+   * natural-page-space to this click's coordinates) and open the popover
+   * for whichever one it landed on. This is the one place in the layer
+   * stack that owns click hit-testing — TextLayer only ever handles
+   * mouseup-after-drag for *new* selections, never single clicks — so
+   * there's no pointer-events tug-of-war between the layers.
+   */
+  function handlePageClick(e: ReactMouseEvent) {
+    if (!onSelectHighlight || !pageRef.current || !naturalSize || effectiveScale <= 0) return
+    const selection = window.getSelection()
+    if (selection && !selection.isCollapsed && selection.toString().trim()) return
+
+    const rect = pageRef.current.getBoundingClientRect()
+    const nx = (e.clientX - rect.left) / effectiveScale
+    const ny = (e.clientY - rect.top) / effectiveScale
+
+    for (const highlight of highlights) {
+      const hit = highlight.rects.some((r) => nx >= r.x && nx <= r.x + r.width && ny >= r.y && ny <= r.y + r.height)
+      if (hit) {
+        onSelectHighlight(highlight, { x: e.clientX, y: e.clientY })
+        return
+      }
+    }
+  }
+
   return (
     <div ref={containerRef} className="flex h-full w-full items-start justify-center overflow-auto bg-canvas p-4">
-      <canvas ref={canvasRef} className="rounded-sm border border-border bg-white shadow-1" />
+      <div
+        ref={pageRef}
+        onClick={handlePageClick}
+        className="relative rounded-sm border border-border bg-white shadow-1"
+        style={naturalSize ? { width: naturalSize.width * effectiveScale, height: naturalSize.height * effectiveScale } : undefined}
+      >
+        <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+        {naturalSize && effectiveScale > 0 && (
+          <>
+            <HighlightsLayer highlights={highlights} naturalSize={naturalSize} scale={effectiveScale} />
+            {onSelectionFinalize && (
+              <TextLayer
+                doc={doc}
+                pageNumber={pageNumber}
+                naturalSize={naturalSize}
+                scale={effectiveScale}
+                onSelectionFinalize={onSelectionFinalize}
+              />
+            )}
+          </>
+        )}
+      </div>
     </div>
   )
 }

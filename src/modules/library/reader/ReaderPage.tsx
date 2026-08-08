@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { db, type LibraryItem, type ReaderBookmark } from '@/core/db'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { db, type Highlight, type HighlightColor, type HighlightRect, type LibraryItem, type Note, type ReaderBookmark } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
 import { markOpened, updateReadingProgress } from '@/core/db/library'
 import { addBookmark, removeBookmark } from '@/core/db/bookmarks'
+import { addHighlight, removeHighlight, updateHighlightColor, updateHighlightNote } from '@/core/db/highlights'
+import { createNoteFromHighlight } from '@/core/db/notes'
+import { addReadingSeconds } from '@/core/db/reading-time'
 import { SplitLayout } from '@/shared/layouts'
 import { BottomSheet, EmptyState } from '@/shared/components'
 import { useBreakpoint } from '@/shared/hooks'
@@ -11,21 +14,29 @@ import { usePdfDocument } from '../hooks/usePdfDocument'
 import { ReaderToolbar } from './ReaderToolbar'
 import { ReaderCanvas, type FitMode } from './ReaderCanvas'
 import { ReaderSidebar } from './ReaderSidebar'
+import { HighlightPopover, type PopoverAnchor } from './HighlightPopover'
+import { NoteEditorDialog } from '@/modules/notes/components/NoteEditorDialog'
 
 const MIN_SCALE = 0.25
 const MAX_SCALE = 4
 const ZOOM_STEP = 1.2
+// How often accumulated reading time is flushed to appSettings while a book is open (Sprint 2 §9).
+const READING_TIME_FLUSH_MS = 30_000
 
 /**
- * Personal Library Module — PDF Reader milestone. Full-featured reader for
- * a single LibraryItem: paged canvas view, jump-to-page, zoom + fit
- * width/page, sidebar thumbnails, locally-stored bookmarks, reading
- * progress, and "remember last opened page" — all backed by IndexedDB
- * (Dexie) and the existing OPFS file store, no network involved.
+ * Personal Library Module — PDF Reader milestone, extended in Sprint 2
+ * (Study Companion milestone) with Text Highlighting (§1), Sticky Notes
+ * (§2), Linked Notes (§5), the Highlights/Notes sidebar tabs (§6), and
+ * in-book search. Full-featured reader for a single LibraryItem: paged
+ * canvas view, jump-to-page, zoom + fit width/page, sidebar thumbnails,
+ * locally-stored bookmarks/highlights/notes, and reading progress — all
+ * backed by IndexedDB (Dexie) and the existing OPFS file store, no
+ * network involved.
  */
 export function ReaderPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const breakpoint = useBreakpoint()
   const isMobile = breakpoint === 'mobile'
 
@@ -39,6 +50,16 @@ export function ReaderPage() {
     [id],
     []
   )
+  const highlights = useLiveQuery<Highlight[]>(
+    () => (id ? db.highlights.where('itemId').equals(id).sortBy('page') : []),
+    [id],
+    []
+  )
+  const notes = useLiveQuery<Note[]>(
+    () => (id ? db.notes.where('itemId').equals(id).sortBy('updatedAt') : []),
+    [id],
+    []
+  )
 
   const { doc, numPages, loading, error } = usePdfDocument(item?.filePath)
 
@@ -47,18 +68,28 @@ export function ReaderPage() {
   const [scale, setScale] = useState(1)
   const [sidebarOpen, setSidebarOpen] = useState(!isMobile)
 
+  // Sprint 2 §1/§2: exactly one of these is ever open at a time — a
+  // fresh-selection color picker, or an existing highlight's edit panel.
+  const [pendingSelection, setPendingSelection] = useState<{ text: string; rects: HighlightRect[]; anchor: PopoverAnchor } | null>(null)
+  const [activeHighlight, setActiveHighlight] = useState<{ highlight: Highlight; anchor: PopoverAnchor } | null>(null)
+
+  const [noteEditorOpen, setNoteEditorOpen] = useState(false)
+  const [editingNote, setEditingNote] = useState<Note | undefined>(undefined)
+
   const initializedRef = useRef(false)
 
-  // Resume from the item's saved page (or 1) the first time it loads, and
-  // record that it was opened. Guarded so it only runs once per mount,
-  // not on every subsequent live-query update to `item`.
+  // Resume from the item's saved page (or 1) the first time it loads —
+  // unless a `?page=` query param is present, which takes priority (that's
+  // how search results, notes, and highlights deep-link into a page).
   useEffect(() => {
     if (item && !initializedRef.current) {
       initializedRef.current = true
-      setPage(item.lastPageRead && item.lastPageRead >= 1 ? item.lastPageRead : 1)
+      const pageParam = Number(searchParams.get('page'))
+      const target = pageParam > 0 ? pageParam : item.lastPageRead && item.lastPageRead >= 1 ? item.lastPageRead : 1
+      setPage(target)
       void markOpened(item.id)
     }
-  }, [item])
+  }, [item, searchParams])
 
   // Keep the current page within bounds once the document reports its length.
   useEffect(() => {
@@ -79,6 +110,32 @@ export function ReaderPage() {
     setSidebarOpen(!isMobile)
   }, [isMobile])
 
+  // Sprint 2 §9 (optional): accrue reading time in the background while
+  // this book is open, flushing periodically so a crash/close never loses
+  // more than one interval's worth. Pauses while the tab is hidden.
+  useEffect(() => {
+    if (!item) return
+    let accumulated = 0
+    let lastTick = Date.now()
+    const tick = setInterval(() => {
+      if (document.visibilityState === 'visible') {
+        accumulated += (Date.now() - lastTick) / 1000
+      }
+      lastTick = Date.now()
+    }, 1000)
+    const flush = setInterval(() => {
+      if (accumulated > 0) {
+        void addReadingSeconds(accumulated)
+        accumulated = 0
+      }
+    }, READING_TIME_FLUSH_MS)
+    return () => {
+      clearInterval(tick)
+      clearInterval(flush)
+      if (accumulated > 0) void addReadingSeconds(accumulated)
+    }
+  }, [item])
+
   if (!id) return null
 
   function goPrev() {
@@ -90,6 +147,8 @@ export function ReaderPage() {
   function jumpTo(target: number) {
     if (!numPages) return
     setPage(Math.min(Math.max(1, target), numPages))
+    setPendingSelection(null)
+    setActiveHighlight(null)
   }
   function zoomIn() {
     setFitMode('custom')
@@ -116,6 +175,79 @@ export function ReaderPage() {
     if (isMobile) setSidebarOpen(false)
   }
 
+  // --- Highlighting (Sprint 2 §1/§2) ---------------------------------
+
+  function handleSelectionFinalize(text: string, rects: HighlightRect[], anchor: PopoverAnchor) {
+    setActiveHighlight(null)
+    setPendingSelection({ text, rects, anchor })
+  }
+
+  async function handlePickColorForNewSelection(color: HighlightColor) {
+    if (!id || !pendingSelection) return
+    await addHighlight({ itemId: id, page, color, rects: pendingSelection.rects, text: pendingSelection.text })
+    window.getSelection()?.removeAllRanges()
+    setPendingSelection(null)
+  }
+
+  function handleSelectHighlight(highlight: Highlight, anchor: PopoverAnchor) {
+    setPendingSelection(null)
+    setActiveHighlight({ highlight, anchor })
+  }
+
+  function handleSelectHighlightFromList(highlight: Highlight) {
+    jumpTo(highlight.page)
+    // Anchor the popover roughly centered — there's no click point from a list selection.
+    setActiveHighlight({ highlight, anchor: { x: window.innerWidth / 2, y: window.innerHeight / 3 } })
+  }
+
+  async function handleUpdateHighlightColor(color: HighlightColor) {
+    if (!activeHighlight) return
+    await updateHighlightColor(activeHighlight.highlight.id, color)
+    setActiveHighlight((prev) => (prev ? { ...prev, highlight: { ...prev.highlight, color } } : prev))
+  }
+
+  async function handleSaveHighlightNote(note: string) {
+    if (!activeHighlight) return
+    await updateHighlightNote(activeHighlight.highlight.id, note)
+  }
+
+  async function handleDeleteHighlight(highlightId: string) {
+    await removeHighlight(highlightId)
+    setActiveHighlight(null)
+  }
+
+  async function handleOpenFullNoteFromHighlight() {
+    if (!activeHighlight || !item) return
+    const linked = notes.find((n) => n.highlightId === activeHighlight.highlight.id)
+    if (linked) {
+      setEditingNote(linked)
+    } else {
+      const created = await createNoteFromHighlight({
+        itemId: item.id,
+        itemTitle: item.title,
+        page: activeHighlight.highlight.page,
+        highlightId: activeHighlight.highlight.id,
+        highlightedText: activeHighlight.highlight.text
+      })
+      setEditingNote(created)
+    }
+    setActiveHighlight(null)
+    setNoteEditorOpen(true)
+  }
+
+  function handleOpenNoteFromSidebar(note: Note) {
+    setEditingNote(note)
+    setNoteEditorOpen(true)
+    if (note.page) jumpTo(note.page)
+  }
+
+  function handleNewNoteForCurrentPage() {
+    setEditingNote(undefined)
+    setNoteEditorOpen(true)
+  }
+
+  const pageHighlights = highlights.filter((h) => h.page === page)
+
   const sidebar =
     doc && numPages ? (
       <ReaderSidebar
@@ -125,8 +257,24 @@ export function ReaderPage() {
         onSelectPage={handleSelectPage}
         bookmarks={bookmarks}
         onRemoveBookmark={(bid) => void removeBookmark(bid)}
+        highlights={highlights}
+        onSelectHighlightFromList={handleSelectHighlightFromList}
+        onRemoveHighlight={(hid) => void removeHighlight(hid)}
+        notes={notes}
+        onOpenNote={handleOpenNoteFromSidebar}
       />
     ) : null
+
+  const canvasProps = {
+    doc,
+    pageNumber: page,
+    fitMode,
+    scale,
+    onScaleChange: setScale,
+    highlights: pageHighlights,
+    onSelectionFinalize: handleSelectionFinalize,
+    onSelectHighlight: handleSelectHighlight
+  }
 
   return (
     <div className="flex h-[calc(100vh-4rem)] flex-col">
@@ -148,6 +296,7 @@ export function ReaderPage() {
         sidebarOpen={sidebarOpen}
         bookmarked={Boolean(currentBookmark)}
         onToggleBookmark={() => void toggleBookmark()}
+        onNewNote={handleNewNoteForCurrentPage}
       />
 
       <div className="min-h-0 flex-1">
@@ -169,8 +318,8 @@ export function ReaderPage() {
         {!error && doc && numPages ? (
           isMobile ? (
             <>
-              <ReaderCanvas doc={doc} pageNumber={page} fitMode={fitMode} scale={scale} onScaleChange={setScale} />
-              <BottomSheet open={sidebarOpen} onClose={() => setSidebarOpen(false)} title="Pages & bookmarks">
+              <ReaderCanvas {...canvasProps} doc={doc} />
+              <BottomSheet open={sidebarOpen} onClose={() => setSidebarOpen(false)} title="Pages, highlights & notes">
                 {sidebar}
               </BottomSheet>
             </>
@@ -178,14 +327,45 @@ export function ReaderPage() {
             <SplitLayout
               className="h-full"
               primaryWidth="75%"
-              primary={<ReaderCanvas doc={doc} pageNumber={page} fitMode={fitMode} scale={scale} onScaleChange={setScale} />}
+              primary={<ReaderCanvas {...canvasProps} doc={doc} />}
               secondary={<div className="h-full overflow-y-auto p-4">{sidebar}</div>}
             />
           ) : (
-            <ReaderCanvas doc={doc} pageNumber={page} fitMode={fitMode} scale={scale} onScaleChange={setScale} />
+            <ReaderCanvas {...canvasProps} doc={doc} />
           )
         ) : null}
       </div>
+
+      {pendingSelection && (
+        <HighlightPopover
+          anchor={pendingSelection.anchor}
+          onPickColor={(color) => void handlePickColorForNewSelection(color)}
+          onSaveNote={() => {}}
+          onClose={() => {
+            window.getSelection()?.removeAllRanges()
+            setPendingSelection(null)
+          }}
+        />
+      )}
+
+      {activeHighlight && (
+        <HighlightPopover
+          anchor={activeHighlight.anchor}
+          highlight={activeHighlight.highlight}
+          onPickColor={(color) => void handleUpdateHighlightColor(color)}
+          onSaveNote={(note) => void handleSaveHighlightNote(note)}
+          onOpenFullNote={() => void handleOpenFullNoteFromHighlight()}
+          onDelete={() => void handleDeleteHighlight(activeHighlight.highlight.id)}
+          onClose={() => setActiveHighlight(null)}
+        />
+      )}
+
+      <NoteEditorDialog
+        open={noteEditorOpen}
+        onClose={() => setNoteEditorOpen(false)}
+        note={editingNote}
+        linkedContext={item ? { itemId: item.id, itemTitle: item.title, page } : undefined}
+      />
     </div>
   )
 }
