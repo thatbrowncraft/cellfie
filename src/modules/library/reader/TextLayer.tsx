@@ -8,6 +8,8 @@ interface PositionedItem {
   left: number
   top: number
   fontSize: number
+  /** Sprint 2.2: the span's actual height in natural-page-space, used for both its box and the selection-rect math below — see the comment where it's computed. */
+  glyphHeight: number
   angleDeg: number
   /**
    * Sprint 2.1 §6 bugfix: horizontal correction so this span's *rendered*
@@ -114,11 +116,33 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(function Te
           // from it — same coordinate system, corrected at the source.
           const measuredWidth = measureFallbackWidth(item.str, fontSize)
           const scaleX = measuredWidth > 0 && item.width > 0 ? item.width / measuredWidth : 1
+          // Sprint 2.2 root-cause fix (the vertical counterpart to the
+          // §6 scaleX fix above): `item.height` comes from PDF.js's
+          // getTextContent() in the *same* unscaled user-space units as
+          // `item.width` — and since these items are built from a
+          // scale-1 viewport (see getPageTextContent), that's exactly
+          // the natural-page-space unit this whole layer already works
+          // in, with no extra conversion needed. Using it instead of the
+          // `fontSize` em-box approximation matters because the actual
+          // PDF font's glyph bbox is very often smaller than its
+          // nominal em size (fontSize), and the fallback "sans-serif"
+          // font's own default line metrics don't match either — so a
+          // span's *visible*, selectable height was consistently taller
+          // than the real text, and on tightly-leaded textbook body
+          // copy that extra height was enough for one line's span to
+          // touch/overlap the next line's, which is what turns a
+          // multi-line selection's per-line getClientRects() into what
+          // looks like one solid block instead of separate highlighted
+          // lines. A tight, accurate span height is also what lets a
+          // *single*-line, partial-word selection produce a rect that
+          // hugs just that word instead of the whole line's em-box.
+          const glyphHeight = item.height > 0 ? item.height : fontSize
           return {
             item,
             left: tx[4],
-            top: tx[5] - fontSize,
+            top: tx[5] - glyphHeight,
             fontSize,
+            glyphHeight,
             angleDeg: (angleRad * 180) / Math.PI,
             scaleX
           }
@@ -219,13 +243,22 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(function Te
         transform: `scale(${scale})`
       }}
     >
-      {positioned.map(({ item, left, top, fontSize, angleDeg, scaleX }, i) => (
+      {positioned.map(({ item, left, top, fontSize, glyphHeight, angleDeg, scaleX }, i) => (
         <span
           key={i}
           style={{
             position: 'absolute',
             left,
             top,
+            // Sprint 2.2: explicit height + lineHeight pinned to the same
+            // glyphHeight used for `top`, instead of leaving the box
+            // height to the fallback font's own metrics at this
+            // `fontSize`. Range.getClientRects() for a selection inside
+            // this span is bounded by this box, so this is what actually
+            // makes the saved highlight rect's height match the real
+            // text instead of the fallback font's (larger, mismatched)
+            // em-box.
+            height: glyphHeight,
             fontSize,
             fontFamily: 'sans-serif',
             // scaleX corrects the fallback font's width to match the PDF's
@@ -236,7 +269,8 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(function Te
             transformOrigin: 'left bottom',
             whiteSpace: 'pre',
             color: 'transparent',
-            lineHeight: 1,
+            lineHeight: `${glyphHeight}px`,
+            overflow: 'hidden',
             cursor: 'text'
           }}
         >

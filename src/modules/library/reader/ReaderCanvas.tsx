@@ -44,6 +44,47 @@ export interface ReaderCanvasHandle {
 // fit-width/fit-page page never touches the pane edges.
 const PAGE_PADDING = 32
 
+// Sprint 2.2 Part 2: on-device verification, opt-in via ?debug=pdf so it
+// never ships visible-by-default. Read once at module load — this is a
+// diagnostics flag, not reactive app state.
+const DIAGNOSTICS_ENABLED =
+  typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === 'pdf'
+
+interface RenderDiagnostics {
+  scale: number
+  devicePixelRatio: number
+  canvasWidth: number
+  canvasHeight: number
+  canvasStyleWidth: string
+  canvasStyleHeight: string
+  boundingWidth: number
+  boundingHeight: number
+  pageBoundingWidth: number
+  pageBoundingHeight: number
+  /** canvas.width / bounding client width — the actual delivered sharpness ratio; should be ≈ devicePixelRatio (or the capped value) whenever this is < 1 the page IS being upscaled and will look soft, which is the exact thing to check for on your Android device. */
+  effectivePixelRatio: number
+}
+
+function DiagnosticsPanel({ diag }: { diag: RenderDiagnostics }) {
+  const row = (label: string, value: string | number) => (
+    <div className="flex justify-between gap-4">
+      <span className="text-ink-tertiary">{label}</span>
+      <span className="font-mono">{value}</span>
+    </div>
+  )
+  return (
+    <div className="pointer-events-none absolute left-2 top-2 z-50 w-64 space-y-0.5 rounded-sm bg-black/80 p-2 font-mono text-[10px] text-white shadow-1">
+      {row('scale', diag.scale.toFixed(4))}
+      {row('devicePixelRatio', diag.devicePixelRatio)}
+      {row('canvas.width/height', `${diag.canvasWidth} / ${diag.canvasHeight}`)}
+      {row('canvas.style w/h', `${diag.canvasStyleWidth || '(100%)'} / ${diag.canvasStyleHeight || '(100%)'}`)}
+      {row('canvas bounding rect', `${diag.boundingWidth.toFixed(1)} x ${diag.boundingHeight.toFixed(1)}`)}
+      {row('page container rect', `${diag.pageBoundingWidth.toFixed(1)} x ${diag.pageBoundingHeight.toFixed(1)}`)}
+      {row('effective px ratio', diag.effectivePixelRatio.toFixed(2))}
+    </div>
+  )
+}
+
 /**
  * Renders the current page onto a canvas, recomputing scale for
  * fit-width/fit-page modes from the container's measured size. Scrolls
@@ -115,15 +156,36 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [effectiveScale])
 
+  const [diag, setDiag] = useState<RenderDiagnostics | null>(null)
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas || effectiveScale <= 0) return
     let task: RenderTask | undefined
+    let cancelled = false
 
     renderPageToCanvas(doc, pageNumber, canvas, effectiveScale)
       .then((t) => {
         task = t
         return t.promise
+      })
+      .then(() => {
+        if (cancelled || !DIAGNOSTICS_ENABLED) return
+        const rect = canvas.getBoundingClientRect()
+        const cssRect = pageRef.current?.getBoundingClientRect()
+        setDiag({
+          scale: effectiveScale,
+          devicePixelRatio: window.devicePixelRatio || 1,
+          canvasWidth: canvas.width,
+          canvasHeight: canvas.height,
+          canvasStyleWidth: canvas.style.width,
+          canvasStyleHeight: canvas.style.height,
+          boundingWidth: rect.width,
+          boundingHeight: rect.height,
+          pageBoundingWidth: cssRect?.width ?? 0,
+          pageBoundingHeight: cssRect?.height ?? 0,
+          effectivePixelRatio: rect.width > 0 ? canvas.width / rect.width : 0
+        })
       })
       .catch((err: unknown) => {
         if (err instanceof Error && err.name === 'RenderingCancelledException') return
@@ -131,6 +193,7 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
       })
 
     return () => {
+      cancelled = true
       task?.cancel()
     }
   }, [doc, pageNumber, effectiveScale])
@@ -174,6 +237,7 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
         style={naturalSize ? { width: naturalSize.width * effectiveScale, height: naturalSize.height * effectiveScale } : undefined}
       >
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+        {DIAGNOSTICS_ENABLED && diag && <DiagnosticsPanel diag={diag} />}
         {naturalSize && effectiveScale > 0 && (
           <>
             <HighlightsLayer highlights={highlights} naturalSize={naturalSize} scale={effectiveScale} />
