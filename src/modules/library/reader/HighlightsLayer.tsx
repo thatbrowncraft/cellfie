@@ -6,27 +6,24 @@ interface HighlightsLayerProps {
   scale: number
 }
 
-/** CSS custom-property names — see the `--color-marker-*` tokens added to index.css. */
-export const markerColorVar: Record<HighlightColor, string> = {
-  yellow: '--color-marker-yellow',
-  green: '--color-marker-green',
-  blue: '--color-marker-blue',
-  pink: '--color-marker-pink'
+/** Direct RGBA mappings for highlight colors */
+export const markerColorMap: Record<HighlightColor, string> = {
+  yellow: 'rgba(250, 204, 21, 0.45)',
+  green: 'rgba(74, 222, 128, 0.45)',
+  blue: 'rgba(96, 165, 250, 0.45)',
+  pink: 'rgba(244, 114, 182, 0.45)'
 }
 
-/**
- * Purely decorative: draws each Highlight's stored rects (natural page
- * space) as tinted overlays. `pointer-events: none` throughout, so it
- * never competes with the TextLayer above it for selection/click
- * hit-testing — clicking an existing highlight is handled by the parent
- * ReaderCanvas testing click coordinates against these same rects, which
- * keeps exactly one element in the stack ever receiving pointer events.
- */
 export function HighlightsLayer({ highlights, naturalSize, scale }: HighlightsLayerProps) {
   return (
     <div
       className="pointer-events-none absolute inset-0 origin-top-left"
-      style={{ width: naturalSize.width, height: naturalSize.height, transform: `scale(${scale})` }}
+      style={{
+        width: naturalSize.width,
+        height: naturalSize.height,
+        transform: `scale(${scale})`,
+        zIndex: 5
+      }}
     >
       {highlights.map((h) =>
         h.rects.map((rect, i) => (
@@ -38,7 +35,7 @@ export function HighlightsLayer({ highlights, naturalSize, scale }: HighlightsLa
               top: rect.y,
               width: rect.width,
               height: rect.height,
-              backgroundColor: `var(${markerColorVar[h.color]})`
+              backgroundColor: markerColorMap[h.color] || markerColorMap.yellow
             }}
           />
         ))
