@@ -40,14 +40,22 @@ export async function updateReadingProgress(id: string, page: number): Promise<v
   await db.libraryItems.update(id, { lastPageRead: page })
 }
 
-/** Removes a LibraryItem's record, its OPFS-backed file/thumbnail, and its bookmarks. Idempotent. */
+/**
+ * Removes a LibraryItem's record, its OPFS-backed file/thumbnail, its
+ * bookmarks, and its highlights. Idempotent. Notes that link to the item
+ * are intentionally kept — a note the person wrote still stands on its
+ * own even if the source PDF is later removed; only the `itemId`/`page`/
+ * `highlightId` linkage becomes stale (Notebook still shows the note,
+ * just without a working "open source" jump).
+ */
 export async function removeLibraryItem(item: LibraryItem): Promise<void> {
   await deleteFile(item.filePath)
   if (item.thumbnailPath) {
     await deleteFile(item.thumbnailPath)
   }
-  await db.transaction('rw', db.libraryItems, db.readerBookmarks, async () => {
+  await db.transaction('rw', db.libraryItems, db.readerBookmarks, db.highlights, async () => {
     await db.libraryItems.delete(item.id)
     await db.readerBookmarks.where('itemId').equals(item.id).delete()
+    await db.highlights.where('itemId').equals(item.id).delete()
   })
 }
