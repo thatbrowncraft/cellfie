@@ -33,20 +33,27 @@ export function SearchField({ placeholder = 'Search…', onChange, className }: 
 
 interface SearchResultGroup {
   label: string
-  results: { id: string; title: string; subtitle?: string; icon?: ReactNode }[]
+  results: { id: string; title: string; subtitle?: string; icon?: ReactNode; path?: string }[]
 }
 
 interface UniversalSearchProps {
   open: boolean
   onClose: () => void
   groups?: SearchResultGroup[]
+  onQueryChange?: (query: string) => void
+  /** Fires when a result is chosen; the caller (AppShell) owns navigation since this component has no router access. */
+  onSelectResult?: (result: { id: string; title: string; path?: string }) => void
 }
 
 /**
  * Universal Search overlay — Design System §10.7.
  * Cmd/Ctrl+K modal, grouped results by content type, calm empty state.
+ * Sprint 2 §7 wires this to `core/search`'s cross-entity search (Notes,
+ * Highlights, Bookmarks, Books, Tags) — `onQueryChange` lets the caller
+ * debounce/run that search as the person types; `groups` is what comes
+ * back.
  */
-export function UniversalSearch({ open, onClose, groups = [] }: UniversalSearchProps) {
+export function UniversalSearch({ open, onClose, groups = [], onQueryChange, onSelectResult }: UniversalSearchProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [query, setQuery] = useState('')
   useFocusTrap(containerRef, open)
@@ -59,6 +66,12 @@ export function UniversalSearch({ open, onClose, groups = [] }: UniversalSearchP
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
   }, [open, onClose])
+
+  // Query resets each time the overlay opens fresh, so a stale search
+  // from last time never lingers.
+  useEffect(() => {
+    if (open) setQuery('')
+  }, [open])
 
   if (!open) return null
 
@@ -83,8 +96,11 @@ export function UniversalSearch({ open, onClose, groups = [] }: UniversalSearchP
           <input
             autoFocus
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search topics, organisms, notes, protocols…"
+            onChange={(e) => {
+              setQuery(e.target.value)
+              onQueryChange?.(e.target.value)
+            }}
+            placeholder="Search notes, highlights, bookmarks, books, tags…"
             className="w-full border-b border-border bg-transparent py-3 pl-9 font-display text-h3 text-ink-primary placeholder:text-ink-tertiary outline-none"
           />
           <button onClick={onClose} aria-label="Close search" className="absolute right-1 text-ink-tertiary hover:text-ink-primary">
@@ -108,7 +124,13 @@ export function UniversalSearch({ open, onClose, groups = [] }: UniversalSearchP
                 <ul className="flex flex-col gap-1">
                   {group.results.map((r) => (
                     <li key={r.id}>
-                      <button className="flex w-full items-center gap-3 rounded-sm px-4 py-2 text-left hover:bg-surface-raised focus-visible:bg-surface-raised">
+                      <button
+                        onClick={() => {
+                          onSelectResult?.(r)
+                          onClose()
+                        }}
+                        className="flex w-full items-center gap-3 rounded-sm px-4 py-2 text-left hover:bg-surface-raised focus-visible:bg-surface-raised"
+                      >
                         {r.icon}
                         <span className="font-ui text-body text-ink-primary">{r.title}</span>
                         {r.subtitle && <span className="font-ui text-caption text-ink-tertiary">{r.subtitle}</span>}
