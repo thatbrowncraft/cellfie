@@ -93,7 +93,6 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
         cancelled = true
       }
     }, [doc, pageNumber])
-
     function finalizeSelection(): boolean {
       const selection = window.getSelection()
       const container = containerRef.current
@@ -108,42 +107,50 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
       }
 
       const text = selection.toString().trim()
-
       if (!text) return false
 
       const range = selection.getRangeAt(0)
-
-      if (
-        !container.contains(range.commonAncestorContainer)
-      ) {
+      if (!container.contains(range.commonAncestorContainer)) {
         return false
       }
 
-      const containerRect =
-        container.getBoundingClientRect()
+      const containerRect = container.getBoundingClientRect()
 
-      const clientRects = Array.from(
-        range.getClientRects()
+      // Find all text spans inside this layer that intersect the selection
+      const spans = Array.from(
+        container.querySelectorAll<HTMLSpanElement>('.cellfie-pdf-text-span')
       )
-      const rawRects = clientRects
-        .filter((rect) => rect.width > 1 && rect.height > 1)
-        .map((rect) => ({
-          x: (rect.left - containerRect.left) / scale,
-          y: (rect.top - containerRect.top) / scale,
-          width: rect.width / scale,
-          height: rect.height / scale
-        }))
+      const selectedSpans = spans.filter((span) =>
+        selection.containsNode(span, true)
+      )
 
-               // Merge word bounding boxes on the same line (tight gap tolerance to prevent column overflow)
+      if (selectedSpans.length === 0) return false
+
+      // Calculate exact natural coordinates for each selected span
+      const rawRects: HighlightRect[] = selectedSpans
+        .map((span) => {
+          const rect = span.getBoundingClientRect()
+          return {
+            x: (rect.left - containerRect.left) / scale,
+            y: (rect.top - containerRect.top) / scale,
+            width: rect.width / scale,
+            height: rect.height / scale
+          }
+        })
+        .filter((rect) => rect.width > 0.5 && rect.height > 0.5)
+
+      if (rawRects.length === 0) return false
+
+      // Merge word boxes on the same line in the same column (gap threshold: 8px)
       const rects: HighlightRect[] = []
       for (const rect of rawRects) {
         const sameLine = rects.find((r) => {
-          const sameRow = Math.abs(r.y - rect.y) < Math.max(3, rect.height * 0.3)
+          const sameRow = Math.abs(r.y - rect.y) < Math.max(4, rect.height * 0.4)
           const gap = Math.max(
             0,
             Math.max(r.x, rect.x) - Math.min(r.x + r.width, rect.x + rect.width)
           )
-          return sameRow && gap <= 4
+          return sameRow && gap <= 8
         })
 
         if (sameLine) {
@@ -158,20 +165,12 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
         }
       }
 
-      if (rects.length === 0) {
-        return false
-      }
+      const firstSpan = selectedSpans[0].getBoundingClientRect()
 
-      const first = clientRects[0]
-
-      onSelectionFinalize(
-        text,
-        rects,
-        {
-          x: first.left + first.width / 2,
-          y: first.bottom
-        }
-      )
+      onSelectionFinalize(text, rects, {
+        x: firstSpan.left + firstSpan.width / 2,
+        y: firstSpan.bottom
+      })
 
       return true
     }
