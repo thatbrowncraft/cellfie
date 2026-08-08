@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { TopNav } from './TopNav'
 import { Sidebar } from './Sidebar'
 import { BottomNav } from './BottomNav'
@@ -6,6 +7,8 @@ import { PageTransition } from './PageTransition'
 import { UniversalSearch } from '../shared/components/SearchField'
 import { QuickCaptureFab } from '../shared/components/QuickCaptureFab'
 import { useBreakpoint } from '../shared/hooks'
+import { searchEverything, type SearchResultGroup } from '../core/search'
+import { NoteEditorDialog } from '../modules/notes/components/NoteEditorDialog'
 
 interface AppShellProps {
   children: ReactNode
@@ -18,11 +21,18 @@ interface AppShellProps {
  *   Tablet   (640–1024): collapsible icon-rail sidebar
  *   Desktop  (1024–1440): full 280px sidebar
  *   Wide     (>1440px): same as desktop, content stays capped
+ *
+ * Sprint 2 additions: the Cmd/Ctrl+K overlay now actually searches
+ * (core/search, §7) instead of rendering an empty state forever, and the
+ * Quick Capture FAB opens a real note editor (§3) instead of being inert.
  */
 export function AppShell({ children }: AppShellProps) {
+  const navigate = useNavigate()
   const breakpoint = useBreakpoint()
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
+  const [searchGroups, setSearchGroups] = useState<SearchResultGroup[]>([])
+  const [quickCaptureOpen, setQuickCaptureOpen] = useState(false)
 
   const railOnly = breakpoint === 'tablet'
 
@@ -31,6 +41,13 @@ export function AppShell({ children }: AppShellProps) {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault()
         setSearchOpen(true)
+      }
+      // "N" for a new note — same spirit as the FAB, but keyboard-first.
+      // Skipped while typing in any field so it doesn't hijack normal text entry.
+      const target = e.target as HTMLElement | null
+      const isTyping = target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)
+      if (e.key.toLowerCase() === 'n' && !isTyping && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        setQuickCaptureOpen(true)
       }
     }
     document.addEventListener('keydown', onKeydown)
@@ -41,6 +58,20 @@ export function AppShell({ children }: AppShellProps) {
   useEffect(() => {
     if (breakpoint !== 'mobile') setDrawerOpen(false)
   }, [breakpoint])
+
+  async function handleSearchQueryChange(query: string) {
+    const groups = await searchEverything(query)
+    setSearchGroups(
+      groups.map((g) => ({
+        label: g.label,
+        results: g.results
+      }))
+    )
+  }
+
+  function handleSelectResult(result: { path?: string }) {
+    if (result.path) navigate(result.path)
+  }
 
   return (
     <div className="flex min-h-screen bg-canvas">
@@ -60,8 +91,15 @@ export function AppShell({ children }: AppShellProps) {
         <BottomNav />
       </div>
 
-      <QuickCaptureFab />
-      <UniversalSearch open={searchOpen} onClose={() => setSearchOpen(false)} />
+      <QuickCaptureFab onClick={() => setQuickCaptureOpen(true)} />
+      <UniversalSearch
+        open={searchOpen}
+        onClose={() => setSearchOpen(false)}
+        groups={searchGroups}
+        onQueryChange={(q) => void handleSearchQueryChange(q)}
+        onSelectResult={handleSelectResult}
+      />
+      <NoteEditorDialog open={quickCaptureOpen} onClose={() => setQuickCaptureOpen(false)} />
     </div>
   )
 }
