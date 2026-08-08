@@ -3,6 +3,7 @@ import { ReadingLayout } from '../../shared/layouts'
 import { Button } from '../../shared/components'
 import { useTheme, type ThemeMode } from '../../core/theme'
 import { cn } from '../../shared/utils/cn'
+import { exportJsonBackup } from '../../core/export'
 
 const themeOptions: { mode: ThemeMode; label: string; icon: JSX.Element }[] = [
   { mode: 'system', label: 'System', icon: <Monitor size={20} /> },
@@ -106,11 +107,12 @@ export function SettingsPage() {
       <section>
         <h2 className="mb-1 font-display text-h2 font-medium text-ink-primary">Your data</h2>
         <p className="mb-4 font-body text-body text-ink-secondary">
-          Everything lives on this device. Export and import arrive with Phase 1's storage layer.
+          Everything lives on this device. Export a full JSON backup of your library metadata, highlights, notes, and
+          bookmarks (Notes has its own Markdown export too). Restoring from a backup arrives in a later phase.
         </p>
         <div className="flex gap-3">
-          <Button variant="secondary" disabled icon={<Download size={18} />}>
-            Export
+          <Button variant="secondary" icon={<Download size={18} />} onClick={() => void exportJsonBackup()}>
+            Export JSON backup
           </Button>
           <Button variant="secondary" disabled icon={<Upload size={18} />}>
             Import
