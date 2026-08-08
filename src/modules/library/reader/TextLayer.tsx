@@ -203,7 +203,7 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
           handleSelectionChange
         )
 
-        onSelectionAvailabilityChange(false)
+        onSelectionAvailabilityChange?.(false)
       }
     }, [onSelectionAvailabilityChange])
 
