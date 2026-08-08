@@ -6,7 +6,7 @@ interface HighlightsLayerProps {
   scale: number
 }
 
-/** CSS custom-property names */
+/** CSS custom-property names — used by ReaderSidebar and HighlightPopover */
 export const markerColorVar: Record<HighlightColor, string> = {
   yellow: '--color-marker-yellow',
   green: '--color-marker-green',
@@ -17,24 +17,14 @@ export const markerColorVar: Record<HighlightColor, string> = {
 export function HighlightsLayer({ highlights, naturalSize, scale }: HighlightsLayerProps) {
   return (
     <div
-      className="pointer-events-none absolute inset-0 origin-top-left"
+      className="pointer-events-none absolute left-0 top-0 origin-top-left"
       style={{
         width: naturalSize.width,
         height: naturalSize.height,
         transform: `scale(${scale})`,
-        zIndex: 5
+        zIndex: 20
       }}
     >
-      {/* Inject missing CSS color variables globally */}
-      <style>{`
-        :root {
-          --color-marker-yellow: rgba(250, 204, 21, 0.45);
-          --color-marker-green: rgba(74, 222, 128, 0.45);
-          --color-marker-blue: rgba(96, 165, 250, 0.45);
-          --color-marker-pink: rgba(244, 114, 182, 0.45);
-        }
-      `}</style>
-
       {highlights.map((h) =>
         h.rects.map((rect, i) => (
           <div
@@ -45,7 +35,8 @@ export function HighlightsLayer({ highlights, naturalSize, scale }: HighlightsLa
               top: rect.y,
               width: rect.width,
               height: rect.height,
-              backgroundColor: `var(${markerColorVar[h.color]})`
+              backgroundColor: `var(${markerColorVar[h.color]})`,
+              opacity: 0.7
             }}
           />
         ))
