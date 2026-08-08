@@ -207,18 +207,6 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
       }
     }, [onSelectionAvailabilityChange])
 
-    return (
-      <div
-        ref={containerRef}
-        className="cellfie-pdf-text-layer absolute left-0 top-0 select-text"
-        style={{
-          width: naturalSize.width * scale,
-          height: naturalSize.height * scale,
-          zIndex: 10,
-          userSelect: 'text',
-          WebkitUserSelect: 'text'
-        }}
-      >
         return (
   <div
     ref={containerRef}
