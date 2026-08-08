@@ -134,12 +134,18 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
           height: rect.height / scale
         }))
 
-      // Merge word bounding boxes on the same line into unified highlight bars
+            // Merge word bounding boxes on the same line only if close together
       const rects: HighlightRect[] = []
       for (const rect of rawRects) {
-        const sameLine = rects.find(
-          (r) => Math.abs(r.y - rect.y) < 6
-        )
+        const sameLine = rects.find((r) => {
+          const sameRow = Math.abs(r.y - rect.y) < 5
+          const gap = Math.max(
+            0,
+            Math.max(r.x, rect.x) - Math.min(r.x + r.width, rect.x + rect.width)
+          )
+          return sameRow && gap < 12
+        })
+
         if (sameLine) {
           const minX = Math.min(sameLine.x, rect.x)
           const maxX = Math.max(sameLine.x + sameLine.width, rect.x + rect.width)
@@ -151,6 +157,7 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
           rects.push({ ...rect })
         }
       }
+
 
 
       if (rects.length === 0) {
