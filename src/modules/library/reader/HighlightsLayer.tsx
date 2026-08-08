@@ -36,7 +36,7 @@ export function HighlightsLayer({ highlights, naturalSize, scale }: HighlightsLa
               width: rect.width,
               height: rect.height,
               backgroundColor: `var(${markerColorVar[h.color]})`,
-              opacity: 0.7
+              opacity: 0.32
             }}
           />
         ))
