@@ -189,7 +189,7 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
           )
         )
 
-        onSelectionAvailabilityChange(available)
+        onSelectionAvailabilityChange?.(available)
       }
 
       document.addEventListener(
