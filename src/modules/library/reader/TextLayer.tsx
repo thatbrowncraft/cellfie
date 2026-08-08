@@ -231,39 +231,24 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(function Te
     }
   }, [onSelectionAvailabilityChange])
 
-  function handleMouseUp() {
-    finalizeSelection()
-  }
-
-  // On mobile the OS selection UI (drag handles) frequently hasn't
-  // committed its final range the instant `touchend` fires, so give it a
-  // beat before reading `window.getSelection()`. Desktop is untouched —
-  // it still finalizes synchronously via handleMouseUp.
-  function handleTouchEnd() {
-    window.setTimeout(() => finalizeSelection(), 60)
-  }
-
   return (
-    <div
-      ref={containerRef}
-      onMouseUp={handleMouseUp}
-      onTouchEnd={handleTouchEnd}
-      className="absolute inset-0 origin-top-left select-text"
-      style={{
-        width: naturalSize.width,
-        height: naturalSize.height,
-        transform: `scale(${scale})`
-      }}
-    >
+  <div
+    ref={containerRef}
+    className="cellfie-pdf-text-layer absolute left-0 top-0 select-text"
+    style={{
+      width: naturalSize.width * scale,
+      height: naturalSize.height * scale
+    }}
+  >
       {positioned.map(({ item, left, top, fontSize, angleDeg, scaleX }, i) => (
         <span
           key={i}
           className="cellfie-pdf-text-span"
           style={{
             position: 'absolute',
-            left,
-            top,
-            fontSize,
+            left: left * scale,
+            top: top * scale,
+            fontSize: fontSize * scale,
             fontFamily: 'sans-serif',
             // scaleX corrects the fallback font's width to match the PDF's
             // real glyph width (see measureFallbackWidth above) — applied
