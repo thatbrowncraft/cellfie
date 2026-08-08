@@ -159,19 +159,134 @@ The following features are intentionally postponed to future sprints.
 
 ---
 
-## Future Roadmap
+## [0.2.0] - Sprint 2: Active Learning
 
-### v0.2.0
-Sprint 2
+Sprint 2 turns Cellfie from a PDF library into an interactive offline learning workspace.
 
-Study Tools
+### Added
 
-- Text search
+#### PDF Reader
+- Full in-app PDF reader
+- Page navigation
+- Page thumbnails
+- Zoom controls
+- Fit-to-width and fit-to-page modes
+- Reading progress tracking
+- Resume reading from the last opened page
+- Direct page navigation and deep-link support
+- Responsive reader layout for desktop and mobile
+
+#### Highlights
+- Text selection inside PDFs
+- Create highlights from selected text
+- Multiple highlight colors
+- Attach notes to highlights
+- Delete highlights
+- Highlights remain linked to their source book and page
+
+#### Notes
+- Create notes directly from the PDF reader
+- Notes automatically link to the current book and page
+- Markdown-based note editor
+- Markdown preview
+- Search notes
+- Sort notes
+- Filter notes by book
+- Group notes by book or subject
+- Favorite notes
+- Pin notes
+- Edit existing notes
+- Export notes as Markdown
+- Export notes as JSON
+
+#### Bookmarks
+- Add bookmarks while reading
+- Remove bookmarks
+- View bookmarks inside the reader sidebar
+- Bookmarks remain linked to individual books and pages
+
+#### Search
+- Cross-library search infrastructure
+- Search across:
+  - Books
+  - Notes
+  - Highlights
+  - Bookmarks
+  - Tags
+- Search results can navigate to the relevant content
+- In-book search support
+
+#### Reading Dashboard
+The dashboard now displays real reading activity:
+
+- Books in library
+- Pages read
 - Highlights
-- Sticky notes
+- Notes
 - Bookmarks
-- Continue Reading
-- Reader improvements
+- Reading streak
+- Reading time
+- Continue Reading shortcut
+
+#### Backup & Export
+- JSON backup export
+- Markdown note export
+- Local-first backup workflow
+- No cloud storage required
+
+### Improved
+
+- PDF reader architecture
+- Library-to-reader navigation
+- Mobile reader layout
+- Reader sidebar organization
+- Library cards now show reading progress
+- Note management and organization
+- Application-wide search behavior
+- Dashboard now uses actual reading data
+- Database structure expanded to support learning activity
+
+### Database
+
+- Added database schema migration for Sprint 2
+- Added highlights storage
+- Added notes storage
+- Added reading-time tracking
+- Added bookmark cleanup when a library item is removed
+- Existing library data is preserved during migration
+
+### Offline-first
+
+Cellfie remains completely local and offline-first.
+
+No:
+
+- AI
+- Cloud database
+- Paid API
+- User account
+- External learning service
+
+Books, reading progress, notes, highlights and bookmarks continue to use local device storage.
+
+### Technology
+
+- React
+- TypeScript
+- Vite
+- PDF.js
+- Dexie
+- IndexedDB
+- GitHub Pages
+
+### Status
+
+**Sprint 2 complete and deployed.**
+
+This release establishes the core active-learning experience for Cellfie.
+
+
+## Future Roadmap
 
 ---
 
