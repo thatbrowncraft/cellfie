@@ -4,6 +4,7 @@ import {
   Bookmark,
   CaretLeft,
   CaretRight,
+  HighlighterCircle,
   List,
   MagnifyingGlassMinus,
   MagnifyingGlassPlus,
@@ -32,6 +33,11 @@ interface ReaderToolbarProps {
   bookmarked: boolean
   onToggleBookmark: () => void
   onNewNote: () => void
+  /** Bug 1 fix: explicit, always-visible Highlight action — the reliable
+   *  mobile-friendly trigger, and a convenience shortcut on desktop too. */
+  onHighlight: () => void
+  /** Whether there's currently a live text selection to highlight. */
+  canHighlight: boolean
 }
 
 const iconButton =
@@ -62,7 +68,9 @@ export function ReaderToolbar({
   sidebarOpen,
   bookmarked,
   onToggleBookmark,
-  onNewNote
+  onNewNote,
+  onHighlight,
+  canHighlight
 }: ReaderToolbarProps) {
   const [pageInput, setPageInput] = useState(String(currentPage))
 
@@ -157,6 +165,19 @@ export function ReaderToolbar({
         </div>
 
         <div className="flex items-center gap-1 border-l border-border pl-4">
+          <Tooltip label={canHighlight ? 'Highlight the selected text' : 'Select text in the page, then tap here to highlight it'}>
+            <button
+              type="button"
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={onHighlight}
+              disabled={!canHighlight}
+              aria-label="Highlight selected text"
+              className={iconButton}
+            >
+              <HighlighterCircle size={20} weight={canHighlight ? 'fill' : 'regular'} className={canHighlight ? 'text-terracotta' : ''} />
+            </button>
+          </Tooltip>
+
           <Tooltip label="Write a note about this page">
             <button type="button" onClick={onNewNote} aria-label="Write a note about this page" className={iconButton}>
               <NotePencil size={20} />

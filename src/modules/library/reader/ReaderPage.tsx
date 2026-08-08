@@ -12,7 +12,7 @@ import { BottomSheet, EmptyState } from '@/shared/components'
 import { useBreakpoint } from '@/shared/hooks'
 import { usePdfDocument } from '../hooks/usePdfDocument'
 import { ReaderToolbar } from './ReaderToolbar'
-import { ReaderCanvas, type FitMode } from './ReaderCanvas'
+import { ReaderCanvas, type FitMode, type ReaderCanvasHandle } from './ReaderCanvas'
 import { ReaderSidebar } from './ReaderSidebar'
 import { HighlightPopover, type PopoverAnchor } from './HighlightPopover'
 import { NoteEditorDialog } from '@/modules/notes/components/NoteEditorDialog'
@@ -75,6 +75,12 @@ export function ReaderPage() {
 
   const [noteEditorOpen, setNoteEditorOpen] = useState(false)
   const [editingNote, setEditingNote] = useState<Note | undefined>(undefined)
+
+  // Bug 1 fix: lets the toolbar's Highlight button reach into the current
+  // page's TextLayer to finalize whatever selection exists, and tracks
+  // whether that button should be enabled.
+  const canvasRef = useRef<ReaderCanvasHandle>(null)
+  const [hasTextSelection, setHasTextSelection] = useState(false)
 
   const initializedRef = useRef(false)
 
@@ -182,6 +188,14 @@ export function ReaderPage() {
     setPendingSelection({ text, rects, anchor })
   }
 
+  // Bug 1 fix: the toolbar's explicit Highlight button — reads whatever
+  // selection currently exists on the page via the same TextLayer
+  // conversion mouseup/touchend use, so there's still exactly one
+  // highlighting code path (just three ways to trigger it).
+  function handleHighlightButtonClick() {
+    canvasRef.current?.finalizeSelection()
+  }
+
   async function handlePickColorForNewSelection(color: HighlightColor) {
     if (!id || !pendingSelection) return
     await addHighlight({ itemId: id, page, color, rects: pendingSelection.rects, text: pendingSelection.text })
@@ -273,11 +287,23 @@ export function ReaderPage() {
     onScaleChange: setScale,
     highlights: pageHighlights,
     onSelectionFinalize: handleSelectionFinalize,
-    onSelectHighlight: handleSelectHighlight
+    onSelectHighlight: handleSelectHighlight,
+    onSelectionAvailabilityChange: setHasTextSelection
   }
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] flex-col">
+    // Mobile-viewport bugfix: below `sm:` the app shell's <main> adds
+    // `pb-20` (5rem) of bottom padding to clear the fixed BottomNav, on
+    // top of the 4rem TopNav — so the reader needs to subtract both
+    // (9rem total), not just the TopNav, or this box ends up taller than
+    // the visible viewport. That extra height was making the *document*
+    // scrollable behind the reader's own internal scroll areas, so a
+    // scroll/pan gesture could land on the wrong scroll container
+    // entirely. `100dvh` (vs `100vh`) also keeps this correct as the
+    // mobile browser's address bar shows/hides. Desktop/tablet (`sm:`
+    // and up, no BottomNav, no extra padding) keeps the original,
+    // unchanged 4rem-only calculation.
+    <div className="flex h-[calc(100dvh-9rem)] flex-col sm:h-[calc(100vh-4rem)]">
       <ReaderToolbar
         title={item?.title ?? 'Loading…'}
         currentPage={page}
@@ -297,6 +323,8 @@ export function ReaderPage() {
         bookmarked={Boolean(currentBookmark)}
         onToggleBookmark={() => void toggleBookmark()}
         onNewNote={handleNewNoteForCurrentPage}
+        onHighlight={handleHighlightButtonClick}
+        canHighlight={hasTextSelection}
       />
 
       <div className="min-h-0 flex-1">
@@ -318,7 +346,7 @@ export function ReaderPage() {
         {!error && doc && numPages ? (
           isMobile ? (
             <>
-              <ReaderCanvas {...canvasProps} doc={doc} />
+              <ReaderCanvas ref={canvasRef} {...canvasProps} doc={doc} />
               <BottomSheet open={sidebarOpen} onClose={() => setSidebarOpen(false)} title="Pages, highlights & notes">
                 {sidebar}
               </BottomSheet>
@@ -327,11 +355,11 @@ export function ReaderPage() {
             <SplitLayout
               className="h-full"
               primaryWidth="75%"
-              primary={<ReaderCanvas {...canvasProps} doc={doc} />}
+              primary={<ReaderCanvas ref={canvasRef} {...canvasProps} doc={doc} />}
               secondary={<div className="h-full overflow-y-auto p-4">{sidebar}</div>}
             />
           ) : (
-            <ReaderCanvas {...canvasProps} doc={doc} />
+            <ReaderCanvas ref={canvasRef} {...canvasProps} doc={doc} />
           )
         ) : null}
       </div>

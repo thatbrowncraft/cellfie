@@ -1,8 +1,16 @@
-import { useEffect, useLayoutEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from 'react'
+import {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type MouseEvent as ReactMouseEvent
+} from 'react'
 import type { PDFDocumentProxy, RenderTask } from 'pdfjs-dist'
 import { getPageSize, renderPageToCanvas } from '@/core/pdf-engine'
 import type { Highlight, HighlightRect } from '@/core/db'
-import { TextLayer } from './TextLayer'
+import { TextLayer, type TextLayerHandle } from './TextLayer'
 import { HighlightsLayer } from './HighlightsLayer'
 
 export type FitMode = 'width' | 'page' | 'custom'
@@ -21,6 +29,15 @@ interface ReaderCanvasProps {
   onSelectionFinalize?: (text: string, rects: HighlightRect[], anchor: { x: number; y: number }) => void
   /** Fires when an existing highlight is clicked — the reader opens the edit popover, anchored at the click point. */
   onSelectHighlight?: (highlight: Highlight, anchor: { x: number; y: number }) => void
+  /** Mobile highlighting bugfix: reports live text-selection state so the toolbar can enable its Highlight button. */
+  onSelectionAvailabilityChange?: (available: boolean) => void
+}
+
+export interface ReaderCanvasHandle {
+  /** Finalizes whatever text selection currently exists on the page into a
+   *  highlight-ready selection — delegates straight to the TextLayer's own
+   *  handle. Used by the toolbar's Highlight button (Bug 1 fix). */
+  finalizeSelection: () => boolean
 }
 
 // Breathing room around the page inside the scrollable viewport, so a
@@ -31,23 +48,33 @@ const PAGE_PADDING = 32
  * Renders the current page onto a canvas, recomputing scale for
  * fit-width/fit-page modes from the container's measured size. Scrolls
  * internally so a manually zoomed-in page can be panned without affecting
- * the rest of the reader.
+ * the rest of the reader. `overscroll-contain` keeps that internal pan/
+ * zoom scroll from rubber-band-chaining into the page behind it on mobile.
  */
-export function ReaderCanvas({
-  doc,
-  pageNumber,
-  fitMode,
-  scale,
-  onScaleChange,
-  highlights = [],
-  onSelectionFinalize,
-  onSelectHighlight
-}: ReaderCanvasProps) {
+export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(function ReaderCanvas(
+  {
+    doc,
+    pageNumber,
+    fitMode,
+    scale,
+    onScaleChange,
+    highlights = [],
+    onSelectionFinalize,
+    onSelectHighlight,
+    onSelectionAvailabilityChange
+  },
+  ref
+) {
   const containerRef = useRef<HTMLDivElement>(null)
   const pageRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const textLayerRef = useRef<TextLayerHandle>(null)
   const [naturalSize, setNaturalSize] = useState<{ width: number; height: number } | null>(null)
   const [containerSize, setContainerSize] = useState<{ width: number; height: number } | null>(null)
+
+  useImperativeHandle(ref, () => ({
+    finalizeSelection: () => textLayerRef.current?.finalizeSelection() ?? false
+  }))
 
   useLayoutEffect(() => {
     const el = containerRef.current
@@ -136,7 +163,10 @@ export function ReaderCanvas({
   }
 
   return (
-    <div ref={containerRef} className="flex h-full w-full items-start justify-center overflow-auto bg-canvas p-4">
+    <div
+      ref={containerRef}
+      className="flex h-full w-full items-start justify-center overflow-auto overscroll-contain bg-canvas p-4"
+    >
       <div
         ref={pageRef}
         onClick={handlePageClick}
@@ -149,11 +179,13 @@ export function ReaderCanvas({
             <HighlightsLayer highlights={highlights} naturalSize={naturalSize} scale={effectiveScale} />
             {onSelectionFinalize && (
               <TextLayer
+                ref={textLayerRef}
                 doc={doc}
                 pageNumber={pageNumber}
                 naturalSize={naturalSize}
                 scale={effectiveScale}
                 onSelectionFinalize={onSelectionFinalize}
+                onSelectionAvailabilityChange={onSelectionAvailabilityChange}
               />
             )}
           </>
@@ -161,4 +193,4 @@ export function ReaderCanvas({
       </div>
     </div>
   )
-}
+})

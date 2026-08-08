@@ -72,6 +72,14 @@ export function ReaderThumbnail({ doc, pageNumber, active, onSelect }: ReaderThu
         'flex w-full items-center gap-3 rounded-sm border p-2 text-left transition-colors duration-micro',
         active ? 'border-terracotta bg-surface-raised' : 'border-border hover:bg-surface-raised'
       )}
+      // Perf hardening for very long books (e.g. 1200+ pages): lets the
+      // browser skip layout/paint work for rows far outside the viewport
+      // instead of keeping all of them fully "hot," which is what was
+      // making scroll janky enough to register stray taps on whatever
+      // thumbnail happened to be under the finger when a fling stopped.
+      // Doesn't change what's rendered or how IntersectionObserver above
+      // detects visibility — purely a rendering-cost hint.
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 64px' }}
     >
       <span className="flex h-16 w-12 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-border bg-white">
         {visible ? (
