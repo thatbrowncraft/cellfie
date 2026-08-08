@@ -236,7 +236,11 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
         className="relative rounded-sm border border-border bg-white shadow-1"
         style={naturalSize ? { width: naturalSize.width * effectiveScale, height: naturalSize.height * effectiveScale } : undefined}
       >
-        <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+       <canvas
+  ref={canvasRef}
+  className="absolute inset-0 h-full w-full pointer-events-none"
+  style={{ zIndex: 1 }}
+/>
         {DIAGNOSTICS_ENABLED && diag && <DiagnosticsPanel diag={diag} />}
         {naturalSize && effectiveScale > 0 && (
           <>
