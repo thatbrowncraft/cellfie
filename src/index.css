@@ -25,6 +25,15 @@
   --color-warning: #b8843c;
   --color-error: #a24b3d;
 
+  /* Sprint 2 — text-highlight marker colors (Study Companion §1). Muted
+     to sit inside the warm-brown palette rather than reading as generic
+     stationery-store neon; still clearly yellow/green/blue/pink at a
+     glance, which is the whole point of color-coding highlights. */
+  --color-marker-yellow: #e8d16a;
+  --color-marker-green: #9bbf7e;
+  --color-marker-blue: #8fb3c9;
+  --color-marker-pink: #e0a0ad;
+
   --scrim: rgba(58, 46, 34, 0.4);
   color-scheme: light;
 }
@@ -44,6 +53,14 @@
   --color-success: #7a9a6e;
   --color-warning: #d2a15e;
   --color-error: #c26c5b;
+
+  /* Slightly deeper so `mix-blend-mode: multiply` reads correctly against
+     a dark canvas (multiply against dark backgrounds washes light colors
+     out otherwise). */
+  --color-marker-yellow: #c9a83f;
+  --color-marker-green: #6f9457;
+  --color-marker-blue: #5f8aa3;
+  --color-marker-pink: #b96e7d;
 
   --scrim: rgba(0, 0, 0, 0.5);
   color-scheme: dark;
