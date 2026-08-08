@@ -11,6 +11,11 @@
  * given page onto a caller-supplied canvas at an arbitrary scale (used
  * for both the main page view and sidebar thumbnails), and reading a
  * page's natural (scale-1) size for fit-width/fit-page math.
+ *
+ * Sprint 2 (Study Companion milestone) adds one more thin wrapper,
+ * `getPageTextContent`, exposing PDF.js's per-page text items so the
+ * reader can lay down an invisible, selectable text layer over the
+ * rendered canvas — the basis for Text Highlighting (§1).
  */
 
 import * as pdfjsLib from 'pdfjs-dist'
@@ -22,6 +27,22 @@ import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
 export type { PDFDocumentProxy, RenderTask } from 'pdfjs-dist'
+
+/**
+ * The subset of PDF.js's `TextItem` shape the text layer actually reads.
+ * Defined locally instead of imported from pdfjs-dist's internal type
+ * path, which isn't part of its stable public export surface.
+ */
+export interface PdfTextItem {
+  str: string
+  dir: string
+  /** 2D transform matrix [a, b, c, d, e, f], PDF (bottom-up) coordinate space. */
+  transform: number[]
+  width: number
+  height: number
+  fontName: string
+  hasEOL: boolean
+}
 
 export interface ParsedPdfMetadata {
   title?: string
@@ -87,6 +108,23 @@ export async function getPageSize(
   const page = await doc.getPage(pageNumber)
   const viewport = page.getViewport({ scale: 1 })
   return { width: viewport.width, height: viewport.height }
+}
+
+/** A page's text items plus the viewport transform needed to place them (scale-1, i.e. natural page space). */
+export async function getPageTextContent(
+  doc: pdfjsLib.PDFDocumentProxy,
+  pageNumber: number
+): Promise<{ items: PdfTextItem[]; viewportTransform: number[] }> {
+  const page = await doc.getPage(pageNumber)
+  const viewport = page.getViewport({ scale: 1 })
+  const textContent = await page.getTextContent()
+  const items = textContent.items.filter((item): item is PdfTextItem => 'str' in item) as unknown as PdfTextItem[]
+  return { items, viewportTransform: viewport.transform }
+}
+
+/** Re-exports PDF.js's small matrix-transform helper so the text layer doesn't need its own copy. */
+export function transformPoint(m: number[], p: number[]): number[] {
+  return pdfjsLib.Util.transform(m, p)
 }
 
 /**
