@@ -9,6 +9,27 @@ interface PositionedItem {
   top: number
   fontSize: number
   angleDeg: number
+  /**
+   * Sprint 2.1 §6 bugfix: horizontal correction so this span's *rendered*
+   * width (in our invisible fallback font) matches the PDF's actual glyph
+   * width (`item.width`), not just its font-size/position. See the
+   * `measureFallbackWidth` comment below for why this matters.
+   */
+  scaleX: number
+}
+
+/**
+ * A single offscreen 2d context, reused across every span/page — avoids
+ * allocating a canvas per text item just to measure a string.
+ */
+let measureCtx: CanvasRenderingContext2D | null = null
+function measureFallbackWidth(text: string, fontSizePx: number): number {
+  if (!measureCtx) {
+    measureCtx = document.createElement('canvas').getContext('2d')
+  }
+  if (!measureCtx) return 0
+  measureCtx.font = `${fontSizePx}px sans-serif`
+  return measureCtx.measureText(text).width
 }
 
 interface TextLayerProps {
@@ -75,12 +96,31 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(function Te
           const tx = transformPoint(viewportTransform, item.transform)
           const angleRad = Math.atan2(tx[1], tx[0])
           const fontSize = Math.hypot(tx[2], tx[3])
+          // Sprint 2.1 §6 bugfix (root cause of misaligned highlights):
+          // these spans render in a generic fallback font ("sans-serif")
+          // since we don't load/match the PDF's actual embedded fonts —
+          // fine, since the text is invisible, EXCEPT that fallback font
+          // renders each string at a different width than the PDF's true
+          // glyph width (`item.width`). Left uncorrected, a selection's
+          // `getClientRects()` reflects the *fallback font's* layout, not
+          // the real PDF layout — spans run wider/narrower than their
+          // intended slot, so multi-word/multi-line selections produce
+          // rects that don't tightly track the visible text, which is
+          // exactly what showed up as oversized/misaligned highlight
+          // blocks. Stretching each span horizontally so its rendered
+          // width matches `item.width` (PDF.js's own technique for its
+          // real text layer) fixes both the *visible* selection
+          // highlighting the browser draws and the rects Cellfie captures
+          // from it — same coordinate system, corrected at the source.
+          const measuredWidth = measureFallbackWidth(item.str, fontSize)
+          const scaleX = measuredWidth > 0 && item.width > 0 ? item.width / measuredWidth : 1
           return {
             item,
             left: tx[4],
             top: tx[5] - fontSize,
             fontSize,
-            angleDeg: (angleRad * 180) / Math.PI
+            angleDeg: (angleRad * 180) / Math.PI,
+            scaleX
           }
         })
       setPositioned(next)
@@ -179,7 +219,7 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(function Te
         transform: `scale(${scale})`
       }}
     >
-      {positioned.map(({ item, left, top, fontSize, angleDeg }, i) => (
+      {positioned.map(({ item, left, top, fontSize, angleDeg, scaleX }, i) => (
         <span
           key={i}
           style={{
@@ -188,7 +228,11 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(function Te
             top,
             fontSize,
             fontFamily: 'sans-serif',
-            transform: angleDeg ? `rotate(${angleDeg}deg)` : undefined,
+            // scaleX corrects the fallback font's width to match the PDF's
+            // real glyph width (see measureFallbackWidth above) — applied
+            // first (innermost), then rotate, so a rotated run's box is
+            // width-corrected before it's tilted, not after.
+            transform: `rotate(${angleDeg}deg) scaleX(${scaleX})`,
             transformOrigin: 'left bottom',
             whiteSpace: 'pre',
             color: 'transparent',
