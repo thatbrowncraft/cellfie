@@ -19,6 +19,27 @@ interface PositionedItem {
   top: number
   fontSize: number
   angleDeg: number
+  /**
+   * Missing-spaces bugfix: whether a real space character should be
+   * rendered immediately after this item's own text. PDF.js's text
+   * extraction (see `getTextContent`) already decides, per pair of
+   * glyphs, whether a gap is a real word-space or just kerning within a
+   * word — real word-spaces either get folded into an item's `str`
+   * directly, or (often for justified text, where the word-gap width
+   * varies) get pushed as their own standalone whitespace-only item
+   * (`str: ' '`). Our previous `item.str.trim().length > 0` filter
+   * discarded exactly those standalone whitespace items, which is what
+   * caused selected text to lose spaces at those specific boundaries.
+   * The fix has two parts: (1) stop filtering out non-empty whitespace
+   * items, so they render as real space characters in the DOM between
+   * word spans, and (2) explicitly add a trailing space whenever
+   * `item.hasEOL` is true, because a line-wrap's implicit space is
+   * "consumed" by the wrap itself and never appears in any item's str.
+   * Both signals come straight from PDF.js's own word/line detection —
+   * nothing here guesses at word boundaries independently, so it can't
+   * split a real word.
+   */
+  trailingSpace: boolean
 }
 
 interface TextLayerProps {
@@ -65,25 +86,39 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
         ({ items, viewportTransform }) => {
           if (cancelled) return
 
-          const next: PositionedItem[] = items
-            .filter((item) => item.str.trim().length > 0)
-            .map((item) => {
-              const tx = transformPoint(
-                viewportTransform,
-                item.transform
-              )
-
-              const angleRad = Math.atan2(tx[1], tx[0])
-              const fontSize = Math.hypot(tx[2], tx[3])
-
-              return {
-                item,
-                left: tx[4],
-                top: tx[5] - fontSize,
-                fontSize,
-                angleDeg: (angleRad * 180) / Math.PI
+          // Missing-spaces bugfix: walk items in their original (reading)
+          // order rather than filtering-then-mapping independently, so a
+          // zero-width "line ended here" marker item (PDF.js pushes
+          // `{ str: '', hasEOL: true }` when nothing was accumulating at
+          // the line break) can still mark the *previous rendered* word
+          // as needing a trailing space, even though the marker itself
+          // has no text and isn't rendered as its own span.
+          const next: PositionedItem[] = []
+          for (const item of items) {
+            if (item.str.length === 0) {
+              if (item.hasEOL && next.length > 0) {
+                next[next.length - 1].trailingSpace = true
               }
+              continue
+            }
+
+            const tx = transformPoint(viewportTransform, item.transform)
+            const angleRad = Math.atan2(tx[1], tx[0])
+            const fontSize = Math.hypot(tx[2], tx[3])
+
+            next.push({
+              item,
+              left: tx[4],
+              top: tx[5] - fontSize,
+              fontSize,
+              angleDeg: (angleRad * 180) / Math.PI,
+              // A real (non-empty) item that itself ends a line also
+              // needs a trailing space — this is the common case, since
+              // PDF.js sets hasEOL directly on the last accumulated item
+              // of a line rather than pushing a separate empty marker.
+              trailingSpace: item.hasEOL
             })
+          }
 
           setPositioned(next)
         }
@@ -237,7 +272,7 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
     `}</style>
 
     {positioned.map(
-      ({ item, left, top, fontSize, angleDeg }, i) => (
+      ({ item, left, top, fontSize, angleDeg, trailingSpace }, i) => (
         <span
           key={i}
           className="cellfie-pdf-text-span"
@@ -257,7 +292,16 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
             WebkitUserSelect: 'text'
           }}
         >
-          {item.str}
+          {/*
+            Missing-spaces bugfix: appending a real trailing space
+            character (not a CSS trick) here means `window.getSelection()
+            .toString()` — the exact same string the highlight/note UI
+            uses — reads it as an actual space. Since this whole span is
+            already invisible (`color: transparent`) and only exists for
+            selection, an extra trailing space glyph has no visible
+            effect on the rendered PDF; it only fixes the DOM text.
+          */}
+          {trailingSpace ? `${item.str} ` : item.str}
         </span>
       )
     )}
