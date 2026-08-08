@@ -219,55 +219,50 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
           WebkitUserSelect: 'text'
         }}
       >
-        {positioned.map(
-          (
-            {
-              item,
-              left,
-              top,
-              fontSize,
-              angleDeg
-            },
-            i
-          ) => (
-            <span
-              key={i}
-              className="cellfie-pdf-text-span"
-              style={{
-                position: 'absolute',
+        return (
+  <div
+    ref={containerRef}
+    className="cellfie-pdf-text-layer absolute left-0 top-0 select-text"
+    style={{
+      width: naturalSize.width * scale,
+      height: naturalSize.height * scale,
+      zIndex: 10,
+      userSelect: 'text',
+      WebkitUserSelect: 'text'
+    }}
+  >
+    {/* Explicit selection style override */}
+    <style>{`
+      .cellfie-pdf-text-layer ::selection {
+        background: rgba(0, 102, 204, 0.35) !important;
+        color: transparent !important;
+      }
+    `}</style>
 
-                left: left * scale,
-
-                top: top * scale,
-
-                fontSize: fontSize * scale,
-
-                fontFamily: 'sans-serif',
-
-                transform:
-                  `rotate(${angleDeg}deg)`,
-
-                transformOrigin:
-                  'left bottom',
-
-                whiteSpace: 'pre',
-
-                color: 'transparent',
-
-                lineHeight: 1,
-
-                cursor: 'text',
-
-                userSelect: 'text',
-
-                WebkitUserSelect: 'text'
-              }}
-            >
-              {item.str}
-            </span>
-          )
-        )}
-      </div>
-    )
-  }
+    {positioned.map(
+      ({ item, left, top, fontSize, angleDeg }, i) => (
+        <span
+          key={i}
+          className="cellfie-pdf-text-span"
+          style={{
+            position: 'absolute',
+            left: left * scale,
+            top: top * scale,
+            fontSize: fontSize * scale,
+            fontFamily: 'sans-serif',
+            transform: `rotate(${angleDeg}deg)`,
+            transformOrigin: 'left bottom',
+            whiteSpace: 'pre',
+            color: 'transparent',
+            lineHeight: 1,
+            cursor: 'text',
+            userSelect: 'text',
+            WebkitUserSelect: 'text'
+          }}
+        >
+          {item.str}
+        </span>
+      )
+    )}
+  </div>
 )
