@@ -212,3 +212,25 @@ h1, h2, h3, h4, .font-display {
 .hover-wash-error:hover {
   background-color: color-mix(in srgb, var(--color-error) 10%, transparent);
 }
+
+/* ==========================================================================
+   Sprint 2.3 — PDF reader text-layer selection fix.
+   The reader's text layer (modules/library/reader/TextLayer.tsx) draws
+   PDF.js's per-page text items as invisible (`color: transparent`) spans
+   over the canvas, so native Android/desktop text selection works. Some
+   Chrome/Android combinations don't fully honor `color: transparent` on
+   the *selected* portion of text — the OS selection-paint step can repaint
+   selected glyphs in a default foreground color regardless of the
+   element's own color, which briefly makes the invisible layer visible,
+   stacked on top of the real canvas-rendered glyphs. Forcing transparency
+   specifically on the `::selection` pseudo-element closes that gap: the
+   native blue selection *background* still shows normally (selection
+   remains fully visible/usable), but the glyphs it's drawn over never do.
+   ========================================================================== */
+.cellfie-pdf-text-span::selection {
+  color: transparent;
+}
+.cellfie-pdf-text-span::-moz-selection {
+  color: transparent;
+}
+
