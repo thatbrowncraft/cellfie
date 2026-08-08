@@ -127,6 +127,14 @@ export function transformPoint(m: number[], p: number[]): number[] {
   return pdfjsLib.Util.transform(m, p)
 }
 
+// Sprint 2.1 §1 bugfix: caps for the HiDPI backing-store boost below, so a
+// big zoomed-in page on a high-devicePixelRatio phone can't blow past a
+// sane canvas size and stall/crash the tab. One page is ever rendered at
+// a time in this architecture, so these are per-canvas ceilings, not a
+// budget shared across pages.
+const MAX_CANVAS_DIMENSION = 4096
+const MAX_CANVAS_PIXELS = 16_000_000
+
 /**
  * Renders one page onto a caller-supplied canvas at the given scale and
  * returns the underlying PDF.js `RenderTask`. Callers should hold onto it
@@ -134,6 +142,25 @@ export function transformPoint(m: number[], p: number[]): number[] {
  * don't pile up concurrent renders onto the same canvas — PDF.js throws
  * a `RenderingCancelledException` in that case, which is expected and
  * safe to ignore.
+ *
+ * Sprint 2.1 §1 bugfix: the canvas's backing store (its `width`/`height`
+ * attributes, i.e. actual pixel count) used to always equal the CSS
+ * viewport size at `scale` — correct on a standard-density screen, but
+ * on any devicePixelRatio > 1 display (basically every modern phone) the
+ * browser then had to upscale that 1x bitmap to cover 2-3x as many
+ * physical pixels, so the page was permanently soft at *any* zoom level
+ * (the mismatch is the same regardless of which scale is chosen — matches
+ * the report that changing the zoom % didn't reliably sharpen anything).
+ * Rendering into a backing store sized for the device's real pixel
+ * density fixes this at the source. The canvas's CSS/display size is left
+ * untouched here — it's still driven by the caller's own layout (which
+ * sizes it to `viewport.width`/`height` in CSS px) — so this only changes
+ * how many physical pixels PDF.js draws into, never the CSS box that
+ * zoom/fit-width/fit-page math and the surrounding page frame are built
+ * from. The extra resolution comes from PDF.js's own `render({ transform })`
+ * option (a canvas-space matrix PDF.js applies while drawing), not a CSS
+ * transform, per the "don't use CSS transform as the zoom mechanism"
+ * requirement.
  */
 export async function renderPageToCanvas(
   doc: pdfjsLib.PDFDocumentProxy,
@@ -145,7 +172,21 @@ export async function renderPageToCanvas(
   const viewport = page.getViewport({ scale })
   const ctx = canvas.getContext('2d')
   if (!ctx) throw new Error('Canvas 2D context unavailable')
-  canvas.width = Math.ceil(viewport.width)
-  canvas.height = Math.ceil(viewport.height)
-  return page.render({ canvasContext: ctx, viewport })
+
+  const rawPixelRatio = typeof window !== 'undefined' && window.devicePixelRatio ? window.devicePixelRatio : 1
+  const area = Math.max(viewport.width * viewport.height, 1)
+  const longestSide = Math.max(viewport.width, viewport.height, 1)
+  // Never let the DPR boost push the backing store past either ceiling —
+  // falls back toward 1x (still correct, just not extra-sharp) rather
+  // than an oversized canvas, on a huge/zoomed-in page.
+  const budgetRatio = Math.sqrt(MAX_CANVAS_PIXELS / area)
+  const dimensionRatio = MAX_CANVAS_DIMENSION / longestSide
+  const pixelRatio = Math.max(1, Math.min(rawPixelRatio, budgetRatio, dimensionRatio))
+
+  canvas.width = Math.max(1, Math.round(viewport.width * pixelRatio))
+  canvas.height = Math.max(1, Math.round(viewport.height * pixelRatio))
+
+  const transform = pixelRatio !== 1 ? [pixelRatio, 0, 0, pixelRatio, 0, 0] : undefined
+
+  return page.render({ canvasContext: ctx, viewport, transform })
 }
