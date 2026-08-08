@@ -40,12 +40,20 @@ export function BottomSheet({ open, onClose, title, children }: BottomSheetProps
         aria-modal="true"
         aria-labelledby="sheet-title"
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-lg rounded-t-lg bg-surface p-6 pb-8 shadow-3 animate-in-up"
+        // Mobile scroll-container bugfix: this box used to have no height
+        // cap, so long content (e.g. a 1000+ page thumbnail list) grew the
+        // sheet taller than the viewport with nowhere of its own to
+        // scroll — the gesture meant for this content could instead land
+        // on the page/document scroll behind it. Capping the sheet and
+        // giving only its content area `overflow-y-auto` (below) makes
+        // this one bounded, self-contained scroll region, matching how
+        // the desktop split-panel equivalent already behaves.
+        className="flex max-h-[85dvh] w-full max-w-lg flex-col rounded-t-lg bg-surface p-6 pb-8 shadow-3 animate-in-up"
       >
-        <div className="mb-4 flex justify-center">
+        <div className="mb-4 flex shrink-0 justify-center">
           <div className="h-1.5 w-10 rounded-full bg-border-strong" aria-hidden />
         </div>
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-4 flex shrink-0 items-center justify-between">
           <h2 id="sheet-title" className="font-display text-h3 font-medium text-ink-primary">
             {title}
           </h2>
@@ -57,7 +65,9 @@ export function BottomSheet({ open, onClose, title, children }: BottomSheetProps
             Done
           </button>
         </div>
-        <div className="font-body text-body text-ink-secondary">{children}</div>
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain font-body text-body text-ink-secondary">
+          {children}
+        </div>
       </div>
     </div>
   )
