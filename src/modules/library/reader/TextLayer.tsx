@@ -125,28 +125,33 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
       const clientRects = Array.from(
         range.getClientRects()
       )
-
-      const rects: HighlightRect[] = clientRects
-        .filter(
-          (rect) =>
-            rect.width > 1 &&
-            rect.height > 1
-        )
+      const rawRects = clientRects
+        .filter((rect) => rect.width > 1 && rect.height > 1)
         .map((rect) => ({
-          x:
-            (rect.left - containerRect.left) /
-            scale,
-
-          y:
-            (rect.top - containerRect.top) /
-            scale,
-
-          width:
-            rect.width / scale,
-
-          height:
-            rect.height / scale
+          x: (rect.left - containerRect.left) / scale,
+          y: (rect.top - containerRect.top) / scale,
+          width: rect.width / scale,
+          height: rect.height / scale
         }))
+
+      // Merge word bounding boxes on the same line into unified highlight bars
+      const rects: HighlightRect[] = []
+      for (const rect of rawRects) {
+        const sameLine = rects.find(
+          (r) => Math.abs(r.y - rect.y) < 6
+        )
+        if (sameLine) {
+          const minX = Math.min(sameLine.x, rect.x)
+          const maxX = Math.max(sameLine.x + sameLine.width, rect.x + rect.width)
+          sameLine.x = minX
+          sameLine.width = maxX - minX
+          sameLine.y = Math.min(sameLine.y, rect.y)
+          sameLine.height = Math.max(sameLine.height, rect.height)
+        } else {
+          rects.push({ ...rect })
+        }
+      }
+
 
       if (rects.length === 0) {
         return false
