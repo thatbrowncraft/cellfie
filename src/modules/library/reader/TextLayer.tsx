@@ -134,16 +134,16 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
           height: rect.height / scale
         }))
 
-            // Merge word bounding boxes on the same line only if close together
+               // Merge word bounding boxes on the same line (tight gap tolerance to prevent column overflow)
       const rects: HighlightRect[] = []
       for (const rect of rawRects) {
         const sameLine = rects.find((r) => {
-          const sameRow = Math.abs(r.y - rect.y) < 5
+          const sameRow = Math.abs(r.y - rect.y) < Math.max(3, rect.height * 0.3)
           const gap = Math.max(
             0,
             Math.max(r.x, rect.x) - Math.min(r.x + r.width, rect.x + rect.width)
           )
-          return sameRow && gap < 12
+          return sameRow && gap <= 4
         })
 
         if (sameLine) {
@@ -157,8 +157,6 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
           rects.push({ ...rect })
         }
       }
-
-
 
       if (rects.length === 0) {
         return false
@@ -249,7 +247,7 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
             left: left * scale,
             top: top * scale,
             fontSize: fontSize * scale,
-            fontFamily: 'sans-serif',
+            fontFamily: 'serif',
             transform: `rotate(${angleDeg}deg)`,
             transformOrigin: 'left bottom',
             whiteSpace: 'pre',
