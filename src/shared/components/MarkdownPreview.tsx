@@ -17,7 +17,10 @@ interface MarkdownPreviewProps {
 export function MarkdownPreview({ markdown, className }: MarkdownPreviewProps) {
   const blocks = parseBlocks(markdown)
   return (
-    <div className={cn('flex flex-col gap-3 font-body text-body text-ink-primary', className)}>
+    <div
+      className={cn('flex min-w-0 flex-col gap-3 font-body text-body text-ink-primary', className)}
+      style={{ overflowWrap: 'anywhere', wordBreak: 'break-word' }}
+    >
       {blocks.map((block, i) => (
         <Fragment key={i}>{renderBlock(block)}</Fragment>
       ))}
@@ -137,8 +140,17 @@ function renderBlock(block: Block) {
       return <Tag className={cn('font-display font-medium text-ink-primary', sizeClass)}>{renderInline(block.text, 'h')}</Tag>
     }
     case 'quote':
+      // Mobile modal overflow bugfix: the selected-PDF-text quote is the
+      // one block most likely to contain a long run with no natural
+      // break point (this is also what the missing-spaces TextLayer fix
+      // addresses at the source). Wrapping defensively here — rather
+      // than relying solely on the source always having spaces — keeps
+      // the preview box from ever forcing horizontal overflow.
       return (
-        <blockquote className="rounded-sm border-l-4 border-terracotta bg-surface-raised px-4 py-2 font-body italic text-ink-secondary">
+        <blockquote
+          className="rounded-sm border-l-4 border-terracotta bg-surface-raised px-4 py-2 font-body italic text-ink-secondary"
+          style={{ overflowWrap: 'anywhere', wordBreak: 'break-word', whiteSpace: 'normal' }}
+        >
           {renderInline(block.text, 'q')}
         </blockquote>
       )

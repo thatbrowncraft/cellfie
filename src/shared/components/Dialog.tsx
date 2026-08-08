@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { X } from '@phosphor-icons/react'
 import { useFocusTrap } from '../hooks/useFocusTrap'
 import { cn } from '../utils/cn'
@@ -38,12 +39,38 @@ export function Dialog({ open, onClose, title, children, actions, closeOnEscape 
     return () => document.removeEventListener('keydown', onKey)
   }, [open, closeOnEscape, onClose])
 
+  // Mobile modal overflow bugfix: lock the underlying page's scroll while
+  // the dialog is open. Without this, a touch-scroll gesture over the
+  // dialog's own scrim (or the reader page behind it) can move the real
+  // page scroll position on Android; combined with `100vh`-based sizing
+  // that doesn't account for the browser's collapsing/expanding address
+  // bar, that's what let the dialog appear to drift and clip its own
+  // header/footer instead of staying pinned to the visible viewport.
+  useEffect(() => {
+    if (!open) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [open])
+
   if (!open) return null
 
-  return (
+  // Mobile modal overflow bugfix: rendered via a portal straight onto
+  // `document.body` rather than in place in the React tree. This dialog
+  // is used from inside the PDF reader (`ReaderPage`), and `position:
+  // fixed` only measures against the real viewport as long as no
+  // ancestor establishes its own containing block (a CSS `transform`,
+  // `filter`, or `overflow` other than `visible`) — the reader's own
+  // scrollable/zoomable page container is exactly that kind of ancestor.
+  // Portaling sidesteps the question entirely: this dialog can never be
+  // clipped or repositioned by whatever ancestor happens to render it,
+  // now or in any future change to the reader's layout.
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: 'var(--scrim)' }}
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto p-4"
+      style={{ backgroundColor: 'var(--scrim)', height: '100dvh' }}
       onClick={onClose}
     >
       <div
@@ -52,9 +79,17 @@ export function Dialog({ open, onClose, title, children, actions, closeOnEscape 
         aria-modal="true"
         aria-labelledby="dialog-title"
         onClick={(e) => e.stopPropagation()}
-        className={cn('flex max-h-[85vh] w-full flex-col rounded-lg bg-surface p-6 shadow-3', sizeClasses[size])}
+        className={cn(
+          'flex w-full max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-lg bg-surface p-6 shadow-3',
+          sizeClasses[size]
+        )}
+        // `100dvh` (dynamic viewport height) rather than `100vh` keeps this
+        // correct as the mobile browser's address bar shows/hides, so the
+        // footer (Delete/Cancel/Save) never ends up below the real visible
+        // area even though `100vh` would have measured it as in-bounds.
+        style={{ maxHeight: 'calc(100dvh - 24px)' }}
       >
-        <div className="mb-4 flex items-start justify-between gap-4">
+        <div className="mb-4 flex shrink-0 items-start justify-between gap-4">
           <h2 id="dialog-title" className="font-display text-h3 font-medium text-ink-primary">
             {title}
           </h2>
@@ -63,10 +98,13 @@ export function Dialog({ open, onClose, title, children, actions, closeOnEscape 
           </button>
         </div>
 
-        <div className="min-h-0 overflow-y-auto font-body text-body text-ink-secondary">{children}</div>
+        <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden font-body text-body text-ink-secondary">
+          {children}
+        </div>
 
-        {actions && <div className="mt-6 flex justify-end gap-3">{actions}</div>}
+        {actions && <div className="mt-6 flex shrink-0 flex-wrap justify-end gap-3">{actions}</div>}
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
