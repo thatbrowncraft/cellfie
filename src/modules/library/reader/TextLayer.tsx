@@ -254,3 +254,5 @@ export const TextLayer = forwardRef<TextLayerHandle, TextLayerProps>(
     )}
   </div>
 )
+}
+
