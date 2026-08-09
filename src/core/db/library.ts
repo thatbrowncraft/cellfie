@@ -47,15 +47,22 @@ export async function updateReadingProgress(id: string, page: number): Promise<v
  * own even if the source PDF is later removed; only the `itemId`/`page`/
  * `highlightId` linkage becomes stale (Notebook still shows the note,
  * just without a working "open source" jump).
+ *
+ * Sprint 3: also removes any ConceptSource rows that pointed at this
+ * book (pdf/metadata sources, plus highlight/bookmark sources — those
+ * records are gone too), so a concept's Sources list never shows a
+ * dangling book. The concepts themselves are untouched; only the traces
+ * back to this specific book are cleared.
  */
 export async function removeLibraryItem(item: LibraryItem): Promise<void> {
   await deleteFile(item.filePath)
   if (item.thumbnailPath) {
     await deleteFile(item.thumbnailPath)
   }
-  await db.transaction('rw', db.libraryItems, db.readerBookmarks, db.highlights, async () => {
+  await db.transaction('rw', db.libraryItems, db.readerBookmarks, db.highlights, db.conceptSources, async () => {
     await db.libraryItems.delete(item.id)
     await db.readerBookmarks.where('itemId').equals(item.id).delete()
     await db.highlights.where('itemId').equals(item.id).delete()
+    await db.conceptSources.where('libraryItemId').equals(item.id).delete()
   })
 }

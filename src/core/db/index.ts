@@ -26,6 +26,14 @@
  * tables, `highlights` and `notes`, in a `version(3)` migration — same
  * additive pattern as v2. Nothing about LibraryItem/Collection/
  * ReaderBookmark changes shape; existing rows are untouched.
+ *
+ * Sprint 3 (Offline Knowledge Layer) adds three more genuinely new
+ * tables — `concepts`, `conceptSources`, `conceptRelations` — in a
+ * `version(4)` migration. Same additive pattern as v2/v3: every prior
+ * version's store definitions are repeated unchanged, so upgrading an
+ * existing local database only ever adds stores/indexes, never touches
+ * existing rows in libraryItems/collections/appSettings/readerBookmarks/
+ * highlights/notes.
  */
 
 import Dexie, { type Table } from 'dexie'
@@ -144,6 +152,56 @@ export interface Note {
   updatedAt: number
 }
 
+/** Sprint 3 §2: where a ConceptSource's evidence actually came from. */
+export type ConceptSourceType = 'pdf' | 'highlight' | 'note' | 'bookmark' | 'metadata' | 'manual'
+
+/** Sprint 3 §1: a locally-tracked scientific concept. Never AI-generated — see core/concepts/extraction.ts. */
+export interface Concept {
+  id: string
+  name: string
+  /** Lowercased/trimmed/whitespace-collapsed form of `name`, used for deterministic dedupe/matching (§4). */
+  normalizedName: string
+  aliases: string[]
+  /** User- or source-provided only. Never auto-generated (§1, §14). Absent → UI shows "No description saved yet." */
+  description?: string
+  tags: string[]
+  /** True for concepts the user typed in via "+ New Concept" (§5); false for deterministically extracted ones (§3). */
+  manuallyCreated: boolean
+  firstSeenAt: number
+  lastSeenAt: number
+  createdAt: number
+  updatedAt: number
+}
+
+/**
+ * Sprint 3 §2: a traceable link from a Concept to one real piece of local
+ * evidence — a highlight, a note, a bookmark, a book's own metadata/tags,
+ * a manually-typed relation, or an on-demand PDF text-scan hit. Every row
+ * must point at something that actually exists; see
+ * core/concepts/extraction.ts for the only code paths allowed to create
+ * these.
+ */
+export interface ConceptSource {
+  id: string
+  conceptId: string
+  sourceType: ConceptSourceType
+  libraryItemId?: string
+  pageNumber?: number
+  /** The Highlight/Note/ReaderBookmark id this source is traceable to, when sourceType needs one. */
+  sourceId?: string
+  /** Snippet of the actual matched/linked text, captured at link time — never invented. */
+  sourceText?: string
+  createdAt: number
+}
+
+/** Sprint 3 §10: an explicit, user-asserted relationship between two concepts. Undirected — see core/concepts/service.ts. */
+export interface ConceptRelation {
+  id: string
+  conceptAId: string
+  conceptBId: string
+  createdAt: number
+}
+
 class CellfieDB extends Dexie {
   libraryItems!: Table<LibraryItem, string>
   collections!: Table<Collection, string>
@@ -151,6 +209,9 @@ class CellfieDB extends Dexie {
   readerBookmarks!: Table<ReaderBookmark, string>
   highlights!: Table<Highlight, string>
   notes!: Table<Note, string>
+  concepts!: Table<Concept, string>
+  conceptSources!: Table<ConceptSource, string>
+  conceptRelations!: Table<ConceptRelation, string>
 
   constructor() {
     super('cellfie')
@@ -181,6 +242,29 @@ class CellfieDB extends Dexie {
       readerBookmarks: 'id, itemId, page, createdAt',
       highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
       notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags'
+    })
+    // v4 — Sprint 3, Offline Knowledge Layer: adds `concepts`,
+    // `conceptSources`, and `conceptRelations` only. v1/v2/v3 stores are
+    // repeated unchanged, per Dexie's per-version-snapshot schema model;
+    // no existing table's shape or data changes in this upgrade.
+    this.version(4).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt',
+      highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+      notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+      // normalizedName is unique-ish by convention (enforced in
+      // core/concepts/service.ts, not by Dexie) so extraction can look up
+      // "does a concept with this normalized name already exist" in O(1).
+      concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+      // [conceptId+sourceType] and [conceptId+libraryItemId] back the two
+      // queries the detail page actually runs: "this concept's sources,
+      // grouped by type" and "does this concept already have a source in
+      // this book" (used to avoid duplicate PDF-scan hits).
+      conceptSources:
+        'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+      conceptRelations: 'id, conceptAId, conceptBId, createdAt, [conceptAId+conceptBId]'
     })
   }
 }

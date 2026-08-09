@@ -6,6 +6,7 @@
  */
 
 import { db, type Note } from './index'
+import { removeConceptSourcesForRecord } from '../concepts/service'
 
 export interface NoteInput {
   title: string
@@ -74,6 +75,7 @@ export async function toggleNotePinned(id: string): Promise<void> {
 
 export async function deleteNote(id: string): Promise<void> {
   await db.notes.delete(id)
+  await removeConceptSourcesForRecord('note', id)
 }
 
 /** Creates a note pre-linked to a highlight, seeding the body with the highlighted text as a quote. */

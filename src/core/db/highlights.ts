@@ -6,6 +6,7 @@
  */
 
 import { db, type Highlight, type HighlightColor, type HighlightRect } from './index'
+import { removeConceptSourcesForRecord } from '../concepts/service'
 
 export interface CreateHighlightInput {
   itemId: string
@@ -40,7 +41,8 @@ export async function updateHighlightNote(id: string, note: string): Promise<voi
   await db.highlights.update(id, { note: note.trim() || undefined, updatedAt: Date.now() })
 }
 
-/** Removes a highlight. Any Note that links to it keeps its `highlightId` — the note stands on its own. */
+/** Removes a highlight. Any Note that links to it keeps its `highlightId` — the note stands on its own. Also removes any ConceptSource rows that traced back to this highlight (Sprint 3 §9), so concept detail pages never show a dangling link. */
 export async function removeHighlight(id: string): Promise<void> {
   await db.highlights.delete(id)
+  await removeConceptSourcesForRecord('highlight', id)
 }

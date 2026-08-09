@@ -6,6 +6,7 @@
  */
 
 import { db, type ReaderBookmark } from './index'
+import { removeConceptSourcesForRecord } from '../concepts/service'
 
 /** Saves the given page of a LibraryItem as a bookmark. */
 export async function addBookmark(itemId: string, page: number): Promise<ReaderBookmark> {
@@ -22,4 +23,5 @@ export async function addBookmark(itemId: string, page: number): Promise<ReaderB
 /** Removes a bookmark by id. Safe to call on an already-removed bookmark. */
 export async function removeBookmark(id: string): Promise<void> {
   await db.readerBookmarks.delete(id)
+  await removeConceptSourcesForRecord('bookmark', id)
 }
