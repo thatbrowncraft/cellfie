@@ -4,6 +4,7 @@ import { DashboardPage } from '../modules/dashboard/DashboardPage'
 import { LibraryPage } from '../modules/library/LibraryPage'
 import { ReaderPage } from '../modules/library/reader/ReaderPage'
 import { ConceptsPage } from '../modules/concepts/ConceptsPage'
+import { ConceptDetailPage } from '../modules/concepts/ConceptDetailPage'
 import { OrganismExplorerPage } from '../modules/organism-explorer/OrganismExplorerPage'
 import { LaboratoryPage } from '../modules/laboratory/LaboratoryPage'
 import { ComparisonStudioPage } from '../modules/comparison-studio/ComparisonStudioPage'
@@ -25,6 +26,7 @@ export function AppRouter() {
         <Route path="/library" element={<LibraryPage />} />
         <Route path="/library/:id/read" element={<ReaderPage />} />
         <Route path="/concepts" element={<ConceptsPage />} />
+        <Route path="/concepts/:id" element={<ConceptDetailPage />} />
         <Route path="/organisms" element={<OrganismExplorerPage />} />
         <Route path="/laboratory" element={<LaboratoryPage />} />
         <Route path="/comparison" element={<ComparisonStudioPage />} />
