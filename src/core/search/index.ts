@@ -15,7 +15,7 @@ import { db, type Collection, type Highlight, type LibraryItem, type Note, type 
 
 export interface SearchResult {
   id: string
-  kind: 'note' | 'highlight' | 'bookmark' | 'book' | 'tag'
+  kind: 'note' | 'highlight' | 'bookmark' | 'book' | 'tag' | 'concept'
   title: string
   subtitle?: string
   /** In-app path to navigate to when this result is chosen. */
@@ -36,12 +36,13 @@ export async function searchEverything(query: string): Promise<SearchResultGroup
   const q = query.trim().toLowerCase()
   if (!q) return []
 
-  const [items, notes, highlights, bookmarks, collections] = await Promise.all([
+  const [items, notes, highlights, bookmarks, collections, concepts] = await Promise.all([
     db.libraryItems.toArray(),
     db.notes.toArray(),
     db.highlights.toArray(),
     db.readerBookmarks.toArray(),
-    db.collections.toArray()
+    db.collections.toArray(),
+    db.concepts.toArray()
   ])
 
   const itemsById = new Map(items.map((i) => [i.id, i]))
@@ -93,12 +94,25 @@ export async function searchEverything(query: string): Promise<SearchResultGroup
     .filter((t) => matches(t, q))
     .map((t) => ({ id: t, kind: 'tag', title: `#${t}`, path: `/notes?tag=${encodeURIComponent(t)}` }))
 
+  // Sprint 3 §15: Concept results in the same universal search, clearly
+  // labeled with their own group like every other content type.
+  const conceptResults: SearchResult[] = concepts
+    .filter((c) => matches(c.name, q) || c.aliases.some((a) => matches(a, q)) || c.tags.some((t) => matches(t, q)))
+    .map((c) => ({
+      id: c.id,
+      kind: 'concept',
+      title: c.name,
+      subtitle: c.description ? c.description.slice(0, 60) : 'Concept',
+      path: `/concepts/${c.id}`
+    }))
+
   // Collections aren't part of the Sprint 2 result set per §7, but a name
   // match is cheap context worth folding into "Book titles" since a
   // collection often *is* how someone thinks of a subject/shelf.
   void collections
 
   const groups: SearchResultGroup[] = [
+    { label: 'Concepts', results: conceptResults },
     { label: 'Notes', results: noteResults },
     { label: 'Highlights', results: highlightResults },
     { label: 'Bookmarks', results: bookmarkResults },
