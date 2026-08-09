@@ -38,6 +38,42 @@ function pageKey(libraryItemId: string, pageNumber: number): string {
   return `${libraryItemId}:${pageNumber}`
 }
 
+/**
+ * Knowledge Graph Correction §5/§8 — the "DNA is on nearly every page of
+ * a 700-page microbiology textbook" failure mode: a term that's ubiquitous
+ * *within one book* isn't meaningful same-page evidence for any specific
+ * pair it happens to sit next to. A concept present on more than this many
+ * distinct pages of a single book is treated as "too common in this
+ * source" and excluded from driving or receiving automatic page-level
+ * co-occurrence relationships for that book — it can still be related
+ * manually, or via a shared tag, just not by "we were both on page 82".
+ */
+const COMMON_TERM_PAGE_THRESHOLD = 12
+
+/**
+ * Indexes how many distinct pages each concept has a PDF source on,
+ * per book, and exposes an `isSpecific` check so both `getCoOccurrenceRelated`
+ * and `buildKnowledgeGraph` apply the exact same ubiquity guard.
+ */
+function buildSpecificPageIndex(sources: ConceptSource[]): {
+  isSpecific: (conceptId: string, libraryItemId: string) => boolean
+} {
+  const pagesByConceptBook = new Map<string, Set<number>>()
+  for (const s of sources) {
+    if (!s.libraryItemId || s.pageNumber == null) continue
+    const key = `${s.conceptId}:${s.libraryItemId}`
+    const set = pagesByConceptBook.get(key) ?? new Set<number>()
+    set.add(s.pageNumber)
+    pagesByConceptBook.set(key, set)
+  }
+  return {
+    isSpecific: (conceptId, libraryItemId) => {
+      const set = pagesByConceptBook.get(`${conceptId}:${libraryItemId}`)
+      return !set || set.size <= COMMON_TERM_PAGE_THRESHOLD
+    }
+  }
+}
+
 export interface CoOccurrenceMatch {
   concept: Concept
   /** Every (book, page) both concepts have a ConceptSource on — the traceable "why" behind the relationship (§6). */
@@ -49,19 +85,28 @@ export interface CoOccurrenceMatch {
  * source evidence*: at least one ConceptSource pointing at the exact
  * same book+page as this concept. Deliberately never inferred from
  * "somewhere in the same book" alone (§5C/§6's PCR/DNA-in-a-700-page-book
- * caution) — page-level, not book-level, co-occurrence. `allSources` can
- * be passed in by callers that already loaded the whole table (e.g. the
- * whole-library graph) to avoid a redundant read.
+ * caution) — page-level, not book-level, co-occurrence. Also guards
+ * against the ubiquitous-term failure mode (see `buildSpecificPageIndex`):
+ * neither this concept nor the other one may drive a relationship through
+ * a book where either is present on more pages than
+ * `COMMON_TERM_PAGE_THRESHOLD`. `allSources` can be passed in by callers
+ * that already loaded the whole table (e.g. the whole-library graph) to
+ * avoid a redundant read.
  */
 export async function getCoOccurrenceRelated(conceptId: string, allSources?: ConceptSource[]): Promise<CoOccurrenceMatch[]> {
   const sources = allSources ?? (await db.conceptSources.toArray())
-  const mine = sources.filter((s) => s.conceptId === conceptId && s.libraryItemId && s.pageNumber != null)
+  const { isSpecific } = buildSpecificPageIndex(sources)
+
+  const mine = sources.filter(
+    (s) => s.conceptId === conceptId && s.libraryItemId && s.pageNumber != null && isSpecific(conceptId, s.libraryItemId)
+  )
   if (mine.length === 0) return []
   const myKeys = new Set(mine.map((s) => pageKey(s.libraryItemId as string, s.pageNumber as number)))
 
   const sharedByOther = new Map<string, { libraryItemId: string; pageNumber: number }[]>()
   for (const s of sources) {
     if (s.conceptId === conceptId || !s.libraryItemId || s.pageNumber == null) continue
+    if (!isSpecific(s.conceptId, s.libraryItemId)) continue
     if (!myKeys.has(pageKey(s.libraryItemId, s.pageNumber))) continue
     const list = sharedByOther.get(s.conceptId) ?? []
     if (!list.some((p) => p.libraryItemId === s.libraryItemId && p.pageNumber === s.pageNumber)) {
@@ -144,10 +189,17 @@ export async function buildKnowledgeGraph(maxConcepts = 40): Promise<KnowledgeGr
 
   // Sprint 3 Correction §5A/§8 — page-level co-occurrence edges, computed
   // once across the whole top-concept set (rather than per-concept) so
-  // this stays a single pass over `sources`.
+  // this stays a single pass over `sources`. Same ubiquity guard as
+  // `getCoOccurrenceRelated` — a concept present on many pages of one
+  // book (e.g. "DNA" throughout a microbiology textbook) is excluded from
+  // driving edges within that book, which is what was producing the
+  // false "DNA — Gram staining" edges the Knowledge Graph Correction
+  // brief called out.
+  const { isSpecific } = buildSpecificPageIndex(sources)
   const byPage = new Map<string, Set<string>>()
   for (const s of sources) {
     if (!topConceptIds.has(s.conceptId) || !s.libraryItemId || s.pageNumber == null) continue
+    if (!isSpecific(s.conceptId, s.libraryItemId)) continue
     const key = `${s.libraryItemId}:${s.pageNumber}`
     const set = byPage.get(key) ?? new Set<string>()
     set.add(s.conceptId)

@@ -450,3 +450,147 @@ export async function runDeterministicExtractionForItem(
   await setExtractionMeta(item.id, { pageCount: item.pageCount, extractedAt: Date.now() })
   return result
 }
+
+// ---------------------------------------------------------------------
+// Knowledge Graph Correction §17 — concept-scoped extraction. Fixes the
+// case where a book was imported/opened before this concept existed (or
+// before this feature shipped): its Sources tab can show real PDF pages
+// while Related/Mind map stay empty forever, because nothing ever
+// re-scanned that book's text once the concept had sources. Rather than
+// re-scanning the whole book (§17: "avoid repeatedly scanning the entire
+// book"), this starts from the concept's *own already-known* source
+// pages and only reads those specific pages, looking for the other
+// concepts sitting on them.
+// ---------------------------------------------------------------------
+
+const CONCEPT_PAGE_EXTRACTION_KEY_PREFIX = 'conceptPageExtraction:'
+/** A candidate only needs to appear once on a concept's own known page — these pages are already confirmed relevant (they're this concept's own evidence), unlike a blind whole-book scan where repetition is needed to trust a candidate at all. */
+const MAX_NEW_CONCEPTS_PER_CONCEPT_SCAN = 20
+
+interface ConceptPageExtractionMeta {
+  /** Sorted, comma-joined page numbers the last run covered — re-runs only when this concept has since picked up sources on pages that weren't covered before. */
+  pagesSignature: string
+  extractedAt: number
+}
+
+async function getConceptPageExtractionMeta(conceptId: string, libraryItemId: string): Promise<ConceptPageExtractionMeta | undefined> {
+  const record = await db.appSettings.get(`${CONCEPT_PAGE_EXTRACTION_KEY_PREFIX}${conceptId}:${libraryItemId}`)
+  return record?.value as ConceptPageExtractionMeta | undefined
+}
+
+async function setConceptPageExtractionMeta(conceptId: string, libraryItemId: string, meta: ConceptPageExtractionMeta): Promise<void> {
+  await db.appSettings.put({ key: `${CONCEPT_PAGE_EXTRACTION_KEY_PREFIX}${conceptId}:${libraryItemId}`, value: meta })
+}
+
+/**
+ * Reads only the given book's given pages (not the whole book) looking
+ * for (a) any other existing concept's name/alias as literal text, and
+ * (b) new scientific-term-shaped candidates — same shape rules as the
+ * whole-book pass, but with no repetition requirement, since every page
+ * here was already confirmed relevant as one of `concept`'s own sources.
+ * Every new concept and source created here lands on the *same* page as
+ * `concept`, which is exactly what `getCoOccurrenceRelated` needs to
+ * treat it as related. Idempotent per (concept, book, page set) via
+ * `appSettings`, so revisiting a concept detail page repeatedly is cheap.
+ */
+export async function extractRelatedConceptsFromKnownPages(
+  concept: { id: string; name: string },
+  opts?: { force?: boolean }
+): Promise<PdfExtractionResult> {
+  const mySources = await db.conceptSources
+    .where('conceptId')
+    .equals(concept.id)
+    .filter((s) => Boolean(s.libraryItemId) && s.pageNumber != null)
+    .toArray()
+
+  const pagesByItem = new Map<string, Set<number>>()
+  for (const s of mySources) {
+    const set = pagesByItem.get(s.libraryItemId as string) ?? new Set<number>()
+    set.add(s.pageNumber as number)
+    pagesByItem.set(s.libraryItemId as string, set)
+  }
+  if (pagesByItem.size === 0) return { ...emptyResult(), pagesScanned: 0, conceptsDiscovered: 0 }
+
+  const items = await db.libraryItems.bulkGet(Array.from(pagesByItem.keys()))
+  const existingConcepts = await db.concepts.toArray()
+  const existingNormalizedNames = new Set(existingConcepts.map((c) => c.normalizedName))
+  const existingAliasKeys = new Set(existingConcepts.flatMap((c) => c.aliases.map((a) => normalizeConceptName(a))))
+  const needles = existingConcepts
+    .filter((c) => c.id !== concept.id)
+    .flatMap((c) => [{ concept: c, term: c.name }, ...c.aliases.map((a) => ({ concept: c, term: a }))])
+    .filter((n) => n.term.trim().length >= 3)
+    .sort((a, b) => b.term.length - a.term.length)
+
+  let result = emptyResult()
+  let pagesScanned = 0
+  let conceptsDiscovered = 0
+
+  for (const item of items) {
+    if (!item) continue
+    const pages = Array.from(pagesByItem.get(item.id) ?? []).sort((a, b) => a - b)
+    if (pages.length === 0) continue
+
+    const pagesSignature = pages.join(',')
+    if (!opts?.force) {
+      const meta = await getConceptPageExtractionMeta(concept.id, item.id)
+      if (meta && meta.pagesSignature === pagesSignature) continue
+    }
+
+    let blob: Blob
+    try {
+      blob = await readFile(item.filePath)
+    } catch {
+      continue
+    }
+    const doc = await loadPdfDocument(blob)
+
+    for (const page of pages) {
+      const { items: textItems } = await getPageTextContent(doc, page)
+      const pageText = textItems.map((t) => t.str).join(' ')
+      if (!pageText.trim()) continue
+      const lowerPageText = pageText.toLowerCase()
+      pagesScanned += 1
+
+      // (a) Other existing concepts mentioned on this same page.
+      for (const { concept: other, term } of needles) {
+        const key = term.toLowerCase()
+        if (!lowerPageText.includes(key)) continue
+        const source = await addConceptSource({
+          conceptId: other.id,
+          sourceType: 'pdf',
+          libraryItemId: item.id,
+          pageNumber: page,
+          sourceId: `${item.id}:${page}:${normalizeConceptName(term)}`,
+          sourceText: term
+        })
+        if (source) result = mergeResults(result, { conceptsCreated: 0, conceptsUpdated: 1, sourcesLinked: 1 })
+      }
+
+      // (b) New candidates — single-page evidence is enough here because
+      // this page is already known-relevant (it's `concept`'s own source).
+      for (const phrase of extractCandidatePhrases(pageText)) {
+        const key = normalizeConceptName(phrase)
+        if (key === normalizeConceptName(concept.name)) continue
+        if (existingNormalizedNames.has(key) || existingAliasKeys.has(key)) continue
+        if (conceptsDiscovered >= MAX_NEW_CONCEPTS_PER_CONCEPT_SCAN) continue
+
+        const created = await getOrCreateConcept({ name: phrase, aliases: [], tags: [] }, false)
+        existingNormalizedNames.add(key)
+        conceptsDiscovered += 1
+        const source = await addConceptSource({
+          conceptId: created.id,
+          sourceType: 'pdf',
+          libraryItemId: item.id,
+          pageNumber: page,
+          sourceId: `${item.id}:${page}:${key}`,
+          sourceText: phrase
+        })
+        if (source) result = mergeResults(result, { conceptsCreated: 1, conceptsUpdated: 0, sourcesLinked: 1 })
+      }
+    }
+
+    await setConceptPageExtractionMeta(concept.id, item.id, { pagesSignature, extractedAt: Date.now() })
+  }
+
+  return { ...result, pagesScanned, conceptsDiscovered }
+}
