@@ -25,6 +25,7 @@
 import { db, type DocumentType, type LibraryItem } from '../db'
 import { writeFile } from '../file-storage'
 import { parsePdf } from '../pdf-engine'
+import { runDeterministicExtractionForItem } from '../concepts'
 
 export type ImportStage =
   | 'hashing'
@@ -120,6 +121,12 @@ export async function importFile(
 
     await db.libraryItems.add(libraryItem)
     report('done')
+    // Sprint 3 Correction §1/§17: "Book imported → local text available →
+    // deterministic extraction". Fire-and-forget so the Import dialog's
+    // progress UI isn't held up by a full-book PDF text pass — the
+    // Concepts page picks the results up via its own liveQuery once
+    // they land.
+    void runDeterministicExtractionForItem(libraryItem)
     return { fileName: file.name, status: 'imported', libraryItem }
   } catch (err) {
     report('error')
