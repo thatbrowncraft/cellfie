@@ -15,6 +15,7 @@ import { ReaderToolbar } from './ReaderToolbar'
 import { ReaderCanvas, type FitMode, type ReaderCanvasHandle } from './ReaderCanvas'
 import { ReaderSidebar } from './ReaderSidebar'
 import { HighlightPopover, type PopoverAnchor } from './HighlightPopover'
+import { ConceptPickerDialog } from './ConceptPickerDialog'
 import { NoteEditorDialog } from '@/modules/notes/components/NoteEditorDialog'
 
 const MIN_SCALE = 0.25
@@ -75,6 +76,7 @@ export function ReaderPage() {
 
   const [noteEditorOpen, setNoteEditorOpen] = useState(false)
   const [editingNote, setEditingNote] = useState<Note | undefined>(undefined)
+  const [conceptPickerHighlight, setConceptPickerHighlight] = useState<Highlight | null>(null)
 
   // Bug 1 fix: lets the toolbar's Highlight button reach into the current
   // page's TextLayer to finalize whatever selection exists, and tracks
@@ -383,8 +385,26 @@ export function ReaderPage() {
           onPickColor={(color) => void handleUpdateHighlightColor(color)}
           onSaveNote={(note) => void handleSaveHighlightNote(note)}
           onOpenFullNote={() => void handleOpenFullNoteFromHighlight()}
+          onAddToConcept={() => {
+            setConceptPickerHighlight(activeHighlight.highlight)
+            setActiveHighlight(null)
+          }}
           onDelete={() => void handleDeleteHighlight(activeHighlight.highlight.id)}
           onClose={() => setActiveHighlight(null)}
+        />
+      )}
+
+      {conceptPickerHighlight && item && (
+        <ConceptPickerDialog
+          open
+          onClose={() => setConceptPickerHighlight(null)}
+          source={{
+            sourceType: 'highlight',
+            sourceId: conceptPickerHighlight.id,
+            libraryItemId: item.id,
+            pageNumber: conceptPickerHighlight.page,
+            sourceText: conceptPickerHighlight.text
+          }}
         />
       )}
 

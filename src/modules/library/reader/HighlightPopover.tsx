@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { NotePencil, Trash, X } from '@phosphor-icons/react'
+import { GitBranch, NotePencil, Trash, X } from '@phosphor-icons/react'
 import { highlightColors, highlightColorLabels, type Highlight, type HighlightColor } from '@/core/db'
 import { useClickOutside } from '@/shared/hooks'
 import { cn } from '@/shared/utils/cn'
@@ -17,6 +17,8 @@ interface HighlightPopoverProps {
   onPickColor: (color: HighlightColor) => void
   onSaveNote: (note: string) => void
   onOpenFullNote?: () => void
+  /** Sprint 3 §16: opens the concept picker for this highlight. Absent while creating (no highlight to link yet). */
+  onAddToConcept?: () => void
   onDelete?: () => void
   onClose: () => void
 }
@@ -79,6 +81,7 @@ export function HighlightPopover({
   onPickColor,
   onSaveNote,
   onOpenFullNote,
+  onAddToConcept,
   onDelete,
   onClose
 }: HighlightPopoverProps) {
@@ -184,6 +187,17 @@ export function HighlightPopover({
               </button>
             )}
           </div>
+
+          {onAddToConcept && (
+            <button
+              type="button"
+              onClick={onAddToConcept}
+              className="flex items-center gap-1.5 self-start font-ui text-caption font-medium text-olive hover:underline"
+            >
+              <GitBranch size={15} />
+              Add to concept
+            </button>
+          )}
         </>
       )}
     </div>
