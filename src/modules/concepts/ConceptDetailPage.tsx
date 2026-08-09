@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, PencilSimple, Trash } from '@phosphor-icons/react'
 import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
@@ -7,6 +7,7 @@ import {
   buildConceptMindMap,
   computeConceptStats,
   deleteConcept,
+  extractRelatedConceptsFromKnownPages,
   getCoOccurrenceRelated,
   getFirstAndLastEncountered,
   getRelatedConceptIds,
@@ -47,6 +48,19 @@ export function ConceptDetailPage() {
   const items = useLiveQuery<LibraryItem[]>(() => db.libraryItems.toArray(), [], [])
   const itemsById = useMemo(() => new Map(items.map((i) => [i.id, i])), [items])
 
+  // Knowledge Graph Correction §17 — a concept can already have PDF page
+  // sources (e.g. this book was imported/opened before this feature, or
+  // before this concept existed) with Related/Mind map still empty,
+  // because nothing had scanned those specific pages for *other*
+  // concepts yet. This starts from the concept's own known pages only
+  // (not the whole book) and is internally throttled per (concept, book,
+  // page set), so it's safe to fire on every visit.
+  useEffect(() => {
+    if (!concept) return
+    void extractRelatedConceptsFromKnownPages(concept)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [concept?.id])
+
   const relatedIds = useLiveQuery<string[]>(() => (id ? getRelatedConceptIds(id) : []), [id, relations.length], [])
   const relatedConcepts = useMemo(
     () => allConcepts.filter((c) => relatedIds.includes(c.id)),
@@ -66,6 +80,10 @@ export function ConceptDetailPage() {
     []
   )
   const firstAndLast = useMemo(() => getFirstAndLastEncountered(sources, itemsById), [sources, itemsById])
+  const hasPdfPageSources = useMemo(
+    () => sources.some((s) => s.sourceType === 'pdf' && s.libraryItemId && s.pageNumber != null),
+    [sources]
+  )
 
   const mindMap = useLiveQuery<MindMapNode>(
     () => (id ? buildConceptMindMap(id) : Promise.resolve({ id: id ?? '', label: '', children: [] })),
@@ -279,6 +297,7 @@ export function ConceptDetailPage() {
                 relatedConcepts={relatedConcepts}
                 sharedTagSuggestions={sharedTagSuggestions}
                 coOccurring={coOccurring}
+                hasPdfPageSources={hasPdfPageSources}
                 itemsById={itemsById}
                 relations={relations}
                 allConcepts={allConcepts}
