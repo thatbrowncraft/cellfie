@@ -7,6 +7,7 @@ import { addBookmark, removeBookmark } from '@/core/db/bookmarks'
 import { addHighlight, removeHighlight, updateHighlightColor, updateHighlightNote } from '@/core/db/highlights'
 import { createNoteFromHighlight } from '@/core/db/notes'
 import { addReadingSeconds } from '@/core/db/reading-time'
+import { runDeterministicExtractionForItem } from '@/core/concepts'
 import { SplitLayout } from '@/shared/layouts'
 import { BottomSheet, EmptyState } from '@/shared/components'
 import { useBreakpoint } from '@/shared/hooks'
@@ -96,6 +97,12 @@ export function ReaderPage() {
       const target = pageParam > 0 ? pageParam : item.lastPageRead && item.lastPageRead >= 1 ? item.lastPageRead : 1
       setPage(target)
       void markOpened(item.id)
+      // Sprint 3 Correction §1/§17: "Book opened → local text available →
+      // deterministic extraction". Fire-and-forget and internally
+      // throttled (runDeterministicExtractionForItem no-ops if this book
+      // was already scanned at its current page count), so opening a
+      // book repeatedly never re-runs the PDF pass or blocks the reader.
+      void runDeterministicExtractionForItem(item)
     }
   }, [item, searchParams])
 
