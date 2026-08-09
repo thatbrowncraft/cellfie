@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { KnowledgeGraphData } from '@/core/concepts'
+import type { GraphNode, KnowledgeGraphData } from '@/core/concepts'
 import { EmptyState } from '@/shared/components'
 import { GitBranch } from '@phosphor-icons/react'
 
@@ -30,6 +30,14 @@ const edgeColor: Record<string, string> = {
  */
 export function ConceptGraphView({ data }: ConceptGraphViewProps) {
   const navigate = useNavigate()
+
+  function handleNodeClick(node: GraphNode) {
+    if (node.kind === 'concept') {
+      navigate(`/concepts/${node.id.replace('concept:', '')}`)
+    } else if (node.kind === 'book') {
+      navigate(`/library/${node.id.replace('book:', '')}/read`)
+    }
+  }
 
   const positions = useMemo(() => {
     const concepts = data.nodes.filter((n) => n.kind === 'concept')
@@ -96,12 +104,12 @@ export function ConceptGraphView({ data }: ConceptGraphViewProps) {
               <g
                 key={node.id}
                 transform={`translate(${pos.x}, ${pos.y})`}
-                className={isConcept ? 'cursor-pointer' : ''}
-                onClick={() => isConcept && navigate(`/concepts/${node.id.replace('concept:', '')}`)}
+                className="cursor-pointer"
+                onClick={() => handleNodeClick(node)}
               >
                 <circle
                   r={radius}
-                  fill={isConcept ? 'var(--color-highlight-terracotta)' : 'var(--color-accent-olive)'}
+                  fill={isConcept ? 'var(--color-highlight-terracotta)' : 'var(--color-marker-blue)'}
                   opacity={isConcept ? 0.9 : 0.7}
                 />
                 <text
@@ -123,16 +131,19 @@ export function ConceptGraphView({ data }: ConceptGraphViewProps) {
           <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: 'var(--color-highlight-terracotta)' }} /> Concept
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: 'var(--color-accent-olive)' }} /> Book
+          <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: 'var(--color-marker-blue)' }} /> Book
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-highlight-terracotta)' }} /> Related
+          <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-border-strong)' }} /> Found in (concept → book — not a concept relationship)
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="inline-block h-2 w-0.5 border-t border-dashed" /> Shared tag
+          <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-highlight-terracotta)' }} /> Related (manual)
         </span>
         <span className="flex items-center gap-1.5">
           <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-accent-olive)' }} /> Found on same page
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block h-2 w-0.5 border-t border-dashed" /> Shared tag
         </span>
       </div>
     </div>

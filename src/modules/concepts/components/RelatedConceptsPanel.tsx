@@ -12,6 +12,8 @@ interface RelatedConceptsPanelProps {
   sharedTagSuggestions: Concept[]
   /** Concepts that share at least one book+page ConceptSource with this one (Sprint 3 Correction §5A/§7) — the deterministic "found in your local material" relationships. */
   coOccurring: CoOccurrenceMatch[]
+  /** Whether this concept has any page-anchored PDF source at all — distinguishes "we looked at your source pages and found nothing to connect" from "no source pages to look at yet" (Knowledge Graph Correction §21). */
+  hasPdfPageSources: boolean
   itemsById: Map<string, LibraryItem>
   relations: ConceptRelation[]
   allConcepts: Concept[]
@@ -22,6 +24,7 @@ export function RelatedConceptsPanel({
   relatedConcepts,
   sharedTagSuggestions,
   coOccurring,
+  hasPdfPageSources,
   itemsById,
   relations,
   allConcepts
@@ -107,7 +110,11 @@ export function RelatedConceptsPanel({
       {relatedConcepts.length === 0 && coOccurringNotAlreadyRelated.length === 0 ? (
         <EmptyState
           title="No related concepts yet"
-          description="Once this concept shares a book page with another one — or you add a manual relationship — they'll show up here and in the mind map."
+          description={
+            hasPdfPageSources
+              ? 'Insufficient local source text available for deterministic relationship extraction. This concept\u2019s source pages didn\u2019t contain another recognizable concept — add a manual relationship if you know of one.'
+              : "Once this concept has source pages and shares one with another concept — or you add a manual relationship — they'll show up here and in the mind map."
+          }
         />
       ) : (
         <>
