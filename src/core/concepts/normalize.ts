@@ -40,3 +40,16 @@ export function isLikelyStopwordPhrase(raw: string): boolean {
   if (words.length === 0) return true
   return words.every((w) => STOPWORDS.has(w))
 }
+
+/**
+ * True when a single word is common English filler (as opposed to
+ * `isLikelyStopwordPhrase`, which only rejects a phrase when *every*
+ * word in it is filler). Used by free-text candidate scanning
+ * (extraction.ts §4) to stop a candidate phrase from growing across a
+ * word like "the"/"and"/"of", and to reject a phrase that *starts* with
+ * one (e.g. "The Cell Wall") even though "cell wall" alone wouldn't be
+ * caught by `isLikelyStopwordPhrase`.
+ */
+export function isStopwordToken(word: string): boolean {
+  return STOPWORDS.has(word.trim().toLowerCase())
+}

@@ -36,6 +36,42 @@ export function computeConceptStats(concept: Concept, sources: ConceptSource[]):
   }
 }
 
+export interface ConceptSourceLocation {
+  libraryItemId: string
+  bookTitle: string
+  pageNumber: number
+}
+
+/**
+ * Sprint 3 Correction §11 — "First encountered" / "Last referenced",
+ * derived straight from the concept's own PDF-page sources (lowest and
+ * highest page number it was actually found on). Returns undefined when
+ * there's no page-anchored source yet, so the UI can fall back to "No
+ * pages linked yet" instead of a fabricated location.
+ */
+export function getFirstAndLastEncountered(
+  sources: ConceptSource[],
+  itemsById: Map<string, LibraryItem>
+): { first?: ConceptSourceLocation; last?: ConceptSourceLocation } {
+  const pageAnchored = sources
+    .filter((s) => s.libraryItemId && s.pageNumber != null)
+    .map((s) => ({ libraryItemId: s.libraryItemId as string, pageNumber: s.pageNumber as number }))
+    .sort((a, b) => a.pageNumber - b.pageNumber)
+
+  if (pageAnchored.length === 0) return {}
+
+  const toLocation = (entry: { libraryItemId: string; pageNumber: number }): ConceptSourceLocation | undefined => {
+    const item = itemsById.get(entry.libraryItemId)
+    if (!item) return undefined
+    return { libraryItemId: entry.libraryItemId, bookTitle: item.title, pageNumber: entry.pageNumber }
+  }
+
+  return {
+    first: toLocation(pageAnchored[0]),
+    last: toLocation(pageAnchored[pageAnchored.length - 1])
+  }
+}
+
 export interface KnowledgeSummary {
   conceptCount: number
   noteCount: number
