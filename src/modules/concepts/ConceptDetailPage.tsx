@@ -107,6 +107,7 @@ export function ConceptDetailPage() {
   }
 
   async function handleDelete() {
+    if (!id) return
     await deleteConcept(id)
     navigate('/concepts')
   }
