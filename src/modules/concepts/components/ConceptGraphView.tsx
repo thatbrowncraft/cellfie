@@ -16,7 +16,8 @@ const CENTER_Y = HEIGHT / 2
 const edgeColor: Record<string, string> = {
   RELATED_TO: 'var(--color-highlight-terracotta)',
   REFERENCES: 'var(--color-border-strong)',
-  SHARED_TAG: 'var(--color-accent-sage)'
+  SHARED_TAG: 'var(--color-accent-sage)',
+  CO_OCCURRENCE: 'var(--color-accent-olive)'
 }
 
 /**
@@ -129,6 +130,9 @@ export function ConceptGraphView({ data }: ConceptGraphViewProps) {
         </span>
         <span className="flex items-center gap-1.5">
           <span className="inline-block h-2 w-0.5 border-t border-dashed" /> Shared tag
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-accent-olive)' }} /> Found on same page
         </span>
       </div>
     </div>

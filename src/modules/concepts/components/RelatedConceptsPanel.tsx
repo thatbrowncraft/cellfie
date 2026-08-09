@@ -2,14 +2,17 @@ import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link, Plus, X } from '@phosphor-icons/react'
 import { SearchField, EmptyState } from '@/shared/components'
-import type { Concept, ConceptRelation } from '@/core/db'
-import { addConceptRelation, removeConceptRelation } from '@/core/concepts'
+import type { Concept, ConceptRelation, LibraryItem } from '@/core/db'
+import { addConceptRelation, removeConceptRelation, type CoOccurrenceMatch } from '@/core/concepts'
 
 interface RelatedConceptsPanelProps {
   concept: Concept
   relatedConcepts: Concept[]
   /** Concepts sharing a tag with this one but with no explicit relation yet — shown as suggestions (§10: "shared tags" is a reliable relationship source). */
   sharedTagSuggestions: Concept[]
+  /** Concepts that share at least one book+page ConceptSource with this one (Sprint 3 Correction §5A/§7) — the deterministic "found in your local material" relationships. */
+  coOccurring: CoOccurrenceMatch[]
+  itemsById: Map<string, LibraryItem>
   relations: ConceptRelation[]
   allConcepts: Concept[]
 }
@@ -18,6 +21,8 @@ export function RelatedConceptsPanel({
   concept,
   relatedConcepts,
   sharedTagSuggestions,
+  coOccurring,
+  itemsById,
   relations,
   allConcepts
 }: RelatedConceptsPanelProps) {
@@ -45,6 +50,20 @@ export function RelatedConceptsPanel({
     setQuery('')
     setAdding(false)
   }
+
+  /** "Prescott's Microbiology · 3 shared pages" style summary (§7), grouped per book since a co-occurrence can span more than one. */
+  function sourceSummary(match: CoOccurrenceMatch): string {
+    const byBook = new Map<string, number>()
+    for (const p of match.sharedPages) {
+      const title = itemsById.get(p.libraryItemId)?.title ?? 'Unlinked book'
+      byBook.set(title, (byBook.get(title) ?? 0) + 1)
+    }
+    return Array.from(byBook.entries())
+      .map(([title, count]) => `${title} · ${count} shared page${count === 1 ? '' : 's'}`)
+      .join(', ')
+  }
+
+  const coOccurringNotAlreadyRelated = coOccurring.filter((m) => !relatedIds.has(m.concept.id))
 
   return (
     <div className="flex flex-col gap-4">
@@ -85,41 +104,67 @@ export function RelatedConceptsPanel({
         </div>
       )}
 
-      {relatedConcepts.length === 0 ? (
+      {relatedConcepts.length === 0 && coOccurringNotAlreadyRelated.length === 0 ? (
         <EmptyState
           title="No related concepts yet"
-          description="Add a manual relationship, or link two concepts to the same tag, and they'll show up here and in the mind map."
+          description="Once this concept shares a book page with another one — or you add a manual relationship — they'll show up here and in the mind map."
         />
       ) : (
-        <ul className="flex flex-wrap gap-2">
-          {relatedConcepts.map((c) => {
-            const relationId = relationIdFor(c.id)
-            return (
-              <li
-                key={c.id}
-                className="flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1.5"
-              >
-                <button
-                  type="button"
-                  onClick={() => navigate(`/concepts/${c.id}`)}
-                  className="font-ui text-caption font-medium text-ink-primary hover:text-olive"
-                >
-                  {c.name}
-                </button>
-                {relationId && (
-                  <button
-                    type="button"
-                    onClick={() => void removeConceptRelation(relationId)}
-                    aria-label={`Remove relation to ${c.name}`}
-                    className="text-ink-tertiary hover:text-error"
+        <>
+          {relatedConcepts.length > 0 && (
+            <ul className="flex flex-wrap gap-2">
+              {relatedConcepts.map((c) => {
+                const relationId = relationIdFor(c.id)
+                return (
+                  <li
+                    key={c.id}
+                    className="flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1.5"
                   >
-                    <X size={13} />
-                  </button>
-                )}
-              </li>
-            )
-          })}
-        </ul>
+                    <button
+                      type="button"
+                      onClick={() => navigate(`/concepts/${c.id}`)}
+                      className="font-ui text-caption font-medium text-ink-primary hover:text-olive"
+                    >
+                      {c.name}
+                    </button>
+                    {relationId && (
+                      <button
+                        type="button"
+                        onClick={() => void removeConceptRelation(relationId)}
+                        aria-label={`Remove relation to ${c.name}`}
+                        className="text-ink-tertiary hover:text-error"
+                      >
+                        <X size={13} />
+                      </button>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+
+          {coOccurringNotAlreadyRelated.length > 0 && (
+            <div>
+              <h4 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                Found together in your sources
+              </h4>
+              <ul className="flex flex-col gap-2">
+                {coOccurringNotAlreadyRelated.map((match) => (
+                  <li key={match.concept.id}>
+                    <button
+                      type="button"
+                      onClick={() => navigate(`/concepts/${match.concept.id}`)}
+                      className="flex w-full flex-col items-start gap-0.5 rounded-md border border-border bg-surface px-3 py-2 text-left hover:bg-surface-raised"
+                    >
+                      <span className="font-ui text-body font-medium text-ink-primary">{match.concept.name}</span>
+                      <span className="font-ui text-micro text-ink-tertiary">{sourceSummary(match)}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </>
       )}
 
       {sharedTagSuggestions.length > 0 && (

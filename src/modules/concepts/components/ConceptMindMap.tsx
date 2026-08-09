@@ -55,7 +55,7 @@ export function ConceptMindMap({ root }: ConceptMindMapProps) {
       <EmptyState
         icon={<TreeStructure size={32} />}
         title="No related concepts yet"
-        description="Add a related concept, or share a tag with another concept, and this mind map will branch out from here."
+        description="Once this concept shares a book page with another one — or you add a related concept manually — this mind map will branch out from here."
       />
     )
   }
