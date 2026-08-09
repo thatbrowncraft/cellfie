@@ -5,16 +5,18 @@ import {
   Bookmarks,
   Clock,
   Fire,
+  GitBranch,
   Highlighter,
   NotePencil,
   Stack
 } from '@phosphor-icons/react'
 import { DashboardLayout } from '../../shared/layouts'
 import { Card, CardBody, EmptyState } from '../../shared/components'
-import { db, type Highlight, type LibraryItem, type Note, type ReaderBookmark } from '../../core/db'
+import { db, type Concept, type Highlight, type LibraryItem, type Note, type ReaderBookmark } from '../../core/db'
 import { useLiveQuery } from '../../core/db/useLiveQuery'
 import { getTotalReadingSeconds } from '../../core/db/reading-time'
 import { computeStatsFromRecords } from '../../core/stats'
+import { getRecentlyUsedConcepts } from '../../core/concepts'
 
 interface StatCardProps {
   icon: ReactNode
@@ -63,6 +65,8 @@ export function DashboardPage() {
   const notes = useLiveQuery<Note[]>(() => db.notes.toArray(), [], [])
   const bookmarks = useLiveQuery<ReaderBookmark[]>(() => db.readerBookmarks.toArray(), [], [])
   const totalReadingSeconds = useLiveQuery<number>(() => getTotalReadingSeconds(), [], 0)
+  const conceptCount = useLiveQuery<number>(() => db.concepts.count(), [], 0)
+  const recentlyExplored = useLiveQuery<Concept[]>(() => getRecentlyUsedConcepts(6), [], [])
 
   const stats = useMemo(
     () => computeStatsFromRecords(items, highlights, notes, bookmarks, totalReadingSeconds),
@@ -122,6 +126,70 @@ export function DashboardPage() {
       <StatCard icon={<Bookmarks size={22} />} label="Bookmarks" value={String(stats.bookmarkCount)} />
       <StatCard icon={<Fire size={22} />} label="Reading streak" value={`${stats.readingStreakDays} day${stats.readingStreakDays === 1 ? '' : 's'}`} />
       <StatCard icon={<Clock size={22} />} label="Time spent reading" value={formatDuration(stats.totalReadingSeconds)} hint="Tracked while a book is open" />
+
+      <section className="rounded-md border border-border bg-surface p-6 md:col-span-3">
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Knowledge</h2>
+          <button
+            type="button"
+            onClick={() => navigate('/concepts')}
+            className="font-ui text-caption font-medium text-olive hover:underline"
+          >
+            Open Concepts
+          </button>
+        </div>
+
+        <div className="mb-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="flex items-center gap-3">
+            <GitBranch size={20} className="text-olive" aria-hidden />
+            <div className="flex flex-col">
+              <span className="font-display text-h3 font-semibold text-ink-primary">{conceptCount}</span>
+              <span className="font-ui text-micro text-ink-tertiary">Concepts</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <NotePencil size={20} className="text-olive" aria-hidden />
+            <div className="flex flex-col">
+              <span className="font-display text-h3 font-semibold text-ink-primary">{stats.noteCount}</span>
+              <span className="font-ui text-micro text-ink-tertiary">Notes</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <Highlighter size={20} className="text-olive" aria-hidden />
+            <div className="flex flex-col">
+              <span className="font-display text-h3 font-semibold text-ink-primary">{stats.highlightCount}</span>
+              <span className="font-ui text-micro text-ink-tertiary">Highlights</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <Stack size={20} className="text-olive" aria-hidden />
+            <div className="flex flex-col">
+              <span className="font-display text-h3 font-semibold text-ink-primary">{stats.booksInLibrary}</span>
+              <span className="font-ui text-micro text-ink-tertiary">Books</span>
+            </div>
+          </div>
+        </div>
+
+        {recentlyExplored.length > 0 && (
+          <div>
+            <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+              Recently explored
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {recentlyExplored.map((concept) => (
+                <button
+                  key={concept.id}
+                  type="button"
+                  onClick={() => navigate(`/concepts/${concept.id}`)}
+                  className="rounded-full border border-border bg-canvas px-3 py-1.5 font-ui text-caption text-ink-primary hover:bg-surface-raised"
+                >
+                  {concept.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
     </DashboardLayout>
   )
 }
