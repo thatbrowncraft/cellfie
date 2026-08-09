@@ -7,8 +7,11 @@ import {
   buildConceptMindMap,
   computeConceptStats,
   deleteConcept,
+  getCoOccurrenceRelated,
+  getFirstAndLastEncountered,
   getRelatedConceptIds,
   scanLibraryItemForConcepts,
+  type CoOccurrenceMatch,
   type MindMapNode
 } from '@/core/concepts'
 import { EmptyStateLayout } from '@/shared/layouts'
@@ -55,6 +58,14 @@ export function ConceptDetailPage() {
       (c) => c.id !== concept.id && !relatedIds.includes(c.id) && c.tags.some((t) => concept.tags.includes(t))
     )
   }, [allConcepts, concept, relatedIds])
+  // Sprint 3 Correction §5A/§7 — concepts that share an actual book+page
+  // ConceptSource with this one, independent of any manual relation/tag.
+  const coOccurring = useLiveQuery<CoOccurrenceMatch[]>(
+    () => (id ? getCoOccurrenceRelated(id) : []),
+    [id, sources.length],
+    []
+  )
+  const firstAndLast = useMemo(() => getFirstAndLastEncountered(sources, itemsById), [sources, itemsById])
 
   const mindMap = useLiveQuery<MindMapNode>(
     () => (id ? buildConceptMindMap(id) : Promise.resolve({ id: id ?? '', label: '', children: [] })),
@@ -181,6 +192,52 @@ export function ConceptDetailPage() {
                   )}
                 </div>
 
+                {(firstAndLast.first || firstAndLast.last) && (
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {firstAndLast.first && (
+                      <div className="rounded-md border border-border bg-surface p-4">
+                        <h3 className="mb-1 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                          First encountered
+                        </h3>
+                        <p className="font-body text-body text-ink-primary">{firstAndLast.first.bookTitle}</p>
+                        <p className="font-ui text-caption text-ink-secondary">Page {firstAndLast.first.pageNumber}</p>
+                      </div>
+                    )}
+                    {firstAndLast.last && (
+                      <div className="rounded-md border border-border bg-surface p-4">
+                        <h3 className="mb-1 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                          Last referenced
+                        </h3>
+                        <p className="font-body text-body text-ink-primary">{firstAndLast.last.bookTitle}</p>
+                        <p className="font-ui text-caption text-ink-secondary">Page {firstAndLast.last.pageNumber}</p>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {(relatedConcepts.length > 0 || coOccurring.length > 0) && (
+                  <div className="rounded-md border border-border bg-surface p-5">
+                    <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                      Related concepts
+                    </h3>
+                    <ul className="flex flex-wrap gap-2">
+                      {Array.from(new Map([...relatedConcepts, ...coOccurring.map((m) => m.concept)].map((c) => [c.id, c])).values())
+                        .slice(0, 8)
+                        .map((c) => (
+                          <li key={c.id}>
+                            <button
+                              type="button"
+                              onClick={() => navigate(`/concepts/${c.id}`)}
+                              className="rounded-full bg-surface-raised px-3 py-1.5 font-ui text-caption text-ink-secondary hover:text-ink-primary"
+                            >
+                              {c.name}
+                            </button>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
+
                 {scannableBooks.length > 0 && (
                   <div className="rounded-md border border-border bg-surface p-5">
                     <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
@@ -215,12 +272,14 @@ export function ConceptDetailPage() {
           },
           {
             id: 'related',
-            label: `Related${relatedConcepts.length ? ` (${relatedConcepts.length})` : ''}`,
+            label: `Related${relatedConcepts.length + coOccurring.length ? ` (${relatedConcepts.length + coOccurring.length})` : ''}`,
             content: (
               <RelatedConceptsPanel
                 concept={concept}
                 relatedConcepts={relatedConcepts}
                 sharedTagSuggestions={sharedTagSuggestions}
+                coOccurring={coOccurring}
+                itemsById={itemsById}
                 relations={relations}
                 allConcepts={allConcepts}
               />
