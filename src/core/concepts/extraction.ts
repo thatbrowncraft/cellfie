@@ -1,50 +1,27 @@
-// src/core/concepts/extraction.ts
+import { type Concept, type LibraryItem } from '@/core/db'
 
-import { db, type Concept, type ConceptSource, type LibraryItem } from '@/core/db'
-import { cleanPdfText } from './onlineKnowledge'
+export async function extractRelatedConceptsFromKnownPages(_concept: Concept): Promise<void> {}
 
-export interface SourceExcerpt {
-  text: string
-  cleanedText: string
-  pageNumber: number
-  bookTitle: string
+export function getRelatedConceptIds(_conceptId: string): string[] {
+  return []
 }
 
-/**
- * Gets a cleaned source excerpt from a book page.
- */
-export async function getSourceExcerpt(
-  item: LibraryItem,
-  pageNumber: number,
-  _conceptName: string
-): Promise<SourceExcerpt> {
-  const rawText = item.description || `Extracted content for page ${pageNumber} of ${item.title}.`
-  const cleaned = cleanPdfText(rawText)
-
-  return {
-    text: rawText,
-    cleanedText: cleaned,
-    pageNumber,
-    bookTitle: item.title
-  }
+export function getCoOccurrenceRelated(_conceptId: string): any[] {
+  return []
 }
 
-/**
- * Scans known pages associated with a concept to find and link related concepts.
- */
-export async function extractRelatedConceptsFromKnownPages(concept: Concept): Promise<void> {
-  const sources = await db.conceptSources.where('conceptId').equals(concept.id as any).toArray()
-  if (!sources || sources.length === 0) return
-}
-
-/**
- * Scans a library item for concept matches and links them in IndexedDB.
- */
 export async function scanLibraryItemForConcepts(
-  item: LibraryItem
+  _item: LibraryItem
 ): Promise<{ pagesScanned: number; sourcesLinked: number }> {
-  return {
-    pagesScanned: item.pageCount || 1,
-    sourcesLinked: 0
+  return { pagesScanned: 0, sourcesLinked: 0 }
+}
+
+export async function runDeterministicExtractionForItem(
+  item: LibraryItem
+): Promise<{ conceptsFound: number }> {
+  const itemWithDesc = item as unknown as { description?: string }
+  if (itemWithDesc.description) {
+    // Safe property access
   }
+  return { conceptsFound: 0 }
 }
