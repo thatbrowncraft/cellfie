@@ -17,7 +17,7 @@
  */
 
 import { db, type LibraryItem } from '../db'
-import { getPageTextContent, loadPdfDocument } from '../pdf-engine'
+import { getPageTextContent, joinPageText, loadPdfDocument } from '../pdf-engine'
 import { readFile } from '../file-storage'
 
 export interface LibraryTermMatch {
@@ -59,7 +59,7 @@ export async function searchLibraryForTerm(term: string): Promise<LibraryTermMat
       if (pagesScanned >= MAX_PAGES_SCANNED_PER_SEARCH) break
       const { items: textItems } = await getPageTextContent(doc, page)
       pagesScanned += 1
-      const pageText = textItems.map((t) => t.str).join(' ')
+      const pageText = joinPageText(textItems)
       if (pageText.toLowerCase().includes(q)) pages.push(page)
     }
 

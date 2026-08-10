@@ -11,7 +11,7 @@
  */
 
 import { db, type LibraryItem } from '../db'
-import { getPageTextContent, loadPdfDocument } from '../pdf-engine'
+import { getPageTextContent, joinPageText, loadPdfDocument } from '../pdf-engine'
 import { readFile } from '../file-storage'
 import { addConceptSource, getOrCreateConcept } from './service'
 import { isLikelyStopwordPhrase, isPlausibleConceptName, isStopwordToken, normalizeConceptName } from './normalize'
@@ -202,7 +202,7 @@ export async function scanLibraryItemForConcepts(item: LibraryItem): Promise<Sca
 
   for (let page = 1; page <= item.pageCount; page += 1) {
     const { items: textItems } = await getPageTextContent(doc, page)
-    const pageText = textItems.map((t) => t.str).join(' ')
+    const pageText = joinPageText(textItems)
     if (!pageText.trim()) continue
     const lowerPageText = pageText.toLowerCase()
     pagesScanned += 1
@@ -333,7 +333,7 @@ export async function extractConceptsFromPdf(item: LibraryItem): Promise<PdfExtr
 
   for (let page = 1; page <= item.pageCount; page += 1) {
     const { items: textItems } = await getPageTextContent(doc, page)
-    const pageText = textItems.map((t) => t.str).join(' ')
+    const pageText = joinPageText(textItems)
     if (!pageText.trim()) continue
     const lowerPageText = pageText.toLowerCase()
     pagesScanned += 1
@@ -489,7 +489,7 @@ export async function extractRelatedConceptsFromKnownPages(
 
     for (const page of pages) {
       const { items: textItems } = await getPageTextContent(doc, page)
-      const pageText = textItems.map((t) => t.str).join(' ')
+      const pageText = joinPageText(textItems)
       if (!pageText.trim()) continue
       const lowerPageText = pageText.toLowerCase()
       pagesScanned += 1
@@ -535,6 +535,18 @@ export interface SourceCandidate {
 /** Generous cap since nothing here writes to the database — it's just how many suggestions the Related tab shows at once. */
 const MAX_CANDIDATES_RETURNED = 30
 
+/**
+ * Sprint 4 correction — a phrase appearing on only one page of a book is
+ * exactly the shape a one-off publisher credit, running header, or
+ * "please visit our website" line takes; a real recurring scientific
+ * term this concept's material actually discusses tends to come up more
+ * than once across its source pages. This is a structural filter (how
+ * often, not which specific words) rather than another one-off stopword
+ * — see RelatedConceptsPanel for the online-verification pass layered on
+ * top of it.
+ */
+const MIN_CANDIDATE_PAGE_OCCURRENCES = 2
+
 export async function findCandidateConceptsFromKnownPages(concept: { id: string; name: string }): Promise<SourceCandidate[]> {
   const mySources = await db.conceptSources
     .where('conceptId')
@@ -573,7 +585,7 @@ export async function findCandidateConceptsFromKnownPages(concept: { id: string;
 
     for (const page of pages) {
       const { items: textItems } = await getPageTextContent(doc, page)
-      const pageText = textItems.map((t) => t.str).join(' ')
+      const pageText = joinPageText(textItems)
       if (!pageText.trim()) continue
 
       for (const phrase of extractCandidatePhrases(pageText)) {
@@ -591,6 +603,7 @@ export async function findCandidateConceptsFromKnownPages(concept: { id: string;
 
   return Array.from(candidateEvidence.entries())
     .map(([normalizedName, evidence]) => ({ normalizedName, displayText: evidence.displayText, pages: evidence.pages }))
+    .filter((c) => c.pages.length >= MIN_CANDIDATE_PAGE_OCCURRENCES)
     .sort((a, b) => b.pages.length - a.pages.length)
     .slice(0, MAX_CANDIDATES_RETURNED)
 }
@@ -618,7 +631,7 @@ export async function getSourceExcerpt(item: LibraryItem, pageNumber: number, te
   }
   const doc = await loadPdfDocument(blob)
   const { items: textItems } = await getPageTextContent(doc, pageNumber)
-  const pageText = textItems.map((t) => t.str).join(' ')
+  const pageText = joinPageText(textItems)
   const idx = pageText.toLowerCase().indexOf(term.toLowerCase())
   if (idx === -1) return undefined
   const start = Math.max(0, idx - 120)
