@@ -23,22 +23,29 @@ interface StatCardProps {
   label: string
   value: string
   hint?: string
+  onClick?: () => void
 }
 
-function StatCard({ icon, label, value, hint }: StatCardProps) {
+function StatCard({ icon, label, value, hint, onClick }: StatCardProps) {
   return (
-    <Card>
-      <CardBody className="flex items-start gap-4">
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm bg-surface-raised text-olive" aria-hidden>
-          {icon}
-        </span>
-        <span className="flex flex-col">
-          <span className="font-display text-h2 font-semibold text-ink-primary">{value}</span>
-          <span className="font-ui text-caption text-ink-secondary">{label}</span>
-          {hint && <span className="mt-0.5 font-ui text-micro text-ink-tertiary">{hint}</span>}
-        </span>
-      </CardBody>
-    </Card>
+    <button
+      type="button"
+      onClick={onClick}
+      className={`w-full text-left transition-transform active:scale-95 ${onClick ? 'cursor-pointer hover:opacity-90' : 'cursor-default'}`}
+    >
+      <Card>
+        <CardBody className="flex items-start gap-4">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm bg-surface-raised text-olive" aria-hidden>
+            {icon}
+          </span>
+          <span className="flex flex-col">
+            <span className="font-display text-h2 font-semibold text-ink-primary">{value}</span>
+            <span className="font-ui text-caption text-ink-secondary">{label}</span>
+            {hint && <span className="mt-0.5 font-ui text-micro text-ink-tertiary">{hint}</span>}
+          </span>
+        </CardBody>
+      </Card>
+    </button>
   )
 }
 
@@ -121,11 +128,11 @@ export function DashboardPage() {
         )}
       </section>
 
-      <StatCard icon={<Stack size={22} />} label="Books in library" value={String(stats.booksInLibrary)} hint={`${stats.booksOpened} opened`} />
-      <StatCard icon={<BookOpen size={22} />} label="Pages read" value={stats.pagesRead.toLocaleString()} />
-      <StatCard icon={<Highlighter size={22} />} label="Highlights" value={String(stats.highlightCount)} />
-      <StatCard icon={<NotePencil size={22} />} label="Notes" value={String(stats.noteCount)} />
-      <StatCard icon={<Bookmarks size={22} />} label="Bookmarks" value={String(stats.bookmarkCount)} />
+            <StatCard icon={<Stack size={22} />} label="Books in library" value={String(stats.booksInLibrary)} hint={`${stats.booksOpened} opened`} onClick={() => navigate('/library')} />
+      <StatCard icon={<BookOpen size={22} />} label="Pages read" value={stats.pagesRead.toLocaleString()} onClick={() => navigate('/library')} />
+      <StatCard icon={<Highlighter size={22} />} label="Highlights" value={String(stats.highlightCount)} onClick={() => navigate('/highlights')} />
+      <StatCard icon={<NotePencil size={22} />} label="Notes" value={String(stats.noteCount)} onClick={() => navigate('/notes')} />
+      <StatCard icon={<Bookmarks size={22} />} label="Bookmarks" value={String(stats.bookmarkCount)} onClick={() => navigate('/bookmarks')} />
       <StatCard icon={<Fire size={22} />} label="Reading streak" value={`${stats.readingStreakDays} day${stats.readingStreakDays === 1 ? '' : 's'}`} />
       <StatCard icon={<Clock size={22} />} label="Time spent reading" value={formatDuration(stats.totalReadingSeconds)} hint="Tracked while a book is open" />
 
@@ -141,35 +148,35 @@ export function DashboardPage() {
           </button>
         </div>
 
-        <div className="mb-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <div className="flex items-center gap-3">
+                <div className="mb-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <button type="button" onClick={() => navigate('/concepts')} className="flex items-center gap-3 text-left hover:opacity-80">
             <GitBranch size={20} className="text-olive" aria-hidden />
             <div className="flex flex-col">
               <span className="font-display text-h3 font-semibold text-ink-primary">{conceptCount}</span>
               <span className="font-ui text-micro text-ink-tertiary">Concepts</span>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
+          </button>
+          <button type="button" onClick={() => navigate('/notes')} className="flex items-center gap-3 text-left hover:opacity-80">
             <NotePencil size={20} className="text-olive" aria-hidden />
             <div className="flex flex-col">
               <span className="font-display text-h3 font-semibold text-ink-primary">{stats.noteCount}</span>
               <span className="font-ui text-micro text-ink-tertiary">Notes</span>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
+          </button>
+          <button type="button" onClick={() => navigate('/highlights')} className="flex items-center gap-3 text-left hover:opacity-80">
             <Highlighter size={20} className="text-olive" aria-hidden />
             <div className="flex flex-col">
               <span className="font-display text-h3 font-semibold text-ink-primary">{stats.highlightCount}</span>
               <span className="font-ui text-micro text-ink-tertiary">Highlights</span>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
+          </button>
+          <button type="button" onClick={() => navigate('/library')} className="flex items-center gap-3 text-left hover:opacity-80">
             <Stack size={20} className="text-olive" aria-hidden />
             <div className="flex flex-col">
               <span className="font-display text-h3 font-semibold text-ink-primary">{stats.booksInLibrary}</span>
               <span className="font-ui text-micro text-ink-tertiary">Books</span>
             </div>
-          </div>
+          </button>
         </div>
 
         {recentlyExplored.length > 0 && (
