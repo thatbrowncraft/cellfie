@@ -8,6 +8,7 @@ import { addHighlight, removeHighlight, updateHighlightColor, updateHighlightNot
 import { createNoteFromHighlight } from '@/core/db/notes'
 import { addReadingSeconds } from '@/core/db/reading-time'
 import { runDeterministicExtractionForItem } from '@/core/concepts'
+import { useReaderNavigationMode } from '@/core/reader-settings'
 import { SplitLayout } from '@/shared/layouts'
 import { BottomSheet, EmptyState } from '@/shared/components'
 import { useBreakpoint } from '@/shared/hooks'
@@ -65,6 +66,7 @@ export function ReaderPage() {
 
   const { doc, numPages, loading, error } = usePdfDocument(item?.filePath)
 
+  const [readerNavigationMode] = useReaderNavigationMode()
   const [page, setPage] = useState(1)
   const [fitMode, setFitMode] = useState<FitMode>('width')
   const [scale, setScale] = useState(1)
@@ -299,7 +301,8 @@ export function ReaderPage() {
     onSelectHighlight: handleSelectHighlight,
     onSelectionAvailabilityChange: setHasTextSelection,
     onSwipeNext: goNext,
-    onSwipePrev: goPrev
+    onSwipePrev: goPrev,
+    navigationMode: readerNavigationMode
   }
 
   return (

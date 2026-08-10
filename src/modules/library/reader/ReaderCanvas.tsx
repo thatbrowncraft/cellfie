@@ -35,6 +35,15 @@ interface ReaderCanvasProps {
   /** Reader Improvement §Swipe Navigation: horizontal swipe gestures — wired to the same goPrev/goNext the arrow buttons use, never a second navigation system. */
   onSwipeNext?: () => void
   onSwipePrev?: () => void
+  /**
+   * Reader Fix — Scroll mode: 'swipe' (default) keeps the existing
+   * horizontal swipe-to-turn-page gesture below untouched. 'scroll' turns
+   * that gesture off so a horizontal finger movement never calls
+   * onSwipeNext/onSwipePrev, leaving the container's native vertical
+   * overflow-y-auto scroll (already present in both modes, see the root
+   * container below) as the only thing a touch-drag can do.
+   */
+  navigationMode?: 'swipe' | 'scroll'
 }
 
 export interface ReaderCanvasHandle {
@@ -108,7 +117,8 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
     onSelectHighlight,
     onSelectionAvailabilityChange,
     onSwipeNext,
-    onSwipePrev
+    onSwipePrev,
+    navigationMode = 'swipe'
   },
   ref
 ) {
@@ -254,6 +264,15 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
 
   function handleTouchStart(e: ReactTouchEvent) {
     if (!onSwipeNext && !onSwipePrev) return
+    // Scroll mode: never track a swipe gesture in the first place, so a
+    // vertical drag is left entirely to the browser's native scroll on the
+    // container below (touchAction stays 'pan-y' either way — the only
+    // thing that changes is whether a horizontal drag is *also*
+    // interpreted as a page turn).
+    if (navigationMode === 'scroll') {
+      touchStateRef.current = { x: 0, y: 0, time: 0, multiTouch: false, skip: true }
+      return
+    }
     const target = e.target as HTMLElement
     const interactive = Boolean(target.closest('button, a, input, textarea, [role="button"], [data-no-swipe]'))
     const container = containerRef.current
@@ -274,6 +293,9 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
   function handleTouchEnd(e: ReactTouchEvent) {
     const start = touchStateRef.current
     touchStateRef.current = null
+    // Belt-and-suspenders alongside the handleTouchStart guard above: scroll
+    // mode never calls onSwipeNext/onSwipePrev from a touch gesture.
+    if (navigationMode === 'scroll') return
     if (!start || start.skip) return
 
     const selection = window.getSelection()
