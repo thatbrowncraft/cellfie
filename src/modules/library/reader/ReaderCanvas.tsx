@@ -6,7 +6,8 @@ import {
   useRef,
   useState,
   type MouseEvent as ReactMouseEvent,
-  type TouchEvent as ReactTouchEvent
+  type TouchEvent as ReactTouchEvent,
+  type WheelEvent as ReactWheelEvent
 } from 'react'
 import type { PDFDocumentProxy, RenderTask } from 'pdfjs-dist'
 import { getPageSize, renderPageToCanvas } from '@/core/pdf-engine'
@@ -36,30 +37,18 @@ interface ReaderCanvasProps {
   onSwipeNext?: () => void
   onSwipePrev?: () => void
   /**
-   * Reader Fix — Scroll mode: 'swipe' (default) keeps the existing
-   * horizontal swipe-to-turn-page gesture below untouched. 'scroll' turns
-   * that gesture off so a horizontal finger movement never calls
-   * onSwipeNext/onSwipePrev, leaving the container's native vertical
-   * overflow-y-auto scroll (already present in both modes, see the root
-   * container below) as the only thing a touch-drag can do.
+   * Reader Fix — Scroll mode: 'swipe' (default) keeps horizontal swipe navigation.
+   * 'scroll' enables vertical page scrolling and triggers page turn at boundaries.
    */
   navigationMode?: 'swipe' | 'scroll'
 }
 
 export interface ReaderCanvasHandle {
-  /** Finalizes whatever text selection currently exists on the page into a
-   *  highlight-ready selection — delegates straight to the TextLayer's own
-   *  handle. Used by the toolbar's Highlight button (Bug 1 fix). */
   finalizeSelection: () => boolean
 }
 
-// Breathing room around the page inside the scrollable viewport, so a
-// fit-width/fit-page page never touches the pane edges.
 const PAGE_PADDING = 32
 
-// Sprint 2.2 Part 2: on-device verification, opt-in via ?debug=pdf so it
-// never ships visible-by-default. Read once at module load — this is a
-// diagnostics flag, not reactive app state.
 const DIAGNOSTICS_ENABLED =
   typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('debug') === 'pdf'
 
@@ -74,7 +63,6 @@ interface RenderDiagnostics {
   boundingHeight: number
   pageBoundingWidth: number
   pageBoundingHeight: number
-  /** canvas.width / bounding client width — the actual delivered sharpness ratio; should be ≈ devicePixelRatio (or the capped value) whenever this is < 1 the page IS being upscaled and will look soft, which is the exact thing to check for on your Android device. */
   effectivePixelRatio: number
 }
 
@@ -98,13 +86,6 @@ function DiagnosticsPanel({ diag }: { diag: RenderDiagnostics }) {
   )
 }
 
-/**
- * Renders the current page onto a canvas, recomputing scale for
- * fit-width/fit-page modes from the container's measured size. Scrolls
- * internally so a manually zoomed-in page can be panned without affecting
- * the rest of the reader. `overscroll-contain` keeps that internal pan/
- * zoom scroll from rubber-band-chaining into the page behind it on mobile.
- */
 export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(function ReaderCanvas(
   {
     doc,
@@ -126,6 +107,7 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
   const pageRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const textLayerRef = useRef<TextLayerHandle>(null)
+  const lastPageChangeTimeRef = useRef<number>(0)
   const [naturalSize, setNaturalSize] = useState<{ width: number; height: number } | null>(null)
   const [containerSize, setContainerSize] = useState<{ width: number; height: number } | null>(null)
 
@@ -144,6 +126,13 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
+
+  // Reset scroll to top on page change
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTop = 0
+    }
+  }, [pageNumber])
 
   useEffect(() => {
     let cancelled = false
@@ -168,9 +157,6 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
 
   useEffect(() => {
     if (effectiveScale > 0) onScaleChange(effectiveScale)
-    // onScaleChange intentionally excluded — it's a setState setter from
-    // the parent and including it would just re-trigger this on every
-    // parent render for no reason.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [effectiveScale])
 
@@ -216,15 +202,6 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
     }
   }, [doc, pageNumber, effectiveScale])
 
-  /**
-   * A single click that isn't the tail end of a text-drag-selection: test
-   * it against every highlight's stored rects (converted back from
-   * natural-page-space to this click's coordinates) and open the popover
-   * for whichever one it landed on. This is the one place in the layer
-   * stack that owns click hit-testing — TextLayer only ever handles
-   * mouseup-after-drag for *new* selections, never single clicks — so
-   * there's no pointer-events tug-of-war between the layers.
-   */
   function handlePageClick(e: ReactMouseEvent) {
     if (!onSelectHighlight || !pageRef.current || !naturalSize || effectiveScale <= 0) return
     const selection = window.getSelection()
@@ -243,48 +220,31 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
     }
   }
 
-  // --- Swipe navigation (Reader Improvement §Reader Mode 2/§Swipe Safety) --
-  //
-  // Deliberately conservative: a touch only ever becomes a page-turn when
-  // ALL of the following hold at touchend —
-  //   1. it was a single-finger gesture the whole time (pinch cancels it)
-  //   2. horizontal distance clearly dominates vertical distance, so an
-  //      ordinary vertical scroll is never hijacked
-  //   3. horizontal distance clears a minimum-px floor, so small taps/
-  //      jitter never fire a page change
-  //   4. it didn't start on a button/link/input (toolbar taps stay taps)
-  //   5. it didn't end with an active text selection (so selecting text
-  //      near a page edge never accidentally turns the page)
-  //   6. the page currently has no horizontal room to pan (i.e. the
-  //      person isn't zoomed in trying to pan across a wide page) — if
-  //      `scrollWidth > clientWidth`, pinch/pan wins and swipe nav is
-  //      skipped entirely for this gesture.
-  const touchStateRef = useRef<{ x: number; y: number; time: number; multiTouch: boolean; skip: boolean } | null>(null)
+  const touchStateRef = useRef<{ x: number; y: number; time: number; multiTouch: boolean; skip: boolean; scrollTop: number } | null>(null)
   const SWIPE_MIN_DISTANCE = 40
   const SWIPE_MAX_DURATION_MS = 900
   const SWIPE_DIRECTION_RATIO = 1.5
 
   function handleTouchStart(e: ReactTouchEvent) {
     if (!onSwipeNext && !onSwipePrev) return
-    // Scroll mode: never track a swipe gesture in the first place, so a
-    // vertical drag is left entirely to the browser's native scroll on the
-    // container below (touchAction stays 'pan-y' either way — the only
-    // thing that changes is whether a horizontal drag is *also*
-    // interpreted as a page turn).
-    if (navigationMode === 'scroll') {
-      touchStateRef.current = { x: 0, y: 0, time: 0, multiTouch: false, skip: true }
-      return
-    }
     const target = e.target as HTMLElement
     const interactive = Boolean(target.closest('button, a, input, textarea, [role="button"], [data-no-swipe]'))
     const container = containerRef.current
     const hasHorizontalRoom = Boolean(pageRef.current && container && pageRef.current.getBoundingClientRect().width > container.clientWidth + 5)
-    if (e.touches.length !== 1 || interactive || hasHorizontalRoom) {
-      touchStateRef.current = { x: 0, y: 0, time: 0, multiTouch: true, skip: true }
+    
+    if (e.touches.length !== 1 || interactive || (navigationMode === 'swipe' && hasHorizontalRoom)) {
+      touchStateRef.current = { x: 0, y: 0, time: 0, multiTouch: true, skip: true, scrollTop: 0 }
       return
     }
     const t = e.touches[0]
-    touchStateRef.current = { x: t.clientX, y: t.clientY, time: Date.now(), multiTouch: false, skip: false }
+    touchStateRef.current = {
+      x: t.clientX,
+      y: t.clientY,
+      time: Date.now(),
+      multiTouch: false,
+      skip: false,
+      scrollTop: container ? container.scrollTop : 0
+    }
   }
 
   function handleTouchMove(e: ReactTouchEvent) {
@@ -295,9 +255,6 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
   function handleTouchEnd(e: ReactTouchEvent) {
     const start = touchStateRef.current
     touchStateRef.current = null
-    // Belt-and-suspenders alongside the handleTouchStart guard above: scroll
-    // mode never calls onSwipeNext/onSwipePrev from a touch gesture.
-    if (navigationMode === 'scroll') return
     if (!start || start.skip) return
 
     const selection = window.getSelection()
@@ -312,11 +269,51 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
 
     const absDx = Math.abs(dx)
     const absDy = Math.abs(dy)
-    if (absDx < SWIPE_MIN_DISTANCE) return
-    if (absDx < absDy * SWIPE_DIRECTION_RATIO) return
+    const container = containerRef.current
+    const now = Date.now()
+
+    if (now - lastPageChangeTimeRef.current < 500) return
+
+    if (navigationMode === 'scroll') {
+      if (absDy < SWIPE_MIN_DISTANCE || absDy < absDx * SWIPE_DIRECTION_RATIO) return
+      if (!container) return
+
+      const isAtBottom = start.scrollTop + container.clientHeight >= container.scrollHeight - 15
+      const isAtTop = start.scrollTop <= 15
+
+      if (dy < 0 && isAtBottom) {
+        lastPageChangeTimeRef.current = now
+        onSwipeNext?.()
+      } else if (dy > 0 && isAtTop) {
+        lastPageChangeTimeRef.current = now
+        onSwipePrev?.()
+      }
+      return
+    }
+
+    if (absDx < SWIPE_MIN_DISTANCE || absDx < absDy * SWIPE_DIRECTION_RATIO) return
 
     if (dx < 0) onSwipeNext?.()
     else onSwipePrev?.()
+  }
+
+  function handleWheel(e: ReactWheelEvent) {
+    if (navigationMode !== 'scroll' || !containerRef.current) return
+    const container = containerRef.current
+    const now = Date.now()
+
+    if (now - lastPageChangeTimeRef.current < 500) return
+
+    const isAtBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 5
+    const isAtTop = container.scrollTop <= 5
+
+    if (e.deltaY > 30 && isAtBottom) {
+      lastPageChangeTimeRef.current = now
+      onSwipeNext?.()
+    } else if (e.deltaY < -30 && isAtTop) {
+      lastPageChangeTimeRef.current = now
+      onSwipePrev?.()
+    }
   }
 
   return (
@@ -325,6 +322,7 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      onWheel={handleWheel}
       className="flex h-full w-full items-start justify-center overflow-y-auto overflow-x-hidden touch-pan-y overscroll-contain bg-canvas p-4"
       style={{ touchAction: 'pan-y' }}
     >
@@ -368,3 +366,4 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
     </div>
   )
 })
+
