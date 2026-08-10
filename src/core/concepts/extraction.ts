@@ -261,7 +261,7 @@ const ACRONYM_TOKEN_RE = /^[A-Z]{2,6}$/
  * (shape + length + stopword-phrase checks) before a caller treats it as
  * real evidence.
  */
-function extractCandidatePhrases(pageText: string): string[] {
+export function extractCandidatePhrases(pageText: string): string[] {
   const tokens = tokenizeWords(pageText)
   const candidates = new Set<string>()
 
@@ -289,32 +289,26 @@ function extractCandidatePhrases(pageText: string): string[] {
   return Array.from(candidates).filter(looksLikeConceptPhrase)
 }
 
-interface CandidateEvidence {
-  /** First-seen casing, used as the created concept's display name. */
-  displayText: string
-  pages: Set<number>
-}
-
 export interface PdfExtractionResult extends ExtractionResult {
   pagesScanned: number
-  /** New concepts created purely from repeated PDF text (not from an existing concept name/alias match). */
+  /** Always 0 — kept on the type for API stability. Knowledge Model Correction §1: PDF text scanning may only *link* concepts that already exist, never silently create new ones. See `findCandidateConceptsFromKnownPages` for the read-only, non-persisting version of candidate discovery that now backs the "Related concepts found in your sources" UI instead. */
   conceptsDiscovered: number
 }
 
-/** How many *new* concepts a single extraction pass is allowed to create — keeps one huge book from flooding the Knowledge Layer (§4, §17). */
-const MAX_NEW_CONCEPTS_PER_RUN = 40
-/** A candidate must repeat on at least this many distinct pages before it's trusted enough to become a brand-new concept (§4 "repeated scientific phrases", §6 "do not over-infer"). Existing concepts still match on a single occurrence via the needle pass above — this threshold only gates *new* concept creation. */
-const MIN_PAGES_FOR_NEW_CONCEPT = 2
-
 /**
- * The unified deterministic pass over one book's PDF text (§1, §3, §4,
- * §13): in a single read of the file, (a) links any *existing* concept
- * name/alias found as literal text — same rule as `scanLibraryItemForConcepts`
- * — and (b) discovers brand-new concepts from scientific-term-shaped
- * phrases that repeat across multiple pages. Every created concept and
- * every source link is traceable to the exact book/page it came from
- * (§6). No AI, no embeddings, no network access — string matching and
- * counting only.
+ * Knowledge Model Correction §1/§2/§7 — links *existing* concept names/
+ * aliases as literal text found in a book's PDF pages. This is
+ * deliberately the only thing this function does: SOURCE MATCH, never
+ * CONCEPT CREATION. It used to also auto-create brand-new concepts from
+ * repeated capitalized phrases across the whole book — that's exactly
+ * the behavior that produced dozens of garbage concepts (chemical
+ * formula fragments, publisher names, sentence fragments) and has been
+ * removed entirely, not patched with more stopwords. A concept can now
+ * only ever be created via `createConcept`/`getOrCreateConcept` called
+ * with `manuallyCreated: true` — from "+ New Concept", the reader's
+ * concept picker, or an explicit "Add concept" promotion (search or
+ * related-candidate flows). No AI, no embeddings, no network access —
+ * string matching only.
  */
 export async function extractConceptsFromPdf(item: LibraryItem): Promise<PdfExtractionResult> {
   if (!item.pageCount) return { ...emptyResult(), pagesScanned: 0, conceptsDiscovered: 0 }
@@ -336,7 +330,6 @@ export async function extractConceptsFromPdf(item: LibraryItem): Promise<PdfExtr
 
   let result = emptyResult()
   let pagesScanned = 0
-  const candidateEvidence = new Map<string, CandidateEvidence>()
 
   for (let page = 1; page <= item.pageCount; page += 1) {
     const { items: textItems } = await getPageTextContent(doc, page)
@@ -345,7 +338,6 @@ export async function extractConceptsFromPdf(item: LibraryItem): Promise<PdfExtr
     const lowerPageText = pageText.toLowerCase()
     pagesScanned += 1
 
-    // (a) Existing concepts — same literal-substring rule as scanLibraryItemForConcepts.
     for (const { concept, term } of needles) {
       const key = term.toLowerCase()
       if (!lowerPageText.includes(key)) continue
@@ -359,56 +351,9 @@ export async function extractConceptsFromPdf(item: LibraryItem): Promise<PdfExtr
       })
       if (source) result = mergeResults(result, { conceptsCreated: 0, conceptsUpdated: 1, sourcesLinked: 1 })
     }
-
-    // (b) New-concept candidates — accumulate evidence, decide after the full scan.
-    for (const phrase of extractCandidatePhrases(pageText)) {
-      const key = normalizeConceptName(phrase)
-      const evidence = candidateEvidence.get(key) ?? { displayText: phrase, pages: new Set<number>() }
-      evidence.pages.add(page)
-      candidateEvidence.set(key, evidence)
-    }
   }
 
-  // Only phrases that (1) repeat across enough distinct pages and (2)
-  // aren't already an existing concept get created — ranked by page
-  // spread so the most-supported terms win the per-run cap.
-  const existingNormalizedNames = new Set(existingConcepts.map((c) => c.normalizedName))
-  const existingAliasKeys = new Set(existingConcepts.flatMap((c) => c.aliases.map((a) => normalizeConceptName(a))))
-
-  const qualifying = Array.from(candidateEvidence.entries())
-    .filter(([key]) => !existingNormalizedNames.has(key) && !existingAliasKeys.has(key))
-    .filter(([, evidence]) => evidence.pages.size >= MIN_PAGES_FOR_NEW_CONCEPT)
-    .sort((a, b) => b[1].pages.size - a[1].pages.size)
-    .slice(0, MAX_NEW_CONCEPTS_PER_RUN)
-
-  let conceptsDiscovered = 0
-  for (const [, evidence] of qualifying) {
-    const before = await db.concepts.where('normalizedName').equals(normalizeConceptName(evidence.displayText)).first()
-    const concept = await getOrCreateConcept({ name: evidence.displayText, aliases: [], tags: [] }, false)
-    if (!before) conceptsDiscovered += 1
-
-    for (const page of evidence.pages) {
-      const source = await addConceptSource({
-        conceptId: concept.id,
-        sourceType: 'pdf',
-        libraryItemId: item.id,
-        pageNumber: page,
-        sourceId: `${item.id}:${page}:${normalizeConceptName(evidence.displayText)}`,
-        sourceText: evidence.displayText
-      })
-      if (source) {
-        result = mergeResults(result, {
-          conceptsCreated: 0,
-          conceptsUpdated: 0,
-          sourcesLinked: 1
-        })
-      }
-    }
-  }
-
-  result = mergeResults(result, { conceptsCreated: conceptsDiscovered, conceptsUpdated: 0, sourcesLinked: 0 })
-
-  return { ...result, pagesScanned, conceptsDiscovered }
+  return { ...result, pagesScanned, conceptsDiscovered: 0 }
 }
 
 const EXTRACTION_META_KEY_PREFIX = 'conceptExtraction:'
@@ -464,8 +409,6 @@ export async function runDeterministicExtractionForItem(
 // ---------------------------------------------------------------------
 
 const CONCEPT_PAGE_EXTRACTION_KEY_PREFIX = 'conceptPageExtraction:'
-/** A candidate only needs to appear once on a concept's own known page — these pages are already confirmed relevant (they're this concept's own evidence), unlike a blind whole-book scan where repetition is needed to trust a candidate at all. */
-const MAX_NEW_CONCEPTS_PER_CONCEPT_SCAN = 20
 
 interface ConceptPageExtractionMeta {
   /** Sorted, comma-joined page numbers the last run covered — re-runs only when this concept has since picked up sources on pages that weren't covered before. */
@@ -484,14 +427,17 @@ async function setConceptPageExtractionMeta(conceptId: string, libraryItemId: st
 
 /**
  * Reads only the given book's given pages (not the whole book) looking
- * for (a) any other existing concept's name/alias as literal text, and
- * (b) new scientific-term-shaped candidates — same shape rules as the
- * whole-book pass, but with no repetition requirement, since every page
- * here was already confirmed relevant as one of `concept`'s own sources.
- * Every new concept and source created here lands on the *same* page as
- * `concept`, which is exactly what `getCoOccurrenceRelated` needs to
- * treat it as related. Idempotent per (concept, book, page set) via
- * `appSettings`, so revisiting a concept detail page repeatedly is cheap.
+ * for any *other existing* concept's name/alias as literal text —
+ * Knowledge Model Correction §1/§2: this never creates a concept, it
+ * only links concepts that are already real (user-created, or
+ * explicitly promoted from a candidate/search result) to pages they
+ * literally appear on. It used to also spin up brand-new concepts from
+ * unrecognized phrases on these pages — that's the piece that's been
+ * removed; see `findCandidateConceptsFromKnownPages` for the read-only
+ * replacement that surfaces candidates for the user to explicitly add
+ * instead of writing them automatically. Idempotent per (concept, book,
+ * page set) via `appSettings`, so revisiting a concept detail page
+ * repeatedly is cheap.
  */
 export async function extractRelatedConceptsFromKnownPages(
   concept: { id: string; name: string },
@@ -513,8 +459,6 @@ export async function extractRelatedConceptsFromKnownPages(
 
   const items = await db.libraryItems.bulkGet(Array.from(pagesByItem.keys()))
   const existingConcepts = await db.concepts.toArray()
-  const existingNormalizedNames = new Set(existingConcepts.map((c) => c.normalizedName))
-  const existingAliasKeys = new Set(existingConcepts.flatMap((c) => c.aliases.map((a) => normalizeConceptName(a))))
   const needles = existingConcepts
     .filter((c) => c.id !== concept.id)
     .flatMap((c) => [{ concept: c, term: c.name }, ...c.aliases.map((a) => ({ concept: c, term: a }))])
@@ -523,7 +467,6 @@ export async function extractRelatedConceptsFromKnownPages(
 
   let result = emptyResult()
   let pagesScanned = 0
-  let conceptsDiscovered = 0
 
   for (const item of items) {
     if (!item) continue
@@ -551,7 +494,6 @@ export async function extractRelatedConceptsFromKnownPages(
       const lowerPageText = pageText.toLowerCase()
       pagesScanned += 1
 
-      // (a) Other existing concepts mentioned on this same page.
       for (const { concept: other, term } of needles) {
         const key = term.toLowerCase()
         if (!lowerPageText.includes(key)) continue
@@ -565,32 +507,123 @@ export async function extractRelatedConceptsFromKnownPages(
         })
         if (source) result = mergeResults(result, { conceptsCreated: 0, conceptsUpdated: 1, sourcesLinked: 1 })
       }
-
-      // (b) New candidates — single-page evidence is enough here because
-      // this page is already known-relevant (it's `concept`'s own source).
-      for (const phrase of extractCandidatePhrases(pageText)) {
-        const key = normalizeConceptName(phrase)
-        if (key === normalizeConceptName(concept.name)) continue
-        if (existingNormalizedNames.has(key) || existingAliasKeys.has(key)) continue
-        if (conceptsDiscovered >= MAX_NEW_CONCEPTS_PER_CONCEPT_SCAN) continue
-
-        const created = await getOrCreateConcept({ name: phrase, aliases: [], tags: [] }, false)
-        existingNormalizedNames.add(key)
-        conceptsDiscovered += 1
-        const source = await addConceptSource({
-          conceptId: created.id,
-          sourceType: 'pdf',
-          libraryItemId: item.id,
-          pageNumber: page,
-          sourceId: `${item.id}:${page}:${key}`,
-          sourceText: phrase
-        })
-        if (source) result = mergeResults(result, { conceptsCreated: 1, conceptsUpdated: 0, sourcesLinked: 1 })
-      }
     }
 
     await setConceptPageExtractionMeta(concept.id, item.id, { pagesSignature, extractedAt: Date.now() })
   }
 
-  return { ...result, pagesScanned, conceptsDiscovered }
+  return { ...result, pagesScanned, conceptsDiscovered: 0 }
+}
+
+// ---------------------------------------------------------------------
+// Knowledge Model Correction §9/§10/§11 — "Related concepts found in
+// your sources" candidates. Deliberately the *read-only* twin of the
+// function above: same page-scoped PDF read, same candidate-phrase
+// shape rules, but returns plain data and never touches the database.
+// A candidate only becomes a real Concept when the person clicks
+// "Add concept" (see `promoteConceptCandidate` in ./service), which is
+// the one and only remaining path — besides "+ New Concept" — by which
+// PDF text can turn into a Concept record.
+// ---------------------------------------------------------------------
+
+export interface SourceCandidate {
+  displayText: string
+  normalizedName: string
+  pages: { libraryItemId: string; pageNumber: number }[]
+}
+
+/** Generous cap since nothing here writes to the database — it's just how many suggestions the Related tab shows at once. */
+const MAX_CANDIDATES_RETURNED = 30
+
+export async function findCandidateConceptsFromKnownPages(concept: { id: string; name: string }): Promise<SourceCandidate[]> {
+  const mySources = await db.conceptSources
+    .where('conceptId')
+    .equals(concept.id)
+    .filter((s) => Boolean(s.libraryItemId) && s.pageNumber != null)
+    .toArray()
+
+  const pagesByItem = new Map<string, Set<number>>()
+  for (const s of mySources) {
+    const set = pagesByItem.get(s.libraryItemId as string) ?? new Set<number>()
+    set.add(s.pageNumber as number)
+    pagesByItem.set(s.libraryItemId as string, set)
+  }
+  if (pagesByItem.size === 0) return []
+
+  const items = await db.libraryItems.bulkGet(Array.from(pagesByItem.keys()))
+  const existingConcepts = await db.concepts.toArray()
+  const existingNormalizedNames = new Set(existingConcepts.map((c) => c.normalizedName))
+  const existingAliasKeys = new Set(existingConcepts.flatMap((c) => c.aliases.map((a) => normalizeConceptName(a))))
+  const myKey = normalizeConceptName(concept.name)
+
+  const candidateEvidence = new Map<string, { displayText: string; pages: { libraryItemId: string; pageNumber: number }[] }>()
+
+  for (const item of items) {
+    if (!item) continue
+    const pages = Array.from(pagesByItem.get(item.id) ?? []).sort((a, b) => a - b)
+    if (pages.length === 0) continue
+
+    let blob: Blob
+    try {
+      blob = await readFile(item.filePath)
+    } catch {
+      continue
+    }
+    const doc = await loadPdfDocument(blob)
+
+    for (const page of pages) {
+      const { items: textItems } = await getPageTextContent(doc, page)
+      const pageText = textItems.map((t) => t.str).join(' ')
+      if (!pageText.trim()) continue
+
+      for (const phrase of extractCandidatePhrases(pageText)) {
+        const key = normalizeConceptName(phrase)
+        if (key === myKey) continue
+        if (existingNormalizedNames.has(key) || existingAliasKeys.has(key)) continue
+        const evidence = candidateEvidence.get(key) ?? { displayText: phrase, pages: [] }
+        if (!evidence.pages.some((p) => p.libraryItemId === item.id && p.pageNumber === page)) {
+          evidence.pages.push({ libraryItemId: item.id, pageNumber: page })
+        }
+        candidateEvidence.set(key, evidence)
+      }
+    }
+  }
+
+  return Array.from(candidateEvidence.entries())
+    .map(([normalizedName, evidence]) => ({ normalizedName, displayText: evidence.displayText, pages: evidence.pages }))
+    .sort((a, b) => b.pages.length - a.pages.length)
+    .slice(0, MAX_CANDIDATES_RETURNED)
+}
+
+export interface SourceExcerpt {
+  libraryItemId: string
+  pageNumber: number
+  text: string
+}
+
+/**
+ * Knowledge Model Correction §8 — on-demand only (never called
+ * automatically): reads a single page and returns a short excerpt of
+ * raw, unedited text around the concept's first literal occurrence.
+ * This is source-derived *context*, clearly not an authored definition —
+ * the caller is responsible for labeling it as a quoted excerpt, not a
+ * description.
+ */
+export async function getSourceExcerpt(item: LibraryItem, pageNumber: number, term: string): Promise<SourceExcerpt | undefined> {
+  let blob: Blob
+  try {
+    blob = await readFile(item.filePath)
+  } catch {
+    return undefined
+  }
+  const doc = await loadPdfDocument(blob)
+  const { items: textItems } = await getPageTextContent(doc, pageNumber)
+  const pageText = textItems.map((t) => t.str).join(' ')
+  const idx = pageText.toLowerCase().indexOf(term.toLowerCase())
+  if (idx === -1) return undefined
+  const start = Math.max(0, idx - 120)
+  const end = Math.min(pageText.length, idx + term.length + 120)
+  const prefix = start > 0 ? '…' : ''
+  const suffix = end < pageText.length ? '…' : ''
+  return { libraryItemId: item.id, pageNumber, text: `${prefix}${pageText.slice(start, end).trim()}${suffix}` }
 }

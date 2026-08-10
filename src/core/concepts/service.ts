@@ -187,3 +187,91 @@ export async function getRelatedConceptIds(conceptId: string): Promise<string[]>
   ])
   return [...asA.map((r) => r.conceptBId), ...asB.map((r) => r.conceptAId)]
 }
+
+// ---------------------------------------------------------------------
+// Knowledge Model Correction — "Concepts are USER-SELECTED objects."
+// Everything below exists so a PDF/search match can only ever become a
+// Concept through one explicit moment: the person clicking "Add
+// concept"/"Add to Concepts". Nothing in core/concepts/extraction.ts or
+// librarySearch.ts calls these on its own.
+// ---------------------------------------------------------------------
+
+export interface ConceptCandidateEvidence {
+  libraryItemId: string
+  pageNumber: number
+  sourceText?: string
+}
+
+/**
+ * The single write path for turning a source candidate (a "Related
+ * concepts found in your sources" suggestion, or a library search
+ * result) into a real Concept record. Always `manuallyCreated: true` —
+ * an explicit "Add concept" click counts as user-selection every bit as
+ * much as the "+ New Concept" form does, and must never be swept up by
+ * `runAutoConceptCleanup` later. If `relateToConceptId` is given, an
+ * explicit RELATED_TO relation is recorded to the concept the person was
+ * looking at when they promoted this candidate (§16).
+ */
+export async function promoteConceptCandidate(input: {
+  name: string
+  evidence: ConceptCandidateEvidence[]
+  relateToConceptId?: string
+}): Promise<Concept> {
+  const concept = await getOrCreateConcept({ name: input.name, aliases: [], tags: [] }, true)
+  for (const e of input.evidence) {
+    await addConceptSource({
+      conceptId: concept.id,
+      sourceType: 'pdf',
+      libraryItemId: e.libraryItemId,
+      pageNumber: e.pageNumber,
+      sourceId: `${e.libraryItemId}:${e.pageNumber}:${normalizeConceptName(input.name)}`,
+      sourceText: e.sourceText ?? input.name
+    })
+  }
+  if (input.relateToConceptId) await addConceptRelation(input.relateToConceptId, concept.id)
+  return concept
+}
+
+const AUTO_CONCEPT_CLEANUP_KEY = 'sprint3ConceptCleanup:v1'
+
+export interface ConceptCleanupResult {
+  /** False if the cleanup had already run before (or already been skipped) — safe to call unconditionally on every app boot. */
+  ran: boolean
+  removed: number
+}
+
+/**
+ * Knowledge Model Correction §18 — one-time removal of concepts that
+ * were silently auto-created from raw PDF text before this correction
+ * (chemical formula fragments like "CH H"/"COOH", publisher names,
+ * sentence fragments, and similar). Distinguishes safely using the
+ * `manuallyCreated` flag every Concept has always been created with —
+ * `true` for "+ New Concept", the reader's concept picker, and (from
+ * this correction onward) every explicit "Add concept" promotion; `false`
+ * only for the old blind bulk-extraction paths. Cascades to that
+ * concept's own ConceptSource/ConceptRelation rows (they only existed to
+ * serve the garbage concept) but never touches books, PDFs, notes,
+ * highlights, bookmarks, collections, or any source record belonging to
+ * a surviving concept. Gated by an `appSettings` flag so it runs at most
+ * once — safe to call unconditionally on every app boot.
+ */
+export async function runAutoConceptCleanup(): Promise<ConceptCleanupResult> {
+  const already = await db.appSettings.get(AUTO_CONCEPT_CLEANUP_KEY)
+  if (already) return { ran: false, removed: 0 }
+
+  const all = await db.concepts.toArray()
+  const toRemove = all.filter((c) => !c.manuallyCreated)
+
+  await db.transaction('rw', db.concepts, db.conceptSources, db.conceptRelations, db.appSettings, async () => {
+    for (const concept of toRemove) {
+      await db.concepts.delete(concept.id)
+      await db.conceptSources.where('conceptId').equals(concept.id).delete()
+      const asA = await db.conceptRelations.where('conceptAId').equals(concept.id).toArray()
+      const asB = await db.conceptRelations.where('conceptBId').equals(concept.id).toArray()
+      await Promise.all([...asA, ...asB].map((r) => db.conceptRelations.delete(r.id)))
+    }
+    await db.appSettings.put({ key: AUTO_CONCEPT_CLEANUP_KEY, value: { removedCount: toRemove.length, ranAt: Date.now() } })
+  })
+
+  return { ran: true, removed: toRemove.length }
+}
