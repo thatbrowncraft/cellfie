@@ -28,7 +28,7 @@ function HighlightsPage() {
     const q = query.trim().toLowerCase()
     if (!q) return highlights
     return highlights.filter((h) =>
-      (h.text || h.quote || '').toLowerCase().includes(q) ||
+      (h.text || '').toLowerCase().includes(q) ||
       (h.note || '').toLowerCase().includes(q)
     )
   }, [highlights, query])
@@ -62,7 +62,6 @@ function HighlightsPage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((h) => {
             const book = itemsById.get(h.itemId)
-            const textContent = h.text || h.quote || 'Highlighted text'
             return (
               <Card
                 key={h.id}
@@ -71,7 +70,7 @@ function HighlightsPage() {
               >
                 <CardBody className="flex flex-col gap-3">
                   <p className="border-l-2 border-olive pl-3 font-body text-body italic text-ink-primary">
-                    "{textContent}"
+                    "{h.text || 'Highlighted text'}"
                   </p>
                   {h.note && (
                     <p className="rounded-sm bg-surface-raised p-2 font-body text-caption text-ink-secondary">
@@ -104,11 +103,7 @@ function BookmarksPage() {
     if (!q) return bookmarks
     return bookmarks.filter((b) => {
       const book = itemsById.get(b.itemId)
-      const title = b.title || b.label || ''
-      return (
-        title.toLowerCase().includes(q) ||
-        (book && book.title.toLowerCase().includes(q))
-      )
+      return book && book.title.toLowerCase().includes(q)
     })
   }, [bookmarks, query, itemsById])
 
@@ -141,8 +136,6 @@ function BookmarksPage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((b) => {
             const book = itemsById.get(b.itemId)
-            const pageNum = b.pageNumber ?? b.page
-            const displayTitle = b.title || b.label || (pageNum ? `Page ${pageNum}` : 'Bookmark')
             return (
               <Card
                 key={b.id}
@@ -152,11 +145,11 @@ function BookmarksPage() {
                 <CardBody className="flex flex-col gap-2">
                   <div className="flex items-center gap-2 font-display text-h3 font-semibold text-olive">
                     <Bookmarks size={20} />
-                    <span className="truncate">{displayTitle}</span>
+                    <span className="truncate">{b.page ? `Page ${b.page}` : 'Bookmark'}</span>
                   </div>
                   <div className="mt-auto flex items-center justify-between text-micro text-ink-tertiary">
                     <span className="truncate">{book ? book.title : 'Unknown book'}</span>
-                    {pageNum && <span>Page {pageNum}</span>}
+                    {b.page && <span>Page {b.page}</span>}
                   </div>
                 </CardBody>
               </Card>
