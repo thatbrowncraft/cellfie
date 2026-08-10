@@ -301,7 +301,8 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      className="flex h-full w-full items-start justify-center overflow-auto overscroll-contain bg-canvas p-4"
+      className="flex h-full w-full items-start justify-center overflow-y-auto overflow-x-hidden touch-pan-y overscroll-contain bg-canvas p-4"
+       style={{ touchAction: 'pan-y' }}
     >
       <div
         ref={pageRef}
