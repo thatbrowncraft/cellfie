@@ -160,7 +160,9 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
     if (fitMode === 'custom' || !naturalSize || !containerSize) return scale
     const availWidth = Math.max(containerSize.width - PAGE_PADDING, 100)
     const availHeight = Math.max(containerSize.height - PAGE_PADDING, 100)
-    if (fitMode === 'width') return availWidth / naturalSize.width
+    if (fitMode === 'width' || (navigationMode === 'scroll' && fitMode === 'page')) {
+      return availWidth / naturalSize.width
+    }
     return Math.min(availWidth / naturalSize.width, availHeight / naturalSize.height)
   })()
 
@@ -318,7 +320,7 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
   }
 
   return (
-        <div
+    <div
       ref={containerRef}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -340,12 +342,11 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
             : { touchAction: 'pan-y' }
         }
       >
-
-       <canvas
-  ref={canvasRef}
-  className="absolute inset-0 h-full w-full pointer-events-none"
-  style={{ zIndex: 1 }}
-/>
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 h-full w-full pointer-events-none"
+          style={{ zIndex: 1 }}
+        />
         {DIAGNOSTICS_ENABLED && diag && <DiagnosticsPanel diag={diag} />}
         {naturalSize && effectiveScale > 0 && (
           <>
