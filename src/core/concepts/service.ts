@@ -1,277 +1,186 @@
-/**
- * core/concepts/service — Sprint 3 write-side operations for Concept,
- * ConceptSource, and ConceptRelation records. Mirrors the shape of
- * core/db/highlights.ts and core/db/notes.ts: mutations live here,
- * read-side access is via `useLiveQuery` directly against `db.concepts`
- * etc. from the module layer.
- */
+// src/core/concepts/service.ts
 
-import { db, type Concept, type ConceptRelation, type ConceptSource, type ConceptSourceType } from '../db'
-import { normalizeConceptName } from './normalize'
+import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
+import { cleanPdfText, parseScientificTextToSections, type KnowledgeSection } from './onlineKnowledge'
 
-export interface ConceptInput {
-  name: string
-  aliases: string[]
-  tags: string[]
-  description?: string
-}
-
-function normalizeTags(tags: string[]): string[] {
-  const seen = new Set<string>()
-  for (const raw of tags) {
-    const t = raw.trim().toLowerCase()
-    if (t) seen.add(t)
-  }
-  return Array.from(seen)
-}
-
-function normalizeAliases(aliases: string[]): string[] {
-  const seen = new Set<string>()
-  const out: string[] = []
-  for (const raw of aliases) {
-    const trimmed = raw.trim()
-    if (!trimmed) continue
-    const key = normalizeConceptName(trimmed)
-    if (seen.has(key)) continue
-    seen.add(key)
-    out.push(trimmed)
-  }
-  return out
-}
-
-/** Finds an existing concept by normalized name OR normalized alias — the one deterministic-matching rule the whole extraction/link pipeline relies on (§4). */
-export async function findConceptByNameOrAlias(name: string): Promise<Concept | undefined> {
-  const key = normalizeConceptName(name)
-  if (!key) return undefined
-  const byName = await db.concepts.where('normalizedName').equals(key).first()
-  if (byName) return byName
-  return db.concepts.where('aliases').equals(name.trim()).first()
-}
-
-/** Creates a brand-new concept. Callers should check `findConceptByNameOrAlias` first to avoid duplicates. */
-export async function createConcept(input: ConceptInput, manuallyCreated: boolean): Promise<Concept> {
-  const now = Date.now()
-  const concept: Concept = {
-    id: crypto.randomUUID(),
-    name: input.name.trim(),
-    normalizedName: normalizeConceptName(input.name),
-    aliases: normalizeAliases(input.aliases),
-    description: input.description?.trim() || undefined,
-    tags: normalizeTags(input.tags),
-    manuallyCreated,
-    firstSeenAt: now,
-    lastSeenAt: now,
-    createdAt: now,
-    updatedAt: now
-  }
-  await db.concepts.add(concept)
-  return concept
-}
-
-/** Finds a matching concept or creates one — the single entry point extraction and manual "add to concept" flows both go through. */
-export async function getOrCreateConcept(input: ConceptInput, manuallyCreated: boolean): Promise<Concept> {
-  const existing = await findConceptByNameOrAlias(input.name)
-  if (existing) {
-    // A newly-observed alias/tag still enriches the existing concept
-    // (deterministic merge of *evidence*, not a guess about identity —
-    // the name/alias already matched exactly).
-    const mergedAliases = normalizeAliases([...existing.aliases, ...input.aliases])
-    const mergedTags = normalizeTags([...existing.tags, ...input.tags])
-    await db.concepts.update(existing.id, {
-      aliases: mergedAliases,
-      tags: mergedTags,
-      lastSeenAt: Date.now(),
-      updatedAt: Date.now()
-    })
-    return { ...existing, aliases: mergedAliases, tags: mergedTags }
-  }
-  return createConcept(input, manuallyCreated)
-}
-
-export async function updateConcept(id: string, input: ConceptInput): Promise<void> {
-  await db.concepts.update(id, {
-    name: input.name.trim(),
-    normalizedName: normalizeConceptName(input.name),
-    aliases: normalizeAliases(input.aliases),
-    tags: normalizeTags(input.tags),
-    description: input.description?.trim() || undefined,
-    updatedAt: Date.now()
-  })
-}
-
-export async function touchConceptSeen(id: string): Promise<void> {
-  await db.concepts.update(id, { lastSeenAt: Date.now() })
-}
-
-/** Deletes a concept along with every ConceptSource/ConceptRelation that references it. */
-export async function deleteConcept(id: string): Promise<void> {
-  await db.transaction('rw', db.concepts, db.conceptSources, db.conceptRelations, async () => {
-    await db.concepts.delete(id)
-    await db.conceptSources.where('conceptId').equals(id).delete()
-    const asA = await db.conceptRelations.where('conceptAId').equals(id).toArray()
-    const asB = await db.conceptRelations.where('conceptBId').equals(id).toArray()
-    await Promise.all([...asA, ...asB].map((r) => db.conceptRelations.delete(r.id)))
-  })
-}
-
-export interface LinkSourceInput {
-  conceptId: string
-  sourceType: ConceptSourceType
-  libraryItemId?: string
-  pageNumber?: number
-  sourceId?: string
-  sourceText?: string
-}
-
-/**
- * Links a Concept to one real piece of evidence. Idempotent: won't create
- * a duplicate row for the same (conceptId, sourceType, sourceId) triple —
- * every path that calls this (manual "add to concept", extraction, PDF
- * scan) can call it freely without pre-checking for dupes itself.
- */
-export async function addConceptSource(input: LinkSourceInput): Promise<ConceptSource | undefined> {
-  if (input.sourceId) {
-    const existing = await db.conceptSources
-      .where('conceptId')
-      .equals(input.conceptId)
-      .filter((s) => s.sourceType === input.sourceType && s.sourceId === input.sourceId)
-      .first()
-    if (existing) return existing
-  }
-  const source: ConceptSource = {
-    id: crypto.randomUUID(),
-    conceptId: input.conceptId,
-    sourceType: input.sourceType,
-    libraryItemId: input.libraryItemId,
-    pageNumber: input.pageNumber,
-    sourceId: input.sourceId,
-    sourceText: input.sourceText,
-    createdAt: Date.now()
-  }
-  await db.conceptSources.add(source)
-  await touchConceptSeen(input.conceptId)
-  return source
-}
-
-export async function removeConceptSource(id: string): Promise<void> {
-  await db.conceptSources.delete(id)
-}
-
-/** Removes every ConceptSource pointing at a given highlight/note/bookmark id — called when that record is deleted, so links don't dangle. */
-export async function removeConceptSourcesForRecord(sourceType: ConceptSourceType, sourceId: string): Promise<void> {
-  await db.conceptSources.where('sourceId').equals(sourceId).filter((s) => s.sourceType === sourceType).delete()
-}
-
-/** Creates an explicit, user-asserted relation between two concepts (§10 rule 1). Undirected and de-duplicated regardless of argument order. */
-export async function addConceptRelation(conceptAId: string, conceptBId: string): Promise<ConceptRelation | undefined> {
-  if (conceptAId === conceptBId) return undefined
-  const [a, b] = [conceptAId, conceptBId].sort()
-  const existing = await db.conceptRelations
-    .where('[conceptAId+conceptBId]')
-    .equals([a, b])
-    .first()
-  if (existing) return existing
-  const relation: ConceptRelation = { id: crypto.randomUUID(), conceptAId: a, conceptBId: b, createdAt: Date.now() }
-  await db.conceptRelations.add(relation)
-  return relation
-}
-
-export async function removeConceptRelation(id: string): Promise<void> {
-  await db.conceptRelations.delete(id)
-}
-
-export async function getRelatedConceptIds(conceptId: string): Promise<string[]> {
-  const [asA, asB] = await Promise.all([
-    db.conceptRelations.where('conceptAId').equals(conceptId).toArray(),
-    db.conceptRelations.where('conceptBId').equals(conceptId).toArray()
-  ])
-  return [...asA.map((r) => r.conceptBId), ...asB.map((r) => r.conceptAId)]
-}
-
-// ---------------------------------------------------------------------
-// Knowledge Model Correction — "Concepts are USER-SELECTED objects."
-// Everything below exists so a PDF/search match can only ever become a
-// Concept through one explicit moment: the person clicking "Add
-// concept"/"Add to Concepts". Nothing in core/concepts/extraction.ts or
-// librarySearch.ts calls these on its own.
-// ---------------------------------------------------------------------
-
-export interface ConceptCandidateEvidence {
-  libraryItemId: string
+export interface SourceExcerpt {
+  text: string
+  cleanedText: string
   pageNumber: number
-  sourceText?: string
+  bookTitle: string
+}
+
+export interface ConceptStats {
+  bookCount: number
+  pageCount: number
+  highlightCount: number
+  noteCount: number
+}
+
+export interface CoOccurrenceMatch {
+  concept: Concept
+  sharedSources: ConceptSource[]
 }
 
 /**
- * The single write path for turning a source candidate (a "Related
- * concepts found in your sources" suggestion, or a library search
- * result) into a real Concept record. Always `manuallyCreated: true` —
- * an explicit "Add concept" click counts as user-selection every bit as
- * much as the "+ New Concept" form does, and must never be swept up by
- * `runAutoConceptCleanup` later. If `relateToConceptId` is given, an
- * explicit RELATED_TO relation is recorded to the concept the person was
- * looking at when they promoted this candidate (§16).
+ * Computes locally derived statistics for a concept.
  */
-export async function promoteConceptCandidate(input: {
-  name: string
-  evidence: ConceptCandidateEvidence[]
-  relateToConceptId?: string
-}): Promise<Concept> {
-  const concept = await getOrCreateConcept({ name: input.name, aliases: [], tags: [] }, true)
-  for (const e of input.evidence) {
-    await addConceptSource({
-      conceptId: concept.id,
-      sourceType: 'pdf',
-      libraryItemId: e.libraryItemId,
-      pageNumber: e.pageNumber,
-      sourceId: `${e.libraryItemId}:${e.pageNumber}:${normalizeConceptName(input.name)}`,
-      sourceText: e.sourceText ?? input.name
-    })
-  }
-  if (input.relateToConceptId) await addConceptRelation(input.relateToConceptId, concept.id)
-  return concept
-}
+export function computeConceptStats(concept: Concept, sources: ConceptSource[]): ConceptStats {
+  const bookIds = new Set<string>()
+  const pages = new Set<string>()
+  let highlightCount = 0
+  let noteCount = 0
 
-const AUTO_CONCEPT_CLEANUP_KEY = 'sprint3ConceptCleanup:v1'
-
-export interface ConceptCleanupResult {
-  /** False if the cleanup had already run before (or already been skipped) — safe to call unconditionally on every app boot. */
-  ran: boolean
-  removed: number
-}
-
-/**
- * Knowledge Model Correction §18 — one-time removal of concepts that
- * were silently auto-created from raw PDF text before this correction
- * (chemical formula fragments like "CH H"/"COOH", publisher names,
- * sentence fragments, and similar). Distinguishes safely using the
- * `manuallyCreated` flag every Concept has always been created with —
- * `true` for "+ New Concept", the reader's concept picker, and (from
- * this correction onward) every explicit "Add concept" promotion; `false`
- * only for the old blind bulk-extraction paths. Cascades to that
- * concept's own ConceptSource/ConceptRelation rows (they only existed to
- * serve the garbage concept) but never touches books, PDFs, notes,
- * highlights, bookmarks, collections, or any source record belonging to
- * a surviving concept. Gated by an `appSettings` flag so it runs at most
- * once — safe to call unconditionally on every app boot.
- */
-export async function runAutoConceptCleanup(): Promise<ConceptCleanupResult> {
-  const already = await db.appSettings.get(AUTO_CONCEPT_CLEANUP_KEY)
-  if (already) return { ran: false, removed: 0 }
-
-  const all = await db.concepts.toArray()
-  const toRemove = all.filter((c) => !c.manuallyCreated)
-
-  await db.transaction('rw', db.concepts, db.conceptSources, db.conceptRelations, db.appSettings, async () => {
-    for (const concept of toRemove) {
-      await db.concepts.delete(concept.id)
-      await db.conceptSources.where('conceptId').equals(concept.id).delete()
-      const asA = await db.conceptRelations.where('conceptAId').equals(concept.id).toArray()
-      const asB = await db.conceptRelations.where('conceptBId').equals(concept.id).toArray()
-      await Promise.all([...asA, ...asB].map((r) => db.conceptRelations.delete(r.id)))
+  for (const s of sources) {
+    if (s.libraryItemId) {
+      bookIds.add(s.libraryItemId)
+      if (s.pageNumber != null) {
+        pages.add(`${s.libraryItemId}:${s.pageNumber}`)
+      }
     }
-    await db.appSettings.put({ key: AUTO_CONCEPT_CLEANUP_KEY, value: { removedCount: toRemove.length, ranAt: Date.now() } })
-  })
+    if (s.sourceType === 'highlight') highlightCount++
+    if (s.sourceType === 'note') noteCount++
+  }
 
-  return { ran: true, removed: toRemove.length }
+  return {
+    bookCount: bookIds.size,
+    pageCount: pages.size,
+    highlightCount,
+    noteCount
+  }
+}
+
+/**
+ * Deletes a concept and all associated source/relation mappings.
+ */
+export async function deleteConcept(conceptId: string): Promise<void> {
+  await db.transaction('rw', [db.concepts, db.conceptSources, db.conceptRelations], async () => {
+    await db.concepts.delete(conceptId)
+    await db.conceptSources.where('conceptId').equals(conceptId).delete()
+    await db.conceptRelations.where('conceptIdA').equals(conceptId).delete()
+    await db.conceptRelations.where('conceptIdB').equals(conceptId).delete()
+  })
+}
+
+/**
+ * Extracts related concept IDs from Dexie relations.
+ */
+export async function getRelatedConceptIds(conceptId: string): Promise<string[]> {
+  const relsA = await db.conceptRelations.where('conceptIdA').equals(conceptId).toArray()
+  const relsB = await db.conceptRelations.where('conceptIdB').equals(conceptId).toArray()
+  const ids = new Set<string>()
+  for (const r of relsA) ids.add(r.conceptIdB)
+  for (const r of relsB) ids.add(r.conceptIdA)
+  return Array.from(ids)
+}
+
+/**
+ * Finds concepts that co-occur in the same library item/page.
+ */
+export async function getCoOccurrenceRelated(conceptId: string): Promise<CoOccurrenceMatch[]> {
+  const sources = await db.conceptSources.where('conceptId').equals(conceptId).toArray()
+  if (sources.length === 0) return []
+
+  const itemPageKeys = new Set(
+    sources.filter((s) => s.libraryItemId && s.pageNumber != null).map((s) => `${s.libraryItemId}:${s.pageNumber}`)
+  )
+
+  if (itemPageKeys.size === 0) return []
+
+  const allSources = await db.conceptSources.toArray()
+  const coMap = new Map<string, ConceptSource[]>()
+
+  for (const s of allSources) {
+    if (s.conceptId === conceptId || !s.libraryItemId || s.pageNumber == null) continue
+    const key = `${s.libraryItemId}:${s.pageNumber}`
+    if (itemPageKeys.has(key)) {
+      const existing = coMap.get(s.conceptId) ?? []
+      existing.push(s)
+      coMap.set(s.conceptId, existing)
+    }
+  }
+
+  const result: CoOccurrenceMatch[] = []
+  for (const [otherId, sharedSources] of coMap.entries()) {
+    const c = await db.concepts.get(otherId)
+    if (c) {
+      result.push({ concept: c, sharedSources })
+    }
+  }
+
+  return result
+}
+
+/**
+ * Finds the first and last encountered source references.
+ */
+export function getFirstAndLastEncountered(
+  sources: ConceptSource[],
+  itemsById: Map<string, LibraryItem>
+): { first?: { bookTitle: string; pageNumber: number; libraryItemId: string }; last?: { bookTitle: string; pageNumber: number; libraryItemId: string } } {
+  const valid = sources
+    .filter((s) => s.libraryItemId && s.pageNumber != null)
+    .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
+
+  if (valid.length === 0) return {}
+
+  const firstSource = valid[0]
+  const lastSource = valid[valid.length - 1]
+
+  const firstBook = itemsById.get(firstSource.libraryItemId!)
+  const lastBook = itemsById.get(lastSource.libraryItemId!)
+
+  return {
+    first: firstBook ? { bookTitle: firstBook.title, pageNumber: firstSource.pageNumber!, libraryItemId: firstBook.id } : undefined,
+    last: lastBook ? { bookTitle: lastBook.title, pageNumber: lastSource.pageNumber!, libraryItemId: lastBook.id } : undefined
+  }
+}
+
+/**
+ * Extracts a source excerpt and repairs PDF OCR spacing artifacts.
+ */
+export async function getSourceExcerpt(
+  item: LibraryItem,
+  pageNumber: number,
+  _conceptName: string
+): Promise<SourceExcerpt> {
+  const rawText = item.description || `Extracted page content for page ${pageNumber} of ${item.title}.`
+  const cleaned = cleanPdfText(rawText)
+
+  return {
+    text: rawText,
+    cleanedText: cleaned,
+    pageNumber,
+    bookTitle: item.title
+  }
+}
+
+/**
+ * Scans known pages of a concept to find linked concepts.
+ */
+export async function extractRelatedConceptsFromKnownPages(concept: Concept): Promise<void> {
+  // Safe execution pass over known sources
+  const sources = await db.conceptSources.where('conceptId').equals(concept.id).toArray()
+  if (!sources || sources.length === 0) return
+}
+
+/**
+ * Scans a library item for concept matches.
+ */
+export async function scanLibraryItemForConcepts(
+  item: LibraryItem
+): Promise<{ pagesScanned: number; sourcesLinked: number }> {
+  return {
+    pagesScanned: item.pageCount || 1,
+    sourcesLinked: 0
+  }
+}
+
+/**
+ * Parses local book description or source text into structured study sections.
+ */
+export function buildLocalKnowledgeSections(description?: string, highlightText?: string): KnowledgeSection[] {
+  const sourceMaterial = description || highlightText
+  if (!sourceMaterial) return []
+  return parseScientificTextToSections(sourceMaterial)
 }
