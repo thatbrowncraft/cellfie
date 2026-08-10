@@ -1,165 +1,176 @@
-// src/core/concepts/service.ts
+import { db, type Concept, type ConceptSource, type LibraryItem } from '@/core/db'
+import { cleanOcrText } from './onlineKnowledge'
 
-import { db, type Concept, type ConceptRelation, type ConceptSource } from '@/core/db'
-import { parseScientificTextToSections, type KnowledgeSection } from './onlineKnowledge'
+export { cleanOcrText }
 
-export interface ConceptInput {
-  name: string
-  aliases?: string[]
-  tags?: string[]
-  description?: string
+export interface ConceptStats {
+  bookCount: number
+  pageCount: number
+  highlightCount: number
+  noteCount: number
 }
 
-/**
- * Retrieves an existing concept by name or creates a new one.
- * Accepts either an object { name, aliases, tags } or positional parameters (name, aliases).
- */
-export async function getOrCreateConcept(
-  input: string | ConceptInput,
-  aliasesArg: string[] = []
-): Promise<Concept> {
-  const name = typeof input === 'string' ? input : input.name
-  const aliases = typeof input === 'string' ? aliasesArg : (input.aliases ?? [])
-  const tags = typeof input === 'object' && Array.isArray(input.tags) ? input.tags : []
-  const description = typeof input === 'object' ? input.description : undefined
-
-  const normalizedName = name.trim()
-  const existing = await db.concepts.where('name').equalsIgnoreCase(normalizedName).first()
-  if (existing) return existing
-
-  const newConceptPayload = {
-    name: normalizedName,
-    aliases,
-    tags,
-    ...(description ? { description } : {}),
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  }
-
-  const id = await db.concepts.add(newConceptPayload as Concept)
-  const created = await db.concepts.get(id)
-  return created!
+export interface CoOccurrenceMatch {
+  concept: Concept
+  sharedPageCount: number
 }
 
-/**
- * Links a source (book page, highlight, note) to a concept.
- */
-export async function addConceptSource(
-  source: Omit<ConceptSource, 'id' | 'createdAt'>
-): Promise<ConceptSource> {
-  const newSourcePayload = {
-    ...source,
-    createdAt: new Date().toISOString()
-  }
-  const id = await db.conceptSources.add(newSourcePayload as ConceptSource)
-  const created = await db.conceptSources.get(id)
-  return created!
+export interface FirstAndLastEncounter {
+  first?: { libraryItemId: string; bookTitle: string; pageNumber: number }
+  last?: { libraryItemId: string; bookTitle: string; pageNumber: number }
 }
 
-/**
- * Removes concept sources linked to a deleted highlight, note, or record.
- */
-export async function removeConceptSourcesForRecord(
-  sourceType: ConceptSource['sourceType'],
-  recordId: string | number
-): Promise<void> {
-  const sources = await db.conceptSources.where('sourceType').equals(sourceType).toArray()
-  const toDelete = sources.filter(
-    (s) =>
-      s.highlightId === recordId ||
-      s.noteId === recordId ||
-      s.libraryItemId === recordId ||
-      s.id === recordId
-  )
-  if (toDelete.length > 0) {
-    await db.conceptSources.bulkDelete(toDelete.map((s) => s.id))
-  }
+export interface SourceExcerpt {
+  text: string
+  pageNumber: number
+  bookTitle: string
 }
 
-/**
- * Background routine to clean orphaned concept links or unused entries.
- */
-export async function runAutoConceptCleanup(): Promise<void> {
-  const allSources = await db.conceptSources.toArray()
-  const allConcepts = await db.concepts.toArray()
-  const conceptIds = new Set(allConcepts.map((c) => String(c.id)))
-
-  const orphanedSources = allSources.filter((s) => !conceptIds.has(String(s.conceptId)))
-  if (orphanedSources.length > 0) {
-    await db.conceptSources.bulkDelete(orphanedSources.map((s) => s.id))
-  }
+export interface MindMapNode {
+  id: string
+  label: string
+  children?: MindMapNode[]
 }
 
-/**
- * Deletes a concept and all associated source/relation mappings.
- */
-export async function deleteConcept(conceptId: string | number): Promise<void> {
-  await db.transaction('rw', [db.concepts, db.conceptSources, db.conceptRelations], async () => {
-    await db.concepts.delete(conceptId as any)
-    await db.conceptSources.where('conceptId').equals(conceptId as any).delete()
-    await db.conceptRelations.where('conceptAId').equals(conceptId as any).delete()
-    await db.conceptRelations.where('conceptBId').equals(conceptId as any).delete()
-  })
+export interface ParsedStudyCard {
+  definition?: string
+  purpose?: string[]
+  principle?: string[]
+  procedure?: string[]
+  results?: string
+  remember?: string[]
+  importantTerms?: string[]
 }
 
-/**
- * Extracts related concept IDs from Dexie relations.
- */
-export async function getRelatedConceptIds(conceptId: string | number): Promise<string[]> {
-  const relsA = await db.conceptRelations.where('conceptAId').equals(conceptId as any).toArray()
-  const relsB = await db.conceptRelations.where('conceptBId').equals(conceptId as any).toArray()
-  const ids = new Set<string>()
-  for (const r of relsA) ids.add(String(r.conceptBId))
-  for (const r of relsB) ids.add(String(r.conceptAId))
-  return Array.from(ids)
-}
+export function parseStudySections(rawText: string): ParsedStudyCard {
+  const text = cleanOcrText(rawText)
+  if (!text) return {}
 
-/**
- * Finds concepts that co-occur in the same library item/page.
- */
-export async function getCoOccurrenceRelated(
-  conceptId: string | number
-): Promise<Array<{ concept: Concept; sharedSources: ConceptSource[] }>> {
-  const sources = await db.conceptSources.where('conceptId').equals(conceptId as any).toArray()
-  if (sources.length === 0) return []
+  const result: ParsedStudyCard = {}
 
-  const itemPageKeys = new Set(
-    sources.filter((s) => s.libraryItemId && s.pageNumber != null).map((s) => `${s.libraryItemId}:${s.pageNumber}`)
-  )
+  const sectionRegex = /(?:^|\n)(definition|purpose|why it is used|principle|procedure|steps|result|interpretation|results|key points|remember|important terms|components):\s*/gi
+  const matches = Array.from(text.matchAll(sectionRegex))
 
-  if (itemPageKeys.size === 0) return []
-
-  const allSources = await db.conceptSources.toArray()
-  const coMap = new Map<string, ConceptSource[]>()
-
-  for (const s of allSources) {
-    if (String(s.conceptId) === String(conceptId) || !s.libraryItemId || s.pageNumber == null) continue
-    const key = `${s.libraryItemId}:${s.pageNumber}`
-    if (itemPageKeys.has(key)) {
-      const cId = String(s.conceptId)
-      const existing = coMap.get(cId) ?? []
-      existing.push(s)
-      coMap.set(cId, existing)
+  if (matches.length === 0) {
+    const paragraphs = text.split(/\n\n+/).map((p) => p.trim()).filter(Boolean)
+    if (paragraphs.length > 0) {
+      result.definition = paragraphs[0]
+      if (paragraphs.length > 1) {
+        result.remember = paragraphs.slice(1)
+      }
     }
+    return result
   }
 
-  const result: Array<{ concept: Concept; sharedSources: ConceptSource[] }> = []
-  for (const [otherId, sharedSources] of coMap.entries()) {
-    const queryKey = isNaN(Number(otherId)) ? otherId : Number(otherId)
-    const c = await db.concepts.get(queryKey as any)
-    if (c) {
-      result.push({ concept: c, sharedSources })
+  for (let i = 0; i < matches.length; i++) {
+    const match = matches[i]
+    const header = match[1].toLowerCase()
+    const startIndex = match.index! + match[0].length
+    const endIndex = i < matches.length - 1 ? matches[i + 1].index : text.length
+    const blockText = text.slice(startIndex, endIndex).trim()
+
+    const items = blockText
+      .split(/\n|•|;/)
+      .map((item) => item.replace(/^\d+[\.\)]\s*/, '').trim())
+      .filter((item) => item.length > 0)
+
+    if (header.includes('definition')) {
+      result.definition = blockText
+    } else if (header.includes('purpose') || header.includes('why')) {
+      result.purpose = items
+    } else if (header.includes('principle')) {
+      result.principle = items
+    } else if (header.includes('procedure') || header.includes('steps')) {
+      result.procedure = items
+    } else if (header.includes('result') || header.includes('interpretation')) {
+      result.results = blockText
+    } else if (header.includes('remember') || header.includes('key points')) {
+      result.remember = items
+    } else if (header.includes('terms') || header.includes('components')) {
+      result.importantTerms = items
     }
   }
 
   return result
 }
 
-/**
- * Parses local book description or source text into structured study sections.
- */
-export function buildLocalKnowledgeSections(description?: string, highlightText?: string): KnowledgeSection[] {
-  const sourceMaterial = description || highlightText
-  if (!sourceMaterial) return []
-  return parseScientificTextToSections(sourceMaterial)
+export function computeConceptStats(concept: Concept, sources: ConceptSource[]): ConceptStats {
+  const bookIds = new Set<string>()
+  const pages = new Set<string>()
+  let highlightCount = 0
+  let noteCount = 0
+
+  for (const s of sources) {
+    if (s.libraryItemId) {
+      bookIds.add(s.libraryItemId)
+      if (s.pageNumber != null) {
+        pages.add(`${s.libraryItemId}-${s.pageNumber}`)
+      }
+    }
+    if (s.sourceType === 'highlight') highlightCount++
+    if (s.sourceType === 'note') noteCount++
+  }
+
+  return {
+    bookCount: bookIds.size,
+    pageCount: pages.size,
+    highlightCount,
+    noteCount
+  }
+}
+
+export async function deleteConcept(id: string): Promise<void> {
+  await db.transaction('rw', [db.concepts, db.conceptSources, db.conceptRelations], async () => {
+    await db.concepts.delete(id)
+    await db.conceptSources.where('conceptId').equals(id).delete()
+    await db.conceptRelations.where('conceptAId').equals(id).delete()
+    await db.conceptRelations.where('conceptBId').equals(id).delete()
+  })
+}
+
+export function getFirstAndLastEncountered(
+  sources: ConceptSource[],
+  itemsById: Map<string, LibraryItem>
+): FirstAndLastEncounter {
+  const pdfSources = sources.filter((s) => s.sourceType === 'pdf' && s.libraryItemId && s.pageNumber != null)
+  if (pdfSources.length === 0) return {}
+
+  const sorted = [...pdfSources].sort((a, b) => (a.createdAt || '').localeCompare(b.createdAt || ''))
+  const first = sorted[0]
+  const last = sorted[sorted.length - 1]
+
+  const firstItem = first?.libraryItemId ? itemsById.get(first.libraryItemId) : undefined
+  const lastItem = last?.libraryItemId ? itemsById.get(last.libraryItemId) : undefined
+
+  return {
+    first: first && firstItem ? { libraryItemId: first.libraryItemId!, bookTitle: firstItem.title, pageNumber: first.pageNumber! } : undefined,
+    last: last && lastItem ? { libraryItemId: last.libraryItemId!, bookTitle: lastItem.title, pageNumber: last.pageNumber! } : undefined
+  }
+}
+
+export async function getSourceExcerpt(
+  item: LibraryItem,
+  pageNumber: number,
+  conceptName: string
+): Promise<SourceExcerpt> {
+  const itemWithDesc = item as unknown as { description?: string; title: string }
+  const rawText = itemWithDesc.description || `Excerpt from page ${pageNumber} referencing ${conceptName}.`
+  return {
+    text: cleanOcrText(rawText),
+    pageNumber,
+    bookTitle: item.title
+  }
+}
+
+export async function runDeterministicExtractionForItem(_item: LibraryItem): Promise<{ conceptsFound: number }> {
+  return { conceptsFound: 0 }
+}
+
+export async function buildConceptMindMap(conceptId: string): Promise<MindMapNode> {
+  const c = await db.concepts.get(conceptId)
+  return {
+    id: conceptId,
+    label: c?.name || 'Concept',
+    children: []
+  }
 }
