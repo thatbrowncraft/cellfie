@@ -1,22 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useNavigate, useParams } from 'react'
-import {
-  ArrowLeft,
-  ArrowSquareOut,
-  BookOpen,
-  CheckCircle,
-  Lightbulb,
-  ListNumbers,
-  PencilSimple,
-  Question,
-  Spinner,
-  Trash
-} from '@phosphor-icons/react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { ArrowLeft, ArrowSquareOut, Globe, PencilSimple, Trash } from '@phosphor-icons/react'
 import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
 import {
   buildConceptMindMap,
-  cleanOcrText,
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
@@ -25,7 +13,7 @@ import {
   getFirstAndLastEncountered,
   getRelatedConceptIds,
   getSourceExcerpt,
-  parseStudySections,
+  isLikelyOnline,
   scanLibraryItemForConcepts,
   type CoOccurrenceMatch,
   type MindMapNode,
@@ -39,6 +27,13 @@ import { RelatedConceptsPanel } from './components/RelatedConceptsPanel'
 import { ConceptMindMap } from './components/ConceptMindMap'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
 
+/**
+ * Concept Detail — Sprint 3 §8/§9/§10/§13. Overview (description or "No
+ * description saved yet"), traceable sources grouped by type, related
+ * concepts (manual + shared-tag), locally-computed statistics, and a
+ * per-concept mind map. Every number and edge here is derived from
+ * `useLiveQuery` subscriptions against Dexie — nothing hardcoded.
+ */
 export function ConceptDetailPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
@@ -58,20 +53,35 @@ export function ConceptDetailPage() {
   const items = useLiveQuery<LibraryItem[]>(() => db.libraryItems.toArray(), [], [])
   const itemsById = useMemo(() => new Map(items.map((i) => [i.id, i])), [items])
 
+  // Knowledge Graph Correction §17 — a concept can already have PDF page
+  // sources (e.g. this book was imported/opened before this feature, or
+  // before this concept existed) with Related/Mind map still empty,
+  // because nothing had scanned those specific pages for *other*
+  // concepts yet. This starts from the concept's own known pages only
+  // (not the whole book) and is internally throttled per (concept, book,
+  // page set), so it's safe to fire on every visit.
   useEffect(() => {
     if (!concept) return
     void extractRelatedConceptsFromKnownPages(concept)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [concept?.id])
 
+  // Sprint 4 — for an explicitly-selected concept, try to pull a real,
+  // attributed scientific summary from Wikipedia (see
+  // core/concepts/onlineKnowledge.ts for why Wikipedia and not
+  // NCBI/CDC/WHO directly). Never blocks the page: while it's loading or
+  // if it fails/there's no connection, the rest of the Overview — the
+  // person's own library material, notes, and highlights — renders
+  // immediately and independently below.
   const [onlineSummary, setOnlineSummary] = useState<OnlineSummary | undefined>(undefined)
   const [loadingOnlineSummary, setLoadingOnlineSummary] = useState(false)
-
+  const [onlineSummaryChecked, setOnlineSummaryChecked] = useState(false)
   useEffect(() => {
     let cancelled = false
     setOnlineSummary(undefined)
+    setOnlineSummaryChecked(false)
     if (!concept) return
     setLoadingOnlineSummary(true)
-
     fetchOnlineSummary(concept.name)
       .then((summary) => {
         if (cancelled) return
@@ -80,13 +90,17 @@ export function ConceptDetailPage() {
       .finally(() => {
         if (cancelled) return
         setLoadingOnlineSummary(false)
+        setOnlineSummaryChecked(true)
       })
-
     return () => {
       cancelled = true
     }
   }, [concept?.id, concept?.name])
 
+  // Personal knowledge layer (brief: "YOUR NOTES" / "YOUR HIGHLIGHTS") —
+  // reuses the same ConceptSource rows already shown in the Sources tab,
+  // just filtered to the two source types that carry the person's own
+  // wording verbatim. No rewriting, no summarizing.
   const yourHighlights = useMemo(() => sources.filter((s) => s.sourceType === 'highlight' && s.sourceText), [sources])
   const yourNotes = useMemo(() => sources.filter((s) => s.sourceType === 'note' && s.sourceText), [sources])
 
@@ -101,7 +115,8 @@ export function ConceptDetailPage() {
       (c) => c.id !== concept.id && !relatedIds.includes(c.id) && c.tags.some((t) => concept.tags.includes(t))
     )
   }, [allConcepts, concept, relatedIds])
-
+  // Sprint 3 Correction §5A/§7 — concepts that share an actual book+page
+  // ConceptSource with this one, independent of any manual relation/tag.
   const coOccurring = useLiveQuery<CoOccurrenceMatch[]>(
     () => (id ? getCoOccurrenceRelated(id) : []),
     [id, sources.length],
@@ -115,6 +130,9 @@ export function ConceptDetailPage() {
   const [excerpt, setExcerpt] = useState<SourceExcerpt | undefined>(undefined)
   const [loadingExcerpt, setLoadingExcerpt] = useState(false)
 
+  // Knowledge Model Correction §8 — on-demand only, never automatic:
+  // pulls a short, clearly-labeled raw excerpt from the source page,
+  // never an authored/invented definition.
   async function handleShowExcerpt() {
     if (!firstAndLast.first || !concept) return
     const item = itemsById.get(firstAndLast.first.libraryItemId)
@@ -142,11 +160,6 @@ export function ConceptDetailPage() {
     () => items.filter((i) => i.pageCount && !sourceItemIds.includes(i.id)),
     [items, sourceItemIds]
   )
-
-  const studyCard = useMemo(() => {
-    if (!concept?.description) return null
-    return parseStudySections(concept.description)
-  }, [concept?.description])
 
   if (!id) return null
 
@@ -217,12 +230,6 @@ export function ConceptDetailPage() {
         </div>
       </header>
 
-      {scanMessage && (
-        <div className="mb-4 rounded-md border border-border bg-surface p-3 font-ui text-caption text-ink-primary">
-          {scanMessage}
-        </div>
-      )}
-
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         {[
           { label: 'Books', value: stats.bookCount },
@@ -246,158 +253,104 @@ export function ConceptDetailPage() {
             label: 'Overview',
             content: (
               <div className="flex flex-col gap-6">
-                <div className="rounded-lg border border-border bg-surface p-5 sm:p-6 shadow-sm">
-                  <h2 className="mb-4 font-display text-h3 font-semibold text-ink-primary border-b border-border pb-2">
-                    {concept.name}
-                  </h2>
-
-                  <div className="flex flex-col gap-5 font-body text-body text-ink-primary">
-                    {(studyCard?.definition || onlineSummary?.definition) && (
-                      <section>
-                        <h3 className="mb-1 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                          <BookOpen size={14} /> Definition
-                        </h3>
-                        <p className="leading-relaxed text-ink-primary">
-                          {studyCard?.definition || onlineSummary?.definition}
-                        </p>
-                      </section>
-                    )}
-
-                    {studyCard?.purpose && studyCard.purpose.length > 0 && (
-                      <section>
-                        <h3 className="mb-1 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                          <Question size={14} /> Purpose / Why it is used
-                        </h3>
-                        <ul className="list-inside list-disc space-y-1">
-                          {studyCard.purpose.map((p, idx) => (
-                            <li key={idx} className="leading-relaxed">{p}</li>
-                          ))}
-                        </ul>
-                      </section>
-                    )}
-
-                    {studyCard?.principle && studyCard.principle.length > 0 && (
-                      <section>
-                        <h3 className="mb-1 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                          <Lightbulb size={14} /> Principle
-                        </h3>
-                        <ul className="list-inside list-disc space-y-1">
-                          {studyCard.principle.map((pr, idx) => (
-                            <li key={idx} className="leading-relaxed">{pr}</li>
-                          ))}
-                        </ul>
-                      </section>
-                    )}
-
-                    {studyCard?.procedure && studyCard.procedure.length > 0 && (
-                      <section>
-                        <h3 className="mb-1 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                          <ListNumbers size={14} /> Procedure / Steps
-                        </h3>
-                        <ol className="list-inside list-decimal space-y-1 font-medium">
-                          {studyCard.procedure.map((step, idx) => (
-                            <li key={idx} className="leading-relaxed font-normal">{step}</li>
-                          ))}
-                        </ol>
-                      </section>
-                    )}
-
-                    {studyCard?.results && (
-                      <section>
-                        <h3 className="mb-1 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                          <CheckCircle size={14} /> Result / Interpretation
-                        </h3>
-                        <p className="leading-relaxed">{studyCard.results}</p>
-                      </section>
-                    )}
-
-                    {studyCard?.remember && studyCard.remember.length > 0 && (
-                      <section>
-                        <h3 className="mb-1 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                          Remember
-                        </h3>
-                        <ul className="list-inside list-disc space-y-1">
-                          {studyCard.remember.map((rem, idx) => (
-                            <li key={idx} className="leading-relaxed">{rem}</li>
-                          ))}
-                        </ul>
-                      </section>
-                    )}
-
-                    {!studyCard?.definition && !onlineSummary?.definition && concept.description && (
-                      <p className="whitespace-pre-line leading-relaxed text-ink-primary">
-                        {cleanOcrText(concept.description)}
+                {/* Scientific Overview — online-enriched, always clearly attributed. Never invents a section: if
+                    there's no reliable summary (offline, no article, article is a disambiguation page), this
+                    collapses to a short, honest status line instead of fabricating a definition. */}
+                <div className="rounded-md border border-border bg-surface p-5">
+                  <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                    <Globe size={14} aria-hidden />
+                    Scientific overview
+                  </h3>
+                  {loadingOnlineSummary && (
+                    <p className="font-ui text-caption text-ink-tertiary">Checking online scientific sources…</p>
+                  )}
+                  {!loadingOnlineSummary && onlineSummary && (
+                    <div className="flex flex-col gap-2">
+                      <h4 className="font-ui text-caption font-medium uppercase tracking-wide text-ink-tertiary">
+                        Definition
+                      </h4>
+                      <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
+                        {onlineSummary.extract}
                       </p>
-                    )}
-
-                    {!concept.description && !onlineSummary && !loadingOnlineSummary && (
-                      <p className="font-ui text-caption italic text-ink-tertiary">
-                        No overview saved yet. Extracted sources and notes are displayed below.
-                      </p>
-                    )}
-                  </div>
-
-                  <div className="mt-6 border-t border-border pt-4">
-                    <h4 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary mb-1">
-                      Source / Scientific reference
-                    </h4>
-                    {firstAndLast.first ? (
-                      <p className="font-ui text-caption text-ink-secondary">
-                        <span className="font-medium text-ink-primary">{firstAndLast.first.bookTitle}</span>, Page {firstAndLast.first.pageNumber}
-                      </p>
-                    ) : onlineSummary ? (
                       <a
                         href={onlineSummary.sourceUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
+                        className="mt-1 flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
                       >
-                        {onlineSummary.sourceName} <ArrowSquareOut size={13} />
+                        Source: {onlineSummary.sourceName}
+                        <ArrowSquareOut size={13} />
                       </a>
-                    ) : (
-                      <p className="font-ui text-caption text-ink-tertiary">Local Library Record</p>
-                    )}
-                  </div>
+                    </div>
+                  )}
+                  {!loadingOnlineSummary && !onlineSummary && (
+                    <p className="font-ui text-caption text-ink-tertiary">
+                      {isLikelyOnline() || !onlineSummaryChecked
+                        ? 'No reliable online scientific source was found for this concept. Your local library material is shown below.'
+                        : 'Online enrichment unavailable — you appear to be offline. Your local library is still available.'}
+                    </p>
+                  )}
                 </div>
 
-                {scannableBooks.length > 0 && (
-                  <div className="rounded-lg border border-border bg-surface p-4">
-                    <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                      Scan library books for this concept
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {scannableBooks.map((bk) => (
-                        <Button
-                          key={bk.id}
-                          variant="secondary"
-                          size="small"
-                          disabled={scanning === bk.id}
-                          icon={scanning === bk.id ? <Spinner className="animate-spin" size={14} /> : undefined}
-                          onClick={() => void handleScan(bk)}
+                <div className="rounded-md border border-border bg-surface p-5">
+                  <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                    From your library
+                  </h3>
+                  <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
+                    {concept.description ?? 'No description saved yet.'}
+                  </p>
+                  {!concept.description && hasPdfPageSources && (
+                    <div className="mt-3 border-t border-border pt-3">
+                      <p className="mb-2 font-ui text-caption text-ink-secondary">
+                        Source context available — {firstAndLast.first?.bookTitle}, page {firstAndLast.first?.pageNumber}
+                      </p>
+                      {excerpt ? (
+                        <blockquote
+                          className="whitespace-pre-line rounded-md bg-surface-raised px-3 py-2 font-body text-caption italic text-ink-secondary"
+                          style={{ overflowWrap: 'anywhere' }}
                         >
-                          {scanning === bk.id ? `Scanning ${bk.title}...` : `Scan ${bk.title}`}
+                          “{excerpt.text}”
+                          <span className="mt-1 block font-ui text-micro not-italic text-ink-tertiary">
+                            Unedited excerpt from the source — not a definition.
+                          </span>
+                        </blockquote>
+                      ) : (
+                        <Button variant="secondary" size="small" disabled={loadingExcerpt} onClick={() => void handleShowExcerpt()}>
+                          {loadingExcerpt ? 'Reading source…' : 'Show source excerpt'}
                         </Button>
+                      )}
+                    </div>
+                  )}
+                  {concept.tags.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {concept.tags.map((tag) => (
+                        <span key={tag} className="rounded-full bg-surface-raised px-2.5 py-1 font-ui text-micro text-ink-secondary">
+                          #{tag}
+                        </span>
                       ))}
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
 
-                {!concept.description && hasPdfPageSources && (
-                  <div className="rounded-lg border border-border bg-surface p-5">
-                    <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                      Raw Source Context
-                    </h3>
-                    <p className="mb-2 font-ui text-caption text-ink-secondary">
-                      {firstAndLast.first?.bookTitle}, page {firstAndLast.first?.pageNumber}
-                    </p>
-                    {excerpt ? (
-                      <blockquote className="whitespace-pre-line rounded-md bg-surface-raised p-3 font-body text-caption italic text-ink-secondary">
-                        “{cleanOcrText(excerpt.text)}”
-                      </blockquote>
-                    ) : (
-                      <Button variant="secondary" size="small" disabled={loadingExcerpt} onClick={() => void handleShowExcerpt()}>
-                        {loadingExcerpt ? 'Reading source…' : 'Show raw source excerpt'}
-                      </Button>
+                {(firstAndLast.first || firstAndLast.last) && (
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {firstAndLast.first && (
+                      <div className="rounded-md border border-border bg-surface p-4">
+                        <h3 className="mb-1 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                          First encountered
+                        </h3>
+                        <p className="font-body text-body text-ink-primary">{firstAndLast.first.bookTitle}</p>
+                        <p className="font-ui text-caption text-ink-secondary">Page {firstAndLast.first.pageNumber}</p>
+                      </div>
+                    )}
+                    {firstAndLast.last && (
+                      <div className="rounded-md border border-border bg-surface p-4">
+                        <h3 className="mb-1 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                          Last referenced
+                        </h3>
+                        <p className="font-body text-body text-ink-primary">{firstAndLast.last.bookTitle}</p>
+                        <p className="font-ui text-caption text-ink-secondary">Page {firstAndLast.last.pageNumber}</p>
+                      </div>
                     )}
                   </div>
                 )}
@@ -411,8 +364,8 @@ export function ConceptDetailPage() {
                         </h3>
                         <ul className="flex flex-col gap-2">
                           {yourHighlights.map((s) => (
-                            <li key={s.id} className="font-body text-caption italic text-ink-secondary">
-                              “{cleanOcrText(s.sourceText || '')}”
+                            <li key={s.id} className="whitespace-pre-line font-body text-caption italic text-ink-secondary" style={{ overflowWrap: 'anywhere' }}>
+                              “{s.sourceText}”
                             </li>
                           ))}
                         </ul>
@@ -425,13 +378,61 @@ export function ConceptDetailPage() {
                         </h3>
                         <ul className="flex flex-col gap-2">
                           {yourNotes.map((s) => (
-                            <li key={s.id} className="font-body text-caption text-ink-secondary">
-                              {cleanOcrText(s.sourceText || '')}
+                            <li key={s.id} className="whitespace-pre-line font-body text-caption text-ink-secondary" style={{ overflowWrap: 'anywhere' }}>
+                              {s.sourceText}
                             </li>
                           ))}
                         </ul>
                       </div>
                     )}
+                  </div>
+                )}
+
+                {(relatedConcepts.length > 0 || coOccurring.length > 0) && (
+                  <div className="rounded-md border border-border bg-surface p-5">
+                    <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                      Related concepts
+                    </h3>
+                    <ul className="flex flex-wrap gap-2">
+                      {Array.from(new Map([...relatedConcepts, ...coOccurring.map((m) => m.concept)].map((c) => [c.id, c])).values())
+                        .slice(0, 8)
+                        .map((c) => (
+                          <li key={c.id}>
+                            <button
+                              type="button"
+                              onClick={() => navigate(`/concepts/${c.id}`)}
+                              className="rounded-full bg-surface-raised px-3 py-1.5 font-ui text-caption text-ink-secondary hover:text-ink-primary"
+                            >
+                              {c.name}
+                            </button>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
+
+                {scannableBooks.length > 0 && (
+                  <div className="rounded-md border border-border bg-surface p-5">
+                    <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                      Scan a book for this concept
+                    </h3>
+                    <p className="mb-3 font-body text-caption text-ink-secondary">
+                      Looks for this concept's name and aliases as literal text — no scientific knowledge is invented.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {scannableBooks.slice(0, 6).map((item) => (
+                        <Button
+                          key={item.id}
+                          variant="secondary"
+                          size="small"
+                          disabled={scanning === item.id}
+                          onClick={() => void handleScan(item)}
+                        >
+                          {scanning === item.id ? 'Scanning…' : `Scan “${item.title}”`}
+                        </Button>
+                      ))}
+                    </div>
+                    {scanMessage && <p className="mt-3 font-ui text-caption text-ink-secondary">{scanMessage}</p>}
                   </div>
                 )}
               </div>
