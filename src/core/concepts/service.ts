@@ -1,25 +1,26 @@
 // src/core/concepts/service.ts
 
-import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
-import { cleanPdfText, parseScientificTextToSections, type KnowledgeSection } from './onlineKnowledge'
+import { db, type Concept, type ConceptSource } from '@/core/db'
+import { parseScientificTextToSections, type KnowledgeSection } from './onlineKnowledge'
 
 export interface ConceptInput {
   name: string
   aliases?: string[]
   tags?: string[]
+  description?: string
 }
 
 /**
  * Retrieves an existing concept by name or creates a new one.
- * Accepts either an object { name, aliases, tags } or positional (name, aliases).
+ * Supports passing either an input object ({ name, aliases, tags }) or a string.
  */
 export async function getOrCreateConcept(
-  input: string | ConceptInput,
-  defaultAliases: string[] = []
+  input: string | ConceptInput
 ): Promise<Concept> {
   const name = typeof input === 'string' ? input : input.name
-  const aliases = typeof input === 'string' ? defaultAliases : (input.aliases ?? [])
-  const tags = typeof input === 'object' && input.tags ? input.tags : []
+  const aliases = typeof input === 'string' ? [] : (input.aliases ?? [])
+  const tags = typeof input === 'object' && Array.isArray(input.tags) ? input.tags : []
+  const description = typeof input === 'object' ? input.description : undefined
 
   const normalizedName = name.trim()
   const existing = await db.concepts.where('name').equalsIgnoreCase(normalizedName).first()
@@ -30,6 +31,7 @@ export async function getOrCreateConcept(
     name: normalizedName,
     aliases,
     tags,
+    ...(description ? { description } : {}),
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
   }
@@ -63,37 +65,6 @@ export async function runAutoConceptCleanup(): Promise<void> {
   const orphanedSources = allSources.filter((s) => !conceptIds.has(s.conceptId))
   if (orphanedSources.length > 0) {
     await db.conceptSources.bulkDelete(orphanedSources.map((s) => s.id))
-  }
-}
-
-/**
- * Computes locally derived statistics for a concept.
- */
-export function computeConceptStats(
-  concept: Concept,
-  sources: ConceptSource[]
-): { bookCount: number; pageCount: number; highlightCount: number; noteCount: number } {
-  const bookIds = new Set<string>()
-  const pages = new Set<string>()
-  let highlightCount = 0
-  let noteCount = 0
-
-  for (const s of sources) {
-    if (s.libraryItemId) {
-      bookIds.add(s.libraryItemId)
-      if (s.pageNumber != null) {
-        pages.add(`${s.libraryItemId}:${s.pageNumber}`)
-      }
-    }
-    if (s.sourceType === 'highlight') highlightCount++
-    if (s.sourceType === 'note') noteCount++
-  }
-
-  return {
-    bookCount: bookIds.size,
-    pageCount: pages.size,
-    highlightCount,
-    noteCount
   }
 }
 
@@ -158,34 +129,6 @@ export async function getCoOccurrenceRelated(
   }
 
   return result
-}
-
-/**
- * Finds the first and last encountered source references.
- */
-export function getFirstAndLastEncountered(
-  sources: ConceptSource[],
-  itemsById: Map<string, LibraryItem>
-): {
-  first?: { bookTitle: string; pageNumber: number; libraryItemId: string }
-  last?: { bookTitle: string; pageNumber: number; libraryItemId: string }
-} {
-  const valid = sources
-    .filter((s) => s.libraryItemId && s.pageNumber != null)
-    .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
-
-  if (valid.length === 0) return {}
-
-  const firstSource = valid[0]
-  const lastSource = valid[valid.length - 1]
-
-  const firstBook = itemsById.get(firstSource.libraryItemId!)
-  const lastBook = itemsById.get(lastSource.libraryItemId!)
-
-  return {
-    first: firstBook ? { bookTitle: firstBook.title, pageNumber: firstSource.pageNumber!, libraryItemId: firstBook.id } : undefined,
-    last: lastBook ? { bookTitle: lastBook.title, pageNumber: lastSource.pageNumber!, libraryItemId: lastBook.id } : undefined
-  }
 }
 
 /**
