@@ -12,12 +12,28 @@ import { NotesPage } from '../modules/notes/NotesPage'
 import { SettingsPage } from '../modules/settings/SettingsPage'
 import { NotFoundPage } from '../modules/not-found/NotFoundPage'
 
-/**
- * Router — Task 3 scope: routing + polished placeholders only, per
- * config/navigation.ts. Every module owns its own page component so
- * future phases can add real content/state without touching this file
- * beyond adding new <Route> entries.
- */
+function HighlightsPage() {
+  return (
+    <div className="p-6">
+      <h1 className="font-display text-h1 font-bold text-ink-primary">Highlights</h1>
+      <p className="mt-1 font-ui text-body text-ink-secondary">
+        All your saved key passages and highlighted text across your books.
+      </p>
+    </div>
+  )
+}
+
+function BookmarksPage() {
+  return (
+    <div className="p-6">
+      <h1 className="font-display text-h1 font-bold text-ink-primary">Bookmarks</h1>
+      <p className="mt-1 font-ui text-body text-ink-secondary">
+        All your saved bookmarks and reading location markers.
+      </p>
+    </div>
+  )
+}
+
 export function AppRouter() {
   return (
     <AppShell>
@@ -31,6 +47,8 @@ export function AppRouter() {
         <Route path="/laboratory" element={<LaboratoryPage />} />
         <Route path="/comparison" element={<ComparisonStudioPage />} />
         <Route path="/notes" element={<NotesPage />} />
+        <Route path="/highlights" element={<HighlightsPage />} />
+        <Route path="/bookmarks" element={<BookmarksPage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
