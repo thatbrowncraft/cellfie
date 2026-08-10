@@ -1,7 +1,8 @@
-import { Sun, Moon, Monitor, TextAa, Download, Upload } from '@phosphor-icons/react'
+import { Sun, Moon, Monitor, TextAa, Download, Upload, ArrowsLeftRight, ArrowsDownUp } from '@phosphor-icons/react'
 import { ReadingLayout } from '../../shared/layouts'
 import { Button } from '../../shared/components'
 import { useTheme, type ThemeMode } from '../../core/theme'
+import { useReaderNavigationMode, type ReaderNavigationMode } from '../../core/reader-settings'
 import { cn } from '../../shared/utils/cn'
 import { exportJsonBackup } from '../../core/export'
 
@@ -9,6 +10,11 @@ const themeOptions: { mode: ThemeMode; label: string; icon: JSX.Element }[] = [
   { mode: 'system', label: 'System', icon: <Monitor size={20} /> },
   { mode: 'light', label: 'Light', icon: <Sun size={20} /> },
   { mode: 'dark', label: 'Dark', icon: <Moon size={20} /> }
+]
+
+const readerNavigationOptions: { mode: ReaderNavigationMode; label: string; icon: JSX.Element; description: string }[] = [
+  { mode: 'swipe', label: 'Swipe', icon: <ArrowsLeftRight size={20} />, description: 'Swipe left/right to turn pages' },
+  { mode: 'scroll', label: 'Scroll', icon: <ArrowsDownUp size={20} />, description: 'Drag up/down to read down the page' }
 ]
 
 const futureModules = [
@@ -29,9 +35,37 @@ const futureModules = [
  */
 export function SettingsPage() {
   const { mode, setMode, largeText, setLargeText } = useTheme()
+  const [readerNavigationMode, setReaderNavigationMode] = useReaderNavigationMode()
 
   return (
     <ReadingLayout title="Settings" eyebrow="System">
+      <section className="mb-10">
+        <h2 className="mb-1 font-display text-h2 font-medium text-ink-primary">Reading</h2>
+        <p className="mb-4 font-body text-body text-ink-secondary">
+          Choose how you move through a PDF page in Library. Applies to every book, on this device.
+        </p>
+        <div role="radiogroup" aria-label="Page navigation" className="flex gap-3">
+          {readerNavigationOptions.map((opt) => (
+            <button
+              key={opt.mode}
+              role="radio"
+              aria-checked={readerNavigationMode === opt.mode}
+              onClick={() => setReaderNavigationMode(opt.mode)}
+              className={cn(
+                'flex flex-1 flex-col items-center gap-2 rounded-md border p-4 font-ui text-ui font-medium transition-colors duration-micro',
+                readerNavigationMode === opt.mode
+                  ? 'border-terracotta bg-surface-raised text-ink-primary'
+                  : 'border-border text-ink-secondary hover:bg-surface-raised'
+              )}
+            >
+              {opt.icon}
+              {opt.label}
+              <span className="text-center font-ui text-caption font-normal text-ink-tertiary">{opt.description}</span>
+            </button>
+          ))}
+        </div>
+      </section>
+
       <section className="mb-10">
         <h2 className="mb-1 font-display text-h2 font-medium text-ink-primary">Appearance</h2>
         <p className="mb-4 font-body text-body text-ink-secondary">Choose how Cellfie looks. Your preference is saved on this device.</p>
