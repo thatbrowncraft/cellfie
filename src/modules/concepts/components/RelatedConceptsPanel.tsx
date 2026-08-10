@@ -1,14 +1,18 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Link, MagnifyingGlass, Plus, X } from '@phosphor-icons/react'
+import { Globe, Link, MagnifyingGlass, Plus, X } from '@phosphor-icons/react'
 import { SearchField, EmptyState, Button } from '@/shared/components'
 import type { Concept, ConceptRelation, LibraryItem } from '@/core/db'
 import {
   addConceptRelation,
+  fetchOnlineRelated,
   findCandidateConceptsFromKnownPages,
+  isLikelyOnline,
   promoteConceptCandidate,
   removeConceptRelation,
+  verifyCandidateExists,
   type CoOccurrenceMatch,
+  type OnlineRelatedItem,
   type SourceCandidate
 } from '@/core/concepts'
 
@@ -41,7 +45,11 @@ export function RelatedConceptsPanel({
   const [adding, setAdding] = useState(false)
   const [sourceCandidates, setSourceCandidates] = useState<SourceCandidate[] | undefined>(undefined)
   const [scanningSources, setScanningSources] = useState(false)
+  const [verifyingSources, setVerifyingSources] = useState(false)
   const [promotingKey, setPromotingKey] = useState<string | undefined>(undefined)
+  const [onlineSuggestions, setOnlineSuggestions] = useState<OnlineRelatedItem[] | undefined>(undefined)
+  const [loadingOnline, setLoadingOnline] = useState(false)
+  const [onlinePromotingTitle, setOnlinePromotingTitle] = useState<string | undefined>(undefined)
 
   const relatedIds = new Set(relatedConcepts.map((c) => c.id))
   const candidates = useMemo(() => {
@@ -78,17 +86,65 @@ export function RelatedConceptsPanel({
 
   const coOccurringNotAlreadyRelated = coOccurring.filter((m) => !relatedIds.has(m.concept.id))
 
+  const existingNameKeys = useMemo(
+    () => new Set(allConcepts.flatMap((c) => [c.normalizedName, ...c.aliases.map((a) => a.trim().toLowerCase())])),
+    [allConcepts]
+  )
+
   // Knowledge Model Correction §9/§10/§11 — explicit, on-demand only:
   // reads this concept's own known source pages for candidate phrases
   // that aren't concepts yet. Nothing here writes anything until the
-  // person clicks "Add concept" on a specific suggestion.
+  // person clicks "Add concept" on a specific suggestion. Sprint 4: each
+  // raw text-mined candidate is then weakly verified against Wikipedia
+  // (does a real, non-disambiguation article exist for this phrase?)
+  // before it's shown — this reliably drops OCR fragments and sentence
+  // fragments, though a candidate that's a real encyclopedia entry but
+  // not actually a scientific concept (a publisher, a city) can still
+  // slip through; the "Online scientific suggestions" list above is the
+  // higher-confidence source and should usually be tried first.
   async function handleFindSourceCandidates() {
     setScanningSources(true)
+    setSourceCandidates(undefined)
     try {
       const found = await findCandidateConceptsFromKnownPages(concept)
-      setSourceCandidates(found)
+      if (!isLikelyOnline()) {
+        setSourceCandidates(found)
+        return
+      }
+      setScanningSources(false)
+      setVerifyingSources(true)
+      const verified: SourceCandidate[] = []
+      for (const candidate of found) {
+        // Sequential, not Promise.all — this hits a public API and
+        // shouldn't fire a burst of dozens of simultaneous requests.
+        if (await verifyCandidateExists(candidate.displayText)) verified.push(candidate)
+      }
+      setSourceCandidates(verified)
     } finally {
       setScanningSources(false)
+      setVerifyingSources(false)
+    }
+  }
+
+  // Sprint 4 — Wikipedia's own related-pages recommendation for this
+  // concept's name. Read-only until "Add concept" is clicked.
+  async function handleFindOnlineSuggestions() {
+    setLoadingOnline(true)
+    try {
+      const found = await fetchOnlineRelated(concept.name)
+      setOnlineSuggestions(found.filter((f) => !existingNameKeys.has(f.title.trim().toLowerCase())))
+    } finally {
+      setLoadingOnline(false)
+    }
+  }
+
+  async function handlePromoteOnlineSuggestion(item: OnlineRelatedItem) {
+    setOnlinePromotingTitle(item.title)
+    try {
+      await promoteConceptCandidate({ name: item.title, evidence: [], relateToConceptId: concept.id })
+      setOnlineSuggestions((prev) => prev?.filter((s) => s.title !== item.title))
+    } finally {
+      setOnlinePromotingTitle(undefined)
     }
   }
 
@@ -235,30 +291,85 @@ export function RelatedConceptsPanel({
 
       <div className="border-t border-border pt-4">
         <div className="mb-2 flex items-center justify-between">
+          <h4 className="flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+            <Globe size={14} aria-hidden />
+            Online scientific suggestions
+          </h4>
+          {!onlineSuggestions && (
+            <button
+              type="button"
+              onClick={() => void handleFindOnlineSuggestions()}
+              disabled={loadingOnline}
+              className="flex items-center gap-1.5 font-ui text-caption font-medium text-olive hover:underline disabled:cursor-not-allowed disabled:text-ink-tertiary disabled:no-underline"
+            >
+              <MagnifyingGlass size={14} />
+              {loadingOnline ? 'Checking Wikipedia…' : 'Find online suggestions'}
+            </button>
+          )}
+        </div>
+        <p className="mb-3 font-ui text-caption text-ink-secondary">
+          Reliable, established concepts Wikipedia associates with "{concept.name}" — not concepts yet. Adding one is
+          explicit; nothing here is created automatically.
+        </p>
+
+        {onlineSuggestions && onlineSuggestions.length === 0 && (
+          <p className="mb-4 font-ui text-caption text-ink-tertiary">
+            {isLikelyOnline()
+              ? 'No strong related concepts found.'
+              : 'Online enrichment unavailable — you appear to be offline. Your local library is still available.'}
+          </p>
+        )}
+
+        {onlineSuggestions && onlineSuggestions.length > 0 && (
+          <ul className="mb-4 flex flex-col gap-2">
+            {onlineSuggestions.map((item) => (
+              <li
+                key={item.title}
+                className="flex items-center justify-between gap-3 rounded-md border border-border bg-surface px-3 py-2"
+              >
+                <div>
+                  <p className="font-ui text-body font-medium text-ink-primary">{item.title}</p>
+                  <p className="font-ui text-micro text-ink-tertiary">Source: Wikipedia</p>
+                </div>
+                <Button
+                  variant="secondary"
+                  size="small"
+                  disabled={onlinePromotingTitle === item.title}
+                  onClick={() => void handlePromoteOnlineSuggestion(item)}
+                >
+                  {onlinePromotingTitle === item.title ? 'Adding…' : 'Add concept'}
+                </Button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      <div className="border-t border-border pt-4">
+        <div className="mb-2 flex items-center justify-between">
           <h4 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-            Related concepts found in your sources
+            Unverified terms found in your source text
           </h4>
           {!sourceCandidates && (
             <button
               type="button"
               onClick={() => void handleFindSourceCandidates()}
-              disabled={scanningSources || !hasPdfPageSources}
+              disabled={scanningSources || verifyingSources || !hasPdfPageSources}
               className="flex items-center gap-1.5 font-ui text-caption font-medium text-olive hover:underline disabled:cursor-not-allowed disabled:text-ink-tertiary disabled:no-underline"
             >
               <MagnifyingGlass size={14} />
-              {scanningSources ? 'Scanning your source pages…' : 'Find related concepts'}
+              {scanningSources ? 'Scanning your source pages…' : verifyingSources ? 'Checking Wikipedia…' : 'Find related concepts'}
             </button>
           )}
         </div>
         <p className="mb-3 font-ui text-caption text-ink-secondary">
-          These are candidate terms found on this concept's own source pages — not concepts yet. Adding one is
-          explicit; nothing here is created automatically.
+          Repeated capitalized terms from this concept's own source pages, weakly checked against Wikipedia to drop
+          obvious junk. Not verified as scientifically meaningful — review before adding. Nothing here is created
+          automatically.
         </p>
 
         {sourceCandidates && sourceCandidates.length === 0 && (
-          <p className="font-ui text-caption text-ink-tertiary">
-            No additional candidate terms found on this concept's source pages.
-          </p>
+          <p className="font-ui text-caption text-ink-tertiary">No strong related concepts found.</p>
         )}
 
         {sourceCandidates && sourceCandidates.length > 0 && (
