@@ -11,9 +11,11 @@ import {
   getCoOccurrenceRelated,
   getFirstAndLastEncountered,
   getRelatedConceptIds,
+  getSourceExcerpt,
   scanLibraryItemForConcepts,
   type CoOccurrenceMatch,
-  type MindMapNode
+  type MindMapNode,
+  type SourceExcerpt
 } from '@/core/concepts'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/components'
@@ -84,6 +86,24 @@ export function ConceptDetailPage() {
     () => sources.some((s) => s.sourceType === 'pdf' && s.libraryItemId && s.pageNumber != null),
     [sources]
   )
+  const [excerpt, setExcerpt] = useState<SourceExcerpt | undefined>(undefined)
+  const [loadingExcerpt, setLoadingExcerpt] = useState(false)
+
+  // Knowledge Model Correction §8 — on-demand only, never automatic:
+  // pulls a short, clearly-labeled raw excerpt from the source page,
+  // never an authored/invented definition.
+  async function handleShowExcerpt() {
+    if (!firstAndLast.first || !concept) return
+    const item = itemsById.get(firstAndLast.first.libraryItemId)
+    if (!item) return
+    setLoadingExcerpt(true)
+    try {
+      const result = await getSourceExcerpt(item, firstAndLast.first.pageNumber, concept.name)
+      setExcerpt(result)
+    } finally {
+      setLoadingExcerpt(false)
+    }
+  }
 
   const mindMap = useLiveQuery<MindMapNode>(
     () => (id ? buildConceptMindMap(id) : Promise.resolve({ id: id ?? '', label: '', children: [] })),
@@ -199,6 +219,25 @@ export function ConceptDetailPage() {
                   <p className="font-body text-body text-ink-primary">
                     {concept.description ?? 'No description saved yet.'}
                   </p>
+                  {!concept.description && hasPdfPageSources && (
+                    <div className="mt-3 border-t border-border pt-3">
+                      <p className="mb-2 font-ui text-caption text-ink-secondary">
+                        Source context available — {firstAndLast.first?.bookTitle}, page {firstAndLast.first?.pageNumber}
+                      </p>
+                      {excerpt ? (
+                        <blockquote className="rounded-md bg-surface-raised px-3 py-2 font-body text-caption italic text-ink-secondary">
+                          “{excerpt.text}”
+                          <span className="mt-1 block font-ui text-micro not-italic text-ink-tertiary">
+                            Unedited excerpt from the source — not a definition.
+                          </span>
+                        </blockquote>
+                      ) : (
+                        <Button variant="secondary" size="small" disabled={loadingExcerpt} onClick={() => void handleShowExcerpt()}>
+                          {loadingExcerpt ? 'Reading source…' : 'Show source excerpt'}
+                        </Button>
+                      )}
+                    </div>
+                  )}
                   {concept.tags.length > 0 && (
                     <div className="mt-4 flex flex-wrap gap-2">
                       {concept.tags.map((tag) => (

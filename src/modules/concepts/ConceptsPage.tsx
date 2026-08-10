@@ -1,15 +1,20 @@
 import { useEffect, useMemo, useState } from 'react'
-import { GitBranch, Plus, ShareNetwork } from '@phosphor-icons/react'
+import { useNavigate } from 'react-router-dom'
+import { BookOpen, GitBranch, MagnifyingGlass, Plus } from '@phosphor-icons/react'
 import { db, type Concept, type ConceptSource } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
-import { buildKnowledgeGraph, runFullExtraction, type KnowledgeGraphData } from '@/core/concepts'
+import {
+  findConceptByNameOrAlias,
+  promoteConceptCandidate,
+  searchLibraryForTerm,
+  type LibraryTermMatch
+} from '@/core/concepts'
 import { DashboardLayout } from '@/shared/layouts'
-import { Button, Dropdown, EmptyState, SearchField, Tabs } from '@/shared/components'
+import { Button, Dropdown, EmptyState, SearchField } from '@/shared/components'
 import { ConceptCard } from './components/ConceptCard'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
-import { ConceptGraphView } from './components/ConceptGraphView'
 
-type FilterId = 'all' | 'recent' | 'most-referenced' | 'books' | 'notes' | 'highlights' | 'user-created'
+type FilterId = 'all' | 'recent' | 'most-referenced' | 'books' | 'notes' | 'highlights'
 
 const filterOptions: { value: FilterId; label: string }[] = [
   { value: 'all', label: 'All' },
@@ -17,29 +22,32 @@ const filterOptions: { value: FilterId; label: string }[] = [
   { value: 'most-referenced', label: 'Most referenced' },
   { value: 'books', label: 'Books' },
   { value: 'notes', label: 'Notes' },
-  { value: 'highlights', label: 'Highlights' },
-  { value: 'user-created', label: 'User-created' }
+  { value: 'highlights', label: 'Highlights' }
 ]
 
+const SEARCH_DEBOUNCE_MS = 500
+
 /**
- * Concept Explorer — Sprint 3 §6/§7/§18. Local, instant search over
- * name/aliases/tags; filters derived entirely from stored ConceptSource
- * rows (never hardcoded counts); manual "+ New Concept"; and a graph tab
- * built from `core/concepts/graph.ts`. Replaces the Sprint-2-era
- * placeholder tabs (Simple/I'm New/Scientific/Explorer) that previewed a
- * Learn module this sprint doesn't implement — Sprint 3 is scoped to the
- * deterministic Knowledge Layer described in the brief, not AI-authored
- * explanations.
+ * Concept Explorer — Knowledge Model Correction. "Concepts are
+ * USER-SELECTED objects": the list below shows only concepts the person
+ * has explicitly created or promoted (every remaining concept is
+ * `manuallyCreated: true` — see `runAutoConceptCleanup`). Typing a term
+ * that isn't a concept yet doesn't just come up empty: it triggers a
+ * read-only search of the local PDF library (`searchLibraryForTerm`) and
+ * offers an explicit "Add to Concepts" action — the only way PDF text
+ * becomes a Concept record now, alongside "+ New Concept" itself. The
+ * previous whole-library auto-generated Graph tab has been removed
+ * (§15) — it was showing exactly the kind of noise this correction
+ * exists to eliminate.
  */
 export function ConceptsPage() {
+  const navigate = useNavigate()
   const concepts = useLiveQuery<Concept[]>(() => db.concepts.toArray(), [], [])
   const sources = useLiveQuery<ConceptSource[]>(() => db.conceptSources.toArray(), [], [])
 
   const [query, setQuery] = useState('')
   const [filter, setFilter] = useState<FilterId>('all')
   const [createOpen, setCreateOpen] = useState(false)
-  const [extracting, setExtracting] = useState(false)
-  const [extractMessage, setExtractMessage] = useState<string | undefined>(undefined)
 
   const sourceCountByConcept = useMemo(() => {
     const map = new Map<string, number>()
@@ -80,9 +88,6 @@ export function ConceptsPage() {
       case 'highlights':
         list = list.filter((c) => sourceTypesByConcept.get(c.id)?.has('highlight'))
         break
-      case 'user-created':
-        list = list.filter((c) => c.manuallyCreated)
-        break
       default:
         list = [...list].sort((a, b) => a.name.localeCompare(b.name))
     }
@@ -90,39 +95,19 @@ export function ConceptsPage() {
     return list
   }, [concepts, query, filter, sourceCountByConcept, sourceTypesByConcept])
 
-  async function handleRebuild() {
-    setExtracting(true)
-    setExtractMessage(undefined)
-    try {
-      const result = await runFullExtraction()
-      setExtractMessage(
-        result.conceptsCreated + result.conceptsUpdated === 0
-          ? 'No new concepts found in your tags or highlights.'
-          : `Found ${result.conceptsCreated} new concept${result.conceptsCreated === 1 ? '' : 's'} and linked ${result.sourcesLinked} source${result.sourcesLinked === 1 ? '' : 's'}.`
-      )
-    } finally {
-      setExtracting(false)
-    }
-  }
-
   const listContent =
     concepts.length === 0 ? (
       <EmptyState
         icon={<GitBranch size={32} />}
-        title="No concepts yet"
-        description="Your knowledge map is empty. Add concepts from your books, highlights, or notes to start building it."
+        title="No concepts yet."
+        description="Build your personal knowledge map by searching your library or adding concepts manually."
         action={
-          <div className="flex flex-wrap justify-center gap-3">
-            <Button icon={<Plus size={16} />} onClick={() => setCreateOpen(true)}>
-              New concept
-            </Button>
-            <Button variant="secondary" onClick={() => void handleRebuild()} disabled={extracting}>
-              {extracting ? 'Scanning your library…' : 'Build from tags & highlights'}
-            </Button>
-          </div>
+          <Button icon={<Plus size={16} />} onClick={() => setCreateOpen(true)}>
+            New concept
+          </Button>
         }
       />
-    ) : filtered.length === 0 ? (
+    ) : filtered.length === 0 && query.trim().length < 2 ? (
       <EmptyState title="Nothing matches" description="Try a different search term or filter." />
     ) : (
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
@@ -145,21 +130,14 @@ export function ConceptsPage() {
             value={filter}
             onChange={(v) => setFilter(v as FilterId)}
           />
-          <Button variant="secondary" onClick={() => void handleRebuild()} disabled={extracting}>
-            {extracting ? 'Scanning…' : 'Build from tags & highlights'}
-          </Button>
           <Button icon={<Plus size={16} />} onClick={() => setCreateOpen(true)}>
             New concept
           </Button>
         </div>
-        {extractMessage && <p className="font-ui text-caption text-ink-secondary">{extractMessage}</p>}
 
-        <Tabs
-          tabs={[
-            { id: 'list', label: `List${concepts.length ? ` (${concepts.length})` : ''}`, content: listContent },
-            { id: 'graph', label: 'Graph', content: <GraphTab /> }
-          ]}
-        />
+        {query.trim().length >= 2 && <LibrarySearchPanel query={query} onOpenConcept={(id) => navigate(`/concepts/${id}`)} />}
+
+        {listContent}
       </div>
 
       <ConceptFormDialog open={createOpen} onClose={() => setCreateOpen(false)} />
@@ -167,33 +145,94 @@ export function ConceptsPage() {
   )
 }
 
-/** Lazily builds the whole-library graph only once its tab is actually shown (§21 — no reason to compute it on every Concepts page visit). */
-function GraphTab() {
-  const [data, setData] = useState<KnowledgeGraphData>({ nodes: [], edges: [] })
-  const [loaded, setLoaded] = useState(false)
+/**
+ * Knowledge Model Correction §3/§5 — the "search, then explicitly
+ * promote" panel. Debounced so it doesn't open every PDF in the library
+ * on every keystroke; a match here is never written to the database
+ * until the person clicks "Add to Concepts".
+ */
+function LibrarySearchPanel({ query, onOpenConcept }: { query: string; onOpenConcept: (conceptId: string) => void }) {
+  const [results, setResults] = useState<LibraryTermMatch[] | undefined>(undefined)
+  const [searching, setSearching] = useState(false)
+  const [existing, setExisting] = useState<Concept | undefined>(undefined)
+  const [promoting, setPromoting] = useState(false)
 
   useEffect(() => {
     let cancelled = false
-    void buildKnowledgeGraph().then((result) => {
-      if (!cancelled) {
-        setData(result)
-        setLoaded(true)
-      }
-    })
+    setSearching(true)
+    setResults(undefined)
+
+    const handle = setTimeout(() => {
+      void Promise.all([searchLibraryForTerm(query), findConceptByNameOrAlias(query)]).then(([matches, existingConcept]) => {
+        if (cancelled) return
+        setResults(matches)
+        setExisting(existingConcept)
+        setSearching(false)
+      })
+    }, SEARCH_DEBOUNCE_MS)
+
     return () => {
       cancelled = true
+      clearTimeout(handle)
     }
-  }, [])
+  }, [query])
 
-  if (!loaded) {
-    return (
-      <EmptyState
-        icon={<ShareNetwork size={32} />}
-        title="Loading graph…"
-        description="Building the graph from your concepts and their sources."
-      />
-    )
+  async function handleAdd() {
+    if (!results || results.length === 0) return
+    setPromoting(true)
+    try {
+      const evidence = results.flatMap((m) => m.pages.map((pageNumber) => ({ libraryItemId: m.item.id, pageNumber })))
+      const concept = await promoteConceptCandidate({ name: query.trim(), evidence })
+      onOpenConcept(concept.id)
+    } finally {
+      setPromoting(false)
+    }
   }
 
-  return <ConceptGraphView data={data} />
+  const totalPages = results?.reduce((sum, m) => sum + m.pages.length, 0) ?? 0
+
+  return (
+    <div className="rounded-md border border-border bg-surface p-5">
+      <div className="mb-3 flex items-center gap-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+        <MagnifyingGlass size={14} />
+        Found in your library
+      </div>
+
+      {searching ? (
+        <p className="font-ui text-caption text-ink-secondary">Searching “{query.trim()}”…</p>
+      ) : !results || results.length === 0 ? (
+        <p className="font-ui text-caption text-ink-secondary">
+          No occurrences of “{query.trim()}” found in your local library text.
+        </p>
+      ) : (
+        <div className="flex flex-col gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="font-body text-body text-ink-primary">
+                “{query.trim()}” found in {results.length} book{results.length === 1 ? '' : 's'} · {totalPages} page
+                {totalPages === 1 ? '' : 's'}
+              </p>
+              <ul className="mt-1 flex flex-col gap-0.5">
+                {results.slice(0, 5).map((m) => (
+                  <li key={m.item.id} className="flex items-center gap-1.5 font-ui text-micro text-ink-tertiary">
+                    <BookOpen size={12} />
+                    {m.item.title} · {m.pages.length} page{m.pages.length === 1 ? '' : 's'}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {existing ? (
+              <Button variant="secondary" size="small" onClick={() => onOpenConcept(existing.id)}>
+                Open concept
+              </Button>
+            ) : (
+              <Button size="small" disabled={promoting} onClick={() => void handleAdd()}>
+                {promoting ? 'Adding…' : 'Add to Concepts'}
+              </Button>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  )
 }
