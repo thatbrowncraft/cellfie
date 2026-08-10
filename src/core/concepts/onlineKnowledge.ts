@@ -1,185 +1,278 @@
-/**
- * core/concepts/onlineKnowledge — Sprint 4 (Concept Explorer + Scientific
- * Knowledge Enrichment), online scientific enrichment for explicitly
- * selected concepts.
- *
- * NO AI. No LLM, no embeddings, no summarization model, nothing here
- * "writes" an explanation — every string returned by this module is
- * either a direct extract pulled from a real page at a real URL, or a
- * link title. The caller is responsible for showing the source
- * attribution (`sourceName`/`sourceUrl`) next to anything rendered from
- * here, per the brief's "Definition / Source: NCBI" pairing.
- *
- * SOURCE CHOICE — an honest explanation of the tradeoff: the brief asks
- * to prioritize NCBI/CDC/WHO/university sources. None of those publish a
- * public, CORS-enabled, no-API-key JSON endpoint that a static
- * client-side PWA can call directly from the browser (NCBI's E-utilities
- * are CORS-blocked for arbitrary origins; CDC/WHO have no public content
- * API at all). Adding a server-side proxy would mean standing up and
- * paying for backend infrastructure, which is out of scope for a
- * local-first PWA with "no new dependencies". Wikipedia's REST API
- * (`en.wikipedia.org/api/rest_v1`) is the one major reference source
- * that is (a) free, (b) keyless, (c) CORS-enabled for browser calls, and
- * (d) sourced from a scientifically-reviewed, citation-backed article for
- * the kind of established topic this app deals with (Gram staining,
- * peptidoglycan, etc.). It is used here as the online source, always
- * clearly labeled "Wikipedia" — never mislabeled as NCBI/CDC/WHO — so the
- * person always knows exactly where a sentence came from. If a future
- * sprint adds a backend, swapping in NCBI/CDC/WHO calls here is a
- * same-shaped, additive change.
- *
- * FAILURE MODE: any network error, timeout, 404, or disambiguation page
- * resolves to `undefined` rather than throwing — callers fall back to
- * local library material, per the brief's "online fails → local still
- * works" requirement.
- */
+// src/core/concepts/onlineKnowledge.ts
 
-import { db } from '../db'
-
-const REQUEST_TIMEOUT_MS = 6000
-const CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7 // 7 days — long enough to avoid refetching on every visit, short enough that a re-check eventually happens.
-const CACHE_KEY_PREFIX = 'onlineKnowledgeCache:v1:'
+export interface KnowledgeSection {
+  title: string
+  type: 'definition' | 'purpose' | 'principle' | 'procedure' | 'result' | 'remember' | 'terms'
+  content: string | string[]
+  format: 'paragraph' | 'bullets' | 'numbered'
+}
 
 export interface OnlineSummary {
-  title: string
-  /** Direct extract text from the source article — never rewritten/paraphrased by this app. */
-  extract: string
-  sourceName: 'Wikipedia'
+  conceptName: string
+  sourceName: string
   sourceUrl: string
+  sections: KnowledgeSection[]
 }
 
-export interface OnlineRelatedItem {
-  title: string
-  sourceUrl: string
+/**
+ * Normalizes and repairs broken OCR / PDF word-break spacing.
+ * e.g. "stain ing" -> "staining", "tech nique" -> "technique", "bact eria" -> "bacteria"
+ */
+export function cleanPdfText(rawText: string): string {
+  if (!rawText) return ''
+
+  let text = rawText
+    // Fix hyphens at line breaks: "stain-\n ing" or "stain- ing" -> "staining"
+    .replace(/(\w+)-\s*\n?\s*(\w+)/g, '$1$2')
+    // Fix known broken medical/scientific word fragments from PDF OCR
+    .replace(/\bstain\s+ing\b/gi, 'staining')
+    .replace(/\btech\s+nique\b/gi, 'technique')
+    .replace(/\btech\s+niques\b/gi, 'techniques')
+    .replace(/\bbact\s+eria\b/gi, 'bacteria')
+    .replace(/\bbact\s+erial\b/gi, 'bacterial')
+    .replace(/\bste\s+ps\b/gi, 'steps')
+    .replace(/\bproc\s+edure\b/gi, 'procedure')
+    .replace(/\bprin\s+ciple\b/gi, 'principle')
+    .replace(/\bcell\s+ular\b/gi, 'cellular')
+    .replace(/\bmicro\s+organ\s*ism\b/gi, 'microorganism')
+    .replace(/\bmicro\s+organ\s*isms\b/gi, 'microorganisms')
+    .replace(/\bfollow\s+ing\b/gi, 'following')
+    .replace(/\bdiffer\s+ent\b/gi, 'different')
+    .replace(/\bdiffer\s+ential\b/gi, 'differential')
+    .replace(/\bgram\s+pos\s+itive\b/gi, 'Gram-positive')
+    .replace(/\bgram\s+neg\s+ative\b/gi, 'Gram-negative')
+    .replace(/\bobs\s+erv\b/gi, 'observ')
+    .replace(/\bmem\b\s+brane\b/gi, 'membrane')
+
+  // Clean trailing spaces before punctuation
+  text = text.replace(/\s+([.,;:?!])/g, '$1')
+  // Collapse multi-spaces into single space
+  text = text.replace(/[ \t]+/g, ' ')
+  // Clean line breaks
+  text = text.replace(/\n\s*\n/g, '\n\n').trim()
+
+  return text
 }
 
-interface CacheEntry<T> {
-  fetchedAt: number
-  value: T | null
+/**
+ * Checks if network connectivity is available.
+ */
+export function isLikelyOnline(): boolean {
+  return typeof navigator !== 'undefined' ? navigator.onLine : true
 }
 
-async function readCache<T>(key: string): Promise<CacheEntry<T> | undefined> {
-  const record = await db.appSettings.get(`${CACHE_KEY_PREFIX}${key}`)
-  return record?.value as CacheEntry<T> | undefined
+/**
+ * Parses scientific text into structured study sections.
+ * Omits any section for which supporting data is absent.
+ */
+export function parseScientificTextToSections(text: string): KnowledgeSection[] {
+  const cleaned = cleanPdfText(text)
+  if (!cleaned) return []
+
+  const sections: KnowledgeSection[] = []
+
+  // Check for explicit section headings in text
+  const definitionMatch = cleaned.match(/(?:definition|what is|overview):\s*([^.\n]+(?:\.[^.\n]+)*)/i)
+  const purposeMatch = cleaned.match(/(?:purpose|why it is used|uses|indication):\s*([^.\n]+(?:\.[^.\n]+)*)/i)
+  const principleMatch = cleaned.match(/(?:principle|mechanism|mode of action):\s*([^.\n]+(?:\.[^.\n]+)*)/i)
+  const procedureMatch = cleaned.match(/(?:procedure|steps|method|protocol):\s*([^.\n]+(?:\.[^.\n]+)*)/i)
+  const resultMatch = cleaned.match(/(?:result|results|interpretation|observation):\s*([^.\n]+(?:\.[^.\n]+)*)/i)
+
+  if (definitionMatch?.[1]) {
+    sections.push({
+      title: 'Definition',
+      type: 'definition',
+      content: definitionMatch[1].trim(),
+      format: 'paragraph'
+    })
+  }
+
+  if (purposeMatch?.[1]) {
+    const items = purposeMatch[1].split(/;|\.\s+/).map((s) => s.trim()).filter(Boolean)
+    sections.push({
+      title: 'Purpose / Why it is used',
+      type: 'purpose',
+      content: items.length > 1 ? items : purposeMatch[1].trim(),
+      format: items.length > 1 ? 'bullets' : 'paragraph'
+    })
+  }
+
+  if (principleMatch?.[1]) {
+    sections.push({
+      title: 'Principle',
+      type: 'principle',
+      content: principleMatch[1].trim(),
+      format: 'paragraph'
+    })
+  }
+
+  if (procedureMatch?.[1]) {
+    const steps = procedureMatch[1].split(/(?:\d+\.|\n-|\n\*|;)/).map((s) => s.trim()).filter(Boolean)
+    sections.push({
+      title: 'Procedure / Steps',
+      type: 'procedure',
+      content: steps.length > 1 ? steps : procedureMatch[1].trim(),
+      format: steps.length > 1 ? 'numbered' : 'paragraph'
+    })
+  }
+
+  if (resultMatch?.[1]) {
+    sections.push({
+      title: 'Result / Interpretation',
+      type: 'result',
+      content: resultMatch[1].trim(),
+      format: 'paragraph'
+    })
+  }
+
+  // Fallback if no specific section markers were matched
+  if (sections.length === 0) {
+    const sentences = cleaned.split(/(?<=\.)\s+/).filter((s) => s.length > 5)
+    if (sentences.length > 0) {
+      sections.push({
+        title: 'Definition',
+        type: 'definition',
+        content: sentences[0],
+        format: 'paragraph'
+      })
+
+      if (sentences.length > 1) {
+        sections.push({
+          title: 'Key points to remember',
+          type: 'remember',
+          content: sentences.slice(1, 6),
+          format: 'bullets'
+        })
+      }
+    }
+  }
+
+  return sections
 }
 
-async function writeCache<T>(key: string, value: T | null): Promise<void> {
-  await db.appSettings.put({ key: `${CACHE_KEY_PREFIX}${key}`, value: { fetchedAt: Date.now(), value } })
-}
-
-function isFresh(entry: CacheEntry<unknown>): boolean {
-  return Date.now() - entry.fetchedAt < CACHE_TTL_MS
-}
-
-async function fetchJson(url: string): Promise<unknown> {
-  const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS)
+/**
+ * Attempts to fetch scientific knowledge from NCBI / NIH.
+ */
+async function fetchNCBIKnowledge(conceptName: string): Promise<OnlineSummary | undefined> {
   try {
-    const res = await fetch(url, { signal: controller.signal, headers: { Accept: 'application/json' } })
-    if (!res.ok) return undefined
-    return await res.json()
+    const searchUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=mesh&term=${encodeURIComponent(
+      conceptName
+    )}&retmode=json`
+    const searchRes = await fetch(searchUrl, { signal: AbortSignal.timeout(4000) })
+    if (!searchRes.ok) return undefined
+
+    const searchData = (await searchRes.json()) as { esearchresult?: { idlist?: string[] } }
+    const idList = searchData.esearchresult?.idlist
+
+    if (!idList || idList.length === 0) return undefined
+    const meshId = idList[0]
+
+    const summaryUrl = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=mesh&id=${meshId}&retmode=json`
+    const summaryRes = await fetch(summaryUrl, { signal: AbortSignal.timeout(4000) })
+    if (!summaryRes.ok) return undefined
+
+    const summaryData = (await summaryRes.json()) as { result?: Record<string, { ds_meshtermsummary?: string }> }
+    const entry = summaryData.result?.[meshId]
+    const rawSummary = entry?.ds_meshtermsummary
+
+    if (!rawSummary) return undefined
+
+    const sections = parseScientificTextToSections(rawSummary)
+    if (sections.length === 0) return undefined
+
+    return {
+      conceptName,
+      sourceName: 'NCBI / National Institutes of Health (NIH) MeSH',
+      sourceUrl: `https://www.ncbi.nlm.nih.gov/mesh/${meshId}`,
+      sections
+    }
   } catch {
     return undefined
-  } finally {
-    clearTimeout(timeout)
   }
 }
 
-/** Reasonable client-side check before attempting a network call at all — avoids waiting out a timeout while offline. */
-export function isLikelyOnline(): boolean {
-  return typeof navigator === 'undefined' || navigator.onLine
-}
-
 /**
- * Looks up a concept's Wikipedia summary. Returns `undefined` when the
- * concept has no article, the article is a disambiguation page (too
- * ambiguous to attribute a definition to), or the request fails/times
- * out/is offline. Cached per normalized name for `CACHE_TTL_MS`.
+ * Attempts to fetch scientific knowledge from NIH MedlinePlus API.
  */
-export async function fetchOnlineSummary(name: string): Promise<OnlineSummary | undefined> {
-  const key = name.trim().toLowerCase()
-  if (!key) return undefined
+async function fetchMedlinePlusKnowledge(conceptName: string): Promise<OnlineSummary | undefined> {
+  try {
+    const url = `https://connect.medlineplus.gov/service?knowledgeResponseType=application/json&mainSearchCriteria.v.c=${encodeURIComponent(
+      conceptName
+    )}`
+    const res = await fetch(url, { signal: AbortSignal.timeout(4000) })
+    if (!res.ok) return undefined
 
-  const cached = await readCache<OnlineSummary>(key)
-  if (cached && isFresh(cached)) return cached.value ?? undefined
+    const data = (await res.json()) as { feed?: { entry?: Array<{ summary?: { _value?: string }; link?: Array<{ href?: string }> }> } }
+    const entry = data.feed?.entry?.[0]
+    const rawSummary = entry?.summary?._value
+    const link = entry?.link?.[0]?.href
 
-  if (!isLikelyOnline()) return cached?.value ?? undefined
+    if (!rawSummary) return undefined
 
-  const encoded = encodeURIComponent(name.trim().replace(/\s+/g, '_'))
-  const data = (await fetchJson(`https://en.wikipedia.org/api/rest_v1/page/summary/${encoded}`)) as
-    | {
-        type?: string
-        title?: string
-        extract?: string
-        content_urls?: { desktop?: { page?: string } }
-      }
-    | undefined
+    const sections = parseScientificTextToSections(rawSummary)
+    if (sections.length === 0) return undefined
 
-  if (!data || data.type === 'disambiguation' || !data.extract || !data.title) {
-    await writeCache(key, null)
+    return {
+      conceptName,
+      sourceName: 'NIH MedlinePlus / National Library of Medicine',
+      sourceUrl: link || 'https://medlineplus.gov',
+      sections
+    }
+  } catch {
     return undefined
   }
-
-  const summary: OnlineSummary = {
-    title: data.title,
-    extract: data.extract,
-    sourceName: 'Wikipedia',
-    sourceUrl: data.content_urls?.desktop?.page ?? `https://en.wikipedia.org/wiki/${encoded}`
-  }
-  await writeCache(key, summary)
-  return summary
 }
 
 /**
- * Wikipedia's own "related pages" recommendation for a title — a
- * curated, already-scientifically-adjacent list (for "Gram staining"
- * this reliably includes things like Gram-positive/Gram-negative
- * bacteria, crystal violet, peptidoglycan) rather than raw text-mined
- * phrases. This is what backs the "Online related concept suggestions"
- * UI — never auto-added, always requires the person to click "Add
- * concept" (see `promoteConceptCandidate`).
+ * Attempts to fetch scientific knowledge from OpenAlex Open Science Index.
  */
-export async function fetchOnlineRelated(name: string): Promise<OnlineRelatedItem[]> {
-  const key = `related:${name.trim().toLowerCase()}`
-  const cached = await readCache<OnlineRelatedItem[]>(key)
-  if (cached && isFresh(cached)) return cached.value ?? []
+async function fetchOpenAlexKnowledge(conceptName: string): Promise<OnlineSummary | undefined> {
+  try {
+    const url = `https://api.openalex.org/concepts?search=${encodeURIComponent(conceptName)}`
+    const res = await fetch(url, { signal: AbortSignal.timeout(4000) })
+    if (!res.ok) return undefined
 
-  if (!isLikelyOnline()) return cached?.value ?? []
+    const data = (await res.json()) as { results?: Array<{ display_name?: string; description?: string; id?: string }> }
+    const match = data.results?.[0]
 
-  const encoded = encodeURIComponent(name.trim().replace(/\s+/g, '_'))
-  const data = (await fetchJson(`https://en.wikipedia.org/api/rest_v1/page/related/${encoded}`)) as
-    | { pages?: { title?: string; content_urls?: { desktop?: { page?: string } } }[] }
-    | undefined
+    if (!match || !match.description) return undefined
 
-  const pages = data?.pages
-  if (!pages) {
-    await writeCache(key, null)
-    return []
+    const sections = parseScientificTextToSections(match.description)
+    if (sections.length === 0) return undefined
+
+    return {
+      conceptName,
+      sourceName: 'OpenAlex Scientific Knowledge Index',
+      sourceUrl: match.id || 'https://openalex.org',
+      sections
+    }
+  } catch {
+    return undefined
   }
-
-  const items: OnlineRelatedItem[] = pages
-    .filter((p): p is { title: string; content_urls?: { desktop?: { page?: string } } } => Boolean(p.title))
-    .map((p) => ({
-      title: p.title.replace(/_/g, ' '),
-      sourceUrl: p.content_urls?.desktop?.page ?? `https://en.wikipedia.org/wiki/${encodeURIComponent(p.title)}`
-    }))
-    .filter((p) => p.title.toLowerCase() !== name.trim().toLowerCase())
-    .slice(0, 10)
-
-  await writeCache(key, items)
-  return items
 }
 
 /**
- * Weak online verification for a locally-mined candidate phrase (see
- * `findCandidateConceptsFromKnownPages` in ./extraction): does a
- * standard (non-disambiguation) Wikipedia article exist for it at all?
- * This does not guarantee the phrase is scientifically meaningful — see
- * the honest caveat in RelatedConceptsPanel's copy — but it reliably
- * rejects OCR fragments, broken words, and sentence fragments, which
- * essentially never have their own encyclopedia article.
+ * Main enrichment handler. Tries authoritative sources in priority order:
+ * 1. NCBI / NIH MeSH
+ * 2. NIH MedlinePlus
+ * 3. OpenAlex Scientific Index
+ * Absolutely NO calls to Wikipedia.
  */
-export async function verifyCandidateExists(name: string): Promise<boolean> {
-  const summary = await fetchOnlineSummary(name)
-  return Boolean(summary)
+export async function fetchOnlineSummary(conceptName: string): Promise<OnlineSummary | undefined> {
+  if (!isLikelyOnline() || !conceptName.trim()) return undefined
+
+  // Priority 1: NCBI / NIH
+  const ncbiResult = await fetchNCBIKnowledge(conceptName)
+  if (ncbiResult) return ncbiResult
+
+  // Priority 2: NIH MedlinePlus
+  const medlineResult = await fetchMedlinePlusKnowledge(conceptName)
+  if (medlineResult) return medlineResult
+
+  // Priority 3: OpenAlex Scientific Catalog
+  const openAlexResult = await fetchOpenAlexKnowledge(conceptName)
+  if (openAlexResult) return openAlexResult
+
+  return undefined
 }
+
