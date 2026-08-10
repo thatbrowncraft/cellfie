@@ -297,7 +297,9 @@ export function ReaderPage() {
     highlights: pageHighlights,
     onSelectionFinalize: handleSelectionFinalize,
     onSelectHighlight: handleSelectHighlight,
-    onSelectionAvailabilityChange: setHasTextSelection
+    onSelectionAvailabilityChange: setHasTextSelection,
+    onSwipeNext: goNext,
+    onSwipePrev: goPrev
   }
 
   return (

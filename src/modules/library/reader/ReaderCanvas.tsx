@@ -5,7 +5,8 @@ import {
   useLayoutEffect,
   useRef,
   useState,
-  type MouseEvent as ReactMouseEvent
+  type MouseEvent as ReactMouseEvent,
+  type TouchEvent as ReactTouchEvent
 } from 'react'
 import type { PDFDocumentProxy, RenderTask } from 'pdfjs-dist'
 import { getPageSize, renderPageToCanvas } from '@/core/pdf-engine'
@@ -31,6 +32,9 @@ interface ReaderCanvasProps {
   onSelectHighlight?: (highlight: Highlight, anchor: { x: number; y: number }) => void
   /** Mobile highlighting bugfix: reports live text-selection state so the toolbar can enable its Highlight button. */
   onSelectionAvailabilityChange?: (available: boolean) => void
+  /** Reader Improvement §Swipe Navigation: horizontal swipe gestures — wired to the same goPrev/goNext the arrow buttons use, never a second navigation system. */
+  onSwipeNext?: () => void
+  onSwipePrev?: () => void
 }
 
 export interface ReaderCanvasHandle {
@@ -102,7 +106,9 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
     highlights = [],
     onSelectionFinalize,
     onSelectHighlight,
-    onSelectionAvailabilityChange
+    onSelectionAvailabilityChange,
+    onSwipeNext,
+    onSwipePrev
   },
   ref
 ) {
@@ -225,9 +231,76 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
     }
   }
 
+  // --- Swipe navigation (Reader Improvement §Reader Mode 2/§Swipe Safety) --
+  //
+  // Deliberately conservative: a touch only ever becomes a page-turn when
+  // ALL of the following hold at touchend —
+  //   1. it was a single-finger gesture the whole time (pinch cancels it)
+  //   2. horizontal distance clearly dominates vertical distance, so an
+  //      ordinary vertical scroll is never hijacked
+  //   3. horizontal distance clears a minimum-px floor, so small taps/
+  //      jitter never fire a page change
+  //   4. it didn't start on a button/link/input (toolbar taps stay taps)
+  //   5. it didn't end with an active text selection (so selecting text
+  //      near a page edge never accidentally turns the page)
+  //   6. the page currently has no horizontal room to pan (i.e. the
+  //      person isn't zoomed in trying to pan across a wide page) — if
+  //      `scrollWidth > clientWidth`, pinch/pan wins and swipe nav is
+  //      skipped entirely for this gesture.
+  const touchStateRef = useRef<{ x: number; y: number; time: number; multiTouch: boolean; skip: boolean } | null>(null)
+  const SWIPE_MIN_DISTANCE = 60
+  const SWIPE_MAX_DURATION_MS = 900
+  const SWIPE_DIRECTION_RATIO = 1.5
+
+  function handleTouchStart(e: ReactTouchEvent) {
+    if (!onSwipeNext && !onSwipePrev) return
+    const target = e.target as HTMLElement
+    const interactive = Boolean(target.closest('button, a, input, textarea, [role="button"], [data-no-swipe]'))
+    const container = containerRef.current
+    const hasHorizontalRoom = Boolean(container && container.scrollWidth > container.clientWidth + 1)
+    if (e.touches.length !== 1 || interactive || hasHorizontalRoom) {
+      touchStateRef.current = { x: 0, y: 0, time: 0, multiTouch: true, skip: true }
+      return
+    }
+    const t = e.touches[0]
+    touchStateRef.current = { x: t.clientX, y: t.clientY, time: Date.now(), multiTouch: false, skip: false }
+  }
+
+  function handleTouchMove(e: ReactTouchEvent) {
+    if (!touchStateRef.current) return
+    if (e.touches.length !== 1) touchStateRef.current.skip = true
+  }
+
+  function handleTouchEnd(e: ReactTouchEvent) {
+    const start = touchStateRef.current
+    touchStateRef.current = null
+    if (!start || start.skip) return
+
+    const selection = window.getSelection()
+    if (selection && !selection.isCollapsed && selection.toString().trim()) return
+
+    const touch = e.changedTouches[0]
+    if (!touch) return
+    const dx = touch.clientX - start.x
+    const dy = touch.clientY - start.y
+    const elapsed = Date.now() - start.time
+    if (elapsed > SWIPE_MAX_DURATION_MS) return
+
+    const absDx = Math.abs(dx)
+    const absDy = Math.abs(dy)
+    if (absDx < SWIPE_MIN_DISTANCE) return
+    if (absDx < absDy * SWIPE_DIRECTION_RATIO) return
+
+    if (dx < 0) onSwipeNext?.()
+    else onSwipePrev?.()
+  }
+
   return (
     <div
       ref={containerRef}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
       className="flex h-full w-full items-start justify-center overflow-auto overscroll-contain bg-canvas p-4"
     >
       <div
