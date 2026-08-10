@@ -8,6 +8,7 @@ import { UniversalSearch } from '../shared/components/SearchField'
 import { QuickCaptureFab } from '../shared/components/QuickCaptureFab'
 import { useBreakpoint } from '../shared/hooks'
 import { searchEverything, type SearchResultGroup } from '../core/search'
+import { runAutoConceptCleanup } from '../core/concepts'
 import { NoteEditorDialog } from '../modules/notes/components/NoteEditorDialog'
 
 interface AppShellProps {
@@ -35,6 +36,14 @@ export function AppShell({ children }: AppShellProps) {
   const [quickCaptureOpen, setQuickCaptureOpen] = useState(false)
 
   const railOnly = breakpoint === 'tablet'
+
+  // Knowledge Model Correction §18 — one-time cleanup of concepts that
+  // were silently auto-created from raw PDF text before this correction.
+  // Gated by an appSettings flag internally, so this is safe to call on
+  // every app boot regardless of which page loads first.
+  useEffect(() => {
+    void runAutoConceptCleanup()
+  }, [])
 
   useEffect(() => {
     function onKeydown(e: KeyboardEvent) {
