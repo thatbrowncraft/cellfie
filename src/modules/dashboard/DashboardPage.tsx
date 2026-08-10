@@ -100,24 +100,26 @@ export function DashboardPage() {
             title="Continue exploring"
             description="Once you've opened a book, it'll pick up right here."
           />
-        ) : (
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 w-full">
-            {continueReading.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => navigate(`/library/${item.id}/read`)}
-                className="flex flex-col items-start gap-1 rounded-sm border border-border p-4 text-left transition-colors hover:border-ink-secondary w-full min-w-0"
-              >
-                <span className="w-full min-w-0 break-words font-display text-h3 font-medium text-ink-primary">
-                  {item.title}
-                </span>
-                <span className="font-ui text-caption text-ink-tertiary">
-                  {item.lastPageRead ? `Page ${item.lastPageRead}` : 'Not started yet'}
-                </span>
-              </button>
-            ))}
-          </div>
+                  ) : (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 w-full min-w-0">
+              {continueReading.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => navigate(`/library/${item.id}/read`)}
+                  className="flex flex-col items-start gap-1 rounded-sm border border-border p-4 text-left transition-colors hover:border-ink-secondary w-full min-w-0"
+                >
+                  <span className="w-full min-w-0 break-words font-display text-h3 font-medium text-ink-primary">
+                    {item.title}
+                  </span>
+                  <span className="font-ui text-caption text-ink-tertiary">
+                    {item.lastPageRead ? `Page ${item.lastPageRead}` : 'Not started yet'}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+        </section>
 
           </div>
         )}
