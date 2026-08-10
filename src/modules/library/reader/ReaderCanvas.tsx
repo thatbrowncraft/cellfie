@@ -248,7 +248,7 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
   //      `scrollWidth > clientWidth`, pinch/pan wins and swipe nav is
   //      skipped entirely for this gesture.
   const touchStateRef = useRef<{ x: number; y: number; time: number; multiTouch: boolean; skip: boolean } | null>(null)
-  const SWIPE_MIN_DISTANCE = 60
+  const SWIPE_MIN_DISTANCE = 40
   const SWIPE_MAX_DURATION_MS = 900
   const SWIPE_DIRECTION_RATIO = 1.5
 
@@ -257,7 +257,7 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
     const target = e.target as HTMLElement
     const interactive = Boolean(target.closest('button, a, input, textarea, [role="button"], [data-no-swipe]'))
     const container = containerRef.current
-    const hasHorizontalRoom = Boolean(container && container.scrollWidth > container.clientWidth + 1)
+    const hasHorizontalRoom = Boolean(pageRef.current && container && pageRef.current.getBoundingClientRect().width > container.clientWidth + 5)
     if (e.touches.length !== 1 || interactive || hasHorizontalRoom) {
       touchStateRef.current = { x: 0, y: 0, time: 0, multiTouch: true, skip: true }
       return
@@ -302,12 +302,14 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
       className="flex h-full w-full items-start justify-center overflow-y-auto overflow-x-hidden touch-pan-y overscroll-contain bg-canvas p-4"
+style={{ touchAction: 'pan-y' }}
        style={{ touchAction: 'pan-y' }}
     >
       <div
         ref={pageRef}
         onClick={handlePageClick}
-        className="relative rounded-sm border border-border bg-white shadow-1"
+        className="relative rounded-sm border border-border bg-white shadow-1 touch-pan-y"
+style={{ touchAction: 'pan-y' }}
         style={naturalSize ? { width: naturalSize.width * effectiveScale, height: naturalSize.height * effectiveScale } : undefined}
       >
        <canvas
