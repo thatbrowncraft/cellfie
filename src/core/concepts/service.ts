@@ -3,29 +3,24 @@
 import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
 import { cleanPdfText, parseScientificTextToSections, type KnowledgeSection } from './onlineKnowledge'
 
-export interface SourceExcerpt {
-  text: string
-  cleanedText: string
-  pageNumber: number
-  bookTitle: string
-}
-
-export interface ConceptStats {
-  bookCount: number
-  pageCount: number
-  highlightCount: number
-  noteCount: number
-}
-
-export interface CoOccurrenceMatch {
-  concept: Concept
-  sharedSources: ConceptSource[]
+export interface ConceptInput {
+  name: string
+  aliases?: string[]
+  tags?: string[]
 }
 
 /**
  * Retrieves an existing concept by name or creates a new one.
+ * Accepts either an object { name, aliases, tags } or positional (name, aliases).
  */
-export async function getOrCreateConcept(name: string, aliases: string[] = []): Promise<Concept> {
+export async function getOrCreateConcept(
+  input: string | ConceptInput,
+  defaultAliases: string[] = []
+): Promise<Concept> {
+  const name = typeof input === 'string' ? input : input.name
+  const aliases = typeof input === 'string' ? defaultAliases : (input.aliases ?? [])
+  const tags = typeof input === 'object' && input.tags ? input.tags : []
+
   const normalizedName = name.trim()
   const existing = await db.concepts.where('name').equalsIgnoreCase(normalizedName).first()
   if (existing) return existing
@@ -34,7 +29,7 @@ export async function getOrCreateConcept(name: string, aliases: string[] = []): 
     id: crypto.randomUUID(),
     name: normalizedName,
     aliases,
-    tags: [],
+    tags,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
   }
@@ -61,7 +56,6 @@ export async function addConceptSource(
  * Background routine to clean orphaned concept links or unused entries.
  */
 export async function runAutoConceptCleanup(): Promise<void> {
-  // Silent background pass over IndexedDB
   const allSources = await db.conceptSources.toArray()
   const allConcepts = await db.concepts.toArray()
   const conceptIds = new Set(allConcepts.map((c) => c.id))
@@ -75,7 +69,10 @@ export async function runAutoConceptCleanup(): Promise<void> {
 /**
  * Computes locally derived statistics for a concept.
  */
-export function computeConceptStats(concept: Concept, sources: ConceptSource[]): ConceptStats {
+export function computeConceptStats(
+  concept: Concept,
+  sources: ConceptSource[]
+): { bookCount: number; pageCount: number; highlightCount: number; noteCount: number } {
   const bookIds = new Set<string>()
   const pages = new Set<string>()
   let highlightCount = 0
@@ -127,7 +124,9 @@ export async function getRelatedConceptIds(conceptId: string): Promise<string[]>
 /**
  * Finds concepts that co-occur in the same library item/page.
  */
-export async function getCoOccurrenceRelated(conceptId: string): Promise<CoOccurrenceMatch[]> {
+export async function getCoOccurrenceRelated(
+  conceptId: string
+): Promise<Array<{ concept: Concept; sharedSources: ConceptSource[] }>> {
   const sources = await db.conceptSources.where('conceptId').equals(conceptId).toArray()
   if (sources.length === 0) return []
 
@@ -150,7 +149,7 @@ export async function getCoOccurrenceRelated(conceptId: string): Promise<CoOccur
     }
   }
 
-  const result: CoOccurrenceMatch[] = []
+  const result: Array<{ concept: Concept; sharedSources: ConceptSource[] }> = []
   for (const [otherId, sharedSources] of coMap.entries()) {
     const c = await db.concepts.get(otherId)
     if (c) {
@@ -186,45 +185,6 @@ export function getFirstAndLastEncountered(
   return {
     first: firstBook ? { bookTitle: firstBook.title, pageNumber: firstSource.pageNumber!, libraryItemId: firstBook.id } : undefined,
     last: lastBook ? { bookTitle: lastBook.title, pageNumber: lastSource.pageNumber!, libraryItemId: lastBook.id } : undefined
-  }
-}
-
-/**
- * Extracts a source excerpt and repairs PDF OCR spacing artifacts.
- */
-export async function getSourceExcerpt(
-  item: LibraryItem,
-  pageNumber: number,
-  _conceptName: string
-): Promise<SourceExcerpt> {
-  const rawText = item.description || `Extracted page content for page ${pageNumber} of ${item.title}.`
-  const cleaned = cleanPdfText(rawText)
-
-  return {
-    text: rawText,
-    cleanedText: cleaned,
-    pageNumber,
-    bookTitle: item.title
-  }
-}
-
-/**
- * Scans known pages of a concept to find linked concepts.
- */
-export async function extractRelatedConceptsFromKnownPages(concept: Concept): Promise<void> {
-  const sources = await db.conceptSources.where('conceptId').equals(concept.id).toArray()
-  if (!sources || sources.length === 0) return
-}
-
-/**
- * Scans a library item for concept matches.
- */
-export async function scanLibraryItemForConcepts(
-  item: LibraryItem
-): Promise<{ pagesScanned: number; sourcesLinked: number }> {
-  return {
-    pagesScanned: item.pageCount || 1,
-    sourcesLinked: 0
   }
 }
 
