@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react'
 import {
   ArrowLeft,
   ArrowSquareOut,
@@ -9,6 +9,7 @@ import {
   ListNumbers,
   PencilSimple,
   Question,
+  Spinner,
   Trash
 } from '@phosphor-icons/react'
 import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
@@ -216,6 +217,12 @@ export function ConceptDetailPage() {
         </div>
       </header>
 
+      {scanMessage && (
+        <div className="mb-4 rounded-md border border-border bg-surface p-3 font-ui text-caption text-ink-primary">
+          {scanMessage}
+        </div>
+      )}
+
       <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         {[
           { label: 'Books', value: stats.bookCount },
@@ -239,14 +246,12 @@ export function ConceptDetailPage() {
             label: 'Overview',
             content: (
               <div className="flex flex-col gap-6">
-                {/* Clean Study Knowledge Card */}
                 <div className="rounded-lg border border-border bg-surface p-5 sm:p-6 shadow-sm">
                   <h2 className="mb-4 font-display text-h3 font-semibold text-ink-primary border-b border-border pb-2">
                     {concept.name}
                   </h2>
 
                   <div className="flex flex-col gap-5 font-body text-body text-ink-primary">
-                    {/* Definition */}
                     {(studyCard?.definition || onlineSummary?.definition) && (
                       <section>
                         <h3 className="mb-1 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
@@ -258,7 +263,6 @@ export function ConceptDetailPage() {
                       </section>
                     )}
 
-                    {/* Purpose */}
                     {studyCard?.purpose && studyCard.purpose.length > 0 && (
                       <section>
                         <h3 className="mb-1 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
@@ -272,7 +276,6 @@ export function ConceptDetailPage() {
                       </section>
                     )}
 
-                    {/* Principle */}
                     {studyCard?.principle && studyCard.principle.length > 0 && (
                       <section>
                         <h3 className="mb-1 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
@@ -286,7 +289,6 @@ export function ConceptDetailPage() {
                       </section>
                     )}
 
-                    {/* Procedure / Steps */}
                     {studyCard?.procedure && studyCard.procedure.length > 0 && (
                       <section>
                         <h3 className="mb-1 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
@@ -300,7 +302,6 @@ export function ConceptDetailPage() {
                       </section>
                     )}
 
-                    {/* Result / Interpretation */}
                     {studyCard?.results && (
                       <section>
                         <h3 className="mb-1 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
@@ -310,7 +311,6 @@ export function ConceptDetailPage() {
                       </section>
                     )}
 
-                    {/* Key points to remember */}
                     {studyCard?.remember && studyCard.remember.length > 0 && (
                       <section>
                         <h3 className="mb-1 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
@@ -337,7 +337,6 @@ export function ConceptDetailPage() {
                     )}
                   </div>
 
-                  {/* Scientific Source Reference */}
                   <div className="mt-6 border-t border-border pt-4">
                     <h4 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary mb-1">
                       Source / Scientific reference
@@ -361,7 +360,28 @@ export function ConceptDetailPage() {
                   </div>
                 </div>
 
-                {/* Source Excerpt Container */}
+                {scannableBooks.length > 0 && (
+                  <div className="rounded-lg border border-border bg-surface p-4">
+                    <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                      Scan library books for this concept
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {scannableBooks.map((bk) => (
+                        <Button
+                          key={bk.id}
+                          variant="secondary"
+                          size="small"
+                          disabled={scanning === bk.id}
+                          icon={scanning === bk.id ? <Spinner className="animate-spin" size={14} /> : undefined}
+                          onClick={() => void handleScan(bk)}
+                        >
+                          {scanning === bk.id ? `Scanning ${bk.title}...` : `Scan ${bk.title}`}
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {!concept.description && hasPdfPageSources && (
                   <div className="rounded-lg border border-border bg-surface p-5">
                     <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
@@ -373,9 +393,6 @@ export function ConceptDetailPage() {
                     {excerpt ? (
                       <blockquote className="whitespace-pre-line rounded-md bg-surface-raised p-3 font-body text-caption italic text-ink-secondary">
                         “{cleanOcrText(excerpt.text)}”
-                        <span className="mt-1 block font-ui text-micro not-italic text-ink-tertiary">
-                          Unedited excerpt from source PDF — preserved for verification.
-                        </span>
                       </blockquote>
                     ) : (
                       <Button variant="secondary" size="small" disabled={loadingExcerpt} onClick={() => void handleShowExcerpt()}>
@@ -385,7 +402,6 @@ export function ConceptDetailPage() {
                   </div>
                 )}
 
-                {/* Highlights & Notes */}
                 {(yourHighlights.length > 0 || yourNotes.length > 0) && (
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                     {yourHighlights.length > 0 && (
