@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, PencilSimple, Trash } from '@phosphor-icons/react'
+import { ArrowLeft, ArrowSquareOut, Globe, PencilSimple, Trash } from '@phosphor-icons/react'
 import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
 import {
@@ -8,13 +8,16 @@ import {
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
+  fetchOnlineSummary,
   getCoOccurrenceRelated,
   getFirstAndLastEncountered,
   getRelatedConceptIds,
   getSourceExcerpt,
+  isLikelyOnline,
   scanLibraryItemForConcepts,
   type CoOccurrenceMatch,
   type MindMapNode,
+  type OnlineSummary,
   type SourceExcerpt
 } from '@/core/concepts'
 import { EmptyStateLayout } from '@/shared/layouts'
@@ -62,6 +65,44 @@ export function ConceptDetailPage() {
     void extractRelatedConceptsFromKnownPages(concept)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [concept?.id])
+
+  // Sprint 4 — for an explicitly-selected concept, try to pull a real,
+  // attributed scientific summary from Wikipedia (see
+  // core/concepts/onlineKnowledge.ts for why Wikipedia and not
+  // NCBI/CDC/WHO directly). Never blocks the page: while it's loading or
+  // if it fails/there's no connection, the rest of the Overview — the
+  // person's own library material, notes, and highlights — renders
+  // immediately and independently below.
+  const [onlineSummary, setOnlineSummary] = useState<OnlineSummary | undefined>(undefined)
+  const [loadingOnlineSummary, setLoadingOnlineSummary] = useState(false)
+  const [onlineSummaryChecked, setOnlineSummaryChecked] = useState(false)
+  useEffect(() => {
+    let cancelled = false
+    setOnlineSummary(undefined)
+    setOnlineSummaryChecked(false)
+    if (!concept) return
+    setLoadingOnlineSummary(true)
+    fetchOnlineSummary(concept.name)
+      .then((summary) => {
+        if (cancelled) return
+        setOnlineSummary(summary)
+      })
+      .finally(() => {
+        if (cancelled) return
+        setLoadingOnlineSummary(false)
+        setOnlineSummaryChecked(true)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [concept?.id, concept?.name])
+
+  // Personal knowledge layer (brief: "YOUR NOTES" / "YOUR HIGHLIGHTS") —
+  // reuses the same ConceptSource rows already shown in the Sources tab,
+  // just filtered to the two source types that carry the person's own
+  // wording verbatim. No rewriting, no summarizing.
+  const yourHighlights = useMemo(() => sources.filter((s) => s.sourceType === 'highlight' && s.sourceText), [sources])
+  const yourNotes = useMemo(() => sources.filter((s) => s.sourceType === 'note' && s.sourceText), [sources])
 
   const relatedIds = useLiveQuery<string[]>(() => (id ? getRelatedConceptIds(id) : []), [id, relations.length], [])
   const relatedConcepts = useMemo(
@@ -212,11 +253,50 @@ export function ConceptDetailPage() {
             label: 'Overview',
             content: (
               <div className="flex flex-col gap-6">
+                {/* Scientific Overview — online-enriched, always clearly attributed. Never invents a section: if
+                    there's no reliable summary (offline, no article, article is a disambiguation page), this
+                    collapses to a short, honest status line instead of fabricating a definition. */}
+                <div className="rounded-md border border-border bg-surface p-5">
+                  <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                    <Globe size={14} aria-hidden />
+                    Scientific overview
+                  </h3>
+                  {loadingOnlineSummary && (
+                    <p className="font-ui text-caption text-ink-tertiary">Checking online scientific sources…</p>
+                  )}
+                  {!loadingOnlineSummary && onlineSummary && (
+                    <div className="flex flex-col gap-2">
+                      <h4 className="font-ui text-caption font-medium uppercase tracking-wide text-ink-tertiary">
+                        Definition
+                      </h4>
+                      <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
+                        {onlineSummary.extract}
+                      </p>
+                      <a
+                        href={onlineSummary.sourceUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-1 flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
+                      >
+                        Source: {onlineSummary.sourceName}
+                        <ArrowSquareOut size={13} />
+                      </a>
+                    </div>
+                  )}
+                  {!loadingOnlineSummary && !onlineSummary && (
+                    <p className="font-ui text-caption text-ink-tertiary">
+                      {isLikelyOnline() || !onlineSummaryChecked
+                        ? 'No reliable online scientific source was found for this concept. Your local library material is shown below.'
+                        : 'Online enrichment unavailable — you appear to be offline. Your local library is still available.'}
+                    </p>
+                  )}
+                </div>
+
                 <div className="rounded-md border border-border bg-surface p-5">
                   <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                    Description
+                    From your library
                   </h3>
-                  <p className="font-body text-body text-ink-primary">
+                  <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
                     {concept.description ?? 'No description saved yet.'}
                   </p>
                   {!concept.description && hasPdfPageSources && (
@@ -225,7 +305,10 @@ export function ConceptDetailPage() {
                         Source context available — {firstAndLast.first?.bookTitle}, page {firstAndLast.first?.pageNumber}
                       </p>
                       {excerpt ? (
-                        <blockquote className="rounded-md bg-surface-raised px-3 py-2 font-body text-caption italic text-ink-secondary">
+                        <blockquote
+                          className="whitespace-pre-line rounded-md bg-surface-raised px-3 py-2 font-body text-caption italic text-ink-secondary"
+                          style={{ overflowWrap: 'anywhere' }}
+                        >
                           “{excerpt.text}”
                           <span className="mt-1 block font-ui text-micro not-italic text-ink-tertiary">
                             Unedited excerpt from the source — not a definition.
@@ -267,6 +350,39 @@ export function ConceptDetailPage() {
                         </h3>
                         <p className="font-body text-body text-ink-primary">{firstAndLast.last.bookTitle}</p>
                         <p className="font-ui text-caption text-ink-secondary">Page {firstAndLast.last.pageNumber}</p>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {(yourHighlights.length > 0 || yourNotes.length > 0) && (
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {yourHighlights.length > 0 && (
+                      <div className="rounded-md border border-border bg-surface p-4">
+                        <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                          Your highlights
+                        </h3>
+                        <ul className="flex flex-col gap-2">
+                          {yourHighlights.map((s) => (
+                            <li key={s.id} className="whitespace-pre-line font-body text-caption italic text-ink-secondary" style={{ overflowWrap: 'anywhere' }}>
+                              “{s.sourceText}”
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {yourNotes.length > 0 && (
+                      <div className="rounded-md border border-border bg-surface p-4">
+                        <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                          Your notes
+                        </h3>
+                        <ul className="flex flex-col gap-2">
+                          {yourNotes.map((s) => (
+                            <li key={s.id} className="whitespace-pre-line font-body text-caption text-ink-secondary" style={{ overflowWrap: 'anywhere' }}>
+                              {s.sourceText}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     )}
                   </div>
