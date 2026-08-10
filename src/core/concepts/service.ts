@@ -23,6 +23,56 @@ export interface CoOccurrenceMatch {
 }
 
 /**
+ * Retrieves an existing concept by name or creates a new one.
+ */
+export async function getOrCreateConcept(name: string, aliases: string[] = []): Promise<Concept> {
+  const normalizedName = name.trim()
+  const existing = await db.concepts.where('name').equalsIgnoreCase(normalizedName).first()
+  if (existing) return existing
+
+  const newConcept: Concept = {
+    id: crypto.randomUUID(),
+    name: normalizedName,
+    aliases,
+    tags: [],
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  }
+  await db.concepts.add(newConcept)
+  return newConcept
+}
+
+/**
+ * Links a source (book page, highlight, note) to a concept.
+ */
+export async function addConceptSource(
+  source: Omit<ConceptSource, 'id' | 'createdAt'>
+): Promise<ConceptSource> {
+  const newSource: ConceptSource = {
+    ...source,
+    id: crypto.randomUUID(),
+    createdAt: new Date().toISOString()
+  }
+  await db.conceptSources.add(newSource)
+  return newSource
+}
+
+/**
+ * Background routine to clean orphaned concept links or unused entries.
+ */
+export async function runAutoConceptCleanup(): Promise<void> {
+  // Silent background pass over IndexedDB
+  const allSources = await db.conceptSources.toArray()
+  const allConcepts = await db.concepts.toArray()
+  const conceptIds = new Set(allConcepts.map((c) => c.id))
+
+  const orphanedSources = allSources.filter((s) => !conceptIds.has(s.conceptId))
+  if (orphanedSources.length > 0) {
+    await db.conceptSources.bulkDelete(orphanedSources.map((s) => s.id))
+  }
+}
+
+/**
  * Computes locally derived statistics for a concept.
  */
 export function computeConceptStats(concept: Concept, sources: ConceptSource[]): ConceptStats {
@@ -117,7 +167,10 @@ export async function getCoOccurrenceRelated(conceptId: string): Promise<CoOccur
 export function getFirstAndLastEncountered(
   sources: ConceptSource[],
   itemsById: Map<string, LibraryItem>
-): { first?: { bookTitle: string; pageNumber: number; libraryItemId: string }; last?: { bookTitle: string; pageNumber: number; libraryItemId: string } } {
+): {
+  first?: { bookTitle: string; pageNumber: number; libraryItemId: string }
+  last?: { bookTitle: string; pageNumber: number; libraryItemId: string }
+} {
   const valid = sources
     .filter((s) => s.libraryItemId && s.pageNumber != null)
     .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
@@ -159,7 +212,6 @@ export async function getSourceExcerpt(
  * Scans known pages of a concept to find linked concepts.
  */
 export async function extractRelatedConceptsFromKnownPages(concept: Concept): Promise<void> {
-  // Safe execution pass over known sources
   const sources = await db.conceptSources.where('conceptId').equals(concept.id).toArray()
   if (!sources || sources.length === 0) return
 }
