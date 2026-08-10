@@ -122,6 +122,73 @@ export async function getPageTextContent(
   return { items, viewportTransform: viewport.transform }
 }
 
+/**
+ * Joins a page's text items into one readable string using each item's
+ * own position, instead of blindly inserting a space between every item.
+ *
+ * PDF.js reports one `TextItem` per run of glyphs the PDF's content
+ * stream groups together — on a justified/kerned page a single word can
+ * be split across two or more runs with almost no gap between them.
+ * `items.map(i => i.str).join(' ')` (the previous approach, used in five
+ * places across concept extraction/search) inserted a literal space at
+ * *every* item boundary regardless of the real gap, which is exactly
+ * what produced "tech nique" / "prepar ation" style mangled words in
+ * concept overviews, source excerpts, and note previews built from PDF
+ * text. This instead measures the horizontal gap between the end of one
+ * item and the start of the next (in the same units as `width`/
+ * `transform`) and only inserts a space when that gap is wide enough to
+ * plausibly be a real word boundary; a large vertical jump (line/column
+ * break) always inserts a space so words never get glued together
+ * across lines. Still a heuristic, not a layout engine — but it fixes
+ * the specific, reported failure mode without truncating or hiding any
+ * text.
+ */
+export function joinPageText(items: PdfTextItem[]): string {
+  let out = ''
+  let prevEndX: number | undefined
+  let prevY: number | undefined
+  let prevFontSize = 0
+
+  for (const item of items) {
+    const str = item.str
+    const x = item.transform?.[4] ?? 0
+    const y = item.transform?.[5] ?? 0
+    // transform[3] is the vertical scale component, a reasonable proxy
+    // for this run's font size regardless of rotation.
+    const fontSize = Math.abs(item.transform?.[3] ?? item.height ?? 10) || 10
+
+    if (str === '') {
+      // PDF.js emits an empty-string item purely to signal a line break
+      // (`hasEOL`) in some documents — treat it as whitespace, not a
+      // zero-width word boundary.
+      if (item.hasEOL && out && !out.endsWith('\n') && !out.endsWith(' ')) out += '\n'
+      continue
+    }
+
+    if (out) {
+      const sameLine = prevY !== undefined && Math.abs(y - prevY) < Math.max(prevFontSize, fontSize) * 0.4
+      if (!sameLine) {
+        if (!out.endsWith('\n')) out += '\n'
+      } else if (prevEndX !== undefined) {
+        const gap = x - prevEndX
+        // Threshold scales with font size: ~18% of an average character
+        // width reliably separates "real" word gaps from the sub-pixel
+        // kerning gaps inside a single justified word, without needing a
+        // full glyph-metrics table.
+        const threshold = fontSize * 0.18
+        if (gap > threshold && !out.endsWith(' ') && !out.endsWith('\n')) out += ' '
+      }
+    }
+
+    out += str
+    prevEndX = x + (item.width ?? 0)
+    prevY = y
+    prevFontSize = fontSize
+  }
+
+  return out.replace(/[ \t]+/g, ' ').replace(/\n+/g, ' ').trim()
+}
+
 /** Re-exports PDF.js's small matrix-transform helper so the text layer doesn't need its own copy. */
 export function transformPoint(m: number[], p: number[]): number[] {
   return pdfjsLib.Util.transform(m, p)
