@@ -1,9 +1,16 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Link, Plus, X } from '@phosphor-icons/react'
-import { SearchField, EmptyState } from '@/shared/components'
+import { Link, MagnifyingGlass, Plus, X } from '@phosphor-icons/react'
+import { SearchField, EmptyState, Button } from '@/shared/components'
 import type { Concept, ConceptRelation, LibraryItem } from '@/core/db'
-import { addConceptRelation, removeConceptRelation, type CoOccurrenceMatch } from '@/core/concepts'
+import {
+  addConceptRelation,
+  findCandidateConceptsFromKnownPages,
+  promoteConceptCandidate,
+  removeConceptRelation,
+  type CoOccurrenceMatch,
+  type SourceCandidate
+} from '@/core/concepts'
 
 interface RelatedConceptsPanelProps {
   concept: Concept
@@ -32,6 +39,9 @@ export function RelatedConceptsPanel({
   const navigate = useNavigate()
   const [query, setQuery] = useState('')
   const [adding, setAdding] = useState(false)
+  const [sourceCandidates, setSourceCandidates] = useState<SourceCandidate[] | undefined>(undefined)
+  const [scanningSources, setScanningSources] = useState(false)
+  const [promotingKey, setPromotingKey] = useState<string | undefined>(undefined)
 
   const relatedIds = new Set(relatedConcepts.map((c) => c.id))
   const candidates = useMemo(() => {
@@ -67,6 +77,34 @@ export function RelatedConceptsPanel({
   }
 
   const coOccurringNotAlreadyRelated = coOccurring.filter((m) => !relatedIds.has(m.concept.id))
+
+  // Knowledge Model Correction §9/§10/§11 — explicit, on-demand only:
+  // reads this concept's own known source pages for candidate phrases
+  // that aren't concepts yet. Nothing here writes anything until the
+  // person clicks "Add concept" on a specific suggestion.
+  async function handleFindSourceCandidates() {
+    setScanningSources(true)
+    try {
+      const found = await findCandidateConceptsFromKnownPages(concept)
+      setSourceCandidates(found)
+    } finally {
+      setScanningSources(false)
+    }
+  }
+
+  async function handlePromoteCandidate(candidate: SourceCandidate) {
+    setPromotingKey(candidate.normalizedName)
+    try {
+      await promoteConceptCandidate({
+        name: candidate.displayText,
+        evidence: candidate.pages,
+        relateToConceptId: concept.id
+      })
+      setSourceCandidates((prev) => prev?.filter((c) => c.normalizedName !== candidate.normalizedName))
+    } finally {
+      setPromotingKey(undefined)
+    }
+  }
 
   return (
     <div className="flex flex-col gap-4">
@@ -194,6 +232,61 @@ export function RelatedConceptsPanel({
           </ul>
         </div>
       )}
+
+      <div className="border-t border-border pt-4">
+        <div className="mb-2 flex items-center justify-between">
+          <h4 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+            Related concepts found in your sources
+          </h4>
+          {!sourceCandidates && (
+            <button
+              type="button"
+              onClick={() => void handleFindSourceCandidates()}
+              disabled={scanningSources || !hasPdfPageSources}
+              className="flex items-center gap-1.5 font-ui text-caption font-medium text-olive hover:underline disabled:cursor-not-allowed disabled:text-ink-tertiary disabled:no-underline"
+            >
+              <MagnifyingGlass size={14} />
+              {scanningSources ? 'Scanning your source pages…' : 'Find related concepts'}
+            </button>
+          )}
+        </div>
+        <p className="mb-3 font-ui text-caption text-ink-secondary">
+          These are candidate terms found on this concept's own source pages — not concepts yet. Adding one is
+          explicit; nothing here is created automatically.
+        </p>
+
+        {sourceCandidates && sourceCandidates.length === 0 && (
+          <p className="font-ui text-caption text-ink-tertiary">
+            No additional candidate terms found on this concept's source pages.
+          </p>
+        )}
+
+        {sourceCandidates && sourceCandidates.length > 0 && (
+          <ul className="flex flex-col gap-2">
+            {sourceCandidates.map((candidate) => (
+              <li
+                key={candidate.normalizedName}
+                className="flex items-center justify-between gap-3 rounded-md border border-border bg-surface px-3 py-2"
+              >
+                <div>
+                  <p className="font-ui text-body font-medium text-ink-primary">{candidate.displayText}</p>
+                  <p className="font-ui text-micro text-ink-tertiary">
+                    {candidate.pages.length} shared page{candidate.pages.length === 1 ? '' : 's'}
+                  </p>
+                </div>
+                <Button
+                  variant="secondary"
+                  size="small"
+                  disabled={promotingKey === candidate.normalizedName}
+                  onClick={() => void handlePromoteCandidate(candidate)}
+                >
+                  {promotingKey === candidate.normalizedName ? 'Adding…' : 'Add concept'}
+                </Button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   )
 }
