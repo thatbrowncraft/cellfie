@@ -1,6 +1,6 @@
 // src/core/concepts/service.ts
 
-import { db, type Concept, type ConceptSource } from '@/core/db'
+import { db, type Concept, type ConceptRelation, type ConceptSource } from '@/core/db'
 import { parseScientificTextToSections, type KnowledgeSection } from './onlineKnowledge'
 
 export interface ConceptInput {
@@ -12,13 +12,14 @@ export interface ConceptInput {
 
 /**
  * Retrieves an existing concept by name or creates a new one.
- * Supports passing either an input object ({ name, aliases, tags }) or a string.
+ * Accepts either an object { name, aliases, tags } or positional parameters (name, aliases).
  */
 export async function getOrCreateConcept(
-  input: string | ConceptInput
+  input: string | ConceptInput,
+  aliasesArg: string[] = []
 ): Promise<Concept> {
   const name = typeof input === 'string' ? input : input.name
-  const aliases = typeof input === 'string' ? [] : (input.aliases ?? [])
+  const aliases = typeof input === 'string' ? aliasesArg : (input.aliases ?? [])
   const tags = typeof input === 'object' && Array.isArray(input.tags) ? input.tags : []
   const description = typeof input === 'object' ? input.description : undefined
 
@@ -26,8 +27,7 @@ export async function getOrCreateConcept(
   const existing = await db.concepts.where('name').equalsIgnoreCase(normalizedName).first()
   if (existing) return existing
 
-  const newConcept: Concept = {
-    id: crypto.randomUUID(),
+  const newConceptPayload = {
     name: normalizedName,
     aliases,
     tags,
@@ -35,8 +35,10 @@ export async function getOrCreateConcept(
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
   }
-  await db.concepts.add(newConcept)
-  return newConcept
+
+  const id = await db.concepts.add(newConceptPayload as Concept)
+  const created = await db.concepts.get(id)
+  return created!
 }
 
 /**
@@ -45,13 +47,33 @@ export async function getOrCreateConcept(
 export async function addConceptSource(
   source: Omit<ConceptSource, 'id' | 'createdAt'>
 ): Promise<ConceptSource> {
-  const newSource: ConceptSource = {
+  const newSourcePayload = {
     ...source,
-    id: crypto.randomUUID(),
     createdAt: new Date().toISOString()
   }
-  await db.conceptSources.add(newSource)
-  return newSource
+  const id = await db.conceptSources.add(newSourcePayload as ConceptSource)
+  const created = await db.conceptSources.get(id)
+  return created!
+}
+
+/**
+ * Removes concept sources linked to a deleted highlight, note, or record.
+ */
+export async function removeConceptSourcesForRecord(
+  sourceType: ConceptSource['sourceType'],
+  recordId: string | number
+): Promise<void> {
+  const sources = await db.conceptSources.where('sourceType').equals(sourceType).toArray()
+  const toDelete = sources.filter(
+    (s) =>
+      s.highlightId === recordId ||
+      s.noteId === recordId ||
+      s.libraryItemId === recordId ||
+      s.id === recordId
+  )
+  if (toDelete.length > 0) {
+    await db.conceptSources.bulkDelete(toDelete.map((s) => s.id))
+  }
 }
 
 /**
@@ -60,9 +82,9 @@ export async function addConceptSource(
 export async function runAutoConceptCleanup(): Promise<void> {
   const allSources = await db.conceptSources.toArray()
   const allConcepts = await db.concepts.toArray()
-  const conceptIds = new Set(allConcepts.map((c) => c.id))
+  const conceptIds = new Set(allConcepts.map((c) => String(c.id)))
 
-  const orphanedSources = allSources.filter((s) => !conceptIds.has(s.conceptId))
+  const orphanedSources = allSources.filter((s) => !conceptIds.has(String(s.conceptId)))
   if (orphanedSources.length > 0) {
     await db.conceptSources.bulkDelete(orphanedSources.map((s) => s.id))
   }
@@ -71,24 +93,24 @@ export async function runAutoConceptCleanup(): Promise<void> {
 /**
  * Deletes a concept and all associated source/relation mappings.
  */
-export async function deleteConcept(conceptId: string): Promise<void> {
+export async function deleteConcept(conceptId: string | number): Promise<void> {
   await db.transaction('rw', [db.concepts, db.conceptSources, db.conceptRelations], async () => {
-    await db.concepts.delete(conceptId)
-    await db.conceptSources.where('conceptId').equals(conceptId).delete()
-    await db.conceptRelations.where('conceptIdA').equals(conceptId).delete()
-    await db.conceptRelations.where('conceptIdB').equals(conceptId).delete()
+    await db.concepts.delete(conceptId as any)
+    await db.conceptSources.where('conceptId').equals(conceptId as any).delete()
+    await db.conceptRelations.where('conceptAId').equals(conceptId as any).delete()
+    await db.conceptRelations.where('conceptBId').equals(conceptId as any).delete()
   })
 }
 
 /**
  * Extracts related concept IDs from Dexie relations.
  */
-export async function getRelatedConceptIds(conceptId: string): Promise<string[]> {
-  const relsA = await db.conceptRelations.where('conceptIdA').equals(conceptId).toArray()
-  const relsB = await db.conceptRelations.where('conceptIdB').equals(conceptId).toArray()
+export async function getRelatedConceptIds(conceptId: string | number): Promise<string[]> {
+  const relsA = await db.conceptRelations.where('conceptAId').equals(conceptId as any).toArray()
+  const relsB = await db.conceptRelations.where('conceptBId').equals(conceptId as any).toArray()
   const ids = new Set<string>()
-  for (const r of relsA) ids.add(r.conceptIdB)
-  for (const r of relsB) ids.add(r.conceptIdA)
+  for (const r of relsA) ids.add(String(r.conceptBId))
+  for (const r of relsB) ids.add(String(r.conceptAId))
   return Array.from(ids)
 }
 
@@ -96,9 +118,9 @@ export async function getRelatedConceptIds(conceptId: string): Promise<string[]>
  * Finds concepts that co-occur in the same library item/page.
  */
 export async function getCoOccurrenceRelated(
-  conceptId: string
+  conceptId: string | number
 ): Promise<Array<{ concept: Concept; sharedSources: ConceptSource[] }>> {
-  const sources = await db.conceptSources.where('conceptId').equals(conceptId).toArray()
+  const sources = await db.conceptSources.where('conceptId').equals(conceptId as any).toArray()
   if (sources.length === 0) return []
 
   const itemPageKeys = new Set(
@@ -111,18 +133,20 @@ export async function getCoOccurrenceRelated(
   const coMap = new Map<string, ConceptSource[]>()
 
   for (const s of allSources) {
-    if (s.conceptId === conceptId || !s.libraryItemId || s.pageNumber == null) continue
+    if (String(s.conceptId) === String(conceptId) || !s.libraryItemId || s.pageNumber == null) continue
     const key = `${s.libraryItemId}:${s.pageNumber}`
     if (itemPageKeys.has(key)) {
-      const existing = coMap.get(s.conceptId) ?? []
+      const cId = String(s.conceptId)
+      const existing = coMap.get(cId) ?? []
       existing.push(s)
-      coMap.set(s.conceptId, existing)
+      coMap.set(cId, existing)
     }
   }
 
   const result: Array<{ concept: Concept; sharedSources: ConceptSource[] }> = []
   for (const [otherId, sharedSources] of coMap.entries()) {
-    const c = await db.concepts.get(otherId)
+    const queryKey = isNaN(Number(otherId)) ? otherId : Number(otherId)
+    const c = await db.concepts.get(queryKey as any)
     if (c) {
       result.push({ concept: c, sharedSources })
     }
