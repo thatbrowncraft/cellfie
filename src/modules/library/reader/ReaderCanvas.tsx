@@ -296,22 +296,29 @@ export const ReaderCanvas = forwardRef<ReaderCanvasHandle, ReaderCanvasProps>(fu
   }
 
   return (
-    <div
+        <div
       ref={containerRef}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
       className="flex h-full w-full items-start justify-center overflow-y-auto overflow-x-hidden touch-pan-y overscroll-contain bg-canvas p-4"
-style={{ touchAction: 'pan-y' }}
-       style={{ touchAction: 'pan-y' }}
+      style={{ touchAction: 'pan-y' }}
     >
       <div
         ref={pageRef}
         onClick={handlePageClick}
         className="relative rounded-sm border border-border bg-white shadow-1 touch-pan-y"
-style={{ touchAction: 'pan-y' }}
-        style={naturalSize ? { width: naturalSize.width * effectiveScale, height: naturalSize.height * effectiveScale } : undefined}
+        style={
+          naturalSize
+            ? {
+                width: naturalSize.width * effectiveScale,
+                height: naturalSize.height * effectiveScale,
+                touchAction: 'pan-y'
+              }
+            : { touchAction: 'pan-y' }
+        }
       >
+
        <canvas
   ref={canvasRef}
   className="absolute inset-0 h-full w-full pointer-events-none"
