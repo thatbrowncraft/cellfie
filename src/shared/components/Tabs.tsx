@@ -12,16 +12,31 @@ interface TabsProps {
   tabs: TabItem[]
   defaultTabId?: string
   className?: string
+  /** Controlled mode (e.g. syncing with a URL search param) — when provided together
+   *  with `onChange`, Tabs stops managing its own active-tab state internally. */
+  activeId?: string
+  onChange?: (id: string) => void
 }
 
 /**
  * Tabs — Design System §10.8. Underline style, terracotta active indicator.
  * Full role="tablist"/"tab"/"tabpanel" semantics with arrow-key navigation.
+ * Uncontrolled by default; pass `activeId`/`onChange` to control it externally.
  */
-export function Tabs({ tabs, defaultTabId, className }: TabsProps) {
+export function Tabs({ tabs, defaultTabId, className, activeId: controlledActiveId, onChange }: TabsProps) {
   const enabledTabs = tabs.filter((t) => !t.disabled)
-  const [activeId, setActiveId] = useState(defaultTabId ?? enabledTabs[0]?.id)
+  const isControlled = controlledActiveId !== undefined && onChange !== undefined
+  const [uncontrolledActiveId, setUncontrolledActiveId] = useState(defaultTabId ?? enabledTabs[0]?.id)
+  const activeId = isControlled ? controlledActiveId : uncontrolledActiveId
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+
+  function setActiveId(id: string) {
+    if (isControlled) {
+      onChange(id)
+    } else {
+      setUncontrolledActiveId(id)
+    }
+  }
 
   function focusTab(id: string) {
     setActiveId(id)
