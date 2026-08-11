@@ -94,14 +94,16 @@ export function RelatedConceptsPanel({
   // Knowledge Model Correction §9/§10/§11 — explicit, on-demand only:
   // reads this concept's own known source pages for candidate phrases
   // that aren't concepts yet. Nothing here writes anything until the
-  // person clicks "Add concept" on a specific suggestion. Sprint 4: each
-  // raw text-mined candidate is then weakly verified against Wikipedia
-  // (does a real, non-disambiguation article exist for this phrase?)
-  // before it's shown — this reliably drops OCR fragments and sentence
-  // fragments, though a candidate that's a real encyclopedia entry but
-  // not actually a scientific concept (a publisher, a city) can still
-  // slip through; the "Online scientific suggestions" list above is the
-  // higher-confidence source and should usually be tried first.
+  // person clicks "Add concept" on a specific suggestion. Concept 2.0
+  // §8/§14: each raw text-mined candidate is then weakly verified
+  // against the same Wikipedia-free source hierarchy used elsewhere in
+  // this app (does PubMed or a general reference actually have
+  // something for this phrase?) before it's shown — this reliably drops
+  // OCR fragments and sentence fragments, though a candidate that's a
+  // real reference entry but not actually a scientific concept (a
+  // publisher, a city) can still slip through; the "Online scientific
+  // suggestions" list above is the higher-confidence source and should
+  // usually be tried first.
   async function handleFindSourceCandidates() {
     setScanningSources(true)
     setSourceCandidates(undefined)
@@ -126,8 +128,9 @@ export function RelatedConceptsPanel({
     }
   }
 
-  // Sprint 4 — Wikipedia's own related-pages recommendation for this
-  // concept's name. Read-only until "Add concept" is clicked.
+  // Concept 2.0 §8/§14 — related-concept suggestions from the same
+  // Wikipedia-free source hierarchy used across this app (never
+  // Wikipedia). Read-only until "Add concept" is clicked.
   async function handleFindOnlineSuggestions() {
     setLoadingOnline(true)
     try {
@@ -303,20 +306,20 @@ export function RelatedConceptsPanel({
               className="flex items-center gap-1.5 font-ui text-caption font-medium text-olive hover:underline disabled:cursor-not-allowed disabled:text-ink-tertiary disabled:no-underline"
             >
               <MagnifyingGlass size={14} />
-              {loadingOnline ? 'Checking Wikipedia…' : 'Find online suggestions'}
+              {loadingOnline ? 'Checking online sources…' : 'Find online suggestions'}
             </button>
           )}
         </div>
         <p className="mb-3 font-ui text-caption text-ink-secondary">
-          Reliable, established concepts Wikipedia associates with "{concept.name}" — not concepts yet. Adding one is
-          explicit; nothing here is created automatically.
+          Reliable, established concepts online reference sources associate with "{concept.name}" — not concepts
+          yet. Adding one is explicit; nothing here is created automatically.
         </p>
 
         {onlineSuggestions && onlineSuggestions.length === 0 && (
           <p className="mb-4 font-ui text-caption text-ink-tertiary">
             {isLikelyOnline()
               ? 'No strong related concepts found.'
-              : 'Online enrichment unavailable — you appear to be offline. Your local library is still available.'}
+              : 'Online knowledge unavailable. Your local library and saved knowledge are still available.'}
           </p>
         )}
 
@@ -329,7 +332,7 @@ export function RelatedConceptsPanel({
               >
                 <div>
                   <p className="font-ui text-body font-medium text-ink-primary">{item.title}</p>
-                  <p className="font-ui text-micro text-ink-tertiary">Source: Wikipedia</p>
+                  <p className="font-ui text-micro text-ink-tertiary">Source: {item.sourceName}</p>
                 </div>
                 <Button
                   variant="secondary"
@@ -358,14 +361,14 @@ export function RelatedConceptsPanel({
               className="flex items-center gap-1.5 font-ui text-caption font-medium text-olive hover:underline disabled:cursor-not-allowed disabled:text-ink-tertiary disabled:no-underline"
             >
               <MagnifyingGlass size={14} />
-              {scanningSources ? 'Scanning your source pages…' : verifyingSources ? 'Checking Wikipedia…' : 'Find related concepts'}
+              {scanningSources ? 'Scanning your source pages…' : verifyingSources ? 'Checking online sources…' : 'Find related concepts'}
             </button>
           )}
         </div>
         <p className="mb-3 font-ui text-caption text-ink-secondary">
-          Repeated capitalized terms from this concept's own source pages, weakly checked against Wikipedia to drop
-          obvious junk. Not verified as scientifically meaningful — review before adding. Nothing here is created
-          automatically.
+          Repeated capitalized terms from this concept's own source pages, weakly checked against online reference
+          sources to drop obvious junk. Not verified as scientifically meaningful — review before adding. Nothing
+          here is created automatically.
         </p>
 
         {sourceCandidates && sourceCandidates.length === 0 && (
