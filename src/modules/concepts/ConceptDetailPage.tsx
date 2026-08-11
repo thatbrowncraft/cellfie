@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, ArrowSquareOut, Globe, PencilSimple, Trash } from '@phosphor-icons/react'
 import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
@@ -45,6 +45,28 @@ export function ConceptDetailPage() {
   const [deleteOpen, setDeleteOpen] = useState(false)
   const [scanning, setScanning] = useState<string | null>(null)
   const [scanMessage, setScanMessage] = useState<string | undefined>(undefined)
+
+  // Concept 2.0 §5/§19 — four top-level tabs (Learn / Connections / Visuals /
+  // References), persisted in the URL so a refresh (or a shared link) lands
+  // back on the same tab instead of always resetting to Learn.
+  const CONCEPT_TAB_IDS = ['learn', 'connections', 'visuals', 'references'] as const
+  type ConceptTabId = (typeof CONCEPT_TAB_IDS)[number]
+  const [searchParams, setSearchParams] = useSearchParams()
+  const rawTab = searchParams.get('tab')
+  const activeConceptTab: ConceptTabId = (CONCEPT_TAB_IDS as readonly string[]).includes(rawTab ?? '')
+    ? (rawTab as ConceptTabId)
+    : 'learn'
+  function setActiveConceptTab(nextId: string) {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev)
+        next.set('tab', nextId)
+        return next
+      },
+      { replace: true }
+    )
+  }
+  const [connectionsView, setConnectionsView] = useState<'related' | 'mindmap'>('related')
 
   const concept = useLiveQuery<Concept | undefined>(() => (id ? db.concepts.get(id) : undefined), [id], undefined)
   const sources = useLiveQuery<ConceptSource[]>(
@@ -327,8 +349,8 @@ export function ConceptDetailPage() {
       <Tabs
         tabs={[
           {
-            id: 'overview',
-            label: 'Overview',
+            id: 'learn',
+            label: 'Learn',
             content: (
               <div className="flex flex-col gap-6">
                 {/* Study overview — Sprint 3.1 correction. Prefers, in order: (1) the person's own
@@ -509,59 +531,110 @@ export function ConceptDetailPage() {
                   </div>
                 )}
 
+                {/* Concept 2.0 §18 — compact access only; the full text lives in the
+                    existing Notes/Highlights modules, not duplicated here. */}
                 {(yourHighlights.length > 0 || yourNotes.length > 0) && (
-                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className="flex flex-wrap gap-3">
                     {yourHighlights.length > 0 && (
-                      <div className="rounded-md border border-border bg-surface p-4">
-                        <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                          Your highlights
-                        </h3>
-                        <ul className="flex flex-col gap-2">
-                          {yourHighlights.map((s) => (
-                            <li key={s.id} className="whitespace-pre-line font-body text-caption italic text-ink-secondary" style={{ overflowWrap: 'anywhere' }}>
-                              “{cleanDisplayText(s.sourceText ?? '')}”
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      <button
+                        type="button"
+                        onClick={() => navigate('/highlights')}
+                        className="rounded-md border border-border bg-surface px-4 py-2 font-ui text-caption font-medium text-ink-secondary hover:text-ink-primary"
+                      >
+                        Your highlights · {yourHighlights.length}
+                      </button>
                     )}
                     {yourNotes.length > 0 && (
-                      <div className="rounded-md border border-border bg-surface p-4">
-                        <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                          Your notes
-                        </h3>
-                        <ul className="flex flex-col gap-2">
-                          {yourNotes.map((s) => (
-                            <li key={s.id} className="whitespace-pre-line font-body text-caption text-ink-secondary" style={{ overflowWrap: 'anywhere' }}>
-                              {cleanDisplayText(s.sourceText ?? '')}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      <button
+                        type="button"
+                        onClick={() => navigate('/notes')}
+                        className="rounded-md border border-border bg-surface px-4 py-2 font-ui text-caption font-medium text-ink-secondary hover:text-ink-primary"
+                      >
+                        Your notes · {yourNotes.length}
+                      </button>
                     )}
                   </div>
                 )}
+              </div>
+            )
+          },
+          {
+            id: 'connections',
+            label: `Connections${relatedConcepts.length + coOccurring.length ? ` (${relatedConcepts.length + coOccurring.length})` : ''}`,
+            content: (
+              <div className="flex flex-col gap-4">
+                <div className="flex gap-2 border-b border-border pb-3">
+                  <Button
+                    variant={connectionsView === 'related' ? 'primary' : 'secondary'}
+                    size="small"
+                    onClick={() => setConnectionsView('related')}
+                  >
+                    Related concepts
+                  </Button>
+                  <Button
+                    variant={connectionsView === 'mindmap' ? 'primary' : 'secondary'}
+                    size="small"
+                    onClick={() => setConnectionsView('mindmap')}
+                  >
+                    Mind map
+                  </Button>
+                </div>
+                {connectionsView === 'related' ? (
+                  <RelatedConceptsPanel
+                    concept={concept}
+                    relatedConcepts={relatedConcepts}
+                    sharedTagSuggestions={sharedTagSuggestions}
+                    coOccurring={coOccurring}
+                    hasPdfPageSources={hasPdfPageSources}
+                    itemsById={itemsById}
+                    relations={relations}
+                    allConcepts={allConcepts}
+                  />
+                ) : (
+                  <ConceptMindMap root={mindMap} />
+                )}
+              </div>
+            )
+          },
+          {
+            id: 'visuals',
+            label: 'Visuals',
+            content: (
+              <div className="rounded-md border border-border bg-surface p-8 text-center">
+                <p className="font-body text-body text-ink-primary">No suitable visual reference found.</p>
+                <p className="mt-1 font-ui text-caption text-ink-tertiary">
+                  Diagrams and process illustrations for this concept aren't available yet.
+                </p>
+              </div>
+            )
+          },
+          {
+            id: 'references',
+            label: `References${meaningfulSourceCount ? ` (${meaningfulSourceCount})` : ''}`,
+            content: (
+              <div className="flex flex-col gap-6">
+                <div>
+                  <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                    Your library
+                  </h3>
+                  <ConceptSourceList sources={sources} itemsById={itemsById} />
+                </div>
 
-                {(relatedConcepts.length > 0 || coOccurring.length > 0) && (
+                {onlineSummary && (
                   <div className="rounded-md border border-border bg-surface p-5">
-                    <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                      Related concepts
+                    <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                      <Globe size={14} aria-hidden />
+                      Online references
                     </h3>
-                    <ul className="flex flex-wrap gap-2">
-                      {Array.from(new Map([...relatedConcepts, ...coOccurring.map((m) => m.concept)].map((c) => [c.id, c])).values())
-                        .slice(0, 8)
-                        .map((c) => (
-                          <li key={c.id}>
-                            <button
-                              type="button"
-                              onClick={() => navigate(`/concepts/${c.id}`)}
-                              className="rounded-full bg-surface-raised px-3 py-1.5 font-ui text-caption text-ink-secondary hover:text-ink-primary"
-                            >
-                              {c.name}
-                            </button>
-                          </li>
-                        ))}
-                    </ul>
+                    <a
+                      href={onlineSummary.sourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
+                    >
+                      {onlineSummary.sourceName}
+                      <ArrowSquareOut size={13} />
+                    </a>
                   </div>
                 )}
 
@@ -591,34 +664,10 @@ export function ConceptDetailPage() {
                 )}
               </div>
             )
-          },
-          {
-            id: 'sources',
-            label: `Sources${meaningfulSourceCount ? ` (${meaningfulSourceCount})` : ''}`,
-            content: <ConceptSourceList sources={sources} itemsById={itemsById} />
-          },
-          {
-            id: 'related',
-            label: `Related${relatedConcepts.length + coOccurring.length ? ` (${relatedConcepts.length + coOccurring.length})` : ''}`,
-            content: (
-              <RelatedConceptsPanel
-                concept={concept}
-                relatedConcepts={relatedConcepts}
-                sharedTagSuggestions={sharedTagSuggestions}
-                coOccurring={coOccurring}
-                hasPdfPageSources={hasPdfPageSources}
-                itemsById={itemsById}
-                relations={relations}
-                allConcepts={allConcepts}
-              />
-            )
-          },
-          {
-            id: 'mindmap',
-            label: 'Mind map',
-            content: <ConceptMindMap root={mindMap} />
           }
         ]}
+        activeId={activeConceptTab}
+        onChange={setActiveConceptTab}
       />
 
       <ConceptFormDialog open={editOpen} onClose={() => setEditOpen(false)} concept={concept} />
