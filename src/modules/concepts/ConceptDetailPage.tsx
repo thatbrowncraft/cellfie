@@ -6,6 +6,7 @@ import { useLiveQuery } from '@/core/db/useLiveQuery'
 import { getPageTextContent, joinPageText, loadPdfDocument } from '@/core/pdf-engine'
 import { readFile } from '@/core/file-storage'
 import {
+  backfillSourceRelevance,
   buildConceptMindMap,
   computeConceptStats,
   deleteConcept,
@@ -69,6 +70,14 @@ export function ConceptDetailPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [concept?.id])
 
+  // Relevance Correction — one-time, throttled retrofit for sources linked
+  // before relevance scoring existed (the "69 sources" case). Safe to fire
+  // on every visit; it no-ops once a concept has already been backfilled.
+  useEffect(() => {
+    if (!concept) return
+    void backfillSourceRelevance(concept.id)
+  }, [concept?.id])
+
   // Sprint 4 — for an explicitly-selected concept, try to pull a real,
   // attributed scientific summary from Wikipedia (see
   // core/concepts/onlineKnowledge.ts for why Wikipedia and not
@@ -126,10 +135,33 @@ export function ConceptDetailPage() {
     []
   )
   const firstAndLast = useMemo(() => getFirstAndLastEncountered(sources, itemsById), [sources, itemsById])
+
+  // Relevance Correction — the Study Overview must be built from the
+  // concept's STRONGEST source page, not simply the lowest page number
+  // (which is exactly how a table-of-contents page — always early in the
+  // book — used to win). Picks the highest-tier `pdf` source; ties break
+  // toward the earliest page. A concept with only `weak` (or no) pdf
+  // sources gets none here, and the UI below shows the honest "not
+  // strong enough" message instead of a misleading excerpt.
+  const bestOverviewSource = useMemo(() => {
+    const tierRank: Record<string, number> = { high: 2, relevant: 1 }
+    const candidates = sources.filter(
+      (s) => s.sourceType === 'pdf' && s.libraryItemId && s.pageNumber != null && (s.relevanceTier === 'high' || s.relevanceTier === 'relevant')
+    )
+    if (candidates.length === 0) return undefined
+    return [...candidates].sort(
+      (a, b) => (tierRank[b.relevanceTier ?? ''] ?? 0) - (tierRank[a.relevanceTier ?? ''] ?? 0) || (a.pageNumber! - b.pageNumber!)
+    )[0]
+  }, [sources])
+
+  const hasMeaningfulPdfSource = Boolean(bestOverviewSource)
   const hasPdfPageSources = useMemo(
     () => sources.some((s) => s.sourceType === 'pdf' && s.libraryItemId && s.pageNumber != null),
     [sources]
   )
+  const bestOverviewBookTitle = bestOverviewSource?.libraryItemId
+    ? itemsById.get(bestOverviewSource.libraryItemId)?.title
+    : undefined
 
   // Sprint 3.1 correction — reads this concept's own first-encountered
   // PDF page (once, when it changes) so the Overview can show ANY
@@ -144,16 +176,15 @@ export function ConceptDetailPage() {
   useEffect(() => {
     let cancelled = false
     setLocalSections([])
-    const first = firstAndLast.first
-    if (!first) return
-    const item = itemsById.get(first.libraryItemId)
+    if (!bestOverviewSource?.libraryItemId || bestOverviewSource.pageNumber == null) return
+    const item = itemsById.get(bestOverviewSource.libraryItemId)
     if (!item) return
     setLoadingLocalSections(true)
     ;(async () => {
       try {
         const blob = await readFile(item.filePath)
         const doc = await loadPdfDocument(blob)
-        const { items: textItems } = await getPageTextContent(doc, first.pageNumber)
+        const { items: textItems } = await getPageTextContent(doc, bestOverviewSource.pageNumber as number)
         const pageText = joinPageText(textItems)
         if (cancelled) return
         setLocalSections(splitIntoKnownSections(pageText))
@@ -167,7 +198,7 @@ export function ConceptDetailPage() {
       cancelled = true
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [firstAndLast.first?.libraryItemId, firstAndLast.first?.pageNumber])
+  }, [bestOverviewSource?.libraryItemId, bestOverviewSource?.pageNumber])
 
   const [excerpt, setExcerpt] = useState<SourceExcerpt | undefined>(undefined)
   const [loadingExcerpt, setLoadingExcerpt] = useState(false)
@@ -176,12 +207,13 @@ export function ConceptDetailPage() {
   // pulls a short, clearly-labeled raw excerpt from the source page,
   // never an authored/invented definition.
   async function handleShowExcerpt() {
-    if (!firstAndLast.first || !concept) return
-    const item = itemsById.get(firstAndLast.first.libraryItemId)
+    if (!bestOverviewSource?.libraryItemId || bestOverviewSource.pageNumber == null || !concept) return
+    const item = itemsById.get(bestOverviewSource.libraryItemId)
     if (!item) return
     setLoadingExcerpt(true)
     try {
-      const result = await getSourceExcerpt(item, firstAndLast.first.pageNumber, concept.name)
+      const term = bestOverviewSource.sourceText || concept.name
+      const result = await getSourceExcerpt(item, bestOverviewSource.pageNumber, term)
       setExcerpt(result)
     } finally {
       setLoadingExcerpt(false)
@@ -194,6 +226,10 @@ export function ConceptDetailPage() {
     { id: id ?? '', label: '', children: [] }
   )
 
+  const meaningfulSourceCount = useMemo(
+    () => sources.filter((s) => s.sourceType !== 'pdf' || s.relevanceTier === 'high' || s.relevanceTier === 'relevant').length,
+    [sources]
+  )
   const sourceItemIds = useMemo(
     () => Array.from(new Set(sources.filter((s) => s.libraryItemId).map((s) => s.libraryItemId as string))),
     [sources]
@@ -350,9 +386,9 @@ export function ConceptDetailPage() {
                             )}
                           </div>
                         ))}
-                      {firstAndLast.first && (
+                      {bestOverviewSource && (
                         <p className="border-t border-border pt-3 font-ui text-caption text-ink-tertiary">
-                          Source: {firstAndLast.first.bookTitle}, page {firstAndLast.first.pageNumber}
+                          Source: {bestOverviewBookTitle}, page {bestOverviewSource.pageNumber}
                         </p>
                       )}
                     </div>
@@ -365,10 +401,10 @@ export function ConceptDetailPage() {
                   {!concept.description && !loadingLocalSections && !localSections.some((s) => s.heading) && (
                     <>
                       <p className="font-body text-body text-ink-primary">No description saved yet.</p>
-                      {hasPdfPageSources && (
+                      {hasMeaningfulPdfSource ? (
                         <div className="mt-3 border-t border-border pt-3">
                           <p className="mb-2 font-ui text-caption text-ink-secondary">
-                            Source context available — {firstAndLast.first?.bookTitle}, page {firstAndLast.first?.pageNumber}
+                            Source context available — {bestOverviewBookTitle}, page {bestOverviewSource?.pageNumber}
                           </p>
                           {excerpt ? (
                             <blockquote
@@ -386,6 +422,10 @@ export function ConceptDetailPage() {
                             </Button>
                           )}
                         </div>
+                      ) : (
+                        <p className="mt-3 border-t border-border pt-3 font-ui text-caption text-ink-tertiary">
+                          Local source context not strong enough to build an overview.
+                        </p>
                       )}
                     </>
                   )}
@@ -554,7 +594,7 @@ export function ConceptDetailPage() {
           },
           {
             id: 'sources',
-            label: `Sources${sources.length ? ` (${sources.length})` : ''}`,
+            label: `Sources${meaningfulSourceCount ? ` (${meaningfulSourceCount})` : ''}`,
             content: <ConceptSourceList sources={sources} itemsById={itemsById} />
           },
           {
