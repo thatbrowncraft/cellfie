@@ -44,7 +44,14 @@ function tokenizeWords(text: string): string[] {
 interface PageSignals {
   isTocLike: boolean
   isBibliographyLike: boolean
+  /** Concept 2.0 §12 — a page with almost no real text (a mostly-blank
+   *  page, a plate/figure page with a caption, a half-scanned page) is
+   *  "only a fragment": even a real term appearing on it isn't backed by
+   *  an actual discussion, so it shouldn't count as strong evidence. */
+  isFragmentLike: boolean
 }
+
+const FRAGMENT_WORD_THRESHOLD = 15
 
 /**
  * Table-of-contents and index pages have a very distinctive shape once
@@ -65,7 +72,8 @@ function computePageSignals(pageText: string): PageSignals {
   const etAl = (pageText.match(ET_AL_RE) ?? []).length
   return {
     isTocLike: numberMatches.length >= 6 && numberDensity > 0.05,
-    isBibliographyLike: citationYears >= 3 || etAl >= 2
+    isBibliographyLike: citationYears >= 3 || etAl >= 2,
+    isFragmentLike: words.length < FRAGMENT_WORD_THRESHOLD
   }
 }
 
@@ -136,6 +144,7 @@ export function scorePageRelevance(pageText: string, term: string): PageRelevanc
   else if (indices.length === 2) total += 1
   if (signals.isTocLike) total -= 10
   if (signals.isBibliographyLike) total -= 8
+  if (signals.isFragmentLike) total -= 4
 
   let tier: RelevanceTier
   if (total >= 8) tier = 'high'

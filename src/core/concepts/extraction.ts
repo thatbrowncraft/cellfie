@@ -52,10 +52,29 @@ export function looksLikeConceptPhrase(raw: string): boolean {
   if (wordCount > 6) return false
   if (isLikelyStopwordPhrase(trimmed)) return false
   if (!isPlausibleConceptName(trimmed)) return false
+  if (looksLikeAuthorName(trimmed)) return false
 
   const isAcronym = /^[A-Z]{2,6}(-[A-Z0-9]{1,6})?$/.test(trimmed)
   const isCapitalizedPhrase = /^[A-Z][a-zA-Z0-9]*(?:[\s-][A-Za-z0-9][a-zA-Z0-9]*){0,5}$/.test(trimmed)
   return isAcronym || isCapitalizedPhrase
+}
+
+const AUTHOR_INITIAL_TOKEN_RE = /^[A-Z]{1,3}\.?$/
+
+/**
+ * Concept 2.0 §20 — bibliography/reference-list rows produce candidates
+ * shaped like "Prescott JP" or "Sharma, M K": a capitalized surname
+ * followed by one or more bare initials. That shape never occurs in a
+ * real scientific term ("Gram staining", "Crystal violet"), so it's a
+ * cheap, precise way to keep author names out of the candidate/suggested-
+ * concept pipeline without touching the stopword list.
+ */
+function looksLikeAuthorName(trimmed: string): boolean {
+  const words = trimmed.split(/[\s,]+/).filter(Boolean)
+  if (words.length < 2) return false
+  const [surname, ...rest] = words
+  if (!/^[A-Z][a-z]+$/.test(surname)) return false
+  return rest.every((w) => AUTHOR_INITIAL_TOKEN_RE.test(w))
 }
 
 /**
