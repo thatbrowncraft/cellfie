@@ -296,7 +296,7 @@ export function ConceptDetailPage() {
   }
 
   return (
-    <div className="mx-auto max-w-content px-4 py-8 sm:px-6 md:px-8">
+    <div className="mx-auto w-full min-w-0 max-w-content overflow-x-hidden px-4 py-8 sm:px-6 md:px-8">
       <button
         type="button"
         onClick={() => navigate('/concepts')}
@@ -339,8 +339,9 @@ export function ConceptDetailPage() {
         ))}
       </div>
 
-      <Tabs
-        tabs={[
+      <div className="w-full min-w-0 max-w-full overflow-x-hidden">
+       <Tabs
+         tabs={[
           {
             id: 'learn',
             label: 'Learn',
@@ -658,6 +659,8 @@ export function ConceptDetailPage() {
         activeId={activeConceptTab}
         onChange={setActiveConceptTab}
       />
+
+     </div>
 
       <ConceptFormDialog open={editOpen} onClose={() => setEditOpen(false)} concept={concept} />
 
