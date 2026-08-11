@@ -121,6 +121,8 @@ export interface LinkSourceInput {
   pageNumber?: number
   sourceId?: string
   sourceText?: string
+  /** Relevance Correction — only meaningful for `pdf` sources; see ConceptSource. */
+  relevanceTier?: 'high' | 'relevant' | 'weak'
 }
 
 /**
@@ -146,6 +148,7 @@ export async function addConceptSource(input: LinkSourceInput): Promise<ConceptS
     pageNumber: input.pageNumber,
     sourceId: input.sourceId,
     sourceText: input.sourceText,
+    relevanceTier: input.relevanceTier,
     createdAt: Date.now()
   }
   await db.conceptSources.add(source)

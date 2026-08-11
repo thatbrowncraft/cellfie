@@ -10,11 +10,12 @@
  * backed by an actual stored record.
  */
 
-import { db, type LibraryItem } from '../db'
+import { db, type ConceptSource, type LibraryItem } from '../db'
 import { getPageTextContent, joinPageText, loadPdfDocument } from '../pdf-engine'
 import { readFile } from '../file-storage'
 import { addConceptSource, getOrCreateConcept } from './service'
 import { isLikelyStopwordPhrase, isPlausibleConceptName, isStopwordToken, normalizeConceptName } from './normalize'
+import { findBestExcerpt, scorePageRelevance } from './relevance'
 
 export interface ExtractionResult {
   conceptsCreated: number
@@ -210,13 +211,19 @@ export async function scanLibraryItemForConcepts(item: LibraryItem): Promise<Sca
     for (const { concept, term } of needles) {
       const key = term.toLowerCase()
       if (!lowerPageText.includes(key)) continue
+      // Relevance Correction — never link a page that's structurally a
+      // TOC/index/bibliography listing, or where the term is only an
+      // isolated one-word hit. Keyword presence alone is no longer enough.
+      const relevance = scorePageRelevance(pageText, term)
+      if (relevance.tier === 'reject') continue
       const source = await addConceptSource({
         conceptId: concept.id,
         sourceType: 'pdf',
         libraryItemId: item.id,
         pageNumber: page,
         sourceId: `${item.id}:${page}:${normalizeConceptName(term)}`,
-        sourceText: term
+        sourceText: term,
+        relevanceTier: relevance.tier
       })
       if (source) result = mergeResults(result, { conceptsCreated: 0, conceptsUpdated: 1, sourcesLinked: 1 })
     }
@@ -341,13 +348,16 @@ export async function extractConceptsFromPdf(item: LibraryItem): Promise<PdfExtr
     for (const { concept, term } of needles) {
       const key = term.toLowerCase()
       if (!lowerPageText.includes(key)) continue
+      const relevance = scorePageRelevance(pageText, term)
+      if (relevance.tier === 'reject') continue
       const source = await addConceptSource({
         conceptId: concept.id,
         sourceType: 'pdf',
         libraryItemId: item.id,
         pageNumber: page,
         sourceId: `${item.id}:${page}:${normalizeConceptName(term)}`,
-        sourceText: term
+        sourceText: term,
+        relevanceTier: relevance.tier
       })
       if (source) result = mergeResults(result, { conceptsCreated: 0, conceptsUpdated: 1, sourcesLinked: 1 })
     }
@@ -497,13 +507,16 @@ export async function extractRelatedConceptsFromKnownPages(
       for (const { concept: other, term } of needles) {
         const key = term.toLowerCase()
         if (!lowerPageText.includes(key)) continue
+        const relevance = scorePageRelevance(pageText, term)
+        if (relevance.tier === 'reject') continue
         const source = await addConceptSource({
           conceptId: other.id,
           sourceType: 'pdf',
           libraryItemId: item.id,
           pageNumber: page,
           sourceId: `${item.id}:${page}:${normalizeConceptName(term)}`,
-          sourceText: term
+          sourceText: term,
+          relevanceTier: relevance.tier
         })
         if (source) result = mergeResults(result, { conceptsCreated: 0, conceptsUpdated: 1, sourcesLinked: 1 })
       }
@@ -612,14 +625,19 @@ export interface SourceExcerpt {
   libraryItemId: string
   pageNumber: number
   text: string
+  relevanceTier: 'high' | 'relevant' | 'weak'
 }
 
 /**
- * Knowledge Model Correction §8 — on-demand only (never called
- * automatically): reads a single page and returns a short excerpt of
- * raw, unedited text around the concept's first literal occurrence.
- * This is source-derived *context*, clearly not an authored definition —
- * the caller is responsible for labeling it as a quoted excerpt, not a
+ * Knowledge Model Correction §8, Relevance Correction — on-demand only
+ * (never called automatically): reads a single page and returns a short
+ * excerpt of raw, unedited text around the concept's STRONGEST occurrence
+ * on that page (see core/concepts/relevance.ts), not simply the first one.
+ * Returns `undefined` — rather than a misleading excerpt — when the page
+ * doesn't clear the relevance bar (e.g. it's a TOC/index/bibliography
+ * listing, or the term only appears as an isolated fragment). This is
+ * source-derived *context*, clearly not an authored definition — the
+ * caller is responsible for labeling it as a quoted excerpt, not a
  * description.
  */
 export async function getSourceExcerpt(item: LibraryItem, pageNumber: number, term: string): Promise<SourceExcerpt | undefined> {
@@ -632,11 +650,94 @@ export async function getSourceExcerpt(item: LibraryItem, pageNumber: number, te
   const doc = await loadPdfDocument(blob)
   const { items: textItems } = await getPageTextContent(doc, pageNumber)
   const pageText = joinPageText(textItems)
-  const idx = pageText.toLowerCase().indexOf(term.toLowerCase())
-  if (idx === -1) return undefined
-  const start = Math.max(0, idx - 120)
-  const end = Math.min(pageText.length, idx + term.length + 120)
-  const prefix = start > 0 ? '…' : ''
-  const suffix = end < pageText.length ? '…' : ''
-  return { libraryItemId: item.id, pageNumber, text: `${prefix}${pageText.slice(start, end).trim()}${suffix}` }
+  const found = findBestExcerpt(pageText, term)
+  if (!found || found.relevance.tier === 'reject') return undefined
+  return { libraryItemId: item.id, pageNumber, text: found.text, relevanceTier: found.relevance.tier }
+}
+
+const RELEVANCE_BACKFILL_KEY_PREFIX = 'conceptRelevanceBackfill:v1:'
+/** Soft ceiling so a concept with a very large legacy source count (like the reported 69) can't turn one page-open into an unbounded PDF-reading pass. */
+const MAX_BACKFILL_PAGES_PER_RUN = 120
+
+export interface RelevanceBackfillResult {
+  ran: boolean
+  scored: number
+  removed: number
+}
+
+/**
+ * Relevance Correction — one-time, per-concept retrofit for `pdf` sources
+ * that were linked before relevance scoring existed (e.g. the 69 sources
+ * a concept like "DNA" could accumulate under the old keyword-only
+ * linking). Reads each such page once, scores it against the concept's
+ * own name/aliases, and either stores the computed tier or removes the
+ * source entirely if it turns out to be a `reject` (TOC/index/
+ * bibliography) page — exactly the kind of row the old logic should
+ * never have linked in the first place. Gated by an `appSettings` key per
+ * concept, same pattern as `runAutoConceptCleanup`, so it's safe to call
+ * unconditionally every time a concept's detail page opens.
+ */
+export async function backfillSourceRelevance(conceptId: string): Promise<RelevanceBackfillResult> {
+  const settingsKey = `${RELEVANCE_BACKFILL_KEY_PREFIX}${conceptId}`
+  const already = await db.appSettings.get(settingsKey)
+  if (already) return { ran: false, scored: 0, removed: 0 }
+
+  const concept = await db.concepts.get(conceptId)
+  if (!concept) return { ran: false, scored: 0, removed: 0 }
+
+  const untiered = await db.conceptSources
+    .where('conceptId')
+    .equals(conceptId)
+    .filter((s) => s.sourceType === 'pdf' && Boolean(s.libraryItemId) && s.pageNumber != null && !s.relevanceTier)
+    .toArray()
+
+  if (untiered.length === 0) {
+    await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), scored: 0, removed: 0 } })
+    return { ran: true, scored: 0, removed: 0 }
+  }
+
+  const batch = untiered.slice(0, MAX_BACKFILL_PAGES_PER_RUN)
+  const byItem = new Map<string, ConceptSource[]>()
+  for (const s of batch) {
+    const list = byItem.get(s.libraryItemId as string) ?? []
+    list.push(s)
+    byItem.set(s.libraryItemId as string, list)
+  }
+
+  let scored = 0
+  let removed = 0
+
+  for (const [itemId, list] of byItem) {
+    const item = await db.libraryItems.get(itemId)
+    if (!item) continue
+    let blob: Blob
+    try {
+      blob = await readFile(item.filePath)
+    } catch {
+      continue
+    }
+    const doc = await loadPdfDocument(blob)
+    for (const source of list) {
+      const { items: textItems } = await getPageTextContent(doc, source.pageNumber as number)
+      const pageText = joinPageText(textItems)
+      const term = source.sourceText || concept.name
+      const relevance = scorePageRelevance(pageText, term)
+      if (relevance.tier === 'reject') {
+        await db.conceptSources.delete(source.id)
+        removed += 1
+      } else {
+        await db.conceptSources.update(source.id, { relevanceTier: relevance.tier })
+        scored += 1
+      }
+    }
+  }
+
+  // Only mark the whole concept "done" once every untiered row has been
+  // covered — a large legacy backlog gets picked up again on the next
+  // visit instead of being silently left half-scored.
+  if (untiered.length <= MAX_BACKFILL_PAGES_PER_RUN) {
+    await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), scored, removed } })
+  }
+
+  return { ran: true, scored, removed }
 }
