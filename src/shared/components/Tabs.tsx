@@ -59,7 +59,11 @@ export function Tabs({ tabs, defaultTabId, className, activeId: controlledActive
 
   return (
     <div className={className}>
-      <div role="tablist" aria-label="Sections" className="flex gap-6 border-b border-border">
+     <div
+  role="tablist"
+  aria-label="Sections"
+  className="flex w-full min-w-0 border-b border-border"
+>
         {tabs.map((tab) => {
           const isActive = tab.id === activeId
           const enabledIndex = enabledTabs.findIndex((t) => t.id === tab.id)
@@ -76,7 +80,7 @@ export function Tabs({ tabs, defaultTabId, className, activeId: controlledActive
               onClick={() => !tab.disabled && setActiveId(tab.id)}
               onKeyDown={(e) => !tab.disabled && handleKeyDown(e, enabledIndex)}
               className={cn(
-                'relative px-4 py-3 font-ui text-ui font-medium transition-colors duration-micro',
+                'relative min-w-0 flex-1 px-1 py-3 text-center font-ui text-ui font-medium leading-tight transition-colors duration-micro',
                 tab.disabled
                   ? 'text-ink-tertiary cursor-not-allowed'
                   : isActive
