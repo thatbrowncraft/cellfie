@@ -53,3 +53,18 @@ export function isLikelyStopwordPhrase(raw: string): boolean {
 export function isStopwordToken(word: string): boolean {
   return STOPWORDS.has(word.trim().toLowerCase())
 }
+/**
+ * Cleans up broken words, accidental spaces inside single words,
+ * and double spacing extracted from PDF highlights.
+ */
+export function cleanExtractedText(text: string): string {
+  if (!text) return '';
+  return text
+    // Remove line-break hyphens (e.g., "pro- posing" -> "proposing")
+    .replace(/(\w+)-\s*\n?\s*(\w+)/g, '$1$2')
+    // Fix broken single-letter gaps (e.g., "s te p s" -> "steps")
+    .replace(/\b([a-zA-Z])\s+([a-zA-Z])\s+([a-zA-Z])\b/g, '$1$2$3')
+    // Collapse extra spaces and line breaks into clean single spaces
+    .replace(/\s+/g, ' ')
+    .trim();
+}
