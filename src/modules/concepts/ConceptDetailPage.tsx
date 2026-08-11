@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowSquareOut, Globe, PencilSimple, Trash } from '@phosphor-icons/react'
 import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
+import { getPageTextContent, joinPageText, loadPdfDocument } from '@/core/pdf-engine'
+import { readFile } from '@/core/file-storage'
 import {
   buildConceptMindMap,
   computeConceptStats,
@@ -20,6 +22,7 @@ import {
   type OnlineSummary,
   type SourceExcerpt
 } from '@/core/concepts'
+import { cleanDisplayText, splitIntoKnownSections, type SectionBlock } from '@/core/concepts/textDisplay'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/components'
 import { ConceptSourceList } from './components/ConceptSourceList'
@@ -127,6 +130,45 @@ export function ConceptDetailPage() {
     () => sources.some((s) => s.sourceType === 'pdf' && s.libraryItemId && s.pageNumber != null),
     [sources]
   )
+
+  // Sprint 3.1 correction — reads this concept's own first-encountered
+  // PDF page (once, when it changes) so the Overview can show ANY
+  // headings that page's own book already uses (Principle, Procedure,
+  // Precautions, etc.) as real sections, instead of one raw paragraph.
+  // This is reorganizing the person's own material by its own structure
+  // — nothing is invented. If the page has no recognizable headings,
+  // `localSections` comes back empty and the Overview falls back to the
+  // plain "From your library" excerpt below.
+  const [localSections, setLocalSections] = useState<SectionBlock[]>([])
+  const [loadingLocalSections, setLoadingLocalSections] = useState(false)
+  useEffect(() => {
+    let cancelled = false
+    setLocalSections([])
+    const first = firstAndLast.first
+    if (!first) return
+    const item = itemsById.get(first.libraryItemId)
+    if (!item) return
+    setLoadingLocalSections(true)
+    ;(async () => {
+      try {
+        const blob = await readFile(item.filePath)
+        const doc = await loadPdfDocument(blob)
+        const { items: textItems } = await getPageTextContent(doc, first.pageNumber)
+        const pageText = joinPageText(textItems)
+        if (cancelled) return
+        setLocalSections(splitIntoKnownSections(pageText))
+      } catch {
+        if (!cancelled) setLocalSections([])
+      } finally {
+        if (!cancelled) setLoadingLocalSections(false)
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstAndLast.first?.libraryItemId, firstAndLast.first?.pageNumber])
+
   const [excerpt, setExcerpt] = useState<SourceExcerpt | undefined>(undefined)
   const [loadingExcerpt, setLoadingExcerpt] = useState(false)
 
@@ -253,25 +295,126 @@ export function ConceptDetailPage() {
             label: 'Overview',
             content: (
               <div className="flex flex-col gap-6">
-                {/* Scientific Overview — online-enriched, always clearly attributed. Never invents a section: if
-                    there's no reliable summary (offline, no article, article is a disambiguation page), this
-                    collapses to a short, honest status line instead of fabricating a definition. */}
+                {/* Study overview — Sprint 3.1 correction. Prefers, in order: (1) the person's own
+                    typed description, (2) this concept's own book reorganized by ITS OWN headings
+                    (Principle/Procedure/etc. — real structure, not invented), (3) a plain excerpt as
+                    a last resort. Never fabricates a section that isn't actually supported. */}
+                <div className="rounded-md border border-border bg-surface p-5">
+                  <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                    Study overview
+                  </h3>
+
+                  {concept.description && (
+                    <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
+                      {cleanDisplayText(concept.description)}
+                    </p>
+                  )}
+
+                  {!concept.description && localSections.some((s) => s.heading) && (
+                    <div className="flex flex-col gap-4">
+                      {localSections
+                        .filter((s) => s.heading)
+                        .map((section, i) => (
+                          <div key={`${section.heading}-${i}`}>
+                            <h4 className="mb-1 font-ui text-caption font-semibold uppercase tracking-wide text-ink-secondary">
+                              {section.heading}
+                            </h4>
+                            {/^\s*\d+[.)]/.test(section.body) ? (
+                              <ol className="ml-4 list-decimal font-body text-body text-ink-primary">
+                                {section.body
+                                  .split(/\n(?=\s*\d+[.)])/)
+                                  .map((line) => line.replace(/^\s*\d+[.)]\s*/, '').trim())
+                                  .filter(Boolean)
+                                  .map((line, j) => (
+                                    <li key={j} className="mb-1" style={{ overflowWrap: 'anywhere' }}>
+                                      {line}
+                                    </li>
+                                  ))}
+                              </ol>
+                            ) : (
+                              <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
+                                {section.body}
+                              </p>
+                            )}
+                          </div>
+                        ))}
+                      {firstAndLast.first && (
+                        <p className="border-t border-border pt-3 font-ui text-caption text-ink-tertiary">
+                          Source: {firstAndLast.first.bookTitle}, page {firstAndLast.first.pageNumber}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {!concept.description && loadingLocalSections && (
+                    <p className="font-ui text-caption text-ink-tertiary">Reading your source page…</p>
+                  )}
+
+                  {!concept.description && !loadingLocalSections && !localSections.some((s) => s.heading) && (
+                    <>
+                      <p className="font-body text-body text-ink-primary">No description saved yet.</p>
+                      {hasPdfPageSources && (
+                        <div className="mt-3 border-t border-border pt-3">
+                          <p className="mb-2 font-ui text-caption text-ink-secondary">
+                            Source context available — {firstAndLast.first?.bookTitle}, page {firstAndLast.first?.pageNumber}
+                          </p>
+                          {excerpt ? (
+                            <blockquote
+                              className="whitespace-pre-line rounded-md bg-surface-raised px-3 py-2 font-body text-caption italic text-ink-secondary"
+                              style={{ overflowWrap: 'anywhere' }}
+                            >
+                              “{cleanDisplayText(excerpt.text)}”
+                              <span className="mt-1 block font-ui text-micro not-italic text-ink-tertiary">
+                                Unedited excerpt from the source — not a definition.
+                              </span>
+                            </blockquote>
+                          ) : (
+                            <Button variant="secondary" size="small" disabled={loadingExcerpt} onClick={() => void handleShowExcerpt()}>
+                              {loadingExcerpt ? 'Reading source…' : 'Show source excerpt'}
+                            </Button>
+                          )}
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {concept.tags.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {concept.tags.map((tag) => (
+                        <span key={tag} className="rounded-full bg-surface-raised px-2.5 py-1 font-ui text-micro text-ink-secondary">
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Scientific reference — online, NCBI/PubMed only (see core/concepts/onlineKnowledge.ts
+                    for why Wikipedia was removed and why this can't yet reach CDC/WHO directly). Kept as
+                    its own separate card, never merged into "Study overview" above, so it's always clear
+                    which parts came from the person's own book vs. an online reference. Honestly labeled
+                    as an abstract, not presented as a formal definition. */}
                 <div className="rounded-md border border-border bg-surface p-5">
                   <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
                     <Globe size={14} aria-hidden />
-                    Scientific overview
+                    Scientific reference
                   </h3>
                   {loadingOnlineSummary && (
-                    <p className="font-ui text-caption text-ink-tertiary">Checking online scientific sources…</p>
+                    <p className="font-ui text-caption text-ink-tertiary">Checking NCBI/PubMed…</p>
                   )}
                   {!loadingOnlineSummary && onlineSummary && (
                     <div className="flex flex-col gap-2">
-                      <h4 className="font-ui text-caption font-medium uppercase tracking-wide text-ink-tertiary">
-                        Definition
+                      <h4 className="font-ui text-caption font-medium text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
+                        {onlineSummary.title}
                       </h4>
                       <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
                         {onlineSummary.extract}
                       </p>
+                      {onlineSummary.isAbstract && (
+                        <p className="font-ui text-micro text-ink-tertiary">
+                          This is the abstract of a related peer-reviewed paper, not a textbook definition.
+                        </p>
+                      )}
                       <a
                         href={onlineSummary.sourceUrl}
                         target="_blank"
@@ -286,49 +429,9 @@ export function ConceptDetailPage() {
                   {!loadingOnlineSummary && !onlineSummary && (
                     <p className="font-ui text-caption text-ink-tertiary">
                       {isLikelyOnline() || !onlineSummaryChecked
-                        ? 'No reliable online scientific source was found for this concept. Your local library material is shown below.'
+                        ? 'Reliable online information was not found.'
                         : 'Online enrichment unavailable — you appear to be offline. Your local library is still available.'}
                     </p>
-                  )}
-                </div>
-
-                <div className="rounded-md border border-border bg-surface p-5">
-                  <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                    From your library
-                  </h3>
-                  <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
-                    {concept.description ?? 'No description saved yet.'}
-                  </p>
-                  {!concept.description && hasPdfPageSources && (
-                    <div className="mt-3 border-t border-border pt-3">
-                      <p className="mb-2 font-ui text-caption text-ink-secondary">
-                        Source context available — {firstAndLast.first?.bookTitle}, page {firstAndLast.first?.pageNumber}
-                      </p>
-                      {excerpt ? (
-                        <blockquote
-                          className="whitespace-pre-line rounded-md bg-surface-raised px-3 py-2 font-body text-caption italic text-ink-secondary"
-                          style={{ overflowWrap: 'anywhere' }}
-                        >
-                          “{excerpt.text}”
-                          <span className="mt-1 block font-ui text-micro not-italic text-ink-tertiary">
-                            Unedited excerpt from the source — not a definition.
-                          </span>
-                        </blockquote>
-                      ) : (
-                        <Button variant="secondary" size="small" disabled={loadingExcerpt} onClick={() => void handleShowExcerpt()}>
-                          {loadingExcerpt ? 'Reading source…' : 'Show source excerpt'}
-                        </Button>
-                      )}
-                    </div>
-                  )}
-                  {concept.tags.length > 0 && (
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {concept.tags.map((tag) => (
-                        <span key={tag} className="rounded-full bg-surface-raised px-2.5 py-1 font-ui text-micro text-ink-secondary">
-                          #{tag}
-                        </span>
-                      ))}
-                    </div>
                   )}
                 </div>
 
@@ -365,7 +468,7 @@ export function ConceptDetailPage() {
                         <ul className="flex flex-col gap-2">
                           {yourHighlights.map((s) => (
                             <li key={s.id} className="whitespace-pre-line font-body text-caption italic text-ink-secondary" style={{ overflowWrap: 'anywhere' }}>
-                              “{s.sourceText}”
+                              “{cleanDisplayText(s.sourceText ?? '')}”
                             </li>
                           ))}
                         </ul>
@@ -379,7 +482,7 @@ export function ConceptDetailPage() {
                         <ul className="flex flex-col gap-2">
                           {yourNotes.map((s) => (
                             <li key={s.id} className="whitespace-pre-line font-body text-caption text-ink-secondary" style={{ overflowWrap: 'anywhere' }}>
-                              {s.sourceText}
+                              {cleanDisplayText(s.sourceText ?? '')}
                             </li>
                           ))}
                         </ul>
