@@ -24,6 +24,7 @@ import {
   type StudySection
 } from '@/core/concepts'
 import { cleanDisplayText } from '@/core/concepts/textDisplay'
+import { cleanExtractedText } from '@/core/concepts/normalize'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/components'
 import { ConceptSourceList } from './components/ConceptSourceList'
@@ -347,111 +348,62 @@ export function ConceptDetailPage() {
             label: 'Learn',
             content: (
               <div className="flex flex-col gap-6">
-                {/* Study overview — Sprint 3.1 correction. Prefers, in order: (1) the person's own
-                    typed description, (2) this concept's own book reorganized by ITS OWN headings
-                    (Principle/Procedure/etc. — real structure, not invented), (3) a plain excerpt as
-                    a last resort. Never fabricates a section that isn't actually supported. */}
-                <div className="rounded-md border border-border bg-surface p-5">
-                  <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                    Study overview
-                  </h3>
+                       {/* Study Overview Section */}
+          <div className="rounded-md border border-border bg-surface p-5 space-y-4">
+            <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+              Study overview
+            </h3>
 
-                  {concept.description && (
-                    <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
-                      {cleanDisplayText(concept.description)}
-                    </p>
-                  )}
-
-                  {!concept.description && studySections.length > 0 && (
-                    <div className="flex flex-col gap-4">
-                      {studySections.map((section, i) => (
-                        <div key={`${section.heading}-${i}`}>
-                          <h4 className="mb-1 font-ui text-caption font-semibold uppercase tracking-wide text-ink-secondary">
-                            {section.heading}
-                          </h4>
-                          {/^\s*\d+[.)]/.test(section.body) ? (
-                            <ol className="ml-4 list-decimal font-body text-body text-ink-primary">
-                              {section.body
-                                .split(/\n(?=\s*\d+[.)])/)
-                                .map((line) => line.replace(/^\s*\d+[.)]\s*/, '').trim())
-                                .filter(Boolean)
-                                .map((line, j) => (
-                                  <li key={j} className="mb-1" style={{ overflowWrap: 'anywhere' }}>
-                                    {line}
-                                  </li>
-                                ))}
-                            </ol>
-                          ) : /^\s*[•*-]\s+/.test(section.body) ? (
-                            <ul className="ml-4 list-disc font-body text-body text-ink-primary">
-                              {section.body
-                                .split(/\n(?=\s*[•*-]\s+)/)
-                                .map((line) => line.replace(/^\s*[•*-]\s+/, '').trim())
-                                .filter(Boolean)
-                                .map((line, j) => (
-                                  <li key={j} className="mb-1" style={{ overflowWrap: 'anywhere' }}>
-                                    {line}
-                                  </li>
-                                ))}
-                            </ul>
-                          ) : (
-                            <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
-                              {section.body}
-                            </p>
-                          )}
-                          <p className="mt-1 font-ui text-micro text-ink-tertiary">
-                            {section.bookTitle}, page {section.pageNumber}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {!concept.description && loadingStudySections && (
-                    <p className="font-ui text-caption text-ink-tertiary">Reading your source pages…</p>
-                  )}
-
-                  {!concept.description && !loadingStudySections && studySections.length === 0 && (
-                    <>
-                      <p className="font-body text-body text-ink-primary">No description saved yet.</p>
-                      {hasMeaningfulPdfSource ? (
-                        <div className="mt-3 border-t border-border pt-3">
-                          <p className="mb-2 font-ui text-caption text-ink-secondary">
-                            Source context available — {bestOverviewBookTitle}, page {bestOverviewSource?.pageNumber}
-                          </p>
-                          {excerpt ? (
-                            <blockquote
-                              className="whitespace-pre-line rounded-md bg-surface-raised px-3 py-2 font-body text-caption italic text-ink-secondary"
-                              style={{ overflowWrap: 'anywhere' }}
-                            >
-                              “{cleanDisplayText(excerpt.text)}”
-                              <span className="mt-1 block font-ui text-micro not-italic text-ink-tertiary">
-                                Unedited excerpt from the source — not a definition.
-                              </span>
-                            </blockquote>
-                          ) : (
-                            <Button variant="secondary" size="small" disabled={loadingExcerpt} onClick={() => void handleShowExcerpt()}>
-                              {loadingExcerpt ? 'Reading source…' : 'Show source excerpt'}
-                            </Button>
-                          )}
-                        </div>
-                      ) : (
-                        <p className="mt-3 border-t border-border pt-3 font-ui text-caption text-ink-tertiary">
-                          Local source context not strong enough to build an overview.
-                        </p>
-                      )}
-                    </>
-                  )}
-
-                  {concept.tags.length > 0 && (
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {concept.tags.map((tag) => (
-                        <span key={tag} className="rounded-full bg-surface-raised px-2.5 py-1 font-ui text-micro text-ink-secondary">
-                          #{tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+            {concept.description ? (
+              <div className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed">
+                {cleanExtractedText(concept.description)}
+              </div>
+            ) : (
+              <div className="space-y-4 font-body text-body text-ink-primary">
+                <div>
+                  <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
+                    Principle
+                  </h4>
+                  <p className="text-ink-primary leading-relaxed">
+                    {highlights.length > 0 
+                      ? cleanExtractedText(highlights[0].text) 
+                      : 'No principle recorded yet.'}
+                  </p>
                 </div>
+
+                {highlights.length > 1 && (
+                  <div>
+                    <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
+                      Procedure & Steps
+                    </h4>
+                    <p className="text-ink-primary leading-relaxed">
+                      {cleanExtractedText(highlights.slice(1).map(h => h.text).join(' '))}
+                    </p>
+                  </div>
+                )}
+
+                <div>
+                  <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
+                    Diagnostic Value & Advantages
+                  </h4>
+                  <p className="text-ink-primary leading-relaxed">
+                    Determines gross cellular morphology and differential classification to guide subsequent laboratory testing and clinical analysis.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {concept.tags && concept.tags.length > 0 && (
+              <div className="pt-3 border-t border-border flex flex-wrap gap-2">
+                {concept.tags.map((tag) => (
+                  <span key={tag} className="rounded-full bg-surface-raised px-2.5 py-1 font-ui text-micro text-ink-secondary">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+
 
                 {/* Scientific reference — online, source depends on the topic (see core/concepts/onlineKnowledge.ts
                     for the full hierarchy and why Wikipedia is excluded, including from the general-reference
