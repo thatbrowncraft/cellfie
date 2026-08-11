@@ -41,11 +41,42 @@
  * wrapped so a CORS/network failure degrades to "unavailable", is never
  * allowed to throw, and never falls back to Wikipedia or invented text.
  *
- * WHAT'S STILL WIKIPEDIA-BACKED, ON PURPOSE, FOR NOW: `fetchOnlineRelated`
- * and `verifyCandidateExists` below still call Wikipedia. They feed
- * `RelatedConceptsPanel.tsx` only — not the Overview — and every pass so
- * far has been explicitly scoped to "don't touch RelatedConceptsPanel or
- * its behavior." Flagged clearly for its own follow-up pass.
+ * WIKIPEDIA FULLY REMOVED. Every function in this module — including
+ * `fetchOnlineRelated` and `verifyCandidateExists`, which used to call
+ * Wikipedia's related-pages and summary endpoints — now reuses the same
+ * Wikipedia-free tier hierarchy as `fetchOnlineSummary`: PubMed/NCBI for
+ * concepts that look biomedical, DuckDuckGo's keyless Instant Answer API
+ * (itself filtered to reject anything Wikipedia-attributed) for
+ * everything else. No exceptions remain anywhere in this file (§8/§14).
+ *
+ * SOURCE HIERARCHY — this app covers topics far outside microbiology
+ * (percentages, profit & loss, PCR, photosynthesis, enzyme kinetics...),
+ * so a single biomedical-only source can't be the whole story:
+ *
+ *   Tier 1 — NCBI/PubMed (`eutils.ncbi.nlm.nih.gov`), attempted only for
+ *            concepts that look like a life-science/medical topic (see
+ *            `looksBiomedical`). Skipped for quantitative/aptitude
+ *            topics, where a random biomedical paper abstract would be
+ *            actively misleading, not just unhelpful.
+ *   Tier 2 — a general reference lookup (DuckDuckGo's keyless Instant
+ *            Answer API), used for everything else / as a fallback when
+ *            Tier 1 finds nothing, with any Wikipedia-attributed result
+ *            filtered out and the ACTUAL source it names (e.g.
+ *            "Encyclopedia Britannica") shown — never mislabeled.
+ *   Neither tier reaches CDC/WHO/FDA/USDA/CDSCO/ICMR/OpenStax/Khan
+ *   Academy directly: none of those publish a public, CORS-enabled,
+ *   key-free content API a static client-side PWA can call without a
+ *   backend. That's a genuine capability gap, not a shortcut — faking
+ *   those sources or quietly substituting Wikipedia for them would
+ *   violate "do not invent, do not mislabel a source", so this module
+ *   simply doesn't claim to reach them. See the delivery notes for what
+ *   a backend-proxy follow-up would look like.
+ *
+ * NEITHER eutils.ncbi.nlm.nih.gov NOR api.duckduckgo.com's CORS behavior
+ * toward this app's actual deployed origin has been confirmed from a
+ * live browser (this environment has none) — every call below is
+ * wrapped so a CORS/network failure degrades to "unavailable", is never
+ * allowed to throw, and never falls back to Wikipedia or invented text.
  *
  * FAILURE MODE: any network error, timeout, or empty result resolves to
  * `undefined` rather than throwing — callers fall back to local library
@@ -56,7 +87,7 @@ import { db } from '../db'
 
 const REQUEST_TIMEOUT_MS = 8000
 const CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7 // 7 days
-const CACHE_KEY_PREFIX = 'onlineKnowledgeCache:v3:'
+const CACHE_KEY_PREFIX = 'onlineKnowledgeCache:v4:'
 const NCBI_EUTILS_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
 
 export interface OnlineSummary {
@@ -73,6 +104,8 @@ export interface OnlineSummary {
 export interface OnlineRelatedItem {
   title: string
   sourceUrl: string
+  /** The real, specific source this relation came from (e.g. "PubMed (NCBI)", or whatever DuckDuckGo's aggregation actually names) — NEVER "Wikipedia". */
+  sourceName: string
 }
 
 interface CacheEntry<T> {
@@ -291,12 +324,44 @@ export async function fetchOnlineSummary(name: string): Promise<OnlineSummary | 
 }
 
 // ---------------------------------------------------------------------
-// Related-tab support only (RelatedConceptsPanel.tsx) — intentionally
-// UNCHANGED in this pass, see the module comment above. Still
-// Wikipedia-backed; scheduled for its own correction pass so as not to
-// change Related-tab behavior while only the Overview was in scope here.
+// Related-tab support (RelatedConceptsPanel.tsx) — Concept 2.0 §8/§14.
+// Reuses the exact same Wikipedia-free tier hierarchy as
+// `fetchOnlineSummary` above instead of a separate Wikipedia-backed
+// path. That means these two functions can honestly return "nothing
+// found" for a topic Wikipedia would have had an article for — that's
+// the correct, honest outcome per "no reliable source found ≠
+// substitute a worse one", not a regression.
 // ---------------------------------------------------------------------
 
+interface DdgRelatedTopic {
+  Text?: string
+  FirstURL?: string
+  Topics?: DdgRelatedTopic[]
+}
+
+function flattenRelatedTopics(topics: DdgRelatedTopic[] | undefined): DdgRelatedTopic[] {
+  if (!topics) return []
+  return topics.flatMap((t) => (t.Topics ? flattenRelatedTopics(t.Topics) : [t]))
+}
+
+function hostnameOf(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '')
+  } catch {
+    return 'Online reference'
+  }
+}
+
+/**
+ * Related concepts for the Connections tab. DuckDuckGo's Instant Answer
+ * API returns a `RelatedTopics` list alongside the abstract already used
+ * by `fetchGeneralReference` — each entry names its own source page, so
+ * (same rule as everywhere else in this module) anything whose URL
+ * points at wikipedia.org is dropped rather than shown. Because
+ * DuckDuckGo's related-topic aggregation leans heavily on
+ * Wikipedia/DBpedia, many concepts will legitimately come back with
+ * few or zero suggestions here — an honest empty result, not a bug.
+ */
 export async function fetchOnlineRelated(name: string): Promise<OnlineRelatedItem[]> {
   const key = `related:${name.trim().toLowerCase()}`
   const cached = await readCache<OnlineRelatedItem[]>(key)
@@ -304,30 +369,36 @@ export async function fetchOnlineRelated(name: string): Promise<OnlineRelatedIte
 
   if (!isLikelyOnline()) return cached?.value ?? []
 
-  const encoded = encodeURIComponent(name.trim().replace(/\s+/g, '_'))
-  const data = (await fetchJson(`https://en.wikipedia.org/api/rest_v1/page/related/${encoded}`)) as
-    | { pages?: { title?: string; content_urls?: { desktop?: { page?: string } } }[] }
-    | undefined
+  const term = encodeURIComponent(name.trim())
+  const data = (await fetchJson(
+    `https://api.duckduckgo.com/?q=${term}&format=json&no_redirect=1&no_html=1&skip_disambig=1`
+  )) as { RelatedTopics?: DdgRelatedTopic[] } | undefined
 
-  const pages = data?.pages
-  if (!pages) {
-    await writeCache(key, null)
-    return []
+  const seen = new Set<string>()
+  const items: OnlineRelatedItem[] = []
+  for (const topic of flattenRelatedTopics(data?.RelatedTopics)) {
+    if (!topic.Text || !topic.FirstURL) continue
+    if (isWikipediaSourced(undefined, topic.FirstURL)) continue
+    const title = topic.Text.split(' - ')[0].trim()
+    if (!title) continue
+    const titleKey = title.toLowerCase()
+    if (titleKey === name.trim().toLowerCase() || seen.has(titleKey)) continue
+    seen.add(titleKey)
+    items.push({ title, sourceUrl: topic.FirstURL, sourceName: hostnameOf(topic.FirstURL) })
+    if (items.length >= 10) break
   }
-
-  const items: OnlineRelatedItem[] = pages
-    .filter((p): p is { title: string; content_urls?: { desktop?: { page?: string } } } => Boolean(p.title))
-    .map((p) => ({
-      title: p.title.replace(/_/g, ' '),
-      sourceUrl: p.content_urls?.desktop?.page ?? `https://en.wikipedia.org/wiki/${encodeURIComponent(p.title)}`
-    }))
-    .filter((p) => p.title.toLowerCase() !== name.trim().toLowerCase())
-    .slice(0, 10)
 
   await writeCache(key, items)
   return items
 }
 
+/**
+ * Weak existence check used before showing a text-mined phrase as a
+ * promotable "+ Add concept" suggestion. Runs the same tier hierarchy
+ * as `fetchOnlineSummary`: a candidate "exists" here only if a real,
+ * non-Wikipedia source (PubMed for biomedical-looking terms, or the
+ * general-reference tier otherwise) actually has something for it.
+ */
 export async function verifyCandidateExists(name: string): Promise<boolean> {
   const key = name.trim().toLowerCase()
   if (!key) return false
@@ -335,11 +406,15 @@ export async function verifyCandidateExists(name: string): Promise<boolean> {
   if (cached && isFresh(cached)) return Boolean(cached.value?.exists)
   if (!isLikelyOnline()) return Boolean(cached?.value?.exists)
 
-  const encoded = encodeURIComponent(name.trim().replace(/\s+/g, '_'))
-  const data = (await fetchJson(`https://en.wikipedia.org/api/rest_v1/page/summary/${encoded}`)) as
-    | { type?: string; extract?: string }
-    | undefined
-  const exists = Boolean(data && data.type !== 'disambiguation' && data.extract)
+  let found: OnlineSummary | undefined
+  if (!looksQuantitative(name)) {
+    found = await fetchPubMedSummary(name)
+  }
+  if (!found) {
+    found = await fetchGeneralReference(name)
+  }
+
+  const exists = Boolean(found)
   await writeCache(`verify:${key}`, { exists })
   return exists
 }
