@@ -331,6 +331,18 @@ export function ConceptDetailPage() {
                                     </li>
                                   ))}
                               </ol>
+                            ) : /^\s*[•*-]\s+/.test(section.body) ? (
+                              <ul className="ml-4 list-disc font-body text-body text-ink-primary">
+                                {section.body
+                                  .split(/\n(?=\s*[•*-]\s+)/)
+                                  .map((line) => line.replace(/^\s*[•*-]\s+/, '').trim())
+                                  .filter(Boolean)
+                                  .map((line, j) => (
+                                    <li key={j} className="mb-1" style={{ overflowWrap: 'anywhere' }}>
+                                      {line}
+                                    </li>
+                                  ))}
+                              </ul>
                             ) : (
                               <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
                                 {section.body}
@@ -389,18 +401,17 @@ export function ConceptDetailPage() {
                   )}
                 </div>
 
-                {/* Scientific reference — online, NCBI/PubMed only (see core/concepts/onlineKnowledge.ts
-                    for why Wikipedia was removed and why this can't yet reach CDC/WHO directly). Kept as
-                    its own separate card, never merged into "Study overview" above, so it's always clear
-                    which parts came from the person's own book vs. an online reference. Honestly labeled
-                    as an abstract, not presented as a formal definition. */}
+                {/* Scientific reference — online, source depends on the topic (see core/concepts/onlineKnowledge.ts
+                    for the full hierarchy and why Wikipedia is excluded, including from the general-reference
+                    fallback tier). Kept as its own separate card, never merged into "Study overview" above, so
+                    it's always clear which parts came from the person's own book vs. an online reference. */}
                 <div className="rounded-md border border-border bg-surface p-5">
                   <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
                     <Globe size={14} aria-hidden />
                     Scientific reference
                   </h3>
                   {loadingOnlineSummary && (
-                    <p className="font-ui text-caption text-ink-tertiary">Checking NCBI/PubMed…</p>
+                    <p className="font-ui text-caption text-ink-tertiary">Checking online reference sources…</p>
                   )}
                   {!loadingOnlineSummary && onlineSummary && (
                     <div className="flex flex-col gap-2">
