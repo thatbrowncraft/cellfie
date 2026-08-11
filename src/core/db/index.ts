@@ -191,6 +191,18 @@ export interface ConceptSource {
   sourceId?: string
   /** Snippet of the actual matched/linked text, captured at link time — never invented. */
   sourceText?: string
+  /**
+   * Relevance Correction — how strongly this page actually discusses the
+   * concept, per core/concepts/relevance.ts. Only set for `pdf` sources;
+   * absent on other source types (a highlight/note/bookmark is inherently
+   * meaningful — the person chose it). Undefined on legacy rows written
+   * before this field existed; see `backfillSourceRelevance` in
+   * core/concepts/extraction.ts for the one-time, per-concept pass that
+   * scores those retroactively. A page that scored `reject` (TOC/index/
+   * bibliography, or an isolated one-word hit) is never linked at all, so
+   * this field only ever holds 'high' | 'relevant' | 'weak'.
+   */
+  relevanceTier?: 'high' | 'relevant' | 'weak'
   createdAt: number
 }
 
