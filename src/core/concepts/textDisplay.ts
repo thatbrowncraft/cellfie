@@ -80,29 +80,47 @@ export interface SectionBlock {
 }
 
 // Headings this app knows how to recognize when they appear verbatim in
-// a person's own book (e.g. Godkar's "Principle" / "Procedure" /
-// "Precautions" / "Requirements" / "Reagents" headings). This is NOT
-// inventing structure — it's detecting structure the source material
-// already has and preserving it, instead of flattening it into one
-// paragraph. A heading is only recognized if it appears alone on its
-// own line (optionally followed by ":" or a figure reference like
-// "(Fig. 27.2)"), which is how these books actually typeset them.
+// a person's own book. This is NOT inventing structure — it's detecting
+// structure the source material already has and preserving it, instead
+// of flattening it into one paragraph. Deliberately domain-general
+// (Sprint: "Overview for any academic topic, not just microbiology") —
+// covers lab-technique books (Principle/Procedure/Precautions),
+// biology/biochem texts (Mechanism/Functions/Significance), and
+// quantitative/aptitude material (Formula/Shortcuts/Common mistakes)
+// with the same mechanism: a heading is only recognized if it's the
+// book's own word, never invented by this app.
 const KNOWN_HEADINGS = [
-  'definition', 'purpose', 'principle', 'procedure', 'requirements', 'reagents',
+  'definition', 'purpose', 'principle', 'principle / core idea', 'core idea',
+  'how it works', 'mechanism', 'procedure', 'requirements', 'reagents', 'method',
+  'basic method', 'steps',
+  'types', 'classification', 'functions', 'function',
   'result', 'results', 'interpretation', 'result / interpretation', 'results and interpretation',
-  'precautions', 'precaution', 'things to remember', 'key points', 'remember'
+  'precautions', 'precaution', 'applications', 'application',
+  'advantages', 'limitations', 'advantages and limitations', 'advantages / limitations',
+  'significance', 'clinical significance', 'biological significance',
+  'formula', 'formulas', 'examples', 'example', 'shortcuts', 'shortcut',
+  'common mistakes', 'common mistake',
+  'things to remember', 'key points', 'important points', 'remember'
 ]
 
-const HEADING_LINE_RE = new RegExp(
-  `^(${KNOWN_HEADINGS.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})\\s*[:\\-]?\\s*(\\(.*\\))?$`,
-  'i'
-)
+const HEADING_WORDS_RE = `(${KNOWN_HEADINGS.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`
+
+// Two accepted shapes, both requiring an unambiguous delimiter so an
+// ordinary sentence that happens to start with one of these words
+// ("Results may vary depending on...") is never mistaken for a heading:
+//   1. The heading ALONE on its own line, optionally with a trailing
+//      figure reference — "Principle" / "Procedure (Fig. 27.2)".
+//   2. The heading followed by a COLON, with its content on the same
+//      line — "Formula: Percentage = (Part/Whole) × 100". The colon is
+//      the unambiguous signal; without it, the line is left as body text.
+const HEADING_ALONE_RE = new RegExp(`^${HEADING_WORDS_RE}\\s*[:\\-]?\\s*(\\(.*?\\))?$`, 'i')
+const HEADING_INLINE_RE = new RegExp(`^${HEADING_WORDS_RE}\\s*:\\s*(.+)$`, 'i')
 
 /**
  * Splits a block of source text into sections ONLY where the text
- * itself already labels them with a recognized heading on its own line.
- * If no recognized headings are found, returns a single section with an
- * empty heading (caller shows it as plain body text — never invents a
+ * itself already labels them with a recognized heading. If no
+ * recognized headings are found, returns a single section with an empty
+ * heading (caller shows it as plain body text — never invents a
  * "Definition" label for text that isn't actually a definition).
  */
 export function splitIntoKnownSections(raw: string): SectionBlock[] {
@@ -114,10 +132,16 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
   let currentLines: string[] = []
 
   for (const line of lines) {
-    if (HEADING_LINE_RE.test(line)) {
+    const aloneMatch = HEADING_ALONE_RE.exec(line)
+    const inlineMatch = !aloneMatch ? HEADING_INLINE_RE.exec(line) : null
+    if (aloneMatch) {
       if (currentLines.some((l) => l)) sections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
-      currentHeading = line.replace(/[:\-]\s*$/, '').replace(/\s*\(.*\)\s*$/, '').trim()
+      currentHeading = aloneMatch[1].trim()
       currentLines = []
+    } else if (inlineMatch) {
+      if (currentLines.some((l) => l)) sections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
+      currentHeading = inlineMatch[1].trim()
+      currentLines = inlineMatch[2].trim() ? [inlineMatch[2].trim()] : []
     } else {
       currentLines.push(line)
     }

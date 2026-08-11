@@ -1,5 +1,5 @@
 /**
- * core/concepts/onlineKnowledge — Sprint 3.1 correction.
+ * core/concepts/onlineKnowledge — Sprint: general-topic Overview.
  *
  * NO AI. Nothing here "writes" an explanation — every string returned by
  * this module is either a direct excerpt pulled from a real page at a
@@ -7,31 +7,45 @@
  * (`sourceName`/`sourceUrl`) next to anything rendered from here.
  *
  * WIKIPEDIA REMOVED FROM THE OVERVIEW PIPELINE. `fetchOnlineSummary` —
- * the only function of this module that feeds the Concept Overview — no
- * longer calls Wikipedia in any form. It now queries NCBI's E-utilities
- * (PubMed) directly from the browser: `eutils.ncbi.nlm.nih.gov` is a
- * public, keyless JSON/text API; unlike `en.wikipedia.org` it is not
- * something this codebase can independently confirm sends
- * `Access-Control-Allow-Origin` for browser `fetch()` calls without a
- * live browser to test against, so every call below is wrapped so a
- * CORS/network failure degrades to "unavailable" — it is never allowed
- * to throw, and it never falls back to Wikipedia or any invented text.
+ * the only function of this module that feeds the Concept Overview —
+ * never calls Wikipedia, and the general-reference tier added below
+ * explicitly REJECTS any result attributed to Wikipedia rather than
+ * silently accepting it (see `isWikipediaSourced`).
  *
- * WHY NOT CDC/WHO/ICMR DIRECTLY: none of them publish a public,
- * CORS-enabled, key-free content API a static client-side PWA can call.
- * That's a genuine capability gap, not a shortcut — see the module-level
- * comment in the Sprint 3.1 status report for the full explanation.
- * Faking those sources or silently substituting Wikipedia for them would
- * violate the "do not invent, do not mislabel a source" rule, so instead
- * this module simply doesn't claim to reach them.
+ * SOURCE HIERARCHY — this app covers topics far outside microbiology
+ * (percentages, profit & loss, PCR, photosynthesis, enzyme kinetics...),
+ * so a single biomedical-only source can't be the whole story:
+ *
+ *   Tier 1 — NCBI/PubMed (`eutils.ncbi.nlm.nih.gov`), attempted only for
+ *            concepts that look like a life-science/medical topic (see
+ *            `looksBiomedical`). Skipped for quantitative/aptitude
+ *            topics, where a random biomedical paper abstract would be
+ *            actively misleading, not just unhelpful.
+ *   Tier 2 — a general reference lookup (DuckDuckGo's keyless Instant
+ *            Answer API), used for everything else / as a fallback when
+ *            Tier 1 finds nothing, with any Wikipedia-attributed result
+ *            filtered out and the ACTUAL source it names (e.g.
+ *            "Encyclopedia Britannica") shown — never mislabeled.
+ *   Neither tier reaches CDC/WHO/FDA/USDA/CDSCO/ICMR/OpenStax/Khan
+ *   Academy directly: none of those publish a public, CORS-enabled,
+ *   key-free content API a static client-side PWA can call without a
+ *   backend. That's a genuine capability gap, not a shortcut — faking
+ *   those sources or quietly substituting Wikipedia for them would
+ *   violate "do not invent, do not mislabel a source", so this module
+ *   simply doesn't claim to reach them. See the delivery notes for what
+ *   a backend-proxy follow-up would look like.
+ *
+ * NEITHER eutils.ncbi.nlm.nih.gov NOR api.duckduckgo.com's CORS behavior
+ * toward this app's actual deployed origin has been confirmed from a
+ * live browser (this environment has none) — every call below is
+ * wrapped so a CORS/network failure degrades to "unavailable", is never
+ * allowed to throw, and never falls back to Wikipedia or invented text.
  *
  * WHAT'S STILL WIKIPEDIA-BACKED, ON PURPOSE, FOR NOW: `fetchOnlineRelated`
  * and `verifyCandidateExists` below still call Wikipedia. They feed
- * `RelatedConceptsPanel.tsx` only — not the Overview — and this pass was
- * scoped to "fix the Concept Overview only, do not touch
- * RelatedConceptsPanel.tsx or its feature behavior." Removing Wikipedia
- * from these two would change what that panel shows, which is explicitly
- * out of scope for this change. Flagged clearly for a follow-up pass.
+ * `RelatedConceptsPanel.tsx` only — not the Overview — and every pass so
+ * far has been explicitly scoped to "don't touch RelatedConceptsPanel or
+ * its behavior." Flagged clearly for its own follow-up pass.
  *
  * FAILURE MODE: any network error, timeout, or empty result resolves to
  * `undefined` rather than throwing — callers fall back to local library
@@ -42,14 +56,15 @@ import { db } from '../db'
 
 const REQUEST_TIMEOUT_MS = 8000
 const CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7 // 7 days
-const CACHE_KEY_PREFIX = 'onlineKnowledgeCache:v2:'
+const CACHE_KEY_PREFIX = 'onlineKnowledgeCache:v3:'
 const NCBI_EUTILS_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
 
 export interface OnlineSummary {
   title: string
   /** Direct excerpt text from the source — never rewritten/paraphrased by this app. */
   extract: string
-  sourceName: 'PubMed (NCBI)'
+  /** The real, specific source name (e.g. "PubMed (NCBI)", or whatever a general-reference lookup actually names) — NEVER "Wikipedia". */
+  sourceName: string
   sourceUrl: string
   /** True when `extract` is a paper abstract rather than a general definition — the UI should label it accordingly instead of implying it's a textbook definition. */
   isAbstract: boolean
@@ -115,6 +130,28 @@ export function isLikelyOnline(): boolean {
 }
 
 /**
+ * A concept name looks like a quantitative/aptitude topic (percentage,
+ * profit & loss, ratios...) rather than a life-science/medical one.
+ * Deliberately just a keyword check used to DECIDE WHICH TIER TO TRY —
+ * it never filters or rewrites any content, so a wrong guess only means
+ * a tier is skipped or tried unnecessarily, not that anything false gets
+ * shown.
+ */
+const QUANTITATIVE_KEYWORDS = [
+  'percentage', 'percent', 'profit', 'loss', 'ratio', 'proportion', 'average',
+  'simple interest', 'compound interest', 'interest', 'probability', 'permutation',
+  'combination', 'algebra', 'geometry', 'trigonometry', 'mensuration', 'discount',
+  'hcf', 'lcm', 'number system', 'time and work', 'time, speed', 'speed and distance',
+  'speed, distance', 'quantitative aptitude', 'data interpretation', 'arithmetic',
+  'boat and stream', 'pipes and cistern', 'partnership', 'mixture and alligation'
+]
+
+function looksQuantitative(name: string): boolean {
+  const lower = name.trim().toLowerCase()
+  return QUANTITATIVE_KEYWORDS.some((k) => lower.includes(k))
+}
+
+/**
  * Best-effort extraction of just the abstract paragraph from a PubMed
  * `efetch rettype=abstract&retmode=text` response, which otherwise mixes
  * in the citation line, title, author list, and a trailing PMID/DOI
@@ -136,33 +173,20 @@ function extractAbstractParagraph(raw: string): string | undefined {
 }
 
 /**
- * NCBI/PubMed lookup — Priority 1 of the source hierarchy. Searches
- * PubMed for the concept name, and if a result exists, pulls its
- * abstract text and citation. Returns `undefined` (never invents, never
- * substitutes another source) when: offline, the request fails/times
- * out (including a CORS rejection), no PubMed result exists, or a result
- * exists but no usable abstract paragraph could be extracted from it.
- * Cached per normalized name for `CACHE_TTL_MS`.
+ * Tier 1 — NCBI/PubMed. Searches PubMed for the concept name, and if a
+ * result exists, pulls its abstract text and citation. Returns
+ * `undefined` when: offline, the request fails/times out/is CORS-blocked,
+ * no PubMed result exists, or a result exists but no usable abstract
+ * paragraph could be extracted from it.
  */
-export async function fetchOnlineSummary(name: string): Promise<OnlineSummary | undefined> {
-  const key = name.trim().toLowerCase()
-  if (!key) return undefined
-
-  const cached = await readCache<OnlineSummary>(key)
-  if (cached && isFresh(cached)) return cached.value ?? undefined
-
-  if (!isLikelyOnline()) return cached?.value ?? undefined
-
+async function fetchPubMedSummary(name: string): Promise<OnlineSummary | undefined> {
   const term = encodeURIComponent(name.trim())
   const searchData = (await fetchJson(
     `${NCBI_EUTILS_BASE}/esearch.fcgi?db=pubmed&retmode=json&retmax=1&sort=relevance&term=${term}`
   )) as { esearchresult?: { idlist?: string[] } } | undefined
 
   const pmid = searchData?.esearchresult?.idlist?.[0]
-  if (!pmid) {
-    await writeCache(key, null)
-    return undefined
-  }
+  if (!pmid) return undefined
 
   const [summaryData, abstractText] = await Promise.all([
     fetchJson(`${NCBI_EUTILS_BASE}/esummary.fcgi?db=pubmed&retmode=json&id=${pmid}`) as Promise<
@@ -173,21 +197,97 @@ export async function fetchOnlineSummary(name: string): Promise<OnlineSummary | 
 
   const title = summaryData?.result?.[pmid]?.title
   const abstract = abstractText ? extractAbstractParagraph(abstractText) : undefined
+  if (!title || !abstract) return undefined
 
-  if (!title || !abstract) {
-    await writeCache(key, null)
-    return undefined
-  }
-
-  const summary: OnlineSummary = {
+  return {
     title,
     extract: abstract,
     sourceName: 'PubMed (NCBI)',
     sourceUrl: `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`,
     isAbstract: true
   }
-  await writeCache(key, summary)
-  return summary
+}
+
+function isWikipediaSourced(sourceName: string | undefined, sourceUrl: string | undefined): boolean {
+  const name = (sourceName ?? '').toLowerCase()
+  const url = (sourceUrl ?? '').toLowerCase()
+  return name.includes('wikipedia') || url.includes('wikipedia.org')
+}
+
+/**
+ * Tier 2 — general reference lookup for topics PubMed has no reason to
+ * cover (percentages, formulas, general study topics) or didn't find
+ * anything for. Uses DuckDuckGo's keyless Instant Answer API, which
+ * aggregates several reference sources — but a large share of its
+ * results are themselves sourced FROM Wikipedia, so any result whose
+ * named source is Wikipedia (or links to wikipedia.org) is explicitly
+ * rejected here rather than shown, per "Wikipedia must not be used
+ * anywhere in this pipeline." That means many topics will legitimately
+ * come back `undefined` — which is the correct, honest outcome per "if
+ * no reliable source is available, say that clearly", not a bug.
+ */
+async function fetchGeneralReference(name: string): Promise<OnlineSummary | undefined> {
+  const term = encodeURIComponent(name.trim())
+  const data = (await fetchJson(
+    `https://api.duckduckgo.com/?q=${term}&format=json&no_redirect=1&no_html=1&skip_disambig=1`
+  )) as
+    | {
+        Heading?: string
+        AbstractText?: string
+        AbstractSource?: string
+        AbstractURL?: string
+      }
+    | undefined
+
+  if (!data?.AbstractText || !data.AbstractURL) return undefined
+  if (isWikipediaSourced(data.AbstractSource, data.AbstractURL)) return undefined
+
+  let sourceName = data.AbstractSource?.trim()
+  if (!sourceName) {
+    try {
+      sourceName = new URL(data.AbstractURL).hostname.replace(/^www\./, '')
+    } catch {
+      sourceName = 'Online reference'
+    }
+  }
+
+  return {
+    title: data.Heading?.trim() || name.trim(),
+    extract: data.AbstractText.trim(),
+    sourceName,
+    sourceUrl: data.AbstractURL,
+    isAbstract: false
+  }
+}
+
+/**
+ * Runs the source hierarchy for a concept: Tier 1 (NCBI/PubMed, only for
+ * concepts that look biomedical) then Tier 2 (general reference,
+ * Wikipedia excluded) as a fallback — or as the only tier tried for
+ * quantitative/aptitude topics, where Tier 1 would just be noise.
+ * Returns `undefined` (never invents, never substitutes another source)
+ * when nothing reliable is found. Cached per normalized name.
+ */
+export async function fetchOnlineSummary(name: string): Promise<OnlineSummary | undefined> {
+  const key = name.trim().toLowerCase()
+  if (!key) return undefined
+
+  const cached = await readCache<OnlineSummary>(key)
+  if (cached && isFresh(cached)) return cached.value ?? undefined
+
+  if (!isLikelyOnline()) return cached?.value ?? undefined
+
+  let result: OnlineSummary | undefined
+
+  if (!looksQuantitative(name)) {
+    result = await fetchPubMedSummary(name)
+  }
+  if (!result) {
+    result = await fetchGeneralReference(name)
+  }
+
+  await writeCache(key, result ?? null)
+  return result
 }
 
 // ---------------------------------------------------------------------
