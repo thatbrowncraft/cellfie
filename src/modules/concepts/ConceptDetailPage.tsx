@@ -6,7 +6,6 @@ import { useLiveQuery } from '@/core/db/useLiveQuery'
 import {
   backfillSourceRelevance,
   buildConceptMindMap,
-  buildStudySections,
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
@@ -14,16 +13,12 @@ import {
   getCoOccurrenceRelated,
   getFirstAndLastEncountered,
   getRelatedConceptIds,
-  getSourceExcerpt,
   isLikelyOnline,
   scanLibraryItemForConcepts,
   type CoOccurrenceMatch,
   type MindMapNode,
-  type OnlineSummary,
-  type SourceExcerpt,
-  type StudySection
+  type OnlineSummary
 } from '@/core/concepts'
-import { cleanDisplayText } from '@/core/concepts/textDisplay'
 import { cleanExtractedText } from '@/core/concepts/normalize'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/components'
@@ -166,75 +161,10 @@ export function ConceptDetailPage() {
   // toward the earliest page. A concept with only `weak` (or no) pdf
   // sources gets none here, and the UI below shows the honest "not
   // strong enough" message instead of a misleading excerpt.
-  const bestOverviewSource = useMemo(() => {
-    const tierRank: Record<string, number> = { high: 2, relevant: 1 }
-    const candidates = sources.filter(
-      (s) => s.sourceType === 'pdf' && s.libraryItemId && s.pageNumber != null && (s.relevanceTier === 'high' || s.relevanceTier === 'relevant')
-    )
-    if (candidates.length === 0) return undefined
-    return [...candidates].sort(
-      (a, b) => (tierRank[b.relevanceTier ?? ''] ?? 0) - (tierRank[a.relevanceTier ?? ''] ?? 0) || (a.pageNumber! - b.pageNumber!)
-    )[0]
-  }, [sources])
-
-  const hasMeaningfulPdfSource = Boolean(bestOverviewSource)
   const hasPdfPageSources = useMemo(
     () => sources.some((s) => s.sourceType === 'pdf' && s.libraryItemId && s.pageNumber != null),
     [sources]
   )
-  const bestOverviewBookTitle = bestOverviewSource?.libraryItemId
-    ? itemsById.get(bestOverviewSource.libraryItemId)?.title
-    : undefined
-
-  // Concept 2.0 §6/§10 — reads across every strong PDF page this concept
-  // has (not just one "best" page) and merges the book's OWN headings
-  // (Principle, Procedure, Formula, ...) into one adaptive section list.
-  // Nothing is invented: a section only exists here because the source
-  // text itself used that heading. Empty when no strong page has any
-  // recognizable heading — the Learn tab then falls back to a plain
-  // excerpt below, never a fabricated structure.
-  const [studySections, setStudySections] = useState<StudySection[]>([])
-  const [loadingStudySections, setLoadingStudySections] = useState(false)
-  useEffect(() => {
-    let cancelled = false
-    setStudySections([])
-    if (!concept || sources.length === 0) return
-    setLoadingStudySections(true)
-    buildStudySections(sources, itemsById)
-      .then((result) => {
-        if (!cancelled) setStudySections(result)
-      })
-      .catch(() => {
-        if (!cancelled) setStudySections([])
-      })
-      .finally(() => {
-        if (!cancelled) setLoadingStudySections(false)
-      })
-    return () => {
-      cancelled = true
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [concept?.id, sources.length])
-
-  const [excerpt, setExcerpt] = useState<SourceExcerpt | undefined>(undefined)
-  const [loadingExcerpt, setLoadingExcerpt] = useState(false)
-
-  // Knowledge Model Correction §8 — on-demand only, never automatic:
-  // pulls a short, clearly-labeled raw excerpt from the source page,
-  // never an authored/invented definition.
-  async function handleShowExcerpt() {
-    if (!bestOverviewSource?.libraryItemId || bestOverviewSource.pageNumber == null || !concept) return
-    const item = itemsById.get(bestOverviewSource.libraryItemId)
-    if (!item) return
-    setLoadingExcerpt(true)
-    try {
-      const term = bestOverviewSource.sourceText || concept.name
-      const result = await getSourceExcerpt(item, bestOverviewSource.pageNumber, term)
-      setExcerpt(result)
-    } finally {
-      setLoadingExcerpt(false)
-    }
-  }
 
   const mindMap = useLiveQuery<MindMapNode>(
     () => (id ? buildConceptMindMap(id) : Promise.resolve({ id: id ?? '', label: '', children: [] })),
@@ -365,19 +295,19 @@ export function ConceptDetailPage() {
                     Principle
                   </h4>
                   <p className="text-ink-primary leading-relaxed">
-                    {highlights.length > 0 
-                      ? cleanExtractedText(highlights[0].text) 
+                    {yourHighlights.length > 0 
+                      ? cleanExtractedText(yourHighlights[0].sourceText ?? '') 
                       : 'No principle recorded yet.'}
                   </p>
                 </div>
 
-                {highlights.length > 1 && (
+                {yourHighlights.length > 1 && (
                   <div>
                     <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
                       Procedure & Steps
                     </h4>
                     <p className="text-ink-primary leading-relaxed">
-                      {cleanExtractedText(highlights.slice(1).map(h => h.text).join(' '))}
+                      {cleanExtractedText(yourHighlights.slice(1).map(h => h.sourceText ?? '').join(' '))}
                     </p>
                   </div>
                 )}
