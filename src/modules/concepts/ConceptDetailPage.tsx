@@ -3,11 +3,10 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, ArrowSquareOut, Globe, PencilSimple, Trash } from '@phosphor-icons/react'
 import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
-import { getPageTextContent, joinPageText, loadPdfDocument } from '@/core/pdf-engine'
-import { readFile } from '@/core/file-storage'
 import {
   backfillSourceRelevance,
   buildConceptMindMap,
+  buildStudySections,
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
@@ -21,9 +20,10 @@ import {
   type CoOccurrenceMatch,
   type MindMapNode,
   type OnlineSummary,
-  type SourceExcerpt
+  type SourceExcerpt,
+  type StudySection
 } from '@/core/concepts'
-import { cleanDisplayText, splitIntoKnownSections, type SectionBlock } from '@/core/concepts/textDisplay'
+import { cleanDisplayText } from '@/core/concepts/textDisplay'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/components'
 import { ConceptSourceList } from './components/ConceptSourceList'
@@ -185,42 +185,35 @@ export function ConceptDetailPage() {
     ? itemsById.get(bestOverviewSource.libraryItemId)?.title
     : undefined
 
-  // Sprint 3.1 correction — reads this concept's own first-encountered
-  // PDF page (once, when it changes) so the Overview can show ANY
-  // headings that page's own book already uses (Principle, Procedure,
-  // Precautions, etc.) as real sections, instead of one raw paragraph.
-  // This is reorganizing the person's own material by its own structure
-  // — nothing is invented. If the page has no recognizable headings,
-  // `localSections` comes back empty and the Overview falls back to the
-  // plain "From your library" excerpt below.
-  const [localSections, setLocalSections] = useState<SectionBlock[]>([])
-  const [loadingLocalSections, setLoadingLocalSections] = useState(false)
+  // Concept 2.0 §6/§10 — reads across every strong PDF page this concept
+  // has (not just one "best" page) and merges the book's OWN headings
+  // (Principle, Procedure, Formula, ...) into one adaptive section list.
+  // Nothing is invented: a section only exists here because the source
+  // text itself used that heading. Empty when no strong page has any
+  // recognizable heading — the Learn tab then falls back to a plain
+  // excerpt below, never a fabricated structure.
+  const [studySections, setStudySections] = useState<StudySection[]>([])
+  const [loadingStudySections, setLoadingStudySections] = useState(false)
   useEffect(() => {
     let cancelled = false
-    setLocalSections([])
-    if (!bestOverviewSource?.libraryItemId || bestOverviewSource.pageNumber == null) return
-    const item = itemsById.get(bestOverviewSource.libraryItemId)
-    if (!item) return
-    setLoadingLocalSections(true)
-    ;(async () => {
-      try {
-        const blob = await readFile(item.filePath)
-        const doc = await loadPdfDocument(blob)
-        const { items: textItems } = await getPageTextContent(doc, bestOverviewSource.pageNumber as number)
-        const pageText = joinPageText(textItems)
-        if (cancelled) return
-        setLocalSections(splitIntoKnownSections(pageText))
-      } catch {
-        if (!cancelled) setLocalSections([])
-      } finally {
-        if (!cancelled) setLoadingLocalSections(false)
-      }
-    })()
+    setStudySections([])
+    if (!concept || sources.length === 0) return
+    setLoadingStudySections(true)
+    buildStudySections(sources, itemsById)
+      .then((result) => {
+        if (!cancelled) setStudySections(result)
+      })
+      .catch(() => {
+        if (!cancelled) setStudySections([])
+      })
+      .finally(() => {
+        if (!cancelled) setLoadingStudySections(false)
+      })
     return () => {
       cancelled = true
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bestOverviewSource?.libraryItemId, bestOverviewSource?.pageNumber])
+  }, [concept?.id, sources.length])
 
   const [excerpt, setExcerpt] = useState<SourceExcerpt | undefined>(undefined)
   const [loadingExcerpt, setLoadingExcerpt] = useState(false)
@@ -368,59 +361,55 @@ export function ConceptDetailPage() {
                     </p>
                   )}
 
-                  {!concept.description && localSections.some((s) => s.heading) && (
+                  {!concept.description && studySections.length > 0 && (
                     <div className="flex flex-col gap-4">
-                      {localSections
-                        .filter((s) => s.heading)
-                        .map((section, i) => (
-                          <div key={`${section.heading}-${i}`}>
-                            <h4 className="mb-1 font-ui text-caption font-semibold uppercase tracking-wide text-ink-secondary">
-                              {section.heading}
-                            </h4>
-                            {/^\s*\d+[.)]/.test(section.body) ? (
-                              <ol className="ml-4 list-decimal font-body text-body text-ink-primary">
-                                {section.body
-                                  .split(/\n(?=\s*\d+[.)])/)
-                                  .map((line) => line.replace(/^\s*\d+[.)]\s*/, '').trim())
-                                  .filter(Boolean)
-                                  .map((line, j) => (
-                                    <li key={j} className="mb-1" style={{ overflowWrap: 'anywhere' }}>
-                                      {line}
-                                    </li>
-                                  ))}
-                              </ol>
-                            ) : /^\s*[•*-]\s+/.test(section.body) ? (
-                              <ul className="ml-4 list-disc font-body text-body text-ink-primary">
-                                {section.body
-                                  .split(/\n(?=\s*[•*-]\s+)/)
-                                  .map((line) => line.replace(/^\s*[•*-]\s+/, '').trim())
-                                  .filter(Boolean)
-                                  .map((line, j) => (
-                                    <li key={j} className="mb-1" style={{ overflowWrap: 'anywhere' }}>
-                                      {line}
-                                    </li>
-                                  ))}
-                              </ul>
-                            ) : (
-                              <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
-                                {section.body}
-                              </p>
-                            )}
-                          </div>
-                        ))}
-                      {bestOverviewSource && (
-                        <p className="border-t border-border pt-3 font-ui text-caption text-ink-tertiary">
-                          Source: {bestOverviewBookTitle}, page {bestOverviewSource.pageNumber}
-                        </p>
-                      )}
+                      {studySections.map((section, i) => (
+                        <div key={`${section.heading}-${i}`}>
+                          <h4 className="mb-1 font-ui text-caption font-semibold uppercase tracking-wide text-ink-secondary">
+                            {section.heading}
+                          </h4>
+                          {/^\s*\d+[.)]/.test(section.body) ? (
+                            <ol className="ml-4 list-decimal font-body text-body text-ink-primary">
+                              {section.body
+                                .split(/\n(?=\s*\d+[.)])/)
+                                .map((line) => line.replace(/^\s*\d+[.)]\s*/, '').trim())
+                                .filter(Boolean)
+                                .map((line, j) => (
+                                  <li key={j} className="mb-1" style={{ overflowWrap: 'anywhere' }}>
+                                    {line}
+                                  </li>
+                                ))}
+                            </ol>
+                          ) : /^\s*[•*-]\s+/.test(section.body) ? (
+                            <ul className="ml-4 list-disc font-body text-body text-ink-primary">
+                              {section.body
+                                .split(/\n(?=\s*[•*-]\s+)/)
+                                .map((line) => line.replace(/^\s*[•*-]\s+/, '').trim())
+                                .filter(Boolean)
+                                .map((line, j) => (
+                                  <li key={j} className="mb-1" style={{ overflowWrap: 'anywhere' }}>
+                                    {line}
+                                  </li>
+                                ))}
+                            </ul>
+                          ) : (
+                            <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
+                              {section.body}
+                            </p>
+                          )}
+                          <p className="mt-1 font-ui text-micro text-ink-tertiary">
+                            {section.bookTitle}, page {section.pageNumber}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   )}
 
-                  {!concept.description && loadingLocalSections && (
-                    <p className="font-ui text-caption text-ink-tertiary">Reading your source page…</p>
+                  {!concept.description && loadingStudySections && (
+                    <p className="font-ui text-caption text-ink-tertiary">Reading your source pages…</p>
                   )}
 
-                  {!concept.description && !loadingLocalSections && !localSections.some((s) => s.heading) && (
+                  {!concept.description && !loadingStudySections && studySections.length === 0 && (
                     <>
                       <p className="font-body text-body text-ink-primary">No description saved yet.</p>
                       {hasMeaningfulPdfSource ? (
@@ -502,8 +491,8 @@ export function ConceptDetailPage() {
                   {!loadingOnlineSummary && !onlineSummary && (
                     <p className="font-ui text-caption text-ink-tertiary">
                       {isLikelyOnline() || !onlineSummaryChecked
-                        ? 'Reliable online information was not found.'
-                        : 'Online enrichment unavailable — you appear to be offline. Your local library is still available.'}
+                        ? 'No reliable external information found yet.'
+                        : 'Online knowledge unavailable. Your local library and saved knowledge are still available.'}
                     </p>
                   )}
                 </div>
