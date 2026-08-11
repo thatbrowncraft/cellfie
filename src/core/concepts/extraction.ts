@@ -16,6 +16,7 @@ import { readFile } from '../file-storage'
 import { addConceptSource, getOrCreateConcept } from './service'
 import { isLikelyStopwordPhrase, isPlausibleConceptName, isStopwordToken, normalizeConceptName } from './normalize'
 import { findBestExcerpt, scorePageRelevance } from './relevance'
+import { splitIntoKnownSections } from './textDisplay'
 
 export interface ExtractionResult {
   conceptsCreated: number
@@ -645,6 +646,94 @@ export interface SourceExcerpt {
   pageNumber: number
   text: string
   relevanceTier: 'high' | 'relevant' | 'weak'
+}
+
+const MAX_STUDY_SOURCE_PAGES = 8
+
+export interface StudySection {
+  heading: string
+  body: string
+  bookTitle: string
+  pageNumber: number
+}
+
+/**
+ * Concept 2.0 §6/§10 — the Learn tab's adaptive structure. Unlike the
+ * older single-page `localSections` (see `splitIntoKnownSections`
+ * caller in ConceptDetailPage.tsx), this reads across ALL of a concept's
+ * strong (`high`/`relevant`) PDF pages — not just the single "best" one —
+ * and merges whatever the book's OWN headings already are (Definition,
+ * Principle, Procedure, Formula, Shortcuts, ...) into one ordered list.
+ * A concept whose Procedure and Result sit on different pages, or even
+ * different books, now shows both instead of only whichever page won
+ * "best source". Still zero invention: a heading only appears here
+ * because the source text itself used that exact word (§7 "no fake
+ * content") — this only widens WHERE it looks, never WHAT it accepts.
+ * The first (highest-tier, then earliest-page) occurrence of a given
+ * heading wins; a second book's "Definition" doesn't overwrite or
+ * append to the first — conflicting sources should be visible via
+ * References, not silently merged into one paragraph.
+ */
+export async function buildStudySections(
+  sources: ConceptSource[],
+  itemsById: Map<string, LibraryItem>
+): Promise<StudySection[]> {
+  const tierRank: Record<string, number> = { high: 2, relevant: 1 }
+  const candidates = sources
+    .filter(
+      (s) =>
+        s.sourceType === 'pdf' &&
+        s.libraryItemId &&
+        s.pageNumber != null &&
+        (s.relevanceTier === 'high' || s.relevanceTier === 'relevant')
+    )
+    .sort(
+      (a, b) =>
+        (tierRank[b.relevanceTier ?? ''] ?? 0) - (tierRank[a.relevanceTier ?? ''] ?? 0) ||
+        (a.pageNumber! - b.pageNumber!)
+    )
+    .slice(0, MAX_STUDY_SOURCE_PAGES)
+
+  const sections = new Map<string, StudySection>()
+  const docCache = new Map<string, Awaited<ReturnType<typeof loadPdfDocument>>>()
+
+  for (const source of candidates) {
+    const item = itemsById.get(source.libraryItemId as string)
+    if (!item) continue
+
+    let doc = docCache.get(item.id)
+    if (!doc) {
+      try {
+        const blob = await readFile(item.filePath)
+        doc = await loadPdfDocument(blob)
+        docCache.set(item.id, doc)
+      } catch {
+        continue
+      }
+    }
+
+    let pageText: string
+    try {
+      const { items: textItems } = await getPageTextContent(doc, source.pageNumber as number)
+      pageText = joinPageText(textItems)
+    } catch {
+      continue
+    }
+
+    for (const block of splitIntoKnownSections(pageText)) {
+      if (!block.heading) continue
+      const key = normalizeConceptName(block.heading)
+      if (sections.has(key)) continue
+      sections.set(key, {
+        heading: block.heading,
+        body: block.body,
+        bookTitle: item.title,
+        pageNumber: source.pageNumber as number
+      })
+    }
+  }
+
+  return Array.from(sections.values())
 }
 
 /**
