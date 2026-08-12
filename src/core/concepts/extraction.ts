@@ -650,6 +650,13 @@ export interface SourceExcerpt {
 
 const MAX_STUDY_SOURCE_PAGES = 8
 
+// A leading, unheaded block only qualifies as the Study Overview
+// paragraph if it reads like real prose, not a fragment ("DNA ... see
+// Chapter 4 ... 112") — same spirit as relevance.ts's own fragment
+// guard, kept local since this is a display-shaping threshold, not a
+// scoring one.
+const MIN_OVERVIEW_PARAGRAPH_WORDS = 12
+
 export interface StudySection {
   heading: string
   body: string
@@ -657,27 +664,59 @@ export interface StudySection {
   pageNumber: number
 }
 
+export interface LocalOverviewParagraph {
+  text: string
+  bookTitle: string
+  pageNumber: number
+}
+
+export interface StudyOverview {
+  /** The concept's own strongest page, in the source's own prose — only
+   *  set when that page actually opens with real unheaded explanatory
+   *  text (not a fragment, not a page that starts straight into a named
+   *  section). `undefined` means "no safe local paragraph", not "empty
+   *  string" — callers must not fabricate a fallback sentence for it. */
+  paragraph?: LocalOverviewParagraph
+  /** Every section the source material itself already labels, merged
+   *  across the concept's strong pages/books. Empty when nothing in the
+   *  source is actually headed — that is the correct, honest result for
+   *  concepts like DNA where a source may just be continuous prose. */
+  sections: StudySection[]
+}
+
+function countWords(text: string): number {
+  const matches = text.match(/[A-Za-z0-9][A-Za-z0-9'-]*/g)
+  return matches ? matches.length : 0
+}
+
 /**
- * Concept 2.0 §6/§10 — the Learn tab's adaptive structure. Unlike the
- * older single-page `localSections` (see `splitIntoKnownSections`
- * caller in ConceptDetailPage.tsx), this reads across ALL of a concept's
- * strong (`high`/`relevant`) PDF pages — not just the single "best" one —
- * and merges whatever the book's OWN headings already are (Definition,
- * Principle, Procedure, Formula, Shortcuts, ...) into one ordered list.
- * A concept whose Procedure and Result sit on different pages, or even
- * different books, now shows both instead of only whichever page won
- * "best source". Still zero invention: a heading only appears here
- * because the source text itself used that exact word (§7 "no fake
- * content") — this only widens WHERE it looks, never WHAT it accepts.
- * The first (highest-tier, then earliest-page) occurrence of a given
- * heading wins; a second book's "Definition" doesn't overwrite or
- * append to the first — conflicting sources should be visible via
- * References, not silently merged into one paragraph.
+ * Concept 2.0 §6/§10, Study Overview Correction — the Learn tab's
+ * adaptive structure. Reads across ALL of a concept's strong
+ * (`high`/`relevant`) PDF pages — not just a single "best" one — and:
+ *
+ *   1. takes the concept's actual explanatory prose (the leading,
+ *      unheaded text on its single strongest page) as the Study
+ *      Overview paragraph, IF that page genuinely opens with real
+ *      explanatory text rather than starting straight into a named
+ *      section or being too short to be a real paragraph, and
+ *   2. separately collects every section the source material already
+ *      labels itself (Definition, Principle, Procedure, Formula,
+ *      Shortcuts, ...), merged across pages/books.
+ *
+ * Zero invention in either case: a heading only appears here because
+ * the source text itself used that exact word, and a paragraph only
+ * appears here because the source itself wrote it as continuous prose
+ * — nothing is assembled from the concept's name or from what a topic
+ * "usually" contains. The first (highest-tier, then earliest-page)
+ * occurrence of a given heading wins; a second book's "Definition"
+ * doesn't overwrite or append to the first — conflicting sources stay
+ * visible via References instead of being silently merged into one
+ * paragraph.
  */
-export async function buildStudySections(
+export async function buildStudyOverview(
   sources: ConceptSource[],
   itemsById: Map<string, LibraryItem>
-): Promise<StudySection[]> {
+): Promise<StudyOverview> {
   const tierRank: Record<string, number> = { high: 2, relevant: 1 }
   const candidates = sources
     .filter(
@@ -695,6 +734,7 @@ export async function buildStudySections(
     .slice(0, MAX_STUDY_SOURCE_PAGES)
 
   const sections = new Map<string, StudySection>()
+  let paragraph: LocalOverviewParagraph | undefined
   const docCache = new Map<string, Awaited<ReturnType<typeof loadPdfDocument>>>()
 
   for (const source of candidates) {
@@ -720,8 +760,20 @@ export async function buildStudySections(
       continue
     }
 
-    for (const block of splitIntoKnownSections(pageText)) {
-      if (!block.heading) continue
+    const blocks = splitIntoKnownSections(pageText)
+    for (const block of blocks) {
+      if (!block.heading) {
+        // Only the FIRST unheaded block found — from the strongest page
+        // this loop reaches first — is ever used as the overview
+        // paragraph. Later pages' unheaded prose is real too, but using
+        // more than one would start guessing at how to stitch unrelated
+        // paragraphs together, which is exactly the kind of invention
+        // this function exists to avoid.
+        if (!paragraph && countWords(block.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS) {
+          paragraph = { text: block.body, bookTitle: item.title, pageNumber: source.pageNumber as number }
+        }
+        continue
+      }
       const key = normalizeConceptName(block.heading)
       if (sections.has(key)) continue
       sections.set(key, {
@@ -733,7 +785,7 @@ export async function buildStudySections(
     }
   }
 
-  return Array.from(sections.values())
+  return { paragraph, sections: Array.from(sections.values()) }
 }
 
 /**
