@@ -57,13 +57,11 @@ export function scoreParagraph(paragraph: string, conceptName: string): ScoredPa
     return { paragraph: cleanP, score: 0, containsTargetConcept: false };
   }
 
-  // Expository bonus
   const expositoryTerms = ['is a', 'refers to', 'defined as', 'used to', 'stain', 'principle', 'procedure', 'mechanism'];
   for (const term of expositoryTerms) {
     if (lowerP.includes(term)) score += 2;
   }
 
-  // Unrelated noise penalty
   const noiseTerms = ['v.d.r.l.', 'vdrl', 'case 11', 'routine urine'];
   for (const noise of noiseTerms) {
     if (lowerP.includes(noise) && !lowerP.includes('principle of ' + primaryName)) {
@@ -76,3 +74,27 @@ export function scoreParagraph(paragraph: string, conceptName: string): ScoredPa
   return { paragraph: cleanP, score, containsTargetConcept };
 }
 
+export function scorePageRelevance(pageText: string, conceptName: string): number {
+  if (!pageText || !conceptName) return 0;
+  const clean = cleanExtractedText(pageText);
+  const scored = scoreParagraph(clean, conceptName);
+  return scored.score;
+}
+
+export function findBestExcerpt(pageText: string, conceptName: string): string {
+  if (!pageText) return '';
+  const clean = cleanExtractedText(pageText);
+  const paragraphs = clean.split(/\n\s*\n/);
+  let bestP = '';
+  let maxScore = -1;
+
+  for (const p of paragraphs) {
+    const scored = scoreParagraph(p, conceptName);
+    if (scored.score > maxScore) {
+      maxScore = scored.score;
+      bestP = scored.paragraph;
+    }
+  }
+
+  return ensureProperSentenceStart(bestP);
+}
