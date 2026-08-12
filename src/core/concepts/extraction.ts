@@ -15,6 +15,8 @@ import { getPageTextContent, joinPageText, joinPageTextPreservingParagraphs, loa
 import { readFile } from '../file-storage'
 import { addConceptSource, getOrCreateConcept } from './service'
 import { isLikelyStopwordPhrase, isPlausibleConceptName, isStopwordToken, normalizeConceptName } from './normalize'
+import { cleanExtractedText, ensureProperSentenceStart } from './normalize';
+import { scoreParagraph } from './relevance';
 import { findBestExcerpt, scorePageRelevance } from './relevance'
 import { splitIntoKnownSections } from './textDisplay'
 
@@ -721,7 +723,7 @@ export async function buildStudyOverview(
   sources: ConceptSource[],
   itemsById: Map<string, LibraryItem>
 ): Promise<StudyOverview> {
-  const tierRank: Record<string, number> = { high: 2, relevant: 1 }
+  const tierRank: Record<string, number> = { high: 2, relevant: 1 };
   const candidates = sources
     .filter(
       (s) =>
@@ -735,80 +737,61 @@ export async function buildStudyOverview(
         (tierRank[b.relevanceTier ?? ''] ?? 0) - (tierRank[a.relevanceTier ?? ''] ?? 0) ||
         (a.pageNumber! - b.pageNumber!)
     )
-    .slice(0, MAX_STUDY_SOURCE_PAGES)
+    .slice(0, MAX_STUDY_SOURCE_PAGES);
 
-  const sections = new Map<string, StudySection>()
-  let paragraph: LocalOverviewParagraph | undefined
-  const docCache = new Map<string, Awaited<ReturnType<typeof loadPdfDocument>>>()
+  const sections = new Map<string, StudySection>();
+  let paragraph: LocalOverviewParagraph | undefined;
+  const docCache = new Map<string, Awaited<ReturnType<typeof loadPdfDocument>>>();
+
+  const scoredParagraphs: { text: string; score: number }[] = [];
 
   for (const source of candidates) {
-    const item = itemsById.get(source.libraryItemId as string)
-    if (!item) continue
+    const item = itemsById.get(source.libraryItemId as string);
+    if (!item) continue;
 
-    let doc = docCache.get(item.id)
+    let doc = docCache.get(item.id);
     if (!doc) {
       try {
-        const blob = await readFile(item.filePath)
-        doc = await loadPdfDocument(blob)
-        docCache.set(item.id, doc)
+        const blob = await readFile(item.filePath);
+        doc = await loadPdfDocument(blob);
+        docCache.set(item.id, doc);
       } catch {
-        continue
+        continue;
       }
     }
 
-    // Study Overview Correction: read this page TWICE, with two
-    // different, purpose-built joins of the same underlying PDF text
-    // items — a paragraph-preserving one for structural section
-    // parsing, and the existing flattened one for locating the
-    // concept's own strongest occurrence (relevance.ts's scoring is
-    // whitespace-agnostic, so it works the same either way, but stays
-    // on the flattened form other callers already rely on).
-    let pageText: string
-    let flatPageText: string
     try {
-      const { items: textItems } = await getPageTextContent(doc, source.pageNumber as number)
-      pageText = joinPageTextPreservingParagraphs(textItems)
-      flatPageText = joinPageText(textItems)
-    } catch {
-      continue
-    }
+      const { items: textItems } = await getPageTextContent(doc, source.pageNumber as number);
+      const pageText = joinPageTextPreservingParagraphs(textItems);
+      const cleanedPage = cleanExtractedText(pageText);
+      const rawParagraphs = cleanedPage.split(/\n\s*\n/);
 
-    const term = source.sourceText || concept.name
-    const blocks = splitIntoKnownSections(pageText)
-
-    // Ground the paragraph choice in the concept's own strongest
-    // occurrence on this page, not block order.
-    if (!paragraph) {
-      const relevance = scorePageRelevance(flatPageText, term)
-      if (relevance.bestIndex !== -1) {
-        // The cleaned text `splitIntoKnownSections` computed offsets
-        // against isn't byte-identical to `flatPageText` (one preserves
-        // paragraph breaks as single characters, the other collapses
-        // them to spaces) but both collapse every whitespace run to
-        // exactly one character, so a character offset found in one is
-        // a reasonable position in the other — close enough to land
-        // inside the correct block, which is all this needs.
-        const containing = blocks.find((b) => relevance.bestIndex >= b.start && relevance.bestIndex < b.end)
-        if (containing && !containing.heading && countWords(containing.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS) {
-          paragraph = { text: containing.body, bookTitle: item.title, pageNumber: source.pageNumber as number }
+      for (const rawP of rawParagraphs) {
+        if (rawP.trim().length < 25) continue;
+        const scored = scoreParagraph(rawP, concept.name);
+        if (scored.score > 0 && scored.containsTargetConcept) {
+          const cleanP = ensureProperSentenceStart(scored.paragraph);
+          scoredParagraphs.push({ text: cleanP, score: scored.score });
         }
       }
-    }
-
-    for (const block of blocks) {
-      if (!block.heading) continue
-      const key = normalizeConceptName(block.heading)
-      if (sections.has(key)) continue
-      sections.set(key, {
-        heading: block.heading,
-        body: block.body,
-        bookTitle: item.title,
-        pageNumber: source.pageNumber as number
-      })
+    } catch {
+      continue;
     }
   }
 
-  return { paragraph, sections: Array.from(sections.values()) }
+  // Select highest-scoring paragraph for overview
+  if (scoredParagraphs.length > 0) {
+    scoredParagraphs.sort((a, b) => b.score - a.score);
+    paragraph = {
+      text: scoredParagraphs[0].text,
+      sourceCount: candidates.length,
+    };
+  }
+
+  return {
+    paragraph,
+    sections,
+  };
 }
 
 /**
