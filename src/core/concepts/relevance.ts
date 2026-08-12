@@ -74,11 +74,17 @@ export function scoreParagraph(paragraph: string, conceptName: string): ScoredPa
   return { paragraph: cleanP, score, containsTargetConcept };
 }
 
-export function scorePageRelevance(pageText: string, conceptName: string): number {
-  if (!pageText || !conceptName) return 0;
+export function scorePageRelevance(
+  pageText: string,
+  conceptName: string
+): { score: number; tier: 'high' | 'relevant' | 'low' } {
+  if (!pageText || !conceptName) return { score: 0, tier: 'low' };
   const clean = cleanExtractedText(pageText);
   const scored = scoreParagraph(clean, conceptName);
-  return scored.score;
+  let tier: 'high' | 'relevant' | 'low' = 'low';
+  if (scored.score >= 10) tier = 'high';
+  else if (scored.score > 0) tier = 'relevant';
+  return { score: scored.score, tier };
 }
 
 export function findBestExcerpt(pageText: string, conceptName: string): string {
