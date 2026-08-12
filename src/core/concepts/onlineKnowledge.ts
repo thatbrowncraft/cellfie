@@ -81,6 +81,25 @@
  * FAILURE MODE: any network error, timeout, or empty result resolves to
  * `undefined` rather than throwing — callers fall back to local library
  * material.
+ *
+ * CONCEPT 2.0 PHASE 1 — added `fetchOnlineKnowledge`, which is now the
+ * PRIMARY feed for the Learn tab's Study Overview (see
+ * modules/concepts/ConceptDetailPage.tsx). Instead of one flat
+ * `extract` string, it returns an array of `OnlineKnowledgeSection`s —
+ * every section still a direct, unedited excerpt from one real source
+ * at one real URL, but now potentially several of them side by side
+ * (e.g. a PubChem compound description AND a PubMed abstract). No
+ * section heading is ever invented from the concept's topic ("Structure",
+ * "Function", ...) — a heading is either the source's own framing
+ * (e.g. "PubChem — ChEBI") or a generic, source-type label ("Research
+ * abstract", "Overview"), never something implying the source itself
+ * organized its content that way. Adds a third, key-free, CORS-friendly
+ * tier — PubChem PUG REST — tried for every concept (not gated by a
+ * keyword guess): it simply returns nothing for non-chemical names, so
+ * no "if this concept is a chemical" branching is needed. PDF/library
+ * material is intentionally NOT part of this function — see
+ * `buildStudyOverview` in extraction.ts for that, now rendered as a
+ * separate, clearly-secondary "From your library" block by the caller.
  */
 
 import { db } from '../db'
@@ -321,6 +340,124 @@ export async function fetchOnlineSummary(name: string): Promise<OnlineSummary | 
 
   await writeCache(key, result ?? null)
   return result
+}
+
+// ---------------------------------------------------------------------
+// Concept 2.0 Phase 1 — structured, multi-source Learn tab content.
+// ---------------------------------------------------------------------
+
+export interface OnlineKnowledgeSection {
+  /** Source-derived or generic-by-source-type label — never an invented topic heading (see file header). */
+  heading: string
+  /** Direct excerpt text from the source — never rewritten/paraphrased. */
+  text: string
+  sourceName: string
+  sourceUrl: string
+  /** True when `text` is a paper abstract rather than a general definition. */
+  isAbstract: boolean
+}
+
+interface PubChemDescriptionInfo {
+  Title?: string
+  Description?: string
+  DescriptionSourceName?: string
+  DescriptionURL?: string
+}
+
+/**
+ * Tier — PubChem PUG REST (`pubchem.ncbi.nlm.nih.gov`), key-free and
+ * called for every concept name (no topic guess needed: a non-chemical
+ * name simply resolves to no CID and this returns an empty array, which
+ * is the honest, correct outcome — not a bug). When a compound match
+ * exists, PubChem itself aggregates description text from several
+ * curated sources (ChEBI, LOTUS, HSDB, ...) each with its own name/URL;
+ * every one of those is surfaced as its own attributed section rather
+ * than merged into one. Capped at 3 so one very well-annotated compound
+ * can't crowd out everything else on the page.
+ */
+async function fetchPubChemSections(name: string): Promise<OnlineKnowledgeSection[]> {
+  const term = encodeURIComponent(name.trim())
+  const cidData = (await fetchJson(
+    `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${term}/cids/JSON`
+  )) as { IdentifierList?: { CID?: number[] } } | undefined
+  const cid = cidData?.IdentifierList?.CID?.[0]
+  if (!cid) return []
+
+  const descData = (await fetchJson(
+    `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/description/JSON`
+  )) as { InformationList?: { Information?: PubChemDescriptionInfo[] } } | undefined
+
+  const infos = descData?.InformationList?.Information ?? []
+  const sections: OnlineKnowledgeSection[] = []
+  const seenText = new Set<string>()
+  for (const info of infos) {
+    const text = info.Description?.trim()
+    if (!text || seenText.has(text)) continue
+    seenText.add(text)
+    sections.push({
+      heading: info.DescriptionSourceName ? `PubChem — ${info.DescriptionSourceName}` : 'PubChem',
+      text,
+      sourceName: info.DescriptionSourceName?.trim() || 'PubChem (NCBI)',
+      sourceUrl: info.DescriptionURL?.trim() || `https://pubchem.ncbi.nlm.nih.gov/compound/${cid}`,
+      isAbstract: false
+    })
+    if (sections.length >= 3) break
+  }
+  return sections
+}
+
+/**
+ * PRIMARY feed for the Learn tab's Study Overview. Runs the PubChem
+ * tier (always) and, unless the concept looks purely quantitative, the
+ * PubMed tier — collecting every section either one actually finds
+ * rather than stopping at the first hit, since a compound description
+ * and a research abstract are both legitimately useful and don't
+ * contradict each other. Only falls back to the general-reference tier
+ * (Wikipedia-filtered) when NEITHER of those found anything. Never
+ * throws; an empty array is the honest "nothing reliable found" result
+ * the caller must show as such, not fill in with invented text.
+ */
+export async function fetchOnlineKnowledge(name: string): Promise<OnlineKnowledgeSection[]> {
+  const trimmed = name.trim()
+  if (!trimmed) return []
+  const key = `sections:${trimmed.toLowerCase()}`
+
+  const cached = await readCache<OnlineKnowledgeSection[]>(key)
+  if (cached && isFresh(cached)) return cached.value ?? []
+  if (!isLikelyOnline()) return cached?.value ?? []
+
+  const sections: OnlineKnowledgeSection[] = []
+
+  sections.push(...(await fetchPubChemSections(trimmed)))
+
+  if (!looksQuantitative(trimmed)) {
+    const pubmed = await fetchPubMedSummary(trimmed)
+    if (pubmed) {
+      sections.push({
+        heading: 'Research abstract',
+        text: pubmed.extract,
+        sourceName: pubmed.sourceName,
+        sourceUrl: pubmed.sourceUrl,
+        isAbstract: true
+      })
+    }
+  }
+
+  if (sections.length === 0) {
+    const general = await fetchGeneralReference(trimmed)
+    if (general) {
+      sections.push({
+        heading: 'Overview',
+        text: general.extract,
+        sourceName: general.sourceName,
+        sourceUrl: general.sourceUrl,
+        isAbstract: false
+      })
+    }
+  }
+
+  await writeCache(key, sections)
+  return sections
 }
 
 // ---------------------------------------------------------------------
