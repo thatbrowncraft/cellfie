@@ -10,8 +10,8 @@
  * backed by an actual stored record.
  */
 
-import { db, type ConceptSource, type LibraryItem } from '../db'
-import { getPageTextContent, joinPageText, loadPdfDocument } from '../pdf-engine'
+import { db, type Concept, type ConceptSource, type LibraryItem } from '../db'
+import { getPageTextContent, joinPageText, joinPageTextPreservingParagraphs, loadPdfDocument } from '../pdf-engine'
 import { readFile } from '../file-storage'
 import { addConceptSource, getOrCreateConcept } from './service'
 import { isLikelyStopwordPhrase, isPlausibleConceptName, isStopwordToken, normalizeConceptName } from './normalize'
@@ -694,11 +694,14 @@ function countWords(text: string): number {
  * adaptive structure. Reads across ALL of a concept's strong
  * (`high`/`relevant`) PDF pages — not just a single "best" one — and:
  *
- *   1. takes the concept's actual explanatory prose (the leading,
- *      unheaded text on its single strongest page) as the Study
- *      Overview paragraph, IF that page genuinely opens with real
- *      explanatory text rather than starting straight into a named
- *      section or being too short to be a real paragraph, and
+ *   1. takes the concept's actual explanatory prose as the Study
+ *      Overview paragraph: specifically the unheaded paragraph that
+ *      actually CONTAINS the concept's own strongest occurrence on its
+ *      strongest page (grounded by `relevance.ts`'s own scoring, the
+ *      same signal used to pick the page itself) — not simply whatever
+ *      paragraph happens to sit first on that page, which could be a
+ *      leftover continuation from an unrelated preceding topic. Only
+ *      used if that paragraph reads like real prose, not a fragment.
  *   2. separately collects every section the source material already
  *      labels itself (Definition, Principle, Procedure, Formula,
  *      Shortcuts, ...), merged across pages/books.
@@ -706,14 +709,15 @@ function countWords(text: string): number {
  * Zero invention in either case: a heading only appears here because
  * the source text itself used that exact word, and a paragraph only
  * appears here because the source itself wrote it as continuous prose
- * — nothing is assembled from the concept's name or from what a topic
- * "usually" contains. The first (highest-tier, then earliest-page)
- * occurrence of a given heading wins; a second book's "Definition"
- * doesn't overwrite or append to the first — conflicting sources stay
- * visible via References instead of being silently merged into one
- * paragraph.
+ * AND it's the paragraph actually about this concept — nothing is
+ * assembled from the concept's name or from what a topic "usually"
+ * contains. The first (highest-tier, then earliest-page) occurrence of
+ * a given heading wins; a second book's "Definition" doesn't overwrite
+ * or append to the first — conflicting sources stay visible via
+ * References instead of being silently merged into one paragraph.
  */
 export async function buildStudyOverview(
+  concept: Pick<Concept, 'name'>,
   sources: ConceptSource[],
   itemsById: Map<string, LibraryItem>
 ): Promise<StudyOverview> {
@@ -752,28 +756,47 @@ export async function buildStudyOverview(
       }
     }
 
+    // Study Overview Correction: read this page TWICE, with two
+    // different, purpose-built joins of the same underlying PDF text
+    // items — a paragraph-preserving one for structural section
+    // parsing, and the existing flattened one for locating the
+    // concept's own strongest occurrence (relevance.ts's scoring is
+    // whitespace-agnostic, so it works the same either way, but stays
+    // on the flattened form other callers already rely on).
     let pageText: string
+    let flatPageText: string
     try {
       const { items: textItems } = await getPageTextContent(doc, source.pageNumber as number)
-      pageText = joinPageText(textItems)
+      pageText = joinPageTextPreservingParagraphs(textItems)
+      flatPageText = joinPageText(textItems)
     } catch {
       continue
     }
 
+    const term = source.sourceText || concept.name
     const blocks = splitIntoKnownSections(pageText)
-    for (const block of blocks) {
-      if (!block.heading) {
-        // Only the FIRST unheaded block found — from the strongest page
-        // this loop reaches first — is ever used as the overview
-        // paragraph. Later pages' unheaded prose is real too, but using
-        // more than one would start guessing at how to stitch unrelated
-        // paragraphs together, which is exactly the kind of invention
-        // this function exists to avoid.
-        if (!paragraph && countWords(block.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS) {
-          paragraph = { text: block.body, bookTitle: item.title, pageNumber: source.pageNumber as number }
+
+    // Ground the paragraph choice in the concept's own strongest
+    // occurrence on this page, not block order.
+    if (!paragraph) {
+      const relevance = scorePageRelevance(flatPageText, term)
+      if (relevance.bestIndex !== -1) {
+        // The cleaned text `splitIntoKnownSections` computed offsets
+        // against isn't byte-identical to `flatPageText` (one preserves
+        // paragraph breaks as single characters, the other collapses
+        // them to spaces) but both collapse every whitespace run to
+        // exactly one character, so a character offset found in one is
+        // a reasonable position in the other — close enough to land
+        // inside the correct block, which is all this needs.
+        const containing = blocks.find((b) => relevance.bestIndex >= b.start && relevance.bestIndex < b.end)
+        if (containing && !containing.heading && countWords(containing.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS) {
+          paragraph = { text: containing.body, bookTitle: item.title, pageNumber: source.pageNumber as number }
         }
-        continue
       }
+    }
+
+    for (const block of blocks) {
+      if (!block.heading) continue
       const key = normalizeConceptName(block.heading)
       if (sections.has(key)) continue
       sections.set(key, {

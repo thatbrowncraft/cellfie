@@ -77,6 +77,14 @@ export function cleanDisplayText(raw: string): string {
 export interface SectionBlock {
   heading: string
   body: string
+  /** Character offsets of this block within the CLEANED text
+   *  (`cleanDisplayText(raw)`, not `raw` itself) — Study Overview
+   *  Correction: lets a caller locate which block actually contains a
+   *  given occurrence (e.g. the concept's own strongest mention),
+   *  instead of always assuming the page's first block is the relevant
+   *  one. `end` is exclusive. */
+  start: number
+  end: number
 }
 
 // Headings this app knows how to recognize when they appear verbatim in
@@ -127,7 +135,7 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
   const cleaned = cleanDisplayText(raw)
   const lines = cleaned.split('\n').map((l) => l.trim())
 
-  const sections: SectionBlock[] = []
+  const rawSections: Array<{ heading: string; body: string }> = []
   let currentHeading = ''
   let currentLines: string[] = []
 
@@ -135,18 +143,37 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
     const aloneMatch = HEADING_ALONE_RE.exec(line)
     const inlineMatch = !aloneMatch ? HEADING_INLINE_RE.exec(line) : null
     if (aloneMatch) {
-      if (currentLines.some((l) => l)) sections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
+      if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
       currentHeading = aloneMatch[1].trim()
       currentLines = []
     } else if (inlineMatch) {
-      if (currentLines.some((l) => l)) sections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
+      if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
       currentHeading = inlineMatch[1].trim()
       currentLines = inlineMatch[2].trim() ? [inlineMatch[2].trim()] : []
     } else {
       currentLines.push(line)
     }
   }
-  if (currentLines.some((l) => l)) sections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
+  if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
 
-  return sections.filter((s) => s.body)
+  // Second pass: locate each block's real position in `cleaned` so a
+  // caller can ground a decision (e.g. "which block actually discusses
+  // this concept") in an actual character offset instead of block
+  // order. Sequential, non-overlapping search from a rolling cursor,
+  // since blocks always appear in `cleaned` in the same order they were
+  // built. A body that can't be found (shouldn't normally happen, since
+  // every body is built from `cleaned`'s own lines) degrades to a
+  // zero-length range at the cursor rather than throwing.
+  let cursor = 0
+  const sections: SectionBlock[] = rawSections
+    .filter((s) => s.body)
+    .map((s) => {
+      const idx = cleaned.indexOf(s.body, cursor)
+      const start = idx === -1 ? cursor : idx
+      const end = start + s.body.length
+      cursor = end
+      return { ...s, start, end }
+    })
+
+  return sections
 }
