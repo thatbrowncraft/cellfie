@@ -6,6 +6,8 @@ import { useLiveQuery } from '@/core/db/useLiveQuery'
 import {
   backfillSourceRelevance,
   buildConceptMindMap,
+  buildStudyOverview,
+  cleanDisplayText,
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
@@ -17,9 +19,9 @@ import {
   scanLibraryItemForConcepts,
   type CoOccurrenceMatch,
   type MindMapNode,
-  type OnlineSummary
+  type OnlineSummary,
+  type StudyOverview
 } from '@/core/concepts'
-import { cleanExtractedText } from '@/core/concepts/normalize'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/components'
 import { ConceptSourceList } from './components/ConceptSourceList'
@@ -95,6 +97,33 @@ export function ConceptDetailPage() {
     if (!concept) return
     void backfillSourceRelevance(concept.id)
   }, [concept?.id])
+
+  // Study Overview Correction — the Study Overview's local-book content
+  // (§ content priority, step 2) only reads PDFs when there's no saved
+  // `concept.description` to show instead (step 1 always wins). Pulls
+  // the concept's own strongest page's actual leading prose, plus any
+  // sections the source material itself already labels — never a
+  // manufactured "Principle/Procedure/..." structure. See
+  // core/concepts/extraction.ts's buildStudyOverview for the full rule.
+  const [localOverview, setLocalOverview] = useState<StudyOverview | undefined>(undefined)
+  const [loadingLocalOverview, setLoadingLocalOverview] = useState(false)
+  useEffect(() => {
+    let cancelled = false
+    setLocalOverview(undefined)
+    if (!concept || concept.description) return
+    setLoadingLocalOverview(true)
+    buildStudyOverview(sources, itemsById)
+      .then((result) => {
+        if (!cancelled) setLocalOverview(result)
+      })
+      .finally(() => {
+        if (!cancelled) setLoadingLocalOverview(false)
+      })
+    return () => {
+      cancelled = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [concept?.id, concept?.description, sources.length, itemsById])
 
   // Sprint 4 — for an explicitly-selected concept, try to pull a real,
   // attributed scientific summary from Wikipedia (see
@@ -278,48 +307,71 @@ export function ConceptDetailPage() {
             label: 'Learn',
             content: (
               <div className="flex flex-col gap-6">
-                       {/* Study Overview Section */}
+                       {/* Study Overview Section — Study Overview Correction.
+                           No section heading here is ever hardcoded to a subject
+                           (no "Principle"/"Procedure"/"Diagnostic Value"): a
+                           heading only renders when the source material itself
+                           already used that word. See core/concepts/extraction.ts
+                           (buildStudyOverview) and core/concepts/textDisplay.ts
+                           (splitIntoKnownSections) for where that's enforced. */}
           <div className="rounded-md border border-border bg-surface p-5 space-y-4">
             <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
               Study overview
             </h3>
 
             {concept.description ? (
+              // Priority 1 — the person's own saved description, shown as-is
+              // (just the render-time word-break safety net applied).
               <div className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed">
-                {cleanExtractedText(concept.description)}
+                {cleanDisplayText(concept.description)}
               </div>
-            ) : (
-              <div className="space-y-4 font-body text-body text-ink-primary">
-                <div>
-                  <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
-                    Principle
-                  </h4>
-                  <p className="text-ink-primary leading-relaxed">
-                    {yourHighlights.length > 0 
-                      ? cleanExtractedText(yourHighlights[0].sourceText ?? '') 
-                      : 'No principle recorded yet.'}
-                  </p>
-                </div>
-
-                {yourHighlights.length > 1 && (
+            ) : loadingLocalOverview ? (
+              <p className="font-ui text-caption text-ink-tertiary">Looking through your library…</p>
+            ) : localOverview?.paragraph || (localOverview?.sections.length ?? 0) > 0 ? (
+              // Priority 2 — the concept's own strongest local page, in the
+              // source's own words and, separately, the source's own
+              // section structure (only if the source actually has one).
+              <div className="space-y-4">
+                {localOverview.paragraph && (
                   <div>
-                    <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
-                      Procedure & Steps
-                    </h4>
-                    <p className="text-ink-primary leading-relaxed">
-                      {cleanExtractedText(yourHighlights.slice(1).map(h => h.sourceText ?? '').join(' '))}
+                    <p className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed">
+                      {cleanDisplayText(localOverview.paragraph.text)}
+                    </p>
+                    <p className="mt-2 font-ui text-micro text-ink-tertiary">
+                      From your library — {localOverview.paragraph.bookTitle}, p. {localOverview.paragraph.pageNumber}
                     </p>
                   </div>
                 )}
-
-                <div>
-                  <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
-                    Diagnostic Value & Advantages
-                  </h4>
-                  <p className="text-ink-primary leading-relaxed">
-                    Determines gross cellular morphology and differential classification to guide subsequent laboratory testing and clinical analysis.
-                  </p>
-                </div>
+                {localOverview.sections.map((section) => (
+                  <div key={`${section.heading}-${section.pageNumber}`}>
+                    <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
+                      {section.heading}
+                    </h4>
+                    <p className="whitespace-pre-line text-ink-primary leading-relaxed">
+                      {cleanDisplayText(section.body)}
+                    </p>
+                    <p className="mt-1 font-ui text-micro text-ink-tertiary">
+                      {section.bookTitle}, p. {section.pageNumber}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              // Priority 6 — honest empty state. Never a random excerpt.
+              <div className="space-y-3">
+                <p className="font-body text-body text-ink-primary">No useful explanation available yet.</p>
+                <p className="font-ui text-caption text-ink-secondary">
+                  {hasPdfPageSources
+                    ? "This concept has pages linked in your library, but none had enough real explanatory text to build an overview from."
+                    : meaningfulSourceCount > 0
+                      ? `${meaningfulSourceCount} source${meaningfulSourceCount === 1 ? '' : 's'} linked so far, but nothing strong enough for a written overview yet.`
+                      : 'No sources linked to this concept yet.'}
+                </p>
+                {scannableBooks.length > 0 && (
+                  <Button variant="secondary" size="small" onClick={() => setActiveConceptTab('references')}>
+                    Scan a book for this concept
+                  </Button>
+                )}
               </div>
             )}
 
