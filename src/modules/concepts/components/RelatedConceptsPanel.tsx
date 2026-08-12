@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Globe, Link, MagnifyingGlass, Plus, X } from '@phosphor-icons/react'
+import { ArrowSquareOut, Flask, Globe, Link, MagnifyingGlass, Plus, X } from '@phosphor-icons/react'
 import { SearchField, EmptyState, Button } from '@/shared/components'
-import type { Concept, ConceptRelation, LibraryItem } from '@/core/db'
+import type { Concept, ConceptRelation } from '@/core/db'
 import {
   addConceptRelation,
   fetchOnlineRelated,
@@ -11,33 +11,31 @@ import {
   promoteConceptCandidate,
   removeConceptRelation,
   verifyCandidateExists,
-  type CoOccurrenceMatch,
   type OnlineRelatedItem,
   type SourceCandidate
 } from '@/core/concepts'
 
+export interface RelatedConceptEntry {
+  concept: Concept
+  relation: ConceptRelation
+}
+
 interface RelatedConceptsPanelProps {
   concept: Concept
-  relatedConcepts: Concept[]
-  /** Concepts sharing a tag with this one but with no explicit relation yet — shown as suggestions (§10: "shared tags" is a reliable relationship source). */
-  sharedTagSuggestions: Concept[]
-  /** Concepts that share at least one book+page ConceptSource with this one (Sprint 3 Correction §5A/§7) — the deterministic "found in your local material" relationships. */
-  coOccurring: CoOccurrenceMatch[]
-  /** Whether this concept has any page-anchored PDF source at all — distinguishes "we looked at your source pages and found nothing to connect" from "no source pages to look at yet" (Knowledge Graph Correction §21). */
+  /** Every real relationship this concept has — both origins, one source of truth (Concept 2.0 Phase 2). */
+  relatedEntries: RelatedConceptEntry[]
+  /** True while this concept's other concepts are being checked for real scientific-literature evidence (core/concepts/service.ts's discoverScientificRelations). */
+  discoveringScience: boolean
+  /** Whether this concept has any page-anchored PDF source at all — distinguishes "we looked and found nothing" from "no source pages to look at yet". */
   hasPdfPageSources: boolean
-  itemsById: Map<string, LibraryItem>
-  relations: ConceptRelation[]
   allConcepts: Concept[]
 }
 
 export function RelatedConceptsPanel({
   concept,
-  relatedConcepts,
-  sharedTagSuggestions,
-  coOccurring,
+  relatedEntries,
+  discoveringScience,
   hasPdfPageSources,
-  itemsById,
-  relations,
   allConcepts
 }: RelatedConceptsPanelProps) {
   const navigate = useNavigate()
@@ -51,7 +49,17 @@ export function RelatedConceptsPanel({
   const [loadingOnline, setLoadingOnline] = useState(false)
   const [onlinePromotingTitle, setOnlinePromotingTitle] = useState<string | undefined>(undefined)
 
-  const relatedIds = new Set(relatedConcepts.map((c) => c.id))
+  // Concept 2.0 Phase 2 — "Do NOT consider two concepts related merely
+  // because they occur on the same PDF page / share random words." Real
+  // relationships only, split by origin so the UI never implies a
+  // manual connection is an established scientific fact (§7).
+  const scientificEntries = useMemo(
+    () => relatedEntries.filter((e) => e.relation.origin === 'scientific'),
+    [relatedEntries]
+  )
+  const manualEntries = useMemo(() => relatedEntries.filter((e) => e.relation.origin !== 'scientific'), [relatedEntries])
+  const relatedIds = useMemo(() => new Set(relatedEntries.map((e) => e.concept.id)), [relatedEntries])
+
   const candidates = useMemo(() => {
     const q = query.trim().toLowerCase()
     if (!q) return []
@@ -61,30 +69,11 @@ export function RelatedConceptsPanel({
       .slice(0, 8)
   }, [query, allConcepts, concept.id, relatedIds])
 
-  function relationIdFor(otherId: string): string | undefined {
-    const [a, b] = [concept.id, otherId].sort()
-    return relations.find((r) => r.conceptAId === a && r.conceptBId === b)?.id
-  }
-
   async function handleAdd(otherId: string) {
     await addConceptRelation(concept.id, otherId)
     setQuery('')
     setAdding(false)
   }
-
-  /** "Prescott's Microbiology · 3 shared pages" style summary (§7), grouped per book since a co-occurrence can span more than one. */
-  function sourceSummary(match: CoOccurrenceMatch): string {
-    const byBook = new Map<string, number>()
-    for (const p of match.sharedPages) {
-      const title = itemsById.get(p.libraryItemId)?.title ?? 'Unlinked book'
-      byBook.set(title, (byBook.get(title) ?? 0) + 1)
-    }
-    return Array.from(byBook.entries())
-      .map(([title, count]) => `${title} · ${count} shared page${count === 1 ? '' : 's'}`)
-      .join(', ')
-  }
-
-  const coOccurringNotAlreadyRelated = coOccurring.filter((m) => !relatedIds.has(m.concept.id))
 
   const existingNameKeys = useMemo(
     () => new Set(allConcepts.flatMap((c) => [c.normalizedName, ...c.aliases.map((a) => a.trim().toLowerCase())])),
@@ -94,16 +83,15 @@ export function RelatedConceptsPanel({
   // Knowledge Model Correction §9/§10/§11 — explicit, on-demand only:
   // reads this concept's own known source pages for candidate phrases
   // that aren't concepts yet. Nothing here writes anything until the
-  // person clicks "Add concept" on a specific suggestion. Concept 2.0
-  // §8/§14: each raw text-mined candidate is then weakly verified
-  // against the same Wikipedia-free source hierarchy used elsewhere in
-  // this app (does PubMed or a general reference actually have
-  // something for this phrase?) before it's shown — this reliably drops
-  // OCR fragments and sentence fragments, though a candidate that's a
-  // real reference entry but not actually a scientific concept (a
-  // publisher, a city) can still slip through; the "Online scientific
-  // suggestions" list above is the higher-confidence source and should
-  // usually be tried first.
+  // person clicks "Add concept" on a specific suggestion. Each raw
+  // text-mined candidate is weakly verified against the same
+  // Wikipedia-free source hierarchy used elsewhere (does PubMed or a
+  // general reference actually have something for this phrase?) before
+  // it's shown — drops OCR fragments and sentence fragments, though a
+  // candidate that's a real reference entry but not actually a
+  // scientific concept can still slip through; "Suggested scientific
+  // concepts" below is the higher-confidence source and should usually
+  // be tried first.
   async function handleFindSourceCandidates() {
     setScanningSources(true)
     setSourceCandidates(undefined)
@@ -128,9 +116,11 @@ export function RelatedConceptsPanel({
     }
   }
 
-  // Concept 2.0 §8/§14 — related-concept suggestions from the same
-  // Wikipedia-free source hierarchy used across this app (never
-  // Wikipedia). Read-only until "Add concept" is clicked.
+  // Concept 2.0 §6/§14 — concepts reliable online sources associate with
+  // this one that AREN'T in the person's library yet. Presented as
+  // suggestions only; nothing is created until "Add concept" is clicked,
+  // and nothing is auto-added in bulk (§6: "prevents the Concepts
+  // library from being filled with hundreds of unwanted entries").
   async function handleFindOnlineSuggestions() {
     setLoadingOnline(true)
     try {
@@ -175,13 +165,13 @@ export function RelatedConceptsPanel({
           className="flex items-center gap-1.5 font-ui text-caption font-medium text-olive hover:underline"
         >
           <Plus size={15} />
-          {adding ? 'Cancel' : 'Add related concept'}
+          {adding ? 'Cancel' : 'Add my connection'}
         </button>
       </div>
 
       {adding && (
         <div className="flex flex-col gap-2">
-          <SearchField placeholder="Search concepts to relate…" onChange={setQuery} />
+          <SearchField placeholder="Search concepts to connect…" onChange={setQuery} />
           {query && candidates.length === 0 && (
             <p className="font-ui text-caption text-ink-tertiary">No matching concepts.</p>
           )}
@@ -204,26 +194,74 @@ export function RelatedConceptsPanel({
         </div>
       )}
 
-      {relatedConcepts.length === 0 && coOccurringNotAlreadyRelated.length === 0 ? (
+      {discoveringScience && (
+        <p className="font-ui text-caption text-ink-tertiary">Checking your other concepts for verified scientific relationships…</p>
+      )}
+
+      {relatedEntries.length === 0 && !discoveringScience ? (
         <EmptyState
-          title="No related concepts added yet"
-          description={
-            hasPdfPageSources
-              ? "Your source pages didn\u2019t contain another recognizable concept. That doesn't mean none exist — check \u201cOnline scientific suggestions\u201d below, or add one manually."
-              : "Nothing shared a source page with this concept yet. Check \u201cOnline scientific suggestions\u201d below, or add a manual relationship."
-          }
+          title="No verified relationship found among your current concepts"
+          description="That doesn't mean none exist — check &ldquo;Suggested scientific concepts&rdquo; below, or add a connection of your own."
         />
       ) : (
         <>
-          {relatedConcepts.length > 0 && (
-            <ul className="flex flex-wrap gap-2">
-              {relatedConcepts.map((c) => {
-                const relationId = relationIdFor(c.id)
-                return (
-                  <li
-                    key={c.id}
-                    className="flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1.5"
-                  >
+          {scientificEntries.length > 0 && (
+            <div>
+              <h4 className="mb-2 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                <Flask size={13} aria-hidden />
+                Scientific connections
+              </h4>
+              <ul className="flex flex-col gap-2">
+                {scientificEntries.map(({ concept: c, relation }) => (
+                  <li key={c.id} className="rounded-md border border-border bg-surface px-3 py-2">
+                    <div className="flex items-start justify-between gap-3">
+                      <button
+                        type="button"
+                        onClick={() => navigate(`/concepts/${c.id}`)}
+                        className="text-left font-ui text-body font-medium text-ink-primary hover:text-olive"
+                      >
+                        {c.name}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => void removeConceptRelation(relation.id)}
+                        aria-label={`Remove connection to ${c.name}`}
+                        className="shrink-0 text-ink-tertiary hover:text-error"
+                      >
+                        <X size={13} />
+                      </button>
+                    </div>
+                    {relation.relationType && (
+                      <p className="mt-1 font-ui text-caption text-ink-secondary">{relation.relationType}</p>
+                    )}
+                    {relation.evidence && (
+                      <p className="mt-0.5 whitespace-pre-line font-ui text-caption italic text-ink-tertiary">
+                        "{relation.evidence}"
+                      </p>
+                    )}
+                    {relation.sourceUrl && (
+                      <a
+                        href={relation.sourceUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-1 flex w-fit items-center gap-1 font-ui text-micro font-medium text-olive hover:underline"
+                      >
+                        Source: {relation.sourceName}
+                        <ArrowSquareOut size={12} />
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {manualEntries.length > 0 && (
+            <div>
+              <h4 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">My connections</h4>
+              <ul className="flex flex-wrap gap-2">
+                {manualEntries.map(({ concept: c, relation }) => (
+                  <li key={c.id} className="flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1.5">
                     <button
                       type="button"
                       onClick={() => navigate(`/concepts/${c.id}`)}
@@ -231,37 +269,13 @@ export function RelatedConceptsPanel({
                     >
                       {c.name}
                     </button>
-                    {relationId && (
-                      <button
-                        type="button"
-                        onClick={() => void removeConceptRelation(relationId)}
-                        aria-label={`Remove relation to ${c.name}`}
-                        className="text-ink-tertiary hover:text-error"
-                      >
-                        <X size={13} />
-                      </button>
-                    )}
-                  </li>
-                )
-              })}
-            </ul>
-          )}
-
-          {coOccurringNotAlreadyRelated.length > 0 && (
-            <div>
-              <h4 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                Found together in your sources
-              </h4>
-              <ul className="flex flex-col gap-2">
-                {coOccurringNotAlreadyRelated.map((match) => (
-                  <li key={match.concept.id}>
                     <button
                       type="button"
-                      onClick={() => navigate(`/concepts/${match.concept.id}`)}
-                      className="flex w-full flex-col items-start gap-0.5 rounded-md border border-border bg-surface px-3 py-2 text-left hover:bg-surface-raised"
+                      onClick={() => void removeConceptRelation(relation.id)}
+                      aria-label={`Remove connection to ${c.name}`}
+                      className="text-ink-tertiary hover:text-error"
                     >
-                      <span className="font-ui text-body font-medium text-ink-primary">{match.concept.name}</span>
-                      <span className="font-ui text-micro text-ink-tertiary">{sourceSummary(match)}</span>
+                      <X size={13} />
                     </button>
                   </li>
                 ))}
@@ -271,32 +285,11 @@ export function RelatedConceptsPanel({
         </>
       )}
 
-      {sharedTagSuggestions.length > 0 && (
-        <div>
-          <h4 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-            Shares a tag with
-          </h4>
-          <ul className="flex flex-wrap gap-2">
-            {sharedTagSuggestions.map((c) => (
-              <li key={c.id}>
-                <button
-                  type="button"
-                  onClick={() => navigate(`/concepts/${c.id}`)}
-                  className="rounded-full bg-surface-raised px-3 py-1.5 font-ui text-caption text-ink-secondary hover:text-ink-primary"
-                >
-                  {c.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
       <div className="border-t border-border pt-4">
         <div className="mb-2 flex items-center justify-between">
           <h4 className="flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
             <Globe size={14} aria-hidden />
-            Online scientific suggestions
+            Suggested scientific concepts
           </h4>
           {!onlineSuggestions && (
             <button
@@ -306,13 +299,13 @@ export function RelatedConceptsPanel({
               className="flex items-center gap-1.5 font-ui text-caption font-medium text-olive hover:underline disabled:cursor-not-allowed disabled:text-ink-tertiary disabled:no-underline"
             >
               <MagnifyingGlass size={14} />
-              {loadingOnline ? 'Checking online sources…' : 'Find online suggestions'}
+              {loadingOnline ? 'Checking online sources…' : 'Find suggestions'}
             </button>
           )}
         </div>
         <p className="mb-3 font-ui text-caption text-ink-secondary">
-          Reliable, established concepts online reference sources associate with "{concept.name}" — not concepts
-          yet. Adding one is explicit; nothing here is created automatically.
+          Reliable online reference sources associate these with "{concept.name}" — not concepts in your library yet.
+          Adding one creates the concept and links it here as your own connection; nothing is added automatically.
         </p>
 
         {onlineSuggestions && onlineSuggestions.length === 0 && (
