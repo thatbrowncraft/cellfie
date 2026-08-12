@@ -206,11 +206,11 @@ export function RelatedConceptsPanel({
 
       {relatedConcepts.length === 0 && coOccurringNotAlreadyRelated.length === 0 ? (
         <EmptyState
-          title="No related concepts yet"
+          title="No related concepts added yet"
           description={
             hasPdfPageSources
-              ? 'Insufficient local source text available for deterministic relationship extraction. This concept\u2019s source pages didn\u2019t contain another recognizable concept — add a manual relationship if you know of one.'
-              : "Once this concept has source pages and shares one with another concept — or you add a manual relationship — they'll show up here and in the mind map."
+              ? "Your source pages didn\u2019t contain another recognizable concept. That doesn't mean none exist — check \u201cOnline scientific suggestions\u201d below, or add one manually."
+              : "Nothing shared a source page with this concept yet. Check \u201cOnline scientific suggestions\u201d below, or add a manual relationship."
           }
         />
       ) : (
