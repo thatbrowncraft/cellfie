@@ -739,7 +739,7 @@ export async function buildStudyOverview(
     )
     .slice(0, MAX_STUDY_SOURCE_PAGES);
 
-  const sections = new Map<string, StudySection>();
+  const sectionsMap = new Map<string, StudySection>();
   let paragraph: LocalOverviewParagraph | undefined;
   const docCache = new Map<string, Awaited<ReturnType<typeof loadPdfDocument>>>();
 
@@ -779,18 +779,16 @@ export async function buildStudyOverview(
     }
   }
 
-  // Select highest-scoring paragraph for overview
   if (scoredParagraphs.length > 0) {
     scoredParagraphs.sort((a, b) => b.score - a.score);
     paragraph = {
       text: scoredParagraphs[0].text,
-      sourceCount: candidates.length,
     };
   }
 
   return {
     paragraph,
-    sections,
+    sections: Array.from(sectionsMap.values()),
   };
 }
 
