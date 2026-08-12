@@ -11,7 +11,7 @@ import {
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
-  fetchOnlineSummary,
+  fetchOnlineKnowledge,
   getCoOccurrenceRelated,
   getFirstAndLastEncountered,
   getRelatedConceptIds,
@@ -19,7 +19,7 @@ import {
   scanLibraryItemForConcepts,
   type CoOccurrenceMatch,
   type MindMapNode,
-  type OnlineSummary,
+  type OnlineKnowledgeSection,
   type StudyOverview
 } from '@/core/concepts'
 import { EmptyStateLayout } from '@/shared/layouts'
@@ -125,31 +125,32 @@ export function ConceptDetailPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [concept?.id, concept?.description, sources.length, itemsById])
 
-  // Sprint 4 — for an explicitly-selected concept, try to pull a real,
-  // attributed scientific summary from Wikipedia (see
-  // core/concepts/onlineKnowledge.ts for why Wikipedia and not
-  // NCBI/CDC/WHO directly). Never blocks the page: while it's loading or
-  // if it fails/there's no connection, the rest of the Overview — the
-  // person's own library material, notes, and highlights — renders
-  // immediately and independently below.
-  const [onlineSummary, setOnlineSummary] = useState<OnlineSummary | undefined>(undefined)
-  const [loadingOnlineSummary, setLoadingOnlineSummary] = useState(false)
-  const [onlineSummaryChecked, setOnlineSummaryChecked] = useState(false)
+  // Concept 2.0 Phase 1 — PRIMARY Learn-tab content. Pulls structured,
+  // source-attributed sections from reliable online scientific sources
+  // (see core/concepts/onlineKnowledge.ts: PubChem, PubMed, then a
+  // Wikipedia-filtered general reference as last resort). Never blocks
+  // the page: while loading or if it fails/there's no connection, the
+  // rest of the page — including the person's own library material,
+  // notes, and highlights, now rendered as a clearly SECONDARY block —
+  // renders immediately and independently.
+  const [onlineSections, setOnlineSections] = useState<OnlineKnowledgeSection[]>([])
+  const [loadingOnlineKnowledge, setLoadingOnlineKnowledge] = useState(false)
+  const [onlineKnowledgeChecked, setOnlineKnowledgeChecked] = useState(false)
   useEffect(() => {
     let cancelled = false
-    setOnlineSummary(undefined)
-    setOnlineSummaryChecked(false)
+    setOnlineSections([])
+    setOnlineKnowledgeChecked(false)
     if (!concept) return
-    setLoadingOnlineSummary(true)
-    fetchOnlineSummary(concept.name)
-      .then((summary) => {
+    setLoadingOnlineKnowledge(true)
+    fetchOnlineKnowledge(concept.name)
+      .then((sections) => {
         if (cancelled) return
-        setOnlineSummary(summary)
+        setOnlineSections(sections)
       })
       .finally(() => {
         if (cancelled) return
-        setLoadingOnlineSummary(false)
-        setOnlineSummaryChecked(true)
+        setLoadingOnlineKnowledge(false)
+        setOnlineKnowledgeChecked(true)
       })
     return () => {
       cancelled = true
@@ -317,16 +318,77 @@ export function ConceptDetailPage() {
             label: 'Learn',
             content: (
               <div className="flex flex-col gap-6">
-                       {/* Study Overview Section — Study Overview Correction.
-                           No section heading here is ever hardcoded to a subject
-                           (no "Principle"/"Procedure"/"Diagnostic Value"): a
-                           heading only renders when the source material itself
-                           already used that word. See core/concepts/extraction.ts
-                           (buildStudyOverview) and core/concepts/textDisplay.ts
-                           (splitIntoKnownSections) for where that's enforced. */}
+                {/* Concept 2.0 Phase 1 — PRIMARY content. Structured,
+                    source-attributed sections from reliable online
+                    scientific sources (core/concepts/onlineKnowledge.ts).
+                    A Concept must be useful here even with no PDF/book
+                    attached at all. Every heading below either comes from
+                    the source's own framing or is a generic source-type
+                    label — never invented from the concept's topic. */}
+                <div className="rounded-md border border-border bg-surface p-5">
+                  <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                    <Globe size={14} aria-hidden />
+                    Scientific overview
+                  </h3>
+                  {loadingOnlineKnowledge && (
+                    <p className="font-ui text-caption text-ink-tertiary">Checking reliable scientific sources…</p>
+                  )}
+                  {!loadingOnlineKnowledge && onlineSections.length > 0 && (
+                    <div className="space-y-4">
+                      {onlineSections.map((section, i) => (
+                        <div key={`${section.heading}-${i}`}>
+                          {section.heading && (
+                            <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
+                              {section.heading}
+                            </h4>
+                          )}
+                          <p
+                            className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed"
+                            style={{ overflowWrap: 'anywhere' }}
+                          >
+                            {section.text}
+                          </p>
+                          {section.isAbstract && (
+                            <p className="mt-1 font-ui text-micro text-ink-tertiary">
+                              This is the abstract of a related peer-reviewed paper, not a textbook definition.
+                            </p>
+                          )}
+                          <a
+                            href={section.sourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mt-1 flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
+                          >
+                            Source: {section.sourceName}
+                            <ArrowSquareOut size={13} />
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {!loadingOnlineKnowledge && onlineSections.length === 0 && (
+                    <p className="font-ui text-caption text-ink-tertiary">
+                      {isLikelyOnline() || !onlineKnowledgeChecked
+                        ? 'No reliable scientific source found for this concept yet.'
+                        : "Online sources aren't reachable right now. Your saved notes and library material are still available below."}
+                    </p>
+                  )}
+                </div>
+
+                {/* SECONDARY content — the person's own saved description
+                    or their own library material (Study Overview
+                    Correction). No section heading here is ever hardcoded
+                    to a subject (no "Principle"/"Procedure"/"Diagnostic
+                    Value"): a heading only renders when the source
+                    material itself already used that word. See
+                    core/concepts/extraction.ts (buildStudyOverview) and
+                    core/concepts/textDisplay.ts (splitIntoKnownSections)
+                    for where that's enforced. PDF/library material is
+                    optional supporting context, not the foundation of
+                    this Concept — see the Scientific overview card above. */}
           <div className="rounded-md border border-border bg-surface p-5 space-y-4">
             <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-              Study overview
+              From your library
             </h3>
 
             {concept.description ? (
@@ -367,15 +429,23 @@ export function ConceptDetailPage() {
                 ))}
               </div>
             ) : (
-              // Priority 6 — honest empty state. Never a random excerpt.
+              // Honest empty state for the SECONDARY (library) block —
+              // never a random excerpt, and never implies this is the
+              // only place to find information (the Scientific overview
+              // card above is the primary source of truth for this
+              // Concept regardless of what's here).
               <div className="space-y-3">
-                <p className="font-body text-body text-ink-primary">No useful explanation available yet.</p>
+                <p className="font-body text-body text-ink-primary">
+                  {hasPdfPageSources || meaningfulSourceCount > 0
+                    ? 'Personal source available.'
+                    : 'No personal source material for this concept yet.'}
+                </p>
                 <p className="font-ui text-caption text-ink-secondary">
                   {hasPdfPageSources
-                    ? "This concept has pages linked in your library, but none had enough real explanatory text to build an overview from."
+                    ? "This concept has pages linked in your library, but none had enough real explanatory text to build an overview from — open References to view the original pages."
                     : meaningfulSourceCount > 0
                       ? `${meaningfulSourceCount} source${meaningfulSourceCount === 1 ? '' : 's'} linked so far, but nothing strong enough for a written overview yet.`
-                      : 'No sources linked to this concept yet.'}
+                      : 'A PDF or book is optional — this concept works from the scientific overview above either way.'}
                 </p>
                 {scannableBooks.length > 0 && (
                   <Button variant="secondary" size="small" onClick={() => setActiveConceptTab('references')}>
@@ -395,52 +465,6 @@ export function ConceptDetailPage() {
               </div>
             )}
           </div>
-
-
-                {/* Scientific reference — online, source depends on the topic (see core/concepts/onlineKnowledge.ts
-                    for the full hierarchy and why Wikipedia is excluded, including from the general-reference
-                    fallback tier). Kept as its own separate card, never merged into "Study overview" above, so
-                    it's always clear which parts came from the person's own book vs. an online reference. */}
-                <div className="rounded-md border border-border bg-surface p-5">
-                  <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                    <Globe size={14} aria-hidden />
-                    Scientific reference
-                  </h3>
-                  {loadingOnlineSummary && (
-                    <p className="font-ui text-caption text-ink-tertiary">Checking online reference sources…</p>
-                  )}
-                  {!loadingOnlineSummary && onlineSummary && (
-                    <div className="flex flex-col gap-2">
-                      <h4 className="font-ui text-caption font-medium text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
-                        {onlineSummary.title}
-                      </h4>
-                      <p className="whitespace-pre-line font-body text-body text-ink-primary" style={{ overflowWrap: 'anywhere' }}>
-                        {onlineSummary.extract}
-                      </p>
-                      {onlineSummary.isAbstract && (
-                        <p className="font-ui text-micro text-ink-tertiary">
-                          This is the abstract of a related peer-reviewed paper, not a textbook definition.
-                        </p>
-                      )}
-                      <a
-                        href={onlineSummary.sourceUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-1 flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
-                      >
-                        Source: {onlineSummary.sourceName}
-                        <ArrowSquareOut size={13} />
-                      </a>
-                    </div>
-                  )}
-                  {!loadingOnlineSummary && !onlineSummary && (
-                    <p className="font-ui text-caption text-ink-tertiary">
-                      {isLikelyOnline() || !onlineSummaryChecked
-                        ? 'No reliable external information found yet.'
-                        : 'Online knowledge unavailable. Your local library and saved knowledge are still available.'}
-                    </p>
-                  )}
-                </div>
 
                 {(firstAndLast.first || firstAndLast.last) && (
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -554,21 +578,26 @@ export function ConceptDetailPage() {
                   <ConceptSourceList sources={sources} itemsById={itemsById} />
                 </div>
 
-                {onlineSummary && (
+                {onlineSections.length > 0 && (
                   <div className="rounded-md border border-border bg-surface p-5">
                     <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
                       <Globe size={14} aria-hidden />
                       Online references
                     </h3>
-                    <a
-                      href={onlineSummary.sourceUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
-                    >
-                      {onlineSummary.sourceName}
-                      <ArrowSquareOut size={13} />
-                    </a>
+                    <div className="flex flex-col gap-2">
+                      {Array.from(new Map(onlineSections.map((s) => [s.sourceUrl, s])).values()).map((s) => (
+                        <a
+                          key={s.sourceUrl}
+                          href={s.sourceUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
+                        >
+                          {s.sourceName}
+                          <ArrowSquareOut size={13} />
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 )}
 
