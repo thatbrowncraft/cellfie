@@ -99,69 +99,18 @@ function findOccurrenceIndices(pageText: string, term: string): number[] {
  * discussion scores poorly.
  */
 function scoreOccurrence(pageText: string, index: number, term: string): number {
-  const start = Math.max(0, index - 180)
-  const end = Math.min(pageText.length, index + term.length + 260)
+  const start = Math.max(0, index - 100)
+  const end = Math.min(pageText.length, index + term.length + 150)
   const window = pageText.slice(start, end)
-
   const windowWords = tokenizeWords(window)
   const windowNumbers = window.match(PAGE_NUMBER_TOKEN_RE) ?? []
-  const windowNumberDensity =
-    windowNumbers.length / Math.max(windowWords.length, 1)
+  const windowNumberDensity = windowNumbers.length / Math.max(windowWords.length, 1)
+  const sentenceBoundaries = (window.match(SENTENCE_BOUNDARY_RE) ?? []).length
 
-  const sentenceBoundaries =
-    (window.match(SENTENCE_BOUNDARY_RE) ?? []).length
-
-  const lowerWindow = window.toLowerCase()
-  const lowerTerm = term.trim().toLowerCase()
-
-  let score = 2
-
-  // Enough surrounding prose is important.
-  if (windowWords.length >= 20) score += 3
-  if (windowWords.length >= 40) score += 2
-
-  // Multiple complete sentences are stronger than an isolated mention.
+  let score = 2 // the occurrence itself is worth something
   score += Math.min(sentenceBoundaries * 2, 6)
-
-  // A sentence containing the concept is stronger than a bare occurrence.
-  const sentenceStart = Math.max(
-    0,
-    lowerWindow.lastIndexOf('.', Math.max(0, index - start))
-  )
-
-  const sentenceEndRelative = lowerWindow.indexOf(
-    '.',
-    Math.max(0, index - start) + lowerTerm.length
-  )
-
-  const sentenceEnd =
-    sentenceEndRelative === -1
-      ? window.length
-      : sentenceEndRelative
-
-  const localSentence = window.slice(sentenceStart, sentenceEnd)
-  const localWords = tokenizeWords(localSentence)
-
-  if (localWords.length >= 8) score += 3
-  if (localWords.length >= 15) score += 2
-
-  // Penalize pages/blocks that look like lists rather than explanations.
   if (windowNumberDensity > 0.15) score -= 6
-  if (windowWords.length < 8) score -= 4
-
-  // A concept occurrence immediately surrounded by punctuation/list-like
-  // fragments is weaker than normal prose.
-  const before = pageText.slice(Math.max(0, index - 12), index)
-  const after = pageText.slice(
-    index + term.length,
-    Math.min(pageText.length, index + term.length + 12)
-  )
-
-  const listLike =
-    /(^|\n)\s*(?:\d+[.)]|[•●▪◦-])\s*$/.test(before) ||
-    /^\s*(?:\d+[.)]|[•●▪◦-])/.test(after)
-
-  if (listLike) score -= 4
+  if (windowWords.length < 8) score -= 3
 
   return score
 }
