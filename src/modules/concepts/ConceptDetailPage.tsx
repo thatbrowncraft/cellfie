@@ -112,7 +112,7 @@ export function ConceptDetailPage() {
     setLocalOverview(undefined)
     if (!concept || concept.description) return
     setLoadingLocalOverview(true)
-    buildStudyOverview(sources, itemsById)
+    buildStudyOverview(concept, sources, itemsById)
       .then((result) => {
         if (!cancelled) setLocalOverview(result)
       })
