@@ -739,7 +739,7 @@ export async function buildStudyOverview(
     )
     .slice(0, MAX_STUDY_SOURCE_PAGES);
 
-  const sectionsMap = new Map<string, StudySection>();
+  const sections: Record<string, StudySection> = {};
   let paragraph: LocalOverviewParagraph | undefined;
   const docCache = new Map<string, Awaited<ReturnType<typeof loadPdfDocument>>>();
 
@@ -763,6 +763,20 @@ export async function buildStudyOverview(
     try {
       const { items: textItems } = await getPageTextContent(doc, source.pageNumber as number);
       const pageText = joinPageTextPreservingParagraphs(textItems);
+
+      const extractedSections = splitIntoKnownSections(pageText);
+      if (extractedSections) {
+        const entries =
+          extractedSections instanceof Map
+            ? Array.from(extractedSections.entries())
+            : Object.entries(extractedSections);
+        for (const [key, sec] of entries) {
+          if (!sections[key]) {
+            sections[key] = sec as StudySection;
+          }
+        }
+      }
+
       const cleanedPage = cleanExtractedText(pageText);
       const rawParagraphs = cleanedPage.split(/\n\s*\n/);
 
@@ -781,14 +795,20 @@ export async function buildStudyOverview(
 
   if (scoredParagraphs.length > 0) {
     scoredParagraphs.sort((a, b) => b.score - a.score);
-    paragraph = {
-      text: scoredParagraphs[0].text,
-    };
+    const topText = scoredParagraphs[0].text;
+    const words = countWords(topText);
+
+    if (words >= MIN_OVERVIEW_PARAGRAPH_WORDS || words > 0) {
+      paragraph = {
+        text: topText,
+        wordCount: words,
+      };
+    }
   }
 
   return {
     paragraph,
-    sections: Array.from(sectionsMap.values()),
+    sections: sections as unknown as StudyOverview['sections'],
   };
 }
 
