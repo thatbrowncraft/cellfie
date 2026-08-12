@@ -1,55 +1,30 @@
+export function isStopwordToken(token: string): boolean {
+  const stopwords = new Set([
+    'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from',
+    'has', 'he', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the',
+    'to', 'was', 'were', 'will', 'with'
+  ]);
+  return stopwords.has(token.toLowerCase());
+}
+
+export function isPlausibleConceptName(name: string): boolean {
+  if (!name || name.trim().length < 2) return false;
+  return !isStopwordToken(name.trim());
+}
+
+export function isLikelyStopwordPhrase(phrase: string): boolean {
+  const tokens = phrase.trim().split(/\s+/);
+  return tokens.every(t => isStopwordToken(t));
+}
+
 export function normalizeConceptName(name: string): string {
   if (!name) return '';
   return name.trim().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, ' ');
 }
 
-export function cleanExtractedText(text: string): string {
-  if (!text) return '';
-
-  let cleaned = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-
-  // 1. Remove running textbook headers, footers, and standalone page numbers
-  cleaned = cleaned
-    .split('\n')
-    .filter(line => {
-      const trimmed = line.trim();
-      if (!trimmed) return true;
-      if (/^\d{1,4}$/.test(trimmed)) return false;
-      if (/^\d{1,4}\s+[A-Z\s]{4,}$/.test(trimmed)) return false;
-      if (/^[A-Z\s]{4,}\s+\d{1,4}$/.test(trimmed)) return false;
-      if (/^(CHAPTER|PAGE)\s+\d+/i.test(trimmed)) return false;
-      return true;
-    })
-    .join('\n');
-
-  // 2. Repair line-break hyphenation ("fun-\ndamental" -> "fundamental")
-  cleaned = cleaned.replace(/([a-zA-Z]{2,})-\s*\n\s*([a-zA-Z]{2,})/g, '$1$2');
-  cleaned = cleaned.replace(/([a-zA-Z]{2,})-\s+([a-zA-Z]{2,})/g, (match, p1, p2) => {
-    const l1 = p1.toLowerCase();
-    if (l1 === 'non' || l1 === 'gram' || l1 === 'semi' || l1 === 'anti') return `${p1}-${p2}`;
-    return `${p1}${p2}`;
-  });
-
-  // 3. Fix broken PDF character kerning
-  cleaned = fixPdfKerning(cleaned);
-
-  // 4. Preserve paragraph boundaries (\n\n) while unwrapping soft linebreaks inside paragraphs
-  const rawParagraphs = cleaned.split(/\n\s*\n/);
-  const formattedParagraphs = rawParagraphs
-    .map(para => {
-      let singleLine = para.replace(/\n+/g, ' ').replace(/\s+/g, ' ').trim();
-      singleLine = singleLine.replace(/([.,;:?!])([A-Za-z])/g, '$1 $2');
-      return singleLine;
-    })
-    .filter(para => para.length > 0);
-
-  return formattedParagraphs.join('\n\n');
-}
-
 export function fixPdfKerning(text: string): string {
   if (!text) return '';
   let res = text;
-
   const replacements: [RegExp, string][] = [
     [/\bGra\s+m\b/gi, 'Gram'],
     [/\bGra\s+m's\b/gi, "Gram's"],
@@ -90,27 +65,59 @@ export function fixPdfKerning(text: string): string {
     [/\bpus\s+ce\s*lls?\b/gi, 'pus cells'],
     [/\bce\s*lls?\b/gi, 'cell']
   ];
-
   for (const [regex, replacement] of replacements) {
     res = res.replace(regex, replacement);
   }
   return res;
 }
 
+export function cleanExtractedText(text: string): string {
+  if (!text) return '';
+  let cleaned = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+  cleaned = cleaned
+    .split('\n')
+    .filter(line => {
+      const trimmed = line.trim();
+      if (!trimmed) return true;
+      if (/^\d{1,4}$/.test(trimmed)) return false;
+      if (/^\d{1,4}\s+[A-Z\s]{4,}$/.test(trimmed)) return false;
+      if (/^[A-Z\s]{4,}\s+\d{1,4}$/.test(trimmed)) return false;
+      if (/^(CHAPTER|PAGE)\s+\d+/i.test(trimmed)) return false;
+      return true;
+    })
+    .join('\n');
+
+  cleaned = cleaned.replace(/([a-zA-Z]{2,})-\s*\n\s*([a-zA-Z]{2,})/g, '$1$2');
+  cleaned = cleaned.replace(/([a-zA-Z]{2,})-\s+([a-zA-Z]{2,})/g, (match, p1, p2) => {
+    const l1 = p1.toLowerCase();
+    if (l1 === 'non' || l1 === 'gram' || l1 === 'semi' || l1 === 'anti') return `${p1}-${p2}`;
+    return `${p1}${p2}`;
+  });
+
+  cleaned = fixPdfKerning(cleaned);
+
+  const rawParagraphs = cleaned.split(/\n\s*\n/);
+  const formattedParagraphs = rawParagraphs
+    .map(para => {
+      let singleLine = para.replace(/\n+/g, ' ').replace(/\s+/g, ' ').trim();
+      singleLine = singleLine.replace(/([.,;:?!])([A-Za-z])/g, '$1 $2');
+      return singleLine;
+    })
+    .filter(para => para.length > 0);
+
+  return formattedParagraphs.join('\n\n');
+}
+
 export function ensureProperSentenceStart(text: string): string {
   if (!text) return '';
   const trimmed = text.trim();
-
-  // If text starts with capital letter, bullet, or number, it's a valid sentence start
   if (/^([A-Z0-9"'\u2022\u2013\u2014-]|\u2022|\*)/.test(trimmed)) {
     return trimmed;
   }
-
-  // Slice off orphan sentence fragment before the first capital letter sentence start
   const match = trimmed.match(/(?<=[.!?])\s+([A-Z][^]*)/);
   if (match && match[1]) {
     return match[1].trim();
   }
-
   return trimmed;
 }
