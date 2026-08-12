@@ -138,12 +138,49 @@ export async function getPageTextContent(
  * item and the start of the next (in the same units as `width`/
  * `transform`) and only inserts a space when that gap is wide enough to
  * plausibly be a real word boundary; a large vertical jump (line/column
- * break) always inserts a space so words never get glued together
- * across lines. Still a heuristic, not a layout engine — but it fixes
- * the specific, reported failure mode without truncating or hiding any
- * text.
+ * break) always inserts a break so words never get glued together
+ * across lines.
+ *
+ * Study Overview Correction: also repairs the OTHER shape of PDF word
+ * breakage — a line-wrap hyphen ("fun-\ndamental", "accomplish-\nment")
+ * — right here, once, instead of leaving every downstream reader (this
+ * function's callers) to guess at it from already-flattened text. When
+ * a run ends in a hyphen immediately followed by a line/column break,
+ * AND the next run starts with a lowercase letter (the shape of a word
+ * continuing mid-word, not a new sentence or a genuine hyphenated
+ * compound like "Gram-positive" starting a fresh capitalized term), the
+ * hyphen is dropped and the two runs are joined directly with no break.
+ * This is a heuristic, not a dictionary lookup — a real compound word
+ * that happens to break exactly at a line's hyphen with a lowercase
+ * continuation (rare) could get merged without its hyphen, but a
+ * genuine 3+ letter mid-word split is far more common at line wraps
+ * than a coincidental compound-word break, and joining a merged
+ * compound word incorrectly is a much smaller readability cost than the
+ * "fun-damental" artifact this exists to fix.
  */
 export function joinPageText(items: PdfTextItem[]): string {
+  return buildPageText(items, { preserveParagraphs: false })
+}
+
+/**
+ * Same word-joining and hyphen-repair as `joinPageText`, but preserves
+ * real line/paragraph breaks as `\n` instead of collapsing them to a
+ * single space. Study Overview Correction: structural section parsing
+ * (`splitIntoKnownSections`, which looks for a heading "alone on its
+ * own line") needs this — `joinPageText`'s flattened, single-line
+ * output made every page look like one giant paragraph with no
+ * detectable structure, which is a root cause of the Study Overview
+ * starting mid-sentence (there was no paragraph boundary left to stop
+ * at). Only used where paragraph/heading structure is actually read;
+ * every other caller (search indexing, relevance scoring, keyword
+ * matching) is whitespace-agnostic and keeps using the flattened
+ * `joinPageText` unchanged, so this doesn't touch their behavior.
+ */
+export function joinPageTextPreservingParagraphs(items: PdfTextItem[]): string {
+  return buildPageText(items, { preserveParagraphs: true })
+}
+
+function buildPageText(items: PdfTextItem[], opts: { preserveParagraphs: boolean }): string {
   let out = ''
   let prevEndX: number | undefined
   let prevY: number | undefined
@@ -168,7 +205,17 @@ export function joinPageText(items: PdfTextItem[]): string {
     if (out) {
       const sameLine = prevY !== undefined && Math.abs(y - prevY) < Math.max(prevFontSize, fontSize) * 0.4
       if (!sameLine) {
-        if (!out.endsWith('\n')) out += '\n'
+        // Line-wrap hyphen repair: a run ending in "<letter>-" right
+        // before a line break, continuing into a lowercase-starting
+        // next run, is almost always one word split across the wrap —
+        // drop the hyphen and join with no break at all.
+        const hyphenMatch = /([A-Za-z])-$/.exec(out)
+        const nextStartsLower = /^[a-z]/.test(str)
+        if (hyphenMatch && nextStartsLower) {
+          out = out.slice(0, -1)
+        } else if (!out.endsWith('\n')) {
+          out += '\n'
+        }
       } else if (prevEndX !== undefined) {
         const gap = x - prevEndX
         // Threshold scales with font size: ~18% of an average character
@@ -186,7 +233,11 @@ export function joinPageText(items: PdfTextItem[]): string {
     prevFontSize = fontSize
   }
 
-  return out.replace(/[ \t]+/g, ' ').replace(/\n+/g, ' ').trim()
+  out = out.replace(/[ \t]+/g, ' ')
+  if (opts.preserveParagraphs) {
+    return out.replace(/\n{3,}/g, '\n\n').replace(/ *\n */g, '\n').trim()
+  }
+  return out.replace(/\n+/g, ' ').trim()
 }
 
 /** Re-exports PDF.js's small matrix-transform helper so the text layer doesn't need its own copy. */
