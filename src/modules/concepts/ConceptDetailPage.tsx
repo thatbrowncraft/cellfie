@@ -234,6 +234,16 @@ export function ConceptDetailPage() {
 
   const stats = computeConceptStats(concept, sources)
 
+  // Narrowed once here so the JSX below can rely on plain (non-optional)
+  // property access instead of repeating `localOverview?.` everywhere —
+  // TypeScript can't carry the narrowing from a ternary's `||` test
+  // condition into the branch's JSX, so this local is what actually
+  // fixes the "'localOverview' is possibly 'undefined'" build errors.
+  const hasLocalOverview = Boolean(
+    localOverview && (localOverview.paragraph || localOverview.sections.length > 0)
+  )
+  const overview = hasLocalOverview ? (localOverview as StudyOverview) : undefined
+
   async function handleScan(item: LibraryItem) {
     setScanning(item.id)
     setScanMessage(undefined)
@@ -327,22 +337,22 @@ export function ConceptDetailPage() {
               </div>
             ) : loadingLocalOverview ? (
               <p className="font-ui text-caption text-ink-tertiary">Looking through your library…</p>
-            ) : localOverview?.paragraph || (localOverview?.sections.length ?? 0) > 0 ? (
+            ) : overview ? (
               // Priority 2 — the concept's own strongest local page, in the
               // source's own words and, separately, the source's own
               // section structure (only if the source actually has one).
               <div className="space-y-4">
-                {localOverview.paragraph && (
+                {overview.paragraph && (
                   <div>
                     <p className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed">
-                      {cleanDisplayText(localOverview.paragraph.text)}
+                      {cleanDisplayText(overview.paragraph.text)}
                     </p>
                     <p className="mt-2 font-ui text-micro text-ink-tertiary">
-                      From your library — {localOverview.paragraph.bookTitle}, p. {localOverview.paragraph.pageNumber}
+                      From your library — {overview.paragraph.bookTitle}, p. {overview.paragraph.pageNumber}
                     </p>
                   </div>
                 )}
-                {localOverview.sections.map((section) => (
+                {overview.sections.map((section) => (
                   <div key={`${section.heading}-${section.pageNumber}`}>
                     <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
                       {section.heading}
