@@ -10,14 +10,12 @@ import {
   cleanDisplayText,
   computeConceptStats,
   deleteConcept,
+  discoverScientificRelations,
   extractRelatedConceptsFromKnownPages,
   fetchOnlineKnowledge,
-  getCoOccurrenceRelated,
   getFirstAndLastEncountered,
-  getRelatedConceptIds,
   isLikelyOnline,
   scanLibraryItemForConcepts,
-  type CoOccurrenceMatch,
   type MindMapNode,
   type OnlineKnowledgeSection,
   type StudyOverview
@@ -164,24 +162,44 @@ export function ConceptDetailPage() {
   const yourHighlights = useMemo(() => sources.filter((s) => s.sourceType === 'highlight' && s.sourceText), [sources])
   const yourNotes = useMemo(() => sources.filter((s) => s.sourceType === 'note' && s.sourceText), [sources])
 
-  const relatedIds = useLiveQuery<string[]>(() => (id ? getRelatedConceptIds(id) : []), [id, relations.length], [])
-  const relatedConcepts = useMemo(
-    () => allConcepts.filter((c) => relatedIds.includes(c.id)),
-    [allConcepts, relatedIds]
+  // Concept 2.0 Phase 2 — real relationships, split by origin. `relations`
+  // is the same full conceptRelations table used by the Mind Map, so
+  // Related Concepts and Mind Map stay backed by one source of truth.
+  // Deliberately NOT derived from shared tags or same-page/same-book
+  // co-occurrence anymore — see core/concepts/graph.ts's own Phase 3 note
+  // for why that data still exists (Mind Map fallback) but is no longer
+  // presented here as an assertion of relatedness.
+  const conceptById = useMemo(() => new Map(allConcepts.map((c) => [c.id, c])), [allConcepts])
+  const myRelations = useMemo(
+    () => (id ? relations.filter((r) => r.conceptAId === id || r.conceptBId === id) : []),
+    [relations, id]
   )
-  const sharedTagSuggestions = useMemo(() => {
-    if (!concept) return []
-    return allConcepts.filter(
-      (c) => c.id !== concept.id && !relatedIds.includes(c.id) && c.tags.some((t) => concept.tags.includes(t))
-    )
-  }, [allConcepts, concept, relatedIds])
-  // Sprint 3 Correction §5A/§7 — concepts that share an actual book+page
-  // ConceptSource with this one, independent of any manual relation/tag.
-  const coOccurring = useLiveQuery<CoOccurrenceMatch[]>(
-    () => (id ? getCoOccurrenceRelated(id) : []),
-    [id, sources.length],
-    []
+  const relatedEntries = useMemo(
+    () =>
+      myRelations
+        .map((relation) => {
+          const otherId = relation.conceptAId === id ? relation.conceptBId : relation.conceptAId
+          const other = conceptById.get(otherId)
+          return other ? { concept: other, relation } : undefined
+        })
+        .filter((e): e is { concept: Concept; relation: ConceptRelation } => Boolean(e)),
+    [myRelations, conceptById, id]
   )
+  const relatedConcepts = useMemo(() => relatedEntries.map((e) => e.concept), [relatedEntries])
+
+  // Throttled, per-concept, one-time check of this concept against the
+  // person's OTHER existing concepts for real scientific-literature
+  // evidence (core/concepts/service.ts's discoverScientificRelations).
+  // Safe to fire on every visit — it no-ops once already run for this
+  // concept. Never blocks the page.
+  const [discoveringScience, setDiscoveringScience] = useState(false)
+  useEffect(() => {
+    if (!concept) return
+    setDiscoveringScience(true)
+    discoverScientificRelations(concept.id).finally(() => setDiscoveringScience(false))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [concept?.id])
+
   const firstAndLast = useMemo(() => getFirstAndLastEncountered(sources, itemsById), [sources, itemsById])
 
   // Relevance Correction — the Study Overview must be built from the
@@ -518,7 +536,7 @@ export function ConceptDetailPage() {
           },
           {
             id: 'connections',
-            label: `Connections${relatedConcepts.length + coOccurring.length ? ` (${relatedConcepts.length + coOccurring.length})` : ''}`,
+            label: `Connections${relatedConcepts.length ? ` (${relatedConcepts.length})` : ''}`,
             content: (
               <div className="flex flex-col gap-4">
                 <div className="flex gap-2 border-b border-border pb-3">
@@ -540,12 +558,9 @@ export function ConceptDetailPage() {
                 {connectionsView === 'related' ? (
                   <RelatedConceptsPanel
                     concept={concept}
-                    relatedConcepts={relatedConcepts}
-                    sharedTagSuggestions={sharedTagSuggestions}
-                    coOccurring={coOccurring}
+                    relatedEntries={relatedEntries}
+                    discoveringScience={discoveringScience}
                     hasPdfPageSources={hasPdfPageSources}
-                    itemsById={itemsById}
-                    relations={relations}
                     allConcepts={allConcepts}
                   />
                 ) : (
