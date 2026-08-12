@@ -461,6 +461,79 @@ export async function fetchOnlineKnowledge(name: string): Promise<OnlineKnowledg
 }
 
 // ---------------------------------------------------------------------
+// Concept 2.0 Phase 2 — real scientific relationship evidence between
+// two of the person's own concepts (core/concepts/service.ts's
+// discoverScientificRelations). Deliberately generic: this never asks
+// "is this DNA-and-RNA" or branches on what the concepts ARE — it asks
+// PubMed whether any real peer-reviewed paper discusses both names
+// together, which works identically for any pair. A hit is real
+// evidence (both names appear in an actual published paper found by a
+// live search); the absence of a hit is an honest "no verified
+// relationship", not evidence of no relationship (see the §6 "No
+// verified relationship found among your current concepts" empty
+// state) — many real relationships won't be phrased as one paper
+// mentioning both exact concept names, and that's a known, accepted
+// limitation of a no-AI, no-backend design rather than something this
+// function should paper over with a guess.
+// ---------------------------------------------------------------------
+
+export interface ScientificRelationEvidence {
+  /** A short, generic description of WHY these two are connected — never a specific biological/technical claim this app authored. */
+  relationType: string
+  /** The actual source text (a real paper's own title) this relation is grounded in. Never invented. */
+  evidence: string
+  sourceName: string
+  sourceUrl: string
+}
+
+/**
+ * Tier — PubMed co-occurrence. Searches for a paper whose title/abstract
+ * mentions BOTH concept names; if one exists, its own title (verbatim)
+ * becomes the evidence and its PubMed page is the source. Returns
+ * `undefined` (never a guess) when offline, the request fails, or no
+ * such paper exists. Cached per unordered name pair.
+ */
+export async function fetchScientificRelationEvidence(
+  nameA: string,
+  nameB: string
+): Promise<ScientificRelationEvidence | undefined> {
+  const a = nameA.trim()
+  const b = nameB.trim()
+  if (!a || !b || a.toLowerCase() === b.toLowerCase()) return undefined
+
+  const pairKey = [a.toLowerCase(), b.toLowerCase()].sort().join('::')
+  const key = `pair:${pairKey}`
+  const cached = await readCache<ScientificRelationEvidence>(key)
+  if (cached && isFresh(cached)) return cached.value ?? undefined
+  if (!isLikelyOnline()) return cached?.value ?? undefined
+
+  const term = encodeURIComponent(`"${a}"[tiab] AND "${b}"[tiab]`)
+  const searchData = (await fetchJson(
+    `${NCBI_EUTILS_BASE}/esearch.fcgi?db=pubmed&retmode=json&retmax=1&sort=relevance&term=${term}`
+  )) as { esearchresult?: { idlist?: string[] } } | undefined
+
+  const pmid = searchData?.esearchresult?.idlist?.[0]
+  let result: ScientificRelationEvidence | undefined
+  if (pmid) {
+    const summaryData = (await fetchJson(`${NCBI_EUTILS_BASE}/esummary.fcgi?db=pubmed&retmode=json&id=${pmid}`)) as
+      | { result?: Record<string, { title?: string }> }
+      | undefined
+    const title = summaryData?.result?.[pmid]?.title?.trim()
+    if (title) {
+      result = {
+        relationType: 'Discussed together in peer-reviewed literature',
+        evidence: title,
+        sourceName: 'PubMed (NCBI)',
+        sourceUrl: `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`
+      }
+    }
+  }
+
+  await writeCache(key, result ?? null)
+  return result
+}
+
+// ---------------------------------------------------------------------
 // Related-tab support (RelatedConceptsPanel.tsx) — Concept 2.0 §8/§14.
 // Reuses the exact same Wikipedia-free tier hierarchy as
 // `fetchOnlineSummary` above instead of a separate Wikipedia-backed
