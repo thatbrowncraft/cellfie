@@ -34,6 +34,18 @@
  * existing local database only ever adds stores/indexes, never touches
  * existing rows in libraryItems/collections/appSettings/readerBookmarks/
  * highlights/notes.
+ *
+ * Concept 2.0 Phase 2 adds a `version(5)` migration: `ConceptRelation`
+ * gains `origin` ('manual' | 'scientific') plus, for scientific
+ * relations only, `relationType`/`evidence`/`sourceName`/`sourceUrl` —
+ * additive fields only, no existing table shape removed. Every prior
+ * version's stores are repeated unchanged (Dexie's per-version-snapshot
+ * model), and an `.upgrade()` step backfills every pre-existing
+ * `conceptRelations` row with `origin: 'manual'` — every row that
+ * existed before this migration was written by an explicit user action
+ * (the "Add related concept" flow or promoting a suggested/candidate
+ * concept), so `'manual'` is the accurate, non-invented label for all
+ * of them; no scientific evidence is fabricated for old rows.
  */
 
 import Dexie, { type Table } from 'dexie'
@@ -206,11 +218,21 @@ export interface ConceptSource {
   createdAt: number
 }
 
-/** Sprint 3 §10: an explicit, user-asserted relationship between two concepts. Undirected — see core/concepts/service.ts. */
+/** Concept 2.0 Phase 2 — where a ConceptRelation actually came from. 'manual' = the person explicitly connected these two; 'scientific' = discovered by checking a real online scientific source, never invented. */
+export type ConceptRelationOrigin = 'manual' | 'scientific'
+
+/** Sprint 3 §10: an explicit relationship between two concepts. Undirected — see core/concepts/service.ts. Concept 2.0 Phase 2: now distinguishes a user-asserted ('manual') connection from an evidence-backed ('scientific') one; the latter always carries `relationType`/`evidence`/`sourceName`/`sourceUrl` so the UI can show exactly why the connection exists and where it came from, never just an unexplained edge. */
 export interface ConceptRelation {
   id: string
   conceptAId: string
   conceptBId: string
+  origin: ConceptRelationOrigin
+  /** Only for origin: 'scientific' — a short, source-derived description of the relationship type (e.g. "Discussed together in peer-reviewed literature"); never a specific biological claim this app authored itself. */
+  relationType?: string
+  /** Only for origin: 'scientific' — the actual source text (e.g. a paper's own title) this relation is grounded in. Never invented. */
+  evidence?: string
+  sourceName?: string
+  sourceUrl?: string
   createdAt: number
 }
 
@@ -278,6 +300,32 @@ class CellfieDB extends Dexie {
         'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
       conceptRelations: 'id, conceptAId, conceptBId, createdAt, [conceptAId+conceptBId]'
     })
+    // v5 — Concept 2.0 Phase 2: `conceptRelations` gains `origin` (plus
+    // scientific-only evidence fields). Every other store is repeated
+    // unchanged. The upgrade backfills every existing row's `origin` to
+    // 'manual' — see the class-level doc comment above for why that's
+    // the accurate label for all pre-migration rows.
+    this.version(5)
+      .stores({
+        libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+        collections: 'id, name, createdAt',
+        appSettings: 'key',
+        readerBookmarks: 'id, itemId, page, createdAt',
+        highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+        notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+        concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+        conceptSources:
+          'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+        conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]'
+      })
+      .upgrade(async (tx) => {
+        await tx
+          .table('conceptRelations')
+          .toCollection()
+          .modify((r: Partial<ConceptRelation>) => {
+            if (!r.origin) r.origin = 'manual'
+          })
+      })
   }
 }
 
