@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowSquareOut, CaretDown, Check, ListChecks, NotePencil, Ruler } from '@phosphor-icons/react'
-import { EmptyState, Button } from '@/shared/components'
+import { ArrowSquareOut, CaretDown, ListChecks, Ruler } from '@phosphor-icons/react'
+import { EmptyState } from '@/shared/components'
 import type { Concept, ConceptRelation } from '@/core/db'
-import { fetchOnlineKnowledge, updateConceptMemoryAid, type ExamTools, type OnlineKnowledgeSection } from '@/core/concepts'
+import { fetchOnlineKnowledge, type ExamTools, type OnlineKnowledgeSection } from '@/core/concepts'
 
 interface ExamToolsPanelProps {
   concept: Concept
@@ -13,12 +13,15 @@ interface ExamToolsPanelProps {
 }
 
 /**
- * Exam Tools tab — Concept 2.0 §10. Every block below either comes
- * straight from `buildExamTools` (core/concepts/examTools.ts — real
- * source excerpts and real relationship data, never invented) or is
- * 100% written by the person themselves (the memory aid, the choice of
- * what to compare). A block that has nothing real to show simply
- * doesn't render, matching every other tab in this app.
+ * Exam Focus study-mode content (mounted inside the Learn tab, not on
+ * its own Level-1 tab — see ConceptDetailPage.tsx). Every block below
+ * comes straight from `buildExamTools` (core/concepts/examTools.ts —
+ * real source excerpts and real relationship data, never invented) or
+ * is the person's own choice of what to compare. A block that has
+ * nothing real to show simply doesn't render, matching every other
+ * tab in this app. Memory aid is intentionally NOT part of this
+ * component — see components/MemoryAidCard.tsx, mounted independently
+ * in the Learn tab so it never depends on Exam Focus content existing.
  */
 export function ExamToolsPanel({ concept, examTools, relatedEntries, onlineSections }: ExamToolsPanelProps) {
   const hasAnything = examTools.keyPoints.length > 0 || examTools.importantValues.length > 0 || examTools.quickQuestions.length > 0
@@ -79,8 +82,6 @@ export function ExamToolsPanel({ concept, examTools, relatedEntries, onlineSecti
       )}
 
       <ComparePanel concept={concept} onlineSections={onlineSections} relatedEntries={relatedEntries} />
-
-      <MemoryAidPanel concept={concept} />
     </div>
   )
 }
@@ -212,51 +213,6 @@ function CompareColumn({ sections }: { sections: OnlineKnowledgeSection[] }) {
           <p className="font-body text-caption text-ink-primary">{s.text}</p>
         </div>
       ))}
-    </div>
-  )
-}
-
-/** §10 "Memory aid" — 100% user-authored, never auto-generated or suggested. */
-function MemoryAidPanel({ concept }: { concept: Concept }) {
-  const [text, setText] = useState(concept.memoryAid ?? '')
-  const [saving, setSaving] = useState(false)
-  const [saved, setSaved] = useState(false)
-
-  async function handleSave() {
-    setSaving(true)
-    try {
-      await updateConceptMemoryAid(concept.id, text)
-      setSaved(true)
-      setTimeout(() => setSaved(false), 2000)
-    } finally {
-      setSaving(false)
-    }
-  }
-
-  return (
-    <div className="rounded-md border border-border bg-surface p-5">
-      <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-        <NotePencil size={14} aria-hidden />
-        Memory aid
-      </h3>
-      <p className="mb-3 font-ui text-caption text-ink-secondary">Your own mnemonic for {concept.name} — never suggested automatically.</p>
-      <textarea
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        rows={3}
-        placeholder="e.g. a mnemonic that helps you remember this…"
-        className="w-full resize-y rounded-md border border-border bg-surface px-3 py-2 font-body text-body text-ink-primary placeholder:text-ink-tertiary"
-      />
-      <div className="mt-2 flex items-center gap-3">
-        <Button variant="secondary" size="small" disabled={saving} onClick={() => void handleSave()}>
-          {saving ? 'Saving…' : 'Save'}
-        </Button>
-        {saved && (
-          <span className="flex items-center gap-1 font-ui text-caption text-ink-tertiary">
-            <Check size={13} /> Saved
-          </span>
-        )}
-      </div>
     </div>
   )
 }
