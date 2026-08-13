@@ -6,6 +6,7 @@ import { useLiveQuery } from '@/core/db/useLiveQuery'
 import {
   backfillSourceRelevance,
   buildConceptMindMap,
+  buildExamTools,
   buildStudyOverview,
   cleanDisplayText,
   computeConceptStats,
@@ -13,12 +14,14 @@ import {
   discoverScientificRelations,
   extractRelatedConceptsFromKnownPages,
   fetchOnlineKnowledge,
+  fetchVisualReferences,
   getFirstAndLastEncountered,
   isLikelyOnline,
   scanLibraryItemForConcepts,
   type MindMapNode,
   type OnlineKnowledgeSection,
-  type StudyOverview
+  type StudyOverview,
+  type VisualReference
 } from '@/core/concepts'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/components'
@@ -26,6 +29,7 @@ import { ConceptSourceList } from './components/ConceptSourceList'
 import { RelatedConceptsPanel } from './components/RelatedConceptsPanel'
 import { ConceptMindMap } from './components/ConceptMindMap'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
+import { ExamToolsPanel } from './components/ExamToolsPanel'
 
 /**
  * Concept Detail — Sprint 3 §8/§9/§10/§13. Overview (description or "No
@@ -45,7 +49,7 @@ export function ConceptDetailPage() {
   // Concept 2.0 §5/§19 — four top-level tabs (Learn / Connections / Visuals /
   // References), persisted in the URL so a refresh (or a shared link) lands
   // back on the same tab instead of always resetting to Learn.
-  const CONCEPT_TAB_IDS = ['learn', 'connections', 'visuals', 'references'] as const
+  const CONCEPT_TAB_IDS = ['learn', 'connections', 'visuals', 'exam-tools', 'references'] as const
   type ConceptTabId = (typeof CONCEPT_TAB_IDS)[number]
   const [searchParams, setSearchParams] = useSearchParams()
   const rawTab = searchParams.get('tab')
@@ -155,6 +159,34 @@ export function ConceptDetailPage() {
     }
   }, [concept?.id, concept?.name])
 
+  // Concept 2.0 Phase 4 — Visuals tab feed. Same never-blocks,
+  // never-fabricates discipline as the Learn tab: real images from real
+  // sources only (core/concepts/onlineKnowledge.ts's fetchVisualReferences),
+  // an honest empty state otherwise.
+  const [visuals, setVisuals] = useState<VisualReference[]>([])
+  const [loadingVisuals, setLoadingVisuals] = useState(false)
+  const [visualsChecked, setVisualsChecked] = useState(false)
+  useEffect(() => {
+    let cancelled = false
+    setVisuals([])
+    setVisualsChecked(false)
+    if (!concept) return
+    setLoadingVisuals(true)
+    fetchVisualReferences(concept.name)
+      .then((refs) => {
+        if (cancelled) return
+        setVisuals(refs)
+      })
+      .finally(() => {
+        if (cancelled) return
+        setLoadingVisuals(false)
+        setVisualsChecked(true)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [concept?.id, concept?.name])
+
   // Personal knowledge layer (brief: "YOUR NOTES" / "YOUR HIGHLIGHTS") —
   // reuses the same ConceptSource rows already shown in the Sources tab,
   // just filtered to the two source types that carry the person's own
@@ -186,6 +218,15 @@ export function ConceptDetailPage() {
     [myRelations, conceptById, id]
   )
   const relatedConcepts = useMemo(() => relatedEntries.map((e) => e.concept), [relatedEntries])
+
+  // Concept 2.0 Phase 5 — derived purely from data already in memory
+  // (onlineSections from the Learn tab fetch, relatedEntries from the
+  // relationship table above): no new network calls, instant, and
+  // recomputes automatically whenever either of those changes.
+  const examTools = useMemo(
+    () => (concept ? buildExamTools(concept, onlineSections, relatedEntries) : { keyPoints: [], importantValues: [], quickQuestions: [] }),
+    [concept, onlineSections, relatedEntries]
+  )
 
   // Throttled, per-concept, one-time check of this concept against the
   // person's OTHER existing concepts for real scientific-literature
@@ -573,12 +614,59 @@ export function ConceptDetailPage() {
             id: 'visuals',
             label: 'Visuals',
             content: (
-              <div className="rounded-md border border-border bg-surface p-8 text-center">
-                <p className="font-body text-body text-ink-primary">No suitable visual reference found.</p>
-                <p className="mt-1 font-ui text-caption text-ink-tertiary">
-                  Diagrams and process illustrations for this concept aren't available yet.
-                </p>
+              <div className="rounded-md border border-border bg-surface p-5">
+                {loadingVisuals && (
+                  <p className="font-ui text-caption text-ink-tertiary">Checking reliable scientific sources for visuals…</p>
+                )}
+                {!loadingVisuals && visuals.length > 0 && (
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {visuals.map((v, i) => (
+                      <figure key={`${v.imageUrl}-${i}`} className="overflow-hidden rounded-md border border-border">
+                        <img
+                          src={v.imageUrl}
+                          alt={v.caption}
+                          loading="lazy"
+                          className="aspect-square w-full bg-surface-raised object-contain"
+                          onError={(e) => {
+                            e.currentTarget.closest('figure')?.remove()
+                          }}
+                        />
+                        <figcaption className="flex flex-col gap-1 p-3">
+                          <span className="font-ui text-caption text-ink-primary">{v.caption}</span>
+                          <a
+                            href={v.sourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex w-fit items-center gap-1 font-ui text-micro font-medium text-olive hover:underline"
+                          >
+                            Source: {v.sourceName}
+                            <ArrowSquareOut size={12} />
+                          </a>
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                )}
+                {!loadingVisuals && visuals.length === 0 && (
+                  <div className="p-3 text-center">
+                    <p className="font-body text-body text-ink-primary">
+                      {isLikelyOnline() || !visualsChecked
+                        ? 'No suitable scientific visual found yet.'
+                        : "Online sources aren't reachable right now."}
+                    </p>
+                    <p className="mt-1 font-ui text-caption text-ink-tertiary">
+                      Diagrams and process illustrations for this concept aren't available from a reliable source yet.
+                    </p>
+                  </div>
+                )}
               </div>
+            )
+          },
+          {
+            id: 'exam-tools',
+            label: 'Exam Tools',
+            content: (
+              <ExamToolsPanel concept={concept} examTools={examTools} relatedEntries={relatedEntries} onlineSections={onlineSections} />
             )
           },
           {
