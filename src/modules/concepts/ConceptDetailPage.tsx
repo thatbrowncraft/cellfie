@@ -6,6 +6,7 @@ import { useLiveQuery } from '@/core/db/useLiveQuery'
 import {
   backfillSourceRelevance,
   buildConceptMindMap,
+  buildDetailedStudyModules,
   buildExamTools,
   buildStudyOverview,
   cleanDisplayText,
@@ -13,11 +14,15 @@ import {
   deleteConcept,
   discoverScientificRelations,
   extractRelatedConceptsFromKnownPages,
+  fetchEuropePmcArticles,
+  fetchMeshClassification,
   fetchOnlineKnowledge,
   fetchVisualReferences,
   getFirstAndLastEncountered,
   isLikelyOnline,
   scanLibraryItemForConcepts,
+  type EuropePmcArticle,
+  type MeshClassification,
   type MindMapNode,
   type OnlineKnowledgeSection,
   type StudyOverview,
@@ -30,6 +35,7 @@ import { RelatedConceptsPanel } from './components/RelatedConceptsPanel'
 import { ConceptMindMap } from './components/ConceptMindMap'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
 import { ExamToolsPanel } from './components/ExamToolsPanel'
+import { MemoryAidCard } from './components/MemoryAidCard'
 
 /**
  * Concept Detail — Sprint 3 §8/§9/§10/§13. Overview (description or "No
@@ -49,7 +55,7 @@ export function ConceptDetailPage() {
   // Concept 2.0 §5/§19 — four top-level tabs (Learn / Connections / Visuals /
   // References), persisted in the URL so a refresh (or a shared link) lands
   // back on the same tab instead of always resetting to Learn.
-  const CONCEPT_TAB_IDS = ['learn', 'connections', 'visuals', 'exam-tools', 'references'] as const
+  const CONCEPT_TAB_IDS = ['learn', 'connections', 'visuals', 'references'] as const
   type ConceptTabId = (typeof CONCEPT_TAB_IDS)[number]
   const [searchParams, setSearchParams] = useSearchParams()
   const rawTab = searchParams.get('tab')
@@ -159,6 +165,29 @@ export function ConceptDetailPage() {
     }
   }, [concept?.id, concept?.name])
 
+  // Detailed Study mode feed — MeSH classification/relationships and the
+  // Europe PMC literature tier (core/concepts/onlineKnowledge.ts). Same
+  // never-blocks, fail-soft discipline as the Learn tab fetch above: an
+  // empty/undefined result just means Detailed Study's modules render an
+  // honest "not available" state for whichever section relied on it.
+  const [meshClassification, setMeshClassification] = useState<MeshClassification | undefined>(undefined)
+  const [europePmcArticles, setEuropePmcArticles] = useState<EuropePmcArticle[]>([])
+  useEffect(() => {
+    let cancelled = false
+    setMeshClassification(undefined)
+    setEuropePmcArticles([])
+    if (!concept) return
+    fetchMeshClassification(concept.name).then((result) => {
+      if (!cancelled) setMeshClassification(result)
+    })
+    fetchEuropePmcArticles(concept.name).then((articles) => {
+      if (!cancelled) setEuropePmcArticles(articles)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [concept?.id, concept?.name])
+
   // Concept 2.0 Phase 4 — Visuals tab feed. Same never-blocks,
   // never-fabricates discipline as the Learn tab: real images from real
   // sources only (core/concepts/onlineKnowledge.ts's fetchVisualReferences),
@@ -227,6 +256,23 @@ export function ConceptDetailPage() {
     () => (concept ? buildExamTools(concept, onlineSections, relatedEntries) : { keyPoints: [], importantValues: [], quickQuestions: [] }),
     [concept, onlineSections, relatedEntries]
   )
+
+  // Learn tab, Detailed Study mode — five fixed modules (Definition &
+  // Biological Scope / Classification & Taxonomic Hierarchy / Structure
+  // & Molecular Composition / Biological Mechanism & Function /
+  // Important Functional Relationships), built purely from data already
+  // fetched above. See core/concepts/detailedStudy.ts's header comment
+  // for the cross-module duplication guard.
+  const detailedStudyModules = useMemo(
+    () =>
+      concept ? buildDetailedStudyModules(concept, onlineSections, meshClassification, europePmcArticles, relatedEntries) : [],
+    [concept, onlineSections, meshClassification, europePmcArticles, relatedEntries]
+  )
+
+  // Learn tab study-mode switcher. Ephemeral (not persisted/URL-synced)
+  // — matches how the existing Connections tab's related/mindmap toggle
+  // already works (see `connectionsView` below).
+  const [studyMode, setStudyMode] = useState<'quick' | 'detailed' | 'exam'>('quick')
 
   // Throttled, per-concept, one-time check of this concept against the
   // person's OTHER existing concepts for real scientific-literature
@@ -377,62 +423,138 @@ export function ConceptDetailPage() {
             label: 'Learn',
             content: (
               <div className="flex flex-col gap-6">
-                {/* Concept 2.0 Phase 1 — PRIMARY content. Structured,
-                    source-attributed sections from reliable online
-                    scientific sources (core/concepts/onlineKnowledge.ts).
+                {/* Study-mode switcher — Quick Revision / Detailed Study /
+                    Exam Focus. Ephemeral, matches the Connections tab's
+                    related/mindmap toggle pattern above. Memory aid
+                    (below) is deliberately OUTSIDE this switch, so it
+                    stays visible no matter which mode is active. */}
+                <div className="flex gap-2 border-b border-border pb-3">
+                  <Button variant={studyMode === 'quick' ? 'primary' : 'secondary'} size="small" onClick={() => setStudyMode('quick')}>
+                    Quick Revision
+                  </Button>
+                  <Button
+                    variant={studyMode === 'detailed' ? 'primary' : 'secondary'}
+                    size="small"
+                    onClick={() => setStudyMode('detailed')}
+                  >
+                    Detailed Study
+                  </Button>
+                  <Button variant={studyMode === 'exam' ? 'primary' : 'secondary'} size="small" onClick={() => setStudyMode('exam')}>
+                    Exam Focus
+                  </Button>
+                </div>
+
+                {/* Quick Revision — Concept 2.0 Phase 1 — PRIMARY content.
+                    Structured, source-attributed sections from reliable
+                    online scientific sources (core/concepts/onlineKnowledge.ts).
                     A Concept must be useful here even with no PDF/book
                     attached at all. Every heading below either comes from
                     the source's own framing or is a generic source-type
                     label — never invented from the concept's topic. */}
-                <div className="rounded-md border border-border bg-surface p-5">
-                  <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                    <Globe size={14} aria-hidden />
-                    Scientific overview
-                  </h3>
-                  {loadingOnlineKnowledge && (
-                    <p className="font-ui text-caption text-ink-tertiary">Checking reliable scientific sources…</p>
-                  )}
-                  {!loadingOnlineKnowledge && onlineSections.length > 0 && (
-                    <div className="space-y-4">
-                      {onlineSections.map((section, i) => (
-                        <div key={`${section.heading}-${i}`}>
-                          {section.heading && (
-                            <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
-                              {section.heading}
-                            </h4>
-                          )}
-                          <p
-                            className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed"
-                            style={{ overflowWrap: 'anywhere' }}
-                          >
-                            {section.text}
-                          </p>
-                          {section.isAbstract && (
-                            <p className="mt-1 font-ui text-micro text-ink-tertiary">
-                              This is the abstract of a related peer-reviewed paper, not a textbook definition.
+                {studyMode === 'quick' && (
+                  <div className="rounded-md border border-border bg-surface p-5">
+                    <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                      <Globe size={14} aria-hidden />
+                      Scientific overview
+                    </h3>
+                    {loadingOnlineKnowledge && (
+                      <p className="font-ui text-caption text-ink-tertiary">Checking reliable scientific sources…</p>
+                    )}
+                    {!loadingOnlineKnowledge && onlineSections.length > 0 && (
+                      <div className="space-y-4">
+                        {onlineSections.map((section, i) => (
+                          <div key={`${section.heading}-${i}`}>
+                            {section.heading && (
+                              <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
+                                {section.heading}
+                              </h4>
+                            )}
+                            <p
+                              className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed"
+                              style={{ overflowWrap: 'anywhere' }}
+                            >
+                              {section.text}
                             </p>
-                          )}
-                          <a
-                            href={section.sourceUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="mt-1 flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
-                          >
-                            Source: {section.sourceName}
-                            <ArrowSquareOut size={13} />
-                          </a>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {!loadingOnlineKnowledge && onlineSections.length === 0 && (
-                    <p className="font-ui text-caption text-ink-tertiary">
-                      {isLikelyOnline() || !onlineKnowledgeChecked
-                        ? 'No reliable scientific source found for this concept yet.'
-                        : "Online sources aren't reachable right now. Your saved notes and library material are still available below."}
-                    </p>
-                  )}
-                </div>
+                            {section.isAbstract && (
+                              <p className="mt-1 font-ui text-micro text-ink-tertiary">
+                                This is the abstract of a related peer-reviewed paper, not a textbook definition.
+                              </p>
+                            )}
+                            <a
+                              href={section.sourceUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="mt-1 flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
+                            >
+                              Source: {section.sourceName}
+                              <ArrowSquareOut size={13} />
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {!loadingOnlineKnowledge && onlineSections.length === 0 && (
+                      <p className="font-ui text-caption text-ink-tertiary">
+                        {isLikelyOnline() || !onlineKnowledgeChecked
+                          ? 'No reliable scientific source found for this concept yet.'
+                          : "Online sources aren't reachable right now. Your saved notes and library material are still available below."}
+                      </p>
+                    )}
+                  </div>
+                )}
+
+                {/* Detailed Study — five fixed modules, each independently
+                    source-backed or honestly marked unavailable. See
+                    core/concepts/detailedStudy.ts for the content model
+                    and the cross-module duplication guard. */}
+                {studyMode === 'detailed' && (
+                  <div className="flex flex-col gap-4">
+                    {detailedStudyModules.map((module) => (
+                      <div key={module.id} className="rounded-md border border-border bg-surface p-5">
+                        <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                          {module.heading}
+                        </h3>
+                        <p
+                          className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed"
+                          style={{ overflowWrap: 'anywhere' }}
+                        >
+                          {module.content}
+                        </p>
+                        {module.available && module.sourceRefs.length > 0 && (
+                          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                            {module.sourceRefs.map((ref, i) => (
+                              <a
+                                key={i}
+                                href={ref.sourceUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
+                              >
+                                Source: {ref.sourceName}
+                                <ArrowSquareOut size={13} />
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Exam Focus — the existing exam-oriented content (key
+                    points, important values, quick questions, compare),
+                    now a study MODE inside Learn rather than a separate
+                    Level-1 tab. Memory aid is intentionally NOT part of
+                    this component — see MemoryAidCard below. */}
+                {studyMode === 'exam' && (
+                  <ExamToolsPanel concept={concept} examTools={examTools} relatedEntries={relatedEntries} onlineSections={onlineSections} />
+                )}
+
+                {/* Memory aid — independent of study mode and of Exam
+                    Focus/ExamToolsPanel. Reads/writes the existing
+                    Concept.memoryAid field via the existing
+                    updateConceptMemoryAid(), unchanged. */}
+                <MemoryAidCard concept={concept} />
 
                 {/* SECONDARY content — the person's own saved description
                     or their own library material (Study Overview
@@ -660,13 +782,6 @@ export function ConceptDetailPage() {
                   </div>
                 )}
               </div>
-            )
-          },
-          {
-            id: 'exam-tools',
-            label: 'Exam Tools',
-            content: (
-              <ExamToolsPanel concept={concept} examTools={examTools} relatedEntries={relatedEntries} onlineSections={onlineSections} />
             )
           },
           {
