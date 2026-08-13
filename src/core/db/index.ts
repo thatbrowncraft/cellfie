@@ -176,6 +176,8 @@ export interface Concept {
   aliases: string[]
   /** User- or source-provided only. Never auto-generated (§1, §14). Absent → UI shows "No description saved yet." */
   description?: string
+  /** Concept 2.0 Phase 5 (Exam Tools "Memory aid") — a mnemonic/memory aid the user writes themselves. Never auto-generated or suggested; absent by default. Not an indexed field, so no schema/version bump was needed to add it — existing rows simply have it undefined until the person writes one. */
+  memoryAid?: string
   tags: string[]
   /** True for concepts the user typed in via "+ New Concept" (§5); false for deterministically extracted ones (§3). */
   manuallyCreated: boolean
