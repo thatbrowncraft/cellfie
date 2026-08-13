@@ -534,6 +534,123 @@ export async function fetchScientificRelationEvidence(
 }
 
 // ---------------------------------------------------------------------
+// Concept 2.0 Phase 4 — online scientific Visuals. Same rules as every
+// other tier in this file: no AI-generated images, no Wikipedia/
+// Wikimedia, no fabricated diagrams. Every returned image is a REAL
+// image fetched from a REAL scientific source URL, with a caption and
+// source attribution — never a generic stock/placeholder graphic. When
+// nothing reliable is found the array is simply empty; the caller must
+// show "No suitable scientific visual found yet.", not a placeholder.
+// ---------------------------------------------------------------------
+
+export interface VisualReference {
+  imageUrl: string
+  caption: string
+  sourceName: string
+  sourceUrl: string
+}
+
+/**
+ * Tier — PubChem structure images. Reuses the same key-free CID lookup
+ * as the Learn tab's PubChem section (fetchPubChemSections): if `name`
+ * resolves to a real compound, PubChem's own PNG-rendering endpoint
+ * returns its actual 2D structure diagram — an image PubChem itself
+ * generates from the molecule's real structure data, not something this
+ * app draws or guesses. `<img>` tags load cross-origin regardless of
+ * CORS headers, so this works even though the JSON lookup above it
+ * might not (see fetchJson's graceful no-CORS fallback).
+ */
+async function fetchPubChemVisual(name: string): Promise<VisualReference | undefined> {
+  const term = encodeURIComponent(name.trim())
+  const cidData = (await fetchJson(
+    `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${term}/cids/JSON`
+  )) as { IdentifierList?: { CID?: number[] } } | undefined
+  const cid = cidData?.IdentifierList?.CID?.[0]
+  if (!cid) return undefined
+  return {
+    imageUrl: `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/PNG?record_type=2d&image_size=300x300`,
+    caption: `2D chemical structure of ${name}`,
+    sourceName: 'PubChem (NCBI)',
+    sourceUrl: `https://pubchem.ncbi.nlm.nih.gov/compound/${cid}`
+  }
+}
+
+/**
+ * Tier — Open-i (US National Library of Medicine's biomedical image
+ * search — openi.nlm.nih.gov, not Wikipedia/Wikimedia). Real figures
+ * pulled from real published biomedical literature, each with its own
+ * article title as caption and a link back to the source article.
+ * NOTE: this environment's own outbound network allowlist doesn't
+ * include nlm.nih.gov, so this parser could not be exercised against a
+ * live response while building it — it's written defensively against
+ * Open-i's documented JSON shape and simply returns nothing (never
+ * throws, never fabricates a caption) if a field it expects isn't
+ * there. Worth a real smoke test once this is deployed somewhere that
+ * can actually reach the endpoint.
+ */
+async function fetchOpenIVisuals(name: string): Promise<VisualReference[]> {
+  const term = encodeURIComponent(name.trim())
+  const data = (await fetchJson(`https://openi.nlm.nih.gov/api/search?query=${term}&it=xg,c,m,mc,p,ph,u&m=1&n=3`)) as
+    | {
+        list?: Array<{
+          title?: string
+          journal?: string
+          articleURL?: string
+          imgLarge?: string
+          imgThumb?: string
+          image?: { large?: { url?: string }; thumb?: { url?: string } }
+        }>
+      }
+    | undefined
+
+  const list = data?.list ?? []
+  const results: VisualReference[] = []
+  for (const item of list) {
+    const rawPath = item.imgLarge ?? item.image?.large?.url ?? item.imgThumb ?? item.image?.thumb?.url
+    if (!rawPath) continue
+    const imageUrl = rawPath.startsWith('http') ? rawPath : `https://openi.nlm.nih.gov${rawPath}`
+    const caption = item.title?.trim()
+    if (!caption) continue
+    results.push({
+      imageUrl,
+      caption,
+      sourceName: item.journal?.trim() ? `${item.journal.trim()} via Open-i (NLM)` : 'Open-i (National Library of Medicine)',
+      sourceUrl: item.articleURL?.trim() || 'https://openi.nlm.nih.gov'
+    })
+  }
+  return results
+}
+
+/**
+ * PRIMARY feed for the Visuals tab. Tries PubChem (structure diagrams,
+ * for chemical concepts) and Open-i (real figures from real biomedical
+ * papers) and returns whatever real, attributed images either one
+ * actually found — never more than 4, so one heavily-annotated
+ * concept can't overwhelm the tab. An empty array is the honest,
+ * expected result for most non-biomedical/non-chemical concepts under
+ * this no-AI, no-Wikipedia, key-free design — not a bug to work around
+ * with a placeholder.
+ */
+export async function fetchVisualReferences(name: string): Promise<VisualReference[]> {
+  const trimmed = name.trim()
+  if (!trimmed) return []
+  const key = `visuals:${trimmed.toLowerCase()}`
+
+  const cached = await readCache<VisualReference[]>(key)
+  if (cached && isFresh(cached)) return cached.value ?? []
+  if (!isLikelyOnline()) return cached?.value ?? []
+
+  const results: VisualReference[] = []
+  const pubchemVisual = await fetchPubChemVisual(trimmed)
+  if (pubchemVisual) results.push(pubchemVisual)
+  results.push(...(await fetchOpenIVisuals(trimmed)))
+
+  const capped = results.slice(0, 4)
+  await writeCache(key, capped)
+  return capped
+}
+
+// ---------------------------------------------------------------------
 // Related-tab support (RelatedConceptsPanel.tsx) — Concept 2.0 §8/§14.
 // Reuses the exact same Wikipedia-free tier hierarchy as
 // `fetchOnlineSummary` above instead of a separate Wikipedia-backed

@@ -104,6 +104,11 @@ export async function touchConceptSeen(id: string): Promise<void> {
   await db.concepts.update(id, { lastSeenAt: Date.now() })
 }
 
+/** Concept 2.0 Phase 5 — saves the user's own memory aid text verbatim. Never called with anything the app generated itself; an empty string clears it back to "not set" rather than storing a blank string. */
+export async function updateConceptMemoryAid(id: string, memoryAid: string): Promise<void> {
+  await db.concepts.update(id, { memoryAid: memoryAid.trim() || undefined, updatedAt: Date.now() })
+}
+
 /** Deletes a concept along with every ConceptSource/ConceptRelation that references it. */
 export async function deleteConcept(id: string): Promise<void> {
   await db.transaction('rw', db.concepts, db.conceptSources, db.conceptRelations, async () => {
