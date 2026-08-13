@@ -318,7 +318,7 @@ export interface ConceptCandidateEvidence {
  * an explicit "Add concept" click counts as user-selection every bit as
  * much as the "+ New Concept" form does, and must never be swept up by
  * `runAutoConceptCleanup` later. If `relateToConceptId` is given, an
- * explicit RELATED_TO relation is recorded to the concept the person was
+ * explicit manual relation is recorded to the concept the person was
  * looking at when they promoted this candidate (§16).
  */
 export async function promoteConceptCandidate(input: {
