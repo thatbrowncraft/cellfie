@@ -108,6 +108,32 @@ const REQUEST_TIMEOUT_MS = 8000
 const CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7 // 7 days
 const CACHE_KEY_PREFIX = 'onlineKnowledgeCache:v4:'
 const NCBI_EUTILS_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
+const EUROPEPMC_BASE = 'https://www.ebi.ac.uk/europepmc/webservices/rest'
+
+/**
+ * Decodes the small set of HTML entities that genuinely show up in raw
+ * NCBI/MeSH/Europe PMC text (scope notes, abstracts) — never applied to
+ * anything this app writes itself. Deliberately narrow (a fixed
+ * replace list, not a full HTML parser) since this only ever runs on
+ * plain scientific text, never on markup this app needs to render.
+ */
+export function decodeHTMLEntities(text: string): string {
+  if (!text) return ''
+  return text
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&plusmn;/g, '±')
+    .replace(/&alpha;/g, 'α')
+    .replace(/&beta;/g, 'β')
+    .replace(/&gamma;/g, 'γ')
+    .replace(/&delta;/g, 'δ')
+    .replace(/<[^>]*>/g, '')
+}
 
 export interface OnlineSummary {
   title: string
@@ -441,6 +467,25 @@ export async function fetchOnlineKnowledge(name: string): Promise<OnlineKnowledg
         isAbstract: true
       })
     }
+
+    // Detailed Study — additional literature tier. Purely additive: only
+    // adds excerpts whose text isn't already present from PubChem/PubMed
+    // above, and never more than 2, so this stays a supporting tier
+    // rather than crowding the flat Quick Revision view.
+    const seenText = new Set(sections.map((s) => s.text))
+    const europePmc = await fetchEuropePmcArticles(trimmed)
+    for (const article of europePmc) {
+      if (seenText.has(article.abstractText)) continue
+      seenText.add(article.abstractText)
+      sections.push({
+        heading: article.journal ? `Europe PMC — ${article.journal}` : 'Europe PMC',
+        text: article.abstractText,
+        sourceName: article.sourceName,
+        sourceUrl: article.sourceUrl,
+        isAbstract: true
+      })
+      if (sections.length >= 5) break
+    }
   }
 
   if (sections.length === 0) {
@@ -458,6 +503,343 @@ export async function fetchOnlineKnowledge(name: string): Promise<OnlineKnowledg
 
   await writeCache(key, sections)
   return sections
+}
+
+// ---------------------------------------------------------------------
+// Detailed Study — MeSH classification & relationship tier.
+//
+// Reference: this mirrors the retrieval approach used by an earlier
+// Google AI Studio prototype of the Concept Hub, rebuilt here against
+// this file's own fetch/cache/fail-soft conventions (typed, no `any`,
+// routed through `db.appSettings` like every other tier). NCBI's
+// E-Utilities `mesh` database is free and key-free for this volume of
+// traffic (3 req/sec without a key; see NLM's published usage policy).
+//
+// Purpose: PubChem/PubMed/DuckDuckGo (above) give a definition, but
+// none of them give a concept's place in a controlled classification
+// hierarchy, or a curated, typed set of related scientific terms.
+// MeSH (Medical Subject Headings) is the one free, key-free NCBI
+// resource that has both. Administrative/noisy MeSH qualifiers
+// ("isolation", "statistics", "legislation and jurisprudence", ...)
+// are filtered out before anything from this tier is surfaced —
+// see `isNoiseTerm`.
+// ---------------------------------------------------------------------
+
+/** Administrative/procedural MeSH qualifiers that are real MeSH terms but never scientifically meaningful as a "relationship" on their own — filtered out before display, never shown to the person. */
+const NOISE_MESH_TERMS = new Set([
+  'isolation',
+  'purification',
+  'methods',
+  'statistics',
+  'trends',
+  'standards',
+  'instrumentation',
+  'analysis',
+  'history',
+  'organization and administration',
+  'economics',
+  'legislation and jurisprudence',
+  'statistics and numerical data',
+  'supply and distribution',
+  'classification',
+  'ethics',
+  'manpower',
+  'adverse effects',
+  'toxicity',
+  'veterinary'
+])
+
+/** True if `term` is an administrative MeSH qualifier, or the concept's own name, rather than a scientifically meaningful related term. */
+export function isNoiseMeshTerm(term: string, queryConcept: string): boolean {
+  if (!term) return true
+  const lower = term.toLowerCase().trim()
+  const queryLower = queryConcept.toLowerCase().trim()
+  if (NOISE_MESH_TERMS.has(lower)) return true
+  if (lower === queryLower) return true
+  if (lower.startsWith('isolation') || lower.startsWith('purification')) return true
+  return false
+}
+
+export interface MeshRelationship {
+  /** The related term's own name, decoded and trimmed — never invented. */
+  targetName: string
+  /** A short, source-derived relationship label (which MeSH link list this came from), never a specific biological claim this app authored. */
+  relationshipType: 'is_a' | 'contains_subtype' | 'associated_with' | 'related_to'
+  sourceName: string
+  sourceUrl: string
+}
+
+export interface MeshClassification {
+  meshId: string
+  /** The authoritative definition text MeSH itself provides for this descriptor — used as the Detailed Study "Definition" tier when present. */
+  scopeNote?: string
+  parentName?: string
+  childNames: string[]
+  meshUI?: string
+  yearIntroduced?: string
+  subheadings: string[]
+  relationships: MeshRelationship[]
+  sourceName: string
+  sourceUrl: string
+}
+
+interface MeshSummaryRecord {
+  ds_recordtype?: string
+  ds_meshterms?: string[]
+  ds_scopenote?: string
+  ds_meshui?: string
+  ds_yearintroduced?: string
+  ds_subheading?: string[]
+  ds_idxlinks?: { parent?: string; children?: string[] }[]
+  ds_seerelated?: string[]
+  ds_headingmappedtolist?: string[]
+}
+
+/**
+ * Detailed Study — Classification & Relationships tier. Searches the
+ * MeSH database for a descriptor matching the concept name (falling
+ * back to an unqualified search if the `[MeSH Terms]`-qualified one
+ * finds nothing), then batch-fetches every parent/child/see-related/
+ * mapped-heading id it names in one `esummary` call. Returns
+ * `undefined` — never a guess — for concepts MeSH has no descriptor
+ * for (most non-biomedical topics, and some biomedical ones too).
+ * Cached per normalized name, same TTL as every other tier here.
+ */
+export async function fetchMeshClassification(name: string): Promise<MeshClassification | undefined> {
+  const trimmed = name.trim()
+  if (!trimmed) return undefined
+  const key = `mesh:${trimmed.toLowerCase()}`
+
+  const cached = await readCache<MeshClassification>(key)
+  if (cached && isFresh(cached)) return cached.value ?? undefined
+  if (!isLikelyOnline()) return cached?.value ?? undefined
+
+  const term = encodeURIComponent(trimmed)
+  let searchData = (await fetchJson(
+    `${NCBI_EUTILS_BASE}/esearch.fcgi?db=mesh&retmode=json&term=${term}%5BMeSH+Terms%5D`
+  )) as { esearchresult?: { idlist?: string[] } } | undefined
+  let idList = searchData?.esearchresult?.idlist ?? []
+
+  if (idList.length === 0) {
+    searchData = (await fetchJson(`${NCBI_EUTILS_BASE}/esearch.fcgi?db=mesh&retmode=json&term=${term}`)) as
+      | { esearchresult?: { idlist?: string[] } }
+      | undefined
+    idList = searchData?.esearchresult?.idlist ?? []
+  }
+
+  if (idList.length === 0) {
+    await writeCache(key, null)
+    return undefined
+  }
+
+  const idBatch = idList.slice(0, 10).join(',')
+  const summaryData = (await fetchJson(`${NCBI_EUTILS_BASE}/esummary.fcgi?db=mesh&id=${idBatch}&retmode=json`)) as
+    | { result?: Record<string, MeshSummaryRecord> }
+    | undefined
+
+  const lowerConcept = trimmed.toLowerCase()
+  let meshId: string | undefined
+  let record: MeshSummaryRecord | undefined
+
+  // Exact-name-match descriptor takes priority over the first hit.
+  for (const id of idList) {
+    const candidate = summaryData?.result?.[id]
+    if (!candidate) continue
+    const terms = (candidate.ds_meshterms ?? []).map((t) => t.toLowerCase())
+    if (candidate.ds_recordtype === 'descriptor' && terms.includes(lowerConcept)) {
+      meshId = id
+      record = candidate
+      break
+    }
+  }
+  if (!record) {
+    for (const id of idList) {
+      const candidate = summaryData?.result?.[id]
+      if (candidate && (candidate.ds_recordtype === 'descriptor' || candidate.ds_recordtype === 'supplemental-record')) {
+        meshId = id
+        record = candidate
+        break
+      }
+    }
+  }
+
+  if (!record || !meshId) {
+    await writeCache(key, null)
+    return undefined
+  }
+
+  const sourceUrl = `https://www.ncbi.nlm.nih.gov/mesh/${meshId}`
+  const sourceName = 'NCBI MeSH'
+  const scopeNote = record.ds_scopenote ? decodeHTMLEntities(record.ds_scopenote) : undefined
+  const subheadings = (record.ds_subheading ?? []).map((s) => decodeHTMLEntities(s))
+
+  const parentIds = (record.ds_idxlinks ?? []).map((l) => l.parent).filter((v): v is string => Boolean(v))
+  const childIds = (record.ds_idxlinks ?? []).flatMap((l) => l.children ?? []).slice(0, 6)
+  const seeRelatedIds = (record.ds_seerelated ?? []).slice(0, 6)
+  const mappedIds = (record.ds_headingmappedtolist ?? []).slice(0, 6)
+
+  const relIdSpecs: { id: string; relationshipType: MeshRelationship['relationshipType'] }[] = [
+    ...parentIds.map((id) => ({ id, relationshipType: 'is_a' as const })),
+    ...childIds.map((id) => ({ id, relationshipType: 'contains_subtype' as const })),
+    ...mappedIds.map((id) => ({ id, relationshipType: 'associated_with' as const })),
+    ...seeRelatedIds.map((id) => ({ id, relationshipType: 'related_to' as const }))
+  ]
+
+  let parentName: string | undefined
+  const childNames: string[] = []
+  const relationships: MeshRelationship[] = []
+
+  if (relIdSpecs.length > 0) {
+    const uniqueIds = Array.from(new Set(relIdSpecs.map((r) => r.id)))
+    const relSummaryData = (await fetchJson(
+      `${NCBI_EUTILS_BASE}/esummary.fcgi?db=mesh&id=${uniqueIds.join(',')}&retmode=json`
+    )) as { result?: Record<string, MeshSummaryRecord> } | undefined
+
+    const seenTargets = new Set<string>()
+    for (const spec of relIdSpecs) {
+      const relRecord = relSummaryData?.result?.[spec.id]
+      const rawName = relRecord?.ds_meshterms?.[0]
+      if (!rawName) continue
+      const cleanName = decodeHTMLEntities(rawName).trim()
+      if (isNoiseMeshTerm(cleanName, trimmed)) continue
+      const dedupeKey = cleanName.toLowerCase()
+      if (seenTargets.has(dedupeKey)) continue
+      seenTargets.add(dedupeKey)
+
+      if (spec.relationshipType === 'is_a' && !parentName) parentName = cleanName
+      if (spec.relationshipType === 'contains_subtype' && childNames.length < 6) childNames.push(cleanName)
+
+      relationships.push({
+        targetName: cleanName,
+        relationshipType: spec.relationshipType,
+        sourceName,
+        sourceUrl: `https://www.ncbi.nlm.nih.gov/mesh/${spec.id}`
+      })
+      if (relationships.length >= 12) break
+    }
+  }
+
+  const result: MeshClassification = {
+    meshId,
+    scopeNote,
+    parentName,
+    childNames,
+    meshUI: record.ds_meshui,
+    yearIntroduced: record.ds_yearintroduced,
+    subheadings,
+    relationships,
+    sourceName,
+    sourceUrl
+  }
+
+  await writeCache(key, result)
+  return result
+}
+
+// ---------------------------------------------------------------------
+// Detailed Study — Europe PMC literature tier.
+//
+// The official, free EBI endpoint (europepmc.org/RestfulWebService) —
+// no key, no registration required for this volume of traffic. Do not
+// confuse with the unrelated third-party paid "Europe PMC API" wrapper
+// sometimes listed on commercial API marketplaces; this app only ever
+// calls www.ebi.ac.uk directly.
+// ---------------------------------------------------------------------
+
+export interface EuropePmcArticle {
+  title: string
+  journal?: string
+  pubYear?: string
+  abstractText: string
+  sourceName: string
+  sourceUrl: string
+}
+
+interface EuropePmcResultItem {
+  title?: string
+  journalTitle?: string
+  pubYear?: string
+  abstractText?: string
+  pmid?: string
+  pmcid?: string
+  id?: string
+}
+
+/**
+ * Concept-in-title relevance score, deliberately simple and generic
+ * (never keyed to what the concept IS): rewards the concept name
+ * appearing in the title (more so at the very start) over merely
+ * appearing somewhere in the abstract, so a paper that's actually
+ * ABOUT the concept ranks above one that just mentions it in passing.
+ */
+function scoreArticleRelevance(item: EuropePmcResultItem, name: string): number {
+  const title = decodeHTMLEntities(item.title ?? '').toLowerCase()
+  const abstract = decodeHTMLEntities(item.abstractText ?? '').toLowerCase()
+  const lowerName = name.toLowerCase().trim()
+  if (!title) return -100
+  let score = 0
+  if (title.includes(lowerName)) {
+    score += 25
+    if (title.startsWith(lowerName)) score += 10
+  }
+  if (abstract.includes(lowerName)) score += 5
+  return score
+}
+
+/**
+ * Detailed Study — additional literature tier alongside the existing
+ * PubMed single-best-hit tier above. Fetches up to 12 candidates from
+ * Europe PMC, scores them for concept relevance (see
+ * `scoreArticleRelevance`), and returns the top matches with a real
+ * abstract — never more than 4, so this concept's Structure/Mechanism
+ * modules have distinct real excerpts to choose from without one
+ * heavily-published concept crowding out everything else. Returns an
+ * empty array (never invents) when nothing usable is found.
+ */
+export async function fetchEuropePmcArticles(name: string): Promise<EuropePmcArticle[]> {
+  const trimmed = name.trim()
+  if (!trimmed) return []
+  const key = `europepmc:${trimmed.toLowerCase()}`
+
+  const cached = await readCache<EuropePmcArticle[]>(key)
+  if (cached && isFresh(cached)) return cached.value ?? []
+  if (!isLikelyOnline()) return cached?.value ?? []
+
+  const term = encodeURIComponent(`"${trimmed}"`)
+  const data = (await fetchJson(
+    `${EUROPEPMC_BASE}/search?query=${term}&resultType=core&format=json&pageSize=12`
+  )) as { resultList?: { result?: EuropePmcResultItem[] } } | undefined
+
+  const items = data?.resultList?.result ?? []
+  const withScores = items
+    .map((item) => ({ item, score: scoreArticleRelevance(item, trimmed) }))
+    .filter((s) => s.score > 0 && s.item.abstractText)
+    .sort((a, b) => b.score - a.score)
+
+  const results: EuropePmcArticle[] = []
+  const seenAbstracts = new Set<string>()
+  for (const { item } of withScores) {
+    const abstractText = decodeHTMLEntities(item.abstractText ?? '').trim()
+    if (!abstractText || seenAbstracts.has(abstractText)) continue
+    seenAbstracts.add(abstractText)
+    const sourceUrl = item.pmcid
+      ? `https://www.ncbi.nlm.nih.gov/pmc/articles/${item.pmcid}/`
+      : item.pmid
+        ? `https://pubmed.ncbi.nlm.nih.gov/${item.pmid}/`
+        : `https://europepmc.org/article/MED/${item.id ?? ''}`
+    results.push({
+      title: decodeHTMLEntities(item.title ?? '').trim(),
+      journal: item.journalTitle?.trim(),
+      pubYear: item.pubYear?.trim(),
+      abstractText,
+      sourceName: 'Europe PMC',
+      sourceUrl
+    })
+    if (results.length >= 4) break
+  }
+
+  await writeCache(key, results)
+  return results
 }
 
 // ---------------------------------------------------------------------
