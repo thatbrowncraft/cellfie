@@ -14,19 +14,20 @@ const CENTER_X = WIDTH / 2
 const CENTER_Y = HEIGHT / 2
 
 const edgeColor: Record<string, string> = {
-  RELATED_TO: 'var(--color-highlight-terracotta)',
-  REFERENCES: 'var(--color-border-strong)',
-  SHARED_TAG: 'var(--color-accent-sage)',
-  CO_OCCURRENCE: 'var(--color-accent-olive)'
+  SCIENTIFIC: 'var(--color-accent-olive)',
+  MANUAL: 'var(--color-highlight-terracotta)',
+  REFERENCES: 'var(--color-border-strong)'
 }
 
 /**
- * Whole-library knowledge graph (§11/§12). Plain SVG, no graph package:
- * nodes are laid out on a circle (concepts on an inner ring, books on an
- * outer ring) since a force simulation would need a new dependency this
+ * Whole-library knowledge graph. Plain SVG, no graph package: nodes are
+ * laid out on a circle (concepts on an inner ring, books on an outer
+ * ring) since a force simulation would need a new dependency this
  * project deliberately avoids. Every edge drawn corresponds to a real
- * ConceptRelation, ConceptSource, or shared-tag pair — see
- * core/concepts/graph.ts.
+ * ConceptSource (REFERENCES) or ConceptRelation (SCIENTIFIC/MANUAL, by
+ * that row's own `origin`) — see core/concepts/graph.ts. Concept 2.0
+ * Phase 3: same-page/shared-tag inference no longer exists as an edge
+ * source anywhere in this app.
  */
 export function ConceptGraphView({ data }: ConceptGraphViewProps) {
   const navigate = useNavigate()
@@ -88,7 +89,7 @@ export function ConceptGraphView({ data }: ConceptGraphViewProps) {
                 y2={to.y}
                 stroke={edgeColor[edge.kind] ?? 'var(--color-border)'}
                 strokeWidth={edge.kind === 'REFERENCES' ? 1 : 1.5}
-                strokeDasharray={edge.kind === 'SHARED_TAG' ? '3 3' : undefined}
+                strokeDasharray={edge.kind === 'MANUAL' ? '3 3' : undefined}
                 opacity={0.6}
               />
             )
@@ -137,13 +138,10 @@ export function ConceptGraphView({ data }: ConceptGraphViewProps) {
           <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-border-strong)' }} /> Found in (concept → book — not a concept relationship)
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-highlight-terracotta)' }} /> Related (manual)
+          <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-accent-olive)' }} /> Scientific connection
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-accent-olive)' }} /> Found on same page
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="inline-block h-2 w-0.5 border-t border-dashed" /> Shared tag
+          <span className="inline-block h-2 w-0.5 border-t border-dashed" style={{ borderColor: 'var(--color-highlight-terracotta)' }} /> My connection
         </span>
       </div>
     </div>
