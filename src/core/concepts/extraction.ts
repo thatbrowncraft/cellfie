@@ -276,17 +276,47 @@ function tokenizeWords(text: string): string[] {
 const ACRONYM_TOKEN_RE = /^[A-Z]{2,6}$/
 
 /**
+ * Concept Hub Quality Pass §1 — OCR-fragment guard. When a PDF's text
+ * layer breaks a single word across a spurious internal space ("Gram
+ * staining" → "Gr am", "TECHNOLOGY" → "T EC HNOLOGY", "CSF" → "CS F"),
+ * `tokenizeWords` has no way to know that "Gr"/"T"/"EC"/"CS" were never
+ * standalone words — every one of them still *looks* like a capitalized
+ * token shape-wise. The one cheap, reliable signal available without a
+ * dictionary is length: a real standalone scientific word or acronym
+ * essentially never surfaces as a bare 1-2 letter fragment in running
+ * prose. A tiny curated allowlist covers the handful of genuine
+ * short-token terms this would otherwise cost ("T cell", "B cell", "X
+ * ray") — anything else that short is treated as a fragment and never
+ * even reaches the (expensive, rate-limited) online verification step.
+ */
+const KNOWN_SHORT_SCIENTIFIC_TERMS = new Set([
+  't cell', 't cells', 'b cell', 'b cells', 't lymphocyte', 'b lymphocyte',
+  'nk cell', 'nk cells', 'x ray', 'x-ray', 'rh factor', 'g protein'
+])
+
+const MIN_FRAGMENT_SAFE_WORD_LENGTH = 3
+
+function isAllowedShortToken(phraseSoFar: string, candidateFullPhraseGuess?: string): boolean {
+  const key = normalizeConceptName(phraseSoFar)
+  if (KNOWN_SHORT_SCIENTIFIC_TERMS.has(key)) return true
+  if (candidateFullPhraseGuess && KNOWN_SHORT_SCIENTIFIC_TERMS.has(normalizeConceptName(candidateFullPhraseGuess))) return true
+  return false
+}
+
+/**
  * Slides a window over a page's tokens looking for deterministic
  * scientific-term shapes: either a standalone acronym token (PCR, ELISA,
  * DNA — §4's "multi-word scientific terms" sibling case) or a run of 2-4
  * words starting with a capitalized word (Gram staining, Bacterial cell
  * wall, Crystal violet). A candidate phrase never starts or ends on a
- * stopword, and growth stops the moment a stopword is hit, so a sentence
- * like "The cell is a very important structure" never produces a
- * candidate longer than nothing at all — matching §4's bad-example list
- * exactly. Every returned string still has to pass `looksLikeConceptPhrase`
- * (shape + length + stopword-phrase checks) before a caller treats it as
- * real evidence.
+ * stopword, and growth stops the moment a stopword — or an OCR-fragment-
+ * shaped short token (see `KNOWN_SHORT_SCIENTIFIC_TERMS` above) — is hit,
+ * so a sentence like "The cell is a very important structure" never
+ * produces a candidate longer than nothing at all, and a broken word like
+ * "T EC HNOLOGY" never seeds or grows into a candidate at all. Every
+ * returned string still has to pass `looksLikeConceptPhrase` (shape +
+ * length + stopword-phrase checks) before a caller treats it as real
+ * evidence.
  */
 export function extractCandidatePhrases(pageText: string): string[] {
   const tokens = tokenizeWords(pageText)
@@ -300,8 +330,16 @@ export function extractCandidatePhrases(pageText: string): string[] {
       candidates.add(first)
     }
 
-    // Multi-word run: must start on a capitalized, non-stopword word.
+    // Multi-word run: must start on a capitalized, non-stopword word that
+    // isn't itself a bare fragment (e.g. "Gr", "T", "CS", "EC"). A short
+    // first word is still allowed to seed a run when it, together with
+    // the very next token, forms an allowlisted short term ("T cell") —
+    // otherwise a fragment this short is never worth growing at all.
     if (!/^[A-Z]/.test(first) || isStopwordToken(first)) continue
+    if (first.length < MIN_FRAGMENT_SAFE_WORD_LENGTH) {
+      const lookahead = i + 1 < tokens.length ? `${first} ${tokens[i + 1]}` : first
+      if (!isAllowedShortToken(first) && !isAllowedShortToken(lookahead)) continue
+    }
 
     for (let w = 2; w <= CANDIDATE_MAX_WINDOW && i + w <= tokens.length; w += 1) {
       const nextWord = tokens[i + w - 1]
@@ -309,7 +347,13 @@ export function extractCandidatePhrases(pageText: string): string[] {
       // stopword is reached — keeps "The Cell Wall Is Important" from
       // ever producing "Cell Wall Is".
       if (isStopwordToken(nextWord)) break
-      candidates.add(tokens.slice(i, i + w).join(' '))
+      const soFar = tokens.slice(i, i + w).join(' ')
+      // Same fragment guard applied to every word the window grows onto,
+      // not just the seed — stops "Gram" (a real word) from still
+      // growing into "Gram pos" → "Gram nega"-shaped OCR fragments where
+      // the *second* word is the broken one.
+      if (nextWord.length < MIN_FRAGMENT_SAFE_WORD_LENGTH && !isAllowedShortToken(soFar)) break
+      candidates.add(soFar)
     }
   }
 
@@ -639,6 +683,58 @@ export async function findCandidateConceptsFromKnownPages(concept: { id: string;
     .filter((c) => c.pages.length >= MIN_CANDIDATE_PAGE_OCCURRENCES)
     .sort((a, b) => b.pages.length - a.pages.length)
     .slice(0, MAX_CANDIDATES_RETURNED)
+}
+
+/**
+ * Concept Hub Quality Pass §1 — deduplication for the merged "Suggested
+ * concepts" list. Purely lexical (no semantic matching): treats B as a
+ * duplicate of A when every significant word of B is a prefix of the
+ * word in the same position of A (or vice versa) — e.g. "Gram pos" vs
+ * "Gram positive bacteria", or "Gram nega" vs "Gram-negative bacteria".
+ * The longer/more complete phrasing always wins so the visible
+ * suggestion is the canonical scientific name, never the truncated one.
+ */
+function significantWords(text: string): string[] {
+  return normalizeConceptName(text)
+    .split(/[\s-]+/)
+    .filter((w) => w.length > 0 && !isStopwordToken(w))
+}
+
+function isAbbreviationOf(shortText: string, longText: string): boolean {
+  const shortWords = significantWords(shortText)
+  const longWords = significantWords(longText)
+  if (shortWords.length === 0 || shortWords.length > longWords.length) return false
+  return shortWords.every((w, i) => {
+    const counterpart = longWords[i]
+    if (!counterpart) return false
+    return counterpart === w || counterpart.startsWith(w) || w.startsWith(counterpart)
+  })
+}
+
+/**
+ * Dedupes a list of candidate display strings, keeping the longest/most
+ * complete phrasing whenever two candidates are lexical abbreviations of
+ * each other. `getText` extracts the display string from each item;
+ * items are otherwise passed through unchanged.
+ */
+export function dedupeByAbbreviation<T>(items: T[], getText: (item: T) => string): T[] {
+  // Longest phrase first, so a shorter duplicate always merges into an
+  // already-kept longer one rather than the reverse.
+  const sorted = [...items].sort((a, b) => getText(b).length - getText(a).length)
+  const kept: T[] = []
+  for (const item of sorted) {
+    const text = getText(item)
+    const isDuplicate = kept.some((k) => {
+      const keptText = getText(k)
+      return (
+        normalizeConceptName(keptText) === normalizeConceptName(text) ||
+        isAbbreviationOf(text, keptText) ||
+        isAbbreviationOf(keptText, text)
+      )
+    })
+    if (!isDuplicate) kept.push(item)
+  }
+  return kept
 }
 
 export interface SourceExcerpt {
