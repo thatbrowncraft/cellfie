@@ -8,11 +8,8 @@ import {
   buildConceptMindMap,
   buildDetailedStudyModules,
   buildExamTools,
-  buildStudyOverview,
-  cleanDisplayText,
   computeConceptStats,
   deleteConcept,
-  discoverScientificRelations,
   extractRelatedConceptsFromKnownPages,
   fetchEuropePmcArticles,
   fetchMeshClassification,
@@ -25,7 +22,6 @@ import {
   type MeshClassification,
   type MindMapNode,
   type OnlineKnowledgeSection,
-  type StudyOverview,
   type VisualReference
 } from '@/core/concepts'
 import { EmptyStateLayout } from '@/shared/layouts'
@@ -33,6 +29,7 @@ import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/compo
 import { ConceptSourceList } from './components/ConceptSourceList'
 import { RelatedConceptsPanel } from './components/RelatedConceptsPanel'
 import { ConceptMindMap } from './components/ConceptMindMap'
+import { ConceptVisualsImport } from './components/ConceptVisualsImport'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
 import { ExamToolsPanel } from './components/ExamToolsPanel'
 import { MemoryAidCard } from './components/MemoryAidCard'
@@ -105,33 +102,6 @@ export function ConceptDetailPage() {
     if (!concept) return
     void backfillSourceRelevance(concept.id)
   }, [concept?.id])
-
-  // Study Overview Correction — the Study Overview's local-book content
-  // (§ content priority, step 2) only reads PDFs when there's no saved
-  // `concept.description` to show instead (step 1 always wins). Pulls
-  // the concept's own strongest page's actual leading prose, plus any
-  // sections the source material itself already labels — never a
-  // manufactured "Principle/Procedure/..." structure. See
-  // core/concepts/extraction.ts's buildStudyOverview for the full rule.
-  const [localOverview, setLocalOverview] = useState<StudyOverview | undefined>(undefined)
-  const [loadingLocalOverview, setLoadingLocalOverview] = useState(false)
-  useEffect(() => {
-    let cancelled = false
-    setLocalOverview(undefined)
-    if (!concept || concept.description) return
-    setLoadingLocalOverview(true)
-    buildStudyOverview(concept, sources, itemsById)
-      .then((result) => {
-        if (!cancelled) setLocalOverview(result)
-      })
-      .finally(() => {
-        if (!cancelled) setLoadingLocalOverview(false)
-      })
-    return () => {
-      cancelled = true
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [concept?.id, concept?.description, sources.length, itemsById])
 
   // Concept 2.0 Phase 1 — PRIMARY Learn-tab content. Pulls structured,
   // source-attributed sections from reliable online scientific sources
@@ -231,8 +201,19 @@ export function ConceptDetailPage() {
   // for why that data still exists (Mind Map fallback) but is no longer
   // presented here as an assertion of relatedness.
   const conceptById = useMemo(() => new Map(allConcepts.map((c) => [c.id, c])), [allConcepts])
+  // Concept Hub Refinement §3/§4/§5/§15 — Connections/Mind Map/Exam
+  // Focus/Detailed Study's "relatedEntries" must show ONLY relationships
+  // the person explicitly created. Filtered right here, the single
+  // choke point every one of those consumers reads from, so nothing
+  // downstream needs its own origin check. (core/concepts/graph.ts's
+  // buildConceptMindMap/buildKnowledgeGraph carry the same filter at
+  // their own independent query, since Mind Map doesn't go through this
+  // list.) Scientific-literature relationship data can still inform
+  // Detailed Study's "Important Functional Relationships" module — see
+  // core/concepts/detailedStudy.ts — but only via MeSH data fetched
+  // fresh for that module, never via a persisted ConceptRelation row.
   const myRelations = useMemo(
-    () => (id ? relations.filter((r) => r.conceptAId === id || r.conceptBId === id) : []),
+    () => (id ? relations.filter((r) => (r.conceptAId === id || r.conceptBId === id) && r.origin === 'manual') : []),
     [relations, id]
   )
   const relatedEntries = useMemo(
@@ -248,13 +229,14 @@ export function ConceptDetailPage() {
   )
   const relatedConcepts = useMemo(() => relatedEntries.map((e) => e.concept), [relatedEntries])
 
-  // Concept 2.0 Phase 5 — derived purely from data already in memory
-  // (onlineSections from the Learn tab fetch, relatedEntries from the
-  // relationship table above): no new network calls, instant, and
-  // recomputes automatically whenever either of those changes.
+  // Concept Hub Refinement — derived purely from data already in memory
+  // (onlineSections from the Learn tab fetch): no new network calls, no
+  // read of the relationship table (Exam Focus's compare candidates
+  // come from ExamToolsPanel's own `relatedEntries` prop directly, not
+  // through this function — see examTools.ts's own doc comment).
   const examTools = useMemo(
-    () => (concept ? buildExamTools(concept, onlineSections, relatedEntries) : { keyPoints: [], importantValues: [], quickQuestions: [] }),
-    [concept, onlineSections, relatedEntries]
+    () => (concept ? buildExamTools(concept, onlineSections) : { keyPoints: [], importantValues: [], quickQuestions: [] }),
+    [concept, onlineSections]
   )
 
   // Learn tab, Detailed Study mode — five fixed modules (Definition &
@@ -264,28 +246,23 @@ export function ConceptDetailPage() {
   // fetched above. See core/concepts/detailedStudy.ts's header comment
   // for the cross-module duplication guard.
   const detailedStudyModules = useMemo(
-    () =>
-      concept ? buildDetailedStudyModules(concept, onlineSections, meshClassification, europePmcArticles, relatedEntries) : [],
-    [concept, onlineSections, meshClassification, europePmcArticles, relatedEntries]
+    () => (concept ? buildDetailedStudyModules(concept, onlineSections, meshClassification, europePmcArticles) : []),
+    [concept, onlineSections, meshClassification, europePmcArticles]
   )
+
+  // References tab, "Scientific sources" — deduped by URL across every
+  // online tier this concept pulled from (Concept Hub Refinement §9).
+  const scientificSourceLinks = useMemo(() => {
+    const byUrl = new Map<string, { sourceUrl: string; sourceName: string }>()
+    for (const s of onlineSections) byUrl.set(s.sourceUrl, { sourceUrl: s.sourceUrl, sourceName: s.sourceName })
+    if (meshClassification) byUrl.set(meshClassification.sourceUrl, { sourceUrl: meshClassification.sourceUrl, sourceName: meshClassification.sourceName })
+    return Array.from(byUrl.values())
+  }, [onlineSections, meshClassification])
 
   // Learn tab study-mode switcher. Ephemeral (not persisted/URL-synced)
   // — matches how the existing Connections tab's related/mindmap toggle
   // already works (see `connectionsView` below).
   const [studyMode, setStudyMode] = useState<'quick' | 'detailed' | 'exam'>('quick')
-
-  // Throttled, per-concept, one-time check of this concept against the
-  // person's OTHER existing concepts for real scientific-literature
-  // evidence (core/concepts/service.ts's discoverScientificRelations).
-  // Safe to fire on every visit — it no-ops once already run for this
-  // concept. Never blocks the page.
-  const [discoveringScience, setDiscoveringScience] = useState(false)
-  useEffect(() => {
-    if (!concept) return
-    setDiscoveringScience(true)
-    discoverScientificRelations(concept.id).finally(() => setDiscoveringScience(false))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [concept?.id])
 
   const firstAndLast = useMemo(() => getFirstAndLastEncountered(sources, itemsById), [sources, itemsById])
 
@@ -339,16 +316,6 @@ export function ConceptDetailPage() {
   }
 
   const stats = computeConceptStats(concept, sources)
-
-  // Narrowed once here so the JSX below can rely on plain (non-optional)
-  // property access instead of repeating `localOverview?.` everywhere —
-  // TypeScript can't carry the narrowing from a ternary's `||` test
-  // condition into the branch's JSX, so this local is what actually
-  // fixes the "'localOverview' is possibly 'undefined'" build errors.
-  const hasLocalOverview = Boolean(
-    localOverview && (localOverview.paragraph || localOverview.sections.length > 0)
-  )
-  const overview = hasLocalOverview ? (localOverview as StudyOverview) : undefined
 
   async function handleScan(item: LibraryItem) {
     setScanning(item.id)
@@ -503,26 +470,52 @@ export function ConceptDetailPage() {
                   </div>
                 )}
 
-                {/* Detailed Study — five fixed modules, each independently
-                    source-backed or honestly marked unavailable. See
-                    core/concepts/detailedStudy.ts for the content model
-                    and the cross-module duplication guard. */}
+                {/* Detailed Study — five fixed modules, each made of one
+                    or more subsections. Subsections only ever exist
+                    when the underlying data is genuinely structured
+                    (separate MeSH fields, or a source abstract that
+                    already has its own labeled sections) — see
+                    core/concepts/detailedStudy.ts for exactly where
+                    that structure comes from and the cross-module
+                    duplication guard. Source attribution is shown per
+                    module (module-level, since a module's subsections
+                    are always built from the same one or two sources). */}
                 {studyMode === 'detailed' && (
                   <div className="flex flex-col gap-4">
-                    {detailedStudyModules.map((module) => (
-                      <div key={module.id} className="rounded-md border border-border bg-surface p-5">
+                    {detailedStudyModules.map((studyModule) => (
+                      <div key={studyModule.id} className="rounded-md border border-border bg-surface p-5">
                         <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                          {module.heading}
+                          {studyModule.heading}
                         </h3>
-                        <p
-                          className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed"
-                          style={{ overflowWrap: 'anywhere' }}
-                        >
-                          {module.content}
-                        </p>
-                        {module.available && module.sourceRefs.length > 0 && (
-                          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
-                            {module.sourceRefs.map((ref, i) => (
+                        <div className="flex flex-col gap-3">
+                          {studyModule.subsections.map((sub) => (
+                            <div key={sub.id}>
+                              {sub.heading && (
+                                <h4 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">{sub.heading}</h4>
+                              )}
+                              {sub.body && (
+                                <p
+                                  className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed"
+                                  style={{ overflowWrap: 'anywhere' }}
+                                >
+                                  {sub.body}
+                                </p>
+                              )}
+                              {sub.bullets && sub.bullets.length > 0 && (
+                                <ul className="list-disc space-y-1 pl-5 font-body text-body text-ink-primary leading-relaxed">
+                                  {sub.bullets.map((bullet, i) => (
+                                    <li key={i} style={{ overflowWrap: 'anywhere' }}>
+                                      {bullet}
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                        {studyModule.available && studyModule.sourceRefs.length > 0 && (
+                          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 border-t border-border pt-3">
+                            {studyModule.sourceRefs.map((ref, i) => (
                               <a
                                 key={i}
                                 href={ref.sourceUrl}
@@ -555,97 +548,6 @@ export function ConceptDetailPage() {
                     Concept.memoryAid field via the existing
                     updateConceptMemoryAid(), unchanged. */}
                 <MemoryAidCard concept={concept} />
-
-                {/* SECONDARY content — the person's own saved description
-                    or their own library material (Study Overview
-                    Correction). No section heading here is ever hardcoded
-                    to a subject (no "Principle"/"Procedure"/"Diagnostic
-                    Value"): a heading only renders when the source
-                    material itself already used that word. See
-                    core/concepts/extraction.ts (buildStudyOverview) and
-                    core/concepts/textDisplay.ts (splitIntoKnownSections)
-                    for where that's enforced. PDF/library material is
-                    optional supporting context, not the foundation of
-                    this Concept — see the Scientific overview card above. */}
-          <div className="rounded-md border border-border bg-surface p-5 space-y-4">
-            <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-              From your library
-            </h3>
-
-            {concept.description ? (
-              // Priority 1 — the person's own saved description, shown as-is
-              // (just the render-time word-break safety net applied).
-              <div className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed">
-                {cleanDisplayText(concept.description)}
-              </div>
-            ) : loadingLocalOverview ? (
-              <p className="font-ui text-caption text-ink-tertiary">Looking through your library…</p>
-            ) : overview ? (
-              // Priority 2 — the concept's own strongest local page, in the
-              // source's own words and, separately, the source's own
-              // section structure (only if the source actually has one).
-              <div className="space-y-4">
-                {overview.paragraph && (
-                  <div>
-                    <p className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed">
-                      {cleanDisplayText(overview.paragraph.text)}
-                    </p>
-                    <p className="mt-2 font-ui text-micro text-ink-tertiary">
-                      From your library — {overview.paragraph.bookTitle}, p. {overview.paragraph.pageNumber}
-                    </p>
-                  </div>
-                )}
-                {overview.sections.map((section) => (
-                  <div key={`${section.heading}-${section.pageNumber}`}>
-                    <h4 className="text-caption font-semibold uppercase tracking-wide text-ink-secondary mb-1">
-                      {section.heading}
-                    </h4>
-                    <p className="whitespace-pre-line text-ink-primary leading-relaxed">
-                      {cleanDisplayText(section.body)}
-                    </p>
-                    <p className="mt-1 font-ui text-micro text-ink-tertiary">
-                      {section.bookTitle}, p. {section.pageNumber}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              // Honest empty state for the SECONDARY (library) block —
-              // never a random excerpt, and never implies this is the
-              // only place to find information (the Scientific overview
-              // card above is the primary source of truth for this
-              // Concept regardless of what's here).
-              <div className="space-y-3">
-                <p className="font-body text-body text-ink-primary">
-                  {hasPdfPageSources || meaningfulSourceCount > 0
-                    ? 'Personal source available.'
-                    : 'No personal source material for this concept yet.'}
-                </p>
-                <p className="font-ui text-caption text-ink-secondary">
-                  {hasPdfPageSources
-                    ? "This concept has pages linked in your library, but none had enough real explanatory text to build an overview from — open References to view the original pages."
-                    : meaningfulSourceCount > 0
-                      ? `${meaningfulSourceCount} source${meaningfulSourceCount === 1 ? '' : 's'} linked so far, but nothing strong enough for a written overview yet.`
-                      : 'A PDF or book is optional — this concept works from the scientific overview above either way.'}
-                </p>
-                {scannableBooks.length > 0 && (
-                  <Button variant="secondary" size="small" onClick={() => setActiveConceptTab('references')}>
-                    Scan a book for this concept
-                  </Button>
-                )}
-              </div>
-            )}
-
-            {concept.tags && concept.tags.length > 0 && (
-              <div className="pt-3 border-t border-border flex flex-wrap gap-2">
-                {concept.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-surface-raised px-2.5 py-1 font-ui text-micro text-ink-secondary">
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
 
                 {(firstAndLast.first || firstAndLast.last) && (
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -722,12 +624,11 @@ export function ConceptDetailPage() {
                   <RelatedConceptsPanel
                     concept={concept}
                     relatedEntries={relatedEntries}
-                    discoveringScience={discoveringScience}
                     hasPdfPageSources={hasPdfPageSources}
                     allConcepts={allConcepts}
                   />
                 ) : (
-                  <ConceptMindMap root={mindMap} />
+                  <ConceptMindMap root={mindMap} concept={concept} />
                 )}
               </div>
             )
@@ -736,51 +637,55 @@ export function ConceptDetailPage() {
             id: 'visuals',
             label: 'Visuals',
             content: (
-              <div className="rounded-md border border-border bg-surface p-5">
-                {loadingVisuals && (
-                  <p className="font-ui text-caption text-ink-tertiary">Checking reliable scientific sources for visuals…</p>
-                )}
-                {!loadingVisuals && visuals.length > 0 && (
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {visuals.map((v, i) => (
-                      <figure key={`${v.imageUrl}-${i}`} className="overflow-hidden rounded-md border border-border">
-                        <img
-                          src={v.imageUrl}
-                          alt={v.caption}
-                          loading="lazy"
-                          className="aspect-square w-full bg-surface-raised object-contain"
-                          onError={(e) => {
-                            e.currentTarget.closest('figure')?.remove()
-                          }}
-                        />
-                        <figcaption className="flex flex-col gap-1 p-3">
-                          <span className="font-ui text-caption text-ink-primary">{v.caption}</span>
-                          <a
-                            href={v.sourceUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="flex w-fit items-center gap-1 font-ui text-micro font-medium text-olive hover:underline"
-                          >
-                            Source: {v.sourceName}
-                            <ArrowSquareOut size={12} />
-                          </a>
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                )}
-                {!loadingVisuals && visuals.length === 0 && (
-                  <div className="p-3 text-center">
-                    <p className="font-body text-body text-ink-primary">
-                      {isLikelyOnline() || !visualsChecked
-                        ? 'No suitable scientific visual found yet.'
-                        : "Online sources aren't reachable right now."}
-                    </p>
-                    <p className="mt-1 font-ui text-caption text-ink-tertiary">
-                      Diagrams and process illustrations for this concept aren't available from a reliable source yet.
-                    </p>
-                  </div>
-                )}
+              <div className="flex flex-col gap-4">
+                <div className="rounded-md border border-border bg-surface p-5">
+                  {loadingVisuals && (
+                    <p className="font-ui text-caption text-ink-tertiary">Checking reliable scientific sources for visuals…</p>
+                  )}
+                  {!loadingVisuals && visuals.length > 0 && (
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                      {visuals.map((v, i) => (
+                        <figure key={`${v.imageUrl}-${i}`} className="overflow-hidden rounded-md border border-border">
+                          <img
+                            src={v.imageUrl}
+                            alt={v.caption}
+                            loading="lazy"
+                            className="aspect-square w-full bg-surface-raised object-contain"
+                            onError={(e) => {
+                              e.currentTarget.closest('figure')?.remove()
+                            }}
+                          />
+                          <figcaption className="flex flex-col gap-1 p-3">
+                            <span className="font-ui text-caption text-ink-primary">{v.caption}</span>
+                            <a
+                              href={v.sourceUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="flex w-fit items-center gap-1 font-ui text-micro font-medium text-olive hover:underline"
+                            >
+                              Source: {v.sourceName}
+                              <ArrowSquareOut size={12} />
+                            </a>
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  )}
+                  {!loadingVisuals && visuals.length === 0 && (
+                    <div className="p-3 text-center">
+                      <p className="font-body text-body text-ink-primary">
+                        {isLikelyOnline() || !visualsChecked
+                          ? 'No suitable scientific visual found yet.'
+                          : "Online sources aren't reachable right now."}
+                      </p>
+                      <p className="mt-1 font-ui text-caption text-ink-tertiary">
+                        Diagrams and process illustrations for this concept aren't available from a reliable source yet.
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                <ConceptVisualsImport concept={concept} />
               </div>
             )
           },
@@ -796,14 +701,14 @@ export function ConceptDetailPage() {
                   <ConceptSourceList sources={sources} itemsById={itemsById} />
                 </div>
 
-                {onlineSections.length > 0 && (
+                {(onlineSections.length > 0 || meshClassification) && (
                   <div className="rounded-md border border-border bg-surface p-5">
                     <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
                       <Globe size={14} aria-hidden />
-                      Online references
+                      Scientific sources
                     </h3>
                     <div className="flex flex-col gap-2">
-                      {Array.from(new Map(onlineSections.map((s) => [s.sourceUrl, s])).values()).map((s) => (
+                      {scientificSourceLinks.map((s) => (
                         <a
                           key={s.sourceUrl}
                           href={s.sourceUrl}
