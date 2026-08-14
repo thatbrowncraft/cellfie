@@ -8,7 +8,7 @@ import { UniversalSearch } from '../shared/components/SearchField'
 import { QuickCaptureFab } from '../shared/components/QuickCaptureFab'
 import { useBreakpoint } from '../shared/hooks'
 import { searchEverything, type SearchResultGroup } from '../core/search'
-import { runAutoConceptCleanup } from '../core/concepts'
+import { runAutoConceptCleanup, purgeAutomaticScientificRelations } from '../core/concepts'
 import { NoteEditorDialog } from '../modules/notes/components/NoteEditorDialog'
 
 interface AppShellProps {
@@ -43,6 +43,17 @@ export function AppShell({ children }: AppShellProps) {
   // every app boot regardless of which page loads first.
   useEffect(() => {
     void runAutoConceptCleanup()
+  }, [])
+
+  // Concept Hub Refinement §3/§15 — one-time cleanup that deletes any
+  // 'scientific'-origin ConceptRelation rows written by the now-removed
+  // automatic literature co-occurrence discovery (see
+  // core/concepts/service.ts's purgeAutomaticScientificRelations for
+  // why this is a real deletion, not just a read-time filter). Same
+  // gated-by-appSettings-flag, safe-on-every-boot pattern as the
+  // cleanup right above it.
+  useEffect(() => {
+    void purgeAutomaticScientificRelations()
   }, [])
 
   useEffect(() => {
