@@ -238,6 +238,31 @@ export interface ConceptRelation {
   createdAt: number
 }
 
+/**
+ * Concept Hub Refinement — a per-concept asset the person creates
+ * themselves: a free-text Mind Map annotation node, an imported Mind
+ * Map diagram (image/PDF), or an imported custom Visual (image/PDF).
+ * Deliberately NOT a ConceptRelation — 'mindmap-node' has no edge to
+ * any other real Concept, so it can never be mistaken for (or leak
+ * into) a Concept-to-Concept connection. Binary content lives in OPFS
+ * (see core/file-storage), same pattern as LibraryItem.filePath; only
+ * the logical path is stored here.
+ */
+export type ConceptAssetKind = 'mindmap-node' | 'mindmap-import' | 'visual-import'
+
+export interface ConceptAsset {
+  id: string
+  conceptId: string
+  kind: ConceptAssetKind
+  /** For 'mindmap-node': the node's own free-text label. For imports: a display title (defaults to the file name). */
+  label: string
+  /** OPFS path — only present for 'mindmap-import'/'visual-import'. */
+  filePath?: string
+  /** Original MIME type — only present for 'mindmap-import'/'visual-import'; tells the viewer whether to render an <img> or the PDF viewer. */
+  mimeType?: string
+  createdAt: number
+}
+
 class CellfieDB extends Dexie {
   libraryItems!: Table<LibraryItem, string>
   collections!: Table<Collection, string>
@@ -248,6 +273,7 @@ class CellfieDB extends Dexie {
   concepts!: Table<Concept, string>
   conceptSources!: Table<ConceptSource, string>
   conceptRelations!: Table<ConceptRelation, string>
+  conceptAssets!: Table<ConceptAsset, string>
 
   constructor() {
     super('cellfie')
@@ -328,6 +354,24 @@ class CellfieDB extends Dexie {
             if (!r.origin) r.origin = 'manual'
           })
       })
+    // v6 — Concept Hub Refinement: adds `conceptAssets` only (Mind Map
+    // custom nodes/imports, Visuals custom imports — see ConceptAsset's
+    // doc comment for why this is a separate table from
+    // conceptRelations). Every prior store repeated unchanged; no
+    // existing row in any table is touched by this upgrade.
+    this.version(6).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt',
+      highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+      notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+      concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+      conceptSources:
+        'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+      conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+      conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]'
+    })
   }
 }
 
