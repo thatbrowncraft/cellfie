@@ -8,6 +8,7 @@ import {
   buildConceptMindMap,
   buildDetailedStudyModules,
   buildExamTools,
+  buildStudyMap,
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
@@ -30,6 +31,7 @@ import { ConceptSourceList } from './components/ConceptSourceList'
 import { RelatedConceptsPanel } from './components/RelatedConceptsPanel'
 import { ConceptMindMap } from './components/ConceptMindMap'
 import { ConceptVisualsImport } from './components/ConceptVisualsImport'
+import { StudyMapView } from './components/StudyMapView'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
 import { ExamToolsPanel } from './components/ExamToolsPanel'
 import { MemoryAidCard } from './components/MemoryAidCard'
@@ -249,6 +251,17 @@ export function ConceptDetailPage() {
     () => (concept ? buildDetailedStudyModules(concept, onlineSections, meshClassification, europePmcArticles) : []),
     [concept, onlineSections, meshClassification, europePmcArticles]
   )
+
+  // Concept Hub Quality Pass §9 — Visuals tab's "Generate study diagram"
+  // fallback. Same source as the Mind Map's Study Map (studyMap.ts): a
+  // deterministic reshaping of the already-verified Detailed Study
+  // modules, never a fetched image and never invented. Only offered
+  // once there's real content to draw from.
+  const visualsStudyMap = useMemo(
+    () => (concept ? buildStudyMap(concept, detailedStudyModules) : undefined),
+    [concept, detailedStudyModules]
+  )
+  const [showGeneratedDiagram, setShowGeneratedDiagram] = useState(false)
 
   // References tab, "Scientific sources" — deduped by URL across every
   // online tier this concept pulled from (Concept Hub Refinement §9).
@@ -628,7 +641,7 @@ export function ConceptDetailPage() {
                     allConcepts={allConcepts}
                   />
                 ) : (
-                  <ConceptMindMap root={mindMap} concept={concept} />
+                  <ConceptMindMap root={mindMap} concept={concept} detailedStudyModules={detailedStudyModules} />
                 )}
               </div>
             )
@@ -674,13 +687,50 @@ export function ConceptDetailPage() {
                   {!loadingVisuals && visuals.length === 0 && (
                     <div className="p-3 text-center">
                       <p className="font-body text-body text-ink-primary">
-                        {isLikelyOnline() || !visualsChecked
-                          ? 'No suitable scientific visual found yet.'
-                          : "Online sources aren't reachable right now."}
+                        {isLikelyOnline() || !visualsChecked ? 'No verified scientific visual found' : "Online sources aren't reachable right now."}
                       </p>
                       <p className="mt-1 font-ui text-caption text-ink-tertiary">
-                        Diagrams and process illustrations for this concept aren't available from a reliable source yet.
+                        {isLikelyOnline() || !visualsChecked
+                          ? "We couldn't find a suitable visual from the approved scientific sources for this concept yet."
+                          : 'Diagrams and process illustrations for this concept aren\u2019t available from a reliable source right now.'}
                       </p>
+                    </div>
+                  )}
+
+                  {/* Concept Hub Quality Pass §9 — a native, deterministically
+                      generated diagram from this concept's own verified study
+                      data, offered whenever no external image was found (or
+                      alongside real visuals — it's never a substitute the
+                      person didn't ask for). Explicitly separate from the
+                      fetched-image grid above: this is drawn by the app from
+                      structured data, not fetched from any external source. */}
+                  {!loadingVisuals && visualsStudyMap && (
+                    <div className={visuals.length === 0 ? 'mt-2' : 'mt-4 border-t border-border pt-4'}>
+                      {!showGeneratedDiagram ? (
+                        <Button variant="secondary" size="small" onClick={() => setShowGeneratedDiagram(true)}>
+                          Generate study diagram
+                        </Button>
+                      ) : (
+                        <div className="flex flex-col gap-2">
+                          <div className="flex items-center justify-between">
+                            <h4 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                              Generated study diagram
+                            </h4>
+                            <button
+                              type="button"
+                              onClick={() => setShowGeneratedDiagram(false)}
+                              className="font-ui text-micro text-ink-tertiary hover:underline"
+                            >
+                              Hide
+                            </button>
+                          </div>
+                          <p className="font-ui text-caption text-ink-tertiary">
+                            Drawn from this concept's own verified study data — not a fetched image, and not a
+                            substitute for the imported visuals below.
+                          </p>
+                          <StudyMapView root={visualsStudyMap} compact />
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
