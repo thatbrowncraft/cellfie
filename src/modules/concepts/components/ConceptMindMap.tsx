@@ -1,16 +1,21 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { UploadSimple, Link, NotePencil, TreeStructure, Trash } from '@phosphor-icons/react'
+import { UploadSimple, Link, NotePencil, TreeStructure, Trash, Sparkle } from '@phosphor-icons/react'
 import { EmptyState, Button, Dialog } from '@/shared/components'
-import type { Concept, MindMapNode } from '@/core/concepts'
+import { buildStudyMap, type Concept, type DetailedStudyModule, type MindMapNode } from '@/core/concepts'
 import { addMindMapNode, importConceptAssetFile, listConceptAssets, removeConceptAsset } from '@/core/concepts/assets'
 import type { ConceptAsset } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
 import { useOpfsObjectUrl } from '@/modules/library/hooks/useOpfsObjectUrl'
+import { StudyMapView } from './StudyMapView'
 
 interface ConceptMindMapProps {
   root: MindMapNode
   concept: Concept
+  /** Concept Hub Quality Pass §2 — Detailed Study's already-verified
+   *  modules, reused (never re-fetched) to build the "Study Map" tab.
+   *  See core/concepts/studyMap.ts. */
+  detailedStudyModules: DetailedStudyModule[]
 }
 
 /**
@@ -33,7 +38,7 @@ interface ConceptMindMapProps {
  * separately again (kind 'mindmap-import') and listed below the tree,
  * not merged into it — see core/concepts/assets.ts.
  */
-export function ConceptMindMap({ root, concept }: ConceptMindMapProps) {
+export function ConceptMindMap({ root, concept, detailedStudyModules }: ConceptMindMapProps) {
   const navigate = useNavigate()
   const [addNodeOpen, setAddNodeOpen] = useState(false)
   const [nodeLabel, setNodeLabel] = useState('')
@@ -43,6 +48,15 @@ export function ConceptMindMap({ root, concept }: ConceptMindMapProps) {
   const [viewingImport, setViewingImport] = useState<ConceptAsset | undefined>(undefined)
 
   const imports = useLiveQuery<ConceptAsset[]>(() => listConceptAssets(concept.id, 'mindmap-import'), [concept.id], [])
+
+  // Concept Hub Quality Pass §2/§5 — "My Concept Map" (user-created
+  // ConceptRelations only) and "Study Map" (generated from verified
+  // scientific data, see studyMap.ts) are two clearly separate views,
+  // never merged into one graph. Defaults to whichever actually has
+  // something to show: the person's own map if they've built one,
+  // otherwise the generated Study Map so the tab isn't just a dead end.
+  const studyMap = useMemo(() => buildStudyMap(concept, detailedStudyModules), [concept, detailedStudyModules])
+  const [view, setView] = useState<'mine' | 'study'>(root.children.length > 0 ? 'mine' : 'study')
 
   async function handleAddNode() {
     const trimmed = nodeLabel.trim()
@@ -102,29 +116,62 @@ export function ConceptMindMap({ root, concept }: ConceptMindMapProps) {
       </div>
       {importError && <p className="font-ui text-caption text-error">{importError}</p>}
 
-      {root.children.length === 0 ? (
-        <EmptyState
-          icon={<TreeStructure size={32} />}
-          title="No concept connections yet."
-          description="Connect this concept to another concept from the Connections tab, or add a node of your own above, and this mind map will branch out from here."
-        />
-      ) : (
-        <div className="flex flex-col items-start gap-3">
-          <div className="rounded-lg bg-terracotta px-4 py-2 font-ui text-body font-medium text-canvas">
-            {root.label}
+      {/* Concept Hub Quality Pass §5 — "My Concept Map" and "Study Map"
+          are two distinct views of two distinct data sources; switching
+          between them never mixes the two into one graph. */}
+      <div className="flex gap-2 border-b border-border pb-3">
+        <Button variant={view === 'mine' ? 'primary' : 'secondary'} size="small" onClick={() => setView('mine')}>
+          My concept map
+        </Button>
+        <Button
+          variant={view === 'study' ? 'primary' : 'secondary'}
+          size="small"
+          icon={<Sparkle size={14} />}
+          onClick={() => setView('study')}
+        >
+          Study map
+        </Button>
+      </div>
+
+      {view === 'mine' ? (
+        root.children.length === 0 ? (
+          <EmptyState
+            icon={<TreeStructure size={32} />}
+            title="No concept connections yet."
+            description="Connect this concept to another concept from the Connections tab, or add a node of your own above, and this mind map will branch out from here."
+          />
+        ) : (
+          <div className="flex flex-col items-start gap-3">
+            <div className="rounded-lg bg-terracotta px-4 py-2 font-ui text-body font-medium text-canvas">
+              {root.label}
+            </div>
+            <div className="flex w-full flex-col gap-2 border-l-2 border-border pl-4">
+              {root.children.map((child) => (
+                <MindMapBranch key={child.id} node={child} onNavigate={(id) => navigate(`/concepts/${id}`)} />
+              ))}
+            </div>
           </div>
-          <div className="flex w-full flex-col gap-2 border-l-2 border-border pl-4">
-            {root.children.map((child) => (
-              <MindMapBranch key={child.id} node={child} onNavigate={(id) => navigate(`/concepts/${id}`)} />
-            ))}
-          </div>
+        )
+      ) : studyMap ? (
+        <div className="flex flex-col gap-2">
+          <p className="font-ui text-caption text-ink-tertiary">
+            Generated from this concept's verified study data — a visual explanation, not a connections graph. It's
+            never saved as a Connection and never appears in "My concept map" above.
+          </p>
+          <StudyMapView root={studyMap} />
         </div>
+      ) : (
+        <EmptyState
+          icon={<Sparkle size={32} />}
+          title="Not enough verified study data yet."
+          description="Once Detailed Study has verified content for this concept (Definition, Classification, Structure, Mechanism, or Relationships), a Study Map will generate here automatically."
+        />
       )}
 
       {imports.length > 0 && (
         <div>
           <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-            Imported mind maps
+            Imported maps
           </h3>
           <div className="flex flex-col gap-2">
             {imports.map((asset) => (

@@ -5,19 +5,34 @@ import { SearchField, EmptyState, Button } from '@/shared/components'
 import type { Concept, ConceptRelation } from '@/core/db'
 import {
   addConceptRelation,
+  dedupeByAbbreviation,
   fetchOnlineRelated,
   findCandidateConceptsFromKnownPages,
   isLikelyOnline,
   promoteConceptCandidate,
   removeConceptRelation,
-  verifyCandidateExists,
-  type OnlineRelatedItem,
-  type SourceCandidate
+  verifyCandidateExists
 } from '@/core/concepts'
 
 export interface RelatedConceptEntry {
   concept: Concept
   relation: ConceptRelation
+}
+
+/**
+ * Concept Hub Quality Pass §1 — a single, unified shape for every
+ * candidate shown in "Suggested concepts", whether it came from an
+ * online reference lookup or from text mined on this concept's own
+ * source pages. Both kinds must pass the same scientific-verification
+ * bar before a candidate is ever constructed, so by the time something
+ * is a `VerifiedSuggestion` it's already earned its place — there is no
+ * separate "unverified" tier anymore.
+ */
+interface VerifiedSuggestion {
+  key: string
+  displayText: string
+  sourceLabel: string
+  evidencePages: { libraryItemId: string; pageNumber: number }[]
 }
 
 interface RelatedConceptsPanelProps {
@@ -33,13 +48,11 @@ export function RelatedConceptsPanel({ concept, relatedEntries, hasPdfPageSource
   const navigate = useNavigate()
   const [query, setQuery] = useState('')
   const [adding, setAdding] = useState(false)
-  const [sourceCandidates, setSourceCandidates] = useState<SourceCandidate[] | undefined>(undefined)
-  const [scanningSources, setScanningSources] = useState(false)
-  const [verifyingSources, setVerifyingSources] = useState(false)
   const [promotingKey, setPromotingKey] = useState<string | undefined>(undefined)
-  const [onlineSuggestions, setOnlineSuggestions] = useState<OnlineRelatedItem[] | undefined>(undefined)
-  const [loadingOnline, setLoadingOnline] = useState(false)
-  const [onlinePromotingTitle, setOnlinePromotingTitle] = useState<string | undefined>(undefined)
+  const [suggestions, setSuggestions] = useState<VerifiedSuggestion[] | undefined>(undefined)
+  const [loadingSuggestions, setLoadingSuggestions] = useState(false)
+  const [loadingStage, setLoadingStage] = useState<'online' | 'source' | 'verifying' | undefined>(undefined)
+  const [verificationUnavailable, setVerificationUnavailable] = useState(false)
 
   // Concept Hub Refinement §5 — "My Connections" is now the ONLY thing
   // this panel's main list ever shows: relationships the person
@@ -70,76 +83,87 @@ export function RelatedConceptsPanel({ concept, relatedEntries, hasPdfPageSource
     [allConcepts]
   )
 
-  // Knowledge Model Correction §9/§10/§11 — explicit, on-demand only:
-  // reads this concept's own known source pages for candidate phrases
-  // that aren't concepts yet. Nothing here writes anything until the
-  // person clicks "Add concept" on a specific suggestion. Each raw
-  // text-mined candidate is weakly verified against the same
-  // Wikipedia-free source hierarchy used elsewhere (does PubMed or a
-  // general reference actually have something for this phrase?) before
-  // it's shown — drops OCR fragments and sentence fragments, though a
-  // candidate that's a real reference entry but not actually a
-  // scientific concept can still slip through; "Suggested scientific
-  // concepts" below is the higher-confidence source and should usually
-  // be tried first.
-  async function handleFindSourceCandidates() {
-    setScanningSources(true)
-    setSourceCandidates(undefined)
+  /**
+   * Concept Hub Quality Pass §1 — the ONE "Suggested concepts" pipeline.
+   * Replaces the old two-panel split (a high-confidence online list plus
+   * a separate "unverified terms" list shown with no scientific gate at
+   * all when offline). Now every candidate — whether it comes from an
+   * online reference lookup or from text mined on this concept's own
+   * source pages — must clear the same bar before it is ever placed in
+   * state:
+   *
+   *   1. Online-related lookups (`fetchOnlineRelated`) are already
+   *      source-attributed to a real page, so they pass as-is.
+   *   2. Page-text-mined phrases (`findCandidateConceptsFromKnownPages`)
+   *      are pre-filtered for OCR-fragment shapes (see extraction.ts),
+   *      then EACH one must individually clear `verifyCandidateExists`
+   *      (a real PubMed/general-reference hit) before it is added to the
+   *      list. If the app is offline, text-mined candidates are not
+   *      shown at all — a raw, unverified guess is worse than nothing.
+   *   3. The combined, verified list is deduplicated by lexical
+   *      abbreviation (`dedupeByAbbreviation`) so "Gram pos" and "Gram
+   *      positive bacteria" never both appear.
+   *
+   * If nothing survives, the UI shows "No verified related concepts
+   * found yet." — never an empty-looking dead end, and never a pile of
+   * weak suggestions just to have something to show.
+   */
+  async function handleFindSuggestions() {
+    setLoadingSuggestions(true)
+    setSuggestions(undefined)
+    setVerificationUnavailable(false)
     try {
-      const found = await findCandidateConceptsFromKnownPages(concept)
-      if (!isLikelyOnline()) {
-        setSourceCandidates(found)
-        return
+      const collected: VerifiedSuggestion[] = []
+
+      setLoadingStage('online')
+      const online = await fetchOnlineRelated(concept.name)
+      for (const item of online) {
+        const key = item.title.trim().toLowerCase()
+        if (existingNameKeys.has(key)) continue
+        collected.push({ key, displayText: item.title, sourceLabel: item.sourceName, evidencePages: [] })
       }
-      setScanningSources(false)
-      setVerifyingSources(true)
-      const verified: SourceCandidate[] = []
-      for (const candidate of found) {
-        // Sequential, not Promise.all — this hits a public API and
-        // shouldn't fire a burst of dozens of simultaneous requests.
-        if (await verifyCandidateExists(candidate.displayText)) verified.push(candidate)
+
+      if (hasPdfPageSources) {
+        setLoadingStage('source')
+        const fromPages = await findCandidateConceptsFromKnownPages(concept)
+        if (!isLikelyOnline()) {
+          // Cannot verify right now — do not show raw, unverified
+          // text-mined candidates. The online-sourced ones above (which
+          // may have come from cache) can still stand on their own.
+          setVerificationUnavailable(fromPages.length > 0)
+        } else {
+          setLoadingStage('verifying')
+          for (const candidate of fromPages) {
+            // Sequential, not Promise.all — this hits a public API and
+            // shouldn't fire a burst of dozens of simultaneous requests.
+            const verified = await verifyCandidateExists(candidate.displayText)
+            if (!verified) continue
+            collected.push({
+              key: candidate.normalizedName,
+              displayText: candidate.displayText,
+              sourceLabel: 'your source pages',
+              evidencePages: candidate.pages
+            })
+          }
+        }
       }
-      setSourceCandidates(verified)
+
+      setSuggestions(dedupeByAbbreviation(collected, (s) => s.displayText))
     } finally {
-      setScanningSources(false)
-      setVerifyingSources(false)
+      setLoadingSuggestions(false)
+      setLoadingStage(undefined)
     }
   }
 
-  // Concept 2.0 §6/§14 — concepts reliable online sources associate with
-  // this one that AREN'T in the person's library yet. Presented as
-  // suggestions only; nothing is created until "Add concept" is clicked,
-  // and nothing is auto-added in bulk (§6: "prevents the Concepts
-  // library from being filled with hundreds of unwanted entries").
-  async function handleFindOnlineSuggestions() {
-    setLoadingOnline(true)
-    try {
-      const found = await fetchOnlineRelated(concept.name)
-      setOnlineSuggestions(found.filter((f) => !existingNameKeys.has(f.title.trim().toLowerCase())))
-    } finally {
-      setLoadingOnline(false)
-    }
-  }
-
-  async function handlePromoteOnlineSuggestion(item: OnlineRelatedItem) {
-    setOnlinePromotingTitle(item.title)
-    try {
-      await promoteConceptCandidate({ name: item.title, evidence: [], relateToConceptId: concept.id })
-      setOnlineSuggestions((prev) => prev?.filter((s) => s.title !== item.title))
-    } finally {
-      setOnlinePromotingTitle(undefined)
-    }
-  }
-
-  async function handlePromoteCandidate(candidate: SourceCandidate) {
-    setPromotingKey(candidate.normalizedName)
+  async function handlePromoteSuggestion(suggestion: VerifiedSuggestion) {
+    setPromotingKey(suggestion.key)
     try {
       await promoteConceptCandidate({
-        name: candidate.displayText,
-        evidence: candidate.pages,
+        name: suggestion.displayText,
+        evidence: suggestion.evidencePages,
         relateToConceptId: concept.id
       })
-      setSourceCandidates((prev) => prev?.filter((c) => c.normalizedName !== candidate.normalizedName))
+      setSuggestions((prev) => prev?.filter((s) => s.key !== suggestion.key))
     } finally {
       setPromotingKey(undefined)
     }
@@ -224,105 +248,55 @@ export function RelatedConceptsPanel({ concept, relatedEntries, hasPdfPageSource
         <div className="mb-2 flex items-center justify-between">
           <h4 className="flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
             <Globe size={14} aria-hidden />
-            Suggested scientific concepts
+            Suggested concepts
           </h4>
-          {!onlineSuggestions && (
+          {!suggestions && (
             <button
               type="button"
-              onClick={() => void handleFindOnlineSuggestions()}
-              disabled={loadingOnline}
+              onClick={() => void handleFindSuggestions()}
+              disabled={loadingSuggestions}
               className="flex items-center gap-1.5 font-ui text-caption font-medium text-olive hover:underline disabled:cursor-not-allowed disabled:text-ink-tertiary disabled:no-underline"
             >
               <MagnifyingGlass size={14} />
-              {loadingOnline ? 'Checking online sources…' : 'Find suggestions'}
+              {loadingStage === 'online' && 'Checking online sources…'}
+              {loadingStage === 'source' && 'Scanning your source pages…'}
+              {loadingStage === 'verifying' && 'Verifying candidates…'}
+              {!loadingStage && 'Find suggestions'}
             </button>
           )}
         </div>
         <p className="mb-3 font-ui text-caption text-ink-secondary">
-          Reliable online reference sources associate these with "{concept.name}" — not concepts in your library yet.
-          Adding one creates the concept and links it here as your own connection; nothing is added automatically.
+          Scientifically verified concepts that may be useful to add to your study network — checked against
+          reliable reference sources before they're shown. Adding one creates the concept and links it here as your
+          own connection; nothing is added automatically.
         </p>
 
-        {onlineSuggestions && onlineSuggestions.length === 0 && (
+        {suggestions && suggestions.length === 0 && (
           <p className="mb-4 font-ui text-caption text-ink-tertiary">
-            {isLikelyOnline()
-              ? 'No strong related concepts found.'
-              : 'Online knowledge unavailable. Your local library and saved knowledge are still available.'}
+            {verificationUnavailable
+              ? 'No verified related concepts found yet. Some candidates were found in your source text but could not be verified while offline.'
+              : 'No verified related concepts found yet.'}
           </p>
         )}
 
-        {onlineSuggestions && onlineSuggestions.length > 0 && (
-          <ul className="mb-4 flex flex-col gap-2">
-            {onlineSuggestions.map((item) => (
-              <li
-                key={item.title}
-                className="flex items-center justify-between gap-3 rounded-md border border-border bg-surface px-3 py-2"
-              >
-                <div>
-                  <p className="font-ui text-body font-medium text-ink-primary">{item.title}</p>
-                  <p className="font-ui text-micro text-ink-tertiary">Source: {item.sourceName}</p>
-                </div>
-                <Button
-                  variant="secondary"
-                  size="small"
-                  disabled={onlinePromotingTitle === item.title}
-                  onClick={() => void handlePromoteOnlineSuggestion(item)}
-                >
-                  {onlinePromotingTitle === item.title ? 'Adding…' : 'Add concept'}
-                </Button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      <div className="border-t border-border pt-4">
-        <div className="mb-2 flex items-center justify-between">
-          <h4 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-            Unverified terms found in your source text
-          </h4>
-          {!sourceCandidates && (
-            <button
-              type="button"
-              onClick={() => void handleFindSourceCandidates()}
-              disabled={scanningSources || verifyingSources || !hasPdfPageSources}
-              className="flex items-center gap-1.5 font-ui text-caption font-medium text-olive hover:underline disabled:cursor-not-allowed disabled:text-ink-tertiary disabled:no-underline"
-            >
-              <MagnifyingGlass size={14} />
-              {scanningSources ? 'Scanning your source pages…' : verifyingSources ? 'Checking online sources…' : 'Find related concepts'}
-            </button>
-          )}
-        </div>
-        <p className="mb-3 font-ui text-caption text-ink-secondary">
-          Repeated capitalized terms from this concept's own source pages, weakly checked against online reference
-          sources to drop obvious junk. Not verified as scientifically meaningful — review before adding. Nothing
-          here is created automatically.
-        </p>
-
-        {sourceCandidates && sourceCandidates.length === 0 && (
-          <p className="font-ui text-caption text-ink-tertiary">No strong related concepts found.</p>
-        )}
-
-        {sourceCandidates && sourceCandidates.length > 0 && (
+        {suggestions && suggestions.length > 0 && (
           <ul className="flex flex-col gap-2">
-            {sourceCandidates.map((candidate) => (
+            {suggestions.map((s) => (
               <li
-                key={candidate.normalizedName}
+                key={s.key}
                 className="flex items-center justify-between gap-3 rounded-md border border-border bg-surface px-3 py-2"
               >
                 <div>
-                  <p className="font-ui text-body font-medium text-ink-primary">{candidate.displayText}</p>
-                  <p className="font-ui text-micro text-ink-tertiary">
-                    {candidate.pages.length} shared page{candidate.pages.length === 1 ? '' : 's'}
-                  </p>
+                  <p className="font-ui text-body font-medium text-ink-primary">{s.displayText}</p>
+                  <p className="font-ui text-micro text-ink-tertiary">Source: {s.sourceLabel}</p>
                 </div>
                 <Button
                   variant="secondary"
                   size="small"
-                  disabled={promotingKey === candidate.normalizedName}
-                  onClick={() => void handlePromoteCandidate(candidate)}
+                  disabled={promotingKey === s.key}
+                  onClick={() => void handlePromoteSuggestion(s)}
                 >
-                  {promotingKey === candidate.normalizedName ? 'Adding…' : 'Add concept'}
+                  {promotingKey === s.key ? 'Adding…' : 'Add concept'}
                 </Button>
               </li>
             ))}
