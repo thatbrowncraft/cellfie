@@ -8,7 +8,7 @@ import {
   buildConceptMindMap,
   buildDetailedStudyModules,
   buildExamTools,
-  buildStudyMap,
+  buildGeneratedVisual,
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
@@ -31,7 +31,7 @@ import { ConceptSourceList } from './components/ConceptSourceList'
 import { RelatedConceptsPanel } from './components/RelatedConceptsPanel'
 import { ConceptMindMap } from './components/ConceptMindMap'
 import { ConceptVisualsImport } from './components/ConceptVisualsImport'
-import { StudyMapView } from './components/StudyMapView'
+import { GeneratedVisualCard } from './components/GeneratedVisualCard'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
 import { ExamToolsPanel } from './components/ExamToolsPanel'
 import { MemoryAidCard } from './components/MemoryAidCard'
@@ -252,13 +252,16 @@ export function ConceptDetailPage() {
     [concept, onlineSections, meshClassification, europePmcArticles]
   )
 
-  // Concept Hub Quality Pass §9 — Visuals tab's "Generate study diagram"
-  // fallback. Same source as the Mind Map's Study Map (studyMap.ts): a
-  // deterministic reshaping of the already-verified Detailed Study
-  // modules, never a fetched image and never invented. Only offered
-  // once there's real content to draw from.
-  const visualsStudyMap = useMemo(
-    () => (concept ? buildStudyMap(concept, detailedStudyModules) : undefined),
+  // Mind Map / Visuals redesign §10/§11 — Visuals tab's native
+  // illustration fallback. Deliberately a DIFFERENT builder from the
+  // Mind Map's Study Map (studyMap.ts): generatedVisual.ts favors
+  // Structure/Classification "parts" data and produces a flat labeled
+  // figure, never the branching flowchart. Only offered once there's
+  // real content to draw from, and only ever alongside/after a check
+  // for real external visuals — never a substitute the person didn't
+  // ask for.
+  const generatedVisual = useMemo(
+    () => (concept ? buildGeneratedVisual(concept, detailedStudyModules) : undefined),
     [concept, detailedStudyModules]
   )
   const [showGeneratedDiagram, setShowGeneratedDiagram] = useState(false)
@@ -697,38 +700,29 @@ export function ConceptDetailPage() {
                     </div>
                   )}
 
-                  {/* Concept Hub Quality Pass §9 — a native, deterministically
-                      generated diagram from this concept's own verified study
-                      data, offered whenever no external image was found (or
-                      alongside real visuals — it's never a substitute the
-                      person didn't ask for). Explicitly separate from the
-                      fetched-image grid above: this is drawn by the app from
-                      structured data, not fetched from any external source. */}
-                  {!loadingVisuals && visualsStudyMap && (
+                  {/* Mind Map / Visuals redesign §10/§11 — a native
+                      illustration built from this concept's own verified
+                      structured data (generatedVisual.ts), offered whenever
+                      no external image was found (or alongside real visuals
+                      — it's never a substitute the person didn't ask for).
+                      This is a labeled figure, not the Study Map: see
+                      GeneratedVisualCard's own header comment. */}
+                  {!loadingVisuals && generatedVisual && (
                     <div className={visuals.length === 0 ? 'mt-2' : 'mt-4 border-t border-border pt-4'}>
                       {!showGeneratedDiagram ? (
                         <Button variant="secondary" size="small" onClick={() => setShowGeneratedDiagram(true)}>
-                          Generate study diagram
+                          Generate illustration
                         </Button>
                       ) : (
                         <div className="flex flex-col gap-2">
-                          <div className="flex items-center justify-between">
-                            <h4 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                              Generated study diagram
-                            </h4>
-                            <button
-                              type="button"
-                              onClick={() => setShowGeneratedDiagram(false)}
-                              className="font-ui text-micro text-ink-tertiary hover:underline"
-                            >
-                              Hide
-                            </button>
-                          </div>
-                          <p className="font-ui text-caption text-ink-tertiary">
-                            Drawn from this concept's own verified study data — not a fetched image, and not a
-                            substitute for the imported visuals below.
-                          </p>
-                          <StudyMapView root={visualsStudyMap} compact />
+                          <button
+                            type="button"
+                            onClick={() => setShowGeneratedDiagram(false)}
+                            className="self-end font-ui text-micro text-ink-tertiary hover:underline"
+                          >
+                            Hide
+                          </button>
+                          <GeneratedVisualCard visual={generatedVisual} />
                         </div>
                       )}
                     </div>
