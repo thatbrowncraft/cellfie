@@ -97,9 +97,11 @@
  * tier — PubChem PUG REST — tried for every concept (not gated by a
  * keyword guess): it simply returns nothing for non-chemical names, so
  * no "if this concept is a chemical" branching is needed. PDF/library
- * material is intentionally NOT part of this function — see
- * `buildStudyOverview` in extraction.ts for that, now rendered as a
- * separate, clearly-secondary "From your library" block by the caller.
+ * material is intentionally NOT part of this function — `buildStudyOverview`
+ * in extraction.ts is that separate, PDF-only path; as of Concept Hub
+ * Refinement it is no longer called from the Learn tab (its badly-OCR'd
+ * "From your library" rendering was removed), but the function itself is
+ * untouched — nothing about a person's books or IndexedDB data changed.
  */
 
 import { db } from '../db'
@@ -843,77 +845,17 @@ export async function fetchEuropePmcArticles(name: string): Promise<EuropePmcArt
 }
 
 // ---------------------------------------------------------------------
-// Concept 2.0 Phase 2 — real scientific relationship evidence between
-// two of the person's own concepts (core/concepts/service.ts's
-// discoverScientificRelations). Deliberately generic: this never asks
-// "is this DNA-and-RNA" or branches on what the concepts ARE — it asks
-// PubMed whether any real peer-reviewed paper discusses both names
-// together, which works identically for any pair. A hit is real
-// evidence (both names appear in an actual published paper found by a
-// live search); the absence of a hit is an honest "no verified
-// relationship", not evidence of no relationship (see the §6 "No
-// verified relationship found among your current concepts" empty
-// state) — many real relationships won't be phrased as one paper
-// mentioning both exact concept names, and that's a known, accepted
-// limitation of a no-AI, no-backend design rather than something this
-// function should paper over with a guess.
+// Concept Hub Refinement §3/§4/§15 — this file's PubMed co-occurrence
+// "two names in one paper" tier (formerly `fetchScientificRelationEvidence`)
+// has been removed. Literature co-occurrence is NOT evidence that the
+// person has connected two concepts, and this app must never again
+// write it into ConceptRelation — see core/concepts/service.ts's
+// `purgeAutomaticScientificRelations` for the corresponding cleanup of
+// rows this tier wrote in earlier versions. MeSH-based relationship
+// data (fetchMeshClassification, above) remains available to Detailed
+// Study's "Important Functional Relationships" module ONLY — it is
+// never persisted as a ConceptRelation.
 // ---------------------------------------------------------------------
-
-export interface ScientificRelationEvidence {
-  /** A short, generic description of WHY these two are connected — never a specific biological/technical claim this app authored. */
-  relationType: string
-  /** The actual source text (a real paper's own title) this relation is grounded in. Never invented. */
-  evidence: string
-  sourceName: string
-  sourceUrl: string
-}
-
-/**
- * Tier — PubMed co-occurrence. Searches for a paper whose title/abstract
- * mentions BOTH concept names; if one exists, its own title (verbatim)
- * becomes the evidence and its PubMed page is the source. Returns
- * `undefined` (never a guess) when offline, the request fails, or no
- * such paper exists. Cached per unordered name pair.
- */
-export async function fetchScientificRelationEvidence(
-  nameA: string,
-  nameB: string
-): Promise<ScientificRelationEvidence | undefined> {
-  const a = nameA.trim()
-  const b = nameB.trim()
-  if (!a || !b || a.toLowerCase() === b.toLowerCase()) return undefined
-
-  const pairKey = [a.toLowerCase(), b.toLowerCase()].sort().join('::')
-  const key = `pair:${pairKey}`
-  const cached = await readCache<ScientificRelationEvidence>(key)
-  if (cached && isFresh(cached)) return cached.value ?? undefined
-  if (!isLikelyOnline()) return cached?.value ?? undefined
-
-  const term = encodeURIComponent(`"${a}"[tiab] AND "${b}"[tiab]`)
-  const searchData = (await fetchJson(
-    `${NCBI_EUTILS_BASE}/esearch.fcgi?db=pubmed&retmode=json&retmax=1&sort=relevance&term=${term}`
-  )) as { esearchresult?: { idlist?: string[] } } | undefined
-
-  const pmid = searchData?.esearchresult?.idlist?.[0]
-  let result: ScientificRelationEvidence | undefined
-  if (pmid) {
-    const summaryData = (await fetchJson(`${NCBI_EUTILS_BASE}/esummary.fcgi?db=pubmed&retmode=json&id=${pmid}`)) as
-      | { result?: Record<string, { title?: string }> }
-      | undefined
-    const title = summaryData?.result?.[pmid]?.title?.trim()
-    if (title) {
-      result = {
-        relationType: 'Discussed together in peer-reviewed literature',
-        evidence: title,
-        sourceName: 'PubMed (NCBI)',
-        sourceUrl: `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`
-      }
-    }
-  }
-
-  await writeCache(key, result ?? null)
-  return result
-}
 
 // ---------------------------------------------------------------------
 // Concept 2.0 Phase 4 — online scientific Visuals. Same rules as every

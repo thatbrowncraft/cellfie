@@ -8,7 +8,7 @@
 
 import { db, type Concept, type ConceptRelation, type ConceptSource, type ConceptSourceType } from '../db'
 import { normalizeConceptName } from './normalize'
-import { fetchScientificRelationEvidence, isLikelyOnline, type ScientificRelationEvidence } from './onlineKnowledge'
+import { removeAllConceptAssetsFor } from './assets'
 
 export interface ConceptInput {
   name: string
@@ -118,6 +118,9 @@ export async function deleteConcept(id: string): Promise<void> {
     const asB = await db.conceptRelations.where('conceptBId').equals(id).toArray()
     await Promise.all([...asA, ...asB].map((r) => db.conceptRelations.delete(r.id)))
   })
+  // Outside the Dexie transaction — this also deletes OPFS files, which
+  // shouldn't run inside an IndexedDB transaction's lifetime.
+  await removeAllConceptAssetsFor(id)
 }
 
 export interface LinkSourceInput {
@@ -191,41 +194,6 @@ export async function addConceptRelation(conceptAId: string, conceptBId: string)
   return relation
 }
 
-/**
- * Concept 2.0 Phase 2 — records an evidence-backed ("Scientific
- * connection") relation. Never called from a click; only from
- * `discoverScientificRelations` below, once `fetchScientificRelationEvidence`
- * has actually found a real source. Same de-dupe rule as
- * `addConceptRelation`: a pair that already has a relation (either
- * origin) keeps its existing row rather than getting a second edge.
- */
-export async function addScientificConceptRelation(
-  conceptAId: string,
-  conceptBId: string,
-  evidence: ScientificRelationEvidence
-): Promise<ConceptRelation | undefined> {
-  if (conceptAId === conceptBId) return undefined
-  const [a, b] = [conceptAId, conceptBId].sort()
-  const existing = await db.conceptRelations
-    .where('[conceptAId+conceptBId]')
-    .equals([a, b])
-    .first()
-  if (existing) return existing
-  const relation: ConceptRelation = {
-    id: crypto.randomUUID(),
-    conceptAId: a,
-    conceptBId: b,
-    origin: 'scientific',
-    relationType: evidence.relationType,
-    evidence: evidence.evidence,
-    sourceName: evidence.sourceName,
-    sourceUrl: evidence.sourceUrl,
-    createdAt: Date.now()
-  }
-  await db.conceptRelations.add(relation)
-  return relation
-}
-
 export async function removeConceptRelation(id: string): Promise<void> {
   await db.conceptRelations.delete(id)
 }
@@ -238,68 +206,30 @@ export async function getRelatedConceptIds(conceptId: string): Promise<string[]>
   return [...asA.map((r) => r.conceptBId), ...asB.map((r) => r.conceptAId)]
 }
 
-const SCIENTIFIC_DISCOVERY_KEY_PREFIX = 'scientificRelationDiscovery:v1:'
-/** Soft ceiling on how many of the person's OTHER concepts get checked per visit — a large library shouldn't turn one page-open into dozens of sequential PubMed calls. */
-const MAX_DISCOVERY_PEERS = 15
-
-export interface ScientificDiscoveryResult {
-  /** False when this concept was already checked before (or we're offline) — safe to call unconditionally on every visit. */
-  ran: boolean
-  checked: number
-  found: number
-}
+const SCIENTIFIC_RELATION_PURGE_KEY = 'scientificRelationPurge:v1'
 
 /**
- * Concept 2.0 Phase 2 — one-time, per-concept pass that checks this
- * concept against up to `MAX_DISCOVERY_PEERS` of the person's OTHER
- * existing concepts (not yet related to it) for real evidence of a
- * scientific relationship (see `fetchScientificRelationEvidence`), and
- * stores a `'scientific'`-origin `ConceptRelation` for every real hit.
- * Deliberately does NOT try to discover brand-new concepts online —
- * that's `fetchOnlineRelated`'s job (surfaced as "Suggested scientific
- * concepts", added to the library only on an explicit click). This
- * function only ever connects concepts the person already has. Gated by
- * an `appSettings` flag per concept (same pattern as
- * `backfillSourceRelevance`), so it's safe to call unconditionally on
- * every concept-detail visit; a library that grows later gets checked
- * again the next time this concept's flag is cleared (it currently
- * isn't — matches "run once per concept" scope for this phase).
+ * Concept Hub Refinement §3/§4/§5/§15 — one-time cleanup that deletes
+ * every 'scientific'-origin ConceptRelation row ever written by the
+ * now-removed automatic co-occurrence discovery (formerly
+ * `discoverScientificRelations`/`addScientificConceptRelation`, both
+ * deleted — literature co-occurrence must never again be written as a
+ * Concept-to-Concept relationship). This is the actual data-layer fix:
+ * ConceptDetailPage.tsx and core/concepts/graph.ts also filter reads to
+ * `origin === 'manual'` as defense in depth, but this purge is what
+ * makes a bad edge (e.g. an existing "DNA \u2194 Gram staining" row from
+ * a prior version of the app) actually gone from IndexedDB, not merely
+ * hidden. Idempotent and safe to call unconditionally on every app
+ * boot — the `appSettings` flag makes every run after the first a
+ * single cheap lookup.
  */
-export async function discoverScientificRelations(conceptId: string): Promise<ScientificDiscoveryResult> {
-  const settingsKey = `${SCIENTIFIC_DISCOVERY_KEY_PREFIX}${conceptId}`
-  const already = await db.appSettings.get(settingsKey)
-  if (already) return { ran: false, checked: 0, found: 0 }
-  if (!isLikelyOnline()) return { ran: false, checked: 0, found: 0 }
-
-  const concept = await db.concepts.get(conceptId)
-  if (!concept) return { ran: false, checked: 0, found: 0 }
-
-  const [allConcepts, asA, asB] = await Promise.all([
-    db.concepts.toArray(),
-    db.conceptRelations.where('conceptAId').equals(conceptId).toArray(),
-    db.conceptRelations.where('conceptBId').equals(conceptId).toArray()
-  ])
-  const alreadyRelatedIds = new Set([...asA.map((r) => r.conceptBId), ...asB.map((r) => r.conceptAId)])
-
-  const peers = allConcepts
-    .filter((c) => c.id !== conceptId && !alreadyRelatedIds.has(c.id))
-    .sort((a, b) => b.lastSeenAt - a.lastSeenAt)
-    .slice(0, MAX_DISCOVERY_PEERS)
-
-  let found = 0
-  // Sequential, not Promise.all — this hits a public API per pair and
-  // shouldn't fire a burst of simultaneous requests (same discipline as
-  // RelatedConceptsPanel's existing candidate-verification loop).
-  for (const peer of peers) {
-    const evidence = await fetchScientificRelationEvidence(concept.name, peer.name)
-    if (evidence) {
-      await addScientificConceptRelation(conceptId, peer.id, evidence)
-      found += 1
-    }
-  }
-
-  await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), checked: peers.length, found } })
-  return { ran: true, checked: peers.length, found }
+export async function purgeAutomaticScientificRelations(): Promise<{ ran: boolean; deleted: number }> {
+  const already = await db.appSettings.get(SCIENTIFIC_RELATION_PURGE_KEY)
+  if (already) return { ran: false, deleted: 0 }
+  const stale = await db.conceptRelations.where('origin').equals('scientific').toArray()
+  await Promise.all(stale.map((r) => db.conceptRelations.delete(r.id)))
+  await db.appSettings.put({ key: SCIENTIFIC_RELATION_PURGE_KEY, value: { ranAt: Date.now(), deleted: stale.length } })
+  return { ran: true, deleted: stale.length }
 }
 
 // ---------------------------------------------------------------------

@@ -10,7 +10,7 @@
  * real material to build it from.
  */
 
-import type { Concept, ConceptRelation } from '../db'
+import type { Concept } from '../db'
 import type { OnlineKnowledgeSection } from './onlineKnowledge'
 
 export interface KeyExamPoint {
@@ -92,17 +92,17 @@ function deriveFromSections(sections: OnlineKnowledgeSection[]): {
 /**
  * §10 "Quick questions" — simple, templated Q/A cards, never AI-written.
  * One card per section ("What is X, according to <source>?" → the
- * section's own text), plus one per SCIENTIFIC relation ("How is X
- * related to Y?" → that relation's own relationType/evidence). Manual
- * relations are deliberately excluded here — a personal connection isn't
- * an exam fact. Capped so one heavily-annotated concept doesn't produce
- * an overwhelming stack of cards.
+ * section's own text). Concept Hub Refinement §4/§15: this used to also
+ * add one card per scientific-origin relation, but scientific-origin
+ * ConceptRelation rows no longer exist anywhere in this app (see
+ * core/concepts/graph.ts) — that branch is removed rather than left as
+ * permanently-dead code. A personal (manual) connection was always
+ * deliberately excluded here too — a person's own connection isn't an
+ * exam fact; see `buildExamTools`'s own doc comment for where manual
+ * relations DO show up (as Compare candidates). Capped so a heavily-
+ * sourced concept doesn't produce an overwhelming stack of cards.
  */
-function deriveQuickQuestions(
-  concept: Concept,
-  sections: OnlineKnowledgeSection[],
-  relatedEntries: { concept: Concept; relation: ConceptRelation }[]
-): QuickQuestion[] {
+function deriveQuickQuestions(concept: Concept, sections: OnlineKnowledgeSection[]): QuickQuestion[] {
   const questions: QuickQuestion[] = []
 
   for (const section of sections.slice(0, 3)) {
@@ -114,45 +114,32 @@ function deriveQuickQuestions(
     })
   }
 
-  for (const { concept: other, relation } of relatedEntries) {
-    if (relation.origin !== 'scientific') continue
-    const answer = [relation.relationType, relation.evidence].filter(Boolean).join(' — ')
-    if (!answer) continue
-    questions.push({
-      question: `How is ${concept.name} connected to ${other.name}?`,
-      answer,
-      sourceName: relation.sourceName,
-      sourceUrl: relation.sourceUrl
-    })
-  }
-
   return questions.slice(0, 6)
 }
 
 /**
- * Single entry point for the Exam Tools tab. Everything here is derived
- * from data the page already has in memory (this concept's fetched
- * online-knowledge sections and its stored relationships) — no new
- * fetches, so it's instant and works offline once those have loaded once.
+ * Single entry point for Exam Focus's key-points/values/questions
+ * content. Everything here is derived from data the page already has
+ * in memory (this concept's fetched online-knowledge sections) — no
+ * new fetches, so it's instant and works offline once those have
+ * loaded once.
  *
  * "Compare" and "Common confusion" aren't produced here: a reliable,
  * generic way to auto-detect that two concepts are commonly CONFUSED
  * (§10) — as opposed to merely related — would need either hardcoded
  * per-topic knowledge (explicitly ruled out by this brief) or an AI
  * judgment call (also ruled out), so this app doesn't fabricate that
- * signal. Instead, `relatedEntries` itself is what the Exam Tools UI
- * offers as compare candidates — the person picks which comparison
- * actually matters to them and reads both concepts' real sourced
- * material side by side, forming the comparison themselves. A memory aid
- * is 100% user-authored (`updateConceptMemoryAid` in service.ts) and
- * never appears here as a suggestion.
+ * signal. Instead, ExamToolsPanel.tsx's OWN `relatedEntries` prop
+ * (the person's own manual connections — never passed through this
+ * function) is what the Exam Focus UI offers as compare candidates —
+ * the person picks which comparison actually matters to them and reads
+ * both concepts' real sourced material side by side, forming the
+ * comparison themselves. A memory aid is 100% user-authored
+ * (`updateConceptMemoryAid` in service.ts, independent component
+ * MemoryAidCard.tsx) and never appears here as a suggestion.
  */
-export function buildExamTools(
-  concept: Concept,
-  sections: OnlineKnowledgeSection[],
-  relatedEntries: { concept: Concept; relation: ConceptRelation }[]
-): ExamTools {
+export function buildExamTools(concept: Concept, sections: OnlineKnowledgeSection[]): ExamTools {
   const { keyPoints, importantValues } = deriveFromSections(sections)
-  const quickQuestions = deriveQuickQuestions(concept, sections, relatedEntries)
+  const quickQuestions = deriveQuickQuestions(concept, sections)
   return { keyPoints, importantValues, quickQuestions }
 }

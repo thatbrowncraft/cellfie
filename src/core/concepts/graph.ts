@@ -1,12 +1,27 @@
 /**
- * core/concepts/graph — Concept 2.0 Phase 3. A Concept↔Concept edge
- * exists ONLY if a `ConceptRelation` row exists — 'scientific' (real
- * evidence, discovered by `discoverScientificRelations`/
- * `fetchScientificRelationEvidence`) or 'manual' (the person explicitly
- * connected them). This is now the SINGLE source of truth for both the
- * per-concept Mind Map (`buildConceptMindMap`) and the whole-library
- * graph (`buildKnowledgeGraph`) — no separate relatedness logic lives in
+ * core/concepts/graph — Concept Hub Refinement §3/§4/§5/§6/§15. A
+ * Concept↔Concept edge exists ONLY if a `ConceptRelation` row with
+ * `origin: 'manual'` exists — the person explicitly connecting two
+ * concepts. This is the actual data-layer enforcement of "Connections
+ * and Mind Map show only what the person created": both
+ * `buildKnowledgeGraph` and `buildConceptMindMap` query
+ * `db.conceptRelations` and immediately discard any row that isn't
+ * `origin === 'manual'`, regardless of what else might be in that
+ * table. (Historical 'scientific'-origin rows, from a prior version's
+ * automatic co-occurrence discovery, are also actively deleted by
+ * core/concepts/service.ts's `purgeAutomaticScientificRelations` — this
+ * filter is defense in depth, not the only safeguard.) This is now the
+ * SINGLE source of truth for both the per-concept Mind Map
+ * (`buildConceptMindMap`) and the whole-library graph
+ * (`buildKnowledgeGraph`) — no separate relatedness logic lives in
  * either one.
+ *
+ * `buildConceptMindMap` also folds in the person's own free-text Mind
+ * Map annotation nodes (`ConceptAsset` kind `'mindmap-node'` — see
+ * core/concepts/assets.ts) as a third branch type. These are
+ * deliberately NOT `ConceptRelation` rows — they have no edge to any
+ * real Concept, so they can never be mistaken for, or migrate into, a
+ * Concept-to-Concept connection.
  *
  * Phase 2 correction: same-page / same-book PDF co-occurrence and
  * shared-tag pairing used to drive automatic "related" edges here (the
@@ -15,16 +30,16 @@
  * hidden — `getCoOccurrenceRelated` and the SHARED_TAG/CO_OCCURRENCE
  * edge kinds no longer exist. A book's own text can still make a
  * concept relevant to another one, but only by the person adding it
- * as a connection, or by a real online scientific source backing it —
- * never by page-proximity alone. Rendering is hand-rolled SVG/flexbox
- * in modules/concepts/components, not a graph library (no new
- * dependency).
+ * as a connection — never by page-proximity or literature co-occurrence
+ * alone. Rendering is hand-rolled SVG/flexbox in
+ * modules/concepts/components, not a graph library (no new dependency).
  */
 
-import { db, type Concept, type ConceptRelationOrigin, type ConceptSource } from '../db'
+import { db, type Concept, type ConceptSource } from '../db'
+import { listConceptAssets } from './assets'
 
 export type GraphNodeKind = 'concept' | 'book'
-export type GraphEdgeKind = 'SCIENTIFIC' | 'MANUAL' | 'REFERENCES'
+export type GraphEdgeKind = 'MANUAL' | 'REFERENCES'
 
 export interface GraphNode {
   id: string
@@ -49,16 +64,16 @@ export interface KnowledgeGraphData {
 /**
  * Whole-library graph: concept nodes plus the books that reference them
  * (REFERENCES edges from ConceptSource rows with a libraryItemId), and
- * concept-to-concept edges split into SCIENTIFIC/MANUAL by each stored
- * ConceptRelation's own `origin` — the same rows Related Concepts and
- * the per-concept Mind Map read. Capped to the most-referenced concepts
- * so the SVG stays readable on a library with thousands of concepts.
+ * concept-to-concept edges from user-created (`origin: 'manual'`)
+ * ConceptRelation rows only — the same rows Related Concepts and the
+ * per-concept Mind Map read. Capped to the most-referenced concepts so
+ * the SVG stays readable on a library with thousands of concepts.
  */
 export async function buildKnowledgeGraph(maxConcepts = 40): Promise<KnowledgeGraphData> {
   const [concepts, sources, relations, items] = await Promise.all([
     db.concepts.toArray(),
     db.conceptSources.toArray(),
-    db.conceptRelations.toArray(),
+    db.conceptRelations.where('origin').equals('manual').toArray(),
     db.libraryItems.toArray()
   ])
 
@@ -99,7 +114,7 @@ export async function buildKnowledgeGraph(maxConcepts = 40): Promise<KnowledgeGr
       id: `rel:${r.id}`,
       source: `concept:${r.conceptAId}`,
       target: `concept:${r.conceptBId}`,
-      kind: r.origin === 'scientific' ? 'SCIENTIFIC' : 'MANUAL'
+      kind: 'MANUAL'
     })
   }
 
@@ -118,64 +133,66 @@ export async function buildKnowledgeGraph(maxConcepts = 40): Promise<KnowledgeGr
 export interface MindMapNode {
   id: string
   label: string
-  /** Origin of the relation connecting this node to its parent — undefined only for the root. */
-  edgeOrigin?: ConceptRelationOrigin
-  /** Present only on a scientific edge — the same relationType shown in Related Concepts, for a one-line "why" under the node. */
-  relationType?: string
+  /** Undefined for the root, for a user-created annotation node, and — no longer possible — for anything scientific. Present ('manual') only on a concept-to-concept branch. */
+  edgeOrigin?: 'manual'
+  /** True for the person's own free-text Mind Map annotation nodes (ConceptAsset kind 'mindmap-node') — rendered distinctly, never confused with a real linked Concept. */
+  isAnnotation?: boolean
   children: MindMapNode[]
 }
 
 /**
  * Builds a small (depth-2) mind map rooted at one concept, following
- * ONLY stored `ConceptRelation` rows — the exact same table Related
- * Concepts reads (Phase 2's `relatedEntries`). Scientific edges are
- * ordered before manual ones at each level since they carry stronger
- * evidence. A concept with no relations at all produces a root with no
- * children; the caller shows "No verified scientific connections yet"
- * rather than fabricating branches.
+ * ONLY user-created (`origin: 'manual'`) `ConceptRelation` rows — the
+ * exact same filtered set Related Concepts reads. Also appends the
+ * person's own free-text annotation nodes (`ConceptAsset` kind
+ * `'mindmap-node'`) as depth-1 leaves alongside real concept branches.
+ * A concept with neither produces a root with no children; the caller
+ * shows "No concept connections yet." rather than fabricating branches.
  */
 export async function buildConceptMindMap(rootId: string): Promise<MindMapNode> {
   const root = await db.concepts.get(rootId)
   if (!root) return { id: rootId, label: 'Unknown concept', children: [] }
 
-  const [allConcepts, allRelations] = await Promise.all([db.concepts.toArray(), db.conceptRelations.toArray()])
+  const [allConcepts, allRelations, annotationAssets] = await Promise.all([
+    db.concepts.toArray(),
+    db.conceptRelations.where('origin').equals('manual').toArray(),
+    listConceptAssets(rootId, 'mindmap-node')
+  ])
   const byId = new Map(allConcepts.map((c) => [c.id, c]))
 
-  const edgesByConcept = new Map<string, { otherId: string; origin: ConceptRelationOrigin; relationType?: string }[]>()
+  const edgesByConcept = new Map<string, string[]>()
   for (const r of allRelations) {
     const add = (from: string, to: string) => {
       const list = edgesByConcept.get(from) ?? []
-      list.push({ otherId: to, origin: r.origin, relationType: r.relationType })
+      list.push(to)
       edgesByConcept.set(from, list)
     }
     add(r.conceptAId, r.conceptBId)
     add(r.conceptBId, r.conceptAId)
   }
 
-  function buildNode(
-    conceptId: string,
-    depth: number,
-    visited: Set<string>,
-    edgeOrigin?: ConceptRelationOrigin,
-    relationType?: string
-  ): MindMapNode {
+  function buildNode(conceptId: string, depth: number, visited: Set<string>, edgeOrigin?: 'manual'): MindMapNode {
     const concept = byId.get(conceptId)
     const label = concept?.name ?? 'Unknown concept'
-    if (depth <= 0) return { id: conceptId, label, edgeOrigin, relationType, children: [] }
+    if (depth <= 0) return { id: conceptId, label, edgeOrigin, children: [] }
 
-    const related = (edgesByConcept.get(conceptId) ?? [])
-      .filter((e) => !visited.has(e.otherId))
-      .sort((a, b) => (a.origin === b.origin ? 0 : a.origin === 'scientific' ? -1 : 1))
-      .slice(0, 6)
+    const relatedIds = (edgesByConcept.get(conceptId) ?? []).filter((otherId) => !visited.has(otherId)).slice(0, 6)
 
     const nextVisited = new Set(visited)
-    related.forEach((e) => nextVisited.add(e.otherId))
+    relatedIds.forEach((otherId) => nextVisited.add(otherId))
 
-    const children = related.map((e) => buildNode(e.otherId, depth - 1, nextVisited, e.origin, e.relationType))
-    return { id: conceptId, label, edgeOrigin, relationType, children }
+    const children = relatedIds.map((otherId) => buildNode(otherId, depth - 1, nextVisited, 'manual'))
+    return { id: conceptId, label, edgeOrigin, children }
   }
 
-  return buildNode(rootId, 2, new Set([rootId]))
+  const node = buildNode(rootId, 2, new Set([rootId]))
+  const annotationNodes: MindMapNode[] = annotationAssets.map((a) => ({
+    id: `annotation:${a.id}`,
+    label: a.label,
+    isAnnotation: true,
+    children: []
+  }))
+  return { ...node, children: [...node.children, ...annotationNodes] }
 }
 
 export type { Concept, ConceptSource }
