@@ -14,7 +14,6 @@ const CENTER_X = WIDTH / 2
 const CENTER_Y = HEIGHT / 2
 
 const edgeColor: Record<string, string> = {
-  SCIENTIFIC: 'var(--color-accent-olive)',
   MANUAL: 'var(--color-highlight-terracotta)',
   REFERENCES: 'var(--color-border-strong)'
 }
@@ -24,10 +23,11 @@ const edgeColor: Record<string, string> = {
  * laid out on a circle (concepts on an inner ring, books on an outer
  * ring) since a force simulation would need a new dependency this
  * project deliberately avoids. Every edge drawn corresponds to a real
- * ConceptSource (REFERENCES) or ConceptRelation (SCIENTIFIC/MANUAL, by
- * that row's own `origin`) — see core/concepts/graph.ts. Concept 2.0
- * Phase 3: same-page/shared-tag inference no longer exists as an edge
- * source anywhere in this app.
+ * ConceptSource (REFERENCES) or a user-created (`origin: 'manual'`)
+ * ConceptRelation (MANUAL) — see core/concepts/graph.ts. Concept Hub
+ * Refinement: literature co-occurrence/MeSH-derived edges no longer
+ * exist as an edge source anywhere in this app — every edge on this
+ * graph is something the person created or a real book reference.
  */
 export function ConceptGraphView({ data }: ConceptGraphViewProps) {
   const navigate = useNavigate()
@@ -136,9 +136,6 @@ export function ConceptGraphView({ data }: ConceptGraphViewProps) {
         </span>
         <span className="flex items-center gap-1.5">
           <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-border-strong)' }} /> Found in (concept → book — not a concept relationship)
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="inline-block h-2 w-0.5" style={{ backgroundColor: 'var(--color-accent-olive)' }} /> Scientific connection
         </span>
         <span className="flex items-center gap-1.5">
           <span className="inline-block h-2 w-0.5 border-t border-dashed" style={{ borderColor: 'var(--color-highlight-terracotta)' }} /> My connection

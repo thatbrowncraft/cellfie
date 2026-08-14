@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowSquareOut, Flask, Globe, Link, MagnifyingGlass, Plus, X } from '@phosphor-icons/react'
+import { Globe, Link, MagnifyingGlass, Plus, X } from '@phosphor-icons/react'
 import { SearchField, EmptyState, Button } from '@/shared/components'
 import type { Concept, ConceptRelation } from '@/core/db'
 import {
@@ -22,22 +22,14 @@ export interface RelatedConceptEntry {
 
 interface RelatedConceptsPanelProps {
   concept: Concept
-  /** Every real relationship this concept has — both origins, one source of truth (Concept 2.0 Phase 2). */
+  /** User-created (`origin: 'manual'`) connections only — Concept Hub Refinement §5. Already filtered at the source in ConceptDetailPage.tsx; graph.ts's own independent query applies the same filter for Mind Map. */
   relatedEntries: RelatedConceptEntry[]
-  /** True while this concept's other concepts are being checked for real scientific-literature evidence (core/concepts/service.ts's discoverScientificRelations). */
-  discoveringScience: boolean
   /** Whether this concept has any page-anchored PDF source at all — distinguishes "we looked and found nothing" from "no source pages to look at yet". */
   hasPdfPageSources: boolean
   allConcepts: Concept[]
 }
 
-export function RelatedConceptsPanel({
-  concept,
-  relatedEntries,
-  discoveringScience,
-  hasPdfPageSources,
-  allConcepts
-}: RelatedConceptsPanelProps) {
+export function RelatedConceptsPanel({ concept, relatedEntries, hasPdfPageSources, allConcepts }: RelatedConceptsPanelProps) {
   const navigate = useNavigate()
   const [query, setQuery] = useState('')
   const [adding, setAdding] = useState(false)
@@ -49,15 +41,13 @@ export function RelatedConceptsPanel({
   const [loadingOnline, setLoadingOnline] = useState(false)
   const [onlinePromotingTitle, setOnlinePromotingTitle] = useState<string | undefined>(undefined)
 
-  // Concept 2.0 Phase 2 — "Do NOT consider two concepts related merely
-  // because they occur on the same PDF page / share random words." Real
-  // relationships only, split by origin so the UI never implies a
-  // manual connection is an established scientific fact (§7).
-  const scientificEntries = useMemo(
-    () => relatedEntries.filter((e) => e.relation.origin === 'scientific'),
-    [relatedEntries]
-  )
-  const manualEntries = useMemo(() => relatedEntries.filter((e) => e.relation.origin !== 'scientific'), [relatedEntries])
+  // Concept Hub Refinement §5 — "My Connections" is now the ONLY thing
+  // this panel's main list ever shows: relationships the person
+  // explicitly created. `relatedEntries` is already filtered to
+  // `origin === 'manual'` at its source (ConceptDetailPage.tsx), so
+  // this is just the identity — kept as its own name so the JSX below
+  // still reads clearly.
+  const manualEntries = relatedEntries
   const relatedIds = useMemo(() => new Set(relatedEntries.map((e) => e.concept.id)), [relatedEntries])
 
   const candidates = useMemo(() => {
@@ -194,68 +184,13 @@ export function RelatedConceptsPanel({
         </div>
       )}
 
-      {discoveringScience && (
-        <p className="font-ui text-caption text-ink-tertiary">Checking your other concepts for verified scientific relationships…</p>
-      )}
-
-      {relatedEntries.length === 0 && !discoveringScience ? (
+      {relatedEntries.length === 0 ? (
         <EmptyState
-          title="No verified relationship found among your current concepts"
-          description="That doesn't mean none exist — check &ldquo;Suggested scientific concepts&rdquo; below, or add a connection of your own."
+          title="No connections yet"
+          description="Connect this concept to another concept to build your study network."
         />
       ) : (
         <>
-          {scientificEntries.length > 0 && (
-            <div>
-              <h4 className="mb-2 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                <Flask size={13} aria-hidden />
-                Scientific connections
-              </h4>
-              <ul className="flex flex-col gap-2">
-                {scientificEntries.map(({ concept: c, relation }) => (
-                  <li key={c.id} className="rounded-md border border-border bg-surface px-3 py-2">
-                    <div className="flex items-start justify-between gap-3">
-                      <button
-                        type="button"
-                        onClick={() => navigate(`/concepts/${c.id}`)}
-                        className="text-left font-ui text-body font-medium text-ink-primary hover:text-olive"
-                      >
-                        {c.name}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => void removeConceptRelation(relation.id)}
-                        aria-label={`Remove connection to ${c.name}`}
-                        className="shrink-0 text-ink-tertiary hover:text-error"
-                      >
-                        <X size={13} />
-                      </button>
-                    </div>
-                    {relation.relationType && (
-                      <p className="mt-1 font-ui text-caption text-ink-secondary">{relation.relationType}</p>
-                    )}
-                    {relation.evidence && (
-                      <p className="mt-0.5 whitespace-pre-line font-ui text-caption italic text-ink-tertiary">
-                        "{relation.evidence}"
-                      </p>
-                    )}
-                    {relation.sourceUrl && (
-                      <a
-                        href={relation.sourceUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-1 flex w-fit items-center gap-1 font-ui text-micro font-medium text-olive hover:underline"
-                      >
-                        Source: {relation.sourceName}
-                        <ArrowSquareOut size={12} />
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
           {manualEntries.length > 0 && (
             <div>
               <h4 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">My connections</h4>
