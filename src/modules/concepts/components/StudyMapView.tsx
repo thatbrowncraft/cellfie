@@ -1,37 +1,48 @@
-import { useRef, useState } from 'react'
-import { MagnifyingGlassPlus, MagnifyingGlassMinus, ArrowsOut } from '@phosphor-icons/react'
-import type { StudyMapTreeNode } from '@/core/concepts'
+import { useMemo, useRef, useState } from 'react'
+import { MagnifyingGlassPlus, MagnifyingGlassMinus, ArrowsOut, ArrowSquareOut } from '@phosphor-icons/react'
+import { Dialog } from '@/shared/components'
+import type { StudyMap, StudyMapNode } from '@/core/concepts'
+import { computeStudyMapLayout, type PositionedNode } from '@/core/concepts/studyMapLayout'
 
 interface StudyMapViewProps {
-  root: StudyMapTreeNode
-  /** Compact mode is used for the Visuals tab's "Generate study diagram"
-   *  fallback — smaller text, no zoom chrome, meant to sit inside a card
-   *  rather than fill the whole Mind Map tab. */
-  compact?: boolean
+  map: StudyMap
 }
 
-const ZOOM_STEPS = [0.75, 0.85, 1, 1.15, 1.3, 1.5]
-const DEFAULT_ZOOM_INDEX = 2
+const ZOOM_STEPS = [0.6, 0.75, 0.85, 1, 1.15, 1.3]
+const DEFAULT_ZOOM_INDEX = 3
+
+const KIND_STYLE: Record<StudyMapNode['kind'], string> = {
+  root: 'bg-terracotta text-canvas font-medium border-transparent',
+  category: 'bg-olive/15 text-ink-primary font-medium border-olive/40',
+  step: 'bg-surface text-ink-primary font-medium border-border-strong',
+  outcome: 'bg-sage/20 text-ink-primary font-medium border-sage/50',
+  detail: 'bg-surface text-ink-secondary border-border border-dashed'
+}
 
 /**
- * Concept Hub Quality Pass §4 — the generated Study Map's renderer.
- * Deliberately DOM/flexbox-based, not a canvas/SVG coordinate layout:
- * this is the same proven approach `ConceptMindMap`'s own tree already
- * uses (see that file's header comment) — it wraps naturally instead of
- * needing manual node positioning, so there is no giant fixed-width
- * diagram to make responsive in the first place. The one addition here
- * is a scale control (`ZOOM_STEPS`) applied via CSS `transform`, plus a
- * "fit to screen" reset — both operate on an `overflow-auto` container
- * that is itself always constrained to the card's own width, so
- * scrolling/zooming happens inside the box, never the page. This keeps
- * pinch-to-zoom working too: it's the browser's native page/element zoom
- * behavior over ordinary scrollable HTML, not a custom touch handler
- * that could get the gesture wrong on a device this was never tested on.
+ * Mind Map Redesign — the generated Study Map's renderer. An SVG layer
+ * (built from `computeStudyMapLayout`, studyMapLayout.ts — pure
+ * geometry, no measurement) draws the connecting lines/arrows; the
+ * nodes themselves are ordinary absolutely-positioned buttons on top,
+ * so label text still wraps/clamps like plain HTML instead of needing
+ * manual SVG text layout. Tapping a non-root node with real underlying
+ * text opens a detail dialog showing that text and its source — the
+ * one thing the previous "stack of pills" version couldn't do at all.
+ *
+ * The whole diagram (`layout.width`×`layout.height`, computed once for
+ * this concept's actual node count — never a giant fixed canvas) sits
+ * inside an `overflow-auto` box that is itself always constrained to
+ * the card's own width, so a wide/tall map scrolls inside the box, not
+ * the page: no horizontal page overflow on mobile, and the available
+ * width is used directly on desktop.
  */
-export function StudyMapView({ root, compact = false }: StudyMapViewProps) {
+export function StudyMapView({ map }: StudyMapViewProps) {
   const [zoomIndex, setZoomIndex] = useState(DEFAULT_ZOOM_INDEX)
+  const [selected, setSelected] = useState<PositionedNode | undefined>(undefined)
   const scrollRef = useRef<HTMLDivElement>(null)
   const scale = ZOOM_STEPS[zoomIndex]
+
+  const layout = useMemo(() => computeStudyMapLayout(map), [map])
 
   function zoomIn() {
     setZoomIndex((i) => Math.min(i + 1, ZOOM_STEPS.length - 1))
@@ -44,10 +55,15 @@ export function StudyMapView({ root, compact = false }: StudyMapViewProps) {
     scrollRef.current?.scrollTo({ top: 0, left: 0 })
   }
 
+  const isProcedure = map.shape === 'procedure'
+
   return (
     <div className="flex flex-col gap-2">
-      {!compact && (
-        <div className="flex items-center justify-end gap-1">
+      <div className="flex items-center justify-between gap-2">
+        <p className="font-ui text-micro text-ink-tertiary">
+          {isProcedure ? 'Generated procedure flow — tap a step for detail.' : 'Generated concept map — tap a node for detail.'}
+        </p>
+        <div className="flex items-center gap-1">
           <button
             type="button"
             onClick={zoomOut}
@@ -57,9 +73,7 @@ export function StudyMapView({ root, compact = false }: StudyMapViewProps) {
           >
             <MagnifyingGlassMinus size={14} />
           </button>
-          <span className="min-w-[3.5ch] text-center font-ui text-micro text-ink-tertiary">
-            {Math.round(scale * 100)}%
-          </span>
+          <span className="min-w-[3.5ch] text-center font-ui text-micro text-ink-tertiary">{Math.round(scale * 100)}%</span>
           <button
             type="button"
             onClick={zoomIn}
@@ -79,77 +93,81 @@ export function StudyMapView({ root, compact = false }: StudyMapViewProps) {
             Fit
           </button>
         </div>
-      )}
+      </div>
 
-      {/* This wrapper — not the page — owns any overflow. `max-w-full` +
-          `overflow-auto` means a scaled-up map scrolls inside the card;
-          it can never push the Concept page itself into horizontal
-          scroll or shove the bottom navigation off-screen. */}
       <div
         ref={scrollRef}
-        className={`max-w-full overflow-auto rounded-md border border-border bg-surface-raised/40 ${compact ? 'max-h-64 p-3' : 'max-h-[60vh] p-4'}`}
+        className="max-w-full overflow-auto rounded-md border border-border bg-surface-raised/40 p-4"
+        style={{ maxHeight: '65vh' }}
       >
-        <div style={{ transform: `scale(${compact ? 1 : scale})`, transformOrigin: 'top left' }} className="w-fit">
-          <StudyMapBranch node={root} isRoot compact={compact} />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function StudyMapBranch({
-  node,
-  isRoot = false,
-  compact = false
-}: {
-  node: StudyMapTreeNode
-  isRoot?: boolean
-  compact?: boolean
-}) {
-  if (isRoot) {
-    return (
-      <div className="flex flex-col items-start gap-3">
-        <div
-          className={`rounded-lg bg-terracotta font-ui font-medium text-canvas ${compact ? 'px-3 py-1.5 text-caption' : 'px-4 py-2 text-body'}`}
-        >
-          {node.label}
-        </div>
-        {node.children.length > 0 && (
-          <div className="flex w-full flex-col gap-2 border-l-2 border-border pl-4">
-            {node.children.map((child) => (
-              <StudyMapBranch key={child.id} node={child} compact={compact} />
+        <div style={{ transform: `scale(${scale})`, transformOrigin: 'top left', width: layout.width, height: layout.height }} className="relative">
+          <svg
+            width={layout.width}
+            height={layout.height}
+            viewBox={`0 0 ${layout.width} ${layout.height}`}
+            className="absolute inset-0"
+            aria-hidden="true"
+          >
+            <defs>
+              <marker id="study-map-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="var(--color-border-strong)" />
+              </marker>
+            </defs>
+            {layout.edges.map((e) => (
+              <path
+                key={e.id}
+                d={e.d}
+                fill="none"
+                stroke="var(--color-border-strong)"
+                strokeWidth={1.5}
+                markerEnd={isProcedure ? 'url(#study-map-arrow)' : undefined}
+              />
             ))}
-          </div>
-        )}
-      </div>
-    )
-  }
+          </svg>
 
-  return (
-    <div className="flex flex-col gap-2">
-      <div
-        className={`w-fit max-w-full rounded-md border border-border bg-surface font-ui font-medium text-ink-primary ${compact ? 'px-2.5 py-1 text-micro' : 'px-3 py-1.5 text-caption'}`}
-      >
-        {node.label}
-      </div>
-      {node.children.length > 0 && (
-        <div className="flex flex-col gap-2 border-l-2 border-border pl-4">
-          {node.children.map((child) => (
-            <StudyMapLeaf key={child.id} node={child} compact={compact} />
-          ))}
+          {layout.nodes.map((n) => {
+            const tappable = n.kind !== 'root' && (Boolean(n.detail) || n.sourceRefs.length > 0)
+            const boxClassName = `absolute flex items-center justify-center rounded-md border px-2.5 py-1.5 text-center font-ui text-micro leading-snug line-clamp-3 shadow-1 ${KIND_STYLE[n.kind]} ${
+              tappable ? 'cursor-pointer hover:brightness-95' : ''
+            } ${n.kind === 'root' ? 'text-body' : ''}`
+            const boxStyle = { left: n.x, top: n.y, width: n.w, minHeight: n.h }
+            return tappable ? (
+              <button key={n.id} type="button" onClick={() => setSelected(n)} style={boxStyle} className={boxClassName}>
+                {n.label}
+              </button>
+            ) : (
+              <div key={n.id} style={boxStyle} className={boxClassName}>
+                {n.label}
+              </div>
+            )
+          })}
         </div>
-      )}
-    </div>
-  )
-}
+      </div>
 
-/** Bullet-level nodes (depth 3) render as plain text leaves — no further nesting, matching how deep the source data actually goes. */
-function StudyMapLeaf({ node, compact }: { node: StudyMapTreeNode; compact?: boolean }) {
-  return (
-    <div
-      className={`w-fit max-w-full rounded-md border border-dashed border-border-strong bg-surface px-2.5 py-1 font-ui text-ink-secondary ${compact ? 'text-micro' : 'text-micro'}`}
-    >
-      {node.label}
+      {selected && (
+        <Dialog open onClose={() => setSelected(undefined)} title={selected.label}>
+          <div className="flex flex-col gap-3">
+            {selected.detail && <p className="font-body text-body text-ink-primary">{selected.detail}</p>}
+            {selected.sourceRefs.length > 0 && (
+              <div className="flex flex-col gap-1 border-t border-border pt-3">
+                <span className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Source</span>
+                {selected.sourceRefs.map((ref, i) => (
+                  <a
+                    key={`${ref.sourceUrl}-${i}`}
+                    href={ref.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
+                  >
+                    {ref.sourceName}
+                    <ArrowSquareOut size={12} />
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </Dialog>
+      )}
     </div>
   )
 }

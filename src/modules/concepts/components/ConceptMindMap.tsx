@@ -158,7 +158,7 @@ export function ConceptMindMap({ root, concept, detailedStudyModules }: ConceptM
             Generated from this concept's verified study data — a visual explanation, not a connections graph. It's
             never saved as a Connection and never appears in "My concept map" above.
           </p>
-          <StudyMapView root={studyMap} />
+          <StudyMapView map={studyMap} />
         </div>
       ) : (
         <EmptyState
