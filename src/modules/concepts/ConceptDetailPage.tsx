@@ -261,8 +261,8 @@ export function ConceptDetailPage() {
   // for real external visuals — never a substitute the person didn't
   // ask for.
   const generatedVisual = useMemo(
-    () => (concept ? buildGeneratedVisual(concept, detailedStudyModules) : undefined),
-    [concept, detailedStudyModules]
+    () => (concept ? buildGeneratedVisual(concept, detailedStudyModules, meshClassification) : undefined),
+    [concept, detailedStudyModules, meshClassification]
   )
   const [showGeneratedDiagram, setShowGeneratedDiagram] = useState(false)
 
@@ -644,7 +644,12 @@ export function ConceptDetailPage() {
                     allConcepts={allConcepts}
                   />
                 ) : (
-                  <ConceptMindMap root={mindMap} concept={concept} detailedStudyModules={detailedStudyModules} />
+                  <ConceptMindMap
+                    root={mindMap}
+                    concept={concept}
+                    detailedStudyModules={detailedStudyModules}
+                    mesh={meshClassification}
+                  />
                 )}
               </div>
             )
