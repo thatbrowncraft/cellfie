@@ -22,6 +22,21 @@
  * feature its own team could ask for later — dragging, connecting,
  * shapes, persistence, and mobile containment were the acceptance
  * criteria that actually mattered, and those are real here.
+ *
+ * Third Refinement §15–21 — Edit Mode / View Mode. "BUILD → SAVE →
+ * STUDY": the canvas starts in Edit Mode with the full editing
+ * toolbar; pressing "Save Map" persists everything (already true —
+ * every action here already writes straight to Dexie) and flips this
+ * concept's map into View Mode, which hides the destructive/editing
+ * controls and shows a clean map for pan/zoom/read-only study. In
+ * View Mode, tapping a node opens a read-only info card (its title +
+ * optional description) instead of the edit dialog. "Edit Map"
+ * returns to Edit Mode at any time. This is per-concept, persisted
+ * state (see core/concepts/mindMapStudio.ts's `isMapSaved`/
+ * `setMapSaved`), so reopening a saved map shows View Mode again —
+ * every map that already existed before this feature simply defaults
+ * to Edit Mode until explicitly saved once, so nothing about how an
+ * existing map behaves changes on its own.
  */
 import { useEffect, useMemo, useRef, useState, type ChangeEvent, type PointerEvent as ReactPointerEvent } from 'react'
 import {
@@ -32,7 +47,9 @@ import {
   TreeStructure,
   UploadSimple,
   X,
-  PencilSimple
+  PencilSimple,
+  FloppyDisk,
+  Info
 } from '@phosphor-icons/react'
 import { Button, Dialog, Dropdown, EmptyState } from '@/shared/components'
 import type { Concept, ConceptMapEdge, ConceptMapNode, ConceptMapNodeAccent, ConceptMapNodeShape, ConceptAsset } from '@/core/db'
@@ -41,8 +58,10 @@ import {
   addMapNode,
   deleteMapEdge,
   deleteMapNode,
+  isMapSaved,
   listMapEdges,
   listMapNodes,
+  setMapSaved,
   updateMapNode
 } from '@/core/concepts/mindMapStudio'
 import { importConceptAssetFile, listConceptAssets, removeConceptAsset } from '@/core/concepts/assets'
@@ -103,6 +122,10 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
   const nodes = useLiveQuery<ConceptMapNode[]>(() => listMapNodes(concept.id), [concept.id], [])
   const edges = useLiveQuery<ConceptMapEdge[]>(() => listMapEdges(concept.id), [concept.id], [])
   const imports = useLiveQuery<ConceptAsset[]>(() => listConceptAssets(concept.id, 'mindmap-import'), [concept.id], [])
+  // View Mode when this concept's map has been explicitly saved (§16/§21);
+  // reactive via the same liveQuery pattern as everything else here, so
+  // pressing Save Map/Edit Map updates this immediately.
+  const viewMode = useLiveQuery<boolean>(() => isMapSaved(concept.id), [concept.id], false)
 
   const containerRef = useRef<HTMLDivElement>(null)
   const [canvasSize, setCanvasSize] = useState({ width: 320, height: 420 })
@@ -115,15 +138,19 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
 
   const [addOpen, setAddOpen] = useState(false)
   const [addLabel, setAddLabel] = useState('')
+  const [addDescription, setAddDescription] = useState('')
   const [addShape, setAddShape] = useState<ConceptMapNodeShape>('rounded')
   const [addAccent, setAddAccent] = useState<ConceptMapNodeAccent>('terracotta')
 
   const [editingNode, setEditingNode] = useState<ConceptMapNode | undefined>(undefined)
   const [editLabel, setEditLabel] = useState('')
+  const [editDescription, setEditDescription] = useState('')
   const [editShape, setEditShape] = useState<ConceptMapNodeShape>('rounded')
   const [editAccent, setEditAccent] = useState<ConceptMapNodeAccent>('terracotta')
 
   const [confirmDeleteNode, setConfirmDeleteNode] = useState<ConceptMapNode | undefined>(undefined)
+  // View Mode's read-only "tap node to read its information" card (§18).
+  const [viewingNode, setViewingNode] = useState<ConceptMapNode | undefined>(undefined)
 
   const [importing, setImporting] = useState(false)
   const [importError, setImportError] = useState<string | undefined>(undefined)
@@ -132,7 +159,7 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
   // Drag state kept in a ref (not React state) so pointermove doesn't
   // thrash re-renders — position only lands back in state/DB on pointerup.
   const dragRef = useRef<{
-    kind: 'pan' | 'node'
+    kind: 'pan' | 'node' | 'viewNode'
     nodeId?: string
     startClientX: number
     startClientY: number
@@ -171,7 +198,10 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
     e.stopPropagation()
     ;(e.target as HTMLElement).setPointerCapture(e.pointerId)
     dragRef.current = {
-      kind: 'node',
+      // View Mode never drags a node — only records a click, so tapping
+      // still opens the read-only info card (§18/§19: View Mode allows
+      // pan/zoom/read, not repositioning).
+      kind: viewMode ? 'viewNode' : 'node',
       nodeId: node.id,
       startClientX: e.clientX,
       startClientY: e.clientY,
@@ -195,6 +225,7 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
       const newY = drag.startY + dy / zoom
       setLiveDrag({ nodeId: drag.nodeId, x: newX, y: newY })
     }
+    // 'viewNode' drags are intentionally ignored — the node stays put.
   }
 
   async function handlePointerUp() {
@@ -209,12 +240,19 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
         handleNodeClick(drag.nodeId)
       }
       setLiveDrag(undefined)
+    } else if (drag.kind === 'viewNode' && drag.nodeId && !drag.moved) {
+      handleNodeClick(drag.nodeId)
     }
   }
 
   function handleNodeClick(nodeId: string) {
     const node = nodes.find((n) => n.id === nodeId)
     if (!node) return
+
+    if (viewMode) {
+      setViewingNode(node)
+      return
+    }
 
     if (mode === 'connect') {
       if (!connectFirst) {
@@ -236,6 +274,7 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
 
     setEditingNode(node)
     setEditLabel(node.label)
+    setEditDescription(node.description ?? '')
     setEditShape(node.shape)
     setEditAccent(node.accent)
   }
@@ -247,6 +286,7 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
 
   function openAddDialog() {
     setAddLabel('')
+    setAddDescription('')
     setAddShape('rounded')
     setAddAccent('terracotta')
     setAddOpen(true)
@@ -260,7 +300,14 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
       (containerRef.current?.getBoundingClientRect().top ?? 0) + canvasSize.height / 2
     )
     const cascadeOffset = (nodes.length % 6) * 22
-    await addMapNode(concept.id, trimmed, { x: center.x + cascadeOffset - NODE_WIDTH / 2, y: center.y + cascadeOffset - NODE_HEIGHT_ESTIMATE / 2 }, addShape, addAccent)
+    await addMapNode(
+      concept.id,
+      trimmed,
+      { x: center.x + cascadeOffset - NODE_WIDTH / 2, y: center.y + cascadeOffset - NODE_HEIGHT_ESTIMATE / 2 },
+      addShape,
+      addAccent,
+      addDescription
+    )
     setAddOpen(false)
   }
 
@@ -268,8 +315,26 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
     if (!editingNode) return
     const trimmed = editLabel.trim()
     if (!trimmed) return
-    await updateMapNode(editingNode.id, { label: trimmed, shape: editShape, accent: editAccent })
+    await updateMapNode(editingNode.id, {
+      label: trimmed,
+      description: editDescription.trim() || undefined,
+      shape: editShape,
+      accent: editAccent
+    })
     setEditingNode(undefined)
+  }
+
+  /** §16 — "BUILD → SAVE → STUDY". Everything is already persisted the
+   * moment it's created/edited; Save Map's own job is just to flip this
+   * concept's map into View Mode and clear any in-progress tool state. */
+  async function handleSaveMap() {
+    setMode('select')
+    setConnectFirst(undefined)
+    await setMapSaved(concept.id, true)
+  }
+
+  async function handleEditMap() {
+    await setMapSaved(concept.id, false)
   }
 
   async function handleConfirmDeleteNode() {
@@ -337,31 +402,36 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
 
   return (
     <div className="flex flex-col gap-3">
-      {/* Toolbar — Second Refinement §"MIND MAP TOOLBAR". Wraps into a
-          compact strip on mobile rather than forcing horizontal scroll. */}
+      {/* Toolbar — Second Refinement §"MIND MAP TOOLBAR", now split by
+          Edit/View Mode (§16). Wraps into a compact strip on mobile
+          rather than forcing horizontal scroll. */}
       <div className="flex flex-wrap items-center gap-1.5 rounded-md border border-border bg-surface p-2">
-        <Button variant="secondary" size="small" icon={<Plus size={14} />} onClick={openAddDialog}>
-          Add node
-        </Button>
-        <Button
-          variant={mode === 'connect' ? 'primary' : 'secondary'}
-          size="small"
-          onClick={() => {
-            setMode(mode === 'connect' ? 'select' : 'connect')
-            setConnectFirst(undefined)
-          }}
-        >
-          Connect
-        </Button>
-        <Button
-          variant={mode === 'delete' ? 'destructive' : 'secondary'}
-          size="small"
-          icon={<Trash size={14} />}
-          onClick={() => setMode(mode === 'delete' ? 'select' : 'delete')}
-        >
-          Delete
-        </Button>
-        <div className="mx-1 h-6 w-px bg-border" aria-hidden />
+        {!viewMode && (
+          <>
+            <Button variant="secondary" size="small" icon={<Plus size={14} />} onClick={openAddDialog}>
+              Add node
+            </Button>
+            <Button
+              variant={mode === 'connect' ? 'primary' : 'secondary'}
+              size="small"
+              onClick={() => {
+                setMode(mode === 'connect' ? 'select' : 'connect')
+                setConnectFirst(undefined)
+              }}
+            >
+              Connect
+            </Button>
+            <Button
+              variant={mode === 'delete' ? 'destructive' : 'secondary'}
+              size="small"
+              icon={<Trash size={14} />}
+              onClick={() => setMode(mode === 'delete' ? 'select' : 'delete')}
+            >
+              Delete
+            </Button>
+            <div className="mx-1 h-6 w-px bg-border" aria-hidden />
+          </>
+        )}
         <Button variant="secondary" size="small" icon={<MagnifyingGlassMinus size={14} />} onClick={() => zoomBy(-0.15)} aria-label="Zoom out" />
         <Button variant="secondary" size="small" icon={<MagnifyingGlassPlus size={14} />} onClick={() => zoomBy(0.15)} aria-label="Zoom in" />
         <Button variant="secondary" size="small" icon={<TreeStructure size={14} />} onClick={fitToScreen}>
@@ -380,14 +450,25 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
           </Button>
           <input type="file" accept="image/*,application/pdf" className="hidden" onChange={(e) => void handleImportFile(e)} />
         </label>
+        <div className="mx-1 h-6 w-px bg-border" aria-hidden />
+        {viewMode ? (
+          <Button variant="secondary" size="small" icon={<PencilSimple size={14} />} onClick={() => void handleEditMap()}>
+            Edit map
+          </Button>
+        ) : (
+          <Button variant="primary" size="small" icon={<FloppyDisk size={14} />} onClick={() => void handleSaveMap()}>
+            Save map
+          </Button>
+        )}
       </div>
 
-      {mode === 'connect' && (
+      {!viewMode && mode === 'connect' && (
         <p className="font-ui text-caption text-ink-tertiary">
           {connectFirst ? 'Now tap the node to connect it to.' : 'Tap a node to start a connection, then tap the node to connect it to.'}
         </p>
       )}
-      {mode === 'delete' && <p className="font-ui text-caption text-ink-tertiary">Tap a node or connection to delete it.</p>}
+      {!viewMode && mode === 'delete' && <p className="font-ui text-caption text-ink-tertiary">Tap a node or connection to delete it.</p>}
+      {viewMode && <p className="font-ui text-caption text-ink-tertiary">Tap a node to read what you wrote about it. Press Edit map to make changes.</p>}
       {importError && <p className="font-ui text-caption text-error">{importError}</p>}
 
       {/* Bounded canvas — see this file's header comment for why this
@@ -450,7 +531,7 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
                 <div
                   key={node.id}
                   onPointerDown={(e) => handleNodePointerDown(e, node)}
-                  className={`absolute flex min-h-[44px] w-[140px] cursor-grab select-none items-center justify-center border px-3 py-2 text-center font-ui text-caption font-medium leading-snug active:cursor-grabbing ${ACCENT_CLASSES[node.accent]} ${shapeClass(node.shape)} ${isConnectSource ? 'ring-2 ring-offset-2 ring-ink-primary' : ''}`}
+                  className={`absolute flex min-h-[44px] w-[140px] select-none items-center justify-center border px-3 py-2 text-center font-ui text-caption font-medium leading-snug ${viewMode ? 'cursor-pointer' : 'cursor-grab active:cursor-grabbing'} ${ACCENT_CLASSES[node.accent]} ${shapeClass(node.shape)} ${isConnectSource ? 'ring-2 ring-offset-2 ring-ink-primary' : ''}`}
                   style={{
                     left: pos.x,
                     top: pos.y,
@@ -492,6 +573,16 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
             placeholder="Node text"
             className="w-full rounded-md border border-border bg-surface px-3 py-2 font-body text-body text-ink-primary placeholder:text-ink-tertiary"
           />
+          <div className="flex flex-col gap-1">
+            <label className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Description (optional)</label>
+            <textarea
+              value={addDescription}
+              onChange={(e) => setAddDescription(e.target.value)}
+              placeholder="Add your own explanation for this node — shown when you tap it later."
+              rows={3}
+              className="w-full resize-y rounded-md border border-border bg-surface px-3 py-2 font-body text-body text-ink-primary placeholder:text-ink-tertiary"
+            />
+          </div>
           <Dropdown label="Shape" options={SHAPE_OPTIONS} value={addShape} onChange={(v) => setAddShape(v as ConceptMapNodeShape)} />
           <Dropdown label="Color" options={ACCENT_OPTIONS} value={addAccent} onChange={(v) => setAddAccent(v as ConceptMapNodeAccent)} />
           <div className="flex justify-end gap-3">
@@ -514,6 +605,16 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
             onChange={(e) => setEditLabel(e.target.value)}
             className="w-full rounded-md border border-border bg-surface px-3 py-2 font-body text-body text-ink-primary"
           />
+          <div className="flex flex-col gap-1">
+            <label className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Description (optional)</label>
+            <textarea
+              value={editDescription}
+              onChange={(e) => setEditDescription(e.target.value)}
+              placeholder="Add your own explanation for this node — shown when you tap it later."
+              rows={3}
+              className="w-full resize-y rounded-md border border-border bg-surface px-3 py-2 font-body text-body text-ink-primary placeholder:text-ink-tertiary"
+            />
+          </div>
           <Dropdown label="Shape" options={SHAPE_OPTIONS} value={editShape} onChange={(v) => setEditShape(v as ConceptMapNodeShape)} />
           <Dropdown label="Color" options={ACCENT_OPTIONS} value={editAccent} onChange={(v) => setEditAccent(v as ConceptMapNodeAccent)} />
           <div className="flex justify-between gap-3">
@@ -539,6 +640,29 @@ export function MindMapStudio({ concept }: MindMapStudioProps) {
           </div>
         </div>
       </Dialog>
+
+      {/* View Mode's read-only node info card (§18) — title + optional
+          description, exactly as the person wrote it. Never generated;
+          an empty description shows a subtle placeholder, not a blank
+          gap or a fabricated explanation. */}
+      <Dialog open={Boolean(viewingNode)} onClose={() => setViewingNode(undefined)} title={viewingNode?.label ?? ''}>
+        <div className="flex flex-col gap-4">
+          {viewingNode?.description ? (
+            <p className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed">{viewingNode.description}</p>
+          ) : (
+            <p className="flex items-center gap-1.5 font-ui text-caption text-ink-tertiary">
+              <Info size={14} aria-hidden />
+              No description added.
+            </p>
+          )}
+          <div className="flex justify-end">
+            <Button variant="secondary" size="small" onClick={() => setViewingNode(undefined)}>
+              Close
+            </Button>
+          </div>
+        </div>
+      </Dialog>
+
 
       {/* Delete node confirm */}
       <Dialog open={Boolean(confirmDeleteNode)} onClose={() => setConfirmDeleteNode(undefined)} title="Delete this node?">

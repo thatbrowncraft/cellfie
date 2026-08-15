@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowSquareOut, CaretDown, ListChecks, Ruler } from '@phosphor-icons/react'
+import { ListChecks, Ruler } from '@phosphor-icons/react'
 import { EmptyState } from '@/shared/components'
 import type { Concept, ConceptRelation } from '@/core/db'
 import { fetchOnlineKnowledge, type ExamTools, type OnlineKnowledgeSection } from '@/core/concepts'
@@ -16,23 +16,30 @@ interface ExamToolsPanelProps {
  * Exam Focus study-mode content (mounted inside the Learn tab, not on
  * its own Level-1 tab — see ConceptDetailPage.tsx). Every block below
  * comes straight from `buildExamTools` (core/concepts/examTools.ts —
- * real source excerpts and real relationship data, never invented) or
- * is the person's own choice of what to compare. A block that has
- * nothing real to show simply doesn't render, matching every other
- * tab in this app. Memory aid is intentionally NOT part of this
- * component — see components/MemoryAidCard.tsx, mounted independently
- * in the Learn tab so it never depends on Exam Focus content existing.
+ * real source excerpts, never invented) or is the person's own choice
+ * of what to compare. A block that has nothing real to show simply
+ * doesn't render, matching every other tab in this app. Memory aid is
+ * intentionally NOT part of this component — see
+ * components/MemoryAidCard.tsx, mounted independently in the Learn tab
+ * so it never depends on Exam Focus content existing.
+ *
+ * Third Refinement §14: the old "Quick questions" block ("What is X,
+ * according to <source>?") is gone — it read as a source lookup, not
+ * exam prep. This is the fallback panel for concepts without a curated
+ * lesson yet; a curated lesson's own hand-authored possible-questions
+ * (real conceptual questions) render separately, via
+ * CuratedExamFocusView — see ConceptDetailPage.tsx.
  */
 export function ExamToolsPanel({ concept, examTools, relatedEntries, onlineSections }: ExamToolsPanelProps) {
-  const hasAnything = examTools.keyPoints.length > 0 || examTools.importantValues.length > 0 || examTools.quickQuestions.length > 0
+  const hasAnything = examTools.keyPoints.length > 0 || examTools.importantValues.length > 0
 
   return (
     <div className="flex flex-col gap-6">
-      {!hasAnything && (
+      {!hasAnything && relatedEntries.length === 0 && (
         <EmptyState
           icon={<ListChecks size={32} />}
           title="Not enough source material yet"
-          description="Once the Scientific overview on the Learn tab has real content for this concept, exam points and questions will build themselves from it."
+          description="Once the Scientific overview on the Learn tab has real content for this concept, exam points will build themselves from it."
         />
       )}
 
@@ -70,51 +77,8 @@ export function ExamToolsPanel({ concept, examTools, relatedEntries, onlineSecti
         </div>
       )}
 
-      {examTools.quickQuestions.length > 0 && (
-        <div className="rounded-md border border-border bg-surface p-5">
-          <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Quick questions</h3>
-          <ul className="flex flex-col gap-2">
-            {examTools.quickQuestions.map((q, i) => (
-              <QuestionCard key={i} question={q} />
-            ))}
-          </ul>
-        </div>
-      )}
-
       <ComparePanel concept={concept} onlineSections={onlineSections} relatedEntries={relatedEntries} />
     </div>
-  )
-}
-
-function QuestionCard({ question }: { question: ExamTools['quickQuestions'][number] }) {
-  const [open, setOpen] = useState(false)
-  return (
-    <li className="rounded-md border border-border">
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left font-ui text-body font-medium text-ink-primary"
-      >
-        {question.question}
-        <CaretDown size={14} className={`shrink-0 text-ink-tertiary transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden />
-      </button>
-      {open && (
-        <div className="border-t border-border px-3 py-2.5">
-          <p className="whitespace-pre-line font-body text-body text-ink-primary">{question.answer}</p>
-          {question.sourceUrl && (
-            <a
-              href={question.sourceUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-1.5 flex w-fit items-center gap-1 font-ui text-micro font-medium text-olive hover:underline"
-            >
-              Source: {question.sourceName}
-              <ArrowSquareOut size={12} />
-            </a>
-          )}
-        </div>
-      )}
-    </li>
   )
 }
 

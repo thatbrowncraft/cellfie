@@ -53,7 +53,7 @@ function SectionBody({ section }: { section: LessonSection }) {
             />
           ) : (
             <div className="overflow-x-auto rounded-md border border-border">
-              <table className="w-full border-collapse">
+              <table className="w-full min-w-[480px] border-collapse">
                 <thead>
                   <tr className="bg-surface-raised">
                     <th className="px-4 py-3 text-left font-ui text-ui font-medium text-ink-secondary"> </th>
