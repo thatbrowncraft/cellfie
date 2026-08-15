@@ -237,7 +237,7 @@ export function ConceptDetailPage() {
   // come from ExamToolsPanel's own `relatedEntries` prop directly, not
   // through this function — see examTools.ts's own doc comment).
   const examTools = useMemo(
-    () => (concept ? buildExamTools(concept, onlineSections) : { keyPoints: [], importantValues: [], quickQuestions: [] }),
+    () => (concept ? buildExamTools(onlineSections) : { keyPoints: [], importantValues: [] }),
     [concept, onlineSections]
   )
 
@@ -662,10 +662,14 @@ export function ConceptDetailPage() {
                 )}
 
                 {/* Exam Focus — the existing exam-oriented content (key
-                    points, important values, quick questions, compare),
-                    now a study MODE inside Learn rather than a separate
-                    Level-1 tab. Memory aid is intentionally NOT part of
-                    this component — see MemoryAidCard below. */}
+                    points, important values, compare), now a study MODE
+                    inside Learn rather than a separate Level-1 tab. The
+                    old generic "Quick questions" block is gone (Third
+                    Refinement §14) — a curated lesson's own hand-authored
+                    possibleQuestions (CuratedExamFocusView, above) is the
+                    real conceptual-question content. Memory aid is
+                    intentionally NOT part of this component — see
+                    MemoryAidCard below. */}
                 {studyMode === 'exam' && (
                   <div className="flex flex-col gap-4">
                     {curatedLesson && <CuratedExamFocusView lesson={curatedLesson} />}
