@@ -9,6 +9,8 @@
 import { db, type Concept, type ConceptRelation, type ConceptSource, type ConceptSourceType } from '../db'
 import { normalizeConceptName } from './normalize'
 import { removeAllConceptAssetsFor } from './assets'
+import { removeAllMapDataFor } from './mindMapStudio'
+import { removeAllStudyNotesFor } from './studyNotes'
 
 export interface ConceptInput {
   name: string
@@ -121,6 +123,8 @@ export async function deleteConcept(id: string): Promise<void> {
   // Outside the Dexie transaction — this also deletes OPFS files, which
   // shouldn't run inside an IndexedDB transaction's lifetime.
   await removeAllConceptAssetsFor(id)
+  await removeAllMapDataFor(id)
+  await removeAllStudyNotesFor(id)
 }
 
 export interface LinkSourceInput {
