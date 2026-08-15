@@ -4,7 +4,14 @@
  * why these are separate tables from the old ConceptAsset
  * 'mindmap-node' annotation). Everything here is plain user data: a
  * label the person typed, a shape they picked, a position they
- * dragged to. Nothing is generated.
+ * dragged to, and — since Third Refinement §17 — an optional
+ * description they wrote. Nothing is generated.
+ *
+ * Third Refinement §16/§21 also adds a tiny bit of per-concept UI
+ * state: whether this concept's map has been explicitly "Saved" (and
+ * should therefore reopen in View Mode rather than Edit Mode). This
+ * reuses the existing generic `appSettings` key/value table rather
+ * than adding a new Dexie table for a single boolean.
  */
 
 import { db, type ConceptMapEdge, type ConceptMapNode, type ConceptMapNodeAccent, type ConceptMapNodeShape } from '../db'
@@ -22,7 +29,8 @@ export async function addMapNode(
   label: string,
   position: { x: number; y: number },
   shape: ConceptMapNodeShape = 'rounded',
-  accent: ConceptMapNodeAccent = 'terracotta'
+  accent: ConceptMapNodeAccent = 'terracotta',
+  description?: string
 ): Promise<ConceptMapNode | undefined> {
   const trimmed = label.trim()
   if (!trimmed) return undefined
@@ -31,6 +39,7 @@ export async function addMapNode(
     id: crypto.randomUUID(),
     conceptId,
     label: trimmed,
+    description: description?.trim() || undefined,
     shape,
     accent,
     x: position.x,
@@ -44,7 +53,7 @@ export async function addMapNode(
 
 export async function updateMapNode(
   id: string,
-  changes: Partial<Pick<ConceptMapNode, 'label' | 'shape' | 'accent' | 'x' | 'y'>>
+  changes: Partial<Pick<ConceptMapNode, 'label' | 'shape' | 'accent' | 'x' | 'y' | 'description'>>
 ): Promise<void> {
   await db.conceptMapNodes.update(id, { ...changes, updatedAt: Date.now() })
 }
@@ -88,4 +97,25 @@ export async function removeAllMapDataFor(conceptId: string): Promise<void> {
     await db.conceptMapNodes.where('conceptId').equals(conceptId).delete()
     await db.conceptMapEdges.where('conceptId').equals(conceptId).delete()
   })
+}
+
+function mapSavedKey(conceptId: string): string {
+  return `mindmap-saved:${conceptId}`
+}
+
+/**
+ * Third Refinement §16/§21 — "BUILD → SAVE → STUDY". A map starts in
+ * Edit Mode (default `false`, including for every map that existed
+ * before this feature shipped — nothing about a pre-existing map's
+ * behavior changes until the person explicitly presses Save Map for
+ * the first time). Once saved, reopening the concept shows View Mode
+ * until "Edit Map" is pressed again.
+ */
+export async function isMapSaved(conceptId: string): Promise<boolean> {
+  const record = await db.appSettings.get(mapSavedKey(conceptId))
+  return record?.value === true
+}
+
+export async function setMapSaved(conceptId: string, saved: boolean): Promise<void> {
+  await db.appSettings.put({ key: mapSavedKey(conceptId), value: saved })
 }

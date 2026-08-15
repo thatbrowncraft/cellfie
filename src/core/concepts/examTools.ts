@@ -8,9 +8,17 @@
  * stored data (a relationship's own type/evidence). Per §10, a block is
  * simply omitted — never padded with a placeholder — when there isn't
  * real material to build it from.
+ *
+ * Third Refinement §14: the old "Quick questions" block (one card per
+ * section reading "What is X, according to <source>?") is removed —
+ * that's a source lookup, not exam preparation, and it doesn't belong
+ * anywhere near Exam Focus. This is the fallback path for concepts that
+ * don't have a curated lesson yet (see curatedLessons/registry.ts); a
+ * curated lesson's own `examFocus.possibleQuestions` — real conceptual
+ * questions, hand-authored — is the intended replacement, rendered by
+ * CuratedExamFocusView, not this file.
  */
 
-import type { Concept } from '../db'
 import type { OnlineKnowledgeSection } from './onlineKnowledge'
 
 export interface KeyExamPoint {
@@ -26,17 +34,9 @@ export interface ImportantValue {
   sourceUrl: string
 }
 
-export interface QuickQuestion {
-  question: string
-  answer: string
-  sourceName?: string
-  sourceUrl?: string
-}
-
 export interface ExamTools {
   keyPoints: KeyExamPoint[]
   importantValues: ImportantValue[]
-  quickQuestions: QuickQuestion[]
 }
 
 /** Splits on sentence-ending punctuation followed by a space+capital/digit or end of string — the same lightweight heuristic used elsewhere in this codebase (see textDisplay.ts), not a full NLP tokenizer. */
@@ -90,39 +90,10 @@ function deriveFromSections(sections: OnlineKnowledgeSection[]): {
 }
 
 /**
- * §10 "Quick questions" — simple, templated Q/A cards, never AI-written.
- * One card per section ("What is X, according to <source>?" → the
- * section's own text). Concept Hub Refinement §4/§15: this used to also
- * add one card per scientific-origin relation, but scientific-origin
- * ConceptRelation rows no longer exist anywhere in this app (see
- * core/concepts/graph.ts) — that branch is removed rather than left as
- * permanently-dead code. A personal (manual) connection was always
- * deliberately excluded here too — a person's own connection isn't an
- * exam fact; see `buildExamTools`'s own doc comment for where manual
- * relations DO show up (as Compare candidates). Capped so a heavily-
- * sourced concept doesn't produce an overwhelming stack of cards.
- */
-function deriveQuickQuestions(concept: Concept, sections: OnlineKnowledgeSection[]): QuickQuestion[] {
-  const questions: QuickQuestion[] = []
-
-  for (const section of sections.slice(0, 3)) {
-    questions.push({
-      question: `What is ${concept.name}, according to ${section.sourceName}?`,
-      answer: section.text,
-      sourceName: section.sourceName,
-      sourceUrl: section.sourceUrl
-    })
-  }
-
-  return questions.slice(0, 6)
-}
-
-/**
- * Single entry point for Exam Focus's key-points/values/questions
- * content. Everything here is derived from data the page already has
- * in memory (this concept's fetched online-knowledge sections) — no
- * new fetches, so it's instant and works offline once those have
- * loaded once.
+ * Single entry point for Exam Focus's key-points/values content.
+ * Everything here is derived from data the page already has in memory
+ * (this concept's fetched online-knowledge sections) — no new fetches,
+ * so it's instant and works offline once those have loaded once.
  *
  * "Compare" and "Common confusion" aren't produced here: a reliable,
  * generic way to auto-detect that two concepts are commonly CONFUSED
@@ -138,8 +109,6 @@ function deriveQuickQuestions(concept: Concept, sections: OnlineKnowledgeSection
  * (`updateConceptMemoryAid` in service.ts, independent component
  * MemoryAidCard.tsx) and never appears here as a suggestion.
  */
-export function buildExamTools(concept: Concept, sections: OnlineKnowledgeSection[]): ExamTools {
-  const { keyPoints, importantValues } = deriveFromSections(sections)
-  const quickQuestions = deriveQuickQuestions(concept, sections)
-  return { keyPoints, importantValues, quickQuestions }
+export function buildExamTools(sections: OnlineKnowledgeSection[]): ExamTools {
+  return deriveFromSections(sections)
 }
