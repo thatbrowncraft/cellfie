@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UploadSimple, Link, NotePencil, TreeStructure, Trash, Sparkle } from '@phosphor-icons/react'
 import { EmptyState, Button, Dialog } from '@/shared/components'
-import { buildStudyMap, type Concept, type DetailedStudyModule, type MindMapNode } from '@/core/concepts'
+import { buildStudyMap, type Concept, type DetailedStudyModule, type MeshClassification, type MindMapNode } from '@/core/concepts'
 import { addMindMapNode, importConceptAssetFile, listConceptAssets, removeConceptAsset } from '@/core/concepts/assets'
 import type { ConceptAsset } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
@@ -16,6 +16,11 @@ interface ConceptMindMapProps {
    *  modules, reused (never re-fetched) to build the "Study Map" tab.
    *  See core/concepts/studyMap.ts. */
   detailedStudyModules: DetailedStudyModule[]
+  /** Raw MeSH classification, reused (never re-fetched) so the Study
+   *  Map can build its relationship skeleton straight from MeSH's own
+   *  typed parent/child/associated-concept data instead of reverse-
+   *  parsing Detailed Study's rendered bullets. */
+  mesh?: MeshClassification
 }
 
 /**
@@ -38,7 +43,7 @@ interface ConceptMindMapProps {
  * separately again (kind 'mindmap-import') and listed below the tree,
  * not merged into it — see core/concepts/assets.ts.
  */
-export function ConceptMindMap({ root, concept, detailedStudyModules }: ConceptMindMapProps) {
+export function ConceptMindMap({ root, concept, detailedStudyModules, mesh }: ConceptMindMapProps) {
   const navigate = useNavigate()
   const [addNodeOpen, setAddNodeOpen] = useState(false)
   const [nodeLabel, setNodeLabel] = useState('')
@@ -55,7 +60,7 @@ export function ConceptMindMap({ root, concept, detailedStudyModules }: ConceptM
   // never merged into one graph. Defaults to whichever actually has
   // something to show: the person's own map if they've built one,
   // otherwise the generated Study Map so the tab isn't just a dead end.
-  const studyMap = useMemo(() => buildStudyMap(concept, detailedStudyModules), [concept, detailedStudyModules])
+  const studyMap = useMemo(() => buildStudyMap(concept, detailedStudyModules, mesh), [concept, detailedStudyModules, mesh])
   const [view, setView] = useState<'mine' | 'study'>(root.children.length > 0 ? 'mine' : 'study')
 
   async function handleAddNode() {

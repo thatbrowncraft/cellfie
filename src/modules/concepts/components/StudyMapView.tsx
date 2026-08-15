@@ -114,14 +114,28 @@ export function StudyMapView({ map }: StudyMapViewProps) {
               </marker>
             </defs>
             {layout.edges.map((e) => (
-              <path
-                key={e.id}
-                d={e.d}
-                fill="none"
-                stroke="var(--color-border-strong)"
-                strokeWidth={1.5}
-                markerEnd={isProcedure ? 'url(#study-map-arrow)' : undefined}
-              />
+              <g key={e.id}>
+                <path
+                  d={e.d}
+                  fill="none"
+                  stroke="var(--color-border-strong)"
+                  strokeWidth={1.5}
+                  markerEnd={isProcedure ? 'url(#study-map-arrow)' : undefined}
+                />
+                {e.label && e.labelX !== undefined && e.labelY !== undefined && (
+                  <text
+                    x={e.labelX}
+                    y={e.labelY}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    className="fill-ink-tertiary font-ui italic"
+                    fontSize={9}
+                    style={{ paintOrder: 'stroke', stroke: 'var(--color-bg-surface-raised)', strokeWidth: 3 }}
+                  >
+                    {e.label}
+                  </text>
+                )}
+              </g>
             ))}
           </svg>
 
