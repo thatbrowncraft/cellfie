@@ -263,6 +263,81 @@ export interface ConceptAsset {
   createdAt: number
 }
 
+/**
+ * Second Refinement §Part 1 — a real, freeform mind-map/flowchart node.
+ * Deliberately a separate table from `ConceptAsset`'s 'mindmap-node'
+ * kind (a plain annotation with no position): a map node has a
+ * position, a shape, and can be an endpoint of a `ConceptMapEdge`,
+ * none of which the old annotation model supports. `ConceptAsset`'s
+ * 'mindmap-node' kind is left exactly as it was (still used by
+ * anything reading historical annotation rows); new user-drawn map
+ * nodes only ever go through this table.
+ */
+export type ConceptMapNodeShape = 'rounded' | 'rectangle' | 'circle' | 'pill' | 'diamond'
+export type ConceptMapNodeAccent = 'terracotta' | 'olive' | 'sage' | 'ink'
+
+export interface ConceptMapNode {
+  id: string
+  conceptId: string
+  label: string
+  shape: ConceptMapNodeShape
+  accent: ConceptMapNodeAccent
+  /** Canvas-space position (not viewport pixels — independent of current zoom/pan). */
+  x: number
+  y: number
+  createdAt: number
+  updatedAt: number
+}
+
+/**
+ * A connection between two `ConceptMapNode` rows belonging to the same
+ * concept. `label` is the optional relationship phrase ("causes",
+ * "part of", etc.) — free text, never inferred. Deleting either
+ * endpoint node cascades to delete the edge (see mindMapStudio.ts).
+ */
+export interface ConceptMapEdge {
+  id: string
+  conceptId: string
+  sourceNodeId: string
+  targetNodeId: string
+  label?: string
+  createdAt: number
+}
+
+/**
+ * Second Refinement §Part 2 — a user-authored study block attached to
+ * one of Learn's sections. Deliberately free text the person wrote
+ * themselves, never generated: this is what lets "MY STUDY NOTES"
+ * coexist with (and stay visibly separate from) Cellfie's own verified
+ * content in the same section — see ConceptDetailPage.tsx's rendering,
+ * which always labels the two differently and never merges them.
+ */
+export type ConceptNoteSection = 'core-concept' | 'quick-revision' | 'exam-focus'
+export type ConceptNoteBlockType =
+  | 'text'
+  | 'heading'
+  | 'bullets'
+  | 'numbered'
+  | 'keyvalue'
+  | 'important'
+  | 'warning'
+  | 'definition'
+  | 'example'
+  | 'formula'
+
+export interface ConceptStudyNote {
+  id: string
+  conceptId: string
+  section: ConceptNoteSection
+  blockType: ConceptNoteBlockType
+  title?: string
+  /** Raw text as the person typed it. Bullets/numbered/key-value are stored as newline-separated lines and split for display — never re-parsed into anything invented. */
+  content: string
+  order: number
+  createdAt: number
+  updatedAt: number
+}
+
 class CellfieDB extends Dexie {
   libraryItems!: Table<LibraryItem, string>
   collections!: Table<Collection, string>
@@ -274,6 +349,9 @@ class CellfieDB extends Dexie {
   conceptSources!: Table<ConceptSource, string>
   conceptRelations!: Table<ConceptRelation, string>
   conceptAssets!: Table<ConceptAsset, string>
+  conceptMapNodes!: Table<ConceptMapNode, string>
+  conceptMapEdges!: Table<ConceptMapEdge, string>
+  conceptStudyNotes!: Table<ConceptStudyNote, string>
 
   constructor() {
     super('cellfie')
@@ -371,6 +449,29 @@ class CellfieDB extends Dexie {
         'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
       conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
       conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]'
+    })
+    // v7 — Second Refinement: real freeform Mind Map (`conceptMapNodes`/
+    // `conceptMapEdges`, replacing the old position-less annotation
+    // model for anything drawn from here on) and user-authored Learn
+    // blocks (`conceptStudyNotes`). Every prior store repeated
+    // unchanged; no existing row in any table is touched by this
+    // upgrade, and `conceptAssets`'s 'mindmap-node' kind is left alone
+    // (old annotation rows keep rendering exactly as before).
+    this.version(7).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt',
+      highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+      notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+      concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+      conceptSources:
+        'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+      conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+      conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+      conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+      conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+      conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]'
     })
   }
 }
