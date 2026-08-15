@@ -22,8 +22,14 @@ interface ComparisonTableProps {
  */
 export function ComparisonTable({ itemA, itemB, rows, className }: ComparisonTableProps) {
   return (
-    <div className={cn('overflow-hidden rounded-md border border-border', className)}>
-      <table className="w-full border-collapse">
+    // Third Refinement §13: the page must never overflow horizontally,
+    // but the table itself is allowed to — `overflow-x-auto` here (not
+    // `overflow-hidden`, which would silently clip long scientific
+    // content on narrow screens) plus a floor width on the table so
+    // columns never get squashed unreadably thin; the person swipes the
+    // table sideways on mobile instead of losing content.
+    <div className={cn('overflow-x-auto rounded-md border border-border', className)}>
+      <table className="w-full min-w-[480px] border-collapse">
         <thead>
           <tr className="bg-surface-raised">
             <th scope="col" className="px-4 py-3 text-left font-ui text-ui font-medium text-ink-secondary">
