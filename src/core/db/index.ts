@@ -280,6 +280,8 @@ export interface ConceptMapNode {
   id: string
   conceptId: string
   label: string
+  /** Third Refinement §17 — optional, multiline, entirely the person's own words; never generated. Absent/undefined on nodes created before this field existed — treated identically to an empty description everywhere it's read (see MindMapStudio.tsx). Not part of the Dexie index string below since it's never queried on, so no schema version bump is needed to add it. */
+  description?: string
   shape: ConceptMapNodeShape
   accent: ConceptMapNodeAccent
   /** Canvas-space position (not viewport pixels — independent of current zoom/pan). */
