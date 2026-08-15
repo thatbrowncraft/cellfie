@@ -5,7 +5,6 @@ import { db, type Concept, type ConceptRelation, type ConceptSource, type Librar
 import { useLiveQuery } from '@/core/db/useLiveQuery'
 import {
   backfillSourceRelevance,
-  buildConceptMindMap,
   buildDetailedStudyModules,
   buildExamTools,
   buildResearchReadings,
@@ -16,12 +15,12 @@ import {
   fetchMeshClassification,
   fetchOnlineKnowledge,
   fetchVisualReferences,
+  getCuratedLesson,
   getFirstAndLastEncountered,
   isLikelyOnline,
   scanLibraryItemForConcepts,
   type EuropePmcArticle,
   type MeshClassification,
-  type MindMapNode,
   type OnlineKnowledgeSection,
   type VisualReference
 } from '@/core/concepts'
@@ -29,8 +28,10 @@ import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/components'
 import { ConceptSourceList } from './components/ConceptSourceList'
 import { RelatedConceptsPanel } from './components/RelatedConceptsPanel'
-import { ConceptMindMap } from './components/ConceptMindMap'
 import { ConceptVisualsImport } from './components/ConceptVisualsImport'
+import { StudyNotesSection } from './components/StudyNotesSection'
+import { MindMapStudio } from './components/MindMapStudio'
+import { CuratedLessonView, CuratedQuickRevisionView, CuratedExamFocusView } from './components/CuratedLessonView'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
 import { ExamToolsPanel } from './components/ExamToolsPanel'
 import { MemoryAidCard } from './components/MemoryAidCard'
@@ -251,6 +252,14 @@ export function ConceptDetailPage() {
     [concept, onlineSections, meshClassification]
   )
 
+  // Second Refinement §Part 3–7 — the curated-lesson lookup. A hand-
+  // authored, source-attributed lesson takes over Core Concept (and
+  // feeds Quick Revision/Exam Focus's compact summaries) whenever one
+  // exists for this concept; every other concept keeps the prior
+  // MeSH/PubChem-based architecture untouched. See
+  // core/concepts/curatedLessons/registry.ts.
+  const curatedLesson = useMemo(() => (concept ? getCuratedLesson(concept) : undefined), [concept])
+
   // Concept 2.0 architecture change §6 — Research & Further Reading,
   // the ONLY place a Europe PMC research article's title/journal/link
   // appears on the Learn tab now. See researchReadings.ts.
@@ -285,12 +294,6 @@ export function ConceptDetailPage() {
   const hasPdfPageSources = useMemo(
     () => sources.some((s) => s.sourceType === 'pdf' && s.libraryItemId && s.pageNumber != null),
     [sources]
-  )
-
-  const mindMap = useLiveQuery<MindMapNode>(
-    () => (id ? buildConceptMindMap(id) : Promise.resolve({ id: id ?? '', label: '', children: [] })),
-    [id, sources.length, relations.length],
-    { id: id ?? '', label: '', children: [] }
   )
 
   const meaningfulSourceCount = useMemo(
@@ -428,7 +431,11 @@ export function ConceptDetailPage() {
                     the source's own framing or is a generic source-type
                     label — never invented from the concept's topic. */}
                 {studyMode === 'quick' && (
-                  <div className="rounded-md border border-border bg-surface p-5">
+                  <>
+                    {curatedLesson ? (
+                      <CuratedQuickRevisionView lesson={curatedLesson} />
+                    ) : (
+                      <div className="rounded-md border border-border bg-surface p-5">
                     <h3 className="mb-3 flex items-center gap-1.5 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
                       <Globe size={14} aria-hidden />
                       Scientific overview
@@ -476,21 +483,34 @@ export function ConceptDetailPage() {
                           : "Online sources aren't reachable right now. Your saved notes and library material are still available below."}
                       </p>
                     )}
+                      </div>
+                    )}
+                  </>
+                )}
+
+                {studyMode === 'quick' && concept && (
+                  <StudyNotesSection conceptId={concept.id} section="quick-revision" itemLabel="revision point" />
+                )}
+
+                {/* Core Concept — Second Refinement §Part 3–7. If a
+                    curated lesson exists for this concept (see
+                    core/concepts/curatedLessons), it IS Core Concept —
+                    a hand-authored, source-attributed lesson, not a
+                    database record. Otherwise this falls back to the
+                    prior architecture: Definition/Structure built only
+                    from curated (MeSH scope note) or real compound
+                    (PubChem) data, Classification/Relationships
+                    collapsed as metadata, research kept separate below.
+                    That fallback is the honest state for a concept that
+                    doesn't have a curated lesson yet — never faked. */}
+                {studyMode === 'detailed' && curatedLesson && (
+                  <div className="flex flex-col gap-4">
+                    <CuratedLessonView lesson={curatedLesson} />
+                    {concept && <StudyNotesSection conceptId={concept.id} section="core-concept" itemLabel="study note" />}
                   </div>
                 )}
 
-                {/* Core Concept — Concept 2.0 architecture change §7/§18.
-                    Definition and Structure are the actual lesson: built
-                    only from curated (MeSH scope note) or real compound
-                    (PubChem) data, never a research abstract standing in
-                    for foundational content — see detailedStudy.ts.
-                    Classification and Relationships are real MeSH data
-                    too, but they're metadata about the concept, not
-                    teaching content, so they're collapsed by default
-                    below rather than presented as equal-weight lessons.
-                    Research articles never appear here at all — see
-                    Research & Further Reading further down. */}
-                {studyMode === 'detailed' && (
+                {studyMode === 'detailed' && !curatedLesson && (
                   <div className="flex flex-col gap-4">
                     {detailedStudyModules
                       .filter((m) => m.id === 'definition' || m.id === 'structure')
@@ -636,6 +656,8 @@ export function ConceptDetailPage() {
                         </div>
                       )}
                     </div>
+
+                    {concept && <StudyNotesSection conceptId={concept.id} section="core-concept" itemLabel="study note" />}
                   </div>
                 )}
 
@@ -645,7 +667,11 @@ export function ConceptDetailPage() {
                     Level-1 tab. Memory aid is intentionally NOT part of
                     this component — see MemoryAidCard below. */}
                 {studyMode === 'exam' && (
-                  <ExamToolsPanel concept={concept} examTools={examTools} relatedEntries={relatedEntries} onlineSections={onlineSections} />
+                  <div className="flex flex-col gap-4">
+                    {curatedLesson && <CuratedExamFocusView lesson={curatedLesson} />}
+                    <ExamToolsPanel concept={concept} examTools={examTools} relatedEntries={relatedEntries} onlineSections={onlineSections} />
+                    {concept && <StudyNotesSection conceptId={concept.id} section="exam-focus" itemLabel="exam note" />}
+                  </div>
                 )}
 
                 {/* Memory aid — independent of study mode and of Exam
@@ -733,7 +759,7 @@ export function ConceptDetailPage() {
                     allConcepts={allConcepts}
                   />
                 ) : (
-                  <ConceptMindMap root={mindMap} concept={concept} />
+                  <MindMapStudio concept={concept} />
                 )}
               </div>
             )
