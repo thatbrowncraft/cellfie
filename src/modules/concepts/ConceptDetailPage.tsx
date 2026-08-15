@@ -8,7 +8,7 @@ import {
   buildConceptMindMap,
   buildDetailedStudyModules,
   buildExamTools,
-  buildGeneratedVisual,
+  buildResearchReadings,
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
@@ -31,7 +31,6 @@ import { ConceptSourceList } from './components/ConceptSourceList'
 import { RelatedConceptsPanel } from './components/RelatedConceptsPanel'
 import { ConceptMindMap } from './components/ConceptMindMap'
 import { ConceptVisualsImport } from './components/ConceptVisualsImport'
-import { GeneratedVisualCard } from './components/GeneratedVisualCard'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
 import { ExamToolsPanel } from './components/ExamToolsPanel'
 import { MemoryAidCard } from './components/MemoryAidCard'
@@ -248,23 +247,17 @@ export function ConceptDetailPage() {
   // fetched above. See core/concepts/detailedStudy.ts's header comment
   // for the cross-module duplication guard.
   const detailedStudyModules = useMemo(
-    () => (concept ? buildDetailedStudyModules(concept, onlineSections, meshClassification, europePmcArticles) : []),
-    [concept, onlineSections, meshClassification, europePmcArticles]
+    () => (concept ? buildDetailedStudyModules(concept, onlineSections, meshClassification) : []),
+    [concept, onlineSections, meshClassification]
   )
 
-  // Mind Map / Visuals redesign §10/§11 — Visuals tab's native
-  // illustration fallback. Deliberately a DIFFERENT builder from the
-  // Mind Map's Study Map (studyMap.ts): generatedVisual.ts favors
-  // Structure/Classification "parts" data and produces a flat labeled
-  // figure, never the branching flowchart. Only offered once there's
-  // real content to draw from, and only ever alongside/after a check
-  // for real external visuals — never a substitute the person didn't
-  // ask for.
-  const generatedVisual = useMemo(
-    () => (concept ? buildGeneratedVisual(concept, detailedStudyModules, meshClassification) : undefined),
-    [concept, detailedStudyModules, meshClassification]
+  // Concept 2.0 architecture change §6 — Research & Further Reading,
+  // the ONLY place a Europe PMC research article's title/journal/link
+  // appears on the Learn tab now. See researchReadings.ts.
+  const researchReadings = useMemo(
+    () => (concept ? buildResearchReadings(europePmcArticles, concept.name) : []),
+    [europePmcArticles, concept]
   )
-  const [showGeneratedDiagram, setShowGeneratedDiagram] = useState(false)
 
   // References tab, "Scientific sources" — deduped by URL across every
   // online tier this concept pulled from (Concept Hub Refinement §9).
@@ -420,7 +413,7 @@ export function ConceptDetailPage() {
                     size="small"
                     onClick={() => setStudyMode('detailed')}
                   >
-                    Detailed Study
+                    Core Concept
                   </Button>
                   <Button variant={studyMode === 'exam' ? 'primary' : 'secondary'} size="small" onClick={() => setStudyMode('exam')}>
                     Exam Focus
@@ -486,67 +479,163 @@ export function ConceptDetailPage() {
                   </div>
                 )}
 
-                {/* Detailed Study — five fixed modules, each made of one
-                    or more subsections. Subsections only ever exist
-                    when the underlying data is genuinely structured
-                    (separate MeSH fields, or a source abstract that
-                    already has its own labeled sections) — see
-                    core/concepts/detailedStudy.ts for exactly where
-                    that structure comes from and the cross-module
-                    duplication guard. Source attribution is shown per
-                    module (module-level, since a module's subsections
-                    are always built from the same one or two sources). */}
+                {/* Core Concept — Concept 2.0 architecture change §7/§18.
+                    Definition and Structure are the actual lesson: built
+                    only from curated (MeSH scope note) or real compound
+                    (PubChem) data, never a research abstract standing in
+                    for foundational content — see detailedStudy.ts.
+                    Classification and Relationships are real MeSH data
+                    too, but they're metadata about the concept, not
+                    teaching content, so they're collapsed by default
+                    below rather than presented as equal-weight lessons.
+                    Research articles never appear here at all — see
+                    Research & Further Reading further down. */}
                 {studyMode === 'detailed' && (
                   <div className="flex flex-col gap-4">
-                    {detailedStudyModules.map((studyModule) => (
-                      <div key={studyModule.id} className="rounded-md border border-border bg-surface p-5">
-                        <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                          {studyModule.heading}
-                        </h3>
-                        <div className="flex flex-col gap-3">
-                          {studyModule.subsections.map((sub) => (
-                            <div key={sub.id}>
-                              {sub.heading && (
-                                <h4 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">{sub.heading}</h4>
-                              )}
-                              {sub.body && (
-                                <p
-                                  className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed"
-                                  style={{ overflowWrap: 'anywhere' }}
+                    {detailedStudyModules
+                      .filter((m) => m.id === 'definition' || m.id === 'structure')
+                      .map((studyModule) => (
+                        <div key={studyModule.id} className="rounded-md border border-border bg-surface p-5">
+                          <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                            {studyModule.heading}
+                          </h3>
+                          <div className="flex flex-col gap-3">
+                            {studyModule.subsections.map((sub) => (
+                              <div key={sub.id}>
+                                {sub.heading && (
+                                  <h4 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">{sub.heading}</h4>
+                                )}
+                                {sub.body && (
+                                  <p
+                                    className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed"
+                                    style={{ overflowWrap: 'anywhere' }}
+                                  >
+                                    {sub.body}
+                                  </p>
+                                )}
+                                {sub.bullets && sub.bullets.length > 0 && (
+                                  <ul className="list-disc space-y-1 pl-5 font-body text-body text-ink-primary leading-relaxed">
+                                    {sub.bullets.map((bullet, i) => (
+                                      <li key={i} style={{ overflowWrap: 'anywhere' }}>
+                                        {bullet}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                          {studyModule.available && studyModule.sourceRefs.length > 0 && (
+                            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 border-t border-border pt-3">
+                              {studyModule.sourceRefs.map((ref, i) => (
+                                <a
+                                  key={i}
+                                  href={ref.sourceUrl}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
                                 >
-                                  {sub.body}
-                                </p>
-                              )}
-                              {sub.bullets && sub.bullets.length > 0 && (
-                                <ul className="list-disc space-y-1 pl-5 font-body text-body text-ink-primary leading-relaxed">
-                                  {sub.bullets.map((bullet, i) => (
-                                    <li key={i} style={{ overflowWrap: 'anywhere' }}>
-                                      {bullet}
-                                    </li>
+                                  Source: {ref.sourceName}
+                                  <ArrowSquareOut size={13} />
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+
+                    {/* Scientific metadata — Classification & Relationships,
+                        collapsed by default. Real MeSH data, kept
+                        available for anyone who wants it, but never
+                        forced on a beginner. */}
+                    <details className="group rounded-md border border-border bg-surface p-5">
+                      <summary className="cursor-pointer list-none font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                        Scientific metadata
+                      </summary>
+                      <div className="mt-4 flex flex-col gap-4">
+                        {detailedStudyModules
+                          .filter((m) => m.id === 'classification' || m.id === 'relationships')
+                          .map((studyModule) => (
+                            <div key={studyModule.id}>
+                              <h4 className="mb-2 font-ui text-caption font-semibold text-ink-secondary">{studyModule.heading}</h4>
+                              <div className="flex flex-col gap-3">
+                                {studyModule.subsections.map((sub) => (
+                                  <div key={sub.id}>
+                                    {sub.heading && (
+                                      <h5 className="mb-1 font-ui text-caption font-medium text-ink-secondary">{sub.heading}</h5>
+                                    )}
+                                    {sub.body && (
+                                      <p className="font-body text-body text-ink-primary leading-relaxed" style={{ overflowWrap: 'anywhere' }}>
+                                        {sub.body}
+                                      </p>
+                                    )}
+                                    {sub.bullets && sub.bullets.length > 0 && (
+                                      <ul className="list-disc space-y-1 pl-5 font-body text-body text-ink-primary leading-relaxed">
+                                        {sub.bullets.map((bullet, i) => (
+                                          <li key={i} style={{ overflowWrap: 'anywhere' }}>
+                                            {bullet}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                              {studyModule.available && studyModule.sourceRefs.length > 0 && (
+                                <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+                                  {studyModule.sourceRefs.map((ref, i) => (
+                                    <a
+                                      key={i}
+                                      href={ref.sourceUrl}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="flex w-fit items-center gap-1 font-ui text-micro font-medium text-olive hover:underline"
+                                    >
+                                      Source: {ref.sourceName}
+                                      <ArrowSquareOut size={12} />
+                                    </a>
                                   ))}
-                                </ul>
+                                </div>
                               )}
                             </div>
                           ))}
-                        </div>
-                        {studyModule.available && studyModule.sourceRefs.length > 0 && (
-                          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 border-t border-border pt-3">
-                            {studyModule.sourceRefs.map((ref, i) => (
+                      </div>
+                    </details>
+
+                    {/* Research & Further Reading — Concept 2.0
+                        architecture change §6. The only place a Europe
+                        PMC article shows up on Learn: title, why it's
+                        relevant, and a source link — never the full
+                        abstract. Optional deeper reading, not the
+                        lesson. */}
+                    <div className="rounded-md border border-border bg-surface p-5">
+                      <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                        Research & further reading
+                      </h3>
+                      {researchReadings.length === 0 ? (
+                        <p className="font-ui text-caption text-ink-tertiary">
+                          No peer-reviewed literature clearly about this concept found yet.
+                        </p>
+                      ) : (
+                        <div className="flex flex-col gap-4">
+                          {researchReadings.map((reading, i) => (
+                            <div key={`${reading.sourceUrl}-${i}`} className="border-t border-border pt-3 first:border-t-0 first:pt-0">
+                              <p className="font-body text-body font-medium text-ink-primary">{reading.title}</p>
+                              <p className="mt-1 font-ui text-caption text-ink-secondary">{reading.whyRelevant}</p>
                               <a
-                                key={i}
-                                href={ref.sourceUrl}
+                                href={reading.sourceUrl}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
+                                className="mt-1 flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
                               >
-                                Source: {ref.sourceName}
+                                Source: {reading.sourceName}
                                 <ArrowSquareOut size={13} />
                               </a>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
 
@@ -644,12 +733,7 @@ export function ConceptDetailPage() {
                     allConcepts={allConcepts}
                   />
                 ) : (
-                  <ConceptMindMap
-                    root={mindMap}
-                    concept={concept}
-                    detailedStudyModules={detailedStudyModules}
-                    mesh={meshClassification}
-                  />
+                  <ConceptMindMap root={mindMap} concept={concept} />
                 )}
               </div>
             )
@@ -695,43 +779,16 @@ export function ConceptDetailPage() {
                   {!loadingVisuals && visuals.length === 0 && (
                     <div className="p-3 text-center">
                       <p className="font-body text-body text-ink-primary">
-                        {isLikelyOnline() || !visualsChecked ? 'No verified scientific visual found' : "Online sources aren't reachable right now."}
+                        {isLikelyOnline() || !visualsChecked ? 'No visuals added yet' : "Online sources aren't reachable right now."}
                       </p>
                       <p className="mt-1 font-ui text-caption text-ink-tertiary">
                         {isLikelyOnline() || !visualsChecked
-                          ? "We couldn't find a suitable visual from the approved scientific sources for this concept yet."
+                          ? 'Import diagrams, microscopy images, PDFs, or your own study material below.'
                           : 'Diagrams and process illustrations for this concept aren\u2019t available from a reliable source right now.'}
                       </p>
                     </div>
                   )}
 
-                  {/* Mind Map / Visuals redesign §10/§11 — a native
-                      illustration built from this concept's own verified
-                      structured data (generatedVisual.ts), offered whenever
-                      no external image was found (or alongside real visuals
-                      — it's never a substitute the person didn't ask for).
-                      This is a labeled figure, not the Study Map: see
-                      GeneratedVisualCard's own header comment. */}
-                  {!loadingVisuals && generatedVisual && (
-                    <div className={visuals.length === 0 ? 'mt-2' : 'mt-4 border-t border-border pt-4'}>
-                      {!showGeneratedDiagram ? (
-                        <Button variant="secondary" size="small" onClick={() => setShowGeneratedDiagram(true)}>
-                          Generate illustration
-                        </Button>
-                      ) : (
-                        <div className="flex flex-col gap-2">
-                          <button
-                            type="button"
-                            onClick={() => setShowGeneratedDiagram(false)}
-                            className="self-end font-ui text-micro text-ink-tertiary hover:underline"
-                          >
-                            Hide
-                          </button>
-                          <GeneratedVisualCard visual={generatedVisual} />
-                        </div>
-                      )}
-                    </div>
-                  )}
                 </div>
 
                 <ConceptVisualsImport concept={concept} />
