@@ -1,15 +1,21 @@
 /**
- * core/concepts/detailedStudy — Learn tab, "Detailed Study" mode.
+ * core/concepts/detailedStudy — Learn tab, core teaching content.
  *
- * Reference: the five-module structure below (Definition & Biological
- * Scope / Classification & Taxonomic Hierarchy / Structure & Molecular
- * Composition / Biological Mechanism & Function / Important Functional
- * Relationships) is the experience an earlier Google AI Studio
- * prototype of the Concept Hub used. This file reimplements that
- * MODULE STRUCTURE natively against this app's own scientific data
- * layer (core/concepts/onlineKnowledge.ts's PubChem/PubMed/Europe
- * PMC/MeSH tiers) — no code, dependencies, or UI from that prototype
- * are reused here.
+ * Concept 2.0 architecture change §3–§9 — this file used to build five
+ * modules including "Structure & Molecular Composition" and
+ * "Biological Mechanism & Function" from Europe PMC/PubMed research
+ * abstracts, keyword-matched to the concept. That treated research
+ * abstracts as textbook chapters, which is exactly what this change
+ * removes: research literature is real, valuable content, but it is
+ * not a beginner lesson, and a keyword match is not proof of
+ * relevance. This file now builds four modules — Definition &
+ * Biological Scope / Classification & Taxonomic Hierarchy /
+ * Chemical & Molecular Structure / Important Functional Relationships
+ * — from sources that are either curated (MeSH) or a real compound
+ * description (PubChem). It never falls back to an article excerpt to
+ * fill a module. Research articles surface separately, at the bottom
+ * of Learn, via researchReadings.ts — title, why it's relevant, and a
+ * source link, never the full abstract dressed up as the lesson body.
  *
  * Pure, offline-derivable, no network calls of its own — mirrors
  * examTools.ts's contract exactly: everything passed in has already
@@ -51,8 +57,7 @@
  */
 
 import type { Concept } from '../db'
-import type { EuropePmcArticle, MeshClassification, OnlineKnowledgeSection } from './onlineKnowledge'
-import { isArticleTooSpecialized } from './onlineKnowledge'
+import type { MeshClassification, OnlineKnowledgeSection } from './onlineKnowledge'
 
 const UNAVAILABLE_TEXT = 'Verified scientific detail is not available for this section yet.'
 
@@ -134,7 +139,7 @@ export interface DetailedStudySubsection {
 }
 
 export interface DetailedStudyModule {
-  id: 'definition' | 'classification' | 'structure' | 'mechanism' | 'relationships'
+  id: 'definition' | 'classification' | 'structure' | 'relationships'
   heading: string
   subsections: DetailedStudySubsection[]
   sourceRefs: { sourceName: string; sourceUrl: string }[]
@@ -329,92 +334,36 @@ function buildClassificationModule(concept: Concept, mesh: MeshClassification | 
 }
 
 /**
- * Module 3 — Structure & Molecular Composition / Principle. Prefers a
- * distinct (not already used in Module 1) PubChem section; otherwise
- * an unused Europe PMC/PubMed excerpt whose text reads as structural/
- * compositional. Heading adapts to "Chemical & Molecular Structure"
- * when the concept resolved to a PubChem compound. Article-sourced
- * content is run through `splitStructuredAbstract` so a labeled source
- * abstract renders as real subsections; PubChem's own description text
- * is never structured (it's already a short, single description).
+ * Module 3 — Structure & Molecular Composition / Principle. Concept 2.0
+ * architecture change §3/§9 — this module used to fall back to a
+ * keyword-matched Europe PMC/PubMed excerpt when there was no PubChem
+ * hit, which is exactly the bug that let an unrelated research
+ * abstract stand in as a concept's foundational "structure" lesson
+ * (relevance was keyword-level, not concept-level). It no longer has
+ * that fallback: Structure is built ONLY from a real PubChem
+ * compound description. A concept with no PubChem hit (most
+ * non-molecule concepts — techniques, processes, organisms) honestly
+ * reports unavailable here rather than repurposing a research
+ * abstract. Research literature still surfaces for every concept, but
+ * only in "Research & Further Reading" (see researchReadings.ts),
+ * clearly labeled as literature rather than disguised as a lesson.
  */
-const STRUCTURE_KEYWORDS = ['structure', 'composition', 'polymer', 'helix', 'backbone', 'wall', 'membrane', 'molecular']
-
-function buildStructureModule(
-  concept: Concept,
-  sections: OnlineKnowledgeSection[],
-  europePmc: EuropePmcArticle[],
-  usedExcerpts: Set<string>
-): DetailedStudyModule {
-  const isPubChemHit = sections.some((s) => s.sourceName.toLowerCase().includes('pubchem'))
-  const heading = isPubChemHit ? 'Chemical & Molecular Structure' : 'Structure & Molecular Composition / Principle'
-
+function buildStructureModule(sections: OnlineKnowledgeSection[], usedExcerpts: Set<string>): DetailedStudyModule {
   const pubChemCandidate = sections.find(
     (s) => s.sourceName.toLowerCase().includes('pubchem') && !isUsed(usedExcerpts, s.text)
   )
 
-  let content: string | undefined = pubChemCandidate?.text
-  let sourceRefs: { sourceName: string; sourceUrl: string }[] = pubChemCandidate
-    ? [{ sourceName: pubChemCandidate.sourceName, sourceUrl: pubChemCandidate.sourceUrl }]
-    : []
-  let fromArticle = false
-
-  if (!content) {
-    // Defense-in-depth (see isArticleTooSpecialized's own doc comment):
-    // don't trust that every article in `europePmc` already cleared the
-    // generality bar — check again here, right where it becomes
-    // foundational Structure content.
-    const structuralArticle = europePmc.find((a) => {
-      const lower = a.abstractText.toLowerCase()
-      return (
-        STRUCTURE_KEYWORDS.some((k) => lower.includes(k)) &&
-        !isUsed(usedExcerpts, a.abstractText) &&
-        !isArticleTooSpecialized(a.title, a.abstractText, concept.name)
-      )
-    })
-    if (structuralArticle) {
-      content = structuralArticle.abstractText
-      sourceRefs = [{ sourceName: structuralArticle.sourceName, sourceUrl: structuralArticle.sourceUrl }]
-      fromArticle = true
-    }
-  }
+  const content = pubChemCandidate?.text
+  const sourceRefs = pubChemCandidate ? [{ sourceName: pubChemCandidate.sourceName, sourceUrl: pubChemCandidate.sourceUrl }] : []
 
   markUsed(usedExcerpts, content)
 
   return {
     id: 'structure',
-    heading,
-    subsections: content
-      ? fromArticle
-        ? splitStructuredAbstract(content, 'structure')
-        : [{ id: 'structure-0', heading: 'Core principle', body: content }]
-      : [{ id: 'structure-0', body: UNAVAILABLE_TEXT }],
+    heading: 'Chemical & Molecular Structure',
+    subsections: content ? [{ id: 'structure-0', heading: 'Core principle', body: content }] : [{ id: 'structure-0', body: UNAVAILABLE_TEXT }],
     sourceRefs,
     available: Boolean(content)
-  }
-}
-
-/**
- * Module 4 — Biological Mechanism & Function. The first Europe PMC/
- * PubMed excerpt not already used by Module 1 or Module 3 — this is
- * where the shared `usedExcerpts` set matters most, since without it
- * this module would trivially repeat whichever article Module 3 didn't
- * pick. Split into real subsections when the source abstract itself is
- * structured (§ splitStructuredAbstract); a plain abstract stays one
- * subsection.
- */
-function buildMechanismModule(concept: Concept, europePmc: EuropePmcArticle[], usedExcerpts: Set<string>): DetailedStudyModule {
-  const article = europePmc.find(
-    (a) => !isUsed(usedExcerpts, a.abstractText) && !isArticleTooSpecialized(a.title, a.abstractText, concept.name)
-  )
-  markUsed(usedExcerpts, article?.abstractText)
-
-  return {
-    id: 'mechanism',
-    heading: 'Biological Mechanism & Function',
-    subsections: article ? splitStructuredAbstract(article.abstractText, 'mechanism') : [{ id: 'mechanism-0', body: UNAVAILABLE_TEXT }],
-    sourceRefs: article ? [{ sourceName: article.sourceName, sourceUrl: article.sourceUrl }] : [],
-    available: Boolean(article)
   }
 }
 
@@ -477,28 +426,29 @@ function buildRelationshipsModule(concept: Concept, mesh: MeshClassification | u
 }
 
 /**
- * Single entry point for the Learn tab's Detailed Study mode. Every
+ * Single entry point for the Learn tab's Core Concept content. Every
  * argument is data the Learn tab has already fetched for its other
- * content (Quick Revision's `sections`, the MeSH/Europe PMC tiers) —
- * no new network calls, and no read of ConceptRelation (see Module 5's
- * own doc comment for why). Always returns exactly 5 modules, in the
- * fixed order given in this file's header; any module without
- * genuinely distinct source-backed content honestly reports
- * `available: false` rather than duplicating a neighbor.
+ * content (Quick Revision's `sections`, the MeSH tier) — no new
+ * network calls, and no read of ConceptRelation (see Module 4's own
+ * doc comment for why). Always returns exactly 4 modules, in the fixed
+ * order given in this file's header; any module without genuinely
+ * distinct source-backed content honestly reports `available: false`
+ * rather than duplicating a neighbor or borrowing an unrelated
+ * research abstract. `classification` and `relationships` are MeSH-only
+ * and are rendered by the Learn tab as secondary/collapsible
+ * "Scientific metadata" — see ConceptDetailPage.tsx.
  */
 export function buildDetailedStudyModules(
   concept: Concept,
   sections: OnlineKnowledgeSection[],
-  mesh: MeshClassification | undefined,
-  europePmc: EuropePmcArticle[]
+  mesh: MeshClassification | undefined
 ): DetailedStudyModule[] {
   const usedExcerpts = new Set<string>()
 
   const definition = buildDefinitionModule(sections, mesh, usedExcerpts)
   const classification = buildClassificationModule(concept, mesh)
-  const structure = buildStructureModule(concept, sections, europePmc, usedExcerpts)
-  const mechanism = buildMechanismModule(concept, europePmc, usedExcerpts)
+  const structure = buildStructureModule(sections, usedExcerpts)
   const relationships = buildRelationshipsModule(concept, mesh)
 
-  return [definition, classification, structure, mechanism, relationships]
+  return [definition, classification, structure, relationships]
 }
