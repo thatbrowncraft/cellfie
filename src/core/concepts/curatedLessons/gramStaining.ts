@@ -1,0 +1,192 @@
+/**
+ * core/concepts/curatedLessons/gramStaining — the first curated lesson,
+ * per Second Refinement §Part 7. Hand-authored, informed by real
+ * authoritative educational/scientific sources (see `sources` below),
+ * never copied verbatim from any one of them and never generated.
+ */
+import type { CuratedLesson } from './types'
+
+export const gramStainingLesson: CuratedLesson = {
+  matchNames: ['gram staining', 'gram stain', "gram's stain", "gram's method", 'gram staining technique'],
+  conceptDisplayName: 'Gram Staining',
+  sections: [
+    {
+      id: 'what-is-it',
+      heading: 'What is Gram staining?',
+      body:
+        "Gram staining is a differential staining technique used in microbiology to sort bacteria into two broad groups — Gram-positive and Gram-negative — based on the structure of their cell envelope. It was developed by the Danish bacteriologist Hans Christian Gram in the 1880s and is still one of the first tests run on a bacterial sample today.\n\n" +
+        "\"Differential\" is the key word: unlike a simple stain that just makes cells visible, Gram staining makes two structurally different groups of bacteria end up looking two different colors under the microscope."
+    },
+    {
+      id: 'why-used',
+      heading: 'Why do microbiologists use it?',
+      body:
+        "It's fast, cheap, and gives a real answer in minutes rather than the day or more a culture takes. A Gram stain result — positive or negative, plus the cell shape (cocci, bacilli, etc.) — is often enough to start narrowing down what's likely growing in a sample and to choose a reasonable first-line antibiotic before slower confirmatory tests come back."
+    },
+    {
+      id: 'principle',
+      heading: 'The basic principle',
+      body:
+        "Every bacterial cell has a cell envelope, and that envelope is built differently depending on the group. Gram-positive cells have a thick, multi-layered mesh of peptidoglycan around them and nothing else covering it. Gram-negative cells have only a thin layer of peptidoglycan, but it's wrapped in an extra outer membrane that Gram-positive cells don't have.\n\n" +
+        'Gram staining works by using a decolorizing solvent partway through the procedure. That solvent affects the two envelope types very differently — and that difference in how they react is what produces two different final colors.'
+    },
+    {
+      id: 'reagents-steps',
+      heading: 'The four steps',
+      body: 'Four reagents are applied to a heat-fixed bacterial smear, in this order:',
+      steps: [
+        {
+          name: '1. Crystal violet (primary stain)',
+          explanation: 'A purple dye is flooded onto the smear for about a minute.',
+          purpose: 'Every cell in the sample — Gram-positive or Gram-negative — takes up the dye and turns purple at this stage.'
+        },
+        {
+          name: "2. Gram's iodine (mordant)",
+          explanation: "Iodine solution is added and left for about a minute.",
+          purpose:
+            "Iodine binds to the crystal violet already inside the cell and forms a larger crystal violet–iodine (CV–I) complex. This complex is now too big to easily slip back out through the cell wall on its own — setting up the actual differentiating step that follows."
+        },
+        {
+          name: '3. Decolorizer (alcohol or acetone)',
+          explanation: "A brief alcohol or acetone rinse — typically just a few seconds — is applied and then washed off immediately.",
+          purpose:
+            'This is the step that actually separates the two groups. It does not "remove color equally"; it removes the CV–I complex from one group of cells far more effectively than the other, because of the structural difference described above (see "How does the color difference happen?").'
+        },
+        {
+          name: '4. Safranin (counterstain)',
+          explanation: 'A pink/red dye is applied last, for about 30–60 seconds.',
+          purpose:
+            'Cells that were successfully decolorized in step 3 are now colorless and pick up this second dye, turning pink to red. Cells that retained the CV–I complex are already dark purple and are barely affected by the counterstain.'
+        }
+      ]
+    },
+    {
+      id: 'mechanism',
+      heading: 'How does the color difference actually happen?',
+      body:
+        "In Gram-positive cells, the peptidoglycan layer is thick and highly cross-linked. Alcohol dehydrates this mesh, causing it to shrink and tighten around the CV–I complex, trapping it inside. The cell stays purple.\n\n" +
+        "In Gram-negative cells, the outer membrane is rich in lipids, and alcohol dissolves it. Underneath that damaged outer membrane there's only a thin, loosely cross-linked layer of peptidoglycan — not enough to hold the CV–I complex in place once the outer membrane is gone. The complex washes out, the cell goes colorless, and it then takes up the safranin counterstain instead.\n\n" +
+        'So the four-step procedure doesn\'t "test for color" directly — it tests how well a cell\'s envelope can physically retain a large dye complex after a solvent wash, and reads that retention out as a color.'
+    },
+    {
+      id: 'positive-negative',
+      heading: 'Gram-positive vs. Gram-negative',
+      table: {
+        caption: 'Comparing the two groups',
+        columnHeaders: ['Gram-positive', 'Gram-negative'],
+        rows: [
+          ['Final color', 'Purple / violet', 'Pink / red'],
+          ['Peptidoglycan layer', 'Thick, multiple layers', 'Thin, single layer'],
+          ['Outer membrane', 'Absent', 'Present (contains lipopolysaccharide, LPS)'],
+          ['Effect of decolorizer', 'Peptidoglycan shrinks, traps CV–I complex', 'Outer membrane dissolves, CV–I complex washes out'],
+          [
+            'Representative genera',
+            'Staphylococcus, Streptococcus, Bacillus, Clostridium, Listeria, Enterococcus',
+            'Escherichia, Pseudomonas, Salmonella, Neisseria, Klebsiella, Haemophilus'
+          ]
+        ]
+      }
+    },
+    {
+      id: 'what-it-tells-you',
+      heading: 'What can you actually conclude from a Gram stain?',
+      body:
+        'A Gram stain gives you two real pieces of information fast: the cell wall category (positive/negative) and the cell shape and arrangement (cocci in clusters or chains, rods, etc.). Combined, those two things meaningfully narrow the list of likely organisms and inform an initial, empiric choice of antibiotic while slower tests are still running.\n\n' +
+        'It does NOT tell you the exact species, the strain, whether the organism is antibiotic-resistant, or definitively whether it is the actual cause of a patient\'s illness versus normal flora contamination. Those questions need culture, biochemical testing, or molecular methods.'
+    },
+    {
+      id: 'gram-stain-vs-culture',
+      heading: 'Gram stain vs. culture',
+      body:
+        "A Gram stain is a same-day microscopy result describing what the cells look like and how they react to the staining procedure — nothing is grown. Culture involves actually growing the organism on/in a nutrient medium, which typically takes 18–48+ hours but goes much further: it can identify the exact species and test which antibiotics the specific organism is susceptible to. In practice they're complementary, not competing — Gram stain guides the immediate next step; culture confirms it."
+    },
+    {
+      id: 'clinical-significance',
+      heading: 'Clinical / microbiology significance',
+      bullets: [
+        'Often the very first lab test run on a clinical specimen (blood, sputum, urine, wound, cerebrospinal fluid) when infection is suspected.',
+        'Guides empiric (best-guess, before full results are in) antibiotic therapy, since Gram-positive and Gram-negative organisms often respond to different antibiotic classes.',
+        'Used as a quality check on specimens — e.g., a sputum sample with too many squamous epithelial cells relative to white blood cells suggests contamination from the mouth rather than a true lower-respiratory sample.',
+        'A standard teaching and diagnostic technique across clinical microbiology, food safety, water testing, and basic research labs alike.'
+      ]
+    },
+    {
+      id: 'common-confusions',
+      heading: 'Common confusions',
+      bullets: [
+        "Gram-negative does NOT mean harmless — Escherichia coli, Neisseria meningitidis, and Pseudomonas aeruginosa are all Gram-negative and all cause serious disease.",
+        'Gram-positive does NOT mean beneficial — Staphylococcus aureus, Streptococcus pyogenes, and Clostridium species are all Gram-positive pathogens.',
+        'A Gram stain result is a cell-wall category, not a verdict on danger, and not a species identification by itself.',
+        "Gram stain and culture answer different questions — morphology/category (fast) versus identity/susceptibility (slower). One doesn't replace the other.",
+        'Over- or under-decolorizing during step 3 is a common source of a wrong-looking result in practice — too little alcohol leaves Gram-negative cells looking falsely purple; too much can strip color from Gram-positive cells too.',
+        "Some organisms don't fit this scheme well at all — Mycobacterium species have a waxy cell wall that needs acid-fast staining instead, and cell-wall-deficient organisms like Mycoplasma can't be Gram stained meaningfully."
+      ]
+    },
+    {
+      id: 'quick-takeaway',
+      heading: 'Quick takeaway',
+      body:
+        'Gram staining sorts bacteria into two groups by testing how well their cell envelope holds onto a dye complex after an alcohol wash: thick-peptidoglycan (Gram-positive) cells hold on and stay purple, thin-peptidoglycan-plus-outer-membrane (Gram-negative) cells lose it and turn pink. Four reagents, about five minutes, and a genuinely useful first clue — not a final answer.'
+    }
+  ],
+  quickRevision: {
+    oneLineDefinition:
+      'A differential stain that sorts bacteria into Gram-positive (purple) or Gram-negative (pink) based on their cell envelope structure.',
+    keyFacts: [
+      '4 reagents in order: crystal violet → Gram\u2019s iodine → decolorizer (alcohol/acetone) → safranin',
+      'Gram-positive = thick peptidoglycan, no outer membrane → retains CV\u2013I complex → stays purple',
+      'Gram-negative = thin peptidoglycan + outer membrane → outer membrane dissolves, complex washes out → picks up safranin → pink',
+      'Decolorization is the actual differentiating step — the other three steps are the same for every cell',
+      'Gives cell-wall category + cell shape/arrangement, not species ID or susceptibility',
+      'Complements culture; doesn\u2019t replace it'
+    ],
+    keyTerms: ['Peptidoglycan', 'Outer membrane', 'Mordant', 'CV\u2013I complex', 'Decolorization', 'Counterstain'],
+    commonConfusion: [
+      'Gram-negative \u2260 harmless; Gram-positive \u2260 beneficial',
+      'Gram stain \u2260 species identification',
+      'Gram stain and culture answer different questions'
+    ]
+  },
+  examFocus: {
+    highYieldFacts: [
+      'Order of reagents: Crystal violet \u2192 Iodine (mordant) \u2192 Decolorizer \u2192 Safranin (counterstain)',
+      'Gram-positive retains the primary stain because of a THICK peptidoglycan layer, not because of the outer membrane (it has none)',
+      'Gram-negative loses the primary stain because the outer membrane is dissolved by the decolorizer, exposing a THIN peptidoglycan layer that can\u2019t retain the CV\u2013I complex',
+      'The decolorization step is where the actual differentiation happens — not the primary stain or the counterstain'
+    ],
+    commonTraps: [
+      'Assuming the counterstain (safranin) is what "creates" the Gram-negative result — it only colors cells that were already decolorized',
+      'Assuming Gram-negative organisms are less dangerous than Gram-positive ones',
+      "Confusing peptidoglycan thickness with outer membrane presence — they're two separate structural facts, and both matter",
+      'Treating a Gram stain result as a species-level identification'
+    ],
+    mustRemember: [
+      'Gram-positive: thick peptidoglycan, no outer membrane, stays purple',
+      'Gram-negative: thin peptidoglycan, has an outer membrane, ends up pink/red',
+      'Iodine is a mordant, not a second stain — it fixes the first dye in place, it doesn\u2019t add color'
+    ],
+    confusedTerms: [
+      {
+        termA: 'Mordant',
+        termB: 'Counterstain',
+        distinction: "A mordant (iodine) locks the FIRST dye in place. A counterstain (safranin) adds a SECOND color, but only to cells that lost the first one."
+      },
+      {
+        termA: 'Gram stain',
+        termB: 'Culture',
+        distinction: 'Gram stain shows cell-wall category and shape within minutes from direct microscopy. Culture grows the organism over 1\u20132+ days to identify species and test antibiotic susceptibility.'
+      }
+    ],
+    possibleQuestions: [
+      'Why does the decolorization step, and not the counterstain, determine the final Gram result?',
+      'A Gram stain shows purple cocci in clusters. What does that tell you, and what does it NOT tell you?',
+      'Explain why an over-decolorized slide can make Gram-positive cells look falsely Gram-negative.'
+    ]
+  },
+  sources: [
+    { name: 'NCBI Bookshelf — StatPearls, "Gram Staining"', kind: 'educational', url: 'https://www.ncbi.nlm.nih.gov/books/NBK562156/' },
+    { name: 'CDC — clinical microbiology laboratory guidance', kind: 'educational' },
+    { name: 'American Society for Microbiology (ASM)', kind: 'educational' },
+    { name: 'NCBI / PubMed — peptidoglycan and outer membrane structural biology', kind: 'scientific' }
+  ]
+}
