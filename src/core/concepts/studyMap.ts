@@ -18,16 +18,22 @@
  *      PROCEDURE (a real bullet list or clearly sequential prose under
  *      a methods/procedure/protocol-flavored heading) and, if so,
  *      builds a linear step-by-step flow instead of a module tree.
- *   2. Otherwise builds a CONCEPTUAL map: a root node branching into
- *      only the modules that actually have distinct content, each
- *      branching into its own real subsections/bullets — never a fixed
- *      five-branch shape, and a module with only one short subsection
- *      collapses onto a single tappable leaf instead of a redundant
- *      wrapper node.
+ *   2. Otherwise builds a CONCEPTUAL map — Concept Hub knowledge-flow
+ *      correction: this is now a genuine RELATIONSHIP graph, not a
+ *      re-skin of Detailed Study's module list. MeSH's own typed
+ *      parent/child/associated-concept data becomes the map's
+ *      skeleton (each edge carrying MeSH's real relation name — "is
+ *      a", "associated with", ...), with a small number of short key
+ *      facts from Structure/Mechanism attached under generic relation
+ *      labels. Definition and Classification's rendered prose are
+ *      deliberately NOT turned into branches here — see
+ *      `buildConceptualMap`'s own header comment for why.
  *   3. Every non-root node carries the REAL text it came from
  *      (`detail`) and its source (`sourceRefs`), so the renderer can
- *      show "what this node actually says" on tap — this is new; the
- *      old tree only carried a label, so tapping a box did nothing.
+ *      show "what this node actually says" on tap — and that detail
+ *      is a short 1-2 sentence excerpt (`shortDetail`), never the full
+ *      Detailed Study paragraph, so tapping a node never just reopens
+ *      the same content Detailed Study already showed.
  *
  * Still true of the old version, unchanged:
  *   - reads or writes NO `ConceptRelation` row
@@ -49,7 +55,8 @@
  */
 
 import type { Concept } from '../db'
-import type { DetailedStudyModule, DetailedStudySubsection } from './detailedStudy'
+import type { DetailedStudyModule } from './detailedStudy'
+import type { MeshClassification, MeshRelationship } from './onlineKnowledge'
 
 export type StudyMapNodeKind = 'root' | 'category' | 'detail' | 'step' | 'outcome'
 
@@ -72,6 +79,8 @@ export interface StudyMapEdge {
   id: string
   from: string
   to: string
+  /** A short relationship label ("is a", "structural feature", "associated with"...) drawn at the edge's midpoint — this is what makes the map show RELATIONSHIPS between ideas rather than an unlabeled tree that just happens to have the same shape as Detailed Study's module list. Omitted for procedure-flow edges, which are already self-explanatory as a sequence. */
+  label?: string
 }
 
 export interface StudyMap {
@@ -84,21 +93,11 @@ export interface StudyMap {
 
 const MAX_LABEL_CATEGORY = 42
 const MAX_LABEL_DETAIL = 56
-const MAX_SUBSECTIONS_PER_MODULE = 3
-const MAX_BULLETS_PER_SUBSECTION = 4
 
 function truncateLabel(text: string, max: number): string {
   const trimmed = text.trim().replace(/\s+/g, ' ')
   if (trimmed.length <= max) return trimmed
   return `${trimmed.slice(0, max - 1).trimEnd()}…`
-}
-
-const CATEGORY_LABEL: Record<DetailedStudyModule['id'], string> = {
-  definition: 'Definition',
-  classification: 'Classification',
-  structure: 'Structure & Composition',
-  mechanism: 'Mechanism & Function',
-  relationships: 'Key Relationships'
 }
 
 // ---------------------------------------------------------------------
@@ -119,18 +118,19 @@ const STEP_MARKER =
   /(^|[.;:]\s+)(first|second|third|fourth|fifth|initially|then|next|after(?:wards)?|following this|subsequently|finally|lastly|step\s*\d+|\(\d+\))/i
 const OUTCOME_WORDS = /\b(result|outcome|interpret(?:ation)?|indicates?|positive|negative|diagnos(?:is|tic))\b/i
 
-function splitIntoSentences(text: string): string[] {
+export function splitIntoSentences(text: string): string[] {
   return text
     .split(/(?<=[.!?])\s+(?=[A-Z(0-9])/)
     .map((s) => s.trim())
     .filter(Boolean)
 }
 
-interface DetectedStep {
+export interface DetectedStep {
   detail: string
 }
 
-function detectProcedureSteps(modules: DetailedStudyModule[]): { steps: DetectedStep[]; sourceRefs: StudyMapSourceRef[] } | undefined {
+/** Exported so generatedVisual.ts's 'process' visual type can reuse the SAME procedure detection Mind Map uses — a concept is or isn't a procedure independent of which feature is asking, so the detection logic lives in one place. */
+export function detectProcedureSteps(modules: DetailedStudyModule[]): { steps: DetectedStep[]; sourceRefs: StudyMapSourceRef[] } | undefined {
   // Preference 1 — a real bullet list (already a literal structured
   // field, e.g. from a source that itself enumerated steps) sitting
   // under a procedure-flavored heading.
@@ -162,6 +162,23 @@ function detectProcedureSteps(modules: DetailedStudyModule[]): { steps: Detected
   return best
 }
 
+// A step's own sentence often already states WHY it's there ("...acts
+// as a mordant", "...serves as the primary stain", "...is the
+// differentiation step"). Surfacing that phrase as the edge label is
+// what turns a bare step sequence into "procedure + why", per the
+// Mind Map spec — generic pattern matching, not anything specific to
+// any one procedure.
+const ROLE_PHRASE_RE =
+  /\b(?:acts?|serves?|functions?)\s+as\s+(?:an?|the)?\s*([a-z][a-z\s-]{2,40}?)(?=[.,;]|$)/i
+
+export function extractRole(text: string): string | undefined {
+  const match = ROLE_PHRASE_RE.exec(text)
+  if (!match) return undefined
+  const phrase = match[1].trim()
+  if (!phrase) return undefined
+  return phrase.charAt(0).toUpperCase() + phrase.slice(1)
+}
+
 function buildProcedureMap(concept: Pick<Concept, 'name'>, steps: DetectedStep[], sourceRefs: StudyMapSourceRef[]): StudyMap {
   const capped = steps.slice(0, 8)
   const nodes: StudyMapNode[] = [{ id: 'root', label: concept.name, kind: 'root', sourceRefs: [] }]
@@ -178,7 +195,7 @@ function buildProcedureMap(concept: Pick<Concept, 'name'>, steps: DetectedStep[]
       detail: step.detail,
       sourceRefs
     })
-    edges.push({ id: `e:${previousId}->${id}`, from: previousId, to: id })
+    edges.push({ id: `e:${previousId}->${id}`, from: previousId, to: id, label: extractRole(step.detail) })
     previousId = id
   })
 
@@ -186,79 +203,208 @@ function buildProcedureMap(concept: Pick<Concept, 'name'>, steps: DetectedStep[]
 }
 
 // ---------------------------------------------------------------------
-// Conceptual map — root branching into only the modules with genuinely
-// distinct content, each branching into its own real subsections and
-// bullets. Structurally similar in spirit to the old five-heading tree,
-// but: (a) skips modules with nothing beyond one short paragraph
-// (collapsed onto a single tappable node instead of an empty-looking
-// branch), (b) every node carries its real source text for tap-to-
-// reveal, (c) category labels are short display names, not the full
-// Detailed Study module heading repeated verbatim.
+// Conceptual map — a genuine RELATIONSHIP graph, not a re-skin of
+// Detailed Study's module list.
+//
+// Two different kinds of edges feed this map, and both carry a real
+// relationship label:
+//
+//   1. MeSH's own typed relationships (parent → "is a", children →
+//      "type of", associated/related → their own MeSH-given relation
+//      name). This is structured relational data at the source — MeSH
+//      already says two terms ARE related and HOW — so it becomes the
+//      map's skeleton rather than raw Detailed Study paragraphs.
+//   2. A small number of short KEY FACTS pulled from Structure's and
+//      Mechanism's own subsections/bullets, each attached to the root
+//      with a generic relation label ("has structural feature" /
+//      "function"). These are intentionally SHORT — the map shows what
+//      the fact IS, not the paragraph explaining it; the full
+//      explanation lives in Detailed Study, and only a concise 1-2
+//      sentence version becomes this node's tap-to-reveal `detail` (see
+//      `shortDetail`), so tapping a Mind Map node never just reopens
+//      the Detailed Study paragraph verbatim.
+//
+// Definition and Classification's own rendered text are deliberately
+// NOT turned into map branches — a definition is prose to read, not a
+// relationship to diagram, and Classification's MeSH data is exactly
+// what feeds MeSH-relationship branch (1) above in cleaner, typed
+// form. This is also why the map's shape no longer matches Detailed
+// Study's five-module list: the two features now consume the same
+// underlying verified knowledge through genuinely different lenses.
 // ---------------------------------------------------------------------
 
-function addSubsectionNodes(
-  nodes: StudyMapNode[],
-  edges: StudyMapEdge[],
-  parentId: string,
-  modId: string,
-  sub: DetailedStudySubsection,
-  index: number,
-  sourceRefs: StudyMapSourceRef[]
-): void {
-  const subId = `${modId}:${sub.id}`
-  const subLabel = sub.heading ? truncateLabel(sub.heading, MAX_LABEL_CATEGORY) : undefined
-
-  // A named subsection becomes its own node when it has a heading; an
-  // unlabeled subsection's bullets/body attach directly to the parent
-  // instead of a meaningless "untitled subsection" wrapper.
-  const branchId = subLabel ? subId : parentId
-  if (subLabel) {
-    nodes.push({ id: subId, label: subLabel, kind: 'detail', detail: sub.body, sourceRefs })
-    edges.push({ id: `e:${parentId}->${subId}:${index}`, from: parentId, to: subId })
-  }
-
-  const bullets = (sub.bullets ?? []).slice(0, MAX_BULLETS_PER_SUBSECTION)
-  bullets.forEach((b, i) => {
-    const bId = `${subId}:b${i}`
-    nodes.push({ id: bId, label: truncateLabel(b, MAX_LABEL_DETAIL), kind: 'detail', detail: b, sourceRefs })
-    edges.push({ id: `e:${branchId}->${bId}`, from: branchId, to: bId })
-  })
-
-  // A subsection with a body but no bullets and no heading was already
-  // folded into the parent above (no node of its own); a subsection
-  // with a body AND a heading shows that body as the node's own
-  // `detail` (set above), so it needs no further child node.
+const RELATIONSHIP_EDGE_LABEL: Record<MeshRelationship['relationshipType'], string> = {
+  is_a: 'is a',
+  contains_subtype: 'type of',
+  associated_with: 'associated with',
+  related_to: 'related to'
 }
 
-function buildConceptualMap(concept: Pick<Concept, 'name'>, modules: DetailedStudyModule[]): StudyMap {
+const MAX_FACTS_PER_BRANCH = 4
+
+/** Trims a source excerpt down to its first 1-2 sentences (~220 chars) for a node's tap-to-reveal detail — concise on purpose, so a Mind Map node never just reproduces the full Detailed Study paragraph it was drawn from. */
+function shortDetail(text: string): string {
+  const sentences = splitIntoSentences(text)
+  let out = sentences[0] ?? text
+  if (sentences.length > 1 && out.length < 90) out = `${out} ${sentences[1]}`
+  return out.length > 240 ? `${out.slice(0, 239).trimEnd()}…` : out
+}
+
+/**
+ * Pulls a handful of short, distinct facts out of a module's
+ * subsections for use as Mind Map satellite nodes. Prefers real
+ * bullets (already short, already structured) and only falls back to
+ * splitting a body paragraph's comma-separated list shape (e.g. "a
+ * sugar, a phosphate group, and a nitrogenous base") when no bullets
+ * exist — never a generic fixed character-window truncation of an
+ * arbitrary sentence, which would just be "Detailed Study, shortened".
+ */
+function extractKeyFacts(mod: DetailedStudyModule): { label: string; detail: string }[] {
+  const facts: { label: string; detail: string }[] = []
+  const seen = new Set<string>()
+
+  const pushFact = (label: string, detail: string) => {
+    const key = label.trim().toLowerCase()
+    if (!key || seen.has(key) || facts.length >= MAX_FACTS_PER_BRANCH) return
+    seen.add(key)
+    facts.push({ label: truncateLabel(label, MAX_LABEL_DETAIL), detail })
+  }
+
+  for (const sub of mod.subsections) {
+    for (const b of sub.bullets ?? []) pushFact(b, b)
+    if (facts.length >= MAX_FACTS_PER_BRANCH) break
+  }
+
+  if (facts.length === 0) {
+    for (const sub of mod.subsections) {
+      if (!sub.body) continue
+      const firstSentence = splitIntoSentences(sub.body)[0] ?? sub.body
+      // A comma-joined list inside one sentence ("a sugar, a phosphate
+      // group, and a nitrogenous base") is real enumerated structure
+      // hiding in prose — split it into separate facts instead of one
+      // long node.
+      const parts = firstSentence
+        .split(/,\s*(?:and\s+)?|\s+and\s+/)
+        .map((p) => p.trim())
+        .filter((p) => p.split(/\s+/).length >= 2 && p.split(/\s+/).length <= 7)
+      if (parts.length >= 2) {
+        for (const p of parts) pushFact(p, shortDetail(sub.body))
+      } else {
+        pushFact(firstSentence, shortDetail(sub.body))
+      }
+      if (facts.length >= MAX_FACTS_PER_BRANCH) break
+    }
+  }
+
+  return facts
+}
+
+function addFactBranch(
+  nodes: StudyMapNode[],
+  edges: StudyMapEdge[],
+  branchLabel: string,
+  edgeLabel: string,
+  mod: DetailedStudyModule,
+  facts: { label: string; detail: string }[]
+): void {
+  if (facts.length === 0) return
+  const branchId = `cat:${mod.id}`
+  nodes.push({ id: branchId, label: branchLabel, kind: 'category', sourceRefs: mod.sourceRefs })
+  edges.push({ id: `e:root->${branchId}`, from: 'root', to: branchId, label: edgeLabel })
+  facts.forEach((fact, i) => {
+    const id = `${branchId}:f${i}`
+    nodes.push({ id, label: fact.label, kind: 'detail', detail: fact.detail, sourceRefs: mod.sourceRefs })
+    edges.push({ id: `e:${branchId}->${id}`, from: branchId, to: id })
+  })
+}
+
+function buildConceptualMap(
+  concept: Pick<Concept, 'name'>,
+  modules: DetailedStudyModule[],
+  mesh: MeshClassification | undefined
+): StudyMap {
   const nodes: StudyMapNode[] = [{ id: 'root', label: concept.name, kind: 'root', sourceRefs: [] }]
   const edges: StudyMapEdge[] = []
+  const byId = new Map(modules.map((m) => [m.id, m]))
+  const meshSourceRefs: StudyMapSourceRef[] = mesh ? [{ sourceName: mesh.sourceName, sourceUrl: mesh.sourceUrl }] : []
 
-  for (const mod of modules) {
-    const catId = `cat:${mod.id}`
-    const namedSubsections = mod.subsections.filter((s) => s.heading).slice(0, MAX_SUBSECTIONS_PER_MODULE)
-    const soleSubsection = namedSubsections.length === 0 ? mod.subsections[0] : undefined
-
-    // A module whose only content is one unlabeled short subsection
-    // collapses onto a single tappable category node instead of a
-    // category box with one redundant child box beneath it.
-    const collapsesToSingleNode = soleSubsection && !(soleSubsection.bullets && soleSubsection.bullets.length > 0)
-
-    nodes.push({
-      id: catId,
-      label: CATEGORY_LABEL[mod.id],
-      kind: 'category',
-      detail: collapsesToSingleNode ? soleSubsection?.body : undefined,
-      sourceRefs: mod.sourceRefs
+  // Branch 1 — MeSH's own typed hierarchy (parent + children), each
+  // edge carrying MeSH's actual relation name.
+  if (mesh?.parentName) {
+    const id = 'mesh:parent'
+    nodes.push({ id, label: truncateLabel(mesh.parentName, MAX_LABEL_CATEGORY), kind: 'category', sourceRefs: meshSourceRefs })
+    edges.push({ id: `e:root->${id}`, from: 'root', to: id, label: RELATIONSHIP_EDGE_LABEL.is_a })
+  }
+  if (mesh && mesh.childNames.length > 0) {
+    const branchId = 'mesh:children'
+    nodes.push({ id: branchId, label: 'Related terms', kind: 'category', sourceRefs: meshSourceRefs })
+    edges.push({ id: `e:root->${branchId}`, from: 'root', to: branchId, label: RELATIONSHIP_EDGE_LABEL.contains_subtype })
+    mesh.childNames.slice(0, MAX_FACTS_PER_BRANCH).forEach((name, i) => {
+      const id = `${branchId}:${i}`
+      nodes.push({ id, label: truncateLabel(name, MAX_LABEL_DETAIL), kind: 'detail', sourceRefs: meshSourceRefs })
+      edges.push({ id: `e:${branchId}->${id}`, from: branchId, to: id })
     })
-    edges.push({ id: `e:root->${catId}`, from: 'root', to: catId })
+  }
 
-    if (collapsesToSingleNode) continue
+  // Branch 2 — MeSH's own associated/related-concept links, each kept
+  // under its OWN real relation type rather than merged into one
+  // generic "Relationships" bucket.
+  if (mesh) {
+    const byType = new Map<string, typeof mesh.relationships>()
+    for (const r of mesh.relationships) {
+      if (r.relationshipType !== 'associated_with' && r.relationshipType !== 'related_to') continue
+      const list = byType.get(r.relationshipType) ?? []
+      list.push(r)
+      byType.set(r.relationshipType, list)
+    }
+    for (const [type, rels] of byType) {
+      const branchId = `mesh:${type}`
+      const label = type === 'associated_with' ? 'Associated concepts' : 'Related concepts'
+      nodes.push({ id: branchId, label, kind: 'category', sourceRefs: meshSourceRefs })
+      edges.push({
+        id: `e:root->${branchId}`,
+        from: 'root',
+        to: branchId,
+        label: RELATIONSHIP_EDGE_LABEL[type as 'associated_with' | 'related_to']
+      })
+      rels.slice(0, MAX_FACTS_PER_BRANCH).forEach((r, i) => {
+        const id = `${branchId}:${i}`
+        nodes.push({ id, label: truncateLabel(r.targetName, MAX_LABEL_DETAIL), kind: 'detail', sourceRefs: [{ sourceName: r.sourceName, sourceUrl: r.sourceUrl }] })
+        edges.push({ id: `e:${branchId}->${id}`, from: branchId, to: id })
+      })
+    }
+  }
 
-    if (namedSubsections.length > 0) {
-      namedSubsections.forEach((sub, i) => addSubsectionNodes(nodes, edges, catId, mod.id, sub, i, mod.sourceRefs))
-    } else if (soleSubsection) {
-      addSubsectionNodes(nodes, edges, catId, mod.id, soleSubsection, 0, mod.sourceRefs)
+  // Branch 3 — Structure's key facts ("has structural feature").
+  const structureMod = byId.get('structure')
+  if (structureMod?.available) {
+    addFactBranch(nodes, edges, 'Structure', 'has structural feature', structureMod, extractKeyFacts(structureMod))
+  }
+
+  // Branch 4 — Mechanism's key facts ("function").
+  const mechanismMod = byId.get('mechanism')
+  if (mechanismMod?.available) {
+    addFactBranch(nodes, edges, 'Function', 'function', mechanismMod, extractKeyFacts(mechanismMod))
+  }
+
+  // Fallback — no MeSH data at all and neither Structure nor Mechanism
+  // had extractable facts (a concept Cellfie only knows a Definition
+  // for): fall back to the Relationships module's own bullets so the
+  // map isn't empty, still with a real relation label per branch.
+  if (nodes.length === 1) {
+    const relationshipsMod = byId.get('relationships')
+    if (relationshipsMod?.available) {
+      for (const sub of relationshipsMod.subsections) {
+        if (!sub.heading || !sub.bullets) continue
+        const branchId = `rel:${sub.id}`
+        nodes.push({ id: branchId, label: sub.heading, kind: 'category', sourceRefs: relationshipsMod.sourceRefs })
+        edges.push({ id: `e:root->${branchId}`, from: 'root', to: branchId, label: sub.heading.toLowerCase() })
+        sub.bullets.slice(0, MAX_FACTS_PER_BRANCH).forEach((b, i) => {
+          const id = `${branchId}:${i}`
+          nodes.push({ id, label: truncateLabel(b, MAX_LABEL_DETAIL), kind: 'detail', sourceRefs: relationshipsMod.sourceRefs })
+          edges.push({ id: `e:${branchId}->${id}`, from: branchId, to: id })
+        })
+      }
     }
   }
 
@@ -266,12 +412,20 @@ function buildConceptualMap(concept: Pick<Concept, 'name'>, modules: DetailedStu
 }
 
 /**
- * Entry point. Returns `undefined` when no module has any verified
+ * Entry point. `mesh` is the same already-fetched MeshClassification
+ * the Learn tab used for Detailed Study's Classification module —
+ * reused, never re-fetched — and is what lets the conceptual map be
+ * built from real typed relationships instead of Detailed Study's
+ * rendered text. Returns `undefined` when no module has any verified
  * content yet (only `available` modules — see detailedStudy.ts — are
  * considered) — the caller must show an honest empty state, never an
  * empty/placeholder diagram.
  */
-export function buildStudyMap(concept: Pick<Concept, 'name'>, modules: DetailedStudyModule[]): StudyMap | undefined {
+export function buildStudyMap(
+  concept: Pick<Concept, 'name'>,
+  modules: DetailedStudyModule[],
+  mesh?: MeshClassification
+): StudyMap | undefined {
   const available = modules.filter((m) => m.available)
   if (available.length === 0) return undefined
 
@@ -279,5 +433,6 @@ export function buildStudyMap(concept: Pick<Concept, 'name'>, modules: DetailedS
   if (detected && detected.steps.length >= 3) {
     return buildProcedureMap(concept, detected.steps, detected.sourceRefs)
   }
-  return buildConceptualMap(concept, available)
+  const map = buildConceptualMap(concept, available, mesh)
+  return map.nodes.length > 1 ? map : undefined
 }

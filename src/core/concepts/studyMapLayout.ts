@@ -33,6 +33,10 @@ export interface PositionedEdge {
   toId: string
   /** SVG path `d` attribute — a cubic bezier from the parent's bottom-center to the child's top-center. */
   d: string
+  /** The edge's relationship label (see StudyMapEdge), if any, plus where to draw it. */
+  label?: string
+  labelX?: number
+  labelY?: number
 }
 
 export interface StudyMapLayout {
@@ -105,7 +109,15 @@ export function computeStudyMapLayout(map: StudyMap): StudyMapLayout {
     const x2 = to.cx
     const y2 = to.y
     const midY = (y1 + y2) / 2
-    edges.push({ id: e.id, fromId: e.from, toId: e.to, d: `M ${x1} ${y1} C ${x1} ${midY}, ${x2} ${midY}, ${x2} ${y2}` })
+    edges.push({
+      id: e.id,
+      fromId: e.from,
+      toId: e.to,
+      d: `M ${x1} ${y1} C ${x1} ${midY}, ${x2} ${midY}, ${x2} ${y2}`,
+      label: e.label,
+      labelX: (x1 + x2) / 2,
+      labelY: midY
+    })
   }
 
   const width = MARGIN * 2 + Math.max(1, nextLeafSlot) * COL_W

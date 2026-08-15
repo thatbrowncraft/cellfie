@@ -52,8 +52,77 @@
 
 import type { Concept } from '../db'
 import type { EuropePmcArticle, MeshClassification, OnlineKnowledgeSection } from './onlineKnowledge'
+import { isArticleTooSpecialized } from './onlineKnowledge'
 
 const UNAVAILABLE_TEXT = 'Verified scientific detail is not available for this section yet.'
+
+// ---------------------------------------------------------------------
+// MeSH indexing subheadings are a FIXED, standardized vocabulary
+// (~80 terms defined by NLM) — ranking them by general educational
+// relevance is therefore a generic, concept-agnostic operation, not a
+// per-concept special case. Subheadings like "genetics" or "chemistry"
+// describe a facet of biology worth knowing about any concept;
+// subheadings like "economics" or "legislation and jurisprudence"
+// describe database/administrative facets that read as noise in a
+// foundational lesson. Anything not listed here (an uncommon
+// subheading Cellfie hasn't seen before) gets a neutral middle rank
+// rather than being silently dropped.
+// ---------------------------------------------------------------------
+const MESH_SUBHEADING_EDUCATIONAL_RANK: Record<string, number> = {
+  genetics: 3,
+  physiology: 3,
+  chemistry: 3,
+  metabolism: 3,
+  biosynthesis: 3,
+  classification: 3,
+  ultrastructure: 3,
+  'growth and development': 3,
+  cytology: 3,
+  'growth & development': 3,
+  immunology: 2,
+  microbiology: 2,
+  pathology: 2,
+  analysis: 2,
+  isolation: 2,
+  'isolation and purification': 2,
+  enzymology: 2,
+  virology: 2,
+  anatomy: 2,
+  'drug effects': 1,
+  'radiation effects': 1,
+  diagnosis: 1,
+  therapy: 1,
+  prevention: 1,
+  'prevention and control': 1,
+  epidemiology: 1,
+  administration: -2,
+  'administration and dosage': -2,
+  'adverse effects': -2,
+  poisoning: -2,
+  'therapeutic use': -2,
+  economics: -3,
+  'legislation and jurisprudence': -3,
+  'supply and distribution': -3,
+  standards: -1,
+  trends: -1,
+  statistics: -1,
+  'statistics and numerical data': -1,
+  history: -1,
+  ethics: -2,
+  legislation: -3
+}
+
+function meshSubheadingRank(subheading: string): number {
+  return MESH_SUBHEADING_EDUCATIONAL_RANK[subheading.trim().toLowerCase()] ?? 0
+}
+
+/** Sorts subheadings by general educational relevance (highest first) and drops the clearly administrative/regulatory ones entirely rather than presenting them as if they were part of the concept's biology. */
+function selectEducationalSubheadings(subheadings: string[], max: number): string[] {
+  return [...subheadings]
+    .filter((s) => meshSubheadingRank(s) > -2)
+    .sort((a, b) => meshSubheadingRank(b) - meshSubheadingRank(a))
+    .slice(0, max)
+}
 
 export interface DetailedStudySubsection {
   id: string
@@ -220,21 +289,33 @@ function buildClassificationModule(concept: Concept, mesh: MeshClassification | 
       body: `${concept.name} is classified under the parent descriptor "${mesh.parentName}" in the NCBI Medical Subject Headings (MeSH) hierarchy.`
     })
   }
+  // §MeSH's role — child descriptors are the standardized vocabulary's
+  // own sub-entries, not automatically the biological classification a
+  // student needs to memorize (a term like "DNA, A-Form" is a real
+  // MeSH descriptor but not foundational teaching content). Capped
+  // tighter than before and framed as terminology, not as the lesson.
   if (mesh.childNames.length > 0) {
-    subsections.push({ id: 'classification-children', heading: 'Sub-categories', bullets: mesh.childNames })
+    subsections.push({
+      id: 'classification-children',
+      heading: 'Related MeSH terms',
+      body: 'Standardized terminology related to this concept in the MeSH vocabulary — useful for recognizing terms, not a list to memorize as biology.',
+      bullets: mesh.childNames.slice(0, 4)
+    })
   }
   if (mesh.meshUI || mesh.yearIntroduced) {
     subsections.push({
       id: 'classification-code',
       heading: 'MeSH descriptor',
-      body: `Code: ${mesh.meshUI ?? 'N/A'}${mesh.yearIntroduced ? `, introduced ${mesh.yearIntroduced}.` : '.'}`
+      body: `Code: ${mesh.meshUI ?? 'N/A'}${mesh.yearIntroduced ? `, introduced ${mesh.yearIntroduced}.` : '.'} Provided for terminology/provenance, not as educational content in itself.`
     })
   }
-  if (mesh.subheadings.length > 0) {
+  const educationalSubheadings = selectEducationalSubheadings(mesh.subheadings, 4)
+  if (educationalSubheadings.length > 0) {
     subsections.push({
       id: 'classification-subheadings',
-      heading: 'Indexing subheadings',
-      bullets: mesh.subheadings.slice(0, 6)
+      heading: 'Facets commonly studied',
+      body: 'Aspects of this concept indexed in the biomedical literature (e.g. genetics, physiology, chemistry) — a map of what to study next, not a definition.',
+      bullets: educationalSubheadings
     })
   }
 
@@ -243,7 +324,7 @@ function buildClassificationModule(concept: Concept, mesh: MeshClassification | 
     heading: 'Classification & Taxonomic Hierarchy',
     subsections,
     sourceRefs: [{ sourceName: mesh.sourceName, sourceUrl: mesh.sourceUrl }],
-    available: true
+    available: subsections.length > 0
   }
 }
 
@@ -260,6 +341,7 @@ function buildClassificationModule(concept: Concept, mesh: MeshClassification | 
 const STRUCTURE_KEYWORDS = ['structure', 'composition', 'polymer', 'helix', 'backbone', 'wall', 'membrane', 'molecular']
 
 function buildStructureModule(
+  concept: Concept,
   sections: OnlineKnowledgeSection[],
   europePmc: EuropePmcArticle[],
   usedExcerpts: Set<string>
@@ -278,9 +360,17 @@ function buildStructureModule(
   let fromArticle = false
 
   if (!content) {
+    // Defense-in-depth (see isArticleTooSpecialized's own doc comment):
+    // don't trust that every article in `europePmc` already cleared the
+    // generality bar — check again here, right where it becomes
+    // foundational Structure content.
     const structuralArticle = europePmc.find((a) => {
       const lower = a.abstractText.toLowerCase()
-      return STRUCTURE_KEYWORDS.some((k) => lower.includes(k)) && !isUsed(usedExcerpts, a.abstractText)
+      return (
+        STRUCTURE_KEYWORDS.some((k) => lower.includes(k)) &&
+        !isUsed(usedExcerpts, a.abstractText) &&
+        !isArticleTooSpecialized(a.title, a.abstractText, concept.name)
+      )
     })
     if (structuralArticle) {
       content = structuralArticle.abstractText
@@ -313,8 +403,10 @@ function buildStructureModule(
  * structured (§ splitStructuredAbstract); a plain abstract stays one
  * subsection.
  */
-function buildMechanismModule(europePmc: EuropePmcArticle[], usedExcerpts: Set<string>): DetailedStudyModule {
-  const article = europePmc.find((a) => !isUsed(usedExcerpts, a.abstractText))
+function buildMechanismModule(concept: Concept, europePmc: EuropePmcArticle[], usedExcerpts: Set<string>): DetailedStudyModule {
+  const article = europePmc.find(
+    (a) => !isUsed(usedExcerpts, a.abstractText) && !isArticleTooSpecialized(a.title, a.abstractText, concept.name)
+  )
   markUsed(usedExcerpts, article?.abstractText)
 
   return {
@@ -404,8 +496,8 @@ export function buildDetailedStudyModules(
 
   const definition = buildDefinitionModule(sections, mesh, usedExcerpts)
   const classification = buildClassificationModule(concept, mesh)
-  const structure = buildStructureModule(sections, europePmc, usedExcerpts)
-  const mechanism = buildMechanismModule(europePmc, usedExcerpts)
+  const structure = buildStructureModule(concept, sections, europePmc, usedExcerpts)
+  const mechanism = buildMechanismModule(concept, europePmc, usedExcerpts)
   const relationships = buildRelationshipsModule(concept, mesh)
 
   return [definition, classification, structure, mechanism, relationships]

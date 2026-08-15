@@ -788,6 +788,87 @@ function scoreArticleRelevance(item: EuropePmcResultItem, name: string): number 
   return score
 }
 
+// ---------------------------------------------------------------------
+// Generality / specialization scoring.
+//
+// A paper's title containing the concept's name is not the same as a
+// paper being an appropriate GENERAL/foundational source for that
+// concept. "DNA" appears in the title of thousands of papers about a
+// single disease pathway, a single gene fusion, a single patient
+// cohort — real, valid science, but not what Detailed Study's
+// Definition/Structure/Mechanism modules should teach from. This is a
+// generic, vocabulary-level heuristic (the words below are the
+// standard shape of clinical/molecular-pathway paper titles in
+// general, not anything specific to any one concept), so it applies
+// the same way to any concept name Cellfie is asked about.
+// ---------------------------------------------------------------------
+
+const GENERALITY_TITLE_RE =
+  /\b(overview|review|introduction to|fundamentals?|principles? of|structure and function|biology of|basics? of|what is|primer)\b/i
+const SPECIALIZED_MARKER_RE =
+  /\b(case report|cohort|randomi[sz]ed|clinical trial|patients? with|in vitro|in vivo|knockout|xenograft|mutant|fusion|syndrome|carcinoma|lymphoma|neoplasm|tumou?r|biomarker|prognosis|prognostic|subtype|genotype|phenotype of)\b/gi
+const ACRONYM_RE = /\b[A-Z0-9]{2,6}\b/g
+
+/**
+ * Counts ALLCAPS/short acronym tokens in the ORIGINAL-CASE title that
+ * aren't the concept's own name and aren't ordinary short words — a
+ * title dense with these (gene/protein/pathway shorthand: "BCL6",
+ * "MBD1", "DLBCL") is the shape of a narrow molecular/clinical paper,
+ * not a general teaching source.
+ */
+function countForeignAcronyms(originalTitle: string, name: string): number {
+  const lowerName = name.toLowerCase()
+  const matches = originalTitle.match(ACRONYM_RE) ?? []
+  return matches.filter((m) => m.toLowerCase() !== lowerName && !/^(AND|THE|FOR|WITH|FROM|VIA)$/i.test(m)).length
+}
+
+/**
+ * Adjusts a base relevance score down for signals that a paper is a
+ * narrow clinical/molecular-pathway study (not appropriate as a
+ * foundational educational source for a general concept) and up for
+ * signals that it's a general/review-style treatment. Returns the
+ * adjusted score; callers apply a minimum-acceptance threshold on top
+ * of this so a specialized paper doesn't just rank lower — it's
+ * excluded outright from foundational sections.
+ */
+function scoreArticleGenerality(item: EuropePmcResultItem, name: string, baseScore: number): number {
+  const originalTitle = decodeHTMLEntities(item.title ?? '')
+  const abstract = decodeHTMLEntities(item.abstractText ?? '')
+  let score = baseScore
+
+  const foreignAcronyms = countForeignAcronyms(originalTitle, name)
+  if (foreignAcronyms >= 3) score -= 10
+  else if (foreignAcronyms === 2) score -= 5
+
+  const specializedInTitle = (originalTitle.match(SPECIALIZED_MARKER_RE) ?? []).length
+  const specializedInAbstractStart = (abstract.slice(0, 240).match(SPECIALIZED_MARKER_RE) ?? []).length
+  score -= specializedInTitle * 6
+  score -= specializedInAbstractStart * 2
+
+  if (GENERALITY_TITLE_RE.test(originalTitle)) score += 12
+
+  return score
+}
+
+/** Minimum adjusted-generality score for a paper to be usable as foundational (Structure/Mechanism) content — see scoreArticleGenerality. Below this, the paper is excluded rather than ranked lower, per "relevance is more important than completeness". */
+const GENERALITY_ACCEPT_THRESHOLD = 20
+
+/**
+ * Defense-in-depth: `fetchEuropePmcArticles` already excludes
+ * over-specialized papers before returning, but detailedStudy.ts's
+ * Structure/Mechanism module builders shouldn't have to TRUST that
+ * every `EuropePmcArticle[]` they're ever handed came from that exact
+ * call path (a future refactor, a stale cache shape, a test) — so this
+ * is exported as a second, independent check callers can run again
+ * right where the article is actually used as foundational content.
+ * Same scoring, same threshold; just callable without an `item`-shaped
+ * object.
+ */
+export function isArticleTooSpecialized(title: string, abstractText: string, name: string): boolean {
+  const score = scoreArticleGenerality({ title, abstractText }, name, scoreArticleRelevance({ title, abstractText }, name))
+  return score < GENERALITY_ACCEPT_THRESHOLD
+}
+
 /**
  * Detailed Study — additional literature tier alongside the existing
  * PubMed single-best-hit tier above. Fetches up to 12 candidates from
@@ -814,8 +895,16 @@ export async function fetchEuropePmcArticles(name: string): Promise<EuropePmcArt
 
   const items = data?.resultList?.result ?? []
   const withScores = items
-    .map((item) => ({ item, score: scoreArticleRelevance(item, trimmed) }))
-    .filter((s) => s.score > 0 && s.item.abstractText)
+    .map((item) => {
+      const relevance = scoreArticleRelevance(item, trimmed)
+      return { item, score: scoreArticleGenerality(item, trimmed, relevance) }
+    })
+    // Relevance is more important than completeness (see this file's
+    // fallback rules): a paper must both mention the concept AND clear
+    // the generality bar to be treated as a foundational source. A
+    // paper that fails this is simply not returned — never force-fit
+    // as "the DNA paper" just because it was the best of a bad set.
+    .filter((s) => s.score >= GENERALITY_ACCEPT_THRESHOLD && s.item.abstractText)
     .sort((a, b) => b.score - a.score)
 
   const results: EuropePmcArticle[] = []
