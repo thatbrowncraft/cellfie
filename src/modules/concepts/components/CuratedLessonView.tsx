@@ -10,6 +10,24 @@ import { ArrowSquareOut } from '@phosphor-icons/react'
 import { ComparisonTable as DesignComparisonTable } from '@/shared/components'
 import type { CuratedLesson, LessonSection } from '@/core/concepts/curatedLessons/registry'
 
+/** What both `CuratedLessonView` and `CuratedQuickRevisionView` actually need — a strict subset of `CuratedLesson`. Book-First Learning Engine, Phase 1: `BookLesson` (core/concepts/bookLesson.ts) satisfies this too, so both components render a hand-authored curated lesson OR a lesson built purely from the person's own uploaded book without any UI rewrite — only the `origin` prop's banner copy differs. */
+export interface LessonViewData {
+  conceptDisplayName: string
+  sections: LessonSection[]
+  sources: CuratedLesson['sources']
+}
+
+export interface QuickRevisionViewData {
+  conceptDisplayName: string
+  quickRevision: {
+    oneLineDefinition: string
+    keyFacts: string[]
+    /** Optional here — unlike a curated lesson, a book-derived Quick Revision never invents key terms it has no real signal for (see bookLesson.ts). */
+    keyTerms?: string[]
+    commonConfusion?: string[]
+  }
+}
+
 function SectionBody({ section }: { section: LessonSection }) {
   return (
     <>
@@ -92,28 +110,36 @@ function SectionBody({ section }: { section: LessonSection }) {
   )
 }
 
-export function CuratedQuickRevisionView({ lesson }: { lesson: CuratedLesson }) {
+export function CuratedQuickRevisionView({ lesson }: { lesson: QuickRevisionViewData }) {
   const { quickRevision } = lesson
   return (
     <div className="rounded-md border border-border bg-surface p-5">
       <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Quick revision — {lesson.conceptDisplayName}</h3>
       <p className="mb-3 font-body text-body font-medium text-ink-primary">{quickRevision.oneLineDefinition}</p>
 
-      <h4 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">Key facts</h4>
-      <ul className="mb-3 list-disc space-y-1 pl-5 font-body text-body text-ink-primary">
-        {quickRevision.keyFacts.map((f, i) => (
-          <li key={i}>{f}</li>
-        ))}
-      </ul>
+      {quickRevision.keyFacts.length > 0 && (
+        <>
+          <h4 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">Key facts</h4>
+          <ul className="mb-3 list-disc space-y-1 pl-5 font-body text-body text-ink-primary">
+            {quickRevision.keyFacts.map((f, i) => (
+              <li key={i}>{f}</li>
+            ))}
+          </ul>
+        </>
+      )}
 
-      <h4 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">Key terms</h4>
-      <div className="mb-3 flex flex-wrap gap-1.5">
-        {quickRevision.keyTerms.map((t) => (
-          <span key={t} className="rounded-full bg-surface-raised px-2.5 py-1 font-ui text-micro text-ink-secondary">
-            {t}
-          </span>
-        ))}
-      </div>
+      {quickRevision.keyTerms && quickRevision.keyTerms.length > 0 && (
+        <>
+          <h4 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">Key terms</h4>
+          <div className="mb-3 flex flex-wrap gap-1.5">
+            {quickRevision.keyTerms.map((t) => (
+              <span key={t} className="rounded-full bg-surface-raised px-2.5 py-1 font-ui text-micro text-ink-secondary">
+                {t}
+              </span>
+            ))}
+          </div>
+        </>
+      )}
 
       {quickRevision.commonConfusion && quickRevision.commonConfusion.length > 0 && (
         <>
@@ -186,13 +212,14 @@ export function CuratedExamFocusView({ lesson }: { lesson: CuratedLesson }) {
   )
 }
 
-export function CuratedLessonView({ lesson }: { lesson: CuratedLesson }) {
+export function CuratedLessonView({ lesson, origin = 'curated' }: { lesson: LessonViewData; origin?: 'curated' | 'book' }) {
   return (
     <div className="flex flex-col gap-4">
       <div className="rounded-md border border-terracotta/40 bg-surface-raised px-4 py-2.5">
         <p className="font-ui text-caption font-medium text-ink-secondary">
-          Cellfie study content — a curated lesson written for this concept, informed by real educational and scientific
-          sources (listed below), not auto-generated from a database record.
+          {origin === 'book'
+            ? "Cellfie study content — built from your own uploaded book's actual headings and explanation for this concept, not rewritten or generated."
+            : 'Cellfie study content — a curated lesson written for this concept, informed by real educational and scientific sources (listed below), not auto-generated from a database record.'}
         </p>
       </div>
 
