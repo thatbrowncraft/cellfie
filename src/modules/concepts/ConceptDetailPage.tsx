@@ -5,9 +5,11 @@ import { db, type Concept, type ConceptRelation, type ConceptSource, type Librar
 import { useLiveQuery } from '@/core/db/useLiveQuery'
 import {
   backfillSourceRelevance,
+  buildBookLesson,
   buildDetailedStudyModules,
   buildExamTools,
   buildResearchReadings,
+  buildStudyOverview,
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
@@ -22,8 +24,10 @@ import {
   type EuropePmcArticle,
   type MeshClassification,
   type OnlineKnowledgeSection,
+  type StudyOverview,
   type VisualReference
 } from '@/core/concepts'
+import { detailedModulesPlainText, examFocusPlainText, examToolsPlainText, lessonSectionsPlainText, onlineSectionsPlainText, quickRevisionPlainText } from '@/core/concepts/sectionPlainText'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/components'
 import { ConceptSourceList } from './components/ConceptSourceList'
@@ -32,6 +36,7 @@ import { ConceptVisualsImport } from './components/ConceptVisualsImport'
 import { StudyNotesSection } from './components/StudyNotesSection'
 import { MindMapStudio } from './components/MindMapStudio'
 import { CuratedLessonView, CuratedQuickRevisionView, CuratedExamFocusView } from './components/CuratedLessonView'
+import { EditableSection } from './components/EditableSection'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
 import { ExamToolsPanel } from './components/ExamToolsPanel'
 import { MemoryAidCard } from './components/MemoryAidCard'
@@ -260,6 +265,46 @@ export function ConceptDetailPage() {
   // core/concepts/curatedLessons/registry.ts.
   const curatedLesson = useMemo(() => (concept ? getCuratedLesson(concept) : undefined), [concept])
 
+  // Book-First Learning Engine, Phase 1 — the new TRUE Tier 1: the
+  // person's own uploaded book(s), searched via the pre-existing
+  // relevance-scored pipeline (relevance.ts/textDisplay.ts, called
+  // through extraction.ts's buildStudyOverview — nothing about that
+  // pipeline changes here, this just reconnects it to the Learn tab and
+  // reshapes its output via bookLesson.ts). Async because it reads real
+  // PDF pages, so it follows the same never-blocks effect pattern as
+  // every other Learn-tab feed above: the rest of the page renders
+  // immediately, and this fills in once ready. Capped by
+  // buildStudyOverview's own MAX_STUDY_SOURCE_PAGES, so it's safe to
+  // recompute on every source/library change for this concept.
+  const [studyOverview, setStudyOverview] = useState<StudyOverview | undefined>(undefined)
+  const [loadingStudyOverview, setLoadingStudyOverview] = useState(false)
+  useEffect(() => {
+    let cancelled = false
+    setStudyOverview(undefined)
+    if (!concept) return
+    setLoadingStudyOverview(true)
+    buildStudyOverview(concept, sources, itemsById)
+      .then((overview) => {
+        if (!cancelled) setStudyOverview(overview)
+      })
+      .finally(() => {
+        if (!cancelled) setLoadingStudyOverview(false)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [concept, sources, itemsById])
+
+  // The book's own explanation, reshaped into the same lesson shape
+  // CuratedLessonView already renders — `undefined` (never a thin or
+  // empty lesson) when the book search found nothing usable for this
+  // concept. Per the new source hierarchy this OUTRANKS the curated
+  // lesson: a concept's own uploaded textbook, when it actually
+  // discusses that concept, is the primary teaching material — the
+  // curated Gram Staining lesson remains the fallback gold-standard for
+  // when no sufficient uploaded-book content exists.
+  const bookLesson = useMemo(() => (concept && studyOverview ? buildBookLesson(concept, studyOverview) : undefined), [concept, studyOverview])
+
   // Concept 2.0 architecture change §6 — Research & Further Reading,
   // the ONLY place a Europe PMC research article's title/journal/link
   // appears on the Learn tab now. See researchReadings.ts.
@@ -430,9 +475,22 @@ export function ConceptDetailPage() {
                     attached at all. Every heading below either comes from
                     the source's own framing or is a generic source-type
                     label — never invented from the concept's topic. */}
-                {studyMode === 'quick' && (
-                  <>
-                    {curatedLesson ? (
+                {studyMode === 'quick' && concept && (
+                  <EditableSection
+                    conceptId={concept.id}
+                    sectionKey="quick-revision"
+                    label="Quick Revision"
+                    originalText={
+                      bookLesson
+                        ? quickRevisionPlainText(bookLesson.quickRevision)
+                        : curatedLesson
+                          ? quickRevisionPlainText(curatedLesson.quickRevision)
+                          : onlineSectionsPlainText(onlineSections)
+                    }
+                  >
+                    {bookLesson ? (
+                      <CuratedQuickRevisionView lesson={bookLesson} />
+                    ) : curatedLesson ? (
                       <CuratedQuickRevisionView lesson={curatedLesson} />
                     ) : (
                       <div className="rounded-md border border-border bg-surface p-5">
@@ -440,6 +498,9 @@ export function ConceptDetailPage() {
                       <Globe size={14} aria-hidden />
                       Scientific overview
                     </h3>
+                    {loadingStudyOverview && (
+                      <p className="mb-2 font-ui text-caption text-ink-tertiary">Checking your uploaded books first…</p>
+                    )}
                     {loadingOnlineKnowledge && (
                       <p className="font-ui text-caption text-ink-tertiary">Checking reliable scientific sources…</p>
                     )}
@@ -485,84 +546,104 @@ export function ConceptDetailPage() {
                     )}
                       </div>
                     )}
-                  </>
+                  </EditableSection>
                 )}
 
                 {studyMode === 'quick' && concept && (
                   <StudyNotesSection conceptId={concept.id} section="quick-revision" itemLabel="revision point" />
                 )}
 
-                {/* Core Concept — Second Refinement §Part 3–7. If a
-                    curated lesson exists for this concept (see
-                    core/concepts/curatedLessons), it IS Core Concept —
-                    a hand-authored, source-attributed lesson, not a
-                    database record. Otherwise this falls back to the
-                    prior architecture: Definition/Structure built only
+                {/* Core Concept — Book-First Learning Engine, Phase 1.
+                    Priority: (1) the person's own uploaded book, if it
+                    actually discusses this concept (bookLesson.ts, built
+                    from extraction.ts's buildStudyOverview); (2) the
+                    hand-authored curated lesson (core/concepts/curatedLessons),
+                    if one exists; (3) the prior architecture as an
+                    honest fallback — Definition/Structure built only
                     from curated (MeSH scope note) or real compound
                     (PubChem) data, Classification/Relationships
                     collapsed as metadata, research kept separate below.
-                    That fallback is the honest state for a concept that
-                    doesn't have a curated lesson yet — never faked. */}
-                {studyMode === 'detailed' && curatedLesson && (
+                    That fallback is the honest state for a concept with
+                    neither an uploaded-book match nor a curated lesson
+                    — never faked. */}
+                {(studyMode === 'detailed' && (bookLesson || curatedLesson)) && concept && (
                   <div className="flex flex-col gap-4">
-                    <CuratedLessonView lesson={curatedLesson} />
-                    {concept && <StudyNotesSection conceptId={concept.id} section="core-concept" itemLabel="study note" />}
+                    <EditableSection
+                      conceptId={concept.id}
+                      sectionKey="core-concept"
+                      label="Core Concept"
+                      originalText={lessonSectionsPlainText((bookLesson ?? curatedLesson)!.sections)}
+                    >
+                      <CuratedLessonView lesson={(bookLesson ?? curatedLesson)!} origin={bookLesson ? 'book' : 'curated'} />
+                    </EditableSection>
+                    <StudyNotesSection conceptId={concept.id} section="core-concept" itemLabel="study note" />
                   </div>
                 )}
 
-                {studyMode === 'detailed' && !curatedLesson && (
+                {studyMode === 'detailed' && !bookLesson && !curatedLesson && (
                   <div className="flex flex-col gap-4">
-                    {detailedStudyModules
-                      .filter((m) => m.id === 'definition' || m.id === 'structure')
-                      .map((studyModule) => (
-                        <div key={studyModule.id} className="rounded-md border border-border bg-surface p-5">
-                          <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                            {studyModule.heading}
-                          </h3>
-                          <div className="flex flex-col gap-3">
-                            {studyModule.subsections.map((sub) => (
-                              <div key={sub.id}>
-                                {sub.heading && (
-                                  <h4 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">{sub.heading}</h4>
-                                )}
-                                {sub.body && (
-                                  <p
-                                    className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed"
-                                    style={{ overflowWrap: 'anywhere' }}
-                                  >
-                                    {sub.body}
-                                  </p>
-                                )}
-                                {sub.bullets && sub.bullets.length > 0 && (
-                                  <ul className="list-disc space-y-1 pl-5 font-body text-body text-ink-primary leading-relaxed">
-                                    {sub.bullets.map((bullet, i) => (
-                                      <li key={i} style={{ overflowWrap: 'anywhere' }}>
-                                        {bullet}
-                                      </li>
+                    {concept && (
+                      <EditableSection
+                        conceptId={concept.id}
+                        sectionKey="core-concept"
+                        label="Core Concept"
+                        originalText={detailedModulesPlainText(detailedStudyModules.filter((m) => m.id === 'definition' || m.id === 'structure'))}
+                      >
+                        <div className="flex flex-col gap-4">
+                          {detailedStudyModules
+                            .filter((m) => m.id === 'definition' || m.id === 'structure')
+                            .map((studyModule) => (
+                              <div key={studyModule.id} className="rounded-md border border-border bg-surface p-5">
+                                <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                                  {studyModule.heading}
+                                </h3>
+                                <div className="flex flex-col gap-3">
+                                  {studyModule.subsections.map((sub) => (
+                                    <div key={sub.id}>
+                                      {sub.heading && (
+                                        <h4 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">{sub.heading}</h4>
+                                      )}
+                                      {sub.body && (
+                                        <p
+                                          className="whitespace-pre-line font-body text-body text-ink-primary leading-relaxed"
+                                          style={{ overflowWrap: 'anywhere' }}
+                                        >
+                                          {sub.body}
+                                        </p>
+                                      )}
+                                      {sub.bullets && sub.bullets.length > 0 && (
+                                        <ul className="list-disc space-y-1 pl-5 font-body text-body text-ink-primary leading-relaxed">
+                                          {sub.bullets.map((bullet, i) => (
+                                            <li key={i} style={{ overflowWrap: 'anywhere' }}>
+                                              {bullet}
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      )}
+                                    </div>
+                                  ))}
+                                </div>
+                                {studyModule.available && studyModule.sourceRefs.length > 0 && (
+                                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 border-t border-border pt-3">
+                                    {studyModule.sourceRefs.map((ref, i) => (
+                                      <a
+                                        key={i}
+                                        href={ref.sourceUrl}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
+                                      >
+                                        Source: {ref.sourceName}
+                                        <ArrowSquareOut size={13} />
+                                      </a>
                                     ))}
-                                  </ul>
+                                  </div>
                                 )}
                               </div>
                             ))}
-                          </div>
-                          {studyModule.available && studyModule.sourceRefs.length > 0 && (
-                            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 border-t border-border pt-3">
-                              {studyModule.sourceRefs.map((ref, i) => (
-                                <a
-                                  key={i}
-                                  href={ref.sourceUrl}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="flex w-fit items-center gap-1 font-ui text-caption font-medium text-olive hover:underline"
-                                >
-                                  Source: {ref.sourceName}
-                                  <ArrowSquareOut size={13} />
-                                </a>
-                              ))}
-                            </div>
-                          )}
                         </div>
-                      ))}
+                      </EditableSection>
+                    )}
 
                     {/* Scientific metadata — Classification & Relationships,
                         collapsed by default. Real MeSH data, kept
@@ -670,13 +751,20 @@ export function ConceptDetailPage() {
                     real conceptual-question content. Memory aid is
                     intentionally NOT part of this component — see
                     MemoryAidCard below. */}
-                {studyMode === 'exam' && (
-                  <div className="flex flex-col gap-4">
-                    {curatedLesson && <CuratedExamFocusView lesson={curatedLesson} />}
-                    <ExamToolsPanel concept={concept} examTools={examTools} relatedEntries={relatedEntries} onlineSections={onlineSections} />
-                    {concept && <StudyNotesSection conceptId={concept.id} section="exam-focus" itemLabel="exam note" />}
-                  </div>
+                {studyMode === 'exam' && concept && (
+                  <EditableSection
+                    conceptId={concept.id}
+                    sectionKey="exam-focus"
+                    label="Exam Focus"
+                    originalText={curatedLesson ? examFocusPlainText(curatedLesson.examFocus) : examToolsPlainText(examTools)}
+                  >
+                    <div className="flex flex-col gap-4">
+                      {curatedLesson && <CuratedExamFocusView lesson={curatedLesson} />}
+                      <ExamToolsPanel concept={concept} examTools={examTools} relatedEntries={relatedEntries} onlineSections={onlineSections} />
+                    </div>
+                  </EditableSection>
                 )}
+                {studyMode === 'exam' && concept && <StudyNotesSection conceptId={concept.id} section="exam-focus" itemLabel="exam note" />}
 
                 {/* Memory aid — independent of study mode and of Exam
                     Focus/ExamToolsPanel. Reads/writes the existing
