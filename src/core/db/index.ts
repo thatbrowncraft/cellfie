@@ -340,6 +340,30 @@ export interface ConceptStudyNote {
   updatedAt: number
 }
 
+/**
+ * Book-First Learning Engine, Phase 2 — optional, additive personalization
+ * of a Cellfie-generated Learn section. This is NOT `ConceptStudyNote`
+ * (the person's own separate "My Study Notes" entries, added alongside
+ * Cellfie's content) — this is the person choosing to REPLACE what's
+ * displayed for one of Learn's three major sections (Quick Revision /
+ * Core Concept / Exam Focus) with their own wording, while the original
+ * source-derived content is preserved untouched underneath so "Restore
+ * original" always works, no matter how the section was originally
+ * sourced (uploaded book, curated lesson, or the MeSH/PubChem fallback).
+ */
+export interface ConceptSectionEdit {
+  id: string
+  conceptId: string
+  /** Stable per (concept, major-section) — e.g. 'quick-revision', 'core-concept', 'exam-focus'. Deliberately NOT tied to which source produced the content, so an edit survives the underlying source changing (a newly-uploaded book becoming available, say) without silently vanishing or reattaching to the wrong content. */
+  sectionKey: string
+  /** Snapshot of the original source-derived plain text, taken once at the moment of the FIRST edit and never overwritten again — this is what "Restore original" restores, and what the original source data is; it is never itself the thing displayed unless the edit is restored. */
+  originalText: string
+  /** What's actually shown while this edit exists. */
+  editedText: string
+  createdAt: number
+  updatedAt: number
+}
+
 class CellfieDB extends Dexie {
   libraryItems!: Table<LibraryItem, string>
   collections!: Table<Collection, string>
@@ -354,6 +378,7 @@ class CellfieDB extends Dexie {
   conceptMapNodes!: Table<ConceptMapNode, string>
   conceptMapEdges!: Table<ConceptMapEdge, string>
   conceptStudyNotes!: Table<ConceptStudyNote, string>
+  conceptSectionEdits!: Table<ConceptSectionEdit, string>
 
   constructor() {
     super('cellfie')
@@ -474,6 +499,29 @@ class CellfieDB extends Dexie {
       conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
       conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
       conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]'
+    })
+    // v8 — Book-First Learning Engine, Phase 2: adds `conceptSectionEdits`
+    // only. Every prior store repeated unchanged; no existing row in any
+    // table is touched by this upgrade. A concept with no edits simply
+    // has no rows here — Learn's three major sections render their
+    // original source-derived content exactly as before until a person
+    // explicitly saves an edit.
+    this.version(8).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt',
+      highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+      notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+      concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+      conceptSources:
+        'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+      conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+      conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+      conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+      conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+      conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
+      conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]'
     })
   }
 }
