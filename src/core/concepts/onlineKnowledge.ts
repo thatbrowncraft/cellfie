@@ -435,15 +435,19 @@ async function fetchPubChemSections(name: string): Promise<OnlineKnowledgeSectio
 }
 
 /**
- * PRIMARY feed for the Learn tab's Study Overview. Runs the PubChem
- * tier (always) and, unless the concept looks purely quantitative, the
- * PubMed tier — collecting every section either one actually finds
- * rather than stopping at the first hit, since a compound description
- * and a research abstract are both legitimately useful and don't
- * contradict each other. Only falls back to the general-reference tier
- * (Wikipedia-filtered) when NEITHER of those found anything. Never
- * throws; an empty array is the honest "nothing reliable found" result
- * the caller must show as such, not fill in with invented text.
+ * PRIMARY feed for the Learn tab's Study Overview. Book-First Learning
+ * Engine: research literature (PubMed, Europe PMC) is deliberately NOT
+ * collected here anymore — a research abstract must never stand in as
+ * the primary Core Concept lesson just because no textbook/definition
+ * tier had anything (see this file's own header comment, and
+ * `researchReadings.ts`, where Europe PMC is correctly surfaced as
+ * "Research & Further Reading" instead). This function now runs only
+ * the PubChem tier (chemistry-specific, appropriately a Learn-tab
+ * primary source per the source hierarchy) and, only if that found
+ * nothing at all, the general-reference tier (Wikipedia-filtered) as a
+ * last resort. Never throws; an empty array is the honest "nothing
+ * reliable found" result the caller must show as such, not fill in
+ * with invented text.
  */
 export async function fetchOnlineKnowledge(name: string): Promise<OnlineKnowledgeSection[]> {
   const trimmed = name.trim()
@@ -457,38 +461,6 @@ export async function fetchOnlineKnowledge(name: string): Promise<OnlineKnowledg
   const sections: OnlineKnowledgeSection[] = []
 
   sections.push(...(await fetchPubChemSections(trimmed)))
-
-  if (!looksQuantitative(trimmed)) {
-    const pubmed = await fetchPubMedSummary(trimmed)
-    if (pubmed) {
-      sections.push({
-        heading: 'Research abstract',
-        text: pubmed.extract,
-        sourceName: pubmed.sourceName,
-        sourceUrl: pubmed.sourceUrl,
-        isAbstract: true
-      })
-    }
-
-    // Detailed Study — additional literature tier. Purely additive: only
-    // adds excerpts whose text isn't already present from PubChem/PubMed
-    // above, and never more than 2, so this stays a supporting tier
-    // rather than crowding the flat Quick Revision view.
-    const seenText = new Set(sections.map((s) => s.text))
-    const europePmc = await fetchEuropePmcArticles(trimmed)
-    for (const article of europePmc) {
-      if (seenText.has(article.abstractText)) continue
-      seenText.add(article.abstractText)
-      sections.push({
-        heading: article.journal ? `Europe PMC — ${article.journal}` : 'Europe PMC',
-        text: article.abstractText,
-        sourceName: article.sourceName,
-        sourceUrl: article.sourceUrl,
-        isAbstract: true
-      })
-      if (sections.length >= 5) break
-    }
-  }
 
   if (sections.length === 0) {
     const general = await fetchGeneralReference(trimmed)
