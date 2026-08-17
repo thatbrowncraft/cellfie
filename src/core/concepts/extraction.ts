@@ -1095,6 +1095,72 @@ export async function buildStudyOverview(
   return { paragraph, sections: orderedSections }
 }
 
+const STUDY_OVERVIEW_CACHE_KEY_PREFIX = 'conceptStudyOverviewCache:v1:'
+
+interface StudyOverviewCacheEntry {
+  fingerprint: string
+  overview: StudyOverview
+  builtAt: number
+}
+
+/**
+ * A cheap, deterministic fingerprint of exactly the source rows
+ * `buildStudyOverview` actually reads from (same filter it applies
+ * internally) — order-independent, so re-linking the same sources in a
+ * different order never invalidates the cache, but a genuinely new or
+ * removed source (new upload, explicit rescan, a source's relevance
+ * tier changing) always does.
+ */
+function studyOverviewFingerprint(sources: ConceptSource[]): string {
+  return sources
+    .filter(
+      (s) =>
+        s.sourceType === 'pdf' &&
+        s.libraryItemId &&
+        s.pageNumber != null &&
+        (s.relevanceTier === 'high' || s.relevanceTier === 'relevant')
+    )
+    .map((s) => `${s.id}:${s.relevanceTier}:${s.extractionQuality ?? ''}`)
+    .sort()
+    .join('|')
+}
+
+/**
+ * Refresh/Lifecycle Correction — `buildStudyOverview` itself re-reads
+ * real PDF pages for every candidate source (see its own body above),
+ * which is the actual expensive step in "Core Concept", separate from
+ * `scanLibraryForConcept`'s already-cached linking pass. Before this,
+ * that PDF re-read ran on EVERY page open/refresh regardless of whether
+ * anything changed, because `studyOverview` React state is reset on
+ * every mount. This wraps it with a settled-result cache keyed by a
+ * fingerprint of the exact source rows that fed it: unchanged sources
+ * mean an instant cache hit and zero PDF reads; a new upload, an
+ * explicit rescan, or any change to which sources qualify invalidates
+ * it automatically. This is the piece that makes "refresh reuses the
+ * settled Core Concept" true across full page reloads, not just
+ * React-state-preserving navigation.
+ */
+export async function buildStudyOverviewSettled(
+  concept: Pick<Concept, 'id' | 'name' | 'aliases'>,
+  sources: ConceptSource[],
+  itemsById: Map<string, LibraryItem>
+): Promise<StudyOverview> {
+  const fingerprint = studyOverviewFingerprint(sources)
+  const cacheKey = `${STUDY_OVERVIEW_CACHE_KEY_PREFIX}${concept.id}`
+  const cached = await db.appSettings.get(cacheKey)
+  const entry = cached?.value as StudyOverviewCacheEntry | undefined
+  if (entry && entry.fingerprint === fingerprint) {
+    console.log(`[buildStudyOverviewSettled:${concept.name}] cache hit — reusing settled Core Concept, no PDF re-read`)
+    return entry.overview
+  }
+
+  console.log(`[buildStudyOverviewSettled:${concept.name}] StudyOverview build started`)
+  const overview = await buildStudyOverview(concept, sources, itemsById)
+  console.log(`[buildStudyOverviewSettled:${concept.name}] StudyOverview build completed`)
+  await db.appSettings.put({ key: cacheKey, value: { fingerprint, overview, builtAt: Date.now() } satisfies StudyOverviewCacheEntry })
+  return overview
+}
+
 /**
  * Knowledge Model Correction §8, Relevance Correction — on-demand only
  * (never called automatically): reads a single page and returns a short
@@ -1263,6 +1329,74 @@ interface ConceptLibraryScanMarker {
   lastPageScanned?: number
   linked?: number
   error?: string
+  /** Concurrency-and-Memory Correction — pages that timed out or threw during a previous scan of this book for this concept. Skipped on sight (no read attempt) rather than re-paying the timeout every visit. Reset only when a fresh scan of this book starts from page 1 (explicit rescan), never silently. */
+  badPages?: number[]
+}
+
+/**
+ * Diagnostic Correction (5-minute-hang report) — a single page whose
+ * text extraction never settles (seen in practice on certain malformed/
+ * scanned PDF pages, where pdf.js's worker round-trip just never
+ * resolves — it doesn't throw, it hangs) used to stall this entire
+ * function forever: one bad page anywhere in book 3 of 5 meant books
+ * 4 and 5 were never even attempted, and the caller's
+ * `Promise.all([...]).finally(...)` in ConceptDetailPage never ran,
+ * which is exactly the "stuck on Combining material… indefinitely"
+ * symptom. This is a per-PAGE guard, not a pipeline-level timeout: a
+ * page that doesn't respond within the budget is logged and skipped,
+ * the scan moves on to the next page/book, and nothing here ever
+ * substitutes MeSH or gives up on the rest of the library.
+ *
+ * Concurrency-and-Memory Correction — a per-page timeout alone doesn't
+ * scale: a book with 30 genuinely bad pages (not rare in real scanned
+ * textbooks) used to pay `PAGE_READ_TIMEOUT_MS` 30 times SERIALLY —
+ * minutes of pure waiting on pages that were never going to produce
+ * text — and paid it again on every future scan of that book, forever.
+ * Two changes fix that:
+ *  1. Pages are now read in small concurrent batches (see
+ *     `PAGE_READ_CONCURRENCY` below), so several timeouts overlap
+ *     instead of stacking. 30 bad pages at concurrency 5 is ~8x faster
+ *     in the worst case, not just "still bad but less bad."
+ *  2. A page's own timeout/error is persisted in its marker's
+ *     `badPages`, so it's skipped instantly (no read attempt, no
+ *     waiting) on every scan after the first — the 8s cost is paid
+ *     once per bad page, ever, not once per visit. Cleared only by an
+ *     explicit rescan (same invalidation path as everything else this
+ *     marker gates).
+ */
+const PAGE_READ_TIMEOUT_MS = 8000
+/** How many pages this book reads at once. Kept modest — this is still running on the main thread's event loop budget on a phone, not a worker pool free to fan out unbounded. */
+const PAGE_READ_CONCURRENCY = 5
+
+type PageReadOutcome =
+  | { status: 'ok'; text: { flat: string; structured: string } }
+  | { status: 'timeout' }
+  | { status: 'error' }
+
+async function readPageWithGuard(vdoc: Awaited<ReturnType<typeof openLibraryDocument>>, page: number): Promise<PageReadOutcome> {
+  const TIMEOUT = Symbol('page-read-timeout')
+  try {
+    const result = await Promise.race([
+      vdoc.getPageText(page),
+      new Promise<typeof TIMEOUT>((resolve) => setTimeout(() => resolve(TIMEOUT), PAGE_READ_TIMEOUT_MS))
+    ])
+    if (result === TIMEOUT) {
+      console.warn(`[scanLibraryForConcept] page ${page} timed out after ${PAGE_READ_TIMEOUT_MS}ms, marking bad and skipping`)
+      return { status: 'timeout' }
+    }
+    return { status: 'ok', text: result }
+  } catch (err) {
+    console.warn(`[scanLibraryForConcept] page ${page} failed to extract, marking bad and skipping`, err)
+    return { status: 'error' }
+  }
+}
+
+/** Reads a batch of pages concurrently, preserving input order in the output so the caller can process results deterministically even though the reads themselves overlap. */
+async function readPageBatch(
+  vdoc: Awaited<ReturnType<typeof openLibraryDocument>>,
+  pages: number[]
+): Promise<Array<{ page: number; outcome: PageReadOutcome }>> {
+  return Promise.all(pages.map(async (page) => ({ page, outcome: await readPageWithGuard(vdoc, page) })))
 }
 
 export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLibraryScanResult> {
@@ -1270,13 +1404,19 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
   if (terms.length === 0) return { ran: false, booksScanned: 0, pagesScanned: 0, sourcesLinked: 0 }
 
   const items = await db.libraryItems.toArray()
+  const scannable = items.filter((item) => item.pageCount)
   let booksScanned = 0
   let pagesScanned = 0
   let sourcesLinked = 0
 
-  for (const item of items) {
-    if (!item.pageCount) continue
-    if (pagesScanned >= MAX_AUTO_SCAN_PAGES_PER_CALL) break
+  console.log(`[scanLibraryForConcept:${concept.name}] starting — ${scannable.length} book(s) with pages to check`)
+
+  for (const [bookIndex, item] of scannable.entries()) {
+    const bookLabel = `Book ${bookIndex + 1}/${scannable.length} (${item.title})`
+    if (pagesScanned >= MAX_AUTO_SCAN_PAGES_PER_CALL) {
+      console.log(`[scanLibraryForConcept:${concept.name}] page cap reached before ${bookLabel} — will resume next call`)
+      break
+    }
 
     const settingsKey = `${CONCEPT_LIBRARY_SCAN_KEY_PREFIX}${concept.id}:${item.id}`
     const already = await db.appSettings.get(settingsKey)
@@ -1299,66 +1439,129 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
     // hit-the-cap case) resumes instead of skipping.
     if (marker && marker.done !== false) continue
     const resumeFromPage = typeof marker?.lastPageScanned === 'number' ? marker.lastPageScanned + 1 : 1
+    // Known-bad pages carry over across calls for the same book — once a
+    // page has timed out or errored, it's never attempted again (just
+    // logged as skipped), until a rescan restarts this book from page 1.
+    const badPages = new Set(resumeFromPage === 1 ? [] : marker?.badPages ?? [])
+
+    console.log(`[scanLibraryForConcept:${concept.name}] ${bookLabel} started`)
 
     let vdoc: Awaited<ReturnType<typeof openLibraryDocument>>
     try {
       vdoc = await openLibraryDocument(item)
-    } catch {
+    } catch (err) {
+      console.warn(`[scanLibraryForConcept:${concept.name}] ${bookLabel} failed to open, skipping`, err)
       await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), done: true, error: 'parse-failed' } })
       continue
     }
 
+    // The stored `item.pageCount` is a cached copy taken at import time;
+    // `vdoc.pageCount` is the parser's own live count for this document.
+    // When they disagree (re-imported/corrupted metadata), trusting the
+    // stale stored value can ask the parser for a page past the end of
+    // the document — which for some formats throws deep inside the
+    // parser instead of a clean "not found", tripping the same
+    // never-resolves shape `readPageWithGuard` exists to catch. Always
+    // scanning against the parser's own count avoids that class of bug
+    // entirely rather than relying on the guard as the only backstop.
+    const effectivePageCount = Math.min(item.pageCount, vdoc.pageCount || item.pageCount)
+
     let linkedInBook = 0
     let hitCap = false
     let lastPageScanned = resumeFromPage - 1
-    for (let page = resumeFromPage; page <= item.pageCount; page += 1) {
+    if (badPages.size > 0) {
+      console.log(`[scanLibraryForConcept:${concept.name}] ${bookLabel} skipping ${badPages.size} known-bad page(s) from an earlier scan`)
+    }
+
+    for (let batchStart = resumeFromPage; batchStart <= effectivePageCount; batchStart += PAGE_READ_CONCURRENCY) {
       if (pagesScanned >= MAX_AUTO_SCAN_PAGES_PER_CALL) {
         hitCap = true
         break
       }
-      lastPageScanned = page
-      const { flat: pageText, structured: structuredPageText } = await vdoc.getPageText(page)
-      if (!pageText.trim()) continue
-      pagesScanned += 1
-      const lowerPageText = pageText.toLowerCase()
+      const batchEnd = Math.min(batchStart + PAGE_READ_CONCURRENCY - 1, effectivePageCount)
+      const pagesToRead: number[] = []
+      for (let page = batchStart; page <= batchEnd; page += 1) {
+        lastPageScanned = page
+        if (badPages.has(page)) continue // already known bad — no attempt, no wait
+        pagesToRead.push(page)
+      }
 
-      for (const term of terms) {
-        if (!lowerPageText.includes(term.toLowerCase())) continue
-        const relevance = applyOwnHeadingRelevanceFloor(scorePageRelevance(pageText, term), structuredPageText, term)
-        if (relevance.tier === 'reject') continue
-        const source = await addConceptSource({
-          // `sourceType: 'pdf'` is really "a page of an imported library
-          // item" regardless of the item's actual file format (PDF, EPUB,
-          // HTML) — matches every other caller in this file, and is what
-          // buildStudyOverview's candidate filter keys on.
-          conceptId: concept.id,
-          sourceType: 'pdf',
-          libraryItemId: item.id,
-          pageNumber: page,
-          sourceId: `${item.id}:${page}:${normalizeConceptName(term)}`,
-          sourceText: term,
-          relevanceTier: relevance.tier,
-          extractionQuality: detectExtractionQuality(pageText)
-        })
-        if (source) {
-          sourcesLinked += 1
-          linkedInBook += 1
+      // The concurrent reads within one batch overlap (so N bad pages'
+      // timeouts cost ~N/PAGE_READ_CONCURRENCY, not N, of PAGE_READ_TIMEOUT_MS),
+      // but the term-matching/linking work below stays strictly
+      // sequential per page — that part is fast (in-memory string work)
+      // and keeping it sequential avoids any risk of two pages racing
+      // on the same `addConceptSource` idempotency check.
+      const results = pagesToRead.length > 0 ? await readPageBatch(vdoc, pagesToRead) : []
+
+      for (const { page, outcome } of results) {
+        if (outcome.status === 'timeout' || outcome.status === 'error') {
+          badPages.add(page)
+          continue
         }
+        const { flat: pageText, structured: structuredPageText } = outcome.text
+        if (!pageText.trim()) continue
+        pagesScanned += 1
+        const lowerPageText = pageText.toLowerCase()
+
+        for (const term of terms) {
+          if (!lowerPageText.includes(term.toLowerCase())) continue
+          const relevance = applyOwnHeadingRelevanceFloor(scorePageRelevance(pageText, term), structuredPageText, term)
+          if (relevance.tier === 'reject') continue
+          const source = await addConceptSource({
+            // `sourceType: 'pdf'` is really "a page of an imported library
+            // item" regardless of the item's actual file format (PDF, EPUB,
+            // HTML) — matches every other caller in this file, and is what
+            // buildStudyOverview's candidate filter keys on.
+            conceptId: concept.id,
+            sourceType: 'pdf',
+            libraryItemId: item.id,
+            pageNumber: page,
+            sourceId: `${item.id}:${page}:${normalizeConceptName(term)}`,
+            sourceText: term,
+            relevanceTier: relevance.tier,
+            extractionQuality: detectExtractionQuality(pageText)
+          })
+          if (source) {
+            sourcesLinked += 1
+            linkedInBook += 1
+          }
+        }
+      }
+
+      if (pagesScanned >= MAX_AUTO_SCAN_PAGES_PER_CALL) {
+        hitCap = true
+        break
       }
     }
 
+    const badPagesList = Array.from(badPages)
     if (!hitCap) {
-      await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), done: true, linked: linkedInBook } })
+      await db.appSettings.put({
+        key: settingsKey,
+        value: { ranAt: Date.now(), done: true, linked: linkedInBook, badPages: badPagesList }
+      })
       booksScanned += 1
+      console.log(
+        `[scanLibraryForConcept:${concept.name}] ${bookLabel} completed — ${linkedInBook} source(s) linked` +
+          (badPagesList.length ? `, ${badPagesList.length} bad page(s) skipped` : '')
+      )
     } else {
       // Persist how far this book got so the NEXT call resumes instead
       // of re-reading pages 1..lastPageScanned again — without this, a
       // book bigger than one call's page budget could never finish
       // scanning across repeated visits.
-      await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), done: false, lastPageScanned, linked: linkedInBook } })
+      await db.appSettings.put({
+        key: settingsKey,
+        value: { ranAt: Date.now(), done: false, lastPageScanned, linked: linkedInBook, badPages: badPagesList }
+      })
+      console.log(`[scanLibraryForConcept:${concept.name}] ${bookLabel} paused at page ${lastPageScanned} (page cap) — will resume next call`)
       break
     }
   }
 
+  console.log(
+    `[scanLibraryForConcept:${concept.name}] Library scan complete — booksScanned=${booksScanned}, pagesScanned=${pagesScanned}, sourcesLinked=${sourcesLinked}`
+  )
   return { ran: true, booksScanned, pagesScanned, sourcesLinked }
 }
