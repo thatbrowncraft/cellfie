@@ -401,6 +401,8 @@ Deduplication
     ↓
 Study View
 
+---
+
 # 🛠️ Technology
 
 Cellfie is built as a client-side web application using open-source and browser-based technologies.
