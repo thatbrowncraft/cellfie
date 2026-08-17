@@ -935,10 +935,31 @@ function countWords(text: string): number {
  * or append to the first — conflicting sources stay visible via
  * References instead of being silently merged into one paragraph.
  */
+function libraryItemMatchesStudyContexts(
+  item: LibraryItem | undefined,
+  contextIds: string[]
+): boolean {
+  if (contextIds.length === 0) return true
+  if (!item) return false
+
+  const record = item as unknown as Record<string, unknown>
+  const rawTags = record.tags
+
+  if (!Array.isArray(rawTags)) return false
+
+  const tags = rawTags
+    .filter((tag): tag is string => typeof tag === 'string')
+    .map((tag) => tag.trim().toLowerCase())
+    .filter(Boolean)
+
+  return contextIds.some((contextId) => tags.includes(contextId))
+}
+
 export async function buildStudyOverview(
   concept: Pick<Concept, 'name' | 'aliases'>,
   sources: ConceptSource[],
-  itemsById: Map<string, LibraryItem>
+  itemsById: Map<string, LibraryItem>,
+  contextIds: string[] = []
 ): Promise<StudyOverview> {
   const tierRank: Record<string, number> = { high: 2, relevant: 1 }
   const qualityRank: Record<string, number> = { ok: 1, garbled: 0 }
@@ -948,7 +969,11 @@ export async function buildStudyOverview(
         s.sourceType === 'pdf' &&
         s.libraryItemId &&
         s.pageNumber != null &&
-        (s.relevanceTier === 'high' || s.relevanceTier === 'relevant')
+        (s.relevanceTier === 'high' || s.relevanceTier === 'relevant') &&
+        libraryItemMatchesStudyContexts(
+          itemsById.get(s.libraryItemId as string),
+          contextIds.map((id) => id.trim().toLowerCase()).filter(Boolean)
+        )
     )
     .sort(
       (a, b) =>
@@ -1176,9 +1201,38 @@ export async function buildStudyOverview(
     deduped.push(entry)
   }
 
-  // Keep Only Strongest Sections — cap rather than trying to represent
-  // every source page that happened to clear the bar.
-  const selected = deduped.slice(0, MAX_LESSON_SECTIONS)
+  // Final Core Concept selection.
+  //
+  // A global slice can let one textbook dominate all six lesson slots.
+  // Give every represented book one strong chance first, then fill any
+  // remaining slots by overall strength. Garbled sections are excluded
+  // from Core Concept entirely; they remain available through References.
+  const cleanSections = deduped.filter(
+    ([, section]) => section.extractionQuality !== 'garbled'
+  )
+
+  const selected: Array<[string, StudySection]> = []
+  const usedBooks = new Set<string>()
+
+  // Pass 1: one strong section from each distinct book.
+  for (const entry of cleanSections) {
+    if (selected.length >= MAX_LESSON_SECTIONS) break
+
+    const [, section] = entry
+    if (usedBooks.has(section.bookTitle)) continue
+
+    selected.push(entry)
+    usedBooks.add(section.bookTitle)
+  }
+
+  // Pass 2: fill remaining slots with the strongest remaining sections.
+  if (selected.length < MAX_LESSON_SECTIONS) {
+    for (const entry of cleanSections) {
+      if (selected.length >= MAX_LESSON_SECTIONS) break
+      if (selected.includes(entry)) continue
+      selected.push(entry)
+    }
+  }
 
   // Trim excessive prose — long sections are cut down to the sentences
   // that actually explain the concept; short sections pass through
@@ -1226,7 +1280,8 @@ function libraryItemFingerprint(item: LibraryItem | undefined): string {
 
 function studyOverviewFingerprint(
   sources: ConceptSource[],
-  itemsById?: Map<string, LibraryItem>
+  itemsById?: Map<string, LibraryItem>,
+  contextIds: string[] = []
 ): string {
   const sourcePart = sources
     .filter(
@@ -1255,7 +1310,13 @@ function studyOverviewFingerprint(
     .map((id) => `${id}:${libraryItemFingerprint(itemsById?.get(id))}`)
     .join('|')
 
-  return `${sourcePart}||items:${itemPart}`
+  const contextPart = contextIds
+    .map((id) => id.trim().toLowerCase())
+    .filter(Boolean)
+    .sort()
+    .join(',')
+
+  return `${sourcePart}||items:${itemPart}||contexts:${contextPart || 'all'}`
 }
 
 /**
@@ -1267,7 +1328,8 @@ function studyOverviewFingerprint(
  */
 export async function getCachedStudyOverview(
   concept: Pick<Concept, 'id'>,
-  sources: ConceptSource[]
+  sources: ConceptSource[],
+  contextIds: string[] = []
 ): Promise<StudyOverview | undefined> {
   const itemIds = Array.from(
     new Set(
@@ -1280,8 +1342,13 @@ export async function getCachedStudyOverview(
   const itemsById = new Map(
     items.filter((item): item is LibraryItem => Boolean(item)).map((item) => [item.id, item])
   )
-  const fingerprint = studyOverviewFingerprint(sources, itemsById)
-  const cacheKey = `${STUDY_OVERVIEW_CACHE_KEY_PREFIX}${concept.id}`
+  const fingerprint = studyOverviewFingerprint(sources, itemsById, contextIds)
+  const contextKey = contextIds
+    .map((id) => id.trim().toLowerCase())
+    .filter(Boolean)
+    .sort()
+    .join(',') || 'all'
+  const cacheKey = `${STUDY_OVERVIEW_CACHE_KEY_PREFIX}${concept.id}:${contextKey}`
   const cached = await db.appSettings.get(cacheKey)
   const entry = cached?.value as StudyOverviewCacheEntry | undefined
 
@@ -1310,10 +1377,16 @@ export async function getCachedStudyOverview(
 export async function buildStudyOverviewSettled(
   concept: Pick<Concept, 'id' | 'name' | 'aliases'>,
   sources: ConceptSource[],
-  itemsById: Map<string, LibraryItem>
+  itemsById: Map<string, LibraryItem>,
+  contextIds: string[] = []
 ): Promise<StudyOverview> {
-  const fingerprint = studyOverviewFingerprint(sources, itemsById)
-  const cacheKey = `${STUDY_OVERVIEW_CACHE_KEY_PREFIX}${concept.id}`
+  const fingerprint = studyOverviewFingerprint(sources, itemsById, contextIds)
+  const contextKey = contextIds
+    .map((id) => id.trim().toLowerCase())
+    .filter(Boolean)
+    .sort()
+    .join(',') || 'all'
+  const cacheKey = `${STUDY_OVERVIEW_CACHE_KEY_PREFIX}${concept.id}:${contextKey}`
   const cached = await db.appSettings.get(cacheKey)
   const entry = cached?.value as StudyOverviewCacheEntry | undefined
   if (entry && entry.fingerprint === fingerprint) {
@@ -1322,7 +1395,7 @@ export async function buildStudyOverviewSettled(
   }
 
   console.log(`[buildStudyOverviewSettled:${concept.name}] StudyOverview build started`)
-  const overview = await buildStudyOverview(concept, sources, itemsById)
+  const overview = await buildStudyOverview(concept, sources, itemsById, contextIds)
   console.log(`[buildStudyOverviewSettled:${concept.name}] StudyOverview build completed`)
   await db.appSettings.put({ key: cacheKey, value: { fingerprint, overview, builtAt: Date.now() } satisfies StudyOverviewCacheEntry })
   return overview
