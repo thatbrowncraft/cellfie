@@ -76,8 +76,16 @@ export interface LibraryItem {
   collectionIds: string[]
   /** OPFS path to a rendered first-page thumbnail, if generation succeeded. */
   thumbnailPath?: string
-  /** OPFS path to the raw PDF blob. */
+  /** OPFS path to the raw source file blob (PDF, EPUB, or HTML/XHTML — see `format`). */
   filePath: string
+  /**
+   * Book Import Formats §17-24 — which parser owns this file's text.
+   * Absent means the original, pre-existing behavior: PDF via
+   * core/pdf-engine. Only ever read through `openLibraryDocument`
+   * (core/concepts/documentText.ts) and the Reader's format guard, so no
+   * schema/version bump was needed to add it.
+   */
+  format?: 'pdf' | 'epub' | 'html'
   createdAt: number
   updatedAt: number
   lastOpenedAt?: number
@@ -217,6 +225,18 @@ export interface ConceptSource {
    * this field only ever holds 'high' | 'relevant' | 'weak'.
    */
   relevanceTier?: 'high' | 'relevant' | 'weak'
+  /**
+   * Retrieval Correction §5 — cheap, deterministic signal for whether this
+   * page's PDF text layer actually reads like real prose or has come apart
+   * into single-letter fragments (an old scan's noisy OCR text layer, e.g.
+   * "G i e m s a s t a i n"). Only set for `pdf` sources; see
+   * `detectExtractionQuality` in core/concepts/relevance.ts. Never used to
+   * discard or rewrite the extracted text itself, only to rank a clean
+   * source ahead of a garbled one and to let the UI say so honestly.
+   * Non-indexed, so no schema/version bump is needed — same pattern as
+   * `Concept.memoryAid`.
+   */
+  extractionQuality?: 'ok' | 'garbled'
   createdAt: number
 }
 
