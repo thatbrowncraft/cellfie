@@ -13,6 +13,16 @@ import {
 export interface NavItem {
   path: string
   label: string
+  /**
+   * Mobile nav label correction — the label shown in the bottom tab bar
+   * and the sidebar's own nav list, kept short so long page names never
+   * force items to shrink below a readable/collideable width. Optional:
+   * falls back to `label` for every item that doesn't need a shorter
+   * form. The full `label` (e.g. "Comparison Studio") still governs
+   * anywhere else it's used — page titles are set independently by each
+   * page, not derived from this config — so nothing else changes.
+   */
+  navLabel?: string
   icon: Icon
   /**
    * Navigation Parity Correction — the bottom tab bar and the hamburger
@@ -54,9 +64,9 @@ export const navItems: NavItem[] = [
   { path: '/', label: 'Dashboard', icon: House, inBottomNav: true },
   { path: '/library', label: 'Library', icon: BookOpen, inBottomNav: true },
   { path: '/concepts', label: 'Concepts', icon: GitBranch, inBottomNav: true },
-  { path: '/organisms', label: 'Organism Explorer', icon: Bug, inBottomNav: true },
+  { path: '/organisms', label: 'Organism Explorer', navLabel: 'Organisms', icon: Bug, inBottomNav: true },
   { path: '/laboratory', label: 'Laboratory', icon: Flask, inBottomNav: true },
-  { path: '/comparison', label: 'Comparison Studio', icon: Scales, inBottomNav: true },
+  { path: '/comparison', label: 'Comparison Studio', navLabel: 'Comparison', icon: Scales, inBottomNav: true },
   { path: '/notes', label: 'Notes', icon: NotePencil, inBottomNav: true },
   { path: '/settings', label: 'Settings', icon: Gear, inBottomNav: true }
 ]
