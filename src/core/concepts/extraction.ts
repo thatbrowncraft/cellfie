@@ -1209,8 +1209,26 @@ interface StudyOverviewCacheEntry {
  * removed source (new upload, explicit rescan, a source's relevance
  * tier changing) always does.
  */
-function studyOverviewFingerprint(sources: ConceptSource[]): string {
-  return sources
+function libraryItemFingerprint(item: LibraryItem | undefined): string {
+  if (!item) return 'missing'
+  // Keep the fingerprint metadata-only. LibraryItem can contain the imported
+  // document/blob itself, which must never be stringified into a cache key.
+  const record = item as unknown as Record<string, unknown>
+  const metadata = Object.entries(record)
+    .filter(([key, value]) => {
+      const k = key.toLowerCase()
+      if (/(blob|file|data|content|bytes|buffer)/.test(k)) return false
+      return value === null || typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean'
+    })
+    .sort(([a], [b]) => a.localeCompare(b))
+  return JSON.stringify(metadata)
+}
+
+function studyOverviewFingerprint(
+  sources: ConceptSource[],
+  itemsById?: Map<string, LibraryItem>
+): string {
+  const sourcePart = sources
     .filter(
       (s) =>
         s.sourceType === 'pdf' &&
@@ -1218,9 +1236,26 @@ function studyOverviewFingerprint(sources: ConceptSource[]): string {
         s.pageNumber != null &&
         (s.relevanceTier === 'high' || s.relevanceTier === 'relevant')
     )
-    .map((s) => `${s.id}:${s.relevanceTier}:${s.extractionQuality ?? ''}`)
+    .map(
+      (s) =>
+        `${s.id}:${s.sourceId ?? ''}:${s.libraryItemId}:${s.pageNumber}:${s.relevanceTier}:${s.extractionQuality ?? ''}:${s.sourceText ?? ''}`
+    )
     .sort()
     .join('|')
+
+  const itemIds = Array.from(
+    new Set(
+      sources
+        .filter((s) => s.sourceType === 'pdf' && s.libraryItemId)
+        .map((s) => s.libraryItemId as string)
+    )
+  ).sort()
+
+  const itemPart = itemIds
+    .map((id) => `${id}:${libraryItemFingerprint(itemsById?.get(id))}`)
+    .join('|')
+
+  return `${sourcePart}||items:${itemPart}`
 }
 
 /**
@@ -1234,7 +1269,18 @@ export async function getCachedStudyOverview(
   concept: Pick<Concept, 'id'>,
   sources: ConceptSource[]
 ): Promise<StudyOverview | undefined> {
-  const fingerprint = studyOverviewFingerprint(sources)
+  const itemIds = Array.from(
+    new Set(
+      sources
+        .filter((s) => s.sourceType === 'pdf' && s.libraryItemId)
+        .map((s) => s.libraryItemId as string)
+    )
+  )
+  const items = await db.libraryItems.bulkGet(itemIds)
+  const itemsById = new Map(
+    items.filter((item): item is LibraryItem => Boolean(item)).map((item) => [item.id, item])
+  )
+  const fingerprint = studyOverviewFingerprint(sources, itemsById)
   const cacheKey = `${STUDY_OVERVIEW_CACHE_KEY_PREFIX}${concept.id}`
   const cached = await db.appSettings.get(cacheKey)
   const entry = cached?.value as StudyOverviewCacheEntry | undefined
@@ -1266,7 +1312,7 @@ export async function buildStudyOverviewSettled(
   sources: ConceptSource[],
   itemsById: Map<string, LibraryItem>
 ): Promise<StudyOverview> {
-  const fingerprint = studyOverviewFingerprint(sources)
+  const fingerprint = studyOverviewFingerprint(sources, itemsById)
   const cacheKey = `${STUDY_OVERVIEW_CACHE_KEY_PREFIX}${concept.id}`
   const cached = await db.appSettings.get(cacheKey)
   const entry = cached?.value as StudyOverviewCacheEntry | undefined
@@ -1409,6 +1455,20 @@ export async function backfillSourceRelevance(conceptId: string): Promise<Releva
 // ---------------------------------------------------------------------
 
 const CONCEPT_LIBRARY_SCAN_KEY_PREFIX = 'conceptLibraryScan:v1:'
+const CONCEPT_LIBRARY_SCAN_MARKER_VERSION = 2
+
+function libraryScanFingerprint(item: LibraryItem): string {
+  // Metadata-only fingerprint. Do not include the imported document/blob.
+  const record = item as unknown as Record<string, unknown>
+  const metadata = Object.entries(record)
+    .filter(([key, value]) => {
+      const k = key.toLowerCase()
+      if (/(blob|file|data|content|bytes|buffer)/.test(k)) return false
+      return value === null || typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean'
+    })
+    .sort(([a], [b]) => a.localeCompare(b))
+  return JSON.stringify(metadata)
+}
 
 /**
  * Soft ceiling on pages read across one call — same purpose as
@@ -1450,6 +1510,10 @@ interface ConceptLibraryScanMarker {
   lastPageScanned?: number
   linked?: number
   error?: string
+  /** Version of the scan marker schema. Older markers are deliberately treated as stale once. */
+  scanVersion?: number
+  /** Metadata fingerprint of the exact imported book that was scanned. */
+  libraryFingerprint?: string
   /** Concurrency-and-Memory Correction — pages that timed out or threw during a previous scan of this book for this concept. Skipped on sight (no read attempt) rather than re-paying the timeout every visit. Reset only when a fresh scan of this book starts from page 1 (explicit rescan), never silently. */
   badPages?: number[]
 }
@@ -1545,28 +1609,30 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
     const settingsKey = `${CONCEPT_LIBRARY_SCAN_KEY_PREFIX}${concept.id}:${item.id}`
     const already = await db.appSettings.get(settingsKey)
     const marker = already?.value as ConceptLibraryScanMarker | undefined
-    // Retrieval Diagnostic Correction §E — a book this concept's scan
-    // previously had to abandon mid-way (because the whole-call page cap
-    // was hit) used to be marked done with no `done` flag at all, so it
-    // read as "already scanned" forever and silently never got the rest
-    // of its own pages searched — for a concept spanning a large
-    // multi-book library (the reported DNA case, 5 books/483 pages) that
-    // could mean a book's own strongest section is never found even
-    // after many visits. Only a marker with `done: true` now short-
-    // circuits a book; an in-progress marker instead resumes from where
-    // the last call left off.
-    // A pre-existing marker from before this correction (just
-    // `{ranAt, linked}`, no `done` field) always meant "fully scanned" —
-    // treated the same way here so upgrading never forces a mass re-scan
-    // of a library that was already completely indexed. Only a marker
-    // explicitly saved with `done: false` (this correction's own
-    // hit-the-cap case) resumes instead of skipping.
-    if (marker && marker.done !== false) continue
-    const resumeFromPage = typeof marker?.lastPageScanned === 'number' ? marker.lastPageScanned + 1 : 1
-    // Known-bad pages carry over across calls for the same book — once a
-    // page has timed out or errored, it's never attempted again (just
-    // logged as skipped), until a rescan restarts this book from page 1.
-    const badPages = new Set(resumeFromPage === 1 ? [] : marker?.badPages ?? [])
+    const currentLibraryFingerprint = libraryScanFingerprint(item)
+
+    // A scan marker is valid only for the exact imported-book state it was
+    // created for. This matters because the library is mutable: students
+    // can add/re-import books after a concept was first scanned. Older
+    // markers from the previous implementation intentionally get one fresh
+    // scan so books that were incorrectly considered "done" are recovered.
+    const markerIsCurrent =
+      marker?.scanVersion === CONCEPT_LIBRARY_SCAN_MARKER_VERSION &&
+      marker.libraryFingerprint === currentLibraryFingerprint
+
+    if (markerIsCurrent && marker.done === true) continue
+
+    // If the book changed, or this is a legacy marker, start from page 1.
+    // If this is our current interrupted marker, resume from its checkpoint.
+    const isResumingCurrentScan = markerIsCurrent && marker?.done === false
+    const resumeFromPage = isResumingCurrentScan && typeof marker?.lastPageScanned === 'number'
+      ? marker.lastPageScanned + 1
+      : 1
+
+    // Known-bad pages carry over only when resuming the same unchanged scan.
+    // A new/re-imported book gets a clean bad-page set because its pages may
+    // now extract successfully.
+    const badPages = new Set(isResumingCurrentScan ? marker?.badPages ?? [] : [])
 
     console.log(`[scanLibraryForConcept:${concept.name}] ${bookLabel} started`)
 
@@ -1575,7 +1641,16 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
       vdoc = await openLibraryDocument(item)
     } catch (err) {
       console.warn(`[scanLibraryForConcept:${concept.name}] ${bookLabel} failed to open, skipping`, err)
-      await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), done: true, error: 'parse-failed' } })
+      await db.appSettings.put({
+        key: settingsKey,
+        value: {
+          ranAt: Date.now(),
+          done: true,
+          error: 'parse-failed',
+          scanVersion: CONCEPT_LIBRARY_SCAN_MARKER_VERSION,
+          libraryFingerprint: currentLibraryFingerprint
+        }
+      })
       continue
     }
 
@@ -1663,7 +1738,14 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
     if (!hitCap) {
       await db.appSettings.put({
         key: settingsKey,
-        value: { ranAt: Date.now(), done: true, linked: linkedInBook, badPages: badPagesList }
+        value: {
+          ranAt: Date.now(),
+          done: true,
+          linked: linkedInBook,
+          badPages: badPagesList,
+          scanVersion: CONCEPT_LIBRARY_SCAN_MARKER_VERSION,
+          libraryFingerprint: currentLibraryFingerprint
+        }
       })
       booksScanned += 1
       console.log(
@@ -1677,7 +1759,15 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
       // scanning across repeated visits.
       await db.appSettings.put({
         key: settingsKey,
-        value: { ranAt: Date.now(), done: false, lastPageScanned, linked: linkedInBook, badPages: badPagesList }
+        value: {
+          ranAt: Date.now(),
+          done: false,
+          lastPageScanned,
+          linked: linkedInBook,
+          badPages: badPagesList,
+          scanVersion: CONCEPT_LIBRARY_SCAN_MARKER_VERSION,
+          libraryFingerprint: currentLibraryFingerprint
+        }
       })
       console.log(`[scanLibraryForConcept:${concept.name}] ${bookLabel} paused at page ${lastPageScanned} (page cap) — will resume next call`)
       break
