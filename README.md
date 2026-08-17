@@ -400,6 +400,10 @@ Multi-Book Retrieval
 Deduplication
     ↓
 Study View
+                 
+```
+
+The architecture keeps the student's personal library separate from external scientific resources.
 
 ---
 
