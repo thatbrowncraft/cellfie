@@ -107,7 +107,7 @@ export function ImportDialog({ open, onClose }: ImportDialogProps) {
           >
             <UploadSimple size={32} className="text-ink-tertiary" aria-hidden />
             <p className="font-body text-body text-ink-secondary">
-              Drag PDF files here, or choose them from your device.
+              Drag books or study material here, or choose them from your device.
             </p>
             <Button variant="secondary" size="small" onClick={() => inputRef.current?.click()}>
               Choose files
@@ -115,13 +115,13 @@ export function ImportDialog({ open, onClose }: ImportDialogProps) {
             <input
               ref={inputRef}
               type="file"
-              accept="application/pdf,.pdf"
+              accept="application/pdf,.pdf,application/epub+zip,.epub,text/html,.html,.htm,.xhtml"
               multiple
               className="hidden"
               onChange={(e) => e.target.files && handleFiles(e.target.files)}
             />
             <p className="font-ui text-caption text-ink-tertiary">
-              PDF only, for now. Everything stays on this device.
+              PDF · EPUB · XHTML/HTML. Everything stays on this device.
             </p>
           </div>
         )}
@@ -205,7 +205,7 @@ function stageLabel(stage: ImportStage): string {
     case 'checking-duplicate':
       return 'Checking library…'
     case 'parsing':
-      return 'Reading PDF…'
+      return 'Reading file…'
     case 'saving':
       return 'Saving…'
     default:
