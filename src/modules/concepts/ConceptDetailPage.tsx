@@ -17,6 +17,7 @@ import {
   fetchMeshClassification,
   fetchOnlineKnowledge,
   fetchVisualReferences,
+  getCachedStudyOverview,
   getCuratedLesson,
   getFirstAndLastEncountered,
   isLikelyOnline,
@@ -324,19 +325,44 @@ export function ConceptDetailPage() {
   // not recomputed on every intermediate source-linking write.
   const [studyOverview, setStudyOverview] = useState<StudyOverview | undefined>(undefined)
   const [loadingStudyOverview, setLoadingStudyOverview] = useState(false)
+
+  // Refresh/lifecycle correction: hydrate an unchanged settled Core Concept
+  // immediately from IndexedDB before the background library scan completes.
+  // The scan still runs afterwards so newly added/changed sources can
+  // invalidate and rebuild the lesson, but an ordinary refresh never throws
+  // away a perfectly good saved lesson and makes the student wait again.
   useEffect(() => {
+    if (!concept) return
+    let cancelled = false
+
     setStudyOverview(undefined)
+
+    ;(async () => {
+      const currentSources = await db.conceptSources.where('conceptId').equals(concept.id).toArray()
+      return getCachedStudyOverview(concept, currentSources)
+    })()
+      .then((cachedOverview) => {
+        if (cancelled || !cachedOverview) return
+        console.log(`[ConceptDetailPage:${concept.name}] Restored settled Core Concept from cache`)
+        setStudyOverview(cachedOverview)
+      })
+      .catch((err) => {
+        console.warn(`[ConceptDetailPage:${concept.name}] settled Core Concept cache read failed`, err)
+      })
+
+    return () => {
+      cancelled = true
+    }
   }, [concept?.id])
   // Retrieval Stability Correction — deliberately NOT keyed on the live
   // `sources` liveQuery. Building from `retrievalGeneration` instead
-  // means this runs exactly once retrieval has settled for this concept
-  // (plus once more per explicit manual "Scan a book" action, which also
-  // bumps the generation) — never on every intermediate source-linking
-  // write while the background scan is still in progress. Reads a fresh,
-  // one-off snapshot of this concept's sources directly from Dexie
-  // rather than the reactive `sources` array, so the selection is a
-  // single settled read, not something that can be re-triggered by its
-  // own output.
+  // means this runs once retrieval has settled for this concept (plus once
+  // more per explicit manual "Scan a book" action, which also bumps the
+  // generation) — never on every intermediate source-linking write while
+  // the background scan is still in progress. On refresh, an unchanged
+  // settled result is hydrated above immediately; this pass then checks the
+  // final settled source snapshot and either hits that same cache or rebuilds
+  // only when the source fingerprint has actually changed.
   useEffect(() => {
     if (!concept) return
     if (retrievalSettledForConceptId.current !== concept.id) return
