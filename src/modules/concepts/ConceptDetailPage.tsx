@@ -91,6 +91,86 @@ export function ConceptDetailPage() {
   const items = useLiveQuery<LibraryItem[]>(() => db.libraryItems.toArray(), [], [])
   const itemsById = useMemo(() => new Map(items.map((i) => [i.id, i])), [items])
 
+  // Available Contexts — derived from the tags on the student's uploaded
+  // books. Nothing is hardcoded, so a new subject/context appears here
+  // automatically as soon as a tagged book is added to the library.
+  const availableContexts = useMemo(() => {
+    const contextMap = new Map<string, { id: string; label: string; bookCount: number }>()
+
+    for (const item of items) {
+      const record = item as unknown as Record<string, unknown>
+      const rawTags = record.tags
+
+      if (!Array.isArray(rawTags)) continue
+
+      for (const rawTag of rawTags) {
+        if (typeof rawTag !== 'string' || !rawTag.trim()) continue
+
+        const label = rawTag.trim()
+        const id = label.toLowerCase()
+        const existing = contextMap.get(id)
+
+        if (existing) {
+          existing.bookCount += 1
+        } else {
+          contextMap.set(id, { id, label, bookCount: 1 })
+        }
+      }
+    }
+
+    return Array.from(contextMap.values()).sort((a, b) => a.label.localeCompare(b.label))
+  }, [items])
+
+  const rawContexts = searchParams.get('contexts')
+  const selectedContextIds = useMemo(
+    () =>
+      rawContexts
+        ? rawContexts
+            .split(',')
+            .map((value) => value.trim().toLowerCase())
+            .filter(Boolean)
+        : [],
+    [rawContexts]
+  )
+  const selectedContextKey = selectedContextIds.slice().sort().join(',')
+  const allContextsSelected = selectedContextIds.length === 0
+
+  function setSelectedContexts(nextIds: string[]) {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev)
+        const normalized = Array.from(
+          new Set(nextIds.map((id) => id.trim().toLowerCase()).filter(Boolean))
+        ).sort()
+
+        if (normalized.length === 0) {
+          next.delete('contexts')
+        } else {
+          next.set('contexts', normalized.join(','))
+        }
+
+        return next
+      },
+      { replace: true }
+    )
+  }
+
+  function toggleStudyContext(contextId: string) {
+    const normalized = contextId.trim().toLowerCase()
+    if (!normalized) return
+
+    if (selectedContextIds.includes(normalized)) {
+      setSelectedContexts(selectedContextIds.filter((id) => id !== normalized))
+    } else {
+      setSelectedContexts([...selectedContextIds, normalized])
+    }
+  }
+
+  function selectAllStudyContexts() {
+    setSelectedContexts([])
+  }
+
+
   // Knowledge Graph Correction §17 — a concept can already have PDF page
   // sources (e.g. this book was imported/opened before this feature, or
   // before this concept existed) with Related/Mind map still empty,
@@ -339,7 +419,7 @@ export function ConceptDetailPage() {
 
     ;(async () => {
       const currentSources = await db.conceptSources.where('conceptId').equals(concept.id).toArray()
-      return getCachedStudyOverview(concept, currentSources)
+      return getCachedStudyOverview(concept, currentSources, selectedContextIds)
     })()
       .then((cachedOverview) => {
         if (cancelled || !cachedOverview) return
@@ -353,7 +433,7 @@ export function ConceptDetailPage() {
     return () => {
       cancelled = true
     }
-  }, [concept?.id])
+  }, [concept?.id, selectedContextKey])
   // Retrieval Stability Correction — deliberately NOT keyed on the live
   // `sources` liveQuery. Building from `retrievalGeneration` instead
   // means this runs once retrieval has settled for this concept (plus once
@@ -370,7 +450,12 @@ export function ConceptDetailPage() {
     setLoadingStudyOverview(true)
     ;(async () => {
       const freshSources = await db.conceptSources.where('conceptId').equals(concept.id).toArray()
-      return buildStudyOverviewSettled(concept, freshSources, itemsById)
+      return buildStudyOverviewSettled(
+        concept,
+        freshSources,
+        itemsById,
+        selectedContextIds
+      )
     })()
       .then((overview) => {
         if (!cancelled) setStudyOverview(overview)
@@ -383,7 +468,7 @@ export function ConceptDetailPage() {
     }
     // itemsById intentionally excluded — see comment above; retrievalGeneration is the actual trigger.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [concept?.id, retrievalGeneration])
+  }, [concept?.id, retrievalGeneration, selectedContextKey])
 
   // The book's own explanation, reshaped into the same lesson shape
   // CuratedLessonView already renders — `undefined` (never a thin or
@@ -594,6 +679,71 @@ export function ConceptDetailPage() {
                   </Button>
                 </div>
 
+                {/* Available Contexts — the student can choose one, several,
+                    or all tagged contexts. Selection is URL-persisted and
+                    changes only the local-library retrieval scope; it never
+                    deletes or mutates the underlying source records. */}
+                <div className="rounded-md border border-border bg-surface p-4">
+                  <div className="mb-3">
+                    <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                      Available contexts
+                    </p>
+                    <p className="mt-1 font-body text-caption text-ink-secondary">
+                      Choose one or more contexts for Cellfie to use when building this lesson.
+                    </p>
+                  </div>
+
+                  {availableContexts.length === 0 ? (
+                    <p className="font-ui text-caption text-ink-tertiary">
+                      No tagged contexts yet. Cellfie is using your full library.
+                    </p>
+                  ) : (
+                    <div className="flex flex-wrap gap-2">
+                      <button
+                        type="button"
+                        onClick={selectAllStudyContexts}
+                        className={`rounded-md border px-3 py-2 font-ui text-caption transition ${
+                          allContextsSelected
+                            ? 'border-olive bg-olive text-white'
+                            : 'border-border bg-surface text-ink-secondary hover:border-olive'
+                        }`}
+                      >
+                        All contexts
+                      </button>
+
+                      {availableContexts.map((context) => {
+                        const selected = selectedContextIds.includes(context.id)
+
+                        return (
+                          <button
+                            key={context.id}
+                            type="button"
+                            onClick={() => toggleStudyContext(context.id)}
+                            aria-pressed={selected}
+                            className={`rounded-md border px-3 py-2 font-ui text-caption transition ${
+                              selected
+                                ? 'border-olive bg-olive text-white'
+                                : 'border-border bg-surface text-ink-secondary hover:border-olive'
+                            }`}
+                          >
+                            {context.label}
+                            <span className="ml-1 opacity-70">({context.bookCount})</span>
+                          </button>
+                        )
+                      })}
+                    </div>
+                  )}
+
+                  <p className="mt-3 font-ui text-micro text-ink-tertiary">
+                    {allContextsSelected
+                      ? `Using all ${items.length} uploaded books.`
+                      : `Using ${selectedContextIds.length} selected context${
+                          selectedContextIds.length === 1 ? '' : 's'
+                        }.`
+                    }
+                  </p>
+                </div>
+
                 {/* Quick Revision — Concept 2.0 Phase 1 — PRIMARY content.
                     Structured, source-attributed sections from reliable
                     online scientific sources (core/concepts/onlineKnowledge.ts).
@@ -729,7 +879,7 @@ export function ConceptDetailPage() {
                     <p className="mt-1 font-ui text-caption text-ink-tertiary">
                       {stats.bookCount > 0
                         ? `Combining material from ${stats.bookCount} book${stats.bookCount === 1 ? '' : 's'}…`
-                        : 'Checking your uploaded library for relevant material…'}
+                        : 'Checking your selected library contexts for relevant material…'}
                     </p>
                   </div>
                 )}
