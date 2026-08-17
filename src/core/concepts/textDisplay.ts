@@ -150,6 +150,19 @@ const NUMBERED_HEADING_RE = /^(\d{1,2}(?:\.\d{1,2}){0,3})[.)]?\s+([A-Z][^.!?]{1,
 const TITLE_LIKE_LINE_RE = /^[A-Z][A-Za-z0-9()'’-]*(?:\s+[A-Za-z0-9()'’-]+){0,7}$/
 const SENTENCE_END_RE = /[.!?]$/
 
+// Retrieval Correction §B — a figure/table/plate caption is title-shaped
+// (short, no closing punctuation, followed by real explanatory prose
+// underneath it in the page's reading order) and would otherwise pass
+// `looksLikeStructuralHeading` exactly like a genuine section title
+// does. That's exactly how "FIGURE 3.15" / "PATHWAYS OF PHOTOSYNTHESIS
+// AND CELLULAR METABOLISM"-style captions were becoming Core Concept
+// section headings — and, worse, ranking as the concept's OWN heading
+// whenever the caption text happened to contain the concept's name.
+// A caption is never the actual explanatory section for a concept, so
+// this line-shape is excluded from heading detection entirely, both for
+// the numbered and the plain title-shaped forms.
+const CAPTION_LABEL_RE = /^(fig(?:ure)?|table|box|plate|chart|diagram|photo|image)\b/i
+
 function looksLikeParagraphStart(line: string | undefined): boolean {
   if (!line) return false
   const trimmed = line.trim()
@@ -160,11 +173,17 @@ function looksLikeParagraphStart(line: string | undefined): boolean {
 /**
  * True when `line` is structurally shaped like a textbook heading. Never
  * inspects what the heading actually says — only its shape and what
- * follows it.
+ * follows it. `prevLine` lets a caller rule out a caption's own title
+ * line (e.g. "PATHWAYS OF PHOTOSYNTHESIS AND CELLULAR METABOLISM"
+ * immediately under "FIGURE 3.15") — that second line is title-shaped on
+ * its own, but it's a continuation of the caption above it, not a new
+ * section heading.
  */
-export function looksLikeStructuralHeading(line: string, nextLine: string | undefined): boolean {
+export function looksLikeStructuralHeading(line: string, nextLine: string | undefined, prevLine?: string): boolean {
   const trimmed = line.trim()
   if (!trimmed || trimmed.length > 90) return false
+  if (CAPTION_LABEL_RE.test(trimmed)) return false
+  if (prevLine && CAPTION_LABEL_RE.test(prevLine.trim())) return false
 
   const numbered = NUMBERED_HEADING_RE.exec(trimmed)
   if (numbered) {
@@ -207,7 +226,7 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
     // Only checked once neither known-vocabulary form matches, so this
     // never changes behavior for lab-manual-style content — it only adds
     // recognition for the textbook-heading shape those two never covered.
-    const structuralMatch = !aloneMatch && !inlineMatch ? looksLikeStructuralHeading(line, lines[i + 1]) : false
+    const structuralMatch = !aloneMatch && !inlineMatch ? looksLikeStructuralHeading(line, lines[i + 1], lines[i - 1]) : false
 
     if (aloneMatch) {
       if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })

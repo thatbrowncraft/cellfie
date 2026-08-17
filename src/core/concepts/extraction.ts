@@ -743,6 +743,24 @@ const MAX_STUDY_SOURCE_PAGES = 8
 // scoring one.
 const MIN_OVERVIEW_PARAGRAPH_WORDS = 12
 
+// Section relevance §B — normalized heading labels that are structurally
+// never a concept's own explanatory section, matching the brief's
+// explicit rejection list ("learning objectives when the objective is
+// not itself the actual explanatory section", references/bibliographies,
+// unrelated case studies presented as their own labeled block). Compared
+// against `normalizeConceptName(block.heading)`, same normalization the
+// section dedupe key already uses.
+const NON_EXPLANATORY_HEADING_LABELS = new Set(
+  [
+    'learning objectives', 'objectives', 'objective', 'chapter objectives',
+    'key terms', 'keywords', 'vocabulary',
+    'summary', 'chapter summary', 'section summary',
+    'review questions', 'review', 'self-assessment', 'self assessment',
+    'references', 'bibliography', 'further reading', 'suggested reading',
+    'case study', 'case studies', 'box'
+  ].map((h) => normalizeConceptName(h))
+)
+
 export interface StudySection {
   heading: string
   body: string
@@ -814,7 +832,7 @@ export async function buildStudyOverview(
 ): Promise<StudyOverview> {
   const tierRank: Record<string, number> = { high: 2, relevant: 1 }
   const qualityRank: Record<string, number> = { ok: 1, garbled: 0 }
-  const candidates = sources
+  const rankedCandidates = sources
     .filter(
       (s) =>
         s.sourceType === 'pdf' &&
@@ -832,7 +850,30 @@ export async function buildStudyOverview(
         (qualityRank[b.extractionQuality ?? 'ok'] ?? 1) - (qualityRank[a.extractionQuality ?? 'ok'] ?? 1) ||
         (a.pageNumber! - b.pageNumber!)
     )
-    .slice(0, MAX_STUDY_SOURCE_PAGES)
+
+  // Multi-book merging — Retrieval Correction §B. A plain global slice
+  // of the top MAX_STUDY_SOURCE_PAGES pages let one book's several
+  // strong pages crowd out every other book that has its own genuinely
+  // relevant section, which is exactly the "Book A OR B OR C" behavior
+  // the brief calls out. This keeps the same per-page tier/quality/page
+  // ordering *within* each book, but round-robins ACROSS books so a
+  // second or third book with real material always gets a chance to
+  // contribute, instead of only ever appearing when the strongest book
+  // runs out of high-tier pages.
+  const byBook = new Map<string, ConceptSource[]>()
+  for (const s of rankedCandidates) {
+    const list = byBook.get(s.libraryItemId as string) ?? []
+    list.push(s)
+    byBook.set(s.libraryItemId as string, list)
+  }
+  const bookQueues = Array.from(byBook.values())
+  const candidates: ConceptSource[] = []
+  for (let round = 0; candidates.length < MAX_STUDY_SOURCE_PAGES && bookQueues.some((q) => q.length > round); round += 1) {
+    for (const queue of bookQueues) {
+      if (candidates.length >= MAX_STUDY_SOURCE_PAGES) break
+      if (queue[round]) candidates.push(queue[round])
+    }
+  }
 
   // Retrieval Correction §1/§2 — every name the source material might
   // itself use as a heading for this concept.
@@ -915,17 +956,33 @@ export async function buildStudyOverview(
       if (!block.heading) continue
       const key = normalizeConceptName(block.heading)
       if (sections.has(key)) continue
+      // Section relevance §B — a small set of heading labels are never
+      // an explanatory section for ANY concept, no matter what their
+      // body text mentions or how many times: a Learning Objectives list
+      // typically names several concepts in one line each without
+      // teaching any of them, and Summary/Review-Questions/References-
+      // style blocks are recaps or pointers, not the primary lesson.
+      // Checked before the heading-match/body-relevance logic below so
+      // it can never be overridden by a high occurrence count.
+      if (NON_EXPLANATORY_HEADING_LABELS.has(key)) continue
 
       const isConceptHeading = headingMatchesTerm(block.heading, conceptTerms)
-      // Retrieval Correction §2 — a heading that ISN'T the concept's own
-      // name only belongs in this concept's lesson if its own body text
-      // actually discusses the concept; otherwise it's just another
-      // heading that happened to share a page with the concept's real
-      // mention (exactly what put "Endosymbiotic Theory" under
-      // Photosynthesis and "Levels of Organization" under DNA before).
+      // Retrieval Correction §2/§B — a heading that ISN'T the concept's
+      // own name only belongs in this concept's lesson if its own body
+      // text actually discusses the concept, and "discusses" has to mean
+      // more than one incidental mention: `scorePageRelevance`'s tiering
+      // exists to separate real prose from TOC/index noise, but a single
+      // occurrence sitting inside otherwise well-formed, unrelated prose
+      // (e.g. "photosynthesis" mentioned once in a section about "The
+      // Discovery of Microorganisms") can still score as well-formed
+      // prose and pass that bar. Requiring at least two occurrences in
+      // the block's own body is the section-vs-page distinction the
+      // brief asks for: a section that only mentions the concept in
+      // passing is exactly the "occurrence" case, not the "about" case.
       if (!isConceptHeading) {
         const blockRelevance = scorePageRelevance(block.body, term)
         if (blockRelevance.tier === 'reject') continue
+        if (blockRelevance.occurrences < 2) continue
       }
 
       if (isConceptHeading) headingMatchKeys.add(key)
