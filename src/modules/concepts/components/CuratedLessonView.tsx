@@ -15,6 +15,8 @@ export interface LessonViewData {
   conceptDisplayName: string
   sections: LessonSection[]
   sources: CuratedLesson['sources']
+  /** Retrieval Correction §5 — see BookLesson.extractionNote. Absent for curated lessons, which are never source-extraction-derived. */
+  extractionNote?: string
 }
 
 export interface QuickRevisionViewData {
@@ -222,6 +224,12 @@ export function CuratedLessonView({ lesson, origin = 'curated' }: { lesson: Less
             : 'Cellfie study content — a curated lesson written for this concept, informed by real educational and scientific sources (listed below), not auto-generated from a database record.'}
         </p>
       </div>
+
+      {lesson.extractionNote && (
+        <div className="rounded-md border border-terracotta/50 bg-terracotta/5 px-4 py-2.5">
+          <p className="font-ui text-caption font-medium text-terracotta">{lesson.extractionNote}</p>
+        </div>
+      )}
 
       {lesson.sections.map((section) => (
         <div key={section.id} className="rounded-md border border-border bg-surface p-5">

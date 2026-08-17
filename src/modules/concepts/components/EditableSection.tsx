@@ -98,14 +98,20 @@ export function EditableSection({ conceptId, sectionKey, originalText, children,
         children
       )}
 
-      <div className="flex flex-wrap items-center gap-3 px-1">
+      {/* Retrieval Correction §8 — this row must read as belonging to
+          THIS section, not as a stray control floating between it and
+          whatever renders next (e.g. Core Concept's own Sources card).
+          A top border ties it visually to the content directly above,
+          and the button is labeled with the section name so it's
+          unambiguous on a phone screen when sections run close together. */}
+      <div className="flex flex-wrap items-center gap-3 border-t border-border/60 px-1 pt-2.5">
         {edit && (
           <span className="inline-flex items-center gap-1 font-ui text-micro text-ink-tertiary">
             <PencilSimple size={11} aria-hidden /> Edited by you
           </span>
         )}
         <button type="button" onClick={startEditing} className="font-ui text-micro font-medium text-olive hover:underline">
-          Edit
+          Edit {label}
         </button>
         {edit && (
           <button
