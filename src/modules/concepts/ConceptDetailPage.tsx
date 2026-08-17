@@ -9,7 +9,7 @@ import {
   buildDetailedStudyModules,
   buildExamTools,
   buildResearchReadings,
-  buildStudyOverview,
+  buildStudyOverviewSettled,
   computeConceptStats,
   deleteConcept,
   extractRelatedConceptsFromKnownPages,
@@ -129,12 +129,26 @@ export function ConceptDetailPage() {
     if (!concept) return
     let cancelled = false
     setLibraryScanInProgress(true)
-    Promise.all([backfillSourceRelevance(concept.id), scanLibraryForConcept(concept)]).finally(() => {
-      if (cancelled) return
-      retrievalSettledForConceptId.current = concept.id
-      setRetrievalGeneration((g) => g + 1)
-      setLibraryScanInProgress(false)
-    })
+    Promise.all([backfillSourceRelevance(concept.id), scanLibraryForConcept(concept)])
+      .then(async () => {
+        if (cancelled) return
+        const count = await db.conceptSources.where('conceptId').equals(concept.id).count()
+        console.log(`[ConceptDetailPage:${concept.name}] ConceptSource count = ${count}`)
+      })
+      .catch((err) => {
+        // A page-read failure inside the scan is already isolated/logged
+        // at its own source (extraction.ts) and never rejects here —
+        // this only catches something unexpected, and still lets the
+        // page settle on whatever was linked before the error instead
+        // of leaving the loading state stuck.
+        console.warn(`[ConceptDetailPage:${concept.name}] library scan pass errored`, err)
+      })
+      .finally(() => {
+        if (cancelled) return
+        retrievalSettledForConceptId.current = concept.id
+        setRetrievalGeneration((g) => g + 1)
+        setLibraryScanInProgress(false)
+      })
     return () => {
       cancelled = true
       setLibraryScanInProgress(false)
@@ -330,7 +344,7 @@ export function ConceptDetailPage() {
     setLoadingStudyOverview(true)
     ;(async () => {
       const freshSources = await db.conceptSources.where('conceptId').equals(concept.id).toArray()
-      return buildStudyOverview(concept, freshSources, itemsById)
+      return buildStudyOverviewSettled(concept, freshSources, itemsById)
     })()
       .then((overview) => {
         if (!cancelled) setStudyOverview(overview)
@@ -353,7 +367,19 @@ export function ConceptDetailPage() {
   // discusses that concept, is the primary teaching material — the
   // curated Gram Staining lesson remains the fallback gold-standard for
   // when no sufficient uploaded-book content exists.
-  const bookLesson = useMemo(() => (concept && studyOverview ? buildBookLesson(concept, studyOverview) : undefined), [concept, studyOverview])
+  const bookLesson = useMemo(() => {
+    if (!concept || !studyOverview) return undefined
+    const lesson = buildBookLesson(concept, studyOverview)
+    console.log(`[ConceptDetailPage:${concept.name}] BookLesson build completed — ${lesson ? 'lesson available' : 'no usable book content'}`)
+    return lesson
+  }, [concept, studyOverview])
+
+  useEffect(() => {
+    if (concept && (bookLesson || curatedLesson)) {
+      console.log(`[ConceptDetailPage:${concept.name}] Core Concept rendered (${bookLesson ? 'book' : 'curated'})`)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [concept?.id, bookLesson, curatedLesson])
 
   // Concept 2.0 architecture change §6 — Research & Further Reading,
   // the ONLY place a Europe PMC research article's title/journal/link
@@ -372,10 +398,28 @@ export function ConceptDetailPage() {
     return Array.from(byUrl.values())
   }, [onlineSections, meshClassification])
 
-  // Learn tab study-mode switcher. Ephemeral (not persisted/URL-synced)
-  // — matches how the existing Connections tab's related/mindmap toggle
-  // already works (see `connectionsView` below).
-  const [studyMode, setStudyMode] = useState<'quick' | 'detailed' | 'exam'>('quick')
+  // Learn tab study-mode switcher (Quick Revision / Core Concept / Exam
+  // Focus).
+  // Refresh/Lifecycle Correction — the Learn subsection used to be a
+  // plain useState, which meant a refresh while viewing Core Concept
+  // silently dropped back to Quick Revision. Persisted the same way
+  // `activeConceptTab` already is above (URL search param, `replace:
+  // true` so it doesn't spam history) rather than introducing a second
+  // persistence mechanism.
+  const STUDY_MODE_IDS = ['quick', 'detailed', 'exam'] as const
+  type StudyModeId = (typeof STUDY_MODE_IDS)[number]
+  const rawMode = searchParams.get('mode')
+  const studyMode: StudyModeId = (STUDY_MODE_IDS as readonly string[]).includes(rawMode ?? '') ? (rawMode as StudyModeId) : 'quick'
+  function setStudyMode(nextMode: StudyModeId) {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev)
+        next.set('mode', nextMode)
+        return next
+      },
+      { replace: true }
+    )
+  }
 
   const firstAndLast = useMemo(() => getFirstAndLastEncountered(sources, itemsById), [sources, itemsById])
 
@@ -503,10 +547,11 @@ export function ConceptDetailPage() {
             content: (
               <div className="flex flex-col gap-6">
                 {/* Study-mode switcher — Quick Revision / Detailed Study /
-                    Exam Focus. Ephemeral, matches the Connections tab's
-                    related/mindmap toggle pattern above. Memory aid
-                    (below) is deliberately OUTSIDE this switch, so it
-                    stays visible no matter which mode is active. */}
+                    Exam Focus. Persisted via the `mode` URL search param
+                    (see the studyMode declaration above) so a refresh
+                    keeps whichever mode was active. Memory aid (below) is
+                    deliberately OUTSIDE this switch, so it stays visible
+                    no matter which mode is active. */}
                 <div className="flex gap-2 border-b border-border pb-3">
                   <Button variant={studyMode === 'quick' ? 'primary' : 'secondary'} size="small" onClick={() => setStudyMode('quick')}>
                     Quick Revision
