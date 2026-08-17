@@ -1778,7 +1778,10 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
         `[scanLibraryForConcept:${concept.name}] ${bookLabel} paused at page ${lastPageScanned} ` +
         `(${bookPagesScanned} readable pages in this pass) — will resume next call`
       )
-      break
+      // IMPORTANT: do not break the library loop here.
+      // The page ceiling is per book, not global. This book pauses at its
+      // checkpoint, but the scanner must continue to the next book so one
+      // large textbook cannot monopolize the entire library scan.
     }
   }
 
