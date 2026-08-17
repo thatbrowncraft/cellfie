@@ -1224,6 +1224,29 @@ function studyOverviewFingerprint(sources: ConceptSource[]): string {
 }
 
 /**
+ * Returns a previously settled Core Concept without rebuilding it.
+ *
+ * This is intentionally separate from `buildStudyOverviewSettled`: on a
+ * refresh, the page can hydrate an unchanged saved lesson immediately while
+ * the library scan checks for newer material in the background.
+ */
+export async function getCachedStudyOverview(
+  concept: Pick<Concept, 'id'>,
+  sources: ConceptSource[]
+): Promise<StudyOverview | undefined> {
+  const fingerprint = studyOverviewFingerprint(sources)
+  const cacheKey = `${STUDY_OVERVIEW_CACHE_KEY_PREFIX}${concept.id}`
+  const cached = await db.appSettings.get(cacheKey)
+  const entry = cached?.value as StudyOverviewCacheEntry | undefined
+
+  if (entry && entry.fingerprint === fingerprint) {
+    return entry.overview
+  }
+
+  return undefined
+}
+
+/**
  * Refresh/Lifecycle Correction — `buildStudyOverview` itself re-reads
  * real PDF pages for every candidate source (see its own body above),
  * which is the actual expensive step in "Core Concept", separate from
