@@ -163,11 +163,40 @@ const SENTENCE_END_RE = /[.!?]$/
 // the numbered and the plain title-shaped forms.
 const CAPTION_LABEL_RE = /^(fig(?:ure)?|table|box|plate|chart|diagram|photo|image)\b/i
 
-function looksLikeParagraphStart(line: string | undefined): boolean {
-  if (!line) return false
-  const trimmed = line.trim()
-  if (!trimmed) return false
-  return trimmed.split(/\s+/).length >= 6
+// Retrieval Diagnostic Correction — `joinPageTextPreservingParagraphs`
+// emits one `\n` per ORIGINAL PDF visual line, not one per true
+// paragraph (see pdf-engine's own doc comment: every line/column jump
+// becomes a break). That means the line immediately after a genuine
+// section heading is often just the first hard-wrapped fragment of the
+// paragraph's first sentence ("Photosynthesis is the process by") —
+// which can easily fall under 6 words purely because of where the PDF
+// happened to wrap, not because what follows isn't real prose. Checking
+// only `lines[i+1]` in isolation was rejecting real textbook headings
+// (exactly the "3.4 Photosynthesis" / "The Calvin Cycle" style headings
+// a book itself uses) for a layout reason, not a content reason. Looking
+// ahead across a small run of following lines — stopping at the next
+// blank line or another heading-shaped line — and judging the combined
+// word count fixes this without loosening what still counts as "real
+// prose": a genuinely short/caption-like follow-on (an actual figure
+// label, a lone stray heading) still fails this test.
+const PARAGRAPH_LOOKAHEAD_MAX_LINES = 4
+
+function looksLikeParagraphStart(lines: string[], startIndex: number): boolean {
+  let words = 0
+  for (let i = startIndex; i < Math.min(lines.length, startIndex + PARAGRAPH_LOOKAHEAD_MAX_LINES); i += 1) {
+    const trimmed = lines[i]?.trim()
+    if (!trimmed) {
+      if (words > 0) break // blank line after some content = end of the lookahead window
+      continue
+    }
+    // Another heading-shaped line right away means there's no real
+    // paragraph here (e.g. two stacked labels) — don't keep scanning
+    // past it hoping for a later paragraph to satisfy the count.
+    if (HEADING_ALONE_RE.test(trimmed) || NUMBERED_HEADING_RE.test(trimmed)) break
+    words += trimmed.split(/\s+/).length
+    if (words >= 6) return true
+  }
+  return words >= 6
 }
 
 /**
@@ -177,9 +206,17 @@ function looksLikeParagraphStart(line: string | undefined): boolean {
  * line (e.g. "PATHWAYS OF PHOTOSYNTHESIS AND CELLULAR METABOLISM"
  * immediately under "FIGURE 3.15") — that second line is title-shaped on
  * its own, but it's a continuation of the caption above it, not a new
- * section heading.
+ * section heading. `followingLines`/`followingIndex` let the paragraph-
+ * start check look ahead past a single short PDF-wrapped line instead of
+ * judging real prose by an arbitrary line-wrap position (see
+ * `looksLikeParagraphStart`'s own comment).
  */
-export function looksLikeStructuralHeading(line: string, nextLine: string | undefined, prevLine?: string): boolean {
+export function looksLikeStructuralHeading(
+  line: string,
+  followingLines: string[],
+  followingIndex: number,
+  prevLine?: string
+): boolean {
   const trimmed = line.trim()
   if (!trimmed || trimmed.length > 90) return false
   if (CAPTION_LABEL_RE.test(trimmed)) return false
@@ -195,7 +232,7 @@ export function looksLikeStructuralHeading(line: string, nextLine: string | unde
   const wordCount = trimmed.split(/\s+/).length
   if (wordCount < 1 || wordCount > 8) return false
   if (!TITLE_LIKE_LINE_RE.test(trimmed)) return false
-  return looksLikeParagraphStart(nextLine)
+  return looksLikeParagraphStart(followingLines, followingIndex)
 }
 
 /** The heading text itself, with any leading section number stripped. */
@@ -226,7 +263,7 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
     // Only checked once neither known-vocabulary form matches, so this
     // never changes behavior for lab-manual-style content — it only adds
     // recognition for the textbook-heading shape those two never covered.
-    const structuralMatch = !aloneMatch && !inlineMatch ? looksLikeStructuralHeading(line, lines[i + 1], lines[i - 1]) : false
+    const structuralMatch = !aloneMatch && !inlineMatch ? looksLikeStructuralHeading(line, lines, i + 1, lines[i - 1]) : false
 
     if (aloneMatch) {
       if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })

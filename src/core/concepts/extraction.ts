@@ -14,7 +14,7 @@ import { db, type Concept, type ConceptSource, type LibraryItem } from '../db'
 import { openLibraryDocument } from './documentText'
 import { addConceptSource, getOrCreateConcept } from './service'
 import { isLikelyStopwordPhrase, isPlausibleConceptName, isStopwordToken, normalizeConceptName } from './normalize'
-import { detectExtractionQuality, findBestExcerpt, headingMatchesTerm, scorePageRelevance } from './relevance'
+import { detectExtractionQuality, findBestExcerpt, headingMatchesTerm, scorePageRelevance, type PageRelevance } from './relevance'
 import { splitIntoKnownSections } from './textDisplay'
 
 export interface ExtractionResult {
@@ -33,6 +33,37 @@ function mergeResults(a: ExtractionResult, b: ExtractionResult): ExtractionResul
     conceptsUpdated: a.conceptsUpdated + b.conceptsUpdated,
     sourcesLinked: a.sourcesLinked + b.sourcesLinked
   }
+}
+
+/**
+ * Retrieval Diagnostic Correction §D — `scorePageRelevance` is a pure
+ * prose-density heuristic (sentence boundaries, number density, page
+ * length): it has no idea a page opens with the book's OWN heading for
+ * this exact concept. A real textbook's section-opening page is
+ * routinely short on running prose (a title, a sentence or two, then a
+ * figure/diagram taking the rest of the page) and can legitimately score
+ * `weak` or even `reject` under that heuristic alone — which then
+ * silently excludes it from `buildStudyOverview`'s candidate pool no
+ * matter how central that page actually is. `headingMatchesTerm` is
+ * already the single strongest relevance signal this codebase has (see
+ * its own doc comment); this makes that signal actually reach the
+ * TIERING step (used to decide which pages are even eligible to be read
+ * for Study Overview), not just the later block-level section-building
+ * step that already trusted it. Never upgrades a page that doesn't
+ * actually contain the term at all (that's still `reject` from
+ * `scorePageRelevance` itself), and never downgrades anything — this can
+ * only raise `weak`/`reject` up to `relevant` when the source book
+ * itself titled a section on this exact page with the concept's own
+ * name or alias.
+ */
+function applyOwnHeadingRelevanceFloor(relevance: PageRelevance, structuredPageText: string, term: string): PageRelevance {
+  if (relevance.tier === 'high' || relevance.tier === 'relevant') return relevance
+  if (relevance.bestIndex === -1) return relevance
+  const hasOwnHeading = splitIntoKnownSections(structuredPageText).some(
+    (block) => block.heading && headingMatchesTerm(block.heading, [term])
+  )
+  if (!hasOwnHeading) return relevance
+  return { ...relevance, tier: 'relevant' }
 }
 
 /**
@@ -220,7 +251,7 @@ export async function scanLibraryItemForConcepts(item: LibraryItem): Promise<Sca
   let pagesScanned = 0
 
   for (let page = 1; page <= (item.pageCount ?? vdoc.pageCount); page += 1) {
-    const { flat: pageText } = await vdoc.getPageText(page)
+    const { flat: pageText, structured: structuredPageText } = await vdoc.getPageText(page)
     if (!pageText.trim()) continue
     const lowerPageText = pageText.toLowerCase()
     pagesScanned += 1
@@ -231,7 +262,7 @@ export async function scanLibraryItemForConcepts(item: LibraryItem): Promise<Sca
       // Relevance Correction — never link a page that's structurally a
       // TOC/index/bibliography listing, or where the term is only an
       // isolated one-word hit. Keyword presence alone is no longer enough.
-      const relevance = scorePageRelevance(pageText, term)
+      const relevance = applyOwnHeadingRelevanceFloor(scorePageRelevance(pageText, term), structuredPageText, term)
       if (relevance.tier === 'reject') continue
       const source = await addConceptSource({
         conceptId: concept.id,
@@ -398,7 +429,7 @@ export async function extractConceptsFromPdf(item: LibraryItem): Promise<PdfExtr
   let pagesScanned = 0
 
   for (let page = 1; page <= item.pageCount; page += 1) {
-    const { flat: pageText } = await vdoc.getPageText(page)
+    const { flat: pageText, structured: structuredPageText } = await vdoc.getPageText(page)
     if (!pageText.trim()) continue
     const lowerPageText = pageText.toLowerCase()
     pagesScanned += 1
@@ -406,7 +437,7 @@ export async function extractConceptsFromPdf(item: LibraryItem): Promise<PdfExtr
     for (const { concept, term } of needles) {
       const key = term.toLowerCase()
       if (!lowerPageText.includes(key)) continue
-      const relevance = scorePageRelevance(pageText, term)
+      const relevance = applyOwnHeadingRelevanceFloor(scorePageRelevance(pageText, term), structuredPageText, term)
       if (relevance.tier === 'reject') continue
       const source = await addConceptSource({
         conceptId: concept.id,
@@ -770,7 +801,40 @@ export interface StudySection {
   isConceptHeading?: boolean
   /** Retrieval Correction §5 — see ConceptSource.extractionQuality. */
   extractionQuality?: 'ok' | 'garbled'
+  /**
+   * Retrieval Diagnostic Correction §C — other uploaded books whose own
+   * section under this SAME heading label had genuinely complementary
+   * (not near-duplicate) material, merged into `body` after the first
+   * book's own contribution. `bookTitle`/`pageNumber` above always stay
+   * the FIRST book found for this heading, so the section's own heading
+   * text and primary citation are never altered by a later book — this
+   * only ever appends, never replaces.
+   */
+  additionalSources?: { bookTitle: string; pageNumber: number }[]
 }
+
+// Retrieval Diagnostic Correction §C — cheap, deterministic word-overlap
+// check so a second book's section under the same heading label ("Definition",
+// "Photosynthesis") only gets merged in when it actually adds something,
+// not when it's substantially the same passage a first book already
+// contributed (which would just duplicate the same explanation twice).
+// No semantic understanding — pure token-overlap, same spirit as every
+// other signal in this pipeline.
+function overlapTokens(text: string): Set<string> {
+  return new Set(text.toLowerCase().match(/[a-z0-9]{4,}/g) ?? [])
+}
+function isNearDuplicateSection(a: string, b: string): boolean {
+  const wordsA = overlapTokens(a)
+  const wordsB = overlapTokens(b)
+  if (wordsA.size === 0 || wordsB.size === 0) return false
+  let shared = 0
+  for (const w of wordsA) if (wordsB.has(w)) shared += 1
+  return shared / Math.min(wordsA.size, wordsB.size) >= 0.75
+}
+// Cap how many additional books can pile onto one heading so a common
+// generic label (e.g. "Definition") appearing in every uploaded book
+// can't grow one section into an unreadable wall of merged text.
+const MAX_ADDITIONAL_SECTION_SOURCES = 2
 
 export interface LocalOverviewParagraph {
   text: string
@@ -955,7 +1019,6 @@ export async function buildStudyOverview(
     for (const block of blocks) {
       if (!block.heading) continue
       const key = normalizeConceptName(block.heading)
-      if (sections.has(key)) continue
       // Section relevance §B — a small set of heading labels are never
       // an explanatory section for ANY concept, no matter what their
       // body text mentions or how many times: a Learning Objectives list
@@ -985,15 +1048,38 @@ export async function buildStudyOverview(
         if (blockRelevance.occurrences < 2) continue
       }
 
-      if (isConceptHeading) headingMatchKeys.add(key)
-      sections.set(key, {
-        heading: block.heading,
-        body: block.body,
-        bookTitle: item.title,
-        pageNumber: source.pageNumber as number,
-        isConceptHeading,
-        extractionQuality
-      })
+      const existingSection = sections.get(key)
+      if (!existingSection) {
+        if (isConceptHeading) headingMatchKeys.add(key)
+        sections.set(key, {
+          heading: block.heading,
+          body: block.body,
+          bookTitle: item.title,
+          pageNumber: source.pageNumber as number,
+          isConceptHeading,
+          extractionQuality
+        })
+        continue
+      }
+
+      // Retrieval Diagnostic Correction §C — ALL relevant uploaded books
+      // merge here, not just the first one that reached this heading:
+      // a second (or third) book's own section under the same heading
+      // label is complementary evidence, appended after the first book's
+      // contribution, as long as it isn't substantially the same passage
+      // already captured and this heading hasn't already collected its
+      // cap of extra books. The first book's own heading text/citation
+      // (`existingSection.bookTitle`/`pageNumber`) is never overwritten —
+      // real headings the source material used stay exactly as written.
+      if (existingSection.bookTitle === item.title) continue
+      if ((existingSection.additionalSources?.length ?? 0) >= MAX_ADDITIONAL_SECTION_SOURCES) continue
+      if (existingSection.additionalSources?.some((s) => s.bookTitle === item.title)) continue
+      if (isNearDuplicateSection(existingSection.body, block.body)) continue
+      existingSection.body = `${existingSection.body}\n\n${block.body}`
+      existingSection.additionalSources = [
+        ...(existingSection.additionalSources ?? []),
+        { bookTitle: item.title, pageNumber: source.pageNumber as number }
+      ]
     }
   }
 
@@ -1096,9 +1182,9 @@ export async function backfillSourceRelevance(conceptId: string): Promise<Releva
       continue
     }
     for (const source of list) {
-      const { flat: pageText } = await vdoc.getPageText(source.pageNumber as number)
+      const { flat: pageText, structured: structuredPageText } = await vdoc.getPageText(source.pageNumber as number)
       const term = source.sourceText || concept.name
-      const relevance = scorePageRelevance(pageText, term)
+      const relevance = applyOwnHeadingRelevanceFloor(scorePageRelevance(pageText, term), structuredPageText, term)
       if (relevance.tier === 'reject') {
         await db.conceptSources.delete(source.id)
         removed += 1
@@ -1171,6 +1257,14 @@ export interface ConceptLibraryScanResult {
  * never re-reads a whole book's text against every other concept in the
  * library, so opening one concept can't turn into a full-library re-index.
  */
+interface ConceptLibraryScanMarker {
+  ranAt: number
+  done: boolean
+  lastPageScanned?: number
+  linked?: number
+  error?: string
+}
+
 export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLibraryScanResult> {
   const terms = [concept.name, ...concept.aliases].filter((t) => t.trim().length >= 3)
   if (terms.length === 0) return { ran: false, booksScanned: 0, pagesScanned: 0, sourcesLinked: 0 }
@@ -1186,31 +1280,51 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
 
     const settingsKey = `${CONCEPT_LIBRARY_SCAN_KEY_PREFIX}${concept.id}:${item.id}`
     const already = await db.appSettings.get(settingsKey)
-    if (already) continue
+    const marker = already?.value as ConceptLibraryScanMarker | undefined
+    // Retrieval Diagnostic Correction §E — a book this concept's scan
+    // previously had to abandon mid-way (because the whole-call page cap
+    // was hit) used to be marked done with no `done` flag at all, so it
+    // read as "already scanned" forever and silently never got the rest
+    // of its own pages searched — for a concept spanning a large
+    // multi-book library (the reported DNA case, 5 books/483 pages) that
+    // could mean a book's own strongest section is never found even
+    // after many visits. Only a marker with `done: true` now short-
+    // circuits a book; an in-progress marker instead resumes from where
+    // the last call left off.
+    // A pre-existing marker from before this correction (just
+    // `{ranAt, linked}`, no `done` field) always meant "fully scanned" —
+    // treated the same way here so upgrading never forces a mass re-scan
+    // of a library that was already completely indexed. Only a marker
+    // explicitly saved with `done: false` (this correction's own
+    // hit-the-cap case) resumes instead of skipping.
+    if (marker && marker.done !== false) continue
+    const resumeFromPage = typeof marker?.lastPageScanned === 'number' ? marker.lastPageScanned + 1 : 1
 
     let vdoc: Awaited<ReturnType<typeof openLibraryDocument>>
     try {
       vdoc = await openLibraryDocument(item)
     } catch {
-      await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), error: 'parse-failed' } })
+      await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), done: true, error: 'parse-failed' } })
       continue
     }
 
     let linkedInBook = 0
     let hitCap = false
-    for (let page = 1; page <= item.pageCount; page += 1) {
+    let lastPageScanned = resumeFromPage - 1
+    for (let page = resumeFromPage; page <= item.pageCount; page += 1) {
       if (pagesScanned >= MAX_AUTO_SCAN_PAGES_PER_CALL) {
         hitCap = true
         break
       }
-      const { flat: pageText } = await vdoc.getPageText(page)
+      lastPageScanned = page
+      const { flat: pageText, structured: structuredPageText } = await vdoc.getPageText(page)
       if (!pageText.trim()) continue
       pagesScanned += 1
       const lowerPageText = pageText.toLowerCase()
 
       for (const term of terms) {
         if (!lowerPageText.includes(term.toLowerCase())) continue
-        const relevance = scorePageRelevance(pageText, term)
+        const relevance = applyOwnHeadingRelevanceFloor(scorePageRelevance(pageText, term), structuredPageText, term)
         if (relevance.tier === 'reject') continue
         const source = await addConceptSource({
           // `sourceType: 'pdf'` is really "a page of an imported library
@@ -1234,9 +1348,14 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
     }
 
     if (!hitCap) {
-      await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), linked: linkedInBook } })
+      await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), done: true, linked: linkedInBook } })
       booksScanned += 1
     } else {
+      // Persist how far this book got so the NEXT call resumes instead
+      // of re-reading pages 1..lastPageScanned again — without this, a
+      // book bigger than one call's page budget could never finish
+      // scanning across repeated visits.
+      await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), done: false, lastPageScanned, linked: linkedInBook } })
       break
     }
   }

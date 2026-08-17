@@ -97,6 +97,10 @@ export function buildBookLesson(concept: Concept, overview: StudyOverview): Book
   namedSections.forEach((s, i) => {
     sections.push({ id: `book-section-${i}`, heading: s.heading, body: s.body })
     addSource(s.bookTitle, s.pageNumber)
+    // Retrieval Diagnostic Correction §C — a section merged from more
+    // than one uploaded book (see buildStudyOverview) cites every book
+    // that actually contributed to it, not just the first.
+    for (const extra of s.additionalSources ?? []) addSource(extra.bookTitle, extra.pageNumber)
   })
 
   if (sections.length === 0) return undefined
