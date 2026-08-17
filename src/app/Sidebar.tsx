@@ -52,7 +52,7 @@ export function Sidebar({ drawerOpen, onCloseDrawer, railOnly }: SidebarProps) {
                       <span className="absolute left-0 top-1/2 h-5 w-[3px] -translate-y-1/2 rounded-full bg-terracotta" aria-hidden />
                     )}
                     <Icon size={20} weight={isActive ? 'fill' : 'regular'} aria-hidden />
-                    {!railOnly && <span>{item.label}</span>}
+                    {!railOnly && <span>{item.navLabel ?? item.label}</span>}
                   </>
                 )}
               </NavLink>
