@@ -110,17 +110,26 @@ export function EditableSection({ conceptId, sectionKey, originalText, children,
             <PencilSimple size={11} aria-hidden /> Edited by you
           </span>
         )}
-        <button type="button" onClick={startEditing} className="font-ui text-micro font-medium text-olive hover:underline">
+        {/* Core Concept editing §E — this used to be a bare text link
+            (`font-ui text-micro`, underline only on hover), which reads
+            as inert caption text next to the section above it rather
+            than as an actionable control. Matches the same Button
+            component/sizing already used for the page's own header Edit
+            action, so it has real button affordance (visible border,
+            background, hover state) instead of relying on a hover-only
+            underline. */}
+        <Button variant="secondary" size="small" icon={<PencilSimple size={13} />} onClick={startEditing}>
           Edit {label}
-        </button>
+        </Button>
         {edit && (
-          <button
-            type="button"
+          <Button
+            variant="secondary"
+            size="small"
+            icon={<ArrowCounterClockwise size={13} />}
             onClick={() => void handleRestore()}
-            className="inline-flex items-center gap-1 font-ui text-micro font-medium text-ink-tertiary hover:underline"
           >
-            <ArrowCounterClockwise size={11} aria-hidden /> Restore original
-          </button>
+            Restore original
+          </Button>
         )}
       </div>
     </div>
