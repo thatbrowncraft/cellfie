@@ -14,7 +14,15 @@ import { db, type Concept, type ConceptSource, type LibraryItem } from '../db'
 import { openLibraryDocument } from './documentText'
 import { addConceptSource, getOrCreateConcept } from './service'
 import { isLikelyStopwordPhrase, isPlausibleConceptName, isStopwordToken, normalizeConceptName } from './normalize'
-import { detectExtractionQuality, findBestExcerpt, headingMatchesTerm, scorePageRelevance, type PageRelevance } from './relevance'
+import {
+  detectExtractionQuality,
+  findBestExcerpt,
+  headingMatchesTerm,
+  scorePageRelevance,
+  trimSectionProse,
+  type PageRelevance,
+  type RelevanceTier
+} from './relevance'
 import { splitIntoKnownSections } from './textDisplay'
 
 export interface ExtractionResult {
@@ -836,6 +844,35 @@ function isNearDuplicateSection(a: string, b: string): boolean {
 // can't grow one section into an unreadable wall of merged text.
 const MAX_ADDITIONAL_SECTION_SOURCES = 2
 
+// Concept boundary correction — a broad term (DNA, Cell, Protein) turns
+// up as an incidental mention across dozens of sections that are really
+// ABOUT something else (Transformation, Cancer, Viruses, Biotechnology,
+// Mutation...). A section whose own heading doesn't name the concept only
+// belongs in the lesson when the concept is a substantial part of what
+// that section teaches, not a passing reference — so the bar for that
+// case is deliberately higher than "mentioned twice in real prose":
+//   - the page-level tier must be relevant/high, never weak (weak is
+//     exactly the "one clean-looking mention in otherwise unrelated
+//     prose" shape)
+//   - at least a handful of separate occurrences, not two
+//   - occurrences dense enough relative to the section's own length that
+//     the concept is clearly a running thread, not a name-drop early on
+//     in an otherwise long, unrelated section
+const MIN_SECTION_OCCURRENCES_FOR_NON_OWN_HEADING = 3
+const MIN_SECTION_TERM_DENSITY = 0.008 // roughly one occurrence per 125 words of section body
+
+// Keep Only Strongest Sections — 626 source pages should not become 20+
+// merged sections just because each one individually cleared the bar
+// above; the lesson stays a focused explanation by keeping only the
+// strongest few, ranked by how directly each section teaches the concept.
+const MAX_LESSON_SECTIONS = 6
+
+function sectionStrength(isConceptHeading: boolean | undefined, tier: RelevanceTier, occurrences: number): number {
+  if (isConceptHeading) return 1000 // the source book's own heading for this concept always wins
+  const tierScore = tier === 'high' ? 100 : tier === 'relevant' ? 50 : 0
+  return tierScore + occurrences
+}
+
 export interface LocalOverviewParagraph {
   text: string
   bookTitle: string
@@ -944,6 +981,7 @@ export async function buildStudyOverview(
   const conceptTerms = [concept.name, ...(concept.aliases ?? [])].filter((t) => t.trim().length >= 3)
 
   const sections = new Map<string, StudySection>()
+  const sectionMeta = new Map<string, { tier: RelevanceTier; occurrences: number }>()
   const headingMatchKeys = new Set<string>()
   let paragraph: LocalOverviewParagraph | undefined
   const docCache = new Map<string, Awaited<ReturnType<typeof openLibraryDocument>>>()
@@ -1030,22 +1068,29 @@ export async function buildStudyOverview(
       if (NON_EXPLANATORY_HEADING_LABELS.has(key)) continue
 
       const isConceptHeading = headingMatchesTerm(block.heading, conceptTerms)
-      // Retrieval Correction §2/§B — a heading that ISN'T the concept's
-      // own name only belongs in this concept's lesson if its own body
-      // text actually discusses the concept, and "discusses" has to mean
-      // more than one incidental mention: `scorePageRelevance`'s tiering
-      // exists to separate real prose from TOC/index noise, but a single
-      // occurrence sitting inside otherwise well-formed, unrelated prose
-      // (e.g. "photosynthesis" mentioned once in a section about "The
-      // Discovery of Microorganisms") can still score as well-formed
-      // prose and pass that bar. Requiring at least two occurrences in
-      // the block's own body is the section-vs-page distinction the
-      // brief asks for: a section that only mentions the concept in
-      // passing is exactly the "occurrence" case, not the "about" case.
+      // Retrieval Correction §2/§B, Concept boundary correction — a
+      // heading that ISN'T the concept's own name only belongs in this
+      // concept's lesson if its own body text substantially teaches the
+      // concept, not just mentions it. A parent/broader heading (e.g.
+      // "Nucleic Acids" for the concept DNA) can still qualify, but only
+      // when the concept is clearly a running thread in that section:
+      // real prose (never `weak`, which is exactly the "one clean-looking
+      // mention amid otherwise unrelated prose" shape), several separate
+      // occurrences, and a density high enough that the section reads as
+      // being substantially about the concept rather than name-dropping
+      // it once early on. This is what keeps a section like
+      // "Transformation" or "Mutation" — where the concept is discussed
+      // only as part of another topic — out of the lesson, without
+      // hardcoding any topic name: it's the same shape/density test for
+      // every concept.
+      let blockRelevance: PageRelevance | undefined
       if (!isConceptHeading) {
-        const blockRelevance = scorePageRelevance(block.body, term)
-        if (blockRelevance.tier === 'reject') continue
-        if (blockRelevance.occurrences < 2) continue
+        blockRelevance = scorePageRelevance(block.body, term)
+        if (blockRelevance.tier !== 'high' && blockRelevance.tier !== 'relevant') continue
+        if (blockRelevance.occurrences < MIN_SECTION_OCCURRENCES_FOR_NON_OWN_HEADING) continue
+        const bodyWords = countWords(block.body)
+        const density = blockRelevance.occurrences / Math.max(bodyWords, 1)
+        if (density < MIN_SECTION_TERM_DENSITY) continue
       }
 
       const existingSection = sections.get(key)
@@ -1058,6 +1103,10 @@ export async function buildStudyOverview(
           pageNumber: source.pageNumber as number,
           isConceptHeading,
           extractionQuality
+        })
+        sectionMeta.set(key, {
+          tier: isConceptHeading ? 'high' : (blockRelevance as PageRelevance).tier,
+          occurrences: isConceptHeading ? Number.POSITIVE_INFINITY : (blockRelevance as PageRelevance).occurrences
         })
         continue
       }
@@ -1086,13 +1135,44 @@ export async function buildStudyOverview(
   // The concept's own headed section(s) lead the lesson; everything else
   // (generic Definition/Principle/Procedure-style labels, or a heading
   // from a different topic that still passed the body-relevance check)
-  // follows in the order it was found. Array.prototype.sort is stable,
-  // so ties keep their discovery order.
-  const orderedSections = Array.from(sections.entries())
-    .sort(([a], [b]) => (headingMatchKeys.has(b) ? 1 : 0) - (headingMatchKeys.has(a) ? 1 : 0))
-    .map(([, section]) => section)
+  // follows ranked by how strongly it teaches the concept — own-heading
+  // sections first, then by relevance tier and occurrence count.
+  const strengthOf = ([key, section]: [string, StudySection]) => {
+    const meta = sectionMeta.get(key)
+    return sectionStrength(section.isConceptHeading, meta?.tier ?? 'weak', meta?.occurrences ?? 0)
+  }
+  const rankedEntries = Array.from(sections.entries()).sort((a, b) => strengthOf(b) - strengthOf(a))
 
-  return { paragraph, sections: orderedSections }
+  // Deduplicate overlapping sections across books — two DIFFERENT heading
+  // labels (e.g. "DNA" in one book, "Structure of DNA" in another) can
+  // still be substantially the same passage once their body text is
+  // compared directly, the same signal used above for same-heading
+  // merging, just applied across the whole set. Iterating strongest-first
+  // means a duplicate is always resolved by keeping the stronger section
+  // and dropping the weaker one, never the reverse.
+  const deduped: Array<[string, StudySection]> = []
+  for (const entry of rankedEntries) {
+    const [, section] = entry
+    const isDuplicate = deduped.some(([, kept]) => isNearDuplicateSection(kept.body, section.body))
+    if (isDuplicate) continue
+    deduped.push(entry)
+  }
+
+  // Keep Only Strongest Sections — cap rather than trying to represent
+  // every source page that happened to clear the bar.
+  const selected = deduped.slice(0, MAX_LESSON_SECTIONS)
+
+  // Trim excessive prose — long sections are cut down to the sentences
+  // that actually explain the concept; short sections pass through
+  // unchanged (trimSectionProse is a no-op below its own length budget).
+  const orderedSections = selected.map(([, section]) => ({
+    ...section,
+    body: trimSectionProse(section.body, conceptTerms)
+  }))
+
+  const trimmedParagraph = paragraph ? { ...paragraph, text: trimSectionProse(paragraph.text, conceptTerms) } : undefined
+
+  return { paragraph: trimmedParagraph, sections: orderedSections }
 }
 
 const STUDY_OVERVIEW_CACHE_KEY_PREFIX = 'conceptStudyOverviewCache:v1:'

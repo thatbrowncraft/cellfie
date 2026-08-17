@@ -224,6 +224,93 @@ export function detectExtractionQuality(pageText: string): 'ok' | 'garbled' {
   return shortTokenCount / tokens.length > 0.35 ? 'garbled' : 'ok'
 }
 
+// Splits on a real sentence boundary (end punctuation + whitespace,
+// followed by something that looks like the start of a new sentence) —
+// same shape SENTENCE_BOUNDARY_RE already scores by, just used here to
+// actually cut the text into pieces instead of counting them.
+const SENTENCE_SPLIT_RE = /(?<=[.!?])\s+(?=[A-Z0-9"'(])/g
+
+function splitSentences(text: string): string[] {
+  const trimmed = text.trim()
+  if (!trimmed) return []
+  return trimmed
+    .split(SENTENCE_SPLIT_RE)
+    .map((s) => s.trim())
+    .filter(Boolean)
+}
+
+export interface TrimSectionOptions {
+  maxSentences?: number
+  maxWords?: number
+}
+
+const DEFAULT_TRIM_MAX_SENTENCES = 7
+const DEFAULT_TRIM_MAX_WORDS = 140
+
+/**
+ * Concept boundary correction §7 — cuts a long textbook section down to
+ * the sentences that actually explain the concept, dropping tangential or
+ * repetitive surrounding prose. This never rewrites a kept sentence: it
+ * only chooses which whole sentences survive, so whatever remains is
+ * exactly what the source book wrote, in its original order — the same
+ * "zero invention" rule the rest of this module follows.
+ *
+ * A section short enough to already be readable (few sentences, few
+ * words) is returned untouched — trimming exists for the verbose case,
+ * not to shrink every section to a uniform size. For a long section, each
+ * sentence is kept if it names the concept itself (score 2), sits right
+ * next to one that does (score 1, since textbook prose often carries the
+ * referent across a sentence via "it"/"this"), or is the section's own
+ * opening sentence (kept unconditionally as the setup for what follows).
+ * Everything else is dropped first when the section needs to shrink.
+ */
+export function trimSectionProse(text: string, terms: string[], opts: TrimSectionOptions = {}): string {
+  const trimmedText = text.trim()
+  const maxSentences = opts.maxSentences ?? DEFAULT_TRIM_MAX_SENTENCES
+  const maxWords = opts.maxWords ?? DEFAULT_TRIM_MAX_WORDS
+
+  const sentences = splitSentences(trimmedText)
+  if (sentences.length <= 1) return trimmedText
+  const totalWords = tokenizeWords(trimmedText).length
+  if (sentences.length <= maxSentences && totalWords <= maxWords) return trimmedText
+
+  const needles = terms.map((t) => t.trim().toLowerCase()).filter((t) => t.length >= 3)
+  const mentions = sentences.map((s) => {
+    const lower = s.toLowerCase()
+    return needles.some((n) => lower.includes(n))
+  })
+  const scores = sentences.map((_, i) => {
+    if (mentions[i]) return 2
+    if (mentions[i - 1] || mentions[i + 1]) return 1
+    return 0
+  })
+
+  const keepIdx = new Set<number>([0]) // the opening sentence always survives
+  const rankedOthers = sentences
+    .map((_, i) => i)
+    .filter((i) => i !== 0)
+    .sort((a, b) => scores[b] - scores[a] || a - b)
+
+  for (const i of rankedOthers) {
+    if (keepIdx.size >= maxSentences) break
+    if (scores[i] > 0) keepIdx.add(i)
+  }
+  // Concept mentions were sparse enough that the cap still has room —
+  // fill remaining slots in original ranked order rather than leaving the
+  // trimmed section shorter than the budget allows.
+  if (keepIdx.size < Math.min(maxSentences, sentences.length)) {
+    for (const i of rankedOthers) {
+      if (keepIdx.size >= maxSentences) break
+      keepIdx.add(i)
+    }
+  }
+
+  return Array.from(keepIdx)
+    .sort((a, b) => a - b)
+    .map((i) => sentences[i])
+    .join(' ')
+}
+
 export interface ScoredExcerpt {
   text: string
   relevance: PageRelevance
