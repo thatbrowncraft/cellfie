@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, ArrowSquareOut, Globe, PencilSimple, Trash } from '@phosphor-icons/react'
 import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
@@ -103,25 +103,33 @@ export function ConceptDetailPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [concept?.id])
 
-  // Relevance Correction — one-time, throttled retrofit for sources linked
-  // before relevance scoring existed (the "69 sources" case). Safe to fire
-  // on every visit; it no-ops once a concept has already been backfilled.
+  // Retrieval Stability Correction — `backfillSourceRelevance` and
+  // `scanLibraryForConcept` both write new/updated ConceptSource rows
+  // over a span of many awaited PDF-page reads. The `sources` liveQuery
+  // above used to re-emit a new array after EVERY one of those writes,
+  // and Core Concept used to rebuild itself from scratch on every one of
+  // those emissions — not a stale-response race (each rebuild WAS the
+  // latest data), but a moving target: as scanning slowly discovered
+  // more/better pages across the library, the "best" selection
+  // legitimately kept changing, which is exactly the "Core Concept
+  // changes every few seconds" bug. The fix is to stop treating
+  // retrieval as continuously-reactive: run both passes to completion
+  // first, and only signal "ready to build" once, via
+  // `retrievalGeneration` below — Core Concept is computed once from a
+  // settled snapshot, not re-derived on every intermediate write.
+  const retrievalSettledForConceptId = useRef<string | undefined>(undefined)
+  const [retrievalGeneration, setRetrievalGeneration] = useState(0)
   useEffect(() => {
     if (!concept) return
-    void backfillSourceRelevance(concept.id)
-  }, [concept?.id])
-
-  // Retrieval Correction §3 — Tier 1 is the person's ENTIRE uploaded
-  // library, not just whichever book they manually scanned. Throttled
-  // per (concept, book) inside scanLibraryForConcept itself, so this is
-  // safe to fire on every visit — after the first visit it's a set of
-  // cheap "already done" lookups, not a re-read of every book. New
-  // ConceptSource rows it writes flow back through the `sources`
-  // liveQuery above and re-trigger the Study Overview effect below on
-  // their own.
-  useEffect(() => {
-    if (!concept) return
-    void scanLibraryForConcept(concept)
+    let cancelled = false
+    Promise.all([backfillSourceRelevance(concept.id), scanLibraryForConcept(concept)]).finally(() => {
+      if (cancelled) return
+      retrievalSettledForConceptId.current = concept.id
+      setRetrievalGeneration((g) => g + 1)
+    })
+    return () => {
+      cancelled = true
+    }
   }, [concept?.id])
 
   // Concept 2.0 Phase 1 — PRIMARY Learn-tab content. Pulls structured,
@@ -288,16 +296,33 @@ export function ConceptDetailPage() {
   // PDF pages, so it follows the same never-blocks effect pattern as
   // every other Learn-tab feed above: the rest of the page renders
   // immediately, and this fills in once ready. Capped by
-  // buildStudyOverview's own MAX_STUDY_SOURCE_PAGES, so it's safe to
-  // recompute on every source/library change for this concept.
+  // buildStudyOverview's own MAX_STUDY_SOURCE_PAGES. Built exactly once
+  // retrieval has settled (see Retrieval Stability Correction above),
+  // not recomputed on every intermediate source-linking write.
   const [studyOverview, setStudyOverview] = useState<StudyOverview | undefined>(undefined)
   const [loadingStudyOverview, setLoadingStudyOverview] = useState(false)
   useEffect(() => {
-    let cancelled = false
     setStudyOverview(undefined)
+  }, [concept?.id])
+  // Retrieval Stability Correction — deliberately NOT keyed on the live
+  // `sources` liveQuery. Building from `retrievalGeneration` instead
+  // means this runs exactly once retrieval has settled for this concept
+  // (plus once more per explicit manual "Scan a book" action, which also
+  // bumps the generation) — never on every intermediate source-linking
+  // write while the background scan is still in progress. Reads a fresh,
+  // one-off snapshot of this concept's sources directly from Dexie
+  // rather than the reactive `sources` array, so the selection is a
+  // single settled read, not something that can be re-triggered by its
+  // own output.
+  useEffect(() => {
     if (!concept) return
+    if (retrievalSettledForConceptId.current !== concept.id) return
+    let cancelled = false
     setLoadingStudyOverview(true)
-    buildStudyOverview(concept, sources, itemsById)
+    ;(async () => {
+      const freshSources = await db.conceptSources.where('conceptId').equals(concept.id).toArray()
+      return buildStudyOverview(concept, freshSources, itemsById)
+    })()
       .then((overview) => {
         if (!cancelled) setStudyOverview(overview)
       })
@@ -307,7 +332,9 @@ export function ConceptDetailPage() {
     return () => {
       cancelled = true
     }
-  }, [concept, sources, itemsById])
+    // itemsById intentionally excluded — see comment above; retrievalGeneration is the actual trigger.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [concept?.id, retrievalGeneration])
 
   // The book's own explanation, reshaped into the same lesson shape
   // CuratedLessonView already renders — `undefined` (never a thin or
@@ -398,6 +425,11 @@ export function ConceptDetailPage() {
           ? `Scanned ${result.pagesScanned} pages of "${item.title}" — linked ${result.sourcesLinked} new source${result.sourcesLinked === 1 ? '' : 's'}.`
           : `Scanned ${result.pagesScanned} pages of "${item.title}" — no matches for this concept.`
       )
+      // A manual scan is an explicit, one-time user action — it deserves
+      // exactly one deliberate Core Concept refresh so newly-linked
+      // sources can be considered, not the silent background cycling
+      // this whole correction exists to remove.
+      if (result.sourcesLinked > 0) setRetrievalGeneration((g) => g + 1)
     } finally {
       setScanning(null)
     }
