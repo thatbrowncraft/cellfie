@@ -20,6 +20,7 @@ import {
   getCuratedLesson,
   getFirstAndLastEncountered,
   isLikelyOnline,
+  scanLibraryForConcept,
   scanLibraryItemForConcepts,
   type EuropePmcArticle,
   type MeshClassification,
@@ -108,6 +109,19 @@ export function ConceptDetailPage() {
   useEffect(() => {
     if (!concept) return
     void backfillSourceRelevance(concept.id)
+  }, [concept?.id])
+
+  // Retrieval Correction §3 — Tier 1 is the person's ENTIRE uploaded
+  // library, not just whichever book they manually scanned. Throttled
+  // per (concept, book) inside scanLibraryForConcept itself, so this is
+  // safe to fire on every visit — after the first visit it's a set of
+  // cheap "already done" lookups, not a re-read of every book. New
+  // ConceptSource rows it writes flow back through the `sources`
+  // liveQuery above and re-trigger the Study Overview effect below on
+  // their own.
+  useEffect(() => {
+    if (!concept) return
+    void scanLibraryForConcept(concept)
   }, [concept?.id])
 
   // Concept 2.0 Phase 1 — PRIMARY Learn-tab content. Pulls structured,
