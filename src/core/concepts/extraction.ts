@@ -1471,15 +1471,18 @@ function libraryScanFingerprint(item: LibraryItem): string {
 }
 
 /**
- * Soft ceiling on pages read across one call — same purpose as
- * `librarySearch.ts`'s own cap: without a persisted full-text index this
- * can't be made instant for a very large library, so this keeps a first
- * concept-open from hanging the UI rather than pretending the scan is
- * unbounded. A book that gets cut off mid-scan is simply not marked
- * "done" for this concept, so it's picked up again (from the start) next
- * time this concept is opened.
+ * Per-book safety ceiling for one automatic scan pass.
+ *
+ * IMPORTANT: this is deliberately per book, not global.
+ * A global 300-page cap meant a 341-page first book could consume the
+ * entire budget and prevent books 2..N from ever being scanned.
+ *
+ * Each book gets up to this many successfully read pages per call. If a
+ * book is larger, its marker stores the checkpoint and the next visit
+ * resumes it. Other books are still allowed to make progress in the same
+ * call.
  */
-const MAX_AUTO_SCAN_PAGES_PER_CALL = 300
+const MAX_AUTO_SCAN_PAGES_PER_BOOK_PER_CALL = 300
 
 export interface ConceptLibraryScanResult {
   ran: boolean
@@ -1601,10 +1604,6 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
 
   for (const [bookIndex, item] of scannable.entries()) {
     const bookLabel = `Book ${bookIndex + 1}/${scannable.length} (${item.title})`
-    if (pagesScanned >= MAX_AUTO_SCAN_PAGES_PER_CALL) {
-      console.log(`[scanLibraryForConcept:${concept.name}] page cap reached before ${bookLabel} — will resume next call`)
-      break
-    }
 
     const settingsKey = `${CONCEPT_LIBRARY_SCAN_KEY_PREFIX}${concept.id}:${item.id}`
     const already = await db.appSettings.get(settingsKey)
@@ -1667,13 +1666,14 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
 
     let linkedInBook = 0
     let hitCap = false
+    let bookPagesScanned = 0
     let lastPageScanned = resumeFromPage - 1
     if (badPages.size > 0) {
       console.log(`[scanLibraryForConcept:${concept.name}] ${bookLabel} skipping ${badPages.size} known-bad page(s) from an earlier scan`)
     }
 
     for (let batchStart = resumeFromPage; batchStart <= effectivePageCount; batchStart += PAGE_READ_CONCURRENCY) {
-      if (pagesScanned >= MAX_AUTO_SCAN_PAGES_PER_CALL) {
+      if (bookPagesScanned >= MAX_AUTO_SCAN_PAGES_PER_BOOK_PER_CALL) {
         hitCap = true
         break
       }
@@ -1701,6 +1701,7 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
         const { flat: pageText, structured: structuredPageText } = outcome.text
         if (!pageText.trim()) continue
         pagesScanned += 1
+        bookPagesScanned += 1
         const lowerPageText = pageText.toLowerCase()
 
         for (const term of terms) {
@@ -1728,13 +1729,17 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
         }
       }
 
-      if (pagesScanned >= MAX_AUTO_SCAN_PAGES_PER_CALL) {
+      if (bookPagesScanned >= MAX_AUTO_SCAN_PAGES_PER_BOOK_PER_CALL) {
         hitCap = true
         break
       }
     }
 
     const badPagesList = Array.from(badPages)
+    console.log(
+      `[scanLibraryForConcept:${concept.name}] ${bookLabel} pass finished — ` +
+      `${bookPagesScanned} readable page(s), ${linkedInBook} source(s) linked`
+    )
     if (!hitCap) {
       await db.appSettings.put({
         key: settingsKey,
@@ -1769,7 +1774,10 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
           libraryFingerprint: currentLibraryFingerprint
         }
       })
-      console.log(`[scanLibraryForConcept:${concept.name}] ${bookLabel} paused at page ${lastPageScanned} (page cap) — will resume next call`)
+      console.log(
+        `[scanLibraryForConcept:${concept.name}] ${bookLabel} paused at page ${lastPageScanned} ` +
+        `(${bookPagesScanned} readable pages in this pass) — will resume next call`
+      )
       break
     }
   }
