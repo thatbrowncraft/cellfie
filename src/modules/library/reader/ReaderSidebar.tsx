@@ -9,7 +9,8 @@ import { ReaderThumbnail } from './ReaderThumbnail'
 import { ReaderNoteList } from './ReaderNoteList'
 
 interface ReaderSidebarProps {
-  doc: PDFDocumentProxy
+  /** Book Reader — absent for EPUB/HTML (no PDFDocumentProxy to thumbnail); the Pages tab falls back to a plain numbered list. */
+  doc?: PDFDocumentProxy
   numPages: number
   currentPage: number
   onSelectPage: (page: number) => void
@@ -53,15 +54,33 @@ export function ReaderSidebar({
             label: 'Pages',
             content: (
               <div className="flex flex-col gap-2">
-                {Array.from({ length: numPages }, (_, i) => i + 1).map((pageNumber) => (
-                  <ReaderThumbnail
-                    key={pageNumber}
-                    doc={doc}
-                    pageNumber={pageNumber}
-                    active={pageNumber === currentPage}
-                    onSelect={onSelectPage}
-                  />
-                ))}
+                {doc
+                  ? Array.from({ length: numPages }, (_, i) => i + 1).map((pageNumber) => (
+                      <ReaderThumbnail
+                        key={pageNumber}
+                        doc={doc}
+                        pageNumber={pageNumber}
+                        active={pageNumber === currentPage}
+                        onSelect={onSelectPage}
+                      />
+                    ))
+                  : // EPUB/HTML: no page thumbnails (no PDFDocumentProxy to
+                    // render them from) — a plain numbered list of "pages"
+                    // (spine items) instead.
+                    Array.from({ length: numPages }, (_, i) => i + 1).map((pageNumber) => (
+                      <button
+                        key={pageNumber}
+                        type="button"
+                        onClick={() => onSelectPage(pageNumber)}
+                        className={`rounded-sm px-3 py-2 text-left font-ui text-ui ${
+                          pageNumber === currentPage
+                            ? 'bg-surface-raised text-ink-primary'
+                            : 'text-ink-secondary hover:bg-surface-raised hover:text-ink-primary'
+                        }`}
+                      >
+                        Section {pageNumber}
+                      </button>
+                    ))}
               </div>
             )
           },

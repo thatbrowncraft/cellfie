@@ -13,8 +13,10 @@ import { SplitLayout } from '@/shared/layouts'
 import { BottomSheet, EmptyState } from '@/shared/components'
 import { useBreakpoint } from '@/shared/hooks'
 import { usePdfDocument } from '../hooks/usePdfDocument'
+import { useFlowDocument } from '../hooks/useFlowDocument'
 import { ReaderToolbar } from './ReaderToolbar'
 import { ReaderCanvas, type FitMode, type ReaderCanvasHandle } from './ReaderCanvas'
+import { FlowReaderView } from './FlowReaderView'
 import { ReaderSidebar } from './ReaderSidebar'
 import { HighlightPopover, type PopoverAnchor } from './HighlightPopover'
 import { ConceptPickerDialog } from './ConceptPickerDialog'
@@ -64,7 +66,18 @@ export function ReaderPage() {
     []
   )
 
-  const { doc, numPages, loading, error } = usePdfDocument(item?.filePath)
+  // Book Reader — EPUB/HTML get a real page-flip view now (FlowReaderView),
+  // just not the canvas/pdf.js one: they have no fixed page geometry, so
+  // "page" means "spine item" for those formats (see useFlowDocument /
+  // core/epub-engine). `isPdfFormat` still decides which loader/view to
+  // use; it's just no longer "PDF or nothing".
+  const isPdfFormat = !item || !item.format || item.format === 'pdf'
+  const { doc, numPages: pdfNumPages, loading: pdfLoading, error: pdfError } = usePdfDocument(isPdfFormat ? item?.filePath : undefined)
+  const { pages: flowPages, loading: flowLoading, error: flowError } = useFlowDocument(isPdfFormat ? undefined : item)
+
+  const numPages = isPdfFormat ? pdfNumPages : flowPages.length || null
+  const loading = isPdfFormat ? pdfLoading : flowLoading
+  const error = isPdfFormat ? pdfError : flowError
 
   const [readerNavigationMode] = useReaderNavigationMode()
   const [page, setPage] = useState(1)
@@ -274,9 +287,9 @@ export function ReaderPage() {
   const pageHighlights = highlights.filter((h) => h.page === page)
 
   const sidebar =
-    doc && numPages ? (
+    numPages ? (
       <ReaderSidebar
-        doc={doc}
+        doc={doc ?? undefined}
         numPages={numPages}
         currentPage={page}
         onSelectPage={handleSelectPage}
@@ -339,29 +352,51 @@ export function ReaderPage() {
         onNewNote={handleNewNoteForCurrentPage}
         onHighlight={handleHighlightButtonClick}
         canHighlight={hasTextSelection}
+        showZoomControls={isPdfFormat}
+        showHighlight={isPdfFormat}
       />
 
       <div className="min-h-0 flex-1">
         {error && (
           <div className="flex h-full items-center justify-center p-8">
             <EmptyState
-              title="Couldn't open this PDF"
+              title={isPdfFormat ? "Couldn't open this PDF" : "Couldn't open this book"}
               description="The file may be missing or the import may not have finished. Try removing and re-importing it from the Library."
             />
           </div>
         )}
 
-        {!error && (loading || !doc || !numPages) && (
+        {!error && (loading || !numPages) && (
           <div className="flex h-full items-center justify-center">
             <p className="font-ui text-caption text-ink-tertiary">Loading document…</p>
           </div>
         )}
 
-        {!error && doc && numPages ? (
-          isMobile ? (
+        {!error && !loading && numPages ? (
+          isPdfFormat ? (
+            doc ? (
+              isMobile ? (
+                <>
+                  <ReaderCanvas ref={canvasRef} {...canvasProps} doc={doc} />
+                  <BottomSheet open={sidebarOpen} onClose={() => setSidebarOpen(false)} title="Pages, highlights & notes">
+                    {sidebar}
+                  </BottomSheet>
+                </>
+              ) : sidebarOpen ? (
+                <SplitLayout
+                  className="h-full"
+                  primaryWidth="75%"
+                  primary={<ReaderCanvas ref={canvasRef} {...canvasProps} doc={doc} />}
+                  secondary={<div className="h-full overflow-y-auto p-4">{sidebar}</div>}
+                />
+              ) : (
+                <ReaderCanvas ref={canvasRef} {...canvasProps} doc={doc} />
+              )
+            ) : null
+          ) : isMobile ? (
             <>
-              <ReaderCanvas ref={canvasRef} {...canvasProps} doc={doc} />
-              <BottomSheet open={sidebarOpen} onClose={() => setSidebarOpen(false)} title="Pages, highlights & notes">
+              <FlowReaderView html={flowPages[page - 1] ?? ''} />
+              <BottomSheet open={sidebarOpen} onClose={() => setSidebarOpen(false)} title="Pages & notes">
                 {sidebar}
               </BottomSheet>
             </>
@@ -369,11 +404,11 @@ export function ReaderPage() {
             <SplitLayout
               className="h-full"
               primaryWidth="75%"
-              primary={<ReaderCanvas ref={canvasRef} {...canvasProps} doc={doc} />}
+              primary={<FlowReaderView html={flowPages[page - 1] ?? ''} />}
               secondary={<div className="h-full overflow-y-auto p-4">{sidebar}</div>}
             />
           ) : (
-            <ReaderCanvas ref={canvasRef} {...canvasProps} doc={doc} />
+            <FlowReaderView html={flowPages[page - 1] ?? ''} />
           )
         ) : null}
       </div>

@@ -38,6 +38,10 @@ interface ReaderToolbarProps {
   onHighlight: () => void
   /** Whether there's currently a live text selection to highlight. */
   canHighlight: boolean
+  /** Book Reader — EPUB/HTML has no fixed page geometry to zoom/fit, so this section is hidden for those formats. Defaults to shown (PDF's original behavior). */
+  showZoomControls?: boolean
+  /** Book Reader — text-selection highlighting is PDF-only this pass (see FlowReaderView.tsx's doc comment); hidden rather than shown-disabled for EPUB/HTML, since it can never work. Defaults to shown. */
+  showHighlight?: boolean
 }
 
 const iconButton =
@@ -70,7 +74,9 @@ export function ReaderToolbar({
   onToggleBookmark,
   onNewNote,
   onHighlight,
-  canHighlight
+  canHighlight,
+  showZoomControls = true,
+  showHighlight = true
 }: ReaderToolbarProps) {
   const [pageInput, setPageInput] = useState(String(currentPage))
 
@@ -143,40 +149,44 @@ export function ReaderToolbar({
           </Tooltip>
         </div>
 
-        <div className="flex items-center gap-1 border-l border-border pl-4">
-          <Tooltip label="Zoom out">
-            <button type="button" onClick={onZoomOut} aria-label="Zoom out" className={iconButton}>
-              <MagnifyingGlassMinus size={18} />
-            </button>
-          </Tooltip>
-          <span className="w-12 text-center font-ui text-caption text-ink-secondary">{Math.round(scale * 100)}%</span>
-          <Tooltip label="Zoom in">
-            <button type="button" onClick={onZoomIn} aria-label="Zoom in" className={iconButton}>
-              <MagnifyingGlassPlus size={18} />
-            </button>
-          </Tooltip>
+        {showZoomControls && (
+          <div className="flex items-center gap-1 border-l border-border pl-4">
+            <Tooltip label="Zoom out">
+              <button type="button" onClick={onZoomOut} aria-label="Zoom out" className={iconButton}>
+                <MagnifyingGlassMinus size={18} />
+              </button>
+            </Tooltip>
+            <span className="w-12 text-center font-ui text-caption text-ink-secondary">{Math.round(scale * 100)}%</span>
+            <Tooltip label="Zoom in">
+              <button type="button" onClick={onZoomIn} aria-label="Zoom in" className={iconButton}>
+                <MagnifyingGlassPlus size={18} />
+              </button>
+            </Tooltip>
 
-          <button type="button" onClick={onFitWidth} className={fitButton(fitMode === 'width')}>
-            Fit width
-          </button>
-          <button type="button" onClick={onFitPage} className={fitButton(fitMode === 'page')}>
-            Fit page
-          </button>
-        </div>
+            <button type="button" onClick={onFitWidth} className={fitButton(fitMode === 'width')}>
+              Fit width
+            </button>
+            <button type="button" onClick={onFitPage} className={fitButton(fitMode === 'page')}>
+              Fit page
+            </button>
+          </div>
+        )}
 
         <div className="flex items-center gap-1 border-l border-border pl-4">
-          <Tooltip label={canHighlight ? 'Highlight the selected text' : 'Select text in the page, then tap here to highlight it'}>
-            <button
-              type="button"
-              onMouseDown={(e) => e.preventDefault()}
-              onClick={onHighlight}
-              disabled={!canHighlight}
-              aria-label="Highlight selected text"
-              className={iconButton}
-            >
-              <HighlighterCircle size={20} weight={canHighlight ? 'fill' : 'regular'} className={canHighlight ? 'text-terracotta' : ''} />
-            </button>
-          </Tooltip>
+          {showHighlight && (
+            <Tooltip label={canHighlight ? 'Highlight the selected text' : 'Select text in the page, then tap here to highlight it'}>
+              <button
+                type="button"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={onHighlight}
+                disabled={!canHighlight}
+                aria-label="Highlight selected text"
+                className={iconButton}
+              >
+                <HighlighterCircle size={20} weight={canHighlight ? 'fill' : 'regular'} className={canHighlight ? 'text-terracotta' : ''} />
+              </button>
+            </Tooltip>
+          )}
 
           <Tooltip label="Write a note about this page">
             <button type="button" onClick={onNewNote} aria-label="Write a note about this page" className={iconButton}>
