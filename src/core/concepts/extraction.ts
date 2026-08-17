@@ -1404,7 +1404,9 @@ export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLi
   if (terms.length === 0) return { ran: false, booksScanned: 0, pagesScanned: 0, sourcesLinked: 0 }
 
   const items = await db.libraryItems.toArray()
-  const scannable = items.filter((item) => item.pageCount)
+  const scannable = items.filter(
+    (item): item is LibraryItem & { pageCount: number } => typeof item.pageCount === 'number' && item.pageCount > 0
+  )
   let booksScanned = 0
   let pagesScanned = 0
   let sourcesLinked = 0
