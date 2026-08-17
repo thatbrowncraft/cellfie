@@ -858,8 +858,9 @@ const MAX_ADDITIONAL_SECTION_SOURCES = 2
 //   - occurrences dense enough relative to the section's own length that
 //     the concept is clearly a running thread, not a name-drop early on
 //     in an otherwise long, unrelated section
-const MIN_SECTION_OCCURRENCES_FOR_NON_OWN_HEADING = 3
-const MIN_SECTION_TERM_DENSITY = 0.008 // roughly one occurrence per 125 words of section body
+const MIN_SECTION_OCCURRENCES_FOR_NON_OWN_HEADING = 4
+const MIN_SECTION_TERM_DENSITY = 0.016 // roughly one occurrence per 62 words of section body
+const MAX_NON_OWN_HEADING_FIRST_MENTION_FRACTION = 0.4
 
 // Keep Only Strongest Sections — 626 source pages should not become 20+
 // merged sections just because each one individually cleared the bar
@@ -867,10 +868,18 @@ const MIN_SECTION_TERM_DENSITY = 0.008 // roughly one occurrence per 125 words o
 // strongest few, ranked by how directly each section teaches the concept.
 const MAX_LESSON_SECTIONS = 6
 
-function sectionStrength(isConceptHeading: boolean | undefined, tier: RelevanceTier, occurrences: number): number {
-  if (isConceptHeading) return 1000 // the source book's own heading for this concept always wins
-  const tierScore = tier === 'high' ? 100 : tier === 'relevant' ? 50 : 0
-  return tierScore + occurrences
+const GARBLED_SECTION_PENALTY = 500
+
+function sectionStrength(
+  isConceptHeading: boolean | undefined,
+  tier: RelevanceTier,
+  occurrences: number,
+  extractionQuality: 'ok' | 'garbled' | undefined
+): number {
+  const base = isConceptHeading
+    ? 1000
+    : (tier === 'high' ? 100 : tier === 'relevant' ? 50 : 0) + occurrences
+  return extractionQuality === 'garbled' ? base - GARBLED_SECTION_PENALTY : base
 }
 
 export interface LocalOverviewParagraph {
@@ -1091,6 +1100,10 @@ export async function buildStudyOverview(
         const bodyWords = countWords(block.body)
         const density = blockRelevance.occurrences / Math.max(bodyWords, 1)
         if (density < MIN_SECTION_TERM_DENSITY) continue
+        const firstOccurrence = block.body.toLowerCase().indexOf(term.trim().toLowerCase())
+        if (firstOccurrence !== -1 && firstOccurrence / Math.max(block.body.length, 1) > MAX_NON_OWN_HEADING_FIRST_MENTION_FRACTION) {
+          continue
+        }
       }
 
       const existingSection = sections.get(key)
@@ -1139,7 +1152,12 @@ export async function buildStudyOverview(
   // sections first, then by relevance tier and occurrence count.
   const strengthOf = ([key, section]: [string, StudySection]) => {
     const meta = sectionMeta.get(key)
-    return sectionStrength(section.isConceptHeading, meta?.tier ?? 'weak', meta?.occurrences ?? 0)
+    return sectionStrength(
+      section.isConceptHeading,
+      meta?.tier ?? 'weak',
+      meta?.occurrences ?? 0,
+      section.extractionQuality
+    )
   }
   const rankedEntries = Array.from(sections.entries()).sort((a, b) => strengthOf(b) - strengthOf(a))
 
@@ -1378,7 +1396,7 @@ const CONCEPT_LIBRARY_SCAN_KEY_PREFIX = 'conceptLibraryScan:v1:'
  * "done" for this concept, so it's picked up again (from the start) next
  * time this concept is opened.
  */
-const MAX_AUTO_SCAN_PAGES_PER_CALL = 1500
+const MAX_AUTO_SCAN_PAGES_PER_CALL = 300
 
 export interface ConceptLibraryScanResult {
   ran: boolean
@@ -1435,18 +1453,19 @@ interface ConceptLibraryScanMarker {
  * Two changes fix that:
  *  1. Pages are now read in small concurrent batches (see
  *     `PAGE_READ_CONCURRENCY` below), so several timeouts overlap
- *     instead of stacking. 30 bad pages at concurrency 5 is ~8x faster
- *     in the worst case, not just "still bad but less bad."
+ *     instead of stacking. With the current concurrency of 8, 30 bad
+ *     pages wait in only a handful of batches instead of paying each
+ *     timeout serially.
  *  2. A page's own timeout/error is persisted in its marker's
  *     `badPages`, so it's skipped instantly (no read attempt, no
- *     waiting) on every scan after the first — the 8s cost is paid
+ *     waiting) on every scan after the first — the timeout cost is paid
  *     once per bad page, ever, not once per visit. Cleared only by an
  *     explicit rescan (same invalidation path as everything else this
  *     marker gates).
  */
-const PAGE_READ_TIMEOUT_MS = 8000
+const PAGE_READ_TIMEOUT_MS = 5000
 /** How many pages this book reads at once. Kept modest — this is still running on the main thread's event loop budget on a phone, not a worker pool free to fan out unbounded. */
-const PAGE_READ_CONCURRENCY = 5
+const PAGE_READ_CONCURRENCY = 8
 
 type PageReadOutcome =
   | { status: 'ok'; text: { flat: string; structured: string } }
