@@ -37,6 +37,8 @@ export interface BookLesson {
   sections: LessonSection[]
   quickRevision: BookLessonQuickRevision
   sources: LessonSource[]
+  /** Retrieval Correction §5 — set only when every available section/paragraph for this concept came from a source whose text extraction looked garbled (see relevance.ts's detectExtractionQuality) and no clean alternative existed anywhere in the library. Never set just because SOME source was garbled — see buildBookLesson, which prefers clean sections whenever any exist. */
+  extractionNote?: string
 }
 
 // A body this short is more likely a stray heading/caption/table-of-
@@ -57,8 +59,21 @@ function firstSentence(text: string): string {
  * usable, so the caller can fall through to the next tier.
  */
 export function buildBookLesson(concept: Concept, overview: StudyOverview): BookLesson | undefined {
-  const namedSections = overview.sections.filter((s) => s.body.trim().length >= MIN_SECTION_BODY_LENGTH)
-  if (namedSections.length === 0 && !overview.paragraph) return undefined
+  // Retrieval Correction §5 — a clean source always wins over a garbled
+  // one when both exist for this concept; a garbled section is only ever
+  // used when it's genuinely the only material available, and even then
+  // the lesson says so rather than presenting it with silent confidence.
+  const allNamedSections = overview.sections.filter((s) => s.body.trim().length >= MIN_SECTION_BODY_LENGTH)
+  const cleanNamedSections = allNamedSections.filter((s) => s.extractionQuality !== 'garbled')
+  const namedSections = cleanNamedSections.length > 0 ? cleanNamedSections : allNamedSections
+
+  const cleanParagraph = overview.paragraph && overview.paragraph.extractionQuality !== 'garbled' ? overview.paragraph : undefined
+  const usableParagraph = cleanParagraph ?? (cleanNamedSections.length === 0 ? overview.paragraph : undefined)
+
+  if (namedSections.length === 0 && !usableParagraph) return undefined
+
+  const onlyGarbledAvailable =
+    Boolean(overview.paragraph || allNamedSections.length > 0) && cleanNamedSections.length === 0 && !cleanParagraph
 
   const sections: LessonSection[] = []
   const sourceMap = new Map<string, LessonSource>()
@@ -70,13 +85,13 @@ export function buildBookLesson(concept: Concept, overview: StudyOverview): Book
     }
   }
 
-  if (overview.paragraph) {
+  if (usableParagraph) {
     sections.push({
       id: 'book-overview',
-      heading: overview.paragraph.bookTitle,
-      body: overview.paragraph.text
+      heading: usableParagraph.bookTitle,
+      body: usableParagraph.text
     })
-    addSource(overview.paragraph.bookTitle, overview.paragraph.pageNumber)
+    addSource(usableParagraph.bookTitle, usableParagraph.pageNumber)
   }
 
   namedSections.forEach((s, i) => {
@@ -99,6 +114,9 @@ export function buildBookLesson(concept: Concept, overview: StudyOverview): Book
     conceptDisplayName: concept.name,
     sections,
     quickRevision,
-    sources: Array.from(sourceMap.values())
+    sources: Array.from(sourceMap.values()),
+    extractionNote: onlyGarbledAvailable
+      ? "This source's text couldn't be reliably extracted (the PDF's text layer looks broken up), so parts of this lesson may be hard to read. Try a cleaner copy of this book if you have one."
+      : undefined
   }
 }

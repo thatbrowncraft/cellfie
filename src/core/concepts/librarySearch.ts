@@ -1,7 +1,8 @@
 /**
  * core/concepts/librarySearch — Knowledge Model Correction §3/§5. On-demand,
- * read-only search of the user's local PDF library for a literal term,
- * powering the Concept Explorer's "search, then explicitly promote" flow:
+ * read-only search of the user's local library (PDF, EPUB, or HTML/XHTML —
+ * Book Import Formats §17-24) for a literal term, powering the Concept
+ * Explorer's "search, then explicitly promote" flow:
  *
  *   user searches "Gram staining"
  *     → this finds every book/page it literally appears on
@@ -10,15 +11,14 @@
  *       ./service) — only then does anything get written to the database.
  *
  * Deliberately NOT a persisted full-text index — no new dependency is
- * allowed to build one (§19), so this reuses the existing pdf-engine to
- * read page text at search time, the same way `extraction.ts` already
- * does for the "scan this book for this concept" flow. A search finding
- * nothing writes nothing; nothing here ever creates a Concept.
+ * allowed to build one (§19), so this reuses `documentText.ts`'s format-
+ * agnostic page reader at search time, the same way `extraction.ts`
+ * already does for the "scan this book for this concept" flow. A search
+ * finding nothing writes nothing; nothing here ever creates a Concept.
  */
 
 import { db, type LibraryItem } from '../db'
-import { getPageTextContent, joinPageText, loadPdfDocument } from '../pdf-engine'
-import { readFile } from '../file-storage'
+import { openLibraryDocument } from './documentText'
 
 export interface LibraryTermMatch {
   item: LibraryItem
@@ -46,20 +46,18 @@ export async function searchLibraryForTerm(term: string): Promise<LibraryTermMat
     if (pagesScanned >= MAX_PAGES_SCANNED_PER_SEARCH) break
     if (!item.pageCount) continue
 
-    let blob: Blob
+    let vdoc: Awaited<ReturnType<typeof openLibraryDocument>>
     try {
-      blob = await readFile(item.filePath)
+      vdoc = await openLibraryDocument(item)
     } catch {
       continue
     }
-    const doc = await loadPdfDocument(blob)
     const pages: number[] = []
 
     for (let page = 1; page <= item.pageCount; page += 1) {
       if (pagesScanned >= MAX_PAGES_SCANNED_PER_SEARCH) break
-      const { items: textItems } = await getPageTextContent(doc, page)
+      const { flat: pageText } = await vdoc.getPageText(page)
       pagesScanned += 1
-      const pageText = joinPageText(textItems)
       if (pageText.toLowerCase().includes(q)) pages.push(page)
     }
 

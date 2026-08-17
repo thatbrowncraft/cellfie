@@ -11,11 +11,10 @@
  */
 
 import { db, type Concept, type ConceptSource, type LibraryItem } from '../db'
-import { getPageTextContent, joinPageText, joinPageTextPreservingParagraphs, loadPdfDocument } from '../pdf-engine'
-import { readFile } from '../file-storage'
+import { openLibraryDocument } from './documentText'
 import { addConceptSource, getOrCreateConcept } from './service'
 import { isLikelyStopwordPhrase, isPlausibleConceptName, isStopwordToken, normalizeConceptName } from './normalize'
-import { findBestExcerpt, scorePageRelevance } from './relevance'
+import { detectExtractionQuality, findBestExcerpt, headingMatchesTerm, scorePageRelevance } from './relevance'
 import { splitIntoKnownSections } from './textDisplay'
 
 export interface ExtractionResult {
@@ -210,20 +209,18 @@ export async function scanLibraryItemForConcepts(item: LibraryItem): Promise<Sca
     .filter((n) => n.term.trim().length >= 3)
     .sort((a, b) => b.term.length - a.term.length)
 
-  let blob: Blob
+  let vdoc: Awaited<ReturnType<typeof openLibraryDocument>>
   try {
-    blob = await readFile(item.filePath)
+    vdoc = await openLibraryDocument(item)
   } catch {
     return { ...emptyResult(), pagesScanned: 0 }
   }
-  const doc = await loadPdfDocument(blob)
 
   let result = emptyResult()
   let pagesScanned = 0
 
-  for (let page = 1; page <= item.pageCount; page += 1) {
-    const { items: textItems } = await getPageTextContent(doc, page)
-    const pageText = joinPageText(textItems)
+  for (let page = 1; page <= (item.pageCount ?? vdoc.pageCount); page += 1) {
+    const { flat: pageText } = await vdoc.getPageText(page)
     if (!pageText.trim()) continue
     const lowerPageText = pageText.toLowerCase()
     pagesScanned += 1
@@ -384,9 +381,9 @@ export interface PdfExtractionResult extends ExtractionResult {
 export async function extractConceptsFromPdf(item: LibraryItem): Promise<PdfExtractionResult> {
   if (!item.pageCount) return { ...emptyResult(), pagesScanned: 0, conceptsDiscovered: 0 }
 
-  let blob: Blob
+  let vdoc: Awaited<ReturnType<typeof openLibraryDocument>>
   try {
-    blob = await readFile(item.filePath)
+    vdoc = await openLibraryDocument(item)
   } catch {
     return { ...emptyResult(), pagesScanned: 0, conceptsDiscovered: 0 }
   }
@@ -397,14 +394,11 @@ export async function extractConceptsFromPdf(item: LibraryItem): Promise<PdfExtr
     .filter((n) => n.term.trim().length >= 3)
     .sort((a, b) => b.term.length - a.term.length)
 
-  const doc = await loadPdfDocument(blob)
-
   let result = emptyResult()
   let pagesScanned = 0
 
   for (let page = 1; page <= item.pageCount; page += 1) {
-    const { items: textItems } = await getPageTextContent(doc, page)
-    const pageText = joinPageText(textItems)
+    const { flat: pageText } = await vdoc.getPageText(page)
     if (!pageText.trim()) continue
     const lowerPageText = pageText.toLowerCase()
     pagesScanned += 1
@@ -553,17 +547,15 @@ export async function extractRelatedConceptsFromKnownPages(
       if (meta && meta.pagesSignature === pagesSignature) continue
     }
 
-    let blob: Blob
+    let vdoc: Awaited<ReturnType<typeof openLibraryDocument>>
     try {
-      blob = await readFile(item.filePath)
+      vdoc = await openLibraryDocument(item)
     } catch {
       continue
     }
-    const doc = await loadPdfDocument(blob)
 
     for (const page of pages) {
-      const { items: textItems } = await getPageTextContent(doc, page)
-      const pageText = joinPageText(textItems)
+      const { flat: pageText } = await vdoc.getPageText(page)
       if (!pageText.trim()) continue
       const lowerPageText = pageText.toLowerCase()
       pagesScanned += 1
@@ -652,17 +644,15 @@ export async function findCandidateConceptsFromKnownPages(concept: { id: string;
     const pages = Array.from(pagesByItem.get(item.id) ?? []).sort((a, b) => a - b)
     if (pages.length === 0) continue
 
-    let blob: Blob
+    let vdoc: Awaited<ReturnType<typeof openLibraryDocument>>
     try {
-      blob = await readFile(item.filePath)
+      vdoc = await openLibraryDocument(item)
     } catch {
       continue
     }
-    const doc = await loadPdfDocument(blob)
 
     for (const page of pages) {
-      const { items: textItems } = await getPageTextContent(doc, page)
-      const pageText = joinPageText(textItems)
+      const { flat: pageText } = await vdoc.getPageText(page)
       if (!pageText.trim()) continue
 
       for (const phrase of extractCandidatePhrases(pageText)) {
@@ -758,12 +748,17 @@ export interface StudySection {
   body: string
   bookTitle: string
   pageNumber: number
+  /** Retrieval Correction §2 — true when the source book itself titled this section with the concept's own name/alias, not just a heading that happened to share a page with the concept. */
+  isConceptHeading?: boolean
+  /** Retrieval Correction §5 — see ConceptSource.extractionQuality. */
+  extractionQuality?: 'ok' | 'garbled'
 }
 
 export interface LocalOverviewParagraph {
   text: string
   bookTitle: string
   pageNumber: number
+  extractionQuality?: 'ok' | 'garbled'
 }
 
 export interface StudyOverview {
@@ -813,11 +808,12 @@ function countWords(text: string): number {
  * References instead of being silently merged into one paragraph.
  */
 export async function buildStudyOverview(
-  concept: Pick<Concept, 'name'>,
+  concept: Pick<Concept, 'name' | 'aliases'>,
   sources: ConceptSource[],
   itemsById: Map<string, LibraryItem>
 ): Promise<StudyOverview> {
   const tierRank: Record<string, number> = { high: 2, relevant: 1 }
+  const qualityRank: Record<string, number> = { ok: 1, garbled: 0 }
   const candidates = sources
     .filter(
       (s) =>
@@ -829,51 +825,75 @@ export async function buildStudyOverview(
     .sort(
       (a, b) =>
         (tierRank[b.relevanceTier ?? ''] ?? 0) - (tierRank[a.relevanceTier ?? ''] ?? 0) ||
+        // Retrieval Correction §5 — among equally-relevant pages, a
+        // cleanly-extracted one is tried before a garbled one, so a
+        // corrupted scan never wins purely for having the earlier page
+        // number.
+        (qualityRank[b.extractionQuality ?? 'ok'] ?? 1) - (qualityRank[a.extractionQuality ?? 'ok'] ?? 1) ||
         (a.pageNumber! - b.pageNumber!)
     )
     .slice(0, MAX_STUDY_SOURCE_PAGES)
 
+  // Retrieval Correction §1/§2 — every name the source material might
+  // itself use as a heading for this concept.
+  const conceptTerms = [concept.name, ...(concept.aliases ?? [])].filter((t) => t.trim().length >= 3)
+
   const sections = new Map<string, StudySection>()
+  const headingMatchKeys = new Set<string>()
   let paragraph: LocalOverviewParagraph | undefined
-  const docCache = new Map<string, Awaited<ReturnType<typeof loadPdfDocument>>>()
+  const docCache = new Map<string, Awaited<ReturnType<typeof openLibraryDocument>>>()
 
   for (const source of candidates) {
     const item = itemsById.get(source.libraryItemId as string)
     if (!item) continue
 
-    let doc = docCache.get(item.id)
-    if (!doc) {
+    let vdoc = docCache.get(item.id)
+    if (!vdoc) {
       try {
-        const blob = await readFile(item.filePath)
-        doc = await loadPdfDocument(blob)
-        docCache.set(item.id, doc)
+        vdoc = await openLibraryDocument(item)
+        docCache.set(item.id, vdoc)
       } catch {
         continue
       }
     }
 
-    // Study Overview Correction: read this page TWICE, with two
-    // different, purpose-built joins of the same underlying PDF text
-    // items — a paragraph-preserving one for structural section
-    // parsing, and the existing flattened one for locating the
-    // concept's own strongest occurrence (relevance.ts's scoring is
-    // whitespace-agnostic, so it works the same either way, but stays
-    // on the flattened form other callers already rely on).
+    // Study Overview Correction: read this page's structured (paragraph-
+    // preserving) and flat forms — the structured one for structural
+    // section parsing, the flat one for locating the concept's own
+    // strongest occurrence (relevance.ts's scoring is whitespace-
+    // agnostic, so it works the same either way, but stays on the
+    // flattened form other callers already rely on).
     let pageText: string
     let flatPageText: string
     try {
-      const { items: textItems } = await getPageTextContent(doc, source.pageNumber as number)
-      pageText = joinPageTextPreservingParagraphs(textItems)
-      flatPageText = joinPageText(textItems)
+      const page = await vdoc.getPageText(source.pageNumber as number)
+      pageText = page.structured
+      flatPageText = page.flat
     } catch {
       continue
     }
 
     const term = source.sourceText || concept.name
     const blocks = splitIntoKnownSections(pageText)
+    const extractionQuality = source.extractionQuality ?? detectExtractionQuality(flatPageText)
 
-    // Ground the paragraph choice in the concept's own strongest
-    // occurrence on this page, not block order.
+    // Retrieval Correction §2 — the strongest possible signal: the
+    // source book itself titled one of this page's blocks with the
+    // concept's own name/alias. When that exists, it beats the "wherever
+    // the strongest keyword occurrence happens to sit" fallback below,
+    // because it's the actual section, not just the nearest paragraph to
+    // a mention.
+    if (!paragraph) {
+      const ownHeadingBlock = blocks.find((b) => b.heading && headingMatchesTerm(b.heading, conceptTerms))
+      if (ownHeadingBlock && countWords(ownHeadingBlock.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS) {
+        paragraph = { text: ownHeadingBlock.body, bookTitle: item.title, pageNumber: source.pageNumber as number, extractionQuality }
+      }
+    }
+
+    // Fallback: ground the paragraph choice in the concept's own
+    // strongest occurrence on this page, not block order — only used
+    // when no block on any candidate page is actually headed with the
+    // concept's own name.
     if (!paragraph) {
       const relevance = scorePageRelevance(flatPageText, term)
       if (relevance.bestIndex !== -1) {
@@ -886,7 +906,7 @@ export async function buildStudyOverview(
         // inside the correct block, which is all this needs.
         const containing = blocks.find((b) => relevance.bestIndex >= b.start && relevance.bestIndex < b.end)
         if (containing && !containing.heading && countWords(containing.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS) {
-          paragraph = { text: containing.body, bookTitle: item.title, pageNumber: source.pageNumber as number }
+          paragraph = { text: containing.body, bookTitle: item.title, pageNumber: source.pageNumber as number, extractionQuality }
         }
       }
     }
@@ -895,16 +915,41 @@ export async function buildStudyOverview(
       if (!block.heading) continue
       const key = normalizeConceptName(block.heading)
       if (sections.has(key)) continue
+
+      const isConceptHeading = headingMatchesTerm(block.heading, conceptTerms)
+      // Retrieval Correction §2 — a heading that ISN'T the concept's own
+      // name only belongs in this concept's lesson if its own body text
+      // actually discusses the concept; otherwise it's just another
+      // heading that happened to share a page with the concept's real
+      // mention (exactly what put "Endosymbiotic Theory" under
+      // Photosynthesis and "Levels of Organization" under DNA before).
+      if (!isConceptHeading) {
+        const blockRelevance = scorePageRelevance(block.body, term)
+        if (blockRelevance.tier === 'reject') continue
+      }
+
+      if (isConceptHeading) headingMatchKeys.add(key)
       sections.set(key, {
         heading: block.heading,
         body: block.body,
         bookTitle: item.title,
-        pageNumber: source.pageNumber as number
+        pageNumber: source.pageNumber as number,
+        isConceptHeading,
+        extractionQuality
       })
     }
   }
 
-  return { paragraph, sections: Array.from(sections.values()) }
+  // The concept's own headed section(s) lead the lesson; everything else
+  // (generic Definition/Principle/Procedure-style labels, or a heading
+  // from a different topic that still passed the body-relevance check)
+  // follows in the order it was found. Array.prototype.sort is stable,
+  // so ties keep their discovery order.
+  const orderedSections = Array.from(sections.entries())
+    .sort(([a], [b]) => (headingMatchKeys.has(b) ? 1 : 0) - (headingMatchKeys.has(a) ? 1 : 0))
+    .map(([, section]) => section)
+
+  return { paragraph, sections: orderedSections }
 }
 
 /**
@@ -920,15 +965,13 @@ export async function buildStudyOverview(
  * description.
  */
 export async function getSourceExcerpt(item: LibraryItem, pageNumber: number, term: string): Promise<SourceExcerpt | undefined> {
-  let blob: Blob
+  let pageText: string
   try {
-    blob = await readFile(item.filePath)
+    const vdoc = await openLibraryDocument(item)
+    pageText = (await vdoc.getPageText(pageNumber)).flat
   } catch {
     return undefined
   }
-  const doc = await loadPdfDocument(blob)
-  const { items: textItems } = await getPageTextContent(doc, pageNumber)
-  const pageText = joinPageText(textItems)
   const found = findBestExcerpt(pageText, term)
   if (!found || found.relevance.tier === 'reject') return undefined
   return { libraryItemId: item.id, pageNumber, text: found.text, relevanceTier: found.relevance.tier }
@@ -989,16 +1032,14 @@ export async function backfillSourceRelevance(conceptId: string): Promise<Releva
   for (const [itemId, list] of byItem) {
     const item = await db.libraryItems.get(itemId)
     if (!item) continue
-    let blob: Blob
+    let vdoc: Awaited<ReturnType<typeof openLibraryDocument>>
     try {
-      blob = await readFile(item.filePath)
+      vdoc = await openLibraryDocument(item)
     } catch {
       continue
     }
-    const doc = await loadPdfDocument(blob)
     for (const source of list) {
-      const { items: textItems } = await getPageTextContent(doc, source.pageNumber as number)
-      const pageText = joinPageText(textItems)
+      const { flat: pageText } = await vdoc.getPageText(source.pageNumber as number)
       const term = source.sourceText || concept.name
       const relevance = scorePageRelevance(pageText, term)
       if (relevance.tier === 'reject') {
@@ -1019,4 +1060,129 @@ export async function backfillSourceRelevance(conceptId: string): Promise<Releva
   }
 
   return { ran: true, scored, removed }
+}
+
+// ---------------------------------------------------------------------
+// Retrieval Correction §3 — automatic Tier 1 search across the user's
+// ENTIRE uploaded library, not just whichever book they manually clicked
+// "Scan" on. This is the piece that lets buildStudyOverview's existing
+// multi-book merge actually see more than one book: that function has
+// always been able to merge sections across every `ConceptSource` a
+// concept has, but a book only ever produced one when either (a) it was
+// imported/re-scanned after the concept already existed (see
+// `extractConceptsFromPdf`, needle-per-existing-concept), or (b) the
+// person opened this exact concept and manually pressed Scan on that
+// exact book. A concept created or first opened *after* several books
+// were already in the library had no way to reach books in case (b)
+// without that manual step. This closes that gap from the concept's
+// side instead.
+// ---------------------------------------------------------------------
+
+const CONCEPT_LIBRARY_SCAN_KEY_PREFIX = 'conceptLibraryScan:v1:'
+
+/**
+ * Soft ceiling on pages read across one call — same purpose as
+ * `librarySearch.ts`'s own cap: without a persisted full-text index this
+ * can't be made instant for a very large library, so this keeps a first
+ * concept-open from hanging the UI rather than pretending the scan is
+ * unbounded. A book that gets cut off mid-scan is simply not marked
+ * "done" for this concept, so it's picked up again (from the start) next
+ * time this concept is opened.
+ */
+const MAX_AUTO_SCAN_PAGES_PER_CALL = 1500
+
+export interface ConceptLibraryScanResult {
+  ran: boolean
+  booksScanned: number
+  pagesScanned: number
+  sourcesLinked: number
+}
+
+/**
+ * For one concept, makes sure every uploaded book has actually been
+ * searched for THAT concept's own name/aliases at least once — without
+ * requiring the person to open each book and press Scan individually.
+ * Idempotent per (concept, book) via an `appSettings` marker (same
+ * throttling pattern as `backfillSourceRelevance`/
+ * `runAutoConceptCleanup`): a book already searched for this concept is
+ * never re-read, so this is safe to call unconditionally every time a
+ * concept's page opens — most calls after the first do zero PDF reads at
+ * all, they just confirm every book already has a marker.
+ *
+ * Deliberately scoped to THIS concept's own terms only — unlike
+ * `scanLibraryItemForConcepts` (all concepts against one book), this
+ * never re-reads a whole book's text against every other concept in the
+ * library, so opening one concept can't turn into a full-library re-index.
+ */
+export async function scanLibraryForConcept(concept: Concept): Promise<ConceptLibraryScanResult> {
+  const terms = [concept.name, ...concept.aliases].filter((t) => t.trim().length >= 3)
+  if (terms.length === 0) return { ran: false, booksScanned: 0, pagesScanned: 0, sourcesLinked: 0 }
+
+  const items = await db.libraryItems.toArray()
+  let booksScanned = 0
+  let pagesScanned = 0
+  let sourcesLinked = 0
+
+  for (const item of items) {
+    if (!item.pageCount) continue
+    if (pagesScanned >= MAX_AUTO_SCAN_PAGES_PER_CALL) break
+
+    const settingsKey = `${CONCEPT_LIBRARY_SCAN_KEY_PREFIX}${concept.id}:${item.id}`
+    const already = await db.appSettings.get(settingsKey)
+    if (already) continue
+
+    let vdoc: Awaited<ReturnType<typeof openLibraryDocument>>
+    try {
+      vdoc = await openLibraryDocument(item)
+    } catch {
+      await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), error: 'parse-failed' } })
+      continue
+    }
+
+    let linkedInBook = 0
+    let hitCap = false
+    for (let page = 1; page <= item.pageCount; page += 1) {
+      if (pagesScanned >= MAX_AUTO_SCAN_PAGES_PER_CALL) {
+        hitCap = true
+        break
+      }
+      const { flat: pageText } = await vdoc.getPageText(page)
+      if (!pageText.trim()) continue
+      pagesScanned += 1
+      const lowerPageText = pageText.toLowerCase()
+
+      for (const term of terms) {
+        if (!lowerPageText.includes(term.toLowerCase())) continue
+        const relevance = scorePageRelevance(pageText, term)
+        if (relevance.tier === 'reject') continue
+        const source = await addConceptSource({
+          // `sourceType: 'pdf'` is really "a page of an imported library
+          // item" regardless of the item's actual file format (PDF, EPUB,
+          // HTML) — matches every other caller in this file, and is what
+          // buildStudyOverview's candidate filter keys on.
+          conceptId: concept.id,
+          sourceType: 'pdf',
+          libraryItemId: item.id,
+          pageNumber: page,
+          sourceId: `${item.id}:${page}:${normalizeConceptName(term)}`,
+          sourceText: term,
+          relevanceTier: relevance.tier,
+          extractionQuality: detectExtractionQuality(pageText)
+        })
+        if (source) {
+          sourcesLinked += 1
+          linkedInBook += 1
+        }
+      }
+    }
+
+    if (!hitCap) {
+      await db.appSettings.put({ key: settingsKey, value: { ranAt: Date.now(), linked: linkedInBook } })
+      booksScanned += 1
+    } else {
+      break
+    }
+  }
+
+  return { ran: true, booksScanned, pagesScanned, sourcesLinked }
 }

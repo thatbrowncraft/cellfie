@@ -184,6 +184,46 @@ export function extractCoherentExcerpt(pageText: string, index: number, term: st
   return `${prefix}${pageText.slice(start, end).trim()}${suffix}`
 }
 
+/**
+ * Retrieval Correction §1/§2 — true when a detected heading IS the
+ * concept's own heading (the source book itself titled a section with
+ * this concept's name or alias), as opposed to the concept merely being
+ * mentioned somewhere on a page that also happens to have some other
+ * heading on it. This is the strongest possible relevance signal
+ * available (the source labeled the section itself), stronger than any
+ * body-text occurrence count, and it never needs to guess.
+ */
+export function headingMatchesTerm(heading: string, terms: string[]): boolean {
+  const key = heading.trim().toLowerCase().replace(/\s+/g, ' ')
+  if (!key) return false
+  return terms.some((term) => {
+    const t = term.trim().toLowerCase()
+    if (t.length < 3) return false
+    if (key === t) return true
+    const escaped = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const re = new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`)
+    return re.test(key)
+  })
+}
+
+/**
+ * Retrieval Correction §5 — cheap, deterministic detection of a PDF text
+ * layer that's come apart into single-letter/short fragments (an old
+ * scanned book's noisy OCR text layer producing "G i e m s a s t a i n"
+ * instead of "Giemsa stain"). Shape-only, same spirit as the other
+ * signals in this file: no dictionary, no OCR, just "does this look like
+ * real running prose or a pile of 1-2 letter fragments." Purely a
+ * ranking/display signal — it never rewrites or discards the extracted
+ * text, it only lets a caller prefer a cleaner source when one exists and
+ * say so honestly when none does.
+ */
+export function detectExtractionQuality(pageText: string): 'ok' | 'garbled' {
+  const tokens = pageText.match(/[A-Za-z]+/g) ?? []
+  if (tokens.length < 20) return 'ok' // too little text either way to call it garbled
+  const shortTokenCount = tokens.filter((t) => t.length <= 2).length
+  return shortTokenCount / tokens.length > 0.35 ? 'garbled' : 'ok'
+}
+
 export interface ScoredExcerpt {
   text: string
   relevance: PageRelevance

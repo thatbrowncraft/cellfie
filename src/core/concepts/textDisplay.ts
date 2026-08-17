@@ -124,6 +124,67 @@ const HEADING_WORDS_RE = `(${KNOWN_HEADINGS.map((h) => h.replace(/[.*+?^${}()|[\
 const HEADING_ALONE_RE = new RegExp(`^${HEADING_WORDS_RE}\\s*[:\\-]?\\s*(\\(.*?\\))?$`, 'i')
 const HEADING_INLINE_RE = new RegExp(`^${HEADING_WORDS_RE}\\s*:\\s*(.+)$`, 'i')
 
+// ---------------------------------------------------------------------
+// Retrieval Correction §1 — generic textbook heading detection.
+//
+// KNOWN_HEADINGS above recognizes a small, fixed vocabulary of lab-
+// manual/exam-style labels (Definition, Procedure, ...). That's useful
+// for that style of source, but it can never recognize a real textbook's
+// own section titles ("3.4 Photosynthesis", "Structure of DNA") because
+// those titles are different in every single book — no fixed list could
+// ever cover them, and hardcoding subject-specific titles ("Photosynthesis",
+// "DNA", "Probability") would be exactly the kind of one-subject special
+// case the architecture must not have.
+//
+// This detects the SHAPE a heading takes instead of what it says:
+//   - a numbered heading ("3.4 Photosynthesis", "12.1 Probability")
+//   - a short, standalone title-shaped line (no closing sentence
+//     punctuation, not too long) immediately followed by a real
+//     paragraph of prose
+// Deliberately conservative — a short capitalized line on its own is NOT
+// enough; it also has to be followed by something that reads like an
+// actual explanation, not another short line, so a run of captions/labels
+// doesn't get mistaken for a run of headings.
+// ---------------------------------------------------------------------
+const NUMBERED_HEADING_RE = /^(\d{1,2}(?:\.\d{1,2}){0,3})[.)]?\s+([A-Z][^.!?]{1,78})$/
+const TITLE_LIKE_LINE_RE = /^[A-Z][A-Za-z0-9()'’-]*(?:\s+[A-Za-z0-9()'’-]+){0,7}$/
+const SENTENCE_END_RE = /[.!?]$/
+
+function looksLikeParagraphStart(line: string | undefined): boolean {
+  if (!line) return false
+  const trimmed = line.trim()
+  if (!trimmed) return false
+  return trimmed.split(/\s+/).length >= 6
+}
+
+/**
+ * True when `line` is structurally shaped like a textbook heading. Never
+ * inspects what the heading actually says — only its shape and what
+ * follows it.
+ */
+export function looksLikeStructuralHeading(line: string, nextLine: string | undefined): boolean {
+  const trimmed = line.trim()
+  if (!trimmed || trimmed.length > 90) return false
+
+  const numbered = NUMBERED_HEADING_RE.exec(trimmed)
+  if (numbered) {
+    const title = numbered[2].trim()
+    return title.split(/\s+/).length <= 10 && !!title
+  }
+
+  if (SENTENCE_END_RE.test(trimmed)) return false
+  const wordCount = trimmed.split(/\s+/).length
+  if (wordCount < 1 || wordCount > 8) return false
+  if (!TITLE_LIKE_LINE_RE.test(trimmed)) return false
+  return looksLikeParagraphStart(nextLine)
+}
+
+/** The heading text itself, with any leading section number stripped. */
+export function structuralHeadingText(line: string): string {
+  const numbered = NUMBERED_HEADING_RE.exec(line.trim())
+  return numbered ? numbered[2].trim() : line.trim()
+}
+
 /**
  * Splits a block of source text into sections ONLY where the text
  * itself already labels them with a recognized heading. If no
@@ -139,9 +200,15 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
   let currentHeading = ''
   let currentLines: string[] = []
 
-  for (const line of lines) {
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i]
     const aloneMatch = HEADING_ALONE_RE.exec(line)
     const inlineMatch = !aloneMatch ? HEADING_INLINE_RE.exec(line) : null
+    // Only checked once neither known-vocabulary form matches, so this
+    // never changes behavior for lab-manual-style content — it only adds
+    // recognition for the textbook-heading shape those two never covered.
+    const structuralMatch = !aloneMatch && !inlineMatch ? looksLikeStructuralHeading(line, lines[i + 1]) : false
+
     if (aloneMatch) {
       if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
       currentHeading = aloneMatch[1].trim()
@@ -150,6 +217,10 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
       if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
       currentHeading = inlineMatch[1].trim()
       currentLines = inlineMatch[2].trim() ? [inlineMatch[2].trim()] : []
+    } else if (structuralMatch) {
+      if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
+      currentHeading = structuralHeadingText(line)
+      currentLines = []
     } else {
       currentLines.push(line)
     }
