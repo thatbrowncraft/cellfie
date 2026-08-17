@@ -14,7 +14,17 @@ export interface NavItem {
   path: string
   label: string
   icon: Icon
-  /** Shown in the mobile bottom tab bar (kept to the most-used 5, per platform convention). */
+  /**
+   * Navigation Parity Correction — the bottom tab bar and the hamburger
+   * drawer/sidebar are two interfaces onto the SAME eight destinations,
+   * not two different navigation sets. This used to gate the bottom bar
+   * down to 5 "most-used" items (Laboratory, Comparison Studio, and
+   * Settings were hamburger-only), so a person on mobile had no direct
+   * one-tap path to those three sections at all. Every item is now
+   * `true` — kept as a field (rather than deleted) so a future item can
+   * still opt out explicitly if the app ever grows past 8 sections,
+   * without another silent parity drift.
+   */
   inBottomNav: boolean
 }
 
@@ -33,14 +43,20 @@ export interface NavItem {
  * stays identical either way).
  *
  * Universal Search is reached via Cmd/Ctrl+K, not a nav item — per §10.7.
+ *
+ * Navigation Parity Correction — all eight sections are reachable
+ * directly from BOTH the bottom tab bar (mobile) and the hamburger
+ * drawer/sidebar; see `BottomNav.tsx` for how it fits all 8 on a phone
+ * width (horizontally scrollable icon strip, same active styling as the
+ * sidebar). Do not reintroduce a subset here — see `NavItem.inBottomNav`.
  */
 export const navItems: NavItem[] = [
   { path: '/', label: 'Dashboard', icon: House, inBottomNav: true },
   { path: '/library', label: 'Library', icon: BookOpen, inBottomNav: true },
   { path: '/concepts', label: 'Concepts', icon: GitBranch, inBottomNav: true },
   { path: '/organisms', label: 'Organism Explorer', icon: Bug, inBottomNav: true },
-  { path: '/laboratory', label: 'Laboratory', icon: Flask, inBottomNav: false },
-  { path: '/comparison', label: 'Comparison Studio', icon: Scales, inBottomNav: false },
+  { path: '/laboratory', label: 'Laboratory', icon: Flask, inBottomNav: true },
+  { path: '/comparison', label: 'Comparison Studio', icon: Scales, inBottomNav: true },
   { path: '/notes', label: 'Notes', icon: NotePencil, inBottomNav: true },
-  { path: '/settings', label: 'Settings', icon: Gear, inBottomNav: false }
+  { path: '/settings', label: 'Settings', icon: Gear, inBottomNav: true }
 ]
