@@ -119,16 +119,25 @@ export function ConceptDetailPage() {
   // settled snapshot, not re-derived on every intermediate write.
   const retrievalSettledForConceptId = useRef<string | undefined>(undefined)
   const [retrievalGeneration, setRetrievalGeneration] = useState(0)
+  // Product decision — loading is fine, a premature fallback is not:
+  // this stays true for the WHOLE span from "concept opened" to "one
+  // complete settled snapshot obtained", so the UI (below) can show an
+  // honest "searching your library" state instead of ever rendering the
+  // MeSH/curated fallback while the uploaded-book scan is still running.
+  const [libraryScanInProgress, setLibraryScanInProgress] = useState(false)
   useEffect(() => {
     if (!concept) return
     let cancelled = false
+    setLibraryScanInProgress(true)
     Promise.all([backfillSourceRelevance(concept.id), scanLibraryForConcept(concept)]).finally(() => {
       if (cancelled) return
       retrievalSettledForConceptId.current = concept.id
       setRetrievalGeneration((g) => g + 1)
+      setLibraryScanInProgress(false)
     })
     return () => {
       cancelled = true
+      setLibraryScanInProgress(false)
     }
   }, [concept?.id])
 
@@ -544,8 +553,12 @@ export function ConceptDetailPage() {
                       <Globe size={14} aria-hidden />
                       Scientific overview
                     </h3>
-                    {loadingStudyOverview && (
-                      <p className="mb-2 font-ui text-caption text-ink-tertiary">Checking your uploaded books first…</p>
+                    {(libraryScanInProgress || loadingStudyOverview) && (
+                      <p className="mb-2 font-ui text-caption text-ink-tertiary">
+                        {libraryScanInProgress
+                          ? 'Searching your library and reading relevant sections from your books…'
+                          : `Combining material from ${stats.bookCount || 'your'} book${stats.bookCount === 1 ? '' : 's'}…`}
+                      </p>
                     )}
                     {loadingOnlineKnowledge && (
                       <p className="font-ui text-caption text-ink-tertiary">Checking reliable scientific sources…</p>
@@ -626,7 +639,31 @@ export function ConceptDetailPage() {
                   </div>
                 )}
 
-                {studyMode === 'detailed' && !bookLesson && !curatedLesson && (
+                {/* Retrieval Diagnostic Correction — the honest MeSH/
+                    PubChem fallback below must only ever render once the
+                    uploaded-library scan AND the Study Overview build for
+                    THIS concept have actually finished. Rendering it the
+                    instant `bookLesson`/`curatedLesson` are still
+                    `undefined` — which is also their value while loading
+                    — is exactly how a book that genuinely has strong
+                    material could get silently outraced by "MeSH
+                    responded first". Loading is fine and expected (up to
+                    ~30-60s for a large library); a premature fallback is
+                    not. */}
+                {studyMode === 'detailed' && !bookLesson && !curatedLesson && (libraryScanInProgress || loadingStudyOverview) && concept && (
+                  <div className="rounded-md border border-border bg-surface p-6 text-center">
+                    <p className="font-body text-body text-ink-primary">
+                      {libraryScanInProgress ? 'Searching your library…' : 'Reading relevant sections from your books…'}
+                    </p>
+                    <p className="mt-1 font-ui text-caption text-ink-tertiary">
+                      {stats.bookCount > 0
+                        ? `Combining material from ${stats.bookCount} book${stats.bookCount === 1 ? '' : 's'}…`
+                        : 'Checking your uploaded library for relevant material…'}
+                    </p>
+                  </div>
+                )}
+
+                {studyMode === 'detailed' && !bookLesson && !curatedLesson && !libraryScanInProgress && !loadingStudyOverview && (
                   <div className="flex flex-col gap-4">
                     {concept && (
                       <EditableSection
