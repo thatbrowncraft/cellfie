@@ -401,199 +401,165 @@ Deduplication
     ↓
 Study View
 
-Online scientific resources are separate from the local book system and may require an internet connection.
-📴 Offline-First
-Cellfie is designed to remain useful without requiring a constant internet connection.
-The student's:
-imported books
-indexed study material
-concepts
-notes
-personal edits
-memory aids
-can be stored locally in the browser environment.
-Cellfie is also structured as a Progressive Web App, allowing it to behave like an installable application on supported devices.
-Some external scientific reference features naturally require internet access.
-📖 Importing Books
-Cellfie is designed to support multiple types of digital study material.
-PDF
-PDF books can be imported and processed for:
-text extraction
-page information
-section detection
-concept retrieval
-reading
-EPUB
-EPUB books can be imported as flowing digital books.
-EPUB content can retain:
-chapter structure
-headings
-formatted text
-embedded images
-The EPUB reader can display the imported content while the extracted text is also made available to the concept and search systems.
-XHTML / HTML
-Structured XHTML and HTML documents can also be imported.
-HTML content can be sanitized before rendering, keeping imported markup isolated from application functionality.
-Embedded images can be retained where they are available inside the imported document.
-The long-term goal is for Cellfie to accept the formats students already use instead of forcing every resource into one format.
-🔍 Source-Aware Learning
-Cellfie keeps track of where retrieved study material comes from.
-Where available, relevant sections can retain:
-book title
-section heading
-page number
-source type
-reference information
-This makes it easier for students to return to the original textbook.
-Cellfie should help students find information.
-The textbook remains the source.
-🧬 Beyond Microbiology
-Cellfie was initially designed around microbiology education, but its underlying architecture is broader.
-The same system can be used for other subjects.
-For example, a student could import an aptitude book and create concepts such as:
-Probability
-Permutation and Combination
-Profit and Loss
-Time and Work
-Percentages
-A student studying biology could instead create:
-Cell Biology
-Genetics
-Immunology
-Molecular Biology
-Biochemistry
-The concept engine is built around the student's uploaded study material rather than a fixed subject database.
-🎯 The Core Idea
-Cellfie follows one simple principle:
-Don't make students adapt their study material to the app. Make the app adapt to the student's study material.
-Your books.
-Your concepts.
-Your notes.
-Your revision.
-Your references.
-Your way of learning.
-All in one place.
-🏗️ Technical Architecture
-At a high level, Cellfie's learning pipeline looks like this:
-                    ┌────────────────────┐
-                    │   Student Library  │
-                    └─────────┬──────────┘
-                              ↓
-                    ┌────────────────────┐
-                    │   Import Engine    │
-                    │ PDF / EPUB / HTML  │
-                    └─────────┬──────────┘
-                              ↓
-                    ┌────────────────────┐
-                    │ Text & Structure   │
-                    │     Extraction     │
-                    └─────────┬──────────┘
-                              ↓
-                    ┌────────────────────┐
-                    │ Local Library      │
-                    │ Index              │
-                    └─────────┬──────────┘
-                              ↓
-                    ┌────────────────────┐
-                    │ Concept Retrieval  │
-                    └─────────┬──────────┘
-                              ↓
-             ┌────────────────┴────────────────┐
-             ↓                                 ↓
-     ┌─────────────────┐              ┌─────────────────┐
-     │ Uploaded Books  │              │ Scientific      │
-     │ & Study Material│              │ References      │
-     └────────┬────────┘              └────────┬────────┘
-              ↓                                ↓
-             └────────────────┬───────────────┘
-                              ↓
-                    ┌────────────────────┐
-                    │ Study Presentation │
-                    └────────────────────┘
+# 🛠️ Technology
 
-The architecture keeps the student's personal library separate from external scientific resources.
-🛠️ Technology
 Cellfie is built as a client-side web application using open-source and browser-based technologies.
-Core technologies
-React
-TypeScript
-Vite
-Dexie
-IndexedDB
-PDF.js
-EPUB processing
-XHTML / HTML parsing
-Progressive Web App architecture
-Phosphor Icons
-Tailwind CSS
-The core uploaded-book workflow does not depend on a paid AI API.
+
+## Core Technologies
+
+- ⚛️ React
+- 🔷 TypeScript
+- ⚡ Vite
+- 🗄️ Dexie
+- 💾 IndexedDB
+- 📄 PDF.js
+- 📚 EPUB processing
+- 🌐 XHTML / HTML parsing
+- 📱 Progressive Web App architecture
+- 🎨 Phosphor Icons
+- 🌿 Tailwind CSS
+
+## 💳 No Paid AI Dependency
+
+The core uploaded-book workflow does **not** depend on a paid AI API.
+
 Cellfie's local study pipeline is designed to work directly with the student's own imported material.
-🌱 Open Development
+
+---
+
+# 🌱 Open Development
+
 Cellfie is an actively developed project.
+
 The application is being built incrementally, with each part of the study workflow being tested against real student use cases.
-Current development areas include:
-📚 multi-format book importing
-🔍 local textbook search
-🧠 multi-book concept retrieval
-📖 textbook section detection
-📝 personal editing
-🧠 revision tools
-🔬 scientific references
-🦠 organism learning
-🧪 laboratory learning
-⚖️ comparison tools
-📴 offline-first functionality
-📱 mobile usability
-♿ accessibility
+
+## Current Development Areas
+
+- 📚 Multi-format book importing
+- 🔍 Local textbook search
+- 🧠 Multi-book concept retrieval
+- 📖 Textbook section detection
+- 📝 Personal editing
+- 🧠 Revision tools
+- 🔬 Scientific references
+- 🦠 Organism learning
+- 🧪 Laboratory learning
+- ⚖️ Comparison tools
+- 📴 Offline-first functionality
+- 📱 Mobile usability
+- ♿ Accessibility
+
 Some features are still under active development and may change as the application evolves.
-🚀 Getting Started
-Clone the repository:
-git clone https://github.com/thatbrowncraft/cellfie.git
-Move into the project:
-cd cellfie
-Install dependencies:
-npm install
-Start the development server:
-npm run dev
+
+---
+
+# 🚀 Getting Started
+
+## Clone the Repository
+
+`git clone https://github.com/thatbrowncraft/cellfie.git`
+
+## Move Into the Project
+
+`cd cellfie`
+
+## Install Dependencies
+
+`npm install`
+
+## Start the Development Server
+
+`npm run dev`
+
 Then open the local URL provided by Vite, usually:
-http://localhost:5173
-🏭 Production Build
-Create a production build:
-npm run build
-Preview the production build:
-npm run preview
-🧪 Development Status
+
+`http://localhost:5173`
+
+---
+
+# 🏭 Production Build
+
+## Create a Production Build
+
+`npm run build`
+
+## Preview the Production Build
+
+`npm run preview`
+
+---
+
+# 🧪 Development Status
+
 Cellfie is currently under active development.
+
 The application already includes the foundations for:
-personal book libraries
-multi-format importing
-concept-based retrieval
-multi-book study material
-textbook-aware section detection
-Core Concept
-Quick Revision
-Exam Focus
-research references
-personal notes
-memory aids
-editing and restoring study sections
-organism exploration
-laboratory learning
-comparison tools
-responsive navigation
-PWA functionality
-Some areas are still being refined, especially around large-library processing, extraction quality, document structure, and retrieval accuracy.
-🤝 Contributions & Feedback
+
+- 📚 Personal book libraries
+- 📥 Multi-format importing
+- 🧠 Concept-based retrieval
+- 📖 Multi-book study material
+- 🔎 Textbook-aware section detection
+- 🧠 Core Concept
+- ⚡ Quick Revision
+- 🎯 Exam Focus
+- 🔬 Research references
+- 📝 Personal notes
+- 💡 Memory aids
+- ✏️ Editing and restoring study sections
+- 🦠 Organism exploration
+- 🧪 Laboratory learning
+- ⚖️ Comparison tools
+- 📱 Responsive navigation
+- 📲 PWA functionality
+
+## 🔧 Areas Still Being Refined
+
+Some areas are still being refined, especially around:
+
+- Large-library processing
+- Extraction quality
+- Document structure
+- Retrieval accuracy
+- Multi-book synthesis
+- Mobile interaction
+
+---
+
+# 🤝 Contributions & Feedback
+
 Cellfie is currently being developed as a student-focused project.
+
 Ideas, bug reports, usability feedback, and thoughtful suggestions are welcome.
-If something feels confusing, slow, inaccurate, or simply annoying to use, that feedback is useful.
+
+If something feels:
+
+- confusing
+- slow
+- inaccurate
+- difficult to navigate
+- or simply annoying to use
+
+that feedback is useful.
+
 The whole point of Cellfie is to make studying easier.
-💚 Why Cellfie Exists
+
+---
+
+# 📃 Why Cellfie Exists
+
 Studying should not mean opening twelve tabs, five PDFs, two notebooks, and then wondering where the one paragraph you actually needed disappeared to.
+
 Cellfie is being built to make that mess a little less messy.
-Bring your books.
-Bring your notes.
-Bring your syllabus.
-Bring your questions.
-Cellfie helps you study from them.
-🧬📚
+
+### Bring your books. 📚
+
+### Bring your notes. 📝
+
+### Bring your syllabus. 📖
+
+### Bring your questions. ❓
+
+## Cellfie helps you study from them.
+
+🧬📚🤍
