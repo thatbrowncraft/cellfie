@@ -20,8 +20,10 @@ import {
   getCachedStudyOverview,
   getCuratedLesson,
   getFirstAndLastEncountered,
+  getSavedContextSelection,
   isLikelyOnline,
   libraryItemMatchesStudyContexts,
+  saveContextSelection,
   scanLibraryForConcept,
   scanLibraryItemForConcepts,
   type EuropePmcArticle,
@@ -43,6 +45,25 @@ import { EditableSection } from './components/EditableSection'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
 import { ExamToolsPanel } from './components/ExamToolsPanel'
 import { MemoryAidCard } from './components/MemoryAidCard'
+
+// Background Enrichment Correction — a rough, order-of-magnitude content
+// score used ONLY to decide whether a freshly rebuilt Core Concept
+// (triggered by the background library scan finding more/changed
+// sources) is actually an improvement over what's already on screen.
+// Sections dominate the score (a lesson with more real sections is
+// almost always better), the paragraph is a smaller tie-breaker, and
+// total body length breaks remaining ties in favor of more substantial
+// text. This is deliberately crude — it never needs to be exact, only
+// good enough to block an obvious regression (e.g. a rescan that
+// happens to crowd out a previously-selected book's section via the
+// round-robin slot allocation in buildStudyOverview) from silently
+// replacing a perfectly good saved lesson.
+function studyOverviewContentScore(overview: StudyOverview | undefined): number {
+  if (!overview) return -1
+  const bodyLength =
+    overview.sections.reduce((sum, s) => sum + s.body.length, 0) + (overview.paragraph?.text.length ?? 0)
+  return overview.sections.length * 1000 + (overview.paragraph ? 500 : 0) + bodyLength
+}
 
 /**
  * Concept Detail — Sprint 3 §8/§9/§10/§13. Overview (description or "No
@@ -155,6 +176,50 @@ export function ConceptDetailPage() {
       { replace: true }
     )
   }
+
+  // Context Persistence Correction — the URL already keeps a selection
+  // alive across refresh/back-forward (see `setSelectedContexts` above);
+  // this fills the remaining gap where the student opens this concept
+  // fresh (e.g. from the Concepts list, whose links carry no `contexts`
+  // param) and should still land back on whatever context they were
+  // last using here, instead of silently resetting to "All contexts".
+  // Guarded by concept id so it only ever runs the hydration check once
+  // per concept per mount, and it never overrides a selection the URL
+  // already carries.
+  const contextPrefHydratedFor = useRef<string | undefined>(undefined)
+  useEffect(() => {
+    if (!concept) return
+    if (rawContexts) {
+      // URL already carries an explicit selection — nothing to hydrate,
+      // and this IS this concept's "last used" selection going forward.
+      contextPrefHydratedFor.current = concept.id
+      return
+    }
+    if (contextPrefHydratedFor.current === concept.id) return
+    let cancelled = false
+    getSavedContextSelection(concept.id).then((saved) => {
+      if (cancelled) return
+      contextPrefHydratedFor.current = concept.id
+      if (saved && saved.length > 0) setSelectedContexts(saved)
+    })
+    return () => {
+      cancelled = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [concept?.id])
+
+  // Persists every real selection change (including an explicit "All
+  // contexts") so the hydration effect above has something to restore
+  // next time. Waits for hydration to have run first (see the ref guard)
+  // so the initial default state can never race ahead and overwrite a
+  // real saved preference before it's had a chance to load.
+  useEffect(() => {
+    if (!concept) return
+    if (contextPrefHydratedFor.current !== concept.id) return
+    saveContextSelection(concept.id, selectedContextIds).catch((err) => {
+      console.warn(`[ConceptDetailPage:${concept.name}] failed to persist context selection`, err)
+    })
+  }, [concept?.id, selectedContextKey])
 
   function toggleStudyContext(contextId: string) {
     const normalized = contextId.trim().toLowerCase()
@@ -459,7 +524,14 @@ export function ConceptDetailPage() {
       )
     })()
       .then((overview) => {
-        if (!cancelled) setStudyOverview(overview)
+        if (cancelled) return
+        // Background Enrichment Correction — never let a background
+        // rebuild for the SAME concept + context regress a lesson the
+        // student is already looking at. The very first build for a
+        // given concept/context (nothing saved yet) always applies; any
+        // later one only replaces the visible lesson when it's at least
+        // as strong, per `studyOverviewContentScore` above.
+        setStudyOverview((prev) => (studyOverviewContentScore(overview) >= studyOverviewContentScore(prev) ? overview : prev))
       })
       .finally(() => {
         if (!cancelled) setLoadingStudyOverview(false)
