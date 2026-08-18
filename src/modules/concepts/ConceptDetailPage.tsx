@@ -55,8 +55,8 @@ import { MemoryAidCard } from './components/MemoryAidCard'
 // total body length breaks remaining ties in favor of more substantial
 // text. This is deliberately crude — it never needs to be exact, only
 // good enough to block an obvious regression (e.g. a rescan that
-// happens to crowd out a previously-selected book's section via the
-// round-robin slot allocation in buildStudyOverview) from silently
+// happens to crowd out a previously-selected book's section via
+// buildStudyOverview's own per-book budget/selection) from silently
 // replacing a perfectly good saved lesson.
 function studyOverviewContentScore(overview: StudyOverview | undefined): number {
   if (!overview) return -1
