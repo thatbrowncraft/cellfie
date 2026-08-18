@@ -935,7 +935,16 @@ function countWords(text: string): number {
  * or append to the first — conflicting sources stay visible via
  * References instead of being silently merged into one paragraph.
  */
-function libraryItemMatchesStudyContexts(
+/**
+ * Context Retrieval Correction — the single source of truth for "does
+ * this book belong to the selected context set", shared by every layer
+ * that needs to agree on the same eligible-books collection: the actual
+ * lesson-building filter in `buildStudyOverview` below, AND the
+ * ConceptDetailPage UI's own displayed book count / first-last-
+ * encountered lookup. Exported so the UI layer never has to re-derive
+ * its own (and potentially diverging) copy of this rule.
+ */
+export function libraryItemMatchesStudyContexts(
   item: LibraryItem | undefined,
   contextIds: string[]
 ): boolean {
