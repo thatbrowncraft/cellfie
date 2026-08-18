@@ -1560,6 +1560,50 @@ export async function buildStudyOverview(
 
 const STUDY_OVERVIEW_CACHE_KEY_PREFIX = 'conceptStudyOverviewCache:v1:'
 
+
+const STUDY_OVERVIEW_SAVED_KEY_PREFIX = 'conceptStudyOverviewSaved:v1:'
+
+interface SavedStudyOverviewEntry {
+  overview: StudyOverview
+  savedAt: number
+}
+
+function studyOverviewContextKey(contextIds: string[]): string {
+  return contextIds
+    .map((id) => id.trim().toLowerCase())
+    .filter(Boolean)
+    .sort()
+    .join(',') || 'all'
+}
+
+function studyOverviewSavedKey(conceptId: string, contextIds: string[]): string {
+  return `${STUDY_OVERVIEW_SAVED_KEY_PREFIX}${conceptId}:${studyOverviewContextKey(contextIds)}`
+}
+
+/** Last known-good Core Concept snapshot. Deliberately independent of the
+ * current source fingerprint so adding books cannot erase useful content. */
+export async function getSavedStudyOverview(
+  conceptId: string,
+  contextIds: string[] = []
+): Promise<StudyOverview | undefined> {
+  const record = await db.appSettings.get(studyOverviewSavedKey(conceptId, contextIds))
+  const entry = record?.value as SavedStudyOverviewEntry | undefined
+  return entry?.overview
+}
+
+/** Persist a Core Concept that the student explicitly chose to keep. */
+export async function saveStudyOverview(
+  conceptId: string,
+  contextIds: string[],
+  overview: StudyOverview
+): Promise<void> {
+  await db.appSettings.put({
+    key: studyOverviewSavedKey(conceptId, contextIds),
+    value: { overview, savedAt: Date.now() } satisfies SavedStudyOverviewEntry
+  })
+}
+
+
 interface StudyOverviewCacheEntry {
   fingerprint: string
   overview: StudyOverview
