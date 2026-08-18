@@ -681,6 +681,16 @@ export function ConceptDetailPage() {
   // book count. Kept separate from `stats` above (which still backs the
   // Books/Pages/Highlights/Notes summary cards as whole-concept totals)
   // so this fix stays scoped to the specific text that was wrong.
+  // This status is about the books eligible for the CURRENT context
+  // selection, not merely the books that already happen to have a
+  // ConceptSource row. A tagged book must count even before its background
+  // scan has linked the first matching page, otherwise e.g. Biology (2) +
+  // Microbiology (4) can misleadingly say "Combining material from 5 books"
+  // while six books are actually being searched.
+  const contextBookCount = useMemo(
+    () => items.filter((item) => libraryItemMatchesStudyContexts(item, selectedContextIds)).length,
+    [items, selectedContextIds]
+  )
   const contextStats = computeConceptStats(concept, contextEligibleSources)
 
   async function handleScan(item: LibraryItem) {
@@ -882,7 +892,7 @@ export function ConceptDetailPage() {
                       <p className="mb-2 font-ui text-caption text-ink-tertiary">
                         {libraryScanInProgress
                           ? 'Searching your library and reading relevant sections from your books…'
-                          : `Combining material from ${contextStats.bookCount || 'your'} book${contextStats.bookCount === 1 ? '' : 's'}…`}
+                          : `Combining material from ${contextBookCount || 'your'} book${contextBookCount === 1 ? '' : 's'}…`}
                       </p>
                     )}
                     {loadingOnlineKnowledge && (
@@ -982,7 +992,7 @@ export function ConceptDetailPage() {
                     </p>
                     <p className="mt-1 font-ui text-caption text-ink-tertiary">
                       {contextStats.bookCount > 0
-                        ? `Combining material from ${contextStats.bookCount} book${contextStats.bookCount === 1 ? '' : 's'}…`
+                        ? `Combining material from ${contextBookCount} book${contextBookCount === 1 ? '' : 's'}…`
                         : 'Checking your selected library contexts for relevant material…'}
                     </p>
                   </div>
