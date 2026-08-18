@@ -18,6 +18,8 @@ import {
   fetchOnlineKnowledge,
   fetchVisualReferences,
   getCachedStudyOverview,
+  getSavedStudyOverview,
+  saveStudyOverview,
   getCuratedLesson,
   getFirstAndLastEncountered,
   getSavedContextSelection,
@@ -428,16 +430,6 @@ export function ConceptDetailPage() {
   )
   const relatedConcepts = useMemo(() => relatedEntries.map((e) => e.concept), [relatedEntries])
 
-  // Concept Hub Refinement — derived purely from data already in memory
-  // (onlineSections from the Learn tab fetch): no new network calls, no
-  // read of the relationship table (Exam Focus's compare candidates
-  // come from ExamToolsPanel's own `relatedEntries` prop directly, not
-  // through this function — see examTools.ts's own doc comment).
-  const examTools = useMemo(
-    () => (concept ? buildExamTools(onlineSections) : { keyPoints: [], importantValues: [] }),
-    [concept, onlineSections]
-  )
-
   // Learn tab, Detailed Study mode — five fixed modules (Definition &
   // Biological Scope / Classification & Taxonomic Hierarchy / Structure
   // & Molecular Composition / Biological Mechanism & Function /
@@ -471,29 +463,43 @@ export function ConceptDetailPage() {
   // not recomputed on every intermediate source-linking write.
   const [studyOverview, setStudyOverview] = useState<StudyOverview | undefined>(undefined)
   const [loadingStudyOverview, setLoadingStudyOverview] = useState(false)
+  const [studyOverviewSaved, setStudyOverviewSaved] = useState(false)
 
-  // Refresh/lifecycle correction: hydrate an unchanged settled Core Concept
-  // immediately from IndexedDB before the background library scan completes.
-  // The scan still runs afterwards so newly added/changed sources can
-  // invalidate and rebuild the lesson, but an ordinary refresh never throws
-  // away a perfectly good saved lesson and makes the student wait again.
+  // Restore the last known-good lesson independently of the current source
+  // fingerprint. Adding books changes the fingerprint, but it must not turn
+  // an already useful lesson back into a loading state.
   useEffect(() => {
     if (!concept) return
     let cancelled = false
-
     setStudyOverview(undefined)
+    setStudyOverviewSaved(false)
 
     ;(async () => {
       const currentSources = await db.conceptSources.where('conceptId').equals(concept.id).toArray()
-      return getCachedStudyOverview(concept, currentSources, selectedContextIds)
+      const [savedOverview, currentCache] = await Promise.all([
+        getSavedStudyOverview(concept.id, selectedContextIds),
+        getCachedStudyOverview(concept, currentSources, selectedContextIds)
+      ])
+      return { savedOverview, currentCache }
     })()
-      .then((cachedOverview) => {
-        if (cancelled || !cachedOverview) return
-        console.log(`[ConceptDetailPage:${concept.name}] Restored settled Core Concept from cache`)
-        setStudyOverview(cachedOverview)
+      .then(async ({ savedOverview, currentCache }) => {
+        if (cancelled) return
+        const savedScore = studyOverviewContentScore(savedOverview)
+        const cacheScore = studyOverviewContentScore(currentCache)
+        const best = cacheScore >= savedScore ? currentCache : savedOverview
+
+        if (best) {
+          setStudyOverview(best)
+          setStudyOverviewSaved(Boolean(savedOverview && savedScore >= studyOverviewContentScore(best)))
+        }
+
+        // Do not silently turn the transient build cache into a user-kept
+        // snapshot. The student explicitly saves the first good result with
+        // the button below; only an already-saved snapshot can be replaced
+        // automatically by stronger background enrichment.
       })
       .catch((err) => {
-        console.warn(`[ConceptDetailPage:${concept.name}] settled Core Concept cache read failed`, err)
+        console.warn(`[ConceptDetailPage:${concept.name}] Core Concept persistence read failed`, err)
       })
 
     return () => {
@@ -523,7 +529,7 @@ export function ConceptDetailPage() {
         selectedContextIds
       )
     })()
-      .then((overview) => {
+      .then(async (overview) => {
         if (cancelled) return
         // Background Enrichment Correction — never let a background
         // rebuild for the SAME concept + context regress a lesson the
@@ -532,6 +538,12 @@ export function ConceptDetailPage() {
         // later one only replaces the visible lesson when it's at least
         // as strong, per `studyOverviewContentScore` above.
         setStudyOverview((prev) => (studyOverviewContentScore(overview) >= studyOverviewContentScore(prev) ? overview : prev))
+
+        const saved = await getSavedStudyOverview(concept.id, selectedContextIds)
+        if (saved && studyOverviewContentScore(overview) > studyOverviewContentScore(saved)) {
+          await saveStudyOverview(concept.id, selectedContextIds, overview)
+          if (!cancelled) setStudyOverviewSaved(true)
+        }
       })
       .finally(() => {
         if (!cancelled) setLoadingStudyOverview(false)
@@ -564,6 +576,14 @@ export function ConceptDetailPage() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [concept?.id, bookLesson, curatedLesson])
+
+  // Exam Focus is built from the same uploaded-book lesson shown in Core
+  // Concept. Online sections remain the fallback only when no book lesson
+  // exists, so Exam Focus never requires a second scan or invents facts.
+  const examTools = useMemo(
+    () => (concept ? buildExamTools(onlineSections, bookLesson) : { keyPoints: [], importantValues: [] }),
+    [concept, onlineSections, bookLesson]
+  )
 
   // Concept 2.0 architecture change §6 — Research & Further Reading,
   // the ONLY place a Europe PMC research article's title/journal/link
@@ -701,6 +721,12 @@ export function ConceptDetailPage() {
     } finally {
       setScanning(null)
     }
+  }
+
+  async function handleSaveStudyOverview() {
+    if (!concept || !studyOverview) return
+    await saveStudyOverview(concept.id, selectedContextIds, studyOverview)
+    setStudyOverviewSaved(true)
   }
 
   async function handleDelete() {
@@ -952,6 +978,21 @@ export function ConceptDetailPage() {
                     — never faked. */}
                 {(studyMode === 'detailed' && (bookLesson || curatedLesson)) && concept && (
                   <div className="flex flex-col gap-4">
+                    {bookLesson && (
+                      <div className="flex items-center justify-between gap-3 rounded-md border border-border bg-surface-raised px-4 py-3">
+                        <p className="font-ui text-caption text-ink-secondary">
+                          {studyOverviewSaved ? 'Study content saved. New books can still enrich it in the background.' : 'Found useful study content from your books.'}
+                        </p>
+                        <Button
+                          variant={studyOverviewSaved ? 'secondary' : 'primary'}
+                          size="small"
+                          onClick={() => void handleSaveStudyOverview()}
+                          disabled={studyOverviewSaved}
+                        >
+                          {studyOverviewSaved ? 'Saved ✓' : 'Save study content'}
+                        </Button>
+                      </div>
+                    )}
                     <EditableSection
                       conceptId={concept.id}
                       sectionKey="core-concept"
