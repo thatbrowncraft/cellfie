@@ -15,6 +15,8 @@ import { openLibraryDocument } from './documentText'
 import { addConceptSource, getOrCreateConcept } from './service'
 import { isLikelyStopwordPhrase, isPlausibleConceptName, isStopwordToken, normalizeConceptName } from './normalize'
 import {
+  DEFAULT_TRIM_MAX_SENTENCES,
+  DEFAULT_TRIM_MAX_WORDS,
   detectExtractionQuality,
   detectQuestionBankContent,
   findBestExcerpt,
@@ -774,7 +776,28 @@ export interface SourceExcerpt {
   relevanceTier: 'high' | 'relevant' | 'weak'
 }
 
-const MAX_STUDY_SOURCE_PAGES = 8
+// Content Quality Correction §1 — a single fixed page budget treated
+// "Probability has three explanatory paragraphs" and "Photosynthesis
+// has an entire chapter across four books" identically, which is the
+// direct cause of Photosynthesis-style concepts coming out as one or
+// two thin paragraphs despite substantial uploaded material. The budget
+// is now depth-aware: it still starts at the old floor (so a compact
+// concept behaves exactly as before) but scales up with how much
+// genuinely strong (`high`/`relevant`) source material actually exists,
+// up to a bounded ceiling so one concept can never trigger an unbounded
+// number of page reads.
+const MIN_STUDY_SOURCE_PAGES = 8
+const MAX_STUDY_SOURCE_PAGES_CEILING = 40
+
+// Content Quality Correction §5/§6 — once a book's strongest pages for
+// this concept are chosen, its own directly-adjacent pages (inside that
+// span, not beyond it) are allowed in too even when their OWN tier is
+// only `weak` — a mid-chapter page can legitimately have looser/fewer
+// occurrences than the pages around it while still being the direct
+// continuation of the same explanatory section. Bounded per book so a
+// long, sparsely-relevant book can't gap-fill its way into dominating
+// the page budget.
+const GAP_FILL_ALLOWANCE_PER_BOOK = 6
 
 // A leading, unheaded block only qualifies as the Study Overview
 // paragraph if it reads like real prose, not a fragment ("DNA ... see
@@ -867,7 +890,15 @@ const MAX_NON_OWN_HEADING_FIRST_MENTION_FRACTION = 0.4
 // merged sections just because each one individually cleared the bar
 // above; the lesson stays a focused explanation by keeping only the
 // strongest few, ranked by how directly each section teaches the concept.
-const MAX_LESSON_SECTIONS = 6
+//
+// Content Quality Correction §2/§7 — this is now depth-aware within a
+// bounded range rather than a single fixed number: a concept whose own
+// source material genuinely has several distinct book-titled sections
+// (5.1/5.2/5.3-style subsections, or their own Definition/Procedure-
+// style headings) is allowed more lesson sections than a concept that
+// only has one or two, capped so a noisy concept still can't sprawl.
+const MAX_LESSON_SECTIONS_BASE = 6
+const MAX_LESSON_SECTIONS_CEILING = 10
 
 const GARBLED_SECTION_PENALTY = 500
 
@@ -996,28 +1027,111 @@ export async function buildStudyOverview(
         (a.pageNumber! - b.pageNumber!)
     )
 
-  // Multi-book merging — Retrieval Correction §B. A plain global slice
-  // of the top MAX_STUDY_SOURCE_PAGES pages let one book's several
-  // strong pages crowd out every other book that has its own genuinely
-  // relevant section, which is exactly the "Book A OR B OR C" behavior
-  // the brief calls out. This keeps the same per-page tier/quality/page
-  // ordering *within* each book, but round-robins ACROSS books so a
-  // second or third book with real material always gets a chance to
-  // contribute, instead of only ever appearing when the strongest book
-  // runs out of high-tier pages.
+  // Multi-book merging — Retrieval Correction §B, made depth-aware and
+  // contiguity-preserving (Content Quality Correction §2/§3/§4). The old
+  // fixed-8-page global round-robin had two separate problems:
+  //   1. it treated "one short explanation" and "a whole textbook
+  //      chapter" as needing the same page budget, so a deep concept
+  //      like Photosynthesis only ever got a handful of its available
+  //      pages read at all; and
+  //   2. it took at most ONE page per book per round, which chops a
+  //      book's own multi-page section into disconnected single-page
+  //      fragments the moment a second book also has any material —
+  //      "Book A → paragraph, Book B → paragraph, Book C → paragraph"
+  //      with no continuity, even though Book A's pages were actually
+  //      one continuous explanation.
+  // This keeps the original intent (every represented book gets a real
+  // chance, no single book can crowd out every other) but allocates a
+  // depth-scaled budget proportionally per book, then spends each
+  // book's share on the CONTIGUOUS run of pages around its strongest
+  // page — reading order, not just relevance-tier order — plus a small
+  // gap-fill allowance for weak-tier pages strictly between two already-
+  // strong pages of the same book, so an actual chapter section (which
+  // routinely dips to `weak` on a transitional page) gets read whole.
   const byBook = new Map<string, ConceptSource[]>()
   for (const s of rankedCandidates) {
     const list = byBook.get(s.libraryItemId as string) ?? []
     list.push(s)
     byBook.set(s.libraryItemId as string, list)
   }
-  const bookQueues = Array.from(byBook.values())
+  const bookIds = Array.from(byBook.keys())
+  const totalStrongPages = rankedCandidates.length
+  const pageBudget = Math.min(MAX_STUDY_SOURCE_PAGES_CEILING, Math.max(MIN_STUDY_SOURCE_PAGES, totalStrongPages))
+  const perBookFloor = bookIds.length > 0 ? Math.max(1, Math.floor(MIN_STUDY_SOURCE_PAGES / bookIds.length)) : 1
+
+  // All of this concept's own linked pdf sources for gap-filling below —
+  // deliberately the full (unfiltered-by-tier) set for books that are
+  // already eligible/represented, not a fresh query, since a weak-tier
+  // gap page was still linked at scan time (see scanLibraryForConcept),
+  // just excluded from `rankedCandidates` by the tier filter above.
+  const allPdfSourcesByBook = new Map<string, ConceptSource[]>()
+  for (const s of sources) {
+    if (s.sourceType !== 'pdf' || !s.libraryItemId || s.pageNumber == null) continue
+    const list = allPdfSourcesByBook.get(s.libraryItemId) ?? []
+    list.push(s)
+    allPdfSourcesByBook.set(s.libraryItemId, list)
+  }
+
   const candidates: ConceptSource[] = []
-  for (let round = 0; candidates.length < MAX_STUDY_SOURCE_PAGES && bookQueues.some((q) => q.length > round); round += 1) {
-    for (const queue of bookQueues) {
-      if (candidates.length >= MAX_STUDY_SOURCE_PAGES) break
-      if (queue[round]) candidates.push(queue[round])
+  for (const bookId of bookIds) {
+    if (candidates.length >= pageBudget) break
+    const bookCandidates = byBook.get(bookId)!
+    const remaining = pageBudget - candidates.length
+    const proportionalShare = Math.round((bookCandidates.length / Math.max(totalStrongPages, 1)) * pageBudget)
+    const bookBudget = Math.max(1, Math.min(remaining, Math.max(perBookFloor, proportionalShare)))
+
+    // bookCandidates[0] is this book's single strongest page (tier,
+    // quality, page — the same ordering rankedCandidates was sorted by).
+    // byPageAsc reorders the SAME set into actual reading order so
+    // "adjacent" means adjacent pages, not adjacent rank.
+    const anchor = bookCandidates[0]
+    const byPageAsc = [...bookCandidates].sort((a, b) => (a.pageNumber as number) - (b.pageNumber as number))
+    const anchorIdx = byPageAsc.indexOf(anchor)
+
+    const pickedByPage = new Map<number, ConceptSource>()
+    pickedByPage.set(anchor.pageNumber as number, anchor)
+    let forward = anchorIdx
+    let backward = anchorIdx
+    while (pickedByPage.size < bookBudget && (forward < byPageAsc.length - 1 || backward > 0)) {
+      if (forward < byPageAsc.length - 1) {
+        forward += 1
+        pickedByPage.set(byPageAsc[forward].pageNumber as number, byPageAsc[forward])
+        if (pickedByPage.size >= bookBudget) break
+      }
+      if (backward > 0) {
+        backward -= 1
+        pickedByPage.set(byPageAsc[backward].pageNumber as number, byPageAsc[backward])
+      }
     }
+
+    // Gap-fill: this book's own pages strictly between the lowest and
+    // highest page already picked, even if their own tier is only
+    // `weak`. Never reaches outside the span the strong pages
+    // themselves established, so an unrelated weak page elsewhere in
+    // the book is never pulled in — only genuine gaps inside an
+    // already-strong span.
+    const pageNumbers = Array.from(pickedByPage.keys())
+    if (pageNumbers.length > 0) {
+      const spanMin = Math.min(...pageNumbers)
+      const spanMax = Math.max(...pageNumbers)
+      const allBookPages = (allPdfSourcesByBook.get(bookId) ?? []).sort(
+        (a, b) => (a.pageNumber as number) - (b.pageNumber as number)
+      )
+      let gapFilled = 0
+      for (const s of allBookPages) {
+        if (gapFilled >= GAP_FILL_ALLOWANCE_PER_BOOK) break
+        const pn = s.pageNumber as number
+        if (pn <= spanMin || pn >= spanMax) continue
+        if (pickedByPage.has(pn)) continue
+        pickedByPage.set(pn, s)
+        gapFilled += 1
+      }
+    }
+
+    const orderedPicks = Array.from(pickedByPage.entries())
+      .sort((a, b) => a[0] - b[0])
+      .map(([, s]) => s)
+    candidates.push(...orderedPicks)
   }
 
   // Retrieval Correction §1/§2 — every name the source material might
@@ -1029,6 +1143,23 @@ export async function buildStudyOverview(
   const headingMatchKeys = new Set<string>()
   let paragraph: LocalOverviewParagraph | undefined
   const docCache = new Map<string, Awaited<ReturnType<typeof openLibraryDocument>>>()
+
+  // Content Quality Correction §3/§4 — cross-page section reconstruction.
+  // `splitIntoKnownSections` only ever sees ONE page at a time, so a
+  // section that continues onto the next page with no repeated heading
+  // (completely normal — a real chapter section doesn't re-print "5.1
+  // Overview of Photosynthesis" at the top of its second page) produced
+  // an unheaded leading block that the heading-only loop below simply
+  // skips (`if (!block.heading) continue`). That silently dropped every
+  // continuation page of a multi-page section from Core Concept, which
+  // is the main reason a visibly chapter-length source still produced
+  // only a paragraph or two. This tracks, per book, which section was
+  // still "open" (no new heading yet closed it) as of the last page
+  // processed for that book, so a directly-following page's leading
+  // unheaded prose gets appended onto that same section instead of
+  // discarded — real continuous chapter text, never invented.
+  const openSectionByBook = new Map<string, { key: string; pageNumber: number }>()
+  const MAX_SECTION_STITCH_WORDS = 900
 
   for (const source of candidates) {
     const item = itemsById.get(source.libraryItemId as string)
@@ -1105,6 +1236,35 @@ export async function buildStudyOverview(
       }
     }
 
+    // Continuation stitching — must run before the heading loop below so
+    // an unheaded leading block on this page can be attributed to the
+    // still-open section from the PREVIOUS page of this same book,
+    // before that previous page's state gets overwritten further down.
+    const bookId = item.id
+    const openState = openSectionByBook.get(bookId)
+    if (openState && openState.pageNumber === (source.pageNumber as number) - 1 && blocks.length > 0 && !blocks[0].heading) {
+      const continuation = blocks[0]
+      const existingSection = sections.get(openState.key)
+      if (
+        existingSection &&
+        existingSection.bookTitle === item.title && // only stitch onto this book's OWN contribution, never a different book's section sharing the same heading label
+        extractionQuality !== 'garbled' &&
+        countWords(continuation.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS &&
+        !detectQuestionBankContent(continuation.body) &&
+        countWords(existingSection.body) < MAX_SECTION_STITCH_WORDS
+      ) {
+        existingSection.body = `${existingSection.body}\n\n${continuation.body}`
+      }
+    }
+
+    // Content Quality Correction §3/§4 — tracks the LAST heading on this
+    // page for THIS book that actually resulted in a real write to
+    // `sections` (a new section, or a genuine append to this book's own
+    // existing section) — not merely a heading that happens to already
+    // exist in the (book-agnostic) `sections` map from a different book,
+    // and not a heading this page itself rejected via the filters below.
+    let lastWrittenHeadingKeyThisPage: string | undefined
+
     for (const block of blocks) {
       if (!block.heading) continue
       const key = normalizeConceptName(block.heading)
@@ -1130,7 +1290,12 @@ export async function buildStudyOverview(
       // question dump into the lesson. The underlying ConceptSource link
       // is untouched — this only keeps that page's content out of Core
       // Concept, it stays visible via References.
-      if (detectQuestionBankContent(block.body)) continue
+      // Checked against the heading text together with the body (not
+      // body alone) because a question stem itself is sometimes what the
+      // structural detector picked up as the "heading" (e.g. a wrapped
+      // "WHAT IS THE PROBABILITY THAT..." line), which a body-only check
+      // would miss.
+      if (detectQuestionBankContent(`${block.heading}\n${block.body}`)) continue
 
       const isConceptHeading = headingMatchesTerm(block.heading, conceptTerms)
       // Retrieval Correction §2/§B, Concept boundary correction — a
@@ -1177,6 +1342,7 @@ export async function buildStudyOverview(
           tier: isConceptHeading ? 'high' : (blockRelevance as PageRelevance).tier,
           occurrences: isConceptHeading ? Number.POSITIVE_INFINITY : (blockRelevance as PageRelevance).occurrences
         })
+        lastWrittenHeadingKeyThisPage = key
         continue
       }
 
@@ -1198,6 +1364,27 @@ export async function buildStudyOverview(
         ...(existingSection.additionalSources ?? []),
         { bookTitle: item.title, pageNumber: source.pageNumber as number }
       ]
+      lastWrittenHeadingKeyThisPage = key
+    }
+
+    // Record which section (if any) is still "open" at the end of this
+    // page, for the next page of this same book to potentially continue
+    // into. Uses `lastWrittenHeadingKeyThisPage` (tracked above) rather
+    // than re-deriving it from `blocks` + `sections.has(...)`, because
+    // `sections` is a single map shared across every book — a heading
+    // this page's own filters actually rejected could still show up as
+    // "already in sections" simply because a DIFFERENT book contributed
+    // that same heading label earlier, which would wrongly mark this
+    // page as having qualifying content when it didn't.
+    if (lastWrittenHeadingKeyThisPage) {
+      openSectionByBook.set(bookId, { key: lastWrittenHeadingKeyThisPage, pageNumber: source.pageNumber as number })
+    } else if (openState && blocks.every((b) => !b.heading)) {
+      // The whole page was continuation prose with no new heading at
+      // all — keep the open section pointed at THIS page so a further
+      // continuation page after this one still stitches correctly.
+      openSectionByBook.set(bookId, { key: openState.key, pageNumber: source.pageNumber as number })
+    } else {
+      openSectionByBook.delete(bookId)
     }
   }
 
@@ -1242,12 +1429,41 @@ export async function buildStudyOverview(
     ([, section]) => section.extractionQuality !== 'garbled'
   )
 
+  // Content Quality Correction §2/§7 — proportional depth. How many of
+  // this concept's own DEDUPED sections are the source's own titled
+  // subsections (isConceptHeading) is the strongest available signal for
+  // "this is a chapter-level concept with real structure" vs. "this is a
+  // concept with one or two short mentions" — used to scale both how
+  // many sections the lesson keeps and how much of each section's prose
+  // survives trimming, instead of applying one fixed size to every
+  // concept regardless of how much source material actually exists.
+  const ownHeadingSectionCount = cleanSections.filter(([, s]) => s.isConceptHeading).length
+  const stitchedSectionCount = cleanSections.filter(
+    ([, s]) => (s.additionalSources?.length ?? 0) > 0 || countWords(s.body) > MIN_OVERVIEW_PARAGRAPH_WORDS * 4
+  ).length
+  const sectionCap = Math.min(
+    MAX_LESSON_SECTIONS_CEILING,
+    Math.max(MAX_LESSON_SECTIONS_BASE, ownHeadingSectionCount)
+  )
+  const depthTier: 'compact' | 'standard' | 'deep' =
+    ownHeadingSectionCount >= 3 || stitchedSectionCount >= 2
+      ? 'deep'
+      : ownHeadingSectionCount >= 1
+        ? 'standard'
+        : 'compact'
+  const trimBudget =
+    depthTier === 'deep'
+      ? { maxSentences: 18, maxWords: 420 }
+      : depthTier === 'standard'
+        ? { maxSentences: 11, maxWords: 230 }
+        : { maxSentences: DEFAULT_TRIM_MAX_SENTENCES, maxWords: DEFAULT_TRIM_MAX_WORDS }
+
   const selected: Array<[string, StudySection]> = []
   const usedBooks = new Set<string>()
 
   // Pass 1: one strong section from each distinct book.
   for (const entry of cleanSections) {
-    if (selected.length >= MAX_LESSON_SECTIONS) break
+    if (selected.length >= sectionCap) break
 
     const [, section] = entry
     if (usedBooks.has(section.bookTitle)) continue
@@ -1257,9 +1473,9 @@ export async function buildStudyOverview(
   }
 
   // Pass 2: fill remaining slots with the strongest remaining sections.
-  if (selected.length < MAX_LESSON_SECTIONS) {
+  if (selected.length < sectionCap) {
     for (const entry of cleanSections) {
-      if (selected.length >= MAX_LESSON_SECTIONS) break
+      if (selected.length >= sectionCap) break
       if (selected.includes(entry)) continue
       selected.push(entry)
     }
@@ -1268,9 +1484,12 @@ export async function buildStudyOverview(
   // Trim excessive prose — long sections are cut down to the sentences
   // that actually explain the concept; short sections pass through
   // unchanged (trimSectionProse is a no-op below its own length budget).
+  // The budget itself now scales with the concept's overall depth (see
+  // above) rather than every section — a one-paragraph mention and a
+  // reconstructed chapter section — being held to the same word count.
   const orderedSections = selected.map(([, section]) => ({
     ...section,
-    body: trimSectionProse(section.body, conceptTerms)
+    body: trimSectionProse(section.body, conceptTerms, trimBudget)
   }))
 
   const trimmedParagraph = paragraph ? { ...paragraph, text: trimSectionProse(paragraph.text, conceptTerms) } : undefined

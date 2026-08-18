@@ -306,8 +306,11 @@ export interface TrimSectionOptions {
   maxWords?: number
 }
 
-const DEFAULT_TRIM_MAX_SENTENCES = 7
-const DEFAULT_TRIM_MAX_WORDS = 140
+// Exported so callers building a depth-aware trim budget (see
+// extraction.ts's buildStudyOverview) can use the original compact
+// default as their own "compact" tier instead of duplicating the numbers.
+export const DEFAULT_TRIM_MAX_SENTENCES = 7
+export const DEFAULT_TRIM_MAX_WORDS = 140
 
 /**
  * Concept boundary correction §7 — cuts a long textbook section down to
