@@ -241,17 +241,39 @@ const NONE_OF_THESE_RE = /\bnone of (?:these|the above)\b/gi
 // explanatory passage essentially never contains.
 const EXAM_CITATION_RE = /\[[^\]\n]{0,80}(?:19|20)\d{2}\]/g
 
+// Content Quality Correction (Probability test) — a worked example is
+// not always MCQ-shaped: "Ex. 2. Two unbiased coins are tossed. What is
+// the probability that..." has no "(a)/(b)" options, no "none of these",
+// no exam-citation bracket, so none of the signals above catch it, yet
+// it's exactly the kind of question-bank material Core Concept must not
+// show. Two shape-only (never subject-specific) tells catch it instead:
+//   1. The block is headed with a generic numbered exercise label
+//      ("Ex. 2.", "Example 4", "Q.5", "Problem 3") — a book only numbers
+//      its exercises this way, never an explanatory section.
+//   2. The block's own text opens with an unanswered question packed
+//      into its first ~140 characters and the block overall stays short
+//      — a real explanatory passage that opens with a rhetorical
+//      question goes on to answer it at length; a bare question this
+//      close to the top of a short block is the stem itself.
+const EXERCISE_LABEL_HEADING_RE = /^(ex(?:ample)?|q(?:uestion)?|problem|illustration)\.?\s*[-:.]?\s*\d+/i
+const LEADING_QUESTION_RE = /^[^.!?\n]{0,140}\?/
+const LEADING_QUESTION_MAX_TOKENS = 70
+
 /**
  * True when a block of text looks like raw practice-question material
  * (multiple-choice options, "None of these" filler answers, exam
- * citations, or a fragment dominated by bare numbers/arithmetic symbols
- * — the shape of a garbled answer-key table) rather than explanatory
- * prose. Used to keep Core Concept a coherent lesson instead of a
- * question dump; flagged sections stay available via References (which
- * lists every linked source, not just what qualified for Core Concept),
- * they're only excluded from the lesson itself.
+ * citations, a numbered exercise/example/question label, a bare question
+ * stem near the top of a short block, or a fragment dominated by bare
+ * numbers/arithmetic symbols — the shape of a garbled answer-key table)
+ * rather than explanatory prose. Used to keep Core Concept a coherent
+ * lesson instead of a question dump; flagged sections stay available via
+ * References (which lists every linked source, not just what qualified
+ * for Core Concept), they're only excluded from the lesson itself.
  */
 export function detectQuestionBankContent(text: string): boolean {
+  const trimmed = text.trim()
+  if (EXERCISE_LABEL_HEADING_RE.test(trimmed)) return true
+
   const alphaTokens = text.match(/[A-Za-z][A-Za-z'-]*/g) ?? []
   const numericTokens = text.match(/\d+(?:\.\d+)?/g) ?? []
   const totalTokens = alphaTokens.length + numericTokens.length
@@ -275,6 +297,8 @@ export function detectQuestionBankContent(text: string): boolean {
   const mcqDensity =
     (optionMarkers * 2 + noneOfThese * 3 + examCitations * 2 + questionMarks) / Math.max(alphaTokens.length, 1)
   if (mcqDensity >= 0.09) return true
+
+  if (LEADING_QUESTION_RE.test(trimmed) && totalTokens < LEADING_QUESTION_MAX_TOKENS) return true
 
   // Answer-key/working-out fragment shape — dominated by bare numbers
   // and arithmetic symbols rather than words (e.g. a garbled capture of

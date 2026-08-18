@@ -163,6 +163,36 @@ const SENTENCE_END_RE = /[.!?]$/
 // the numbered and the plain title-shaped forms.
 const CAPTION_LABEL_RE = /^(fig(?:ure)?|table|box|plate|chart|diagram|photo|image)\b/i
 
+// Content Quality Correction (DNA test) — a table-of-contents, list-of-
+// figures, or index entry keeps the exact short/title-shaped line a
+// genuine heading takes, but once its dot-leader is stripped by
+// extraction it becomes indistinguishable from a heading by vocabulary
+// alone: "THE POLYMERIZATION OF NUCLEOTIDES INTO DNA 130", "The
+// antiparallel structure of the DNA double helix 131". The shape that
+// actually distinguishes it is the same across every book: the line
+// carries no sentence-ending punctuation, yet its very last token is a
+// bare 1-4 digit page number — real running prose essentially never ends
+// an unpunctuated line on a bare number, but a TOC/index row always does.
+// A genuine numbered heading ("5.2 The Light-Dependent Reactions") has
+// its number at the START, never the end, so this never touches that
+// shape. A single extracted line can also splice several end-of-book
+// entries together once page breaks collapse ("... Microorganisms 673
+// Further Reading 674 Index 675") — the tell there is more than one bare
+// number appearing mid-line, each immediately followed by the start of
+// another capitalized entry, which running prose does not do.
+const TRAILING_PAGE_NUMBER_RE = /\s\d{1,4}$/
+const MULTI_TOC_ENTRY_RE = /\d{1,4}\s+[A-Z][a-z]/
+
+export function looksLikeTocOrIndexLine(line: string): boolean {
+  const trimmed = line.trim()
+  if (!trimmed) return false
+  const numberHits = trimmed.match(/\d{1,4}/g)?.length ?? 0
+  if (!SENTENCE_END_RE.test(trimmed) && TRAILING_PAGE_NUMBER_RE.test(trimmed) && trimmed.split(/\s+/).length <= 14) {
+    return true
+  }
+  return numberHits >= 2 && MULTI_TOC_ENTRY_RE.test(trimmed)
+}
+
 // Retrieval Diagnostic Correction — `joinPageTextPreservingParagraphs`
 // emits one `\n` per ORIGINAL PDF visual line, not one per true
 // paragraph (see pdf-engine's own doc comment: every line/column jump
@@ -181,7 +211,7 @@ const CAPTION_LABEL_RE = /^(fig(?:ure)?|table|box|plate|chart|diagram|photo|imag
 // label, a lone stray heading) still fails this test.
 const PARAGRAPH_LOOKAHEAD_MAX_LINES = 4
 
-function looksLikeParagraphStart(lines: string[], startIndex: number): boolean {
+function looksLikeParagraphStart(lines: string[], startIndex: number, minWords = 6): boolean {
   let words = 0
   for (let i = startIndex; i < Math.min(lines.length, startIndex + PARAGRAPH_LOOKAHEAD_MAX_LINES); i += 1) {
     const trimmed = lines[i]?.trim()
@@ -194,10 +224,24 @@ function looksLikeParagraphStart(lines: string[], startIndex: number): boolean {
     // past it hoping for a later paragraph to satisfy the count.
     if (HEADING_ALONE_RE.test(trimmed) || NUMBERED_HEADING_RE.test(trimmed)) break
     words += trimmed.split(/\s+/).length
-    if (words >= 6) return true
+    if (words >= minWords) return true
   }
-  return words >= 6
+  return words >= minWords
 }
+
+// Content Quality Correction (DNA test) — a diagram/enzyme label like
+// "DNA PRIMASE" or "DNA POLYMERASE I" is exactly as title-shaped as a
+// genuine unnumbered section title, and the short caption fragment that
+// often follows it on the page ("(not shown) eventually removes primer
+// and fills gap") can clear the same lightweight 6-word lookahead a real
+// paragraph needs — that's how a diagram label ends up mistaken for the
+// book's own explanatory heading. A NUMBERED heading ("5.2 The Light-
+// Dependent Reactions") is a much stronger signal — a book only numbers
+// its own actual section titles, never a diagram label — so it keeps the
+// original, lighter bar. A bare, unnumbered title-shaped line needs
+// substantially more following prose before it's trusted as a real
+// section rather than a label.
+const BARE_TITLE_PARAGRAPH_MIN_WORDS = 16
 
 /**
  * True when `line` is structurally shaped like a textbook heading. Never
@@ -221,6 +265,7 @@ export function looksLikeStructuralHeading(
   if (!trimmed || trimmed.length > 90) return false
   if (CAPTION_LABEL_RE.test(trimmed)) return false
   if (prevLine && CAPTION_LABEL_RE.test(prevLine.trim())) return false
+  if (looksLikeTocOrIndexLine(trimmed)) return false
 
   const numbered = NUMBERED_HEADING_RE.exec(trimmed)
   if (numbered) {
@@ -232,7 +277,10 @@ export function looksLikeStructuralHeading(
   const wordCount = trimmed.split(/\s+/).length
   if (wordCount < 1 || wordCount > 8) return false
   if (!TITLE_LIKE_LINE_RE.test(trimmed)) return false
-  return looksLikeParagraphStart(followingLines, followingIndex)
+  // Unnumbered/bare title lines are the less reliable heading shape (see
+  // BARE_TITLE_PARAGRAPH_MIN_WORDS above) — held to a stricter following-
+  // prose bar than the numbered-heading path above.
+  return looksLikeParagraphStart(followingLines, followingIndex, BARE_TITLE_PARAGRAPH_MIN_WORDS)
 }
 
 /** The heading text itself, with any leading section number stripped. */
@@ -278,6 +326,14 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
       currentHeading = structuralHeadingText(line)
       currentLines = []
     } else {
+      // Content Quality Correction (DNA test) — a TOC/index/end-matter
+      // line that wasn't structurally heading-shaped enough to open its
+      // own block (e.g. spliced mid-paragraph, or too many words for the
+      // heading check above) is still contamination, not real body prose
+      // — drop it rather than let it get appended into whatever section
+      // happens to be open, which is how "Further Reading 674 Index 675"
+      // ends up glued onto the end of a real explanatory section.
+      if (looksLikeTocOrIndexLine(line)) continue
       currentLines.push(line)
     }
   }
