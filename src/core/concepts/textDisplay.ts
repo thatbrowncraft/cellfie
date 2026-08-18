@@ -85,6 +85,18 @@ export interface SectionBlock {
    *  one. `end` is exclusive. */
   start: number
   end: number
+  /**
+   * Structural Assembly Correction — the book's own section number
+   * ("5.2" from a heading line like "5.2 The Light-Dependent Reactions"),
+   * present only when the heading came through the NUMBERED_HEADING_RE
+   * path. This is the book's own outline, not anything this app infers —
+   * it lets a caller recognize that "5.2 The Light-Dependent Reactions"
+   * and "5.3 The Calvin Cycle" are siblings of "5.1 Overview of
+   * Photosynthesis" under the same chapter, even though neither repeats
+   * the chapter's own name. `undefined` for headings that didn't come
+   * from a numbered line (known-vocabulary or bare-title headings).
+   */
+  sectionNumber?: string
 }
 
 // Headings this app knows how to recognize when they appear verbatim in
@@ -186,6 +198,11 @@ const MULTI_TOC_ENTRY_RE = /\d{1,4}\s+[A-Z][a-z]/
 export function looksLikeTocOrIndexLine(line: string): boolean {
   const trimmed = line.trim()
   if (!trimmed) return false
+  // A genuine numbered heading ("5.2 The Light-Dependent Reactions") has
+  // its own dotted section number at the START — that's the reliable,
+  // already-trusted heading shape, and its digits (e.g. "5" and "1" from
+  // "5.1") must never be mistaken for TOC/index page-number contamination.
+  if (NUMBERED_HEADING_RE.test(trimmed)) return false
   const numberHits = trimmed.match(/\d{1,4}/g)?.length ?? 0
   if (!SENTENCE_END_RE.test(trimmed) && TRAILING_PAGE_NUMBER_RE.test(trimmed) && trimmed.split(/\s+/).length <= 14) {
     return true
@@ -289,6 +306,13 @@ export function structuralHeadingText(line: string): string {
   return numbered ? numbered[2].trim() : line.trim()
 }
 
+/** The book's own leading section number ("5.2" from "5.2 The Light-
+ *  Dependent Reactions"), or `undefined` when the line isn't numbered. */
+export function structuralHeadingNumber(line: string): string | undefined {
+  const numbered = NUMBERED_HEADING_RE.exec(line.trim())
+  return numbered ? numbered[1].trim() : undefined
+}
+
 /**
  * Splits a block of source text into sections ONLY where the text
  * itself already labels them with a recognized heading. If no
@@ -300,8 +324,9 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
   const cleaned = cleanDisplayText(raw)
   const lines = cleaned.split('\n').map((l) => l.trim())
 
-  const rawSections: Array<{ heading: string; body: string }> = []
+  const rawSections: Array<{ heading: string; body: string; sectionNumber?: string }> = []
   let currentHeading = ''
+  let currentNumber: string | undefined
   let currentLines: string[] = []
 
   for (let i = 0; i < lines.length; i += 1) {
@@ -314,16 +339,19 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
     const structuralMatch = !aloneMatch && !inlineMatch ? looksLikeStructuralHeading(line, lines, i + 1, lines[i - 1]) : false
 
     if (aloneMatch) {
-      if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
+      if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim(), sectionNumber: currentNumber })
       currentHeading = aloneMatch[1].trim()
+      currentNumber = undefined
       currentLines = []
     } else if (inlineMatch) {
-      if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
+      if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim(), sectionNumber: currentNumber })
       currentHeading = inlineMatch[1].trim()
+      currentNumber = undefined
       currentLines = inlineMatch[2].trim() ? [inlineMatch[2].trim()] : []
     } else if (structuralMatch) {
-      if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
+      if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim(), sectionNumber: currentNumber })
       currentHeading = structuralHeadingText(line)
+      currentNumber = structuralHeadingNumber(line)
       currentLines = []
     } else {
       // Content Quality Correction (DNA test) — a TOC/index/end-matter
@@ -337,7 +365,7 @@ export function splitIntoKnownSections(raw: string): SectionBlock[] {
       currentLines.push(line)
     }
   }
-  if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim() })
+  if (currentLines.some((l) => l)) rawSections.push({ heading: currentHeading, body: currentLines.join('\n').trim(), sectionNumber: currentNumber })
 
   // Second pass: locate each block's real position in `cleaned` so a
   // caller can ground a decision (e.g. "which block actually discusses

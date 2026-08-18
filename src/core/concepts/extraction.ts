@@ -902,16 +902,29 @@ const MAX_LESSON_SECTIONS_CEILING = 10
 
 const GARBLED_SECTION_PENALTY = 500
 
+// Structural Assembly Correction §4 — a longer, more developed
+// explanatory section should outrank a thinner one at the same
+// tier/heading strength, not just tie with it. Capped and log-scaled so
+// it can only ever break ties or nudge close scores, never let a
+// merely-long section outrank a genuinely stronger own-heading one —
+// this is depth breaking ties among comparably-strong sections, not a
+// replacement for the tier/occurrence signal itself.
+function lengthBonus(bodyWordCount: number): number {
+  return Math.min(Math.log2(Math.max(bodyWordCount, 1) + 1) * 2, 20)
+}
+
 function sectionStrength(
   isConceptHeading: boolean | undefined,
   tier: RelevanceTier,
   occurrences: number,
-  extractionQuality: 'ok' | 'garbled' | undefined
+  extractionQuality: 'ok' | 'garbled' | undefined,
+  bodyWordCount: number
 ): number {
   const base = isConceptHeading
     ? 1000
     : (tier === 'high' ? 100 : tier === 'relevant' ? 50 : 0) + occurrences
-  return extractionQuality === 'garbled' ? base - GARBLED_SECTION_PENALTY : base
+  const withLength = base + lengthBonus(bodyWordCount)
+  return extractionQuality === 'garbled' ? withLength - GARBLED_SECTION_PENALTY : withLength
 }
 
 export interface LocalOverviewParagraph {
@@ -1161,10 +1174,31 @@ export async function buildStudyOverview(
   const openSectionByBook = new Map<string, { key: string; pageNumber: number }>()
   const MAX_SECTION_STITCH_WORDS = 900
 
+  // Structural Assembly Correction (§3/§5/§7 of the follow-up review) —
+  // read every candidate page's blocks ONCE up front (cached below, so
+  // the main pass reuses them rather than re-reading any page) purely to
+  // discover each book's own confirmed CHAPTER root numbers: whenever a
+  // numbered heading ("5.1 Overview of Photosynthesis") already matches
+  // the concept by name, its leading number segment ("5") is recorded
+  // for that book. This is exactly the book's own outline, nothing
+  // inferred beyond it — used below so that sibling numbered subsections
+  // under the SAME root ("5.2 The Light-Dependent Reactions", "5.3 The
+  // Calvin Cycle") are recognized as belonging to the same chapter even
+  // though neither repeats the chapter's own name, which is completely
+  // normal textbook style and was previously causing every such
+  // subsection to be silently dropped or judged solely on in-body
+  // keyword density.
+  interface CachedPage {
+    blocks: ReturnType<typeof splitIntoKnownSections>
+    extractionQuality: 'ok' | 'garbled'
+    flatPageText: string
+  }
+  const pageCache = new Map<string, CachedPage>()
+  const confirmedChapterRootsByBook = new Map<string, Set<string>>()
+
   for (const source of candidates) {
     const item = itemsById.get(source.libraryItemId as string)
     if (!item) continue
-
     let vdoc = docCache.get(item.id)
     if (!vdoc) {
       try {
@@ -1174,13 +1208,6 @@ export async function buildStudyOverview(
         continue
       }
     }
-
-    // Study Overview Correction: read this page's structured (paragraph-
-    // preserving) and flat forms — the structured one for structural
-    // section parsing, the flat one for locating the concept's own
-    // strongest occurrence (relevance.ts's scoring is whitespace-
-    // agnostic, so it works the same either way, but stays on the
-    // flattened form other callers already rely on).
     let pageText: string
     let flatPageText: string
     try {
@@ -1190,10 +1217,30 @@ export async function buildStudyOverview(
     } catch {
       continue
     }
-
-    const term = source.sourceText || concept.name
     const blocks = splitIntoKnownSections(pageText)
     const extractionQuality = source.extractionQuality ?? detectExtractionQuality(flatPageText)
+    pageCache.set(`${item.id}:${source.pageNumber}`, { blocks, extractionQuality, flatPageText })
+
+    for (const block of blocks) {
+      if (!block.heading || !block.sectionNumber) continue
+      if (!headingMatchesTerm(block.heading, conceptTerms)) continue
+      const root = block.sectionNumber.split('.')[0]
+      if (!root) continue
+      const set = confirmedChapterRootsByBook.get(item.id) ?? new Set<string>()
+      set.add(root)
+      confirmedChapterRootsByBook.set(item.id, set)
+    }
+  }
+
+  for (const source of candidates) {
+    const item = itemsById.get(source.libraryItemId as string)
+    if (!item) continue
+
+    const cached = pageCache.get(`${item.id}:${source.pageNumber}`)
+    if (!cached) continue
+
+    const term = source.sourceText || concept.name
+    const { blocks, extractionQuality, flatPageText } = cached
 
     // Retrieval Correction §2 — the strongest possible signal: the
     // source book itself titled one of this page's blocks with the
@@ -1297,7 +1344,20 @@ export async function buildStudyOverview(
       // would miss.
       if (detectQuestionBankContent(`${block.heading}\n${block.body}`)) continue
 
-      const isConceptHeading = headingMatchesTerm(block.heading, conceptTerms)
+      // Structural Assembly Correction — a numbered subsection under a
+      // chapter root already confirmed for this book (via an own-heading
+      // match elsewhere in the chapter — see the pre-pass above) counts
+      // as the concept's own heading too, even when its own title text
+      // doesn't repeat the chapter's name. This is what lets "5.2 The
+      // Light-Dependent Reactions" and "5.3 The Calvin Cycle" join "5.1
+      // Overview of Photosynthesis" as siblings under the same book's own
+      // Chapter 5, instead of each needing to independently clear the
+      // much stricter non-own-heading occurrence/density bar below.
+      const chapterRoot = block.sectionNumber?.split('.')[0]
+      const isChapterSibling = Boolean(
+        chapterRoot && confirmedChapterRootsByBook.get(item.id)?.has(chapterRoot)
+      )
+      const isConceptHeading = headingMatchesTerm(block.heading, conceptTerms) || isChapterSibling
       // Retrieval Correction §2/§B, Concept boundary correction — a
       // heading that ISN'T the concept's own name only belongs in this
       // concept's lesson if its own body text substantially teaches the
@@ -1399,7 +1459,8 @@ export async function buildStudyOverview(
       section.isConceptHeading,
       meta?.tier ?? 'weak',
       meta?.occurrences ?? 0,
-      section.extractionQuality
+      section.extractionQuality,
+      countWords(section.body)
     )
   }
   const rankedEntries = Array.from(sections.entries()).sort((a, b) => strengthOf(b) - strengthOf(a))
