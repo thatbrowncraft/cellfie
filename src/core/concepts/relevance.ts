@@ -224,6 +224,68 @@ export function detectExtractionQuality(pageText: string): 'ok' | 'garbled' {
   return shortTokenCount / tokens.length > 0.35 ? 'garbled' : 'ok'
 }
 
+// Question-Bank Content Correction — a Quantitative Aptitude-style book's
+// "PROBABILITY" (or "WHAT IS THE PROBABILITY THAT") block can pass every
+// other check (own-heading match, real prose, dozens of occurrences of
+// the term) while still being a wall of MCQ options and exam-citation
+// stems rather than an explanation — the exact opposite of what Core
+// Concept is supposed to show. Every signal below is shape-only, the
+// same "no dictionary, no subject knowledge" discipline as
+// `detectExtractionQuality` above, so the same guard protects a
+// chemistry MCQ bank or a physics one exactly as well as a probability
+// one, without hardcoding anything about quantitative aptitude.
+const MCQ_OPTION_MARKER_RE = /\([a-e]\)/gi
+const NONE_OF_THESE_RE = /\bnone of (?:these|the above)\b/gi
+// A citation bracket naming a real exam/test and a year — e.g.
+// "[IBPS—Bank PO/MT (Pre.) Exam, 2015]" — is something a genuine
+// explanatory passage essentially never contains.
+const EXAM_CITATION_RE = /\[[^\]\n]{0,80}(?:19|20)\d{2}\]/g
+
+/**
+ * True when a block of text looks like raw practice-question material
+ * (multiple-choice options, "None of these" filler answers, exam
+ * citations, or a fragment dominated by bare numbers/arithmetic symbols
+ * — the shape of a garbled answer-key table) rather than explanatory
+ * prose. Used to keep Core Concept a coherent lesson instead of a
+ * question dump; flagged sections stay available via References (which
+ * lists every linked source, not just what qualified for Core Concept),
+ * they're only excluded from the lesson itself.
+ */
+export function detectQuestionBankContent(text: string): boolean {
+  const alphaTokens = text.match(/[A-Za-z][A-Za-z'-]*/g) ?? []
+  const numericTokens = text.match(/\d+(?:\.\d+)?/g) ?? []
+  const totalTokens = alphaTokens.length + numericTokens.length
+  if (totalTokens < 15) return false // too little text either way to judge
+
+  const optionMarkers = text.match(MCQ_OPTION_MARKER_RE)?.length ?? 0
+  const noneOfThese = text.match(NONE_OF_THESE_RE)?.length ?? 0
+  const examCitations = text.match(EXAM_CITATION_RE)?.length ?? 0
+  const questionMarks = (text.match(/\?/g) ?? []).length
+
+  // A real explanatory passage might use "(a)"/"(b)" once for a genuine
+  // sub-list, or ask a single rhetorical question — that's normal prose.
+  // Several option markers, an explicit "none of these" filler answer,
+  // or an exam-citation bracket are things real explanatory prose
+  // essentially never contains, so even one of those alongside a couple
+  // of option markers is already a strong signal.
+  if (optionMarkers >= 6) return true
+  if (noneOfThese >= 1 && optionMarkers >= 2) return true
+  if (examCitations >= 1 && optionMarkers >= 2) return true
+
+  const mcqDensity =
+    (optionMarkers * 2 + noneOfThese * 3 + examCitations * 2 + questionMarks) / Math.max(alphaTokens.length, 1)
+  if (mcqDensity >= 0.09) return true
+
+  // Answer-key/working-out fragment shape — dominated by bare numbers
+  // and arithmetic symbols rather than words (e.g. a garbled capture of
+  // a solutions table: "4 11 6 11 18 20 18 20 = x + x + ..."). Only
+  // flagged once there are enough tokens to judge, mirroring
+  // `detectExtractionQuality`'s own 20-token floor above.
+  if (totalTokens >= 20 && numericTokens.length / totalTokens > 0.45) return true
+
+  return false
+}
+
 // Splits on a real sentence boundary (end punctuation + whitespace,
 // followed by something that looks like the start of a new sentence) —
 // same shape SENTENCE_BOUNDARY_RE already scores by, just used here to

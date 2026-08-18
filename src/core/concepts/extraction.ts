@@ -16,6 +16,7 @@ import { addConceptSource, getOrCreateConcept } from './service'
 import { isLikelyStopwordPhrase, isPlausibleConceptName, isStopwordToken, normalizeConceptName } from './normalize'
 import {
   detectExtractionQuality,
+  detectQuestionBankContent,
   findBestExcerpt,
   headingMatchesTerm,
   scorePageRelevance,
@@ -1070,7 +1071,9 @@ export async function buildStudyOverview(
     // because it's the actual section, not just the nearest paragraph to
     // a mention.
     if (!paragraph) {
-      const ownHeadingBlock = blocks.find((b) => b.heading && headingMatchesTerm(b.heading, conceptTerms))
+      const ownHeadingBlock = blocks.find(
+        (b) => b.heading && headingMatchesTerm(b.heading, conceptTerms) && !detectQuestionBankContent(b.body)
+      )
       if (ownHeadingBlock && countWords(ownHeadingBlock.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS) {
         paragraph = { text: ownHeadingBlock.body, bookTitle: item.title, pageNumber: source.pageNumber as number, extractionQuality }
       }
@@ -1091,7 +1094,12 @@ export async function buildStudyOverview(
         // a reasonable position in the other — close enough to land
         // inside the correct block, which is all this needs.
         const containing = blocks.find((b) => relevance.bestIndex >= b.start && relevance.bestIndex < b.end)
-        if (containing && !containing.heading && countWords(containing.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS) {
+        if (
+          containing &&
+          !containing.heading &&
+          countWords(containing.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS &&
+          !detectQuestionBankContent(containing.body)
+        ) {
           paragraph = { text: containing.body, bookTitle: item.title, pageNumber: source.pageNumber as number, extractionQuality }
         }
       }
@@ -1109,6 +1117,20 @@ export async function buildStudyOverview(
       // Checked before the heading-match/body-relevance logic below so
       // it can never be overridden by a high occurrence count.
       if (NON_EXPLANATORY_HEADING_LABELS.has(key)) continue
+
+      // Question-Bank Content Correction — a heading that DOES match the
+      // concept's own name (isConceptHeading, the strongest signal below)
+      // is still not real Core Concept material if its body is actually a
+      // wall of MCQ options/exam citations/answer-key fragments — e.g. a
+      // Quantitative Aptitude book's "WHAT IS THE PROBABILITY THAT..."
+      // question stem gets picked up as a "heading" by the structural
+      // detector, and matches "Probability" as a substring. Checked here,
+      // before isConceptHeading gets its own scoring weight below, so no
+      // amount of own-heading/occurrence strength can smuggle a raw
+      // question dump into the lesson. The underlying ConceptSource link
+      // is untouched — this only keeps that page's content out of Core
+      // Concept, it stays visible via References.
+      if (detectQuestionBankContent(block.body)) continue
 
       const isConceptHeading = headingMatchesTerm(block.heading, conceptTerms)
       // Retrieval Correction §2/§B, Concept boundary correction — a
