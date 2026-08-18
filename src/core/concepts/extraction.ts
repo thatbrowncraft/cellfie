@@ -774,7 +774,7 @@ export interface SourceExcerpt {
   relevanceTier: 'high' | 'relevant' | 'weak'
 }
 
-const MAX_STUDY_SOURCE_PAGES = 8
+const MAX_STUDY_SOURCE_PAGES = 64
 
 // A leading, unheaded block only qualifies as the Study Overview
 // paragraph if it reads like real prose, not a fragment ("DNA ... see
@@ -867,7 +867,7 @@ const MAX_NON_OWN_HEADING_FIRST_MENTION_FRACTION = 0.4
 // merged sections just because each one individually cleared the bar
 // above; the lesson stays a focused explanation by keeping only the
 // strongest few, ranked by how directly each section teaches the concept.
-const MAX_LESSON_SECTIONS = 6
+const MAX_LESSON_SECTIONS = 10
 
 const GARBLED_SECTION_PENALTY = 500
 
@@ -972,7 +972,7 @@ export async function buildStudyOverview(
   contextIds: string[] = []
 ): Promise<StudyOverview> {
   const tierRank: Record<string, number> = { high: 2, relevant: 1 }
-  const qualityRank: Record<string, number> = { ok: 1, garbled: 0 }
+  const normalizedContexts = contextIds.map((id) => id.trim().toLowerCase()).filter(Boolean)
   const rankedCandidates = sources
     .filter(
       (s) =>
@@ -980,58 +980,64 @@ export async function buildStudyOverview(
         s.libraryItemId &&
         s.pageNumber != null &&
         (s.relevanceTier === 'high' || s.relevanceTier === 'relevant') &&
-        libraryItemMatchesStudyContexts(
-          itemsById.get(s.libraryItemId as string),
-          contextIds.map((id) => id.trim().toLowerCase()).filter(Boolean)
-        )
+        libraryItemMatchesStudyContexts(itemsById.get(s.libraryItemId as string), normalizedContexts)
     )
     .sort(
       (a, b) =>
         (tierRank[b.relevanceTier ?? ''] ?? 0) - (tierRank[a.relevanceTier ?? ''] ?? 0) ||
-        // Retrieval Correction §5 — among equally-relevant pages, a
-        // cleanly-extracted one is tried before a garbled one, so a
-        // corrupted scan never wins purely for having the earlier page
-        // number.
-        (qualityRank[b.extractionQuality ?? 'ok'] ?? 1) - (qualityRank[a.extractionQuality ?? 'ok'] ?? 1) ||
+        (a.extractionQuality === 'ok' ? 1 : 0) - (b.extractionQuality === 'ok' ? 1 : 0) ||
         (a.pageNumber! - b.pageNumber!)
     )
 
-  // Multi-book merging — Retrieval Correction §B. A plain global slice
-  // of the top MAX_STUDY_SOURCE_PAGES pages let one book's several
-  // strong pages crowd out every other book that has its own genuinely
-  // relevant section, which is exactly the "Book A OR B OR C" behavior
-  // the brief calls out. This keeps the same per-page tier/quality/page
-  // ordering *within* each book, but round-robins ACROSS books so a
-  // second or third book with real material always gets a chance to
-  // contribute, instead of only ever appearing when the strongest book
-  // runs out of high-tier pages.
+  // Do not round-robin individual pages. That was the main reason a full
+  // textbook chapter could collapse into one isolated paragraph per book.
+  // Give each eligible book a meaningful page budget, then let the actual
+  // section structure decide what survives. More books means a smaller fair
+  // share; a single-book concept gets a deeper window.
   const byBook = new Map<string, ConceptSource[]>()
-  for (const s of rankedCandidates) {
-    const list = byBook.get(s.libraryItemId as string) ?? []
-    list.push(s)
-    byBook.set(s.libraryItemId as string, list)
+  for (const source of rankedCandidates) {
+    const list = byBook.get(source.libraryItemId as string) ?? []
+    list.push(source)
+    byBook.set(source.libraryItemId as string, list)
   }
-  const bookQueues = Array.from(byBook.values())
-  const candidates: ConceptSource[] = []
-  for (let round = 0; candidates.length < MAX_STUDY_SOURCE_PAGES && bookQueues.some((q) => q.length > round); round += 1) {
-    for (const queue of bookQueues) {
-      if (candidates.length >= MAX_STUDY_SOURCE_PAGES) break
-      if (queue[round]) candidates.push(queue[round])
-    }
+  const bookCount = byBook.size
+  const perBookCap = bookCount <= 1 ? 24 : Math.max(8, Math.floor(MAX_STUDY_SOURCE_PAGES / bookCount))
+  const selectedCandidates: ConceptSource[] = []
+  for (const queue of byBook.values()) {
+    selectedCandidates.push(...queue.slice(0, perBookCap))
   }
+  selectedCandidates.sort(
+    (a, b) =>
+      (a.libraryItemId ?? '').localeCompare(b.libraryItemId ?? '') ||
+      (a.pageNumber ?? 0) - (b.pageNumber ?? 0)
+  )
 
-  // Retrieval Correction §1/§2 — every name the source material might
-  // itself use as a heading for this concept.
   const conceptTerms = [concept.name, ...(concept.aliases ?? [])].filter((t) => t.trim().length >= 3)
-
   const sections = new Map<string, StudySection>()
   const sectionMeta = new Map<string, { tier: RelevanceTier; occurrences: number }>()
-  const headingMatchKeys = new Set<string>()
   let paragraph: LocalOverviewParagraph | undefined
   const docCache = new Map<string, Awaited<ReturnType<typeof openLibraryDocument>>>()
 
-  for (const source of candidates) {
-    const item = itemsById.get(source.libraryItemId as string)
+  // A candidate page often begins or continues a textbook section whose
+  // heading occurred on the preceding page. Read a small continuation window
+  // so a section such as 5.1 Overview can retain its explanatory paragraphs
+  // across page boundaries without reading an entire book on every build.
+  const CONTINUATION_PAGES = 2
+  const pagesToRead = new Map<string, Set<number>>()
+  const candidateByPage = new Map<string, ConceptSource>()
+  for (const source of selectedCandidates) {
+    const itemId = source.libraryItemId as string
+    const set = pagesToRead.get(itemId) ?? new Set<number>()
+    set.add(source.pageNumber as number)
+    for (let offset = 1; offset <= CONTINUATION_PAGES; offset += 1) {
+      set.add((source.pageNumber as number) + offset)
+    }
+    pagesToRead.set(itemId, set)
+    candidateByPage.set(`${itemId}:${source.pageNumber}`, source)
+  }
+
+  for (const [itemId, pageSet] of pagesToRead) {
+    const item = itemsById.get(itemId)
     if (!item) continue
 
     let vdoc = docCache.get(item.id)
@@ -1044,241 +1050,180 @@ export async function buildStudyOverview(
       }
     }
 
-    // Study Overview Correction: read this page's structured (paragraph-
-    // preserving) and flat forms — the structured one for structural
-    // section parsing, the flat one for locating the concept's own
-    // strongest occurrence (relevance.ts's scoring is whitespace-
-    // agnostic, so it works the same either way, but stays on the
-    // flattened form other callers already rely on).
-    let pageText: string
-    let flatPageText: string
-    try {
-      const page = await vdoc.getPageText(source.pageNumber as number)
-      pageText = page.structured
-      flatPageText = page.flat
-    } catch {
-      continue
-    }
+    const pageNumbers = Array.from(pageSet)
+      .filter((page) => page >= 1 && page <= vdoc!.pageCount)
+      .sort((a, b) => a - b)
 
-    const term = source.sourceText || concept.name
-    const blocks = splitIntoKnownSections(pageText)
-    const extractionQuality = source.extractionQuality ?? detectExtractionQuality(flatPageText)
+    // Process pages in document order. This lets a heading remain the active
+    // section while its body continues onto the next page.
+    let activeHeading = ''
+    let previousPage = -1
+    for (const pageNumber of pageNumbers) {
+      const isConsecutive = previousPage !== -1 && pageNumber === previousPage + 1
+      if (!isConsecutive) activeHeading = ''
+      previousPage = pageNumber
 
-    // Retrieval Correction §2 — the strongest possible signal: the
-    // source book itself titled one of this page's blocks with the
-    // concept's own name/alias. When that exists, it beats the "wherever
-    // the strongest keyword occurrence happens to sit" fallback below,
-    // because it's the actual section, not just the nearest paragraph to
-    // a mention.
-    if (!paragraph) {
-      const ownHeadingBlock = blocks.find(
-        (b) => b.heading && headingMatchesTerm(b.heading, conceptTerms) && !detectQuestionBankContent(b.body)
-      )
-      if (ownHeadingBlock && countWords(ownHeadingBlock.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS) {
-        paragraph = { text: ownHeadingBlock.body, bookTitle: item.title, pageNumber: source.pageNumber as number, extractionQuality }
-      }
-    }
-
-    // Fallback: ground the paragraph choice in the concept's own
-    // strongest occurrence on this page, not block order — only used
-    // when no block on any candidate page is actually headed with the
-    // concept's own name.
-    if (!paragraph) {
-      const relevance = scorePageRelevance(flatPageText, term)
-      if (relevance.bestIndex !== -1) {
-        // The cleaned text `splitIntoKnownSections` computed offsets
-        // against isn't byte-identical to `flatPageText` (one preserves
-        // paragraph breaks as single characters, the other collapses
-        // them to spaces) but both collapse every whitespace run to
-        // exactly one character, so a character offset found in one is
-        // a reasonable position in the other — close enough to land
-        // inside the correct block, which is all this needs.
-        const containing = blocks.find((b) => relevance.bestIndex >= b.start && relevance.bestIndex < b.end)
-        if (
-          containing &&
-          !containing.heading &&
-          countWords(containing.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS &&
-          !detectQuestionBankContent(containing.body)
-        ) {
-          paragraph = { text: containing.body, bookTitle: item.title, pageNumber: source.pageNumber as number, extractionQuality }
-        }
-      }
-    }
-
-    for (const block of blocks) {
-      if (!block.heading) continue
-      const key = normalizeConceptName(block.heading)
-      // Section relevance §B — a small set of heading labels are never
-      // an explanatory section for ANY concept, no matter what their
-      // body text mentions or how many times: a Learning Objectives list
-      // typically names several concepts in one line each without
-      // teaching any of them, and Summary/Review-Questions/References-
-      // style blocks are recaps or pointers, not the primary lesson.
-      // Checked before the heading-match/body-relevance logic below so
-      // it can never be overridden by a high occurrence count.
-      if (NON_EXPLANATORY_HEADING_LABELS.has(key)) continue
-
-      // Question-Bank Content Correction — a heading that DOES match the
-      // concept's own name (isConceptHeading, the strongest signal below)
-      // is still not real Core Concept material if its body is actually a
-      // wall of MCQ options/exam citations/answer-key fragments — e.g. a
-      // Quantitative Aptitude book's "WHAT IS THE PROBABILITY THAT..."
-      // question stem gets picked up as a "heading" by the structural
-      // detector, and matches "Probability" as a substring. Checked here,
-      // before isConceptHeading gets its own scoring weight below, so no
-      // amount of own-heading/occurrence strength can smuggle a raw
-      // question dump into the lesson. The underlying ConceptSource link
-      // is untouched — this only keeps that page's content out of Core
-      // Concept, it stays visible via References.
-      if (detectQuestionBankContent(block.body)) continue
-
-      const isConceptHeading = headingMatchesTerm(block.heading, conceptTerms)
-      // Retrieval Correction §2/§B, Concept boundary correction — a
-      // heading that ISN'T the concept's own name only belongs in this
-      // concept's lesson if its own body text substantially teaches the
-      // concept, not just mentions it. A parent/broader heading (e.g.
-      // "Nucleic Acids" for the concept DNA) can still qualify, but only
-      // when the concept is clearly a running thread in that section:
-      // real prose (never `weak`, which is exactly the "one clean-looking
-      // mention amid otherwise unrelated prose" shape), several separate
-      // occurrences, and a density high enough that the section reads as
-      // being substantially about the concept rather than name-dropping
-      // it once early on. This is what keeps a section like
-      // "Transformation" or "Mutation" — where the concept is discussed
-      // only as part of another topic — out of the lesson, without
-      // hardcoding any topic name: it's the same shape/density test for
-      // every concept.
-      let blockRelevance: PageRelevance | undefined
-      if (!isConceptHeading) {
-        blockRelevance = scorePageRelevance(block.body, term)
-        if (blockRelevance.tier !== 'high' && blockRelevance.tier !== 'relevant') continue
-        if (blockRelevance.occurrences < MIN_SECTION_OCCURRENCES_FOR_NON_OWN_HEADING) continue
-        const bodyWords = countWords(block.body)
-        const density = blockRelevance.occurrences / Math.max(bodyWords, 1)
-        if (density < MIN_SECTION_TERM_DENSITY) continue
-        const firstOccurrence = block.body.toLowerCase().indexOf(term.trim().toLowerCase())
-        if (firstOccurrence !== -1 && firstOccurrence / Math.max(block.body.length, 1) > MAX_NON_OWN_HEADING_FIRST_MENTION_FRACTION) {
-          continue
-        }
-      }
-
-      const existingSection = sections.get(key)
-      if (!existingSection) {
-        if (isConceptHeading) headingMatchKeys.add(key)
-        sections.set(key, {
-          heading: block.heading,
-          body: block.body,
-          bookTitle: item.title,
-          pageNumber: source.pageNumber as number,
-          isConceptHeading,
-          extractionQuality
-        })
-        sectionMeta.set(key, {
-          tier: isConceptHeading ? 'high' : (blockRelevance as PageRelevance).tier,
-          occurrences: isConceptHeading ? Number.POSITIVE_INFINITY : (blockRelevance as PageRelevance).occurrences
-        })
+      let pageText: string
+      let flatPageText: string
+      try {
+        const page = await vdoc.getPageText(pageNumber)
+        pageText = page.structured
+        flatPageText = page.flat
+      } catch {
         continue
       }
 
-      // Retrieval Diagnostic Correction §C — ALL relevant uploaded books
-      // merge here, not just the first one that reached this heading:
-      // a second (or third) book's own section under the same heading
-      // label is complementary evidence, appended after the first book's
-      // contribution, as long as it isn't substantially the same passage
-      // already captured and this heading hasn't already collected its
-      // cap of extra books. The first book's own heading text/citation
-      // (`existingSection.bookTitle`/`pageNumber`) is never overwritten —
-      // real headings the source material used stay exactly as written.
-      if (existingSection.bookTitle === item.title) continue
-      if ((existingSection.additionalSources?.length ?? 0) >= MAX_ADDITIONAL_SECTION_SOURCES) continue
-      if (existingSection.additionalSources?.some((s) => s.bookTitle === item.title)) continue
-      if (isNearDuplicateSection(existingSection.body, block.body)) continue
-      existingSection.body = `${existingSection.body}\n\n${block.body}`
-      existingSection.additionalSources = [
-        ...(existingSection.additionalSources ?? []),
-        { bookTitle: item.title, pageNumber: source.pageNumber as number }
-      ]
+      const source = candidateByPage.get(`${itemId}:${pageNumber}`)
+      const term = source?.sourceText || concept.name
+      const extractionQuality = source?.extractionQuality ?? detectExtractionQuality(flatPageText)
+      const blocks = splitIntoKnownSections(pageText)
+
+      // Only candidate pages can establish the initial relevance of a page.
+      // Continuation pages inherit the active section and are allowed to add
+      // prose, but a completely new unrelated heading still has to pass its
+      // own relevance checks below.
+      if (source && !paragraph) {
+        const ownHeadingBlock = blocks.find(
+          (b) => b.heading && headingMatchesTerm(b.heading, conceptTerms) && !detectQuestionBankContent(b.body)
+        )
+        if (ownHeadingBlock && countWords(ownHeadingBlock.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS) {
+          paragraph = {
+            text: ownHeadingBlock.body,
+            bookTitle: item.title,
+            pageNumber,
+            extractionQuality
+          }
+        }
+      }
+
+      let sawRelevantHeading = false
+      for (const block of blocks) {
+        if (block.heading) {
+          const key = normalizeConceptName(block.heading)
+          if (NON_EXPLANATORY_HEADING_LABELS.has(key) || detectQuestionBankContent(block.body)) {
+            activeHeading = ''
+            continue
+          }
+
+          const isConceptHeading = headingMatchesTerm(block.heading, conceptTerms)
+          let blockRelevance: PageRelevance | undefined
+          if (!isConceptHeading) {
+            blockRelevance = scorePageRelevance(block.body, term)
+            if (blockRelevance.tier !== 'high' && blockRelevance.tier !== 'relevant') continue
+            if (blockRelevance.occurrences < MIN_SECTION_OCCURRENCES_FOR_NON_OWN_HEADING) continue
+            const bodyWords = countWords(block.body)
+            const density = blockRelevance.occurrences / Math.max(bodyWords, 1)
+            if (density < MIN_SECTION_TERM_DENSITY) continue
+            const firstOccurrence = block.body.toLowerCase().indexOf(term.trim().toLowerCase())
+            if (firstOccurrence !== -1 && firstOccurrence / Math.max(block.body.length, 1) > MAX_NON_OWN_HEADING_FIRST_MENTION_FRACTION) continue
+          }
+
+          activeHeading = block.heading
+          sawRelevantHeading = true
+          const keyForSection = normalizeConceptName(block.heading)
+          const existingSection = sections.get(keyForSection)
+          if (!existingSection) {
+            sections.set(keyForSection, {
+              heading: block.heading,
+              body: block.body,
+              bookTitle: item.title,
+              pageNumber,
+              isConceptHeading,
+              extractionQuality
+            })
+            sectionMeta.set(keyForSection, {
+              tier: isConceptHeading ? 'high' : (blockRelevance as PageRelevance).tier,
+              occurrences: isConceptHeading ? Number.POSITIVE_INFINITY : (blockRelevance as PageRelevance).occurrences
+            })
+          } else if (existingSection.bookTitle !== item.title) {
+            if ((existingSection.additionalSources?.length ?? 0) < MAX_ADDITIONAL_SECTION_SOURCES &&
+                !existingSection.additionalSources?.some((s) => s.bookTitle === item.title) &&
+                !isNearDuplicateSection(existingSection.body, block.body)) {
+              existingSection.body = `${existingSection.body}\n\n${block.body}`
+              existingSection.additionalSources = [
+                ...(existingSection.additionalSources ?? []),
+                { bookTitle: item.title, pageNumber }
+              ]
+            }
+          } else if (!isNearDuplicateSection(existingSection.body, block.body)) {
+            existingSection.body = `${existingSection.body}\n\n${block.body}`
+          }
+          continue
+        }
+
+        // Unheaded text immediately following a relevant heading is the
+        // continuation material we were previously losing at page boundaries.
+        // Attach it to the active section instead of creating an orphan block.
+        if (activeHeading && block.body && (source || isConsecutive || sawRelevantHeading)) {
+          const keyForSection = normalizeConceptName(activeHeading)
+          const existingSection = sections.get(keyForSection)
+          if (existingSection && !detectQuestionBankContent(block.body) && !isNearDuplicateSection(existingSection.body, block.body)) {
+            existingSection.body = `${existingSection.body}\n\n${block.body}`
+          }
+        }
+      }
+
+      // If the page had no headings at all, the candidate's strongest prose can
+      // still supply the local paragraph. Do not let a continuation page create
+      // a new lesson section by itself.
+      if (source && !paragraph && blocks.length) {
+        const relevance = scorePageRelevance(flatPageText, term)
+        if (relevance.bestIndex !== -1) {
+          const containing = blocks.find((b) => relevance.bestIndex >= b.start && relevance.bestIndex < b.end)
+          if (containing && !containing.heading && countWords(containing.body) >= MIN_OVERVIEW_PARAGRAPH_WORDS && !detectQuestionBankContent(containing.body)) {
+            paragraph = { text: containing.body, bookTitle: item.title, pageNumber, extractionQuality }
+          }
+        }
+      }
     }
   }
 
-  // The concept's own headed section(s) lead the lesson; everything else
-  // (generic Definition/Principle/Procedure-style labels, or a heading
-  // from a different topic that still passed the body-relevance check)
-  // follows ranked by how strongly it teaches the concept — own-heading
-  // sections first, then by relevance tier and occurrence count.
-  const strengthOf = ([key, section]: [string, StudySection]) => {
-    const meta = sectionMeta.get(key)
-    return sectionStrength(
-      section.isConceptHeading,
-      meta?.tier ?? 'weak',
-      meta?.occurrences ?? 0,
-      section.extractionQuality
-    )
+  const strengthOf = ([, section]: [string, StudySection]) => {
+    const meta = sectionMeta.get(normalizeConceptName(section.heading))
+    return sectionStrength(section.isConceptHeading, meta?.tier ?? 'weak', meta?.occurrences ?? 0, section.extractionQuality)
   }
-  const rankedEntries = Array.from(sections.entries()).sort((a, b) => strengthOf(b) - strengthOf(a))
 
-  // Deduplicate overlapping sections across books — two DIFFERENT heading
-  // labels (e.g. "DNA" in one book, "Structure of DNA" in another) can
-  // still be substantially the same passage once their body text is
-  // compared directly, the same signal used above for same-heading
-  // merging, just applied across the whole set. Iterating strongest-first
-  // means a duplicate is always resolved by keeping the stronger section
-  // and dropping the weaker one, never the reverse.
+  const rankedEntries = Array.from(sections.entries())
+    .sort((a, b) => strengthOf(b) - strengthOf(a))
+
   const deduped: Array<[string, StudySection]> = []
   for (const entry of rankedEntries) {
     const [, section] = entry
-    const isDuplicate = deduped.some(([, kept]) => isNearDuplicateSection(kept.body, section.body))
-    if (isDuplicate) continue
+    if (section.extractionQuality === 'garbled') continue
+    if (detectQuestionBankContent(section.body)) continue
+    if (deduped.some(([, kept]) => isNearDuplicateSection(kept.body, section.body))) continue
     deduped.push(entry)
   }
 
-  // Final Core Concept selection.
-  //
-  // A global slice can let one textbook dominate all six lesson slots.
-  // Give every represented book one strong chance first, then fill any
-  // remaining slots by overall strength. Garbled sections are excluded
-  // from Core Concept entirely; they remain available through References.
-  const cleanSections = deduped.filter(
-    ([, section]) => section.extractionQuality !== 'garbled'
-  )
-
+  // Keep several strong sections rather than forcing one section per book.
+  // A full chapter is allowed to contribute its own coherent subsections,
+  // while multi-book concepts still receive cross-book representation.
   const selected: Array<[string, StudySection]> = []
-  const usedBooks = new Set<string>()
-
-  // Pass 1: one strong section from each distinct book.
-  for (const entry of cleanSections) {
-    if (selected.length >= MAX_LESSON_SECTIONS) break
-
+  const MAX_SELECTED_SECTIONS = MAX_LESSON_SECTIONS
+  const perBookSelected = new Map<string, number>()
+  for (const entry of deduped) {
+    if (selected.length >= MAX_SELECTED_SECTIONS) break
     const [, section] = entry
-    if (usedBooks.has(section.bookTitle)) continue
-
+    const used = perBookSelected.get(section.bookTitle) ?? 0
+    const bookLimit = bookCount <= 1 ? 8 : 4
+    if (used >= bookLimit) continue
     selected.push(entry)
-    usedBooks.add(section.bookTitle)
+    perBookSelected.set(section.bookTitle, used + 1)
   }
 
-  // Pass 2: fill remaining slots with the strongest remaining sections.
-  if (selected.length < MAX_LESSON_SECTIONS) {
-    for (const entry of cleanSections) {
-      if (selected.length >= MAX_LESSON_SECTIONS) break
-      if (selected.includes(entry)) continue
-      selected.push(entry)
-    }
-  }
-
-  // Trim excessive prose — long sections are cut down to the sentences
-  // that actually explain the concept; short sections pass through
-  // unchanged (trimSectionProse is a no-op below its own length budget).
   const orderedSections = selected.map(([, section]) => ({
     ...section,
-    body: trimSectionProse(section.body, conceptTerms)
+    body: trimSectionProse(section.body, conceptTerms, { maxSentences: 12, maxWords: 300 })
   }))
 
-  const trimmedParagraph = paragraph ? { ...paragraph, text: trimSectionProse(paragraph.text, conceptTerms) } : undefined
+  const trimmedParagraph = paragraph
+    ? { ...paragraph, text: trimSectionProse(paragraph.text, conceptTerms, { maxSentences: 8, maxWords: 220 }) }
+    : undefined
 
   return { paragraph: trimmedParagraph, sections: orderedSections }
 }
 
-const STUDY_OVERVIEW_CACHE_KEY_PREFIX = 'conceptStudyOverviewCache:v1:'
+const STUDY_OVERVIEW_CACHE_KEY_PREFIX = 'conceptStudyOverviewCache:v2:'
 
 interface StudyOverviewCacheEntry {
   fingerprint: string
