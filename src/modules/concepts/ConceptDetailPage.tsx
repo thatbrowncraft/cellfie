@@ -21,6 +21,7 @@ import {
   getCuratedLesson,
   getFirstAndLastEncountered,
   isLikelyOnline,
+  libraryItemMatchesStudyContexts,
   scanLibraryForConcept,
   scanLibraryItemForConcepts,
   type EuropePmcArticle,
@@ -532,7 +533,31 @@ export function ConceptDetailPage() {
     )
   }
 
-  const firstAndLast = useMemo(() => getFirstAndLastEncountered(sources, itemsById), [sources, itemsById])
+  // Context Retrieval Correction — `sources` above is every ConceptSource
+  // ever linked for this concept across the WHOLE library (that's what the
+  // background scan/index maintains, deliberately unfiltered — see
+  // scanLibraryForConcept). The selected Available Contexts must narrow
+  // what's actually DISPLAYED as "the material this lesson is built from"
+  // to the same eligible-books collection the lesson builder itself uses
+  // (extraction.ts's buildStudyOverview, via this exact same
+  // `libraryItemMatchesStudyContexts` check), so the "Combining material
+  // from N books…" count and "First encountered"/"Last referenced" can
+  // never point at a book outside the selected context.
+  const contextEligibleSources = useMemo(
+    () =>
+      sources.filter((s) =>
+        libraryItemMatchesStudyContexts(
+          s.libraryItemId ? itemsById.get(s.libraryItemId as string) : undefined,
+          selectedContextIds
+        )
+      ),
+    [sources, itemsById, selectedContextIds]
+  )
+
+  const firstAndLast = useMemo(
+    () => getFirstAndLastEncountered(contextEligibleSources, itemsById),
+    [contextEligibleSources, itemsById]
+  )
 
   // Relevance Correction — the Study Overview must be built from the
   // concept's STRONGEST source page, not simply the lowest page number
@@ -578,6 +603,13 @@ export function ConceptDetailPage() {
   }
 
   const stats = computeConceptStats(concept, sources)
+  // Context Retrieval Correction — the "Combining material from N
+  // books…" loading copy must count only the books eligible under the
+  // CURRENTLY SELECTED context(s), not the whole library's total linked
+  // book count. Kept separate from `stats` above (which still backs the
+  // Books/Pages/Highlights/Notes summary cards as whole-concept totals)
+  // so this fix stays scoped to the specific text that was wrong.
+  const contextStats = computeConceptStats(concept, contextEligibleSources)
 
   async function handleScan(item: LibraryItem) {
     setScanning(item.id)
@@ -778,7 +810,7 @@ export function ConceptDetailPage() {
                       <p className="mb-2 font-ui text-caption text-ink-tertiary">
                         {libraryScanInProgress
                           ? 'Searching your library and reading relevant sections from your books…'
-                          : `Combining material from ${stats.bookCount || 'your'} book${stats.bookCount === 1 ? '' : 's'}…`}
+                          : `Combining material from ${contextStats.bookCount || 'your'} book${contextStats.bookCount === 1 ? '' : 's'}…`}
                       </p>
                     )}
                     {loadingOnlineKnowledge && (
@@ -877,8 +909,8 @@ export function ConceptDetailPage() {
                       {libraryScanInProgress ? 'Searching your library…' : 'Reading relevant sections from your books…'}
                     </p>
                     <p className="mt-1 font-ui text-caption text-ink-tertiary">
-                      {stats.bookCount > 0
-                        ? `Combining material from ${stats.bookCount} book${stats.bookCount === 1 ? '' : 's'}…`
+                      {contextStats.bookCount > 0
+                        ? `Combining material from ${contextStats.bookCount} book${contextStats.bookCount === 1 ? '' : 's'}…`
                         : 'Checking your selected library contexts for relevant material…'}
                     </p>
                   </div>
