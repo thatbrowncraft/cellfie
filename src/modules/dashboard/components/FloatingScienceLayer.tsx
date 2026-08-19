@@ -53,6 +53,9 @@ interface FloatingItem {
     | 'petri'
     | 'book'
     | 'measurement'
+    | 'dividingCell'
+    | 'microbe'
+    | 'dnaStrand'
   label?: string
 }
 
@@ -63,43 +66,34 @@ interface FloatingItem {
 // so nothing repeats in an obviously tiled way.
 const ITEMS: FloatingItem[] = [
   // — top region —
-  { id: 'helix-1', top: '12%', left: '88%', size: 34, colorClassName: 'text-olive', opacity: 0.35, duration: 16, delay: 0, motion: 'drift', kind: 'helix' },
-  { id: 'hex-1', top: '15%', left: '4%', size: 26, colorClassName: 'text-sage', opacity: 0.32, duration: 14, delay: 1, motion: 'sway', kind: 'hexagon' },
-  { id: 'formula-1', top: '10%', left: '50%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 18, delay: 0.5, motion: 'drift', kind: 'formula', label: 'H₂O' },
-  { id: 'dot-1', top: '18%', left: '28%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 12, delay: 0.2, motion: 'drift', kind: 'dot' },
-  { id: 'sparkle-1', top: '14%', left: '72%', size: 14, colorClassName: 'text-terracotta', opacity: 0.38, duration: 13, delay: 0.8, motion: 'pulse', kind: 'sparkle' },
-  { id: 'measurement-1', top: '22%', left: '93%', size: 22, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 19, delay: 1.5, motion: 'drift', kind: 'measurement' },
+  { id: 'dna-strand-1', top: '10%', left: '88%', size: 28, colorClassName: 'text-olive', opacity: 0.38, duration: 16, delay: 0, motion: 'drift', kind: 'dnaStrand' },
+  { id: 'microbe-1', top: '14%', left: '3%', size: 26, colorClassName: 'text-sage', opacity: 0.35, duration: 14, delay: 1, motion: 'sway', kind: 'microbe' },
+  { id: 'eq-hardy-weinberg', top: '9%', left: '46%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 18, delay: 0.5, motion: 'drift', kind: 'formula', label: 'p² + 2pq + q² = 1' },
+  { id: 'dividing-cell-1', top: '18%', left: '26%', size: 24, colorClassName: 'text-terracotta', opacity: 0.38, duration: 15, delay: 0.2, motion: 'pulse', kind: 'dividingCell' },
+  { id: 'sparkle-1', top: '12%', left: '72%', size: 14, colorClassName: 'text-terracotta', opacity: 0.38, duration: 13, delay: 0.8, motion: 'pulse', kind: 'sparkle' },
 
   // — upper-mid gaps —
-  { id: 'flask-1', top: '32%', left: '86%', size: 26, colorClassName: 'text-terracotta', opacity: 0.35, duration: 15, delay: 0.3, motion: 'sway', kind: 'flask' },
-  { id: 'cell-1', top: '28%', left: '5%', size: 22, colorClassName: 'text-sage', opacity: 0.35, duration: 17, delay: 1.2, motion: 'pulse', kind: 'cell' },
-  { id: 'dot-2', top: '35%', left: '48%', size: 7, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 11, delay: 0.4, motion: 'drift', kind: 'dot' },
-  { id: 'formula-2', top: '30%', left: '22%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 18, delay: 1.8, motion: 'drift', kind: 'formula', label: 'DNA' },
-  { id: 'book-1', top: '38%', left: '3%', size: 24, colorClassName: 'text-olive', opacity: 0.32, duration: 16, delay: 0.7, motion: 'sway', kind: 'book' },
-  { id: 'petri-1', top: '25%', left: '68%', size: 24, colorClassName: 'text-sage', opacity: 0.32, duration: 15, delay: 2.1, motion: 'drift', kind: 'petri' },
+  { id: 'eq-michaelis-menten', top: '28%', left: '78%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 17, delay: 1.2, motion: 'drift', kind: 'formula', label: 'v = Vmax[S] / (Km + [S])' },
+  { id: 'flask-1', top: '32%', left: '88%', size: 26, colorClassName: 'text-terracotta', opacity: 0.35, duration: 15, delay: 0.3, motion: 'sway', kind: 'flask' },
+  { id: 'microbe-2', top: '26%', left: '5%', size: 24, colorClassName: 'text-sage', opacity: 0.35, duration: 15, delay: 0.7, motion: 'sway', kind: 'microbe' },
+  { id: 'dna-strand-2', top: '35%', left: '48%', size: 26, colorClassName: 'text-olive', opacity: 0.36, duration: 18, delay: 1.8, motion: 'drift', kind: 'dnaStrand' },
 
   // — middle gaps —
-  { id: 'atom-1', top: '50%', left: '4%', size: 30, colorClassName: 'text-olive', opacity: 0.32, duration: 20, delay: 0.2, motion: 'sway', kind: 'atom' },
-  { id: 'formula-3', top: '54%', left: '91%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 14, delay: 0.9, motion: 'drift', kind: 'formula', label: 'RNA' },
-  { id: 'sparkle-2', top: '48%', left: '52%', size: 12, colorClassName: 'text-terracotta', opacity: 0.38, duration: 13, delay: 1.4, motion: 'pulse', kind: 'sparkle' },
-  { id: 'dot-3', top: '58%', left: '18%', size: 5, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 12, delay: 0.6, motion: 'drift', kind: 'dot' },
-  { id: 'microscope-1', top: '52%', left: '80%', size: 24, colorClassName: 'text-olive', opacity: 0.32, duration: 17, delay: 1.1, motion: 'sway', kind: 'microscope' },
-  { id: 'hex-2', top: '62%', left: '32%', size: 20, colorClassName: 'text-sage', opacity: 0.3, duration: 16, delay: 0.5, motion: 'sway', kind: 'hexagon' },
+  { id: 'dividing-cell-2', top: '48%', left: '4%', size: 26, colorClassName: 'text-sage', opacity: 0.38, duration: 16, delay: 0.4, motion: 'pulse', kind: 'dividingCell' },
+  { id: 'eq-gibbs', top: '52%', left: '85%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 14, delay: 0.9, motion: 'drift', kind: 'formula', label: 'ΔG = ΔH - TΔS' },
+  { id: 'microbe-3', top: '46%', left: '50%', size: 24, colorClassName: 'text-olive', opacity: 0.35, duration: 13, delay: 1.4, motion: 'sway', kind: 'microbe' },
+  { id: 'atom-1', top: '56%', left: '20%', size: 28, colorClassName: 'text-olive', opacity: 0.32, duration: 20, delay: 0.2, motion: 'sway', kind: 'atom' },
 
   // — lower-mid gaps —
-  { id: 'formula-4', top: '72%', left: '6%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 18, delay: 0.1, motion: 'drift', kind: 'formula', label: 'pH 7' },
-  { id: 'glass-1', top: '68%', left: '92%', size: 24, colorClassName: 'text-olive', opacity: 0.32, duration: 15, delay: 1.3, motion: 'sway', kind: 'glassware' },
-  { id: 'dot-4', top: '75%', left: '50%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 11, delay: 0.8, motion: 'drift', kind: 'dot' },
-  { id: 'sparkle-3', top: '78%', left: '76%', size: 12, colorClassName: 'text-sage', opacity: 0.38, duration: 13, delay: 1.7, motion: 'pulse', kind: 'sparkle' },
-  { id: 'petri-2', top: '70%', left: '24%', size: 20, colorClassName: 'text-terracotta', opacity: 0.32, duration: 17, delay: 0.4, motion: 'drift', kind: 'petri' },
-  { id: 'formula-5', top: '82%', left: '86%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 16, delay: 1.0, motion: 'drift', kind: 'formula', label: 'PCR' },
+  { id: 'eq-ph', top: '70%', left: '6%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 18, delay: 0.1, motion: 'drift', kind: 'formula', label: 'pH = -log[H⁺]' },
+  { id: 'dna-strand-3', top: '68%', left: '92%', size: 26, colorClassName: 'text-sage', opacity: 0.36, duration: 15, delay: 1.3, motion: 'drift', kind: 'dnaStrand' },
+  { id: 'dividing-cell-3', top: '76%', left: '48%', size: 25, colorClassName: 'text-terracotta', opacity: 0.38, duration: 17, delay: 0.8, motion: 'pulse', kind: 'dividingCell' },
+  { id: 'eq-glucose', top: '80%', left: '74%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 16, delay: 1.0, motion: 'drift', kind: 'formula', label: 'C₆H₁₂O₆ + 6O₂' },
 
   // — bottom region —
-  { id: 'helix-2', top: '92%', left: '88%', size: 30, colorClassName: 'text-sage', opacity: 0.35, duration: 19, delay: 0.3, motion: 'drift', kind: 'helix' },
-  { id: 'hex-3', top: '96%', left: '50%', size: 22, colorClassName: 'text-sage', opacity: 0.32, duration: 16, delay: 1.5, motion: 'sway', kind: 'hexagon' },
-  { id: 'formula-6', top: '88%', left: '4%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 15, delay: 0.7, motion: 'drift', kind: 'formula', label: 'E = mc²' },
-  { id: 'sparkle-4', top: '98%', left: '70%', size: 12, colorClassName: 'text-terracotta', opacity: 0.4, duration: 12, delay: 1.1, motion: 'pulse', kind: 'sparkle' },
-  { id: 'cell-3', top: '90%', left: '30%', size: 20, colorClassName: 'text-olive', opacity: 0.32, duration: 16, delay: 0.9, motion: 'pulse', kind: 'cell' }
+  { id: 'microbe-4', top: '90%', left: '88%', size: 26, colorClassName: 'text-sage', opacity: 0.35, duration: 16, delay: 0.3, motion: 'sway', kind: 'microbe' },
+  { id: 'dividing-cell-4', top: '94%', left: '46%', size: 26, colorClassName: 'text-olive', opacity: 0.38, duration: 15, delay: 1.1, motion: 'pulse', kind: 'dividingCell' },
+  { id: 'eq-ideal-gas', top: '88%', left: '4%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 15, delay: 0.7, motion: 'drift', kind: 'formula', label: 'PV = nRT' }
 ]
 
 function ShapeGlyph({ item }: { item: FloatingItem }) {
@@ -202,6 +196,44 @@ function ShapeGlyph({ item }: { item: FloatingItem }) {
           />
           <path d="M4 21h12" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
           <path d="M13 21c1-2.4 1-4.6 0-7" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
+        </svg>
+      )
+          case 'dividingCell':
+      return (
+        <svg width={item.size * 1.5} height={item.size} viewBox="0 0 36 24" fill="none" {...common}>
+          {/* Cleavage furrow pinching membrane */}
+          <path
+            d="M10 2 C16 2 15 9 18 12 C21 9 20 2 26 2 C32 2 35 7 35 12 C35 17 32 22 26 22 C20 22 21 15 18 12 C15 15 16 22 10 22 C4 22 1 17 1 12 C1 7 4 2 10 2 Z"
+            stroke="currentColor"
+            strokeWidth="1.3"
+          />
+          {/* Separating nuclei */}
+          <circle cx="9" cy="12" r="2.5" stroke="currentColor" strokeWidth="1" />
+          <circle cx="27" cy="12" r="2.5" stroke="currentColor" strokeWidth="1" />
+        </svg>
+      )
+    case 'microbe':
+      return (
+        <svg width={item.size * 1.5} height={item.size} viewBox="0 0 36 24" fill="none" {...common}>
+          {/* Flagellated bacterium body */}
+          <rect x="12" y="6" width="18" height="12" rx="6" stroke="currentColor" strokeWidth="1.3" />
+          {/* Flagella / swim tails */}
+          <path d="M12 12 C8 9 6 15 2 12 C0 10 -1 14 -4 12" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+          <path d="M12 15 C8 16 6 20 2 18" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+          <circle cx="18" cy="12" r="1.2" fill="currentColor" />
+          <circle cx="23" cy="10" r="0.8" fill="currentColor" />
+        </svg>
+      )
+    case 'dnaStrand':
+      return (
+        <svg width={item.size} height={item.size * 1.6} viewBox="0 0 24 38" fill="none" {...common}>
+          {/* Graphical double helix with base pairs */}
+          <path d="M4 2 C20 10 20 20 4 28 C-4 33 4 38 4 38" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+          <path d="M20 2 C4 10 4 20 20 28 C28 33 20 38 20 38" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+          <line x1="7" y1="6" x2="17" y2="6" stroke="currentColor" strokeWidth="1.2" />
+          <line x1="11" y1="11" x2="13" y2="11" stroke="currentColor" strokeWidth="1.2" />
+          <line x1="7" y1="24" x2="17" y2="24" stroke="currentColor" strokeWidth="1.2" />
+          <line x1="11" y1="30" x2="13" y2="30" stroke="currentColor" strokeWidth="1.2" />
         </svg>
       )
     case 'petri':
