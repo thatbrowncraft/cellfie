@@ -65,35 +65,40 @@ interface FloatingItem {
 // the header. Sizes, opacities, and durations are varied item-to-item
 // so nothing repeats in an obviously tiled way.
 const ITEMS: FloatingItem[] = [
-  // — top region —
-  { id: 'dna-strand-1', top: '10%', left: '88%', size: 28, colorClassName: 'text-olive', opacity: 0.38, duration: 16, delay: 0, motion: 'drift', kind: 'dnaStrand' },
-  { id: 'microbe-1', top: '14%', left: '3%', size: 26, colorClassName: 'text-sage', opacity: 0.35, duration: 14, delay: 1, motion: 'sway', kind: 'microbe' },
-  { id: 'eq-hardy-weinberg', top: '9%', left: '46%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 18, delay: 0.5, motion: 'drift', kind: 'formula', label: 'p² + 2pq + q² = 1' },
-  { id: 'dividing-cell-1', top: '18%', left: '26%', size: 24, colorClassName: 'text-terracotta', opacity: 0.38, duration: 15, delay: 0.2, motion: 'pulse', kind: 'dividingCell' },
-  { id: 'sparkle-1', top: '12%', left: '72%', size: 14, colorClassName: 'text-terracotta', opacity: 0.38, duration: 13, delay: 0.8, motion: 'pulse', kind: 'sparkle' },
+  // — TOP SECTION (0% – 30%) —
+  { id: 'dna-strand-1', top: '8%', left: '88%', size: 28, colorClassName: 'text-olive', opacity: 0.38, duration: 16, delay: 0, motion: 'drift', kind: 'dnaStrand' },
+  { id: 'microbe-1', top: '12%', left: '3%', size: 26, colorClassName: 'text-sage', opacity: 0.35, duration: 14, delay: 1, motion: 'sway', kind: 'microbe' },
+  { id: 'eq-hardy-weinberg', top: '7%', left: '46%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 18, delay: 0.5, motion: 'drift', kind: 'formula', label: 'p² + 2pq + q² = 1' },
+  { id: 'dividing-cell-1', top: '16%', left: '26%', size: 24, colorClassName: 'text-terracotta', opacity: 0.38, duration: 15, delay: 0.2, motion: 'pulse', kind: 'dividingCell' },
+  { id: 'sparkle-1', top: '10%', left: '72%', size: 14, colorClassName: 'text-terracotta', opacity: 0.38, duration: 13, delay: 0.8, motion: 'pulse', kind: 'sparkle' },
+  { id: 'dot-1', top: '22%', left: '94%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 12, delay: 0.3, motion: 'drift', kind: 'dot' },
 
-  // — upper-mid gaps —
+  // — MID SECTION (30% – 60%) —
   { id: 'eq-michaelis-menten', top: '28%', left: '78%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 17, delay: 1.2, motion: 'drift', kind: 'formula', label: 'v = Vmax[S] / (Km + [S])' },
   { id: 'flask-1', top: '32%', left: '88%', size: 26, colorClassName: 'text-terracotta', opacity: 0.35, duration: 15, delay: 0.3, motion: 'sway', kind: 'flask' },
-  { id: 'microbe-2', top: '26%', left: '5%', size: 24, colorClassName: 'text-sage', opacity: 0.35, duration: 15, delay: 0.7, motion: 'sway', kind: 'microbe' },
-  { id: 'dna-strand-2', top: '35%', left: '48%', size: 26, colorClassName: 'text-olive', opacity: 0.36, duration: 18, delay: 1.8, motion: 'drift', kind: 'dnaStrand' },
+  { id: 'microbe-2', top: '26%', left: '4%', size: 24, colorClassName: 'text-sage', opacity: 0.35, duration: 15, delay: 0.7, motion: 'sway', kind: 'microbe' },
+  { id: 'dna-strand-2', top: '36%', left: '48%', size: 26, colorClassName: 'text-olive', opacity: 0.36, duration: 18, delay: 1.8, motion: 'drift', kind: 'dnaStrand' },
+  { id: 'dividing-cell-2', top: '46%', left: '3%', size: 26, colorClassName: 'text-sage', opacity: 0.38, duration: 16, delay: 0.4, motion: 'pulse', kind: 'dividingCell' },
+  { id: 'eq-gibbs', top: '50%', left: '85%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 14, delay: 0.9, motion: 'drift', kind: 'formula', label: 'ΔG = ΔH - TΔS' },
+  { id: 'microbe-3', top: '44%', left: '50%', size: 24, colorClassName: 'text-olive', opacity: 0.35, duration: 13, delay: 1.4, motion: 'sway', kind: 'microbe' },
+  { id: 'atom-1', top: '54%', left: '18%', size: 28, colorClassName: 'text-olive', opacity: 0.32, duration: 20, delay: 0.2, motion: 'sway', kind: 'atom' },
 
-  // — middle gaps —
-  { id: 'dividing-cell-2', top: '48%', left: '4%', size: 26, colorClassName: 'text-sage', opacity: 0.38, duration: 16, delay: 0.4, motion: 'pulse', kind: 'dividingCell' },
-  { id: 'eq-gibbs', top: '52%', left: '85%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 14, delay: 0.9, motion: 'drift', kind: 'formula', label: 'ΔG = ΔH - TΔS' },
-  { id: 'microbe-3', top: '46%', left: '50%', size: 24, colorClassName: 'text-olive', opacity: 0.35, duration: 13, delay: 1.4, motion: 'sway', kind: 'microbe' },
-  { id: 'atom-1', top: '56%', left: '20%', size: 28, colorClassName: 'text-olive', opacity: 0.32, duration: 20, delay: 0.2, motion: 'sway', kind: 'atom' },
-
-  // — lower-mid gaps —
-  { id: 'eq-ph', top: '70%', left: '6%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 18, delay: 0.1, motion: 'drift', kind: 'formula', label: 'pH = -log[H⁺]' },
-  { id: 'dna-strand-3', top: '68%', left: '92%', size: 26, colorClassName: 'text-sage', opacity: 0.36, duration: 15, delay: 1.3, motion: 'drift', kind: 'dnaStrand' },
-  { id: 'dividing-cell-3', top: '76%', left: '48%', size: 25, colorClassName: 'text-terracotta', opacity: 0.38, duration: 17, delay: 0.8, motion: 'pulse', kind: 'dividingCell' },
-  { id: 'eq-glucose', top: '80%', left: '74%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 16, delay: 1.0, motion: 'drift', kind: 'formula', label: 'C₆H₁₂O₆ + 6O₂' },
-
-  // — bottom region —
-  { id: 'microbe-4', top: '90%', left: '88%', size: 26, colorClassName: 'text-sage', opacity: 0.35, duration: 16, delay: 0.3, motion: 'sway', kind: 'microbe' },
-  { id: 'dividing-cell-4', top: '94%', left: '46%', size: 26, colorClassName: 'text-olive', opacity: 0.38, duration: 15, delay: 1.1, motion: 'pulse', kind: 'dividingCell' },
-  { id: 'eq-ideal-gas', top: '88%', left: '4%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 15, delay: 0.7, motion: 'drift', kind: 'formula', label: 'PV = nRT' }
+  // — DENSE LOWER & BOTTOM SECTION (60% – 98%) —
+  { id: 'eq-ph', top: '64%', left: '4%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 18, delay: 0.1, motion: 'drift', kind: 'formula', label: 'pH = -log[H⁺]' },
+  { id: 'dna-strand-3', top: '62%', left: '92%', size: 26, colorClassName: 'text-sage', opacity: 0.36, duration: 15, delay: 1.3, motion: 'drift', kind: 'dnaStrand' },
+  { id: 'dividing-cell-3', top: '68%', left: '48%', size: 25, colorClassName: 'text-terracotta', opacity: 0.38, duration: 17, delay: 0.8, motion: 'pulse', kind: 'dividingCell' },
+  { id: 'eq-glucose', top: '72%', left: '74%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 16, delay: 1.0, motion: 'drift', kind: 'formula', label: 'C₆H₁₂O₆ + 6O₂' },
+  { id: 'petri-bot-1', top: '70%', left: '2%', size: 22, colorClassName: 'text-olive', opacity: 0.35, duration: 15, delay: 0.4, motion: 'sway', kind: 'petri' },
+  { id: 'flask-bot-1', top: '76%', left: '94%', size: 24, colorClassName: 'text-terracotta', opacity: 0.35, duration: 14, delay: 1.6, motion: 'sway', kind: 'flask' },
+  { id: 'microbe-bot-1', top: '78%', left: '12%', size: 26, colorClassName: 'text-sage', opacity: 0.38, duration: 13, delay: 0.2, motion: 'sway', kind: 'microbe' },
+  { id: 'eq-ideal-gas', top: '82%', left: '3%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 15, delay: 0.7, motion: 'drift', kind: 'formula', label: 'PV = nRT' },
+  { id: 'dividing-cell-bot-1', top: '84%', left: '50%', size: 28, colorClassName: 'text-olive', opacity: 0.4, duration: 16, delay: 1.1, motion: 'pulse', kind: 'dividingCell' },
+  { id: 'sparkle-bot-1', top: '86%', left: '82%', size: 14, colorClassName: 'text-terracotta', opacity: 0.4, duration: 12, delay: 0.5, motion: 'pulse', kind: 'sparkle' },
+  { id: 'dna-strand-bot-1', top: '90%', left: '6%', size: 28, colorClassName: 'text-sage', opacity: 0.38, duration: 17, delay: 1.4, motion: 'drift', kind: 'dnaStrand' },
+  { id: 'microbe-bot-2', top: '92%', left: '88%', size: 26, colorClassName: 'text-olive', opacity: 0.38, duration: 14, delay: 0.3, motion: 'sway', kind: 'microbe' },
+  { id: 'eq-atp', top: '94%', left: '46%', size: 12, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 18, delay: 0.9, motion: 'drift', kind: 'formula', label: 'ATP ➔ ADP + Pi' },
+  { id: 'dividing-cell-bot-2', top: '96%', left: '24%', size: 24, colorClassName: 'text-terracotta', opacity: 0.38, duration: 15, delay: 0.6, motion: 'pulse', kind: 'dividingCell' },
+  { id: 'dot-bot-1', top: '98%', left: '72%', size: 7, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 11, delay: 1.8, motion: 'drift', kind: 'dot' }
 ]
 
 function ShapeGlyph({ item }: { item: FloatingItem }) {
