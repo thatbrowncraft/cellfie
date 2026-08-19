@@ -1,4 +1,4 @@
-import { useMemo, type ReactNode } from 'react'
+import { useEffect, useMemo, type ReactNode } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowSquareOut, GitBranch, Sparkle } from '@phosphor-icons/react'
 import { Button, CalloutBox, EmptyState, IllustrationFrame } from '@/shared/components'
@@ -10,6 +10,7 @@ import {
   organismCategoryLabels,
   type OrganismProfile
 } from '@/core/organisms'
+import { recordOrganismViewed } from '@/core/organisms/recentlyViewed'
 
 /** A single label/value row — used across Classification, Habitat, and Lab Identification. Renders nothing when the value is absent, per Sprint 4 §6 ("do not show empty labels"). */
 function InfoRow({ label, value }: { label: string; value?: string }) {
@@ -67,6 +68,16 @@ export function OrganismDetailPage() {
   const navigate = useNavigate()
   const organism = organismId ? getOrganismById(organismId) : undefined
   const relatedOrganisms = useMemo(() => (organism ? getRelatedOrganisms(organism) : []), [organism])
+
+  // Dashboard "Saved organisms" support (requested dashboard change #4) —
+  // records that this organism was opened, via the existing appSettings
+  // table (see core/organisms/recentlyViewed.ts). Purely additive; does
+  // not affect anything rendered on this page.
+  useEffect(() => {
+    if (organism) {
+      void recordOrganismViewed(organism.id)
+    }
+  }, [organism])
 
   if (!organism) {
     return (
