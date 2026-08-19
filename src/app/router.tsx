@@ -8,6 +8,7 @@ import { ReaderPage } from '../modules/library/reader/ReaderPage'
 import { ConceptsPage } from '../modules/concepts/ConceptsPage'
 import { ConceptDetailPage } from '../modules/concepts/ConceptDetailPage'
 import { OrganismExplorerPage } from '../modules/organism-explorer/OrganismExplorerPage'
+import { OrganismDetailPage } from '../modules/organism-explorer/OrganismDetailPage'
 import { LaboratoryPage } from '../modules/laboratory/LaboratoryPage'
 import { ComparisonStudioPage } from '../modules/comparison-studio/ComparisonStudioPage'
 import { NotesPage } from '../modules/notes/NotesPage'
@@ -171,6 +172,7 @@ export function AppRouter() {
         <Route path="/concepts" element={<ConceptsPage />} />
         <Route path="/concepts/:id" element={<ConceptDetailPage />} />
         <Route path="/organisms" element={<OrganismExplorerPage />} />
+        <Route path="/organisms/:organismId" element={<OrganismDetailPage />} />
         <Route path="/laboratory" element={<LaboratoryPage />} />
         <Route path="/comparison" element={<ComparisonStudioPage />} />
         <Route path="/notes" element={<NotesPage />} />
