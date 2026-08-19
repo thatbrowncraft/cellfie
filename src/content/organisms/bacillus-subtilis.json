@@ -1,0 +1,87 @@
+{
+  "id": "bacillus-subtilis",
+  "scientificName": "Bacillus subtilis",
+  "commonName": "Hay bacillus",
+  "category": "bacteria",
+  "quickTags": ["Endospore-former", "Catalase positive", "Soil saprophyte"],
+  "searchKeywords": ["hay bacillus", "spore stain", "grass bacillus"],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Bacillales",
+    "family": "Bacillaceae",
+    "genus": "Bacillus",
+    "species": "B. subtilis"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "arrangement": "Single cells or chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~4-10 x 0.25-1 \u00b5m",
+    "sporeForming": true,
+    "capsule": "Generally non-capsulated",
+    "motility": "Motile (peritrichous flagella)",
+    "oxygenRequirement": "Aerobe, though it can grow as a facultative anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil and decaying plant matter",
+    "hostAssociation": "Generally non-pathogenic; rare opportunistic infections or food-associated toxin production",
+    "environmentalOccurrence": "Ubiquitous in soil, water, air, and on vegetation \u2014 a classic environmental organism",
+    "reservoir": "Soil"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain; Schaeffer-Fulton endospore stain",
+      "appearance": "Gram-positive rods, often with a visible central or subterminal unstained endospore",
+      "arrangement": "Single cells or chains"
+    },
+    "culture": {
+      "media": "Grows readily on ordinary nutrient agar",
+      "growthCharacteristics": "Fast growing, aerobic, forms heat- and desiccation-resistant endospores under environmental stress",
+      "colonyMorphology": "Large, dull, wrinkled, dry-looking colonies",
+      "pigmentation": "Off-white to cream",
+      "hemolysis": "Usually non-hemolytic or weakly hemolytic"
+    },
+    "biochemicalTests": [
+      { "test": "Catalase", "result": "+" },
+      { "test": "Citrate", "result": "+" },
+      { "test": "Voges-Proskauer", "result": "+" },
+      { "test": "Starch hydrolysis", "result": "+" }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive rod",
+    "Forms heat-resistant endospores, seen as unstained ovals within the cell",
+    "Catalase positive",
+    "Motile",
+    "Large, dry, wrinkled colonies",
+    "Classic soil saprophyte, widely used as a teaching organism for spore staining"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Rarely pathogenic; occasional opportunistic eye or wound infections in immunocompromised hosts",
+      "Associated with some cases of food spoilage and rare toxin-mediated food poisoning"
+    ],
+    "virulenceFactors": [
+      "Minimal \u2014 considered largely non-pathogenic; its endospores support environmental persistence rather than virulence"
+    ],
+    "transmission": "Environmental exposure through soil, dust, or contaminated food",
+    "epidemiology": "Not a significant human pathogen; widely used as a laboratory and industrial model organism for enzyme and antibiotic production, and for teaching spore biology",
+    "labSignificance": "Standard teaching organism for endospore staining (Schaeffer-Fulton method) because of its reliable, easily visualized spore formation"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Catalase positive",
+    "importantDisease": "Rarely pathogenic \u2014 primarily a teaching and model organism",
+    "importantTest": "Endospore stain (Schaeffer-Fulton method)",
+    "distinguishingFeature": "Reliable endospore former; the classic soil bacillus used to teach spore staining"
+  },
+  "relatedOrganismIds": [],
+  "sources": [
+    { "name": "American Society for Microbiology (ASM)", "kind": "educational" },
+    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Bacillus Subtilis\"", "kind": "educational" }
+  ]
+}

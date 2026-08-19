@@ -1,0 +1,92 @@
+{
+  "id": "candida-albicans",
+  "scientificName": "Candida albicans",
+  "commonName": "Thrush fungus",
+  "category": "fungi",
+  "quickTags": ["Germ tube positive", "Dimorphic yeast", "Opportunistic pathogen"],
+  "searchKeywords": ["yeast infection", "thrush", "candidiasis", "vaginal yeast infection"],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Saccharomycetes",
+    "order": "Saccharomycetales",
+    "family": "Debaryomycetaceae",
+    "genus": "Candida",
+    "species": "C. albicans"
+  },
+  "morphology": {
+    "shape": "Oval budding yeast cells; forms pseudohyphae and true hyphae",
+    "arrangement": "Budding yeast cells (blastoconidia), with pseudohyphae under certain conditions",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~4-6 \u00b5m (yeast form)",
+    "sporeForming": false,
+    "capsule": "None",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Facultative anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human gastrointestinal tract, oral cavity, vagina, and skin as commensal flora",
+    "hostAssociation": "Normal commensal in most healthy individuals; opportunistic pathogen when host defenses are impaired",
+    "environmentalOccurrence": "Primarily host-associated rather than free-living in the environment",
+    "reservoir": "Human mucosal surfaces and the gastrointestinal tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain or KOH wet mount",
+      "appearance": "Oval budding yeast cells with pseudohyphae",
+      "arrangement": "Budding cells, sometimes in chains of pseudohyphae"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar (SDA), CHROMagar Candida, cornmeal agar for chlamydospore production",
+      "growthCharacteristics": "Grows well between 20-37\u00b0C; facultative anaerobe",
+      "colonyMorphology": "Cream-colored, smooth, pasty colonies with a yeasty odor",
+      "pigmentation": "White to cream on SDA; green on CHROMagar Candida",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      { "test": "Germ tube test", "result": "+" },
+      { "test": "Chlamydospore formation on cornmeal agar", "result": "+" }
+    ]
+  },
+  "identificationClues": [
+    "Budding yeast cells on Gram stain or KOH wet mount",
+    "Germ tube positive within 2-3 hours in serum \u2014 the key distinguishing test",
+    "Forms chlamydospores on cornmeal agar",
+    "Green colonies on CHROMagar Candida",
+    "Pseudohyphae formation"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Oropharyngeal candidiasis (thrush)",
+      "Vulvovaginal candidiasis (vaginal yeast infection)",
+      "Cutaneous candidiasis (diaper rash, intertrigo)",
+      "Invasive/systemic candidiasis and candidemia in immunocompromised or catheterized patients",
+      "Esophageal candidiasis \u2014 an AIDS-defining illness"
+    ],
+    "virulenceFactors": [
+      "Adhesins \u2014 surface proteins for mucosal attachment",
+      "Phenotypic switching between yeast and hyphal forms",
+      "Secreted aspartyl proteinases",
+      "Biofilm formation on catheters and other devices"
+    ],
+    "transmission": "Usually endogenous, arising from the patient's own flora; can also spread via contact or contaminated devices in healthcare settings",
+    "epidemiology": "Most common cause of fungal infection in humans; a leading cause of healthcare-associated bloodstream fungal infections",
+    "labSignificance": "The germ tube test is a fast, low-cost way to presumptively identify C. albicans among Candida species"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed \u2014 a fungus, though it often stains Gram-positive-like",
+    "shape": "Budding yeast with pseudohyphae",
+    "keyBiochemicalReaction": "Germ tube positive",
+    "importantDisease": "Oral and vaginal thrush; invasive candidiasis in immunocompromised patients",
+    "importantTest": "Germ tube test; chlamydospore formation on cornmeal agar",
+    "distinguishingFeature": "The only common Candida species that is germ tube positive"
+  },
+  "relatedOrganismIds": [],
+  "sources": [
+    { "name": "CDC \u2014 Candidiasis", "kind": "educational", "url": "https://www.cdc.gov/candidiasis/" },
+    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Candidiasis\"", "kind": "educational" },
+    { "name": "American Society for Microbiology (ASM)", "kind": "educational" }
+  ]
+}

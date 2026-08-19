@@ -1,0 +1,101 @@
+{
+  "id": "escherichia-coli",
+  "scientificName": "Escherichia coli",
+  "commonName": "E. coli",
+  "category": "bacteria",
+  "quickTags": ["Lactose fermenter", "Facultative anaerobe", "Indole positive"],
+  "searchKeywords": ["e coli", "coliform", "uti", "urinary tract infection"],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Enterobacteriaceae",
+    "genus": "Escherichia",
+    "species": "E. coli"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "arrangement": "Single cells or short chains",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-2 x 0.5 \u00b5m",
+    "sporeForming": false,
+    "capsule": "Some strains capsulated (K antigen)",
+    "motility": "Motile (peritrichous flagella) in most strains",
+    "oxygenRequirement": "Facultative anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Lower intestinal tract of warm-blooded animals, including humans",
+    "hostAssociation": "Normal gut flora; certain strains (e.g. enterotoxigenic, enterohemorrhagic) are pathogenic",
+    "environmentalOccurrence": "Found in water and soil contaminated with fecal matter; used as a standard indicator organism for fecal contamination",
+    "reservoir": "Human and animal intestinal tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods, pink/red",
+      "arrangement": "Singly or in pairs"
+    },
+    "culture": {
+      "media": "MacConkey agar, EMB (eosin methylene blue) agar",
+      "growthCharacteristics": "Rapid growth, facultative anaerobe, grows well at 37\u00b0C",
+      "colonyMorphology": "Large, gray, mucoid colonies on nutrient agar",
+      "pigmentation": "None; green metallic sheen on EMB agar",
+      "hemolysis": "Variable \u2014 some strains beta-hemolytic on blood agar"
+    },
+    "biochemicalTests": [
+      { "test": "Catalase", "result": "+" },
+      { "test": "Oxidase", "result": "\u2212" },
+      { "test": "Indole", "result": "+" },
+      { "test": "Methyl red", "result": "+" },
+      { "test": "Voges-Proskauer", "result": "\u2212" },
+      { "test": "Citrate", "result": "\u2212" },
+      { "test": "Lactose fermentation", "result": "+" }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative rod",
+    "Lactose fermenter \u2014 pink colonies on MacConkey agar",
+    "Indole positive",
+    "IMViC pattern: + + \u2212 \u2212",
+    "Green metallic sheen on EMB agar",
+    "Facultative anaerobe"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Urinary tract infections (most common cause)",
+      "Traveler's diarrhea (ETEC)",
+      "Hemolytic uremic syndrome (EHEC, e.g. O157:H7)",
+      "Neonatal meningitis",
+      "Gram-negative sepsis"
+    ],
+    "virulenceFactors": [
+      "Fimbriae/pili (adhesion)",
+      "Lipopolysaccharide (LPS) endotoxin",
+      "K capsular antigen (antiphagocytic)",
+      "Shiga-like toxin in EHEC strains"
+    ],
+    "toxins": [
+      "Heat-labile and heat-stable enterotoxins (ETEC)",
+      "Shiga-like toxin (EHEC, e.g. O157:H7)"
+    ],
+    "transmission": "Fecal-oral route for pathogenic strains; endogenous spread from the patient's own gut flora in most UTIs",
+    "epidemiology": "Leading cause of community- and hospital-acquired UTIs worldwide; O157:H7 is associated with undercooked beef and unpasteurized dairy",
+    "labSignificance": "Standard indicator organism for fecal contamination of water supplies"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Indole positive, lactose fermenter",
+    "importantDisease": "UTI \u2014 most common causative organism",
+    "importantTest": "IMViC pattern (+ + \u2212 \u2212); green sheen on EMB agar",
+    "distinguishingFeature": "Lactose fermentation plus indole positivity separates it from Salmonella and Shigella"
+  },
+  "relatedOrganismIds": ["pseudomonas-aeruginosa"],
+  "sources": [
+    { "name": "CDC \u2014 E. coli", "kind": "educational", "url": "https://www.cdc.gov/ecoli/" },
+    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Escherichia coli\"", "kind": "educational" },
+    { "name": "American Society for Microbiology (ASM)", "kind": "educational" }
+  ]
+}

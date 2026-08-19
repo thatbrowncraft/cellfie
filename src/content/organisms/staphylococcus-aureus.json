@@ -1,0 +1,101 @@
+{
+  "id": "staphylococcus-aureus",
+  "scientificName": "Staphylococcus aureus",
+  "commonName": "Staph aureus",
+  "category": "bacteria",
+  "quickTags": ["Coagulase positive", "Catalase positive", "Beta-hemolytic"],
+  "searchKeywords": ["staph", "staph infection", "mrsa", "boils", "abscess"],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Bacillales",
+    "family": "Staphylococcaceae",
+    "genus": "Staphylococcus",
+    "species": "S. aureus"
+  },
+  "morphology": {
+    "shape": "Cocci",
+    "arrangement": "Grape-like clusters",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~1 \u00b5m diameter",
+    "sporeForming": false,
+    "capsule": "Some strains have a thin polysaccharide microcapsule",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Facultative anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human skin and anterior nares (nasal mucosa)",
+    "hostAssociation": "Commensal in roughly a third of healthy adults via nasal carriage; opportunistic pathogen",
+    "environmentalOccurrence": "Can survive on dry surfaces for extended periods",
+    "reservoir": "Human nares and skin; hospital environment for MRSA strains"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in clusters",
+      "arrangement": "Clusters, described as grape-like"
+    },
+    "culture": {
+      "media": "Blood agar, Mannitol Salt Agar (MSA)",
+      "growthCharacteristics": "Facultative anaerobe, halotolerant \u2014 grows in high-salt media that inhibits most other organisms",
+      "colonyMorphology": "Golden-yellow, smooth, opaque colonies",
+      "pigmentation": "Golden-yellow (staphyloxanthin pigment)",
+      "hemolysis": "Beta-hemolytic on blood agar"
+    },
+    "biochemicalTests": [
+      { "test": "Catalase", "result": "+" },
+      { "test": "Coagulase", "result": "+" },
+      { "test": "Oxidase", "result": "\u2212" },
+      { "test": "Mannitol fermentation", "result": "+ (yellow on MSA)" },
+      { "test": "DNase", "result": "+" }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive cocci in clusters",
+    "Catalase positive \u2014 distinguishes it from Streptococcus",
+    "Coagulase positive \u2014 distinguishes it from coagulase-negative staphylococci",
+    "Golden-yellow colonies",
+    "Ferments mannitol on MSA (yellow color change)",
+    "Beta-hemolytic"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Skin and soft tissue infections (abscesses, cellulitis, impetigo)",
+      "Food poisoning from preformed enterotoxin",
+      "Toxic shock syndrome",
+      "Osteomyelitis",
+      "Infective endocarditis",
+      "MRSA infections, community- and hospital-acquired"
+    ],
+    "virulenceFactors": [
+      "Protein A \u2014 binds the Fc region of antibodies, antiphagocytic",
+      "Coagulase",
+      "Hemolysins",
+      "Leukocidins, e.g. Panton-Valentine leukocidin"
+    ],
+    "toxins": [
+      "Enterotoxins \u2014 cause of staphylococcal food poisoning",
+      "TSST-1 (toxic shock syndrome toxin)",
+      "Exfoliative toxin \u2014 scalded skin syndrome"
+    ],
+    "transmission": "Direct contact, fomites, and autoinoculation from nasal carriage",
+    "epidemiology": "Leading cause of skin and soft tissue infections; MRSA is a major driver of both hospital- and community-acquired disease",
+    "labSignificance": "The coagulase test is the key differentiator from other, generally less virulent staphylococci"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Cocci in clusters",
+    "keyBiochemicalReaction": "Catalase positive, coagulase positive",
+    "importantDisease": "Skin/soft tissue infections; toxic shock syndrome",
+    "importantTest": "Coagulase test \u2014 differentiates from coagulase-negative staph",
+    "distinguishingFeature": "Coagulase-positive, golden-pigmented colonies that ferment mannitol"
+  },
+  "relatedOrganismIds": ["streptococcus-pyogenes"],
+  "sources": [
+    { "name": "CDC \u2014 Staphylococcus aureus", "kind": "educational", "url": "https://www.cdc.gov/staphylococcus-aureus/" },
+    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Staphylococcus aureus\"", "kind": "educational" },
+    { "name": "American Society for Microbiology (ASM)", "kind": "educational" }
+  ]
+}

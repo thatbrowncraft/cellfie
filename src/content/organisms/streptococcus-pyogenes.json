@@ -1,0 +1,100 @@
+{
+  "id": "streptococcus-pyogenes",
+  "scientificName": "Streptococcus pyogenes",
+  "commonName": "Group A Strep",
+  "category": "bacteria",
+  "quickTags": ["Beta-hemolytic", "Bacitracin sensitive", "Group A antigen"],
+  "searchKeywords": ["strep throat", "gas", "group a streptococcus", "rheumatic fever"],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Streptococcaceae",
+    "genus": "Streptococcus",
+    "species": "S. pyogenes"
+  },
+  "morphology": {
+    "shape": "Cocci",
+    "arrangement": "Chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.6-1 \u00b5m",
+    "sporeForming": false,
+    "capsule": "Hyaluronic acid capsule (antiphagocytic)",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Facultative anaerobe (aerotolerant)"
+  },
+  "habitat": {
+    "naturalHabitat": "Human throat and skin",
+    "hostAssociation": "Strictly human-associated pathogen; can be carried asymptomatically in the pharynx",
+    "environmentalOccurrence": "Not a significant environmental organism",
+    "reservoir": "Human pharynx and skin"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in chains",
+      "arrangement": "Chains"
+    },
+    "culture": {
+      "media": "Blood agar",
+      "growthCharacteristics": "Facultative anaerobe, fastidious \u2014 requires enriched media",
+      "colonyMorphology": "Small, translucent, grayish colonies",
+      "pigmentation": "None",
+      "hemolysis": "Beta-hemolytic (complete hemolysis)"
+    },
+    "biochemicalTests": [
+      { "test": "Catalase", "result": "\u2212" },
+      { "test": "Bacitracin sensitivity", "result": "Sensitive" },
+      { "test": "PYR test", "result": "+" },
+      { "test": "CAMP test", "result": "\u2212" }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive cocci in chains",
+    "Catalase negative \u2014 distinguishes it from Staphylococcus",
+    "Beta-hemolytic on blood agar",
+    "Bacitracin sensitive",
+    "PYR test positive",
+    "Group A antigen on Lancefield grouping"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Pharyngitis (strep throat)",
+      "Impetigo, cellulitis, erysipelas",
+      "Scarlet fever",
+      "Necrotizing fasciitis",
+      "Toxic shock syndrome",
+      "Rheumatic fever (post-infectious)",
+      "Acute glomerulonephritis (post-infectious)"
+    ],
+    "virulenceFactors": [
+      "M protein \u2014 antiphagocytic, mediates adhesion",
+      "Hyaluronic acid capsule",
+      "Streptolysin O and streptolysin S",
+      "Streptokinase, hyaluronidase"
+    ],
+    "toxins": [
+      "Erythrogenic (pyrogenic) exotoxin \u2014 causes scarlet fever",
+      "Streptolysin O \u2014 antigenic, basis of the ASO titer test"
+    ],
+    "transmission": "Respiratory droplets and direct contact with skin lesions",
+    "epidemiology": "Common cause of pharyngitis in school-age children; untreated infection carries risk of nonsuppurative sequelae such as rheumatic fever and glomerulonephritis",
+    "labSignificance": "Bacitracin sensitivity distinguishes Group A strep from other beta-hemolytic streptococci"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Cocci in chains",
+    "keyBiochemicalReaction": "Catalase negative, bacitracin sensitive",
+    "importantDisease": "Pharyngitis; rheumatic fever if untreated",
+    "importantTest": "Bacitracin sensitivity; ASO titer",
+    "distinguishingFeature": "Beta-hemolytic, bacitracin-sensitive, catalase-negative cocci in chains"
+  },
+  "relatedOrganismIds": ["staphylococcus-aureus"],
+  "sources": [
+    { "name": "CDC \u2014 Group A Streptococcal Disease", "kind": "educational", "url": "https://www.cdc.gov/group-a-strep/" },
+    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Streptococcus pyogenes\"", "kind": "educational" },
+    { "name": "American Society for Microbiology (ASM)", "kind": "educational" }
+  ]
+}
