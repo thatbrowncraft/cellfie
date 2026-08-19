@@ -62,50 +62,44 @@ interface FloatingItem {
 // the header. Sizes, opacities, and durations are varied item-to-item
 // so nothing repeats in an obviously tiled way.
 const ITEMS: FloatingItem[] = [
-  // — top band —
-  { id: 'helix-1', top: '3%', left: '88%', size: 36, colorClassName: 'text-olive', opacity: 0.35, duration: 24, delay: 0, motion: 'drift', kind: 'helix' },
-  { id: 'hex-1', top: '5%', left: '3%', size: 28, colorClassName: 'text-sage', opacity: 0.32, duration: 22, delay: 1.5, motion: 'sway', kind: 'hexagon' },
-  { id: 'formula-1', top: '2%', left: '42%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 26, delay: 1.2, motion: 'drift', kind: 'formula', label: 'H₂O' },
-  { id: 'dot-1', top: '9%', left: '26%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 18, delay: 0.4, motion: 'drift', kind: 'dot' },
-  { id: 'sparkle-1', top: '7%', left: '64%', size: 14, colorClassName: 'text-terracotta', opacity: 0.38, duration: 20, delay: 0.3, motion: 'pulse', kind: 'sparkle' },
-  { id: 'measurement-1', top: '11%', left: '92%', size: 22, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 28, delay: 2, motion: 'drift', kind: 'measurement' },
+  // — top region —
+  { id: 'helix-1', top: '12%', left: '88%', size: 34, colorClassName: 'text-olive', opacity: 0.35, duration: 16, delay: 0, motion: 'drift', kind: 'helix' },
+  { id: 'hex-1', top: '15%', left: '4%', size: 26, colorClassName: 'text-sage', opacity: 0.32, duration: 14, delay: 1, motion: 'sway', kind: 'hexagon' },
+  { id: 'formula-1', top: '10%', left: '50%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 18, delay: 0.5, motion: 'drift', kind: 'formula', label: 'H₂O' },
+  { id: 'dot-1', top: '18%', left: '28%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 12, delay: 0.2, motion: 'drift', kind: 'dot' },
+  { id: 'sparkle-1', top: '14%', left: '72%', size: 14, colorClassName: 'text-terracotta', opacity: 0.38, duration: 13, delay: 0.8, motion: 'pulse', kind: 'sparkle' },
+  { id: 'measurement-1', top: '22%', left: '93%', size: 22, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 19, delay: 1.5, motion: 'drift', kind: 'measurement' },
 
-  // — upper-mid band —
-  { id: 'flask-1', top: '20%', left: '91%', size: 26, colorClassName: 'text-terracotta', opacity: 0.35, duration: 21, delay: 0.5, motion: 'sway', kind: 'flask' },
-  { id: 'cell-1', top: '18%', left: '2%', size: 22, colorClassName: 'text-sage', opacity: 0.35, duration: 25, delay: 1, motion: 'pulse', kind: 'cell' },
-  { id: 'dot-2', top: '24%', left: '40%', size: 7, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 19, delay: 0, motion: 'drift', kind: 'dot' },
-  { id: 'formula-2', top: '17%', left: '55%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 27, delay: 1.8, motion: 'drift', kind: 'formula', label: 'DNA' },
-  { id: 'book-1', top: '26%', left: '3%', size: 24, colorClassName: 'text-olive', opacity: 0.3, duration: 23, delay: 0.9, motion: 'sway', kind: 'book' },
-  { id: 'petri-1', top: '15%', left: '85%', size: 24, colorClassName: 'text-sage', opacity: 0.32, duration: 24, delay: 2.4, motion: 'drift', kind: 'petri' },
+  // — upper-mid gaps —
+  { id: 'flask-1', top: '32%', left: '86%', size: 26, colorClassName: 'text-terracotta', opacity: 0.35, duration: 15, delay: 0.3, motion: 'sway', kind: 'flask' },
+  { id: 'cell-1', top: '28%', left: '5%', size: 22, colorClassName: 'text-sage', opacity: 0.35, duration: 17, delay: 1.2, motion: 'pulse', kind: 'cell' },
+  { id: 'dot-2', top: '35%', left: '48%', size: 7, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 11, delay: 0.4, motion: 'drift', kind: 'dot' },
+  { id: 'formula-2', top: '30%', left: '22%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 18, delay: 1.8, motion: 'drift', kind: 'formula', label: 'DNA' },
+  { id: 'book-1', top: '38%', left: '3%', size: 24, colorClassName: 'text-olive', opacity: 0.32, duration: 16, delay: 0.7, motion: 'sway', kind: 'book' },
+  { id: 'petri-1', top: '25%', left: '68%', size: 24, colorClassName: 'text-sage', opacity: 0.32, duration: 15, delay: 2.1, motion: 'drift', kind: 'petri' },
 
-  // — middle band —
-  { id: 'atom-1', top: '38%', left: '2%', size: 32, colorClassName: 'text-olive', opacity: 0.3, duration: 29, delay: 2, motion: 'sway', kind: 'atom' },
-  { id: 'formula-3', top: '42%', left: '92%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 22, delay: 0.6, motion: 'drift', kind: 'formula', label: 'RNA' },
-  { id: 'sparkle-2', top: '35%', left: '68%', size: 12, colorClassName: 'text-terracotta', opacity: 0.38, duration: 18, delay: 1.6, motion: 'pulse', kind: 'sparkle' },
-  { id: 'dot-3', top: '46%', left: '22%', size: 5, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 20, delay: 2.5, motion: 'drift', kind: 'dot' },
-  { id: 'microscope-1', top: '40%', left: '94%', size: 24, colorClassName: 'text-olive', opacity: 0.3, duration: 26, delay: 1.1, motion: 'sway', kind: 'microscope' },
-  { id: 'hex-2', top: '48%', left: '3%', size: 20, colorClassName: 'text-sage', opacity: 0.3, duration: 25, delay: 0.7, motion: 'sway', kind: 'hexagon' },
-  { id: 'cell-2', top: '33%', left: '89%', size: 16, colorClassName: 'text-terracotta', opacity: 0.32, duration: 21, delay: 1.9, motion: 'pulse', kind: 'cell' },
+  // — middle gaps —
+  { id: 'atom-1', top: '50%', left: '4%', size: 30, colorClassName: 'text-olive', opacity: 0.32, duration: 20, delay: 0.2, motion: 'sway', kind: 'atom' },
+  { id: 'formula-3', top: '54%', left: '91%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 14, delay: 0.9, motion: 'drift', kind: 'formula', label: 'RNA' },
+  { id: 'sparkle-2', top: '48%', left: '52%', size: 12, colorClassName: 'text-terracotta', opacity: 0.38, duration: 13, delay: 1.4, motion: 'pulse', kind: 'sparkle' },
+  { id: 'dot-3', top: '58%', left: '18%', size: 5, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 12, delay: 0.6, motion: 'drift', kind: 'dot' },
+  { id: 'microscope-1', top: '52%', left: '80%', size: 24, colorClassName: 'text-olive', opacity: 0.32, duration: 17, delay: 1.1, motion: 'sway', kind: 'microscope' },
+  { id: 'hex-2', top: '62%', left: '32%', size: 20, colorClassName: 'text-sage', opacity: 0.3, duration: 16, delay: 0.5, motion: 'sway', kind: 'hexagon' },
 
-  // — lower-mid band —
-  { id: 'formula-4', top: '58%', left: '4%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 28, delay: 0.2, motion: 'drift', kind: 'formula', label: 'pH 7' },
-  { id: 'glass-1', top: '55%', left: '93%', size: 24, colorClassName: 'text-olive', opacity: 0.3, duration: 23, delay: 0.6, motion: 'sway', kind: 'glassware' },
-  { id: 'dot-4', top: '62%', left: '54%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 17, delay: 1, motion: 'drift', kind: 'dot' },
-  { id: 'sparkle-3', top: '65%', left: '36%', size: 12, colorClassName: 'text-sage', opacity: 0.38, duration: 19, delay: 2.1, motion: 'pulse', kind: 'sparkle' },
-  { id: 'petri-2', top: '60%', left: '2%', size: 20, colorClassName: 'text-terracotta', opacity: 0.32, duration: 27, delay: 1.4, motion: 'drift', kind: 'petri' },
-  { id: 'formula-5', top: '68%', left: '91%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 24, delay: 0.5, motion: 'drift', kind: 'formula', label: 'PCR' },
-  { id: 'measurement-2', top: '52%', left: '1%', size: 20, colorClassName: 'text-ink-tertiary', opacity: 0.32, duration: 26, delay: 1.7, motion: 'drift', kind: 'measurement' },
+  // — lower-mid gaps —
+  { id: 'formula-4', top: '72%', left: '6%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 18, delay: 0.1, motion: 'drift', kind: 'formula', label: 'pH 7' },
+  { id: 'glass-1', top: '68%', left: '92%', size: 24, colorClassName: 'text-olive', opacity: 0.32, duration: 15, delay: 1.3, motion: 'sway', kind: 'glassware' },
+  { id: 'dot-4', top: '75%', left: '50%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 11, delay: 0.8, motion: 'drift', kind: 'dot' },
+  { id: 'sparkle-3', top: '78%', left: '76%', size: 12, colorClassName: 'text-sage', opacity: 0.38, duration: 13, delay: 1.7, motion: 'pulse', kind: 'sparkle' },
+  { id: 'petri-2', top: '70%', left: '24%', size: 20, colorClassName: 'text-terracotta', opacity: 0.32, duration: 17, delay: 0.4, motion: 'drift', kind: 'petri' },
+  { id: 'formula-5', top: '82%', left: '86%', size: 13, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 16, delay: 1.0, motion: 'drift', kind: 'formula', label: 'PCR' },
 
-  // — bottom band —
-  { id: 'helix-2', top: '82%', left: '89%', size: 30, colorClassName: 'text-sage', opacity: 0.32, duration: 30, delay: 0.3, motion: 'drift', kind: 'helix' },
-  { id: 'hex-3', top: '92%', left: '46%', size: 22, colorClassName: 'text-sage', opacity: 0.3, duration: 25, delay: 2.2, motion: 'sway', kind: 'hexagon' },
-  { id: 'formula-6', top: '78%', left: '3%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 21, delay: 0.8, motion: 'drift', kind: 'formula', label: 'E = mc²' },
-  { id: 'sparkle-4', top: '90%', left: '92%', size: 12, colorClassName: 'text-terracotta', opacity: 0.4, duration: 18, delay: 1.8, motion: 'pulse', kind: 'sparkle' },
-  { id: 'cell-3', top: '86%', left: '2%', size: 20, colorClassName: 'text-olive', opacity: 0.32, duration: 24, delay: 1.3, motion: 'pulse', kind: 'cell' },
-  { id: 'dot-5', top: '95%', left: '62%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.45, duration: 20, delay: 0.9, motion: 'drift', kind: 'dot' },
-  { id: 'book-2', top: '96%', left: '4%', size: 22, colorClassName: 'text-terracotta', opacity: 0.3, duration: 29, delay: 2.6, motion: 'sway', kind: 'book' },
-  { id: 'flask-2', top: '75%', left: '93%', size: 20, colorClassName: 'text-olive', opacity: 0.32, duration: 22, delay: 1.5, motion: 'sway', kind: 'flask' },
-  { id: 'dot-6', top: '88%', left: '48%', size: 5, colorClassName: 'text-ink-tertiary', opacity: 0.4, duration: 19, delay: 2.3, motion: 'drift', kind: 'dot' }
+  // — bottom region —
+  { id: 'helix-2', top: '92%', left: '88%', size: 30, colorClassName: 'text-sage', opacity: 0.35, duration: 19, delay: 0.3, motion: 'drift', kind: 'helix' },
+  { id: 'hex-3', top: '96%', left: '50%', size: 22, colorClassName: 'text-sage', opacity: 0.32, duration: 16, delay: 1.5, motion: 'sway', kind: 'hexagon' },
+  { id: 'formula-6', top: '88%', left: '4%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.38, duration: 15, delay: 0.7, motion: 'drift', kind: 'formula', label: 'E = mc²' },
+  { id: 'sparkle-4', top: '98%', left: '70%', size: 12, colorClassName: 'text-terracotta', opacity: 0.4, duration: 12, delay: 1.1, motion: 'pulse', kind: 'sparkle' },
+  { id: 'cell-3', top: '90%', left: '30%', size: 20, colorClassName: 'text-olive', opacity: 0.32, duration: 16, delay: 0.9, motion: 'pulse', kind: 'cell' }
 ]
 
 function ShapeGlyph({ item }: { item: FloatingItem }) {
@@ -267,28 +261,35 @@ function ShapeGlyph({ item }: { item: FloatingItem }) {
 export function FloatingScienceLayer() {
   const reducedMotion = useReducedMotion()
 
-  const animationName: Record<NonNullable<FloatingItem['motion']>, string> = {
-    drift: 'cellfie-float-drift',
-    sway: 'cellfie-float-sway',
-    pulse: 'cellfie-float-pulse'
+    const animationName: Record<NonNullable<FloatingItem['motion']>, string> = {
+    drift: 'cellfie-rise-drift',
+    sway: 'cellfie-rise-sway',
+    pulse: 'cellfie-rise-straight'
   }
 
   return (
     <div className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden" aria-hidden="true">
       <style>{`
-        @keyframes cellfie-float-drift {
-          0%, 100% { transform: translateY(0px) translateX(0px); }
-          50% { transform: translateY(-12px) translateX(5px); }
+        @keyframes cellfie-rise-drift {
+          0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+          15% { opacity: 1; }
+          85% { opacity: 1; }
+          100% { transform: translateY(-300px) translateX(22px) rotate(15deg); opacity: 0; }
         }
-        @keyframes cellfie-float-sway {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(9px) rotate(7deg); }
+        @keyframes cellfie-rise-sway {
+          0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+          20% { opacity: 1; }
+          80% { opacity: 1; }
+          100% { transform: translateY(-260px) translateX(-20px) rotate(-12deg); opacity: 0; }
         }
-        @keyframes cellfie-float-pulse {
-          0%, 100% { transform: translateY(0px) scale(1); }
-          50% { transform: translateY(-6px) scale(1.08); }
+        @keyframes cellfie-rise-straight {
+          0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+          15% { opacity: 1; }
+          85% { opacity: 1; }
+          100% { transform: translateY(-340px) rotate(8deg); opacity: 0; }
         }
       `}</style>
+
       {ITEMS.map((item) => (
         <div
           key={item.id}
