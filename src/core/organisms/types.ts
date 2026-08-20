@@ -1,5 +1,5 @@
 /**
- * core/organisms/types — Sprint 4, Organism Explorer.
+ * core/organisms/types — Sprint 4, Organism Explorer (Master Revision).
  *
  * Mirrors the philosophy already established by
  * core/concepts/curatedLessons: hand-authored, source-attributed
@@ -13,6 +13,25 @@
  * detail view only renders sections/fields that are actually present
  * (Sprint 4 spec §6: "Only display fields that are available. Do not
  * show empty labels.").
+ *
+ * MASTER REVISION additions (all additive — no existing field removed
+ * or renamed except `relatedOrganismIds` → `relatedOrganisms`, which
+ * every shipped content file has been migrated to in this same
+ * revision, so nothing references the old shape anymore):
+ *
+ * 1. Normalized, filterable *Category fields alongside the existing
+ *    free-text display fields on OrganismMorphology (§6 — filters must
+ *    operate on real biological categories, not substring matches like
+ *    `oxygenRequirement.includes('anaerobe')` incorrectly matching
+ *    "Facultative anaerobe").
+ * 2. `fungalDetails` / `protozoanDetails` / `virusDetails` — optional,
+ *    category-specific structured blocks (§7-§9, §34) so a virus never
+ *    has to fill in a bacterial Gram-reaction field just to have
+ *    *something* to filter on.
+ * 3. `relatedOrganisms` replaces the old plain `relatedOrganismIds`
+ *    string array with `{ id, relationship }` pairs so the detail page
+ *    can say *why* two organisms are related instead of a generic
+ *    "Related organisms" list (§36).
  */
 
 export type OrganismCategory = 'bacteria' | 'fungi' | 'protozoa' | 'virus' | 'algae' | 'other'
@@ -26,6 +45,13 @@ export const organismCategoryLabels: Record<OrganismCategory, string> = {
   other: 'Other'
 }
 
+/** The categories the Explorer always offers a tab for, even at 0 count, per §3 ("main planned categories can remain visible if the architecture supports future expansion"). Algae/Other stay hidden at 0 count — they're extensibility placeholders, not part of the initial planned set. */
+export const primaryOrganismCategories: OrganismCategory[] = ['bacteria', 'fungi', 'protozoa', 'virus']
+
+// ---------------------------------------------------------------------------
+// Shared / cross-category normalized enums
+// ---------------------------------------------------------------------------
+
 export type GramReaction = 'positive' | 'negative' | 'variable' | 'not-applicable'
 
 export const gramReactionLabels: Record<GramReaction, string> = {
@@ -33,6 +59,68 @@ export const gramReactionLabels: Record<GramReaction, string> = {
   negative: 'Gram-negative',
   variable: 'Gram-variable',
   'not-applicable': 'Not Gram-typed'
+}
+
+/** §9/§8 — shared by protozoa and viruses so "fecal-oral" etc. is one vocabulary, not two. */
+export type TransmissionRoute =
+  | 'fecal-oral'
+  | 'vector-borne'
+  | 'sexual'
+  | 'respiratory'
+  | 'blood-body-fluids'
+  | 'zoonotic'
+  | 'other'
+
+export const transmissionRouteLabels: Record<TransmissionRoute, string> = {
+  'fecal-oral': 'Fecal-oral',
+  'vector-borne': 'Vector-borne',
+  sexual: 'Sexual',
+  respiratory: 'Respiratory',
+  'blood-body-fluids': 'Blood/body fluids',
+  zoonotic: 'Zoonotic',
+  other: 'Other'
+}
+
+// ---------------------------------------------------------------------------
+// Bacteria — normalized morphology categories (§5, §6)
+// ---------------------------------------------------------------------------
+
+export type ShapeCategory =
+  | 'coccus'
+  | 'bacillus'
+  | 'coccobacillus'
+  | 'spiral'
+  | 'spirochete'
+  | 'filamentous'
+  | 'pleomorphic'
+
+export const shapeCategoryLabels: Record<ShapeCategory, string> = {
+  coccus: 'Cocci',
+  bacillus: 'Bacilli',
+  coccobacillus: 'Coccobacilli',
+  spiral: 'Spiral',
+  spirochete: 'Spirochete',
+  filamentous: 'Filamentous',
+  pleomorphic: 'Pleomorphic'
+}
+
+export type ArrangementCategory = 'single' | 'pairs' | 'chains' | 'clusters' | 'palisades'
+
+export const arrangementCategoryLabels: Record<ArrangementCategory, string> = {
+  single: 'Singles',
+  pairs: 'Pairs',
+  chains: 'Chains',
+  clusters: 'Clusters',
+  palisades: 'Palisades'
+}
+
+export type OxygenRequirementCategory = 'obligate-aerobe' | 'facultative-anaerobe' | 'obligate-anaerobe' | 'microaerophile'
+
+export const oxygenRequirementCategoryLabels: Record<OxygenRequirementCategory, string> = {
+  'obligate-aerobe': 'Obligate aerobe',
+  'facultative-anaerobe': 'Facultative anaerobe',
+  'obligate-anaerobe': 'Obligate anaerobe',
+  microaerophile: 'Microaerophile'
 }
 
 export interface OrganismClassification {
@@ -47,18 +135,147 @@ export interface OrganismClassification {
 }
 
 export interface OrganismMorphology {
+  /** Free-text display value, e.g. "Rod (bacillus)". */
   shape?: string
+  /** Normalized — what the Shape filter actually matches against. */
+  shapeCategory?: ShapeCategory
   arrangement?: string
+  arrangementCategory?: ArrangementCategory
   gramReaction?: GramReaction
   acidFast?: boolean
   size?: string
   sporeForming?: boolean
   capsule?: string
+  /** Normalized — what the Capsule filter matches against. Absent when encapsulation isn't a meaningful/documented characteristic for this organism. */
+  encapsulated?: boolean
   motility?: string
+  /** Normalized — what the Motility filter matches against. */
+  motile?: boolean
+  /** Free-text display value, e.g. "Facultative anaerobe". */
   oxygenRequirement?: string
+  /** Normalized — what the Oxygen filter actually matches against (§6: prevents "Facultative anaerobe" text incorrectly matching an "anaerobe" substring filter). */
+  oxygenRequirementCategory?: OxygenRequirementCategory
   /** Any structural detail that doesn't fit the fields above. */
   notes?: string
 }
+
+// ---------------------------------------------------------------------------
+// Fungi — category-specific structured block (§7, §34)
+// ---------------------------------------------------------------------------
+
+export type FungalMorphologicalType = 'yeast' | 'mold' | 'dimorphic'
+
+export const fungalMorphologicalTypeLabels: Record<FungalMorphologicalType, string> = {
+  yeast: 'Yeast',
+  mold: 'Mold',
+  dimorphic: 'Dimorphic'
+}
+
+export type HyphaeType = 'septate' | 'aseptate' | 'pseudohyphae' | 'true-hyphae'
+
+export const hyphaeTypeLabels: Record<HyphaeType, string> = {
+  septate: 'Septate',
+  aseptate: 'Aseptate',
+  pseudohyphae: 'Pseudohyphae',
+  'true-hyphae': 'True hyphae'
+}
+
+export type FungalClinicalGroup = 'superficial' | 'cutaneous' | 'subcutaneous' | 'systemic' | 'opportunistic'
+
+export const fungalClinicalGroupLabels: Record<FungalClinicalGroup, string> = {
+  superficial: 'Superficial',
+  cutaneous: 'Cutaneous',
+  subcutaneous: 'Subcutaneous',
+  systemic: 'Systemic',
+  opportunistic: 'Opportunistic'
+}
+
+export interface FungalDetails {
+  morphologicalType?: FungalMorphologicalType
+  hyphae?: HyphaeType[]
+  /** Free-text reproductive/structural features, e.g. ["Conidia", "Chlamydospores"] — deliberately not an enum since this list is genuinely open-ended (§7). */
+  reproductiveStructures?: string[]
+  clinicalGroup?: FungalClinicalGroup
+}
+
+// ---------------------------------------------------------------------------
+// Protozoa — category-specific structured block (§8, §34)
+// ---------------------------------------------------------------------------
+
+export type ProtozoanGroup = 'amoeba' | 'flagellate' | 'ciliate' | 'apicomplexan'
+
+export const protozoanGroupLabels: Record<ProtozoanGroup, string> = {
+  amoeba: 'Amoebae',
+  flagellate: 'Flagellates',
+  ciliate: 'Ciliates',
+  apicomplexan: 'Apicomplexans/sporozoa'
+}
+
+export type BodyLocation = 'intestinal' | 'blood' | 'tissue' | 'urogenital' | 'other'
+
+export const bodyLocationLabels: Record<BodyLocation, string> = {
+  intestinal: 'Intestinal',
+  blood: 'Blood',
+  tissue: 'Tissue',
+  urogenital: 'Urogenital',
+  other: 'Other'
+}
+
+export interface ProtozoanDetails {
+  group?: ProtozoanGroup
+  majorLocation?: BodyLocation
+  transmissionRoute?: TransmissionRoute
+  /** Free-text life-cycle form present in the specimen being described, e.g. "Trophozoite and cyst stages". */
+  lifeCycleForm?: string
+}
+
+// ---------------------------------------------------------------------------
+// Viruses — category-specific structured block (§9, §33, §34)
+// ---------------------------------------------------------------------------
+
+export type ViralGenomeType = 'dna' | 'rna'
+
+export const viralGenomeTypeLabels: Record<ViralGenomeType, string> = {
+  dna: 'DNA',
+  rna: 'RNA'
+}
+
+export type ViralGenomeStrandedness = 'ssdna' | 'dsdna' | 'ssrna' | 'dsrna'
+
+export const viralGenomeStrandednessLabels: Record<ViralGenomeStrandedness, string> = {
+  ssdna: 'ssDNA',
+  dsdna: 'dsDNA',
+  ssrna: 'ssRNA',
+  dsrna: 'dsRNA'
+}
+
+export type ViralEnvelope = 'enveloped' | 'non-enveloped'
+
+export const viralEnvelopeLabels: Record<ViralEnvelope, string> = {
+  enveloped: 'Enveloped',
+  'non-enveloped': 'Non-enveloped'
+}
+
+export type ViralReplicationSite = 'cytoplasmic' | 'nuclear' | 'other'
+
+export const viralReplicationSiteLabels: Record<ViralReplicationSite, string> = {
+  cytoplasmic: 'Cytoplasmic',
+  nuclear: 'Nuclear',
+  other: 'Other'
+}
+
+export interface VirusDetails {
+  genomeType?: ViralGenomeType
+  genomeStrandedness?: ViralGenomeStrandedness
+  envelope?: ViralEnvelope
+  capsidSymmetry?: string
+  replicationSite?: ViralReplicationSite
+  transmissionRoute?: TransmissionRoute
+}
+
+// ---------------------------------------------------------------------------
+// Habitat, lab identification, clinical importance, exam facts — unchanged
+// ---------------------------------------------------------------------------
 
 export interface OrganismHabitat {
   naturalHabitat?: string
@@ -119,12 +336,53 @@ export interface OrganismSource {
   url?: string
 }
 
+// ---------------------------------------------------------------------------
+// Related organisms — typed relationship (§36)
+// ---------------------------------------------------------------------------
+
+export type RelatedOrganismRelationship =
+  | 'same-genus'
+  | 'similar-morphology'
+  | 'differential-identification'
+  | 'commonly-confused'
+  | 'same-clinical-specimen'
+  | 'same-laboratory-workflow'
+  | 'same-broad-classification'
+
+export const relatedOrganismRelationshipLabels: Record<RelatedOrganismRelationship, string> = {
+  'same-genus': 'Same genus',
+  'similar-morphology': 'Similar morphology',
+  'differential-identification': 'Differential identification',
+  'commonly-confused': 'Commonly confused',
+  'same-clinical-specimen': 'Same clinical specimen',
+  'same-laboratory-workflow': 'Same laboratory workflow',
+  'same-broad-classification': 'Same broad classification'
+}
+
+export interface RelatedOrganismLink {
+  id: string
+  relationship: RelatedOrganismRelationship
+}
+
+// ---------------------------------------------------------------------------
+// The organism profile itself
+// ---------------------------------------------------------------------------
+
 export interface OrganismProfile {
   id: string
   scientificName: string
   commonName?: string
   category: OrganismCategory
-  /** Local static asset path (e.g. '/organisms/e-coli.svg'). Absent → graceful placeholder, never a broken image. */
+  /**
+   * Path to the built-in scientific illustration for this organism, e.g.
+   * '/organisms/escherichia-coli.svg'. Served from `public/organisms/`
+   * (Vite copies `public/` as-is, so this is a plain static path, not a
+   * bundler import — content files are plain JSON and can't `import`).
+   * A user's own custom image (see core/organisms/customImages.ts)
+   * always takes priority over this at render time; this field is only
+   * ever the built-in fallback, never overwritten by a custom upload
+   * (§21, §23).
+   */
   image?: string
   /** Short, quick-scan identifying characteristics shown on the card — 2-4 items, e.g. ["Lactose fermenter", "Facultative anaerobe"]. */
   quickTags: string[]
@@ -132,13 +390,19 @@ export interface OrganismProfile {
   searchKeywords?: string[]
   classification: OrganismClassification
   morphology: OrganismMorphology
+  /** Only meaningful for category: 'fungi'. Absent for every other category. */
+  fungalDetails?: FungalDetails
+  /** Only meaningful for category: 'protozoa'. Absent for every other category. */
+  protozoanDetails?: ProtozoanDetails
+  /** Only meaningful for category: 'virus'. Absent for every other category — a virus profile never fills in bacterial Gram-reaction/shape fields (§9, §35). */
+  virusDetails?: VirusDetails
   habitat?: OrganismHabitat
   labIdentification?: OrganismLabIdentification
   /** "How to recognize it" — the highest-yield identification clues, in priority order. */
   identificationClues: string[]
   clinicalImportance?: OrganismClinicalImportance
   examFacts: OrganismExamFacts
-  /** IDs of other OrganismProfile entries — same genus, similar morphology, commonly confused, etc. */
-  relatedOrganismIds?: string[]
+  /** Other organisms this one is meaningfully related to, each tagged with *why* (§36). */
+  relatedOrganisms?: RelatedOrganismLink[]
   sources: OrganismSource[]
 }
