@@ -384,6 +384,31 @@ export interface ConceptSectionEdit {
   updatedAt: number
 }
 
+/**
+ * Sprint 4 Master Revision §20-§28 — a user's own local replacement
+ * image for one Organism Explorer profile (their microscope photo,
+ * colony photo, stain image, personal diagram, etc). One row per
+ * organism id (the id IS the primary key — an organism has at most one
+ * custom image at a time; re-uploading replaces it, see
+ * core/organisms/customImages.ts). The binary bytes themselves live in
+ * OPFS via core/file-storage, same pattern as LibraryItem's PDFs and
+ * ConceptAsset's imports — this row only ever holds the logical path.
+ * Deliberately a separate table from anything in `src/content/` or the
+ * organism JSON files: this is local user data, never written back
+ * into shipped application content (§23), so a custom image can never
+ * end up committed to the repository.
+ */
+export interface OrganismCustomImage {
+  /** The OrganismProfile.id this image belongs to — primary key. */
+  organismId: string
+  /** OPFS path, e.g. "organism-images/<uuid>-<filename>". */
+  filePath: string
+  mimeType: string
+  fileName: string
+  createdAt: number
+  updatedAt: number
+}
+
 class CellfieDB extends Dexie {
   libraryItems!: Table<LibraryItem, string>
   collections!: Table<Collection, string>
@@ -399,6 +424,7 @@ class CellfieDB extends Dexie {
   conceptMapEdges!: Table<ConceptMapEdge, string>
   conceptStudyNotes!: Table<ConceptStudyNote, string>
   conceptSectionEdits!: Table<ConceptSectionEdit, string>
+  organismCustomImages!: Table<OrganismCustomImage, string>
 
   constructor() {
     super('cellfie')
@@ -542,6 +568,30 @@ class CellfieDB extends Dexie {
       conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
       conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
       conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]'
+    })
+    // v9 — Sprint 4 Master Revision, Organism Explorer custom images:
+    // adds `organismCustomImages` only. Every prior store repeated
+    // unchanged; no existing row in any table is touched by this
+    // upgrade. `organismId` is both the primary key and the lookup
+    // key — at most one custom image per organism, keyed by the
+    // OrganismProfile.id it overrides the built-in illustration for.
+    this.version(9).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt',
+      highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+      notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+      concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+      conceptSources:
+        'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+      conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+      conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+      conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+      conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+      conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
+      conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
+      organismCustomImages: 'organismId, updatedAt'
     })
   }
 }
