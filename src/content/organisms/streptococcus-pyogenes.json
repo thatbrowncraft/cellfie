@@ -3,8 +3,18 @@
   "scientificName": "Streptococcus pyogenes",
   "commonName": "Group A Strep",
   "category": "bacteria",
-  "quickTags": ["Beta-hemolytic", "Bacitracin sensitive", "Group A antigen"],
-  "searchKeywords": ["strep throat", "gas", "group a streptococcus", "rheumatic fever"],
+  "image": "/organisms/streptococcus-pyogenes.svg",
+  "quickTags": [
+    "Beta-hemolytic",
+    "Bacitracin sensitive",
+    "Group A antigen"
+  ],
+  "searchKeywords": [
+    "strep throat",
+    "gas",
+    "group a streptococcus",
+    "rheumatic fever"
+  ],
   "classification": {
     "domain": "Bacteria",
     "phylum": "Bacillota (Firmicutes)",
@@ -19,11 +29,16 @@
     "arrangement": "Chains",
     "gramReaction": "positive",
     "acidFast": false,
-    "size": "~0.6-1 \u00b5m",
+    "size": "~0.6-1 µm",
     "sporeForming": false,
     "capsule": "Hyaluronic acid capsule (antiphagocytic)",
     "motility": "Non-motile",
-    "oxygenRequirement": "Facultative anaerobe (aerotolerant)"
+    "oxygenRequirement": "Facultative anaerobe (aerotolerant)",
+    "shapeCategory": "coccus",
+    "arrangementCategory": "chains",
+    "oxygenRequirementCategory": "facultative-anaerobe",
+    "motile": false,
+    "encapsulated": true
   },
   "habitat": {
     "naturalHabitat": "Human throat and skin",
@@ -39,21 +54,33 @@
     },
     "culture": {
       "media": "Blood agar",
-      "growthCharacteristics": "Facultative anaerobe, fastidious \u2014 requires enriched media",
+      "growthCharacteristics": "Facultative anaerobe, fastidious — requires enriched media",
       "colonyMorphology": "Small, translucent, grayish colonies",
       "pigmentation": "None",
       "hemolysis": "Beta-hemolytic (complete hemolysis)"
     },
     "biochemicalTests": [
-      { "test": "Catalase", "result": "\u2212" },
-      { "test": "Bacitracin sensitivity", "result": "Sensitive" },
-      { "test": "PYR test", "result": "+" },
-      { "test": "CAMP test", "result": "\u2212" }
+      {
+        "test": "Catalase",
+        "result": "−"
+      },
+      {
+        "test": "Bacitracin sensitivity",
+        "result": "Sensitive"
+      },
+      {
+        "test": "PYR test",
+        "result": "+"
+      },
+      {
+        "test": "CAMP test",
+        "result": "−"
+      }
     ]
   },
   "identificationClues": [
     "Gram-positive cocci in chains",
-    "Catalase negative \u2014 distinguishes it from Staphylococcus",
+    "Catalase negative — distinguishes it from Staphylococcus",
     "Beta-hemolytic on blood agar",
     "Bacitracin sensitive",
     "PYR test positive",
@@ -70,14 +97,14 @@
       "Acute glomerulonephritis (post-infectious)"
     ],
     "virulenceFactors": [
-      "M protein \u2014 antiphagocytic, mediates adhesion",
+      "M protein — antiphagocytic, mediates adhesion",
       "Hyaluronic acid capsule",
       "Streptolysin O and streptolysin S",
       "Streptokinase, hyaluronidase"
     ],
     "toxins": [
-      "Erythrogenic (pyrogenic) exotoxin \u2014 causes scarlet fever",
-      "Streptolysin O \u2014 antigenic, basis of the ASO titer test"
+      "Erythrogenic (pyrogenic) exotoxin — causes scarlet fever",
+      "Streptolysin O — antigenic, basis of the ASO titer test"
     ],
     "transmission": "Respiratory droplets and direct contact with skin lesions",
     "epidemiology": "Common cause of pharyngitis in school-age children; untreated infection carries risk of nonsuppurative sequelae such as rheumatic fever and glomerulonephritis",
@@ -91,10 +118,29 @@
     "importantTest": "Bacitracin sensitivity; ASO titer",
     "distinguishingFeature": "Beta-hemolytic, bacitracin-sensitive, catalase-negative cocci in chains"
   },
-  "relatedOrganismIds": ["staphylococcus-aureus"],
+  "relatedOrganisms": [
+    {
+      "id": "staphylococcus-aureus",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "streptococcus-pneumoniae",
+      "relationship": "same-genus"
+    }
+  ],
   "sources": [
-    { "name": "CDC \u2014 Group A Streptococcal Disease", "kind": "educational", "url": "https://www.cdc.gov/group-a-strep/" },
-    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Streptococcus pyogenes\"", "kind": "educational" },
-    { "name": "American Society for Microbiology (ASM)", "kind": "educational" }
+    {
+      "name": "CDC — Group A Streptococcal Disease",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/group-a-strep/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Streptococcus pyogenes\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
   ]
 }

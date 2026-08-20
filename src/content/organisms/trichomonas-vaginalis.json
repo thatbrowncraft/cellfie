@@ -1,0 +1,113 @@
+{
+  "id": "trichomonas-vaginalis",
+  "scientificName": "Trichomonas vaginalis",
+  "commonName": null,
+  "category": "protozoa",
+  "image": "/organisms/trichomonas-vaginalis.svg",
+  "quickTags": [
+    "Jerky motility",
+    "Sexually transmitted",
+    "No cyst stage"
+  ],
+  "searchKeywords": [
+    "trichomoniasis",
+    "trich",
+    "sti",
+    "std"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Protista",
+    "phylum": "Metamonada",
+    "class": "Trichomonadea",
+    "order": "Trichomonadida",
+    "family": "Trichomonadidae",
+    "genus": "Trichomonas",
+    "species": "T. vaginalis"
+  },
+  "morphology": {
+    "shape": "Pear-shaped/ovoid trophozoite — no cyst stage",
+    "size": "7-23 µm",
+    "motility": "Motile via anterior flagella and an undulating membrane, producing jerky/twitching movement",
+    "motile": true
+  },
+  "protozoanDetails": {
+    "group": "flagellate",
+    "majorLocation": "urogenital",
+    "transmissionRoute": "sexual",
+    "lifeCycleForm": "Trophozoite only — no cyst stage"
+  },
+  "habitat": {
+    "naturalHabitat": "Human urogenital tract — vagina, urethra, prostate",
+    "hostAssociation": "Obligate human parasite; no cyst stage or environmental/animal reservoir",
+    "environmentalOccurrence": "Does not survive well outside the host; direct person-to-person transmission is required",
+    "reservoir": "Human urogenital tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Wet mount microscopy of vaginal or urethral discharge",
+      "appearance": "Pear-shaped, motile trophozoites with visible jerky motility and an undulating membrane on a warm wet mount",
+      "arrangement": "Single organisms"
+    },
+    "culture": {
+      "media": "Specialized culture media, such as Diamond's medium, in reference/research settings",
+      "growthCharacteristics": "Not routinely cultured in most clinical labs",
+      "colonyMorphology": "Not applicable",
+      "pigmentation": "Not applicable",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Nucleic acid amplification test (NAAT)",
+        "result": "+ in active infection"
+      },
+      {
+        "test": "Rapid antigen test",
+        "result": "+ in active infection"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Pear-shaped trophozoite with jerky, twitching motility on a warm wet mount",
+    "Undulating membrane along one side of the body",
+    "No cyst stage — trophozoite is the only form",
+    "Sexually transmitted; commonly identified on vaginal wet mount in symptomatic vaginitis"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Trichomoniasis — vaginitis with malodorous discharge in women; often asymptomatic in men"
+    ],
+    "virulenceFactors": [
+      "Adhesion to vaginal/urethral epithelium",
+      "Production of cytotoxic factors contributing to mucosal inflammation"
+    ],
+    "transmission": "Sexual contact",
+    "epidemiology": "One of the most common non-viral sexually transmitted infections worldwide; frequently coexists with other STIs and can facilitate HIV transmission",
+    "labSignificance": "Wet mount microscopy showing motile trophozoites is a rapid bedside test, though nucleic acid amplification testing is more sensitive"
+  },
+  "examFacts": {
+    "gramReaction": "Not applicable (protozoan parasite)",
+    "shape": "Pear-shaped trophozoite — no cyst stage",
+    "keyBiochemicalReaction": "Not a biochemical-test organism — diagnosed by wet mount or NAAT",
+    "importantDisease": "Trichomoniasis",
+    "importantTest": "Saline wet mount showing motile trophozoites; NAAT",
+    "distinguishingFeature": "Jerky motility with an undulating membrane; no cyst stage exists for this species"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "giardia-duodenalis",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Trichomoniasis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/trichomoniasis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Trichomoniasis\"",
+      "kind": "educational"
+    }
+  ]
+}

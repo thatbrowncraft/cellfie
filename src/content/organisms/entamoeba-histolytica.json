@@ -3,8 +3,18 @@
   "scientificName": "Entamoeba histolytica",
   "commonName": "Amoeba",
   "category": "protozoa",
-  "quickTags": ["Erythrophagocytosis", "Fecal-oral transmission", "Quadrinucleate cysts"],
-  "searchKeywords": ["amoebic dysentery", "amebiasis", "amoebiasis", "liver abscess"],
+  "image": "/organisms/entamoeba-histolytica.svg",
+  "quickTags": [
+    "Erythrophagocytosis",
+    "Fecal-oral transmission",
+    "Quadrinucleate cysts"
+  ],
+  "searchKeywords": [
+    "amoebic dysentery",
+    "amebiasis",
+    "amoebiasis",
+    "liver abscess"
+  ],
   "classification": {
     "domain": "Eukaryota",
     "kingdom": "Protista",
@@ -20,17 +30,23 @@
     "arrangement": "Single-celled",
     "gramReaction": "not-applicable",
     "acidFast": false,
-    "size": "Trophozoite 10-60 \u00b5m; cyst 10-20 \u00b5m",
+    "size": "Trophozoite 10-60 µm; cyst 10-20 µm",
     "sporeForming": false,
     "capsule": "No capsule; a resistant cyst wall forms in the cyst stage",
     "motility": "Motile via pseudopods in the trophozoite stage; the cyst stage is non-motile",
     "oxygenRequirement": "Anaerobe (microaerophilic)"
   },
+  "protozoanDetails": {
+    "group": "amoeba",
+    "majorLocation": "intestinal",
+    "transmissionRoute": "fecal-oral",
+    "lifeCycleForm": "Trophozoite and cyst stages"
+  },
   "habitat": {
     "naturalHabitat": "Human large intestine (colon)",
     "hostAssociation": "Obligate parasite of humans and some primates; cysts are the infective, environmentally resistant stage",
     "environmentalOccurrence": "Cysts can survive in contaminated water and food, particularly in areas with poor sanitation",
-    "reservoir": "Human intestinal tract \u2014 asymptomatic cyst passers are the main reservoir"
+    "reservoir": "Human intestinal tract — asymptomatic cyst passers are the main reservoir"
   },
   "labIdentification": {
     "microscopy": {
@@ -41,18 +57,27 @@
     "culture": {
       "media": "Not routinely cultured in clinical labs; specialized media used only in research settings",
       "growthCharacteristics": "Anaerobic/microaerophilic growth requirements",
-      "colonyMorphology": "Not applicable \u2014 not colony-forming on standard media",
+      "colonyMorphology": "Not applicable — not colony-forming on standard media",
       "pigmentation": "Not applicable",
       "hemolysis": "Not applicable"
     },
     "biochemicalTests": [
-      { "test": "Stool antigen detection (ELISA)", "result": "+ in active infection" },
-      { "test": "Serology (antibody detection)", "result": "+ in invasive disease" },
-      { "test": "PCR", "result": "Species-specific confirmation" }
+      {
+        "test": "Stool antigen detection (ELISA)",
+        "result": "+ in active infection"
+      },
+      {
+        "test": "Serology (antibody detection)",
+        "result": "+ in invasive disease"
+      },
+      {
+        "test": "PCR",
+        "result": "Species-specific confirmation"
+      }
     ]
   },
   "identificationClues": [
-    "Trophozoites with ingested red blood cells (erythrophagocytosis) on stool microscopy \u2014 the hallmark of invasive disease",
+    "Trophozoites with ingested red blood cells (erythrophagocytosis) on stool microscopy — the hallmark of invasive disease",
     "Quadrinucleate cysts on stool ova-and-parasite exam",
     "Flask-shaped ulcers on colonoscopy or histology",
     "Anchovy-paste appearance of liver abscess aspirate",
@@ -66,26 +91,41 @@
       "Rare extraintestinal spread to lung or brain"
     ],
     "virulenceFactors": [
-      "Galactose/N-acetylgalactosamine (Gal/GalNAc) lectin \u2014 mediates adhesion to colonic mucosa",
-      "Amoebapores \u2014 pore-forming proteins that cause cytolysis",
-      "Cysteine proteinases \u2014 enable tissue invasion"
+      "Galactose/N-acetylgalactosamine (Gal/GalNAc) lectin — mediates adhesion to colonic mucosa",
+      "Amoebapores — pore-forming proteins that cause cytolysis",
+      "Cysteine proteinases — enable tissue invasion"
     ],
-    "transmission": "Fecal-oral route \u2014 ingestion of mature cysts in contaminated food or water",
-    "epidemiology": "Common in areas with poor sanitation; a leading parasitic cause of death worldwide, after malaria and schistosomiasis",
+    "transmission": "Fecal-oral route — ingestion of mature cysts in contaminated food or water",
+    "epidemiology": "More common in regions with poor sanitation and limited access to clean water; a significant cause of morbidity and mortality among parasitic infections globally, though its exact ranking among all parasitic diseases varies by source and time period",
     "labSignificance": "Stool antigen testing or PCR is needed to distinguish pathogenic E. histolytica from the morphologically identical, non-pathogenic E. dispar"
   },
   "examFacts": {
-    "gramReaction": "Not applicable \u2014 a protozoan parasite",
+    "gramReaction": "Not applicable — a protozoan parasite",
     "shape": "Amoeboid trophozoite; round cyst",
-    "keyBiochemicalReaction": "Not a biochemical-test organism \u2014 diagnosed by stool microscopy, antigen testing, or PCR",
+    "keyBiochemicalReaction": "Not a biochemical-test organism — diagnosed by stool microscopy, antigen testing, or PCR",
     "importantDisease": "Amoebic dysentery; amoebic liver abscess",
     "importantTest": "Stool O&P exam for RBC-containing trophozoites; stool antigen ELISA",
     "distinguishingFeature": "Trophozoites containing ingested red blood cells distinguish invasive disease from simple colonization"
   },
-  "relatedOrganismIds": [],
+  "relatedOrganisms": [
+    {
+      "id": "giardia-duodenalis",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
   "sources": [
-    { "name": "CDC \u2014 Amebiasis", "kind": "educational", "url": "https://www.cdc.gov/dpdx/amebiasis/index.html" },
-    { "name": "World Health Organization \u2014 Amoebiasis", "kind": "educational" },
-    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Entamoeba Histolytica\"", "kind": "educational" }
+    {
+      "name": "CDC — Amebiasis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dpdx/amebiasis/index.html"
+    },
+    {
+      "name": "World Health Organization — Amoebiasis",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Entamoeba Histolytica\"",
+      "kind": "educational"
+    }
   ]
 }

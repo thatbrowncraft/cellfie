@@ -1,0 +1,112 @@
+{
+  "id": "aspergillus-fumigatus",
+  "scientificName": "Aspergillus fumigatus",
+  "commonName": null,
+  "category": "fungi",
+  "image": "/organisms/aspergillus-fumigatus.svg",
+  "quickTags": [
+    "Septate hyphae",
+    "Mold",
+    "Thermotolerant"
+  ],
+  "searchKeywords": [
+    "aspergillosis",
+    "mold",
+    "fungus ball"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Eurotiales",
+    "family": "Aspergillaceae",
+    "genus": "Aspergillus",
+    "species": "A. fumigatus"
+  },
+  "morphology": {
+    "shape": "Septate hyphae with conidiophores bearing a flask-shaped vesicle",
+    "size": "Hyphae ~2-5 µm diameter; conidia ~2-3 µm",
+    "motility": "Non-motile",
+    "motile": false
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Conidia",
+      "Conidiophore with vesicle and phialides"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Decaying organic matter, soil, compost",
+    "hostAssociation": "Ubiquitous environmental mold; opportunistic pathogen in immunocompromised hosts",
+    "environmentalOccurrence": "Extremely common in soil, decaying vegetation, and indoor/outdoor air — conidia are constantly inhaled",
+    "reservoir": "Environmental — soil, compost, decaying plant material"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Lactophenol cotton blue mount; KOH preparation of tissue or sputum",
+      "appearance": "Septate hyphae with acute-angle (~45°) branching; conidiophores with a flask-shaped vesicle bearing chains of conidia",
+      "arrangement": "Branching hyphal network"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar",
+      "growthCharacteristics": "Rapid growth at 37-45°C — thermotolerance aids pathogenicity",
+      "colonyMorphology": "Fluffy colonies with a white margin",
+      "pigmentation": "Blue-green to gray-green",
+      "hemolysis": "Not applicable"
+    }
+  },
+  "identificationClues": [
+    "Septate hyphae with acute-angle branching on tissue/KOH preparation",
+    "Conidiophore with a flask-shaped vesicle bearing radiating chains of conidia — the 'aspergillus head'",
+    "Rapid growth at 37-45°C on Sabouraud agar",
+    "Blue-green to gray-green fluffy colonies",
+    "Thermotolerance distinguishes it from many other environmental molds"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Invasive pulmonary aspergillosis — in immunocompromised patients",
+      "Allergic bronchopulmonary aspergillosis (ABPA)",
+      "Aspergilloma — 'fungus ball' in pre-existing lung cavities",
+      "Chronic pulmonary aspergillosis"
+    ],
+    "virulenceFactors": [
+      "Small conidia (2-3 µm), easily inhaled into alveoli",
+      "Thermotolerance — grows at body temperature",
+      "Gliotoxin and other secondary metabolites — immunosuppressive"
+    ],
+    "transmission": "Inhalation of airborne conidia; not transmitted person to person",
+    "epidemiology": "Conidia are ubiquitous in the environment and constantly inhaled by everyone; clinical disease occurs mainly in immunocompromised patients (e.g. neutropenic, transplant, or high-dose steroid patients) or those with pre-existing lung disease",
+    "labSignificance": "Septate, acute-angle-branching hyphae on tissue biopsy plus characteristic culture morphology support the diagnosis; serum galactomannan antigen testing is also used clinically"
+  },
+  "examFacts": {
+    "gramReaction": "Not applicable (fungus)",
+    "shape": "Septate, acute-angle branching hyphae",
+    "keyBiochemicalReaction": "Not identified by biochemical testing — by microscopic and culture morphology",
+    "importantDisease": "Invasive pulmonary aspergillosis; ABPA; aspergilloma",
+    "importantTest": "Lactophenol cotton blue mount showing conidiophore morphology; serum galactomannan",
+    "distinguishingFeature": "Acute-angle branching septate hyphae plus thermotolerant growth at 37-45°C"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "candida-albicans",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Aspergillosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/aspergillosis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Aspergillus Fumigatus\"",
+      "kind": "educational"
+    }
+  ]
+}

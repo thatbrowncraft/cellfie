@@ -1,0 +1,121 @@
+{
+  "id": "cryptococcus-neoformans",
+  "scientificName": "Cryptococcus neoformans",
+  "commonName": null,
+  "category": "fungi",
+  "image": "/organisms/cryptococcus-neoformans.svg",
+  "quickTags": [
+    "Encapsulated yeast",
+    "Urease positive",
+    "India ink"
+  ],
+  "searchKeywords": [
+    "cryptococcal meningitis",
+    "cryptococcosis",
+    "india ink"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Tremellomycetes",
+    "order": "Tremellales",
+    "family": "Cryptococcaceae",
+    "genus": "Cryptococcus",
+    "species": "C. neoformans"
+  },
+  "morphology": {
+    "shape": "Spherical to oval budding yeast with a thick polysaccharide capsule",
+    "size": "Cell body 4-10 µm; capsule can extend well beyond this",
+    "motility": "Non-motile",
+    "motile": false
+  },
+  "fungalDetails": {
+    "morphologicalType": "yeast",
+    "hyphae": [],
+    "reproductiveStructures": [
+      "Narrow-based budding"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil contaminated with bird droppings, especially pigeon droppings, and decaying wood in tree hollows",
+    "hostAssociation": "Environmental fungus; opportunistic pathogen, especially in patients with impaired cell-mediated immunity such as HIV/AIDS",
+    "environmentalOccurrence": "Found worldwide in soil enriched with bird excreta and around certain tree species",
+    "reservoir": "Environmental — soil, bird droppings"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "India ink preparation of CSF",
+      "appearance": "Encapsulated budding yeast — the capsule appears as a clear halo against the dark India ink background",
+      "arrangement": "Single cells, narrow-based budding"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar; birdseed (niger seed) agar for pigment production",
+      "growthCharacteristics": "Grows at 37°C — an important pathogenicity trait",
+      "colonyMorphology": "Mucoid, cream-colored colonies",
+      "pigmentation": "Brown pigment on birdseed agar via melanin production (phenol oxidase)",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Urease",
+        "result": "+"
+      },
+      {
+        "test": "Phenol oxidase (melanin production)",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Encapsulated yeast visible as a clear halo on India ink preparation of CSF",
+    "Urease positive",
+    "Brown pigment (melanin) on birdseed/niger seed agar",
+    "Narrow-based budding",
+    "Grows well at 37°C"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Cryptococcal meningitis/meningoencephalitis — especially in HIV/AIDS and other immunocompromised patients",
+      "Pulmonary cryptococcosis"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule — antiphagocytic, main virulence factor",
+      "Melanin production — protects against oxidative host defenses",
+      "Growth at 37°C"
+    ],
+    "transmission": "Inhalation of desiccated yeast cells or spores from the environment; not transmitted person to person",
+    "epidemiology": "A major cause of meningitis in people with advanced HIV/AIDS globally, particularly in resource-limited settings with a high HIV burden",
+    "labSignificance": "India ink stain of CSF and cryptococcal antigen (CrAg) testing are the key rapid diagnostic tools"
+  },
+  "examFacts": {
+    "gramReaction": "Not applicable (fungus)",
+    "shape": "Encapsulated budding yeast",
+    "keyBiochemicalReaction": "Urease positive; melanin production on birdseed agar",
+    "importantDisease": "Cryptococcal meningitis",
+    "importantTest": "India ink stain of CSF; cryptococcal antigen (CrAg) test",
+    "distinguishingFeature": "Prominent polysaccharide capsule visible on India ink preparation"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "candida-albicans",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Cryptococcosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/fungal/diseases/cryptococcosis-neoformans/"
+    },
+    {
+      "name": "World Health Organization — Cryptococcal meningitis",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Cryptococcus Neoformans\"",
+      "kind": "educational"
+    }
+  ]
+}

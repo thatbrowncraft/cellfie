@@ -1,0 +1,125 @@
+{
+  "id": "helicobacter-pylori",
+  "scientificName": "Helicobacter pylori",
+  "category": "bacteria",
+  "image": "/organisms/helicobacter-pylori.svg",
+  "quickTags": [
+    "Urease positive",
+    "Microaerophile",
+    "Helical rod"
+  ],
+  "searchKeywords": [
+    "h pylori",
+    "peptic ulcer",
+    "gastritis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Campylobacterota",
+    "class": "Epsilonproteobacteria",
+    "order": "Campylobacterales",
+    "family": "Helicobacteraceae",
+    "genus": "Helicobacter",
+    "species": "H. pylori"
+  },
+  "morphology": {
+    "shape": "Helical/spiral curved rod",
+    "shapeCategory": "spiral",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~3 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "Non-capsulated",
+    "encapsulated": false,
+    "motility": "Highly motile — multiple polar flagella (flagellar tuft)",
+    "motile": true,
+    "oxygenRequirement": "Microaerophile",
+    "oxygenRequirementCategory": "microaerophile"
+  },
+  "habitat": {
+    "naturalHabitat": "Human gastric mucosa",
+    "hostAssociation": "Chronic colonizer of the human stomach, found in a large proportion of the population worldwide, often asymptomatically",
+    "environmentalOccurrence": "Not a significant free-living environmental organism",
+    "reservoir": "Human stomach; transmission is likely person to person"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain or silver stain of gastric biopsy",
+      "appearance": "Gram-negative, helical/curved rods",
+      "arrangement": "Single"
+    },
+    "culture": {
+      "media": "Selective media such as Skirrow's agar, incubated in a microaerophilic atmosphere",
+      "growthCharacteristics": "Slow growing, microaerophilic — requires 5-10% O2 and added CO2",
+      "colonyMorphology": "Small, translucent colonies after several days of incubation",
+      "pigmentation": "None",
+      "hemolysis": "Variable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Urease",
+        "result": "+ — strongly positive; basis of the urea breath test and rapid urease test"
+      },
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Catalase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative helical/curved rod",
+    "Strongly urease positive — basis of the rapid urease test and urea breath test",
+    "Microaerophilic growth requirement",
+    "Multiple polar flagella (flagellar tuft) giving corkscrew motility",
+    "Found on gastric biopsy in chronic gastritis or peptic ulcer disease"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Chronic gastritis",
+      "Peptic ulcer disease — gastric and duodenal ulcers",
+      "Increased risk of gastric adenocarcinoma and MALT lymphoma"
+    ],
+    "virulenceFactors": [
+      "Urease — neutralizes stomach acid locally, enabling survival",
+      "Flagella — motility through the mucus layer",
+      "CagA and VacA toxins — associated with more severe disease"
+    ],
+    "transmission": "Person to person, likely via fecal-oral or oral-oral routes; exact routes are not fully established",
+    "epidemiology": "One of the most common chronic bacterial infections worldwide; prevalence varies widely by region and socioeconomic factors",
+    "labSignificance": "Urease-based tests — rapid urease test, urea breath test, and stool antigen — are the mainstay of both invasive and non-invasive diagnosis"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Helical/curved rod",
+    "keyBiochemicalReaction": "Strongly urease positive",
+    "importantDisease": "Peptic ulcer disease; gastric adenocarcinoma risk",
+    "importantTest": "Urea breath test; rapid urease test on gastric biopsy",
+    "distinguishingFeature": "Urease-producing, microaerophilic, helical Gram-negative rod that colonizes the stomach"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "vibrio-cholerae",
+      "relationship": "similar-morphology"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Helicobacter pylori",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Helicobacter Pylori\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

@@ -3,8 +3,19 @@
   "scientificName": "Staphylococcus aureus",
   "commonName": "Staph aureus",
   "category": "bacteria",
-  "quickTags": ["Coagulase positive", "Catalase positive", "Beta-hemolytic"],
-  "searchKeywords": ["staph", "staph infection", "mrsa", "boils", "abscess"],
+  "image": "/organisms/staphylococcus-aureus.svg",
+  "quickTags": [
+    "Coagulase positive",
+    "Catalase positive",
+    "Beta-hemolytic"
+  ],
+  "searchKeywords": [
+    "staph",
+    "staph infection",
+    "mrsa",
+    "boils",
+    "abscess"
+  ],
   "classification": {
     "domain": "Bacteria",
     "phylum": "Bacillota (Firmicutes)",
@@ -19,11 +30,16 @@
     "arrangement": "Grape-like clusters",
     "gramReaction": "positive",
     "acidFast": false,
-    "size": "~1 \u00b5m diameter",
+    "size": "~1 µm diameter",
     "sporeForming": false,
     "capsule": "Some strains have a thin polysaccharide microcapsule",
     "motility": "Non-motile",
-    "oxygenRequirement": "Facultative anaerobe"
+    "oxygenRequirement": "Facultative anaerobe",
+    "shapeCategory": "coccus",
+    "arrangementCategory": "clusters",
+    "oxygenRequirementCategory": "facultative-anaerobe",
+    "motile": false,
+    "encapsulated": false
   },
   "habitat": {
     "naturalHabitat": "Human skin and anterior nares (nasal mucosa)",
@@ -39,23 +55,38 @@
     },
     "culture": {
       "media": "Blood agar, Mannitol Salt Agar (MSA)",
-      "growthCharacteristics": "Facultative anaerobe, halotolerant \u2014 grows in high-salt media that inhibits most other organisms",
+      "growthCharacteristics": "Facultative anaerobe, halotolerant — grows in high-salt media that inhibits most other organisms",
       "colonyMorphology": "Golden-yellow, smooth, opaque colonies",
       "pigmentation": "Golden-yellow (staphyloxanthin pigment)",
       "hemolysis": "Beta-hemolytic on blood agar"
     },
     "biochemicalTests": [
-      { "test": "Catalase", "result": "+" },
-      { "test": "Coagulase", "result": "+" },
-      { "test": "Oxidase", "result": "\u2212" },
-      { "test": "Mannitol fermentation", "result": "+ (yellow on MSA)" },
-      { "test": "DNase", "result": "+" }
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Coagulase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Mannitol fermentation",
+        "result": "+ (yellow on MSA)"
+      },
+      {
+        "test": "DNase",
+        "result": "+"
+      }
     ]
   },
   "identificationClues": [
     "Gram-positive cocci in clusters",
-    "Catalase positive \u2014 distinguishes it from Streptococcus",
-    "Coagulase positive \u2014 distinguishes it from coagulase-negative staphylococci",
+    "Catalase positive — distinguishes it from Streptococcus",
+    "Coagulase positive — distinguishes it from coagulase-negative staphylococci",
     "Golden-yellow colonies",
     "Ferments mannitol on MSA (yellow color change)",
     "Beta-hemolytic"
@@ -70,15 +101,15 @@
       "MRSA infections, community- and hospital-acquired"
     ],
     "virulenceFactors": [
-      "Protein A \u2014 binds the Fc region of antibodies, antiphagocytic",
+      "Protein A — binds the Fc region of antibodies, antiphagocytic",
       "Coagulase",
       "Hemolysins",
       "Leukocidins, e.g. Panton-Valentine leukocidin"
     ],
     "toxins": [
-      "Enterotoxins \u2014 cause of staphylococcal food poisoning",
+      "Enterotoxins — cause of staphylococcal food poisoning",
       "TSST-1 (toxic shock syndrome toxin)",
-      "Exfoliative toxin \u2014 scalded skin syndrome"
+      "Exfoliative toxin — scalded skin syndrome"
     ],
     "transmission": "Direct contact, fomites, and autoinoculation from nasal carriage",
     "epidemiology": "Leading cause of skin and soft tissue infections; MRSA is a major driver of both hospital- and community-acquired disease",
@@ -89,13 +120,28 @@
     "shape": "Cocci in clusters",
     "keyBiochemicalReaction": "Catalase positive, coagulase positive",
     "importantDisease": "Skin/soft tissue infections; toxic shock syndrome",
-    "importantTest": "Coagulase test \u2014 differentiates from coagulase-negative staph",
+    "importantTest": "Coagulase test — differentiates from coagulase-negative staph",
     "distinguishingFeature": "Coagulase-positive, golden-pigmented colonies that ferment mannitol"
   },
-  "relatedOrganismIds": ["streptococcus-pyogenes"],
+  "relatedOrganisms": [
+    {
+      "id": "streptococcus-pyogenes",
+      "relationship": "differential-identification"
+    }
+  ],
   "sources": [
-    { "name": "CDC \u2014 Staphylococcus aureus", "kind": "educational", "url": "https://www.cdc.gov/staphylococcus-aureus/" },
-    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Staphylococcus aureus\"", "kind": "educational" },
-    { "name": "American Society for Microbiology (ASM)", "kind": "educational" }
+    {
+      "name": "CDC — Staphylococcus aureus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/staphylococcus-aureus/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Staphylococcus aureus\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
   ]
 }

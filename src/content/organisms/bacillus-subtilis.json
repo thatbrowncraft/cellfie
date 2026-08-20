@@ -3,8 +3,17 @@
   "scientificName": "Bacillus subtilis",
   "commonName": "Hay bacillus",
   "category": "bacteria",
-  "quickTags": ["Endospore-former", "Catalase positive", "Soil saprophyte"],
-  "searchKeywords": ["hay bacillus", "spore stain", "grass bacillus"],
+  "image": "/organisms/bacillus-subtilis.svg",
+  "quickTags": [
+    "Endospore-former",
+    "Catalase positive",
+    "Soil saprophyte"
+  ],
+  "searchKeywords": [
+    "hay bacillus",
+    "spore stain",
+    "grass bacillus"
+  ],
   "classification": {
     "domain": "Bacteria",
     "phylum": "Bacillota (Firmicutes)",
@@ -19,16 +28,21 @@
     "arrangement": "Single cells or chains",
     "gramReaction": "positive",
     "acidFast": false,
-    "size": "~4-10 x 0.25-1 \u00b5m",
+    "size": "~4-10 x 0.25-1 µm",
     "sporeForming": true,
     "capsule": "Generally non-capsulated",
     "motility": "Motile (peritrichous flagella)",
-    "oxygenRequirement": "Aerobe, though it can grow as a facultative anaerobe"
+    "oxygenRequirement": "Aerobe, though it can grow as a facultative anaerobe",
+    "shapeCategory": "bacillus",
+    "arrangementCategory": "chains",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "motile": true,
+    "encapsulated": false
   },
   "habitat": {
     "naturalHabitat": "Soil and decaying plant matter",
     "hostAssociation": "Generally non-pathogenic; rare opportunistic infections or food-associated toxin production",
-    "environmentalOccurrence": "Ubiquitous in soil, water, air, and on vegetation \u2014 a classic environmental organism",
+    "environmentalOccurrence": "Ubiquitous in soil, water, air, and on vegetation — a classic environmental organism",
     "reservoir": "Soil"
   },
   "labIdentification": {
@@ -45,10 +59,22 @@
       "hemolysis": "Usually non-hemolytic or weakly hemolytic"
     },
     "biochemicalTests": [
-      { "test": "Catalase", "result": "+" },
-      { "test": "Citrate", "result": "+" },
-      { "test": "Voges-Proskauer", "result": "+" },
-      { "test": "Starch hydrolysis", "result": "+" }
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Citrate",
+        "result": "+"
+      },
+      {
+        "test": "Voges-Proskauer",
+        "result": "+"
+      },
+      {
+        "test": "Starch hydrolysis",
+        "result": "+"
+      }
     ]
   },
   "identificationClues": [
@@ -65,7 +91,7 @@
       "Associated with some cases of food spoilage and rare toxin-mediated food poisoning"
     ],
     "virulenceFactors": [
-      "Minimal \u2014 considered largely non-pathogenic; its endospores support environmental persistence rather than virulence"
+      "Minimal — considered largely non-pathogenic; its endospores support environmental persistence rather than virulence"
     ],
     "transmission": "Environmental exposure through soil, dust, or contaminated food",
     "epidemiology": "Not a significant human pathogen; widely used as a laboratory and industrial model organism for enzyme and antibiotic production, and for teaching spore biology",
@@ -75,13 +101,24 @@
     "gramReaction": "Gram-positive",
     "shape": "Bacillus (rod)",
     "keyBiochemicalReaction": "Catalase positive",
-    "importantDisease": "Rarely pathogenic \u2014 primarily a teaching and model organism",
+    "importantDisease": "Rarely pathogenic — primarily a teaching and model organism",
     "importantTest": "Endospore stain (Schaeffer-Fulton method)",
     "distinguishingFeature": "Reliable endospore former; the classic soil bacillus used to teach spore staining"
   },
-  "relatedOrganismIds": [],
+  "relatedOrganisms": [
+    {
+      "id": "clostridium-tetani",
+      "relationship": "similar-morphology"
+    }
+  ],
   "sources": [
-    { "name": "American Society for Microbiology (ASM)", "kind": "educational" },
-    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Bacillus Subtilis\"", "kind": "educational" }
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Bacillus Subtilis\"",
+      "kind": "educational"
+    }
   ]
 }

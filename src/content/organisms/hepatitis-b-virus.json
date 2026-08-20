@@ -1,0 +1,100 @@
+{
+  "id": "hepatitis-b-virus",
+  "scientificName": "Hepatitis B virus",
+  "commonName": "HBV",
+  "category": "virus",
+  "image": "/organisms/hepatitis-b-virus.svg",
+  "quickTags": [
+    "Enveloped DNA virus",
+    "Dane particle",
+    "Chronic liver infection"
+  ],
+  "searchKeywords": [
+    "hbv",
+    "hepatitis b",
+    "hbsag"
+  ],
+  "classification": {
+    "family": "Hepadnaviridae",
+    "genus": "Orthohepadnavirus",
+    "species": "Hepatitis B virus"
+  },
+  "morphology": {
+    "shape": "Spherical enveloped Dane particle with an icosahedral nucleocapsid core",
+    "size": "~42 nm for the complete Dane particle; smaller subviral spherical/tubular particles are also produced, ~22 nm",
+    "notes": "Genome is a partially double-stranded, relaxed circular DNA — unusual among DNA viruses; replication proceeds through an RNA intermediate via reverse transcription"
+  },
+  "virusDetails": {
+    "genomeType": "dna",
+    "genomeStrandedness": "dsdna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral nucleocapsid (core antigen, HBcAg)",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "blood-body-fluids"
+  },
+  "habitat": {
+    "naturalHabitat": "Human liver (hepatocytes)",
+    "hostAssociation": "Human pathogen; chronic carriers serve as the main reservoir",
+    "environmentalOccurrence": "Can remain infectious on surfaces for extended periods outside the host, relatively stable compared to many enveloped viruses",
+    "reservoir": "Chronically infected humans"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not routinely diagnosed by microscopy",
+      "appearance": "Electron microscopy of serum in research settings can show spherical Dane particles plus excess smaller subviral envelope-only particles",
+      "arrangement": "Not applicable"
+    },
+    "culture": {
+      "media": "Not routinely cultured in clinical or most research labs, historically limited by poor in vitro culture systems",
+      "growthCharacteristics": "Requires living hepatocytes; not grown on standard media",
+      "colonyMorphology": "Not applicable",
+      "pigmentation": "Not applicable",
+      "hemolysis": "Not applicable"
+    }
+  },
+  "identificationClues": [
+    "Diagnosed by serologic markers (HBsAg, anti-HBs, HBeAg, anti-HBc, anti-HBe) and HBV DNA viral load, not by culture",
+    "Partially double-stranded circular DNA genome, unusual among DNA viruses",
+    "Enveloped Dane particle with an icosahedral core (HBcAg)",
+    "Chronic infection is defined by persistence of HBsAg beyond 6 months"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Acute hepatitis B",
+      "Chronic hepatitis B",
+      "Cirrhosis",
+      "Hepatocellular carcinoma — a long-term complication of chronic infection"
+    ],
+    "virulenceFactors": [
+      "Ability to establish chronic infection via persistence in hepatocytes",
+      "Integration of viral DNA into the host genome, contributing to hepatocellular carcinoma risk"
+    ],
+    "transmission": "Blood and body fluids — percutaneous/mucosal exposure, perinatal transmission, and sexual contact",
+    "epidemiology": "A major global cause of chronic liver disease and hepatocellular carcinoma; effective vaccination has substantially reduced incidence in many regions since its introduction",
+    "labSignificance": "Serologic panels (HBsAg, anti-HBc, anti-HBs, HBeAg/anti-HBe) distinguish acute infection, chronic infection, immunity from vaccination, and past resolved infection"
+  },
+  "examFacts": {
+    "gramReaction": "Not applicable (virus)",
+    "shape": "Enveloped Dane particle with an icosahedral core",
+    "keyBiochemicalReaction": "Not applicable — diagnosed serologically and by viral load",
+    "importantDisease": "Chronic hepatitis B; hepatocellular carcinoma risk",
+    "importantTest": "HBsAg and HBV DNA viral load; full serologic panel for infection stage",
+    "distinguishingFeature": "Partially double-stranded circular DNA genome replicating via reverse transcription, unusual for a DNA virus"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Hepatitis B",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hepatitis-b/"
+    },
+    {
+      "name": "World Health Organization — Hepatitis B",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Hepatitis B\"",
+      "kind": "educational"
+    }
+  ]
+}

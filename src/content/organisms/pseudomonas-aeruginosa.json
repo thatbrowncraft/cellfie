@@ -3,8 +3,17 @@
   "scientificName": "Pseudomonas aeruginosa",
   "commonName": "Pseudomonas",
   "category": "bacteria",
-  "quickTags": ["Oxidase positive", "Blue-green pigment", "Obligate aerobe"],
-  "searchKeywords": ["hospital acquired infection", "cystic fibrosis", "burn wound infection"],
+  "image": "/organisms/pseudomonas-aeruginosa.svg",
+  "quickTags": [
+    "Oxidase positive",
+    "Blue-green pigment",
+    "Obligate aerobe"
+  ],
+  "searchKeywords": [
+    "hospital acquired infection",
+    "cystic fibrosis",
+    "burn wound infection"
+  ],
   "classification": {
     "domain": "Bacteria",
     "phylum": "Pseudomonadota (Proteobacteria)",
@@ -19,16 +28,21 @@
     "arrangement": "Single cells, occasionally in pairs",
     "gramReaction": "negative",
     "acidFast": false,
-    "size": "~1.5-3 x 0.5 \u00b5m",
+    "size": "~1.5-3 x 0.5 µm",
     "sporeForming": false,
     "capsule": "Mucoid polysaccharide (alginate) capsule in some strains, especially cystic fibrosis isolates",
     "motility": "Motile via a single polar flagellum",
-    "oxygenRequirement": "Strict (obligate) aerobe"
+    "oxygenRequirement": "Strict (obligate) aerobe",
+    "shapeCategory": "bacillus",
+    "arrangementCategory": "single",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "motile": true,
+    "encapsulated": false
   },
   "habitat": {
     "naturalHabitat": "Soil, water, and other moist environments",
     "hostAssociation": "Opportunistic pathogen in immunocompromised, burn, and cystic fibrosis patients",
-    "environmentalOccurrence": "Ubiquitous in moist environments \u2014 sinks, hospital equipment, humidifiers",
+    "environmentalOccurrence": "Ubiquitous in moist environments — sinks, hospital equipment, humidifiers",
     "reservoir": "Hospital environment (moist surfaces), soil, water"
   },
   "labIdentification": {
@@ -39,25 +53,37 @@
     },
     "culture": {
       "media": "MacConkey agar (non-lactose fermenter), routine nutrient agar",
-      "growthCharacteristics": "Obligate aerobe; notably grows at 42\u00b0C, which helps distinguish it from other Pseudomonas species",
+      "growthCharacteristics": "Obligate aerobe; notably grows at 42°C, which helps distinguish it from other Pseudomonas species",
       "colonyMorphology": "Flat, spreading colonies with a characteristic grape-like or corn-tortilla odor",
       "pigmentation": "Blue-green pigment (pyocyanin) and yellow-green fluorescent pigment (pyoverdine)",
       "hemolysis": "Beta-hemolytic on blood agar"
     },
     "biochemicalTests": [
-      { "test": "Catalase", "result": "+" },
-      { "test": "Oxidase", "result": "+" },
-      { "test": "Lactose fermentation", "result": "\u2212" },
-      { "test": "Citrate", "result": "+" }
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "−"
+      },
+      {
+        "test": "Citrate",
+        "result": "+"
+      }
     ]
   },
   "identificationClues": [
     "Gram-negative rod",
-    "Oxidase positive \u2014 distinguishes it from most Enterobacteriaceae",
+    "Oxidase positive — distinguishes it from most Enterobacteriaceae",
     "Non-lactose fermenter on MacConkey agar",
     "Blue-green pigment (pyocyanin)",
     "Distinctive grape-like odor",
-    "Grows at 42\u00b0C; obligate aerobe"
+    "Grows at 42°C; obligate aerobe"
   ],
   "clinicalImportance": {
     "diseases": [
@@ -69,13 +95,15 @@
       "Malignant otitis externa in diabetic patients"
     ],
     "virulenceFactors": [
-      "Pyocyanin \u2014 pigment that generates reactive oxygen species",
-      "Exotoxin A \u2014 inhibits protein synthesis, mechanism similar to diphtheria toxin",
-      "Alginate biofilm \u2014 drives chronic cystic fibrosis lung infections",
+      "Pyocyanin — pigment that generates reactive oxygen species",
+      "Exotoxin A — inhibits protein synthesis, mechanism similar to diphtheria toxin",
+      "Alginate biofilm — drives chronic cystic fibrosis lung infections",
       "Type III secretion system"
     ],
-    "toxins": ["Exotoxin A"],
-    "transmission": "Opportunistic \u2014 spreads from environmental or hospital reservoirs to susceptible hosts with breaks in skin, immunosuppression, or mechanical ventilation",
+    "toxins": [
+      "Exotoxin A"
+    ],
+    "transmission": "Opportunistic — spreads from environmental or hospital reservoirs to susceptible hosts with breaks in skin, immunosuppression, or mechanical ventilation",
     "epidemiology": "Leading cause of hospital-acquired infections in burn units and ICUs; major driver of morbidity and mortality in cystic fibrosis",
     "labSignificance": "Oxidase positivity and pigment production are the key rapid identifiers at the bench"
   },
@@ -87,10 +115,29 @@
     "importantTest": "Oxidase test; blue-green pigment on culture",
     "distinguishingFeature": "Blue-green pyocyanin pigment with a grape-like odor and oxidase positivity"
   },
-  "relatedOrganismIds": ["escherichia-coli"],
+  "relatedOrganisms": [
+    {
+      "id": "escherichia-coli",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "klebsiella-pneumoniae",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
   "sources": [
-    { "name": "CDC \u2014 Pseudomonas aeruginosa in Healthcare Settings", "kind": "educational", "url": "https://www.cdc.gov/hai/organisms/pseudomonas.html" },
-    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Pseudomonas aeruginosa\"", "kind": "educational" },
-    { "name": "American Society for Microbiology (ASM)", "kind": "educational" }
+    {
+      "name": "CDC — Pseudomonas aeruginosa in Healthcare Settings",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hai/organisms/pseudomonas.html"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Pseudomonas aeruginosa\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
   ]
 }

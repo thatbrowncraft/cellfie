@@ -1,0 +1,130 @@
+{
+  "id": "streptococcus-pneumoniae",
+  "scientificName": "Streptococcus pneumoniae",
+  "commonName": "Pneumococcus",
+  "category": "bacteria",
+  "image": "/organisms/streptococcus-pneumoniae.svg",
+  "quickTags": [
+    "Alpha-hemolytic",
+    "Optochin sensitive",
+    "Encapsulated"
+  ],
+  "searchKeywords": [
+    "pneumococcus",
+    "pneumococcal",
+    "pneumonia"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Streptococcaceae",
+    "genus": "Streptococcus",
+    "species": "S. pneumoniae"
+  },
+  "morphology": {
+    "shape": "Lancet-shaped (elongated) diplococci",
+    "shapeCategory": "coccus",
+    "arrangement": "Pairs, occasionally short chains",
+    "arrangementCategory": "pairs",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-1.2 µm",
+    "sporeForming": false,
+    "capsule": "Prominent polysaccharide capsule — basis of over 90 serotypes",
+    "encapsulated": true,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human nasopharynx",
+    "hostAssociation": "Common asymptomatic nasopharyngeal colonizer, especially in children; opportunistic pathogen",
+    "environmentalOccurrence": "Not a significant environmental organism",
+    "reservoir": "Human nasopharynx"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive lancet-shaped diplococci",
+      "arrangement": "Pairs"
+    },
+    "culture": {
+      "media": "Blood agar",
+      "growthCharacteristics": "Facultative anaerobe, fastidious, grows best with added CO2",
+      "colonyMorphology": "Small, mucoid colonies that often show central umbilication ('donut' shape) with age due to autolysis",
+      "pigmentation": "None",
+      "hemolysis": "Alpha-hemolytic — green discoloration on blood agar"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "−"
+      },
+      {
+        "test": "Optochin sensitivity",
+        "result": "Sensitive"
+      },
+      {
+        "test": "Bile solubility",
+        "result": "Soluble (+)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive lancet-shaped diplococci",
+    "Alpha-hemolytic on blood agar",
+    "Optochin sensitive — distinguishes it from other alpha-hemolytic (viridans group) streptococci",
+    "Bile soluble",
+    "Catalase negative"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Community-acquired pneumonia — leading bacterial cause",
+      "Otitis media",
+      "Sinusitis",
+      "Meningitis",
+      "Bacteremia/sepsis"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule — antiphagocytic, the main virulence factor",
+      "Pneumolysin (pore-forming toxin)",
+      "IgA protease",
+      "Teichoic acid"
+    ],
+    "transmission": "Respiratory droplets",
+    "epidemiology": "Leading cause of community-acquired bacterial pneumonia and bacterial meningitis in many age groups; conjugate vaccines target common serotypes",
+    "labSignificance": "Optochin sensitivity and bile solubility are the key bench tests distinguishing it from viridans streptococci, which share alpha-hemolysis"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Lancet-shaped diplococci",
+    "keyBiochemicalReaction": "Optochin sensitive, bile soluble",
+    "importantDisease": "Community-acquired pneumonia; meningitis",
+    "importantTest": "Optochin sensitivity; bile solubility test",
+    "distinguishingFeature": "Alpha-hemolytic diplococci that are optochin sensitive and bile soluble"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "streptococcus-pyogenes",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Pneumococcal Disease",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/pneumococcal/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Streptococcus Pneumoniae\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "id": "salmonella-enterica",
+  "scientificName": "Salmonella enterica",
+  "category": "bacteria",
+  "image": "/organisms/salmonella-enterica.svg",
+  "quickTags": [
+    "H2S positive",
+    "Non-lactose fermenter",
+    "Motile"
+  ],
+  "searchKeywords": [
+    "salmonellosis",
+    "typhoid",
+    "food poisoning"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Enterobacteriaceae",
+    "genus": "Salmonella",
+    "species": "S. enterica"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~2-5 x 0.7-1.5 µm",
+    "sporeForming": false,
+    "capsule": "Generally non-capsulated (Vi capsular antigen in serovar Typhi)",
+    "encapsulated": false,
+    "motility": "Motile (peritrichous flagella)",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Intestinal tract of humans and many animals, including poultry and reptiles",
+    "hostAssociation": "Broad host range; zoonotic reservoir in poultry, eggs, and reptiles",
+    "environmentalOccurrence": "Can survive in water and food contaminated with feces",
+    "reservoir": "Animal and human GI tract, especially poultry"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single"
+    },
+    "culture": {
+      "media": "MacConkey agar, XLD (xylose lysine deoxycholate) agar, Hektoen enteric agar",
+      "growthCharacteristics": "Facultative anaerobe, rapid growth",
+      "colonyMorphology": "Colorless, non-lactose-fermenting colonies on MacConkey; black-centered colonies on XLD from H2S production",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "−"
+      },
+      {
+        "test": "H2S production",
+        "result": "+"
+      },
+      {
+        "test": "Citrate",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative rod",
+    "Non-lactose fermenter",
+    "H2S positive — black colonies on XLD/Hektoen agar",
+    "Motile",
+    "Grows on selective enteric media such as XLD and Hektoen agar"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Salmonellosis (gastroenteritis)",
+      "Typhoid/enteric fever (serovars Typhi, Paratyphi)",
+      "Bacteremia",
+      "Osteomyelitis, particularly in patients with sickle cell disease"
+    ],
+    "virulenceFactors": [
+      "Type III secretion systems — mediate invasion",
+      "Vi capsular antigen in serovar Typhi — antiphagocytic",
+      "Lipopolysaccharide (LPS) endotoxin"
+    ],
+    "transmission": "Fecal-oral route — contaminated food, especially poultry and eggs, or water",
+    "epidemiology": "A leading cause of foodborne bacterial gastroenteritis worldwide; typhoid fever remains a significant public health problem in areas with poor sanitation",
+    "labSignificance": "H2S production and non-lactose fermentation on selective enteric media are key screening characteristics"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "H2S positive, non-lactose fermenter",
+    "importantDisease": "Gastroenteritis; typhoid fever",
+    "importantTest": "XLD/Hektoen agar — H2S-positive black colonies",
+    "distinguishingFeature": "H2S-producing, non-lactose-fermenting, motile Gram-negative rod"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "escherichia-coli",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "vibrio-cholerae",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Salmonella",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/salmonella/"
+    },
+    {
+      "name": "World Health Organization — Typhoid",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Salmonella Infections\"",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "neisseria-meningitidis",
+  "scientificName": "Neisseria meningitidis",
+  "commonName": "Meningococcus",
+  "category": "bacteria",
+  "image": "/organisms/neisseria-meningitidis.svg",
+  "quickTags": [
+    "Gram-negative diplococci",
+    "Encapsulated",
+    "Meningitis"
+  ],
+  "searchKeywords": [
+    "meningococcus",
+    "meningococcemia",
+    "meningitis belt"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Betaproteobacteria",
+    "order": "Neisseriales",
+    "family": "Neisseriaceae",
+    "genus": "Neisseria",
+    "species": "N. meningitidis"
+  },
+  "morphology": {
+    "shape": "Diplococci — kidney-bean/coffee-bean shaped with flattened adjacent sides",
+    "shapeCategory": "coccus",
+    "arrangement": "Pairs",
+    "arrangementCategory": "pairs",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.6-1 µm",
+    "sporeForming": false,
+    "capsule": "Polysaccharide capsule (serogroups A, B, C, W, Y, and others)",
+    "encapsulated": true,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Aerobe/capnophilic — requires increased CO2",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human nasopharynx",
+    "hostAssociation": "Asymptomatic nasopharyngeal carriage in a portion of the population; invasive disease occurs in a minority of colonized individuals",
+    "environmentalOccurrence": "Fragile outside the host",
+    "reservoir": "Human nasopharynx"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative diplococci, often seen intracellularly within neutrophils in CSF during meningitis",
+      "arrangement": "Pairs, kidney-bean shaped"
+    },
+    "culture": {
+      "media": "Chocolate agar or Thayer-Martin medium, incubated with 5-10% CO2",
+      "growthCharacteristics": "Fastidious, capnophilic, grows at 35-37°C",
+      "colonyMorphology": "Small, gray, glistening, mucoid colonies (encapsulated strains)",
+      "pigmentation": "None",
+      "hemolysis": "Not applicable — grown on enriched, non-blood media"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Glucose fermentation",
+        "result": "+"
+      },
+      {
+        "test": "Maltose fermentation",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative diplococci",
+    "Ferments both glucose and maltose — distinguishes it from N. gonorrhoeae, which does not ferment maltose",
+    "Prominent polysaccharide capsule",
+    "Oxidase positive",
+    "Intracellular diplococci on CSF Gram stain during meningitis"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Meningococcal meningitis",
+      "Meningococcemia, which can progress to purpura fulminans",
+      "Waterhouse-Friderichsen syndrome (adrenal hemorrhage in fulminant disease)"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule — antiphagocytic, and the basis of serogrouping",
+      "Lipooligosaccharide (LOS) — endotoxin driving septic shock",
+      "Pili and Opa/Opc proteins — adhesion"
+    ],
+    "transmission": "Respiratory droplets and close contact",
+    "epidemiology": "Can cause epidemic meningitis, notably in the African meningitis belt; conjugate vaccines target the major capsular serogroups",
+    "labSignificance": "CSF Gram stain showing Gram-negative diplococci, together with culture and PCR, supports diagnosis; rapid identification is critical given the fulminant course of invasive disease"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Diplococci",
+    "keyBiochemicalReaction": "Oxidase positive; ferments both glucose and maltose",
+    "importantDisease": "Meningococcal meningitis and meningococcemia",
+    "importantTest": "CSF Gram stain and culture; maltose fermentation test",
+    "distinguishingFeature": "Maltose-fermenting, distinguishing it from N. gonorrhoeae, plus a prominent polysaccharide capsule"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "neisseria-gonorrhoeae",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Meningococcal Disease",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/meningococcal/"
+    },
+    {
+      "name": "World Health Organization — Meningococcal meningitis",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Neisseria Meningitidis\"",
+      "kind": "educational"
+    }
+  ]
+}

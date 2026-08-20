@@ -3,8 +3,18 @@
   "scientificName": "Mycobacterium tuberculosis",
   "commonName": "TB bacillus",
   "category": "bacteria",
-  "quickTags": ["Acid-fast", "Slow-growing", "Obligate aerobe"],
-  "searchKeywords": ["tb", "tuberculosis", "koch bacillus", "consumption"],
+  "image": "/organisms/mycobacterium-tuberculosis.svg",
+  "quickTags": [
+    "Acid-fast",
+    "Slow-growing",
+    "Obligate aerobe"
+  ],
+  "searchKeywords": [
+    "tb",
+    "tuberculosis",
+    "koch bacillus",
+    "consumption"
+  ],
   "classification": {
     "domain": "Bacteria",
     "phylum": "Actinomycetota (Actinobacteria)",
@@ -19,15 +29,20 @@
     "arrangement": "Single cells or serpentine cord-like clusters",
     "gramReaction": "not-applicable",
     "acidFast": true,
-    "size": "~2-4 x 0.3 \u00b5m",
+    "size": "~2-4 x 0.3 µm",
     "sporeForming": false,
     "capsule": "No true capsule; thick waxy mycolic-acid-rich cell wall instead",
     "motility": "Non-motile",
-    "oxygenRequirement": "Obligate (strict) aerobe"
+    "oxygenRequirement": "Obligate (strict) aerobe",
+    "shapeCategory": "bacillus",
+    "arrangementCategory": "single",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "motile": false,
+    "encapsulated": false
   },
   "habitat": {
     "naturalHabitat": "Human lungs and lymphoid tissue",
-    "hostAssociation": "Obligate human pathogen \u2014 no significant environmental or animal reservoir for this species",
+    "hostAssociation": "Obligate human pathogen — no significant environmental or animal reservoir for this species",
     "environmentalOccurrence": "Does not survive well outside a host; spreads directly person to person",
     "reservoir": "Human respiratory tract, in both latent and active infection"
   },
@@ -38,54 +53,76 @@
       "arrangement": "Singly or in serpentine cords"
     },
     "culture": {
-      "media": "L\u00f6wenstein-Jensen (LJ) medium, Middlebrook 7H10/7H11",
-      "growthCharacteristics": "Very slow growing \u2014 2 to 8 weeks for visible colonies; obligate aerobe",
+      "media": "Löwenstein-Jensen (LJ) medium, Middlebrook 7H10/7H11",
+      "growthCharacteristics": "Very slow growing — 2 to 8 weeks for visible colonies; obligate aerobe",
       "colonyMorphology": "Rough, buff-colored, breadcrumb-like (\"cauliflower\") colonies",
       "pigmentation": "Buff/cream colored, non-chromogenic",
-      "hemolysis": "Not applicable \u2014 not routinely grown on blood agar"
+      "hemolysis": "Not applicable — not routinely grown on blood agar"
     },
     "biochemicalTests": [
-      { "test": "Niacin test", "result": "+" },
-      { "test": "Catalase (68\u00b0C)", "result": "Weak positive" },
-      { "test": "Nitrate reduction", "result": "+" }
+      {
+        "test": "Niacin test",
+        "result": "+"
+      },
+      {
+        "test": "Catalase (68°C)",
+        "result": "Weak positive"
+      },
+      {
+        "test": "Nitrate reduction",
+        "result": "+"
+      }
     ]
   },
   "identificationClues": [
-    "Acid-fast bacillus \u2014 resists decolorization with acid-alcohol",
+    "Acid-fast bacillus — resists decolorization with acid-alcohol",
     "Positive Ziehl-Neelsen stain",
-    "Very slow growth on L\u00f6wenstein-Jensen medium, taking weeks",
+    "Very slow growth on Löwenstein-Jensen medium, taking weeks",
     "Niacin test positive",
     "Serpentine cord formation on culture",
     "Obligate aerobe, which explains a preference for the oxygen-rich upper lobe of the lung"
   ],
   "clinicalImportance": {
     "diseases": [
-      "Tuberculosis \u2014 pulmonary and extrapulmonary forms",
+      "Tuberculosis — pulmonary and extrapulmonary forms",
       "Miliary TB (disseminated disease)",
       "Pott's disease (spinal TB)"
     ],
     "virulenceFactors": [
-      "Mycolic acid cell wall \u2014 resists phagocytic killing and confers acid-fastness",
-      "Cord factor (trehalose dimycolate) \u2014 inhibits leukocyte migration",
-      "Sulfatides \u2014 inhibit phagosome-lysosome fusion"
+      "Mycolic acid cell wall — resists phagocytic killing and confers acid-fastness",
+      "Cord factor (trehalose dimycolate) — inhibits leukocyte migration",
+      "Sulfatides — inhibit phagosome-lysosome fusion"
     ],
-    "toxins": ["No classic exotoxin; disease is driven largely by the host's own granulomatous immune response"],
-    "transmission": "Airborne \u2014 respiratory droplet nuclei, person to person",
+    "toxins": [
+      "No classic exotoxin; disease is driven largely by the host's own granulomatous immune response"
+    ],
+    "transmission": "Airborne — respiratory droplet nuclei, person to person",
     "epidemiology": "One of the leading infectious causes of death worldwide, with a disproportionate burden in resource-limited settings and among people with HIV co-infection",
     "labSignificance": "Acid-fast staining is the essential rapid screening test; culture remains the gold standard for confirmation and drug susceptibility testing"
   },
   "examFacts": {
-    "gramReaction": "Does not Gram stain reliably \u2014 identified by acid-fast staining instead",
+    "gramReaction": "Does not Gram stain reliably — identified by acid-fast staining instead",
     "shape": "Thin acid-fast bacillus",
     "keyBiochemicalReaction": "Niacin positive",
     "importantDisease": "Tuberculosis",
-    "importantTest": "Ziehl-Neelsen acid-fast stain; culture on L\u00f6wenstein-Jensen medium",
+    "importantTest": "Ziehl-Neelsen acid-fast stain; culture on Löwenstein-Jensen medium",
     "distinguishingFeature": "Acid-fastness from a mycolic-acid-rich cell wall, combined with extremely slow growth"
   },
-  "relatedOrganismIds": [],
+  "relatedOrganisms": [],
   "sources": [
-    { "name": "CDC \u2014 Tuberculosis (TB)", "kind": "educational", "url": "https://www.cdc.gov/tb/" },
-    { "name": "World Health Organization \u2014 Tuberculosis", "kind": "educational", "url": "https://www.who.int/health-topics/tuberculosis" },
-    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Mycobacterium Tuberculosis\"", "kind": "educational" }
+    {
+      "name": "CDC — Tuberculosis (TB)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/tb/"
+    },
+    {
+      "name": "World Health Organization — Tuberculosis",
+      "kind": "educational",
+      "url": "https://www.who.int/health-topics/tuberculosis"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Mycobacterium Tuberculosis\"",
+      "kind": "educational"
+    }
   ]
 }

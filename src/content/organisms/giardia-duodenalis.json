@@ -1,0 +1,122 @@
+{
+  "id": "giardia-duodenalis",
+  "scientificName": "Giardia duodenalis",
+  "commonName": "Giardia",
+  "category": "protozoa",
+  "image": "/organisms/giardia-duodenalis.svg",
+  "quickTags": [
+    "Pear-shaped trophozoite",
+    "Fecal-oral",
+    "Ventral sucking disc"
+  ],
+  "searchKeywords": [
+    "giardiasis",
+    "giardia lamblia",
+    "giardia intestinalis",
+    "beaver fever"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Protista",
+    "phylum": "Metamonada",
+    "class": "Trepomonadea",
+    "order": "Diplomonadida",
+    "family": "Hexamitidae",
+    "genus": "Giardia",
+    "species": "G. duodenalis"
+  },
+  "morphology": {
+    "shape": "Pear-shaped (teardrop) trophozoite with bilateral symmetry; oval cyst form",
+    "size": "Trophozoite 10-20 µm; cyst 8-12 µm",
+    "motility": "Motile via flagella (trophozoite); non-motile cyst",
+    "motile": true
+  },
+  "protozoanDetails": {
+    "group": "flagellate",
+    "majorLocation": "intestinal",
+    "transmissionRoute": "fecal-oral",
+    "lifeCycleForm": "Trophozoite and cyst stages"
+  },
+  "habitat": {
+    "naturalHabitat": "Human and animal small intestine (duodenum/jejunum)",
+    "hostAssociation": "Infects humans and various mammals; cysts are the infective, environmentally resistant stage",
+    "environmentalOccurrence": "Cysts survive well in cold water, including mountain streams and municipal water supplies with inadequate treatment",
+    "reservoir": "Human and animal intestinal tract; contaminated water sources"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Iodine wet mount; trichrome stain of stool",
+      "appearance": "Trophozoite: pear-shaped with two nuclei giving a characteristic 'face' appearance, four pairs of flagella, and a ventral adhesive disc. Cyst: oval with 2-4 nuclei",
+      "arrangement": "Single organisms on stool smear"
+    },
+    "culture": {
+      "media": "Not routinely cultured in clinical labs",
+      "growthCharacteristics": "Not applicable for routine diagnosis",
+      "colonyMorphology": "Not applicable",
+      "pigmentation": "Not applicable",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Stool antigen detection (ELISA)",
+        "result": "+ in active infection"
+      },
+      {
+        "test": "PCR",
+        "result": "Species-specific confirmation"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Pear-shaped trophozoite with two nuclei giving a distinctive 'face' appearance",
+    "Ventral sucking disc for attachment to intestinal mucosa",
+    "Oval, multinucleated cysts on stool O&P exam",
+    "A common cause of waterborne parasitic diarrhea, including in developed countries",
+    "Associated with foul-smelling, greasy (malabsorptive) diarrhea"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Giardiasis — diarrhea, malabsorption, bloating"
+    ],
+    "virulenceFactors": [
+      "Ventral adhesive disc — attachment to intestinal epithelium, disrupting absorption",
+      "Variant-specific surface proteins — antigenic variation aiding immune evasion"
+    ],
+    "transmission": "Fecal-oral route — ingestion of cysts in contaminated water or food; also person-to-person spread in settings with limited hygiene, such as childcare centers",
+    "epidemiology": "One of the most common causes of parasitic diarrheal illness worldwide, including in travelers and in outbreaks linked to contaminated recreational or drinking water",
+    "labSignificance": "Stool antigen testing and PCR have largely supplemented traditional O&P microscopy for routine diagnosis due to higher sensitivity"
+  },
+  "examFacts": {
+    "gramReaction": "Not applicable (protozoan parasite)",
+    "shape": "Pear-shaped trophozoite; oval cyst",
+    "keyBiochemicalReaction": "Not a biochemical-test organism — diagnosed by stool microscopy, antigen testing, or PCR",
+    "importantDisease": "Giardiasis",
+    "importantTest": "Stool antigen ELISA; trichrome-stained stool O&P exam",
+    "distinguishingFeature": "Pear-shaped trophozoite with a characteristic two-nuclei 'face' appearance and ventral sucking disc"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "entamoeba-histolytica",
+      "relationship": "same-clinical-specimen"
+    },
+    {
+      "id": "trichomonas-vaginalis",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Giardiasis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/giardia/"
+    },
+    {
+      "name": "World Health Organization — Giardiasis",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Giardiasis\"",
+      "kind": "educational"
+    }
+  ]
+}

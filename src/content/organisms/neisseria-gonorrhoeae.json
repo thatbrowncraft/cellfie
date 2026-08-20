@@ -1,0 +1,131 @@
+{
+  "id": "neisseria-gonorrhoeae",
+  "scientificName": "Neisseria gonorrhoeae",
+  "commonName": "Gonococcus",
+  "category": "bacteria",
+  "image": "/organisms/neisseria-gonorrhoeae.svg",
+  "quickTags": [
+    "Gram-negative diplococci",
+    "Oxidase positive",
+    "Sexually transmitted"
+  ],
+  "searchKeywords": [
+    "gonorrhea",
+    "gc",
+    "clap",
+    "std",
+    "sti"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Betaproteobacteria",
+    "order": "Neisseriales",
+    "family": "Neisseriaceae",
+    "genus": "Neisseria",
+    "species": "N. gonorrhoeae"
+  },
+  "morphology": {
+    "shape": "Diplococci — kidney-bean/coffee-bean shaped with flattened adjacent sides",
+    "shapeCategory": "coccus",
+    "arrangement": "Pairs",
+    "arrangementCategory": "pairs",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.6-1 µm",
+    "sporeForming": false,
+    "capsule": "Non-capsulated",
+    "encapsulated": false,
+    "motility": "Non-motile (twitching motility via pili)",
+    "motile": false,
+    "oxygenRequirement": "Aerobe/capnophilic — requires increased CO2",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human genital, rectal, pharyngeal, and conjunctival mucosa",
+    "hostAssociation": "Strict human pathogen with no other reservoir",
+    "environmentalOccurrence": "Fragile outside the host; does not survive well in the environment",
+    "reservoir": "Human genital tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative diplococci, often seen intracellularly within neutrophils in symptomatic urethritis",
+      "arrangement": "Pairs, kidney-bean shaped"
+    },
+    "culture": {
+      "media": "Thayer-Martin (chocolate agar with antibiotics) or chocolate agar, incubated with 5-10% CO2",
+      "growthCharacteristics": "Fastidious, capnophilic, grows at 35-37°C",
+      "colonyMorphology": "Small, gray, glistening colonies",
+      "pigmentation": "None",
+      "hemolysis": "Not applicable — grown on enriched, non-blood media"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Glucose fermentation",
+        "result": "+"
+      },
+      {
+        "test": "Maltose fermentation",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative diplococci, kidney-bean shaped",
+    "Intracellular diplococci within neutrophils on a symptomatic urethral/cervical smear",
+    "Oxidase positive",
+    "Grows on Thayer-Martin selective medium with added CO2",
+    "Ferments glucose but not maltose — distinguishes it from N. meningitidis"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Gonorrhea (urethritis, cervicitis)",
+      "Pelvic inflammatory disease",
+      "Disseminated gonococcal infection (septic arthritis, dermatitis)",
+      "Neonatal conjunctivitis (ophthalmia neonatorum)"
+    ],
+    "virulenceFactors": [
+      "Pili — adhesion, with antigenic/phase variation",
+      "Opa proteins — adhesion and invasion",
+      "IgA protease",
+      "Lipooligosaccharide (LOS)"
+    ],
+    "transmission": "Sexual contact; vertical transmission to neonates during delivery",
+    "epidemiology": "One of the most common bacterial sexually transmitted infections worldwide; increasing antimicrobial resistance is a growing clinical concern",
+    "labSignificance": "Intracellular Gram-negative diplococci on a symptomatic male urethral smear is highly suggestive; culture or NAAT is used for confirmation"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Diplococci",
+    "keyBiochemicalReaction": "Oxidase positive; ferments glucose but not maltose",
+    "importantDisease": "Gonorrhea",
+    "importantTest": "Gram stain showing intracellular diplococci; culture on Thayer-Martin medium",
+    "distinguishingFeature": "Ferments glucose only (not maltose), distinguishing it from N. meningitidis, which ferments both"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "neisseria-meningitidis",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Gonorrhea",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/gonorrhea/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Neisseria Gonorrhoeae\"",
+      "kind": "educational"
+    },
+    {
+      "name": "World Health Organization — Gonococcal infection",
+      "kind": "educational"
+    }
+  ]
+}

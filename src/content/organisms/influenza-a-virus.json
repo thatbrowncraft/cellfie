@@ -1,0 +1,102 @@
+{
+  "id": "influenza-a-virus",
+  "scientificName": "Influenza A virus",
+  "commonName": "Flu virus",
+  "category": "virus",
+  "image": "/organisms/influenza-a-virus.svg",
+  "quickTags": [
+    "Enveloped ssRNA",
+    "Segmented genome",
+    "Respiratory"
+  ],
+  "searchKeywords": [
+    "flu",
+    "influenza",
+    "h1n1",
+    "h3n2",
+    "seasonal flu"
+  ],
+  "classification": {
+    "order": "Articulavirales",
+    "family": "Orthomyxoviridae",
+    "genus": "Alphainfluenzavirus",
+    "species": "Influenza A virus"
+  },
+  "morphology": {
+    "shape": "Spherical to pleomorphic enveloped virion",
+    "size": "~80-120 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Helical nucleocapsid",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Respiratory epithelium of humans and other hosts, with avian and swine reservoirs",
+    "hostAssociation": "Infects humans, birds (natural reservoir), and pigs; capable of zoonotic spillover and genetic reassortment",
+    "environmentalOccurrence": "Can survive briefly on surfaces and in respiratory droplets; wild aquatic birds are the primary natural reservoir",
+    "reservoir": "Wild aquatic birds as the natural reservoir; also pigs and humans"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not routinely diagnosed by microscopy",
+      "appearance": "Electron microscopy in research settings shows pleomorphic enveloped particles studded with hemagglutinin (HA) and neuraminidase (NA) surface glycoproteins",
+      "arrangement": "Not applicable"
+    },
+    "culture": {
+      "media": "Embryonated chicken eggs or cell culture (e.g. MDCK cells) in reference labs",
+      "growthCharacteristics": "Requires a living host cell; not grown on standard bacteriologic media",
+      "colonyMorphology": "Not applicable — viruses do not form colonies",
+      "pigmentation": "Not applicable",
+      "hemolysis": "Not applicable"
+    }
+  },
+  "identificationClues": [
+    "Enveloped virion with hemagglutinin (HA) and neuraminidase (NA) surface spikes",
+    "Segmented negative-sense ssRNA genome, which allows genetic reassortment (antigenic shift)",
+    "Diagnosed clinically and by rapid antigen test or RT-PCR, not by culture in routine practice",
+    "Subtyped by HA and NA combinations, e.g. H1N1, H3N2"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Seasonal influenza — fever, myalgia, respiratory symptoms",
+      "Severe/complicated influenza pneumonia",
+      "Pandemic influenza following a major antigenic shift"
+    ],
+    "virulenceFactors": [
+      "Hemagglutinin — host cell attachment and entry",
+      "Neuraminidase — release of new virions from infected cells",
+      "High mutation rate and genome segmentation — antigenic drift and shift, enabling immune evasion"
+    ],
+    "transmission": "Respiratory droplets and contact with contaminated surfaces",
+    "epidemiology": "Causes annual seasonal epidemics and, periodically, global pandemics when a novel HA/NA combination emerges via antigenic shift; vaccine composition is updated yearly to match circulating strains",
+    "labSignificance": "RT-PCR and rapid antigen tests are the primary diagnostic methods used in clinical practice"
+  },
+  "examFacts": {
+    "gramReaction": "Not applicable (virus)",
+    "shape": "Spherical to pleomorphic enveloped virion",
+    "keyBiochemicalReaction": "Not applicable — diagnosed by RT-PCR/antigen testing, not biochemical tests",
+    "importantDisease": "Seasonal and pandemic influenza",
+    "importantTest": "RT-PCR; rapid influenza antigen test",
+    "distinguishingFeature": "Segmented ssRNA genome enabling antigenic shift; HA/NA surface glycoproteins define the subtype"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Influenza (Flu)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/flu/"
+    },
+    {
+      "name": "World Health Organization — Influenza",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Influenza\"",
+      "kind": "educational"
+    }
+  ]
+}

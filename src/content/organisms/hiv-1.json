@@ -1,0 +1,101 @@
+{
+  "id": "hiv-1",
+  "scientificName": "Human immunodeficiency virus 1",
+  "commonName": "HIV-1",
+  "category": "virus",
+  "image": "/organisms/hiv-1.svg",
+  "quickTags": [
+    "Enveloped ssRNA",
+    "Conical capsid",
+    "Retrovirus"
+  ],
+  "searchKeywords": [
+    "hiv",
+    "aids",
+    "retrovirus",
+    "cd4"
+  ],
+  "classification": {
+    "family": "Retroviridae",
+    "genus": "Lentivirus",
+    "species": "Human immunodeficiency virus 1"
+  },
+  "morphology": {
+    "shape": "Spherical enveloped virion with a characteristic cone-shaped (conical) capsid core",
+    "size": "~100-120 nm diameter",
+    "notes": "Reverse transcriptase converts the ssRNA genome into DNA, which integrates into the host cell genome — the defining feature of a retrovirus"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Conical capsid — unusual among retroviruses",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "blood-body-fluids"
+  },
+  "habitat": {
+    "naturalHabitat": "Human CD4+ T lymphocytes and other CD4-receptor-bearing cells, including macrophages and dendritic cells",
+    "hostAssociation": "Human pathogen, believed to have originated from zoonotic transmission of related simian immunodeficiency viruses",
+    "environmentalOccurrence": "Fragile outside the host; does not survive well on surfaces",
+    "reservoir": "Chronically infected humans; a latent reservoir in resting CD4+ T cells complicates cure efforts"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not routinely diagnosed by microscopy",
+      "appearance": "Electron microscopy in research settings shows a spherical enveloped virion with a dense, cone-shaped internal capsid",
+      "arrangement": "Not applicable"
+    },
+    "culture": {
+      "media": "Not routinely cultured in clinical labs; specialized cell culture is used in research",
+      "growthCharacteristics": "Requires living CD4+ host cells; not grown on standard media",
+      "colonyMorphology": "Not applicable",
+      "pigmentation": "Not applicable",
+      "hemolysis": "Not applicable"
+    }
+  },
+  "identificationClues": [
+    "Diagnosed by antibody/antigen combination immunoassays and confirmatory testing, plus HIV RNA viral load — not by culture",
+    "Reverse transcriptase converts the ssRNA genome to DNA that integrates into the host genome",
+    "Cone-shaped (conical) capsid is distinctive among retroviruses",
+    "Preferentially infects and progressively depletes CD4+ T lymphocytes"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Acute retroviral syndrome",
+      "Chronic HIV infection",
+      "Acquired immunodeficiency syndrome (AIDS) — advanced, untreated disease with severe CD4+ depletion and opportunistic infections"
+    ],
+    "virulenceFactors": [
+      "Reverse transcriptase — enables genome integration and a high mutation rate that aids immune evasion",
+      "gp120/gp41 envelope glycoproteins — CD4 and co-receptor binding for cell entry",
+      "High replication and mutation rate — rapid immune escape and drug resistance"
+    ],
+    "transmission": "Blood and body fluids — sexual contact, blood exposure such as shared needles or transfusion, and perinatal (mother-to-child) transmission",
+    "epidemiology": "A major global public health issue; antiretroviral therapy has transformed HIV infection into a manageable chronic condition where treatment is accessible, though significant global disparities in access remain",
+    "labSignificance": "Combination antigen/antibody immunoassays are used for initial screening, with supplemental/confirmatory testing and viral load quantification guiding diagnosis and management"
+  },
+  "examFacts": {
+    "gramReaction": "Not applicable (virus)",
+    "shape": "Enveloped virion with a conical capsid core",
+    "keyBiochemicalReaction": "Not applicable — diagnosed by immunoassay and viral load, not biochemical tests",
+    "importantDisease": "HIV infection, progressing to AIDS if untreated",
+    "importantTest": "Fourth-generation antigen/antibody immunoassay; HIV RNA viral load",
+    "distinguishingFeature": "Conical capsid core and reverse-transcriptase-mediated genome integration, characteristic of retroviruses"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — HIV",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hiv/"
+    },
+    {
+      "name": "World Health Organization — HIV",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"HIV\"",
+      "kind": "educational"
+    }
+  ]
+}

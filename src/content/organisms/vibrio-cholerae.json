@@ -1,0 +1,130 @@
+{
+  "id": "vibrio-cholerae",
+  "scientificName": "Vibrio cholerae",
+  "category": "bacteria",
+  "image": "/organisms/vibrio-cholerae.svg",
+  "quickTags": [
+    "Comma-shaped rod",
+    "Oxidase positive",
+    "Cholera toxin"
+  ],
+  "searchKeywords": [
+    "cholera",
+    "rice water stool"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Vibrionales",
+    "family": "Vibrionaceae",
+    "genus": "Vibrio",
+    "species": "V. cholerae"
+  },
+  "morphology": {
+    "shape": "Curved rod (comma-shaped)",
+    "shapeCategory": "spiral",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1.5-3 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "Non-capsulated",
+    "encapsulated": false,
+    "motility": "Highly motile — single polar flagellum",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Aquatic environments — brackish water and estuaries",
+    "hostAssociation": "Human pathogen; also associates with zooplankton and shellfish in aquatic reservoirs",
+    "environmentalOccurrence": "Endemic in coastal and estuarine waters, especially in warmer regions",
+    "reservoir": "Contaminated water, aquatic reservoirs, asymptomatic human carriers"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative curved, comma-shaped rods; darting motility on wet mount",
+      "arrangement": "Single"
+    },
+    "culture": {
+      "media": "TCBS (thiosulfate citrate bile salts sucrose) agar",
+      "growthCharacteristics": "Facultative anaerobe; tolerates alkaline pH, used for selective enrichment in alkaline peptone water",
+      "colonyMorphology": "Yellow colonies on TCBS agar (sucrose fermenter)",
+      "pigmentation": "None",
+      "hemolysis": "Variable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Sucrose fermentation",
+        "result": "+"
+      },
+      {
+        "test": "String test",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative curved/comma-shaped rod",
+    "Darting motility on wet mount",
+    "Oxidase positive",
+    "Yellow colonies on TCBS agar — sucrose fermenter",
+    "Grows in alkaline conditions such as peptone water enrichment"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Cholera — profuse watery 'rice-water' diarrhea",
+      "Severe dehydration and electrolyte imbalance"
+    ],
+    "virulenceFactors": [
+      "Cholera toxin — an AB toxin that activates adenylate cyclase, causing massive fluid and electrolyte secretion",
+      "Toxin-coregulated pilus — adhesion"
+    ],
+    "toxins": [
+      "Cholera toxin"
+    ],
+    "transmission": "Fecal-oral route — contaminated water and food",
+    "epidemiology": "Endemic in parts of South Asia and sub-Saharan Africa; capable of explosive epidemic or pandemic spread, especially after disasters disrupting clean water access",
+    "labSignificance": "Darting motility plus growth on TCBS selective media allow rapid presumptive identification in outbreak settings"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Curved rod (comma-shaped)",
+    "keyBiochemicalReaction": "Oxidase positive, sucrose fermenter",
+    "importantDisease": "Cholera",
+    "importantTest": "TCBS agar (yellow colonies); darting motility on wet mount",
+    "distinguishingFeature": "Comma-shaped, highly motile rod that produces cholera toxin"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "helicobacter-pylori",
+      "relationship": "similar-morphology"
+    },
+    {
+      "id": "salmonella-enterica",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Cholera",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/cholera/"
+    },
+    {
+      "name": "World Health Organization — Cholera",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Vibrio Cholerae\"",
+      "kind": "educational"
+    }
+  ]
+}

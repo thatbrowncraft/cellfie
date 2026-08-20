@@ -1,0 +1,141 @@
+{
+  "id": "klebsiella-pneumoniae",
+  "scientificName": "Klebsiella pneumoniae",
+  "category": "bacteria",
+  "image": "/organisms/klebsiella-pneumoniae.svg",
+  "quickTags": [
+    "Mucoid colonies",
+    "Lactose fermenter",
+    "Encapsulated"
+  ],
+  "searchKeywords": [
+    "cre",
+    "carbapenem resistant",
+    "klebsiella"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Enterobacteriaceae",
+    "genus": "Klebsiella",
+    "species": "K. pneumoniae"
+  },
+  "morphology": {
+    "shape": "Plump rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells or short chains",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-2 x 0.5-0.8 µm",
+    "sporeForming": false,
+    "capsule": "Large, prominent polysaccharide capsule",
+    "encapsulated": true,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human and animal gastrointestinal tract; also found in soil and water",
+    "hostAssociation": "Normal gut flora; opportunistic pathogen, especially in hospitalized or immunocompromised patients",
+    "environmentalOccurrence": "Widely found in soil and water",
+    "reservoir": "Human GI tract, hospital environment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells or pairs"
+    },
+    "culture": {
+      "media": "MacConkey agar",
+      "growthCharacteristics": "Facultative anaerobe, rapid growth",
+      "colonyMorphology": "Large, mucoid, glistening colonies due to the thick capsule",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "+"
+      },
+      {
+        "test": "Indole",
+        "result": "−"
+      },
+      {
+        "test": "Voges-Proskauer",
+        "result": "+"
+      },
+      {
+        "test": "Citrate",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative rod",
+    "Very mucoid, large colonies on culture due to a thick capsule",
+    "Lactose fermenter",
+    "Indole negative — distinguishes it from E. coli",
+    "Non-motile",
+    "Voges-Proskauer positive"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Hospital-acquired pneumonia",
+      "Urinary tract infections",
+      "Bacteremia",
+      "Liver abscess — particularly hypervirulent strains",
+      "Neonatal sepsis"
+    ],
+    "virulenceFactors": [
+      "Large polysaccharide capsule — antiphagocytic, main virulence factor",
+      "Fimbriae",
+      "Siderophores — iron acquisition, prominent in hypervirulent strains"
+    ],
+    "transmission": "Opportunistic — endogenous spread from GI flora; nosocomial transmission via contaminated hands or equipment",
+    "epidemiology": "Important cause of hospital-acquired infections; carbapenem-resistant Klebsiella pneumoniae (CRE) is a major antimicrobial resistance concern",
+    "labSignificance": "Extremely mucoid colony morphology plus indole negativity distinguishes it from E. coli among lactose-fermenting Gram-negative rods"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Lactose fermenter, indole negative",
+    "importantDisease": "Hospital-acquired pneumonia; UTI",
+    "importantTest": "Mucoid colony morphology; indole test (negative, unlike E. coli)",
+    "distinguishingFeature": "Large capsule producing very mucoid colonies; non-motile, unlike most Enterobacterales"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "escherichia-coli",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "pseudomonas-aeruginosa",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Klebsiella pneumoniae in Healthcare Settings",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hai/organisms/klebsiella/klebsiella.html"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Klebsiella Pneumoniae\"",
+      "kind": "educational"
+    }
+  ]
+}

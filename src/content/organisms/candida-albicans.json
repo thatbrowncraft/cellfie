@@ -3,8 +3,18 @@
   "scientificName": "Candida albicans",
   "commonName": "Thrush fungus",
   "category": "fungi",
-  "quickTags": ["Germ tube positive", "Dimorphic yeast", "Opportunistic pathogen"],
-  "searchKeywords": ["yeast infection", "thrush", "candidiasis", "vaginal yeast infection"],
+  "image": "/organisms/candida-albicans.svg",
+  "quickTags": [
+    "Germ tube positive",
+    "Dimorphic yeast",
+    "Opportunistic pathogen"
+  ],
+  "searchKeywords": [
+    "yeast infection",
+    "thrush",
+    "candidiasis",
+    "vaginal yeast infection"
+  ],
   "classification": {
     "domain": "Eukaryota",
     "kingdom": "Fungi",
@@ -20,11 +30,24 @@
     "arrangement": "Budding yeast cells (blastoconidia), with pseudohyphae under certain conditions",
     "gramReaction": "not-applicable",
     "acidFast": false,
-    "size": "~4-6 \u00b5m (yeast form)",
+    "size": "~4-6 µm (yeast form)",
     "sporeForming": false,
     "capsule": "None",
     "motility": "Non-motile",
     "oxygenRequirement": "Facultative anaerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "yeast",
+    "hyphae": [
+      "pseudohyphae",
+      "true-hyphae"
+    ],
+    "reproductiveStructures": [
+      "Blastoconidia (budding)",
+      "Germ tubes",
+      "Chlamydospores"
+    ],
+    "clinicalGroup": "opportunistic"
   },
   "habitat": {
     "naturalHabitat": "Human gastrointestinal tract, oral cavity, vagina, and skin as commensal flora",
@@ -40,19 +63,25 @@
     },
     "culture": {
       "media": "Sabouraud dextrose agar (SDA), CHROMagar Candida, cornmeal agar for chlamydospore production",
-      "growthCharacteristics": "Grows well between 20-37\u00b0C; facultative anaerobe",
+      "growthCharacteristics": "Grows well between 20-37°C; facultative anaerobe",
       "colonyMorphology": "Cream-colored, smooth, pasty colonies with a yeasty odor",
       "pigmentation": "White to cream on SDA; green on CHROMagar Candida",
       "hemolysis": "Not applicable"
     },
     "biochemicalTests": [
-      { "test": "Germ tube test", "result": "+" },
-      { "test": "Chlamydospore formation on cornmeal agar", "result": "+" }
+      {
+        "test": "Germ tube test",
+        "result": "+"
+      },
+      {
+        "test": "Chlamydospore formation on cornmeal agar",
+        "result": "+"
+      }
     ]
   },
   "identificationClues": [
     "Budding yeast cells on Gram stain or KOH wet mount",
-    "Germ tube positive within 2-3 hours in serum \u2014 the key distinguishing test",
+    "Germ tube positive within 2-3 hours in serum — a fast presumptive test (Candida dubliniensis is also germ tube positive, so a positive result alone doesn't confirm C. albicans specifically)",
     "Forms chlamydospores on cornmeal agar",
     "Green colonies on CHROMagar Candida",
     "Pseudohyphae formation"
@@ -63,30 +92,45 @@
       "Vulvovaginal candidiasis (vaginal yeast infection)",
       "Cutaneous candidiasis (diaper rash, intertrigo)",
       "Invasive/systemic candidiasis and candidemia in immunocompromised or catheterized patients",
-      "Esophageal candidiasis \u2014 an AIDS-defining illness"
+      "Esophageal candidiasis — an AIDS-defining illness"
     ],
     "virulenceFactors": [
-      "Adhesins \u2014 surface proteins for mucosal attachment",
+      "Adhesins — surface proteins for mucosal attachment",
       "Phenotypic switching between yeast and hyphal forms",
       "Secreted aspartyl proteinases",
       "Biofilm formation on catheters and other devices"
     ],
     "transmission": "Usually endogenous, arising from the patient's own flora; can also spread via contact or contaminated devices in healthcare settings",
     "epidemiology": "Most common cause of fungal infection in humans; a leading cause of healthcare-associated bloodstream fungal infections",
-    "labSignificance": "The germ tube test is a fast, low-cost way to presumptively identify C. albicans among Candida species"
+    "labSignificance": "The germ tube test is a fast, low-cost presumptive test for C. albicans, though it is not fully species-specific — Candida dubliniensis also produces germ tubes and requires further testing to distinguish"
   },
   "examFacts": {
-    "gramReaction": "Not Gram-typed \u2014 a fungus, though it often stains Gram-positive-like",
+    "gramReaction": "Not Gram-typed — a fungus, though it often stains Gram-positive-like",
     "shape": "Budding yeast with pseudohyphae",
     "keyBiochemicalReaction": "Germ tube positive",
     "importantDisease": "Oral and vaginal thrush; invasive candidiasis in immunocompromised patients",
     "importantTest": "Germ tube test; chlamydospore formation on cornmeal agar",
-    "distinguishingFeature": "The only common Candida species that is germ tube positive"
+    "distinguishingFeature": "Germ tube positive — a fast presumptive test, though Candida dubliniensis also produces germ tubes, so definitive species identification relies on additional tests (e.g. growth at 45°C, which C. dubliniensis fails)"
   },
-  "relatedOrganismIds": [],
+  "relatedOrganisms": [
+    {
+      "id": "cryptococcus-neoformans",
+      "relationship": "same-broad-classification"
+    }
+  ],
   "sources": [
-    { "name": "CDC \u2014 Candidiasis", "kind": "educational", "url": "https://www.cdc.gov/candidiasis/" },
-    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Candidiasis\"", "kind": "educational" },
-    { "name": "American Society for Microbiology (ASM)", "kind": "educational" }
+    {
+      "name": "CDC — Candidiasis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/candidiasis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Candidiasis\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
   ]
 }

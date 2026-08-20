@@ -1,0 +1,116 @@
+{
+  "id": "clostridium-tetani",
+  "scientificName": "Clostridium tetani",
+  "category": "bacteria",
+  "image": "/organisms/clostridium-tetani.svg",
+  "quickTags": [
+    "Terminal spore",
+    "Obligate anaerobe",
+    "Tetanospasmin"
+  ],
+  "searchKeywords": [
+    "tetanus",
+    "lockjaw",
+    "drumstick bacillus"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Clostridia",
+    "order": "Eubacteriales",
+    "family": "Clostridiaceae",
+    "genus": "Clostridium",
+    "species": "C. tetani"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus) — terminal spore gives a 'drumstick' or 'tennis racket' appearance",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~2-5 x 0.4-0.5 µm",
+    "sporeForming": true,
+    "capsule": "Non-capsulated",
+    "encapsulated": false,
+    "motility": "Motile — peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Obligate anaerobe",
+    "oxygenRequirementCategory": "obligate-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, dust, animal feces",
+    "hostAssociation": "Environmental organism; causes disease after spores contaminate a wound",
+    "environmentalOccurrence": "Ubiquitous in soil, especially with organic or fecal contamination",
+    "reservoir": "Soil; animal and human intestinal tract as the spore form"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive rods with round terminal spores, giving a 'drumstick' appearance",
+      "arrangement": "Single"
+    },
+    "culture": {
+      "media": "Anaerobic blood agar",
+      "growthCharacteristics": "Obligate anaerobe, requires strict anaerobic culture conditions",
+      "colonyMorphology": "Thin, spreading (swarming) colonies with irregular edges",
+      "pigmentation": "None",
+      "hemolysis": "Beta-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Gelatin liquefaction",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive rod with a round terminal spore, giving a 'drumstick'/'tennis racket' appearance",
+    "Obligate anaerobe",
+    "Motile",
+    "Diagnosis is primarily clinical (trismus/lockjaw, muscle rigidity) rather than culture-based, since wound cultures are often negative"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Tetanus — generalized muscle rigidity, lockjaw/trismus, spasms"
+    ],
+    "virulenceFactors": [
+      "Tetanospasmin (tetanus toxin) — blocks inhibitory neurotransmitter release, causing sustained muscle contraction"
+    ],
+    "toxins": [
+      "Tetanospasmin — an extremely potent neurotoxin"
+    ],
+    "transmission": "Spores introduced into deep, devitalized wounds such as puncture wounds or contaminated cuts; not spread person to person",
+    "epidemiology": "Rare in regions with widespread vaccination using tetanus toxoid; remains a concern after trauma in unvaccinated or under-vaccinated individuals, and as neonatal tetanus via umbilical stump contamination in some resource-limited settings",
+    "labSignificance": "Diagnosis is primarily clinical; wound Gram stain and culture can support but not rule out the diagnosis, since the organism may not always be recovered"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Rod with a terminal spore ('drumstick')",
+    "keyBiochemicalReaction": "Not primarily diagnosed by biochemical testing — diagnosis is clinical",
+    "importantDisease": "Tetanus",
+    "importantTest": "Clinical diagnosis; wound Gram stain may show terminal-spore rods",
+    "distinguishingFeature": "Terminal round spore, obligate anaerobe, produces tetanospasmin"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "bacillus-subtilis",
+      "relationship": "similar-morphology"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Tetanus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/tetanus/"
+    },
+    {
+      "name": "World Health Organization — Tetanus",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Tetanus\"",
+      "kind": "educational"
+    }
+  ]
+}

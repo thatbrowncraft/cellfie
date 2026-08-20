@@ -3,8 +3,18 @@
   "scientificName": "Escherichia coli",
   "commonName": "E. coli",
   "category": "bacteria",
-  "quickTags": ["Lactose fermenter", "Facultative anaerobe", "Indole positive"],
-  "searchKeywords": ["e coli", "coliform", "uti", "urinary tract infection"],
+  "image": "/organisms/escherichia-coli.svg",
+  "quickTags": [
+    "Lactose fermenter",
+    "Facultative anaerobe",
+    "Indole positive"
+  ],
+  "searchKeywords": [
+    "e coli",
+    "coliform",
+    "uti",
+    "urinary tract infection"
+  ],
   "classification": {
     "domain": "Bacteria",
     "phylum": "Pseudomonadota (Proteobacteria)",
@@ -19,11 +29,16 @@
     "arrangement": "Single cells or short chains",
     "gramReaction": "negative",
     "acidFast": false,
-    "size": "~1-2 x 0.5 \u00b5m",
+    "size": "~1-2 x 0.5 µm",
     "sporeForming": false,
     "capsule": "Some strains capsulated (K antigen)",
     "motility": "Motile (peritrichous flagella) in most strains",
-    "oxygenRequirement": "Facultative anaerobe"
+    "oxygenRequirement": "Facultative anaerobe",
+    "shapeCategory": "bacillus",
+    "arrangementCategory": "single",
+    "oxygenRequirementCategory": "facultative-anaerobe",
+    "motile": true,
+    "encapsulated": false
   },
   "habitat": {
     "naturalHabitat": "Lower intestinal tract of warm-blooded animals, including humans",
@@ -39,26 +54,47 @@
     },
     "culture": {
       "media": "MacConkey agar, EMB (eosin methylene blue) agar",
-      "growthCharacteristics": "Rapid growth, facultative anaerobe, grows well at 37\u00b0C",
+      "growthCharacteristics": "Rapid growth, facultative anaerobe, grows well at 37°C",
       "colonyMorphology": "Large, gray, mucoid colonies on nutrient agar",
       "pigmentation": "None; green metallic sheen on EMB agar",
-      "hemolysis": "Variable \u2014 some strains beta-hemolytic on blood agar"
+      "hemolysis": "Variable — some strains beta-hemolytic on blood agar"
     },
     "biochemicalTests": [
-      { "test": "Catalase", "result": "+" },
-      { "test": "Oxidase", "result": "\u2212" },
-      { "test": "Indole", "result": "+" },
-      { "test": "Methyl red", "result": "+" },
-      { "test": "Voges-Proskauer", "result": "\u2212" },
-      { "test": "Citrate", "result": "\u2212" },
-      { "test": "Lactose fermentation", "result": "+" }
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Indole",
+        "result": "+"
+      },
+      {
+        "test": "Methyl red",
+        "result": "+"
+      },
+      {
+        "test": "Voges-Proskauer",
+        "result": "−"
+      },
+      {
+        "test": "Citrate",
+        "result": "−"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "+"
+      }
     ]
   },
   "identificationClues": [
     "Gram-negative rod",
-    "Lactose fermenter \u2014 pink colonies on MacConkey agar",
+    "Lactose fermenter — pink colonies on MacConkey agar",
     "Indole positive",
-    "IMViC pattern: + + \u2212 \u2212",
+    "IMViC pattern: + + − −",
     "Green metallic sheen on EMB agar",
     "Facultative anaerobe"
   ],
@@ -88,14 +124,37 @@
     "gramReaction": "Gram-negative",
     "shape": "Bacillus (rod)",
     "keyBiochemicalReaction": "Indole positive, lactose fermenter",
-    "importantDisease": "UTI \u2014 most common causative organism",
-    "importantTest": "IMViC pattern (+ + \u2212 \u2212); green sheen on EMB agar",
+    "importantDisease": "UTI — most common causative organism",
+    "importantTest": "IMViC pattern (+ + − −); green sheen on EMB agar",
     "distinguishingFeature": "Lactose fermentation plus indole positivity separates it from Salmonella and Shigella"
   },
-  "relatedOrganismIds": ["pseudomonas-aeruginosa"],
+  "relatedOrganisms": [
+    {
+      "id": "pseudomonas-aeruginosa",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "klebsiella-pneumoniae",
+      "relationship": "same-clinical-specimen"
+    },
+    {
+      "id": "salmonella-enterica",
+      "relationship": "differential-identification"
+    }
+  ],
   "sources": [
-    { "name": "CDC \u2014 E. coli", "kind": "educational", "url": "https://www.cdc.gov/ecoli/" },
-    { "name": "NCBI Bookshelf \u2014 StatPearls, \"Escherichia coli\"", "kind": "educational" },
-    { "name": "American Society for Microbiology (ASM)", "kind": "educational" }
+    {
+      "name": "CDC — E. coli",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/ecoli/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Escherichia coli\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
   ]
 }

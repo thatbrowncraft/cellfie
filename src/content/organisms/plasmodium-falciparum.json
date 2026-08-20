@@ -1,0 +1,112 @@
+{
+  "id": "plasmodium-falciparum",
+  "scientificName": "Plasmodium falciparum",
+  "commonName": null,
+  "category": "protozoa",
+  "image": "/organisms/plasmodium-falciparum.svg",
+  "quickTags": [
+    "Ring form",
+    "Vector-borne",
+    "Malaria"
+  ],
+  "searchKeywords": [
+    "malaria",
+    "cerebral malaria",
+    "mosquito"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Protista",
+    "phylum": "Apicomplexa",
+    "class": "Aconoidasida",
+    "order": "Haemospororida",
+    "family": "Plasmodiidae",
+    "genus": "Plasmodium",
+    "species": "P. falciparum"
+  },
+  "morphology": {
+    "shape": "Intracellular parasite of red blood cells; ring, trophozoite, schizont, and gametocyte forms",
+    "size": "Ring forms ~1-2 µm; infected red blood cells are not enlarged, unlike P. vivax",
+    "motility": "Motile sporozoite and merozoite stages; intracellular forms are non-motile",
+    "motile": true
+  },
+  "protozoanDetails": {
+    "group": "apicomplexan",
+    "majorLocation": "blood",
+    "transmissionRoute": "vector-borne",
+    "lifeCycleForm": "Ring, trophozoite, schizont, and crescent-shaped gametocyte stages within red blood cells"
+  },
+  "habitat": {
+    "naturalHabitat": "Human red blood cells and liver (exoerythrocytic stage); Anopheles mosquito as the definitive host",
+    "hostAssociation": "Obligate intracellular parasite of humans (intermediate host) and Anopheles mosquitoes (definitive host)",
+    "environmentalOccurrence": "Transmission is tied to the geographic range of competent Anopheles mosquito vectors, mainly tropical and subtropical regions",
+    "reservoir": "Humans — no significant animal reservoir for this species"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Giemsa-stained thick and thin blood smears",
+      "appearance": "Thin smear: delicate ring forms, often multiple per cell, with appliqué (accolé) forms; crescent/banana-shaped gametocytes are distinctive. Infected red blood cells are not enlarged",
+      "arrangement": "Intracellular within red blood cells"
+    },
+    "culture": {
+      "media": "Not routinely cultured for clinical diagnosis",
+      "growthCharacteristics": "Not applicable for routine diagnosis",
+      "colonyMorphology": "Not applicable",
+      "pigmentation": "Not applicable",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Rapid diagnostic test (histidine-rich protein 2 antigen)",
+        "result": "+ in active infection"
+      },
+      {
+        "test": "PCR",
+        "result": "Species-specific confirmation"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Ring-form trophozoites, often multiple per red blood cell, on Giemsa-stained blood smear",
+    "Crescent/banana-shaped gametocytes — distinctive for this species",
+    "Infected red blood cells are not enlarged, unlike P. vivax/P. ovale",
+    "High parasitemia can occur, unlike other Plasmodium species",
+    "Vector-borne transmission by Anopheles mosquitoes"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Malaria — the most severe form among Plasmodium species, including cerebral malaria, severe anemia, and multi-organ dysfunction"
+    ],
+    "virulenceFactors": [
+      "Cytoadherence of infected red blood cells to vascular endothelium via PfEMP1 — sequestration avoids splenic clearance and contributes to severe disease",
+      "Rapid, high-level parasitemia"
+    ],
+    "transmission": "Bite of an infected female Anopheles mosquito (vector-borne)",
+    "epidemiology": "The deadliest human malaria species, associated with the highest burden of severe disease and death, concentrated in sub-Saharan Africa, with additional burden in parts of Asia and South America",
+    "labSignificance": "Giemsa-stained thick smears are used for detecting and quantifying parasitemia, thin smears for species identification, and rapid antigen tests are widely used for point-of-care diagnosis"
+  },
+  "examFacts": {
+    "gramReaction": "Not applicable (protozoan parasite)",
+    "shape": "Ring form within red blood cells; crescent-shaped gametocyte",
+    "keyBiochemicalReaction": "Not a biochemical-test organism — diagnosed by blood smear or antigen testing",
+    "importantDisease": "Malaria — the most severe Plasmodium species",
+    "importantTest": "Giemsa-stained thick and thin blood smears; rapid antigen test",
+    "distinguishingFeature": "Crescent/banana-shaped gametocytes and multiple ring forms per red blood cell, without red blood cell enlargement"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Malaria",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/malaria/"
+    },
+    {
+      "name": "World Health Organization — Malaria",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Malaria\"",
+      "kind": "educational"
+    }
+  ]
+}
