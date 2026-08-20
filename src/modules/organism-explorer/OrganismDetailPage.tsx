@@ -1,16 +1,31 @@
-import { useEffect, useMemo, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, type ChangeEvent, type ReactNode } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, ArrowSquareOut, GitBranch, Sparkle } from '@phosphor-icons/react'
+import { ArrowLeft, ArrowSquareOut, GitBranch, Sparkle, Trash, UploadSimple } from '@phosphor-icons/react'
 import { Button, CalloutBox, EmptyState, IllustrationFrame } from '@/shared/components'
 import { EmptyStateLayout } from '@/shared/layouts'
 import {
+  ACCEPTED_CUSTOM_IMAGE_TYPES,
+  customImageRejectionMessages,
+  fungalClinicalGroupLabels,
+  fungalMorphologicalTypeLabels,
+  bodyLocationLabels,
   gramReactionLabels,
   getOrganismById,
   getRelatedOrganisms,
+  hyphaeTypeLabels,
   organismCategoryLabels,
-  type OrganismProfile
+  protozoanGroupLabels,
+  relatedOrganismRelationshipLabels,
+  removeCustomImage,
+  setCustomImage,
+  transmissionRouteLabels,
+  viralEnvelopeLabels,
+  viralGenomeStrandednessLabels,
+  viralGenomeTypeLabels,
+  viralReplicationSiteLabels
 } from '@/core/organisms'
 import { recordOrganismViewed } from '@/core/organisms/recentlyViewed'
+import { useOrganismCustomImage } from './hooks/useOrganismCustomImage'
 
 /** A single label/value row — used across Classification, Habitat, and Lab Identification. Renders nothing when the value is absent, per Sprint 4 §6 ("do not show empty labels"). */
 function InfoRow({ label, value }: { label: string; value?: string }) {
@@ -55,13 +70,17 @@ function BulletList({ items }: { items?: string[] }) {
 }
 
 /**
- * Organism Detail — Sprint 4 §5-§13. A single scrollable specimen
- * profile rather than a tabbed interface — this keeps the "field guide"
- * feel the spec asks for (§4) and matches how a printed atlas entry
- * reads: identity up top, then classification, morphology, habitat, lab
+ * Organism Detail — Sprint 4 §5-§13, Master Revision §20-§28/§35/§36. A
+ * single scrollable specimen profile rather than a tabbed interface —
+ * this keeps the "field guide" feel the spec asks for (§4) and matches
+ * how a printed atlas entry reads: identity up top, then classification,
+ * morphology, category-specific characteristics, habitat, lab
  * identification, recognition clues, clinical importance, and exam
  * facts in that order. Every section is conditionally rendered — a
- * field a content author hasn't filled in simply doesn't show up.
+ * field a content author hasn't filled in simply doesn't show up, which
+ * is also what keeps a virus profile from ever showing a bacterial
+ * Gram-reaction chip (§35): virus content files simply never populate
+ * that field.
  */
 export function OrganismDetailPage() {
   const { organismId } = useParams<{ organismId: string }>()
@@ -79,6 +98,34 @@ export function OrganismDetailPage() {
     }
   }, [organism])
 
+  // Master Revision §20-§28 — a user's own local image for this
+  // organism, if they've uploaded one. `customImageUrl` is a live blob:
+  // URL that updates automatically the moment an upload/removal below
+  // completes, since useOrganismCustomImage is backed by useLiveQuery.
+  const { customImage, customImageUrl } = useOrganismCustomImage(organismId ?? '')
+  const fileInputRef = useRef<HTMLInputElement>(null)
+  const [imageError, setImageError] = useState<string | undefined>(undefined)
+  const [isUploading, setIsUploading] = useState(false)
+
+  async function handleFileSelected(e: ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    e.target.value = '' // always allow re-selecting the same file next time
+    if (!file || !organismId) return
+    setImageError(undefined)
+    setIsUploading(true)
+    const result = await setCustomImage(organismId, file)
+    setIsUploading(false)
+    if (!result.ok && result.reason) {
+      setImageError(customImageRejectionMessages[result.reason])
+    }
+  }
+
+  async function handleRemoveImage() {
+    if (!organismId) return
+    setImageError(undefined)
+    await removeCustomImage(organismId)
+  }
+
   if (!organism) {
     return (
       <EmptyStateLayout>
@@ -95,7 +142,8 @@ export function OrganismDetailPage() {
     )
   }
 
-  const { classification, morphology, habitat, labIdentification, clinicalImportance, examFacts } = organism
+  const { classification, morphology, habitat, labIdentification, clinicalImportance, examFacts, fungalDetails, protozoanDetails, virusDetails } =
+    organism
 
   const headerBadges = [
     organismCategoryLabels[organism.category],
@@ -121,6 +169,16 @@ export function OrganismDetailPage() {
         clinicalImportance.labSignificance)
   )
   const hasExamFacts = Object.values(examFacts).some(Boolean)
+  const hasFungalDetails = Boolean(
+    fungalDetails && (fungalDetails.morphologicalType || fungalDetails.hyphae?.length || fungalDetails.reproductiveStructures?.length || fungalDetails.clinicalGroup)
+  )
+  const hasProtozoanDetails = Boolean(
+    protozoanDetails && (protozoanDetails.group || protozoanDetails.majorLocation || protozoanDetails.transmissionRoute || protozoanDetails.lifeCycleForm)
+  )
+  const hasVirusDetails = Boolean(
+    virusDetails &&
+      (virusDetails.genomeType || virusDetails.genomeStrandedness || virusDetails.envelope || virusDetails.capsidSymmetry || virusDetails.replicationSite || virusDetails.transmissionRoute)
+  )
 
   return (
     <div className="mx-auto w-full min-w-0 max-w-content overflow-x-hidden px-4 py-8 sm:px-6 md:px-8">
@@ -134,12 +192,40 @@ export function OrganismDetailPage() {
       </button>
 
       <header className="mb-6 flex flex-col gap-5 sm:flex-row sm:items-start">
-        <IllustrationFrame
-          src={organism.image}
-          alt={`Illustration of ${organism.scientificName}`}
-          caption={organism.commonName ?? organism.scientificName}
-          className="w-full shrink-0 sm:w-56"
-        />
+        <div className="flex w-full shrink-0 flex-col gap-2 sm:w-56">
+          <IllustrationFrame
+            src={customImageUrl ?? organism.image}
+            alt={`Illustration of ${organism.scientificName}`}
+            caption={organism.commonName ?? organism.scientificName}
+            className="w-full"
+          />
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept={ACCEPTED_CUSTOM_IMAGE_TYPES.join(',')}
+            onChange={handleFileSelected}
+            className="hidden"
+            aria-hidden="true"
+            tabIndex={-1}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <Button
+              variant="secondary"
+              size="small"
+              icon={<UploadSimple size={14} />}
+              disabled={isUploading}
+              onClick={() => fileInputRef.current?.click()}
+            >
+              {isUploading ? 'Uploading\u2026' : customImage ? 'Change image' : 'Add your image'}
+            </Button>
+            {customImage && (
+              <Button variant="tertiary" size="small" icon={<Trash size={14} />} onClick={handleRemoveImage}>
+                Remove custom image
+              </Button>
+            )}
+          </div>
+          {imageError && <p className="font-body text-caption text-error">{imageError}</p>}
+        </div>
         <div className="flex flex-col gap-2">
           <div>
             <h1 className="font-display text-display font-semibold italic text-ink-primary">{organism.scientificName}</h1>
@@ -193,6 +279,70 @@ export function OrganismDetailPage() {
           </div>
           {morphology.notes && <p className="mt-3 font-body text-caption text-ink-secondary">{morphology.notes}</p>}
         </SectionCard>
+
+        {hasFungalDetails && (
+          <SectionCard title="Fungal characteristics">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              <MorphologyChip
+                label="Morphological type"
+                value={fungalDetails?.morphologicalType ? fungalMorphologicalTypeLabels[fungalDetails.morphologicalType] : undefined}
+              />
+              <MorphologyChip
+                label="Hyphae"
+                value={fungalDetails?.hyphae?.length ? fungalDetails.hyphae.map((h) => hyphaeTypeLabels[h]).join(', ') : undefined}
+              />
+              <MorphologyChip
+                label="Clinical group"
+                value={fungalDetails?.clinicalGroup ? fungalClinicalGroupLabels[fungalDetails.clinicalGroup] : undefined}
+              />
+            </div>
+            {fungalDetails?.reproductiveStructures && fungalDetails.reproductiveStructures.length > 0 && (
+              <div className="mt-3">
+                <h3 className="mb-1.5 font-ui text-caption font-semibold text-ink-secondary">Reproductive/structural features</h3>
+                <BulletList items={fungalDetails.reproductiveStructures} />
+              </div>
+            )}
+          </SectionCard>
+        )}
+
+        {hasProtozoanDetails && (
+          <SectionCard title="Protozoan characteristics">
+            <dl>
+              <InfoRow label="Group" value={protozoanDetails?.group ? protozoanGroupLabels[protozoanDetails.group] : undefined} />
+              <InfoRow
+                label="Major location"
+                value={protozoanDetails?.majorLocation ? bodyLocationLabels[protozoanDetails.majorLocation] : undefined}
+              />
+              <InfoRow
+                label="Transmission"
+                value={protozoanDetails?.transmissionRoute ? transmissionRouteLabels[protozoanDetails.transmissionRoute] : undefined}
+              />
+              <InfoRow label="Life-cycle form" value={protozoanDetails?.lifeCycleForm} />
+            </dl>
+          </SectionCard>
+        )}
+
+        {hasVirusDetails && (
+          <SectionCard title="Viral characteristics">
+            <dl>
+              <InfoRow label="Genome" value={virusDetails?.genomeType ? viralGenomeTypeLabels[virusDetails.genomeType] : undefined} />
+              <InfoRow
+                label="Genome type"
+                value={virusDetails?.genomeStrandedness ? viralGenomeStrandednessLabels[virusDetails.genomeStrandedness] : undefined}
+              />
+              <InfoRow label="Envelope" value={virusDetails?.envelope ? viralEnvelopeLabels[virusDetails.envelope] : undefined} />
+              <InfoRow label="Capsid symmetry" value={virusDetails?.capsidSymmetry} />
+              <InfoRow
+                label="Replication site"
+                value={virusDetails?.replicationSite ? viralReplicationSiteLabels[virusDetails.replicationSite] : undefined}
+              />
+              <InfoRow
+                label="Transmission"
+                value={virusDetails?.transmissionRoute ? transmissionRouteLabels[virusDetails.transmissionRoute] : undefined}
+              />
+            </dl>
+          </SectionCard>
+        )}
 
         {hasHabitat && (
           <SectionCard title="Habitat">
@@ -324,20 +474,23 @@ export function OrganismDetailPage() {
 
         {relatedOrganisms.length > 0 && (
           <SectionCard title="Related organisms">
-            <div className="flex flex-col gap-1">
-              <div className="mb-1 flex items-center gap-1.5 font-ui text-caption text-ink-tertiary">
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-1.5 font-ui text-caption text-ink-tertiary">
                 <GitBranch size={14} aria-hidden />
-                Same genus, similar morphology, or commonly confused
+                Organisms worth comparing this one against
               </div>
-              <div className="flex flex-wrap gap-2">
-                {relatedOrganisms.map((related: OrganismProfile) => (
+              <div className="flex flex-col gap-2">
+                {relatedOrganisms.map(({ organism: related, relationship }) => (
                   <button
                     key={related.id}
                     type="button"
                     onClick={() => navigate(`/organisms/${related.id}`)}
-                    className="rounded-full border border-border-strong bg-canvas px-3 py-1.5 font-ui text-caption font-medium italic text-ink-primary hover:bg-surface-raised"
+                    className="flex flex-wrap items-center justify-between gap-2 rounded-sm border border-border-strong bg-canvas px-3 py-2 text-left hover:bg-surface-raised"
                   >
-                    {related.scientificName}
+                    <span className="font-ui text-caption font-medium italic text-ink-primary">{related.scientificName}</span>
+                    <span className="rounded-full bg-surface-raised px-2 py-0.5 font-ui text-micro uppercase tracking-wide text-ink-tertiary">
+                      {relatedOrganismRelationshipLabels[relationship]}
+                    </span>
                   </button>
                 ))}
               </div>
