@@ -1,5 +1,5 @@
 import { cn } from '@/shared/utils/cn'
-import { organismCategoryLabels, type OrganismCategory } from '@/core/organisms'
+import { organismCategoryLabels, primaryOrganismCategories, type OrganismCategory } from '@/core/organisms'
 
 interface CategoryPillsProps {
   counts: Partial<Record<OrganismCategory, number>>
@@ -9,23 +9,30 @@ interface CategoryPillsProps {
 }
 
 /**
- * Category Pills — Sprint 4 §2. A single horizontally-scrollable row of
- * primary categories, kept deliberately lighter-weight than the
- * Library's CollectionsShelf card treatment so the first screen of the
- * Explorer stays clean on mobile (§21). Only categories that actually
- * have at least one organism are shown, aside from "All".
+ * Category tabs — Sprint 4 §3, Master Revision §3/§4/§41. The main
+ * organism-group navigation: All, Bacteria, Fungi, Protozoa, Viruses
+ * always show (even at a count of 0, per §3 — the architecture should
+ * read as ready for future expansion, not as missing content), plus
+ * any additional category (Algae, Other) only once it actually has at
+ * least one organism. Counts are always computed live from the
+ * registry by the caller (never hardcoded, §41).
+ *
+ * Selecting a category is what drives which filter panel shows below
+ * it (§4) — this component only owns the tab row itself.
  */
 export function CategoryPills({ counts, totalCount, active, onChange }: CategoryPillsProps) {
-  const availableCategories = (Object.keys(organismCategoryLabels) as OrganismCategory[]).filter(
-    (category) => (counts[category] ?? 0) > 0
+  const extraCategories = (Object.keys(organismCategoryLabels) as OrganismCategory[]).filter(
+    (category) => !primaryOrganismCategories.includes(category) && (counts[category] ?? 0) > 0
   )
+  const categories = [...primaryOrganismCategories, ...extraCategories]
 
   return (
-    <div className="flex gap-2 overflow-x-auto pb-1" role="group" aria-label="Filter by organism category">
+    <div className="flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Filter by organism category">
       <button
         type="button"
+        role="tab"
         onClick={() => onChange('all')}
-        aria-pressed={active === 'all'}
+        aria-selected={active === 'all'}
         className={cn(
           'shrink-0 rounded-full border px-4 py-2 font-ui text-caption font-medium transition-colors duration-micro',
           active === 'all'
@@ -35,12 +42,13 @@ export function CategoryPills({ counts, totalCount, active, onChange }: Category
       >
         All ({totalCount})
       </button>
-      {availableCategories.map((category) => (
+      {categories.map((category) => (
         <button
           key={category}
           type="button"
+          role="tab"
           onClick={() => onChange(category)}
-          aria-pressed={active === category}
+          aria-selected={active === category}
           className={cn(
             'shrink-0 rounded-full border px-4 py-2 font-ui text-caption font-medium transition-colors duration-micro',
             active === category
