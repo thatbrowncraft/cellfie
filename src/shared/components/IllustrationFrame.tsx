@@ -90,8 +90,8 @@ export function IllustrationFrame({ src, alt, caption, className }: Illustration
             role="img"
             aria-label={alt}
           >
-            <span>Illustration pending</span>
-            <span className="font-body text-micro text-ink-tertiary/80">Add organism artwork when available.</span>
+            <span>Illustration unavailable</span>
+            <span className="font-body text-micro text-ink-tertiary/80">Add your illustration</span>
           </div>
         )}
       </div>
