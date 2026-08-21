@@ -2,7 +2,7 @@
   "id": "salmonella-enterica",
   "scientificName": "Salmonella enterica",
   "category": "bacteria",
-  "image": "/organisms/salmonella-enterica.svg",
+  "image": "organisms/salmonella-enterica.svg",
   "quickTags": [
     "H2S positive",
     "Non-lactose fermenter",

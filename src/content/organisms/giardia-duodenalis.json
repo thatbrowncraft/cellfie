@@ -3,7 +3,7 @@
   "scientificName": "Giardia duodenalis",
   "commonName": "Giardia",
   "category": "protozoa",
-  "image": "/organisms/giardia-duodenalis.svg",
+  "image": "organisms/giardia-duodenalis.svg",
   "quickTags": [
     "Pear-shaped trophozoite",
     "Fecal-oral",

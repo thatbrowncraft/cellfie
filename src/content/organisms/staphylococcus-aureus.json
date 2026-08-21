@@ -3,7 +3,7 @@
   "scientificName": "Staphylococcus aureus",
   "commonName": "Staph aureus",
   "category": "bacteria",
-  "image": "/organisms/staphylococcus-aureus.svg",
+  "image": "organisms/staphylococcus-aureus.svg",
   "quickTags": [
     "Coagulase positive",
     "Catalase positive",

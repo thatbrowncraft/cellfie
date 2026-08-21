@@ -3,7 +3,7 @@
   "scientificName": "Cryptococcus neoformans",
   "commonName": null,
   "category": "fungi",
-  "image": "/organisms/cryptococcus-neoformans.svg",
+  "image": "organisms/cryptococcus-neoformans.svg",
   "quickTags": [
     "Encapsulated yeast",
     "Urease positive",

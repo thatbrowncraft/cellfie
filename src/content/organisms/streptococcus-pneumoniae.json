@@ -3,7 +3,7 @@
   "scientificName": "Streptococcus pneumoniae",
   "commonName": "Pneumococcus",
   "category": "bacteria",
-  "image": "/organisms/streptococcus-pneumoniae.svg",
+  "image": "organisms/streptococcus-pneumoniae.svg",
   "quickTags": [
     "Alpha-hemolytic",
     "Optochin sensitive",

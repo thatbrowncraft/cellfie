@@ -3,7 +3,7 @@
   "scientificName": "Neisseria meningitidis",
   "commonName": "Meningococcus",
   "category": "bacteria",
-  "image": "/organisms/neisseria-meningitidis.svg",
+  "image": "organisms/neisseria-meningitidis.svg",
   "quickTags": [
     "Gram-negative diplococci",
     "Encapsulated",

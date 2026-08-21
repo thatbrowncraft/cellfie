@@ -3,7 +3,7 @@
   "scientificName": "Candida albicans",
   "commonName": "Thrush fungus",
   "category": "fungi",
-  "image": "/organisms/candida-albicans.svg",
+  "image": "organisms/candida-albicans.svg",
   "quickTags": [
     "Germ tube positive",
     "Dimorphic yeast",

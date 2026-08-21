@@ -2,7 +2,7 @@
   "id": "vibrio-cholerae",
   "scientificName": "Vibrio cholerae",
   "category": "bacteria",
-  "image": "/organisms/vibrio-cholerae.svg",
+  "image": "organisms/vibrio-cholerae.svg",
   "quickTags": [
     "Comma-shaped rod",
     "Oxidase positive",

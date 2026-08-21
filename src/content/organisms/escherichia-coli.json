@@ -3,7 +3,7 @@
   "scientificName": "Escherichia coli",
   "commonName": "E. coli",
   "category": "bacteria",
-  "image": "/organisms/escherichia-coli.svg",
+  "image": "organisms/escherichia-coli.svg",
   "quickTags": [
     "Lactose fermenter",
     "Facultative anaerobe",

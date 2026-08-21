@@ -3,7 +3,7 @@
   "scientificName": "Hepatitis B virus",
   "commonName": "HBV",
   "category": "virus",
-  "image": "/organisms/hepatitis-b-virus.svg",
+  "image": "organisms/hepatitis-b-virus.svg",
   "quickTags": [
     "Enveloped DNA virus",
     "Dane particle",

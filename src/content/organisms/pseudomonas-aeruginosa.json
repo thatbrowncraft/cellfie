@@ -3,7 +3,7 @@
   "scientificName": "Pseudomonas aeruginosa",
   "commonName": "Pseudomonas",
   "category": "bacteria",
-  "image": "/organisms/pseudomonas-aeruginosa.svg",
+  "image": "organisms/pseudomonas-aeruginosa.svg",
   "quickTags": [
     "Oxidase positive",
     "Blue-green pigment",

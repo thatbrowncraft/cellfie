@@ -3,7 +3,7 @@
   "scientificName": "Neisseria gonorrhoeae",
   "commonName": "Gonococcus",
   "category": "bacteria",
-  "image": "/organisms/neisseria-gonorrhoeae.svg",
+  "image": "organisms/neisseria-gonorrhoeae.svg",
   "quickTags": [
     "Gram-negative diplococci",
     "Oxidase positive",

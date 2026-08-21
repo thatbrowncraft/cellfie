@@ -3,7 +3,7 @@
   "scientificName": "Plasmodium falciparum",
   "commonName": null,
   "category": "protozoa",
-  "image": "/organisms/plasmodium-falciparum.svg",
+  "image": "organisms/plasmodium-falciparum.svg",
   "quickTags": [
     "Ring form",
     "Vector-borne",
