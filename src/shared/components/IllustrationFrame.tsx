@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useEffect, useId, useState } from 'react'
 import { cn } from '../utils/cn'
 
 interface IllustrationFrameProps {
@@ -15,9 +15,40 @@ interface IllustrationFrameProps {
  * content only — never applied to PDF thumbnails or UI screenshots.
  * The decorative deckled-edge SVG is aria-hidden; only the image's real
  * content and caption are exposed to assistive tech (§13).
+ *
+ * Two behaviors fixed after the live Organism Explorer showed broken-
+ * image icons instead of illustrations:
+ *
+ * 1. A real `onError` fallback. Previously, an `<img>` whose `src` 404'd
+ *    just rendered the browser's own broken-image icon plus visible alt
+ *    text — never acceptable UI. Now any load failure (a stale custom-
+ *    image blob URL, an organism with no built-in SVG yet, a bad path)
+ *    falls through to the same intentional "Illustration placeholder"
+ *    state used when `src` is absent, with no infinite retry loop (the
+ *    failed `src` is never re-attempted; a *new* `src` — e.g. after the
+ *    user uploads a different image — gets a fresh, uncorrupted attempt
+ *    since the error flag resets whenever `src` itself changes).
+ * 2. A real, consistent 4:3 aspect box around the image itself, not
+ *    just around the empty-state placeholder. Previously only the
+ *    placeholder had `aspect-[4/3]`; an actual loaded `<img>` had no
+ *    intrinsic sizing at all, so it rendered at whatever thin height
+ *    happened to result from the surrounding layout — the "banner, not
+ *    an illustration" problem. `object-contain` keeps the artwork
+ *    fully visible and undistorted inside that box rather than cropping
+ *    it (appropriate for scientific illustrations, as opposed to
+ *    `object-cover`, which is right for photos).
  */
 export function IllustrationFrame({ src, alt, caption, className }: IllustrationFrameProps) {
   const filterId = `deckle-${useId()}`
+  const [hasErrored, setHasErrored] = useState(false)
+
+  // A new src (different upload, different organism) always deserves a
+  // fresh attempt — only the src that actually just failed stays failed.
+  useEffect(() => {
+    setHasErrored(false)
+  }, [src])
+
+  const showImage = Boolean(src) && !hasErrored
 
   return (
     <figure className={cn('relative inline-block rounded-lg', className)}>
@@ -44,15 +75,23 @@ export function IllustrationFrame({ src, alt, caption, className }: Illustration
           />
         </svg>
 
-        {src ? (
-          <img src={src} alt={alt} className="relative block w-full rounded-md" />
+        {showImage ? (
+          <div className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-md bg-surface-raised">
+            <img
+              src={src}
+              alt={alt}
+              onError={() => setHasErrored(true)}
+              className="h-full w-full object-contain"
+            />
+          </div>
         ) : (
           <div
-            className="relative flex aspect-[4/3] w-full items-center justify-center rounded-md bg-surface-raised font-ui text-caption text-ink-tertiary"
+            className="relative flex aspect-[4/3] w-full flex-col items-center justify-center gap-1 rounded-md bg-surface-raised px-4 text-center font-ui text-caption text-ink-tertiary"
             role="img"
             aria-label={alt}
           >
-            Illustration placeholder
+            <span>Illustration pending</span>
+            <span className="font-body text-micro text-ink-tertiary/80">Add organism artwork when available.</span>
           </div>
         )}
       </div>
