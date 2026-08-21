@@ -409,6 +409,31 @@ export interface OrganismCustomImage {
   updatedAt: number
 }
 
+/**
+ * Knowledge Layer Integration §12-§14, §37 — a user's personal copy of
+ * an organism profile that started life as a Knowledge Layer lookup
+ * (see core/organisms/knowledgeLayer.ts) and that the user explicitly
+ * chose to keep. `profile` is a full `OrganismProfile` (with
+ * `sourceType: 'user-saved'`) stored as-is — this table is intentionally
+ * separate from both `organismCustomImages` (which is keyed the same
+ * way but only ever holds an image pointer) and from
+ * `src/content/organisms/*.json` (the shared, curated library, which
+ * this table can never write to or modify — §12/§14/§44). If the same
+ * organism is later added to the curated library under the same
+ * canonical id, the curated version takes priority at read time (see
+ * getOrganismByIdIncludingSaved in core/organisms/registry.ts) — this
+ * row is never deleted automatically when that happens, but it also
+ * never shows again once shadowed (§15).
+ */
+export interface SavedOrganismRecord {
+  /** The OrganismProfile.id this row is for — primary key, one save per organism. */
+  organismId: string
+  profile: unknown
+  savedAt: number
+  /** How many times the user has looked this organism up via the Knowledge Layer — a simple local signal for "this might be worth curating officially" (§37). Never sent anywhere. */
+  searchCount: number
+}
+
 class CellfieDB extends Dexie {
   libraryItems!: Table<LibraryItem, string>
   collections!: Table<Collection, string>
@@ -425,6 +450,7 @@ class CellfieDB extends Dexie {
   conceptStudyNotes!: Table<ConceptStudyNote, string>
   conceptSectionEdits!: Table<ConceptSectionEdit, string>
   organismCustomImages!: Table<OrganismCustomImage, string>
+  savedOrganisms!: Table<SavedOrganismRecord, string>
 
   constructor() {
     super('cellfie')
@@ -592,6 +618,28 @@ class CellfieDB extends Dexie {
       conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
       conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
       organismCustomImages: 'organismId, updatedAt'
+    })
+    // v10 — Knowledge Layer Integration: adds `savedOrganisms` only.
+    // Every prior store repeated unchanged; no existing row in any
+    // table is touched by this upgrade.
+    this.version(10).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt',
+      highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+      notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+      concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+      conceptSources:
+        'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+      conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+      conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+      conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+      conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+      conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
+      conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
+      organismCustomImages: 'organismId, updatedAt',
+      savedOrganisms: 'organismId, savedAt'
     })
   }
 }
