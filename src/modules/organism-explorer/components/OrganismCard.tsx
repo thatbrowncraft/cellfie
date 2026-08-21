@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { Card, CardBody, IllustrationFrame } from '@/shared/components'
-import { gramReactionLabels, organismCategoryLabels, type OrganismProfile } from '@/core/organisms'
+import { gramReactionLabels, organismCategoryLabels, resolvePublicAssetPath, type OrganismProfile } from '@/core/organisms'
 import { useOrganismCustomImage } from '../hooks/useOrganismCustomImage'
 
 interface OrganismCardProps {
@@ -35,7 +35,7 @@ export function OrganismCard({ organism }: OrganismCardProps) {
     <Card interactive onClick={() => navigate(`/organisms/${organism.id}`)}>
       <CardBody className="flex flex-col gap-4">
         <IllustrationFrame
-          src={customImageUrl ?? organism.image}
+          src={customImageUrl ?? resolvePublicAssetPath(organism.image) ?? organism.externalImage?.imageUrl}
           alt={`Illustration of ${organism.scientificName}`}
           caption={organism.commonName ?? organism.scientificName}
           className="w-full"
