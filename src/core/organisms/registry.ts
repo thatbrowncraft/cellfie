@@ -64,7 +64,8 @@ function isValidOrganism(x: unknown): x is OrganismProfile {
 }
 
 const ALL_ORGANISMS: OrganismProfile[] = Object.entries(organismModules)
-  .map(([path, mod]) => {
+  .map((entry): OrganismProfile | undefined => {
+    const [path, mod] = entry
     const data = mod.default
     if (!isValidOrganism(data)) {
       // eslint-disable-next-line no-console
@@ -75,7 +76,7 @@ const ALL_ORGANISMS: OrganismProfile[] = Object.entries(organismModules)
     // stamped here rather than left with `sourceType` absent, so nothing
     // downstream has to treat "absent" and "curated-local" as two
     // different cases.
-    return { ...data, sourceType: 'curated-local' as const }
+    return { ...data, sourceType: 'curated-local' }
   })
   .filter((organism): organism is OrganismProfile => Boolean(organism))
   // Stable, predictable order — alphabetical by scientific name, so the
