@@ -385,23 +385,39 @@ export interface ConceptSectionEdit {
 }
 
 /**
- * Sprint 4 Master Revision §20-§28 — a user's own local replacement
+ * Sprint 4 Master Revision §20-§28, extended by the Organism Library /
+ * Illustration System continuation (§19-§27) — a user's own local
  * image for one Organism Explorer profile (their microscope photo,
- * colony photo, stain image, personal diagram, etc). One row per
- * organism id (the id IS the primary key — an organism has at most one
- * custom image at a time; re-uploading replaces it, see
- * core/organisms/customImages.ts). The binary bytes themselves live in
- * OPFS via core/file-storage, same pattern as LibraryItem's PDFs and
- * ConceptAsset's imports — this row only ever holds the logical path.
- * Deliberately a separate table from anything in `src/content/` or the
- * organism JSON files: this is local user data, never written back
- * into shipped application content (§23), so a custom image can never
- * end up committed to the repository.
+ * colony photo, stain image, personal diagram, etc). Superseded the
+ * original one-row-per-organism `organismCustomImages` table (see the
+ * v11 migration below): an organism can now have *multiple* images,
+ * exactly one of which (`isPrimary`) is the large illustration-frame
+ * image; the rest render as small thumbnails (§21). The binary bytes
+ * themselves still live in OPFS via core/file-storage, same pattern as
+ * LibraryItem's PDFs and ConceptAsset's imports — this row only ever
+ * holds the logical path. Deliberately a separate table from anything
+ * in `src/content/` or the organism JSON files: this is local user
+ * data, never written back into shipped application content (§23), so
+ * a custom image can never end up committed to the repository.
  */
-export interface OrganismCustomImage {
-  /** The OrganismProfile.id this image belongs to — primary key. */
+export interface OrganismImage {
+  /** Primary key — one row per image, so an organism can have several. */
+  id: string
+  /** The OrganismProfile.id this image belongs to. */
   organismId: string
   /** OPFS path, e.g. "organism-images/<uuid>-<filename>". */
+  filePath: string
+  mimeType: string
+  fileName: string
+  /** Exactly one image per organism has this true — the large illustration-frame image (§21). */
+  isPrimary: boolean
+  createdAt: number
+  updatedAt: number
+}
+
+/** @deprecated Superseded by `OrganismImage`/`organismImages` (v11). Kept only so the v11 migration can read pre-existing rows out of the old table shape. */
+interface LegacyOrganismCustomImage {
+  organismId: string
   filePath: string
   mimeType: string
   fileName: string
@@ -449,7 +465,7 @@ class CellfieDB extends Dexie {
   conceptMapEdges!: Table<ConceptMapEdge, string>
   conceptStudyNotes!: Table<ConceptStudyNote, string>
   conceptSectionEdits!: Table<ConceptSectionEdit, string>
-  organismCustomImages!: Table<OrganismCustomImage, string>
+  organismImages!: Table<OrganismImage, string>
   savedOrganisms!: Table<SavedOrganismRecord, string>
 
   constructor() {
@@ -640,6 +656,74 @@ class CellfieDB extends Dexie {
       conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
       organismCustomImages: 'organismId, updatedAt',
       savedOrganisms: 'organismId, savedAt'
+    })
+    // v11 — Organism Library / Illustration System continuation §19-§27:
+    // introduces `organismImages` (multiple images per organism, exactly
+    // one `isPrimary`) alongside the old `organismCustomImages` table.
+    // Every prior store repeated unchanged. The upgrade migrates each
+    // existing single custom image into the new table as that
+    // organism's primary image, so no user ever loses an upload they
+    // already made. `organismCustomImages` is kept (unused going
+    // forward) through this version only so the migration below can
+    // still read it; it's dropped in v12 once migration has run.
+    this.version(11)
+      .stores({
+        libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+        collections: 'id, name, createdAt',
+        appSettings: 'key',
+        readerBookmarks: 'id, itemId, page, createdAt',
+        highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+        notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+        concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+        conceptSources:
+          'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+        conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+        conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+        conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+        conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+        conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
+        conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
+        organismCustomImages: 'organismId, updatedAt',
+        savedOrganisms: 'organismId, savedAt',
+        organismImages: 'id, organismId, isPrimary, createdAt, [organismId+isPrimary]'
+      })
+      .upgrade(async (tx) => {
+        const legacyImages = (await tx.table('organismCustomImages').toArray()) as LegacyOrganismCustomImage[]
+        if (legacyImages.length === 0) return
+        const migrated: OrganismImage[] = legacyImages.map((img) => ({
+          id: crypto.randomUUID(),
+          organismId: img.organismId,
+          filePath: img.filePath,
+          mimeType: img.mimeType,
+          fileName: img.fileName,
+          isPrimary: true,
+          createdAt: img.createdAt,
+          updatedAt: img.updatedAt
+        }))
+        await tx.table('organismImages').bulkAdd(migrated)
+      })
+    // v12 — drops the now-unused `organismCustomImages` table. Its data
+    // was already carried forward into `organismImages` by the v11
+    // upgrade above; nothing here touches any other table.
+    this.version(12).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt',
+      highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+      notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+      concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+      conceptSources:
+        'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+      conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+      conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+      conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+      conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+      conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
+      conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
+      savedOrganisms: 'organismId, savedAt',
+      organismImages: 'id, organismId, isPrimary, createdAt, [organismId+isPrimary]',
+      organismCustomImages: null
     })
   }
 }
