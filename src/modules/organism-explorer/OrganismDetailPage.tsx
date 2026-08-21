@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent, type ReactNode } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, ArrowSquareOut, GitBranch, Sparkle, Trash, UploadSimple } from '@phosphor-icons/react'
+import { ArrowLeft, ArrowSquareOut, Bookmark, Check, GitBranch, Globe, Sparkle, Trash, UploadSimple } from '@phosphor-icons/react'
 import { Button, CalloutBox, EmptyState, IllustrationFrame } from '@/shared/components'
 import { EmptyStateLayout } from '@/shared/layouts'
 import {
@@ -11,18 +11,24 @@ import {
   bodyLocationLabels,
   gramReactionLabels,
   getOrganismById,
+  getOrganismByIdIncludingSaved,
   getRelatedOrganisms,
   hyphaeTypeLabels,
+  isOrganismSaved,
   organismCategoryLabels,
   protozoanGroupLabels,
   relatedOrganismRelationshipLabels,
   removeCustomImage,
+  removeSavedOrganism,
+  resolvePublicAssetPath,
+  saveOrganism,
   setCustomImage,
   transmissionRouteLabels,
   viralEnvelopeLabels,
   viralGenomeStrandednessLabels,
   viralGenomeTypeLabels,
-  viralReplicationSiteLabels
+  viralReplicationSiteLabels,
+  type OrganismProfile
 } from '@/core/organisms'
 import { recordOrganismViewed } from '@/core/organisms/recentlyViewed'
 import { useOrganismCustomImage } from './hooks/useOrganismCustomImage'
@@ -85,7 +91,39 @@ function BulletList({ items }: { items?: string[] }) {
 export function OrganismDetailPage() {
   const { organismId } = useParams<{ organismId: string }>()
   const navigate = useNavigate()
-  const organism = organismId ? getOrganismById(organismId) : undefined
+
+  // Knowledge Layer Integration §15 — curated resolves instantly and
+  // synchronously (the common case, no loading flash); a saved or
+  // cached Knowledge Layer profile resolves one tick later via the
+  // unified async resolver. Never triggers a network request itself —
+  // that only ever happens from the Explorer's explicit "Search trusted
+  // scientific sources" action (§42).
+  const [organism, setOrganism] = useState<OrganismProfile | undefined>(() =>
+    organismId ? getOrganismById(organismId) : undefined
+  )
+  const [isResolving, setIsResolving] = useState(() => Boolean(organismId) && !getOrganismById(organismId ?? ''))
+
+  useEffect(() => {
+    if (!organismId) return
+    const curated = getOrganismById(organismId)
+    if (curated) {
+      setOrganism(curated)
+      setIsResolving(false)
+      return
+    }
+    let cancelled = false
+    setIsResolving(true)
+    getOrganismByIdIncludingSaved(organismId).then((resolved) => {
+      if (!cancelled) {
+        setOrganism(resolved)
+        setIsResolving(false)
+      }
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [organismId])
+
   const relatedOrganisms = useMemo(() => (organism ? getRelatedOrganisms(organism) : []), [organism])
 
   // Dashboard "Saved organisms" support (requested dashboard change #4) —
@@ -97,6 +135,35 @@ export function OrganismDetailPage() {
       void recordOrganismViewed(organism.id)
     }
   }, [organism])
+
+  // Knowledge Layer Integration §12/§35 — "Save to My Organisms".
+  const [isSaved, setIsSaved] = useState(false)
+  const [isSaving, setIsSaving] = useState(false)
+  useEffect(() => {
+    if (!organism) return
+    if (organism.sourceType === 'curated-local') return
+    let cancelled = false
+    isOrganismSaved(organism.id).then((saved) => {
+      if (!cancelled) setIsSaved(saved)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [organism])
+
+  async function handleSaveOrganism() {
+    if (!organism) return
+    setIsSaving(true)
+    await saveOrganism(organism)
+    setIsSaving(false)
+    setIsSaved(true)
+  }
+
+  async function handleRemoveSavedOrganism() {
+    if (!organism) return
+    await removeSavedOrganism(organism.id)
+    setIsSaved(false)
+  }
 
   // Master Revision §20-§28 — a user's own local image for this
   // organism, if they've uploaded one. `customImageUrl` is a live blob:
@@ -126,12 +193,20 @@ export function OrganismDetailPage() {
     await removeCustomImage(organismId)
   }
 
+  if (isResolving) {
+    return (
+      <EmptyStateLayout>
+        <EmptyState title="Loading…" description="Checking your saved organisms." />
+      </EmptyStateLayout>
+    )
+  }
+
   if (!organism) {
     return (
       <EmptyStateLayout>
         <EmptyState
           title="Organism not found"
-          description="This organism may have been removed, or the link is out of date."
+          description="This organism may have been removed, or the link is out of date. It also isn't in your saved organisms — searching for it again from the Organism Explorer will look it up."
           action={
             <Button variant="secondary" onClick={() => navigate('/organisms')}>
               Back to Organism Explorer
@@ -191,14 +266,27 @@ export function OrganismDetailPage() {
         Organism Explorer
       </button>
 
-      <header className="mb-6 flex flex-col gap-5 sm:flex-row sm:items-start">
-        <div className="flex w-full shrink-0 flex-col gap-2 sm:w-56">
+      <header className="mb-6 flex flex-col gap-5">
+        <div className="flex w-full flex-col gap-2 sm:max-w-xl">
           <IllustrationFrame
-            src={customImageUrl ?? organism.image}
+            src={customImageUrl ?? resolvePublicAssetPath(organism.image) ?? organism.externalImage?.imageUrl}
             alt={`Illustration of ${organism.scientificName}`}
             caption={organism.commonName ?? organism.scientificName}
             className="w-full"
           />
+          {!customImageUrl && !organism.image && organism.externalImage && (
+            <p className="font-body text-micro text-ink-tertiary">
+              Image: {organism.externalImage.sourceName}
+              {organism.externalImage.sourceUrl && (
+                <>
+                  {' \u2014 '}
+                  <a href={organism.externalImage.sourceUrl} target="_blank" rel="noreferrer" className="text-olive hover:underline">
+                    source
+                  </a>
+                </>
+              )}
+            </p>
+          )}
           <input
             ref={fileInputRef}
             type="file"
@@ -241,6 +329,28 @@ export function OrganismDetailPage() {
               </span>
             ))}
           </div>
+
+          {organism.sourceType && organism.sourceType !== 'curated-local' && (
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              <span className="flex items-center gap-1 rounded-full border border-terracotta/40 bg-surface-raised px-2.5 py-1 font-ui text-micro font-medium text-ink-secondary">
+                <Globe size={12} aria-hidden />
+                {'Knowledge Layer \u2014 retrieved from scientific sources'}
+              </span>
+              {isSaved ? (
+                <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
+                  <Check size={13} aria-hidden />
+                  Saved locally
+                  <button type="button" onClick={handleRemoveSavedOrganism} className="ml-1 text-ink-tertiary underline hover:text-ink-secondary">
+                    Remove
+                  </button>
+                </span>
+              ) : (
+                <Button variant="secondary" size="small" icon={<Bookmark size={14} />} disabled={isSaving} onClick={handleSaveOrganism}>
+                  {isSaving ? 'Saving\u2026' : 'Save to My Organisms'}
+                </Button>
+              )}
+            </div>
+          )}
         </div>
       </header>
 
@@ -341,6 +451,46 @@ export function OrganismDetailPage() {
                 value={virusDetails?.transmissionRoute ? transmissionRouteLabels[virusDetails.transmissionRoute] : undefined}
               />
             </dl>
+          </SectionCard>
+        )}
+
+        {organism.knowledgeLayer && (organism.knowledgeLayer.generalReference || organism.knowledgeLayer.meshScopeNote) && (
+          <SectionCard title="General information">
+            <div className="flex flex-col gap-4">
+              {organism.knowledgeLayer.generalReference && (
+                <div>
+                  <p className="font-body text-body text-ink-primary">{organism.knowledgeLayer.generalReference.text}</p>
+                  <p className="mt-1.5 font-ui text-micro text-ink-tertiary">
+                    {organism.knowledgeLayer.generalReference.isAbstract ? 'Abstract from ' : 'From '}
+                    <a
+                      href={organism.knowledgeLayer.generalReference.sourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-olive hover:underline"
+                    >
+                      {organism.knowledgeLayer.generalReference.sourceName}
+                    </a>
+                  </p>
+                </div>
+              )}
+              {organism.knowledgeLayer.meshScopeNote && (
+                <div>
+                  <h3 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">MeSH scope note</h3>
+                  <p className="font-body text-body text-ink-primary">{organism.knowledgeLayer.meshScopeNote.text}</p>
+                  <p className="mt-1.5 font-ui text-micro text-ink-tertiary">
+                    From{' '}
+                    <a
+                      href={organism.knowledgeLayer.meshScopeNote.sourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-olive hover:underline"
+                    >
+                      {organism.knowledgeLayer.meshScopeNote.sourceName}
+                    </a>
+                  </p>
+                </div>
+              )}
+            </div>
           </SectionCard>
         )}
 

@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Bug } from '@phosphor-icons/react'
 import { DashboardLayout } from '@/shared/layouts'
 import { Button, EmptyState, SearchField } from '@/shared/components'
@@ -18,15 +19,20 @@ import {
   EMPTY_VIRUS_FILTERS,
   filterByCategory,
   listOrganisms,
+  listSavedOrganisms,
+  looksLikeOrganismQuery,
   searchOrganisms,
   type BacteriaFilterState,
   type FungiFilterState,
   type OrganismCategory,
+  type OrganismProfile,
   type ProtozoaFilterState,
   type VirusFilterState
 } from '@/core/organisms'
+import { useLiveQuery } from '@/core/db/useLiveQuery'
 import { CategoryPills } from './components/CategoryPills'
 import { BacteriaFilters, FungiFilters, ProtozoaFilters, VirusFilters } from './components/CategoryFilters'
+import { KnowledgeLayerSearchPanel } from './components/KnowledgeLayerSearchPanel'
 import { OrganismCard } from './components/OrganismCard'
 
 /**
@@ -42,7 +48,19 @@ import { OrganismCard } from './components/OrganismCard'
  * fully offline — no network request is ever made here (§43/§44).
  */
 export function OrganismExplorerPage() {
-  const allOrganisms = useMemo(() => listOrganisms(), [])
+  const navigate = useNavigate()
+  const curatedOrganisms = useMemo(() => listOrganisms(), [])
+  // Knowledge Layer Integration §14 — organisms the user has explicitly
+  // saved locally appear in the same grid/search/filters as the
+  // curated library, never in a second separate UI (§3). Curated always
+  // wins a same-id collision (§15) — a saved copy is simply dropped
+  // from this merge once the official curated version exists.
+  const savedOrganisms = useLiveQuery<OrganismProfile[]>(() => listSavedOrganisms(), [], [])
+  const allOrganisms = useMemo(() => {
+    const curatedIds = new Set(curatedOrganisms.map((o) => o.id))
+    const extra = savedOrganisms.filter((o) => !curatedIds.has(o.id))
+    return [...curatedOrganisms, ...extra]
+  }, [curatedOrganisms, savedOrganisms])
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState<OrganismCategory | 'all'>('all')
   const [bacteriaFilters, setBacteriaFilters] = useState<BacteriaFilterState>(EMPTY_BACTERIA_FILTERS)
@@ -132,17 +150,25 @@ export function OrganismExplorerPage() {
 
           {filtered.length === 0 ? (
             <div className="rounded-md border border-border bg-surface p-6">
-              <EmptyState
-                title="No organisms found"
-                description="Try another search or explore a different category."
-                action={
-                  hasActiveFilters ? (
-                    <Button variant="secondary" size="small" onClick={resetAll}>
-                      Reset all
-                    </Button>
-                  ) : undefined
-                }
-              />
+              {query.trim().length > 0 && looksLikeOrganismQuery(query) ? (
+                // Knowledge Layer Integration §2/§19 — a query that
+                // looks like it could be an organism name, but matched
+                // nothing locally, offers an explicit (never automatic,
+                // §42) trigger to search trusted scientific sources.
+                <KnowledgeLayerSearchPanel query={query} onFound={(id) => navigate(`/organisms/${id}`)} />
+              ) : (
+                <EmptyState
+                  title="No organisms found"
+                  description="Try another search or explore a different category."
+                  action={
+                    hasActiveFilters ? (
+                      <Button variant="secondary" size="small" onClick={resetAll}>
+                        Reset all
+                      </Button>
+                    ) : undefined
+                  }
+                />
+              )}
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
