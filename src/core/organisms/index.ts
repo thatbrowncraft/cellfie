@@ -1,3 +1,7 @@
 export * from './types'
 export * from './registry'
 export * from './customImages'
+export * from './canonicalId'
+export * from './assetPath'
+export * from './knowledgeLayer'
+export * from './savedOrganisms'

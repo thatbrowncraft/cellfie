@@ -39,6 +39,8 @@ import type {
   ViralGenomeType,
   ViralReplicationSite
 } from './types'
+import { getCachedKnowledgeLayerProfile } from './knowledgeLayer'
+import { getSavedOrganism } from './savedOrganisms'
 
 const organismModules = import.meta.glob<{ default: unknown }>('/src/content/organisms/*.json', { eager: true })
 
@@ -69,7 +71,11 @@ const ALL_ORGANISMS: OrganismProfile[] = Object.entries(organismModules)
       console.warn(`[organisms] Skipping malformed organism content file: ${path}`)
       return undefined
     }
-    return data
+    // Knowledge Layer Integration §10 — every curated file is explicitly
+    // stamped here rather than left with `sourceType` absent, so nothing
+    // downstream has to treat "absent" and "curated-local" as two
+    // different cases.
+    return { ...data, sourceType: 'curated-local' as const }
   })
   .filter((organism): organism is OrganismProfile => Boolean(organism))
   // Stable, predictable order — alphabetical by scientific name, so the
@@ -83,9 +89,30 @@ export function listOrganisms(): OrganismProfile[] {
   return ALL_ORGANISMS
 }
 
-/** A single organism by id, or undefined if it doesn't exist (e.g. stale link, malformed content file skipped at build time). */
+/** A single organism by id, or undefined if it doesn't exist (e.g. stale link, malformed content file skipped at build time). Curated-library-only — synchronous by design, since the curated library is always available in memory. For a lookup that also checks the user's saved organisms and any cached Knowledge Layer profile, use `getOrganismByIdIncludingSaved`. */
 export function getOrganismById(id: string): OrganismProfile | undefined {
   return ORGANISMS_BY_ID.get(id)
+}
+
+/**
+ * Knowledge Layer Integration §15 — the unified lookup OrganismDetailPage
+ * uses so a curated, user-saved, or cached Knowledge Layer profile all
+ * render through the exact same page without it needing to know which
+ * one it got. Curated always wins on a canonical-id collision: if an
+ * organism a user previously saved from the Knowledge Layer is later
+ * added to the official library under the same id, the curated version
+ * silently takes over from here on — no duplicate, no stale content.
+ * Never triggers a network request itself (that only ever happens from
+ * an explicit "Search trusted scientific sources" action — see
+ * core/organisms/knowledgeLayer.ts); a cache miss here just means the
+ * caller shows its usual "not found locally" state.
+ */
+export async function getOrganismByIdIncludingSaved(id: string): Promise<OrganismProfile | undefined> {
+  const curated = getOrganismById(id)
+  if (curated) return curated
+  const saved = await getSavedOrganism(id)
+  if (saved) return saved
+  return getCachedKnowledgeLayerProfile(id)
 }
 
 /** Resolves an organism's `relatedOrganisms` links to actual profiles, silently dropping any id that doesn't resolve (§36 — each link now carries *why* the two are related). */

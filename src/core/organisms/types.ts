@@ -405,4 +405,62 @@ export interface OrganismProfile {
   /** Other organisms this one is meaningfully related to, each tagged with *why* (§36). */
   relatedOrganisms?: RelatedOrganismLink[]
   sources: OrganismSource[]
+  /**
+   * Knowledge Layer Integration — provenance. Absent (or 'curated-local')
+   * for every hand-authored file under src/content/organisms; the
+   * registry loader stamps that explicitly so nothing downstream has to
+   * treat "absent" and "curated" as different cases. 'knowledge-layer'
+   * is a session-only profile built from live retrieval that hasn't
+   * been saved yet; 'user-saved' is the same kind of profile after the
+   * user has explicitly persisted it to their local device (§10/§11).
+   */
+  sourceType?: OrganismSourceType
+  /**
+   * Present only on 'knowledge-layer'/'user-saved' profiles that
+   * actually found something online. Every field here is a direct,
+   * unedited excerpt from a real source at a real URL — never
+   * Cellfie-authored prose, and never a stand-in for the structured
+   * classification/morphology/lab-ID fields above, which stay empty
+   * when no reliable source provided that specific structured fact
+   * (§7/§38 — omit rather than guess).
+   */
+  knowledgeLayer?: KnowledgeLayerInfo
+  /**
+   * A trusted external image (currently: NLM's Open-i biomedical figure
+   * search, via core/concepts/onlineKnowledge.ts) for an organism that
+   * has neither a user upload nor a built-in Cellfie SVG yet (§25/§28).
+   * Always carries its own attribution — never hotlinked without one.
+   */
+  externalImage?: ExternalImageReference
+}
+
+// ---------------------------------------------------------------------------
+// Knowledge Layer Integration (§1-§47 of the Knowledge Layer brief)
+// ---------------------------------------------------------------------------
+
+export type OrganismSourceType = 'curated-local' | 'knowledge-layer' | 'user-saved'
+
+/** A single direct excerpt from one real, named, linked source — the shape every Knowledge Layer field uses, matching core/concepts/onlineKnowledge.ts's own OnlineSummary/OnlineKnowledgeSection convention rather than inventing a parallel one. */
+export interface SourcedExcerpt {
+  text: string
+  sourceName: string
+  sourceUrl: string
+  /** True when `text` is a paper abstract rather than a general/definitional excerpt — the UI labels it accordingly rather than implying it's a textbook definition. */
+  isAbstract?: boolean
+}
+
+export interface KnowledgeLayerInfo {
+  /** When this profile was retrieved/last refreshed — epoch ms. */
+  retrievedAt: number
+  /** A general description excerpt — from PubMed (biomedical-looking names) or a Wikipedia-filtered general-reference tier, whichever `fetchOnlineSummary` found (§8/§38: never invented, never Wikipedia). */
+  generalReference?: SourcedExcerpt
+  /** NCBI MeSH's own scope note for this term, when MeSH has a matching descriptor — the closest thing to a authoritative one-paragraph classification/definition this app can retrieve without AI-based extraction. */
+  meshScopeNote?: SourcedExcerpt
+}
+
+export interface ExternalImageReference {
+  imageUrl: string
+  caption?: string
+  sourceName: string
+  sourceUrl: string
 }
