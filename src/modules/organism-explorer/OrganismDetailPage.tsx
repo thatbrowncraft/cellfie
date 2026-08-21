@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent, type ReactNode } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, ArrowSquareOut, Bookmark, Check, GitBranch, Globe, Sparkle, Trash, UploadSimple } from '@phosphor-icons/react'
-import { Button, CalloutBox, EmptyState, IllustrationFrame } from '@/shared/components'
+import { ArrowLeft, ArrowSquareOut, Bookmark, Check, GitBranch, Globe, Sparkle, Star, Trash, UploadSimple } from '@phosphor-icons/react'
+import { Button, CalloutBox, Dialog, EmptyState, IllustrationFrame } from '@/shared/components'
 import { EmptyStateLayout } from '@/shared/layouts'
 import {
   ACCEPTED_CUSTOM_IMAGE_TYPES,
+  addOrganismImage,
   customImageRejectionMessages,
   fungalClinicalGroupLabels,
   fungalMorphologicalTypeLabels,
@@ -18,11 +19,11 @@ import {
   organismCategoryLabels,
   protozoanGroupLabels,
   relatedOrganismRelationshipLabels,
-  removeCustomImage,
+  removeOrganismImage,
   removeSavedOrganism,
   resolvePublicAssetPath,
   saveOrganism,
-  setCustomImage,
+  setPrimaryOrganismImage,
   transmissionRouteLabels,
   viralEnvelopeLabels,
   viralGenomeStrandednessLabels,
@@ -31,7 +32,7 @@ import {
   type OrganismProfile
 } from '@/core/organisms'
 import { recordOrganismViewed } from '@/core/organisms/recentlyViewed'
-import { useOrganismCustomImage } from './hooks/useOrganismCustomImage'
+import { useOrganismImages } from './hooks/useOrganismImages'
 
 /** A single label/value row — used across Classification, Habitat, and Lab Identification. Renders nothing when the value is absent, per Sprint 4 §6 ("do not show empty labels"). */
 function InfoRow({ label, value }: { label: string; value?: string }) {
@@ -165,14 +166,16 @@ export function OrganismDetailPage() {
     setIsSaved(false)
   }
 
-  // Master Revision §20-§28 — a user's own local image for this
-  // organism, if they've uploaded one. `customImageUrl` is a live blob:
-  // URL that updates automatically the moment an upload/removal below
-  // completes, since useOrganismCustomImage is backed by useLiveQuery.
-  const { customImage, customImageUrl } = useOrganismCustomImage(organismId ?? '')
+  // Organism Library / Illustration System continuation §19-§27 — every
+  // image the user has uploaded for this organism (primary + thumbnails),
+  // each with a live blob: URL. `useOrganismImages` is backed by
+  // useLiveQuery, so an upload/removal/primary-change below updates this
+  // page and the Explorer grid immediately with no manual refetch.
+  const { images, primaryImage, primaryImageUrl, thumbnails } = useOrganismImages(organismId ?? '')
   const fileInputRef = useRef<HTMLInputElement>(null)
   const [imageError, setImageError] = useState<string | undefined>(undefined)
   const [isUploading, setIsUploading] = useState(false)
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false)
 
   async function handleFileSelected(e: ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
@@ -180,17 +183,33 @@ export function OrganismDetailPage() {
     if (!file || !organismId) return
     setImageError(undefined)
     setIsUploading(true)
-    const result = await setCustomImage(organismId, file)
-    setIsUploading(false)
-    if (!result.ok && result.reason) {
-      setImageError(customImageRejectionMessages[result.reason])
+    // §22 bug fix: the previous version had no catch here, so if
+    // addOrganismImage ever rejected instead of resolving, `isUploading`
+    // stayed `true` forever — the "Uploading…" that never went away.
+    // addOrganismImage itself now never rejects (every failure path
+    // returns `{ ok: false, reason }`), but this still guarantees the
+    // spinner clears even if something truly unexpected throws.
+    try {
+      const result = await addOrganismImage(organismId, file)
+      if (!result.ok && result.reason) {
+        setImageError(customImageRejectionMessages[result.reason])
+      }
+    } catch {
+      setImageError(customImageRejectionMessages['storage-error'])
+    } finally {
+      setIsUploading(false)
     }
   }
 
-  async function handleRemoveImage() {
+  async function handleRemoveImage(imageId: string) {
     if (!organismId) return
     setImageError(undefined)
-    await removeCustomImage(organismId)
+    await removeOrganismImage(organismId, imageId)
+  }
+
+  async function handleSetPrimaryImage(imageId: string) {
+    if (!organismId) return
+    await setPrimaryOrganismImage(organismId, imageId)
   }
 
   if (isResolving) {
@@ -269,12 +288,12 @@ export function OrganismDetailPage() {
       <header className="mb-6 flex flex-col gap-5">
         <div className="flex w-full flex-col gap-2 sm:max-w-xl">
           <IllustrationFrame
-            src={customImageUrl ?? resolvePublicAssetPath(organism.image) ?? organism.externalImage?.imageUrl}
+            src={primaryImageUrl ?? resolvePublicAssetPath(organism.image) ?? organism.externalImage?.imageUrl}
             alt={`Illustration of ${organism.scientificName}`}
             caption={organism.commonName ?? organism.scientificName}
             className="w-full"
           />
-          {!customImageUrl && !organism.image && organism.externalImage && (
+          {!primaryImageUrl && !organism.image && organism.externalImage && (
             <p className="font-body text-micro text-ink-tertiary">
               Image: {organism.externalImage.sourceName}
               {organism.externalImage.sourceUrl && (
@@ -287,6 +306,36 @@ export function OrganismDetailPage() {
               )}
             </p>
           )}
+
+          {/* §21 — additional (non-primary) images as small thumbnails, only
+              shown once a second image exists; tapping one makes it primary.
+              "Show more" opens the full gallery, and only appears once there
+              are 2+ images total (never for a single image). */}
+          {thumbnails.length > 0 && (
+            <div className="flex flex-wrap items-center gap-2">
+              {thumbnails.slice(0, 4).map(({ image, url }) => (
+                <button
+                  key={image.id}
+                  type="button"
+                  onClick={() => handleSetPrimaryImage(image.id)}
+                  title="Set as primary image"
+                  className="h-14 w-14 shrink-0 overflow-hidden rounded-md border border-border bg-surface-raised"
+                >
+                  {url ? (
+                    <img src={url} alt="" className="h-full w-full object-cover" />
+                  ) : (
+                    <span className="block h-full w-full animate-pulse bg-surface-raised" />
+                  )}
+                </button>
+              ))}
+              {images.length > 1 && (
+                <Button variant="tertiary" size="small" onClick={() => setIsGalleryOpen(true)}>
+                  Show more
+                </Button>
+              )}
+            </div>
+          )}
+
           <input
             ref={fileInputRef}
             type="file"
@@ -304,16 +353,54 @@ export function OrganismDetailPage() {
               disabled={isUploading}
               onClick={() => fileInputRef.current?.click()}
             >
-              {isUploading ? 'Uploading\u2026' : customImage ? 'Change image' : 'Add your image'}
+              {isUploading ? 'Saving\u2026' : images.length > 0 ? 'Add another illustration' : 'Add your illustration'}
             </Button>
-            {customImage && (
-              <Button variant="tertiary" size="small" icon={<Trash size={14} />} onClick={handleRemoveImage}>
-                Remove custom image
+            {primaryImage && (
+              <Button variant="tertiary" size="small" icon={<Trash size={14} />} onClick={() => handleRemoveImage(primaryImage.id)}>
+                Remove image
               </Button>
             )}
           </div>
           {imageError && <p className="font-body text-caption text-error">{imageError}</p>}
         </div>
+
+        {isGalleryOpen && (
+          <Dialog open={isGalleryOpen} onClose={() => setIsGalleryOpen(false)} title="Illustrations" size="lg">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {images.map(({ image, url }) => (
+                <div key={image.id} className="flex flex-col gap-2 rounded-md border border-border p-2">
+                  <div className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-sm bg-surface-raised">
+                    {url ? (
+                      <img src={url} alt="" className="h-full w-full object-contain" />
+                    ) : (
+                      <span className="block h-full w-full animate-pulse bg-surface-raised" />
+                    )}
+                  </div>
+                  <div className="flex items-center justify-between gap-2">
+                    {image.isPrimary ? (
+                      <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
+                        <Star size={13} weight="fill" aria-hidden />
+                        Primary
+                      </span>
+                    ) : (
+                      <Button variant="tertiary" size="small" onClick={() => handleSetPrimaryImage(image.id)}>
+                        Make primary
+                      </Button>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveImage(image.id)}
+                      aria-label="Remove this image"
+                      className="text-ink-tertiary hover:text-error"
+                    >
+                      <Trash size={14} />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Dialog>
+        )}
         <div className="flex flex-col gap-2">
           <div>
             <h1 className="font-display text-display font-semibold italic text-ink-primary">{organism.scientificName}</h1>
