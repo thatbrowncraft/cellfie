@@ -392,27 +392,54 @@ export interface ConceptSectionEdit {
  * original one-row-per-organism `organismCustomImages` table (see the
  * v11 migration below): an organism can now have *multiple* images,
  * exactly one of which (`isPrimary`) is the large illustration-frame
- * image; the rest render as small thumbnails (§21). The binary bytes
- * themselves still live in OPFS via core/file-storage, same pattern as
- * LibraryItem's PDFs and ConceptAsset's imports — this row only ever
- * holds the logical path. Deliberately a separate table from anything
- * in `src/content/` or the organism JSON files: this is local user
- * data, never written back into shipped application content (§23), so
- * a custom image can never end up committed to the repository.
+ * image; the rest render as small thumbnails (§21). Deliberately a
+ * separate table from anything in `src/content/` or the organism JSON
+ * files: this is local user data, never written back into shipped
+ * application content (§23), so a custom image can never end up
+ * committed to the repository.
+ *
+ * Image import bug fix — where an `OrganismImage`'s bytes actually live.
+ * OPFS stays the preferred path (large binary files, same architecture
+ * as LibraryItem/ConceptAsset); `indexeddb` is the fallback used only
+ * when OPFS is unavailable on the device/browser or an OPFS write
+ * fails, so an upload never has to fail outright just because OPFS
+ * isn't there. Every pre-existing row is stamped `'opfs'` by the v13
+ * migration below, since OPFS was the only storage path before this.
  */
+export type OrganismImageStorageType = 'opfs' | 'indexeddb'
+
 export interface OrganismImage {
   /** Primary key — one row per image, so an organism can have several. */
   id: string
   /** The OrganismProfile.id this image belongs to. */
   organismId: string
-  /** OPFS path, e.g. "organism-images/<uuid>-<filename>". */
-  filePath: string
+  /** Which store actually holds this image's bytes — see `OrganismImageStorageType`. */
+  storageType: OrganismImageStorageType
+  /** OPFS path, e.g. "organism-images/<uuid>-<filename>" — present when `storageType === 'opfs'`. */
+  filePath?: string
+  /** Primary key into `organismImageBlobs` — present when `storageType === 'indexeddb'`. */
+  blobId?: string
   mimeType: string
   fileName: string
   /** Exactly one image per organism has this true — the large illustration-frame image (§21). */
   isPrimary: boolean
   createdAt: number
   updatedAt: number
+}
+
+/**
+ * Image import bug fix — the IndexedDB fallback for an `OrganismImage`'s
+ * binary bytes, used only when OPFS is unavailable/fails (see
+ * `core/organisms/customImages.ts`). Deliberately its own table (not
+ * folded into `organismImages`) so a live-query on `organismImages`
+ * never has to deserialize a Blob it doesn't need, matching how OPFS
+ * keeps binary bytes out of the metadata row for the primary path.
+ */
+export interface OrganismImageBlob {
+  /** Primary key — matches the owning `OrganismImage.blobId`. */
+  id: string
+  blob: Blob
+  createdAt: number
 }
 
 /** @deprecated Superseded by `OrganismImage`/`organismImages` (v11). Kept only so the v11 migration can read pre-existing rows out of the old table shape. */
@@ -466,6 +493,7 @@ class CellfieDB extends Dexie {
   conceptStudyNotes!: Table<ConceptStudyNote, string>
   conceptSectionEdits!: Table<ConceptSectionEdit, string>
   organismImages!: Table<OrganismImage, string>
+  organismImageBlobs!: Table<OrganismImageBlob, string>
   savedOrganisms!: Table<SavedOrganismRecord, string>
 
   constructor() {
@@ -725,6 +753,48 @@ class CellfieDB extends Dexie {
       organismImages: 'id, organismId, isPrimary, createdAt, [organismId+isPrimary]',
       organismCustomImages: null
     })
+    // v13 — Image import bug fix: a valid image upload was failing
+    // outright whenever OPFS was unavailable or its write failed (the
+    // "We couldn't save that image on this device right now" error),
+    // because OPFS was the only storage path `addOrganismImage` had.
+    // Introduces `organismImageBlobs` so an upload can fall back to an
+    // IndexedDB-stored Blob in that case instead of failing (OPFS stays
+    // the preferred path — see core/organisms/customImages.ts). Every
+    // prior store repeated unchanged; the `.upgrade()` step only stamps
+    // pre-existing `organismImages` rows with `storageType: 'opfs'`,
+    // which is the accurate, non-invented value for every row that
+    // existed before this migration (OPFS was the only path that could
+    // have written them) — no existing row's underlying file moves,
+    // is re-read, or is otherwise touched.
+    this.version(13)
+      .stores({
+        libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+        collections: 'id, name, createdAt',
+        appSettings: 'key',
+        readerBookmarks: 'id, itemId, page, createdAt',
+        highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+        notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+        concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+        conceptSources:
+          'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+        conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+        conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+        conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+        conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+        conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
+        conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
+        savedOrganisms: 'organismId, savedAt',
+        organismImages: 'id, organismId, isPrimary, createdAt, [organismId+isPrimary]',
+        organismImageBlobs: 'id, createdAt'
+      })
+      .upgrade(async (tx) => {
+        const existing = (await tx.table('organismImages').toArray()) as OrganismImage[]
+        await Promise.all(
+          existing
+            .filter((img) => !img.storageType)
+            .map((img) => tx.table('organismImages').update(img.id, { storageType: 'opfs' }))
+        )
+      })
   }
 }
 
