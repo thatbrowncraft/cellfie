@@ -7,11 +7,13 @@ interface SearchFieldProps {
   placeholder?: string
   onChange?: (value: string) => void
   className?: string
+  /** Restores the field's starting text — used by callers that persist the search term in the URL (e.g. Organism Explorer, so a page refresh doesn't silently clear it). Every other existing caller omits this and keeps its old behavior (starts empty) unchanged. */
+  defaultValue?: string
 }
 
 /** Inline search field — used within pages (e.g. Library toolbar). */
-export function SearchField({ placeholder = 'Search…', onChange, className }: SearchFieldProps) {
-  const [value, setValue] = useState('')
+export function SearchField({ placeholder = 'Search…', onChange, className, defaultValue = '' }: SearchFieldProps) {
+  const [value, setValue] = useState(defaultValue)
 
   return (
     <div className={cn('relative flex items-center', className)}>
