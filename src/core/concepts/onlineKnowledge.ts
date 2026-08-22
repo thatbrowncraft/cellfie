@@ -109,7 +109,7 @@ import { db } from '../db'
 const REQUEST_TIMEOUT_MS = 8000
 const CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7 // 7 days
 const CACHE_KEY_PREFIX = 'onlineKnowledgeCache:v4:'
-const NCBI_EUTILS_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
+export const NCBI_EUTILS_BASE = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
 const EUROPEPMC_BASE = 'https://www.ebi.ac.uk/europepmc/webservices/rest'
 
 /**
@@ -173,7 +173,14 @@ function isFresh(entry: CacheEntry<unknown>): boolean {
   return Date.now() - entry.fetchedAt < CACHE_TTL_MS
 }
 
-async function fetchJson(url: string): Promise<unknown> {
+/**
+ * Exported (Knowledge Layer §Phase 3) so a sibling module — currently
+ * `core/organisms/taxonomyResolution.ts` — can reuse the exact same
+ * timeout/CORS-failure/"never throw" wrapper instead of standing up a
+ * second copy of it (§45: "do not duplicate retrieval logic"). Behavior
+ * is unchanged for every existing caller in this file.
+ */
+export async function fetchJson(url: string): Promise<unknown> {
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS)
   try {

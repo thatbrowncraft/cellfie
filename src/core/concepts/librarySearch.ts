@@ -34,11 +34,21 @@ export interface LibraryTermMatch {
  */
 const MAX_PAGES_SCANNED_PER_SEARCH = 4000
 
-export async function searchLibraryForTerm(term: string): Promise<LibraryTermMatch[]> {
+/**
+ * §Phase 6 addition (Knowledge Layer + Source Library brief) — an
+ * optional allow-list of `LibraryItem.id`s to restrict the scan to.
+ * Added as an optional third state (not a new function) specifically
+ * so "Choose a specific source" can reuse this exact same scan loop
+ * for a single book instead of a second, near-duplicate implementation
+ * (§45 — "do not duplicate retrieval logic"). Omitting it preserves
+ * the original "search every indexed book" behavior byte-for-byte.
+ */
+export async function searchLibraryForTerm(term: string, itemIds?: string[]): Promise<LibraryTermMatch[]> {
   const q = term.trim().toLowerCase()
   if (q.length < 2) return []
 
-  const items = await db.libraryItems.toArray()
+  const allItems = await db.libraryItems.toArray()
+  const items = itemIds ? allItems.filter((item) => itemIds.includes(item.id)) : allItems
   const results: LibraryTermMatch[] = []
   let pagesScanned = 0
 
