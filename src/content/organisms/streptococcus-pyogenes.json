@@ -3,7 +3,6 @@
   "scientificName": "Streptococcus pyogenes",
   "commonName": "Group A Strep",
   "category": "bacteria",
-  "image": "organisms/streptococcus-pyogenes.svg",
   "quickTags": [
     "Beta-hemolytic",
     "Bacitracin sensitive",

@@ -3,7 +3,6 @@
   "scientificName": "Influenza A virus",
   "commonName": "Flu virus",
   "category": "virus",
-  "image": "organisms/influenza-a-virus.svg",
   "quickTags": [
     "Enveloped ssRNA",
     "Segmented genome",

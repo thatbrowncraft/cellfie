@@ -2,7 +2,6 @@
   "id": "helicobacter-pylori",
   "scientificName": "Helicobacter pylori",
   "category": "bacteria",
-  "image": "organisms/helicobacter-pylori.svg",
   "quickTags": [
     "Urease positive",
     "Microaerophile",
