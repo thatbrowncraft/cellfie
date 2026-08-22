@@ -33,6 +33,7 @@ import {
 } from '@/core/organisms'
 import { recordOrganismViewed } from '@/core/organisms/recentlyViewed'
 import { useOrganismImages } from './hooks/useOrganismImages'
+import { OrganismEditPanel } from './components/OrganismEditPanel'
 
 /** A single label/value row — used across Classification, Habitat, and Lab Identification. Renders nothing when the value is absent, per Sprint 4 §6 ("do not show empty labels"). */
 function InfoRow({ label, value }: { label: string; value?: string }) {
@@ -472,6 +473,11 @@ export function OrganismDetailPage() {
             </div>
           )}
           {refreshError && <p className="font-body text-micro text-ink-tertiary">{refreshError}</p>}
+          {organism.sourceType && organism.sourceType !== 'curated-local' && (
+            <div className="w-full pt-1">
+              <OrganismEditPanel organism={organism} onSaved={(updated) => { setOrganism(updated); setIsSaved(true) }} />
+            </div>
+          )}
         </div>
       </header>
 

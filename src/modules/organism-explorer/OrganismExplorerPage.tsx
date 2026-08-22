@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Bug } from '@phosphor-icons/react'
 import { DashboardLayout } from '@/shared/layouts'
 import { Button, EmptyState, SearchField } from '@/shared/components'
@@ -49,6 +49,21 @@ import { OrganismCard } from './components/OrganismCard'
  */
 export function OrganismExplorerPage() {
   const navigate = useNavigate()
+  // §"refresh loses my search" fix — query text and the active category
+  // tab now live in the URL (?q=...&category=...) instead of only in
+  // component state, so reloading this exact page (or sharing/
+  // bookmarking the URL) restores the same view instead of silently
+  // resetting to the default all-organisms grid. Per-category detail
+  // filters (Gram reaction, shape, etc.) intentionally stay
+  // component-local for now — see the report for why.
+  const [searchParams, setSearchParams] = useSearchParams()
+  const VALID_CATEGORIES: (OrganismCategory | 'all')[] = ['all', 'bacteria', 'fungi', 'protozoa', 'virus', 'algae', 'other']
+  const categoryParam = searchParams.get('category')
+  const initialCategory: OrganismCategory | 'all' = VALID_CATEGORIES.includes(categoryParam as OrganismCategory | 'all')
+    ? (categoryParam as OrganismCategory | 'all')
+    : 'all'
+  const initialQuery = searchParams.get('q') ?? ''
+
   const curatedOrganisms = useMemo(() => listOrganisms(), [])
   // Knowledge Layer Integration §14 — organisms the user has explicitly
   // saved locally appear in the same grid/search/filters as the
@@ -61,8 +76,8 @@ export function OrganismExplorerPage() {
     const extra = savedOrganisms.filter((o) => !curatedIds.has(o.id))
     return [...curatedOrganisms, ...extra]
   }, [curatedOrganisms, savedOrganisms])
-  const [query, setQuery] = useState('')
-  const [category, setCategory] = useState<OrganismCategory | 'all'>('all')
+  const [query, setQuery] = useState(initialQuery)
+  const [category, setCategory] = useState<OrganismCategory | 'all'>(initialCategory)
   const [bacteriaFilters, setBacteriaFilters] = useState<BacteriaFilterState>(EMPTY_BACTERIA_FILTERS)
   const [fungiFilters, setFungiFilters] = useState<FungiFilterState>(EMPTY_FUNGI_FILTERS)
   const [protozoaFilters, setProtozoaFilters] = useState<ProtozoaFilterState>(EMPTY_PROTOZOA_FILTERS)
@@ -94,9 +109,35 @@ export function OrganismExplorerPage() {
     countActiveProtozoaFilters(protozoaFilters) > 0 ||
     countActiveVirusFilters(virusFilters) > 0
 
+  function updateQuery(next: string) {
+    setQuery(next)
+    setSearchParams(
+      (prev) => {
+        const params = new URLSearchParams(prev)
+        if (next.trim()) params.set('q', next)
+        else params.delete('q')
+        return params
+      },
+      { replace: true }
+    )
+  }
+
+  function updateCategory(next: OrganismCategory | 'all') {
+    setCategory(next)
+    setSearchParams(
+      (prev) => {
+        const params = new URLSearchParams(prev)
+        if (next !== 'all') params.set('category', next)
+        else params.delete('category')
+        return params
+      },
+      { replace: true }
+    )
+  }
+
   function resetAll() {
-    setCategory('all')
-    setQuery('')
+    updateCategory('all')
+    updateQuery('')
     setBacteriaFilters(EMPTY_BACTERIA_FILTERS)
     setFungiFilters(EMPTY_FUNGI_FILTERS)
     setProtozoaFilters(EMPTY_PROTOZOA_FILTERS)
@@ -127,7 +168,7 @@ export function OrganismExplorerPage() {
             </p>
           </div>
 
-          <CategoryPills counts={categoryCounts} totalCount={allOrganisms.length} active={category} onChange={setCategory} />
+          <CategoryPills counts={categoryCounts} totalCount={allOrganisms.length} active={category} onChange={updateCategory} />
 
           {category === 'bacteria' && <BacteriaFilters filters={bacteriaFilters} onChange={setBacteriaFilters} />}
           {category === 'fungi' && <FungiFilters filters={fungiFilters} onChange={setFungiFilters} />}
@@ -138,7 +179,8 @@ export function OrganismExplorerPage() {
             <SearchField
               key={searchResetKey}
               placeholder="Search by name, genus, characteristic…"
-              onChange={setQuery}
+              defaultValue={initialQuery}
+              onChange={updateQuery}
               className="w-full sm:max-w-sm"
             />
             {hasActiveFilters && (
