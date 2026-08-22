@@ -327,13 +327,25 @@ export interface OrganismExamFacts {
   distinguishingFeature?: string
 }
 
-export type OrganismSourceKind = 'educational' | 'scientific'
+/**
+ * Knowledge Layer Phase 3/9 addition — 'local-book' marks an excerpt
+ * that came from the user's own uploaded library, never from an online
+ * fetch. Kept as a third enum value (not a boolean flag) so a future
+ * UI badge can label it distinctly from 'educational'/'scientific'
+ * without a second field to keep in sync.
+ */
+export type OrganismSourceKind = 'educational' | 'scientific' | 'local-book'
 
 export interface OrganismSource {
   name: string
   kind: OrganismSourceKind
   /** Only set for a stable, institution-hosted reference page — never a search result or an ephemeral link. */
   url?: string
+  /** Set only when kind === 'local-book' — the user's own library item this excerpt came from. */
+  bookTitle?: string
+  author?: string
+  /** 1-indexed page/location the excerpt was found on. Never fabricated — absent rather than guessed when the reader can't reliably report a page number (§41). */
+  page?: number
 }
 
 // ---------------------------------------------------------------------------
@@ -373,17 +385,6 @@ export interface OrganismProfile {
   scientificName: string
   commonName?: string
   category: OrganismCategory
-  /**
-   * Path to the built-in scientific illustration for this organism, e.g.
-   * '/organisms/escherichia-coli.svg'. Served from `public/organisms/`
-   * (Vite copies `public/` as-is, so this is a plain static path, not a
-   * bundler import — content files are plain JSON and can't `import`).
-   * A user's own custom image (see core/organisms/customImages.ts)
-   * always takes priority over this at render time; this field is only
-   * ever the built-in fallback, never overwritten by a custom upload
-   * (§21, §23).
-   */
-  image?: string
   /** Short, quick-scan identifying characteristics shown on the card — 2-4 items, e.g. ["Lactose fermenter", "Facultative anaerobe"]. */
   quickTags: string[]
   /** Lower-cased search index terms beyond name/genus/species/tags — e.g. informal spellings, disease names. */
@@ -449,6 +450,76 @@ export interface SourcedExcerpt {
   isAbstract?: boolean
 }
 
+// ---------------------------------------------------------------------------
+// Knowledge Layer — source selection (Phases 4-9 of the Knowledge Layer +
+// Source Library brief)
+// ---------------------------------------------------------------------------
+
+/**
+ * Which source pool a Knowledge Layer lookup drew from. 'trusted' (the
+ * default in every entry point — §Phase 4) never touches the user's
+ * library. 'my-sources' searches every indexed local book. 'specific-source'
+ * searches exactly one, named library item and nothing else (§Phase 6:
+ * "the source boundary must be explicit" — never silently supplemented
+ * with trusted-source content).
+ */
+export type KnowledgeSourceMode = 'trusted' | 'my-sources' | 'specific-source'
+
+export const knowledgeSourceModeLabels: Record<KnowledgeSourceMode, string> = {
+  trusted: 'Trusted Scientific Sources',
+  'my-sources': 'My Sources',
+  'specific-source': 'Choose a specific source'
+}
+
+/**
+ * A literal excerpt found in one of the user's own uploaded books
+ * (§Phase 6-9). `text` is a short window of real text surrounding the
+ * matched term — never rewritten, never summarized — exactly like
+ * `SourcedExcerpt` is for online sources, just attributed to a book +
+ * page instead of a URL.
+ */
+export interface LibrarySourceExcerpt {
+  text: string
+  libraryItemId: string
+  bookTitle: string
+  author?: string
+  /** 1-indexed page/location. Never fabricated (§41) — every value here came directly from the reader's own page index. */
+  page: number
+}
+
+/**
+ * A deterministic, constructed link to an authority's own search page
+ * for the queried term (e.g. CDC, WHO, ASM, ICTV, LPSN, CDC DPDx) —
+ * NOT fetched content. None of these publish a public, CORS-enabled,
+ * key-free API this client-side PWA can call, so rather than scrape a
+ * page (which several of these sites' terms of use don't permit) or
+ * silently drop the source entirely, Cellfie offers a direct outbound
+ * link labeled as a lookup, never as retrieved/quoted material (§Phase 3).
+ */
+export interface ReferenceLink {
+  name: string
+  url: string
+}
+
+/**
+ * Best-effort taxonomic-level check against NCBI Taxonomy (§Phase 2) —
+ * exists specifically to stop a species query like "Lactobacillus
+ * acidophilus" from silently collapsing into genus-level information
+ * without saying so. `resolvedRank` is only ever what NCBI Taxonomy's
+ * own record says; 'other' covers ranks above genus (family, order...).
+ * Absent entirely when the lookup itself failed/was offline — never a
+ * guessed rank.
+ */
+export interface TaxonomicResolution {
+  queriedName: string
+  resolvedRank?: 'species' | 'genus' | 'other'
+  /** NCBI Taxonomy's own accepted scientific name for the resolved record — may be the genus alone when only genus-level data exists for a species-level query. */
+  acceptedName?: string
+  taxId?: string
+  sourceName: string
+  sourceUrl: string
+}
+
 export interface KnowledgeLayerInfo {
   /** When this profile was retrieved/last refreshed — epoch ms. */
   retrievedAt: number
@@ -456,6 +527,16 @@ export interface KnowledgeLayerInfo {
   generalReference?: SourcedExcerpt
   /** NCBI MeSH's own scope note for this term, when MeSH has a matching descriptor — the closest thing to a authoritative one-paragraph classification/definition this app can retrieve without AI-based extraction. */
   meshScopeNote?: SourcedExcerpt
+  /** Which source pool produced this profile — stamped so "Refresh scientific information" (§Phase 12) can re-run the same mode rather than silently switching to trusted sources on refresh. */
+  sourceMode?: KnowledgeSourceMode
+  /** Set only when sourceMode is 'specific-source' — which library item was searched. */
+  libraryItemId?: string
+  /** NCBI Taxonomy's rank check for the query (§Phase 2) — present only for 'trusted'-mode lookups, since resolving taxonomy is itself an online/trusted-source action and must not run silently during a 'my-sources'/'specific-source' lookup. */
+  taxonomicResolution?: TaxonomicResolution
+  /** Literal excerpts found in the user's own book(s) — populated only for 'my-sources'/'specific-source' lookups. */
+  libraryExcerpts?: LibrarySourceExcerpt[]
+  /** Constructed "look up on X" links for authorities without a fetchable API (§Phase 3) — shown separately from `sources`, since nothing was actually retrieved from them. Only offered for 'trusted'-mode lookups. */
+  referenceLinks?: ReferenceLink[]
 }
 
 export interface ExternalImageReference {
