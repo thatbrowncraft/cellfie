@@ -1,11 +1,11 @@
 import { useReducedMotion } from '@/shared/hooks'
 
 /**
- * Organism Explorer redesign §16-§17 — a quiet, low-opacity field of
- * floating microbiology motifs behind the Explorer's hub/category
+ * Organism Explorer redesign §16-§17 — a medium-opacity field of
+ * floating microbiology motifs that continuously rise from bottom to top behind the Explorer's hub/category
  * views only (never the organism detail page, never any other module).
  * Deliberately restricted to bacteria, fungi, and virus shapes — no
- * protozoa decorations here (§16) — and kept subtle: low opacity,
+ * protozoa decorations here (§16) — and kept visually subtle without disappearing: medium opacity,
  * `pointer-events-none`, `aria-hidden`, and never affecting layout or
  * causing horizontal scroll (the parent keeps `overflow-hidden`).
  *
@@ -17,29 +17,29 @@ import { useReducedMotion } from '@/shared/hooks'
 
 interface FloatingItem {
   id: string
-  top: string
+  bottom: string
   left: string
   size: number
   colorClassName: string
   opacity: number
   duration: number
   delay: number
-  motion: 'drift' | 'sway'
+  motion: 'rise'
   kind: 'rod' | 'coccusCluster' | 'spiral' | 'hypha' | 'buddingYeast' | 'virusParticle'
 }
 
 const ITEMS: FloatingItem[] = [
-  { id: 'rod-1', top: '6%', left: '90%', size: 26, colorClassName: 'text-olive', opacity: 0.14, duration: 22, delay: 0, motion: 'drift', kind: 'rod' },
-  { id: 'cocci-1', top: '14%', left: '5%', size: 22, colorClassName: 'text-sage', opacity: 0.13, duration: 19, delay: 0.6, motion: 'sway', kind: 'coccusCluster' },
-  { id: 'virus-1', top: '10%', left: '48%', size: 20, colorClassName: 'text-terracotta', opacity: 0.13, duration: 20, delay: 1.1, motion: 'drift', kind: 'virusParticle' },
-  { id: 'hypha-1', top: '30%', left: '85%', size: 26, colorClassName: 'text-sage', opacity: 0.12, duration: 24, delay: 0.4, motion: 'sway', kind: 'hypha' },
-  { id: 'spiral-1', top: '36%', left: '6%', size: 22, colorClassName: 'text-olive', opacity: 0.14, duration: 21, delay: 1.4, motion: 'drift', kind: 'spiral' },
-  { id: 'yeast-1', top: '48%', left: '92%', size: 18, colorClassName: 'text-terracotta', opacity: 0.13, duration: 18, delay: 0.2, motion: 'sway', kind: 'buddingYeast' },
-  { id: 'rod-2', top: '58%', left: '3%', size: 24, colorClassName: 'text-olive', opacity: 0.12, duration: 23, delay: 0.9, motion: 'drift', kind: 'rod' },
-  { id: 'virus-2', top: '66%', left: '88%', size: 20, colorClassName: 'text-terracotta', opacity: 0.13, duration: 20, delay: 1.6, motion: 'sway', kind: 'virusParticle' },
-  { id: 'cocci-2', top: '76%', left: '10%', size: 20, colorClassName: 'text-sage', opacity: 0.12, duration: 19, delay: 0.3, motion: 'drift', kind: 'coccusCluster' },
-  { id: 'hypha-2', top: '84%', left: '55%', size: 24, colorClassName: 'text-sage', opacity: 0.12, duration: 22, delay: 1.2, motion: 'sway', kind: 'hypha' },
-  { id: 'spiral-2', top: '92%', left: '80%', size: 20, colorClassName: 'text-olive', opacity: 0.13, duration: 21, delay: 0.7, motion: 'drift', kind: 'spiral' }
+  { id: 'rod-1', bottom: '-8%', left: '90%', size: 30, colorClassName: 'text-olive', opacity: 0.32, duration: 24, delay: 0, motion: 'rise', kind: 'rod' },
+  { id: 'cocci-1', bottom: '-14%', left: '7%', size: 25, colorClassName: 'text-sage', opacity: 0.29, duration: 21, delay: 2.2, motion: 'rise', kind: 'coccusCluster' },
+  { id: 'virus-1', bottom: '-5%', left: '48%', size: 24, colorClassName: 'text-terracotta', opacity: 0.31, duration: 27, delay: 5, motion: 'rise', kind: 'virusParticle' },
+  { id: 'hypha-1', bottom: '-18%', left: '84%', size: 31, colorClassName: 'text-sage', opacity: 0.27, duration: 30, delay: 8, motion: 'rise', kind: 'hypha' },
+  { id: 'spiral-1', bottom: '-10%', left: '15%', size: 26, colorClassName: 'text-olive', opacity: 0.30, duration: 25, delay: 11, motion: 'rise', kind: 'spiral' },
+  { id: 'yeast-1', bottom: '-12%', left: '67%', size: 23, colorClassName: 'text-terracotta', opacity: 0.30, duration: 22, delay: 14, motion: 'rise', kind: 'buddingYeast' },
+  { id: 'rod-2', bottom: '-20%', left: '34%', size: 28, colorClassName: 'text-olive', opacity: 0.28, duration: 29, delay: 17, motion: 'rise', kind: 'rod' },
+  { id: 'virus-2', bottom: '-7%', left: '79%', size: 24, colorClassName: 'text-terracotta', opacity: 0.30, duration: 26, delay: 20, motion: 'rise', kind: 'virusParticle' },
+  { id: 'cocci-2', bottom: '-16%', left: '55%', size: 24, colorClassName: 'text-sage', opacity: 0.27, duration: 23, delay: 23, motion: 'rise', kind: 'coccusCluster' },
+  { id: 'hypha-2', bottom: '-11%', left: '21%', size: 29, colorClassName: 'text-sage', opacity: 0.28, duration: 32, delay: 26, motion: 'rise', kind: 'hypha' },
+  { id: 'spiral-2', bottom: '-15%', left: '94%', size: 24, colorClassName: 'text-olive', opacity: 0.30, duration: 28, delay: 29, motion: 'rise', kind: 'spiral' }
 ]
 
 function ShapeGlyph({ item }: { item: FloatingItem }) {
@@ -112,22 +112,31 @@ export function OrganismExplorerBackground() {
   const reducedMotion = useReducedMotion()
 
   const animationName: Record<FloatingItem['motion'], string> = {
-    drift: 'cellfie-organism-drift',
-    sway: 'cellfie-organism-sway'
+    rise: 'cellfie-organism-rise'
   }
 
   return (
     <div className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden" aria-hidden="true">
       <style>{`
-        @keyframes cellfie-organism-drift {
-          0% { transform: translateY(0) translateX(0) rotate(0deg); }
-          50% { transform: translateY(-18px) translateX(8px) rotate(4deg); }
-          100% { transform: translateY(0) translateX(0) rotate(0deg); }
-        }
-        @keyframes cellfie-organism-sway {
-          0% { transform: translateY(0) translateX(0) rotate(0deg); }
-          50% { transform: translateY(12px) translateX(-10px) rotate(-4deg); }
-          100% { transform: translateY(0) translateX(0) rotate(0deg); }
+        @keyframes cellfie-organism-rise {
+          0% {
+            transform: translate3d(0, 18vh, 0) rotate(-2deg);
+            opacity: 0;
+          }
+          8% {
+            opacity: 1;
+          }
+          50% {
+            transform: translate3d(18px, -48vh, 0) rotate(5deg);
+            opacity: 1;
+          }
+          92% {
+            opacity: 0.9;
+          }
+          100% {
+            transform: translate3d(-14px, -125vh, 0) rotate(-4deg);
+            opacity: 0;
+          }
         }
       `}</style>
 
@@ -136,7 +145,7 @@ export function OrganismExplorerBackground() {
           key={item.id}
           className="absolute"
           style={{
-            top: item.top,
+            bottom: item.bottom,
             left: item.left,
             animation: reducedMotion ? undefined : `${animationName[item.motion]} ${item.duration}s ease-in-out ${item.delay}s infinite`
           }}
