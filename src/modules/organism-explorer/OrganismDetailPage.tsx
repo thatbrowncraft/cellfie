@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent, type ReactNode } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, ArrowSquareOut, Bookmark, Check, GitBranch, Globe, Sparkle, Star, Trash, UploadSimple } from '@phosphor-icons/react'
+import { ArrowLeft, ArrowClockwise, ArrowSquareOut, Bookmark, Check, GitBranch, Globe, Sparkle, Star, Trash, UploadSimple } from '@phosphor-icons/react'
 import { Button, CalloutBox, Dialog, EmptyState, IllustrationFrame } from '@/shared/components'
 import { EmptyStateLayout } from '@/shared/layouts'
 import {
@@ -18,10 +18,10 @@ import {
   isOrganismSaved,
   organismCategoryLabels,
   protozoanGroupLabels,
+  refreshSavedOrganism,
   relatedOrganismRelationshipLabels,
   removeOrganismImage,
   removeSavedOrganism,
-  resolvePublicAssetPath,
   saveOrganism,
   setPrimaryOrganismImage,
   transmissionRouteLabels,
@@ -166,6 +166,28 @@ export function OrganismDetailPage() {
     setIsSaved(false)
   }
 
+  // Knowledge Layer + Source Library brief §Phase 12 — "Refresh
+  // scientific information". Only ever runs from this explicit tap;
+  // opening/reopening a saved organism never re-triggers it on its own.
+  // On failure the existing saved profile (and this whole page's data)
+  // is left completely untouched — see refreshSavedOrganism's own doc
+  // comment for why that's safe.
+  const [isRefreshing, setIsRefreshing] = useState(false)
+  const [refreshError, setRefreshError] = useState<string | undefined>(undefined)
+
+  async function handleRefreshOrganism() {
+    if (!organism) return
+    setIsRefreshing(true)
+    setRefreshError(undefined)
+    const result = await refreshSavedOrganism(organism.id)
+    setIsRefreshing(false)
+    if (result.status === 'refreshed') {
+      setOrganism(result.profile)
+    } else {
+      setRefreshError("Couldn't refresh right now — showing your saved version.")
+    }
+  }
+
   // Organism Library / Illustration System continuation §19-§27 — every
   // image the user has uploaded for this organism (primary + thumbnails),
   // each with a live blob: URL. `useOrganismImages` is backed by
@@ -288,12 +310,12 @@ export function OrganismDetailPage() {
       <header className="mb-6 flex flex-col gap-5">
         <div className="flex w-full flex-col gap-2 sm:max-w-xl">
           <IllustrationFrame
-            src={primaryImageUrl ?? resolvePublicAssetPath(organism.image) ?? organism.externalImage?.imageUrl}
+            src={primaryImageUrl ?? organism.externalImage?.imageUrl}
             alt={`Illustration of ${organism.scientificName}`}
             caption={organism.commonName ?? organism.scientificName}
             className="w-full"
           />
-          {!primaryImageUrl && !organism.image && organism.externalImage && (
+          {!primaryImageUrl && organism.externalImage && (
             <p className="font-body text-micro text-ink-tertiary">
               Image: {organism.externalImage.sourceName}
               {organism.externalImage.sourceUrl && (
@@ -436,8 +458,20 @@ export function OrganismDetailPage() {
                   {isSaving ? 'Saving\u2026' : 'Save to My Organisms'}
                 </Button>
               )}
+              {isSaved && (
+                <Button
+                  variant="tertiary"
+                  size="small"
+                  icon={<ArrowClockwise size={14} />}
+                  disabled={isRefreshing}
+                  onClick={handleRefreshOrganism}
+                >
+                  {isRefreshing ? 'Refreshing\u2026' : 'Refresh scientific information'}
+                </Button>
+              )}
             </div>
           )}
+          {refreshError && <p className="font-body text-micro text-ink-tertiary">{refreshError}</p>}
         </div>
       </header>
 
@@ -541,6 +575,32 @@ export function OrganismDetailPage() {
           </SectionCard>
         )}
 
+        {organism.knowledgeLayer?.taxonomicResolution && (
+          <CalloutBox
+            type={
+              organism.knowledgeLayer.taxonomicResolution.resolvedRank === 'genus' &&
+              organism.scientificName.trim().split(/\s+/).length >= 2
+                ? 'aside'
+                : 'tip'
+            }
+            title="Taxonomic resolution"
+          >
+            {organism.knowledgeLayer.taxonomicResolution.resolvedRank === 'species' ? (
+              <p>
+                NCBI Taxonomy confirms “{organism.knowledgeLayer.taxonomicResolution.acceptedName}” as a species-level record.
+              </p>
+            ) : organism.knowledgeLayer.taxonomicResolution.resolvedRank === 'genus' ? (
+              <p>
+                NCBI Taxonomy only has a genus-level record for this query
+                {organism.knowledgeLayer.taxonomicResolution.acceptedName ? ` (${organism.knowledgeLayer.taxonomicResolution.acceptedName})` : ''} — the
+                information below reflects the genus, not a confirmed species-specific record.
+              </p>
+            ) : (
+              <p>NCBI Taxonomy's record for this query is above species/genus level.</p>
+            )}
+          </CalloutBox>
+        )}
+
         {organism.knowledgeLayer && (organism.knowledgeLayer.generalReference || organism.knowledgeLayer.meshScopeNote) && (
           <SectionCard title="General information">
             <div className="flex flex-col gap-4">
@@ -577,6 +637,51 @@ export function OrganismDetailPage() {
                   </p>
                 </div>
               )}
+            </div>
+          </SectionCard>
+        )}
+
+        {(organism.knowledgeLayer?.libraryExcerpts?.length ?? 0) > 0 && (
+          <SectionCard
+            title={
+              organism.knowledgeLayer?.sourceMode === 'specific-source'
+                ? `From ${organism.knowledgeLayer?.libraryExcerpts?.[0]?.bookTitle ?? 'your book'}`
+                : 'Found in your sources'
+            }
+          >
+            <div className="flex flex-col gap-4">
+              {organism.knowledgeLayer?.libraryExcerpts?.map((excerpt, i) => (
+                <div key={`${excerpt.libraryItemId}-${excerpt.page}-${i}`}>
+                  <p className="font-body text-body italic text-ink-primary">"{excerpt.text}"</p>
+                  <p className="mt-1.5 font-ui text-micro text-ink-tertiary">
+                    {excerpt.bookTitle}
+                    {excerpt.author ? ` \u2014 ${excerpt.author}` : ''}, p. {excerpt.page}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </SectionCard>
+        )}
+
+        {(organism.knowledgeLayer?.referenceLinks?.length ?? 0) > 0 && (
+          <SectionCard title="Look up on other trusted sources">
+            <p className="mb-3 font-body text-micro text-ink-tertiary">
+              These are direct links to each authority's own search page for “{organism.scientificName}” — Cellfie hasn't retrieved or verified
+              their content.
+            </p>
+            <div className="flex flex-col gap-2">
+              {organism.knowledgeLayer?.referenceLinks?.map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-between gap-2 rounded-sm border border-border px-3 py-2 font-ui text-caption font-medium text-ink-secondary hover:bg-surface-raised"
+                >
+                  {link.name}
+                  <ArrowSquareOut size={13} className="shrink-0 text-ink-tertiary" />
+                </a>
+              ))}
             </div>
           </SectionCard>
         )}
@@ -741,9 +846,10 @@ export function OrganismDetailPage() {
               {organism.sources.map((source, i) => (
                 <div key={i} className="flex items-center justify-between gap-2">
                   <span className="font-body text-caption text-ink-secondary">
-                    {source.name}
+                    {source.kind === 'local-book' ? source.bookTitle ?? source.name : source.name}
+                    {source.kind === 'local-book' && source.page && <span className="text-ink-tertiary">{` \u2014 p. ${source.page}`}</span>}
                     <span className="ml-2 rounded-full bg-surface-raised px-2 py-0.5 font-ui text-micro uppercase tracking-wide text-ink-tertiary">
-                      {source.kind === 'educational' ? 'Educational' : 'Scientific'}
+                      {source.kind === 'educational' ? 'Educational' : source.kind === 'local-book' ? 'Your library' : 'Scientific'}
                     </span>
                   </span>
                   {source.url && (
