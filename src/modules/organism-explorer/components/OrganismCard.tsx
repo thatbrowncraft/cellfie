@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { Card, CardBody, IllustrationFrame } from '@/shared/components'
-import { gramReactionLabels, organismCategoryLabels, resolvePublicAssetPath, type OrganismProfile } from '@/core/organisms'
+import { gramReactionLabels, organismCategoryLabels, type OrganismProfile } from '@/core/organisms'
 import { useOrganismImages } from '../hooks/useOrganismImages'
 
 interface OrganismCardProps {
@@ -14,10 +14,13 @@ interface OrganismCardProps {
  * a new visual treatment, so an organism entry looks and feels like the
  * rest of Cellfie's specimen-card language.
  *
- * Image priority: a user's own custom image (if uploaded from the
- * detail page) always wins over the built-in SVG, which in turn always
- * wins over IllustrationFrame's own graceful placeholder — never a
- * broken image, at any point in that chain.
+ * Image priority (Image Import Bug Fix §9): a user's own custom image
+ * (if uploaded from the detail page) always wins; with no custom image,
+ * this falls to a trusted external Knowledge Layer image if one exists,
+ * and otherwise to IllustrationFrame's own clean "Illustration
+ * unavailable" placeholder. The old generated organism SVGs are no
+ * longer shown as a default illustration here — never a broken image,
+ * a filename, or stale generated artwork, at any point in that chain.
  */
 export function OrganismCard({ organism }: OrganismCardProps) {
   const navigate = useNavigate()
@@ -35,7 +38,7 @@ export function OrganismCard({ organism }: OrganismCardProps) {
     <Card interactive onClick={() => navigate(`/organisms/${organism.id}`)}>
       <CardBody className="flex flex-col gap-4">
         <IllustrationFrame
-          src={primaryImageUrl ?? resolvePublicAssetPath(organism.image) ?? organism.externalImage?.imageUrl}
+          src={primaryImageUrl ?? organism.externalImage?.imageUrl}
           alt={`Illustration of ${organism.scientificName}`}
           caption={organism.commonName ?? organism.scientificName}
           className="w-full"
