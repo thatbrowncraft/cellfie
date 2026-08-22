@@ -1,12 +1,23 @@
 /**
- * core/export — Sprint 2 §8. Markdown export of notes (+ their linked
- * highlights) and a full JSON backup of every structured record Cellfie
- * knows about. Both run entirely client-side (Blob + object URL
- * download) — no server, no network, per the offline-only constraint.
- * PDF export is explicitly "(later)" per the brief and isn't implemented.
+ * core/export — Sprint 2 §8 (Markdown notes export), extended by the
+ * Module Activation + Unified Export task to cover every user-owned
+ * store across Cellfie's shipped modules, not just the original Offline
+ * Reader tables.
+ *
+ * Markdown export of notes (+ their linked highlights) is unchanged from
+ * Sprint 2.
+ *
+ * The JSON backup is now built by walking `db.tables` directly instead
+ * of naming each table by hand: every Dexie store Cellfie defines is
+ * swept into the backup EXCEPT the two explicitly denylisted below (see
+ * `EXCLUDED_TABLES`), so a future module's new user-data table is picked
+ * up automatically the day it ships, with no edit needed in this file.
+ * Both exports run entirely client-side (Blob + object URL download) —
+ * no server, no network, per the offline-only constraint.
  */
 
-import { db, type Collection, type Highlight, type LibraryItem, type Note, type ReaderBookmark } from '../db'
+import { db, type Highlight, type LibraryItem, type Note } from '../db'
+import { version as appVersion } from '../../../package.json'
 
 function downloadBlob(filename: string, blob: Blob): void {
   const url = URL.createObjectURL(blob)
@@ -67,40 +78,115 @@ export async function exportNotesAsMarkdown(notes?: Note[]): Promise<void> {
   downloadBlob(`cellfie-notes-${timestampSlug()}.md`, new Blob([body], { type: 'text/markdown' }))
 }
 
+/**
+ * Dexie stores that exist on `db` but are deliberately never part of the
+ * user-facing JSON backup:
+ *
+ * - `appSettings` — despite the name, every row actually written to this
+ *   table today is an internal cache / derived-state marker: concept
+ *   extraction metadata, per-page relevance/extraction-quality cache,
+ *   the Learn "study overview" cache, cleanup/purge run markers, the
+ *   Organism Explorer Knowledge-Layer lookup cache, and taxonomy
+ *   resolution cache (see core/concepts/extraction.ts,
+ *   core/concepts/service.ts, core/organisms/knowledgeLayer.ts,
+ *   core/organisms/taxonomyResolution.ts, core/organisms/recentlyViewed.ts).
+ *   None of it is data the user created or would recognize as "theirs" —
+ *   including it would bloat the backup with re-derivable engine state,
+ *   exactly the "temporary scanning state" the brief says to leave out.
+ *   The genuinely user-facing preferences (theme, large text, reader
+ *   navigation mode) live in localStorage, not this table, and are
+ *   exported separately below as `preferences`.
+ * - `organismImageBlobs` — raw image `Blob` bytes (the IndexedDB
+ *   fallback path for a custom organism image upload, used only when
+ *   OPFS is unavailable). Blobs aren't meaningfully JSON-serializable,
+ *   and embedding them would make the backup huge for no benefit — the
+ *   same reasoning the brief gives for never embedding raw PDF/EPUB
+ *   files.
+ */
+const EXCLUDED_TABLES = new Set<string>(['appSettings', 'organismImageBlobs'])
+
+/**
+ * Per-table field stripping — removes fields that are only meaningful as
+ * an OPFS path or an internal blob-table key on THIS device (the same
+ * reasoning as the original `libraryItems` filePath/thumbnailPath
+ * omission, extended to the two other tables that hold the same kind of
+ * device-local reference: `ConceptAsset.filePath` for imported Mind
+ * Map/Visual files, `OrganismImage.filePath`/`blobId` for custom organism
+ * images). Every other field of every other table is exported as-is.
+ */
+const FIELD_STRIPPERS: Record<string, (row: Record<string, unknown>) => Record<string, unknown>> = {
+  libraryItems: ({ filePath: _filePath, thumbnailPath: _thumbnailPath, ...rest }) => rest,
+  conceptAssets: ({ filePath: _filePath, ...rest }) => rest,
+  organismImages: ({ filePath: _filePath, blobId: _blobId, ...rest }) => rest
+}
+
+/** localStorage keys behind Settings' real, working preference controls (theme mode, large text, reader page-navigation) — see core/theme and core/reader-settings. */
+const PREFERENCE_KEYS = ['cellfie:theme-mode', 'cellfie:large-text', 'cellfie:reader-navigation-mode'] as const
+
+function readLocalPreferences(): Record<string, string> {
+  const out: Record<string, string> = {}
+  if (typeof window === 'undefined') return out
+  for (const key of PREFERENCE_KEYS) {
+    const value = window.localStorage.getItem(key)
+    if (value !== null) out[key] = value
+  }
+  return out
+}
+
 interface JsonBackup {
-  version: 1
+  format: 'cellfie-backup'
+  version: 2
   exportedAt: number
-  libraryItems: Omit<LibraryItem, 'filePath' | 'thumbnailPath'>[]
-  collections: Collection[]
-  highlights: Highlight[]
-  notes: Note[]
-  readerBookmarks: ReaderBookmark[]
+  appVersion: string
+  /**
+   * Theme/reader preferences from localStorage — see PREFERENCE_KEYS.
+   * Not the same thing as "module visibility preferences": no such
+   * per-module toggle is actually persisted anywhere yet (Settings'
+   * Modules list is a status display, not a saved per-user setting —
+   * see src/config/modules.ts), so nothing is invented here for it.
+   */
+  preferences: Record<string, string>
+  /**
+   * One array per included Dexie store, keyed by table name — see
+   * `EXCLUDED_TABLES`/`FIELD_STRIPPERS` above for what's left out or
+   * trimmed, and why. Records reference each other by id (e.g. a
+   * Concept's `conceptSources` row points at a `libraryItemId` rather
+   * than embedding the book) exactly as they already do in the live
+   * database, so nothing is duplicated across stores.
+   */
+  data: Record<string, unknown[]>
 }
 
 /**
- * Exports every structured record as JSON. Deliberately omits `filePath`/
- * `thumbnailPath` (OPFS-internal paths, meaningless outside this origin)
- * and the binary PDFs/thumbnails themselves — this is a metadata +
- * notes/highlights backup, not a full library re-importer.
+ * Exports every user-owned structured record Cellfie currently persists
+ * — across the Offline Reader, Study Tools, Concept Explorer/Learn,
+ * Organism Explorer, and any other shipped module with its own Dexie
+ * store — as a single versioned JSON file. Deliberately omits OPFS-only
+ * paths/blob keys (see `FIELD_STRIPPERS`) and internal cache/binary
+ * tables (see `EXCLUDED_TABLES`); this is a metadata + user-content
+ * backup, not a full binary re-importer.
  */
 export async function exportJsonBackup(): Promise<void> {
-  const [items, collections, highlights, notes, readerBookmarks] = await Promise.all([
-    db.libraryItems.toArray(),
-    db.collections.toArray(),
-    db.highlights.toArray(),
-    db.notes.toArray(),
-    db.readerBookmarks.toArray()
-  ])
+  const tables = db.tables.filter((t) => !EXCLUDED_TABLES.has(t.name))
+  const rows = await Promise.all(tables.map((t) => t.toArray()))
+
+  const data: Record<string, unknown[]> = {}
+  tables.forEach((table, i) => {
+    const strip = FIELD_STRIPPERS[table.name]
+    data[table.name] = strip ? rows[i].map((row) => strip(row as Record<string, unknown>)) : rows[i]
+  })
 
   const backup: JsonBackup = {
-    version: 1,
+    format: 'cellfie-backup',
+    version: 2,
     exportedAt: Date.now(),
-    libraryItems: items.map(({ filePath: _filePath, thumbnailPath: _thumbnailPath, ...rest }) => rest),
-    collections,
-    highlights,
-    notes,
-    readerBookmarks
+    appVersion,
+    preferences: readLocalPreferences(),
+    data
   }
 
-  downloadBlob(`cellfie-backup-${timestampSlug()}.json`, new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' }))
+  downloadBlob(
+    `cellfie-backup-${timestampSlug()}.json`,
+    new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' })
+  )
 }
