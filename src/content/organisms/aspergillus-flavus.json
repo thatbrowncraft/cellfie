@@ -1,0 +1,102 @@
+{
+  "id": "aspergillus-flavus",
+  "scientificName": "Aspergillus flavus",
+  "category": "fungi",
+  "quickTags": [
+    "Aflatoxin producer",
+    "Yellow-green colonies",
+    "Food contaminant"
+  ],
+  "searchKeywords": [
+    "a flavus",
+    "aflatoxin",
+    "yellow aspergillus"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Eurotiales",
+    "family": "Aspergillaceae",
+    "genus": "Aspergillus",
+    "species": "A. flavus"
+  },
+  "morphology": {
+    "shape": "Filamentous mold with radiating conidial heads",
+    "size": "Hyphae ~3-6 µm wide",
+    "notes": "Yellow-green, granular conidial heads; uniseriate or biseriate phialides bearing chains of conidia"
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Conidiophores",
+      "Vesicle bearing phialides",
+      "Yellow-green conidia"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, decaying vegetation, and stored grains/nuts worldwide",
+    "hostAssociation": "Environmental saprophyte and important agricultural contaminant; opportunistic human pathogen",
+    "environmentalOccurrence": "Common contaminant of stored corn, peanuts, and other crops, particularly in warm, humid conditions",
+    "reservoir": "Soil, stored agricultural products"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Lactophenol cotton blue mount",
+      "appearance": "Septate hyphae with rough-walled conidiophores and radiating chains of yellow-green conidia",
+      "arrangement": "Radiating conidial head"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar",
+      "growthCharacteristics": "Rapid growth at room temperature and 37°C",
+      "colonyMorphology": "Yellow-green, granular, flat colonies",
+      "pigmentation": "Yellow-green surface, often golden-brown reverse"
+    }
+  },
+  "identificationClues": [
+    "Yellow-green colony color on Sabouraud agar",
+    "Rough-walled conidiophores on microscopy",
+    "Best known outside clinical microbiology as the major producer of aflatoxin, a potent carcinogenic mycotoxin, in contaminated crops",
+    "Second most common cause of invasive aspergillosis after A. fumigatus"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Invasive aspergillosis (second most common causative species after A. fumigatus)",
+      "Allergic bronchopulmonary aspergillosis",
+      "Fungal sinusitis",
+      "Keratitis (fungal corneal infection)"
+    ],
+    "transmission": "Inhalation of airborne conidia; direct inoculation (e.g. corneal trauma) for keratitis",
+    "epidemiology": "Agriculturally significant as the primary source of aflatoxin contamination in stored grains/nuts (a major food-safety and public-health concern in some regions); clinically an important though less common cause of invasive aspergillosis than A. fumigatus",
+    "labSignificance": "Species-level identification distinguishing it from A. fumigatus and A. niger matters because of differing antifungal susceptibility patterns"
+  },
+  "examFacts": {
+    "shape": "Filamentous mold, septate hyphae",
+    "keyBiochemicalReaction": "Not applicable — colony/microscopic morphology",
+    "importantDisease": "Invasive aspergillosis; aflatoxin-related food contamination",
+    "importantTest": "Lactophenol cotton blue mount; colony morphology",
+    "distinguishingFeature": "Major natural producer of aflatoxin, a potent carcinogen found in contaminated crops"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "aspergillus-fumigatus",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "aspergillus-niger",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Aspergillosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/aspergillosis/"
+    }
+  ]
+}

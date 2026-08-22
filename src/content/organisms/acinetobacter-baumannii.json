@@ -1,0 +1,118 @@
+{
+  "id": "acinetobacter-baumannii",
+  "scientificName": "Acinetobacter baumannii",
+  "category": "bacteria",
+  "quickTags": [
+    "Multidrug-resistant",
+    "Coccobacillus",
+    "ICU pathogen"
+  ],
+  "searchKeywords": [
+    "a baumannii",
+    "acinetobacter",
+    "mdr",
+    "iraqibacter"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Moraxellales",
+    "family": "Moraxellaceae",
+    "genus": "Acinetobacter",
+    "species": "A. baumannii"
+  },
+  "morphology": {
+    "shape": "Coccobacillus, sometimes appearing diplococcus-like",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells or pairs",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-1.5 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "Polysaccharide capsule in many strains",
+    "encapsulated": true,
+    "motility": "Non-motile — lacks flagella (twitching motility via pili in some strains)",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil and water; also colonizes human skin",
+    "hostAssociation": "Environmental organism and opportunistic nosocomial pathogen; notably resilient on hospital surfaces",
+    "environmentalOccurrence": "Survives desiccation for extended periods, contributing to persistence on hospital equipment/surfaces",
+    "reservoir": "Hospital environment (ventilators, surfaces), colonized patients"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative coccobacilli, can resist decolorization and appear Gram-variable",
+      "arrangement": "Single cells/pairs"
+    },
+    "culture": {
+      "media": "Blood agar, MacConkey agar",
+      "growthCharacteristics": "Strict aerobe, grows readily on routine media",
+      "colonyMorphology": "Smooth, opaque, grayish-white, mucoid colonies",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Non-fermenter (oxidative glucose utilization)",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative coccobacillus, oxidase NEGATIVE — distinguishes it from Pseudomonas and Neisseria",
+    "Non-fermenting glucose utilization pattern",
+    "Notorious for extensive multidrug resistance in healthcare settings",
+    "Survives well on dry hospital surfaces, contributing to outbreaks"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Ventilator-associated pneumonia",
+      "Bloodstream infections",
+      "Wound and burn infections",
+      "Urinary tract infections"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule",
+      "Biofilm formation on medical devices",
+      "Extensive intrinsic and acquired antibiotic resistance mechanisms"
+    ],
+    "transmission": "Nosocomial — contaminated surfaces, ventilator equipment, healthcare worker hands; notable in ICU and burn-unit outbreaks and in combat-related wound infections",
+    "epidemiology": "Recognized by the CDC and WHO as a critical-priority multidrug-resistant (including carbapenem-resistant) pathogen due to limited treatment options",
+    "labSignificance": "Oxidase-negative distinguishes it from Pseudomonas aeruginosa, another common non-fermenting Gram-negative nosocomial pathogen it can otherwise resemble clinically"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Coccobacillus",
+    "keyBiochemicalReaction": "Oxidase negative, non-fermenter",
+    "importantDisease": "Ventilator-associated pneumonia, MDR nosocomial infections",
+    "importantTest": "Oxidase test (negative) to distinguish from Pseudomonas",
+    "distinguishingFeature": "Oxidase negative and highly resistant to desiccation, unlike Pseudomonas aeruginosa"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "pseudomonas-aeruginosa",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Acinetobacter",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hai/organisms/acinetobacter.html"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "hepatitis-a-virus",
+  "scientificName": "Hepatitis A virus",
+  "commonName": "HAV",
+  "category": "virus",
+  "quickTags": [
+    "ssRNA virus",
+    "Non-enveloped",
+    "Fecal-oral"
+  ],
+  "searchKeywords": [
+    "hav",
+    "hep a",
+    "hepatitis a"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Picornaviridae",
+    "genus": "Hepatovirus",
+    "species": "Hepatovirus A"
+  },
+  "morphology": {
+    "shape": "Small, icosahedral, non-enveloped virion",
+    "size": "~27-32 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "non-enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "fecal-oral"
+  },
+  "habitat": {
+    "naturalHabitat": "Human hepatocytes and GI tract (shed in stool)",
+    "hostAssociation": "Obligate human pathogen (some non-human primate reservoirs exist but are not clinically significant for most human infection)",
+    "reservoir": "Infected humans, contaminated food/water"
+  },
+  "identificationClues": [
+    "Diagnosed by anti-HAV IgM (acute infection) or IgG (past infection/immunity) serology",
+    "Non-enveloped, making it notably stable in the environment and resistant to many disinfection methods that work on enveloped viruses",
+    "Self-limited illness — does not cause chronic infection, unlike hepatitis B or C",
+    "Effective inactivated vaccine available"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Acute hepatitis A — typically self-limited; fulminant hepatic failure is rare but can occur, especially with pre-existing liver disease"
+    ],
+    "transmission": "Fecal-oral — contaminated food or water, person-to-person contact, particularly in settings with poor sanitation or during outbreaks linked to contaminated food handlers",
+    "epidemiology": "Vaccine-preventable; incidence has declined substantially in countries with routine childhood vaccination and improved sanitation, though outbreaks still occur, including among people experiencing homelessness and in foodborne clusters",
+    "labSignificance": "Anti-HAV IgM confirms acute/recent infection, while IgG alone (without IgM) indicates past infection or vaccination, not current illness"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — serology diagnosis",
+    "importantDisease": "Acute (self-limited) hepatitis A",
+    "importantTest": "Anti-HAV IgM serology",
+    "distinguishingFeature": "Unlike hepatitis B and C, does not cause chronic infection — illness is self-limited"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "hepatitis-b-virus",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "hepatitis-c-virus",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Hepatitis A",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hepatitis-a/"
+    }
+  ]
+}

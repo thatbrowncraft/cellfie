@@ -1,0 +1,133 @@
+{
+  "id": "clostridioides-difficile",
+  "scientificName": "Clostridioides difficile",
+  "commonName": "C. diff",
+  "category": "bacteria",
+  "quickTags": [
+    "Pseudomembranous colitis",
+    "Toxin A/B producer",
+    "Spore-forming"
+  ],
+  "searchKeywords": [
+    "c diff",
+    "cdiff",
+    "clostridium difficile",
+    "antibiotic associated diarrhea",
+    "pseudomembranous colitis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Clostridia",
+    "order": "Eubacteriales",
+    "family": "Peptostreptococcaceae",
+    "genus": "Clostridioides",
+    "species": "C. difficile"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single or short chains",
+    "arrangementCategory": "single",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~3-6 x 0.5 µm",
+    "sporeForming": true,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile via peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Obligate anaerobe",
+    "oxygenRequirementCategory": "obligate-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil and the intestinal tract",
+    "hostAssociation": "Normal gut colonizer in a minority of healthy adults; overgrows when normal flora is disrupted by antibiotics",
+    "environmentalOccurrence": "Hardy spores persist for long periods on hospital surfaces",
+    "reservoir": "Human GI tract, healthcare environment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive rods with subterminal spores",
+      "arrangement": "Single or short chains"
+    },
+    "culture": {
+      "media": "Cycloserine-cefoxitin fructose agar (CCFA), taurocholate-based selective media",
+      "growthCharacteristics": "Strict anaerobe, slow growing",
+      "colonyMorphology": "Flat, gray-yellow colonies with a ground-glass texture; characteristic \"horse-manure\" odor",
+      "pigmentation": "Yellowish under UV fluorescence on CCFA",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Glutamate dehydrogenase (GDH) antigen",
+        "result": "+"
+      },
+      {
+        "test": "Toxin A/B EIA or NAAT",
+        "result": "+ in toxigenic infection"
+      },
+      {
+        "test": "Lecithinase",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive anaerobic rod",
+    "Toxin A/B detection (EIA or PCR) confirms toxigenic infection, not culture alone",
+    "Pseudomembranes seen on colonoscopy in severe colitis",
+    "History of recent antibiotic use",
+    "Characteristic odor on CCFA culture"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Antibiotic-associated diarrhea",
+      "Pseudomembranous colitis",
+      "Toxic megacolon in severe cases"
+    ],
+    "virulenceFactors": [
+      "Toxin A (enterotoxin)",
+      "Toxin B (cytotoxin) — the primary driver of colitis",
+      "Hypervirulent strains (e.g. ribotype 027) produce a binary toxin and more toxin A/B"
+    ],
+    "toxins": [
+      "Toxin A",
+      "Toxin B",
+      "Binary toxin (in some hypervirulent strains)"
+    ],
+    "transmission": "Fecal-oral via spores, which are resistant to alcohol-based hand sanitizer and many disinfectants; healthcare-associated transmission is common",
+    "epidemiology": "Leading cause of healthcare-associated diarrhea; strongly associated with prior broad-spectrum antibiotic use (e.g. clindamycin, fluoroquinolones, cephalosporins)",
+    "labSignificance": "Diagnosis relies on toxin detection (EIA/NAAT) rather than culture alone, since asymptomatic colonization with non-toxigenic strains is common"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Toxin A/B positive by EIA/NAAT",
+    "importantDisease": "Pseudomembranous colitis",
+    "importantTest": "Stool toxin EIA or nucleic acid amplification test",
+    "distinguishingFeature": "Disease requires toxin production, not merely colonization — spores resist alcohol-based hand sanitizer"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "clostridium-perfringens",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "clostridium-tetani",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — C. diff (Clostridioides difficile)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/cdiff/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Clostridium Difficile\"",
+      "kind": "educational"
+    }
+  ]
+}

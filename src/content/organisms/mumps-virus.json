@@ -1,0 +1,72 @@
+{
+  "id": "mumps-virus",
+  "scientificName": "Mumps orthorubulavirus",
+  "commonName": "Mumps virus",
+  "category": "virus",
+  "quickTags": [
+    "ssRNA virus",
+    "Enveloped",
+    "Parotitis"
+  ],
+  "searchKeywords": [
+    "mumps"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Paramyxoviridae",
+    "genus": "Orthorubulavirus",
+    "species": "Mumps orthorubulavirus"
+  },
+  "morphology": {
+    "shape": "Pleomorphic, enveloped virion",
+    "size": "~100-600 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Helical",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human salivary gland and respiratory epithelium",
+    "hostAssociation": "Obligate human pathogen",
+    "reservoir": "Infected humans"
+  },
+  "identificationClues": [
+    "Bilateral (or unilateral) parotid gland swelling is the classic clinical clue",
+    "PCR of a buccal/oral swab or saliva is the preferred confirmatory test",
+    "MMR vaccination has substantially reduced incidence, though outbreaks still occur in close-contact settings (e.g. college campuses)"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Mumps (parotitis)",
+      "Orchitis (testicular inflammation, a recognized complication, especially post-pubertal males)",
+      "Aseptic meningitis (a relatively common complication)",
+      "Rarely, pancreatitis or oophoritis"
+    ],
+    "transmission": "Respiratory droplets and direct contact with saliva",
+    "epidemiology": "Vaccine-preventable (MMR); outbreaks continue to occur periodically in close-contact settings, sometimes including previously vaccinated individuals as vaccine-induced immunity can wane",
+    "labSignificance": "PCR of a buccal/oral swab collected early in illness is more sensitive than serology alone, particularly in previously vaccinated individuals with a modified clinical course"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — clinical/PCR diagnosis",
+    "importantDisease": "Mumps (parotitis), orchitis, aseptic meningitis",
+    "importantTest": "PCR of buccal/oral swab or saliva",
+    "distinguishingFeature": "Classic bilateral parotid gland swelling distinguishes it clinically from most other viral respiratory infections"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "measles-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Mumps",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/mumps/"
+    }
+  ]
+}

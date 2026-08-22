@@ -1,0 +1,90 @@
+{
+  "id": "trypanosoma-cruzi",
+  "scientificName": "Trypanosoma cruzi",
+  "category": "protozoa",
+  "quickTags": [
+    "Flagellate",
+    "Kissing bug vector",
+    "Chagas disease"
+  ],
+  "searchKeywords": [
+    "chagas disease",
+    "t cruzi",
+    "kissing bug",
+    "triatomine"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Excavata",
+    "phylum": "Euglenozoa",
+    "class": "Kinetoplastea",
+    "order": "Trypanosomatida",
+    "family": "Trypanosomatidae",
+    "genus": "Trypanosoma",
+    "species": "T. cruzi"
+  },
+  "morphology": {
+    "shape": "C-shaped trypomastigote in blood; intracellular amastigote in tissue",
+    "size": "Trypomastigotes ~20 µm long including flagellum"
+  },
+  "protozoanDetails": {
+    "group": "flagellate",
+    "majorLocation": "blood",
+    "transmissionRoute": "vector-borne",
+    "lifeCycleForm": "Trypomastigote (bloodstream, infective/diagnostic form) and amastigote (intracellular tissue form, e.g. in cardiac/smooth muscle)"
+  },
+  "habitat": {
+    "naturalHabitat": "Blood and tissues (especially cardiac and smooth muscle) of mammalian hosts; gut of triatomine (\"kissing\") bugs",
+    "hostAssociation": "Zoonotic — many wild and domestic mammals serve as reservoirs",
+    "environmentalOccurrence": "Endemic to rural areas of Latin America where triatomine bugs inhabit poor-quality housing",
+    "reservoir": "Wild and domestic mammals; triatomine bug vector"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Giemsa-stained blood smear (acute phase)",
+      "appearance": "C- or S-shaped trypomastigotes with a large kinetoplast near the posterior end, undulating membrane, and single flagellum",
+      "arrangement": "Free trypomastigotes in blood during acute infection"
+    },
+    "culture": {
+      "media": "Specialized media (e.g. NNN medium) in reference laboratories",
+      "growthCharacteristics": "Fastidious; culture mainly used in reference/research settings",
+      "colonyMorphology": "Not applicable"
+    }
+  },
+  "identificationClues": [
+    "Trypomastigotes visible on blood smear during the acute phase only",
+    "Serology is the primary diagnostic method in chronic infection, when parasitemia is very low",
+    "Romaña's sign — periorbital swelling at the site of vector inoculation near the eye",
+    "Chagoma — localized skin swelling at the bite site"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Chagas disease (American trypanosomiasis) — acute phase, followed by an often asymptomatic indeterminate phase",
+      "Chronic Chagas cardiomyopathy",
+      "Chagasic megacolon and megaesophagus"
+    ],
+    "transmission": "Contact with feces of an infected triatomine (\"kissing\") bug, typically through a bite wound or mucous membranes; also congenital, blood transfusion, and organ transplantation",
+    "epidemiology": "Endemic to Latin America, particularly in areas with substandard rural housing that harbors triatomine bugs; a leading cause of infectious cardiomyopathy in endemic regions",
+    "labSignificance": "Diagnosis shifts from direct parasite visualization in the acute phase to serologic testing in the chronic phase due to declining parasitemia"
+  },
+  "examFacts": {
+    "shape": "C-shaped trypomastigote, flagellate",
+    "keyBiochemicalReaction": "Not applicable — blood smear (acute) or serology (chronic)",
+    "importantDisease": "Chagas disease, chronic cardiomyopathy",
+    "importantTest": "Giemsa blood smear (acute phase); serology (chronic phase)",
+    "distinguishingFeature": "Transmitted through triatomine bug feces (contamination of the bite wound), not through the bite itself"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Chagas Disease (American Trypanosomiasis)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/chagas/"
+    },
+    {
+      "name": "CDC DPDx — Trypanosomiasis, American",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dpdx/trypanosomiasisamerican/"
+    }
+  ]
+}

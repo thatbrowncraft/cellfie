@@ -1,0 +1,86 @@
+{
+  "id": "balantidium-coli",
+  "scientificName": "Balantidium coli",
+  "category": "protozoa",
+  "quickTags": [
+    "Ciliate",
+    "Largest human protozoan parasite",
+    "Pig-associated"
+  ],
+  "searchKeywords": [
+    "b coli",
+    "balantidiasis",
+    "ciliate parasite"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Chromalveolata",
+    "phylum": "Ciliophora",
+    "class": "Litostomatea",
+    "order": "Vestibuliferida",
+    "family": "Balantidiidae",
+    "genus": "Balantidium",
+    "species": "B. coli"
+  },
+  "morphology": {
+    "shape": "Large, ovoid trophozoite covered in cilia; spherical cyst",
+    "size": "Trophozoites ~50-200 µm long — the largest protozoan parasite known to infect humans"
+  },
+  "protozoanDetails": {
+    "group": "ciliate",
+    "majorLocation": "intestinal",
+    "transmissionRoute": "fecal-oral",
+    "lifeCycleForm": "Trophozoite (motile, ciliated, invasive form) and cyst (environmentally resistant, infective form)"
+  },
+  "habitat": {
+    "naturalHabitat": "Large intestine of pigs (the primary natural host/reservoir) and, less commonly, humans",
+    "hostAssociation": "Zoonotic — pigs are the main reservoir; human infection is relatively uncommon",
+    "environmentalOccurrence": "Cysts can persist in water/soil contaminated with pig feces",
+    "reservoir": "Pigs; contaminated water in areas with close human-pig contact"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Wet mount or iodine stain of stool",
+      "appearance": "Large, ciliated, ovoid trophozoites, easily visible even at low magnification given their size; spherical cysts also seen",
+      "arrangement": "Individual organisms"
+    },
+    "culture": {
+      "media": "Not routinely cultured clinically",
+      "growthCharacteristics": "Not applicable for routine diagnosis",
+      "colonyMorphology": "Not applicable"
+    }
+  },
+  "identificationClues": [
+    "Largest protozoan parasite of humans — trophozoites are visible even under low-power microscopy",
+    "Covered in cilia, unlike amoebae or flagellates seen in stool exams",
+    "History of close contact with pigs or pig-contaminated water is a classic epidemiologic clue"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Balantidiasis — usually asymptomatic or mild diarrhea; occasionally dysentery with colonic ulceration resembling amebic dysentery in more severe cases"
+    ],
+    "transmission": "Fecal-oral, via ingestion of cysts from water or food contaminated with pig feces",
+    "epidemiology": "Relatively rare human infection worldwide; most common where humans live in close contact with pigs and sanitation is limited",
+    "labSignificance": "Its large size and ciliated surface make it one of the easier intestinal parasites to identify on a stool wet mount, once considered in the differential"
+  },
+  "examFacts": {
+    "shape": "Large ciliated trophozoite",
+    "keyBiochemicalReaction": "Not applicable — direct microscopy diagnosis",
+    "importantDisease": "Balantidiasis (usually mild; occasionally dysentery)",
+    "importantTest": "Stool wet mount/iodine stain showing large ciliated trophozoites",
+    "distinguishingFeature": "The only ciliate known to parasitize humans, and the largest protozoan parasite of humans overall"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "entamoeba-histolytica",
+      "relationship": "similar-clinical-presentation"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC DPDx — Balantidiasis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dpdx/balantidiasis/"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "aspergillus-niger",
+  "scientificName": "Aspergillus niger",
+  "category": "fungi",
+  "quickTags": [
+    "Black mold",
+    "Septate hyphae",
+    "Otomycosis"
+  ],
+  "searchKeywords": [
+    "a niger",
+    "black aspergillus",
+    "aspergilloma"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Eurotiales",
+    "family": "Aspergillaceae",
+    "genus": "Aspergillus",
+    "species": "A. niger"
+  },
+  "morphology": {
+    "shape": "Filamentous mold with radiating conidial heads",
+    "size": "Hyphae ~3-6 µm wide; conidiophores up to several hundred µm",
+    "notes": "Large, dark brown to black biseriate conidial heads (\"aspergillus head\") with radiating chains of dark spores"
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Conidiophores",
+      "Vesicle with biseriate phialides",
+      "Black/brown conidia"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, decaying vegetation, and stored grain worldwide",
+    "hostAssociation": "Environmental saprophyte; opportunistic pathogen and common food/industrial contaminant",
+    "environmentalOccurrence": "One of the most common environmental molds; used industrially to produce citric acid",
+    "reservoir": "Soil, organic debris, indoor/outdoor air"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Lactophenol cotton blue mount",
+      "appearance": "Septate hyphae with large biseriate conidial heads bearing chains of black-brown conidia",
+      "arrangement": "Radiating conidial head"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar",
+      "growthCharacteristics": "Rapid growth at room temperature",
+      "colonyMorphology": "Initially white/yellow, becoming carbon-black to dark brown and granular as conidia mature",
+      "pigmentation": "Black to dark brown surface, pale reverse"
+    }
+  },
+  "identificationClues": [
+    "Rapidly growing black mold on Sabouraud agar",
+    "Biseriate conidial heads with radiating chains of black conidia on microscopy",
+    "Common cause of otomycosis (fungal ear infection)",
+    "Often a laboratory/environmental contaminant, complicating interpretation of positive cultures"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Otomycosis (external ear canal infection)",
+      "Aspergilloma (fungus ball, often in a pre-existing lung cavity)",
+      "Invasive aspergillosis (rare, in severely immunocompromised hosts)",
+      "Allergic bronchopulmonary reaction in sensitized individuals"
+    ],
+    "transmission": "Inhalation of airborne conidia; direct contact for otomycosis",
+    "epidemiology": "One of the most common environmental molds; generally less pathogenic than A. fumigatus but an important cause of otomycosis and occasional invasive disease in the severely immunosuppressed",
+    "labSignificance": "Because it is a ubiquitous environmental contaminant, isolation from a non-sterile site must be interpreted alongside clinical findings"
+  },
+  "examFacts": {
+    "shape": "Filamentous mold, septate hyphae",
+    "keyBiochemicalReaction": "Not applicable — identified by colony/microscopic morphology",
+    "importantDisease": "Otomycosis; occasional aspergilloma",
+    "importantTest": "Lactophenol cotton blue mount showing biseriate black conidial heads",
+    "distinguishingFeature": "Distinctive carbon-black colony color distinguishes it from A. fumigatus (blue-green) and A. flavus (yellow-green)"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "aspergillus-fumigatus",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Aspergillosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/aspergillosis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Aspergillus Niger\"",
+      "kind": "educational"
+    }
+  ]
+}

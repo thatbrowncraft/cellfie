@@ -1,0 +1,70 @@
+{
+  "id": "human-papillomavirus",
+  "scientificName": "Human papillomavirus",
+  "commonName": "HPV",
+  "category": "virus",
+  "quickTags": [
+    "dsDNA virus",
+    "Non-enveloped",
+    "Sexually transmitted"
+  ],
+  "searchKeywords": [
+    "hpv",
+    "human papillomavirus",
+    "genital warts",
+    "cervical cancer virus"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Papillomaviridae",
+    "genus": "Alphapapillomavirus (and other genera, depending on type)",
+    "species": "Multiple types (e.g. HPV-6, 11, 16, 18)"
+  },
+  "morphology": {
+    "shape": "Small, icosahedral, non-enveloped virion",
+    "size": "~55 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "dna",
+    "genomeStrandedness": "dsdna",
+    "envelope": "non-enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "sexual-contact"
+  },
+  "habitat": {
+    "naturalHabitat": "Human squamous epithelium (skin and mucosa)",
+    "hostAssociation": "Obligate human pathogen; over 100 genotypes identified, divided into low-risk and high-risk (oncogenic) types",
+    "reservoir": "Infected humans"
+  },
+  "identificationClues": [
+    "HPV DNA testing (often combined with Pap cytology) is used for cervical cancer screening rather than viral culture, since HPV cannot be routinely cultured",
+    "Low-risk types (e.g. HPV-6, 11) cause genital warts; high-risk types (e.g. HPV-16, 18) are associated with cervical, anal, oropharyngeal, and other cancers",
+    "Most infections are transient and cleared by the immune system, but persistent high-risk infection is the key driver of HPV-associated cancer risk"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Genital warts (condyloma acuminata) — low-risk types",
+      "Cervical intraepithelial neoplasia and cervical cancer — high-risk types",
+      "Oropharyngeal, anal, vulvar, vaginal, and penile cancers — high-risk types",
+      "Common cutaneous warts — certain other HPV types"
+    ],
+    "transmission": "Direct skin-to-skin or mucosal contact, most often sexual contact for genital/oropharyngeal types",
+    "epidemiology": "One of the most common sexually transmitted infections worldwide; the leading cause of cervical cancer globally; prophylactic vaccination (targeting the major high-risk and low-risk types) has substantially reduced HPV-related disease where uptake is high",
+    "labSignificance": "HPV DNA co-testing alongside Pap cytology has become a standard part of cervical cancer screening in many guidelines, reflecting how central persistent high-risk HPV infection is to cervical carcinogenesis"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — DNA testing/cytology diagnosis",
+    "importantDisease": "Genital warts; cervical and other anogenital/oropharyngeal cancers",
+    "importantTest": "HPV DNA testing, often paired with Pap cytology",
+    "distinguishingFeature": "Divided into low-risk (wart-causing) and high-risk (oncogenic) genotypes with distinct clinical significance"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — HPV (Human Papillomavirus)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hpv/"
+    }
+  ]
+}

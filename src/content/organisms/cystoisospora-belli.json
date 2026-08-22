@@ -1,0 +1,87 @@
+{
+  "id": "cystoisospora-belli",
+  "scientificName": "Cystoisospora belli",
+  "category": "protozoa",
+  "quickTags": [
+    "Apicomplexan",
+    "Acid-fast oocysts",
+    "AIDS-associated diarrhea"
+  ],
+  "searchKeywords": [
+    "isospora belli",
+    "c belli",
+    "cystoisosporiasis",
+    "isosporiasis"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Chromalveolata",
+    "phylum": "Apicomplexa",
+    "class": "Conoidasida",
+    "order": "Eucoccidiorida",
+    "family": "Sarcocystidae",
+    "genus": "Cystoisospora",
+    "species": "C. belli"
+  },
+  "morphology": {
+    "shape": "Elongated, ellipsoidal oocyst",
+    "size": "Oocysts ~20-30 x 10-19 µm — notably larger than Cryptosporidium or Cyclospora oocysts"
+  },
+  "protozoanDetails": {
+    "group": "apicomplexan",
+    "majorLocation": "intestinal",
+    "transmissionRoute": "fecal-oral",
+    "lifeCycleForm": "Oocyst (initially containing one sporoblast, later two sporocysts each with four sporozoites once mature)"
+  },
+  "habitat": {
+    "naturalHabitat": "Human small intestinal epithelium",
+    "hostAssociation": "Obligate human pathogen — no significant animal reservoir, unlike Cryptosporidium",
+    "environmentalOccurrence": "Oocysts shed in stool require time in the environment to mature (sporulate) before becoming infectious",
+    "reservoir": "Infected humans"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Modified acid-fast stain of stool",
+      "appearance": "Large, ellipsoidal, acid-fast oocysts, distinctly larger than Cryptosporidium oocysts",
+      "arrangement": "Individual oocysts"
+    },
+    "culture": {
+      "media": "Not cultured in clinical laboratories",
+      "growthCharacteristics": "Obligate intracellular parasite",
+      "colonyMorphology": "Not applicable"
+    }
+  },
+  "identificationClues": [
+    "Large, ellipsoidal, acid-fast oocysts on modified acid-fast stool stain — notably larger than Cryptosporidium's round oocysts",
+    "Eosinophilia is common, unlike most other causes of infectious diarrhea",
+    "Classic cause of prolonged, severe diarrhea in advanced HIV/AIDS"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Cystoisosporiasis (isosporiasis) — watery diarrhea, can become chronic and severe in immunocompromised hosts"
+    ],
+    "transmission": "Fecal-oral, via ingestion of sporulated (mature) oocysts in contaminated food or water",
+    "epidemiology": "An important opportunistic cause of chronic diarrhea in people with advanced HIV/AIDS, particularly in tropical/subtropical regions",
+    "labSignificance": "Oocyst size and acid-fast staining pattern distinguish it from Cryptosporidium and Cyclospora on the same modified acid-fast stool preparation; associated eosinophilia is a useful supporting clue"
+  },
+  "examFacts": {
+    "shape": "Ellipsoidal oocyst, apicomplexan",
+    "keyBiochemicalReaction": "Not applicable — acid-fast stain identification",
+    "importantDisease": "Chronic diarrhea in AIDS patients",
+    "importantTest": "Modified acid-fast stain of stool",
+    "distinguishingFeature": "Larger oocysts than Cryptosporidium; associated with peripheral eosinophilia, unusual among diarrheal pathogens"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "cryptosporidium-parvum",
+      "relationship": "similar-morphology"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC DPDx — Cystoisosporiasis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dpdx/cystoisosporiasis/"
+    }
+  ]
+}

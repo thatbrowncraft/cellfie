@@ -1,0 +1,135 @@
+{
+  "id": "clostridium-perfringens",
+  "scientificName": "Clostridium perfringens",
+  "category": "bacteria",
+  "quickTags": [
+    "Double zone hemolysis",
+    "Gas gangrene",
+    "Box-car shaped rods"
+  ],
+  "searchKeywords": [
+    "gas gangrene",
+    "c perfringens",
+    "myonecrosis",
+    "food poisoning"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Clostridia",
+    "order": "Eubacteriales",
+    "family": "Clostridiaceae",
+    "genus": "Clostridium",
+    "species": "C. perfringens"
+  },
+  "morphology": {
+    "shape": "Large rectangular (\"box-car\") rod",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single or short chains",
+    "arrangementCategory": "single",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~4-8 x 1 µm",
+    "sporeForming": true,
+    "capsule": "Prominent capsule in vivo",
+    "encapsulated": true,
+    "motility": "Non-motile — unusual among clostridia",
+    "motile": false,
+    "oxygenRequirement": "Obligate anaerobe (aerotolerant)",
+    "oxygenRequirementCategory": "obligate-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, sewage, and the GI tract of humans and animals",
+    "hostAssociation": "Normal gut flora; opportunistic pathogen in wounds and contaminated food",
+    "environmentalOccurrence": "Widespread in soil and decaying matter",
+    "reservoir": "Soil, human/animal GI tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Large Gram-positive rods, spores rarely seen in clinical specimens",
+      "arrangement": "Single or pairs"
+    },
+    "culture": {
+      "media": "Blood agar (anaerobic), egg yolk agar",
+      "growthCharacteristics": "Obligate anaerobe but aerotolerant; extremely rapid growth (generation time ~10 min)",
+      "colonyMorphology": "Large, flat, grayish colonies",
+      "pigmentation": "None",
+      "hemolysis": "Double zone of hemolysis (inner complete beta from theta toxin, outer incomplete from alpha toxin)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Lecithinase (Nagler reaction)",
+        "result": "+"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "+"
+      },
+      {
+        "test": "Gelatin liquefaction",
+        "result": "+"
+      },
+      {
+        "test": "Indole",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Large Gram-positive rods, non-motile",
+    "Double zone of hemolysis on blood agar",
+    "Positive Nagler (lecithinase) reaction",
+    "Rapid growth — generation time of about 10 minutes",
+    "Associated with gas gangrene and food poisoning"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Gas gangrene (clostridial myonecrosis)",
+      "Food poisoning (self-limited watery diarrhea)",
+      "Cellulitis and soft-tissue infections",
+      "Enteritis necroticans (pig-bel)"
+    ],
+    "virulenceFactors": [
+      "Alpha toxin (lecithinase/phospholipase C — key virulence factor in gas gangrene)",
+      "Theta toxin (perfringolysin O)",
+      "Enterotoxin (food poisoning)"
+    ],
+    "toxins": [
+      "Alpha toxin",
+      "Enterotoxin"
+    ],
+    "transmission": "Wound contamination with soil/spores; foodborne via improperly held cooked meats and gravies",
+    "epidemiology": "Common cause of traumatic and surgical wound gas gangrene; a leading cause of bacterial food poisoning worldwide",
+    "labSignificance": "Nagler reaction (lecithinase activity inhibited by specific antitoxin) confirms alpha toxin production"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Large box-car shaped rod",
+    "keyBiochemicalReaction": "Lecithinase positive, double zone hemolysis",
+    "importantDisease": "Gas gangrene, food poisoning",
+    "importantTest": "Nagler reaction; double zone hemolysis on blood agar",
+    "distinguishingFeature": "Extremely rapid generation time and double-zone hemolysis distinguish it from other clostridia"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "clostridium-tetani",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "clostridioides-difficile",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Clostridium perfringens",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/foodsafety/clostridium-perfringens.html"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Clostridium Perfringens\"",
+      "kind": "educational"
+    }
+  ]
+}

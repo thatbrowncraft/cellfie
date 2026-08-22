@@ -1,0 +1,111 @@
+{
+  "id": "nocardia-asteroides",
+  "scientificName": "Nocardia asteroides complex",
+  "category": "bacteria",
+  "quickTags": [
+    "Partially acid-fast",
+    "Branching filaments",
+    "Soil actinomycete"
+  ],
+  "searchKeywords": [
+    "nocardia",
+    "nocardiosis",
+    "n asteroides"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Actinomycetota (Actinobacteria)",
+    "class": "Actinomycetes",
+    "order": "Mycobacteriales",
+    "family": "Nocardiaceae",
+    "genus": "Nocardia",
+    "species": "N. asteroides complex"
+  },
+  "morphology": {
+    "shape": "Branching, filamentous rod resembling fungal hyphae",
+    "shapeCategory": "filamentous",
+    "arrangement": "Branching filaments that can fragment into rod/coccoid forms",
+    "arrangementCategory": "filamentous",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "Filaments of variable length, ~0.5-1.2 µm wide",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Weakly/partially acid-fast on modified (weak) acid-fast stain — a key distinguishing feature from Actinomyces, which is not acid-fast at all"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil and decaying organic matter worldwide",
+    "hostAssociation": "Environmental saprophyte; opportunistic pathogen, especially in immunocompromised hosts",
+    "environmentalOccurrence": "Widespread in soil",
+    "reservoir": "Soil"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Modified (weak) acid-fast stain; Gram stain",
+      "appearance": "Gram-positive, branching, beaded filaments; partially acid-fast",
+      "arrangement": "Branching filaments"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar, blood agar",
+      "growthCharacteristics": "Slow growing — may take 1-2 weeks",
+      "colonyMorphology": "Dry, chalky, folded colonies, often with a musty \"wet cardboard\" odor",
+      "pigmentation": "Variable — white, tan, orange, or yellow depending on species"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Modified acid-fast stain",
+        "result": "Weakly/partially positive"
+      },
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Urease",
+        "result": "Often +"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Branching, filamentous Gram-positive rods resembling fungal hyphae on Gram stain",
+    "Weakly/partially acid-fast on modified acid-fast stain — distinguishes it from the morphologically similar but acid-fast-negative Actinomyces",
+    "Slow-growing, dry, chalky colonies with a characteristic musty odor",
+    "Risk factor profile skews toward immunocompromised hosts (unlike Actinomyces, more linked to mucosal disruption)"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Pulmonary nocardiosis (cavitary pneumonia)",
+      "Cutaneous/subcutaneous nocardiosis (including mycetoma)",
+      "CNS nocardiosis (brain abscess) — often via hematogenous spread from a pulmonary focus"
+    ],
+    "transmission": "Inhalation of organisms from contaminated soil/dust; direct inoculation into skin (e.g. thorn injury) for cutaneous disease",
+    "epidemiology": "An opportunistic pathogen particularly affecting immunocompromised patients (e.g. those on chronic corticosteroids, transplant recipients, or with HIV/AIDS)",
+    "labSignificance": "Partial acid-fastness is the key laboratory feature separating Nocardia from Actinomyces, which otherwise looks very similar on Gram stain and shares a similar filamentous/branching morphology"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Branching filamentous rod",
+    "keyBiochemicalReaction": "Weakly/partially acid-fast",
+    "importantDisease": "Pulmonary and CNS nocardiosis in immunocompromised hosts",
+    "importantTest": "Modified (weak) acid-fast stain",
+    "distinguishingFeature": "Partially acid-fast, unlike the morphologically similar Actinomyces, which is not acid-fast at all"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "mycobacterium-tuberculosis",
+      "relationship": "similar-morphology"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Nocardiosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/nocardiosis/"
+    }
+  ]
+}

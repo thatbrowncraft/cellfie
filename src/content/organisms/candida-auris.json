@@ -1,0 +1,109 @@
+{
+  "id": "candida-auris",
+  "scientificName": "Candida auris",
+  "category": "fungi",
+  "quickTags": [
+    "Multidrug-resistant",
+    "Healthcare-associated",
+    "Hard to identify"
+  ],
+  "searchKeywords": [
+    "c auris",
+    "candida auris",
+    "mdr yeast",
+    "superbug fungus"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Saccharomycetes",
+    "order": "Saccharomycetales",
+    "family": "Debaryomycetaceae",
+    "genus": "Candidozyma",
+    "species": "C. auris"
+  },
+  "morphology": {
+    "shape": "Oval budding yeast",
+    "size": "~2.5-5 x 2-4.4 µm",
+    "notes": "Often reclassified taxonomically as Candidozyma auris; still commonly referred to clinically as Candida auris. Forms clusters of budding cells, usually without true hyphae or pseudohyphae"
+  },
+  "fungalDetails": {
+    "morphologicalType": "yeast",
+    "reproductiveStructures": [
+      "Budding cells (blastoconidia)"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Not well characterized in nature; thought to have emerged from a wetland/estuarine environmental niche",
+    "hostAssociation": "Colonizes human skin; opportunistic pathogen in hospitalized/long-term care patients",
+    "environmentalOccurrence": "Persists on hospital surfaces and equipment for extended periods, resisting many standard disinfectants",
+    "reservoir": "Human skin (colonization); contaminated healthcare surfaces and equipment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain/wet mount",
+      "appearance": "Budding yeast cells, morphologically similar to other Candida species",
+      "arrangement": "Clusters of budding cells"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar; CHROMagar Candida (variable, sometimes ambiguous color)",
+      "growthCharacteristics": "Grows at 37-42°C, tolerates higher salt concentrations than most Candida species",
+      "colonyMorphology": "Smooth, white to cream, sometimes pink colonies — not reliably distinguishable from other Candida species by colony appearance alone",
+      "pigmentation": "Variable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Germ tube test",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Frequently misidentified as other Candida species (e.g. C. haemulonii) by standard biochemical panels",
+    "Requires MALDI-TOF mass spectrometry or molecular (PCR/sequencing) methods for reliable identification",
+    "Multidrug resistance across multiple antifungal classes is common",
+    "Persists on healthcare surfaces, driving outbreaks in hospitals and long-term care facilities"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Invasive candidiasis (bloodstream infection)",
+      "Wound infections",
+      "Otitis",
+      "Colonization without infection in many patients"
+    ],
+    "virulenceFactors": [
+      "Biofilm formation on medical devices and surfaces",
+      "Adhesins facilitating skin/surface colonization"
+    ],
+    "transmission": "Healthcare-associated — spread via contaminated hands, equipment, and environmental surfaces; can persist for weeks on surfaces",
+    "epidemiology": "Emerged as a serious global public health threat; the CDC and WHO have designated it a critical priority pathogen due to multidrug resistance, difficulty of identification, and propensity for healthcare outbreaks",
+    "labSignificance": "Standard biochemical identification methods frequently misidentify it — designated an urgent public health threat requiring specialized identification and infection control measures"
+  },
+  "examFacts": {
+    "shape": "Budding yeast",
+    "keyBiochemicalReaction": "Germ tube negative; requires MALDI-TOF/molecular ID",
+    "importantDisease": "Invasive candidiasis, healthcare outbreaks",
+    "importantTest": "MALDI-TOF mass spectrometry or molecular sequencing (standard biochemical panels are unreliable)",
+    "distinguishingFeature": "Frequently multidrug-resistant and persists on hospital surfaces far longer than most Candida species"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "candida-albicans",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Candida auris",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/candida-auris/"
+    },
+    {
+      "name": "WHO — Fungal Priority Pathogens List",
+      "kind": "educational",
+      "url": "https://www.who.int/publications/i/item/9789240060241"
+    }
+  ]
+}

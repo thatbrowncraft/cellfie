@@ -1,0 +1,116 @@
+{
+  "id": "bacteroides-fragilis",
+  "scientificName": "Bacteroides fragilis",
+  "category": "bacteria",
+  "quickTags": [
+    "Obligate anaerobe",
+    "Bile resistant",
+    "Intra-abdominal infections"
+  ],
+  "searchKeywords": [
+    "b fragilis",
+    "bacteroides",
+    "anaerobic abscess"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacteroidota",
+    "class": "Bacteroidia",
+    "order": "Bacteroidales",
+    "family": "Bacteroidaceae",
+    "genus": "Bacteroides",
+    "species": "B. fragilis"
+  },
+  "morphology": {
+    "shape": "Pleomorphic rod",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "Single cells or pairs",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1.5-9 x 0.5-1.5 µm (highly variable)",
+    "sporeForming": false,
+    "capsule": "Prominent polysaccharide capsule",
+    "encapsulated": true,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate anaerobe (aerotolerant)",
+    "oxygenRequirementCategory": "obligate-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human colon — one of the most abundant members of normal gut flora",
+    "hostAssociation": "Normal commensal of the large intestine; opportunistic pathogen when it escapes the gut",
+    "environmentalOccurrence": "Not a significant free-living environmental organism",
+    "reservoir": "Human gastrointestinal tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative pleomorphic rods, often faintly/unevenly staining",
+      "arrangement": "Single cells or pairs"
+    },
+    "culture": {
+      "media": "Bacteroides bile esculin (BBE) agar, anaerobic blood agar",
+      "growthCharacteristics": "Obligate anaerobe; grows in the presence of 20% bile (unusual among anaerobes), aiding selective isolation",
+      "colonyMorphology": "Gray-white, circular colonies",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Bile resistance (grows in 20% bile)",
+        "result": "+"
+      },
+      {
+        "test": "Esculin hydrolysis",
+        "result": "+"
+      },
+      {
+        "test": "Catalase",
+        "result": "Variable, often weakly +"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative anaerobic rod that, unusually for an anaerobe, tolerates and even grows better with bile",
+    "Growth on Bacteroides bile esculin (BBE) agar is a key selective/differential feature",
+    "Most common anaerobic isolate from intra-abdominal infections and abscesses",
+    "Polymicrobial infections are typical — usually recovered alongside facultative anaerobes like E. coli"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Intra-abdominal abscesses",
+      "Peritonitis (often following bowel perforation)",
+      "Pelvic infections",
+      "Bacteremia (usually polymicrobial, following GI/pelvic source)"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule (antiphagocytic, promotes abscess formation)",
+      "Lipopolysaccharide (less potent endotoxin activity than typical Gram-negative LPS)",
+      "Various enzymes (e.g. superoxide dismutase) enhancing survival"
+    ],
+    "transmission": "Endogenous — arises from the patient's own gut flora following bowel injury, surgery, or perforation, not typically transmitted person-to-person",
+    "epidemiology": "The most frequently isolated anaerobic pathogen in clinical intra-abdominal and pelvic infections",
+    "labSignificance": "Bile tolerance is an unusual and useful selective feature, since most other obligate anaerobes are inhibited by bile salts"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Pleomorphic rod",
+    "keyBiochemicalReaction": "Bile resistant, esculin positive",
+    "importantDisease": "Intra-abdominal abscess, peritonitis",
+    "importantTest": "Growth on bile esculin agar",
+    "distinguishingFeature": "Tolerates and grows well in bile, unusual for an obligate anaerobe"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "clostridium-perfringens",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Bacteroides Fragilis\"",
+      "kind": "educational"
+    }
+  ]
+}

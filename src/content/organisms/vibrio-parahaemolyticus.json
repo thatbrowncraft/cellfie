@@ -1,0 +1,115 @@
+{
+  "id": "vibrio-parahaemolyticus",
+  "scientificName": "Vibrio parahaemolyticus",
+  "category": "bacteria",
+  "quickTags": [
+    "Halophilic",
+    "Curved rod",
+    "Raw seafood"
+  ],
+  "searchKeywords": [
+    "v parahaemolyticus",
+    "seafood poisoning",
+    "kanagawa phenomenon"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Vibrionales",
+    "family": "Vibrionaceae",
+    "genus": "Vibrio",
+    "species": "V. parahaemolyticus"
+  },
+  "morphology": {
+    "shape": "Curved rod (comma-shaped)",
+    "shapeCategory": "spiral",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~2-3 x 0.5-0.8 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile via a single polar flagellum",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Marine and estuarine environments worldwide",
+    "hostAssociation": "Free-living marine organism; opportunistic foodborne pathogen when ingested via seafood",
+    "environmentalOccurrence": "Halophilic (requires salt); common in warm coastal waters, concentrates in shellfish",
+    "reservoir": "Seawater, shellfish (especially raw/undercooked oysters)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative curved rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Thiosulfate-citrate-bile salts-sucrose (TCBS) agar",
+      "growthCharacteristics": "Halophilic — requires added NaCl to grow; does not grow well without salt",
+      "colonyMorphology": "Green colonies on TCBS agar (does not ferment sucrose, unlike V. cholerae which is yellow)",
+      "pigmentation": "None",
+      "hemolysis": "Beta-hemolytic on special blood agar (Kanagawa phenomenon in pathogenic strains)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Sucrose fermentation on TCBS",
+        "result": "−"
+      },
+      {
+        "test": "Requires NaCl for growth",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Halophilic — will not grow on media without added salt",
+    "Green (sucrose-negative) colonies on TCBS agar, unlike the yellow (sucrose-positive) V. cholerae",
+    "Kanagawa phenomenon (beta-hemolysis on a special blood agar) correlates with pathogenic strains",
+    "History of raw or undercooked seafood/shellfish consumption"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Acute gastroenteritis (watery or occasionally bloody diarrhea)",
+      "Wound infections after exposure to seawater",
+      "Rarely, septicemia in immunocompromised or cirrhotic patients"
+    ],
+    "virulenceFactors": [
+      "Thermostable direct hemolysin (TDH, responsible for the Kanagawa phenomenon)",
+      "TDH-related hemolysin (TRH)"
+    ],
+    "transmission": "Ingestion of raw or undercooked seafood, particularly oysters; wound contamination from seawater exposure",
+    "epidemiology": "A leading cause of seafood-associated bacterial gastroenteritis worldwide, particularly in coastal and island regions with high raw-seafood consumption",
+    "labSignificance": "Halophilic growth requirement and green TCBS colonies distinguish it from V. cholerae at the bench before confirmatory biochemical/serologic testing"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Curved rod",
+    "keyBiochemicalReaction": "Halophilic, sucrose negative on TCBS",
+    "importantDisease": "Seafood-associated gastroenteritis",
+    "importantTest": "TCBS agar (green colonies); Kanagawa phenomenon",
+    "distinguishingFeature": "Requires added salt to grow, unlike V. cholerae"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "vibrio-cholerae",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Vibrio parahaemolyticus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/vibrio/vibrio-parahaemolyticus.html"
+    }
+  ]
+}

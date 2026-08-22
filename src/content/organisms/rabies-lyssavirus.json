@@ -1,0 +1,68 @@
+{
+  "id": "rabies-lyssavirus",
+  "scientificName": "Rabies lyssavirus",
+  "commonName": "Rabies virus",
+  "category": "virus",
+  "quickTags": [
+    "ssRNA virus",
+    "Enveloped",
+    "Bullet-shaped virion",
+    "Nearly always fatal"
+  ],
+  "searchKeywords": [
+    "rabies",
+    "rabies virus",
+    "lyssavirus"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Rhabdoviridae",
+    "genus": "Lyssavirus",
+    "species": "Rabies lyssavirus"
+  },
+  "morphology": {
+    "shape": "Distinctive bullet-shaped, enveloped virion",
+    "size": "~180 x 75 nm"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Helical",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "other"
+  },
+  "habitat": {
+    "naturalHabitat": "Central nervous system and salivary glands of infected mammals",
+    "hostAssociation": "Zoonotic — infects a wide range of mammals; bats, raccoons, skunks, and foxes are important reservoirs in different regions; dogs are the main source of human cases globally",
+    "reservoir": "Wild and domestic mammals (species vary by region)"
+  },
+  "identificationClues": [
+    "Negri bodies — characteristic cytoplasmic inclusions in infected neurons — are a classic (though not always present or practical) histopathologic finding",
+    "Direct fluorescent antibody testing of brain tissue (post-mortem) or PCR/antibody testing of saliva, serum, and CSF are current diagnostic methods",
+    "History of an animal bite, particularly from a bat, raccoon, skunk, fox, or unvaccinated dog in an endemic area, is the essential clinical clue",
+    "Nearly universally fatal once symptoms begin, making prompt post-exposure prophylaxis after a suspected exposure critical"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Rabies — an acute, progressive encephalomyelitis that is nearly always fatal once clinical symptoms appear"
+    ],
+    "transmission": "Bite (or less commonly scratch/mucous membrane exposure to saliva) of an infected mammal",
+    "epidemiology": "Dog bites are the source of the large majority of human rabies deaths globally, concentrated in parts of Asia and Africa; in the United States and other countries with canine rabies control, bat exposures are now a leading source of human cases",
+    "labSignificance": "Because confirmatory testing (direct fluorescent antibody on brain tissue) is typically only definitive post-mortem, post-exposure prophylaxis decisions are made clinically and epidemiologically, not by waiting for a lab result"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — clinical/histopathologic/PCR diagnosis",
+    "importantDisease": "Rabies (encephalomyelitis)",
+    "importantTest": "Direct fluorescent antibody test on brain tissue (post-mortem); PCR/antibody testing of saliva, serum, CSF",
+    "distinguishingFeature": "Nearly universally fatal once symptomatic — post-exposure prophylaxis after a bite is the critical clinical intervention"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Rabies",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/rabies/"
+    }
+  ]
+}

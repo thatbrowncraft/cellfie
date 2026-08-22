@@ -1,0 +1,132 @@
+{
+  "id": "haemophilus-influenzae",
+  "scientificName": "Haemophilus influenzae",
+  "category": "bacteria",
+  "quickTags": [
+    "Requires X and V factors",
+    "Chocolate agar",
+    "Satellite phenomenon"
+  ],
+  "searchKeywords": [
+    "h influenzae",
+    "hib",
+    "haemophilus",
+    "meningitis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Pasteurellales",
+    "family": "Pasteurellaceae",
+    "genus": "Haemophilus",
+    "species": "H. influenzae"
+  },
+  "morphology": {
+    "shape": "Small coccobacillus",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells or short chains",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-1.5 x 0.3 µm",
+    "sporeForming": false,
+    "capsule": "Polysaccharide capsule in encapsulated strains (types a-f; type b historically most virulent)",
+    "encapsulated": true,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human upper respiratory tract",
+    "hostAssociation": "Obligate human commensal/pathogen; nasopharyngeal colonization common, especially with non-typeable strains",
+    "environmentalOccurrence": "Not found outside the human host",
+    "reservoir": "Human nasopharynx"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Small Gram-negative coccobacilli, pleomorphic",
+      "arrangement": "Single or short chains"
+    },
+    "culture": {
+      "media": "Chocolate agar (requires both X [hemin] and V [NAD] factors); does not grow on plain blood agar",
+      "growthCharacteristics": "Facultative anaerobe, fastidious; grows better with 5-10% CO2",
+      "colonyMorphology": "Small, smooth, translucent colonies on chocolate agar",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "X and V factor requirement",
+        "result": "Requires both"
+      },
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Satellite phenomenon around S. aureus streak",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Small Gram-negative coccobacilli",
+    "Grows on chocolate agar but not blood agar (requires X and V factors)",
+    "Satellite phenomenon around a Staphylococcus aureus streak on blood agar",
+    "Quellung reaction for capsular typing",
+    "Hib vaccine has dramatically reduced type b invasive disease"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Meningitis (historically the leading cause in children before Hib vaccination)",
+      "Epiglottitis",
+      "Otitis media and sinusitis (typically non-typeable strains)",
+      "Pneumonia",
+      "Bacteremia"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule (type b — polyribosylribitol phosphate, PRP)",
+      "IgA protease",
+      "Lipooligosaccharide"
+    ],
+    "transmission": "Respiratory droplets; direct contact",
+    "epidemiology": "Hib conjugate vaccine has nearly eliminated invasive type b disease in vaccinated populations; non-typeable (unencapsulated) strains remain a common cause of otitis media and sinusitis",
+    "labSignificance": "Satellite phenomenon demonstrates the organism's dependence on factors V (NAD) supplied by hemolyzed staphylococcal colonies"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Coccobacillus",
+    "keyBiochemicalReaction": "Requires X and V factors",
+    "importantDisease": "Meningitis (historically, pre-Hib vaccine), epiglottitis, otitis media",
+    "importantTest": "Satellite phenomenon; X/V factor requirement testing",
+    "distinguishingFeature": "Absolute requirement for both X (hemin) and V (NAD) factors, unlike most other Pasteurellaceae"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "neisseria-meningitidis",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "streptococcus-pneumoniae",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Haemophilus influenzae Disease",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hi-disease/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Haemophilus Influenzae\"",
+      "kind": "educational"
+    }
+  ]
+}

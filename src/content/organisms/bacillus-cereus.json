@@ -1,0 +1,133 @@
+{
+  "id": "bacillus-cereus",
+  "scientificName": "Bacillus cereus",
+  "category": "bacteria",
+  "quickTags": [
+    "Motile",
+    "Beta-hemolytic",
+    "Fried rice food poisoning"
+  ],
+  "searchKeywords": [
+    "b cereus",
+    "food poisoning",
+    "fried rice syndrome"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Bacillales",
+    "family": "Bacillaceae",
+    "genus": "Bacillus",
+    "species": "B. cereus"
+  },
+  "morphology": {
+    "shape": "Large rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~3-5 x 1-1.2 µm",
+    "sporeForming": true,
+    "capsule": "Not typically encapsulated",
+    "encapsulated": false,
+    "motility": "Motile via peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil and decaying organic matter",
+    "hostAssociation": "Environmental organism; opportunistic foodborne pathogen",
+    "environmentalOccurrence": "Ubiquitous in soil, dust, and vegetation; common contaminant of grains and rice",
+    "reservoir": "Soil; contaminated food, especially reheated rice/starchy foods"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Large Gram-positive rods with central-to-subterminal spores",
+      "arrangement": "Chains"
+    },
+    "culture": {
+      "media": "Blood agar, mannitol egg yolk polymyxin (MYP) agar",
+      "growthCharacteristics": "Facultative anaerobe; rapid growth",
+      "colonyMorphology": "Large, flat, dull, \"ground-glass\" colonies",
+      "pigmentation": "None",
+      "hemolysis": "Beta-hemolytic — distinguishes from B. anthracis"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Motility",
+        "result": "+"
+      },
+      {
+        "test": "Hemolysis",
+        "result": "+"
+      },
+      {
+        "test": "Lecithinase (egg yolk reaction)",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Large Gram-positive rods, motile",
+    "Beta-hemolytic on blood agar",
+    "Ground-glass colony morphology",
+    "Lecithinase positive on egg-yolk agar",
+    "Associated with reheated rice (\"fried rice syndrome\")"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Emetic-type food poisoning (rice-associated, rapid onset)",
+      "Diarrheal-type food poisoning (meat/sauces, delayed onset)",
+      "Opportunistic eye infections (post-traumatic endophthalmitis)"
+    ],
+    "virulenceFactors": [
+      "Cereulide (heat-stable emetic toxin)",
+      "Enterotoxins (heat-labile, diarrheal toxin)"
+    ],
+    "toxins": [
+      "Cereulide",
+      "Hemolysin BL",
+      "Non-hemolytic enterotoxin"
+    ],
+    "transmission": "Foodborne — spores survive cooking and germinate when food is left at room temperature/improperly reheated",
+    "epidemiology": "Classic cause of self-limited food poisoning associated with improperly stored rice and pasta dishes",
+    "labSignificance": "Motility and beta-hemolysis are the key features separating it from the non-motile, non-hemolytic Bacillus anthracis"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Large bacillus",
+    "keyBiochemicalReaction": "Motile, beta-hemolytic, lecithinase positive",
+    "importantDisease": "Food poisoning (emetic and diarrheal types)",
+    "importantTest": "Motility test; egg-yolk lecithinase reaction",
+    "distinguishingFeature": "Motile and beta-hemolytic, unlike Bacillus anthracis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "bacillus-anthracis",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "bacillus-subtilis",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Bacillus cereus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/foodsafety/bacillus-cereus.html"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Bacillus Cereus\"",
+      "kind": "educational"
+    }
+  ]
+}

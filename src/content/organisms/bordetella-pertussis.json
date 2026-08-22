@@ -1,0 +1,123 @@
+{
+  "id": "bordetella-pertussis",
+  "scientificName": "Bordetella pertussis",
+  "category": "bacteria",
+  "quickTags": [
+    "Whooping cough",
+    "Coccobacillus",
+    "Strict aerobe"
+  ],
+  "searchKeywords": [
+    "pertussis",
+    "whooping cough",
+    "b pertussis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Betaproteobacteria",
+    "order": "Burkholderiales",
+    "family": "Alcaligenaceae",
+    "genus": "Bordetella",
+    "species": "B. pertussis"
+  },
+  "morphology": {
+    "shape": "Coccobacillus",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells or pairs",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.5-1 x 0.2-0.5 µm",
+    "sporeForming": false,
+    "capsule": "Capsulated",
+    "encapsulated": true,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human respiratory tract only",
+    "hostAssociation": "Strict human pathogen — no animal reservoir or environmental source",
+    "environmentalOccurrence": "Does not survive well outside the human host",
+    "reservoir": "Human respiratory tract (infected/colonized individuals)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain; direct fluorescent antibody (DFA) testing",
+      "appearance": "Gram-negative coccobacilli",
+      "arrangement": "Single or pairs"
+    },
+    "culture": {
+      "media": "Bordet-Gengou agar or Regan-Lowe charcoal agar (selective)",
+      "growthCharacteristics": "Strict aerobe; slow growing, fastidious, requires 3-7 days",
+      "colonyMorphology": "Small, smooth, glistening \"mercury drop\" colonies",
+      "pigmentation": "None",
+      "hemolysis": "Faint hemolysis on Bordet-Gengou agar"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Urease",
+        "result": "−"
+      },
+      {
+        "test": "Motility",
+        "result": "−"
+      },
+      {
+        "test": "Nitrate reduction",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative coccobacillus",
+    "Fastidious growth on Bordet-Gengou or Regan-Lowe agar",
+    "\"Mercury drop\" colony appearance",
+    "Nasopharyngeal swab with special transport media required",
+    "PCR now the primary diagnostic method"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Pertussis (whooping cough)"
+    ],
+    "virulenceFactors": [
+      "Pertussis toxin",
+      "Filamentous hemagglutinin (adhesin)",
+      "Tracheal cytotoxin (damages ciliated respiratory epithelium)",
+      "Adenylate cyclase toxin"
+    ],
+    "toxins": [
+      "Pertussis toxin",
+      "Tracheal cytotoxin"
+    ],
+    "transmission": "Respiratory droplets, highly contagious",
+    "epidemiology": "Vaccine-preventable (DTaP/Tdap); resurgence linked to waning vaccine immunity and under-vaccination; infants too young to be fully vaccinated are at highest risk of severe disease",
+    "labSignificance": "PCR of nasopharyngeal swab has largely replaced culture as the primary diagnostic method due to the organism's fastidious, slow growth"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Coccobacillus",
+    "keyBiochemicalReaction": "Oxidase positive, non-motile, fastidious",
+    "importantDisease": "Whooping cough (pertussis)",
+    "importantTest": "PCR of nasopharyngeal swab; culture on Bordet-Gengou agar",
+    "distinguishingFeature": "Strictly human pathogen with three clinical stages (catarrhal, paroxysmal, convalescent)"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Pertussis (Whooping Cough)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/pertussis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Pertussis\"",
+      "kind": "educational"
+    }
+  ]
+}

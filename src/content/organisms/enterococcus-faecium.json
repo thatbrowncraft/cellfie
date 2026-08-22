@@ -1,0 +1,115 @@
+{
+  "id": "enterococcus-faecium",
+  "scientificName": "Enterococcus faecium",
+  "category": "bacteria",
+  "quickTags": [
+    "VRE-associated",
+    "Bile-esculin positive",
+    "Nosocomial"
+  ],
+  "searchKeywords": [
+    "e faecium",
+    "vre",
+    "vancomycin resistant enterococcus faecium"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Enterococcaceae",
+    "genus": "Enterococcus",
+    "species": "E. faecium"
+  },
+  "morphology": {
+    "shape": "Cocci in pairs/short chains",
+    "shapeCategory": "coccus",
+    "arrangement": "Pairs and short chains",
+    "arrangementCategory": "pairs",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-1 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human/animal gastrointestinal tract",
+    "hostAssociation": "Commensal gut organism; opportunistic nosocomial pathogen",
+    "environmentalOccurrence": "Persists on hospital surfaces",
+    "reservoir": "Human GI tract, healthcare environment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in pairs/chains",
+      "arrangement": "Pairs/short chains"
+    },
+    "culture": {
+      "media": "Bile-esculin agar, blood agar",
+      "growthCharacteristics": "Grows in bile and 6.5% NaCl",
+      "colonyMorphology": "Small gray-white colonies",
+      "pigmentation": "None",
+      "hemolysis": "Usually non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Bile-esculin hydrolysis",
+        "result": "+"
+      },
+      {
+        "test": "Growth in 6.5% NaCl",
+        "result": "+"
+      },
+      {
+        "test": "PYR test",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive cocci, bile-esculin positive, salt tolerant — same core enterococcal profile as E. faecalis",
+    "Distinguished from E. faecalis by species-level biochemical/molecular typing",
+    "Disproportionately associated with vancomycin resistance (VRE) compared to E. faecalis"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Nosocomial bacteremia",
+      "Urinary tract infections",
+      "Intra-abdominal infections",
+      "Endocarditis (less common than E. faecalis)"
+    ],
+    "virulenceFactors": [
+      "Biofilm formation",
+      "Intrinsic and acquired antibiotic resistance"
+    ],
+    "transmission": "Endogenous GI flora; nosocomial spread via contaminated hands/surfaces",
+    "epidemiology": "The Enterococcus species most frequently associated with vancomycin resistance (VRE) in many healthcare settings, an important infection-control concern",
+    "labSignificance": "Species-level identification (vs. E. faecalis) matters clinically because resistance patterns and typical vancomycin-resistance rates differ substantially between the two"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus (pairs/chains)",
+    "keyBiochemicalReaction": "Bile-esculin positive, salt tolerant",
+    "importantDisease": "Nosocomial bacteremia, VRE infections",
+    "importantTest": "Bile-esculin test; vancomycin susceptibility testing",
+    "distinguishingFeature": "More frequently vancomycin-resistant than E. faecalis in most reported settings"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "enterococcus-faecalis",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Enterococci in Healthcare Settings",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hai/organisms/vre/vre.html"
+    }
+  ]
+}

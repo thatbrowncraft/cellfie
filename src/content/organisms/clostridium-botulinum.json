@@ -1,0 +1,108 @@
+{
+  "id": "clostridium-botulinum",
+  "scientificName": "Clostridium botulinum",
+  "category": "bacteria",
+  "quickTags": [
+    "Botulism",
+    "Neurotoxin",
+    "Spore-forming anaerobe"
+  ],
+  "searchKeywords": [
+    "botulism",
+    "c botulinum",
+    "botulinum toxin"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Clostridia",
+    "order": "Eubacteriales",
+    "family": "Clostridiaceae",
+    "genus": "Clostridium",
+    "species": "C. botulinum"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~4-8 x 1 µm",
+    "sporeForming": true,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile via peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Obligate anaerobe",
+    "oxygenRequirementCategory": "obligate-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil and sediment worldwide",
+    "hostAssociation": "Environmental organism; toxin-mediated human/animal pathogen",
+    "environmentalOccurrence": "Spores ubiquitous in soil; can germinate in improperly canned/preserved low-acid foods",
+    "reservoir": "Soil; contaminated home-canned or improperly preserved foods; honey (infant botulism)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive rods with subterminal spores (\"tennis racket\" appearance)",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Anaerobic blood agar, cooked meat broth",
+      "growthCharacteristics": "Strict anaerobe",
+      "colonyMorphology": "Irregular, spreading colonies with hemolysis",
+      "pigmentation": "None",
+      "hemolysis": "Beta-hemolytic (most strains)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Toxin bioassay (mouse neutralization) or PCR for toxin genes",
+        "result": "Positive for botulinum toxin genes/activity in toxigenic strains"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Diagnosis is primarily clinical, confirmed by detecting botulinum toxin in serum, stool, or food, not by routine culture",
+    "Subterminal spores give a \"tennis racket\" appearance on Gram stain",
+    "History of home-canned/improperly preserved food, wound contamination, or (in infants) honey ingestion"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Foodborne botulism",
+      "Wound botulism",
+      "Infant botulism (from ingested spores, not preformed toxin)"
+    ],
+    "virulenceFactors": [
+      "Botulinum neurotoxin (types A-G) — blocks acetylcholine release at the neuromuscular junction, causing flaccid paralysis"
+    ],
+    "toxins": [
+      "Botulinum toxin"
+    ],
+    "transmission": "Ingestion of preformed toxin in improperly preserved food (foodborne); spore contamination of wounds (wound botulism); spore ingestion by infants, notably from honey (infant botulism)",
+    "epidemiology": "Rare but medically urgent — foodborne botulism is a public health emergency requiring rapid antitoxin administration; infant botulism is why honey isn't recommended for children under 12 months",
+    "labSignificance": "Standard cultures don't establish the diagnosis — toxin detection (mouse bioassay historically, increasingly PCR/immunoassay) in serum, stool, or the suspect food is required"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Toxin detection, not routine biochemistry",
+    "importantDisease": "Botulism (flaccid paralysis)",
+    "importantTest": "Toxin bioassay/immunoassay in serum, stool, or food",
+    "distinguishingFeature": "Botulinum toxin blocks acetylcholine release, causing descending flaccid paralysis — the opposite mechanism of tetanus toxin"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "clostridium-tetani",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Botulism",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/botulism/"
+    }
+  ]
+}

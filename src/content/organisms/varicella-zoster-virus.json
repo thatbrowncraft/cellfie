@@ -1,0 +1,82 @@
+{
+  "id": "varicella-zoster-virus",
+  "scientificName": "Human alphaherpesvirus 3",
+  "commonName": "Varicella-zoster virus (VZV)",
+  "category": "virus",
+  "quickTags": [
+    "dsDNA virus",
+    "Enveloped",
+    "Chickenpox and shingles"
+  ],
+  "searchKeywords": [
+    "vzv",
+    "chickenpox",
+    "shingles",
+    "varicella",
+    "herpes zoster"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Orthoherpesviridae",
+    "genus": "Varicellovirus",
+    "species": "Human alphaherpesvirus 3"
+  },
+  "morphology": {
+    "shape": "Spherical, enveloped virion with icosahedral capsid",
+    "size": "~150-200 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "dna",
+    "genomeStrandedness": "dsdna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human respiratory epithelium and skin during primary infection; establishes lifelong latency in dorsal root/cranial nerve ganglia",
+    "hostAssociation": "Obligate human pathogen",
+    "reservoir": "Infected humans"
+  },
+  "identificationClues": [
+    "Primary infection (varicella/chickenpox) causes a generalized vesicular rash in successive crops (\"dew drops on a rose petal\")",
+    "Reactivation (herpes zoster/shingles) produces a painful, dermatomal vesicular rash",
+    "PCR of vesicle fluid is the preferred confirmatory test",
+    "Live attenuated varicella vaccine and recombinant zoster vaccine are both available"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Varicella (chickenpox) — primary infection",
+      "Herpes zoster (shingles) — reactivation from dorsal root ganglia",
+      "Postherpetic neuralgia",
+      "Congenital varicella syndrome if maternal infection occurs early in pregnancy"
+    ],
+    "transmission": "Respiratory droplets and direct contact with vesicle fluid; highly contagious",
+    "epidemiology": "Routine childhood varicella vaccination has substantially reduced primary infection in vaccinating countries; herpes zoster risk increases with age and immunosuppression due to reactivation of latent virus",
+    "labSignificance": "Dermatomal distribution of the rash is a key clinical clue distinguishing zoster reactivation from other vesicular eruptions"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — clinical/PCR diagnosis",
+    "importantDisease": "Chickenpox (primary), shingles (reactivation)",
+    "importantTest": "PCR of vesicle fluid; Tzanck smear",
+    "distinguishingFeature": "Same virus causes two distinct diseases: varicella on primary infection and zoster on later reactivation from ganglia"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "herpes-simplex-virus-1",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Chickenpox (Varicella)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/chickenpox/"
+    },
+    {
+      "name": "CDC — Shingles (Herpes Zoster)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/shingles/"
+    }
+  ]
+}

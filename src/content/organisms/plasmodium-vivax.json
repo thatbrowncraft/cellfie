@@ -1,0 +1,95 @@
+{
+  "id": "plasmodium-vivax",
+  "scientificName": "Plasmodium vivax",
+  "category": "protozoa",
+  "quickTags": [
+    "Apicomplexan",
+    "Hypnozoites (relapsing)",
+    "Anopheles-transmitted"
+  ],
+  "searchKeywords": [
+    "p vivax",
+    "malaria",
+    "tertian malaria",
+    "hypnozoite relapse"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Chromalveolata",
+    "phylum": "Apicomplexa",
+    "class": "Aconoidasida",
+    "order": "Haemospororida",
+    "family": "Plasmodiidae",
+    "genus": "Plasmodium",
+    "species": "P. vivax"
+  },
+  "morphology": {
+    "shape": "Ring, trophozoite, schizont, and gametocyte stages within red blood cells",
+    "size": "Infected RBCs are typically enlarged with fine Schüffner's dots"
+  },
+  "protozoanDetails": {
+    "group": "apicomplexan",
+    "majorLocation": "blood",
+    "transmissionRoute": "vector-borne",
+    "lifeCycleForm": "Ring, ameboid trophozoite, schizont, and gametocyte stages in blood; dormant hypnozoites in the liver responsible for relapse"
+  },
+  "habitat": {
+    "naturalHabitat": "Human liver (hepatic stage) and red blood cells (erythrocytic stage); Anopheles mosquito (sexual/sporogonic stage)",
+    "hostAssociation": "Human-mosquito life cycle; preferentially invades reticulocytes (young red blood cells), limiting parasitemia compared to P. falciparum",
+    "environmentalOccurrence": "Widespread in tropical and subtropical regions, notably South/Southeast Asia and Latin America",
+    "reservoir": "Infected humans; Anopheles mosquitoes as the vector"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Giemsa-stained thick and thin blood smears",
+      "appearance": "Enlarged infected RBCs with fine Schüffner's dots; ameboid trophozoites; schizonts with 12-24 merozoites",
+      "arrangement": "Intraerythrocytic parasites at multiple developmental stages simultaneously"
+    },
+    "culture": {
+      "media": "Not routinely cultured clinically",
+      "growthCharacteristics": "Obligate intracellular parasite with a complex human-mosquito life cycle",
+      "colonyMorphology": "Not applicable"
+    }
+  },
+  "identificationClues": [
+    "Giemsa-stained thick and thin blood smears remain the diagnostic gold standard",
+    "Enlarged infected RBCs with Schüffner's dots distinguish it from P. falciparum",
+    "Rapid diagnostic tests (RDTs) detect Plasmodium antigens",
+    "Classic 48-hour (tertian) fever cycle",
+    "Hypnozoite liver stage causes relapse months to years after initial infection"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Malaria (tertian pattern — fever every 48 hours)",
+      "Relapsing malaria due to reactivation of dormant liver hypnozoites"
+    ],
+    "transmission": "Bite of an infected female Anopheles mosquito",
+    "epidemiology": "The most geographically widespread cause of human malaria, especially prevalent in South and Southeast Asia and parts of Latin America; generally lower mortality than P. falciparum but a major cause of morbidity due to relapse",
+    "labSignificance": "Requires treatment with a hypnozoite-active agent (e.g. primaquine or tafenoquine, after G6PD testing) in addition to blood-stage therapy to prevent relapse"
+  },
+  "examFacts": {
+    "shape": "Intraerythrocytic apicomplexan parasite",
+    "keyBiochemicalReaction": "Not applicable — blood smear/antigen diagnosis",
+    "importantDisease": "Tertian (48-hour cycle) relapsing malaria",
+    "importantTest": "Giemsa-stained blood smear; rapid diagnostic antigen test",
+    "distinguishingFeature": "Forms dormant hepatic hypnozoites responsible for relapse, unlike P. falciparum"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "plasmodium-falciparum",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Malaria",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/malaria/"
+    },
+    {
+      "name": "CDC DPDx — Malaria",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dpdx/malaria/"
+    }
+  ]
+}

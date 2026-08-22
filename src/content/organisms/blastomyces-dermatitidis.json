@@ -1,0 +1,95 @@
+{
+  "id": "blastomyces-dermatitidis",
+  "scientificName": "Blastomyces dermatitidis",
+  "category": "fungi",
+  "quickTags": [
+    "Dimorphic fungus",
+    "Broad-based budding yeast",
+    "Great Lakes/Ohio Valley"
+  ],
+  "searchKeywords": [
+    "blastomycosis",
+    "b dermatitidis"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Onygenales",
+    "family": "Ajellomycetaceae",
+    "genus": "Blastomyces",
+    "species": "B. dermatitidis"
+  },
+  "morphology": {
+    "shape": "Dimorphic: mold form at room temperature, thick-walled yeast with broad-based budding at body temperature",
+    "size": "Yeast form ~8-15 µm diameter",
+    "notes": "The broad-based bud (a wide connection between mother and daughter cell) is a distinctive diagnostic feature"
+  },
+  "fungalDetails": {
+    "morphologicalType": "dimorphic",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Broad-based budding yeast (tissue form)",
+      "Conidia (mold form)"
+    ],
+    "clinicalGroup": "systemic"
+  },
+  "habitat": {
+    "naturalHabitat": "Moist soil rich in organic/decaying matter, often near waterways",
+    "hostAssociation": "Environmental saprophyte; opportunistic and sometimes primary pathogen even in immunocompetent hosts",
+    "environmentalOccurrence": "Endemic to the Ohio and Mississippi River valleys and the Great Lakes region of North America",
+    "reservoir": "Soil, decaying wood/vegetation in endemic regions"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "KOH prep or Giemsa/methenamine silver stain of tissue/sputum",
+      "appearance": "Thick-walled yeast with characteristic broad-based budding in tissue",
+      "arrangement": "Single budding yeast cells"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar (mold form, 25-30°C); enriched blood agar (yeast form, 37°C)",
+      "growthCharacteristics": "Slow growing — mold form can take 1-4 weeks",
+      "colonyMorphology": "White to tan, cottony mold colonies at room temperature; wrinkled, waxy yeast colonies at 37°C",
+      "pigmentation": "White to tan"
+    }
+  },
+  "identificationClues": [
+    "Broad-based budding yeast on direct microscopy of tissue/sputum — the classic diagnostic clue",
+    "Thermal dimorphism (mold at room temperature, yeast at 37°C)",
+    "Urine/serum antigen testing available and faster than culture",
+    "Exposure history in the Ohio/Mississippi River valley or Great Lakes region"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Pulmonary blastomycosis (can mimic bacterial pneumonia or malignancy)",
+      "Cutaneous blastomycosis (verrucous or ulcerative skin lesions)",
+      "Disseminated blastomycosis (bone, genitourinary tract, CNS)"
+    ],
+    "transmission": "Inhalation of conidia from disturbed moist soil, often near rivers/waterways",
+    "epidemiology": "Endemic to the Ohio and Mississippi River valleys and the Great Lakes region of North America; unlike many systemic fungal infections, causes significant disease even in immunocompetent hosts",
+    "labSignificance": "Direct visualization of broad-based budding yeast in tissue is often diagnostic and faster than waiting for the slow-growing culture"
+  },
+  "examFacts": {
+    "shape": "Dimorphic fungus (mold/yeast)",
+    "keyBiochemicalReaction": "Not applicable — visual/antigen diagnosis",
+    "importantDisease": "Blastomycosis (pulmonary, cutaneous, disseminated)",
+    "importantTest": "Direct microscopy showing broad-based budding yeast; urine/serum antigen test",
+    "distinguishingFeature": "Broad-based budding, distinguishing it microscopically from the narrow-based budding of Cryptococcus and other yeasts"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "histoplasma-capsulatum",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Blastomycosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/blastomycosis/"
+    }
+  ]
+}

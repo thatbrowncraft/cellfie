@@ -1,0 +1,128 @@
+{
+  "id": "enterococcus-faecalis",
+  "scientificName": "Enterococcus faecalis",
+  "category": "bacteria",
+  "quickTags": [
+    "Bile-esculin positive",
+    "Grows in 6.5% NaCl",
+    "PYR positive"
+  ],
+  "searchKeywords": [
+    "e faecalis",
+    "enterococcus",
+    "vre",
+    "vancomycin resistant enterococcus"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Enterococcaceae",
+    "genus": "Enterococcus",
+    "species": "E. faecalis"
+  },
+  "morphology": {
+    "shape": "Cocci in pairs/short chains",
+    "shapeCategory": "coccus",
+    "arrangement": "Pairs and short chains",
+    "arrangementCategory": "pairs",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.6-2 µm",
+    "sporeForming": false,
+    "capsule": "Not typically encapsulated",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Normal flora of the human gastrointestinal tract",
+    "hostAssociation": "Commensal gut organism; opportunistic pathogen",
+    "environmentalOccurrence": "Hardy — survives in a wide range of environments, including hospital surfaces",
+    "reservoir": "Human and animal GI tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci",
+      "arrangement": "Pairs and short chains"
+    },
+    "culture": {
+      "media": "Bile-esculin agar, blood agar",
+      "growthCharacteristics": "Grows in 6.5% NaCl and bile; tolerant of harsh conditions",
+      "colonyMorphology": "Small, gray-white colonies",
+      "pigmentation": "None",
+      "hemolysis": "Usually non-hemolytic (gamma), occasionally alpha or beta"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "−"
+      },
+      {
+        "test": "Bile-esculin hydrolysis",
+        "result": "+"
+      },
+      {
+        "test": "Growth in 6.5% NaCl",
+        "result": "+"
+      },
+      {
+        "test": "PYR test",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive cocci in pairs/chains",
+    "Bile-esculin positive",
+    "Grows in 6.5% NaCl broth",
+    "PYR positive",
+    "Often confused with streptococci but tolerates harsher conditions"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Urinary tract infections",
+      "Intra-abdominal and pelvic infections",
+      "Endocarditis",
+      "Bacteremia (often nosocomial)"
+    ],
+    "virulenceFactors": [
+      "Cytolysin",
+      "Gelatinase",
+      "Aggregation substance",
+      "Adhesins"
+    ],
+    "transmission": "Endogenous from patient's own GI flora; nosocomial transmission via hands and contaminated surfaces",
+    "epidemiology": "Common nosocomial pathogen; vancomycin-resistant Enterococcus (VRE) is a significant infection-control concern",
+    "labSignificance": "Bile-esculin positivity plus growth in 6.5% NaCl distinguishes enterococci from other catalase-negative, chain-forming Gram-positive cocci"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus (pairs/chains)",
+    "keyBiochemicalReaction": "Bile-esculin positive, grows in 6.5% NaCl",
+    "importantDisease": "UTI, endocarditis, nosocomial bacteremia",
+    "importantTest": "Bile-esculin hydrolysis and salt tolerance test",
+    "distinguishingFeature": "Tolerates bile and high salt concentrations, unlike most streptococci"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "streptococcus-pyogenes",
+      "relationship": "similar-morphology"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Enterococci in Healthcare Settings",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hai/organisms/vre/vre.html"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Enterococcus\"",
+      "kind": "educational"
+    }
+  ]
+}

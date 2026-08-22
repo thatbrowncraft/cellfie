@@ -1,0 +1,88 @@
+{
+  "id": "leishmania-donovani",
+  "scientificName": "Leishmania donovani",
+  "category": "protozoa",
+  "quickTags": [
+    "Flagellate",
+    "Sandfly-borne",
+    "Visceral leishmaniasis"
+  ],
+  "searchKeywords": [
+    "kala azar",
+    "visceral leishmaniasis",
+    "l donovani",
+    "leishmania"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Excavata",
+    "phylum": "Euglenozoa",
+    "class": "Kinetoplastea",
+    "order": "Trypanosomatida",
+    "family": "Trypanosomatidae",
+    "genus": "Leishmania",
+    "species": "L. donovani"
+  },
+  "morphology": {
+    "shape": "Amastigote (round/oval, intracellular) in humans; promastigote (elongated, flagellated) in the sandfly vector",
+    "size": "Amastigotes ~2-5 µm; promastigotes ~15-30 µm including flagellum"
+  },
+  "protozoanDetails": {
+    "group": "flagellate",
+    "majorLocation": "tissue",
+    "transmissionRoute": "vector-borne",
+    "lifeCycleForm": "Amastigote (non-flagellated, intracellular within macrophages — the human/diagnostic tissue form) and promastigote (flagellated, extracellular — the sandfly-stage/culture form)"
+  },
+  "habitat": {
+    "naturalHabitat": "Reticuloendothelial system (spleen, liver, bone marrow) of the human/mammalian host; midgut of sandflies",
+    "hostAssociation": "Zoonotic in some regions (dogs, rodents as reservoirs) and anthroponotic (human-to-sandfly-to-human) in others depending on the region",
+    "environmentalOccurrence": "Transmitted by female Phlebotomus (Old World) or Lutzomyia (New World) sandflies",
+    "reservoir": "Infected humans and, in some regions, dogs and other mammals; sandfly vector"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Giemsa stain of bone marrow, splenic, or lymph node aspirate",
+      "appearance": "Small, round-to-oval amastigotes with a nucleus and kinetoplast, seen within macrophages",
+      "arrangement": "Intracellular clusters within macrophages"
+    },
+    "culture": {
+      "media": "NNN (Novy-MacNeal-Nicolle) medium",
+      "growthCharacteristics": "Promastigote form grows in specialized media, used mainly in reference laboratories",
+      "colonyMorphology": "Not applicable — grows as motile promastigotes in liquid/biphasic medium"
+    }
+  },
+  "identificationClues": [
+    "Amastigotes visualized within macrophages on Giemsa-stained bone marrow, spleen, or lymph node aspirate",
+    "Serology and PCR are increasingly used alongside or instead of invasive tissue sampling",
+    "Marked hepatosplenomegaly, fever, weight loss, and pancytopenia (\"kala-azar,\" meaning \"black fever\") are classic clinical clues"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Visceral leishmaniasis (kala-azar) — fever, hepatosplenomegaly, pancytopenia, wasting",
+      "Post-kala-azar dermal leishmaniasis (a later cutaneous complication in some patients)"
+    ],
+    "transmission": "Bite of an infected female sandfly (Phlebotomus species in the Old World)",
+    "epidemiology": "Endemic to parts of the Indian subcontinent, East Africa, and Brazil; visceral leishmaniasis is fatal in the large majority of untreated cases",
+    "labSignificance": "Tissue aspirate microscopy (bone marrow being relatively safer than splenic aspirate) remains a key diagnostic method, though serology/PCR are increasingly favored where available"
+  },
+  "examFacts": {
+    "shape": "Amastigote (intracellular), flagellate genus",
+    "keyBiochemicalReaction": "Not applicable — microscopy/serology diagnosis",
+    "importantDisease": "Visceral leishmaniasis (kala-azar)",
+    "importantTest": "Giemsa-stained bone marrow/splenic aspirate showing amastigotes",
+    "distinguishingFeature": "Causes systemic (visceral) disease with marked hepatosplenomegaly, unlike cutaneous Leishmania species"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "trypanosoma-cruzi",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC DPDx — Leishmaniasis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dpdx/leishmaniasis/"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "sars-cov-2",
+  "scientificName": "Severe acute respiratory syndrome coronavirus 2",
+  "commonName": "SARS-CoV-2",
+  "category": "virus",
+  "quickTags": [
+    "ssRNA virus",
+    "Enveloped",
+    "Spike protein"
+  ],
+  "searchKeywords": [
+    "covid",
+    "covid-19",
+    "coronavirus",
+    "sars cov 2"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Coronaviridae",
+    "genus": "Betacoronavirus",
+    "species": "Severe acute respiratory syndrome-related coronavirus"
+  },
+  "morphology": {
+    "shape": "Spherical, enveloped virion with characteristic club-shaped spike (S) protein projections giving a \"crown\" appearance on electron microscopy",
+    "size": "~60-140 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Helical nucleocapsid",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human respiratory epithelium; likely originated from an animal (zoonotic) reservoir",
+    "hostAssociation": "Infects cells expressing the ACE2 receptor, notably respiratory epithelium",
+    "reservoir": "Infected humans; suspected animal reservoirs (e.g. bats) in its zoonotic origin"
+  },
+  "identificationClues": [
+    "Diagnosed by nucleic acid amplification testing (RT-PCR) or rapid antigen testing of respiratory specimens",
+    "Spike (S) protein binds the ACE2 receptor to mediate cell entry",
+    "Multiple variants of concern have emerged with differing transmissibility and immune-evasion properties",
+    "mRNA and other vaccine platforms target the spike protein"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "COVID-19 — ranging from asymptomatic/mild upper respiratory illness to severe pneumonia, acute respiratory distress syndrome, and multi-organ complications",
+      "Post-acute sequelae of COVID-19 (\"long COVID\") in a subset of patients"
+    ],
+    "transmission": "Primarily respiratory — via respiratory droplets and aerosols; also possible via contact with contaminated surfaces",
+    "epidemiology": "Caused the COVID-19 pandemic declared by WHO in March 2020; widespread vaccination and prior infection have substantially reduced severe disease and mortality in many populations, though the virus continues to circulate and evolve",
+    "labSignificance": "RT-PCR remains the diagnostic gold standard; rapid antigen tests offer faster but generally less sensitive point-of-care detection"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — RT-PCR/antigen diagnosis",
+    "importantDisease": "COVID-19",
+    "importantTest": "RT-PCR of nasopharyngeal/nasal swab; rapid antigen test",
+    "distinguishingFeature": "Spike glycoprotein mediates ACE2 receptor binding and is the primary target of current vaccines"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "influenza-a-virus",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — COVID-19",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/covid/"
+    },
+    {
+      "name": "WHO — Coronavirus disease (COVID-19)",
+      "kind": "educational",
+      "url": "https://www.who.int/health-topics/coronavirus"
+    }
+  ]
+}

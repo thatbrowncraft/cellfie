@@ -1,0 +1,125 @@
+{
+  "id": "shigella-flexneri",
+  "scientificName": "Shigella flexneri",
+  "category": "bacteria",
+  "quickTags": [
+    "Non-motile",
+    "Non-lactose fermenter",
+    "Bacillary dysentery"
+  ],
+  "searchKeywords": [
+    "s flexneri",
+    "shigellosis",
+    "bacillary dysentery"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Enterobacteriaceae",
+    "genus": "Shigella",
+    "species": "S. flexneri"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~2-3 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile — distinguishes Shigella from most other Enterobacterales",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human intestinal tract only — no significant animal reservoir",
+    "hostAssociation": "Obligate human pathogen",
+    "environmentalOccurrence": "Survives in contaminated water/food; very low infectious dose",
+    "reservoir": "Infected/carrier humans"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar, Hektoen enteric/XLD agar",
+      "growthCharacteristics": "Facultative anaerobe",
+      "colonyMorphology": "Colorless (non-lactose fermenting) colonies on MacConkey; no H2S production, unlike Salmonella, on XLD",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Lactose fermentation",
+        "result": "−"
+      },
+      {
+        "test": "Motility",
+        "result": "−"
+      },
+      {
+        "test": "H2S production",
+        "result": "−"
+      },
+      {
+        "test": "Indole",
+        "result": "Variable"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative, non-lactose-fermenting rod",
+    "Non-motile — a key feature distinguishing it from most other Enterobacterales, including Salmonella",
+    "H2S negative on XLD/TSI, unlike most Salmonella",
+    "Very low infectious dose (as few as 10-100 organisms)"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Shigellosis (bacillary dysentery) — fever, abdominal cramps, bloody mucoid diarrhea"
+    ],
+    "virulenceFactors": [
+      "Shiga toxin (potent in S. dysenteriae, present at lower levels in other species)",
+      "Invasion plasmid antigens allowing invasion of colonic epithelium",
+      "Very low infectious dose enabling person-to-person spread"
+    ],
+    "toxins": [
+      "Shiga toxin"
+    ],
+    "transmission": "Fecal-oral, including person-to-person spread (due to the very low infectious dose), contaminated food/water",
+    "epidemiology": "A common cause of bacillary dysentery worldwide, with a disproportionate burden in young children in areas with limited sanitation; outbreaks also occur in daycare and close-contact settings in higher-resource countries",
+    "labSignificance": "Non-motility plus non-lactose fermentation plus H2S-negative TSI reaction together distinguish it from the closely related, H2S-positive Salmonella on routine stool culture media"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Non-motile, non-lactose fermenter, H2S negative",
+    "importantDisease": "Bacillary dysentery (shigellosis)",
+    "importantTest": "Stool culture on Hektoen/XLD agar",
+    "distinguishingFeature": "Non-motile and H2S-negative, unlike the biochemically similar but H2S-positive, motile Salmonella"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "salmonella-enterica",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "escherichia-coli",
+      "relationship": "same-family"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Shigella",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/shigella/"
+    }
+  ]
+}

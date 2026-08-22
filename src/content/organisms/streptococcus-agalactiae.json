@@ -1,0 +1,127 @@
+{
+  "id": "streptococcus-agalactiae",
+  "scientificName": "Streptococcus agalactiae",
+  "commonName": "Group B Streptococcus (GBS)",
+  "category": "bacteria",
+  "quickTags": [
+    "Group B strep",
+    "Beta-hemolytic",
+    "CAMP test positive"
+  ],
+  "searchKeywords": [
+    "gbs",
+    "group b strep",
+    "neonatal sepsis",
+    "s agalactiae"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Streptococcaceae",
+    "genus": "Streptococcus",
+    "species": "S. agalactiae"
+  },
+  "morphology": {
+    "shape": "Cocci in chains",
+    "shapeCategory": "coccus",
+    "arrangement": "Pairs and chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.6-1.2 µm",
+    "sporeForming": false,
+    "capsule": "Polysaccharide capsule (multiple serotypes, Ia-IX)",
+    "encapsulated": true,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Gastrointestinal and genitourinary tract flora",
+    "hostAssociation": "Colonizes vagina/rectum in 10-30% of pregnant individuals",
+    "environmentalOccurrence": "Not a significant environmental organism",
+    "reservoir": "Human GI and genital tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci",
+      "arrangement": "Chains"
+    },
+    "culture": {
+      "media": "Blood agar, Lim broth (selective enrichment for prenatal screening)",
+      "growthCharacteristics": "Facultative anaerobe",
+      "colonyMorphology": "Grayish-white colonies with a narrow zone of beta-hemolysis",
+      "pigmentation": "None",
+      "hemolysis": "Beta-hemolytic (narrow zone, less prominent than group A strep)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "−"
+      },
+      {
+        "test": "CAMP test",
+        "result": "+"
+      },
+      {
+        "test": "Bacitracin susceptibility",
+        "result": "Resistant"
+      },
+      {
+        "test": "Hippurate hydrolysis",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive cocci in chains",
+    "Beta-hemolytic, CAMP test positive",
+    "Bacitracin resistant — distinguishes from group A strep",
+    "Lancefield group B antigen",
+    "Hippurate hydrolysis positive"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Neonatal sepsis and meningitis (early- and late-onset)",
+      "Chorioamnionitis and postpartum endometritis",
+      "Invasive infection in older adults with comorbidities"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule (antiphagocytic)",
+      "Beta-hemolysin/cytolysin",
+      "CAMP factor"
+    ],
+    "transmission": "Vertical transmission from colonized mother to neonate during birth",
+    "epidemiology": "Leading cause of neonatal sepsis and meningitis worldwide; routine prenatal screening (35-37 weeks) with intrapartum antibiotic prophylaxis has greatly reduced early-onset disease",
+    "labSignificance": "CAMP test positivity and bacitracin resistance are the classic bedside differentiators from Streptococcus pyogenes"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus (chains)",
+    "keyBiochemicalReaction": "CAMP positive, bacitracin resistant, hippurate positive",
+    "importantDisease": "Neonatal sepsis/meningitis",
+    "importantTest": "CAMP test (arrowhead hemolysis with S. aureus streak)",
+    "distinguishingFeature": "Bacitracin resistance distinguishes it from bacitracin-sensitive Group A Streptococcus"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "streptococcus-pyogenes",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Group B Strep (GBS)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/group-b-strep/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Group B Streptococcus\"",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "serratia-marcescens",
+  "scientificName": "Serratia marcescens",
+  "category": "bacteria",
+  "quickTags": [
+    "Red pigment (prodigiosin)",
+    "Nosocomial",
+    "DNase positive"
+  ],
+  "searchKeywords": [
+    "s marcescens",
+    "serratia",
+    "red bread mold miracle"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Yersiniaceae",
+    "genus": "Serratia",
+    "species": "S. marcescens"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-2 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile via peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Water, soil, and plant surfaces",
+    "hostAssociation": "Environmental organism; opportunistic nosocomial pathogen",
+    "environmentalOccurrence": "Widespread in moist environments; can colonize sinks, respiratory equipment, and disinfectant solutions in hospitals",
+    "reservoir": "Hospital water sources, contaminated equipment/solutions"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar, blood agar",
+      "growthCharacteristics": "Facultative anaerobe",
+      "colonyMorphology": "Some strains produce a distinctive red pigment (prodigiosin), especially at room temperature; many clinical isolates are non-pigmented",
+      "pigmentation": "Red (prodigiosin) in pigmented strains; non-pigmented in many clinical isolates",
+      "hemolysis": "Variable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "DNase",
+        "result": "+"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "Late/weak or negative"
+      },
+      {
+        "test": "Lipase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "DNase positive — one of the few Enterobacterales with this feature, useful in identification",
+    "Some strains produce a characteristic red pigment (prodigiosin) at room temperature",
+    "Late or weak lactose fermentation on MacConkey agar",
+    "Notable for colonizing hospital water sources and even some disinfectant/antiseptic solutions"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Urinary tract infections",
+      "Bloodstream infections",
+      "Ventilator-associated pneumonia",
+      "Wound infections",
+      "Outbreaks associated with contaminated medical equipment/solutions"
+    ],
+    "virulenceFactors": [
+      "Biofilm formation",
+      "Various proteases and lipases contributing to tissue damage"
+    ],
+    "transmission": "Nosocomial — contaminated water sources, respiratory equipment, intravenous fluids, or even contaminated antiseptic solutions",
+    "epidemiology": "A recognized cause of healthcare-associated outbreaks, notable historically for causing infections via contamination of items assumed to be sterile, such as multi-dose medication vials",
+    "labSignificance": "DNase positivity plus (when present) the classic red pigment help distinguish it from other Enterobacterales on routine workup"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "DNase positive",
+    "importantDisease": "Nosocomial UTI, bacteremia, VAP",
+    "importantTest": "DNase test; pigment production (when present)",
+    "distinguishingFeature": "DNase positivity distinguishes it from most other Enterobacterales; some strains produce a distinctive red pigment"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "klebsiella-pneumoniae",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Serratia Marcescens\"",
+      "kind": "educational"
+    }
+  ]
+}

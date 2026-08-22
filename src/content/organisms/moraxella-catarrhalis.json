@@ -1,0 +1,122 @@
+{
+  "id": "moraxella-catarrhalis",
+  "scientificName": "Moraxella catarrhalis",
+  "category": "bacteria",
+  "quickTags": [
+    "Gram-negative diplococcus",
+    "Oxidase positive",
+    "Hockey-puck colonies"
+  ],
+  "searchKeywords": [
+    "m catarrhalis",
+    "moraxella",
+    "otitis media"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Moraxellales",
+    "family": "Moraxellaceae",
+    "genus": "Moraxella",
+    "species": "M. catarrhalis"
+  },
+  "morphology": {
+    "shape": "Diplococcus",
+    "shapeCategory": "coccus",
+    "arrangement": "Pairs (kidney-bean/coffee-bean shaped)",
+    "arrangementCategory": "pairs",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.5-1.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human nasopharynx",
+    "hostAssociation": "Common commensal, especially in children; opportunistic respiratory pathogen",
+    "environmentalOccurrence": "Not a significant environmental organism",
+    "reservoir": "Human upper respiratory tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative diplococci resembling Neisseria",
+      "arrangement": "Pairs"
+    },
+    "culture": {
+      "media": "Blood agar, chocolate agar",
+      "growthCharacteristics": "Aerobic, grows on routine non-selective media (unlike Neisseria/Haemophilus)",
+      "colonyMorphology": "Opaque, grayish-white colonies that can be pushed intact across the agar surface (\"hockey puck sign\")",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "DNase",
+        "result": "+"
+      },
+      {
+        "test": "Carbohydrate fermentation",
+        "result": "− (asaccharolytic)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative diplococci resembling Neisseria on Gram stain",
+    "Oxidase positive but does NOT ferment carbohydrates, unlike Neisseria species",
+    "\"Hockey puck sign\" — colony can be pushed intact across the agar",
+    "DNase positive — helps distinguish from Neisseria"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Otitis media",
+      "Sinusitis",
+      "Bronchitis and pneumonia exacerbations, especially in COPD patients"
+    ],
+    "virulenceFactors": [
+      "Outer membrane proteins (adhesins)",
+      "Beta-lactamase production (common, affects treatment choice)"
+    ],
+    "transmission": "Respiratory droplets; endogenous flora overgrowth",
+    "epidemiology": "One of the three classic bacterial causes of otitis media/sinusitis in children (with S. pneumoniae and non-typeable H. influenzae); frequent cause of COPD exacerbations in adults",
+    "labSignificance": "Non-fermenting biochemistry plus the hockey-puck colony sign distinguish it from pathogenic Neisseria species on routine workup"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Diplococcus",
+    "keyBiochemicalReaction": "Oxidase positive, asaccharolytic, DNase positive",
+    "importantDisease": "Otitis media, sinusitis, COPD exacerbations",
+    "importantTest": "Hockey puck sign; DNase test",
+    "distinguishingFeature": "Resembles Neisseria on Gram stain but does not ferment carbohydrates"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "neisseria-meningitidis",
+      "relationship": "similar-morphology"
+    },
+    {
+      "id": "haemophilus-influenzae",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Moraxella Catarrhalis\"",
+      "kind": "educational"
+    }
+  ]
+}

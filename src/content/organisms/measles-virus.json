@@ -1,0 +1,79 @@
+{
+  "id": "measles-virus",
+  "scientificName": "Measles morbillivirus",
+  "commonName": "Measles virus",
+  "category": "virus",
+  "quickTags": [
+    "ssRNA virus",
+    "Enveloped",
+    "Highly contagious"
+  ],
+  "searchKeywords": [
+    "measles",
+    "rubeola",
+    "koplik spots"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Paramyxoviridae",
+    "genus": "Morbillivirus",
+    "species": "Measles morbillivirus"
+  },
+  "morphology": {
+    "shape": "Pleomorphic, enveloped virion",
+    "size": "~100-300 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Helical",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human respiratory epithelium and lymphoid tissue",
+    "hostAssociation": "Obligate human pathogen, no animal reservoir",
+    "reservoir": "Infected humans"
+  },
+  "identificationClues": [
+    "Koplik spots (small white lesions on the buccal mucosa) are pathognomonic and precede the rash",
+    "Cephalocaudal spread of an erythematous maculopapular rash following fever and the \"3 C's\" (cough, coryza, conjunctivitis)",
+    "IgM serology or PCR confirms diagnosis",
+    "One of the most contagious human pathogens known, with an R0 typically cited between 12 and 18"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Measles (rubeola)",
+      "Subacute sclerosing panencephalitis (rare, delayed fatal CNS complication)",
+      "Measles-associated immune amnesia (temporary impairment of pre-existing immune memory)"
+    ],
+    "transmission": "Airborne respiratory droplets and aerosols; extremely contagious, can remain infectious in air/surfaces for up to two hours",
+    "epidemiology": "Vaccine-preventable (MMR); outbreaks occur in under-vaccinated communities and can spread rapidly due to the virus's very high transmissibility",
+    "labSignificance": "IgM serology is typically positive within days of rash onset; RT-PCR is used for genotyping during outbreak investigations"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — clinical/serologic diagnosis",
+    "importantDisease": "Measles (rubeola)",
+    "importantTest": "IgM serology; RT-PCR",
+    "distinguishingFeature": "Koplik spots are a pathognomonic early clinical sign preceding the characteristic rash"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "influenza-a-virus",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Measles (Rubeola)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/measles/"
+    },
+    {
+      "name": "WHO — Measles",
+      "kind": "educational",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/measles"
+    }
+  ]
+}

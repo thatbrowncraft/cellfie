@@ -1,0 +1,121 @@
+{
+  "id": "corynebacterium-diphtheriae",
+  "scientificName": "Corynebacterium diphtheriae",
+  "category": "bacteria",
+  "quickTags": [
+    "Chinese letter arrangement",
+    "Metachromatic granules",
+    "Exotoxin producer"
+  ],
+  "searchKeywords": [
+    "diphtheria",
+    "c diphtheriae",
+    "klb bacillus"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Actinomycetota (Actinobacteria)",
+    "class": "Actinomycetes",
+    "order": "Mycobacteriales",
+    "family": "Corynebacteriaceae",
+    "genus": "Corynebacterium",
+    "species": "C. diphtheriae"
+  },
+  "morphology": {
+    "shape": "Club-shaped/pleomorphic rod",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "Palisades and V/L (\"Chinese letter\") formations",
+    "arrangementCategory": "palisades",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~2-6 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human nasopharynx and skin",
+    "hostAssociation": "Strictly human pathogen/carrier; no significant animal reservoir",
+    "environmentalOccurrence": "Not an environmental organism",
+    "reservoir": "Human respiratory tract and skin (asymptomatic carriers)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain; Albert's or Neisser's stain for metachromatic (volutin) granules",
+      "appearance": "Gram-positive pleomorphic rods with metachromatic granules",
+      "arrangement": "Palisades, V- and L-shaped (\"Chinese letter\") pairs"
+    },
+    "culture": {
+      "media": "Loeffler's serum slope, tellurite agar (Tinsdale medium)",
+      "growthCharacteristics": "Facultative anaerobe; grows well on enriched media",
+      "colonyMorphology": "Black/gray colonies on tellurite agar due to tellurite reduction",
+      "pigmentation": "Black-gray on tellurite medium",
+      "hemolysis": "Variable by biotype (gravis, mitis, intermedius)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Elek test (toxigenicity)",
+        "result": "+ in toxigenic strains"
+      },
+      {
+        "test": "Cystinase",
+        "result": "+"
+      },
+      {
+        "test": "Pyrazinamidase",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive club-shaped rods",
+    "Chinese-letter/palisade arrangement",
+    "Metachromatic granules on Albert's stain",
+    "Black colonies on tellurite agar",
+    "Elek test confirms exotoxin production"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Diphtheria (pseudomembranous pharyngitis)",
+      "Cutaneous diphtheria",
+      "Myocarditis and neuropathy from toxin dissemination"
+    ],
+    "virulenceFactors": [
+      "Diphtheria exotoxin (encoded by lysogenic corynebacteriophage beta, tox gene) — inhibits protein synthesis via ADP-ribosylation of EF-2"
+    ],
+    "toxins": [
+      "Diphtheria toxin (AB exotoxin)"
+    ],
+    "transmission": "Respiratory droplets; direct contact with skin lesions in cutaneous disease",
+    "epidemiology": "Rare where DTaP/Td vaccination is widespread; outbreaks occur in under-vaccinated populations",
+    "labSignificance": "Toxin production (not the organism itself) determines pathogenicity — confirmed by the Elek immunodiffusion test or PCR for the tox gene"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Club-shaped pleomorphic rod",
+    "keyBiochemicalReaction": "Elek test positive (toxin production)",
+    "importantDisease": "Diphtheria — grayish pseudomembrane in pharynx",
+    "importantTest": "Elek test; Albert's stain for metachromatic granules",
+    "distinguishingFeature": "Exotoxin encoded by a lysogenic phage — only toxigenic (phage-infected) strains cause diphtheria"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Diphtheria",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/diphtheria/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Corynebacterium Diphtheriae\"",
+      "kind": "educational"
+    }
+  ]
+}

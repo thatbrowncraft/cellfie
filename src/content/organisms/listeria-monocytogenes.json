@@ -1,0 +1,127 @@
+{
+  "id": "listeria-monocytogenes",
+  "scientificName": "Listeria monocytogenes",
+  "category": "bacteria",
+  "quickTags": [
+    "Tumbling motility",
+    "Beta-hemolytic",
+    "Cold-tolerant"
+  ],
+  "searchKeywords": [
+    "listeriosis",
+    "l monocytogenes",
+    "soft cheese",
+    "deli meat"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Bacillales",
+    "family": "Listeriaceae",
+    "genus": "Listeria",
+    "species": "L. monocytogenes"
+  },
+  "morphology": {
+    "shape": "Short rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells or short chains, resembling diphtheroids",
+    "arrangementCategory": "single",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~1-2 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile with characteristic tumbling motility at 20-25°C; non-motile at 37°C",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, water, decaying vegetation, and the GI tract of many animals",
+    "hostAssociation": "Foodborne pathogen; can cross the placental and blood-brain barriers",
+    "environmentalOccurrence": "Widespread in the environment; notably able to grow at refrigeration temperatures (4°C)",
+    "reservoir": "Soil, water, animals, contaminated food (unpasteurized dairy, deli meats, soft cheeses)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive short rods, may resemble diphtheroids or streptococci",
+      "arrangement": "Single or short chains"
+    },
+    "culture": {
+      "media": "Blood agar; cold enrichment in broth at 4°C improves recovery",
+      "growthCharacteristics": "Grows over a wide temperature range (1-45°C) — psychrotrophic",
+      "colonyMorphology": "Small, translucent, grayish colonies",
+      "pigmentation": "None",
+      "hemolysis": "Narrow zone of beta-hemolysis on blood agar"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Motility at 25°C",
+        "result": "+ (tumbling)"
+      },
+      {
+        "test": "CAMP test",
+        "result": "+ (with S. aureus, block-shaped zone)"
+      },
+      {
+        "test": "Esculin hydrolysis",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive rod, catalase positive",
+    "Characteristic tumbling motility at room temperature",
+    "Narrow beta-hemolytic zone on blood agar",
+    "Grows at refrigeration temperatures — cold enrichment aids isolation",
+    "CAMP test positive with S. aureus"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Listeriosis — gastroenteritis in healthy hosts",
+      "Sepsis and meningitis in neonates, elderly, and immunocompromised",
+      "Granulomatosis infantiseptica (transplacental infection)",
+      "Spontaneous abortion and stillbirth"
+    ],
+    "virulenceFactors": [
+      "Listeriolysin O (pore-forming toxin, phagosomal escape)",
+      "Internalin A/B (facilitates cell invasion)",
+      "ActA (intracellular actin-based motility for cell-to-cell spread)"
+    ],
+    "transmission": "Foodborne — unpasteurized dairy, deli meats, soft cheeses, contaminated produce; transplacental transmission to fetus",
+    "epidemiology": "One of the few bacteria able to cross the placental barrier; pregnant individuals, neonates, elderly, and immunocompromised patients are at highest risk of severe disease",
+    "labSignificance": "Ability to grow and remain motile at refrigeration temperatures distinguishes it from most other food pathogens"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Bacillus (short rod)",
+    "keyBiochemicalReaction": "Catalase positive, tumbling motility at room temperature",
+    "importantDisease": "Listeriosis, neonatal meningitis, foodborne illness in pregnancy",
+    "importantTest": "Tumbling motility at 25°C; CAMP test",
+    "distinguishingFeature": "Grows and multiplies at refrigerator temperatures, unlike most foodborne pathogens"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "corynebacterium-diphtheriae",
+      "relationship": "similar-morphology"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Listeria (Listeriosis)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/listeria/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Listeria Monocytogenes\"",
+      "kind": "educational"
+    }
+  ]
+}

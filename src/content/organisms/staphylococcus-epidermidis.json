@@ -1,0 +1,126 @@
+{
+  "id": "staphylococcus-epidermidis",
+  "scientificName": "Staphylococcus epidermidis",
+  "category": "bacteria",
+  "quickTags": [
+    "Coagulase negative",
+    "Novobiocin sensitive",
+    "Biofilm former"
+  ],
+  "searchKeywords": [
+    "cons",
+    "coagulase negative staph",
+    "s epidermidis",
+    "catheter infection"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Bacillales",
+    "family": "Staphylococcaceae",
+    "genus": "Staphylococcus",
+    "species": "S. epidermidis"
+  },
+  "morphology": {
+    "shape": "Cocci in clusters",
+    "shapeCategory": "coccus",
+    "arrangement": "Grape-like clusters",
+    "arrangementCategory": "clusters",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-1.5 µm",
+    "sporeForming": false,
+    "capsule": "Thin slime layer/biofilm in many strains",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Normal skin and mucous membrane flora of humans",
+    "hostAssociation": "Commensal; opportunistic pathogen associated with indwelling medical devices",
+    "environmentalOccurrence": "Ubiquitous on human skin",
+    "reservoir": "Human skin"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci",
+      "arrangement": "Grape-like clusters"
+    },
+    "culture": {
+      "media": "Blood agar, mannitol salt agar",
+      "growthCharacteristics": "Facultative anaerobe, grows readily on routine media",
+      "colonyMorphology": "Small, white to gray, non-pigmented colonies",
+      "pigmentation": "White (non-pigmented)",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Coagulase",
+        "result": "−"
+      },
+      {
+        "test": "Novobiocin susceptibility",
+        "result": "Sensitive"
+      },
+      {
+        "test": "Mannitol fermentation",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive cocci in clusters",
+    "Coagulase negative",
+    "Novobiocin sensitive — distinguishes from S. saprophyticus",
+    "White, non-hemolytic colonies",
+    "Strong biofilm producer on plastic/prosthetic surfaces"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Prosthetic joint and heart valve infections",
+      "Central line-associated bloodstream infections",
+      "Endocarditis on prosthetic valves",
+      "Stitch abscesses"
+    ],
+    "virulenceFactors": [
+      "Biofilm/slime layer allowing adherence to plastic devices",
+      "Polysaccharide intercellular adhesin (PIA)"
+    ],
+    "transmission": "Endogenous from patient's own skin flora; introduced during device insertion or surgery",
+    "epidemiology": "Leading cause of infections associated with catheters, prosthetic joints, and other indwelling devices; frequent blood culture contaminant",
+    "labSignificance": "Most common blood culture contaminant — clinical correlation needed to distinguish true bacteremia from contamination"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus (clusters)",
+    "keyBiochemicalReaction": "Coagulase negative, novobiocin sensitive",
+    "importantDisease": "Prosthetic device and catheter-associated infections",
+    "importantTest": "Coagulase test (negative) plus novobiocin susceptibility",
+    "distinguishingFeature": "Novobiocin sensitive distinguishes it from S. saprophyticus, another coagulase-negative staph"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "staphylococcus-aureus",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Staphylococcal Infections",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/staph/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Staphylococcus Epidermidis\"",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "campylobacter-jejuni",
+  "scientificName": "Campylobacter jejuni",
+  "category": "bacteria",
+  "quickTags": [
+    "Comma-shaped",
+    "Microaerophilic",
+    "Oxidase positive"
+  ],
+  "searchKeywords": [
+    "c jejuni",
+    "campylobacter",
+    "guillain-barre",
+    "poultry"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Campylobacterota",
+    "class": "Epsilonproteobacteria",
+    "order": "Campylobacterales",
+    "family": "Campylobacteraceae",
+    "genus": "Campylobacter",
+    "species": "C. jejuni"
+  },
+  "morphology": {
+    "shape": "Curved/comma-shaped rod, sometimes S-shaped or gull-wing pairs",
+    "shapeCategory": "spiral",
+    "arrangement": "Single cells or S-shaped pairs",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.5-5 x 0.2-0.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile with a single polar flagellum, characteristic darting motility",
+    "motile": true,
+    "oxygenRequirement": "Microaerophile",
+    "oxygenRequirementCategory": "microaerophile"
+  },
+  "habitat": {
+    "naturalHabitat": "GI tract of birds and mammals",
+    "hostAssociation": "Commensal in poultry gut; pathogenic in humans",
+    "environmentalOccurrence": "Contaminated water and unpasteurized milk",
+    "reservoir": "Poultry, cattle, contaminated food/water"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative curved/comma or S-shaped rods, \"gull-wing\" pairs",
+      "arrangement": "Single or paired"
+    },
+    "culture": {
+      "media": "Campy-selective (Skirrow's, Campy-CVA) agar, 42°C incubation, microaerophilic atmosphere",
+      "growthCharacteristics": "Microaerophilic; grows best at 42°C (thermophilic)",
+      "colonyMorphology": "Flat, gray, watery, spreading colonies",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Hippurate hydrolysis",
+        "result": "+"
+      },
+      {
+        "test": "Growth at 42°C",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative curved/comma-shaped rods",
+    "Darting motility on wet mount",
+    "Grows selectively at 42°C under microaerophilic conditions",
+    "Oxidase and catalase positive",
+    "Hippurate hydrolysis distinguishes from C. coli"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Campylobacteriosis (acute bloody or watery diarrhea)",
+      "Guillain-Barré syndrome (post-infectious complication)",
+      "Reactive arthritis"
+    ],
+    "virulenceFactors": [
+      "Flagella (motility and invasion)",
+      "Cytolethal distending toxin",
+      "Lipooligosaccharide (molecular mimicry linked to Guillain-Barré syndrome)"
+    ],
+    "transmission": "Fecal-oral; undercooked poultry is the most common source, also unpasteurized milk and contaminated water",
+    "epidemiology": "One of the most common bacterial causes of gastroenteritis worldwide; leading antecedent infection associated with Guillain-Barré syndrome",
+    "labSignificance": "Requires special microaerophilic incubation at 42°C on selective media — not recovered on routine stool culture media"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Comma/curved rod",
+    "keyBiochemicalReaction": "Oxidase positive, grows at 42°C microaerophilically",
+    "importantDisease": "Bacterial gastroenteritis; Guillain-Barré syndrome",
+    "importantTest": "Selective culture at 42°C under microaerophilic conditions",
+    "distinguishingFeature": "Thermophilic growth at 42°C and microaerophilic requirement distinguish it from most enteric pathogens"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "helicobacter-pylori",
+      "relationship": "similar-morphology"
+    },
+    {
+      "id": "vibrio-cholerae",
+      "relationship": "similar-morphology"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Campylobacter",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/campylobacter/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Campylobacter\"",
+      "kind": "educational"
+    }
+  ]
+}

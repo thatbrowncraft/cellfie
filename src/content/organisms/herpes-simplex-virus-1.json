@@ -1,0 +1,81 @@
+{
+  "id": "herpes-simplex-virus-1",
+  "scientificName": "Human alphaherpesvirus 1",
+  "commonName": "Herpes simplex virus 1 (HSV-1)",
+  "category": "virus",
+  "quickTags": [
+    "dsDNA virus",
+    "Enveloped",
+    "Establishes latency"
+  ],
+  "searchKeywords": [
+    "hsv-1",
+    "hsv1",
+    "cold sores",
+    "oral herpes"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Orthoherpesviridae",
+    "genus": "Simplexvirus",
+    "species": "Human alphaherpesvirus 1"
+  },
+  "morphology": {
+    "shape": "Spherical, enveloped virion with icosahedral capsid",
+    "size": "~150-200 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "dna",
+    "genomeStrandedness": "dsdna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human oral and, less commonly, genital mucosa; establishes lifelong latency in sensory (typically trigeminal) ganglia",
+    "hostAssociation": "Obligate human pathogen with recurrent reactivation from latency",
+    "reservoir": "Infected humans, including asymptomatic shedders"
+  },
+  "identificationClues": [
+    "Multinucleated giant cells with intranuclear (Cowdry type A) inclusions seen on Tzanck smear of vesicle scrapings",
+    "PCR of vesicle fluid or CSP is the preferred diagnostic method",
+    "Reactivates from latency in sensory ganglia during stress, illness, or UV exposure",
+    "Painful grouped vesicles on an erythematous base"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Orolabial herpes (cold sores)",
+      "Herpes keratitis",
+      "Herpes encephalitis (typically temporal lobe)",
+      "Genital herpes (increasingly also caused by HSV-1)",
+      "Neonatal herpes if transmitted perinatally"
+    ],
+    "transmission": "Direct contact with infected oral secretions or lesions; can also be transmitted via oral-genital contact",
+    "epidemiology": "Extremely common worldwide; most infections are acquired in childhood; leading cause of sporadic viral encephalitis in the United States",
+    "labSignificance": "PCR of CSF is far more sensitive than viral culture for diagnosing HSV encephalitis and is now the diagnostic standard"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — Tzanck smear/PCR diagnosis",
+    "importantDisease": "Orolabial herpes, herpes encephalitis, keratitis",
+    "importantTest": "PCR of vesicle fluid or CSF; Tzanck smear showing multinucleated giant cells",
+    "distinguishingFeature": "Establishes lifelong latency in sensory ganglia with periodic reactivation, unlike most other viral infections"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "varicella-zoster-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Genital Herpes",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/herpes/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Herpes Simplex Type 1\"",
+      "kind": "educational"
+    }
+  ]
+}

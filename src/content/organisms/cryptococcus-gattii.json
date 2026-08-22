@@ -1,0 +1,113 @@
+{
+  "id": "cryptococcus-gattii",
+  "scientificName": "Cryptococcus gattii",
+  "category": "fungi",
+  "quickTags": [
+    "Encapsulated yeast",
+    "India ink positive",
+    "Affects immunocompetent hosts"
+  ],
+  "searchKeywords": [
+    "c gattii",
+    "cryptococcus gattii",
+    "cryptococcosis",
+    "pacific northwest fungus"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Tremellomycetes",
+    "order": "Tremellales",
+    "family": "Cryptococcaceae",
+    "genus": "Cryptococcus",
+    "species": "C. gattii"
+  },
+  "morphology": {
+    "shape": "Round to oval encapsulated yeast",
+    "size": "~4-6 µm (cell), capsule can extend total diameter to 25 µm or more",
+    "notes": "Surrounded by a thick polysaccharide capsule visible on India ink preparation as a clear halo"
+  },
+  "fungalDetails": {
+    "morphologicalType": "yeast",
+    "reproductiveStructures": [
+      "Narrow-based budding"
+    ],
+    "clinicalGroup": "systemic"
+  },
+  "habitat": {
+    "naturalHabitat": "Associated with certain eucalyptus and other tree species; soil enriched with decaying wood",
+    "hostAssociation": "Environmental saprophyte; causes disease in both immunocompetent and immunocompromised hosts (unlike C. neoformans, which favors immunocompromised hosts)",
+    "environmentalOccurrence": "Historically tropical/subtropical, notably eucalyptus-associated; also established in temperate regions such as the Pacific Northwest of North America",
+    "reservoir": "Soil, decaying wood, tree hollows"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "India ink preparation",
+      "appearance": "Encapsulated budding yeast with a clear halo around the cell",
+      "arrangement": "Single cells with narrow-based budding"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar; canavanine-glycine-bromothymol blue (CGB) agar to differentiate from C. neoformans",
+      "growthCharacteristics": "Grows at 37°C",
+      "colonyMorphology": "Mucoid, cream-colored colonies",
+      "pigmentation": "Turns CGB agar medium blue (positive), unlike C. neoformans"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Urease",
+        "result": "+"
+      },
+      {
+        "test": "CGB agar (canavanine-glycine-bromothymol blue)",
+        "result": "+ (blue color change)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Encapsulated yeast visualized with India ink",
+    "Urease positive",
+    "Turns CGB agar blue — distinguishes from C. neoformans (does not change color)",
+    "Can cause pulmonary and CNS disease in apparently healthy, immunocompetent hosts",
+    "Latex agglutination/lateral flow assay detects cryptococcal capsular antigen"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Pulmonary cryptococcosis",
+      "Cryptococcal meningoencephalitis",
+      "Cryptococcomas (mass lesions in lung or brain)"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule (antiphagocytic, main virulence factor)",
+      "Melanin production (protects against oxidative host defenses)",
+      "Growth at body temperature (37°C)"
+    ],
+    "transmission": "Inhalation of desiccated yeast cells or basidiospores from environmental sources (notably eucalyptus trees and decaying wood)",
+    "epidemiology": "Unlike C. neoformans, notable for causing serious disease in immunocompetent individuals; recognized outbreaks in the Pacific Northwest region of North America since the late 1990s",
+    "labSignificance": "CGB agar and molecular methods distinguish it from the closely related but epidemiologically distinct C. neoformans"
+  },
+  "examFacts": {
+    "shape": "Encapsulated yeast",
+    "keyBiochemicalReaction": "Urease positive; CGB agar turns blue",
+    "importantDisease": "Cryptococcal meningitis/pulmonary cryptococcosis in immunocompetent hosts",
+    "importantTest": "India ink preparation; CGB agar; cryptococcal antigen test",
+    "distinguishingFeature": "Causes disease in immunocompetent hosts, unlike C. neoformans, which predominantly affects the immunocompromised"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "cryptococcus-neoformans",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — C. gattii Infection",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/fungal/diseases/cryptococcosis-gattii/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Cryptococcus Gattii\"",
+      "kind": "educational"
+    }
+  ]
+}

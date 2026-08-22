@@ -1,0 +1,74 @@
+{
+  "id": "dengue-virus",
+  "scientificName": "Dengue virus",
+  "commonName": "DENV",
+  "category": "virus",
+  "quickTags": [
+    "ssRNA virus",
+    "Enveloped",
+    "Mosquito-borne (Aedes)"
+  ],
+  "searchKeywords": [
+    "dengue",
+    "denv",
+    "breakbone fever",
+    "aedes aegypti"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Flaviviridae",
+    "genus": "Orthoflavivirus",
+    "species": "Orthoflavivirus denguei"
+  },
+  "morphology": {
+    "shape": "Spherical, enveloped virion",
+    "size": "~50 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "vector-borne"
+  },
+  "habitat": {
+    "naturalHabitat": "Human bloodstream and tissues during infection; Aedes mosquito midgut/salivary glands during the extrinsic incubation period",
+    "hostAssociation": "Human-mosquito transmission cycle; four distinct serotypes (DENV-1 to DENV-4)",
+    "reservoir": "Infected humans; Aedes aegypti and Aedes albopictus mosquitoes"
+  },
+  "identificationClues": [
+    "Diagnosed by NS1 antigen testing (early illness) or IgM/IgG serology; PCR confirms and serotypes the virus",
+    "Severe disease risk (dengue hemorrhagic fever/shock syndrome) is markedly increased on secondary infection with a different serotype (antibody-dependent enhancement)",
+    "Classic \"breakbone fever\" — high fever with severe myalgia/arthralgia and retro-orbital headache",
+    "Petechial or maculopapular rash may develop"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Dengue fever",
+      "Severe dengue (dengue hemorrhagic fever/dengue shock syndrome)"
+    ],
+    "transmission": "Bite of an infected Aedes aegypti or Aedes albopictus mosquito",
+    "epidemiology": "One of the most common arboviral infections globally, especially in tropical and subtropical regions; incidence has expanded substantially in recent decades with mosquito vector range expansion",
+    "labSignificance": "NS1 antigen is most useful in the first few days of illness, while IgM/IgG serology becomes more useful later in the clinical course"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — NS1 antigen/serology/PCR diagnosis",
+    "importantDisease": "Dengue fever; severe dengue (hemorrhagic fever/shock syndrome)",
+    "importantTest": "NS1 antigen test; IgM/IgG serology; RT-PCR",
+    "distinguishingFeature": "Secondary infection with a different dengue serotype substantially raises the risk of severe disease via antibody-dependent enhancement"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Dengue",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dengue/"
+    },
+    {
+      "name": "WHO — Dengue and Severe Dengue",
+      "kind": "educational",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "sporothrix-schenckii",
+  "scientificName": "Sporothrix schenckii",
+  "category": "fungi",
+  "quickTags": [
+    "Dimorphic fungus",
+    "Rose gardener's disease",
+    "Cigar-shaped yeast"
+  ],
+  "searchKeywords": [
+    "sporotrichosis",
+    "s schenckii",
+    "rose gardener disease"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Sordariomycetes",
+    "order": "Ophiostomatales",
+    "family": "Ophiostomataceae",
+    "genus": "Sporothrix",
+    "species": "S. schenckii"
+  },
+  "morphology": {
+    "shape": "Dimorphic: mold form at room temperature (thin, branching hyphae with conidia in a \"flower/daisy\" arrangement), cigar-shaped yeast at body temperature",
+    "size": "Yeast form ~3-10 µm",
+    "notes": "The elongated, cigar-shaped budding yeast in tissue is a distinguishing microscopic feature"
+  },
+  "fungalDetails": {
+    "morphologicalType": "dimorphic",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Conidia arranged in a flower-like (\"daisy\") cluster on the mold form",
+      "Cigar-shaped budding yeast (tissue form)"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, decaying vegetation, sphagnum moss, and thorny plants (e.g. roses)",
+    "hostAssociation": "Environmental saprophyte; introduced into skin via trauma",
+    "environmentalOccurrence": "Worldwide, particularly associated with gardening, landscaping, and handling of sphagnum moss or rose bushes",
+    "reservoir": "Soil, plant material (thorns, moss, hay)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Periodic acid-Schiff (PAS) or Gomori methenamine silver stain of tissue",
+      "appearance": "Cigar-shaped or oval budding yeast cells in tissue, often sparse and hard to find directly",
+      "arrangement": "Single or budding cells"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar (mold form, 25-30°C); enriched media (yeast form, 37°C)",
+      "growthCharacteristics": "Relatively fast growing for a dimorphic fungus — days to about 2 weeks",
+      "colonyMorphology": "White to cream, becoming dark brown/black and wrinkled with age (mold form); smooth, cream-colored yeast colonies at 37°C",
+      "pigmentation": "White to dark brown/black"
+    }
+  },
+  "identificationClues": [
+    "Classic history of a gardening/plant-related injury (rose thorn, hay, sphagnum moss) followed by nodular lesions along lymphatic channels (\"sporotrichoid spread\")",
+    "Thermal dimorphism with a distinctive cigar-shaped yeast form in tissue",
+    "Flower/daisy-like arrangement of conidia on the mold form under the microscope",
+    "Culture remains the diagnostic gold standard, since organisms are often sparse in tissue"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Lymphocutaneous sporotrichosis (\"rose gardener's disease\") — nodular, ulcerating lesions spreading along lymphatics",
+      "Fixed cutaneous sporotrichosis",
+      "Rare disseminated/pulmonary/osteoarticular disease, mainly in immunocompromised hosts"
+    ],
+    "transmission": "Traumatic inoculation of the skin by contaminated plant material (thorns, sphagnum moss, hay); rarely inhalation (pulmonary disease) or, historically in some regions, cat-associated transmission",
+    "epidemiology": "An occupational risk for gardeners, farmers, florists, and forestry workers worldwide; distribution follows exposure to contaminated organic material rather than a specific climate zone",
+    "labSignificance": "Culture is the diagnostic gold standard because the organisms are often too sparse in tissue for reliable direct visualization"
+  },
+  "examFacts": {
+    "shape": "Dimorphic fungus (mold/yeast)",
+    "keyBiochemicalReaction": "Not applicable — culture/histopathology diagnosis",
+    "importantDisease": "Lymphocutaneous sporotrichosis (\"rose gardener's disease\")",
+    "importantTest": "Fungal culture; histopathology showing cigar-shaped yeast",
+    "distinguishingFeature": "Classic occupational/gardening exposure history with nodules spreading along lymphatic channels"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Sporotrichosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/sporotrichosis/"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "respiratory-syncytial-virus",
+  "scientificName": "Human orthopneumovirus",
+  "commonName": "Respiratory syncytial virus (RSV)",
+  "category": "virus",
+  "quickTags": [
+    "ssRNA virus",
+    "Enveloped",
+    "Infant bronchiolitis"
+  ],
+  "searchKeywords": [
+    "rsv",
+    "respiratory syncytial virus",
+    "bronchiolitis"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Pneumoviridae",
+    "genus": "Orthopneumovirus",
+    "species": "Human orthopneumovirus"
+  },
+  "morphology": {
+    "shape": "Pleomorphic, enveloped virion",
+    "size": "~120-300 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Helical",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human respiratory epithelium",
+    "hostAssociation": "Obligate human pathogen, though closely related pneumoviruses infect other mammals",
+    "reservoir": "Infected humans, seasonal circulation (typically fall/winter in temperate regions)"
+  },
+  "identificationClues": [
+    "Causes characteristic syncytium (multinucleated giant cell) formation in infected cell culture, giving the virus its name",
+    "Rapid antigen tests and PCR of nasopharyngeal specimens are the main diagnostic methods",
+    "Leading cause of bronchiolitis and pneumonia in infants and young children",
+    "Also a significant cause of severe respiratory illness in older adults and the immunocompromised"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Bronchiolitis (especially in infants)",
+      "Pneumonia",
+      "Upper respiratory tract infection (common cold-like illness in older children/adults)",
+      "Severe lower respiratory disease in the elderly and immunocompromised"
+    ],
+    "transmission": "Respiratory droplets and direct contact with contaminated surfaces/secretions",
+    "epidemiology": "The leading cause of hospitalization for bronchiolitis/pneumonia in infants worldwide; recently, both monoclonal antibody prophylaxis (for infants) and vaccines (for older adults and pregnant individuals to protect the newborn) have become available",
+    "labSignificance": "Rapid antigen and PCR testing of nasopharyngeal specimens are the standard diagnostic approaches, largely replacing viral culture in routine clinical use"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — antigen/PCR diagnosis",
+    "importantDisease": "Bronchiolitis and pneumonia in infants",
+    "importantTest": "Rapid antigen test or PCR of nasopharyngeal swab",
+    "distinguishingFeature": "Causes characteristic syncytium formation in infected cells, the basis of its name"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "influenza-a-virus",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — RSV (Respiratory Syncytial Virus)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/rsv/"
+    }
+  ]
+}

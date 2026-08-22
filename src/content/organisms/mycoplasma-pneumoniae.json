@@ -1,0 +1,102 @@
+{
+  "id": "mycoplasma-pneumoniae",
+  "scientificName": "Mycoplasma pneumoniae",
+  "category": "bacteria",
+  "quickTags": [
+    "No cell wall",
+    "Fried-egg colonies",
+    "Walking pneumonia"
+  ],
+  "searchKeywords": [
+    "m pneumoniae",
+    "mycoplasma",
+    "walking pneumonia",
+    "atypical pneumonia"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Mycoplasmatota",
+    "class": "Mollicutes",
+    "order": "Mycoplasmatales",
+    "family": "Mycoplasmataceae",
+    "genus": "Mycoplasma",
+    "species": "M. pneumoniae"
+  },
+  "morphology": {
+    "shape": "Pleomorphic — no fixed shape due to absence of a cell wall",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "Highly variable",
+    "arrangementCategory": "single",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~0.1-0.3 µm — among the smallest known free-living organisms",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Gliding motility via a specialized terminal attachment organelle",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe",
+    "notes": "Lacks a cell wall entirely, so it does not Gram stain and is intrinsically resistant to beta-lactam antibiotics"
+  },
+  "habitat": {
+    "naturalHabitat": "Human respiratory tract",
+    "hostAssociation": "Obligate human pathogen, no significant animal reservoir",
+    "environmentalOccurrence": "Does not survive well outside the host",
+    "reservoir": "Human respiratory tract (infected individuals)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Cannot be visualized by standard Gram stain (no cell wall)",
+      "appearance": "Not applicable on Gram stain",
+      "arrangement": "Not applicable"
+    },
+    "culture": {
+      "media": "Specialized SP4/PPLO (pleuropneumonia-like organism) agar",
+      "growthCharacteristics": "Extremely slow growing — can take 2-3 weeks in culture",
+      "colonyMorphology": "Tiny colonies with a characteristic \"fried-egg\" appearance under low magnification",
+      "pigmentation": "None",
+      "hemolysis": "Beta-hemolytic on sheep/guinea pig blood agar (used diagnostically)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Cold agglutinin test",
+        "result": "Often positive in acute infection"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Does not Gram stain — lacks a cell wall entirely",
+    "\"Fried-egg\" colony appearance on specialized agar, but culture is impractically slow for routine diagnosis",
+    "PCR or serology is the practical diagnostic method",
+    "Cold agglutinins often present, though nonspecific",
+    "Presents as \"walking pneumonia\" — a milder, more gradual illness than typical bacterial pneumonia"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Atypical (\"walking\") pneumonia",
+      "Tracheobronchitis",
+      "Pharyngitis",
+      "Rare extrapulmonary complications (e.g. erythema multiforme, hemolytic anemia)"
+    ],
+    "transmission": "Respiratory droplets; spreads readily in close-contact settings such as schools, military barracks, and college dormitories",
+    "epidemiology": "One of the most common causes of community-acquired \"atypical\" pneumonia, particularly in school-age children and young adults; outbreaks common in crowded living/working settings",
+    "labSignificance": "Because it lacks a cell wall, it is intrinsically resistant to beta-lactam antibiotics (penicillins, cephalosporins) — treatment requires macrolides, tetracyclines, or fluoroquinolones instead"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (no cell wall)",
+    "shape": "Pleomorphic",
+    "keyBiochemicalReaction": "Cold agglutinin positive (nonspecific)",
+    "importantDisease": "Atypical \"walking\" pneumonia",
+    "importantTest": "PCR or serology (culture is too slow for routine use)",
+    "distinguishingFeature": "Lacks a cell wall entirely — intrinsically resistant to beta-lactam antibiotics"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Mycoplasma pneumoniae Infection",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/mycoplasma/"
+    }
+  ]
+}

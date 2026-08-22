@@ -1,0 +1,132 @@
+{
+  "id": "bacillus-anthracis",
+  "scientificName": "Bacillus anthracis",
+  "category": "bacteria",
+  "quickTags": [
+    "Spore-forming",
+    "Bamboo-stick chains",
+    "Non-motile"
+  ],
+  "searchKeywords": [
+    "anthrax",
+    "b anthracis",
+    "bioterrorism"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Bacillales",
+    "family": "Bacillaceae",
+    "genus": "Bacillus",
+    "species": "B. anthracis"
+  },
+  "morphology": {
+    "shape": "Large rod (bacillus), square-ended",
+    "shapeCategory": "bacillus",
+    "arrangement": "Long chains resembling bamboo rods",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~3-8 x 1-1.5 µm",
+    "sporeForming": true,
+    "capsule": "Poly-D-glutamic acid capsule (antiphagocytic)",
+    "encapsulated": true,
+    "motility": "Non-motile — distinguishes it from most other Bacillus species",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, where spores persist for decades",
+    "hostAssociation": "Primarily infects herbivores (cattle, sheep, goats); humans infected incidentally",
+    "environmentalOccurrence": "Endospores are extremely resistant and persist long-term in soil",
+    "reservoir": "Soil; grazing livestock"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain; polychrome methylene blue (McFadyean stain) for capsule",
+      "appearance": "Large Gram-positive rods with square ends, central spores",
+      "arrangement": "Long chains (\"bamboo-stick\" appearance)"
+    },
+    "culture": {
+      "media": "Blood agar, nutrient agar",
+      "growthCharacteristics": "Facultative anaerobe; non-hemolytic, unlike most other Bacillus species",
+      "colonyMorphology": "Large, gray-white, non-hemolytic colonies with irregular \"Medusa head\" edges",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic — distinguishes from B. cereus"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Motility",
+        "result": "−"
+      },
+      {
+        "test": "Hemolysis",
+        "result": "−"
+      },
+      {
+        "test": "Gelatin hydrolysis",
+        "result": "+ (inverted fir tree pattern)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Large Gram-positive rods in bamboo-stick chains",
+    "Non-motile — unusual among Bacillus species",
+    "Non-hemolytic on blood agar",
+    "Central endospores that do not swell the cell",
+    "Capsule visible with McFadyean (polychrome methylene blue) stain"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Cutaneous anthrax (black eschar)",
+      "Inhalational anthrax",
+      "Gastrointestinal anthrax"
+    ],
+    "virulenceFactors": [
+      "Poly-D-glutamic acid capsule (antiphagocytic)",
+      "Anthrax toxin — protective antigen, edema factor, lethal factor"
+    ],
+    "toxins": [
+      "Edema toxin",
+      "Lethal toxin"
+    ],
+    "transmission": "Contact with infected animals/animal products; inhalation of spores; ingestion of contaminated meat; historically used as a bioterrorism agent",
+    "epidemiology": "Endemic in regions with unvaccinated livestock; occupational risk for those handling animal hides/wool; inhalational anthrax has high mortality if untreated",
+    "labSignificance": "Non-motility and non-hemolysis distinguish it from the closely related but far less dangerous Bacillus cereus"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Large bacillus, square ends",
+    "keyBiochemicalReaction": "Non-motile, non-hemolytic, catalase positive",
+    "importantDisease": "Anthrax (cutaneous, inhalational, GI)",
+    "importantTest": "Non-motility test; McFadyean capsule stain",
+    "distinguishingFeature": "Non-motile and non-hemolytic, unlike the otherwise similar Bacillus cereus"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "bacillus-cereus",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "bacillus-subtilis",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Anthrax",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/anthrax/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Anthrax\"",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "staphylococcus-saprophyticus",
+  "scientificName": "Staphylococcus saprophyticus",
+  "category": "bacteria",
+  "quickTags": [
+    "Coagulase negative",
+    "Novobiocin resistant",
+    "Young women's UTI"
+  ],
+  "searchKeywords": [
+    "s saprophyticus",
+    "honeymoon cystitis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Bacillales",
+    "family": "Staphylococcaceae",
+    "genus": "Staphylococcus",
+    "species": "S. saprophyticus"
+  },
+  "morphology": {
+    "shape": "Cocci in clusters",
+    "shapeCategory": "coccus",
+    "arrangement": "Grape-like clusters",
+    "arrangementCategory": "clusters",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-1.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Skin flora, especially of the perineal/genital area",
+    "hostAssociation": "Commensal; opportunistic urinary pathogen mainly in young sexually active women",
+    "environmentalOccurrence": "Also found in some foods (uncommonly clinically relevant)",
+    "reservoir": "Human skin/perineal flora"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in clusters",
+      "arrangement": "Clusters"
+    },
+    "culture": {
+      "media": "Blood agar, mannitol salt agar",
+      "growthCharacteristics": "Facultative anaerobe",
+      "colonyMorphology": "White to slightly yellow, non-hemolytic colonies",
+      "pigmentation": "White/pale yellow",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Coagulase",
+        "result": "−"
+      },
+      {
+        "test": "Novobiocin susceptibility",
+        "result": "Resistant"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive cocci in clusters, coagulase negative",
+    "Novobiocin RESISTANT — the key feature distinguishing it from S. epidermidis (sensitive)",
+    "Classic cause of uncomplicated UTI in young, sexually active women (\"honeymoon cystitis\")"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Uncomplicated urinary tract infection",
+      "Cystitis"
+    ],
+    "transmission": "Endogenous, from the patient's own perineal/genital flora",
+    "epidemiology": "Second most common cause of uncomplicated community-acquired UTI after E. coli, particularly in young sexually active women",
+    "labSignificance": "Novobiocin resistance is the standard bedside/lab differentiator from the novobiocin-sensitive S. epidermidis"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus (clusters)",
+    "keyBiochemicalReaction": "Coagulase negative, novobiocin resistant",
+    "importantDisease": "UTI in young women",
+    "importantTest": "Novobiocin susceptibility test",
+    "distinguishingFeature": "Novobiocin resistance distinguishes it from S. epidermidis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "staphylococcus-epidermidis",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Staphylococcus Saprophyticus\"",
+      "kind": "educational"
+    }
+  ]
+}

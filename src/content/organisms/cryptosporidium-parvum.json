@@ -1,0 +1,93 @@
+{
+  "id": "cryptosporidium-parvum",
+  "scientificName": "Cryptosporidium parvum",
+  "category": "protozoa",
+  "quickTags": [
+    "Apicomplexan",
+    "Acid-fast oocysts",
+    "Waterborne"
+  ],
+  "searchKeywords": [
+    "cryptosporidiosis",
+    "c parvum",
+    "crypto",
+    "waterborne parasite"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Chromalveolata",
+    "phylum": "Apicomplexa",
+    "class": "Conoidasida",
+    "order": "Eucoccidiorida",
+    "family": "Cryptosporidiidae",
+    "genus": "Cryptosporidium",
+    "species": "C. parvum"
+  },
+  "morphology": {
+    "shape": "Spherical oocyst",
+    "size": "Oocysts ~4-6 µm in diameter"
+  },
+  "protozoanDetails": {
+    "group": "apicomplexan",
+    "majorLocation": "intestinal",
+    "transmissionRoute": "fecal-oral",
+    "lifeCycleForm": "Oocyst (infectious, environmentally resistant) containing sporozoites; intracellular (but extracytoplasmic) developmental stages within intestinal epithelial cells"
+  },
+  "habitat": {
+    "naturalHabitat": "Intestinal epithelium of humans and many other mammals",
+    "hostAssociation": "Zoonotic — cattle and other livestock are important reservoirs",
+    "environmentalOccurrence": "Oocysts are highly resistant to chlorination and can survive for extended periods in water",
+    "reservoir": "Infected humans and animals (especially cattle); contaminated water supplies"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Modified acid-fast (Kinyoun) stain of stool; immunofluorescence antibody testing",
+      "appearance": "Small, round, acid-fast (pink-red) oocysts against a blue-green background",
+      "arrangement": "Individual oocysts"
+    },
+    "culture": {
+      "media": "Not routinely cultured in clinical laboratories",
+      "growthCharacteristics": "Obligate intracellular parasite — no clinically practical in vitro culture",
+      "colonyMorphology": "Not applicable"
+    }
+  },
+  "identificationClues": [
+    "Small, acid-fast oocysts on modified Kinyoun stain of stool",
+    "Oocysts resistant to standard chlorination — outbreaks linked to recreational and municipal water",
+    "Stool antigen (EIA) or PCR testing increasingly used for diagnosis",
+    "Causes profuse watery diarrhea, often self-limited in immunocompetent hosts but severe/chronic in AIDS patients"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Cryptosporidiosis (watery diarrhea)",
+      "Chronic, severe diarrhea and wasting in advanced HIV/AIDS"
+    ],
+    "transmission": "Fecal-oral, including contaminated drinking and recreational water (resistant to chlorine); person-to-person and zoonotic (cattle) transmission",
+    "epidemiology": "A leading cause of waterborne outbreaks of diarrheal illness worldwide, including in treated municipal water supplies and swimming pools",
+    "labSignificance": "Standard ova and parasite exams may miss oocysts unless a specific acid-fast stain or antigen/PCR test is requested"
+  },
+  "examFacts": {
+    "shape": "Spherical oocyst, apicomplexan",
+    "keyBiochemicalReaction": "Not applicable — acid-fast stain identification",
+    "importantDisease": "Cryptosporidiosis — waterborne watery diarrhea",
+    "importantTest": "Modified acid-fast stain of stool; stool antigen or PCR",
+    "distinguishingFeature": "Oocysts are notably resistant to routine chlorination of water supplies"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "giardia-duodenalis",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC DPDx — Cryptosporidiosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dpdx/cryptosporidiosis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Cryptosporidium\"",
+      "kind": "educational"
+    }
+  ]
+}

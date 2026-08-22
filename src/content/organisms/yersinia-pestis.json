@@ -1,0 +1,117 @@
+{
+  "id": "yersinia-pestis",
+  "scientificName": "Yersinia pestis",
+  "category": "bacteria",
+  "quickTags": [
+    "Bipolar staining",
+    "Zoonotic (fleas/rodents)",
+    "Plague"
+  ],
+  "searchKeywords": [
+    "plague",
+    "y pestis",
+    "bubonic plague",
+    "black death"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Yersiniaceae",
+    "genus": "Yersinia",
+    "species": "Y. pestis"
+  },
+  "morphology": {
+    "shape": "Coccobacillus",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells, sometimes bipolar (\"safety pin\") staining",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-3 x 0.5-0.8 µm",
+    "sporeForming": false,
+    "capsule": "Antiphagocytic capsule-like envelope (F1 antigen) at 37°C",
+    "encapsulated": true,
+    "motility": "Non-motile — unusual among Yersinia species",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Rodent populations and their fleas",
+    "hostAssociation": "Zoonotic — wild rodents are the main reservoir, transmitted by flea bite",
+    "environmentalOccurrence": "Endemic in wild rodent populations in parts of the Americas, Africa, and Asia",
+    "reservoir": "Wild rodents (e.g. prairie dogs, rats); flea vector (Xenopsylla cheopis)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Wayson or Giemsa stain",
+      "appearance": "Gram-negative coccobacilli with characteristic bipolar (\"safety pin\") staining",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Blood agar, MacConkey agar",
+      "growthCharacteristics": "Slow growing at 37°C; grows better at 25-28°C",
+      "colonyMorphology": "Small, gray, non-hemolytic colonies, described as \"fried-egg\"/\"hammered copper\" with prolonged incubation",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Urease",
+        "result": "−"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Bipolar (\"safety pin\") staining on Wayson/Giemsa stain of lymph node aspirate or blood",
+    "Non-motile, unlike most other Yersinia and Enterobacterales",
+    "Slow-growing on routine media — requires longer incubation",
+    "History of flea exposure or contact with rodents in an endemic area"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Bubonic plague (painful swollen lymph node, \"bubo\")",
+      "Septicemic plague",
+      "Pneumonic plague (person-to-person via respiratory droplets, rapidly fatal if untreated)"
+    ],
+    "virulenceFactors": [
+      "F1 capsular antigen (antiphagocytic)",
+      "Type III secretion system (Yop virulence proteins)",
+      "Plasminogen activator (Pla, aids dissemination)"
+    ],
+    "transmission": "Flea bite (bubonic), inhalation of respiratory droplets from a pneumonic-plague patient, or handling infected animal tissue",
+    "epidemiology": "Endemic in wild rodent populations in the western US, parts of Africa, Asia, and South America; historically responsible for pandemics including the Black Death; a recognized potential bioterrorism agent",
+    "labSignificance": "Requires biosafety precautions in the laboratory; bipolar staining is a classic rapid clue while definitive identification/confirmatory testing is pursued"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Coccobacillus",
+    "keyBiochemicalReaction": "Non-motile, bipolar staining",
+    "importantDisease": "Plague (bubonic, septicemic, pneumonic)",
+    "importantTest": "Wayson/Giemsa stain showing bipolar (\"safety pin\") morphology",
+    "distinguishingFeature": "Non-motile, unlike most other Yersinia species and Enterobacterales"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "yersinia-enterocolitica",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Plague",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/plague/"
+    }
+  ]
+}

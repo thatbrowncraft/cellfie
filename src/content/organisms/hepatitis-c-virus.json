@@ -1,0 +1,80 @@
+{
+  "id": "hepatitis-c-virus",
+  "scientificName": "Hepatitis C virus",
+  "commonName": "HCV",
+  "category": "virus",
+  "quickTags": [
+    "ssRNA virus",
+    "Enveloped",
+    "Bloodborne"
+  ],
+  "searchKeywords": [
+    "hcv",
+    "hep c",
+    "hepatitis c"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Flaviviridae",
+    "genus": "Hepacivirus",
+    "species": "Hepacivirus hominis (Hepatitis C virus)"
+  },
+  "morphology": {
+    "shape": "Spherical, enveloped virion",
+    "size": "~50-65 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "blood-body-fluids"
+  },
+  "habitat": {
+    "naturalHabitat": "Human hepatocytes",
+    "hostAssociation": "Obligate human pathogen — chronic infection in the majority of untreated cases",
+    "reservoir": "Chronically infected humans"
+  },
+  "identificationClues": [
+    "Diagnosed by anti-HCV antibody screening followed by confirmatory HCV RNA testing",
+    "Chronic infection develops in a majority of untreated cases, often without early symptoms",
+    "Genotype testing guides direct-acting antiviral (DAA) therapy selection",
+    "No vaccine currently available"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Acute hepatitis C (often asymptomatic)",
+      "Chronic hepatitis C",
+      "Cirrhosis",
+      "Hepatocellular carcinoma"
+    ],
+    "transmission": "Bloodborne — injection drug use (needle sharing), less commonly sexual contact, and perinatal transmission; historically transfusion-associated before blood supply screening",
+    "epidemiology": "A major cause of chronic liver disease and hepatocellular carcinoma worldwide; direct-acting antivirals now achieve cure rates exceeding 95% in most patients",
+    "labSignificance": "Anti-HCV antibody testing indicates exposure but not necessarily active infection — confirmatory HCV RNA (PCR) testing is required to diagnose current infection"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — serology/RNA PCR diagnosis",
+    "importantDisease": "Chronic hepatitis C, cirrhosis, hepatocellular carcinoma",
+    "importantTest": "Anti-HCV antibody screening confirmed by HCV RNA PCR",
+    "distinguishingFeature": "Highly effective direct-acting antivirals now cure the large majority of infections, unlike hepatitis B, which is typically only suppressed"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "hepatitis-b-virus",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Hepatitis C",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hepatitis-c/"
+    },
+    {
+      "name": "WHO — Hepatitis C",
+      "kind": "educational",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/hepatitis-c"
+    }
+  ]
+}

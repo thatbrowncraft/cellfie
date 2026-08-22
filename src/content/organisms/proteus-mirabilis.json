@@ -1,0 +1,134 @@
+{
+  "id": "proteus-mirabilis",
+  "scientificName": "Proteus mirabilis",
+  "category": "bacteria",
+  "quickTags": [
+    "Swarming motility",
+    "Urease positive",
+    "Non-lactose fermenter"
+  ],
+  "searchKeywords": [
+    "p mirabilis",
+    "proteus",
+    "struvite stones",
+    "swarming"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Morganellaceae",
+    "genus": "Proteus",
+    "species": "P. mirabilis"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-3 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Highly motile with peritrichous flagella; produces characteristic swarming growth",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, water, and the intestinal tract of humans and animals",
+    "hostAssociation": "Normal gut flora; opportunistic pathogen, especially of the urinary tract",
+    "environmentalOccurrence": "Widespread in soil and sewage",
+    "reservoir": "Human/animal GI tract, environment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar, blood agar",
+      "growthCharacteristics": "Facultative anaerobe; characteristic swarming motility produces concentric rings on non-selective agar",
+      "colonyMorphology": "Swarming, wave-like colonies on blood agar; colorless (non-lactose fermenting) colonies on MacConkey agar",
+      "pigmentation": "None",
+      "hemolysis": "Beta-hemolytic on blood agar"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Urease",
+        "result": "+ (strongly)"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "−"
+      },
+      {
+        "test": "Indole",
+        "result": "−"
+      },
+      {
+        "test": "H2S production",
+        "result": "+"
+      },
+      {
+        "test": "Phenylalanine deaminase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative rod, non-lactose fermenter",
+    "Swarming motility on blood agar (concentric ring pattern)",
+    "Strongly urease positive",
+    "H2S production on TSI agar",
+    "Indole negative — distinguishes from P. vulgaris"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Urinary tract infections",
+      "Struvite (staghorn) kidney stones",
+      "Wound infections",
+      "Bacteremia in catheterized patients"
+    ],
+    "virulenceFactors": [
+      "Urease (splits urea to ammonia, alkalinizes urine, promotes struvite stone formation)",
+      "Fimbriae",
+      "Swarming motility aids ascending UTI"
+    ],
+    "transmission": "Endogenous from GI flora; catheter-associated nosocomial transmission",
+    "epidemiology": "Common cause of complicated and catheter-associated UTIs; strongly associated with struvite (infection) kidney stones",
+    "labSignificance": "Swarming motility on non-selective media is a classic identifying feature but can overgrow other organisms on a mixed culture plate"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Urease positive, indole negative, H2S positive",
+    "importantDisease": "UTI, struvite kidney stones",
+    "importantTest": "Swarming motility on blood agar; urease test",
+    "distinguishingFeature": "Urease production alkalinizes urine, predisposing to struvite (staghorn) calculi"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "escherichia-coli",
+      "relationship": "same-clinical-specimen"
+    },
+    {
+      "id": "klebsiella-pneumoniae",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Proteus Mirabilis\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

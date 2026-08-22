@@ -1,0 +1,102 @@
+{
+  "id": "borrelia-burgdorferi",
+  "scientificName": "Borrelia burgdorferi",
+  "category": "bacteria",
+  "quickTags": [
+    "Spirochete",
+    "Tick-borne (Ixodes)",
+    "Lyme disease"
+  ],
+  "searchKeywords": [
+    "lyme disease",
+    "b burgdorferi",
+    "borrelia",
+    "erythema migrans"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Spirochaetota",
+    "class": "Spirochaetia",
+    "order": "Spirochaetales",
+    "family": "Borreliaceae",
+    "genus": "Borreliella",
+    "species": "B. burgdorferi"
+  },
+  "morphology": {
+    "shape": "Loosely coiled spirochete",
+    "shapeCategory": "spirochete",
+    "arrangement": "Single organisms",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~10-30 x 0.2-0.3 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile via periplasmic flagella, corkscrew motion",
+    "motile": true,
+    "oxygenRequirement": "Microaerophile",
+    "oxygenRequirementCategory": "microaerophile",
+    "notes": "Often reclassified taxonomically to genus Borreliella; commonly still referred to clinically as Borrelia burgdorferi"
+  },
+  "habitat": {
+    "naturalHabitat": "Maintained in a natural cycle between Ixodes ticks and small mammal/bird reservoir hosts (e.g. white-footed mice)",
+    "hostAssociation": "Zoonotic — humans are incidental, dead-end hosts",
+    "environmentalOccurrence": "Endemic to wooded/grassy areas in parts of North America, Europe, and Asia where Ixodes ticks are established",
+    "reservoir": "Small mammals (especially white-footed mice), Ixodes ticks"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not routinely visualized by Gram stain (poorly staining, low organism burden in clinical specimens)",
+      "appearance": "Loosely coiled spirochete on specialized silver stains/dark-field microscopy",
+      "arrangement": "Single organisms"
+    },
+    "culture": {
+      "media": "Barbour-Stoenner-Kelly (BSK) medium",
+      "growthCharacteristics": "Fastidious, very slow growing — culture is rarely used clinically",
+      "colonyMorphology": "Not applicable — grows in liquid medium, not as discrete colonies",
+      "pigmentation": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Two-tiered serology (EIA screen, Western blot confirmation)",
+        "result": "Positive in confirmed Lyme disease"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Diagnosis is primarily clinical (erythema migrans rash) plus two-tiered serologic testing, not culture",
+    "Erythema migrans — an expanding \"bull's-eye\" rash at the tick-bite site is the classic early clinical sign",
+    "History of tick exposure in an endemic wooded/grassy area",
+    "Culture on BSK medium exists but is rarely used clinically due to slow, fastidious growth"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Lyme disease — early localized (erythema migrans), early disseminated (multiple erythema migrans, carditis, facial palsy), and late disease (Lyme arthritis, neuroborreliosis)"
+    ],
+    "transmission": "Bite of an infected Ixodes tick (e.g. Ixodes scapularis, the blacklegged/deer tick); typically requires prolonged tick attachment (about 36-48 hours) for transmission",
+    "epidemiology": "The most common vector-borne illness in North America and parts of Europe, concentrated in regions with established Ixodes tick populations",
+    "labSignificance": "Two-tiered serologic testing (screening EIA followed by confirmatory Western blot/second EIA) is the standard diagnostic approach; antibodies may not be detectable in the earliest days of infection"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative (rarely stained in practice)",
+    "shape": "Spirochete",
+    "keyBiochemicalReaction": "Not applicable — clinical/serologic diagnosis",
+    "importantDisease": "Lyme disease",
+    "importantTest": "Two-tiered serology (EIA + Western blot)",
+    "distinguishingFeature": "Transmitted by Ixodes ticks and requires prolonged tick attachment for transmission, unlike many other vector-borne infections"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "treponema-pallidum",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Lyme Disease",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/lyme/"
+    }
+  ]
+}

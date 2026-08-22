@@ -1,0 +1,94 @@
+{
+  "id": "trichophyton-rubrum",
+  "scientificName": "Trichophyton rubrum",
+  "category": "fungi",
+  "quickTags": [
+    "Dermatophyte",
+    "Anthropophilic",
+    "Athlete's foot/ringworm"
+  ],
+  "searchKeywords": [
+    "t rubrum",
+    "dermatophyte",
+    "athletes foot",
+    "tinea",
+    "ringworm"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Onygenales",
+    "family": "Arthrodermataceae",
+    "genus": "Trichophyton",
+    "species": "T. rubrum"
+  },
+  "morphology": {
+    "shape": "Filamentous mold with septate hyphae",
+    "size": "Hyphae ~2-4 µm wide; microconidia teardrop-shaped, ~2-3 µm",
+    "notes": "Produces mostly numerous teardrop-shaped microconidia along the hyphae; smooth-walled, pencil-shaped macroconidia are less common and often sparse"
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Microconidia (numerous, teardrop-shaped)",
+      "Macroconidia (sparse, smooth, pencil-shaped)"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Human skin, hair, and nails",
+    "hostAssociation": "Anthropophilic — adapted specifically to humans, spread person-to-person rather than from animals or soil",
+    "environmentalOccurrence": "Survives on shed skin cells in shared environments (locker rooms, shower floors, shared footwear/towels)",
+    "reservoir": "Infected humans; contaminated surfaces and fomites"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "KOH preparation of skin/nail/hair scrapings; lactophenol cotton blue for culture",
+      "appearance": "Septate hyphae in KOH prep of skin scrapings; numerous teardrop-shaped microconidia along hyphae in culture",
+      "arrangement": "Microconidia scattered along hyphae"
+    },
+    "culture": {
+      "media": "Dermatophyte test medium (DTM), Sabouraud dextrose agar",
+      "growthCharacteristics": "Slow growing — 1-3 weeks",
+      "colonyMorphology": "White, cottony surface with a characteristic wine-red to reddish-brown pigment on the reverse of the plate",
+      "pigmentation": "White surface, wine-red reverse"
+    }
+  },
+  "identificationClues": [
+    "Wine-red to reddish-brown pigment on the reverse side of the culture plate — a classic identifying feature",
+    "Numerous teardrop-shaped microconidia along the hyphae, with sparse macroconidia",
+    "KOH preparation of skin/nail scrapings shows septate hyphae directly",
+    "The most common cause of chronic dermatophyte infections of skin and nails worldwide"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Tinea pedis (athlete's foot)",
+      "Tinea corporis (ringworm of the body)",
+      "Tinea cruris (jock itch)",
+      "Tinea unguium/onychomycosis (nail infection)"
+    ],
+    "transmission": "Direct skin-to-skin contact or contact with contaminated fomites (shared towels, shoes, locker room/shower floors)",
+    "epidemiology": "The most common dermatophyte causing chronic, recurrent skin and nail infections worldwide; being anthropophilic, it spreads efficiently in communal/shared-facility settings",
+    "labSignificance": "KOH preparation is a quick office-based way to confirm a dermatophyte infection, while the reddish-brown reverse pigment on culture is the classic confirmatory feature for this specific species"
+  },
+  "examFacts": {
+    "shape": "Filamentous mold, septate hyphae",
+    "keyBiochemicalReaction": "Not applicable — colony pigment/microscopic morphology",
+    "importantDisease": "Tinea pedis, corporis, cruris, and onychomycosis",
+    "importantTest": "KOH preparation of skin scrapings; culture showing wine-red reverse pigment",
+    "distinguishingFeature": "Anthropophilic (human-adapted) with a characteristic wine-red reverse pigment on culture"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Ringworm (Dermatophyte Infections)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/ringworm/"
+    }
+  ]
+}

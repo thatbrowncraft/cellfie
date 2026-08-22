@@ -1,0 +1,102 @@
+{
+  "id": "histoplasma-capsulatum",
+  "scientificName": "Histoplasma capsulatum",
+  "category": "fungi",
+  "quickTags": [
+    "Dimorphic fungus",
+    "Bird/bat droppings",
+    "Intracellular yeast in tissue"
+  ],
+  "searchKeywords": [
+    "histoplasmosis",
+    "h capsulatum",
+    "cave disease",
+    "ohio river valley"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Onygenales",
+    "family": "Ajellomycetaceae",
+    "genus": "Histoplasma",
+    "species": "H. capsulatum"
+  },
+  "morphology": {
+    "shape": "Dimorphic: mold (mycelial) form in the environment/at room temperature, small oval yeast form at body temperature",
+    "size": "Yeast form ~2-4 µm; tuberculate macroconidia ~8-14 µm in the mold form",
+    "notes": "Despite the species name, it does not have a true polysaccharide capsule — the name is a historical misnomer"
+  },
+  "fungalDetails": {
+    "morphologicalType": "dimorphic",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Tuberculate macroconidia",
+      "Small microconidia (infectious form)"
+    ],
+    "clinicalGroup": "systemic"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil enriched with bird or bat droppings",
+    "hostAssociation": "Environmental saprophyte; facultative intracellular pathogen within macrophages during infection",
+    "environmentalOccurrence": "Endemic to the Ohio and Mississippi River valleys in North America, and other river valley regions worldwide; associated with caves, chicken coops, and bird roosts",
+    "reservoir": "Soil contaminated with bird or bat guano"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Giemsa or methenamine silver stain of tissue/bone marrow; lactophenol cotton blue for mold form",
+      "appearance": "Small oval intracellular yeasts within macrophages in tissue; tuberculate (spiny) macroconidia in the mold form on culture",
+      "arrangement": "Clusters within macrophage cytoplasm"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar (mold form at 25-30°C); brain-heart infusion blood agar (yeast form at 37°C)",
+      "growthCharacteristics": "Slow growing — mold form may take 2-4 weeks to develop",
+      "colonyMorphology": "White to buff, cottony mold colonies at room temperature; smooth, moist, cream-colored yeast colonies at 37°C",
+      "pigmentation": "White to tan"
+    }
+  },
+  "identificationClues": [
+    "Thermal dimorphism — mold at room temperature, yeast at 37°C",
+    "Small intracellular yeast forms seen within macrophages on tissue biopsy or bone marrow",
+    "Tuberculate (spiny-walled) macroconidia characteristic of the mold form",
+    "Urine/serum Histoplasma antigen test is a rapid, sensitive diagnostic tool",
+    "Exposure history to bird/bat droppings, caves, or endemic river valley regions"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Pulmonary histoplasmosis (often self-limited in immunocompetent hosts)",
+      "Progressive disseminated histoplasmosis (in immunocompromised hosts, e.g. advanced HIV)",
+      "Chronic cavitary pulmonary histoplasmosis"
+    ],
+    "transmission": "Inhalation of microconidia from disturbed soil contaminated with bird or bat droppings (e.g. spelunking, construction, demolition)",
+    "epidemiology": "Endemic to the Ohio and Mississippi River valleys and other river valley regions globally; a major AIDS-defining opportunistic infection in endemic areas",
+    "labSignificance": "Urine antigen testing is faster and more sensitive than culture, which can take weeks due to slow mold growth"
+  },
+  "examFacts": {
+    "shape": "Dimorphic fungus (mold/yeast)",
+    "keyBiochemicalReaction": "Not applicable — identified by thermal dimorphism and antigen testing",
+    "importantDisease": "Histoplasmosis (pulmonary and disseminated)",
+    "importantTest": "Urine/serum Histoplasma antigen test; tissue biopsy showing intracellular yeast in macrophages",
+    "distinguishingFeature": "Thermal dimorphism with tuberculate macroconidia in the mold phase and small intracellular yeasts in tissue"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "cryptococcus-neoformans",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Histoplasmosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/histoplasmosis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Histoplasmosis\"",
+      "kind": "educational"
+    }
+  ]
+}

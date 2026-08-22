@@ -1,0 +1,103 @@
+{
+  "id": "treponema-pallidum",
+  "scientificName": "Treponema pallidum",
+  "category": "bacteria",
+  "quickTags": [
+    "Spirochete",
+    "Cannot be cultured in vitro",
+    "STI"
+  ],
+  "searchKeywords": [
+    "syphilis",
+    "t pallidum",
+    "spirochete",
+    "vdrl",
+    "rpr"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Spirochaetota",
+    "class": "Spirochaetia",
+    "order": "Spirochaetales",
+    "family": "Spirochaetaceae",
+    "genus": "Treponema",
+    "species": "T. pallidum"
+  },
+  "morphology": {
+    "shape": "Thin, tightly coiled spiral",
+    "shapeCategory": "spirochete",
+    "arrangement": "Single organisms",
+    "arrangementCategory": "single",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~6-15 x 0.1-0.2 µm — below the resolution of light microscopy without special methods",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile with a corkscrew rotational and flexing motion via periplasmic flagella",
+    "motile": true,
+    "oxygenRequirement": "Microaerophile",
+    "oxygenRequirementCategory": "microaerophile",
+    "notes": "Does not Gram stain well due to its thinness; visualized by dark-field microscopy or direct fluorescent antibody testing"
+  },
+  "habitat": {
+    "naturalHabitat": "Exclusively human host — no environmental or animal reservoir",
+    "hostAssociation": "Obligate human pathogen",
+    "environmentalOccurrence": "Does not survive outside the host",
+    "reservoir": "Infected humans"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Dark-field microscopy; direct fluorescent antibody (DFA-TP)",
+      "appearance": "Thin, tightly coiled spirochetes, too thin to be seen by standard bright-field/Gram stain",
+      "arrangement": "Single organisms"
+    },
+    "culture": {
+      "media": "Cannot be cultured on artificial media in vitro",
+      "growthCharacteristics": "Obligate parasite — historically propagated only in rabbit testes for research",
+      "colonyMorphology": "Not applicable — non-cultivable",
+      "pigmentation": "Not applicable",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": []
+  },
+  "identificationClues": [
+    "Cannot be cultured on standard laboratory media",
+    "Diagnosis relies on serology (nontreponemal: VDRL/RPR; treponemal: FTA-ABS, TPPA) or dark-field microscopy of lesion exudate",
+    "Thin spiral organism, invisible on Gram stain",
+    "Progresses through primary (chancre), secondary, latent, and tertiary stages"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Syphilis (primary, secondary, latent, tertiary)",
+      "Congenital syphilis"
+    ],
+    "virulenceFactors": [
+      "Outer membrane proteins facilitating adhesion and immune evasion",
+      "Ability to disseminate widely and establish latency"
+    ],
+    "transmission": "Sexual contact; transplacental (congenital syphilis); rarely blood transfusion",
+    "epidemiology": "Sexually transmitted infection with rising incidence in many regions; untreated infection can progress over years to tertiary syphilis affecting the cardiovascular and central nervous systems",
+    "labSignificance": "Diagnosis is serologic, not culture-based, since the organism cannot be grown in vitro"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (too thin to visualize)",
+    "shape": "Spirochete",
+    "keyBiochemicalReaction": "Non-cultivable — diagnosis by serology",
+    "importantDisease": "Syphilis",
+    "importantTest": "VDRL/RPR (nontreponemal) confirmed by FTA-ABS or TPPA (treponemal); dark-field microscopy of chancre fluid",
+    "distinguishingFeature": "Cannot be grown on artificial media — one of very few major bacterial pathogens still diagnosed purely by serology/microscopy"
+  },
+  "relatedOrganisms": [],
+  "sources": [
+    {
+      "name": "CDC — Syphilis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/syphilis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Syphilis\"",
+      "kind": "educational"
+    }
+  ]
+}

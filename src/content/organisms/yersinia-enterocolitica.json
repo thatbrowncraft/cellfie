@@ -1,0 +1,118 @@
+{
+  "id": "yersinia-enterocolitica",
+  "scientificName": "Yersinia enterocolitica",
+  "category": "bacteria",
+  "quickTags": [
+    "Cold enrichment",
+    "Bull's-eye colonies",
+    "Pseudoappendicitis"
+  ],
+  "searchKeywords": [
+    "y enterocolitica",
+    "yersiniosis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Yersiniaceae",
+    "genus": "Yersinia",
+    "species": "Y. enterocolitica"
+  },
+  "morphology": {
+    "shape": "Coccobacillus",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-3 x 0.5-0.8 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile at 22-25°C, non-motile at 37°C",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "GI tract of many domestic and wild animals, especially pigs",
+    "hostAssociation": "Zoonotic foodborne pathogen",
+    "environmentalOccurrence": "Psychrotrophic — able to grow at refrigeration temperatures, contaminated pork products a classic source",
+    "reservoir": "Pigs (a major reservoir), contaminated food/water"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative coccobacilli",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Cefsulodin-irgasan-novobiocin (CIN) agar, cold enrichment",
+      "growthCharacteristics": "Grows at refrigeration temperature (cold enrichment technique aids isolation)",
+      "colonyMorphology": "\"Bull's-eye\" colonies (dark red center, translucent rim) on CIN agar",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Urease",
+        "result": "+"
+      },
+      {
+        "test": "Motility at 25°C",
+        "result": "+"
+      },
+      {
+        "test": "Motility at 37°C",
+        "result": "−"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Grows at refrigeration temperatures — cold enrichment technique improves recovery from stool",
+    "\"Bull's-eye\" colony morphology on CIN agar",
+    "Temperature-dependent motility (motile at 25°C, non-motile at 37°C)",
+    "Can mimic acute appendicitis (\"pseudoappendicitis\") due to mesenteric lymphadenitis"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Enterocolitis (fever, diarrhea, abdominal pain)",
+      "Mesenteric lymphadenitis mimicking appendicitis (\"pseudoappendicitis\")",
+      "Reactive arthritis (post-infectious)"
+    ],
+    "virulenceFactors": [
+      "Type III secretion system (Yop proteins)",
+      "Invasin protein (facilitates epithelial invasion)"
+    ],
+    "transmission": "Foodborne — undercooked pork is a classic source; also unpasteurized milk and contaminated water",
+    "epidemiology": "An important cause of foodborne enterocolitis, particularly associated with pork products; notable for its ability to grow at refrigerator temperatures on contaminated food",
+    "labSignificance": "Cold enrichment (holding stool specimen at 4°C before subculturing) increases yield since the organism outcompetes normal flora better at low temperature"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Coccobacillus",
+    "keyBiochemicalReaction": "Urease positive, temperature-dependent motility",
+    "importantDisease": "Enterocolitis, pseudoappendicitis",
+    "importantTest": "Cold enrichment culture; CIN agar bull's-eye colonies",
+    "distinguishingFeature": "Grows at refrigerator temperatures, enabling cold enrichment for isolation"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "yersinia-pestis",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Yersinia",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/yersinia/"
+    }
+  ]
+}

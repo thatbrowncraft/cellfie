@@ -1,0 +1,80 @@
+{
+  "id": "epstein-barr-virus",
+  "scientificName": "Human gammaherpesvirus 4",
+  "commonName": "Epstein-Barr virus (EBV)",
+  "category": "virus",
+  "quickTags": [
+    "dsDNA virus",
+    "Enveloped",
+    "Infectious mononucleosis"
+  ],
+  "searchKeywords": [
+    "ebv",
+    "epstein barr",
+    "mono",
+    "mononucleosis",
+    "kissing disease"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Orthoherpesviridae",
+    "genus": "Lymphocryptovirus",
+    "species": "Human gammaherpesvirus 4"
+  },
+  "morphology": {
+    "shape": "Spherical, enveloped virion with icosahedral capsid",
+    "size": "~120-180 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "dna",
+    "genomeStrandedness": "dsdna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "blood-body-fluids"
+  },
+  "habitat": {
+    "naturalHabitat": "Human B lymphocytes and oropharyngeal epithelium; establishes lifelong latency in memory B cells",
+    "hostAssociation": "Obligate human pathogen, extremely widespread — most adults worldwide are infected",
+    "reservoir": "Infected humans, often asymptomatic intermittent oral shedders"
+  },
+  "identificationClues": [
+    "Heterophile antibody (Monospot) test is the classic rapid screening test, though it can be falsely negative early in illness or in young children",
+    "Atypical (reactive) lymphocytes on peripheral blood smear support the diagnosis",
+    "EBV-specific serology (VCA IgM/IgG, EBNA) confirms and can stage the timing of infection when the heterophile test is negative or ambiguous",
+    "Classic triad of fever, pharyngitis, and lymphadenopathy, often with splenomegaly"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Infectious mononucleosis",
+      "Associated with several malignancies, including Burkitt lymphoma, nasopharyngeal carcinoma, and some Hodgkin lymphomas",
+      "Post-transplant lymphoproliferative disease in immunosuppressed transplant recipients"
+    ],
+    "transmission": "Saliva (\"kissing disease\") primarily; less commonly through blood transfusion, organ transplantation, or sexual contact",
+    "epidemiology": "One of the most common human viruses worldwide — most people are infected at some point, often asymptomatically in early childhood, with symptomatic mononucleosis more typical when primary infection occurs during adolescence or young adulthood",
+    "labSignificance": "Splenomegaly is a clinically important finding — contact sports/activities with abdominal trauma risk are typically restricted for several weeks due to the risk of splenic rupture"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — heterophile antibody/serology diagnosis",
+    "importantDisease": "Infectious mononucleosis; associated with Burkitt lymphoma and nasopharyngeal carcinoma",
+    "importantTest": "Heterophile antibody (Monospot) test; EBV-specific serology",
+    "distinguishingFeature": "Established lifelong B-cell latency links it to several distinct malignancies, unlike most acute viral infections"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "herpes-simplex-virus-1",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "varicella-zoster-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — About Epstein-Barr Virus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/epstein-barr/"
+    }
+  ]
+}
