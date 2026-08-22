@@ -7,6 +7,7 @@ import {
   ACCEPTED_CUSTOM_IMAGE_TYPES,
   addOrganismImage,
   customImageRejectionMessages,
+  MAX_CUSTOM_IMAGES_PER_ORGANISM,
   fungalClinicalGroupLabels,
   fungalMorphologicalTypeLabels,
   bodyLocationLabels,
@@ -369,15 +370,21 @@ export function OrganismDetailPage() {
             tabIndex={-1}
           />
           <div className="flex flex-wrap items-center gap-2">
-            <Button
-              variant="secondary"
-              size="small"
-              icon={<UploadSimple size={14} />}
-              disabled={isUploading}
-              onClick={() => fileInputRef.current?.click()}
-            >
-              {isUploading ? 'Saving\u2026' : images.length > 0 ? 'Add another illustration' : 'Add your illustration'}
-            </Button>
+            {images.length >= MAX_CUSTOM_IMAGES_PER_ORGANISM ? (
+              <span className="font-ui text-caption font-medium text-ink-tertiary">
+                Maximum reached: {MAX_CUSTOM_IMAGES_PER_ORGANISM} images
+              </span>
+            ) : (
+              <Button
+                variant="secondary"
+                size="small"
+                icon={<UploadSimple size={14} />}
+                disabled={isUploading}
+                onClick={() => fileInputRef.current?.click()}
+              >
+                {isUploading ? 'Saving\u2026' : images.length > 0 ? 'Add another illustration' : 'Add your illustration'}
+              </Button>
+            )}
             {primaryImage && (
               <Button variant="tertiary" size="small" icon={<Trash size={14} />} onClick={() => handleRemoveImage(primaryImage.id)}>
                 Remove image
@@ -480,6 +487,25 @@ export function OrganismDetailPage() {
           )}
         </div>
       </header>
+
+      {(organism.genZNote || organism.sourceType !== 'curated-local') && (
+        <div className="mb-4">
+          {organism.genZNote ? (
+            <CalloutBox type="aside" title="Lab brain note">
+              {organism.genZNote}
+            </CalloutBox>
+          ) : (
+            // Gen Z Learning Layer — Knowledge Layer/user-saved profiles
+            // never get a fabricated memory hook from uncertain retrieved
+            // information (per the redesign brief, "do not fabricate
+            // humorous claims from uncertain information"). This is the
+            // explicit fallback rather than silently omitting the section.
+            <CalloutBox type="aside" title="Lab brain note">
+              Memory hook unavailable for this source.
+            </CalloutBox>
+          )}
+        </div>
+      )}
 
       <div className="flex flex-col gap-4">
         {hasClassification && (
