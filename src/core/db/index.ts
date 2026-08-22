@@ -721,6 +721,18 @@ class CellfieDB extends Dexie {
         const migrated: OrganismImage[] = legacyImages.map((img) => ({
           id: crypto.randomUUID(),
           organismId: img.organismId,
+          // Fix for CI build failure introduced by the Image Import Bug
+          // Fix's v13 migration: `OrganismImage.storageType` became a
+          // required field, but this earlier v11 migration step (which
+          // upgrades *pre-multi-image* single-custom-image rows) was
+          // never updated to set it. Every row this step produces came
+          // from the old OPFS-only `organismCustomImages` table, so
+          // 'opfs' is the accurate, non-invented value here — not a
+          // guess. (The v13 migration's own `.upgrade()` step, further
+          // below, does the equivalent backfill for rows that already
+          // went through v11 before v13 ran; this fixes the same gap
+          // at the point the row is first created instead.)
+          storageType: 'opfs',
           filePath: img.filePath,
           mimeType: img.mimeType,
           fileName: img.fileName,
