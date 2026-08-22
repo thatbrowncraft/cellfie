@@ -5,7 +5,7 @@ import { readFile } from '@/core/file-storage'
 
 export interface OrganismImageWithUrl {
   image: OrganismImage
-  /** A blob: object URL for this image, once loaded from OPFS — undefined while loading or on read failure. */
+  /** A blob: object URL for this image, once loaded — undefined while loading or on read failure. */
   url: string | undefined
 }
 
@@ -20,15 +20,35 @@ interface OrganismImagesResult {
   thumbnails: OrganismImageWithUrl[]
 }
 
+/** A stable key per image's underlying bytes, regardless of which store they live in — used to dedupe/track object URLs. */
+function storageKey(image: OrganismImage): string {
+  return image.storageType === 'indexeddb' ? `indexeddb:${image.blobId ?? image.id}` : `opfs:${image.filePath ?? image.id}`
+}
+
+/** Reads an image's bytes back out of whichever store `storageType` says it's in. Throws on any read failure — callers treat that as "no URL for this image". */
+async function readImageBlob(image: OrganismImage): Promise<Blob> {
+  if (image.storageType === 'indexeddb') {
+    if (!image.blobId) throw new Error('OrganismImage marked indexeddb but has no blobId')
+    const row = await db.organismImageBlobs.get(image.blobId)
+    if (!row) throw new Error('Missing organismImageBlobs row')
+    return row.blob
+  }
+  if (!image.filePath) throw new Error('OrganismImage marked opfs but has no filePath')
+  return readFile(image.filePath)
+}
+
 /**
- * Organism Library / Illustration System continuation §19-§27 — the
- * multi-image successor to the old single-custom-image hook. Resolves
- * every image the user has uploaded for this organism (§21: multiple
- * images, one primary) the same way `useOpfsObjectUrl` already does for
- * a single path, just fanned out over the whole list. `useLiveQuery`
- * on the Dexie read means adding, removing, or re-choosing a primary
- * image immediately updates every place rendering this organism (the
- * detail page, its card in the grid) with no manual refetch plumbing.
+ * Organism Library / Illustration System continuation §19-§27, extended
+ * by the Image Import Bug Fix — the multi-image successor to the old
+ * single-custom-image hook. Resolves every image the user has uploaded
+ * for this organism (§21: multiple images, one primary), transparently
+ * handling both storage paths a given image might be in (OPFS, or the
+ * IndexedDB fallback — see `core/organisms/customImages.ts`); nothing
+ * downstream of this hook needs to know or care which one a particular
+ * image used. `useLiveQuery` on the Dexie read means adding, removing,
+ * or re-choosing a primary image immediately updates every place
+ * rendering this organism (the detail page, its card in the grid) with
+ * no manual refetch plumbing.
  */
 export function useOrganismImages(organismId: string): OrganismImagesResult {
   const rows = useLiveQuery(
@@ -46,8 +66,8 @@ export function useOrganismImages(organismId: string): OrganismImagesResult {
     [rows]
   )
 
-  const pathsKey = ordered.map((img) => img.filePath).join('|')
-  const [urlsByPath, setUrlsByPath] = useState<Record<string, string>>({})
+  const keysKey = ordered.map(storageKey).join('|')
+  const [urlsByKey, setUrlsByKey] = useState<Record<string, string>>({})
 
   useEffect(() => {
     let cancelled = false
@@ -56,31 +76,31 @@ export function useOrganismImages(organismId: string): OrganismImagesResult {
     Promise.all(
       ordered.map(async (img) => {
         try {
-          const blob = await readFile(img.filePath)
+          const blob = await readImageBlob(img)
           const url = URL.createObjectURL(blob)
           createdUrls.push(url)
-          return [img.filePath, url] as const
+          return [storageKey(img), url] as const
         } catch {
-          return [img.filePath, undefined] as const
+          return [storageKey(img), undefined] as const
         }
       })
     ).then((pairs) => {
       if (cancelled) return
       const next: Record<string, string> = {}
-      for (const [path, url] of pairs) {
-        if (url) next[path] = url
+      for (const [key, url] of pairs) {
+        if (url) next[key] = url
       }
-      setUrlsByPath(next)
+      setUrlsByKey(next)
     })
 
     return () => {
       cancelled = true
       createdUrls.forEach((url) => URL.revokeObjectURL(url))
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- pathsKey is the intentional dependency; `ordered` is a new array every render.
-  }, [pathsKey])
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- keysKey is the intentional dependency; `ordered` is a new array every render.
+  }, [keysKey])
 
-  const images: OrganismImageWithUrl[] = ordered.map((image) => ({ image, url: urlsByPath[image.filePath] }))
+  const images: OrganismImageWithUrl[] = ordered.map((image) => ({ image, url: urlsByKey[storageKey(image)] }))
   const primary = images.find((i) => i.image.isPrimary)
   const thumbnails = images.filter((i) => !i.image.isPrimary)
 
