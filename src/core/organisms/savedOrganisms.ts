@@ -7,6 +7,7 @@
  */
 import { db, type SavedOrganismRecord } from '../db'
 import type { OrganismProfile } from './types'
+import { lookupOrganismOnline } from './knowledgeLayer'
 
 /** All organisms the user has personally saved, most recently saved first. */
 export async function listSavedOrganisms(): Promise<OrganismProfile[]> {
@@ -46,4 +47,46 @@ export async function incrementOrganismSearchCount(organismId: string): Promise<
   const existing = await db.savedOrganisms.get(organismId)
   if (!existing) return
   await db.savedOrganisms.update(organismId, { searchCount: existing.searchCount + 1 })
+}
+
+export type RefreshSavedOrganismResult = { status: 'refreshed'; profile: OrganismProfile } | { status: 'no-change' } | { status: 'failed' }
+
+/**
+ * §Phase 12 — "Refresh scientific information". Re-runs the *same*
+ * source lookup (same mode, same specific book if that's what was
+ * originally used — never silently switching a book-scoped save to
+ * trusted sources on refresh) and, only on success, overwrites the
+ * saved profile's scientific fields. On any failure (offline, network
+ * error, source no longer has the info) the existing saved record is
+ * left completely untouched — never deleted, never blanked (§Phase 12:
+ * "never delete the user's saved profile because refresh failed").
+ *
+ * User-owned data — custom images (a separate table, keyed by organism
+ * id, untouched by this function entirely), notes, highlights,
+ * bookmarks, annotations — all live outside `OrganismProfile` and are
+ * therefore automatically preserved; there is nothing in this function
+ * that could touch them even accidentally (§Phase 12/§23).
+ */
+export async function refreshSavedOrganism(organismId: string): Promise<RefreshSavedOrganismResult> {
+  const existing = await db.savedOrganisms.get(organismId)
+  if (!existing) return { status: 'failed' }
+  const savedProfile = existing.profile as OrganismProfile
+
+  const result = await lookupOrganismOnline(savedProfile.scientificName, {
+    mode: savedProfile.knowledgeLayer?.sourceMode ?? 'trusted',
+    libraryItemId: savedProfile.knowledgeLayer?.libraryItemId,
+    forceRefresh: true
+  })
+
+  if (result.status !== 'found' || !result.profile) {
+    // Covers 'offline' / 'error' / 'not-found' / 'not-found-in-source' —
+    // all treated the same way here: keep what the user already has.
+    return { status: 'failed' }
+  }
+
+  // Re-save under the same id, re-stamped 'user-saved' by saveOrganism
+  // itself — the refreshed scientific content replaces the old
+  // scientific content, but nothing outside OrganismProfile is touched.
+  await saveOrganism(result.profile)
+  return { status: 'refreshed', profile: { ...result.profile, sourceType: 'user-saved' } }
 }
