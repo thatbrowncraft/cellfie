@@ -1,5 +1,6 @@
 export * from './types'
 export * from './registry'
+export * from './exploreGroups'
 export * from './customImages'
 export * from './canonicalId'
 export * from './knowledgeLayer'

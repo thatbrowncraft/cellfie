@@ -56,7 +56,10 @@ export const ACCEPTED_CUSTOM_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/we
 /** §25 — a sensible local-storage-safety ceiling; chosen to comfortably fit a phone photo while keeping IndexedDB/OPFS usage predictable. */
 export const MAX_CUSTOM_IMAGE_BYTES = 8 * 1024 * 1024 // 8 MB
 
-export type CustomImageRejectionReason = 'unsupported-type' | 'too-large' | 'empty-file' | 'unreadable' | 'storage-error'
+/** Image Import Bug Fix §6 — a user may add at most this many local images per organism, independent of and on top of any curated illustration. */
+export const MAX_CUSTOM_IMAGES_PER_ORGANISM = 3
+
+export type CustomImageRejectionReason = 'unsupported-type' | 'too-large' | 'empty-file' | 'unreadable' | 'storage-error' | 'limit-reached'
 
 export interface CustomImageResult {
   ok: boolean
@@ -70,7 +73,8 @@ export const customImageRejectionMessages: Record<CustomImageRejectionReason, st
   'too-large': `Image is larger than ${Math.round(MAX_CUSTOM_IMAGE_BYTES / (1024 * 1024))} MB.`,
   'empty-file': 'That file looks empty or unreadable. Please try a different image.',
   unreadable: 'That image couldn\u2019t be read. It may be corrupted \u2014 please try a different file.',
-  'storage-error': 'We couldn\u2019t save this image on the device. Check available browser storage and try again.'
+  'storage-error': 'We couldn\u2019t save this image on the device. Check available browser storage and try again.',
+  'limit-reached': `You\u2019ve reached the limit of ${MAX_CUSTOM_IMAGES_PER_ORGANISM} images for this organism. Remove one before adding another.`
 }
 
 /**
@@ -157,6 +161,14 @@ export async function addOrganismImage(organismId: string, file: File): Promise<
   if (file.size > MAX_CUSTOM_IMAGE_BYTES) return { ok: false, reason: 'too-large' }
   if (!isAcceptableImageType(file.type)) {
     return { ok: false, reason: 'unsupported-type' }
+  }
+
+  // §6 — checked up front, before the decode check and any storage write,
+  // so hitting the cap never costs a wasted createImageBitmap call or a
+  // byte written to OPFS/IndexedDB that would just have to be cleaned up.
+  const currentCount = await db.organismImages.where('organismId').equals(organismId).count()
+  if (currentCount >= MAX_CUSTOM_IMAGES_PER_ORGANISM) {
+    return { ok: false, reason: 'limit-reached' }
   }
 
   if (file.type !== 'image/svg+xml') {

@@ -403,6 +403,17 @@ export interface OrganismProfile {
   identificationClues: string[]
   clinicalImportance?: OrganismClinicalImportance
   examFacts: OrganismExamFacts
+  /**
+   * Gen Z Learning Layer — one short, scientifically-grounded memory
+   * hook per organism, reinforcing a real fact already present
+   * elsewhere in this profile (a Gram reaction, a biochemical test, a
+   * distinguishing feature) rather than an unrelated joke. Optional and
+   * absent by default on any profile Cellfie hasn't authored content
+   * for — most importantly, never auto-generated for a Knowledge Layer
+   * result Cellfie can't verify (see OrganismDetailPage's "Memory hook
+   * unavailable for this source" fallback).
+   */
+  genZNote?: string
   /** Other organisms this one is meaningfully related to, each tagged with *why* (§36). */
   relatedOrganisms?: RelatedOrganismLink[]
   sources: OrganismSource[]
