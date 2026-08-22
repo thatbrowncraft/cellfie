@@ -1,10 +1,11 @@
-import { Sun, Moon, Monitor, TextAa, Download, Upload, ArrowsLeftRight, ArrowsDownUp } from '@phosphor-icons/react'
+import { Sun, Moon, Monitor, TextAa, Download, Upload, ArrowsLeftRight, ArrowsDownUp, CheckCircle } from '@phosphor-icons/react'
 import { ReadingLayout } from '../../shared/layouts'
 import { Button } from '../../shared/components'
 import { useTheme, type ThemeMode } from '../../core/theme'
 import { useReaderNavigationMode, type ReaderNavigationMode } from '../../core/reader-settings'
 import { cn } from '../../shared/utils/cn'
 import { exportJsonBackup } from '../../core/export'
+import { moduleStatusList } from '../../config/modules'
 
 const themeOptions: { mode: ThemeMode; label: string; icon: JSX.Element }[] = [
   { mode: 'system', label: 'System', icon: <Monitor size={20} /> },
@@ -17,21 +18,14 @@ const readerNavigationOptions: { mode: ReaderNavigationMode; label: string; icon
   { mode: 'scroll', label: 'Scroll', icon: <ArrowsDownUp size={20} />, description: 'Drag up/down to read down the page' }
 ]
 
-const futureModules = [
-  'Learn',
-  'Organism Explorer',
-  'Laboratory',
-  'Concept Explorer',
-  'Comparison Studio',
-  'AI (optional, opt-in)'
-]
-
 /**
  * Settings — the one page where this foundation ships genuinely working
  * controls (theme mode, large text) rather than placeholders, since Theme
  * System and Accessibility are Task 3 deliverables in their own right.
- * Module toggles, export/import, and offline diagnostics are shown as
- * inert previews — those are real features arriving in later phases.
+ * Module Activation task: the Modules list below now reflects real
+ * shipped status (see `config/modules.ts`) instead of a hardcoded
+ * "Coming soon" list. Export/import and offline diagnostics remain as
+ * before — Import restore is still a later-phase feature.
  */
 export function SettingsPage() {
   const { mode, setMode, largeText, setLargeText } = useTheme()
@@ -124,15 +118,25 @@ export function SettingsPage() {
       <section className="mb-10">
         <h2 className="mb-1 font-display text-h2 font-medium text-ink-primary">Modules</h2>
         <p className="mb-4 font-body text-body text-ink-secondary">
-          Every module can be shown or hidden from navigation. Toggles activate as each module ships.
+          Every shipped module is active by default. AI stays off until you choose to turn it on.
         </p>
         <ul className="divide-y divide-border rounded-md border border-border bg-surface">
-          {futureModules.map((name) => (
-            <li key={name} className="flex items-center justify-between px-4 py-3">
-              <span className="font-ui text-ui text-ink-tertiary">{name}</span>
-              <span className="rounded-full bg-border px-2 py-0.5 font-ui text-micro uppercase tracking-wide text-ink-tertiary">
-                Coming soon
+          {moduleStatusList.map(({ id, label, icon: ModuleIcon, status }) => (
+            <li key={id} className="flex items-center justify-between px-4 py-3">
+              <span className="flex items-center gap-2 font-ui text-ui text-ink-primary">
+                <ModuleIcon size={18} />
+                {label}
               </span>
+              {status === 'active' ? (
+                <span className="flex items-center gap-1 rounded-full bg-olive/15 px-2 py-0.5 font-ui text-micro uppercase tracking-wide text-olive">
+                  <CheckCircle size={14} weight="fill" />
+                  Active
+                </span>
+              ) : (
+                <span className="rounded-full bg-border px-2 py-0.5 font-ui text-micro uppercase tracking-wide text-ink-tertiary">
+                  Optional · Off
+                </span>
+              )}
             </li>
           ))}
         </ul>
@@ -141,8 +145,10 @@ export function SettingsPage() {
       <section>
         <h2 className="mb-1 font-display text-h2 font-medium text-ink-primary">Your data</h2>
         <p className="mb-4 font-body text-body text-ink-secondary">
-          Everything lives on this device. Export a full JSON backup of your library metadata, highlights, notes, and
-          bookmarks (Notes has its own Markdown export too). Restoring from a backup arrives in a later phase.
+          Everything you create in Cellfie stays on this device. Export a full JSON backup of your library metadata,
+          study progress, concepts, saved study content, notes, highlights, bookmarks, annotations, and your custom
+          work across Cellfie's modules (Notes has its own Markdown export too). Restoring from a backup arrives in a
+          later phase.
         </p>
         <div className="flex gap-3">
           <Button variant="secondary" icon={<Download size={18} />} onClick={() => void exportJsonBackup()}>
