@@ -50,7 +50,6 @@ export async function incrementOrganismSearchCount(organismId: string): Promise<
 }
 
 export type RefreshSavedOrganismResult = { status: 'refreshed'; profile: OrganismProfile } | { status: 'no-change' } | { status: 'failed' }
-
 /**
  * §Phase 12 — "Refresh scientific information". Re-runs the *same*
  * source lookup (same mode, same specific book if that's what was
@@ -89,4 +88,33 @@ export async function refreshSavedOrganism(organismId: string): Promise<RefreshS
   // scientific content, but nothing outside OrganismProfile is touched.
   await saveOrganism(result.profile)
   return { status: 'refreshed', profile: { ...result.profile, sourceType: 'user-saved' } }
+}
+
+/**
+ * §"edit/write options at every section" — lets someone fill in or
+ * correct fields Cellfie couldn't reliably retrieve (most commonly a
+ * Knowledge Layer profile that came back thin or empty for a section),
+ * without inventing a second content system. An edit is just a normal
+ * write to the *same* `OrganismProfile` object already flowing through
+ * `saveOrganism`/Dexie — no new table, no new storage format.
+ *
+ * Deliberately unavailable for `sourceType === 'curated-local'`:
+ * curated organisms are shipped application content (a JSON file in
+ * `src/content/organisms/`), not local user data, so editing one here
+ * would only ever edit an in-memory copy that silently reverts the
+ * moment the page reloads — worse than not offering the option at all
+ * (§18/§23 — user edits belong in local storage, never mistaken for
+ * shipped content). If someone finds an error in a curated profile,
+ * that's a content fix to the JSON file itself, not a runtime edit.
+ *
+ * Works for both an already-saved organism AND a Knowledge-Layer
+ * profile the user hasn't explicitly saved yet — editing an unsaved
+ * lookup implicitly saves it (editing it *is* the "keep my own
+ * version" action), consistent with how `refreshSavedOrganism` above
+ * only ever operates on rows already in `savedOrganisms`.
+ */
+export async function updateOrganismProfile(profile: OrganismProfile, edits: Partial<OrganismProfile>): Promise<OrganismProfile> {
+  const updated: OrganismProfile = { ...profile, ...edits, sourceType: 'user-saved' }
+  await saveOrganism(updated)
+  return updated
 }
