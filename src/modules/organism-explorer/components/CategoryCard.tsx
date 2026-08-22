@@ -1,4 +1,4 @@
-import { Bacteria, Bug, TestTube, Virus } from '@phosphor-icons/react'
+import { Bug, Flask, GitBranch, Stack } from '@phosphor-icons/react'
 import { Card, CardBody } from '@/shared/components'
 import type { OrganismCategory } from '@/core/organisms'
 
@@ -11,11 +11,22 @@ interface CategoryCardProps {
   onClick: () => void
 }
 
-const CATEGORY_ICONS: Partial<Record<OrganismCategory, typeof Bacteria>> = {
-  bacteria: Bacteria,
-  fungi: TestTube,
+// §build-fix — the four icons below are only ever picked from names
+// already confirmed to actually exist in this repo's installed
+// @phosphor-icons/react version (each is imported and building
+// successfully elsewhere: Flask in DashboardPage.tsx, Bug in
+// DashboardPage.tsx/OrganismExplorerPage.tsx, GitBranch in
+// DashboardPage.tsx/CategoryFilters.tsx, Stack in DashboardPage.tsx).
+// A prior version of this file guessed at 'Bacteria'/'TestTube'/'Virus'
+// based on a grep that turned out to match unrelated identifiers (e.g.
+// `BacteriaFilterState`) rather than a real icon import, which broke
+// the GitHub Pages build — so this list is deliberately conservative
+// rather than reaching for a more thematically perfect icon name.
+const CATEGORY_ICONS: Partial<Record<OrganismCategory, typeof Bug>> = {
+  bacteria: Flask,
+  fungi: Stack,
   protozoa: Bug,
-  virus: Virus
+  virus: GitBranch
 }
 
 /**
