@@ -10,6 +10,9 @@ import { ConceptDetailPage } from '../modules/concepts/ConceptDetailPage'
 import { OrganismExplorerPage } from '../modules/organism-explorer/OrganismExplorerPage'
 import { OrganismDetailPage } from '../modules/organism-explorer/OrganismDetailPage'
 import { LaboratoryPage } from '../modules/laboratory/LaboratoryPage'
+import { LaboratoryDetailPage } from '../modules/laboratory/LaboratoryDetailPage'
+import { CalculatorDetailPage } from '../modules/laboratory/CalculatorDetailPage'
+import { UnitConverterPage } from '../modules/laboratory/UnitConverterPage'
 import { ComparisonStudioPage } from '../modules/comparison-studio/ComparisonStudioPage'
 import { NotesPage } from '../modules/notes/NotesPage'
 import { SettingsPage } from '../modules/settings/SettingsPage'
@@ -174,6 +177,9 @@ export function AppRouter() {
         <Route path="/organisms" element={<OrganismExplorerPage />} />
         <Route path="/organisms/:organismId" element={<OrganismDetailPage />} />
         <Route path="/laboratory" element={<LaboratoryPage />} />
+        <Route path="/laboratory/unit-converter" element={<UnitConverterPage />} />
+        <Route path="/laboratory/calculators/:calculatorId" element={<CalculatorDetailPage />} />
+        <Route path="/laboratory/:category/:id" element={<LaboratoryDetailPage />} />
         <Route path="/comparison" element={<ComparisonStudioPage />} />
         <Route path="/notes" element={<NotesPage />} />
         <Route path="/highlights" element={<HighlightsPage />} />
