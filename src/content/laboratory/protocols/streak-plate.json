@@ -1,0 +1,97 @@
+{
+  "id": "proto-streak-plate",
+  "category": "protocol",
+  "title": "Streak Plate Method",
+  "subcategory": "Isolation Techniques",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "purpose": "To isolate individual bacterial colonies from a mixed culture by progressively diluting the inoculum across the surface of an agar plate.",
+  "principle": "Successive streaking with a flamed/sterile loop across separate quadrants progressively thins the number of cells transferred, so that by the final quadrant, single cells are deposited far enough apart to grow into visually distinct, isolated colonies.",
+  "requiredMaterials": [
+    "Agar plate (media appropriate to the organism)",
+    "Inoculating loop",
+    "Bunsen burner or loop incinerator",
+    "Marker for labeling"
+  ],
+  "requiredReagents": [],
+  "equipment": [
+    "equip-inoculating-loop",
+    "equip-petri-dish",
+    "equip-bsc-class-ii"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Label the base of the plate (not the lid) with sample ID, date, and initials."
+    },
+    {
+      "step": 2,
+      "instruction": "Sterilize the loop by flaming until red-hot (or use a sterile disposable loop), then cool briefly without touching a non-sterile surface."
+    },
+    {
+      "step": 3,
+      "instruction": "Pick up a small amount of inoculum and streak it back and forth across roughly one quarter of the plate (Quadrant 1)."
+    },
+    {
+      "step": 4,
+      "instruction": "Re-sterilize the loop, cool it, then draw it through a small edge of Quadrant 1 and streak a new area (Quadrant 2), turning the plate as needed."
+    },
+    {
+      "step": 5,
+      "instruction": "Repeat re-sterilization and streaking through the previous quadrant for Quadrants 3 and 4 (the four-quadrant streak method is one common pattern among several valid streaking patterns)."
+    },
+    {
+      "step": 6,
+      "instruction": "Incubate the plate inverted (lid down) at the temperature/duration appropriate for the organism."
+    }
+  ],
+  "observations": "Growth density decreases quadrant to quadrant; the final quadrant(s) should show well-separated, isolated colonies suitable for subculturing.",
+  "interpretation": "Isolated single colonies are presumed to represent a clonal population, forming the basis for pure-culture subculturing and downstream identification tests.",
+  "precautions": [
+    "Always cool a flamed loop before touching the culture to avoid killing the cells.",
+    "Work near a flame or in a biosafety cabinet as appropriate for the organism's risk assessment, not the streak plate method itself."
+  ],
+  "limitations": [
+    "A crowded original inoculum or an inconsistent streaking technique can leave the plate without truly isolated colonies, requiring a repeat streak from that plate."
+  ],
+  "biosafetyNotes": "Required containment level (open bench vs. biosafety cabinet) depends on the organism's risk assessment, not on the streak plate method itself.",
+  "relatedProtocols": [
+    "proto-spread-plate",
+    "proto-gram-stain"
+  ],
+  "relatedConcepts": [
+    "concept-aseptic-technique",
+    "concept-selective-differential-media"
+  ],
+  "relatedMedia": [
+    "media-nutrient-agar",
+    "media-tsa"
+  ],
+  "relatedEquipment": [
+    "equip-inoculating-loop",
+    "equip-petri-dish",
+    "equip-bsc-class-ii"
+  ],
+  "relatedSafety": [
+    "safety-aseptic-technique",
+    "safety-bsc-vs-clean-bench"
+  ],
+  "searchKeywords": [
+    "isolation",
+    "quadrant streak",
+    "pure culture",
+    "colony isolation"
+  ]
+}

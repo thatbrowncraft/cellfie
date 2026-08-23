@@ -1,0 +1,98 @@
+{
+  "id": "proto-serial-dilution",
+  "category": "protocol",
+  "title": "Serial Dilution",
+  "subcategory": "Isolation & Enumeration Techniques",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    },
+    {
+      "label": "FDA Bacteriological Analytical Manual (BAM)",
+      "publisher": "FDA"
+    }
+  ],
+  "purpose": "To progressively reduce the concentration of cells or particles in a sample through a series of measured dilutions, bringing colony counts into a countable range for enumeration, or reducing a culture for isolation.",
+  "principle": "A known volume of sample is transferred into a known volume of diluent, and this process is repeated across a series of tubes; each transfer multiplies the cumulative dilution factor of the previous step, producing an exponential decrease in concentration.",
+  "requiredMaterials": [
+    "Sterile dilution blanks/tubes (diluent volume known and consistent)",
+    "Micropipette and sterile tips",
+    "Vortex mixer (optional, for mixing between steps)"
+  ],
+  "requiredReagents": [
+    "Sterile diluent (e.g. saline or peptone water \u2014 the appropriate diluent depends on the sample type and method being followed)"
+  ],
+  "equipment": [
+    "equip-micropipette"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Label a series of sterile dilution tubes with the dilution each will represent (e.g. 10\u207b\u00b9, 10\u207b\u00b2, 10\u207b\u00b3...)."
+    },
+    {
+      "step": 2,
+      "instruction": "Transfer a known volume of the original sample into the first diluent tube and mix thoroughly (e.g. vortex or pipette up-and-down)."
+    },
+    {
+      "step": 3,
+      "instruction": "Using a fresh sterile tip, transfer the same known volume from the first dilution tube into the second, and mix."
+    },
+    {
+      "step": 4,
+      "instruction": "Repeat for each subsequent tube in the series, using a fresh tip each time to avoid carryover."
+    },
+    {
+      "step": 5,
+      "instruction": "Plate the appropriate dilution(s) using the spread plate or pour plate method for enumeration, or proceed to the next step of the workflow."
+    }
+  ],
+  "observations": "Each tube in the series represents a known cumulative dilution of the original sample; record every transfer volume and diluent volume used.",
+  "interpretation": "The cumulative dilution factor of any tube in the series equals the product of each individual step's dilution factor \u2014 see the Dilution Factor Calculator for cumulative calculations feeding into CFU/mL.",
+  "criticalNotes": [
+    "Use a fresh sterile tip for every single transfer \u2014 reusing a tip carries residual cells forward and invalidates the dilution math."
+  ],
+  "precautions": [
+    "Mix each tube thoroughly before drawing the next transfer; an unmixed tube gives an inaccurate dilution.",
+    "Work near a flame or in a biosafety cabinet as appropriate to the organism's risk assessment."
+  ],
+  "limitations": [
+    "Pipetting error compounds across steps in a serial dilution \u2014 a small volume error early in the series is magnified in later tubes."
+  ],
+  "biosafetyNotes": "Containment requirements depend on the organism, not the dilution technique itself.",
+  "relatedProtocols": [
+    "proto-spread-plate",
+    "proto-cfu-enumeration"
+  ],
+  "relatedConcepts": [
+    "concept-cfu-vs-direct-count"
+  ],
+  "relatedCalculators": [
+    "calc-dilution-factor",
+    "calc-cfu-ml"
+  ],
+  "relatedFormulas": [
+    "formula-dilution-factor",
+    "formula-cfu-ml"
+  ],
+  "relatedEquipment": [
+    "equip-micropipette"
+  ],
+  "relatedSafety": [
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "serial dilution",
+    "dilution series",
+    "10-fold dilution"
+  ]
+}

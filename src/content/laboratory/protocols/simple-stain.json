@@ -1,0 +1,89 @@
+{
+  "id": "proto-simple-stain",
+  "category": "protocol",
+  "title": "Simple Staining",
+  "subcategory": "Staining Techniques",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "purpose": "To visualize basic cell shape, size, and arrangement using a single stain, without differentiating cell wall type.",
+  "principle": "A single basic dye (positively charged) is attracted to the negatively charged bacterial cell surface, coloring all cells uniformly regardless of Gram type.",
+  "requiredMaterials": [
+    "Clean glass microscope slide",
+    "Inoculating loop",
+    "Bibulous paper",
+    "Immersion oil",
+    "Compound brightfield microscope"
+  ],
+  "requiredReagents": [
+    "Methylene blue, crystal violet, or safranin (a single basic dye)"
+  ],
+  "equipment": [
+    "equip-microscope-brightfield",
+    "equip-inoculating-loop",
+    "equip-slides"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Prepare a thin smear on a clean slide and air dry."
+    },
+    {
+      "step": 2,
+      "instruction": "Heat-fix the smear."
+    },
+    {
+      "step": 3,
+      "instruction": "Flood the smear with the chosen stain for the time appropriate to that dye (e.g. methylene blue ~1 minute)."
+    },
+    {
+      "step": 4,
+      "instruction": "Rinse gently with water and blot dry."
+    },
+    {
+      "step": 5,
+      "instruction": "Examine under oil immersion."
+    }
+  ],
+  "observations": "All cells appear a single color; record shape (coccus, bacillus, spirillum) and arrangement (diplo-, strepto-, staphylo-, etc.).",
+  "interpretation": "Simple staining confirms morphology and arrangement only \u2014 it provides no Gram-reaction or biochemical information.",
+  "precautions": [
+    "Treat all specimens as potentially infectious.",
+    "Avoid excess heat during fixation, which distorts cell shape."
+  ],
+  "limitations": [
+    "Cannot distinguish Gram-positive from Gram-negative organisms.",
+    "Does not reveal internal structures without a specialized stain (e.g. spore or capsule stains)."
+  ],
+  "biosafetyNotes": "Biosafety level depends on the organism, not the staining method.",
+  "relatedProtocols": [
+    "proto-gram-stain",
+    "proto-wet-mount"
+  ],
+  "relatedConcepts": [
+    "concept-aseptic-technique"
+  ],
+  "relatedEquipment": [
+    "equip-microscope-brightfield",
+    "equip-slides"
+  ],
+  "relatedSafety": [
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "basic stain",
+    "methylene blue",
+    "morphology stain"
+  ]
+}

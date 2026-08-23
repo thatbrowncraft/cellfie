@@ -1,0 +1,90 @@
+{
+  "id": "proto-cfu-enumeration",
+  "category": "protocol",
+  "title": "CFU Enumeration (Viable Plate Count)",
+  "subcategory": "Isolation & Enumeration Techniques",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    },
+    {
+      "label": "FDA Bacteriological Analytical Manual (BAM)",
+      "publisher": "FDA"
+    }
+  ],
+  "purpose": "To estimate the number of viable, culturable microorganisms in a sample by counting colonies that grow from a known volume of a known dilution.",
+  "principle": "Each viable cell (or small clump, for methods that don't fully disperse clumps) that lands on the agar surface is assumed to grow into one visible colony; counting colonies on a plate within a countable range and back-calculating through the known dilution and volume plated gives an estimate of the original viable concentration.",
+  "requiredMaterials": [
+    "Colony counter or marking pen",
+    "Plates from the spread or pour plate method at multiple dilutions"
+  ],
+  "requiredReagents": [],
+  "equipment": [
+    "equip-petri-dish"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "After incubation, select plates that fall within the countable range specified by the method/reference you are following (commonly cited as 30\u2013300 colonies for many general methods, but this is method-dependent \u2014 do not treat it as universal)."
+    },
+    {
+      "step": 2,
+      "instruction": "Count all colonies on the selected plate(s), marking each as counted to avoid double-counting."
+    },
+    {
+      "step": 3,
+      "instruction": "Record the colony count, the volume plated, and the dilution factor for that plate."
+    },
+    {
+      "step": 4,
+      "instruction": "Calculate CFU/mL (or CFU/g for solid samples) using the CFU Calculator."
+    },
+    {
+      "step": 5,
+      "instruction": "If multiple countable-range plates are available across replicate dilutions, many methods specify averaging results \u2014 again, follow the specific method/reference in use."
+    }
+  ],
+  "observations": "Distinct, separated colonies each counted as one CFU; overlapping/confluent growth is not countable and that dilution should be excluded.",
+  "interpretation": "The resulting CFU/mL or CFU/g is an estimate of viable, culturable organisms under the specific growth conditions used \u2014 it does not capture viable-but-non-culturable cells or cells requiring different conditions to grow.",
+  "precautions": [
+    "Confirm which countability range and averaging rule applies for the specific standard or protocol being followed before reporting a result."
+  ],
+  "limitations": [
+    "Undercounts organisms that don't grow under the conditions provided.",
+    "Clumped or chained cells may be counted as a single colony, underestimating true cell number."
+  ],
+  "biosafetyNotes": "Containment requirements depend on the organism being enumerated.",
+  "relatedProtocols": [
+    "proto-spread-plate",
+    "proto-serial-dilution"
+  ],
+  "relatedConcepts": [
+    "concept-cfu-vs-direct-count"
+  ],
+  "relatedCalculators": [
+    "calc-cfu-ml",
+    "calc-cfu-g"
+  ],
+  "relatedFormulas": [
+    "formula-cfu-ml",
+    "formula-cfu-g"
+  ],
+  "relatedSafety": [
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "cfu count",
+    "viable count",
+    "colony counting",
+    "plate count"
+  ]
+}

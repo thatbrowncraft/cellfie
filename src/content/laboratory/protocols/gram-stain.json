@@ -1,0 +1,124 @@
+{
+  "id": "proto-gram-stain",
+  "category": "protocol",
+  "title": "Gram Staining",
+  "subcategory": "Staining Techniques",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    },
+    {
+      "label": "ASM MicrobeLibrary Gram Stain Protocol",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To differentially stain bacteria based on cell wall composition, sorting them into Gram-positive and Gram-negative groups as a first step in identification.",
+  "principle": "Gram-positive cells have a thick peptidoglycan layer that traps the crystal violet\u2013iodine complex when dehydrated by decolorizer, retaining the purple stain. Gram-negative cells have a thin peptidoglycan layer and an outer membrane that is disrupted by the decolorizer, releasing the crystal violet and allowing the counterstain (safranin) to color the cells pink/red.",
+  "requiredMaterials": [
+    "Clean glass microscope slide",
+    "Inoculating loop",
+    "Bibulous/blotting paper",
+    "Immersion oil",
+    "Compound brightfield microscope"
+  ],
+  "requiredReagents": [
+    "Crystal violet (primary stain)",
+    "Gram's iodine (mordant)",
+    "Decolorizer (acetone-alcohol or 95% ethanol)",
+    "Safranin (counterstain)"
+  ],
+  "equipment": [
+    "equip-microscope-brightfield",
+    "equip-inoculating-loop",
+    "equip-slides"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Prepare a thin bacterial smear on a clean slide and air dry."
+    },
+    {
+      "step": 2,
+      "instruction": "Heat-fix the smear by passing the slide briefly through a flame (smear side up), or use a methanol fixation alternative.",
+      "note": "Heat-fixation kills most vegetative cells and adheres them to the slide; over-heating distorts morphology."
+    },
+    {
+      "step": 3,
+      "instruction": "Flood the smear with crystal violet and let stand for about 1 minute, then rinse gently with water."
+    },
+    {
+      "step": 4,
+      "instruction": "Flood with Gram's iodine and let stand for about 1 minute, then rinse gently with water.",
+      "note": "Iodine forms a crystal violet-iodine complex within the cell."
+    },
+    {
+      "step": 5,
+      "instruction": "Decolorize by adding decolorizer drop-wise until runoff is nearly clear (typically a few seconds) \u2014 this is the most technique-sensitive, timing-dependent step.",
+      "note": "Over-decolorization can falsely stain Gram-positive cells as Gram-negative; under-decolorization can do the reverse."
+    },
+    {
+      "step": 6,
+      "instruction": "Immediately rinse with water to stop decolorization."
+    },
+    {
+      "step": 7,
+      "instruction": "Counterstain with safranin for about 30\u201360 seconds, then rinse with water."
+    },
+    {
+      "step": 8,
+      "instruction": "Blot dry with bibulous paper (do not rub) and examine under oil immersion (1000\u00d7)."
+    }
+  ],
+  "observations": "Gram-positive organisms appear purple/violet. Gram-negative organisms appear pink/red. Note also cell shape (cocci, bacilli, spirilla) and arrangement (chains, clusters, pairs).",
+  "interpretation": "Gram reaction is a first-tier identification character used alongside morphology, arrangement, and subsequent biochemical tests \u2014 it narrows, but does not by itself confirm, organism identity.",
+  "criticalNotes": [
+    "Smear thickness matters: an overly thick smear can trap decolorizer and produce a false Gram-positive result.",
+    "Culture age matters: Gram-positive organisms in an aging culture can lose cell wall integrity and stain Gram-variable or falsely Gram-negative."
+  ],
+  "precautions": [
+    "Treat all specimens as potentially infectious.",
+    "Handle flame/heat-fixation carefully around flammable reagents.",
+    "Dispose of stained slides and reagent waste per local biosafety procedure."
+  ],
+  "limitations": [
+    "Some genera (e.g. Mycobacterium) do not Gram stain reliably due to a waxy cell wall and require acid-fast staining instead.",
+    "Very young or very old cultures may give inconsistent results."
+  ],
+  "biosafetyNotes": "Use standard aseptic technique when preparing the smear from a live culture. Biosafety level depends on the organism being handled, not on the staining procedure itself.",
+  "relatedProtocols": [
+    "proto-simple-stain",
+    "proto-streak-plate"
+  ],
+  "relatedConcepts": [
+    "concept-aseptic-technique",
+    "concept-accuracy-precision"
+  ],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-microscope-brightfield",
+    "equip-inoculating-loop",
+    "equip-slides"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-aseptic-technique",
+    "safety-ppe"
+  ],
+  "searchKeywords": [
+    "gram positive",
+    "gram negative",
+    "crystal violet",
+    "safranin",
+    "differential stain"
+  ]
+}

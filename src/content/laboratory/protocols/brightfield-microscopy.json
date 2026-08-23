@@ -1,0 +1,89 @@
+{
+  "id": "proto-brightfield-microscopy",
+  "category": "protocol",
+  "title": "Basic Brightfield Microscopy",
+  "subcategory": "Microscopy Techniques",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "purpose": "To correctly set up and use a compound brightfield microscope to observe stained or unstained microbiological specimens at increasing magnification.",
+  "principle": "Light passes from an illuminator through the specimen and objective lens system, forming a magnified image; brightfield microscopy relies on differences in specimen density/color (often enhanced by staining) for contrast against a bright background.",
+  "requiredMaterials": [
+    "Prepared or wet-mount slide",
+    "Lens paper",
+    "Immersion oil (for the 100\u00d7 objective)"
+  ],
+  "requiredReagents": [],
+  "equipment": [
+    "equip-microscope-brightfield"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Place the slide on the stage and secure it with the stage clips."
+    },
+    {
+      "step": 2,
+      "instruction": "Start with the lowest-power objective (e.g. 4\u00d7) and use the coarse focus knob to bring the specimen roughly into focus."
+    },
+    {
+      "step": 3,
+      "instruction": "Adjust the condenser and diaphragm for adequate, evenly distributed light."
+    },
+    {
+      "step": 4,
+      "instruction": "Center the area of interest, then switch to the next higher objective (e.g. 10\u00d7, then 40\u00d7), refining focus with the fine focus knob at each step."
+    },
+    {
+      "step": 5,
+      "instruction": "For oil immersion (typically 100\u00d7), rotate the high-dry objective out of the way, place a drop of immersion oil directly on the slide, then rotate the oil immersion objective into the oil, and fine-focus.",
+      "note": "Never let the low- or high-dry objectives touch the oil \u2014 oil is used only with the objective specifically designed for it."
+    },
+    {
+      "step": 6,
+      "instruction": "After use, remove oil from the objective and slide with lens paper per the microscope's cleaning guidance, and return the stage to the lowest-power objective before storing."
+    }
+  ],
+  "observations": "Progressive magnification reveals overall field morphology at low power, then increasing structural detail (shape, arrangement, relative size) at higher power.",
+  "interpretation": "Correct K\u00f6hler-style adjustment of light and condenser is what makes fine morphological detail interpretable \u2014 poor illumination is a common source of misread morphology, not the specimen itself.",
+  "precautions": [
+    "Always focus by raising, not lowering, the objective when using coarse focus near the slide, to avoid cracking the slide or scratching the objective.",
+    "Clean oil off the 100\u00d7 objective immediately after use."
+  ],
+  "limitations": [
+    "Brightfield resolution is limited by the wavelength of visible light (roughly ~0.2 \u00b5m at best with oil immersion) and cannot resolve internal structures below that scale; unstained live specimens often have poor contrast under brightfield alone."
+  ],
+  "biosafetyNotes": "Standard aseptic and biosafety precautions apply to handling the specimen on the slide, not to the microscope itself.",
+  "relatedProtocols": [
+    "proto-wet-mount",
+    "proto-gram-stain",
+    "proto-simple-stain"
+  ],
+  "relatedEquipment": [
+    "equip-microscope-brightfield",
+    "equip-slides"
+  ],
+  "relatedConcepts": [
+    "concept-accuracy-precision"
+  ],
+  "relatedSafety": [
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "microscope use",
+    "oil immersion",
+    "kohler illumination",
+    "brightfield"
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "proto-spread-plate",
+  "category": "protocol",
+  "title": "Spread Plate Method",
+  "subcategory": "Isolation & Enumeration Techniques",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    },
+    {
+      "label": "FDA Bacteriological Analytical Manual (BAM)",
+      "publisher": "FDA"
+    }
+  ],
+  "purpose": "To evenly distribute a measured volume of diluted sample across an agar surface, producing separated colonies suitable for isolation or for viable colony counting (CFU enumeration).",
+  "principle": "A small, accurately measured volume of a diluted suspension is deposited on the agar surface and spread thinly and evenly with a sterile spreader, so that most viable cells land far enough apart to each form a single, countable colony.",
+  "requiredMaterials": [
+    "Agar plate",
+    "Sterile L-shaped spreader (or bent glass rod) or a sterile disposable spreader",
+    "Micropipette and sterile tips",
+    "Turntable (optional)"
+  ],
+  "requiredReagents": [
+    "70% ethanol (for flame-sterilizing a reusable spreader, if used)"
+  ],
+  "equipment": [
+    "equip-micropipette",
+    "equip-petri-dish"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Label the plate base with sample ID, dilution, date, and initials."
+    },
+    {
+      "step": 2,
+      "instruction": "Pipette a small, precisely measured volume of the diluted sample (commonly on the order of 0.1 mL, but the exact volume must be recorded since it is a direct term in the CFU/mL formula) onto the center of the agar surface."
+    },
+    {
+      "step": 3,
+      "instruction": "Sterilize the spreader (e.g. dip in ethanol and flame briefly, letting the flame extinguish before touching the plate) if using a reusable spreader; allow it to cool."
+    },
+    {
+      "step": 4,
+      "instruction": "Spread the liquid evenly across the entire agar surface, rotating the plate as needed, without gouging the agar."
+    },
+    {
+      "step": 5,
+      "instruction": "Allow the plate to sit undisturbed for several minutes so the liquid absorbs into the agar."
+    },
+    {
+      "step": 6,
+      "instruction": "Incubate inverted at the appropriate temperature/duration for the organism."
+    }
+  ],
+  "observations": "Well-spread plates show individual, separated colonies distributed across the surface rather than concentrated in one area.",
+  "interpretation": "Colony count on a spread plate, combined with the known volume plated and dilution factor, is used directly in the CFU/mL calculation (see the CFU/mL Calculator).",
+  "precautions": [
+    "Ensure the spreader has cooled after flaming before it touches the agar or the culture \u2014 a hot spreader kills cells.",
+    "Record the exact volume plated; guessing this value invalidates any CFU calculation from the plate."
+  ],
+  "limitations": [
+    "Plates with too many or too few colonies fall outside the countable range for the method being followed and should not be used for enumeration (see the CFU/mL Calculator's countability note)."
+  ],
+  "biosafetyNotes": "Containment requirements depend on the organism being enumerated, not on the spread plate method itself.",
+  "relatedProtocols": [
+    "proto-serial-dilution",
+    "proto-cfu-enumeration",
+    "proto-streak-plate"
+  ],
+  "relatedConcepts": [
+    "concept-cfu-vs-direct-count",
+    "concept-accuracy-precision"
+  ],
+  "relatedCalculators": [
+    "calc-cfu-ml"
+  ],
+  "relatedFormulas": [
+    "formula-cfu-ml"
+  ],
+  "relatedEquipment": [
+    "equip-micropipette",
+    "equip-petri-dish"
+  ],
+  "relatedSafety": [
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "spread plate",
+    "plate count",
+    "colony enumeration"
+  ]
+}
