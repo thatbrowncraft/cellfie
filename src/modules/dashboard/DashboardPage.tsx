@@ -22,6 +22,8 @@ import { computeStatsFromRecords } from '../../core/stats'
 import { getRecentlyUsedConcepts } from '../../core/concepts'
 import type { OrganismProfile } from '../../core/organisms/types'
 import { getRecentlyViewedOrganismIds } from '../../core/organisms/recentlyViewed'
+import { getRecentlyViewedLabIds } from '../../core/laboratory/recentlyViewed'
+import type { LaboratoryCategory, LaboratoryContent } from '../../core/laboratory/types'
 import { useLocalStorage } from '../../shared/hooks'
 import { pickDashboardQuote } from '../../core/dashboard/quotes'
 import { DASHBOARD_HUMOR } from '../../core/dashboard/humor'
@@ -175,11 +177,16 @@ function formatDuration(totalSeconds: number): string {
  * (backed by core/organisms/recentlyViewed.ts — the only genuinely new
  * persisted data this pass introduces, stored in the existing
  * `appSettings` table), and Lab/Comparison Studio preview sections.
- * Lab and Comparison Studio do not yet persist any protocols or
- * comparisons anywhere in Cellfie (see LaboratoryPage.tsx /
- * ComparisonStudioPage.tsx — both are still empty-state stubs), so
- * those two sections honestly render their real empty state and link to
- * the real destination rather than inventing sample data.
+ * Comparison Studio does not yet persist any comparisons anywhere in
+ * Cellfie (see ComparisonStudioPage.tsx — still an empty-state stub), so
+ * that section honestly renders its real empty state and links to the
+ * real destination rather than inventing sample data. Lab's preview row
+ * (Laboratory Saved Items feature) is backed by
+ * core/laboratory/recentlyViewed.ts — the exact same bounded,
+ * appSettings-backed "recent activity only" pattern as Organisms; this
+ * is deliberately NOT the same thing as Saved Lab Items (a real,
+ * permanent Dexie table — see core/laboratory/savedItems.ts — browsed
+ * from inside Laboratory itself, never from Dashboard).
  */
 export function DashboardPage() {
   const navigate = useNavigate()
@@ -192,6 +199,11 @@ export function DashboardPage() {
   const recentlyExplored = useLiveQuery<Concept[]>(() => getRecentlyUsedConcepts(6), [], [])
   const recentOrganismIds = useLiveQuery<string[]>(
     () => getRecentlyViewedOrganismIds(MAX_PREVIEW_ITEMS),
+    [],
+    []
+  )
+  const recentLabIds = useLiveQuery<{ id: string; category: LaboratoryCategory }[]>(
+    () => getRecentlyViewedLabIds(MAX_PREVIEW_ITEMS),
     [],
     []
   )
@@ -241,6 +253,34 @@ export function DashboardPage() {
       cancelled = true
     }
   }, [recentOrganismIds])
+
+  // Same bundle-size remediation as the Organism block above, applied to
+  // core/laboratory/registry.ts (see that file's own doc comment): only a
+  // handful of recently-viewed ids ever need resolving here, so the full
+  // Laboratory content registry is loaded dynamically on demand rather
+  // than statically imported into Dashboard's chunk — the default "/"
+  // route every user sees on first load. Lands in the same chunk the
+  // Laboratory routes already use (shared, cached after first visit).
+  const [recentLabContent, setRecentLabContent] = useState<LaboratoryContent[]>([])
+  useEffect(() => {
+    if (recentLabIds.length === 0) {
+      setRecentLabContent([])
+      return
+    }
+    let cancelled = false
+    import('../../core/laboratory/registry').then(({ getLabContentById }) => {
+      if (cancelled) return
+      setRecentLabContent(
+        recentLabIds
+          .map(({ id }) => getLabContentById(id))
+          .filter((c): c is LaboratoryContent => Boolean(c))
+          .slice(0, MAX_PREVIEW_ITEMS)
+      )
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [recentLabIds])
 
   // Motivational quote (requested change #2) — picked once per Dashboard
   // visit/mount, avoiding an immediate repeat of whatever was shown last
@@ -418,10 +458,15 @@ export function DashboardPage() {
             humor={DASHBOARD_HUMOR.lab}
             openLabel="Open Lab"
             onOpen={() => navigate('/laboratory')}
-            items={[]}
+            items={recentLabContent.map((content) => ({
+              key: content.id,
+              title: content.title,
+              subtitle: content.subcategory,
+              onClick: () => navigate(`/laboratory/${content.category}/${content.id}`)
+            }))}
             emptyIcon={<Flask size={32} />}
-            emptyTitle="No saved lab items yet"
-            emptyDescription="Protocols, media prep, and reference tools you save will show up here."
+            emptyTitle="No labs opened yet"
+            emptyDescription="Open a protocol, test, or reference in Laboratory and it'll show up here next time."
             emptyActionLabel="Open Lab"
             onEmptyAction={() => navigate('/laboratory')}
           />
