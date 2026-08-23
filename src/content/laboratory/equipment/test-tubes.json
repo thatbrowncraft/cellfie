@@ -1,0 +1,22 @@
+{
+  "id": "equip-test-tubes",
+  "category": "equipment",
+  "title": "Test Tubes",
+  "kind": "glassware",
+  "subcategory": "Glassware",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Small cylindrical glass or plastic vessels used for holding broth cultures, reagents, or small-volume reactions.",
+  "safety": [
+    "Use appropriately sized tube racks to prevent tipping.",
+    "Flame the tube mouth briefly after opening/before closing when doing aseptic transfers, per standard technique."
+  ],
+  "relatedProtocols": []
+}

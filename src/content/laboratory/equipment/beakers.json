@@ -1,0 +1,21 @@
+{
+  "id": "equip-beakers",
+  "category": "equipment",
+  "title": "Beakers",
+  "kind": "glassware",
+  "subcategory": "Glassware",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Cylindrical, flat-bottomed containers with a pour spout, used for general mixing, heating, and holding liquids.",
+  "safety": [
+    "Not intended for precise volume measurement \u2014 use a graduated cylinder or volumetric flask when accuracy matters."
+  ],
+  "relatedProtocols": []
+}

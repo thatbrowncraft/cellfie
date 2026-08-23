@@ -1,0 +1,22 @@
+{
+  "id": "equip-micropipette-tips",
+  "category": "equipment",
+  "title": "Micropipette Tips",
+  "kind": "consumable",
+  "subcategory": "Consumables",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Disposable tips used with a micropipette, sized to match the pipette's volume range.",
+  "safety": [
+    "Always use a fresh tip for each new sample to prevent cross-contamination.",
+    "Use filter tips when aerosol protection is required by the procedure/risk assessment."
+  ],
+  "relatedProtocols": []
+}

@@ -1,0 +1,22 @@
+{
+  "id": "equip-slides",
+  "category": "equipment",
+  "title": "Microscope Slides",
+  "kind": "glassware",
+  "subcategory": "Glassware",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Flat glass (or plastic) rectangles used to hold specimens for microscopic observation.",
+  "safety": [
+    "Handle by the edges to avoid fingerprints/oils obscuring the specimen area.",
+    "Dispose of used slides (especially those with biological material) per biosafety waste procedure, not general trash."
+  ],
+  "relatedProtocols": []
+}

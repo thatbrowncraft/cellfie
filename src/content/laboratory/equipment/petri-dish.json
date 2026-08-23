@@ -1,0 +1,24 @@
+{
+  "id": "equip-petri-dish",
+  "category": "equipment",
+  "title": "Petri Dishes",
+  "kind": "glassware",
+  "subcategory": "Glassware",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Shallow, lidded dishes used to hold solid (agar) growth media for culturing microorganisms.",
+  "safety": [
+    "Label the base, not the lid, since lids can be swapped between dishes.",
+    "Store agar-side up during pouring and incubate inverted (lid-down) to reduce condensation dripping onto the agar surface."
+  ],
+  "relatedProtocols": [
+    "proto-streak-plate"
+  ]
+}

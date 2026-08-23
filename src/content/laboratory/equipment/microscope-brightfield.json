@@ -1,0 +1,64 @@
+{
+  "id": "equip-microscope-brightfield",
+  "category": "equipment",
+  "title": "Compound Brightfield Microscope",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "purpose": "Magnifies specimens using visible light and a system of lenses, the core tool for observing stained and unstained microbiological preparations.",
+  "operatingPrinciple": "Light from an illuminator passes through a condenser, the specimen, an objective lens, and an ocular lens, with total magnification equal to objective magnification \u00d7 ocular magnification.",
+  "basicOperation": [
+    "Start at the lowest-power objective and adjust coarse then fine focus.",
+    "Adjust the condenser/diaphragm for even illumination.",
+    "Progress to higher-power objectives, using only fine focus once roughly focused.",
+    "Use oil only with the objective specifically rated for immersion oil."
+  ],
+  "importantSettings": [
+    "Condenser height and diaphragm aperture (controls light amount/contrast, and, to a lesser extent, resolution).",
+    "Interpupillary distance and diopter adjustment for binocular comfort/focus."
+  ],
+  "calibration": "Routine classroom/teaching microscopes typically don't require formal calibration, but objective/ocular cleanliness and proper K\u00f6hler-style alignment materially affect image quality; a calibrated stage micrometer is used when precise size measurements are needed.",
+  "maintenance": [
+    "Clean lenses only with lens paper and appropriate lens cleaner \u2014 never tissue or clothing, which can scratch coatings.",
+    "Remove immersion oil from the 100\u00d7 objective immediately after use.",
+    "Cover the microscope when not in use to reduce dust."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Image is dark or low-contrast",
+      "cause": "Condenser too low, diaphragm too closed, or insufficient illumination",
+      "fix": "Raise the condenser and open the diaphragm appropriately for the objective in use"
+    },
+    {
+      "problem": "Cannot achieve sharp focus at high power",
+      "cause": "Attempting large coarse-focus adjustments at high magnification, or oil/dust on the lens",
+      "fix": "Use only fine focus at high power; clean lenses with lens paper"
+    }
+  ],
+  "safety": [
+    "Handle the microscope by its arm and base to avoid dropping it.",
+    "Return to low power before storing to protect the objective and slide."
+  ],
+  "relatedProtocols": [
+    "proto-brightfield-microscopy",
+    "proto-wet-mount",
+    "proto-gram-stain"
+  ],
+  "searchKeywords": [
+    "compound microscope",
+    "oil immersion objective",
+    "kohler illumination"
+  ]
+}

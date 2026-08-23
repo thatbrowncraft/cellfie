@@ -1,0 +1,56 @@
+{
+  "id": "equip-balance-analytical",
+  "category": "equipment",
+  "title": "Analytical / Precision Balance",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "purpose": "Measures mass with high precision, used for weighing reagents and media components, especially for small quantities where accuracy matters most.",
+  "operatingPrinciple": "An electronic load cell converts the force from the sample's weight into an electrical signal proportional to mass, typically to a precision of milligrams or better for analytical-grade balances.",
+  "basicOperation": [
+    "Level the balance and allow it to warm up/stabilize per manufacturer guidance before use.",
+    "Tare with the empty weighing vessel in place.",
+    "Add material slowly, especially for fine powders, and record the stable reading."
+  ],
+  "importantSettings": [
+    "Draft shield/door position (open doors introduce air currents that destabilize readings on sensitive balances)."
+  ],
+  "calibration": "Periodic calibration with certified calibration weights per facility schedule; many balances also support internal auto-calibration routines.",
+  "maintenance": [
+    "Keep the weighing pan and chamber clean of spilled material.",
+    "Avoid moving the balance, which can affect its level/calibration."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Unstable or drifting reading",
+      "cause": "Draft, vibration, an unlevel balance, or static on a plastic weigh boat",
+      "fix": "Close draft shield doors, ensure a stable/level surface, and use an anti-static measure for plastic weigh boats if needed"
+    }
+  ],
+  "safety": [
+    "Follow the safety data sheet for any hazardous reagent being weighed."
+  ],
+  "relatedFormulas": [
+    "formula-molarity"
+  ],
+  "relatedCalculators": [
+    "calc-molarity-mass"
+  ],
+  "searchKeywords": [
+    "analytical balance",
+    "precision weighing",
+    "load cell"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "equip-autoclave",
+  "category": "equipment",
+  "title": "Autoclave",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "purpose": "A pressure vessel that uses high-pressure saturated steam to sterilize media, glassware, and biological waste.",
+  "operatingPrinciple": "Steam under pressure reaches temperatures well above the boiling point of water at atmospheric pressure, which is more effective at killing microorganisms (including endospores) in a given time than boiling water alone.",
+  "basicOperation": [
+    "Load items according to the manufacturer's guidance, allowing steam penetration around and through the load.",
+    "Select a cycle/program appropriate to the load type (e.g. liquid vs. solid/wrapped goods often use different cycle settings).",
+    "Wait for pressure to return to zero before opening the door.",
+    "Remove the load using appropriate heat protection."
+  ],
+  "importantSettings": [
+    "Cycle time, temperature, and pressure \u2014 set per the specific load type and volume, not a single universal value for every load.",
+    "Liquid vs. dry/exhaust cycle selection, which affects venting speed and is important for preventing boil-over of liquids."
+  ],
+  "calibration": "Periodic validation using biological and/or chemical indicators (see the Sterilization Indicators concept entry) and, per facility SOP or applicable standard, temperature mapping/calibration checks.",
+  "maintenance": [
+    "Regularly check and refill the water reservoir if applicable.",
+    "Inspect door gaskets/seals for wear.",
+    "Follow the manufacturer's periodic maintenance schedule."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Cycle fails to reach or hold target pressure/temperature",
+      "cause": "Door seal issue, overloading, or insufficient water",
+      "fix": "Inspect the seal, reduce load size, and check water level per manufacturer guidance"
+    },
+    {
+      "problem": "Liquids boil over during the cycle",
+      "cause": "Container overfilled, or exhaust/vent rate too fast for a liquid cycle",
+      "fix": "Fill containers to the manufacturer-recommended maximum and use the liquid-specific cycle setting"
+    }
+  ],
+  "safety": [
+    "Never open the door before pressure returns to zero.",
+    "Use heat-resistant gloves and a face shield when removing a hot load.",
+    "Do not tightly seal liquid containers before autoclaving \u2014 allow venting as instructed."
+  ],
+  "relatedConcepts": [
+    "concept-sterilization-vs-disinfection",
+    "concept-sterilization-indicators"
+  ],
+  "relatedSafety": [
+    "safety-basic-autoclave-safety"
+  ],
+  "relatedMedia": [
+    "media-nutrient-agar",
+    "media-tsa"
+  ],
+  "searchKeywords": [
+    "steam sterilizer",
+    "pressure vessel",
+    "moist heat sterilization"
+  ]
+}

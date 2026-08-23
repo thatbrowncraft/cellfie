@@ -1,0 +1,62 @@
+{
+  "id": "equip-bsc-class-ii",
+  "category": "equipment",
+  "title": "Class II Biological Safety Cabinet (BSC)",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "purpose": "A ventilated enclosure using HEPA-filtered, directional airflow to protect the worker, the environment, and (depending on cabinet type) the product/sample from exposure to aerosolized biological material.",
+  "operatingPrinciple": "Room air is drawn inward across the work surface (protecting the worker), and HEPA-filtered air moves downward over the work area; exhaust air also passes through a HEPA filter before leaving the cabinet or being recirculated, depending on the specific cabinet type.",
+  "basicOperation": [
+    "Allow the cabinet blower to run and airflow to stabilize for the manufacturer-specified warm-up time before starting work.",
+    "Avoid blocking the front or rear air grilles with equipment, arms, or paperwork.",
+    "Work at least several inches inside the sash opening, away from the front edge, to preserve the air barrier.",
+    "Decontaminate the work surface before and after use.",
+    "Do not use an open flame inside a BSC \u2014 flames disrupt the cabinet's airflow pattern and can damage the HEPA filter; use alternatives like a micro-incinerator or disposable loops if flaming is otherwise part of the workflow."
+  ],
+  "importantSettings": [
+    "Sash height, kept at the manufacturer-certified operating position \u2014 raising it beyond that position compromises the air barrier."
+  ],
+  "calibration": "Requires certification by a qualified technician on a regular schedule (commonly annually or after any relocation/filter change) verifying airflow velocity and HEPA filter integrity.",
+  "maintenance": [
+    "Do not obstruct grilles.",
+    "Report any unusual airflow, noise, or alarm to facility safety staff and cease infectious work until resolved.",
+    "Keep the interior surfaces decontaminated and free of unnecessary clutter."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Loss of worker protection",
+      "cause": "Blocked air grilles, sash raised above the certified operating height, or working too close to the front edge",
+      "fix": "Clear the grilles, keep the sash at its certified height, and work well inside the cabinet"
+    }
+  ],
+  "safety": [
+    "Never use an open flame inside the cabinet.",
+    "Confirm current certification before use.",
+    "Never confuse with a laminar flow clean bench \u2014 see the BSC vs. Clean Bench concept entry."
+  ],
+  "relatedConcepts": [
+    "concept-bsc-vs-clean-bench"
+  ],
+  "relatedSafety": [
+    "safety-bsc-vs-clean-bench"
+  ],
+  "searchKeywords": [
+    "biosafety cabinet",
+    "hepa filter",
+    "laminar airflow",
+    "class ii cabinet"
+  ]
+}

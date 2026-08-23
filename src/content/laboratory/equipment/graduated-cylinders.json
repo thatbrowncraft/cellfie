@@ -1,0 +1,22 @@
+{
+  "id": "equip-graduated-cylinders",
+  "category": "equipment",
+  "title": "Graduated Cylinders",
+  "kind": "glassware",
+  "subcategory": "Glassware",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Narrow cylindrical vessels marked with volume graduations, used for measuring liquid volumes more precisely than a beaker but less precisely than a volumetric flask.",
+  "safety": [
+    "Read the meniscus at eye level for the most accurate volume reading.",
+    "Choose a cylinder sized close to the volume being measured \u2014 using a much larger cylinder for a small volume reduces reading precision."
+  ],
+  "relatedProtocols": []
+}

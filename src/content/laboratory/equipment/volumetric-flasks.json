@@ -1,0 +1,22 @@
+{
+  "id": "equip-volumetric-flasks",
+  "category": "equipment",
+  "title": "Volumetric Flasks",
+  "kind": "glassware",
+  "subcategory": "Glassware",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Flasks calibrated to hold a precise volume at a single fill line, used for accurately preparing solutions of a known concentration.",
+  "safety": [
+    "Fill to the calibration line with the meniscus bottom aligned to the mark, viewed at eye level.",
+    "Not intended for mixing or heating \u2014 mix the solution in a separate container before final transfer, or invert gently to mix after filling to the line."
+  ],
+  "relatedProtocols": []
+}

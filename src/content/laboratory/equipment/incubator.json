@@ -1,0 +1,54 @@
+{
+  "id": "equip-incubator",
+  "category": "equipment",
+  "title": "Incubator",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "purpose": "Maintains a controlled, stable temperature (and sometimes humidity/CO2/atmosphere) to support microbial growth under conditions appropriate to the target organism.",
+  "operatingPrinciple": "A heating element and thermostat maintain a set-point temperature inside an insulated chamber; some incubators add CO2 or humidity control for specialized cultivation needs (a Tier 2 topic).",
+  "basicOperation": [
+    "Set the target temperature appropriate to the organism being cultured.",
+    "Allow the chamber to stabilize at the set temperature before loading cultures.",
+    "Avoid frequent door-opening, which disrupts internal temperature stability."
+  ],
+  "importantSettings": [
+    "Target temperature \u2014 organism-dependent, not universal (e.g. many clinically relevant bacteria are cultured near human body temperature, while many environmental organisms prefer lower temperatures)."
+  ],
+  "calibration": "Periodic verification with an independent calibrated thermometer/data logger against the displayed set-point, per facility SOP.",
+  "maintenance": [
+    "Regularly clean interior surfaces to reduce contamination risk.",
+    "Check door seals for a stable, insulated closure."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Cultures grow inconsistently or too slowly/quickly",
+      "cause": "Actual chamber temperature drifted from the set-point, or frequent door-opening",
+      "fix": "Verify actual temperature with an independent thermometer and minimize door-opening during incubation"
+    }
+  ],
+  "safety": [
+    "Avoid touching interior heating elements.",
+    "Follow biosafety procedures for the organism being incubated when loading/unloading."
+  ],
+  "relatedProtocols": [
+    "proto-streak-plate",
+    "proto-spread-plate"
+  ],
+  "searchKeywords": [
+    "culture incubator",
+    "temperature control"
+  ]
+}

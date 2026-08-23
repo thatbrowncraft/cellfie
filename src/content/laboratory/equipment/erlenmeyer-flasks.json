@@ -1,0 +1,22 @@
+{
+  "id": "equip-erlenmeyer-flasks",
+  "category": "equipment",
+  "title": "Erlenmeyer Flasks",
+  "kind": "glassware",
+  "subcategory": "Glassware",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Conical flasks with a narrow neck, commonly used for preparing and mixing media or broth cultures, and for shaking cultures.",
+  "safety": [
+    "The narrow neck reduces splashing/evaporation and is convenient for stoppering or capping with foam/foil during autoclaving.",
+    "Do not fill beyond roughly half capacity when the contents will be agitated (e.g. on a shaker), to avoid spillage/foaming issues."
+  ],
+  "relatedProtocols": []
+}

@@ -1,0 +1,54 @@
+{
+  "id": "equip-ph-meter",
+  "category": "equipment",
+  "title": "pH Meter",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "purpose": "Measures the hydrogen ion activity (pH) of a solution electrochemically, used for checking/adjusting media and reagent pH.",
+  "operatingPrinciple": "A glass electrode develops a voltage proportional to the difference in hydrogen ion concentration between the sample and a reference, which the meter converts to a pH reading.",
+  "basicOperation": [
+    "Calibrate using at least two standard buffer solutions bracketing the expected sample pH before each use session.",
+    "Rinse the electrode with distilled water between the buffer and the sample, and between different samples.",
+    "Allow the reading to stabilize before recording."
+  ],
+  "importantSettings": [
+    "Calibration buffer selection, chosen to bracket the expected sample pH range."
+  ],
+  "calibration": "Must be calibrated with fresh standard buffers at the start of each use session (or per facility SOP) \u2014 a meter's calibration drifts over time and with temperature.",
+  "maintenance": [
+    "Store the electrode per manufacturer instructions (commonly in a storage solution, not dry) to prevent the glass membrane from drying out.",
+    "Replace probes that no longer calibrate reliably."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Unstable or drifting readings",
+      "cause": "Electrode not properly calibrated, dried-out membrane, or air bubble at the tip",
+      "fix": "Recalibrate with fresh buffers and inspect/recondition the electrode per manufacturer instructions"
+    }
+  ],
+  "safety": [
+    "Handle buffer/calibration solutions per their safety data sheets."
+  ],
+  "relatedConcepts": [],
+  "relatedFormulas": [
+    "formula-ph"
+  ],
+  "searchKeywords": [
+    "ph calibration",
+    "glass electrode",
+    "buffer solution"
+  ]
+}

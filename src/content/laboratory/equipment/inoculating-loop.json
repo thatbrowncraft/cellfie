@@ -1,0 +1,24 @@
+{
+  "id": "equip-inoculating-loop",
+  "category": "equipment",
+  "title": "Inoculating Loops",
+  "kind": "glassware",
+  "subcategory": "Glassware",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "A thin wire or plastic loop used to transfer a small, semi-standardized amount of microbial culture between media.",
+  "safety": [
+    "Sterilize a reusable wire loop by flaming until red-hot and allow it to cool before touching the culture.",
+    "Disposable plastic loops avoid the flaming step entirely and reduce aerosol-generation risk from flaming a contaminated loop."
+  ],
+  "relatedProtocols": [
+    "proto-streak-plate"
+  ]
+}

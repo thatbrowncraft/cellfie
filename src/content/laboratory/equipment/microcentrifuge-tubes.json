@@ -1,0 +1,22 @@
+{
+  "id": "equip-microcentrifuge-tubes",
+  "category": "equipment",
+  "title": "Microcentrifuge Tubes",
+  "kind": "glassware",
+  "subcategory": "Glassware",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Small (commonly 0.5\u20132 mL), conical-bottomed tubes with a snap or screw cap, used in a microcentrifuge for small-volume sample handling.",
+  "safety": [
+    "Ensure caps are fully closed before centrifugation to prevent leaks/aerosol release.",
+    "Balance tubes across the rotor by mass, as with any centrifugation."
+  ],
+  "relatedProtocols": []
+}

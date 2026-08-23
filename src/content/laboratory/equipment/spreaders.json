@@ -1,0 +1,24 @@
+{
+  "id": "equip-spreaders",
+  "category": "equipment",
+  "title": "Spreaders (L-shaped/Bent Rod or Disposable)",
+  "kind": "glassware",
+  "subcategory": "Glassware",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "A tool used to evenly distribute a liquid sample across the surface of an agar plate in the spread plate method.",
+  "safety": [
+    "Sterilize a reusable glass/metal spreader (e.g. dip in ethanol and flame, letting the flame extinguish) and cool before touching the plate.",
+    "Disposable spreaders avoid the flaming step and its associated aerosol/fire risk."
+  ],
+  "relatedProtocols": [
+    "proto-streak-plate"
+  ]
+}
