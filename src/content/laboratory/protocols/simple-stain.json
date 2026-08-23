@@ -57,7 +57,7 @@
     }
   ],
   "observations": "All cells appear a single color; record shape (coccus, bacillus, spirillum) and arrangement (diplo-, strepto-, staphylo-, etc.).",
-  "interpretation": "Simple staining confirms morphology and arrangement only \u2014 it provides no Gram-reaction or biochemical information.",
+  "interpretation": "Simple staining confirms morphology and arrangement only — it provides no Gram-reaction or biochemical information.",
   "precautions": [
     "Treat all specimens as potentially infectious.",
     "Avoid excess heat during fixation, which distorts cell shape."
@@ -85,5 +85,6 @@
     "basic stain",
     "methylene blue",
     "morphology stain"
-  ]
+  ],
+  "difficulty": "beginner"
 }

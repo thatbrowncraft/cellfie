@@ -1,0 +1,50 @@
+{
+  "id": "proto-acid-fast-stain",
+  "category": "protocol",
+  "title": "Acid-Fast Staining (Ziehl-Neelsen)",
+  "subcategory": "Staining Techniques",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "difficulty": "advanced",
+  "references": [
+    { "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)", "publisher": "CDC/NIH", "edition": "6th ed." },
+    { "label": "Bergey's Manual of Determinative Bacteriology", "publisher": "ASM/Wiley" },
+    { "label": "ASM MicrobeLibrary acid-fast staining protocols", "publisher": "ASM" }
+  ],
+  "purpose": "To identify organisms with a waxy, mycolic-acid-rich cell wall (notably Mycobacterium species) that do not reliably take up the Gram stain and instead require a stain that can penetrate and then resist decolorization by acid-alcohol.",
+  "principle": "Mycolic acids in the cell wall of acid-fast organisms bind and retain carbolfuchsin (aided by heat or a phenol-based mordant) even when challenged with an acid-alcohol decolorizer that strips the stain from non-acid-fast cells. Acid-fast cells therefore remain red/pink after decolorization; non-acid-fast cells decolorize and take up the methylene blue counterstain instead.",
+  "requiredMaterials": ["Clean glass microscope slide", "Bibulous/blotting paper", "Immersion oil", "Compound brightfield microscope", "Heat source for steaming (classic Ziehl-Neelsen)"],
+  "requiredReagents": ["Carbolfuchsin (primary stain)", "Acid-alcohol decolorizer (typically 3% HCl in 95% ethanol)", "Methylene blue (counterstain)"],
+  "equipment": ["equip-microscope-brightfield", "equip-slides", "equip-inoculating-loop"],
+  "procedure": [
+    { "step": 1, "instruction": "Prepare a thin smear on a clean slide, air dry, and heat-fix." },
+    { "step": 2, "instruction": "Flood the smear with carbolfuchsin and heat gently to steaming (classic method) or allow extended contact time without heat (cold/Kinyoun-style modification), then hold for the method's specified time.", "note": "Heat and the phenol in carbolfuchsin both help drive the stain through the waxy cell wall; the two approaches (heat-based Ziehl-Neelsen vs. no-heat Kinyoun) are distinct standard methods, not interchangeable mid-procedure." },
+    { "step": 3, "instruction": "Rinse gently with water." },
+    { "step": 4, "instruction": "Decolorize with acid-alcohol until only faint pink runoff remains — this step, not the primary stain, is what actually distinguishes acid-fast from non-acid-fast cells.", "note": "Over-decolorization can strip even acid-fast organisms; under-decolorization leaves background debris falsely appearing acid-fast." },
+    { "step": 5, "instruction": "Rinse with water." },
+    { "step": 6, "instruction": "Counterstain with methylene blue, then rinse and blot dry." },
+    { "step": 7, "instruction": "Examine under oil immersion (1000×)." }
+  ],
+  "observations": "Acid-fast organisms appear red/pink (retained carbolfuchsin) against a blue background of non-acid-fast material and counterstained cells/debris.",
+  "interpretation": "A positive (acid-fast) result narrows identification toward Mycobacterium and a small number of other partially acid-fast genera; it does not by itself identify species and is always interpreted alongside culture, growth characteristics, and (in a clinical setting) additional confirmatory testing.",
+  "criticalNotes": [
+    "This is a distinct staining chemistry from Gram staining, not a variant of it — acid-fast organisms are typically reported as such rather than forced into a Gram-positive/negative call.",
+    "Smear preparation and handling for suspected Mycobacterium specimens carries its own biosafety considerations separate from the staining chemistry itself."
+  ],
+  "precautions": [
+    "Treat all specimens as potentially infectious; specimens suspected of containing Mycobacterium tuberculosis require handling consistent with the institution's risk assessment and biosafety guidance, not just standard bench precautions.",
+    "Carbolfuchsin contains phenol — handle and dispose of per local chemical safety procedure.",
+    "Heat-based decolorization/staining steps require care around open flame and flammable reagents."
+  ],
+  "limitations": [
+    "A negative acid-fast smear does not rule out mycobacterial infection — smear sensitivity is limited relative to culture or molecular methods.",
+    "Staining quality is technique-sensitive; inconsistent heating or decolorization time is a common source of false results."
+  ],
+  "biosafetyNotes": "Biosafety level for handling a specimen or culture suspected of containing Mycobacterium tuberculosis is determined by institutional risk assessment (see BSL vs. Risk Group), not by the staining procedure itself — many institutions require enhanced precautions (e.g. a Class II BSC) well beyond what a routine Gram stain needs.",
+  "relatedProtocols": ["proto-gram-stain"],
+  "relatedConcepts": ["concept-bsl-vs-risk-group", "concept-aseptic-technique"],
+  "relatedEquipment": ["equip-microscope-brightfield", "equip-slides"],
+  "relatedSafety": ["safety-basic-bsl-concepts", "safety-ppe", "safety-chemical-safety"],
+  "searchKeywords": ["ziehl-neelsen", "kinyoun", "carbolfuchsin", "mycobacterium", "afb", "acid fast bacilli"]
+}

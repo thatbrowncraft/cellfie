@@ -22,7 +22,7 @@
     }
   ],
   "purpose": "To differentially stain bacteria based on cell wall composition, sorting them into Gram-positive and Gram-negative groups as a first step in identification.",
-  "principle": "Gram-positive cells have a thick peptidoglycan layer that traps the crystal violet\u2013iodine complex when dehydrated by decolorizer, retaining the purple stain. Gram-negative cells have a thin peptidoglycan layer and an outer membrane that is disrupted by the decolorizer, releasing the crystal violet and allowing the counterstain (safranin) to color the cells pink/red.",
+  "principle": "Gram-positive cells have a thick peptidoglycan layer that traps the crystal violet–iodine complex when dehydrated by decolorizer, retaining the purple stain. Gram-negative cells have a thin peptidoglycan layer and an outer membrane that is disrupted by the decolorizer, releasing the crystal violet and allowing the counterstain (safranin) to color the cells pink/red.",
   "requiredMaterials": [
     "Clean glass microscope slide",
     "Inoculating loop",
@@ -62,7 +62,7 @@
     },
     {
       "step": 5,
-      "instruction": "Decolorize by adding decolorizer drop-wise until runoff is nearly clear (typically a few seconds) \u2014 this is the most technique-sensitive, timing-dependent step.",
+      "instruction": "Decolorize by adding decolorizer drop-wise until runoff is nearly clear (typically a few seconds) — this is the most technique-sensitive, timing-dependent step.",
       "note": "Over-decolorization can falsely stain Gram-positive cells as Gram-negative; under-decolorization can do the reverse."
     },
     {
@@ -71,15 +71,15 @@
     },
     {
       "step": 7,
-      "instruction": "Counterstain with safranin for about 30\u201360 seconds, then rinse with water."
+      "instruction": "Counterstain with safranin for about 30–60 seconds, then rinse with water."
     },
     {
       "step": 8,
-      "instruction": "Blot dry with bibulous paper (do not rub) and examine under oil immersion (1000\u00d7)."
+      "instruction": "Blot dry with bibulous paper (do not rub) and examine under oil immersion (1000×)."
     }
   ],
   "observations": "Gram-positive organisms appear purple/violet. Gram-negative organisms appear pink/red. Note also cell shape (cocci, bacilli, spirilla) and arrangement (chains, clusters, pairs).",
-  "interpretation": "Gram reaction is a first-tier identification character used alongside morphology, arrangement, and subsequent biochemical tests \u2014 it narrows, but does not by itself confirm, organism identity.",
+  "interpretation": "Gram reaction is a first-tier identification character used alongside morphology, arrangement, and subsequent biochemical tests — it narrows, but does not by itself confirm, organism identity.",
   "criticalNotes": [
     "Smear thickness matters: an overly thick smear can trap decolorizer and produce a false Gram-positive result.",
     "Culture age matters: Gram-positive organisms in an aging culture can lose cell wall integrity and stain Gram-variable or falsely Gram-negative."
@@ -120,5 +120,6 @@
     "crystal violet",
     "safranin",
     "differential stain"
-  ]
+  ],
+  "difficulty": "beginner"
 }

@@ -1,0 +1,40 @@
+{
+  "id": "proto-endospore-stain",
+  "category": "protocol",
+  "title": "Endospore Staining (Schaeffer-Fulton)",
+  "subcategory": "Staining Techniques",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "difficulty": "intermediate",
+  "references": [
+    { "label": "ASM MicrobeLibrary endospore staining protocols", "publisher": "ASM" },
+    { "label": "Bergey's Manual of Determinative Bacteriology", "publisher": "ASM/Wiley" }
+  ],
+  "purpose": "To detect and visualize bacterial endospores (e.g. in Bacillus and Clostridium species), which resist the simple/Gram stain's ability to take up dye due to their dense, dehydrated, keratin-like coat.",
+  "principle": "Malachite green is driven into the resistant endospore coat with heat (steaming), a step ordinary staining doesn't include; once inside, the endospore retains the dye even after a water rinse that removes malachite green from the surrounding vegetative cell material. Safranin then counterstains the decolorized vegetative cells.",
+  "requiredMaterials": ["Clean glass microscope slide", "Bibulous/blotting paper", "Immersion oil", "Compound brightfield microscope", "Heat source for steaming", "Absorbent paper strip or paper towel piece to hold stain against the slide during steaming"],
+  "requiredReagents": ["Malachite green (primary stain, heat-driven)", "Safranin (counterstain)"],
+  "equipment": ["equip-microscope-brightfield", "equip-slides", "equip-inoculating-loop"],
+  "procedure": [
+    { "step": 1, "instruction": "Prepare a thin smear on a clean slide, air dry, and heat-fix." },
+    { "step": 2, "instruction": "Place a small piece of absorbent paper over the smear and saturate it with malachite green." },
+    { "step": 3, "instruction": "Steam the slide (over boiling water, not direct flame) for the method's specified time, keeping the paper moist by adding more stain as needed.", "note": "Steaming, not simple standing time, is what drives the dye through the spore coat — this is the step that distinguishes this technique from an ordinary simple stain." },
+    { "step": 4, "instruction": "Allow the slide to cool slightly, then remove the paper and rinse gently with water until runoff is clear." },
+    { "step": 5, "instruction": "Counterstain with safranin for the method's specified time, then rinse and blot dry." },
+    { "step": 6, "instruction": "Examine under oil immersion (1000×)." }
+  ],
+  "observations": "Endospores appear green; vegetative cells and any sporangium (the cell body a spore forms within) appear pink/red from the safranin counterstain.",
+  "interpretation": "The presence, shape (oval/spherical), and position (central, subterminal, terminal) of an endospore relative to the sporangium are useful morphological identification clues alongside Gram reaction and cell shape.",
+  "criticalNotes": [
+    "A free endospore (already released from its sporangium) and one still inside a visibly swollen sporangium can both appear, depending on the culture's stage of sporulation — note which is observed.",
+    "Culture age matters: sporulation is often favored under nutrient-limited or stressed conditions, so a young, actively growing culture may show few or no spores even in a species that readily sporulates."
+  ],
+  "precautions": ["Handle steaming apparatus carefully to avoid burns.", "Treat all specimens as potentially infectious; note that some spore-forming genera include clinically or environmentally significant pathogens."],
+  "limitations": ["This technique confirms the presence of an endospore structure but does not by itself identify the organism to species.", "A poorly steamed or unevenly heated slide can give a false-negative appearance even in a sporulating culture."],
+  "relatedProtocols": ["proto-gram-stain", "proto-simple-stain"],
+  "relatedConcepts": ["concept-sterilization-indicators"],
+  "relatedEquipment": ["equip-microscope-brightfield", "equip-slides"],
+  "relatedSafety": ["safety-aseptic-technique"],
+  "searchKeywords": ["schaeffer-fulton", "spore stain", "malachite green", "bacillus", "clostridium", "sporulation"]
+}

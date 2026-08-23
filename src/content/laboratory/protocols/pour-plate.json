@@ -1,0 +1,43 @@
+{
+  "id": "proto-pour-plate",
+  "category": "protocol",
+  "title": "Pour Plate Method",
+  "subcategory": "Culture & Isolation",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "difficulty": "intermediate",
+  "references": [
+    { "label": "FDA Bacteriological Analytical Manual (BAM)", "publisher": "FDA" },
+    { "label": "ASM microbiology curriculum resources", "publisher": "ASM" }
+  ],
+  "purpose": "To enumerate viable organisms in a liquid sample (often a dilution series) by mixing a known volume directly into molten agar, producing both surface and embedded (subsurface) colonies for counting.",
+  "principle": "A measured volume of sample or diluted sample is pipetted into an empty sterile plate, then molten agar cooled to a hand-warm (but still liquid) temperature is poured in and mixed by gentle swirling. As the agar solidifies, cells are trapped and immobilized throughout the medium, including below the surface, and each viable cell or cell cluster grows into a countable colony in place.",
+  "requiredMaterials": ["Sterile empty petri dishes", "Sterile pipettes", "Water bath or incubator set to hold agar at a workable molten temperature", "Colony counter"],
+  "requiredReagents": ["Molten, cooled agar medium appropriate to the organism/purpose (e.g. Plate Count Agar)"],
+  "equipment": ["equip-petri-dish", "equip-incubator", "equip-water-bath"],
+  "procedure": [
+    { "step": 1, "instruction": "Pipette a measured volume (commonly 1 mL) of sample or diluted sample into a sterile, empty petri dish." },
+    { "step": 2, "instruction": "Pour approximately 15-20 mL of molten agar, cooled to a temperature the target organism can tolerate briefly (commonly held around 44-46°C for routine aerobic counts), into the same dish.", "note": "Agar poured too hot can heat-injure or kill heat-sensitive cells before it solidifies, artificially lowering the count; the exact safe holding temperature depends on the organism and medium." },
+    { "step": 3, "instruction": "Gently swirl or tilt the plate in a figure-eight motion to mix the sample evenly throughout the agar without splashing onto the lid." },
+    { "step": 4, "instruction": "Allow the agar to solidify undisturbed on a level surface." },
+    { "step": 5, "instruction": "Invert and incubate under conditions appropriate to the organism and purpose." },
+    { "step": 6, "instruction": "Count colonies (both surface and embedded) after the specified incubation period." }
+  ],
+  "observations": "Colonies appear both on the agar surface and embedded within the agar depth; embedded colonies are often smaller and lens-shaped due to the surrounding agar's physical constraint on growth.",
+  "interpretation": "Total colony count, multiplied by the appropriate dilution factor and divided by the volume plated, estimates the viable concentration in the original sample (see the CFU/mL Calculator) — conceptually similar to a spread plate count, but pour plating captures cells that might not have been evenly distributed by surface spreading and allows a larger sample volume to be plated in one dish.",
+  "criticalNotes": [
+    "Because cells are exposed to molten agar before it solidifies, pour plating is generally less suitable than a spread plate for organisms known to be sensitive to brief heat exposure.",
+    "Some strict aerobes may show smaller or fewer embedded colonies than surface colonies due to reduced oxygen availability below the agar surface — this is a real biological effect, not a counting error, and should be considered when interpreting results for aerobic organisms."
+  ],
+  "precautions": ["Work near a flame or in a biosafety cabinet as appropriate to maintain asepsis while the dish is open.", "Handle molten agar carefully to avoid burns."],
+  "limitations": ["Not appropriate for heat-sensitive organisms without first confirming survival at the pour temperature used.", "Embedded colonies can be harder to isolate for subculturing than surface colonies from a streak or spread plate."],
+  "biosafetyNotes": "Standard aseptic technique applies throughout; biosafety level depends on the organism being handled, not on the pour plate method itself.",
+  "relatedProtocols": ["proto-spread-plate", "proto-serial-dilution", "proto-cfu-enumeration"],
+  "relatedConcepts": ["concept-cfu-vs-direct-count", "concept-aseptic-technique"],
+  "relatedEquipment": ["equip-petri-dish", "equip-incubator", "equip-water-bath"],
+  "relatedFormulas": ["formula-cfu-ml"],
+  "relatedCalculators": ["calc-cfu-ml"],
+  "relatedSafety": ["safety-aseptic-technique"],
+  "searchKeywords": ["pour plate", "embedded colonies", "viable count", "molten agar"]
+}

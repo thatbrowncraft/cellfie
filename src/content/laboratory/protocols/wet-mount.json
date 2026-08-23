@@ -17,7 +17,7 @@
       "edition": "6th ed."
     }
   ],
-  "purpose": "To observe living, unstained microorganisms \u2014 particularly to assess true motility, general shape, and size \u2014 without the fixation or staining artifacts that can alter or kill cells.",
+  "purpose": "To observe living, unstained microorganisms — particularly to assess true motility, general shape, and size — without the fixation or staining artifacts that can alter or kill cells.",
   "principle": "A drop of a liquid culture or suspension is placed on a slide (wet mount) or on a coverslip suspended over a depression slide (hanging drop) so cells remain alive and can be observed moving under the microscope, typically with reduced condenser light or phase contrast for better contrast.",
   "requiredMaterials": [
     "Microscope slide (plain for wet mount, depression slide for hanging drop)",
@@ -52,7 +52,7 @@
   "interpretation": "True motility supports (but does not alone confirm) identification narrowing, since motility varies by genus/species and can also depend on growth conditions and culture age.",
   "precautions": [
     "Handle wet preparations of live cultures as potentially infectious; dispose of slides and coverslips per biosafety procedure.",
-    "Avoid confusing Brownian motion with true motility \u2014 this is the most common misinterpretation of this technique."
+    "Avoid confusing Brownian motion with true motility — this is the most common misinterpretation of this technique."
   ],
   "limitations": [
     "Unstained cells have low contrast under standard brightfield illumination; phase contrast or reduced-light technique is often needed to see them well.",
@@ -79,5 +79,6 @@
     "motility",
     "brownian motion",
     "living preparation"
-  ]
+  ],
+  "difficulty": "beginner"
 }

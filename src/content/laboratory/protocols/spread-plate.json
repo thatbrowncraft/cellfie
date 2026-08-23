@@ -65,7 +65,7 @@
   "observations": "Well-spread plates show individual, separated colonies distributed across the surface rather than concentrated in one area.",
   "interpretation": "Colony count on a spread plate, combined with the known volume plated and dilution factor, is used directly in the CFU/mL calculation (see the CFU/mL Calculator).",
   "precautions": [
-    "Ensure the spreader has cooled after flaming before it touches the agar or the culture \u2014 a hot spreader kills cells.",
+    "Ensure the spreader has cooled after flaming before it touches the agar or the culture — a hot spreader kills cells.",
     "Record the exact volume plated; guessing this value invalidates any CFU calculation from the plate."
   ],
   "limitations": [
@@ -98,5 +98,6 @@
     "spread plate",
     "plate count",
     "colony enumeration"
-  ]
+  ],
+  "difficulty": "beginner"
 }

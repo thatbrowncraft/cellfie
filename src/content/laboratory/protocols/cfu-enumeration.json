@@ -34,7 +34,7 @@
   "procedure": [
     {
       "step": 1,
-      "instruction": "After incubation, select plates that fall within the countable range specified by the method/reference you are following (commonly cited as 30\u2013300 colonies for many general methods, but this is method-dependent \u2014 do not treat it as universal)."
+      "instruction": "After incubation, select plates that fall within the countable range specified by the method/reference you are following (commonly cited as 30–300 colonies for many general methods, but this is method-dependent — do not treat it as universal)."
     },
     {
       "step": 2,
@@ -50,11 +50,11 @@
     },
     {
       "step": 5,
-      "instruction": "If multiple countable-range plates are available across replicate dilutions, many methods specify averaging results \u2014 again, follow the specific method/reference in use."
+      "instruction": "If multiple countable-range plates are available across replicate dilutions, many methods specify averaging results — again, follow the specific method/reference in use."
     }
   ],
   "observations": "Distinct, separated colonies each counted as one CFU; overlapping/confluent growth is not countable and that dilution should be excluded.",
-  "interpretation": "The resulting CFU/mL or CFU/g is an estimate of viable, culturable organisms under the specific growth conditions used \u2014 it does not capture viable-but-non-culturable cells or cells requiring different conditions to grow.",
+  "interpretation": "The resulting CFU/mL or CFU/g is an estimate of viable, culturable organisms under the specific growth conditions used — it does not capture viable-but-non-culturable cells or cells requiring different conditions to grow.",
   "precautions": [
     "Confirm which countability range and averaging rule applies for the specific standard or protocol being followed before reporting a result."
   ],
@@ -86,5 +86,6 @@
     "viable count",
     "colony counting",
     "plate count"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

@@ -22,7 +22,7 @@
   "requiredMaterials": [
     "Prepared or wet-mount slide",
     "Lens paper",
-    "Immersion oil (for the 100\u00d7 objective)"
+    "Immersion oil (for the 100× objective)"
   ],
   "requiredReagents": [],
   "equipment": [
@@ -35,7 +35,7 @@
     },
     {
       "step": 2,
-      "instruction": "Start with the lowest-power objective (e.g. 4\u00d7) and use the coarse focus knob to bring the specimen roughly into focus."
+      "instruction": "Start with the lowest-power objective (e.g. 4×) and use the coarse focus knob to bring the specimen roughly into focus."
     },
     {
       "step": 3,
@@ -43,12 +43,12 @@
     },
     {
       "step": 4,
-      "instruction": "Center the area of interest, then switch to the next higher objective (e.g. 10\u00d7, then 40\u00d7), refining focus with the fine focus knob at each step."
+      "instruction": "Center the area of interest, then switch to the next higher objective (e.g. 10×, then 40×), refining focus with the fine focus knob at each step."
     },
     {
       "step": 5,
-      "instruction": "For oil immersion (typically 100\u00d7), rotate the high-dry objective out of the way, place a drop of immersion oil directly on the slide, then rotate the oil immersion objective into the oil, and fine-focus.",
-      "note": "Never let the low- or high-dry objectives touch the oil \u2014 oil is used only with the objective specifically designed for it."
+      "instruction": "For oil immersion (typically 100×), rotate the high-dry objective out of the way, place a drop of immersion oil directly on the slide, then rotate the oil immersion objective into the oil, and fine-focus.",
+      "note": "Never let the low- or high-dry objectives touch the oil — oil is used only with the objective specifically designed for it."
     },
     {
       "step": 6,
@@ -56,13 +56,13 @@
     }
   ],
   "observations": "Progressive magnification reveals overall field morphology at low power, then increasing structural detail (shape, arrangement, relative size) at higher power.",
-  "interpretation": "Correct K\u00f6hler-style adjustment of light and condenser is what makes fine morphological detail interpretable \u2014 poor illumination is a common source of misread morphology, not the specimen itself.",
+  "interpretation": "Correct Köhler-style adjustment of light and condenser is what makes fine morphological detail interpretable — poor illumination is a common source of misread morphology, not the specimen itself.",
   "precautions": [
     "Always focus by raising, not lowering, the objective when using coarse focus near the slide, to avoid cracking the slide or scratching the objective.",
-    "Clean oil off the 100\u00d7 objective immediately after use."
+    "Clean oil off the 100× objective immediately after use."
   ],
   "limitations": [
-    "Brightfield resolution is limited by the wavelength of visible light (roughly ~0.2 \u00b5m at best with oil immersion) and cannot resolve internal structures below that scale; unstained live specimens often have poor contrast under brightfield alone."
+    "Brightfield resolution is limited by the wavelength of visible light (roughly ~0.2 µm at best with oil immersion) and cannot resolve internal structures below that scale; unstained live specimens often have poor contrast under brightfield alone."
   ],
   "biosafetyNotes": "Standard aseptic and biosafety precautions apply to handling the specimen on the slide, not to the microscope itself.",
   "relatedProtocols": [
@@ -85,5 +85,6 @@
     "oil immersion",
     "kohler illumination",
     "brightfield"
-  ]
+  ],
+  "difficulty": "beginner"
 }

@@ -29,7 +29,7 @@
     "Vortex mixer (optional, for mixing between steps)"
   ],
   "requiredReagents": [
-    "Sterile diluent (e.g. saline or peptone water \u2014 the appropriate diluent depends on the sample type and method being followed)"
+    "Sterile diluent (e.g. saline or peptone water — the appropriate diluent depends on the sample type and method being followed)"
   ],
   "equipment": [
     "equip-micropipette"
@@ -37,7 +37,7 @@
   "procedure": [
     {
       "step": 1,
-      "instruction": "Label a series of sterile dilution tubes with the dilution each will represent (e.g. 10\u207b\u00b9, 10\u207b\u00b2, 10\u207b\u00b3...)."
+      "instruction": "Label a series of sterile dilution tubes with the dilution each will represent (e.g. 10⁻¹, 10⁻², 10⁻³...)."
     },
     {
       "step": 2,
@@ -57,16 +57,16 @@
     }
   ],
   "observations": "Each tube in the series represents a known cumulative dilution of the original sample; record every transfer volume and diluent volume used.",
-  "interpretation": "The cumulative dilution factor of any tube in the series equals the product of each individual step's dilution factor \u2014 see the Dilution Factor Calculator for cumulative calculations feeding into CFU/mL.",
+  "interpretation": "The cumulative dilution factor of any tube in the series equals the product of each individual step's dilution factor — see the Dilution Factor Calculator for cumulative calculations feeding into CFU/mL.",
   "criticalNotes": [
-    "Use a fresh sterile tip for every single transfer \u2014 reusing a tip carries residual cells forward and invalidates the dilution math."
+    "Use a fresh sterile tip for every single transfer — reusing a tip carries residual cells forward and invalidates the dilution math."
   ],
   "precautions": [
     "Mix each tube thoroughly before drawing the next transfer; an unmixed tube gives an inaccurate dilution.",
     "Work near a flame or in a biosafety cabinet as appropriate to the organism's risk assessment."
   ],
   "limitations": [
-    "Pipetting error compounds across steps in a serial dilution \u2014 a small volume error early in the series is magnified in later tubes."
+    "Pipetting error compounds across steps in a serial dilution — a small volume error early in the series is magnified in later tubes."
   ],
   "biosafetyNotes": "Containment requirements depend on the organism, not the dilution technique itself.",
   "relatedProtocols": [
@@ -94,5 +94,6 @@
     "serial dilution",
     "dilution series",
     "10-fold dilution"
-  ]
+  ],
+  "difficulty": "intermediate"
 }
