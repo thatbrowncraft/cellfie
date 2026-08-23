@@ -1,0 +1,35 @@
+{
+  "id": "formula-beer-lambert",
+  "category": "formula",
+  "title": "Beer-Lambert Law",
+  "subcategory": "Spectrophotometry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "General analytical chemistry/spectrophotometry references", "publisher": "ASM/general reference" }
+  ],
+  "domain": "Spectrophotometry",
+  "expression": "A = ε · l · c",
+  "explanation": "Relates the absorbance (A) of a solution at a given wavelength to the concentration of the absorbing species (c), the path length light travels through the sample (l, commonly 1 cm for a standard cuvette), and the molar absorptivity (ε), a wavelength-specific constant for that substance. Because absorbance depends linearly on concentration only within a limited range, this relationship (and any standard curve built on it) is only valid where the instrument and sample stay within their linear range — a very concentrated sample should be diluted rather than trusted at face value.",
+  "variables": [
+    { "symbol": "A", "meaning": "Absorbance (unitless)" },
+    { "symbol": "ε", "meaning": "Molar absorptivity (extinction coefficient), specific to the substance and wavelength, units L·mol⁻¹·cm⁻¹" },
+    { "symbol": "l", "meaning": "Path length light travels through the sample, in cm" },
+    { "symbol": "c", "meaning": "Concentration of the absorbing species, in mol/L" }
+  ],
+  "workedExample": {
+    "scenario": "A solution with molar absorptivity 5,000 L·mol⁻¹·cm⁻¹ at the measurement wavelength, read in a 1 cm cuvette, gives an absorbance of 0.5.",
+    "substitution": "c = A / (ε · l) = 0.5 / (5000 × 1)",
+    "result": "c = 0.0001 mol/L (1 × 10⁻⁴ M)"
+  },
+  "commonMistakes": [
+    "Applying the Beer-Lambert relationship outside the instrument's/sample's linear absorbance range, where the relationship between absorbance and concentration is no longer linear.",
+    "Using a molar absorptivity value for the wrong wavelength or the wrong substance/solvent combination.",
+    "Forgetting that bacterial culture turbidity (OD) readings are a light-scattering measurement, not a true molar-absorptivity-based concentration measurement — OD-to-cell-count relationships require their own empirically derived standard curve for the specific organism and instrument, not a generic Beer-Lambert calculation."
+  ],
+  "relatedCalculators": ["calc-beer-lambert"],
+  "relatedConcepts": ["concept-od-vs-cell-concentration"],
+  "searchKeywords": ["absorbance formula", "molar absorptivity", "extinction coefficient", "concentration from absorbance"],
+  "difficulty": "intermediate"
+}

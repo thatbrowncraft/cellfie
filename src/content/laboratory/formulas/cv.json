@@ -13,7 +13,7 @@
     }
   ],
   "domain": "Statistics",
-  "expression": "CV% = (SD / mean) \u00d7 100",
+  "expression": "CV% = (SD / mean) × 100",
   "explanation": "Expresses standard deviation as a percentage of the mean, allowing comparison of relative variability between data sets with different units or very different magnitudes.",
   "variables": [
     {
@@ -27,11 +27,11 @@
   ],
   "workedExample": {
     "scenario": "A data set with mean 29.67 and SD 1.53.",
-    "substitution": "(1.53 / 29.67) \u00d7 100",
-    "result": "CV \u2248 5.16%"
+    "substitution": "(1.53 / 29.67) × 100",
+    "result": "CV ≈ 5.16%"
   },
   "commonMistakes": [
-    "Comparing raw standard deviations (instead of CV) between data sets with very different means \u2014 a numerically larger SD isn't necessarily more variable in relative terms."
+    "Comparing raw standard deviations (instead of CV) between data sets with very different means — a numerically larger SD isn't necessarily more variable in relative terms."
   ],
   "relatedCalculators": [
     "calc-statistics"
@@ -39,5 +39,6 @@
   "searchKeywords": [
     "relative variability",
     "cv percent"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

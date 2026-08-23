@@ -13,11 +13,11 @@
     }
   ],
   "domain": "Statistics",
-  "expression": "Mean = \u03a3x / n",
-  "explanation": "The sum of all values divided by the number of values \u2014 the most common measure of central tendency for a data set.",
+  "expression": "Mean = Σx / n",
+  "explanation": "The sum of all values divided by the number of values — the most common measure of central tendency for a data set.",
   "variables": [
     {
-      "symbol": "\u03a3x",
+      "symbol": "Σx",
       "meaning": "Sum of all values"
     },
     {
@@ -36,5 +36,6 @@
   "searchKeywords": [
     "average",
     "central tendency"
-  ]
+  ],
+  "difficulty": "beginner"
 }

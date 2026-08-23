@@ -35,7 +35,7 @@
     "result": "Dilution factor = 0.1 (a 1:10 dilution)"
   },
   "commonMistakes": [
-    "Confusing '1:10 dilution' (factor 0.1) with 'diluted 10-fold' phrased ambiguously \u2014 always double check whether a stated ratio describes sample:total or sample:diluent."
+    "Confusing '1:10 dilution' (factor 0.1) with 'diluted 10-fold' phrased ambiguously — always double check whether a stated ratio describes sample:total or sample:diluent."
   ],
   "relatedCalculators": [
     "calc-dilution-factor"
@@ -47,5 +47,6 @@
     "serial dilution formula",
     "dilution ratio",
     "dilution notation"
-  ]
+  ],
+  "difficulty": "beginner"
 }

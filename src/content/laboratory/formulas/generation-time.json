@@ -1,0 +1,35 @@
+{
+  "id": "formula-generation-time",
+  "category": "formula",
+  "title": "Generation Time (Doubling Time)",
+  "subcategory": "Microbiology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "General microbiology/quantitative methods references (ASM, FDA BAM)", "publisher": "ASM/FDA" }
+  ],
+  "domain": "Microbiology",
+  "expression": "g = t / n, where n = log10(N/N0) / log10(2)",
+  "explanation": "During exponential growth, the number of generations (n) that occurred over a time interval (t) is found from the starting and ending population sizes; dividing the elapsed time by the number of generations gives the generation time (g) — the average time for the population to double once. This is only valid for the portion of a growth curve that is truly in exponential (log) phase; applying it across lag or stationary phase data will give a meaningless result.",
+  "variables": [
+    { "symbol": "g", "meaning": "Generation (doubling) time" },
+    { "symbol": "t", "meaning": "Elapsed time between the two measurements, in the same time units as g" },
+    { "symbol": "n", "meaning": "Number of generations (doublings) that occurred over that interval" },
+    { "symbol": "N", "meaning": "Population size (or CFU/mL, or OD) at the end of the interval" },
+    { "symbol": "N0", "meaning": "Population size (or CFU/mL, or OD) at the start of the interval" }
+  ],
+  "workedExample": {
+    "scenario": "A culture grows from 1×10^3 CFU/mL to 8×10^3 CFU/mL over 90 minutes, entirely within exponential phase.",
+    "substitution": "n = log10(8000/1000) / log10(2) = log10(8) / log10(2) = 3; g = 90 / 3",
+    "result": "g = 30 minutes"
+  },
+  "commonMistakes": [
+    "Applying the formula to data that spans lag or stationary phase rather than pure exponential-phase growth.",
+    "Mixing units for N (e.g. CFU/mL for N0 and OD for N) — both measurements in the ratio must be in the same units.",
+    "Assuming a generation time calculated under one set of conditions (temperature, medium) applies under different conditions."
+  ],
+  "relatedConcepts": ["concept-generation-time"],
+  "searchKeywords": ["doubling time formula", "exponential growth calculation", "growth rate constant"],
+  "difficulty": "advanced"
+}

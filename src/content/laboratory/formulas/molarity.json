@@ -13,7 +13,7 @@
     }
   ],
   "domain": "Solution Preparation",
-  "expression": "mass (g) = Molarity (mol/L) \u00d7 Volume (L) \u00d7 Molecular weight (g/mol)",
+  "expression": "mass (g) = Molarity (mol/L) × Volume (L) × Molecular weight (g/mol)",
   "explanation": "Calculates how much solute mass is needed to prepare a solution of a specific molar concentration and volume, based on the solute's molecular weight.",
   "variables": [
     {
@@ -34,7 +34,7 @@
   ],
   "workedExample": {
     "scenario": "Preparing 1 L of a 0.1 M solution of a solute with molecular weight 58.44 g/mol (e.g. sodium chloride).",
-    "substitution": "0.1 mol/L \u00d7 1 L \u00d7 58.44 g/mol",
+    "substitution": "0.1 mol/L × 1 L × 58.44 g/mol",
     "result": "5.844 g"
   },
   "commonMistakes": [
@@ -46,5 +46,6 @@
   "searchKeywords": [
     "molar solution preparation",
     "solute mass calculation"
-  ]
+  ],
+  "difficulty": "beginner"
 }

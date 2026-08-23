@@ -1,7 +1,7 @@
 {
   "id": "formula-rcf-rpm",
   "category": "formula",
-  "title": "RCF \u21c4 RPM Relationship",
+  "title": "RCF ⇄ RPM Relationship",
   "subcategory": "Centrifugation",
   "sourceType": "educational-guidance",
   "version": "1.0",
@@ -13,13 +13,13 @@
     }
   ],
   "domain": "Centrifugation",
-  "expression": "RCF (\u00d7g) = 1.118 \u00d7 10\u207b\u2075 \u00d7 r (cm) \u00d7 RPM\u00b2",
-  "explanation": "Relates a centrifuge's rotational speed (RPM) to the relative centrifugal force (RCF, expressed as a multiple of Earth's gravity, \u00d7g) actually experienced by the sample, which depends on both speed and the radius from the rotation axis to the sample.",
+  "expression": "RCF (×g) = 1.118 × 10⁻⁵ × r (cm) × RPM²",
+  "explanation": "Relates a centrifuge's rotational speed (RPM) to the relative centrifugal force (RCF, expressed as a multiple of Earth's gravity, ×g) actually experienced by the sample, which depends on both speed and the radius from the rotation axis to the sample.",
   "variables": [
     {
       "symbol": "RCF",
       "meaning": "Relative centrifugal force",
-      "unit": "\u00d7g"
+      "unit": "×g"
     },
     {
       "symbol": "r",
@@ -34,11 +34,11 @@
   ],
   "workedExample": {
     "scenario": "A rotor radius of 10 cm spinning at 5000 RPM.",
-    "substitution": "1.118 \u00d7 10\u207b\u2075 \u00d7 10 \u00d7 5000\u00b2",
-    "result": "\u2248 2795 \u00d7 g"
+    "substitution": "1.118 × 10⁻⁵ × 10 × 5000²",
+    "result": "≈ 2795 × g"
   },
   "commonMistakes": [
-    "Using a generic 'typical' rotor radius instead of the actual radius specified for the rotor in use \u2014 RCF at a given RPM varies substantially between rotors of different sizes."
+    "Using a generic 'typical' rotor radius instead of the actual radius specified for the rotor in use — RCF at a given RPM varies substantially between rotors of different sizes."
   ],
   "relatedCalculators": [
     "calc-rcf-rpm"
@@ -50,5 +50,6 @@
     "relative centrifugal force",
     "times gravity",
     "centrifuge speed conversion"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

@@ -13,22 +13,22 @@
     }
   ],
   "domain": "pH & Chemistry",
-  "expression": "pH = \u2212log\u2081\u2080[H\u207a]",
-  "explanation": "Defines pH as the negative base-10 logarithm of the hydrogen ion (H\u207a) activity/concentration in a solution \u2014 lower pH means higher H\u207a concentration (more acidic), higher pH means lower H\u207a concentration (more basic).",
+  "expression": "pH = −log₁₀[H⁺]",
+  "explanation": "Defines pH as the negative base-10 logarithm of the hydrogen ion (H⁺) activity/concentration in a solution — lower pH means higher H⁺ concentration (more acidic), higher pH means lower H⁺ concentration (more basic).",
   "variables": [
     {
-      "symbol": "[H\u207a]",
+      "symbol": "[H⁺]",
       "meaning": "Hydrogen ion concentration",
       "unit": "mol/L"
     }
   ],
   "workedExample": {
-    "scenario": "A solution with [H\u207a] = 1 \u00d7 10\u207b\u2075 mol/L.",
-    "substitution": "\u2212log\u2081\u2080(1 \u00d7 10\u207b\u2075)",
+    "scenario": "A solution with [H⁺] = 1 × 10⁻⁵ mol/L.",
+    "substitution": "−log₁₀(1 × 10⁻⁵)",
     "result": "pH = 5"
   },
   "commonMistakes": [
-    "Forgetting that each whole pH unit represents a 10-fold change in H\u207a concentration, not a linear change."
+    "Forgetting that each whole pH unit represents a 10-fold change in H⁺ concentration, not a linear change."
   ],
   "relatedEquipment": [
     "equip-ph-meter"
@@ -37,5 +37,6 @@
     "hydrogen ion concentration",
     "acidity",
     "logarithmic scale"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

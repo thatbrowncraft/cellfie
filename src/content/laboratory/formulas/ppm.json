@@ -13,8 +13,8 @@
     }
   ],
   "domain": "Solution Preparation",
-  "expression": "ppm = (mass of solute / mass of solution) \u00d7 10\u2076  (for dilute aqueous solutions, approximated as mg/L)",
-  "explanation": "Expresses very low concentrations as a ratio scaled by one million (ppm) or one billion (ppb). For dilute aqueous solutions, where 1 L of solution has a mass close to 1 kg, ppm is commonly approximated as mg/L \u2014 a simplification that becomes less accurate for concentrated or non-aqueous solutions.",
+  "expression": "ppm = (mass of solute / mass of solution) × 10⁶  (for dilute aqueous solutions, approximated as mg/L)",
+  "explanation": "Expresses very low concentrations as a ratio scaled by one million (ppm) or one billion (ppb). For dilute aqueous solutions, where 1 L of solution has a mass close to 1 kg, ppm is commonly approximated as mg/L — a simplification that becomes less accurate for concentrated or non-aqueous solutions.",
   "variables": [
     {
       "symbol": "mass of solute",
@@ -33,11 +33,12 @@
     "result": "5 ppm (using the dilute-aqueous mg/L approximation)"
   },
   "commonMistakes": [
-    "Applying the mg/L \u2248 ppm shortcut to a concentrated or non-aqueous solution, where the density assumption it relies on no longer holds."
+    "Applying the mg/L ≈ ppm shortcut to a concentrated or non-aqueous solution, where the density assumption it relies on no longer holds."
   ],
   "searchKeywords": [
     "trace concentration",
     "mg per liter",
     "dilute solution"
-  ]
+  ],
+  "difficulty": "beginner"
 }

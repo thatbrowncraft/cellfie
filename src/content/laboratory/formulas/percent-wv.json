@@ -13,8 +13,8 @@
     }
   ],
   "domain": "Solution Preparation",
-  "expression": "% w/v = (mass of solute in grams / volume of solution in mL) \u00d7 100",
-  "explanation": "Expresses concentration as grams of solute per 100 mL of final solution \u2014 common for describing solid reagents dissolved in a liquid (e.g. '2% w/v NaCl').",
+  "expression": "% w/v = (mass of solute in grams / volume of solution in mL) × 100",
+  "explanation": "Expresses concentration as grams of solute per 100 mL of final solution — common for describing solid reagents dissolved in a liquid (e.g. '2% w/v NaCl').",
   "variables": [
     {
       "symbol": "mass of solute",
@@ -29,14 +29,15 @@
   ],
   "workedExample": {
     "scenario": "2 g of solute dissolved to a final volume of 100 mL.",
-    "substitution": "(2 / 100) \u00d7 100",
+    "substitution": "(2 / 100) × 100",
     "result": "2% w/v"
   },
   "commonMistakes": [
-    "Confusing % w/v with % w/w (weight per weight) \u2014 they are not the same for non-water solvents/dilute vs. concentrated solutions."
+    "Confusing % w/v with % w/w (weight per weight) — they are not the same for non-water solvents/dilute vs. concentrated solutions."
   ],
   "searchKeywords": [
     "weight per volume",
     "percent solution"
-  ]
+  ],
+  "difficulty": "beginner"
 }

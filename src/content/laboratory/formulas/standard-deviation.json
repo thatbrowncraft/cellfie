@@ -13,8 +13,8 @@
     }
   ],
   "domain": "Statistics",
-  "expression": "SD = \u221a(\u03a3(x \u2212 mean)\u00b2 / (n \u2212 1))  [sample]   or   \u221a(\u03a3(x \u2212 mean)\u00b2 / n)  [population]",
-  "explanation": "Measures the typical spread of data points around the mean. The sample formula (dividing by n \u2212 1) is used when the data represent a sample from a larger population, which is the more common case in lab replicate measurements; the population formula (dividing by n) is used only when the data set represents the entire population of interest.",
+  "expression": "SD = √(Σ(x − mean)² / (n − 1))  [sample]   or   √(Σ(x − mean)² / n)  [population]",
+  "explanation": "Measures the typical spread of data points around the mean. The sample formula (dividing by n − 1) is used when the data represent a sample from a larger population, which is the more common case in lab replicate measurements; the population formula (dividing by n) is used only when the data set represents the entire population of interest.",
   "variables": [
     {
       "symbol": "x",
@@ -31,11 +31,11 @@
   ],
   "workedExample": {
     "scenario": "Replicate counts of 28, 31, and 30 (mean 29.67), sample SD.",
-    "substitution": "\u221a(((28\u221229.67)\u00b2 + (31\u221229.67)\u00b2 + (30\u221229.67)\u00b2) / (3\u22121))",
-    "result": "SD \u2248 1.53"
+    "substitution": "√(((28−29.67)² + (31−29.67)² + (30−29.67)²) / (3−1))",
+    "result": "SD ≈ 1.53"
   },
   "commonMistakes": [
-    "Using the population formula (\u00f7n) for what is actually a sample of replicates, which slightly underestimates the true spread."
+    "Using the population formula (÷n) for what is actually a sample of replicates, which slightly underestimates the true spread."
   ],
   "relatedCalculators": [
     "calc-statistics"
@@ -44,5 +44,6 @@
     "sample standard deviation",
     "population standard deviation",
     "spread"
-  ]
+  ],
+  "difficulty": "intermediate"
 }
