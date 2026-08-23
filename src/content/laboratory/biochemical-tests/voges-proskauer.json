@@ -1,0 +1,78 @@
+{
+  "id": "test-voges-proskauer",
+  "category": "biochemical-test",
+  "title": "Voges-Proskauer (VP) Test",
+  "subcategory": "Metabolic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "Tests for the butanediol fermentation pathway, which produces acetoin (acetylmethylcarbinol) as an intermediate. In the presence of alpha-naphthol and potassium hydroxide (Barritt's reagent), acetoin is oxidized to diacetyl, which reacts with peptone components to form a red/pink color.",
+  "purpose": "Part of the IMViC panel; identifies organisms using the butanediol fermentation pathway (e.g. Enterobacter, Klebsiella species) as opposed to the mixed-acid pathway detected by the Methyl Red test.",
+  "reagents": [
+    "MR-VP broth (glucose phosphate broth)",
+    "Barritt's reagent: alpha-naphthol solution and 40% potassium hydroxide"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Inoculate MR-VP broth with the test organism and incubate for the appropriate duration."
+    },
+    {
+      "step": 2,
+      "instruction": "Add alpha-naphthol solution followed by 40% potassium hydroxide to the broth (ratios and order specified by the specific reagent kit/protocol in use)."
+    },
+    {
+      "step": 3,
+      "instruction": "Shake gently to aerate and observe over roughly the next 15\u201330 minutes for a color change, since the reaction requires atmospheric oxygen and takes time to develop."
+    }
+  ],
+  "positiveResult": "Development of a red/pink color, typically within the reading window specified by the reagent protocol.",
+  "negativeResult": "No color change, or a copper color that is not considered a true positive by most protocols.",
+  "interpretation": "Read together with the Methyl Red result from the same organism/pathway question \u2014 see the Methyl Red test entry.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Enterobacter aerogenes"
+    },
+    {
+      "type": "negative",
+      "organism": "Escherichia coli"
+    }
+  ],
+  "precautions": [
+    "Shake/aerate after adding reagents \u2014 the color-forming reaction requires oxygen.",
+    "Read within the specified window; a delayed or absent color change beyond that window is not scored positive."
+  ],
+  "limitations": [
+    "A weak, ambiguous color response can occur and may need repeating with a fresh culture."
+  ],
+  "exampleOrganisms": [
+    {
+      "organism": "Enterobacter aerogenes",
+      "typicalResult": "positive"
+    },
+    {
+      "organism": "Escherichia coli",
+      "typicalResult": "negative"
+    }
+  ],
+  "relatedBiochemicalTests": [
+    "test-methyl-red"
+  ],
+  "searchKeywords": [
+    "voges proskauer",
+    "barritt's reagent",
+    "acetoin",
+    "butanediol fermentation"
+  ]
+}

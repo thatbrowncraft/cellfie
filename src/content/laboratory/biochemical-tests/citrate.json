@@ -1,0 +1,80 @@
+{
+  "id": "test-citrate",
+  "category": "biochemical-test",
+  "title": "Citrate Utilization Test",
+  "subcategory": "Metabolic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "Tests whether an organism can use citrate as its sole carbon source. Utilization raises the medium's pH (via byproducts of citrate metabolism), which shifts a pH indicator (commonly bromothymol blue) from green to Prussian blue.",
+  "purpose": "Part of the IMViC panel; helps distinguish citrate-positive organisms (e.g. many Klebsiella, Enterobacter, and Citrobacter species) from citrate-negative organisms (e.g. most E. coli strains) among Enterobacteriaceae.",
+  "reagents": [
+    "Simmons Citrate Agar (see media entry; citrate as sole carbon source, with bromothymol blue indicator)"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Lightly inoculate a Simmons Citrate Agar slant by streaking the surface with a needle/loop \u2014 do not stab deeply, since this test relies on aerobic surface growth."
+    },
+    {
+      "step": 2,
+      "instruction": "Incubate at the appropriate temperature/duration for the organism, leaving the cap slightly loose to permit aeration."
+    },
+    {
+      "step": 3,
+      "instruction": "Observe the slant for growth and color change."
+    }
+  ],
+  "positiveResult": "Visible growth on the slant accompanied by a color change from green to Prussian/royal blue.",
+  "negativeResult": "No growth and no color change (medium remains green).",
+  "interpretation": "A positive result indicates the organism can use citrate as its sole carbon source under these conditions; color change without visible growth, or growth without full color change, should be interpreted cautiously and, where relevant, is one part of a larger identification workflow rather than a standalone answer.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Klebsiella pneumoniae"
+    },
+    {
+      "type": "negative",
+      "organism": "Escherichia coli"
+    }
+  ],
+  "precautions": [
+    "Use a light surface inoculation, not a heavy stab, to avoid a false reading from anaerobic conditions deep in the slant."
+  ],
+  "limitations": [
+    "A very heavy inoculum can occasionally cause a color change through carryover of nutrients rather than true citrate utilization \u2014 inoculate lightly with a fresh, isolated colony."
+  ],
+  "exampleOrganisms": [
+    {
+      "organism": "Klebsiella pneumoniae",
+      "typicalResult": "positive"
+    },
+    {
+      "organism": "Escherichia coli",
+      "typicalResult": "negative"
+    }
+  ],
+  "relatedMedia": [
+    "media-simmons-citrate"
+  ],
+  "relatedBiochemicalTests": [
+    "test-indole",
+    "test-methyl-red",
+    "test-voges-proskauer"
+  ],
+  "searchKeywords": [
+    "citrate positive",
+    "simmons citrate",
+    "bromothymol blue"
+  ]
+}

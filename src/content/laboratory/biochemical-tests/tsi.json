@@ -1,0 +1,68 @@
+{
+  "id": "test-tsi",
+  "category": "biochemical-test",
+  "title": "Triple Sugar Iron (TSI) Test",
+  "subcategory": "Multi-Test Media",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "TSI agar contains three fermentable sugars (glucose at a low concentration, plus lactose and sucrose at higher concentrations), a pH indicator (phenol red), and an iron source (ferrous sulfate) to detect hydrogen sulfide production. Fermentation patterns, gas production, and blackening from H2S are read together from a single stabbed-and-streaked slant.",
+  "purpose": "A widely used screening test for identifying and differentiating Enterobacteriaceae based on carbohydrate fermentation pattern, gas production, and hydrogen sulfide production, in one combined tube.",
+  "reagents": [
+    "TSI agar slant (glucose, lactose, sucrose, phenol red indicator, ferrous sulfate/sodium thiosulfate for H2S detection)"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Using a straight inoculating needle, stab the butt of the TSI slant to about two-thirds its depth, then withdraw and streak the slanted surface in a zig-zag pattern."
+    },
+    {
+      "step": 2,
+      "instruction": "Incubate with the cap loosened slightly, at the appropriate temperature/duration for the organism (commonly read at a relatively short, standardized incubation window since prolonged incubation can cause a false reversion of the slant color as aerobic organisms exhaust the small glucose supply and begin oxidizing peptones)."
+    },
+    {
+      "step": 3,
+      "instruction": "Read the slant color, the butt color, presence of gas bubbles/cracks in the medium, and any blackening (H2S) together."
+    }
+  ],
+  "positiveResult": "Interpretation is a combined pattern rather than a single positive/negative: e.g. an acid (yellow) slant and acid (yellow) butt indicates fermentation of lactose and/or sucrose in addition to glucose; an alkaline (red) slant with acid (yellow) butt indicates glucose-only fermentation; gas appears as bubbles or splits in the agar; blackening indicates H2S production.",
+  "negativeResult": "An alkaline (red) slant and alkaline (red) butt with no gas or blackening indicates no fermentation of any of the three sugars under these conditions.",
+  "interpretation": "TSI is read as a pattern (slant color / butt color / gas / H2S) rather than a single positive or negative outcome, and that pattern is combined with other tests for identification.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Salmonella enterica (acid butt, alkaline slant, gas, H2S positive is a commonly cited pattern for many Salmonella strains)"
+    },
+    {
+      "type": "negative",
+      "organism": "Escherichia coli (acid slant and butt, gas, H2S negative is a commonly cited pattern for many E. coli strains)"
+    }
+  ],
+  "precautions": [
+    "Do not over-incubate beyond the standard reading window, or a false alkaline reversion of the slant can be misread as a negative for lactose/sucrose fermentation.",
+    "Loosen the cap slightly to allow some aeration for correct slant-surface reactions."
+  ],
+  "limitations": [
+    "Interpretation requires reading multiple features together; a single feature in isolation (e.g. color alone) can be misleading without the full pattern."
+  ],
+  "relatedBiochemicalTests": [
+    "test-citrate",
+    "test-urease"
+  ],
+  "searchKeywords": [
+    "tsi slant",
+    "triple sugar iron",
+    "h2s production",
+    "acid butt alkaline slant"
+  ]
+}

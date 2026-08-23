@@ -1,0 +1,80 @@
+{
+  "id": "test-indole",
+  "category": "biochemical-test",
+  "title": "Indole Test",
+  "subcategory": "Metabolic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "Detects the enzyme tryptophanase, which some organisms use to break down the amino acid tryptophan into indole, pyruvic acid, and ammonia. Indole reacts with Kovac's or Ehrlich's reagent (both containing p-dimethylaminobenzaldehyde) to form a red/pink compound at the surface of the broth.",
+  "purpose": "Commonly used within the broader IMViC test panel (Indole, Methyl Red, Voges-Proskauer, Citrate) to help differentiate Enterobacteriaceae, e.g. distinguishing Escherichia coli (typically indole-positive) from many other coliforms.",
+  "reagents": [
+    "Tryptophan-containing broth (e.g. tryptone broth)",
+    "Kovac's reagent or Ehrlich's reagent"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Inoculate a tryptophan-containing broth with the test organism and incubate at the appropriate temperature/duration for the organism."
+    },
+    {
+      "step": 2,
+      "instruction": "Add several drops of Kovac's (or Ehrlich's) reagent to the surface of the broth culture."
+    },
+    {
+      "step": 3,
+      "instruction": "Observe the color of the reagent layer at the broth surface within a minute or two of addition."
+    }
+  ],
+  "positiveResult": "A red/pink ring or layer forms at the surface where the reagent was added.",
+  "negativeResult": "The reagent layer remains its original color (typically yellow for Kovac's reagent) with no red ring.",
+  "interpretation": "A positive result indicates tryptophanase activity and indole production; used alongside the rest of the IMViC panel rather than alone for identification.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Escherichia coli"
+    },
+    {
+      "type": "negative",
+      "organism": "Klebsiella pneumoniae"
+    }
+  ],
+  "precautions": [
+    "Add reagent gently to avoid disturbing/mixing the broth before reading.",
+    "Handle Kovac's/Ehrlich's reagent (containing concentrated acid and an aldehyde) with appropriate PPE and ventilation."
+  ],
+  "limitations": [
+    "A very lightly turbid/weak culture can give an ambiguous, faint reaction."
+  ],
+  "exampleOrganisms": [
+    {
+      "organism": "Escherichia coli",
+      "typicalResult": "positive"
+    },
+    {
+      "organism": "Klebsiella pneumoniae",
+      "typicalResult": "negative"
+    }
+  ],
+  "relatedBiochemicalTests": [
+    "test-methyl-red",
+    "test-voges-proskauer",
+    "test-citrate"
+  ],
+  "searchKeywords": [
+    "indole positive",
+    "kovacs reagent",
+    "tryptophanase",
+    "imvic"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "test-catalase",
+  "category": "biochemical-test",
+  "title": "Catalase Test",
+  "subcategory": "Enzymatic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "Catalase-positive organisms produce the enzyme catalase, which breaks down hydrogen peroxide into water and oxygen gas. Bubble formation upon adding hydrogen peroxide to a bacterial sample indicates this reaction.",
+  "purpose": "Commonly used to distinguish catalase-positive genera (e.g. Staphylococcus, Micrococcus) from catalase-negative genera (e.g. Streptococcus, Enterococcus) among Gram-positive cocci, as one step in a broader identification workflow.",
+  "reagents": [
+    "3% hydrogen peroxide (H2O2)"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Using a sterile loop or wooden applicator stick (avoid an iron/nichrome loop or blood-agar-derived colonies, both of which can cause false positives), transfer a small amount of an isolated colony onto a clean glass slide or into a test tube."
+    },
+    {
+      "step": 2,
+      "instruction": "Add a drop of 3% hydrogen peroxide directly onto the sample."
+    },
+    {
+      "step": 3,
+      "instruction": "Observe immediately for bubble (gas) formation."
+    }
+  ],
+  "positiveResult": "Immediate, vigorous bubbling (oxygen gas evolution).",
+  "negativeResult": "No bubbling.",
+  "interpretation": "A positive result indicates the organism produces catalase; a negative result indicates it does not, under the test conditions used. This is one differentiating character, not a full identification.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Staphylococcus aureus"
+    },
+    {
+      "type": "negative",
+      "organism": "Streptococcus pyogenes"
+    }
+  ],
+  "precautions": [
+    "Avoid transferring colony material from a blood agar plate, since residual red blood cells (which contain catalase) can cause a false positive.",
+    "Avoid an iron- or nichrome-containing loop, which can catalyze a false-positive reaction with peroxide."
+  ],
+  "limitations": [
+    "A weak or delayed bubbling can be ambiguous and should be repeated or confirmed.",
+    "Contamination with catalase-positive organisms from surrounding media can produce a false positive."
+  ],
+  "exampleOrganisms": [
+    {
+      "organism": "Staphylococcus aureus",
+      "typicalResult": "positive"
+    },
+    {
+      "organism": "Streptococcus pyogenes",
+      "typicalResult": "negative"
+    }
+  ],
+  "relatedMedia": [],
+  "relatedProtocols": [
+    "proto-gram-stain"
+  ],
+  "searchKeywords": [
+    "catalase positive",
+    "catalase negative",
+    "hydrogen peroxide test"
+  ]
+}

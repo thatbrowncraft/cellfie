@@ -1,0 +1,78 @@
+{
+  "id": "test-methyl-red",
+  "category": "biochemical-test",
+  "title": "Methyl Red (MR) Test",
+  "subcategory": "Metabolic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "Tests for the mixed-acid fermentation pathway of glucose, which produces enough stable acid end-products to maintain a low pH in the medium. Methyl red indicator turns red at low pH and yellow at higher pH.",
+  "purpose": "Part of the IMViC panel; distinguishes organisms using the mixed-acid fermentation pathway (e.g. E. coli, typically MR-positive) from those using the butanediol fermentation pathway (e.g. Enterobacter species, typically MR-negative), which produces less stable acid and is instead detected by the Voges-Proskauer test.",
+  "reagents": [
+    "MR-VP broth (glucose phosphate broth)",
+    "Methyl red indicator"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Inoculate MR-VP broth with the test organism and incubate for the full recommended duration \u2014 MR requires a longer incubation than many other tests, since the pH must remain stably low, not just transiently drop."
+    },
+    {
+      "step": 2,
+      "instruction": "Add several drops of methyl red indicator to the broth."
+    },
+    {
+      "step": 3,
+      "instruction": "Observe the resulting color immediately."
+    }
+  ],
+  "positiveResult": "The broth turns red, indicating a sustained low pH from stable mixed-acid fermentation end-products.",
+  "negativeResult": "The broth remains yellow/orange, indicating the pH did not remain sufficiently low.",
+  "interpretation": "MR and VP are often run from the same inoculated broth tube (split for each reagent) and are interpreted together, since most organisms are MR-positive/VP-negative or MR-negative/VP-positive, with both-positive or both-negative results being less common and requiring careful re-checking.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Escherichia coli"
+    },
+    {
+      "type": "negative",
+      "organism": "Enterobacter aerogenes"
+    }
+  ],
+  "precautions": [
+    "Incubate for the full recommended duration before testing \u2014 reading too early can give a false negative, since pH may not have stabilized yet."
+  ],
+  "limitations": [
+    "Reading before the recommended incubation window is complete is the most common source of a misleading result."
+  ],
+  "exampleOrganisms": [
+    {
+      "organism": "Escherichia coli",
+      "typicalResult": "positive"
+    },
+    {
+      "organism": "Enterobacter aerogenes",
+      "typicalResult": "negative"
+    }
+  ],
+  "relatedBiochemicalTests": [
+    "test-voges-proskauer",
+    "test-indole",
+    "test-citrate"
+  ],
+  "searchKeywords": [
+    "methyl red test",
+    "mixed acid fermentation",
+    "mr-vp broth"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "test-oxidase",
+  "category": "biochemical-test",
+  "title": "Oxidase Test",
+  "subcategory": "Enzymatic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "Detects the presence of cytochrome c oxidase, an enzyme in the electron transport chain of some aerobic and facultatively anaerobic bacteria. The reagent (a redox dye, commonly tetramethyl-p-phenylenediamine) is oxidized by the enzyme, producing a dark purple/blue color change.",
+  "purpose": "Used to help distinguish oxidase-positive genera (e.g. Pseudomonas, Neisseria, Vibrio) from oxidase-negative Enterobacteriaceae, as part of a broader identification scheme.",
+  "reagents": [
+    "Oxidase reagent (e.g. 1% tetramethyl-p-phenylenediamine dihydrochloride), typically on a filter paper strip or disk"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Using a sterile plastic loop or wooden applicator stick (not a nichrome/iron loop, which can give a false positive), rub a small amount of colony growth onto the oxidase reagent strip/disk."
+    },
+    {
+      "step": 2,
+      "instruction": "Observe the color change over the timeframe specified by the specific reagent product being used."
+    }
+  ],
+  "positiveResult": "Development of a dark purple/blue color, typically within the timeframe stated on the specific reagent product's instructions.",
+  "negativeResult": "No color change within that timeframe.",
+  "interpretation": "A positive result indicates cytochrome c oxidase activity; timing matters, since a color change appearing well after the product-specified window is not considered a true positive by most protocols.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Pseudomonas aeruginosa"
+    },
+    {
+      "type": "negative",
+      "organism": "Escherichia coli"
+    }
+  ],
+  "precautions": [
+    "Never use a nichrome or iron-containing loop \u2014 metal ions can produce a false-positive reaction with the reagent.",
+    "Read within the product-specified timeframe; late color changes are not reliable indicators."
+  ],
+  "limitations": [
+    "Reagent strips degrade with light/air exposure over time and can give unreliable results if expired or improperly stored."
+  ],
+  "exampleOrganisms": [
+    {
+      "organism": "Pseudomonas aeruginosa",
+      "typicalResult": "positive"
+    },
+    {
+      "organism": "Escherichia coli",
+      "typicalResult": "negative"
+    }
+  ],
+  "searchKeywords": [
+    "oxidase positive",
+    "oxidase negative",
+    "cytochrome oxidase",
+    "tmpd"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "test-urease",
+  "category": "biochemical-test",
+  "title": "Urease Test",
+  "subcategory": "Enzymatic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "Detects the enzyme urease, which hydrolyzes urea into ammonia and carbon dioxide. Accumulating ammonia raises the medium's pH, shifting a phenol red indicator from yellow/orange to a bright pink/magenta.",
+  "purpose": "Helps identify urease-producing organisms (e.g. Proteus species, which are typically rapid and strong urease producers, and Helicobacter pylori) versus non-producers, aiding differentiation within groups like Enterobacteriaceae.",
+  "reagents": [
+    "Urea broth or Christensen's urea agar (urea substrate with phenol red indicator)"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Inoculate urea broth or streak the surface of a urea agar slant with the test organism."
+    },
+    {
+      "step": 2,
+      "instruction": "Incubate at the appropriate temperature/duration for the organism, checking at intervals since some organisms (e.g. Proteus) react rapidly while others react slowly or not at all."
+    },
+    {
+      "step": 3,
+      "instruction": "Observe for a color change from the original color to pink/magenta."
+    }
+  ],
+  "positiveResult": "Color change to pink/magenta; timing varies by organism, with some producing a rapid, strongly positive reaction and others a weak, delayed one.",
+  "negativeResult": "No color change (remains the original yellow/orange) after the full recommended incubation period.",
+  "interpretation": "Speed and strength of the reaction is itself diagnostically useful in some identification schemes (e.g. distinguishing rapid urease-positive Proteus from slower urease-positive organisms) \u2014 not just a simple positive/negative call.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Proteus mirabilis"
+    },
+    {
+      "type": "negative",
+      "organism": "Escherichia coli"
+    }
+  ],
+  "precautions": [
+    "Do not over-incubate beyond the recommended window before concluding a negative result, since some organisms are slow/weak positives."
+  ],
+  "limitations": [
+    "A very heavy inoculum can sometimes produce a faint false-positive-looking color shift; use a standard light inoculum."
+  ],
+  "exampleOrganisms": [
+    {
+      "organism": "Proteus mirabilis",
+      "typicalResult": "positive"
+    },
+    {
+      "organism": "Escherichia coli",
+      "typicalResult": "negative"
+    }
+  ],
+  "searchKeywords": [
+    "urease positive",
+    "phenol red",
+    "urea hydrolysis"
+  ]
+}
