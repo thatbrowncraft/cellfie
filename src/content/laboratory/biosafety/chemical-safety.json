@@ -1,0 +1,23 @@
+{
+  "id": "safety-chemical-safety",
+  "category": "biosafety",
+  "title": "Chemical Safety, SDS & GHS Labeling",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "OSHA Hazard Communication Standard (29 CFR 1910.1200)", "publisher": "OSHA" }
+  ],
+  "summary": "A microbiology lab uses hazardous chemicals (fixatives, stains, decolorizers, disinfectants) alongside biological agents. Safety Data Sheets (SDS) and GHS (Globally Harmonized System) pictogram labeling communicate the hazards and handling requirements for each chemical.",
+  "explanation": "Every chemical container should carry a GHS label showing standardized pictograms (e.g. flame for flammables, corrosion for corrosives, health hazard) and signal words ('Danger' or 'Warning'), and every chemical in use should have an accessible, current SDS describing its hazards, safe handling, storage, and first-aid/emergency response measures. Before using an unfamiliar reagent — including common staining reagents such as carbolfuchsin (contains phenol) or malachite green — checking its SDS for flammability, toxicity, and disposal requirements is a standard practice, not an optional step reserved for obviously dangerous chemicals.",
+  "keyPractices": [
+    "Read the SDS before first use of any new chemical, not only after an incident.",
+    "Store chemicals according to compatibility (e.g. keep oxidizers away from flammables) as indicated by their SDS and GHS classification.",
+    "Dispose of chemical waste according to the SDS and local institutional/regulatory requirements, never down the drain by default."
+  ],
+  "scopeCaveat": "GHS classification criteria and specific regulatory requirements vary somewhat by jurisdiction; always confirm current requirements with the institution's chemical safety office.",
+  "relatedConcepts": [],
+  "searchKeywords": ["safety data sheet", "ghs pictograms", "hazard communication", "chemical waste disposal"],
+  "difficulty": "intermediate"
+}

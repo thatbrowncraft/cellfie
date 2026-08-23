@@ -14,7 +14,7 @@
     }
   ],
   "summary": "Practical habits that minimize contamination risk to cultures and exposure risk to personnel during routine microbiological work.",
-  "explanation": "Aseptic technique is a continuous discipline applied throughout a procedure \u2014 from decontaminating the bench before starting, to minimizing the time containers are open, to flaming/sterilizing tools between uses, to decontaminating the bench again at the end.",
+  "explanation": "Aseptic technique is a continuous discipline applied throughout a procedure — from decontaminating the bench before starting, to minimizing the time containers are open, to flaming/sterilizing tools between uses, to decontaminating the bench again at the end.",
   "keyPractices": [
     "Disinfect the work surface before and after work.",
     "Keep culture container lids/caps closed except during the brief moment of transfer.",
@@ -37,5 +37,6 @@
   "searchKeywords": [
     "sterile technique",
     "contamination control"
-  ]
+  ],
+  "difficulty": "beginner"
 }

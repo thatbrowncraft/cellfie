@@ -1,0 +1,23 @@
+{
+  "id": "safety-risk-assessment",
+  "category": "biosafety",
+  "title": "Biological Risk Assessment",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)", "publisher": "CDC/NIH", "edition": "6th ed." }
+  ],
+  "summary": "A structured process for evaluating the hazards of a specific biological agent AND the specific procedure being performed with it, used to determine the appropriate containment level, practices, and equipment for that combination.",
+  "explanation": "Risk assessment considers factors including the agent's Risk Group, its route(s) of transmission and infectious dose, the specific procedure's potential to generate aerosols or sharps exposure, the volume and concentration of agent involved, the immune status and training of personnel, and the availability of treatment or prophylaxis. Critically, the same organism can warrant different containment measures for different procedures — a low-volume diagnostic streak plate and a large-volume culture with aerosol-generating steps are not automatically the same risk, even with the identical organism, which is why risk assessment is procedure-specific and not a static lookup.",
+  "keyPractices": [
+    "Assess the specific procedure, not only the organism, before deciding on required precautions.",
+    "Reassess when scaling up volume, changing a procedure's steps, or introducing new equipment.",
+    "Document risk assessments and review them with the institutional biosafety officer or committee where required."
+  ],
+  "scopeCaveat": "This entry introduces the general framework only. A specific, current risk assessment for real laboratory work should always be conducted with and approved by the relevant institutional biosafety officer or committee, following the current edition of the BMBL and applicable local regulations.",
+  "relatedConcepts": ["concept-bsl-vs-risk-group"],
+  "searchKeywords": ["hazard assessment", "biosafety officer", "aerosol risk", "containment level determination"],
+  "difficulty": "advanced"
+}

@@ -14,7 +14,7 @@
     }
   ],
   "summary": "A safety-focused restatement of the BSC vs. Clean Bench concept: never substitute a laminar flow clean bench for a biological safety cabinet when working with infectious material.",
-  "explanation": "Because a clean bench and a Class II BSC can look similar, mistaking one for the other is a real and documented safety hazard \u2014 a clean bench's outward airflow (designed to protect the product) actively blows any aerosolized contaminant toward the worker's face, rather than away from it as a BSC's inward airflow does.",
+  "explanation": "Because a clean bench and a Class II BSC can look similar, mistaking one for the other is a real and documented safety hazard — a clean bench's outward airflow (designed to protect the product) actively blows any aerosolized contaminant toward the worker's face, rather than away from it as a BSC's inward airflow does.",
   "keyPractices": [
     "Confirm which type of cabinet is installed (check labeling/certification, not just appearance) before using it for infectious material.",
     "Use only a certified, properly maintained biological safety cabinet of the appropriate class for infectious agent work.",
@@ -29,5 +29,6 @@
   "searchKeywords": [
     "laminar flow hood safety",
     "biosafety cabinet certification"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

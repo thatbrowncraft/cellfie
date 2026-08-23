@@ -14,12 +14,12 @@
     }
   ],
   "summary": "Core precautions for safely operating an autoclave, which uses high-pressure, high-temperature steam and carries burn, scald, and pressure-vessel hazards independent of any biological hazard.",
-  "explanation": "Autoclaves are pressure vessels operating well above atmospheric pressure and above the boiling point of water at that pressure \u2014 improper loading, opening, or venting can cause serious burns or projectile hazards. These are physical/mechanical hazards present regardless of the biological agent being sterilized.",
+  "explanation": "Autoclaves are pressure vessels operating well above atmospheric pressure and above the boiling point of water at that pressure — improper loading, opening, or venting can cause serious burns or projectile hazards. These are physical/mechanical hazards present regardless of the biological agent being sterilized.",
   "keyPractices": [
     "Never open the autoclave door before pressure has returned to zero/ambient, as indicated by the gauge.",
     "Use appropriate heat-resistant gloves and a face shield when removing hot loads.",
-    "Do not overfill or seal containers of liquid tightly \u2014 sealed containers can rupture or explode under autoclave conditions; allow venting as instructed by the equipment manual.",
-    "Follow the manufacturer's loading guidance \u2014 improper loading affects both sterilization efficacy and safety.",
+    "Do not overfill or seal containers of liquid tightly — sealed containers can rupture or explode under autoclave conditions; allow venting as instructed by the equipment manual.",
+    "Follow the manufacturer's loading guidance — improper loading affects both sterilization efficacy and safety.",
     "Report any unusual noise, pressure behavior, or door-seal issue and take the unit out of service until inspected."
   ],
   "commonMistakes": [
@@ -36,5 +36,6 @@
     "autoclave burn hazard",
     "pressure vessel safety",
     "steam sterilizer safety"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

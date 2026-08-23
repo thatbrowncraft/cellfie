@@ -14,7 +14,7 @@
     }
   ],
   "summary": "The protective clothing and equipment worn to reduce exposure risk to laboratory personnel, chosen based on the specific hazards of the work being performed.",
-  "explanation": "Standard microbiology PPE commonly includes a lab coat (closed, fastened), gloves appropriate to the task, and eye protection when there is a splash risk. PPE requirements scale with the specific risk assessment for the organism, procedure (e.g. aerosol-generating steps may require additional respiratory protection), and facility policy \u2014 there is no single fixed PPE list that applies to every laboratory task.",
+  "explanation": "Standard microbiology PPE commonly includes a lab coat (closed, fastened), gloves appropriate to the task, and eye protection when there is a splash risk. PPE requirements scale with the specific risk assessment for the organism, procedure (e.g. aerosol-generating steps may require additional respiratory protection), and facility policy — there is no single fixed PPE list that applies to every laboratory task.",
   "keyPractices": [
     "Wear a fastened lab coat dedicated to lab use, removed before leaving the lab area.",
     "Select gloves appropriate to the specific hazard (biological vs. chemical) and change them when contaminated or torn.",
@@ -34,5 +34,6 @@
     "gloves",
     "eye protection",
     "personal protective equipment"
-  ]
+  ],
+  "difficulty": "beginner"
 }

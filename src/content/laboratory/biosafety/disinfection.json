@@ -14,10 +14,10 @@
     }
   ],
   "summary": "Applying an appropriate chemical or physical agent to reduce pathogenic microorganisms on surfaces or equipment to a safer level.",
-  "explanation": "Effective disinfection depends on selecting an agent appropriate to the likely contaminating organisms, using it at the concentration and for the contact time specified by the product/method (both of which vary by product and are not universal), and ensuring the surface is compatible with the agent. Not every disinfectant is sporicidal at routinely used concentrations \u2014 see the Sterilization vs. Disinfection concept entry.",
+  "explanation": "Effective disinfection depends on selecting an agent appropriate to the likely contaminating organisms, using it at the concentration and for the contact time specified by the product/method (both of which vary by product and are not universal), and ensuring the surface is compatible with the agent. Not every disinfectant is sporicidal at routinely used concentrations — see the Sterilization vs. Disinfection concept entry.",
   "keyPractices": [
     "Choose a disinfectant appropriate to the likely organisms and surface material.",
-    "Follow the specific product's stated concentration and contact time \u2014 do not assume a universal number applies across products.",
+    "Follow the specific product's stated concentration and contact time — do not assume a universal number applies across products.",
     "Allow the full contact time before wiping/rinsing.",
     "Ventilate appropriately when using volatile disinfectants."
   ],
@@ -31,5 +31,6 @@
     "surface disinfection",
     "contact time",
     "decontamination"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

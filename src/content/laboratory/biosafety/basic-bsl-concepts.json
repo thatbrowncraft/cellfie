@@ -20,7 +20,7 @@
     "Understand what special practices and equipment apply above the baseline level for the specific work being done.",
     "Do not assume containment requirements transfer unchanged between different procedures using the same organism."
   ],
-  "scopeCaveat": "This entry introduces the general concept only \u2014 the current, complete requirements for a specific BSL and organism should always be confirmed against the current edition of the BMBL and the relevant institutional biosafety committee guidance, not assumed from memory.",
+  "scopeCaveat": "This entry introduces the general concept only — the current, complete requirements for a specific BSL and organism should always be confirmed against the current edition of the BMBL and the relevant institutional biosafety committee guidance, not assumed from memory.",
   "relatedConcepts": [
     "concept-bsl-vs-risk-group"
   ],
@@ -29,5 +29,6 @@
     "bsl-1",
     "bsl-2",
     "containment"
-  ]
+  ],
+  "difficulty": "beginner"
 }
