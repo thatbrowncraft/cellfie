@@ -1,4 +1,4 @@
-import { useEffect, useMemo, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   BookOpen,
@@ -20,7 +20,7 @@ import { useLiveQuery } from '../../core/db/useLiveQuery'
 import { getTotalReadingSeconds } from '../../core/db/reading-time'
 import { computeStatsFromRecords } from '../../core/stats'
 import { getRecentlyUsedConcepts } from '../../core/concepts'
-import { getOrganismById, type OrganismProfile } from '../../core/organisms'
+import type { OrganismProfile } from '../../core/organisms/types'
 import { getRecentlyViewedOrganismIds } from '../../core/organisms/recentlyViewed'
 import { useLocalStorage } from '../../shared/hooks'
 import { pickDashboardQuote } from '../../core/dashboard/quotes'
@@ -210,14 +210,37 @@ export function DashboardPage() {
     [items]
   )
 
-  const recentOrganisms = useMemo(
-    () =>
-      recentOrganismIds
-        .map((id) => getOrganismById(id))
-        .filter((o): o is OrganismProfile => Boolean(o))
-        .slice(0, MAX_PREVIEW_ITEMS),
-    [recentOrganismIds]
-  )
+  // Bundle-size remediation (stage 3): core/organisms/registry.ts eagerly
+  // bundles every organism content JSON file (see that file's doc
+  // comment) — Dashboard only ever needs to resolve a handful of
+  // recently-viewed ids to their scientific/common name for this preview
+  // row. Rather than a static import (which would drag the full,
+  // eagerly-loaded organism registry into Dashboard's chunk — the
+  // default "/" route, on screen for every user on first load), the
+  // registry is loaded dynamically the first time there are ids to
+  // resolve. It lands in its own chunk, shared with the Organism
+  // Explorer/Detail pages' chunk, and is cached by the browser/PWA after
+  // the first load.
+  const [recentOrganisms, setRecentOrganisms] = useState<OrganismProfile[]>([])
+  useEffect(() => {
+    if (recentOrganismIds.length === 0) {
+      setRecentOrganisms([])
+      return
+    }
+    let cancelled = false
+    import('../../core/organisms/registry').then(({ getOrganismById }) => {
+      if (cancelled) return
+      setRecentOrganisms(
+        recentOrganismIds
+          .map((id) => getOrganismById(id))
+          .filter((o): o is OrganismProfile => Boolean(o))
+          .slice(0, MAX_PREVIEW_ITEMS)
+      )
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [recentOrganismIds])
 
   // Motivational quote (requested change #2) — picked once per Dashboard
   // visit/mount, avoiding an immediate repeat of whatever was shown last
