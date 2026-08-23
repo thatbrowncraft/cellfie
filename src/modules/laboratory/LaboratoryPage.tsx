@@ -1,18 +1,48 @@
 import { useMemo } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { Calculator, Flask, Ruler } from '@phosphor-icons/react'
+import {
+  BookOpen,
+  Bug,
+  Calculator,
+  Flask,
+  ListChecks,
+  MagnifyingGlass,
+  Monitor,
+  Ruler,
+  Scales,
+  ShieldWarning,
+  Sparkle,
+  Stack
+} from '@phosphor-icons/react'
 import { LaboratoryLayout } from '../../shared/layouts'
 import { Card, CardBody, EmptyState, SearchField, Micro } from '../../shared/components'
 import { cn } from '../../shared/utils/cn'
 import {
   CATEGORY_LABELS,
+  DIFFICULTY_LABELS,
+  DIFFICULTY_ORDER,
+  DIFFICULTY_SHORT_LABELS,
   countByCategory,
+  countByDifficulty,
+  getRandomLabContent,
   listByCategory,
+  listByDifficulty,
   searchLaboratory
 } from '../../core/laboratory/registry'
 import { CALCULATORS } from '../../core/laboratory/calculators'
-import { getCalculatorTagline, getItemTagline, LAB_HUB_TAGLINE, CALCULATOR_HUB_TAGLINE, UNIT_CONVERTER_TAGLINE } from '../../core/laboratory/microcopy'
-import type { LaboratoryCategory } from '../../core/laboratory/types'
+import {
+  DIFFICULTY_TAGLINES,
+  LAB_HUB_TAGLINE,
+  QUICK_DESK_TAGLINE,
+  LEARN_BY_DIFFICULTY_TAGLINE,
+  RANDOM_PICK_TAGLINE,
+  SECTION_TAGLINES,
+  getCalculatorTagline,
+  getItemTagline,
+  CALCULATOR_HUB_TAGLINE,
+  UNIT_CONVERTER_TAGLINE
+} from '../../core/laboratory/microcopy'
+import type { LabDifficulty, LaboratoryCategory } from '../../core/laboratory/types'
 
 type SectionId = LaboratoryCategory | 'calculators' | 'unit-converter'
 
@@ -24,30 +54,44 @@ function sectionLabel(id: SectionId): string {
   return CATEGORY_LABELS[id]
 }
 
-const SECTION_TAGLINE: Record<LaboratoryCategory, string> = {
-  protocol: 'Step-by-step, because "just wing it" is not a valid SOP.',
-  concept: 'The vocabulary that keeps you from getting cooked in viva.',
-  media: "Agar's version of a five-star meal, made to spec.",
-  'biochemical-test': 'Tiny color changes with big identification energy.',
-  biosafety: "The chapter where 'it's probably fine' is banned.",
-  equipment: 'The squad that does the actual heavy lifting.',
-  formula: 'Equations that owe you nothing but the truth.'
+const SECTION_TAGLINE = SECTION_TAGLINES
+
+interface QuickDeskItem {
+  section: SectionId
+  label: string
+  icon: React.ReactNode
 }
 
+const QUICK_DESK_ITEMS: QuickDeskItem[] = [
+  { section: 'protocol', label: 'Browse Protocols', icon: <ListChecks size={20} aria-hidden /> },
+  { section: 'formula', label: 'Open Formula Hub', icon: <Scales size={20} aria-hidden /> },
+  { section: 'calculators', label: 'Calculate', icon: <Calculator size={20} aria-hidden /> },
+  { section: 'unit-converter', label: 'Convert Units', icon: <Ruler size={20} aria-hidden /> },
+  { section: 'biochemical-test', label: 'Biochemical Tests', icon: <Bug size={20} aria-hidden /> },
+  { section: 'biosafety', label: 'Check Biosafety', icon: <ShieldWarning size={20} aria-hidden /> },
+  { section: 'equipment', label: 'Explore Equipment', icon: <Monitor size={20} aria-hidden /> },
+  { section: 'media', label: 'Explore Media', icon: <Stack size={20} aria-hidden /> }
+]
+
 /**
- * Laboratory Hub — Tier 1 Foundation (Implementation Brief §4, §20).
- * A persistent section index beside a searchable content grid, matching
- * the existing Cellfie unified-section layout pattern (LaboratoryLayout,
- * shared with the module's original shell). Every card here links to a
- * detail page at `/laboratory/:category/:id`, a calculator page at
- * `/laboratory/calculators/:id`, or the unit converter at
- * `/laboratory/unit-converter`.
+ * Laboratory Hub — Laboratory 2.0 brief §2-4, §20, §24.
+ *
+ * The landing state (no `?section=` and no `?q=` in the URL) is now an
+ * interactive hub — Hero, Quick Lab Desk, Learn by Difficulty, then
+ * Explore by Category — rather than dropping straight into the
+ * "protocol" section list the way Tier 1 did. Picking a section (via
+ * the sidebar, a Quick Desk tile, or a difficulty card) switches into
+ * the existing searchable content-grid view, which is untouched
+ * (brief: "do not create a second architecture").
  */
 export function LaboratoryPage() {
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
-  const activeSection = (searchParams.get('section') as SectionId | null) ?? 'protocol'
+  const sectionParam = searchParams.get('section') as SectionId | null
+  const difficultyParam = searchParams.get('difficulty') as LabDifficulty | null
   const query = searchParams.get('q') ?? ''
+  const isSearching = query.trim().length > 0
+  const isHub = !sectionParam && !difficultyParam && !isSearching
 
   const counts = useMemo(() => countByCategory(), [])
 
@@ -56,8 +100,23 @@ export function LaboratoryPage() {
       const next = new URLSearchParams(prev)
       next.set('section', section)
       next.delete('q')
+      next.delete('difficulty')
       return next
     })
+  }
+
+  function setDifficulty(difficulty: LabDifficulty) {
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev)
+      next.set('difficulty', difficulty)
+      next.delete('section')
+      next.delete('q')
+      return next
+    })
+  }
+
+  function goToHub() {
+    setSearchParams(new URLSearchParams())
   }
 
   function setQuery(value: string) {
@@ -69,37 +128,60 @@ export function LaboratoryPage() {
     })
   }
 
+  function handleRandomPick() {
+    const pick = getRandomLabContent()
+    if (pick) navigate(`/laboratory/${pick.category}/${pick.id}`)
+  }
+
   const searchHits = useMemo(() => (query.trim() ? searchLaboratory(query) : []), [query])
+  const calculatorHits = useMemo(
+    () => (query.trim() ? CALCULATORS.filter((c) => `${c.title} ${c.shortDescription}`.toLowerCase().includes(query.trim().toLowerCase())) : []),
+    [query]
+  )
 
   const sectionItems = useMemo(() => {
-    if (activeSection === 'calculators' || activeSection === 'unit-converter') return []
-    return listByCategory(activeSection)
-  }, [activeSection])
+    if (!sectionParam || sectionParam === 'calculators' || sectionParam === 'unit-converter') return []
+    return listByCategory(sectionParam)
+  }, [sectionParam])
 
-  const isSearching = query.trim().length > 0
+  const difficultyItems = useMemo(() => (difficultyParam ? listByDifficulty(difficultyParam) : []), [difficultyParam])
 
   return (
     <LaboratoryLayout
       title="Sections"
-      sidebar={SECTION_ORDER.map((section) => {
-        const count = section === 'calculators' ? CALCULATORS.length : section === 'unit-converter' ? undefined : counts[section]
-        return (
+      sidebar={
+        <>
           <button
-            key={section}
             type="button"
-            onClick={() => setSection(section)}
+            onClick={goToHub}
             className={cn(
-              'flex items-center justify-between gap-2 rounded-sm px-3 py-2 text-left font-ui text-ui transition-colors',
-              activeSection === section && !isSearching
-                ? 'bg-surface-raised font-medium text-ink-primary'
-                : 'text-ink-secondary hover:bg-surface-raised hover:text-ink-primary'
+              'flex items-center justify-between gap-2 rounded-sm px-3 py-2 text-left font-ui text-ui font-medium transition-colors',
+              isHub ? 'bg-surface-raised text-ink-primary' : 'text-ink-secondary hover:bg-surface-raised hover:text-ink-primary'
             )}
           >
-            <span>{sectionLabel(section)}</span>
-            {count !== undefined && <span className="font-ui text-micro text-ink-tertiary">{count}</span>}
+            <span>Lab Hub</span>
           </button>
-        )
-      })}
+          {SECTION_ORDER.map((section) => {
+            const count = section === 'calculators' ? CALCULATORS.length : section === 'unit-converter' ? undefined : counts[section]
+            return (
+              <button
+                key={section}
+                type="button"
+                onClick={() => setSection(section)}
+                className={cn(
+                  'flex items-center justify-between gap-2 rounded-sm px-3 py-2 text-left font-ui text-ui transition-colors',
+                  sectionParam === section && !isSearching
+                    ? 'bg-surface-raised font-medium text-ink-primary'
+                    : 'text-ink-secondary hover:bg-surface-raised hover:text-ink-primary'
+                )}
+              >
+                <span>{sectionLabel(section)}</span>
+                {count !== undefined && <span className="font-ui text-micro text-ink-tertiary">{count}</span>}
+              </button>
+            )
+          })}
+        </>
+      }
     >
       <div className="flex flex-col gap-6">
         <header>
@@ -115,26 +197,191 @@ export function LaboratoryPage() {
         />
 
         {isSearching ? (
-          <SearchResultsGrid query={query} results={searchHits} onSelect={(id, category) => navigate(`/laboratory/${category}/${id}`)} />
-        ) : activeSection === 'calculators' ? (
+          <SearchResultsGrid
+            query={query}
+            results={searchHits}
+            calculatorResults={calculatorHits}
+            onSelect={(id, category) => navigate(`/laboratory/${category}/${id}`)}
+            onSelectCalculator={(id) => navigate(`/laboratory/calculators/${id}`)}
+          />
+        ) : isHub ? (
+          <LaboratoryHub onSetSection={setSection} onSetDifficulty={setDifficulty} onRandomPick={handleRandomPick} />
+        ) : difficultyParam ? (
+          <DifficultyGrid difficulty={difficultyParam} items={difficultyItems} onSelect={(id, category) => navigate(`/laboratory/${category}/${id}`)} />
+        ) : sectionParam === 'calculators' ? (
           <CalculatorGrid onSelect={(id) => navigate(`/laboratory/calculators/${id}`)} />
-        ) : activeSection === 'unit-converter' ? (
+        ) : sectionParam === 'unit-converter' ? (
           <UnitConverterCard onOpen={() => navigate('/laboratory/unit-converter')} />
-        ) : (
-          <ContentGrid category={activeSection} onSelect={(id) => navigate(`/laboratory/${activeSection}/${id}`)} />
-        )}
+        ) : sectionParam ? (
+          <ContentGrid category={sectionParam} onSelect={(id) => navigate(`/laboratory/${sectionParam}/${id}`)} />
+        ) : null}
 
-        {!isSearching && activeSection !== 'calculators' && activeSection !== 'unit-converter' && sectionItems.length === 0 && (
+        {sectionParam && sectionParam !== 'calculators' && sectionParam !== 'unit-converter' && !isSearching && sectionItems.length === 0 && (
           <div className="rounded-md border border-border bg-surface p-6">
             <EmptyState
               icon={<Flask size={32} />}
               title="Nothing here yet"
-              description="This section's Tier 1 content is still being added — check back soon, or browse another section."
+              description="This section's content is still being added — check back soon, or browse another section."
             />
           </div>
         )}
       </div>
     </LaboratoryLayout>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// The Hub itself
+// ---------------------------------------------------------------------------
+
+function LaboratoryHub({
+  onSetSection,
+  onSetDifficulty,
+  onRandomPick
+}: {
+  onSetSection: (section: SectionId) => void
+  onSetDifficulty: (difficulty: LabDifficulty) => void
+  onRandomPick: () => void
+}) {
+  const difficultyCounts = useMemo(() => countByDifficulty(), [])
+  const categoryCounts = useMemo(() => countByCategory(), [])
+
+  return (
+    <div className="flex flex-col gap-10">
+      {/* Quick Lab Desk */}
+      <section>
+        <div className="mb-3 flex items-center justify-between gap-2">
+          <div>
+            <h2 className="font-display text-h3 font-medium text-ink-primary">Quick Lab Desk</h2>
+            <Micro as="p" className="mt-0.5">
+              {QUICK_DESK_TAGLINE}
+            </Micro>
+          </div>
+          <button
+            type="button"
+            onClick={onRandomPick}
+            title={RANDOM_PICK_TAGLINE}
+            className="flex shrink-0 items-center gap-1.5 rounded-md border border-border-strong px-3 py-2 font-ui text-caption font-medium text-ink-secondary transition-colors hover:bg-surface-raised hover:text-ink-primary"
+          >
+            <Sparkle size={16} aria-hidden />
+            Random Lab Pick
+          </button>
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {QUICK_DESK_ITEMS.map((tile) => (
+            <button
+              key={tile.section}
+              type="button"
+              onClick={() => onSetSection(tile.section)}
+              className="flex flex-col items-start gap-2 rounded-md border border-border bg-surface p-4 text-left transition-colors hover:border-border-strong hover:bg-surface-raised"
+            >
+              <span className="text-olive">{tile.icon}</span>
+              <span className="font-ui text-ui font-medium leading-tight text-ink-primary">{tile.label}</span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* Learn by Difficulty */}
+      <section>
+        <h2 className="font-display text-h3 font-medium text-ink-primary">Learn by Difficulty</h2>
+        <Micro as="p" className="mt-0.5 mb-3">
+          {LEARN_BY_DIFFICULTY_TAGLINE}
+        </Micro>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {DIFFICULTY_ORDER.map((difficulty) => (
+            <Card key={difficulty} interactive onClick={() => onSetDifficulty(difficulty)}>
+              <CardBody className="flex flex-col gap-1">
+                <div className="flex items-center justify-between">
+                  <p className="font-display text-h3 font-medium text-ink-primary">{DIFFICULTY_LABELS[difficulty]}</p>
+                  <span className="font-ui text-micro text-ink-tertiary">{difficultyCounts[difficulty]}</span>
+                </div>
+                <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{DIFFICULTY_SHORT_LABELS[difficulty]}</p>
+                <p className="mt-1 font-body text-caption text-ink-secondary">{DIFFICULTY_TAGLINES[difficulty]}</p>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Explore by Category */}
+      <section>
+        <h2 className="font-display text-h3 font-medium text-ink-primary">Explore by Category</h2>
+        <Micro as="p" className="mt-0.5 mb-3">
+          The complete section structure — everything Quick Lab Desk shortcuts into, laid out in full.
+        </Micro>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {(['protocol', 'concept', 'media', 'biochemical-test', 'biosafety', 'equipment', 'formula'] as LaboratoryCategory[]).map((category) => (
+            <Card key={category} interactive onClick={() => onSetSection(category)}>
+              <CardBody className="flex flex-col gap-1">
+                <div className="flex items-center justify-between">
+                  <p className="font-display text-h3 font-medium text-ink-primary">{CATEGORY_LABELS[category]}</p>
+                  <span className="font-ui text-micro text-ink-tertiary">{categoryCounts[category]}</span>
+                </div>
+                <p className="font-ui text-caption italic text-ink-tertiary">{SECTION_TAGLINE[category]}</p>
+              </CardBody>
+            </Card>
+          ))}
+          <Card interactive onClick={() => onSetSection('calculators')}>
+            <CardBody className="flex flex-col gap-1">
+              <div className="flex items-center justify-between">
+                <p className="font-display text-h3 font-medium text-ink-primary">Calculators</p>
+                <span className="font-ui text-micro text-ink-tertiary">{CALCULATORS.length}</span>
+              </div>
+              <p className="font-ui text-caption italic text-ink-tertiary">{CALCULATOR_HUB_TAGLINE}</p>
+            </CardBody>
+          </Card>
+          <Card interactive onClick={() => onSetSection('unit-converter')}>
+            <CardBody className="flex flex-col gap-1">
+              <p className="font-display text-h3 font-medium text-ink-primary">Unit Converter</p>
+              <p className="font-ui text-caption italic text-ink-tertiary">{UNIT_CONVERTER_TAGLINE}</p>
+            </CardBody>
+          </Card>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+function DifficultyGrid({
+  difficulty,
+  items,
+  onSelect
+}: {
+  difficulty: LabDifficulty
+  items: ReturnType<typeof listByDifficulty>
+  onSelect: (id: string, category: LaboratoryCategory) => void
+}) {
+  return (
+    <div>
+      <div className="mb-3">
+        <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{DIFFICULTY_SHORT_LABELS[difficulty]}</p>
+        <Micro as="p" className="mt-0.5">
+          {DIFFICULTY_TAGLINES[difficulty]}
+        </Micro>
+      </div>
+      {items.length === 0 ? (
+        <div className="rounded-md border border-border bg-surface p-6">
+          <EmptyState
+            icon={<BookOpen size={32} />}
+            title="Nothing tagged at this level yet"
+            description="More content is being classified by difficulty — check back soon, or browse by category instead."
+          />
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item) => (
+            <Card key={item.id} interactive onClick={() => onSelect(item.id, item.category)}>
+              <CardBody className="flex flex-col gap-1">
+                <p className="font-ui text-micro uppercase tracking-wide text-ink-tertiary">{CATEGORY_LABELS[item.category]}</p>
+                <p className="font-display text-h3 font-medium text-ink-primary">{item.title}</p>
+                <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{getItemTagline(item.id, item.category)}</p>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -205,21 +452,33 @@ function UnitConverterCard({ onOpen }: { onOpen: () => void }) {
 function SearchResultsGrid({
   query,
   results,
-  onSelect
+  calculatorResults,
+  onSelect,
+  onSelectCalculator
 }: {
   query: string
   results: ReturnType<typeof searchLaboratory>
+  calculatorResults: typeof CALCULATORS
   onSelect: (id: string, category: LaboratoryCategory) => void
+  onSelectCalculator: (id: string) => void
 }) {
-  if (results.length === 0) {
+  if (results.length === 0 && calculatorResults.length === 0) {
     return (
       <div className="rounded-md border border-border bg-surface p-6">
-        <EmptyState title="Nothing matches" description={`No Laboratory content found for "${query}".`} />
+        <EmptyState icon={<MagnifyingGlass size={32} />} title="Nothing matches" description={`No Laboratory content found for "${query}".`} />
       </div>
     )
   }
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {calculatorResults.map((calc) => (
+        <Card key={`calc-${calc.id}`} interactive onClick={() => onSelectCalculator(calc.id)}>
+          <CardBody className="flex flex-col gap-1">
+            <p className="font-display text-h3 font-medium text-ink-primary">{calc.title}</p>
+            <p className="font-ui text-caption text-ink-tertiary">Calculator</p>
+          </CardBody>
+        </Card>
+      ))}
       {results.map((hit) => (
         <Card key={`${hit.category}-${hit.id}`} interactive onClick={() => onSelect(hit.id, hit.category)}>
           <CardBody className="flex flex-col gap-1">

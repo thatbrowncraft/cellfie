@@ -16,6 +16,7 @@ import type {
   Protocol
 } from '../../core/laboratory/types'
 import { RelatedContentList } from './components/RelatedContentList'
+import { LabSourcesPanel } from './components/LabSourcesPanel'
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -110,7 +111,7 @@ export function LaboratoryDetailPage() {
 
         <RelatedSections item={item} />
 
-        <ReferencesSection references={item.references} version={item.version} lastVerified={item.lastVerified} sourceType={item.sourceType} />
+        <SourcesSection item={item} />
       </div>
     </div>
   )
@@ -521,32 +522,35 @@ function RelatedCalculators({ ids }: { ids: string[] }) {
   )
 }
 
-function ReferencesSection({
-  references,
-  version,
-  lastVerified,
-  sourceType
-}: {
-  references: { label: string; publisher?: string; edition?: string; url?: string }[]
-  version: string
-  lastVerified: string
-  sourceType: string
-}) {
+/**
+ * Laboratory 2.0 brief §18 — the three information layers, always shown
+ * distinctly. "Cellfie Reference" is what used to be the standalone
+ * References section (Layer 1, always available, never requires a
+ * lookup); "My Library" and "Online Knowledge" (Layers 2-3) live in
+ * `LabSourcesPanel` and only populate on explicit user action.
+ */
+function SourcesSection({ item }: { item: Protocol | LabConcept | Media | BiochemicalTest | BiosafetyTopic | Equipment | Formula }) {
   return (
-    <div className="flex flex-col gap-3 border-t border-border pt-6">
-      <h2 className="font-display text-h3 font-medium text-ink-primary">References</h2>
-      <ul className="space-y-1 font-body text-caption text-ink-secondary">
-        {references.map((r, i) => (
-          <li key={i}>
-            {r.label}
-            {r.publisher ? ` — ${r.publisher}` : ''}
-            {r.edition ? ` (${r.edition})` : ''}
-          </li>
-        ))}
-      </ul>
-      <p className="font-ui text-micro text-ink-tertiary">
-        Source type: {sourceType.replace(/-/g, ' ')} · Version {version} · Last verified {lastVerified}
-      </p>
+    <div className="flex flex-col gap-6 border-t border-border pt-6">
+      <h2 className="font-display text-h3 font-medium text-ink-primary">Sources</h2>
+
+      <div>
+        <p className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Cellfie Reference</p>
+        <ul className="space-y-1 font-body text-caption text-ink-secondary">
+          {item.references.map((r, i) => (
+            <li key={i}>
+              {r.label}
+              {r.publisher ? ` — ${r.publisher}` : ''}
+              {r.edition ? ` (${r.edition})` : ''}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-2 font-ui text-micro text-ink-tertiary">
+          Source type: {item.sourceType.replace(/-/g, ' ')} · Version {item.version} · Last verified {item.lastVerified}
+        </p>
+      </div>
+
+      <LabSourcesPanel title={item.title} contentId={item.id} />
     </div>
   )
 }

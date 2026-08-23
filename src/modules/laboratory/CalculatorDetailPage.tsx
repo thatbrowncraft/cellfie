@@ -7,6 +7,7 @@ import {
   CalculatorError,
   calculateCfuPerGram,
   calculateCfuPerMl,
+  calculateConcentrationFromAbsorbance,
   calculateCumulativeDilution,
   calculateDilutionFactor,
   calculateRcfFromRpm,
@@ -125,6 +126,8 @@ function renderCalculatorForm(id: string) {
       return <RcfRpmForm />
     case 'calc-statistics':
       return <StatisticsForm />
+    case 'calc-beer-lambert':
+      return <BeerLambertForm />
     default:
       return null
   }
@@ -432,6 +435,45 @@ function StatisticsForm() {
         ]}
         value={mode}
         onChange={(v) => setMode(v as 'sample' | 'population')}
+      />
+      <CalculatorResultCard outcome={outcome} error={error} />
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// 8. Beer-Lambert Concentration from Absorbance
+// ---------------------------------------------------------------------------
+
+function BeerLambertForm() {
+  const absorbance = useNumberField()
+  const molarAbsorptivity = useNumberField()
+  const pathLength = useNumberField('1')
+
+  const { outcome, error } = useMemo(() => {
+    if (absorbance.value === undefined || molarAbsorptivity.value === undefined || pathLength.value === undefined) return { outcome: null, error: null }
+    return runCalculation(() =>
+      calculateConcentrationFromAbsorbance({ absorbance: absorbance.value!, molarAbsorptivity: molarAbsorptivity.value!, pathLengthCm: pathLength.value! })
+    )
+  }, [absorbance.value, molarAbsorptivity.value, pathLength.value])
+
+  return (
+    <div className="flex flex-col gap-4">
+      <Input label="Absorbance (A)" type="number" inputMode="decimal" value={absorbance.raw} onChange={(e) => absorbance.setRaw(e.target.value)} />
+      <Input
+        label="Molar absorptivity, ε (L·mol⁻¹·cm⁻¹)"
+        type="number"
+        inputMode="decimal"
+        value={molarAbsorptivity.raw}
+        onChange={(e) => molarAbsorptivity.setRaw(e.target.value)}
+      />
+      <Input
+        label="Path length (cm)"
+        type="number"
+        inputMode="decimal"
+        value={pathLength.raw}
+        onChange={(e) => pathLength.setRaw(e.target.value)}
+        helperText="Standard cuvette path length is usually 1 cm"
       />
       <CalculatorResultCard outcome={outcome} error={error} />
     </div>
