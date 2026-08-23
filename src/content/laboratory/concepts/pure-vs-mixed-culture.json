@@ -1,0 +1,26 @@
+{
+  "id": "concept-pure-vs-mixed-culture",
+  "category": "concept",
+  "title": "Pure Culture vs. Mixed Culture",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "ASM microbiology curriculum resources", "publisher": "ASM" }
+  ],
+  "summary": "A pure culture contains only one species (strictly, one strain descended from a single cell). A mixed culture contains two or more distinct organisms growing together.",
+  "explanation": "Most identification and biochemical testing workflows require a pure culture as a starting point, because a mixed sample will give ambiguous or misleading test results — a biochemical test performed on a mixed colony pick reflects the combined metabolism of whatever is present, not any one organism. Streak plating and spread plating are the standard techniques for isolating single colonies (each presumed to have arisen from a single cell) from a mixed original sample, which can then be subcultured to establish and maintain a pure culture.",
+  "comparison": [
+    { "aspect": "Composition", "left": "Pure culture: one species/strain", "right": "Mixed culture: two or more organisms" },
+    { "aspect": "Typical origin", "left": "An isolated colony subcultured from a streak/spread plate", "right": "A raw environmental, clinical, or food sample before isolation" }
+  ],
+  "commonMisconceptions": [
+    "Assuming a single, uniform-looking colony is automatically pure without confirming via subculture and microscopic/biochemical consistency.",
+    "Running biochemical tests directly on a mixed sample and treating the result as characteristic of a single organism."
+  ],
+  "relatedProtocols": ["proto-streak-plate", "proto-spread-plate"],
+  "relatedConcepts": ["concept-contamination"],
+  "searchKeywords": ["isolated colony", "subculture", "single-species culture", "axenic"],
+  "difficulty": "beginner"
+}

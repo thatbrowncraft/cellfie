@@ -1,0 +1,25 @@
+{
+  "id": "concept-reproducibility-repeatability",
+  "category": "concept",
+  "title": "Reproducibility vs. Repeatability",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "General microbiology/quantitative methods references (ASM, FDA BAM)", "publisher": "ASM/FDA" }
+  ],
+  "summary": "Repeatability is how close results are when the same person repeats the same test, on the same equipment, under the same conditions, in a short timeframe. Reproducibility is how close results are when the test is run under different conditions — a different analyst, instrument, lab, or day.",
+  "explanation": "Both describe consistency, but at different scopes. High repeatability with poor reproducibility suggests a result is real but sensitive to something that varies between operators, instruments, or labs (calibration drift, technique differences, reagent lot variation). Distinguishing the two matters when troubleshooting an inconsistent result — the fix for a repeatability problem (e.g. operator technique) is different from the fix for a reproducibility problem (e.g. instrument calibration or reagent lot).",
+  "comparison": [
+    { "aspect": "What varies", "left": "Repeatability: nothing — same operator, instrument, conditions, short interval", "right": "Reproducibility: at least one condition — different operator, instrument, lab, or time" },
+    { "aspect": "What it tells you", "left": "Whether the method itself is stable under fixed conditions", "right": "Whether the method holds up across realistic real-world variation" }
+  ],
+  "commonMisconceptions": [
+    "Using the two terms interchangeably — a method can have excellent repeatability and poor reproducibility, or vice versa.",
+    "Assuming a single repeated measurement is sufficient evidence of reproducibility."
+  ],
+  "relatedConcepts": ["concept-accuracy-precision", "concept-positive-negative-controls"],
+  "searchKeywords": ["method validation", "precision", "inter-lab variation", "measurement consistency"],
+  "difficulty": "intermediate"
+}

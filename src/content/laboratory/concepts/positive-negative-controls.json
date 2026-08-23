@@ -1,0 +1,26 @@
+{
+  "id": "concept-positive-negative-controls",
+  "category": "concept",
+  "title": "Positive vs. Negative Controls",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "ASM MicrobeLibrary biochemical test protocols", "publisher": "ASM" },
+    { "label": "General microbiology/quantitative methods references (ASM, FDA BAM)", "publisher": "ASM/FDA" }
+  ],
+  "summary": "A positive control is a sample known to produce a positive/expected reaction, confirming a test can detect what it's meant to detect. A negative control is a sample known to lack that reaction, confirming the test isn't producing false positives.",
+  "explanation": "Any test result is only interpretable relative to controls run alongside it. If a positive control fails to show the expected reaction, the reagents, media, or procedure are suspect and the whole run should be questioned — regardless of what the unknown sample showed. If a negative control shows an unexpected reaction, contamination or reagent degradation is suspected. Controls are run in parallel with the same reagents, timing, and conditions as the test sample, not from memory of 'how it usually looks.'",
+  "comparison": [
+    { "aspect": "Purpose", "left": "Positive control: confirms the test CAN detect a true positive", "right": "Negative control: confirms the test does NOT falsely flag a true negative" },
+    { "aspect": "Typical choice", "left": "A well-characterized strain known to give the expected reaction (e.g. Staphylococcus aureus for catalase)", "right": "A well-characterized strain known to lack the reaction, or an uninoculated/sterile blank" }
+  ],
+  "commonMisconceptions": [
+    "Treating a single successful run without controls as sufficient validation of a result.",
+    "Assuming a negative control only needs to be run once when a new reagent lot is opened, rather than alongside each batch of unknowns."
+  ],
+  "relatedConcepts": ["concept-reproducibility-repeatability"],
+  "searchKeywords": ["control organism", "test validity", "reagent qc", "run controls"],
+  "difficulty": "beginner"
+}

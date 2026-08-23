@@ -16,8 +16,8 @@
       "publisher": "CDC/NIH"
     }
   ],
-  "summary": "A CFU (colony-forming unit) count measures only viable, culturable cells under the specific conditions provided. A direct cell count (e.g. via microscope or flow cytometry) counts all cells present \u2014 living, dead, or dormant.",
-  "explanation": "CFU/mL from a plate count will typically be lower than a direct microscopic count of the same sample, because direct counts include non-viable cells and CFU counts miss viable-but-non-culturable (VBNC) cells and any cell whose growth requirements the plating conditions don't meet. Neither method is universally 'more correct' \u2014 the right choice depends on whether viability under specific growth conditions, or total cell presence, is the question being asked.",
+  "summary": "A CFU (colony-forming unit) count measures only viable, culturable cells under the specific conditions provided. A direct cell count (e.g. via microscope or flow cytometry) counts all cells present — living, dead, or dormant.",
+  "explanation": "CFU/mL from a plate count will typically be lower than a direct microscopic count of the same sample, because direct counts include non-viable cells and CFU counts miss viable-but-non-culturable (VBNC) cells and any cell whose growth requirements the plating conditions don't meet. Neither method is universally 'more correct' — the right choice depends on whether viability under specific growth conditions, or total cell presence, is the question being asked.",
   "comparison": [
     {
       "aspect": "What it measures",
@@ -47,5 +47,6 @@
     "viable count",
     "total count",
     "vbnc"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

@@ -16,8 +16,8 @@
       "publisher": "CDC/NIH"
     }
   ],
-  "summary": "A Biological Safety Cabinet (BSC) protects the worker, the environment, and (for Class II) the sample from contamination via HEPA-filtered, directional airflow. A laminar flow 'clean bench' protects only the product/sample from contamination \u2014 it is not designed to protect the worker and is not appropriate for infectious materials.",
-  "explanation": "The physical resemblance between a BSC and a clean bench causes real confusion in teaching labs. A horizontal or vertical laminar flow clean bench blows HEPA-filtered air outward toward the worker to keep the work surface particulate-free (useful for sterile plant tissue culture or electronics work, for example) \u2014 that same airflow direction is precisely why it must never be used for infectious agents. A Class II BSC instead draws air inward and exhausts it through HEPA filtration, protecting the worker.",
+  "summary": "A Biological Safety Cabinet (BSC) protects the worker, the environment, and (for Class II) the sample from contamination via HEPA-filtered, directional airflow. A laminar flow 'clean bench' protects only the product/sample from contamination — it is not designed to protect the worker and is not appropriate for infectious materials.",
+  "explanation": "The physical resemblance between a BSC and a clean bench causes real confusion in teaching labs. A horizontal or vertical laminar flow clean bench blows HEPA-filtered air outward toward the worker to keep the work surface particulate-free (useful for sterile plant tissue culture or electronics work, for example) — that same airflow direction is precisely why it must never be used for infectious agents. A Class II BSC instead draws air inward and exhausts it through HEPA filtration, protecting the worker.",
   "comparison": [
     {
       "aspect": "Airflow direction",
@@ -27,11 +27,11 @@
     {
       "aspect": "Safe for infectious agents?",
       "left": "Yes, appropriate to its class rating",
-      "right": "No \u2014 never appropriate for infectious materials"
+      "right": "No — never appropriate for infectious materials"
     }
   ],
   "commonMisconceptions": [
-    "Assuming any cabinet with a glass shield and blowing air is a 'safety cabinet' \u2014 appearance alone does not indicate worker protection."
+    "Assuming any cabinet with a glass shield and blowing air is a 'safety cabinet' — appearance alone does not indicate worker protection."
   ],
   "relatedEquipment": [
     "equip-bsc-class-ii"
@@ -43,5 +43,6 @@
     "laminar flow hood",
     "biosafety cabinet",
     "clean bench"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

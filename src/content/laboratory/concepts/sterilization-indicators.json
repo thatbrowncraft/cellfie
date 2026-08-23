@@ -36,7 +36,7 @@
     }
   ],
   "commonMisconceptions": [
-    "Assuming autoclave tape changing color means the load is sterile \u2014 it only confirms exposure to certain conditions, not lethality."
+    "Assuming autoclave tape changing color means the load is sterile — it only confirms exposure to certain conditions, not lethality."
   ],
   "relatedEquipment": [
     "equip-autoclave"
@@ -52,5 +52,6 @@
     "biological indicator",
     "spore strip",
     "validation"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

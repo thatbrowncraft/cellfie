@@ -19,8 +19,8 @@
   "summary": "A set of practices used to prevent contamination of cultures, media, and reagents by unwanted microorganisms, and to protect the handler from exposure.",
   "explanation": "Aseptic technique includes working near a flame or in laminar airflow, flaming loops before and after use, minimizing time lids/caps are open, working quickly but not carelessly, and disinfecting work surfaces before and after use. It is a practice, not a single step, and applies throughout a procedure rather than at one point in it.",
   "commonMisconceptions": [
-    "That flaming a loop alone is 'doing aseptic technique' \u2014 it is one component among several.",
-    "That aseptic technique is only about protecting the worker \u2014 it equally protects the culture from contamination."
+    "That flaming a loop alone is 'doing aseptic technique' — it is one component among several.",
+    "That aseptic technique is only about protecting the worker — it equally protects the culture from contamination."
   ],
   "relatedProtocols": [
     "proto-streak-plate",
@@ -34,5 +34,6 @@
   "searchKeywords": [
     "sterile technique",
     "contamination prevention"
-  ]
+  ],
+  "difficulty": "beginner"
 }

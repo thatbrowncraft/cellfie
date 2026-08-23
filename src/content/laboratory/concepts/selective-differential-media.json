@@ -31,7 +31,7 @@
     }
   ],
   "commonMisconceptions": [
-    "That a medium must be one or the other \u2014 many common media are both at once."
+    "That a medium must be one or the other — many common media are both at once."
   ],
   "relatedMedia": [
     "media-macconkey",
@@ -40,5 +40,6 @@
   "searchKeywords": [
     "indicator media",
     "inhibitory media"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

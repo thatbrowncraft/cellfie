@@ -1,0 +1,22 @@
+{
+  "id": "concept-generation-time",
+  "category": "concept",
+  "title": "Generation Time (Doubling Time)",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "General microbiology/quantitative methods references (ASM, FDA BAM)", "publisher": "ASM/FDA" }
+  ],
+  "summary": "Generation time (or doubling time) is the time it takes a population of cells to double in number during exponential (log-phase) growth.",
+  "explanation": "During the exponential phase of a bacterial growth curve, cell number increases geometrically: 1 → 2 → 4 → 8, and so on, each doubling taking approximately the same amount of time under constant conditions. Generation time is calculated from the number of generations (doublings) that occurred over a measured time interval — see the Generation Time Calculator and its underlying formula. It is species- and condition-specific (temperature, medium richness, oxygen availability, and growth phase all affect it), so a generation time measured under one set of conditions cannot be assumed to hold under different conditions.",
+  "commonMisconceptions": [
+    "Treating generation time as a fixed property of a species rather than a value specific to the conditions it was measured under.",
+    "Assuming generation time stays constant throughout an entire growth curve — it is only approximately constant during the exponential phase, not during lag, stationary, or death phases."
+  ],
+  "relatedFormulas": ["formula-generation-time"],
+  "relatedConcepts": ["concept-cfu-vs-direct-count", "concept-od-vs-cell-concentration"],
+  "searchKeywords": ["doubling time", "exponential phase", "log phase growth", "growth rate"],
+  "difficulty": "intermediate"
+}

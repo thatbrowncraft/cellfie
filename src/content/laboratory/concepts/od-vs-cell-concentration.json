@@ -17,7 +17,7 @@
     }
   ],
   "summary": "Optical density (commonly OD600, absorbance at 600 nm) is a rapid, indirect proxy for the concentration of cells in a liquid culture based on light scattering, not a direct cell count.",
-  "explanation": "OD readings correlate with cell concentration, but the relationship between a given OD value and actual CFU/mL or cells/mL is specific to the organism, cell size/shape, growth phase, and even the specific spectrophotometer \u2014 it is not a fixed universal conversion. A calibration/standard curve (comparing OD to an independent method like plate counts or direct counts for that specific organism and instrument) is needed before OD can be used to estimate concentration in absolute terms. OD is also unreliable at very high cell densities where the relationship becomes non-linear, often requiring dilution before reading.",
+  "explanation": "OD readings correlate with cell concentration, but the relationship between a given OD value and actual CFU/mL or cells/mL is specific to the organism, cell size/shape, growth phase, and even the specific spectrophotometer — it is not a fixed universal conversion. A calibration/standard curve (comparing OD to an independent method like plate counts or direct counts for that specific organism and instrument) is needed before OD can be used to estimate concentration in absolute terms. OD is also unreliable at very high cell densities where the relationship becomes non-linear, often requiring dilution before reading.",
   "comparison": [
     {
       "aspect": "What it measures",
@@ -41,5 +41,6 @@
     "spectrophotometer",
     "growth curve",
     "turbidity"
-  ]
+  ],
+  "difficulty": "intermediate"
 }
