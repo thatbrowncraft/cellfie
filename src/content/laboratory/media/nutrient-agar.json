@@ -1,0 +1,92 @@
+{
+  "id": "media-nutrient-agar",
+  "category": "media",
+  "title": "Nutrient Agar",
+  "abbreviation": "NA",
+  "subcategory": "General Purpose Media",
+  "sourceType": "manufacturer-specific",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson",
+      "edition": "2nd ed."
+    }
+  ],
+  "classifications": [
+    "general-purpose",
+    "non-selective",
+    "non-differential"
+  ],
+  "purpose": "A basic general-purpose medium supporting growth of a broad range of non-fastidious heterotrophic bacteria for routine cultivation, maintenance, and teaching use.",
+  "targetOrganisms": [
+    "Non-fastidious heterotrophic bacteria generally"
+  ],
+  "formulations": [
+    {
+      "sourceLabel": "Typical commercial formulation (e.g. Difco/BBL Nutrient Agar)",
+      "reference": {
+        "label": "Difco & BBL Manual of Microbiological Culture Media",
+        "publisher": "Becton Dickinson"
+      },
+      "compositionPerLiter": [
+        {
+          "ingredient": "Beef extract",
+          "amount": "3 g"
+        },
+        {
+          "ingredient": "Peptone",
+          "amount": "5 g"
+        },
+        {
+          "ingredient": "Agar",
+          "amount": "15 g"
+        }
+      ],
+      "finalPh": {
+        "value": "approximately 6.8 \u00b1 0.2 at 25\u00b0C",
+        "dependsOn": "specific manufacturer lot/formulation",
+        "reference": {
+          "label": "Difco & BBL Manual of Microbiological Culture Media",
+          "publisher": "Becton Dickinson"
+        }
+      }
+    }
+  ],
+  "preparationSummary": "Suspend the dehydrated powder in distilled/deionized water per the manufacturer's stated concentration, heat with agitation to fully dissolve, then sterilize before pouring plates or dispensing into tubes.",
+  "sterilization": {
+    "value": "commonly autoclaved at 121\u00b0C for 15 minutes for typical batch volumes",
+    "dependsOn": "batch volume, container, and autoclave validation \u2014 not a universal setting for every load",
+    "reference": {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson"
+    }
+  },
+  "storage": "Store prepared plates/tubes refrigerated (commonly 2\u20138\u00b0C) in sealed bags to reduce dehydration, away from light.",
+  "shelfLife": {
+    "value": "manufacturer-stated shelf life varies by product and storage condition",
+    "dependsOn": "specific product and storage conditions",
+    "unverified": true
+  },
+  "expectedAppearance": "Pale amber/straw-colored, clear to slightly opalescent gel when properly prepared.",
+  "qualityControl": "Confirm sterility (no growth on an uninoculated control plate) and check that known reference organisms grow as expected before use in critical work.",
+  "reactions": [],
+  "manufacturerNotes": "Exact composition, pH, and shelf life vary by manufacturer and product line \u2014 always confirm against the specific product insert in use.",
+  "relatedProtocols": [
+    "proto-streak-plate",
+    "proto-spread-plate"
+  ],
+  "relatedEquipment": [
+    "equip-autoclave",
+    "equip-petri-dish"
+  ],
+  "relatedSafety": [
+    "safety-basic-autoclave-safety"
+  ],
+  "searchKeywords": [
+    "general purpose medium",
+    "nutrient agar",
+    "na plate"
+  ]
+}

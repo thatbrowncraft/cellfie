@@ -1,0 +1,82 @@
+{
+  "id": "media-tsa",
+  "category": "media",
+  "title": "Tryptic (Trypticase) Soy Agar",
+  "abbreviation": "TSA",
+  "subcategory": "General Purpose Media",
+  "sourceType": "manufacturer-specific",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson"
+    }
+  ],
+  "classifications": [
+    "general-purpose",
+    "non-selective",
+    "non-differential"
+  ],
+  "purpose": "A nutritionally rich general-purpose medium supporting a wide range of both fastidious and non-fastidious organisms, commonly used for cultivation, subculturing, and as a base for blood agar.",
+  "targetOrganisms": [
+    "Broad range of bacteria, including many fastidious organisms compared to plain Nutrient Agar"
+  ],
+  "formulations": [
+    {
+      "sourceLabel": "Typical commercial formulation (e.g. BBL/Difco TSA)",
+      "reference": {
+        "label": "Difco & BBL Manual of Microbiological Culture Media",
+        "publisher": "Becton Dickinson"
+      },
+      "compositionPerLiter": [
+        {
+          "ingredient": "Tryptone (pancreatic digest of casein)",
+          "amount": "15 g"
+        },
+        {
+          "ingredient": "Soytone (papaic digest of soybean meal)",
+          "amount": "5 g"
+        },
+        {
+          "ingredient": "Sodium chloride",
+          "amount": "5 g"
+        },
+        {
+          "ingredient": "Agar",
+          "amount": "15 g"
+        }
+      ],
+      "finalPh": {
+        "value": "approximately 7.3 \u00b1 0.2 at 25\u00b0C",
+        "dependsOn": "specific manufacturer lot/formulation"
+      }
+    }
+  ],
+  "preparationSummary": "Suspend the dehydrated powder in distilled/deionized water per the manufacturer's stated concentration, heat to dissolve fully, then sterilize before pouring plates.",
+  "sterilization": {
+    "value": "commonly autoclaved at 121\u00b0C for 15 minutes for typical batch volumes",
+    "dependsOn": "batch volume and container"
+  },
+  "storage": "Refrigerate prepared plates (commonly 2\u20138\u00b0C) in sealed bags.",
+  "shelfLife": {
+    "value": "manufacturer-stated; varies by product",
+    "dependsOn": "specific product and storage conditions",
+    "unverified": true
+  },
+  "expectedAppearance": "Pale amber, clear to slightly opalescent gel.",
+  "qualityControl": "Confirm sterility with an uninoculated control and verify growth of known reference organisms.",
+  "manufacturerNotes": "TSA is the solid form of Tryptic Soy Broth (TSB); confirm exact composition against the specific product in use, since 'soy-based general medium' formulations vary between manufacturers.",
+  "relatedProtocols": [
+    "proto-streak-plate"
+  ],
+  "relatedMedia": [
+    "media-blood-agar",
+    "media-tsb"
+  ],
+  "searchKeywords": [
+    "tsa plate",
+    "tryptic soy agar",
+    "trypticase soy agar"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "media-blood-agar",
+  "category": "media",
+  "title": "Blood Agar (Sheep Blood Agar)",
+  "abbreviation": "BAP",
+  "subcategory": "Enriched & Differential Media",
+  "sourceType": "manufacturer-specific",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson"
+    }
+  ],
+  "classifications": [
+    "enriched",
+    "differential"
+  ],
+  "purpose": "Supports growth of many fastidious organisms via the blood-enriched base, and differentiates organisms by their hemolytic pattern (alpha, beta, or gamma hemolysis).",
+  "targetOrganisms": [
+    "Many fastidious and non-fastidious bacteria; commonly used for Streptococcus and Staphylococcus species differentiation by hemolysis"
+  ],
+  "formulations": [
+    {
+      "sourceLabel": "Typical preparation: TSA base + 5% defibrinated sheep blood",
+      "reference": {
+        "label": "Difco & BBL Manual of Microbiological Culture Media",
+        "publisher": "Becton Dickinson"
+      },
+      "compositionPerLiter": [
+        {
+          "ingredient": "Tryptic Soy Agar base (see media-tsa)",
+          "amount": "per base formulation"
+        },
+        {
+          "ingredient": "Defibrinated sheep blood",
+          "amount": "commonly 5% v/v, added after the base is autoclaved and cooled"
+        }
+      ],
+      "finalPh": {
+        "value": "approximately 7.3 \u00b1 0.2 for the base agar before blood addition",
+        "dependsOn": "base agar formulation"
+      }
+    }
+  ],
+  "preparationSummary": "Prepare and autoclave the agar base, cool to approximately 45\u201350\u00b0C (a temperature the brief flags as needing verification against the specific base/blood product, not treated as a fixed universal number here), then aseptically add sterile defibrinated blood and mix gently before pouring, to avoid lysing red cells or introducing bubbles.",
+  "sterilization": {
+    "value": "the agar base is autoclaved before blood is added; blood itself is not autoclaved (heat would hemolyze/denature it)",
+    "dependsOn": "base medium only \u2014 blood is added aseptically post-sterilization"
+  },
+  "storage": "Refrigerate prepared plates in sealed bags; protect from excessive drying.",
+  "shelfLife": {
+    "value": "manufacturer-stated; varies by product and blood source",
+    "dependsOn": "specific product and storage conditions",
+    "unverified": true
+  },
+  "expectedAppearance": "Opaque, reddish-brown agar from the blood content.",
+  "qualityControl": "Confirm hemolytic patterns using known reference organisms for alpha, beta, and gamma hemolysis before relying on differentiation.",
+  "reactions": [
+    {
+      "organismOrGroup": "Beta-hemolytic organisms (e.g. Streptococcus pyogenes)",
+      "reaction": "Complete clearing (hemolysis) around colonies"
+    },
+    {
+      "organismOrGroup": "Alpha-hemolytic organisms (e.g. Streptococcus pneumoniae, viridans streptococci)",
+      "reaction": "Partial, greenish discoloration around colonies"
+    },
+    {
+      "organismOrGroup": "Gamma-hemolytic (non-hemolytic) organisms",
+      "reaction": "No change to the surrounding blood agar"
+    }
+  ],
+  "manufacturerNotes": "Hemolysis patterns can differ visually depending on the animal blood source used (sheep vs. horse, for instance) \u2014 confirm which blood source a given protocol/reference assumes.",
+  "relatedProtocols": [
+    "proto-streak-plate"
+  ],
+  "relatedMedia": [
+    "media-tsa"
+  ],
+  "searchKeywords": [
+    "hemolysis",
+    "blood agar plate",
+    "alpha hemolysis",
+    "beta hemolysis"
+  ]
+}

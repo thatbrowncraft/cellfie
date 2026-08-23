@@ -1,0 +1,77 @@
+{
+  "id": "media-mueller-hinton",
+  "category": "media",
+  "title": "Mueller-Hinton Agar",
+  "abbreviation": "MHA",
+  "subcategory": "Susceptibility Testing Media",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Clinical and Laboratory Standards Institute (CLSI) Performance Standards for Antimicrobial Susceptibility Testing",
+      "publisher": "CLSI"
+    }
+  ],
+  "classifications": [
+    "standardized",
+    "non-selective"
+  ],
+  "purpose": "The standardized medium used for disk diffusion and other antimicrobial susceptibility testing methods, chosen for its consistent, low levels of certain inhibitors and good diffusion characteristics.",
+  "targetOrganisms": [
+    "Non-fastidious organisms undergoing antimicrobial susceptibility testing; fastidious organisms typically require a supplemented or alternative CLSI-specified medium"
+  ],
+  "formulations": [
+    {
+      "sourceLabel": "CLSI-referenced standard formulation",
+      "reference": {
+        "label": "Clinical and Laboratory Standards Institute (CLSI) Performance Standards for Antimicrobial Susceptibility Testing",
+        "publisher": "CLSI"
+      },
+      "compositionPerLiter": [
+        {
+          "ingredient": "Beef infusion",
+          "amount": "300 g (infusion basis)"
+        },
+        {
+          "ingredient": "Casein hydrolysate",
+          "amount": "17.5 g"
+        },
+        {
+          "ingredient": "Starch",
+          "amount": "1.5 g"
+        },
+        {
+          "ingredient": "Agar",
+          "amount": "17 g"
+        }
+      ],
+      "finalPh": {
+        "value": "CLSI specifies a target pH range appropriate for susceptibility testing; verify the exact current value in the edition being followed",
+        "dependsOn": "the specific CLSI document edition in use",
+        "unverified": true
+      }
+    }
+  ],
+  "preparationSummary": "Prepare per manufacturer/CLSI instructions; agar depth in the plate is standardized (CLSI specifies an approximate depth) because it affects diffusion and therefore zone size interpretation.",
+  "sterilization": {
+    "value": "commonly autoclaved at 121\u00b0C for the time specified by the manufacturer/CLSI for the batch size",
+    "dependsOn": "batch size and the specific CLSI edition/manufacturer instructions in use"
+  },
+  "storage": "Store per manufacturer guidance, protected from contamination and excessive drying, since drying changes effective agar depth/diffusion.",
+  "shelfLife": {
+    "value": "manufacturer- and CLSI-guidance-dependent",
+    "dependsOn": "specific product and storage conditions",
+    "unverified": true
+  },
+  "expectedAppearance": "Pale, translucent to slightly opaque agar, poured to a standardized depth.",
+  "qualityControl": "CLSI specifies routine QC using reference control organism strains and expected zone-diameter ranges \u2014 do not substitute an uncontrolled batch for susceptibility reporting.",
+  "manufacturerNotes": "Because this medium underpins clinical susceptibility interpretation, always follow the current CLSI document edition rather than a remembered or older specification \u2014 breakpoints and QC ranges are revised periodically.",
+  "relatedBiochemicalTests": [],
+  "searchKeywords": [
+    "mueller hinton",
+    "kirby-bauer",
+    "disk diffusion",
+    "susceptibility testing medium"
+  ]
+}
