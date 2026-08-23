@@ -37,7 +37,7 @@
   ],
   "positiveResult": "Color change to pink/magenta; timing varies by organism, with some producing a rapid, strongly positive reaction and others a weak, delayed one.",
   "negativeResult": "No color change (remains the original yellow/orange) after the full recommended incubation period.",
-  "interpretation": "Speed and strength of the reaction is itself diagnostically useful in some identification schemes (e.g. distinguishing rapid urease-positive Proteus from slower urease-positive organisms) \u2014 not just a simple positive/negative call.",
+  "interpretation": "Speed and strength of the reaction is itself diagnostically useful in some identification schemes (e.g. distinguishing rapid urease-positive Proteus from slower urease-positive organisms) — not just a simple positive/negative call.",
   "controls": [
     {
       "type": "positive",
@@ -68,5 +68,6 @@
     "urease positive",
     "phenol red",
     "urea hydrolysis"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

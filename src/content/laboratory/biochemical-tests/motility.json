@@ -1,0 +1,39 @@
+{
+  "id": "test-motility",
+  "category": "biochemical-test",
+  "title": "Motility Test",
+  "subcategory": "Physiological Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "ASM MicrobeLibrary biochemical test protocols", "publisher": "ASM" },
+    { "label": "Bergey's Manual of Determinative Bacteriology", "publisher": "ASM/Wiley" }
+  ],
+  "principle": "Motile organisms possess flagella and can actively move through a semisolid medium, producing visible growth spreading away from the original stab line. Non-motile organisms grow only along the stab line itself.",
+  "purpose": "Distinguishes motile from non-motile organisms as one differentiating character in identification workflows (e.g. within the Enterobacteriaceae, or alongside SIM medium's indole and hydrogen sulfide reactions).",
+  "reagents": ["Semisolid motility test medium (e.g. Motility Test Medium or SIM medium)"],
+  "procedure": [
+    { "step": 1, "instruction": "Using a straight inoculating needle (not a loop), stab a pure culture colony once, straight down the center of the semisolid medium in a test tube, to about two-thirds of the medium's depth." },
+    { "step": 2, "instruction": "Withdraw the needle along the same stab line used to enter, to avoid unnecessarily disturbing the surrounding medium." },
+    { "step": 3, "instruction": "Incubate at the appropriate temperature for the organism, typically for 18-48 hours." },
+    { "step": 4, "instruction": "Examine for growth pattern relative to the stab line." }
+  ],
+  "positiveResult": "Diffuse, hazy growth spreading outward from the stab line through the medium (and sometimes visible as clouding of the whole tube).",
+  "negativeResult": "Growth confined sharply to the stab line, with the surrounding medium remaining clear.",
+  "interpretation": "Motility is a supportive, not standalone, identification character and is typically interpreted alongside other biochemical and morphological results.",
+  "controls": [
+    { "type": "positive", "organism": "Proteus mirabilis" },
+    { "type": "negative", "organism": "Klebsiella pneumoniae" }
+  ],
+  "precautions": ["Stab straight down and withdraw along the same path — an off-axis or wavering stab can create a false appearance of spreading growth.", "Use a fresh, pure culture; an old or contaminated culture can give an ambiguous result."],
+  "limitations": ["Some organisms are motile only within a specific temperature range (e.g. some Listeria species show motility better at room temperature than at 37°C) — a negative result at one incubation temperature does not always rule out motility.", "Overly vigorous stabbing can mechanically distribute cells away from the stab line, mimicking a positive result in a non-motile organism."],
+  "exampleOrganisms": [
+    { "organism": "Proteus mirabilis", "typicalResult": "positive" },
+    { "organism": "Klebsiella pneumoniae", "typicalResult": "negative" }
+  ],
+  "relatedMedia": [],
+  "relatedProtocols": ["proto-streak-plate"],
+  "searchKeywords": ["semisolid stab", "flagella test", "sim medium motility", "hanging drop alternative"],
+  "difficulty": "intermediate"
+}

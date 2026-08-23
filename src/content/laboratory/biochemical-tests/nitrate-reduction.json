@@ -1,0 +1,39 @@
+{
+  "id": "test-nitrate-reduction",
+  "category": "biochemical-test",
+  "title": "Nitrate Reduction Test",
+  "subcategory": "Enzymatic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "ASM MicrobeLibrary biochemical test protocols", "publisher": "ASM" },
+    { "label": "Bergey's Manual of Determinative Bacteriology", "publisher": "ASM/Wiley" }
+  ],
+  "principle": "Organisms possessing the enzyme nitrate reductase can reduce nitrate (NO3-) to nitrite (NO2-) or, in some organisms, further reduce it to nitrogen gas or other nitrogenous compounds. Sulfanilic acid and alpha-naphthylamine (or dimethyl-alpha-naphthylamine) reagents react with nitrite, if present, to form a red color.",
+  "purpose": "Differentiates organisms capable of nitrate reduction from those that are not, one of several tests used in identification of Gram-negative rods and other groups.",
+  "reagents": ["Nitrate broth", "Reagent A (sulfanilic acid)", "Reagent B (alpha-naphthylamine or dimethyl-alpha-naphthylamine)", "Zinc dust (for confirming a true negative)"],
+  "procedure": [
+    { "step": 1, "instruction": "Inoculate nitrate broth with a pure culture and incubate at the appropriate temperature for the specified time." },
+    { "step": 2, "instruction": "Add Reagent A followed by Reagent B directly to the broth." },
+    { "step": 3, "instruction": "Observe for immediate red color development." },
+    { "step": 4, "instruction": "If no color develops, add a small amount of zinc dust to confirm the interpretation.", "note": "Zinc chemically reduces any nitrate still present in the tube to nitrite; if red color THEN appears, it means the organism never reduced the original nitrate (a true negative). If no color appears even after zinc, the organism had already reduced nitrate all the way past nitrite (a positive result that a color-only reading would have missed)." }
+  ],
+  "positiveResult": "Red color forms immediately after adding Reagent A and B, OR no color forms after adding zinc (indicating nitrate was reduced past nitrite).",
+  "negativeResult": "No color after Reagent A/B, but red color DOES appear after adding zinc — confirming unreduced nitrate was still present.",
+  "interpretation": "This test specifically distinguishes nitrate reduction ability; a positive by either the direct-color or zinc-confirmed route both indicate nitrate reductase activity, but through opposite-looking color outcomes, which is why the zinc confirmation step is essential rather than optional.",
+  "controls": [
+    { "type": "positive", "organism": "Escherichia coli" },
+    { "type": "negative", "organism": "Acinetobacter baumannii" }
+  ],
+  "precautions": ["Always run the zinc confirmation step on any tube that shows no color after Reagent A/B — skipping it risks misreading a true positive as negative.", "Reagents A and B degrade over time; verify with known positive and negative controls when using a new reagent lot."],
+  "limitations": ["A tube that has been reduced all the way to nitrogen gas (denitrification) will also show no color and require the same zinc confirmation logic as a true negative — gas bubbles trapped in an inverted Durham tube, if used, can support this interpretation."],
+  "exampleOrganisms": [
+    { "organism": "Escherichia coli", "typicalResult": "positive" },
+    { "organism": "Acinetobacter baumannii", "typicalResult": "negative" }
+  ],
+  "relatedMedia": [],
+  "relatedProtocols": [],
+  "searchKeywords": ["nitrate broth", "nitrite test", "zinc confirmation", "denitrification"],
+  "difficulty": "intermediate"
+}

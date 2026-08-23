@@ -33,12 +33,12 @@
     },
     {
       "step": 3,
-      "instruction": "Shake gently to aerate and observe over roughly the next 15\u201330 minutes for a color change, since the reaction requires atmospheric oxygen and takes time to develop."
+      "instruction": "Shake gently to aerate and observe over roughly the next 15–30 minutes for a color change, since the reaction requires atmospheric oxygen and takes time to develop."
     }
   ],
   "positiveResult": "Development of a red/pink color, typically within the reading window specified by the reagent protocol.",
   "negativeResult": "No color change, or a copper color that is not considered a true positive by most protocols.",
-  "interpretation": "Read together with the Methyl Red result from the same organism/pathway question \u2014 see the Methyl Red test entry.",
+  "interpretation": "Read together with the Methyl Red result from the same organism/pathway question — see the Methyl Red test entry.",
   "controls": [
     {
       "type": "positive",
@@ -50,7 +50,7 @@
     }
   ],
   "precautions": [
-    "Shake/aerate after adding reagents \u2014 the color-forming reaction requires oxygen.",
+    "Shake/aerate after adding reagents — the color-forming reaction requires oxygen.",
     "Read within the specified window; a delayed or absent color change beyond that window is not scored positive."
   ],
   "limitations": [
@@ -74,5 +74,6 @@
     "barritt's reagent",
     "acetoin",
     "butanediol fermentation"
-  ]
+  ],
+  "difficulty": "advanced"
 }

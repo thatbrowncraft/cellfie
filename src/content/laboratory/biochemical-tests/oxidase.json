@@ -45,7 +45,7 @@
     }
   ],
   "precautions": [
-    "Never use a nichrome or iron-containing loop \u2014 metal ions can produce a false-positive reaction with the reagent.",
+    "Never use a nichrome or iron-containing loop — metal ions can produce a false-positive reaction with the reagent.",
     "Read within the product-specified timeframe; late color changes are not reliable indicators."
   ],
   "limitations": [
@@ -66,5 +66,6 @@
     "oxidase negative",
     "cytochrome oxidase",
     "tmpd"
-  ]
+  ],
+  "difficulty": "beginner"
 }

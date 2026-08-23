@@ -25,7 +25,7 @@
   "procedure": [
     {
       "step": 1,
-      "instruction": "Inoculate MR-VP broth with the test organism and incubate for the full recommended duration \u2014 MR requires a longer incubation than many other tests, since the pH must remain stably low, not just transiently drop."
+      "instruction": "Inoculate MR-VP broth with the test organism and incubate for the full recommended duration — MR requires a longer incubation than many other tests, since the pH must remain stably low, not just transiently drop."
     },
     {
       "step": 2,
@@ -50,7 +50,7 @@
     }
   ],
   "precautions": [
-    "Incubate for the full recommended duration before testing \u2014 reading too early can give a false negative, since pH may not have stabilized yet."
+    "Incubate for the full recommended duration before testing — reading too early can give a false negative, since pH may not have stabilized yet."
   ],
   "limitations": [
     "Reading before the recommended incubation window is complete is the most common source of a misleading result."
@@ -74,5 +74,6 @@
     "methyl red test",
     "mixed acid fermentation",
     "mr-vp broth"
-  ]
+  ],
+  "difficulty": "advanced"
 }

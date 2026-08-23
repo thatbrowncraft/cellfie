@@ -1,0 +1,38 @@
+{
+  "id": "test-coagulase",
+  "category": "biochemical-test",
+  "title": "Coagulase Test",
+  "subcategory": "Enzymatic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "ASM MicrobeLibrary biochemical test protocols", "publisher": "ASM" },
+    { "label": "Bergey's Manual of Determinative Bacteriology", "publisher": "ASM/Wiley" }
+  ],
+  "principle": "Coagulase is an enzyme that converts fibrinogen in plasma to fibrin, causing visible clot formation. A slide test detects bound coagulase ('clumping factor') directly on the cell surface; a tube test detects free coagulase secreted into the surrounding plasma.",
+  "purpose": "The classic test for presumptively distinguishing Staphylococcus aureus (typically coagulase-positive) from most other, coagulase-negative staphylococci.",
+  "reagents": ["Rabbit or human plasma with anticoagulant (e.g. EDTA plasma)"],
+  "procedure": [
+    { "step": 1, "instruction": "Slide test: emulsify a colony in a drop of water or saline on a slide, add a drop of plasma, and mix — observe within 10 seconds for clumping.", "note": "The slide test detects bound coagulase only; a negative slide test should be confirmed with a tube test before reporting coagulase-negative." },
+    { "step": 2, "instruction": "Tube test: emulsify a colony (or add broth culture) into a tube of plasma diluted per the manufacturer's instructions, and incubate at 35-37°C." },
+    { "step": 3, "instruction": "Examine the tube test at intervals (commonly checked at 1-4 hours) for clot formation, and again at 24 hours if still negative.", "note": "Some strains produce fibrinolysin, which can dissolve a clot that formed earlier — an early check that misses a transient clot can give a false negative if only read at 24 hours." }
+  ],
+  "positiveResult": "Slide test: visible clumping within 10 seconds. Tube test: any degree of visible clot formation (graded from a small clot to complete solid coagulation).",
+  "negativeResult": "Slide test: no clumping. Tube test: fluid remains completely liquid at both the early check and 24 hours.",
+  "interpretation": "A positive result (by either method, but the tube test is the definitive reference method) is strongly associated with Staphylococcus aureus; a negative result is consistent with most other Staphylococcus species but should be confirmed with the tube test if the slide test alone was negative.",
+  "controls": [
+    { "type": "positive", "organism": "Staphylococcus aureus" },
+    { "type": "negative", "organism": "Staphylococcus epidermidis" }
+  ],
+  "precautions": ["Always confirm a negative slide test with a tube test before finalizing an identification.", "Check tube tests at an early timepoint as well as 24 hours to catch clots later dissolved by fibrinolysin."],
+  "limitations": ["A small number of coagulase-negative Staphylococcus species and other genera can occasionally give unexpected results, so coagulase status is one identifying character among several, not a complete species identification on its own."],
+  "exampleOrganisms": [
+    { "organism": "Staphylococcus aureus", "typicalResult": "positive" },
+    { "organism": "Staphylococcus epidermidis", "typicalResult": "negative" }
+  ],
+  "relatedMedia": ["media-mannitol-salt-agar"],
+  "relatedProtocols": ["proto-gram-stain"],
+  "searchKeywords": ["clumping factor", "staph aureus identification", "plasma clot test", "free coagulase"],
+  "difficulty": "intermediate"
+}

@@ -74,5 +74,6 @@
     "catalase positive",
     "catalase negative",
     "hydrogen peroxide test"
-  ]
+  ],
+  "difficulty": "beginner"
 }

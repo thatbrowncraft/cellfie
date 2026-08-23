@@ -24,7 +24,7 @@
   "procedure": [
     {
       "step": 1,
-      "instruction": "Lightly inoculate a Simmons Citrate Agar slant by streaking the surface with a needle/loop \u2014 do not stab deeply, since this test relies on aerobic surface growth."
+      "instruction": "Lightly inoculate a Simmons Citrate Agar slant by streaking the surface with a needle/loop — do not stab deeply, since this test relies on aerobic surface growth."
     },
     {
       "step": 2,
@@ -52,7 +52,7 @@
     "Use a light surface inoculation, not a heavy stab, to avoid a false reading from anaerobic conditions deep in the slant."
   ],
   "limitations": [
-    "A very heavy inoculum can occasionally cause a color change through carryover of nutrients rather than true citrate utilization \u2014 inoculate lightly with a fresh, isolated colony."
+    "A very heavy inoculum can occasionally cause a color change through carryover of nutrients rather than true citrate utilization — inoculate lightly with a fresh, isolated colony."
   ],
   "exampleOrganisms": [
     {
@@ -76,5 +76,6 @@
     "citrate positive",
     "simmons citrate",
     "bromothymol blue"
-  ]
+  ],
+  "difficulty": "intermediate"
 }
