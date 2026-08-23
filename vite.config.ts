@@ -41,15 +41,22 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
-        // Default precache ceiling is 2 MiB; the main JS bundle has grown
-        // past that (organism content, Concept/Organism/Laboratory/
-        // Comparison modules all bundle in) and will keep growing as more
-        // content ships. Raised with real headroom rather than just
-        // enough to fit today's bundle, so this doesn't need revisiting
-        // every time content is added. Precaching the JS bundle matters
-        // here specifically because the app is offline-first.
-        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2}']
+        // Bundle-size remediation: a previous change here raised
+        // maximumFileSizeToCacheInBytes to 5 MiB to paper over a 2.11 MB
+        // main JS chunk (organism + laboratory content registries were
+        // being eagerly bundled — see core/organisms/registry.ts and
+        // core/laboratory/registry.ts). That override masked the actual
+        // problem rather than fixing it, and would have let the initial
+        // bundle keep growing unnoticed. It's been removed in favor of
+        // route-level code splitting (src/app/router.tsx) plus decoupling
+        // global search (core/search) and Dashboard's recently-viewed
+        // organism lookup from the two content registries, so every
+        // emitted chunk — including the pdf.worker chunk — now fits
+        // under Workbox's default 2 MiB precache ceiling on its own
+        // merits. If a genuinely large single asset is ever needed again,
+        // raise this deliberately and explain why, rather than as a
+        // reaction to a bundle that grew unchecked.
       }
     })
   ],
