@@ -1,0 +1,104 @@
+{
+  "id": "naegleria-fowleri",
+  "scientificName": "Naegleria fowleri",
+  "commonName": "Brain-eating amoeba",
+  "category": "protozoa",
+  "quickTags": [
+    "Brain-eating amoeba",
+    "Warm freshwater",
+    "Rapidly fatal meningoencephalitis"
+  ],
+  "genZNote": "Swims up your nose in warm lake water, not down your throat — the exact reason nose clips actually matter.",
+  "searchKeywords": [
+    "primary amoebic meningoencephalitis",
+    "brain eating amoeba",
+    "warm lake water infection"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Protista",
+    "phylum": "Percolozoa",
+    "class": "Heterolobosea",
+    "genus": "Naegleria",
+    "species": "N. fowleri"
+  },
+  "morphology": {
+    "shape": "Amoeboid trophozoite (infective form); transient flagellate form in water; cyst form under adverse conditions",
+    "size": "Trophozoite ~8-15 µm; cysts ~7-10 µm"
+  },
+  "protozoanDetails": {
+    "group": "amoeba",
+    "lifeCycleStages": [
+      "Trophozoite (amoeboid, infective/invasive)",
+      "Transient biflagellate form (in water)",
+      "Cyst (environmentally resistant, non-infective)"
+    ],
+    "majorLocation": "tissue",
+    "transmissionRoute": "other"
+  },
+  "habitat": {
+    "naturalHabitat": "Warm freshwater — lakes, rivers, hot springs, and poorly chlorinated or maintained swimming pools",
+    "hostAssociation": "Free-living in the environment; humans are accidental hosts, not part of its normal life cycle",
+    "environmentalOccurrence": "Thrives in warm water (up to 45°C), with higher risk during hot summer months and periods of low water levels",
+    "reservoir": "Warm natural and man-made freshwater bodies"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Wet mount of CSF for motile trophozoites; trichrome stain",
+      "appearance": "Motile amoeboid trophozoites with characteristic slug-like directional movement",
+      "arrangement": "Free trophozoites in CSF"
+    },
+    "culture": {
+      "media": "Non-nutrient agar with an E. coli overlay (amoeba enrichment culture)",
+      "growthCharacteristics": "Grows and feeds on the bacterial lawn, forming visible trails",
+      "colonyMorphology": "Not applicable in the traditional sense — trophozoites are seen migrating across the agar surface"
+    },
+    "biochemicalTests": [
+      {
+        "test": "PCR of CSF",
+        "result": "Confirms diagnosis rapidly and specifically"
+      }
+    ]
+  },
+  "identificationClues": [
+    "History of swimming/diving in warm freshwater (lakes, hot springs, poorly chlorinated pools) in the days before symptom onset",
+    "Motile trophozoites visible on wet mount of CSF, with characteristic amoeboid movement",
+    "Rapid onset of severe headache, fever, and meningitis-like symptoms progressing to coma, typically within about a week of exposure",
+    "Extremely high mortality (over 97%) despite treatment, reflecting how rapidly the disease progresses"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Primary amoebic meningoencephalitis (PAM) — a rapidly progressive, usually fatal CNS infection"
+    ],
+    "virulenceFactors": [
+      "Direct invasion via the nasal mucosa and cribriform plate, tracking along the olfactory nerve into the brain",
+      "Amoebic proteases (e.g., 'food cups' or amoebastomes) that lyse and phagocytose host neural tissue directly"
+    ],
+    "transmission": "Enters through the nasal mucosa during swimming, diving, or other activities that force warm freshwater up the nose (not via drinking contaminated water and not via person-to-person spread)",
+    "epidemiology": "Rare but almost always fatal; the vast majority of US cases occur in southern states during summer months in individuals swimming in warm freshwater lakes or rivers",
+    "labSignificance": "A history of recent freshwater swimming combined with rapid-onset severe meningoencephalitis should prompt urgent CSF wet mount examination and PCR testing for Naegleria, since delay in treatment initiation is strongly associated with fatal outcome"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by CSF wet mount/PCR",
+    "importantDisease": "Primary amoebic meningoencephalitis (PAM) — nearly always fatal",
+    "importantTest": "CSF wet mount for motile trophozoites; PCR",
+    "distinguishingFeature": "A thermophilic free-living amoeba that enters through the nose during warm-freshwater swimming and causes an almost universally fatal meningoencephalitis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "entamoeba-histolytica",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Naegleria fowleri",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/naegleria/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Naegleria\"",
+      "kind": "educational"
+    }
+  ]
+}

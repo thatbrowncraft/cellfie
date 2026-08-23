@@ -1,0 +1,91 @@
+{
+  "id": "human-parainfluenza-virus",
+  "scientificName": "Human parainfluenza virus",
+  "commonName": null,
+  "category": "virus",
+  "quickTags": [
+    "Leading cause of croup",
+    "Enveloped -ssRNA",
+    "Steeple sign on X-ray"
+  ],
+  "genZNote": "The 'seal-like barking cough' description in every textbook exists because of this virus specifically.",
+  "searchKeywords": [
+    "croup virus",
+    "laryngotracheobronchitis",
+    "barking cough virus",
+    "steeple sign"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Paramyxoviridae",
+    "genus": "Respirovirus / Orthorubulavirus (depending on serotype)"
+  },
+  "morphology": {
+    "shape": "Pleomorphic, enveloped virion with helical nucleocapsid",
+    "size": "~150-250 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Helical nucleocapsid",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human respiratory tract epithelium",
+    "hostAssociation": "Infects the respiratory epithelium, particularly the upper airway and larynx/trachea in young children",
+    "reservoir": "Infected humans, primarily young children"
+  },
+  "identificationClues": [
+    "Diagnosed by a respiratory viral PCR panel, which has largely replaced viral culture and antigen testing",
+    "Classic cause of croup (laryngotracheobronchitis) in young children — a seal-like barking cough with inspiratory stridor",
+    "'Steeple sign' — subglottic narrowing seen on anteroposterior neck X-ray in croup, a classic radiographic finding",
+    "Serotype 1 is the most common cause of croup, typically in fall; serotype 3 more often causes bronchiolitis/pneumonia in infants"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Croup (laryngotracheobronchitis) — the leading viral cause, with a barking cough, hoarseness, and inspiratory stridor",
+      "Bronchiolitis and pneumonia, particularly in infants and immunocompromised patients",
+      "Upper respiratory tract infection (common cold-like illness)"
+    ],
+    "transmission": "Respiratory droplets and contact with contaminated surfaces/fomites",
+    "epidemiology": "A major cause of pediatric respiratory illness worldwide, with seasonal patterns varying by serotype (type 1 classically causes fall croup outbreaks); a significant cause of severe respiratory disease in immunocompromised and stem cell transplant patients",
+    "labSignificance": "Multiplex respiratory viral PCR panels now provide same-day identification and help distinguish parainfluenza from RSV, influenza, and other respiratory viruses with overlapping presentations"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by respiratory PCR panel",
+    "importantDisease": "Croup (laryngotracheobronchitis) — leading viral cause",
+    "importantTest": "Respiratory viral PCR panel; steeple sign on neck X-ray supports the clinical diagnosis of croup",
+    "distinguishingFeature": "The leading cause of childhood croup, producing the classic barking cough and the 'steeple sign' of subglottic narrowing on neck X-ray"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "respiratory-syncytial-virus",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "human-metapneumovirus",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "measles-virus",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "mumps-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Parainfluenza",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/parainfluenza/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Croup\"",
+      "kind": "educational"
+    }
+  ]
+}

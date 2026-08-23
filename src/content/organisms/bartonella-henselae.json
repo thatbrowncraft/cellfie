@@ -1,0 +1,117 @@
+{
+  "id": "bartonella-henselae",
+  "scientificName": "Bartonella henselae",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Cat scratch disease",
+    "Fastidious/slow growing",
+    "Warthin-Starry stain"
+  ],
+  "genZNote": "Diagnosed mostly by blood test, not culture, because this organism takes its sweet time growing on a plate.",
+  "searchKeywords": [
+    "cat scratch fever",
+    "bacillary angiomatosis",
+    "regional lymphadenopathy cat"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Alphaproteobacteria",
+    "order": "Hyphomicrobiales",
+    "family": "Bartonellaceae",
+    "genus": "Bartonella",
+    "species": "B. henselae"
+  },
+  "morphology": {
+    "shape": "Small pleomorphic rod/coccobacillus",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.3-0.6 x 1-2 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Blood of domestic and feral cats, especially kittens",
+    "hostAssociation": "Zoonotic — cats are the primary reservoir; cat fleas transmit the organism among cats",
+    "environmentalOccurrence": "Primarily host-associated; transmitted to humans via cat scratch/bite (flea feces contamination of claws/mouth)",
+    "reservoir": "Cats (especially young/kittens) and their fleas"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Warthin-Starry silver stain of tissue",
+      "appearance": "Small pleomorphic bacilli visualized in lymph node or skin biopsy tissue with silver staining",
+      "arrangement": "Single cells, often clustered in tissue"
+    },
+    "culture": {
+      "media": "Enriched blood-based media (e.g., chocolate agar); requires prolonged incubation",
+      "growthCharacteristics": "Fastidious, slow-growing (can take 2-6 weeks) — culture is rarely used clinically",
+      "colonyMorphology": "Small, rough, adherent colonies after prolonged incubation",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "Variable/weak"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "History of cat scratch/bite with regional tender lymphadenopathy in an otherwise well patient",
+    "Diagnosis relies primarily on serology (antibody titers) rather than culture, given how slow-growing/fastidious the organism is",
+    "Warthin-Starry silver stain demonstrates organisms in affected lymph node or skin tissue",
+    "Bacillary angiomatosis (vascular skin/organ lesions) is a distinct presentation in HIV/immunocompromised patients"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Cat scratch disease — regional lymphadenopathy near the scratch/bite site, usually self-limited in immunocompetent hosts",
+      "Bacillary angiomatosis — vascular proliferative skin and visceral lesions in HIV/AIDS or other immunocompromised patients",
+      "Rare cases of endocarditis (culture-negative endocarditis is a classic association)"
+    ],
+    "virulenceFactors": [
+      "Ability to invade and persist within endothelial cells and erythrocytes",
+      "Induces vascular proliferation (angiogenesis), particularly relevant to bacillary angiomatosis in immunocompromised hosts"
+    ],
+    "transmission": "Cat scratch or bite (cat fleas maintain transmission among cats); rarely, flea bites directly to humans",
+    "epidemiology": "One of the most common causes of chronic regional lymphadenopathy in children and young adults with cat exposure; a classic (though uncommon) cause of culture-negative infective endocarditis",
+    "labSignificance": "Serology is the mainstay of diagnosis — culture is rarely positive due to the organism's fastidious, slow growth, so a negative culture does not exclude the diagnosis"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Coccobacillus",
+    "keyBiochemicalReaction": "Fastidious — rarely cultured; diagnosis by serology",
+    "importantDisease": "Cat scratch disease; bacillary angiomatosis in HIV/immunocompromised patients",
+    "importantTest": "Serology (IgG/IgM titers); Warthin-Starry stain of tissue; PCR",
+    "distinguishingFeature": "A cat-and-flea-transmitted organism causing regional lymphadenopathy in healthy hosts and vascular bacillary angiomatosis in the immunocompromised — a classic cause of culture-negative endocarditis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "pasteurella-multocida",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Healthy Pets, Healthy People: Cat Scratch Disease",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/healthypets/diseases/cat-scratch.html"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Cat Scratch Disease\"",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "yellow-fever-virus",
+  "scientificName": "Yellow fever virus",
+  "commonName": null,
+  "category": "virus",
+  "quickTags": [
+    "Councilman bodies",
+    "Live attenuated vaccine",
+    "Hepatic/hemorrhagic fever"
+  ],
+  "genZNote": "The vaccine is so effective that some countries won't even let you cross the border without proof of it.",
+  "searchKeywords": [
+    "yellow fever",
+    "jungle fever virus",
+    "hemorrhagic fever mosquito",
+    "yellow fever vaccine"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Flaviviridae",
+    "genus": "Flavivirus (Orthoflavivirus)"
+  },
+  "morphology": {
+    "shape": "Enveloped icosahedral virion",
+    "size": "~40-50 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "vector-borne"
+  },
+  "habitat": {
+    "naturalHabitat": "Maintained in sylvatic (jungle) cycles between non-human primates and forest mosquitoes, and urban cycles between humans and Aedes aegypti",
+    "hostAssociation": "Transmitted by Aedes and Haemagogus mosquitoes depending on the transmission cycle (urban vs. sylvatic)",
+    "reservoir": "Non-human primates (sylvatic cycle) and humans (urban cycle)"
+  },
+  "identificationClues": [
+    "Diagnosed by RT-PCR early in illness, or serology later, with attention to cross-reactivity with other flaviviruses",
+    "Classic biphasic illness — initial fever/headache/myalgia phase followed by a brief remission, then a toxic phase with jaundice, hemorrhage, and renal failure in severe cases",
+    "'Councilman bodies' (eosinophilic apoptotic hepatocyte inclusions) seen on liver histopathology",
+    "Highly effective live attenuated vaccine is required for entry into certain countries, particularly in endemic parts of Africa and South America"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Yellow fever — ranges from a mild self-limited febrile illness to severe disease with jaundice (hepatic involvement), hemorrhage, and multi-organ (especially renal) failure; the toxic phase carries substantial mortality"
+    ],
+    "virulenceFactors": [
+      "Direct hepatocyte injury causing the characteristic jaundice",
+      "Vascular endothelial damage contributing to hemorrhagic manifestations"
+    ],
+    "transmission": "Bite of an infected Aedes (urban cycle) or Haemagogus (sylvatic/jungle cycle) mosquito",
+    "epidemiology": "Endemic in tropical regions of Africa and South America; periodic outbreaks occur, and international travel/health regulations require yellow fever vaccination certificates for entry to or from certain endemic countries",
+    "labSignificance": "The live attenuated 17D vaccine is highly effective and long-lasting, forming the cornerstone of prevention; rare but serious vaccine-associated adverse events are monitored, particularly in older or immunocompromised vaccine recipients"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by RT-PCR/serology",
+    "importantDisease": "Yellow fever — biphasic illness with hepatic and hemorrhagic complications",
+    "importantTest": "RT-PCR (acute); serology (later); liver histopathology showing Councilman bodies",
+    "distinguishingFeature": "A flavivirus causing a classic biphasic hepatic/hemorrhagic fever with Councilman bodies on liver histology, prevented by a highly effective live attenuated vaccine required for travel to endemic countries"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "dengue-virus",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "zika-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Yellow Fever",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/yellow-fever/"
+    },
+    {
+      "name": "World Health Organization — Yellow Fever",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "id": "shigella-dysenteriae",
+  "scientificName": "Shigella dysenteriae",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Shiga toxin producer",
+    "Non-motile",
+    "Non-lactose fermenter"
+  ],
+  "genZNote": "The species Shiga toxin is literally named after — the most dangerous member of a genus that's already not messing around.",
+  "searchKeywords": [
+    "bacillary dysentery",
+    "shiga toxin",
+    "hemolytic uremic syndrome bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Enterobacteriaceae",
+    "genus": "Shigella",
+    "species": "S. dysenteriae"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-3 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human intestinal tract only — no significant animal reservoir",
+    "hostAssociation": "Obligate human pathogen; very low infectious dose (as few as 10-100 organisms)",
+    "environmentalOccurrence": "Spread via fecally contaminated food, water, and fomites; can persist where sanitation is poor",
+    "reservoir": "Infected/asymptomatic human carriers"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar, XLD agar, Hektoen enteric agar",
+      "growthCharacteristics": "Facultative anaerobe",
+      "colonyMorphology": "Colorless, non-lactose-fermenting colonies",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "−"
+      },
+      {
+        "test": "H2S production",
+        "result": "−"
+      },
+      {
+        "test": "Motility",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative, non-motile, non-lactose-fermenting rod",
+    "H2S negative — helps distinguish from Salmonella on enteric media",
+    "Produces Shiga toxin — the most potent toxin among Shigella species, causing the most severe dysentery",
+    "Very low infectious dose enables rapid person-to-person spread, especially in crowded/poor-sanitation settings"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Severe bacillary dysentery (bloody, mucoid diarrhea with fever and abdominal cramps)",
+      "Hemolytic uremic syndrome (HUS) — a recognized complication due to Shiga toxin"
+    ],
+    "virulenceFactors": [
+      "Shiga toxin — inhibits protein synthesis in host cells (inactivates the 60S ribosomal subunit), causing direct cytotoxicity and endothelial damage",
+      "Invasion of colonic epithelial cells via a Type III secretion system",
+      "Very low infectious dose facilitating person-to-person spread"
+    ],
+    "toxins": [
+      "Shiga toxin (most potent of all Shigella species)"
+    ],
+    "transmission": "Fecal-oral route; contaminated food/water and person-to-person spread, especially in crowded settings with poor sanitation",
+    "epidemiology": "Historically associated with the most severe Shigella outbreaks and epidemics, particularly in developing regions and refugee/crowded settings; less common in industrialized countries today",
+    "labSignificance": "Non-motile, H2S-negative, non-lactose-fermenting Gram-negative rods on enteric media in a patient with bloody diarrhea should prompt consideration of Shigella, with dysenteriae carrying the highest risk of severe complications"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Non-motile, non-lactose fermenter, H2S negative",
+    "importantDisease": "Severe bacillary dysentery; risk of hemolytic uremic syndrome",
+    "importantTest": "Stool culture on XLD/Hektoen agar; Shiga toxin detection",
+    "distinguishingFeature": "Produces the most potent Shiga toxin among Shigella species, causing the most severe dysentery and a real risk of HUS"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "shigella-sonnei",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "shigella-flexneri",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "escherichia-coli",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Shigella",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/shigella/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Shigella\"",
+      "kind": "educational"
+    }
+  ]
+}

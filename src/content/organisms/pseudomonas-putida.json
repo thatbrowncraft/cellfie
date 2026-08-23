@@ -1,0 +1,121 @@
+{
+  "id": "pseudomonas-putida",
+  "scientificName": "Pseudomonas putida",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Oxidase positive",
+    "Environmental saprophyte",
+    "Low virulence"
+  ],
+  "genZNote": "P. aeruginosa's much chiller cousin — breaks down pollutants for a living instead of causing hospital outbreaks.",
+  "searchKeywords": [
+    "bioremediation bacteria",
+    "soil pseudomonas",
+    "environmental pseudomonas"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Pseudomonadales",
+    "family": "Pseudomonadaceae",
+    "genus": "Pseudomonas",
+    "species": "P. putida"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1.5-4 x 0.5-1 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile (polar flagella)",
+    "motile": true,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil and water, especially environments with organic/aromatic pollutants",
+    "hostAssociation": "Not a normal human commensal; a free-living environmental organism",
+    "environmentalOccurrence": "Widespread in soil and water; well known for its ability to metabolically degrade aromatic hydrocarbons (toluene, xylene) and other pollutants",
+    "reservoir": "Soil and water"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar, nutrient agar",
+      "growthCharacteristics": "Obligate aerobe, grows well at room temperature",
+      "colonyMorphology": "Non-lactose-fermenting colonies",
+      "pigmentation": "May produce fluorescent pigments (fluorescein) under UV light, similar to other fluorescent pseudomonads",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "−"
+      },
+      {
+        "test": "Citrate",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative, oxidase-positive, non-lactose-fermenting rod",
+    "Obligate aerobe, motile via polar flagella",
+    "Notable for metabolic versatility — degrades aromatic hydrocarbons and other pollutants, used in bioremediation and biotechnology",
+    "Generally low virulence compared to P. aeruginosa"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Rarely pathogenic; occasional opportunistic infections (bacteremia, catheter-related infection) almost exclusively in severely immunocompromised or critically ill patients"
+    ],
+    "virulenceFactors": [
+      "Minimal compared to P. aeruginosa — lacks many of the classic Pseudomonas aeruginosa virulence factors (e.g., exotoxin A, prominent biofilm-mediated device infections are far less common)"
+    ],
+    "transmission": "Environmental exposure rather than person-to-person spread",
+    "epidemiology": "Of far greater biotechnological/environmental importance (bioremediation, industrial biocatalysis) than clinical importance",
+    "labSignificance": "An oxidase-positive, non-lactose-fermenting Gram-negative rod recovered from a clinical specimen should prompt differentiation from the far more clinically significant P. aeruginosa"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Oxidase positive, non-lactose fermenter",
+    "importantDisease": "Rarely pathogenic — environmental/bioremediation organism",
+    "importantTest": "Oxidase test (positive); differentiation from P. aeruginosa by clinical significance and additional biochemical/molecular testing",
+    "distinguishingFeature": "An oxidase-positive environmental Pseudomonas prized for degrading aromatic pollutants, with far lower clinical virulence than P. aeruginosa"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "pseudomonas-aeruginosa",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Pseudomonas\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

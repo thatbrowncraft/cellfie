@@ -1,0 +1,124 @@
+{
+  "id": "lactobacillus-acidophilus",
+  "scientificName": "Lactobacillus acidophilus",
+  "commonName": "Doderlein's bacillus",
+  "category": "bacteria",
+  "quickTags": [
+    "Catalase negative",
+    "Aerotolerant lactic acid bacterium",
+    "Normal vaginal/gut flora"
+  ],
+  "genZNote": "Catalase negative and technically an anaerobe, but chill enough with oxygen to headline your yogurt label.",
+  "searchKeywords": [
+    "probiotic",
+    "yogurt bacteria",
+    "vaginal flora",
+    "doderlein bacillus",
+    "lactic acid bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Lactobacillaceae",
+    "genus": "Lactobacillus",
+    "species": "L. acidophilus"
+  },
+  "morphology": {
+    "shape": "Long, slender rod (bacillus), sometimes slightly curved",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells or short chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~1.5-6 x 0.6-0.9 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Aerotolerant anaerobe (often grouped with facultative anaerobes for growth purposes); grows best microaerophilically",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human and animal gastrointestinal tract, oral cavity, and vagina",
+    "hostAssociation": "Normal commensal flora; a dominant organism of a healthy vaginal microbiome",
+    "environmentalOccurrence": "Also found in fermented foods (yogurt, some cheeses) as a starter/probiotic culture",
+    "reservoir": "Endogenous human flora"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive rods, often long and slender",
+      "arrangement": "Single or short chains"
+    },
+    "culture": {
+      "media": "MRS (de Man, Rogosa and Sharpe) agar or broth",
+      "growthCharacteristics": "Grows best at 37°C under reduced-oxygen/microaerophilic to anaerobic conditions; does not tolerate strict aerobic culture well despite being called 'aerotolerant'",
+      "colonyMorphology": "Small, white to gray, convex colonies",
+      "pigmentation": "None",
+      "hemolysis": "Generally non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "−"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Lactic acid production (homofermentative)",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive, catalase-negative rod (helps separate it from catalase-positive Bacillus/Corynebacterium)",
+    "Long, slender bacillus, often in chains",
+    "Normal dominant flora of the healthy vagina — maintains acidic pH via lactic acid production",
+    "Non-motile, non-spore-forming",
+    "Grows on MRS agar under microaerophilic/anaerobic conditions"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Rarely pathogenic — opportunistic bacteremia or endocarditis reported almost exclusively in severely immunocompromised or critically ill patients"
+    ],
+    "virulenceFactors": [
+      "None of clinical significance — considered a low-virulence commensal/probiotic organism"
+    ],
+    "transmission": "Endogenous normal flora; not typically transmitted as a pathogen",
+    "epidemiology": "Widely used commercially as a probiotic in yogurt and dietary supplements; maintenance of an acidic vaginal pH by lactic-acid-producing Lactobacillus species is thought to help protect against overgrowth of other organisms",
+    "labSignificance": "Catalase-negative Gram-positive rods recovered from blood or sterile sites should not be dismissed automatically as a contaminant in the right clinical context, though this remains rare"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Bacillus (rod), often in chains",
+    "keyBiochemicalReaction": "Catalase negative; produces lactic acid",
+    "importantDisease": "Rarely pathogenic — normal vaginal/gut flora and probiotic organism",
+    "importantTest": "Catalase test (negative) distinguishes from Bacillus/Corynebacterium/Listeria",
+    "distinguishingFeature": "Catalase-negative Gram-positive rod that dominates the healthy vaginal microbiome (Doderlein's bacillus)"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "lactococcus-lactis",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "enterococcus-faecalis",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Lactobacillus\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

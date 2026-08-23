@@ -1,0 +1,121 @@
+{
+  "id": "bacillus-megaterium",
+  "scientificName": "Bacillus megaterium",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Spore-forming",
+    "Large Gram-positive rod",
+    "Environmental saprophyte"
+  ],
+  "genZNote": "The name literally means 'big beast' — one of the largest bacterial cells known, and it's completely harmless.",
+  "searchKeywords": [
+    "soil bacillus",
+    "large bacterial cell",
+    "biotech production strain"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Bacillales",
+    "family": "Bacillaceae",
+    "genus": "Bacillus",
+    "species": "B. megaterium"
+  },
+  "morphology": {
+    "shape": "Large rod (bacillus), among the largest known bacterial cells",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells or chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~2-5 x 1.5-2 µm",
+    "sporeForming": true,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile (peritrichous flagella)",
+    "motile": true,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, decaying organic matter, and various environmental niches worldwide",
+    "hostAssociation": "Not host-associated — a free-living environmental saprophyte",
+    "environmentalOccurrence": "Extremely widespread in soil; endospores allow long-term environmental survival",
+    "reservoir": "Soil"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain, malachite green spore stain",
+      "appearance": "Large Gram-positive rods with central to subterminal endospores",
+      "arrangement": "Single or chains"
+    },
+    "culture": {
+      "media": "Nutrient agar, blood agar",
+      "growthCharacteristics": "Obligate aerobe, grows readily at room temperature to 37°C",
+      "colonyMorphology": "Large, flat, dull, grayish-white colonies",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Spore stain",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "One of the largest known bacterial cells — visibly large rods on Gram stain",
+    "Spore-forming, motile, catalase-positive Gram-positive rod",
+    "Ubiquitous soil saprophyte, essentially non-pathogenic to humans",
+    "Used industrially as a recombinant protein production host"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Not a recognized human pathogen; occasional reports of contamination or pseudo-outbreak isolates in clinical specimens"
+    ],
+    "virulenceFactors": [
+      "None known — non-pathogenic environmental organism"
+    ],
+    "transmission": "Not applicable — environmental exposure, not infectious transmission",
+    "epidemiology": "Of biotechnological rather than clinical importance; used as an expression host for recombinant protein production due to its high secretion capacity",
+    "labSignificance": "May be recovered as an environmental contaminant in cultures and should be distinguished from pathogenic Bacillus species (B. anthracis, B. cereus) by clinical context and biochemical profile"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Large bacillus",
+    "keyBiochemicalReaction": "Catalase positive; forms endospores",
+    "importantDisease": "Not pathogenic — environmental soil saprophyte",
+    "importantTest": "Spore stain and colony/cell size help distinguish from other Bacillus species",
+    "distinguishingFeature": "Among the largest bacterial cells known; widely used as an industrial protein-expression host"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "bacillus-subtilis",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "bacillus-cereus",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "bacillus-anthracis",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Bacillus Species\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

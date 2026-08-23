@@ -1,0 +1,130 @@
+{
+  "id": "pasteurella-multocida",
+  "scientificName": "Pasteurella multocida",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Animal bite wound infection",
+    "Oxidase positive",
+    "Zoonotic"
+  ],
+  "genZNote": "Cat bite, rapid red swelling within 24 hours — this is the organism your ER doctor is already thinking about.",
+  "searchKeywords": [
+    "cat bite infection",
+    "dog bite bacteria",
+    "animal bite cellulitis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Pasteurellales",
+    "family": "Pasteurellaceae",
+    "genus": "Pasteurella",
+    "species": "P. multocida"
+  },
+  "morphology": {
+    "shape": "Small coccobacillus",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells, occasionally bipolar-staining",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.3-1 x 1-2 µm",
+    "sporeForming": false,
+    "capsule": "Polysaccharide capsule in some strains",
+    "encapsulated": true,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Oral cavity and upper respiratory tract of healthy cats and dogs",
+    "hostAssociation": "Normal oral flora of cats and dogs; opportunistic pathogen in humans following animal bites/scratches",
+    "environmentalOccurrence": "Primarily host-associated with domestic and wild animals",
+    "reservoir": "Cats and dogs (very high prevalence in feline oral flora especially)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain; Wright/Giemsa may show bipolar ('safety pin') staining",
+      "appearance": "Small Gram-negative coccobacilli, sometimes bipolar staining",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Blood agar, chocolate agar",
+      "growthCharacteristics": "Facultative anaerobe; grows well on routine media, does not grow on MacConkey agar",
+      "colonyMorphology": "Small, gray, mucoid colonies with a characteristic musty/mushroom-like odor",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Indole",
+        "result": "+"
+      },
+      {
+        "test": "Growth on MacConkey agar",
+        "result": "− (no growth)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Small Gram-negative coccobacillus, oxidase and indole positive",
+    "Does not grow on MacConkey agar — helpful differentiator from Enterobacteriaceae",
+    "Classic rapid-onset (within 24 hours) cellulitis/wound infection following a cat or dog bite or scratch",
+    "Musty odor on culture plates"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Cellulitis and wound infection following animal bites/scratches (especially cats, given their sharp, deeply penetrating teeth)",
+      "Septic arthritis or osteomyelitis if the bite penetrates a joint/bone",
+      "Respiratory tract infections in patients with underlying lung disease"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule — antiphagocytic in encapsulated strains",
+      "Lipopolysaccharide endotoxin",
+      "Rapid tissue invasion contributing to the classically fast onset of infection"
+    ],
+    "transmission": "Direct inoculation via animal bite or scratch, most classically from cats",
+    "epidemiology": "The most common bacterial pathogen isolated from infected cat and dog bite wounds; rapid symptom onset (often within 24 hours) helps distinguish it clinically from other bite-wound pathogens with slower onset",
+    "labSignificance": "A history of a cat or dog bite with rapid-onset cellulitis should prompt empiric coverage for P. multocida even before culture results return"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Coccobacillus",
+    "keyBiochemicalReaction": "Oxidase positive, indole positive, no growth on MacConkey agar",
+    "importantDisease": "Cellulitis/wound infection after cat or dog bite",
+    "importantTest": "Culture on blood/chocolate agar (no growth on MacConkey); history of animal bite is a key clinical clue",
+    "distinguishingFeature": "Classic rapid-onset (<24h) cellulitis following a cat or dog bite — faster onset than most other bite-wound pathogens"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "bartonella-henselae",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "francisella-tularensis",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Healthy Pets, Healthy People: Pasteurella",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/healthypets/diseases/pasteurella.html"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Pasteurella Multocida\"",
+      "kind": "educational"
+    }
+  ]
+}

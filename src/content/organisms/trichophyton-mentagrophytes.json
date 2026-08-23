@@ -1,0 +1,132 @@
+{
+  "id": "trichophyton-mentagrophytes",
+  "scientificName": "Trichophyton mentagrophytes",
+  "commonName": null,
+  "category": "fungi",
+  "quickTags": [
+    "Hair perforation test positive",
+    "Spiral hyphae",
+    "No Wood's lamp fluorescence"
+  ],
+  "genZNote": "Punches actual holes in a hair shaft in the lab test named for exactly that — and doesn't light up under a Wood's lamp like its cousin does.",
+  "searchKeywords": [
+    "tinea pedis fungus",
+    "athlete's foot fungus",
+    "ringworm rodents"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Onygenales",
+    "family": "Arthrodermataceae",
+    "genus": "Trichophyton",
+    "species": "T. mentagrophytes"
+  },
+  "morphology": {
+    "shape": "Septate hyphae with spiral (corkscrew) hyphae and grape-like clusters of microconidia",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Microconidia ~2-4 µm; smooth thin-walled cigar-shaped macroconidia less numerous",
+    "sporeForming": false,
+    "capsule": "None",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Obligate aerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Spiral hyphae",
+      "Grape-like clusters of microconidia",
+      "Occasional smooth thin-walled macroconidia"
+    ],
+    "clinicalGroup": "cutaneous"
+  },
+  "habitat": {
+    "naturalHabitat": "Skin and fur of rodents and other animals (zoophilic strains); soil (geophilic strains); human skin (anthropophilic strains)",
+    "hostAssociation": "Zoonotic and anthropophilic strains both exist — transmission from rodents/animals or person-to-person",
+    "environmentalOccurrence": "Some strains are geophilic (soil-associated)",
+    "reservoir": "Rodents, other animals, soil, and infected humans depending on strain"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "KOH wet mount of skin scrapings; lactophenol cotton blue of culture",
+      "appearance": "Septate hyphae; distinctive spiral (corkscrew) hyphae and grape-like clusters of round microconidia on culture",
+      "arrangement": "Clustered microconidia along hyphae"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar, dermatophyte test medium (DTM)",
+      "growthCharacteristics": "Obligate aerobe; grows over 1-2 weeks; turns DTM red",
+      "colonyMorphology": "White to cream, powdery to cottony surface",
+      "pigmentation": "Variable, tan to yellow-brown reverse pigment",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Hair perforation test (in vitro)",
+        "result": "+ (wedge-shaped perforations along hair shaft)"
+      },
+      {
+        "test": "Wood's lamp examination",
+        "result": "− (no fluorescence)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Spiral (corkscrew) hyphae and grape-like clusters of microconidia on culture — a distinctive morphologic clue",
+    "Hair perforation test positive (wedge-shaped perforations), unlike T. rubrum which is typically negative",
+    "Does not fluoresce under a Wood's lamp, distinguishing it from Microsporum canis",
+    "Common cause of tinea pedis, tinea corporis, and inflammatory tinea capitis"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Tinea pedis (athlete's foot)",
+      "Tinea corporis (ringworm)",
+      "Inflammatory tinea capitis, particularly with zoophilic strains",
+      "Onychomycosis (less commonly than T. rubrum)"
+    ],
+    "virulenceFactors": [
+      "Keratinase enzymes enabling invasion of skin, hair, and nail keratin",
+      "Can invade the hair shaft in either ectothrix or endothrix patterns depending on strain"
+    ],
+    "transmission": "Direct contact with infected animals (zoophilic strains, e.g., rodents), soil (geophilic strains), or person-to-person/fomite contact (anthropophilic strains, e.g., shared shower floors, locker rooms)",
+    "epidemiology": "One of the most common dermatophytes causing tinea pedis and tinea corporis worldwide; zoophilic strains tend to cause a more inflammatory reaction than anthropophilic dermatophytes",
+    "labSignificance": "The hair perforation test and lack of Wood's lamp fluorescence help distinguish T. mentagrophytes from T. rubrum and M. canis respectively when culture morphology is ambiguous"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — a fungus",
+    "shape": "Septate hyphae, spiral hyphae, grape-like microconidia clusters",
+    "keyBiochemicalReaction": "Hair perforation test positive",
+    "importantDisease": "Tinea pedis, tinea corporis, inflammatory tinea capitis",
+    "importantTest": "In vitro hair perforation test (positive); Wood's lamp (negative, unlike M. canis)",
+    "distinguishingFeature": "Hair-perforation-test-positive dermatophyte with spiral hyphae — does not fluoresce under Wood's lamp, unlike Microsporum canis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "trichophyton-rubrum",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "microsporum-canis",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "epidermophyton-floccosum",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Tinea Pedis\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

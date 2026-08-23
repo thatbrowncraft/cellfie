@@ -1,0 +1,82 @@
+{
+  "id": "human-metapneumovirus",
+  "scientificName": "Human metapneumovirus",
+  "commonName": "hMPV",
+  "category": "virus",
+  "quickTags": [
+    "RSV-like clinical presentation",
+    "Enveloped -ssRNA",
+    "Diagnosed by PCR panel"
+  ],
+  "genZNote": "So similar to RSV clinically that for years nobody realized it was its own separate virus until 2001.",
+  "searchKeywords": [
+    "hmpv",
+    "human metapneumovirus",
+    "rsv-like respiratory virus"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Pneumoviridae",
+    "genus": "Metapneumovirus"
+  },
+  "morphology": {
+    "shape": "Pleomorphic, enveloped virion with helical nucleocapsid",
+    "size": "~150-600 nm, variable/pleomorphic"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Helical nucleocapsid",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human respiratory tract epithelium",
+    "hostAssociation": "Infects the respiratory epithelium, causing pathology similar to respiratory syncytial virus",
+    "reservoir": "Infected humans, with young children, older adults, and immunocompromised patients most affected by severe disease"
+  },
+  "identificationClues": [
+    "Diagnosed by multiplex respiratory viral PCR panel — clinically indistinguishable from RSV without molecular testing",
+    "First identified in 2001, relatively recently compared to most other classic respiratory viruses",
+    "Causes a nearly identical clinical syndrome to RSV: bronchiolitis, croup-like illness, and pneumonia, particularly in young children",
+    "Also a significant cause of severe respiratory illness in the elderly and immunocompromised patients"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Bronchiolitis and pneumonia in young children, closely resembling RSV disease",
+      "Upper respiratory tract infection (common cold-like illness) in healthy older children/adults",
+      "Severe lower respiratory tract disease in elderly and immunocompromised patients"
+    ],
+    "transmission": "Respiratory droplets and contact with contaminated surfaces/fomites",
+    "epidemiology": "A major cause of acute respiratory illness worldwide, second only to RSV in relative frequency among young children hospitalized for bronchiolitis; typically circulates in late winter to spring, somewhat later in the season than RSV",
+    "labSignificance": "Because hMPV and RSV cause clinically indistinguishable disease, a multiplex respiratory PCR panel is required to differentiate them, which matters for surveillance and for RSV-specific therapies/prophylaxis (e.g., palivizumab) that do not apply to hMPV"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by respiratory PCR panel",
+    "importantDisease": "Bronchiolitis/pneumonia in children, clinically indistinguishable from RSV",
+    "importantTest": "Multiplex respiratory viral PCR panel",
+    "distinguishingFeature": "A relatively recently discovered (2001) paramyxovirus-family relative that causes an RSV-like clinical syndrome and can only be distinguished from RSV by molecular testing"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "respiratory-syncytial-virus",
+      "relationship": "commonly-confused"
+    },
+    {
+      "id": "human-parainfluenza-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Human Metapneumovirus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/human-metapneumovirus/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Human Metapneumovirus\"",
+      "kind": "educational"
+    }
+  ]
+}

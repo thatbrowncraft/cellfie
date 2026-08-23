@@ -1,0 +1,118 @@
+{
+  "id": "streptococcus-salivarius",
+  "scientificName": "Streptococcus salivarius",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Viridans group strep",
+    "Normal oral flora",
+    "Rarely pathogenic"
+  ],
+  "genZNote": "One of the first bacteria to colonize a newborn's mouth — mostly just here to keep the peace.",
+  "searchKeywords": [
+    "oral flora strep",
+    "salivary bacteria",
+    "viridans streptococcus"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Streptococcaceae",
+    "genus": "Streptococcus",
+    "species": "S. salivarius"
+  },
+  "morphology": {
+    "shape": "Coccus",
+    "shapeCategory": "coccus",
+    "arrangement": "Chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-1 µm",
+    "sporeForming": false,
+    "capsule": "None to minimal",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe (aerotolerant)",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human oral cavity and upper respiratory tract mucosa (tongue, saliva)",
+    "hostAssociation": "An early and abundant colonizer of the infant oral cavity; a core member of normal oral/salivary flora throughout life",
+    "environmentalOccurrence": "Primarily host-associated rather than free-living",
+    "reservoir": "Human oral cavity/upper respiratory tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in chains",
+      "arrangement": "Chains"
+    },
+    "culture": {
+      "media": "Blood agar (5% sheep blood)",
+      "growthCharacteristics": "Facultative anaerobe; grows better with added CO2",
+      "colonyMorphology": "Small, grayish colonies",
+      "pigmentation": "None",
+      "hemolysis": "Alpha-hemolytic or non-hemolytic (viridans group), variable by strain"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "−"
+      },
+      {
+        "test": "Optochin susceptibility",
+        "result": "Resistant (distinguishes viridans strep from S. pneumoniae)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive coccus in chains, catalase negative",
+    "Alpha-hemolytic or non-hemolytic on blood agar — part of the viridans streptococcus group",
+    "Optochin resistant and bile-insoluble, distinguishing it from Streptococcus pneumoniae"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Usually non-pathogenic",
+      "Rare bacteremia/infective endocarditis, particularly in immunocompromised or post-dental-procedure patients",
+      "Rare cases of meningitis after spinal/epidural anesthesia (breach of aseptic technique)"
+    ],
+    "virulenceFactors": [
+      "Low intrinsic virulence; some strains produce bacteriocins (salivaricins) that inhibit competing oral bacteria"
+    ],
+    "transmission": "Transmitted via saliva; established in the oral cavity from early infancy",
+    "epidemiology": "One of the most abundant organisms of the normal oral microbiome; some strains are studied/marketed as oral probiotics for their bacteriocin production",
+    "labSignificance": "Rarely of diagnostic significance; recovered incidentally in oral/respiratory cultures as normal flora"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus in chains",
+    "keyBiochemicalReaction": "Catalase negative; generally non-hemolytic to alpha-hemolytic",
+    "importantDisease": "Usually non-pathogenic",
+    "importantTest": "Optochin resistance and bile insolubility distinguish viridans strep from S. pneumoniae",
+    "distinguishingFeature": "A dominant, generally harmless member of the normal oral microbiome; some strains produce bacteriocins that suppress competing bacteria"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "streptococcus-mutans",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "streptococcus-sanguinis",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Viridans Streptococcus\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

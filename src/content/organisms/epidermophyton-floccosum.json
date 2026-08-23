@@ -1,0 +1,125 @@
+{
+  "id": "epidermophyton-floccosum",
+  "scientificName": "Epidermophyton floccosum",
+  "commonName": null,
+  "category": "fungi",
+  "quickTags": [
+    "No microconidia produced",
+    "Does not infect hair",
+    "Club-shaped macroconidia"
+  ],
+  "genZNote": "The one classic dermatophyte genus that never touches hair — skin and nails only, no microconidia needed to make the point.",
+  "searchKeywords": [
+    "tinea cruris fungus",
+    "jock itch fungus",
+    "dermatophyte no microconidia"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Onygenales",
+    "family": "Arthrodermataceae",
+    "genus": "Epidermophyton",
+    "species": "E. floccosum"
+  },
+  "morphology": {
+    "shape": "Septate hyphae with smooth-walled, club/banana-shaped macroconidia in clusters; no microconidia",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Macroconidia ~20-40 x 6-12 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Obligate aerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Smooth-walled, club/banana-shaped macroconidia in clusters (no microconidia produced)"
+    ],
+    "clinicalGroup": "cutaneous"
+  },
+  "habitat": {
+    "naturalHabitat": "Human skin and nails (anthropophilic — exclusively human-associated, unlike Microsporum/Trichophyton which have zoophilic/geophilic members)",
+    "hostAssociation": "Anthropophilic dermatophyte — transmitted person-to-person or via fomites",
+    "environmentalOccurrence": "Survives on shared surfaces such as locker room floors, shower stalls, and shared towels",
+    "reservoir": "Infected humans and contaminated fomites"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "KOH wet mount; lactophenol cotton blue of culture",
+      "appearance": "Septate hyphae; smooth-walled, club-shaped macroconidia in clusters, no microconidia present",
+      "arrangement": "Clustered macroconidia"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar, dermatophyte test medium (DTM)",
+      "growthCharacteristics": "Obligate aerobe; grows over 1-2 weeks; turns DTM red",
+      "colonyMorphology": "Khaki to olive-green, suede-like to powdery surface, often with radial folds",
+      "pigmentation": "Yellow-brown reverse pigment",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Microconidia production",
+        "result": "− (never produces microconidia — genus-defining feature)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Never produces microconidia — only smooth-walled, club/banana-shaped macroconidia in clusters, a key genus-defining feature",
+    "Does not infect hair (no ectothrix or endothrix invasion), unlike Microsporum and Trichophyton",
+    "Khaki/olive-green, suede-like colonies with radial folds",
+    "Common cause of tinea cruris ('jock itch') and tinea pedis"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Tinea cruris (jock itch)",
+      "Tinea corporis",
+      "Tinea pedis",
+      "Onychomycosis (less common than Trichophyton)"
+    ],
+    "virulenceFactors": [
+      "Keratinase enzymes allowing invasion of skin and nail keratin (does not invade hair keratin)"
+    ],
+    "transmission": "Person-to-person or fomite contact (shared towels, locker room floors, shower stalls)",
+    "epidemiology": "A classic cause of tinea cruris, often occurring alongside tinea pedis in the same patient (autoinoculation from feet to groin); exclusively anthropophilic, so outbreaks track close-contact/shared-facility settings",
+    "labSignificance": "Absence of microconidia on culture combined with lack of hair invasion helps distinguish E. floccosum from Trichophyton and Microsporum species"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — a fungus",
+    "shape": "Septate hyphae, club-shaped macroconidia, no microconidia",
+    "keyBiochemicalReaction": "No microconidia produced (genus-defining)",
+    "importantDisease": "Tinea cruris (jock itch)",
+    "importantTest": "Culture morphology — macroconidia only, no microconidia, no hair invasion",
+    "distinguishingFeature": "The only classic dermatophyte genus that never produces microconidia and never invades hair — skin and nails only"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "trichophyton-mentagrophytes",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "microsporum-canis",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "trichophyton-rubrum",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Tinea Cruris\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

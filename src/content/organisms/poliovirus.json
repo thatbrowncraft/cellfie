@@ -1,0 +1,82 @@
+{
+  "id": "poliovirus",
+  "scientificName": "Poliovirus",
+  "commonName": null,
+  "category": "virus",
+  "quickTags": [
+    "Non-enveloped",
+    "+ssRNA",
+    "Fecal-oral transmission"
+  ],
+  "genZNote": "No envelope means it shrugs off stomach acid on the way to the gut — exactly how a fecal-oral virus needs to travel.",
+  "searchKeywords": [
+    "poliomyelitis",
+    "polio",
+    "flaccid paralysis virus",
+    "enterovirus"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Picornaviridae",
+    "genus": "Enterovirus",
+    "species": "Enterovirus C"
+  },
+  "morphology": {
+    "shape": "Small, non-enveloped icosahedral virion",
+    "size": "~30 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "non-enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "fecal-oral"
+  },
+  "habitat": {
+    "naturalHabitat": "Human gastrointestinal tract — humans are the only natural host and reservoir",
+    "hostAssociation": "Infects the GI epithelium and can spread to the central nervous system via the bloodstream",
+    "reservoir": "Infected humans, including asymptomatic carriers who shed virus in stool"
+  },
+  "identificationClues": [
+    "Diagnosed by viral culture or RT-PCR of stool or throat swab specimens",
+    "Non-enveloped +ssRNA virus — resistant to gastric acid and bile, enabling fecal-oral transmission and GI survival",
+    "Most infections are asymptomatic or cause mild, self-limited illness; a small percentage progress to aseptic meningitis or flaccid paralysis",
+    "Global eradication efforts (oral and inactivated polio vaccines) have eliminated wild poliovirus from nearly all countries"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Poliomyelitis — ranges from asymptomatic infection (most common) to non-paralytic aseptic meningitis to paralytic disease from destruction of anterior horn motor neurons, causing asymmetric flaccid paralysis"
+    ],
+    "transmission": "Fecal-oral route; also possible via respiratory droplets early in infection",
+    "epidemiology": "Once a major cause of childhood paralysis worldwide; global vaccination efforts (Global Polio Eradication Initiative) have eliminated wild-type poliovirus from all but a small number of countries",
+    "labSignificance": "Stool viral culture remains the reference standard for confirming poliovirus infection, supplemented by RT-PCR and genomic sequencing to distinguish wild-type from vaccine-derived strains"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by viral culture/RT-PCR",
+    "importantDisease": "Poliomyelitis — asymmetric flaccid paralysis from anterior horn cell destruction",
+    "importantTest": "Stool viral culture; RT-PCR",
+    "distinguishingFeature": "A non-enveloped +ssRNA enterovirus whose gastric-acid resistance underlies fecal-oral spread, with paralysis resulting from destruction of anterior horn motor neurons"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "hepatitis-a-virus",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "rotavirus",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Polio",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/polio/"
+    },
+    {
+      "name": "World Health Organization — Poliomyelitis",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "id": "coccidioides-immitis",
+  "scientificName": "Coccidioides immitis",
+  "commonName": null,
+  "category": "fungi",
+  "quickTags": [
+    "Dimorphic fungus",
+    "Spherules with endospores",
+    "BSL-3 in mold phase"
+  ],
+  "genZNote": "Mold in the soil, spherule full of endospores in your lungs — and the mold form is dangerous enough in a lab that it needs BSL-3 handling.",
+  "searchKeywords": [
+    "valley fever",
+    "san joaquin valley fever",
+    "coccidioidomycosis",
+    "desert fungus"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Onygenales",
+    "family": "Onygenaceae",
+    "genus": "Coccidioides",
+    "species": "C. immitis"
+  },
+  "morphology": {
+    "shape": "Dimorphic: septate hyphae with arthroconidia in soil/culture (25-30°C); large spherules containing endospores in tissue (37°C)",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Arthroconidia ~2-4 x 3-6 µm; spherules can reach 20-100 µm, packed with endospores",
+    "sporeForming": false,
+    "capsule": "None",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Obligate aerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "dimorphic",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Arthroconidia (mold/environmental phase)",
+      "Spherules containing endospores (tissue phase)"
+    ],
+    "clinicalGroup": "systemic"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil of arid and semi-arid regions, particularly the southwestern United States (California's San Joaquin Valley, Arizona) and parts of Mexico and Central/South America",
+    "hostAssociation": "Not host-associated in its mold/environmental form; infects humans and animals via inhalation",
+    "environmentalOccurrence": "Arthroconidia become airborne when contaminated soil is disturbed (construction, dust storms, farming, earthquakes)",
+    "reservoir": "Desert/arid soil"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "KOH prep or histopathology of tissue/sputum",
+      "appearance": "Large, thick-walled spherules containing endospores in tissue; septate hyphae with barrel-shaped arthroconidia in mold-phase culture",
+      "arrangement": "Spherules in tissue; arthroconidia chains in mold culture"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar; mold-phase cultures pose a significant laboratory hazard",
+      "growthCharacteristics": "Dimorphic — mold at 25-30°C, spherule/tissue form at 37°C in vivo; mold-phase cultures must be handled under BSL-3 containment due to highly infectious airborne arthroconidia",
+      "colonyMorphology": "White to gray, cottony mold colonies",
+      "pigmentation": "Variable, often pale",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Coccidioidin/spherulin skin test",
+        "result": "Reflects prior exposure/immunity (not used for acute diagnosis)"
+      },
+      {
+        "test": "Serology (complement fixation, immunodiffusion)",
+        "result": "Detects antibody response to infection"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Endemic exposure history — travel to or residence in the southwestern US (California, Arizona) or endemic areas of Mexico/Central-South America",
+    "Large spherules packed with endospores seen on histopathology of infected tissue",
+    "Mold-phase cultures are highly infectious via inhalation of arthroconidia — the lab must be alerted before processing suspected specimens (BSL-3 handling)",
+    "Serologic testing (complement fixation, immunodiffusion) is the primary diagnostic approach; the organism should not be handled/cultured outside appropriate containment"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Coccidioidomycosis ('Valley Fever') — primary pulmonary infection, often subclinical or self-limited flu-like illness; can cause community-acquired pneumonia",
+      "Disseminated disease (skin, bone, joint, meningitis) in a minority of cases, more common in immunocompromised patients, pregnant women, and certain ethnic groups with higher susceptibility"
+    ],
+    "virulenceFactors": [
+      "Spherule formation in tissue — evades phagocytosis and releases hundreds of endospores upon rupture, each capable of forming a new spherule",
+      "Thick spherule wall resisting host immune clearance"
+    ],
+    "transmission": "Inhalation of airborne arthroconidia from disturbed soil (construction, farming, wind/dust storms, earthquakes); not transmitted person-to-person",
+    "epidemiology": "Endemic to the arid southwestern United States, especially California's San Joaquin Valley and Arizona, as well as parts of Mexico and Central/South America; incidence rises after soil disturbance events and periods of drought followed by rain",
+    "labSignificance": "Laboratory staff must be notified in advance when Coccidioides is suspected — the mold-phase culture is highly infectious via inhalation and requires BSL-3 containment for safe handling"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — a fungus",
+    "shape": "Dimorphic — mold with arthroconidia; spherules with endospores in tissue",
+    "keyBiochemicalReaction": "Not applicable — diagnosed by serology/histopathology",
+    "importantDisease": "Coccidioidomycosis (Valley Fever)",
+    "importantTest": "Serology (complement fixation/immunodiffusion); histopathology showing spherules; mold culture requires BSL-3",
+    "distinguishingFeature": "A dimorphic desert fungus forming spherules packed with endospores in tissue — its mold-phase culture is dangerously infectious and requires BSL-3 handling"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "paracoccidioides-brasiliensis",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "histoplasma-capsulatum",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "blastomyces-dermatitidis",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Valley Fever (Coccidioidomycosis)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/fungal/diseases/coccidioidomycosis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Coccidioidomycosis\"",
+      "kind": "educational"
+    }
+  ]
+}

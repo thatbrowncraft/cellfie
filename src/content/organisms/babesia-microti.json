@@ -1,0 +1,115 @@
+{
+  "id": "babesia-microti",
+  "scientificName": "Babesia microti",
+  "commonName": null,
+  "category": "protozoa",
+  "quickTags": [
+    "Ixodes tick vector",
+    "Maltese cross tetrads",
+    "Co-infection with Lyme disease"
+  ],
+  "genZNote": "Rides the exact same tick as Lyme disease — which is why co-infection is a real thing your doctor actually checks for.",
+  "searchKeywords": [
+    "babesiosis",
+    "tick-borne hemolytic anemia",
+    "maltese cross parasite",
+    "ixodes tick disease"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Protista",
+    "phylum": "Apicomplexa",
+    "class": "Aconoidasida",
+    "order": "Piroplasmida",
+    "family": "Babesiidae",
+    "genus": "Babesia",
+    "species": "B. microti"
+  },
+  "morphology": {
+    "shape": "Intraerythrocytic ring forms and characteristic tetrads ('Maltese cross')",
+    "size": "Ring forms ~1-3 µm within red blood cells"
+  },
+  "protozoanDetails": {
+    "group": "apicomplexan",
+    "lifeCycleStages": [
+      "Sporozoite (injected by tick)",
+      "Intraerythrocytic trophozoite/ring form",
+      "Merozoite (asexual budding within RBCs)",
+      "Gametocyte (ingested by tick, sexual cycle in tick gut)"
+    ],
+    "majorLocation": "blood",
+    "transmissionRoute": "vector-borne"
+  },
+  "habitat": {
+    "naturalHabitat": "Red blood cells of infected mammals; maintained in nature via a rodent (white-footed mouse)-tick cycle",
+    "hostAssociation": "Reservoir hosts are small rodents, especially the white-footed mouse; Ixodes scapularis ticks serve as the vector",
+    "environmentalOccurrence": "Endemic to the northeastern and upper midwestern United States, overlapping with Lyme disease-endemic regions",
+    "reservoir": "White-footed mice and other small rodents"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Giemsa-stained thin blood smear",
+      "appearance": "Intraerythrocytic ring forms resembling Plasmodium falciparum, but classically forming tetrads ('Maltese cross') and lacking hemozoin pigment",
+      "arrangement": "Rings and tetrads within red blood cells"
+    },
+    "culture": {
+      "media": "Not routinely cultured clinically",
+      "growthCharacteristics": "Diagnosis relies on blood smear, serology, and PCR rather than culture"
+    },
+    "biochemicalTests": [
+      {
+        "test": "PCR of blood",
+        "result": "Highly sensitive, useful especially with low parasitemia"
+      },
+      {
+        "test": "Serology (IFA)",
+        "result": "Useful adjunct, particularly for past or low-level infection"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Intraerythrocytic ring forms on Giemsa-stained blood smear, resembling Plasmodium falciparum",
+    "Characteristic tetrad ('Maltese cross') formation and absence of hemozoin pigment help distinguish it from Plasmodium",
+    "History of tick exposure in an endemic area (northeastern/upper midwestern US), sometimes with concurrent Lyme disease symptoms",
+    "More severe disease in asplenic, elderly, or otherwise immunocompromised patients"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Babesiosis — fever, fatigue, and hemolytic anemia; ranges from asymptomatic/mild in healthy hosts to severe, life-threatening illness in asplenic, elderly, or immunocompromised patients"
+    ],
+    "virulenceFactors": [
+      "Intraerythrocytic replication causing direct red cell lysis and hemolytic anemia",
+      "Asplenic patients lose a key mechanism for clearing infected/damaged red blood cells, greatly increasing disease severity"
+    ],
+    "transmission": "Bite of an infected Ixodes scapularis tick (the same tick species that transmits Lyme disease and Anaplasma, making co-infection a recognized clinical concern); rarely via blood transfusion or congenitally",
+    "epidemiology": "Endemic to the northeastern and upper midwestern United States, geographically overlapping with Lyme disease; clinicians should consider co-infection with Borrelia burgdorferi and Anaplasma phagocytophilum in patients with a tick bite from an endemic area",
+    "labSignificance": "Because ring forms resemble Plasmodium falciparum on blood smear, travel/exposure history (tick vs. malaria-endemic travel) is essential to guide the correct diagnosis; PCR is more sensitive than smear for low-level parasitemia"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by blood smear/PCR/serology",
+    "importantDisease": "Babesiosis — fever and hemolytic anemia, severe in asplenic/elderly patients",
+    "importantTest": "Giemsa blood smear (Maltese cross tetrads); PCR",
+    "distinguishingFeature": "An intraerythrocytic parasite transmitted by the same Ixodes tick as Lyme disease, forming distinctive Maltese-cross tetrads without the pigment seen in Plasmodium"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "plasmodium-falciparum",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "borrelia-burgdorferi",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Babesiosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/babesiosis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Babesiosis\"",
+      "kind": "educational"
+    }
+  ]
+}

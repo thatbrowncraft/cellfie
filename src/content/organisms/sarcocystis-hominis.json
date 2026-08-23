@@ -1,0 +1,102 @@
+{
+  "id": "sarcocystis-hominis",
+  "scientificName": "Sarcocystis hominis",
+  "commonName": null,
+  "category": "protozoa",
+  "quickTags": [
+    "Undercooked beef transmission",
+    "Definitive host: humans",
+    "Self-limited intestinal illness"
+  ],
+  "genZNote": "Undercooked beef is the whole story here — cattle do the intermediate hosting, you just finish the job as the definitive host.",
+  "searchKeywords": [
+    "sarcocystosis",
+    "undercooked beef parasite",
+    "intestinal sarcocystis"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Protista",
+    "phylum": "Apicomplexa",
+    "class": "Conoidasida",
+    "order": "Eucoccidiorida",
+    "family": "Sarcocystidae",
+    "genus": "Sarcocystis",
+    "species": "S. hominis"
+  },
+  "morphology": {
+    "shape": "Sporocysts/oocysts passed in stool; sarcocysts (bradyzoite-filled tissue cysts) found in cattle muscle",
+    "size": "Sporocysts ~15 x 10 µm"
+  },
+  "protozoanDetails": {
+    "group": "apicomplexan",
+    "lifeCycleStages": [
+      "Sarcocyst with bradyzoites (in cattle muscle, intermediate host stage)",
+      "Sporocyst/oocyst (passed in human stool after ingestion of undercooked beef, definitive host stage)"
+    ],
+    "majorLocation": "intestinal",
+    "transmissionRoute": "zoonotic"
+  },
+  "habitat": {
+    "naturalHabitat": "Intestinal epithelium of humans (definitive host) and skeletal/cardiac muscle of cattle (intermediate host)",
+    "hostAssociation": "Humans are the definitive host for this species, becoming infected by eating undercooked beef containing sarcocysts; cattle are the intermediate host",
+    "environmentalOccurrence": "Maintained through a cattle-human transmission cycle via consumption of contaminated or undercooked beef",
+    "reservoir": "Cattle (intermediate host); infected humans shed sporocysts/oocysts in stool"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Wet mount or modified acid-fast stain of stool",
+      "appearance": "Sporocysts or oocysts identified in stool samples",
+      "arrangement": "Free sporocysts/oocysts in stool"
+    },
+    "culture": {
+      "media": "Not routinely cultured clinically",
+      "growthCharacteristics": "Diagnosis is by stool microscopy, not culture"
+    },
+    "biochemicalTests": []
+  },
+  "identificationClues": [
+    "History of eating raw or undercooked beef",
+    "Sporocysts/oocysts identified on stool microscopy",
+    "Usually mild, self-limited GI symptoms (nausea, abdominal pain, diarrhea) rather than severe disease",
+    "Humans serve as the definitive (intestinal) host for this species, unlike some other Sarcocystis species where humans are only an accidental intermediate host with muscular disease"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Intestinal sarcocystosis — typically mild and self-limited nausea, abdominal discomfort, and diarrhea"
+    ],
+    "virulenceFactors": [
+      "Limited data on specific virulence factors — disease is generally mild given the organism's adaptation to a stable intestinal niche in its definitive human host"
+    ],
+    "transmission": "Ingestion of undercooked or raw beef containing sarcocysts (bradyzoites) from infected cattle",
+    "epidemiology": "Likely underdiagnosed given typically mild, self-limited symptoms; more prevalent where raw or undercooked beef consumption is common",
+    "labSignificance": "Consider in patients with unexplained mild GI symptoms and a history of eating raw/undercooked beef; usually a diagnosis of exclusion given nonspecific presentation and infrequent testing"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by stool microscopy",
+    "importantDisease": "Intestinal sarcocystosis — mild, self-limited GI illness",
+    "importantTest": "Stool microscopy for sporocysts/oocysts",
+    "distinguishingFeature": "A cattle-to-human foodborne apicomplexan in which humans serve as the definitive intestinal host after eating undercooked beef, typically causing only mild illness"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "cystoisospora-belli",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "toxoplasma-gondii",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — DPDx: Sarcocystosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dpdx/sarcocystosis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Sarcocystosis\"",
+      "kind": "educational"
+    }
+  ]
+}

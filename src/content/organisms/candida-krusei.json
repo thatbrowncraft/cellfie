@@ -1,0 +1,126 @@
+{
+  "id": "candida-krusei",
+  "scientificName": "Candida krusei",
+  "commonName": null,
+  "category": "fungi",
+  "quickTags": [
+    "Intrinsic fluconazole resistance",
+    "Germ tube negative",
+    "Rough colonies on CHROMagar"
+  ],
+  "genZNote": "Intrinsically fluconazole-resistant right out of the gate — no acquired mutation needed, it just never worked to begin with.",
+  "searchKeywords": [
+    "fluconazole resistant yeast",
+    "non-albicans candida krusei",
+    "candidemia risk"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Saccharomycetes",
+    "order": "Saccharomycetales",
+    "family": "Pichiaceae",
+    "genus": "Candida",
+    "species": "C. krusei"
+  },
+  "morphology": {
+    "shape": "Elongated oval budding yeast cells, forms pseudohyphae",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~3-6 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Facultative anaerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "yeast",
+    "hyphae": [
+      "pseudohyphae"
+    ],
+    "reproductiveStructures": [
+      "Blastoconidia (budding)",
+      "Elongated pseudohyphae"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Human gastrointestinal tract as commensal flora; also found in fermented foods and beverages",
+    "hostAssociation": "Opportunistic pathogen, particularly in patients with hematologic malignancy or prior azole prophylaxis",
+    "environmentalOccurrence": "Found in soil, fermenting fruit, and some fermented food/beverage production",
+    "reservoir": "Human GI tract and environmental sources"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain or KOH wet mount",
+      "appearance": "Elongated budding yeast with pseudohyphae",
+      "arrangement": "Budding cells, pseudohyphal chains"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar, CHROMagar Candida",
+      "growthCharacteristics": "Grows well at 35-37°C",
+      "colonyMorphology": "Flat, dull, rough/'fuzzy' spreading colonies",
+      "pigmentation": "Pink, rough-edged colonies on CHROMagar Candida",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Germ tube test",
+        "result": "−"
+      },
+      {
+        "test": "Sucrose fermentation",
+        "result": "− (helps distinguish from other Candida species)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Germ tube negative, elongated budding yeast forming pseudohyphae",
+    "Rough, spreading, 'fuzzy' colonies on CHROMagar Candida (distinct from smooth C. albicans/C. glabrata colonies)",
+    "Intrinsically resistant to fluconazole — a defining clinical feature of this species",
+    "Risk factor: prior fluconazole prophylaxis, especially in neutropenic/hematologic malignancy patients"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Candidemia and invasive candidiasis, particularly in neutropenic patients or those on fluconazole prophylaxis",
+      "Oropharyngeal and esophageal candidiasis in immunocompromised hosts"
+    ],
+    "virulenceFactors": [
+      "Intrinsic resistance to fluconazole via reduced drug affinity for its target enzyme",
+      "Pseudohyphal growth aiding tissue invasion"
+    ],
+    "transmission": "Usually endogenous from the patient's own GI flora; can also spread via contaminated hands/devices in healthcare settings",
+    "epidemiology": "Classically emerges as a breakthrough Candida infection in patients receiving fluconazole prophylaxis (e.g., hematology/oncology and stem cell transplant patients), given its intrinsic azole resistance",
+    "labSignificance": "Because resistance is intrinsic (not just acquired), fluconazole should never be used empirically once C. krusei is identified or strongly suspected — echinocandins or voriconazole are preferred"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — a fungus",
+    "shape": "Elongated budding yeast with pseudohyphae",
+    "keyBiochemicalReaction": "Germ tube negative",
+    "importantDisease": "Candidemia, especially breakthrough infection during fluconazole prophylaxis",
+    "importantTest": "Species identification (intrinsic fluconazole resistance changes antifungal choice)",
+    "distinguishingFeature": "Intrinsically fluconazole-resistant Candida species that classically breaks through in patients already on fluconazole prophylaxis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "candida-albicans",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "candida-glabrata",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Candidiasis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/candidiasis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Candida Krusei\"",
+      "kind": "educational"
+    }
+  ]
+}

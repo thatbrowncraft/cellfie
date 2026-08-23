@@ -1,0 +1,132 @@
+{
+  "id": "shigella-sonnei",
+  "scientificName": "Shigella sonnei",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Late lactose fermenter",
+    "Non-motile",
+    "Most common in developed countries"
+  ],
+  "genZNote": "The 'mild' Shigella — and the one you're actually most likely to encounter if you live somewhere with good plumbing.",
+  "searchKeywords": [
+    "shigellosis",
+    "mildest shigella",
+    "daycare diarrhea outbreak"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Enterobacteriaceae",
+    "genus": "Shigella",
+    "species": "S. sonnei"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-3 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human intestinal tract only — no significant animal reservoir",
+    "hostAssociation": "Obligate human pathogen; low infectious dose",
+    "environmentalOccurrence": "Spread via fecally contaminated food, water, and person-to-person contact, notably in childcare settings",
+    "reservoir": "Infected/asymptomatic human carriers"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar, XLD agar",
+      "growthCharacteristics": "Facultative anaerobe",
+      "colonyMorphology": "Colorless colonies initially; may slowly turn pink with prolonged incubation from late lactose fermentation",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "Late/slow (unique among Shigella species)"
+      },
+      {
+        "test": "ONPG",
+        "result": "+"
+      },
+      {
+        "test": "Motility",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative, non-motile rod; the only Shigella species capable of (slow/late) lactose fermentation",
+    "ONPG positive, reflecting this delayed lactose-fermenting ability",
+    "The most common cause of shigellosis in the United States and other industrialized countries",
+    "Classic cause of outbreaks in childcare centers and among close-contact groups"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Shigellosis — typically milder watery-to-bloody diarrhea compared to S. dysenteriae, though still highly contagious"
+    ],
+    "virulenceFactors": [
+      "Invasion of colonic epithelium via Type III secretion system",
+      "Low infectious dose enabling efficient person-to-person spread",
+      "Generally does not produce significant Shiga toxin (unlike S. dysenteriae)"
+    ],
+    "transmission": "Fecal-oral route; person-to-person spread is especially efficient in childcare settings, due to a very low infectious dose",
+    "epidemiology": "The most frequently isolated Shigella species in the United States and other developed countries; common source of outbreaks in daycare centers, among men who have sex with men, and international travelers",
+    "labSignificance": "Its ability to slowly ferment lactose (unlike other Shigella species) can occasionally cause diagnostic confusion if plates aren't read at the appropriate time"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Late/slow lactose fermenter (unique among Shigella)",
+    "importantDisease": "Shigellosis — most common Shigella species in developed countries",
+    "importantTest": "Stool culture; ONPG test reflects delayed lactose fermentation",
+    "distinguishingFeature": "The only Shigella species that ferments lactose, albeit slowly — and the most common Shigella species in industrialized countries"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "shigella-dysenteriae",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "shigella-flexneri",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Shigella",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/shigella/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Shigella\"",
+      "kind": "educational"
+    }
+  ]
+}

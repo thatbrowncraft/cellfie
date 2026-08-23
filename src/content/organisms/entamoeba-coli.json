@@ -1,0 +1,96 @@
+{
+  "id": "entamoeba-coli",
+  "scientificName": "Entamoeba coli",
+  "commonName": null,
+  "category": "protozoa",
+  "quickTags": [
+    "Non-pathogenic commensal",
+    "8-nucleated cyst",
+    "Differential vs. E. histolytica"
+  ],
+  "genZNote": "Same genus as the amoeba that actually causes disease, completely harmless itself — the classic 'don't treat what you see on a stool exam' lesson.",
+  "searchKeywords": [
+    "nonpathogenic intestinal amoeba",
+    "stool amoeba differential",
+    "commensal amoeba"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Protista",
+    "phylum": "Amoebozoa",
+    "class": "Archamoebae",
+    "genus": "Entamoeba",
+    "species": "E. coli"
+  },
+  "morphology": {
+    "shape": "Amoeboid trophozoite with coarse, often disorganized peripheral chromatin; cyst with up to 8 nuclei",
+    "size": "Trophozoite ~15-50 µm; cysts ~10-35 µm"
+  },
+  "protozoanDetails": {
+    "group": "amoeba",
+    "lifeCycleStages": [
+      "Trophozoite (in the intestinal lumen, non-invasive)",
+      "Cyst (up to 8 nuclei when mature, the infective/environmentally resistant form)"
+    ],
+    "majorLocation": "intestinal",
+    "transmissionRoute": "fecal-oral"
+  },
+  "habitat": {
+    "naturalHabitat": "Human large intestine, as a non-pathogenic commensal",
+    "hostAssociation": "A normal commensal of the human colon — does not invade tissue or cause disease",
+    "environmentalOccurrence": "Cysts are passed in stool and can contaminate water/food, spreading via the fecal-oral route, without ever causing illness in the new host",
+    "reservoir": "Human GI tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Trichrome or iodine stain of stool",
+      "appearance": "Cysts with up to 8 nuclei (versus a maximum of 4 in E. histolytica); trophozoites show coarse, irregularly arranged peripheral chromatin and blunt pseudopods with sluggish, non-directional motility",
+      "arrangement": "Free cysts/trophozoites in stool"
+    },
+    "culture": {
+      "media": "Not routinely cultured clinically",
+      "growthCharacteristics": "Diagnosis is by stool microscopy, not culture"
+    },
+    "biochemicalTests": []
+  },
+  "identificationClues": [
+    "Mature cyst contains up to 8 nuclei, versus a maximum of 4 nuclei in the pathogenic Entamoeba histolytica — the key distinguishing feature",
+    "Trophozoites show coarse, irregularly clumped peripheral chromatin and blunt, sluggish pseudopods, differing from the more organized morphology and directional motility of E. histolytica",
+    "Never associated with intestinal or extraintestinal disease — a purely commensal finding",
+    "Its identification on stool exam should not prompt antiparasitic treatment, but should prompt careful morphologic differentiation from E. histolytica"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "None — a non-pathogenic commensal organism"
+    ],
+    "virulenceFactors": [
+      "None — does not invade intestinal tissue"
+    ],
+    "transmission": "Fecal-oral route via ingestion of mature cysts in contaminated food or water",
+    "epidemiology": "Common worldwide as an incidental finding on stool ova-and-parasite examinations, particularly in areas with limited sanitation; its presence indicates fecal-oral exposure and can be a marker for possible co-exposure to pathogenic organisms transmitted the same way",
+    "labSignificance": "Correct morphologic differentiation from Entamoeba histolytica on stool microscopy is essential to avoid unnecessary antiparasitic treatment for a harmless commensal finding"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by stool microscopy",
+    "importantDisease": "None — non-pathogenic commensal, important only as a diagnostic mimic",
+    "importantTest": "Stool O&P microscopy — nuclear count differentiates it from E. histolytica",
+    "distinguishingFeature": "A harmless commensal amoeba whose 8-nucleated cyst (versus E. histolytica's 4) is the classic feature preventing a mistaken diagnosis of amoebic dysentery"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "entamoeba-histolytica",
+      "relationship": "commonly-confused"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — DPDx: Nonpathogenic Amebae",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dpdx/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Intestinal Protozoa\"",
+      "kind": "educational"
+    }
+  ]
+}

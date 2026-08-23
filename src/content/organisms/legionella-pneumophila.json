@@ -1,0 +1,126 @@
+{
+  "id": "legionella-pneumophila",
+  "scientificName": "Legionella pneumophila",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Requires BCYE agar",
+    "Facultative intracellular",
+    "Legionnaires' disease"
+  ],
+  "genZNote": "Won't even show up on a regular Gram stain and refuses to grow unless you feed it cysteine and iron — high maintenance, high mortality.",
+  "searchKeywords": [
+    "legionnaires disease",
+    "pontiac fever",
+    "cooling tower bacteria",
+    "atypical pneumonia"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Legionellales",
+    "family": "Legionellaceae",
+    "genus": "Legionella",
+    "species": "L. pneumophila"
+  },
+  "morphology": {
+    "shape": "Thin rod (bacillus), faintly staining",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~2-20 x 0.3-0.9 µm (pleomorphic, can elongate)",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile (single polar or lateral flagella)",
+    "motile": true,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Stains poorly with standard Gram stain (faintly Gram-negative); often better visualized with Dieterle silver stain or direct fluorescent antibody testing"
+  },
+  "habitat": {
+    "naturalHabitat": "Freshwater environments — lakes, streams, and especially man-made water systems",
+    "hostAssociation": "Facultative intracellular pathogen of free-living amoebae in nature; infects human alveolar macrophages after inhalation",
+    "environmentalOccurrence": "Thrives in biofilms within cooling towers, plumbing systems, hot tubs, and decorative fountains, especially warm, stagnant water",
+    "reservoir": "Man-made water systems (cooling towers, potable water plumbing, hot tubs)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Dieterle silver stain or direct fluorescent antibody (DFA); poorly visualized on standard Gram stain",
+      "appearance": "Faintly staining, thin Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Buffered charcoal yeast extract (BCYE) agar with L-cysteine and iron — will not grow on standard blood/MacConkey agar",
+      "growthCharacteristics": "Obligate aerobe; slow-growing, requires 3-5 days incubation",
+      "colonyMorphology": "Gray-white, ground-glass colonies with a distinctive 'cut-glass' iridescent sheen under oblique light",
+      "pigmentation": "None",
+      "hemolysis": "Not applicable — not routinely tested on blood agar"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "Variable, often weakly positive"
+      },
+      {
+        "test": "L-cysteine requirement for growth",
+        "result": "+ (required)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Faintly Gram-negative rod that stains poorly on routine Gram stain",
+    "Will only grow on BCYE agar supplemented with L-cysteine and iron — no growth on standard media",
+    "Urinary antigen test detects Legionella serogroup 1 (the most common cause of disease) rapidly and non-invasively",
+    "Linked to contaminated water systems — cooling towers, plumbing, hot tubs — with no person-to-person spread"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Legionnaires' disease — severe pneumonia, often with GI symptoms (diarrhea), confusion, hyponatremia, and relative bradycardia",
+      "Pontiac fever — a milder, self-limited flu-like illness without pneumonia"
+    ],
+    "virulenceFactors": [
+      "Facultative intracellular survival and replication within alveolar macrophages (evades phagosome-lysosome fusion)",
+      "Type IV secretion system (Dot/Icm) injecting effector proteins into host cells"
+    ],
+    "transmission": "Inhalation of aerosolized water droplets from contaminated sources (cooling towers, showers, hot tubs); no person-to-person transmission",
+    "epidemiology": "A significant cause of both community-acquired and healthcare-associated pneumonia, with outbreaks traced to contaminated building water systems; disproportionately affects smokers, the elderly, and immunocompromised patients",
+    "labSignificance": "Routine sputum Gram stain and culture will miss Legionella entirely — diagnosis requires urinary antigen testing, specific BCYE culture, or PCR when Legionella is clinically suspected"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative (stains poorly)",
+    "shape": "Thin bacillus",
+    "keyBiochemicalReaction": "Requires L-cysteine and iron; grows only on BCYE agar",
+    "importantDisease": "Legionnaires' disease; Pontiac fever",
+    "importantTest": "Urinary antigen test (serogroup 1); culture on BCYE agar",
+    "distinguishingFeature": "An intracellular pathogen of water-system biofilms and amoebae that requires special BCYE culture media and doesn't spread person-to-person"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "mycoplasma-pneumoniae",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "chlamydia-trachomatis",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Legionella (Legionnaires' Disease and Pontiac Fever)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/legionella/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Legionella Pneumonia\"",
+      "kind": "educational"
+    }
+  ]
+}

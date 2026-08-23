@@ -1,0 +1,125 @@
+{
+  "id": "brucella-melitensis",
+  "scientificName": "Brucella melitensis",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Zoonotic",
+    "Facultative intracellular",
+    "Undulant fever"
+  ],
+  "genZNote": "Unpasteurized goat cheese is the plot twist nobody expects from a fever that keeps coming back.",
+  "searchKeywords": [
+    "brucellosis",
+    "undulant fever",
+    "unpasteurized dairy bacteria",
+    "goat zoonosis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Alphaproteobacteria",
+    "order": "Hyphomicrobiales",
+    "family": "Brucellaceae",
+    "genus": "Brucella",
+    "species": "B. melitensis"
+  },
+  "morphology": {
+    "shape": "Small coccobacillus",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells or short chains",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.5-0.7 x 0.6-1.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Reproductive tract and mammary tissue of infected goats and sheep",
+    "hostAssociation": "Zoonotic — goats and sheep are the primary reservoir for this Brucella species",
+    "environmentalOccurrence": "Transmitted via unpasteurized dairy products (milk, soft cheese) or direct contact with infected animal tissue/fluids",
+    "reservoir": "Goats and sheep"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain, modified acid-fast (Stamp) stain",
+      "appearance": "Small Gram-negative coccobacilli",
+      "arrangement": "Single or short chains"
+    },
+    "culture": {
+      "media": "Enriched media (blood or chocolate agar) with added CO2; requires prolonged incubation (up to several weeks)",
+      "growthCharacteristics": "Obligate aerobe; slow-growing — cultures often held 21+ days before being called negative",
+      "colonyMorphology": "Small, smooth, translucent colonies appearing after several days to weeks",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Urease",
+        "result": "+ (variable speed by species)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Small, Gram-negative coccobacillus, slow-growing on enriched aerobic media",
+    "History of unpasteurized dairy consumption or occupational animal exposure (farmers, veterinarians, slaughterhouse workers)",
+    "Undulant (relapsing) fever pattern with night sweats, arthralgia, and hepatosplenomegaly",
+    "Highly infectious to laboratory personnel via aerosols — requires biosafety level 3 handling"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Brucellosis (undulant fever) — fever that classically waxes and wanes, night sweats, arthralgia/myalgia, hepatosplenomegaly",
+      "Can become chronic with focal complications (osteoarticular, endocarditis, neurobrucellosis)"
+    ],
+    "virulenceFactors": [
+      "Facultative intracellular survival within macrophages, evading immune clearance",
+      "Lipopolysaccharide with reduced endotoxic activity compared to typical Gram-negative LPS, contributing to a more indolent/chronic disease course"
+    ],
+    "transmission": "Ingestion of unpasteurized dairy products; direct contact with infected animal tissue, blood, or birthing fluids; occupational aerosol exposure",
+    "epidemiology": "Endemic in Mediterranean, Middle Eastern, Central Asian, and Latin American regions where unpasteurized dairy consumption and small-ruminant husbandry are common; a significant cause of laboratory-acquired infection",
+    "labSignificance": "Laboratory personnel must be alerted when Brucella is suspected, since routine bench handling of cultures poses a significant aerosol-transmitted infection risk"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Coccobacillus",
+    "keyBiochemicalReaction": "Oxidase positive, urease positive, slow-growing",
+    "importantDisease": "Brucellosis (undulant fever)",
+    "importantTest": "Blood culture with prolonged incubation; serology (agglutination titers)",
+    "distinguishingFeature": "A zoonotic, facultative intracellular coccobacillus from unpasteurized goat/sheep dairy causing a classic relapsing 'undulant' fever"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "francisella-tularensis",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "pasteurella-multocida",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Brucellosis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/brucellosis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Brucellosis\"",
+      "kind": "educational"
+    }
+  ]
+}

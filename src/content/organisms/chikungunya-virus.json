@@ -1,0 +1,80 @@
+{
+  "id": "chikungunya-virus",
+  "scientificName": "Chikungunya virus",
+  "commonName": null,
+  "category": "virus",
+  "quickTags": [
+    "Aedes mosquito vector",
+    "Severe arthralgia",
+    "Enveloped +ssRNA"
+  ],
+  "genZNote": "The name means 'that which bends up' in the Kimakonde language — a direct reference to the joint pain that can linger for months.",
+  "searchKeywords": [
+    "chikungunya fever",
+    "aedes mosquito arthritis",
+    "joint pain virus"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Togaviridae",
+    "genus": "Alphavirus"
+  },
+  "morphology": {
+    "shape": "Enveloped icosahedral virion",
+    "size": "~60-70 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "vector-borne"
+  },
+  "habitat": {
+    "naturalHabitat": "Maintained in a mosquito-human (urban) or mosquito-primate (sylvatic) transmission cycle",
+    "hostAssociation": "Transmitted by Aedes aegypti and Aedes albopictus mosquitoes, the same vectors as dengue and Zika",
+    "reservoir": "Humans (urban cycle) and non-human primates (sylvatic cycle in parts of Africa)"
+  },
+  "identificationClues": [
+    "Diagnosed by RT-PCR early in illness or serology (IgM) after the first week",
+    "High fever with severe, often debilitating polyarthralgia/arthritis — frequently more prominent and prolonged than in dengue",
+    "Transmitted by the same Aedes mosquitoes responsible for dengue and Zika, so co-circulation and overlapping symptoms are common in endemic areas",
+    "Joint pain can persist for weeks to months after the acute illness resolves, a distinguishing clinical feature"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Chikungunya fever — sudden high fever, severe polyarthralgia/arthritis (often symmetric, affecting hands/wrists/ankles), rash, and headache; joint symptoms can become chronic and debilitating"
+    ],
+    "transmission": "Bite of an infected Aedes aegypti or Aedes albopictus mosquito",
+    "epidemiology": "Endemic and epidemic in parts of Africa, Asia, and increasingly the Americas following its introduction to the Caribbean; outbreaks often overlap geographically and temporally with dengue and Zika due to shared mosquito vectors",
+    "labSignificance": "Distinguishing chikungunya from dengue and Zika based on symptoms alone is difficult since all three share vectors and overlapping presentations; specific RT-PCR or serologic testing is needed for confirmation"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by RT-PCR/serology",
+    "importantDisease": "Chikungunya fever — severe, often prolonged polyarthralgia",
+    "importantTest": "RT-PCR (acute phase); IgM serology (later phase)",
+    "distinguishingFeature": "An Aedes-transmitted alphavirus causing unusually severe and often prolonged joint pain, more prominent than the arthralgia seen with dengue or Zika"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "dengue-virus",
+      "relationship": "same-clinical-specimen"
+    },
+    {
+      "id": "zika-virus",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Chikungunya Virus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/chikungunya/"
+    },
+    {
+      "name": "World Health Organization — Chikungunya",
+      "kind": "educational"
+    }
+  ]
+}

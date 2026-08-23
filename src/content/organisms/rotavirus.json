@@ -1,0 +1,80 @@
+{
+  "id": "rotavirus",
+  "scientificName": "Rotavirus",
+  "commonName": null,
+  "category": "virus",
+  "quickTags": [
+    "dsRNA segmented genome",
+    "Wheel-shaped virion",
+    "Leading cause of infant diarrhea"
+  ],
+  "genZNote": "The name literally means 'wheel' — look at it under an electron microscope and you'll see exactly why.",
+  "searchKeywords": [
+    "infant diarrhea virus",
+    "rotavirus vaccine",
+    "gastroenteritis children"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Sedoreoviridae (formerly Reoviridae)",
+    "genus": "Rotavirus"
+  },
+  "morphology": {
+    "shape": "Double-shelled icosahedral virion with a wheel-like appearance on electron microscopy (the source of its name)",
+    "size": "~70-80 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "dsrna",
+    "envelope": "non-enveloped",
+    "capsidSymmetry": "Double-shelled icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "fecal-oral"
+  },
+  "habitat": {
+    "naturalHabitat": "Human gastrointestinal tract, particularly the small intestine",
+    "hostAssociation": "Infects and destroys mature enterocytes of the small intestinal villi, impairing absorption",
+    "reservoir": "Infected humans, primarily young children"
+  },
+  "identificationClues": [
+    "Diagnosed by stool antigen (EIA) testing or RT-PCR, the standard clinical methods",
+    "Segmented double-stranded RNA genome with a distinctive double-shelled, wheel-like capsid on electron microscopy",
+    "Leading global cause of severe, dehydrating diarrhea in infants and young children",
+    "Live attenuated oral vaccines have substantially reduced severe disease and hospitalization where implemented"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Acute gastroenteritis — vomiting followed by watery diarrhea, often with fever, that can progress to severe dehydration in infants and young children"
+    ],
+    "transmission": "Fecal-oral route, including contaminated hands, surfaces, and objects; highly stable in the environment and resistant to many common disinfectants",
+    "epidemiology": "Historically the leading cause of severe diarrheal disease and death in children under 5 worldwide; routine childhood vaccination has dramatically reduced rotavirus-associated hospitalizations and deaths in countries where it has been implemented",
+    "labSignificance": "Stool antigen testing (EIA) is rapid and widely available; genotyping/RT-PCR can be used for surveillance and to distinguish wild-type from vaccine strains"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by stool antigen test/RT-PCR",
+    "importantDisease": "Severe dehydrating gastroenteritis in infants — historically the leading cause worldwide",
+    "importantTest": "Stool antigen (EIA) testing; RT-PCR",
+    "distinguishingFeature": "A segmented dsRNA virus with a distinctive wheel-shaped double capsid, and the leading historical cause of severe infant diarrhea before routine vaccination"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "norovirus",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "poliovirus",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Rotavirus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/rotavirus/"
+    },
+    {
+      "name": "World Health Organization — Rotavirus",
+      "kind": "educational"
+    }
+  ]
+}

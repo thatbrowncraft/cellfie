@@ -1,0 +1,123 @@
+{
+  "id": "paracoccidioides-brasiliensis",
+  "scientificName": "Paracoccidioides brasiliensis",
+  "commonName": null,
+  "category": "fungi",
+  "quickTags": [
+    "Ship's wheel/mariner's wheel yeast",
+    "Dimorphic fungus",
+    "Endemic to Latin America"
+  ],
+  "genZNote": "The yeast form buds all the way around the mother cell like spokes on a wheel — the single most recognizable image in medical mycology.",
+  "searchKeywords": [
+    "paracoccidioidomycosis",
+    "south american blastomycosis",
+    "mariners wheel yeast"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Onygenales",
+    "family": "Ajellomycetaceae",
+    "genus": "Paracoccidioides",
+    "species": "P. brasiliensis"
+  },
+  "morphology": {
+    "shape": "Dimorphic: septate hyphae in soil/culture (25-30°C); large multiply-budding yeast at 37°C ('ship's wheel'/'mariner's wheel' pattern)",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Yeast form ~10-60 µm diameter, with multiple peripheral buds",
+    "sporeForming": false,
+    "capsule": "None",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Obligate aerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "dimorphic",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Multiple peripheral budding yeast cells ('ship's wheel'/'mariner's wheel' pattern) in tissue/37°C culture"
+    ],
+    "clinicalGroup": "systemic"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil in rural areas of Latin America, particularly Brazil, Colombia, and Venezuela",
+    "hostAssociation": "Not host-associated in the environmental mold form; infects humans via inhalation, especially those with occupational soil exposure",
+    "environmentalOccurrence": "Associated with humid forested and agricultural areas; armadillos have been identified as a natural environmental reservoir in some regions",
+    "reservoir": "Soil in endemic rural Latin American regions"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "KOH prep or histopathology of tissue/sputum",
+      "appearance": "Large yeast cells with multiple peripheral buds arranged around the mother cell, classically described as a 'ship's wheel' or 'mariner's wheel'",
+      "arrangement": "Multiply-budding yeast clusters"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar (mold phase); enriched blood-based media at 37°C for yeast-phase conversion",
+      "growthCharacteristics": "Dimorphic — slow-growing mold at room temperature, yeast at 37°C",
+      "colonyMorphology": "White to tan, cottony mold colonies at room temperature",
+      "pigmentation": "Variable",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Serology (immunodiffusion, complement fixation)",
+        "result": "Detects antibody response, useful for diagnosis and monitoring treatment response"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Classic 'ship's wheel'/'mariner's wheel' multiply-budding yeast pattern on histopathology or KOH prep at 37°C",
+    "Endemic exposure history — residence in or travel to rural Latin America (especially Brazil), often with agricultural occupational exposure",
+    "Strong male predominance in symptomatic disease, thought related to estrogen inhibiting the mold-to-yeast transition",
+    "Chronic oral/nasal mucocutaneous ulcers are a characteristic clinical finding"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Paracoccidioidomycosis — chronic pulmonary disease with cough and dyspnea; mucocutaneous involvement causing painful oral/nasal ulcerations; can disseminate to lymph nodes, skin, and adrenal glands"
+    ],
+    "virulenceFactors": [
+      "Thermal dimorphism — conversion to the yeast form at body temperature is required for pathogenicity",
+      "Cell wall alpha-glucan, which may help the organism evade some host immune responses"
+    ],
+    "transmission": "Inhalation of airborne conidia from disturbed soil; not transmitted person-to-person",
+    "epidemiology": "Endemic to rural Latin America, especially Brazil, Colombia, Venezuela, and Argentina; predominantly affects adult male agricultural workers, likely reflecting both occupational exposure and a hormonally influenced susceptibility difference between sexes",
+    "labSignificance": "The 'ship's wheel' multiple-budding pattern on direct microscopy or histopathology is highly characteristic and often sufficient for a presumptive diagnosis pending confirmatory culture/serology"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — a fungus",
+    "shape": "Dimorphic — mold with septate hyphae; multiply-budding yeast in tissue",
+    "keyBiochemicalReaction": "Not applicable — diagnosed by microscopy/serology",
+    "importantDisease": "Paracoccidioidomycosis (South American blastomycosis)",
+    "importantTest": "Microscopy showing 'ship's wheel' multiple-budding yeast; serology",
+    "distinguishingFeature": "A dimorphic Latin American fungus whose yeast form buds in a distinctive 'ship's wheel'/'mariner's wheel' pattern, with a striking male predominance in disease"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "coccidioides-immitis",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "histoplasma-capsulatum",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "blastomyces-dermatitidis",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Paracoccidioidomycosis\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

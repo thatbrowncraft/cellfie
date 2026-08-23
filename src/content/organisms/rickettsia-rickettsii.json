@@ -1,0 +1,109 @@
+{
+  "id": "rickettsia-rickettsii",
+  "scientificName": "Rickettsia rickettsii",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Tick-borne",
+    "Obligate intracellular",
+    "Rash on palms/soles"
+  ],
+  "genZNote": "The rash starts at your wrists and ankles and works its way in — by the time it reaches your palms and soles, doxycycline should already be on board.",
+  "searchKeywords": [
+    "rocky mountain spotted fever",
+    "tick-borne rash illness",
+    "dermacentor tick disease"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Alphaproteobacteria",
+    "order": "Rickettsiales",
+    "family": "Rickettsiaceae",
+    "genus": "Rickettsia",
+    "species": "R. rickettsii"
+  },
+  "morphology": {
+    "shape": "Small coccobacillus",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells, intracellular",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.3-0.5 x 1-2 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile (moves within host cells via actin-based motility, not flagella)",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe (obligate intracellular)",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Stains poorly with standard Gram stain; better visualized with Giemsa or Gimenez stain of infected tissue"
+  },
+  "habitat": {
+    "naturalHabitat": "Obligate intracellular — infects vascular endothelial cells",
+    "hostAssociation": "Maintained in nature via a tick reservoir (Dermacentor species) with transovarial transmission between tick generations",
+    "environmentalOccurrence": "Transmitted to humans through the bite of an infected Dermacentor (dog tick, wood tick) after several hours of attachment",
+    "reservoir": "Ixodid ticks (Dermacentor spp.), which also serve as both vector and reservoir"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Giemsa or Gimenez stain; immunohistochemistry/direct immunofluorescence of skin biopsy",
+      "appearance": "Small intracellular coccobacilli within vascular endothelial cells",
+      "arrangement": "Intracellular, single cells"
+    },
+    "culture": {
+      "media": "Not routinely cultured clinically — requires cell culture systems and BSL-3 containment",
+      "growthCharacteristics": "Obligate intracellular; cannot replicate on standard bacteriologic media",
+      "colonyMorphology": "Not applicable"
+    },
+    "biochemicalTests": []
+  },
+  "identificationClues": [
+    "History of tick exposure/bite in an endemic area with subsequent fever, headache, and rash",
+    "Rash classically begins on the wrists and ankles and spreads centripetally toward the trunk, often eventually involving palms and soles",
+    "Diagnosis relies primarily on serology (indirect immunofluorescence assay) since acute-phase antibody testing and culture are often negative early in illness",
+    "Empiric doxycycline treatment is typically started based on clinical suspicion before laboratory confirmation, given the risk of rapid deterioration"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Rocky Mountain spotted fever — fever, headache, myalgia, and a centripetally spreading petechial/maculopapular rash; can progress to vasculitis, multi-organ dysfunction, and death if untreated"
+    ],
+    "virulenceFactors": [
+      "Obligate intracellular replication within vascular endothelial cells, causing direct endothelial damage and vasculitis",
+      "Actin-based intracellular/intercellular motility, allowing spread between endothelial cells"
+    ],
+    "transmission": "Bite of an infected Dermacentor tick (dog tick, Rocky Mountain wood tick), typically requiring several hours of attachment for transmission",
+    "epidemiology": "Despite its name, most U.S. cases occur in the south-central and southeastern states rather than the Rocky Mountain region; can be rapidly fatal without prompt treatment, making early empiric therapy essential",
+    "labSignificance": "Treatment should never be delayed pending serologic confirmation — doxycycline is started empirically based on clinical suspicion of tick exposure plus fever/rash, since delayed treatment significantly increases mortality"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative (stains poorly)",
+    "shape": "Coccobacillus",
+    "keyBiochemicalReaction": "Not applicable — obligate intracellular, diagnosed by serology",
+    "importantDisease": "Rocky Mountain spotted fever",
+    "importantTest": "Indirect immunofluorescence serology; empiric doxycycline should not await confirmation",
+    "distinguishingFeature": "A tick-transmitted obligate intracellular organism causing a rash that starts at the wrists/ankles and spreads centrally, including the palms and soles"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "francisella-tularensis",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "borrelia-burgdorferi",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Rocky Mountain Spotted Fever",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/rocky-mountain-spotted-fever/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Rocky Mountain Spotted Fever\"",
+      "kind": "educational"
+    }
+  ]
+}

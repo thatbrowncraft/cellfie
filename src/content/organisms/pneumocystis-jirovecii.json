@@ -1,0 +1,121 @@
+{
+  "id": "pneumocystis-jirovecii",
+  "scientificName": "Pneumocystis jirovecii",
+  "commonName": "PCP/PJP organism",
+  "category": "fungi",
+  "quickTags": [
+    "Cannot be cultured",
+    "AIDS-defining opportunistic infection",
+    "GMS stain cup-shaped cysts"
+  ],
+  "genZNote": "Classified as a fungus by molecular phylogenetics but still can't be grown in a dish — diagnosis means looking directly at the lung sample.",
+  "searchKeywords": [
+    "pneumocystis pneumonia",
+    "pcp",
+    "pjp",
+    "aids defining infection",
+    "ground glass opacities"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Pneumocystidomycetes",
+    "order": "Pneumocystidales",
+    "family": "Pneumocystidaceae",
+    "genus": "Pneumocystis",
+    "species": "P. jirovecii"
+  },
+  "morphology": {
+    "shape": "Trophic forms (thin-walled, amoeboid) and cystic forms (thick-walled, cup-shaped/crushed-ping-pong-ball appearance)",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Cysts ~4-6 µm diameter, each containing up to 8 intracystic bodies",
+    "sporeForming": false,
+    "capsule": "None",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Obligate aerobe"
+  },
+  "fungalDetails": {
+    "clinicalGroup": "opportunistic",
+    "reproductiveStructures": [
+      "Cystic form with up to 8 intracystic bodies",
+      "Trophic (trophozoite-like) form"
+    ]
+  },
+  "habitat": {
+    "naturalHabitat": "Human and mammalian lung alveoli — tightly host-adapted with species-specific strains across different mammals",
+    "hostAssociation": "Likely acquired via airborne transmission early in life in most people, then remains latent/controlled by an intact immune system; reactivates or causes progressive disease when cell-mediated immunity is impaired",
+    "environmentalOccurrence": "Not established as free-living in the environment — appears to require an animal host",
+    "reservoir": "Human lungs (person-to-person airborne transmission is increasingly recognized, particularly among immunocompromised contacts)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gomori methenamine silver (GMS) stain, toluidine blue O, or direct fluorescent antibody staining of bronchoalveolar lavage/induced sputum",
+      "appearance": "Cup-shaped or crushed-ping-pong-ball-shaped cysts on GMS stain",
+      "arrangement": "Clusters within alveolar exudate"
+    },
+    "culture": {
+      "media": "Not applicable — cannot be cultured on artificial media using standard clinical laboratory techniques",
+      "growthCharacteristics": "No in vitro culture system is available for routine clinical diagnosis",
+      "colonyMorphology": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "(1→3)-β-D-glucan serum assay",
+        "result": "Often markedly elevated in Pneumocystis pneumonia (nonspecific but supportive)"
+      },
+      {
+        "test": "PCR of respiratory specimens",
+        "result": "Highly sensitive, increasingly used for diagnosis"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Cannot be cultured — diagnosis requires direct visualization (GMS/toluidine blue stain) or PCR of bronchoalveolar lavage or induced sputum",
+    "Classic cup-shaped or crushed-ping-pong-ball cysts on Gomori methenamine silver (GMS) stain",
+    "Bilateral, diffuse ground-glass opacities on chest CT in a patient with hypoxia disproportionate to chest X-ray findings",
+    "Strongly associated with CD4 count <200 cells/µL in HIV/AIDS patients, or other significant cell-mediated immunosuppression"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Pneumocystis pneumonia (PCP/PJP) — subacute fever, dry cough, and progressive dyspnea with bilateral interstitial/ground-glass infiltrates; a classic AIDS-defining illness"
+    ],
+    "virulenceFactors": [
+      "Tight attachment to type I alveolar pneumocytes, disrupting gas exchange",
+      "Ability to persist in a low-immunity host without triggering an overwhelming acute inflammatory response until late in disease"
+    ],
+    "transmission": "Airborne, person-to-person, likely with most people acquiring subclinical infection in early childhood; disease results from either reactivation or new infection in the setting of impaired cell-mediated immunity",
+    "epidemiology": "A leading cause of opportunistic pneumonia in patients with HIV/AIDS (particularly CD4 <200 cells/µL) and other causes of significant T-cell immunosuppression (e.g., organ transplant, prolonged high-dose corticosteroids); trimethoprim-sulfamethoxazole prophylaxis is standard in high-risk patients",
+    "labSignificance": "Because it cannot be cultured, clinical suspicion combined with imaging, an elevated serum (1→3)-β-D-glucan, and direct staining or PCR of respiratory specimens together drive the diagnosis"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — cannot be cultured",
+    "shape": "Cup-shaped cysts with intracystic bodies; trophic forms",
+    "keyBiochemicalReaction": "Not applicable — GMS stain/PCR-based diagnosis",
+    "importantDisease": "Pneumocystis pneumonia (PCP) — classic AIDS-defining opportunistic infection",
+    "importantTest": "GMS stain of bronchoalveolar lavage; serum (1→3)-β-D-glucan; PCR",
+    "distinguishingFeature": "An opportunistic fungus that cannot be cultured and causes AIDS-defining pneumonia, diagnosed by direct staining of respiratory specimens rather than culture"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "candida-albicans",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "histoplasma-capsulatum",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Pneumocystis Pneumonia",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/fungal/diseases/pneumocystis-pneumonia/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Pneumocystis Jirovecii Pneumonia\"",
+      "kind": "educational"
+    }
+  ]
+}

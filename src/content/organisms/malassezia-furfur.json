@@ -1,0 +1,115 @@
+{
+  "id": "malassezia-furfur",
+  "scientificName": "Malassezia furfur",
+  "commonName": null,
+  "category": "fungi",
+  "quickTags": [
+    "Lipophilic yeast",
+    "Spaghetti and meatballs microscopy",
+    "Tinea versicolor"
+  ],
+  "genZNote": "Needs actual lipids to grow in culture — skip the olive oil overlay and this organism just won't show up.",
+  "searchKeywords": [
+    "tinea versicolor",
+    "pityriasis versicolor",
+    "seborrheic dermatitis fungus",
+    "malassezia folliculitis"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Basidiomycota",
+    "class": "Malasseziomycetes",
+    "order": "Malasseziales",
+    "family": "Malasseziaceae",
+    "genus": "Malassezia",
+    "species": "M. furfur"
+  },
+  "morphology": {
+    "shape": "Round to oval budding yeast with short septate hyphae",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~2-8 µm yeast cells",
+    "sporeForming": false,
+    "capsule": "None",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Facultative anaerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "yeast",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Unipolar budding yeast cells",
+      "Short hyphal fragments"
+    ],
+    "clinicalGroup": "superficial"
+  },
+  "habitat": {
+    "naturalHabitat": "Human skin, especially sebum-rich areas (scalp, chest, back)",
+    "hostAssociation": "Normal lipophilic skin commensal in virtually all adults; becomes pathogenic under certain conditions (humidity, sebum, immunosuppression)",
+    "environmentalOccurrence": "Requires exogenous lipids to grow — does not thrive outside a lipid-rich host environment",
+    "reservoir": "Human skin"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "KOH wet mount of skin scrapings",
+      "appearance": "Classic 'spaghetti and meatballs' appearance — short hyphal fragments (spaghetti) with clusters of round yeast cells (meatballs)",
+      "arrangement": "Yeast clusters with short hyphae"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar overlaid with olive oil or other long-chain fatty acid source (lipid supplementation required)",
+      "growthCharacteristics": "Lipophilic — will not grow on standard Sabouraud agar without lipid supplementation",
+      "colonyMorphology": "Cream to yellowish, smooth to slightly wrinkled colonies",
+      "pigmentation": "Cream/yellow",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": []
+  },
+  "identificationClues": [
+    "Classic 'spaghetti and meatballs' appearance on KOH prep of skin scrapings (short hyphae plus round yeast clusters)",
+    "Lipophilic — requires lipid supplementation (e.g., olive oil overlay) to grow in culture; will not grow on plain Sabouraud agar",
+    "Causes hypo- or hyperpigmented, finely scaling patches on the trunk (tinea/pityriasis versicolor)",
+    "Can cause catheter-related fungemia in patients receiving lipid-based total parenteral nutrition"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Tinea (pityriasis) versicolor — hypo/hyperpigmented scaly patches, typically on the trunk",
+      "Seborrheic dermatitis (associated, though causation is debated)",
+      "Malassezia folliculitis — itchy follicular papules/pustules",
+      "Catheter-associated fungemia, particularly in infants/patients on lipid-containing parenteral nutrition"
+    ],
+    "virulenceFactors": [
+      "Lipid dependence allowing colonization of sebaceous skin areas",
+      "Production of azelaic acid, which inhibits melanocyte tyrosinase and causes the characteristic pigmentary changes of tinea versicolor"
+    ],
+    "transmission": "Endogenous — part of normal skin flora; overgrowth triggered by heat, humidity, sebum production, or immunosuppression rather than person-to-person spread",
+    "epidemiology": "Extremely common cause of tinea versicolor worldwide, especially in hot/humid climates and in young adults; catheter-related fungemia is a recognized complication in neonates/patients on lipid emulsion parenteral nutrition",
+    "labSignificance": "Diagnosis of tinea versicolor is usually clinical plus KOH microscopy — culture is rarely needed and requires lipid-supplemented media if attempted"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — a fungus",
+    "shape": "Round yeast with short septate hyphae",
+    "keyBiochemicalReaction": "Requires exogenous lipids to grow in culture",
+    "importantDisease": "Tinea (pityriasis) versicolor",
+    "importantTest": "KOH prep showing 'spaghetti and meatballs' pattern",
+    "distinguishingFeature": "A lipid-dependent skin yeast producing the classic 'spaghetti and meatballs' microscopy pattern and hypo/hyperpigmented patches of tinea versicolor"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "candida-albicans",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Malassezia Furfur\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

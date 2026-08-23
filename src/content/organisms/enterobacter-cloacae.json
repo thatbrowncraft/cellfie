@@ -1,0 +1,136 @@
+{
+  "id": "enterobacter-cloacae",
+  "scientificName": "Enterobacter cloacae",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "AmpC beta-lactamase",
+    "Nosocomial pathogen",
+    "Motile"
+  ],
+  "genZNote": "Start it on a cephalosporin and watch it develop resistance mid-treatment — the AmpC gene doesn't play fair.",
+  "searchKeywords": [
+    "ampc beta-lactamase",
+    "nosocomial enterobacter",
+    "hospital-acquired infection bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Enterobacteriaceae",
+    "genus": "Enterobacter",
+    "species": "E. cloacae"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-3 x 0.6-1 µm",
+    "sporeForming": false,
+    "capsule": "None to minimal",
+    "encapsulated": false,
+    "motility": "Motile (peritrichous flagella)",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human and animal GI tract; widely distributed in soil, water, and sewage",
+    "hostAssociation": "Normal gut flora in some individuals; opportunistic nosocomial pathogen",
+    "environmentalOccurrence": "Common in soil, water, and plant surfaces",
+    "reservoir": "Human GI tract and hospital environment (equipment, hands)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar",
+      "growthCharacteristics": "Rapid growth, facultative anaerobe",
+      "colonyMorphology": "Large, mucoid, pink colonies (lactose fermenter, often slow/variable)",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Citrate",
+        "result": "+"
+      },
+      {
+        "test": "Ornithine decarboxylase",
+        "result": "+"
+      },
+      {
+        "test": "Voges-Proskauer",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative motile rod, variable/slow lactose fermentation on MacConkey",
+    "Citrate and ornithine decarboxylase positive",
+    "Can induce chromosomal AmpC beta-lactamase during cephalosporin therapy, leading to resistance emerging mid-treatment",
+    "A classic member of the 'SPICE' organisms (Serratia, Pseudomonas/Proteus, Indole-positive Proteus, Citrobacter, Enterobacter) with inducible AmpC"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Healthcare-associated urinary tract infections",
+      "Respiratory tract infections/ventilator-associated pneumonia",
+      "Bacteremia, especially in critically ill or catheterized patients"
+    ],
+    "virulenceFactors": [
+      "Inducible chromosomal AmpC beta-lactamase — confers resistance to many cephalosporins, sometimes emerging during treatment",
+      "Biofilm formation on medical devices"
+    ],
+    "transmission": "Endogenous flora or healthcare-associated transmission via contaminated equipment/hands",
+    "epidemiology": "An important cause of nosocomial infections, particularly in intensive care settings; notable for the risk of resistance developing during third-generation cephalosporin therapy due to AmpC derepression",
+    "labSignificance": "Clinicians should be cautious using third-generation cephalosporins alone for serious Enterobacter infections due to the risk of AmpC-mediated resistance emerging during treatment"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Citrate positive, ornithine decarboxylase positive",
+    "importantDisease": "Nosocomial UTI, pneumonia, bacteremia",
+    "importantTest": "Susceptibility testing to monitor for inducible AmpC resistance during cephalosporin therapy",
+    "distinguishingFeature": "Inducible chromosomal AmpC beta-lactamase that can cause resistance to emerge mid-treatment on third-generation cephalosporins"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "klebsiella-pneumoniae",
+      "relationship": "same-clinical-specimen"
+    },
+    {
+      "id": "serratia-marcescens",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "citrobacter-freundii",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Enterobacter Infections\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

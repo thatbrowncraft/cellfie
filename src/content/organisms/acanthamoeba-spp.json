@@ -1,0 +1,104 @@
+{
+  "id": "acanthamoeba-spp",
+  "scientificName": "Acanthamoeba spp.",
+  "commonName": null,
+  "category": "protozoa",
+  "quickTags": [
+    "Contact lens keratitis",
+    "No flagellate stage",
+    "Granulomatous encephalitis (chronic)"
+  ],
+  "genZNote": "Rinse your contacts with tap water instead of solution and this is exactly the amoeba waiting in the pipes.",
+  "searchKeywords": [
+    "acanthamoeba keratitis",
+    "contact lens infection",
+    "granulomatous amoebic encephalitis"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Protista",
+    "phylum": "Amoebozoa",
+    "class": "Discosea",
+    "genus": "Acanthamoeba"
+  },
+  "morphology": {
+    "shape": "Amoeboid trophozoite with characteristic spiny (acanthopodia) projections; double-walled cyst",
+    "size": "Trophozoite ~15-45 µm; cysts ~10-25 µm"
+  },
+  "protozoanDetails": {
+    "group": "amoeba",
+    "lifeCycleStages": [
+      "Trophozoite (infective, motile)",
+      "Cyst (environmentally resistant, no flagellate stage exists in this genus)"
+    ],
+    "majorLocation": "tissue",
+    "transmissionRoute": "other"
+  },
+  "habitat": {
+    "naturalHabitat": "Ubiquitous in soil, freshwater, and even air; also found in tap water, swimming pools, and contact lens solutions/cases when contaminated",
+    "hostAssociation": "Free-living; humans are accidental hosts, typically via contact lens use or minor trauma/immunosuppression",
+    "environmentalOccurrence": "Extremely widespread environmental organism, more ubiquitous than Naegleria",
+    "reservoir": "Soil, water, air, and contaminated contact lens equipment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Confocal microscopy or calcofluor white stain of corneal scrapings for keratitis; trichrome stain of tissue for encephalitis",
+      "appearance": "Trophozoites with spiny surface projections (acanthopodia); double-walled, star-shaped (polygonal) cysts",
+      "arrangement": "Trophozoites and cysts in corneal or CNS tissue"
+    },
+    "culture": {
+      "media": "Non-nutrient agar with an E. coli overlay",
+      "growthCharacteristics": "Grows on the bacterial lawn, forming trails of feeding trophozoites and resistant cysts",
+      "colonyMorphology": "Not applicable in the traditional sense"
+    },
+    "biochemicalTests": [
+      {
+        "test": "PCR of corneal scraping or CSF/tissue",
+        "result": "Confirms diagnosis"
+      }
+    ]
+  },
+  "identificationClues": [
+    "History of contact lens wear, particularly with poor hygiene (tap water rinsing, swimming while wearing lenses, non-sterile lens solution)",
+    "Severe, often disproportionate eye pain with a corneal ring infiltrate on slit-lamp exam (Acanthamoeba keratitis)",
+    "No flagellate stage exists for this genus, unlike Naegleria, which has a transient flagellate form",
+    "Causes a much slower, more indolent CNS disease (granulomatous amoebic encephalitis) than the rapidly fatal course of Naegleria's PAM, typically in immunocompromised hosts"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Acanthamoeba keratitis — painful corneal infection strongly associated with contact lens wear, which can cause severe vision loss if untreated",
+      "Granulomatous amoebic encephalitis (GAE) — a subacute-to-chronic CNS infection, mainly in immunocompromised patients",
+      "Cutaneous acanthamoebiasis, particularly in advanced HIV/AIDS"
+    ],
+    "virulenceFactors": [
+      "Adhesion to corneal epithelium via a mannose-binding protein, especially relevant to contact lens-associated keratitis",
+      "Ability to encyst under adverse conditions, making the organism resistant to many disinfectants and some antimicrobial treatments"
+    ],
+    "transmission": "Contact lens exposure to contaminated water/solution (keratitis); inhalation or skin/eye entry with subsequent hematogenous CNS spread (GAE), typically in immunocompromised hosts",
+    "epidemiology": "The leading cause of contact-lens-associated keratitis; GAE is rare but classically affects immunocompromised patients (HIV/AIDS, transplant recipients) with a much more insidious onset than Naegleria's PAM",
+    "labSignificance": "Contact lens wearers presenting with a painful, poorly responsive 'corneal ulcer' that isn't improving on standard antibacterial/antiviral therapy should raise suspicion for Acanthamoeba keratitis, prompting corneal scraping for confocal microscopy/culture/PCR"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by corneal scraping microscopy/culture/PCR",
+    "importantDisease": "Acanthamoeba keratitis (contact lens-associated); granulomatous amoebic encephalitis in immunocompromised hosts",
+    "importantTest": "Corneal scraping for confocal microscopy/culture on non-nutrient agar with E. coli overlay",
+    "distinguishingFeature": "A ubiquitous free-living amoeba lacking a flagellate stage, classically linked to contact-lens-associated keratitis and a slower, chronic form of amoebic encephalitis than Naegleria"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "naegleria-fowleri",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Acanthamoeba",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/parasites/acanthamoeba/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Acanthamoeba Keratitis\"",
+      "kind": "educational"
+    }
+  ]
+}

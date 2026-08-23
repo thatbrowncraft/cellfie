@@ -1,0 +1,86 @@
+{
+  "id": "zika-virus",
+  "scientificName": "Zika virus",
+  "commonName": null,
+  "category": "virus",
+  "quickTags": [
+    "Congenital microcephaly",
+    "Aedes mosquito + sexual transmission",
+    "Enveloped +ssRNA flavivirus"
+  ],
+  "genZNote": "One of the only mosquito-borne viruses that can also spread through sex — and the reason pregnancy travel advisories exist for entire countries.",
+  "searchKeywords": [
+    "zika virus outbreak",
+    "congenital zika syndrome",
+    "microcephaly virus"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Flaviviridae",
+    "genus": "Flavivirus (Orthoflavivirus)"
+  },
+  "morphology": {
+    "shape": "Enveloped icosahedral virion",
+    "size": "~40-50 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "vector-borne"
+  },
+  "habitat": {
+    "naturalHabitat": "Maintained in a mosquito-primate sylvatic cycle in parts of Africa/Asia and a mosquito-human urban cycle elsewhere",
+    "hostAssociation": "Transmitted primarily by Aedes aegypti and Aedes albopictus mosquitoes; unusually among arboviruses, also transmitted sexually and vertically (mother to fetus)",
+    "reservoir": "Humans and non-human primates"
+  },
+  "identificationClues": [
+    "Diagnosed by RT-PCR in blood/urine during acute illness, or serology (with caution given cross-reactivity with other flaviviruses like dengue)",
+    "Most infections are mild or asymptomatic — low-grade fever, maculopapular rash, conjunctivitis, and arthralgia",
+    "Congenital Zika syndrome (microcephaly and other severe brain abnormalities) occurs when infection happens during pregnancy — the defining clinical concern",
+    "Unusual for an arbovirus in also being transmitted sexually and via blood transfusion, in addition to mosquito bites"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Zika virus disease — usually mild febrile illness with rash, conjunctivitis, and arthralgia",
+      "Congenital Zika syndrome — microcephaly and other severe structural brain abnormalities when infection occurs during pregnancy",
+      "Rare association with Guillain-Barré syndrome"
+    ],
+    "transmission": "Aedes mosquito bite; also sexual transmission and vertical (mother-to-fetus) transmission, and rarely via blood transfusion",
+    "epidemiology": "Caused a major international outbreak in the Americas in 2015-2016, prompting WHO to declare a Public Health Emergency of International Concern due to the surge in congenital microcephaly cases; travel and reproductive health advisories were issued for affected regions",
+    "labSignificance": "Serologic cross-reactivity with dengue and other flaviviruses complicates interpretation, so RT-PCR is preferred during the acute viremic window, especially in pregnant patients with possible exposure"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by RT-PCR/serology",
+    "importantDisease": "Congenital Zika syndrome (microcephaly)",
+    "importantTest": "RT-PCR of blood/urine (acute phase)",
+    "distinguishingFeature": "A flavivirus uniquely capable of sexual and vertical transmission in addition to mosquito spread, causing congenital microcephaly when infection occurs during pregnancy"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "dengue-virus",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "chikungunya-virus",
+      "relationship": "same-clinical-specimen"
+    },
+    {
+      "id": "yellow-fever-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Zika Virus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/zika/"
+    },
+    {
+      "name": "World Health Organization — Zika Virus",
+      "kind": "educational"
+    }
+  ]
+}

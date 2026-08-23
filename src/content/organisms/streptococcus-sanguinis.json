@@ -1,0 +1,122 @@
+{
+  "id": "streptococcus-sanguinis",
+  "scientificName": "Streptococcus sanguinis",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Viridans group strep",
+    "Subacute endocarditis",
+    "Alpha-hemolytic"
+  ],
+  "genZNote": "Colonizes damaged heart valves after a dental cleaning — the classic viridans-strep endocarditis story.",
+  "searchKeywords": [
+    "streptococcus sanguis",
+    "subacute bacterial endocarditis bacteria",
+    "dental plaque strep"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Streptococcaceae",
+    "genus": "Streptococcus",
+    "species": "S. sanguinis"
+  },
+  "morphology": {
+    "shape": "Coccus",
+    "shapeCategory": "coccus",
+    "arrangement": "Chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-1 µm",
+    "sporeForming": false,
+    "capsule": "None to minimal",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe (aerotolerant)",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human oral cavity, particularly dental plaque and tooth surfaces",
+    "hostAssociation": "An early colonizer of dental plaque; contributes to biofilm formation alongside S. mutans",
+    "environmentalOccurrence": "Primarily host-associated rather than free-living",
+    "reservoir": "Human oral cavity/upper respiratory tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in chains",
+      "arrangement": "Chains"
+    },
+    "culture": {
+      "media": "Blood agar (5% sheep blood)",
+      "growthCharacteristics": "Facultative anaerobe; grows better with added CO2",
+      "colonyMorphology": "Small, grayish colonies",
+      "pigmentation": "None",
+      "hemolysis": "Alpha-hemolytic or non-hemolytic (viridans group), variable by strain"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "−"
+      },
+      {
+        "test": "Optochin susceptibility",
+        "result": "Resistant (distinguishes viridans strep from S. pneumoniae)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive coccus in chains, catalase negative",
+    "Alpha-hemolytic or non-hemolytic on blood agar — part of the viridans streptococcus group",
+    "Optochin resistant and bile-insoluble, distinguishing it from Streptococcus pneumoniae"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Subacute bacterial endocarditis — classic association following dental procedures causing transient bacteremia in patients with pre-existing valvular damage",
+      "Contributes to dental plaque formation"
+    ],
+    "virulenceFactors": [
+      "Dextran/glucan production contributing to plaque biofilm",
+      "Ability to bind fibrin-platelet matrices on damaged heart valves, facilitating endocarditis"
+    ],
+    "transmission": "Transient bacteremia following dental procedures or even routine tooth brushing in patients with poor oral hygiene",
+    "epidemiology": "A classic cause of subacute bacterial endocarditis in patients with underlying valvular heart disease or prosthetic valves; antibiotic prophylaxis before certain dental procedures is targeted at viridans streptococci including this species",
+    "labSignificance": "Blood cultures showing alpha-hemolytic, optochin-resistant streptococci in a patient with new murmur/fever should raise suspicion for infective endocarditis"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus in chains",
+    "keyBiochemicalReaction": "Catalase negative; alpha-hemolytic; optochin resistant",
+    "importantDisease": "Subacute bacterial endocarditis — classic association following dental procedures causing transient bacteremia in patients with pre-existing valvular damage",
+    "importantTest": "Optochin resistance and bile insolubility distinguish viridans strep from S. pneumoniae",
+    "distinguishingFeature": "The classic viridans streptococcus linked to subacute bacterial endocarditis after dental procedures in patients with damaged or prosthetic heart valves"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "streptococcus-mutans",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "streptococcus-salivarius",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "enterococcus-faecalis",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Viridans Streptococcus\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

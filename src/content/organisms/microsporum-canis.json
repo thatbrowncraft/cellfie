@@ -1,0 +1,129 @@
+{
+  "id": "microsporum-canis",
+  "scientificName": "Microsporum canis",
+  "commonName": null,
+  "category": "fungi",
+  "quickTags": [
+    "Wood's lamp fluorescence",
+    "Zoophilic dermatophyte",
+    "Spindle-shaped macroconidia"
+  ],
+  "genZNote": "Glows yellow-green under a Wood's lamp — the one dermatophyte exam question that actually has a visual answer.",
+  "searchKeywords": [
+    "tinea capitis cat",
+    "ringworm from cats",
+    "dermatophyte wood's lamp"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Onygenales",
+    "family": "Arthrodermataceae",
+    "genus": "Microsporum",
+    "species": "M. canis"
+  },
+  "morphology": {
+    "shape": "Septate hyphae with large, spindle-shaped, thick-walled macroconidia",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Macroconidia ~50-150 x 10-25 µm, multi-septate",
+    "sporeForming": false,
+    "capsule": "None",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Obligate aerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Spindle-shaped, echinulate (rough/spiny-walled) macroconidia",
+      "Occasional microconidia"
+    ],
+    "clinicalGroup": "cutaneous"
+  },
+  "habitat": {
+    "naturalHabitat": "Skin, fur, and claws of cats and dogs (zoophilic dermatophyte)",
+    "hostAssociation": "Zoonotic — cats (especially kittens) are the primary reservoir; transmitted to humans via direct animal contact",
+    "environmentalOccurrence": "Can persist on fomites (bedding, grooming tools) contaminated with infected hair/skin",
+    "reservoir": "Cats and dogs"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "KOH wet mount of skin/hair; lactophenol cotton blue of culture",
+      "appearance": "Septate hyphae; large spindle-shaped macroconidia with rough, echinulate (spiny) walls on culture",
+      "arrangement": "Individual hyphae and macroconidia"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar, dermatophyte test medium (DTM)",
+      "growthCharacteristics": "Obligate aerobe; grows over 1-2 weeks at room temperature; turns DTM red due to alkaline metabolites",
+      "colonyMorphology": "White to buff, cottony/woolly surface",
+      "pigmentation": "Yellow-orange reverse pigmentation on Sabouraud agar",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Wood's lamp examination of infected hair",
+        "result": "+ (yellow-green fluorescence)"
+      },
+      {
+        "test": "Hair perforation test",
+        "result": "+ (positive, wedge-shaped perforations)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Infected hair fluoresces bright yellow-green under a Wood's lamp — a classic bedside diagnostic clue",
+    "Large, spindle-shaped, rough-walled (echinulate) macroconidia on culture, distinguishing it from Trichophyton species",
+    "History of contact with a cat or dog, especially a kitten",
+    "Common cause of tinea capitis in children"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Tinea capitis (scalp ringworm), especially in children — can cause patchy hair loss with scaling and inflammation",
+      "Tinea corporis (body ringworm) — annular, scaly, erythematous plaques"
+    ],
+    "virulenceFactors": [
+      "Keratinase enzymes allowing invasion of keratinized tissue (hair, skin)",
+      "Ability to invade the hair shaft (ectothrix infection pattern)"
+    ],
+    "transmission": "Direct contact with an infected cat or dog, or indirectly via contaminated fomites (grooming tools, bedding)",
+    "epidemiology": "One of the most common causes of tinea capitis in children, especially where household pet exposure is common; can cause outbreaks among family members and classmates",
+    "labSignificance": "Wood's lamp fluorescence of infected hairs is a fast, useful screening tool at the bedside, though a negative Wood's lamp does not exclude all dermatophyte infections since not every species fluoresces"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — a fungus",
+    "shape": "Septate hyphae with spindle-shaped macroconidia",
+    "keyBiochemicalReaction": "Wood's lamp positive (yellow-green fluorescence)",
+    "importantDisease": "Tinea capitis in children, acquired from cats/dogs",
+    "importantTest": "Wood's lamp examination; KOH microscopy showing ectothrix hair invasion",
+    "distinguishingFeature": "A zoophilic dermatophyte from cats that fluoresces yellow-green under a Wood's lamp — unlike most Trichophyton species"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "trichophyton-mentagrophytes",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "trichophyton-rubrum",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "epidermophyton-floccosum",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Tinea Capitis\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

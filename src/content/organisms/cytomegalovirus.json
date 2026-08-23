@@ -1,0 +1,92 @@
+{
+  "id": "cytomegalovirus",
+  "scientificName": "Human betaherpesvirus 5",
+  "commonName": "Cytomegalovirus (CMV)",
+  "category": "virus",
+  "quickTags": [
+    "Owl's eye inclusion bodies",
+    "Congenital infection",
+    "Enveloped dsDNA herpesvirus"
+  ],
+  "genZNote": "The 'owl's eye' inclusion body under the microscope is basically the virus signing its own name in the tissue.",
+  "searchKeywords": [
+    "congenital cmv",
+    "cmv retinitis",
+    "cmv mononucleosis",
+    "herpesvirus 5"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Herpesviridae",
+    "genus": "Cytomegalovirus",
+    "species": "Human betaherpesvirus 5"
+  },
+  "morphology": {
+    "shape": "Enveloped icosahedral virion with a large dsDNA genome",
+    "size": "~150-200 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "dna",
+    "genomeStrandedness": "dsdna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "blood-body-fluids"
+  },
+  "habitat": {
+    "naturalHabitat": "Human host cells, particularly epithelial cells, monocytes, and their precursors, where it establishes lifelong latency",
+    "hostAssociation": "Establishes latency in monocytes/myeloid progenitor cells after primary infection, with potential for reactivation during immunosuppression",
+    "reservoir": "Latently infected humans; extremely widespread, with most adults seropositive by middle age"
+  },
+  "identificationClues": [
+    "'Owl's eye' intranuclear inclusion bodies on histopathology — a classic diagnostic clue in infected tissue",
+    "Diagnosed by PCR viral load, pp65 antigenemia assay, or serology depending on clinical context",
+    "Leading infectious cause of congenital sensorineural hearing loss and neurologic disability when transmitted in utero",
+    "Reactivates in immunocompromised hosts (transplant recipients, advanced HIV/AIDS), causing retinitis, colitis, pneumonitis, or other end-organ disease"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Usually asymptomatic or a mononucleosis-like illness in immunocompetent hosts",
+      "Congenital CMV infection — the leading infectious cause of congenital sensorineural hearing loss and can cause microcephaly and intellectual disability",
+      "CMV retinitis, colitis, esophagitis, and pneumonitis in immunocompromised patients (AIDS, transplant recipients)"
+    ],
+    "virulenceFactors": [
+      "Establishment of lifelong latency in myeloid cells, evading immune clearance",
+      "Ability to modulate MHC class I expression, impairing cytotoxic T-cell recognition of infected cells"
+    ],
+    "transmission": "Contact with infected body fluids (saliva, urine, blood, breast milk, genital secretions); vertical (congenital) transmission in utero; transplant/transfusion-associated transmission",
+    "epidemiology": "One of the most common congenital infections worldwide and a major cause of preventable childhood hearing loss; a leading opportunistic pathogen in solid organ and stem cell transplant recipients and in advanced HIV/AIDS (CD4 <50 cells/µL for CMV retinitis)",
+    "labSignificance": "Quantitative PCR viral load is used both for diagnosis and for monitoring response to antiviral therapy in immunocompromised patients, particularly post-transplant"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by PCR/antigenemia/serology",
+    "importantDisease": "Congenital CMV (leading infectious cause of congenital hearing loss); CMV retinitis/colitis in immunocompromised hosts",
+    "importantTest": "Quantitative PCR viral load; pp65 antigenemia; histopathology showing owl's eye inclusions",
+    "distinguishingFeature": "A herpesvirus producing 'owl's eye' intranuclear inclusions, the leading infectious cause of congenital hearing loss, and a classic reactivation pathogen in transplant/AIDS patients"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "epstein-barr-virus",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "herpes-simplex-virus-1",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "varicella-zoster-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Cytomegalovirus (CMV)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/cmv/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Cytomegalovirus\"",
+      "kind": "educational"
+    }
+  ]
+}

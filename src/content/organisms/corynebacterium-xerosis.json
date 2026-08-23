@@ -1,0 +1,113 @@
+{
+  "id": "corynebacterium-xerosis",
+  "scientificName": "Corynebacterium xerosis",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Diphtheroid",
+    "Catalase positive",
+    "Non-toxigenic skin flora"
+  ],
+  "genZNote": "Looks like C. diphtheriae under the microscope, tests negative on the toxin assay that actually matters.",
+  "searchKeywords": [
+    "diphtheroid",
+    "skin commensal corynebacterium",
+    "non-toxigenic corynebacterium"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Actinomycetota (Actinobacteria)",
+    "class": "Actinomycetes",
+    "order": "Mycobacteriales",
+    "family": "Corynebacteriaceae",
+    "genus": "Corynebacterium",
+    "species": "C. xerosis"
+  },
+  "morphology": {
+    "shape": "Pleomorphic rod, club-shaped ends",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "Palisades and 'Chinese letter' angular arrangements",
+    "arrangementCategory": "palisades",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~2-6 x 0.3-0.8 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human skin and mucous membranes",
+    "hostAssociation": "Normal commensal ('diphtheroid') flora of the skin and upper respiratory tract",
+    "environmentalOccurrence": "Primarily host-associated",
+    "reservoir": "Human skin"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain, Loeffler methylene blue for metachromatic granules",
+      "appearance": "Gram-positive pleomorphic rods with club-shaped ends",
+      "arrangement": "Palisades, 'Chinese letters'"
+    },
+    "culture": {
+      "media": "Blood agar, Loeffler's serum medium",
+      "growthCharacteristics": "Facultative anaerobe, grows readily on routine media unlike some fastidious Corynebacterium species",
+      "colonyMorphology": "Small, white to grayish, dry colonies",
+      "pigmentation": "None to slightly yellow",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Elek test (toxigenicity)",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive pleomorphic rod in palisades/'Chinese letter' pattern, catalase positive",
+    "Non-toxigenic — Elek test negative, unlike Corynebacterium diphtheriae",
+    "Part of normal skin/mucosal 'diphtheroid' flora",
+    "Grows readily on blood agar and Loeffler's medium"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Usually non-pathogenic; rare opportunistic infections (bacteremia, endocarditis, catheter-related infection) primarily in immunocompromised or line-associated patients"
+    ],
+    "virulenceFactors": [
+      "None equivalent to diphtheria toxin — non-toxigenic"
+    ],
+    "transmission": "Endogenous skin flora; opportunistic spread via breaks in skin or indwelling devices",
+    "epidemiology": "Frequently isolated as a skin contaminant in blood cultures, complicating interpretation of true bacteremia versus contamination",
+    "labSignificance": "Distinguishing a diphtheroid contaminant from a clinically significant Corynebacterium isolate (and from toxigenic C. diphtheriae) relies on repeat cultures, clinical context, and the Elek toxigenicity test"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Pleomorphic rod, club-shaped",
+    "keyBiochemicalReaction": "Catalase positive; Elek test negative (non-toxigenic)",
+    "importantDisease": "Rarely pathogenic — normal skin diphtheroid flora",
+    "importantTest": "Elek test to rule out toxin production and exclude C. diphtheriae",
+    "distinguishingFeature": "A non-toxigenic diphtheroid that mimics C. diphtheriae morphologically but lacks the diphtheria toxin gene"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "corynebacterium-diphtheriae",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Corynebacterium\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

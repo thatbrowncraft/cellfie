@@ -1,0 +1,133 @@
+{
+  "id": "proteus-vulgaris",
+  "scientificName": "Proteus vulgaris",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Swarming motility",
+    "Urease positive",
+    "Indole positive"
+  ],
+  "genZNote": "Indole positive is the whole difference between this and P. mirabilis — both swarm across the plate like they own it.",
+  "searchKeywords": [
+    "swarming bacteria",
+    "struvite stones bacteria",
+    "urease positive rod"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Morganellaceae",
+    "genus": "Proteus",
+    "species": "P. vulgaris"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus), pleomorphic during swarming",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-3 x 0.4-0.8 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Highly motile (peritrichous flagella) — characteristic swarming motility on agar",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human and animal GI tract; widely distributed in soil, water, and decaying organic matter",
+    "hostAssociation": "Normal gut flora in some individuals; opportunistic pathogen",
+    "environmentalOccurrence": "Common in soil, sewage, and decomposing matter",
+    "reservoir": "Human GI tract and environment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar, blood agar",
+      "growthCharacteristics": "Facultative anaerobe; characteristic concentric-ring 'swarming' growth pattern on non-inhibitory agar",
+      "colonyMorphology": "Non-lactose-fermenting colonies; swarms in a thin film across blood agar unless swarming is suppressed",
+      "pigmentation": "None",
+      "hemolysis": "Variable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Urease",
+        "result": "+ (rapid)"
+      },
+      {
+        "test": "Indole",
+        "result": "+"
+      },
+      {
+        "test": "H2S production",
+        "result": "+"
+      },
+      {
+        "test": "Phenylalanine deaminase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative rod with characteristic swarming motility across agar surfaces",
+    "Rapid urease positive — predisposes to struvite (staghorn) kidney stones by alkalinizing urine",
+    "Indole positive — distinguishes P. vulgaris from P. mirabilis (indole negative)",
+    "Phenylalanine deaminase positive, a genus-defining Proteus/Morganellaceae trait"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Urinary tract infections, often associated with struvite/staghorn calculi",
+      "Wound and soft tissue infections",
+      "Occasional bacteremia in hospitalized or catheterized patients"
+    ],
+    "virulenceFactors": [
+      "Urease — hydrolyzes urea to ammonia, alkalinizing urine and promoting struvite stone formation",
+      "Swarming motility and fimbriae aiding colonization of the urinary tract",
+      "Flagella-mediated motility facilitating ascending UTI"
+    ],
+    "transmission": "Endogenous gut flora; catheter-associated or healthcare-associated transmission",
+    "epidemiology": "A recognized cause of complicated and catheter-associated UTIs, particularly linked to struvite stone formation via urease activity",
+    "labSignificance": "Indole testing separates P. vulgaris from the more commonly encountered P. mirabilis; swarming can obscure other organisms on a mixed culture plate"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Urease positive (rapid), indole positive",
+    "importantDisease": "UTI with struvite/staghorn calculi",
+    "importantTest": "Indole test (positive) distinguishes from P. mirabilis; rapid urease test",
+    "distinguishingFeature": "Swarming, urease-positive, indole-positive Gram-negative rod — indole positivity is the key differentiator from P. mirabilis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "proteus-mirabilis",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Proteus\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "vibrio-vulnificus",
+  "scientificName": "Vibrio vulnificus",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Halophilic",
+    "Oxidase positive",
+    "Necrotizing wound infection"
+  ],
+  "genZNote": "Raw oysters plus a cut on your leg is exactly the combination this organism is waiting for.",
+  "searchKeywords": [
+    "raw oyster bacteria",
+    "necrotizing fasciitis seawater",
+    "flesh eating bacteria seawater"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Vibrionales",
+    "family": "Vibrionaceae",
+    "genus": "Vibrio",
+    "species": "V. vulnificus"
+  },
+  "morphology": {
+    "shape": "Curved rod (comma-shaped)",
+    "shapeCategory": "spiral",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1.5-3 x 0.5-0.8 µm",
+    "sporeForming": false,
+    "capsule": "Polysaccharide capsule in virulent strains",
+    "encapsulated": true,
+    "motility": "Motile (single polar flagellum)",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Warm coastal seawater and brackish estuarine water",
+    "hostAssociation": "Not a human commensal; acquired via seafood consumption or wound exposure to seawater",
+    "environmentalOccurrence": "Concentrates in filter-feeding shellfish (especially oysters) from warm coastal waters, particularly in summer months",
+    "reservoir": "Warm marine/estuarine water and shellfish"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative curved (comma-shaped) rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "TCBS (thiosulfate-citrate-bile salts-sucrose) agar, blood agar with added salt",
+      "growthCharacteristics": "Halophilic — requires or strongly prefers a salt-supplemented medium; facultative anaerobe",
+      "colonyMorphology": "Green colonies on TCBS agar (sucrose non-fermenter, unlike V. cholerae)",
+      "pigmentation": "None",
+      "hemolysis": "Beta-hemolytic on blood agar"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Sucrose fermentation (TCBS)",
+        "result": "−"
+      },
+      {
+        "test": "Salt (NaCl) requirement",
+        "result": "Halophilic — grows best with added salt"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative, oxidase-positive, comma-shaped halophilic rod",
+    "Green (sucrose-negative) colonies on TCBS agar, distinguishing it from the yellow (sucrose-fermenting) colonies of V. cholerae",
+    "Rapid, severe wound infections after seawater exposure, or septicemia after raw shellfish (especially oyster) consumption",
+    "Particularly severe/fatal in patients with liver disease or iron overload conditions (e.g., hemochromatosis)"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Severe wound infections/cellulitis, which can progress rapidly to necrotizing fasciitis",
+      "Primary septicemia after ingestion of raw or undercooked shellfish, especially oysters",
+      "Gastroenteritis (milder, self-limited form)"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule — antiphagocytic, key to bloodstream survival",
+      "Cytolysin/hemolysin toxins contributing to tissue necrosis",
+      "Enhanced iron acquisition — explains markedly increased severity in patients with iron overload (e.g., hemochromatosis) or chronic liver disease"
+    ],
+    "transmission": "Ingestion of raw/undercooked shellfish (especially oysters) or wound exposure to warm seawater",
+    "epidemiology": "One of the most lethal foodborne pathogens by case-fatality rate for septicemia, particularly in patients with underlying liver disease; incidence rising with warming coastal waters",
+    "labSignificance": "A rapidly progressive wound infection or sepsis following seawater exposure or raw shellfish consumption should prompt urgent consideration of V. vulnificus, especially in a patient with liver disease"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Curved rod (comma-shaped)",
+    "keyBiochemicalReaction": "Oxidase positive, sucrose non-fermenter on TCBS (green colonies)",
+    "importantDisease": "Necrotizing wound infection and fulminant septicemia after raw oyster consumption",
+    "importantTest": "TCBS agar (green, sucrose-negative colonies); history of seawater/shellfish exposure is a key clinical clue",
+    "distinguishingFeature": "A halophilic Vibrio causing rapidly fatal septicemia in patients with liver disease/iron overload after raw oyster consumption or seawater wound exposure"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "vibrio-cholerae",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "vibrio-parahaemolyticus",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Vibrio vulnificus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/vibrio/vibrio-vulnificus.html"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Vibrio Vulnificus\"",
+      "kind": "educational"
+    }
+  ]
+}

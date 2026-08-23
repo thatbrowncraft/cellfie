@@ -1,0 +1,108 @@
+{
+  "id": "cyclospora-cayetanensis",
+  "scientificName": "Cyclospora cayetanensis",
+  "commonName": null,
+  "category": "protozoa",
+  "quickTags": [
+    "Autofluorescent oocysts",
+    "Fecal-oral via produce",
+    "Modified acid-fast stain"
+  ],
+  "genZNote": "Its oocysts glow blue-green under UV light — which is exactly how a stool sample gives it away.",
+  "searchKeywords": [
+    "cyclosporiasis",
+    "imported berries diarrhea",
+    "prolonged watery diarrhea parasite"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Protista",
+    "phylum": "Apicomplexa",
+    "class": "Conoidasida",
+    "order": "Eucoccidiorida",
+    "family": "Eimeriidae",
+    "genus": "Cyclospora",
+    "species": "C. cayetanensis"
+  },
+  "morphology": {
+    "shape": "Spherical oocysts",
+    "size": "Oocysts ~8-10 µm diameter"
+  },
+  "protozoanDetails": {
+    "group": "apicomplexan",
+    "lifeCycleStages": [
+      "Unsporulated oocyst (passed in stool, non-infective until it sporulates in the environment)",
+      "Sporulated oocyst (infective form, ingested)",
+      "Intracellular development within small intestinal epithelium"
+    ],
+    "majorLocation": "intestinal",
+    "transmissionRoute": "fecal-oral"
+  },
+  "habitat": {
+    "naturalHabitat": "Human small intestine",
+    "hostAssociation": "Humans appear to be the only known host",
+    "environmentalOccurrence": "Oocysts must sporulate in the environment (days to weeks, depending on conditions) before becoming infectious, so direct person-to-person transmission is unlikely",
+    "reservoir": "Contaminated water and fresh produce (classically imported berries, herbs, and leafy greens)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Modified acid-fast stain of stool; UV fluorescence microscopy",
+      "appearance": "Oocysts are acid-fast variable (often appear as wrinkled, non-uniform spheres) and demonstrate blue-green autofluorescence under UV light, a distinguishing feature from Cryptosporidium",
+      "arrangement": "Free oocysts in stool"
+    },
+    "culture": {
+      "media": "Not routinely cultured",
+      "growthCharacteristics": "Diagnosis relies on stool microscopy/staining rather than culture"
+    },
+    "biochemicalTests": [
+      {
+        "test": "PCR of stool",
+        "result": "Increasingly used, more sensitive than microscopy alone"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Spherical oocysts (~8-10 µm, larger than Cryptosporidium) on modified acid-fast stain of stool",
+    "Distinctive blue-green autofluorescence under ultraviolet microscopy",
+    "Prolonged, relapsing watery diarrhea, sometimes lasting weeks and fluctuating in severity",
+    "Classic outbreaks linked to imported fresh produce, especially raspberries, basil, and other leafy herbs"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Cyclosporiasis — watery diarrhea, often prolonged or relapsing/remitting over weeks, with fatigue, anorexia, and weight loss; can be more severe and persistent in immunocompromised patients"
+    ],
+    "virulenceFactors": [
+      "Invasion and disruption of small intestinal epithelial cells, impairing normal absorption"
+    ],
+    "transmission": "Fecal-oral, primarily via contaminated food (especially imported fresh produce like berries, basil, and lettuce) or water; oocysts require time in the environment to sporulate and become infectious, making direct person-to-person spread unlikely",
+    "epidemiology": "Recurrent source of seasonal foodborne outbreaks in North America and Europe, frequently traced to imported fresh produce from endemic regions",
+    "labSignificance": "Distinguishing Cyclospora from the smaller, similarly acid-fast Cryptosporidium relies on oocyst size and characteristic UV autofluorescence; PCR panels are increasingly used for more sensitive detection"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by stool microscopy/PCR",
+    "importantDisease": "Cyclosporiasis — prolonged, relapsing watery diarrhea",
+    "importantTest": "Modified acid-fast stain with UV autofluorescence of stool",
+    "distinguishingFeature": "An acid-fast, UV-autofluorescent intestinal parasite classically linked to outbreaks from imported fresh produce, causing unusually prolonged/relapsing diarrhea"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "cryptosporidium-parvum",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "cystoisospora-belli",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Cyclosporiasis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/dpdx/cyclosporiasis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Cyclospora\"",
+      "kind": "educational"
+    }
+  ]
+}

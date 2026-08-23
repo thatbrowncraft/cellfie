@@ -1,0 +1,118 @@
+{
+  "id": "lactococcus-lactis",
+  "scientificName": "Lactococcus lactis",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Catalase negative",
+    "Dairy starter culture",
+    "Rarely pathogenic"
+  ],
+  "genZNote": "Catalase negative, cheese-industry royalty, and about as far from a hospital pathogen as a Gram-positive coccus gets.",
+  "searchKeywords": [
+    "cheese bacteria",
+    "buttermilk starter culture",
+    "dairy fermentation",
+    "streptococcus lactis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Streptococcaceae",
+    "genus": "Lactococcus",
+    "species": "L. lactis"
+  },
+  "morphology": {
+    "shape": "Coccus, often ovoid",
+    "shapeCategory": "coccus",
+    "arrangement": "Pairs and short chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-1.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe (aerotolerant lactic acid bacterium)",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Plant surfaces and raw milk; historically classified under 'Streptococcus lactis' before reclassification",
+    "hostAssociation": "Not a normal human commensal — essentially non-pathogenic",
+    "environmentalOccurrence": "Used worldwide as a starter culture for cheese, buttermilk, and other fermented dairy products",
+    "reservoir": "Plants and dairy environments rather than an animal/human reservoir"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in pairs and short chains",
+      "arrangement": "Pairs/chains"
+    },
+    "culture": {
+      "media": "M17 agar (industrial dairy microbiology) or standard blood agar",
+      "growthCharacteristics": "Facultative anaerobe; grows well at 30°37°C",
+      "colonyMorphology": "Small, smooth, white to gray colonies",
+      "pigmentation": "None",
+      "hemolysis": "Generally non-hemolytic (gamma)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "−"
+      },
+      {
+        "test": "Lactic acid fermentation",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive, catalase-negative coccus in pairs/chains",
+    "Non-hemolytic on blood agar",
+    "Central organism in cheese and buttermilk fermentation (converts lactose to lactic acid)",
+    "Almost never recovered as a clinical pathogen"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Essentially non-pathogenic; rare case reports of opportunistic bacteremia/endocarditis in patients with significant comorbidities"
+    ],
+    "virulenceFactors": [
+      "None of clinical significance"
+    ],
+    "transmission": "Not a human-to-human pathogen — encountered via food fermentation, not infection",
+    "epidemiology": "One of the most industrially important bacteria in the world via cheese, yogurt-adjacent, and buttermilk production; also a widely used genetic model organism for lactic acid bacteria",
+    "labSignificance": "A catalase-negative Gram-positive coccus recovered from a clinical specimen should prompt consideration of viridans streptococci/enterococci first, given how rarely Lactococcus causes disease"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus, pairs/chains",
+    "keyBiochemicalReaction": "Catalase negative; ferments lactose to lactic acid",
+    "importantDisease": "Not a significant human pathogen — industrial dairy starter culture",
+    "importantTest": "Catalase test (negative); non-hemolytic on blood agar",
+    "distinguishingFeature": "The lactic acid bacterium behind cheese and buttermilk fermentation, formerly classified as Streptococcus lactis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "lactobacillus-acidophilus",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "streptococcus-salivarius",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Lactococcus\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

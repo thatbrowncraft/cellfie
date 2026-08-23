@@ -1,0 +1,124 @@
+{
+  "id": "francisella-tularensis",
+  "scientificName": "Francisella tularensis",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Highly infectious",
+    "Bioterrorism agent",
+    "Zoonotic (rabbits/ticks)"
+  ],
+  "genZNote": "As few as 10-50 organisms can make you sick — which is exactly why it's a Tier 1 select agent and not something you culture casually.",
+  "searchKeywords": [
+    "tularemia",
+    "rabbit fever",
+    "tick-borne bioterrorism agent"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Thiotrichales",
+    "family": "Francisellaceae",
+    "genus": "Francisella",
+    "species": "F. tularensis"
+  },
+  "morphology": {
+    "shape": "Tiny coccobacillus",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.2-0.7 µm",
+    "sporeForming": false,
+    "capsule": "Thin lipid capsule",
+    "encapsulated": true,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Wild rabbits, rodents, and other small mammals; ticks and deer flies serve as vectors",
+    "hostAssociation": "Zoonotic — rabbits and rodents are the primary reservoir, with tick/deer fly bites as key transmission routes",
+    "environmentalOccurrence": "Can also survive in contaminated water, soil, and carcasses",
+    "reservoir": "Rabbits, rodents, ticks, and deer flies"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain (stains poorly); direct fluorescent antibody testing preferred",
+      "appearance": "Tiny, faintly staining Gram-negative coccobacilli",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Cysteine-enriched media (e.g., chocolate agar with added cysteine, or BCYE agar)",
+      "growthCharacteristics": "Obligate aerobe; fastidious, requires cysteine/cystine supplementation and BSL-3 handling due to extreme infectivity",
+      "colonyMorphology": "Small, gray-white, opaque colonies after 2-4 days",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "Weakly positive"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Cysteine/cystine requirement for growth",
+        "result": "+ (required)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Tiny, faintly staining Gram-negative coccobacillus requiring cysteine-enriched media to grow",
+    "Extremely low infectious dose — as few as 10-50 organisms can cause disease via inhalation",
+    "Ulceroglandular presentation (skin ulcer with regional lymphadenopathy) is the most common clinical form",
+    "Classified as a Tier 1 Select Agent/potential bioterrorism agent due to its high infectivity"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Tularemia ('rabbit fever') — ulceroglandular form most common (skin ulcer at inoculation site with tender regional lymphadenopathy); also pneumonic, oculoglandular, oropharyngeal, and typhoidal forms"
+    ],
+    "virulenceFactors": [
+      "Facultative intracellular survival within macrophages",
+      "Antiphagocytic capsule",
+      "Extremely low infectious dose contributing to high infectivity via aerosol"
+    ],
+    "transmission": "Tick or deer fly bites, direct contact with infected animal tissue (e.g., skinning rabbits), inhalation of contaminated aerosols/dust, or ingestion of contaminated water/undercooked meat",
+    "epidemiology": "Endemic in parts of North America, Europe, and Asia; a recognized potential bioterrorism agent due to its extreme infectivity via the aerosol route, prompting Tier 1 Select Agent classification",
+    "labSignificance": "Laboratory personnel must be alerted before processing suspected Francisella specimens — routine bench manipulation poses a serious aerosol infection risk, and cultures should be handled under BSL-3 conditions"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Coccobacillus",
+    "keyBiochemicalReaction": "Requires cysteine/cystine for growth",
+    "importantDisease": "Tularemia (rabbit fever) — ulceroglandular form most common",
+    "importantTest": "Serology; culture only in a BSL-3 laboratory alerted in advance",
+    "distinguishingFeature": "One of the most infectious bacteria known (as few as 10-50 organisms), transmitted from rabbits/rodents via ticks, and a recognized Tier 1 bioterrorism agent"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "brucella-melitensis",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "yersinia-pestis",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Tularemia",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/tularemia/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Tularemia\"",
+      "kind": "educational"
+    }
+  ]
+}

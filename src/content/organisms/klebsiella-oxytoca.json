@@ -1,0 +1,137 @@
+{
+  "id": "klebsiella-oxytoca",
+  "scientificName": "Klebsiella oxytoca",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Indole positive",
+    "Lactose fermenter",
+    "Encapsulated"
+  ],
+  "genZNote": "Basically K. pneumoniae's indole-positive sibling — same mucoid vibe, one extra test tells them apart.",
+  "searchKeywords": [
+    "antibiotic-associated colitis",
+    "klebsiella uti",
+    "hemorrhagic colitis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Enterobacteriaceae",
+    "genus": "Klebsiella",
+    "species": "K. oxytoca"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells or pairs",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1-2 x 0.5 µm",
+    "sporeForming": false,
+    "capsule": "Prominent polysaccharide capsule",
+    "encapsulated": true,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human gastrointestinal tract; also found in soil and water",
+    "hostAssociation": "Normal gut flora in some individuals; opportunistic pathogen in healthcare settings",
+    "environmentalOccurrence": "Found in soil, water, and on plants",
+    "reservoir": "Human GI tract and hospital environment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods, often with a visible capsule (India ink or negative staining)",
+      "arrangement": "Singly or in pairs"
+    },
+    "culture": {
+      "media": "MacConkey agar",
+      "growthCharacteristics": "Rapid growth, facultative anaerobe",
+      "colonyMorphology": "Large, mucoid, pink (lactose-fermenting) colonies",
+      "pigmentation": "None",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "−"
+      },
+      {
+        "test": "Indole",
+        "result": "+"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "+"
+      },
+      {
+        "test": "Voges-Proskauer",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-negative encapsulated rod, mucoid pink colonies on MacConkey (lactose fermenter)",
+    "Indole positive — the key biochemical test that distinguishes it from Klebsiella pneumoniae (indole negative)",
+    "Non-motile, like other Klebsiella species",
+    "Associated with antibiotic-associated hemorrhagic colitis via cytotoxin production"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Urinary tract infections",
+      "Healthcare-associated pneumonia and bacteremia",
+      "Antibiotic-associated hemorrhagic colitis (a distinctive association for this species)"
+    ],
+    "virulenceFactors": [
+      "Polysaccharide capsule — antiphagocytic",
+      "Cytotoxin production implicated in antibiotic-associated colitis",
+      "Can acquire extended-spectrum beta-lactamases and carbapenemases"
+    ],
+    "toxins": [
+      "Tilivalline — a cytotoxin linked to antibiotic-associated hemorrhagic colitis"
+    ],
+    "transmission": "Endogenous gut flora; healthcare-associated transmission via hands/devices in hospitalized patients",
+    "epidemiology": "A less common but clinically important cause of nosocomial infections; increasingly reported with multidrug-resistant, carbapenemase-producing strains",
+    "labSignificance": "Indole positivity is the standard test distinguishing K. oxytoca from the more common K. pneumoniae"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Indole positive, lactose fermenter",
+    "importantDisease": "UTI, nosocomial pneumonia; antibiotic-associated hemorrhagic colitis",
+    "importantTest": "Indole test (positive) — distinguishes from K. pneumoniae",
+    "distinguishingFeature": "Indole-positive Klebsiella — otherwise very similar to K. pneumoniae but linked to antibiotic-associated colitis via tilivalline toxin"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "klebsiella-pneumoniae",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "escherichia-coli",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Klebsiella",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/klebsiella/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Klebsiella\"",
+      "kind": "educational"
+    }
+  ]
+}

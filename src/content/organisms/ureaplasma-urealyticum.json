@@ -1,0 +1,120 @@
+{
+  "id": "ureaplasma-urealyticum",
+  "scientificName": "Ureaplasma urealyticum",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "No cell wall",
+    "Urease positive",
+    "Genital mycoplasma"
+  ],
+  "genZNote": "No cell wall means beta-lactams do absolutely nothing to it — and the urea-splitting is right there in the name.",
+  "searchKeywords": [
+    "genital mycoplasma",
+    "nongonococcal urethritis",
+    "chorioamnionitis bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Mycoplasmatota",
+    "class": "Mollicutes",
+    "order": "Mycoplasmatales",
+    "family": "Mycoplasmataceae",
+    "genus": "Ureaplasma",
+    "species": "U. urealyticum"
+  },
+  "morphology": {
+    "shape": "Highly pleomorphic — lacks a cell wall entirely",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "No fixed arrangement",
+    "arrangementCategory": "single",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~0.1-0.3 µm — among the smallest known free-living bacteria",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe",
+    "notes": "Lacks a peptidoglycan cell wall entirely (like Mycoplasma) — does not Gram stain and is intrinsically resistant to beta-lactam antibiotics"
+  },
+  "habitat": {
+    "naturalHabitat": "Human genitourinary tract mucosa",
+    "hostAssociation": "Can be a normal genital tract commensal or an opportunistic pathogen, particularly in the neonatal and reproductive context",
+    "environmentalOccurrence": "Primarily host-associated; sexually transmitted between adults",
+    "reservoir": "Human genital tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Does not Gram stain (no cell wall); not typically visualized directly",
+      "appearance": "Not applicable on routine microscopy",
+      "arrangement": "Not applicable"
+    },
+    "culture": {
+      "media": "Specialized broth/agar (e.g., 10B broth, A8 agar) containing urea and serum",
+      "growthCharacteristics": "Fastidious; requires special media and CO2-enriched atmosphere; distinguished from Mycoplasma by urease production",
+      "colonyMorphology": "Very small colonies, sometimes described as tiny 'fried egg'-like colonies under magnification, though generally smaller/less distinct than Mycoplasma colonies",
+      "pigmentation": "None"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Urease",
+        "result": "+ (defining biochemical feature of the genus)"
+      },
+      {
+        "test": "Growth requiring cholesterol-supplemented media",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Lacks a cell wall entirely — does not Gram stain and is intrinsically resistant to penicillins/cephalosporins",
+    "Urease positive — the defining biochemical feature that distinguishes the genus from Mycoplasma",
+    "Recovered from genital tract specimens using specialized culture media (10B broth/A8 agar) or PCR",
+    "Associated with adverse neonatal outcomes when transmitted vertically to preterm infants"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Nongonococcal urethritis in men",
+      "Associated with chorioamnionitis and preterm birth",
+      "Neonatal complications in preterm infants, including bronchopulmonary dysplasia and, rarely, meningitis"
+    ],
+    "virulenceFactors": [
+      "Urease production, generating ammonia that may contribute to tissue irritation and possibly urinary stone formation",
+      "Lack of a cell wall, allowing intracellular-adjacent persistence and intrinsic antibiotic resistance to cell-wall-targeting drugs"
+    ],
+    "transmission": "Sexual contact in adults; vertical transmission from mother to fetus/neonate (in utero or during vaginal delivery)",
+    "epidemiology": "A frequent genital tract commensal in sexually active adults, making causal attribution to disease sometimes difficult; of particular concern in preterm neonates due to associations with chorioamnionitis and neonatal lung disease",
+    "labSignificance": "Because Ureaplasma lacks a cell wall, beta-lactam antibiotics (penicillins, cephalosporins) are completely ineffective — macrolides, tetracyclines, or fluoroquinolones are used instead"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — no cell wall",
+    "shape": "Pleomorphic, no fixed shape",
+    "keyBiochemicalReaction": "Urease positive",
+    "importantDisease": "Nongonococcal urethritis; neonatal complications in preterm infants",
+    "importantTest": "Culture on specialized urea-containing media (10B/A8) or PCR",
+    "distinguishingFeature": "A cell-wall-less genital mycoplasma distinguished from Mycoplasma by urease production — intrinsically resistant to all beta-lactam antibiotics"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "mycoplasma-pneumoniae",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "chlamydia-trachomatis",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Ureaplasma\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

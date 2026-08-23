@@ -1,0 +1,124 @@
+{
+  "id": "chlamydia-trachomatis",
+  "scientificName": "Chlamydia trachomatis",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Obligate intracellular",
+    "Most common bacterial STI",
+    "NAAT diagnosis"
+  ],
+  "genZNote": "No peptidoglycan, no independent metabolism, no standard culture — it's basically an intracellular freeloader that also happens to be the most common bacterial STI on the planet.",
+  "searchKeywords": [
+    "chlamydia infection",
+    "trachoma",
+    "lymphogranuloma venereum",
+    "nongonococcal urethritis",
+    "pid bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Chlamydiota",
+    "class": "Chlamydiia",
+    "order": "Chlamydiales",
+    "family": "Chlamydiaceae",
+    "genus": "Chlamydia",
+    "species": "C. trachomatis"
+  },
+  "morphology": {
+    "shape": "Small coccoid/spherical elementary and reticulate bodies",
+    "shapeCategory": "coccus",
+    "arrangement": "Intracellular inclusions",
+    "arrangementCategory": "single",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Elementary body ~0.3 µm; reticulate body ~0.5-1 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate intracellular — relies entirely on host cell ATP (an 'energy parasite'); not classically categorized by free-living oxygen requirement",
+    "notes": "Lacks a classical peptidoglycan layer (no muramic acid) despite having a Gram-negative-type outer membrane; does not reliably Gram stain"
+  },
+  "habitat": {
+    "naturalHabitat": "Obligate intracellular — infects columnar/transitional epithelial cells of the genital tract, conjunctiva, and respiratory tract",
+    "hostAssociation": "Human-restricted obligate intracellular pathogen",
+    "environmentalOccurrence": "Cannot survive or replicate outside host cells; the elementary body is the environmentally stable, infectious extracellular form",
+    "reservoir": "Infected humans"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Giemsa or iodine staining of intracytoplasmic inclusions (historical); immunofluorescence with fluorescent antibody",
+      "appearance": "Intracytoplasmic inclusion bodies within infected epithelial cells",
+      "arrangement": "Intracellular inclusions"
+    },
+    "culture": {
+      "media": "McCoy cell culture (required — cannot be grown on standard bacteriologic media)",
+      "growthCharacteristics": "Obligate intracellular; biphasic developmental cycle (infectious elementary body → metabolically active reticulate body → new elementary bodies)",
+      "colonyMorphology": "Not applicable — forms intracellular inclusions rather than colonies",
+      "pigmentation": "Not applicable"
+    },
+    "biochemicalTests": []
+  },
+  "identificationClues": [
+    "Obligate intracellular organism — cannot be cultured on standard bacteriologic media; requires cell culture (McCoy cells) if culture is attempted at all",
+    "Nucleic acid amplification testing (NAAT) is the diagnostic gold standard on urine or genital swab specimens",
+    "Unique biphasic life cycle: infectious elementary body converts to a metabolically active reticulate body inside the host cell",
+    "Serovars A-C cause trachoma (leading infectious cause of blindness worldwide); D-K cause genital tract infection; L1-L3 cause lymphogranuloma venereum"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Nongonococcal urethritis/cervicitis — the most common bacterial sexually transmitted infection",
+      "Pelvic inflammatory disease, which can lead to infertility and ectopic pregnancy",
+      "Trachoma (serovars A-C) — leading infectious cause of blindness worldwide",
+      "Lymphogranuloma venereum (serovars L1-L3)",
+      "Neonatal conjunctivitis and pneumonia acquired during vaginal delivery"
+    ],
+    "virulenceFactors": [
+      "Obligate intracellular lifestyle evading extracellular immune defenses",
+      "Inhibition of phagosome-lysosome fusion within the host cell",
+      "Type III secretion system injecting effector proteins into host cells"
+    ],
+    "transmission": "Sexual contact (genital serovars); perinatal transmission during vaginal delivery (neonatal conjunctivitis/pneumonia); trachoma serovars spread via direct/fomite contact with eye or nose secretions, often facilitated by flies in endemic areas",
+    "epidemiology": "The most commonly reported bacterial sexually transmitted infection in many countries; often asymptomatic, which contributes to ongoing transmission and delayed diagnosis of complications like PID and infertility",
+    "labSignificance": "NAAT has replaced culture and antigen testing as the diagnostic standard due to far superior sensitivity; co-testing for Neisseria gonorrhoeae is routine given frequent co-infection"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — obligate intracellular, lacks classical peptidoglycan",
+    "shape": "Small coccoid elementary/reticulate bodies",
+    "keyBiochemicalReaction": "Not applicable — NAAT-based diagnosis",
+    "importantDisease": "Most common bacterial STI; leading infectious cause of blindness (trachoma, serovars A-C)",
+    "importantTest": "Nucleic acid amplification test (NAAT) of urine or genital swab",
+    "distinguishingFeature": "An obligate intracellular 'energy parasite' with a unique elementary-body/reticulate-body life cycle, diagnosed by NAAT rather than culture"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "neisseria-gonorrhoeae",
+      "relationship": "same-clinical-specimen"
+    },
+    {
+      "id": "ureaplasma-urealyticum",
+      "relationship": "same-clinical-specimen"
+    },
+    {
+      "id": "mycoplasma-pneumoniae",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Chlamydia",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/chlamydia/"
+    },
+    {
+      "name": "World Health Organization — Trachoma",
+      "kind": "educational"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Chlamydia Trachomatis\"",
+      "kind": "educational"
+    }
+  ]
+}

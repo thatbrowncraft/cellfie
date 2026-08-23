@@ -1,0 +1,73 @@
+{
+  "id": "norovirus",
+  "scientificName": "Norovirus",
+  "commonName": null,
+  "category": "virus",
+  "quickTags": [
+    "Non-enveloped",
+    "Leading cause of viral gastroenteritis",
+    "Highly contagious"
+  ],
+  "genZNote": "It takes fewer than 20 viral particles to infect you — which is exactly why one sick person can take down an entire cruise ship.",
+  "searchKeywords": [
+    "norovirus outbreak",
+    "cruise ship stomach bug",
+    "viral gastroenteritis",
+    "stomach flu virus"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Caliciviridae",
+    "genus": "Norovirus"
+  },
+  "morphology": {
+    "shape": "Small, non-enveloped icosahedral virion",
+    "size": "~27-40 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "non-enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "fecal-oral"
+  },
+  "habitat": {
+    "naturalHabitat": "Human gastrointestinal tract",
+    "hostAssociation": "Infects intestinal epithelial cells; humans are the primary reservoir",
+    "reservoir": "Infected humans, including those shedding virus for weeks after symptoms resolve"
+  },
+  "identificationClues": [
+    "Diagnosed by RT-PCR of stool (the standard method, since the virus is difficult to culture routinely)",
+    "Extremely low infectious dose (as few as 10-20 viral particles) and prolonged environmental persistence drive rapid outbreaks",
+    "Classic setting: cruise ships, nursing homes, schools, and other closed/crowded communal settings",
+    "Acute onset of vomiting and watery, non-bloody diarrhea, usually resolving within 24-72 hours"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Acute viral gastroenteritis — sudden-onset vomiting, watery diarrhea, abdominal cramps, and low-grade fever, typically self-limited"
+    ],
+    "transmission": "Fecal-oral route, including person-to-person contact, contaminated food/water, and contaminated surfaces/fomites; can also aerosolize during vomiting",
+    "epidemiology": "The leading cause of acute gastroenteritis outbreaks worldwide across all age groups, notoriously associated with cruise ships, healthcare facilities, and schools due to its very low infectious dose and environmental hardiness",
+    "labSignificance": "RT-PCR of stool is the standard diagnostic method; alcohol-based hand sanitizers are less effective against norovirus than soap-and-water handwashing, an important infection-control point"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by RT-PCR of stool",
+    "importantDisease": "Acute viral gastroenteritis — leading cause worldwide",
+    "importantTest": "RT-PCR of stool",
+    "distinguishingFeature": "A non-enveloped virus with an extremely low infectious dose, making it the classic cause of explosive outbreaks in cruise ships, schools, and healthcare facilities"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "rotavirus",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Norovirus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/norovirus/"
+    }
+  ]
+}

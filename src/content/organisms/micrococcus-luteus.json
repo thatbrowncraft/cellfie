@@ -1,0 +1,121 @@
+{
+  "id": "micrococcus-luteus",
+  "scientificName": "Micrococcus luteus",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Catalase positive",
+    "Oxidase positive",
+    "Yellow pigmented colonies"
+  ],
+  "genZNote": "Oxidase positive is the whole plot twist — it's the test that keeps this yellow skin commensal from being mistaken for Staph.",
+  "searchKeywords": [
+    "skin commensal coccus",
+    "tetrad forming coccus",
+    "yellow colonies"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Actinomycetota (Actinobacteria)",
+    "class": "Actinomycetes",
+    "order": "Micrococcales",
+    "family": "Micrococcaceae",
+    "genus": "Micrococcus",
+    "species": "M. luteus"
+  },
+  "morphology": {
+    "shape": "Coccus",
+    "shapeCategory": "coccus",
+    "arrangement": "Tetrads and irregular clusters",
+    "arrangementCategory": "clusters",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-2 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human skin and mucous membranes",
+    "hostAssociation": "Normal skin commensal",
+    "environmentalOccurrence": "Also widespread in soil, dust, and water",
+    "reservoir": "Human skin and the environment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in tetrads or irregular clusters",
+      "arrangement": "Tetrads/clusters"
+    },
+    "culture": {
+      "media": "Blood agar, nutrient agar",
+      "growthCharacteristics": "Obligate aerobe, grows well at 25-37°C",
+      "colonyMorphology": "Small to medium, smooth, convex colonies",
+      "pigmentation": "Bright yellow pigment",
+      "hemolysis": "Non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Bacitracin susceptibility",
+        "result": "Susceptible (distinguishes from Staphylococcus, which is resistant)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Yellow-pigmented, catalase-positive Gram-positive coccus in tetrads",
+    "Oxidase positive — the key test separating it from Staphylococcus (oxidase negative)",
+    "Bacitracin susceptible (Staphylococcus is bacitracin resistant)",
+    "Obligate aerobe, unlike facultatively anaerobic Staphylococcus"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Rarely pathogenic; occasional opportunistic infections (bacteremia, endocarditis, catheter-related infection) in immunocompromised patients"
+    ],
+    "virulenceFactors": [
+      "None of major clinical significance — low-virulence commensal"
+    ],
+    "transmission": "Endogenous skin flora / environmental exposure",
+    "epidemiology": "A frequent skin/environmental contaminant in blood and other cultures, most often clinically insignificant",
+    "labSignificance": "Oxidase and bacitracin testing reliably distinguish Micrococcus from the more clinically significant, morphologically similar Staphylococcus"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus in tetrads",
+    "keyBiochemicalReaction": "Catalase positive, oxidase positive",
+    "importantDisease": "Rarely pathogenic — normal skin flora and common culture contaminant",
+    "importantTest": "Oxidase test (positive) and bacitracin susceptibility distinguish it from Staphylococcus",
+    "distinguishingFeature": "Yellow-pigmented, oxidase-positive Gram-positive coccus in tetrads — oxidase positivity is the key differentiator from Staphylococcus"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "staphylococcus-aureus",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "staphylococcus-epidermidis",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Micrococcus\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}

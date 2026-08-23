@@ -1,0 +1,80 @@
+{
+  "id": "japanese-encephalitis-virus",
+  "scientificName": "Japanese encephalitis virus",
+  "commonName": null,
+  "category": "virus",
+  "quickTags": [
+    "Culex mosquito vector",
+    "Leading cause of viral encephalitis in Asia",
+    "Enveloped +ssRNA flavivirus"
+  ],
+  "genZNote": "Pigs and wading birds keep this virus circulating in the background — humans are usually just accidental, dead-end hosts.",
+  "searchKeywords": [
+    "japanese encephalitis",
+    "asia mosquito encephalitis",
+    "culex encephalitis virus"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Flaviviridae",
+    "genus": "Flavivirus (Orthoflavivirus)"
+  },
+  "morphology": {
+    "shape": "Enveloped icosahedral virion",
+    "size": "~40-50 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "vector-borne"
+  },
+  "habitat": {
+    "naturalHabitat": "Maintained in a transmission cycle between Culex mosquitoes and amplifying hosts (pigs and wading birds)",
+    "hostAssociation": "Humans are incidental, dead-end hosts — human viremia is not high enough to further infect mosquitoes",
+    "reservoir": "Pigs and wading birds (amplifying hosts); Culex mosquitoes maintain and transmit the virus"
+  },
+  "identificationClues": [
+    "Diagnosed primarily by serology (IgM ELISA on serum or CSF), since viremia is often low/brief by the time of presentation",
+    "Rural, agricultural settings in Asia with rice paddies and pig farming are the classic epidemiologic setting",
+    "Most infections are asymptomatic, but symptomatic cases can be severe, with high mortality and significant neurological sequelae among survivors",
+    "Effective vaccines exist and are recommended for long-term travelers/residents of endemic rural areas"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Japanese encephalitis — the leading cause of viral encephalitis in Asia; most infections are asymptomatic, but symptomatic disease can cause high fever, seizures, and altered mental status with a high case-fatality rate and frequent long-term neurological sequelae among survivors"
+    ],
+    "transmission": "Bite of an infected Culex mosquito, particularly in rural agricultural (rice paddy, pig farming) areas of Asia",
+    "epidemiology": "The leading cause of viral encephalitis across many parts of Asia; incidence has declined substantially in countries that have implemented routine childhood vaccination programs",
+    "labSignificance": "IgM ELISA on serum or cerebrospinal fluid is the mainstay of diagnosis, given that viremia is typically too low or transient for reliable RT-PCR detection by the time of clinical presentation"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by IgM serology",
+    "importantDisease": "Japanese encephalitis — leading cause of viral encephalitis in Asia",
+    "importantTest": "IgM ELISA on serum/CSF",
+    "distinguishingFeature": "A Culex-transmitted flavivirus maintained by pigs and wading birds, and the leading cause of viral encephalitis across Asia"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "west-nile-virus",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "zika-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Japanese Encephalitis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/japanese-encephalitis/"
+    },
+    {
+      "name": "World Health Organization — Japanese Encephalitis",
+      "kind": "educational"
+    }
+  ]
+}

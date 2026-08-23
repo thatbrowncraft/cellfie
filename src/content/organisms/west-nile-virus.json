@@ -1,0 +1,81 @@
+{
+  "id": "west-nile-virus",
+  "scientificName": "West Nile virus",
+  "commonName": null,
+  "category": "virus",
+  "quickTags": [
+    "Culex mosquito vector",
+    "Bird reservoir",
+    "Neuroinvasive disease in elderly"
+  ],
+  "genZNote": "Birds keep the virus circulating in the background all year — humans and horses are basically bystanders who happen to get bitten too.",
+  "searchKeywords": [
+    "west nile virus",
+    "west nile encephalitis",
+    "culex mosquito bird virus"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Flaviviridae",
+    "genus": "Flavivirus (Orthoflavivirus)"
+  },
+  "morphology": {
+    "shape": "Enveloped icosahedral virion",
+    "size": "~40-50 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "vector-borne"
+  },
+  "habitat": {
+    "naturalHabitat": "Maintained in a bird-mosquito-bird transmission cycle",
+    "hostAssociation": "Birds serve as the amplifying reservoir host; Culex mosquitoes are the primary vector; humans and horses are incidental, dead-end hosts",
+    "reservoir": "Wild birds, with Culex mosquitoes as the vector"
+  },
+  "identificationClues": [
+    "Diagnosed by IgM serology on serum or CSF (the standard approach), since viremia is often brief and low by presentation",
+    "Most infections (about 80%) are asymptomatic; a minority develop West Nile fever, and less than 1% develop neuroinvasive disease",
+    "Neuroinvasive disease (meningitis, encephalitis, or acute flaccid paralysis) is more common in elderly and immunocompromised patients",
+    "Surveillance often tracks bird die-offs (e.g., crows) as a sentinel signal of local virus activity"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "West Nile fever — mild febrile illness with headache, myalgia, and rash in a minority of infected individuals",
+      "West Nile neuroinvasive disease — meningitis, encephalitis, or acute flaccid paralysis (a poliomyelitis-like syndrome), occurring in less than 1% of infections but with substantial morbidity/mortality, particularly in older adults"
+    ],
+    "transmission": "Bite of an infected Culex mosquito; rarely via blood transfusion, organ transplantation, or vertical transmission",
+    "epidemiology": "Widely established across the United States since its introduction in 1999, with seasonal outbreaks each summer/fall tied to mosquito activity; the most common cause of domestically acquired arboviral neuroinvasive disease in the US",
+    "labSignificance": "IgM serology on serum or CSF is the standard diagnostic approach; blood banks screen donations for West Nile virus given the recognized risk of transfusion-transmitted infection"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by IgM serology",
+    "importantDisease": "West Nile neuroinvasive disease — encephalitis/meningitis/flaccid paralysis, especially in the elderly",
+    "importantTest": "IgM ELISA on serum/CSF",
+    "distinguishingFeature": "A bird-maintained, Culex-transmitted flavivirus that is the most common cause of domestically acquired arboviral neuroinvasive disease in the United States"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "japanese-encephalitis-virus",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "zika-virus",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "dengue-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — West Nile Virus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/west-nile-virus/"
+    }
+  ]
+}

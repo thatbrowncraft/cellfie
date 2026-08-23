@@ -1,0 +1,128 @@
+{
+  "id": "candida-glabrata",
+  "scientificName": "Candida glabrata",
+  "commonName": null,
+  "category": "fungi",
+  "quickTags": [
+    "Germ tube negative",
+    "Reduced azole susceptibility",
+    "No true hyphae"
+  ],
+  "genZNote": "Germ tube negative and increasingly fluconazole-resistant — exactly why a positive blood culture triggers susceptibility testing before anyone picks an antifungal.",
+  "searchKeywords": [
+    "candidemia",
+    "fluconazole resistant candida",
+    "non-albicans candida"
+  ],
+  "classification": {
+    "domain": "Eukaryota",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Saccharomycetes",
+    "order": "Saccharomycetales",
+    "family": "Debaryomycetaceae",
+    "genus": "Candida",
+    "species": "C. glabrata"
+  },
+  "morphology": {
+    "shape": "Small oval budding yeast cells; does not typically form pseudohyphae or true hyphae",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~2-4 µm (smaller than C. albicans)",
+    "sporeForming": false,
+    "capsule": "None",
+    "motility": "Non-motile",
+    "oxygenRequirement": "Facultative anaerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "yeast",
+    "reproductiveStructures": [
+      "Blastoconidia (budding)"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Human gastrointestinal tract, oral cavity, and vagina as commensal flora",
+    "hostAssociation": "Normal commensal in healthy individuals; increasingly important opportunistic pathogen in hospitalized/immunocompromised patients",
+    "environmentalOccurrence": "Primarily host-associated",
+    "reservoir": "Human mucosal surfaces and GI tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain or KOH wet mount",
+      "appearance": "Small oval budding yeast cells without pseudohyphae",
+      "arrangement": "Budding cells"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar, CHROMagar Candida",
+      "growthCharacteristics": "Grows well at 35-37°C",
+      "colonyMorphology": "Cream-colored, smooth colonies",
+      "pigmentation": "Pink to purple on CHROMagar Candida (distinguishes from green C. albicans)",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Germ tube test",
+        "result": "−"
+      },
+      {
+        "test": "Chlamydospore formation on cornmeal agar",
+        "result": "−"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Small budding yeast cells with no true hyphae or pseudohyphae — unlike C. albicans",
+    "Germ tube negative and chlamydospore negative",
+    "Pink to purple colonies on CHROMagar Candida (green for C. albicans)",
+    "Clinically notable for reduced susceptibility to fluconazole and other azoles"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Candidemia and invasive candidiasis, particularly in hospitalized, elderly, or immunocompromised patients",
+      "Vulvovaginal candidiasis (a less common but recognized cause compared to C. albicans)",
+      "Urinary tract candidiasis"
+    ],
+    "virulenceFactors": [
+      "Biofilm formation on catheters and medical devices",
+      "Adhesins facilitating mucosal attachment",
+      "Reduced/variable azole susceptibility contributing to persistent infection despite standard treatment"
+    ],
+    "transmission": "Usually endogenous, arising from the patient's own flora; healthcare-associated transmission via hands or contaminated devices is also recognized",
+    "epidemiology": "One of the most common non-albicans Candida species causing candidemia, especially in older adults and those with prior azole exposure; a growing concern in antifungal stewardship due to reduced susceptibility to fluconazole",
+    "labSignificance": "Species identification and antifungal susceptibility testing are important once Candida is isolated from blood, since C. glabrata often requires higher-dose azoles or an alternative antifungal class (e.g., echinocandins)"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed — a fungus",
+    "shape": "Small budding yeast, no true hyphae",
+    "keyBiochemicalReaction": "Germ tube negative",
+    "importantDisease": "Candidemia/invasive candidiasis with reduced azole susceptibility",
+    "importantTest": "Germ tube test (negative); species identification prompts antifungal susceptibility testing",
+    "distinguishingFeature": "A germ-tube-negative, non-hyphal Candida species notable for reduced fluconazole susceptibility, distinguishing its treatment from C. albicans"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "candida-albicans",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "candida-krusei",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "candida-auris",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Candidiasis",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/candidiasis/"
+    },
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Candida Glabrata\"",
+      "kind": "educational"
+    }
+  ]
+}

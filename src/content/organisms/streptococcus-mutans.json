@@ -1,0 +1,124 @@
+{
+  "id": "streptococcus-mutans",
+  "scientificName": "Streptococcus mutans",
+  "commonName": null,
+  "category": "bacteria",
+  "quickTags": [
+    "Viridans group strep",
+    "Dental caries",
+    "Glucan/biofilm formation"
+  ],
+  "genZNote": "Turns sugar into acid and acid into cavities — the actual reason your dentist cares about flossing.",
+  "searchKeywords": [
+    "dental caries",
+    "tooth decay bacteria",
+    "dental plaque",
+    "cavities bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Streptococcaceae",
+    "genus": "Streptococcus",
+    "species": "S. mutans"
+  },
+  "morphology": {
+    "shape": "Coccus",
+    "shapeCategory": "coccus",
+    "arrangement": "Chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-1 µm",
+    "sporeForming": false,
+    "capsule": "None to minimal",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe (aerotolerant)",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human oral cavity, especially dental plaque on tooth surfaces",
+    "hostAssociation": "A primary constituent of dental plaque biofilm; strongly associated with tooth surfaces rather than mucosa",
+    "environmentalOccurrence": "Primarily host-associated rather than free-living",
+    "reservoir": "Human oral cavity/upper respiratory tract"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in chains",
+      "arrangement": "Chains"
+    },
+    "culture": {
+      "media": "Blood agar (5% sheep blood)",
+      "growthCharacteristics": "Facultative anaerobe; grows better with added CO2",
+      "colonyMorphology": "Small, grayish colonies",
+      "pigmentation": "None",
+      "hemolysis": "Alpha-hemolytic or non-hemolytic (viridans group), variable by strain"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "−"
+      },
+      {
+        "test": "Optochin susceptibility",
+        "result": "Resistant (distinguishes viridans strep from S. pneumoniae)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Produces glucosyltransferase, forming the glucan matrix of dental plaque biofilm",
+    "Gram-positive coccus in chains, catalase negative",
+    "Alpha-hemolytic or non-hemolytic on blood agar — part of the viridans streptococcus group",
+    "Optochin resistant and bile-insoluble, distinguishing it from Streptococcus pneumoniae"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Dental caries (tooth decay) — primary etiologic agent",
+      "Rare infective endocarditis (viridans group mechanism, following dental procedures/bacteremia)"
+    ],
+    "virulenceFactors": [
+      "Glucosyltransferase — synthesizes extracellular glucan that builds dental plaque biofilm and adheres to tooth enamel",
+      "Acid production (lactic acid) from dietary sugars — demineralizes tooth enamel"
+    ],
+    "transmission": "Transmitted via saliva (e.g., caregiver to child); colonizes tooth surfaces after eruption",
+    "epidemiology": "The leading cause of dental caries worldwide; sugar-rich diets and poor oral hygiene promote biofilm formation and acid-mediated enamel damage",
+    "labSignificance": "Diagnosis of caries is clinical/radiographic; S. mutans is not typically cultured in routine practice"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus in chains",
+    "keyBiochemicalReaction": "Catalase negative; produces glucan from sucrose via glucosyltransferase; ferments carbohydrates to lactic acid",
+    "importantDisease": "Dental caries (tooth decay) — primary etiologic agent",
+    "importantTest": "Optochin resistance and bile insolubility distinguish viridans strep from S. pneumoniae",
+    "distinguishingFeature": "The main causative organism of dental caries — uses glucosyltransferase to build the biofilm that lets it stick to enamel and demineralize it with acid"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "streptococcus-salivarius",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "streptococcus-sanguinis",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "streptococcus-pyogenes",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Viridans Streptococcus\"",
+      "kind": "educational"
+    },
+    {
+      "name": "American Society for Microbiology (ASM)",
+      "kind": "educational"
+    }
+  ]
+}
