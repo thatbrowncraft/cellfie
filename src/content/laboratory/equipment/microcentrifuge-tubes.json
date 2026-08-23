@@ -13,10 +13,11 @@
       "publisher": "ASM"
     }
   ],
-  "purpose": "Small (commonly 0.5\u20132 mL), conical-bottomed tubes with a snap or screw cap, used in a microcentrifuge for small-volume sample handling.",
+  "purpose": "Small (commonly 0.5–2 mL), conical-bottomed tubes with a snap or screw cap, used in a microcentrifuge for small-volume sample handling.",
   "safety": [
     "Ensure caps are fully closed before centrifugation to prevent leaks/aerosol release.",
     "Balance tubes across the rotor by mass, as with any centrifugation."
   ],
-  "relatedProtocols": []
+  "relatedProtocols": [],
+  "difficulty": "beginner"
 }

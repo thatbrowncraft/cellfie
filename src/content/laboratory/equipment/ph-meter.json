@@ -27,7 +27,7 @@
   "importantSettings": [
     "Calibration buffer selection, chosen to bracket the expected sample pH range."
   ],
-  "calibration": "Must be calibrated with fresh standard buffers at the start of each use session (or per facility SOP) \u2014 a meter's calibration drifts over time and with temperature.",
+  "calibration": "Must be calibrated with fresh standard buffers at the start of each use session (or per facility SOP) — a meter's calibration drifts over time and with temperature.",
   "maintenance": [
     "Store the electrode per manufacturer instructions (commonly in a storage solution, not dry) to prevent the glass membrane from drying out.",
     "Replace probes that no longer calibrate reliably."
@@ -50,5 +50,6 @@
     "ph calibration",
     "glass electrode",
     "buffer solution"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

@@ -1,0 +1,31 @@
+{
+  "id": "equip-water-bath",
+  "category": "equipment",
+  "title": "Water Bath",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "General microbiology laboratory manuals (ASM curriculum resources)", "publisher": "ASM" }
+  ],
+  "purpose": "Maintains a liquid sample or container at a precise, stable temperature via water as the heating medium — used for tasks such as holding molten agar at a workable temperature before pouring, thawing reagents, or incubating certain reactions.",
+  "operatingPrinciple": "A heating element and thermostat maintain the water bath at a set temperature; because water has high thermal mass and good heat transfer to immersed containers, it provides more uniform and stable heating than dry heating methods for many applications.",
+  "basicOperation": [
+    "Fill with an appropriate volume of water (or, for some units, another compatible fluid), keeping the level within the manufacturer's marked range.",
+    "Set the target temperature and allow the bath to equilibrate before adding samples.",
+    "Fully or adequately submerge sample containers as required for even heating, without letting water enter open containers."
+  ],
+  "importantSettings": ["Target temperature", "Water level"],
+  "calibration": "Periodically verify actual water temperature against the display using a calibrated thermometer, since thermostat drift over time can create a gap between set and actual temperature.",
+  "maintenance": ["Change water regularly and clean the basin to prevent microbial growth and mineral buildup.", "Check heating elements for scale buildup that can affect heating efficiency."],
+  "commonErrors": [
+    { "problem": "Bath does not reach or hold set temperature", "cause": "Low water level, scale buildup on the heating element, or thermostat drift", "fix": "Refill to the marked level, descale per manufacturer instructions, and verify temperature with a calibrated thermometer" },
+    { "problem": "Uneven heating between samples", "cause": "Overcrowded bath restricting water circulation", "fix": "Reduce the number of containers or use a bath with active circulation" }
+  ],
+  "safety": ["Avoid burns from hot water and containers — use appropriate heat-resistant gloves when removing samples.", "Keep electrical components away from splashes; use a bath designed and rated for the temperatures in use.", "Do not use a standard water bath for flammable solvents unless it is specifically rated for that use."],
+  "relatedProtocols": ["proto-pour-plate"],
+  "searchKeywords": ["thermostatic bath", "molten agar holding temperature", "reagent thawing"],
+  "difficulty": "beginner"
+}

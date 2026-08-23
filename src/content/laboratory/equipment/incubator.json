@@ -25,7 +25,7 @@
     "Avoid frequent door-opening, which disrupts internal temperature stability."
   ],
   "importantSettings": [
-    "Target temperature \u2014 organism-dependent, not universal (e.g. many clinically relevant bacteria are cultured near human body temperature, while many environmental organisms prefer lower temperatures)."
+    "Target temperature — organism-dependent, not universal (e.g. many clinically relevant bacteria are cultured near human body temperature, while many environmental organisms prefer lower temperatures)."
   ],
   "calibration": "Periodic verification with an independent calibrated thermometer/data logger against the displayed set-point, per facility SOP.",
   "maintenance": [
@@ -50,5 +50,6 @@
   "searchKeywords": [
     "culture incubator",
     "temperature control"
-  ]
+  ],
+  "difficulty": "beginner"
 }

@@ -24,10 +24,10 @@
     "Avoid blocking the front or rear air grilles with equipment, arms, or paperwork.",
     "Work at least several inches inside the sash opening, away from the front edge, to preserve the air barrier.",
     "Decontaminate the work surface before and after use.",
-    "Do not use an open flame inside a BSC \u2014 flames disrupt the cabinet's airflow pattern and can damage the HEPA filter; use alternatives like a micro-incinerator or disposable loops if flaming is otherwise part of the workflow."
+    "Do not use an open flame inside a BSC — flames disrupt the cabinet's airflow pattern and can damage the HEPA filter; use alternatives like a micro-incinerator or disposable loops if flaming is otherwise part of the workflow."
   ],
   "importantSettings": [
-    "Sash height, kept at the manufacturer-certified operating position \u2014 raising it beyond that position compromises the air barrier."
+    "Sash height, kept at the manufacturer-certified operating position — raising it beyond that position compromises the air barrier."
   ],
   "calibration": "Requires certification by a qualified technician on a regular schedule (commonly annually or after any relocation/filter change) verifying airflow velocity and HEPA filter integrity.",
   "maintenance": [
@@ -45,7 +45,7 @@
   "safety": [
     "Never use an open flame inside the cabinet.",
     "Confirm current certification before use.",
-    "Never confuse with a laminar flow clean bench \u2014 see the BSC vs. Clean Bench concept entry."
+    "Never confuse with a laminar flow clean bench — see the BSC vs. Clean Bench concept entry."
   ],
   "relatedConcepts": [
     "concept-bsc-vs-clean-bench"
@@ -58,5 +58,6 @@
     "hepa filter",
     "laminar airflow",
     "class ii cabinet"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

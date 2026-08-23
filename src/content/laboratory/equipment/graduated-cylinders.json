@@ -16,7 +16,8 @@
   "purpose": "Narrow cylindrical vessels marked with volume graduations, used for measuring liquid volumes more precisely than a beaker but less precisely than a volumetric flask.",
   "safety": [
     "Read the meniscus at eye level for the most accurate volume reading.",
-    "Choose a cylinder sized close to the volume being measured \u2014 using a much larger cylinder for a small volume reduces reading precision."
+    "Choose a cylinder sized close to the volume being measured — using a much larger cylinder for a small volume reduces reading precision."
   ],
-  "relatedProtocols": []
+  "relatedProtocols": [],
+  "difficulty": "beginner"
 }

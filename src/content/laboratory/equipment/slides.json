@@ -18,5 +18,6 @@
     "Handle by the edges to avoid fingerprints/oils obscuring the specimen area.",
     "Dispose of used slides (especially those with biological material) per biosafety waste procedure, not general trash."
   ],
-  "relatedProtocols": []
+  "relatedProtocols": [],
+  "difficulty": "beginner"
 }

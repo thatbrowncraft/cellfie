@@ -26,7 +26,7 @@
     "Remove the load using appropriate heat protection."
   ],
   "importantSettings": [
-    "Cycle time, temperature, and pressure \u2014 set per the specific load type and volume, not a single universal value for every load.",
+    "Cycle time, temperature, and pressure — set per the specific load type and volume, not a single universal value for every load.",
     "Liquid vs. dry/exhaust cycle selection, which affects venting speed and is important for preventing boil-over of liquids."
   ],
   "calibration": "Periodic validation using biological and/or chemical indicators (see the Sterilization Indicators concept entry) and, per facility SOP or applicable standard, temperature mapping/calibration checks.",
@@ -50,7 +50,7 @@
   "safety": [
     "Never open the door before pressure returns to zero.",
     "Use heat-resistant gloves and a face shield when removing a hot load.",
-    "Do not tightly seal liquid containers before autoclaving \u2014 allow venting as instructed."
+    "Do not tightly seal liquid containers before autoclaving — allow venting as instructed."
   ],
   "relatedConcepts": [
     "concept-sterilization-vs-disinfection",
@@ -67,5 +67,6 @@
     "steam sterilizer",
     "pressure vessel",
     "moist heat sterilization"
-  ]
+  ],
+  "difficulty": "beginner"
 }

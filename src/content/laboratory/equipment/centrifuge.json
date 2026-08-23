@@ -18,14 +18,14 @@
     }
   ],
   "purpose": "Spins samples at high speed to separate components by density (e.g. pelleting cells from a suspension) using centrifugal force.",
-  "operatingPrinciple": "Rotation generates centrifugal force proportional to rotor radius and the square of rotational speed; denser components move outward/downward faster than less dense components, separating them (see the RCF \u21c4 RPM Calculator for the underlying relationship).",
+  "operatingPrinciple": "Rotation generates centrifugal force proportional to rotor radius and the square of rotational speed; denser components move outward/downward faster than less dense components, separating them (see the RCF ⇄ RPM Calculator for the underlying relationship).",
   "basicOperation": [
     "Balance the rotor by loading matched, symmetrically opposed tubes of equal mass.",
     "Select the appropriate speed/time/temperature for the task, following the specific protocol being used.",
     "Allow the rotor to come to a complete stop before opening the lid."
   ],
   "importantSettings": [
-    "Speed (RPM) or relative centrifugal force (RCF/\u00d7g) \u2014 these are related but not interchangeable without knowing rotor radius (see RCF \u21c4 RPM Calculator).",
+    "Speed (RPM) or relative centrifugal force (RCF/×g) — these are related but not interchangeable without knowing rotor radius (see RCF ⇄ RPM Calculator).",
     "Run time and, for temperature-sensitive samples, chamber temperature."
   ],
   "calibration": "Rotor-specific maximum speed ratings and periodic maintenance checks per the manufacturer's schedule; never exceed a rotor's rated maximum speed.",
@@ -62,5 +62,6 @@
     "rcf",
     "pelleting",
     "centrifugation"
-  ]
+  ],
+  "difficulty": "beginner"
 }

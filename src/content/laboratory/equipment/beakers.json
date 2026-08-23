@@ -15,7 +15,8 @@
   ],
   "purpose": "Cylindrical, flat-bottomed containers with a pour spout, used for general mixing, heating, and holding liquids.",
   "safety": [
-    "Not intended for precise volume measurement \u2014 use a graduated cylinder or volumetric flask when accuracy matters."
+    "Not intended for precise volume measurement — use a graduated cylinder or volumetric flask when accuracy matters."
   ],
-  "relatedProtocols": []
+  "relatedProtocols": [],
+  "difficulty": "beginner"
 }

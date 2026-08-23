@@ -18,7 +18,7 @@
     }
   ],
   "purpose": "Magnifies specimens using visible light and a system of lenses, the core tool for observing stained and unstained microbiological preparations.",
-  "operatingPrinciple": "Light from an illuminator passes through a condenser, the specimen, an objective lens, and an ocular lens, with total magnification equal to objective magnification \u00d7 ocular magnification.",
+  "operatingPrinciple": "Light from an illuminator passes through a condenser, the specimen, an objective lens, and an ocular lens, with total magnification equal to objective magnification × ocular magnification.",
   "basicOperation": [
     "Start at the lowest-power objective and adjust coarse then fine focus.",
     "Adjust the condenser/diaphragm for even illumination.",
@@ -29,10 +29,10 @@
     "Condenser height and diaphragm aperture (controls light amount/contrast, and, to a lesser extent, resolution).",
     "Interpupillary distance and diopter adjustment for binocular comfort/focus."
   ],
-  "calibration": "Routine classroom/teaching microscopes typically don't require formal calibration, but objective/ocular cleanliness and proper K\u00f6hler-style alignment materially affect image quality; a calibrated stage micrometer is used when precise size measurements are needed.",
+  "calibration": "Routine classroom/teaching microscopes typically don't require formal calibration, but objective/ocular cleanliness and proper Köhler-style alignment materially affect image quality; a calibrated stage micrometer is used when precise size measurements are needed.",
   "maintenance": [
-    "Clean lenses only with lens paper and appropriate lens cleaner \u2014 never tissue or clothing, which can scratch coatings.",
-    "Remove immersion oil from the 100\u00d7 objective immediately after use.",
+    "Clean lenses only with lens paper and appropriate lens cleaner — never tissue or clothing, which can scratch coatings.",
+    "Remove immersion oil from the 100× objective immediately after use.",
     "Cover the microscope when not in use to reduce dust."
   ],
   "commonErrors": [
@@ -60,5 +60,6 @@
     "compound microscope",
     "oil immersion objective",
     "kohler illumination"
-  ]
+  ],
+  "difficulty": "beginner"
 }

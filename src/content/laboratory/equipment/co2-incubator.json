@@ -1,0 +1,32 @@
+{
+  "id": "equip-co2-incubator",
+  "category": "equipment",
+  "title": "CO2 Incubator",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "General microbiology laboratory manuals (ASM curriculum resources)", "publisher": "ASM" }
+  ],
+  "purpose": "Maintains a controlled atmosphere of temperature, elevated CO2 concentration, and often humidity, needed to grow organisms and cell types that require capnophilic (CO2-enriched) or buffered-pH conditions not provided by a standard incubator.",
+  "operatingPrinciple": "In addition to standard temperature control, the incubator injects CO2 (commonly targeting around 5%, though the specific target depends on the application) to maintain a stable atmosphere; this is often paired with bicarbonate-buffered media, since the dissolved CO2/bicarbonate balance helps hold the medium at a physiological pH.",
+  "basicOperation": [
+    "Verify the CO2 supply (tank or built-in generator) has adequate pressure/level before starting a run.",
+    "Set target temperature and CO2 percentage appropriate to the organism/cell type and protocol.",
+    "Allow the chamber to stabilize after opening the door, since opening it releases accumulated CO2 and humidity.",
+    "Minimize door-opening frequency and duration to maintain stable conditions."
+  ],
+  "importantSettings": ["Temperature", "CO2 percentage", "Humidity (on units with humidity control)"],
+  "calibration": "Periodically verify actual CO2 concentration with an independent CO2 sensor/analyzer per the manufacturer's schedule, since sensor drift over time can silently shift culture conditions.",
+  "maintenance": ["Clean and disinfect the interior regularly, since the humid, warm environment favors microbial and mold growth.", "Check and replace CO2 supply/tubing as needed.", "Verify door seals to prevent gas leakage."],
+  "commonErrors": [
+    { "problem": "CO2 level reads incorrectly or fluctuates", "cause": "Sensor drift, low CO2 supply, or frequent door opening", "fix": "Recalibrate/verify the sensor, check supply level, and minimize door openings during sensitive periods" },
+    { "problem": "Visible contamination (mold, condensation buildup) inside the chamber", "cause": "Infrequent cleaning of a warm, humid environment", "fix": "Follow the manufacturer's cleaning/disinfection schedule and increase frequency if contamination recurs" }
+  ],
+  "safety": ["CO2 tanks must be secured and handled per compressed gas safety procedures.", "Elevated CO2 in a poorly ventilated room from a leak or malfunction is a real asphyxiation hazard — follow institutional gas safety and ventilation requirements."],
+  "relatedConcepts": [],
+  "searchKeywords": ["capnophilic incubation", "5% co2", "bicarbonate buffered media", "cell culture incubator"],
+  "difficulty": "intermediate"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "equip-spectrophotometer",
+  "category": "equipment",
+  "title": "Spectrophotometer",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "General microbiology laboratory manuals (ASM curriculum resources)", "publisher": "ASM" }
+  ],
+  "purpose": "Measures the absorbance (or transmittance) of light through a liquid sample at a specified wavelength, commonly used to estimate bacterial culture density (optical density, OD) or determine solute concentration via the Beer-Lambert relationship.",
+  "operatingPrinciple": "Light of a selected wavelength passes through a cuvette containing the sample; a detector measures how much light is transmitted versus absorbed. Absorbance relates to concentration and path length through the Beer-Lambert law (see the Beer-Lambert Formula and Calculator), but a direct concentration reading is only valid within the instrument's linear range and after appropriate calibration/blanking.",
+  "basicOperation": [
+    "Select the appropriate wavelength for the measurement (e.g. 600 nm is commonly used for bacterial culture turbidity, though the exact wavelength convention can vary by lab/protocol).",
+    "Blank the instrument using the appropriate blank (e.g. sterile uninoculated medium) at the same wavelength before reading samples.",
+    "Use clean, scratch-free, matched cuvettes and avoid air bubbles or fingerprints in the light path.",
+    "Dilute samples that read above the instrument's linear range rather than trusting an out-of-range reading."
+  ],
+  "importantSettings": ["Wavelength selection", "Blank/reference setting", "Cuvette path length (commonly 1 cm, but must match what any conversion or standard curve assumes)"],
+  "calibration": "Periodic wavelength accuracy and photometric accuracy checks per the manufacturer's schedule, typically using certified reference filters or solutions; verify a fresh blank before each measurement session.",
+  "maintenance": ["Keep the cuvette chamber clean and free of spills.", "Store cuvettes properly to avoid scratches, which scatter light and distort readings."],
+  "commonErrors": [
+    { "problem": "Unexpectedly high or erratic absorbance readings", "cause": "Air bubbles, fingerprints, or scratches on the cuvette; or a sample outside the instrument's linear range", "fix": "Re-clean/replace the cuvette and re-check for bubbles; dilute the sample and re-measure if it was likely off-scale" },
+    { "problem": "Readings drifting between samples", "cause": "Instrument not re-blanked, or lamp warm-up not complete", "fix": "Re-blank with fresh reference solution and allow the recommended warm-up time before starting a measurement series" }
+  ],
+  "safety": ["Handle cuvettes containing biological samples with the same precautions as the culture itself.", "Dispose of used cuvettes and samples per the applicable biosafety and chemical waste procedures."],
+  "relatedFormulas": ["formula-beer-lambert"],
+  "relatedConcepts": ["concept-od-vs-cell-concentration"],
+  "searchKeywords": ["od600", "absorbance reading", "optical density", "beer-lambert instrument", "cuvette"],
+  "difficulty": "intermediate"
+}

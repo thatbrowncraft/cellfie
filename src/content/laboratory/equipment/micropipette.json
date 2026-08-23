@@ -20,19 +20,19 @@
   "purpose": "A precision instrument for accurately measuring and transferring small liquid volumes (typically microliter to low-milliliter range) using disposable tips.",
   "operatingPrinciple": "An air-displacement piston mechanism draws a set volume of liquid into a disposable tip when the plunger is released after being pressed to the first stop, and expels it when pressed to the second (blow-out) stop.",
   "basicOperation": [
-    "Set the desired volume within the pipette's rated range \u2014 never dial beyond its minimum or maximum.",
+    "Set the desired volume within the pipette's rated range — never dial beyond its minimum or maximum.",
     "Attach a fresh, appropriately sized tip.",
     "Press the plunger to the first stop, immerse the tip to the appropriate depth, then release slowly to draw up liquid.",
     "Dispense by pressing to the first stop, then the second (blow-out) stop to expel the last small volume."
   ],
   "importantSettings": [
-    "Volume setting, matched to a tip size rated for that volume range \u2014 an oversized or undersized tip affects accuracy."
+    "Volume setting, matched to a tip size rated for that volume range — an oversized or undersized tip affects accuracy."
   ],
   "calibration": "Periodic gravimetric calibration (weighing dispensed volumes of water on an analytical balance) per facility schedule; pipettes drift out of calibration with heavy use and should not be assumed accurate indefinitely without checks.",
   "maintenance": [
     "Store vertically in a rack when not in use.",
     "Never lay a loaded pipette on its side (liquid can run into the mechanism).",
-    "Avoid dropping \u2014 a drop can knock a pipette out of calibration even if it still visibly functions."
+    "Avoid dropping — a drop can knock a pipette out of calibration even if it still visibly functions."
   ],
   "commonErrors": [
     {
@@ -62,5 +62,6 @@
     "air displacement pipette",
     "pipette tips",
     "volume accuracy"
-  ]
+  ],
+  "difficulty": "beginner"
 }
