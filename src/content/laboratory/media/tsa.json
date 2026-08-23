@@ -48,17 +48,17 @@
         }
       ],
       "finalPh": {
-        "value": "approximately 7.3 \u00b1 0.2 at 25\u00b0C",
+        "value": "approximately 7.3 ± 0.2 at 25°C",
         "dependsOn": "specific manufacturer lot/formulation"
       }
     }
   ],
   "preparationSummary": "Suspend the dehydrated powder in distilled/deionized water per the manufacturer's stated concentration, heat to dissolve fully, then sterilize before pouring plates.",
   "sterilization": {
-    "value": "commonly autoclaved at 121\u00b0C for 15 minutes for typical batch volumes",
+    "value": "commonly autoclaved at 121°C for 15 minutes for typical batch volumes",
     "dependsOn": "batch volume and container"
   },
-  "storage": "Refrigerate prepared plates (commonly 2\u20138\u00b0C) in sealed bags.",
+  "storage": "Refrigerate prepared plates (commonly 2–8°C) in sealed bags.",
   "shelfLife": {
     "value": "manufacturer-stated; varies by product",
     "dependsOn": "specific product and storage conditions",
@@ -78,5 +78,6 @@
     "tsa plate",
     "tryptic soy agar",
     "trypticase soy agar"
-  ]
+  ],
+  "difficulty": "beginner"
 }

@@ -53,14 +53,14 @@
         }
       ],
       "finalPh": {
-        "value": "approximately 7.3 \u00b1 0.2 at 25\u00b0C",
+        "value": "approximately 7.3 ± 0.2 at 25°C",
         "dependsOn": "specific manufacturer lot/formulation"
       }
     }
   ],
   "preparationSummary": "Dissolve the dehydrated powder per the manufacturer's stated concentration, dispense, and sterilize.",
   "sterilization": {
-    "value": "commonly autoclaved at 121\u00b0C for 15 minutes for typical volumes",
+    "value": "commonly autoclaved at 121°C for 15 minutes for typical volumes",
     "dependsOn": "batch volume and container"
   },
   "storage": "Store tightly capped, protected from contamination, per manufacturer guidance.",
@@ -70,12 +70,13 @@
     "unverified": true
   },
   "expectedAppearance": "Clear, pale amber liquid; turbidity after inoculation indicates growth.",
-  "manufacturerNotes": "Exact formulation (e.g. added dextrose/phosphate) varies by manufacturer \u2014 confirm against the product insert.",
+  "manufacturerNotes": "Exact formulation (e.g. added dextrose/phosphate) varies by manufacturer — confirm against the product insert.",
   "relatedMedia": [
     "media-tsa"
   ],
   "searchKeywords": [
     "tsb broth",
     "trypticase soy broth"
-  ]
+  ],
+  "difficulty": "beginner"
 }

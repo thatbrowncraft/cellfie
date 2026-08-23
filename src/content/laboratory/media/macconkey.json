@@ -63,14 +63,14 @@
         }
       ],
       "finalPh": {
-        "value": "approximately 7.1 \u00b1 0.2 at 25\u00b0C",
+        "value": "approximately 7.1 ± 0.2 at 25°C",
         "dependsOn": "specific manufacturer lot/formulation"
       }
     }
   ],
   "preparationSummary": "Suspend the dehydrated powder per the manufacturer's stated concentration, heat with agitation to boiling to fully dissolve, then sterilize and pour while still liquid.",
   "sterilization": {
-    "value": "commonly autoclaved at 121\u00b0C for 15 minutes; avoid prolonged overheating, which can degrade the indicator/carbohydrate",
+    "value": "commonly autoclaved at 121°C for 15 minutes; avoid prolonged overheating, which can degrade the indicator/carbohydrate",
     "dependsOn": "batch volume, container, and formulation"
   },
   "storage": "Refrigerate prepared plates in sealed bags, protected from light (crystal violet and neutral red are light-sensitive over time).",
@@ -92,10 +92,10 @@
     },
     {
       "organismOrGroup": "Most Gram-positive organisms",
-      "reaction": "Inhibited \u2014 little to no growth"
+      "reaction": "Inhibited — little to no growth"
     }
   ],
-  "manufacturerNotes": "Bile salt and dye concentrations vary somewhat between manufacturers and between 'MacConkey Agar' and 'MacConkey Agar without crystal violet' variants \u2014 confirm the exact product formulation before relying on selectivity claims.",
+  "manufacturerNotes": "Bile salt and dye concentrations vary somewhat between manufacturers and between 'MacConkey Agar' and 'MacConkey Agar without crystal violet' variants — confirm the exact product formulation before relying on selectivity claims.",
   "relatedProtocols": [
     "proto-streak-plate"
   ],
@@ -108,5 +108,6 @@
     "lactose fermenter",
     "enteric medium",
     "bile salts"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

@@ -1,0 +1,49 @@
+{
+  "id": "media-emb",
+  "category": "media",
+  "title": "Eosin Methylene Blue Agar",
+  "abbreviation": "EMB",
+  "subcategory": "Selective & Differential Media",
+  "sourceType": "manufacturer-specific",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "Difco & BBL Manual of Microbiological Culture Media", "publisher": "Becton Dickinson" }
+  ],
+  "classifications": ["selective", "differential"],
+  "purpose": "Selects for Gram-negative enteric bacteria while inhibiting most Gram-positive organisms, and differentiates strong lactose fermenters (which can show a characteristic metallic green sheen) from weak or non-fermenters.",
+  "targetOrganisms": ["Gram-negative enteric bacteria (e.g. Enterobacteriaceae)"],
+  "formulations": [
+    {
+      "sourceLabel": "Levine EMB, typical commercial formulation",
+      "reference": { "label": "Difco & BBL Manual of Microbiological Culture Media", "publisher": "Becton Dickinson" },
+      "compositionPerLiter": [
+        { "ingredient": "Peptone", "amount": "10 g" },
+        { "ingredient": "Lactose", "amount": "5-10 g", "unverified": true },
+        { "ingredient": "Dipotassium phosphate", "amount": "2 g" },
+        { "ingredient": "Eosin Y", "amount": "0.4 g" },
+        { "ingredient": "Methylene blue", "amount": "0.065 g" },
+        { "ingredient": "Agar", "amount": "13.5 g" }
+      ],
+      "finalPh": { "value": "approximately 7.1 ± 0.2 at 25°C", "dependsOn": "specific manufacturer lot/formulation" }
+    }
+  ],
+  "preparationSummary": "Suspend the dehydrated powder per the manufacturer's stated concentration, heat with agitation to boiling to fully dissolve, then sterilize and pour while still liquid, mixing gently before pouring since the dyes can settle.",
+  "sterilization": { "value": "commonly autoclaved at 121°C for 15 minutes", "dependsOn": "batch volume, container, and formulation" },
+  "storage": "Refrigerate prepared plates in sealed bags, protected from light.",
+  "shelfLife": { "value": "manufacturer-stated; varies by product", "dependsOn": "specific product and storage conditions", "unverified": true },
+  "expectedAppearance": "Dark purple to nearly black opaque agar due to the eosin and methylene blue dyes.",
+  "qualityControl": "Verify selectivity (a Gram-positive control should be inhibited) and differentiation (a strong lactose fermenter should show dark colonies with a green metallic sheen; a non-fermenter should appear colorless to amber) against reference organisms.",
+  "reactions": [
+    { "organismOrGroup": "Strong lactose fermenters producing large amounts of acid (e.g. many E. coli strains)", "reaction": "Dark blue-black colonies, often with a distinctive green metallic sheen" },
+    { "organismOrGroup": "Weak/slow lactose fermenters", "reaction": "Pink to mucoid colonies without the metallic sheen" },
+    { "organismOrGroup": "Non-lactose fermenters (e.g. many Salmonella, Shigella strains)", "reaction": "Colorless to amber, translucent colonies" },
+    { "organismOrGroup": "Most Gram-positive organisms", "reaction": "Inhibited — little to no growth" }
+  ],
+  "manufacturerNotes": "The green metallic sheen is a classic presumptive indicator associated with E. coli but is not itself confirmatory identification; formulation details (e.g. exact lactose/sucrose content) vary between manufacturers and affect how pronounced the sheen appears.",
+  "relatedProtocols": ["proto-streak-plate"],
+  "relatedConcepts": ["concept-selective-differential-media"],
+  "relatedBiochemicalTests": [],
+  "searchKeywords": ["emb agar", "levine emb", "metallic green sheen", "lactose fermenter", "enteric medium"],
+  "difficulty": "intermediate"
+}

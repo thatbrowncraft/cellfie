@@ -17,7 +17,7 @@
     "selective",
     "differential"
   ],
-  "purpose": "Used specifically for the Citrate Utilization Test \u2014 supports growth only of organisms able to use citrate as their sole carbon source, and indicates that use with a color change.",
+  "purpose": "Used specifically for the Citrate Utilization Test — supports growth only of organisms able to use citrate as their sole carbon source, and indicates that use with a color change.",
   "targetOrganisms": [
     "Enterobacteriaceae being differentiated by citrate utilization"
   ],
@@ -59,14 +59,14 @@
         }
       ],
       "finalPh": {
-        "value": "approximately 6.9 \u00b1 0.2 at 25\u00b0C",
+        "value": "approximately 6.9 ± 0.2 at 25°C",
         "dependsOn": "specific manufacturer lot/formulation"
       }
     }
   ],
   "preparationSummary": "Suspend the dehydrated powder per the manufacturer's stated concentration, heat to dissolve, dispense into tubes, and slant before sterilizing so the medium sets as a slant with a butt.",
   "sterilization": {
-    "value": "commonly autoclaved at 121\u00b0C for 15 minutes for typical tube volumes",
+    "value": "commonly autoclaved at 121°C for 15 minutes for typical tube volumes",
     "dependsOn": "batch volume and container"
   },
   "storage": "Refrigerate prepared slants in sealed containers.",
@@ -87,7 +87,7 @@
       "reaction": "No growth, medium remains green"
     }
   ],
-  "manufacturerNotes": "Citrate and indicator concentrations vary slightly between manufacturers \u2014 confirm against the specific product insert.",
+  "manufacturerNotes": "Citrate and indicator concentrations vary slightly between manufacturers — confirm against the specific product insert.",
   "relatedBiochemicalTests": [
     "test-citrate"
   ],
@@ -95,5 +95,6 @@
   "searchKeywords": [
     "simmons citrate agar",
     "citrate slant"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

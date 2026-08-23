@@ -39,15 +39,15 @@
         }
       ],
       "finalPh": {
-        "value": "approximately 7.3 \u00b1 0.2 for the base agar before blood addition",
+        "value": "approximately 7.3 ± 0.2 for the base agar before blood addition",
         "dependsOn": "base agar formulation"
       }
     }
   ],
-  "preparationSummary": "Prepare and autoclave the agar base, cool to approximately 45\u201350\u00b0C (a temperature the brief flags as needing verification against the specific base/blood product, not treated as a fixed universal number here), then aseptically add sterile defibrinated blood and mix gently before pouring, to avoid lysing red cells or introducing bubbles.",
+  "preparationSummary": "Prepare and autoclave the agar base, cool to approximately 45–50°C (a temperature the brief flags as needing verification against the specific base/blood product, not treated as a fixed universal number here), then aseptically add sterile defibrinated blood and mix gently before pouring, to avoid lysing red cells or introducing bubbles.",
   "sterilization": {
     "value": "the agar base is autoclaved before blood is added; blood itself is not autoclaved (heat would hemolyze/denature it)",
-    "dependsOn": "base medium only \u2014 blood is added aseptically post-sterilization"
+    "dependsOn": "base medium only — blood is added aseptically post-sterilization"
   },
   "storage": "Refrigerate prepared plates in sealed bags; protect from excessive drying.",
   "shelfLife": {
@@ -71,7 +71,7 @@
       "reaction": "No change to the surrounding blood agar"
     }
   ],
-  "manufacturerNotes": "Hemolysis patterns can differ visually depending on the animal blood source used (sheep vs. horse, for instance) \u2014 confirm which blood source a given protocol/reference assumes.",
+  "manufacturerNotes": "Hemolysis patterns can differ visually depending on the animal blood source used (sheep vs. horse, for instance) — confirm which blood source a given protocol/reference assumes.",
   "relatedProtocols": [
     "proto-streak-plate"
   ],
@@ -83,5 +83,6 @@
     "blood agar plate",
     "alpha hemolysis",
     "beta hemolysis"
-  ]
+  ],
+  "difficulty": "intermediate"
 }

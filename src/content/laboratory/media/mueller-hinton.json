@@ -55,7 +55,7 @@
   ],
   "preparationSummary": "Prepare per manufacturer/CLSI instructions; agar depth in the plate is standardized (CLSI specifies an approximate depth) because it affects diffusion and therefore zone size interpretation.",
   "sterilization": {
-    "value": "commonly autoclaved at 121\u00b0C for the time specified by the manufacturer/CLSI for the batch size",
+    "value": "commonly autoclaved at 121°C for the time specified by the manufacturer/CLSI for the batch size",
     "dependsOn": "batch size and the specific CLSI edition/manufacturer instructions in use"
   },
   "storage": "Store per manufacturer guidance, protected from contamination and excessive drying, since drying changes effective agar depth/diffusion.",
@@ -65,13 +65,14 @@
     "unverified": true
   },
   "expectedAppearance": "Pale, translucent to slightly opaque agar, poured to a standardized depth.",
-  "qualityControl": "CLSI specifies routine QC using reference control organism strains and expected zone-diameter ranges \u2014 do not substitute an uncontrolled batch for susceptibility reporting.",
-  "manufacturerNotes": "Because this medium underpins clinical susceptibility interpretation, always follow the current CLSI document edition rather than a remembered or older specification \u2014 breakpoints and QC ranges are revised periodically.",
+  "qualityControl": "CLSI specifies routine QC using reference control organism strains and expected zone-diameter ranges — do not substitute an uncontrolled batch for susceptibility reporting.",
+  "manufacturerNotes": "Because this medium underpins clinical susceptibility interpretation, always follow the current CLSI document edition rather than a remembered or older specification — breakpoints and QC ranges are revised periodically.",
   "relatedBiochemicalTests": [],
   "searchKeywords": [
     "mueller hinton",
     "kirby-bauer",
     "disk diffusion",
     "susceptibility testing medium"
-  ]
+  ],
+  "difficulty": "advanced"
 }

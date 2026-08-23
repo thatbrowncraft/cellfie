@@ -41,15 +41,15 @@
         }
       ],
       "finalPh": {
-        "value": "approximately 6.8 \u00b1 0.2 at 25\u00b0C",
+        "value": "approximately 6.8 ± 0.2 at 25°C",
         "dependsOn": "specific manufacturer lot/formulation"
       }
     }
   ],
   "preparationSummary": "Dissolve the dehydrated powder in distilled/deionized water per the manufacturer's stated concentration, dispense into tubes/flasks, then sterilize.",
   "sterilization": {
-    "value": "commonly autoclaved at 121\u00b0C for 15 minutes for typical tube/flask volumes",
-    "dependsOn": "batch volume and container \u2014 not universal for every load",
+    "value": "commonly autoclaved at 121°C for 15 minutes for typical tube/flask volumes",
+    "dependsOn": "batch volume and container — not universal for every load",
     "reference": {
       "label": "Difco & BBL Manual of Microbiological Culture Media",
       "publisher": "Becton Dickinson"
@@ -74,5 +74,6 @@
     "broth culture",
     "liquid medium",
     "nutrient broth"
-  ]
+  ],
+  "difficulty": "beginner"
 }

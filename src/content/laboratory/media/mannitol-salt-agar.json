@@ -1,0 +1,48 @@
+{
+  "id": "media-mannitol-salt-agar",
+  "category": "media",
+  "title": "Mannitol Salt Agar",
+  "abbreviation": "MSA",
+  "subcategory": "Selective & Differential Media",
+  "sourceType": "manufacturer-specific",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    { "label": "Difco & BBL Manual of Microbiological Culture Media", "publisher": "Becton Dickinson" }
+  ],
+  "classifications": ["selective", "differential"],
+  "purpose": "Selects for Staphylococcus species using a high salt concentration that inhibits most other bacteria, and differentiates mannitol-fermenting from non-fermenting staphylococci.",
+  "targetOrganisms": ["Staphylococcus species, notably distinguishing Staphylococcus aureus from coagulase-negative staphylococci"],
+  "formulations": [
+    {
+      "sourceLabel": "Typical commercial formulation",
+      "reference": { "label": "Difco & BBL Manual of Microbiological Culture Media", "publisher": "Becton Dickinson" },
+      "compositionPerLiter": [
+        { "ingredient": "Peptone/casein and animal tissue digest", "amount": "10 g" },
+        { "ingredient": "Beef extract", "amount": "1 g" },
+        { "ingredient": "D-Mannitol", "amount": "10 g" },
+        { "ingredient": "Sodium chloride", "amount": "75 g" },
+        { "ingredient": "Phenol red", "amount": "0.025 g" },
+        { "ingredient": "Agar", "amount": "15 g" }
+      ],
+      "finalPh": { "value": "approximately 7.4 ± 0.2 at 25°C", "dependsOn": "specific manufacturer lot/formulation" }
+    }
+  ],
+  "preparationSummary": "Suspend the dehydrated powder per the manufacturer's stated concentration, heat with agitation to boiling to fully dissolve, then sterilize and pour while still liquid.",
+  "sterilization": { "value": "commonly autoclaved at 121°C for 15 minutes", "dependsOn": "batch volume, container, and formulation" },
+  "storage": "Refrigerate prepared plates in sealed bags, protected from light.",
+  "shelfLife": { "value": "manufacturer-stated; varies by product", "dependsOn": "specific product and storage conditions", "unverified": true },
+  "expectedAppearance": "Pale red/pink agar (phenol red at neutral-to-slightly-alkaline pH) before inoculation.",
+  "qualityControl": "Verify selectivity (a Gram-negative control should be inhibited) and differentiation (a known mannitol-fermenting Staphylococcus aureus strain should turn the medium yellow; a non-fermenting coagulase-negative staphylococcus should remain pink) against reference organisms.",
+  "reactions": [
+    { "organismOrGroup": "Mannitol-fermenting staphylococci (most Staphylococcus aureus strains)", "reaction": "Colonies surrounded by a yellow zone as fermentation acid shifts the phenol red indicator" },
+    { "organismOrGroup": "Non-mannitol-fermenting staphylococci (many coagulase-negative species)", "reaction": "Growth with the surrounding medium remaining pink/red" },
+    { "organismOrGroup": "Most non-staphylococcal bacteria", "reaction": "Inhibited by the high (7.5%) salt concentration" }
+  ],
+  "manufacturerNotes": "Mannitol fermentation on MSA is a useful presumptive indicator for Staphylococcus aureus but is not by itself confirmatory — a coagulase test or equivalent is needed for definitive identification, and rare mannitol-fermenting coagulase-negative strains exist.",
+  "relatedProtocols": ["proto-streak-plate"],
+  "relatedConcepts": ["concept-selective-differential-media"],
+  "relatedBiochemicalTests": ["test-coagulase"],
+  "searchKeywords": ["msa", "staphylococcus", "mannitol fermentation", "high salt medium"],
+  "difficulty": "intermediate"
+}
