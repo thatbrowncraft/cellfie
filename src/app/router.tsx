@@ -1,25 +1,79 @@
-import { useMemo, useState } from 'react'
+import { lazy, Suspense, useMemo, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import { Bookmarks, Highlighter } from '@phosphor-icons/react'
 import { AppShell } from './AppShell'
 import { DashboardPage } from '../modules/dashboard/DashboardPage'
-import { LibraryPage } from '../modules/library/LibraryPage'
-import { ReaderPage } from '../modules/library/reader/ReaderPage'
-import { ConceptsPage } from '../modules/concepts/ConceptsPage'
-import { ConceptDetailPage } from '../modules/concepts/ConceptDetailPage'
-import { OrganismExplorerPage } from '../modules/organism-explorer/OrganismExplorerPage'
-import { OrganismDetailPage } from '../modules/organism-explorer/OrganismDetailPage'
-import { LaboratoryPage } from '../modules/laboratory/LaboratoryPage'
-import { LaboratoryDetailPage } from '../modules/laboratory/LaboratoryDetailPage'
-import { CalculatorDetailPage } from '../modules/laboratory/CalculatorDetailPage'
-import { UnitConverterPage } from '../modules/laboratory/UnitConverterPage'
-import { ComparisonStudioPage } from '../modules/comparison-studio/ComparisonStudioPage'
-import { NotesPage } from '../modules/notes/NotesPage'
-import { SettingsPage } from '../modules/settings/SettingsPage'
 import { NotFoundPage } from '../modules/not-found/NotFoundPage'
 import { db, type Highlight, type LibraryItem, type ReaderBookmark } from '../core/db'
 import { useLiveQuery } from '../core/db/useLiveQuery'
-import { Card, CardBody, EmptyState, SearchField } from '../shared/components'
+import { Card, CardBody, EmptyState, SearchField, SkeletonCard } from '../shared/components'
+import { LoadingLayout } from '../shared/layouts'
+
+/**
+ * Route-level code splitting (bundle-size remediation, stage 1).
+ *
+ * These are the feature areas that pull in the heaviest content/logic —
+ * most importantly Organism Explorer/Detail and the Laboratory pages,
+ * which sit on top of the large `core/organisms` and `core/laboratory`
+ * content registries (see those files' doc comments). Splitting them
+ * into their own chunks means a visit to, say, `/notes` no longer has
+ * to download and parse that content up front.
+ *
+ * `DashboardPage` (the default route) and the small in-file
+ * Highlights/Bookmarks pages stay eagerly imported since they're what
+ * renders on first paint anyway — lazy-loading those would only add an
+ * extra Suspense flash with no bundle-size benefit.
+ *
+ * Named exports are wrapped with `.then(m => ({ default: m.X }))` so the
+ * page components themselves don't need to change to default exports.
+ */
+const LibraryPage = lazy(() => import('../modules/library/LibraryPage').then((m) => ({ default: m.LibraryPage })))
+const ReaderPage = lazy(() =>
+  import('../modules/library/reader/ReaderPage').then((m) => ({ default: m.ReaderPage }))
+)
+const ConceptsPage = lazy(() =>
+  import('../modules/concepts/ConceptsPage').then((m) => ({ default: m.ConceptsPage }))
+)
+const ConceptDetailPage = lazy(() =>
+  import('../modules/concepts/ConceptDetailPage').then((m) => ({ default: m.ConceptDetailPage }))
+)
+const OrganismExplorerPage = lazy(() =>
+  import('../modules/organism-explorer/OrganismExplorerPage').then((m) => ({ default: m.OrganismExplorerPage }))
+)
+const OrganismDetailPage = lazy(() =>
+  import('../modules/organism-explorer/OrganismDetailPage').then((m) => ({ default: m.OrganismDetailPage }))
+)
+const LaboratoryPage = lazy(() =>
+  import('../modules/laboratory/LaboratoryPage').then((m) => ({ default: m.LaboratoryPage }))
+)
+const LaboratoryDetailPage = lazy(() =>
+  import('../modules/laboratory/LaboratoryDetailPage').then((m) => ({ default: m.LaboratoryDetailPage }))
+)
+const CalculatorDetailPage = lazy(() =>
+  import('../modules/laboratory/CalculatorDetailPage').then((m) => ({ default: m.CalculatorDetailPage }))
+)
+const UnitConverterPage = lazy(() =>
+  import('../modules/laboratory/UnitConverterPage').then((m) => ({ default: m.UnitConverterPage }))
+)
+const ComparisonStudioPage = lazy(() =>
+  import('../modules/comparison-studio/ComparisonStudioPage').then((m) => ({ default: m.ComparisonStudioPage }))
+)
+const NotesPage = lazy(() => import('../modules/notes/NotesPage').then((m) => ({ default: m.NotesPage })))
+const SettingsPage = lazy(() =>
+  import('../modules/settings/SettingsPage').then((m) => ({ default: m.SettingsPage }))
+)
+
+function RouteFallback() {
+  return (
+    <LoadingLayout>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <SkeletonCard />
+        <SkeletonCard />
+        <SkeletonCard />
+      </div>
+    </LoadingLayout>
+  )
+}
 
 function HighlightsPage() {
   const navigate = useNavigate()
@@ -168,25 +222,27 @@ function BookmarksPage() {
 export function AppRouter() {
   return (
     <AppShell>
-      <Routes>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/library" element={<LibraryPage />} />
-        <Route path="/library/:id/read" element={<ReaderPage />} />
-        <Route path="/concepts" element={<ConceptsPage />} />
-        <Route path="/concepts/:id" element={<ConceptDetailPage />} />
-        <Route path="/organisms" element={<OrganismExplorerPage />} />
-        <Route path="/organisms/:organismId" element={<OrganismDetailPage />} />
-        <Route path="/laboratory" element={<LaboratoryPage />} />
-        <Route path="/laboratory/unit-converter" element={<UnitConverterPage />} />
-        <Route path="/laboratory/calculators/:calculatorId" element={<CalculatorDetailPage />} />
-        <Route path="/laboratory/:category/:id" element={<LaboratoryDetailPage />} />
-        <Route path="/comparison" element={<ComparisonStudioPage />} />
-        <Route path="/notes" element={<NotesPage />} />
-        <Route path="/highlights" element={<HighlightsPage />} />
-        <Route path="/bookmarks" element={<BookmarksPage />} />
-        <Route path="/settings" element={<SettingsPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/library" element={<LibraryPage />} />
+          <Route path="/library/:id/read" element={<ReaderPage />} />
+          <Route path="/concepts" element={<ConceptsPage />} />
+          <Route path="/concepts/:id" element={<ConceptDetailPage />} />
+          <Route path="/organisms" element={<OrganismExplorerPage />} />
+          <Route path="/organisms/:organismId" element={<OrganismDetailPage />} />
+          <Route path="/laboratory" element={<LaboratoryPage />} />
+          <Route path="/laboratory/unit-converter" element={<UnitConverterPage />} />
+          <Route path="/laboratory/calculators/:calculatorId" element={<CalculatorDetailPage />} />
+          <Route path="/laboratory/:category/:id" element={<LaboratoryDetailPage />} />
+          <Route path="/comparison" element={<ComparisonStudioPage />} />
+          <Route path="/notes" element={<NotesPage />} />
+          <Route path="/highlights" element={<HighlightsPage />} />
+          <Route path="/bookmarks" element={<BookmarksPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </AppShell>
   )
 }
