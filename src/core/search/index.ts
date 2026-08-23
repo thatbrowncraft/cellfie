@@ -7,12 +7,25 @@
  * this covers the *metadata* search Sprint 2 actually asks for, not
  * full-text search inside PDF bodies.
  *
- * Used by both the Cmd/Ctrl+K Universal Search overlay (app-wide) and the
- * Notebook page's search/filter bar (notes-only, more detailed).
+ * Used by both the Cmd/Ctrl+K Universal Search overlay (app-wide, rendered
+ * from AppShell on every route) and the Notebook page's search/filter bar
+ * (notes-only, more detailed).
+ *
+ * Bundle-size remediation (stage 2): `core/laboratory/registry.ts` holds
+ * every Laboratory item's *full* content (steps, formulas, comparisons —
+ * not just title/category), because it doubles as that module's content
+ * store. `searchLaboratory()` only ever returns the lightweight
+ * `LaboratorySearchHit` shape (id, category, title, subtitle) — that's
+ * the metadata index this module actually needs. Since AppShell renders
+ * Universal Search on first paint for every route, a *static* import of
+ * `searchLaboratory` here would drag the full registry (and its eager
+ * JSON glob) into whatever chunk AppShell lives in. Importing it
+ * dynamically, inside `searchEverything`, keeps that content in its own
+ * chunk that only loads the first time someone actually searches —
+ * Dashboard and every other route render without it.
  */
 
 import { db, type Collection, type Highlight, type LibraryItem, type Note, type ReaderBookmark } from '../db'
-import { searchLaboratory } from '../laboratory/registry'
 
 export interface SearchResult {
   id: string
@@ -113,9 +126,13 @@ export async function searchEverything(query: string): Promise<SearchResultGroup
   void collections
 
   // Laboratory Module, Tier 1 (brief §21/§22) — Laboratory content is
-  // curated and bundled (see core/laboratory/registry.ts), so its search
-  // is synchronous and local like the rest of this function's in-memory
-  // filtering; no extra async call needed alongside the Dexie queries above.
+  // curated and bundled (see core/laboratory/registry.ts), so once loaded
+  // its search is synchronous and local like the rest of this function's
+  // in-memory filtering. The registry module itself is fetched via a
+  // dynamic import (see this file's header comment) so it stays out of
+  // AppShell's chunk; the browser/PWA cache makes this effectively
+  // instant after the first search of a session.
+  const { searchLaboratory } = await import('../laboratory/registry')
   const laboratoryResults: SearchResult[] = searchLaboratory(query).map((hit) => ({
     id: hit.id,
     kind: 'laboratory',
