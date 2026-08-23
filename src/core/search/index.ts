@@ -12,10 +12,11 @@
  */
 
 import { db, type Collection, type Highlight, type LibraryItem, type Note, type ReaderBookmark } from '../db'
+import { searchLaboratory } from '../laboratory/registry'
 
 export interface SearchResult {
   id: string
-  kind: 'note' | 'highlight' | 'bookmark' | 'book' | 'tag' | 'concept'
+  kind: 'note' | 'highlight' | 'bookmark' | 'book' | 'tag' | 'concept' | 'laboratory'
   title: string
   subtitle?: string
   /** In-app path to navigate to when this result is chosen. */
@@ -111,8 +112,21 @@ export async function searchEverything(query: string): Promise<SearchResultGroup
   // collection often *is* how someone thinks of a subject/shelf.
   void collections
 
+  // Laboratory Module, Tier 1 (brief §21/§22) — Laboratory content is
+  // curated and bundled (see core/laboratory/registry.ts), so its search
+  // is synchronous and local like the rest of this function's in-memory
+  // filtering; no extra async call needed alongside the Dexie queries above.
+  const laboratoryResults: SearchResult[] = searchLaboratory(query).map((hit) => ({
+    id: hit.id,
+    kind: 'laboratory',
+    title: hit.title,
+    subtitle: hit.subtitle,
+    path: `/laboratory/${hit.category}/${hit.id}`
+  }))
+
   const groups: SearchResultGroup[] = [
     { label: 'Concepts', results: conceptResults },
+    { label: 'Laboratory', results: laboratoryResults },
     { label: 'Notes', results: noteResults },
     { label: 'Highlights', results: highlightResults },
     { label: 'Bookmarks', results: bookmarkResults },
