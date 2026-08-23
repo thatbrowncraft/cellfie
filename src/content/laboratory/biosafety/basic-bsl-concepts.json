@@ -1,0 +1,33 @@
+{
+  "id": "safety-basic-bsl-concepts",
+  "category": "biosafety",
+  "title": "Basic Biosafety Level (BSL) Concepts",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "An introduction to the tiered system of laboratory practices, safety equipment, and facility design features used to match containment to the risk of the work being performed.",
+  "explanation": "BSLs (commonly described from BSL-1, the least stringent, to BSL-4, the most stringent) combine standard microbiological practices, special practices, safety equipment (primary barriers, e.g. BSCs), and facility design (secondary barriers) appropriate to a specific activity's risk assessment. As covered in the 'BSL vs. Risk Group' concept entry, the correct BSL for a task is determined by a risk assessment, not read directly off a fixed organism-to-BSL lookup table.",
+  "keyPractices": [
+    "Follow the standard microbiological practices required at every BSL (e.g. handwashing, no eating/drinking in the lab, waste decontamination).",
+    "Understand what special practices and equipment apply above the baseline level for the specific work being done.",
+    "Do not assume containment requirements transfer unchanged between different procedures using the same organism."
+  ],
+  "scopeCaveat": "This entry introduces the general concept only \u2014 the current, complete requirements for a specific BSL and organism should always be confirmed against the current edition of the BMBL and the relevant institutional biosafety committee guidance, not assumed from memory.",
+  "relatedConcepts": [
+    "concept-bsl-vs-risk-group"
+  ],
+  "searchKeywords": [
+    "biosafety level",
+    "bsl-1",
+    "bsl-2",
+    "containment"
+  ]
+}

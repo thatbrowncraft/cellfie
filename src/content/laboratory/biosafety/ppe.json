@@ -1,0 +1,38 @@
+{
+  "id": "safety-ppe",
+  "category": "biosafety",
+  "title": "Personal Protective Equipment (PPE)",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "The protective clothing and equipment worn to reduce exposure risk to laboratory personnel, chosen based on the specific hazards of the work being performed.",
+  "explanation": "Standard microbiology PPE commonly includes a lab coat (closed, fastened), gloves appropriate to the task, and eye protection when there is a splash risk. PPE requirements scale with the specific risk assessment for the organism, procedure (e.g. aerosol-generating steps may require additional respiratory protection), and facility policy \u2014 there is no single fixed PPE list that applies to every laboratory task.",
+  "keyPractices": [
+    "Wear a fastened lab coat dedicated to lab use, removed before leaving the lab area.",
+    "Select gloves appropriate to the specific hazard (biological vs. chemical) and change them when contaminated or torn.",
+    "Use eye/face protection for any procedure with splash or aerosol potential.",
+    "Never wear PPE (e.g. gloves) outside the lab in general areas (door handles, phones, etc.)."
+  ],
+  "commonMistakes": [
+    "Wearing the same gloves to touch a phone, doorknob, or personal items.",
+    "Assuming gloves alone substitute for handwashing."
+  ],
+  "relatedSafety": [
+    "safety-aseptic-technique",
+    "safety-sharps-safety"
+  ],
+  "searchKeywords": [
+    "lab coat",
+    "gloves",
+    "eye protection",
+    "personal protective equipment"
+  ]
+}

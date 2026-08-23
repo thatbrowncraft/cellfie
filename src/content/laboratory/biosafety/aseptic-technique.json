@@ -1,0 +1,41 @@
+{
+  "id": "safety-aseptic-technique",
+  "category": "biosafety",
+  "title": "Aseptic Technique in Practice",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "Practical habits that minimize contamination risk to cultures and exposure risk to personnel during routine microbiological work.",
+  "explanation": "Aseptic technique is a continuous discipline applied throughout a procedure \u2014 from decontaminating the bench before starting, to minimizing the time containers are open, to flaming/sterilizing tools between uses, to decontaminating the bench again at the end.",
+  "keyPractices": [
+    "Disinfect the work surface before and after work.",
+    "Keep culture container lids/caps closed except during the brief moment of transfer.",
+    "Sterilize loops/needles before and after each use.",
+    "Work close to a flame or within validated laminar/biosafety airflow appropriate to the organism.",
+    "Label everything clearly and immediately."
+  ],
+  "commonMistakes": [
+    "Setting an open culture tube down on the bench between steps.",
+    "Reusing a loop without re-sterilizing it between different cultures."
+  ],
+  "relatedProtocols": [
+    "proto-streak-plate",
+    "proto-spread-plate",
+    "proto-serial-dilution"
+  ],
+  "relatedConcepts": [
+    "concept-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "sterile technique",
+    "contamination control"
+  ]
+}

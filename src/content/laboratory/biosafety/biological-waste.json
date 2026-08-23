@@ -1,0 +1,36 @@
+{
+  "id": "safety-biological-waste",
+  "category": "biosafety",
+  "title": "Biological Waste Handling",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "Proper segregation, containment, and decontamination of materials contaminated with biological agents before disposal.",
+  "explanation": "Biological waste (contaminated pipette tips, culture plates, gloves, etc.) is typically segregated from general waste at the point of generation, placed in appropriately labeled biohazard containers/bags, and decontaminated (commonly by autoclaving) before final disposal, per institutional and applicable regulatory requirements.",
+  "keyPractices": [
+    "Segregate biohazard waste into clearly labeled, appropriate containers at the point of generation.",
+    "Do not overfill biohazard bags/containers.",
+    "Decontaminate (e.g. autoclave) waste according to institutional procedure before disposal.",
+    "Follow local/institutional regulations, which vary by jurisdiction and waste type."
+  ],
+  "commonMistakes": [
+    "Mixing sharps into a general biohazard bag instead of a dedicated sharps container.",
+    "Assuming a biohazard bag alone (without decontamination) is sufficient for disposal."
+  ],
+  "relatedSafety": [
+    "safety-sharps-safety",
+    "safety-sterilization"
+  ],
+  "searchKeywords": [
+    "biohazard waste",
+    "waste decontamination"
+  ]
+}

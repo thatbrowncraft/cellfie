@@ -1,0 +1,33 @@
+{
+  "id": "safety-sharps-safety",
+  "category": "biosafety",
+  "title": "Sharps Safety",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "Practices for safely handling and disposing of sharp items (needles, scalpels, broken glass, used slides) to prevent puncture/cut injuries and exposure.",
+  "explanation": "Sharps present both an injury risk and, in a microbiology context, a potential exposure route if contaminated. Dedicated puncture-resistant sharps containers, located near the point of use, are the standard control, along with never recapping needles by hand.",
+  "keyPractices": [
+    "Dispose of sharps immediately into a rigid, puncture-resistant, labeled sharps container.",
+    "Never recap a used needle by hand.",
+    "Never overfill a sharps container past its fill line.",
+    "Report any sharps injury immediately per institutional protocol."
+  ],
+  "commonMistakes": [
+    "Leaving used slides/blades on the open bench instead of disposing of them immediately.",
+    "Attempting to force extra items into an already-full sharps container."
+  ],
+  "searchKeywords": [
+    "needlestick",
+    "sharps container",
+    "puncture injury"
+  ]
+}

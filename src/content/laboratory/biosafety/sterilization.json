@@ -1,0 +1,38 @@
+{
+  "id": "safety-sterilization",
+  "category": "biosafety",
+  "title": "Sterilization Practices",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "Physical or chemical processes intended to eliminate all forms of microbial life, including bacterial endospores, from an item or material.",
+  "explanation": "Common sterilization methods in a teaching/basic microbiology lab include moist heat (autoclaving) and, for some heat-sensitive items, filtration or chemical sterilants. The specific cycle parameters needed to achieve sterility depend on the load type, volume, and container \u2014 a single universal time/temperature/pressure combination should not be assumed for every load; validated cycle parameters and periodic verification (see Sterilization Indicators) confirm actual performance.",
+  "keyPractices": [
+    "Match the sterilization method to the material (e.g. moist heat for most media and heat-stable items; filtration for heat-labile liquids).",
+    "Do not assume a single fixed cycle works for every load size/type \u2014 verify against the equipment manual and load validation.",
+    "Use appropriate indicators to periodically verify sterilization efficacy (see the Sterilization Indicators concept entry)."
+  ],
+  "commonMistakes": [
+    "Assuming the same autoclave cycle used for a small tube is adequate for a much larger liquid volume without verification."
+  ],
+  "relatedConcepts": [
+    "concept-sterilization-vs-disinfection",
+    "concept-sterilization-indicators"
+  ],
+  "relatedEquipment": [
+    "equip-autoclave"
+  ],
+  "searchKeywords": [
+    "moist heat sterilization",
+    "autoclaving",
+    "filtration sterilization"
+  ]
+}

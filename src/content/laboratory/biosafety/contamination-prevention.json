@@ -1,0 +1,32 @@
+{
+  "id": "safety-contamination-prevention",
+  "category": "biosafety",
+  "title": "Laboratory Contamination Prevention",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "Practices that reduce the likelihood of unwanted organisms entering cultures, reagents, or samples during routine work.",
+  "explanation": "Prevention rests mainly on consistent aseptic technique, proper media/reagent storage, regular equipment maintenance/cleaning (e.g. incubators, water baths), and prompt investigation of unexpected results that might indicate contamination rather than a true biological finding.",
+  "keyPractices": [
+    "Apply consistent aseptic technique at every transfer step.",
+    "Store media and reagents properly and check for signs of contamination (cloudiness, unexpected color change) before use.",
+    "Regularly clean and maintain shared equipment (incubators, water baths, refrigerators).",
+    "Investigate unexpected results as possible contamination before concluding a novel biological finding."
+  ],
+  "relatedConcepts": [
+    "concept-contamination",
+    "concept-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "contamination control",
+    "quality assurance"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "safety-spill-response",
+  "category": "biosafety",
+  "title": "Biological Spill Response",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "A general, staged approach to responding safely to a spill of biological material, minimizing exposure to personnel and preventing spread of contamination.",
+  "explanation": "Spill response generally follows a staged pattern: alert others in the area, allow aerosols to settle before approaching (for spills with aerosol potential), don appropriate PPE, cover the spill with absorbent material and apply an appropriate disinfectant, allow the required contact time, then clean up working from the outside of the spill inward and dispose of materials as biohazard waste. The specific steps, PPE, and disinfectant depend on the organism and the facility's written spill response procedure \u2014 this entry describes the general pattern, not a substitute for that specific procedure.",
+  "keyPractices": [
+    "Alert others nearby and, for aerosol-generating spills, allow time for aerosols to settle before re-entering/approaching.",
+    "Don PPE appropriate to the spill before cleanup.",
+    "Cover the spill with absorbent material and disinfect, allowing the full contact time.",
+    "Clean from the perimeter of the spill toward the center to avoid spreading contamination further.",
+    "Follow the facility's written spill response procedure for the specific organism involved."
+  ],
+  "commonMistakes": [
+    "Rushing to clean a spill immediately without allowing aerosols to settle when that step is indicated."
+  ],
+  "searchKeywords": [
+    "spill kit",
+    "biohazard spill",
+    "spill cleanup"
+  ]
+}
