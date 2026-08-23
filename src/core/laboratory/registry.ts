@@ -17,6 +17,7 @@ import type {
   Equipment,
   Formula,
   LabConcept,
+  LabDifficulty,
   LaboratoryCategory,
   LaboratoryContent,
   LaboratorySearchHit,
@@ -118,6 +119,46 @@ export function resolveRelated(ids: string[] | undefined): LaboratoryContent[] {
 }
 
 // ---------------------------------------------------------------------------
+// Difficulty / learning-progression (Laboratory 2.0 brief §3, §23-24)
+// ---------------------------------------------------------------------------
+
+export const DIFFICULTY_ORDER: LabDifficulty[] = ['beginner', 'intermediate', 'advanced', 'expert']
+
+export const DIFFICULTY_LABELS: Record<LabDifficulty, string> = {
+  beginner: 'Start Here',
+  intermediate: 'Build Your Skills',
+  advanced: 'Go Deeper',
+  expert: 'Research Bench'
+}
+
+export const DIFFICULTY_SHORT_LABELS: Record<LabDifficulty, string> = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+  expert: 'Expert / Research'
+}
+
+/** Every item across every category tagged with a given difficulty. Untagged content (difficulty undefined) never appears here — it isn't miscategorized as beginner, it's just not yet classified (brief §3: "do not create fake difficulty levels merely for UI"). */
+export function listByDifficulty(difficulty: LabDifficulty): LaboratoryContent[] {
+  return ALL_CONTENT.filter((c) => c.difficulty === difficulty)
+}
+
+export function countByDifficulty(): Record<LabDifficulty, number> {
+  return {
+    beginner: listByDifficulty('beginner').length,
+    intermediate: listByDifficulty('intermediate').length,
+    advanced: listByDifficulty('advanced').length,
+    expert: listByDifficulty('expert').length
+  }
+}
+
+/** Deterministic "Random Lab Pick" (brief §24) — no persistence, no tracking, just an even pick across whatever's currently registered. */
+export function getRandomLabContent(): LaboratoryContent | undefined {
+  if (ALL_CONTENT.length === 0) return undefined
+  return ALL_CONTENT[Math.floor(Math.random() * ALL_CONTENT.length)]
+}
+
+// ---------------------------------------------------------------------------
 // Search — local, substring, case-insensitive, multi-field (mirrors
 // core/organisms/registry.ts's approach). Consumed by both the Laboratory
 // hub's own search bar and, via core/search, Universal Search (brief §21).
@@ -125,10 +166,30 @@ export function resolveRelated(ids: string[] | undefined): LaboratoryContent[] {
 
 function buildHaystack(item: LaboratoryContent): string {
   const parts: (string | undefined)[] = [item.title, item.subcategory, item.category, ...(item.searchKeywords ?? [])]
-  if (item.category === 'media') parts.push(item.abbreviation)
+  if (item.category === 'media') parts.push(item.abbreviation, ...item.classifications, ...item.targetOrganisms)
   if (item.category === 'protocol' || item.category === 'biochemical-test') parts.push(item.purpose)
-  if (item.category === 'concept') parts.push(item.summary)
-  if (item.category === 'formula') parts.push(item.expression, item.domain)
+  if (item.category === 'concept') {
+    parts.push(item.summary)
+    if (item.comparison) item.comparison.forEach((c) => parts.push(c.aspect, c.left, c.right))
+  }
+  if (item.category === 'formula') parts.push(item.expression, item.domain, ...item.variables.map((v) => v.symbol))
+  if (item.category === 'biochemical-test' && item.exampleOrganisms) parts.push(...item.exampleOrganisms.map((o) => o.organism))
+  if (item.category === 'equipment') parts.push(item.kind)
+  // Related-content IDs (e.g. "calc-dilution-factor") let a search for a
+  // calculator/formula surface the protocol/concept that links to it and
+  // vice versa (brief §25: "dilution" should find the protocol, the
+  // formula, AND the calculator).
+  const relatedIds = [
+    ...(item.relatedProtocols ?? []),
+    ...(item.relatedConcepts ?? []),
+    ...(item.relatedMedia ?? []),
+    ...(item.relatedBiochemicalTests ?? []),
+    ...(item.relatedEquipment ?? []),
+    ...(item.relatedFormulas ?? []),
+    ...(item.relatedCalculators ?? []),
+    ...(item.relatedSafety ?? [])
+  ].map((id) => id.replace(/^(proto|concept|media|test|equip|formula|calc|safety)-/, '').replace(/-/g, ' '))
+  parts.push(...relatedIds)
   return parts.filter(Boolean).join(' ').toLowerCase()
 }
 

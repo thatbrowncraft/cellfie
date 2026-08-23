@@ -43,6 +43,23 @@ export const CALCULATOR_HUB_TAGLINE = 'Vibes are not a valid unit of measurement
 /** Shown under the Unit Converter section heading. */
 export const UNIT_CONVERTER_TAGLINE = 'Because µL and mL mix-ups end careers, not just experiments.'
 
+/** Shown under the "Quick Lab Desk" heading on the Laboratory Hub (brief §2-3). */
+export const QUICK_DESK_TAGLINE = 'Your digital lab bench — everything within arm\u2019s reach.'
+
+/** Shown under the "Learn by Difficulty" heading on the Laboratory Hub (brief §3). */
+export const LEARN_BY_DIFFICULTY_TAGLINE = 'Pick your arc: fresher, comfortable, dangerous, or "publish or perish."'
+
+/** One line per difficulty tier, shown on its own card in "Learn by Difficulty" (brief §23-24). */
+export const DIFFICULTY_TAGLINES: Record<'beginner' | 'intermediate' | 'advanced' | 'expert', string> = {
+  beginner: 'Foundational moves everyone needs before touching a real culture.',
+  intermediate: 'Where "I read about it" turns into "I can actually do it."',
+  advanced: 'Specialized techniques with real room to mess up.',
+  expert: 'QC, instrumentation, and the stuff that shows up after the degree.'
+}
+
+/** Shown next to the "Random Lab Pick" action (brief §24). */
+export const RANDOM_PICK_TAGLINE = 'Let the lab decide your fate.'
+
 const ITEM_TAGLINES: Record<string, string> = {
   // Protocols
   'proto-gram-stain': 'Purple or pink — the original main-character test.',
@@ -53,6 +70,9 @@ const ITEM_TAGLINES: Record<string, string> = {
   'proto-cfu-enumeration': 'Counting dots so math can do the rest.',
   'proto-wet-mount': "Live footage, no filter, no edits.",
   'proto-brightfield-microscopy': 'Zoom, but make it 1000×.',
+  'proto-acid-fast-stain': "The stain that laughs at acid-alcohol.",
+  'proto-endospore-stain': "Green means it packed survival gear.",
+  'proto-pour-plate': "Colonies suspended in agar, no surface required.",
 
   // Concepts
   'concept-aseptic-technique': "It's giving 'main character keeps their hands clean.'",
@@ -67,6 +87,10 @@ const ITEM_TAGLINES: Record<string, string> = {
   'concept-contamination': "The uninvited guest that ruins the whole plate.",
   'concept-sterilization-indicators': "Proof of work, but for killing spores.",
   'concept-od-vs-cell-concentration': "A vibe check for your culture, not a headcount.",
+  'concept-positive-negative-controls': "The receipts your test needs to be believed.",
+  'concept-generation-time': "How long until there's twice the chaos.",
+  'concept-pure-vs-mixed-culture': "One species, zero roommates.",
+  'concept-reproducibility-repeatability': "Getting it right once vs. getting it right everywhere.",
 
   // Media
   'media-nutrient-agar': 'The plain rice of microbiology media — reliable, unbothered.',
@@ -77,6 +101,9 @@ const ITEM_TAGLINES: Record<string, string> = {
   'media-blood-agar': "Bring blood, get judged by hemolysis.",
   'media-mueller-hinton': 'The referee medium for antibiotic showdowns.',
   'media-simmons-citrate': "Blue means yes, green means try again.",
+  'media-mannitol-salt-agar': "High salt, low tolerance for anything that isn't Staph.",
+  'media-emb': "Green sheen, big E. coli energy.",
+  'media-sabouraud-dextrose-agar': "The fungi's favorite low-pH buffet.",
 
   // Biochemical tests
   'test-catalase': 'Bubbles, but make it diagnostic.',
@@ -87,6 +114,9 @@ const ITEM_TAGLINES: Record<string, string> = {
   'test-tsi': "One tube, three sugars, way too much personality.",
   'test-methyl-red': 'Stays red if the acid game is strong.',
   'test-voges-proskauer': "Pink means it went the butanediol route instead.",
+  'test-motility': "A single stab reveals who actually moves.",
+  'test-nitrate-reduction': "Red means yes, zinc settles the arguments.",
+  'test-coagulase': "Clumps together, calls itself Staph aureus.",
 
   // Biosafety
   'safety-aseptic-technique': 'The discipline behind every clean result.',
@@ -100,6 +130,8 @@ const ITEM_TAGLINES: Record<string, string> = {
   'safety-contamination-prevention': 'Keeping the plot twist-free.',
   'safety-bsc-vs-clean-bench': "Wrong cabinet, wrong day — don't be that story.",
   'safety-basic-autoclave-safety': "Steam that means business. Respect it.",
+  'safety-risk-assessment': "The homework before the containment level.",
+  'safety-chemical-safety': "Read the label before it reads you your rights.",
 
   // Equipment
   'equip-microscope-brightfield': 'Your eyes, but with superpowers.',
@@ -121,6 +153,9 @@ const ITEM_TAGLINES: Record<string, string> = {
   'equip-inoculating-loop': 'Tiny loop, massive responsibility.',
   'equip-spreaders': "Distributing the wealth, agar-style.",
   'equip-microcentrifuge-tubes': "Tiny tubes holding your biggest hopes.",
+  'equip-spectrophotometer': "Shines a light on your culture's whole personality.",
+  'equip-water-bath': "A hot tub, strictly for reagents.",
+  'equip-co2-incubator': "A tiny, humid apartment with a very specific atmosphere.",
 
   // Formulas
   'formula-cfu-ml': "The formula that turns dots into data.",
@@ -136,6 +171,8 @@ const ITEM_TAGLINES: Record<string, string> = {
   'formula-mean': 'The average that carries the whole data set.',
   'formula-standard-deviation': "How much your data likes to wander.",
   'formula-cv': 'Spread, but make it a percentage.',
+  'formula-beer-lambert': "Light in, concentration out, no vibes involved.",
+  'formula-generation-time': "The stopwatch on exponential chaos.",
 
   // Calculators
   'calc-cfu-ml': "Do the math so your pipetting hand doesn't have to.",
@@ -144,7 +181,8 @@ const ITEM_TAGLINES: Record<string, string> = {
   'calc-c1v1': 'Solves for the blank so you don\u2019t have to algebra at 8am.',
   'calc-molarity-mass': "Tells the scale exactly what to expect.",
   'calc-rcf-rpm': 'Converts speed into force, drama-free.',
-  'calc-statistics': "Turns your triplicates into an actual conclusion."
+  'calc-statistics': "Turns your triplicates into an actual conclusion.",
+  'calc-beer-lambert': "Turns a light reading into an actual number."
 }
 
 /**

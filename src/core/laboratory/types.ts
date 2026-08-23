@@ -65,6 +65,16 @@ export interface ReferencedValue {
   unverified?: boolean
 }
 
+/**
+ * Learning-progression tier (Laboratory 2.0 brief §3/§23). Deliberately
+ * flat and reused across every category rather than a second per-category
+ * scale — "beginner" means the same thing whether it labels a protocol, a
+ * piece of equipment, or a formula. Optional: absence means "not yet
+ * classified", not "beginner" — the registry's difficulty helpers treat
+ * unset content as its own bucket rather than silently defaulting it.
+ */
+export type LabDifficulty = 'beginner' | 'intermediate' | 'advanced' | 'expert'
+
 export interface LabContentMeta {
   id: string
   category: LaboratoryCategory
@@ -76,6 +86,8 @@ export interface LabContentMeta {
   references: LabReference[]
   scientificNotes?: string
   searchKeywords?: string[]
+  /** Learning-progression tier for the "Learn by Difficulty" hub view (brief §3). Scientifically judged per item, never assigned just to fill the UI. */
+  difficulty?: LabDifficulty
 }
 
 /** Cross-links use stable IDs only — never duplicated content (brief §14). Every array is optional; absence means "none recorded yet", not "none exist". */

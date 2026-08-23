@@ -333,6 +333,38 @@ export function calculateStatistics({ values, mode }: StatisticsInput): Statisti
 }
 
 // ---------------------------------------------------------------------------
+// 8. Beer-Lambert / Concentration-from-Absorbance Calculator
+// ---------------------------------------------------------------------------
+
+export interface BeerLambertInput {
+  absorbance: number
+  molarAbsorptivity: number
+  pathLengthCm: number
+}
+
+export function calculateConcentrationFromAbsorbance({ absorbance, molarAbsorptivity, pathLengthCm }: BeerLambertInput): CalculatorOutcome {
+  requireNonNegative(absorbance, 'Absorbance')
+  requirePositive(molarAbsorptivity, 'Molar absorptivity')
+  requirePositive(pathLengthCm, 'Path length')
+
+  const concentrationMolar = absorbance / (molarAbsorptivity * pathLengthCm)
+  const warnings: string[] = []
+  if (absorbance > 1.5) {
+    warnings.push(
+      'This absorbance is quite high — most spectrophotometers stop behaving linearly well before A = 2. Consider diluting the sample and re-measuring rather than trusting a reading this high at face value.'
+    )
+  }
+
+  return {
+    formula: 'c = A / (ε × l)',
+    substitution: `${absorbance} / (${molarAbsorptivity} × ${pathLengthCm})`,
+    result: `${formatScientific(concentrationMolar)} mol/L`,
+    interpretation: `At an absorbance of ${absorbance} with molar absorptivity ${formatScientific(molarAbsorptivity)} L·mol⁻¹·cm⁻¹ and a ${pathLengthCm} cm path length, the estimated concentration is ${formatScientific(concentrationMolar)} mol/L. This is only valid within the instrument's linear absorbance range and assumes ε is correct for this exact substance, solvent, and wavelength.`,
+    warnings: warnings.length ? warnings : undefined
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Calculator registry — metadata for the Calculator Hub listing/cards.
 // Stable IDs match the brief's §14 naming convention (calc-*).
 // ---------------------------------------------------------------------------
@@ -352,7 +384,8 @@ export const CALCULATORS: CalculatorMeta[] = [
   { id: 'calc-c1v1', title: 'C₁V₁ = C₂V₂ Calculator', shortDescription: 'Solve for any one variable in a dilution equation.', relatedFormulas: ['formula-c1v1'], relatedProtocols: [] },
   { id: 'calc-molarity-mass', title: 'Molarity / Mass Prep Calculator', shortDescription: 'Required solute mass for a target molarity.', relatedFormulas: ['formula-molarity'], relatedProtocols: [] },
   { id: 'calc-rcf-rpm', title: 'RCF ⇄ RPM Calculator', shortDescription: 'Convert between centrifuge speed and relative centrifugal force.', relatedFormulas: ['formula-rcf-rpm'], relatedProtocols: [] },
-  { id: 'calc-statistics', title: 'Basic Statistics Calculator', shortDescription: 'Mean, standard deviation, and coefficient of variation.', relatedFormulas: ['formula-mean', 'formula-standard-deviation', 'formula-cv'], relatedProtocols: [] }
+  { id: 'calc-statistics', title: 'Basic Statistics Calculator', shortDescription: 'Mean, standard deviation, and coefficient of variation.', relatedFormulas: ['formula-mean', 'formula-standard-deviation', 'formula-cv'], relatedProtocols: [] },
+  { id: 'calc-beer-lambert', title: 'Beer-Lambert Concentration Calculator', shortDescription: 'Solve for concentration from an absorbance reading.', relatedFormulas: ['formula-beer-lambert'], relatedProtocols: [] }
 ]
 
 export function getCalculatorMeta(id: string): CalculatorMeta | undefined {
