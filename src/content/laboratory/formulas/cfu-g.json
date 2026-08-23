@@ -1,0 +1,55 @@
+{
+  "id": "formula-cfu-g",
+  "category": "formula",
+  "title": "CFU/g",
+  "subcategory": "Microbiology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Microbiology",
+  "expression": "CFU/g = N / (Vplated \u00d7 Dhomogenization \u00d7 Dplate)",
+  "explanation": "Extends the CFU/mL formula to solid or semi-solid samples by folding in the initial homogenization step (e.g. blending a solid sample into a diluent) as its own dilution factor, in addition to any further serial dilution before plating.",
+  "variables": [
+    {
+      "symbol": "N",
+      "meaning": "Number of colonies counted on the plate"
+    },
+    {
+      "symbol": "Vplated",
+      "meaning": "Volume of the plated homogenate/dilution",
+      "unit": "mL"
+    },
+    {
+      "symbol": "Dhomogenization",
+      "meaning": "mass / (mass + diluent volume) \u2014 the dilution introduced by initial sample preparation"
+    },
+    {
+      "symbol": "Dplate",
+      "meaning": "Any additional serial dilution factor applied after homogenization"
+    }
+  ],
+  "workedExample": {
+    "scenario": "25 colonies from 0.1 mL plated, where 10 g of sample was homogenized into 90 mL diluent (Dhomogenization = 10/100 = 0.1) with no further dilution (Dplate = 1).",
+    "substitution": "25 / (0.1 \u00d7 0.1 \u00d7 1)",
+    "result": "2.5 \u00d7 10\u00b3 CFU/g"
+  },
+  "commonMistakes": [
+    "Treating the homogenization step as if it introduces no dilution, which significantly underestimates the true CFU/g."
+  ],
+  "relatedCalculators": [
+    "calc-cfu-g"
+  ],
+  "relatedProtocols": [
+    "proto-serial-dilution"
+  ],
+  "searchKeywords": [
+    "cfu per gram",
+    "solid sample enumeration"
+  ]
+}

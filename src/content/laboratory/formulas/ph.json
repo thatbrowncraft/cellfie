@@ -1,0 +1,41 @@
+{
+  "id": "formula-ph",
+  "category": "formula",
+  "title": "pH from Hydrogen Ion Concentration",
+  "subcategory": "pH & Chemistry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "pH & Chemistry",
+  "expression": "pH = \u2212log\u2081\u2080[H\u207a]",
+  "explanation": "Defines pH as the negative base-10 logarithm of the hydrogen ion (H\u207a) activity/concentration in a solution \u2014 lower pH means higher H\u207a concentration (more acidic), higher pH means lower H\u207a concentration (more basic).",
+  "variables": [
+    {
+      "symbol": "[H\u207a]",
+      "meaning": "Hydrogen ion concentration",
+      "unit": "mol/L"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A solution with [H\u207a] = 1 \u00d7 10\u207b\u2075 mol/L.",
+    "substitution": "\u2212log\u2081\u2080(1 \u00d7 10\u207b\u2075)",
+    "result": "pH = 5"
+  },
+  "commonMistakes": [
+    "Forgetting that each whole pH unit represents a 10-fold change in H\u207a concentration, not a linear change."
+  ],
+  "relatedEquipment": [
+    "equip-ph-meter"
+  ],
+  "searchKeywords": [
+    "hydrogen ion concentration",
+    "acidity",
+    "logarithmic scale"
+  ]
+}

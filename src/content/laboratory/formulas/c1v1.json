@@ -1,0 +1,51 @@
+{
+  "id": "formula-c1v1",
+  "category": "formula",
+  "title": "C\u2081V\u2081 = C\u2082V\u2082",
+  "subcategory": "Solution Preparation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Solution Preparation",
+  "expression": "C\u2081V\u2081 = C\u2082V\u2082",
+  "explanation": "Describes dilution of a stock solution: the amount of solute (concentration \u00d7 volume) is conserved before and after dilution, since diluting only adds solvent, not solute.",
+  "variables": [
+    {
+      "symbol": "C\u2081",
+      "meaning": "Initial (stock) concentration"
+    },
+    {
+      "symbol": "V\u2081",
+      "meaning": "Volume of stock needed"
+    },
+    {
+      "symbol": "C\u2082",
+      "meaning": "Final (target) concentration"
+    },
+    {
+      "symbol": "V\u2082",
+      "meaning": "Final (target) total volume"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Preparing 500 mL of a 0.5 M solution from a 5 M stock (solving for V\u2081).",
+    "substitution": "V\u2081 = (0.5 \u00d7 500) / 5",
+    "result": "V\u2081 = 50 mL of stock, brought to 500 mL total with solvent"
+  },
+  "commonMistakes": [
+    "Mixing concentration units between C\u2081 and C\u2082 (e.g. mg/mL and M) without converting first \u2014 this formula assumes both concentrations are expressed in the same unit."
+  ],
+  "relatedCalculators": [
+    "calc-c1v1"
+  ],
+  "searchKeywords": [
+    "dilution equation",
+    "stock solution dilution"
+  ]
+}

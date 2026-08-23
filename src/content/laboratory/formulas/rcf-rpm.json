@@ -1,0 +1,54 @@
+{
+  "id": "formula-rcf-rpm",
+  "category": "formula",
+  "title": "RCF \u21c4 RPM Relationship",
+  "subcategory": "Centrifugation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Centrifugation",
+  "expression": "RCF (\u00d7g) = 1.118 \u00d7 10\u207b\u2075 \u00d7 r (cm) \u00d7 RPM\u00b2",
+  "explanation": "Relates a centrifuge's rotational speed (RPM) to the relative centrifugal force (RCF, expressed as a multiple of Earth's gravity, \u00d7g) actually experienced by the sample, which depends on both speed and the radius from the rotation axis to the sample.",
+  "variables": [
+    {
+      "symbol": "RCF",
+      "meaning": "Relative centrifugal force",
+      "unit": "\u00d7g"
+    },
+    {
+      "symbol": "r",
+      "meaning": "Rotor radius (distance from spindle center to the point of interest, per the specific rotor's documented measurement convention)",
+      "unit": "cm"
+    },
+    {
+      "symbol": "RPM",
+      "meaning": "Rotational speed",
+      "unit": "revolutions per minute"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A rotor radius of 10 cm spinning at 5000 RPM.",
+    "substitution": "1.118 \u00d7 10\u207b\u2075 \u00d7 10 \u00d7 5000\u00b2",
+    "result": "\u2248 2795 \u00d7 g"
+  },
+  "commonMistakes": [
+    "Using a generic 'typical' rotor radius instead of the actual radius specified for the rotor in use \u2014 RCF at a given RPM varies substantially between rotors of different sizes."
+  ],
+  "relatedCalculators": [
+    "calc-rcf-rpm"
+  ],
+  "relatedEquipment": [
+    "equip-centrifuge"
+  ],
+  "searchKeywords": [
+    "relative centrifugal force",
+    "times gravity",
+    "centrifuge speed conversion"
+  ]
+}

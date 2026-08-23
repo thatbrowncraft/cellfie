@@ -1,0 +1,51 @@
+{
+  "id": "formula-dilution-factor",
+  "category": "formula",
+  "title": "Dilution Factor",
+  "subcategory": "Microbiology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Microbiology",
+  "expression": "Dilution factor = Vsample / (Vsample + Vdiluent) = Vsample / Vfinal",
+  "explanation": "Expresses how much a sample has been diluted, as the fraction of the final volume that came from the original sample. For serial dilutions, the cumulative dilution factor is the product of each individual step's factor.",
+  "variables": [
+    {
+      "symbol": "Vsample",
+      "meaning": "Volume of sample added"
+    },
+    {
+      "symbol": "Vdiluent",
+      "meaning": "Volume of diluent added"
+    },
+    {
+      "symbol": "Vfinal",
+      "meaning": "Total final volume (Vsample + Vdiluent)"
+    }
+  ],
+  "workedExample": {
+    "scenario": "1 mL of sample added to 9 mL of diluent.",
+    "substitution": "1 / (1 + 9)",
+    "result": "Dilution factor = 0.1 (a 1:10 dilution)"
+  },
+  "commonMistakes": [
+    "Confusing '1:10 dilution' (factor 0.1) with 'diluted 10-fold' phrased ambiguously \u2014 always double check whether a stated ratio describes sample:total or sample:diluent."
+  ],
+  "relatedCalculators": [
+    "calc-dilution-factor"
+  ],
+  "relatedProtocols": [
+    "proto-serial-dilution"
+  ],
+  "searchKeywords": [
+    "serial dilution formula",
+    "dilution ratio",
+    "dilution notation"
+  ]
+}

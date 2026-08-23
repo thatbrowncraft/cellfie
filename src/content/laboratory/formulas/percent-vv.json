@@ -1,0 +1,43 @@
+{
+  "id": "formula-percent-vv",
+  "category": "formula",
+  "title": "% v/v (Volume per Volume)",
+  "subcategory": "Solution Preparation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Solution Preparation",
+  "expression": "% v/v = (volume of solute in mL / volume of final solution in mL) \u00d7 100",
+  "explanation": "Expresses concentration as mL of a liquid solute (or liquid reagent) per 100 mL of final solution \u2014 common for describing liquid-in-liquid dilutions (e.g. '70% v/v ethanol').",
+  "variables": [
+    {
+      "symbol": "volume of solute",
+      "meaning": "Volume of the liquid component being diluted",
+      "unit": "mL"
+    },
+    {
+      "symbol": "volume of final solution",
+      "meaning": "Total final volume after dilution",
+      "unit": "mL"
+    }
+  ],
+  "workedExample": {
+    "scenario": "70 mL of pure ethanol brought to a final volume of 100 mL with water.",
+    "substitution": "(70 / 100) \u00d7 100",
+    "result": "70% v/v"
+  },
+  "commonMistakes": [
+    "Assuming volumes of two liquids are strictly additive when mixed \u2014 for some solvent pairs (notably ethanol/water) the true final volume can differ slightly from the simple sum, which matters for precise work."
+  ],
+  "searchKeywords": [
+    "volume per volume",
+    "percent solution",
+    "ethanol dilution"
+  ]
+}

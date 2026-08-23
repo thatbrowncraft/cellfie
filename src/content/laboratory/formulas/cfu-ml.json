@@ -1,0 +1,56 @@
+{
+  "id": "formula-cfu-ml",
+  "category": "formula",
+  "title": "CFU/mL",
+  "subcategory": "Microbiology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Microbiology",
+  "expression": "CFU/mL = N / (Vplated \u00d7 D)",
+  "explanation": "Converts a raw colony count on a plate into an estimate of viable colony-forming units per mL of the original sample, correcting for both the volume plated and how diluted that plate's inoculum was relative to the original sample.",
+  "variables": [
+    {
+      "symbol": "N",
+      "meaning": "Number of colonies counted on the plate"
+    },
+    {
+      "symbol": "Vplated",
+      "meaning": "Volume of diluted sample plated",
+      "unit": "mL"
+    },
+    {
+      "symbol": "D",
+      "meaning": "Dilution factor of the plated sample (e.g. 10\u207b\u00b3 for a 1:1000 dilution)"
+    }
+  ],
+  "workedExample": {
+    "scenario": "142 colonies counted on a plate from a 10\u207b\u2074 dilution, with 0.1 mL plated.",
+    "substitution": "142 / (0.1 \u00d7 10\u207b\u2074)",
+    "result": "1.42 \u00d7 10\u2077 CFU/mL"
+  },
+  "commonMistakes": [
+    "Forgetting to include the volume plated (using only the dilution factor) when it is not exactly 1 mL.",
+    "Mixing up the dilution factor with the dilution notation's denominator (0.1 vs. 10, for a 1:10 dilution)."
+  ],
+  "relatedCalculators": [
+    "calc-cfu-ml"
+  ],
+  "relatedProtocols": [
+    "proto-spread-plate",
+    "proto-cfu-enumeration"
+  ],
+  "relatedConcepts": [
+    "concept-cfu-vs-direct-count"
+  ],
+  "searchKeywords": [
+    "colony forming units",
+    "viable count formula"
+  ]
+}

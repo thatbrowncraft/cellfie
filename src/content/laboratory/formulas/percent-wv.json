@@ -1,0 +1,42 @@
+{
+  "id": "formula-percent-wv",
+  "category": "formula",
+  "title": "% w/v (Weight per Volume)",
+  "subcategory": "Solution Preparation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Solution Preparation",
+  "expression": "% w/v = (mass of solute in grams / volume of solution in mL) \u00d7 100",
+  "explanation": "Expresses concentration as grams of solute per 100 mL of final solution \u2014 common for describing solid reagents dissolved in a liquid (e.g. '2% w/v NaCl').",
+  "variables": [
+    {
+      "symbol": "mass of solute",
+      "meaning": "Mass of solute dissolved",
+      "unit": "g"
+    },
+    {
+      "symbol": "volume of solution",
+      "meaning": "Total final solution volume",
+      "unit": "mL"
+    }
+  ],
+  "workedExample": {
+    "scenario": "2 g of solute dissolved to a final volume of 100 mL.",
+    "substitution": "(2 / 100) \u00d7 100",
+    "result": "2% w/v"
+  },
+  "commonMistakes": [
+    "Confusing % w/v with % w/w (weight per weight) \u2014 they are not the same for non-water solvents/dilute vs. concentrated solutions."
+  ],
+  "searchKeywords": [
+    "weight per volume",
+    "percent solution"
+  ]
+}

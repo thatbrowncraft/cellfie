@@ -1,0 +1,40 @@
+{
+  "id": "formula-mean",
+  "category": "formula",
+  "title": "Mean (Arithmetic Average)",
+  "subcategory": "Statistics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Statistics",
+  "expression": "Mean = \u03a3x / n",
+  "explanation": "The sum of all values divided by the number of values \u2014 the most common measure of central tendency for a data set.",
+  "variables": [
+    {
+      "symbol": "\u03a3x",
+      "meaning": "Sum of all values"
+    },
+    {
+      "symbol": "n",
+      "meaning": "Number of values"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Replicate plate counts of 28, 31, and 30 CFU.",
+    "substitution": "(28 + 31 + 30) / 3",
+    "result": "Mean = 29.67"
+  },
+  "relatedCalculators": [
+    "calc-statistics"
+  ],
+  "searchKeywords": [
+    "average",
+    "central tendency"
+  ]
+}

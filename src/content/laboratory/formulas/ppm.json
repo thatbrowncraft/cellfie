@@ -1,0 +1,43 @@
+{
+  "id": "formula-ppm",
+  "category": "formula",
+  "title": "Parts Per Million (ppm) / Parts Per Billion (ppb)",
+  "subcategory": "Solution Preparation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Solution Preparation",
+  "expression": "ppm = (mass of solute / mass of solution) \u00d7 10\u2076  (for dilute aqueous solutions, approximated as mg/L)",
+  "explanation": "Expresses very low concentrations as a ratio scaled by one million (ppm) or one billion (ppb). For dilute aqueous solutions, where 1 L of solution has a mass close to 1 kg, ppm is commonly approximated as mg/L \u2014 a simplification that becomes less accurate for concentrated or non-aqueous solutions.",
+  "variables": [
+    {
+      "symbol": "mass of solute",
+      "meaning": "Mass of the solute",
+      "unit": "mg (in the common dilute-aqueous approximation)"
+    },
+    {
+      "symbol": "volume of solution",
+      "meaning": "Volume of solution",
+      "unit": "L (in the common dilute-aqueous approximation)"
+    }
+  ],
+  "workedExample": {
+    "scenario": "5 mg of solute dissolved in 1 L of dilute aqueous solution.",
+    "substitution": "5 mg / 1 L",
+    "result": "5 ppm (using the dilute-aqueous mg/L approximation)"
+  },
+  "commonMistakes": [
+    "Applying the mg/L \u2248 ppm shortcut to a concentrated or non-aqueous solution, where the density assumption it relies on no longer holds."
+  ],
+  "searchKeywords": [
+    "trace concentration",
+    "mg per liter",
+    "dilute solution"
+  ]
+}
