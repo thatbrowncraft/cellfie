@@ -1,0 +1,47 @@
+{
+  "id": "concept-bsc-vs-clean-bench",
+  "category": "concept",
+  "title": "Biological Safety Cabinet (BSC) vs. Clean Bench",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM microbiology curriculum resources",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "summary": "A Biological Safety Cabinet (BSC) protects the worker, the environment, and (for Class II) the sample from contamination via HEPA-filtered, directional airflow. A laminar flow 'clean bench' protects only the product/sample from contamination \u2014 it is not designed to protect the worker and is not appropriate for infectious materials.",
+  "explanation": "The physical resemblance between a BSC and a clean bench causes real confusion in teaching labs. A horizontal or vertical laminar flow clean bench blows HEPA-filtered air outward toward the worker to keep the work surface particulate-free (useful for sterile plant tissue culture or electronics work, for example) \u2014 that same airflow direction is precisely why it must never be used for infectious agents. A Class II BSC instead draws air inward and exhausts it through HEPA filtration, protecting the worker.",
+  "comparison": [
+    {
+      "aspect": "Airflow direction",
+      "left": "BSC (Class II): inward and HEPA-filtered, protecting the worker",
+      "right": "Clean bench: outward toward the worker, protecting only the product"
+    },
+    {
+      "aspect": "Safe for infectious agents?",
+      "left": "Yes, appropriate to its class rating",
+      "right": "No \u2014 never appropriate for infectious materials"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming any cabinet with a glass shield and blowing air is a 'safety cabinet' \u2014 appearance alone does not indicate worker protection."
+  ],
+  "relatedEquipment": [
+    "equip-bsc-class-ii"
+  ],
+  "relatedSafety": [
+    "safety-bsc-vs-clean-bench"
+  ],
+  "searchKeywords": [
+    "laminar flow hood",
+    "biosafety cabinet",
+    "clean bench"
+  ]
+}

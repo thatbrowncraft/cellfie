@@ -1,0 +1,34 @@
+{
+  "id": "concept-contamination",
+  "category": "concept",
+  "title": "Laboratory Contamination",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM microbiology curriculum resources",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "summary": "The unintended introduction of unwanted microorganisms, chemicals, or foreign material into a culture, reagent, or sample.",
+  "explanation": "Contamination can be biological (an unwanted organism growing in or alongside your culture), chemical (a reagent cross-contaminated with another substance), or cross-contamination between samples via shared equipment or aerosols. Recognizing it (e.g. unexpected colony morphology, cloudiness in a broth that should be clear, unexpected biochemical results) and tracing its likely source (technique lapse, contaminated reagent, contaminated equipment) is a core lab skill, addressed largely through consistent aseptic technique.",
+  "commonMisconceptions": [
+    "Assuming contamination is always obvious to the eye \u2014 a contaminating organism with similar colony morphology can go unnoticed without careful technique."
+  ],
+  "relatedConcepts": [
+    "concept-aseptic-technique"
+  ],
+  "relatedSafety": [
+    "safety-contamination-prevention"
+  ],
+  "searchKeywords": [
+    "contaminated culture",
+    "cross contamination"
+  ]
+}

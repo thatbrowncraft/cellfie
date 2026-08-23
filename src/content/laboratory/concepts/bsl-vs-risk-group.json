@@ -1,0 +1,44 @@
+{
+  "id": "concept-bsl-vs-risk-group",
+  "category": "concept",
+  "title": "Biosafety Level (BSL) vs. Risk Group",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM microbiology curriculum resources",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "summary": "Risk Group is a classification of an organism's inherent hazard (based on factors like pathogenicity, transmissibility, and availability of treatment). Biosafety Level (BSL) is a set of laboratory practices, safety equipment, and facility features appropriate to the specific work being done.",
+  "explanation": "Risk Group and BSL are related but are not interchangeable, and a given organism's Risk Group does not automatically dictate one fixed BSL for every procedure involving it \u2014 a risk assessment considers the specific organism, procedure (e.g. aerosol-generating steps), concentration/volume, and competency of personnel. The same organism might reasonably be handled at different containment levels for different procedures.",
+  "comparison": [
+    {
+      "aspect": "What it classifies",
+      "left": "Risk Group: the organism's inherent hazard",
+      "right": "BSL: the practices/equipment/facility for a specific activity"
+    },
+    {
+      "aspect": "Determined by",
+      "left": "Organism characteristics (fixed, reference-based)",
+      "right": "A risk assessment of the specific work being performed"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming 'Risk Group 2' automatically means every procedure with that organism is BSL-2 \u2014 the appropriate containment depends on a task-specific risk assessment, not a blanket rule."
+  ],
+  "relatedSafety": [
+    "safety-basic-bsl-concepts"
+  ],
+  "searchKeywords": [
+    "biosafety level",
+    "risk group",
+    "containment"
+  ]
+}

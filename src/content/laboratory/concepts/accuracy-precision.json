@@ -1,0 +1,41 @@
+{
+  "id": "concept-accuracy-precision",
+  "category": "concept",
+  "title": "Accuracy vs. Precision",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM microbiology curriculum resources",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "summary": "Accuracy is how close a measurement is to the true value. Precision is how close repeated measurements are to each other, regardless of whether they are close to the true value.",
+  "explanation": "A method can be precise but not accurate (consistently wrong in the same direction, e.g. a mis-calibrated pipette or balance), accurate but not precise (results scatter around the true value but average close to it), both, or neither. In lab work, both matter: calibration and technique consistency (e.g. consistent pipetting angle and depth) improve precision, while proper instrument calibration and validated methods improve accuracy.",
+  "comparison": [
+    {
+      "aspect": "Definition",
+      "left": "Accuracy: closeness to the true/target value",
+      "right": "Precision: closeness of repeated results to each other"
+    },
+    {
+      "aspect": "Improved by",
+      "left": "Calibration, validated methods, correcting systematic error",
+      "right": "Consistent technique, reducing random error"
+    }
+  ],
+  "commonMisconceptions": [
+    "Using 'accurate' and 'precise' interchangeably in casual lab speech."
+  ],
+  "searchKeywords": [
+    "measurement error",
+    "systematic error",
+    "random error"
+  ]
+}

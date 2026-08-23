@@ -1,0 +1,44 @@
+{
+  "id": "concept-enriched-vs-enrichment-media",
+  "category": "concept",
+  "title": "Enriched vs. Enrichment Media",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM microbiology curriculum resources",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "summary": "Enriched media add nutrients (like blood or serum) to support the growth of fastidious organisms that won't grow on basic media. Enrichment media/broths are used to selectively increase the proportion of a target organism from a mixed sample before plating.",
+  "explanation": "Despite the similar names, these solve different problems. Enriched media (e.g. blood agar) provide extra nutrition on a solid or liquid medium so a demanding organism can grow at all. Enrichment media/broths are typically liquid, used as a pre-step, and combine nutrients with (often) a selective agent so a target organism outcompetes background flora before it is later streaked onto a plate.",
+  "comparison": [
+    {
+      "aspect": "Purpose",
+      "left": "Enriched: supports growth of nutritionally demanding organisms",
+      "right": "Enrichment: boosts a target organism's proportion in a mixed sample before isolation"
+    },
+    {
+      "aspect": "Typical example",
+      "left": "Blood agar, chocolate agar",
+      "right": "Selenite broth, tetrathionate broth (Tier 2 examples)"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating 'enriched' and 'enrichment' as synonyms because they sound alike."
+  ],
+  "relatedMedia": [
+    "media-blood-agar",
+    "media-nutrient-broth"
+  ],
+  "searchKeywords": [
+    "fastidious organisms",
+    "pre-enrichment"
+  ]
+}

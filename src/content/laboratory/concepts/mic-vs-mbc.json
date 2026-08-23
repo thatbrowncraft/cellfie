@@ -1,0 +1,41 @@
+{
+  "id": "concept-mic-vs-mbc",
+  "category": "concept",
+  "title": "MIC vs. MBC",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM microbiology curriculum resources",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "summary": "MIC (Minimum Inhibitory Concentration) is the lowest antimicrobial concentration that visibly inhibits growth. MBC (Minimum Bactericidal Concentration) is the lowest concentration that kills a defined proportion (commonly cited as \u226599.9%) of the original inoculum.",
+  "explanation": "MIC is typically determined by broth microdilution or a similar method, reading for visible turbidity/no growth. MBC is determined by subculturing wells at or above the MIC onto antibiotic-free media and looking for the concentration at which the required kill proportion is achieved. MBC is always greater than or equal to MIC for a given organism-drug pair \u2014 an agent that merely inhibits growth (bacteriostatic) will have an MBC much higher than its MIC, or none determinable at tested concentrations, while a bactericidal agent's MBC is close to its MIC. Full determination methodology is a Tier 2 protocol topic; this entry defines the terms only.",
+  "comparison": [
+    {
+      "aspect": "Definition",
+      "left": "MIC: lowest concentration that inhibits visible growth",
+      "right": "MBC: lowest concentration that kills a defined proportion of the inoculum"
+    },
+    {
+      "aspect": "Relationship",
+      "left": "MIC \u2264 MBC always",
+      "right": "MBC \u2248 MIC suggests a bactericidal agent; MBC \u226b MIC suggests bacteriostatic"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating MIC as if it always tells you whether an agent kills the organism \u2014 it only tells you it stops visible growth."
+  ],
+  "searchKeywords": [
+    "antimicrobial susceptibility",
+    "bacteriostatic",
+    "bactericidal"
+  ]
+}

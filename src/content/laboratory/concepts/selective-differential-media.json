@@ -1,0 +1,44 @@
+{
+  "id": "concept-selective-differential-media",
+  "category": "concept",
+  "title": "Selective vs. Differential Media",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM microbiology curriculum resources",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "summary": "Selective media inhibit the growth of some organisms while allowing others to grow. Differential media allow multiple organisms to grow but let you visually distinguish between them based on a biochemical reaction.",
+  "explanation": "A medium can be selective, differential, both, or neither. MacConkey agar, for example, is both selective (bile salts and crystal violet inhibit most Gram-positive organisms) and differential (lactose fermentation is indicated by a color change). Selectivity and differentiation are independent properties of a medium's formulation, not a single spectrum.",
+  "comparison": [
+    {
+      "aspect": "Mechanism",
+      "left": "Selective: an inhibitory ingredient suppresses unwanted growth",
+      "right": "Differential: an indicator ingredient reveals a metabolic difference"
+    },
+    {
+      "aspect": "Example ingredient",
+      "left": "Bile salts, antibiotics, high salt/dye concentration",
+      "right": "A fermentable sugar plus a pH or redox indicator"
+    }
+  ],
+  "commonMisconceptions": [
+    "That a medium must be one or the other \u2014 many common media are both at once."
+  ],
+  "relatedMedia": [
+    "media-macconkey",
+    "media-blood-agar"
+  ],
+  "searchKeywords": [
+    "indicator media",
+    "inhibitory media"
+  ]
+}

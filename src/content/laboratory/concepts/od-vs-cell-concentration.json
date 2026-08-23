@@ -1,0 +1,45 @@
+{
+  "id": "concept-od-vs-cell-concentration",
+  "category": "concept",
+  "title": "Optical Density (OD) vs. Cell Concentration",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM microbiology curriculum resources",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "summary": "Optical density (commonly OD600, absorbance at 600 nm) is a rapid, indirect proxy for the concentration of cells in a liquid culture based on light scattering, not a direct cell count.",
+  "explanation": "OD readings correlate with cell concentration, but the relationship between a given OD value and actual CFU/mL or cells/mL is specific to the organism, cell size/shape, growth phase, and even the specific spectrophotometer \u2014 it is not a fixed universal conversion. A calibration/standard curve (comparing OD to an independent method like plate counts or direct counts for that specific organism and instrument) is needed before OD can be used to estimate concentration in absolute terms. OD is also unreliable at very high cell densities where the relationship becomes non-linear, often requiring dilution before reading.",
+  "comparison": [
+    {
+      "aspect": "What it measures",
+      "left": "OD: light scattering/absorbance, an indirect proxy",
+      "right": "Cell concentration: an actual count (CFU/mL or direct count)"
+    },
+    {
+      "aspect": "Portability of a value",
+      "left": "An OD value's meaning is organism-, instrument-, and growth-phase-specific",
+      "right": "A CFU/mL or cells/mL value is a direct, portable measurement"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming a specific OD600 value (e.g. 'OD600 = 1.0') means the same cell concentration across different organisms or instruments without a calibration curve."
+  ],
+  "relatedConcepts": [
+    "concept-cfu-vs-direct-count"
+  ],
+  "searchKeywords": [
+    "od600",
+    "spectrophotometer",
+    "growth curve",
+    "turbidity"
+  ]
+}

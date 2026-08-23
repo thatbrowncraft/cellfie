@@ -1,0 +1,48 @@
+{
+  "id": "concept-sterilization-vs-disinfection",
+  "category": "concept",
+  "title": "Sterilization vs. Disinfection",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM microbiology curriculum resources",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "summary": "Sterilization eliminates all forms of microbial life, including bacterial endospores. Disinfection reduces pathogenic microorganisms to a safer level but does not reliably kill all endospores.",
+  "explanation": "These terms describe different endpoints, not different intensities of the same process. A method (e.g. autoclaving) is typically described as achieving sterilization when validated to do so; many chemical disinfectants used on surfaces are effective against vegetative cells but are not sporicidal at the concentrations/contact times typically used for routine disinfection. The correct choice depends on the item, the organism risk, and the intended use (e.g. a surgical instrument requires sterilization; a benchtop after routine work is typically disinfected).",
+  "comparison": [
+    {
+      "aspect": "Endpoint",
+      "left": "Sterilization: kills/removes all microbial life, including spores",
+      "right": "Disinfection: reduces pathogens to a safer level; spores may survive"
+    },
+    {
+      "aspect": "Typical use",
+      "left": "Surgical instruments, media, culture waste",
+      "right": "Work surfaces, non-critical equipment"
+    }
+  ],
+  "commonMisconceptions": [
+    "That 'disinfected' and 'sterile' are interchangeable words for the same outcome."
+  ],
+  "relatedEquipment": [
+    "equip-autoclave"
+  ],
+  "relatedSafety": [
+    "safety-disinfection",
+    "safety-sterilization",
+    "safety-basic-autoclave-safety"
+  ],
+  "searchKeywords": [
+    "decontamination",
+    "sporicidal"
+  ]
+}

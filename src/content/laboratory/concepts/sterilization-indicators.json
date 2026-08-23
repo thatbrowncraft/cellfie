@@ -1,0 +1,56 @@
+{
+  "id": "concept-sterilization-indicators",
+  "category": "concept",
+  "title": "Sterilization Indicators",
+  "subcategory": "Laboratory Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM microbiology curriculum resources",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH"
+    }
+  ],
+  "summary": "Physical, chemical, and biological indicators are used to verify that a sterilization cycle (e.g. autoclaving) actually achieved sterilizing conditions, rather than assuming it did based on the machine's cycle settings alone.",
+  "explanation": "Physical indicators (gauges, printouts of time/temperature/pressure) confirm the cycle ran as programmed. Chemical indicators (e.g. autoclave tape that changes color, or indicator strips) confirm the load was exposed to the expected conditions, but do not by themselves confirm sterility. Biological indicators (spore strips/vials containing a known, resistant organism, typically a Geobacillus or Bacillus species depending on the sterilization method) are the most direct evidence, since they confirm that conditions were sufficient to kill highly resistant spores, and are the gold standard for periodic validation. Routine cycles commonly rely on physical and chemical indicators, with biological indicators used on a periodic validation schedule per facility SOP or applicable standard (e.g. AAMI/ISO guidance).",
+  "comparison": [
+    {
+      "aspect": "Physical",
+      "left": "Confirms the cycle ran per programmed settings",
+      "right": "Does not confirm the load itself reached sterilizing conditions"
+    },
+    {
+      "aspect": "Chemical",
+      "left": "Confirms exposure to expected conditions at the indicator's location",
+      "right": "Not proof of sterility by itself"
+    },
+    {
+      "aspect": "Biological",
+      "left": "Confirms lethality against a known resistant spore challenge",
+      "right": "Most direct evidence of sterilization efficacy"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming autoclave tape changing color means the load is sterile \u2014 it only confirms exposure to certain conditions, not lethality."
+  ],
+  "relatedEquipment": [
+    "equip-autoclave"
+  ],
+  "relatedConcepts": [
+    "concept-sterilization-vs-disinfection"
+  ],
+  "relatedSafety": [
+    "safety-basic-autoclave-safety"
+  ],
+  "searchKeywords": [
+    "autoclave tape",
+    "biological indicator",
+    "spore strip",
+    "validation"
+  ]
+}
