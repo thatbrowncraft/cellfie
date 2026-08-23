@@ -46,6 +46,12 @@
  * (the "Add related concept" flow or promoting a suggested/candidate
  * concept), so `'manual'` is the accurate, non-invented label for all
  * of them; no scientific evidence is fabricated for old rows.
+ *
+ * Laboratory Saved Items adds a `version(14)` migration: a single new
+ * `savedLabItems` table (see `SavedLabItemRecord`'s doc comment for its
+ * shape and why it's separate from `appSettings`/`savedOrganisms`).
+ * Every prior version's stores are repeated unchanged; no existing row
+ * in any table is touched.
  */
 
 import Dexie, { type Table } from 'dexie'
@@ -477,6 +483,66 @@ export interface SavedOrganismRecord {
   searchCount: number
 }
 
+/**
+ * Laboratory Saved Items — v14 migration. "Saved Lab Items" is a
+ * dedicated, permanent Laboratory workspace, deliberately separate from
+ * the Dashboard's bounded "recent activity" preview (see
+ * core/laboratory/recentlyViewed.ts, which stays on the existing
+ * appSettings key/value table since it's just an ordered id list, not a
+ * real record). This is a genuinely new kind of user data — an explicit
+ * "keep this" action — so it gets its own table, following the same
+ * precedent as `savedOrganisms` rather than overloading appSettings.
+ *
+ * Deliberately not typed against `core/laboratory/types.ts`'s
+ * `LaboratoryCategory` here: `core/db` is a low-level, dependency-free
+ * module that every other `core/*` area imports, so `labCategory` is a
+ * plain string (validated at the call site in
+ * core/laboratory/savedItems.ts instead) to avoid introducing a
+ * db → laboratory import that would run the wrong way.
+ *
+ * Exactly one of the three source-specific field groups is populated,
+ * matching `sourceType`:
+ *  - 'cellfie-reference': only `labContentId`/`labCategory` are set —
+ *    the curated JSON itself is never duplicated into this row, it's
+ *    always re-read live from the registry (mirrors how `organismId` in
+ *    `SavedOrganismRecord` works, except there the whole profile is also
+ *    kept — here the id is enough because the curated content is fully
+ *    static and bundled, not something that can drift).
+ *  - 'my-library': `libraryItemId`/`bookTitle`/`author`/`page`/`excerpt`
+ *    identify and preserve the retrieved local-book excerpt.
+ *  - 'online-knowledge': `sourceName`/`sourceUrl`/`excerpt`/`isAbstract`
+ *    identify and preserve the retrieved external result. Never
+ *    relabeled as curated Cellfie content (brief §15/§17).
+ */
+export type SavedLabItemSourceType = 'cellfie-reference' | 'my-library' | 'online-knowledge'
+
+export interface SavedLabItemRecord {
+  id: string
+  sourceType: SavedLabItemSourceType
+  /** The topic title as searched/displayed — always present regardless of source type. */
+  title: string
+  savedAt: number
+
+  /** cellfie-reference only. */
+  labContentId?: string
+  /** cellfie-reference only — a `LaboratoryCategory` string value, kept loosely typed here (see class doc comment above). */
+  labCategory?: string
+
+  /** my-library only. */
+  libraryItemId?: string
+  bookTitle?: string
+  author?: string
+  page?: number
+
+  /** my-library and online-knowledge share this for the retrieved text. */
+  excerpt?: string
+
+  /** online-knowledge only. */
+  sourceName?: string
+  sourceUrl?: string
+  isAbstract?: boolean
+}
+
 class CellfieDB extends Dexie {
   libraryItems!: Table<LibraryItem, string>
   collections!: Table<Collection, string>
@@ -495,6 +561,7 @@ class CellfieDB extends Dexie {
   organismImages!: Table<OrganismImage, string>
   organismImageBlobs!: Table<OrganismImageBlob, string>
   savedOrganisms!: Table<SavedOrganismRecord, string>
+  savedLabItems!: Table<SavedLabItemRecord, string>
 
   constructor() {
     super('cellfie')
@@ -807,6 +874,33 @@ class CellfieDB extends Dexie {
             .map((img) => tx.table('organismImages').update(img.id, { storageType: 'opfs' }))
         )
       })
+    // v14 — Laboratory Saved Items: adds `savedLabItems` only, following
+    // the same additive pattern as every prior version. Every existing
+    // table/index above is repeated unchanged; no existing row in any
+    // table is touched by this upgrade. See `SavedLabItemRecord`'s doc
+    // comment for why this is a dedicated table rather than reusing
+    // `appSettings` or `savedOrganisms`.
+    this.version(14).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt',
+      highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+      notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+      concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+      conceptSources:
+        'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+      conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+      conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+      conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+      conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+      conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
+      conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
+      savedOrganisms: 'organismId, savedAt',
+      organismImages: 'id, organismId, isPrimary, createdAt, [organismId+isPrimary]',
+      organismImageBlobs: 'id, createdAt',
+      savedLabItems: 'id, sourceType, savedAt, labContentId, libraryItemId'
+    })
   }
 }
 
