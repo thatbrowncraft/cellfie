@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Books, CaretRight, Globe, WarningCircle, WifiSlash } from '@phosphor-icons/react'
+import { Bookmark, BookmarkSimple, Books, CaretRight, Globe, WarningCircle, WifiSlash } from '@phosphor-icons/react'
 import { Button, Dropdown, EmptyState, type DropdownOption } from '../../../shared/components'
 import { db, type LibraryItem } from '../../../core/db'
 import { useLiveQuery } from '../../../core/db/useLiveQuery'
@@ -9,6 +9,7 @@ import {
   type LabKnowledgeLookupResult,
   type LabKnowledgeLookupStatus
 } from '../../../core/laboratory/knowledgeLayer'
+import { saveMyLibraryExcerpt, saveOnlineKnowledgeExcerpt } from '../../../core/laboratory/savedItems'
 
 interface LabSourcesPanelProps {
   /** The item's display title — the actual search term used against Library/Online lookups. */
@@ -56,6 +57,44 @@ export function LabSourcesPanel({ title, contentId }: LabSourcesPanelProps) {
         <OnlineLookup title={title} contentId={contentId} />
       )}
     </div>
+  )
+}
+
+/**
+ * Reusable Save control for a single retrieved excerpt (My Library or
+ * Online Knowledge). Local-only "saved" flag rather than a live DB
+ * check per excerpt — `saveMyLibraryExcerpt`/`saveOnlineKnowledgeExcerpt`
+ * are already idempotent (dedupe on the same book+page+text or
+ * sourceUrl+text), so re-clicking Save after leaving and returning to
+ * this panel is harmless; it just avoids an extra DB round-trip on
+ * every render of every excerpt.
+ */
+function SaveExcerptButton({ onSave }: { onSave: () => Promise<void> }) {
+  const [state, setState] = useState<'idle' | 'saving' | 'saved'>('idle')
+
+  if (state === 'saved') {
+    return (
+      <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
+        <BookmarkSimple size={13} weight="fill" aria-hidden />
+        Saved to Saved Lab Items
+      </span>
+    )
+  }
+
+  return (
+    <Button
+      variant="tertiary"
+      size="small"
+      icon={<Bookmark size={14} />}
+      disabled={state === 'saving'}
+      onClick={async () => {
+        setState('saving')
+        await onSave()
+        setState('saved')
+      }}
+    >
+      {state === 'saving' ? 'Saving…' : 'Save to Saved Lab Items'}
+    </Button>
   )
 }
 
@@ -113,6 +152,9 @@ function LibraryLookup({ title, contentId }: { title: string; contentId: string 
               {excerpt.bookTitle}
               {excerpt.author ? ` — ${excerpt.author}` : ''}, p. {excerpt.page}
             </cite>
+            <div className="mt-2">
+              <SaveExcerptButton onSave={() => saveMyLibraryExcerpt(title, excerpt)} />
+            </div>
           </blockquote>
         ))}
         <Button variant="tertiary" size="small" onClick={() => setStatus('idle')}>
@@ -256,6 +298,18 @@ function OnlineLookup({ title, contentId }: { title: string; contentId: string }
               {result.generalReference.isAbstract ? 'Abstract from ' : 'From '}
               {result.generalReference.sourceName}
             </a>
+            <div className="mt-2">
+              <SaveExcerptButton
+                onSave={() =>
+                  saveOnlineKnowledgeExcerpt(title, {
+                    sourceName: result.generalReference!.sourceName,
+                    sourceUrl: result.generalReference!.sourceUrl,
+                    text: result.generalReference!.text,
+                    isAbstract: result.generalReference!.isAbstract
+                  })
+                }
+              />
+            </div>
           </div>
         )}
         {result.meshScopeNote && (
@@ -270,6 +324,17 @@ function OnlineLookup({ title, contentId }: { title: string; contentId: string }
             >
               {result.meshScopeNote.sourceName}
             </a>
+            <div className="mt-2">
+              <SaveExcerptButton
+                onSave={() =>
+                  saveOnlineKnowledgeExcerpt(title, {
+                    sourceName: result.meshScopeNote!.sourceName,
+                    sourceUrl: result.meshScopeNote!.sourceUrl,
+                    text: result.meshScopeNote!.text
+                  })
+                }
+              />
+            </div>
           </div>
         )}
         <Button variant="tertiary" size="small" onClick={() => setStatus('idle')}>
