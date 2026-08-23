@@ -41,7 +41,15 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}']
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        // Default precache ceiling is 2 MiB; the main JS bundle has grown
+        // past that (organism content, Concept/Organism/Laboratory/
+        // Comparison modules all bundle in) and will keep growing as more
+        // content ships. Raised with real headroom rather than just
+        // enough to fit today's bundle, so this doesn't need revisiting
+        // every time content is added. Precaching the JS bundle matters
+        // here specifically because the app is offline-first.
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
       }
     })
   ],
