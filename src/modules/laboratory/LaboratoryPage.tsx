@@ -43,15 +43,37 @@ import {
   UNIT_CONVERTER_TAGLINE
 } from '../../core/laboratory/microcopy'
 import type { LabDifficulty, LaboratoryCategory } from '../../core/laboratory/types'
+import { useLiveQuery } from '../../core/db/useLiveQuery'
+import { listSavedLabItems } from '../../core/laboratory/savedItems'
+import type { SavedLabItemRecord } from '../../core/db'
+import { LabSourcesPanel } from './components/LabSourcesPanel'
+import { SavedLabItemsSection } from './components/SavedLabItemsSection'
 
-type SectionId = LaboratoryCategory | 'calculators' | 'unit-converter'
+type SectionId = LaboratoryCategory | 'calculators' | 'unit-converter' | 'saved'
 
-const SECTION_ORDER: SectionId[] = ['protocol', 'concept', 'media', 'biochemical-test', 'biosafety', 'equipment', 'formula', 'calculators', 'unit-converter']
+const SECTION_ORDER: SectionId[] = [
+  'protocol',
+  'concept',
+  'media',
+  'biochemical-test',
+  'biosafety',
+  'equipment',
+  'formula',
+  'calculators',
+  'unit-converter',
+  'saved'
+]
 
 function sectionLabel(id: SectionId): string {
   if (id === 'calculators') return 'Calculators'
   if (id === 'unit-converter') return 'Unit Converter'
+  if (id === 'saved') return 'Saved Lab Items'
   return CATEGORY_LABELS[id]
+}
+
+/** A stable, human-readable "virtual" content id for a free-text Laboratory search — lets the Knowledge Layer cache (core/laboratory/knowledgeLayer.ts) namespace My Library/Online Knowledge lookups for search terms that don't correspond to any curated content id. */
+function searchContentId(query: string): string {
+  return `search:${query.trim().toLowerCase().replace(/\s+/g, '-')}`
 }
 
 const SECTION_TAGLINE = SECTION_TAGLINES
@@ -94,6 +116,7 @@ export function LaboratoryPage() {
   const isHub = !sectionParam && !difficultyParam && !isSearching
 
   const counts = useMemo(() => countByCategory(), [])
+  const savedItems = useLiveQuery<SavedLabItemRecord[]>(() => listSavedLabItems(), [], [])
 
   function setSection(section: SectionId) {
     setSearchParams((prev) => {
@@ -140,7 +163,7 @@ export function LaboratoryPage() {
   )
 
   const sectionItems = useMemo(() => {
-    if (!sectionParam || sectionParam === 'calculators' || sectionParam === 'unit-converter') return []
+    if (!sectionParam || sectionParam === 'calculators' || sectionParam === 'unit-converter' || sectionParam === 'saved') return []
     return listByCategory(sectionParam)
   }, [sectionParam])
 
@@ -162,7 +185,14 @@ export function LaboratoryPage() {
             <span>Lab Hub</span>
           </button>
           {SECTION_ORDER.map((section) => {
-            const count = section === 'calculators' ? CALCULATORS.length : section === 'unit-converter' ? undefined : counts[section]
+            const count =
+              section === 'calculators'
+                ? CALCULATORS.length
+                : section === 'unit-converter'
+                  ? undefined
+                  : section === 'saved'
+                    ? savedItems.length
+                    : counts[section]
             return (
               <button
                 key={section}
@@ -197,26 +227,49 @@ export function LaboratoryPage() {
         />
 
         {isSearching ? (
-          <SearchResultsGrid
-            query={query}
-            results={searchHits}
-            calculatorResults={calculatorHits}
-            onSelect={(id, category) => navigate(`/laboratory/${category}/${id}`)}
-            onSelectCalculator={(id) => navigate(`/laboratory/calculators/${id}`)}
-          />
+          <div className="flex flex-col gap-8">
+            <SearchResultsGrid
+              query={query}
+              results={searchHits}
+              calculatorResults={calculatorHits}
+              onSelect={(id, category) => navigate(`/laboratory/${category}/${id}`)}
+              onSelectCalculator={(id) => navigate(`/laboratory/calculators/${id}`)}
+            />
+            {/*
+              Brief §16: a search term with no (or even with a) curated
+              JSON match should never dead-end — the same three-layer
+              Knowledge Layer already used on detail pages (LabSourcesPanel)
+              is available right here, keyed by a stable "virtual" content
+              id so My Library/Online Knowledge results for this exact
+              search term get cached the same way a curated item's would.
+            */}
+            <LabSourcesPanel title={query} contentId={searchContentId(query)} />
+          </div>
         ) : isHub ? (
-          <LaboratoryHub onSetSection={setSection} onSetDifficulty={setDifficulty} onRandomPick={handleRandomPick} />
+          <LaboratoryHub
+            onSetSection={setSection}
+            onSetDifficulty={setDifficulty}
+            onRandomPick={handleRandomPick}
+            savedCount={savedItems.length}
+          />
         ) : difficultyParam ? (
           <DifficultyGrid difficulty={difficultyParam} items={difficultyItems} onSelect={(id, category) => navigate(`/laboratory/${category}/${id}`)} />
         ) : sectionParam === 'calculators' ? (
           <CalculatorGrid onSelect={(id) => navigate(`/laboratory/calculators/${id}`)} />
         ) : sectionParam === 'unit-converter' ? (
           <UnitConverterCard onOpen={() => navigate('/laboratory/unit-converter')} />
+        ) : sectionParam === 'saved' ? (
+          <SavedLabItemsSection items={savedItems} />
         ) : sectionParam ? (
           <ContentGrid category={sectionParam} onSelect={(id) => navigate(`/laboratory/${sectionParam}/${id}`)} />
         ) : null}
 
-        {sectionParam && sectionParam !== 'calculators' && sectionParam !== 'unit-converter' && !isSearching && sectionItems.length === 0 && (
+        {sectionParam &&
+          sectionParam !== 'calculators' &&
+          sectionParam !== 'unit-converter' &&
+          sectionParam !== 'saved' &&
+          !isSearching &&
+          sectionItems.length === 0 && (
           <div className="rounded-md border border-border bg-surface p-6">
             <EmptyState
               icon={<Flask size={32} />}
@@ -237,11 +290,13 @@ export function LaboratoryPage() {
 function LaboratoryHub({
   onSetSection,
   onSetDifficulty,
-  onRandomPick
+  onRandomPick,
+  savedCount
 }: {
   onSetSection: (section: SectionId) => void
   onSetDifficulty: (difficulty: LabDifficulty) => void
   onRandomPick: () => void
+  savedCount: number
 }) {
   const difficultyCounts = useMemo(() => countByDifficulty(), [])
   const categoryCounts = useMemo(() => countByCategory(), [])
@@ -335,6 +390,15 @@ function LaboratoryHub({
             <CardBody className="flex flex-col gap-1">
               <p className="font-display text-h3 font-medium text-ink-primary">Unit Converter</p>
               <p className="font-ui text-caption italic text-ink-tertiary">{UNIT_CONVERTER_TAGLINE}</p>
+            </CardBody>
+          </Card>
+          <Card interactive onClick={() => onSetSection('saved')}>
+            <CardBody className="flex flex-col gap-1">
+              <div className="flex items-center justify-between">
+                <p className="font-display text-h3 font-medium text-ink-primary">Saved Lab Items</p>
+                <span className="font-ui text-micro text-ink-tertiary">{savedCount}</span>
+              </div>
+              <p className="font-ui text-caption italic text-ink-tertiary">Everything you kept — curated, from your library, or from online.</p>
             </CardBody>
           </Card>
         </div>

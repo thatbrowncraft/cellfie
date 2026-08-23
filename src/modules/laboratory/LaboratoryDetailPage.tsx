@@ -1,10 +1,14 @@
-import { useMemo, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, CaretRight, ShieldWarning, WarningCircle } from '@phosphor-icons/react'
+import { ArrowLeft, Bookmark, BookmarkSimple, CaretRight, ShieldWarning, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '../../shared/layouts'
 import { Button, CalloutBox, Card, CardBody, EmptyState } from '../../shared/components'
 import { CATEGORY_LABELS, getLabContentById, resolveRelated } from '../../core/laboratory/registry'
 import { getItemTagline } from '../../core/laboratory/microcopy'
+import { recordLabItemViewed } from '../../core/laboratory/recentlyViewed'
+import { isCellfieReferenceSaved, removeSavedLabItem, saveCellfieReference } from '../../core/laboratory/savedItems'
+import { useLiveQuery } from '../../core/db/useLiveQuery'
+import { db } from '../../core/db'
 import type {
   BiochemicalTest,
   BiosafetyTopic,
@@ -50,6 +54,21 @@ export function LaboratoryDetailPage() {
   const navigate = useNavigate()
 
   const item = useMemo(() => (id ? getLabContentById(id) : undefined), [id])
+
+  // Dashboard "Lab" preview support (brief: recent activity, bounded,
+  // separate from Saved Lab Items) — fire-and-forget, never blocks
+  // render. Only curated content reaching this branch is ever recorded.
+  useEffect(() => {
+    if (item && category && item.category === category) {
+      void recordLabItemViewed(item.id, category)
+    }
+  }, [item, category])
+
+  const isSaved = useLiveQuery<boolean>(
+    () => (item ? isCellfieReferenceSaved(item.id) : Promise.resolve(false)),
+    [item?.id],
+    false
+  )
 
   if (!category || !id || !item || item.category !== category) {
     return (
@@ -111,7 +130,7 @@ export function LaboratoryDetailPage() {
 
         <RelatedSections item={item} />
 
-        <SourcesSection item={item} />
+        <SourcesSection item={item} category={category} isSaved={isSaved} />
       </div>
     </div>
   )
@@ -529,13 +548,52 @@ function RelatedCalculators({ ids }: { ids: string[] }) {
  * lookup); "My Library" and "Online Knowledge" (Layers 2-3) live in
  * `LabSourcesPanel` and only populate on explicit user action.
  */
-function SourcesSection({ item }: { item: Protocol | LabConcept | Media | BiochemicalTest | BiosafetyTopic | Equipment | Formula }) {
+function SourcesSection({
+  item,
+  category,
+  isSaved
+}: {
+  item: Protocol | LabConcept | Media | BiochemicalTest | BiosafetyTopic | Equipment | Formula
+  category: LaboratoryCategory
+  isSaved: boolean
+}) {
+  const [isSaving, setIsSaving] = useState(false)
+
+  async function handleSave() {
+    setIsSaving(true)
+    try {
+      await saveCellfieReference({ id: item.id, category, title: item.title })
+    } finally {
+      setIsSaving(false)
+    }
+  }
+
+  async function handleRemove() {
+    const existing = await db.savedLabItems.where('labContentId').equals(item.id).first()
+    if (existing) await removeSavedLabItem(existing.id)
+  }
+
   return (
     <div className="flex flex-col gap-6 border-t border-border pt-6">
       <h2 className="font-display text-h3 font-medium text-ink-primary">Sources</h2>
 
       <div>
-        <p className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Cellfie Reference</p>
+        <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+          <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Cellfie Reference</p>
+          {isSaved ? (
+            <span className="flex items-center gap-1.5 font-ui text-micro font-medium text-olive">
+              <BookmarkSimple size={14} weight="fill" aria-hidden />
+              Saved to Saved Lab Items
+              <button type="button" onClick={handleRemove} className="ml-1 text-ink-tertiary underline hover:text-ink-secondary">
+                Remove
+              </button>
+            </span>
+          ) : (
+            <Button variant="secondary" size="small" icon={<Bookmark size={14} />} disabled={isSaving} onClick={handleSave}>
+              {isSaving ? 'Saving…' : 'Save to Saved Lab Items'}
+            </Button>
+          )}
+        </div>
         <ul className="space-y-1 font-body text-caption text-ink-secondary">
           {item.references.map((r, i) => (
             <li key={i}>
