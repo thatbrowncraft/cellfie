@@ -1,0 +1,63 @@
+{
+  "id": "clin-formula-mch",
+  "category": "formula",
+  "title": "Mean Corpuscular Hemoglobin (MCH)",
+  "subcategory": "Hematology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical hematology laboratory textbooks/manuals (e.g. Henry's Clinical Diagnosis and Management)",
+      "publisher": "Established laboratory manual"
+    }
+  ],
+  "domain": "Hematology / RBC Indices",
+  "expression": "MCH (pg) = (Hemoglobin (g/dL) × 10) / RBC count (millions/µL)",
+  "explanation": "MCH expresses the average mass of hemoglobin contained in a single red blood cell. It tends to track alongside MCV in most anemias (a smaller cell usually also carries less hemoglobin), so MCH is generally interpreted together with MCV and MCHC rather than as an independent classifier on its own.",
+  "variables": [
+    {
+      "symbol": "MCH",
+      "meaning": "Mean corpuscular hemoglobin",
+      "unit": "pg (picograms)"
+    },
+    {
+      "symbol": "Hb",
+      "meaning": "Hemoglobin concentration",
+      "unit": "g/dL"
+    },
+    {
+      "symbol": "RBC",
+      "meaning": "Red blood cell count",
+      "unit": "millions/µL"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A hemoglobin of 15 g/dL and an RBC count of 5.0 million/µL.",
+    "substitution": "(15 × 10) / 5.0",
+    "result": "MCH = 30 pg"
+  },
+  "commonMistakes": [
+    "Interpreting MCH in isolation as if it were a standalone diagnostic value — it is part of the RBC indices set and is interpreted alongside MCV and MCHC."
+  ],
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-cbc-fundamentals"
+  ],
+  "relatedEquipment": [
+    "clin-equip-hematology-analyzer"
+  ],
+  "relatedFormulas": [
+    "clin-formula-mcv",
+    "clin-formula-mchc"
+  ],
+  "relatedCalculators": [
+    "calc-rbc-indices"
+  ],
+  "searchKeywords": [
+    "mean corpuscular hemoglobin",
+    "MCH formula",
+    "RBC index"
+  ],
+  "difficulty": "beginner"
+}

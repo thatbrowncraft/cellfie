@@ -1,0 +1,62 @@
+{
+  "id": "clin-formula-mcv",
+  "category": "formula",
+  "title": "Mean Corpuscular Volume (MCV)",
+  "subcategory": "Hematology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical hematology laboratory textbooks/manuals (e.g. Henry's Clinical Diagnosis and Management)",
+      "publisher": "Established laboratory manual"
+    }
+  ],
+  "domain": "Hematology / RBC Indices",
+  "expression": "MCV (fL) = (Hematocrit (%) × 10) / RBC count (millions/µL)",
+  "explanation": "MCV expresses the average volume of a single red blood cell, calculated from the hematocrit and RBC count (on automated analyzers it is often measured directly by light-scatter/impedance sizing rather than calculated, but the relationship holds either way). MCV is the primary value used to classify anemia as microcytic, normocytic, or macrocytic — a classification, together with MCHC and clinical findings, that narrows the differential diagnosis rather than naming a specific cause.",
+  "variables": [
+    {
+      "symbol": "MCV",
+      "meaning": "Mean corpuscular volume",
+      "unit": "fL (femtoliters)"
+    },
+    {
+      "symbol": "Hct",
+      "meaning": "Hematocrit (packed cell volume)",
+      "unit": "%"
+    },
+    {
+      "symbol": "RBC",
+      "meaning": "Red blood cell count",
+      "unit": "millions/µL"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A hematocrit of 45% and an RBC count of 5.0 million/µL.",
+    "substitution": "(45 × 10) / 5.0",
+    "result": "MCV = 90 fL"
+  },
+  "commonMistakes": [
+    "Using hematocrit as a fraction (0.45) instead of a percentage (45) without adjusting the constant accordingly — the ×10 constant in this form assumes Hct is entered as a percentage."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-hematocrit-pcv"
+  ],
+  "relatedConcepts": [
+    "clin-concept-cbc-fundamentals"
+  ],
+  "relatedEquipment": [
+    "clin-equip-hematology-analyzer"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [
+    "calc-rbc-indices"
+  ],
+  "searchKeywords": [
+    "mean corpuscular volume",
+    "MCV formula",
+    "microcytic macrocytic"
+  ],
+  "difficulty": "beginner"
+}

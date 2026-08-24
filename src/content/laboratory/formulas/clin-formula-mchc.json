@@ -1,0 +1,65 @@
+{
+  "id": "clin-formula-mchc",
+  "category": "formula",
+  "title": "Mean Corpuscular Hemoglobin Concentration (MCHC)",
+  "subcategory": "Hematology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical hematology laboratory textbooks/manuals (e.g. Henry's Clinical Diagnosis and Management)",
+      "publisher": "Established laboratory manual"
+    }
+  ],
+  "domain": "Hematology / RBC Indices",
+  "expression": "MCHC (g/dL) = (Hemoglobin (g/dL) × 100) / Hematocrit (%)",
+  "explanation": "MCHC expresses the average concentration of hemoglobin within a given volume of packed red cells (unlike MCH, which is a mass per cell). A low MCHC (hypochromia) suggests red cells are relatively hemoglobin-poor for their size, classically associated with iron-deficiency-pattern anemias, while a normal or elevated MCHC pattern points elsewhere in the differential — again, only in combination with MCV, MCH, and clinical findings, never from MCHC alone.",
+  "variables": [
+    {
+      "symbol": "MCHC",
+      "meaning": "Mean corpuscular hemoglobin concentration",
+      "unit": "g/dL"
+    },
+    {
+      "symbol": "Hb",
+      "meaning": "Hemoglobin concentration",
+      "unit": "g/dL"
+    },
+    {
+      "symbol": "Hct",
+      "meaning": "Hematocrit (packed cell volume)",
+      "unit": "%"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A hemoglobin of 15 g/dL and a hematocrit of 45%.",
+    "substitution": "(15 × 100) / 45",
+    "result": "MCHC ≈ 33.3 g/dL"
+  },
+  "commonMistakes": [
+    "Confusing MCHC (a concentration, independent of cell count) with MCH (a mass per cell) — the two answer different questions and are not interchangeable."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-hematocrit-pcv"
+  ],
+  "relatedConcepts": [
+    "clin-concept-cbc-fundamentals"
+  ],
+  "relatedEquipment": [
+    "clin-equip-hematology-analyzer"
+  ],
+  "relatedFormulas": [
+    "clin-formula-mcv",
+    "clin-formula-mch"
+  ],
+  "relatedCalculators": [
+    "calc-rbc-indices"
+  ],
+  "searchKeywords": [
+    "MCHC formula",
+    "hypochromia",
+    "hemoglobin concentration per cell"
+  ],
+  "difficulty": "beginner"
+}
