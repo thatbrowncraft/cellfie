@@ -49,6 +49,12 @@ const LaboratoryPage = lazy(() =>
 const LaboratoryDetailPage = lazy(() =>
   import('../modules/laboratory/LaboratoryDetailPage').then((m) => ({ default: m.LaboratoryDetailPage }))
 )
+const ClinicalLaboratoryPage = lazy(() =>
+  import('../modules/laboratory/ClinicalLaboratoryPage').then((m) => ({ default: m.ClinicalLaboratoryPage }))
+)
+const ClinicalDetailPage = lazy(() =>
+  import('../modules/laboratory/ClinicalDetailPage').then((m) => ({ default: m.ClinicalDetailPage }))
+)
 const CalculatorDetailPage = lazy(() =>
   import('../modules/laboratory/CalculatorDetailPage').then((m) => ({ default: m.CalculatorDetailPage }))
 )
@@ -234,6 +240,8 @@ export function AppRouter() {
           <Route path="/laboratory" element={<LaboratoryPage />} />
           <Route path="/laboratory/unit-converter" element={<UnitConverterPage />} />
           <Route path="/laboratory/calculators/:calculatorId" element={<CalculatorDetailPage />} />
+          <Route path="/laboratory/clinical" element={<ClinicalLaboratoryPage />} />
+          <Route path="/laboratory/clinical/:category/:id" element={<ClinicalDetailPage />} />
           <Route path="/laboratory/:category/:id" element={<LaboratoryDetailPage />} />
           <Route path="/comparison" element={<ComparisonStudioPage />} />
           <Route path="/notes" element={<NotesPage />} />
