@@ -1,0 +1,56 @@
+{
+  "id": "clin-concept-clinical-chemistry-workflow",
+  "category": "concept",
+  "title": "Clinical Chemistry Workflow (Photometric & Kinetic Assays)",
+  "subcategory": "Clinical Biochemistry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical chemistry laboratory textbooks/manuals (e.g. Tietz Fundamentals of Clinical Chemistry)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "Most routine clinical chemistry assays measure an analyte indirectly, by coupling its concentration to a color-producing (or light-scattering) chemical reaction that a spectrophotometric analyzer reads, either at a single endpoint or continuously (kinetically).",
+  "explanation": "In an endpoint assay, the reaction runs to completion and absorbance is read once, then related to concentration via a calibration curve (an application of the Beer-Lambert relationship the laboratory already covers generically). In a kinetic assay (common for enzyme measurements, e.g. many liver enzymes), absorbance is read repeatedly over a fixed time window, and the rate of change — not a single endpoint value — is proportional to enzyme activity. Modern clinical chemistry analyzers automate specimen/reagent pipetting, timing, and photometric reading for dozens of assays in parallel, but the underlying physical principle in most of them is the same photometric measurement already covered by the laboratory's spectrophotometer and Beer-Lambert entries, applied to disease-specific reagent chemistries.",
+  "comparison": [
+    {
+      "aspect": "Endpoint assay",
+      "left": "Reaction run to completion; single absorbance reading",
+      "right": "Typical use: many substrate/analyte concentration assays"
+    },
+    {
+      "aspect": "Kinetic assay",
+      "left": "Absorbance read repeatedly; rate of change is the result",
+      "right": "Typical use: enzyme activity assays"
+    }
+  ],
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-hemolysis-lipemia-icterus",
+    "concept-od-vs-cell-concentration"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-spectrophotometer",
+    "clin-equip-clinical-chemistry-analyzer"
+  ],
+  "relatedFormulas": [
+    "formula-beer-lambert"
+  ],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "kinetic assay",
+    "endpoint assay",
+    "photometric chemistry",
+    "enzyme activity assay"
+  ],
+  "difficulty": "intermediate"
+}

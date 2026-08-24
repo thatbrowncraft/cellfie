@@ -1,0 +1,57 @@
+{
+  "id": "clin-concept-renal-liver-chemistry-fundamentals",
+  "category": "concept",
+  "title": "Renal & Liver Chemistry Fundamentals",
+  "subcategory": "Clinical Biochemistry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical chemistry laboratory textbooks/manuals (e.g. Tietz Fundamentals of Clinical Chemistry)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "Renal function panels and liver function panels are two of the most common clinical chemistry groupings, each combining several analytes whose pattern — not any single value — provides the clinically useful picture.",
+  "explanation": "A typical renal panel includes analytes such as blood urea nitrogen (BUN) and creatinine, interpreted alongside electrolytes; both BUN and creatinine rise as glomerular filtration falls, but each is also affected by non-renal factors (e.g. BUN by protein intake/hydration, creatinine by muscle mass), which is why they are interpreted together and trended over time rather than as an isolated single value. A typical liver panel includes enzymes that leak from damaged hepatocytes (e.g. ALT, AST — measured using the kinetic enzyme-assay principle already covered generically), markers of cholestasis/biliary obstruction (e.g. alkaline phosphatase, GGT), and markers of synthetic/excretory function (e.g. albumin, bilirubin). The overall pattern across these analytes — not any one number — points toward a hepatocellular, cholestatic, or mixed process, and definitive diagnosis and any treatment decision remain a clinical, not laboratory-alone, judgment.",
+  "comparison": [
+    {
+      "aspect": "Renal panel",
+      "left": "BUN, creatinine, electrolytes",
+      "right": "Reflects filtration/excretory function, affected by non-renal factors too"
+    },
+    {
+      "aspect": "Liver panel",
+      "left": "ALT/AST (hepatocellular), ALP/GGT (cholestatic), albumin/bilirubin (synthetic/excretory)",
+      "right": "Pattern across markers, not one value, suggests process type"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating a single elevated liver enzyme as diagnostic of a specific disease — enzyme elevation patterns are non-specific and are interpreted as a panel, in clinical context."
+  ],
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-clinical-chemistry-workflow",
+    "clin-concept-lipid-electrolyte-analysis"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "clin-equip-clinical-chemistry-analyzer"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "BUN creatinine",
+    "liver function panel",
+    "ALT AST",
+    "alkaline phosphatase",
+    "renal panel"
+  ],
+  "difficulty": "advanced"
+}

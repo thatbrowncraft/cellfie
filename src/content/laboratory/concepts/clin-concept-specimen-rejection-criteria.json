@@ -1,0 +1,45 @@
+{
+  "id": "clin-concept-specimen-rejection-criteria",
+  "category": "concept",
+  "title": "Specimen Rejection Criteria",
+  "subcategory": "Pre-Analytical Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    },
+    {
+      "label": "CAP/CLSI quality management guidance",
+      "publisher": "College of American Pathologists / CLSI"
+    }
+  ],
+  "summary": "Laboratories reject specimens that fail defined identification, quantity, condition, or timing criteria rather than testing them and reporting a potentially misleading result.",
+  "explanation": "Common rejection reasons include: unlabeled or mismatched-label specimens, wrong container/anticoagulant for the ordered test, insufficient volume ('quantity not sufficient', QNS), clotted anticoagulated specimens, grossly hemolyzed specimens where hemolysis invalidates the specific analyte, specimens received outside their stability window, and specimens received at the wrong temperature. Rejection criteria are set by each laboratory's procedure manual, informed by CLSI and accreditation standards, and vary somewhat by analyte and by the clinical risk of testing a compromised specimen anyway (e.g. an irreplaceable specimen, such as CSF or a single-draw pediatric sample, may be handled under a documented exception process rather than automatic rejection). The decision to reject is itself part of quality assurance, not a failure of it.",
+  "commonMisconceptions": [
+    "Assuming a laboratory should always test whatever specimen arrives rather than reject it — testing a compromised specimen and reporting an unreliable number is a greater patient-safety risk than a delayed recollection in most circumstances."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-specimen-collection-handling"
+  ],
+  "relatedConcepts": [
+    "clin-concept-preanalytical-total-testing",
+    "clin-concept-hemolysis-lipemia-icterus",
+    "clin-concept-anticoagulants-collection-tubes"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "QNS",
+    "quantity not sufficient",
+    "specimen acceptability",
+    "clotted specimen"
+  ],
+  "difficulty": "beginner"
+}

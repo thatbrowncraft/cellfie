@@ -1,0 +1,52 @@
+{
+  "id": "clin-concept-cbc-fundamentals",
+  "category": "concept",
+  "title": "CBC Fundamentals",
+  "subcategory": "Hematology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical hematology laboratory textbooks/manuals (e.g. Henry's Clinical Diagnosis and Management)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "The Complete Blood Count (CBC) is a panel that characterizes the cellular components of blood — red blood cells, white blood cells, and platelets — along with derived indices, and is one of the most frequently ordered laboratory tests.",
+  "explanation": "A standard CBC typically reports: white blood cell (WBC) count and often a differential; red blood cell (RBC) count, hemoglobin (Hb), and hematocrit (Hct/PCV); RBC indices (MCV, MCH, MCHC — see the related formulas) which characterize average red cell size and hemoglobin content; red cell distribution width (RDW), a measure of size variation among red cells; and platelet count. The panel is generated primarily by automated hematology analyzers (see the related equipment entry) using electrical impedance and/or optical light-scatter methods, with manual methods (hemocytometer counts, spun hematocrit, peripheral smear review) available as backup or confirmatory methods. A CBC is a screening/characterization tool — abnormal values point toward further, more specific investigation rather than standing alone as a diagnosis.",
+  "relatedProtocols": [
+    "clin-protocol-peripheral-blood-smear",
+    "clin-protocol-hematocrit-pcv",
+    "clin-protocol-differential-leukocyte-count"
+  ],
+  "relatedConcepts": [
+    "clin-concept-coagulation-pt-inr-aptt"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "clin-equip-hematology-analyzer"
+  ],
+  "relatedFormulas": [
+    "clin-formula-mcv",
+    "clin-formula-mch",
+    "clin-formula-mchc"
+  ],
+  "relatedCalculators": [
+    "calc-rbc-indices"
+  ],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "complete blood count",
+    "WBC count",
+    "RBC count",
+    "hemoglobin",
+    "RDW",
+    "platelet count"
+  ],
+  "difficulty": "beginner"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "clin-concept-blood-parasite-microscopy",
+  "category": "concept",
+  "title": "Blood Parasite Microscopy",
+  "subcategory": "Parasitology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "WHO Laboratory Quality Management System Handbook",
+      "publisher": "World Health Organization"
+    },
+    {
+      "label": "ASM Manual of Clinical Microbiology",
+      "publisher": "American Society for Microbiology (ASM)"
+    }
+  ],
+  "summary": "Certain parasites (notably malaria-causing Plasmodium species and some other blood-borne parasites) are diagnosed by direct microscopic examination of stained blood films, using the laboratory's existing peripheral smear technique with parasite-specific reading practices.",
+  "explanation": "Thick blood films concentrate red cells (lysed during staining) into a small area, increasing sensitivity for detecting low-level parasitemia, while thin blood films preserve intact red cell and parasite morphology needed for species identification and parasitemia quantification — the two film types are complementary, not interchangeable, and both are prepared and stained (typically with a Romanowsky-type stain, as in the laboratory's existing peripheral smear technique) from the same specimen. Systematic examination of a sufficient number of fields under oil immersion is required before a negative result is reported, since low parasitemia can be missed on a cursory scan; a single negative film does not exclude infection, and repeat films over time are often part of the ordering clinician's protocol for a clinically suspicious case.",
+  "comparison": [
+    {
+      "aspect": "Thick film",
+      "left": "Concentrates parasites; higher sensitivity for detection",
+      "right": "Morphology distorted; not used for species ID"
+    },
+    {
+      "aspect": "Thin film",
+      "left": "Preserves morphology; used for species identification and quantification",
+      "right": "Lower sensitivity for very low parasitemia"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating a single blood film read as definitively excluding parasitemia — a negative single film in a clinically suspicious case is generally followed by repeat films, per the ordering clinician's protocol."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-peripheral-blood-smear",
+    "proto-gram-stain"
+  ],
+  "relatedConcepts": [
+    "clin-concept-cbc-fundamentals"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-microscope-brightfield",
+    "equip-slides"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "thick and thin blood film",
+    "malaria microscopy",
+    "Plasmodium identification",
+    "parasitemia"
+  ],
+  "difficulty": "expert"
+}

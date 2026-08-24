@@ -1,0 +1,45 @@
+{
+  "id": "clin-concept-contamination-vs-true-isolate",
+  "category": "concept",
+  "title": "Contamination vs. True Clinical Isolate",
+  "subcategory": "Clinical Microbiology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM Manual of Clinical Microbiology",
+      "publisher": "American Society for Microbiology (ASM)"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "Not every organism recovered from a clinical culture represents the cause of infection — some represent contamination (introduced during collection/processing) or colonization by normal flora, and distinguishing these from a true pathogenic isolate is a core clinical microbiology judgment.",
+  "explanation": "Factors weighed in this judgment include: the specimen source (normally sterile site vs. one with expected resident flora), the identity of the organism (a recognized pathogen for that site vs. a typical skin/environmental commensal), quantity/growth pattern (heavy, pure growth vs. scant, mixed growth), and correlation across multiple specimens or collection methods (e.g. growth in more than one independently collected blood culture set is more convincing than a single positive bottle). No single rule applies universally — the same organism can be a true pathogen in one context and an incidental contaminant in another, which is why this judgment is made by correlating laboratory findings with the specimen source and clinical picture, not by the organism's identity alone.",
+  "commonMisconceptions": [
+    "Treating 'it grew on the plate' as equivalent to 'it caused the infection' — growth confirms presence, not necessarily clinical significance."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-blood-culture-workflow",
+    "clin-protocol-urine-respiratory-culture-workflow",
+    "clin-protocol-clinical-specimen-processing"
+  ],
+  "relatedConcepts": [
+    "concept-pure-vs-mixed-culture"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "contaminant vs pathogen",
+    "normal flora",
+    "colonization vs infection",
+    "polymicrobial growth"
+  ],
+  "difficulty": "advanced"
+}

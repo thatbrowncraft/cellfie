@@ -1,0 +1,61 @@
+{
+  "id": "clin-concept-anticoagulants-collection-tubes",
+  "category": "concept",
+  "title": "Anticoagulants & Blood Collection Tubes",
+  "subcategory": "Pre-Analytical Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    },
+    {
+      "label": "Standard medical laboratory technology curricula/textbooks",
+      "publisher": "Established laboratory manual"
+    }
+  ],
+  "summary": "Blood collection tubes are color-coded by their additive (anticoagulant, clot activator, or gel separator), and the choice of tube determines which tests can validly be run on that draw.",
+  "explanation": "Common additive families include: EDTA (chelates calcium; preserves cell morphology, standard for CBC/hematology), sodium citrate (chelates calcium in a fixed 9:1 blood-to-citrate ratio; used for coagulation testing such as PT/aPTT, where the ratio itself matters for result accuracy), heparin (activates antithrombin; used for some chemistry/stat panels and does not interfere with many electrolyte assays), sodium fluoride/potassium oxalate (inhibits glycolysis; used for glucose specimens where cells would otherwise continue consuming glucose in vitro), and plain or gel-separator clot-activator tubes (produce serum after clotting and centrifugation). Exact color-coding conventions are standardized within a manufacturer/system (e.g. lavender for EDTA, light blue for sodium citrate are widely used conventions) but a laboratory's own procedure manual is the authoritative source, since conventions can differ by manufacturer or region.",
+  "comparison": [
+    {
+      "aspect": "EDTA",
+      "left": "Chelates calcium; preserves cell morphology",
+      "right": "Used for: CBC, blood smear, differential"
+    },
+    {
+      "aspect": "Sodium citrate",
+      "left": "Chelates calcium at a fixed 9:1 ratio",
+      "right": "Used for: PT/INR, aPTT — under-filling this tube invalidates the result"
+    },
+    {
+      "aspect": "Clot activator/serum",
+      "left": "No anticoagulant; blood clots, then is centrifuged",
+      "right": "Used for: most chemistry, serology when serum is required"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming any anticoagulant tube can substitute for another because 'it's all just blood in a tube' — using the wrong additive can chelate an analyte being measured, inhibit an enzyme, or change cell morphology."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-specimen-collection-handling"
+  ],
+  "relatedConcepts": [
+    "clin-concept-serum-vs-plasma",
+    "clin-concept-coagulation-pt-inr-aptt"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "EDTA tube",
+    "citrate tube",
+    "tube color code",
+    "collection tube additive"
+  ],
+  "difficulty": "beginner"
+}

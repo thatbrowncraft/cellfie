@@ -1,0 +1,63 @@
+{
+  "id": "clin-concept-levey-jennings-westgard-rules",
+  "category": "concept",
+  "title": "Levey-Jennings Charts & Westgard Rules",
+  "subcategory": "Quality Control / Quality Assurance",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "CAP/CLSI quality management guidance",
+      "publisher": "College of American Pathologists / CLSI"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "A Levey-Jennings chart plots QC results over time against the established mean and standard deviation, and Westgard rules are a defined set of statistical rules applied to that chart's pattern to decide whether an analytical run is in control or must be rejected.",
+  "explanation": "Each QC data point is plotted relative to the target mean, typically with lines at ±1, ±2, and ±3 standard deviations (SD) — concepts the laboratory's existing mean/SD entries already define generically, applied here specifically to ongoing run-to-run QC monitoring rather than a one-time calculation. Westgard rules examine patterns across one or more consecutive QC points (not just a single point in isolation) to catch both random error (a single wildly off point) and systematic error/trend (a gradual shift or consistent bias) that a single-point check alone would miss; commonly cited example rules include a single point exceeding ±3 SD (a strong 'reject' signal on its own), or multiple consecutive points trending in the same direction or clustered on the same side of the mean (suggesting a developing systematic problem even if no single point is extreme). The specific rule set and violation-response actions a laboratory applies are defined by its own QC procedure, informed by these established statistical principles rather than one universal fixed rule for every analyte.",
+  "comparison": [
+    {
+      "aspect": "Random error signal",
+      "left": "A single point far outside the control limits (e.g. beyond ±3 SD)",
+      "right": "Suggests an isolated, one-off problem"
+    },
+    {
+      "aspect": "Systematic error signal",
+      "left": "A run of consecutive points shifted/trending the same direction",
+      "right": "Suggests a developing, ongoing bias (e.g. reagent degradation, calibration drift)"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating a QC point within ±2 SD as automatically 'fine' without looking at the surrounding pattern — several consecutive points on the same side of the mean, even within 2 SD each, can indicate a developing systematic problem that a single-point check misses."
+  ],
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "concept-accuracy-precision",
+    "clin-concept-internal-qc-vs-eqa"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "clin-equip-hematology-analyzer",
+    "clin-equip-clinical-chemistry-analyzer"
+  ],
+  "relatedFormulas": [
+    "formula-mean",
+    "formula-standard-deviation",
+    "formula-cv"
+  ],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "Levey-Jennings chart",
+    "Westgard rules",
+    "QC violation",
+    "systematic error",
+    "random error",
+    "run rejection"
+  ],
+  "difficulty": "expert"
+}

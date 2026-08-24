@@ -1,0 +1,57 @@
+{
+  "id": "clin-concept-antigen-antibody-agglutination",
+  "category": "concept",
+  "title": "Antigen-Antibody Reactions & Agglutination",
+  "subcategory": "Immunology & Serology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard medical laboratory technology curricula/textbooks",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "AABB Technical Manual",
+      "publisher": "Association for the Advancement of Blood & Biotherapies (AABB)"
+    }
+  ],
+  "summary": "Agglutination is the visible clumping that occurs when an antibody cross-links particulate antigens (whole cells or antigen-coated particles), forming a lattice large enough to see with the naked eye or under low magnification.",
+  "explanation": "An antibody has multiple antigen-binding sites, so when the target antigen is on the surface of a particle (e.g. a red blood cell, a latex bead coated with antigen), a single antibody can bind two or more particles simultaneously, and multiple antibodies can cross-link many particles into a visible clump — this is the basis of blood typing reactions, many rapid antigen tests, and agglutination-based serologic assays. If the antigen is soluble rather than particulate, the equivalent antibody-mediated reaction instead forms a visible precipitate rather than agglutination. Reaction strength (graded, e.g. 4+ down to negative in many manual systems) reflects the amount and avidity of antibody present relative to antigen, and is read within a defined time window because reactions can weaken or strengthen non-specifically if read too early or too late.",
+  "comparison": [
+    {
+      "aspect": "Agglutination",
+      "left": "Antibody cross-links particulate (cell-bound) antigen",
+      "right": "Visible as clumping"
+    },
+    {
+      "aspect": "Precipitation",
+      "left": "Antibody cross-links soluble antigen",
+      "right": "Visible as a precipitate/line, not clumping"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming any visible clumping is a true positive — rouleaux formation (stacked red cells, unrelated to antibody binding) and specimen artifacts can mimic weak agglutination and must be distinguished, often by saline replacement or microscopic examination."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-abo-rh-forward-reverse-typing",
+    "clin-protocol-elisa"
+  ],
+  "relatedConcepts": [
+    "clin-concept-abo-rh-grouping-principle",
+    "clin-concept-crossmatching-antibody-screening"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "agglutination reaction",
+    "hemagglutination",
+    "antigen antibody binding",
+    "reaction grading"
+  ],
+  "difficulty": "beginner"
+}

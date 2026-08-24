@@ -1,0 +1,55 @@
+{
+  "id": "clin-concept-abo-rh-grouping-principle",
+  "category": "concept",
+  "title": "ABO & Rh Blood Grouping — Principle",
+  "subcategory": "Immunohematology / Blood Bank",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "AABB Technical Manual",
+      "publisher": "Association for the Advancement of Blood & Biotherapies (AABB)"
+    },
+    {
+      "label": "Standard medical laboratory technology curricula/textbooks",
+      "publisher": "Established laboratory manual"
+    }
+  ],
+  "summary": "ABO and Rh(D) typing identify which red cell surface antigens a person carries, the single most critical piece of information for safe transfusion.",
+  "explanation": "The ABO system is defined by A and B antigens on the red cell surface, with plasma naturally containing antibodies against whichever ABO antigen(s) an individual lacks (e.g. type A blood carries anti-B antibody) — this reciprocal relationship is what allows 'reverse grouping' to cross-check 'forward grouping' (see the related protocol). The Rh system's most clinically significant antigen is D: individuals with the D antigen are Rh-positive, those without it are Rh-negative. Transfusing ABO-incompatible red cells can trigger a rapid, potentially fatal intravascular hemolytic reaction because naturally occurring anti-A/anti-B antibodies are already present; Rh incompatibility does not cause an immediate reaction on first exposure but can cause sensitization, which matters especially in Rh-negative individuals who may be exposed to Rh-positive blood (e.g. in pregnancy or transfusion) and subsequently develop anti-D antibody.",
+  "comparison": [
+    {
+      "aspect": "ABO antibodies",
+      "left": "Naturally occurring, present without prior exposure",
+      "right": "Rh(D) antibodies: not naturally occurring — require prior sensitizing exposure"
+    },
+    {
+      "aspect": "Clinical risk",
+      "left": "ABO-incompatible transfusion: immediate, severe hemolytic reaction risk",
+      "right": "Rh-incompatible exposure: primarily a sensitization risk, especially relevant in pregnancy"
+    }
+  ],
+  "relatedProtocols": [
+    "clin-protocol-abo-rh-forward-reverse-typing"
+  ],
+  "relatedConcepts": [
+    "clin-concept-antigen-antibody-agglutination",
+    "clin-concept-crossmatching-antibody-screening"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "ABO blood group",
+    "Rh factor",
+    "blood type",
+    "anti-A antibody",
+    "anti-B antibody",
+    "Rh D antigen"
+  ],
+  "difficulty": "beginner"
+}

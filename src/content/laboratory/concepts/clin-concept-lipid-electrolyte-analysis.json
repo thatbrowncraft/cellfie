@@ -1,0 +1,59 @@
+{
+  "id": "clin-concept-lipid-electrolyte-analysis",
+  "category": "concept",
+  "title": "Lipid Profile & Electrolyte Analysis",
+  "subcategory": "Clinical Biochemistry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical chemistry laboratory textbooks/manuals (e.g. Tietz Fundamentals of Clinical Chemistry)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "The lipid profile characterizes circulating lipid/lipoprotein fractions relevant to cardiovascular risk assessment, while electrolyte analysis measures the major ions that maintain fluid balance, acid-base status, and neuromuscular/cardiac function.",
+  "explanation": "A standard lipid profile reports total cholesterol, HDL cholesterol, triglycerides, and either directly measured or (more commonly) calculated LDL cholesterol; because standard LDL calculation methods use triglyceride level as part of the formula, markedly elevated triglycerides can make a calculated LDL unreliable, requiring a direct LDL measurement or patient fasting-status review — a good example of why lipemia (already covered generically) specifically matters for this panel. Electrolyte panels (commonly sodium, potassium, chloride, and bicarbonate/CO2) are frequently measured by ion-selective electrode technology on the same automated chemistry analyzer used for the rest of the chemistry menu, and are especially sensitive to hemolysis (which releases intracellular potassium) — directly connecting to the laboratory's existing HIL-index concept.",
+  "comparison": [
+    {
+      "aspect": "Lipid profile",
+      "left": "Total cholesterol, HDL, triglycerides, LDL (measured or calculated)",
+      "right": "Used for cardiovascular risk assessment"
+    },
+    {
+      "aspect": "Electrolyte panel",
+      "left": "Sodium, potassium, chloride, bicarbonate",
+      "right": "Used for fluid/acid-base/cardiac status; highly hemolysis-sensitive (potassium)"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming a calculated LDL is always as reliable as a directly measured one — the common calculation methods are affected by markedly elevated triglycerides."
+  ],
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-hemolysis-lipemia-icterus",
+    "clin-concept-renal-liver-chemistry-fundamentals",
+    "clin-concept-clinical-chemistry-workflow"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "clin-equip-clinical-chemistry-analyzer"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "lipid panel",
+    "LDL calculation",
+    "HDL cholesterol",
+    "triglycerides",
+    "electrolyte panel",
+    "ion selective electrode"
+  ],
+  "difficulty": "advanced"
+}

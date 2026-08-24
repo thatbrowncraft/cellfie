@@ -1,0 +1,58 @@
+{
+  "id": "clin-concept-preanalytical-total-testing",
+  "category": "concept",
+  "title": "Pre-Analytical Errors & the Total Testing Process",
+  "subcategory": "Pre-Analytical Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "WHO Laboratory Quality Management System Handbook",
+      "publisher": "World Health Organization"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "The Total Testing Process (TTP) splits laboratory work into pre-analytical, analytical, and post-analytical phases. The pre-analytical phase — everything from test ordering through specimen arrival at the bench — is where most laboratory errors actually originate.",
+  "explanation": "Multiple published error-rate studies across clinical laboratories consistently find that the pre-analytical phase (patient/specimen identification, collection, labeling, handling, transport, and processing before testing begins) accounts for the majority of total laboratory errors, far more than the analytical phase itself. Common pre-analytical error types include misidentification, wrong container/anticoagulant, inadequate volume, hemolysis, clotting, delayed transport, and incorrect storage temperature. Because analyzers and trained staff can produce a technically 'correct' result on a compromised specimen, pre-analytical errors are dangerous specifically because they are often invisible downstream — the number that comes out can look plausible while not reflecting the patient. This entry defines the framework; specimen-specific handling rules are covered in the related specimen collection and rejection entries.",
+  "comparison": [
+    {
+      "aspect": "Phase",
+      "left": "Pre-analytical: ordering through specimen receipt",
+      "right": "Analytical: the actual test run on the instrument/bench"
+    },
+    {
+      "aspect": "Where most errors occur",
+      "left": "Majority of total lab errors, per multiple published studies",
+      "right": "A minority of total errors, once modern instrumentation/QC is in place"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming a result is trustworthy simply because the analyzer produced a number — an analyzer cannot detect that a specimen was drawn from the wrong patient or degraded in transit."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-specimen-collection-handling"
+  ],
+  "relatedConcepts": [
+    "clin-concept-specimen-rejection-criteria",
+    "clin-concept-hemolysis-lipemia-icterus",
+    "concept-accuracy-precision",
+    "concept-positive-negative-controls"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "total testing process",
+    "preanalytical phase",
+    "laboratory error sources",
+    "specimen identification"
+  ],
+  "difficulty": "beginner"
+}

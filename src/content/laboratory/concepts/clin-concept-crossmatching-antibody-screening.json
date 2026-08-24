@@ -1,0 +1,59 @@
+{
+  "id": "clin-concept-crossmatching-antibody-screening",
+  "category": "concept",
+  "title": "Crossmatching & Antibody Screening",
+  "subcategory": "Immunohematology / Blood Bank",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "AABB Technical Manual",
+      "publisher": "Association for the Advancement of Blood & Biotherapies (AABB)"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "Antibody screening tests a patient's plasma against a panel of reagent red cells carrying known, clinically significant antigens to detect unexpected (non-ABO) antibodies before transfusion; crossmatching then directly tests the patient's plasma against the specific donor unit(s) intended for transfusion.",
+  "explanation": "Antibody screening uses reagent screening cells selected to express the antigens most commonly associated with clinically significant hemolytic transfusion reactions or hemolytic disease of the fetus/newborn; a positive screen triggers antibody identification (testing against an extended panel to determine which specific antibody is present) before a safe unit can be selected. Crossmatching serves as a final direct check between patient plasma and the actual donor unit: an immediate-spin (or electronic, in eligible low-risk settings) crossmatch mainly confirms ABO compatibility, while a full antiglobulin (indirect Coombs) crossmatch also detects clinically significant antibodies reacting against that specific donor's cells, extending the sensitivity beyond ABO alone. Together, ABO/Rh typing (forward and reverse), antibody screening, and crossmatching form layered, complementary safety checks — no single step is considered sufficient alone before red cell transfusion.",
+  "comparison": [
+    {
+      "aspect": "Antibody screen",
+      "left": "Patient plasma vs. reagent screening cells (known antigen panel)",
+      "right": "Detects presence of a clinically significant unexpected antibody"
+    },
+    {
+      "aspect": "Crossmatch",
+      "left": "Patient plasma vs. the specific donor unit",
+      "right": "Confirms compatibility with that exact unit before release"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming ABO/Rh typing alone is sufficient to safely release blood — a negative antibody screen and compatible crossmatch are additional required safety layers precisely because clinically significant antibodies beyond ABO/Rh do occur."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-abo-rh-forward-reverse-typing"
+  ],
+  "relatedConcepts": [
+    "clin-concept-abo-rh-grouping-principle",
+    "clin-concept-antigen-antibody-agglutination"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "clin-equip-blood-bank-equipment"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "antibody screen",
+    "crossmatch",
+    "indirect Coombs test",
+    "compatibility testing",
+    "unexpected antibody"
+  ],
+  "difficulty": "advanced"
+}

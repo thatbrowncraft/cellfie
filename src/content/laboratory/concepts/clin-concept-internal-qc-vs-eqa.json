@@ -1,0 +1,55 @@
+{
+  "id": "clin-concept-internal-qc-vs-eqa",
+  "category": "concept",
+  "title": "Internal QC vs. External Quality Assessment (EQA/Proficiency Testing)",
+  "subcategory": "Quality Control / Quality Assurance",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "CAP/CLSI quality management guidance",
+      "publisher": "College of American Pathologists / CLSI"
+    },
+    {
+      "label": "WHO Laboratory Quality Management System Handbook",
+      "publisher": "World Health Organization"
+    }
+  ],
+  "summary": "Internal quality control (running known-value control material within the laboratory, day to day) and external quality assessment (periodically testing blind samples sent by an outside program and comparing results against peer laboratories) are two complementary, non-substitutable layers of laboratory quality assurance.",
+  "explanation": "Internal QC catches day-to-day analytical problems in near-real time — it is what determines whether a specific run's patient results can be released at all, using tools like Levey-Jennings charts and Westgard rules already covered. External quality assessment (EQA), also called proficiency testing (PT), instead periodically validates the laboratory's ongoing accuracy against outside peer/reference consensus, catching systematic biases that a laboratory's own internal QC — calibrated and monitored by the same laboratory — might not reveal on its own (since internal QC confirms consistency with the lab's own established mean, not necessarily true accuracy against an external reference). Calibration, verification, and validation are related but distinct concepts underlying both: calibration establishes an instrument's measurement relationship against known standards; verification confirms a method already validated by its manufacturer performs as claimed in this specific laboratory; validation is the more extensive process of establishing that a method (especially a laboratory-developed one) performs accurately, precisely, and appropriately for its intended clinical use in the first place.",
+  "comparison": [
+    {
+      "aspect": "Internal QC",
+      "left": "Run within the lab, frequently (e.g. daily/per run)",
+      "right": "Detects day-to-day analytical drift; gates release of that run's patient results"
+    },
+    {
+      "aspect": "External QA / Proficiency Testing",
+      "left": "Blind samples from an outside program, periodic (e.g. several times a year)",
+      "right": "Detects systematic bias against outside peer/reference consensus"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming that passing internal QC consistently means the laboratory's results are truly accurate — internal QC confirms consistency with the lab's own established mean, which is why an independent external check (EQA/PT) is a required, separate layer."
+  ],
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-levey-jennings-westgard-rules",
+    "concept-accuracy-precision",
+    "concept-reproducibility-repeatability"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "proficiency testing",
+    "external quality assessment",
+    "calibration verification validation",
+    "internal quality control"
+  ],
+  "difficulty": "expert"
+}

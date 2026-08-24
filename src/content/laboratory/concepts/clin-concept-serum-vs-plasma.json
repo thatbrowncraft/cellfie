@@ -1,0 +1,55 @@
+{
+  "id": "clin-concept-serum-vs-plasma",
+  "category": "concept",
+  "title": "Serum vs. Plasma",
+  "subcategory": "Pre-Analytical Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical chemistry laboratory textbooks/manuals (e.g. Tietz Fundamentals of Clinical Chemistry)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "Serum is the fluid that remains after whole blood is allowed to clot and the clot is removed; plasma is the fluid fraction of anticoagulated whole blood that never clotted.",
+  "explanation": "Because serum has gone through the clotting cascade, it lacks fibrinogen and the clotting factors consumed during coagulation, while plasma retains them (which is why plasma, not serum, is used for coagulation testing). Many chemistry analytes can be measured in either serum or plasma, but not interchangeably for every test — some assays are validated and reference-ranged specifically for one or the other, and switching can shift results (e.g. plasma electrolyte values can differ slightly from serum due to the anticoagulant used or the absence of clotting-related ion shifts). Which one is required is method- and analyte-specific and should be confirmed against the test's own requirements rather than assumed.",
+  "comparison": [
+    {
+      "aspect": "Source",
+      "left": "Serum: clotted whole blood, clot removed",
+      "right": "Plasma: anticoagulated whole blood, cells removed"
+    },
+    {
+      "aspect": "Fibrinogen/clotting factors",
+      "left": "Serum: absent (consumed in clotting)",
+      "right": "Plasma: present"
+    },
+    {
+      "aspect": "Typical use",
+      "left": "Serum: most chemistry, serology",
+      "right": "Plasma: coagulation studies, some stat chemistry"
+    }
+  ],
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-anticoagulants-collection-tubes",
+    "clin-concept-coagulation-pt-inr-aptt"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "serum separator tube",
+    "plasma vs serum",
+    "clotted specimen"
+  ],
+  "difficulty": "beginner"
+}

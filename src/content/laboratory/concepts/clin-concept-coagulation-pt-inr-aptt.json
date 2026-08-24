@@ -1,0 +1,55 @@
+{
+  "id": "clin-concept-coagulation-pt-inr-aptt",
+  "category": "concept",
+  "title": "Basic Coagulation Testing: PT/INR & aPTT",
+  "subcategory": "Hematology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical hematology laboratory textbooks/manuals (e.g. Henry's Clinical Diagnosis and Management)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "Prothrombin Time (PT, reported with an INR) and activated Partial Thromboplastin Time (aPTT) are the two most common screening coagulation tests, each probing a different arm of the clotting cascade.",
+  "explanation": "Both tests measure the time (in seconds) for citrated plasma to clot after specific reagents are added, but they trigger clotting through different pathways: PT is triggered by adding tissue factor (thromboplastin) plus calcium, primarily reflecting the extrinsic and common pathways (factors including VII, X, V, II/prothrombin, and fibrinogen) — clinically most associated with monitoring vitamin K antagonist (e.g. warfarin) therapy, where the INR (International Normalized Ratio) standardizes PT results across different thromboplastin reagents/instruments so results are comparable between laboratories. aPTT is triggered by adding a contact activator plus phospholipid and calcium, primarily reflecting the intrinsic and common pathways (including factors VIII, IX, XI, XII) — clinically most associated with monitoring unfractionated heparin therapy and screening for certain factor deficiencies or inhibitors. Both tests depend critically on correct sample collection: the sodium citrate tube's 9:1 blood-to-citrate ratio (see the related anticoagulant/tube concept) must be met, since under-filling introduces relative excess citrate that falsely prolongs both results.",
+  "comparison": [
+    {
+      "aspect": "Pathway probed",
+      "left": "PT/INR: extrinsic + common pathway",
+      "right": "aPTT: intrinsic + common pathway"
+    },
+    {
+      "aspect": "Common clinical use",
+      "left": "PT/INR: monitoring warfarin/vitamin K antagonist therapy",
+      "right": "aPTT: monitoring unfractionated heparin therapy"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming a prolonged PT or aPTT always means a bleeding risk from factor deficiency — it can also reflect an anticoagulant drug effect, a lupus-type inhibitor, or a specimen collection error (e.g. under-filled citrate tube), which must be distinguished before clinical interpretation."
+  ],
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-anticoagulants-collection-tubes",
+    "clin-concept-serum-vs-plasma"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "prothrombin time",
+    "INR",
+    "activated partial thromboplastin time",
+    "coagulation cascade",
+    "warfarin monitoring"
+  ],
+  "difficulty": "advanced"
+}

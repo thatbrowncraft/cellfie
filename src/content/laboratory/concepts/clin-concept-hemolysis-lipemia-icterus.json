@@ -1,0 +1,44 @@
+{
+  "id": "clin-concept-hemolysis-lipemia-icterus",
+  "category": "concept",
+  "title": "Hemolysis, Lipemia & Icterus (the HIL Index)",
+  "subcategory": "Pre-Analytical Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical chemistry laboratory textbooks/manuals (e.g. Tietz Fundamentals of Clinical Chemistry)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "Hemolysis (red cell rupture releasing intracellular contents), lipemia (excess lipid/turbidity), and icterus (elevated bilirubin giving a yellow tint) are three visible specimen characteristics that can interfere with chemistry and other testing — collectively assessed as the 'HIL index' on many analyzers.",
+  "explanation": "Hemolysis can falsely elevate analytes concentrated inside red cells (e.g. potassium, LDH) and can also interfere optically with photometric assays. Lipemia scatters light and can interfere with photometric/turbidimetric measurements, and can dilute the aqueous phase of a sample in some assays. Icterus (elevated bilirubin) can interfere optically with assays read at overlapping wavelengths. Modern chemistry analyzers commonly measure H/I/L indices automatically and flag results that fall outside a validated interference threshold for a given assay; whether a specific H/I/L level actually invalidates a specific test depends on that test's own documented interference profile, not a single universal cutoff, so the analyzer/method's own interference table is the authoritative reference rather than a fixed number presented here.",
+  "commonMisconceptions": [
+    "Assuming any visible hemolysis automatically invalidates every test on that specimen — interference is analyte-specific; some tests are essentially unaffected by mild hemolysis while others (like potassium) are highly sensitive to it."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-specimen-collection-handling"
+  ],
+  "relatedConcepts": [
+    "clin-concept-specimen-rejection-criteria",
+    "clin-concept-clinical-chemistry-workflow"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "HIL index",
+    "hemolyzed specimen",
+    "lipemic specimen",
+    "icteric specimen"
+  ],
+  "difficulty": "beginner"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "clin-concept-urine-sediment-casts-crystals",
+  "category": "concept",
+  "title": "Urine Sediment: Casts & Crystals",
+  "subcategory": "Urinalysis",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard medical laboratory technology curricula/textbooks",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "summary": "Microscopic examination of centrifuged urine sediment reveals formed elements — cells, casts, crystals, and organisms — whose type, quantity, and combination provide diagnostically useful information beyond the chemical strip alone.",
+  "explanation": "Casts are cylindrical structures formed within the renal tubules from a protein matrix (Tamm-Horsfall protein), and their composition reflects what was trapped as they formed: hyaline casts (protein matrix alone) can be seen even in concentrated normal urine in small numbers, while cellular casts (red cell, white cell, or epithelial cell casts), granular casts, or waxy casts generally indicate a renal-origin process and are considered more clinically significant. Crystals form when a urine solute exceeds its solubility, and many common crystal types (e.g. uric acid, calcium oxalate) can be seen in normal, healthy urine depending on pH, concentration, and diet/hydration — crystal identification is therefore correlated with urine pH, clinical context, and crystal morphology rather than any crystal automatically indicating disease; some crystal types (e.g. cystine crystals) are, however, always considered clinically abnormal regardless of context. Reporting conventions (elements per low-power or high-power field) are method-standardized and should follow the laboratory's own reporting scheme.",
+  "comparison": [
+    {
+      "aspect": "Hyaline cast",
+      "left": "Protein matrix only",
+      "right": "Can occur in normal, concentrated urine in small numbers"
+    },
+    {
+      "aspect": "Cellular/granular/waxy cast",
+      "left": "Contains cells or degraded cellular material",
+      "right": "Generally indicates a renal-origin pathologic process"
+    },
+    {
+      "aspect": "Common crystals (e.g. uric acid, calcium oxalate)",
+      "left": "Can be seen in normal urine, pH/concentration-dependent",
+      "right": "vs. cystine crystals: always considered abnormal"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming any crystal in urine indicates disease — most common crystal types are frequently seen in normal urine and are interpreted in the context of pH, quantity, and clinical picture, not flagged automatically as pathologic."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-complete-urinalysis-workflow"
+  ],
+  "relatedConcepts": [],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-microscope-brightfield",
+    "clin-equip-urinalysis-analyzer"
+  ],
+  "relatedFormulas": [
+    "formula-ph"
+  ],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "urinary cast",
+    "urine crystal identification",
+    "hyaline cast",
+    "cellular cast",
+    "Tamm-Horsfall protein"
+  ],
+  "difficulty": "advanced"
+}
