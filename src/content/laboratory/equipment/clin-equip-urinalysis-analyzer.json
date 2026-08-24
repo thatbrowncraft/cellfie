@@ -1,0 +1,71 @@
+{
+  "id": "clin-equip-urinalysis-analyzer",
+  "category": "equipment",
+  "title": "Automated Urinalysis Analyzer",
+  "kind": "instrument",
+  "subcategory": "Clinical Laboratory Equipment",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard medical laboratory technology curricula/textbooks",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CAP/CLSI quality management guidance",
+      "publisher": "College of American Pathologists / CLSI"
+    }
+  ],
+  "purpose": "Automates reading of urine reagent strips (chemical analysis) and, in combined systems, digital imaging/flow-based classification of urine sediment (microscopic analysis), improving throughput and reducing reader-to-reader variability versus fully manual urinalysis.",
+  "operatingPrinciple": "Strip-reading analyzers use reflectance photometry to read each reagent pad's color development at its specified time, converting reflected light intensity into a semi-quantitative result for each analyte. Combined chemistry-plus-sediment systems add a second module that images or classifies formed elements (cells, casts, crystals) in unspun or minimally processed urine using digital image analysis or flow cytometry-like principles, flagging results for technologist confirmation rather than fully replacing manual microscopic review.",
+  "basicOperation": [
+    "Run QC material per the laboratory's schedule before releasing patient strip/sediment results.",
+    "Ensure adequate, well-mixed, fresh specimen volume per the analyzer's aspiration requirements.",
+    "Review analyzer flags for atypical or borderline sediment findings and route to manual microscopic review per the laboratory's rule set."
+  ],
+  "importantSettings": [
+    "Strip lot calibration",
+    "Sediment classification sensitivity/flagging thresholds",
+    "QC lot and target ranges"
+  ],
+  "calibration": "Calibrated per manufacturer schedule using certified calibration material; verified through routine QC runs and correlation checks against manual microscopy on a defined schedule or for flagged specimens.",
+  "maintenance": [
+    "Routine cleaning of strip-reading and imaging optics per manufacturer schedule.",
+    "Replace strips/reagents before expiration and monitor for lot-to-lot performance shifts."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Discordant chemical vs. sediment finding (e.g. positive blood chemically, few red cells on sediment)",
+      "cause": "Hemoglobin/myoglobin present without intact red cells, or a timing/interference issue on the strip pad",
+      "fix": "Correlate both results and review manually rather than reporting either component in isolation"
+    },
+    {
+      "problem": "Sediment classification flag on an atypical element",
+      "cause": "An element outside the analyzer's trained classification categories (e.g. an unusual crystal or organism)",
+      "fix": "Route to manual microscopic examination for technologist identification"
+    }
+  ],
+  "safety": [
+    "Treat urine specimens and analyzer waste as biohazardous.",
+    "Follow manufacturer decontamination procedures for any maintenance involving fluidics access."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-complete-urinalysis-workflow"
+  ],
+  "relatedConcepts": [
+    "clin-concept-urine-sediment-casts-crystals"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "reflectance photometry strip reader",
+    "automated sediment analysis",
+    "urine chemistry analyzer"
+  ],
+  "difficulty": "intermediate"
+}

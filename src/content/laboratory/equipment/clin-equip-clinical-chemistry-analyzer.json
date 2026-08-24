@@ -1,0 +1,75 @@
+{
+  "id": "clin-equip-clinical-chemistry-analyzer",
+  "category": "equipment",
+  "title": "Clinical Chemistry Analyzer",
+  "kind": "instrument",
+  "subcategory": "Clinical Laboratory Equipment",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical chemistry laboratory textbooks/manuals (e.g. Tietz Fundamentals of Clinical Chemistry)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CAP/CLSI quality management guidance",
+      "publisher": "College of American Pathologists / CLSI"
+    }
+  ],
+  "purpose": "Automates high-volume photometric (and often ion-selective electrode) testing of serum/plasma for the broad panel of routine clinical chemistry analytes — glucose, electrolytes, renal and liver panels, lipids, and more.",
+  "operatingPrinciple": "Combines automated pipetting of sample and reagent, precisely timed incubation, and photometric (and/or ion-selective electrode, for electrolytes) measurement across many assay channels, applying the same absorbance-to-concentration principle the laboratory's spectrophotometer/Beer-Lambert entries already describe, scaled to run large test menus with minimal manual intervention.",
+  "basicOperation": [
+    "Run calibration and QC material per the manufacturer's and laboratory's schedule before releasing patient results for each analyte.",
+    "Monitor reagent levels, onboard reagent stability/expiration, and sample/reagent probe function.",
+    "Review instrument flags for insufficient sample, clot detection, or reaction abnormality before accepting a result."
+  ],
+  "importantSettings": [
+    "Assay-specific calibration curves",
+    "Reaction time/wavelength per assay channel",
+    "QC target ranges and acceptance rules"
+  ],
+  "calibration": "Calibrated per assay using manufacturer-traceable calibrators, verified against daily QC material and periodic proficiency testing.",
+  "maintenance": [
+    "Routine probe/cuvette cleaning per manufacturer schedule to prevent carryover between samples.",
+    "Replace reagent packs and consumables before expiration."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Unexpected result flag/interference warning",
+      "cause": "Hemolysis, lipemia, or icterus in the specimen interfering with the assay's photometric reading (see the related HIL concept)",
+      "fix": "Check the specimen's H/I/L index against the assay's documented interference threshold before releasing the result"
+    },
+    {
+      "problem": "QC out of range for one analyte channel",
+      "cause": "Reagent lot change, calibration drift, or a probe/optics issue specific to that channel",
+      "fix": "Recalibrate/troubleshoot per the laboratory's QC procedure before releasing further patient results on that channel"
+    }
+  ],
+  "safety": [
+    "Handle all serum/plasma samples and analyzer waste as biohazardous.",
+    "Follow manufacturer procedures for reagent handling, some of which contain hazardous chemicals."
+  ],
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-clinical-chemistry-workflow",
+    "clin-concept-hemolysis-lipemia-icterus"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-spectrophotometer"
+  ],
+  "relatedFormulas": [
+    "formula-beer-lambert"
+  ],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "autoanalyzer",
+    "clinical chemistry instrument",
+    "ion selective electrode",
+    "reagent channel"
+  ],
+  "difficulty": "intermediate"
+}

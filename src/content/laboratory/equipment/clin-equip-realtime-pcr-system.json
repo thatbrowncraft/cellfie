@@ -1,0 +1,72 @@
+{
+  "id": "clin-equip-realtime-pcr-system",
+  "category": "equipment",
+  "title": "Real-Time PCR System",
+  "kind": "instrument",
+  "subcategory": "Clinical Laboratory Equipment",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "FDA / CLSI molecular diagnostics guidance",
+      "publisher": "FDA / CLSI"
+    },
+    {
+      "label": "CAP/CLSI quality management guidance",
+      "publisher": "College of American Pathologists / CLSI"
+    }
+  ],
+  "purpose": "Performs thermal cycling for PCR while simultaneously monitoring fluorescent signal each cycle, enabling target detection and relative quantification (via cycle threshold, Ct) without opening the reaction vessel after amplification — reducing amplicon-contamination risk versus end-point/gel-based detection.",
+  "operatingPrinciple": "Combines a precision thermal block (or similar rapid-cycling mechanism) with an integrated optical module that excites and reads fluorescence from probes/dyes in each well or capillary after every cycle, generating a real-time amplification curve per sample that the instrument's software analyzes against a defined threshold to determine each sample's cycle threshold (Ct) or, if failing to cross threshold, a negative/undetected result.",
+  "basicOperation": [
+    "Include manufacturer- and assay-specified positive, negative (no-template), and, where applicable, internal control reactions in every run.",
+    "Verify plate/tube sealing to prevent evaporation and cross-contamination between wells during cycling.",
+    "Review the amplification curve shape (not just the Ct number) for each sample — an atypical curve shape can indicate a technical problem even when a Ct value is generated."
+  ],
+  "importantSettings": [
+    "Cycling program (temperature/time per step, number of cycles) specific to the primer/probe set and assay",
+    "Fluorescence channel/dye selection matched to the probe(s) in use",
+    "Ct threshold and baseline settings"
+  ],
+  "calibration": "Optical calibration per manufacturer schedule using certified calibration dyes/plates; every run's validity is additionally verified through its own built-in positive/negative controls, not calibration alone.",
+  "maintenance": [
+    "Keep the optical block/lens clean per manufacturer schedule to avoid signal attenuation.",
+    "Verify thermal block temperature accuracy per the manufacturer's periodic verification schedule."
+  ],
+  "commonErrors": [
+    {
+      "problem": "No-template (negative) control shows amplification",
+      "cause": "Contamination — commonly amplicon carryover from a prior positive run, or reagent contamination",
+      "fix": "Invalidate the run, investigate the contamination source per the laboratory's molecular contamination-control procedure, and repeat with fresh reagents/controls"
+    },
+    {
+      "problem": "Positive control fails to amplify or amplifies late/atypically",
+      "cause": "Reagent degradation, pipetting/setup error, or instrument malfunction",
+      "fix": "Do not interpret patient results from this run; troubleshoot reagents/instrument and repeat"
+    }
+  ],
+  "safety": [
+    "Handle nucleic acid extracts and amplified product per the laboratory's molecular contamination-control and biosafety procedures.",
+    "Follow manufacturer decontamination guidance for any spill inside the instrument."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-pcr-workflow-rt-pcr"
+  ],
+  "relatedConcepts": [
+    "concept-contamination"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "qPCR instrument",
+    "cycle threshold",
+    "fluorescence detection",
+    "amplification curve"
+  ],
+  "difficulty": "expert"
+}

@@ -1,0 +1,74 @@
+{
+  "id": "clin-equip-hematology-analyzer",
+  "category": "equipment",
+  "title": "Hematology Analyzer",
+  "kind": "instrument",
+  "subcategory": "Clinical Laboratory Equipment",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical hematology laboratory textbooks/manuals (e.g. Henry's Clinical Diagnosis and Management)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CAP/CLSI quality management guidance",
+      "publisher": "College of American Pathologists / CLSI"
+    }
+  ],
+  "purpose": "Automates the Complete Blood Count by counting and characterizing red cells, white cells, and platelets in whole blood, and calculating derived indices, at far higher speed and reproducibility than manual methods.",
+  "operatingPrinciple": "Most hematology analyzers combine electrical impedance (cells passing through a small aperture briefly change electrical resistance, sized by the magnitude of the change) with optical light-scatter/fluorescence methods to size and classify cells, and use these direct measurements plus calculated ratios to report the full CBC panel, including a 3-part or 5-part white cell differential depending on the analyzer's capability.",
+  "basicOperation": [
+    "Run internal/external quality control material at the start of each shift (or per the laboratory's QC schedule) before releasing patient results.",
+    "Ensure adequate specimen mixing before aspiration — inadequately mixed EDTA blood gives inaccurate counts.",
+    "Review analyzer-generated flags (e.g. for abnormal scattergrams, possible clumping, or atypical populations) and route flagged specimens to manual smear review per the laboratory's rule set rather than releasing them unreviewed."
+  ],
+  "importantSettings": [
+    "Sample aspiration volume/mode (whole blood vs. capillary/pre-diluted mode)",
+    "QC lot and target ranges",
+    "Reflex/flagging rule thresholds for manual smear review"
+  ],
+  "calibration": "Calibrated per manufacturer schedule using certified calibration material, with ongoing verification through daily QC runs against established target ranges and rules (e.g. Westgard rules — see the related QC concept).",
+  "maintenance": [
+    "Daily/weekly cleaning cycles per manufacturer schedule to prevent aperture clogging and carryover.",
+    "Monitor and replace reagents/sheath fluid before expiration or depletion."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Falsely low platelet count",
+      "cause": "Platelet clumping (often EDTA-induced) or giant platelets miscounted as red cells",
+      "fix": "Review the smear directly; consider an alternate anticoagulant tube if EDTA-induced clumping is suspected"
+    },
+    {
+      "problem": "QC result outside acceptable range",
+      "cause": "Reagent lot change, aperture partial clog, or genuine instrument drift",
+      "fix": "Follow the laboratory's QC troubleshooting procedure (see the internal QC/Westgard rules entries) before releasing further patient results"
+    }
+  ],
+  "safety": [
+    "Treat all sample probes, waste lines, and spill events as biohazardous.",
+    "Follow manufacturer decontamination procedures for maintenance requiring probe/tubing access."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-differential-leukocyte-count",
+    "clin-protocol-peripheral-blood-smear"
+  ],
+  "relatedConcepts": [
+    "clin-concept-cbc-fundamentals",
+    "clin-concept-levey-jennings-westgard-rules"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "CBC analyzer",
+    "electrical impedance counting",
+    "automated differential",
+    "scattergram"
+  ],
+  "difficulty": "intermediate"
+}

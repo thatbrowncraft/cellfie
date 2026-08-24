@@ -1,0 +1,72 @@
+{
+  "id": "clin-equip-blood-bank-equipment",
+  "category": "equipment",
+  "title": "Blood Bank Equipment (Refrigerator, Platelet Agitator & Component Storage)",
+  "kind": "instrument",
+  "subcategory": "Immunohematology / Blood Bank",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "AABB Technical Manual",
+      "publisher": "Association for the Advancement of Blood & Biotherapies (AABB)"
+    },
+    {
+      "label": "CAP/CLSI quality management guidance",
+      "publisher": "College of American Pathologists / CLSI"
+    }
+  ],
+  "purpose": "A small family of dedicated storage/handling equipment — blood bank refrigerators, platelet agitators, and related component-storage devices — maintains blood components within the narrow temperature and handling conditions each component type requires to remain safe and viable for transfusion.",
+  "operatingPrinciple": "Different blood components have different storage requirements because they degrade differently: red cells are stored refrigerated (a narrow cold range) to slow metabolic degradation while remaining viable; platelets, in contrast, are stored at room temperature under continuous gentle agitation, since refrigeration and stillness both damage platelet function; plasma/cryoprecipitate is stored frozen to preserve labile clotting factors. Dedicated blood bank refrigerators and freezers (distinct from general-purpose lab units) include continuous temperature monitoring and alarm systems specifically because a temperature excursion can render a component unsafe or unusable without any visible change to the unit.",
+  "basicOperation": [
+    "Continuously monitor and log temperature (or agitation, for platelets) per the component-specific requirement, with alarms for any excursion outside the validated range.",
+    "Segregate units appropriately (e.g. by component type, crossmatch/reservation status) per the laboratory's chain-of-custody procedure.",
+    "Inspect units for integrity, correct labeling, and expiration before release for transfusion."
+  ],
+  "importantSettings": [
+    "Target temperature range specific to the component type stored",
+    "Agitation speed/pattern for platelet storage",
+    "Alarm thresholds and notification routing"
+  ],
+  "calibration": "Temperature probes and alarm systems are verified and calibrated on a defined schedule per the laboratory's equipment management program, with continuous monitoring providing ongoing verification between formal calibrations.",
+  "maintenance": [
+    "Regular cleaning and defrost/maintenance cycles per manufacturer schedule, performed without allowing stored components to exceed their required temperature range during the process.",
+    "Battery backup/alarm system function testing on a defined schedule."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Temperature excursion alarm",
+      "cause": "Door left ajar, power interruption, or unit malfunction",
+      "fix": "Follow the laboratory's excursion procedure — assess affected units per component-specific stability rules before any release for transfusion"
+    },
+    {
+      "problem": "Platelet unit swirling pattern lost on visual inspection",
+      "cause": "Inadequate agitation or extended storage beyond validated shelf life",
+      "fix": "Do not release the unit; follow the laboratory's component-quality rejection procedure"
+    }
+  ],
+  "safety": [
+    "All blood components are biohazardous — handle spills and unit disposal per biohazard protocol.",
+    "Follow the facility's chain-of-custody and component-release documentation procedures without exception."
+  ],
+  "relatedProtocols": [
+    "clin-protocol-abo-rh-forward-reverse-typing"
+  ],
+  "relatedConcepts": [
+    "clin-concept-crossmatching-antibody-screening"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "blood bank refrigerator",
+    "platelet agitator",
+    "component storage",
+    "temperature monitoring"
+  ],
+  "difficulty": "intermediate"
+}
