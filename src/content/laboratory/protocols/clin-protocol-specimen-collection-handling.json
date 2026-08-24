@@ -1,0 +1,97 @@
+{
+  "id": "clin-protocol-specimen-collection-handling",
+  "category": "protocol",
+  "title": "Specimen Collection, Handling, Transport & Storage",
+  "subcategory": "Pre-Analytical Laboratory",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    },
+    {
+      "label": "WHO Laboratory Quality Management System Handbook",
+      "publisher": "World Health Organization"
+    }
+  ],
+  "purpose": "To collect, label, transport, and store clinical specimens in a way that preserves analyte integrity from the point of collection to the point of testing.",
+  "principle": "Analytes and cells begin changing the moment a specimen leaves the patient — metabolism continues in whole blood, cells lyse, pH and gas tensions shift, and organisms may proliferate or die off. Correct collection order, container/anticoagulant choice, gentle mixing, temperature control, and prompt transport are all aimed at freezing the specimen's condition as close as possible to its in-vivo state until it can be processed.",
+  "requiredMaterials": [
+    "Positive patient/specimen identification system",
+    "Correct collection container/tube for the ordered test",
+    "Labels printed or written per local policy",
+    "Insulated transport container with temperature control as required"
+  ],
+  "requiredReagents": [
+    "Skin antiseptic appropriate to the specimen type (e.g. for blood cultures, per that protocol)"
+  ],
+  "equipment": [
+    "equip-centrifuge"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Positively identify the patient using at least two identifiers before collection, and confirm the request matches the specimen to be collected."
+    },
+    {
+      "step": 2,
+      "note": "The order of draw itself is method/standard-dependent — follow your laboratory's current CLSI-based order rather than a memorized universal sequence.",
+      "instruction": "Select the correct container/tube and anticoagulant for each ordered test; when multiple tubes are drawn, follow the laboratory's specified order of draw to avoid cross-contamination between additives."
+    },
+    {
+      "step": 3,
+      "instruction": "Label every specimen at the bedside/point of collection, before leaving the patient, with the identifiers the laboratory requires."
+    },
+    {
+      "step": 4,
+      "instruction": "Mix anticoagulated tubes by gentle inversion the specified number of times — never shake, which can hemolyze cells or foam/denature protein."
+    },
+    {
+      "step": 5,
+      "note": "Consult the laboratory's specimen requirements/handling manual per analyte — no single time/temperature rule applies to every test.",
+      "instruction": "Transport specimens to the laboratory within the time and temperature window specified for each test (e.g. some analytes require immediate chilling, others must not be refrigerated)."
+    },
+    {
+      "step": 6,
+      "instruction": "Process (e.g. centrifuge, separate serum/plasma) within the specified time window; store appropriately if testing is delayed."
+    }
+  ],
+  "observations": "A properly handled specimen arrives correctly labeled, within its stability window, without visible hemolysis/clotting (unless clotting is expected, e.g. serum tubes), and at the required temperature.",
+  "interpretation": "Any deviation from required identification, container, timing, or temperature is a pre-analytical variable that can invalidate downstream results even if the analytical run itself is performed correctly.",
+  "precautions": [
+    "Treat every specimen as potentially infectious.",
+    "Never relabel a specimen away from the patient based on memory — mislabeling at collection is not correctable afterward."
+  ],
+  "limitations": [
+    "This entry describes general handling principles; exact tube types, order of draw, and stability windows are method/analyte-specific and defined by the testing laboratory's procedure manual, not universally fixed values."
+  ],
+  "biosafetyNotes": "Standard/universal precautions apply to all specimen handling; use appropriate PPE and follow the facility's exposure-control plan.",
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-preanalytical-total-testing",
+    "clin-concept-anticoagulants-collection-tubes",
+    "clin-concept-serum-vs-plasma",
+    "clin-concept-specimen-rejection-criteria"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-centrifuge"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-ppe",
+    "safety-aseptic-technique",
+    "safety-biological-waste"
+  ],
+  "searchKeywords": [
+    "order of draw",
+    "specimen transport",
+    "specimen labeling",
+    "specimen stability"
+  ],
+  "difficulty": "beginner"
+}

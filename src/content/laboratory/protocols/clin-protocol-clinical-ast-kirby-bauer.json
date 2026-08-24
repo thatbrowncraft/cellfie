@@ -1,0 +1,100 @@
+{
+  "id": "clin-protocol-clinical-ast-kirby-bauer",
+  "category": "protocol",
+  "title": "Clinical Antimicrobial Susceptibility Testing (Kirby-Bauer Disk Diffusion)",
+  "subcategory": "Clinical Microbiology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "CLSI M100: Performance Standards for Antimicrobial Susceptibility Testing",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    },
+    {
+      "label": "ASM Manual of Clinical Microbiology",
+      "publisher": "American Society for Microbiology (ASM)"
+    }
+  ],
+  "purpose": "To determine whether a clinically significant bacterial isolate is susceptible, intermediate, or resistant to specific antimicrobial agents, guiding therapy selection.",
+  "principle": "A standardized bacterial suspension is spread evenly onto Mueller-Hinton agar (the laboratory's existing standard AST medium), and paper disks impregnated with fixed concentrations of antimicrobial agents are placed on the surface. Each drug diffuses outward from its disk in a concentration gradient as the plate incubates; where the local concentration is high enough to inhibit the test organism, no growth occurs, producing a clear zone of inhibition around the disk. The diameter of that zone is measured and compared against organism- and drug-specific breakpoint tables (published by a standards body such as CLSI) to categorize the isolate as susceptible, intermediate, or resistant to that agent — the same MIC-related logic the laboratory's existing MIC vs. MBC concept introduces, applied via a diffusion method rather than a dilution series.",
+  "requiredMaterials": [
+    "Sterile cotton swabs",
+    "Mueller-Hinton agar plates",
+    "Disk dispenser and antimicrobial disks",
+    "Zone-of-inhibition measuring device/ruler or automated zone reader"
+  ],
+  "requiredReagents": [
+    "McFarland turbidity standard (or equivalent nephelometer) for standardizing inoculum density"
+  ],
+  "equipment": [
+    "equip-incubator",
+    "equip-inoculating-loop"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "note": "Inoculum density must match the specified standard — too dense or too dilute a suspension skews zone sizes and invalidates the result.",
+      "instruction": "Prepare a bacterial suspension from pure isolated colonies and adjust turbidity to match the standard McFarland density specified by the method (commonly 0.5 McFarland)."
+    },
+    {
+      "step": 2,
+      "instruction": "Streak the standardized suspension evenly over the entire Mueller-Hinton plate surface using a swab, rotating the plate to ensure confluent, even coverage."
+    },
+    {
+      "step": 3,
+      "instruction": "Apply antimicrobial disks to the inoculated surface within the specified time window after inoculation, pressing gently to ensure contact, spaced to avoid overlapping zones."
+    },
+    {
+      "step": 4,
+      "instruction": "Incubate under the temperature and time conditions specified by the standard method for the organism group being tested."
+    },
+    {
+      "step": 5,
+      "instruction": "Measure the diameter of each zone of inhibition to the nearest whole millimeter, viewing against a dark background with reflected light."
+    },
+    {
+      "step": 6,
+      "note": "Breakpoints are periodically updated by the standards body and are organism- and drug-specific — never apply a memorized number without checking the current table.",
+      "instruction": "Compare each measured zone diameter to the current published breakpoint table for that organism-drug combination to categorize susceptible, intermediate, or resistant."
+    }
+  ],
+  "observations": "Record zone diameter (mm) for each antimicrobial tested, along with any zone irregularities (e.g. overlapping zones, colonies within a zone suggesting a resistant subpopulation).",
+  "interpretation": "Susceptible/intermediate/resistant categorization guides — but does not by itself dictate — antimicrobial therapy selection, which also depends on site of infection, drug pharmacokinetics, and clinical judgment outside the laboratory's scope.",
+  "precautions": [
+    "Standardize inoculum density every time — this is the single most result-altering step in the method.",
+    "Use fresh, correctly stored disks within their expiration date; disk potency degrades over time and with improper storage."
+  ],
+  "limitations": [
+    "Disk diffusion is validated for specific organism-drug combinations per the standard method in use; not every organism-drug pair has an established, validated breakpoint.",
+    "Colonies growing within an otherwise clear zone may indicate a resistant subpopulation and warrant further investigation rather than being ignored."
+  ],
+  "biosafetyNotes": "Handle bacterial suspensions and inoculated plates per the biosafety level appropriate to the organism; perform inoculum preparation and disk application using aseptic technique.",
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "concept-mic-vs-mbc",
+    "clin-concept-contamination-vs-true-isolate"
+  ],
+  "relatedMedia": [
+    "media-mueller-hinton"
+  ],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-incubator",
+    "equip-inoculating-loop"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-basic-bsl-concepts",
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "Kirby-Bauer",
+    "disk diffusion",
+    "zone of inhibition",
+    "AST breakpoints",
+    "susceptible intermediate resistant"
+  ],
+  "difficulty": "advanced"
+}

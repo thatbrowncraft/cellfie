@@ -1,0 +1,96 @@
+{
+  "id": "clin-protocol-peripheral-blood-smear",
+  "category": "protocol",
+  "title": "Peripheral Blood Smear Preparation & Staining",
+  "subcategory": "Hematology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical hematology laboratory textbooks/manuals (e.g. Henry's Clinical Diagnosis and Management)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "ASM Manual of Clinical Microbiology",
+      "publisher": "American Society for Microbiology (ASM)"
+    }
+  ],
+  "purpose": "To prepare a thin, evenly distributed blood film on a slide and stain it so red cells, white cells, and platelets can be examined microscopically for morphology and estimated numbers.",
+  "principle": "A drop of well-mixed anticoagulated (or capillary) blood is spread into a thin monolayer using the wedge technique, air-dried, then stained with a Romanowsky-type stain (e.g. Wright or Wright-Giemsa), which differentially colors nuclear chromatin, cytoplasmic granules, and hemoglobin so cell types and abnormal morphology become visible under the microscope.",
+  "requiredMaterials": [
+    "Clean glass slides (one as the smear slide, one as the spreader slide)",
+    "Compound brightfield microscope",
+    "Immersion oil"
+  ],
+  "requiredReagents": [
+    "Romanowsky-type stain (e.g. Wright or Wright-Giemsa stain)",
+    "Buffered rinse solution appropriate to the stain"
+  ],
+  "equipment": [
+    "equip-microscope-brightfield",
+    "equip-slides"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Place a small drop of well-mixed blood near one end of a clean slide."
+    },
+    {
+      "step": 2,
+      "note": "Angle and speed control smear thickness — too steep or too slow makes the smear too thick; too shallow or fast makes it too thin/short.",
+      "instruction": "Using a second slide held at roughly a 30–45° angle as the spreader, draw the drop into a thin, feathered-edge film across the slide in one smooth, even motion."
+    },
+    {
+      "step": 3,
+      "instruction": "Air-dry the smear completely before staining."
+    },
+    {
+      "step": 4,
+      "note": "Follow the manufacturer's or laboratory's validated timing for the exact stain product — Romanowsky stain formulations and protocols differ.",
+      "instruction": "Fix and stain per the specific Romanowsky stain protocol in use (fixation time, stain time, and buffer/rinse steps vary by product), then rinse and air-dry."
+    },
+    {
+      "step": 5,
+      "instruction": "Examine under low power first to assess overall smear quality and cell distribution, then scan the feathered edge and monolayer, and finally examine under oil immersion (1000×) for detailed morphology."
+    }
+  ],
+  "observations": "A well-made smear has a gradual feathered edge, an even monolayer region where cells don't overlap, and clear staining differentiation between cell types.",
+  "interpretation": "The peripheral smear supports/confirms automated CBC findings, flags red cell shape abnormalities (e.g. sickle cells, spherocytes, schistocytes), white cell morphology and left-shift, platelet clumping (which can falsely lower an automated platelet count), and can reveal blood parasites — see the related blood parasite microscopy entry.",
+  "precautions": [
+    "Handle all blood specimens and stained slides as biohazardous.",
+    "Use fresh, well-anticoagulated (not clotted or excessively aged) blood for the most representative morphology."
+  ],
+  "limitations": [
+    "A poorly made smear (too thick, too thin, or with an uneven feathered edge) can distort apparent cell morphology and counts and should be remade rather than over-interpreted.",
+    "Morphologic assessment has inherent inter-observer variability, which QC/proficiency programs are designed to monitor."
+  ],
+  "biosafetyNotes": "Treat all specimens and prepared slides as biohazardous; dispose of slides per sharps/biohazard policy.",
+  "relatedProtocols": [
+    "clin-protocol-differential-leukocyte-count"
+  ],
+  "relatedConcepts": [
+    "clin-concept-cbc-fundamentals",
+    "clin-concept-blood-parasite-microscopy"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-microscope-brightfield",
+    "equip-slides"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-ppe",
+    "safety-biological-waste"
+  ],
+  "searchKeywords": [
+    "blood smear",
+    "wedge technique",
+    "Wright stain",
+    "Romanowsky stain",
+    "RBC morphology"
+  ],
+  "difficulty": "beginner"
+}

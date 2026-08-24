@@ -1,0 +1,100 @@
+{
+  "id": "clin-protocol-complete-urinalysis-workflow",
+  "category": "protocol",
+  "title": "Complete Urinalysis Workflow",
+  "subcategory": "Urinalysis",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard medical laboratory technology curricula/textbooks",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "purpose": "To evaluate a urine specimen across its physical, chemical, and microscopic components as a broad, inexpensive screen of renal function, urinary tract health, and systemic metabolic status.",
+  "principle": "A complete urinalysis integrates three complementary layers of information: physical examination (color, clarity, specific gravity) reflects concentration and gross composition; chemical (reagent strip) examination screens for substances like glucose, protein, blood, leukocyte esterase, nitrite, ketones, bilirubin, and pH via colorimetric reactions; and microscopic examination of centrifuged sediment directly visualizes cells, casts, crystals, and organisms. No single layer substitutes for the others — for example, a positive chemical blood reaction should be correlated with microscopic red cell findings, since hemoglobin/myoglobin can react on the strip without intact red cells being present.",
+  "requiredMaterials": [
+    "Clean, appropriately labeled urine container (midstream clean-catch, per collection instructions)",
+    "Centrifuge tubes",
+    "Microscope slides and coverslips"
+  ],
+  "requiredReagents": [
+    "Urine reagent strips (multi-parameter)"
+  ],
+  "equipment": [
+    "equip-centrifuge",
+    "equip-microscope-brightfield",
+    "equip-ph-meter"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Examine and record physical characteristics: color, clarity/turbidity, and specific gravity (by refractometer, reagent strip, or urinometer per the laboratory's method)."
+    },
+    {
+      "step": 2,
+      "instruction": "Mix the specimen well, then dip a reagent strip fully and briefly into the urine, removing excess along the container edge."
+    },
+    {
+      "step": 3,
+      "note": "Each analyte pad (glucose, protein, blood, leukocyte esterase, nitrite, ketones, bilirubin, urobilinogen, pH, specific gravity) has its own manufacturer-specified read time.",
+      "instruction": "Read each pad at its specified time using the color chart or an automated strip reader, following the manufacturer's exact timing — reading too early or late changes results."
+    },
+    {
+      "step": 4,
+      "instruction": "Centrifuge a standardized volume of well-mixed urine for the time/speed specified by the laboratory's method; decant the supernatant and resuspend the sediment in the small remaining volume."
+    },
+    {
+      "step": 5,
+      "instruction": "Place a drop of resuspended sediment on a slide, coverslip it, and examine systematically under low then high power for cells, casts, crystals, bacteria, and other elements (see the related urine sediment entry)."
+    },
+    {
+      "step": 6,
+      "instruction": "Correlate all three components (physical, chemical, microscopic) before reporting — discordant findings between layers should prompt review rather than automatic reporting."
+    }
+  ],
+  "observations": "Document physical appearance, all chemical strip results, and a systematic count/description of microscopic elements per high-power/low-power field.",
+  "interpretation": "Urinalysis findings are interpreted together and in clinical context; isolated abnormal findings (e.g. trace protein alone) carry different weight than concordant patterns (e.g. blood + protein + red cell casts, suggestive of a renal source).",
+  "precautions": [
+    "Examine fresh specimens promptly — cells and casts degrade and crystals can form or dissolve on standing, and bacteria can proliferate, all of which distort results if the specimen sits too long before processing.",
+    "Use a properly collected specimen (midstream clean-catch or equivalent) to minimize contamination artifacts."
+  ],
+  "limitations": [
+    "Reagent strip chemistry has known interferences (e.g. high specific gravity, certain drugs, ascorbic acid) that can cause false positives/negatives — the manufacturer's specific interference list applies, not a generic rule.",
+    "Microscopic sediment interpretation requires trained morphologic recognition and standardized reporting (elements per field), and results vary somewhat with concentration technique."
+  ],
+  "biosafetyNotes": "Urine is a biohazard; use standard precautions and dispose of specimens/sediment per biohazard waste protocol.",
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-urine-sediment-casts-crystals"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-centrifuge",
+    "equip-microscope-brightfield",
+    "equip-ph-meter",
+    "clin-equip-urinalysis-analyzer"
+  ],
+  "relatedFormulas": [
+    "formula-ph"
+  ],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-ppe",
+    "safety-biological-waste"
+  ],
+  "searchKeywords": [
+    "urinalysis",
+    "urine dipstick",
+    "urine microscopy",
+    "urine sediment",
+    "specific gravity"
+  ],
+  "difficulty": "beginner"
+}

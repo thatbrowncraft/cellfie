@@ -1,0 +1,95 @@
+{
+  "id": "clin-protocol-abo-rh-forward-reverse-typing",
+  "category": "protocol",
+  "title": "ABO & Rh Blood Grouping — Forward & Reverse Typing",
+  "subcategory": "Immunohematology / Blood Bank",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "AABB Technical Manual",
+      "publisher": "Association for the Advancement of Blood & Biotherapies (AABB)"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "purpose": "To determine a patient's or donor's ABO and Rh(D) blood type using both forward grouping (testing red cells against known antisera) and reverse grouping (testing serum/plasma against known reagent red cells), which must agree before a type is finalized.",
+  "principle": "Forward grouping directly tests which antigens are on the person's red cells using anti-A, anti-B, and anti-D reagent antisera; reverse grouping independently tests the person's own serum/plasma against reagent A1 and B red cells to detect the expected reciprocal antibodies. Because a healthy person's ABO antigen and antibody status are reciprocal by definition (see the related principle concept), forward and reverse results should match — this built-in cross-check is why ABO typing is performed both ways rather than by forward typing alone.",
+  "requiredMaterials": [
+    "Test tubes or typing card/gel system per the method in use",
+    "Centrifuge suitable for serologic testing"
+  ],
+  "requiredReagents": [
+    "Anti-A, anti-B, anti-D reagent antisera",
+    "Reagent A1 and B red cells (for reverse grouping)"
+  ],
+  "equipment": [
+    "equip-centrifuge"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Forward grouping: combine a red cell suspension from the patient/donor separately with anti-A, anti-B, and anti-D reagent antisera."
+    },
+    {
+      "step": 2,
+      "instruction": "Centrifuge briefly (or follow the gel/card method's specified process) and examine each reaction for agglutination."
+    },
+    {
+      "step": 3,
+      "instruction": "Reverse grouping: combine the patient's/donor's serum or plasma separately with reagent A1 cells and reagent B cells."
+    },
+    {
+      "step": 4,
+      "instruction": "Centrifuge briefly and examine each reaction for agglutination."
+    },
+    {
+      "step": 5,
+      "note": "A forward/reverse discrepancy is not simply reported — it triggers further investigation (e.g. weak subgroup, unexpected antibody, technical error) before any type is released for clinical use.",
+      "instruction": "Compare forward and reverse results — they must be concordant with the expected reciprocal pattern for the ABO group; resolve any discrepancy per the laboratory's discrepancy-investigation procedure before finalizing a type."
+    },
+    {
+      "step": 6,
+      "instruction": "Record the Rh(D) result from forward grouping; a negative or weak/discrepant D reaction may require a supplementary test per the laboratory's method before finalizing Rh status."
+    }
+  ],
+  "observations": "Grade agglutination reaction strength in each tube/well/gel column and record concordance between forward and reverse results.",
+  "interpretation": "A finalized ABO/Rh type requires forward-reverse concordance; discordant results must be resolved (never averaged or assumed) before the type is used for transfusion decisions.",
+  "precautions": [
+    "Positive identification of the patient/donor and specimen is critical — a mislabeled specimen in blood banking carries severe patient-safety consequences.",
+    "Use only validated reagent antisera/cells within their expiration and storage requirements."
+  ],
+  "limitations": [
+    "Weak or rare ABO subgroups can produce ambiguous forward/reverse results requiring specialized follow-up beyond routine typing.",
+    "This entry describes routine grouping; it is not a treatment or transfusion-decision algorithm."
+  ],
+  "biosafetyNotes": "All blood specimens and reagent red cells are biohazardous; follow standard precautions and the laboratory's blood bank-specific chain-of-custody/labeling procedures.",
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-abo-rh-grouping-principle",
+    "clin-concept-antigen-antibody-agglutination",
+    "clin-concept-crossmatching-antibody-screening"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-centrifuge",
+    "clin-equip-blood-bank-equipment"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-ppe",
+    "safety-biological-waste"
+  ],
+  "searchKeywords": [
+    "forward grouping",
+    "reverse grouping",
+    "ABO discrepancy",
+    "Rh typing"
+  ],
+  "difficulty": "intermediate"
+}

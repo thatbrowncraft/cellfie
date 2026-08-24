@@ -1,0 +1,103 @@
+{
+  "id": "clin-protocol-histopathology-processing-he-stain",
+  "category": "protocol",
+  "title": "Tissue Fixation, Processing, Embedding & H&E Staining",
+  "subcategory": "Histopathology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard histotechnology laboratory textbooks/manuals (e.g. Bancroft's Theory and Practice of Histological Techniques)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "purpose": "To convert fresh tissue into a thin, stained, permanent slide suitable for microscopic examination, preserving cellular and tissue architecture through a multi-stage process.",
+  "principle": "Fresh tissue autolyzes and putrefies rapidly, so it must first be chemically fixed (commonly in formalin, which cross-links proteins and halts enzymatic degradation) to preserve structure. Fixed tissue is then processed — dehydrated through graded alcohols, cleared (alcohol replaced with a clearing agent miscible with paraffin), and infiltrated with molten paraffin wax — so it becomes firm enough to section at a few micrometers thickness on a microtome. Sections are mounted on slides, and hematoxylin and eosin (H&E) staining is applied: hematoxylin (a basic dye) stains acidic/basophilic structures (chiefly nuclei) blue-purple, while eosin (an acidic dye) stains basic/eosinophilic structures (chiefly cytoplasm and extracellular matrix) pink, giving the classic contrast pathologists use to assess tissue architecture and cellular detail.",
+  "requiredMaterials": [
+    "Tissue processor (automated or manual)",
+    "Embedding station/molds",
+    "Microtome and water bath for section flotation",
+    "Charged/adhesive microscope slides",
+    "Coverslips and mounting medium"
+  ],
+  "requiredReagents": [
+    "Formalin (or other validated fixative)",
+    "Graded ethanol series for dehydration",
+    "Clearing agent (e.g. xylene or a validated substitute)",
+    "Paraffin wax",
+    "Hematoxylin and eosin stains"
+  ],
+  "equipment": [
+    "equip-microscope-brightfield"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "note": "Under-fixation and delayed fixation are common, hard-to-reverse sources of poor downstream staining and morphology.",
+      "instruction": "Fix fresh tissue promptly in an adequate volume of fixative relative to tissue size, for the time specified by the fixative and tissue thickness in use."
+    },
+    {
+      "step": 2,
+      "instruction": "Process the fixed tissue through graded dehydration, clearing, and paraffin infiltration steps, following the processor's validated schedule for the tissue type/thickness."
+    },
+    {
+      "step": 3,
+      "instruction": "Embed the processed tissue in a paraffin block, orienting it appropriately for the plane of section needed."
+    },
+    {
+      "step": 4,
+      "instruction": "Section the block on a microtome at the specified thickness (commonly a few micrometers for routine H&E), float the ribbon on a warm water bath to remove wrinkles, and mount onto a charged slide."
+    },
+    {
+      "step": 5,
+      "note": "Exact staining timing is method- and reagent-batch-dependent and should follow the laboratory's validated, periodically-verified protocol rather than a fixed universal time.",
+      "instruction": "Deparaffinize and rehydrate the section, then stain with hematoxylin, differentiate/blue, counterstain with eosin, dehydrate, clear, and coverslip with mounting medium."
+    },
+    {
+      "step": 6,
+      "instruction": "Examine the finished slide under the microscope to confirm section quality (no major folds/tears, adequate staining contrast) before it proceeds to pathologist review."
+    }
+  ],
+  "observations": "A well-processed H&E section shows crisp blue-purple nuclear detail against pink cytoplasmic/stromal background, with intact tissue architecture free of major processing artifacts.",
+  "interpretation": "H&E is the foundational stain pathologists use to assess tissue architecture and cellular morphology; specific diagnoses often require additional special stains or immunohistochemistry beyond this foundational entry's scope.",
+  "criticalNotes": [
+    "Fixation quality and timing cannot be fully corrected later in processing — inadequate initial fixation compromises everything downstream."
+  ],
+  "precautions": [
+    "Formalin and xylene (or clearing-agent alternatives) are hazardous chemicals requiring proper ventilation, PPE, and disposal per chemical safety protocol.",
+    "Track tissue/block/slide identification meticulously through every step — a mix-up in histopathology has severe patient-safety consequences."
+  ],
+  "limitations": [
+    "Processing schedules are tissue-type and thickness dependent; a schedule validated for standard-sized tissue is not automatically appropriate for very large or very small/fragile specimens."
+  ],
+  "biosafetyNotes": "Treat all tissue as potentially infectious; handle fixative and clearing-agent chemical hazards per the facility's chemical hygiene plan in addition to standard biological precautions.",
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-internal-qc-vs-eqa"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-microscope-brightfield"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-chemical-safety",
+    "safety-ppe"
+  ],
+  "searchKeywords": [
+    "tissue fixation",
+    "paraffin embedding",
+    "microtomy",
+    "hematoxylin and eosin",
+    "H&E stain",
+    "tissue processing"
+  ],
+  "difficulty": "expert"
+}

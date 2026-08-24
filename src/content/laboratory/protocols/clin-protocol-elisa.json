@@ -1,0 +1,101 @@
+{
+  "id": "clin-protocol-elisa",
+  "category": "protocol",
+  "title": "ELISA (Enzyme-Linked Immunosorbent Assay) — Principle & Workflow",
+  "subcategory": "Immunology & Serology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard medical laboratory technology curricula/textbooks",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "WHO Laboratory Quality Management System Handbook",
+      "publisher": "World Health Organization"
+    }
+  ],
+  "purpose": "To detect and often quantify a specific antigen or antibody in a sample using an antibody-antigen binding step coupled to an enzyme-generated, measurable color (or other) signal.",
+  "principle": "A capture molecule (antibody or antigen, depending on assay design) is bound to a solid-phase well; the sample is added and, if the target is present, it binds; an enzyme-linked detection reagent then binds to the captured target; and a substrate is added that the enzyme converts into a colored (or fluorescent/chemiluminescent) product, read photometrically — the same absorbance-based measurement principle the laboratory already covers generically, applied to an immunological detection reaction rather than a chemical one. Signal intensity relates to the amount of target present, commonly interpreted against a cutoff (qualitative) or a standard curve (quantitative), depending on assay design.",
+  "requiredMaterials": [
+    "Microtiter plate reader (photometric)",
+    "Multichannel pipette",
+    "Plate washer (manual or automated)"
+  ],
+  "requiredReagents": [
+    "Assay-specific capture reagent (pre-coated plate)",
+    "Enzyme-conjugated detection antibody",
+    "Substrate/chromogen solution",
+    "Stop solution",
+    "Wash buffer",
+    "Positive and negative controls"
+  ],
+  "equipment": [
+    "equip-spectrophotometer",
+    "equip-micropipette"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Add sample, and required controls, to the antigen- or antibody-coated wells and incubate per the assay's specified time/temperature."
+    },
+    {
+      "step": 2,
+      "instruction": "Wash unbound material from the wells thoroughly — inadequate washing is one of the most common sources of false-positive signal."
+    },
+    {
+      "step": 3,
+      "instruction": "Add the enzyme-conjugated detection reagent and incubate."
+    },
+    {
+      "step": 4,
+      "instruction": "Wash again, then add substrate/chromogen and incubate for color development in the dark (many chromogens are light-sensitive) for the assay's specified time."
+    },
+    {
+      "step": 5,
+      "instruction": "Add stop solution at the specified time to halt the enzymatic reaction consistently across all wells."
+    },
+    {
+      "step": 6,
+      "note": "Controls must fall within their expected range before any patient result on that plate is interpreted — an out-of-range control invalidates the run.",
+      "instruction": "Read absorbance on a plate reader at the assay's specified wavelength and interpret against the manufacturer's cutoff or standard curve, including verifying that control wells performed as expected before interpreting patient results."
+    }
+  ],
+  "observations": "Record absorbance values for all wells including controls; note plate uniformity (edge effects, streaking) that could indicate a technical problem.",
+  "interpretation": "Result is interpreted relative to the assay's validated cutoff or standard curve, only after confirming controls performed within their expected range; a single ELISA result is often a screening result requiring a confirmatory method for definitive interpretation, per the assay's intended use.",
+  "precautions": [
+    "Thorough, consistent washing at every wash step is essential to result validity.",
+    "Protect light-sensitive substrates from light during color development."
+  ],
+  "limitations": [
+    "Cross-reactivity with structurally similar antigens can cause false positives; very early infection (before adequate antibody/antigen levels) can cause false negatives — these limitations are assay-specific and documented in the manufacturer's package insert."
+  ],
+  "biosafetyNotes": "Handle all patient samples as potentially infectious; follow standard precautions and dispose of used plates/reagents per biohazard and chemical waste protocols.",
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-antigen-antibody-agglutination"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-spectrophotometer",
+    "equip-micropipette"
+  ],
+  "relatedFormulas": [
+    "formula-beer-lambert"
+  ],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-ppe",
+    "safety-chemical-safety"
+  ],
+  "searchKeywords": [
+    "ELISA",
+    "enzyme immunoassay",
+    "microtiter plate",
+    "colorimetric detection",
+    "cutoff value"
+  ],
+  "difficulty": "intermediate"
+}

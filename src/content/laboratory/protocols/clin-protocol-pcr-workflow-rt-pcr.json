@@ -1,0 +1,103 @@
+{
+  "id": "clin-protocol-pcr-workflow-rt-pcr",
+  "category": "protocol",
+  "title": "PCR Workflow: Conventional & Real-Time RT-PCR",
+  "subcategory": "Molecular Diagnostics",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "FDA / CLSI molecular diagnostics guidance",
+      "publisher": "FDA / CLSI"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "purpose": "To detect and, for real-time methods, quantify specific nucleic acid targets by exponentially amplifying a defined DNA (or reverse-transcribed RNA) segment, enabling detection of pathogens or genetic targets present at very low starting quantities.",
+  "principle": "PCR cycles through denaturation (separating double-stranded DNA), annealing (primers bind their complementary target sequence), and extension (a thermostable DNA polymerase synthesizes a new complementary strand), doubling the target sequence with each cycle in principle, so even a small number of starting copies becomes readily detectable after enough cycles. RT-PCR first reverse-transcribes an RNA target into complementary DNA before amplification, extending the same principle to RNA targets (e.g. many RNA viruses). Real-time (quantitative) PCR adds a fluorescent reporter system that produces a signal proportional to amplified product after each cycle, allowing both detection and, via the cycle number at which signal crosses a threshold, an estimate of the starting target quantity — a fundamentally different readout than the end-point gel visualization used in conventional PCR.",
+  "requiredMaterials": [
+    "Thermal cycler (conventional) or real-time PCR instrument",
+    "Dedicated, physically separated pre- and post-amplification work areas",
+    "Nuclease-free consumables"
+  ],
+  "requiredReagents": [
+    "Extracted nucleic acid template (see the related DNA/RNA extraction step)",
+    "Primers specific to the target sequence",
+    "Thermostable DNA polymerase and reaction buffer/dNTPs",
+    "Reverse transcriptase (for RT-PCR)",
+    "Fluorescent probe/dye (for real-time methods)",
+    "Positive and negative (no-template) controls"
+  ],
+  "equipment": [
+    "equip-micropipette",
+    "equip-centrifuge"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Extract nucleic acid from the specimen using a validated method appropriate to the sample type and target (DNA or RNA)."
+    },
+    {
+      "step": 2,
+      "note": "Physical separation of pre- and post-amplification workflows, and unidirectional workflow, is a core molecular contamination-control principle, not an optional convenience.",
+      "instruction": "Prepare the PCR reaction mix (primers, polymerase, buffer, and reverse transcriptase if amplifying RNA) in a physically separate pre-amplification area to minimize contamination risk."
+    },
+    {
+      "step": 3,
+      "instruction": "Add template to the reaction mix, including required positive and no-template negative controls in the same run."
+    },
+    {
+      "step": 4,
+      "instruction": "Run the thermal cycling program (denaturation, annealing, extension, repeated for the specified number of cycles) specific to the primer set and target."
+    },
+    {
+      "step": 5,
+      "instruction": "For conventional PCR, visualize the amplified product by gel electrophoresis and compare band size/presence against expected controls. For real-time PCR, monitor the fluorescence signal each cycle and determine the cycle threshold (Ct) for the sample relative to controls/standards."
+    },
+    {
+      "step": 6,
+      "note": "Never interpret a patient result from a run whose controls failed — the run must be repeated.",
+      "instruction": "Interpret the result only after confirming that both the positive and no-template negative controls performed as expected — an invalid control set invalidates the run regardless of the patient sample result."
+    }
+  ],
+  "observations": "For conventional PCR, record band presence/size on gel electrophoresis. For real-time PCR, record Ct value and amplification curve shape relative to controls.",
+  "interpretation": "Detection of the target sequence indicates its presence in the extracted template; a Ct value reflects relative starting quantity but is method/assay-specific and not directly comparable across different assay platforms without validated correlation.",
+  "precautions": [
+    "Strict unidirectional workflow (extraction → reaction setup → amplification → detection) and physically separate areas/equipment for pre- and post-amplification work are essential to prevent amplicon carryover contamination.",
+    "Include positive and no-template negative controls in every run."
+  ],
+  "limitations": [
+    "PCR detects nucleic acid presence, which is not always equivalent to viable/infectious organism presence.",
+    "Assay-specific analytical sensitivity/specificity and any cross-reactivity are documented in the specific assay's validation, not universal across all PCR assays."
+  ],
+  "biosafetyNotes": "Handle all specimens per standard precautions appropriate to the suspected organism; some pathogen targets require additional biosafety considerations during extraction depending on the organism's risk group.",
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "concept-contamination"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-micropipette",
+    "equip-centrifuge",
+    "clin-equip-realtime-pcr-system"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-basic-bsl-concepts",
+    "safety-contamination-prevention"
+  ],
+  "searchKeywords": [
+    "polymerase chain reaction",
+    "real-time PCR",
+    "RT-PCR",
+    "Ct value",
+    "thermal cycling",
+    "amplicon contamination"
+  ],
+  "difficulty": "expert"
+}

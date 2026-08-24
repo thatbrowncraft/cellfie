@@ -1,0 +1,99 @@
+{
+  "id": "clin-protocol-clinical-specimen-processing",
+  "category": "protocol",
+  "title": "Clinical Specimen Processing Workflow",
+  "subcategory": "Clinical Microbiology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM Manual of Clinical Microbiology",
+      "publisher": "American Society for Microbiology (ASM)"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "purpose": "To triage, plate, and process a clinical specimen (any body-source specimen submitted for culture) in a way appropriate to its source, so that clinically significant organisms are recovered and reported while the underlying general microbiology techniques (streaking, media selection) reuse the laboratory's existing foundation.",
+  "principle": "Clinical specimen processing applies the general microbiological techniques already covered (streak plate, selective/differential media) to a clinical context, where the goal shifts from pure-culture isolation of a known organism toward recovering, differentiating, and identifying whichever organism(s) are clinically significant from a mixed, often non-sterile, source — while distinguishing true pathogens from normal flora/contaminants (see the related concept).",
+  "requiredMaterials": [
+    "Biosafety cabinet (source-dependent)",
+    "Inoculating loops",
+    "Appropriate selective/differential/enrichment media for the specimen source"
+  ],
+  "requiredReagents": [
+    "Gram stain reagents for direct smear, where indicated"
+  ],
+  "equipment": [
+    "equip-bsc-class-ii",
+    "equip-inoculating-loop",
+    "equip-incubator"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Confirm specimen acceptability (labeling, appropriate container/transport medium, timing) before processing; reject per the laboratory's specimen rejection criteria if not met."
+    },
+    {
+      "step": 2,
+      "instruction": "Select media appropriate to the specimen source and clinical question (e.g. blood agar for general growth, MacConkey for Gram-negative differentiation, plus source-specific media as indicated) — reusing the laboratory's existing general/selective media, not a separate clinical set."
+    },
+    {
+      "step": 3,
+      "note": "A direct smear result is preliminary and must be correlated with culture, not reported as a final identification on its own.",
+      "instruction": "Perform a direct Gram stain on the specimen where clinically indicated (e.g. many normally sterile-site specimens), which can provide same-day preliminary information ahead of culture growth."
+    },
+    {
+      "step": 4,
+      "instruction": "Inoculate plates using standard streak technique to obtain isolated colonies; incubate under the atmosphere/temperature appropriate to the suspected organisms and specimen source."
+    },
+    {
+      "step": 5,
+      "instruction": "Examine plates at the appropriate interval(s), assess growth against expected normal flora for that specimen source, and proceed to identification/susceptibility testing for organisms judged clinically significant."
+    }
+  ],
+  "observations": "Document growth pattern, colony morphology/quantity relative to expected flora for the source, and any organisms warranting further workup.",
+  "interpretation": "Growth must be interpreted against what is normal/expected flora for the specimen source — the same organism can be a true pathogen from a normally sterile site or an unremarkable contaminant/commensal from a non-sterile site.",
+  "precautions": [
+    "Process specimens promptly to avoid overgrowth of contaminants or die-off of fastidious pathogens.",
+    "Follow the biosafety level and containment appropriate to the suspected organism(s), not a single fixed level for all clinical specimens."
+  ],
+  "limitations": [
+    "Culture-based recovery can be affected by prior antibiotic therapy, transport delay, or fastidious/slow-growing organisms not recovered by standard media/conditions."
+  ],
+  "biosafetyNotes": "Handle all clinical specimens as potentially containing pathogens of unknown risk group until ruled out; use a biosafety cabinet for aerosol-generating steps and follow standard/universal precautions throughout.",
+  "relatedProtocols": [
+    "proto-streak-plate",
+    "proto-gram-stain"
+  ],
+  "relatedConcepts": [
+    "clin-concept-contamination-vs-true-isolate",
+    "concept-selective-differential-media"
+  ],
+  "relatedMedia": [
+    "media-blood-agar",
+    "media-macconkey"
+  ],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-bsc-class-ii",
+    "equip-inoculating-loop",
+    "equip-incubator"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-basic-bsl-concepts",
+    "safety-ppe",
+    "safety-biological-waste"
+  ],
+  "searchKeywords": [
+    "clinical culture workup",
+    "specimen triage",
+    "normal flora vs pathogen"
+  ],
+  "difficulty": "intermediate"
+}

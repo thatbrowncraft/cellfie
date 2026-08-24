@@ -1,0 +1,79 @@
+{
+  "id": "clin-protocol-esr-westergren",
+  "category": "protocol",
+  "title": "Erythrocyte Sedimentation Rate (Westergren Method)",
+  "subcategory": "Hematology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical hematology laboratory textbooks/manuals (e.g. Henry's Clinical Diagnosis and Management)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "purpose": "To measure how far red blood cells settle in a vertical column of anticoagulated blood over one hour, as a non-specific marker of inflammation.",
+  "principle": "Inflammation increases plasma fibrinogen and other acute-phase proteins, which promote red cell aggregation (rouleaux formation). Aggregated cells settle faster than individual cells under gravity, so a faster sedimentation rate reflects — non-specifically — an active inflammatory or acute-phase process rather than any single diagnosis.",
+  "requiredMaterials": [
+    "Westergren sedimentation tube/rack (or an automated/closed ESR system per local method)",
+    "Timer"
+  ],
+  "requiredReagents": [
+    "Sodium citrate anticoagulant (if not using pre-citrated whole blood per the specific system)"
+  ],
+  "equipment": [],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Fill the Westergren tube to the designated mark with well-mixed, properly anticoagulated whole blood, free of clots."
+    },
+    {
+      "step": 2,
+      "note": "Tilt as little as a few degrees can substantially alter the result — verticality matters.",
+      "instruction": "Place the tube perfectly vertical in the rack, away from vibration, direct sunlight, and drafts."
+    },
+    {
+      "step": 3,
+      "instruction": "Let the tube stand undisturbed for exactly 60 minutes at room temperature."
+    },
+    {
+      "step": 4,
+      "instruction": "Read the distance (in mm) that the red cell column has fallen from the top of the plasma column."
+    }
+  ],
+  "observations": "Report the fall distance in mm/hour; note any irregular sedimentation front, which can indicate an atypical specimen (e.g. macrocytosis, abnormal proteins).",
+  "interpretation": "ESR rises non-specifically with inflammation, infection, tissue injury, pregnancy, and some malignancies/paraproteinemias; it is a trend/screening marker, not diagnostic of any specific condition, and is often interpreted alongside CRP and clinical findings.",
+  "precautions": [
+    "Test within the specimen's stability window (ESR should be set up promptly after collection, per the method in use) — a delayed or refrigerated-then-rewarmed specimen can give an unreliable result.",
+    "Keep the tube strictly vertical and undisturbed for the full hour."
+  ],
+  "limitations": [
+    "Anemia can falsely elevate ESR (fewer cells sediment faster relative to plasma volume) and abnormal red cell shapes (e.g. sickle cells, spherocytes) can falsely lower it, independent of any inflammatory process.",
+    "Non-specific — cannot identify the cause or location of inflammation on its own."
+  ],
+  "biosafetyNotes": "Standard precautions for anticoagulated whole blood; dispose of the sedimentation tube as biohazard sharps/glass waste.",
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-cbc-fundamentals"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-sharps-safety",
+    "safety-biological-waste"
+  ],
+  "searchKeywords": [
+    "ESR",
+    "sed rate",
+    "Westergren method",
+    "inflammation marker"
+  ],
+  "difficulty": "beginner"
+}

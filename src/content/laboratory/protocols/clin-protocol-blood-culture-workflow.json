@@ -1,0 +1,97 @@
+{
+  "id": "clin-protocol-blood-culture-workflow",
+  "category": "protocol",
+  "title": "Blood Culture Workflow",
+  "subcategory": "Clinical Microbiology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM Manual of Clinical Microbiology",
+      "publisher": "American Society for Microbiology (ASM)"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "purpose": "To detect bloodstream infection (bacteremia/fungemia) by culturing blood in enrichment broth under conditions that favor recovery of even low numbers of circulating organisms.",
+  "principle": "Blood is normally sterile, so any growth is potentially significant, but skin flora contamination during draw is common — the workflow is built around maximizing sensitivity for true bloodstream infection while giving the laboratory tools (timing, number of bottles, growth pattern) to help distinguish a true positive from a contaminant.",
+  "requiredMaterials": [
+    "Paired aerobic and anaerobic blood culture bottles",
+    "Continuous-monitoring blood culture incubator/instrument"
+  ],
+  "requiredReagents": [
+    "Skin antiseptic for the draw site (e.g. per the laboratory's approved antisepsis protocol)"
+  ],
+  "equipment": [
+    "equip-incubator",
+    "equip-bsc-class-ii"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Disinfect the venipuncture site thoroughly per the laboratory's antisepsis protocol to minimize skin-flora contamination — this step is the single largest lever on the contamination rate."
+    },
+    {
+      "step": 2,
+      "note": "Recommended draw volume is bottle-system-specific; follow the manufacturer's stated volume rather than a generic figure.",
+      "instruction": "Draw the volume of blood recommended for the specific bottle system in use, inoculating aerobic and anaerobic bottles as ordered; under-filling reduces sensitivity, over-filling can also affect recovery."
+    },
+    {
+      "step": 3,
+      "instruction": "Load bottles promptly into a continuous-monitoring blood culture instrument, which tracks a growth-detection signal (commonly CO2 production) over time."
+    },
+    {
+      "step": 4,
+      "note": "The rapid preliminary Gram result is one of blood culture's highest-value outputs — it can guide empiric therapy hours before full ID/AST is available.",
+      "instruction": "When the instrument flags a bottle positive, perform a Gram stain directly from the bottle and report the preliminary Gram stain/morphology result immediately, ahead of full identification."
+    },
+    {
+      "step": 5,
+      "instruction": "Subculture the positive bottle to appropriate solid media for isolation, identification, and susceptibility testing."
+    },
+    {
+      "step": 6,
+      "instruction": "If no growth is flagged by the instrument within the validated incubation period for that system, report as no growth to date/final negative per the laboratory's protocol."
+    }
+  ],
+  "observations": "Note time-to-positivity, number of bottles/sets positive, and organism(s) recovered relative to what grew in each bottle/set.",
+  "interpretation": "A single bottle growing a common skin organism (e.g. coagulase-negative Staphylococcus) is often a contaminant, especially if only one of multiple sets/bottles is positive; growth in multiple independently drawn sets, a recognized bloodstream pathogen, or a clinically compatible picture increases the likelihood of true bacteremia — this judgment uses the related contamination-vs-true-isolate concept and is made in correlation with the clinical picture, not from the laboratory result alone.",
+  "precautions": [
+    "Maintain strict skin antisepsis technique to minimize false-positive contamination.",
+    "Handle positive bottles as containing viable, potentially pathogenic organisms under appropriate biosafety practice."
+  ],
+  "limitations": [
+    "Prior antibiotic therapy can suppress growth and cause a false-negative culture.",
+    "Fastidious or slow-growing organisms may require extended incubation or specialized media beyond the standard system."
+  ],
+  "biosafetyNotes": "Positive bottle subculture and Gram stain preparation should be performed using aseptic technique and, depending on suspected organism, within a biosafety cabinet.",
+  "relatedProtocols": [
+    "proto-gram-stain",
+    "clin-protocol-clinical-specimen-processing"
+  ],
+  "relatedConcepts": [
+    "clin-concept-contamination-vs-true-isolate"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-incubator",
+    "equip-bsc-class-ii"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-basic-bsl-concepts",
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "blood culture",
+    "bacteremia",
+    "time to positivity",
+    "aerobic anaerobic bottle"
+  ],
+  "difficulty": "intermediate"
+}

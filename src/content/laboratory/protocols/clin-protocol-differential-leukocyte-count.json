@@ -1,0 +1,84 @@
+{
+  "id": "clin-protocol-differential-leukocyte-count",
+  "category": "protocol",
+  "title": "Differential Leukocyte Count",
+  "subcategory": "Hematology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical hematology laboratory textbooks/manuals (e.g. Henry's Clinical Diagnosis and Management)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "purpose": "To classify and enumerate the proportion of each white blood cell type (neutrophils, lymphocytes, monocytes, eosinophils, basophils, and any abnormal cells) on a stained peripheral blood smear.",
+  "principle": "White blood cell types differ in nuclear shape, chromatin pattern, and cytoplasmic granularity when stained with a Romanowsky-type stain, allowing a trained examiner (or an automated analyzer using similar morphologic/light-scatter cues) to classify each cell counted in a systematic scan of the smear's monolayer region.",
+  "requiredMaterials": [
+    "Well-prepared, well-stained peripheral blood smear",
+    "Manual differential counter (tally device), if performed manually"
+  ],
+  "requiredReagents": [],
+  "equipment": [
+    "equip-microscope-brightfield"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Scan the smear at low power to select a well-distributed monolayer region (avoiding the very thick body and the extreme feathered edge)."
+    },
+    {
+      "step": 2,
+      "instruction": "Switch to oil immersion (1000×) and systematically scan the selected region using a consistent pattern (e.g. a battlement track) to avoid recounting the same field."
+    },
+    {
+      "step": 3,
+      "note": "The specific total-cell target is a method convention (100 is widely used) and should follow the laboratory's validated procedure.",
+      "instruction": "Classify each white cell encountered by type and tally using a differential counter, continuing until a standard total count is reached (commonly 100 cells, per the laboratory's method)."
+    },
+    {
+      "step": 4,
+      "instruction": "Note any morphologic abnormalities observed in white cells, red cells, or platelets during the same scan (e.g. toxic granulation, left shift, blasts, red cell shape abnormalities)."
+    },
+    {
+      "step": 5,
+      "instruction": "Convert tallied counts to percentages, and correlate with the automated analyzer's WBC count and differential (if available) for consistency."
+    }
+  ],
+  "observations": "Record the percentage (and, using the total WBC count, the absolute count) of each cell type, plus any morphologic abnormalities noted.",
+  "interpretation": "A relative increase in one cell type (e.g. neutrophilia) must be interpreted alongside the absolute WBC count, since a normal WBC count can still contain a skewed differential, and vice versa; morphologic findings (e.g. blasts, marked left shift) can be as clinically significant as the percentages themselves.",
+  "precautions": [
+    "Perform on a well-made smear only — a poor smear distorts cell distribution and morphology.",
+    "Maintain a consistent, non-overlapping scan pattern to avoid sampling bias."
+  ],
+  "limitations": [
+    "Manual differentials carry inherent inter-observer variability; automated analyzer differentials are generally more reproducible for normal-range samples but flag abnormal/atypical populations for manual (smear) review rather than replacing it entirely."
+  ],
+  "biosafetyNotes": "Handle stained slides as biohazardous material; standard precautions apply.",
+  "relatedProtocols": [
+    "clin-protocol-peripheral-blood-smear"
+  ],
+  "relatedConcepts": [
+    "clin-concept-cbc-fundamentals"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-microscope-brightfield",
+    "clin-equip-hematology-analyzer"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [],
+  "searchKeywords": [
+    "WBC differential",
+    "manual differential count",
+    "neutrophil lymphocyte monocyte",
+    "left shift"
+  ],
+  "difficulty": "intermediate"
+}

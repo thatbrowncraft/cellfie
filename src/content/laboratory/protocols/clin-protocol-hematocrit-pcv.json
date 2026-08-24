@@ -1,0 +1,87 @@
+{
+  "id": "clin-protocol-hematocrit-pcv",
+  "category": "protocol",
+  "title": "Hematocrit / PCV (Microhematocrit Method)",
+  "subcategory": "Hematology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "Standard clinical hematology laboratory textbooks/manuals (e.g. Henry's Clinical Diagnosis and Management)",
+      "publisher": "Established laboratory manual"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "purpose": "To determine the packed cell volume (PCV/hematocrit) — the proportion of whole blood occupied by red blood cells — as a rapid indicator of red cell mass, commonly used to screen for anemia or polycythemia and to cross-check an analyzer's hematocrit value.",
+  "principle": "Anticoagulated whole blood is centrifuged in a narrow capillary tube at high speed; because red cells are denser than plasma, they pack at the bottom, leaving plasma above and a thin buffy coat (white cells/platelets) in between. The proportion of the tube occupied by packed red cells, read against a calibrated reading device or scale, is the hematocrit.",
+  "requiredMaterials": [
+    "Heparinized (or EDTA, per local protocol) microhematocrit capillary tubes",
+    "Microhematocrit centrifuge",
+    "Sealing clay or built-in sealant",
+    "Microhematocrit reading device/card"
+  ],
+  "requiredReagents": [],
+  "equipment": [
+    "equip-centrifuge"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Fill a capillary tube roughly two-thirds to three-quarters full with well-mixed anticoagulated whole blood."
+    },
+    {
+      "step": 2,
+      "instruction": "Seal the dry end with sealing clay (or use a self-sealing tube per manufacturer instructions)."
+    },
+    {
+      "step": 3,
+      "note": "Balancing prevents tube breakage and uneven centrifugal force.",
+      "instruction": "Load tubes into the microhematocrit centrifuge symmetrically (balanced), sealed end outward."
+    },
+    {
+      "step": 4,
+      "instruction": "Centrifuge for the time/speed specified by the centrifuge manufacturer for complete red cell packing."
+    },
+    {
+      "step": 5,
+      "instruction": "Read the packed red cell column against a hematocrit reading device immediately after centrifugation, measuring from the bottom of the red cell column to the top of the plasma meniscus (excluding the thin buffy coat)."
+    }
+  ],
+  "observations": "A distinct red cell column, thin buffy coat, and clear-to-straw-colored plasma column should be visible; grossly lipemic or hemolyzed plasma should be noted, as it can affect interpretation.",
+  "interpretation": "Hematocrit is reported as a percentage (or fraction) of whole blood volume occupied by red cells; it correlates closely with hemoglobin (roughly 3× Hb in a normal, well-hydrated individual, though this ratio is a rule of thumb, not a fixed law) and is used alongside RBC count and indices, never interpreted alone.",
+  "precautions": [
+    "Read immediately after centrifugation — plasma and cells can begin to remix or settle further over time.",
+    "Do not use expired or cracked capillary tubes."
+  ],
+  "limitations": [
+    "Manual PCV can be affected by plasma trapping between packed cells, giving a slight overestimate; automated analyzer hematocrit (calculated from RBC count × MCV) is generally considered more precise for routine work, with manual PCV as a cross-check/backup method."
+  ],
+  "biosafetyNotes": "Capillary tubes are a sharps/blood-exposure hazard — use puncture-resistant sealant handling technique and dispose of broken glass per sharps protocol.",
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "clin-concept-cbc-fundamentals"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-centrifuge",
+    "clin-equip-hematology-analyzer"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-sharps-safety",
+    "safety-ppe"
+  ],
+  "searchKeywords": [
+    "packed cell volume",
+    "hematocrit",
+    "microhematocrit",
+    "spun hematocrit"
+  ],
+  "difficulty": "beginner"
+}

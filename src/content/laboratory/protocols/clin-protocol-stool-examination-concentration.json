@@ -1,0 +1,91 @@
+{
+  "id": "clin-protocol-stool-examination-concentration",
+  "category": "protocol",
+  "title": "Stool Examination & Concentration Techniques (Parasitology)",
+  "subcategory": "Parasitology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "WHO Laboratory Quality Management System Handbook",
+      "publisher": "World Health Organization"
+    },
+    {
+      "label": "Standard medical laboratory technology curricula/textbooks",
+      "publisher": "Established laboratory manual"
+    }
+  ],
+  "purpose": "To detect intestinal parasites (protozoa, helminth eggs/larvae) in stool by combining direct examination with a concentration technique that increases the density of parasitic elements relative to fecal debris, improving detection sensitivity for light infections.",
+  "principle": "Direct wet-mount examination of stool can miss light infections because parasitic elements are diluted among a large volume of fecal debris; concentration techniques exploit density differences (flotation, where parasitic elements float in a high-density solution while debris sinks, or sedimentation, where parasitic elements settle through a lower-density medium while lighter debris is decanted away) to increase the proportion of parasitic elements in the material actually examined under the microscope.",
+  "requiredMaterials": [
+    "Applicator sticks",
+    "Microscope slides and coverslips",
+    "Concentration technique supplies (per the specific flotation or sedimentation method in use)",
+    "Centrifuge, for sedimentation-based concentration"
+  ],
+  "requiredReagents": [
+    "Saline and iodine (for direct wet mount)",
+    "Concentration solution appropriate to the method (flotation or sedimentation) in use"
+  ],
+  "equipment": [
+    "equip-microscope-brightfield",
+    "equip-centrifuge"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Perform a direct wet-mount examination of a small stool portion in both saline (for motility of trophozoites and general morphology) and iodine (which stains internal structures of cysts/eggs, aiding identification) as an initial screen."
+    },
+    {
+      "step": 2,
+      "note": "Flotation and sedimentation techniques differ in their principle, target solute density, and which parasitic elements they concentrate best — follow the specific validated method in use rather than assuming a single universal protocol.",
+      "instruction": "Prepare a concentrated specimen using the laboratory's chosen flotation or sedimentation technique, following that method's specific solution, timing, and processing steps."
+    },
+    {
+      "step": 3,
+      "instruction": "Examine the concentrated preparation systematically under low then high power, scanning the entire coverslip area methodically to avoid missing sparse elements."
+    },
+    {
+      "step": 4,
+      "instruction": "Identify any parasitic elements observed by morphology (size, shape, internal structures) and record the developmental stage seen (e.g. trophozoite, cyst, egg, larva)."
+    },
+    {
+      "step": 5,
+      "instruction": "Report findings using the laboratory's standard terminology, correlating direct and concentrated examination findings."
+    }
+  ],
+  "observations": "Record parasitic elements observed, their developmental stage, approximate quantity, and which examination (direct vs. concentrated) detected them.",
+  "interpretation": "A negative result on a single stool specimen does not exclude parasitic infection, since some organisms are shed intermittently — multiple specimens over different days are often recommended per the ordering clinician's protocol, a decision outside the laboratory's scope.",
+  "precautions": [
+    "Examine fresh (or appropriately preserved) specimens — some parasitic forms degrade quickly in unpreserved stool at room temperature.",
+    "Use correct technique for each concentration method, since technique errors directly reduce detection sensitivity."
+  ],
+  "limitations": [
+    "No single concentration technique is optimal for every parasite type; sensitivity varies by organism, technique, and specimen freshness/preservation.",
+    "Compact, foundational coverage only — this entry does not enumerate organism-specific identification keys."
+  ],
+  "biosafetyNotes": "Stool specimens are biohazardous and may contain infectious parasitic stages; use standard precautions, appropriate PPE, and dispose of specimens/waste per biohazard protocol.",
+  "relatedProtocols": [],
+  "relatedConcepts": [],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-microscope-brightfield",
+    "equip-centrifuge"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-ppe",
+    "safety-biological-waste"
+  ],
+  "searchKeywords": [
+    "ova and parasite exam",
+    "stool concentration",
+    "flotation technique",
+    "sedimentation technique",
+    "fecal parasitology"
+  ],
+  "difficulty": "advanced"
+}

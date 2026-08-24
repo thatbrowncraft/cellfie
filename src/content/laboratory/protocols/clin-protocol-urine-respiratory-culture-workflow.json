@@ -1,0 +1,90 @@
+{
+  "id": "clin-protocol-urine-respiratory-culture-workflow",
+  "category": "protocol",
+  "title": "Urine & Respiratory Specimen Culture Workflow",
+  "subcategory": "Clinical Microbiology",
+  "sourceType": "clinical-diagnostic-method",
+  "version": "1.0",
+  "lastVerified": "2026-08",
+  "references": [
+    {
+      "label": "ASM Manual of Clinical Microbiology",
+      "publisher": "American Society for Microbiology (ASM)"
+    },
+    {
+      "label": "CLSI Standards for Clinical Laboratory Practice",
+      "publisher": "Clinical and Laboratory Standards Institute (CLSI)"
+    }
+  ],
+  "purpose": "To process urine and respiratory specimens for culture using quantitative (urine) and specimen-quality-screened (respiratory) approaches suited to sources that normally carry some resident flora.",
+  "principle": "Because urine and the respiratory tract (outside the lower airway) are not sterile in the same sense as blood, both workflows use additional steps — quantitative culture for urine, and specimen quality screening for sputum — to help separate clinically significant growth from expected background flora or poor-quality sampling.",
+  "requiredMaterials": [
+    "Calibrated inoculating loop (urine)",
+    "Sputum specimen container with quality-assessment capability (e.g. Gram stain screen)"
+  ],
+  "requiredReagents": [],
+  "equipment": [
+    "equip-inoculating-loop",
+    "equip-incubator",
+    "equip-microscope-brightfield"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "note": "The calibrated loop's volume is method/manufacturer-specific and is the basis for reporting colony-forming units per mL, not a universal fixed reading.",
+      "instruction": "For urine: use a calibrated loop (e.g. a defined-volume loop, per the laboratory's method) to inoculate a measured volume onto appropriate media, enabling a quantitative colony count rather than a simple presence/absence result."
+    },
+    {
+      "step": 2,
+      "instruction": "For urine: incubate and, after growth, calculate approximate colony count per mL from the number of colonies and the loop's calibrated volume; correlate against the laboratory's significance threshold for the collection method used (clean-catch vs. catheterized vs. suprapubic thresholds differ)."
+    },
+    {
+      "step": 3,
+      "note": "A specimen dominated by squamous epithelial cells is often rejected or reported as unsuitable for culture, per the laboratory's quality-screening criteria — this criterion is method-defined, not a single number applicable everywhere.",
+      "instruction": "For sputum/respiratory specimens: first assess specimen quality by Gram stain screening (squamous epithelial cells vs. white blood cells per low-power field) to judge whether the sample represents lower respiratory secretions or is contaminated with oral flora."
+    },
+    {
+      "step": 4,
+      "instruction": "For sputum/respiratory specimens judged acceptable, culture on appropriate media and interpret growth relative to expected respiratory flora and the specific pathogens being sought."
+    },
+    {
+      "step": 5,
+      "instruction": "Report both urine and respiratory results with the context needed for interpretation: colony count and organism(s) for urine; specimen quality grade and organism(s) for respiratory."
+    }
+  ],
+  "observations": "Urine: colony count and organism identity. Respiratory: specimen quality grade, predominant organism(s), and correlation with Gram stain screening.",
+  "interpretation": "Urine colony counts are compared against collection-method-specific significance thresholds rather than a single universal number; respiratory culture results are only as meaningful as the specimen quality that produced them, which is why the quality screen is performed first.",
+  "precautions": [
+    "Use a properly calibrated loop and consistent technique for urine to keep quantitative counts reproducible.",
+    "Do not skip the respiratory specimen quality screen — culturing and reporting from a clearly contaminated specimen can mislead clinical decisions."
+  ],
+  "limitations": [
+    "Quantitative urine thresholds and respiratory quality-screening criteria are standard-method-dependent and vary by the laboratory's adopted criteria and the collection method used."
+  ],
+  "biosafetyNotes": "Standard precautions apply; use a biosafety cabinet for aerosol-generating manipulation of respiratory specimens where risk of an aerosol-transmissible pathogen is plausible.",
+  "relatedProtocols": [
+    "clin-protocol-clinical-specimen-processing",
+    "proto-gram-stain"
+  ],
+  "relatedConcepts": [
+    "clin-concept-contamination-vs-true-isolate"
+  ],
+  "relatedMedia": [],
+  "relatedBiochemicalTests": [],
+  "relatedEquipment": [
+    "equip-inoculating-loop",
+    "equip-microscope-brightfield"
+  ],
+  "relatedFormulas": [],
+  "relatedCalculators": [],
+  "relatedSafety": [
+    "safety-basic-bsl-concepts"
+  ],
+  "searchKeywords": [
+    "urine colony count",
+    "calibrated loop",
+    "sputum quality screen",
+    "significant bacteriuria"
+  ],
+  "difficulty": "intermediate"
+}
