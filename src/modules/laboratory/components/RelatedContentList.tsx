@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { CaretRight } from '@phosphor-icons/react'
 import { Card, CardBody, Micro } from '@/shared/components'
 import { CATEGORY_LABELS } from '@/core/laboratory/registry'
+import { labContentPath } from '@/core/laboratory/clinicalRegistry'
 import type { LaboratoryContent } from '@/core/laboratory/types'
 
 interface RelatedContentListProps {
@@ -28,7 +29,7 @@ export function RelatedContentList({ title, items }: RelatedContentListProps) {
             key={item.id}
             interactive
             className="p-3"
-            onClick={() => navigate(`/laboratory/${item.category}/${item.id}`)}
+            onClick={() => navigate(labContentPath(item.id, item.category))}
           >
             <CardBody className="flex items-center justify-between gap-2 p-0">
               <div className="min-w-0">

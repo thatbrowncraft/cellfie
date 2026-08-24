@@ -56,7 +56,13 @@ export function SavedLabItemsSection({ items }: { items: SavedLabItemRecord[] })
                 <CardBody className="flex flex-col gap-2 p-0">
                   <button
                     type="button"
-                    onClick={() => navigate(`/laboratory/${record.labCategory}/${record.labContentId}`)}
+                    onClick={() =>
+                      navigate(
+                        record.labContentId?.startsWith('clin-')
+                          ? `/laboratory/clinical/${record.labCategory}/${record.labContentId}`
+                          : `/laboratory/${record.labCategory}/${record.labContentId}`
+                      )
+                    }
                     className="text-left"
                   >
                     <p className="font-display text-h3 font-medium text-ink-primary hover:underline">{record.title}</p>
