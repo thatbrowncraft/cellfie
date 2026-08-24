@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, CaretRight, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '../../shared/layouts'
@@ -10,6 +10,7 @@ import {
   calculateConcentrationFromAbsorbance,
   calculateCumulativeDilution,
   calculateDilutionFactor,
+  calculateRbcIndices,
   calculateRcfFromRpm,
   calculateRequiredMass,
   calculateRpmFromRcf,
@@ -21,6 +22,8 @@ import {
 } from '../../core/laboratory/calculators'
 import { getCalculatorTagline } from '../../core/laboratory/microcopy'
 import { resolveRelated } from '../../core/laboratory/registry'
+import { resolveClinicalRelated } from '../../core/laboratory/clinicalRegistry'
+import type { LaboratoryContent } from '../../core/laboratory/types'
 import { CalculatorResultCard } from './components/CalculatorResultCard'
 import { RelatedContentList } from './components/RelatedContentList'
 
@@ -71,6 +74,41 @@ export function CalculatorDetailPage() {
   const relatedFormulas = resolveRelated(meta.relatedFormulas)
   const relatedProtocols = resolveRelated(meta.relatedProtocols)
 
+  // Some Tier-2+ calculators (e.g. RBC Indices, added by the Laboratory
+  // Clinical Expansion) link to clin-* ids that only exist in the lazy
+  // clinical registry — resolveRelated (main registry only) can't find
+  // those synchronously. Resolve any ids the main registry missed via a
+  // dynamic import of clinicalRegistry, same bundle-safety pattern used
+  // throughout that module (never a static/eager clinical content pull).
+  const [clinicalFormulas, setClinicalFormulas] = useState<LaboratoryContent[]>([])
+  const [clinicalProtocols, setClinicalProtocols] = useState<LaboratoryContent[]>([])
+  useEffect(() => {
+    const missingFormulaIds = meta.relatedFormulas.filter((id) => !relatedFormulas.some((f) => f.id === id))
+    const missingProtocolIds = meta.relatedProtocols.filter((id) => !relatedProtocols.some((p) => p.id === id))
+    let cancelled = false
+    if (missingFormulaIds.length > 0) {
+      resolveClinicalRelated(missingFormulaIds).then((items) => {
+        if (!cancelled) setClinicalFormulas(items)
+      })
+    } else {
+      setClinicalFormulas([])
+    }
+    if (missingProtocolIds.length > 0) {
+      resolveClinicalRelated(missingProtocolIds).then((items) => {
+        if (!cancelled) setClinicalProtocols(items)
+      })
+    } else {
+      setClinicalProtocols([])
+    }
+    return () => {
+      cancelled = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [calculatorId])
+
+  const allRelatedFormulas = [...relatedFormulas, ...clinicalFormulas]
+  const allRelatedProtocols = [...relatedProtocols, ...clinicalProtocols]
+
   return (
     <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
       <nav aria-label="Breadcrumbs" className="mb-4 flex items-center gap-1 font-ui text-caption text-ink-tertiary">
@@ -102,8 +140,8 @@ export function CalculatorDetailPage() {
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <div>{renderCalculatorForm(calculatorId)}</div>
         <div className="flex flex-col gap-6">
-          {relatedFormulas.length > 0 && <RelatedContentList title="Related Formulas" items={relatedFormulas} />}
-          {relatedProtocols.length > 0 && <RelatedContentList title="Related Protocols" items={relatedProtocols} />}
+          {allRelatedFormulas.length > 0 && <RelatedContentList title="Related Formulas" items={allRelatedFormulas} />}
+          {allRelatedProtocols.length > 0 && <RelatedContentList title="Related Protocols" items={allRelatedProtocols} />}
         </div>
       </div>
     </div>
@@ -128,6 +166,8 @@ function renderCalculatorForm(id: string) {
       return <StatisticsForm />
     case 'calc-beer-lambert':
       return <BeerLambertForm />
+    case 'calc-rbc-indices':
+      return <RbcIndicesForm />
     default:
       return null
   }
@@ -474,6 +514,46 @@ function BeerLambertForm() {
         value={pathLength.raw}
         onChange={(e) => pathLength.setRaw(e.target.value)}
         helperText="Standard cuvette path length is usually 1 cm"
+      />
+      <CalculatorResultCard outcome={outcome} error={error} />
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// 9. RBC Indices (Laboratory Clinical Expansion — Hematology)
+// ---------------------------------------------------------------------------
+
+function RbcIndicesForm() {
+  const hemoglobin = useNumberField()
+  const hematocrit = useNumberField()
+  const rbcCount = useNumberField()
+
+  const { outcome, error } = useMemo(() => {
+    if (hemoglobin.value === undefined || hematocrit.value === undefined || rbcCount.value === undefined) {
+      return { outcome: null, error: null }
+    }
+    return runCalculation(() =>
+      calculateRbcIndices({ hemoglobinGDl: hemoglobin.value!, hematocritPercent: hematocrit.value!, rbcCountMillionsPerUl: rbcCount.value! })
+    )
+  }, [hemoglobin.value, hematocrit.value, rbcCount.value])
+
+  return (
+    <div className="flex flex-col gap-4">
+      <Input label="Hemoglobin, Hb (g/dL)" type="number" inputMode="decimal" value={hemoglobin.raw} onChange={(e) => hemoglobin.setRaw(e.target.value)} />
+      <Input
+        label="Hematocrit / PCV, Hct (%)"
+        type="number"
+        inputMode="decimal"
+        value={hematocrit.raw}
+        onChange={(e) => hematocrit.setRaw(e.target.value)}
+      />
+      <Input
+        label="RBC count (millions/µL)"
+        type="number"
+        inputMode="decimal"
+        value={rbcCount.raw}
+        onChange={(e) => rbcCount.setRaw(e.target.value)}
       />
       <CalculatorResultCard outcome={outcome} error={error} />
     </div>

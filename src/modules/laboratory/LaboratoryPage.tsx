@@ -12,7 +12,8 @@ import {
   Scales,
   ShieldWarning,
   Sparkle,
-  Stack
+  Stack,
+  Stethoscope
 } from '@phosphor-icons/react'
 import { LaboratoryLayout } from '../../shared/layouts'
 import { Card, CardBody, EmptyState, SearchField, Micro } from '../../shared/components'
@@ -250,6 +251,7 @@ export function LaboratoryPage() {
             onSetSection={setSection}
             onSetDifficulty={setDifficulty}
             onRandomPick={handleRandomPick}
+            onOpenClinical={() => navigate('/laboratory/clinical')}
             savedCount={savedItems.length}
           />
         ) : difficultyParam ? (
@@ -291,11 +293,13 @@ function LaboratoryHub({
   onSetSection,
   onSetDifficulty,
   onRandomPick,
+  onOpenClinical,
   savedCount
 }: {
   onSetSection: (section: SectionId) => void
   onSetDifficulty: (difficulty: LabDifficulty) => void
   onRandomPick: () => void
+  onOpenClinical: () => void
   savedCount: number
 }) {
   const difficultyCounts = useMemo(() => countByDifficulty(), [])
@@ -334,6 +338,16 @@ function LaboratoryHub({
               <span className="font-ui text-ui font-medium leading-tight text-ink-primary">{tile.label}</span>
             </button>
           ))}
+          <button
+            type="button"
+            onClick={onOpenClinical}
+            className="flex flex-col items-start gap-2 rounded-md border border-border bg-surface p-4 text-left transition-colors hover:border-border-strong hover:bg-surface-raised"
+          >
+            <span className="text-olive">
+              <Stethoscope size={20} aria-hidden />
+            </span>
+            <span className="font-ui text-ui font-medium leading-tight text-ink-primary">Clinical Laboratory</span>
+          </button>
         </div>
       </section>
 
@@ -399,6 +413,14 @@ function LaboratoryHub({
                 <span className="font-ui text-micro text-ink-tertiary">{savedCount}</span>
               </div>
               <p className="font-ui text-caption italic text-ink-tertiary">Everything you kept — curated, from your library, or from online.</p>
+            </CardBody>
+          </Card>
+          <Card interactive onClick={onOpenClinical}>
+            <CardBody className="flex flex-col gap-1">
+              <p className="font-display text-h3 font-medium text-ink-primary">Clinical Laboratory</p>
+              <p className="font-ui text-caption italic text-ink-tertiary">
+                Microbiology, but the patient's in the room now — hematology, blood bank, urinalysis, and more.
+              </p>
             </CardBody>
           </Card>
         </div>
