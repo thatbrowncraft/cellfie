@@ -141,9 +141,27 @@ export async function searchEverything(query: string): Promise<SearchResultGroup
     path: `/laboratory/${hit.category}/${hit.id}`
   }))
 
+  // Laboratory Clinical Expansion — same dynamic-import pattern as the
+  // main Laboratory registry above, applied to the separate, also-lazy
+  // clinicalRegistry module (see that file's header comment on why it's
+  // kept out of both the Laboratory chunk and this Universal Search
+  // chunk until a search is actually run). Clinical hits are folded into
+  // the same "Laboratory" result group rather than a separate group,
+  // since from the person's point of view they're all Laboratory content
+  // — the distinct `/laboratory/clinical/...` path is what actually
+  // routes them correctly, not a different UI grouping.
+  const { searchClinicalLaboratory, labContentPath } = await import('../laboratory/clinicalRegistry')
+  const clinicalResults: SearchResult[] = (await searchClinicalLaboratory(query)).map((hit) => ({
+    id: hit.id,
+    kind: 'laboratory',
+    title: hit.title,
+    subtitle: hit.discipline ? `${hit.subtitle} · ${hit.discipline}` : hit.subtitle,
+    path: labContentPath(hit.id, hit.category)
+  }))
+
   const groups: SearchResultGroup[] = [
     { label: 'Concepts', results: conceptResults },
-    { label: 'Laboratory', results: laboratoryResults },
+    { label: 'Laboratory', results: [...laboratoryResults, ...clinicalResults] },
     { label: 'Notes', results: noteResults },
     { label: 'Highlights', results: highlightResults },
     { label: 'Bookmarks', results: bookmarkResults },
