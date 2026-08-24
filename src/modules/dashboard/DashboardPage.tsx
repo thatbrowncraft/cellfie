@@ -268,13 +268,18 @@ export function DashboardPage() {
       return
     }
     let cancelled = false
-    import('../../core/laboratory/registry').then(({ getLabContentById }) => {
+    import('../../core/laboratory/registry').then(async ({ getLabContentById }) => {
+      if (cancelled) return
+      const resolved = recentLabIds.map(({ id }) => getLabContentById(id))
+      const missingIds = recentLabIds.filter((_, i) => !resolved[i]).map(({ id }) => id)
+      let clinicalResolved: LaboratoryContent[] = []
+      if (missingIds.length > 0) {
+        const { resolveClinicalRelated } = await import('../../core/laboratory/clinicalRegistry')
+        clinicalResolved = await resolveClinicalRelated(missingIds)
+      }
       if (cancelled) return
       setRecentLabContent(
-        recentLabIds
-          .map(({ id }) => getLabContentById(id))
-          .filter((c): c is LaboratoryContent => Boolean(c))
-          .slice(0, MAX_PREVIEW_ITEMS)
+        [...resolved.filter((c): c is LaboratoryContent => Boolean(c)), ...clinicalResolved].slice(0, MAX_PREVIEW_ITEMS)
       )
     })
     return () => {
@@ -462,7 +467,8 @@ export function DashboardPage() {
               key: content.id,
               title: content.title,
               subtitle: content.subcategory,
-              onClick: () => navigate(`/laboratory/${content.category}/${content.id}`)
+              onClick: () =>
+                navigate(content.id.startsWith('clin-') ? `/laboratory/clinical/${content.category}/${content.id}` : `/laboratory/${content.category}/${content.id}`)
             }))}
             emptyIcon={<Flask size={32} />}
             emptyTitle="No labs opened yet"
