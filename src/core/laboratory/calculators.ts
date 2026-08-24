@@ -365,6 +365,54 @@ export function calculateConcentrationFromAbsorbance({ absorbance, molarAbsorpti
 }
 
 // ---------------------------------------------------------------------------
+// 9. RBC Indices Calculator (Laboratory Clinical Expansion — Hematology).
+// Reuses this exact calculator architecture per the brief, rather than a
+// separate clinical calculator mechanism. Solves MCV, MCH, and MCHC
+// together from one shared set of inputs, since all three are normally
+// read/interpreted as a set.
+// ---------------------------------------------------------------------------
+
+export interface RbcIndicesInput {
+  hemoglobinGDl: number
+  hematocritPercent: number
+  rbcCountMillionsPerUl: number
+}
+
+export interface RbcIndicesResult extends CalculatorOutcome {
+  mcvFl: number
+  mchPg: number
+  mchcGDl: number
+}
+
+export function calculateRbcIndices({ hemoglobinGDl, hematocritPercent, rbcCountMillionsPerUl }: RbcIndicesInput): RbcIndicesResult {
+  requirePositive(hemoglobinGDl, 'Hemoglobin')
+  requirePositive(hematocritPercent, 'Hematocrit')
+  requirePositive(rbcCountMillionsPerUl, 'RBC count')
+
+  const mcv = (hematocritPercent * 10) / rbcCountMillionsPerUl
+  const mch = (hemoglobinGDl * 10) / rbcCountMillionsPerUl
+  const mchc = (hemoglobinGDl * 100) / hematocritPercent
+
+  const warnings: string[] = []
+  if (mchc > 38) {
+    warnings.push(
+      'This MCHC is unusually high (above roughly 38 g/dL) for a typical automated/manual measurement — double-check the input values, since an MCHC this high more often signals a specimen or entry issue (e.g. lipemia, cold agglutinins, or a transcription error) than a genuine physiological result.'
+    )
+  }
+
+  return {
+    mcvFl: mcv,
+    mchPg: mch,
+    mchcGDl: mchc,
+    formula: 'MCV = (Hct × 10) / RBC;  MCH = (Hb × 10) / RBC;  MCHC = (Hb × 100) / Hct',
+    substitution: `Hb ${hemoglobinGDl} g/dL, Hct ${hematocritPercent}%, RBC ${rbcCountMillionsPerUl} million/µL`,
+    result: `MCV = ${formatScientific(mcv)} fL, MCH = ${formatScientific(mch)} pg, MCHC = ${formatScientific(mchc)} g/dL`,
+    interpretation: `MCV (${formatScientific(mcv)} fL) classifies average red cell size (microcytic/normocytic/macrocytic per the laboratory's reference range), MCH (${formatScientific(mch)} pg) is the average hemoglobin mass per cell, and MCHC (${formatScientific(mchc)} g/dL) is the average hemoglobin concentration per cell — all three are read together, alongside RDW and the peripheral smear, rather than any one value alone.`,
+    warnings: warnings.length ? warnings : undefined
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Calculator registry — metadata for the Calculator Hub listing/cards.
 // Stable IDs match the brief's §14 naming convention (calc-*).
 // ---------------------------------------------------------------------------
@@ -385,7 +433,14 @@ export const CALCULATORS: CalculatorMeta[] = [
   { id: 'calc-molarity-mass', title: 'Molarity / Mass Prep Calculator', shortDescription: 'Required solute mass for a target molarity.', relatedFormulas: ['formula-molarity'], relatedProtocols: [] },
   { id: 'calc-rcf-rpm', title: 'RCF ⇄ RPM Calculator', shortDescription: 'Convert between centrifuge speed and relative centrifugal force.', relatedFormulas: ['formula-rcf-rpm'], relatedProtocols: [] },
   { id: 'calc-statistics', title: 'Basic Statistics Calculator', shortDescription: 'Mean, standard deviation, and coefficient of variation.', relatedFormulas: ['formula-mean', 'formula-standard-deviation', 'formula-cv'], relatedProtocols: [] },
-  { id: 'calc-beer-lambert', title: 'Beer-Lambert Concentration Calculator', shortDescription: 'Solve for concentration from an absorbance reading.', relatedFormulas: ['formula-beer-lambert'], relatedProtocols: [] }
+  { id: 'calc-beer-lambert', title: 'Beer-Lambert Concentration Calculator', shortDescription: 'Solve for concentration from an absorbance reading.', relatedFormulas: ['formula-beer-lambert'], relatedProtocols: [] },
+  {
+    id: 'calc-rbc-indices',
+    title: 'RBC Indices Calculator',
+    shortDescription: 'MCV, MCH, and MCHC from hemoglobin, hematocrit, and RBC count.',
+    relatedFormulas: ['clin-formula-mcv', 'clin-formula-mch', 'clin-formula-mchc'],
+    relatedProtocols: ['clin-protocol-hematocrit-pcv']
+  }
 ]
 
 export function getCalculatorMeta(id: string): CalculatorMeta | undefined {
