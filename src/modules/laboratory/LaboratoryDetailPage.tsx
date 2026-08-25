@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, Bookmark, BookmarkSimple, CaretRight, WarningCircle } from '@phosphor-icons/react'
+import { ArrowLeft, Bookmark, BookmarkSimple, CaretRight, Scales, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '../../shared/layouts'
 import { Button, Card, CardBody, EmptyState } from '../../shared/components'
 import { CATEGORY_LABELS, getLabContentById, resolveRelated } from '../../core/laboratory/registry'
@@ -103,7 +103,21 @@ export function LaboratoryDetailPage() {
           {CATEGORY_LABELS[category]}
           {item.subcategory ? ` · ${item.subcategory}` : ''}
         </p>
-        <h1 className="mt-1 font-display text-display font-semibold text-ink-primary">{item.title}</h1>
+        <div className="mt-1 flex flex-wrap items-start justify-between gap-3">
+          <h1 className="font-display text-display font-semibold text-ink-primary">{item.title}</h1>
+          <Button
+            variant="secondary"
+            size="small"
+            icon={<Scales size={16} />}
+            onClick={() =>
+              navigate(
+                `/comparison/new?itemAName=${encodeURIComponent(item.title)}&itemARefKind=laboratory&itemARefId=${encodeURIComponent(item.id)}&itemALabCategory=${encodeURIComponent(item.category)}`
+              )
+            }
+          >
+            Compare with…
+          </Button>
+        </div>
         <p className="mt-2 font-ui text-body-lg italic text-ink-tertiary">{getItemTagline(item.id, category)}</p>
         {item.scientificNotes && <p className="mt-3 font-body text-caption text-ink-tertiary">{item.scientificNotes}</p>}
       </header>
