@@ -22,6 +22,8 @@ import { getCuratedComparisonById } from '../../core/comparison/registry'
 import { ComparisonCard } from './components/ComparisonCard'
 
 type DiscoveryFilter = 'all' | ComparisonDomain
+type DifficultyFilter = 'all' | ComparisonDifficulty
+type FrequencyFilter = 'all' | ComparisonFrequency
 type SavedTab = 'saved' | 'favorites' | 'custom'
 
 /**
@@ -42,6 +44,8 @@ export function ComparisonStudioPage() {
   const navigate = useNavigate()
   const [query, setQuery] = useState('')
   const [domainFilter, setDomainFilter] = useState<DiscoveryFilter>('all')
+  const [difficultyFilter, setDifficultyFilter] = useState<DifficultyFilter>('all')
+  const [frequencyFilter, setFrequencyFilter] = useState<FrequencyFilter>('all')
   const [savedTab, setSavedTab] = useState<SavedTab>('saved')
 
   const savedRecords = useLiveQuery<SavedComparisonRecord[]>(
@@ -58,6 +62,22 @@ export function ComparisonStudioPage() {
     ]
   }, [])
 
+  const difficultyOptions = useMemo(() => {
+    const difficultiesInUse = new Set(ALL_CURATED_COMPARISONS.map((c) => c.difficulty))
+    return [
+      { value: 'all', label: 'All difficulties' },
+      ...Array.from(difficultiesInUse).map((d) => ({ value: d, label: COMPARISON_DIFFICULTY_LABELS[d] }))
+    ]
+  }, [])
+
+  const frequencyOptions = useMemo(() => {
+    const frequenciesInUse = new Set(ALL_CURATED_COMPARISONS.map((c) => c.frequency))
+    return [
+      { value: 'all', label: 'All frequencies' },
+      ...Array.from(frequenciesInUse).map((f) => ({ value: f, label: COMPARISON_FREQUENCY_LABELS[f] }))
+    ]
+  }, [])
+
   const discoveryResults = useMemo(() => {
     const base = query.trim() ? searchCuratedComparisons(query) : ALL_CURATED_COMPARISONS.map((c) => ({
       id: c.id,
@@ -67,8 +87,11 @@ export function ComparisonStudioPage() {
       difficulty: c.difficulty,
       frequency: c.frequency
     }))
-    return domainFilter === 'all' ? base : base.filter((hit) => hit.domain === domainFilter)
-  }, [query, domainFilter])
+    return base
+      .filter((hit) => domainFilter === 'all' || hit.domain === domainFilter)
+      .filter((hit) => difficultyFilter === 'all' || hit.difficulty === difficultyFilter)
+      .filter((hit) => frequencyFilter === 'all' || hit.frequency === frequencyFilter)
+  }, [query, domainFilter, difficultyFilter, frequencyFilter])
 
   const favorites = savedRecords.filter((r) => r.favorite)
   const custom = savedRecords.filter((r) => r.sourceType === 'custom')
@@ -122,6 +145,20 @@ export function ComparisonStudioPage() {
               options={domainOptions}
               value={domainFilter}
               onChange={(v) => setDomainFilter(v as DiscoveryFilter)}
+              className="sm:w-56"
+            />
+            <Dropdown
+              label="Difficulty"
+              options={difficultyOptions}
+              value={difficultyFilter}
+              onChange={(v) => setDifficultyFilter(v as DifficultyFilter)}
+              className="sm:w-56"
+            />
+            <Dropdown
+              label="Frequency"
+              options={frequencyOptions}
+              value={frequencyFilter}
+              onChange={(v) => setFrequencyFilter(v as FrequencyFilter)}
               className="sm:w-56"
             />
           </div>
