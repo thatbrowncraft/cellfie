@@ -23,6 +23,8 @@ import { getRecentlyUsedConcepts } from '../../core/concepts'
 import type { OrganismProfile } from '../../core/organisms/types'
 import { getRecentlyViewedOrganismIds } from '../../core/organisms/recentlyViewed'
 import { getRecentlyViewedLabIds } from '../../core/laboratory/recentlyViewed'
+import { getRecentComparisons, type RecentComparisonEntry } from '../../core/comparison/recentlyViewed'
+import { COMPARISON_DOMAIN_LABELS } from '../../core/comparison/types'
 import type { LaboratoryCategory, LaboratoryContent } from '../../core/laboratory/types'
 import { useLocalStorage } from '../../shared/hooks'
 import { pickDashboardQuote } from '../../core/dashboard/quotes'
@@ -177,11 +179,13 @@ function formatDuration(totalSeconds: number): string {
  * (backed by core/organisms/recentlyViewed.ts — the only genuinely new
  * persisted data this pass introduces, stored in the existing
  * `appSettings` table), and Lab/Comparison Studio preview sections.
- * Comparison Studio does not yet persist any comparisons anywhere in
- * Cellfie (see ComparisonStudioPage.tsx — still an empty-state stub), so
- * that section honestly renders its real empty state and links to the
- * real destination rather than inventing sample data. Lab's preview row
- * (Laboratory Saved Items feature) is backed by
+ * Comparison Studio's preview is backed by
+ * core/comparison/recentlyViewed.ts — the exact same bounded,
+ * appSettings-backed "recent activity only" pattern as Organisms/Lab; this
+ * is deliberately NOT the same thing as Saved Comparisons (a real,
+ * permanent Dexie table — see core/comparison/userComparisons.ts —
+ * browsed from inside Comparison Studio itself, never from Dashboard).
+ * Lab's preview row (Laboratory Saved Items feature) is backed by
  * core/laboratory/recentlyViewed.ts — the exact same bounded,
  * appSettings-backed "recent activity only" pattern as Organisms; this
  * is deliberately NOT the same thing as Saved Lab Items (a real,
@@ -204,6 +208,16 @@ export function DashboardPage() {
   )
   const recentLabIds = useLiveQuery<{ id: string; category: LaboratoryCategory }[]>(
     () => getRecentlyViewedLabIds(MAX_PREVIEW_ITEMS),
+    [],
+    []
+  )
+  // Comparison Studio's "Recently Visited" entries already carry their own
+  // display title/domain (see core/comparison/recentlyViewed.ts's doc
+  // comment for why) — unlike the Lab/Organism blocks above, no dynamic
+  // import of the Comparison Studio registry is needed just to render
+  // these four cards, keeping Dashboard's own chunk exactly as light.
+  const recentComparisons = useLiveQuery<RecentComparisonEntry[]>(
+    () => getRecentComparisons(MAX_PREVIEW_ITEMS),
     [],
     []
   )
@@ -482,10 +496,15 @@ export function DashboardPage() {
             humor={DASHBOARD_HUMOR.comparisons}
             openLabel="Open Comparison Studio"
             onOpen={() => navigate('/comparison')}
-            items={[]}
+            items={recentComparisons.map((entry) => ({
+              key: entry.id,
+              title: `${entry.itemAName} vs ${entry.itemBName}`,
+              subtitle: COMPARISON_DOMAIN_LABELS[entry.domain],
+              onClick: () => navigate(`/comparison/${entry.id}`)
+            }))}
             emptyIcon={<Scales size={32} />}
-            emptyTitle="No saved comparisons yet"
-            emptyDescription="Comparisons you build or favorite in Comparison Studio will show up here."
+            emptyTitle="No comparisons opened yet"
+            emptyDescription="Comparisons you open or build in Comparison Studio will show up here."
             emptyActionLabel="Open Comparison Studio"
             onEmptyAction={() => navigate('/comparison')}
           />
