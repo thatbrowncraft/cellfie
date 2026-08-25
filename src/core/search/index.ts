@@ -29,7 +29,7 @@ import { db, type Collection, type Highlight, type LibraryItem, type Note, type 
 
 export interface SearchResult {
   id: string
-  kind: 'note' | 'highlight' | 'bookmark' | 'book' | 'tag' | 'concept' | 'laboratory'
+  kind: 'note' | 'highlight' | 'bookmark' | 'book' | 'tag' | 'concept' | 'laboratory' | 'comparison'
   title: string
   subtitle?: string
   /** In-app path to navigate to when this result is chosen. */
@@ -159,9 +159,28 @@ export async function searchEverything(query: string): Promise<SearchResultGroup
     path: labContentPath(hit.id, hit.category)
   }))
 
+  // Comparison Studio, Tier 1 (brief §8: "first, search Cellfie's curated
+  // structured content") — same dynamic-import pattern as Laboratory
+  // above, applied to core/comparison/registry.ts, so Comparison
+  // Studio's curated content JSON stays out of AppShell's chunk until a
+  // search actually runs. Only curated comparisons are surfaced here;
+  // a person's saved/custom comparisons live in Comparison Studio's own
+  // "Saved"/"My Comparisons" lists, not Universal Search, matching how
+  // Saved Lab Items are likewise browsed from inside Laboratory rather
+  // than surfaced in this cross-entity search.
+  const { searchCuratedComparisons } = await import('../comparison/registry')
+  const comparisonResults: SearchResult[] = searchCuratedComparisons(query).map((hit) => ({
+    id: hit.id,
+    kind: 'comparison',
+    title: hit.title,
+    subtitle: hit.subtitle,
+    path: `/comparison/${hit.id}`
+  }))
+
   const groups: SearchResultGroup[] = [
     { label: 'Concepts', results: conceptResults },
     { label: 'Laboratory', results: [...laboratoryResults, ...clinicalResults] },
+    { label: 'Comparisons', results: comparisonResults },
     { label: 'Notes', results: noteResults },
     { label: 'Highlights', results: highlightResults },
     { label: 'Bookmarks', results: bookmarkResults },
