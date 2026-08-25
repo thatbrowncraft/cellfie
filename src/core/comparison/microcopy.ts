@@ -21,7 +21,19 @@ const COMPARISON_TAGLINES: Record<string, string> = {
   'comp-grampos-vs-gramneg': 'The cell wall has entered the chat.',
   'comp-autoclave-vs-hot-air-oven': 'Steam sprints. Dry heat marathons.',
   'comp-selective-vs-differential-media': "One's a bouncer, one's a stylist.",
-  'comp-exotoxins-vs-endotoxins': 'One leaves on purpose. One only shows up when the party\u2019s over.'
+  'comp-exotoxins-vs-endotoxins': 'One leaves on purpose. One only shows up when the party\u2019s over.',
+  'comp-cocci-vs-bacilli': 'Round versus rod. Pick a lane.',
+  'comp-sterilization-vs-disinfection': 'One kills everything. One just kills enough.',
+  'comp-catalase-test-vs-coagulase-test': 'Bubbles first, clotting second.',
+  'comp-saureus-vs-sepidermidis': 'Same genus. Very different reputations.',
+  'comp-dna-viruses-vs-rna-viruses': 'One proofreads its homework. One does not.',
+  'comp-lytic-vs-lysogenic-infection': 'Burn it down now, or move in quietly.',
+  'comp-primary-vs-secondary-immune-response': 'Your immune system remembers everything.',
+  'comp-planktonic-vs-biofilm-associated-bacteria': 'Alone it\u2019s easy prey. Together it\u2019s a fortress.',
+  'comp-antigenic-drift-vs-antigenic-shift': 'Slow makeover versus total identity change.',
+  'comp-mic-vs-mbc': 'Stopped growing is not the same as dead.',
+  'comp-conventional-pcr-vs-qpcr': 'One tells you yes or no. One tells you how much.',
+  'comp-short-read-vs-long-read-sequencing': 'Short and precise, or long and messy \u2014 pick your trade-off.'
 }
 
 export function getComparisonTagline(comparisonId: string): string | undefined {
