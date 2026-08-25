@@ -543,6 +543,73 @@ export interface SavedLabItemRecord {
   isAbstract?: boolean
 }
 
+/**
+ * `SavedComparisonRecord` — Comparison Studio's local persistence
+ * (brief §12/§13/§14/§30).
+ *
+ * Mirrors `SavedLabItemRecord`'s "reference vs full payload" split:
+ *  - 'curated': the row only stores `curatedComparisonId` plus a thin
+ *    user-editable overlay (`aspectOverrides`/`removedAspectIds`/`notes`/
+ *    `favorite`). The curated JSON itself is always re-read live from
+ *    `core/comparison/registry.ts` and is never duplicated or mutated —
+ *    this is the "Curated Comparison + User Editable Layer" split
+ *    required by brief §13.
+ *  - 'custom': the row holds the full comparison payload the user
+ *    authored (brief §12B) — it has no curated counterpart to overlay.
+ *
+ * One table covers "saved", "favorited", and "authored" together,
+ * exactly like `savedLabItems` covers all three of its source types —
+ * a dedicated boolean/field distinguishes each state rather than
+ * splitting into more tables.
+ */
+export type SavedComparisonSourceType = 'curated' | 'custom'
+
+/** Same aspect row shape as `ComparisonAspect` in `core/comparison/types.ts`, duplicated here rather than imported — this file intentionally stays free of feature-module imports (see `SavedLabItemRecord`'s `labCategory` comment for the same reasoning), so the source of truth for the *shape* lives in the feature module while the DB layer just persists it structurally. */
+export interface SavedComparisonAspectRecord {
+  id: string
+  label: string
+  valueA: string
+  valueB: string
+  isKeyDifference?: boolean
+}
+
+/** Same item-reference shape as `ComparisonItemRef` in `core/comparison/types.ts`. */
+export interface SavedComparisonItemRecord {
+  name: string
+  subtitle?: string
+  refKind?: 'organism' | 'laboratory'
+  refId?: string
+  labCategory?: string
+}
+
+export interface SavedComparisonRecord {
+  id: string
+  sourceType: SavedComparisonSourceType
+  /** Denormalized "ItemA vs ItemB" title, kept in sync on every save — lets list/search views avoid resolving the curated registry or reconstructing the payload just to render a label. */
+  title: string
+  createdAt: number
+  updatedAt: number
+  favorite: boolean
+  /** User flagged this for focused review in Study Mode (brief §24). */
+  needsReview?: boolean
+  notes?: string
+
+  /** curated only — id into core/comparison/registry.ts. */
+  curatedComparisonId?: string
+  /** curated only — user-added or user-edited aspects layered on top of the curated ones; matched to a curated aspect by `id`, or a new user-authored aspect if the id doesn't match one. */
+  aspectOverrides?: SavedComparisonAspectRecord[]
+  /** curated only — ids of curated aspects the user chose to hide from their view, without altering the shipped JSON. */
+  removedAspectIds?: string[]
+
+  /** custom only — the full user-authored comparison (brief §12B: never required to exist in the curated database). Kept loosely typed (string) here for `domain`/`difficulty`/`frequency`, matching how `SavedLabItemRecord.labCategory` stays loose rather than importing a feature-module union. */
+  domain?: string
+  difficulty?: string
+  frequency?: string
+  itemA?: SavedComparisonItemRecord
+  itemB?: SavedComparisonItemRecord
+  aspects?: SavedComparisonAspectRecord[]
+}
+
 class CellfieDB extends Dexie {
   libraryItems!: Table<LibraryItem, string>
   collections!: Table<Collection, string>
@@ -562,6 +629,7 @@ class CellfieDB extends Dexie {
   organismImageBlobs!: Table<OrganismImageBlob, string>
   savedOrganisms!: Table<SavedOrganismRecord, string>
   savedLabItems!: Table<SavedLabItemRecord, string>
+  savedComparisons!: Table<SavedComparisonRecord, string>
 
   constructor() {
     super('cellfie')
@@ -900,6 +968,34 @@ class CellfieDB extends Dexie {
       organismImages: 'id, organismId, isPrimary, createdAt, [organismId+isPrimary]',
       organismImageBlobs: 'id, createdAt',
       savedLabItems: 'id, sourceType, savedAt, labContentId, libraryItemId'
+    })
+    // v15 — Comparison Studio: adds `savedComparisons` only, following the
+    // same additive pattern as every prior version. Every existing
+    // table/index above is repeated unchanged; no existing row in any
+    // table is touched by this upgrade. See `SavedComparisonRecord`'s doc
+    // comment for why curated saves stay reference+overlay rather than
+    // duplicating curated JSON.
+    this.version(15).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt',
+      highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+      notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+      concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+      conceptSources:
+        'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+      conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+      conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+      conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+      conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+      conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
+      conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
+      savedOrganisms: 'organismId, savedAt',
+      organismImages: 'id, organismId, isPrimary, createdAt, [organismId+isPrimary]',
+      organismImageBlobs: 'id, createdAt',
+      savedLabItems: 'id, sourceType, savedAt, labContentId, libraryItemId',
+      savedComparisons: 'id, sourceType, favorite, updatedAt, curatedComparisonId'
     })
   }
 }
