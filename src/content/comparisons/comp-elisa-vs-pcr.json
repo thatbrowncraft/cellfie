@@ -1,0 +1,106 @@
+{
+  "id": "comp-elisa-vs-pcr",
+  "domain": "laboratory-technique",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": ["student", "lab-learner", "researcher"],
+  "tags": ["diagnostics", "virology", "molecular-biology", "immunology"],
+  "itemA": { "name": "ELISA", "subtitle": "Enzyme-Linked Immunosorbent Assay" },
+  "itemB": { "name": "PCR", "subtitle": "Polymerase Chain Reaction" },
+  "overview": "Both are workhorse diagnostic techniques, but they detect fundamentally different kinds of evidence of infection or exposure.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "An immunoassay that uses antibody-antigen binding and an enzyme-linked colorimetric or fluorescent readout to detect or quantify a protein, antigen, or antibody in a sample.",
+      "valueB": "A molecular technique that exponentially amplifies a specific DNA (or reverse-transcribed RNA) sequence so it becomes detectable, using repeated cycles of denaturation, annealing, and extension."
+    },
+    {
+      "id": "target",
+      "label": "Target",
+      "valueA": "Protein: an antigen or an antibody raised against one.",
+      "valueB": "Nucleic acid: a specific DNA sequence (or RNA, via RT-PCR).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "specimen",
+      "label": "Specimen",
+      "valueA": "Serum, plasma, or other fluids containing the target protein/antibody.",
+      "valueB": "Any specimen yielding intact nucleic acid — blood, swabs, tissue, CSF, etc."
+    },
+    {
+      "id": "key-reagents",
+      "label": "Key Reagents",
+      "valueA": "Capture/detection antibodies, enzyme conjugate (e.g. HRP), chromogenic or fluorescent substrate.",
+      "valueB": "Sequence-specific primers, thermostable DNA polymerase (e.g. Taq), dNTPs, buffer with Mg2+."
+    },
+    {
+      "id": "detection-readout",
+      "label": "Detection / Readout",
+      "valueA": "Colorimetric or fluorescent signal, read by spectrophotometry (optical density).",
+      "valueB": "Amplicon visualized by gel electrophoresis (conventional PCR) or fluorescence accumulated in real time (qPCR)."
+    },
+    {
+      "id": "sensitivity",
+      "label": "Sensitivity",
+      "valueA": "Good, but generally lower than PCR — depends on antigen/antibody concentration reaching a detectable threshold.",
+      "valueB": "Very high — can, in principle, detect a single copy of target sequence after sufficient amplification cycles."
+    },
+    {
+      "id": "time-required",
+      "label": "Time Required",
+      "valueA": "Typically a few hours, including incubation and wash steps.",
+      "valueB": "Roughly one to a few hours for amplification, plus extraction time; results can be same-day."
+    },
+    {
+      "id": "controls",
+      "label": "Controls",
+      "valueA": "Positive/negative controls and a standard curve for quantitative ELISA.",
+      "valueB": "Positive, negative (no-template), and often an internal amplification control."
+    },
+    {
+      "id": "interpretation",
+      "label": "Interpretation",
+      "valueA": "Optical density above/below a cutoff determines reactive vs non-reactive; useful for exposure/seroconversion status.",
+      "valueB": "Presence/absence (or cycle threshold, Ct, in qPCR) indicates presence and relative quantity of the target sequence — useful for active infection."
+    },
+    {
+      "id": "common-artifacts",
+      "label": "Common Artifacts",
+      "valueA": "Cross-reactivity causing false positives; the 'window period' before antibodies develop causing false negatives.",
+      "valueB": "Contamination causing false positives; PCR inhibitors in the sample causing false negatives."
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations / Pitfalls",
+      "valueA": "Detects immune response or antigen presence, not necessarily viable/active infection; window period limits early detection.",
+      "valueB": "Detects genetic material, which can persist after an organism is no longer viable/infectious; requires intact nucleic acid and proper primer design."
+    },
+    {
+      "id": "when-to-choose",
+      "label": "When to Choose",
+      "valueA": "Screening for past exposure or immune status, high-throughput serosurveys.",
+      "valueB": "Confirming active infection, detecting very low pathogen loads, or when a specific genetic sequence itself is the question."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Measures the immune/antigen picture via antibody binding.",
+      "valueB": "Measures the genetic picture via sequence amplification.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "primary-purpose",
+      "label": "Primary Purpose / Indication",
+      "valueA": "Detecting or quantifying a specific antigen or antibody — often used for exposure/immunity screening.",
+      "valueB": "Detecting or quantifying a specific nucleic acid sequence — often used to confirm active infection or genetic identity."
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "If a question says 'antigen-antibody binding with a color change,' think ELISA. If it says 'amplifying DNA/RNA,' think PCR.",
+    "memoryTrick": "ELISA = proteins and antibodies. PCR = pieces of the genome, photocopied.",
+    "choiceRule": "Ask: am I looking for evidence the immune system reacted (ELISA), or evidence the organism's genetic material is physically present (PCR)?",
+    "commonMisconception": "A positive PCR does not always mean an actively infectious organism — it means the target sequence was present in detectable amounts."
+  },
+  "lastVerified": "2026-01-01"
+}

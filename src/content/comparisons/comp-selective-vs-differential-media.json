@@ -1,0 +1,75 @@
+{
+  "id": "comp-selective-vs-differential-media",
+  "domain": "culture-media",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": ["student", "lab-learner"],
+  "tags": ["culture-media", "microbiology", "identification"],
+  "itemA": { "name": "Selective Media" },
+  "itemB": { "name": "Differential Media" },
+  "overview": "Both shape which organisms show up and how — but selective media controls what grows, while differential media controls how growth looks.",
+  "aspects": [
+    {
+      "id": "purpose",
+      "label": "Purpose",
+      "valueA": "Inhibits growth of unwanted organisms while allowing a target group to grow, isolating it from a mixed sample.",
+      "valueB": "Allows multiple organism types to grow but produces visibly distinct colony appearances, distinguishing between them.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "composition",
+      "label": "Composition",
+      "valueA": "Contains inhibitory agents such as antibiotics, dyes, salts, or extreme pH that suppress non-target organisms.",
+      "valueB": "Contains indicator substrates (e.g. specific sugars with a pH indicator, or a substrate cleaved differently by different organisms) that reveal metabolic differences visually."
+    },
+    {
+      "id": "target-organisms",
+      "label": "Target Organisms",
+      "valueA": "A specific group is favored (e.g. Gram-negative rods on a medium inhibiting Gram-positives).",
+      "valueB": "No organism is excluded by the medium itself — differentiation happens after growth, based on appearance."
+    },
+    {
+      "id": "expected-appearance",
+      "label": "Expected Appearance",
+      "valueA": "Only the target group (or a narrowed set) produces visible colonies; others are suppressed or absent.",
+      "valueB": "Multiple organism types grow, but colonies differ in color, halo, or other visible traits based on their metabolic activity."
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations / Pitfalls",
+      "valueA": "Some non-target organisms may still grow weakly ('breakthrough growth'), and some target organisms may be inhibited if sensitive to the selective agent.",
+      "valueB": "Differentiation reflects a specific biochemical trait, not full identification — further testing is usually still needed."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Controls which organisms are able to grow at all.",
+      "valueB": "Controls how different organisms appear once they've grown.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "primary-purpose-indication",
+      "label": "Primary Purpose / Indication",
+      "valueA": "Isolating a target organism or group from a mixed/contaminated specimen.",
+      "valueB": "Distinguishing between organisms that grow together, based on a visible metabolic trait."
+    },
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Media formulated to inhibit unwanted organisms so a target group can be isolated.",
+      "valueB": "Media formulated to reveal visible metabolic differences between organisms that are allowed to grow together."
+    },
+    {
+      "id": "limitations-pitfalls",
+      "label": "Limitations",
+      "valueA": "Selective pressure can occasionally suppress a slow-growing target along with the non-target flora.",
+      "valueB": "A differential reaction on its own is rarely sufficient for a definitive identification."
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "MacConkey agar is actually both — selective for Gram-negatives and differential for lactose fermentation. A great example to remember the distinction with.",
+    "memoryTrick": "\"Selective picks who's invited. Differential decides what they wear.\"",
+    "commonMisconception": "Selective and differential are not mutually exclusive — many real media (e.g. MacConkey, EMB) do both jobs at once."
+  },
+  "lastVerified": "2026-01-01"
+}

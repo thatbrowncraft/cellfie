@@ -1,0 +1,81 @@
+{
+  "id": "comp-grampos-vs-gramneg",
+  "domain": "bacteriology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": ["student", "lab-learner"],
+  "tags": ["gram-stain", "cell-wall", "bacteriology", "microbiology"],
+  "itemA": { "name": "Gram-Positive Bacteria" },
+  "itemB": { "name": "Gram-Negative Bacteria" },
+  "overview": "The single most fundamental split in bacteriology, driven entirely by cell wall architecture and visible with one classic stain.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Bacteria with a thick peptidoglycan cell wall that retains crystal violet stain, appearing purple under the microscope after Gram staining.",
+      "valueB": "Bacteria with a thin peptidoglycan layer and an outer membrane; they lose the crystal violet during decolorization and take up the safranin counterstain, appearing pink/red."
+    },
+    {
+      "id": "cell-wall-structure",
+      "label": "Cell Wall Structure",
+      "valueA": "Thick peptidoglycan layer (multiple layers) with embedded teichoic and lipoteichoic acids; no outer membrane.",
+      "valueB": "Thin peptidoglycan layer sandwiched between the plasma membrane and an outer membrane containing lipopolysaccharide (LPS).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "gram-staining-reaction",
+      "label": "Gram / Staining Reaction",
+      "valueA": "Retains crystal violet-iodine complex through decolorization — stains purple.",
+      "valueB": "Crystal violet-iodine complex washes out during decolorization; counterstained pink/red by safranin."
+    },
+    {
+      "id": "growth-requirements",
+      "label": "Growth Requirements",
+      "valueA": "Varies widely by genus; many grow readily on standard nutrient media.",
+      "valueB": "Varies widely by genus; some require selective/enriched media due to fastidious growth needs or LPS-related sensitivities."
+    },
+    {
+      "id": "virulence-factors",
+      "label": "Virulence Factors",
+      "valueA": "Exotoxins are common; teichoic acids can contribute to immune activation.",
+      "valueB": "LPS (endotoxin) in the outer membrane is a major virulence factor; some also produce exotoxins."
+    },
+    {
+      "id": "identification",
+      "label": "Identification",
+      "valueA": "Gram stain morphology plus biochemical tests (e.g. catalase, coagulase) narrow genus/species.",
+      "valueB": "Gram stain morphology plus biochemical/culture-based tests (e.g. oxidase, lactose fermentation) narrow genus/species."
+    },
+    {
+      "id": "treatment-considerations",
+      "label": "Treatment Considerations",
+      "valueA": "Often susceptible to antibiotics targeting peptidoglycan synthesis (e.g. many beta-lactams), though resistance mechanisms exist.",
+      "valueB": "The outer membrane acts as an additional permeability barrier, affecting which antibiotics penetrate effectively; intrinsic resistance is common in several genera."
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations / Pitfalls",
+      "valueA": "Old or damaged cells can over-decolorize and appear falsely Gram-negative.",
+      "valueB": "Gram reaction alone does not identify species — it narrows a broad category, not a specific organism."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Thick peptidoglycan, no outer membrane, stains purple.",
+      "valueB": "Thin peptidoglycan plus an LPS-containing outer membrane, stains pink/red.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "primary-purpose",
+      "label": "Primary Purpose / Indication",
+      "valueA": "First-line categorization step in identifying an unknown bacterial isolate.",
+      "valueB": "First-line categorization step in identifying an unknown bacterial isolate."
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Purple = positive = thick wall. Pink = negative = outer membrane with LPS.",
+    "memoryTrick": "\"Positive keeps its color, negative needs a new one.\"",
+    "commonMisconception": "Gram-negative does not mean 'less dangerous' — LPS/endotoxin makes many Gram-negative infections especially serious."
+  },
+  "lastVerified": "2026-01-01"
+}

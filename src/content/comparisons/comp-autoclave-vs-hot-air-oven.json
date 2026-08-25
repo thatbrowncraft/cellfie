@@ -1,0 +1,81 @@
+{
+  "id": "comp-autoclave-vs-hot-air-oven",
+  "domain": "laboratory-equipment",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": ["student", "lab-learner"],
+  "tags": ["sterilization", "equipment", "biosafety"],
+  "itemA": { "name": "Autoclave", "subtitle": "Moist heat sterilization" },
+  "itemB": { "name": "Hot Air Oven", "subtitle": "Dry heat sterilization" },
+  "overview": "Both sterilize using heat, but moist versus dry heat changes what materials each can safely and effectively be used on.",
+  "aspects": [
+    {
+      "id": "principle",
+      "label": "Principle",
+      "valueA": "Moist heat under pressure — saturated steam denatures and coagulates microbial proteins efficiently at lower temperatures than dry heat.",
+      "valueB": "Dry heat — oxidation of cell constituents and protein denaturation at higher temperatures and longer exposure times than moist heat."
+    },
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "valueA": "Pressurized steam penetrates materials and transfers heat rapidly via condensation.",
+      "valueB": "Hot air circulates around items; heat transfer is slower since air conducts heat less efficiently than steam."
+    },
+    {
+      "id": "temperature-pressure",
+      "label": "Temperature / Pressure",
+      "valueA": "A commonly cited standard cycle is 121°C at about 15 psi for 15–20 minutes for a typical liquid/instrument load — exact parameters vary by load type and validated protocol.",
+      "valueB": "A commonly cited standard cycle is 160–180°C for 1–2 hours depending on the specific protocol and load — exact parameters vary by manufacturer/standard.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "equipment",
+      "label": "Equipment",
+      "valueA": "Pressure vessel with a steam generator, gauge, and safety valve.",
+      "valueB": "Insulated chamber with electrical heating elements and (often) a fan for air circulation."
+    },
+    {
+      "id": "duration",
+      "label": "Duration",
+      "valueA": "Shorter cycles overall due to more efficient heat transfer via steam.",
+      "valueB": "Longer cycles overall since dry air transfers heat less efficiently than steam."
+    },
+    {
+      "id": "applications",
+      "label": "Applications",
+      "valueA": "Culture media, aqueous solutions, surgical instruments, and other heat-and-moisture-tolerant items.",
+      "valueB": "Glassware, metal instruments, oils, powders, and other items that must stay dry or would be damaged by moisture."
+    },
+    {
+      "id": "safety",
+      "label": "Safety",
+      "valueA": "Pressurized system — requires correct venting/cool-down before opening to avoid burns or injury.",
+      "valueB": "High surface and chamber temperatures — requires appropriate handling precautions to avoid burns."
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations / Pitfalls",
+      "valueA": "Not suitable for materials damaged by moisture or pressure (e.g. some plastics, powders, oils).",
+      "valueB": "Less efficient than steam for the same temperature; not suitable for materials that degrade at high dry heat or for liquids."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Uses moist heat (steam under pressure) for faster sterilization at lower temperatures.",
+      "valueB": "Uses dry heat for materials that must remain moisture-free.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "primary-purpose",
+      "label": "Primary Purpose / Indication",
+      "valueA": "Sterilizing moisture-tolerant items and liquids efficiently.",
+      "valueB": "Sterilizing moisture-sensitive items that can tolerate prolonged high dry heat."
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Autoclave = steam, faster, lower temp. Hot air oven = dry, slower, higher temp.",
+    "memoryTrick": "\"Steam works fast because it's wet. Dry heat is slow because it's shy about moisture.\"",
+    "choiceRule": "If the item can get wet, autoclave it. If it must stay dry (powders, oils, some glassware), use the hot air oven."
+  },
+  "lastVerified": "2026-01-01"
+}

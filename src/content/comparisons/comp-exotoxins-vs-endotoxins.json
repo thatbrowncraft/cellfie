@@ -1,0 +1,87 @@
+{
+  "id": "comp-exotoxins-vs-endotoxins",
+  "domain": "microbiology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": ["student", "lab-learner"],
+  "tags": ["toxins", "pathogenicity", "bacteriology", "immunology"],
+  "itemA": { "name": "Exotoxins" },
+  "itemB": { "name": "Endotoxins" },
+  "overview": "Two very different weapons bacteria use to cause disease — one is actively secreted, the other is a structural component released on cell death.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Proteins actively secreted by living bacteria (both Gram-positive and Gram-negative) that damage host cells or disrupt normal function.",
+      "valueB": "Lipopolysaccharide (LPS) components of the Gram-negative outer membrane, released mainly when the bacterial cell lyses or dies."
+    },
+    {
+      "id": "composition",
+      "label": "Chemical Composition",
+      "valueA": "Protein.",
+      "valueB": "Lipopolysaccharide (specifically the lipid A portion is the toxic component).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "source",
+      "label": "Source",
+      "valueA": "Secreted by living Gram-positive or Gram-negative bacteria.",
+      "valueB": "Structural part of the Gram-negative outer membrane; released upon cell lysis or death."
+    },
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "valueA": "Highly specific mechanisms — e.g. enzymatic disruption, blocking protein synthesis, or interfering with neurotransmission, depending on the specific toxin.",
+      "valueB": "General, non-specific immune activation — triggers cytokine release (e.g. via binding to host TLR4), which can lead to fever, inflammation, and in severe cases septic shock."
+    },
+    {
+      "id": "potency",
+      "label": "Potency",
+      "valueA": "Often highly potent even in extremely small amounts, due to specific molecular targets.",
+      "valueB": "Generally less potent per molecule than exotoxins, but effects scale with the amount of Gram-negative bacterial lysis."
+    },
+    {
+      "id": "heat-stability",
+      "label": "Heat Stability",
+      "valueA": "Generally heat-labile — many are denatured/inactivated by heat.",
+      "valueB": "Generally heat-stable — LPS withstands heat that would denature most proteins."
+    },
+    {
+      "id": "toxoid-vaccine-potential",
+      "label": "Toxoid/Vaccine Potential",
+      "valueA": "Can often be inactivated (toxoided) while retaining immunogenicity, forming the basis of some vaccines.",
+      "valueB": "Not typically toxoided into a vaccine antigen in the same way, given its non-protein, general-immune-activating nature."
+    },
+    {
+      "id": "clinical-significance",
+      "label": "Clinical Significance",
+      "valueA": "Responsible for many specific disease presentations (e.g. specific paralysis, specific tissue damage) tied to the individual toxin's target.",
+      "valueB": "Associated with fever and systemic inflammatory responses; large-scale release is linked to septic shock in Gram-negative infections."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Actively secreted protein with a highly specific mechanism.",
+      "valueB": "Structural lipopolysaccharide released on cell death, causing general immune activation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "primary-purpose",
+      "label": "Primary Purpose / Indication",
+      "valueA": "Explains organism-specific disease presentations tied to a distinct toxin.",
+      "valueB": "Explains general systemic inflammatory/febrile responses in Gram-negative infections."
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations / Pitfalls",
+      "valueA": "Presence of a gene encoding a toxin does not guarantee clinically significant expression in every strain/context.",
+      "valueB": "Endotoxin activity correlates with bacterial load and lysis, not with a single discrete 'dose' the way a secreted toxin might be measured."
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Exotoxin = protein, specific, often heat-labile, can be toxoided. Endotoxin = LPS, general, heat-stable, tied to Gram-negative cell death.",
+    "memoryTrick": "\"Exo exits the cell on purpose. Endo only comes out when the cell dies.\"",
+    "commonMisconception": "Endotoxin is not 'released' the way exotoxins are secreted — it's a structural piece of the cell that becomes a problem specifically when the cell breaks apart."
+  },
+  "lastVerified": "2026-01-01"
+}
