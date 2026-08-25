@@ -251,14 +251,9 @@ function AspectCell({
           <ProvenanceBadge key={i} source={s} />
         ))}
         {editable && !value && onFillFromSource && (
-          <button
-            type="button"
-            onClick={() => onFillFromSource(aspect, side)}
-            className="inline-flex items-center gap-1 font-ui text-micro text-olive hover:underline"
-          >
-            <Lightning size={12} aria-hidden />
+          <Button variant="tertiary" size="small" icon={<Lightning size={12} aria-hidden />} onClick={() => onFillFromSource(aspect, side)}>
             Fill from a source
-          </button>
+          </Button>
         )}
       </div>
     </td>
@@ -324,16 +319,16 @@ function MobileBothCard({
           </div>
           {aspect.isKeyDifference && studyMode === 'off' && <p className="font-body text-micro italic text-ink-tertiary">{KEY_DIFFERENCE_TAGLINE}</p>}
           {!editable ? null : (
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               {!aspect.valueA && onFillFromSource && (
-                <button type="button" onClick={() => onFillFromSource(aspect, 'A')} className="inline-flex items-center gap-1 font-ui text-micro text-olive hover:underline">
-                  <Lightning size={12} aria-hidden /> Fill {comparison.itemA.name} from a source
-                </button>
+                <Button variant="tertiary" size="small" icon={<Lightning size={12} aria-hidden />} onClick={() => onFillFromSource(aspect, 'A')}>
+                  Fill {comparison.itemA.name} from a source
+                </Button>
               )}
               {!aspect.valueB && onFillFromSource && (
-                <button type="button" onClick={() => onFillFromSource(aspect, 'B')} className="inline-flex items-center gap-1 font-ui text-micro text-olive hover:underline">
-                  <Lightning size={12} aria-hidden /> Fill {comparison.itemB.name} from a source
-                </button>
+                <Button variant="tertiary" size="small" icon={<Lightning size={12} aria-hidden />} onClick={() => onFillFromSource(aspect, 'B')}>
+                  Fill {comparison.itemB.name} from a source
+                </Button>
               )}
             </div>
           )}
