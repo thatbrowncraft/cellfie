@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent, type ReactNode } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, ArrowClockwise, ArrowSquareOut, Bookmark, Check, GitBranch, Globe, Sparkle, Star, Trash, UploadSimple } from '@phosphor-icons/react'
+import { ArrowLeft, ArrowClockwise, ArrowSquareOut, Bookmark, Check, GitBranch, Globe, Scales, Sparkle, Star, Trash, UploadSimple } from '@phosphor-icons/react'
 import { Button, CalloutBox, Dialog, EmptyState, IllustrationFrame } from '@/shared/components'
 import { EmptyStateLayout } from '@/shared/layouts'
 import {
@@ -432,9 +432,23 @@ export function OrganismDetailPage() {
           </Dialog>
         )}
         <div className="flex flex-col gap-2">
-          <div>
-            <h1 className="font-display text-display font-semibold italic text-ink-primary">{organism.scientificName}</h1>
-            {organism.commonName && <p className="mt-1 font-ui text-body text-ink-tertiary">{organism.commonName}</p>}
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <h1 className="font-display text-display font-semibold italic text-ink-primary">{organism.scientificName}</h1>
+              {organism.commonName && <p className="mt-1 font-ui text-body text-ink-tertiary">{organism.commonName}</p>}
+            </div>
+            <Button
+              variant="secondary"
+              size="small"
+              icon={<Scales size={16} />}
+              onClick={() =>
+                navigate(
+                  `/comparison/new?itemAName=${encodeURIComponent(organism.commonName ?? organism.scientificName)}&itemARefKind=organism&itemARefId=${encodeURIComponent(organism.id)}`
+                )
+              }
+            >
+              Compare with…
+            </Button>
           </div>
           <div className="flex flex-wrap items-center gap-1.5">
             {headerBadges.map((badge) => (
