@@ -1,0 +1,76 @@
+{
+  "id": "comp-enterobacterales-vs-nonfermenting-gnb",
+  "domain": "bacteriology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "gram-negative",
+    "identification",
+    "clinical-microbiology"
+  ],
+  "itemA": {
+    "name": "Enterobacterales"
+  },
+  "itemB": {
+    "name": "Non-fermenting Gram-negative Bacilli"
+  },
+  "overview": "The first fork in the road when a Gram-negative rod grows on MacConkey agar, and it changes the entire identification and treatment pathway.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A large order of Gram-negative rods (family Enterobacteriaceae and relatives) that ferment glucose, oxidase-negative, and typically found in the gut.",
+      "valueB": "A diverse group of Gram-negative rods that do not ferment glucose oxidatively/fermentatively in the classic sense and are often oxidase-positive."
+    },
+    {
+      "id": "glucose-fermentation",
+      "label": "Glucose Fermentation",
+      "valueA": "Ferments glucose (fermentative metabolism).",
+      "valueB": "Utilizes glucose oxidatively or not at all — non-fermentative.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "oxidase-reaction",
+      "label": "Oxidase Reaction",
+      "valueA": "Oxidase-negative (with rare exceptions).",
+      "valueB": "Frequently oxidase-positive (e.g. Pseudomonas), though not universal (e.g. Acinetobacter is oxidase-negative).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "representative-genera",
+      "label": "Representative Genera",
+      "valueA": "Escherichia, Klebsiella, Proteus, Salmonella, Shigella, Enterobacter.",
+      "valueB": "Pseudomonas, Acinetobacter, Stenotrophomonas, Burkholderia."
+    },
+    {
+      "id": "natural-habitat",
+      "label": "Natural Habitat",
+      "valueA": "Predominantly gastrointestinal tract flora, some environmental.",
+      "valueB": "Predominantly environmental (water, soil, moist hospital surfaces), with some human colonization."
+    },
+    {
+      "id": "intrinsic-resistance-pattern",
+      "label": "Intrinsic Resistance Pattern",
+      "valueA": "Generally more broadly antibiotic-susceptible at baseline, though acquired resistance is common.",
+      "valueB": "Often intrinsically resistant to many antibiotic classes, making empiric therapy more limited from the start."
+    },
+    {
+      "id": "clinical-context",
+      "label": "Clinical Context",
+      "valueA": "Classic causes of UTIs, gut-associated infections, and community/hospital bacteremia.",
+      "valueB": "Classic causes of hospital-acquired and ventilator-associated pneumonia, especially in ICU settings."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Ferments glucose, oxidase-negative, gut-associated.",
+      "valueB": "Non-fermentative, often oxidase-positive, environment/hospital-associated.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

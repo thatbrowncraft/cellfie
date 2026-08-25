@@ -1,0 +1,80 @@
+{
+  "id": "comp-spyogenes-vs-sagalactiae",
+  "domain": "bacteriology",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "streptococcus",
+    "lancefield",
+    "identification"
+  ],
+  "itemA": {
+    "name": "Streptococcus pyogenes",
+    "refKind": "organism",
+    "refId": "streptococcus-pyogenes"
+  },
+  "itemB": {
+    "name": "Streptococcus agalactiae",
+    "refKind": "organism",
+    "refId": "streptococcus-agalactiae"
+  },
+  "overview": "Two beta-hemolytic streptococci separated by Lancefield grouping and, most importantly, by which patients they threaten.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Group A Streptococcus (GAS), a beta-hemolytic strep responsible for pharyngitis and invasive skin infections.",
+      "valueB": "Group B Streptococcus (GBS), a beta-hemolytic strep best known as a cause of neonatal sepsis."
+    },
+    {
+      "id": "lancefield-group",
+      "label": "Lancefield Group",
+      "valueA": "Group A.",
+      "valueB": "Group B.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "hemolysis",
+      "label": "Hemolysis",
+      "valueA": "Beta-hemolytic.",
+      "valueB": "Beta-hemolytic (typically narrower zone than Group A)."
+    },
+    {
+      "id": "key-population-at-risk",
+      "label": "Key Population at Risk",
+      "valueA": "School-age children (pharyngitis), any age (skin/soft tissue, invasive disease).",
+      "valueB": "Neonates (via vertical transmission during delivery) and pregnant women.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "screening-test",
+      "label": "Relevant Screening/Identification Test",
+      "valueA": "Bacitracin sensitivity (sensitive) helps distinguish it from Group B.",
+      "valueB": "CAMP test positive and bacitracin-resistant; routine antenatal rectovaginal screening at 35–37 weeks."
+    },
+    {
+      "id": "disease-spectrum",
+      "label": "Disease Spectrum",
+      "valueA": "Pharyngitis, impetigo, cellulitis, necrotizing fasciitis, toxic shock, post-strep sequelae (rheumatic fever, glomerulonephritis).",
+      "valueB": "Neonatal sepsis/meningitis, chorioamnionitis, and postpartum infections; occasionally invasive disease in adults with comorbidities."
+    },
+    {
+      "id": "prevention-strategy",
+      "label": "Prevention Strategy",
+      "valueA": "No routine antenatal screening; treatment is reactive to symptomatic infection.",
+      "valueB": "Universal antenatal screening with intrapartum antibiotic prophylaxis for colonized mothers."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Group A, bacitracin-sensitive, linked to post-infectious sequelae.",
+      "valueB": "Group B, CAMP-positive, linked to neonatal disease and antenatal screening.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

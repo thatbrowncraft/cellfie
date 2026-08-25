@@ -1,0 +1,70 @@
+{
+  "id": "comp-humoral-vs-cellmediated-immunity",
+  "domain": "immunology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "immunology",
+    "adaptive-immunity",
+    "fundamentals"
+  ],
+  "itemA": {
+    "name": "Humoral Immunity"
+  },
+  "itemB": {
+    "name": "Cell-Mediated Immunity"
+  },
+  "overview": "The adaptive immune system's two arms — one that sends soluble weapons into the blood, and one that sends cells to do the job directly.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Adaptive immunity mediated by antibodies produced by B lymphocytes/plasma cells, effective against extracellular pathogens and toxins.",
+      "valueB": "Adaptive immunity mediated directly by T lymphocytes, effective against intracellular pathogens and abnormal (infected or tumor) cells."
+    },
+    {
+      "id": "main-effector-cells",
+      "label": "Main Effector Cells",
+      "valueA": "B lymphocytes and plasma cells.",
+      "valueB": "T lymphocytes, particularly cytotoxic (CD8+) and helper (CD4+) T cells.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "effector-molecule",
+      "label": "Key Effector Molecule/Mechanism",
+      "valueA": "Antibodies (immunoglobulins) that neutralize, opsonize, or activate complement.",
+      "valueB": "Direct cytotoxicity (perforin/granzyme) and cytokine release rather than a secreted molecule that circulates independently."
+    },
+    {
+      "id": "target-pathogens",
+      "label": "Primarily Targets",
+      "valueA": "Extracellular bacteria, toxins, and free virus particles in blood/lymph.",
+      "valueB": "Intracellular pathogens (viruses, some bacteria) hiding inside host cells, and tumor cells.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "transferability",
+      "label": "Transferability",
+      "valueA": "Can be transferred passively via serum/antibodies (e.g. maternal antibodies, immunoglobulin therapy).",
+      "valueB": "Cannot be transferred by serum alone — requires transfer of the actual T cells."
+    },
+    {
+      "id": "laboratory-assessment",
+      "label": "Laboratory Assessment",
+      "valueA": "Measured via antibody titers, ELISA, agglutination assays.",
+      "valueB": "Measured via delayed-type hypersensitivity skin tests, lymphocyte proliferation assays, or interferon-gamma release assays."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Antibody-based, targets extracellular threats.",
+      "valueB": "Cell-based, targets intracellular threats.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

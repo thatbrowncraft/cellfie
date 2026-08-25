@@ -1,0 +1,80 @@
+{
+  "id": "comp-paeruginosa-vs-abaumannii",
+  "domain": "bacteriology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "non-fermenters",
+    "hospital-acquired-infection",
+    "resistance"
+  ],
+  "itemA": {
+    "name": "Pseudomonas aeruginosa",
+    "refKind": "organism",
+    "refId": "pseudomonas-aeruginosa"
+  },
+  "itemB": {
+    "name": "Acinetobacter baumannii",
+    "refKind": "organism",
+    "refId": "acinetobacter-baumannii"
+  },
+  "overview": "Two of the most feared non-fermenting Gram-negative rods in hospital-acquired infection, distinguished at the bench by a single simple test.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A motile, oxidase-positive non-fermenter, often producing a blue-green pigment (pyocyanin) and a grape-like odor.",
+      "valueB": "A non-motile, oxidase-negative coccobacillus notorious for surviving on dry hospital surfaces and acquiring resistance genes."
+    },
+    {
+      "id": "oxidase-test",
+      "label": "Oxidase Test",
+      "valueA": "Positive.",
+      "valueB": "Negative.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "motility",
+      "label": "Motility",
+      "valueA": "Motile via a single polar flagellum.",
+      "valueB": "Non-motile.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "pigment-odor",
+      "label": "Pigment / Odor",
+      "valueA": "Often produces blue-green pyocyanin pigment and a sweet, grape-like odor.",
+      "valueB": "Typically non-pigmented, without a distinctive odor."
+    },
+    {
+      "id": "environmental-resilience",
+      "label": "Environmental Resilience",
+      "valueA": "Thrives in moist environments (sinks, respiratory equipment, water systems).",
+      "valueB": "Notably resilient on dry surfaces, allowing prolonged survival and outbreak potential in ICUs."
+    },
+    {
+      "id": "resistance-mechanism",
+      "label": "Key Resistance Concern",
+      "valueA": "Intrinsic resistance plus efflux pumps and inducible AmpC; can develop carbapenem resistance via porin loss/efflux.",
+      "valueB": "Rapidly acquires resistance genes, frequently reaching extensively drug-resistant (XDR) or pandrug-resistant status via carbapenemases."
+    },
+    {
+      "id": "typical-infections",
+      "label": "Typical Infections",
+      "valueA": "Ventilator-associated pneumonia, burn wound infections, cystic fibrosis chronic lung infection.",
+      "valueB": "Ventilator-associated pneumonia and bloodstream infections, especially in trauma and burn units and after prolonged ICU stays."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Oxidase-positive, motile, pigmented.",
+      "valueB": "Oxidase-negative, non-motile, notorious for surface persistence and rapid resistance acquisition.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

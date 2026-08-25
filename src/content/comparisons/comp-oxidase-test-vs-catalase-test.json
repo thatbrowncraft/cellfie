@@ -1,0 +1,76 @@
+{
+  "id": "comp-oxidase-test-vs-catalase-test",
+  "domain": "laboratory-technique",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "biochemical-test",
+    "gram-negative",
+    "identification"
+  ],
+  "itemA": {
+    "name": "Oxidase Test",
+    "refKind": "laboratory",
+    "refId": "test-oxidase",
+    "labCategory": "biochemical-test"
+  },
+  "itemB": {
+    "name": "Catalase Test",
+    "refKind": "laboratory",
+    "refId": "test-catalase",
+    "labCategory": "biochemical-test"
+  },
+  "overview": "Two enzyme-detection tests that sort bacteria along completely different axes — one metabolic, one protective.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Detects cytochrome c oxidase, an enzyme in the electron transport chain of aerobic and some facultative organisms.",
+      "valueB": "Detects catalase, an enzyme that breaks down hydrogen peroxide into water and oxygen."
+    },
+    {
+      "id": "principle",
+      "label": "Principle",
+      "valueA": "A reagent (tetramethyl-p-phenylenediamine) turns dark purple/blue within seconds if oxidase is present.",
+      "valueB": "Hydrogen peroxide added to growth produces visible gas bubbles if catalase is present.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "target-organisms",
+      "label": "Typical Use",
+      "valueA": "Distinguishes oxidase-positive organisms like Pseudomonas and Neisseria from oxidase-negative Enterobacterales.",
+      "valueB": "Distinguishes catalase-positive Staphylococcus/Micrococcus from catalase-negative Streptococcus/Enterococcus."
+    },
+    {
+      "id": "what-it-reveals",
+      "label": "What It Reveals",
+      "valueA": "Presence of an aerobic respiratory chain component — helps separate major Gram-negative bacterial groups.",
+      "valueB": "Presence of an oxidative-stress defense enzyme — helps separate major Gram-positive coccal groups.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "procedure",
+      "label": "Procedure",
+      "valueA": "Rub a colony onto reagent-impregnated filter paper or strip.",
+      "valueB": "Add hydrogen peroxide directly to a colony on a slide or in a tube."
+    },
+    {
+      "id": "clinical-example",
+      "label": "Clinical Example Use",
+      "valueA": "Oxidase-positive Pseudomonas aeruginosa vs oxidase-negative Klebsiella pneumoniae.",
+      "valueB": "Catalase-positive Staphylococcus aureus vs catalase-negative Streptococcus pyogenes."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Detects an aerobic respiratory enzyme, mainly used for Gram-negative rods.",
+      "valueB": "Detects an oxidative-defense enzyme, mainly used for Gram-positive cocci.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

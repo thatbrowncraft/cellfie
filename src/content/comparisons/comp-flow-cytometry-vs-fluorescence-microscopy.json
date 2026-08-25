@@ -1,0 +1,76 @@
+{
+  "id": "comp-flow-cytometry-vs-fluorescence-microscopy",
+  "domain": "diagnostics",
+  "difficulty": "expert",
+  "frequency": "specialized",
+  "audience": [
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "immunology",
+    "cell-analysis",
+    "instrumentation"
+  ],
+  "itemA": {
+    "name": "Flow Cytometry"
+  },
+  "itemB": {
+    "name": "Fluorescence Microscopy"
+  },
+  "overview": "Both rely on fluorescent labeling to study cells, but one is built for speed and numbers, the other for spatial detail.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Rapidly analyzes and quantifies thousands of individual cells in suspension as they pass single-file through a laser, measuring multiple fluorescent and scatter parameters per cell.",
+      "valueB": "Visualizes fixed or live cells on a slide or in culture, capturing spatial and morphological detail using fluorescently labeled targets."
+    },
+    {
+      "id": "throughput",
+      "label": "Throughput",
+      "valueA": "Very high — can analyze thousands to millions of cells per sample in minutes.",
+      "valueB": "Much lower — limited to the cells present in a given field of view at a time.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "spatial-information",
+      "label": "Spatial Information",
+      "valueA": "No spatial or morphological image is retained — data is purely quantitative per-cell measurements.",
+      "valueB": "Preserves spatial context: cell shape, subcellular localization, and tissue architecture are directly visible.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "quantitative-multiparameter-capability",
+      "label": "Multiparameter Quantitative Capability",
+      "valueA": "Excellent for simultaneously quantifying multiple markers per cell across a large population (e.g. immunophenotyping).",
+      "valueB": "Can multiplex several fluorescent markers per image, but with less standardized single-cell quantification at scale."
+    },
+    {
+      "id": "cell-sorting",
+      "label": "Cell Sorting Capability",
+      "valueA": "Can physically sort live cells into separate populations based on their fluorescence profile (FACS).",
+      "valueB": "No physical sorting capability — purely observational/imaging."
+    },
+    {
+      "id": "sample-requirement",
+      "label": "Sample Requirement",
+      "valueA": "Requires cells in single-cell suspension; not suited to intact tissue architecture.",
+      "valueB": "Can be used on intact tissue sections, adherent cultures, or suspensions."
+    },
+    {
+      "id": "typical-applications",
+      "label": "Typical Applications",
+      "valueA": "Immunophenotyping (e.g. CD4/CD8 T cell counts), cell cycle analysis, rare cell population detection.",
+      "valueB": "Localizing proteins within a cell, studying tissue architecture, live-cell dynamic imaging."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "High-throughput quantification with no spatial image.",
+      "valueB": "Spatial/morphological imaging with lower throughput.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

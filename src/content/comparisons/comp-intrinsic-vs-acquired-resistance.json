@@ -1,0 +1,70 @@
+{
+  "id": "comp-intrinsic-vs-acquired-resistance",
+  "domain": "bacteriology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "antimicrobial-resistance",
+    "bacteriology",
+    "pharmacology"
+  ],
+  "itemA": {
+    "name": "Intrinsic Resistance"
+  },
+  "itemB": {
+    "name": "Acquired Resistance"
+  },
+  "overview": "Some bacteria were never going to respond to a given antibiotic; others start out susceptible and change.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Natural, inherent resistance possessed by essentially all members of a species or genus, independent of prior antibiotic exposure.",
+      "valueB": "Resistance that develops in a previously susceptible organism, through mutation or acquisition of new genetic material."
+    },
+    {
+      "id": "genetic-basis",
+      "label": "Genetic Basis",
+      "valueA": "Encoded on the core chromosome, a stable and universal species trait (e.g. an outer membrane that excludes a drug).",
+      "valueB": "Arises from spontaneous chromosomal mutation or acquisition of mobile genetic elements (plasmids, transposons).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "predictability",
+      "label": "Predictability",
+      "valueA": "Fully predictable — every strain of the species will be resistant, so susceptibility testing for that drug is not performed.",
+      "valueB": "Unpredictable at the species level — must be tested for individually in each isolate, since some strains are resistant and others are not.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "mechanism-examples",
+      "label": "Mechanism Examples",
+      "valueA": "Absence of the drug's target, an impermeable outer membrane, or a constitutive efflux pump.",
+      "valueB": "New enzyme production (e.g. beta-lactamase), altered target site by mutation, acquired efflux pump upregulation."
+    },
+    {
+      "id": "classic-examples",
+      "label": "Classic Examples",
+      "valueA": "Vancomycin against Gram-negative bacteria (can't cross the outer membrane).",
+      "valueB": "Methicillin resistance in Staphylococcus aureus (MRSA) via acquisition of the mecA gene."
+    },
+    {
+      "id": "spread-potential",
+      "label": "Spread Potential",
+      "valueA": "Not transferable — it's simply part of what the species is.",
+      "valueB": "Can spread horizontally between bacteria via plasmids, contributing to outbreak-level resistance."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Universal to the species, not tested for individually.",
+      "valueB": "Variable between strains, must be tested for and can spread horizontally.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

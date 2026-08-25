@@ -1,0 +1,80 @@
+{
+  "id": "comp-aerobic-vs-anaerobic-bacteria",
+  "domain": "microbiology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "oxygen-requirement",
+    "metabolism",
+    "culture"
+  ],
+  "itemA": {
+    "name": "Aerobic Bacteria"
+  },
+  "itemB": {
+    "name": "Anaerobic Bacteria"
+  },
+  "overview": "Oxygen tolerance shapes how an organism generates energy and how it must be cultured in the lab.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Bacteria that require oxygen for growth, using it as the final electron acceptor in aerobic respiration.",
+      "valueB": "Bacteria that grow without oxygen; many are actively harmed or killed by it."
+    },
+    {
+      "id": "oxygen-requirement",
+      "label": "Oxygen Requirement",
+      "valueA": "Obligate aerobes need atmospheric O2; some are facultative and can also grow without it.",
+      "valueB": "Obligate anaerobes cannot tolerate O2; some are aerotolerant and survive brief exposure without using it.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "energy-metabolism",
+      "label": "Energy Metabolism",
+      "valueA": "Aerobic respiration, with oxygen as the terminal electron acceptor and a full electron transport chain.",
+      "valueB": "Fermentation or anaerobic respiration using alternative terminal electron acceptors (e.g. sulfate, nitrate) or substrate-level phosphorylation."
+    },
+    {
+      "id": "toxic-oxygen-defense",
+      "label": "Defense Against Reactive Oxygen Species",
+      "valueA": "Produce catalase and/or superoxide dismutase to neutralize peroxide and superoxide byproducts.",
+      "valueB": "Obligate anaerobes typically lack catalase/superoxide dismutase, leaving them vulnerable to oxidative damage.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "culture-conditions",
+      "label": "Culture Conditions",
+      "valueA": "Grown in ambient air or with added CO2; no special atmosphere needed for most.",
+      "valueB": "Require anaerobic jars, chambers, or reducing media (e.g. thioglycolate broth) to exclude oxygen."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Pseudomonas aeruginosa, Mycobacterium tuberculosis.",
+      "valueB": "Clostridium species, Bacteroides fragilis."
+    },
+    {
+      "id": "clinical-context",
+      "label": "Clinical Context",
+      "valueA": "Common in wound and respiratory infections exposed to air.",
+      "valueB": "Associated with deep abscesses, necrotic tissue, and infections with a foul odor from fermentation byproducts."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Requires oxygen and can neutralize its toxic byproducts.",
+      "valueB": "Cannot tolerate oxygen due to lack of protective enzymes.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "No catalase/SOD is the mechanistic reason anaerobes fear oxygen — not just habitat preference.",
+    "commonMisconception": "\"Anaerobic\" doesn't mean weak or slow-growing — many anaerobes cause aggressive, foul-smelling infections."
+  },
+  "lastVerified": "2026-08-25"
+}

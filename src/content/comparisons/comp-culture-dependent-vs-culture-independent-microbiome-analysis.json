@@ -1,0 +1,75 @@
+{
+  "id": "comp-culture-dependent-vs-culture-independent-microbiome-analysis",
+  "domain": "diagnostics",
+  "difficulty": "expert",
+  "frequency": "specialized",
+  "audience": [
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "microbiome",
+    "culture",
+    "sequencing"
+  ],
+  "itemA": {
+    "name": "Culture-Dependent Microbiome Analysis"
+  },
+  "itemB": {
+    "name": "Culture-Independent Microbiome Analysis"
+  },
+  "overview": "For decades, microbiology could only see what it could grow — and it turns out that was only a small slice of what's actually there.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Characterizes a microbial community by growing organisms on selective/enriched media and identifying the isolates that grow.",
+      "valueB": "Characterizes a microbial community directly from extracted nucleic acids (e.g. 16S sequencing, shotgun metagenomics), without requiring growth."
+    },
+    {
+      "id": "detection-of-unculturable-organisms",
+      "label": "Detection of Unculturable Organisms",
+      "valueA": "Misses the large fraction of microbial taxa that cannot be grown under standard laboratory conditions ('the great plate count anomaly').",
+      "valueB": "Detects both culturable and unculturable organisms, since it doesn't depend on growth at all.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "live-vs-dead-distinction",
+      "label": "Live vs Dead Distinction",
+      "valueA": "Only detects living, viable, culturable organisms by definition.",
+      "valueB": "Can detect DNA from both live and dead cells unless paired with a viability-selective step (e.g. PMA treatment)."
+    },
+    {
+      "id": "phenotypic-information",
+      "label": "Phenotypic Information Available",
+      "valueA": "Provides direct phenotypic data: antibiotic susceptibility, growth characteristics, biochemical profile.",
+      "valueB": "Provides genotypic/sequence data only; phenotype must be inferred or confirmed separately."
+    },
+    {
+      "id": "relative-abundance-accuracy",
+      "label": "Relative Abundance Accuracy",
+      "valueA": "Skewed toward fast-growing, easily culturable organisms, misrepresenting the true community structure.",
+      "valueB": "More representative of true relative abundance, though still subject to extraction and amplification biases."
+    },
+    {
+      "id": "cost-and-turnaround",
+      "label": "Cost and Turnaround",
+      "valueA": "Generally cheaper for a single known target but slow for full community profiling (days for growth).",
+      "valueB": "Often faster for full community characterization once sequencing infrastructure is in place, though data analysis adds its own time."
+    },
+    {
+      "id": "typical-use-case",
+      "label": "Typical Use Case",
+      "valueA": "Confirming a specific pathogen and getting an antibiogram for treatment decisions.",
+      "valueB": "Comprehensive community-wide research studies, discovery of novel or fastidious organisms."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Only detects organisms that grow, but yields phenotypic data.",
+      "valueB": "Detects the whole community regardless of culturability, but yields only genotypic data.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

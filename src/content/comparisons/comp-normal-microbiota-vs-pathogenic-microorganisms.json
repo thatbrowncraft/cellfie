@@ -1,0 +1,72 @@
+{
+  "id": "comp-normal-microbiota-vs-pathogenic-microorganisms",
+  "domain": "microbiology",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "microbiota",
+    "pathogenesis",
+    "fundamentals"
+  ],
+  "itemA": {
+    "name": "Normal Microbiota"
+  },
+  "itemB": {
+    "name": "Pathogenic Microorganisms"
+  },
+  "overview": "The line between 'friend' and 'foe' in microbiology is often about context and host state, not a fixed label on the organism.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Microorganisms that routinely and harmlessly colonize body sites (skin, gut, mouth) in a healthy host.",
+      "valueB": "Microorganisms capable of causing disease by invading tissue, producing toxins, or triggering damaging immune responses."
+    },
+    {
+      "id": "relationship-with-host",
+      "label": "Relationship With Host",
+      "valueA": "Commensal or mutualistic — often provides benefits like nutrient synthesis or colonization resistance.",
+      "valueB": "Parasitic — causes tissue damage or dysfunction, directly or via the immune response.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "location",
+      "label": "Typical Location",
+      "valueA": "Confined to colonized surfaces: skin, gut, oral cavity, vagina.",
+      "valueB": "Can invade normally sterile sites (blood, CSF, tissue) or overgrow at a colonized site."
+    },
+    {
+      "id": "opportunistic-potential",
+      "label": "Opportunistic Potential",
+      "valueA": "Can become pathogenic if displaced to a sterile site or if the host is immunocompromised (opportunistic pathogens).",
+      "valueB": "Some pathogens only cause disease under specific conditions (opportunists); others are pathogenic in any healthy host (true pathogens)."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Escherichia coli in the gut, Staphylococcus epidermidis on skin.",
+      "valueB": "Vibrio cholerae, Mycobacterium tuberculosis, Neisseria meningitidis."
+    },
+    {
+      "id": "lab-interpretation",
+      "label": "Laboratory Interpretation",
+      "valueA": "Growth of expected flora at a colonized site is usually not treated.",
+      "valueB": "Growth of a known pathogen — or of any organism from a sterile site — is clinically significant."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Coexists with the host without causing harm at its normal site.",
+      "valueB": "Causes tissue damage or disease, either intrinsically or given the right conditions.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "commonMisconception": "The same species can be normal flora in one site and a pathogen in another — it's about location and host state, not just identity."
+  },
+  "lastVerified": "2026-08-25"
+}

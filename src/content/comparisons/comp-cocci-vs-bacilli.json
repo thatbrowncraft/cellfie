@@ -1,0 +1,79 @@
+{
+  "id": "comp-cocci-vs-bacilli",
+  "domain": "microbiology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "morphology",
+    "bacteriology",
+    "microscopy"
+  ],
+  "itemA": {
+    "name": "Cocci"
+  },
+  "itemB": {
+    "name": "Bacilli"
+  },
+  "overview": "The first split most learners make when looking down a microscope: shape.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Spherical or round-shaped bacteria; can occur singly, in pairs, chains, or clusters.",
+      "valueB": "Rod-shaped bacteria; can be straight, curved, or club-shaped, and occur singly or in chains."
+    },
+    {
+      "id": "shape-arrangement",
+      "label": "Shape & Arrangement",
+      "valueA": "Round cells named by arrangement: diplococci (pairs), streptococci (chains), staphylococci (clusters), tetrads.",
+      "valueB": "Elongated cells named by arrangement: single bacilli, streptobacilli (chains), coccobacilli (short, oval rods).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "examples",
+      "label": "Common Examples",
+      "valueA": "Staphylococcus aureus, Streptococcus pyogenes, Neisseria species.",
+      "valueB": "Escherichia coli, Bacillus subtilis, Mycobacterium tuberculosis."
+    },
+    {
+      "id": "gram-reaction",
+      "label": "Relationship to Gram Reaction",
+      "valueA": "Shape is independent of Gram reaction — both Gram-positive and Gram-negative cocci exist.",
+      "valueB": "Shape is independent of Gram reaction — both Gram-positive and Gram-negative bacilli exist."
+    },
+    {
+      "id": "motility",
+      "label": "Motility",
+      "valueA": "Generally non-motile (cocci rarely have flagella).",
+      "valueB": "Often motile via flagella, though many genera are non-motile."
+    },
+    {
+      "id": "spore-formation",
+      "label": "Spore Formation",
+      "valueA": "Endospore formation is rare among cocci.",
+      "valueB": "Several genera (Bacillus, Clostridium) form endospores, an identifying feature."
+    },
+    {
+      "id": "lab-identification",
+      "label": "Laboratory Identification",
+      "valueA": "Morphology on Gram stain plus arrangement pattern is often the first clue to genus.",
+      "valueB": "Morphology, arrangement, and spore stain/motility testing help narrow genus."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Round/spherical cell shape.",
+      "valueB": "Rod/elongated cell shape.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Shape narrows the field before Gram stain or biochemistry ever runs.",
+    "memoryTrick": "\"Cocci\" sounds round, \"bacilli\" sounds like a stick — literally."
+  },
+  "lastVerified": "2026-08-25"
+}

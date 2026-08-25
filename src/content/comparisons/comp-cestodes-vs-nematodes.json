@@ -1,0 +1,70 @@
+{
+  "id": "comp-cestodes-vs-nematodes",
+  "domain": "parasitology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "helminths",
+    "parasitology",
+    "morphology"
+  ],
+  "itemA": {
+    "name": "Cestodes"
+  },
+  "itemB": {
+    "name": "Nematodes"
+  },
+  "overview": "Two very different worm body plans that cause overlapping but distinct disease patterns in humans.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Flatworms (tapeworms) with a flattened, ribbon-like, segmented body made up of repeating proglottids.",
+      "valueB": "Roundworms with a cylindrical, unsegmented body and a complete digestive tract."
+    },
+    {
+      "id": "body-plan",
+      "label": "Body Plan",
+      "valueA": "Flat, ribbon-shaped, segmented into a scolex and a chain of proglottids.",
+      "valueB": "Round in cross-section, unsegmented, tapering at both ends.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "digestive-system",
+      "label": "Digestive System",
+      "valueA": "No digestive tract — nutrients are absorbed directly across the body surface (tegument).",
+      "valueB": "Complete digestive tract with a mouth and anus.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "reproductive-anatomy",
+      "label": "Reproductive Anatomy",
+      "valueA": "Most proglottids are hermaphroditic, each containing both male and female reproductive organs.",
+      "valueB": "Generally have separate sexes (dioecious), with distinguishable male and female worms."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Taenia solium, Taenia saginata, Echinococcus granulosus.",
+      "valueB": "Ascaris lumbricoides, Enterobius vermicularis, hookworms, Strongyloides."
+    },
+    {
+      "id": "transmission-route",
+      "label": "Common Transmission Route",
+      "valueA": "Ingestion of larval cysts in undercooked meat.",
+      "valueB": "Varies widely: ingestion of eggs, larval skin penetration, or vector transmission depending on species."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Flat, segmented, no gut, hermaphroditic.",
+      "valueB": "Round, unsegmented, complete gut, separate sexes.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

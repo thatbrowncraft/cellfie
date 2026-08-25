@@ -1,0 +1,76 @@
+{
+  "id": "comp-16s-rrna-sequencing-vs-shotgun-metagenomics",
+  "domain": "molecular-biology",
+  "difficulty": "expert",
+  "frequency": "specialized",
+  "audience": [
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "metagenomics",
+    "sequencing",
+    "microbiome"
+  ],
+  "itemA": {
+    "name": "16S rRNA Sequencing"
+  },
+  "itemB": {
+    "name": "Shotgun Metagenomics"
+  },
+  "overview": "Two ways to profile a microbial community — one reads a single universal marker gene, the other reads everything.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Sequences a targeted, PCR-amplified region of the 16S ribosomal RNA gene, a marker present in all bacteria and archaea, to identify community members.",
+      "valueB": "Sequences all DNA present in a sample without targeted amplification, capturing genetic material from every organism present, including function-encoding genes."
+    },
+    {
+      "id": "target-scope",
+      "label": "Target Scope",
+      "valueA": "Targets only the 16S rRNA gene (or a variable region of it) via PCR amplification.",
+      "valueB": "Captures the entire genomic content of the sample — all organisms and all genes, not just one marker.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "taxonomic-resolution",
+      "label": "Taxonomic Resolution",
+      "valueA": "Usually resolves to genus level reliably; species- or strain-level resolution is often limited.",
+      "valueB": "Can achieve species- and strain-level resolution, given sufficient sequencing depth.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "functional-information",
+      "label": "Functional Information",
+      "valueA": "Provides essentially no direct functional gene information — only taxonomic identity.",
+      "valueB": "Directly captures functional genes (e.g. antibiotic resistance genes, metabolic pathways), enabling functional profiling."
+    },
+    {
+      "id": "cost-and-data-volume",
+      "label": "Cost and Data Volume",
+      "valueA": "Lower cost and smaller, more manageable data volume per sample.",
+      "valueB": "Higher cost and much larger data volume, requiring more computational resources."
+    },
+    {
+      "id": "bias-considerations",
+      "label": "Bias Considerations",
+      "valueA": "Subject to PCR primer bias, which can under- or over-represent certain taxa.",
+      "valueB": "Avoids PCR amplification bias but can be skewed by host DNA contamination in low-biomass samples."
+    },
+    {
+      "id": "typical-applications",
+      "label": "Typical Applications",
+      "valueA": "Rapid, cost-effective community composition surveys (e.g. gut microbiome diversity studies).",
+      "valueB": "In-depth functional and taxonomic characterization, novel organism discovery, antibiotic resistance gene surveillance."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Targets one marker gene, cheaper, genus-level.",
+      "valueB": "Sequences all DNA, more expensive, species-level with functional data.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

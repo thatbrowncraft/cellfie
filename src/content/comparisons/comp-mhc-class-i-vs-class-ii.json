@@ -1,0 +1,70 @@
+{
+  "id": "comp-mhc-class-i-vs-class-ii",
+  "domain": "immunology",
+  "difficulty": "advanced",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "immunology",
+    "antigen-presentation",
+    "mhc"
+  ],
+  "itemA": {
+    "name": "MHC Class I"
+  },
+  "itemB": {
+    "name": "MHC Class II"
+  },
+  "overview": "Two antigen-presentation systems that tell T cells whether a threat is hiding inside a cell or lurking outside it.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Molecules expressed on nearly all nucleated cells, presenting endogenous (intracellular) peptide antigens.",
+      "valueB": "Molecules expressed mainly on professional antigen-presenting cells, presenting exogenous (extracellular/phagocytosed) peptide antigens."
+    },
+    {
+      "id": "cellular-expression",
+      "label": "Cellular Expression",
+      "valueA": "Virtually all nucleated cells.",
+      "valueB": "Restricted mainly to dendritic cells, macrophages, and B cells.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "antigen-source",
+      "label": "Antigen Source",
+      "valueA": "Endogenous — proteins synthesized within the cell (e.g. viral proteins during infection).",
+      "valueB": "Exogenous — proteins engulfed and processed from outside the cell.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "t-cell-interaction",
+      "label": "T Cell Interaction",
+      "valueA": "Presents to CD8+ cytotoxic T cells.",
+      "valueB": "Presents to CD4+ helper T cells."
+    },
+    {
+      "id": "processing-pathway",
+      "label": "Processing Pathway",
+      "valueA": "Proteasome degrades cytosolic protein; peptides are loaded in the endoplasmic reticulum via TAP transporters.",
+      "valueB": "Phagolysosome degrades engulfed protein; peptides are loaded onto MHC II in a specialized vesicular compartment."
+    },
+    {
+      "id": "biological-purpose",
+      "label": "Biological Purpose",
+      "valueA": "Allows any infected cell to signal 'I'm infected' for direct cytotoxic killing.",
+      "valueB": "Allows antigen-presenting cells to activate helper T cells and orchestrate the broader immune response."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "On all nucleated cells, presents intracellular antigen to CD8+ T cells.",
+      "valueB": "On antigen-presenting cells only, presents extracellular antigen to CD4+ T cells.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

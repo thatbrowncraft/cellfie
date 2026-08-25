@@ -1,0 +1,70 @@
+{
+  "id": "comp-trophozoite-vs-cyst",
+  "domain": "parasitology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "protozoa",
+    "life-cycle",
+    "diagnosis"
+  ],
+  "itemA": {
+    "name": "Trophozoite"
+  },
+  "itemB": {
+    "name": "Cyst"
+  },
+  "overview": "Two forms the same protozoan takes — one built for feeding and moving, the other built for surviving the outside world.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The active, motile, feeding form of a protozoan parasite found in the host or in fresh, warm specimens.",
+      "valueB": "The dormant, resistant, non-feeding form that allows the parasite to survive outside the host and transmit to a new one."
+    },
+    {
+      "id": "motility",
+      "label": "Motility",
+      "valueA": "Motile, using pseudopods, flagella, or cilia depending on the organism.",
+      "valueB": "Non-motile.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "metabolic-activity",
+      "label": "Metabolic Activity",
+      "valueA": "Metabolically active — feeds, replicates (by binary fission).",
+      "valueB": "Metabolically dormant; a protective wall halts activity."
+    },
+    {
+      "id": "environmental-resistance",
+      "label": "Environmental Resistance",
+      "valueA": "Fragile — quickly destroyed outside the host (e.g. by stomach acid, drying).",
+      "valueB": "Resistant to gastric acid, desiccation, and chlorination, enabling fecal-oral transmission.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "infective-vs-diagnostic-stage",
+      "label": "Infective vs Diagnostic Stage",
+      "valueA": "Usually the diagnostic stage found in acute/dysenteric stool, but not typically the infective stage.",
+      "valueB": "Typically the infective stage ingested by a new host, and also a key diagnostic stage in formed stool."
+    },
+    {
+      "id": "example-organism",
+      "label": "Example Organism",
+      "valueA": "Entamoeba histolytica trophozoite, seen in acute amebic dysentery.",
+      "valueB": "Entamoeba histolytica cyst, seen in chronic or asymptomatic carriage and responsible for transmission."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Active, motile, fragile feeding form.",
+      "valueB": "Dormant, resistant, transmissible form.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

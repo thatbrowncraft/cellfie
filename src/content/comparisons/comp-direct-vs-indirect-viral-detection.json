@@ -1,0 +1,69 @@
+{
+  "id": "comp-direct-vs-indirect-viral-detection",
+  "domain": "diagnostics",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "virology",
+    "diagnostics",
+    "serology"
+  ],
+  "itemA": {
+    "name": "Direct Viral Detection"
+  },
+  "itemB": {
+    "name": "Indirect Viral Detection"
+  },
+  "overview": "One approach finds the virus itself; the other finds the footprints the immune system left behind after meeting it.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Methods that detect the virus itself or its components — antigen, nucleic acid, or intact particles.",
+      "valueB": "Methods that detect the host's immune response to the virus, typically antibodies, rather than the virus directly."
+    },
+    {
+      "id": "what-is-measured",
+      "label": "What Is Actually Measured",
+      "valueA": "Viral antigen, viral nucleic acid (RNA/DNA), or visualized virions.",
+      "valueB": "Host-produced antibodies (IgM, IgG) specific to the virus.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "timing-in-infection",
+      "label": "Timing in the Course of Infection",
+      "valueA": "Most useful early, during active infection when the virus is present.",
+      "valueB": "Often becomes positive later, after the immune system has had time to mount a response (seroconversion window)."
+    },
+    {
+      "id": "examples-of-methods",
+      "label": "Example Methods",
+      "valueA": "PCR/RT-PCR, antigen rapid tests, viral culture, electron microscopy.",
+      "valueB": "ELISA for IgM/IgG, neutralization assays, western blot for confirmatory serology."
+    },
+    {
+      "id": "clinical-use-case",
+      "label": "Typical Clinical Use",
+      "valueA": "Diagnosing acute, current infection.",
+      "valueB": "Confirming past infection or immune status, or diagnosing infections where a direct test window has passed."
+    },
+    {
+      "id": "limitations",
+      "label": "Key Limitations",
+      "valueA": "Can miss infection outside the window when virus is detectable (e.g. after clearance).",
+      "valueB": "Cannot distinguish active current infection from past exposure or vaccination in some cases; window period before seroconversion."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Detects the virus itself, best for acute infection.",
+      "valueB": "Detects the antibody response, best for confirming exposure/immune status.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

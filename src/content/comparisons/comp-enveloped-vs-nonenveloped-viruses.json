@@ -1,0 +1,73 @@
+{
+  "id": "comp-enveloped-vs-nonenveloped-viruses",
+  "domain": "virology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "virology",
+    "structure",
+    "disinfection"
+  ],
+  "itemA": {
+    "name": "Enveloped Viruses"
+  },
+  "itemB": {
+    "name": "Non-enveloped Viruses"
+  },
+  "overview": "Whether a virus steals a lipid membrane on its way out of the cell decides how fragile it is and what kills it.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Viruses surrounded by a lipid bilayer envelope, typically acquired from host cell membranes during budding.",
+      "valueB": "Viruses whose outermost layer is a protein capsid only, with no lipid membrane."
+    },
+    {
+      "id": "environmental-stability",
+      "label": "Environmental Stability",
+      "valueA": "Generally fragile — sensitive to drying, heat, detergents, and alcohol.",
+      "valueB": "Generally hardier — can survive on surfaces, in water, and resist many disinfectants for longer.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "disinfectant-susceptibility",
+      "label": "Disinfectant Susceptibility",
+      "valueA": "Easily inactivated by soap, alcohol-based hand rubs, and most standard disinfectants.",
+      "valueB": "Often resistant to alcohol and requires stronger measures (e.g. bleach) for reliable inactivation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "transmission-route",
+      "label": "Typical Transmission Route",
+      "valueA": "Often via respiratory droplets, blood, sexual contact, or requires direct contact due to fragility.",
+      "valueB": "Often via the fecal-oral route or fomites, since they survive well outside the host."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Influenza virus, HIV, herpesviruses, coronaviruses.",
+      "valueB": "Norovirus, poliovirus, rhinovirus, adenovirus (partially resistant)."
+    },
+    {
+      "id": "entry-mechanism",
+      "label": "Cell Entry Mechanism",
+      "valueA": "Membrane fusion between the viral envelope and host cell membrane.",
+      "valueB": "Receptor-mediated endocytosis or direct capsid penetration."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Has a lipid envelope, fragile outside the host.",
+      "valueB": "No lipid envelope, more environmentally resistant.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "If alcohol-based sanitizer 'doesn't work well' against a virus, suspect it's non-enveloped (e.g. norovirus)."
+  },
+  "lastVerified": "2026-08-25"
+}

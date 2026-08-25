@@ -1,0 +1,69 @@
+{
+  "id": "comp-disk-diffusion-vs-broth-microdilution",
+  "domain": "laboratory-technique",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "antimicrobial-susceptibility",
+    "diagnostics",
+    "clinical-microbiology"
+  ],
+  "itemA": {
+    "name": "Disk Diffusion"
+  },
+  "itemB": {
+    "name": "Broth Microdilution"
+  },
+  "overview": "Two standard ways to test whether an antibiotic will actually work against a specific isolate — one qualitative, one quantitative.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A qualitative method (Kirby-Bauer) where antibiotic-impregnated disks are placed on an inoculated agar plate and zones of inhibition are measured.",
+      "valueB": "A quantitative method where an organism is exposed to serial two-fold dilutions of an antibiotic in broth to determine the lowest concentration that inhibits visible growth (MIC)."
+    },
+    {
+      "id": "result-type",
+      "label": "Type of Result Produced",
+      "valueA": "Categorical: susceptible, intermediate, or resistant, based on zone diameter.",
+      "valueB": "Numeric: an exact minimum inhibitory concentration (MIC) in µg/mL.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "quantitative-precision",
+      "label": "Quantitative Precision",
+      "valueA": "Does not give an exact concentration, only a category.",
+      "valueB": "Gives a precise concentration value, useful for dosing decisions in critical infections."
+    },
+    {
+      "id": "automation-potential",
+      "label": "Automation Potential",
+      "valueA": "Largely manual, though zone reading can be automated with imaging systems.",
+      "valueB": "Well suited to automated systems (e.g. broth microdilution panels, automated readers)."
+    },
+    {
+      "id": "turnaround-and-cost",
+      "label": "Turnaround Time and Cost",
+      "valueA": "Relatively simple and inexpensive, standard 16–24 hour incubation.",
+      "valueB": "Similar turnaround time but generally requires more standardized equipment/panels, and can cost more per test."
+    },
+    {
+      "id": "clinical-scenarios-favoring-mic",
+      "label": "When MIC Value Specifically Matters",
+      "valueA": "Not applicable — Kirby-Bauer doesn't provide the numeric MIC needed for this.",
+      "valueB": "Preferred for serious infections (e.g. endocarditis, bacteremia) or when dosing needs to be tailored to a precise MIC/PK-PD target."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Categorical result from zone size.",
+      "valueB": "Precise numeric MIC value.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

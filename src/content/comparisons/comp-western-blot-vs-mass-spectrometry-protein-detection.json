@@ -1,0 +1,76 @@
+{
+  "id": "comp-western-blot-vs-mass-spectrometry-protein-detection",
+  "domain": "diagnostics",
+  "difficulty": "expert",
+  "frequency": "specialized",
+  "audience": [
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "proteomics",
+    "diagnostics",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "Western Blot"
+  },
+  "itemB": {
+    "name": "Mass Spectrometry-Based Protein Detection"
+  },
+  "overview": "One confirms a protein you already suspect is there; the other can discover proteins you never thought to look for.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Detects a specific, pre-selected protein using an antibody after separating proteins by size via gel electrophoresis and transferring them to a membrane.",
+      "valueB": "Identifies and quantifies proteins by measuring the mass-to-charge ratio of peptide fragments, matching the resulting spectra against protein databases."
+    },
+    {
+      "id": "targeted-vs-untargeted",
+      "label": "Targeted vs Untargeted Approach",
+      "valueA": "Targeted — requires a specific antibody against the protein of interest, decided in advance.",
+      "valueB": "Can be untargeted (discovery proteomics), identifying hundreds to thousands of proteins in a sample without prior selection.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "dependence-on-antibody-quality",
+      "label": "Dependence on Antibody Quality",
+      "valueA": "Entirely dependent on antibody specificity and quality; cross-reactivity can cause false results.",
+      "valueB": "No antibody required — identification is based on measured peptide mass and sequence matching.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "quantitative-precision",
+      "label": "Quantitative Precision",
+      "valueA": "Semi-quantitative at best, based on band intensity relative to a loading control.",
+      "valueB": "Can achieve precise, often absolute quantification, especially with labeled internal standards."
+    },
+    {
+      "id": "throughput-and-scale",
+      "label": "Throughput and Scale",
+      "valueA": "Low throughput — one or a few proteins per membrane, run individually.",
+      "valueB": "High throughput — capable of profiling an entire proteome in a single run."
+    },
+    {
+      "id": "equipment-and-cost",
+      "label": "Equipment and Cost",
+      "valueA": "Relatively inexpensive and widely accessible standard lab equipment.",
+      "valueB": "Requires expensive, specialized mass spectrometry instrumentation and dedicated bioinformatics expertise."
+    },
+    {
+      "id": "typical-applications",
+      "label": "Typical Applications",
+      "valueA": "Confirming expression or knockdown of a specific known protein.",
+      "valueB": "Discovery proteomics, post-translational modification mapping, biomarker discovery studies."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Antibody-based detection of one known protein at a time.",
+      "valueB": "Mass-based identification/quantification of many proteins at once, no antibody needed.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

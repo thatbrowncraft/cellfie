@@ -1,0 +1,75 @@
+{
+  "id": "comp-sanger-sequencing-vs-ngs",
+  "domain": "molecular-biology",
+  "difficulty": "expert",
+  "frequency": "common",
+  "audience": [
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "sequencing",
+    "genomics",
+    "molecular-diagnostics"
+  ],
+  "itemA": {
+    "name": "Sanger Sequencing"
+  },
+  "itemB": {
+    "name": "Next-Generation Sequencing (NGS)"
+  },
+  "overview": "The original gold-standard sequencing method versus the massively parallel technology that eventually made whole genomes routine.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A chain-termination method that sequences one DNA fragment (or a small number) per reaction, using dideoxynucleotides to stop synthesis at each base.",
+      "valueB": "A family of high-throughput methods that sequence millions of DNA fragments in parallel, then reconstruct the full sequence computationally."
+    },
+    {
+      "id": "throughput",
+      "label": "Throughput",
+      "valueA": "Low — typically one sequence read (500–1000 bp) per capillary run.",
+      "valueB": "Very high — millions to billions of reads generated per run.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "read-length",
+      "label": "Read Length",
+      "valueA": "Long, highly accurate reads, up to roughly 1000 bp.",
+      "valueB": "Historically shorter reads (commonly 100–300 bp for short-read platforms), though this varies by technology."
+    },
+    {
+      "id": "cost-per-base",
+      "label": "Cost per Base",
+      "valueA": "High cost per base for large-scale sequencing.",
+      "valueB": "Dramatically lower cost per base at scale, though instrument setup can be more expensive."
+    },
+    {
+      "id": "accuracy",
+      "label": "Per-Base Accuracy",
+      "valueA": "Very high per-base accuracy, still considered the gold standard for confirming a specific variant.",
+      "valueB": "High accuracy but with a wider range depending on platform and depends on adequate sequencing depth/coverage."
+    },
+    {
+      "id": "data-analysis-complexity",
+      "label": "Data Analysis Complexity",
+      "valueA": "Simple — each read can often be interpreted almost directly.",
+      "valueB": "Complex — requires bioinformatics pipelines for read alignment, assembly, and variant calling across huge datasets."
+    },
+    {
+      "id": "typical-applications",
+      "label": "Typical Applications",
+      "valueA": "Confirming a single known mutation, small-scale targeted sequencing, quality control of cloned constructs.",
+      "valueB": "Whole genome/exome sequencing, metagenomics, large-scale variant screening."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Low-throughput, long, highly accurate single reads.",
+      "valueB": "Massively parallel, high-throughput sequencing of many fragments at once.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

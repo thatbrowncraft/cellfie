@@ -1,0 +1,73 @@
+{
+  "id": "comp-rtpcr-vs-rtqpcr",
+  "domain": "diagnostics",
+  "difficulty": "expert",
+  "frequency": "common",
+  "audience": [
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "molecular-diagnostics",
+    "pcr",
+    "rna-detection"
+  ],
+  "itemA": {
+    "name": "RT-PCR"
+  },
+  "itemB": {
+    "name": "RT-qPCR"
+  },
+  "overview": "The naming here trips up a lot of people — 'RT' means reverse transcription, and it's easy to confuse with real-time.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Reverse Transcription PCR — converts an RNA target into complementary DNA (cDNA) via reverse transcriptase, then amplifies it by conventional end-point PCR.",
+      "valueB": "Reverse Transcription quantitative PCR — the same reverse transcription step, but followed by real-time quantitative PCR rather than end-point detection."
+    },
+    {
+      "id": "detection-method",
+      "label": "Detection Method",
+      "valueA": "End-point detection, typically via gel electrophoresis after amplification finishes.",
+      "valueB": "Real-time fluorescence detection during amplification, exactly as in standard qPCR.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "quantification",
+      "label": "Quantification",
+      "valueA": "Qualitative presence/absence, or at best rough semi-quantitative estimation.",
+      "valueB": "True quantification of starting RNA amount via Ct value and a standard curve.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "terminology-confusion",
+      "label": "Common Terminology Confusion",
+      "valueA": "'RT-PCR' is often loosely (and incorrectly) used in casual speech to mean 'real-time PCR.'",
+      "valueB": "The correct term for what most people actually mean when they say 'real-time RT-PCR' for RNA virus testing (e.g. SARS-CoV-2)."
+    },
+    {
+      "id": "typical-application",
+      "label": "Typical Application",
+      "valueA": "Basic detection of an RNA target's presence, cloning of cDNA for downstream work.",
+      "valueB": "Clinical RNA virus diagnostics and viral load monitoring, where both detection and quantification matter."
+    },
+    {
+      "id": "workflow-steps",
+      "label": "Workflow Steps",
+      "valueA": "Reverse transcription, then a separate conventional PCR, then gel visualization.",
+      "valueB": "Reverse transcription followed immediately by real-time PCR in the same or a coupled reaction, with continuous fluorescence monitoring."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "RNA target, end-point qualitative readout.",
+      "valueB": "RNA target, real-time quantitative readout.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "commonMisconception": "\"RT\" stands for reverse transcription, not real-time — the confusion between RT-PCR and real-time PCR is one of the most common mix-ups in molecular diagnostics."
+  },
+  "lastVerified": "2026-08-25"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "comp-primary-vs-secondary-immune-response",
+  "domain": "immunology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "immunology",
+    "adaptive-immunity",
+    "vaccination"
+  ],
+  "itemA": {
+    "name": "Primary Immune Response"
+  },
+  "itemB": {
+    "name": "Secondary Immune Response"
+  },
+  "overview": "The whole logic of vaccination rests on the difference between meeting an antigen for the first time and meeting it again.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The adaptive immune response generated on first exposure to a given antigen.",
+      "valueB": "The faster, stronger adaptive immune response generated on any subsequent exposure to the same antigen."
+    },
+    {
+      "id": "lag-phase",
+      "label": "Lag Phase Before Response",
+      "valueA": "Long lag phase (days) while naive lymphocytes are activated and expanded.",
+      "valueB": "Short lag phase — memory cells respond within hours to a couple of days.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "antibody-titer-and-class",
+      "label": "Antibody Titer and Class",
+      "valueA": "Lower peak titer; IgM predominates initially, with a later, more modest IgG rise.",
+      "valueB": "Higher peak titer, and much faster; predominantly IgG (or IgA) due to memory B cells and prior class switching.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "cells-involved",
+      "label": "Cells Involved",
+      "valueA": "Naive B and T lymphocytes.",
+      "valueB": "Memory B and T lymphocytes, which have already undergone clonal selection."
+    },
+    {
+      "id": "duration",
+      "label": "Duration of Response",
+      "valueA": "Response builds and declines over a longer timeframe.",
+      "valueB": "Response is quicker to peak and often more sustained."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Reflects the response after a first natural infection or first vaccine dose.",
+      "valueB": "Basis for booster doses and the anamnestic response measured in serology to confirm past exposure or vaccination."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Slow, IgM-dominant, from naive cells.",
+      "valueB": "Fast, IgG-dominant, from memory cells.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

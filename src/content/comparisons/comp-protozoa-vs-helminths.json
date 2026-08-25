@@ -1,0 +1,69 @@
+{
+  "id": "comp-protozoa-vs-helminths",
+  "domain": "parasitology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "parasitology",
+    "fundamentals",
+    "life-cycle"
+  ],
+  "itemA": {
+    "name": "Protozoa"
+  },
+  "itemB": {
+    "name": "Helminths"
+  },
+  "overview": "The two broad kingdoms of human parasites, split by something as basic as being single-celled or not.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Single-celled eukaryotic parasites capable of active movement and, in some cases, intracellular replication within the host.",
+      "valueB": "Multicellular worm parasites (flatworms and roundworms) that generally live extracellularly in the host."
+    },
+    {
+      "id": "cellularity",
+      "label": "Cellularity",
+      "valueA": "Unicellular.",
+      "valueB": "Multicellular, with differentiated organ systems.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "replication-in-host",
+      "label": "Replication in Host",
+      "valueA": "Many can multiply within the human host, sometimes leading to overwhelming infection from a small inoculum.",
+      "valueB": "Adult worms generally do not multiply in the human host; worm burden depends on repeated exposure."
+    },
+    {
+      "id": "diagnostic-approach",
+      "label": "Diagnostic Approach",
+      "valueA": "Microscopic identification of trophozoites/cysts in stool, blood, or tissue; some require special stains.",
+      "valueB": "Identification of eggs, larvae, or adult worms in stool, blood, or tissue; egg morphology is often diagnostic."
+    },
+    {
+      "id": "classic-examples",
+      "label": "Classic Examples",
+      "valueA": "Plasmodium (malaria), Entamoeba histolytica, Giardia lamblia.",
+      "valueB": "Ascaris lumbricoides, Taenia species, Schistosoma species."
+    },
+    {
+      "id": "eosinophilia-association",
+      "label": "Association With Eosinophilia",
+      "valueA": "Not typically associated with marked eosinophilia.",
+      "valueB": "Tissue-invasive helminth infections classically cause marked eosinophilia."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Single-celled, can multiply within the host.",
+      "valueB": "Multicellular, generally does not multiply within the host.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

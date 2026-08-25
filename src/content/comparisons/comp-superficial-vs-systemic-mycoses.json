@@ -1,0 +1,69 @@
+{
+  "id": "comp-superficial-vs-systemic-mycoses",
+  "domain": "mycology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "mycology",
+    "clinical",
+    "classification"
+  ],
+  "itemA": {
+    "name": "Superficial Mycoses"
+  },
+  "itemB": {
+    "name": "Systemic Mycoses"
+  },
+  "overview": "Fungal infections span a huge range of severity, from a cosmetic nuisance on skin to a life-threatening disseminated illness.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Fungal infections confined to the outermost layers of skin, hair, or nails, with no tissue invasion.",
+      "valueB": "Fungal infections that spread through the bloodstream to internal organs, often originating from lung inhalation."
+    },
+    {
+      "id": "tissue-depth",
+      "label": "Tissue Depth Involved",
+      "valueA": "Limited to keratinized, non-living tissue (stratum corneum, hair shaft, nail plate).",
+      "valueB": "Involves deep organs — lungs, liver, spleen, central nervous system, bone.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "host-immune-status",
+      "label": "Typical Host Immune Status",
+      "valueA": "Occurs in immunocompetent individuals as a common, usually benign condition.",
+      "valueB": "Often occurs in, or is far more severe in, immunocompromised hosts, though endemic mycoses can affect healthy people too."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Tinea (dermatophytosis), pityriasis versicolor.",
+      "valueB": "Histoplasmosis, coccidioidomycosis, invasive aspergillosis, cryptococcal meningitis."
+    },
+    {
+      "id": "severity-and-mortality",
+      "label": "Severity / Mortality Risk",
+      "valueA": "Rarely life-threatening; primarily a cosmetic or mildly symptomatic concern.",
+      "valueB": "Can be life-threatening, especially without prompt antifungal therapy."
+    },
+    {
+      "id": "treatment-approach",
+      "label": "Treatment Approach",
+      "valueA": "Topical antifungals are usually sufficient.",
+      "valueB": "Requires systemic antifungal therapy (e.g. amphotericin B, azoles), often for prolonged courses."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Confined to skin/hair/nails, rarely dangerous.",
+      "valueB": "Involves internal organs, potentially life-threatening.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

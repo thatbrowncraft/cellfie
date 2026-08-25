@@ -1,0 +1,70 @@
+{
+  "id": "comp-mic-vs-mbc",
+  "domain": "laboratory-technique",
+  "difficulty": "advanced",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "antimicrobial-susceptibility",
+    "pharmacology",
+    "diagnostics"
+  ],
+  "itemA": {
+    "name": "MIC"
+  },
+  "itemB": {
+    "name": "MBC"
+  },
+  "overview": "Two thresholds from the same broth dilution experiment — one tells you what stops growth, the other tells you what actually kills.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Minimum Inhibitory Concentration — the lowest antibiotic concentration that visibly inhibits bacterial growth after incubation.",
+      "valueB": "Minimum Bactericidal Concentration — the lowest antibiotic concentration that kills at least 99.9% of the original bacterial inoculum."
+    },
+    {
+      "id": "what-it-measures",
+      "label": "What It Actually Measures",
+      "valueA": "Growth inhibition — bacteria may still be viable but not growing/visible.",
+      "valueB": "Actual killing — measured by subculturing onto antibiotic-free media and counting surviving colonies.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "determination-method",
+      "label": "Determination Method",
+      "valueA": "Read directly from the broth dilution series as the first clear (no visible turbidity) tube/well.",
+      "valueB": "Requires subculturing the clear tubes from the MIC test onto agar and counting colonies after further incubation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "relationship-between-values",
+      "label": "Relationship Between the Two Values",
+      "valueA": "Always less than or equal to the corresponding MBC for the same drug/organism pair.",
+      "valueB": "Always greater than or equal to the corresponding MIC; a large gap suggests tolerance."
+    },
+    {
+      "id": "bactericidal-vs-bacteriostatic-clue",
+      "label": "What a Wide MBC/MIC Gap Suggests",
+      "valueA": "N/A — MIC alone doesn't reveal this relationship.",
+      "valueB": "An MBC much higher than the MIC (typically >4-fold) suggests the drug is only bacteriostatic against that organism, or tolerance is present."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Guides routine dosing decisions and susceptibility categorization.",
+      "valueB": "Particularly relevant in infections needing bactericidal activity, such as endocarditis or infections in neutropenic patients."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Lowest concentration that stops visible growth.",
+      "valueB": "Lowest concentration that actually kills the bacteria.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

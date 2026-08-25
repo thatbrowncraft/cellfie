@@ -1,0 +1,76 @@
+{
+  "id": "comp-dna-viruses-vs-rna-viruses",
+  "domain": "virology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "virology",
+    "genome",
+    "replication"
+  ],
+  "itemA": {
+    "name": "DNA Viruses"
+  },
+  "itemB": {
+    "name": "RNA Viruses"
+  },
+  "overview": "Genome chemistry drives almost everything about a virus's stability, mutation rate, and replication strategy.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Viruses whose genetic material is DNA, single- or double-stranded.",
+      "valueB": "Viruses whose genetic material is RNA, single- or double-stranded."
+    },
+    {
+      "id": "replication-location",
+      "label": "Replication Location",
+      "valueA": "Usually replicate in the host cell nucleus, using host DNA polymerase (with exceptions like poxviruses).",
+      "valueB": "Usually replicate in the cytoplasm, generally using a virus-encoded RNA-dependent RNA polymerase.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "mutation-rate",
+      "label": "Mutation Rate",
+      "valueA": "Lower — host DNA polymerases have proofreading ability, giving higher replication fidelity.",
+      "valueB": "Higher — most RNA polymerases lack proofreading, leading to rapid mutation and quasispecies formation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "genome-stability",
+      "label": "Genome Stability",
+      "valueA": "Generally more stable; some can integrate into the host genome (e.g. herpesviruses, HPV).",
+      "valueB": "Less stable; retroviruses uniquely convert RNA to DNA via reverse transcriptase before integration."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Herpesviruses, HPV, hepatitis B virus, adenovirus.",
+      "valueB": "Influenza virus, HIV, SARS-CoV-2, hepatitis C virus."
+    },
+    {
+      "id": "vaccine-development-implication",
+      "label": "Implication for Vaccines/Drugs",
+      "valueA": "Antigenic stability makes long-lasting vaccines more feasible.",
+      "valueB": "High mutation rate drives antigenic drift/shift, requiring frequently updated vaccines (e.g. seasonal flu)."
+    },
+    {
+      "id": "detection-methods",
+      "label": "Common Detection Methods",
+      "valueA": "PCR targeting DNA directly.",
+      "valueB": "RT-PCR, which requires an added reverse transcription step before amplification."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "DNA genome, replicated with high fidelity, usually in the nucleus.",
+      "valueB": "RNA genome, replicated with low fidelity, usually in the cytoplasm.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

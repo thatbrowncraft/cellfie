@@ -1,0 +1,73 @@
+{
+  "id": "comp-blood-agar-vs-chocolate-agar",
+  "domain": "culture-media",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "culture-media",
+    "hemolysis",
+    "fastidious-organisms"
+  ],
+  "itemA": {
+    "name": "Blood Agar",
+    "refKind": "laboratory",
+    "refId": "media-blood-agar",
+    "labCategory": "media"
+  },
+  "itemB": {
+    "name": "Chocolate Agar"
+  },
+  "overview": "Chocolate agar is, quite literally, blood agar that has been deliberately damaged to feed pickier organisms.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "An enriched, non-selective medium made with 5% sheep blood added to a nutrient agar base; supports most organisms and shows hemolysis patterns.",
+      "valueB": "Enriched medium made by heating blood agar until red cells lyse, releasing nutrients (hemoglobin-bound iron, NAD) in a usable form."
+    },
+    {
+      "id": "preparation",
+      "label": "Preparation",
+      "valueA": "Sheep blood is added to cooled (not hot) molten agar base, keeping red cells intact.",
+      "valueB": "Blood is added to hot agar base, lysing the cells and giving the medium its characteristic brown 'chocolate' color.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "hemolysis-reading",
+      "label": "Hemolysis Reading",
+      "valueA": "Supports and displays hemolysis patterns: beta (clear), alpha (green), or gamma (none).",
+      "valueB": "Cannot be used to assess hemolysis, since red cells are already lysed during preparation."
+    },
+    {
+      "id": "target-organisms",
+      "label": "Target Organisms",
+      "valueA": "General-purpose for most bacteria and fungi; used to detect Streptococcus hemolysis patterns.",
+      "valueB": "Supports fastidious organisms that need factors released from lysed cells, notably Haemophilus influenzae and Neisseria species.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "clinical-use",
+      "label": "Clinical Use",
+      "valueA": "Routine primary plating medium for most clinical specimens.",
+      "valueB": "Added alongside blood agar specifically when a fastidious respiratory or genital pathogen is suspected."
+    },
+    {
+      "id": "incubation",
+      "label": "Incubation Conditions",
+      "valueA": "Standard aerobic or CO2-enriched incubation depending on the suspected organism.",
+      "valueB": "Usually incubated in a CO2-enriched atmosphere to support fastidious growth."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Intact red cells allow hemolysis typing.",
+      "valueB": "Lysed red cells release growth factors for fastidious organisms but remove the ability to read hemolysis.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

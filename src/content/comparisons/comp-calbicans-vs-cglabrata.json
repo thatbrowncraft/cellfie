@@ -1,0 +1,78 @@
+{
+  "id": "comp-calbicans-vs-cglabrata",
+  "domain": "mycology",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student",
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "candida",
+    "mycology",
+    "antifungal-resistance"
+  ],
+  "itemA": {
+    "name": "Candida albicans",
+    "refKind": "organism",
+    "refId": "candida-albicans"
+  },
+  "itemB": {
+    "name": "Candida glabrata",
+    "refKind": "organism",
+    "refId": "candida-glabrata"
+  },
+  "overview": "Same genus, very different behavior — especially when it comes to which antifungal will actually work.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The most common cause of candidiasis, forming true hyphae/pseudohyphae and a positive germ tube test.",
+      "valueB": "A non-albicans Candida species that grows only as yeast cells, with no true hyphae or germ tube formation."
+    },
+    {
+      "id": "germ-tube-test",
+      "label": "Germ Tube Test",
+      "valueA": "Positive.",
+      "valueB": "Negative.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "morphology",
+      "label": "Morphology",
+      "valueA": "Yeast cells, pseudohyphae, and true hyphae depending on conditions.",
+      "valueB": "Small, uniform yeast cells only — no hyphal forms."
+    },
+    {
+      "id": "azole-susceptibility",
+      "label": "Azole Susceptibility",
+      "valueA": "Generally susceptible to fluconazole and other azoles.",
+      "valueB": "Frequently exhibits reduced susceptibility or resistance to fluconazole, an important treatment consideration.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Most common cause of oral thrush, vaginal candidiasis, and invasive candidiasis overall.",
+      "valueB": "Increasingly common cause of invasive candidiasis, especially in older or immunocompromised patients and after azole exposure."
+    },
+    {
+      "id": "identification-media",
+      "label": "Identification on Chromogenic Media",
+      "valueA": "Produces a distinct green colony color on many chromogenic Candida agars.",
+      "valueB": "Produces a distinct pink to purple colony color on the same chromogenic media."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Germ tube positive, generally azole-susceptible.",
+      "valueB": "Germ tube negative, often azole-resistant.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A germ-tube-negative Candida from a sick, previously azole-treated patient should raise suspicion for C. glabrata."
+  },
+  "lastVerified": "2026-08-25"
+}

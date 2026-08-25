@@ -1,0 +1,89 @@
+{
+  "id": "comp-saureus-vs-sepidermidis",
+  "domain": "bacteriology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "staphylococcus",
+    "coagulase",
+    "identification"
+  ],
+  "itemA": {
+    "name": "Staphylococcus aureus",
+    "refKind": "organism",
+    "refId": "staphylococcus-aureus"
+  },
+  "itemB": {
+    "name": "Staphylococcus epidermidis",
+    "refKind": "organism",
+    "refId": "staphylococcus-epidermidis"
+  },
+  "overview": "One is a leading cause of serious infection worldwide; the other is usually harmless skin flora that only matters when it shouldn't be there.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A coagulase-positive staphylococcus and a major human pathogen capable of a wide range of infections.",
+      "valueB": "A coagulase-negative staphylococcus that is part of normal skin flora but can act as an opportunist."
+    },
+    {
+      "id": "coagulase-status",
+      "label": "Coagulase Status",
+      "valueA": "Coagulase-positive.",
+      "valueB": "Coagulase-negative.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "hemolysis",
+      "label": "Hemolysis on Blood Agar",
+      "valueA": "Typically beta-hemolytic.",
+      "valueB": "Typically non-hemolytic (gamma)."
+    },
+    {
+      "id": "colony-pigment",
+      "label": "Colony Pigment",
+      "valueA": "Often golden-yellow colonies (hence 'aureus').",
+      "valueB": "White, non-pigmented colonies."
+    },
+    {
+      "id": "virulence-factors",
+      "label": "Key Virulence Factors",
+      "valueA": "Protein A, coagulase, toxins (TSST-1, PVL, enterotoxins), biofilm.",
+      "valueB": "Biofilm formation via polysaccharide intercellular adhesin is its main virulence mechanism."
+    },
+    {
+      "id": "clinical-significance",
+      "label": "Clinical Significance",
+      "valueA": "True pathogen — causes skin/soft tissue infections, bacteremia, endocarditis, osteomyelitis.",
+      "valueB": "Common contaminant in blood cultures; true pathogen mainly in the setting of indwelling devices (catheters, prosthetics)."
+    },
+    {
+      "id": "interpretation-of-isolation",
+      "label": "Interpretation When Isolated From Blood",
+      "valueA": "A single positive blood culture is usually treated as clinically significant.",
+      "valueB": "Often dismissed as contamination unless isolated from multiple cultures or a patient with a device.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "antibiotic-resistance-concern",
+      "label": "Antibiotic Resistance Concern",
+      "valueA": "MRSA (methicillin-resistant strains) is a major public health concern.",
+      "valueB": "Frequently multidrug-resistant given its device-associated niche, though less publicized than MRSA."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Coagulase-positive, pigmented, a true pathogen.",
+      "valueB": "Coagulase-negative, unpigmented, usually a commensal/opportunist.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "commonMisconception": "A coagulase-negative Staph in blood culture isn't automatically 'nothing' — context (device, repeat cultures) decides."
+  },
+  "lastVerified": "2026-08-25"
+}

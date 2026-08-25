@@ -1,0 +1,75 @@
+{
+  "id": "comp-yeasts-vs-molds",
+  "domain": "mycology",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "fungi",
+    "morphology",
+    "mycology"
+  ],
+  "itemA": {
+    "name": "Yeasts"
+  },
+  "itemB": {
+    "name": "Molds"
+  },
+  "overview": "Fungi come in two basic growth forms, and telling them apart at a glance is the first skill in mycology.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Unicellular fungi that typically reproduce by budding, forming smooth, creamy colonies.",
+      "valueB": "Multicellular fungi that grow as branching filaments (hyphae), forming fuzzy or powdery colonies."
+    },
+    {
+      "id": "cellular-organization",
+      "label": "Cellular Organization",
+      "valueA": "Single, oval to round cells.",
+      "valueB": "Filamentous hyphae that intertwine into a mycelium.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "reproduction",
+      "label": "Reproduction",
+      "valueA": "Asexual budding (blastoconidia); some also form pseudohyphae under stress.",
+      "valueB": "Asexual spore formation (conidia, sporangiospores) at specialized structures on the hyphae."
+    },
+    {
+      "id": "colony-appearance",
+      "label": "Colony Appearance",
+      "valueA": "Smooth, moist, opaque colonies resembling bacterial colonies macroscopically.",
+      "valueB": "Fuzzy, cottony, woolly, or powdery colonies, often pigmented."
+    },
+    {
+      "id": "growth-temperature",
+      "label": "Growth Behavior",
+      "valueA": "Grow well at both room temperature and 37°C; some are dimorphic and switch forms with temperature.",
+      "valueB": "Typically grow best at room temperature; some dimorphic fungi convert to a yeast form at 37°C in tissue."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Candida albicans, Cryptococcus neoformans, Saccharomyces cerevisiae.",
+      "valueB": "Aspergillus niger, Rhizopus species, dermatophytes like Trichophyton."
+    },
+    {
+      "id": "lab-identification",
+      "label": "Laboratory Identification",
+      "valueA": "Germ tube test, sugar fermentation/assimilation panels, chromogenic agar.",
+      "valueB": "Lactophenol cotton blue mount to visualize hyphae and spore structures under the microscope."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Unicellular, buds to reproduce.",
+      "valueB": "Multicellular, grows as branching hyphae.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "comp-macconkey-agar-vs-emb-agar",
+  "domain": "culture-media",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "culture-media",
+    "gram-negative",
+    "identification"
+  ],
+  "itemA": {
+    "name": "MacConkey Agar",
+    "refKind": "laboratory",
+    "refId": "media-macconkey",
+    "labCategory": "media"
+  },
+  "itemB": {
+    "name": "EMB Agar",
+    "refKind": "laboratory",
+    "refId": "media-emb",
+    "labCategory": "media"
+  },
+  "overview": "Both are selective and differential media for Gram-negative rods, but their indicator systems give strikingly different visual clues.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A selective and differential agar containing bile salts (to inhibit Gram-positives) and lactose with a pH indicator.",
+      "valueB": "A selective and differential agar containing eosin and methylene blue dyes, which also inhibit Gram-positive organisms and indicate lactose fermentation."
+    },
+    {
+      "id": "selective-agent",
+      "label": "Selective Agent",
+      "valueA": "Bile salts and crystal violet inhibit most Gram-positive bacteria.",
+      "valueB": "Eosin Y and methylene blue dyes inhibit most Gram-positive bacteria.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "differential-indicator",
+      "label": "Differential Indicator",
+      "valueA": "Neutral red pH indicator turns lactose fermenters pink to red.",
+      "valueB": "Dye complex gives strong lactose fermenters a green metallic sheen, and E. coli a characteristic dark colony with green sheen.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "classic-appearance",
+      "label": "Classic Diagnostic Appearance",
+      "valueA": "Pink colonies (e.g. E. coli, Klebsiella) vs colorless colonies (e.g. Salmonella, Shigella, Proteus).",
+      "valueB": "Green metallic sheen strongly suggests E. coli; other lactose fermenters appear dark pink/purple without the sheen."
+    },
+    {
+      "id": "typical-use",
+      "label": "Typical Use",
+      "valueA": "Routine primary plating for stool and urine cultures to screen for enteric pathogens.",
+      "valueB": "Used similarly, often preferred when a rapid, visually distinctive E. coli identification is wanted."
+    },
+    {
+      "id": "non-fermenter-appearance",
+      "label": "Non-Fermenter Appearance",
+      "valueA": "Colorless or pale colonies.",
+      "valueB": "Colorless to amber, translucent colonies."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Uses bile salts and neutral red; lactose fermenters turn pink.",
+      "valueB": "Uses eosin-methylene blue dyes; strong fermenters like E. coli show a green metallic sheen.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

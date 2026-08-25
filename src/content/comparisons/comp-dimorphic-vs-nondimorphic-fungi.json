@@ -1,0 +1,70 @@
+{
+  "id": "comp-dimorphic-vs-nondimorphic-fungi",
+  "domain": "mycology",
+  "difficulty": "advanced",
+  "frequency": "specialized",
+  "audience": [
+    "student",
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "mycology",
+    "systemic-mycosis",
+    "morphology"
+  ],
+  "itemA": {
+    "name": "Dimorphic Fungi"
+  },
+  "itemB": {
+    "name": "Non-dimorphic Fungi"
+  },
+  "overview": "Some fungi live a double life, switching form entirely depending on temperature — and that switch is exactly what lets them invade human tissue.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Fungi that exist as a mold at room temperature (25°C) in the environment and convert to a yeast (or spherule) form at body temperature (37°C) in tissue.",
+      "valueB": "Fungi that maintain a single morphological form regardless of temperature — either always a mold or always a yeast."
+    },
+    {
+      "id": "temperature-dependent-morphology",
+      "label": "Temperature-Dependent Morphology",
+      "valueA": "Thermally dimorphic — mold form in the environment, yeast/spherule form in the host.",
+      "valueB": "Fixed morphology — no temperature-triggered conversion.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Histoplasma capsulatum, Blastomyces dermatitidis, Coccidioides (mold to spherule), Sporothrix schenckii.",
+      "valueB": "Aspergillus species (always mold), Candida albicans (always yeast, aside from pseudohyphae)."
+    },
+    {
+      "id": "clinical-significance-of-dimorphism",
+      "label": "Clinical Significance of the Switch",
+      "valueA": "The switch to yeast/spherule form at body temperature is often required for virulence and tissue invasion.",
+      "valueB": "No comparable temperature-triggered virulence switch; pathogenicity depends on other factors like immune status."
+    },
+    {
+      "id": "geographic-clustering",
+      "label": "Geographic Distribution",
+      "valueA": "Many are geographically restricted (endemic mycoses tied to specific soil/climate niches).",
+      "valueB": "More globally ubiquitous distribution (e.g. Aspergillus is found worldwide)."
+    },
+    {
+      "id": "lab-safety-consideration",
+      "label": "Laboratory Safety Consideration",
+      "valueA": "Mold-phase cultures of dimorphic fungi can be highly infectious via inhaled spores — require biosafety cabinet handling.",
+      "valueB": "Safety precautions vary by species but generally lack this specific mold-phase inhalation hazard tied to the same dimorphic mechanism."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Changes form with temperature, tied to virulence.",
+      "valueB": "Maintains one form regardless of temperature.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "comp-sterilization-vs-disinfection",
+  "domain": "biosafety",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "microbial-control",
+    "biosafety",
+    "infection-control"
+  ],
+  "itemA": {
+    "name": "Sterilization",
+    "refKind": "laboratory",
+    "refId": "safety-sterilization",
+    "labCategory": "biosafety"
+  },
+  "itemB": {
+    "name": "Disinfection",
+    "refKind": "laboratory",
+    "refId": "safety-disinfection",
+    "labCategory": "biosafety"
+  },
+  "overview": "The single most important distinction in microbial control — because one guarantees zero survivors, and the other does not.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The complete destruction or removal of all forms of microbial life, including bacterial endospores.",
+      "valueB": "The reduction of pathogenic microorganisms to a level considered safe, typically on inanimate surfaces — spores usually survive."
+    },
+    {
+      "id": "spore-elimination",
+      "label": "Spore Elimination",
+      "valueA": "Kills bacterial endospores, the most resistant microbial life form.",
+      "valueB": "Does not reliably kill bacterial endospores.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "methods",
+      "label": "Common Methods",
+      "valueA": "Autoclaving (moist heat), dry heat ovens, gamma irradiation, ethylene oxide gas.",
+      "valueB": "Chemical disinfectants (bleach, alcohols, phenolics), UV light, pasteurization."
+    },
+    {
+      "id": "application",
+      "label": "Typical Application",
+      "valueA": "Surgical instruments, culture media, anything entering sterile body sites or requiring a sterile culture.",
+      "valueB": "Countertops, non-critical medical equipment, floors — surfaces that don't need to be sterile, just safe."
+    },
+    {
+      "id": "verification",
+      "label": "Verification",
+      "valueA": "Confirmed with biological indicators (e.g. Geobacillus stearothermophilus spore strips) or chemical indicators.",
+      "valueB": "Verified indirectly, by adherence to contact time and concentration, not by spore-kill testing."
+    },
+    {
+      "id": "absolute-vs-relative",
+      "label": "Absolute vs Relative Standard",
+      "valueA": "An absolute, all-or-nothing standard — an item is either sterile or it is not.",
+      "valueB": "A relative standard — 'clean enough' varies by disinfectant level (low, intermediate, high) and intended use."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Eliminates all life forms, including spores.",
+      "valueB": "Reduces pathogen load but does not guarantee spore kill.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "If spores survive, it's disinfection, not sterilization — no exceptions.",
+    "memoryTrick": "Sterile = zero. Disinfected = just safer."
+  },
+  "lastVerified": "2026-08-25"
+}

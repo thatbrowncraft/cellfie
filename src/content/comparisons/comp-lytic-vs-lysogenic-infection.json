@@ -1,0 +1,75 @@
+{
+  "id": "comp-lytic-vs-lysogenic-infection",
+  "domain": "virology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "bacteriophage",
+    "virology",
+    "gene-transfer"
+  ],
+  "itemA": {
+    "name": "Lytic Infection"
+  },
+  "itemB": {
+    "name": "Lysogenic Infection"
+  },
+  "overview": "Two very different fates a bacteriophage genome can choose once it gets inside a bacterial cell.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The phage immediately hijacks the host cell to replicate, assemble new virions, and lyse the cell to release them.",
+      "valueB": "The phage genome integrates into the host chromosome (as a prophage) and replicates passively along with the host, without killing it."
+    },
+    {
+      "id": "host-fate",
+      "label": "Host Cell Fate",
+      "valueA": "Cell is destroyed (lysed) at the end of the cycle.",
+      "valueB": "Cell survives and reproduces normally, carrying the prophage.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "phage-genome-state",
+      "label": "Phage Genome State",
+      "valueA": "Free, actively directing production of new phage particles.",
+      "valueB": "Integrated into the host chromosome, largely dormant."
+    },
+    {
+      "id": "timeline",
+      "label": "Timeline",
+      "valueA": "Fast — new virions typically released within minutes to hours.",
+      "valueB": "Can persist for many bacterial generations before being induced into the lytic cycle."
+    },
+    {
+      "id": "induction",
+      "label": "Trigger to Switch Cycles",
+      "valueA": "N/A — it is the active, destructive cycle.",
+      "valueB": "Stress (UV light, chemicals) can induce the prophage to excise and enter the lytic cycle."
+    },
+    {
+      "id": "biological-significance",
+      "label": "Biological Significance",
+      "valueA": "Directly kills bacteria — basis for phage therapy applications.",
+      "valueB": "Can confer new traits on the host via lysogenic conversion (e.g. diphtheria and botulinum toxin genes are phage-encoded)."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "T4 bacteriophage (obligately lytic).",
+      "valueB": "Lambda phage (temperate, can choose either cycle)."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Ends in cell lysis and new virion release.",
+      "valueB": "Integrates and coexists with the host without killing it.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

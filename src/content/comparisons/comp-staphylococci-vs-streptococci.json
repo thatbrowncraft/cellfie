@@ -1,0 +1,76 @@
+{
+  "id": "comp-staphylococci-vs-streptococci",
+  "domain": "bacteriology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "gram-positive-cocci",
+    "identification",
+    "bacteriology"
+  ],
+  "itemA": {
+    "name": "Staphylococci"
+  },
+  "itemB": {
+    "name": "Streptococci"
+  },
+  "overview": "Both are Gram-positive cocci that cause everyday infections, but their arrangement, enzymes, and disease patterns diverge sharply.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Gram-positive cocci that typically cluster in irregular, grape-like groups.",
+      "valueB": "Gram-positive cocci that typically grow in chains or pairs."
+    },
+    {
+      "id": "arrangement",
+      "label": "Microscopic Arrangement",
+      "valueA": "Clusters, resembling a bunch of grapes.",
+      "valueB": "Chains or pairs (diplococci).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "catalase-reaction",
+      "label": "Catalase Reaction",
+      "valueA": "Catalase-positive.",
+      "valueB": "Catalase-negative.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "hemolysis-classification",
+      "label": "Classification Approach",
+      "valueA": "Split by coagulase status (S. aureus vs coagulase-negative species).",
+      "valueB": "Split by hemolysis pattern on blood agar (beta, alpha, gamma/non-hemolytic) and Lancefield grouping."
+    },
+    {
+      "id": "oxygen-requirement",
+      "label": "Oxygen Requirement",
+      "valueA": "Facultative anaerobes.",
+      "valueB": "Facultative anaerobes, generally more fastidious, often needing enriched media."
+    },
+    {
+      "id": "representative-species",
+      "label": "Representative Species",
+      "valueA": "Staphylococcus aureus, Staphylococcus epidermidis.",
+      "valueB": "Streptococcus pyogenes, Streptococcus pneumoniae, Streptococcus agalactiae."
+    },
+    {
+      "id": "disease-pattern",
+      "label": "Typical Disease Pattern",
+      "valueA": "Skin/soft tissue infections, abscesses, device-related infections, toxin-mediated syndromes.",
+      "valueB": "Pharyngitis, pneumonia, neonatal sepsis, and post-infectious sequelae like rheumatic fever."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Cluster arrangement plus catalase-positive.",
+      "valueB": "Chain arrangement plus catalase-negative.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

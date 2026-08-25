@@ -1,0 +1,70 @@
+{
+  "id": "comp-amplicon-sequencing-vs-shotgun-metagenomics",
+  "domain": "molecular-biology",
+  "difficulty": "expert",
+  "frequency": "specialized",
+  "audience": [
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "metagenomics",
+    "sequencing",
+    "microbiome"
+  ],
+  "itemA": {
+    "name": "Amplicon Sequencing"
+  },
+  "itemB": {
+    "name": "Shotgun Metagenomics"
+  },
+  "overview": "A broader version of the 16S question — any targeted marker approach versus reading the whole community's genetic material.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Sequences a specific PCR-amplified marker region (e.g. 16S rRNA for bacteria, ITS for fungi) shared across a group of organisms.",
+      "valueB": "Sequences total community DNA without any targeted amplification step, capturing all organisms and genes present."
+    },
+    {
+      "id": "input-requirement",
+      "label": "Input Requirement",
+      "valueA": "Requires only enough DNA for PCR amplification of the target marker; works well even with low-biomass or degraded samples.",
+      "valueB": "Requires higher-quality, higher-quantity DNA input for representative whole-genome coverage.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "resolution-and-bias",
+      "label": "Resolution and Bias",
+      "valueA": "Resolution and detected diversity depend heavily on primer choice and PCR amplification bias.",
+      "valueB": "Broader, less biased detection of community members, but sensitive to host DNA or contaminant background."
+    },
+    {
+      "id": "computational-demand",
+      "label": "Computational Demand",
+      "valueA": "Lower — established pipelines cluster or assign amplicon sequence variants relatively quickly.",
+      "valueB": "Much higher — requires assembly, binning, and annotation across enormous, complex datasets.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "discovery-potential",
+      "label": "Discovery Potential",
+      "valueA": "Limited to organisms whose marker gene is captured by the chosen primers.",
+      "valueB": "Can reveal genes, pathways, and organisms with no prior targeted marker, including novel or unculturable taxa."
+    },
+    {
+      "id": "cost-per-sample",
+      "label": "Cost per Sample",
+      "valueA": "Generally cheaper, enabling larger sample sizes for a given budget.",
+      "valueB": "More expensive per sample, often limiting cohort size for a given budget."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Targeted marker gene, cheaper, primer-dependent bias.",
+      "valueB": "Untargeted whole-community DNA, more expensive, broader discovery power.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

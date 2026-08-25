@@ -1,0 +1,70 @@
+{
+  "id": "comp-transformation-vs-transduction",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "genetics",
+    "horizontal-gene-transfer",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "Transformation"
+  },
+  "itemB": {
+    "name": "Transduction"
+  },
+  "overview": "Two of the three classic routes bacteria use to pick up new DNA from their surroundings — one grabs free DNA, the other gets it delivered by a virus.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Uptake of naked, free DNA fragments from the environment by a competent bacterial cell.",
+      "valueB": "Transfer of bacterial DNA from one cell to another via a bacteriophage acting as the vector."
+    },
+    {
+      "id": "dna-source",
+      "label": "Source of Transferred DNA",
+      "valueA": "Free DNA released into the environment, often from lysed bacterial cells.",
+      "valueB": "Bacterial DNA accidentally packaged into a phage capsid during phage assembly.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "requirement-for-transfer",
+      "label": "Key Requirement",
+      "valueA": "Recipient cell must be naturally competent, or be made competent artificially in the lab.",
+      "valueB": "Requires a bacteriophage capable of infecting the donor and recipient bacteria."
+    },
+    {
+      "id": "type-classification",
+      "label": "Type Classification",
+      "valueA": "Not applicable in the same way — transformation is a single mechanism.",
+      "valueB": "Classified as generalized (any random DNA fragment packaged) or specialized (specific genes near a prophage integration site)."
+    },
+    {
+      "id": "laboratory-relevance",
+      "label": "Laboratory Relevance",
+      "valueA": "Basis for standard molecular cloning techniques (e.g. heat-shock or electroporation of plasmid DNA into E. coli).",
+      "valueB": "Historically important for mapping bacterial chromosomes; relevant to how virulence genes (e.g. some toxins) spread between strains."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Streptococcus pneumoniae's natural transformation, discovered in Griffith's classic experiment.",
+      "valueB": "Phage-mediated transfer of the diphtheria toxin gene in Corynebacterium diphtheriae."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Direct uptake of free environmental DNA.",
+      "valueB": "DNA delivered via a bacteriophage vector.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

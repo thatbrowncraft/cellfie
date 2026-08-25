@@ -1,0 +1,76 @@
+{
+  "id": "comp-qpcr-vs-digital-pcr",
+  "domain": "diagnostics",
+  "difficulty": "expert",
+  "frequency": "specialized",
+  "audience": [
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "molecular-diagnostics",
+    "pcr",
+    "quantification"
+  ],
+  "itemA": {
+    "name": "qPCR"
+  },
+  "itemB": {
+    "name": "Digital PCR"
+  },
+  "overview": "Both give you a number, but digital PCR gets there by partitioning the sample so thoroughly that it can count molecules directly.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Quantifies template by tracking fluorescence in a single bulk reaction and comparing its Ct value to a standard curve.",
+      "valueB": "Partitions a single sample into thousands of individual nano-scale reactions before amplification, then counts the fraction that are positive to calculate absolute concentration."
+    },
+    {
+      "id": "quantification-approach",
+      "label": "Quantification Approach",
+      "valueA": "Relative to a standard curve — requires a calibration curve for absolute quantification.",
+      "valueB": "Absolute quantification via Poisson statistics on the fraction of positive partitions — no standard curve required.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "reliance-on-amplification-efficiency",
+      "label": "Reliance on Amplification Efficiency",
+      "valueA": "Result accuracy depends heavily on consistent, well-characterized amplification efficiency across samples.",
+      "valueB": "Endpoint-based counting of positive/negative partitions, making it far less sensitive to amplification efficiency variation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "sensitivity-for-rare-targets",
+      "label": "Sensitivity for Rare Targets",
+      "valueA": "Can struggle to detect a rare variant against a high background of wild-type template.",
+      "valueB": "Well suited to detecting rare mutations or low-abundance targets against a high background, since each partition is scored independently."
+    },
+    {
+      "id": "precision-at-low-copy-number",
+      "label": "Precision at Low Copy Number",
+      "valueA": "Less precise at very low target concentrations.",
+      "valueB": "Higher precision at low copy numbers, useful for minimal residual disease or low viral load monitoring."
+    },
+    {
+      "id": "cost-and-throughput",
+      "label": "Cost and Throughput",
+      "valueA": "Lower cost per sample and higher throughput on standard instruments.",
+      "valueB": "Higher cost per sample and generally lower throughput; specialized instrumentation is required."
+    },
+    {
+      "id": "typical-research-applications",
+      "label": "Typical Research Applications",
+      "valueA": "Routine gene expression analysis, standard pathogen load testing.",
+      "valueB": "Rare mutation detection, copy number variation analysis, precise viral reservoir quantification."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Relative quantification via a standard curve.",
+      "valueB": "Absolute quantification via partitioning and direct molecule counting.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

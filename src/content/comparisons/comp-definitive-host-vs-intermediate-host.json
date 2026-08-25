@@ -1,0 +1,72 @@
+{
+  "id": "comp-definitive-host-vs-intermediate-host",
+  "domain": "parasitology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "parasitology",
+    "life-cycle",
+    "fundamentals"
+  ],
+  "itemA": {
+    "name": "Definitive Host"
+  },
+  "itemB": {
+    "name": "Intermediate Host"
+  },
+  "overview": "Parasite life cycles only make sense once you know which host gets the adult, sexually mature stage — and which just carries the parasite along.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The host in which a parasite reaches sexual maturity and, if applicable, undergoes sexual reproduction.",
+      "valueB": "The host in which a parasite exists in a larval or asexual stage, required for the parasite to complete its development before infecting the definitive host."
+    },
+    {
+      "id": "stage-of-parasite-carried",
+      "label": "Parasite Stage Carried",
+      "valueA": "Adult, sexually mature stage (e.g. adult tapeworm, or the sexual stage of Plasmodium).",
+      "valueB": "Larval or asexual stage (e.g. cysticercus larva, or the asexual schizont stages of Plasmodium)."
+    },
+    {
+      "id": "reproduction-type",
+      "label": "Type of Reproduction Occurring",
+      "valueA": "Sexual reproduction of the parasite occurs here (when the life cycle includes a sexual stage).",
+      "valueB": "Asexual multiplication typically occurs here, without sexual reproduction of the parasite."
+    },
+    {
+      "id": "classic-example-malaria",
+      "label": "Classic Example — Malaria",
+      "valueA": "The Anopheles mosquito, where the sexual cycle (sporogony) occurs.",
+      "valueB": "The human, where the asexual cycle (schizogony) occurs.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "classic-example-tapeworm",
+      "label": "Classic Example — Taenia",
+      "valueA": "The human, harboring the adult tapeworm in the intestine.",
+      "valueB": "The pig or cow, harboring the larval cysticercus stage in muscle tissue."
+    },
+    {
+      "id": "public-health-implication",
+      "label": "Public Health Implication",
+      "valueA": "Controlling the definitive host or interrupting transmission from it can break the cycle at its reproductive source.",
+      "valueB": "Controlling the intermediate host (e.g. vector control, meat inspection) is often the more practical prevention strategy."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Harbors the adult/sexual stage.",
+      "valueB": "Harbors the larval/asexual stage.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "commonMisconception": "For malaria, humans are the intermediate host and the mosquito is the definitive host — the opposite of what most people assume at first."
+  },
+  "lastVerified": "2026-08-25"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "comp-bacterial-capsule-vs-biofilm",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "less-common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "virulence",
+    "cell-structure",
+    "bacteriology"
+  ],
+  "itemA": {
+    "name": "Bacterial Capsule"
+  },
+  "itemB": {
+    "name": "Biofilm"
+  },
+  "overview": "Both are protective, often slimy structures bacteria make — but one belongs to a single cell, the other to a whole community.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A discrete polysaccharide (occasionally polypeptide) layer surrounding an individual bacterial cell.",
+      "valueB": "A structured, surface-attached community of microorganisms embedded in a self-produced extracellular matrix."
+    },
+    {
+      "id": "scale",
+      "label": "Scale / Organization",
+      "valueA": "A single-cell structure — every capsulated cell has its own capsule.",
+      "valueB": "A multicellular, often multi-species community, sometimes with channels and structural organization.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "composition",
+      "label": "Composition",
+      "valueA": "Usually polysaccharide, tightly and evenly associated with the cell surface.",
+      "valueB": "Extracellular polymeric substance (EPS): polysaccharides, proteins, extracellular DNA, and water, loosely surrounding many cells."
+    },
+    {
+      "id": "primary-function",
+      "label": "Primary Function",
+      "valueA": "Anti-phagocytic — helps individual cells evade immune recognition and engulfment.",
+      "valueB": "Provides a protected niche: resistance to antibiotics, host defenses, and desiccation for the whole community."
+    },
+    {
+      "id": "detection",
+      "label": "Laboratory Detection",
+      "valueA": "Quellung reaction, India ink negative staining, or capsule stains.",
+      "valueB": "Crystal violet biofilm assays, confocal microscopy, or visualization on catheters/implants."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Key virulence factor in encapsulated pathogens (e.g. Streptococcus pneumoniae, Klebsiella pneumoniae).",
+      "valueB": "Central to chronic and device-associated infections (catheters, prosthetic joints, cystic fibrosis lungs)."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Protects one cell from phagocytosis.",
+      "valueB": "Protects a whole embedded community and confers antibiotic tolerance.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

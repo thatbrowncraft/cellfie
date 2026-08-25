@@ -1,0 +1,80 @@
+{
+  "id": "comp-ecoli-vs-kpneumoniae",
+  "domain": "bacteriology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "enterobacterales",
+    "gram-negative",
+    "identification"
+  ],
+  "itemA": {
+    "name": "Escherichia coli",
+    "refKind": "organism",
+    "refId": "escherichia-coli"
+  },
+  "itemB": {
+    "name": "Klebsiella pneumoniae",
+    "refKind": "organism",
+    "refId": "klebsiella-pneumoniae"
+  },
+  "overview": "Two of the most commonly isolated Enterobacterales in clinical labs, distinguished mainly by motility and capsule.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A motile, lactose-fermenting Gram-negative rod and the most common cause of community-acquired UTIs.",
+      "valueB": "A non-motile, heavily encapsulated, lactose-fermenting Gram-negative rod associated with mucoid colonies."
+    },
+    {
+      "id": "motility",
+      "label": "Motility",
+      "valueA": "Motile via peritrichous flagella.",
+      "valueB": "Non-motile.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "capsule",
+      "label": "Capsule",
+      "valueA": "Thin or absent capsule in most strains.",
+      "valueB": "Prominent polysaccharide capsule, producing large, mucoid, sticky colonies.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "indole-test",
+      "label": "Indole Test",
+      "valueA": "Indole-positive.",
+      "valueB": "Indole-negative (typically)."
+    },
+    {
+      "id": "voges-proskauer",
+      "label": "Voges-Proskauer Test",
+      "valueA": "Negative.",
+      "valueB": "Positive (typically)."
+    },
+    {
+      "id": "clinical-associations",
+      "label": "Clinical Associations",
+      "valueA": "Leading cause of UTIs, and a common cause of neonatal meningitis and gram-negative bacteremia.",
+      "valueB": "Associated with hospital-acquired pneumonia, UTIs, and liver abscesses, especially in diabetics and hospitalized patients."
+    },
+    {
+      "id": "resistance-concern",
+      "label": "Antibiotic Resistance Concern",
+      "valueA": "ESBL and carbapenem-resistant strains exist but are less dominant globally than in Klebsiella.",
+      "valueB": "A major reservoir for ESBL and carbapenemase (e.g. KPC) genes, driving multidrug-resistant outbreaks in hospitals."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Motile, indole-positive, thin/no capsule.",
+      "valueB": "Non-motile, mucoid capsule, indole-negative.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

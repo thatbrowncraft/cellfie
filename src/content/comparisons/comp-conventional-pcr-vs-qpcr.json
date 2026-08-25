@@ -1,0 +1,76 @@
+{
+  "id": "comp-conventional-pcr-vs-qpcr",
+  "domain": "diagnostics",
+  "difficulty": "expert",
+  "frequency": "common",
+  "audience": [
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "molecular-diagnostics",
+    "pcr",
+    "quantification"
+  ],
+  "itemA": {
+    "name": "Conventional PCR"
+  },
+  "itemB": {
+    "name": "Quantitative PCR (qPCR)"
+  },
+  "overview": "Same amplification chemistry underneath, but one only tells you if a target is present, and the other tells you how much.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Amplifies a target DNA sequence exponentially, with the product detected only after amplification is complete, typically by gel electrophoresis.",
+      "valueB": "Amplifies and detects a target DNA sequence simultaneously in real time, using fluorescent probes or dyes read every cycle."
+    },
+    {
+      "id": "detection-timing",
+      "label": "Detection Timing",
+      "valueA": "End-point detection — result is read only after the reaction has finished.",
+      "valueB": "Real-time detection — fluorescence is measured during every amplification cycle.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "quantification-capability",
+      "label": "Quantification Capability",
+      "valueA": "Qualitative or, at best, roughly semi-quantitative.",
+      "valueB": "Truly quantitative — a cycle threshold (Ct) value correlates with starting template amount via a standard curve.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "detection-chemistry",
+      "label": "Detection Chemistry",
+      "valueA": "Ethidium bromide or similar intercalating dye visualized on an agarose gel post-run.",
+      "valueB": "Intercalating dyes (e.g. SYBR Green) or sequence-specific fluorescent probes (e.g. TaqMan) monitored continuously."
+    },
+    {
+      "id": "contamination-risk",
+      "label": "Contamination Risk",
+      "valueA": "Higher — requires opening tubes post-amplification for gel loading, risking amplicon carryover.",
+      "valueB": "Lower — closed-tube detection throughout, minimizing amplicon contamination risk."
+    },
+    {
+      "id": "turnaround-and-throughput",
+      "label": "Turnaround and Throughput",
+      "valueA": "Requires an additional post-PCR gel run and imaging step, adding time.",
+      "valueB": "Faster overall workflow with no post-run gel step, and better suited to high-throughput automated platforms."
+    },
+    {
+      "id": "typical-applications",
+      "label": "Typical Applications",
+      "valueA": "Basic presence/absence screening, cloning verification, teaching labs.",
+      "valueB": "Clinical viral load monitoring, gene expression studies, pathogen quantification."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "End-point, qualitative result.",
+      "valueB": "Real-time, quantitative result.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

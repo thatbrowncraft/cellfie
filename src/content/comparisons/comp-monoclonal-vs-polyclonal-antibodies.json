@@ -1,0 +1,71 @@
+{
+  "id": "comp-monoclonal-vs-polyclonal-antibodies",
+  "domain": "immunology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "immunology",
+    "antibodies",
+    "diagnostics"
+  ],
+  "itemA": {
+    "name": "Monoclonal Antibodies"
+  },
+  "itemB": {
+    "name": "Polyclonal Antibodies"
+  },
+  "overview": "One is a single, precisely defined antibody clone; the other is a mixed bag from an entire immune response.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Identical antibodies produced by a single clone of B cells (or a hybridoma), all recognizing one specific epitope.",
+      "valueB": "A heterogeneous mixture of antibodies produced by many different B cell clones, recognizing multiple epitopes on the same antigen."
+    },
+    {
+      "id": "epitope-specificity",
+      "label": "Epitope Specificity",
+      "valueA": "Binds a single, defined epitope.",
+      "valueB": "Binds multiple epitopes across the antigen.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "production-method",
+      "label": "Production Method",
+      "valueA": "Hybridoma technology (or recombinant methods) fusing a specific B cell with an immortal myeloma cell line.",
+      "valueB": "Immunizing an animal and collecting serum, which naturally contains a mix of antibodies from many activated B cell clones."
+    },
+    {
+      "id": "batch-consistency",
+      "label": "Batch-to-Batch Consistency",
+      "valueA": "Highly consistent — same clone produces identical antibody indefinitely.",
+      "valueB": "Variable between animals and bleeds, since polyclonal response composition differs each time.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "sensitivity-vs-specificity",
+      "label": "Sensitivity vs Specificity Trade-off",
+      "valueA": "Very high specificity but can be more sensitive to loss of a single epitope (e.g. denaturation).",
+      "valueB": "Often more sensitive/robust to minor antigen changes because multiple epitopes are targeted, at some cost to specificity."
+    },
+    {
+      "id": "applications",
+      "label": "Applications",
+      "valueA": "Therapeutics (e.g. targeted cancer/immune therapies), highly specific diagnostic assays.",
+      "valueB": "Traditional immunoassays, secondary detection antibodies, research applications needing signal amplification."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Single clone, single epitope, highly consistent.",
+      "valueB": "Multiple clones, multiple epitopes, batch variability.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

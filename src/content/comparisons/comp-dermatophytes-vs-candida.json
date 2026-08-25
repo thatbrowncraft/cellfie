@@ -1,0 +1,69 @@
+{
+  "id": "comp-dermatophytes-vs-candida",
+  "domain": "mycology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "mycology",
+    "fungal-infection",
+    "clinical"
+  ],
+  "itemA": {
+    "name": "Dermatophytes"
+  },
+  "itemB": {
+    "name": "Candida"
+  },
+  "overview": "Both cause common fungal skin and mucosal infections, but they belong to entirely different fungal groups with different habits.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A group of molds (Trichophyton, Microsporum, Epidermophyton) that specifically digest keratin in skin, hair, and nails.",
+      "valueB": "A genus of yeasts that are part of normal human flora but can overgrow to cause superficial or, rarely, systemic infection."
+    },
+    {
+      "id": "morphology",
+      "label": "Morphology",
+      "valueA": "Molds — grow as septate hyphae, producing characteristic macroconidia/microconidia.",
+      "valueB": "Yeasts — round to oval budding cells, some species also form pseudohyphae.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "tissue-tropism",
+      "label": "Tissue Tropism",
+      "valueA": "Restricted to keratinized, non-living tissue: skin, hair, nails.",
+      "valueB": "Can affect skin folds, mucous membranes (oral thrush, vaginal candidiasis), and in immunocompromised hosts, deep tissue and bloodstream."
+    },
+    {
+      "id": "source",
+      "label": "Source of Infection",
+      "valueA": "Acquired from other infected people, animals, or soil (anthropophilic, zoophilic, geophilic species).",
+      "valueB": "Endogenous — usually arises from the patient's own normal flora overgrowing."
+    },
+    {
+      "id": "diagnostic-approach",
+      "label": "Diagnostic Approach",
+      "valueA": "KOH mount of skin/nail/hair scrapings showing branching hyphae; Wood's lamp fluorescence for some species.",
+      "valueB": "KOH mount or Gram stain showing budding yeast with or without pseudohyphae; germ tube test for C. albicans."
+    },
+    {
+      "id": "risk-factors",
+      "label": "Risk Factors",
+      "valueA": "Warm, moist environments; skin-to-skin or fomite contact.",
+      "valueB": "Antibiotic use, diabetes, immunosuppression, indwelling catheters."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Mold restricted to keratinized tissue, exogenous source.",
+      "valueB": "Yeast that is normal flora and becomes opportunistic when the host is compromised.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-08-25"
+}

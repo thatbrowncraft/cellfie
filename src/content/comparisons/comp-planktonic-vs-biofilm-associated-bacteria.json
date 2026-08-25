@@ -1,0 +1,79 @@
+{
+  "id": "comp-planktonic-vs-biofilm-associated-bacteria",
+  "domain": "microbiology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student",
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "biofilm",
+    "antibiotic-tolerance",
+    "microbiology"
+  ],
+  "itemA": {
+    "name": "Planktonic Bacteria"
+  },
+  "itemB": {
+    "name": "Biofilm-Associated Bacteria"
+  },
+  "overview": "The same species behaves like a completely different organism depending on whether it is floating free or embedded in a community.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Free-floating, individual bacterial cells suspended in liquid.",
+      "valueB": "Bacterial cells attached to a surface and enclosed within a self-produced extracellular matrix, living as a structured community."
+    },
+    {
+      "id": "antibiotic-susceptibility",
+      "label": "Antibiotic Susceptibility",
+      "valueA": "Generally susceptible at concentrations predicted by standard MIC testing.",
+      "valueB": "Markedly more tolerant — can survive antibiotic concentrations many-fold higher than the planktonic MIC of the same strain.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "growth-rate",
+      "label": "Growth Rate",
+      "valueA": "Typically faster, more uniform growth throughout the population.",
+      "valueB": "Heterogeneous — includes slow-growing or dormant 'persister' subpopulations within the matrix."
+    },
+    {
+      "id": "gene-expression",
+      "label": "Gene Expression Pattern",
+      "valueA": "Reflects free-living metabolic and stress-response programs.",
+      "valueB": "Distinct gene expression program, often coordinated via quorum sensing between cells."
+    },
+    {
+      "id": "host-immune-interaction",
+      "label": "Interaction With Host Immune System",
+      "valueA": "More readily recognized and cleared by phagocytes and antibodies.",
+      "valueB": "Matrix physically shields cells from phagocytosis and limits antibody/complement penetration."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Represents most standard clinical culture and susceptibility testing scenarios.",
+      "valueB": "Underlies chronic and device-associated infections (catheters, prosthetic joints, cystic fibrosis lungs) that resist standard treatment."
+    },
+    {
+      "id": "lab-testing-relevance",
+      "label": "Relevance to Standard Lab Testing",
+      "valueA": "Standard MIC/susceptibility testing directly reflects this state.",
+      "valueB": "Standard MIC testing systematically underestimates the antibiotic dose actually needed to treat biofilm-associated infection."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Free-floating and drug-susceptible at predicted MICs.",
+      "valueB": "Matrix-embedded and dramatically more antibiotic-tolerant than the same strain in planktonic form.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "commonMisconception": "A biofilm organism isn't genetically more resistant — its MIC on a lab plate can look identical; the tolerance comes from the matrix and physiology, not new resistance genes."
+  },
+  "lastVerified": "2026-08-25"
+}

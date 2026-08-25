@@ -1,0 +1,85 @@
+{
+  "id": "comp-catalase-test-vs-coagulase-test",
+  "domain": "laboratory-technique",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "biochemical-test",
+    "staphylococcus",
+    "identification"
+  ],
+  "itemA": {
+    "name": "Catalase Test",
+    "refKind": "laboratory",
+    "refId": "test-catalase",
+    "labCategory": "biochemical-test"
+  },
+  "itemB": {
+    "name": "Coagulase Test",
+    "refKind": "laboratory",
+    "refId": "test-coagulase",
+    "labCategory": "biochemical-test"
+  },
+  "overview": "Two quick bench tests that, run in sequence, take an unknown Gram-positive coccus most of the way to a genus and species.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Detects the enzyme catalase, which breaks down hydrogen peroxide into water and oxygen gas (visible bubbling).",
+      "valueB": "Detects the enzyme coagulase, which clots plasma by converting fibrinogen to fibrin."
+    },
+    {
+      "id": "principle",
+      "label": "Principle",
+      "valueA": "A drop of hydrogen peroxide is added to a bacterial colony; bubbles indicate a positive result.",
+      "valueB": "Bacterial growth is mixed with rabbit or human plasma; visible clotting indicates a positive result.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "purpose",
+      "label": "Purpose",
+      "valueA": "First distinguishes Staphylococcus (positive) from Streptococcus/Enterococcus (negative) among Gram-positive cocci.",
+      "valueB": "Distinguishes Staphylococcus aureus (positive) from coagulase-negative staphylococci like S. epidermidis.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "specimen-organisms",
+      "label": "Typical Use",
+      "valueA": "Run on any Gram-positive, catalase-relevant coccus isolate.",
+      "valueB": "Run specifically on catalase-positive, Gram-positive cocci already identified as staphylococci."
+    },
+    {
+      "id": "result-reading",
+      "label": "Result Reading",
+      "valueA": "Immediate — bubbling is seen within seconds.",
+      "valueB": "Slower — tube method may need up to 24 hours; slide method gives a rapid but less sensitive result."
+    },
+    {
+      "id": "false-results",
+      "label": "Common Pitfalls",
+      "valueA": "False positives from red blood cells on the loop if pulled from blood agar; false negatives with old cultures.",
+      "valueB": "Slide (bound) coagulase can miss free coagulase; a negative slide test should be confirmed with a tube test."
+    },
+    {
+      "id": "sequence-in-workflow",
+      "label": "Sequence in Identification Workflow",
+      "valueA": "Performed first, right after Gram stain confirms Gram-positive cocci in clusters.",
+      "valueB": "Performed second, only after catalase confirms the isolate is a Staphylococcus."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Splits Gram-positive cocci into Staphylococcus vs Streptococcus/Enterococcus.",
+      "valueB": "Splits staphylococci into S. aureus vs coagulase-negative species.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Catalase first, then coagulase — the classic two-step staph identification pathway."
+  },
+  "lastVerified": "2026-08-25"
+}

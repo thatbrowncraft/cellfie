@@ -1,0 +1,79 @@
+{
+  "id": "comp-prokaryotic-vs-eukaryotic-cells",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "microbiology",
+    "fundamentals"
+  ],
+  "itemA": {
+    "name": "Prokaryotic Cells"
+  },
+  "itemB": {
+    "name": "Eukaryotic Cells"
+  },
+  "overview": "The most fundamental division in all of biology, and the one that defines what counts as a 'microbe' versus a 'higher' organism.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Simple, single-celled organisms lacking a membrane-bound nucleus (bacteria and archaea).",
+      "valueB": "Cells with a true, membrane-bound nucleus and membrane-bound organelles (fungi, protozoa, plants, animals)."
+    },
+    {
+      "id": "nucleus",
+      "label": "Nucleus",
+      "valueA": "No nuclear membrane; DNA is free in the cytoplasm, condensed into a nucleoid region.",
+      "valueB": "True nucleus enclosed by a double membrane (nuclear envelope) containing the DNA.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "genome-structure",
+      "label": "Genome Structure",
+      "valueA": "Single circular chromosome, often with additional small circular plasmids.",
+      "valueB": "Multiple linear chromosomes organized with histone proteins, packaged in the nucleus."
+    },
+    {
+      "id": "organelles",
+      "label": "Organelles",
+      "valueA": "No membrane-bound organelles; ribosomes are 70S.",
+      "valueB": "Membrane-bound organelles present (mitochondria, ER, Golgi); ribosomes are 80S (70S in mitochondria/chloroplasts).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "cell-size",
+      "label": "Cell Size",
+      "valueA": "Typically 0.1–5 micrometers.",
+      "valueB": "Typically 10–100 micrometers, considerably larger."
+    },
+    {
+      "id": "cell-division",
+      "label": "Cell Division",
+      "valueA": "Binary fission — simple, asexual splitting.",
+      "valueB": "Mitosis (and meiosis for gametes), involving a spindle apparatus."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Escherichia coli, Staphylococcus aureus, archaea.",
+      "valueB": "Candida albicans, Plasmodium, human cells."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "No membrane-bound nucleus or organelles.",
+      "valueB": "Membrane-bound nucleus and organelles present.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "memoryTrick": "\"Pro\" = before the nucleus existed; \"Eu\" = true nucleus.",
+    "examHighYieldNote": "70S vs 80S ribosomes is exactly why certain antibiotics (targeting 70S) are selectively toxic to bacteria, not human cells."
+  },
+  "lastVerified": "2026-08-25"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "comp-antigenic-drift-vs-antigenic-shift",
+  "domain": "virology",
+  "difficulty": "advanced",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "influenza",
+    "virology",
+    "evolution"
+  ],
+  "itemA": {
+    "name": "Antigenic Drift"
+  },
+  "itemB": {
+    "name": "Antigenic Shift"
+  },
+  "overview": "Two very different ways influenza changes its surface proteins — one gradual and predictable, the other sudden and pandemic-prone.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Gradual accumulation of small point mutations in the hemagglutinin/neuraminidase genes over time.",
+      "valueB": "Sudden, major change in surface antigens caused by reassortment of gene segments between two different influenza strains co-infecting one host."
+    },
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "valueA": "Point mutations accumulate due to the low-fidelity viral RNA polymerase.",
+      "valueB": "Genetic reassortment of segmented RNA genome when two strains infect the same cell simultaneously.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "magnitude-of-change",
+      "label": "Magnitude of Change",
+      "valueA": "Small, incremental antigenic changes.",
+      "valueB": "Large, abrupt antigenic change producing a novel subtype.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "virus-types-affected",
+      "label": "Virus Types Affected",
+      "valueA": "Occurs in both influenza A and B.",
+      "valueB": "Occurs only in influenza A, due to its segmented genome and animal reservoirs enabling co-infection and mixing."
+    },
+    {
+      "id": "epidemiological-consequence",
+      "label": "Epidemiological Consequence",
+      "valueA": "Responsible for seasonal influenza epidemics as immunity gradually wanes.",
+      "valueB": "Responsible for influenza pandemics, since the population has little to no pre-existing immunity to the novel subtype."
+    },
+    {
+      "id": "vaccine-implication",
+      "label": "Vaccine Implication",
+      "valueA": "Necessitates yearly vaccine reformulation to match circulating strains.",
+      "valueB": "Can render existing vaccines and immunity almost completely ineffective, requiring an entirely new vaccine."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Gradual mutation, causes epidemics.",
+      "valueB": "Sudden reassortment, causes pandemics.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "memoryTrick": "Drift = slow drift over time. Shift = a sudden shift to something new."
+  },
+  "lastVerified": "2026-08-25"
+}
