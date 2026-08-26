@@ -64,6 +64,9 @@ const UnitConverterPage = lazy(() =>
 const ComparisonStudioPage = lazy(() =>
   import('../modules/comparison-studio/ComparisonStudioPage').then((m) => ({ default: m.ComparisonStudioPage }))
 )
+const ExploreComparisonsPage = lazy(() =>
+  import('../modules/comparison-studio/ExploreComparisonsPage').then((m) => ({ default: m.ExploreComparisonsPage }))
+)
 const NewComparisonPage = lazy(() =>
   import('../modules/comparison-studio/NewComparisonPage').then((m) => ({ default: m.NewComparisonPage }))
 )
@@ -251,6 +254,7 @@ export function AppRouter() {
           <Route path="/laboratory/:category/:id" element={<LaboratoryDetailPage />} />
           <Route path="/comparison" element={<ComparisonStudioPage />} />
           <Route path="/comparison/new" element={<NewComparisonPage />} />
+          <Route path="/comparison/explore" element={<ExploreComparisonsPage />} />
           <Route path="/comparison/:id" element={<ComparisonWorkspacePage />} />
           <Route path="/notes" element={<NotesPage />} />
           <Route path="/highlights" element={<HighlightsPage />} />
