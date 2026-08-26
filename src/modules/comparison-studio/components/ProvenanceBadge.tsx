@@ -10,7 +10,12 @@ import type { ComparisonAspectSource } from '../../../core/comparison/types'
  */
 export function ProvenanceBadge({ source, className }: { source: ComparisonAspectSource; className?: string }) {
   const config = {
-    curated: { icon: '🟢', label: 'Curated' },
+    // `source.label` carries the specific record a value came from (e.g.
+    // "Cellfie Organism Explorer — Staphylococcus aureus") when the caller
+    // set one — see entityAspectData.ts's `sourceFor` — falling back to the
+    // generic "Curated" for curated *comparison* JSON values, which never
+    // set a per-cell label of their own.
+    curated: { icon: '🟢', label: source.label || 'Curated' },
     'my-library': { icon: '📘', label: source.bookTitle ? `My Library — ${source.bookTitle}` : 'My Library' },
     'online-knowledge': { icon: '⚡', label: 'Online Knowledge' },
     'user-authored': { icon: '✍️', label: 'Your note' }
