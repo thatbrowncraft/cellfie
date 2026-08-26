@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowRight, Plus } from '@phosphor-icons/react'
 import { Button, Dropdown } from '../../shared/components'
-import { getSuggestedAspects } from '../../core/comparison/domainPresets'
+import { buildAspectsFromEntities } from '../../core/comparison/entityAspectData'
 import { createCustomComparison } from '../../core/comparison/userComparisons'
 import { getRandomNewComparisonTagline } from '../../core/comparison/microcopy'
 import {
@@ -102,8 +102,12 @@ export function NewComparisonPage() {
   async function handleContinue() {
     if (!itemA || !itemB) return
     setSaving(true)
-    const suggested = getSuggestedAspects(domain)
-    const aspects = suggested.map((preset) => ({ id: preset.id, label: preset.label, valueA: '', valueB: '' }))
+    // Pulls real values straight from the Organism/Laboratory entity behind
+    // itemA/itemB when either side has one (brief §12/§13) — this is what
+    // makes "Build comparison" actually show something instead of a wall of
+    // blank cells. Falls back to fully blank aspects for a fully custom
+    // pair, exactly like before.
+    const aspects = await buildAspectsFromEntities(itemA, itemB, domain)
     const record = await createCustomComparison({ domain, difficulty, frequency, itemA, itemB, aspects })
     // `openSource` (correction-pass Part 2/3/4) came from the landing search's "My Library"/"Online Knowledge" entity-pair buttons — forward it plus the first aspect id so ComparisonWorkspacePage can open the Fill-from-source dialog on the right tab immediately, instead of landing on a blank workspace that looks identical to plain "Build comparison."
     const openSource = searchParams.get('openSource')
