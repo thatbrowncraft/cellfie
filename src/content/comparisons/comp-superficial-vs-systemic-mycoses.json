@@ -19,6 +19,7 @@
     "name": "Systemic Mycoses"
   },
   "overview": "Fungal infections span a huge range of severity, from a cosmetic nuisance on skin to a life-threatening disseminated illness.",
+  "genZNote": "Skin-deep versus a whole-body problem.",
   "aspects": [
     {
       "id": "overview",

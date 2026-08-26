@@ -19,6 +19,7 @@
     "name": "Intermediate Host"
   },
   "overview": "Parasite life cycles only make sense once you know which host gets the adult, sexually mature stage — and which just carries the parasite along.",
+  "genZNote": "Where the parasite grows up vs where it just passes through.",
   "aspects": [
     {
       "id": "overview",

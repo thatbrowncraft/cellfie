@@ -19,6 +19,7 @@
     "name": "Non-fermenting Gram-negative Bacilli"
   },
   "overview": "The first fork in the road when a Gram-negative rod grows on MacConkey agar, and it changes the entire identification and treatment pathway.",
+  "genZNote": "Sugar fermenters versus the gram-negatives that just won't.",
   "aspects": [
     {
       "id": "overview",

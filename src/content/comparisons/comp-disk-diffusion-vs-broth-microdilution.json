@@ -19,6 +19,7 @@
     "name": "Broth Microdilution"
   },
   "overview": "Two standard ways to test whether an antibiotic will actually work against a specific isolate — one qualitative, one quantitative.",
+  "genZNote": "A ring on a plate versus an actual number.",
   "aspects": [
     {
       "id": "overview",

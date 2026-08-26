@@ -23,6 +23,7 @@
     "refId": "acinetobacter-baumannii"
   },
   "overview": "Two of the most feared non-fermenting Gram-negative rods in hospital-acquired infection, distinguished at the bench by a single simple test.",
+  "genZNote": "Two non-fermenters hospitals really don't want to see on a culture.",
   "aspects": [
     {
       "id": "overview",

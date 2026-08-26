@@ -19,6 +19,7 @@
     "name": "Cell-Mediated Immunity"
   },
   "overview": "The adaptive immune system's two arms — one that sends soluble weapons into the blood, and one that sends cells to do the job directly.",
+  "genZNote": "Antibodies handle the outside. T cells handle what's already inside.",
   "aspects": [
     {
       "id": "overview",

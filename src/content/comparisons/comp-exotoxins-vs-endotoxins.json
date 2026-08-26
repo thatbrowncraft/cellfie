@@ -3,11 +3,24 @@
   "domain": "microbiology",
   "difficulty": "intermediate",
   "frequency": "frequently-tested",
-  "audience": ["student", "lab-learner"],
-  "tags": ["toxins", "pathogenicity", "bacteriology", "immunology"],
-  "itemA": { "name": "Exotoxins" },
-  "itemB": { "name": "Endotoxins" },
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "toxins",
+    "pathogenicity",
+    "bacteriology",
+    "immunology"
+  ],
+  "itemA": {
+    "name": "Exotoxins"
+  },
+  "itemB": {
+    "name": "Endotoxins"
+  },
   "overview": "Two very different weapons bacteria use to cause disease — one is actively secreted, the other is a structural component released on cell death.",
+  "genZNote": "One leaves on purpose. One only shows up when the party’s over.",
   "aspects": [
     {
       "id": "overview",

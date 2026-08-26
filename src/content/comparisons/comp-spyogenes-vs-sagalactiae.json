@@ -23,6 +23,7 @@
     "refId": "streptococcus-agalactiae"
   },
   "overview": "Two beta-hemolytic streptococci separated by Lancefield grouping and, most importantly, by which patients they threaten.",
+  "genZNote": "Group A or Group B — one bacitracin disk tells you which.",
   "aspects": [
     {
       "id": "overview",

@@ -22,6 +22,7 @@
     "name": "Chocolate Agar"
   },
   "overview": "Chocolate agar is, quite literally, blood agar that has been deliberately damaged to feed pickier organisms.",
+  "genZNote": "One shows you hemolysis. One just wants everyone to grow.",
   "aspects": [
     {
       "id": "overview",

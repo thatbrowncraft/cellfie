@@ -19,6 +19,7 @@
     "name": "Candida"
   },
   "overview": "Both cause common fungal skin and mucosal infections, but they belong to entirely different fungal groups with different habits.",
+  "genZNote": "Keratin specialists versus the opportunist that goes anywhere warm and moist.",
   "aspects": [
     {
       "id": "overview",

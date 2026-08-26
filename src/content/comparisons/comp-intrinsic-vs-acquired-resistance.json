@@ -19,6 +19,7 @@
     "name": "Acquired Resistance"
   },
   "overview": "Some bacteria were never going to respond to a given antibiotic; others start out susceptible and change.",
+  "genZNote": "Born resistant versus resistant because it picked up the memo.",
   "aspects": [
     {
       "id": "overview",

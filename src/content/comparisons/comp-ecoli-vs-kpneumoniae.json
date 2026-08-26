@@ -23,6 +23,7 @@
     "refId": "klebsiella-pneumoniae"
   },
   "overview": "Two of the most commonly isolated Enterobacterales in clinical labs, distinguished mainly by motility and capsule.",
+  "genZNote": "Both Enterobacterales, only one bothers to move.",
   "aspects": [
     {
       "id": "overview",

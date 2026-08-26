@@ -25,6 +25,7 @@
     "labCategory": "biochemical-test"
   },
   "overview": "Two enzyme-detection tests that sort bacteria along completely different axes — one metabolic, one protective.",
+  "genZNote": "One bubbles. One changes color. Both save you a guess.",
   "aspects": [
     {
       "id": "overview",

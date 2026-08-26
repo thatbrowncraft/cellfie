@@ -19,6 +19,7 @@
     "name": "Mass Spectrometry-Based Protein Detection"
   },
   "overview": "One confirms a protein you already suspect is there; the other can discover proteins you never thought to look for.",
+  "genZNote": "One confirms a protein you already suspect. One finds proteins you didn't know to look for.",
   "aspects": [
     {
       "id": "overview",

@@ -25,6 +25,7 @@
     "labCategory": "biosafety"
   },
   "overview": "The single most important distinction in microbial control — because one guarantees zero survivors, and the other does not.",
+  "genZNote": "One kills everything. One just kills enough.",
   "aspects": [
     {
       "id": "overview",

@@ -23,6 +23,7 @@
     "refId": "staphylococcus-epidermidis"
   },
   "overview": "One is a leading cause of serious infection worldwide; the other is usually harmless skin flora that only matters when it shouldn't be there.",
+  "genZNote": "Same genus. Very different reputations.",
   "aspects": [
     {
       "id": "overview",

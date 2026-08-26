@@ -3,11 +3,24 @@
   "domain": "bacteriology",
   "difficulty": "basic",
   "frequency": "frequently-tested",
-  "audience": ["student", "lab-learner"],
-  "tags": ["gram-stain", "cell-wall", "bacteriology", "microbiology"],
-  "itemA": { "name": "Gram-Positive Bacteria" },
-  "itemB": { "name": "Gram-Negative Bacteria" },
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "gram-stain",
+    "cell-wall",
+    "bacteriology",
+    "microbiology"
+  ],
+  "itemA": {
+    "name": "Gram-Positive Bacteria"
+  },
+  "itemB": {
+    "name": "Gram-Negative Bacteria"
+  },
   "overview": "The single most fundamental split in bacteriology, driven entirely by cell wall architecture and visible with one classic stain.",
+  "genZNote": "The cell wall has entered the chat.",
   "aspects": [
     {
       "id": "overview",

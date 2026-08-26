@@ -19,6 +19,7 @@
     "name": "Streptococci"
   },
   "overview": "Both are Gram-positive cocci that cause everyday infections, but their arrangement, enzymes, and disease patterns diverge sharply.",
+  "genZNote": "Grapes versus chains — the arrangement gives it away.",
   "aspects": [
     {
       "id": "overview",

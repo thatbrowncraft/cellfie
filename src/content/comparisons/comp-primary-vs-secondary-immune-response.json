@@ -19,6 +19,7 @@
     "name": "Secondary Immune Response"
   },
   "overview": "The whole logic of vaccination rests on the difference between meeting an antigen for the first time and meeting it again.",
+  "genZNote": "Your immune system remembers everything.",
   "aspects": [
     {
       "id": "overview",

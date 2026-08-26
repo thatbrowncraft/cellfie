@@ -3,11 +3,23 @@
   "domain": "culture-media",
   "difficulty": "intermediate",
   "frequency": "frequently-tested",
-  "audience": ["student", "lab-learner"],
-  "tags": ["culture-media", "microbiology", "identification"],
-  "itemA": { "name": "Selective Media" },
-  "itemB": { "name": "Differential Media" },
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "culture-media",
+    "microbiology",
+    "identification"
+  ],
+  "itemA": {
+    "name": "Selective Media"
+  },
+  "itemB": {
+    "name": "Differential Media"
+  },
   "overview": "Both shape which organisms show up and how — but selective media controls what grows, while differential media controls how growth looks.",
+  "genZNote": "One's a bouncer, one's a stylist.",
   "aspects": [
     {
       "id": "purpose",

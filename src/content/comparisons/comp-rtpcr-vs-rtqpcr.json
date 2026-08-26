@@ -19,6 +19,7 @@
     "name": "RT-qPCR"
   },
   "overview": "The naming here trips up a lot of people — 'RT' means reverse transcription, and it's easy to confuse with real-time.",
+  "genZNote": "Detects the RNA, or detects it and tells you how much.",
   "aspects": [
     {
       "id": "overview",

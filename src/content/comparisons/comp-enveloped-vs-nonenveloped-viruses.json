@@ -19,6 +19,7 @@
     "name": "Non-enveloped Viruses"
   },
   "overview": "Whether a virus steals a lipid membrane on its way out of the cell decides how fragile it is and what kills it.",
+  "genZNote": "One dissolves in soap. One really doesn't care.",
   "aspects": [
     {
       "id": "overview",

@@ -19,6 +19,7 @@
     "name": "Bacilli"
   },
   "overview": "The first split most learners make when looking down a microscope: shape.",
+  "genZNote": "Round versus rod. Pick a lane.",
   "aspects": [
     {
       "id": "overview",

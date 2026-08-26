@@ -3,11 +3,27 @@
   "domain": "laboratory-technique",
   "difficulty": "intermediate",
   "frequency": "common",
-  "audience": ["student", "lab-learner", "researcher"],
-  "tags": ["diagnostics", "virology", "molecular-biology", "immunology"],
-  "itemA": { "name": "ELISA", "subtitle": "Enzyme-Linked Immunosorbent Assay" },
-  "itemB": { "name": "PCR", "subtitle": "Polymerase Chain Reaction" },
+  "audience": [
+    "student",
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "diagnostics",
+    "virology",
+    "molecular-biology",
+    "immunology"
+  ],
+  "itemA": {
+    "name": "ELISA",
+    "subtitle": "Enzyme-Linked Immunosorbent Assay"
+  },
+  "itemB": {
+    "name": "PCR",
+    "subtitle": "Polymerase Chain Reaction"
+  },
   "overview": "Both are workhorse diagnostic techniques, but they detect fundamentally different kinds of evidence of infection or exposure.",
+  "genZNote": "Different targets. Different vibes. Same goal: finding the answer.",
   "aspects": [
     {
       "id": "overview",

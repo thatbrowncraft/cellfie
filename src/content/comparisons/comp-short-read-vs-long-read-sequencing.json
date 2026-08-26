@@ -19,6 +19,7 @@
     "name": "Long-Read Sequencing"
   },
   "overview": "The fundamental trade-off in modern sequencing: extremely accurate short fragments versus longer, more error-prone reads that can span difficult genomic regions.",
+  "genZNote": "Short and precise, or long and messy — pick your trade-off.",
   "aspects": [
     {
       "id": "overview",

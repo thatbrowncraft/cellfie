@@ -20,6 +20,7 @@
     "name": "Transduction"
   },
   "overview": "Two of the three classic routes bacteria use to pick up new DNA from their surroundings — one grabs free DNA, the other gets it delivered by a virus.",
+  "genZNote": "DNA picked up from the environment versus DNA delivered by a virus.",
   "aspects": [
     {
       "id": "overview",

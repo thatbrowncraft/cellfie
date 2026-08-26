@@ -19,6 +19,7 @@
     "name": "Shotgun Metagenomics"
   },
   "overview": "A broader version of the 16S question — any targeted marker approach versus reading the whole community's genetic material.",
+  "genZNote": "Same sample, very different reading list.",
   "aspects": [
     {
       "id": "overview",

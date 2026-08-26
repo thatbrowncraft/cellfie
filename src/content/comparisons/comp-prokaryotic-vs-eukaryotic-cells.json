@@ -18,6 +18,7 @@
     "name": "Eukaryotic Cells"
   },
   "overview": "The most fundamental division in all of biology, and the one that defines what counts as a 'microbe' versus a 'higher' organism.",
+  "genZNote": "No nucleus versus an actual address for the DNA.",
   "aspects": [
     {
       "id": "overview",

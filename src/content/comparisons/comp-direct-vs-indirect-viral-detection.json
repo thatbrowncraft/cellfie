@@ -19,6 +19,7 @@
     "name": "Indirect Viral Detection"
   },
   "overview": "One approach finds the virus itself; the other finds the footprints the immune system left behind after meeting it.",
+  "genZNote": "Find the virus itself, or find the evidence it left behind.",
   "aspects": [
     {
       "id": "overview",

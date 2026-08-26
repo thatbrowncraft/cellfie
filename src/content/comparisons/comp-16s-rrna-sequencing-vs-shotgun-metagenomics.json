@@ -19,6 +19,7 @@
     "name": "Shotgun Metagenomics"
   },
   "overview": "Two ways to profile a microbial community — one reads a single universal marker gene, the other reads everything.",
+  "genZNote": "One zooms in on a single gene. One opens the whole crowd.",
   "aspects": [
     {
       "id": "overview",

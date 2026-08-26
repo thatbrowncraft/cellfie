@@ -19,6 +19,7 @@
     "name": "Anaerobic Bacteria"
   },
   "overview": "Oxygen tolerance shapes how an organism generates energy and how it must be cultured in the lab.",
+  "genZNote": "One needs the air. One really, really doesn't.",
   "aspects": [
     {
       "id": "overview",

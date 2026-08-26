@@ -19,6 +19,7 @@
     "name": "Antigenic Shift"
   },
   "overview": "Two very different ways influenza changes its surface proteins — one gradual and predictable, the other sudden and pandemic-prone.",
+  "genZNote": "Small changes versus a full plot twist.",
   "aspects": [
     {
       "id": "overview",

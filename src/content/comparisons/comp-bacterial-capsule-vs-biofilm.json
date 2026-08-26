@@ -19,6 +19,7 @@
     "name": "Biofilm"
   },
   "overview": "Both are protective, often slimy structures bacteria make — but one belongs to a single cell, the other to a whole community.",
+  "genZNote": "A raincoat versus a whole gated community.",
   "aspects": [
     {
       "id": "overview",

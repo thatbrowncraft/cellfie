@@ -20,6 +20,7 @@
     "name": "Biofilm-Associated Bacteria"
   },
   "overview": "The same species behaves like a completely different organism depending on whether it is floating free or embedded in a community.",
+  "genZNote": "Alone it’s easy prey. Together it’s a fortress.",
   "aspects": [
     {
       "id": "overview",

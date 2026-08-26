@@ -19,6 +19,7 @@
     "name": "Passive Immunity"
   },
   "overview": "One is your own immune system doing the work; the other is borrowed protection someone else's immune system already made.",
+  "genZNote": "Borrowed protection vs built-from-scratch immunity.",
   "aspects": [
     {
       "id": "overview",

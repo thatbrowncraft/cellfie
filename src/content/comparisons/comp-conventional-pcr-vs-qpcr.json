@@ -19,6 +19,7 @@
     "name": "Quantitative PCR (qPCR)"
   },
   "overview": "Same amplification chemistry underneath, but one only tells you if a target is present, and the other tells you how much.",
+  "genZNote": "One tells you yes or no. One tells you how much.",
   "aspects": [
     {
       "id": "overview",

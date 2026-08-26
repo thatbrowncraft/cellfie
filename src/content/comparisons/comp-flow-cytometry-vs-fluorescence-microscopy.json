@@ -19,6 +19,7 @@
     "name": "Fluorescence Microscopy"
   },
   "overview": "Both rely on fluorescent labeling to study cells, but one is built for speed and numbers, the other for spatial detail.",
+  "genZNote": "Count thousands of cells fast, or actually look at a few closely.",
   "aspects": [
     {
       "id": "overview",

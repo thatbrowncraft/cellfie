@@ -19,6 +19,7 @@
     "name": "Culture-Independent Microbiome Analysis"
   },
   "overview": "For decades, microbiology could only see what it could grow — and it turns out that was only a small slice of what's actually there.",
+  "genZNote": "Grow it first, or just read its DNA and skip the wait.",
   "aspects": [
     {
       "id": "overview",

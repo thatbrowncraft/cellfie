@@ -19,6 +19,7 @@
     "name": "Digital PCR"
   },
   "overview": "Both give you a number, but digital PCR gets there by partitioning the sample so thoroughly that it can count molecules directly.",
+  "genZNote": "One estimates quantity. One counts molecules one by one.",
   "aspects": [
     {
       "id": "overview",

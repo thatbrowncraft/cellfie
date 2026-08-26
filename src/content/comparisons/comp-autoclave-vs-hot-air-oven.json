@@ -3,11 +3,25 @@
   "domain": "laboratory-equipment",
   "difficulty": "basic",
   "frequency": "common",
-  "audience": ["student", "lab-learner"],
-  "tags": ["sterilization", "equipment", "biosafety"],
-  "itemA": { "name": "Autoclave", "subtitle": "Moist heat sterilization" },
-  "itemB": { "name": "Hot Air Oven", "subtitle": "Dry heat sterilization" },
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "sterilization",
+    "equipment",
+    "biosafety"
+  ],
+  "itemA": {
+    "name": "Autoclave",
+    "subtitle": "Moist heat sterilization"
+  },
+  "itemB": {
+    "name": "Hot Air Oven",
+    "subtitle": "Dry heat sterilization"
+  },
   "overview": "Both sterilize using heat, but moist versus dry heat changes what materials each can safely and effectively be used on.",
+  "genZNote": "Steam sprints. Dry heat marathons.",
   "aspects": [
     {
       "id": "principle",

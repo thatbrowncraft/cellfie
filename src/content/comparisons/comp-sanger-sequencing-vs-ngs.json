@@ -19,6 +19,7 @@
     "name": "Next-Generation Sequencing (NGS)"
   },
   "overview": "The original gold-standard sequencing method versus the massively parallel technology that eventually made whole genomes routine.",
+  "genZNote": "One read at a time versus millions in parallel.",
   "aspects": [
     {
       "id": "overview",

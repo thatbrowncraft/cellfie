@@ -25,6 +25,7 @@
     "labCategory": "biochemical-test"
   },
   "overview": "Two quick bench tests that, run in sequence, take an unknown Gram-positive coccus most of the way to a genus and species.",
+  "genZNote": "Bubbles first, clotting second.",
   "aspects": [
     {
       "id": "overview",

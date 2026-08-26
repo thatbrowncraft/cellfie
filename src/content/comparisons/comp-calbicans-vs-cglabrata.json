@@ -24,6 +24,7 @@
     "refId": "candida-glabrata"
   },
   "overview": "Same genus, very different behavior — especially when it comes to which antifungal will actually work.",
+  "genZNote": "Same genus, but one shrugs off azoles way more often.",
   "aspects": [
     {
       "id": "overview",

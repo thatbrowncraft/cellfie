@@ -19,6 +19,7 @@
     "name": "MBC"
   },
   "overview": "Two thresholds from the same broth dilution experiment — one tells you what stops growth, the other tells you what actually kills.",
+  "genZNote": "Stopped growing is not the same as dead.",
   "aspects": [
     {
       "id": "overview",

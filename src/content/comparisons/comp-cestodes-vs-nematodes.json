@@ -19,6 +19,7 @@
     "name": "Nematodes"
   },
   "overview": "Two very different worm body plans that cause overlapping but distinct disease patterns in humans.",
+  "genZNote": "Flat and segmented versus round and not.",
   "aspects": [
     {
       "id": "overview",

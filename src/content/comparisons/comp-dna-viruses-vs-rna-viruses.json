@@ -19,6 +19,7 @@
     "name": "RNA Viruses"
   },
   "overview": "Genome chemistry drives almost everything about a virus's stability, mutation rate, and replication strategy.",
+  "genZNote": "One proofreads its homework. One does not.",
   "aspects": [
     {
       "id": "overview",

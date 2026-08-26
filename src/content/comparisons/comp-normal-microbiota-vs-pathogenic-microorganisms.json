@@ -19,6 +19,7 @@
     "name": "Pathogenic Microorganisms"
   },
   "overview": "The line between 'friend' and 'foe' in microbiology is often about context and host state, not a fixed label on the organism.",
+  "genZNote": "Same neighborhood, very different intentions.",
   "aspects": [
     {
       "id": "overview",

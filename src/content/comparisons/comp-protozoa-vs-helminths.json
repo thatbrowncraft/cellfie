@@ -19,6 +19,7 @@
     "name": "Helminths"
   },
   "overview": "The two broad kingdoms of human parasites, split by something as basic as being single-celled or not.",
+  "genZNote": "Single-celled troublemakers versus the multicellular kind.",
   "aspects": [
     {
       "id": "overview",

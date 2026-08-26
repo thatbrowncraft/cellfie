@@ -19,6 +19,7 @@
     "name": "MHC Class II"
   },
   "overview": "Two antigen-presentation systems that tell T cells whether a threat is hiding inside a cell or lurking outside it.",
+  "genZNote": "Everyone's cells report in. Only some cells brief the responders.",
   "aspects": [
     {
       "id": "overview",

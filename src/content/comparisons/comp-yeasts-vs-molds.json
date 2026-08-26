@@ -19,6 +19,7 @@
     "name": "Molds"
   },
   "overview": "Fungi come in two basic growth forms, and telling them apart at a glance is the first skill in mycology.",
+  "genZNote": "Round and single-celled versus long, branching, and fuzzy.",
   "aspects": [
     {
       "id": "overview",

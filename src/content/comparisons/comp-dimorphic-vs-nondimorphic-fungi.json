@@ -20,6 +20,7 @@
     "name": "Non-dimorphic Fungi"
   },
   "overview": "Some fungi live a double life, switching form entirely depending on temperature — and that switch is exactly what lets them invade human tissue.",
+  "genZNote": "One has two forms depending on temperature. One just picks a lane.",
   "aspects": [
     {
       "id": "overview",

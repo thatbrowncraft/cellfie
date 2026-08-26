@@ -20,6 +20,7 @@
     "name": "Polyclonal Antibodies"
   },
   "overview": "One is a single, precisely defined antibody clone; the other is a mixed bag from an entire immune response.",
+  "genZNote": "One very specific antibody clone versus a whole team of them.",
   "aspects": [
     {
       "id": "overview",

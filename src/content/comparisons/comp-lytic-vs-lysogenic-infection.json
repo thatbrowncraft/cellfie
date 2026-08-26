@@ -19,6 +19,7 @@
     "name": "Lysogenic Infection"
   },
   "overview": "Two very different fates a bacteriophage genome can choose once it gets inside a bacterial cell.",
+  "genZNote": "Burn it down now, or move in quietly.",
   "aspects": [
     {
       "id": "overview",
