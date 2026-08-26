@@ -21,6 +21,8 @@ interface ComparisonSourcesPanelProps {
   topicId: string
   /** Called when the person accepts a drafted value for a specific side of the comparison (brief §11: Accept → becomes a user-owned aspect override, never silently written into curated content). */
   onAccept: (draft: AcceptedDraft) => void
+  /** Opens the panel straight onto a specific tab — used when the person explicitly chose "Search My Library" or "Search Online Knowledge" from the landing search's entity-pair fallback, rather than the generic "Fill from a source" entry point (correction-pass Part 2/3/4). Defaults to 'my-library' when absent, unchanged from before. */
+  defaultTab?: 'my-library' | 'online'
 }
 
 /**
@@ -32,8 +34,8 @@ interface ComparisonSourcesPanelProps {
  * instead of writing to a Saved Items list, matching the brief's
  * "draft → review → Accept/Dismiss" workflow exactly.
  */
-export function ComparisonSourcesPanel({ title, topicId, onAccept }: ComparisonSourcesPanelProps) {
-  const [activeTab, setActiveTab] = useState<'my-library' | 'online'>('my-library')
+export function ComparisonSourcesPanel({ title, topicId, onAccept, defaultTab }: ComparisonSourcesPanelProps) {
+  const [activeTab, setActiveTab] = useState<'my-library' | 'online'>(defaultTab ?? 'my-library')
 
   return (
     <div className="flex flex-col gap-4 rounded-md border border-border bg-surface p-5">
