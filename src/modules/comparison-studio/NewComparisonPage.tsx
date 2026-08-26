@@ -27,8 +27,10 @@ const FREQUENCY_OPTIONS = Object.entries(COMPARISON_FREQUENCY_LABELS).map(([valu
  * Item B → domain (auto-detected from either item's curated category,
  * editable) → aspect preset applied → straight into the workspace to
  * edit values. If `itemA`/`itemAName` arrive via query params (the
- * inline "Compare with…" entry point on a topic page — brief §17), the
- * Item A step is skipped entirely.
+ * Item A → Item B step is skipped entirely. If `itemBName` is present
+ * too (the Comparison Studio landing search's entity-pair "Build
+ * comparison" fallback — brief §8B/§12A/§32), both steps are skipped and
+ * the user lands straight on domain/difficulty/frequency.
  */
 export function NewComparisonPage() {
   const navigate = useNavigate()
@@ -43,9 +45,28 @@ export function NewComparisonPage() {
     return { name, refKind: refKind ?? undefined, refId, labCategory }
   }, [searchParams])
 
+  // Item B prefill mirrors Item A's exactly (brief §17's existing
+  // convention) — the missing half of it is what made the Comparison
+  // Studio landing search's "Build comparison" fallback (brief §8B/§12A)
+  // need a Studio-side workaround instead of just deep-linking here with
+  // both sides already filled in.
+  const prefilledItemB = useMemo<ComparisonItemRef | undefined>(() => {
+    const name = searchParams.get('itemBName')
+    if (!name) return undefined
+    const refKind = searchParams.get('itemBRefKind') as ComparisonItemRef['refKind'] | null
+    const refId = searchParams.get('itemBRefId') ?? undefined
+    const labCategory = searchParams.get('itemBLabCategory') ?? undefined
+    return { name, refKind: refKind ?? undefined, refId, labCategory }
+  }, [searchParams])
+
+  const prefilledDomain = useMemo<ComparisonDomain | undefined>(() => {
+    const domainParam = searchParams.get('domain')
+    return domainParam ? (domainParam as ComparisonDomain) : undefined
+  }, [searchParams])
+
   const [itemA, setItemA] = useState<ComparisonItemRef | undefined>(prefilledItemA)
-  const [itemB, setItemB] = useState<ComparisonItemRef | undefined>(undefined)
-  const [domain, setDomain] = useState<ComparisonDomain>('custom')
+  const [itemB, setItemB] = useState<ComparisonItemRef | undefined>(prefilledItemB)
+  const [domain, setDomain] = useState<ComparisonDomain>(prefilledDomain ?? 'custom')
   const [difficulty, setDifficulty] = useState<ComparisonDifficulty>('intermediate')
   const [frequency, setFrequency] = useState<ComparisonFrequency>('common')
   const [pickerFor, setPickerFor] = useState<'A' | 'B' | null>(null)
