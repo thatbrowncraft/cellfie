@@ -153,8 +153,21 @@ export interface Comparison {
   itemB: ComparisonItemRef
   aspects: ComparisonAspect[]
   overlay?: ComparisonLearningOverlay
-  /** Short scientifically-grounded framing line — not the Gen Z microcopy (see core/comparison/microcopy.ts), just a one-sentence "why this pair matters" summary shown at the top of the workspace. */
+  /** Short scientifically-grounded framing line — not the Gen Z microcopy (see genZNote below), just a one-sentence "why this pair matters" summary shown at the top of the workspace. */
   overview?: string
+  /**
+   * Cellfie's Gen Z personality layer for this comparison (brief §22–25) —
+   * short, witty, scientifically-relevant, shown under the title where the
+   * UI already renders it. Mirrors `genZNote` on organism content
+   * (`core/organisms/types.ts`) exactly, for the same reason: it's part of
+   * the curated JSON contract, never generated dynamically by the
+   * Knowledge Layer, and never mixed into `overview`/`aspects` (which stay
+   * professional). Every curated comparison is expected to have one — see
+   * `core/comparison/registry.ts`'s load-time check — but the field stays
+   * optional in the type itself so a malformed/future file degrades to
+   * "no tagline shown" rather than failing to load.
+   */
+  genZNote?: string
   lastVerified?: string
 }
 

@@ -1,43 +1,30 @@
 /**
  * core/comparison/microcopy — Comparison Studio's optional Gen Z
- * personality layer (brief §21).
+ * personality layer (brief §21, updated per §22–25/23A).
  *
  * Same discipline as `core/laboratory/microcopy.ts`: structured data,
  * not strings hard-coded into components, and never a joke under every
- * row. Scientific content stays primary — every function here returns
- * `undefined` cleanly (falling back to a generic-but-still-optional
- * line) rather than ever forcing a placeholder onto a comparison that
- * doesn't have a bespoke line yet.
+ * row. Scientific content stays primary.
  *
- * Per-comparison lines are keyed by curated comparison id and are
- * genuinely optional — `getComparisonTagline` returns undefined for any
- * comparison (including every custom one) without a specific entry, and
- * callers simply render nothing in that case.
+ * Per-comparison subtitles (§23A) now live in the curated JSON itself as
+ * `Comparison.genZNote` — the same place `genZNote` already lives on
+ * organism content (`core/organisms/types.ts`) — instead of the
+ * previous id-keyed lookup table that used to live in this file. That
+ * table only ever covered 17 of the 55 curated comparisons and lived
+ * outside the content files themselves, which is exactly the
+ * inconsistent-coverage problem §22 asks to fix and the "must be part
+ * of the curated JSON itself" rule in §23A rules out going forward.
+ * `getComparisonTagline` is kept as the stable call site every page
+ * already uses; it now just reads the field straight off the curated
+ * comparison via the registry instead of a second parallel table, so
+ * there is exactly one place (the JSON file) that owns this content —
+ * never two.
  */
+import { getCuratedComparisonById } from './registry'
 
-/** Shown under the comparison title itself, when a specific one exists (brief §21 example: "Different targets. Different vibes. Same goal: finding the answer."). */
-const COMPARISON_TAGLINES: Record<string, string> = {
-  'comp-elisa-vs-pcr': 'Different targets. Different vibes. Same goal: finding the answer.',
-  'comp-grampos-vs-gramneg': 'The cell wall has entered the chat.',
-  'comp-autoclave-vs-hot-air-oven': 'Steam sprints. Dry heat marathons.',
-  'comp-selective-vs-differential-media': "One's a bouncer, one's a stylist.",
-  'comp-exotoxins-vs-endotoxins': 'One leaves on purpose. One only shows up when the party\u2019s over.',
-  'comp-cocci-vs-bacilli': 'Round versus rod. Pick a lane.',
-  'comp-sterilization-vs-disinfection': 'One kills everything. One just kills enough.',
-  'comp-catalase-test-vs-coagulase-test': 'Bubbles first, clotting second.',
-  'comp-saureus-vs-sepidermidis': 'Same genus. Very different reputations.',
-  'comp-dna-viruses-vs-rna-viruses': 'One proofreads its homework. One does not.',
-  'comp-lytic-vs-lysogenic-infection': 'Burn it down now, or move in quietly.',
-  'comp-primary-vs-secondary-immune-response': 'Your immune system remembers everything.',
-  'comp-planktonic-vs-biofilm-associated-bacteria': 'Alone it\u2019s easy prey. Together it\u2019s a fortress.',
-  'comp-antigenic-drift-vs-antigenic-shift': 'Slow makeover versus total identity change.',
-  'comp-mic-vs-mbc': 'Stopped growing is not the same as dead.',
-  'comp-conventional-pcr-vs-qpcr': 'One tells you yes or no. One tells you how much.',
-  'comp-short-read-vs-long-read-sequencing': 'Short and precise, or long and messy \u2014 pick your trade-off.'
-}
-
+/** Shown under the comparison title itself, straight from the curated JSON's `genZNote` field. Returns undefined for a custom/user comparison (no curated id) or the rare curated file missing one (flagged separately at load time in registry.ts). */
 export function getComparisonTagline(comparisonId: string): string | undefined {
-  return COMPARISON_TAGLINES[comparisonId]
+  return getCuratedComparisonById(comparisonId)?.genZNote
 }
 
 /** Shown under a row marked `isKeyDifference` (brief §21 example). Generic and safe to show on any comparison's key-difference row, since it's about the *concept* of a key difference, not the content. */

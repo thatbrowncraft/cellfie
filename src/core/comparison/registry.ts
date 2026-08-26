@@ -34,6 +34,15 @@ function loadComparisons(glob: Record<string, { default: unknown }>): Comparison
       console.warn(`[comparison] Skipping malformed comparison content file: ${path}`)
       continue
     }
+    // Content-contract check (brief §22–25/23A): every curated comparison
+    // must ship its own Gen Z subtitle in the JSON itself — this is a
+    // warning, not a load failure, so one missing field never takes the
+    // whole comparison offline, but it's the enforcement point the brief
+    // asks for ("should fail content validation if the field is missing").
+    if (typeof data.genZNote !== 'string' || !data.genZNote.trim()) {
+      // eslint-disable-next-line no-console
+      console.warn(`[comparison] Missing required genZNote (Cellfie subtitle) in: ${path}`)
+    }
     items.push(data as Comparison)
   }
   return items.sort((a, b) => `${a.itemA.name} vs ${a.itemB.name}`.localeCompare(`${b.itemA.name} vs ${b.itemB.name}`))
@@ -65,8 +74,23 @@ export function listDomainsInUse(): ComparisonDomain[] {
 
 // ---------------------------------------------------------------------------
 // Search — local, substring, case-insensitive, multi-field (mirrors
-// core/laboratory/registry.ts's approach exactly).
+// core/laboratory/registry.ts's approach), plus a normalization pass and
+// an explicit two-part "X vs Y" matcher (brief §8/§11 fix — see below).
 // ---------------------------------------------------------------------------
+
+/**
+ * Collapses punctuation differences that shouldn't matter for matching —
+ * most importantly hyphens vs spaces. This is the direct fix for the bug
+ * brief §8 reports: a search for "Gram Positive bacteria" typed with a
+ * space should still find itemA.name "Gram-Positive Bacteria", which the
+ * old plain `.toLowerCase()` haystack never normalized.
+ */
+function normalize(value: string): string {
+  return value.toLowerCase().replace(/[-_/]/g, ' ').replace(/\s+/g, ' ').trim()
+}
+
+/** Same separator vocabulary as `unifiedSearch.ts`'s query splitter — kept in sync deliberately (see that file's header) rather than imported, since `unifiedSearch.ts` itself calls into this module and a circular import isn't worth it for one regex. */
+const COMPARISON_SEPARATOR = /\s+(?:vs\.?|versus|compared\s+(?:to|with)|and)\s+/i
 
 function buildHaystack(item: Comparison): string {
   const parts: (string | undefined)[] = [
@@ -79,8 +103,11 @@ function buildHaystack(item: Comparison): string {
     item.frequency,
     ...item.tags,
     ...item.aspects.map((a) => a.label)
+    // Note: genZNote is deliberately NOT included here — it's personality
+    // copy, not a searchable scientific term, and including it risks a
+    // search for an unrelated word inside a joke surfacing the wrong card.
   ]
-  return parts.filter(Boolean).join(' ').toLowerCase()
+  return normalize(parts.filter(Boolean).join(' '))
 }
 
 const HAYSTACK_BY_ID = new Map(ALL_CURATED_COMPARISONS.map((c) => [c.id, buildHaystack(c)]))
@@ -89,10 +116,37 @@ function titleFor(item: Comparison): string {
   return `${item.itemA.name} vs ${item.itemB.name}`
 }
 
+/**
+ * True if a comparison's two items match a query already split into two
+ * halves, in either order — the fix for brief §8/§11: a search doesn't
+ * have to reproduce the curated title's exact wording or item order, it
+ * just has to name both sides of a pair that already exists.
+ */
+function matchesAsPair(item: Comparison, halfA: string, halfB: string): boolean {
+  const nameA = normalize(item.itemA.name)
+  const nameB = normalize(item.itemB.name)
+  const a = normalize(halfA)
+  const b = normalize(halfB)
+  const straight = (nameA.includes(a) || a.includes(nameA)) && (nameB.includes(b) || b.includes(nameB))
+  const crossed = (nameA.includes(b) || b.includes(nameA)) && (nameB.includes(a) || a.includes(nameB))
+  return straight || crossed
+}
+
 export function searchCuratedComparisons(query: string): ComparisonSearchHit[] {
-  const q = query.trim().toLowerCase()
-  if (!q) return []
-  return ALL_CURATED_COMPARISONS.filter((c) => (HAYSTACK_BY_ID.get(c.id) ?? buildHaystack(c)).includes(q)).map((c) => ({
+  const raw = query.trim()
+  if (!raw) return []
+  const q = normalize(raw)
+
+  const halves = raw.split(COMPARISON_SEPARATOR).map((p) => p.trim()).filter(Boolean)
+  const isTwoPart = halves.length === 2
+
+  const matches = ALL_CURATED_COMPARISONS.filter((c) => {
+    if ((HAYSTACK_BY_ID.get(c.id) ?? buildHaystack(c)).includes(q)) return true
+    if (isTwoPart && matchesAsPair(c, halves[0], halves[1])) return true
+    return false
+  })
+
+  return matches.map((c) => ({
     id: c.id,
     domain: c.domain,
     title: titleFor(c),
