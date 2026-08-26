@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowRight, Plus } from '@phosphor-icons/react'
 import { Button, Dropdown } from '../../shared/components'
@@ -105,7 +105,25 @@ export function NewComparisonPage() {
     const suggested = getSuggestedAspects(domain)
     const aspects = suggested.map((preset) => ({ id: preset.id, label: preset.label, valueA: '', valueB: '' }))
     const record = await createCustomComparison({ domain, difficulty, frequency, itemA, itemB, aspects })
-    navigate(`/comparison/${record.id}`, { replace: true })
+    // `openSource` (correction-pass Part 2/3/4) came from the landing search's "My Library"/"Online Knowledge" entity-pair buttons — forward it plus the first aspect id so ComparisonWorkspacePage can open the Fill-from-source dialog on the right tab immediately, instead of landing on a blank workspace that looks identical to plain "Build comparison."
+    const openSource = searchParams.get('openSource')
+    const suffix = openSource ? `?openSource=${openSource}&focusAspect=${encodeURIComponent(aspects[0]?.id ?? '')}` : ''
+    navigate(`/comparison/${record.id}${suffix}`, { replace: true })
+  }
+
+  // If both items *and* the domain arrived prefilled (the landing search's entity-pair "Build comparison" / "My Library" / "Online Knowledge" actions all send all three), there's nothing left for the person to decide here — auto-continue straight into the workspace instead of making them tap "Open comparison workspace" on a screen that's already fully filled in (correction-pass Part 2: "the user should never hit a dead end," and every extra confirmation tap on mobile is its own small dead end). A person who only searched one item, or wants to change the domain/difficulty first, still lands on this screen normally — this only fires when literally everything is already decided.
+  const autoContinueEligible = Boolean(prefilledItemA && prefilledItemB && prefilledDomain)
+  useEffect(() => {
+    if (autoContinueEligible) void handleContinue()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  if (autoContinueEligible) {
+    return (
+      <div className="mx-auto max-w-2xl px-4 py-16 text-center">
+        <p className="font-ui text-body text-ink-tertiary">Setting up your comparison…</p>
+      </div>
+    )
   }
 
   return (

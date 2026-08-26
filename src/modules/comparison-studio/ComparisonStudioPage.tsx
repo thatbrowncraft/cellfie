@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { CaretRight, MagnifyingGlass, Plus, Scales } from '@phosphor-icons/react'
+import { Books, CaretRight, Globe, MagnifyingGlass, Plus, Scales, Sparkle } from '@phosphor-icons/react'
 import { Button, EmptyState, Tabs } from '../../shared/components'
 import { useLiveQuery } from '../../core/db/useLiveQuery'
 import { db, type SavedComparisonRecord } from '../../core/db'
@@ -20,33 +20,54 @@ import { resolveComparisonSearch, type UnifiedSearchResult } from '../../core/co
 import { ComparisonCard } from './components/ComparisonCard'
 
 type SavedTab = 'saved' | 'favorites' | 'custom'
+type SourceMode = 'my-library' | 'online'
 
 /** Landing shows at most this many recent entries (brief §5: "fine to show a small Recent section as well... do not duplicate huge amounts of content"). Same cap Dashboard uses, for the same reason. */
 const MAX_LANDING_RECENT = 4
-/** "Featured comparisons" cap (brief §4: "approximately 4-6 cards maximum"). */
-const MAX_FEATURED = 6
+/**
+ * "Start with a topic" cap (correction-pass Part 1: "Only a very small
+ * curated selection, perhaps 3-4"). Deliberately much smaller than the
+ * old "Featured comparisons" section's 6 full-size cards — this is the
+ * fix for the landing page still reading as a content catalogue rather
+ * than a Comparison Studio (mobile testing feedback, correction-pass
+ * intro). The full set stays exactly where it already lived: Explore
+ * all comparisons (`ExploreComparisonsPage`).
+ */
+const MAX_START_TOPICS = 4
+/** "Explore by domain" chip cap (correction-pass Part 1: "Compact chips only if useful," not a full print of all 15 ComparisonDomain values). The remaining domains stay reachable from Explore All's own domain filter — nothing is hidden, just not dumped on the landing page. */
+const MAX_DOMAIN_CHIPS = 6
 /** Debounce for the landing search box — SearchField reports every keystroke, and each non-empty query can trigger an entity search with a dynamic import (see unifiedSearch.ts), so this avoids firing on every character typed. */
 const SEARCH_DEBOUNCE_MS = 350
 
 /**
- * A small, stable "Featured comparisons" selection (brief §4/§27) —
- * frequently-tested items first, then common ones, until MAX_FEATURED is
- * reached. Deliberately not random/rotating: a stable pick means the
- * cards a person bookmarks mentally stay find-able, and it costs nothing
- * extra since the full curated set is already loaded in this module
- * either way (brief §29 — no *additional* content gets pulled in for
- * this, it's a slice of what's already resident).
+ * A small, stable "Start with a topic" selection (correction-pass Part
+ * 1) — frequently-tested items first, then common ones, until
+ * MAX_START_TOPICS is reached. Deliberately not random/rotating: a
+ * stable pick means the topics a person bookmarks mentally stay
+ * find-able, and it costs nothing extra since the full curated set is
+ * already loaded in this module either way — this is a slice of what's
+ * already resident, not additional content.
  */
-function pickFeatured(): typeof ALL_CURATED_COMPARISONS {
+function pickStartTopics(): typeof ALL_CURATED_COMPARISONS {
   const byPriority = [...ALL_CURATED_COMPARISONS].sort((a, b) => {
     const rank = (f: ComparisonFrequency) => (f === 'frequently-tested' ? 0 : f === 'common' ? 1 : 2)
     return rank(a.frequency) - rank(b.frequency)
   })
-  return byPriority.slice(0, MAX_FEATURED)
+  return byPriority.slice(0, MAX_START_TOPICS)
 }
 
-/** Builds the query-string NewComparisonPage already knows how to read (`itemAName`/`itemARefKind`/... and the `itemB*` equivalents added alongside it) so an entity-pair fallback match becomes a real prefilled comparison in one hop, with no second prefill mechanism invented for this. */
-function buildComparisonUrl(itemA: ComparisonItemRef, itemB: ComparisonItemRef, domain: ComparisonDomain): string {
+/** The domains actually in use among curated comparisons, ranked by how many comparisons use them — powers the capped "Explore by domain" chip row (most useful domains first, correction-pass Part 1). */
+function topDomainsInUse(limit: number): ComparisonDomain[] {
+  const counts = new Map<ComparisonDomain, number>()
+  for (const c of ALL_CURATED_COMPARISONS) counts.set(c.domain, (counts.get(c.domain) ?? 0) + 1)
+  return Array.from(counts.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
+    .map(([domain]) => domain)
+}
+
+/** Builds the query-string NewComparisonPage already knows how to read (`itemAName`/`itemARefKind`/... and the `itemB*` equivalents added alongside it) so an entity-pair fallback match becomes a real prefilled comparison in one hop, with no second prefill mechanism invented for this. `openSource` (correction-pass Part 2/3/4) additionally tells NewComparisonPage which source panel to open automatically once the workspace is created, so "Search My Library" and "Search Online Knowledge" actually differ from the plain "Build comparison" action instead of doing the exact same thing. */
+function buildComparisonUrl(itemA: ComparisonItemRef, itemB: ComparisonItemRef, domain: ComparisonDomain, openSource?: SourceMode): string {
   const params = new URLSearchParams()
   params.set('itemAName', itemA.name)
   if (itemA.refKind) params.set('itemARefKind', itemA.refKind)
@@ -57,6 +78,7 @@ function buildComparisonUrl(itemA: ComparisonItemRef, itemB: ComparisonItemRef, 
   if (itemB.refId) params.set('itemBRefId', itemB.refId)
   if (itemB.labCategory) params.set('itemBLabCategory', itemB.labCategory)
   params.set('domain', domain)
+  if (openSource) params.set('openSource', openSource)
   return `/comparison/new?${params.toString()}`
 }
 
@@ -120,7 +142,8 @@ export function ComparisonStudioPage() {
     })
   }, [debouncedQuery])
 
-  const featured = useMemo(() => pickFeatured(), [])
+  const startTopics = useMemo(() => pickStartTopics(), [])
+  const domainChips = useMemo(() => topDomainsInUse(MAX_DOMAIN_CHIPS), [])
 
   const favorites = savedRecords.filter((r) => r.favorite)
   const custom = savedRecords.filter((r) => r.sourceType === 'custom')
@@ -134,10 +157,10 @@ export function ComparisonStudioPage() {
     navigate(`/comparison/${routeId}`)
   }
 
-  function handleBuildFromEntities() {
+  function handleBuildFromEntities(sourceMode?: SourceMode) {
     if (searchResult.kind !== 'entity-pair') return
     const domain = searchResult.itemA.suggestedDomain !== 'organism' ? searchResult.itemA.suggestedDomain : searchResult.itemB.suggestedDomain
-    navigate(buildComparisonUrl(searchResult.itemA.item, searchResult.itemB.item, domain))
+    navigate(buildComparisonUrl(searchResult.itemA.item, searchResult.itemB.item, domain, sourceMode))
   }
 
   function handleCreateCustomFromQuery(rawQuery: string) {
@@ -147,34 +170,32 @@ export function ComparisonStudioPage() {
 
   return (
     <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
-      <header className="mb-6">
+      <header className="mb-6 text-center sm:text-left">
         <h1 className="font-display text-display font-semibold text-ink-primary">Comparison Studio</h1>
-        <p className="mt-2 max-w-2xl font-body text-body-lg text-ink-secondary">
-          Put two things side by side and see exactly where they agree, where they diverge, and which difference actually matters.
+        <p className="mx-auto mt-2 max-w-2xl font-body text-body-lg text-ink-secondary sm:mx-0">
+          Compare two things side by side and see what actually sets them apart.
         </p>
-        <div className="mt-4">
-          <Button icon={<Plus size={18} />} onClick={() => navigate('/comparison/new')}>
-            New comparison
-          </Button>
-        </div>
       </header>
 
-      {/* Search / Discovery — the gateway into Cellfie curated content, entity-based building, My Library, and Online Knowledge (brief §3/§8-13). */}
-      <section className="mb-8">
-        <div className="relative flex items-center rounded-md border-2 border-border-strong bg-surface focus-within:border-olive">
-          <MagnifyingGlass className="pointer-events-none absolute left-4 text-ink-tertiary" size={20} aria-hidden />
+      {/* Search / Discovery — the primary interaction on the page, not one section among equals (correction-pass Part 1: "the search/create interaction should dominate"). Curated content, entity-based building, My Library, and Online Knowledge all resolve from here (brief §3/§8-13). */}
+      <section className="mb-6">
+        <div className="relative flex items-center rounded-lg border-2 border-border-strong bg-surface shadow-sm focus-within:border-olive">
+          <MagnifyingGlass className="pointer-events-none absolute left-5 text-ink-tertiary" size={22} aria-hidden />
           <input
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search anything to compare… e.g. Gram positive vs Gram negative"
+            placeholder="What do you want to compare?"
             aria-label="Search anything to compare"
-            className="w-full bg-transparent py-4 pl-12 pr-4 font-ui text-body-lg text-ink-primary placeholder:text-ink-tertiary outline-none"
+            className="w-full bg-transparent py-5 pl-14 pr-4 font-ui text-h3 text-ink-primary placeholder:text-ink-tertiary outline-none"
           />
         </div>
+        <p className="mt-2 text-center font-ui text-caption text-ink-tertiary sm:text-left">
+          e.g. Gram positive vs Gram negative &middot; PCR vs qPCR &middot; Staphylococcus aureus vs Staphylococcus epidermidis
+        </p>
 
-        {debouncedQuery.trim() && (
-          <div className="mt-3">
+        {debouncedQuery.trim() ? (
+          <div className="mt-4">
             {searching ? (
               <p className="font-ui text-caption text-ink-tertiary">Searching…</p>
             ) : (
@@ -185,6 +206,12 @@ export function ComparisonStudioPage() {
                 onCreateCustom={() => handleCreateCustomFromQuery(debouncedQuery)}
               />
             )}
+          </div>
+        ) : (
+          <div className="mt-4 flex justify-center sm:justify-start">
+            <Button variant="secondary" icon={<Plus size={18} />} onClick={() => navigate('/comparison/new')}>
+              New comparison
+            </Button>
           </div>
         )}
       </section>
@@ -207,30 +234,33 @@ export function ComparisonStudioPage() {
         </section>
       )}
 
-      {/* Featured comparisons — a small, stable sample, never the full catalog (brief §4/§27). */}
+      {/* Start with a topic — a very small, stable sample, deliberately NOT the full 55+ curated catalog (correction-pass Part 1/18: "Do NOT make the landing page display all curated comparisons"). Rendered as a light horizontal-scroll row of compact pills rather than stacked full-width cards, to keep this section visually secondary to the search above it. */}
       <section className="mb-8">
-        <SectionHeading title="Featured comparisons" />
-        <div className="flex flex-col gap-3">
-          {featured.map((c) => {
+        <SectionHeading title="Start with a topic" />
+        <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
+          {startTopics.map((c) => {
             const tagline = getComparisonTagline(c.id)
             return (
-              <div key={c.id}>
-                <ComparisonCard
-                  itemAName={c.itemA.name}
-                  itemBName={c.itemB.name}
-                  domain={c.domain}
-                  difficulty={c.difficulty}
-                  frequency={c.frequency}
-                  onClick={() => openCurated(c.id)}
-                />
-                {tagline && <p className="mt-1 px-1 font-body text-micro italic text-ink-tertiary">{tagline}</p>}
-              </div>
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => openCurated(c.id)}
+                className="flex w-56 shrink-0 flex-col gap-1 rounded-md border border-border bg-surface p-3 text-left hover:border-olive sm:w-64"
+              >
+                <span className="flex items-center gap-1 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+                  <Sparkle size={11} aria-hidden /> {COMPARISON_DOMAIN_LABELS[c.domain]}
+                </span>
+                <span className="font-ui text-ui font-medium text-ink-primary">
+                  {c.itemA.name} <span className="text-ink-tertiary">vs</span> {c.itemB.name}
+                </span>
+                {tagline && <span className="font-body text-micro italic text-ink-tertiary">{tagline}</span>}
+              </button>
             )
           })}
         </div>
       </section>
 
-      {/* Explore by level / domain — compact chip rows, not a filter toolbar (brief §27/§28). */}
+      {/* Explore by level / domain — compact chip rows, not a filter toolbar (brief §27/§28). Domain chips are capped (correction-pass Part 1: "Compact chips only if useful") — the rest of the domains stay one tap away via Explore All's own filter. */}
       <section className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div>
           <SectionHeading title="Explore by level" />
@@ -245,11 +275,12 @@ export function ComparisonStudioPage() {
         <div>
           <SectionHeading title="Explore by domain" />
           <div className="flex flex-wrap gap-2">
-            {domainsInUse().map((domain) => (
+            {domainChips.map((domain) => (
               <ChipButton key={domain} onClick={() => navigate(`/comparison/explore?domain=${domain}`)}>
                 {COMPARISON_DOMAIN_LABELS[domain]}
               </ChipButton>
             ))}
+            <ChipButton onClick={() => navigate('/comparison/explore')}>More…</ChipButton>
           </div>
         </div>
       </section>
@@ -278,12 +309,6 @@ export function ComparisonStudioPage() {
       </section>
     </div>
   )
-}
-
-function domainsInUse(): ComparisonDomain[] {
-  const domains = new Set<ComparisonDomain>()
-  for (const c of ALL_CURATED_COMPARISONS) domains.add(c.domain)
-  return Array.from(domains)
 }
 
 function SectionHeading({ title }: { title: string }) {
@@ -315,7 +340,7 @@ function SearchOutcome({
 }: {
   result: UnifiedSearchResult
   onOpenCurated: (id: string) => void
-  onBuildFromEntities: () => void
+  onBuildFromEntities: (sourceMode?: SourceMode) => void
   onCreateCustom: () => void
 }) {
   if (result.kind === 'curated') {
@@ -345,23 +370,24 @@ function SearchOutcome({
   if (result.kind === 'entity-pair') {
     return (
       <div className="rounded-md border border-border-strong bg-surface p-4">
-        <p className="font-ui text-body text-ink-secondary">No curated comparison found for</p>
+        <p className="font-ui text-body text-ink-secondary">No curated comparison yet for</p>
         <p className="mt-1 font-display text-h3 font-medium text-ink-primary">
           {result.itemA.item.name} <span className="text-ink-tertiary">vs</span> {result.itemB.item.name}
         </p>
+        <p className="mt-1 font-ui text-caption text-ink-tertiary">Build this comparison — pick where the content should come from.</p>
         <div className="mt-4 flex flex-wrap gap-3">
-          <Button size="small" onClick={onBuildFromEntities}>
+          <Button size="small" icon={<Sparkle size={14} aria-hidden />} onClick={() => onBuildFromEntities()}>
             Build comparison
           </Button>
-          <Button size="small" variant="secondary" onClick={onBuildFromEntities}>
-            Search My Library
+          <Button size="small" variant="secondary" icon={<Books size={14} aria-hidden />} onClick={() => onBuildFromEntities('my-library')}>
+            My Library
           </Button>
-          <Button size="small" variant="secondary" onClick={onBuildFromEntities}>
-            Search Online Knowledge
+          <Button size="small" variant="secondary" icon={<Globe size={14} aria-hidden />} onClick={() => onBuildFromEntities('online')}>
+            Online Knowledge
           </Button>
         </div>
         <p className="mt-2 font-ui text-caption text-ink-tertiary">
-          Any of these opens the comparison workspace, where you can pull in your library or the Knowledge Layer per aspect.
+          Cellfie opens the comparison workspace either way — My Library and Online Knowledge just jump straight to that source's tab instead of starting blank.
         </p>
       </div>
     )

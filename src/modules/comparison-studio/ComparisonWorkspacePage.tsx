@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import {
   ArrowLeft,
+  ArrowSquareOut,
   BookmarkSimple,
   Copy,
   Plus,
@@ -22,12 +23,13 @@ import {
   setNotes,
   toggleFavoriteByRouteId,
   updateCustomAspects,
+  upsertAspectNote,
   upsertAspectOverride
 } from '../../core/comparison/userComparisons'
 import { recordComparisonViewed, removeFromRecentComparisons } from '../../core/comparison/recentlyViewed'
 import { getSuggestedAspects } from '../../core/comparison/domainPresets'
-import { getComparisonTagline, COMPLETION_TAGLINE } from '../../core/comparison/microcopy'
-import type { Comparison, ComparisonAspect } from '../../core/comparison/types'
+import { getTaglineForComparison, COMPLETION_TAGLINE } from '../../core/comparison/microcopy'
+import type { Comparison, ComparisonAspect, ComparisonItemRef } from '../../core/comparison/types'
 import { COMPARISON_DIFFICULTY_LABELS, COMPARISON_FREQUENCY_LABELS } from '../../core/comparison/types'
 import { db } from '../../core/db'
 import { ComparisonWorkspaceView, type StudyMode } from './components/ComparisonWorkspaceView'
@@ -57,14 +59,17 @@ const STUDY_MODE_OPTIONS = [
 export function ComparisonWorkspacePage() {
   const { id = '' } = useParams<{ id: string }>()
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
 
   const [loadState, setLoadState] = useState<LoadState>('loading')
   const [comparison, setComparison] = useState<(Comparison & { notes?: string }) | null>(null)
   const [isCurated, setIsCurated] = useState(false)
+  // The set of aspect ids that exist in the *shipped* curated JSON — distinguishes a real curated aspect (curated value protected, user layer is a separate note) from one the user added themselves on top of a curated comparison (fully user-owned, edited directly, same as a custom comparison's aspects). See userComparisons.ts's mergeCuratedWithOverlay for the matching write-side rule.
+  const [curatedAspectIds, setCuratedAspectIds] = useState<Set<string>>(new Set())
   const [favorite, setFavorite] = useState(false)
   const [studyMode, setStudyMode] = useState<StudyMode>('off')
   const [editMode, setEditMode] = useState(false)
-  const [sourcesFor, setSourcesFor] = useState<{ aspect: ComparisonAspect; side: 'A' | 'B' } | null>(null)
+  const [sourcesFor, setSourcesFor] = useState<{ aspect: ComparisonAspect; side: 'A' | 'B'; defaultTab?: 'my-library' | 'online' } | null>(null)
   const [showAddAspect, setShowAddAspect] = useState(false)
   const [notesDraft, setNotesDraft] = useState('')
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
@@ -78,6 +83,7 @@ export function ComparisonWorkspacePage() {
       const merged = mergeCuratedWithOverlay(curated, overlay)
       setComparison(merged)
       setIsCurated(true)
+      setCuratedAspectIds(new Set(curated.aspects.map((a) => a.id)))
       setNotesDraft(merged.notes ?? '')
       setFavorite(Boolean(overlay?.favorite))
       setLoadState('found')
@@ -100,6 +106,7 @@ export function ComparisonWorkspacePage() {
       }
       setComparison(custom)
       setIsCurated(false)
+      setCuratedAspectIds(new Set())
       setNotesDraft(record.notes ?? '')
       setFavorite(record.favorite)
       setLoadState('found')
@@ -114,7 +121,25 @@ export function ComparisonWorkspacePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
-  const tagline = isCurated ? getComparisonTagline(id) : undefined
+  // Landing search's "Search My Library" / "Search Online Knowledge" entity-pair actions (correction-pass Part 2/3/4) land here via `?openSource=library|online&focusAspect=<id>` instead of the generic "Build comparison" — this opens the Fill-from-source dialog straight on the right tab for the first relevant aspect, so choosing a source mode actually does something different from the plain build action. Runs once the comparison has loaded, then strips the params so a refresh/back-nav doesn't reopen the dialog.
+  useEffect(() => {
+    if (loadState !== 'found' || !comparison) return
+    const openSource = searchParams.get('openSource')
+    const focusAspectId = searchParams.get('focusAspect')
+    if (!openSource) return
+    const aspect = comparison.aspects.find((a) => a.id === focusAspectId) ?? comparison.aspects[0]
+    if (aspect) {
+      setEditMode(true)
+      setSourcesFor({ aspect, side: 'A', defaultTab: openSource === 'online' ? 'online' : 'my-library' })
+    }
+    const next = new URLSearchParams(searchParams)
+    next.delete('openSource')
+    next.delete('focusAspect')
+    setSearchParams(next, { replace: true })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loadState])
+
+  const tagline = comparison ? getTaglineForComparison(comparison) : undefined
 
   async function handleToggleFavorite() {
     const next = !favorite
@@ -132,6 +157,14 @@ export function ComparisonWorkspacePage() {
     } else {
       await updateCustomAspects(id, nextAspects)
     }
+  }
+
+  /** Persists the user's own note for one side of an aspect — always a separate write from `persistAspectChange`/curated value, never a replacement (correction-pass Part 5/6/9). Only meaningful for curated comparisons; a custom comparison has no curated value to protect, so its aspects stay directly editable via `persistAspectChange`. */
+  async function persistAspectNote(aspectId: string, side: 'A' | 'B', note: string) {
+    if (!comparison || !isCurated) return
+    const nextAspects = comparison.aspects.map((a) => (a.id === aspectId ? { ...a, [side === 'A' ? 'noteA' : 'noteB']: note } : a))
+    setComparison({ ...comparison, aspects: nextAspects })
+    await upsertAspectNote(id, aspectId, side, note)
   }
 
   async function handleToggleKeyDifference(aspectId: string) {
@@ -291,13 +324,35 @@ export function ComparisonWorkspacePage() {
       <ComparisonWorkspaceView
         comparison={comparison}
         editable={editMode}
+        isCurated={isCurated}
+        curatedAspectIds={curatedAspectIds}
         studyMode={studyMode}
         onChangeAspectValue={persistAspectChange}
+        onChangeNote={persistAspectNote}
         onToggleKeyDifference={handleToggleKeyDifference}
         onRemoveAspect={handleRemoveAspect}
         onMoveAspect={handleMoveAspect}
         onFillFromSource={(aspect, side) => setSourcesFor({ aspect, side })}
       />
+
+      {/* Related Cellfie content — reciprocal to Organism/Laboratory's "Compare with…" (correction-pass Part X). Reads refKind/refId straight off the comparison's own item refs; no registry import needed here, so this stays inside the existing lazy boundary either way. */}
+      {(comparison.itemA.refKind || comparison.itemB.refKind) && (
+        <div className="mt-8 flex flex-wrap gap-3">
+          {([comparison.itemA, comparison.itemB] as ComparisonItemRef[]).map((item, i) =>
+            item.refKind && item.refId ? (
+              <Button
+                key={i}
+                variant="tertiary"
+                size="small"
+                icon={<ArrowSquareOut size={14} />}
+                onClick={() => navigate(item.refKind === 'organism' ? `/organisms/${item.refId}` : `/laboratory/${item.labCategory}/${item.refId}`)}
+              >
+                Open {item.name} in {item.refKind === 'organism' ? 'Organism Explorer' : 'Laboratory'}
+              </Button>
+            ) : null
+          )}
+        </div>
+      )}
 
       {editMode && (
         <div className="mt-4">
@@ -359,6 +414,7 @@ export function ComparisonWorkspacePage() {
           <ComparisonSourcesPanel
             title={`${sourcesFor.aspect.label} — ${sourcesFor.side === 'A' ? comparison.itemA.name : comparison.itemB.name}`}
             topicId={`${id}:${sourcesFor.aspect.id}:${sourcesFor.side}`}
+            defaultTab={sourcesFor.defaultTab}
             onAccept={(draft) => {
               persistAspectChange(sourcesFor.aspect.id, sourcesFor.side, draft.text)
             }}
