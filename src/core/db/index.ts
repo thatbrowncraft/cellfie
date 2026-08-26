@@ -571,6 +571,9 @@ export interface SavedComparisonAspectRecord {
   valueA: string
   valueB: string
   isKeyDifference?: boolean
+  /** User's own annotation layered on a curated aspect, kept separate from valueA/valueB — see `ComparisonAspect.noteA/noteB` in `core/comparison/types.ts` for the full rationale. Optional, non-indexed — adding it needs no Dexie version bump. */
+  noteA?: string
+  noteB?: string
 }
 
 /** Same item-reference shape as `ComparisonItemRef` in `core/comparison/types.ts`. */
