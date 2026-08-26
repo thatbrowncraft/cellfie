@@ -131,6 +131,19 @@ export interface ComparisonAspect {
   isKeyDifference?: boolean
   sourcesA?: ComparisonAspectSource[]
   sourcesB?: ComparisonAspectSource[]
+  /**
+   * The user's own annotation for this side of a *curated* aspect —
+   * a personal explanation, lab observation, memory trick, or
+   * correction (correction-pass brief Part 5/6). Deliberately a
+   * separate field from `valueA`/`valueB`: it is layered alongside the
+   * curated/source value, never replaces it. Rendered with the existing
+   * `'user-authored'` provenance badge (✍️ Your note). Only meaningful
+   * on curated comparisons — a fully custom/user-owned comparison just
+   * edits `valueA`/`valueB` directly, since there is no underlying
+   * curated value to protect.
+   */
+  noteA?: string
+  noteB?: string
 }
 
 /** Optional learning overlays (brief §5) — every field optional and independent; absence means "not written for this comparison yet," never a blank placeholder shown in the UI. */

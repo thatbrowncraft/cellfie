@@ -34,14 +34,20 @@ function loadComparisons(glob: Record<string, { default: unknown }>): Comparison
       console.warn(`[comparison] Skipping malformed comparison content file: ${path}`)
       continue
     }
-    // Content-contract check (brief §22–25/23A): every curated comparison
-    // must ship its own Gen Z subtitle in the JSON itself — this is a
-    // warning, not a load failure, so one missing field never takes the
-    // whole comparison offline, but it's the enforcement point the brief
-    // asks for ("should fail content validation if the field is missing").
+    // Content-contract check (brief §22–25/23A, correction-pass Part
+    // 11-17): every curated comparison *should* ship its own Gen Z
+    // subtitle in the JSON itself — this stays a warning, not a load
+    // failure, so one missing field never takes the whole comparison
+    // offline. It's a quality signal for content authors (mirrored by
+    // scripts/check-comparison-genznotes.py), not the mechanism the
+    // feature depends on: `microcopy.ts`'s `getTaglineForComparison`
+    // already falls back to a deterministic domain-aware line when this
+    // field is absent, so a new comparison JSON added without a
+    // `genZNote` still shows a subtitle automatically — no other file
+    // needs editing for that to work.
     if (typeof data.genZNote !== 'string' || !data.genZNote.trim()) {
       // eslint-disable-next-line no-console
-      console.warn(`[comparison] Missing required genZNote (Cellfie subtitle) in: ${path}`)
+      console.warn(`[comparison] No curated genZNote in ${path} — Comparison Studio will show a deterministic domain-based fallback subtitle instead.`)
     }
     items.push(data as Comparison)
   }

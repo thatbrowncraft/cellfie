@@ -175,12 +175,30 @@ export async function renameCustomItems(id: string, itemA: ComparisonItemRef, it
   await db.savedComparisons.update(id, { itemA, itemB, title: titleFor(itemA, itemB), updatedAt: Date.now() })
 }
 
-/** Adds or edits one aspect on a curated comparison's user layer, without touching the shipped JSON (brief §13). Ensures the overlay row exists first. */
+/** Adds or edits one aspect on a curated comparison's user layer, without touching the shipped JSON (brief §13). Ensures the overlay row exists first. Used for brand-new user-added aspects (which have no curated counterpart, so the full row is user-authored) and for "Fill from a source" accepts on an aspect side that curated content left blank — see `mergeCuratedWithOverlay`, which only ever lets an override's `valueA`/`valueB` fill a blank curated value, never replace a non-blank one. For layering a personal note *alongside* an existing curated value, use `upsertAspectNote` instead. */
 export async function upsertAspectOverride(curatedComparisonId: string, aspect: ComparisonAspect): Promise<void> {
   const overlay = await saveCuratedComparison(curatedComparisonId)
   const existing = overlay.aspectOverrides ?? []
   const next = [...existing.filter((a) => a.id !== aspect.id), aspect as SavedComparisonAspectRecord]
   await db.savedComparisons.update(overlay.id, { aspectOverrides: next, updatedAt: Date.now() })
+}
+
+/**
+ * Adds or edits the user's own annotation for one side of a curated
+ * aspect (correction-pass brief Part 5/6/9) — "Add your information,"
+ * kept separate from the curated/source value forever. Merges into any
+ * existing override row rather than replacing it wholesale, so a note
+ * added after a "Fill from a source" accept (or vice versa) never
+ * clobbers the other.
+ */
+export async function upsertAspectNote(curatedComparisonId: string, aspectId: string, side: 'A' | 'B', note: string): Promise<void> {
+  const overlay = await saveCuratedComparison(curatedComparisonId)
+  const existing = overlay.aspectOverrides ?? []
+  const current = existing.find((a) => a.id === aspectId)
+  const base: SavedComparisonAspectRecord = current ?? { id: aspectId, label: '', valueA: '', valueB: '' }
+  const next: SavedComparisonAspectRecord = { ...base, [side === 'A' ? 'noteA' : 'noteB']: note }
+  const nextOverrides = [...existing.filter((a) => a.id !== aspectId), next]
+  await db.savedComparisons.update(overlay.id, { aspectOverrides: nextOverrides, updatedAt: Date.now() })
 }
 
 /** Hides a curated aspect from the user's view of a comparison, without altering the shipped JSON (brief §20 "remove an aspect"). */
@@ -206,11 +224,35 @@ export async function deleteSavedComparison(id: string): Promise<void> {
 }
 
 /** Merges a curated comparison with its (possibly absent) local overlay into the single `Comparison` shape the workspace renders — the curated id is always kept as `Comparison.id`, so routing/inline "Compare with…"/recent-history all key on one stable id regardless of whether the user has ever saved or edited it. */
+/**
+ * Merges one curated aspect with its (possibly absent) override row.
+ * The rule enforced here is the whole point of the curated/user split
+ * (brief Part 5/6): a non-blank curated value is authoritative and is
+ * never replaced by the override — the override's `valueA`/`valueB`
+ * only ever *fills a blank* curated cell (e.g. a "Fill from a source"
+ * accept on an aspect curated content left empty). `noteA`/`noteB`,
+ * by contrast, always come from the override when present — that's
+ * the user's own annotation layer, independent of whether curated
+ * content exists for that side at all.
+ */
+function mergeAspect(curated: ComparisonAspect, override: SavedComparisonAspectRecord | undefined): ComparisonAspect {
+  if (!override) return curated
+  return {
+    ...curated,
+    valueA: curated.valueA.trim() ? curated.valueA : override.valueA || curated.valueA,
+    valueB: curated.valueB.trim() ? curated.valueB : override.valueB || curated.valueB,
+    noteA: override.noteA ?? curated.noteA,
+    noteB: override.noteB ?? curated.noteB,
+    isKeyDifference: override.isKeyDifference ?? curated.isKeyDifference
+  }
+}
+
 export function mergeCuratedWithOverlay(curated: Comparison, overlay: SavedComparisonRecord | undefined): Comparison & { notes?: string; savedRecordId?: string } {
   if (!overlay) return curated
   const removedIds = new Set(overlay.removedAspectIds ?? [])
   const overrideById = new Map((overlay.aspectOverrides ?? []).map((a) => [a.id, a]))
-  const baseAspects = curated.aspects.filter((a) => !removedIds.has(a.id)).map((a) => overrideById.get(a.id) ?? a)
+  const baseAspects = curated.aspects.filter((a) => !removedIds.has(a.id)).map((a) => mergeAspect(a, overrideById.get(a.id)))
+  // Brand-new aspects the user added themselves have no curated counterpart at all, so there is nothing to "protect" — they're rendered and edited exactly like a fully custom aspect (see ComparisonWorkspaceView's `curatedAspectIds`).
   const extraAspects = (overlay.aspectOverrides ?? []).filter((a) => !curated.aspects.some((ca) => ca.id === a.id))
   return {
     ...curated,
