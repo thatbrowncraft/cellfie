@@ -370,7 +370,7 @@ export function DashboardPage() {
             label="Highlights"
             value={String(stats.highlightCount)}
             humor={DASHBOARD_HUMOR.highlights}
-            onClick={() => navigate('/highlights')}
+            onClick={() => navigate('/notes?section=highlights')}
           />
           <StatCard
             icon={<NotePencil size={22} />}
@@ -384,7 +384,7 @@ export function DashboardPage() {
             label="Bookmarks"
             value={String(stats.bookmarkCount)}
             humor={DASHBOARD_HUMOR.bookmarks}
-            onClick={() => navigate('/bookmarks')}
+            onClick={() => navigate('/notes?section=bookmarks')}
           />
           <StatCard icon={<Fire size={22} />} label="Reading streak" value={`${stats.readingStreakDays} day${stats.readingStreakDays === 1 ? '' : 's'}`} />
           <StatCard icon={<Clock size={22} />} label="Time spent reading" value={formatDuration(stats.totalReadingSeconds)} hint="Tracked while a book is open" />
@@ -417,7 +417,7 @@ export function DashboardPage() {
                   <span className="font-ui text-micro text-ink-tertiary">Notes</span>
                 </div>
               </button>
-              <button type="button" onClick={() => navigate('/highlights')} className="flex items-center gap-3 text-left hover:opacity-80">
+              <button type="button" onClick={() => navigate('/notes?section=highlights')} className="flex items-center gap-3 text-left hover:opacity-80">
                 <Highlighter size={20} className="text-olive" aria-hidden />
                 <div className="flex flex-col">
                   <span className="font-display text-h3 font-semibold text-ink-primary">{stats.highlightCount}</span>
