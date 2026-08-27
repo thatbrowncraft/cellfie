@@ -150,9 +150,28 @@ export function ComparisonWorkspacePage() {
   // instead of silently forgetting the person already chose a source and
   // started searching — see draftSession.ts for why "run it again" (not
   // a literal resume) is the honest version of this feature.
+  //
+  // Root-cause fix (Final Polish brief §01/§14 — "phone call, returned
+  // to the app, search state had reset"): this used to only re-read the
+  // pending-search record once, when `loadState` first becomes 'found'.
+  // That covers a hard remount (the OS actually reclaimed the page), but
+  // a *brief* interruption — a phone call, switching to another app for
+  // a few seconds — usually leaves this component mounted the whole
+  // time, so `loadState` never changes and the pending-search record
+  // written right before the interruption was never re-checked. Also
+  // re-checking on `visibilitychange` (fired reliably by every mobile
+  // browser on foreground/background transitions, unlike `focus`) closes
+  // that gap without needing the page to remount.
   useEffect(() => {
     if (loadState !== 'found') return
     void getPendingComparisonSearch(id).then((session) => setPendingSearch(session ?? null))
+
+    function handleVisibilityChange() {
+      if (document.visibilityState !== 'visible') return
+      void getPendingComparisonSearch(id).then((session) => setPendingSearch(session ?? null))
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
   }, [loadState, id])
 
   const tagline = comparison ? getTaglineForComparison(comparison) : undefined
