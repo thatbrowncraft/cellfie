@@ -56,7 +56,7 @@ import {
 import { canonicalOrganismId } from './canonicalId'
 import { resolveTaxonomicRank, isGenusOnlyResolutionForSpeciesQuery } from './taxonomyResolution'
 import { buildReferenceLinks } from './referenceLinks'
-import { lookupInAllLibrarySources, lookupInSpecificLibrarySource } from './librarySources'
+import { lookupInAllLibrarySources, lookupInSpecificLibrarySource, LibrarySearchTimeoutError } from './librarySources'
 import type { KnowledgeSourceMode, OrganismCategory, OrganismProfile, OrganismSource } from './types'
 
 const KL_CACHE_PREFIX = 'organismKnowledgeLayer:v1:'
@@ -172,7 +172,8 @@ export async function getCachedKnowledgeLayerProfile(id: string): Promise<Organi
 // The lookup itself
 // ---------------------------------------------------------------------
 
-export type KnowledgeLayerLookupStatus = 'found' | 'not-found' | 'not-found-in-source' | 'offline' | 'error'
+/** 'timed-out' is distinct from 'error' — the search may still find something, it just didn't finish inside the time Cellfie is willing to make someone wait (brief: "never allow infinite spinners"). */
+export type KnowledgeLayerLookupStatus = 'found' | 'not-found' | 'not-found-in-source' | 'offline' | 'error' | 'timed-out'
 
 export interface KnowledgeLayerLookupResult {
   status: KnowledgeLayerLookupStatus
@@ -345,10 +346,16 @@ async function lookupFromLibrarySources(
 ): Promise<KnowledgeLayerLookupResult> {
   if (mode === 'specific-source' && !libraryItemId) return { status: 'not-found' }
 
-  const result =
-    mode === 'specific-source'
-      ? await lookupInSpecificLibrarySource(trimmed, libraryItemId as string)
-      : await lookupInAllLibrarySources(trimmed)
+  let result: Awaited<ReturnType<typeof lookupInAllLibrarySources>>
+  try {
+    result =
+      mode === 'specific-source'
+        ? await lookupInSpecificLibrarySource(trimmed, libraryItemId as string)
+        : await lookupInAllLibrarySources(trimmed)
+  } catch (err) {
+    if (err instanceof LibrarySearchTimeoutError) return { status: 'timed-out' }
+    return { status: 'error' }
+  }
 
   if (result.excerpts.length === 0) {
     // Explicitly NOT the same as 'not-found' — the organism may well be
