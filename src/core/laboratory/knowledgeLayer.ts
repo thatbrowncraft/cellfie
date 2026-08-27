@@ -36,7 +36,7 @@
  */
 import { db } from '../db'
 import { fetchMeshClassification, fetchOnlineSummary, isLikelyOnline, type MeshClassification, type OnlineSummary } from '../concepts/onlineKnowledge'
-import { lookupInAllLibrarySources, lookupInSpecificLibrarySource } from '../organisms/librarySources'
+import { lookupInAllLibrarySources, lookupInSpecificLibrarySource, LibrarySearchTimeoutError } from '../organisms/librarySources'
 import type { KnowledgeSourceMode, LibrarySourceExcerpt, OrganismSource as LabSource } from '../organisms/types'
 
 export type { KnowledgeSourceMode, LibrarySourceExcerpt }
@@ -45,7 +45,8 @@ export type { LabSource }
 const KL_CACHE_PREFIX = 'labKnowledgeLayer:v1:'
 const KL_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7 // 7 days — same horizon as onlineKnowledge.ts / organisms/knowledgeLayer.ts
 
-export type LabKnowledgeLookupStatus = 'found' | 'not-found' | 'not-found-in-source' | 'offline' | 'error'
+/** 'timed-out' (brief: "never allow infinite spinners") is distinct from 'error' — it means the search may still genuinely find something, it just didn't finish inside the time Cellfie is willing to make someone wait; the UI offers "Try again" for it exactly like 'error', just with honest wording. */
+export type LabKnowledgeLookupStatus = 'found' | 'not-found' | 'not-found-in-source' | 'offline' | 'error' | 'timed-out'
 
 export interface LabKnowledgeLookupResult {
   status: LabKnowledgeLookupStatus
@@ -117,8 +118,13 @@ async function lookupFromLibrary(
 ): Promise<LabKnowledgeLookupResult> {
   if (mode === 'specific-source' && !libraryItemId) return { status: 'not-found', sources: [] }
 
-  const result =
-    mode === 'specific-source' ? await lookupInSpecificLibrarySource(title, libraryItemId as string) : await lookupInAllLibrarySources(title)
+  let result: Awaited<ReturnType<typeof lookupInAllLibrarySources>>
+  try {
+    result = mode === 'specific-source' ? await lookupInSpecificLibrarySource(title, libraryItemId as string) : await lookupInAllLibrarySources(title)
+  } catch (err) {
+    if (err instanceof LibrarySearchTimeoutError) return { status: 'timed-out', sources: [] }
+    return { status: 'error', sources: [] }
+  }
 
   if (result.excerpts.length === 0) {
     // Not the same as 'not-found' — this specific source (or the whole
