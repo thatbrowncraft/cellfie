@@ -184,6 +184,21 @@ function LibraryLookup({ title, contentId }: { title: string; contentId: string 
     )
   }
 
+  if (status === 'timed-out') {
+    return (
+      <EmptyState
+        icon={<WarningCircle size={32} />}
+        title="Search is taking longer than expected"
+        description="Your library may be large, or a document is slow to read on this device. It's safe to try again."
+        action={
+          <Button variant="secondary" size="small" onClick={runSearch}>
+            Try again
+          </Button>
+        }
+      />
+    )
+  }
+
   function sourcePicker() {
     return (
       <div className="flex flex-col gap-2 sm:max-w-xs">
