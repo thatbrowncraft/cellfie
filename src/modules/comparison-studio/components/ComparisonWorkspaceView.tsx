@@ -379,7 +379,7 @@ function AspectCell({
         ))}
         {editable && !value && onFillFromSource && (
           <Button variant="tertiary" size="small" icon={<Lightning size={12} aria-hidden />} onClick={() => onFillFromSource(aspect, side)}>
-            Fill from a source
+            Find more for this aspect
           </Button>
         )}
       </div>
@@ -487,12 +487,12 @@ function MobileBothCard({
             <div className="flex flex-wrap gap-3">
               {!aspect.valueA && onFillFromSource && (
                 <Button variant="tertiary" size="small" icon={<Lightning size={12} aria-hidden />} onClick={() => onFillFromSource(aspect, 'A')}>
-                  Fill {comparison.itemA.name} from a source
+                  Find more about {comparison.itemA.name}
                 </Button>
               )}
               {!aspect.valueB && onFillFromSource && (
                 <Button variant="tertiary" size="small" icon={<Lightning size={12} aria-hidden />} onClick={() => onFillFromSource(aspect, 'B')}>
-                  Fill {comparison.itemB.name} from a source
+                  Find more about {comparison.itemB.name}
                 </Button>
               )}
             </div>
