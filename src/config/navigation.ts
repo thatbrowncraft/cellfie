@@ -67,6 +67,6 @@ export const navItems: NavItem[] = [
   { path: '/organisms', label: 'Organism Explorer', navLabel: 'Organisms', icon: Bug, inBottomNav: true },
   { path: '/laboratory', label: 'Laboratory', icon: Flask, inBottomNav: true },
   { path: '/comparison', label: 'Comparison Studio', navLabel: 'Comparison', icon: Scales, inBottomNav: true },
-  { path: '/notes', label: 'Notes', icon: NotePencil, inBottomNav: true },
+  { path: '/notes', label: 'Study Vault', navLabel: 'Vault', icon: NotePencil, inBottomNav: true },
   { path: '/settings', label: 'Settings', icon: Gear, inBottomNav: true }
 ]
