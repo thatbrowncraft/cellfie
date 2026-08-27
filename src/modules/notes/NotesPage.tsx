@@ -7,10 +7,26 @@ import { useLiveQuery } from '@/core/db/useLiveQuery'
 import { exportNotesAsMarkdown, exportJsonBackup } from '@/core/export'
 import { NoteCard } from './components/NoteCard'
 import { NoteEditorDialog } from './components/NoteEditorDialog'
+import { FloatingStudyParticles } from './components/FloatingStudyParticles'
 
 type Section = 'notes' | 'highlights' | 'bookmarks'
 type SortOrder = 'recent' | 'edited' | 'title'
 type GroupBy = 'none' | 'book' | 'subject'
+
+/**
+ * Study Vault subtitles (Final Polish brief §09) — one per section,
+ * swapped instantly on tab change (plain state derived from the
+ * existing `section` value below, no reload/refetch involved). Kept
+ * short and Cellfie's usual "witty but doesn't undercut the science"
+ * register (see core/laboratory/microcopy.ts for the house style this
+ * matches), distinct per section so switching tabs is itself legible
+ * even before reading the tab label.
+ */
+const SECTION_SUBTITLES: Record<Section, string> = {
+  notes: 'Your brain dump, organized enough to actually reuse.',
+  highlights: 'Proof that yellow ink counts as studying.',
+  bookmarks: 'Digital dog-ears for the pages you still owe yourself.'
+}
 
 const sortOptions: { value: SortOrder; label: string }[] = [
   { value: 'edited', label: 'Recently edited' },
@@ -43,10 +59,16 @@ function SectionTabButton({ active, onClick, icon, children }: { active: boolean
 }
 
 /**
- * Notes — Sprint 2 §3/§4/§5, the Notebook. Standalone + highlight-linked
- * notes in one place: search, tag/book/favorite filters, three sort
- * orders, optional grouping, and a pinned section that always floats to
- * the top regardless of grouping — pinning is meant to win.
+ * Study Vault (Final Polish brief §08-12) — Sprint 2 §3/§4/§5's Notebook,
+ * renamed and re-scoped: this page now covers Notes, Highlights, AND
+ * Bookmarks (see the navigation-correction note below), so a title that
+ * only said "Notes" no longer described the whole page. "Study Vault" is
+ * the umbrella; each section keeps its own name as a tab.
+ *
+ * Standalone + highlight-linked notes: search, tag/book/favorite
+ * filters, three sort orders, optional grouping, and a pinned section
+ * that always floats to the top regardless of grouping — pinning is
+ * meant to win.
  *
  * Navigation correction: Highlights and Bookmarks used to be their own
  * top-level routes (`/highlights`, `/bookmarks`) reachable only from
@@ -56,7 +78,7 @@ function SectionTabButton({ active, onClick, icon, children }: { active: boolean
  * that belong with Notes conceptually (things you kept while reading),
  * so they're now sections of this same page instead of separate
  * destinations — reachable the same way Notes always was, via the one
- * "Notes" nav item, switched with the tabs below rather than a URL.
+ * nav item, switched with the tabs below rather than a URL.
  * `?section=highlights`/`?section=bookmarks` still work as deep links
  * (Dashboard's shortcut cards use them) so existing links don't break.
  */
@@ -167,11 +189,18 @@ export function NotesPage() {
   }
 
   return (
-    <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
+    <div className="relative mx-auto max-w-content overflow-hidden px-4 py-8 sm:px-6 sm:py-10 md:px-8">
+      <FloatingStudyParticles />
+
+      <div className="relative z-10">
       <header className="mb-6">
-        <h1 className="font-display text-display font-semibold text-ink-primary">Notes</h1>
-        <p className="mt-2 font-body text-body-lg text-ink-secondary">
+        <h1 className="font-display text-display font-semibold text-ink-primary">Study Vault</h1>
+        <p className="mt-1 font-body text-body-lg text-ink-secondary">
           Everything you write — and everything you kept while reading — stays linked back to where you learned it.
+        </p>
+        {/* Final Polish brief §09: swaps immediately with `section`, no reload. */}
+        <p className="mt-1 font-ui text-caption italic text-ink-tertiary" key={section}>
+          {SECTION_SUBTITLES[section]}
         </p>
       </header>
 
@@ -293,6 +322,7 @@ export function NotesPage() {
 
       {section === 'highlights' && <HighlightsSection navigate={navigate} />}
       {section === 'bookmarks' && <BookmarksSection navigate={navigate} />}
+      </div>
     </div>
   )
 }
