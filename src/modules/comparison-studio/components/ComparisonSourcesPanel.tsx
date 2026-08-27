@@ -83,6 +83,14 @@ export function ComparisonSourcesPanel({ title, aspectLabel, topicId, onAccept, 
   )
 }
 
+/**
+ * Root-cause fix ("Dismiss doesn't do anything"): this used to be a
+ * literal no-op (`onDismiss={() => {}}`), so tapping it produced no
+ * visible change at all — indistinguishable from a broken button. It
+ * now actually dismisses the result, handled by each caller resetting
+ * back to the pre-search state so the person can try a different
+ * search instead of being stuck looking at a result they don't want.
+ */
 function AcceptDismissRow({ onAccept, onDismiss }: { onAccept: () => void; onDismiss: () => void }) {
   const [accepted, setAccepted] = useState(false)
   if (accepted) {
@@ -139,13 +147,22 @@ function LibraryLookup({ title, topicId, onAccept }: { title: string; topicId: s
   const [result, setResult] = useState<ComparisonKnowledgeLookupResult | null>(null)
   const [mode, setMode] = useState<Extract<KnowledgeSourceMode, 'my-sources' | 'specific-source'>>('my-sources')
   const [libraryItemId, setLibraryItemId] = useState<string | undefined>(undefined)
+  // Root-cause fix: Dismiss on one excerpt used to be a no-op; it now
+  // just hides that specific excerpt from this list (not the whole
+  // search — there can be several excerpts shown at once here).
+  const [dismissedIndexes, setDismissedIndexes] = useState<Set<number>>(new Set())
 
   const libraryItems = useLiveQuery<LibraryItem[]>(() => db.libraryItems.orderBy('createdAt').reverse().toArray(), [], [])
   const bookOptions: DropdownOption[] = libraryItems.map((item) => ({ value: item.id, label: item.title }))
 
-  async function runSearch() {
+  async function runSearch(force = false) {
     setStatus('searching')
-    const lookup = await lookupComparisonTopicKnowledge(title, topicId, { mode, libraryItemId: mode === 'specific-source' ? libraryItemId : undefined })
+    setDismissedIndexes(new Set())
+    const lookup = await lookupComparisonTopicKnowledge(title, topicId, {
+      mode,
+      libraryItemId: mode === 'specific-source' ? libraryItemId : undefined,
+      forceRefresh: force
+    })
     setResult(lookup)
     setStatus(lookup.status)
   }
@@ -160,22 +177,24 @@ function LibraryLookup({ title, topicId, onAccept }: { title: string; topicId: s
         <p className="font-ui text-micro uppercase tracking-wide text-ink-tertiary">
           {mode === 'specific-source' ? `From ${result.libraryExcerpts[0]?.bookTitle ?? 'your book'}` : 'Found in your library'}
         </p>
-        {result.libraryExcerpts.map((excerpt, i) => (
-          <blockquote key={i} className="border-l-2 border-olive pl-3 font-body text-body text-ink-secondary">
-            <p>{excerpt.text}</p>
-            <cite className="mt-1 block font-ui text-micro not-italic text-ink-tertiary">
-              📘 {excerpt.bookTitle}
-              {excerpt.author ? ` — ${excerpt.author}` : ''}, p. {excerpt.page}
-            </cite>
-            <div className="mt-2">
-              <AcceptDismissRow
-                onAccept={() => onAccept({ text: excerpt.text, sourceLabel: `📘 ${excerpt.bookTitle}, p. ${excerpt.page}` })}
-                onDismiss={() => {}}
-              />
-            </div>
-          </blockquote>
-        ))}
-        <Button variant="tertiary" size="small" onClick={() => setStatus('idle')}>
+        {result.libraryExcerpts.map((excerpt, i) =>
+          dismissedIndexes.has(i) ? null : (
+            <blockquote key={i} className="border-l-2 border-olive pl-3 font-body text-body text-ink-secondary">
+              <p>{excerpt.text}</p>
+              <cite className="mt-1 block font-ui text-micro not-italic text-ink-tertiary">
+                📘 {excerpt.bookTitle}
+                {excerpt.author ? ` — ${excerpt.author}` : ''}, p. {excerpt.page}
+              </cite>
+              <div className="mt-2">
+                <AcceptDismissRow
+                  onAccept={() => onAccept({ text: excerpt.text, sourceLabel: `📘 ${excerpt.bookTitle}, p. ${excerpt.page}` })}
+                  onDismiss={() => setDismissedIndexes((prev) => new Set(prev).add(i))}
+                />
+              </div>
+            </blockquote>
+          )
+        )}
+        <Button variant="tertiary" size="small" onClick={() => runSearch(true)}>
           Search again
         </Button>
       </div>
@@ -193,7 +212,7 @@ function LibraryLookup({ title, topicId, onAccept }: { title: string; topicId: s
           }
         />
         {sourcePicker()}
-        <Button variant="secondary" size="small" onClick={runSearch}>
+        <Button variant="secondary" size="small" onClick={() => runSearch()}>
           Search again
         </Button>
       </div>
@@ -207,7 +226,7 @@ function LibraryLookup({ title, topicId, onAccept }: { title: string; topicId: s
         title="Search is taking longer than expected"
         description="Your library may be large, or a document is slow to read on this device. It's safe to try again."
         action={
-          <Button variant="secondary" size="small" onClick={runSearch}>
+          <Button variant="secondary" size="small" onClick={() => runSearch()}>
             Try again
           </Button>
         }
@@ -243,7 +262,7 @@ function LibraryLookup({ title, topicId, onAccept }: { title: string; topicId: s
   return (
     <div className="flex flex-col gap-3">
       {sourcePicker()}
-      <Button variant="secondary" size="small" icon={<CaretRight size={16} />} disabled={mode === 'specific-source' && !libraryItemId} onClick={runSearch}>
+      <Button variant="secondary" size="small" icon={<CaretRight size={16} />} disabled={mode === 'specific-source' && !libraryItemId} onClick={() => runSearch()}>
         Search my library for "{title}"
       </Button>
     </div>
@@ -257,10 +276,21 @@ function LibraryLookup({ title, topicId, onAccept }: { title: string; topicId: s
 function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: string; onAccept: (d: AcceptedDraft) => void }) {
   const [status, setStatus] = useState<'idle' | 'searching' | ComparisonKnowledgeLookupResult['status']>('idle')
   const [result, setResult] = useState<ComparisonKnowledgeLookupResult | null>(null)
+  // Same fix as LibraryLookup's dismissedIndexes: Dismiss used to do
+  // nothing at all. General reference and MeSH scope note are tracked
+  // separately since a found result can include both at once.
+  const [dismissedGeneral, setDismissedGeneral] = useState(false)
+  const [dismissedMesh, setDismissedMesh] = useState(false)
+  const [acceptedGeneral, setAcceptedGeneral] = useState(false)
+  const [acceptedMesh, setAcceptedMesh] = useState(false)
 
-  async function runSearch() {
+  async function runSearch(force = false) {
     setStatus('searching')
-    const lookup = await lookupComparisonTopicKnowledge(title, topicId, { mode: 'trusted' })
+    setDismissedGeneral(false)
+    setDismissedMesh(false)
+    setAcceptedGeneral(false)
+    setAcceptedMesh(false)
+    const lookup = await lookupComparisonTopicKnowledge(title, topicId, { mode: 'trusted', forceRefresh: force })
     setResult(lookup)
     setStatus(lookup.status)
   }
@@ -276,7 +306,7 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
         title="You're offline"
         description="Online Knowledge needs a connection. Everything else in this comparison still works offline."
         action={
-          <Button variant="secondary" size="small" onClick={runSearch}>
+          <Button variant="secondary" size="small" onClick={() => runSearch()}>
             Try again
           </Button>
         }
@@ -291,7 +321,7 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
         title="Couldn't retrieve this right now"
         description="Something went wrong reaching external sources."
         action={
-          <Button variant="secondary" size="small" onClick={runSearch}>
+          <Button variant="secondary" size="small" onClick={() => runSearch()}>
             Try again
           </Button>
         }
@@ -306,7 +336,7 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
   if (status === 'found' && result) {
     return (
       <div className="flex flex-col gap-4">
-        {result.generalReference && (
+        {result.generalReference && !dismissedGeneral && (
           <div>
             <p className="font-body text-body text-ink-primary">{result.generalReference.text}</p>
             <a href={result.generalReference.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-block font-ui text-caption text-olive hover:underline">
@@ -314,14 +344,24 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
               {result.generalReference.sourceName}
             </a>
             <div className="mt-2">
-              <AcceptDismissRow
-                onAccept={() => onAccept({ text: result.generalReference!.text, sourceLabel: `⚡ ${result.generalReference!.sourceName}` })}
-                onDismiss={() => {}}
-              />
+              {acceptedGeneral ? (
+                <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
+                  <Check size={13} weight="bold" aria-hidden />
+                  Added as a draft — review it in the aspect
+                </span>
+              ) : (
+                <AcceptDismissRow
+                  onAccept={() => {
+                    onAccept({ text: result.generalReference!.text, sourceLabel: `⚡ ${result.generalReference!.sourceName}` })
+                    setAcceptedGeneral(true)
+                  }}
+                  onDismiss={() => setDismissedGeneral(true)}
+                />
+              )}
             </div>
           </div>
         )}
-        {result.meshScopeNote && (
+        {result.meshScopeNote && !dismissedMesh && (
           <div>
             <p className="font-ui text-micro uppercase tracking-wide text-ink-tertiary">MeSH Scope Note</p>
             <p className="mt-1 font-body text-body text-ink-primary">{result.meshScopeNote.text}</p>
@@ -329,14 +369,28 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
               ⚡ {result.meshScopeNote.sourceName}
             </a>
             <div className="mt-2">
-              <AcceptDismissRow
-                onAccept={() => onAccept({ text: result.meshScopeNote!.text, sourceLabel: `⚡ ${result.meshScopeNote!.sourceName}` })}
-                onDismiss={() => {}}
-              />
+              {acceptedMesh ? (
+                <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
+                  <Check size={13} weight="bold" aria-hidden />
+                  Added as a draft — review it in the aspect
+                </span>
+              ) : (
+                <AcceptDismissRow
+                  onAccept={() => {
+                    onAccept({ text: result.meshScopeNote!.text, sourceLabel: `⚡ ${result.meshScopeNote!.sourceName}` })
+                    setAcceptedMesh(true)
+                  }}
+                  onDismiss={() => setDismissedMesh(true)}
+                />
+              )}
             </div>
           </div>
         )}
-        <Button variant="tertiary" size="small" onClick={() => setStatus('idle')}>
+        {((result.generalReference && dismissedGeneral) || !result.generalReference) && ((result.meshScopeNote && dismissedMesh) || !result.meshScopeNote) && (
+          <p className="font-body text-caption text-ink-tertiary">Dismissed. Try searching again for a different source.</p>
+        )}
+        {/* Root-cause fix ("Search again keeps showing the same data"): this used to reset to 'idle' and re-run the exact same cached lookup — force-bypasses the 7-day cache instead, matching the same fix applied to the whole-comparison Enrich panel. */}
+        <Button variant="tertiary" size="small" onClick={() => runSearch(true)}>
           Search again
         </Button>
       </div>
@@ -346,7 +400,7 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
   return (
     <div className="flex flex-col gap-3">
       <p className="font-body text-caption text-ink-tertiary">Check current external scientific sources for this topic.</p>
-      <Button variant="secondary" size="small" icon={<CaretRight size={16} />} onClick={runSearch}>
+      <Button variant="secondary" size="small" icon={<CaretRight size={16} />} onClick={() => runSearch()}>
         Search online knowledge for "{title}"
       </Button>
     </div>

@@ -65,17 +65,45 @@ export function ComparisonEnrichmentPanel({
   const [statusB, setStatusB] = useState<SideStatus>('idle')
   const [resultA, setResultA] = useState<ComparisonKnowledgeLookupResult | null>(null)
   const [resultB, setResultB] = useState<ComparisonKnowledgeLookupResult | null>(null)
+  /**
+   * Root-cause fix ("Accept/Add — no button works"): these buttons used
+   * to call their handler and render nothing different afterward — the
+   * write to the aspect/notes genuinely happened, but with the panel
+   * open as a modal over the row it's updating, there was zero visible
+   * confirmation, and nothing stopped a second tap from silently
+   * appending the same excerpt to Notes a second time. Tracked per side
+   * so each accept action gets its own inline confirmation and can't be
+   * repeated by mistake, mirroring the same pattern `AcceptDismissRow`
+   * already uses successfully in `ComparisonSourcesPanel`.
+   */
+  const [acceptedActionA, setAcceptedActionA] = useState<'overview' | 'notes' | null>(null)
+  const [acceptedActionB, setAcceptedActionB] = useState<'overview' | 'notes' | null>(null)
 
   const libraryItems = useLiveQuery<LibraryItem[]>(() => db.libraryItems.orderBy('createdAt').reverse().toArray(), [], [])
   const bookOptions: DropdownOption[] = libraryItems.map((item) => ({ value: item.id, label: item.title }))
 
   const searching = statusA === 'searching' || statusB === 'searching'
 
-  async function runSearch() {
+  /**
+   * Root-cause fix ("Search again keeps showing the same data"): Online
+   * Knowledge results are cached for 7 days per term
+   * (`core/laboratory/knowledgeLayer.ts`'s `KL_CACHE_TTL_MS`), so a plain
+   * re-run of the identical lookup for "Enzymes"/"Proteins" correctly
+   * hit that cache and returned the exact same result every time — the
+   * retrieval layer already supports `forceRefresh` to bypass it, it
+   * just was never threaded through from this "Search again" button.
+   * `force` is only meaningful for the Online Knowledge tab (My
+   * Library always re-scans live, uncached, so passing it there is a
+   * harmless no-op) but is included unconditionally so the option
+   * object's shape doesn't need an extra branch.
+   */
+  async function runSearch(opts?: { force?: boolean }) {
     setStatusA('searching')
     setStatusB('searching')
     setResultA(null)
     setResultB(null)
+    setAcceptedActionA(null)
+    setAcceptedActionB(null)
 
     await savePendingComparisonSearch({
       comparisonId,
@@ -87,7 +115,10 @@ export function ComparisonEnrichmentPanel({
       startedAt: Date.now()
     })
 
-    const options = activeTab === 'my-library' ? ({ mode, libraryItemId: mode === 'specific-source' ? libraryItemId : undefined } as const) : ({ mode: 'trusted' } as const)
+    const options =
+      activeTab === 'my-library'
+        ? ({ mode, libraryItemId: mode === 'specific-source' ? libraryItemId : undefined, forceRefresh: opts?.force } as const)
+        : ({ mode: 'trusted', forceRefresh: opts?.force } as const)
 
     // Exactly two lookups total — one per item — no matter how many
     // aspect rows the comparison has (brief §5/§13: "search the whole
@@ -109,6 +140,8 @@ export function ComparisonEnrichmentPanel({
     const status = side === 'A' ? statusA : statusB
     const result = side === 'A' ? resultA : resultB
     const overviewFilled = side === 'A' ? overviewFilledA : overviewFilledB
+    const acceptedAction = side === 'A' ? acceptedActionA : acceptedActionB
+    const setAcceptedAction = side === 'A' ? setAcceptedActionA : setAcceptedActionB
 
     if (status === 'searching' || status === 'idle') return null
 
@@ -155,16 +188,39 @@ export function ComparisonEnrichmentPanel({
           <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{name}</p>
           <p className="font-body text-body text-ink-secondary">{excerptText}</p>
           <p className="font-ui text-micro text-ink-tertiary">{sourceLabel}</p>
-          <div className="flex flex-wrap gap-2">
-            {!overviewFilled && (
-              <Button variant="tertiary" size="small" icon={<Check size={14} />} onClick={() => onAcceptToOverview({ side, text: excerptText, sourceLabel })}>
-                Use as Overview
+          {acceptedAction ? (
+            <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
+              <Check size={13} weight="bold" aria-hidden />
+              {acceptedAction === 'overview' ? 'Saved to Overview' : 'Added to Your Notes'}
+            </span>
+          ) : (
+            <div className="flex flex-wrap gap-2">
+              {!overviewFilled && (
+                <Button
+                  variant="tertiary"
+                  size="small"
+                  icon={<Check size={14} />}
+                  onClick={() => {
+                    onAcceptToOverview({ side, text: excerptText, sourceLabel })
+                    setAcceptedAction('overview')
+                  }}
+                >
+                  Use as Overview
+                </Button>
+              )}
+              <Button
+                variant="tertiary"
+                size="small"
+                icon={<Check size={14} />}
+                onClick={() => {
+                  onAddAdditionalInfo({ side, text: excerptText, sourceLabel })
+                  setAcceptedAction('notes')
+                }}
+              >
+                Add as additional source information
               </Button>
-            )}
-            <Button variant="tertiary" size="small" icon={<Check size={14} />} onClick={() => onAddAdditionalInfo({ side, text: excerptText, sourceLabel })}>
-              Add as additional source information
-            </Button>
-          </div>
+            </div>
+          )}
         </div>
       )
     }
@@ -249,7 +305,7 @@ export function ComparisonEnrichmentPanel({
               </p>
             )}
             <div className="flex gap-2">
-              <Button variant="tertiary" size="small" icon={<CaretRight size={16} />} onClick={runSearch}>
+              <Button variant="tertiary" size="small" icon={<CaretRight size={16} />} onClick={() => runSearch({ force: true })}>
                 Search again
               </Button>
               <Button variant="tertiary" size="small" icon={<X size={16} />} onClick={onClose}>
