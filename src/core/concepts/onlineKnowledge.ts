@@ -197,6 +197,57 @@ export async function fetchJson(url: string): Promise<unknown> {
   }
 }
 
+/**
+ * Root-cause fix for "Online Knowledge doesn't actually return results"
+ * (Comparison/Laboratory/Organism Knowledge Layer investigation): the
+ * general-reference tier below calls `api.duckduckgo.com` — the
+ * DuckDuckGo Instant Answer API. That endpoint does not reliably send an
+ * `Access-Control-Allow-Origin` header for arbitrary browser origins, so
+ * a plain `fetch()` to it (what `fetchJson` does, and what this file did
+ * before this fix) frequently fails with an opaque CORS `TypeError` from
+ * an arbitrary deployed origin — indistinguishable, inside `fetchJson`'s
+ * catch block, from "genuinely offline" or "genuinely no result." That
+ * silent conflation is *why* Online Knowledge could look like it "ran"
+ * and still always land on "Nothing reliable found": every CORS failure
+ * was quietly counted as an empty result, never surfaced as a distinct
+ * failure.
+ *
+ * The fix does not require a backend proxy or an API key (this stays a
+ * static, key-free PWA): DuckDuckGo's Instant Answer API has long
+ * supported the classic JSONP pattern (`&callback=name`), which loads
+ * the response via a `<script>` tag rather than `fetch` — script tags
+ * are not subject to CORS, so this bypasses the failure entirely rather
+ * than working around it. If DuckDuckGo ever drops JSONP support too,
+ * this degrades exactly the same way `fetchJson` already does: the
+ * timeout fires, the promise resolves `undefined`, and the caller falls
+ * through to its existing "nothing reliable found" state — never a
+ * fabricated result, never a hang.
+ */
+let jsonpCounter = 0
+function fetchJsonp<T>(url: string, callbackParam = 'callback'): Promise<T | undefined> {
+  if (typeof document === 'undefined') return Promise.resolve(undefined)
+  return new Promise((resolve) => {
+    const callbackName = `__cellfieJsonp_${Date.now()}_${jsonpCounter++}`
+    let settled = false
+    const script = document.createElement('script')
+
+    const finish = (value: T | undefined) => {
+      if (settled) return
+      settled = true
+      clearTimeout(timer)
+      delete (window as unknown as Record<string, unknown>)[callbackName]
+      script.remove()
+      resolve(value)
+    }
+
+    const timer = setTimeout(() => finish(undefined), REQUEST_TIMEOUT_MS)
+    ;(window as unknown as Record<string, unknown>)[callbackName] = (data: T) => finish(data)
+    script.onerror = () => finish(undefined)
+    script.src = `${url}${url.includes('?') ? '&' : '?'}${callbackParam}=${callbackName}`
+    document.head.appendChild(script)
+  })
+}
+
 async function fetchText(url: string): Promise<string | undefined> {
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS)
@@ -315,7 +366,10 @@ function isWikipediaSourced(sourceName: string | undefined, sourceUrl: string | 
  */
 async function fetchGeneralReference(name: string): Promise<OnlineSummary | undefined> {
   const term = encodeURIComponent(name.trim())
-  const data = (await fetchJson(
+  // JSONP, not fetchJson — see fetchJsonp's own comment for why a plain
+  // fetch() to this endpoint is the documented root cause of "Online
+  // Knowledge never returns anything."
+  const data = (await fetchJsonp(
     `https://api.duckduckgo.com/?q=${term}&format=json&no_redirect=1&no_html=1&skip_disambig=1`
   )) as
     | {
@@ -1089,7 +1143,7 @@ export async function fetchOnlineRelated(name: string): Promise<OnlineRelatedIte
   if (!isLikelyOnline()) return cached?.value ?? []
 
   const term = encodeURIComponent(name.trim())
-  const data = (await fetchJson(
+  const data = (await fetchJsonp(
     `https://api.duckduckgo.com/?q=${term}&format=json&no_redirect=1&no_html=1&skip_disambig=1`
   )) as { RelatedTopics?: DdgRelatedTopic[] } | undefined
 
