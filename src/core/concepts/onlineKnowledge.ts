@@ -402,12 +402,26 @@ async function fetchGeneralReference(name: string): Promise<OnlineSummary | unde
 }
 
 /**
- * Runs the source hierarchy for a concept: Tier 1 (NCBI/PubMed, only for
- * concepts that look biomedical) then Tier 2 (general reference,
- * Wikipedia excluded) as a fallback — or as the only tier tried for
- * quantitative/aptitude topics, where Tier 1 would just be noise.
- * Returns `undefined` (never invents, never substitutes another source)
- * when nothing reliable is found. Cached per normalized name.
+ * Root-cause fix for "Online Knowledge returns nothing even for basic
+ * concepts like Enzymes/Proteins" (Final Polish brief §02): the PubMed
+ * tier below (`fetchPubMedSummary`) depends on `efetch.fcgi`'s
+ * plain-text response, which — unlike NCBI's JSON endpoints — has no
+ * documented CORS policy at all, and DuckDuckGo's Instant Answer API
+ * (Tier 2, `fetchGeneralReference`) is a knowledge-panel product that
+ * frequently has nothing for a plain dictionary-style term (it's built
+ * for named entities/facts, not general definitions). Together those
+ * two tiers can legitimately fail on very ordinary biology terms even
+ * when nothing is actually broken.
+ *
+ * `fetchEuropePmcArticles` (below) already exists and hits Europe PMC's
+ * REST API (`www.ebi.ac.uk`) — a JSON API that EBI documents as openly
+ * CORS-enabled — but until now it was only wired into the Detailed
+ * Study literature module, not this function, so the Knowledge Layer
+ * that actually powers Laboratory/Organism/Comparison "Online
+ * Knowledge" never got to use it. It's inserted here as a second
+ * biomedical-tier attempt, between PubMed and the general-reference
+ * fallback: same "reuse, don't rebuild" rule as everywhere else in this
+ * file, just finally reached from this call path too.
  */
 export async function fetchOnlineSummary(name: string): Promise<OnlineSummary | undefined> {
   const key = name.trim().toLowerCase()
@@ -422,6 +436,19 @@ export async function fetchOnlineSummary(name: string): Promise<OnlineSummary | 
 
   if (!looksQuantitative(name)) {
     result = await fetchPubMedSummary(name)
+    if (!result) {
+      const europePmc = await fetchEuropePmcArticles(name)
+      const best = europePmc[0]
+      if (best) {
+        result = {
+          title: best.title || name.trim(),
+          extract: best.abstractText,
+          sourceName: best.sourceName,
+          sourceUrl: best.sourceUrl,
+          isAbstract: true
+        }
+      }
+    }
   }
   if (!result) {
     result = await fetchGeneralReference(name)
