@@ -504,7 +504,8 @@ export function ComparisonWorkspacePage() {
       <Dialog open={Boolean(sourcesFor)} onClose={() => setSourcesFor(null)} title="Find more for this aspect" size="lg">
         {sourcesFor && (
           <ComparisonSourcesPanel
-            title={`${sourcesFor.aspect.label} — ${sourcesFor.side === 'A' ? comparison.itemA.name : comparison.itemB.name}`}
+            title={sourcesFor.side === 'A' ? comparison.itemA.name : comparison.itemB.name}
+            aspectLabel={sourcesFor.aspect.label}
             topicId={`${id}:${sourcesFor.aspect.id}:${sourcesFor.side}`}
             defaultTab={sourcesFor.defaultTab}
             onAccept={(draft) => {
