@@ -6,6 +6,7 @@ import {
   BookmarkSimple,
   Copy,
   Plus,
+  Sparkle,
   Star,
   Trash,
   WarningCircle
@@ -34,6 +35,8 @@ import { COMPARISON_DIFFICULTY_LABELS, COMPARISON_FREQUENCY_LABELS } from '../..
 import { db } from '../../core/db'
 import { ComparisonWorkspaceView, type StudyMode } from './components/ComparisonWorkspaceView'
 import { ComparisonSourcesPanel } from './components/ComparisonSourcesPanel'
+import { ComparisonEnrichmentPanel } from './components/ComparisonEnrichmentPanel'
+import { getPendingComparisonSearch, clearPendingComparisonSearch, type ComparisonSearchSession } from '../../core/comparison/draftSession'
 
 type LoadState = 'loading' | 'found' | 'not-found'
 
@@ -70,6 +73,8 @@ export function ComparisonWorkspacePage() {
   const [studyMode, setStudyMode] = useState<StudyMode>('off')
   const [editMode, setEditMode] = useState(false)
   const [sourcesFor, setSourcesFor] = useState<{ aspect: ComparisonAspect; side: 'A' | 'B'; defaultTab?: 'my-library' | 'online' } | null>(null)
+  const [showEnrichPanel, setShowEnrichPanel] = useState(false)
+  const [pendingSearch, setPendingSearch] = useState<ComparisonSearchSession | null>(null)
   const [showAddAspect, setShowAddAspect] = useState(false)
   const [notesDraft, setNotesDraft] = useState('')
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
@@ -139,6 +144,17 @@ export function ComparisonWorkspacePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loadState])
 
+  // Brief §20-26/§39: if a whole-comparison source search was in flight
+  // when the app got suspended (phone call, app switch, OS reclaiming a
+  // backgrounded PWA) and never reached a result, offer to run it again
+  // instead of silently forgetting the person already chose a source and
+  // started searching — see draftSession.ts for why "run it again" (not
+  // a literal resume) is the honest version of this feature.
+  useEffect(() => {
+    if (loadState !== 'found') return
+    void getPendingComparisonSearch(id).then((session) => setPendingSearch(session ?? null))
+  }, [loadState, id])
+
   const tagline = comparison ? getTaglineForComparison(comparison) : undefined
 
   async function handleToggleFavorite() {
@@ -165,6 +181,29 @@ export function ComparisonWorkspacePage() {
     const nextAspects = comparison.aspects.map((a) => (a.id === aspectId ? { ...a, [side === 'A' ? 'noteA' : 'noteB']: note } : a))
     setComparison({ ...comparison, aspects: nextAspects })
     await upsertAspectNote(id, aspectId, side, note)
+  }
+
+  /** Appends to the comparison's own Notes (brief §9/§10: evidence that doesn't map confidently onto a specific aspect becomes "Additional source information" rather than an invented row value). Persists immediately rather than waiting for the separate "Save notes" action, since this text arrived from an explicit Accept, not free typing. */
+  async function appendAdditionalSourceInfo(text: string, sourceLabel: string) {
+    if (!comparison) return
+    const addition = `${text}\n(${sourceLabel})`
+    const nextNotes = comparison.notes ? `${comparison.notes}\n\n${addition}` : addition
+    setComparison({ ...comparison, notes: nextNotes })
+    setNotesDraft(nextNotes)
+    if (isCurated) {
+      const overlay = await saveCuratedComparison(id)
+      await setNotes(overlay.id, nextNotes)
+    } else {
+      await setNotes(id, nextNotes)
+    }
+  }
+
+  /** The whole-comparison enrichment panel's one confident, non-invented mapping (brief §9): Overview, only while it's still blank. Provenance is kept inline in the cell text itself, matching how a custom comparison's aspects have no separate per-side note field to carry it in (see persistAspectNote above). */
+  async function acceptToOverview(side: 'A' | 'B', text: string, sourceLabel: string) {
+    if (!comparison) return
+    const overview = comparison.aspects.find((a) => a.id === 'overview')
+    if (!overview) return appendAdditionalSourceInfo(text, sourceLabel)
+    await persistAspectChange('overview', side, `${text}\n(${sourceLabel})`)
   }
 
   async function handleToggleKeyDifference(aspectId: string) {
@@ -317,6 +356,40 @@ export function ComparisonWorkspacePage() {
         </div>
       </header>
 
+      {pendingSearch && (
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-md border border-warning/40 bg-warning/10 p-4">
+          <p className="font-body text-body text-ink-secondary">
+            Search interrupted — your search for <strong>{pendingSearch.itemAName}</strong> vs <strong>{pendingSearch.itemBName}</strong> via{' '}
+            {pendingSearch.source === 'my-library' ? 'My Library' : 'Online Knowledge'} didn't finish.
+          </p>
+          <div className="flex gap-2">
+            <Button variant="primary" size="small" onClick={() => setShowEnrichPanel(true)}>
+              Resume search
+            </Button>
+            <Button
+              variant="tertiary"
+              size="small"
+              onClick={async () => {
+                await clearPendingComparisonSearch(id)
+                setPendingSearch(null)
+              }}
+            >
+              Start over
+            </Button>
+          </div>
+        </div>
+      )}
+
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-md border border-border bg-surface p-4">
+        <div>
+          <h2 className="font-display text-h3 font-medium text-ink-primary">Comparison sources</h2>
+          <p className="font-body text-caption text-ink-tertiary">Search My Library or Online Knowledge once for this whole comparison.</p>
+        </div>
+        <Button variant="primary" size="small" icon={<Sparkle size={16} />} onClick={() => setShowEnrichPanel(true)}>
+          Enrich comparison
+        </Button>
+      </div>
+
       <div className="mb-6 max-w-xs">
         <Dropdown label="Study Mode" options={STUDY_MODE_OPTIONS} value={studyMode} onChange={(v) => setStudyMode(v as StudyMode)} />
       </div>
@@ -409,7 +482,7 @@ export function ComparisonWorkspacePage() {
       {completed && <p className="mt-2 text-center font-body text-micro italic text-ink-tertiary">{COMPLETION_TAGLINE}</p>}
 
       {/* Fill-from-source panel, scoped to one aspect + side */}
-      <Dialog open={Boolean(sourcesFor)} onClose={() => setSourcesFor(null)} title="Fill from a source" size="lg">
+      <Dialog open={Boolean(sourcesFor)} onClose={() => setSourcesFor(null)} title="Find more for this aspect" size="lg">
         {sourcesFor && (
           <ComparisonSourcesPanel
             title={`${sourcesFor.aspect.label} — ${sourcesFor.side === 'A' ? comparison.itemA.name : comparison.itemB.name}`}
@@ -421,6 +494,24 @@ export function ComparisonWorkspacePage() {
           />
         )}
       </Dialog>
+
+      {showEnrichPanel && (
+        <ComparisonEnrichmentPanel
+          comparisonId={id}
+          itemAName={comparison.itemA.name}
+          itemBName={comparison.itemB.name}
+          overviewFilledA={Boolean(comparison.aspects.find((a) => a.id === 'overview')?.valueA)}
+          overviewFilledB={Boolean(comparison.aspects.find((a) => a.id === 'overview')?.valueB)}
+          onAcceptToOverview={({ side, text, sourceLabel }) => acceptToOverview(side, text, sourceLabel)}
+          onAddAdditionalInfo={({ text, sourceLabel }) => appendAdditionalSourceInfo(text, sourceLabel)}
+          resume={pendingSearch ?? undefined}
+          onClose={() => {
+            setShowEnrichPanel(false)
+            setPendingSearch(null)
+          }}
+        />
+      )}
+
 
       {/* Add aspect */}
       <Dialog open={showAddAspect} onClose={() => setShowAddAspect(false)} title="Add an aspect">
