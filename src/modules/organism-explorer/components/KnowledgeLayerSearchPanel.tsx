@@ -121,6 +121,21 @@ export function KnowledgeLayerSearchPanel({ query, onFound }: KnowledgeLayerSear
     )
   }
 
+  if (status === 'timed-out') {
+    return (
+      <EmptyState
+        icon={<WarningCircle size={32} />}
+        title="Search is taking longer than expected"
+        description="Your library may be large, or a document is slow to read on this device. It's safe to try again."
+        action={
+          <Button variant="secondary" size="small" onClick={handleSearch}>
+            Try again
+          </Button>
+        }
+      />
+    )
+  }
+
   if (status === 'not-found-in-source') {
     return (
       <div className="flex flex-col gap-4">
