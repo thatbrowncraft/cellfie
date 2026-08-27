@@ -15,8 +15,24 @@ interface AcceptedDraft {
 }
 
 interface ComparisonSourcesPanelProps {
-  /** What's being searched for, e.g. "ELISA — Sensitivity". The actual search term. */
+  /**
+   * Root-cause fix (Final Polish correction — "Find more about Enzymes"
+   * returns nothing): this used to double as BOTH the literal search
+   * query sent to PubMed/Europe PMC/the library scan AND the display
+   * text ("Search my library for '{title}'"), passed in from the call
+   * site as `"${aspect.label} — ${itemName}"` (e.g. "Key Distinguishing
+   * Feature — Enzymes"). PubMed and a plain-text library scan search for
+   * exactly the string they're given — neither one can match a UI label
+   * concatenated onto an item name, since that compound phrase never
+   * appears verbatim in any real source. `title` is now the actual
+   * search term alone (the item name, e.g. "Enzymes") — the same clean
+   * term the whole-comparison "Enrich comparison" search already uses
+   * successfully — and `aspectLabel` (below) carries the "what for"
+   * context for display only.
+   */
   title: string
+  /** Display-only context — which aspect this fill-in is for (e.g. "Key Distinguishing Feature"). Never part of the search query itself; see `title`'s note above for why mixing the two broke every per-aspect search. */
+  aspectLabel?: string
   /** Namespaces the on-device cache only — never sent anywhere. */
   topicId: string
   /** Called when the person accepts a drafted value for a specific side of the comparison (brief §11: Accept → becomes a user-owned aspect override, never silently written into curated content). */
@@ -34,7 +50,7 @@ interface ComparisonSourcesPanelProps {
  * instead of writing to a Saved Items list, matching the brief's
  * "draft → review → Accept/Dismiss" workflow exactly.
  */
-export function ComparisonSourcesPanel({ title, topicId, onAccept, defaultTab }: ComparisonSourcesPanelProps) {
+export function ComparisonSourcesPanel({ title, aspectLabel, topicId, onAccept, defaultTab }: ComparisonSourcesPanelProps) {
   const [activeTab, setActiveTab] = useState<'my-library' | 'online'>(defaultTab ?? 'my-library')
 
   return (
@@ -42,6 +58,11 @@ export function ComparisonSourcesPanel({ title, topicId, onAccept, defaultTab }:
       <div className="flex flex-col gap-1">
         <h3 className="font-display text-h3 font-medium text-ink-primary">Fill from a source</h3>
         <p className="font-body text-caption text-ink-tertiary">
+          {aspectLabel ? (
+            <>
+              Looking for information about <strong>{title}</strong> to fill in <strong>{aspectLabel}</strong>.{' '}
+            </>
+          ) : null}
           Draft this from your own books or current external references. Nothing is added to the comparison until you review and accept it.
         </p>
       </div>
