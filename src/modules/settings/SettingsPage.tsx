@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Sun, Moon, Monitor, TextAa, Download, Upload, ArrowsLeftRight, ArrowsDownUp, CheckCircle } from '@phosphor-icons/react'
 import { ReadingLayout } from '../../shared/layouts'
 import { Button } from '../../shared/components'
@@ -6,6 +7,7 @@ import { useReaderNavigationMode, type ReaderNavigationMode } from '../../core/r
 import { cn } from '../../shared/utils/cn'
 import { exportJsonBackup } from '../../core/export'
 import { moduleStatusList } from '../../config/modules'
+import { ImportBackupDialog } from './components/ImportBackupDialog'
 
 const themeOptions: { mode: ThemeMode; label: string; icon: JSX.Element }[] = [
   { mode: 'system', label: 'System', icon: <Monitor size={20} /> },
@@ -24,12 +26,14 @@ const readerNavigationOptions: { mode: ReaderNavigationMode; label: string; icon
  * System and Accessibility are Task 3 deliverables in their own right.
  * Module Activation task: the Modules list below now reflects real
  * shipped status (see `config/modules.ts`) instead of a hardcoded
- * "Coming soon" list. Export/import and offline diagnostics remain as
- * before — Import restore is still a later-phase feature.
+ * "Coming soon" list. Export and restore-from-backup import both work —
+ * see `core/export` for what a backup can and can't include (uploaded
+ * book/image files themselves never are).
  */
 export function SettingsPage() {
   const { mode, setMode, largeText, setLargeText } = useTheme()
   const [readerNavigationMode, setReaderNavigationMode] = useReaderNavigationMode()
+  const [importOpen, setImportOpen] = useState(false)
 
   return (
     <ReadingLayout title="Settings" eyebrow="System">
@@ -147,18 +151,21 @@ export function SettingsPage() {
         <p className="mb-4 font-body text-body text-ink-secondary">
           Everything you create in Cellfie stays on this device. Export a full JSON backup of your library metadata,
           study progress, concepts, saved study content, notes, highlights, bookmarks, annotations, and your custom
-          work across Cellfie's modules (Notes has its own Markdown export too). Restoring from a backup arrives in a
-          later phase.
+          work across Cellfie's modules (Notes has its own Markdown export too). Import merges a backup back in —
+          your uploaded book/image files themselves aren't part of a backup and can't be restored this way, only the
+          data that references them.
         </p>
         <div className="flex gap-3">
           <Button variant="secondary" icon={<Download size={18} />} onClick={() => void exportJsonBackup()}>
             Export JSON backup
           </Button>
-          <Button variant="secondary" disabled icon={<Upload size={18} />}>
+          <Button variant="secondary" icon={<Upload size={18} />} onClick={() => setImportOpen(true)}>
             Import
           </Button>
         </div>
       </section>
+
+      <ImportBackupDialog open={importOpen} onClose={() => setImportOpen(false)} />
     </ReadingLayout>
   )
 }
