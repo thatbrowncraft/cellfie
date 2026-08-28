@@ -190,3 +190,177 @@ export async function exportJsonBackup(): Promise<void> {
     new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' })
   )
 }
+
+// ---------------------------------------------------------------------------
+// Import (restore from a JSON backup)
+// ---------------------------------------------------------------------------
+
+export class ImportValidationError extends Error {}
+
+/**
+ * Tables that are never written during import, in addition to
+ * `EXCLUDED_TABLES` (which the export step already leaves out entirely,
+ * so they can't appear in a backup anyway):
+ *
+ * - `libraryItems` — `FIELD_STRIPPERS` above deliberately removes
+ *   `filePath` from every exported row, but `LibraryItem.filePath` is a
+ *   REQUIRED field (`core/db/index.ts`), not optional. A backup's
+ *   library rows are therefore never a complete, safely-restorable
+ *   record — they describe a book whose actual file only ever lived in
+ *   this browser's OPFS storage and was never included in the backup
+ *   (by design, to keep it small and JSON-only). Writing these rows
+ *   back would create Library entries that the Reader/search/Knowledge
+ *   Layer all expect to be able to open, and none of them can. Every
+ *   other restored table (Notes, Highlights, Comparisons, Concepts,
+ *   etc.) already treats a missing/unknown `itemId`/`libraryItemId` as
+ *   a normal, handled state (falls back to "Unknown" or omits the
+ *   provenance link) rather than crashing, so skipping this table keeps
+ *   everything else fully restorable without any dangling reference
+ *   causing a broken page.
+ * - `organismImages` / `organismImageBlobs` — same shape of problem:
+ *   every row exists purely to point at image bytes (`filePath` or
+ *   `blobId`) that live in OPFS/IndexedDB and were never exported.
+ *   There's no "no file" variant of this table the way there is for
+ *   `conceptAssets` (see `filterRestorableRows` below), so it's skipped
+ *   in full rather than partially.
+ */
+const IMPORT_SKIPPED_TABLES = new Set(['libraryItems', 'organismImages', 'organismImageBlobs'])
+
+/**
+ * `conceptAssets` is a mixed table: `'mindmap-node'` rows are pure
+ * user-typed text with no file dependency at all and restore perfectly;
+ * `'mindmap-import'`/`'visual-import'` rows point at an OPFS `filePath`
+ * that (same reasoning as `libraryItems` above) was never in the
+ * backup. Filtering by kind here restores everything genuinely
+ * restorable in this table instead of skipping the whole table over a
+ * problem that only affects two of its three row kinds.
+ */
+function filterRestorableRows(tableName: string, rows: unknown[]): { rows: unknown[]; skipped: number } {
+  if (tableName !== 'conceptAssets') return { rows, skipped: 0 }
+  const restorable = rows.filter((r) => (r as { kind?: string }).kind === 'mindmap-node')
+  return { rows: restorable, skipped: rows.length - restorable.length }
+}
+
+export interface ImportSummary {
+  /** Table name → number of rows actually written. Only tables with at least one restored row are included. */
+  restoredCounts: Record<string, number>
+  /** Tables present in the backup but not restored at all (see `IMPORT_SKIPPED_TABLES`). */
+  skippedTables: string[]
+  /** conceptAssets rows specifically skipped for lacking a restorable file (see `filterRestorableRows`). */
+  skippedFileBackedAssets: number
+  preferencesRestored: number
+  exportedAt: number
+  appVersion: string
+}
+
+/**
+ * Reads and validates a backup file WITHOUT writing anything, so the
+ * caller can show a confirmation summary (brief: actions that modify
+ * the user's data should confirm before acting) before any table is
+ * touched.
+ */
+export async function parseJsonBackup(file: File): Promise<{ backup: JsonBackup; summary: ImportSummary }> {
+  let text: string
+  try {
+    text = await file.text()
+  } catch {
+    throw new ImportValidationError("Couldn't read that file.")
+  }
+
+  let parsed: unknown
+  try {
+    parsed = JSON.parse(text)
+  } catch {
+    throw new ImportValidationError("That file isn't valid JSON.")
+  }
+
+  if (
+    !parsed ||
+    typeof parsed !== 'object' ||
+    (parsed as Record<string, unknown>).format !== 'cellfie-backup' ||
+    typeof (parsed as Record<string, unknown>).data !== 'object'
+  ) {
+    throw new ImportValidationError("That doesn't look like a Cellfie backup file.")
+  }
+
+  const backup = parsed as JsonBackup
+  if (typeof backup.version !== 'number' || backup.version > 2) {
+    throw new ImportValidationError('This backup was made by a newer version of Cellfie than this device has — update the app first.')
+  }
+
+  const knownTableNames = new Set(db.tables.map((t) => t.name))
+  const restoredCounts: Record<string, number> = {}
+  const skippedTables: string[] = []
+  let skippedFileBackedAssets = 0
+
+  for (const [tableName, rows] of Object.entries(backup.data)) {
+    if (!Array.isArray(rows) || rows.length === 0) continue
+    if (!knownTableNames.has(tableName) || EXCLUDED_TABLES.has(tableName) || IMPORT_SKIPPED_TABLES.has(tableName)) {
+      skippedTables.push(tableName)
+      continue
+    }
+    const { rows: restorable, skipped } = filterRestorableRows(tableName, rows)
+    skippedFileBackedAssets += skipped
+    if (restorable.length > 0) restoredCounts[tableName] = restorable.length
+  }
+
+  const preferencesRestored = backup.preferences
+    ? PREFERENCE_KEYS.filter((k) => typeof backup.preferences[k] === 'string').length
+    : 0
+
+  return {
+    backup,
+    summary: { restoredCounts, skippedTables, skippedFileBackedAssets, preferencesRestored, exportedAt: backup.exportedAt, appVersion: backup.appVersion }
+  }
+}
+
+/**
+ * Writes a validated backup's data into the live database. Uses
+ * `bulkPut` (upsert by primary key) for every table, never `clear()` +
+ * insert — an id already present on this device is overwritten with the
+ * backup's version, but nothing already on the device that ISN'T in the
+ * backup is ever deleted. This is deliberately a merge, not a wipe-and-
+ * replace: the primary real-world use of "restore a backup" here is
+ * bringing a fresh install back to a previous state or moving to a new
+ * device (destination is empty either way, so merge and replace behave
+ * identically), and a merge can never destroy data an overly-broad wipe
+ * might if the wrong file were picked by mistake.
+ */
+export async function importJsonBackup(backup: JsonBackup): Promise<ImportSummary> {
+  const knownTableNames = new Set(db.tables.map((t) => t.name))
+  const restoredCounts: Record<string, number> = {}
+  const skippedTables: string[] = []
+  let skippedFileBackedAssets = 0
+
+  await db.transaction('rw', db.tables, async () => {
+    for (const [tableName, rows] of Object.entries(backup.data)) {
+      if (!Array.isArray(rows) || rows.length === 0) continue
+      if (!knownTableNames.has(tableName) || EXCLUDED_TABLES.has(tableName) || IMPORT_SKIPPED_TABLES.has(tableName)) {
+        skippedTables.push(tableName)
+        continue
+      }
+      const { rows: restorable, skipped } = filterRestorableRows(tableName, rows)
+      skippedFileBackedAssets += skipped
+      if (restorable.length === 0) continue
+      const table = db.table(tableName)
+      // `db.table(name)` (no type parameter) is intentionally untyped —
+      // Dexie's own `Table<any, any>` — since these are dynamically
+      // discovered table names, not compile-time-known ones.
+      await table.bulkPut(restorable as unknown[])
+      restoredCounts[tableName] = restorable.length
+    }
+  })
+
+  let preferencesRestored = 0
+  if (backup.preferences && typeof window !== 'undefined') {
+    for (const key of PREFERENCE_KEYS) {
+      const value = backup.preferences[key]
+      if (typeof value === 'string') {
+        window.localStorage.setItem(key, value)
+        preferencesRestored += 1
+      }
+    }
+  }
+
+  return { restoredCounts, skippedTables, skippedFileBackedAssets, preferencesRestored, exportedAt: backup.exportedAt, appVersion: backup.appVersion }
+}
