@@ -1,0 +1,80 @@
+{
+  "id": "comp-mitosis-vs-meiosis",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-division",
+    "genetics",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Mitosis"
+  },
+  "itemB": {
+    "name": "Meiosis"
+  },
+  "overview": "Two forms of nuclear division with very different purposes: one keeps cells identical, the other creates genetic diversity for reproduction.",
+  "genZNote": "Mitosis: same energy, new copy. Meiosis: shuffle the deck, deal half a hand.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Nuclear division producing two genetically identical diploid daughter cells, used for growth and repair.",
+      "valueB": "Two rounds of division producing four genetically unique haploid daughter cells, used for sexual reproduction."
+    },
+    {
+      "id": "divisions",
+      "label": "Number of Divisions",
+      "valueA": "One division (prophase through telophase, once).",
+      "valueB": "Two divisions (Meiosis I and Meiosis II) from a single round of DNA replication.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "daughter-cells",
+      "label": "Daughter Cell Number and Ploidy",
+      "valueA": "Two diploid (2n) cells, genetically identical to the parent.",
+      "valueB": "Four haploid (n) cells, each genetically distinct."
+    },
+    {
+      "id": "genetic-variation",
+      "label": "Genetic Variation",
+      "valueA": "None introduced \u2014 daughter cells are clones of the parent cell.",
+      "valueB": "Introduced via crossing over (prophase I) and independent assortment (metaphase I)."
+    },
+    {
+      "id": "pairing",
+      "label": "Homologous Chromosome Pairing",
+      "valueA": "Does not occur \u2014 chromosomes act independently.",
+      "valueB": "Homologous chromosomes pair up as tetrads during prophase I, enabling crossing over."
+    },
+    {
+      "id": "biological-context",
+      "label": "Biological Context",
+      "valueA": "Somatic cell division: growth, tissue repair, asexual reproduction in some organisms.",
+      "valueB": "Germ cell division: production of gametes (sperm and egg) for sexual reproduction."
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations / Pitfalls",
+      "valueA": "Errors (nondisjunction) are rare but can contribute to cancer if checkpoints fail.",
+      "valueB": "Errors in chromosome segregation (nondisjunction) cause aneuploidies such as Down syndrome (trisomy 21)."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "One division, two identical diploid cells, no crossing over.",
+      "valueB": "Two divisions, four unique haploid cells, crossing over and independent assortment.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Crossing over happens in prophase I of meiosis only \u2014 never in mitosis.",
+    "memoryTrick": "\"Mitosis = maintenance. Meiosis = mixing.\"",
+    "commonMisconception": "Meiosis does not happen in every cell \u2014 only in germline cells destined to become gametes."
+  },
+  "lastVerified": "2026-01-01"
+}

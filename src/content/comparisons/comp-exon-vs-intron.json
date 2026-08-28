@@ -1,0 +1,62 @@
+{
+  "id": "comp-exon-vs-intron",
+  "domain": "molecular-biology",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "gene-structure"
+  ],
+  "itemA": {
+    "name": "Exon"
+  },
+  "itemB": {
+    "name": "Intron"
+  },
+  "overview": "The two types of sequence found within a eukaryotic gene's primary transcript, one of which is spliced out before translation.",
+  "genZNote": "Exons make the final cut. Introns end up on the cutting room floor.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A coding region of a gene that is retained in the mature mRNA and translated into protein.",
+      "valueB": "A non-coding region of a gene that is transcribed but removed from the pre-mRNA during splicing."
+    },
+    {
+      "id": "fate-during-splicing",
+      "label": "Fate During RNA Splicing",
+      "valueA": "Retained and joined together to form the mature, continuous mRNA sequence.",
+      "valueB": "Removed by the spliceosome and typically degraded.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "presence-in-mature-mrna",
+      "label": "Presence in Mature mRNA",
+      "valueA": "Present \u2014 makes up the final coding (and untranslated) sequence of mRNA.",
+      "valueB": "Absent \u2014 entirely removed before translation."
+    },
+    {
+      "id": "occurrence",
+      "label": "Occurrence Across Organisms",
+      "valueA": "Found in both prokaryotic and eukaryotic genes.",
+      "valueB": "Common in eukaryotic genes; rare or absent in prokaryotic genes."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Mutations within exons can directly alter the encoded protein sequence.",
+      "valueB": "Mutations at intron-exon splice boundaries can cause aberrant splicing and disease, even though introns themselves are non-coding."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Coding sequence retained in mature mRNA.",
+      "valueB": "Non-coding sequence removed during splicing.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

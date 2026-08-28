@@ -1,0 +1,64 @@
+{
+  "id": "comp-wgs-vs-wes",
+  "domain": "molecular-biology",
+  "difficulty": "expert",
+  "frequency": "common",
+  "audience": [
+    "researcher",
+    "student"
+  ],
+  "tags": [
+    "genomics",
+    "sequencing",
+    "bioinformatics"
+  ],
+  "itemA": {
+    "name": "Whole Genome Sequencing (WGS)"
+  },
+  "itemB": {
+    "name": "Whole Exome Sequencing (WES)"
+  },
+  "overview": "Two large-scale sequencing strategies that trade cost and speed against completeness of genomic coverage.",
+  "genZNote": "WGS reads the whole book. WES just reads the highlighted chapters (exons).",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Sequences essentially the entire genome, including coding and non-coding regions.",
+      "valueB": "Sequences only the protein-coding exons of the genome, roughly 1-2% of total DNA."
+    },
+    {
+      "id": "coverage-scope",
+      "label": "Coverage Scope",
+      "valueA": "Comprehensive \u2014 captures coding regions, introns, regulatory regions, and intergenic DNA.",
+      "valueB": "Targeted \u2014 captures only exons, missing most regulatory and non-coding variants.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "cost-and-data-volume",
+      "label": "Cost and Data Volume",
+      "valueA": "Higher cost and larger data storage/analysis burden.",
+      "valueB": "Lower cost and smaller, more manageable data volume."
+    },
+    {
+      "id": "clinical-yield",
+      "label": "Clinical Diagnostic Yield",
+      "valueA": "Can detect structural variants, deep intronic variants, and regulatory region mutations WES would miss.",
+      "valueB": "Efficient for finding coding-region mutations responsible for many Mendelian diseases, at lower cost."
+    },
+    {
+      "id": "typical-use-case",
+      "label": "Typical Use Case",
+      "valueA": "Research applications and cases where exome sequencing has failed to find a causative variant.",
+      "valueB": "First-line diagnostic sequencing for suspected genetic disorders with a likely coding-region cause."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Sequences the entire genome.",
+      "valueB": "Sequences only the protein-coding exome.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

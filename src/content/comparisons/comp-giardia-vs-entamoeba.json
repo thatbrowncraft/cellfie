@@ -1,0 +1,67 @@
+{
+  "id": "comp-giardia-vs-entamoeba",
+  "domain": "parasitology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "parasitology",
+    "clinical-microbiology"
+  ],
+  "itemA": {
+    "name": "Giardia duodenalis",
+    "refKind": "organism",
+    "refId": "giardia-duodenalis"
+  },
+  "itemB": {
+    "name": "Entamoeba histolytica",
+    "refKind": "organism",
+    "refId": "entamoeba-histolytica"
+  },
+  "overview": "Two of the most common protozoan parasites causing gastrointestinal disease worldwide, distinguished by locomotion, invasiveness, and diagnostic appearance.",
+  "genZNote": "Giardia has a face (and flagella) and just wants to float. E. histolytica actually invades.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A flagellated protozoan that colonizes the small intestine, causing malabsorptive, non-bloody diarrhea.",
+      "valueB": "An amoeba that can invade the colonic wall and spread to the liver, causing amoebic dysentery and abscesses."
+    },
+    {
+      "id": "motility",
+      "label": "Motility / Structure",
+      "valueA": "Flagellated trophozoite with a distinctive \"falling leaf\" motility and two nuclei giving a classic \"face\" appearance.",
+      "valueB": "Amoeboid trophozoite that moves via pseudopodia; can ingest red blood cells (erythrophagocytosis) when invasive.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "invasiveness",
+      "label": "Invasiveness",
+      "valueA": "Non-invasive \u2014 attaches to the duodenal/jejunal mucosa via a ventral sucking disc without penetrating tissue.",
+      "valueB": "Invasive \u2014 can penetrate the colonic mucosa and disseminate hematogenously, classically to the liver."
+    },
+    {
+      "id": "clinical-presentation",
+      "label": "Clinical Presentation",
+      "valueA": "Foul-smelling, greasy, non-bloody diarrhea with bloating and malabsorption (steatorrhea).",
+      "valueB": "Bloody, mucus-containing diarrhea (amoebic dysentery) and potentially liver abscess."
+    },
+    {
+      "id": "diagnostic-form",
+      "label": "Diagnostic Form in Stool",
+      "valueA": "Trophozoites or cysts with 2-4 nuclei; antigen detection (ELISA) and PCR also used.",
+      "valueB": "Trophozoites (with ingested RBCs if invasive) or cysts with up to 4 nuclei; antigen/PCR testing distinguishes it from non-pathogenic E. dispar."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Flagellated, non-invasive, causes malabsorptive diarrhea.",
+      "valueB": "Amoeboid, invasive, can cause dysentery and liver abscess.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

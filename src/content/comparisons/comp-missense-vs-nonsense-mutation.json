@@ -1,0 +1,57 @@
+{
+  "id": "comp-missense-vs-nonsense-mutation",
+  "domain": "molecular-biology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "mutation",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "Missense Mutation"
+  },
+  "itemB": {
+    "name": "Nonsense Mutation"
+  },
+  "overview": "Two categories of point mutation that change a codon's meaning, one substituting an amino acid and the other creating a premature stop.",
+  "genZNote": "Missense swaps one letter for another. Nonsense hits the eject button early.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A point mutation that changes a single codon to specify a different amino acid.",
+      "valueB": "A point mutation that changes a codon into a premature stop codon."
+    },
+    {
+      "id": "effect-on-protein",
+      "label": "Effect on Protein",
+      "valueA": "Produces a full-length protein with one altered amino acid, which may or may not affect function.",
+      "valueB": "Produces a truncated, usually non-functional protein, often degraded via nonsense-mediated decay.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "severity-spectrum",
+      "label": "Severity Spectrum",
+      "valueA": "Ranges from silent/tolerated (conservative substitution) to severely disruptive, depending on the amino acid change and its location.",
+      "valueB": "Generally more severe, especially if the truncation occurs early in the coding sequence."
+    },
+    {
+      "id": "classic-example",
+      "label": "Classic Example",
+      "valueA": "Sickle cell disease: glutamic acid to valine substitution in beta-globin (a single missense mutation).",
+      "valueB": "Certain forms of beta-thalassemia result from nonsense mutations that truncate beta-globin."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Changes the amino acid coded but preserves protein length.",
+      "valueB": "Introduces a premature stop codon, truncating the protein.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

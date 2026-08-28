@@ -1,0 +1,64 @@
+{
+  "id": "comp-direct-vs-sandwich-elisa",
+  "domain": "laboratory-technique",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "immunology",
+    "laboratory-technique",
+    "diagnostics"
+  ],
+  "itemA": {
+    "name": "Direct ELISA"
+  },
+  "itemB": {
+    "name": "Sandwich ELISA"
+  },
+  "overview": "Two ELISA formats used to detect antigen or antibody, differing in how many antibodies are used and how specific/sensitive the assay is.",
+  "genZNote": "Direct ELISA: one antibody doing all the work. Sandwich ELISA: antigen gets squeezed between two.",
+  "aspects": [
+    {
+      "id": "principle",
+      "label": "Principle",
+      "valueA": "Antigen is directly coated onto the plate and detected with a single labeled primary antibody.",
+      "valueB": "A capture antibody is coated onto the plate, binds the antigen from the sample, and a second labeled detection antibody binds a different epitope on the same antigen."
+    },
+    {
+      "id": "number-of-antibodies",
+      "label": "Number of Antibodies Used",
+      "valueA": "One labeled antibody.",
+      "valueB": "Two antibodies \u2014 an unlabeled capture antibody and a labeled detection antibody.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "specificity-and-sensitivity",
+      "label": "Specificity and Sensitivity",
+      "valueA": "Lower specificity and sensitivity, since the antigen is not purified from the sample before detection.",
+      "valueB": "Higher specificity and sensitivity, since the capture step selectively pulls the target antigen out of a complex sample."
+    },
+    {
+      "id": "background-signal",
+      "label": "Background Signal",
+      "valueA": "Higher background/non-specific binding is more likely.",
+      "valueB": "Lower background, due to the extra specificity from a second antibody."
+    },
+    {
+      "id": "typical-use",
+      "label": "Typical Use Case",
+      "valueA": "Simple, rapid screening assays where high sensitivity is less critical.",
+      "valueB": "Detecting low-abundance antigens in complex samples (e.g. serum, plasma) with high confidence."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Single antibody directly detects coated antigen.",
+      "valueB": "Two antibodies capture and detect antigen, increasing specificity.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

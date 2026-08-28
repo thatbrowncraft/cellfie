@@ -1,0 +1,65 @@
+{
+  "id": "comp-genotype-vs-phenotype",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Genotype"
+  },
+  "itemB": {
+    "name": "Phenotype"
+  },
+  "overview": "The foundational distinction in genetics between the genetic code an organism carries and the observable traits that result.",
+  "genZNote": "Genotype is the recipe. Phenotype is the dish that comes out.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The complete set of alleles/genetic instructions an organism carries for a given trait or across its genome.",
+      "valueB": "The observable physical, biochemical, or behavioral characteristics that result from genotype and environment."
+    },
+    {
+      "id": "nature",
+      "label": "Nature of the Property",
+      "valueA": "Fixed at fertilization; encoded in DNA sequence.",
+      "valueB": "Can vary even with the same genotype, depending on environmental and developmental factors.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "determination",
+      "label": "What Determines It",
+      "valueA": "Combination of alleles inherited from both parents.",
+      "valueB": "Genotype expressed through the lens of environment, epigenetics, and gene interactions."
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Having one allele for brown eyes (B) and one for blue (b) \u2014 genotype Bb.",
+      "valueB": "Actually having brown eyes, because B is dominant over b."
+    },
+    {
+      "id": "measurement",
+      "label": "How It Is Assessed",
+      "valueA": "Determined by DNA sequencing, PCR-based genotyping, or pedigree analysis.",
+      "valueB": "Observed directly \u2014 physical examination, biochemical assay, or behavioral assessment."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "The underlying genetic makeup, not directly visible.",
+      "valueB": "The visible/measurable expression of that genetic makeup.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "commonMisconception": "Identical genotype does not guarantee identical phenotype \u2014 environment and gene regulation can change the outcome (e.g. identical twins with different traits)."
+  },
+  "lastVerified": "2026-01-01"
+}

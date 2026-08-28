@@ -1,0 +1,66 @@
+{
+  "id": "comp-correlation-vs-causation",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "research-methods",
+    "biostatistics"
+  ],
+  "itemA": {
+    "name": "Correlation"
+  },
+  "itemB": {
+    "name": "Causation"
+  },
+  "overview": "One of the most important distinctions in research methodology: two variables moving together does not mean one causes the other.",
+  "genZNote": "Correlation: they show up together. Causation: one actually made the other show up.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A statistical association where two variables change together, without implying that one causes the other.",
+      "valueB": "A relationship where a change in one variable directly produces a change in another."
+    },
+    {
+      "id": "what-it-establishes",
+      "label": "What It Establishes",
+      "valueA": "Only that a relationship or pattern exists between variables.",
+      "valueB": "That one variable is a direct cause of change in another, typically established through controlled experimentation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "confounding-variables",
+      "label": "Confounding Variables",
+      "valueA": "Can arise purely from a third, unmeasured confounding variable affecting both.",
+      "valueB": "Requires ruling out confounders, reverse causation, and chance to be confidently established."
+    },
+    {
+      "id": "how-established",
+      "label": "How It Is Established",
+      "valueA": "Observational studies, statistical measures such as correlation coefficients.",
+      "valueB": "Randomized controlled trials, or Bradford Hill-type criteria (strength, consistency, temporality, dose-response) in observational settings."
+    },
+    {
+      "id": "classic-example",
+      "label": "Classic Example",
+      "valueA": "Ice cream sales and drowning rates both rise in summer (confounded by heat/season).",
+      "valueB": "Smoking causing lung cancer, established through extensive controlled and longitudinal evidence."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Variables move together, no implication of a causal link.",
+      "valueB": "One variable directly produces a change in the other.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "commonMisconception": "\"Correlation does not imply causation\" is one of the most important \u2014 and most often ignored \u2014 rules in interpreting scientific data."
+  },
+  "lastVerified": "2026-01-01"
+}

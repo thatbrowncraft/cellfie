@@ -1,0 +1,57 @@
+{
+  "id": "comp-positive-sense-vs-negative-sense-rna-viruses",
+  "domain": "virology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "virology",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "Positive-Sense RNA Viruses"
+  },
+  "itemB": {
+    "name": "Negative-Sense RNA Viruses"
+  },
+  "overview": "Two categories of RNA virus genome polarity, which determine whether the viral genome can be translated directly or must first be transcribed.",
+  "genZNote": "Positive-sense RNA: ready to read immediately. Negative-sense RNA: needs a translator (RdRp) before anyone can understand it.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Viruses whose genomic RNA has the same sequence/polarity as mRNA and can be translated directly by host ribosomes.",
+      "valueB": "Viruses whose genomic RNA is complementary to mRNA and must first be transcribed into a positive-sense copy before translation."
+    },
+    {
+      "id": "immediate-infectivity",
+      "label": "Immediate Infectivity of Genome",
+      "valueA": "The genome itself is infectious \u2014 injecting purified genomic RNA into a cell can initiate infection.",
+      "valueB": "The genome alone is not infectious; it requires a virion-packaged RNA-dependent RNA polymerase to make it functional.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "enzyme-requirement",
+      "label": "Enzyme Carried in the Virion",
+      "valueA": "Generally does not need to carry RNA-dependent RNA polymerase in the virion, since host ribosomes can translate it directly.",
+      "valueB": "Must carry its own RNA-dependent RNA polymerase inside the virion, since the host cannot translate negative-sense RNA."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Poliovirus, hepatitis C virus, SARS-CoV-2, dengue virus.",
+      "valueB": "Influenza virus, rabies virus, measles virus, Ebola virus."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Genome directly translatable; equivalent to mRNA.",
+      "valueB": "Genome complementary to mRNA; requires RdRp to be functional.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

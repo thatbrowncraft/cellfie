@@ -1,0 +1,57 @@
+{
+  "id": "comp-quality-control-vs-quality-assurance",
+  "domain": "laboratory-technique",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "laboratory-science",
+    "quality-management"
+  ],
+  "itemA": {
+    "name": "Quality Control (QC)"
+  },
+  "itemB": {
+    "name": "Quality Assurance (QA)"
+  },
+  "overview": "Two complementary components of a laboratory quality management system, one focused on checking test results and the other on the whole process.",
+  "genZNote": "QC checks if today's run is any good. QA makes sure the whole system doesn't let bad runs happen in the first place.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The set of procedures used to monitor and verify the accuracy and reliability of test results, typically by running known control materials alongside patient samples.",
+      "valueB": "The overall, systematic program of policies and procedures designed to ensure quality throughout the entire testing process, from pre-analytic to post-analytic."
+    },
+    {
+      "id": "scope",
+      "label": "Scope",
+      "valueA": "Narrow \u2014 focused on the analytical testing phase itself.",
+      "valueB": "Broad \u2014 encompasses pre-analytic, analytic, and post-analytic phases, plus documentation, training, and equipment maintenance.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "focus",
+      "label": "Focus",
+      "valueA": "Reactive \u2014 detects errors in real time by monitoring control results.",
+      "valueB": "Proactive \u2014 prevents errors by designing robust processes, protocols, and staff competency programs."
+    },
+    {
+      "id": "example-activity",
+      "label": "Example Activity",
+      "valueA": "Running normal and abnormal control samples with each batch of patient tests and tracking them on Levey-Jennings charts.",
+      "valueB": "Establishing standard operating procedures, staff training and competency assessment, and proficiency testing programs."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Day-to-day monitoring of test accuracy via control samples.",
+      "valueB": "System-wide processes ensuring overall quality across the entire testing pathway.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

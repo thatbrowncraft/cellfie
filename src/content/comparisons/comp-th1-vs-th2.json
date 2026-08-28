@@ -1,0 +1,63 @@
+{
+  "id": "comp-th1-vs-th2",
+  "domain": "immunology",
+  "difficulty": "advanced",
+  "frequency": "specialized",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "immunology",
+    "cellular-immunity"
+  ],
+  "itemA": {
+    "name": "Th1 Cells"
+  },
+  "itemB": {
+    "name": "Th2 Cells"
+  },
+  "overview": "Two subsets of CD4+ helper T cells that polarize the immune response toward different threats \u2014 intracellular pathogens versus parasites/allergens.",
+  "genZNote": "Th1 calls in the special forces for intracellular invaders. Th2 calls in backup for parasites and allergy drama.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A CD4+ T-helper subset that drives cell-mediated immunity against intracellular pathogens by activating macrophages and cytotoxic responses.",
+      "valueB": "A CD4+ T-helper subset that drives humoral immunity and responses against parasites, and is central to allergic reactions."
+    },
+    {
+      "id": "signature-cytokines",
+      "label": "Signature Cytokines",
+      "valueA": "Interferon-gamma (IFN-y) and IL-2.",
+      "valueB": "IL-4, IL-5, and IL-13.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "primary-target",
+      "label": "Primary Target",
+      "valueA": "Intracellular pathogens \u2014 viruses, intracellular bacteria (e.g. Mycobacterium tuberculosis).",
+      "valueB": "Extracellular parasites (especially helminths) and allergens."
+    },
+    {
+      "id": "effector-mechanism",
+      "label": "Effector Mechanism",
+      "valueA": "Activates macrophages and promotes cytotoxic T-cell responses.",
+      "valueB": "Promotes B-cell class switching to IgE and recruits eosinophils and mast cells."
+    },
+    {
+      "id": "associated-conditions",
+      "label": "Associated Conditions",
+      "valueA": "Implicated in some autoimmune diseases (e.g. multiple sclerosis) via excessive activation.",
+      "valueB": "Implicated in allergic disease, asthma, and atopic conditions via excessive activation."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "IFN-gamma driven, activates macrophages for intracellular threats.",
+      "valueB": "IL-4/IL-5/IL-13 driven, drives IgE and eosinophil responses.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

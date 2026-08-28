@@ -1,0 +1,64 @@
+{
+  "id": "comp-transduction-vs-conjugation",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "microbiology",
+    "horizontal-gene-transfer",
+    "genetics"
+  ],
+  "itemA": {
+    "name": "Transduction"
+  },
+  "itemB": {
+    "name": "Conjugation"
+  },
+  "overview": "Two mechanisms of horizontal gene transfer in bacteria, distinguished by whether a bacteriophage acts as the vehicle for DNA.",
+  "genZNote": "Transduction: a virus is the delivery truck. Conjugation: bacteria shake hands and pass the package directly.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Transfer of bacterial DNA from one bacterium to another via a bacteriophage (virus) vector.",
+      "valueB": "Direct transfer of DNA between bacteria through a physical mating bridge (pilus)."
+    },
+    {
+      "id": "vehicle",
+      "label": "Transfer Vehicle",
+      "valueA": "A bacteriophage capsid mistakenly packages host DNA instead of (or with) viral DNA.",
+      "valueB": "A conjugative plasmid drives formation of a pilus that directly connects donor and recipient.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "cell-contact",
+      "label": "Cell-to-Cell Contact",
+      "valueA": "Not required \u2014 the phage acts as an intermediary carrier between cells.",
+      "valueB": "Required \u2014 direct physical connection via the sex pilus."
+    },
+    {
+      "id": "subtypes",
+      "label": "Subtypes",
+      "valueA": "Generalized transduction (random DNA packaged during the lytic cycle) and specialized transduction (adjacent DNA excised with a prophage).",
+      "valueB": "F+ x F- (plasmid transfer) or Hfr x F- (chromosomal gene transfer via an integrated F plasmid)."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical/Research Relevance",
+      "valueA": "A route for spreading toxin genes (e.g. diphtheria toxin, some Shiga toxins) via lysogenic phages.",
+      "valueB": "A major route for spreading antibiotic resistance genes among bacterial populations."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "DNA transfer mediated by a bacteriophage vector.",
+      "valueB": "DNA transfer via direct physical cell-to-cell connection.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

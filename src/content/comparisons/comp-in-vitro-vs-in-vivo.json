@@ -1,0 +1,63 @@
+{
+  "id": "comp-in-vitro-vs-in-vivo",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "research-methods",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "In Vitro"
+  },
+  "itemB": {
+    "name": "In Vivo"
+  },
+  "overview": "Two fundamental research settings, distinguished by whether an experiment happens outside or inside a living organism.",
+  "genZNote": "In vitro: science in a dish. In vivo: science inside a living thing.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Experiments conducted outside a living organism, typically in a controlled artificial environment such as a test tube, petri dish, or cell culture.",
+      "valueB": "Experiments conducted within a living organism, capturing the full complexity of an intact biological system."
+    },
+    {
+      "id": "environment",
+      "label": "Environment",
+      "valueA": "Isolated, artificial, and highly controlled (e.g. cell lines, purified proteins, cultured tissue).",
+      "valueB": "The full, complex physiological environment of a living organism (e.g. animal models, clinical trials).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "control-and-simplicity",
+      "label": "Control and Simplicity",
+      "valueA": "Easier to control variables and isolate specific mechanisms, but may not reflect whole-organism behavior.",
+      "valueB": "More biologically realistic, but more variables and complexity make it harder to isolate a single mechanism."
+    },
+    {
+      "id": "ethical-and-cost-considerations",
+      "label": "Ethical and Cost Considerations",
+      "valueA": "Generally lower cost and fewer ethical concerns.",
+      "valueB": "Higher cost, longer timelines, and greater ethical oversight (especially for animal or human studies)."
+    },
+    {
+      "id": "typical-use",
+      "label": "Typical Use in Drug Development",
+      "valueA": "Early-stage screening of drug candidates, mechanism studies.",
+      "valueB": "Later-stage testing of efficacy, safety, and pharmacokinetics in a whole living system before/during clinical use."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Conducted outside a living organism.",
+      "valueB": "Conducted within a living organism.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "comp-virus-vs-viroid",
+  "domain": "virology",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "virology",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Virus"
+  },
+  "itemB": {
+    "name": "Viroid"
+  },
+  "overview": "Two of the smallest infectious agents known, distinguished by whether they have a protein coat and what type of nucleic acid they carry.",
+  "genZNote": "Virus: brings its own hazmat suit (capsid). Viroid: shows up as bare, naked RNA.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A small infectious agent consisting of nucleic acid (DNA or RNA) enclosed in a protein coat (capsid), requiring a host cell to replicate.",
+      "valueB": "A small infectious agent consisting solely of a short, circular, single-stranded RNA molecule with no protein coat, infecting only plants."
+    },
+    {
+      "id": "protein-coat",
+      "label": "Protein Coat",
+      "valueA": "Present \u2014 a capsid (and sometimes an envelope) surrounds the genome.",
+      "valueB": "Absent \u2014 viroids are \"naked\" RNA with no protein coat at all.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "genome-type",
+      "label": "Genome Type",
+      "valueA": "DNA or RNA, single- or double-stranded, depending on the virus family.",
+      "valueB": "Always a small, circular, single-stranded RNA."
+    },
+    {
+      "id": "host-range",
+      "label": "Host Range",
+      "valueA": "Infects animals, plants, fungi, bacteria, and archaea depending on the virus.",
+      "valueB": "Infects only plants, causing diseases of agricultural crops."
+    },
+    {
+      "id": "replication-strategy",
+      "label": "Replication Strategy",
+      "valueA": "Encodes at least some proteins to hijack host machinery for replication and assembly.",
+      "valueB": "Encodes no proteins at all; relies entirely on host plant RNA polymerase for replication."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Has a protein capsid; infects a broad range of hosts.",
+      "valueB": "No protein coat; infects only plants.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

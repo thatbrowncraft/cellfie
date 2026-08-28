@@ -1,0 +1,63 @@
+{
+  "id": "comp-cart-vs-tcrt",
+  "domain": "immunology",
+  "difficulty": "expert",
+  "frequency": "specialized",
+  "audience": [
+    "researcher"
+  ],
+  "tags": [
+    "immunology",
+    "biotechnology",
+    "cell-therapy"
+  ],
+  "itemA": {
+    "name": "CAR-T Cell Therapy"
+  },
+  "itemB": {
+    "name": "TCR-T Cell Therapy"
+  },
+  "overview": "Two engineered T-cell therapy platforms that redirect a patient's own T cells against cancer, differing in how they recognize their target.",
+  "genZNote": "CAR-T grabs the surface handle directly. TCR-T needs the cell to show its ID badge (MHC) first.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "T cells engineered to express a chimeric antigen receptor (CAR) that directly recognizes a surface antigen on tumor cells, independent of MHC.",
+      "valueB": "T cells engineered to express an affinity-enhanced T-cell receptor (TCR) that recognizes peptide antigens presented on MHC molecules."
+    },
+    {
+      "id": "antigen-recognition",
+      "label": "Antigen Recognition",
+      "valueA": "Recognizes intact surface proteins directly, MHC-independent.",
+      "valueB": "Recognizes intracellular-derived peptide fragments presented on MHC, similar to natural T-cell recognition.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "target-antigen-scope",
+      "label": "Target Antigen Scope",
+      "valueA": "Limited to antigens expressed on the cell surface.",
+      "valueB": "Can target both surface and intracellular proteins, since peptides from any protein can be presented on MHC."
+    },
+    {
+      "id": "mhc-restriction",
+      "label": "MHC Restriction",
+      "valueA": "Not MHC-restricted, so it works across patients with different HLA types.",
+      "valueB": "MHC-restricted, meaning a given TCR-T therapy generally only works in patients with a matching HLA type."
+    },
+    {
+      "id": "clinical-success",
+      "label": "Clinical Success So Far",
+      "valueA": "FDA-approved for several B-cell malignancies (e.g. targeting CD19 or BCMA).",
+      "valueB": "Approved and in trials mainly for solid tumors expressing specific HLA-restricted antigens (e.g. certain sarcomas, melanoma)."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "MHC-independent recognition of surface antigens.",
+      "valueB": "MHC-dependent recognition, can target intracellular-derived antigens.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

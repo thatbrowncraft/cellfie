@@ -1,0 +1,63 @@
+{
+  "id": "comp-crispri-vs-crispra",
+  "domain": "molecular-biology",
+  "difficulty": "expert",
+  "frequency": "specialized",
+  "audience": [
+    "researcher"
+  ],
+  "tags": [
+    "biotechnology",
+    "gene-editing",
+    "gene-regulation"
+  ],
+  "itemA": {
+    "name": "CRISPRi (CRISPR Interference)"
+  },
+  "itemB": {
+    "name": "CRISPRa (CRISPR Activation)"
+  },
+  "overview": "Two CRISPR-based tools that repurpose a catalytically dead Cas9 to control gene expression without cutting DNA, in opposite directions.",
+  "genZNote": "CRISPRi hits mute. CRISPRa hits the megaphone.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Uses catalytically dead Cas9 (dCas9) fused to repressor domains, guided to a gene's promoter to block transcription and silence expression.",
+      "valueB": "Uses dCas9 fused to transcriptional activator domains, guided to a gene's promoter to recruit transcription machinery and boost expression."
+    },
+    {
+      "id": "effect-on-transcription",
+      "label": "Effect on Transcription",
+      "valueA": "Represses/decreases transcription of the target gene.",
+      "valueB": "Activates/increases transcription of the target gene.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "dna-cutting",
+      "label": "DNA Cutting",
+      "valueA": "No DNA cutting \u2014 dCas9 lacks nuclease activity; effect is purely regulatory and reversible.",
+      "valueB": "No DNA cutting \u2014 also uses dCas9, reversible and non-mutagenic."
+    },
+    {
+      "id": "fused-domains",
+      "label": "Commonly Fused Effector Domains",
+      "valueA": "KRAB repressor domain is the most common fusion partner.",
+      "valueB": "VP64, p65, or synergistic activation mediator (SAM) complexes are common fusion partners."
+    },
+    {
+      "id": "applications",
+      "label": "Applications",
+      "valueA": "Systematic gene knockdown screens, studying essential genes without permanently altering the genome.",
+      "valueB": "Upregulating endogenous genes for functional studies or potential therapeutic gene activation."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "dCas9 + repressor domain silences a target gene.",
+      "valueB": "dCas9 + activator domain boosts expression of a target gene.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

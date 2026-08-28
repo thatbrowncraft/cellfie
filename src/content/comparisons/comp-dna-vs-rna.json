@@ -1,0 +1,81 @@
+{
+  "id": "comp-dna-vs-rna",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "dna",
+    "rna",
+    "nucleic-acids",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "DNA"
+  },
+  "itemB": {
+    "name": "RNA"
+  },
+  "overview": "The two nucleic acids that store and express genetic information, distinguished by sugar, bases, strandedness, and stability.",
+  "genZNote": "DNA keeps the receipts. RNA gets things moving.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Deoxyribonucleic acid \u2014 the long-term, double-stranded molecule that stores genetic information.",
+      "valueB": "Ribonucleic acid \u2014 a typically single-stranded molecule that carries out and regulates gene expression."
+    },
+    {
+      "id": "sugar",
+      "label": "Sugar Backbone",
+      "valueA": "Deoxyribose (lacks a 2'-OH group), which makes the backbone more chemically stable.",
+      "valueB": "Ribose (has a 2'-OH group), which makes RNA more reactive and prone to hydrolysis.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "bases",
+      "label": "Nitrogenous Bases",
+      "valueA": "Adenine, thymine, guanine, cytosine (A-T pairing).",
+      "valueB": "Adenine, uracil, guanine, cytosine (A-U pairing)."
+    },
+    {
+      "id": "strandedness",
+      "label": "Strandedness / Structure",
+      "valueA": "Almost always double-stranded, forming the classic antiparallel double helix.",
+      "valueB": "Usually single-stranded, but folds back on itself into complex secondary structures (e.g. tRNA cloverleaf, ribozymes)."
+    },
+    {
+      "id": "function",
+      "label": "Primary Function",
+      "valueA": "Long-term storage of genetic information across generations of cells.",
+      "valueB": "Executes that information \u2014 mRNA carries the message, tRNA delivers amino acids, rRNA builds proteins, and various small RNAs regulate expression."
+    },
+    {
+      "id": "location",
+      "label": "Cellular Location",
+      "valueA": "Predominantly nuclear (plus small amounts in mitochondria/chloroplasts).",
+      "valueB": "Made in the nucleus but functions throughout the cell, especially the cytoplasm and ribosomes."
+    },
+    {
+      "id": "stability",
+      "label": "Stability",
+      "valueA": "Chemically stable; built for accurate long-term storage and repair.",
+      "valueB": "Less stable, often turned over rapidly, which allows gene expression to be dynamically regulated."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Deoxyribose sugar, thymine, double-stranded, information archive.",
+      "valueB": "Ribose sugar, uracil, usually single-stranded, functional/working molecule.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Sugar (deoxyribose vs ribose) and base (thymine vs uracil) are the two fastest ways to tell them apart on an exam.",
+    "memoryTrick": "\"RNA runs errands, DNA stays home.\"",
+    "commonMisconception": "RNA is not just a 'temporary DNA' \u2014 it has catalytic and regulatory roles DNA cannot perform (e.g. ribozymes, miRNA)."
+  },
+  "lastVerified": "2026-01-01"
+}

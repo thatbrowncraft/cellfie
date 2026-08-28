@@ -1,0 +1,67 @@
+{
+  "id": "comp-bactericidal-vs-bacteriostatic",
+  "domain": "microbiology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "microbiology",
+    "antimicrobials",
+    "pharmacology"
+  ],
+  "itemA": {
+    "name": "Bactericidal Agents"
+  },
+  "itemB": {
+    "name": "Bacteriostatic Agents"
+  },
+  "overview": "Two categories of antimicrobial action, distinguished by whether bacteria are killed outright or simply prevented from multiplying.",
+  "genZNote": "Bactericidal: game over. Bacteriostatic: pause button, immune system finishes the job.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Agents that actively kill bacteria.",
+      "valueB": "Agents that inhibit bacterial growth and reproduction without necessarily killing the organism."
+    },
+    {
+      "id": "mechanism-of-action",
+      "label": "Mechanism of Action",
+      "valueA": "Often disrupt cell wall synthesis (beta-lactams) or cause irreversible damage (e.g. DNA damage by fluoroquinolones).",
+      "valueB": "Often inhibit protein or nucleic acid synthesis reversibly (e.g. tetracyclines, macrolides at standard doses)."
+    },
+    {
+      "id": "dependence-on-host-immunity",
+      "label": "Dependence on Host Immune System",
+      "valueA": "Effective even in immunocompromised patients since the drug itself eliminates the organism.",
+      "valueB": "Relies more on a functioning host immune system to finally clear the growth-arrested bacteria.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Penicillins, cephalosporins, aminoglycosides, fluoroquinolones.",
+      "valueB": "Tetracyclines, macrolides, sulfonamides, chloramphenicol."
+    },
+    {
+      "id": "laboratory-distinction",
+      "label": "Laboratory Distinction",
+      "valueA": "Subculturing onto antibiotic-free media shows no regrowth (measured via MBC).",
+      "valueB": "Subculturing onto antibiotic-free media shows regrowth once the agent is removed (measured via MIC without further kill)."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Kills bacteria outright.",
+      "valueB": "Inhibits growth; bacteria may resume growing once the drug is removed.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "commonMisconception": "The bactericidal/bacteriostatic distinction is somewhat concentration- and organism-dependent \u2014 some agents are bacteriostatic at low doses and bactericidal at higher ones."
+  },
+  "lastVerified": "2026-01-01"
+}

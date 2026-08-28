@@ -1,0 +1,69 @@
+{
+  "id": "comp-active-vs-passive-transport",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "transport",
+    "membrane",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Active Transport"
+  },
+  "itemB": {
+    "name": "Passive Transport"
+  },
+  "overview": "The two broad categories of movement across a cell membrane, distinguished by whether cellular energy is spent.",
+  "genZNote": "Passive transport coasts downhill. Active transport pays the toll to go uphill.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Movement of substances across a membrane against their concentration gradient, requiring energy input (usually ATP).",
+      "valueB": "Movement of substances across a membrane down their concentration gradient, requiring no cellular energy."
+    },
+    {
+      "id": "energy-requirement",
+      "label": "Energy Requirement",
+      "valueA": "Requires ATP (primary active transport) or an existing ion gradient (secondary active transport).",
+      "valueB": "No energy input required \u2014 driven entirely by the concentration gradient.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "direction",
+      "label": "Direction of Movement",
+      "valueA": "Against the concentration gradient (low to high).",
+      "valueB": "Down the concentration gradient (high to low)."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Na+/K+ ATPase pump, proton pumps, secondary transporters (symporters/antiporters).",
+      "valueB": "Simple diffusion, facilitated diffusion, osmosis."
+    },
+    {
+      "id": "carrier-involvement",
+      "label": "Carrier Involvement",
+      "valueA": "Always involves a membrane transport protein (pump).",
+      "valueB": "May or may not involve a protein \u2014 simple diffusion needs none, facilitated diffusion uses channels/carriers."
+    },
+    {
+      "id": "biological-context",
+      "label": "Biological Context",
+      "valueA": "Maintains ion gradients essential for nerve impulses, nutrient uptake against a gradient, and cell volume regulation.",
+      "valueB": "Allows rapid equilibration of gases, small nonpolar molecules, and water across membranes."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Energy-dependent movement against the gradient.",
+      "valueB": "Energy-independent movement with the gradient.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

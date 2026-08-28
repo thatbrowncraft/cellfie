@@ -1,0 +1,63 @@
+{
+  "id": "comp-complement-classical-vs-alternative-pathway",
+  "domain": "immunology",
+  "difficulty": "advanced",
+  "frequency": "specialized",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "immunology",
+    "innate-immunity"
+  ],
+  "itemA": {
+    "name": "Classical Complement Pathway"
+  },
+  "itemB": {
+    "name": "Alternative Complement Pathway"
+  },
+  "overview": "Two of the three routes that converge on C3 activation in the complement system, differing mainly in what triggers them.",
+  "genZNote": "Classical waits for an antibody invite. Alternative just crashes the party on any microbial surface.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A complement activation pathway triggered by antigen-antibody complexes binding C1q.",
+      "valueB": "A complement activation pathway triggered spontaneously by low-level C3 hydrolysis on microbial (or other unprotected) surfaces, without antibody."
+    },
+    {
+      "id": "trigger",
+      "label": "Trigger",
+      "valueA": "Requires antibody (IgM or IgG) bound to antigen.",
+      "valueB": "Antibody-independent \u2014 activated directly by pathogen surfaces lacking complement regulatory proteins.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "initiating-components",
+      "label": "Initiating Components",
+      "valueA": "C1q, C1r, C1s complex binding to the Fc region of bound antibody.",
+      "valueB": "Spontaneous C3 hydrolysis (\"tickover\"), factor B, and factor D."
+    },
+    {
+      "id": "part-of-immunity",
+      "label": "Part of Immunity",
+      "valueA": "Bridges adaptive immunity (antibody-dependent) to the complement system.",
+      "valueB": "Purely innate \u2014 does not require prior antibody formation."
+    },
+    {
+      "id": "convergence-point",
+      "label": "Convergence Point",
+      "valueA": "Converges on C3 convertase formation (C4b2a), leading to the shared terminal pathway.",
+      "valueB": "Converges on a distinct C3 convertase (C3bBb), leading to the same shared terminal pathway (membrane attack complex)."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Antibody-dependent activation via C1q.",
+      "valueB": "Antibody-independent, spontaneous activation on pathogen surfaces.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "comp-cperfringens-vs-cdifficile",
+  "domain": "bacteriology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "bacteriology",
+    "clinical-microbiology"
+  ],
+  "itemA": {
+    "name": "Clostridium perfringens",
+    "refKind": "organism",
+    "refId": "clostridium-perfringens"
+  },
+  "itemB": {
+    "name": "Clostridioides difficile",
+    "refKind": "organism",
+    "refId": "clostridioides-difficile"
+  },
+  "overview": "Two anaerobic, spore-forming Gram-positive rods with very different clinical niches \u2014 soft tissue/foodborne disease versus antibiotic-associated colitis.",
+  "genZNote": "C. perfringens crashes the wound party. C. diff crashes the gut after antibiotics clear the room.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "An anaerobic, spore-forming Gram-positive rod causing gas gangrene (myonecrosis) and food poisoning.",
+      "valueB": "An anaerobic, spore-forming Gram-positive rod that overgrows after normal gut flora is disrupted, causing antibiotic-associated colitis."
+    },
+    {
+      "id": "major-disease",
+      "label": "Major Disease",
+      "valueA": "Clostridial myonecrosis (gas gangrene), food poisoning, and soft tissue infections.",
+      "valueB": "Pseudomembranous colitis, ranging from mild diarrhea to fulminant colitis.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "key-toxins",
+      "label": "Key Toxins",
+      "valueA": "Alpha toxin (a lecithinase/phospholipase C) causing tissue necrosis and hemolysis; also produces an enterotoxin.",
+      "valueB": "Toxin A (enterotoxin) and toxin B (cytotoxin), which damage colonic epithelium."
+    },
+    {
+      "id": "predisposing-factor",
+      "label": "Predisposing Factor",
+      "valueA": "Traumatic wounds with devitalized tissue and anaerobic conditions, or ingestion of contaminated meat.",
+      "valueB": "Recent broad-spectrum antibiotic use disrupting normal colonic flora."
+    },
+    {
+      "id": "hemolysis",
+      "label": "Hemolysis on Blood Agar",
+      "valueA": "Double zone of hemolysis (a hallmark finding).",
+      "valueB": "Not typically assessed by hemolysis \u2014 diagnosis relies on toxin detection (EIA or PCR) rather than routine culture."
+    },
+    {
+      "id": "diagnosis",
+      "label": "Diagnosis",
+      "valueA": "Clinical presentation plus wound Gram stain/culture; food poisoning diagnosed via enterotoxin detection in stool.",
+      "valueB": "Stool toxin EIA, PCR for toxin genes, or glutamate dehydrogenase (GDH) antigen screening."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Causes gas gangrene via alpha toxin; double-zone hemolysis.",
+      "valueB": "Causes antibiotic-associated colitis via toxins A/B, following disruption of normal flora.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

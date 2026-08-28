@@ -1,0 +1,73 @@
+{
+  "id": "comp-mitochondria-vs-chloroplast",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "organelles",
+    "energy",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Mitochondria"
+  },
+  "itemB": {
+    "name": "Chloroplast"
+  },
+  "overview": "Two double-membraned, semi-autonomous organelles with their own DNA, each central to one half of the energy cycle of life.",
+  "genZNote": "Mitochondria burn the fuel. Chloroplasts make it.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The \"powerhouse of the cell\" \u2014 converts chemical energy in food into ATP via aerobic respiration.",
+      "valueB": "The site of photosynthesis in plant/algal cells \u2014 converts light energy into chemical energy stored as glucose."
+    },
+    {
+      "id": "primary-process",
+      "label": "Primary Process",
+      "valueA": "Cellular respiration: oxidative phosphorylation and the citric acid (Krebs) cycle.",
+      "valueB": "Photosynthesis: light-dependent reactions and the Calvin cycle.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "pigment",
+      "label": "Pigment",
+      "valueA": "None \u2014 mitochondria are not pigmented.",
+      "valueB": "Contains chlorophyll, giving chloroplasts (and plants) their green color."
+    },
+    {
+      "id": "energy-conversion",
+      "label": "Energy Conversion",
+      "valueA": "Converts chemical energy (glucose/fatty acids + O2) into ATP, releasing CO2 and water.",
+      "valueB": "Converts light energy into chemical energy (glucose), releasing O2 as a byproduct."
+    },
+    {
+      "id": "occurrence",
+      "label": "Occurrence",
+      "valueA": "Present in nearly all eukaryotic cells (plant and animal).",
+      "valueB": "Present only in plant cells and algae, absent in animal cells and fungi."
+    },
+    {
+      "id": "own-dna",
+      "label": "Own DNA / Endosymbiotic Origin",
+      "valueA": "Contains its own circular DNA and ribosomes; believed to have originated from an engulfed aerobic bacterium.",
+      "valueB": "Contains its own circular DNA and ribosomes; believed to have originated from an engulfed photosynthetic cyanobacterium."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Produces ATP via respiration; found in animal and plant cells.",
+      "valueB": "Produces glucose via photosynthesis; found only in plant/algal cells.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "memoryTrick": "\"Mitochondria: respiration, releases CO2. Chloroplast: photosynthesis, releases O2.\""
+  },
+  "lastVerified": "2026-01-01"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "comp-scrna-seq-vs-bulk-rna-seq",
+  "domain": "molecular-biology",
+  "difficulty": "expert",
+  "frequency": "specialized",
+  "audience": [
+    "researcher"
+  ],
+  "tags": [
+    "genomics",
+    "transcriptomics",
+    "sequencing"
+  ],
+  "itemA": {
+    "name": "Single-Cell RNA-seq"
+  },
+  "itemB": {
+    "name": "Bulk RNA-seq"
+  },
+  "overview": "Two RNA sequencing strategies distinguished by resolution \u2014 one profiles gene expression cell-by-cell, the other averages across an entire sample.",
+  "genZNote": "Bulk RNA-seq gives you the class average. Single-cell RNA-seq gives you every student's individual grade.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Sequences RNA from individual cells separately, revealing cell-to-cell heterogeneity within a sample.",
+      "valueB": "Sequences RNA extracted from a pooled population of cells, producing an averaged expression profile."
+    },
+    {
+      "id": "resolution",
+      "label": "Resolution",
+      "valueA": "Single-cell resolution \u2014 can identify distinct cell types and rare subpopulations.",
+      "valueB": "Population-averaged \u2014 masks heterogeneity between individual cells.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "cost-and-complexity",
+      "label": "Cost and Technical Complexity",
+      "valueA": "More expensive, technically demanding, and generates larger, sparser datasets requiring specialized analysis.",
+      "valueB": "Cheaper, simpler workflow, and well-established analysis pipelines."
+    },
+    {
+      "id": "sensitivity-per-cell",
+      "label": "Sensitivity per Cell",
+      "valueA": "Lower sequencing depth per cell, so lowly expressed genes can be harder to detect.",
+      "valueB": "Higher sequencing depth overall, giving more robust detection of even lowly expressed transcripts (at the population level)."
+    },
+    {
+      "id": "typical-use-case",
+      "label": "Typical Use Case",
+      "valueA": "Characterizing cellular heterogeneity in tumors, immune profiling, developmental biology.",
+      "valueB": "Comparing overall expression differences between conditions/treatments in a tissue or sample."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Resolves gene expression at the individual-cell level.",
+      "valueB": "Averages gene expression across an entire cell population.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

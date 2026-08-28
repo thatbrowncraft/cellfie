@@ -1,0 +1,62 @@
+{
+  "id": "comp-saturated-vs-unsaturated-fatty-acids",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "lipids"
+  ],
+  "itemA": {
+    "name": "Saturated Fatty Acids"
+  },
+  "itemB": {
+    "name": "Unsaturated Fatty Acids"
+  },
+  "overview": "The two structural categories of fatty acid, distinguished by carbon-carbon bonding and with real consequences for physical properties and health.",
+  "genZNote": "Saturated: straight and stackable. Unsaturated: kinked and can't sit still.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Fatty acids with no carbon-carbon double bonds \u2014 every carbon is \"saturated\" with hydrogen.",
+      "valueB": "Fatty acids containing one (monounsaturated) or more (polyunsaturated) carbon-carbon double bonds."
+    },
+    {
+      "id": "structure",
+      "label": "Structure",
+      "valueA": "Straight hydrocarbon chain, allowing tight packing.",
+      "valueB": "Kinked chain at each double bond (typically cis configuration), preventing tight packing.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "physical-state",
+      "label": "Physical State at Room Temperature",
+      "valueA": "Typically solid (e.g. butter, animal fats).",
+      "valueB": "Typically liquid (e.g. olive oil, fish oil)."
+    },
+    {
+      "id": "dietary-sources",
+      "label": "Common Dietary Sources",
+      "valueA": "Animal fats, butter, coconut oil, palm oil.",
+      "valueB": "Plant oils (olive, canola), nuts, seeds, fatty fish (omega-3s)."
+    },
+    {
+      "id": "health-association",
+      "label": "Health Association",
+      "valueA": "Higher intake is generally associated with raised LDL cholesterol when consumed in excess.",
+      "valueB": "Generally associated with favorable lipid profiles, especially polyunsaturated omega-3 and omega-6 fats."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "No double bonds, straight chain, solid at room temperature.",
+      "valueB": "One or more double bonds, kinked chain, liquid at room temperature.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

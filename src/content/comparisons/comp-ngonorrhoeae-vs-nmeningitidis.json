@@ -1,0 +1,73 @@
+{
+  "id": "comp-ngonorrhoeae-vs-nmeningitidis",
+  "domain": "bacteriology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "bacteriology",
+    "clinical-microbiology"
+  ],
+  "itemA": {
+    "name": "Neisseria gonorrhoeae",
+    "refKind": "organism",
+    "refId": "neisseria-gonorrhoeae"
+  },
+  "itemB": {
+    "name": "Neisseria meningitidis",
+    "refKind": "organism",
+    "refId": "neisseria-meningitidis"
+  },
+  "overview": "Two Gram-negative diplococci in the same genus that share morphology and growth requirements but cause very different diseases.",
+  "genZNote": "Same genus, very different Tinder profile \u2014 one's an STI, the other crashes your meninges.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A Gram-negative diplococcus causing the sexually transmitted infection gonorrhea.",
+      "valueB": "A Gram-negative diplococcus that colonizes the nasopharynx and can cause invasive meningococcal disease."
+    },
+    {
+      "id": "primary-disease",
+      "label": "Primary Disease",
+      "valueA": "Gonorrhea \u2014 urethritis, cervicitis, pelvic inflammatory disease, and disseminated gonococcal infection.",
+      "valueB": "Meningococcemia and meningitis, especially in adolescents and young adults, often with a petechial/purpuric rash.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "transmission",
+      "label": "Transmission",
+      "valueA": "Sexual contact or perinatal transmission (ophthalmia neonatorum).",
+      "valueB": "Respiratory droplets; carried asymptomatically in the nasopharynx of many healthy people."
+    },
+    {
+      "id": "capsule",
+      "label": "Capsule",
+      "valueA": "Typically non-encapsulated.",
+      "valueB": "Polysaccharide capsule is a major virulence factor and the basis for serogroup vaccines (A, B, C, W, Y)."
+    },
+    {
+      "id": "culture-media",
+      "label": "Culture Media",
+      "valueA": "Grown on selective Thayer-Martin (chocolate agar with antibiotics) in a CO2-enriched atmosphere.",
+      "valueB": "Also grows on chocolate agar/Thayer-Martin with CO2, but is not typically isolated from genital specimens."
+    },
+    {
+      "id": "biochemical-characteristics",
+      "label": "Biochemical Characteristics",
+      "valueA": "Oxidase-positive; ferments glucose only.",
+      "valueB": "Oxidase-positive; ferments both glucose and maltose (a key differentiating test)."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Sexually transmitted; ferments glucose only.",
+      "valueB": "Respiratory transmission, encapsulated, ferments glucose and maltose.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

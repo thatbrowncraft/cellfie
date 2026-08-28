@@ -1,0 +1,63 @@
+{
+  "id": "comp-frameshift-vs-point-mutation",
+  "domain": "molecular-biology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "mutation",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "Frameshift Mutation"
+  },
+  "itemB": {
+    "name": "Point Mutation"
+  },
+  "overview": "Two broad categories of mutation distinguished by scale \u2014 one shifts the entire downstream reading frame, the other alters a single base.",
+  "genZNote": "Point mutation: one typo. Frameshift: the whole sentence gets scrambled from that point on.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "An insertion or deletion of a number of nucleotides not divisible by three, shifting the reading frame downstream of the mutation.",
+      "valueB": "A change to a single nucleotide base pair in the DNA sequence (substitution, or in a broader sense, a single-base insertion/deletion)."
+    },
+    {
+      "id": "effect-on-reading-frame",
+      "label": "Effect on Reading Frame",
+      "valueA": "Shifts the entire downstream codon reading frame, typically scrambling all subsequent amino acids and often creating a premature stop.",
+      "valueB": "Does not shift the reading frame if it is a substitution \u2014 only the single affected codon may change.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "typical-cause",
+      "label": "Typical Cause",
+      "valueA": "Insertion or deletion (indel) of 1, 2, 4, or 5 (non-multiple-of-3) nucleotides.",
+      "valueB": "Base substitution (transition or transversion) at a single position."
+    },
+    {
+      "id": "severity",
+      "label": "Typical Severity",
+      "valueA": "Usually severe \u2014 nearly always disrupts protein function due to a completely altered downstream sequence.",
+      "valueB": "Severity varies widely \u2014 can be silent, missense, or nonsense depending on which base and codon are affected."
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "A single nucleotide deletion in the CFTR gene shifting the frame and truncating the protein.",
+      "valueB": "A single A-to-T substitution changing one codon, as in the sickle cell mutation."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Shifts the entire downstream reading frame; usually caused by non-multiple-of-3 indels.",
+      "valueB": "Affects a single base pair; reading frame preserved if it's a substitution.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

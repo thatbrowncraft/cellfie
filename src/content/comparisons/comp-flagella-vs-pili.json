@@ -1,0 +1,63 @@
+{
+  "id": "comp-flagella-vs-pili",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "microbiology",
+    "bacterial-structure"
+  ],
+  "itemA": {
+    "name": "Flagella"
+  },
+  "itemB": {
+    "name": "Pili (Fimbriae)"
+  },
+  "overview": "Two surface appendages on bacterial cells, easily confused, but serving very different purposes: movement versus attachment/exchange.",
+  "genZNote": "Flagella = the motor. Pili = the grappling hooks.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Long, whip-like appendages made of flagellin that rotate to propel the bacterial cell.",
+      "valueB": "Short, hair-like protein appendages made of pilin, used for adhesion to surfaces or DNA transfer."
+    },
+    {
+      "id": "primary-function",
+      "label": "Primary Function",
+      "valueA": "Motility \u2014 rotates like a propeller to move the cell toward or away from stimuli (chemotaxis).",
+      "valueB": "Attachment to host cells/surfaces (fimbriae) or DNA transfer during conjugation (sex pilus).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "structure",
+      "label": "Structure",
+      "valueA": "Long helical filament connected to a basal body and hook that rotates via a proton motive force motor.",
+      "valueB": "Shorter, straight, non-rotating rigid or semi-rigid rod-like structure."
+    },
+    {
+      "id": "number-per-cell",
+      "label": "Number per Cell and Arrangement",
+      "valueA": "Variable arrangement: single (monotrichous), tufted (lophotrichous), one at each end (amphitrichous), or all over (peritrichous).",
+      "valueB": "Often numerous fimbriae covering the surface, or a single specialized sex pilus for conjugation."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Motility contributes to spread and colonization (e.g. Helicobacter pylori navigating stomach mucus).",
+      "valueB": "Adhesive pili are key virulence factors for colonization (e.g. uropathogenic E. coli); sex pili enable spread of antibiotic resistance genes."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Long, rotating, used for motility.",
+      "valueB": "Short, non-rotating, used for adhesion or gene transfer.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

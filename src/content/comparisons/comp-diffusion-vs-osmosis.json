@@ -1,0 +1,73 @@
+{
+  "id": "comp-diffusion-vs-osmosis",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "transport",
+    "membrane",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Diffusion"
+  },
+  "itemB": {
+    "name": "Osmosis"
+  },
+  "overview": "Two passive transport processes driven by concentration gradients \u2014 one general, one specific to water across a semipermeable membrane.",
+  "genZNote": "Osmosis is just diffusion that only wants water.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The net movement of any particle (solute or gas) from high to low concentration.",
+      "valueB": "The net movement of water specifically, across a semipermeable membrane, from low to high solute concentration."
+    },
+    {
+      "id": "substance-moved",
+      "label": "Substance Moved",
+      "valueA": "Any molecule \u2014 ions, gases, small solutes.",
+      "valueB": "Water molecules only.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "membrane-requirement",
+      "label": "Membrane Requirement",
+      "valueA": "Can occur with or without a membrane (e.g. perfume diffusing through air).",
+      "valueB": "Requires a selectively/semipermeable membrane that solutes cannot easily cross."
+    },
+    {
+      "id": "driving-force",
+      "label": "Driving Force",
+      "valueA": "Concentration gradient of the diffusing substance itself.",
+      "valueB": "Solute concentration gradient, which indirectly drives water movement toward the more concentrated side."
+    },
+    {
+      "id": "biological-example",
+      "label": "Biological Example",
+      "valueA": "Oxygen diffusing from alveoli into blood.",
+      "valueB": "Red blood cells shrinking in a hypertonic solution or swelling/lysing in a hypotonic one."
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations / Pitfalls",
+      "valueA": "Rate slows as the gradient equalizes; large or charged molecules diffuse very slowly without a channel.",
+      "valueB": "Only meaningful when a membrane is at least partly impermeable to the solute; osmotic pressure can be substantial."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "General movement of any substance down its own gradient.",
+      "valueB": "Water movement across a membrane driven by a solute gradient.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "memoryTrick": "\"Osmosis is diffusion's picky cousin \u2014 water only, membrane required.\"",
+    "commonMisconception": "Osmosis is not 'water diffusing' in the loose sense \u2014 it specifically requires a semipermeable membrane and a solute gradient."
+  },
+  "lastVerified": "2026-01-01"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "comp-glycolysis-vs-gluconeogenesis",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "metabolism"
+  ],
+  "itemA": {
+    "name": "Glycolysis"
+  },
+  "itemB": {
+    "name": "Gluconeogenesis"
+  },
+  "overview": "Two opposing metabolic pathways that break down or build up glucose, tightly regulated so they don't run simultaneously in the same cell.",
+  "genZNote": "Glycolysis tears glucose apart. Gluconeogenesis builds it back from scraps.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The breakdown of one glucose molecule into two pyruvate molecules, generating ATP and NADH.",
+      "valueB": "The synthesis of new glucose from non-carbohydrate precursors such as lactate, glycerol, or amino acids."
+    },
+    {
+      "id": "direction",
+      "label": "Direction",
+      "valueA": "Catabolic \u2014 glucose to pyruvate.",
+      "valueB": "Anabolic \u2014 precursors to glucose.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "net-energy",
+      "label": "Net Energy Change",
+      "valueA": "Net gain of 2 ATP and 2 NADH per glucose.",
+      "valueB": "Net cost of 6 ATP equivalents per glucose synthesized."
+    },
+    {
+      "id": "location",
+      "label": "Primary Location",
+      "valueA": "Cytoplasm of nearly all cells.",
+      "valueB": "Mainly liver (and kidney cortex during prolonged fasting)."
+    },
+    {
+      "id": "key-regulatory-enzymes",
+      "label": "Key Regulatory Enzymes",
+      "valueA": "Hexokinase, phosphofructokinase-1 (PFK-1), pyruvate kinase.",
+      "valueB": "Pyruvate carboxylase, PEP carboxykinase, fructose-1,6-bisphosphatase, glucose-6-phosphatase."
+    },
+    {
+      "id": "regulation",
+      "label": "Reciprocal Regulation",
+      "valueA": "Activated by insulin/fed state; inhibited by high ATP/citrate.",
+      "valueB": "Activated by glucagon/cortisol/fasting state; inhibited by insulin, ensuring the two pathways are not both fully active at once."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Breaks glucose down for energy.",
+      "valueB": "Builds glucose up from non-carbohydrate sources.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

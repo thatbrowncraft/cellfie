@@ -1,0 +1,63 @@
+{
+  "id": "comp-bsl2-vs-bsl3",
+  "domain": "biosafety",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "biosafety",
+    "laboratory-science"
+  ],
+  "itemA": {
+    "name": "Biosafety Level 2 (BSL-2)"
+  },
+  "itemB": {
+    "name": "Biosafety Level 3 (BSL-3)"
+  },
+  "overview": "Two tiers of the four-level biosafety containment system, reflecting escalating risk of the agents handled and the precautions required.",
+  "genZNote": "BSL-2: gloves and a closed door. BSL-3: gloves, a closed door, negative pressure, and a respirator.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The containment level for agents that pose moderate hazards to personnel and the environment via percutaneous injury, ingestion, or mucous membrane exposure.",
+      "valueB": "The containment level for agents that can cause serious or lethal disease via inhalation, requiring more rigorous engineering controls."
+    },
+    {
+      "id": "agent-examples",
+      "label": "Agent Examples",
+      "valueA": "Staphylococcus aureus, Salmonella species, hepatitis B virus.",
+      "valueB": "Mycobacterium tuberculosis, SARS-CoV-2 (culture work), Coxiella burnetii."
+    },
+    {
+      "id": "primary-transmission-risk",
+      "label": "Primary Transmission Risk Addressed",
+      "valueA": "Percutaneous exposure, ingestion, mucous membrane contact.",
+      "valueB": "Airborne/aerosol transmission, in addition to the risks covered at BSL-2.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "facility-requirements",
+      "label": "Facility Requirements",
+      "valueA": "Standard lab with self-closing doors and access to a biosafety cabinet for aerosol-generating procedures.",
+      "valueB": "Controlled access, negative air pressure relative to the corridor, sealed windows, and dedicated ventilation exhausted outside the building."
+    },
+    {
+      "id": "ppe-requirements",
+      "label": "PPE Requirements",
+      "valueA": "Lab coat, gloves, and eye protection as needed.",
+      "valueB": "Respiratory protection (e.g. N95 or higher) in addition to standard PPE, plus more stringent decontamination practices."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Moderate-risk agents, standard precautions, biosafety cabinet as needed.",
+      "valueB": "Higher-risk airborne agents, negative pressure rooms, and respiratory protection required.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

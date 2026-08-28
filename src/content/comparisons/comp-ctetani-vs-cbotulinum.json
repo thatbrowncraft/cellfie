@@ -1,0 +1,74 @@
+{
+  "id": "comp-ctetani-vs-cbotulinum",
+  "domain": "bacteriology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "bacteriology",
+    "clinical-microbiology",
+    "toxins"
+  ],
+  "itemA": {
+    "name": "Clostridium tetani",
+    "refKind": "organism",
+    "refId": "clostridium-tetani"
+  },
+  "itemB": {
+    "name": "Clostridium botulinum",
+    "refKind": "organism",
+    "refId": "clostridium-botulinum"
+  },
+  "overview": "Two anaerobic, spore-forming Gram-positive rods whose potent neurotoxins produce opposite clinical pictures \u2014 rigid spasm versus flaccid paralysis.",
+  "genZNote": "Tetanus locks you up. Botulism shuts you down.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "An anaerobic, spore-forming Gram-positive rod that produces tetanospasmin, causing tetanus.",
+      "valueB": "An anaerobic, spore-forming Gram-positive rod that produces botulinum toxin, causing botulism."
+    },
+    {
+      "id": "toxin-mechanism",
+      "label": "Toxin Mechanism",
+      "valueA": "Tetanospasmin blocks release of inhibitory neurotransmitters (GABA, glycine) at spinal synapses, causing sustained muscle contraction (spastic paralysis).",
+      "valueB": "Botulinum toxin blocks acetylcholine release at the neuromuscular junction, causing flaccid paralysis.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "clinical-presentation",
+      "label": "Clinical Presentation",
+      "valueA": "Muscle rigidity, lockjaw (trismus), risus sardonicus, and generalized muscle spasms.",
+      "valueB": "Descending flaccid paralysis, diplopia, dysphagia, and respiratory failure in severe cases."
+    },
+    {
+      "id": "route-of-entry",
+      "label": "Route of Entry",
+      "valueA": "Deep, contaminated puncture wounds where anaerobic conditions favor spore germination.",
+      "valueB": "Ingestion of preformed toxin (improperly canned food), wound contamination, or intestinal colonization in infants (honey exposure)."
+    },
+    {
+      "id": "prevention",
+      "label": "Prevention",
+      "valueA": "Tetanus toxoid vaccine (part of routine DTaP/Tdap immunization).",
+      "valueB": "Avoiding improperly canned/preserved foods; no toxoid vaccine in routine use."
+    },
+    {
+      "id": "treatment",
+      "label": "Treatment Considerations",
+      "valueA": "Wound debridement, tetanus immune globulin, and toxoid booster.",
+      "valueB": "Antitoxin administration and supportive respiratory care."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Toxin causes spastic (rigid) paralysis.",
+      "valueB": "Toxin causes flaccid paralysis.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

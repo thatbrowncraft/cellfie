@@ -1,0 +1,63 @@
+{
+  "id": "comp-mrna-vs-trna",
+  "domain": "molecular-biology",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "rna",
+    "gene-expression",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "mRNA (Messenger RNA)"
+  },
+  "itemB": {
+    "name": "tRNA (Transfer RNA)"
+  },
+  "overview": "Two of the three major RNA types that cooperate during translation, each with a distinct job in decoding the genetic message.",
+  "genZNote": "mRNA is the delivery order. tRNA is the delivery driver.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Carries the genetic code copied from DNA to the ribosome, specifying the amino acid sequence of a protein.",
+      "valueB": "Adapts the genetic code into amino acids, physically delivering the correct amino acid to the ribosome during translation."
+    },
+    {
+      "id": "function",
+      "label": "Primary Function",
+      "valueA": "Template that is read codon-by-codon during translation.",
+      "valueB": "Reads each codon via a complementary anticodon and carries the matching amino acid.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "structure",
+      "label": "Structure",
+      "valueA": "Linear, single-stranded, capped (5') and polyadenylated (3') in eukaryotes.",
+      "valueB": "Cloverleaf secondary structure folding into an L-shaped tertiary structure, with an anticodon loop and an amino-acid attachment site."
+    },
+    {
+      "id": "relative-abundance",
+      "label": "Relative Abundance and Stability",
+      "valueA": "Least abundant RNA type, often short-lived, one mRNA per gene transcript.",
+      "valueB": "Stable and abundant, one tRNA species per amino acid/codon family (reused repeatedly)."
+    },
+    {
+      "id": "biological-context",
+      "label": "Biological Context",
+      "valueA": "Different mRNA sequence for every protein-coding gene.",
+      "valueB": "A relatively small, conserved set of tRNAs (~20 major types matching the amino acids) shared across proteins."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Carries the coded message (codons).",
+      "valueB": "Decodes the message and delivers amino acids (anticodons).",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "comp-stable-vs-transient-transfection",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "specialized",
+  "audience": [
+    "researcher",
+    "lab-learner"
+  ],
+  "tags": [
+    "biotechnology",
+    "cell-culture",
+    "gene-delivery"
+  ],
+  "itemA": {
+    "name": "Stable Transfection"
+  },
+  "itemB": {
+    "name": "Transient Transfection"
+  },
+  "overview": "Two outcomes of introducing foreign DNA into cultured cells, distinguished by whether the DNA integrates and persists across generations.",
+  "genZNote": "Stable transfection moves in permanently. Transient transfection is just crashing on the couch for a few days.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Foreign DNA integrates into the host genome, allowing long-term, heritable expression across cell divisions.",
+      "valueB": "Foreign DNA remains episomal (non-integrated) and is diluted out or degraded over subsequent cell divisions."
+    },
+    {
+      "id": "duration-of-expression",
+      "label": "Duration of Expression",
+      "valueA": "Long-term, persistent expression, often for the life of the cell line.",
+      "valueB": "Short-term, typically peaking within 24-72 hours and declining thereafter.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "selection-requirement",
+      "label": "Selection Requirement",
+      "valueA": "Requires a selectable marker (e.g. antibiotic resistance gene) and a selection period to isolate stably transfected clones.",
+      "valueB": "No selection needed \u2014 cells are simply assayed shortly after transfection."
+    },
+    {
+      "id": "time-and-cost",
+      "label": "Time and Cost",
+      "valueA": "Time-consuming (weeks) and more labor-intensive to establish a stable cell line.",
+      "valueB": "Fast and relatively inexpensive, suitable for quick functional assays."
+    },
+    {
+      "id": "applications",
+      "label": "Applications",
+      "valueA": "Generating stable cell lines for long-term protein production or reporter assays.",
+      "valueB": "Rapid protein expression testing, promoter/reporter assays, and short-term overexpression or knockdown studies."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "DNA integrates; long-lasting expression requiring selection.",
+      "valueB": "DNA stays episomal; short-lived expression, no selection needed.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

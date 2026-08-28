@@ -1,0 +1,62 @@
+{
+  "id": "comp-cell-wall-vs-cell-membrane",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Cell Wall"
+  },
+  "itemB": {
+    "name": "Cell Membrane"
+  },
+  "overview": "Two structural boundaries of the cell: one rigid and optional, one flexible and universal to all cells.",
+  "genZNote": "Membrane: every cell's ID badge. Wall: the bonus armor some cells get.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A rigid outer layer found in plants, fungi, and most bacteria/archaea, providing structural support and protection.",
+      "valueB": "The universal phospholipid bilayer surrounding every cell, regulating what enters and exits."
+    },
+    {
+      "id": "presence",
+      "label": "Presence Across Life",
+      "valueA": "Present in plants, fungi, algae, and most bacteria/archaea \u2014 absent in animal cells.",
+      "valueB": "Present in every living cell without exception.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "composition",
+      "label": "Composition",
+      "valueA": "Cellulose (plants), chitin (fungi), or peptidoglycan (most bacteria), depending on the organism.",
+      "valueB": "Phospholipid bilayer embedded with proteins, cholesterol (in animals), and glycolipids/glycoproteins."
+    },
+    {
+      "id": "permeability",
+      "label": "Permeability",
+      "valueA": "Generally freely permeable to water and small solutes \u2014 it is a structural, not a selective, barrier.",
+      "valueB": "Selectively permeable \u2014 controls transport via channels, carriers, and pumps."
+    },
+    {
+      "id": "rigidity",
+      "label": "Rigidity",
+      "valueA": "Rigid, providing shape and protection against osmotic lysis.",
+      "valueB": "Fluid and flexible (fluid mosaic model), allowing movement of embedded proteins."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Rigid, protective, only in some organisms.",
+      "valueB": "Flexible, selectively permeable, universal to all cells.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

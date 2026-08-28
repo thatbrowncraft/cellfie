@@ -1,0 +1,76 @@
+{
+  "id": "comp-acid-fast-stain-vs-gram-stain",
+  "domain": "laboratory-technique",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "microbiology",
+    "staining",
+    "laboratory-technique"
+  ],
+  "itemA": {
+    "name": "Acid-Fast Stain",
+    "refKind": "laboratory",
+    "refId": "acid-fast-stain",
+    "labCategory": "protocol"
+  },
+  "itemB": {
+    "name": "Gram Stain",
+    "refKind": "laboratory",
+    "refId": "gram-stain",
+    "labCategory": "protocol"
+  },
+  "overview": "Two of the most important differential stains in microbiology, distinguishing organisms based on very different cell wall chemistry.",
+  "genZNote": "Gram stain reads the wall. Acid-fast reads the wax coat over it.",
+  "aspects": [
+    {
+      "id": "principle",
+      "label": "Principle",
+      "valueA": "Exploits mycolic acid in the cell wall, which resists decolorization by acid-alcohol once carbolfuchsin is heat-fixed in.",
+      "valueB": "Exploits differences in peptidoglycan thickness, determining whether crystal violet-iodine complex is retained or washed out."
+    },
+    {
+      "id": "target",
+      "label": "Target Organisms",
+      "valueA": "Mycobacterium species (e.g. M. tuberculosis) and some Nocardia species with mycolic acid-rich walls.",
+      "valueB": "Virtually all bacteria, classified as Gram-positive or Gram-negative.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "key-reagents",
+      "label": "Key Reagents",
+      "valueA": "Carbolfuchsin (primary stain), acid-alcohol (decolorizer), methylene blue (counterstain).",
+      "valueB": "Crystal violet, iodine (mordant), alcohol/acetone (decolorizer), safranin (counterstain)."
+    },
+    {
+      "id": "result-interpretation",
+      "label": "Result Interpretation",
+      "valueA": "Acid-fast organisms retain pink/red carbolfuchsin; non-acid-fast organisms stain blue with methylene blue.",
+      "valueB": "Gram-positive organisms stain purple; Gram-negative organisms stain pink/red."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Key diagnostic step for suspected tuberculosis and other mycobacterial or nocardial infections.",
+      "valueB": "First-line categorization for essentially any unidentified bacterial isolate."
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations / Pitfalls",
+      "valueA": "Does not distinguish between different acid-fast species; requires additional culture/molecular testing for identification.",
+      "valueB": "Old/dying cells can over-decolorize and appear falsely Gram-negative."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Detects mycolic-acid-rich walls (mycobacteria); heat-fixed carbolfuchsin.",
+      "valueB": "Detects peptidoglycan thickness (all bacteria); crystal violet/iodine/safranin.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

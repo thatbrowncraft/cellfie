@@ -1,0 +1,77 @@
+{
+  "id": "comp-sds-page-vs-native-page",
+  "domain": "laboratory-technique",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner",
+    "researcher"
+  ],
+  "tags": [
+    "biochemistry",
+    "protein-analysis",
+    "electrophoresis"
+  ],
+  "itemA": {
+    "name": "SDS-PAGE"
+  },
+  "itemB": {
+    "name": "Native PAGE"
+  },
+  "overview": "Two gel electrophoresis approaches for separating proteins, distinguished by whether the protein's native structure and charge are preserved.",
+  "genZNote": "SDS-PAGE strips proteins down to their skeleton. Native PAGE lets them keep their outfit.",
+  "aspects": [
+    {
+      "id": "principle",
+      "label": "Principle",
+      "valueA": "Denatures proteins with SDS (uniform negative charge) and separates them purely by molecular weight.",
+      "valueB": "Separates proteins in their native folded state, based on a combination of size, shape, and intrinsic charge."
+    },
+    {
+      "id": "target",
+      "label": "Target",
+      "valueA": "Denatured polypeptide chains (subunits).",
+      "valueB": "Intact, natively folded proteins or protein complexes."
+    },
+    {
+      "id": "key-reagents",
+      "label": "Key Reagents",
+      "valueA": "SDS (sodium dodecyl sulfate), often with a reducing agent (e.g. DTT or beta-mercaptoethanol) to break disulfide bonds.",
+      "valueB": "No SDS or reducing agent \u2014 buffers preserve native pH, ionic strength, and folding."
+    },
+    {
+      "id": "what-it-reveals",
+      "label": "What It Reveals",
+      "valueA": "Approximate molecular weight and subunit composition.",
+      "valueB": "Native size, oligomeric state, and sometimes retained enzymatic activity (via in-gel activity assays)."
+    },
+    {
+      "id": "separation-basis",
+      "label": "Separation Basis",
+      "valueA": "Molecular weight only, since charge-to-mass ratio is normalized by SDS.",
+      "valueB": "Charge, shape, and size combined \u2014 migration does not correlate simply with molecular weight.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations / Pitfalls",
+      "valueA": "Destroys native structure and any activity/binding information.",
+      "valueB": "Harder to interpret band size; some proteins may not enter the gel well or may aggregate."
+    },
+    {
+      "id": "applications",
+      "label": "Applications",
+      "valueA": "Western blotting, estimating protein size and purity.",
+      "valueB": "Preserving enzyme activity for in-gel assays, studying protein-protein interactions and complexes."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Denaturing; separates by size only.",
+      "valueB": "Non-denaturing; separates by native charge, shape, and size.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

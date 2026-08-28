@@ -1,0 +1,63 @@
+{
+  "id": "comp-quorum-sensing-vs-biofilm-formation",
+  "domain": "microbiology",
+  "difficulty": "advanced",
+  "frequency": "specialized",
+  "audience": [
+    "researcher",
+    "student"
+  ],
+  "tags": [
+    "microbiology",
+    "microbial-ecology"
+  ],
+  "itemA": {
+    "name": "Quorum Sensing"
+  },
+  "itemB": {
+    "name": "Biofilm Formation"
+  },
+  "overview": "A bacterial communication mechanism and one of its major downstream outcomes, often discussed together but conceptually distinct.",
+  "genZNote": "Quorum sensing is the group chat. Biofilm is the group project they build together.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A cell-density-dependent signaling process in which bacteria produce and detect small diffusible molecules (autoinducers) to coordinate gene expression.",
+      "valueB": "The process by which bacteria attach to a surface and each other, encased in a self-produced extracellular polymeric matrix."
+    },
+    {
+      "id": "what-it-is",
+      "label": "What It Fundamentally Is",
+      "valueA": "A communication/signaling mechanism.",
+      "valueB": "A structural, community-level lifestyle/outcome.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "relationship",
+      "label": "Relationship Between the Two",
+      "valueA": "Often triggers biofilm formation once a population reaches a threshold density.",
+      "valueB": "Frequently regulated (initiated, matured, or dispersed) by quorum-sensing signals."
+    },
+    {
+      "id": "molecular-basis",
+      "label": "Molecular Basis",
+      "valueA": "Autoinducer molecules (e.g. AHLs in Gram-negatives, autoinducing peptides in Gram-positives) bind receptors to alter transcription.",
+      "valueB": "Extracellular polymeric substance (EPS) matrix of polysaccharides, proteins, and eDNA encasing the bacterial community."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "A target for anti-virulence therapies aiming to block bacterial coordination without directly killing bacteria.",
+      "valueB": "Associated with chronic infections and device-related infections resistant to antibiotics and host defenses."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Chemical signaling mechanism sensing population density.",
+      "valueB": "Structural, matrix-encased bacterial community, often a result of that signaling.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

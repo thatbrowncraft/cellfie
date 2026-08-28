@@ -1,0 +1,66 @@
+{
+  "id": "comp-hdl-vs-ldl",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "lipids",
+    "clinical"
+  ],
+  "itemA": {
+    "name": "HDL (High-Density Lipoprotein)"
+  },
+  "itemB": {
+    "name": "LDL (Low-Density Lipoprotein)"
+  },
+  "overview": "The two lipoproteins most discussed in cardiovascular risk, distinguished by density, composition, and the direction they carry cholesterol.",
+  "genZNote": "HDL cleans up. LDL drops stuff off (sometimes where it shouldn't).",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A lipoprotein that transports excess cholesterol from peripheral tissues back to the liver for excretion \u2014 \"good\" cholesterol carrier.",
+      "valueB": "A lipoprotein that transports cholesterol from the liver to peripheral tissues \u2014 \"bad\" cholesterol carrier when in excess."
+    },
+    {
+      "id": "density-composition",
+      "label": "Density and Composition",
+      "valueA": "High protein-to-lipid ratio, making it denser.",
+      "valueB": "Higher lipid-to-protein ratio, making it less dense.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "direction-of-transport",
+      "label": "Direction of Cholesterol Transport",
+      "valueA": "Reverse cholesterol transport \u2014 tissues to liver.",
+      "valueB": "Forward transport \u2014 liver to tissues."
+    },
+    {
+      "id": "clinical-association",
+      "label": "Clinical Association",
+      "valueA": "Higher levels generally associated with lower cardiovascular risk.",
+      "valueB": "Elevated levels associated with atherosclerosis and increased cardiovascular risk."
+    },
+    {
+      "id": "lab-measurement",
+      "label": "Laboratory Measurement",
+      "valueA": "Measured directly or calculated as part of a standard lipid panel.",
+      "valueB": "Often calculated using the Friedewald equation from total cholesterol, HDL, and triglycerides."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Removes cholesterol from tissues; \"good\" cholesterol.",
+      "valueB": "Delivers cholesterol to tissues; \"bad\" cholesterol in excess.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "memoryTrick": "\"HDL = Healthy. LDL = Lousy (in excess).\""
+  },
+  "lastVerified": "2026-01-01"
+}

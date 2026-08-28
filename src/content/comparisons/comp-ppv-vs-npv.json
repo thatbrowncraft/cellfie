@@ -1,0 +1,66 @@
+{
+  "id": "comp-ppv-vs-npv",
+  "domain": "diagnostics",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "diagnostics",
+    "biostatistics"
+  ],
+  "itemA": {
+    "name": "Positive Predictive Value (PPV)"
+  },
+  "itemB": {
+    "name": "Negative Predictive Value (NPV)"
+  },
+  "overview": "Two prevalence-dependent measures that tell you how much to trust an individual test result, unlike sensitivity and specificity which are fixed test properties.",
+  "genZNote": "PPV: if it's positive, how worried should you actually be? NPV: if it's negative, can you actually relax?",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The probability that a person who tests positive actually has the disease.",
+      "valueB": "The probability that a person who tests negative actually does not have the disease."
+    },
+    {
+      "id": "formula",
+      "label": "Formula",
+      "valueA": "True Positives / (True Positives + False Positives).",
+      "valueB": "True Negatives / (True Negatives + False Negatives)."
+    },
+    {
+      "id": "dependence-on-prevalence",
+      "label": "Dependence on Disease Prevalence",
+      "valueA": "Increases as disease prevalence increases in the tested population.",
+      "valueB": "Decreases as disease prevalence increases in the tested population.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "clinical-interpretation",
+      "label": "Clinical Interpretation",
+      "valueA": "Answers: \"Given a positive result, how likely is this patient to truly have the disease?\"",
+      "valueB": "Answers: \"Given a negative result, how likely is this patient to truly be disease-free?\""
+    },
+    {
+      "id": "relationship-to-sensitivity-specificity",
+      "label": "Relationship to Sensitivity/Specificity",
+      "valueA": "Depends on both test specificity and disease prevalence, not on sensitivity alone.",
+      "valueB": "Depends on both test sensitivity and disease prevalence, not on specificity alone."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Probability of true disease given a positive test.",
+      "valueB": "Probability of true absence of disease given a negative test.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "commonMisconception": "Sensitivity and specificity are fixed properties of a test, but PPV and NPV change with the prevalence of disease in the population being tested."
+  },
+  "lastVerified": "2026-01-01"
+}

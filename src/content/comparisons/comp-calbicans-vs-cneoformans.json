@@ -1,0 +1,73 @@
+{
+  "id": "comp-calbicans-vs-cneoformans",
+  "domain": "mycology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "mycology",
+    "clinical-microbiology"
+  ],
+  "itemA": {
+    "name": "Candida albicans",
+    "refKind": "organism",
+    "refId": "candida-albicans"
+  },
+  "itemB": {
+    "name": "Cryptococcus neoformans",
+    "refKind": "organism",
+    "refId": "cryptococcus-neoformans"
+  },
+  "overview": "Two clinically important yeasts distinguished by morphology, capsule presence, and the immune status of patients typically affected.",
+  "genZNote": "Candida sprouts a tail (germ tube). Cryptococcus wears a hazmat suit (capsule).",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A dimorphic yeast and normal commensal of mucosal surfaces that becomes pathogenic in disrupted flora or immunosuppression (candidiasis).",
+      "valueB": "An encapsulated yeast found in soil and bird droppings that causes cryptococcosis, especially meningitis in immunocompromised hosts."
+    },
+    {
+      "id": "capsule",
+      "label": "Capsule",
+      "valueA": "Not encapsulated.",
+      "valueB": "Prominent polysaccharide capsule, visible with India ink preparation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "morphology",
+      "label": "Morphology",
+      "valueA": "Forms budding yeast, pseudohyphae, and true hyphae/germ tubes at 37\u00b0C.",
+      "valueB": "Round to oval budding yeast; does not form hyphae in typical clinical presentation."
+    },
+    {
+      "id": "identification-test",
+      "label": "Key Identification Test",
+      "valueA": "Germ tube test \u2014 positive within 2-3 hours in serum at 37\u00b0C.",
+      "valueB": "India ink stain showing a clear halo (capsule) around the yeast; urease-positive."
+    },
+    {
+      "id": "clinical-presentation",
+      "label": "Clinical Presentation",
+      "valueA": "Oral thrush, vulvovaginal candidiasis, invasive candidiasis/candidemia in hospitalized or immunosuppressed patients.",
+      "valueB": "Cryptococcal meningitis (classically in AIDS patients), pulmonary cryptococcosis."
+    },
+    {
+      "id": "diagnosis",
+      "label": "Diagnosis",
+      "valueA": "Culture, germ tube test, and sometimes chromogenic agar for species identification.",
+      "valueB": "India ink microscopy, cryptococcal antigen (CrAg) testing in serum/CSF, and culture on Sabouraud agar."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Non-encapsulated, germ-tube positive, mucosal/systemic disease.",
+      "valueB": "Encapsulated, India ink positive, classic cause of fungal meningitis.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

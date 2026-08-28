@@ -1,0 +1,70 @@
+{
+  "id": "comp-crispr-cas9-vs-rnai",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "biotechnology",
+    "gene-editing",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "CRISPR-Cas9"
+  },
+  "itemB": {
+    "name": "RNAi (RNA Interference)"
+  },
+  "overview": "Two major gene-silencing/editing tools with very different mechanisms \u2014 one permanently edits DNA, the other transiently reduces gene expression.",
+  "genZNote": "CRISPR rewrites the book. RNAi just tears out pages temporarily.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A programmable gene-editing system using a guide RNA and the Cas9 nuclease to make precise, permanent cuts in DNA.",
+      "valueB": "A post-transcriptional gene-silencing mechanism using small RNAs (siRNA/shRNA) to degrade or block specific mRNA transcripts."
+    },
+    {
+      "id": "level-of-action",
+      "label": "Level of Action",
+      "valueA": "Acts at the DNA level, permanently altering the genome.",
+      "valueB": "Acts at the mRNA level, transiently reducing protein expression without altering the genome.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "permanence",
+      "label": "Permanence of Effect",
+      "valueA": "Permanent and heritable \u2014 the edited DNA sequence is passed to daughter cells.",
+      "valueB": "Transient and reversible \u2014 effects fade as the silencing RNA is degraded or diluted."
+    },
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "valueA": "A guide RNA directs Cas9 to a complementary DNA sequence, where it introduces a double-strand break, repaired by NHEJ or HDR.",
+      "valueB": "Double-stranded RNA is processed by Dicer into siRNA, loaded into the RISC complex, which degrades complementary mRNA."
+    },
+    {
+      "id": "applications",
+      "label": "Applications",
+      "valueA": "Gene knockout/knock-in, correcting disease-causing mutations, generating model organisms.",
+      "valueB": "Functional gene knockdown studies, and as a therapeutic strategy (e.g. siRNA drugs like patisiran)."
+    },
+    {
+      "id": "off-target-considerations",
+      "label": "Off-Target Considerations",
+      "valueA": "Off-target genomic cutting is possible and a major safety/design concern.",
+      "valueB": "Off-target silencing of similar mRNA sequences can occur, though effects are reversible."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Permanently edits the DNA sequence itself.",
+      "valueB": "Temporarily silences gene expression at the RNA level.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

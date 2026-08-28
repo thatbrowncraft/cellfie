@@ -1,0 +1,72 @@
+{
+  "id": "comp-transcription-vs-translation",
+  "domain": "molecular-biology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "gene-expression",
+    "molecular-biology",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Transcription"
+  },
+  "itemB": {
+    "name": "Translation"
+  },
+  "overview": "The two sequential steps of gene expression: copying DNA into RNA, then reading that RNA to build a protein.",
+  "genZNote": "Transcription copies the note. Translation reads it out loud in a different language.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Synthesis of an RNA copy (typically mRNA) from a DNA template.",
+      "valueB": "Synthesis of a polypeptide chain by reading an mRNA sequence via the ribosome."
+    },
+    {
+      "id": "target-molecule",
+      "label": "Target Molecule",
+      "valueA": "DNA template strand is read to produce RNA.",
+      "valueB": "mRNA is read (as codons) to produce protein.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "location",
+      "label": "Cellular Location",
+      "valueA": "Nucleus in eukaryotes; cytoplasm in prokaryotes.",
+      "valueB": "Cytoplasm, at ribosomes (free or ER-bound) in both eukaryotes and prokaryotes."
+    },
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "valueA": "RNA polymerase binds a promoter and synthesizes RNA 5' to 3', complementary to the template strand.",
+      "valueB": "Ribosome moves along mRNA codon by codon; tRNAs deliver matching amino acids via anticodon pairing."
+    },
+    {
+      "id": "products",
+      "label": "Products",
+      "valueA": "Pre-mRNA (eukaryotes, further processed by splicing/capping/polyadenylation) or mature mRNA (prokaryotes).",
+      "valueB": "A polypeptide chain, which folds and may be further modified into a functional protein."
+    },
+    {
+      "id": "key-molecules",
+      "label": "Key Molecules Involved",
+      "valueA": "RNA polymerase, promoter sequences, transcription factors.",
+      "valueB": "Ribosomes (rRNA + proteins), tRNA, mRNA, start/stop codons."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "DNA to RNA, occurs first, happens in the nucleus (eukaryotes).",
+      "valueB": "RNA to protein, occurs second, happens in the cytoplasm.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "memoryTrick": "\"Transcription: DNA to RNA, same language (nucleic acid). Translation: RNA to protein, new language (amino acids).\""
+  },
+  "lastVerified": "2026-01-01"
+}

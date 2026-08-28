@@ -1,0 +1,74 @@
+{
+  "id": "comp-vcholerae-vs-vparahaemolyticus",
+  "domain": "bacteriology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "bacteriology",
+    "clinical-microbiology",
+    "enteric-pathogens"
+  ],
+  "itemA": {
+    "name": "Vibrio cholerae",
+    "refKind": "organism",
+    "refId": "vibrio-cholerae"
+  },
+  "itemB": {
+    "name": "Vibrio parahaemolyticus",
+    "refKind": "organism",
+    "refId": "vibrio-parahaemolyticus"
+  },
+  "overview": "Two curved, Gram-negative rods in the same genus with very different disease severity and salt tolerance.",
+  "genZNote": "V. cholerae causes a flood. V. parahaemolyticus just ruins your seafood dinner.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A curved Gram-negative rod that produces cholera toxin, causing profuse watery diarrhea (\"rice-water stools\").",
+      "valueB": "A halophilic (salt-loving), curved Gram-negative rod associated with raw or undercooked seafood, causing self-limited gastroenteritis."
+    },
+    {
+      "id": "salt-requirement",
+      "label": "Salt (Halophilic) Requirement",
+      "valueA": "Not obligately halophilic \u2014 grows in standard media without added salt.",
+      "valueB": "Halophilic \u2014 requires added NaCl for optimal growth.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "toxin-mechanism",
+      "label": "Toxin Mechanism",
+      "valueA": "Cholera toxin activates adenylate cyclase, raising cAMP and driving massive chloride/water secretion into the gut lumen.",
+      "valueB": "Thermostable direct hemolysin (TDH) contributes to diarrheal illness, generally milder than cholera toxin's effect."
+    },
+    {
+      "id": "clinical-severity",
+      "label": "Clinical Severity",
+      "valueA": "Can cause severe, rapidly dehydrating diarrhea leading to hypovolemic shock if untreated.",
+      "valueB": "Typically self-limited watery diarrhea, abdominal cramps, nausea, and vomiting."
+    },
+    {
+      "id": "transmission",
+      "label": "Transmission",
+      "valueA": "Fecal-oral, via contaminated water in areas with poor sanitation.",
+      "valueB": "Ingestion of raw or undercooked seafood (especially shellfish)."
+    },
+    {
+      "id": "selective-media",
+      "label": "Selective Media",
+      "valueA": "TCBS agar \u2014 yellow colonies (sucrose fermenter).",
+      "valueB": "TCBS agar \u2014 green colonies (non-sucrose fermenter)."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Non-halophilic, cholera toxin, yellow on TCBS.",
+      "valueB": "Halophilic, seafood-associated, green on TCBS.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

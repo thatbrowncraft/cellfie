@@ -1,0 +1,69 @@
+{
+  "id": "comp-plasmid-vector-vs-viral-vector",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "biotechnology",
+    "gene-delivery"
+  ],
+  "itemA": {
+    "name": "Plasmid Vector"
+  },
+  "itemB": {
+    "name": "Viral Vector"
+  },
+  "overview": "Two major classes of vehicle for delivering foreign genetic material into cells, trading off simplicity for delivery efficiency.",
+  "genZNote": "Plasmids knock politely. Viral vectors let themselves in.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A circular, non-viral DNA molecule engineered to carry and express a gene of interest inside a host cell.",
+      "valueB": "A modified virus, stripped of pathogenic genes, engineered to deliver genetic material into host cells using its natural infection machinery."
+    },
+    {
+      "id": "delivery-mechanism",
+      "label": "Delivery Mechanism",
+      "valueA": "Introduced via transfection methods (chemical, electroporation, or lipid-based), which are relatively inefficient in many cell types.",
+      "valueB": "Delivered via natural viral entry and infection mechanisms, generally far more efficient, especially in hard-to-transfect cells.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "integration",
+      "label": "Genomic Integration",
+      "valueA": "Typically remains episomal (non-integrating) unless specifically designed otherwise.",
+      "valueB": "Depends on virus type \u2014 retroviruses/lentiviruses integrate into the host genome; adenoviruses and AAV typically remain episomal."
+    },
+    {
+      "id": "cargo-capacity",
+      "label": "Cargo Capacity",
+      "valueA": "Can carry relatively large inserts, limited mainly by plasmid stability.",
+      "valueB": "Limited by the packaging capacity of the viral capsid (e.g. AAV holds under 5 kb)."
+    },
+    {
+      "id": "safety-considerations",
+      "label": "Safety Considerations",
+      "valueA": "Generally considered lower risk \u2014 no viral components, minimal immune response.",
+      "valueB": "Requires careful design to prevent replication competency and manage immune responses; integrating vectors carry insertional mutagenesis risk."
+    },
+    {
+      "id": "common-examples",
+      "label": "Common Examples",
+      "valueA": "Bacterial expression plasmids, mammalian expression vectors for transient transfection.",
+      "valueB": "Adeno-associated virus (AAV), lentivirus, adenovirus \u2014 widely used in gene therapy."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Non-viral, lower delivery efficiency, generally safer.",
+      "valueB": "Viral machinery, higher delivery efficiency, more safety considerations.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

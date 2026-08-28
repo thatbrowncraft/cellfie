@@ -1,0 +1,64 @@
+{
+  "id": "comp-orthologs-vs-paralogs",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "bioinformatics",
+    "evolutionary-biology",
+    "genomics"
+  ],
+  "itemA": {
+    "name": "Orthologs"
+  },
+  "itemB": {
+    "name": "Paralogs"
+  },
+  "overview": "Two categories of homologous genes distinguished by whether they arose through speciation or gene duplication.",
+  "genZNote": "Orthologs: same gene, different species, still doing its original job. Paralogs: same species, gene copied itself and went rogue.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Homologous genes in different species that arose from a single ancestral gene through a speciation event.",
+      "valueB": "Homologous genes within the same genome (or across species) that arose through a gene duplication event."
+    },
+    {
+      "id": "origin-event",
+      "label": "Origin Event",
+      "valueA": "Speciation \u2014 the ancestral gene diverged along with the species themselves.",
+      "valueB": "Gene duplication \u2014 the ancestral gene was copied within a genome.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "typical-function-conservation",
+      "label": "Typical Function Conservation",
+      "valueA": "Usually retain the same or a very similar function across species.",
+      "valueB": "Often diverge in function over time, sometimes acquiring entirely new roles (neofunctionalization)."
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Human and mouse hemoglobin beta genes \u2014 same function, different species, common ancestor.",
+      "valueB": "Human alpha-globin and beta-globin genes \u2014 arose from a common ancestral globin gene by duplication within the human lineage."
+    },
+    {
+      "id": "use-in-comparative-genomics",
+      "label": "Use in Comparative Genomics",
+      "valueA": "Used to infer functional conservation and study species evolution.",
+      "valueB": "Used to study gene family expansion and the evolution of new functions."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Arise via speciation; found in different species.",
+      "valueB": "Arise via gene duplication; can be found within the same genome.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

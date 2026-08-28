@@ -1,0 +1,62 @@
+{
+  "id": "comp-virus-vs-prion",
+  "domain": "virology",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "virology",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Virus"
+  },
+  "itemB": {
+    "name": "Prion"
+  },
+  "overview": "Two unconventional infectious agents, one built on nucleic acid replication and the other entirely protein-based.",
+  "genZNote": "Virus needs genetic instructions. Prion is just a misfolded protein starting a chain reaction.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "An infectious agent composed of nucleic acid and protein that replicates using host cell machinery.",
+      "valueB": "An infectious, misfolded form of a normal host protein (PrP) that propagates by inducing normal protein copies to misfold."
+    },
+    {
+      "id": "nucleic-acid-content",
+      "label": "Nucleic Acid Content",
+      "valueA": "Contains DNA or RNA as its genetic material.",
+      "valueB": "Contains no nucleic acid at all \u2014 composed purely of misfolded protein.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "mechanism-of-propagation",
+      "label": "Mechanism of Propagation",
+      "valueA": "Uses its genome (with host machinery) to direct synthesis of new viral components and assemble new virions.",
+      "valueB": "Physically templates the misfolding of normal cellular prion protein into the abnormal conformation, without any replication of genetic material."
+    },
+    {
+      "id": "classic-examples",
+      "label": "Classic Examples",
+      "valueA": "Influenza virus, HIV, herpesviruses.",
+      "valueB": "Creutzfeldt-Jakob disease, bovine spongiform encephalopathy (\"mad cow disease\"), kuru."
+    },
+    {
+      "id": "resistance-to-inactivation",
+      "label": "Resistance to Inactivation",
+      "valueA": "Generally inactivated by standard sterilization, disinfection, and often by nucleic acid-damaging treatments.",
+      "valueB": "Extraordinarily resistant to standard sterilization methods including autoclaving and most disinfectants, due to a lack of nucleic acid targets."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Nucleic-acid-based infectious agent.",
+      "valueB": "Purely protein-based infectious agent, no nucleic acid.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

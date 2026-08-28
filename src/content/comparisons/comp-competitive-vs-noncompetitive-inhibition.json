@@ -1,0 +1,73 @@
+{
+  "id": "comp-competitive-vs-noncompetitive-inhibition",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "enzymology",
+    "enzyme-kinetics"
+  ],
+  "itemA": {
+    "name": "Competitive Inhibition"
+  },
+  "itemB": {
+    "name": "Noncompetitive Inhibition"
+  },
+  "overview": "Two classic mechanisms by which an inhibitor reduces enzyme activity, distinguished by where the inhibitor binds and how kinetics change.",
+  "genZNote": "Competitive fights for the active site. Noncompetitive just changes the vibe.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "An inhibitor that structurally resembles the substrate and binds the enzyme's active site, blocking substrate binding.",
+      "valueB": "An inhibitor that binds a site other than the active site (allosteric site), changing the enzyme's shape and reducing catalytic efficiency."
+    },
+    {
+      "id": "binding-site",
+      "label": "Binding Site",
+      "valueA": "Active site \u2014 directly competes with substrate.",
+      "valueB": "Allosteric site, distinct from the active site.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "effect-on-vmax",
+      "label": "Effect on Vmax",
+      "valueA": "Vmax unchanged \u2014 enough substrate can outcompete the inhibitor.",
+      "valueB": "Vmax decreased \u2014 inhibitor reduces functional enzyme regardless of substrate concentration."
+    },
+    {
+      "id": "effect-on-km",
+      "label": "Effect on Km",
+      "valueA": "Apparent Km increased \u2014 more substrate is needed to reach half-maximal velocity.",
+      "valueB": "Km unchanged \u2014 substrate still binds normally, just less productively."
+    },
+    {
+      "id": "reversibility",
+      "label": "Reversibility With Substrate",
+      "valueA": "Can be overcome by increasing substrate concentration.",
+      "valueB": "Cannot be overcome by increasing substrate concentration."
+    },
+    {
+      "id": "classic-example",
+      "label": "Classic Example",
+      "valueA": "Malonate inhibiting succinate dehydrogenase; methotrexate on dihydrofolate reductase.",
+      "valueB": "Cyanide inhibiting cytochrome c oxidase at a non-substrate site."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Increases Km, Vmax unchanged, overcome by excess substrate.",
+      "valueB": "Decreases Vmax, Km unchanged, not overcome by excess substrate.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Lineweaver-Burk plots: competitive inhibitors share the same y-intercept (1/Vmax); noncompetitive inhibitors share the same x-intercept (-1/Km).",
+    "memoryTrick": "\"Competitive: more substrate wins. Noncompetitive: more substrate doesn't matter.\""
+  },
+  "lastVerified": "2026-01-01"
+}

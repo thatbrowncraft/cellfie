@@ -1,0 +1,69 @@
+{
+  "id": "comp-endocytosis-vs-exocytosis",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "transport",
+    "membrane",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Endocytosis"
+  },
+  "itemB": {
+    "name": "Exocytosis"
+  },
+  "overview": "The two vesicle-mediated bulk transport processes cells use to bring material in or send material out.",
+  "genZNote": "Endocytosis: the cell orders takeout. Exocytosis: it sends the package.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The process by which a cell engulfs material from outside by folding its membrane inward to form a vesicle.",
+      "valueB": "The process by which a cell releases material by fusing an internal vesicle with the plasma membrane."
+    },
+    {
+      "id": "direction",
+      "label": "Direction of Movement",
+      "valueA": "Into the cell (extracellular to intracellular).",
+      "valueB": "Out of the cell (intracellular to extracellular).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "vesicle-formation",
+      "label": "Vesicle Formation",
+      "valueA": "Plasma membrane invaginates around the material, pinching off to form a vesicle.",
+      "valueB": "A pre-formed intracellular vesicle travels to and fuses with the plasma membrane."
+    },
+    {
+      "id": "subtypes",
+      "label": "Subtypes",
+      "valueA": "Phagocytosis (\"cell eating\"), pinocytosis (\"cell drinking\"), receptor-mediated endocytosis.",
+      "valueB": "Constitutive (continuous, unregulated) and regulated (triggered, e.g. by calcium signaling) exocytosis."
+    },
+    {
+      "id": "biological-example",
+      "label": "Biological Example",
+      "valueA": "A macrophage engulfing a bacterium; LDL uptake via receptor-mediated endocytosis.",
+      "valueB": "Neurons releasing neurotransmitter into the synaptic cleft; secretion of hormones or digestive enzymes."
+    },
+    {
+      "id": "energy-requirement",
+      "label": "Energy Requirement",
+      "valueA": "Requires ATP \u2014 an active, energy-dependent bulk transport process.",
+      "valueB": "Requires ATP \u2014 also active and energy-dependent."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Membrane folds inward to import material.",
+      "valueB": "Vesicle fuses outward to export material.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

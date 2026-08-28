@@ -1,0 +1,69 @@
+{
+  "id": "comp-plant-vs-animal-cells",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "eukaryotes",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Plant Cells"
+  },
+  "itemB": {
+    "name": "Animal Cells"
+  },
+  "overview": "The classic eukaryotic cell comparison: shared organelles, but structural features unique to a stationary, photosynthetic lifestyle versus a mobile, heterotrophic one.",
+  "genZNote": "Plants build a house. Animals just wear a jacket.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Eukaryotic cells with a rigid cell wall, a large central vacuole, and chloroplasts for photosynthesis.",
+      "valueB": "Eukaryotic cells lacking a cell wall and chloroplasts, typically more flexible in shape."
+    },
+    {
+      "id": "cell-wall-structure",
+      "label": "Cell Wall",
+      "valueA": "Present \u2014 rigid cellulose cell wall outside the plasma membrane.",
+      "valueB": "Absent \u2014 only a flexible plasma membrane.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "chloroplasts",
+      "label": "Chloroplasts / Photosynthesis",
+      "valueA": "Present, enabling photosynthesis and self-generation of glucose.",
+      "valueB": "Absent \u2014 animal cells are heterotrophic and obtain energy from ingested food."
+    },
+    {
+      "id": "vacuole",
+      "label": "Vacuole",
+      "valueA": "Large, single central vacuole for turgor pressure, storage, and waste.",
+      "valueB": "Small, multiple vacuoles if present, mainly for storage/transport."
+    },
+    {
+      "id": "shape",
+      "label": "Shape",
+      "valueA": "Fixed, rectangular/regular shape due to the cell wall.",
+      "valueB": "Irregular, flexible shape without a wall."
+    },
+    {
+      "id": "centrioles",
+      "label": "Centrioles",
+      "valueA": "Typically absent in most plant cells.",
+      "valueB": "Present, organizing the mitotic spindle."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Cell wall, chloroplasts, and a large central vacuole.",
+      "valueB": "No cell wall or chloroplasts; has centrioles and flexible shape.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

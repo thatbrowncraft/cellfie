@@ -1,0 +1,64 @@
+{
+  "id": "comp-endospore-vs-vegetative-cell",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "microbiology",
+    "bacterial-structure",
+    "biosafety"
+  ],
+  "itemA": {
+    "name": "Bacterial Endospore"
+  },
+  "itemB": {
+    "name": "Vegetative Cell"
+  },
+  "overview": "Two states of the same bacterium, one metabolically dormant and extraordinarily resistant, the other actively growing.",
+  "genZNote": "Endospore: bacteria in survival mode. Vegetative cell: bacteria living their best life.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A dormant, highly resistant structure formed by certain Gram-positive genera (e.g. Bacillus, Clostridium) to survive harsh conditions.",
+      "valueB": "The normal, metabolically active, growing and dividing form of a bacterial cell."
+    },
+    {
+      "id": "metabolic-activity",
+      "label": "Metabolic Activity",
+      "valueA": "Dormant \u2014 essentially no detectable metabolism.",
+      "valueB": "Metabolically active, growing and replicating.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "resistance",
+      "label": "Resistance to Environmental Stress",
+      "valueA": "Extremely resistant to heat, desiccation, radiation, and many disinfectants due to dipicolinic acid and a thick keratin-like coat.",
+      "valueB": "Susceptible to standard heat, drying, and disinfection methods."
+    },
+    {
+      "id": "formation-trigger",
+      "label": "Formation Trigger",
+      "valueA": "Nutrient depletion or other unfavorable conditions trigger sporulation.",
+      "valueB": "Formed by binary fission whenever conditions support growth."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical/Laboratory Relevance",
+      "valueA": "Survives standard autoclaving parameters unless proper time/temperature/pressure are met \u2014 used to validate sterilization (biological indicators).",
+      "valueB": "The target of routine disinfection and most antibiotics, which generally act on active metabolic processes."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Dormant, highly resistant survival structure.",
+      "valueB": "Active, growing, susceptible cellular form.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

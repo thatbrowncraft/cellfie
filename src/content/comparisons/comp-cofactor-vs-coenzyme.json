@@ -1,0 +1,63 @@
+{
+  "id": "comp-cofactor-vs-coenzyme",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "biochemistry",
+    "enzymology"
+  ],
+  "itemA": {
+    "name": "Cofactor"
+  },
+  "itemB": {
+    "name": "Coenzyme"
+  },
+  "overview": "Two related but distinct helper molecules enzymes rely on \u2014 a broad structural/inorganic category and its organic subset.",
+  "genZNote": "All coenzymes are cofactors. Not all cofactors get invited to the coenzyme club.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Any non-protein chemical compound (organic or inorganic) required for an enzyme's biological activity.",
+      "valueB": "A specific type of organic cofactor, often derived from a vitamin, that assists catalysis, frequently by transferring a chemical group."
+    },
+    {
+      "id": "chemical-nature",
+      "label": "Chemical Nature",
+      "valueA": "Can be an inorganic ion (e.g. Mg2+, Zn2+, Fe2+) or an organic molecule.",
+      "valueB": "Always organic, often a vitamin derivative (e.g. NAD+ from niacin, FAD from riboflavin).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "binding",
+      "label": "Binding to Enzyme",
+      "valueA": "May be loosely or tightly bound, including as a prosthetic group.",
+      "valueB": "Often binds loosely and transiently, acting as a substrate-like carrier that dissociates after the reaction."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Mg2+ for hexokinase, Zn2+ for carbonic anhydrase, heme (a prosthetic group) in catalase.",
+      "valueB": "NAD+/NADH, FAD/FADH2, coenzyme A, biotin."
+    },
+    {
+      "id": "relationship",
+      "label": "Relationship Between the Two",
+      "valueA": "The broader umbrella term \u2014 includes metal ions and coenzymes alike.",
+      "valueB": "A subset of cofactors, specifically the organic, vitamin-derived ones."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Broad category \u2014 includes metal ions and organic molecules.",
+      "valueB": "Organic, usually vitamin-derived subset of cofactors.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

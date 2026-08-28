@@ -1,0 +1,82 @@
+{
+  "id": "comp-pfalciparum-vs-pvivax",
+  "domain": "parasitology",
+  "difficulty": "advanced",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "parasitology",
+    "clinical-microbiology"
+  ],
+  "itemA": {
+    "name": "Plasmodium falciparum",
+    "refKind": "organism",
+    "refId": "plasmodium-falciparum"
+  },
+  "itemB": {
+    "name": "Plasmodium vivax",
+    "refKind": "organism",
+    "refId": "plasmodium-vivax"
+  },
+  "overview": "The two most clinically significant malaria species, differing sharply in severity, relapse potential, and red blood cell preference.",
+  "genZNote": "P. falciparum shows up to every party uninvited (any RBC age, severe disease). P. vivax ghosts you and comes back later (hypnozoites, relapse).",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The malaria species responsible for the most severe and life-threatening form of malaria, with high mortality if untreated.",
+      "valueB": "A malaria species causing a generally milder illness, notable for its ability to cause relapses months to years later."
+    },
+    {
+      "id": "severity",
+      "label": "Clinical Severity",
+      "valueA": "Can cause severe malaria: cerebral malaria, severe anemia, acute kidney injury, and death.",
+      "valueB": "Generally less severe, though can still cause significant morbidity; severe disease is less common.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "rbc-preference",
+      "label": "Red Blood Cell Preference",
+      "valueA": "Infects red blood cells of all ages, allowing very high parasitemia.",
+      "valueB": "Infects only reticulocytes (young RBCs), limiting parasitemia."
+    },
+    {
+      "id": "relapse",
+      "label": "Relapse Potential",
+      "valueA": "No dormant liver stage \u2014 does not relapse (only recrudescence from incompletely treated blood-stage infection is possible).",
+      "valueB": "Forms dormant hypnozoites in the liver, causing relapses months to years after the initial infection."
+    },
+    {
+      "id": "blood-smear-appearance",
+      "label": "Blood Smear Appearance",
+      "valueA": "Multiple ring forms per cell, banana-shaped gametocytes, no enlargement of infected RBCs.",
+      "valueB": "Enlarged infected RBCs with Sch\u00fcffner's dots, amoeboid trophozoites."
+    },
+    {
+      "id": "geographic-distribution",
+      "label": "Geographic Distribution",
+      "valueA": "Predominant in sub-Saharan Africa and other tropical regions.",
+      "valueB": "Widely distributed, including South Asia and parts of Latin America; more common outside Africa."
+    },
+    {
+      "id": "treatment-consideration",
+      "label": "Treatment Consideration",
+      "valueA": "Requires prompt treatment (e.g. artemisinin-based combination therapy) due to risk of rapid deterioration.",
+      "valueB": "Requires an additional course of primaquine or tafenoquine to eradicate liver hypnozoites and prevent relapse."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Infects any RBC age, no relapse, most severe disease.",
+      "valueB": "Infects only reticulocytes, forms hypnozoites causing relapse.",
+      "isKeyDifference": true
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Sch\u00fcffner's dots + enlarged RBCs = P. vivax (or P. ovale). Banana-shaped gametocytes = P. falciparum."
+  },
+  "lastVerified": "2026-01-01"
+}

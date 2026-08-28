@@ -1,0 +1,64 @@
+{
+  "id": "comp-narrow-vs-broad-spectrum-antibiotics",
+  "domain": "microbiology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "microbiology",
+    "antimicrobials",
+    "pharmacology"
+  ],
+  "itemA": {
+    "name": "Narrow-Spectrum Antibiotics"
+  },
+  "itemB": {
+    "name": "Broad-Spectrum Antibiotics"
+  },
+  "overview": "Two categories of antibiotic reach, reflecting a fundamental antimicrobial stewardship trade-off between precision and coverage.",
+  "genZNote": "Narrow-spectrum: a scalpel. Broad-spectrum: a sledgehammer.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Antibiotics effective against a limited range of bacteria, often just Gram-positive or Gram-negative organisms.",
+      "valueB": "Antibiotics effective against a wide range of both Gram-positive and Gram-negative bacteria."
+    },
+    {
+      "id": "target-range",
+      "label": "Target Range",
+      "valueA": "Targeted, e.g. penicillin G against many Gram-positive cocci.",
+      "valueB": "Wide, e.g. tetracyclines or carbapenems covering many Gram-positive, Gram-negative, and sometimes atypical organisms.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "clinical-use",
+      "label": "Clinical Use Case",
+      "valueA": "Preferred once the causative organism and susceptibility are known (targeted, de-escalated therapy).",
+      "valueB": "Preferred for empiric therapy when the causative organism is unknown or infection is severe/polymicrobial."
+    },
+    {
+      "id": "impact-on-microbiota",
+      "label": "Impact on Normal Microbiota",
+      "valueA": "Less disruption to normal flora.",
+      "valueB": "Greater disruption to normal microbiota, increasing risk of superinfection (e.g. Clostridioides difficile)."
+    },
+    {
+      "id": "resistance-considerations",
+      "label": "Resistance Considerations",
+      "valueA": "Lower selective pressure for broad resistance development.",
+      "valueB": "Higher selective pressure, contributing more to antimicrobial resistance if overused."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Effective against a limited group of organisms.",
+      "valueB": "Effective against a wide variety of organisms.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

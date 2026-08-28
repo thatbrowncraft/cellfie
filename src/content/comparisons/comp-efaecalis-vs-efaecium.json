@@ -1,0 +1,68 @@
+{
+  "id": "comp-efaecalis-vs-efaecium",
+  "domain": "bacteriology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "bacteriology",
+    "clinical-microbiology",
+    "antimicrobial-resistance"
+  ],
+  "itemA": {
+    "name": "Enterococcus faecalis",
+    "refKind": "organism",
+    "refId": "enterococcus-faecalis"
+  },
+  "itemB": {
+    "name": "Enterococcus faecium",
+    "refKind": "organism",
+    "refId": "enterococcus-faecium"
+  },
+  "overview": "Two Gram-positive cocci from normal gut flora and among the most common causes of hospital-acquired infection, distinguished mainly by prevalence and resistance patterns.",
+  "genZNote": "Same genus, but E. faecium brought the vancomycin resistance to the party more often.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The most commonly isolated Enterococcus species in clinical infections, part of normal gastrointestinal flora.",
+      "valueB": "The second most common Enterococcus species clinically, notable for higher rates of antibiotic resistance."
+    },
+    {
+      "id": "clinical-frequency",
+      "label": "Clinical Frequency",
+      "valueA": "Accounts for the majority of enterococcal infections overall (urinary tract infections, endocarditis, bacteremia).",
+      "valueB": "Less frequent overall, but disproportionately represented among vancomycin-resistant enterococcus (VRE) isolates.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "antibiotic-resistance",
+      "label": "Antibiotic Resistance Pattern",
+      "valueA": "Generally more susceptible to ampicillin and vancomycin than E. faecium.",
+      "valueB": "More frequently intrinsically resistant to ampicillin and more likely to acquire vancomycin resistance (VRE)."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Common cause of urinary tract infections, biliary infections, and subacute bacterial endocarditis.",
+      "valueB": "Increasingly important cause of hospital-acquired, multidrug-resistant infections, especially in immunocompromised patients."
+    },
+    {
+      "id": "identification",
+      "label": "Identification",
+      "valueA": "Grows on bile-esculin agar, hydrolyzing esculin; catalase-negative, grows in 6.5% NaCl.",
+      "valueB": "Also grows on bile-esculin agar and 6.5% NaCl; species-level distinction typically requires biochemical panels or molecular methods."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "More common overall; generally more antibiotic-susceptible.",
+      "valueB": "Less common overall, but higher rate of vancomycin/ampicillin resistance.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

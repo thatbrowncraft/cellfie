@@ -1,0 +1,64 @@
+{
+  "id": "comp-transformation-vs-conjugation",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "microbiology",
+    "horizontal-gene-transfer",
+    "genetics"
+  ],
+  "itemA": {
+    "name": "Transformation"
+  },
+  "itemB": {
+    "name": "Conjugation"
+  },
+  "overview": "Two of the three classic mechanisms of horizontal gene transfer in bacteria, distinguished by whether direct cell-to-cell contact is required.",
+  "genZNote": "Transformation: DNA just floating by, picked up off the street. Conjugation: DNA handed over in person.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Uptake of naked, free extracellular DNA from the environment by a competent bacterial cell.",
+      "valueB": "Direct transfer of DNA (typically a plasmid) from a donor to a recipient bacterium through a physical connection (sex pilus)."
+    },
+    {
+      "id": "mechanism-of-transfer",
+      "label": "Mechanism of Transfer",
+      "valueA": "Naked DNA crosses the cell envelope of a naturally or artificially competent cell.",
+      "valueB": "DNA passes through a conjugation (mating) bridge formed by an F-pilus.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "cell-contact",
+      "label": "Cell-to-Cell Contact",
+      "valueA": "Not required \u2014 DNA is acquired directly from the environment.",
+      "valueB": "Required \u2014 donor and recipient cells must physically connect."
+    },
+    {
+      "id": "dna-source",
+      "label": "DNA Source",
+      "valueA": "Free DNA released by lysed cells or added experimentally (e.g. in cloning).",
+      "valueB": "A conjugative plasmid (e.g. F plasmid) or, rarely, chromosomal DNA mobilized by a plasmid, from a living donor cell."
+    },
+    {
+      "id": "natural-examples",
+      "label": "Natural Examples",
+      "valueA": "Streptococcus pneumoniae and Neisseria species undergo natural transformation.",
+      "valueB": "F+ x F- mating in E. coli; a major route for spreading antibiotic resistance plasmids."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Uptake of free environmental DNA, no contact needed.",
+      "valueB": "Direct DNA transfer via physical pilus connection between cells.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

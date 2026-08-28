@@ -1,0 +1,63 @@
+{
+  "id": "comp-sensitivity-vs-specificity",
+  "domain": "diagnostics",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "diagnostics",
+    "biostatistics"
+  ],
+  "itemA": {
+    "name": "Sensitivity"
+  },
+  "itemB": {
+    "name": "Specificity"
+  },
+  "overview": "The two fundamental performance metrics of any diagnostic test, describing how well it detects disease versus how well it rules it out.",
+  "genZNote": "Sensitivity: don't miss the sick (rules out disease when negative). Specificity: don't falsely flag the healthy (rules in disease when positive).",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The proportion of people with the disease who correctly test positive (true positive rate).",
+      "valueB": "The proportion of people without the disease who correctly test negative (true negative rate)."
+    },
+    {
+      "id": "formula",
+      "label": "Formula",
+      "valueA": "True Positives / (True Positives + False Negatives).",
+      "valueB": "True Negatives / (True Negatives + False Positives).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "clinical-use",
+      "label": "Clinical Use Case",
+      "valueA": "A highly sensitive test is preferred for screening, to minimize missed cases (few false negatives).",
+      "valueB": "A highly specific test is preferred for confirmation, to minimize falsely diagnosing healthy people (few false positives)."
+    },
+    {
+      "id": "mnemonic-relationship",
+      "label": "Mnemonic / Relationship",
+      "valueA": "\"SnNout\" \u2014 a highly SeNsitive test, when Negative, rules OUT disease.",
+      "valueB": "\"SpPin\" \u2014 a highly SPecific test, when Positive, rules IN disease."
+    },
+    {
+      "id": "tradeoff",
+      "label": "Trade-off Consideration",
+      "valueA": "Increasing sensitivity (e.g. lowering a cutoff) often decreases specificity, and vice versa.",
+      "valueB": "Increasing specificity often decreases sensitivity \u2014 the two must be balanced based on test purpose."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Ability to correctly identify those with disease.",
+      "valueB": "Ability to correctly identify those without disease.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "comp-incomplete-dominance-vs-codominance",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "inheritance-patterns"
+  ],
+  "itemA": {
+    "name": "Incomplete Dominance"
+  },
+  "itemB": {
+    "name": "Codominance"
+  },
+  "overview": "Two non-Mendelian inheritance patterns where heterozygotes don't simply show the dominant trait, but the resulting phenotype differs in an important way.",
+  "genZNote": "Incomplete dominance blends the paint. Codominance keeps both colors separate, side by side.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A pattern in which the heterozygote phenotype is an intermediate blend between the two homozygous phenotypes.",
+      "valueB": "A pattern in which both alleles are fully and separately expressed in the heterozygote, with neither masking the other."
+    },
+    {
+      "id": "heterozygote-phenotype",
+      "label": "Heterozygote Phenotype",
+      "valueA": "A blended, intermediate phenotype (e.g. pink flowers from red and white parents).",
+      "valueB": "Both parental phenotypes appear simultaneously and distinctly (e.g. AB blood type showing both A and B antigens).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "classic-example",
+      "label": "Classic Example",
+      "valueA": "Snapdragon flower color: red x white = pink.",
+      "valueB": "ABO blood group: IA and IB alleles are codominant, producing type AB blood."
+    },
+    {
+      "id": "molecular-basis",
+      "label": "Molecular Basis",
+      "valueA": "Often reflects partial function/dosage effects of a single gene product (e.g. half the normal amount of pigment).",
+      "valueB": "Reflects two distinct, independently functioning gene products both being produced and detectable."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Traits blend into an intermediate phenotype.",
+      "valueB": "Both traits appear fully and separately, without blending.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

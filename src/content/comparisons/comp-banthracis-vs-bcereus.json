@@ -1,0 +1,74 @@
+{
+  "id": "comp-banthracis-vs-bcereus",
+  "domain": "bacteriology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "bacteriology",
+    "clinical-microbiology",
+    "spore-forming"
+  ],
+  "itemA": {
+    "name": "Bacillus anthracis",
+    "refKind": "organism",
+    "refId": "bacillus-anthracis"
+  },
+  "itemB": {
+    "name": "Bacillus cereus",
+    "refKind": "organism",
+    "refId": "bacillus-cereus"
+  },
+  "overview": "Two closely related, spore-forming Gram-positive rods within the same genus, distinguished mainly by motility, hemolysis, and the diseases they cause.",
+  "genZNote": "B. anthracis stays still and means business. B. cereus swims around and just wants your leftover rice.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A non-motile, spore-forming Gram-positive rod causing anthrax, notable for its plasmid-encoded toxin and capsule.",
+      "valueB": "A motile, spore-forming Gram-positive rod best known as a cause of foodborne illness (emetic and diarrheal syndromes)."
+    },
+    {
+      "id": "motility",
+      "label": "Motility",
+      "valueA": "Non-motile.",
+      "valueB": "Motile via peritrichous flagella.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "hemolysis",
+      "label": "Hemolysis on Blood Agar",
+      "valueA": "Typically non-hemolytic or weakly hemolytic.",
+      "valueB": "Beta-hemolytic."
+    },
+    {
+      "id": "virulence-factors",
+      "label": "Virulence Factors",
+      "valueA": "Tripartite exotoxin (protective antigen, lethal factor, edema factor) plus an antiphagocytic poly-D-glutamic acid capsule, both plasmid-encoded.",
+      "valueB": "Emetic toxin (cereulide, heat-stable) and diarrheal enterotoxins (heat-labile)."
+    },
+    {
+      "id": "clinical-presentation",
+      "label": "Clinical Presentation",
+      "valueA": "Cutaneous, inhalational, or gastrointestinal anthrax; inhalational form is highly lethal.",
+      "valueB": "Self-limited food poisoning \u2014 emetic type (associated with reheated rice) or diarrheal type (associated with meats/sauces)."
+    },
+    {
+      "id": "colony-morphology",
+      "label": "Colony Morphology",
+      "valueA": "Large, non-hemolytic, \"Medusa head\" or \"ground glass\" colonies with tenacious texture.",
+      "valueB": "Large, spreading, beta-hemolytic colonies, often described as \"frosted glass\" appearance."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Non-motile, non-hemolytic, causes anthrax.",
+      "valueB": "Motile, beta-hemolytic, causes food poisoning.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

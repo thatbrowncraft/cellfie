@@ -1,0 +1,62 @@
+{
+  "id": "comp-innate-vs-adaptive-immunity",
+  "domain": "immunology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Innate Immunity"
+  },
+  "itemB": {
+    "name": "Adaptive Immunity"
+  },
+  "overview": "The two major arms of the immune system, distinguished by speed, specificity, and whether they remember past encounters.",
+  "genZNote": "Innate: the bouncer at the door, no questions asked. Adaptive: intelligence agency that remembers your face forever.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The immune system's rapid, non-specific first line of defense, present from birth.",
+      "valueB": "The immune system's slower, highly specific response that improves with repeated exposure to a pathogen."
+    },
+    {
+      "id": "speed-of-response",
+      "label": "Speed of Response",
+      "valueA": "Immediate to within hours.",
+      "valueB": "Days to develop initially, but much faster on re-exposure due to memory.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "specificity",
+      "label": "Specificity",
+      "valueA": "Recognizes broad, shared molecular patterns (PAMPs) via pattern recognition receptors.",
+      "valueB": "Recognizes specific antigens via highly diverse B-cell and T-cell receptors."
+    },
+    {
+      "id": "memory",
+      "label": "Immunological Memory",
+      "valueA": "No memory \u2014 responds the same way every time.",
+      "valueB": "Generates memory B and T cells for faster, stronger responses upon re-exposure."
+    },
+    {
+      "id": "key-components",
+      "label": "Key Cellular/Molecular Components",
+      "valueA": "Neutrophils, macrophages, natural killer cells, complement system, physical barriers.",
+      "valueB": "B lymphocytes, T lymphocytes, antibodies, and antigen-presenting cells that bridge to innate immunity."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Fast, non-specific, no memory.",
+      "valueB": "Slower initially, highly specific, generates memory.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

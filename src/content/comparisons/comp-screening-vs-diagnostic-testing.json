@@ -1,0 +1,63 @@
+{
+  "id": "comp-screening-vs-diagnostic-testing",
+  "domain": "diagnostics",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "diagnostics",
+    "clinical-laboratory-science"
+  ],
+  "itemA": {
+    "name": "Screening Test"
+  },
+  "itemB": {
+    "name": "Diagnostic Test"
+  },
+  "overview": "Two different roles a laboratory test can play, distinguished by the population tested and the purpose of the result.",
+  "genZNote": "Screening casts a wide net. Diagnostic testing zeroes in on the catch.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A test applied to a large, typically asymptomatic population to identify individuals at higher risk who need further evaluation.",
+      "valueB": "A test applied to symptomatic individuals or those with a positive screen, aimed at confirming or ruling out a specific disease."
+    },
+    {
+      "id": "target-population",
+      "label": "Target Population",
+      "valueA": "Asymptomatic, general or at-risk population.",
+      "valueB": "Symptomatic individuals or those already flagged by a screening test.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "test-characteristics-prioritized",
+      "label": "Test Characteristics Prioritized",
+      "valueA": "Prioritizes high sensitivity to avoid missing cases, accepting some false positives.",
+      "valueB": "Prioritizes high specificity to confirm true disease and avoid false diagnoses."
+    },
+    {
+      "id": "cost-and-invasiveness",
+      "label": "Cost and Invasiveness",
+      "valueA": "Generally cheaper, faster, and less invasive (suitable for widespread use).",
+      "valueB": "Often more expensive, slower, or more invasive, justified by the need for diagnostic certainty."
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Mammography for breast cancer screening; PSA test.",
+      "valueB": "Breast biopsy to confirm a diagnosis suggested by an abnormal mammogram."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Applied broadly to detect risk in asymptomatic people.",
+      "valueB": "Applied narrowly to confirm disease in suspected cases.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

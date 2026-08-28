@@ -1,0 +1,64 @@
+{
+  "id": "comp-prophage-vs-plasmid",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "specialized",
+  "audience": [
+    "researcher",
+    "student"
+  ],
+  "tags": [
+    "microbiology",
+    "genetics",
+    "mobile-genetic-elements"
+  ],
+  "itemA": {
+    "name": "Prophage"
+  },
+  "itemB": {
+    "name": "Plasmid"
+  },
+  "overview": "Two mobile genetic elements that can persist in a bacterial cell, distinguished by their origin as a virus versus an independent extrachromosomal circle of DNA.",
+  "genZNote": "Prophage: a virus napping inside your genome. Plasmid: DNA that just moved in as a roommate.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The genome of a temperate bacteriophage integrated into (or existing as an episome within) the host bacterial chromosome during lysogeny.",
+      "valueB": "A small, typically circular, extrachromosomal DNA molecule that replicates independently of the bacterial chromosome."
+    },
+    {
+      "id": "origin",
+      "label": "Origin",
+      "valueA": "Derived from a bacteriophage that infected the cell and entered the lysogenic cycle instead of lysing it.",
+      "valueB": "Not viral in origin \u2014 an independently evolved genetic element, though some plasmids can be mobilized like phages.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "replication",
+      "label": "Replication",
+      "valueA": "Replicates passively along with the host chromosome while integrated; can excise and replicate as a phage during induction.",
+      "valueB": "Replicates independently using its own origin of replication, sometimes at high copy number."
+    },
+    {
+      "id": "genes-carried",
+      "label": "Genes Often Carried",
+      "valueA": "Phage structural/lysis genes plus sometimes toxin genes (lysogenic conversion, e.g. diphtheria or Shiga toxin).",
+      "valueB": "Antibiotic resistance genes, virulence factors, or metabolic genes (e.g. F plasmid, R plasmids)."
+    },
+    {
+      "id": "transfer-mechanism",
+      "label": "Transfer Mechanism",
+      "valueA": "Spread via transduction when the prophage excises and packages into new phage particles.",
+      "valueB": "Spread via conjugation (if conjugative) or transformation."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Viral genome integrated in the host; can trigger lysis.",
+      "valueB": "Independent extrachromosomal DNA circle; not derived from a virus.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

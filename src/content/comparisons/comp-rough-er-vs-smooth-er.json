@@ -1,0 +1,63 @@
+{
+  "id": "comp-rough-er-vs-smooth-er",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "organelles",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Rough Endoplasmic Reticulum"
+  },
+  "itemB": {
+    "name": "Smooth Endoplasmic Reticulum"
+  },
+  "overview": "Two continuous regions of the same organelle network, distinguished by the presence or absence of ribosomes and by function.",
+  "genZNote": "Rough ER: protein factory with a bumpy roof. Smooth ER: the chill lipid lab next door.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "ER studded with ribosomes on its cytoplasmic surface, specialized for synthesizing and processing proteins destined for secretion or membranes.",
+      "valueB": "ER without ribosomes, specialized for lipid synthesis, detoxification, and calcium storage."
+    },
+    {
+      "id": "ribosomes",
+      "label": "Ribosome Presence",
+      "valueA": "Studded with ribosomes, giving it a \"rough\" appearance under the microscope.",
+      "valueB": "Lacks ribosomes, giving it a smooth appearance.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Primary Function",
+      "valueA": "Synthesis, folding, and initial modification (e.g. glycosylation) of secretory and membrane proteins.",
+      "valueB": "Lipid and steroid synthesis, carbohydrate metabolism, and detoxification of drugs/toxins (notable in liver cells)."
+    },
+    {
+      "id": "abundance",
+      "label": "Relative Abundance by Cell Type",
+      "valueA": "Abundant in cells that secrete large amounts of protein (e.g. pancreatic acinar cells, plasma cells).",
+      "valueB": "Abundant in cells with high lipid/steroid synthesis or detoxification needs (e.g. liver hepatocytes, steroid-producing gonadal cells)."
+    },
+    {
+      "id": "calcium-storage",
+      "label": "Calcium Storage",
+      "valueA": "Some capacity, but this is a more prominent smooth ER role.",
+      "valueB": "Major site of calcium ion storage and release, especially in muscle cells (sarcoplasmic reticulum)."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Ribosome-studded, protein synthesis/processing.",
+      "valueB": "Ribosome-free, lipid synthesis and detoxification.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

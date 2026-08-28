@@ -1,0 +1,63 @@
+{
+  "id": "comp-km-vs-vmax",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student",
+    "researcher"
+  ],
+  "tags": [
+    "biochemistry",
+    "enzyme-kinetics"
+  ],
+  "itemA": {
+    "name": "Km (Michaelis Constant)"
+  },
+  "itemB": {
+    "name": "Vmax (Maximum Velocity)"
+  },
+  "overview": "The two defining parameters of Michaelis-Menten enzyme kinetics, each describing a different aspect of an enzyme's behavior.",
+  "genZNote": "Km is how clingy the enzyme is. Vmax is its top speed.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "The substrate concentration at which reaction velocity is half of Vmax \u2014 an inverse measure of enzyme-substrate affinity.",
+      "valueB": "The maximum reaction velocity achieved when the enzyme is fully saturated with substrate."
+    },
+    {
+      "id": "what-it-measures",
+      "label": "What It Measures",
+      "valueA": "Enzyme affinity for substrate \u2014 a low Km means high affinity (saturates at low substrate).",
+      "valueB": "Catalytic capacity/turnover \u2014 determined mainly by enzyme concentration and kcat.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "units",
+      "label": "Units",
+      "valueA": "Concentration units (e.g. mM, \u00b5M), same as substrate concentration.",
+      "valueB": "Rate units (e.g. \u00b5mol/min), same as reaction velocity."
+    },
+    {
+      "id": "dependence-on-enzyme-amount",
+      "label": "Dependence on Enzyme Concentration",
+      "valueA": "Independent of enzyme concentration \u2014 an intrinsic property of the enzyme-substrate pair.",
+      "valueB": "Directly proportional to enzyme concentration \u2014 doubling enzyme doubles Vmax."
+    },
+    {
+      "id": "graphical-representation",
+      "label": "Graphical Representation",
+      "valueA": "The x-axis value where velocity = Vmax/2 on a Michaelis-Menten plot.",
+      "valueB": "The plateau/asymptote of the Michaelis-Menten curve."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Reflects substrate affinity; independent of enzyme amount.",
+      "valueB": "Reflects maximum rate; scales with enzyme amount.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

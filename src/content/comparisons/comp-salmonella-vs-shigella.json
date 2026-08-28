@@ -1,0 +1,80 @@
+{
+  "id": "comp-salmonella-vs-shigella",
+  "domain": "bacteriology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student",
+    "lab-learner"
+  ],
+  "tags": [
+    "bacteriology",
+    "enteric-pathogens",
+    "clinical-microbiology"
+  ],
+  "itemA": {
+    "name": "Salmonella enterica",
+    "refKind": "organism",
+    "refId": "salmonella-enterica"
+  },
+  "itemB": {
+    "name": "Shigella dysenteriae",
+    "refKind": "organism",
+    "refId": "shigella-dysenteriae"
+  },
+  "overview": "Two closely related Gram-negative enteric rods that both cause diarrheal disease but differ sharply in infectious dose, motility, and disease mechanism.",
+  "genZNote": "Salmonella swims in, Shigella just needs a few friends to crash the party.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "A motile, Gram-negative rod causing gastroenteritis (non-typhoidal) or typhoid fever (S. Typhi), typically via contaminated food or water.",
+      "valueB": "A non-motile, Gram-negative rod causing bacillary dysentery (shigellosis) via a very low infectious dose."
+    },
+    {
+      "id": "motility",
+      "label": "Motility",
+      "valueA": "Motile via peritrichous flagella.",
+      "valueB": "Non-motile.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "infectious-dose",
+      "label": "Infectious Dose",
+      "valueA": "Relatively high infectious dose typically required.",
+      "valueB": "Very low infectious dose (as few as 10-100 organisms) due to acid resistance."
+    },
+    {
+      "id": "biochemical-characteristics",
+      "label": "Biochemical Characteristics",
+      "valueA": "H2S-positive, lactose-non-fermenter, motile on TSI/motility media.",
+      "valueB": "H2S-negative (usually), lactose-non-fermenter, non-motile."
+    },
+    {
+      "id": "virulence",
+      "label": "Virulence Mechanism",
+      "valueA": "Invades intestinal epithelium via a Type III secretion system encoded on Salmonella pathogenicity islands.",
+      "valueB": "Invades colonic epithelium and spreads cell-to-cell via actin-based motility; may produce Shiga toxin."
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Ranges from self-limited gastroenteritis to invasive typhoid/paratyphoid fever with bacteremia.",
+      "valueB": "Classic cause of bloody, mucus-containing dysentery with severe abdominal cramping."
+    },
+    {
+      "id": "identification",
+      "label": "Identification",
+      "valueA": "Grows on selective media like XLD or Hektoen enteric agar, producing black-centered (H2S+) colonies.",
+      "valueB": "Grows on XLD/Hektoen agar without black centers (H2S-negative), motility-negative on stab media."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Motile, H2S-positive, higher infectious dose.",
+      "valueB": "Non-motile, H2S-negative, extremely low infectious dose.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "comp-base-editing-vs-prime-editing",
+  "domain": "molecular-biology",
+  "difficulty": "expert",
+  "frequency": "specialized",
+  "audience": [
+    "researcher"
+  ],
+  "tags": [
+    "biotechnology",
+    "gene-editing"
+  ],
+  "itemA": {
+    "name": "Base Editing"
+  },
+  "itemB": {
+    "name": "Prime Editing"
+  },
+  "overview": "Two next-generation CRISPR-derived genome-editing technologies that avoid double-strand breaks, differing in scope and flexibility of the edits they can make.",
+  "genZNote": "Base editing swaps one letter. Prime editing rewrites whole words without breaking the page.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Uses a catalytically impaired Cas9 fused to a deaminase enzyme to directly convert one DNA base to another without cutting both strands.",
+      "valueB": "Uses a Cas9 nickase fused to a reverse transcriptase and a prime editing guide RNA (pegRNA) to directly write new genetic information into a target site."
+    },
+    {
+      "id": "scope-of-edits",
+      "label": "Scope of Possible Edits",
+      "valueA": "Limited to specific base conversions \u2014 cytosine base editors (C-to-T) and adenine base editors (A-to-G).",
+      "valueB": "Highly versatile \u2014 can perform all 12 possible base-to-base conversions, plus small insertions and deletions.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "double-strand-breaks",
+      "label": "Double-Strand Breaks",
+      "valueA": "Avoids double-strand breaks entirely, minimizing large indels.",
+      "valueB": "Also avoids double-strand breaks, using a nick-and-write mechanism instead."
+    },
+    {
+      "id": "precision",
+      "label": "Precision / Editing Window",
+      "valueA": "Edits within a defined window near the target site; can produce unwanted \"bystander\" edits of nearby bases.",
+      "valueB": "Highly precise, defined edits with minimal bystander effects, though efficiency can be lower."
+    },
+    {
+      "id": "applications",
+      "label": "Applications",
+      "valueA": "Correcting point mutations caused by a single specific base change (e.g. some forms of sickle cell disease research).",
+      "valueB": "Correcting a broader range of mutations, including insertions, deletions, and all substitution types, for research and therapeutic development."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Converts one specific base to another directly.",
+      "valueB": "Writes new, flexible genetic sequences using a reverse transcriptase and pegRNA.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

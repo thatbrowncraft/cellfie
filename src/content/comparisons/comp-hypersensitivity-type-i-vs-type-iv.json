@@ -1,0 +1,62 @@
+{
+  "id": "comp-hypersensitivity-type-i-vs-type-iv",
+  "domain": "immunology",
+  "difficulty": "advanced",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology",
+    "clinical"
+  ],
+  "itemA": {
+    "name": "Type I Hypersensitivity"
+  },
+  "itemB": {
+    "name": "Type IV Hypersensitivity"
+  },
+  "overview": "Two of the four Gell and Coombs hypersensitivity types, distinguished by speed of onset and whether antibodies or T cells drive the reaction.",
+  "genZNote": "Type I: instant regret (allergies). Type IV: the delayed callback (poison ivy, TB skin test).",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "An immediate, IgE-mediated hypersensitivity reaction triggered by mast cell and basophil degranulation.",
+      "valueB": "A delayed, T-cell-mediated hypersensitivity reaction not involving antibodies."
+    },
+    {
+      "id": "mediator",
+      "label": "Primary Mediator",
+      "valueA": "IgE antibodies bound to mast cells/basophils, with histamine release upon antigen cross-linking.",
+      "valueB": "Sensitized T cells (Th1) releasing cytokines that recruit and activate macrophages.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "time-course",
+      "label": "Time Course",
+      "valueA": "Immediate \u2014 occurs within minutes of antigen exposure.",
+      "valueB": "Delayed \u2014 typically develops 24-72 hours after antigen exposure."
+    },
+    {
+      "id": "classic-examples",
+      "label": "Classic Examples",
+      "valueA": "Anaphylaxis, allergic rhinitis, asthma, food allergies, urticaria.",
+      "valueB": "Contact dermatitis (e.g. poison ivy), tuberculin skin test (PPD) reaction, graft rejection."
+    },
+    {
+      "id": "antibody-involvement",
+      "label": "Antibody Involvement",
+      "valueA": "Central \u2014 IgE is required.",
+      "valueB": "None \u2014 purely cell-mediated."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "IgE-mediated, immediate onset.",
+      "valueB": "T-cell-mediated, delayed onset (24-72 hours).",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}

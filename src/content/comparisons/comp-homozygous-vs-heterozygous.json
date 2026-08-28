@@ -1,0 +1,62 @@
+{
+  "id": "comp-homozygous-vs-heterozygous",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "foundations"
+  ],
+  "itemA": {
+    "name": "Homozygous"
+  },
+  "itemB": {
+    "name": "Heterozygous"
+  },
+  "overview": "The two possible allele combinations at a single gene locus, with real consequences for which trait is expressed.",
+  "genZNote": "Homozygous: matching socks. Heterozygous: one of each, dominant one wins the outfit.",
+  "aspects": [
+    {
+      "id": "overview",
+      "label": "Overview / Core Definition",
+      "valueA": "Having two identical alleles for a given gene (e.g. AA or aa).",
+      "valueB": "Having two different alleles for a given gene (e.g. Aa)."
+    },
+    {
+      "id": "allele-combination",
+      "label": "Allele Combination",
+      "valueA": "Both alleles are the same \u2014 either homozygous dominant (AA) or homozygous recessive (aa).",
+      "valueB": "One dominant and one recessive allele present together (Aa).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "phenotype-expressed",
+      "label": "Phenotype Expressed",
+      "valueA": "Homozygous dominant expresses the dominant trait; homozygous recessive expresses the recessive trait.",
+      "valueB": "Expresses the dominant trait if simple dominance applies, or an intermediate/blended trait under incomplete dominance."
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "BB (homozygous dominant, brown eyes) or bb (homozygous recessive, blue eyes).",
+      "valueB": "Bb \u2014 carries one brown allele and one blue allele, but expresses brown eyes if brown is dominant."
+    },
+    {
+      "id": "carrier-status",
+      "label": "Carrier Status for Recessive Conditions",
+      "valueA": "Homozygous recessive individuals are affected by recessive genetic disorders.",
+      "valueB": "Heterozygous individuals are typically unaffected carriers of a recessive disorder allele."
+    },
+    {
+      "id": "key-distinguishing-feature",
+      "label": "Key Distinguishing Feature",
+      "valueA": "Two identical alleles at a locus.",
+      "valueB": "Two different alleles at a locus.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-01-01"
+}
