@@ -281,7 +281,7 @@ export function ComparisonEnrichmentPanel({
             size="small"
             icon={<Sparkle size={16} />}
             disabled={mode === 'specific-source' && !libraryItemId && activeTab === 'my-library'}
-            onClick={runSearch}
+            onClick={() => runSearch()}
           >
             Find information for this comparison
           </Button>
