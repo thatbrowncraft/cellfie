@@ -4,6 +4,7 @@ import { Button, Dropdown, EmptyState, type DropdownOption } from '../../../shar
 import { db, type LibraryItem } from '../../../core/db'
 import { useLiveQuery } from '../../../core/db/useLiveQuery'
 import {
+  contentAvailabilityLabel,
   lookupLabTopicKnowledge,
   type KnowledgeSourceMode,
   type LabKnowledgeLookupResult,
@@ -30,6 +31,12 @@ interface LabSourcesPanelProps {
  * "do not silently mix... into one anonymous answer"), and "My Library"
  * vs "Online Knowledge" are two clearly separate tabs that never blend
  * their results into a single unattributed block.
+ *
+ * COMPLIANCE PATCH: renders `generalReference.attributionNotice` when
+ * present (NCBI attribution for PubMed results, a conservative-reuse
+ * notice for Europe PMC/Crossref abstract excerpts — see
+ * `core/knowledge/attribution.ts`). No behavior change beyond that one
+ * extra line of text.
  */
 export function LabSourcesPanel({ title, contentId }: LabSourcesPanelProps) {
   const [activeTab, setActiveTab] = useState<'my-library' | 'online'>('my-library')
@@ -124,13 +131,27 @@ function LibraryLookup({ title, contentId }: { title: string; contentId: string 
   const [result, setResult] = useState<LabKnowledgeLookupResult | null>(null)
   const [mode, setMode] = useState<Extract<KnowledgeSourceMode, 'my-sources' | 'specific-source'>>('my-sources')
   const [libraryItemId, setLibraryItemId] = useState<string | undefined>(undefined)
+  /**
+   * SEARCH AGAIN FIX (My Library): every excerpt id (`${libraryItemId}:${page}`,
+   * see `LibrarySourceExcerpt.id`) shown for this topic is remembered
+   * for the lifetime of this panel and passed back as `excludeIds` on
+   * the next search, mirroring `OnlineLookup`'s `shownIds` below —
+   * without this, "Search again" re-ran the exact same deterministic
+   * library scan and always returned the same excerpts.
+   */
+  const [shownExcerptIds, setShownExcerptIds] = useState<string[]>([])
 
   const libraryItems = useLiveQuery<LibraryItem[]>(() => db.libraryItems.orderBy('createdAt').reverse().toArray(), [], [])
   const bookOptions: DropdownOption[] = libraryItems.map((item) => ({ value: item.id, label: item.title }))
 
-  async function runSearch() {
+  async function runSearch(excludeIds?: string[]) {
     setStatus('searching')
-    const lookup = await lookupLabTopicKnowledge(title, contentId, { mode, libraryItemId: mode === 'specific-source' ? libraryItemId : undefined })
+    const lookup = await lookupLabTopicKnowledge(title, contentId, {
+      mode,
+      libraryItemId: mode === 'specific-source' ? libraryItemId : undefined,
+      excludeIds
+    })
+    if (lookup.libraryExcerpts?.length) setShownExcerptIds((prev) => [...prev, ...lookup.libraryExcerpts!.map((e) => e.id)])
     setResult(lookup)
     setStatus(lookup.status)
   }
@@ -164,6 +185,16 @@ function LibraryLookup({ title, contentId }: { title: string; contentId: string 
     )
   }
 
+  if (status === 'exhausted') {
+    return (
+      <EmptyState
+        icon={<Books size={32} />}
+        title="No more matching excerpts"
+        description={`Every matching excerpt Cellfie found for “${title}” in your library has already been shown.`}
+      />
+    )
+  }
+
   if (status === 'not-found-in-source') {
     return (
       <div className="flex flex-col gap-3">
@@ -177,7 +208,7 @@ function LibraryLookup({ title, contentId }: { title: string; contentId: string 
           }
         />
         {sourcePicker()}
-        <Button variant="secondary" size="small" onClick={runSearch}>
+        <Button variant="secondary" size="small" onClick={() => runSearch(shownExcerptIds)}>
           Search again
         </Button>
       </div>
@@ -191,7 +222,7 @@ function LibraryLookup({ title, contentId }: { title: string; contentId: string 
         title="Search is taking longer than expected"
         description="Your library may be large, or a document is slow to read on this device. It's safe to try again."
         action={
-          <Button variant="secondary" size="small" onClick={runSearch}>
+          <Button variant="secondary" size="small" onClick={() => runSearch(shownExcerptIds)}>
             Try again
           </Button>
         }
@@ -232,7 +263,7 @@ function LibraryLookup({ title, contentId }: { title: string; contentId: string 
         size="small"
         icon={<CaretRight size={16} />}
         disabled={mode === 'specific-source' && !libraryItemId}
-        onClick={runSearch}
+        onClick={() => runSearch(shownExcerptIds)}
       >
         Search my library for “{title}”
       </Button>
@@ -247,10 +278,20 @@ function LibraryLookup({ title, contentId }: { title: string; contentId: string 
 function OnlineLookup({ title, contentId }: { title: string; contentId: string }) {
   const [status, setStatus] = useState<'idle' | 'searching' | LabKnowledgeLookupStatus>('idle')
   const [result, setResult] = useState<LabKnowledgeLookupResult | null>(null)
+  /**
+   * Root-cause fix ("Search again keeps showing the same Europe PMC
+   * abstract"): every id shown for this topic is remembered for the
+   * lifetime of this panel and passed back as `excludeIds` on the next
+   * search, so the shared multi-source pool (core/knowledge) advances
+   * to a genuinely different candidate/source instead of re-fetching
+   * the same deterministic top hit.
+   */
+  const [shownIds, setShownIds] = useState<string[]>([])
 
-  async function runSearch() {
+  async function runSearch(excludeIds?: string[]) {
     setStatus('searching')
-    const lookup = await lookupLabTopicKnowledge(title, contentId, { mode: 'trusted' })
+    const lookup = await lookupLabTopicKnowledge(title, contentId, { mode: 'trusted', excludeIds })
+    if (lookup.generalReference) setShownIds((prev) => [...prev, lookup.generalReference!.id])
     setResult(lookup)
     setStatus(lookup.status)
   }
@@ -266,7 +307,7 @@ function OnlineLookup({ title, contentId }: { title: string; contentId: string }
         title="You're offline"
         description="Online Knowledge needs a connection. Cellfie's curated content above still works offline."
         action={
-          <Button variant="secondary" size="small" onClick={runSearch}>
+          <Button variant="secondary" size="small" onClick={() => runSearch()}>
             Try again
           </Button>
         }
@@ -281,7 +322,7 @@ function OnlineLookup({ title, contentId }: { title: string; contentId: string }
         title="Couldn't retrieve this right now"
         description="Something went wrong reaching external sources."
         action={
-          <Button variant="secondary" size="small" onClick={runSearch}>
+          <Button variant="secondary" size="small" onClick={() => runSearch(shownIds)}>
             Try again
           </Button>
         }
@@ -298,6 +339,16 @@ function OnlineLookup({ title, contentId }: { title: string; contentId: string }
     )
   }
 
+  if (status === 'exhausted') {
+    return (
+      <EmptyState
+        icon={<Globe size={32} />}
+        title="No more distinct online results found"
+        description={`Every trusted source Cellfie checked for “${title}” has already been shown.`}
+      />
+    )
+  }
+
   if (status === 'found' && result) {
     return (
       <div className="flex flex-col gap-4">
@@ -310,9 +361,12 @@ function OnlineLookup({ title, contentId }: { title: string; contentId: string }
               rel="noreferrer"
               className="mt-1 inline-block font-ui text-caption text-olive hover:underline"
             >
-              {result.generalReference.isAbstract ? 'Abstract from ' : 'From '}
+              {contentAvailabilityLabel(result.generalReference.contentAvailability)}{' '}
               {result.generalReference.sourceName}
             </a>
+            {result.generalReference.attributionNotice && (
+              <p className="mt-1 font-body text-micro text-ink-tertiary">{result.generalReference.attributionNotice}</p>
+            )}
             <div className="mt-2">
               <SaveExcerptButton
                 onSave={() =>
@@ -352,7 +406,7 @@ function OnlineLookup({ title, contentId }: { title: string; contentId: string }
             </div>
           </div>
         )}
-        <Button variant="tertiary" size="small" onClick={() => setStatus('idle')}>
+        <Button variant="tertiary" size="small" onClick={() => runSearch(shownIds)}>
           Search again
         </Button>
       </div>
@@ -362,7 +416,7 @@ function OnlineLookup({ title, contentId }: { title: string; contentId: string }
   return (
     <div className="flex flex-col gap-3">
       <p className="font-body text-caption text-ink-tertiary">Not part of Cellfie's curated content lookup yet — check current external sources.</p>
-      <Button variant="secondary" size="small" icon={<CaretRight size={16} />} onClick={runSearch}>
+      <Button variant="secondary" size="small" icon={<CaretRight size={16} />} onClick={() => runSearch()}>
         Search online knowledge for “{title}”
       </Button>
     </div>
