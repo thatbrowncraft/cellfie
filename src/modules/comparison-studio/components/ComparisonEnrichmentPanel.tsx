@@ -49,7 +49,7 @@ interface ComparisonEnrichmentPanelProps {
  *
  * COMPLIANCE PATCH: `sideBlock` now also renders
  * `generalReference.attributionNotice` when present (NCBI attribution
- * for PubMed, a conservative-reuse notice for Europe PMC/Crossref
+ * for PubMed/Bookshelf, a conservative-reuse notice for Europe PMC
  * abstract excerpts — see `core/knowledge/attribution.ts`). No other
  * behavior change.
  */

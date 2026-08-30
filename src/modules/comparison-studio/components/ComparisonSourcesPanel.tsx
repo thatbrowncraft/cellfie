@@ -54,8 +54,8 @@ interface ComparisonSourcesPanelProps {
  * "draft → review → Accept/Dismiss" workflow exactly.
  *
  * COMPLIANCE PATCH: renders `generalReference.attributionNotice` when
- * present (NCBI attribution for PubMed results, a conservative-reuse
- * notice for Europe PMC/Crossref abstract excerpts — see
+ * present (NCBI attribution for PubMed/Bookshelf results, a
+ * conservative-reuse notice for Europe PMC abstract excerpts — see
  * `core/knowledge/attribution.ts`). No other behavior change.
  *
  * The caller MUST key this component by `topicId` (or equivalently by
