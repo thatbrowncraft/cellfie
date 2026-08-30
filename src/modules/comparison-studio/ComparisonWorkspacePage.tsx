@@ -504,7 +504,20 @@ export function ComparisonWorkspacePage() {
       <Dialog open={Boolean(sourcesFor)} onClose={() => setSourcesFor(null)} title="Find more for this aspect" size="lg">
         {sourcesFor && (
           <ComparisonSourcesPanel
+            // Second-pass fix (audit brief §5): without a stable `key`,
+            // React would reuse the SAME ComparisonSourcesPanel instance
+            // (and its internal `shownIds` Search-Again state) across two
+            // different aspects if the user opened "Find more" for one
+            // row, then another, without the dialog fully closing/
+            // reopening in between — exactly the "PCR/Principle
+            // exclusions leaking into PCR/Procedure" bug generalized to
+            // Comparison Studio. `topicId` already uniquely identifies
+            // (comparison, aspect, side), so it's also the correct
+            // React key: a genuinely new topic/aspect/side always gets a
+            // fresh component instance and a fresh search session.
+            key={`${id}:${sourcesFor.aspect.id}:${sourcesFor.side}`}
             title={sourcesFor.side === 'A' ? comparison.itemA.name : comparison.itemB.name}
+            comparedAgainst={sourcesFor.side === 'A' ? comparison.itemB.name : comparison.itemA.name}
             aspectLabel={sourcesFor.aspect.label}
             topicId={`${id}:${sourcesFor.aspect.id}:${sourcesFor.side}`}
             defaultTab={sourcesFor.defaultTab}
