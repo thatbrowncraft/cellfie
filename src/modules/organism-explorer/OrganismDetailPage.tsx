@@ -664,6 +664,11 @@ export function OrganismDetailPage() {
                       {organism.knowledgeLayer.generalReference.sourceName}
                     </a>
                   </p>
+                  {organism.knowledgeLayer.generalReference.attributionNotice && (
+                    <p className="mt-1 font-ui text-micro text-ink-tertiary">
+                      {organism.knowledgeLayer.generalReference.attributionNotice}
+                    </p>
+                  )}
                 </div>
               )}
               {organism.knowledgeLayer.meshScopeNote && (
