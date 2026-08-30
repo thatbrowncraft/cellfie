@@ -14,7 +14,7 @@
  *     `core/concepts/documentText`) — genuinely generic term search over
  *     the user's own imported books, nothing organism-specific about it.
  *   - "Online Knowledge" mode reuses the SHARED multi-source Knowledge
- *     Layer (`core/knowledge`, Europe PMC + Crossref + PubMed) for its
+ *     Layer (`core/knowledge`, Europe PMC + NCBI Bookshelf + PubMed) for its
  *     general-reference excerpt, and `fetchMeshClassification` from
  *     `core/concepts/onlineKnowledge` for its supplementary NCBI MeSH
  *     scope note — the same MeSH lookup the Concept Hub and Organism
@@ -41,7 +41,7 @@
  */
 import { db } from '../db'
 import { fetchMeshClassification, isLikelyOnline, type MeshClassification } from '../concepts/onlineKnowledge'
-import { contentAvailabilityLabel, searchKnowledgeEnrichment, type ContentAvailability, type KnowledgeQueryContext } from '../knowledge'
+import { contentAvailabilityLabel, resultDisplayText, searchKnowledgeEnrichment, type ContentAvailability, type KnowledgeQueryContext } from '../knowledge'
 import { lookupInAllLibrarySources, lookupInSpecificLibrarySource, LibrarySearchTimeoutError } from '../organisms/librarySources'
 import type { KnowledgeSourceMode, LibrarySourceExcerpt, OrganismSource as LabSource } from '../organisms/types'
 
@@ -93,7 +93,7 @@ export interface LabKnowledgeLookupResult {
     isAbstract?: boolean
     contentAvailability?: ContentAvailability
     fullTextUrl?: string
-    /** Compliance patch: NCBI attribution (PubMed) or a conservative-reuse notice (Europe PMC/Crossref abstract excerpt) — see `core/knowledge/attribution.ts`. `undefined` for bare metadata, which needs none. */
+    /** Compliance patch: NCBI attribution (PubMed/Bookshelf) or a conservative-reuse notice (Europe PMC abstract excerpt) — see `core/knowledge/attribution.ts`. `undefined` for bare metadata, which needs none. */
     attributionNotice?: string
   }
   meshScopeNote?: { text: string; sourceName: string; sourceUrl: string }
@@ -323,7 +323,11 @@ async function lookupFromOnline(
     generalReference: online
       ? {
           id: online.id,
-          text: online.abstract ?? online.title,
+          // ROOT-CAUSE FIX (Replace Crossref brief §11): used to fall back to
+          // `online.title` when there was no abstract — silently presenting a
+          // bare title as if it were the enrichment excerpt. `resultDisplayText`
+          // is the one shared, honest fallback (see `core/knowledge/labels.ts`).
+          text: resultDisplayText(online),
           sourceName: online.sourceLabel,
           sourceUrl: online.externalUrl,
           isAbstract: online.contentAvailability === 'ABSTRACT',
