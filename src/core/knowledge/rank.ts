@@ -177,3 +177,39 @@ export function isUsefulCandidate(result: NormalizedKnowledgeResult, context: Kn
   const abstract = (result.abstract ?? '').toLowerCase()
   return terms.some((t) => title.includes(t) || abstract.includes(t))
 }
+
+/**
+ * FOURTH-PASS FIX (Europe PMC no-excerpt loop, "second fix" brief §1-4):
+ * `isUsefulCandidate` above answers "is this candidate topically
+ * relevant?" — it does NOT answer "does Cellfie actually have
+ * displayable content for it?". Those are different questions, and
+ * conflating them was the exact bug this fixes: a Europe PMC result
+ * whose abstract exists at the provider but whose reuse rights are
+ * unknown (see `../attribution.ts`'s `resolveAbstractPresentation`)
+ * ends up with `contentAvailability: 'METADATA_ONLY'` and no `abstract`
+ * text — topically relevant, genuinely a real paper, but nothing to
+ * actually show as enrichment. The old pipeline let a candidate like
+ * that occupy the primary enrichment slot as long as it passed
+ * `isUsefulCandidate`, which produced exactly the "No excerpt is
+ * available from this source" result the audit reported, sometimes
+ * repeatedly across several Search Again presses.
+ *
+ * This function is the "can Cellfie actually give the user useful
+ * content from this candidate" gate — true only for `FULL_TEXT` and
+ * `ABSTRACT` (i.e. `result.abstract` is genuinely populated).
+ * `METADATA_ONLY`/`EXTERNAL_LINK` candidates (including NCBI Bookshelf,
+ * which by design never populates `abstract` — see
+ * `adapters/ncbiBookshelf.ts` — and Europe PMC/PubMed results with an
+ * unresolved-rights or absent abstract) are never "enrichment usable",
+ * regardless of how strongly they match the query.
+ *
+ * This does NOT mean such a candidate is worthless or hidden — see
+ * `pickUseful` in `./index.ts`, which still surfaces it as an honestly-
+ * labeled reference-only result when NOTHING better exists in the pool
+ * (brief §18: "reference only / read at source" is an acceptable
+ * fallback, just never the thing that silently occupies the primary
+ * slot when a genuinely usable candidate was available instead).
+ */
+export function isEnrichmentUsable(result: NormalizedKnowledgeResult): boolean {
+  return (result.contentAvailability === 'FULL_TEXT' || result.contentAvailability === 'ABSTRACT') && Boolean(result.abstract)
+}

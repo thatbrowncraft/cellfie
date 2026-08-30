@@ -51,6 +51,14 @@
  * `NormalizedKnowledgeResult` already made every provider interchangeable
  * from this module's point of view.
  *
+ * SECOND-FIX ("Europe PMC no-excerpt loop" brief) — see `pickUseful`
+ * below for the full reasoning: candidate selection now distinguishes
+ * "topically relevant" from "has real displayable content" and always
+ * prefers the latter across the WHOLE pool, so a rights-withheld Europe
+ * PMC abstract or a bare Bookshelf/PubMed metadata record can no longer
+ * occupy the primary enrichment slot while a genuinely usable candidate
+ * sits unshown further down the same ranked pool.
+ *
  * FINANCIAL/CREDENTIAL SAFETY (brief §16/§17/§18): every adapter this
  * module calls is a plain `fetch()` against a public, key-free,
  * unauthenticated endpoint. There is no API key anywhere in this module
@@ -67,7 +75,7 @@ import { searchBookshelf } from './adapters/ncbiBookshelf'
 import { searchPubmed } from './adapters/pubmed'
 import { dedupeResults } from './dedupe'
 import { cacheKeyForContext } from './query'
-import { isUsefulCandidate, rankResults } from './rank'
+import { isEnrichmentUsable, isUsefulCandidate, rankResults } from './rank'
 import { resultDisplayText } from './labels'
 import type { KnowledgeQueryContext, KnowledgeSearchOptions, KnowledgeSearchResult, NormalizedKnowledgeResult } from './types'
 
@@ -116,8 +124,40 @@ function buildFallbackVariant(context: KnowledgeQueryContext): KnowledgeQueryCon
   return undefined
 }
 
+/**
+ * SECOND-FIX ("Europe PMC no-excerpt loop" brief §1-5): this used to be
+ * a single `pool.find(...)` with one predicate (`isUsefulCandidate` —
+ * topical relevance only), which meant a topically-relevant candidate
+ * with NO actual displayable content (a Europe PMC abstract withheld
+ * for unclear reuse rights, a bare NCBI Bookshelf/PubMed metadata
+ * record) could win the primary enrichment slot purely by being first
+ * in rank order — surfacing as "No excerpt is available from this
+ * source" where a genuinely useful candidate might exist a few places
+ * further down the SAME pool.
+ *
+ * Now a two-tier search over the WHOLE eligible pool (brief §2: "do not
+ * let a metadata-only result block the search for a usable result"):
+ *
+ *   Tier 1 — topically relevant AND has real displayable content
+ *            (`isEnrichmentUsable`, i.e. `FULL_TEXT`/`ABSTRACT` with a
+ *            genuine `abstract` string). Always preferred when any
+ *            exists anywhere in the pool, even if it ranks below a
+ *            reference-only candidate on raw keyword score.
+ *   Tier 2 — topically relevant but reference-only (METADATA_ONLY/
+ *            EXTERNAL_LINK, including NCBI Bookshelf by design and any
+ *            Europe PMC/PubMed record with no usable abstract). Only
+ *            ever returned when NO tier-1 candidate exists anywhere in
+ *            the pool — brief §18: "reference only / read at source" is
+ *            an acceptable fallback, never something that silently
+ *            preempts a genuinely usable result.
+ *
+ * `excludeIds` is honored identically at both tiers, so Search Again
+ * keeps walking forward through whichever tier it's actually drawing
+ * from instead of re-showing the same reference-only citation.
+ */
 function pickUseful(pool: NormalizedKnowledgeResult[], excludeIds: Set<string>, context: KnowledgeQueryContext): NormalizedKnowledgeResult | undefined {
-  return pool.find((r) => !excludeIds.has(r.id) && isUsefulCandidate(r, context))
+  const eligible = pool.filter((r) => !excludeIds.has(r.id) && isUsefulCandidate(r, context))
+  return eligible.find((r) => isEnrichmentUsable(r)) ?? eligible.find((r) => !isEnrichmentUsable(r))
 }
 
 /**

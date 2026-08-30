@@ -46,8 +46,8 @@ export interface NormalizedKnowledgeResult {
   /**
    * Compliance patch: a short, user-visible attribution/reuse notice for
    * this specific result — set by the adapter that produced it (see
-   * `core/knowledge/attribution.ts`). Populated for PubMed results (NCBI
-   * attribution) and for Europe PMC/Crossref results that carry an
+   * `core/knowledge/attribution.ts`). Populated for PubMed/Bookshelf
+   * results (NCBI attribution) and for Europe PMC results that carry an
    * abstract excerpt (conservative-reuse notice). `undefined` for bare
    * metadata, which needs no disclaimer.
    */

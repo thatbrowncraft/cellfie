@@ -34,8 +34,18 @@ export function contentAvailabilityLabel(availability: ContentAvailability | und
  * Shown in place of body text whenever a result has no genuine
  * excerpt/abstract to display. See `resultDisplayText` below for why
  * this exists — a title is a citation, never a substitute for content.
+ *
+ * WORDED AS A REFERENCE, NOT A FAILURE ("Europe PMC no-excerpt loop"
+ * brief §18): this only ever reaches the UI for a candidate that
+ * `pickUseful` (`./index.ts`) picked as a last-resort, reference-only
+ * result — i.e. every genuinely usable candidate in the pool was
+ * already checked and none existed. At that point telling the person
+ * "no excerpt is available" reads like something went wrong, when
+ * actually a real, relevant source was found and is one click away —
+ * this app just isn't reproducing its text. The wording says that
+ * plainly instead.
  */
-const NO_EXCERPT_TEXT = 'No excerpt is available from this source — open the link below to read it at the source.'
+const NO_EXCERPT_TEXT = 'This is a reference-only result — Cellfie isn’t reproducing its text here, but the full record is one click away at the source below.'
 
 /**
  * The one honest way to get body/paragraph text for a knowledge
