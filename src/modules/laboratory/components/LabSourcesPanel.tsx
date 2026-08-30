@@ -33,8 +33,8 @@ interface LabSourcesPanelProps {
  * their results into a single unattributed block.
  *
  * COMPLIANCE PATCH: renders `generalReference.attributionNotice` when
- * present (NCBI attribution for PubMed results, a conservative-reuse
- * notice for Europe PMC/Crossref abstract excerpts — see
+ * present (NCBI attribution for PubMed/Bookshelf results, a
+ * conservative-reuse notice for Europe PMC abstract excerpts — see
  * `core/knowledge/attribution.ts`). No behavior change beyond that one
  * extra line of text.
  */
