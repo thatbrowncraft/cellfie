@@ -91,15 +91,23 @@ function extractExcerptWindow(pageText: string, term: string): string {
  * matched pages of one book and returns real excerpts. A page that
  * fails to re-open/re-read is simply skipped — never a placeholder or
  * a fabricated excerpt standing in for it.
+ *
+ * SEARCH AGAIN FIX: `excludeIds` (each `${libraryItemId}:${page}`,
+ * matching `LibrarySourceExcerpt.id`) are filtered out of this book's
+ * matched pages BEFORE the `MAX_EXCERPTS_PER_BOOK` cap is applied — so
+ * a second call with the first call's ids excluded surfaces the NEXT
+ * unseen matching pages for this book, not the same first two again.
  */
-async function buildExcerptsForMatch(item: LibraryItem, term: string, match: LibraryTermMatch): Promise<LibrarySourceExcerpt[]> {
+async function buildExcerptsForMatch(item: LibraryItem, term: string, match: LibraryTermMatch, excludeIds?: Set<string>): Promise<LibrarySourceExcerpt[]> {
   const excerpts: LibrarySourceExcerpt[] = []
+  const candidatePages = excludeIds ? match.pages.filter((page) => !excludeIds.has(`${item.id}:${page}`)) : match.pages
   try {
     const vdoc = await openLibraryDocument(item)
-    for (const page of match.pages.slice(0, MAX_EXCERPTS_PER_BOOK)) {
+    for (const page of candidatePages.slice(0, MAX_EXCERPTS_PER_BOOK)) {
       const { flat } = await vdoc.getPageText(page)
       if (!flat) continue
       excerpts.push({
+        id: `${item.id}:${page}`,
         text: extractExcerptWindow(flat, term),
         libraryItemId: item.id,
         bookTitle: item.title,
@@ -140,24 +148,46 @@ function toSources(excerpts: LibrarySourceExcerpt[]): OrganismSource[] {
   return sources
 }
 
-/** §Phase 5/7 — "My Sources": searches every indexed local book for the term, with per-book provenance preserved throughout (never merged into an unattributed blob). Throws `LibrarySearchTimeoutError` if the scan exceeds `LIBRARY_SEARCH_TIMEOUT_MS` — callers must catch this and surface a distinct "timed out" state (see core/laboratory/knowledgeLayer.ts). */
-export async function lookupInAllLibrarySources(term: string): Promise<LibraryLookupResult> {
+/**
+ * §Phase 5/7 — "My Sources": searches every indexed local book for the
+ * term, with per-book provenance preserved throughout (never merged
+ * into an unattributed blob). Throws `LibrarySearchTimeoutError` if the
+ * scan exceeds `LIBRARY_SEARCH_TIMEOUT_MS` — callers must catch this
+ * and surface a distinct "timed out" state (see
+ * core/laboratory/knowledgeLayer.ts).
+ *
+ * `excludeIds` (optional, each a `LibrarySourceExcerpt.id` — see that
+ * type) is the Search Again fix: pass every id already shown this
+ * session and this call surfaces only genuinely new excerpts, per
+ * book, instead of the same deterministic first match every time.
+ * Omit it (or pass an empty set) for a plain first search — behavior
+ * is identical to before this option existed.
+ */
+export async function lookupInAllLibrarySources(term: string, excludeIds?: Set<string>): Promise<LibraryLookupResult> {
   return withLibrarySearchTimeout(
     (async () => {
       const matches = await searchLibraryForTerm(term)
-      const excerptLists = await Promise.all(matches.map((match) => buildExcerptsForMatch(match.item, term, match)))
+      const excerptLists = await Promise.all(matches.map((match) => buildExcerptsForMatch(match.item, term, match, excludeIds)))
       const excerpts = excerptLists.flat()
       return { excerpts, sources: toSources(excerpts), matchedBooks: matches.map((m) => m.item) }
     })()
   )
 }
 
-/** §Phase 6 — "Choose a specific source": searches exactly one named library item and nothing else. Returns an empty result (not an error) when that one book simply doesn't contain the term — the caller is responsible for the "couldn't find enough information in this source" messaging. Same `LibrarySearchTimeoutError` contract as `lookupInAllLibrarySources`. */
-export async function lookupInSpecificLibrarySource(term: string, libraryItemId: string): Promise<LibraryLookupResult> {
+/**
+ * §Phase 6 — "Choose a specific source": searches exactly one named
+ * library item and nothing else. Returns an empty result (not an
+ * error) when that one book simply doesn't contain the term — the
+ * caller is responsible for the "couldn't find enough information in
+ * this source" messaging. Same `LibrarySearchTimeoutError` contract as
+ * `lookupInAllLibrarySources`, and the same `excludeIds` Search Again
+ * behavior described there.
+ */
+export async function lookupInSpecificLibrarySource(term: string, libraryItemId: string, excludeIds?: Set<string>): Promise<LibraryLookupResult> {
   return withLibrarySearchTimeout(
     (async () => {
       const matches = await searchLibraryForTerm(term, [libraryItemId])
-      const excerptLists = await Promise.all(matches.map((match) => buildExcerptsForMatch(match.item, term, match)))
+      const excerptLists = await Promise.all(matches.map((match) => buildExcerptsForMatch(match.item, term, match, excludeIds)))
       const excerpts = excerptLists.flat()
       return { excerpts, sources: toSources(excerpts), matchedBooks: matches.map((m) => m.item) }
     })()

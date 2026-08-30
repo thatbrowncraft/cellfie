@@ -46,18 +46,44 @@
 import { db } from '../db'
 import {
   fetchMeshClassification,
-  fetchOnlineSummary,
   fetchVisualReferences,
   isLikelyOnline,
   type MeshClassification,
-  type OnlineSummary,
   type VisualReference
 } from '../concepts/onlineKnowledge'
+/**
+ * Knowledge Layer Repair: Organism Explorer's "trusted scientific
+ * sources" summary now draws from the SAME shared multi-source pool
+ * (Europe PMC + Crossref + PubMed) Comparison Studio and Laboratory use
+ * — via a compatibility wrapper that returns the exact `OnlineSummary`
+ * shape this file already expected from `fetchOnlineSummary`, so
+ * nothing else in this file needs to change. This is the "no separate
+ * duplicate retrieval systems" requirement (brief §28/§30) made literal:
+ * one shared service, three thin callers.
+ */
+import { fetchBestKnowledgeSummary } from '../knowledge'
 import { canonicalOrganismId } from './canonicalId'
 import { resolveTaxonomicRank, isGenusOnlyResolutionForSpeciesQuery } from './taxonomyResolution'
 import { buildReferenceLinks } from './referenceLinks'
 import { lookupInAllLibrarySources, lookupInSpecificLibrarySource, LibrarySearchTimeoutError } from './librarySources'
 import type { KnowledgeSourceMode, OrganismCategory, OrganismProfile, OrganismSource } from './types'
+
+/**
+ * Matches the shape `fetchOnlineSummary` (core/concepts/onlineKnowledge.ts)
+ * used to return — kept local so this file's own logic below needs zero
+ * changes now that the value comes from the shared Knowledge Layer
+ * instead.
+ *
+ * COMPLIANCE PATCH: carries the optional `attributionNotice`
+ * `fetchBestKnowledgeSummary` (core/knowledge) now returns — NCBI
+ * attribution for PubMed results, a conservative-reuse notice for
+ * Europe PMC/Crossref abstract excerpts (see
+ * `core/knowledge/attribution.ts`) — through to `SourcedExcerpt`
+ * (`./types`), which now has the matching optional field, so Organism
+ * Explorer's detail page can render it exactly like Laboratory/
+ * Comparison Studio already do.
+ */
+type OnlineSummary = { title: string; extract: string; sourceName: string; sourceUrl: string; isAbstract: boolean; attributionNotice?: string }
 
 const KL_CACHE_PREFIX = 'organismKnowledgeLayer:v1:'
 const KL_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7 // 7 days — same horizon as onlineKnowledge.ts
@@ -241,7 +267,7 @@ export async function lookupOrganismOnline(
   let taxonomy: Awaited<ReturnType<typeof resolveTaxonomicRank>>
   try {
     const results = await Promise.all([
-      fetchOnlineSummary(trimmed),
+      fetchBestKnowledgeSummary(trimmed),
       fetchMeshClassification(trimmed),
       fetchVisualReferences(trimmed),
       resolveTaxonomicRank(trimmed)
@@ -272,7 +298,15 @@ export async function lookupOrganismOnline(
 
   const sources: OrganismSource[] = []
   if (summary) {
-    sources.push({ name: summary.sourceName, kind: summary.isAbstract ? 'scientific' : 'educational', url: summary.sourceUrl })
+    // Second-pass fix: this used to read `summary.isAbstract ? 'scientific' : 'educational'`,
+    // a distinction that made sense when `fetchOnlineSummary` could fall
+    // back to a Wikipedia-style general-reference tier. `summary` here now
+    // always comes from the shared multi-source Knowledge Layer (Europe
+    // PMC/Crossref/PubMed only — see `fetchBestKnowledgeSummary` in
+    // `core/knowledge`), which never returns a Wikipedia-tier result, so
+    // every summary from it is a genuine scientific-literature source
+    // regardless of whether it happened to include an abstract.
+    sources.push({ name: summary.sourceName, kind: 'scientific', url: summary.sourceUrl })
   }
   if (mesh) {
     sources.push({ name: mesh.sourceName, kind: 'scientific', url: mesh.sourceUrl })
@@ -311,7 +345,14 @@ export async function lookupOrganismOnline(
     knowledgeLayer: {
       retrievedAt: Date.now(),
       generalReference: summary
-        ? { text: summary.extract, sourceName: summary.sourceName, sourceUrl: summary.sourceUrl, isAbstract: summary.isAbstract }
+        ? {
+            text: summary.extract,
+            sourceName: summary.sourceName,
+            sourceUrl: summary.sourceUrl,
+            isAbstract: summary.isAbstract,
+            // Compliance patch — see core/knowledge/attribution.ts.
+            attributionNotice: summary.attributionNotice
+          }
         : undefined,
       meshScopeNote: mesh?.scopeNote ? { text: mesh.scopeNote, sourceName: mesh.sourceName, sourceUrl: mesh.sourceUrl } : undefined,
       sourceMode: 'trusted',

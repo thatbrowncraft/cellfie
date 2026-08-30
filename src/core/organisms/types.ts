@@ -459,6 +459,8 @@ export interface SourcedExcerpt {
   sourceUrl: string
   /** True when `text` is a paper abstract rather than a general/definitional excerpt — the UI labels it accordingly rather than implying it's a textbook definition. */
   isAbstract?: boolean
+  /** Compliance patch: NCBI attribution (PubMed) or a conservative-reuse notice (Europe PMC/Crossref abstract excerpt) — see core/knowledge/attribution.ts. `undefined` when the excerpt needs no disclaimer (e.g. a MeSH scope note or bare metadata). */
+  attributionNotice?: string
 }
 
 // ---------------------------------------------------------------------------
@@ -490,6 +492,17 @@ export const knowledgeSourceModeLabels: Record<KnowledgeSourceMode, string> = {
  * page instead of a URL.
  */
 export interface LibrarySourceExcerpt {
+  /**
+   * Stable dedup/exclusion id — `${libraryItemId}:${page}`. Including
+   * `libraryItemId` (not just the page number) is what lets two
+   * different books that both happen to have a match on their own
+   * page 42 stay distinct. This is the "Search Again" fix for My
+   * Library: the same id shape `core/organisms/librarySources.ts`
+   * already used internally for source-level deduping is now also
+   * threaded through as an excludeIds mechanism (mirroring the online
+   * multi-source pool's `id`/`excludeIds` pattern in `core/knowledge`).
+   */
+  id: string
   text: string
   libraryItemId: string
   bookTitle: string
