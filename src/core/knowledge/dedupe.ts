@@ -1,12 +1,15 @@
 /**
  * core/knowledge/dedupe — collapses the same publication reported by
- * several providers (Europe PMC, Crossref, PubMed can all return the
- * same paper) into ONE normalized result, per brief §10.
+ * several providers (Europe PMC and PubMed can both return the same
+ * paper) into ONE normalized result, per brief §10.
  *
  * Identifier strength, strongest first: DOI, then PMID, then PMCID,
  * then a normalized-title+year fallback for the rare item with no
- * identifier at all. Complementary fields are merged — e.g. Crossref's
- * DOI/license alongside Europe PMC's abstract — rather than one
+ * identifier at all. NCBI Bookshelf results have none of DOI/PMID/PMCID
+ * and always fall through to the title+year key, which is sufficient —
+ * Bookshelf chapters aren't expected to collide with Europe PMC/PubMed
+ * journal-article records. Complementary fields are merged — e.g. one
+ * record's DOI/license alongside another's abstract — rather than one
  * provider's record simply winning outright.
  */
 import { normalizeTitleForDedupe } from './text'

@@ -15,9 +15,8 @@
  * IMPORTANT — these cooldowns are NOT derived from, and do not encode,
  * any specific provider's published requests-per-second limit. A
  * provider's own documented rate limit is an external fact that can
- * change at any time (and, as of 2026, at least one of the three
- * providers this app uses already has — see `adapters/crossref.ts`).
- * This module never reads or assumes a specific number; it only reacts
+ * change at any time. This module never reads or assumes a specific
+ * number for any provider; it only reacts
  * to what a provider's response actually says right now (a 429 means
  * "back off," a 5xx/timeout means "try again later"), so a future
  * tightening or loosening of any provider's real limit changes nothing

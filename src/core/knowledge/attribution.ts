@@ -1,6 +1,6 @@
 /**
- * core/knowledge/attribution — NCBI/PubMed attribution and
- * license-aware Europe PMC/Crossref abstract handling.
+ * core/knowledge/attribution — NCBI/PubMed/Bookshelf attribution and
+ * license-aware Europe PMC abstract handling.
  *
  * FINAL COMPLIANCE CORRECTION: the previous pass truncated every
  * third-party abstract to ~280 characters and treated that as if it
@@ -12,10 +12,16 @@
  *
  *   - Europe PMC: content is supplied by publishers/authors; reuse
  *     rights over that content remain with whoever holds them.
- *   - Crossref: most *metadata* is reusable, but a deposited abstract
- *     may still be copyrighted by its publisher/author.
  *   - NCBI/PubMed: abstracts may be copyrighted by publishers/authors;
  *     NLM does not provide legal advice about redistributing them.
+ *   - NCBI Bookshelf: aggregates many publishers' books under a mix of
+ *     licenses; this app never fetches or displays Bookshelf chapter
+ *     body text at all (see `adapters/ncbiBookshelf.ts`), only metadata
+ *     and a link, so no abstract-reuse question even arises for it.
+ *
+ * (Crossref, previously the third provider here, has been removed —
+ * see `adapters/ncbiBookshelf.ts` for why. Its own reuse notes no
+ * longer apply to anything this module does.)
  *
  * So this module no longer treats "short" as "safe". Metadata (title,
  * authors, journal, date, DOI/PMID/PMCID, license link, source URL) is
@@ -47,7 +53,17 @@ export const NCBI_ATTRIBUTION_NOTICE =
   'Sourced from PubMed®, a database of the U.S. National Library of Medicine (NLM). Cellfie is not endorsed or certified by NLM/NCBI. PubMed abstracts may be copyrighted by their publishers or authors — NLM does not provide legal advice about redistributing them.'
 
 /**
- * Shown under a Europe PMC/Crossref abstract excerpt that IS being
+ * User-visible NCBI Bookshelf attribution. Shown wherever a Bookshelf-
+ * sourced result is displayed. This adapter only ever shows a chapter/
+ * section title, the parent book title, and a link — never chapter body
+ * text — so this notice makes that scope explicit rather than implying
+ * more was retrieved than actually was.
+ */
+export const NCBI_BOOKSHELF_ATTRIBUTION_NOTICE =
+  'Sourced from NCBI Bookshelf, a database of the U.S. National Library of Medicine (NLM). Cellfie is not endorsed or certified by NLM/NCBI. Only the title and a link are shown here — read the chapter itself at the source for the full text and its copyright terms.'
+
+/**
+ * Shown under a Europe PMC abstract excerpt that IS being
  * displayed, because the provider reported a license this app
  * recognizes as clearly permitting reuse. Says so explicitly, and
  * still points back to the source rather than implying this excerpt

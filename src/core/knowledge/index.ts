@@ -2,8 +2,8 @@
  * core/knowledge — the ONE shared Online Sources retrieval service for
  * Comparison Studio, Laboratory, and Organism Explorer (Knowledge Layer
  * Repair brief §1/§30; second-pass audit §3/§6/§7). Every module calls
- * `searchKnowledgeEnrichment`; none of them talk to Europe PMC/Crossref/
- * PubMed directly. `core/concepts/onlineKnowledge.ts` (the Concept Hub's
+ * `searchKnowledgeEnrichment`; none of them talk to Europe PMC/NCBI
+ * Bookshelf/PubMed directly. `core/concepts/onlineKnowledge.ts` (the Concept Hub's
  * own, separately-scoped Knowledge Layer) is untouched by this module —
  * see that file's own callers for why it needs to stay exactly as it is.
  *
@@ -36,6 +36,21 @@
  *      exhausted (§7). This is a hard ceiling, not a retry loop — see
  *      `MAX_FALLBACK_VARIANTS`.
  *
+ * PROVIDER SWAP ("Replace Crossref" brief) — Crossref has been removed
+ * from `queryAdapters` below and its adapter file deleted outright, not
+ * demoted or kept as a hidden fallback. It was a scholarly-metadata
+ * registry first, which meant it often contributed only a bare paper
+ * title with no explanatory content — exactly the "enrichment that
+ * isn't actually enrichment" bug that brief describes. Its replacement,
+ * `adapters/ncbiBookshelf.ts` (NCBI Bookshelf via the same key-free
+ * E-utilities interface `adapters/pubmed.ts` already uses), indexes
+ * biomedical/life-science textbooks and reference works instead of
+ * individual papers — see that adapter's own docstring for the full
+ * reasoning, including why it deliberately never fetches chapter body
+ * text. Nothing else in this file changed to accommodate the swap:
+ * `NormalizedKnowledgeResult` already made every provider interchangeable
+ * from this module's point of view.
+ *
  * FINANCIAL/CREDENTIAL SAFETY (brief §16/§17/§18): every adapter this
  * module calls is a plain `fetch()` against a public, key-free,
  * unauthenticated endpoint. There is no API key anywhere in this module
@@ -47,16 +62,17 @@
  */
 import { db } from '../db'
 import { isLikelyOnline } from '../concepts/onlineKnowledge'
-import { searchCrossref } from './adapters/crossref'
 import { searchEuropePmc } from './adapters/europepmc'
+import { searchBookshelf } from './adapters/ncbiBookshelf'
 import { searchPubmed } from './adapters/pubmed'
 import { dedupeResults } from './dedupe'
 import { cacheKeyForContext } from './query'
 import { isUsefulCandidate, rankResults } from './rank'
+import { resultDisplayText } from './labels'
 import type { KnowledgeQueryContext, KnowledgeSearchOptions, KnowledgeSearchResult, NormalizedKnowledgeResult } from './types'
 
 export type { ContentAvailability, KnowledgeQueryContext, KnowledgeSearchOptions, KnowledgeSearchResult, KnowledgeSourceId, NormalizedKnowledgeResult } from './types'
-export { contentAvailabilityLabel } from './labels'
+export { contentAvailabilityLabel, resultDisplayText } from './labels'
 
 const POOL_CACHE_PREFIX = 'knowledgeLayerPool:v1:'
 const POOL_TTL_MS = 1000 * 60 * 60 * 24 * 7 // 7 days — same horizon the rest of Cellfie's Knowledge Layer caches use
@@ -83,7 +99,7 @@ async function writePoolCache(key: string, pool: NormalizedKnowledgeResult[], fa
 async function queryAdapters(context: KnowledgeQueryContext, limit: number): Promise<NormalizedKnowledgeResult[]> {
   const settled = await Promise.allSettled([
     searchEuropePmc(context, limit),
-    searchCrossref(context, limit),
+    searchBookshelf(context, limit),
     searchPubmed(context, limit)
   ])
   return settled.flatMap((s) => (s.status === 'fulfilled' ? s.value : []))
@@ -197,7 +213,7 @@ export async function searchKnowledgeEnrichment(
  * shaped like `core/concepts/onlineKnowledge.ts`'s `OnlineSummary`
  * (currently `core/organisms/knowledgeLayer.ts`) — lets Organism
  * Explorer's one-shot profile lookup draw from the same multi-source
- * pool (Europe PMC + Crossref + PubMed) as Comparison Studio and
+ * pool (Europe PMC + NCBI Bookshelf + PubMed) as Comparison Studio and
  * Laboratory without changing its own result shape or UI.
  *
  * Second-pass fix (brief §9): `isAbstract` is now strictly
@@ -208,6 +224,14 @@ export async function searchKnowledgeEnrichment(
  * abstract") — `core/organisms/knowledgeLayer.ts`'s own `OnlineSummary`
  * type doesn't have a third state to put it in, which is a known,
  * documented limitation of this compatibility path (see that file).
+ *
+ * ROOT-CAUSE FIX (Replace Crossref brief §11): `extract` used to fall
+ * back to `r.title` when a candidate had no abstract (e.g. every NCBI
+ * Bookshelf/PubMed METADATA_ONLY result) — silently presenting a bare
+ * title as if it were the enrichment excerpt. Now uses
+ * `resultDisplayText`, the one shared, honest fallback (see
+ * `./labels.ts`) — a plain "no excerpt available" notice, never a
+ * relabeled title.
  */
 export async function fetchBestKnowledgeSummary(
   subject: string
@@ -217,7 +241,7 @@ export async function fetchBestKnowledgeSummary(
   const r = search.result
   return {
     title: r.title,
-    extract: r.abstract ?? r.title,
+    extract: resultDisplayText(r),
     sourceName: r.sourceLabel,
     sourceUrl: r.externalUrl,
     isAbstract: r.contentAvailability === 'ABSTRACT',

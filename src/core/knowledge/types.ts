@@ -19,7 +19,7 @@
 /** What Cellfie actually has for a result — never overstated in the UI. */
 export type ContentAvailability = 'FULL_TEXT' | 'ABSTRACT' | 'METADATA_ONLY' | 'EXTERNAL_LINK'
 
-export type KnowledgeSourceId = 'europepmc' | 'crossref' | 'pubmed'
+export type KnowledgeSourceId = 'europepmc' | 'ncbiBookshelf' | 'pubmed'
 
 export interface NormalizedKnowledgeResult {
   /** Stable dedup id — see core/knowledge/dedupe.ts. Preferred over an array index so "already shown/dismissed" state survives a re-ranked pool. */

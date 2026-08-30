@@ -6,7 +6,7 @@
  * renders as markup.
  */
 
-/** Decodes the small set of HTML entities that genuinely show up in raw Europe PMC / Crossref text. Mirrors core/concepts/onlineKnowledge.ts's own helper so both modules treat provider text identically — intentionally duplicated rather than imported, so this module has zero dependency on the Concept Hub's retrieval file (see README "why a separate module"). */
+/** Decodes the small set of HTML entities that genuinely show up in raw Europe PMC / NCBI Bookshelf / PubMed text. Mirrors core/concepts/onlineKnowledge.ts's own helper so both modules treat provider text identically — intentionally duplicated rather than imported, so this module has zero dependency on the Concept Hub's retrieval file (see README "why a separate module"). */
 export function decodeEntities(text: string): string {
   if (!text) return ''
   return text
@@ -19,7 +19,7 @@ export function decodeEntities(text: string): string {
     .replace(/&nbsp;/g, ' ')
 }
 
-/** Strips tags (e.g. Crossref's JATS-flavored `<jats:p>` abstracts) without pulling in an XML parser dependency. */
+/** Strips tags (e.g. JATS-flavored `<jats:p>` abstracts some providers return) without pulling in an XML parser dependency. Not currently called by any active adapter — kept as a small, dependency-free utility for a future adapter that returns tagged abstract text. */
 export function stripTags(text: string): string {
   if (!text) return ''
   return decodeEntities(text.replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim()
