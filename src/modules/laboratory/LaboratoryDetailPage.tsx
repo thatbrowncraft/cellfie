@@ -258,7 +258,8 @@ function SourcesSection({
         </p>
       </div>
 
-      <LabSourcesPanel title={item.title} contentId={item.id} />
+      {/* Second-pass fix (audit brief §5): keyed by item.id so navigating directly from one lab topic to another (without an intervening unmount) can't leak Search-Again exclusion state between them. */}
+      <LabSourcesPanel key={item.id} title={item.title} contentId={item.id} />
     </div>
   )
 }

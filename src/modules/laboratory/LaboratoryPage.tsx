@@ -244,7 +244,17 @@ export function LaboratoryPage() {
               id so My Library/Online Knowledge results for this exact
               search term get cached the same way a curated item's would.
             */}
-            <LabSourcesPanel title={query} contentId={searchContentId(query)} />
+            {/*
+              Second-pass fix (audit brief §5): without a `key`, typing a
+              new search term here would reuse the SAME LabSourcesPanel
+              instance (and its internal Search-Again `shownIds` state)
+              across two completely different topics — e.g. dismissing a
+              result while searching "PCR" would incorrectly exclude that
+              id from a later "Gram staining" search in the same session.
+              `searchContentId(query)` already uniquely identifies the
+              topic, so it doubles as the correct remount key.
+            */}
+            <LabSourcesPanel key={searchContentId(query)} title={query} contentId={searchContentId(query)} />
           </div>
         ) : isHub ? (
           <LaboratoryHub
