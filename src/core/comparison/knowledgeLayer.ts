@@ -37,6 +37,14 @@ export type ComparisonKnowledgeLookupOptions = LabKnowledgeLookupOptions
  * Looks up a comparison item or aspect topic (e.g. "ELISA", or "ELISA —
  * Sensitivity") in either "My Library" or "Online Knowledge". `topicId`
  * only namespaces the cache and is never sent anywhere.
+ *
+ * Knowledge Layer Repair: `options.aspect` and `options.comparedAgainst`
+ * are folded straight into the shared multi-source query
+ * (`core/knowledge`) so an online search for a comparison item is
+ * genuinely contextual — e.g. "Enzymes vs Proteins key distinguishing
+ * feature" rather than a bare "Enzymes" (brief §8/§27). `options.excludeIds`
+ * is what makes "Search Again" actually different — see
+ * `core/laboratory/knowledgeLayer.ts` and `core/knowledge/index.ts`.
  */
 export async function lookupComparisonTopicKnowledge(
   title: string,
