@@ -459,7 +459,7 @@ export interface SourcedExcerpt {
   sourceUrl: string
   /** True when `text` is a paper abstract rather than a general/definitional excerpt — the UI labels it accordingly rather than implying it's a textbook definition. */
   isAbstract?: boolean
-  /** Compliance patch: NCBI attribution (PubMed) or a conservative-reuse notice (Europe PMC/Crossref abstract excerpt) — see core/knowledge/attribution.ts. `undefined` when the excerpt needs no disclaimer (e.g. a MeSH scope note or bare metadata). */
+  /** Compliance patch: NCBI attribution (PubMed/Bookshelf) or a conservative-reuse notice (Europe PMC abstract excerpt) — see core/knowledge/attribution.ts. `undefined` when the excerpt needs no disclaimer (e.g. a MeSH scope note or bare metadata). */
   attributionNotice?: string
 }
 
