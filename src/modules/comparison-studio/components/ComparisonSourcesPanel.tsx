@@ -8,6 +8,7 @@ import {
   type KnowledgeSourceMode,
   type ComparisonKnowledgeLookupResult
 } from '../../../core/comparison/knowledgeLayer'
+import { contentAvailabilityLabel } from '../../../core/knowledge'
 
 interface AcceptedDraft {
   text: string
@@ -33,6 +34,8 @@ interface ComparisonSourcesPanelProps {
   title: string
   /** Display-only context — which aspect this fill-in is for (e.g. "Key Distinguishing Feature"). Never part of the search query itself; see `title`'s note above for why mixing the two broke every per-aspect search. */
   aspectLabel?: string
+  /** Second-pass fix (audit brief §6): the other item in this comparison (e.g. "Proteins" when `title` is "Enzymes") — folded into the online query alongside `aspectLabel` so the search is genuinely "Enzymes vs Proteins key distinguishing feature", not just "Enzymes key distinguishing feature". Ignored for My Library (a plain-text excerpt scan has no use for comparison context). */
+  comparedAgainst?: string
   /** Namespaces the on-device cache only — never sent anywhere. */
   topicId: string
   /** Called when the person accepts a drafted value for a specific side of the comparison (brief §11: Accept → becomes a user-owned aspect override, never silently written into curated content). */
@@ -49,8 +52,20 @@ interface ComparisonSourcesPanelProps {
  * drafted text back to the aspect editor (clearly marked ⚡/📘 there)
  * instead of writing to a Saved Items list, matching the brief's
  * "draft → review → Accept/Dismiss" workflow exactly.
+ *
+ * COMPLIANCE PATCH: renders `generalReference.attributionNotice` when
+ * present (NCBI attribution for PubMed results, a conservative-reuse
+ * notice for Europe PMC/Crossref abstract excerpts — see
+ * `core/knowledge/attribution.ts`). No other behavior change.
+ *
+ * The caller MUST key this component by `topicId` (or equivalently by
+ * `(comparison, aspect, side)`) — see the second-pass fix note at this
+ * component's call site in `ComparisonWorkspacePage.tsx` for why:
+ * without a stable key, switching between two different aspects without
+ * the dialog fully unmounting in between would let one aspect's
+ * Search-Again exclusion state leak into another's.
  */
-export function ComparisonSourcesPanel({ title, aspectLabel, topicId, onAccept, defaultTab }: ComparisonSourcesPanelProps) {
+export function ComparisonSourcesPanel({ title, aspectLabel, comparedAgainst, topicId, onAccept, defaultTab }: ComparisonSourcesPanelProps) {
   const [activeTab, setActiveTab] = useState<'my-library' | 'online'>(defaultTab ?? 'my-library')
 
   return (
@@ -77,7 +92,7 @@ export function ComparisonSourcesPanel({ title, aspectLabel, topicId, onAccept, 
       {activeTab === 'my-library' ? (
         <LibraryLookup title={title} topicId={topicId} onAccept={onAccept} />
       ) : (
-        <OnlineLookup title={title} topicId={topicId} onAccept={onAccept} />
+        <OnlineLookup title={title} aspectLabel={aspectLabel} comparedAgainst={comparedAgainst} topicId={topicId} onAccept={onAccept} />
       )}
     </div>
   )
@@ -151,18 +166,31 @@ function LibraryLookup({ title, topicId, onAccept }: { title: string; topicId: s
   // just hides that specific excerpt from this list (not the whole
   // search — there can be several excerpts shown at once here).
   const [dismissedIndexes, setDismissedIndexes] = useState<Set<number>>(new Set())
+  /**
+   * SEARCH AGAIN FIX (My Library): every excerpt id (`${libraryItemId}:${page}`,
+   * see `LibrarySourceExcerpt.id`) shown for this topic is remembered
+   * for the lifetime of this panel and passed back as `excludeIds` on
+   * the next search — including dismissed ones, since "already shown"
+   * means never repeated regardless of accept/dismiss, mirroring
+   * `OnlineLookup`'s `shownIds` below. Without this, "Search again"
+   * re-ran the exact same deterministic library scan and always
+   * returned (and could re-show a just-dismissed) the same excerpts.
+   */
+  const [shownExcerptIds, setShownExcerptIds] = useState<string[]>([])
 
   const libraryItems = useLiveQuery<LibraryItem[]>(() => db.libraryItems.orderBy('createdAt').reverse().toArray(), [], [])
   const bookOptions: DropdownOption[] = libraryItems.map((item) => ({ value: item.id, label: item.title }))
 
-  async function runSearch(force = false) {
+  async function runSearch(force = false, excludeIds: string[] = shownExcerptIds) {
     setStatus('searching')
     setDismissedIndexes(new Set())
     const lookup = await lookupComparisonTopicKnowledge(title, topicId, {
       mode,
       libraryItemId: mode === 'specific-source' ? libraryItemId : undefined,
-      forceRefresh: force
+      forceRefresh: force,
+      excludeIds
     })
+    if (lookup.libraryExcerpts?.length) setShownExcerptIds((prev) => [...prev, ...lookup.libraryExcerpts!.map((e) => e.id)])
     setResult(lookup)
     setStatus(lookup.status)
   }
@@ -198,6 +226,16 @@ function LibraryLookup({ title, topicId, onAccept }: { title: string; topicId: s
           Search again
         </Button>
       </div>
+    )
+  }
+
+  if (status === 'exhausted') {
+    return (
+      <EmptyState
+        icon={<Books size={32} />}
+        title="No more matching excerpts"
+        description={`Every matching excerpt in your library for "${title}" has already been shown.`}
+      />
     )
   }
 
@@ -273,7 +311,19 @@ function LibraryLookup({ title, topicId, onAccept }: { title: string; topicId: s
 // Online Knowledge tab
 // ---------------------------------------------------------------------------
 
-function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: string; onAccept: (d: AcceptedDraft) => void }) {
+function OnlineLookup({
+  title,
+  aspectLabel,
+  comparedAgainst,
+  topicId,
+  onAccept
+}: {
+  title: string
+  aspectLabel?: string
+  comparedAgainst?: string
+  topicId: string
+  onAccept: (d: AcceptedDraft) => void
+}) {
   const [status, setStatus] = useState<'idle' | 'searching' | ComparisonKnowledgeLookupResult['status']>('idle')
   const [result, setResult] = useState<ComparisonKnowledgeLookupResult | null>(null)
   // Same fix as LibraryLookup's dismissedIndexes: Dismiss used to do
@@ -283,14 +333,25 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
   const [dismissedMesh, setDismissedMesh] = useState(false)
   const [acceptedGeneral, setAcceptedGeneral] = useState(false)
   const [acceptedMesh, setAcceptedMesh] = useState(false)
+  /**
+   * Root-cause fix ("Search Again keeps showing the same Europe PMC
+   * abstract"): every online result's `id` (from the shared multi-source
+   * pool in core/knowledge) is remembered here for the lifetime of this
+   * panel, whether it was shown, accepted, or dismissed. Search Again
+   * passes the whole list back as `excludeIds` so the shared pool
+   * advances to a genuinely different candidate/source instead of
+   * re-showing the same one (see core/laboratory/knowledgeLayer.ts).
+   */
+  const [shownIds, setShownIds] = useState<string[]>([])
 
-  async function runSearch(force = false) {
+  async function runSearch(excludeIds?: string[]) {
     setStatus('searching')
     setDismissedGeneral(false)
     setDismissedMesh(false)
     setAcceptedGeneral(false)
     setAcceptedMesh(false)
-    const lookup = await lookupComparisonTopicKnowledge(title, topicId, { mode: 'trusted', forceRefresh: force })
+    const lookup = await lookupComparisonTopicKnowledge(title, topicId, { mode: 'trusted', aspect: aspectLabel, comparedAgainst, excludeIds })
+    if (lookup.generalReference) setShownIds((prev) => [...prev, lookup.generalReference!.id])
     setResult(lookup)
     setStatus(lookup.status)
   }
@@ -321,7 +382,7 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
         title="Couldn't retrieve this right now"
         description="Something went wrong reaching external sources."
         action={
-          <Button variant="secondary" size="small" onClick={() => runSearch()}>
+          <Button variant="secondary" size="small" onClick={() => runSearch(shownIds)}>
             Try again
           </Button>
         }
@@ -333,6 +394,16 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
     return <EmptyState title="Nothing reliable found" description={`External trusted sources didn't return anything reliable for "${title}" either.`} />
   }
 
+  if (status === 'exhausted') {
+    return (
+      <EmptyState
+        icon={<Globe size={32} />}
+        title="No more distinct online results found"
+        description={`Every trusted source Cellfie checked for "${title}"${aspectLabel ? ` — ${aspectLabel}` : ''} has already been shown.`}
+      />
+    )
+  }
+
   if (status === 'found' && result) {
     return (
       <div className="flex flex-col gap-4">
@@ -340,9 +411,12 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
           <div>
             <p className="font-body text-body text-ink-primary">{result.generalReference.text}</p>
             <a href={result.generalReference.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-block font-ui text-caption text-olive hover:underline">
-              ⚡ {result.generalReference.isAbstract ? 'Abstract from ' : 'From '}
+              ⚡ {contentAvailabilityLabel(result.generalReference.contentAvailability)}{' '}
               {result.generalReference.sourceName}
             </a>
+            {result.generalReference.attributionNotice && (
+              <p className="mt-1 font-body text-micro text-ink-tertiary">{result.generalReference.attributionNotice}</p>
+            )}
             <div className="mt-2">
               {acceptedGeneral ? (
                 <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
@@ -387,10 +461,10 @@ function OnlineLookup({ title, topicId, onAccept }: { title: string; topicId: st
           </div>
         )}
         {((result.generalReference && dismissedGeneral) || !result.generalReference) && ((result.meshScopeNote && dismissedMesh) || !result.meshScopeNote) && (
-          <p className="font-body text-caption text-ink-tertiary">Dismissed. Try searching again for a different source.</p>
+          <p className="font-body text-caption text-ink-tertiary">Dismissed. Search another source/result.</p>
         )}
-        {/* Root-cause fix ("Search again keeps showing the same data"): this used to reset to 'idle' and re-run the exact same cached lookup — force-bypasses the 7-day cache instead, matching the same fix applied to the whole-comparison Enrich panel. */}
-        <Button variant="tertiary" size="small" onClick={() => runSearch(true)}>
+        {/* Root-cause fix ("Search again keeps showing the same data"): this now passes every id shown so far as excludeIds, so the shared multi-source pool (core/knowledge) advances to a genuinely different result/source instead of re-fetching the same deterministic top hit. */}
+        <Button variant="tertiary" size="small" onClick={() => runSearch(shownIds)}>
           Search again
         </Button>
       </div>

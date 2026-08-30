@@ -46,6 +46,12 @@ interface ComparisonEnrichmentPanelProps {
  * The existing per-aspect "Find more for this aspect" action (still
  * reachable from each row) remains the advanced fallback for pulling a
  * specific piece of that evidence into a specific cell (brief §33).
+ *
+ * COMPLIANCE PATCH: `sideBlock` now also renders
+ * `generalReference.attributionNotice` when present (NCBI attribution
+ * for PubMed, a conservative-reuse notice for Europe PMC/Crossref
+ * abstract excerpts — see `core/knowledge/attribution.ts`). No other
+ * behavior change.
  */
 export function ComparisonEnrichmentPanel({
   comparisonId,
@@ -78,6 +84,17 @@ export function ComparisonEnrichmentPanel({
    */
   const [acceptedActionA, setAcceptedActionA] = useState<'overview' | 'notes' | null>(null)
   const [acceptedActionB, setAcceptedActionB] = useState<'overview' | 'notes' | null>(null)
+  /**
+   * Root-cause fix ("Search again keeps showing the same data"): ids
+   * already shown for each side are remembered here and passed back as
+   * `excludeIds` on the next Online Knowledge search, so the shared
+   * multi-source pool (core/knowledge) advances to a genuinely
+   * different candidate/source per side instead of re-fetching the
+   * same deterministic top hit. Cleared whenever a brand-new search
+   * (not a "Search again") starts, or when switching tabs.
+   */
+  const [shownIdsA, setShownIdsA] = useState<string[]>([])
+  const [shownIdsB, setShownIdsB] = useState<string[]>([])
 
   const libraryItems = useLiveQuery<LibraryItem[]>(() => db.libraryItems.orderBy('createdAt').reverse().toArray(), [], [])
   const bookOptions: DropdownOption[] = libraryItems.map((item) => ({ value: item.id, label: item.title }))
@@ -86,24 +103,29 @@ export function ComparisonEnrichmentPanel({
 
   /**
    * Root-cause fix ("Search again keeps showing the same data"): Online
-   * Knowledge results are cached for 7 days per term
-   * (`core/laboratory/knowledgeLayer.ts`'s `KL_CACHE_TTL_MS`), so a plain
-   * re-run of the identical lookup for "Enzymes"/"Proteins" correctly
-   * hit that cache and returned the exact same result every time — the
-   * retrieval layer already supports `forceRefresh` to bypass it, it
-   * just was never threaded through from this "Search again" button.
-   * `force` is only meaningful for the Online Knowledge tab (My
-   * Library always re-scans live, uncached, so passing it there is a
-   * harmless no-op) but is included unconditionally so the option
-   * object's shape doesn't need an extra branch.
+   * Knowledge candidates are cached as a deduped, ranked pool per query
+   * (`core/knowledge`), not as a single result — a plain re-run no
+   * longer needs to bypass any cache to get a different result. Instead,
+   * a genuinely new "Search again" passes the ids already shown for
+   * each side as `excludeIds`, so the shared pool advances to the next
+   * distinct candidate/source. `opts.freshStart` (the initial "Find
+   * information" tap, or a tab/mode change) resets that exclusion list;
+   * "Search again" does not.
    */
-  async function runSearch(opts?: { force?: boolean }) {
+  async function runSearch(opts?: { freshStart?: boolean }) {
     setStatusA('searching')
     setStatusB('searching')
     setResultA(null)
     setResultB(null)
     setAcceptedActionA(null)
     setAcceptedActionB(null)
+
+    const excludeA = opts?.freshStart ? [] : shownIdsA
+    const excludeB = opts?.freshStart ? [] : shownIdsB
+    if (opts?.freshStart) {
+      setShownIdsA([])
+      setShownIdsB([])
+    }
 
     await savePendingComparisonSearch({
       comparisonId,
@@ -117,16 +139,19 @@ export function ComparisonEnrichmentPanel({
 
     const options =
       activeTab === 'my-library'
-        ? ({ mode, libraryItemId: mode === 'specific-source' ? libraryItemId : undefined, forceRefresh: opts?.force } as const)
-        : ({ mode: 'trusted', forceRefresh: opts?.force } as const)
+        ? ({ mode, libraryItemId: mode === 'specific-source' ? libraryItemId : undefined } as const)
+        : ({ mode: 'trusted' } as const)
 
     // Exactly two lookups total — one per item — no matter how many
     // aspect rows the comparison has (brief §5/§13: "search the whole
     // comparison once", "understand it needs information about BOTH").
     const [lookupA, lookupB] = await Promise.all([
-      lookupComparisonTopicKnowledge(itemAName, `${comparisonId}:A`, options),
-      lookupComparisonTopicKnowledge(itemBName, `${comparisonId}:B`, options)
+      lookupComparisonTopicKnowledge(itemAName, `${comparisonId}:A`, { ...options, comparedAgainst: itemBName, excludeIds: activeTab === 'online' ? excludeA : undefined }),
+      lookupComparisonTopicKnowledge(itemBName, `${comparisonId}:B`, { ...options, comparedAgainst: itemAName, excludeIds: activeTab === 'online' ? excludeB : undefined })
     ])
+
+    if (lookupA.generalReference) setShownIdsA((prev) => [...prev, lookupA.generalReference!.id])
+    if (lookupB.generalReference) setShownIdsB((prev) => [...prev, lookupB.generalReference!.id])
 
     setResultA(lookupA)
     setStatusA(lookupA.status)
@@ -169,6 +194,15 @@ export function ComparisonEnrichmentPanel({
         />
       )
     }
+    if (status === 'exhausted') {
+      return (
+        <EmptyState
+          icon={<Globe size={24} />}
+          title={`${name}: no more distinct results`}
+          description="Every trusted source Cellfie checked has already been shown for this side."
+        />
+      )
+    }
 
     if (status === 'found' && result) {
       const excerptText = result.libraryExcerpts?.[0]?.text ?? result.generalReference?.text ?? result.meshScopeNote?.text
@@ -188,6 +222,9 @@ export function ComparisonEnrichmentPanel({
           <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{name}</p>
           <p className="font-body text-body text-ink-secondary">{excerptText}</p>
           <p className="font-ui text-micro text-ink-tertiary">{sourceLabel}</p>
+          {result.generalReference?.attributionNotice && (
+            <p className="font-ui text-micro text-ink-tertiary">{result.generalReference.attributionNotice}</p>
+          )}
           {acceptedAction ? (
             <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
               <Check size={13} weight="bold" aria-hidden />
@@ -281,7 +318,7 @@ export function ComparisonEnrichmentPanel({
             size="small"
             icon={<Sparkle size={16} />}
             disabled={mode === 'specific-source' && !libraryItemId && activeTab === 'my-library'}
-            onClick={() => runSearch()}
+            onClick={() => runSearch({ freshStart: true })}
           >
             Find information for this comparison
           </Button>
@@ -305,7 +342,7 @@ export function ComparisonEnrichmentPanel({
               </p>
             )}
             <div className="flex gap-2">
-              <Button variant="tertiary" size="small" icon={<CaretRight size={16} />} onClick={() => runSearch({ force: true })}>
+              <Button variant="tertiary" size="small" icon={<CaretRight size={16} />} onClick={() => runSearch()}>
                 Search again
               </Button>
               <Button variant="tertiary" size="small" icon={<X size={16} />} onClick={onClose}>
