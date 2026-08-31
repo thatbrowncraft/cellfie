@@ -34,7 +34,7 @@
  */
 import { isSourceAvailable, reportRateLimited, reportSuccess, reportTransientFailure } from '../circuitBreaker'
 import { resolveAbstractPresentation } from '../attribution'
-import { buildContextualQuery } from '../query'
+import { buildProviderQuery } from '../query'
 import { decodeEntities } from '../text'
 import type { KnowledgeQueryContext, NormalizedKnowledgeResult } from '../types'
 
@@ -59,7 +59,7 @@ interface EuropePmcItem {
 
 export async function searchEuropePmc(context: KnowledgeQueryContext, limit = 10): Promise<NormalizedKnowledgeResult[]> {
   if (!isSourceAvailable(SOURCE_ID)) return []
-  const query = buildContextualQuery(context)
+  const query = buildProviderQuery(context)
   if (!query) return []
 
   const controller = new AbortController()

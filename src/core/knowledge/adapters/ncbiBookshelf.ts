@@ -60,7 +60,7 @@
  */
 import { isSourceAvailable, reportRateLimited, reportSuccess, reportTransientFailure } from '../circuitBreaker'
 import { NCBI_BOOKSHELF_ATTRIBUTION_NOTICE } from '../attribution'
-import { buildContextualQuery } from '../query'
+import { buildProviderQuery } from '../query'
 import { decodeEntities } from '../text'
 import type { KnowledgeQueryContext, NormalizedKnowledgeResult } from '../types'
 
@@ -106,7 +106,7 @@ function pickString(record: EsummaryRecord, candidates: string[]): string | unde
 
 export async function searchBookshelf(context: KnowledgeQueryContext, limit = 8): Promise<NormalizedKnowledgeResult[]> {
   if (!isSourceAvailable(SOURCE_ID)) return []
-  const query = buildContextualQuery(context)
+  const query = buildProviderQuery(context)
   if (!query) return []
 
   const searchData = (await fetchJsonWithTimeout(

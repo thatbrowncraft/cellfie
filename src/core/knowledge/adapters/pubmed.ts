@@ -39,7 +39,7 @@
  */
 import { isSourceAvailable, reportRateLimited, reportSuccess, reportTransientFailure } from '../circuitBreaker'
 import { NCBI_ATTRIBUTION_NOTICE } from '../attribution'
-import { buildContextualQuery } from '../query'
+import { buildProviderQuery } from '../query'
 import { decodeEntities } from '../text'
 import type { KnowledgeQueryContext, NormalizedKnowledgeResult } from '../types'
 
@@ -79,7 +79,7 @@ async function fetchJsonWithTimeout(url: string): Promise<unknown> {
 
 export async function searchPubmed(context: KnowledgeQueryContext, limit = 8): Promise<NormalizedKnowledgeResult[]> {
   if (!isSourceAvailable(SOURCE_ID)) return []
-  const query = buildContextualQuery(context)
+  const query = buildProviderQuery(context)
   if (!query) return []
 
   const searchData = (await fetchJsonWithTimeout(
