@@ -96,8 +96,21 @@ function contentQualityBonus(result: NormalizedKnowledgeResult): number {
   // routinely outrank a genuinely on-topic ABSTRACT/FULL_TEXT record —
   // "metadata-only results should generally rank below useful
   // abstracts/full-text content for enrichment".
+  //
+  // ARCHITECTURE FIX addition (brief §11, "do not use specialized papers
+  // for general definitions"): Wikipedia is, by construction, a general/
+  // definitional educational source — the exact opposite failure mode
+  // from a narrow specialized paper that merely shares a keyword. A flat
+  // per-term substring score can't tell "core definition" apart from
+  // "incidental scientific term match" on its own, so this gives a
+  // general-reference source a small deterministic edge over an
+  // equally-scored specialized-literature ABSTRACT, without ever
+  // requiring semantic understanding of what "general" means for an
+  // arbitrary paper. A Europe PMC/PubMed result with a stronger genuine
+  // term match (via `scoreOne`'s subject-weighted scoring) can still
+  // outrank it — this is a nudge, not a hard tier.
   if (result.contentAvailability === 'FULL_TEXT') return 10
-  if (result.contentAvailability === 'ABSTRACT') return 7
+  if (result.contentAvailability === 'ABSTRACT') return result.source === 'wikipedia' ? 9 : 7
   return 0
 }
 
@@ -204,11 +217,12 @@ export function isUsefulCandidate(result: NormalizedKnowledgeResult, context: Kn
  * regardless of how strongly they match the query.
  *
  * This does NOT mean such a candidate is worthless or hidden — see
- * `pickUseful` in `./index.ts`, which still surfaces it as an honestly-
- * labeled reference-only result when NOTHING better exists in the pool
- * (brief §18: "reference only / read at source" is an acceptable
- * fallback, just never the thing that silently occupies the primary
- * slot when a genuinely usable candidate was available instead).
+ * `pickReference` in `./index.ts`, which surfaces it as an honestly-
+ * labeled, clearly SEPARATE reference-only citation (never the primary
+ * `result`) when nothing enrichment-usable exists in the pool (brief
+ * §16: "reference only / read at source" is an acceptable citation to
+ * offer, but it must never occupy — or be labeled as — the primary
+ * enrichment slot; see that file's `pickUsable` for the hard split).
  */
 export function isEnrichmentUsable(result: NormalizedKnowledgeResult): boolean {
   return (result.contentAvailability === 'FULL_TEXT' || result.contentAvailability === 'ABSTRACT') && Boolean(result.abstract)

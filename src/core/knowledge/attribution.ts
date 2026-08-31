@@ -63,6 +63,20 @@ export const NCBI_BOOKSHELF_ATTRIBUTION_NOTICE =
   'Sourced from NCBI Bookshelf, a database of the U.S. National Library of Medicine (NLM). Cellfie is not endorsed or certified by NLM/NCBI. Only the title and a link are shown here — read the chapter itself at the source for the full text and its copyright terms.'
 
 /**
+ * User-visible attribution for a Wikipedia-sourced excerpt. Required by
+ * the license itself (CC BY-SA 4.0), not just good practice: this notice
+ * both names the source and states the license, which is what CC BY-SA
+ * attribution requires. Unlike Europe PMC/PubMed/Bookshelf, Wikipedia's
+ * article text license is a fixed, known fact of the platform (every
+ * article is CC BY-SA 4.0 + GFDL) rather than something that varies
+ * per-item and has to be checked per-result — so this adapter never
+ * calls `resolveAbstractPresentation`/`assessLicense` the way the
+ * journal-literature adapters do; see `adapters/wikipedia.ts`.
+ */
+export const WIKIPEDIA_ATTRIBUTION_NOTICE =
+  'Adapted from Wikipedia, available under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0) — see the source link for the full article and its contributor history. Wikipedia and the Wikipedia logo are trademarks of the Wikimedia Foundation; Cellfie is not endorsed by or affiliated with the Wikimedia Foundation.'
+
+/**
  * Shown under a Europe PMC abstract excerpt that IS being
  * displayed, because the provider reported a license this app
  * recognizes as clearly permitting reuse. Says so explicitly, and

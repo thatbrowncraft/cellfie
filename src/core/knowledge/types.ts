@@ -19,7 +19,7 @@
 /** What Cellfie actually has for a result — never overstated in the UI. */
 export type ContentAvailability = 'FULL_TEXT' | 'ABSTRACT' | 'METADATA_ONLY' | 'EXTERNAL_LINK'
 
-export type KnowledgeSourceId = 'europepmc' | 'ncbiBookshelf' | 'pubmed'
+export type KnowledgeSourceId = 'europepmc' | 'ncbiBookshelf' | 'pubmed' | 'wikipedia'
 
 export interface NormalizedKnowledgeResult {
   /** Stable dedup id — see core/knowledge/dedupe.ts. Preferred over an array index so "already shown/dismissed" state survives a re-ranked pool. */
@@ -83,4 +83,20 @@ export interface KnowledgeSearchResult {
   result?: NormalizedKnowledgeResult
   /** Size of the deduped candidate pool for this query — lets a caller distinguish "nothing at all" from "exhausted, but N results were already shown". */
   poolSize?: number
+  /**
+   * ARCHITECTURE FIX (knowledge-source repair brief §15/§16): a
+   * reference-only candidate (METADATA_ONLY/EXTERNAL_LINK — a title,
+   * authors, a link, nothing Cellfie can display as body text) that was
+   * in the pool but is deliberately NEVER put in `result`. `result` is
+   * now reserved exclusively for a candidate that actually has
+   * displayable content (see `isEnrichmentUsable` in `./rank.ts`) — a
+   * metadata record must never occupy the primary enrichment slot again
+   * (brief §2/§15). This field exists purely so a caller that wants to
+   * offer an honest "read the source itself" link alongside a
+   * `not-found`/`exhausted` status can do so, without that link ever
+   * being mistaken for actual retrieved content. Only ever set when
+   * `status` is NOT `'found'` — a `'found'` result already carries its
+   * own reference via `result.externalUrl`.
+   */
+  reference?: NormalizedKnowledgeResult
 }

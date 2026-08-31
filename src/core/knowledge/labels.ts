@@ -36,14 +36,14 @@ export function contentAvailabilityLabel(availability: ContentAvailability | und
  * this exists — a title is a citation, never a substitute for content.
  *
  * WORDED AS A REFERENCE, NOT A FAILURE ("Europe PMC no-excerpt loop"
- * brief §18): this only ever reaches the UI for a candidate that
- * `pickUseful` (`./index.ts`) picked as a last-resort, reference-only
- * result — i.e. every genuinely usable candidate in the pool was
- * already checked and none existed. At that point telling the person
- * "no excerpt is available" reads like something went wrong, when
- * actually a real, relevant source was found and is one click away —
- * this app just isn't reproducing its text. The wording says that
- * plainly instead.
+ * brief §18): historically this could reach the UI as if it were the
+ * primary enrichment result — see `./index.ts`'s `pickUsable` docstring
+ * for why that was wrong and has been removed. It's now only ever used
+ * for `resultDisplayText` calls on a result the caller already knows is
+ * `isEnrichmentUsable` (where `result.abstract` is always populated, so
+ * this fallback string is effectively dead in that path) or, separately,
+ * for describing a `KnowledgeSearchResult.reference` citation — never as
+ * a stand-in for actual enrichment content.
  */
 const NO_EXCERPT_TEXT = 'This is a reference-only result — Cellfie isn’t reproducing its text here, but the full record is one click away at the source below.'
 

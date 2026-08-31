@@ -51,13 +51,55 @@
  * `NormalizedKnowledgeResult` already made every provider interchangeable
  * from this module's point of view.
  *
- * SECOND-FIX ("Europe PMC no-excerpt loop" brief) — see `pickUseful`
+ * SECOND-FIX ("Europe PMC no-excerpt loop" brief) — see `pickUsable`
  * below for the full reasoning: candidate selection now distinguishes
  * "topically relevant" from "has real displayable content" and always
  * prefers the latter across the WHOLE pool, so a rights-withheld Europe
  * PMC abstract or a bare Bookshelf/PubMed metadata record can no longer
  * occupy the primary enrichment slot while a genuinely usable candidate
  * sits unshown further down the same ranked pool.
+ *
+ * THIRD-FIX ("stop patching the symptom" architecture brief) — the
+ * second-fix pass above was an improvement (it stopped a reference-only
+ * candidate from PREEMPTING a usable one) but `pickUseful` still had a
+ * `?? eligible.find((r) => !isEnrichmentUsable(r))` tail: when NOTHING
+ * usable existed anywhere in the pool, it fell back to returning a bare
+ * metadata record as `status: 'found'` anyway. That is exactly the
+ * screenshotted bug ("This is a reference-only result…" occupying the
+ * PRIMARY Online Knowledge slot, repeatedly, across every Search Again
+ * press) — a metadata-only NCBI Bookshelf/PubMed record or a
+ * rights-withheld Europe PMC abstract is NOT enrichment, and dressing it
+ * up as `status: 'found'` just moved the honesty problem from the label
+ * (fixed by `labels.ts`'s wording) back into the status code itself.
+ *
+ * `pickUsable` (renamed from `pickUseful` to make the distinction from
+ * `isUsefulCandidate` unambiguous) now returns ONLY a candidate that
+ * passes `isEnrichmentUsable` — full stop, no reference-only tail. When
+ * none exists, `searchKnowledgeEnrichment` reports the search as
+ * genuinely empty (`'not-found'` the first time a query has no usable
+ * result, `'exhausted'` once a usable one has already been shown and
+ * Search Again has run out of others) rather than quietly substituting
+ * a citation for content. A reference-only candidate, when one exists,
+ * is still surfaced — but as the separate, clearly-optional
+ * `KnowledgeSearchResult.reference` field (see `./types.ts`), never as
+ * `result`. Every caller already null-checks `result`/`generalReference`
+ * before rendering it, so this is a pure narrowing of what counts as
+ * `'found'` — no downstream caller needed to change to stop displaying
+ * metadata-as-enrichment; they simply stop receiving it.
+ *
+ * FOURTH-FIX ("no usable excerpt found by the third Search Again") —
+ * the THIRD-FIX above was necessary but, on its own, made the honesty
+ * problem visible without solving the underlying scarcity: PubMed and
+ * NCBI Bookshelf are metadata-only BY DESIGN, so once Europe PMC's
+ * rights-permissive abstracts in a pool were exhausted, there was
+ * nothing usable left AT ALL for a topic — the pool simply didn't
+ * contain enough real content, no matter how it was picked over. Fixed
+ * by adding a fourth provider, `adapters/wikipedia.ts`, that actually
+ * has general-definitional prose for exactly this kind of topic — see
+ * that file for the full reasoning, including why it satisfies "no
+ * future financial risk, no public-API-key risk" even with the
+ * repository being public (no key exists for this endpoint to leak in
+ * the first place).
  *
  * FINANCIAL/CREDENTIAL SAFETY (brief §16/§17/§18): every adapter this
  * module calls is a plain `fetch()` against a public, key-free,
@@ -73,6 +115,7 @@ import { isLikelyOnline } from '../concepts/onlineKnowledge'
 import { searchEuropePmc } from './adapters/europepmc'
 import { searchBookshelf } from './adapters/ncbiBookshelf'
 import { searchPubmed } from './adapters/pubmed'
+import { searchWikipedia } from './adapters/wikipedia'
 import { dedupeResults } from './dedupe'
 import { cacheKeyForContext } from './query'
 import { isEnrichmentUsable, isUsefulCandidate, rankResults } from './rank'
@@ -108,7 +151,16 @@ async function queryAdapters(context: KnowledgeQueryContext, limit: number): Pro
   const settled = await Promise.allSettled([
     searchEuropePmc(context, limit),
     searchBookshelf(context, limit),
-    searchPubmed(context, limit)
+    searchPubmed(context, limit),
+    // FOURTH PROVIDER (knowledge-source repair brief §5/§6): the one
+    // genuinely educational, general-reference source in the pool — see
+    // `adapters/wikipedia.ts` for the full financial-safety/license
+    // reasoning. Added here, not as a replacement for anything: the
+    // literature adapters stay for citation-quality references, this
+    // adds an actual chance of a usable general-definition excerpt for
+    // topics (like "Enzymes vs Proteins") that scholarly-literature
+    // search alone kept coming up empty for.
+    searchWikipedia(context, limit)
   ])
   return settled.flatMap((s) => (s.status === 'fulfilled' ? s.value : []))
 }
@@ -155,9 +207,24 @@ function buildFallbackVariant(context: KnowledgeQueryContext): KnowledgeQueryCon
  * keeps walking forward through whichever tier it's actually drawing
  * from instead of re-showing the same reference-only citation.
  */
-function pickUseful(pool: NormalizedKnowledgeResult[], excludeIds: Set<string>, context: KnowledgeQueryContext): NormalizedKnowledgeResult | undefined {
-  const eligible = pool.filter((r) => !excludeIds.has(r.id) && isUsefulCandidate(r, context))
-  return eligible.find((r) => isEnrichmentUsable(r)) ?? eligible.find((r) => !isEnrichmentUsable(r))
+function pickUsable(pool: NormalizedKnowledgeResult[], excludeIds: Set<string>, context: KnowledgeQueryContext): NormalizedKnowledgeResult | undefined {
+  return pool.find((r) => !excludeIds.has(r.id) && isUsefulCandidate(r, context) && isEnrichmentUsable(r))
+}
+
+/**
+ * The reference-only counterpart to `pickUsable` — never used to
+ * populate the primary `result` slot, only the separate, optional
+ * `KnowledgeSearchResult.reference` field (brief §16: "reference-only
+ * results may still exist, but separately"). Deliberately ignores
+ * `excludeIds`: a reference link isn't something Search Again "walks
+ * through" the way primary content is — it's just an honest "here's
+ * where to read this at the source" pointer attached to an
+ * otherwise-empty result, so the same topically-relevant reference can
+ * keep being offered across repeated Search Again presses without that
+ * being treated as a repeat.
+ */
+function pickReference(pool: NormalizedKnowledgeResult[], context: KnowledgeQueryContext): NormalizedKnowledgeResult | undefined {
+  return pool.find((r) => isUsefulCandidate(r, context) && !isEnrichmentUsable(r))
 }
 
 /**
@@ -203,17 +270,23 @@ export async function searchKnowledgeEnrichment(
 
   if (!pool || pool.length === 0) return { status: 'not-found', poolSize: 0 }
 
-  const primaryCandidate = pickUseful(pool, excludeIds, context)
+  // Whether this is a genuinely first look at this query, or a Search
+  // Again continuing to walk a pool that's already yielded something —
+  // decides only which honest empty status to report below ('not-found'
+  // vs 'exhausted'), never whether a candidate counts as usable.
+  const isFirstLook = excludeIds.size === 0
+
+  const primaryCandidate = pickUsable(pool, excludeIds, context)
   if (primaryCandidate) return { status: 'found', result: primaryCandidate, poolSize: pool.length }
 
-  // Nothing useful and unshown left in the primary pool. Per brief §7,
+  // Nothing USABLE and unshown left in the primary pool. Per brief §7,
   // this is exactly where a BOUNDED fallback belongs — not before (that
   // would waste a request when the primary pool was already enough) and
   // not repeated (MAX_FALLBACK_VARIANTS caps it at one attempt total per
   // cached pool, regardless of how many more times Search Again is
   // pressed after that).
   if (fallbackAttempted || MAX_FALLBACK_VARIANTS < 1 || !isLikelyOnline()) {
-    return { status: 'exhausted', poolSize: pool.length }
+    return { status: isFirstLook ? 'not-found' : 'exhausted', poolSize: pool.length, reference: pickReference(pool, context) }
   }
 
   const variantContext = buildFallbackVariant(context)
@@ -222,7 +295,7 @@ export async function searchKnowledgeEnrichment(
     // the fallback as "attempted" so this dead end isn't re-checked on
     // every subsequent Search Again for the same context.
     await writePoolCache(cacheKey, pool, true)
-    return { status: 'exhausted', poolSize: pool.length }
+    return { status: isFirstLook ? 'not-found' : 'exhausted', poolSize: pool.length, reference: pickReference(pool, context) }
   }
 
   const variantRaw = await queryAdapters(variantContext, limit)
@@ -243,8 +316,10 @@ export async function searchKnowledgeEnrichment(
   // keeps this call site correct-by-construction if the gate is ever
   // extended to also consider `comparedAgainst`, instead of silently
   // reintroducing "rejected only because the dropped part is absent".
-  const fallbackCandidate = pickUseful(mergedPool, excludeIds, variantContext)
-  if (!fallbackCandidate) return { status: 'exhausted', poolSize: mergedPool.length }
+  const fallbackCandidate = pickUsable(mergedPool, excludeIds, variantContext)
+  if (!fallbackCandidate) {
+    return { status: isFirstLook ? 'not-found' : 'exhausted', poolSize: mergedPool.length, reference: pickReference(mergedPool, variantContext) }
+  }
   return { status: 'found', result: fallbackCandidate, poolSize: mergedPool.length }
 }
 
@@ -253,7 +328,7 @@ export async function searchKnowledgeEnrichment(
  * shaped like `core/concepts/onlineKnowledge.ts`'s `OnlineSummary`
  * (currently `core/organisms/knowledgeLayer.ts`) — lets Organism
  * Explorer's one-shot profile lookup draw from the same multi-source
- * pool (Europe PMC + NCBI Bookshelf + PubMed) as Comparison Studio and
+ * pool (Europe PMC + NCBI Bookshelf + PubMed + Wikipedia) as Comparison Studio and
  * Laboratory without changing its own result shape or UI.
  *
  * Second-pass fix (brief §9): `isAbstract` is now strictly
