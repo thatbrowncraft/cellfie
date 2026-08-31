@@ -71,6 +71,20 @@ const BASE = 'https://en.wikipedia.org/w/api.php'
 const TIMEOUT_MS = 8000
 /** Generous relative to the journal-literature adapters' 280-char cap (`../attribution.ts`) — a genuinely permissively-licensed encyclopedia intro is worth more than a token snippet, while still stopping well short of the full article (still just the intro section to begin with). */
 const MAX_EXCERPT_CHARS = 700
+/**
+ * v1.0.0 release audit: the WMF User-Agent policy asks every client to
+ * identify itself, but browser JS can't set the real `User-Agent`
+ * header — `Api-User-Agent` is MediaWiki's documented substitute for
+ * exactly that case (see foundation.wikimedia.org/wiki/Policy:Wikimedia_
+ * Foundation_User-Agent_Policy, "browser-based applications ... are
+ * encouraged to include the Api-User-Agent header"). It's safe to add
+ * here: `Api-User-Agent` has been in MediaWiki core's CORS allow-list
+ * (`$wgAllowedCorsHeaders`) since 1.35.11/1.38.7/1.39.4, so it won't be
+ * blocked by the `origin=*` preflight this adapter already relies on.
+ * Static, non-personal identifier only — no email, no secret, nothing
+ * that could ever create a billing or credential surface.
+ */
+const API_USER_AGENT = 'Cellfie/1.0 (https://github.com/thatbrowncraft/cellfie)'
 
 interface SearchHit {
   pageid?: number
@@ -90,7 +104,7 @@ async function fetchJsonWithTimeout(url: string): Promise<unknown> {
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS)
   try {
-    const res = await fetch(url, { signal: controller.signal, headers: { Accept: 'application/json' } })
+    const res = await fetch(url, { signal: controller.signal, headers: { Accept: 'application/json', 'Api-User-Agent': API_USER_AGENT } })
     if (res.status === 429) {
       reportRateLimited(SOURCE_ID)
       return undefined
