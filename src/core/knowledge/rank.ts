@@ -41,6 +41,47 @@
  * below for the exact weights. The usefulness gate (`isUsefulCandidate`)
  * is unchanged by this — it was already subject-only and never used
  * `termMatchScore`'s weights.
+ *
+ * FIFTH-FIX ("Enzymes vs Proteins keeps showing Europe PMC" brief) — two
+ * separate, compounding problems, both fixed in this pass, neither
+ * touching financial/credential safety (see `../index.ts` and
+ * `adapters/wikipedia.ts` — still plain key-free `fetch()`, unchanged):
+ *
+ *   1. PLURAL/SINGULAR GATE BUG (the actual root cause of the repeated
+ *      screenshot behavior): `isUsefulCandidate` did an exact substring
+ *      check of the raw subject token against the title/abstract.
+ *      Comparison Studio items are typically plural ("Enzymes",
+ *      "Proteins"), but Wikipedia's canonical article titles are
+ *      singular ("Enzyme", "Protein") — and `"enzyme".includes("enzymes")`
+ *      is `false` (the term is literally longer than the text it's
+ *      being checked against). That silently disqualified Wikipedia's
+ *      genuinely on-topic, genuinely usable articles from ever passing
+ *      the gate for exactly the plural item names Comparison Studio
+ *      passes as `subject`, leaving only the literature adapters —
+ *      whose reference-only, license-withheld abstracts are what the
+ *      screenshots show occupying the fallback slot. `termVariants`/
+ *      `containsAnyVariant` below add simple, deterministic regular-
+ *      English plural handling (enzyme⇄enzymes, family⇄families) to
+ *      every substring check in this file — still no external AI/
+ *      semantic-similarity service, per this file's existing "keep it
+ *      lightweight" constraint; irregular plurals (e.g. "bacterium" /
+ *      "bacteria") are a known, accepted gap of this lexical approach,
+ *      not a regression from before.
+ *   2. EUROPE PMC DEPRIORITIZED, WIKIPEDIA PRIORITIZED (brief: "remove
+ *      Europe PMC or prioritize Wikipedia") — with (1) fixed, Wikipedia
+ *      can now actually compete for the primary slot, but
+ *      `contentQualityBonus` only gave it a token +2 edge (9 vs 7) over
+ *      Europe PMC's own ABSTRACT tier, which a modestly-stronger keyword
+ *      match could still overturn. Rather than removing Europe PMC
+ *      outright (it's still a legitimate source for topics with no
+ *      Wikipedia coverage, e.g. a specific organism strain), its
+ *      ABSTRACT-tier bonus is now clearly subordinate to Wikipedia's —
+ *      see `contentQualityBonus` below for the exact numbers — so a
+ *      general-definition Wikipedia match wins the primary slot over a
+ *      same-topic Europe PMC abstract by DESIGN, not by accident of
+ *      keyword overlap. Europe PMC only still wins outright when it has
+ *      genuine `FULL_TEXT` (rarer, and a real step up from an
+ *      encyclopedia intro when it's actually available).
  */
 import type { KnowledgeQueryContext, NormalizedKnowledgeResult } from './types'
 
@@ -49,6 +90,34 @@ function tokenize(text: string): string[] {
     .toLowerCase()
     .split(/[^a-z0-9]+/)
     .filter((t) => t.length > 2)
+}
+
+/**
+ * FIFTH-FIX: regular-English singular/plural variants of a lowercase
+ * token, so a subject term typed as "Enzymes" still matches a title
+ * that only says "Enzyme" (Wikipedia's canonical article-title form)
+ * and vice versa. Deliberately simple and deterministic — handles the
+ * common `-s` and `-ies` patterns only; irregular plurals are an
+ * accepted gap, not a target for this lightweight, non-AI check.
+ */
+function termVariants(term: string): string[] {
+  const variants = new Set([term])
+  if (term.endsWith('ies') && term.length > 4) {
+    variants.add(`${term.slice(0, -3)}y`)
+  } else if (term.endsWith('y') && term.length > 2) {
+    variants.add(`${term.slice(0, -1)}ies`)
+  }
+  if (term.endsWith('s') && !term.endsWith('ss') && term.length > 3) {
+    variants.add(term.slice(0, -1))
+  } else if (!term.endsWith('s')) {
+    variants.add(`${term}s`)
+  }
+  return [...variants]
+}
+
+/** Substring match against every singular/plural variant of `term`, not just the literal token — see `termVariants` and the FIFTH-FIX docstring above. */
+function containsAnyVariant(text: string, term: string): boolean {
+  return termVariants(term).some((variant) => text.includes(variant))
 }
 
 function subjectTerms(context: KnowledgeQueryContext): string[] {
@@ -71,7 +140,7 @@ export function queryTerms(context: KnowledgeQueryContext): string[] {
 function substringMatchScore(text: string, terms: string[], weight: number): number {
   let score = 0
   for (const term of terms) {
-    if (text.includes(term)) score += weight
+    if (containsAnyVariant(text, term)) score += weight
   }
   return score
 }
@@ -109,8 +178,18 @@ function contentQualityBonus(result: NormalizedKnowledgeResult): number {
   // arbitrary paper. A Europe PMC/PubMed result with a stronger genuine
   // term match (via `scoreOne`'s subject-weighted scoring) can still
   // outrank it — this is a nudge, not a hard tier.
+  //
+  // FIFTH-FIX ("remove Europe PMC or prioritize Wikipedia" brief): the
+  // ABSTRACT-tier gap between Wikipedia and every other source is now
+  // wide enough (+14 vs +4) that a same-relevance Wikipedia match wins
+  // the primary enrichment slot over a Europe PMC/PubMed abstract by
+  // design, not by accident of keyword overlap — see this file's module
+  // docstring for why Europe PMC is deliberately deprioritized rather
+  // than removed outright. FULL_TEXT is left source-agnostic: genuine
+  // open-access full text is rarer than a Wikipedia intro and still a
+  // real step up when it's actually available.
   if (result.contentAvailability === 'FULL_TEXT') return 10
-  if (result.contentAvailability === 'ABSTRACT') return result.source === 'wikipedia' ? 9 : 7
+  if (result.contentAvailability === 'ABSTRACT') return result.source === 'wikipedia' ? 14 : 4
   return 0
 }
 
@@ -177,6 +256,13 @@ export function rankResults(results: NormalizedKnowledgeResult[], context: Knowl
  * When `context.subject` is too short/generic to tokenize (e.g. "Rh"),
  * there is nothing meaningful to gate on, so every candidate passes —
  * unchanged from the second pass's behavior for that edge case.
+ *
+ * FIFTH-FIX: every substring check here now goes through
+ * `containsAnyVariant`, so a plural subject like "Enzymes" also matches
+ * a singular title like Wikipedia's "Enzyme" (and vice versa) — see the
+ * module docstring's FIFTH-FIX section for why this, not source
+ * removal, was the actual root cause of Wikipedia results never
+ * surfacing for plural comparison item names.
  */
 export function isUsefulCandidate(result: NormalizedKnowledgeResult, context: KnowledgeQueryContext): boolean {
   const terms = subjectTerms(context)
@@ -184,11 +270,11 @@ export function isUsefulCandidate(result: NormalizedKnowledgeResult, context: Kn
 
   const title = result.title.toLowerCase()
   if (result.contentAvailability === 'METADATA_ONLY' || result.contentAvailability === 'EXTERNAL_LINK') {
-    return terms.some((t) => title.includes(t))
+    return terms.some((t) => containsAnyVariant(title, t))
   }
 
   const abstract = (result.abstract ?? '').toLowerCase()
-  return terms.some((t) => title.includes(t) || abstract.includes(t))
+  return terms.some((t) => containsAnyVariant(title, t) || containsAnyVariant(abstract, t))
 }
 
 /**
