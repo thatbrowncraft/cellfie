@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Sun, Moon, Monitor, TextAa, Download, Upload, ArrowsLeftRight, ArrowsDownUp, CheckCircle } from '@phosphor-icons/react'
+import { Sun, Moon, Monitor, TextAa, Download, Upload, ArrowsLeftRight, ArrowsDownUp, CheckCircle, Info } from '@phosphor-icons/react'
 import { ReadingLayout } from '../../shared/layouts'
 import { Button } from '../../shared/components'
 import { useTheme, type ThemeMode } from '../../core/theme'
@@ -8,6 +8,7 @@ import { cn } from '../../shared/utils/cn'
 import { exportJsonBackup } from '../../core/export'
 import { moduleStatusList } from '../../config/modules'
 import { ImportBackupDialog } from './components/ImportBackupDialog'
+import { AboutDialog } from './components/AboutDialog'
 
 const themeOptions: { mode: ThemeMode; label: string; icon: JSX.Element }[] = [
   { mode: 'system', label: 'System', icon: <Monitor size={20} /> },
@@ -34,6 +35,7 @@ export function SettingsPage() {
   const { mode, setMode, largeText, setLargeText } = useTheme()
   const [readerNavigationMode, setReaderNavigationMode] = useReaderNavigationMode()
   const [importOpen, setImportOpen] = useState(false)
+  const [aboutOpen, setAboutOpen] = useState(false)
 
   return (
     <ReadingLayout title="Settings" eyebrow="System">
@@ -165,7 +167,22 @@ export function SettingsPage() {
         </div>
       </section>
 
+      <section className="mt-10">
+        <h2 className="mb-1 font-display text-h2 font-medium text-ink-primary">About</h2>
+        <button
+          onClick={() => setAboutOpen(true)}
+          className="flex w-full items-center justify-between rounded-md border border-border bg-surface p-4"
+        >
+          <span className="flex items-center gap-3 font-ui text-ui font-medium text-ink-primary">
+            <Info size={20} />
+            About Cellfie
+          </span>
+          <span className="font-ui text-caption text-ink-tertiary">Built by thatbrowncraft 🧬</span>
+        </button>
+      </section>
+
       <ImportBackupDialog open={importOpen} onClose={() => setImportOpen(false)} />
+      <AboutDialog open={aboutOpen} onClose={() => setAboutOpen(false)} />
     </ReadingLayout>
   )
 }
