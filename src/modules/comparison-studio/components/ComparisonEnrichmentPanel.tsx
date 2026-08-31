@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Books, CaretRight, Check, Globe, Sparkle, WarningCircle, WifiSlash, X } from '@phosphor-icons/react'
-import { Button, Dialog, Dropdown, EmptyState, type DropdownOption } from '../../../shared/components'
+import { Button, Dialog, Dropdown, EmptyState, ReferenceOnlyLink, type DropdownOption } from '../../../shared/components'
 import { db, type LibraryItem } from '../../../core/db'
 import { useLiveQuery } from '../../../core/db/useLiveQuery'
 import { lookupComparisonTopicKnowledge, type ComparisonKnowledgeLookupResult } from '../../../core/comparison/knowledgeLayer'
@@ -183,14 +183,15 @@ export function ComparisonEnrichmentPanel({
       return (
         <EmptyState
           icon={activeTab === 'my-library' ? <Books size={24} /> : <Globe size={24} />}
-          title={`${name}: nothing found`}
+          title={`${name}: no usable excerpt found`}
           description={
             activeTab === 'my-library'
               ? result?.searchedSourceName
                 ? `Not found in ${result.searchedSourceName}.`
                 : "Not found in your library."
-              : "Nothing reliable found in trusted scientific sources."
+              : "Trusted scientific sources didn't return anything Cellfie can display as an excerpt — a bare title or citation isn't enough to count as found."
           }
+          action={result?.reference ? <ReferenceOnlyLink reference={result.reference} /> : undefined}
         />
       )
     }
@@ -198,8 +199,9 @@ export function ComparisonEnrichmentPanel({
       return (
         <EmptyState
           icon={<Globe size={24} />}
-          title={`${name}: no more distinct results`}
-          description="Every trusted source Cellfie checked has already been shown for this side."
+          title={`${name}: no more usable results`}
+          description="Every trusted source Cellfie checked for this side has either already been shown or has nothing Cellfie can display as an excerpt."
+          action={result?.reference ? <ReferenceOnlyLink reference={result.reference} /> : undefined}
         />
       )
     }

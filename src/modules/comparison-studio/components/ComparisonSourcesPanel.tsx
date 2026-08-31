@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react'
 import { Books, CaretRight, Check, Globe, WarningCircle, WifiSlash, X } from '@phosphor-icons/react'
-import { Button, Dropdown, EmptyState, type DropdownOption } from '../../../shared/components'
+import { Button, Dropdown, EmptyState, ReferenceOnlyLink, type DropdownOption } from '../../../shared/components'
 import { db, type LibraryItem } from '../../../core/db'
 import { useLiveQuery } from '../../../core/db/useLiveQuery'
 import {
@@ -391,15 +391,22 @@ function OnlineLookup({
   }
 
   if (status === 'not-found') {
-    return <EmptyState title="Nothing reliable found" description={`External trusted sources didn't return anything reliable for "${title}" either.`} />
+    return (
+      <EmptyState
+        title="No usable excerpt found"
+        description={`External trusted sources didn't return anything Cellfie can display as an excerpt for "${title}" either — a title alone isn't enough to count as found.`}
+        action={result?.reference ? <ReferenceOnlyLink reference={result.reference} /> : undefined}
+      />
+    )
   }
 
   if (status === 'exhausted') {
     return (
       <EmptyState
         icon={<Globe size={32} />}
-        title="No more distinct online results found"
-        description={`Every trusted source Cellfie checked for "${title}"${aspectLabel ? ` — ${aspectLabel}` : ''} has already been shown.`}
+        title="No more usable results"
+        description={`Every trusted source Cellfie checked for "${title}"${aspectLabel ? ` — ${aspectLabel}` : ''} has either already been shown or has nothing Cellfie can display as an excerpt.`}
+        action={result?.reference ? <ReferenceOnlyLink reference={result.reference} /> : undefined}
       />
     )
   }
