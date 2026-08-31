@@ -54,7 +54,7 @@ import {
 /**
  * Knowledge Layer Repair: Organism Explorer's "trusted scientific
  * sources" summary now draws from the SAME shared multi-source pool
- * (Europe PMC + NCBI Bookshelf + PubMed) Comparison Studio and Laboratory use
+ * (Europe PMC + NCBI Bookshelf + PubMed + Wikipedia) Comparison Studio and Laboratory use
  * — via a compatibility wrapper that returns the exact `OnlineSummary`
  * shape this file already expected from `fetchOnlineSummary`, so
  * nothing else in this file needs to change. This is the "no separate
