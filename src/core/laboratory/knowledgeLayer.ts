@@ -14,7 +14,7 @@
  *     `core/concepts/documentText`) — genuinely generic term search over
  *     the user's own imported books, nothing organism-specific about it.
  *   - "Online Knowledge" mode reuses the SHARED multi-source Knowledge
- *     Layer (`core/knowledge`, Europe PMC + NCBI Bookshelf + PubMed) for its
+ *     Layer (`core/knowledge`, Europe PMC + NCBI Bookshelf + PubMed + Wikipedia) for its
  *     general-reference excerpt, and `fetchMeshClassification` from
  *     `core/concepts/onlineKnowledge` for its supplementary NCBI MeSH
  *     scope note — the same MeSH lookup the Concept Hub and Organism
@@ -102,6 +102,18 @@ export interface LabKnowledgeLookupResult {
   retrievedAt?: number
   /** How many candidates were found in total for this query — lets the UI say "3 of 3 sources shown" instead of a bare "no more results". */
   poolSize?: number
+  /**
+   * ARCHITECTURE FIX (knowledge-source repair brief §16): a
+   * reference-only citation (title/journal/date + link, no body text)
+   * carried through from `core/knowledge`'s `KnowledgeSearchResult.reference`
+   * — see that type's own docstring. Only ever set alongside
+   * `status: 'not-found'` or `'exhausted'`, never alongside `'found'`
+   * (a `'found'` result's own `generalReference.sourceUrl` already
+   * covers this). A caller MAY offer this as a "read at the source"
+   * link next to an honest empty state; it must never be rendered as if
+   * it were excerpt/body text.
+   */
+  reference?: { title: string; sourceName: string; sourceUrl: string }
 }
 
 interface KLCacheEntry {
@@ -264,6 +276,12 @@ interface OnlineLookupContext {
   excludeIds?: string[]
 }
 
+/** Narrows a full `NormalizedKnowledgeResult` down to the citation-only shape `LabKnowledgeLookupResult.reference` exposes — deliberately excludes `abstract`/`contentAvailability` so a caller can never accidentally render this as if it were body text (see that field's own docstring). */
+function toReferenceCitation(reference: Awaited<ReturnType<typeof searchKnowledgeEnrichment>>['reference']): LabKnowledgeLookupResult['reference'] {
+  if (!reference) return undefined
+  return { title: reference.title, sourceName: reference.sourceLabel, sourceUrl: reference.externalUrl }
+}
+
 async function lookupFromOnline(
   title: string,
   cacheKey: string,
@@ -301,14 +319,19 @@ async function lookupFromOnline(
   if (enrichment.status === 'offline') return staleResult ?? { status: 'offline', sources: [] }
 
   if (enrichment.status === 'exhausted') {
-    // Multi-source pool ran out of candidates that weren't already
-    // shown/dismissed -- an honest "no more distinct results" state
-    // (brief SS9/SS24), never a repeat of something already dismissed.
-    return { status: 'exhausted', sources: [], poolSize: enrichment.poolSize }
+    // Multi-source pool ran out of USABLE candidates that weren't
+    // already shown/dismissed -- an honest "no more distinct results"
+    // state (brief §9/§24), never a repeat of something already
+    // dismissed, and never a metadata-only record standing in for one
+    // (knowledge-source repair brief §15 — see core/knowledge/index.ts).
+    return { status: 'exhausted', sources: [], poolSize: enrichment.poolSize, reference: toReferenceCitation(enrichment.reference) }
   }
 
   if (!mesh && enrichment.status !== 'found') {
-    const emptyResult: LabKnowledgeLookupResult = { status: 'not-found', sources: [] }
+    // enrichment.status is 'not-found' here -- genuinely nothing usable
+    // exists for this query (brief §15), though a reference-only
+    // citation may still be worth offering (brief §16).
+    const emptyResult: LabKnowledgeLookupResult = { status: 'not-found', sources: [], reference: toReferenceCitation(enrichment.reference) }
     if (!isSearchAgain) await writeCache(cacheKey, emptyResult)
     return emptyResult
   }
