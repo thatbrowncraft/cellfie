@@ -217,12 +217,26 @@ export function ComparisonWorkspacePage() {
     }
   }
 
-  /** The whole-comparison enrichment panel's one confident, non-invented mapping (brief §9): Overview, only while it's still blank. Provenance is kept inline in the cell text itself, matching how a custom comparison's aspects have no separate per-side note field to carry it in (see persistAspectNote above). */
-  async function acceptToOverview(side: 'A' | 'B', text: string, sourceLabel: string) {
+  /**
+   * The whole-comparison enrichment panel's "Use for" action (Section
+   * Selector brief: generalized from the old single hardcoded
+   * Overview-only mapping — the person now picks ANY aspect row,
+   * including "Key Distinguishing Feature" or a custom row, directly
+   * from the panel's dropdown). Appends to whatever is already in that
+   * cell rather than overwriting it, mirroring `appendAdditionalSourceInfo`'s
+   * append-not-replace behavior above — a second accept into an
+   * already-filled row (e.g. accepting one sentence now, another later)
+   * is additive evidence, never a silent overwrite of existing curated
+   * content or a prior accept.
+   */
+  async function acceptToAspect(aspectId: string, side: 'A' | 'B', text: string, sourceLabel: string) {
     if (!comparison) return
-    const overview = comparison.aspects.find((a) => a.id === 'overview')
-    if (!overview) return appendAdditionalSourceInfo(text, sourceLabel)
-    await persistAspectChange('overview', side, `${text}\n(${sourceLabel})`)
+    const aspect = comparison.aspects.find((a) => a.id === aspectId)
+    if (!aspect) return appendAdditionalSourceInfo(text, sourceLabel)
+    const existing = side === 'A' ? aspect.valueA : aspect.valueB
+    const addition = `${text}\n(${sourceLabel})`
+    const nextValue = existing?.trim() ? `${existing}\n\n${addition}` : addition
+    await persistAspectChange(aspectId, side, nextValue)
   }
 
   async function handleToggleKeyDifference(aspectId: string) {
@@ -533,9 +547,10 @@ export function ComparisonWorkspacePage() {
           comparisonId={id}
           itemAName={comparison.itemA.name}
           itemBName={comparison.itemB.name}
+          aspects={comparison.aspects.map((a) => ({ id: a.id, label: a.label }))}
           overviewFilledA={Boolean(comparison.aspects.find((a) => a.id === 'overview')?.valueA)}
           overviewFilledB={Boolean(comparison.aspects.find((a) => a.id === 'overview')?.valueB)}
-          onAcceptToOverview={({ side, text, sourceLabel }) => acceptToOverview(side, text, sourceLabel)}
+          onUseForAspect={({ side, aspectId, text, sourceLabel }) => acceptToAspect(aspectId, side, text, sourceLabel)}
           onAddAdditionalInfo={({ text, sourceLabel }) => appendAdditionalSourceInfo(text, sourceLabel)}
           resume={pendingSearch ?? undefined}
           onClose={() => {
