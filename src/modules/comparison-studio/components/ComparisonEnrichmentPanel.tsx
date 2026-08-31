@@ -365,10 +365,29 @@ export function ComparisonEnrichmentPanel({
  * (not a hardcoded Overview-or-Notes choice). Deliberately its own
  * component (not inline in `sideBlock`, which is a plain helper
  * function, not a component React can attach hooks to) so its
- * selection/target/applied state follows the Rules of Hooks — and
- * because it's mounted with `key={side:excerptText}` at the call site,
- * a genuinely new excerpt (fresh search or "Search again") remounts it
+ * selection/target/usage state follows the Rules of Hooks — and because
+ * it's mounted with `key={side:excerptText}` at the call site, a
+ * genuinely new excerpt (fresh search or "Search again") remounts it
  * with fresh state for free, with no manual reset effect needed.
+ *
+ * ROOT-CAUSE FIX ("whole paragraph as overview instead of selected
+ * sentence"): the first version tracked a single `applied` boolean for
+ * the WHOLE card — the very first "Use selected text" tap replaced the
+ * entire card with a bare "Saved to X" confirmation, discarding every
+ * sentence that hadn't been sent anywhere yet. The selection itself was
+ * already correct (only the ticked sentences were sent — see the
+ * screenshotted result, which really did contain only the selected
+ * sentences), but losing access to the REST of the excerpt the moment
+ * any single selection was applied made it impossible to send a
+ * different sentence to a different section afterward, which is exactly
+ * the point of a per-sentence picker. Fixed by tracking usage
+ * PER SENTENCE (`usedFor`, keyed by sentence index) instead of one flag
+ * for the whole card: applying a selection only consumes the sentences
+ * that were actually ticked at that moment — they get a small inline
+ * "used for X" tag and lock out of further selection — while every
+ * still-unused sentence remains live, toggleable, and reusable with a
+ * newly chosen "Use for" target. The card only stops offering further
+ * picks once EVERY sentence has been sent somewhere.
  */
 function ExcerptCard({
   name,
@@ -389,7 +408,8 @@ function ExcerptCard({
 }) {
   const sentences = useMemo(() => splitIntoSentences(excerptText), [excerptText])
   const [selected, setSelected] = useState<boolean[]>(() => sentences.map(() => true))
-  const [applied, setApplied] = useState(false)
+  /** Which destination LABEL each sentence has already been sent to (`null` = not yet used). Once set, that sentence is locked out of further toggling/selection — see `toggle` and `applySelection` below. */
+  const [usedFor, setUsedFor] = useState<(string | null)[]>(() => sentences.map(() => null))
 
   const options: DropdownOption[] = [
     ...aspects.map((a) => ({ value: a.id, label: a.label })),
@@ -397,78 +417,90 @@ function ExcerptCard({
   ]
   // Default target: the still-blank Overview row when one exists (matches the
   // old one-confident-mapping behavior), otherwise the comparison's first
-  // aspect row, otherwise Notes — always overridable via the dropdown.
+  // aspect row, otherwise Notes — always overridable via the dropdown, and
+  // freely changeable again before each subsequent apply.
   const overviewAspect = aspects.find((a) => a.id === 'overview')
   const defaultTarget = !overviewFilled && overviewAspect ? overviewAspect.id : (aspects[0]?.id ?? NOTES_TARGET)
   const [targetId, setTargetId] = useState(defaultTarget)
 
-  const selectedText = sentences
-    .filter((_, i) => selected[i])
+  const pendingIndices = selected.map((v, i) => (v && !usedFor[i] ? i : -1)).filter((i) => i !== -1)
+  const pendingText = pendingIndices
+    .map((i) => sentences[i])
     .join(' ')
     .trim()
-  const targetLabel = options.find((o) => o.value === targetId)?.label ?? 'Notes'
+  const allUsed = usedFor.every((v) => v !== null)
 
   function toggle(index: number) {
+    if (usedFor[index]) return // already sent somewhere — not re-selectable
     setSelected((prev) => prev.map((v, i) => (i === index ? !v : v)))
   }
 
-  if (applied) {
-    return (
-      <div className="flex flex-col gap-2 rounded-md border border-border p-3">
-        <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{name}</p>
-        <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
-          <Check size={13} weight="bold" aria-hidden />
-          Saved to {targetLabel}
-        </span>
-      </div>
-    )
+  function applySelection() {
+    if (pendingIndices.length === 0) return
+    const targetLabel = options.find((o) => o.value === targetId)?.label ?? 'Notes'
+    onApply(targetId, pendingText)
+    setUsedFor((prev) => prev.map((v, i) => (pendingIndices.includes(i) ? targetLabel : v)))
+    setSelected((prev) => prev.map((v, i) => (pendingIndices.includes(i) ? false : v)))
   }
 
   return (
     <div className="flex flex-col gap-2 rounded-md border border-border p-3">
       <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{name}</p>
       <p className="font-body text-body text-ink-secondary">
-        {sentences.map((sentence, i) => (
-          <span
-            key={i}
-            role="checkbox"
-            aria-checked={selected[i]}
-            tabIndex={0}
-            onClick={() => toggle(i)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault()
-                toggle(i)
+        {sentences.map((sentence, i) => {
+          const used = usedFor[i]
+          if (used) {
+            return (
+              <span key={i} className="rounded px-0.5 text-ink-tertiary">
+                {sentence} <span className="font-ui text-micro font-medium text-olive">(used for {used})</span>{' '}
+              </span>
+            )
+          }
+          return (
+            <span
+              key={i}
+              role="checkbox"
+              aria-checked={selected[i]}
+              tabIndex={0}
+              onClick={() => toggle(i)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  toggle(i)
+                }
+              }}
+              className={
+                selected[i]
+                  ? 'cursor-pointer rounded px-0.5 text-ink-primary underline decoration-olive decoration-2 underline-offset-2'
+                  : 'cursor-pointer rounded px-0.5 text-ink-tertiary line-through decoration-1'
               }
-            }}
-            className={
-              selected[i]
-                ? 'cursor-pointer rounded px-0.5 text-ink-primary underline decoration-olive decoration-2 underline-offset-2'
-                : 'cursor-pointer rounded px-0.5 text-ink-tertiary line-through decoration-1'
-            }
-          >
-            {sentence}{' '}
-          </span>
-        ))}
+            >
+              {sentence}{' '}
+            </span>
+          )
+        })}
       </p>
       <p className="font-ui text-micro text-ink-tertiary">{sourceLabel}</p>
       {attributionNotice && <p className="font-ui text-micro text-ink-tertiary">{attributionNotice}</p>}
-      <p className="font-ui text-micro text-ink-tertiary">Tap a sentence to leave it out, then choose where to use what's left selected.</p>
-      <div className="flex flex-wrap items-end gap-2">
-        <Dropdown label="Use for" options={options} value={targetId} onChange={setTargetId} />
-        <Button
-          variant="tertiary"
-          size="small"
-          icon={<Check size={14} />}
-          disabled={!selectedText}
-          onClick={() => {
-            onApply(targetId, selectedText)
-            setApplied(true)
-          }}
-        >
-          Use selected text
-        </Button>
-      </div>
+      {allUsed ? (
+        <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
+          <Check size={13} weight="bold" aria-hidden />
+          Every sentence from this excerpt has been used.
+        </span>
+      ) : (
+        <>
+          <p className="font-ui text-micro text-ink-tertiary">
+            Tap a sentence to include or leave it out, choose where the selection goes, then apply — sentences already used stay marked but everything
+            else stays available for another section.
+          </p>
+          <div className="flex flex-wrap items-end gap-2">
+            <Dropdown label="Use for" options={options} value={targetId} onChange={setTargetId} />
+            <Button variant="tertiary" size="small" icon={<Check size={14} />} disabled={!pendingText} onClick={applySelection}>
+              Use selected text
+            </Button>
+          </div>
+        </>
+      )}
     </div>
   )
 }
