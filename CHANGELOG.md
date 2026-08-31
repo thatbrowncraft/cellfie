@@ -8,7 +8,7 @@ Versioning follows Semantic Versioning.
 
 ---
 
-## [1.0.0] - First Stable Public Release
+## 🧬 Cellfie v1.0.0 · The First Stable Release
 
 Release Date: August 2026
 
