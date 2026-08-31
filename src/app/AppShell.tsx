@@ -7,6 +7,7 @@ import { PageTransition } from './PageTransition'
 import { UniversalSearch } from '../shared/components/SearchField'
 import { QuickCaptureFab } from '../shared/components/QuickCaptureFab'
 import { useBreakpoint } from '../shared/hooks'
+import { cn } from '../shared/utils/cn'
 import { searchEverything, type SearchResultGroup } from '../core/search'
 import { runAutoConceptCleanup, purgeAutomaticScientificRelations } from '../core/concepts'
 import { NoteEditorDialog } from '../modules/notes/components/NoteEditorDialog'
@@ -36,6 +37,7 @@ export function AppShell({ children }: AppShellProps) {
   const [quickCaptureOpen, setQuickCaptureOpen] = useState(false)
 
   const railOnly = breakpoint === 'tablet'
+  const isMobile = breakpoint === 'mobile'
 
   // Knowledge Model Correction §18 — one-time cleanup of concepts that
   // were silently auto-created from raw PDF text before this correction.
@@ -95,20 +97,25 @@ export function AppShell({ children }: AppShellProps) {
 
   return (
     <div className="flex min-h-screen bg-canvas">
-      <Sidebar drawerOpen={drawerOpen} onCloseDrawer={() => setDrawerOpen(false)} railOnly={railOnly} />
+      <Sidebar
+        isMobile={isMobile}
+        drawerOpen={drawerOpen}
+        onCloseDrawer={() => setDrawerOpen(false)}
+        railOnly={railOnly}
+      />
 
       <div className="flex min-w-0 flex-1 flex-col">
         <TopNav
           onMenuClick={() => setDrawerOpen(true)}
           onSearchClick={() => setSearchOpen(true)}
-          showMenuButton={breakpoint === 'mobile'}
+          showMenuButton={isMobile}
         />
 
-        <main id="main-content" className="min-w-0 flex-1 pb-20 sm:pb-0">
+        <main id="main-content" className={cn('min-w-0 flex-1', isMobile ? 'pb-20' : 'pb-0')}>
           <PageTransition>{children}</PageTransition>
         </main>
 
-        <BottomNav />
+        {isMobile && <BottomNav />}
       </div>
 
       <QuickCaptureFab onClick={() => setQuickCaptureOpen(true)} />

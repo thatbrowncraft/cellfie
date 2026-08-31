@@ -3,7 +3,14 @@ import { navItems } from '../config/navigation'
 import { cn } from '../shared/utils/cn'
 
 /**
- * Bottom Navigation — mobile only (<640px), per Design System §4.3.
+ * Bottom Navigation — mobile only, per Design System §4.3.
+ *
+ * PWA layout-isolation fix — visibility used to be a raw `sm:hidden`
+ * CSS breakpoint, always mounted and just hidden by width. That's
+ * unreliable on an installed Android PWA (see the note in Sidebar.tsx
+ * for why the layout viewport width can lie there), so AppShell now
+ * only mounts this component at all when `useBreakpoint()` says mobile,
+ * and there is no width-based CSS driving its visibility anymore.
  *
  * Navigation Parity Correction — this shows all 8 sections (every
  * `navItems` entry, same set/order as the hamburger `Sidebar`), not a
@@ -32,7 +39,7 @@ export function BottomNav() {
   return (
     <nav
       aria-label="Primary"
-      className="fixed inset-x-0 bottom-0 z-30 flex overflow-x-auto border-t border-border bg-surface pb-[env(safe-area-inset-bottom)] sm:hidden"
+      className="fixed inset-x-0 bottom-0 z-30 flex overflow-x-auto border-t border-border bg-surface pb-[env(safe-area-inset-bottom)]"
     >
       {navItems.map((item) => {
         const Icon = item.icon

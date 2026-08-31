@@ -29,7 +29,7 @@ export function TopNav({ onMenuClick, onSearchClick, showMenuButton }: TopNavPro
           <button
             onClick={onMenuClick}
             aria-label="Open navigation menu"
-            className="rounded-sm p-2 text-ink-secondary hover:bg-surface-raised hover:text-ink-primary sm:hidden"
+            className="rounded-sm p-2 text-ink-secondary hover:bg-surface-raised hover:text-ink-primary"
           >
             <List size={22} />
           </button>
