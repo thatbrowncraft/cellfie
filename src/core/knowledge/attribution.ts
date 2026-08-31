@@ -105,20 +105,70 @@ export const ABSTRACT_LICENSE_UNKNOWN_NOTICE =
  */
 const MAX_ABSTRACT_EXCERPT_CHARS = 280
 
+/** Matches a sentence-ending `.`/`!`/`?` (optionally followed by a closing quote/bracket) that's actually followed by whitespace or end-of-string — the same lightweight, deliberately-approximate boundary the Comparison Studio's own per-sentence picker uses (`comparison-studio/components/ComparisonEnrichmentPanel.tsx`'s `splitIntoSentences`), so a rare abbreviation/decimal over-split is an accepted, already-established tradeoff rather than a new one. */
+const SENTENCE_END_RE = /[.!?](?:["')\]]*)(?=\s|$)/g
+
+function lastSentenceEndAt(haystack: string): number {
+  SENTENCE_END_RE.lastIndex = 0
+  let lastEnd = -1
+  let match: RegExpExecArray | null
+  while ((match = SENTENCE_END_RE.exec(haystack))) {
+    lastEnd = match.index + match[0].length
+  }
+  return lastEnd
+}
+
 /**
- * Truncates text to a short, non-displacive excerpt. Cuts at the
- * nearest word boundary at or before the limit rather than mid-word,
- * and appends an ellipsis so it's visually obvious this is a partial
- * excerpt. Text at or under the limit is returned unchanged. Never
- * throws. This function makes no license determination of its own —
- * callers must already know the text is safe to show before calling
- * it (see `resolveAbstractPresentation`).
+ * Truncates text to a short, non-displacive excerpt — but always at a
+ * genuine sentence boundary, never mid-sentence. `maxChars` is a soft
+ * target amount, not a hard byte ceiling worth breaking a sentence
+ * over: ROOT-CAUSE FIX for excerpts ending on a fragment with a
+ * trailing "…" (e.g. "...Studying an enzyme's kinetics in this way can
+ * reveal the catalytic reaction mechanism of this drug, and how a drug
+ * or a modifier (inhibitor or activator) might affect the rate.  An
+ * enzyme, often written "E"...") — the previous version cut at the
+ * nearest word boundary at/before the limit with no regard for where
+ * sentences actually ended.
+ *
+ * Two passes, in order:
+ * 1) Look a little PAST `maxChars` (up to +25%) to finish whatever
+ *    sentence is already in progress at the limit — keeps the excerpt
+ *    genuinely "in good amount", not shortened, while landing on a
+ *    real sentence end instead of stopping partway through one.
+ * 2) If no sentence ends within that extended window (a very long
+ *    run-on sentence), fall back to the last complete sentence at or
+ *    before the limit — shorter than `maxChars`, but still whole.
+ * Only if NEITHER pass finds a sentence boundary at all (no terminal
+ * punctuation anywhere in range) does this fall back to the previous
+ * word-boundary + ellipsis behavior, so something is still shown.
+ *
+ * Text at or under the limit is returned unchanged. Never throws.
+ * This function makes no license determination of its own — callers
+ * must already know the text is safe to show before calling it (see
+ * `resolveAbstractPresentation`).
  */
 export function conservativeAbstractExcerpt(text: string | undefined, maxChars: number = MAX_ABSTRACT_EXCERPT_CHARS): string | undefined {
   if (!text) return undefined
   const trimmed = text.trim()
   if (trimmed.length <= maxChars) return trimmed
+
+  // Pass 1: finish the sentence already in progress at the limit.
+  const forwardCap = Math.min(trimmed.length, maxChars + Math.round(maxChars * 0.25))
+  const forwardWindow = trimmed.slice(0, forwardCap)
+  const forwardEnd = lastSentenceEndAt(forwardWindow)
+  if (forwardEnd >= maxChars) {
+    return forwardWindow.slice(0, forwardEnd).trim()
+  }
+
+  // Pass 2: last complete sentence at or before the limit.
   const slice = trimmed.slice(0, maxChars)
+  const backwardEnd = lastSentenceEndAt(slice)
+  if (backwardEnd > maxChars * 0.4) {
+    return slice.slice(0, backwardEnd).trim()
+  }
+
+  // Pass 3: no usable sentence boundary anywhere in range — word
+  // boundary + ellipsis, same as before.
   const lastSpace = slice.lastIndexOf(' ')
   const cut = lastSpace > maxChars * 0.6 ? slice.slice(0, lastSpace) : slice
   return `${cut.trim()}…`
