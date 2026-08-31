@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Books, CaretRight, Check, Globe, Sparkle, WarningCircle, WifiSlash, X } from '@phosphor-icons/react'
 import { Button, Dialog, Dropdown, EmptyState, ReferenceOnlyLink, type DropdownOption } from '../../../shared/components'
 import { db, type LibraryItem } from '../../../core/db'
@@ -15,14 +15,46 @@ interface AcceptTarget {
   sourceLabel: string
 }
 
+/** "Use for" destination target — any real aspect row in the comparison, by id, not just the hardcoded Overview mapping. */
+interface AspectAcceptTarget {
+  side: 'A' | 'B'
+  aspectId: string
+  text: string
+  sourceLabel: string
+}
+
+/** The special, non-aspect "Use for" destination — the comparison's own free-text Notes field. Kept as a distinct sentinel value (never a real aspect id) so the dropdown can offer it alongside every aspect row. */
+const NOTES_TARGET = '__notes__'
+
+/**
+ * Splits an excerpt into individually selectable sentences (Section
+ * Selector brief: "select from retrieved data and select how to use
+ * that selected sentence"). Deliberately a plain regex split, not an
+ * NLP sentence tokenizer — consistent with `core/knowledge/rank.ts`'s
+ * own "keep matching lightweight, no external service" posture. Splits
+ * on `.`/`!`/`?` followed by whitespace or end-of-string; abbreviations
+ * or decimal numbers occasionally over-split, which is an accepted
+ * approximation — a sentence boundary landing one word early/late still
+ * leaves the underlying text selectable, just chunked slightly
+ * differently than a human would chunk it.
+ */
+function splitIntoSentences(text: string): string[] {
+  const trimmed = text.trim()
+  if (!trimmed) return []
+  const parts = trimmed.match(/[^.!?]+(?:[.!?]+(?=\s|$)|$)/g)
+  return (parts ?? [trimmed]).map((s) => s.trim()).filter(Boolean)
+}
+
 interface ComparisonEnrichmentPanelProps {
   comparisonId: string
   itemAName: string
   itemBName: string
-  /** Whether each side already has a value for the "Overview" aspect — Accept targets Overview when it's still blank, and falls back to "Add as additional source information" otherwise (brief §9: never invent a mapping when one isn't obviously appropriate). */
+  /** Every row currently in the comparison (curated + custom), offered as "Use for" destinations alongside Notes — Section Selector brief: "or all sections available in comparison". */
+  aspects: { id: string; label: string }[]
+  /** Whether each side already has a value for the "Overview" aspect — used only to pick a sensible DEFAULT "Use for" selection (Overview while it's still blank); the person can always change it via the dropdown, unlike the old hardcoded single mapping. */
   overviewFilledA: boolean
   overviewFilledB: boolean
-  onAcceptToOverview: (target: AcceptTarget) => void
+  onUseForAspect: (target: AspectAcceptTarget) => void
   onAddAdditionalInfo: (target: AcceptTarget) => void
   /** Pre-fills and immediately re-runs a search that was interrupted (brief §22 "Resume search") — the resumed request is identical to what was in flight before, since a killed process can't hand back partial results. */
   resume?: ComparisonSearchSession
@@ -38,28 +70,33 @@ interface ComparisonEnrichmentPanelProps {
  * which it's invoked changes (item-level, not aspect-level).
  *
  * A retrieved result is deliberately NOT auto-mapped across every aspect
- * row (brief §9: "do not hallucinate mappings"). It offers exactly one
- * confident mapping — the Overview aspect, when it's still blank — and
- * otherwise stores the excerpt as comparison-level "Additional source
- * information" (the comparison's own Notes), which is the honest,
- * non-invented way to keep evidence that doesn't cleanly map onto one row.
- * The existing per-aspect "Find more for this aspect" action (still
- * reachable from each row) remains the advanced fallback for pulling a
- * specific piece of that evidence into a specific cell (brief §33).
+ * row (brief §9: "do not hallucinate mappings") — the person always
+ * makes the mapping explicit themselves. Section Selector brief update:
+ * this used to mean exactly one hardcoded choice (Overview-while-blank,
+ * or else the comparison's Notes); `ExcerptCard` below now surfaces a
+ * "Use for" dropdown listing every real aspect row in this comparison
+ * (Overview, Key Distinguishing Feature, any custom row) plus Notes,
+ * still defaulting to the same Overview-while-blank guess as before but
+ * never limiting the person to only that guess. It also lets the person
+ * select which SENTENCES of the excerpt to use, not just accept the
+ * whole block verbatim. The existing per-aspect "Find more for this
+ * aspect" action (still reachable from each row) remains the advanced
+ * fallback for a targeted search scoped to one specific cell (brief §33).
  *
- * COMPLIANCE PATCH: `sideBlock` now also renders
+ * COMPLIANCE PATCH: `ExcerptCard` still renders
  * `generalReference.attributionNotice` when present (NCBI attribution
  * for PubMed/Bookshelf, a conservative-reuse notice for Europe PMC
  * abstract excerpts — see `core/knowledge/attribution.ts`). No other
- * behavior change.
+ * behavior change from that patch.
  */
 export function ComparisonEnrichmentPanel({
   comparisonId,
   itemAName,
   itemBName,
+  aspects,
   overviewFilledA,
   overviewFilledB,
-  onAcceptToOverview,
+  onUseForAspect,
   onAddAdditionalInfo,
   resume,
   onClose
@@ -71,19 +108,6 @@ export function ComparisonEnrichmentPanel({
   const [statusB, setStatusB] = useState<SideStatus>('idle')
   const [resultA, setResultA] = useState<ComparisonKnowledgeLookupResult | null>(null)
   const [resultB, setResultB] = useState<ComparisonKnowledgeLookupResult | null>(null)
-  /**
-   * Root-cause fix ("Accept/Add — no button works"): these buttons used
-   * to call their handler and render nothing different afterward — the
-   * write to the aspect/notes genuinely happened, but with the panel
-   * open as a modal over the row it's updating, there was zero visible
-   * confirmation, and nothing stopped a second tap from silently
-   * appending the same excerpt to Notes a second time. Tracked per side
-   * so each accept action gets its own inline confirmation and can't be
-   * repeated by mistake, mirroring the same pattern `AcceptDismissRow`
-   * already uses successfully in `ComparisonSourcesPanel`.
-   */
-  const [acceptedActionA, setAcceptedActionA] = useState<'overview' | 'notes' | null>(null)
-  const [acceptedActionB, setAcceptedActionB] = useState<'overview' | 'notes' | null>(null)
   /**
    * Root-cause fix ("Search again keeps showing the same data"): ids
    * already shown for each side are remembered here and passed back as
@@ -117,8 +141,6 @@ export function ComparisonEnrichmentPanel({
     setStatusB('searching')
     setResultA(null)
     setResultB(null)
-    setAcceptedActionA(null)
-    setAcceptedActionB(null)
 
     const excludeA = opts?.freshStart ? [] : shownIdsA
     const excludeB = opts?.freshStart ? [] : shownIdsB
@@ -165,8 +187,6 @@ export function ComparisonEnrichmentPanel({
     const status = side === 'A' ? statusA : statusB
     const result = side === 'A' ? resultA : resultB
     const overviewFilled = side === 'A' ? overviewFilledA : overviewFilledB
-    const acceptedAction = side === 'A' ? acceptedActionA : acceptedActionB
-    const setAcceptedAction = side === 'A' ? setAcceptedActionA : setAcceptedActionB
 
     if (status === 'searching' || status === 'idle') return null
 
@@ -220,47 +240,25 @@ export function ComparisonEnrichmentPanel({
       if (!excerptText) return null
 
       return (
-        <div className="flex flex-col gap-2 rounded-md border border-border p-3">
-          <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{name}</p>
-          <p className="font-body text-body text-ink-secondary">{excerptText}</p>
-          <p className="font-ui text-micro text-ink-tertiary">{sourceLabel}</p>
-          {result.generalReference?.attributionNotice && (
-            <p className="font-ui text-micro text-ink-tertiary">{result.generalReference.attributionNotice}</p>
-          )}
-          {acceptedAction ? (
-            <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
-              <Check size={13} weight="bold" aria-hidden />
-              {acceptedAction === 'overview' ? 'Saved to Overview' : 'Added to Your Notes'}
-            </span>
-          ) : (
-            <div className="flex flex-wrap gap-2">
-              {!overviewFilled && (
-                <Button
-                  variant="tertiary"
-                  size="small"
-                  icon={<Check size={14} />}
-                  onClick={() => {
-                    onAcceptToOverview({ side, text: excerptText, sourceLabel })
-                    setAcceptedAction('overview')
-                  }}
-                >
-                  Use as Overview
-                </Button>
-              )}
-              <Button
-                variant="tertiary"
-                size="small"
-                icon={<Check size={14} />}
-                onClick={() => {
-                  onAddAdditionalInfo({ side, text: excerptText, sourceLabel })
-                  setAcceptedAction('notes')
-                }}
-              >
-                Add as additional source information
-              </Button>
-            </div>
-          )}
-        </div>
+        <ExcerptCard
+          // Keyed by the excerpt itself (not just `side`) so a brand-new
+          // search or "Search again" — which swaps in a genuinely
+          // different excerptText for this side — remounts this card
+          // and resets its sentence-selection/target state, instead of
+          // carrying stale selections/confirmation over onto unrelated
+          // new content.
+          key={`${side}:${excerptText}`}
+          name={name}
+          excerptText={excerptText}
+          sourceLabel={sourceLabel}
+          attributionNotice={result.generalReference?.attributionNotice}
+          aspects={aspects}
+          overviewFilled={overviewFilled}
+          onApply={(aspectId, text) => {
+            if (aspectId === NOTES_TARGET) onAddAdditionalInfo({ side, text, sourceLabel })
+            else onUseForAspect({ side, aspectId, text, sourceLabel })
+          }}
+        />
       )
     }
     return null
@@ -355,6 +353,123 @@ export function ComparisonEnrichmentPanel({
         )}
       </div>
     </Dialog>
+  )
+}
+
+/**
+ * Section Selector brief ("select from retrieved data and select how to
+ * use that selected sentence for... use as overview, or use as
+ * distinguish feature, or all sections available in comparison"): one
+ * retrieved excerpt, rendered as individually toggleable sentences, plus
+ * a "Use for" dropdown listing every real aspect row in the comparison
+ * (not a hardcoded Overview-or-Notes choice). Deliberately its own
+ * component (not inline in `sideBlock`, which is a plain helper
+ * function, not a component React can attach hooks to) so its
+ * selection/target/applied state follows the Rules of Hooks — and
+ * because it's mounted with `key={side:excerptText}` at the call site,
+ * a genuinely new excerpt (fresh search or "Search again") remounts it
+ * with fresh state for free, with no manual reset effect needed.
+ */
+function ExcerptCard({
+  name,
+  excerptText,
+  sourceLabel,
+  attributionNotice,
+  aspects,
+  overviewFilled,
+  onApply
+}: {
+  name: string
+  excerptText: string
+  sourceLabel: string
+  attributionNotice?: string
+  aspects: { id: string; label: string }[]
+  overviewFilled: boolean
+  onApply: (aspectId: string, text: string) => void
+}) {
+  const sentences = useMemo(() => splitIntoSentences(excerptText), [excerptText])
+  const [selected, setSelected] = useState<boolean[]>(() => sentences.map(() => true))
+  const [applied, setApplied] = useState(false)
+
+  const options: DropdownOption[] = [
+    ...aspects.map((a) => ({ value: a.id, label: a.label })),
+    { value: NOTES_TARGET, label: 'Additional source information (Notes)' }
+  ]
+  // Default target: the still-blank Overview row when one exists (matches the
+  // old one-confident-mapping behavior), otherwise the comparison's first
+  // aspect row, otherwise Notes — always overridable via the dropdown.
+  const overviewAspect = aspects.find((a) => a.id === 'overview')
+  const defaultTarget = !overviewFilled && overviewAspect ? overviewAspect.id : (aspects[0]?.id ?? NOTES_TARGET)
+  const [targetId, setTargetId] = useState(defaultTarget)
+
+  const selectedText = sentences
+    .filter((_, i) => selected[i])
+    .join(' ')
+    .trim()
+  const targetLabel = options.find((o) => o.value === targetId)?.label ?? 'Notes'
+
+  function toggle(index: number) {
+    setSelected((prev) => prev.map((v, i) => (i === index ? !v : v)))
+  }
+
+  if (applied) {
+    return (
+      <div className="flex flex-col gap-2 rounded-md border border-border p-3">
+        <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{name}</p>
+        <span className="flex items-center gap-1 font-ui text-micro font-medium text-olive">
+          <Check size={13} weight="bold" aria-hidden />
+          Saved to {targetLabel}
+        </span>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex flex-col gap-2 rounded-md border border-border p-3">
+      <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{name}</p>
+      <p className="font-body text-body text-ink-secondary">
+        {sentences.map((sentence, i) => (
+          <span
+            key={i}
+            role="checkbox"
+            aria-checked={selected[i]}
+            tabIndex={0}
+            onClick={() => toggle(i)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                toggle(i)
+              }
+            }}
+            className={
+              selected[i]
+                ? 'cursor-pointer rounded px-0.5 text-ink-primary underline decoration-olive decoration-2 underline-offset-2'
+                : 'cursor-pointer rounded px-0.5 text-ink-tertiary line-through decoration-1'
+            }
+          >
+            {sentence}{' '}
+          </span>
+        ))}
+      </p>
+      <p className="font-ui text-micro text-ink-tertiary">{sourceLabel}</p>
+      {attributionNotice && <p className="font-ui text-micro text-ink-tertiary">{attributionNotice}</p>}
+      <p className="font-ui text-micro text-ink-tertiary">Tap a sentence to leave it out, then choose where to use what's left selected.</p>
+      <div className="flex flex-wrap items-end gap-2">
+        <Dropdown label="Use for" options={options} value={targetId} onChange={setTargetId} />
+        <Button
+          variant="tertiary"
+          size="small"
+          icon={<Check size={14} />}
+          disabled={!selectedText}
+          onClick={() => {
+            onApply(targetId, selectedText)
+            setApplied(true)
+          }}
+        >
+          Use selected text
+        </Button>
+      </div>
+    </div>
   )
 }
 
