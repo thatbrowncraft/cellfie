@@ -407,7 +407,23 @@ function ExcerptCard({
   onApply: (aspectId: string, text: string) => void
 }) {
   const sentences = useMemo(() => splitIntoSentences(excerptText), [excerptText])
-  const [selected, setSelected] = useState<boolean[]>(() => sentences.map(() => true))
+  /**
+   * ROOT-CAUSE FIX ("whole paragraph used instead of the selected
+   * sentence"): this used to default every sentence to SELECTED
+   * (`true`), so tapping the one sentence you actually wanted just
+   * toggled it OFF — everything else stayed included, and "Use
+   * selected text" sent the whole paragraph minus that one sentence
+   * (visible in the screenshotted bug report as most of the excerpt
+   * still underlined after a tap). It also explains "can't select
+   * another sentence afterward": since every untouched sentence was
+   * still `true`, a second "Use selected text" swept up ALL remaining
+   * sentences in one shot, immediately marking the whole card as used
+   * and leaving nothing left to pick individually. Sentences now start
+   * UNSELECTED — the person explicitly taps in only the sentence(s)
+   * they want for a given target, leaving every other sentence
+   * untouched and available for a later target.
+   */
+  const [selected, setSelected] = useState<boolean[]>(() => sentences.map(() => false))
   /** Which destination LABEL each sentence has already been sent to (`null` = not yet used). Once set, that sentence is locked out of further toggling/selection — see `toggle` and `applySelection` below. */
   const [usedFor, setUsedFor] = useState<(string | null)[]>(() => sentences.map(() => null))
 
@@ -472,7 +488,7 @@ function ExcerptCard({
               className={
                 selected[i]
                   ? 'cursor-pointer rounded px-0.5 text-ink-primary underline decoration-olive decoration-2 underline-offset-2'
-                  : 'cursor-pointer rounded px-0.5 text-ink-tertiary line-through decoration-1'
+                  : 'cursor-pointer rounded px-0.5 text-ink-tertiary hover:text-ink-secondary'
               }
             >
               {sentence}{' '}
@@ -490,8 +506,8 @@ function ExcerptCard({
       ) : (
         <>
           <p className="font-ui text-micro text-ink-tertiary">
-            Tap a sentence to include or leave it out, choose where the selection goes, then apply — sentences already used stay marked but everything
-            else stays available for another section.
+            Tap the sentence(s) you want, choose where they go, then apply — sentences already used stay marked but everything else stays available to
+            pick for another section afterward.
           </p>
           <div className="flex flex-wrap items-end gap-2">
             <Dropdown label="Use for" options={options} value={targetId} onChange={setTargetId} />
