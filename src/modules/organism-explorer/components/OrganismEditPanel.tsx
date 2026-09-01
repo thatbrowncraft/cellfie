@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Check, PencilSimple, X } from '@phosphor-icons/react'
 import { Button, Dropdown, Input, type DropdownOption } from '@/shared/components'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '@/shared/hooks/useMediaQuery'
 import { gramReactionLabels, updateOrganismProfile, type GramReaction, type OrganismProfile } from '@/core/organisms'
 
 interface OrganismEditPanelProps {
@@ -162,6 +163,13 @@ export function OrganismEditPanel({ organism, onSaved }: OrganismEditPanelProps)
     setEditing(false)
   }
 
+  // PWA layout-isolation fix — these three grids used raw `sm:` Tailwind
+  // breakpoints; see `useBreakpointClass` in shared/hooks/useMediaQuery.ts
+  // for why.
+  const classificationGridClass = useBreakpointClass(GRID_COLS_PRESETS.twoFour)
+  const morphologyGridClass = useBreakpointClass(GRID_COLS_PRESETS.twoThree)
+  const examFactsGridClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwo)
+
   if (!editing) {
     return (
       <Button variant="tertiary" size="small" icon={<PencilSimple size={14} />} onClick={startEditing}>
@@ -200,7 +208,7 @@ export function OrganismEditPanel({ organism, onSaved }: OrganismEditPanelProps)
 
       <div>
         <h4 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Classification</h4>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className={`grid gap-3 ${classificationGridClass}`}>
           <Input label="Domain" value={draft.domain} onChange={(e) => updateField('domain', e.target.value)} />
           <Input label="Kingdom" value={draft.kingdom} onChange={(e) => updateField('kingdom', e.target.value)} />
           <Input label="Phylum" value={draft.phylum} onChange={(e) => updateField('phylum', e.target.value)} />
@@ -214,7 +222,7 @@ export function OrganismEditPanel({ organism, onSaved }: OrganismEditPanelProps)
 
       <div>
         <h4 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Morphology</h4>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div className={`grid gap-3 ${morphologyGridClass}`}>
           <Input label="Shape" value={draft.shape} onChange={(e) => updateField('shape', e.target.value)} />
           <Input label="Size" value={draft.size} onChange={(e) => updateField('size', e.target.value)} />
           <Input label="Arrangement" value={draft.arrangement} onChange={(e) => updateField('arrangement', e.target.value)} />
@@ -236,7 +244,7 @@ export function OrganismEditPanel({ organism, onSaved }: OrganismEditPanelProps)
 
       <div>
         <h4 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Exam facts</h4>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className={`grid gap-3 ${examFactsGridClass}`}>
           <Input label="Important disease" value={draft.importantDisease} onChange={(e) => updateField('importantDisease', e.target.value)} />
           <Input label="Important test" value={draft.importantTest} onChange={(e) => updateField('importantTest', e.target.value)} />
           <Input label="Distinguishing feature" value={draft.distinguishingFeature} onChange={(e) => updateField('distinguishingFeature', e.target.value)} />
