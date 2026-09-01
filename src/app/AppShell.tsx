@@ -8,6 +8,9 @@ import { UniversalSearch } from '../shared/components/SearchField'
 import { QuickCaptureFab } from '../shared/components/QuickCaptureFab'
 import { useBreakpoint } from '../shared/hooks'
 import { cn } from '../shared/utils/cn'
+// TEMPORARY — on-device PWA diagnostic badge, see the file itself for why
+// and when to remove it (shared/components/PwaDebugBadge.tsx).
+import { PwaDebugBadge } from '../shared/components/PwaDebugBadge'
 import { searchEverything, type SearchResultGroup } from '../core/search'
 import { runAutoConceptCleanup, purgeAutomaticScientificRelations } from '../core/concepts'
 import { NoteEditorDialog } from '../modules/notes/components/NoteEditorDialog'
@@ -127,6 +130,7 @@ export function AppShell({ children }: AppShellProps) {
         onSelectResult={handleSelectResult}
       />
       <NoteEditorDialog open={quickCaptureOpen} onClose={() => setQuickCaptureOpen(false)} />
+      <PwaDebugBadge />
     </div>
   )
 }
