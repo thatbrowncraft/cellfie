@@ -20,12 +20,54 @@ export function useMediaQuery(query: string): boolean {
 export type Breakpoint = 'mobile' | 'tablet' | 'desktop' | 'wide'
 
 /**
+ * Must match the STORAGE_KEY in index.html's inline bootstrap script —
+ * that script runs before this module ever loads, so this is read-only
+ * here, purely to fall back to sessionStorage directly if for some
+ * reason `window.__CELLFIE_PWA_SESSION__` isn't set (e.g. this hook
+ * running in a test environment with no bootstrap script at all).
+ */
+const PWA_SESSION_STORAGE_KEY = 'cellfie:pwa-session'
+
+/**
+ * Whether the current browsing session started from an actual Cellfie
+ * app-icon launch, per the "?pwa=1" start_url marker (vite.config.ts)
+ * and index.html's inline bootstrap script. Read once per app load —
+ * intentionally NOT reactive to later URL changes, since React Router
+ * navigation strips the query string but the launch identity must
+ * persist for the rest of the session regardless (see the bootstrap
+ * script's sessionStorage handling for why).
+ */
+function readPwaLaunchSession(): boolean {
+  if (typeof window === 'undefined') return false
+  if ((window as unknown as { __CELLFIE_PWA_SESSION__?: boolean }).__CELLFIE_PWA_SESSION__) return true
+  try {
+    return window.sessionStorage.getItem(PWA_SESSION_STORAGE_KEY) === '1'
+  } catch {
+    return false
+  }
+}
+
+/**
  * Whether the app is currently presented as an installed/standalone
- * PWA rather than a normal browser tab — checked via the standard
- * `display-mode: standalone` media query (what the manifest's
- * `"display": "standalone"` puts an installed Android/desktop PWA
- * into), with a fallback to the legacy `navigator.standalone` flag
- * some iOS Safari versions expose instead of that media query.
+ * PWA rather than a normal browser tab. Three independent signals, any
+ * one of which is enough:
+ *
+ * 1. `display-mode: standalone` — the standard signal, true for a
+ *    genuine installed Android/desktop PWA per the manifest's
+ *    `"display": "standalone"`.
+ * 2. `navigator.standalone` — the legacy flag some iOS Safari versions
+ *    expose instead of the media query above.
+ * 3. The Cellfie app-launch session (see `readPwaLaunchSession` above) —
+ *    set from the manifest's "?pwa=1" start_url marker. This exists
+ *    because an installed Android shortcut shares Chrome's per-origin
+ *    site settings, including "Request desktop site," and that can
+ *    make (1) unreliable in practice: the installed launch itself may
+ *    just never report `display-mode: standalone` the way it's
+ *    supposed to. The marker sidesteps that entirely — Android's
+ *    home-screen launch always opens exactly the marked start_url, so
+ *    its presence identifies "this is the installed app" independent
+ *    of whatever display-mode or viewport width Chrome decides to
+ *    report for it.
  *
  * ROOT-CAUSE CONTEXT for `useBreakpoint()` below: an installed
  * Android PWA (WebAPK) shares per-origin site settings with Chrome,
@@ -33,19 +75,21 @@ export type Breakpoint = 'mobile' | 'tablet' | 'desktop' | 'wide'
  * origin, the installed app's layout viewport can end up desktop-width
  * even on a phone screen — the width-based `min-width` queries below
  * have no way to tell "genuinely wide" apart from "phone screen stuck
- * reporting a desktop-width viewport." Checking `display-mode` first
- * sidesteps the ambiguity entirely: an installed app is always
- * detectably standalone regardless of whatever width it happens to be
- * reporting right now. Not persisted anywhere and never inferred from
- * a stored preference — this only ever reflects how the current
- * window is actually presented at the moment it's read.
+ * reporting a desktop-width viewport." Checking `display-mode` (and now
+ * the launch-session marker) first sidesteps the ambiguity entirely.
+ * Nothing here is a persisted user preference — the display-mode and
+ * iOS checks only ever reflect how the current window is actually
+ * presented right now, and the launch-session flag only ever reflects
+ * how *this browsing session* actually started, not some sticky
+ * global "mobile mode" that could leak into ordinary Chrome browsing.
  */
 export function useIsStandalonePwa(): boolean {
   const isStandaloneDisplayMode = useMediaQuery('(display-mode: standalone)')
   const [isIosStandalone] = useState(
     () => typeof navigator !== 'undefined' && (navigator as unknown as { standalone?: boolean }).standalone === true
   )
-  return isStandaloneDisplayMode || isIosStandalone
+  const [isAppLaunchSession] = useState(readPwaLaunchSession)
+  return isStandaloneDisplayMode || isIosStandalone || isAppLaunchSession
 }
 
 /** Cellfie breakpoints — Design System §4.3. */
