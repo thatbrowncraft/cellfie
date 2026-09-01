@@ -36,6 +36,7 @@ import {
 } from '@/core/concepts'
 import { detailedModulesPlainText, examFocusPlainText, examToolsPlainText, lessonSectionsPlainText, onlineSectionsPlainText, quickRevisionPlainText } from '@/core/concepts/sectionPlainText'
 import { EmptyStateLayout } from '@/shared/layouts'
+import { useBreakpointClass } from '@/shared/hooks/useMediaQuery'
 import { Button, Card, CardBody, Dialog, EmptyState, Tabs } from '@/shared/components'
 import { ConceptSourceList } from './components/ConceptSourceList'
 import { RelatedConceptsPanel } from './components/RelatedConceptsPanel'
@@ -81,6 +82,22 @@ export function ConceptDetailPage() {
   const [deleteOpen, setDeleteOpen] = useState(false)
   const [scanning, setScanning] = useState<string | null>(null)
   const [scanMessage, setScanMessage] = useState<string | undefined>(undefined)
+
+  // PWA layout-isolation fix — this page has three `sm:`/`md:` grid
+  // breakpoints; see `useBreakpointClass` in shared/hooks/useMediaQuery.ts
+  // for why those stayed "desktop" on an installed Android PWA.
+  const statsGridClass = useBreakpointClass({
+    mobile: 'grid-cols-2',
+    tablet: 'grid-cols-4',
+    desktop: 'grid-cols-4',
+    wide: 'grid-cols-4'
+  })
+  const twoColGridClass = useBreakpointClass({
+    mobile: 'grid-cols-1',
+    tablet: 'grid-cols-2',
+    desktop: 'grid-cols-2',
+    wide: 'grid-cols-2'
+  })
 
   // Concept 2.0 §5/§19 — four top-level tabs (Learn / Connections / Visuals /
   // References), persisted in the URL so a refresh (or a shared link) lands
@@ -763,7 +780,7 @@ export function ConceptDetailPage() {
         </div>
       </header>
 
-      <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className={`mb-6 grid gap-3 ${statsGridClass}`}>
         {[
           { label: 'Books', value: stats.bookCount },
           { label: 'Pages', value: stats.pageCount },
@@ -1222,7 +1239,7 @@ export function ConceptDetailPage() {
                 <MemoryAidCard concept={concept} />
 
                 {(firstAndLast.first || firstAndLast.last) && (
-                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className={`grid gap-3 ${twoColGridClass}`}>
                     {firstAndLast.first && (
                       <div className="rounded-md border border-border bg-surface p-4">
                         <h3 className="mb-1 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
@@ -1315,7 +1332,7 @@ export function ConceptDetailPage() {
                     <p className="font-ui text-caption text-ink-tertiary">Checking reliable scientific sources for visuals…</p>
                   )}
                   {!loadingVisuals && visuals.length > 0 && (
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div className={`grid gap-4 ${twoColGridClass}`}>
                       {visuals.map((v, i) => (
                         <figure key={`${v.imageUrl}-${i}`} className="overflow-hidden rounded-md border border-border">
                           <img

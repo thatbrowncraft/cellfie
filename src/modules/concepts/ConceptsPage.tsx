@@ -10,6 +10,7 @@ import {
   type LibraryTermMatch
 } from '@/core/concepts'
 import { DashboardLayout } from '@/shared/layouts'
+import { useBreakpointClass } from '@/shared/hooks/useMediaQuery'
 import { Button, Dropdown, EmptyState, SearchField } from '@/shared/components'
 import { ConceptCard } from './components/ConceptCard'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
@@ -48,6 +49,15 @@ export function ConceptsPage() {
   const [query, setQuery] = useState('')
   const [filter, setFilter] = useState<FilterId>('all')
   const [createOpen, setCreateOpen] = useState(false)
+
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 md:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass({
+    mobile: 'grid-cols-1',
+    tablet: 'grid-cols-2',
+    desktop: 'grid-cols-3',
+    wide: 'grid-cols-3'
+  })
 
   const sourceCountByConcept = useMemo(() => {
     const map = new Map<string, number>()
@@ -110,7 +120,7 @@ export function ConceptsPage() {
     ) : filtered.length === 0 && query.trim().length < 2 ? (
       <EmptyState title="Nothing matches" description="Try a different search term or filter." />
     ) : (
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className={`grid gap-4 ${gridColsClass}`}>
         {filtered.map((concept) => (
           <ConceptCard key={concept.id} concept={concept} sourceCount={sourceCountByConcept.get(concept.id) ?? 0} />
         ))}
