@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Books, CaretRight, Globe, MagnifyingGlass, Plus, Scales, Sparkle } from '@phosphor-icons/react'
 import { Button, EmptyState, Tabs } from '../../shared/components'
-import { useBreakpointClass } from '../../shared/hooks/useMediaQuery'
+import { useBreakpoint, useBreakpointClass } from '../../shared/hooks/useMediaQuery'
+import { cn } from '../../shared/utils/cn'
 import { useLiveQuery } from '../../core/db/useLiveQuery'
 import { db, type SavedComparisonRecord } from '../../core/db'
 import { ALL_CURATED_COMPARISONS, getCuratedComparisonById } from '../../core/comparison/registry'
@@ -169,6 +170,15 @@ export function ComparisonStudioPage() {
     navigate(`/comparison/new?${params.toString()}`)
   }
 
+  // PWA layout-isolation fix — the "Start with a topic" row below used a
+  // raw `sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0` breakpoint to
+  // switch from a horizontal-scroll strip (mobile) to a wrapped grid
+  // (desktop+). Driven off `useBreakpoint()` instead so an installed PWA
+  // with a trapped desktop-width viewport still gets the intended mobile
+  // horizontal-scroll presentation. See `useIsStandalonePwa` in
+  // shared/hooks/useMediaQuery.ts for the root-cause context.
+  const isMobile = useBreakpoint() === 'mobile'
+
   // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2`; see
   // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
   const exploreGridColsClass = useBreakpointClass({
@@ -247,7 +257,12 @@ export function ComparisonStudioPage() {
       {/* Start with a topic — a very small, stable sample, deliberately NOT the full 55+ curated catalog (correction-pass Part 1/18: "Do NOT make the landing page display all curated comparisons"). Rendered as a light horizontal-scroll row of compact pills rather than stacked full-width cards, to keep this section visually secondary to the search above it. */}
       <section className="mb-8">
         <SectionHeading title="Start with a topic" />
-        <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
+        <div
+          className={cn(
+            'flex gap-3 pb-1',
+            isMobile ? '-mx-4 overflow-x-auto px-4' : 'mx-0 flex-wrap overflow-visible px-0'
+          )}
+        >
           {startTopics.map((c) => {
             const tagline = getComparisonTagline(c.id)
             return (
@@ -255,7 +270,10 @@ export function ComparisonStudioPage() {
                 key={c.id}
                 type="button"
                 onClick={() => openCurated(c.id)}
-                className="flex w-56 shrink-0 flex-col gap-1 rounded-md border border-border bg-surface p-3 text-left hover:border-olive sm:w-64"
+                className={cn(
+                  'flex shrink-0 flex-col gap-1 rounded-md border border-border bg-surface p-3 text-left hover:border-olive',
+                  isMobile ? 'w-56' : 'w-64'
+                )}
               >
                 <span className="flex items-center gap-1 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
                   <Sparkle size={11} aria-hidden /> {COMPARISON_DOMAIN_LABELS[c.domain]}
