@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BookOpen, MagnifyingGlass } from '@phosphor-icons/react'
 import { DashboardLayout } from '@/shared/layouts'
+import { useBreakpointClass } from '@/shared/hooks/useMediaQuery'
 import { Button, SearchField, Dropdown, EmptyState } from '@/shared/components'
 import { db, documentTypeLabels, type Collection, type DocumentType, type LibraryItem } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
@@ -88,16 +89,31 @@ export function LibraryPage() {
   const isLibraryEmpty = items.length === 0
   const isFilterEmpty = !isLibraryEmpty && filteredItems.length === 0
 
+  // PWA layout-isolation fix — was `flex-col sm:flex-row`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const toolbarDirectionClass = useBreakpointClass({
+    mobile: 'flex-col',
+    tablet: 'flex-row items-center justify-between',
+    desktop: 'flex-row items-center justify-between',
+    wide: 'flex-row items-center justify-between'
+  })
+  const searchWidthClass = useBreakpointClass({
+    mobile: 'w-full',
+    tablet: 'w-full max-w-sm',
+    desktop: 'w-full max-w-sm',
+    wide: 'w-full max-w-sm'
+  })
+
   return (
     <DashboardLayout
       title="Library"
       subtitle="Everything you've imported, organized and fully searchable — offline."
     >
-      <div className="col-span-full flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className={`col-span-full flex gap-4 ${toolbarDirectionClass}`}>
         <SearchField
           placeholder="Search your library…"
           onChange={setSearchQuery}
-          className="w-full sm:max-w-sm"
+          className={searchWidthClass}
         />
         <div className="flex flex-wrap items-center gap-3">
           <Dropdown
