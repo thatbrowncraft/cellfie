@@ -34,10 +34,26 @@ export default defineConfig({
         start_url: '.',
         scope: '.',
         icons: [
-          // Swap in real 192/512 PNGs before shipping; the SVG favicon
-          // works as a manifest icon in all evergreen browsers today and
-          // keeps this foundation buildable without binary assets.
-          { src: 'favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }
+          // Real 192/512 PNGs, required for Android to treat an
+          // "Add to Home Screen" install as a genuine WebAPK (standalone
+          // display-mode) rather than a plain browser-tab shortcut. An
+          // SVG-only icon list is spec-legal and fine for desktop/iOS,
+          // but on Android it's the difference between the installed app
+          // actually getting `display-mode: standalone` — which is what
+          // useIsStandalonePwa()/useBreakpoint() key off of to force the
+          // mobile layout — and silently falling back to a bookmark that
+          // opens in ordinary (non-standalone) Chrome, where the mobile-
+          // only rule never even engages. The SVG favicon stays too, for
+          // browser tab/address-bar icons where it works fine everywhere.
+          { src: 'favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
+          { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          // Separate maskable variants with the artwork inset to an ~80%
+          // safe zone, since Android can crop a maskable icon into a
+          // circle/squircle/rounded-square and a full-bleed image (like
+          // the "any" icons above) would get its edges clipped.
+          { src: 'icons/icon-192-maskable.png', sizes: '192x192', type: 'image/png', purpose: 'maskable' },
+          { src: 'icons/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }
         ]
       },
       workbox: {

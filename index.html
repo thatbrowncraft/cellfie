@@ -6,6 +6,11 @@
     <meta name="theme-color" content="#F6F1E7" />
     <meta name="description" content="Cellfie — a calm, offline-first scientific learning companion." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- iOS ignores the web manifest's icon list entirely for "Add to
+         Home Screen" and only ever looks for this link tag, so without
+         it an iOS install falls back to a screenshot-of-the-page icon
+         (and, on some versions, a less reliable standalone launch). -->
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
