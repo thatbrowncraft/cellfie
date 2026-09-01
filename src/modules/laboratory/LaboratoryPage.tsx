@@ -16,6 +16,7 @@ import {
   Stethoscope
 } from '@phosphor-icons/react'
 import { LaboratoryLayout } from '../../shared/layouts'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '../../shared/hooks/useMediaQuery'
 import { Card, CardBody, EmptyState, SearchField, Micro } from '../../shared/components'
 import { cn } from '../../shared/utils/cn'
 import {
@@ -314,6 +315,12 @@ function LaboratoryHub({
 }) {
   const difficultyCounts = useMemo(() => countByDifficulty(), [])
   const categoryCounts = useMemo(() => countByCategory(), [])
+  // PWA layout-isolation fix — these three grids used raw `sm:`/`lg:`
+  // Tailwind breakpoints; see `useBreakpointClass` in
+  // shared/hooks/useMediaQuery.ts for why.
+  const quickDeskGridClass = useBreakpointClass(GRID_COLS_PRESETS.twoFour)
+  const difficultyGridClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoFour)
+  const categoryGridClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
 
   return (
     <div className="flex flex-col gap-10">
@@ -336,7 +343,7 @@ function LaboratoryHub({
             Random Lab Pick
           </button>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className={`grid gap-3 ${quickDeskGridClass}`}>
           {QUICK_DESK_ITEMS.map((tile) => (
             <button
               key={tile.section}
@@ -367,7 +374,7 @@ function LaboratoryHub({
         <Micro as="p" className="mt-0.5 mb-3">
           {LEARN_BY_DIFFICULTY_TAGLINE}
         </Micro>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className={`grid gap-3 ${difficultyGridClass}`}>
           {DIFFICULTY_ORDER.map((difficulty) => (
             <Card key={difficulty} interactive onClick={() => onSetDifficulty(difficulty)}>
               <CardBody className="flex flex-col gap-1">
@@ -389,7 +396,7 @@ function LaboratoryHub({
         <Micro as="p" className="mt-0.5 mb-3">
           The complete section structure — everything Quick Lab Desk shortcuts into, laid out in full.
         </Micro>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid gap-3 ${categoryGridClass}`}>
           {(['protocol', 'concept', 'media', 'biochemical-test', 'biosafety', 'equipment', 'formula'] as LaboratoryCategory[]).map((category) => (
             <Card key={category} interactive onClick={() => onSetSection(category)}>
               <CardBody className="flex flex-col gap-1">
@@ -448,6 +455,10 @@ function DifficultyGrid({
   items: ReturnType<typeof listByDifficulty>
   onSelect: (id: string, category: LaboratoryCategory) => void
 }) {
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
+
   return (
     <div>
       <div className="mb-3">
@@ -465,7 +476,7 @@ function DifficultyGrid({
           />
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid gap-4 ${gridColsClass}`}>
           {items.map((item) => (
             <Card key={item.id} interactive onClick={() => onSelect(item.id, item.category)}>
               <CardBody className="flex flex-col gap-1">
@@ -483,13 +494,16 @@ function DifficultyGrid({
 
 function ContentGrid({ category, onSelect }: { category: LaboratoryCategory; onSelect: (id: string) => void }) {
   const items = listByCategory(category)
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
   if (items.length === 0) return null
   return (
     <div>
       <Micro as="p" className="mb-3">
         {SECTION_TAGLINE[category]}
       </Micro>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className={`grid gap-4 ${gridColsClass}`}>
         {items.map((item) => (
           <Card key={item.id} interactive onClick={() => onSelect(item.id)}>
             <CardBody className="flex flex-col gap-1">
@@ -505,12 +519,15 @@ function ContentGrid({ category, onSelect }: { category: LaboratoryCategory; onS
 }
 
 function CalculatorGrid({ onSelect }: { onSelect: (id: string) => void }) {
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
   return (
     <div>
       <Micro as="p" className="mb-3">
         {CALCULATOR_HUB_TAGLINE}
       </Micro>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className={`grid gap-4 ${gridColsClass}`}>
         {CALCULATORS.map((calc) => (
           <Card key={calc.id} interactive onClick={() => onSelect(calc.id)}>
             <CardBody className="flex flex-col gap-2">
@@ -558,6 +575,10 @@ function SearchResultsGrid({
   onSelect: (id: string, category: LaboratoryCategory) => void
   onSelectCalculator: (id: string) => void
 }) {
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
+
   if (results.length === 0 && calculatorResults.length === 0) {
     return (
       <div className="rounded-md border border-border bg-surface p-6">
@@ -566,7 +587,7 @@ function SearchResultsGrid({
     )
   }
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className={`grid gap-4 ${gridColsClass}`}>
       {calculatorResults.map((calc) => (
         <Card key={`calc-${calc.id}`} interactive onClick={() => onSelectCalculator(calc.id)}>
           <CardBody className="flex flex-col gap-1">

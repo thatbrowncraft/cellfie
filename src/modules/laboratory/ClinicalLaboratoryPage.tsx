@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, MagnifyingGlass, Stethoscope } from '@phosphor-icons/react'
 import { LaboratoryLayout } from '../../shared/layouts'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '../../shared/hooks/useMediaQuery'
 import { Card, CardBody, EmptyState, Micro, SearchField, SkeletonCard } from '../../shared/components'
 import { CATEGORY_LABELS } from '../../core/laboratory/registry'
 import {
@@ -73,6 +74,9 @@ export function ClinicalLaboratoryPage() {
   }
 
   const isSearching = query.trim().length > 0
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
 
   return (
     <LaboratoryLayout
@@ -106,7 +110,7 @@ export function ClinicalLaboratoryPage() {
         {isSearching ? (
           <SearchResultsGrid results={searchResults} onSelect={(id, category) => navigate(labContentPath(id, category))} />
         ) : loading ? (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className={`grid gap-4 ${gridColsClass}`}>
             <SkeletonCard />
             <SkeletonCard />
             <SkeletonCard />
@@ -132,13 +136,17 @@ function DisciplineSection({
   items: LaboratoryContent[]
   onSelect: (item: LaboratoryContent) => void
 }) {
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
+
   return (
     <section>
       <h2 className="font-display text-h3 font-medium text-ink-primary">{discipline}</h2>
       <Micro as="p" className="mt-0.5 mb-3">
         {items.length} {items.length === 1 ? 'entry' : 'entries'}
       </Micro>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className={`grid gap-4 ${gridColsClass}`}>
         {items.map((item) => (
           <Card key={item.id} interactive onClick={() => onSelect(item)}>
             <CardBody className="flex flex-col gap-1">
@@ -154,6 +162,10 @@ function DisciplineSection({
 }
 
 function SearchResultsGrid({ results, onSelect }: { results: ClinicalSearchHit[]; onSelect: (id: string, category: LaboratoryContent['category']) => void }) {
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
+
   if (results.length === 0) {
     return (
       <div className="rounded-md border border-border bg-surface p-6">
@@ -162,7 +174,7 @@ function SearchResultsGrid({ results, onSelect }: { results: ClinicalSearchHit[]
     )
   }
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className={`grid gap-4 ${gridColsClass}`}>
       {results.map((hit) => (
         <Card key={`${hit.category}-${hit.id}`} interactive onClick={() => onSelect(hit.id, hit.category)}>
           <CardBody className="flex flex-col gap-1">

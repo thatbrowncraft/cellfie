@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, CaretRight, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '../../shared/layouts'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '../../shared/hooks/useMediaQuery'
 import { Button, EmptyState, Input, Dropdown } from '../../shared/components'
 import {
   CalculatorError,
@@ -109,6 +110,10 @@ export function CalculatorDetailPage() {
   const allRelatedFormulas = [...relatedFormulas, ...clinicalFormulas]
   const allRelatedProtocols = [...relatedProtocols, ...clinicalProtocols]
 
+  // PWA layout-isolation fix — was `grid-cols-1 lg:grid-cols-2`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwo)
+
   return (
     <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
       <nav aria-label="Breadcrumbs" className="mb-4 flex items-center gap-1 font-ui text-caption text-ink-tertiary">
@@ -137,7 +142,7 @@ export function CalculatorDetailPage() {
         <p className="mt-2 font-body text-body text-ink-secondary">{meta.shortDescription}</p>
       </header>
 
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <div className={`grid gap-8 ${gridColsClass}`}>
         <div>{renderCalculatorForm(calculatorId)}</div>
         <div className="flex flex-col gap-6">
           {allRelatedFormulas.length > 0 && <RelatedContentList title="Related Formulas" items={allRelatedFormulas} />}

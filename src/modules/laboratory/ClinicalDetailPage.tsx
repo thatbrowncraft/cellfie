@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, Bookmark, BookmarkSimple, CaretRight, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout, LoadingLayout } from '../../shared/layouts'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '../../shared/hooks/useMediaQuery'
 import { Button, Card, CardBody, EmptyState, SkeletonCard } from '../../shared/components'
 import { CATEGORY_LABELS } from '../../core/laboratory/registry'
 import { getItemTagline } from '../../core/laboratory/microcopy'
@@ -101,10 +102,16 @@ export function ClinicalDetailPage() {
     if (existing) await removeSavedLabItem(existing.id)
   }
 
+  // PWA layout-isolation fix — these two grids used raw `sm:`/`lg:`
+  // Tailwind breakpoints; see `useBreakpointClass` in
+  // shared/hooks/useMediaQuery.ts for why.
+  const loadingGridClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
+  const relatedGridClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwo)
+
   if (loading) {
     return (
       <LoadingLayout>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid gap-4 ${loadingGridClass}`}>
           <SkeletonCard />
           <SkeletonCard />
           <SkeletonCard />
@@ -170,7 +177,7 @@ export function ClinicalDetailPage() {
         {(Object.keys(related).length > 0 || relatedCalcIds.length > 0) && (
           <div className="flex flex-col gap-6 border-t border-border pt-6">
             <h2 className="font-display text-h3 font-medium text-ink-primary">Related Content</h2>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className={`grid gap-6 ${relatedGridClass}`}>
               {Object.entries(related).map(([title, items]) => (
                 <RelatedContentList key={title} title={title} items={items} />
               ))}

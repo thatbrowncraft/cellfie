@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, Bookmark, BookmarkSimple, CaretRight, Scales, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '../../shared/layouts'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '../../shared/hooks/useMediaQuery'
 import { Button, Card, CardBody, EmptyState } from '../../shared/components'
 import { CATEGORY_LABELS, getLabContentById, resolveRelated } from '../../core/laboratory/registry'
 import { getItemTagline } from '../../core/laboratory/microcopy'
@@ -157,12 +158,16 @@ function RelatedSections({ item }: { item: Protocol | LabConcept | Media | Bioch
   const calcIds = item.relatedCalculators
   const hasCalcLinks = calcIds && calcIds.length > 0
 
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwo)
+
   if (nonEmpty.length === 0 && !hasCalcLinks) return null
 
   return (
     <div className="flex flex-col gap-6 border-t border-border pt-6">
       <h2 className="font-display text-h3 font-medium text-ink-primary">Related Content</h2>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className={`grid gap-6 ${gridColsClass}`}>
         {nonEmpty.map((g) => (
           <RelatedContentList key={g.title} title={g.title} items={g.items} />
         ))}
