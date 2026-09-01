@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ListChecks, Ruler } from '@phosphor-icons/react'
 import { EmptyState } from '@/shared/components'
+import { useBreakpointClass } from '@/shared/hooks/useMediaQuery'
 import type { Concept, ConceptRelation } from '@/core/db'
 import { fetchOnlineKnowledge, type ExamTools, type OnlineKnowledgeSection } from '@/core/concepts'
 
@@ -102,6 +103,14 @@ function ComparePanel({
   const [selectedId, setSelectedId] = useState('')
   const [otherSections, setOtherSections] = useState<OnlineKnowledgeSection[] | undefined>(undefined)
   const [loading, setLoading] = useState(false)
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass({
+    mobile: 'grid-cols-1',
+    tablet: 'grid-cols-2',
+    desktop: 'grid-cols-2',
+    wide: 'grid-cols-2'
+  })
 
   if (relatedEntries.length === 0) return null
 
@@ -137,7 +146,7 @@ function ComparePanel({
       </select>
 
       {other && (
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className={`mt-4 grid gap-4 ${gridColsClass}`}>
           <div>
             <button
               type="button"

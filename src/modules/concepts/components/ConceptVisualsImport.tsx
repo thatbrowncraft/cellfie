@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { UploadSimple, Trash } from '@phosphor-icons/react'
 import { Button, Dialog } from '@/shared/components'
+import { useBreakpointClass } from '@/shared/hooks/useMediaQuery'
 import type { Concept, ConceptAsset } from '@/core/db'
 import { importConceptAssetFile, listConceptAssets, removeConceptAsset } from '@/core/concepts/assets'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
@@ -25,6 +26,15 @@ export function ConceptVisualsImport({ concept }: ConceptVisualsImportProps) {
   const [viewing, setViewing] = useState<ConceptAsset | undefined>(undefined)
 
   const imports = useLiveQuery<ConceptAsset[]>(() => listConceptAssets(concept.id, 'visual-import'), [concept.id], [])
+
+  // PWA layout-isolation fix — was `grid-cols-2 sm:grid-cols-3`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass({
+    mobile: 'grid-cols-2',
+    tablet: 'grid-cols-3',
+    desktop: 'grid-cols-3',
+    wide: 'grid-cols-3'
+  })
 
   async function handleImportFile(file: File) {
     setImportError(undefined)
@@ -72,7 +82,7 @@ export function ConceptVisualsImport({ concept }: ConceptVisualsImportProps) {
       {importError && <p className="mt-2 font-ui text-caption text-error">{importError}</p>}
 
       {imports.length > 0 && (
-        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div className={`mt-4 grid gap-3 ${gridColsClass}`}>
           {imports.map((asset) => (
             <ImportedVisualThumb key={asset.id} asset={asset} onView={() => setViewing(asset)} />
           ))}
