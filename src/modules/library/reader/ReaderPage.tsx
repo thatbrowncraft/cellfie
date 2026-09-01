@@ -12,6 +12,7 @@ import { useReaderNavigationMode } from '@/core/reader-settings'
 import { SplitLayout } from '@/shared/layouts'
 import { BottomSheet, EmptyState } from '@/shared/components'
 import { useBreakpoint } from '@/shared/hooks'
+import { cn } from '@/shared/utils/cn'
 import { usePdfDocument } from '../hooks/usePdfDocument'
 import { useFlowDocument } from '../hooks/useFlowDocument'
 import { ReaderToolbar } from './ReaderToolbar'
@@ -319,7 +320,7 @@ export function ReaderPage() {
   }
 
   return (
-    // Mobile-viewport bugfix: below `sm:` the app shell's <main> adds
+    // Mobile-viewport bugfix: on mobile, the app shell's <main> adds
     // `pb-20` (5rem) of bottom padding to clear the fixed BottomNav, on
     // top of the 4rem TopNav — so the reader needs to subtract both
     // (9rem total), not just the TopNav, or this box ends up taller than
@@ -327,10 +328,18 @@ export function ReaderPage() {
     // scrollable behind the reader's own internal scroll areas, so a
     // scroll/pan gesture could land on the wrong scroll container
     // entirely. `100dvh` (vs `100vh`) also keeps this correct as the
-    // mobile browser's address bar shows/hides. Desktop/tablet (`sm:`
-    // and up, no BottomNav, no extra padding) keeps the original,
-    // unchanged 4rem-only calculation.
-    <div className="flex h-[calc(100dvh-9rem)] flex-col sm:h-[calc(100vh-4rem)]">
+    // mobile browser's address bar shows/hides. Desktop/tablet (no
+    // BottomNav, no extra padding) keeps the original, unchanged
+    // 4rem-only calculation.
+    //
+    // PWA layout-isolation fix — this was a raw `sm:` (CSS min-width)
+    // breakpoint choosing between the two calculations. On an installed
+    // Android PWA with "Request desktop site" forcing a desktop-width
+    // layout viewport, that media query would pick the *desktop* height
+    // calc even though `isMobile` (and the real rendered BottomNav) are
+    // still true, clipping/scrolling the reader incorrectly. Driven off
+    // `isMobile` instead so it always matches what's actually on screen.
+    <div className={cn('flex flex-col', isMobile ? 'h-[calc(100dvh-9rem)]' : 'h-[calc(100vh-4rem)]')}>
       <ReaderToolbar
         title={item?.title ?? 'Loading…'}
         currentPage={page}
