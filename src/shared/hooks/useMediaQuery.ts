@@ -123,6 +123,24 @@ export function usePwaDebugSignals() {
     () => typeof document !== 'undefined' && document.documentElement.classList.contains('cellfie-pwa')
   )
 
+  // Read live (not once via useState) — these are exactly the values the
+  // 980px-viewport / visual-scale investigation needs to watch change in
+  // real time as useStandaloneViewportScaleFix's zoom correction kicks
+  // in, so a stale first-render snapshot would defeat the point.
+  const [liveSignals, setLiveSignals] = useState(readLiveViewportSignals)
+  useEffect(() => {
+    function update() {
+      setLiveSignals(readLiveViewportSignals())
+    }
+    update()
+    window.addEventListener('resize', update)
+    window.visualViewport?.addEventListener('resize', update)
+    return () => {
+      window.removeEventListener('resize', update)
+      window.visualViewport?.removeEventListener('resize', update)
+    }
+  }, [])
+
   return {
     breakpoint,
     isStandaloneDisplayMode,
@@ -132,7 +150,28 @@ export function usePwaDebugSignals() {
     globalFlag,
     htmlHasClass,
     href: typeof window !== 'undefined' ? window.location.href : '',
-    innerWidth: typeof window !== 'undefined' ? window.innerWidth : 0
+    ...liveSignals
+  }
+}
+
+/** Live-read signals for the 980px-viewport diagnostic — see usePwaDebugSignals. */
+function readLiveViewportSignals() {
+  if (typeof window === 'undefined') {
+    return {
+      innerWidth: 0,
+      clientWidth: 0,
+      visualViewportWidth: null as number | null,
+      visualViewportScale: null as number | null,
+      appliedZoom: 'none'
+    }
+  }
+  const vv = window.visualViewport
+  return {
+    innerWidth: window.innerWidth,
+    clientWidth: document.documentElement.clientWidth,
+    visualViewportWidth: vv ? vv.width : null,
+    visualViewportScale: vv ? vv.scale : null,
+    appliedZoom: document.documentElement.style.getPropertyValue('zoom') || 'none'
   }
 }
 

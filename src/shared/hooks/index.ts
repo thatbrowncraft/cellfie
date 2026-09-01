@@ -1,4 +1,5 @@
 export * from './useMediaQuery'
+export * from './useStandaloneViewportScaleFix'
 export * from './useReducedMotion'
 export * from './useLocalStorage'
 export * from './useClickOutside'
