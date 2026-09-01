@@ -92,6 +92,51 @@ export function useIsStandalonePwa(): boolean {
   return isStandaloneDisplayMode || isIosStandalone || isAppLaunchSession
 }
 
+/**
+ * DIAGNOSTIC ONLY — not used by any production UI. Exposes the individual
+ * signals behind useIsStandalonePwa()/useBreakpoint() so they can be read
+ * on-screen on a real device with no laptop or devtools involved. See
+ * shared/components/PwaDebugBadge.tsx, which is meant to be deleted once
+ * the installed-app mobile-lock is confirmed working.
+ */
+export function usePwaDebugSignals() {
+  const isStandaloneDisplayMode = useMediaQuery('(display-mode: standalone)')
+  const breakpoint = useBreakpoint()
+  const [isIosStandalone] = useState(
+    () => typeof navigator !== 'undefined' && (navigator as unknown as { standalone?: boolean }).standalone === true
+  )
+  const [isAppLaunchSession] = useState(readPwaLaunchSession)
+  const [sessionStorageRaw] = useState<string | null>(() => {
+    if (typeof window === 'undefined') return null
+    try {
+      return window.sessionStorage.getItem(PWA_SESSION_STORAGE_KEY)
+    } catch {
+      return 'ERROR-READING'
+    }
+  })
+  const [globalFlag] = useState<boolean | null>(() =>
+    typeof window !== 'undefined'
+      ? ((window as unknown as { __CELLFIE_PWA_SESSION__?: boolean }).__CELLFIE_PWA_SESSION__ ?? null)
+      : null
+  )
+  const [htmlHasClass] = useState<boolean>(
+    () => typeof document !== 'undefined' && document.documentElement.classList.contains('cellfie-pwa')
+  )
+
+  return {
+    breakpoint,
+    isStandaloneDisplayMode,
+    isIosStandalone,
+    isAppLaunchSession,
+    sessionStorageRaw,
+    globalFlag,
+    htmlHasClass,
+    href: typeof window !== 'undefined' ? window.location.href : '',
+    innerWidth: typeof window !== 'undefined' ? window.innerWidth : 0
+  }
+}
+
+
 /** Cellfie breakpoints — Design System §4.3. */
 export function useBreakpoint(): Breakpoint {
   const isStandalone = useIsStandalonePwa()
