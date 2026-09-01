@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowLeft } from '@phosphor-icons/react'
 import { Button, Dropdown, EmptyState, SearchField } from '../../shared/components'
+import { useBreakpointClass } from '../../shared/hooks/useMediaQuery'
 import {
   ALL_CURATED_COMPARISONS,
   searchCuratedComparisons,
@@ -92,6 +93,21 @@ export function ExploreComparisonsPage() {
       .filter((hit) => frequencyFilter === 'all' || hit.frequency === frequencyFilter)
   }, [query, domainFilter, difficultyFilter, frequencyFilter])
 
+  // PWA layout-isolation fix — was `flex-col sm:flex-row`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const filterRowDirectionClass = useBreakpointClass({
+    mobile: 'flex-col',
+    tablet: 'flex-row items-end',
+    desktop: 'flex-row items-end',
+    wide: 'flex-row items-end'
+  })
+  const dropdownWidthClass = useBreakpointClass({
+    mobile: '',
+    tablet: 'w-56',
+    desktop: 'w-56',
+    wide: 'w-56'
+  })
+
   return (
     <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
       <header className="mb-6 flex items-start gap-3">
@@ -107,28 +123,28 @@ export function ExploreComparisonsPage() {
         </p>
       </div>
 
-      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end">
+      <div className={`mb-6 flex gap-3 ${filterRowDirectionClass}`}>
         <SearchField placeholder="Search comparisons, e.g. ELISA vs PCR…" onChange={setQuery} className="flex-1" />
         <Dropdown
           label="Domain"
           options={domainOptions}
           value={domainFilter}
           onChange={(v) => setDomainFilter(v as DiscoveryFilter)}
-          className="sm:w-56"
+          className={dropdownWidthClass}
         />
         <Dropdown
           label="Difficulty"
           options={difficultyOptions}
           value={difficultyFilter}
           onChange={(v) => setDifficultyFilter(v as DifficultyFilter)}
-          className="sm:w-56"
+          className={dropdownWidthClass}
         />
         <Dropdown
           label="Frequency"
           options={frequencyOptions}
           value={frequencyFilter}
           onChange={(v) => setFrequencyFilter(v as FrequencyFilter)}
-          className="sm:w-56"
+          className={dropdownWidthClass}
         />
       </div>
 

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Books, CaretRight, Globe, MagnifyingGlass, Plus, Scales, Sparkle } from '@phosphor-icons/react'
 import { Button, EmptyState, Tabs } from '../../shared/components'
+import { useBreakpointClass } from '../../shared/hooks/useMediaQuery'
 import { useLiveQuery } from '../../core/db/useLiveQuery'
 import { db, type SavedComparisonRecord } from '../../core/db'
 import { ALL_CURATED_COMPARISONS, getCuratedComparisonById } from '../../core/comparison/registry'
@@ -168,6 +169,15 @@ export function ComparisonStudioPage() {
     navigate(`/comparison/new?${params.toString()}`)
   }
 
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const exploreGridColsClass = useBreakpointClass({
+    mobile: 'grid-cols-1',
+    tablet: 'grid-cols-2',
+    desktop: 'grid-cols-2',
+    wide: 'grid-cols-2'
+  })
+
   return (
     <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
       <header className="mb-6 text-center sm:text-left">
@@ -261,7 +271,7 @@ export function ComparisonStudioPage() {
       </section>
 
       {/* Explore by level / domain — compact chip rows, not a filter toolbar (brief §27/§28). Domain chips are capped (correction-pass Part 1: "Compact chips only if useful") — the rest of the domains stay one tap away via Explore All's own filter. */}
-      <section className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <section className={`mb-8 grid gap-6 ${exploreGridColsClass}`}>
         <div>
           <SectionHeading title="Explore by level" />
           <div className="flex flex-wrap gap-2">

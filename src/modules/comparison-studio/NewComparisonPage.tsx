@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowRight, Plus } from '@phosphor-icons/react'
 import { Button, Dropdown } from '../../shared/components'
+import { useBreakpointClass } from '../../shared/hooks/useMediaQuery'
 import { buildAspectsFromEntities } from '../../core/comparison/entityAspectData'
 import { createCustomComparison } from '../../core/comparison/userComparisons'
 import { getRandomNewComparisonTagline } from '../../core/comparison/microcopy'
@@ -35,6 +36,21 @@ const FREQUENCY_OPTIONS = Object.entries(COMPARISON_FREQUENCY_LABELS).map(([valu
 export function NewComparisonPage() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
+
+  // PWA layout-isolation fix — was `sm:grid-cols-[1fr_auto_1fr]`/`sm:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const itemSlotGridClass = useBreakpointClass({
+    mobile: 'grid-cols-1',
+    tablet: 'grid-cols-[1fr_auto_1fr]',
+    desktop: 'grid-cols-[1fr_auto_1fr]',
+    wide: 'grid-cols-[1fr_auto_1fr]'
+  })
+  const dropdownsGridClass = useBreakpointClass({
+    mobile: 'grid-cols-1',
+    tablet: 'grid-cols-3',
+    desktop: 'grid-cols-3',
+    wide: 'grid-cols-3'
+  })
 
   const prefilledItemA = useMemo<ComparisonItemRef | undefined>(() => {
     const name = searchParams.get('itemAName')
@@ -138,7 +154,7 @@ export function NewComparisonPage() {
       </header>
 
       <div className="flex flex-col gap-6">
-        <div className="grid grid-cols-1 items-center gap-4 sm:grid-cols-[1fr_auto_1fr]">
+        <div className={`grid items-center gap-4 ${itemSlotGridClass}`}>
           <ItemSlot label="Item A" item={itemA} onClick={() => setPickerFor('A')} />
           <span className="justify-self-center font-display text-h2 text-ink-tertiary" aria-hidden>
             vs
@@ -146,7 +162,7 @@ export function NewComparisonPage() {
           <ItemSlot label="Item B" item={itemB} onClick={() => setPickerFor('B')} />
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className={`grid gap-4 ${dropdownsGridClass}`}>
           <Dropdown label="Domain" options={DOMAIN_OPTIONS} value={domain} onChange={(v) => setDomain(v as ComparisonDomain)} />
           <Dropdown label="Difficulty" options={DIFFICULTY_OPTIONS} value={difficulty} onChange={(v) => setDifficulty(v as ComparisonDifficulty)} />
           <Dropdown label="Frequency" options={FREQUENCY_OPTIONS} value={frequency} onChange={(v) => setFrequency(v as ComparisonFrequency)} />
