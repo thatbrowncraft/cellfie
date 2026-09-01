@@ -5,6 +5,7 @@ import { DashboardPage } from '../modules/dashboard/DashboardPage'
 import { NotFoundPage } from '../modules/not-found/NotFoundPage'
 import { SkeletonCard } from '../shared/components'
 import { LoadingLayout } from '../shared/layouts'
+import { useBreakpointClass } from '../shared/hooks/useMediaQuery'
 
 /**
  * Route-level code splitting (bundle-size remediation, stage 1).
@@ -77,9 +78,17 @@ const SettingsPage = lazy(() =>
 )
 
 function RouteFallback() {
+  // PWA layout-isolation fix — see `useBreakpointClass` in
+  // shared/hooks/useMediaQuery.ts for why this can't be `sm:`/`lg:` classes.
+  const gridColsClass = useBreakpointClass({
+    mobile: 'grid-cols-1',
+    tablet: 'grid-cols-2',
+    desktop: 'grid-cols-3',
+    wide: 'grid-cols-3'
+  })
   return (
     <LoadingLayout>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className={`grid gap-4 ${gridColsClass}`}>
         <SkeletonCard />
         <SkeletonCard />
         <SkeletonCard />
