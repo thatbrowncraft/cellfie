@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Bug, TreeStructure } from '@phosphor-icons/react'
 import { DashboardLayout } from '@/shared/layouts'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '@/shared/hooks/useMediaQuery'
 import { Button, EmptyState, SearchField } from '@/shared/components'
 import {
   applyBacteriaFilters,
@@ -97,6 +98,11 @@ export function OrganismExplorerPage() {
 
   const curatedOrganisms = useMemo(() => listOrganisms(), [])
   const savedOrganisms = useLiveQuery<OrganismProfile[]>(() => listSavedOrganisms(), [], [])
+  // PWA layout-isolation fix — these two grids used raw `sm:`/`lg:`
+  // Tailwind breakpoints; see `useBreakpointClass` in
+  // shared/hooks/useMediaQuery.ts for why.
+  const categoryGridClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoFour)
+  const resultsGridClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
   const allOrganisms = useMemo(() => {
     const curatedIds = new Set(curatedOrganisms.map((o) => o.id))
     const extra = savedOrganisms.filter((o) => !curatedIds.has(o.id))
@@ -297,7 +303,7 @@ export function OrganismExplorerPage() {
 
             {isHub && (
               <>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div className={`grid gap-4 ${categoryGridClass}`}>
                   {categorySummaries
                     .filter((summary) => ['bacteria', 'fungi', 'protozoa', 'virus'].includes(summary.category))
                     .map((summary) => (
@@ -382,7 +388,7 @@ export function OrganismExplorerPage() {
               </div>
             ) : (
               !isHub && (
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className={`grid gap-4 ${resultsGridClass}`}>
                   {filtered.map((organism) => (
                     <OrganismCard key={organism.id} organism={organism} />
                   ))}

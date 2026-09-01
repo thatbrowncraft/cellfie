@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowClockwise, ArrowSquareOut, Bookmark, Check, GitBranch, Globe, Scales, Sparkle, Star, Trash, UploadSimple } from '@phosphor-icons/react'
 import { Button, CalloutBox, Dialog, EmptyState, IllustrationFrame } from '@/shared/components'
 import { EmptyStateLayout } from '@/shared/layouts'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '@/shared/hooks/useMediaQuery'
 import {
   ACCEPTED_CUSTOM_IMAGE_TYPES,
   addOrganismImage,
@@ -38,11 +39,25 @@ import { OrganismEditPanel } from './components/OrganismEditPanel'
 
 /** A single label/value row — used across Classification, Habitat, and Lab Identification. Renders nothing when the value is absent, per Sprint 4 §6 ("do not show empty labels"). */
 function InfoRow({ label, value }: { label: string; value?: string }) {
+  // PWA layout-isolation fix — was `flex-col sm:flex-row` (+ `sm:text-right`);
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const rowDirectionClass = useBreakpointClass({
+    mobile: 'flex-col',
+    tablet: 'flex-row items-baseline justify-between gap-4',
+    desktop: 'flex-row items-baseline justify-between gap-4',
+    wide: 'flex-row items-baseline justify-between gap-4'
+  })
+  const valueAlignClass = useBreakpointClass({
+    mobile: '',
+    tablet: 'text-right',
+    desktop: 'text-right',
+    wide: 'text-right'
+  })
   if (!value) return null
   return (
-    <div className="flex flex-col gap-0.5 border-b border-border py-2.5 last:border-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+    <div className={`flex gap-0.5 border-b border-border py-2.5 last:border-0 ${rowDirectionClass}`}>
       <dt className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{label}</dt>
-      <dd className="font-body text-body text-ink-primary sm:text-right">{value}</dd>
+      <dd className={`font-body text-body text-ink-primary ${valueAlignClass}`}>{value}</dd>
     </div>
   )
 }
@@ -105,6 +120,10 @@ export function OrganismDetailPage() {
     organismId ? getOrganismById(organismId) : undefined
   )
   const [isResolving, setIsResolving] = useState(() => Boolean(organismId) && !getOrganismById(organismId ?? ''))
+
+  // PWA layout-isolation fix — these three grids used raw `sm:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const twoThreeGridClass = useBreakpointClass(GRID_COLS_PRESETS.twoThree)
 
   useEffect(() => {
     if (!organismId) return
@@ -396,7 +415,7 @@ export function OrganismDetailPage() {
 
         {isGalleryOpen && (
           <Dialog open={isGalleryOpen} onClose={() => setIsGalleryOpen(false)} title="Illustrations" size="lg">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div className={`grid gap-3 ${twoThreeGridClass}`}>
               {images.map(({ image, url }) => (
                 <div key={image.id} className="flex flex-col gap-2 rounded-md border border-border p-2">
                   <div className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-sm bg-surface-raised">
@@ -538,7 +557,7 @@ export function OrganismDetailPage() {
         )}
 
         <SectionCard title="Morphology">
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <div className={`grid gap-2 ${twoThreeGridClass}`}>
             <MorphologyChip label="Shape" value={morphology.shape} />
             <MorphologyChip label="Arrangement" value={morphology.arrangement} />
             <MorphologyChip
@@ -559,7 +578,7 @@ export function OrganismDetailPage() {
 
         {hasFungalDetails && (
           <SectionCard title="Fungal characteristics">
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            <div className={`grid gap-2 ${twoThreeGridClass}`}>
               <MorphologyChip
                 label="Morphological type"
                 value={fungalDetails?.morphologicalType ? fungalMorphologicalTypeLabels[fungalDetails.morphologicalType] : undefined}
