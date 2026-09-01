@@ -2,6 +2,7 @@ import { useMemo, useState, type ReactNode } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { NotePencil, DownloadSimple, PushPin, Highlighter, Bookmarks } from '@phosphor-icons/react'
 import { EmptyState, Button, SearchField, Dropdown, Card, CardBody } from '@/shared/components'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '@/shared/hooks/useMediaQuery'
 import { db, type Highlight, type LibraryItem, type Note, type ReaderBookmark } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
 import { exportNotesAsMarkdown, exportJsonBackup } from '@/core/export'
@@ -108,6 +109,10 @@ export function NotesPage() {
   const [editorOpen, setEditorOpen] = useState(false)
   const [editingNote, setEditingNote] = useState<Note | undefined>(undefined)
   const [exportBusy, setExportBusy] = useState(false)
+
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
 
   const bookFilterOptions = useMemo(
     () => [
@@ -283,7 +288,7 @@ export function NotesPage() {
                     <PushPin size={14} weight="fill" />
                     Pinned
                   </h2>
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className={`grid gap-4 ${gridColsClass}`}>
                     {pinned.map((note) => (
                       <NoteCard
                         key={note.id}
@@ -301,7 +306,7 @@ export function NotesPage() {
                   {group.label && (
                     <h2 className="mb-4 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{group.label}</h2>
                   )}
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className={`grid gap-4 ${gridColsClass}`}>
                     {group.notes.map((note) => (
                       <NoteCard
                         key={note.id}
@@ -343,6 +348,10 @@ function HighlightsSection({ navigate }: { navigate: ReturnType<typeof useNaviga
     return highlights.filter((h) => (h.text || '').toLowerCase().includes(q) || (h.note || '').toLowerCase().includes(q))
   }, [highlights, query])
 
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
+
   return (
     <div>
       <div className="mb-6">
@@ -362,7 +371,7 @@ function HighlightsSection({ navigate }: { navigate: ReturnType<typeof useNaviga
           <EmptyState title="Nothing matches" description="Try a different search term." />
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid gap-4 ${gridColsClass}`}>
           {filtered.map((h) => {
             const book = itemsById.get(h.itemId)
             return (
@@ -403,6 +412,10 @@ function BookmarksSection({ navigate }: { navigate: ReturnType<typeof useNavigat
     })
   }, [bookmarks, query, itemsById])
 
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
+
   return (
     <div>
       <div className="mb-6">
@@ -422,7 +435,7 @@ function BookmarksSection({ navigate }: { navigate: ReturnType<typeof useNavigat
           <EmptyState title="Nothing matches" description="Try a different search term." />
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid gap-4 ${gridColsClass}`}>
           {filtered.map((b) => {
             const book = itemsById.get(b.itemId)
             return (
