@@ -68,3 +68,43 @@ export function useBreakpoint(): Breakpoint {
   if (isTablet) return 'tablet'
   return 'mobile'
 }
+
+/**
+ * Picks a literal className for the current breakpoint instead of relying
+ * on a raw Tailwind `sm:`/`md:`/`lg:` (CSS `min-width`) breakpoint.
+ *
+ * ROOT-CAUSE CONTEXT: `useBreakpoint()` already correctly forces 'mobile'
+ * for an installed standalone PWA regardless of what layout-viewport width
+ * Chrome happens to be reporting (see the note on `useIsStandalonePwa`
+ * above for why that width can't be trusted there). But a `sm:grid-cols-2`
+ * class is a real CSS media query the browser evaluates on its own against
+ * that same untrustworthy width — it never consults `useBreakpoint()` at
+ * all, so it can independently reintroduce the desktop layout even in a
+ * component that otherwise reads `useBreakpoint()` correctly elsewhere.
+ * Selecting a plain, unprefixed class (`'grid-cols-2'`, not `'sm:grid-cols-2'`)
+ * through this hook sidesteps that: the class Tailwind emits carries no
+ * media query of its own, so it always reflects the JS-computed breakpoint.
+ *
+ * Falls back to `map.mobile` for any breakpoint not given an explicit
+ * entry (mobile-first, same convention as Tailwind's own `sm:`/`md:` chain).
+ */
+export function useBreakpointClass<T extends string>(map: Partial<Record<Breakpoint, T>> & { mobile: T }): T {
+  const breakpoint = useBreakpoint()
+  return map[breakpoint] ?? map.mobile
+}
+
+/**
+ * Common column-count presets for `useBreakpointClass`, named by their
+ * mobile→tablet→desktop column progression. Covers the repeated
+ * `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`-style patterns found across
+ * Dashboard, Laboratory, Comparison Studio, Concepts, Library, Notes, and
+ * Organism Explorer — see the root-cause note on `useBreakpointClass` above
+ * for why each of those needed converting off raw `sm:`/`md:`/`lg:` classes.
+ */
+export const GRID_COLS_PRESETS = {
+  oneTwoThree: { mobile: 'grid-cols-1', tablet: 'grid-cols-2', desktop: 'grid-cols-3', wide: 'grid-cols-3' },
+  oneTwoFour: { mobile: 'grid-cols-1', tablet: 'grid-cols-2', desktop: 'grid-cols-4', wide: 'grid-cols-4' },
+  twoFour: { mobile: 'grid-cols-2', tablet: 'grid-cols-4', desktop: 'grid-cols-4', wide: 'grid-cols-4' },
+  twoThree: { mobile: 'grid-cols-2', tablet: 'grid-cols-3', desktop: 'grid-cols-3', wide: 'grid-cols-3' },
+  oneTwo: { mobile: 'grid-cols-1', tablet: 'grid-cols-2', desktop: 'grid-cols-2', wide: 'grid-cols-2' }
+} as const satisfies Record<string, Partial<Record<Breakpoint, string>> & { mobile: string }>
