@@ -17,6 +17,7 @@
  */
 
 import { db, type Highlight, type LibraryItem, type Note } from '../db'
+import { createNote } from '../db/notes'
 import { version as appVersion } from '../../../package.json'
 
 function downloadBlob(filename: string, blob: Blob): void {
@@ -363,4 +364,126 @@ export async function importJsonBackup(backup: JsonBackup): Promise<ImportSummar
   }
 
   return { restoredCounts, skippedTables, skippedFileBackedAssets, preferencesRestored, exportedAt: backup.exportedAt, appVersion: backup.appVersion }
+}
+
+// ---------------------------------------------------------------------------
+// Import (restore notes from a Markdown export — Study Vault's counterpart
+// to the JSON backup import above)
+// ---------------------------------------------------------------------------
+
+export interface ParsedMarkdownNote {
+  title: string
+  tags: string[]
+  contentMarkdown: string
+}
+
+export interface MarkdownImportSummary {
+  noteCount: number
+}
+
+/** Matches a note's own heading line, e.g. `## My note title` — see `noteToMarkdown` above for the format this parses. */
+const NOTE_HEADER_RE = /^##\s+(.+)$/
+/** Matches one of the meta lines `noteToMarkdown` writes directly under a note's heading. */
+const META_LINE_RE = /^\*\*(Book|Tags|Created):\*\*/
+
+/**
+ * Reads and validates a `.md` file produced by `exportNotesAsMarkdown`
+ * WITHOUT writing anything yet, so the caller can show a confirmation
+ * summary first — same "validate, then confirm, then write" shape as
+ * `parseJsonBackup`/`importJsonBackup` above.
+ *
+ * Splits the file on each `## ` heading line (one per exported note) and,
+ * for each block, strips the metadata paragraph (`**Book:**`/`**Tags:**`/
+ * `**Created:**`) and the trailing `---` separator `noteToMarkdown` adds
+ * between notes — everything else in the block (including a quoted
+ * highlight excerpt, if the note had one) becomes the imported note's own
+ * content, so nothing from the file is silently discarded even though
+ * (see `importMarkdownNotes` below) it can't be reconnected to the
+ * original book/highlight record.
+ */
+export async function parseMarkdownNotesExport(file: File): Promise<{ notes: ParsedMarkdownNote[]; summary: MarkdownImportSummary }> {
+  let text: string
+  try {
+    text = await file.text()
+  } catch {
+    throw new ImportValidationError("Couldn't read that file.")
+  }
+
+  const lines = text.split(/\r?\n/)
+  const headerIndices: number[] = []
+  lines.forEach((line, i) => {
+    if (NOTE_HEADER_RE.test(line)) headerIndices.push(i)
+  })
+
+  if (headerIndices.length === 0) {
+    throw new ImportValidationError("That doesn't look like a Cellfie notes export — no notes were found in it.")
+  }
+
+  const notes: ParsedMarkdownNote[] = headerIndices.map((startIdx, i) => {
+    const endIdx = i + 1 < headerIndices.length ? headerIndices[i + 1] : lines.length
+    const block = lines.slice(startIdx, endIdx)
+
+    const title = block[0].match(NOTE_HEADER_RE)?.[1]?.trim() || 'Untitled note'
+
+    let cursor = 1
+    while (cursor < block.length && block[cursor].trim() === '') cursor++
+
+    let tags: string[] = []
+    while (cursor < block.length && META_LINE_RE.test(block[cursor])) {
+      if (block[cursor].startsWith('**Tags:**')) {
+        tags = Array.from(block[cursor].matchAll(/#(\S+)/g)).map((m) => m[1])
+      }
+      cursor++
+    }
+    while (cursor < block.length && block[cursor].trim() === '') cursor++
+
+    const contentLines = block.slice(cursor)
+    while (contentLines.length > 0 && contentLines[contentLines.length - 1].trim() === '') contentLines.pop()
+    if (contentLines.length > 0 && contentLines[contentLines.length - 1].trim() === '---') contentLines.pop()
+    while (contentLines.length > 0 && contentLines[contentLines.length - 1].trim() === '') contentLines.pop()
+
+    let contentMarkdown = contentLines.join('\n').trim()
+    if (contentMarkdown === '*(empty)*') contentMarkdown = ''
+
+    return { title, tags, contentMarkdown }
+  })
+
+  return { notes, summary: { noteCount: notes.length } }
+}
+
+/**
+ * Creates one new standalone Note per parsed entry, via the same
+ * `createNote()` the note editor itself uses — so an imported note gets
+ * a real id, current timestamps, and normalized tags exactly like a
+ * hand-written note would.
+ *
+ * Always ADDS notes — never updates/merges against an existing one. A
+ * Markdown export carries no id to match against (unlike the JSON
+ * backup's `bulkPut`-by-id restore above), so there's no reliable way to
+ * tell "this is the same note, re-imported" from "this is a new note
+ * that happens to share a title" — importing the same file twice creates
+ * two copies, same as importing any other freeform text file would.
+ *
+ * A note's original book link, linked highlight, and page number can
+ * never be restored this way: the export only ever wrote a book's TITLE
+ * (not its id) and, for a linked highlight, its quoted TEXT (not its
+ * id) — neither safely and unambiguously identifies a specific
+ * LibraryItem/Highlight row on this device (the same reasoning
+ * `importJsonBackup` above applies to skipping `libraryItems`/
+ * `organismImages` entirely). Every imported note becomes a standalone
+ * note; nothing from the file is lost, though — see
+ * `parseMarkdownNotesExport` for why the quoted excerpt survives inside
+ * the note's own content instead.
+ */
+export async function importMarkdownNotes(notes: ParsedMarkdownNote[]): Promise<{ imported: number }> {
+  for (const n of notes) {
+    await createNote({
+      title: n.title,
+      contentMarkdown: n.contentMarkdown,
+      tags: n.tags,
+      favorite: false,
+      pinned: false
+    })
+  }
+  return { imported: notes.length }
 }
