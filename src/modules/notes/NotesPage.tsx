@@ -256,7 +256,12 @@ export function NotesPage() {
                 </button>
               )}
             </div>
-            <div className="flex items-center gap-3">
+            {/* flex-wrap: this row grew from 3 buttons to 4 once Import
+                Markdown shipped alongside Export Markdown/JSON, and no
+                longer fits on one line at mobile width — without wrap it
+                overflowed past the screen edge instead of dropping to a
+                second row, the same way the filter row above already does. */}
+            <div className="flex flex-wrap items-center gap-3">
               <Button variant="secondary" icon={<DownloadSimple size={18} />} disabled={exportBusy || notes.length === 0} onClick={() => void handleExport('markdown')}>
                 Export Markdown
               </Button>
