@@ -3,6 +3,27 @@
 @tailwind utilities;
 
 /* ==========================================================================
+   PWA app-launch identity (see index.html's inline bootstrap script and
+   useIsStandalonePwa() in shared/hooks/useMediaQuery.ts).
+
+   `<html class="cellfie-pwa">` is set synchronously before React renders,
+   whenever the current browsing session started from the installed app's
+   home-screen icon. It's available here for any *raw CSS* media-query
+   override that would otherwise need to react to display-mode/viewport
+   width before JS gets a chance to run.
+
+   As of this fix, the app's structural chrome (Sidebar vs. drawer,
+   BottomNav mount/unmount, grid column counts across Dashboard/Library/
+   Concepts/Laboratory/Comparison Studio/Notes/Organism Explorer, and the
+   two/one-pane Reader split) is already driven entirely in JS via
+   useBreakpoint()/useBreakpointClass(), not raw `sm:`/`md:`/`lg:` Tailwind
+   breakpoints — so there is currently no structural CSS rule that needs a
+   `.cellfie-pwa` override here. Leave it that way: add a rule under this
+   selector only if a *new* raw CSS breakpoint is ever introduced that can
+   independently turn the installed app desktop/tablet, and scope it to
+   that one rule rather than a broad override block. */
+
+/* ==========================================================================
    Cellfie — Design Tokens (CSS Custom Properties)
    Source of truth: cellfie-design-system.md §2 (Color), §12 (Motion)
    Values are exact, never approximated.
