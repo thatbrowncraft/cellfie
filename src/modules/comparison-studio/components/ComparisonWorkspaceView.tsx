@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ArrowDown, ArrowUp, Books, Globe, Lightning, NotePencil, Sparkle, Trash } from '@phosphor-icons/react'
 import { cn } from '../../../shared/utils/cn'
 import { Button, Tabs } from '../../../shared/components'
+import { useBreakpoint } from '../../../shared/hooks/useMediaQuery'
 import type { Comparison, ComparisonAspect } from '../../../core/comparison/types'
 import { KEY_DIFFERENCE_TAGLINE, STUDY_MODE_TAGLINE } from '../../../core/comparison/microcopy'
 import { ProvenanceBadge } from './ProvenanceBadge'
@@ -62,10 +63,20 @@ export function ComparisonWorkspaceView({
   onMoveAspect,
   onFillFromSource
 }: ComparisonWorkspaceViewProps) {
+  // PWA layout-isolation fix — was `hidden md:block` / `md:hidden`, a raw
+  // CSS breakpoint pair; see `useBreakpointClass` in
+  // shared/hooks/useMediaQuery.ts for why that stayed "desktop" on an
+  // installed Android PWA. `breakpoint === 'mobile'` now decides which of
+  // the two views actually mounts, instead of both mounting and one being
+  // hidden by width.
+  const breakpoint = useBreakpoint()
+  const isMobile = breakpoint === 'mobile'
+
   return (
     <div>
       {/* Desktop: real <table>, matching ComparisonTable's semantics (real thead/tbody, never a div-grid faux-table). */}
-      <div className="hidden overflow-x-auto rounded-md border border-border md:block">
+      {!isMobile && (
+        <div className="overflow-x-auto rounded-md border border-border">
         <table className="w-full min-w-[640px] border-collapse">
           <thead>
             <tr className="bg-surface-raised">
@@ -167,9 +178,11 @@ export function ComparisonWorkspaceView({
           </tbody>
         </table>
       </div>
+      )}
 
       {/* Mobile: segmented Both / Item A / Item B — never a squeezed 3-column table (brief §19). */}
-      <div className="md:hidden">
+      {isMobile && (
+      <div>
         <Tabs
           tabs={[
             {
@@ -228,6 +241,7 @@ export function ComparisonWorkspaceView({
           ]}
         />
       </div>
+      )}
 
       {studyMode !== 'off' && <p className="mt-4 text-center font-body text-micro italic text-ink-tertiary">{STUDY_MODE_TAGLINE}</p>}
     </div>
