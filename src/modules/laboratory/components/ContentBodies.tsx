@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { ShieldWarning } from '@phosphor-icons/react'
 import { CalloutBox, Card, CardBody } from '@/shared/components'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '@/shared/hooks/useMediaQuery'
 import type { BiochemicalTest, BiosafetyTopic, Equipment, Formula, LabConcept, Media, Protocol } from '@/core/laboratory/types'
 
 /**
@@ -34,11 +35,14 @@ export function BulletList({ items }: { items: string[] }) {
 }
 
 export function ProtocolBody({ item }: { item: Protocol }) {
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwo)
   return (
     <>
       <Section title="Purpose">{item.purpose}</Section>
       <Section title="Principle">{item.principle}</Section>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className={`grid gap-6 ${gridColsClass}`}>
         <Section title="Required Materials">
           <BulletList items={item.requiredMaterials} />
         </Section>
@@ -199,6 +203,9 @@ export function MediaBody({ item }: { item: Media }) {
 }
 
 export function BiochemicalTestBody({ item }: { item: BiochemicalTest }) {
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwo)
   return (
     <>
       <Section title="Purpose">{item.purpose}</Section>
@@ -221,7 +228,7 @@ export function BiochemicalTestBody({ item }: { item: BiochemicalTest }) {
           ))}
         </ol>
       </Section>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className={`grid gap-6 ${gridColsClass}`}>
         <Section title="Positive Result">{item.positiveResult}</Section>
         <Section title="Negative Result">{item.negativeResult}</Section>
       </div>

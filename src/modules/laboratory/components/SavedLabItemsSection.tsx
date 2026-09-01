@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { BookmarkSimple, Books, Globe, Trash } from '@phosphor-icons/react'
 import { Button, Card, CardBody, EmptyState, Micro } from '../../../shared/components'
+import { useBreakpointClass, GRID_COLS_PRESETS } from '../../../shared/hooks/useMediaQuery'
 import { CATEGORY_LABELS } from '../../../core/laboratory/registry'
 import type { LaboratoryCategory } from '../../../core/laboratory/types'
 import { removeSavedLabItem } from '../../../core/laboratory/savedItems'
@@ -19,6 +20,9 @@ import type { SavedLabItemRecord } from '../../../core/db'
  */
 export function SavedLabItemsSection({ items }: { items: SavedLabItemRecord[] }) {
   const navigate = useNavigate()
+  // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
 
   if (items.length === 0) {
     return (
@@ -50,7 +54,7 @@ export function SavedLabItemsSection({ items }: { items: SavedLabItemRecord[] })
       {cellfieItems.length > 0 && (
         <section>
           <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Cellfie Reference</h3>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className={`grid gap-3 ${gridColsClass}`}>
             {cellfieItems.map((record) => (
               <Card key={record.id} className="p-4">
                 <CardBody className="flex flex-col gap-2 p-0">
