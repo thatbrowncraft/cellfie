@@ -1,6 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { NotePencil, DownloadSimple, PushPin, Highlighter, Bookmarks } from '@phosphor-icons/react'
+import { NotePencil, DownloadSimple, UploadSimple, PushPin, Highlighter, Bookmarks } from '@phosphor-icons/react'
 import { EmptyState, Button, SearchField, Dropdown, Card, CardBody } from '@/shared/components'
 import { useBreakpointClass, GRID_COLS_PRESETS } from '@/shared/hooks/useMediaQuery'
 import { db, type Highlight, type LibraryItem, type Note, type ReaderBookmark } from '@/core/db'
@@ -8,6 +8,7 @@ import { useLiveQuery } from '@/core/db/useLiveQuery'
 import { exportNotesAsMarkdown, exportJsonBackup } from '@/core/export'
 import { NoteCard } from './components/NoteCard'
 import { NoteEditorDialog } from './components/NoteEditorDialog'
+import { ImportMarkdownDialog } from './components/ImportMarkdownDialog'
 import { FloatingStudyParticles } from './components/FloatingStudyParticles'
 
 type Section = 'notes' | 'highlights' | 'bookmarks'
@@ -109,6 +110,7 @@ export function NotesPage() {
   const [editorOpen, setEditorOpen] = useState(false)
   const [editingNote, setEditingNote] = useState<Note | undefined>(undefined)
   const [exportBusy, setExportBusy] = useState(false)
+  const [importMarkdownOpen, setImportMarkdownOpen] = useState(false)
 
   // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
   // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
@@ -258,6 +260,9 @@ export function NotesPage() {
               <Button variant="secondary" icon={<DownloadSimple size={18} />} disabled={exportBusy || notes.length === 0} onClick={() => void handleExport('markdown')}>
                 Export Markdown
               </Button>
+              <Button variant="secondary" icon={<UploadSimple size={18} />} onClick={() => setImportMarkdownOpen(true)}>
+                Import Markdown
+              </Button>
               <Button variant="secondary" icon={<DownloadSimple size={18} />} disabled={exportBusy} onClick={() => void handleExport('json')}>
                 Export JSON
               </Button>
@@ -322,6 +327,7 @@ export function NotesPage() {
           )}
 
           <NoteEditorDialog open={editorOpen} onClose={() => setEditorOpen(false)} note={editingNote} />
+          <ImportMarkdownDialog open={importMarkdownOpen} onClose={() => setImportMarkdownOpen(false)} />
         </>
       )}
 
