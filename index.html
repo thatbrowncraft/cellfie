@@ -18,6 +18,63 @@
       rel="stylesheet"
     />
     <title>Cellfie</title>
+    <script>
+      // Cellfie PWA app-launch detector — runs before React, before any
+      // CSS media query gets a chance to matter, and before the SPA
+      // redirect decoder below touches window.location.
+      //
+      // WHY THIS EXISTS: `display-mode: standalone` (see useIsStandalonePwa
+      // in shared/hooks/useMediaQuery.ts) is supposed to tell the app it's
+      // running as an installed PWA rather than a normal Chrome tab, and
+      // that's what makes the whole app force mobile presentation. On
+      // Android that signal isn't fully trustworthy — an installed
+      // shortcut can share Chrome's per-origin "Request desktop site"
+      // state and there's no way to be sure from source alone that
+      // standalone will actually read true on every real device/launch.
+      // This is the fallback: the manifest's start_url carries a
+      // "?pwa=1" marker (see vite.config.ts) that ONLY an actual
+      // home-screen launch of Cellfie ever produces — normal browser
+      // navigation to the site never includes it. Its presence alone is
+      // enough to know "this is the installed app," independent of
+      // whatever display-mode or viewport width Chrome reports.
+      //
+      // The marker is only on the very first navigation, so it's copied
+      // into sessionStorage immediately so the rest of this browsing
+      // session (client-side route changes, hard refreshes, the GitHub
+      // Pages 404->index.html SPA redirect below) still knows it's an
+      // app launch even once the URL itself no longer says so.
+      // sessionStorage (not localStorage) is deliberate: this must reset
+      // itself for a normal browser tab and never "leak" a mobile-only
+      // mode into ordinary Chrome browsing. Nothing here stores user
+      // data, calls a network, or persists beyond this browsing session.
+      ;(function () {
+        var STORAGE_KEY = 'cellfie:pwa-session'
+        var isAppSession = false
+        try {
+          var params = new URLSearchParams(window.location.search)
+          if (params.get('pwa') === '1') {
+            isAppSession = true
+            window.sessionStorage.setItem(STORAGE_KEY, '1')
+          } else if (window.sessionStorage.getItem(STORAGE_KEY) === '1') {
+            isAppSession = true
+          }
+        } catch (e) {
+          // URLSearchParams/sessionStorage can throw in locked-down or
+          // private-browsing contexts — fail closed to "normal browser
+          // tab" rather than crash startup.
+        }
+        // Read synchronously by useIsStandalonePwa() on first render, so
+        // React never has to guess or flash the wrong layout before an
+        // effect runs. The class is for any early, pre-React CSS that
+        // needs the same signal (see index.css) — most of the app's
+        // responsive logic already goes through useBreakpoint()/
+        // useBreakpointClass() in JS, not raw CSS breakpoints.
+        window.__CELLFIE_PWA_SESSION__ = isAppSession
+        if (isAppSession) {
+          document.documentElement.classList.add('cellfie-pwa')
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

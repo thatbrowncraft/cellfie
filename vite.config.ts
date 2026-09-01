@@ -31,7 +31,23 @@ export default defineConfig({
         // Relative, not "/" — resolved against the manifest's own URL, so
         // installing the PWA works correctly whether it's served from the
         // domain root or a GitHub Pages "/<repo-name>/" subpath.
-        start_url: '.',
+        //
+        // The "?pwa=1" is a deliberate app-launch marker, not a cache-buster.
+        // `display-mode: standalone` is supposed to be the reliable signal
+        // that this is an installed app rather than a normal browser tab,
+        // but on Android an installed shortcut can end up sharing Chrome's
+        // per-origin "Request desktop site" state and NOT reliably report
+        // `standalone` — there's no way to confirm that from source alone,
+        // only from the actual device. This marker is a second, independent
+        // signal: Android's home-screen launch always opens exactly this
+        // start_url, so its presence alone is enough to identify "this
+        // navigation came from the installed app icon," regardless of
+        // whatever display-mode/viewport Chrome decides to report. Normal
+        // browser visits never carry it. See index.html's inline bootstrap
+        // script and useIsStandalonePwa() in shared/hooks/useMediaQuery.ts
+        // for where it's read and how it's kept alive for the rest of the
+        // app session.
+        start_url: './?pwa=1',
         scope: '.',
         icons: [
           // Real 192/512 PNGs, required for Android to treat an
