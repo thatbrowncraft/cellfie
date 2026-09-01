@@ -2,6 +2,7 @@ import { useEffect, useRef, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { X } from '@phosphor-icons/react'
 import { useFocusTrap } from '../hooks/useFocusTrap'
+import { useIsStandalonePwa } from '../hooks/useMediaQuery'
 import { cn } from '../utils/cn'
 
 interface DialogProps {
@@ -29,6 +30,7 @@ const sizeClasses = {
 export function Dialog({ open, onClose, title, children, actions, closeOnEscape = true, size = 'md' }: DialogProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   useFocusTrap(containerRef, open)
+  const isStandalone = useIsStandalonePwa()
 
   useEffect(() => {
     if (!open || !closeOnEscape) return
@@ -67,10 +69,27 @@ export function Dialog({ open, onClose, title, children, actions, closeOnEscape 
   // Portaling sidesteps the question entirely: this dialog can never be
   // clipped or repositioned by whatever ancestor happens to render it,
   // now or in any future change to the reader's layout.
+  //
+  // STANDALONE-PWA VIEWPORT-SCALE FIX: `100dvh` was chosen below (for a
+  // normal browser tab) specifically to track the address bar collapsing/
+  // expanding. But under `useStandaloneViewportScaleFix()`'s corrective
+  // `zoom` on `<html>` (needed for the installed Android PWA — see that
+  // hook for the full root-cause writeup), `100dvh` measured inside the
+  // zoomed context resolves far taller than the physical screen, so this
+  // flex-centered overlay ends up centering the dialog deep inside an
+  // oversized box — mostly below the fold, with only its top sliver
+  // visible at the very bottom of the real screen. `position: fixed` +
+  // `inset-0` (no explicit height) doesn't have that problem: it's the
+  // exact mechanism BottomNav/the FAB already rely on and that's already
+  // confirmed correct under this same zoom, so the standalone case skips
+  // `dvh` and leans on that instead. A standalone PWA has no address bar
+  // to collapse in the first place, so nothing is lost by doing this only
+  // for that case — a normal browser tab keeps the original 100dvh
+  // behavior completely unchanged.
   return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto p-4"
-      style={{ backgroundColor: 'var(--scrim)', height: '100dvh' }}
+      style={{ backgroundColor: 'var(--scrim)', ...(isStandalone ? {} : { height: '100dvh' }) }}
       onClick={onClose}
     >
       <div
@@ -83,11 +102,11 @@ export function Dialog({ open, onClose, title, children, actions, closeOnEscape 
           'flex w-full max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-lg bg-surface p-6 shadow-3',
           sizeClasses[size]
         )}
-        // `100dvh` (dynamic viewport height) rather than `100vh` keeps this
-        // correct as the mobile browser's address bar shows/hides, so the
-        // footer (Delete/Cancel/Save) never ends up below the real visible
-        // area even though `100vh` would have measured it as in-bounds.
-        style={{ maxHeight: 'calc(100dvh - 24px)' }}
+        // See the standalone-PWA note above: the installed-app case uses
+        // the (now correctly viewport-sized, via `inset-0` above) overlay's
+        // own height instead of a second independent `dvh` measurement, so
+        // the two can never disagree with each other under the zoom fix.
+        style={{ maxHeight: isStandalone ? 'calc(100% - 24px)' : 'calc(100dvh - 24px)' }}
       >
         <div className="mb-4 flex shrink-0 items-start justify-between gap-4">
           <h2 id="dialog-title" className="font-display text-h3 font-medium text-ink-primary">
