@@ -73,6 +73,10 @@ export function PwaDebugBadge() {
           <div>window.__CELLFIE_PWA_SESSION__: {String(signals.globalFlag)}</div>
           <div>html.cellfie-pwa class: {String(signals.htmlHasClass)}</div>
           <div>innerWidth: {signals.innerWidth}</div>
+          <div>documentElement.clientWidth: {signals.clientWidth}</div>
+          <div>visualViewport.width: {String(signals.visualViewportWidth)}</div>
+          <div>visualViewport.scale: {String(signals.visualViewportScale)}</div>
+          <div>applied zoom (fix): {signals.appliedZoom}</div>
           <div>href: {signals.href}</div>
         </div>
       )}
