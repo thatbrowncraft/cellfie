@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from 'react'
 import { CaretDown, CaretUp } from '@phosphor-icons/react'
+import { useBreakpointClass } from '../hooks/useMediaQuery'
 
 interface LaboratoryLayoutProps {
   title: string
@@ -41,6 +42,21 @@ function setPersistedCollapsed(collapsed: boolean): void {
  */
 export function LaboratoryLayout({ title, sidebar, children }: LaboratoryLayoutProps) {
   const [collapsed, setCollapsed] = useState(getPersistedCollapsed)
+  // PWA layout-isolation fix — was a raw `md:flex-row`/`md:w-64` breakpoint;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why that
+  // stayed "desktop" on an installed Android PWA.
+  const flexDirectionClass = useBreakpointClass({
+    mobile: 'flex-col',
+    tablet: 'flex-col',
+    desktop: 'flex-row',
+    wide: 'flex-row'
+  })
+  const sidebarWidthClass = useBreakpointClass({
+    mobile: '',
+    tablet: '',
+    desktop: 'w-64',
+    wide: 'w-64'
+  })
 
   function toggleCollapsed() {
     setCollapsed((c) => {
@@ -51,8 +67,8 @@ export function LaboratoryLayout({ title, sidebar, children }: LaboratoryLayoutP
   }
 
   return (
-    <div className="mx-auto flex max-w-content flex-col gap-6 px-4 py-8 sm:px-6 md:flex-row md:px-8">
-      <aside className="shrink-0 md:w-64">
+    <div className={`mx-auto flex max-w-content gap-6 px-4 py-8 sm:px-6 md:px-8 ${flexDirectionClass}`}>
+      <aside className={`shrink-0 ${sidebarWidthClass}`}>
         <button
           type="button"
           onClick={toggleCollapsed}
