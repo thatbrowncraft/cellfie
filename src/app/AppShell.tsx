@@ -15,6 +15,12 @@ import { searchEverything, type SearchResultGroup } from '../core/search'
 import { runAutoConceptCleanup, purgeAutomaticScientificRelations } from '../core/concepts'
 import { NoteEditorDialog } from '../modules/notes/components/NoteEditorDialog'
 
+// Flip this to true to bring the diagnostic badge back on-screen while
+// investigating a standalone/viewport issue on a real device; leave it
+// false otherwise now that the mobile-lock fix is confirmed working, so
+// it stops covering the bottom nav labels day-to-day.
+const SHOW_PWA_DEBUG_BADGE = false
+
 interface AppShellProps {
   children: ReactNode
 }
@@ -130,7 +136,7 @@ export function AppShell({ children }: AppShellProps) {
         onSelectResult={handleSelectResult}
       />
       <NoteEditorDialog open={quickCaptureOpen} onClose={() => setQuickCaptureOpen(false)} />
-      <PwaDebugBadge />
+      {SHOW_PWA_DEBUG_BADGE && <PwaDebugBadge />}
     </div>
   )
 }
