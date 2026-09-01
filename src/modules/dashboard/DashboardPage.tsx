@@ -27,6 +27,7 @@ import { getRecentComparisons, type RecentComparisonEntry } from '../../core/com
 import { COMPARISON_DOMAIN_LABELS } from '../../core/comparison/types'
 import type { LaboratoryCategory, LaboratoryContent } from '../../core/laboratory/types'
 import { useLocalStorage } from '../../shared/hooks'
+import { useBreakpointClass } from '../../shared/hooks/useMediaQuery'
 import { pickDashboardQuote } from '../../core/dashboard/quotes'
 import { DASHBOARD_HUMOR } from '../../core/dashboard/humor'
 import { FloatingScienceLayer } from './components/FloatingScienceLayer'
@@ -106,8 +107,24 @@ function PreviewSection({
   emptyActionLabel?: string
   onEmptyAction?: () => void
 }) {
+  // Same JS-driven full-width-only-at-desktop behavior as the "Continue
+  // reading"/"Knowledge" sections above — see the note there and in
+  // `useBreakpointClass` for why this can no longer be a raw `md:col-span-3`.
+  const fullWidthAtDesktopClass = useBreakpointClass({
+    mobile: '',
+    tablet: '',
+    desktop: 'col-span-3',
+    wide: 'col-span-3'
+  })
+  const itemsGridClass = useBreakpointClass({
+    mobile: 'grid-cols-1',
+    tablet: 'grid-cols-2',
+    desktop: 'grid-cols-4',
+    wide: 'grid-cols-4'
+  })
+
   return (
-    <section className="rounded-md border border-border bg-surface p-6 md:col-span-3">
+    <section className={`rounded-md border border-border bg-surface p-6 ${fullWidthAtDesktopClass}`}>
       <div className="mb-1 flex items-center justify-between gap-3">
         <h2 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{title}</h2>
         <button
@@ -134,7 +151,7 @@ function PreviewSection({
           }
         />
       ) : (
-        <div className="grid w-full min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <div className={`grid w-full min-w-0 gap-4 ${itemsGridClass}`}>
           {items.map((item) => (
             <button
               key={item.key}
@@ -319,12 +336,39 @@ export function DashboardPage() {
       : 'Nothing scheduled, nothing overdue — just pick up where curiosity left off.'
     : 'Import a PDF from your Library to get started.'
 
+  // PWA layout-isolation fix — these two sub-grids used raw `sm:`/`md:`
+  // Tailwind breakpoints, which stayed multi-column on an installed
+  // Android PWA under Chrome's "Request desktop site" (see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why).
+  const continueReadingGridClass = useBreakpointClass({
+    mobile: 'grid-cols-1',
+    tablet: 'grid-cols-2',
+    desktop: 'grid-cols-4',
+    wide: 'grid-cols-4'
+  })
+  const knowledgeStatsGridClass = useBreakpointClass({
+    mobile: 'grid-cols-2',
+    tablet: 'grid-cols-4',
+    desktop: 'grid-cols-4',
+    wide: 'grid-cols-4'
+  })
+  // Matches the original `md:col-span-3` — full-width only once the
+  // DashboardLayout grid itself reaches 3 columns (desktop+); at the
+  // 2-column tablet width this section still pairs with a neighbor,
+  // same as PreviewSection below.
+  const fullWidthAtDesktopClass = useBreakpointClass({
+    mobile: '',
+    tablet: '',
+    desktop: 'col-span-3',
+    wide: 'col-span-3'
+  })
+
   return (
     <div className="relative overflow-hidden">
       <FloatingScienceLayer />
       <div className="relative z-10">
         <DashboardLayout title="Welcome back" subtitle={subtitle}>
-          <section className="rounded-md border border-border bg-surface p-6 md:col-span-3">
+          <section className={`rounded-md border border-border bg-surface p-6 ${fullWidthAtDesktopClass}`}>
             <h2 className="mb-1 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
               Continue reading
             </h2>
@@ -336,7 +380,7 @@ export function DashboardPage() {
                 description="Once you've opened a book, it'll pick up right here."
               />
             ) : (
-              <div className="grid w-full min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+              <div className={`grid w-full min-w-0 gap-4 ${continueReadingGridClass}`}>
                 {continueReading.map((item) => (
                   <button
                     key={item.id}
@@ -389,7 +433,7 @@ export function DashboardPage() {
           <StatCard icon={<Fire size={22} />} label="Reading streak" value={`${stats.readingStreakDays} day${stats.readingStreakDays === 1 ? '' : 's'}`} />
           <StatCard icon={<Clock size={22} />} label="Time spent reading" value={formatDuration(stats.totalReadingSeconds)} hint="Tracked while a book is open" />
 
-          <section className="rounded-md border border-border bg-surface p-6 md:col-span-3">
+          <section className={`rounded-md border border-border bg-surface p-6 ${fullWidthAtDesktopClass}`}>
             <div className="mb-1 flex items-center justify-between">
               <h2 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Knowledge</h2>
               <button
@@ -402,7 +446,7 @@ export function DashboardPage() {
             </div>
             <p className="mb-4 font-body text-caption italic text-ink-tertiary">{DASHBOARD_HUMOR.concepts}</p>
 
-            <div className="mb-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className={`mb-4 grid gap-4 ${knowledgeStatsGridClass}`}>
               <button type="button" onClick={() => navigate('/concepts')} className="flex items-center gap-3 text-left hover:opacity-80">
                 <GitBranch size={20} className="text-olive" aria-hidden />
                 <div className="flex flex-col">
