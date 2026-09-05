@@ -1,0 +1,56 @@
+{
+  "id": "comp-c4-vs-cam-plants",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany"
+  ],
+  "itemA": {
+    "name": "C4 Plants"
+  },
+  "itemB": {
+    "name": "CAM Plants"
+  },
+  "overview": "Both use a 4-carbon compound to concentrate CO2, but they separate this step from the Calvin cycle in different ways — space versus time.",
+  "genZNote": "C4 plants split the job between different cells at the same time. CAM plants split the job between night and day in the same cell.",
+  "aspects": [
+    {
+      "id": "separation-strategy",
+      "label": "How CO2 Fixation Is Separated",
+      "valueA": "Spatial separation — CO2 fixation happens in mesophyll cells, Calvin cycle in bundle sheath cells, at the same time of day.",
+      "valueB": "Temporal separation — CO2 is fixed at night and the Calvin cycle runs during the day, in the same cells.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "stomata-timing",
+      "label": "When Stomata Open",
+      "valueA": "Stomata open during the day, like most plants.",
+      "valueB": "Stomata open only at night to minimise water loss, staying shut during the hot day.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "habitat",
+      "label": "Typical Habitat",
+      "valueA": "Hot, sunny grasslands and savannas.",
+      "valueB": "Arid desert environments (succulents, cacti).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Maize, sugarcane.",
+      "valueB": "Cacti, pineapple, Opuntia.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "CAM stands for Crassulacean Acid Metabolism, named after the plant family Crassulaceae where it was first studied.",
+    "memoryTrick": "C4 = separates fixation by space (different cells). CAM = separates fixation by time (night vs day).",
+    "commonMisconception": "CAM plants do not photosynthesise at night — they only fix CO2 into an acid at night; the actual light-dependent Calvin cycle still runs during the day."
+  },
+  "lastVerified": "2026-09-05"
+}

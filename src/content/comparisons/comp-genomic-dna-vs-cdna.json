@@ -1,0 +1,50 @@
+{
+  "id": "comp-genomic-dna-vs-cdna",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "biotechnology"
+  ],
+  "itemA": {
+    "name": "Genomic DNA"
+  },
+  "itemB": {
+    "name": "cDNA (Complementary DNA)"
+  },
+  "overview": "Genomic DNA is the organism's natural DNA including introns; cDNA is lab-made DNA synthesised from mRNA, so it lacks introns.",
+  "genZNote": "Genomic DNA is the unedited manuscript with all the footnotes (introns). cDNA is the cleaned-up, footnote-free final draft.",
+  "aspects": [
+    {
+      "id": "introns",
+      "label": "Contains Introns?",
+      "valueA": "Yes — includes both exons and introns, plus regulatory regions.",
+      "valueB": "No — introns are already removed since it's made from mature, spliced mRNA.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "origin",
+      "label": "How It's Obtained",
+      "valueA": "Extracted directly from a cell's nucleus.",
+      "valueB": "Synthesised in the lab from mRNA using the enzyme reverse transcriptase.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "use-case",
+      "label": "Typical Use",
+      "valueA": "Whole-genome sequencing, studying gene structure and regulatory regions.",
+      "valueB": "Gene cloning for expression in bacteria (which can't splice introns), building expression libraries.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "cDNA is essential for expressing eukaryotic genes in bacteria, since bacteria have no splicing machinery to remove introns.",
+    "memoryTrick": "cDNA = 'clean' DNA copy of mRNA, no introns.",
+    "commonMisconception": "cDNA is not simply 'DNA from the cytoplasm' — the 'c' stands for complementary, referring to its synthesis from an RNA template."
+  },
+  "lastVerified": "2026-09-05"
+}

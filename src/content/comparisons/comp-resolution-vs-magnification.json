@@ -1,0 +1,50 @@
+{
+  "id": "comp-resolution-vs-magnification",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "lab-technique",
+    "microbiology"
+  ],
+  "itemA": {
+    "name": "Resolution"
+  },
+  "itemB": {
+    "name": "Magnification"
+  },
+  "overview": "Magnification makes an image bigger; resolution determines whether making it bigger actually reveals more detail.",
+  "genZNote": "Magnification: zooming in on a blurry photo. Resolution: whether zooming in actually shows you anything new.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "The ability to distinguish two close objects as separate, distinct points.",
+      "valueB": "The degree to which an image is enlarged compared to the actual object size.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "limiting-factor",
+      "label": "What Limits It",
+      "valueA": "Limited by the wavelength of light or electrons used.",
+      "valueB": "Limited mainly by the optical/lens system's design — can be increased almost indefinitely.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "practical-effect",
+      "label": "Practical Effect",
+      "valueA": "Determines the finest detail visible, regardless of zoom level.",
+      "valueB": "Just makes the image bigger — zooming into a low-resolution image only produces a bigger, blurrier image ('empty magnification').",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "'Empty magnification' — increasing magnification beyond the microscope's resolution limit — is a classic exam trap testing whether students understand the difference.",
+    "memoryTrick": "Magnification = how big. Resolution = how sharp/clear.",
+    "commonMisconception": "Higher magnification does not automatically mean you're seeing more detail — without matching resolution, you just get a bigger blur."
+  },
+  "lastVerified": "2026-09-05"
+}

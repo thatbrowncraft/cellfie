@@ -1,0 +1,64 @@
+{
+  "id": "comp-cilia-vs-flagella-eukaryotic",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Cilia"
+  },
+  "itemB": {
+    "name": "Flagella (Eukaryotic)"
+  },
+  "overview": "Both are hair-like motile structures built from the same 9+2 microtubule arrangement, differing mainly in number, length, and movement pattern.",
+  "genZNote": "Cilia: tons of tiny oars rowing together. Flagella: one long whip doing all the work.",
+  "aspects": [
+    {
+      "id": "number",
+      "label": "Number per Cell",
+      "valueA": "Present in large numbers, covering the cell surface.",
+      "valueB": "Usually one or a few per cell.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "length",
+      "label": "Length",
+      "valueA": "Short, hair-like projections.",
+      "valueB": "Long, whip-like projections.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "movement",
+      "label": "Movement Pattern",
+      "valueA": "Beat in coordinated, wave-like strokes.",
+      "valueB": "Moves in an undulating, whip-like motion.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Lining of the human respiratory tract (moves mucus); Paramecium.",
+      "valueB": "Human sperm tail; Euglena.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "internal-structure",
+      "label": "Internal Structure",
+      "valueA": "9+2 arrangement of microtubules (axoneme), same as flagella.",
+      "valueB": "9+2 arrangement of microtubules (axoneme), identical to cilia.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Both cilia and eukaryotic flagella share the exact same 9+2 microtubule axoneme structure — the difference is purely length and number, not internal architecture.",
+    "memoryTrick": "Cilia = many and short. Flagella = few and long.",
+    "commonMisconception": "Eukaryotic flagella (like a sperm tail) are structurally nothing like bacterial flagella, which are simple rotating protein filaments, not microtubule-based."
+  },
+  "lastVerified": "2026-09-05"
+}

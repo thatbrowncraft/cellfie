@@ -1,0 +1,57 @@
+{
+  "id": "comp-glucose-vs-fructose",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Glucose"
+  },
+  "itemB": {
+    "name": "Fructose"
+  },
+  "overview": "Both are common monosaccharides with the same molecular formula, but they differ in structure and where the carbonyl group sits.",
+  "genZNote": "Glucose and fructose are the same formula wearing different outfits.",
+  "aspects": [
+    {
+      "id": "functional-group",
+      "label": "Functional Group",
+      "valueA": "An aldehyde sugar (aldose) — carbonyl group at carbon 1.",
+      "valueB": "A ketone sugar (ketose) — carbonyl group at carbon 2.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "ring-structure",
+      "label": "Ring Structure",
+      "valueA": "Forms a six-membered pyranose ring.",
+      "valueB": "Forms a five-membered furanose ring.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "sweetness",
+      "label": "Relative Sweetness",
+      "valueA": "Less sweet compared to fructose.",
+      "valueB": "The sweetest of all naturally occurring sugars.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "source",
+      "label": "Common Source",
+      "valueA": "Primary sugar in blood; found in starch and many fruits.",
+      "valueB": "Found in fruits and honey; combines with glucose to form sucrose.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Both glucose and fructose share the molecular formula C6H12O6 — they're structural isomers, not different compounds by formula.",
+    "memoryTrick": "Glucose = aldehyde (aldose). Fructose = ketone (ketose) and the sweetest natural sugar.",
+    "commonMisconception": "Fructose is not automatically 'healthier' than glucose just because it's from fruit — excess fructose is metabolised differently and can strain the liver."
+  },
+  "lastVerified": "2026-09-05"
+}

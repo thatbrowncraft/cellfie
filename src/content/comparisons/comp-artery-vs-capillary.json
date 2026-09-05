@@ -1,0 +1,50 @@
+{
+  "id": "comp-artery-vs-capillary",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Artery"
+  },
+  "itemB": {
+    "name": "Capillary"
+  },
+  "overview": "Both are blood vessels, but capillaries are the tiny exchange sites while arteries are the larger transport pipes leading to them.",
+  "genZNote": "Artery: the highway. Capillary: the narrow driveway where the actual delivery happens.",
+  "aspects": [
+    {
+      "id": "size",
+      "label": "Size / Diameter",
+      "valueA": "Relatively large diameter, thick muscular walls.",
+      "valueB": "Microscopic, single-cell-thick walls (just endothelium).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Transports blood at high pressure away from the heart to organs.",
+      "valueB": "Site of actual exchange of oxygen, nutrients, and waste between blood and tissues.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "wall-layers",
+      "label": "Wall Structure",
+      "valueA": "Three layers: tunica intima, media, and externa.",
+      "valueB": "A single layer of endothelial cells, allowing diffusion.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Capillaries are the only blood vessels thin enough for gas and nutrient exchange to actually occur across their walls.",
+    "memoryTrick": "Capillary walls are just one cell thick — built for exchange, not transport.",
+    "commonMisconception": "Blood does not exchange gases/nutrients across artery or vein walls — that exchange happens exclusively at the capillary level."
+  },
+  "lastVerified": "2026-09-05"
+}

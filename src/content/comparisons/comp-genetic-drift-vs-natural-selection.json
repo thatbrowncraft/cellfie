@@ -1,0 +1,58 @@
+{
+  "id": "comp-genetic-drift-vs-natural-selection",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "evolution",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Genetic Drift"
+  },
+  "itemB": {
+    "name": "Natural Selection"
+  },
+  "overview": "Both change allele frequencies over generations, but one is random chance and the other is driven by fitness advantage.",
+  "genZNote": "Drift: random dice rolls deciding who survives. Selection: the environment actively judging your stats.",
+  "aspects": [
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "valueA": "Random, chance fluctuations in allele frequency, unrelated to fitness.",
+      "valueB": "Non-random process where individuals with advantageous traits survive and reproduce more.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "population-size-effect",
+      "label": "Effect of Population Size",
+      "valueA": "Much stronger in small populations, where chance events have a bigger relative impact.",
+      "valueB": "Effective in populations of any size, though visible faster in larger ones with more variation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "directionality",
+      "label": "Directionality",
+      "valueA": "No consistent direction — can increase or decrease any allele, harmful or helpful.",
+      "valueB": "Consistently favours alleles that improve survival and reproduction.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Founder effect after a small group colonises a new island.",
+      "valueB": "Peppered moths becoming darker in polluted areas (industrial melanism).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Genetic drift has the strongest effect in small, isolated populations — classic exam link to the founder effect and bottleneck effect.",
+    "memoryTrick": "Drift = random. Selection = directed by fitness.",
+    "commonMisconception": "Genetic drift is not 'natural selection acting weakly' — it is a completely separate, chance-based mechanism."
+  },
+  "lastVerified": "2026-09-05"
+}

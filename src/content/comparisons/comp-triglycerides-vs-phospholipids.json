@@ -1,0 +1,50 @@
+{
+  "id": "comp-triglycerides-vs-phospholipids",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Triglycerides"
+  },
+  "itemB": {
+    "name": "Phospholipids"
+  },
+  "overview": "Both are lipids built from glycerol and fatty acids, but they differ by one substitution that changes their role entirely.",
+  "genZNote": "Triglyceride: glycerol with three fatty tails, built for storage. Phospholipid: swap one tail for a phosphate head, and now it can build membranes.",
+  "aspects": [
+    {
+      "id": "structure",
+      "label": "Structure",
+      "valueA": "Glycerol backbone bonded to three fatty acid chains.",
+      "valueB": "Glycerol backbone bonded to two fatty acid chains and one phosphate group.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "polarity",
+      "label": "Polarity",
+      "valueA": "Entirely non-polar/hydrophobic.",
+      "valueB": "Amphipathic — has a hydrophilic phosphate head and hydrophobic fatty acid tails.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Energy storage (body fat).",
+      "valueB": "Forms the structural bilayer of all cell membranes.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Phospholipids' amphipathic nature is exactly why they spontaneously form the bilayer structure of cell membranes in water.",
+    "memoryTrick": "Tri = three fatty tails, storage. Phospho = phosphate head added, membrane building.",
+    "commonMisconception": "Triglycerides cannot form stable membranes in water — their lack of a polar head group means they simply clump together as fat droplets."
+  },
+  "lastVerified": "2026-09-05"
+}

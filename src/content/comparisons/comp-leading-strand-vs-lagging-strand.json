@@ -1,0 +1,50 @@
+{
+  "id": "comp-leading-strand-vs-lagging-strand",
+  "domain": "molecular-biology",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "genetics"
+  ],
+  "itemA": {
+    "name": "Leading Strand"
+  },
+  "itemB": {
+    "name": "Lagging Strand"
+  },
+  "overview": "The two new DNA strands made during replication, differing in how continuously they can be synthesised given the antiparallel nature of DNA.",
+  "genZNote": "Leading strand: smooth highway, one continuous drive. Lagging strand: stop-and-go traffic in fragments.",
+  "aspects": [
+    {
+      "id": "continuity",
+      "label": "Synthesis Pattern",
+      "valueA": "Synthesised continuously in the same direction as the replication fork moves.",
+      "valueB": "Synthesised discontinuously, in short Okazaki fragments, away from the fork.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "primers-needed",
+      "label": "Number of Primers Needed",
+      "valueA": "Just one RNA primer to start the whole strand.",
+      "valueB": "Multiple RNA primers, one for each Okazaki fragment.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "enzyme-highlight",
+      "label": "Key Extra Enzyme Involved",
+      "valueA": "Straightforward extension by DNA polymerase.",
+      "valueB": "Requires DNA ligase to join the Okazaki fragments together after primer removal.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Okazaki fragments and the need for DNA ligase are the signature exam clue for the lagging strand.",
+    "memoryTrick": "Leading strand leads smoothly. Lagging strand lags behind in fragments.",
+    "commonMisconception": "Both strands are synthesised at the same overall rate and at the same time — 'lagging' refers to the fragmented mechanism, not to being slower overall."
+  },
+  "lastVerified": "2026-09-05"
+}

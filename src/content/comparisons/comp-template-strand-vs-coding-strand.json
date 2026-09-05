@@ -1,0 +1,50 @@
+{
+  "id": "comp-template-strand-vs-coding-strand",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "genetics"
+  ],
+  "itemA": {
+    "name": "Template Strand"
+  },
+  "itemB": {
+    "name": "Coding Strand"
+  },
+  "overview": "Two names for the two DNA strands of a gene, defined by their relationship to the mRNA produced.",
+  "genZNote": "Template strand is the strand actually read. Coding strand is the strand that looks just like the finished mRNA.",
+  "aspects": [
+    {
+      "id": "role",
+      "label": "Role in Transcription",
+      "valueA": "Physically read by RNA polymerase to synthesise mRNA.",
+      "valueB": "Not read directly, but has the same sequence as the mRNA (with T instead of U).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "also-called",
+      "label": "Also Known As",
+      "valueA": "Antisense strand, non-coding strand.",
+      "valueB": "Sense strand.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "sequence-match",
+      "label": "Sequence Match to mRNA",
+      "valueA": "Complementary to the mRNA sequence.",
+      "valueB": "Identical to the mRNA sequence, except thymine (T) replaces uracil (U).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "If you're given the coding strand sequence, you can read off the mRNA sequence directly by swapping T for U.",
+    "memoryTrick": "Coding strand 'codes' the same message as mRNA. Template strand is the actual mould RNA polymerase uses.",
+    "commonMisconception": "RNA polymerase does not read the coding strand — it's a common exam trap. It always reads the template strand."
+  },
+  "lastVerified": "2026-09-05"
+}

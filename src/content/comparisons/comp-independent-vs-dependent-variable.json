@@ -1,0 +1,51 @@
+{
+  "id": "comp-independent-vs-dependent-variable",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "scientific-method",
+    "terminology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Independent Variable"
+  },
+  "itemB": {
+    "name": "Dependent Variable"
+  },
+  "overview": "The two key variables in any controlled experiment — one is deliberately changed, the other is measured to see how it responds.",
+  "genZNote": "Independent variable: what the scientist deliberately messes with. Dependent variable: what changes because of that meddling.",
+  "aspects": [
+    {
+      "id": "role",
+      "label": "Role in Experiment",
+      "valueA": "The variable that is deliberately changed or manipulated by the experimenter.",
+      "valueB": "The variable that is measured/observed, expected to change in response to the independent variable.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "axis-convention",
+      "label": "Graphing Convention",
+      "valueA": "Plotted on the x-axis.",
+      "valueB": "Plotted on the y-axis.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Amount of fertiliser given to plants (set by the experimenter).",
+      "valueB": "Plant height measured after a fixed time (the outcome being studied).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "In graphing convention, the independent variable always goes on the x-axis and the dependent variable on the y-axis — a very common practical-exam checkpoint.",
+    "memoryTrick": "Independent = the cause you control. Dependent = the effect that 'depends' on it.",
+    "commonMisconception": "Controlled variables (kept constant, like temperature) are a separate third category — they are not the same as either the independent or dependent variable."
+  },
+  "lastVerified": "2026-09-05"
+}

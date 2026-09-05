@@ -1,0 +1,50 @@
+{
+  "id": "comp-genetic-drift-vs-gene-flow",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "rare",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "evolution"
+  ],
+  "itemA": {
+    "name": "Genetic Drift"
+  },
+  "itemB": {
+    "name": "Gene Flow"
+  },
+  "overview": "Both change a population's allele frequencies without being driven by fitness, but one is internal chance and the other comes from outside migration.",
+  "genZNote": "Drift: internal randomness. Gene flow: new characters walking in from another population.",
+  "aspects": [
+    {
+      "id": "source",
+      "label": "Source of Change",
+      "valueA": "Random sampling error within an existing population, generation to generation.",
+      "valueB": "Movement of alleles between populations via migration and interbreeding.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "population-effect",
+      "label": "Effect on Genetic Diversity",
+      "valueA": "Tends to reduce genetic diversity within a population over time.",
+      "valueB": "Tends to increase genetic diversity by introducing new alleles, and makes populations more similar to each other.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "A random storm kills a non-representative subset of a beetle population (bottleneck effect).",
+      "valueB": "Pollen carried by wind introducing new alleles into a neighbouring plant population.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Gene flow generally opposes speciation by homogenising gene pools, while drift can accelerate it in isolated populations.",
+    "memoryTrick": "Drift = internal chance. Flow = alleles flowing in from elsewhere.",
+    "commonMisconception": "Gene flow is not the same as natural selection — it doesn't favour any particular allele, it just mixes populations."
+  },
+  "lastVerified": "2026-09-05"
+}

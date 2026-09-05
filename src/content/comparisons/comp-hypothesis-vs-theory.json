@@ -1,0 +1,50 @@
+{
+  "id": "comp-hypothesis-vs-theory",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "scientific-method",
+    "terminology"
+  ],
+  "itemA": {
+    "name": "Hypothesis"
+  },
+  "itemB": {
+    "name": "Theory"
+  },
+  "overview": "Two very different levels of scientific confidence, often confused because of how 'theory' is used casually in everyday speech.",
+  "genZNote": "Hypothesis: your best guess, waiting to be tested. Theory: the guess that survived so much testing it's basically bulletproof.",
+  "aspects": [
+    {
+      "id": "evidence-level",
+      "label": "Level of Evidential Support",
+      "valueA": "A proposed, testable explanation with limited or no supporting evidence yet.",
+      "valueB": "A well-substantiated explanation supported by a large body of repeatedly tested evidence.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "scope",
+      "label": "Scope",
+      "valueA": "Narrow — usually explains one specific observation or predicts one outcome.",
+      "valueB": "Broad — explains a wide range of observations and unifies many facts.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "'Plant growth will increase with more sunlight' — a testable hypothesis for one experiment.",
+      "valueB": "The theory of evolution by natural selection, or the germ theory of disease.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "In science, 'theory' is one of the highest levels of confidence, not a synonym for 'guess' — the opposite of how it's often used casually.",
+    "memoryTrick": "Hypothesis = a proposed guess. Theory = a proven, well-tested explanation.",
+    "commonMisconception": "Calling something 'just a theory' to dismiss it misunderstands the scientific meaning — a scientific theory is extensively evidence-backed, not a hunch."
+  },
+  "lastVerified": "2026-09-05"
+}

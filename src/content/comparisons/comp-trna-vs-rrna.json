@@ -1,0 +1,50 @@
+{
+  "id": "comp-trna-vs-rrna",
+  "domain": "molecular-biology",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "genetics"
+  ],
+  "itemA": {
+    "name": "tRNA"
+  },
+  "itemB": {
+    "name": "rRNA"
+  },
+  "overview": "Two RNA types found in protein synthesis, differing in whether they deliver amino acids or build the ribosome itself.",
+  "genZNote": "tRNA is the delivery driver bringing amino acids. rRNA is part of the factory building where they get assembled.",
+  "aspects": [
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Transfers specific amino acids to the ribosome, matching codons via its anticodon.",
+      "valueB": "Combines with proteins to form the ribosome, catalysing peptide bond formation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "shape",
+      "label": "Structure",
+      "valueA": "Clover-leaf shaped secondary structure.",
+      "valueB": "Complex folded structure forming ribosomal subunits.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "size",
+      "label": "Relative Size",
+      "valueA": "Smallest of the three main RNA types.",
+      "valueB": "Largest of the three main RNA types.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "tRNA is the only RNA type with a distinctive clover-leaf secondary structure — a common diagram-ID question.",
+    "memoryTrick": "tRNA = transfer (delivers amino acids). rRNA = ribosomal (builds the ribosome).",
+    "commonMisconception": "tRNA doesn't just passively carry amino acids — its anticodon actively determines translation accuracy by matching mRNA codons."
+  },
+  "lastVerified": "2026-09-05"
+}

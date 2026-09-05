@@ -1,0 +1,57 @@
+{
+  "id": "comp-dna-polymerase-vs-rna-polymerase",
+  "domain": "molecular-biology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "genetics"
+  ],
+  "itemA": {
+    "name": "DNA Polymerase"
+  },
+  "itemB": {
+    "name": "RNA Polymerase"
+  },
+  "overview": "Both synthesise nucleic acid chains from a DNA template, but they build different products and have different accuracy requirements.",
+  "genZNote": "DNA polymerase double-checks every word it writes. RNA polymerase just writes fast and moves on.",
+  "aspects": [
+    {
+      "id": "product",
+      "label": "Product Synthesised",
+      "valueA": "New DNA strand.",
+      "valueB": "New RNA strand (mRNA, tRNA, rRNA).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "primer",
+      "label": "Primer Requirement",
+      "valueA": "Requires a short RNA primer to begin synthesis.",
+      "valueB": "Does not require a primer — can initiate synthesis on its own.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "proofreading",
+      "label": "Proofreading Ability",
+      "valueA": "Has 3' to 5' exonuclease proofreading activity, giving very high fidelity.",
+      "valueB": "Generally lacks proofreading activity, making it more error-prone.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "direction",
+      "label": "Synthesis Direction",
+      "valueA": "Synthesises in the 5' to 3' direction, reading the template 3' to 5'.",
+      "valueB": "Also synthesises in the 5' to 3' direction, reading the template 3' to 5'.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "DNA polymerase's need for a primer is exactly why lagging strand synthesis requires repeated RNA primers and Okazaki fragments.",
+    "memoryTrick": "DNA polymerase = precise editor. RNA polymerase = fast first-drafter.",
+    "commonMisconception": "RNA polymerase's lower fidelity isn't a design flaw — RNA is short-lived and made in many copies, so occasional errors matter less than in DNA."
+  },
+  "lastVerified": "2026-09-05"
+}

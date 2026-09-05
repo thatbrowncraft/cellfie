@@ -1,0 +1,49 @@
+{
+  "id": "comp-vesicle-vs-vacuole",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology"
+  ],
+  "itemA": {
+    "name": "Vesicle"
+  },
+  "itemB": {
+    "name": "Vacuole"
+  },
+  "overview": "Both are membrane-bound sacs, but vesicles are small and transient while vacuoles are large and often long-term storage structures.",
+  "genZNote": "Vesicle: a quick delivery pouch. Vacuole: the cell's walk-in storage room.",
+  "aspects": [
+    {
+      "id": "size",
+      "label": "Size",
+      "valueA": "Small, typically used briefly for transport between organelles.",
+      "valueB": "Large, sometimes occupying up to 90% of a plant cell's volume.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Transports materials between organelles (e.g. secretory vesicles from Golgi to membrane).",
+      "valueB": "Stores water, ions, nutrients, and waste products; maintains turgor pressure in plants.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "prevalence",
+      "label": "Where Prominent",
+      "valueA": "Found in all cell types, used constantly in intracellular trafficking.",
+      "valueB": "Especially large and prominent in mature plant cells (the central vacuole).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The large central vacuole in plant cells is key to maintaining turgor pressure, which keeps the plant rigid.",
+    "memoryTrick": "Vesicle = tiny and temporary. Vacuole = big and long-term.",
+    "commonMisconception": "Animal cells do have vacuoles too — they are just much smaller and less prominent than the plant cell's central vacuole."
+  },
+  "lastVerified": "2026-09-05"
+}

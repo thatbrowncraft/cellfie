@@ -1,0 +1,57 @@
+{
+  "id": "comp-nucleus-vs-nucleolus",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Nucleus"
+  },
+  "itemB": {
+    "name": "Nucleolus"
+  },
+  "overview": "The nucleolus is a structure found inside the nucleus, not a separate organelle of its own.",
+  "genZNote": "Nucleus is the whole control room. Nucleolus is just the ribosome-assembly desk inside it.",
+  "aspects": [
+    {
+      "id": "membrane",
+      "label": "Membrane-Bound?",
+      "valueA": "Yes — enclosed by a double membrane, the nuclear envelope.",
+      "valueB": "No — it has no membrane of its own; it's a dense region within the nucleus.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Houses and protects the cell's chromosomal DNA; controls gene expression.",
+      "valueB": "Synthesises ribosomal RNA (rRNA) and assembles ribosomal subunits.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "number",
+      "label": "Number per Cell",
+      "valueA": "Usually one nucleus per cell (with exceptions like RBCs having none, or skeletal muscle having many).",
+      "valueB": "One or more nucleoli can be present within a single nucleus.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "relative-size",
+      "label": "Size",
+      "valueA": "Larger structure, contains the nucleolus and chromatin.",
+      "valueB": "Smaller structure found within the nucleus.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The nucleolus disappears during prophase and reforms during telophase — a common diagram-based question.",
+    "memoryTrick": "Nucleolus is the 'little nucleus' living inside the real nucleus.",
+    "commonMisconception": "The nucleolus is not membrane-bound, unlike the nucleus itself — it's simply a dense, organised region of chromatin and RNA."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "comp-x-linked-dominant-vs-x-linked-recessive",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics"
+  ],
+  "itemA": {
+    "name": "X-linked Dominant Inheritance"
+  },
+  "itemB": {
+    "name": "X-linked Recessive Inheritance"
+  },
+  "overview": "Two sex-linked inheritance patterns for genes on the X chromosome, differing in whether one or two copies are needed in females.",
+  "genZNote": "X-linked recessive: sons get the short end of the stick. X-linked dominant: doesn't discriminate as much.",
+  "aspects": [
+    {
+      "id": "expression-females",
+      "label": "Expression in Females",
+      "valueA": "A single copy on one X chromosome is enough to show the trait.",
+      "valueB": "Requires both X chromosomes to carry the allele (homozygous) to show the trait.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "males",
+      "label": "Effect in Males",
+      "valueA": "Males (XY) express the trait with just one copy, often more severely.",
+      "valueB": "Males (XY) express the trait with just one copy, since they have no second X to mask it.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "father-to-son",
+      "label": "Father-to-Son Transmission",
+      "valueA": "An affected father passes it to all daughters, no sons (since sons get his Y).",
+      "valueB": "An affected father cannot pass it to his sons for the same reason — only to daughters (as carriers).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Vitamin D-resistant rickets.",
+      "valueB": "Haemophilia, red-green colour blindness.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A key NEET pedigree trick: X-linked traits are never passed from father to son directly, in either dominant or recessive form.",
+    "memoryTrick": "X-linked recessive hits more males because they have only one X to 'fail'.",
+    "commonMisconception": "X-linked recessive disorders are not more common in females — the opposite is generally true because males have no second X to compensate."
+  },
+  "lastVerified": "2026-09-05"
+}

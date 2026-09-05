@@ -1,0 +1,58 @@
+{
+  "id": "comp-codon-vs-anticodon",
+  "domain": "molecular-biology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "molecular-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Codon"
+  },
+  "itemB": {
+    "name": "Anticodon"
+  },
+  "overview": "Two complementary three-base sequences that pair up during translation to insert the correct amino acid.",
+  "genZNote": "Codon asks the question in mRNA. Anticodon on tRNA shows up with the right answer.",
+  "aspects": [
+    {
+      "id": "location",
+      "label": "Location",
+      "valueA": "Found on mRNA.",
+      "valueB": "Found on tRNA (at the anticodon loop).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Specifies which amino acid should be added to the growing polypeptide.",
+      "valueB": "Recognises and base-pairs with the complementary codon on mRNA.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "direction",
+      "label": "Reading Direction",
+      "valueA": "Read 5' to 3' during translation.",
+      "valueB": "Pairs antiparallel to the codon (3' to 5').",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Codon AUG codes for methionine (start codon).",
+      "valueB": "Anticodon UAC on tRNA pairs with the AUG codon.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "AUG is both the start codon and codes for methionine — a classic one-line NEET fact.",
+    "memoryTrick": "Codon = on mRNA, code. Anticodon = on tRNA, answers the code.",
+    "commonMisconception": "A codon does not itself carry an amino acid — the amino acid is attached to the tRNA, matched via the anticodon."
+  },
+  "lastVerified": "2026-09-05"
+}

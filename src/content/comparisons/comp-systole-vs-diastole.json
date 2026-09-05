@@ -1,0 +1,50 @@
+{
+  "id": "comp-systole-vs-diastole",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Systole"
+  },
+  "itemB": {
+    "name": "Diastole"
+  },
+  "overview": "The two alternating phases of every heartbeat — one contracting, one relaxing.",
+  "genZNote": "Systole: the heart squeezes and pushes. Diastole: the heart chills and refills.",
+  "aspects": [
+    {
+      "id": "action",
+      "label": "Action of the Heart",
+      "valueA": "Contraction phase — the heart chambers squeeze to pump blood out.",
+      "valueB": "Relaxation phase — the heart chambers relax and fill with blood.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "pressure",
+      "label": "Effect on Blood Pressure",
+      "valueA": "Corresponds to the higher (systolic) blood pressure reading.",
+      "valueB": "Corresponds to the lower (diastolic) blood pressure reading.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "bp-example",
+      "label": "Blood Pressure Example",
+      "valueA": "The '120' in a 120/80 mmHg reading.",
+      "valueB": "The '80' in a 120/80 mmHg reading.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A normal blood pressure reading of 120/80 mmHg represents systolic over diastolic pressure.",
+    "memoryTrick": "Systole = squeeze. Diastole = dilate/relax.",
+    "commonMisconception": "Systole does not refer only to the ventricles — atrial systole and ventricular systole are distinct, sequential events in a single heartbeat."
+  },
+  "lastVerified": "2026-09-05"
+}

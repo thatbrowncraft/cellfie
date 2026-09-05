@@ -1,0 +1,50 @@
+{
+  "id": "comp-inspiration-vs-expiration",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Inspiration"
+  },
+  "itemB": {
+    "name": "Expiration"
+  },
+  "overview": "The two halves of breathing, driven by opposite changes in the volume and pressure of the chest cavity.",
+  "genZNote": "Inspiration: chest expands, air rushes in. Expiration: chest shrinks, air gets pushed out.",
+  "aspects": [
+    {
+      "id": "diaphragm",
+      "label": "Diaphragm Movement",
+      "valueA": "Diaphragm contracts and flattens, increasing thoracic volume.",
+      "valueB": "Diaphragm relaxes and domes upward, decreasing thoracic volume.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "pressure-change",
+      "label": "Pressure Change",
+      "valueA": "Lung pressure drops below atmospheric pressure, drawing air in.",
+      "valueB": "Lung pressure rises above atmospheric pressure, pushing air out.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "process-type",
+      "label": "Active or Passive?",
+      "valueA": "An active process, requiring muscle contraction.",
+      "valueB": "Usually a passive process at rest, driven by elastic recoil of the lungs.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Forced expiration (like during exercise) becomes an active process, using the internal intercostal and abdominal muscles.",
+    "memoryTrick": "Inspiration = 'in' = breathing in. Expiration = 'ex/exit' = breathing out.",
+    "commonMisconception": "Normal quiet expiration is passive, not muscle-driven — only forced/heavy expiration actively recruits muscles."
+  },
+  "lastVerified": "2026-09-05"
+}

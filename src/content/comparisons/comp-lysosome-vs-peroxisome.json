@@ -1,0 +1,57 @@
+{
+  "id": "comp-lysosome-vs-peroxisome",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Lysosome"
+  },
+  "itemB": {
+    "name": "Peroxisome"
+  },
+  "overview": "Two membrane-bound organelles that both handle breakdown reactions, but with very different enzymes and targets.",
+  "genZNote": "Lysosome: the cell's demolition crew. Peroxisome: the cell's hazardous-waste disposal unit.",
+  "aspects": [
+    {
+      "id": "enzymes",
+      "label": "Enzymes Contained",
+      "valueA": "Hydrolytic enzymes (proteases, lipases, nucleases) active at acidic pH.",
+      "valueB": "Oxidative enzymes, especially catalase, which breaks down hydrogen peroxide.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Digests worn-out organelles, engulfed pathogens, and macromolecules.",
+      "valueB": "Breaks down fatty acids (beta-oxidation) and detoxifies harmful peroxide byproducts.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "origin",
+      "label": "Origin",
+      "valueA": "Buds off from the Golgi apparatus.",
+      "valueB": "Self-replicates by division, independent of the Golgi.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "ph-environment",
+      "label": "Internal Environment",
+      "valueA": "Acidic interior (~pH 5).",
+      "valueB": "Near-neutral interior.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Lysosomes are called the 'suicide bags' of the cell because their enzymes can digest the cell itself if released.",
+    "memoryTrick": "Peroxisome handles peroxide. Lysosome does lysis (breakdown).",
+    "commonMisconception": "Peroxisomes don't digest whole organelles or pathogens like lysosomes do — their role is specific oxidative detox reactions."
+  },
+  "lastVerified": "2026-09-05"
+}

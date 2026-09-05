@@ -1,0 +1,50 @@
+{
+  "id": "comp-commensalism-vs-mutualism",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Commensalism"
+  },
+  "itemB": {
+    "name": "Mutualism"
+  },
+  "overview": "Both are interspecies relationships where at least one species benefits, but they differ in whether the other species benefits too.",
+  "genZNote": "Commensalism: one friend benefits, the other genuinely doesn't care either way. Mutualism: both friends are winning.",
+  "aspects": [
+    {
+      "id": "effect-on-both",
+      "label": "Effect on Both Species",
+      "valueA": "One species benefits; the other is neither helped nor harmed.",
+      "valueB": "Both species benefit from the interaction.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Barnacles attaching to a whale (barnacle benefits, whale unaffected).",
+      "valueB": "Bees pollinating flowers (bee gets nectar, flower gets pollinated).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "dependency",
+      "label": "Degree of Dependency",
+      "valueA": "Often a loose, non-essential association for the unaffected partner.",
+      "valueB": "Can range from optional to obligate (essential for survival, as in lichens).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Lichens (fungus + alga/cyanobacterium) are the textbook example of obligate mutualism.",
+    "memoryTrick": "Commensalism: one benefits, 'comme si comme ça' for the other — indifferent. Mutualism: mutual benefit for both.",
+    "commonMisconception": "Commensalism does not harm the unaffected species — if harm occurs, the relationship is actually parasitism, not commensalism."
+  },
+  "lastVerified": "2026-09-05"
+}

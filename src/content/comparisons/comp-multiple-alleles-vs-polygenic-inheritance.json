@@ -1,0 +1,57 @@
+{
+  "id": "comp-multiple-alleles-vs-polygenic-inheritance",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Multiple Alleles"
+  },
+  "itemB": {
+    "name": "Polygenic Inheritance"
+  },
+  "overview": "Multiple alleles means many versions of one gene; polygenic inheritance means many genes controlling one trait.",
+  "genZNote": "Multiple alleles: one gene, several costume options. Polygenic: several genes teaming up for one look.",
+  "aspects": [
+    {
+      "id": "gene-count",
+      "label": "Number of Genes Involved",
+      "valueA": "One gene, but with more than two allele variants in the population.",
+      "valueB": "Two or more genes, each contributing a small additive effect to one trait.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "individual-limit",
+      "label": "Alleles per Individual",
+      "valueA": "An individual still carries only two of the many possible alleles.",
+      "valueB": "An individual carries multiple gene pairs, all influencing the same trait together.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "ABO blood group system (IA, IB, i alleles).",
+      "valueB": "Human skin colour and height, which show continuous variation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "phenotype-pattern",
+      "label": "Phenotype Pattern",
+      "valueA": "Can still show discrete phenotype classes (A, B, AB, O).",
+      "valueB": "Produces continuous, bell-curve variation rather than discrete classes.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "ABO blood grouping is the textbook example of multiple alleles with codominance (IA and IB) and recessiveness (i).",
+    "memoryTrick": "Multiple alleles = many flavours of one gene. Polygenic = many genes, one trait.",
+    "commonMisconception": "Multiple alleles existing in a population does not mean one person carries more than two — every diploid individual still has just two."
+  },
+  "lastVerified": "2026-09-05"
+}

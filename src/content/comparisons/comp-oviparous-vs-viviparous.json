@@ -1,0 +1,57 @@
+{
+  "id": "comp-oviparous-vs-viviparous",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "zoology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Oviparous Animals"
+  },
+  "itemB": {
+    "name": "Viviparous Animals"
+  },
+  "overview": "Two reproductive strategies in animals, differing in whether the young develop inside eggs laid outside the body or inside the mother.",
+  "genZNote": "Oviparous: ship the baby out in an egg to finish cooking. Viviparous: keep the oven on inside until it's fully done.",
+  "aspects": [
+    {
+      "id": "development-site",
+      "label": "Where the Embryo Develops",
+      "valueA": "Outside the mother's body, inside a laid egg.",
+      "valueB": "Inside the mother's body, nourished directly via a placenta or similar structure.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "nourishment",
+      "label": "Source of Nourishment",
+      "valueA": "Relies on yolk stored within the egg.",
+      "valueB": "Receives nourishment continuously from the mother's bloodstream.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Birds, most reptiles, most fish, insects.",
+      "valueB": "Most mammals, including humans.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "survival-rate",
+      "label": "Typical Offspring Survival",
+      "valueA": "Generally more offspring produced, but with lower individual survival rates and less parental protection during development.",
+      "valueB": "Fewer offspring produced, but with higher individual survival rates due to protected internal development.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A few animals like the platypus lay eggs (oviparous) despite being mammals — an exam-favourite exception.",
+    "memoryTrick": "Ovi- = egg (oviparous lays eggs). Vivi- = alive (viviparous gives birth to live young).",
+    "commonMisconception": "Not all mammals are viviparous — monotremes like the platypus and echidna are an important exception that lay eggs."
+  },
+  "lastVerified": "2026-09-05"
+}

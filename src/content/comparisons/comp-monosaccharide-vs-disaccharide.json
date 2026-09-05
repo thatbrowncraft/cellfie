@@ -1,0 +1,50 @@
+{
+  "id": "comp-monosaccharide-vs-disaccharide",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Monosaccharide"
+  },
+  "itemB": {
+    "name": "Disaccharide"
+  },
+  "overview": "A monosaccharide is a single sugar unit; a disaccharide is two monosaccharides joined together.",
+  "genZNote": "Monosaccharide: solo sugar. Disaccharide: sugar duo holding hands via a glycosidic bond.",
+  "aspects": [
+    {
+      "id": "units",
+      "label": "Number of Sugar Units",
+      "valueA": "One simple sugar unit; cannot be hydrolysed further.",
+      "valueB": "Two monosaccharide units joined by a glycosidic bond; can be hydrolysed back into monosaccharides.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Glucose, fructose, galactose.",
+      "valueB": "Sucrose (glucose + fructose), lactose (glucose + galactose), maltose (glucose + glucose).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "digestion",
+      "label": "Digestion Needed?",
+      "valueA": "Absorbed directly into the bloodstream without further digestion.",
+      "valueB": "Must be hydrolysed by enzymes into monosaccharides before absorption.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Lactose intolerance is a classic exam link — it results from a deficiency of the enzyme lactase needed to break lactose into its monosaccharides.",
+    "memoryTrick": "Mono = one. Di = two, joined and needing to be split apart before absorption.",
+    "commonMisconception": "A disaccharide is not simply 'two monosaccharides mixed together' — they are covalently bonded and require an enzyme to separate."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "comp-xylem-vs-phloem",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Xylem"
+  },
+  "itemB": {
+    "name": "Phloem"
+  },
+  "overview": "The two vascular tissues in plants, transporting different materials in different directions.",
+  "genZNote": "Xylem: one-way water delivery, straight up. Phloem: two-way food delivery, wherever it's needed.",
+  "aspects": [
+    {
+      "id": "transports",
+      "label": "What It Transports",
+      "valueA": "Water and dissolved minerals.",
+      "valueB": "Food (mainly sucrose) made during photosynthesis.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "direction",
+      "label": "Direction of Transport",
+      "valueA": "Unidirectional — upward, from roots to leaves.",
+      "valueB": "Bidirectional — can move food up or down, depending on where it's needed (source to sink).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "cell-state",
+      "label": "State of Conducting Cells",
+      "valueA": "Conducting cells (tracheids, vessels) are dead at maturity.",
+      "valueB": "Conducting cells (sieve tubes) are living, though they lack a nucleus at maturity.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "mechanism",
+      "label": "Mechanism of Movement",
+      "valueA": "Passive movement driven by transpiration pull and root pressure.",
+      "valueB": "Active process — pressure flow (mass flow) hypothesis, requiring energy.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Xylem transport is passive (driven by transpiration), while phloem transport requires ATP for active loading of sugars — a frequently tested contrast.",
+    "memoryTrick": "Xylem = 'X' for 'eXit upward only', water. Phloem = flows both ways, food.",
+    "commonMisconception": "Phloem is not one-directional like xylem — its transport direction depends on where sugars are being produced (source) versus used or stored (sink)."
+  },
+  "lastVerified": "2026-09-05"
+}

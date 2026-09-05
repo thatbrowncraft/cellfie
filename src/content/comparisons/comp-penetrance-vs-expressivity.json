@@ -1,0 +1,49 @@
+{
+  "id": "comp-penetrance-vs-expressivity",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "rare",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics"
+  ],
+  "itemA": {
+    "name": "Penetrance"
+  },
+  "itemB": {
+    "name": "Expressivity"
+  },
+  "overview": "Two ways a genotype can fail to translate into a perfectly predictable phenotype.",
+  "genZNote": "Penetrance: does the trait show up at all? Expressivity: if it shows up, how loud is it?",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "The percentage of individuals with a given genotype who actually show the expected phenotype.",
+      "valueB": "The degree or intensity to which a trait is expressed in individuals who do show it.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "measured-as",
+      "label": "Measured As",
+      "valueA": "A population-level percentage (e.g. 80% penetrance).",
+      "valueB": "A range or severity scale within affected individuals.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "BRCA1 mutation carriers who never develop breast cancer show incomplete penetrance.",
+      "valueB": "Polydactyly can range from a small extra digit stub to a fully formed extra finger — variable expressivity.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Incomplete penetrance explains why a dominant disease allele can 'skip' an apparently unaffected carrier.",
+    "memoryTrick": "Penetrance = whether it shows. Expressivity = how much it shows.",
+    "commonMisconception": "Incomplete penetrance is not the same as recessive inheritance — the allele is still dominant, it just doesn't always show up."
+  },
+  "lastVerified": "2026-09-05"
+}

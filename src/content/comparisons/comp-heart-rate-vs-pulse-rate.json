@@ -1,0 +1,42 @@
+{
+  "id": "comp-heart-rate-vs-pulse-rate",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology"
+  ],
+  "itemA": {
+    "name": "Heart Rate"
+  },
+  "itemB": {
+    "name": "Pulse Rate"
+  },
+  "overview": "Heart rate is measured directly at the heart; pulse rate is the same rhythm felt indirectly through an artery.",
+  "genZNote": "Heart rate is the drummer. Pulse rate is you feeling the beat from across the room.",
+  "aspects": [
+    {
+      "id": "measured-at",
+      "label": "Where It's Measured",
+      "valueA": "Measured directly using a stethoscope over the heart, or an ECG.",
+      "valueB": "Measured indirectly by feeling an artery (e.g. wrist, neck) as blood surges through with each heartbeat.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "normally-equal",
+      "label": "Usually Equal?",
+      "valueA": "Reflects the actual number of heartbeats per minute.",
+      "valueB": "Normally equals heart rate in a healthy person, but can differ in certain arrhythmias where a heartbeat fails to generate a detectable pulse.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "In conditions like atrial fibrillation, pulse rate can be lower than actual heart rate because some heartbeats are too weak to produce a palpable pulse.",
+    "memoryTrick": "Heart rate is the source; pulse rate is what you can feel from it.",
+    "commonMisconception": "Pulse rate and heart rate are not always numerically identical, even though they usually match in healthy individuals."
+  },
+  "lastVerified": "2026-09-05"
+}

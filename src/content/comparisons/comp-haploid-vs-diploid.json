@@ -1,0 +1,58 @@
+{
+  "id": "comp-haploid-vs-diploid",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "cell-division",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Haploid (n)"
+  },
+  "itemB": {
+    "name": "Diploid (2n)"
+  },
+  "overview": "Two chromosome-number states describing whether a cell has one or two sets of chromosomes.",
+  "genZNote": "Haploid: single set, like one shoe. Diploid: the matching pair.",
+  "aspects": [
+    {
+      "id": "chromosome-sets",
+      "label": "Number of Chromosome Sets",
+      "valueA": "One complete set of chromosomes (n).",
+      "valueB": "Two complete sets of chromosomes, one from each parent (2n).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Gametes (sperm, egg); many fungi and algae in their main life stage.",
+      "valueB": "Most somatic (body) cells in humans and animals.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "formation",
+      "label": "How It Forms",
+      "valueA": "Formed by meiosis, halving the chromosome number.",
+      "valueB": "Formed by fertilisation, when two haploid gametes fuse.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "human-example",
+      "label": "Human Example",
+      "valueA": "Sperm and egg cells (n = 23).",
+      "valueB": "Zygote and all body cells (2n = 46).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Fertilisation restores diploidy: n + n = 2n.",
+    "memoryTrick": "Haploid = half. Diploid = double.",
+    "commonMisconception": "Not all organisms are diploid for most of their life cycle — many fungi and algae spend most of their life as haploid."
+  },
+  "lastVerified": "2026-09-05"
+}

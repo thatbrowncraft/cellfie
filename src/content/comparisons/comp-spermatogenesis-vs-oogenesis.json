@@ -1,0 +1,58 @@
+{
+  "id": "comp-spermatogenesis-vs-oogenesis",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "zoology",
+    "genetics",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Spermatogenesis"
+  },
+  "itemB": {
+    "name": "Oogenesis"
+  },
+  "overview": "Both are the process of gamete formation through meiosis, but they differ hugely in timing, output number, and cell size.",
+  "genZNote": "Spermatogenesis: mass-produces sperm continuously. Oogenesis: carefully produces one egg at a time, keeping most of the cytoplasm for it.",
+  "aspects": [
+    {
+      "id": "output-number",
+      "label": "Number of Functional Gametes Produced",
+      "valueA": "Four functional sperm cells from one primary spermatocyte.",
+      "valueB": "Only one functional egg cell (plus polar bodies that degenerate) from one primary oocyte.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "timing",
+      "label": "Timing",
+      "valueA": "Begins at puberty and continues throughout adult male life.",
+      "valueB": "Begins before birth (arrested), resumes at puberty, and ends at menopause.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "cytoplasm-division",
+      "label": "Cytoplasm Division",
+      "valueA": "Divides roughly equally among the four resulting sperm.",
+      "valueB": "Divides unequally — the egg keeps almost all cytoplasm, polar bodies get very little.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "location",
+      "label": "Site",
+      "valueA": "Seminiferous tubules of the testes.",
+      "valueB": "Ovarian follicles in the ovaries.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Unequal cytoplasm division in oogenesis ensures the egg has enough nutrient reserves to support early embryonic development.",
+    "memoryTrick": "Spermato- makes 4 equal sperm. Oo- makes 1 big egg plus tiny polar bodies.",
+    "commonMisconception": "Oogenesis does not run continuously like spermatogenesis — it's largely arrested for years at a time (at prophase I) until hormonal signals trigger it to resume, one egg per cycle."
+  },
+  "lastVerified": "2026-09-05"
+}

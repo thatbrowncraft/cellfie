@@ -1,0 +1,57 @@
+{
+  "id": "comp-hypotonic-vs-hypertonic-vs-isotonic",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Hypotonic / Hypertonic"
+  },
+  "itemB": {
+    "name": "Isotonic"
+  },
+  "overview": "These describe how a solution's solute concentration compares to the inside of a cell, predicting which way water will move.",
+  "genZNote": "Hypotonic: cell drinks and swells. Hypertonic: cell gets squeezed dry. Isotonic: cell just chills, no net change.",
+  "aspects": [
+    {
+      "id": "solute-concentration",
+      "label": "Relative Solute Concentration",
+      "valueA": "Hypotonic = lower solute outside than inside; Hypertonic = higher solute outside than inside.",
+      "valueB": "Equal solute concentration inside and outside the cell.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "water-movement",
+      "label": "Direction of Water Movement",
+      "valueA": "Hypotonic: water moves INTO the cell. Hypertonic: water moves OUT of the cell.",
+      "valueB": "No net movement of water in or out.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "cell-effect",
+      "label": "Effect on Cell",
+      "valueA": "Hypotonic causes swelling (and lysis in animal cells); hypertonic causes shrinking (crenation in animal cells, plasmolysis in plant cells).",
+      "valueB": "Cell maintains its normal size and shape.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Placing an RBC in distilled water (hypotonic) causes it to burst.",
+      "valueB": "Normal saline (0.9% NaCl) is isotonic to human blood cells.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Plasmolysis (a plant cell shrinking away from its wall in a hypertonic solution) is a classic practical/viva demonstration.",
+    "memoryTrick": "Hypotonic = cell gets fat (water in). Hypertonic = cell gets thin (water out).",
+    "commonMisconception": "Isotonic doesn't mean 'no water movement at all' — water still moves both ways, but the net movement is zero."
+  },
+  "lastVerified": "2026-09-05"
+}

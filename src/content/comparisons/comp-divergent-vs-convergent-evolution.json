@@ -1,0 +1,57 @@
+{
+  "id": "comp-divergent-vs-convergent-evolution",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "evolution",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Divergent Evolution"
+  },
+  "itemB": {
+    "name": "Convergent Evolution"
+  },
+  "overview": "Two opposite evolutionary patterns — one describes related species growing apart in form, the other describes unrelated species growing similar in form.",
+  "genZNote": "Divergent: same starting line, different finish lines. Convergent: different starting lines, somehow the same finish line.",
+  "aspects": [
+    {
+      "id": "pattern",
+      "label": "Pattern",
+      "valueA": "Related species accumulate differences over time, becoming increasingly distinct.",
+      "valueB": "Unrelated species independently evolve similar traits due to similar environmental pressures.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "ancestry",
+      "label": "Ancestry",
+      "valueA": "Species share a recent common ancestor.",
+      "valueB": "Species do not share a recent common ancestor.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "structural-result",
+      "label": "Structures Produced",
+      "valueA": "Produces homologous structures.",
+      "valueB": "Produces analogous structures.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Darwin's finches evolving different beak shapes from a common ancestor.",
+      "valueB": "Dolphins (mammals) and sharks (fish) both evolving streamlined, fin-shaped bodies.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Darwin's finches on the Galapagos Islands are the classic textbook example of divergent evolution driven by different food sources.",
+    "memoryTrick": "Divergent = diverging apart from one ancestor. Convergent = converging toward a similar form from different ancestors.",
+    "commonMisconception": "Convergent evolution does not mean the species are related — it specifically highlights that similar traits can evolve completely independently."
+  },
+  "lastVerified": "2026-09-05"
+}

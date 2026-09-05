@@ -1,0 +1,51 @@
+{
+  "id": "comp-positive-control-vs-negative-control",
+  "domain": "laboratory-technique",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "lab-technique",
+    "scientific-method",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Positive Control"
+  },
+  "itemB": {
+    "name": "Negative Control"
+  },
+  "overview": "Two essential experimental checks — one confirms the test can detect a true positive, the other confirms it doesn't falsely detect one.",
+  "genZNote": "Positive control: proving your test CAN say yes. Negative control: proving your test won't say yes when it shouldn't.",
+  "aspects": [
+    {
+      "id": "expected-result",
+      "label": "Expected Result",
+      "valueA": "Known to give a positive/expected result, confirming the assay is working correctly.",
+      "valueB": "Known to give a negative result, confirming there's no contamination or false signal.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "purpose",
+      "label": "Purpose",
+      "valueA": "Validates that the test system can detect a true positive.",
+      "valueB": "Validates that the test system does not produce a false positive.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "A known antibiotic-sensitive strain in a disk diffusion assay.",
+      "valueB": "Sterile broth with no bacteria added, checking for contamination.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A valid experiment needs both controls together — a positive result without a negative control run in parallel can't rule out contamination.",
+    "memoryTrick": "Positive control should test positive. Negative control should test negative — if either fails, the whole experiment is in question.",
+    "commonMisconception": "A positive control is not the same as the actual experimental sample — it's a separate, known reference used purely to validate the test system."
+  },
+  "lastVerified": "2026-09-05"
+}

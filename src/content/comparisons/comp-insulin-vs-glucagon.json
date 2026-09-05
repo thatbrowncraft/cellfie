@@ -1,0 +1,57 @@
+{
+  "id": "comp-insulin-vs-glucagon",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Insulin"
+  },
+  "itemB": {
+    "name": "Glucagon"
+  },
+  "overview": "Two hormones from the pancreas with opposite jobs, keeping blood glucose levels balanced.",
+  "genZNote": "Insulin: 'okay blood sugar, calm down.' Glucagon: 'okay blood sugar, wake up.'",
+  "aspects": [
+    {
+      "id": "effect-on-glucose",
+      "label": "Effect on Blood Glucose",
+      "valueA": "Lowers blood glucose levels.",
+      "valueB": "Raises blood glucose levels.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "secreted-when",
+      "label": "Secreted When",
+      "valueA": "Released when blood glucose is high (e.g. after a meal).",
+      "valueB": "Released when blood glucose is low (e.g. during fasting).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "cell-source",
+      "label": "Source Cells",
+      "valueA": "Beta cells of the pancreatic islets of Langerhans.",
+      "valueB": "Alpha cells of the pancreatic islets of Langerhans.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "mechanism",
+      "label": "Main Mechanism",
+      "valueA": "Promotes glucose uptake by cells and glycogenesis in the liver.",
+      "valueB": "Promotes glycogenolysis and gluconeogenesis in the liver.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Type 1 diabetes results from insufficient insulin production, while glucagon excess/imbalance is less commonly the primary clinical focus.",
+    "memoryTrick": "Insulin brings sugar IN (lowers it). Glucagon lets glucose GO (raises it).",
+    "commonMisconception": "Insulin and glucagon are not produced by the same pancreatic cells — beta cells make insulin, alpha cells make glucagon, both within the islets of Langerhans."
+  },
+  "lastVerified": "2026-09-05"
+}

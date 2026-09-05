@@ -1,0 +1,50 @@
+{
+  "id": "comp-tem-vs-sem",
+  "domain": "laboratory-equipment",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "lab-technique",
+    "microbiology"
+  ],
+  "itemA": {
+    "name": "TEM (Transmission Electron Microscope)"
+  },
+  "itemB": {
+    "name": "SEM (Scanning Electron Microscope)"
+  },
+  "overview": "Both are electron microscopes, but they image specimens differently — one sees through the sample, the other scans its surface.",
+  "genZNote": "TEM: X-ray vision, sees the inside. SEM: takes a detailed 3D photo of the surface.",
+  "aspects": [
+    {
+      "id": "imaging-method",
+      "label": "Imaging Method",
+      "valueA": "Electrons pass through an ultra-thin specimen, forming a 2D image of internal structure.",
+      "valueB": "Electrons scan across the specimen's surface, and reflected/emitted electrons build a 3D-like surface image.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "sample-thickness",
+      "label": "Sample Requirement",
+      "valueA": "Requires extremely thin sections (as thin as 100 nm).",
+      "valueB": "Can image whole, thicker specimens since only the surface is imaged.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "image-type",
+      "label": "Type of Image Produced",
+      "valueA": "Detailed 2D cross-sectional image, showing internal ultrastructure.",
+      "valueB": "Detailed 3D-like topographic image of the surface.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "TEM is used to study internal cell organelle structure; SEM is used to study surface texture, such as pollen grains or a virus's surface coat.",
+    "memoryTrick": "TEM = Transmission = electrons go THROUGH, internal view. SEM = Scanning = electrons scan the SURFACE.",
+    "commonMisconception": "SEM does not typically achieve the same ultra-fine resolution as TEM for internal structures — it excels at surface topography, not internal detail."
+  },
+  "lastVerified": "2026-09-05"
+}

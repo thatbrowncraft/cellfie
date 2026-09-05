@@ -1,0 +1,57 @@
+{
+  "id": "comp-phagocytosis-vs-pinocytosis",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Phagocytosis"
+  },
+  "itemB": {
+    "name": "Pinocytosis"
+  },
+  "overview": "Two forms of endocytosis distinguished by what the cell is engulfing — solid particles versus fluid.",
+  "genZNote": "Phagocytosis: cell eating solid food. Pinocytosis: cell sipping a drink.",
+  "aspects": [
+    {
+      "id": "material",
+      "label": "Material Engulfed",
+      "valueA": "Large solid particles, such as bacteria or cell debris.",
+      "valueB": "Extracellular fluid and dissolved solutes.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "vesicle-name",
+      "label": "Resulting Vesicle",
+      "valueA": "Forms a phagosome, which fuses with a lysosome for digestion.",
+      "valueB": "Forms small pinosomes/pinocytic vesicles.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "cell-type",
+      "label": "Cell Type",
+      "valueA": "Performed by specialised cells like macrophages and neutrophils.",
+      "valueB": "A more general, continuous process occurring in most cell types.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "common-name",
+      "label": "Common Name",
+      "valueA": "'Cell eating'.",
+      "valueB": "'Cell drinking'.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Both are forms of endocytosis and both are energy-requiring (ATP-dependent) processes, unlike simple/facilitated diffusion.",
+    "memoryTrick": "Phago = eat solid. Pino = drink liquid.",
+    "commonMisconception": "Pinocytosis is not selective the way receptor-mediated endocytosis is — it non-specifically takes in whatever fluid surrounds the cell."
+  },
+  "lastVerified": "2026-09-05"
+}

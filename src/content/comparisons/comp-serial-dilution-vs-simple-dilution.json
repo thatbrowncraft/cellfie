@@ -1,0 +1,50 @@
+{
+  "id": "comp-serial-dilution-vs-simple-dilution",
+  "domain": "laboratory-technique",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "lab-technique",
+    "microbiology"
+  ],
+  "itemA": {
+    "name": "Serial Dilution"
+  },
+  "itemB": {
+    "name": "Simple Dilution"
+  },
+  "overview": "Both reduce a solution's concentration, but serial dilution does it in successive steps to reach very high dilution factors accurately.",
+  "genZNote": "Simple dilution: one big scoop of water. Serial dilution: a controlled staircase of smaller dilutions to get somewhere much more diluted, accurately.",
+  "aspects": [
+    {
+      "id": "steps",
+      "label": "Number of Steps",
+      "valueA": "A single dilution step, from stock directly to the final concentration.",
+      "valueB": "A stepwise series of dilutions, each using the previous dilution as the new stock.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "purpose",
+      "label": "Typical Purpose",
+      "valueA": "Used when only a moderate dilution is needed.",
+      "valueB": "Used to reach extremely high dilution factors accurately, common in microbial colony counting.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Diluting a stock solution 1:10 in one step.",
+      "valueB": "Diluting 1:10, then 1:10 again, then again, to reach 1:1000 or higher for a viable count.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Serial dilution is the standard method used before spread plating or pour plating to get a countable number of bacterial colonies (30-300 CFU).",
+    "memoryTrick": "Serial = a series of steps, each building on the last.",
+    "commonMisconception": "Serial dilution isn't just 'more accurate' in general — it's specifically necessary because trying to measure one huge single dilution volume directly is impractical and error-prone."
+  },
+  "lastVerified": "2026-09-05"
+}

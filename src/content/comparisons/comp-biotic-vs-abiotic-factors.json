@@ -1,0 +1,50 @@
+{
+  "id": "comp-biotic-vs-abiotic-factors",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Biotic Factors"
+  },
+  "itemB": {
+    "name": "Abiotic Factors"
+  },
+  "overview": "The two broad categories of components that make up an ecosystem — living versus non-living.",
+  "genZNote": "Biotic: the living cast of characters. Abiotic: the non-living stage and props they perform on.",
+  "aspects": [
+    {
+      "id": "nature",
+      "label": "Nature",
+      "valueA": "Living components of an ecosystem — organisms and their interactions.",
+      "valueB": "Non-living physical and chemical components of the environment.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Plants, animals, fungi, bacteria, competition, predation.",
+      "valueB": "Temperature, sunlight, water, soil pH, minerals.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "influence-direction",
+      "label": "Typical Influence",
+      "valueA": "Interact with each other through predation, competition, symbiosis.",
+      "valueB": "Set the physical conditions and limits within which biotic factors can survive.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "An ecosystem is formally defined as the interaction between its biotic community and abiotic environment together.",
+    "memoryTrick": "Bio = life (biotic = living). A-biotic = 'not' living.",
+    "commonMisconception": "Dead organic matter (like fallen leaves or a dead animal) is still considered part of the biotic-derived detritus pool, not purely abiotic, since it originated from living organisms."
+  },
+  "lastVerified": "2026-09-05"
+}

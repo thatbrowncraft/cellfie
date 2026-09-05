@@ -1,0 +1,58 @@
+{
+  "id": "comp-somatic-vs-germ-cells",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "reproduction",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Somatic Cells"
+  },
+  "itemB": {
+    "name": "Germ Cells"
+  },
+  "overview": "The two broad categories of cells in the body, split by whether they can pass on their DNA to offspring.",
+  "genZNote": "Somatic cells build the house. Germ cells carry the blueprint to the next generation.",
+  "aspects": [
+    {
+      "id": "division-type",
+      "label": "Type of Division",
+      "valueA": "Divide by mitosis.",
+      "valueB": "Undergo meiosis to form gametes.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "ploidy",
+      "label": "Ploidy",
+      "valueA": "Diploid (2n).",
+      "valueB": "Diploid germline cells give rise to haploid (n) gametes.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "inheritance",
+      "label": "Passed to Offspring?",
+      "valueA": "Not passed on directly — mutations here are not inherited.",
+      "valueB": "Directly passed to offspring — mutations here are heritable.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Skin cells, liver cells, muscle cells.",
+      "valueB": "Spermatogonia and oogonia in the testes and ovaries.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Only mutations in germ cells are heritable; somatic mutations (like most cancers) are not passed to children.",
+    "memoryTrick": "Germ cells = the 'germ' (origin) of the next generation.",
+    "commonMisconception": "'Germ cells' has nothing to do with germs/microbes — the name refers to 'germination', i.e. origin."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "comp-stem-cells-vs-progenitor-cells",
+  "domain": "biological-structure",
+  "difficulty": "advanced",
+  "frequency": "rare",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology"
+  ],
+  "itemA": {
+    "name": "Stem Cells"
+  },
+  "itemB": {
+    "name": "Progenitor Cells"
+  },
+  "overview": "Both can develop into other cell types, but stem cells are less committed and can self-renew indefinitely.",
+  "genZNote": "Stem cells are undecided majors who can pick almost anything. Progenitor cells already picked a specific track.",
+  "aspects": [
+    {
+      "id": "self-renewal",
+      "label": "Self-Renewal Capacity",
+      "valueA": "Can divide indefinitely, maintaining a pool of undifferentiated cells.",
+      "valueB": "Limited ability to self-renew; mostly moves toward differentiation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "potency",
+      "label": "Differentiation Potential",
+      "valueA": "Can be totipotent, pluripotent, or multipotent, giving rise to many cell types.",
+      "valueB": "More restricted (usually unipotent or bipotent) — committed toward one or two specific lineages.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Embryonic stem cells; haematopoietic stem cells in bone marrow.",
+      "valueB": "Myeloid progenitor cells that will become specific blood cell types.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "All progenitor cells arise from stem cells, but not all stem cell divisions produce progenitor cells — some just make more stem cells.",
+    "memoryTrick": "Stem cells = flexible and renewable. Progenitor = already committed, closer to the final cell type.",
+    "commonMisconception": "Progenitor cells are not the same as stem cells — they have already lost the indefinite self-renewal ability that defines a true stem cell."
+  },
+  "lastVerified": "2026-09-05"
+}

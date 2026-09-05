@@ -1,0 +1,57 @@
+{
+  "id": "comp-mutation-vs-polymorphism",
+  "domain": "molecular-biology",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "Mutation"
+  },
+  "itemB": {
+    "name": "Polymorphism"
+  },
+  "overview": "Both describe changes in DNA sequence, but they differ mainly in how common the variant is in a population.",
+  "genZNote": "Rare change: mutation. Change so common it's basically just 'normal variety': polymorphism.",
+  "aspects": [
+    {
+      "id": "frequency",
+      "label": "Population Frequency",
+      "valueA": "Typically rare, often below 1% frequency in the population.",
+      "valueB": "Common variant present in more than 1% of the population.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "effect",
+      "label": "Typical Effect",
+      "valueA": "Can be harmful, neutral, or (rarely) beneficial.",
+      "valueB": "Usually neutral, contributing to normal variation like blood groups or eye colour.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "A new disease-causing mutation in a single family.",
+      "valueB": "ABO blood group alleles or common SNPs (single nucleotide polymorphisms).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "origin",
+      "label": "Origin",
+      "valueA": "Can arise spontaneously or be induced by mutagens at any time.",
+      "valueB": "Often a mutation that became established and common over many generations.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A polymorphism is really just a mutation that succeeded population-wide — the 1% frequency cutoff is the operational definition.",
+    "memoryTrick": "Poly = many, so polymorphism means many people carry it.",
+    "commonMisconception": "Polymorphism does not mean 'harmless' by definition — some polymorphisms do have modest health effects, they are simply common."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "comp-glycogenesis-vs-glycogenolysis",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "physiology"
+  ],
+  "itemA": {
+    "name": "Glycogenesis"
+  },
+  "itemB": {
+    "name": "Glycogenolysis"
+  },
+  "overview": "Two opposite metabolic pathways controlling how glucose is stored versus released as glycogen.",
+  "genZNote": "Glycogenesis: stashing sugar for later. Glycogenolysis: breaking into the stash when you need it now.",
+  "aspects": [
+    {
+      "id": "direction",
+      "label": "Direction of the Pathway",
+      "valueA": "Converts excess glucose into glycogen for storage.",
+      "valueB": "Breaks down stored glycogen back into glucose.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "trigger-hormone",
+      "label": "Triggering Hormone",
+      "valueA": "Stimulated by insulin, released after a meal when blood glucose is high.",
+      "valueB": "Stimulated by glucagon (and adrenaline), released when blood glucose is low.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "site",
+      "label": "Main Site",
+      "valueA": "Liver and muscle cells.",
+      "valueB": "Mainly liver cells (muscle glycogen is used locally, not released into blood).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Only the liver can release glucose from glycogen back into the bloodstream — muscle glycogen stays local and is used only by the muscle itself.",
+    "memoryTrick": "Genesis = creation (making glycogen). Lysis = breakdown (breaking glycogen).",
+    "commonMisconception": "Glycogenolysis is not the same as gluconeogenesis — glycogenolysis breaks down existing glycogen, while gluconeogenesis builds new glucose from non-carbohydrate sources."
+  },
+  "lastVerified": "2026-09-05"
+}

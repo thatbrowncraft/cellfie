@@ -1,0 +1,57 @@
+{
+  "id": "comp-artery-vs-vein",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Artery"
+  },
+  "itemB": {
+    "name": "Vein"
+  },
+  "overview": "The two main types of blood vessels, distinguished mainly by direction of blood flow and wall structure, not by the type of blood carried.",
+  "genZNote": "Arteries: blood leaving the heart, high pressure, thick walls. Veins: blood heading home, low pressure, valves included.",
+  "aspects": [
+    {
+      "id": "direction",
+      "label": "Direction of Blood Flow",
+      "valueA": "Carries blood away from the heart.",
+      "valueB": "Carries blood toward the heart.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "wall-thickness",
+      "label": "Wall Thickness",
+      "valueA": "Thick, muscular, and elastic walls to withstand high pressure.",
+      "valueB": "Thinner walls with less muscle, since pressure is lower.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "valves",
+      "label": "Presence of Valves",
+      "valueA": "Generally no valves (except semilunar valves at the heart's exit).",
+      "valueB": "Contains valves to prevent backflow, especially in limb veins.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "oxygen-content",
+      "label": "Oxygen Content",
+      "valueA": "Usually carries oxygenated blood (exception: pulmonary artery carries deoxygenated blood).",
+      "valueB": "Usually carries deoxygenated blood (exception: pulmonary vein carries oxygenated blood).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The pulmonary artery and pulmonary vein are the classic exception to the 'arteries = oxygenated' rule — direction of flow, not oxygen content, defines an artery vs vein.",
+    "memoryTrick": "Arteries Away from heart. Veins back toward the heart (think 're-Vein' for return).",
+    "commonMisconception": "Blood type (oxygenated vs deoxygenated) does not define artery vs vein — direction of flow relative to the heart does."
+  },
+  "lastVerified": "2026-09-05"
+}

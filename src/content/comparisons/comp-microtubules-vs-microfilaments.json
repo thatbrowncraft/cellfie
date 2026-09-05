@@ -1,0 +1,56 @@
+{
+  "id": "comp-microtubules-vs-microfilaments",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology"
+  ],
+  "itemA": {
+    "name": "Microtubules"
+  },
+  "itemB": {
+    "name": "Microfilaments"
+  },
+  "overview": "Two of the three main components of the cytoskeleton, differing in the protein they're made of and the diameter of the resulting filament.",
+  "genZNote": "Microtubules: the thick highway pipes. Microfilaments: the thin, flexible support wires.",
+  "aspects": [
+    {
+      "id": "protein",
+      "label": "Protein Subunit",
+      "valueA": "Built from tubulin (alpha and beta subunits).",
+      "valueB": "Built from actin monomers.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "diameter",
+      "label": "Diameter",
+      "valueA": "Thicker, hollow tubes (~25 nm).",
+      "valueB": "Thinner, solid filaments (~7 nm).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Forms the spindle fibres, cilia, flagella, and provides tracks for organelle transport.",
+      "valueB": "Enables cell shape change, muscle contraction, and cytoplasmic streaming.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example Structure",
+      "valueA": "Mitotic spindle during cell division.",
+      "valueB": "Actin filaments in a contracting muscle sarcomere.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Microtubules form the spindle apparatus that pulls chromosomes apart during mitosis and meiosis.",
+    "memoryTrick": "Micro-TUBE-ules = hollow tubes. Microfilaments = thin threads.",
+    "commonMisconception": "Intermediate filaments are a separate, third type of cytoskeletal fibre — don't lump them in with microtubules or microfilaments."
+  },
+  "lastVerified": "2026-09-05"
+}

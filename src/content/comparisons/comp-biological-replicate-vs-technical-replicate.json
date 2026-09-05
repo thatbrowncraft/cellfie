@@ -1,0 +1,50 @@
+{
+  "id": "comp-biological-replicate-vs-technical-replicate",
+  "domain": "laboratory-technique",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "lab-technique",
+    "scientific-method"
+  ],
+  "itemA": {
+    "name": "Biological Replicate"
+  },
+  "itemB": {
+    "name": "Technical Replicate"
+  },
+  "overview": "Both are repeated measurements to check reliability, but they test different sources of variation.",
+  "genZNote": "Biological replicate: asking three different people the same question. Technical replicate: asking the same person the same question three times.",
+  "aspects": [
+    {
+      "id": "what-varies",
+      "label": "What Is Being Repeated",
+      "valueA": "Independent biological samples (different animals, cultures, or individuals).",
+      "valueB": "The same biological sample, measured multiple times using the same method.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "variation-captured",
+      "label": "Variation Captured",
+      "valueA": "Captures true biological variability between subjects/samples.",
+      "valueB": "Captures variability from the measurement/experimental process itself.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Measuring gene expression in three separate mice.",
+      "valueB": "Measuring gene expression in the same mouse sample three times using the same assay.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A well-designed experiment needs biological replicates to make any claim about a population — technical replicates alone can't tell you if a result generalises.",
+    "memoryTrick": "Biological = different samples. Technical = same sample, repeated technique.",
+    "commonMisconception": "Technical replicates cannot substitute for biological replicates — no amount of re-measuring one sample tells you whether the effect holds across individuals."
+  },
+  "lastVerified": "2026-09-05"
+}

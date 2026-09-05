@@ -1,0 +1,51 @@
+{
+  "id": "comp-mrna-vs-rrna",
+  "domain": "molecular-biology",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "genetics",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "mRNA"
+  },
+  "itemB": {
+    "name": "rRNA"
+  },
+  "overview": "Two of the three main RNA types, playing very different roles in the translation process.",
+  "genZNote": "mRNA carries the recipe. rRNA is part of the kitchen equipment that reads it.",
+  "aspects": [
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Carries the genetic code copied from DNA to the ribosome for protein synthesis.",
+      "valueB": "Forms the structural and catalytic core of the ribosome itself.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "abundance",
+      "label": "Relative Abundance in Cell",
+      "valueA": "Least abundant RNA type; short-lived.",
+      "valueB": "Most abundant RNA type, making up the bulk of total cellular RNA.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "stability",
+      "label": "Stability",
+      "valueA": "Generally short-lived, quickly degraded after use.",
+      "valueB": "Very stable, as it's a permanent structural part of the ribosome.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "rRNA makes up about 80% of total cellular RNA — a frequently tested numerical fact.",
+    "memoryTrick": "mRNA = messenger, delivers the message once. rRNA = ribosomal, sticks around as the machine.",
+    "commonMisconception": "rRNA doesn't carry genetic code for a specific protein — it's structural/catalytic, not an information carrier like mRNA."
+  },
+  "lastVerified": "2026-09-05"
+}

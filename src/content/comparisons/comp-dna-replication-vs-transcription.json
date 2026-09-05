@@ -1,0 +1,80 @@
+{
+  "id": "comp-dna-replication-vs-transcription",
+  "domain": "molecular-biology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "molecular-biology",
+    "foundations",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "DNA Replication"
+  },
+  "itemB": {
+    "name": "Transcription"
+  },
+  "overview": "Both copy genetic information using a DNA template, but one duplicates the whole genome and the other reads a gene into RNA.",
+  "genZNote": "Replication makes a backup of the whole book. Transcription just photocopies one chapter you actually need right now.",
+  "aspects": [
+    {
+      "id": "purpose",
+      "label": "Purpose",
+      "valueA": "Duplicates the entire DNA molecule before cell division so each daughter cell gets a full genome.",
+      "valueB": "Copies a specific gene into RNA so its information can be used to make a protein.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "product",
+      "label": "Product",
+      "valueA": "Two identical double-stranded DNA molecules.",
+      "valueB": "A single-stranded RNA molecule (mRNA, tRNA, or rRNA).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "enzyme",
+      "label": "Main Enzyme",
+      "valueA": "DNA polymerase (plus helicase, ligase, primase).",
+      "valueB": "RNA polymerase (no primer needed).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "template",
+      "label": "Template Used",
+      "valueA": "Both strands of the DNA act as templates simultaneously.",
+      "valueB": "Only the template (antisense) strand of one gene is read.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "timing",
+      "label": "Timing in Cell Cycle",
+      "valueA": "Occurs once per cell cycle, during S phase.",
+      "valueB": "Occurs continuously, whenever a gene needs to be expressed.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "base-pairing",
+      "label": "Base Pairing Rule",
+      "valueA": "A-T and G-C, using free deoxyribonucleotides.",
+      "valueB": "A-U (not A-T) and G-C, using free ribonucleotides.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "proofreading",
+      "label": "Fidelity / Proofreading",
+      "valueA": "Very high fidelity with proofreading (3'-5' exonuclease activity).",
+      "valueB": "Lower fidelity; errors are less costly since RNA is short-lived.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Replication is semi-conservative; transcription is not conservative at all — the DNA template is reused, not consumed.",
+    "memoryTrick": "Replication: DNA to DNA. Transcription: DNA to RNA.",
+    "commonMisconception": "Students often think transcription copies the whole gene into DNA — it copies one strand of one gene into RNA."
+  },
+  "lastVerified": "2026-09-05"
+}

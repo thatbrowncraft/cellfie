@@ -1,0 +1,57 @@
+{
+  "id": "comp-light-reaction-vs-dark-reaction",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Light Reaction"
+  },
+  "itemB": {
+    "name": "Dark Reaction (Calvin Cycle)"
+  },
+  "overview": "The two phases of photosynthesis — one directly captures light energy, the other uses that energy to fix carbon, independent of light itself.",
+  "genZNote": "Light reaction: solar panels charging the battery. Dark reaction: using that battery power to actually build sugar.",
+  "aspects": [
+    {
+      "id": "light-requirement",
+      "label": "Requires Light Directly?",
+      "valueA": "Yes — occurs only in the presence of light.",
+      "valueB": "No — doesn't need light directly, but depends on ATP/NADPH made by the light reaction.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "location",
+      "label": "Location in Chloroplast",
+      "valueA": "Occurs in the thylakoid membrane.",
+      "valueB": "Occurs in the stroma.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "products",
+      "label": "Products Formed",
+      "valueA": "ATP, NADPH, and oxygen (as a byproduct of water splitting).",
+      "valueB": "Glucose (via the Calvin cycle), using ATP and NADPH from the light reaction.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "input",
+      "label": "Key Raw Material",
+      "valueA": "Water and light energy.",
+      "valueB": "Carbon dioxide.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "'Dark reaction' is a slightly misleading name — it doesn't need darkness, it just doesn't need light directly, since it runs on the light reaction's products.",
+    "memoryTrick": "Light reaction = light captured, ATP/NADPH/O2 made. Dark reaction = carbon fixed into sugar using that energy.",
+    "commonMisconception": "The dark reaction does not stop in daylight — it happens right alongside the light reaction during the day, using its products in real time."
+  },
+  "lastVerified": "2026-09-05"
+}

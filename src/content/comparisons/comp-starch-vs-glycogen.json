@@ -1,0 +1,50 @@
+{
+  "id": "comp-starch-vs-glycogen",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Starch"
+  },
+  "itemB": {
+    "name": "Glycogen"
+  },
+  "overview": "Both are storage polysaccharides made of glucose units, but one is the plant version and the other the animal version.",
+  "genZNote": "Starch: how plants meal-prep. Glycogen: how animals meal-prep, with extra branching for quick access.",
+  "aspects": [
+    {
+      "id": "organism",
+      "label": "Found In",
+      "valueA": "Plants (stored in seeds, tubers, roots).",
+      "valueB": "Animals and fungi (stored mainly in liver and muscle).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "branching",
+      "label": "Degree of Branching",
+      "valueA": "Mix of unbranched amylose and moderately branched amylopectin.",
+      "valueB": "Highly branched structure, allowing faster glucose release.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "iodine-test",
+      "label": "Iodine Test Result",
+      "valueA": "Turns blue-black with iodine solution.",
+      "valueB": "Turns reddish-brown with iodine solution.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The iodine test colour (blue-black for starch vs reddish-brown for glycogen) is a classic practical/viva identification question.",
+    "memoryTrick": "Glycogen's heavy branching means faster access — animals need quick energy on demand.",
+    "commonMisconception": "Cellulose is not a storage polysaccharide like starch or glycogen — it's structural, and humans can't digest it at all."
+  },
+  "lastVerified": "2026-09-05"
+}

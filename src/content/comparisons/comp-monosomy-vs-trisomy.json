@@ -1,0 +1,49 @@
+{
+  "id": "comp-monosomy-vs-trisomy",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics"
+  ],
+  "itemA": {
+    "name": "Monosomy"
+  },
+  "itemB": {
+    "name": "Trisomy"
+  },
+  "overview": "Two types of aneuploidy differing in whether a chromosome is missing or duplicated.",
+  "genZNote": "Monosomy: one chromosome didn't show up. Trisomy: one chromosome brought a plus-one nobody invited.",
+  "aspects": [
+    {
+      "id": "chromosome-count",
+      "label": "Chromosome Count",
+      "valueA": "One chromosome of a pair is missing (2n-1).",
+      "valueB": "One extra chromosome present, making a set of three (2n+1).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Turner syndrome (45, X — monosomy of X chromosome).",
+      "valueB": "Down syndrome (trisomy 21), Klinefelter syndrome (XXY, a trisomy of sex chromosomes).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "severity",
+      "label": "General Severity",
+      "valueA": "Often more severe or lethal, since a whole chromosome's genes are missing.",
+      "valueB": "Often somewhat more survivable, since extra genetic material is usually tolerated better than a deficit.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Down syndrome = trisomy 21. Turner syndrome = monosomy X (45,X). Klinefelter = XXY trisomy.",
+    "memoryTrick": "Mono = one missing. Tri = one extra.",
+    "commonMisconception": "Turner syndrome is monosomy of a sex chromosome, not an autosome — don't mix it up with Down syndrome."
+  },
+  "lastVerified": "2026-09-05"
+}

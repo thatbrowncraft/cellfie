@@ -1,0 +1,50 @@
+{
+  "id": "comp-plasma-vs-serum",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "lab-technique"
+  ],
+  "itemA": {
+    "name": "Plasma"
+  },
+  "itemB": {
+    "name": "Serum"
+  },
+  "overview": "Both are the liquid part of blood, but serum is what's left after clotting removes the clotting factors.",
+  "genZNote": "Plasma: blood's full liquid portion, clotting factors included. Serum: same liquid, minus the clotting squad that already did its job.",
+  "aspects": [
+    {
+      "id": "clotting-factors",
+      "label": "Clotting Factors Present?",
+      "valueA": "Yes — plasma retains fibrinogen and other clotting factors.",
+      "valueB": "No — serum is plasma after clotting has removed fibrinogen and clotting factors.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "how-obtained",
+      "label": "How It's Obtained",
+      "valueA": "Obtained by centrifuging blood treated with an anticoagulant.",
+      "valueB": "Obtained by letting blood clot naturally, then centrifuging to separate the liquid from the clot.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "volume",
+      "label": "Relative Volume",
+      "valueA": "Slightly larger volume, since clotting factors are still present.",
+      "valueB": "Slightly smaller volume than plasma from the same blood sample.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Serum is used for many diagnostic blood tests specifically because it lacks clotting factors that could interfere with certain assays.",
+    "memoryTrick": "Serum has already 'served its clotting duty' — the clotting factors are gone.",
+    "commonMisconception": "Serum is not the same as whole blood minus cells — it's plasma minus clotting factors, so it still contains most other plasma proteins."
+  },
+  "lastVerified": "2026-09-05"
+}

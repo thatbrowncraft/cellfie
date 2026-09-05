@@ -1,0 +1,57 @@
+{
+  "id": "comp-autosomal-dominant-vs-autosomal-recessive",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Autosomal Dominant Inheritance"
+  },
+  "itemB": {
+    "name": "Autosomal Recessive Inheritance"
+  },
+  "overview": "Two patterns of inheritance for traits carried on autosomes, differing in how many copies of the allele are needed to show the trait.",
+  "genZNote": "Dominant: one bad copy is enough to cause trouble. Recessive: needs both parents to unknowingly team up.",
+  "aspects": [
+    {
+      "id": "copies-needed",
+      "label": "Copies Needed to Express",
+      "valueA": "One copy of the mutant allele is enough to show the trait (heterozygotes are affected).",
+      "valueB": "Two copies of the mutant allele are needed (only homozygotes are affected).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "carrier-parents",
+      "label": "Unaffected Carrier Parents Possible?",
+      "valueA": "Rare — carriers without the allele don't exist; if you have the allele, you usually show the trait.",
+      "valueB": "Common — heterozygous carriers appear completely normal.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Huntington's disease, achondroplasia.",
+      "valueB": "Cystic fibrosis, sickle cell anaemia, phenylketonuria.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "skip-generation",
+      "label": "Can It Skip a Generation?",
+      "valueA": "Rarely skips a generation if penetrance is complete.",
+      "valueB": "Can appear to 'skip' generations, resurfacing when two carriers have children.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Two unaffected (carrier) parents having an affected child is the classic pedigree clue for autosomal recessive inheritance.",
+    "memoryTrick": "Dominant = loud, shows every generation. Recessive = quiet, can hide in carriers.",
+    "commonMisconception": "An autosomal dominant disease is not necessarily more common than a recessive one — commonness and dominance are separate ideas."
+  },
+  "lastVerified": "2026-09-05"
+}

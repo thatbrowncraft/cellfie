@@ -1,0 +1,56 @@
+{
+  "id": "comp-hormone-vs-neurotransmitter",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology"
+  ],
+  "itemA": {
+    "name": "Hormone"
+  },
+  "itemB": {
+    "name": "Neurotransmitter"
+  },
+  "overview": "Both are chemical messengers, but they differ in how far they travel and how fast they act.",
+  "genZNote": "Hormone: a slow-burn email sent through the bloodstream. Neurotransmitter: an instant text across a tiny gap.",
+  "aspects": [
+    {
+      "id": "distance",
+      "label": "Distance Travelled",
+      "valueA": "Travels through the bloodstream to often distant target organs.",
+      "valueB": "Travels across a tiny synaptic gap to an adjacent neuron or effector cell.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "speed",
+      "label": "Speed of Action",
+      "valueA": "Relatively slow onset, longer-lasting effects.",
+      "valueB": "Extremely fast onset (milliseconds), short-lived effects.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "source",
+      "label": "Source",
+      "valueA": "Released from endocrine glands.",
+      "valueB": "Released from neurons at synapses.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Insulin, adrenaline (as a hormone from the adrenal medulla).",
+      "valueB": "Acetylcholine, dopamine, serotonin.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Adrenaline is a great crossover example — it acts as a hormone when released from the adrenal medulla into the blood, and as a neurotransmitter at some synapses.",
+    "memoryTrick": "Hormone = long-distance, slow. Neurotransmitter = short-distance, fast.",
+    "commonMisconception": "Neurotransmitters are not exclusive to the brain — they act throughout the peripheral nervous system too, including at neuromuscular junctions."
+  },
+  "lastVerified": "2026-09-05"
+}

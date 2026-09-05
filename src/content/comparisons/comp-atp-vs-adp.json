@@ -1,0 +1,50 @@
+{
+  "id": "comp-atp-vs-adp",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "ATP"
+  },
+  "itemB": {
+    "name": "ADP"
+  },
+  "overview": "The cell's energy currency in its 'charged' and 'spent' forms, differing by just one phosphate group.",
+  "genZNote": "ATP: fully charged battery. ADP: the same battery after it's given up a charge.",
+  "aspects": [
+    {
+      "id": "phosphate-groups",
+      "label": "Number of Phosphate Groups",
+      "valueA": "Three phosphate groups.",
+      "valueB": "Two phosphate groups.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "energy-state",
+      "label": "Energy State",
+      "valueA": "High-energy molecule; releases energy when the terminal phosphate bond is hydrolysed.",
+      "valueB": "Lower-energy molecule; can be 're-charged' back into ATP by adding a phosphate.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "role",
+      "label": "Role",
+      "valueA": "The immediate energy source used to power cellular work.",
+      "valueB": "Formed after ATP releases energy; gets recycled back into ATP during respiration.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "ATP to ADP conversion releases about 7.3 kcal/mol of energy under standard conditions — a frequently quoted figure.",
+    "memoryTrick": "ATP = Adenosine TriPhosphate (three). ADP = Adenosine DiPhosphate (two, one 'spent').",
+    "commonMisconception": "ATP is not 'stored' in large amounts in cells — it's constantly made and used up within seconds, recycled thousands of times a day."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "comp-c3-vs-c4-plants",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "C3 Plants"
+  },
+  "itemB": {
+    "name": "C4 Plants"
+  },
+  "overview": "Two photosynthetic pathways differing in the first stable carbon product formed and how well they handle heat and dry conditions.",
+  "genZNote": "C3 plants: the classic, straightforward route. C4 plants: the upgraded version built for hot, dry climates.",
+  "aspects": [
+    {
+      "id": "first-product",
+      "label": "First Stable Product of CO2 Fixation",
+      "valueA": "A 3-carbon compound (3-phosphoglycerate, 3-PGA).",
+      "valueB": "A 4-carbon compound (oxaloacetate).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "enzyme",
+      "label": "Primary CO2-Fixing Enzyme",
+      "valueA": "RuBisCO only.",
+      "valueB": "PEP carboxylase (initially), then RuBisCO in bundle sheath cells.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "anatomy",
+      "label": "Leaf Anatomy",
+      "valueA": "Normal leaf anatomy without distinct bundle sheath chloroplasts.",
+      "valueB": "Kranz anatomy — a distinct ring of bundle sheath cells with chloroplasts around the vein.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "photorespiration",
+      "label": "Photorespiration",
+      "valueA": "Significant photorespiration occurs, especially in hot/dry conditions, reducing efficiency.",
+      "valueB": "Minimal photorespiration, due to the CO2-concentrating mechanism.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Rice, wheat, most trees.",
+      "valueB": "Maize, sugarcane, sorghum.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "C4 plants are more efficient in hot, sunny, dry climates because they minimise the wasteful process of photorespiration.",
+    "memoryTrick": "C3 = 3-carbon first product. C4 = 4-carbon first product, built with Kranz anatomy for hot climates.",
+    "commonMisconception": "C4 plants are not simply 'better' than C3 plants in all conditions — they only outperform C3 plants specifically under high light, heat, and low water conditions."
+  },
+  "lastVerified": "2026-09-05"
+}

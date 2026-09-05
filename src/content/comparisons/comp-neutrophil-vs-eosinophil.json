@@ -1,0 +1,50 @@
+{
+  "id": "comp-neutrophil-vs-eosinophil",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "immunology"
+  ],
+  "itemA": {
+    "name": "Neutrophil"
+  },
+  "itemB": {
+    "name": "Eosinophil"
+  },
+  "overview": "Two types of white blood cells (granulocytes) specialised for different threats — bacteria versus parasites and allergens.",
+  "genZNote": "Neutrophils: the first responders to bacterial invasions. Eosinophils: the specialists called in for parasites and allergy drama.",
+  "aspects": [
+    {
+      "id": "primary-target",
+      "label": "Primary Target",
+      "valueA": "Bacteria and fungi — phagocytoses and destroys them.",
+      "valueB": "Multicellular parasites (like helminths) and involved in allergic reactions.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "abundance",
+      "label": "Relative Abundance in Blood",
+      "valueA": "Most abundant white blood cell (about 50-70% of WBCs).",
+      "valueB": "Much less abundant (about 1-4% of WBCs).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "staining",
+      "label": "Staining Behaviour",
+      "valueA": "Stains poorly with acidic or basic dyes (neutral).",
+      "valueB": "Stains strongly with the acidic dye eosin (pink/red).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A raised eosinophil count (eosinophilia) is a classic clinical clue pointing toward a parasitic infection or allergic condition.",
+    "memoryTrick": "Neutrophils = neutral staining, bacteria-fighters. Eosinophils = eosin-loving, parasite-fighters.",
+    "commonMisconception": "Neutrophils are not lymphocytes — they belong to the granulocyte family and work through phagocytosis, not antibody production."
+  },
+  "lastVerified": "2026-09-05"
+}

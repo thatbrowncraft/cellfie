@@ -1,0 +1,50 @@
+{
+  "id": "comp-molarity-vs-normality",
+  "domain": "laboratory-technique",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "lab-technique",
+    "biochemistry"
+  ],
+  "itemA": {
+    "name": "Molarity"
+  },
+  "itemB": {
+    "name": "Normality"
+  },
+  "overview": "Both measure solution concentration, but normality accounts for the reactive capacity (equivalents) of a solute, not just its moles.",
+  "genZNote": "Molarity counts molecules. Normality counts how many 'reactive units' those molecules can actually deliver.",
+  "aspects": [
+    {
+      "id": "basis",
+      "label": "Basis of Measurement",
+      "valueA": "Moles of solute per litre of solution.",
+      "valueB": "Gram equivalents of solute per litre of solution.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "formula",
+      "label": "Formula",
+      "valueA": "Molarity (M) = moles of solute / litres of solution.",
+      "valueB": "Normality (N) = Molarity x number of equivalents (valence factor).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "use-case",
+      "label": "Typical Use",
+      "valueA": "General concentration expression across chemistry and biology.",
+      "valueB": "Acid-base and redox titrations, where reactive capacity matters more than raw molecule count.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "For a monoprotic acid like HCl, Normality equals Molarity; for a diprotic acid like H2SO4, Normality is twice the Molarity.",
+    "memoryTrick": "Normality = Molarity x n (number of reactive units per molecule).",
+    "commonMisconception": "Molarity and Normality are not always numerically equal — they only match for compounds with an equivalence factor of exactly 1."
+  },
+  "lastVerified": "2026-09-05"
+}

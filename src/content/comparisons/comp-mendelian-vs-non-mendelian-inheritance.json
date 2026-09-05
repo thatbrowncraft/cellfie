@@ -1,0 +1,57 @@
+{
+  "id": "comp-mendelian-vs-non-mendelian-inheritance",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Mendelian Inheritance"
+  },
+  "itemB": {
+    "name": "Non-Mendelian Inheritance"
+  },
+  "overview": "Mendelian inheritance follows simple dominant/recessive rules; non-Mendelian inheritance covers the many patterns that don't fit that neat model.",
+  "genZNote": "Mendelian: peas keeping it simple. Non-Mendelian: genetics throwing in plot twists.",
+  "aspects": [
+    {
+      "id": "pattern",
+      "label": "Inheritance Pattern",
+      "valueA": "Follows simple dominant-recessive segregation, producing predictable ratios (e.g. 3:1).",
+      "valueB": "Includes codominance, incomplete dominance, polygenic traits, and cytoplasmic inheritance — ratios don't fit simple 3:1 patterns.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "gene-number",
+      "label": "Number of Genes Involved",
+      "valueA": "Typically one gene controlling one trait.",
+      "valueB": "Often multiple genes (polygenic) or genes with more complex allele interactions.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Tallness vs dwarfism in pea plants.",
+      "valueB": "Human skin colour (polygenic) or ABO blood groups (multiple alleles/codominance).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "chromosomal-basis",
+      "label": "Chromosomal Location",
+      "valueA": "Genes on nuclear chromosomes, following standard segregation.",
+      "valueB": "Can include mitochondrial/cytoplasmic genes, inherited only from the mother.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "ABO blood group inheritance is a classic 'non-Mendelian' example because it involves multiple alleles and codominance.",
+    "memoryTrick": "If the ratio isn't a clean 3:1 or 1:1, suspect non-Mendelian inheritance.",
+    "commonMisconception": "Non-Mendelian doesn't mean Mendel was wrong — it means the trait involves mechanisms beyond his original pea-plant model."
+  },
+  "lastVerified": "2026-09-05"
+}

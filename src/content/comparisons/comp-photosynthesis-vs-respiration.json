@@ -1,0 +1,65 @@
+{
+  "id": "comp-photosynthesis-vs-respiration",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Photosynthesis"
+  },
+  "itemB": {
+    "name": "Cellular Respiration"
+  },
+  "overview": "Two nearly opposite processes — one builds glucose using light energy, the other breaks glucose down to release energy.",
+  "genZNote": "Photosynthesis: cooking glucose using sunlight. Respiration: eating that glucose to power everything else.",
+  "aspects": [
+    {
+      "id": "direction",
+      "label": "Overall Direction",
+      "valueA": "Builds glucose from CO2 and water (anabolic), storing energy.",
+      "valueB": "Breaks down glucose into CO2 and water (catabolic), releasing energy.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "energy-flow",
+      "label": "Energy Flow",
+      "valueA": "Captures light energy and converts it into chemical energy.",
+      "valueB": "Releases stored chemical energy as ATP.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "gas-exchange",
+      "label": "Gas Exchange",
+      "valueA": "Takes in CO2, releases O2.",
+      "valueB": "Takes in O2, releases CO2.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "occurs-in",
+      "label": "Occurs In",
+      "valueA": "Only in cells containing chloroplasts (plants, algae, some bacteria).",
+      "valueB": "In virtually all living cells (plants and animals alike).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "location",
+      "label": "Organelle",
+      "valueA": "Chloroplast.",
+      "valueB": "Mitochondria (plus cytoplasm for glycolysis).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Plants perform both photosynthesis and respiration continuously — they're not mutually exclusive, since plant cells still need ATP around the clock.",
+    "memoryTrick": "Photosynthesis makes food using light. Respiration burns food to make energy.",
+    "commonMisconception": "Plants do not stop respiring during the day just because they're photosynthesising — both processes run simultaneously in green plant cells."
+  },
+  "lastVerified": "2026-09-05"
+}

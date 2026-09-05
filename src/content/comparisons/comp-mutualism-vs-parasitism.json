@@ -1,0 +1,50 @@
+{
+  "id": "comp-mutualism-vs-parasitism",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Mutualism"
+  },
+  "itemB": {
+    "name": "Parasitism"
+  },
+  "overview": "Both are close biological relationships between two species, but one benefits both partners while the other benefits one at the other's expense.",
+  "genZNote": "Mutualism: a genuine win-win partnership. Parasitism: one side quietly (or not so quietly) freeloading at the other's cost.",
+  "aspects": [
+    {
+      "id": "effect-on-both",
+      "label": "Effect on Both Species",
+      "valueA": "Both species benefit from the relationship.",
+      "valueB": "One species (the parasite) benefits; the other (the host) is harmed.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Rhizobium bacteria fixing nitrogen for legume roots, receiving nutrients in return.",
+      "valueB": "Tapeworm living in a human intestine, absorbing nutrients at the host's expense.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "dependency-type",
+      "label": "Nature of Dependency",
+      "valueA": "Cooperative and often essential for survival of one or both partners.",
+      "valueB": "Exploitative — the parasite depends on the host, often to the host's detriment.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Rhizobium in root nodules is a classic NCERT mutualism example, frequently paired with nitrogen fixation questions.",
+    "memoryTrick": "Mutualism = mutual win. Parasitism = one-sided cost.",
+    "commonMisconception": "Parasitism doesn't always kill the host quickly — many successful parasites evolve to keep the host alive longer, since a dead host often means a dead parasite too."
+  },
+  "lastVerified": "2026-09-05"
+}

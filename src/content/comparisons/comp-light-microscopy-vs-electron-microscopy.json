@@ -1,0 +1,58 @@
+{
+  "id": "comp-light-microscopy-vs-electron-microscopy",
+  "domain": "laboratory-equipment",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "lab-technique",
+    "microbiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Light Microscopy"
+  },
+  "itemB": {
+    "name": "Electron Microscopy"
+  },
+  "overview": "Both magnify specimens, but they use different sources (light versus electrons) giving very different resolution and sample requirements.",
+  "genZNote": "Light microscopy: see the neighbourhood. Electron microscopy: zoom in to see individual bricks.",
+  "aspects": [
+    {
+      "id": "source",
+      "label": "Illumination Source",
+      "valueA": "Visible light, focused through glass lenses.",
+      "valueB": "A beam of electrons, focused using electromagnetic lenses.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "resolution",
+      "label": "Resolving Power",
+      "valueA": "Limited resolution, around 200 nm; can't distinguish structures smaller than that.",
+      "valueB": "Much higher resolution, down to about 0.1-0.2 nm — can visualise viruses and organelle detail.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "sample-prep",
+      "label": "Sample Requirements",
+      "valueA": "Can view living or stained samples with minimal preparation.",
+      "valueB": "Requires extensive preparation (fixation, dehydration, coating) and is usually performed on dead, non-living samples in a vacuum.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "cost-accessibility",
+      "label": "Cost / Accessibility",
+      "valueA": "Relatively inexpensive and widely available, including in student labs.",
+      "valueB": "Expensive, specialised equipment, generally limited to research settings.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Viruses are too small to be seen with a light microscope — visualising them requires an electron microscope.",
+    "memoryTrick": "Light micro = see cells and bacteria. Electron micro = see viruses and fine organelle detail.",
+    "commonMisconception": "Electron microscopy cannot be used on living samples — the vacuum and preparation process kills the specimen, unlike light microscopy."
+  },
+  "lastVerified": "2026-09-05"
+}

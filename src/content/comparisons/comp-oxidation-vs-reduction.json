@@ -1,0 +1,50 @@
+{
+  "id": "comp-oxidation-vs-reduction",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Oxidation"
+  },
+  "itemB": {
+    "name": "Reduction"
+  },
+  "overview": "The two halves of every redox reaction — one substance loses electrons while another gains them.",
+  "genZNote": "Oxidation: losing electrons (and OIL RIG never lets you forget it). Reduction: gaining them.",
+  "aspects": [
+    {
+      "id": "electron-change",
+      "label": "Electron Change",
+      "valueA": "Loss of electrons (or gain of oxygen / loss of hydrogen).",
+      "valueB": "Gain of electrons (or loss of oxygen / gain of hydrogen).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "mnemonic",
+      "label": "Classic Mnemonic",
+      "valueA": "OIL — Oxidation Is Loss (of electrons).",
+      "valueB": "RIG — Reduction Is Gain (of electrons).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "biological-example",
+      "label": "Biological Example",
+      "valueA": "Glucose is oxidised during cellular respiration, releasing energy.",
+      "valueB": "Oxygen is reduced to water at the end of the electron transport chain.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Oxidation and reduction always occur together in a redox reaction — one substance's loss is another's gain.",
+    "memoryTrick": "OIL RIG: Oxidation Is Loss, Reduction Is Gain (of electrons).",
+    "commonMisconception": "Oxidation doesn't require oxygen to be literally involved — the electron-based definition is the general, correct one."
+  },
+  "lastVerified": "2026-09-05"
+}

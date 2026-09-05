@@ -1,0 +1,64 @@
+{
+  "id": "comp-monocot-vs-dicot",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Monocot Plants"
+  },
+  "itemB": {
+    "name": "Dicot Plants"
+  },
+  "overview": "The two major classes of flowering plants (angiosperms), distinguished by the number of seed leaves and several related structural features.",
+  "genZNote": "Monocot: one seed leaf, parallel lines everywhere. Dicot: two seed leaves, branching networks everywhere.",
+  "aspects": [
+    {
+      "id": "cotyledons",
+      "label": "Number of Cotyledons",
+      "valueA": "One cotyledon (seed leaf).",
+      "valueB": "Two cotyledons (seed leaves).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "leaf-venation",
+      "label": "Leaf Venation",
+      "valueA": "Parallel venation.",
+      "valueB": "Reticulate (net-like) venation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "root-system",
+      "label": "Root System",
+      "valueA": "Fibrous root system.",
+      "valueB": "Taproot system.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "floral-parts",
+      "label": "Floral Parts",
+      "valueA": "Flower parts typically in multiples of three.",
+      "valueB": "Flower parts typically in multiples of four or five.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Wheat, maize, grasses, banana.",
+      "valueB": "Pea, sunflower, mustard, gram.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Parallel venation and fibrous roots always pair together in monocots — a fast way to identify them in a practical exam.",
+    "memoryTrick": "Mono = one cotyledon, parallel veins. Di = two cotyledons, branching veins.",
+    "commonMisconception": "Vascular bundle arrangement also differs (scattered in monocot stems, ringed in dicot stems) — a detail often forgotten beyond just leaves and roots."
+  },
+  "lastVerified": "2026-09-05"
+}

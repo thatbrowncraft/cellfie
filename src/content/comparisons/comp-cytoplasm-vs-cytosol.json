@@ -1,0 +1,49 @@
+{
+  "id": "comp-cytoplasm-vs-cytosol",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology"
+  ],
+  "itemA": {
+    "name": "Cytoplasm"
+  },
+  "itemB": {
+    "name": "Cytosol"
+  },
+  "overview": "Cytoplasm is everything inside the cell membrane except the nucleus; cytosol is just the fluid part of that.",
+  "genZNote": "Cytoplasm is the whole room's contents. Cytosol is just the water filling the empty space.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "All the material inside the plasma membrane, excluding the nucleus — includes organelles plus the fluid.",
+      "valueB": "The semi-fluid, gel-like liquid component of the cytoplasm, excluding organelles.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "contents",
+      "label": "Contents",
+      "valueA": "Organelles (mitochondria, ER, Golgi, etc.) suspended within the cytosol.",
+      "valueB": "Water, dissolved ions, small molecules, and soluble proteins — no organelles.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "relationship",
+      "label": "Relationship",
+      "valueA": "The larger category — cytosol is one component of the cytoplasm.",
+      "valueB": "A subset/component of the cytoplasm.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Glycolysis occurs in the cytosol, not just 'the cytoplasm' loosely — precise wording matters in exams.",
+    "memoryTrick": "Cytosol = just the 'sol' (solution/fluid) part of the cytoplasm.",
+    "commonMisconception": "Cytoplasm and cytosol are often used interchangeably in casual speech, but strictly cytosol excludes the organelles that cytoplasm includes."
+  },
+  "lastVerified": "2026-09-05"
+}

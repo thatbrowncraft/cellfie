@@ -1,0 +1,57 @@
+{
+  "id": "comp-simple-vs-facilitated-diffusion",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Simple Diffusion"
+  },
+  "itemB": {
+    "name": "Facilitated Diffusion"
+  },
+  "overview": "Both are passive transport processes moving substances down their concentration gradient, but only one needs a helper protein.",
+  "genZNote": "Simple diffusion strolls straight through the membrane. Facilitated diffusion needs a bouncer to open the door.",
+  "aspects": [
+    {
+      "id": "carrier-needed",
+      "label": "Carrier Protein Needed?",
+      "valueA": "No — molecules pass directly through the lipid bilayer.",
+      "valueB": "Yes — requires a channel or carrier protein embedded in the membrane.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "molecule-type",
+      "label": "Typical Molecules",
+      "valueA": "Small, non-polar molecules like O2, CO2.",
+      "valueB": "Larger or polar/charged molecules like glucose, amino acids, and ions.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "energy",
+      "label": "Energy Requirement",
+      "valueA": "No energy (ATP) required.",
+      "valueB": "No energy (ATP) required — still passive, just protein-assisted.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "saturation",
+      "label": "Saturation Kinetics",
+      "valueA": "Rate increases linearly with concentration gradient, no saturation.",
+      "valueB": "Rate can plateau (saturate) once all carrier proteins are occupied.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Both are passive — the presence of a carrier protein, not energy use, is what distinguishes facilitated diffusion.",
+    "memoryTrick": "If it needs a protein 'facilitator' to cross, it's facilitated diffusion.",
+    "commonMisconception": "Facilitated diffusion is not active transport — it never moves molecules against their gradient and never uses ATP."
+  },
+  "lastVerified": "2026-09-05"
+}

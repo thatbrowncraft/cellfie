@@ -1,0 +1,50 @@
+{
+  "id": "comp-endocrine-vs-exocrine-glands",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Endocrine Glands"
+  },
+  "itemB": {
+    "name": "Exocrine Glands"
+  },
+  "overview": "Both are glands that secrete substances, but only one uses ducts to deliver its product.",
+  "genZNote": "Endocrine glands text their hormones straight into the bloodstream. Exocrine glands mail their product through a duct.",
+  "aspects": [
+    {
+      "id": "ducts",
+      "label": "Presence of Ducts",
+      "valueA": "Ductless — secretions are released directly into the bloodstream.",
+      "valueB": "Have ducts that carry secretions to a specific surface or cavity.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "secretion",
+      "label": "What They Secrete",
+      "valueA": "Hormones.",
+      "valueB": "Enzymes, sweat, saliva, mucus, and other non-hormonal secretions.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Thyroid gland, adrenal gland, pituitary gland.",
+      "valueB": "Salivary glands, sweat glands, sebaceous glands, pancreas (exocrine part).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The pancreas is a classic 'mixed gland' example — it's exocrine (digestive enzymes via a duct) and endocrine (insulin/glucagon into blood) at the same time.",
+    "memoryTrick": "Exo = exit through a duct. Endo = enters bloodstream internally, no duct.",
+    "commonMisconception": "Endocrine glands are not the only sources of hormones released into blood — some exocrine-associated organs, like the pancreas, also have endocrine components."
+  },
+  "lastVerified": "2026-09-05"
+}

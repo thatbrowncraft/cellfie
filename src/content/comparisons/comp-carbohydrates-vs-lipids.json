@@ -1,0 +1,57 @@
+{
+  "id": "comp-carbohydrates-vs-lipids",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Carbohydrates"
+  },
+  "itemB": {
+    "name": "Lipids"
+  },
+  "overview": "Two major classes of biomolecules that both store energy but differ hugely in structure and solubility.",
+  "genZNote": "Carbs: quick cash, spent fast. Lipids: the long-term savings account.",
+  "aspects": [
+    {
+      "id": "composition",
+      "label": "Elemental Composition",
+      "valueA": "Carbon, hydrogen, and oxygen in roughly a 1:2:1 ratio (CH2O)n.",
+      "valueB": "Carbon, hydrogen, and oxygen, but with much less oxygen relative to carbon and hydrogen.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "solubility",
+      "label": "Water Solubility",
+      "valueA": "Generally water-soluble (especially simple sugars).",
+      "valueB": "Hydrophobic — insoluble in water, soluble in organic solvents.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "energy-storage",
+      "label": "Energy Storage Role",
+      "valueA": "Quick, short-term energy source (~4 kcal/g).",
+      "valueB": "Dense, long-term energy storage (~9 kcal/g).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Glucose, starch, glycogen.",
+      "valueB": "Triglycerides, phospholipids, steroids.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Fats yield roughly double the energy per gram compared to carbohydrates — a commonly tested number.",
+    "memoryTrick": "Carbs = quick energy. Lipids = long-term energy reserve.",
+    "commonMisconception": "Not all lipids are 'fats' in the everyday sense — cholesterol and phospholipids are lipids too, but aren't stored as body fat."
+  },
+  "lastVerified": "2026-09-05"
+}

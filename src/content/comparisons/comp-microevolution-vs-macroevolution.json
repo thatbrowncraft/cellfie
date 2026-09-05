@@ -1,0 +1,49 @@
+{
+  "id": "comp-microevolution-vs-macroevolution",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "evolution"
+  ],
+  "itemA": {
+    "name": "Microevolution"
+  },
+  "itemB": {
+    "name": "Macroevolution"
+  },
+  "overview": "Both describe evolutionary change, differing mainly in scale and timeframe — small shifts within a species versus the origin of new species or higher groups.",
+  "genZNote": "Microevolution: small tweaks within a generation or few. Macroevolution: the big picture, zoomed way out over deep time.",
+  "aspects": [
+    {
+      "id": "scale",
+      "label": "Scale of Change",
+      "valueA": "Small-scale changes in allele frequency within a single population or species.",
+      "valueB": "Large-scale evolutionary change, often resulting in new species or higher taxonomic groups.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "timeframe",
+      "label": "Typical Timeframe",
+      "valueA": "Can be observed over a few generations.",
+      "valueB": "Occurs over very long geological timescales, often studied through the fossil record.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Antibiotic resistance evolving in a bacterial population.",
+      "valueB": "The evolution of birds from theropod dinosaurs.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Macroevolution is essentially the accumulated result of many microevolutionary changes over vast timescales, not a fundamentally different mechanism.",
+    "memoryTrick": "Micro = small changes, short term. Macro = big changes, long term.",
+    "commonMisconception": "Macroevolution is not a separate, mysterious process from microevolution — most biologists view it as the long-term outcome of the same processes (selection, drift, mutation) accumulating over time."
+  },
+  "lastVerified": "2026-09-05"
+}

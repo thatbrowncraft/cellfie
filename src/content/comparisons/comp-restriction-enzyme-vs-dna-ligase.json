@@ -1,0 +1,58 @@
+{
+  "id": "comp-restriction-enzyme-vs-dna-ligase",
+  "domain": "molecular-biology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "biotechnology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Restriction Enzyme"
+  },
+  "itemB": {
+    "name": "DNA Ligase"
+  },
+  "overview": "Two essential tools of genetic engineering with opposite jobs — one cuts DNA, the other joins it.",
+  "genZNote": "Restriction enzyme: molecular scissors. DNA ligase: molecular glue stick.",
+  "aspects": [
+    {
+      "id": "action",
+      "label": "Action on DNA",
+      "valueA": "Cuts DNA at specific recognition sequences (restriction sites).",
+      "valueB": "Joins DNA fragments together by forming phosphodiester bonds.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "also-called",
+      "label": "Also Known As",
+      "valueA": "'Molecular scissors'.",
+      "valueB": "'Molecular glue'.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "use-in-cloning",
+      "label": "Role in Gene Cloning",
+      "valueA": "Cuts both the gene of interest and the vector to create compatible sticky/blunt ends.",
+      "valueB": "Seals the gene of interest into the cut vector, forming recombinant DNA.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "EcoRI, HindIII.",
+      "valueB": "T4 DNA ligase (commonly used in labs).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "EcoRI recognises the palindromic sequence GAATTC and cuts to leave sticky ends — a classic named-enzyme NEET fact.",
+    "memoryTrick": "Restriction enzyme cuts. Ligase links.",
+    "commonMisconception": "Restriction enzymes don't cut DNA randomly — they recognise very specific palindromic sequences."
+  },
+  "lastVerified": "2026-09-05"
+}

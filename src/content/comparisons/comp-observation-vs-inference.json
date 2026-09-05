@@ -1,0 +1,50 @@
+{
+  "id": "comp-observation-vs-inference",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "scientific-method",
+    "terminology"
+  ],
+  "itemA": {
+    "name": "Observation"
+  },
+  "itemB": {
+    "name": "Inference"
+  },
+  "overview": "An observation is something directly detected through the senses or instruments; an inference is a conclusion drawn from that observation.",
+  "genZNote": "Observation: what you actually saw. Inference: your best explanation for why you saw it.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Direct information gathered through the senses or measuring instruments.",
+      "valueB": "A logical conclusion or explanation based on observations and prior knowledge.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "objectivity",
+      "label": "Objectivity",
+      "valueA": "Objective and directly verifiable.",
+      "valueB": "Subjective to some degree, since it involves interpretation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "'The plant's leaves are yellow.'",
+      "valueB": "'The plant is yellow because it's not getting enough nitrogen.'",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A good lab report clearly separates the 'Observations' section (what was seen) from the 'Discussion/Conclusion' section (what it means) — mixing them is a common student error.",
+    "memoryTrick": "Observation = what your eyes report. Inference = what your brain concludes from it.",
+    "commonMisconception": "An inference is not automatically wrong just because it's an interpretation — good inferences are logically sound and consistent with the evidence, just not directly observed facts."
+  },
+  "lastVerified": "2026-09-05"
+}

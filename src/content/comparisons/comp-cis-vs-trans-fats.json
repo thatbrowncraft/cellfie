@@ -1,0 +1,50 @@
+{
+  "id": "comp-cis-vs-trans-fats",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "nutrition"
+  ],
+  "itemA": {
+    "name": "Cis Fats"
+  },
+  "itemB": {
+    "name": "Trans Fats"
+  },
+  "overview": "Both describe the geometry of double bonds in unsaturated fatty acids, with very different health implications.",
+  "genZNote": "Cis fats: naturally bent and healthier. Trans fats: artificially straightened and the ones your cardiologist worries about.",
+  "aspects": [
+    {
+      "id": "geometry",
+      "label": "Molecular Geometry",
+      "valueA": "Hydrogen atoms on the same side of the double bond, creating a bent shape.",
+      "valueB": "Hydrogen atoms on opposite sides of the double bond, creating a straighter shape closer to saturated fat.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "source",
+      "label": "Common Source",
+      "valueA": "Naturally occurring in most plant oils and fish.",
+      "valueB": "Formed by partial hydrogenation of vegetable oils; found in many processed/fried foods.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "health-effect",
+      "label": "Health Effect",
+      "valueA": "Generally considered healthier when consumed in moderation.",
+      "valueB": "Raises LDL ('bad') cholesterol and lowers HDL, increasing heart disease risk.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Trans fats are the main dietary fat type actively linked to increased cardiovascular disease risk, prompting many countries to restrict them.",
+    "memoryTrick": "Cis = 'same side', bent, natural. Trans = 'across', straight, man-made mostly.",
+    "commonMisconception": "Not all trans fats are man-made — a small amount occurs naturally in the meat and dairy of ruminant animals."
+  },
+  "lastVerified": "2026-09-05"
+}

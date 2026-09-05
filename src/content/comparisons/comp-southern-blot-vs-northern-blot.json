@@ -1,0 +1,51 @@
+{
+  "id": "comp-southern-blot-vs-northern-blot",
+  "domain": "laboratory-technique",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "biotechnology",
+    "lab-technique"
+  ],
+  "itemA": {
+    "name": "Southern Blot"
+  },
+  "itemB": {
+    "name": "Northern Blot"
+  },
+  "overview": "Both are blotting techniques for detecting specific nucleic acid sequences, differing only in whether the target is DNA or RNA.",
+  "genZNote": "Southern blot hunts for DNA. Northern blot hunts for RNA. (Named after the scientist and a geography pun, not compass directions.)",
+  "aspects": [
+    {
+      "id": "target-molecule",
+      "label": "Target Molecule",
+      "valueA": "DNA fragments, typically after restriction digestion.",
+      "valueB": "RNA, usually mRNA, to study gene expression.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "used-for",
+      "label": "Typical Use",
+      "valueA": "Detecting specific DNA sequences, gene mapping, paternity/forensic testing.",
+      "valueB": "Studying gene expression levels — which genes are being transcribed and how much.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "named-after",
+      "label": "Origin of Name",
+      "valueA": "Named after its inventor, Edwin Southern.",
+      "valueB": "A play on 'Southern', naming the RNA version 'Northern' by direction.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Western blot (for proteins) completes the trio — Southern (DNA), Northern (RNA), Western (protein).",
+    "memoryTrick": "Southern = Sir Edwin Southern = DNA. Northern (opposite direction) = RNA.",
+    "commonMisconception": "These blots are not named for any geographic or biological logic beyond the original pun — 'Northern' and 'Western' were invented as jokes on 'Southern'."
+  },
+  "lastVerified": "2026-09-05"
+}

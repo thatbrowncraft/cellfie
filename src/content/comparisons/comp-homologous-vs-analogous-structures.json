@@ -1,0 +1,50 @@
+{
+  "id": "comp-homologous-vs-analogous-structures",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "evolution",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Homologous Structures"
+  },
+  "itemB": {
+    "name": "Analogous Structures"
+  },
+  "overview": "Both describe similar structures in different species, but homologous structures share ancestry while analogous structures share only function.",
+  "genZNote": "Homologous: same blueprint, different remodel. Analogous: totally different blueprints that just happened to converge on the same design need.",
+  "aspects": [
+    {
+      "id": "origin",
+      "label": "Origin",
+      "valueA": "Share a common evolutionary ancestor; structures are fundamentally similar even if functions differ.",
+      "valueB": "Do not share a common ancestor; structures evolved independently to serve a similar function.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "evidence-type",
+      "label": "Type of Evolution Illustrated",
+      "valueA": "Evidence of divergent evolution.",
+      "valueB": "Evidence of convergent evolution.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Forelimbs of humans, bats, and whales — same bone structure, different uses.",
+      "valueB": "Wings of insects and wings of birds — same function (flight), completely different structure and origin.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Homologous structures are the strongest anatomical evidence for common descent; analogous structures instead demonstrate similar selective pressures.",
+    "memoryTrick": "Homologous = same origin (like 'homo' = same). Analogous = same function only, an 'analogy' not an ancestry.",
+    "commonMisconception": "Similar appearance or function alone doesn't prove common ancestry — you have to trace the underlying structure and developmental origin to tell homologous from analogous."
+  },
+  "lastVerified": "2026-09-05"
+}

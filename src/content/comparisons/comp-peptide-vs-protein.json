@@ -1,0 +1,49 @@
+{
+  "id": "comp-peptide-vs-protein",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry"
+  ],
+  "itemA": {
+    "name": "Peptide"
+  },
+  "itemB": {
+    "name": "Protein"
+  },
+  "overview": "Both are chains of amino acids, but peptides are short chains while proteins are large, folded, functional molecules.",
+  "genZNote": "Peptide: a short text message. Protein: the whole novel with a plot and structure.",
+  "aspects": [
+    {
+      "id": "chain-length",
+      "label": "Chain Length",
+      "valueA": "Short chain, typically 2-50 amino acids.",
+      "valueB": "Long chain, usually more than 50 amino acids, often with complex folding.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "structure-levels",
+      "label": "Structural Complexity",
+      "valueA": "Usually has only a primary structure (linear sequence); rarely folds into stable secondary/tertiary structures.",
+      "valueB": "Has primary, secondary, tertiary, and often quaternary structure.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Insulin's precursor fragments, glutathione (a tripeptide).",
+      "valueB": "Haemoglobin, enzymes like amylase.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The dividing line between 'peptide' and 'protein' is not a strict fixed number — it's a matter of convention around length and folding complexity.",
+    "memoryTrick": "Peptide = short and simple. Protein = long and structurally complex.",
+    "commonMisconception": "Insulin itself, despite being fairly small, is classified as a protein hormone (not just a peptide) because of its defined tertiary structure."
+  },
+  "lastVerified": "2026-09-05"
+}

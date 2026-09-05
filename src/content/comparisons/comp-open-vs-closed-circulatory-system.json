@@ -1,0 +1,57 @@
+{
+  "id": "comp-open-vs-closed-circulatory-system",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "zoology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Open Circulatory System"
+  },
+  "itemB": {
+    "name": "Closed Circulatory System"
+  },
+  "overview": "Two ways animals move blood through their bodies — one lets blood freely bathe tissues, the other keeps blood confined to vessels.",
+  "genZNote": "Open system: blood just floods the whole space and soaks everything. Closed system: blood stays strictly inside its pipes.",
+  "aspects": [
+    {
+      "id": "blood-containment",
+      "label": "Blood Contained in Vessels?",
+      "valueA": "No — blood (haemolymph) directly bathes tissues in open spaces called sinuses.",
+      "valueB": "Yes — blood remains enclosed within vessels (arteries, veins, capillaries) at all times.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "pressure",
+      "label": "Blood Pressure",
+      "valueA": "Lower blood pressure and slower circulation.",
+      "valueB": "Higher blood pressure, allowing faster and more efficient circulation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Arthropods (insects), most molluscs.",
+      "valueB": "Annelids, all vertebrates including humans.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "efficiency",
+      "label": "Efficiency for Active Animals",
+      "valueA": "Less efficient — generally suits smaller or less active animals.",
+      "valueB": "More efficient — supports larger, more metabolically active animals.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Insects rely on an open circulatory system, which is one reason their body size and activity level are physically limited.",
+    "memoryTrick": "Open = haemolymph floods open spaces. Closed = blood stays sealed inside vessels.",
+    "commonMisconception": "An open circulatory system does not mean the animal has no heart — insects and molluscs do have a simple pumping heart, blood just isn't confined to vessels after leaving it."
+  },
+  "lastVerified": "2026-09-05"
+}

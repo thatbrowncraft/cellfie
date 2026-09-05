@@ -1,0 +1,50 @@
+{
+  "id": "comp-filtration-vs-reabsorption",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Filtration"
+  },
+  "itemB": {
+    "name": "Reabsorption"
+  },
+  "overview": "Two opposite steps of urine formation in the kidney — one pushes fluid out of the blood, the other pulls useful substances back in.",
+  "genZNote": "Filtration: dumping everything out of the blood first. Reabsorption: quickly grabbing back everything the body still needs.",
+  "aspects": [
+    {
+      "id": "location",
+      "label": "Location",
+      "valueA": "Occurs in the glomerulus, within Bowman's capsule.",
+      "valueB": "Occurs mainly along the proximal convoluted tubule, loop of Henle, and distal tubule.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "direction",
+      "label": "Direction of Movement",
+      "valueA": "Blood plasma components move from glomerular capillaries into the nephron.",
+      "valueB": "Useful substances move from the filtrate in the tubule back into the blood.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "selectivity",
+      "label": "Selectivity",
+      "valueA": "Relatively non-selective — filters based on molecular size (small molecules pass, large proteins/cells don't).",
+      "valueB": "Highly selective — actively reclaims glucose, amino acids, most water, and ions.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Normally, glucose is 100% reabsorbed — glucose in urine (glycosuria) signals the reabsorption capacity has been exceeded, as in diabetes.",
+    "memoryTrick": "Filtration throws stuff out first. Reabsorption takes the good stuff back.",
+    "commonMisconception": "Filtration at the glomerulus is not selective for what the body needs — it's a size-based sieve, so useful molecules like glucose are filtered out too and must be reabsorbed."
+  },
+  "lastVerified": "2026-09-05"
+}

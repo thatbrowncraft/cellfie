@@ -1,0 +1,57 @@
+{
+  "id": "comp-golgi-apparatus-vs-endoplasmic-reticulum",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Golgi Apparatus"
+  },
+  "itemB": {
+    "name": "Endoplasmic Reticulum"
+  },
+  "overview": "Two connected organelles in the cell's manufacturing and shipping line — one processes proteins, the other packages and ships them onward.",
+  "genZNote": "ER: the factory floor. Golgi: the packaging and shipping department.",
+  "aspects": [
+    {
+      "id": "structure",
+      "label": "Structure",
+      "valueA": "A stack of flattened, curved membranous sacs (cisternae), not directly continuous with the nuclear envelope.",
+      "valueB": "A network of interconnected membranous tubules and sacs, continuous with the nuclear envelope.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Modifies, sorts, and packages proteins and lipids received from the ER, then ships them to their destinations.",
+      "valueB": "Synthesises proteins (rough ER) and lipids (smooth ER), and folds/modifies new proteins.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "types",
+      "label": "Types / Subdivisions",
+      "valueA": "A single continuous structure with cis, medial, and trans faces.",
+      "valueB": "Divided into rough ER (ribosome-studded) and smooth ER (no ribosomes).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "relative-position",
+      "label": "Position in the Pathway",
+      "valueA": "Receives material from the ER via transport vesicles; comes after ER in the secretory pathway.",
+      "valueB": "The first stop for newly made proteins entering the secretory pathway.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Proteins travel ER → Golgi (cis to trans face) → secretory vesicle — a frequently drawn NEET diagram.",
+    "memoryTrick": "ER makes it. Golgi finishes, wraps, and mails it.",
+    "commonMisconception": "The Golgi apparatus does not synthesise proteins itself — it only modifies and packages what the ER already made."
+  },
+  "lastVerified": "2026-09-05"
+}

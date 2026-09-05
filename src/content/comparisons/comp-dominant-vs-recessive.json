@@ -1,0 +1,58 @@
+{
+  "id": "comp-dominant-vs-recessive",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "mendelian-inheritance",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Dominant Allele"
+  },
+  "itemB": {
+    "name": "Recessive Allele"
+  },
+  "overview": "The two ways an allele can behave in a heterozygote — one masks the other.",
+  "genZNote": "Dominant shows up even with one copy. Recessive needs both parents to agree.",
+  "aspects": [
+    {
+      "id": "expression",
+      "label": "Expression in Heterozygote",
+      "valueA": "Its phenotype is expressed even with just one copy (Aa shows the dominant trait).",
+      "valueB": "Its phenotype is masked in the heterozygote; only shows up when homozygous (aa).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "notation",
+      "label": "Notation",
+      "valueA": "Represented by a capital letter, e.g. 'T' for tall.",
+      "valueB": "Represented by a lowercase letter, e.g. 't' for dwarf.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "mendel-example",
+      "label": "Mendel's Example",
+      "valueA": "Tallness in pea plants.",
+      "valueB": "Dwarfism in pea plants.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "carrier",
+      "label": "Carrier Status",
+      "valueA": "A dominant allele is never 'hidden' — if present, it is seen.",
+      "valueB": "Can be silently carried by heterozygotes without showing the trait.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Dominant does not mean 'more common' or 'better' — it only describes masking behaviour in a heterozygote.",
+    "memoryTrick": "Dominant = loud, shows up with one copy. Recessive = shy, needs both copies.",
+    "commonMisconception": "A dominant allele is not necessarily the more frequent one in a population — frequency and dominance are unrelated."
+  },
+  "lastVerified": "2026-09-05"
+}

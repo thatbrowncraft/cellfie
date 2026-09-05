@@ -1,0 +1,50 @@
+{
+  "id": "comp-essential-vs-nonessential-amino-acids",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "nutrition"
+  ],
+  "itemA": {
+    "name": "Essential Amino Acids"
+  },
+  "itemB": {
+    "name": "Non-Essential Amino Acids"
+  },
+  "overview": "The difference is simply whether the body can synthesise the amino acid itself or must get it from food.",
+  "genZNote": "Essential: must be delivered, the body can't cook this one up. Non-essential: the body's got a recipe for it already.",
+  "aspects": [
+    {
+      "id": "synthesis",
+      "label": "Can the Body Synthesise It?",
+      "valueA": "No — must be obtained through diet.",
+      "valueB": "Yes — the body can synthesise it internally from other compounds.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "count-humans",
+      "label": "Number in Humans",
+      "valueA": "9 essential amino acids in adult humans (e.g. leucine, lysine, valine).",
+      "valueB": "11 non-essential amino acids (e.g. alanine, glutamine, glycine).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "dietary-importance",
+      "label": "Dietary Importance",
+      "valueA": "Deficiency requires dietary correction, especially important in protein-deficient diets.",
+      "valueB": "Deficiency is rare unless there's an underlying metabolic disorder.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Some amino acids are 'conditionally essential' — normally non-essential but required from the diet during illness, infancy, or stress.",
+    "memoryTrick": "Essential = 'essential to eat it', can't make it yourself.",
+    "commonMisconception": "'Non-essential' does not mean unimportant — both categories of amino acids are equally necessary for building proteins."
+  },
+  "lastVerified": "2026-09-05"
+}

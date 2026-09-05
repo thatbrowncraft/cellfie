@@ -1,0 +1,66 @@
+{
+  "id": "comp-asexual-vs-sexual-reproduction",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "reproduction",
+    "foundations",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Asexual Reproduction"
+  },
+  "itemB": {
+    "name": "Sexual Reproduction"
+  },
+  "overview": "Two reproductive strategies that trade off speed and uniformity against genetic diversity.",
+  "genZNote": "Asexual: control-C, control-V yourself. Sexual: mixing two playlists into one.",
+  "aspects": [
+    {
+      "id": "parents",
+      "label": "Number of Parents",
+      "valueA": "One parent only.",
+      "valueB": "Typically two parents.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "gametes",
+      "label": "Gamete Formation",
+      "valueA": "No gametes are formed.",
+      "valueB": "Involves formation and fusion of male and female gametes.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "variation",
+      "label": "Genetic Variation",
+      "valueA": "Offspring are genetically identical clones of the parent.",
+      "valueB": "Offspring are genetically unique, combining traits from both parents.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "speed",
+      "label": "Speed / Energy Cost",
+      "valueA": "Fast and energy-efficient; no need to find a mate.",
+      "valueB": "Slower and more energy-costly, but improves adaptability.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Binary fission in bacteria, budding in yeast, vegetative propagation in plants.",
+      "valueB": "Fertilisation in humans, flowering plants, and most animals.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Sexual reproduction's main evolutionary advantage is variation, which helps populations survive changing environments.",
+    "memoryTrick": "Asexual = one parent, exact copy. Sexual = two parents, unique mix.",
+    "commonMisconception": "Asexual reproduction is not 'primitive' or inferior — many highly successful organisms rely on it exclusively."
+  },
+  "lastVerified": "2026-09-05"
+}

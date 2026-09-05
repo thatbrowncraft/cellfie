@@ -1,0 +1,51 @@
+{
+  "id": "comp-gene-vs-genome",
+  "domain": "molecular-biology",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "molecular-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Gene"
+  },
+  "itemB": {
+    "name": "Genome"
+  },
+  "overview": "A gene is one unit of heredity; the genome is the complete set of all genetic material in an organism.",
+  "genZNote": "Gene is one song. Genome is the entire discography.",
+  "aspects": [
+    {
+      "id": "scope",
+      "label": "Scope",
+      "valueA": "A single functional unit of DNA coding for one product (usually a protein or RNA).",
+      "valueB": "The entire DNA content of an organism, including all genes and non-coding sequences.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "size",
+      "label": "Size",
+      "valueA": "A few hundred to a few million base pairs.",
+      "valueB": "The human genome is about 3.2 billion base pairs.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "count",
+      "label": "Count in Humans",
+      "valueA": "Roughly 20,000-25,000 protein-coding genes in humans.",
+      "valueB": "One genome per organism, containing all of its genes plus regulatory and non-coding DNA.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The Human Genome Project sequenced the entire genome, not just individual genes.",
+    "memoryTrick": "Genome = genes + everything else, all together.",
+    "commonMisconception": "The genome is not made up only of genes — most of the human genome is non-coding DNA."
+  },
+  "lastVerified": "2026-09-05"
+}

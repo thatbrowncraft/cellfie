@@ -1,0 +1,57 @@
+{
+  "id": "comp-euchromatin-vs-heterochromatin",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "cell-biology"
+  ],
+  "itemA": {
+    "name": "Euchromatin"
+  },
+  "itemB": {
+    "name": "Heterochromatin"
+  },
+  "overview": "Two states of chromatin packing that determine whether genes in that region are active or silenced.",
+  "genZNote": "Euchromatin: open book, actively being read. Heterochromatin: book closed and shelved.",
+  "aspects": [
+    {
+      "id": "packing",
+      "label": "Packing Density",
+      "valueA": "Loosely packed, lightly stained.",
+      "valueB": "Densely packed, darkly stained.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "activity",
+      "label": "Transcriptional Activity",
+      "valueA": "Transcriptionally active — genes here are being expressed.",
+      "valueB": "Transcriptionally inactive or silenced.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "location",
+      "label": "Location in Nucleus",
+      "valueA": "Found more centrally within the nucleus.",
+      "valueB": "Often found at the nuclear periphery and around the nucleolus.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Regions containing actively used housekeeping genes.",
+      "valueB": "Barr body (inactivated X chromosome) in female mammalian cells.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The Barr body is a classic example of heterochromatin and is a favourite NEET/board question.",
+    "memoryTrick": "Euchromatin = 'eu' (true/good) = active and open. Heterochromatin = tightly shut.",
+    "commonMisconception": "Heterochromatin is not 'junk DNA' — it can contain genes that are simply switched off in that cell type."
+  },
+  "lastVerified": "2026-09-05"
+}

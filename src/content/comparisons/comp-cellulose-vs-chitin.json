@@ -1,0 +1,51 @@
+{
+  "id": "comp-cellulose-vs-chitin",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "botany",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Cellulose"
+  },
+  "itemB": {
+    "name": "Chitin"
+  },
+  "overview": "Both are structural polysaccharides forming the tough outer covering of an organism, but built from different sugar units.",
+  "genZNote": "Cellulose: plants' structural fibre. Chitin: the fungal and insect version, with a nitrogen twist.",
+  "aspects": [
+    {
+      "id": "monomer",
+      "label": "Monomer Unit",
+      "valueA": "Beta-glucose units linked by beta-1,4-glycosidic bonds.",
+      "valueB": "N-acetylglucosamine units (a nitrogen-containing sugar derivative).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "found-in",
+      "label": "Found In",
+      "valueA": "Plant cell walls.",
+      "valueB": "Fungal cell walls and the exoskeleton of arthropods (insects, crustaceans).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "nitrogen-content",
+      "label": "Contains Nitrogen?",
+      "valueA": "No.",
+      "valueB": "Yes.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Chitin's nitrogen-containing monomer is the key structural difference that lets it form the tough exoskeleton of insects and fungal cell walls.",
+    "memoryTrick": "Chitin sounds like 'chitin-nitrogen' — it's the one with nitrogen in its sugar unit.",
+    "commonMisconception": "Humans cannot digest either cellulose or chitin — neither counts as a usable carbohydrate source for us, both just pass through as fibre or are excreted."
+  },
+  "lastVerified": "2026-09-05"
+}

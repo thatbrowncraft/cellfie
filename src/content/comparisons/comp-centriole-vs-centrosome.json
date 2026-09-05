@@ -1,0 +1,49 @@
+{
+  "id": "comp-centriole-vs-centrosome",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology"
+  ],
+  "itemA": {
+    "name": "Centriole"
+  },
+  "itemB": {
+    "name": "Centrosome"
+  },
+  "overview": "A centriole is a single cylindrical structure; a centrosome is the larger organising complex made of a pair of centrioles plus surrounding material.",
+  "genZNote": "Centriole is one Lego piece. Centrosome is the finished Lego set built from two of them.",
+  "aspects": [
+    {
+      "id": "composition",
+      "label": "Composition",
+      "valueA": "A single cylindrical structure made of nine triplets of microtubules.",
+      "valueB": "A pair of centrioles arranged at right angles, surrounded by pericentriolar material.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Forms the base of cilia and flagella; contributes to spindle pole organisation.",
+      "valueB": "Acts as the main microtubule-organising centre (MTOC) of animal cells.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "location",
+      "label": "Number per Cell",
+      "valueA": "Two centrioles exist per centrosome.",
+      "valueB": "Usually one centrosome per animal cell (before duplication).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Plant cells generally lack centrioles/centrosomes but can still form a spindle during mitosis.",
+    "memoryTrick": "Centriole = the small building block. Centrosome = the whole organising hub.",
+    "commonMisconception": "Not all cells with a centrosome need centrioles to divide — higher plant cells manage spindle formation without either."
+  },
+  "lastVerified": "2026-09-05"
+}

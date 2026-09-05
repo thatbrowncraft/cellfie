@@ -1,0 +1,49 @@
+{
+  "id": "comp-autophagy-vs-apoptosis",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology"
+  ],
+  "itemA": {
+    "name": "Autophagy"
+  },
+  "itemB": {
+    "name": "Apoptosis"
+  },
+  "overview": "Autophagy is the cell recycling its own components to survive stress; apoptosis is the cell's programmed decision to die entirely.",
+  "genZNote": "Autophagy: cell doing spring cleaning to survive. Apoptosis: cell deciding it's time to go.",
+  "aspects": [
+    {
+      "id": "outcome",
+      "label": "Outcome for the Cell",
+      "valueA": "The cell survives, having recycled damaged components for energy and building blocks.",
+      "valueB": "The cell dies in a controlled, organised manner.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "valueA": "Damaged organelles/proteins are engulfed by autophagosomes and degraded in lysosomes.",
+      "valueB": "Caspase enzymes are activated, breaking down the cell in a controlled cascade.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "trigger",
+      "label": "Typical Trigger",
+      "valueA": "Nutrient starvation or cellular stress.",
+      "valueB": "Developmental signals, DNA damage, or immune instructions.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Excessive or dysregulated autophagy can itself sometimes trigger apoptosis — the two pathways can interact.",
+    "memoryTrick": "Auto (self) + phagy (eating) = eating your own parts to survive. Apoptosis = 'falling away', i.e. dying.",
+    "commonMisconception": "Autophagy is not a form of cell death by default — it's primarily a survival mechanism, though it can occasionally contribute to a form of programmed cell death in extreme cases."
+  },
+  "lastVerified": "2026-09-05"
+}

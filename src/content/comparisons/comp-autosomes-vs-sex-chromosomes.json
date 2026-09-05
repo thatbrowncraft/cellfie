@@ -1,0 +1,57 @@
+{
+  "id": "comp-autosomes-vs-sex-chromosomes",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Autosomes"
+  },
+  "itemB": {
+    "name": "Sex Chromosomes"
+  },
+  "overview": "The two categories of chromosomes in a diploid cell, split by what kind of traits they carry.",
+  "genZNote": "Autosomes run the body. Sex chromosomes decide if you're running it as XX or XY.",
+  "aspects": [
+    {
+      "id": "number-humans",
+      "label": "Number in Humans",
+      "valueA": "22 pairs (44 chromosomes) in humans.",
+      "valueB": "1 pair (2 chromosomes) in humans — XX or XY.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Carry genes for general body traits, unrelated to sex determination.",
+      "valueB": "Determine the sex of the individual and carry some sex-linked traits.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "similarity-between-sexes",
+      "label": "Similarity Between Sexes",
+      "valueA": "Identical in both males and females.",
+      "valueB": "Differ between males (XY) and females (XX).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "inheritance-pattern",
+      "label": "Inheritance Pattern",
+      "valueA": "Follow standard Mendelian autosomal inheritance.",
+      "valueB": "Follow sex-linked inheritance patterns (e.g. X-linked recessive).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Humans have 23 pairs of chromosomes total: 22 autosomal pairs + 1 sex chromosome pair.",
+    "memoryTrick": "Auto = automatic body traits. Sex chromosomes = decide sex.",
+    "commonMisconception": "Sex chromosomes do carry non-sex-related genes too (e.g. haemophilia genes are on the X chromosome)."
+  },
+  "lastVerified": "2026-09-05"
+}

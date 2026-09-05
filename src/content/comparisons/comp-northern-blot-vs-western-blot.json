@@ -1,0 +1,51 @@
+{
+  "id": "comp-northern-blot-vs-western-blot",
+  "domain": "laboratory-technique",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "biotechnology",
+    "lab-technique"
+  ],
+  "itemA": {
+    "name": "Northern Blot"
+  },
+  "itemB": {
+    "name": "Western Blot"
+  },
+  "overview": "Two blotting techniques from the same naming joke, detecting completely different types of molecules — RNA versus protein.",
+  "genZNote": "Northern blot: 'is this gene being read?' Western blot: 'is the protein actually being made?'",
+  "aspects": [
+    {
+      "id": "target-molecule",
+      "label": "Target Molecule",
+      "valueA": "RNA (usually mRNA).",
+      "valueB": "Protein.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "detection-method",
+      "label": "Detection Method",
+      "valueA": "Labelled complementary nucleic acid probe.",
+      "valueB": "Labelled antibody specific to the target protein.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "used-for",
+      "label": "Typical Use",
+      "valueA": "Measuring gene expression at the transcript level.",
+      "valueB": "Confirming presence, size, and relative amount of a specific protein; widely used in diagnostics like confirmatory HIV testing.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Western blot was historically the gold-standard confirmatory test for HIV, run after a positive ELISA screen.",
+    "memoryTrick": "Northern = RNA. Western = protein (antibody-based, like 'W' for 'Which protein?').",
+    "commonMisconception": "Western blot doesn't detect nucleic acids at all — mixing it up with Southern/Northern blot on exam day is a common and costly mistake."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "comp-enzyme-vs-hormone",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Enzyme"
+  },
+  "itemB": {
+    "name": "Hormone"
+  },
+  "overview": "Both are biological regulators, but enzymes speed up chemical reactions while hormones send signals between cells.",
+  "genZNote": "Enzyme is the reaction's personal trainer, speeding things up. Hormone is the messenger texting instructions to distant cells.",
+  "aspects": [
+    {
+      "id": "chemical-nature",
+      "label": "Chemical Nature",
+      "valueA": "Almost always a protein (a biological catalyst).",
+      "valueB": "Can be a protein, peptide, steroid, or amino-acid derivative.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Catalyses (speeds up) a specific biochemical reaction without being consumed.",
+      "valueB": "Acts as a chemical messenger, regulating the activity of target cells/organs.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "site-of-action",
+      "label": "Site of Action",
+      "valueA": "Acts at or very near its site of production (often intracellularly).",
+      "valueB": "Produced in one location (a gland) but often acts at a distant target organ.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "consumed",
+      "label": "Consumed in the Reaction?",
+      "valueA": "No — an enzyme is reused repeatedly.",
+      "valueB": "Hormones are used up/degraded after signalling and must be continuously produced.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "An enzyme lowers activation energy without being consumed, while a hormone is consumed/degraded as part of its signalling role.",
+    "memoryTrick": "Enzyme = catalyst, speeds reactions. Hormone = messenger, sends signals.",
+    "commonMisconception": "Not all hormones are proteins — steroid hormones like cortisol and oestrogen are lipid-based, not protein-based."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "comp-habitat-vs-niche",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Habitat"
+  },
+  "itemB": {
+    "name": "Ecological Niche"
+  },
+  "overview": "Habitat is where an organism lives; niche is the full functional role it plays there.",
+  "genZNote": "Habitat is your home address. Niche is your entire job description, daily schedule, and relationships combined.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "The physical place or environment where an organism lives.",
+      "valueB": "The organism's complete functional role, including its resource use, interactions, and position in the food web.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "scope",
+      "label": "Scope",
+      "valueA": "A physical, spatial concept — an 'address'.",
+      "valueB": "A broader conceptual, functional concept — a 'profession' or 'lifestyle'.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "shared-by-multiple",
+      "label": "Can It Be Shared?",
+      "valueA": "Multiple species can share the same habitat.",
+      "valueB": "No two species can occupy exactly the same niche in the same habitat long-term (competitive exclusion principle).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The competitive exclusion principle states that two species with identical niches cannot coexist indefinitely in the same habitat.",
+    "memoryTrick": "Habitat = address. Niche = occupation/lifestyle.",
+    "commonMisconception": "Habitat and niche are not interchangeable — many species can share a habitat, but true niche overlap eventually forces competition."
+  },
+  "lastVerified": "2026-09-05"
+}

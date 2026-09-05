@@ -1,0 +1,49 @@
+{
+  "id": "comp-nad-plus-vs-nadh",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry"
+  ],
+  "itemA": {
+    "name": "NAD+"
+  },
+  "itemB": {
+    "name": "NADH"
+  },
+  "overview": "The oxidised and reduced forms of the same electron-carrier molecule used throughout cellular respiration.",
+  "genZNote": "NAD+ is the empty electron shuttle waiting at the station. NADH is the same shuttle, now loaded with cargo (electrons).",
+  "aspects": [
+    {
+      "id": "form",
+      "label": "Oxidised or Reduced?",
+      "valueA": "The oxidised form — has not yet picked up electrons.",
+      "valueB": "The reduced form — has accepted a hydride ion (2 electrons + 1 proton).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "role",
+      "label": "Role in Respiration",
+      "valueA": "Acts as an electron acceptor during glycolysis, the Krebs cycle, and beta-oxidation.",
+      "valueB": "Carries high-energy electrons to the electron transport chain to generate ATP.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "energy-content",
+      "label": "Relative Energy Content",
+      "valueA": "Lower energy form.",
+      "valueB": "Higher energy form — its electrons drive ATP synthesis.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Each NADH that enters the electron transport chain yields roughly 2.5-3 ATP via oxidative phosphorylation.",
+    "memoryTrick": "NAD+ picks up electrons to become NADH — the 'H' marks it's now carrying hydrogen/electrons.",
+    "commonMisconception": "NAD+ and NADH are not two different molecules — they are the same coenzyme cycling between its oxidised and reduced states."
+  },
+  "lastVerified": "2026-09-05"
+}

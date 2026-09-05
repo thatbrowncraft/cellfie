@@ -1,0 +1,58 @@
+{
+  "id": "comp-gene-vs-allele",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "foundations",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Gene"
+  },
+  "itemB": {
+    "name": "Allele"
+  },
+  "overview": "A gene is the unit of heredity for a trait; an allele is one specific version of that gene.",
+  "genZNote": "Gene is the question. Allele is one of the possible answers.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "A segment of DNA that codes for a particular trait or protein, occupying a fixed locus on a chromosome.",
+      "valueB": "An alternative form of a gene that arises through mutation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "number",
+      "label": "Number per Locus",
+      "valueA": "One gene exists at a given locus on a chromosome.",
+      "valueB": "Multiple alleles can exist for the same gene (e.g. multiple alleles for blood group).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "The gene for flower colour in pea plants.",
+      "valueB": "The purple-flower allele and the white-flower allele of that gene.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "variation-source",
+      "label": "Source of Diversity",
+      "valueA": "Genes define which traits exist in an organism.",
+      "valueB": "Alleles explain why individuals differ in how a trait appears.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Every diploid individual carries two alleles of each gene — one from each parent.",
+    "memoryTrick": "Gene = the trait category. Allele = the specific version.",
+    "commonMisconception": "Gene and allele are not interchangeable — a gene can have many alleles, but an allele is only one variant of one gene."
+  },
+  "lastVerified": "2026-09-05"
+}

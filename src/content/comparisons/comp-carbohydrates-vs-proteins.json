@@ -1,0 +1,50 @@
+{
+  "id": "comp-carbohydrates-vs-proteins",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Carbohydrates"
+  },
+  "itemB": {
+    "name": "Proteins"
+  },
+  "overview": "Both are major biomolecules, but one is built from sugar units and the other from amino acids with a far more complex structure.",
+  "genZNote": "Carbs: simple sugar chains. Proteins: complex, folded 3D machines.",
+  "aspects": [
+    {
+      "id": "building-block",
+      "label": "Building Block (Monomer)",
+      "valueA": "Monosaccharides (simple sugars) such as glucose.",
+      "valueB": "Amino acids, joined by peptide bonds.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "elements",
+      "label": "Elements Present",
+      "valueA": "Carbon, hydrogen, oxygen only.",
+      "valueB": "Carbon, hydrogen, oxygen, nitrogen, and often sulfur.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "primary-role",
+      "label": "Primary Biological Role",
+      "valueA": "Mainly energy storage and structural support (e.g. cellulose).",
+      "valueB": "Mainly structural, enzymatic, and functional roles (e.g. enzymes, antibodies, hormones).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Nitrogen is present in proteins but absent from carbohydrates — a quick way to distinguish them in a biochemical test question.",
+    "memoryTrick": "If nitrogen is in the molecule, think protein, not carbohydrate.",
+    "commonMisconception": "Proteins are not primarily used for energy under normal conditions — they're reserved as an energy source only when carbs and fats run low."
+  },
+  "lastVerified": "2026-09-05"
+}

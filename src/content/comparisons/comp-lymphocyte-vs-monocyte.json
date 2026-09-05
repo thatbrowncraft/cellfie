@@ -1,0 +1,50 @@
+{
+  "id": "comp-lymphocyte-vs-monocyte",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "immunology"
+  ],
+  "itemA": {
+    "name": "Lymphocyte"
+  },
+  "itemB": {
+    "name": "Monocyte"
+  },
+  "overview": "Two types of white blood cells (agranulocytes) with very different jobs — targeted immune defence versus general clean-up.",
+  "genZNote": "Lymphocytes: the specialised strike team (B cells and T cells). Monocytes: the general clean-up crew that becomes macrophages.",
+  "aspects": [
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Mounts specific, adaptive immune responses (antibody production, cell-mediated killing).",
+      "valueB": "Differentiates into macrophages/dendritic cells to phagocytose debris and pathogens, and present antigens.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "size",
+      "label": "Relative Size",
+      "valueA": "Small to medium-sized cell with a large nucleus and little cytoplasm.",
+      "valueB": "Largest of all white blood cells, with abundant cytoplasm.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "subtypes",
+      "label": "Subtypes",
+      "valueA": "B cells, T cells, and natural killer (NK) cells.",
+      "valueB": "Differentiates into macrophages (tissue) or dendritic cells.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Monocytes are the largest circulating white blood cell and become macrophages once they migrate into tissue.",
+    "memoryTrick": "Lymphocytes = adaptive immunity specialists. Monocytes = become the body's macrophage clean-up crew.",
+    "commonMisconception": "Monocytes and macrophages are not entirely separate cell types — a macrophage is simply what a monocyte becomes after it enters tissue."
+  },
+  "lastVerified": "2026-09-05"
+}

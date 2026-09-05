@@ -1,0 +1,50 @@
+{
+  "id": "comp-gene-expression-vs-gene-regulation",
+  "domain": "molecular-biology",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "molecular-biology",
+    "genetics"
+  ],
+  "itemA": {
+    "name": "Gene Expression"
+  },
+  "itemB": {
+    "name": "Gene Regulation"
+  },
+  "overview": "Gene expression is the process of using a gene's information to make a product; gene regulation is the control system that decides when and how much that happens.",
+  "genZNote": "Gene expression is the gene actually doing its job. Gene regulation is the manager deciding when it's allowed to clock in.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "The overall process by which information in a gene is used to synthesise a functional product (usually a protein).",
+      "valueB": "The mechanisms that control whether, when, and how much a gene is expressed.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "stages-involved",
+      "label": "Stages Involved",
+      "valueA": "Transcription followed by translation (and any post-translational modification).",
+      "valueB": "Can act at any stage: transcriptional, post-transcriptional, translational, or post-translational control.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "A gene being transcribed and translated into an enzyme.",
+      "valueB": "The lac operon switching on only when lactose is present.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The lac operon is the textbook example of gene regulation controlling gene expression at the transcriptional level.",
+    "memoryTrick": "Expression = the gene 'speaking'. Regulation = who controls the microphone.",
+    "commonMisconception": "Gene regulation is not a separate process running alongside expression — it's the control layer built into expression itself."
+  },
+  "lastVerified": "2026-09-05"
+}

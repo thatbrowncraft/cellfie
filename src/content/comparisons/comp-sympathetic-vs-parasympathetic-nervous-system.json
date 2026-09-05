@@ -1,0 +1,50 @@
+{
+  "id": "comp-sympathetic-vs-parasympathetic-nervous-system",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Sympathetic Nervous System"
+  },
+  "itemB": {
+    "name": "Parasympathetic Nervous System"
+  },
+  "overview": "The two divisions of the autonomic nervous system, generally working as opposites to balance the body's internal state.",
+  "genZNote": "Sympathetic: fight or flight, adrenaline mode. Parasympathetic: rest and digest, chill mode.",
+  "aspects": [
+    {
+      "id": "overall-effect",
+      "label": "Overall Effect",
+      "valueA": "Prepares the body for 'fight or flight' — increases heart rate, dilates pupils, diverts blood to muscles.",
+      "valueB": "Promotes 'rest and digest' — decreases heart rate, stimulates digestion, conserves energy.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "neurotransmitter",
+      "label": "Main Neurotransmitter at Target",
+      "valueA": "Mainly noradrenaline (norepinephrine).",
+      "valueB": "Mainly acetylcholine.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "activation-context",
+      "label": "Typically Active During",
+      "valueA": "Stress, danger, exercise, excitement.",
+      "valueB": "Rest, relaxation, after meals.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Both systems are always active to some degree; it's the balance between them that determines the body's response at any given moment.",
+    "memoryTrick": "Sympathetic = 'stress' response. Parasympathetic = 'peaceful' response.",
+    "commonMisconception": "These two systems don't simply switch on and off — they work in constant dynamic balance (autonomic tone), not an either/or toggle."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "comp-linkage-vs-crossing-over",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Linkage"
+  },
+  "itemB": {
+    "name": "Crossing Over"
+  },
+  "overview": "Linkage keeps genes together during inheritance; crossing over is the process that can break that linkage.",
+  "genZNote": "Linkage: genes carpooling together. Crossing over: someone swaps seats mid-ride.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "The tendency of genes located close together on the same chromosome to be inherited together.",
+      "valueB": "The exchange of genetic material between non-sister chromatids of homologous chromosomes during meiosis I.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "effect-on-recombination",
+      "label": "Effect on Recombination",
+      "valueA": "Reduces the frequency of new gene combinations (recombinant offspring).",
+      "valueB": "Increases genetic variation by creating new allele combinations.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "distance-dependence",
+      "label": "Distance Dependence",
+      "valueA": "Stronger linkage when genes are physically closer together on a chromosome.",
+      "valueB": "Crossover frequency increases with distance between genes — the basis of genetic mapping.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "stage",
+      "label": "When It Occurs",
+      "valueA": "A description of inheritance pattern, not a specific event.",
+      "valueB": "Occurs specifically during prophase I (pachytene stage) of meiosis.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Crossover frequency between two genes is used to calculate map distance in genetic linkage maps.",
+    "memoryTrick": "Linkage keeps genes stuck together; crossing over is what un-sticks them.",
+    "commonMisconception": "Complete linkage (no crossing over at all) is rare — most linked genes still show some recombination."
+  },
+  "lastVerified": "2026-09-05"
+}

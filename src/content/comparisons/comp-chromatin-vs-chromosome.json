@@ -1,0 +1,58 @@
+{
+  "id": "comp-chromatin-vs-chromosome",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "cell-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Chromatin"
+  },
+  "itemB": {
+    "name": "Chromosome"
+  },
+  "overview": "The same DNA-protein material in two different states of packaging, seen at different points in the cell cycle.",
+  "genZNote": "Chromatin is DNA in its comfy, spread-out house clothes. Chromosome is DNA dressed up and ready to be seen.",
+  "aspects": [
+    {
+      "id": "state",
+      "label": "Structural State",
+      "valueA": "Loosely packed, thread-like network of DNA and histone proteins seen during interphase.",
+      "valueB": "Highly condensed, compact rod-shaped structure visible during cell division.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "visibility",
+      "label": "Visibility Under Microscope",
+      "valueA": "Not individually distinguishable under a light microscope.",
+      "valueB": "Clearly visible as distinct structures under a light microscope during metaphase.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "function-stage",
+      "label": "Functional Stage",
+      "valueA": "The active form — genes are transcribed from chromatin.",
+      "valueB": "The transport form — chromosomes move and segregate during division; transcription is largely paused.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "composition",
+      "label": "Composition",
+      "valueA": "DNA + histone proteins, organised as nucleosomes ('beads on a string').",
+      "valueB": "The same DNA and histones, further coiled and supercoiled into a compact structure.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Chromatin and chromosome are the same material at different packaging levels, not two different substances.",
+    "memoryTrick": "Chromatin = relaxed. Chromosome = condensed for the move (cell division).",
+    "commonMisconception": "A chromosome is not 'made of chromatin plus something else' — condensation, not new material, is the only difference."
+  },
+  "lastVerified": "2026-09-05"
+}

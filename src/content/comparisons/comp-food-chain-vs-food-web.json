@@ -1,0 +1,50 @@
+{
+  "id": "comp-food-chain-vs-food-web",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Food Chain"
+  },
+  "itemB": {
+    "name": "Food Web"
+  },
+  "overview": "A food chain is one straight-line path of energy flow; a food web is the interconnected network of many overlapping food chains.",
+  "genZNote": "Food chain: one straight line of who-eats-whom. Food web: the tangled group chat of an entire ecosystem's meals.",
+  "aspects": [
+    {
+      "id": "structure",
+      "label": "Structure",
+      "valueA": "A single, linear sequence of organisms, each eating the one before it.",
+      "valueB": "A complex, interconnected network of multiple overlapping food chains.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "complexity",
+      "label": "Realism / Complexity",
+      "valueA": "A simplified representation, rarely reflecting real ecosystem complexity.",
+      "valueB": "A more realistic model, since most organisms eat and are eaten by more than one species.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "stability",
+      "label": "Ecosystem Stability",
+      "valueA": "Disruption of one link can severely affect the whole chain.",
+      "valueB": "Generally more resilient — alternative paths can compensate if one link is disrupted.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A food web's greater stability compared to a single food chain is a common conceptual exam point about ecosystem resilience.",
+    "memoryTrick": "Chain = one line. Web = many chains tangled together.",
+    "commonMisconception": "A food chain isn't 'wrong' or obsolete — it's simply a simplified teaching tool; real ecosystems always function as food webs."
+  },
+  "lastVerified": "2026-09-05"
+}
