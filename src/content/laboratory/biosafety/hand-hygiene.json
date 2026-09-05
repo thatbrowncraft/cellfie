@@ -1,0 +1,44 @@
+{
+  "id": "safety-hand-hygiene",
+  "category": "biosafety",
+  "title": "Hand Hygiene in the Laboratory",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    },
+    {
+      "label": "WHO Guidelines on Hand Hygiene in Health Care",
+      "publisher": "World Health Organization"
+    }
+  ],
+  "summary": "Washing or disinfecting hands at defined points in laboratory work to prevent both self-contamination and the spread of biological or chemical material beyond the work area.",
+  "explanation": "Gloves reduce direct skin contact with hazardous material but do not eliminate the need for hand hygiene — gloves can develop unnoticed pinhole tears, and hands are always exposed the moment gloves come off. Effective hand hygiene uses proper technique (adequate soap or an appropriate hand antiseptic, sufficient contact time, and thorough coverage including nail beds and between fingers), applied at fixed points such as before leaving the lab, after glove removal, and any time contamination is suspected — not only when hands look visibly soiled.",
+  "keyPractices": [
+    "Wash hands with soap and water (or use an appropriate hand antiseptic where handwashing facilities are not immediately available) after removing gloves and before leaving the laboratory.",
+    "Wash hands immediately after any known or suspected contact with biological or chemical material, even while still gloved underneath.",
+    "Never assume gloves alone are sufficient — they reduce but do not eliminate the need for hand hygiene.",
+    "Avoid touching the face, mouth, eyes, or personal items (phone, pen) while gloved or before washing hands."
+  ],
+  "commonMistakes": [
+    "Treating gloves as a full substitute for handwashing.",
+    "Rushing hand hygiene (too little contact time or incomplete coverage of nail beds and between fingers).",
+    "Touching a phone or doorknob with contaminated gloves, transferring material outside the controlled work area."
+  ],
+  "relatedSafety": [
+    "safety-ppe",
+    "safety-contamination-prevention"
+  ],
+  "searchKeywords": [
+    "handwashing",
+    "hand antiseptic",
+    "glove removal",
+    "personal hygiene lab"
+  ],
+  "difficulty": "beginner"
+}

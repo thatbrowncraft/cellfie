@@ -1,0 +1,42 @@
+{
+  "id": "safety-exposure-incident-response",
+  "category": "biosafety",
+  "title": "Exposure Incident Response (Needlestick, Splash, Spill Contact)",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "The immediate steps to take when a person is directly exposed to a biological or chemical hazard through a needlestick, splash to skin/eyes/mucous membranes, or other direct contact, and the reporting that should follow.",
+  "explanation": "An exposure incident is treated differently from a surface spill because the person themselves has had direct contact with the hazardous material. The first priority is always immediate first aid (washing, flushing, or irrigating the exposed site), followed by prompt reporting to a supervisor or institutional biosafety/occupational health contact, since post-exposure evaluation and, for some biological agents, time-sensitive prophylaxis may depend on how quickly the incident is reported. Delaying reporting because an exposure seems minor is one of the most common and consequential mistakes in laboratory safety practice.",
+  "keyPractices": [
+    "Immediately wash the affected skin with soap and water, or flush eyes/mucous membranes at an eyewash station, for the recommended duration.",
+    "For a needlestick or sharps injury, gently encourage bleeding at the site while washing, then cover with a clean dressing.",
+    "Report the incident to a supervisor and the institution's occupational health/biosafety contact immediately — do not wait to see if symptoms develop.",
+    "Preserve information about what was involved (organism, chemical, sharps device) to inform medical evaluation.",
+    "Complete an incident report as required by institutional policy, since this documentation also feeds into future risk-assessment and prevention efforts."
+  ],
+  "commonMistakes": [
+    "Delaying reporting because an exposure 'seemed minor' or the person felt fine afterward.",
+    "Squeezing or aggressively manipulating a puncture site rather than gently encouraging bleeding and washing.",
+    "Not documenting exactly what agent or material was involved, which can delay appropriate medical follow-up."
+  ],
+  "relatedSafety": [
+    "safety-sharps-safety",
+    "safety-eyewash-safety-shower",
+    "safety-spill-response"
+  ],
+  "searchKeywords": [
+    "needlestick injury",
+    "exposure reporting",
+    "post-exposure protocol",
+    "occupational health"
+  ],
+  "difficulty": "intermediate"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "safety-electrical-safety",
+  "category": "biosafety",
+  "title": "Electrical Safety in the Laboratory",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "Practices for using electrical laboratory equipment (centrifuges, water baths, heating equipment, power supplies) safely, including around the wet or humid conditions common in a lab.",
+  "explanation": "Laboratories regularly combine electrical equipment with liquids, humid environments (e.g. near water baths and autoclaves), and high-power devices (electrophoresis power supplies, heating mantles), which raises the risk of shock, arc flash, or equipment-triggered fire relative to a typical office setting. Basic controls — keeping liquids away from outlets and cords, inspecting equipment and cords before use, and never bypassing a device's grounding or safety interlocks — address most of this risk.",
+  "keyPractices": [
+    "Inspect power cords and plugs for fraying, cracking, or exposed wire before use, and take damaged equipment out of service.",
+    "Keep liquids away from outlets, power strips, and cords; use spill trays under equipment near wet work when appropriate.",
+    "Never bypass a ground pin, safety interlock, or fuse rating to get a piece of equipment working.",
+    "Unplug equipment before performing maintenance, cleaning, or clearing a jam, unless the manufacturer's procedure specifically states otherwise.",
+    "Be aware that high-voltage equipment (e.g. gel electrophoresis power supplies) can deliver dangerous shocks even at relatively low current — never touch an electrophoresis chamber while it is running."
+  ],
+  "commonMistakes": [
+    "Running an electrophoresis power supply with the lid open or reaching into a running gel chamber.",
+    "Using a damaged cord or an ungrounded adapter to work around a broken plug.",
+    "Placing water baths, ice buckets, or other liquid containers directly next to unprotected outlets or power strips."
+  ],
+  "relatedSafety": [
+    "safety-chemical-safety"
+  ],
+  "relatedEquipment": [
+    "equip-water-bath"
+  ],
+  "searchKeywords": [
+    "electrical hazards",
+    "power supply safety",
+    "grounding",
+    "electrophoresis shock risk"
+  ],
+  "difficulty": "beginner"
+}

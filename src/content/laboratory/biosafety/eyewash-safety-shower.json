@@ -1,0 +1,45 @@
+{
+  "id": "safety-eyewash-safety-shower",
+  "category": "biosafety",
+  "title": "Emergency Eyewash Stations & Safety Showers",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    },
+    {
+      "label": "ANSI/ISEA Z358.1 Emergency Eyewash and Shower Equipment (referenced by many institutional safety plans)",
+      "publisher": "ANSI/ISEA"
+    }
+  ],
+  "summary": "Fixed emergency equipment for immediately flushing chemicals, biological material, or other hazardous substances from the eyes, face, or body in the event of a splash or spill exposure.",
+  "explanation": "Eyewash stations and safety showers are last-line emergency controls, not substitutes for PPE or engineering controls. They work by delivering a large volume of tepid water to the affected area for a sustained flush, diluting and physically removing the contaminant before it causes lasting injury. Every lab worker should know the location of the nearest unit before starting work, since seconds matter in an eye-exposure incident and a person with a chemical or biological agent in their eyes may not be able to see well enough to search for one.",
+  "keyPractices": [
+    "Know the location of the nearest eyewash station and safety shower before beginning any lab work, not after an incident occurs.",
+    "Flush the affected area for the full recommended duration (commonly at least 15 minutes for chemical exposures) even if discomfort seems to ease sooner.",
+    "Remove contaminated clothing, jewelry, and contact lenses during flushing where this can be done without delaying the flush itself.",
+    "Report every use of emergency eyewash/shower equipment and seek medical evaluation, even if symptoms seem minor.",
+    "Keep the path to eyewash stations and showers clear of stored items and equipment at all times."
+  ],
+  "commonMistakes": [
+    "Stopping the flush as soon as the immediate stinging subsides, rather than for the full recommended duration.",
+    "Storing boxes, carts, or equipment in front of an eyewash station, delaying access during an emergency.",
+    "Not knowing the location of the nearest unit until an incident is already underway."
+  ],
+  "relatedSafety": [
+    "safety-chemical-safety",
+    "safety-spill-response"
+  ],
+  "searchKeywords": [
+    "eyewash station",
+    "safety shower",
+    "emergency flush",
+    "chemical splash response"
+  ],
+  "difficulty": "beginner"
+}

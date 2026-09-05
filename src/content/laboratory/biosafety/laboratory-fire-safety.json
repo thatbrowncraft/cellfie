@@ -1,0 +1,41 @@
+{
+  "id": "safety-laboratory-fire-safety",
+  "category": "biosafety",
+  "title": "Laboratory Fire Safety",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "Practices and equipment for preventing, containing, and responding to ignition sources, flammable materials, and open flames commonly present in a microbiology or chemistry laboratory.",
+  "explanation": "Laboratories combine open flames (Bunsen burners used for flaming loops and aseptic technique), flammable solvents, electrical equipment, and compressed gases in close proximity, so fire risk is managed through separation of fuel from ignition sources, correct storage of flammables, and readiness to respond appropriately if ignition occurs. Not every fire is fought the same way — the correct extinguisher class depends on what is burning, and for anything beyond a small, contained, immediately extinguishable fire, evacuation and alarm activation take priority over firefighting.",
+  "keyPractices": [
+    "Keep flammable solvents away from open flames and heat sources, and store them in approved flammable-storage cabinets when not in immediate use.",
+    "Know the location of the nearest fire extinguisher, fire alarm pull station, and evacuation route before starting work.",
+    "Never leave an open flame (e.g. a lit Bunsen burner) unattended.",
+    "Tie back loose hair and secure loose clothing/sleeves before working near an open flame.",
+    "Evacuate and activate the alarm for any fire beyond what can be immediately and safely extinguished — do not attempt to fight a large or spreading fire."
+  ],
+  "commonMistakes": [
+    "Using the wrong extinguisher type for the fuel involved (e.g. water on an electrical or flammable-liquid fire).",
+    "Leaving a lit burner unattended while stepping away from the bench.",
+    "Storing bulk flammable solvent on open benchtops rather than in a rated flammable-storage cabinet."
+  ],
+  "relatedSafety": [
+    "safety-chemical-safety",
+    "safety-spill-response"
+  ],
+  "searchKeywords": [
+    "fire extinguisher",
+    "bunsen burner safety",
+    "flammable storage",
+    "lab fire response"
+  ],
+  "difficulty": "beginner"
+}

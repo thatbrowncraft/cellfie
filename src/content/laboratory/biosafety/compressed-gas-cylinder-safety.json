@@ -1,0 +1,43 @@
+{
+  "id": "safety-compressed-gas-cylinder-safety",
+  "category": "biosafety",
+  "title": "Compressed Gas Cylinder Safety",
+  "subcategory": "Biosafety & Laboratory Safety",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "summary": "Practices for storing, transporting, and using compressed gas cylinders (e.g. CO2 for incubators, gas for anaerobic systems) safely given the substantial stored energy and, for some gases, chemical or asphyxiation hazard they carry.",
+  "explanation": "A compressed gas cylinder stores significant mechanical energy under pressure; if the valve is sheared off (for example, by an unsecured cylinder tipping over), the cylinder itself can become a projectile. Beyond that mechanical risk, specific gases add their own hazard — CO2 can displace oxygen and cause asphyxiation in a poorly ventilated space, and other lab gases may be flammable or toxic. Correct handling focuses on physical securing, valve protection during transport, and matching regulators and fittings to the specific gas in use.",
+  "keyPractices": [
+    "Secure every cylinder (in use or in storage) with a chain or strap to a wall, bench, or cylinder cart to prevent tipping.",
+    "Keep the valve protection cap on whenever a cylinder is being moved and not connected to a regulator.",
+    "Use a regulator and fittings rated for the specific gas — never force an incompatible fitting.",
+    "Store and use gas cylinders in adequately ventilated areas, particularly for gases like CO2 that can displace oxygen in a confined space.",
+    "Never use a compressed gas cylinder that lacks legible labeling identifying its contents."
+  ],
+  "commonMistakes": [
+    "Leaving a cylinder unsecured or unchained, even briefly.",
+    "Transporting a cylinder with the valve protection cap removed.",
+    "Assuming CO2 is harmless because it is not flammable, and overlooking the asphyxiation risk in a poorly ventilated space."
+  ],
+  "relatedSafety": [
+    "safety-chemical-safety"
+  ],
+  "relatedEquipment": [
+    "equip-co2-incubator"
+  ],
+  "searchKeywords": [
+    "gas cylinder",
+    "CO2 safety",
+    "cylinder storage",
+    "asphyxiation hazard"
+  ],
+  "difficulty": "intermediate"
+}
