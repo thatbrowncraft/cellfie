@@ -1,0 +1,48 @@
+{
+  "id": "formula-normality",
+  "category": "formula",
+  "title": "Normality (N)",
+  "subcategory": "Solution Preparation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Solution Preparation",
+  "expression": "Normality (N) = Molarity (mol/L) × n (equivalents per mole)",
+  "explanation": "Normality expresses concentration in terms of reactive equivalents rather than moles of whole molecules, accounting for how many equivalents (e.g. replaceable H+ ions in an acid, or electrons in a redox reaction) each mole of solute contributes to a given reaction. It is most often encountered in titration and acid/base contexts where the number of reactive equivalents per molecule differs from one (e.g. sulfuric acid, which has 2 equivalents of H+ per mole).",
+  "variables": [
+    {
+      "symbol": "Molarity",
+      "meaning": "Molar concentration of the solution",
+      "unit": "mol/L"
+    },
+    {
+      "symbol": "n",
+      "meaning": "Number of equivalents contributed per mole of solute for the reaction in question (a dimensionless whole number specific to the solute and reaction type)"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A 1 M solution of sulfuric acid (H2SO4), which contributes 2 equivalents of H+ per mole.",
+    "substitution": "1 mol/L × 2",
+    "result": "2 N"
+  },
+  "commonMistakes": [
+    "Treating normality as interchangeable with molarity for any solute — they are only numerically equal when n = 1.",
+    "Using the wrong equivalent count for a given reaction context; the same solute can have a different 'n' depending on whether it is acting as an acid, a base, or a redox reagent."
+  ],
+  "relatedFormulas": [
+    "formula-molarity",
+    "formula-c1v1"
+  ],
+  "searchKeywords": [
+    "normality solution",
+    "equivalents",
+    "titration concentration"
+  ],
+  "difficulty": "advanced"
+}

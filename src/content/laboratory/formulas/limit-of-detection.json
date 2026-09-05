@@ -1,0 +1,52 @@
+{
+  "id": "formula-limit-of-detection",
+  "category": "formula",
+  "title": "Limit of Detection (LOD), Blank-Based Estimate",
+  "subcategory": "Statistics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Statistics",
+  "expression": "LOD = mean(blank) + 3 × SD(blank)",
+  "explanation": "A commonly used working estimate for the lowest signal that can be reliably distinguished from background/blank noise, based on repeated measurement of a blank (a sample containing no analyte). Using 3 standard deviations above the blank mean is a widely used convention, though the exact multiplier and the full validation approach depend on the specific assay, regulatory context, and standard being followed — this is a simplified working formula, not a substitute for a full formal LOD determination.",
+  "variables": [
+    {
+      "symbol": "mean(blank)",
+      "meaning": "Average signal measured across repeated blank (analyte-free) samples"
+    },
+    {
+      "symbol": "SD(blank)",
+      "meaning": "Standard deviation of the repeated blank measurements"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Repeated blank measurements on a spectrophotometric assay give a mean absorbance of 0.020 with a standard deviation of 0.004.",
+    "substitution": "0.020 + 3 × 0.004",
+    "result": "LOD ≈ 0.032 absorbance units (converted to a concentration via the assay's standard curve)"
+  },
+  "commonMistakes": [
+    "Estimating LOD from too few blank replicates, giving an unstable standard deviation and an unreliable LOD estimate.",
+    "Confusing LOD (lowest reliably detectable signal) with LOQ (lowest signal that can be reliably and precisely quantified, which uses a larger multiplier such as 10×SD).",
+    "Treating a single-lab blank-based LOD estimate as equivalent to a fully validated, multi-site LOD determination."
+  ],
+  "relatedFormulas": [
+    "formula-standard-deviation"
+  ],
+  "relatedConcepts": [
+    "concept-limit-of-detection-quantification",
+    "concept-method-validation"
+  ],
+  "searchKeywords": [
+    "LOD calculation",
+    "limit of detection formula",
+    "blank signal",
+    "assay sensitivity"
+  ],
+  "difficulty": "expert"
+}

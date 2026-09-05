@@ -1,0 +1,62 @@
+{
+  "id": "formula-henderson-hasselbalch",
+  "category": "formula",
+  "title": "Henderson-Hasselbalch Equation (Buffer pH)",
+  "subcategory": "pH & Chemistry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "pH & Chemistry",
+  "expression": "pH = pKa + log10([A-] / [HA])",
+  "explanation": "Relates the pH of a buffer solution to the ratio of its conjugate base ([A-], the deprotonated form) to its weak acid ([HA], the protonated form) and the acid's dissociation constant (pKa). It is the basis for calculating how much of a weak acid and its conjugate base to combine to reach a target buffer pH, and for predicting how a buffer's pH shifts as that ratio changes.",
+  "variables": [
+    {
+      "symbol": "pH",
+      "meaning": "Target or resulting pH of the buffer solution"
+    },
+    {
+      "symbol": "pKa",
+      "meaning": "Negative log10 of the acid dissociation constant for the specific weak acid/base pair in use"
+    },
+    {
+      "symbol": "[A-]",
+      "meaning": "Molar concentration of the conjugate base form",
+      "unit": "mol/L"
+    },
+    {
+      "symbol": "[HA]",
+      "meaning": "Molar concentration of the weak acid form",
+      "unit": "mol/L"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Preparing an acetate buffer using acetic acid (pKa ≈ 4.76) where the conjugate base concentration is twice the weak acid concentration ([A-]/[HA] = 2).",
+    "substitution": "pH = 4.76 + log10(2)",
+    "result": "pH ≈ 5.06"
+  },
+  "commonMistakes": [
+    "Using a pKa value measured at a different temperature or ionic strength than the actual buffer conditions without accounting for the difference.",
+    "Applying the equation far outside the buffer's effective range (roughly pKa ± 1), where buffering capacity is weak and the approximation becomes less reliable in practice.",
+    "Confusing the ratio direction — mixing up [A-]/[HA] with [HA]/[A-] flips the sign of the log term."
+  ],
+  "relatedFormulas": [
+    "formula-ph",
+    "formula-molarity"
+  ],
+  "relatedProtocols": [
+    "proto-buffer-preparation"
+  ],
+  "searchKeywords": [
+    "buffer pH calculation",
+    "pKa",
+    "conjugate acid base ratio",
+    "buffer preparation formula"
+  ],
+  "difficulty": "advanced"
+}

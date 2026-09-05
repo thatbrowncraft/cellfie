@@ -1,0 +1,49 @@
+{
+  "id": "formula-titer",
+  "category": "formula",
+  "title": "Titer (Serial Dilution Endpoint)",
+  "subcategory": "Microbiology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM)",
+      "publisher": "ASM/FDA"
+    }
+  ],
+  "domain": "Microbiology",
+  "expression": "Titer = 1 / (highest dilution showing a positive endpoint)",
+  "explanation": "Expresses the concentration of an antibody, antigen, virus, or other agent as the reciprocal of the greatest dilution of the original sample that still produces a detectable positive result in a serial dilution assay (e.g. agglutination, plaque formation, or another endpoint readout). A higher titer means the sample remained positive at a higher dilution, indicating a greater original concentration of the agent being measured.",
+  "variables": [
+    {
+      "symbol": "highest dilution showing a positive endpoint",
+      "meaning": "The most dilute sample in the series that still gives a positive/detectable result, expressed as a dilution factor (e.g. 1:128)"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A two-fold serial dilution series (1:2, 1:4, 1:8 ... 1:256) of a serum sample remains positive through the 1:128 dilution but is negative at 1:256.",
+    "substitution": "Titer expressed as the reciprocal of 1:128",
+    "result": "Titer = 128 (commonly reported as \"1:128\")"
+  },
+  "commonMistakes": [
+    "Reporting the last dilution tested rather than the last dilution that was actually positive.",
+    "Comparing titers from assays run on different days/plates/reagent lots as if they were directly comparable without accounting for inter-assay variation.",
+    "Ignoring that titer values from a two-fold series can only take specific discrete values, so small true differences may not be resolvable."
+  ],
+  "relatedFormulas": [
+    "formula-dilution-factor"
+  ],
+  "relatedProtocols": [
+    "proto-serial-dilution"
+  ],
+  "relatedConcepts": [
+    "clin-concept-antigen-antibody-agglutination"
+  ],
+  "searchKeywords": [
+    "antibody titer",
+    "endpoint dilution",
+    "serial dilution assay result"
+  ],
+  "difficulty": "advanced"
+}
