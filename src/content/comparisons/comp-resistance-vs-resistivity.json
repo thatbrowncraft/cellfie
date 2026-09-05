@@ -1,0 +1,44 @@
+{
+  "id": "comp-resistance-vs-resistivity",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "current-electricity",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Resistance"
+  },
+  "itemB": {
+    "name": "Resistivity"
+  },
+  "overview": "One depends on a specific object's shape and size. The other is an intrinsic property of the material itself.",
+  "genZNote": "Resistance is about the wire you have. Resistivity is about the material it's made of.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Opposition to current flow offered by a specific conductor (R = V/I).",
+      "valueB": "Intrinsic material property relating resistance to a conductor's dimensions (R = ρL/A).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "unit",
+      "label": "SI Unit",
+      "valueA": "Ohm (Ω).",
+      "valueB": "Ohm-metre (Ω·m)."
+    },
+    {
+      "id": "dependence",
+      "label": "Depends on Shape/Size?",
+      "valueA": "Yes — depends on length and cross-sectional area.",
+      "valueB": "No — depends only on the material and temperature, not shape or size.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

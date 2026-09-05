@@ -1,0 +1,44 @@
+{
+  "id": "comp-conduction-vs-convection",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "thermodynamics",
+    "heat-transfer",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Conduction"
+  },
+  "itemB": {
+    "name": "Convection"
+  },
+  "overview": "Two of the three modes of heat transfer — one moves heat through direct contact, the other through the bulk movement of a fluid.",
+  "genZNote": "Conduction passes it along. Convection just carries the whole crowd.",
+  "aspects": [
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "valueA": "Heat transfers through direct molecular collisions/vibrations within a material, without bulk movement of matter.",
+      "valueB": "Heat transfers via the actual bulk movement of a heated fluid (liquid or gas) from one place to another.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "medium",
+      "label": "Medium Required",
+      "valueA": "Solids (most effective), though it occurs in liquids/gases too.",
+      "valueB": "Liquids and gases only — cannot occur in rigid solids."
+    },
+    {
+      "id": "example",
+      "label": "Everyday Example",
+      "valueA": "A metal spoon heating up in hot soup.",
+      "valueB": "Water heating from the bottom of a pot and circulating upward."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

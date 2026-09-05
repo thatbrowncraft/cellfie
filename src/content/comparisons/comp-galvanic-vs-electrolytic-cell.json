@@ -1,0 +1,50 @@
+{
+  "id": "comp-galvanic-vs-electrolytic-cell",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "electrochemistry",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Galvanic Cell"
+  },
+  "itemB": {
+    "name": "Electrolytic Cell"
+  },
+  "overview": "Two types of electrochemical cells — one generates electricity from a spontaneous reaction, the other uses electricity to force a non-spontaneous one.",
+  "genZNote": "One cell makes electricity happen. The other makes a reaction happen using electricity.",
+  "aspects": [
+    {
+      "id": "energy-conversion",
+      "label": "Energy Conversion",
+      "valueA": "Chemical energy converted to electrical energy.",
+      "valueB": "Electrical energy converted to chemical energy.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "spontaneity",
+      "label": "Reaction Spontaneity",
+      "valueA": "Spontaneous redox reaction (ΔG negative).",
+      "valueB": "Non-spontaneous redox reaction, driven forward by an external power source (ΔG positive without input)."
+    },
+    {
+      "id": "electrode-polarity",
+      "label": "Anode Polarity",
+      "valueA": "Anode is negative.",
+      "valueB": "Anode is positive.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "A battery (e.g. Daniell cell) supplying current to a circuit.",
+      "valueB": "Electrolysis of molten NaCl to produce sodium metal and chlorine gas."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

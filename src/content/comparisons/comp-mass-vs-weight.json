@@ -1,0 +1,57 @@
+{
+  "id": "comp-mass-vs-weight",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "mechanics",
+    "gravitation",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Mass"
+  },
+  "itemB": {
+    "name": "Weight"
+  },
+  "overview": "Two quantities people mix up constantly — one is a property of the object itself, the other depends on gravity.",
+  "genZNote": "Your mass follows you to the Moon. Your weight does not.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Amount of matter in an object; a measure of inertia.",
+      "valueB": "The gravitational force acting on an object's mass.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "quantity-type",
+      "label": "Quantity Type",
+      "valueA": "Scalar.",
+      "valueB": "Vector (a force, acting toward the center of the gravitating body)."
+    },
+    {
+      "id": "unit",
+      "label": "SI Unit",
+      "valueA": "Kilogram (kg).",
+      "valueB": "Newton (N) — it is a force, not a mass unit."
+    },
+    {
+      "id": "location-dependence",
+      "label": "Changes With Location?",
+      "valueA": "No — mass is constant regardless of location.",
+      "valueB": "Yes — weight changes with local gravitational field strength (e.g. less on the Moon).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "formula",
+      "label": "Relationship",
+      "valueA": "n/a (fundamental property).",
+      "valueB": "Weight = mass × g (local gravitational acceleration)."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

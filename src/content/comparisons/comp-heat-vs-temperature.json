@@ -1,0 +1,50 @@
+{
+  "id": "comp-heat-vs-temperature",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "thermodynamics",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Heat"
+  },
+  "itemB": {
+    "name": "Temperature"
+  },
+  "overview": "One is energy in transit. The other is a measure of how 'hot' something currently is.",
+  "genZNote": "Temperature is a status update. Heat is the energy actually being sent.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Energy transferred between systems due to a temperature difference.",
+      "valueB": "Measure of the average kinetic energy of a substance's particles.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "unit",
+      "label": "SI Unit",
+      "valueA": "Joule (J).",
+      "valueB": "Kelvin (K)."
+    },
+    {
+      "id": "state-vs-transfer",
+      "label": "State or Transfer?",
+      "valueA": "A form of energy in transit — exists only while flowing.",
+      "valueB": "A state property describing a system's current condition.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "amount-dependence",
+      "label": "Depends on Amount of Substance?",
+      "valueA": "Yes — more substance needs more heat for the same temperature change.",
+      "valueB": "No — temperature doesn't depend on how much substance is present."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

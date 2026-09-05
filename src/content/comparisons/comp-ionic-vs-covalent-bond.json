@@ -1,0 +1,43 @@
+{
+  "id": "comp-ionic-vs-covalent-bond",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "chemical-bonding",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Ionic Bond"
+  },
+  "itemB": {
+    "name": "Covalent Bond"
+  },
+  "overview": "Two fundamentally different ways atoms bond — one through complete electron transfer, the other through electron sharing.",
+  "genZNote": "One bond is a full transfer. The other is a shared custody arrangement.",
+  "aspects": [
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "valueA": "Complete transfer of electrons from one atom to another, forming oppositely charged ions held by electrostatic attraction.",
+      "valueB": "Sharing of electron pairs between atoms.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "typical-elements",
+      "label": "Typically Formed Between",
+      "valueA": "A metal and a nonmetal (large electronegativity difference).",
+      "valueB": "Two nonmetals (small or no electronegativity difference)."
+    },
+    {
+      "id": "physical-properties",
+      "label": "Typical Physical Properties",
+      "valueA": "High melting/boiling points, conduct electricity when molten/dissolved, often soluble in water.",
+      "valueB": "Lower melting/boiling points, generally poor electrical conductors, variable water solubility."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

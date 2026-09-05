@@ -1,0 +1,49 @@
+{
+  "id": "comp-acid-vs-base",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ionic-equilibrium",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Acid"
+  },
+  "itemB": {
+    "name": "Base"
+  },
+  "overview": "Two categories of substances defined by how they behave with hydrogen ions (or electron pairs), forming the foundation of ionic equilibrium.",
+  "genZNote": "If you forget which one donates and which one accepts, the exam will absolutely betray you.",
+  "aspects": [
+    {
+      "id": "arrhenius-definition",
+      "label": "Arrhenius Definition",
+      "valueA": "Increases [H⁺] concentration in aqueous solution.",
+      "valueB": "Increases [OH⁻] concentration in aqueous solution.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "bronsted-lowry",
+      "label": "Brønsted-Lowry Definition",
+      "valueA": "Proton (H⁺) donor.",
+      "valueB": "Proton (H⁺) acceptor."
+    },
+    {
+      "id": "ph-range",
+      "label": "Typical pH Range",
+      "valueA": "Less than 7 (at 25°C).",
+      "valueB": "Greater than 7 (at 25°C)."
+    },
+    {
+      "id": "litmus",
+      "label": "Effect on Litmus",
+      "valueA": "Turns blue litmus red.",
+      "valueB": "Turns red litmus blue."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

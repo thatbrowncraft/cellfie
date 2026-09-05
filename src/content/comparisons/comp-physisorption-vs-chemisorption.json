@@ -1,0 +1,50 @@
+{
+  "id": "comp-physisorption-vs-chemisorption",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "surface-chemistry",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Physisorption"
+  },
+  "itemB": {
+    "name": "Chemisorption"
+  },
+  "overview": "The two types of adsorption — one held by weak van der Waals forces, the other by genuine chemical bonds.",
+  "genZNote": "Physisorption is a loose hangout. Chemisorption is a committed relationship.",
+  "aspects": [
+    {
+      "id": "bonding-force",
+      "label": "Bonding Force",
+      "valueA": "Weak van der Waals forces.",
+      "valueB": "Formation of actual chemical bonds between adsorbate and surface.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "reversibility",
+      "label": "Reversibility",
+      "valueA": "Generally reversible.",
+      "valueB": "Generally irreversible."
+    },
+    {
+      "id": "enthalpy",
+      "label": "Enthalpy of Adsorption",
+      "valueA": "Low (~20-40 kJ/mol).",
+      "valueB": "High (~80-240 kJ/mol)."
+    },
+    {
+      "id": "layer",
+      "label": "Layer Formation",
+      "valueA": "Can form multiple molecular layers.",
+      "valueB": "Typically limited to a single molecular layer (monolayer).",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

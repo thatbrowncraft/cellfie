@@ -1,0 +1,50 @@
+{
+  "id": "comp-fission-vs-fusion",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "modern-physics",
+    "nuclear-physics",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Nuclear Fission"
+  },
+  "itemB": {
+    "name": "Nuclear Fusion"
+  },
+  "overview": "Two nuclear processes that both release enormous energy — one by splitting heavy nuclei, the other by combining light ones.",
+  "genZNote": "Fission breaks up. Fusion teams up. Both release absurd amounts of energy either way.",
+  "aspects": [
+    {
+      "id": "process",
+      "label": "Process",
+      "valueA": "A heavy nucleus splits into two lighter nuclei, usually after neutron bombardment.",
+      "valueB": "Two light nuclei combine to form a heavier nucleus.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "conditions",
+      "label": "Conditions Required",
+      "valueA": "Can occur at relatively moderate conditions (e.g. in a nuclear reactor with neutron moderation).",
+      "valueB": "Requires extremely high temperature and pressure (as in stars, including the Sun)."
+    },
+    {
+      "id": "current-application",
+      "label": "Current Practical Use",
+      "valueA": "Used in current nuclear power plants and weapons.",
+      "valueB": "Powers stars; controlled fusion for power generation remains under active research/development."
+    },
+    {
+      "id": "byproducts",
+      "label": "Radioactive Byproducts",
+      "valueA": "Produces significant long-lived radioactive waste.",
+      "valueB": "Produces comparatively little long-lived radioactive waste."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

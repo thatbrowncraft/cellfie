@@ -1,0 +1,50 @@
+{
+  "id": "comp-ac-vs-dc",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "current-electricity",
+    "alternating-current",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Alternating Current (AC)"
+  },
+  "itemB": {
+    "name": "Direct Current (DC)"
+  },
+  "overview": "Two fundamentally different ways electric current can flow — one keeps reversing direction, the other flows one way only.",
+  "genZNote": "DC is a one-way street. AC keeps changing its mind, on schedule.",
+  "aspects": [
+    {
+      "id": "direction",
+      "label": "Direction of Flow",
+      "valueA": "Periodically reverses direction (sinusoidal in most supplies).",
+      "valueB": "Flows in one constant direction only.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "source",
+      "label": "Typical Source",
+      "valueA": "Power grid, AC generators (alternators).",
+      "valueB": "Batteries, DC generators, solar cells."
+    },
+    {
+      "id": "transmission",
+      "label": "Long-Distance Transmission",
+      "valueA": "Easily stepped up/down via transformers for efficient long-distance transmission.",
+      "valueB": "Cannot be transformed directly with simple transformers (requires conversion for efficient long-distance transmission)."
+    },
+    {
+      "id": "measurement",
+      "label": "How It's Measured",
+      "valueA": "Described using RMS (root mean square) values, since instantaneous value constantly changes.",
+      "valueB": "Described by a single constant value."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

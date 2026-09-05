@@ -1,0 +1,43 @@
+{
+  "id": "comp-aldehyde-vs-ketone",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "organic-chemistry",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Aldehyde"
+  },
+  "itemB": {
+    "name": "Ketone"
+  },
+  "overview": "Two carbonyl-containing functional groups that differ in exactly where the carbonyl group sits within the carbon chain.",
+  "genZNote": "Same carbonyl group, different neighborhood — end of the chain vs. somewhere in the middle.",
+  "aspects": [
+    {
+      "id": "structure",
+      "label": "Structure",
+      "valueA": "Carbonyl group (C=O) at the END of the carbon chain, bonded to at least one hydrogen (–CHO).",
+      "valueB": "Carbonyl group (C=O) bonded to two carbon-containing groups, located WITHIN the carbon chain.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "oxidation",
+      "label": "Oxidation Behavior",
+      "valueA": "Easily oxidized to carboxylic acids.",
+      "valueB": "Resistant to further oxidation under normal conditions (requires breaking a C-C bond)."
+    },
+    {
+      "id": "test",
+      "label": "Distinguishing Test",
+      "valueA": "Positive Tollens' test (silver mirror) and Fehling's test.",
+      "valueB": "Negative Tollens' and Fehling's tests (with rare exceptions like alpha-hydroxy ketones)."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

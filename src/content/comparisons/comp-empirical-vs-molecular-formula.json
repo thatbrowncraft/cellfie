@@ -1,0 +1,44 @@
+{
+  "id": "comp-empirical-vs-molecular-formula",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "basic-chemistry",
+    "stoichiometry",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Empirical Formula"
+  },
+  "itemB": {
+    "name": "Molecular Formula"
+  },
+  "overview": "Two ways to express a compound's composition — one shows the simplest whole-number ratio, the other shows the actual count of atoms.",
+  "genZNote": "Empirical formula is the simplified recipe. Molecular formula is the actual full order.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Simplest whole-number ratio of atoms of each element in a compound.",
+      "valueB": "Actual number of atoms of each element in one molecule of the compound.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "relationship",
+      "label": "Relationship",
+      "valueA": "Can be the same as or a simplified version of the molecular formula.",
+      "valueB": "Always a whole-number multiple (n) of the empirical formula."
+    },
+    {
+      "id": "example",
+      "label": "Example (Glucose)",
+      "valueA": "CH₂O (empirical formula).",
+      "valueB": "C₆H₁₂O₆ (molecular formula, n=6)."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

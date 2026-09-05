@@ -1,0 +1,44 @@
+{
+  "id": "comp-alcohol-vs-phenol",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "organic-chemistry",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Alcohol"
+  },
+  "itemB": {
+    "name": "Phenol"
+  },
+  "overview": "Both contain a hydroxyl (–OH) group, but attached to very different carbon environments, giving them very different acidities and reactivities.",
+  "genZNote": "Same –OH group, wildly different personality once it's attached to a benzene ring.",
+  "aspects": [
+    {
+      "id": "structure",
+      "label": "Structure",
+      "valueA": "Hydroxyl (–OH) group attached to an sp³ carbon (alkyl group).",
+      "valueB": "Hydroxyl (–OH) group attached directly to an aromatic (benzene) ring.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "acidity",
+      "label": "Relative Acidity",
+      "valueA": "Weakly acidic to neutral; generally weaker acid than phenol.",
+      "valueB": "Significantly more acidic than alcohols, due to resonance stabilization of the resulting phenoxide ion.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "reaction-with-naoh",
+      "label": "Reaction With NaOH",
+      "valueA": "Does not react appreciably with aqueous NaOH.",
+      "valueB": "Reacts with NaOH to form a soluble sodium phenoxide salt."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

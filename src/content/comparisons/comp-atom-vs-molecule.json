@@ -1,0 +1,43 @@
+{
+  "id": "comp-atom-vs-molecule",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "basic-chemistry",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Atom"
+  },
+  "itemB": {
+    "name": "Molecule"
+  },
+  "overview": "The two fundamental building blocks of matter — one is the smallest unit of an element, the other is atoms bonded together.",
+  "genZNote": "Same atoms, different relationship status.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Smallest unit of an element that retains its chemical identity.",
+      "valueB": "Two or more atoms chemically bonded together.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "independent-existence",
+      "label": "Independent Existence",
+      "valueA": "Rare — mainly noble gases exist as free atoms.",
+      "valueB": "Common — most matter exists as molecules."
+    },
+    {
+      "id": "composition",
+      "label": "Composition",
+      "valueA": "Always a single element.",
+      "valueB": "Can be same-element (O₂) or different elements (H₂O)."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

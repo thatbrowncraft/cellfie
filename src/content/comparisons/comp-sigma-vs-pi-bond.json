@@ -1,0 +1,51 @@
+{
+  "id": "comp-sigma-vs-pi-bond",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "chemical-bonding",
+    "organic-chemistry",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Sigma (σ) Bond"
+  },
+  "itemB": {
+    "name": "Pi (π) Bond"
+  },
+  "overview": "The two types of covalent bonds that make up single, double, and triple bonds — one forms along the bond axis, the other above and below it.",
+  "genZNote": "Sigma bonds show up first and hold the fort. Pi bonds only join once there's already a sigma bond in place.",
+  "aspects": [
+    {
+      "id": "orbital-overlap",
+      "label": "Orbital Overlap",
+      "valueA": "Head-on (axial) overlap of orbitals along the internuclear axis.",
+      "valueB": "Sideways (lateral) overlap of unhybridized p-orbitals, above and below the bond axis.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "bond-strength",
+      "label": "Relative Bond Strength",
+      "valueA": "Stronger — greater orbital overlap.",
+      "valueB": "Weaker — less effective overlap than sigma bonds."
+    },
+    {
+      "id": "rotation",
+      "label": "Free Rotation Around Bond?",
+      "valueA": "Yes — a single sigma bond allows free rotation.",
+      "valueB": "No — pi bonds restrict rotation, which is why double bonds are rigid (enabling cis-trans isomerism).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "occurrence",
+      "label": "Occurrence",
+      "valueA": "Present in every single, double, and triple bond (always the first bond formed).",
+      "valueB": "Present only in double bonds (one π) and triple bonds (two π), never alone."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

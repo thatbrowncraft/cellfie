@@ -1,0 +1,51 @@
+{
+  "id": "comp-series-vs-parallel-circuits",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "current-electricity",
+    "circuits",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Series Circuit"
+  },
+  "itemB": {
+    "name": "Parallel Circuit"
+  },
+  "overview": "Two basic ways to connect circuit components — one shares a single path, the other offers multiple paths.",
+  "genZNote": "Series makes everyone share one road. Parallel gives everyone their own lane.",
+  "aspects": [
+    {
+      "id": "current-path",
+      "label": "Current Path",
+      "valueA": "Single path — same current flows through every component.",
+      "valueB": "Multiple paths — current splits across branches.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "voltage",
+      "label": "Voltage Across Components",
+      "valueA": "Divides across each component (sums to total EMF).",
+      "valueB": "Same across each branch (equal to the source voltage)."
+    },
+    {
+      "id": "total-resistance",
+      "label": "Total (Equivalent) Resistance",
+      "valueA": "Simple sum of individual resistances (R = R1+R2+...).",
+      "valueB": "Reciprocal sum, always less than the smallest individual resistance (1/R = 1/R1+1/R2+...).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "failure-effect",
+      "label": "Effect of One Component Failing (Open)",
+      "valueA": "Breaks the entire circuit — all components stop working.",
+      "valueB": "Other branches continue to function normally."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

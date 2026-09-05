@@ -1,0 +1,51 @@
+{
+  "id": "comp-kinetic-vs-potential-energy",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "mechanics",
+    "energy",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Kinetic Energy"
+  },
+  "itemB": {
+    "name": "Potential Energy"
+  },
+  "overview": "Two forms of mechanical energy — one from motion, one from position or configuration.",
+  "genZNote": "One is energy in action, the other is energy on standby.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Energy possessed due to motion (KE = ½mv²).",
+      "valueB": "Energy possessed due to position or configuration (e.g. PE = mgh for gravity).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "depends-on",
+      "label": "Depends On",
+      "valueA": "Mass and speed.",
+      "valueB": "Mass, position/height (for gravitational PE), or deformation (for elastic PE)."
+    },
+    {
+      "id": "zero-reference",
+      "label": "Reference Point Needed?",
+      "valueA": "No — always measured relative to a state of rest.",
+      "valueB": "Yes — potential energy is defined relative to an arbitrarily chosen reference level.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "interconversion",
+      "label": "Interconversion",
+      "valueA": "Converts to potential energy as an object slows while rising.",
+      "valueB": "Converts to kinetic energy as an object falls/accelerates."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

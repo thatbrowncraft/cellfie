@@ -1,0 +1,51 @@
+{
+  "id": "comp-sn1-vs-sn2",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "organic-chemistry",
+    "reaction-mechanisms",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "SN1 Reaction"
+  },
+  "itemB": {
+    "name": "SN2 Reaction"
+  },
+  "overview": "Two mechanisms for nucleophilic substitution — one goes through a carbocation intermediate in two steps, the other happens in a single concerted step.",
+  "genZNote": "This reaction is basically a reagent-and-substrate-based personality test.",
+  "aspects": [
+    {
+      "id": "mechanism-steps",
+      "label": "Mechanism",
+      "valueA": "Two-step: leaving group departs first, forming a carbocation intermediate, then the nucleophile attacks.",
+      "valueB": "One concerted step: nucleophile attacks as the leaving group departs simultaneously (backside attack).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "rate-law",
+      "label": "Rate Law",
+      "valueA": "First-order — rate depends only on substrate concentration, Rate = k[substrate].",
+      "valueB": "Second-order — rate depends on both substrate and nucleophile concentration, Rate = k[substrate][nucleophile].",
+      "isKeyDifference": true
+    },
+    {
+      "id": "substrate-preference",
+      "label": "Favored Substrate",
+      "valueA": "Tertiary (stable carbocation) > secondary; primary is disfavored.",
+      "valueB": "Primary (least steric hindrance) > secondary; tertiary is essentially blocked."
+    },
+    {
+      "id": "stereochemistry",
+      "label": "Stereochemistry Outcome",
+      "valueA": "Racemization (attack possible from either face of the flat carbocation).",
+      "valueB": "Inversion of configuration (backside attack forces a single stereochemical outcome)."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

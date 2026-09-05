@@ -1,0 +1,51 @@
+{
+  "id": "comp-scalar-vs-vector",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "mechanics",
+    "fundamentals",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Scalar Quantity"
+  },
+  "itemB": {
+    "name": "Vector Quantity"
+  },
+  "overview": "Two categories every physical quantity falls into — one needs just a number, the other needs a number AND a direction.",
+  "genZNote": "Same unit family, completely different job.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Fully described by magnitude (a number with units) alone.",
+      "valueB": "Requires both magnitude and direction to be fully described.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "addition-rule",
+      "label": "Addition Rule",
+      "valueA": "Simple arithmetic addition.",
+      "valueB": "Vector addition (triangle/parallelogram law), accounting for direction."
+    },
+    {
+      "id": "examples",
+      "label": "Examples",
+      "valueA": "Mass, distance, speed, energy, temperature.",
+      "valueB": "Displacement, velocity, acceleration, force, momentum."
+    },
+    {
+      "id": "can-cancel",
+      "label": "Can Components Cancel?",
+      "valueA": "No — scalars only add up.",
+      "valueB": "Yes — opposite-direction vectors can partially or fully cancel.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "comp-work-vs-power",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "mechanics",
+    "energy",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Work"
+  },
+  "itemB": {
+    "name": "Power"
+  },
+  "overview": "Work measures energy transferred by a force. Power measures how quickly that energy transfer happens.",
+  "genZNote": "Same energy transferred, but power is the one that's in a hurry.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Energy transferred when a force causes displacement (W = F·d·cosθ).",
+      "valueB": "Rate at which work is done or energy is transferred (P = W/t).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "unit",
+      "label": "SI Unit",
+      "valueA": "Joule (J).",
+      "valueB": "Watt (W) = joule per second."
+    },
+    {
+      "id": "time-dependence",
+      "label": "Depends on Time?",
+      "valueA": "No — only on force and displacement.",
+      "valueB": "Yes — the same work done faster means higher power.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "quantity-type",
+      "label": "Quantity Type",
+      "valueA": "Scalar.",
+      "valueB": "Scalar."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

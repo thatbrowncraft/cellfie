@@ -1,0 +1,43 @@
+{
+  "id": "comp-element-vs-compound",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "basic-chemistry",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Element"
+  },
+  "itemB": {
+    "name": "Compound"
+  },
+  "overview": "Pure substances come in two forms — one can't be broken down chemically, the other is made of two or more elements combined.",
+  "genZNote": "Elements are the alphabet. Compounds are the words.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "A pure substance made of only one type of atom; cannot be broken down into simpler substances by chemical means.",
+      "valueB": "A pure substance formed when two or more elements combine chemically in a FIXED ratio.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "separation",
+      "label": "Can It Be Separated?",
+      "valueA": "Cannot be chemically decomposed further.",
+      "valueB": "Can be broken down into its constituent elements by chemical reactions (not physical means)."
+    },
+    {
+      "id": "properties",
+      "label": "Properties vs. Constituents",
+      "valueA": "n/a — has its own inherent properties by definition.",
+      "valueB": "Properties are typically entirely different from its constituent elements (e.g. NaCl vs. sodium metal and chlorine gas)."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

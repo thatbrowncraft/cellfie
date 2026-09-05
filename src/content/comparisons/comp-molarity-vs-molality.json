@@ -1,0 +1,45 @@
+{
+  "id": "comp-molarity-vs-molality",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "solutions",
+    "concentration-units",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Molarity"
+  },
+  "itemB": {
+    "name": "Molality"
+  },
+  "overview": "Two concentration units that look almost identical on paper but behave very differently when temperature changes.",
+  "genZNote": "Chemistry loves making two things look almost identical and then changing everything.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Moles of solute per litre of SOLUTION (mol/L).",
+      "valueB": "Moles of solute per kilogram of SOLVENT (mol/kg).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "temperature-dependence",
+      "label": "Temperature Dependence",
+      "valueA": "Changes with temperature (solution volume expands/contracts with heat).",
+      "valueB": "Independent of temperature (mass of solvent doesn't change with temperature).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "measurement-basis",
+      "label": "Measured By",
+      "valueA": "Volume (using a volumetric flask).",
+      "valueB": "Mass (using a balance)."
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

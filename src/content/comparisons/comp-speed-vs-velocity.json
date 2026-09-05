@@ -1,0 +1,51 @@
+{
+  "id": "comp-speed-vs-velocity",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "mechanics",
+    "kinematics",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Speed"
+  },
+  "itemB": {
+    "name": "Velocity"
+  },
+  "overview": "Two related quantities describing how fast something moves — only one of them cares which way it's going.",
+  "genZNote": "Speed tells you how fast. Velocity tells you how fast and which way.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Rate of change of distance with time.",
+      "valueB": "Rate of change of displacement with time.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "quantity-type",
+      "label": "Quantity Type",
+      "valueA": "Scalar.",
+      "valueB": "Vector."
+    },
+    {
+      "id": "sign",
+      "label": "Can Be Negative?",
+      "valueA": "No.",
+      "valueB": "Yes, depending on the chosen positive direction."
+    },
+    {
+      "id": "round-trip",
+      "label": "Round Trip Example",
+      "valueA": "Nonzero average speed for any completed motion.",
+      "valueB": "Zero average velocity if net displacement is zero.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}

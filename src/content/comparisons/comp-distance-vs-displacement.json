@@ -1,0 +1,57 @@
+{
+  "id": "comp-distance-vs-displacement",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "mechanics",
+    "kinematics",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Distance"
+  },
+  "itemB": {
+    "name": "Displacement"
+  },
+  "overview": "Two ways to describe how far something has moved — one counts every step, the other only cares where you ended up.",
+  "genZNote": "Physics really said direction matters. Pain.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Total path length covered during motion.",
+      "valueB": "Shortest straight-line change in position from start to end.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "quantity-type",
+      "label": "Quantity Type",
+      "valueA": "Scalar (magnitude only).",
+      "valueB": "Vector (magnitude and direction)."
+    },
+    {
+      "id": "path-dependence",
+      "label": "Depends on Path?",
+      "valueA": "Yes — the actual route taken matters.",
+      "valueB": "No — only initial and final positions matter."
+    },
+    {
+      "id": "value-comparison",
+      "label": "Relative Size",
+      "valueA": "Always ≥ magnitude of displacement.",
+      "valueB": "Always ≤ distance travelled."
+    },
+    {
+      "id": "zero-case",
+      "label": "Can It Be Zero?",
+      "valueA": "Only if the object never moves.",
+      "valueB": "Yes, whenever the object returns to its starting point.",
+      "isKeyDifference": true
+    }
+  ],
+  "lastVerified": "2026-09-05"
+}
