@@ -1,0 +1,37 @@
+{
+  "id": "concept-ph-and-poh",
+  "category": "concept",
+  "title": "pH, pOH, and the Ion Product of Water",
+  "subcategory": "Equilibrium — Ionic Equilibrium",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 11 — Equilibrium",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "pH measures the acidity of a solution based on hydrogen ion concentration; pOH measures basicity based on hydroxide ion concentration; the two are linked because water's own ionization is constant at a given temperature (pH + pOH = 14 at 25°C).",
+  "explanation": "Since pure water partially ionizes into H⁺ and OH⁻ ions with a constant product (Kw = [H⁺][OH⁻] = 10⁻¹⁴ at 25°C), the pH scale (0-14) provides a convenient way to express hydrogen ion concentration using a negative logarithm, which compresses the enormous range of possible concentrations into manageable numbers. A pH of 7 is neutral (equal H⁺ and OH⁻); below 7 is acidic (excess H⁺); above 7 is basic (excess OH⁻). Because pH is logarithmic, each whole-number change represents a TENFOLD change in hydrogen ion concentration.",
+  "commonMisconceptions": [
+    "Thinking a pH change of, say, 2 units represents a doubling of acidity — because the scale is logarithmic (base 10), a change of 2 units means a 100-fold change in [H⁺].",
+    "Assuming pH + pOH = 14 holds at any temperature — this relationship specifically depends on Kw = 10⁻¹⁴, which is only valid at 25°C; Kw changes with temperature."
+  ],
+  "examples": [
+    "A solution with pH 3 has 10 times more H⁺ ions than a solution with pH 4."
+  ],
+  "genZNote": "pH being logarithmic is the reason a 'small' pH drop from 7 to 5 is actually a 100x jump in acidity — the scale is deceptively compact.",
+  "searchKeywords": [
+    "ion product of water",
+    "acidic basic scale",
+    "logarithmic scale ph"
+  ],
+  "relatedFormulas": [
+    "formula-ph"
+  ],
+  "difficulty": "beginner"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "concept-periodic-trends",
+  "category": "concept",
+  "title": "Periodic Trends",
+  "subcategory": "Classification of Elements and Periodicity",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Classification of Elements and Periodicity in Properties",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Atomic radius, ionization enthalpy, electron gain enthalpy, and electronegativity all show predictable trends across periods (left to right) and down groups, driven mainly by nuclear charge and shielding.",
+  "explanation": "Moving across a period (left to right), atomic radius generally decreases (increasing nuclear charge pulls electrons in more tightly, with shielding staying roughly constant), while ionization enthalpy and electronegativity generally increase (it becomes harder to remove an electron, and atoms attract shared electrons more strongly). Moving down a group, atomic radius increases (each new shell adds significant distance and shielding), while ionization enthalpy and electronegativity generally decrease (outer electrons are farther from the nucleus and more shielded, so easier to remove or less strongly attracting).",
+  "commonMisconceptions": [
+    "Assuming trends are perfectly smooth with no exceptions — several exceptions exist (e.g. ionization enthalpy dips slightly at certain group 13 and 16 elements due to subshell stability effects) that NCERT specifically highlights.",
+    "Confusing ionization enthalpy (energy to REMOVE an electron, always endothermic/positive) with electron gain enthalpy (energy change on ADDING an electron, often exothermic/negative)."
+  ],
+  "examples": [
+    "Fluorine has a smaller atomic radius but higher electronegativity than sodium, both in the same period."
+  ],
+  "genZNote": "The periodic table is basically a trend chart in disguise — most properties just increase or decrease predictably as you scan across or down it, exceptions aside.",
+  "searchKeywords": [
+    "ionization energy trend",
+    "electronegativity trend",
+    "atomic radius trend"
+  ],
+  "difficulty": "beginner"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "concept-adsorption-types",
+  "category": "concept",
+  "title": "Physisorption vs. Chemisorption",
+  "subcategory": "Surface Chemistry",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Surface Chemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Adsorption is the accumulation of a substance at a surface. Physisorption involves weak van der Waals forces; chemisorption involves the formation of actual chemical bonds between the adsorbate and the surface.",
+  "explanation": "Physisorption is a weak, reversible process driven by van der Waals forces, occurs readily at low temperature, has a low enthalpy of adsorption, and can form multiple molecular layers. Chemisorption involves genuine chemical bond formation between adsorbate and adsorbent, is generally irreversible, has a much higher enthalpy of adsorption, is typically limited to a single molecular layer (monolayer), and often requires activation energy (so it may increase with temperature up to a point, unlike physisorption). Both processes are surface phenomena, distinct from absorption, where a substance is taken up into the BULK of a material rather than staying at the surface.",
+  "comparison": [
+    {
+      "aspect": "Bonding force",
+      "left": "Physisorption: weak van der Waals forces",
+      "right": "Chemisorption: chemical bond formation"
+    },
+    {
+      "aspect": "Reversibility",
+      "left": "Physisorption: generally reversible",
+      "right": "Chemisorption: generally irreversible"
+    },
+    {
+      "aspect": "Enthalpy of adsorption",
+      "left": "Physisorption: low (~20-40 kJ/mol)",
+      "right": "Chemisorption: high (~80-240 kJ/mol)"
+    },
+    {
+      "aspect": "Layer formation",
+      "left": "Physisorption: can be multilayer",
+      "right": "Chemisorption: typically monolayer"
+    }
+  ],
+  "commonMisconceptions": [
+    "Using 'adsorption' and 'absorption' interchangeably — adsorption is a SURFACE phenomenon, absorption involves uptake into the BULK of the material."
+  ],
+  "examples": [
+    "Physisorption: gas molecules weakly held on activated charcoal at low temperature. Chemisorption: hydrogen chemically bonding to a nickel catalyst surface during hydrogenation."
+  ],
+  "genZNote": "Physisorption is a loose hangout (weak attraction, easy to leave). Chemisorption is a committed relationship (actual bonds formed, much harder to walk away from).",
+  "searchKeywords": [
+    "adsorption vs absorption",
+    "van der waals adsorption",
+    "catalyst surface"
+  ],
+  "difficulty": "intermediate"
+}

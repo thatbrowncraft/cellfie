@@ -1,0 +1,35 @@
+{
+  "id": "concept-chemical-bonding-and-vsepr",
+  "category": "concept",
+  "title": "Chemical Bonding, Hybridization, and VSEPR Theory",
+  "subcategory": "Chemical Bonding and Molecular Structure",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Chemical Bonding and Molecular Structure",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "VSEPR theory predicts a molecule's 3D shape by minimizing repulsion between electron groups (bonding pairs and lone pairs) around a central atom; hybridization describes how atomic orbitals mix to form the geometry that VSEPR predicts.",
+  "explanation": "VSEPR (Valence Shell Electron Pair Repulsion) theory starts from the idea that electron pairs around a central atom arrange themselves as far apart as possible to minimize repulsion. Lone pairs repel more strongly than bonding pairs, which is why lone pairs compress bond angles slightly from the 'ideal' geometry (e.g. water's bond angle is less than the tetrahedral 109.5° because of its two lone pairs). Hybridization is the model explaining how an atom's orbitals mix (e.g. one s and three p orbitals mixing to form four equivalent sp³ orbitals) to achieve the geometry VSEPR predicts and to explain observed bond angles and equivalent bond lengths.",
+  "commonMisconceptions": [
+    "Confusing molecular geometry (shape considering only atom positions) with electron geometry (shape considering both bonding pairs and lone pairs) — water is described as 'bent' molecular geometry despite having a tetrahedral electron geometry.",
+    "Assuming all bonds within a hybridized set are always at the textbook 'ideal' angle — lone pair repulsion adjusts real bond angles from the ideal."
+  ],
+  "examples": [
+    "Methane (CH₄, sp³, no lone pairs): perfect tetrahedral, 109.5°. Water (H₂O, sp³, two lone pairs): bent, ~104.5°."
+  ],
+  "genZNote": "VSEPR is just electron pairs practicing social distancing — the whole molecule's shape comes from everyone trying to get as far from each other as possible.",
+  "searchKeywords": [
+    "molecular geometry",
+    "hybridization sp sp2 sp3",
+    "lone pair repulsion",
+    "bond angle"
+  ],
+  "difficulty": "intermediate"
+}

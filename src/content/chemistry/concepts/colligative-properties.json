@@ -1,0 +1,38 @@
+{
+  "id": "concept-colligative-properties",
+  "category": "concept",
+  "title": "Colligative Properties of Solutions",
+  "subcategory": "Solutions",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Solutions",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Colligative properties depend only on the NUMBER of solute particles present in a solution, not on their identity — they include relative lowering of vapour pressure, boiling point elevation, freezing point depression, and osmotic pressure.",
+  "explanation": "Adding a non-volatile solute to a solvent lowers the solvent's vapour pressure (Raoult's law), which in turn raises the boiling point (more energy needed to reach vapour pressure = atmospheric pressure) and lowers the freezing point. Osmotic pressure arises from solvent flow across a semipermeable membrane toward the more concentrated solution. Critically, all these effects scale with the TOTAL number of dissolved particles — which is why electrolytes that dissociate into multiple ions (like NaCl → Na⁺ + Cl⁻) show a larger effect per mole dissolved than non-electrolytes, captured by the van't Hoff factor (i).",
+  "commonMisconceptions": [
+    "Forgetting the van't Hoff factor for electrolytes — 1 mole of NaCl affects colligative properties roughly twice as much as 1 mole of glucose, since NaCl dissociates into 2 particles per formula unit.",
+    "Assuming colligative properties depend on WHICH solute is used — they depend only on particle count, not solute identity (as long as it's non-volatile and doesn't react with solvent)."
+  ],
+  "examples": [
+    "Salt lowers water's freezing point on icy roads — more dissolved ion particles mean a greater freezing point depression than the same molar amount of a non-dissociating solute would produce."
+  ],
+  "genZNote": "Colligative properties don't care WHAT you dissolved, only HOW MANY particles you dissolved — quantity over identity, every time.",
+  "searchKeywords": [
+    "van't hoff factor",
+    "boiling point elevation",
+    "freezing point depression",
+    "osmotic pressure"
+  ],
+  "relatedFormulas": [
+    "formula-raoults-law"
+  ],
+  "difficulty": "intermediate"
+}

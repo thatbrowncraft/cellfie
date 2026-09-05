@@ -1,0 +1,36 @@
+{
+  "id": "concept-isomerism",
+  "category": "concept",
+  "title": "Isomerism in Organic Chemistry",
+  "subcategory": "Organic Chemistry — Basic Principles",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 11 — Organic Chemistry: Some Basic Principles and Techniques",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Isomers are compounds with the same molecular formula but different structures (structural isomerism) or different spatial arrangements (stereoisomerism).",
+  "explanation": "Structural isomers differ in how atoms are connected: chain isomerism (different carbon skeleton branching), position isomerism (same skeleton, functional group at a different position), and functional group isomerism (same formula, entirely different functional groups, e.g. an alcohol and an ether). Stereoisomers have identical connectivity but differ in 3D spatial arrangement: geometrical (cis-trans) isomerism arises from restricted rotation (e.g. around a double bond), while optical isomerism arises from chirality (a molecule and its non-superimposable mirror image, typically due to a carbon attached to four different groups).",
+  "commonMisconceptions": [
+    "Confusing functional group isomers (completely different chemical behavior, e.g. ethanol vs dimethyl ether, both C₂H₆O) with position isomers (same functional group, same general reactivity, different location).",
+    "Assuming any molecule with a double bond shows cis-trans isomerism — it requires each carbon of the double bond to have two DIFFERENT substituents."
+  ],
+  "examples": [
+    "Ethanol (CH₃CH₂OH) and dimethyl ether (CH₃OCH₃) are functional group isomers, both with molecular formula C₂H₆O but completely different properties."
+  ],
+  "genZNote": "Isomers are chemistry's way of saying 'same ingredients, different recipe' — the atoms are identical, but how they're arranged changes everything about the molecule's personality.",
+  "searchKeywords": [
+    "structural isomerism",
+    "stereoisomerism",
+    "cis trans isomers",
+    "optical isomers",
+    "chirality"
+  ],
+  "difficulty": "intermediate"
+}

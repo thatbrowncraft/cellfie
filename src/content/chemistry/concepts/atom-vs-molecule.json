@@ -1,0 +1,44 @@
+{
+  "id": "concept-atom-vs-molecule",
+  "category": "concept",
+  "title": "Atom vs. Molecule",
+  "subcategory": "Some Basic Concepts of Chemistry",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Some Basic Concepts of Chemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "An atom is the smallest unit of an element that retains that element's chemical identity. A molecule is two or more atoms chemically bonded together — either of the same element or different elements.",
+  "explanation": "Atoms are the fundamental building blocks; they can exist independently for noble gases, but most elements are more commonly found combined into molecules. A molecule can be formed from atoms of a single element (like O₂ or O₃, both forms of oxygen) or from atoms of different elements (like H₂O), in which case it's also specifically called a compound.",
+  "comparison": [
+    {
+      "aspect": "Definition",
+      "left": "Atom: smallest unit of an element",
+      "right": "Molecule: two or more bonded atoms"
+    },
+    {
+      "aspect": "Can be a single element?",
+      "left": "Always a single element by definition",
+      "right": "Yes — e.g. O₂, N₂ (same-element molecules)"
+    },
+    {
+      "aspect": "Independent existence",
+      "left": "Rare (mainly noble gases)",
+      "right": "Common — most matter exists as molecules"
+    }
+  ],
+  "genZNote": "Same atoms, different relationship status — a lone atom is single, a molecule is atoms that decided to bond (sometimes with their own kind, sometimes not).",
+  "searchKeywords": [
+    "atom definition",
+    "molecule definition",
+    "element vs compound"
+  ],
+  "difficulty": "beginner"
+}

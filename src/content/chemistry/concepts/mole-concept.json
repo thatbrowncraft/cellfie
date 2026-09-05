@@ -1,0 +1,38 @@
+{
+  "id": "concept-mole-concept",
+  "category": "concept",
+  "title": "The Mole Concept",
+  "subcategory": "Some Basic Concepts of Chemistry",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Some Basic Concepts of Chemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "A mole is a fixed number of particles (Avogadro's number, ≈6.022 × 10²³) — it's chemistry's way of counting atoms/molecules by weighing them, since individual particles are far too small and numerous to count directly.",
+  "explanation": "Just as 'a dozen' always means 12 regardless of what's being counted, 'a mole' always means Avogadro's number of particles, regardless of the substance. This lets chemists connect the macroscopic world (grams, measured on a balance) to the atomic/molecular world (individual atoms and molecules reacting according to fixed whole-number ratios) via molar mass — the mass in grams of one mole of a substance, numerically equal to its atomic or molecular mass in atomic mass units.",
+  "commonMisconceptions": [
+    "Thinking 'mole' refers to a specific mass — it refers to a specific NUMBER of particles; the mass of one mole differs for every substance depending on its molar mass.",
+    "Confusing molar mass (mass per mole, g/mol) with molecular mass (relative mass of one molecule, in amu) — they share the same numerical value but different units and conceptual meaning."
+  ],
+  "examples": [
+    "One mole of water (molar mass 18 g/mol) has a mass of 18 g and contains 6.022 × 10²³ water molecules.",
+    "One mole of any gas at STP occupies 22.4 L (molar volume)."
+  ],
+  "genZNote": "The mole is chemistry's unit of 'a whole lot of something' — same idea as a dozen, just scaled up to an absolutely enormous number.",
+  "searchKeywords": [
+    "avogadro number",
+    "molar mass",
+    "stoichiometry basics"
+  ],
+  "relatedFormulas": [
+    "formula-molarity"
+  ],
+  "difficulty": "beginner"
+}

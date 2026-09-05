@@ -1,0 +1,35 @@
+{
+  "id": "concept-atomic-structure-and-quantum-numbers",
+  "category": "concept",
+  "title": "Quantum Numbers and Electron Configuration",
+  "subcategory": "Structure of Atom",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Structure of Atom",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Four quantum numbers (n, l, ml, ms) together uniquely describe the state of every electron in an atom, and three governing rules (Aufbau, Pauli exclusion, Hund's rule) determine how electrons fill orbitals.",
+  "explanation": "The principal quantum number (n) describes the shell/energy level; the azimuthal quantum number (l) describes the subshell/orbital shape (s, p, d, f); the magnetic quantum number (ml) describes the specific orbital's orientation; and the spin quantum number (ms) describes the electron's spin direction. The Aufbau principle states electrons fill lowest-energy orbitals first; the Pauli exclusion principle states no two electrons in an atom can share all four quantum numbers (so each orbital holds at most two electrons, with opposite spins); and Hund's rule states that degenerate orbitals (same energy, e.g. the three 2p orbitals) are each singly occupied before any is doubly occupied, minimizing electron-electron repulsion.",
+  "commonMisconceptions": [
+    "Forgetting Hund's rule and pairing electrons in one orbital of a subshell before singly filling all orbitals of that subshell first.",
+    "Confusing the number of orbitals in a subshell (s=1, p=3, d=5, f=7) with the number of electrons it can hold (double each of those values)."
+  ],
+  "examples": [
+    "Nitrogen's three 2p electrons each occupy a separate 2p orbital (Hund's rule) rather than pairing up in fewer orbitals."
+  ],
+  "genZNote": "Hund's rule is basically 'everyone gets their own seat before anyone has to share' — orbitals fill singly first out of pure electron-electron dislike.",
+  "searchKeywords": [
+    "aufbau principle",
+    "pauli exclusion",
+    "hund's rule",
+    "electron configuration"
+  ],
+  "difficulty": "intermediate"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "concept-le-chateliers-principle",
+  "category": "concept",
+  "title": "Le Chatelier's Principle",
+  "subcategory": "Equilibrium",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 11 — Equilibrium",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "If a system at equilibrium is disturbed (by a change in concentration, pressure, volume, or temperature), the equilibrium shifts in the direction that partially counteracts the disturbance.",
+  "explanation": "This is a qualitative predictive tool, not a mathematical formula: increasing a reactant's concentration shifts equilibrium toward products (to consume some of the excess); increasing pressure/decreasing volume shifts equilibrium toward the side with fewer gas moles; increasing temperature shifts equilibrium in the endothermic direction (since that direction absorbs some of the added heat). A catalyst, notably, does NOT shift equilibrium position at all — it speeds up both forward and reverse reactions equally, only helping equilibrium be reached faster.",
+  "commonMisconceptions": [
+    "Believing a catalyst shifts equilibrium toward products — a catalyst only speeds up reaching the SAME equilibrium position, it never changes where that position is.",
+    "Forgetting that pressure/volume changes only affect equilibrium position when the number of gas moles differs between reactant and product sides — if moles are equal on both sides, changing pressure has no shifting effect."
+  ],
+  "examples": [
+    "In the Haber process (N₂ + 3H₂ ⇌ 2NH₃), increasing pressure shifts equilibrium toward ammonia, since the product side has fewer gas moles (2 vs 4)."
+  ],
+  "genZNote": "Le Chatelier's principle is chemistry's version of 'whatever you throw at me, I'll push back a little' — equilibrium always leans against the disturbance.",
+  "searchKeywords": [
+    "equilibrium shift",
+    "haber process",
+    "effect of pressure temperature on equilibrium"
+  ],
+  "relatedFormulas": [
+    "formula-hess-law"
+  ],
+  "difficulty": "intermediate"
+}

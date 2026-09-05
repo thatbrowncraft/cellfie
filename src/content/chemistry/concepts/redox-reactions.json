@@ -1,0 +1,52 @@
+{
+  "id": "concept-redox-reactions",
+  "category": "concept",
+  "title": "Oxidation and Reduction (Redox Reactions)",
+  "subcategory": "Redox Reactions",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 11 — Redox Reactions",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Oxidation is the loss of electrons (or increase in oxidation number); reduction is the gain of electrons (or decrease in oxidation number). The two always occur together in a redox reaction.",
+  "explanation": "In any redox reaction, one species is oxidized (loses electrons) while another is reduced (gains those same electrons) — electrons are never simply lost to nowhere. The substance that gets oxidized donates electrons to the other species, so it is called the reducing agent (it causes reduction of the other species while itself being oxidized). Conversely, the substance that gets reduced is the oxidizing agent. A helpful memory device: OIL RIG — Oxidation Is Loss, Reduction Is Gain (of electrons).",
+  "comparison": [
+    {
+      "aspect": "Electron change",
+      "left": "Oxidation: loss of electrons",
+      "right": "Reduction: gain of electrons"
+    },
+    {
+      "aspect": "Oxidation number change",
+      "left": "Oxidation: increases",
+      "right": "Reduction: decreases"
+    },
+    {
+      "aspect": "Agent role",
+      "left": "Species oxidized = reducing agent",
+      "right": "Species reduced = oxidizing agent"
+    }
+  ],
+  "commonMisconceptions": [
+    "Mixing up which species is the 'reducing agent' vs 'oxidizing agent' — the reducing agent is the one that gets oxidized (a frequently reversed exam trap).",
+    "Thinking redox reactions always involve oxygen — the modern definition is purely about electron transfer/oxidation number change, not literal oxygen involvement."
+  ],
+  "examples": [
+    "In Zn + Cu²⁺ → Zn²⁺ + Cu, zinc is oxidized (loses 2 electrons, is the reducing agent) and Cu²⁺ is reduced (gains 2 electrons, is the oxidizing agent)."
+  ],
+  "genZNote": "OIL RIG never lets you down: Oxidation Is Loss, Reduction Is Gain — and yes, the reducing agent is the one that gets oxidized. That mix-up costs marks every single year.",
+  "searchKeywords": [
+    "oil rig mnemonic",
+    "oxidation number",
+    "oxidizing reducing agent"
+  ],
+  "relatedFormulas": [],
+  "difficulty": "beginner"
+}
