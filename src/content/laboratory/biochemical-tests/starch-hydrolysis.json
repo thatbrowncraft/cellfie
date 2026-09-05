@@ -1,0 +1,81 @@
+{
+  "id": "test-starch-hydrolysis",
+  "category": "biochemical-test",
+  "title": "Starch Hydrolysis Test",
+  "subcategory": "Enzymatic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "Organisms that produce the extracellular enzyme amylase can hydrolyze starch incorporated into an agar medium into smaller sugars. Flooding the plate with iodine reveals this: iodine forms a blue-black complex with intact starch but leaves a clear zone where starch has already been broken down around growth.",
+  "purpose": "Differentiates starch-hydrolyzing (amylase-positive) organisms from those that cannot break down starch, used as one identifying character among various bacterial and some fungal groups.",
+  "reagents": [
+    "Starch agar plate",
+    "Gram's/Lugol's iodine solution"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Inoculate a starch agar plate with the test organism as a single streak or spot."
+    },
+    {
+      "step": 2,
+      "instruction": "Incubate at the appropriate temperature until visible growth appears."
+    },
+    {
+      "step": 3,
+      "instruction": "Flood the plate with iodine solution."
+    },
+    {
+      "step": 4,
+      "instruction": "Observe the area immediately surrounding the growth for a clear zone against the blue-black background of intact starch."
+    }
+  ],
+  "positiveResult": "A clear (colorless) zone surrounding the growth against the blue-black iodine-starch background, indicating starch was hydrolyzed.",
+  "negativeResult": "No clear zone — the blue-black color extends up to the edge of growth, indicating starch was not hydrolyzed.",
+  "interpretation": "A positive result indicates amylase production capable of breaking down starch in the surrounding medium; the zone size can loosely reflect the extent of enzyme diffusion and activity, though it is not typically used as a precise quantitative measure.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Bacillus subtilis"
+    },
+    {
+      "type": "negative",
+      "organism": "Escherichia coli"
+    }
+  ],
+  "precautions": [
+    "Add iodine only after adequate growth has developed; flooding too early can make a weak positive hard to distinguish.",
+    "Read the plate promptly after adding iodine, since the color reaction fades over time."
+  ],
+  "limitations": [
+    "Iodine staining is qualitative; it does not directly quantify amylase activity level.",
+    "Heavy confluent growth can make the clear zone difficult to see if the streak is too dense or too close to adjacent growth."
+  ],
+  "exampleOrganisms": [
+    {
+      "organism": "Bacillus subtilis",
+      "typicalResult": "positive"
+    },
+    {
+      "organism": "Escherichia coli",
+      "typicalResult": "negative"
+    }
+  ],
+  "relatedProtocols": [],
+  "searchKeywords": [
+    "amylase test",
+    "starch agar",
+    "iodine clear zone"
+  ],
+  "difficulty": "intermediate"
+}

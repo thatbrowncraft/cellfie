@@ -1,0 +1,84 @@
+{
+  "id": "test-gelatin-hydrolysis",
+  "category": "biochemical-test",
+  "title": "Gelatin Hydrolysis (Gelatinase) Test",
+  "subcategory": "Enzymatic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "Some organisms produce extracellular proteolytic enzymes called gelatinases that hydrolyze gelatin, breaking down its protein structure so that a stab-inoculated gelatin medium remains liquid (fails to re-solidify on refrigeration) rather than setting back into a gel.",
+  "purpose": "Used to differentiate organisms based on their ability to produce gelatinase, an accessory test in identification schemes for various Gram-positive and Gram-negative genera.",
+  "reagents": [
+    "Nutrient gelatin medium (or equivalent gelatin-containing medium)"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Stab-inoculate a tube of nutrient gelatin medium with the test organism using a straight inoculating needle."
+    },
+    {
+      "step": 2,
+      "instruction": "Include an uninoculated gelatin tube as a negative/sterility control."
+    },
+    {
+      "step": 3,
+      "instruction": "Incubate at the appropriate temperature for the organism for the manufacturer- or method-specified period."
+    },
+    {
+      "step": 4,
+      "instruction": "Place the tube (and control) in a refrigerator for a short period before reading, since gelatin liquefied only by warm incubation temperature can re-solidify on cooling and must be distinguished from true enzymatic hydrolysis."
+    },
+    {
+      "step": 5,
+      "instruction": "Observe whether the medium remains liquid after chilling."
+    }
+  ],
+  "positiveResult": "Medium remains liquid (or only partially resolidifies) after chilling, indicating gelatinase activity.",
+  "negativeResult": "Medium fully re-solidifies to a firm gel after chilling.",
+  "interpretation": "A positive result indicates the organism secretes gelatinase capable of hydrolyzing the gelatin protein matrix; a negative result indicates it does not, under the conditions tested.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Pseudomonas aeruginosa"
+    },
+    {
+      "type": "negative",
+      "organism": "Escherichia coli"
+    }
+  ],
+  "precautions": [
+    "Always chill the tube before reading — gelatin naturally liquefies above roughly 25°C regardless of hydrolysis, so a warm tube can appear falsely positive.",
+    "Read alongside an uninoculated control tube to confirm the gelatin itself sets normally."
+  ],
+  "limitations": [
+    "Gelatin hydrolysis can be slow; some protocols require observation over several days before calling a true negative.",
+    "Different gelatinases vary in activity by temperature and pH, so a single fixed incubation condition may not detect every gelatinase-producing strain equally well."
+  ],
+  "exampleOrganisms": [
+    {
+      "organism": "Pseudomonas aeruginosa",
+      "typicalResult": "positive"
+    },
+    {
+      "organism": "Escherichia coli",
+      "typicalResult": "negative"
+    }
+  ],
+  "relatedProtocols": [],
+  "searchKeywords": [
+    "gelatinase",
+    "gelatin liquefaction",
+    "proteolytic enzyme test"
+  ],
+  "difficulty": "intermediate"
+}

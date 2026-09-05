@@ -1,0 +1,85 @@
+{
+  "id": "test-decarboxylase",
+  "category": "biochemical-test",
+  "title": "Amino Acid Decarboxylase Test (Lysine/Ornithine/Arginine)",
+  "subcategory": "Enzymatic Tests",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "ASM MicrobeLibrary biochemical test protocols",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Bergey's Manual of Determinative Bacteriology",
+      "publisher": "ASM/Wiley"
+    }
+  ],
+  "principle": "Organisms possessing the relevant decarboxylase enzyme (lysine decarboxylase, ornithine decarboxylase, or arginine dihydrolase) remove the carboxyl group from the corresponding amino acid, producing an alkaline amine end product that shifts a pH indicator (commonly bromocresol purple) from yellow back to purple under the anaerobic, mineral-oil-sealed conditions of the test broth.",
+  "purpose": "Widely used, particularly for Enterobacteriaceae and related Gram-negative rods, as part of a biochemical identification panel to differentiate genera and species based on which amino acid(s) they can decarboxylate.",
+  "reagents": [
+    "Decarboxylase base broth with the target amino acid (lysine, ornithine, or arginine) and a pH indicator",
+    "Sterile mineral oil"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Inoculate the amino-acid-containing broth (and a control broth without added amino acid) with the test organism."
+    },
+    {
+      "step": 2,
+      "instruction": "Overlay each tube with a layer of sterile mineral oil to create anaerobic conditions, which favor the decarboxylation reaction over competing oxidative pathways."
+    },
+    {
+      "step": 3,
+      "instruction": "Incubate at the appropriate temperature for the manufacturer- or method-specified period."
+    },
+    {
+      "step": 4,
+      "instruction": "Observe the color of the broth against the un-amino-acid control."
+    }
+  ],
+  "positiveResult": "The broth turns/remains purple (alkaline), indicating decarboxylation and an alkaline amine end product.",
+  "negativeResult": "The broth turns or remains yellow (acidic), indicating fermentation of the base medium without a subsequent alkaline shift.",
+  "interpretation": "A positive result must be read against the amino-acid-free control tube, which should turn yellow from glucose fermentation alone; a positive amino-acid tube that stays purple confirms decarboxylase activity rather than simply weak initial acidification.",
+  "controls": [
+    {
+      "type": "positive",
+      "organism": "Klebsiella pneumoniae (lysine decarboxylase)"
+    },
+    {
+      "type": "negative",
+      "organism": "Proteus mirabilis (lysine decarboxylase-negative)"
+    }
+  ],
+  "precautions": [
+    "Always run the amino-acid-free control broth in parallel — without it, a positive result cannot be confidently distinguished from simple glucose fermentation.",
+    "Ensure the mineral oil overlay is complete and continuous to maintain anaerobic conditions."
+  ],
+  "limitations": [
+    "Reaction timing can vary by organism and specific amino acid, and some results are read at 24 and 48 hours to catch delayed reactions.",
+    "This is a single biochemical character and is interpreted alongside other tests, not used alone for identification."
+  ],
+  "exampleOrganisms": [
+    {
+      "organism": "Klebsiella pneumoniae",
+      "typicalResult": "positive"
+    },
+    {
+      "organism": "Proteus mirabilis",
+      "typicalResult": "negative"
+    }
+  ],
+  "relatedProtocols": [],
+  "relatedBiochemicalTests": [
+    "test-tsi"
+  ],
+  "searchKeywords": [
+    "lysine decarboxylase",
+    "ornithine decarboxylase",
+    "arginine dihydrolase",
+    "moeller decarboxylase broth"
+  ],
+  "difficulty": "advanced"
+}
