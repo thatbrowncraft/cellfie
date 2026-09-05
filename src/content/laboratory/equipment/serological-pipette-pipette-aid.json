@@ -1,0 +1,61 @@
+{
+  "id": "equip-serological-pipette-pipette-aid",
+  "category": "equipment",
+  "title": "Serological Pipettes & Pipette-Aid (Pipettor)",
+  "kind": "consumable",
+  "subcategory": "Consumables",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Used for measuring and transferring larger liquid volumes (typically 1-50 mL) than a micropipette handles, common for bulk media, buffer, and cell culture liquid handling; the graduated pipette is powered by a separate hand-held pipette-aid rather than mouth pipetting.",
+  "operatingPrinciple": "A graduated glass or plastic pipette is inserted into a motorized or bulb-style pipette-aid (pipettor), which draws liquid up into the pipette by controlled suction/vacuum and dispenses it by controlled release, reading the desired volume off the pipette's printed graduations.",
+  "basicOperation": [
+    "Select a pipette sized appropriately for the volume being measured (using the smallest pipette that comfortably covers the range improves accuracy).",
+    "Attach the pipette securely to the pipette-aid.",
+    "Draw liquid to slightly above the desired graduation mark, then carefully release to the exact mark, reading at eye level to avoid parallax error.",
+    "Dispense against the container wall (or per the specific protocol's technique) at a controlled rate, and use a fresh sterile pipette for each new/different sample to avoid cross-contamination."
+  ],
+  "importantSettings": [
+    "Pipette volume/graduation selection matched to the task"
+  ],
+  "maintenance": [
+    "Keep the pipette-aid's filter (where present) clean and replace it if liquid has been drawn into it.",
+    "Store pipette-aids charged (for motorized units) and per manufacturer instructions."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Inaccurate volume delivered",
+      "cause": "Parallax error when reading the meniscus, or using an oversized pipette for a small volume",
+      "fix": "Read the graduation at eye level and select a pipette whose range better matches the target volume"
+    },
+    {
+      "problem": "Liquid drawn into the pipette-aid itself",
+      "cause": "Over-drawing past the pipette's capacity, or a failed/missing filter",
+      "fix": "Never draw past the pipette's top graduation and ensure an intact filter is in place if the unit uses one"
+    }
+  ],
+  "safety": [
+    "Never mouth-pipette — always use a mechanical pipette-aid.",
+    "Use a fresh sterile pipette for each different sample or reagent to prevent cross-contamination.",
+    "Dispose of used pipettes per the facility's sharps/biohazard waste procedures where applicable."
+  ],
+  "relatedEquipment": [
+    "equip-micropipette"
+  ],
+  "relatedSafety": [
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "serological pipette",
+    "pipette aid",
+    "pipettor",
+    "bulk liquid transfer"
+  ],
+  "difficulty": "beginner"
+}

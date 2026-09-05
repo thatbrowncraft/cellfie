@@ -1,0 +1,61 @@
+{
+  "id": "equip-hemocytometer",
+  "category": "equipment",
+  "title": "Hemocytometer (Counting Chamber)",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General cell biology/microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "A thick glass slide etched with a precise grid of known area and chamber depth, used with a light microscope to manually count cells (or other particles) in a defined volume of suspension in order to calculate concentration.",
+  "operatingPrinciple": "A coverslip rests on raised supports a fixed, known distance above the etched grid, creating a chamber of precisely known volume over each grid square; counting the cells within a defined set of grid squares and applying the chamber's known volume and any dilution factor yields the original sample's cell concentration.",
+  "basicOperation": [
+    "Clean the hemocytometer and coverslip thoroughly before use.",
+    "Mount the coverslip on the raised supports so that Newton's rings (interference patterns) are visible, confirming correct, even seating.",
+    "Load a small volume of the (often stained, e.g. with trypan blue) cell suspension into the loading channel by capillary action, avoiding overfilling or underfilling the chamber.",
+    "Count cells within the designated grid squares under the microscope using a consistent counting rule (e.g. counting cells touching two specific sides of each square and excluding the other two) to avoid double-counting cells on grid lines.",
+    "Apply the chamber's known volume and any dilution factor to calculate the original concentration."
+  ],
+  "importantSettings": [
+    "Consistent grid-square counting rule (which boundary cells are included) to avoid systematic over- or under-counting"
+  ],
+  "calibration": "The chamber's etched dimensions are fixed by manufacture; periodic inspection for scratches or damage to the grid substitutes for a calibration check.",
+  "maintenance": [
+    "Clean immediately after use to prevent dried sample residue from affecting future counts.",
+    "Handle and store to avoid scratching the etched counting grid."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Inconsistent or inflated counts",
+      "cause": "Overfilled/underfilled chamber, uneven coverslip seating, or inconsistent boundary-cell counting rule between counts",
+      "fix": "Reload with correct volume, confirm Newton's rings are visible, and apply the same boundary-counting rule every time"
+    },
+    {
+      "problem": "Too few or too many cells per square to count reliably",
+      "cause": "Sample too concentrated or too dilute for the chamber's practical counting range",
+      "fix": "Adjust the dilution before loading so cell density falls within the range that is practical to count accurately"
+    }
+  ],
+  "safety": [
+    "Handle any biological sample per its risk assessment; dispose of used coverslips/loading material per biohazard waste procedures where applicable."
+  ],
+  "relatedProtocols": [
+    "proto-serial-dilution"
+  ],
+  "relatedConcepts": [
+    "concept-od-vs-cell-concentration"
+  ],
+  "searchKeywords": [
+    "hemocytometer",
+    "cell counting chamber",
+    "Neubauer chamber",
+    "manual cell count"
+  ],
+  "difficulty": "intermediate"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "equip-vortex-mixer",
+  "category": "equipment",
+  "title": "Vortex Mixer",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "A benchtop instrument that rapidly agitates the contents of a tube or vial in an orbital motion, used to resuspend pellets, mix reagents, and homogenize samples before pipetting.",
+  "operatingPrinciple": "A motor drives an off-center cup or platform in a small, fast circular motion; pressing a tube against the cup (or resting it on a touch-activated platform) transfers that motion to the liquid inside, creating a turbulent vortex that mixes the contents.",
+  "basicOperation": [
+    "Ensure the tube cap is secure before mixing.",
+    "For a touch-activated unit, press the tube firmly against the cup at an angle to engage mixing; for a continuous unit, place the tube in a holder or against the platform.",
+    "Mix for the duration and speed appropriate to the task — brief pulses for gentle resuspension, longer runs for stubborn pellets or thorough mixing.",
+    "Check that the liquid does not splash into the cap threads or out of the tube, especially with small volumes."
+  ],
+  "importantSettings": [
+    "Speed setting (some units are variable-speed; higher speed increases mixing intensity but also splash risk in small tubes)"
+  ],
+  "maintenance": [
+    "Wipe down the cup/platform periodically to remove spilled material.",
+    "Check that the unit sits stably on the bench and does not 'walk' during operation."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Sample splashes into the cap or out of the tube",
+      "cause": "Speed set too high for the tube fill volume, or cap not fully secured",
+      "fix": "Reduce speed, use shorter pulses, and confirm the cap is properly closed"
+    },
+    {
+      "problem": "Pellet does not resuspend",
+      "cause": "Insufficient mixing time/speed, or pellet adhered too firmly to the tube wall",
+      "fix": "Increase mixing time, use a higher speed setting, or briefly pipette up-and-down in addition to vortexing"
+    }
+  ],
+  "safety": [
+    "Ensure tube caps are fully closed before vortexing biological or hazardous material to prevent aerosol release.",
+    "Avoid vortexing samples known to be sensitive to shear stress (some cell suspensions) without confirming this is appropriate for the task."
+  ],
+  "relatedProtocols": [
+    "proto-serial-dilution"
+  ],
+  "relatedEquipment": [
+    "equip-microcentrifuge-tubes"
+  ],
+  "searchKeywords": [
+    "vortex mixer",
+    "sample mixing",
+    "resuspension",
+    "benchtop mixer"
+  ],
+  "difficulty": "beginner"
+}

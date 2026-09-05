@@ -1,0 +1,61 @@
+{
+  "id": "equip-laminar-flow-hood",
+  "category": "equipment",
+  "title": "Laminar Flow Hood (Clean Bench)",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "purpose": "Provides a HEPA-filtered, particulate-free airflow across a work surface to protect the product/sample from environmental contamination — distinct from a biological safety cabinet, which is designed primarily to protect the operator and environment from the sample.",
+  "operatingPrinciple": "Room air is drawn through a HEPA filter and directed in a smooth, unidirectional (laminar) stream — either horizontally or vertically, depending on the unit — across the work area, sweeping airborne particulates away from the work surface before the operator can introduce them near an open sample or plate.",
+  "basicOperation": [
+    "Allow the blower to run for the manufacturer-specified warm-up period before beginning work, to establish stable laminar airflow.",
+    "Disinfect the work surface before and after use.",
+    "Avoid placing items, or your arms/hands more than necessary, in a way that disrupts the laminar airflow pattern over the work area.",
+    "Keep only the materials needed for the current task inside the hood to minimize airflow disruption and contamination risk."
+  ],
+  "importantSettings": [
+    "Airflow direction (horizontal vs. vertical, fixed by the specific unit's design)"
+  ],
+  "calibration": "Periodic professional certification of HEPA filter integrity and airflow velocity per facility schedule.",
+  "maintenance": [
+    "Do not block the front or rear air intake/exhaust grilles.",
+    "Report any unusual noise, vibration, or airflow alarm to facility maintenance rather than continuing to use the unit."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Contamination despite using the hood",
+      "cause": "Confusing a laminar flow hood (product protection only) with a biosafety cabinet (also protects the operator and environment) and using it for material requiring operator/environmental containment",
+      "fix": "Use a laminar flow hood only for product-protection tasks with material that poses no meaningful hazard to the operator; use a certified BSC for anything requiring containment"
+    }
+  ],
+  "safety": [
+    "A laminar flow hood does NOT protect the operator from the sample — never use it for work with pathogens or hazardous biological material that requires containment; use a biological safety cabinet instead.",
+    "Do not disrupt airflow with rapid arm movements or by placing large equipment that blocks the airflow path."
+  ],
+  "relatedSafety": [
+    "safety-bsc-vs-clean-bench",
+    "safety-aseptic-technique"
+  ],
+  "relatedEquipment": [
+    "equip-bsc-class-ii"
+  ],
+  "relatedConcepts": [
+    "concept-bsc-vs-clean-bench"
+  ],
+  "searchKeywords": [
+    "laminar flow hood",
+    "clean bench",
+    "HEPA filtered airflow",
+    "aseptic work area"
+  ],
+  "difficulty": "intermediate"
+}

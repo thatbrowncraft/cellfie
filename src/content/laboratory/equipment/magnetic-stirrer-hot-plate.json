@@ -1,0 +1,61 @@
+{
+  "id": "equip-magnetic-stirrer-hot-plate",
+  "category": "equipment",
+  "title": "Magnetic Stirrer / Hot Plate",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Provides controlled heating and/or continuous stirring of a liquid using a rotating magnetic field that spins a small stir bar inside the vessel, commonly used for dissolving reagents, preparing media/buffers, and maintaining a stirred solution during pH adjustment.",
+  "operatingPrinciple": "A rotating magnet (or electronically switched magnetic field) beneath the plate surface couples with a coated ferromagnetic stir bar placed inside the liquid, spinning it continuously to mix the contents; many units also include a resistive heating element in the plate surface, controlled independently of the stirring speed.",
+  "basicOperation": [
+    "Place the vessel (with an appropriately sized stir bar inside) on the plate, centered over the stirring mechanism.",
+    "Start stirring at a low speed and gradually increase to avoid the stir bar being thrown off-center ('bar walkout').",
+    "If heating is needed, set the target temperature and monitor with a thermometer or the plate's own probe if equipped, since surface-set temperature may not equal actual liquid temperature.",
+    "Turn off heat and stirring, and allow the plate to cool, before removing the vessel or leaving it unattended."
+  ],
+  "importantSettings": [
+    "Stir speed (too high can cause bar walkout or excessive vortexing/splashing)",
+    "Heat setting (surface dial temperature is often not the same as actual liquid temperature unless a probe is used)"
+  ],
+  "maintenance": [
+    "Wipe spilled reagent off the plate surface promptly to prevent buildup and corrosion.",
+    "Check stir bars for chipped coating, which can expose the metal core to the solution."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Stir bar stops spinning ('walkout') or spins erratically",
+      "cause": "Stir speed set too high for the bar size/vessel, or the vessel not centered over the stirring mechanism",
+      "fix": "Reduce speed, recenter the vessel, or use a larger/more appropriately sized stir bar"
+    },
+    {
+      "problem": "Liquid overheats or scorches despite a moderate dial setting",
+      "cause": "Surface dial temperature does not equal actual liquid temperature, especially without stirring to distribute heat",
+      "fix": "Use a probe thermometer to monitor actual liquid temperature rather than relying on the dial setting alone, and keep stirring on while heating"
+    }
+  ],
+  "safety": [
+    "Allow the plate surface to cool before handling — it can remain hot well after the heating element is switched off.",
+    "Never heat a sealed or closed vessel on a hot plate, since pressure buildup can cause it to rupture."
+  ],
+  "relatedProtocols": [
+    "proto-buffer-preparation"
+  ],
+  "relatedEquipment": [
+    "equip-ph-meter"
+  ],
+  "searchKeywords": [
+    "magnetic stirrer",
+    "hot plate",
+    "stir bar",
+    "buffer mixing heating"
+  ],
+  "difficulty": "beginner"
+}

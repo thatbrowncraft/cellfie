@@ -1,0 +1,65 @@
+{
+  "id": "equip-bunsen-burner",
+  "category": "equipment",
+  "title": "Bunsen Burner",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "A gas-fueled open flame used in microbiology labs primarily to create a localized sterile field by convection and to flame-sterilize inoculating loops/needles and tube mouths as part of aseptic technique.",
+  "operatingPrinciple": "Fuel gas mixes with air at an adjustable intake collar before combusting at the burner tip; adjusting the air intake changes the flame from a cooler, yellow, sooty flame (low air) to a hotter, near-invisible blue flame (higher air) suited for sterilizing work.",
+  "basicOperation": [
+    "Connect the burner to the gas supply and confirm no leaks before igniting.",
+    "Open the gas valve slightly and ignite with a spark lighter or match, not an open flame source held close to the hand.",
+    "Adjust the air intake collar until a well-defined blue inner cone is visible — this is the hottest, cleanest part of the flame.",
+    "Work within the flame's convection zone (the rising warm air envelope around it) to reduce airborne contamination during aseptic transfers.",
+    "Turn off the gas fully at the valve when finished, not just by extinguishing the visible flame."
+  ],
+  "importantSettings": [
+    "Air intake collar position (controls flame color/temperature and cleanliness of combustion)"
+  ],
+  "maintenance": [
+    "Keep the burner tip clean and free of debris that could distort the flame shape.",
+    "Check gas tubing periodically for cracking or brittleness and replace as needed."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Yellow, sooty flame",
+      "cause": "Insufficient air intake, causing incomplete combustion",
+      "fix": "Open the air intake collar until a clean blue flame with a visible inner cone appears"
+    },
+    {
+      "problem": "Flame goes out repeatedly or 'pops'",
+      "cause": "Excessive air intake relative to gas flow, or a partially blocked tip",
+      "fix": "Reduce air intake slightly and check the tip for obstruction"
+    }
+  ],
+  "safety": [
+    "Never leave a lit burner unattended.",
+    "Tie back loose hair and secure loose sleeves before working near the flame.",
+    "Keep flammable materials (paper, solvents) well away from the flame.",
+    "Turn off the gas supply fully, not just the visible flame, when finished."
+  ],
+  "relatedProtocols": [
+    "proto-streak-plate",
+    "proto-gram-stain"
+  ],
+  "relatedSafety": [
+    "safety-laboratory-fire-safety",
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "bunsen burner",
+    "open flame sterilization",
+    "flaming a loop",
+    "aseptic flame technique"
+  ],
+  "difficulty": "beginner"
+}

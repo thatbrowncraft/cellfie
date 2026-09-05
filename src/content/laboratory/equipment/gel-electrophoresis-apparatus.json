@@ -1,0 +1,62 @@
+{
+  "id": "equip-gel-electrophoresis-apparatus",
+  "category": "equipment",
+  "title": "Gel Electrophoresis Apparatus (Chamber & Power Supply)",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Separates nucleic acid or protein molecules by size (and, for proteins run under denaturing conditions, largely by size alone) as they migrate through a gel matrix under an applied electric field, most commonly used with agarose gels for DNA/RNA fragments.",
+  "operatingPrinciple": "The negatively charged phosphate backbone of nucleic acids (or an SDS coating applied to proteins in SDS-PAGE) causes molecules to migrate toward the positive electrode when a voltage is applied across the gel; the gel matrix acts as a molecular sieve, so smaller molecules move through it faster than larger ones, separating a mixed sample into size-based bands over time.",
+  "basicOperation": [
+    "Prepare and cast the gel (e.g. agarose in an appropriate buffer) in the casting tray with a comb to form sample wells, and allow it to solidify.",
+    "Place the solidified gel in the chamber, submerged in running buffer matching the gel's buffer system.",
+    "Load samples (mixed with loading dye) into the wells, including a molecular weight ladder in at least one lane.",
+    "Close the lid, confirm correct electrode polarity (samples should migrate toward the positive electrode, away from the wells), and run at the appropriate voltage/time for the gel and application.",
+    "Stop the run before dye front or bands of interest run off the gel, then visualize (e.g. under UV/blue light for a stained agarose gel)."
+  ],
+  "importantSettings": [
+    "Applied voltage and run time (higher voltage speeds migration but can increase band smearing/heat)",
+    "Buffer system matching the gel type"
+  ],
+  "maintenance": [
+    "Rinse the chamber and casting tray after use to prevent buffer salt crystallization and residual stain buildup.",
+    "Inspect electrode leads and lid interlock for damage periodically."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Bands run in the wrong direction or do not migrate",
+      "cause": "Electrodes reversed, or buffer level too low to complete the circuit",
+      "fix": "Confirm correct polarity before starting and ensure the gel is fully submerged in running buffer"
+    },
+    {
+      "problem": "Smeared or poorly resolved bands",
+      "cause": "Voltage too high for the run, overloaded wells, or degraded/impure sample",
+      "fix": "Reduce voltage, load an appropriate sample amount, and check sample quality"
+    }
+  ],
+  "safety": [
+    "Never open the lid or reach into the chamber while the power supply is running — this is a genuine electrical shock hazard.",
+    "If using ethidium bromide or another intercalating stain, handle and dispose of it per the facility's chemical/mutagen safety procedures.",
+    "Use appropriate UV-eye protection if visualizing stained gels under a UV transilluminator."
+  ],
+  "relatedProtocols": [],
+  "relatedSafety": [
+    "safety-electrical-safety",
+    "safety-chemical-safety"
+  ],
+  "searchKeywords": [
+    "gel electrophoresis",
+    "agarose gel apparatus",
+    "DNA gel running",
+    "electrophoresis power supply"
+  ],
+  "difficulty": "intermediate"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "equip-microvolume-spectrophotometer",
+  "category": "equipment",
+  "title": "Microvolume Spectrophotometer (Nucleic Acid Quantification)",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "manufacturer-specific",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Measures the concentration and purity of nucleic acid (DNA/RNA) or protein samples using only 1-2 microliters, without a cuvette, by holding a small liquid column directly between two fiber-optic measurement surfaces.",
+  "operatingPrinciple": "A small droplet of sample is pipetted onto the lower measurement pedestal, and the upper arm is lowered to form a liquid column of a fixed, very short path length held by surface tension; light is passed through this column and the resulting absorbance spectrum is used to calculate concentration (commonly via absorbance at 260 nm for nucleic acids) and purity ratios (e.g. A260/A280, A260/A230).",
+  "basicOperation": [
+    "Clean both the upper and lower measurement surfaces before use, typically with a lint-free wipe and water.",
+    "Perform a blank measurement using the same buffer the sample is diluted/eluted in.",
+    "Pipette the small sample volume directly onto the lower pedestal and lower the upper arm to form the measurement column.",
+    "Initiate the measurement and record concentration and purity ratios.",
+    "Clean both surfaces again immediately after each sample to prevent carryover into the next measurement."
+  ],
+  "importantSettings": [
+    "Correct blank/buffer selection (mismatched blank skews both concentration and purity ratio results)",
+    "Sample type setting (DNA vs. RNA vs. protein, which changes the wavelength/extinction coefficient used)"
+  ],
+  "calibration": "Periodic verification against a certified reference standard per manufacturer schedule.",
+  "maintenance": [
+    "Clean both measurement surfaces after every single sample — residue from one sample can contaminate the next reading.",
+    "Avoid letting samples dry on the pedestal, which can leave residue affecting subsequent readings."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Unexpectedly low or negative-looking A260/A280 or A260/A230 ratios",
+      "cause": "Residual contaminant carryover from a previous sample (surfaces not cleaned), or a mismatched/incorrect blank",
+      "fix": "Clean pedestals thoroughly between every sample and re-blank with the correct buffer"
+    },
+    {
+      "problem": "Inconsistent concentration readings on repeat measurement of the same sample",
+      "cause": "Air bubble in the sample column, or an unevenly mixed sample",
+      "fix": "Mix the sample well before pipetting and re-load a fresh droplet, checking for bubbles"
+    }
+  ],
+  "safety": [
+    "Handle any biological/nucleic acid sample per its risk assessment."
+  ],
+  "relatedProtocols": [],
+  "relatedConcepts": [
+    "concept-nucleic-acid-purity-260-280"
+  ],
+  "relatedEquipment": [
+    "equip-micropipette"
+  ],
+  "searchKeywords": [
+    "nanodrop",
+    "microvolume spectrophotometer",
+    "A260/A280",
+    "DNA quantification instrument"
+  ],
+  "difficulty": "advanced"
+}

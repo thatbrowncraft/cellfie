@@ -1,0 +1,65 @@
+{
+  "id": "equip-fume-hood",
+  "category": "equipment",
+  "title": "Chemical Fume Hood",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "purpose": "Ventilates and exhausts airborne chemical vapors, fumes, and dust away from the operator during work with volatile or hazardous chemicals — a chemical engineering control, distinct from a biological safety cabinet, which is designed for biological aerosol containment rather than chemical vapor removal.",
+  "operatingPrinciple": "A dedicated exhaust fan continuously draws room air in through the open sash and vents it (often through additional filtration/scrubbing, depending on the chemical) to the outside or a treatment system, creating an inward airflow that captures vapors generated at the work surface before they reach the operator's breathing zone.",
+  "basicOperation": [
+    "Confirm adequate face velocity/airflow (often indicated by a flow monitor or alarm on the unit) before beginning work.",
+    "Work with the sash at the height marked/recommended by the manufacturer or facility policy — typically as low as practical while still allowing hand access.",
+    "Keep the work at least several inches back from the sash opening (not right at the face of the hood) to stay within the effective capture zone.",
+    "Avoid rapid arm movements or storing large equipment near the opening, both of which disrupt the inward airflow pattern.",
+    "Lower the sash fully when the hood is not actively in use."
+  ],
+  "importantSettings": [
+    "Sash height (affects both face velocity and physical protection from splashes)"
+  ],
+  "calibration": "Periodic professional certification of face velocity and airflow performance per facility schedule.",
+  "maintenance": [
+    "Do not use as general storage — clutter disrupts airflow and reduces the effective work area.",
+    "Report any airflow alarm, unusual noise, or loss of visible capture (e.g. via a tissue/smoke test) to facility maintenance."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Chemical odor detected outside the hood",
+      "cause": "Sash raised too high, work positioned too close to the opening, or airflow disrupted by clutter/rapid movement",
+      "fix": "Lower the sash to the recommended height, work further back from the opening, and remove unnecessary items from inside the hood"
+    },
+    {
+      "problem": "Confusing a fume hood with a biosafety cabinet for biological containment work",
+      "cause": "A fume hood is not HEPA-filtered and does not protect against biological aerosols the way a certified BSC does",
+      "fix": "Use a certified biological safety cabinet for biological aerosol-generating work; reserve the fume hood for chemical vapor work"
+    }
+  ],
+  "safety": [
+    "Never use a chemical fume hood as a substitute for a biological safety cabinet — it is not HEPA-filtered and does not contain biological aerosols the way a BSC does.",
+    "Keep the sash at the recommended working height at all times, not just during active manipulation.",
+    "Do not disable or override an airflow alarm."
+  ],
+  "relatedSafety": [
+    "safety-chemical-safety",
+    "safety-bsc-vs-clean-bench"
+  ],
+  "relatedEquipment": [
+    "equip-bsc-class-ii"
+  ],
+  "searchKeywords": [
+    "fume hood",
+    "chemical ventilation",
+    "sash height",
+    "volatile chemical safety"
+  ],
+  "difficulty": "intermediate"
+}

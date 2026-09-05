@@ -1,0 +1,61 @@
+{
+  "id": "equip-thermal-cycler",
+  "category": "equipment",
+  "title": "Thermal Cycler (Conventional PCR)",
+  "kind": "instrument",
+  "subcategory": "Instruments",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "Precisely and rapidly cycles reaction tubes/plates through the repeated temperature steps (denaturation, annealing, extension) required for the polymerase chain reaction, without real-time fluorescence detection — distinct from a real-time PCR system, which adds optical detection for quantitative monitoring during the run.",
+  "operatingPrinciple": "A heated/cooled metal block (often via Peltier elements) under programmable control changes temperature rapidly and precisely according to a stored protocol, holding each temperature step for a defined time and repeating the cycle a set number of times; a heated lid prevents condensation in the tube caps during the run.",
+  "basicOperation": [
+    "Load prepared PCR reaction tubes/plates into the block, ensuring good thermal contact.",
+    "Select or program the correct thermal profile (denaturation, annealing, extension temperatures/times, and cycle number) for the specific primers and target.",
+    "Confirm the heated lid is engaged before starting the run to prevent evaporation/condensation.",
+    "Start the run and retrieve samples promptly once complete, or hold at a low-temperature soak step if the instrument supports it."
+  ],
+  "importantSettings": [
+    "Annealing temperature (primer-specific — set too high and amplification may fail; too low and non-specific products may form)",
+    "Extension time (matched to expected amplicon length and polymerase speed)",
+    "Cycle number"
+  ],
+  "calibration": "Periodic professional temperature-uniformity verification across the block per facility schedule, since block wells can drift or develop uneven heating over time.",
+  "maintenance": [
+    "Keep the block and heated lid clean of spilled reagent.",
+    "Report inconsistent results across well positions, which can indicate block temperature non-uniformity."
+  ],
+  "commonErrors": [
+    {
+      "problem": "No amplification product",
+      "cause": "Incorrect annealing temperature, degraded reagents, or a programming error in the thermal profile",
+      "fix": "Verify the protocol against the primer set's recommended annealing temperature and check reagent integrity"
+    },
+    {
+      "problem": "Non-specific or smeared products",
+      "cause": "Annealing temperature too low, primer design issues, or too many cycles",
+      "fix": "Increase annealing temperature stringency, review primer design, or reduce cycle number"
+    }
+  ],
+  "safety": [
+    "Allow the block and lid to cool before touching after a run, since both can remain hot.",
+    "Handle any biological/nucleic acid material per its risk assessment."
+  ],
+  "relatedEquipment": [
+    "equip-micropipette",
+    "clin-equip-realtime-pcr-system"
+  ],
+  "searchKeywords": [
+    "thermal cycler",
+    "PCR machine",
+    "conventional PCR instrument",
+    "annealing temperature"
+  ],
+  "difficulty": "advanced"
+}

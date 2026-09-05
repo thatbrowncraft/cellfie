@@ -1,0 +1,64 @@
+{
+  "id": "equip-sterilization-indicators",
+  "category": "equipment",
+  "title": "Sterilization Indicators (Chemical Tape, Integrators & Biological Indicators)",
+  "kind": "consumable",
+  "subcategory": "Consumables",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "purpose": "Consumable indicators used to verify that a sterilization cycle (most commonly autoclaving) actually achieved the conditions needed to sterilize a load, at increasing levels of confidence from simple exposure confirmation to biological confirmation of lethality.",
+  "operatingPrinciple": "Chemical indicator tape contains a heat-sensitive ink that changes color (commonly forming diagonal stripes) once exposed to autoclave temperature, but only confirms that the item was exposed to the process, not that sterilization was actually achieved. Chemical integrators respond to a combination of time, temperature, and (for steam) saturation, giving a closer approximation of cycle adequacy. Biological indicators contain a standardized population of highly resistant bacterial spores (commonly Geobacillus stearothermophilus for steam autoclaving) that are recovered and cultured after the cycle — no growth confirms the cycle achieved sterilizing conditions, which is the strongest available verification.",
+  "basicOperation": [
+    "Apply chemical indicator tape to every autoclave load as routine practice, confirming visually that the color change occurred after the cycle.",
+    "Use a chemical integrator placed in the center/most-challenging position of a load for a closer approximation of whether sterilizing conditions were actually reached throughout the load.",
+    "Run a biological indicator on a periodic schedule (per facility policy) and for any newly validated load type, incubating the recovered spore strip/vial per the manufacturer's instructions and confirming no growth.",
+    "Record and retain indicator results as part of sterilization quality documentation."
+  ],
+  "importantSettings": [
+    "Indicator placement within the load — the coolest or most difficult-to-penetrate location gives the most meaningful challenge test"
+  ],
+  "maintenance": [
+    "Store unused indicators per manufacturer instructions (some are sensitive to storage temperature/humidity, which can affect their response)."
+  ],
+  "commonErrors": [
+    {
+      "problem": "Indicator tape changes color but the load was not actually sterile",
+      "cause": "Tape only confirms exposure/temperature reached at the tape's location, not that sterilizing conditions were reached throughout the entire load or for the correct duration",
+      "fix": "Do not rely on tape alone for critical loads — use an integrator and periodic biological indicator testing to confirm actual sterilization adequacy"
+    },
+    {
+      "problem": "Biological indicator shows growth after an autoclave cycle",
+      "cause": "Cycle parameters (time, temperature, load size/packing) were inadequate to achieve sterilizing conditions",
+      "fix": "Investigate and correct the cycle/loading issue before relying on that autoclave/cycle again, per facility protocol"
+    }
+  ],
+  "safety": [
+    "Handle recovered biological indicators per standard microbiological practices, since they involve viable spore-forming organisms until incubation confirms a negative result."
+  ],
+  "relatedEquipment": [
+    "equip-autoclave"
+  ],
+  "relatedConcepts": [
+    "concept-sterilization-indicators",
+    "concept-sterilization-vs-disinfection"
+  ],
+  "relatedSafety": [
+    "safety-sterilization",
+    "safety-basic-autoclave-safety"
+  ],
+  "searchKeywords": [
+    "autoclave indicator tape",
+    "biological indicator",
+    "sterilization verification",
+    "spore strip test"
+  ],
+  "difficulty": "intermediate"
+}
