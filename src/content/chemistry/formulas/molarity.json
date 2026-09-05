@@ -1,0 +1,65 @@
+{
+  "id": "formula-molarity",
+  "category": "formula",
+  "title": "Molarity",
+  "subcategory": "Solutions / Concentration Units",
+  "ncertClass": [
+    "11",
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Some Basic Concepts of Chemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Concentration Units",
+  "expression": "M = n / V   (moles of solute per litre of SOLUTION)",
+  "explanation": "Molarity expresses concentration as moles of solute per litre of total SOLUTION (not solvent). It is temperature-dependent, because the volume of a solution changes slightly with temperature (due to thermal expansion), even though the number of moles of solute stays fixed.",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "Molarity",
+      "unit": "mol/L (also written mol dm⁻³ or M)"
+    },
+    {
+      "symbol": "n",
+      "meaning": "Moles of solute",
+      "unit": "mol"
+    },
+    {
+      "symbol": "V",
+      "meaning": "Volume of the SOLUTION (not just solvent)",
+      "unit": "L"
+    }
+  ],
+  "resultUnit": "mol/L",
+  "conditions": [
+    "Temperature-dependent, since solution volume changes with temperature"
+  ],
+  "workedExample": {
+    "scenario": "2 moles of NaCl are dissolved to make 4 L of solution.",
+    "substitution": "M = 2 / 4",
+    "result": "M = 0.5 mol/L"
+  },
+  "commonMistakes": [
+    "Using the volume of SOLVENT added instead of the final volume of SOLUTION — these are only the same in dilute approximations, not in general.",
+    "Confusing molarity (mol/L of solution, temperature-dependent) with molality (mol/kg of solvent, temperature-independent) — a very common exam trap."
+  ],
+  "genZNote": "Molarity and molality look like siblings on paper but behave completely differently once temperature changes — one shifts, one doesn't.",
+  "relatedConcepts": [
+    "concept-mole-concept"
+  ],
+  "relatedFormulas": [
+    "formula-ideal-gas-equation"
+  ],
+  "searchKeywords": [
+    "molarity formula",
+    "concentration mol/l",
+    "molarity vs molality"
+  ],
+  "difficulty": "beginner"
+}

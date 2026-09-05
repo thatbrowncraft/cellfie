@@ -1,0 +1,51 @@
+{
+  "id": "formula-hess-law",
+  "category": "formula",
+  "title": "Hess's Law of Constant Heat Summation",
+  "subcategory": "Thermodynamics",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 11 — Thermodynamics",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Thermodynamics",
+  "expression": "ΔH(overall) = ΔH₁ + ΔH₂ + ΔH₃ + ...  (for a reaction split into steps summing to the overall reaction)",
+  "explanation": "Hess's law states that the total enthalpy change for a reaction is the same regardless of the pathway taken, since enthalpy is a state function (depends only on initial and final states, not the path). This means an otherwise hard-to-measure enthalpy change can be calculated by adding up the enthalpy changes of a series of reactions that sum to the overall reaction — reversing a step flips the sign of its ΔH, and scaling a step by a factor scales its ΔH by the same factor.",
+  "variables": [
+    {
+      "symbol": "ΔH",
+      "meaning": "Enthalpy change of a reaction or step",
+      "unit": "kJ/mol (or kJ)"
+    }
+  ],
+  "resultUnit": "kJ/mol (or kJ)",
+  "conditions": [
+    "Requires that the chosen intermediate steps, when added (with correct signs/multiples), reproduce exactly the overall target reaction"
+  ],
+  "workedExample": {
+    "scenario": "Given C(s) + O₂(g) → CO₂(g), ΔH = -393.5 kJ/mol, and CO(g) + ½O₂(g) → CO₂(g), ΔH = -283.0 kJ/mol, find ΔH for C(s) + ½O₂(g) → CO(g).",
+    "substitution": "ΔH(target) = ΔH(first reaction) − ΔH(second reaction) = -393.5 − (-283.0)",
+    "result": "ΔH = -110.5 kJ/mol"
+  },
+  "commonMistakes": [
+    "Forgetting to reverse the sign of ΔH when a given reaction step must be flipped to combine correctly into the target reaction.",
+    "Forgetting to multiply ΔH by the same factor used to scale a reaction step's coefficients."
+  ],
+  "genZNote": "Hess's law says the destination's total energy change doesn't care which route you took to get there — enthalpy is a state function, not a scenic-route function.",
+  "relatedConcepts": [
+    "concept-le-chateliers-principle"
+  ],
+  "searchKeywords": [
+    "enthalpy state function",
+    "hess's law problems",
+    "born haber cycle"
+  ],
+  "difficulty": "intermediate"
+}

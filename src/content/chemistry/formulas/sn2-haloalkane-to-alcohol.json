@@ -1,0 +1,64 @@
+{
+  "id": "formula-sn2-haloalkane-to-alcohol",
+  "category": "formula",
+  "title": "SN2 Reaction: Haloalkane to Alcohol",
+  "subcategory": "Organic Chemistry — Haloalkanes",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Haloalkanes and Haloarenes",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Organic Chemistry — Nucleophilic Substitution",
+  "expression": "R–X + NaOH(aq) → R–OH + NaX   (SN2 mechanism for primary haloalkanes)",
+  "explanation": "A primary alkyl halide reacts with hydroxide ion (a strong nucleophile) via a bimolecular nucleophilic substitution (SN2) mechanism: the nucleophile attacks the carbon bearing the halogen from the side directly opposite the leaving halide (backside attack), forming a single transition state where both the nucleophile and leaving group are partially bonded, and resulting in inversion of configuration at that carbon (if it were a stereocenter). SN2 is favored for primary substrates (least steric hindrance to backside attack), strong nucleophiles, and polar aprotic solvents.",
+  "variables": [
+    {
+      "symbol": "R–X",
+      "meaning": "Primary alkyl halide (X = Cl, Br, or I)",
+      "unit": "n/a"
+    },
+    {
+      "symbol": "NaOH(aq)",
+      "meaning": "Sodium hydroxide, providing the strong nucleophile OH⁻",
+      "unit": "n/a"
+    },
+    {
+      "symbol": "R–OH",
+      "meaning": "Alcohol product",
+      "unit": "n/a"
+    }
+  ],
+  "reactionType": "Nucleophilic substitution (bimolecular, SN2)",
+  "reagentsAndConditions": [
+    "Aqueous NaOH or KOH",
+    "Warm/reflux conditions typical",
+    "Favored for primary halides; hindered for tertiary halides"
+  ],
+  "workedExample": {
+    "scenario": "Bromoethane reacting with aqueous sodium hydroxide.",
+    "substitution": "CH₃CH₂Br + NaOH(aq) → CH₃CH₂OH + NaBr",
+    "result": "Ethanol is formed via backside attack of OH⁻ on the carbon bearing bromine, with inversion of configuration at that carbon"
+  },
+  "commonMistakes": [
+    "Applying the SN2 mechanism to a TERTIARY haloalkane, where steric hindrance instead favors an SN1 mechanism (via a carbocation intermediate).",
+    "Forgetting that SN2 proceeds with inversion of configuration (like an umbrella flipping inside out), which matters when the substrate is chiral."
+  ],
+  "genZNote": "SN2 is a one-step group project — nucleophile attacks and halide leaves in the SAME motion, no drama, no intermediate, just a clean backside hit.",
+  "relatedConcepts": [
+    "concept-isomerism"
+  ],
+  "searchKeywords": [
+    "sn1 vs sn2",
+    "nucleophilic substitution",
+    "backside attack",
+    "inversion of configuration"
+  ],
+  "difficulty": "advanced"
+}

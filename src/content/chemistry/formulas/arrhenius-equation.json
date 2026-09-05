@@ -1,0 +1,65 @@
+{
+  "id": "formula-arrhenius-equation",
+  "category": "formula",
+  "title": "Arrhenius Equation",
+  "subcategory": "Chemical Kinetics",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Chemical Kinetics",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Chemical Kinetics",
+  "expression": "k = A·e^(−Ea/RT)",
+  "explanation": "The Arrhenius equation describes how the rate constant of a reaction depends on temperature and activation energy. As temperature increases, more molecules have enough kinetic energy to overcome the activation energy barrier, so k (and therefore the reaction rate) increases — this is the mathematical explanation for why reactions generally speed up with heating. A catalyst works by providing an alternative pathway with a LOWER activation energy, increasing k without needing a temperature change.",
+  "variables": [
+    {
+      "symbol": "k",
+      "meaning": "Rate constant",
+      "unit": "depends on reaction order"
+    },
+    {
+      "symbol": "A",
+      "meaning": "Pre-exponential (frequency) factor — related to collision frequency and orientation",
+      "unit": "same units as k"
+    },
+    {
+      "symbol": "Ea",
+      "meaning": "Activation energy",
+      "unit": "J/mol (or kJ/mol)"
+    },
+    {
+      "symbol": "R",
+      "meaning": "Universal gas constant",
+      "unit": "J/mol·K"
+    },
+    {
+      "symbol": "T",
+      "meaning": "Absolute temperature",
+      "unit": "K"
+    }
+  ],
+  "resultUnit": "Same unit as the rate constant k",
+  "workedExample": {
+    "scenario": "Comparing the same reaction at two temperatures illustrates the equation's practical use: the two-temperature form ln(k₂/k₁) = −(Ea/R)(1/T₂ − 1/T₁) lets Ea be calculated from rate constants measured at two different temperatures.",
+    "substitution": "ln(k₂/k₁) = −(Ea/R)(1/T₂ − 1/T₁)",
+    "result": "Solving for Ea gives the activation energy from experimental k values at T₁ and T₂"
+  },
+  "commonMistakes": [
+    "Forgetting T must be in Kelvin.",
+    "Assuming a catalyst changes A significantly rather than its real effect: providing a lower-Ea pathway."
+  ],
+  "genZNote": "The Arrhenius equation is why 'just heat it up' is basically chemistry's universal cheat code for faster reactions — more molecules clear the activation energy bar.",
+  "searchKeywords": [
+    "activation energy",
+    "rate constant temperature dependence",
+    "catalyst mechanism"
+  ],
+  "difficulty": "advanced"
+}

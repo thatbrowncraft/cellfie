@@ -1,0 +1,70 @@
+{
+  "id": "formula-faradays-laws-of-electrolysis",
+  "category": "formula",
+  "title": "Faraday's Laws of Electrolysis",
+  "subcategory": "Electrochemistry",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Electrochemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Electrochemistry",
+  "expression": "w = (M·I·t) / (n·F)",
+  "explanation": "Faraday's first law states the mass of substance deposited/liberated at an electrode is directly proportional to the quantity of charge passed. Combined with the relationship between charge, current, and time (Q = It), this gives a direct formula for the mass produced during electrolysis, based on the substance's molar mass and the number of electrons involved in its electrode reaction.",
+  "variables": [
+    {
+      "symbol": "w",
+      "meaning": "Mass of substance deposited/liberated",
+      "unit": "g"
+    },
+    {
+      "symbol": "M",
+      "meaning": "Molar mass of the substance",
+      "unit": "g/mol"
+    },
+    {
+      "symbol": "I",
+      "meaning": "Current",
+      "unit": "A"
+    },
+    {
+      "symbol": "t",
+      "meaning": "Time",
+      "unit": "s"
+    },
+    {
+      "symbol": "n",
+      "meaning": "Number of electrons transferred per ion/atom in the electrode reaction",
+      "unit": "mol electrons per mol substance"
+    },
+    {
+      "symbol": "F",
+      "meaning": "Faraday constant (≈96,500 C/mol)",
+      "unit": "C/mol"
+    }
+  ],
+  "resultUnit": "g (grams)",
+  "workedExample": {
+    "scenario": "A current of 2 A is passed for 1000 s through molten AlCl₃ to deposit aluminum (Al³⁺ + 3e⁻ → Al, M = 27 g/mol, n = 3).",
+    "substitution": "w = (27 × 2 × 1000) / (3 × 96500)",
+    "result": "w ≈ 0.186 g of aluminum deposited"
+  },
+  "commonMistakes": [
+    "Using the wrong value of n — it must match the actual number of electrons in the specific electrode half-reaction, which differs by ion (e.g. n=1 for Ag⁺, n=2 for Cu²⁺, n=3 for Al³⁺).",
+    "Forgetting to convert time into seconds if given in minutes or hours."
+  ],
+  "genZNote": "Faraday's laws are basically an electrochemical receipt — exactly how much charge you pass tells you exactly how much metal you'll get out.",
+  "searchKeywords": [
+    "electrolysis mass deposited",
+    "faraday constant",
+    "charge current time"
+  ],
+  "difficulty": "advanced"
+}

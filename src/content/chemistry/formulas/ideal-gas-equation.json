@@ -1,0 +1,70 @@
+{
+  "id": "formula-ideal-gas-equation",
+  "category": "formula",
+  "title": "Ideal Gas Equation",
+  "subcategory": "States of Matter",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — States of Matter",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "States of Matter",
+  "expression": "PV = nRT",
+  "explanation": "The ideal gas equation combines Boyle's law, Charles's law, and Avogadro's law into a single relationship connecting pressure, volume, moles, and temperature for an IDEAL gas — one where molecules have negligible volume and no intermolecular forces. Real gases approximate this behavior well at low pressure and high temperature, but deviate significantly at high pressure or low temperature, where intermolecular forces and molecular volume become significant.",
+  "variables": [
+    {
+      "symbol": "P",
+      "meaning": "Pressure",
+      "unit": "atm (or Pa, consistent with R)"
+    },
+    {
+      "symbol": "V",
+      "meaning": "Volume",
+      "unit": "L (or m³, consistent with R)"
+    },
+    {
+      "symbol": "n",
+      "meaning": "Number of moles",
+      "unit": "mol"
+    },
+    {
+      "symbol": "R",
+      "meaning": "Universal gas constant (0.0821 L·atm/mol·K, or 8.314 J/mol·K)",
+      "unit": "depends on unit system"
+    },
+    {
+      "symbol": "T",
+      "meaning": "Absolute temperature",
+      "unit": "K (Kelvin — never Celsius)"
+    }
+  ],
+  "resultUnit": "Depends on which variable is being solved for",
+  "conditions": [
+    "T must always be in Kelvin, never Celsius",
+    "Assumes ideal gas behavior — best approximation at low pressure and high temperature"
+  ],
+  "workedExample": {
+    "scenario": "2 moles of an ideal gas occupy 10 L at 300 K.",
+    "substitution": "P = nRT / V = (2)(0.0821)(300) / 10",
+    "result": "P ≈ 4.93 atm"
+  },
+  "commonMistakes": [
+    "Forgetting to convert Celsius to Kelvin before substituting into the equation — a very frequent and entirely avoidable error.",
+    "Mixing R's value (0.0821 L·atm/mol·K) with pressure/volume units that don't match (e.g. using Pa and m³ with the atm-based R constant)."
+  ],
+  "genZNote": "PV=nRT will absolutely betray you if you forget the Kelvin conversion — Celsius is not invited to this formula.",
+  "searchKeywords": [
+    "pv=nrt",
+    "gas laws",
+    "boyle's law charles's law",
+    "kelvin conversion"
+  ],
+  "difficulty": "beginner"
+}

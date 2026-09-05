@@ -1,0 +1,61 @@
+{
+  "id": "formula-raoults-law",
+  "category": "formula",
+  "title": "Raoult's Law",
+  "subcategory": "Solutions",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Solutions",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Solutions",
+  "expression": "P(solution) = x(solvent)·P°(solvent)   [for a non-volatile solute; for two volatile liquids: P(total) = xₐPₐ° + x_bP_b°]",
+  "explanation": "Raoult's law states that the partial vapour pressure of a solvent above a solution is proportional to its mole fraction in the solution, scaled by the pure solvent's vapour pressure. Adding a non-volatile solute lowers the solvent's mole fraction, and therefore lowers the solution's overall vapour pressure compared to the pure solvent — this relative lowering of vapour pressure is itself a colligative property, directly proportional to the mole fraction of solute.",
+  "variables": [
+    {
+      "symbol": "P(solution)",
+      "meaning": "Vapour pressure of the solution",
+      "unit": "same pressure unit as P°"
+    },
+    {
+      "symbol": "x(solvent)",
+      "meaning": "Mole fraction of the solvent in the solution",
+      "unit": "unitless"
+    },
+    {
+      "symbol": "P°(solvent)",
+      "meaning": "Vapour pressure of the PURE solvent at the same temperature",
+      "unit": "e.g. mmHg, atm"
+    }
+  ],
+  "resultUnit": "Same pressure unit as P°",
+  "conditions": [
+    "Ideal solution behavior is assumed; real solutions with strong solute-solvent interactions show positive or negative deviations from Raoult's law"
+  ],
+  "workedExample": {
+    "scenario": "A solution has solvent mole fraction 0.9, and the pure solvent's vapour pressure is 100 mmHg.",
+    "substitution": "P(solution) = 0.9 × 100",
+    "result": "P(solution) = 90 mmHg"
+  },
+  "commonMistakes": [
+    "Using the SOLUTE's mole fraction instead of the SOLVENT's mole fraction directly in the P = x·P° formula.",
+    "Applying ideal Raoult's law behavior to a solution known to deviate significantly (e.g. due to strong hydrogen bonding between different components)."
+  ],
+  "genZNote": "Raoult's law is basically 'the more you dilute the solvent with something non-volatile, the less it can evaporate' — vapour pressure drops in direct proportion.",
+  "relatedConcepts": [
+    "concept-colligative-properties"
+  ],
+  "searchKeywords": [
+    "vapour pressure lowering",
+    "ideal solution",
+    "mole fraction vapour pressure"
+  ],
+  "difficulty": "intermediate"
+}

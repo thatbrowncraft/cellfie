@@ -1,0 +1,82 @@
+{
+  "id": "formula-nernst-equation",
+  "category": "formula",
+  "title": "Nernst Equation",
+  "subcategory": "Electrochemistry",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Electrochemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Electrochemistry",
+  "expression": "E(cell) = E°(cell) − (RT/nF)·lnQ   [at 298 K: E(cell) = E°(cell) − (0.0591/n)·log₁₀Q]",
+  "explanation": "The Nernst equation relates a cell's actual EMF under non-standard conditions to its standard EMF, accounting for the actual concentrations (via the reaction quotient Q) of the species involved. It explains why cell voltage changes as a battery discharges (as reactant concentrations fall and product concentrations rise, Q changes and so does E(cell)), and predicts that E(cell) = 0 at equilibrium (when Q = K).",
+  "variables": [
+    {
+      "symbol": "E(cell)",
+      "meaning": "Actual cell EMF under given conditions",
+      "unit": "V"
+    },
+    {
+      "symbol": "E°(cell)",
+      "meaning": "Standard cell EMF (at 1 M, 1 atm, 298 K)",
+      "unit": "V"
+    },
+    {
+      "symbol": "R",
+      "meaning": "Universal gas constant",
+      "unit": "J/mol·K"
+    },
+    {
+      "symbol": "T",
+      "meaning": "Absolute temperature",
+      "unit": "K"
+    },
+    {
+      "symbol": "n",
+      "meaning": "Number of moles of electrons transferred in the balanced reaction",
+      "unit": "mol"
+    },
+    {
+      "symbol": "F",
+      "meaning": "Faraday constant (≈96,500 C/mol)",
+      "unit": "C/mol"
+    },
+    {
+      "symbol": "Q",
+      "meaning": "Reaction quotient (same form as equilibrium constant expression, using current concentrations)",
+      "unit": "unitless"
+    }
+  ],
+  "resultUnit": "V (volt)",
+  "conditions": [
+    "The simplified log₁₀ form with 0.0591 is valid specifically at 298 K"
+  ],
+  "workedExample": {
+    "scenario": "A cell has E° = 1.10 V, n = 2, and Q = 0.01 at 298 K.",
+    "substitution": "E = 1.10 − (0.0591/2)·log₁₀(0.01) = 1.10 − (0.02955)(-2)",
+    "result": "E ≈ 1.10 + 0.0591 = 1.159 V"
+  },
+  "commonMistakes": [
+    "Using the natural log (ln) form's constants with a log₁₀ calculation, or vice versa, without converting correctly.",
+    "Forgetting that n must match the number of electrons in the BALANCED overall cell reaction, not just one half-reaction."
+  ],
+  "genZNote": "The Nernst equation is just Le Chatelier's principle wearing a math costume — push concentrations away from standard conditions, and the voltage responds accordingly.",
+  "relatedConcepts": [
+    "concept-le-chateliers-principle"
+  ],
+  "searchKeywords": [
+    "cell emf",
+    "electrode potential",
+    "reaction quotient",
+    "galvanic cell voltage"
+  ],
+  "difficulty": "advanced"
+}

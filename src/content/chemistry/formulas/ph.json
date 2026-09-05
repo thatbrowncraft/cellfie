@@ -1,0 +1,56 @@
+{
+  "id": "formula-ph",
+  "category": "formula",
+  "title": "pH Formula",
+  "subcategory": "Equilibrium — Ionic Equilibrium",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 11 — Equilibrium",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Ionic Equilibrium",
+  "expression": "pH = −log₁₀[H⁺]   (and pOH = −log₁₀[OH⁻]; pH + pOH = 14 at 25°C)",
+  "explanation": "pH is defined as the negative base-10 logarithm of the molar hydrogen ion concentration. Because it's logarithmic, each single-unit change in pH corresponds to a tenfold change in [H⁺] — a frequently tested point. For strong acids/bases that fully dissociate, [H⁺] or [OH⁻] can be read directly from the given concentration; for weak acids/bases, an equilibrium (Ka/Kb) calculation is needed first.",
+  "variables": [
+    {
+      "symbol": "pH",
+      "meaning": "Measure of acidity",
+      "unit": "unitless (logarithmic scale, typically 0-14)"
+    },
+    {
+      "symbol": "[H⁺]",
+      "meaning": "Molar concentration of hydrogen ions",
+      "unit": "mol/L"
+    }
+  ],
+  "resultUnit": "Unitless",
+  "conditions": [
+    "pH + pOH = 14 relationship specifically holds at 25°C, where Kw = 10⁻¹⁴"
+  ],
+  "workedExample": {
+    "scenario": "A solution has [H⁺] = 1 × 10⁻³ mol/L.",
+    "substitution": "pH = −log₁₀(1 × 10⁻³)",
+    "result": "pH = 3 (acidic)"
+  },
+  "commonMistakes": [
+    "Applying pH = −log[H⁺] directly to a WEAK acid's total (analytical) concentration instead of first solving for the actual equilibrium [H⁺] using Ka.",
+    "Forgetting that a pH change of 1 unit is a 10-fold concentration change, not a 10% or additive change."
+  ],
+  "genZNote": "pH is a logarithm cosplaying as a simple number — small digit changes hide big concentration swings underneath.",
+  "relatedConcepts": [
+    "concept-ph-and-poh"
+  ],
+  "searchKeywords": [
+    "ph formula",
+    "hydrogen ion concentration",
+    "acidic basic ph scale"
+  ],
+  "difficulty": "beginner"
+}
