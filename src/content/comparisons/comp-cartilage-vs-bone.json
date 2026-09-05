@@ -1,0 +1,57 @@
+{
+  "id": "comp-cartilage-vs-bone",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Cartilage"
+  },
+  "itemB": {
+    "name": "Bone"
+  },
+  "overview": "Two types of connective tissue in the skeletal system, differing mainly in rigidity, blood supply, and mineral content.",
+  "genZNote": "Cartilage: flexible and rubbery. Bone: rigid and mineralised.",
+  "aspects": [
+    {
+      "id": "rigidity",
+      "label": "Rigidity",
+      "valueA": "Flexible and somewhat elastic, due to a matrix rich in collagen and chondroitin.",
+      "valueB": "Rigid and hard, due to a matrix impregnated with calcium salts.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "blood-supply",
+      "label": "Blood Supply",
+      "valueA": "Avascular — lacks its own direct blood supply, so it heals slowly.",
+      "valueB": "Highly vascular — has a rich blood supply, allowing it to heal more readily.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Ear pinna, tip of the nose, intervertebral discs.",
+      "valueB": "Femur, skull, ribs.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "developmental-relationship",
+      "label": "Developmental Relationship",
+      "valueA": "Often serves as the initial template that is later replaced by bone during development (ossification).",
+      "valueB": "Forms through ossification, often replacing an earlier cartilage model.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Most of the human skeleton starts out as cartilage in the embryo and is gradually replaced by bone through a process called ossification.",
+    "memoryTrick": "Cartilage = flexible, no blood supply, heals slowly. Bone = rigid, rich blood supply, heals faster.",
+    "commonMisconception": "Not all cartilage gets replaced by bone — some, like the cartilage in your ears and nose tip, remains cartilage throughout life."
+  },
+  "lastVerified": "2026-09-05"
+}

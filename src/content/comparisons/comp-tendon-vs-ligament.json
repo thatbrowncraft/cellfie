@@ -1,0 +1,57 @@
+{
+  "id": "comp-tendon-vs-ligament",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Tendon"
+  },
+  "itemB": {
+    "name": "Ligament"
+  },
+  "overview": "Both are tough connective tissue bands, but they connect different structures — tendons link muscle to bone, ligaments link bone to bone.",
+  "genZNote": "Tendon: the rope connecting muscle to bone. Ligament: the rope connecting bone to bone at a joint.",
+  "aspects": [
+    {
+      "id": "connects",
+      "label": "What It Connects",
+      "valueA": "Connects muscle to bone.",
+      "valueB": "Connects bone to bone at a joint.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Transmits the force of muscle contraction to move a bone.",
+      "valueB": "Stabilises joints and limits excessive movement, preventing dislocation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "elasticity",
+      "label": "Elasticity",
+      "valueA": "Relatively inelastic, built to transmit force efficiently.",
+      "valueB": "Slightly more elastic than tendons, allowing a small range of flexible movement.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Achilles tendon, connecting the calf muscle to the heel bone.",
+      "valueB": "Anterior cruciate ligament (ACL), stabilising the knee joint.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A torn ACL (a ligament injury) versus a torn Achilles tendon (a tendon injury) are both extremely common exam and real-world examples for this exact distinction.",
+    "memoryTrick": "Tendon = 'T' for muscle-To-bone. Ligament = bone-to-bone, stabilising joints ('L' for Linking bones).",
+    "commonMisconception": "Tendons and ligaments are not made of the same tissue doing the same job — both are dense connective tissue, but their composition and elasticity are tuned differently for their specific roles."
+  },
+  "lastVerified": "2026-09-05"
+}

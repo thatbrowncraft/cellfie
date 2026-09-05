@@ -1,0 +1,50 @@
+{
+  "id": "comp-somatic-gene-therapy-vs-germline-gene-therapy",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biotechnology",
+    "genetics"
+  ],
+  "itemA": {
+    "name": "Somatic Gene Therapy"
+  },
+  "itemB": {
+    "name": "Germline Gene Therapy"
+  },
+  "overview": "Both introduce corrective genetic material, but they differ in whether the change is heritable by future generations.",
+  "genZNote": "Somatic gene therapy: fixing this patient, this generation only. Germline gene therapy: a change that gets passed down forever after.",
+  "aspects": [
+    {
+      "id": "cells-targeted",
+      "label": "Cells Targeted",
+      "valueA": "Targets non-reproductive body (somatic) cells only.",
+      "valueB": "Targets reproductive cells (sperm, egg, or early embryo).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "heritability",
+      "label": "Passed to Offspring?",
+      "valueA": "No — the genetic change is not inherited by the patient's children.",
+      "valueB": "Yes — the genetic change can be passed on to future generations.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "ethical-status",
+      "label": "Ethical/Legal Status",
+      "valueA": "Widely accepted and practised in approved clinical settings.",
+      "valueB": "Highly controversial and banned or heavily restricted in most countries.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Germline gene editing in humans remains banned or under moratorium in most countries specifically because changes would be passed to all future descendants.",
+    "memoryTrick": "Somatic = stops with this person. Germline = carries on to the germline (next generations).",
+    "commonMisconception": "All currently approved human gene therapies are somatic — germline gene therapy in humans is not standard clinical practice due to ethical and safety concerns."
+  },
+  "lastVerified": "2026-09-05"
+}

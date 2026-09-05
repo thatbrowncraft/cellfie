@@ -1,0 +1,58 @@
+{
+  "id": "comp-pepsin-vs-trypsin",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Pepsin"
+  },
+  "itemB": {
+    "name": "Trypsin"
+  },
+  "overview": "Both are protein-digesting enzymes, but they're secreted in different organs and work best at very different pH levels.",
+  "genZNote": "Pepsin: works in the stomach's acid bath. Trypsin: works in the intestine's alkaline environment.",
+  "aspects": [
+    {
+      "id": "site-of-action",
+      "label": "Site of Secretion/Action",
+      "valueA": "Secreted by gastric glands, acts in the stomach.",
+      "valueB": "Secreted by the pancreas, acts in the small intestine.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "optimal-ph",
+      "label": "Optimal pH",
+      "valueA": "Acidic (around pH 1.5-2).",
+      "valueB": "Alkaline (around pH 7.5-8.5).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "activation",
+      "label": "Activated From",
+      "valueA": "Activated from inactive pepsinogen by stomach acid (HCl).",
+      "valueB": "Activated from inactive trypsinogen by the enzyme enterokinase.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "substrate",
+      "label": "Acts On",
+      "valueA": "Breaks proteins into smaller polypeptides.",
+      "valueB": "Breaks proteins/polypeptides into smaller peptides and amino acids.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Both enzymes are secreted as inactive precursors (zymogens) — pepsinogen and trypsinogen — to protect the secreting tissue from self-digestion.",
+    "memoryTrick": "Pepsin = stomach, acidic. Trypsin = intestine, alkaline (pancreatic).",
+    "commonMisconception": "Trypsin would actually be destroyed by stomach acid — its alkaline-optimum design is exactly why protein digestion continues in the intestine rather than in the acidic stomach."
+  },
+  "lastVerified": "2026-09-05"
+}

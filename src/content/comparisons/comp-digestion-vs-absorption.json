@@ -1,0 +1,50 @@
+{
+  "id": "comp-digestion-vs-absorption",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Digestion"
+  },
+  "itemB": {
+    "name": "Absorption"
+  },
+  "overview": "Two sequential steps in processing food — first breaking it down, then actually taking the simpler products into the body.",
+  "genZNote": "Digestion: breaking the meal down into usable pieces. Absorption: actually letting those pieces into your bloodstream.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "The breakdown of complex food molecules into simpler, absorbable units.",
+      "valueB": "The uptake of digested nutrients from the gut lumen into the bloodstream or lymph.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "location",
+      "label": "Primary Location",
+      "valueA": "Occurs throughout the mouth, stomach, and small intestine.",
+      "valueB": "Occurs mainly in the small intestine (via villi) and some in the large intestine (water).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "end-result",
+      "label": "End Result",
+      "valueA": "Produces simple molecules like glucose, amino acids, and fatty acids.",
+      "valueB": "Delivers those simple molecules into the body's internal circulation for use by cells.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Digestion must be essentially complete before meaningful absorption can occur — the two are sequential steps, not simultaneous processes at the same location.",
+    "memoryTrick": "Digestion = breaking food down. Absorption = taking the broken-down bits in.",
+    "commonMisconception": "Absorption is not the same as digestion's final step — it's a distinct transport process (often active transport) that happens after digestion has already produced simple molecules."
+  },
+  "lastVerified": "2026-09-05"
+}

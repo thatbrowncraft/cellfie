@@ -1,0 +1,50 @@
+{
+  "id": "comp-cochlea-vs-vestibular-apparatus",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "sense-organs"
+  ],
+  "itemA": {
+    "name": "Cochlea"
+  },
+  "itemB": {
+    "name": "Vestibular Apparatus"
+  },
+  "overview": "Two structures of the inner ear, one dedicated to hearing and the other to maintaining balance.",
+  "genZNote": "Cochlea: the ear's sound-processing snail shell. Vestibular apparatus: the ear's built-in spirit level for balance.",
+  "aspects": [
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Converts sound vibrations into nerve impulses for hearing.",
+      "valueB": "Detects head position and movement, maintaining balance and equilibrium.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "structure",
+      "label": "Structure",
+      "valueA": "A coiled, snail-shaped tube containing the organ of Corti.",
+      "valueB": "Consists of the semicircular canals, utricle, and saccule.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "nerve",
+      "label": "Associated Nerve Branch",
+      "valueA": "Cochlear branch of the vestibulocochlear nerve (cranial nerve VIII).",
+      "valueB": "Vestibular branch of the same vestibulocochlear nerve (cranial nerve VIII).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Both hearing and balance share the same cranial nerve (VIII, the vestibulocochlear nerve), just different branches — a commonly tested anatomical detail.",
+    "memoryTrick": "Cochlea = hearing (co-CHLEA sounds like a shell for sound). Vestibular = balance.",
+    "commonMisconception": "Balance problems don't always mean hearing is also affected, and vice versa — the two systems are anatomically close but functionally and neurally distinct."
+  },
+  "lastVerified": "2026-09-05"
+}

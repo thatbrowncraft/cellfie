@@ -1,0 +1,49 @@
+{
+  "id": "comp-electrical-synapse-vs-chemical-synapse",
+  "domain": "biological-structure",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology"
+  ],
+  "itemA": {
+    "name": "Electrical Synapse"
+  },
+  "itemB": {
+    "name": "Chemical Synapse"
+  },
+  "overview": "Two types of connections between neurons, differing in whether the signal passes directly as current or is converted into a chemical messenger first.",
+  "genZNote": "Electrical synapse: a direct wire connection, instant transmission. Chemical synapse: signal converted into a chemical message, crossing a gap.",
+  "aspects": [
+    {
+      "id": "transmission-mode",
+      "label": "Mode of Transmission",
+      "valueA": "Direct flow of ionic current through gap junctions connecting two neurons.",
+      "valueB": "Signal is converted to a chemical (neurotransmitter) that diffuses across the synaptic cleft.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "speed",
+      "label": "Speed of Transmission",
+      "valueA": "Extremely fast, virtually no delay.",
+      "valueB": "Slightly slower, due to neurotransmitter release, diffusion, and receptor binding.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "directionality",
+      "label": "Directionality",
+      "valueA": "Often bidirectional.",
+      "valueB": "Unidirectional — signal moves only from presynaptic to postsynaptic neuron.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Electrical synapses are much rarer in the human nervous system than chemical synapses, which dominate most neural communication.",
+    "memoryTrick": "Electrical = direct wire, instant. Chemical = messenger crosses a gap, slightly delayed.",
+    "commonMisconception": "Chemical synapses are not 'inferior' for being slower — the delay allows for signal modulation, amplification, and integration that a simple electrical connection can't provide."
+  },
+  "lastVerified": "2026-09-05"
+}

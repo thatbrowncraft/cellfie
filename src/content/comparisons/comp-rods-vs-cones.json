@@ -1,0 +1,58 @@
+{
+  "id": "comp-rods-vs-cones",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "sense-organs",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Rods"
+  },
+  "itemB": {
+    "name": "Cones"
+  },
+  "overview": "The two types of photoreceptor cells in the retina, specialised for different lighting conditions and types of vision.",
+  "genZNote": "Rods: your night-vision crew, no colour, just brightness. Cones: your daylight colour squad.",
+  "aspects": [
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Detect light intensity, enabling vision in dim light (scotopic vision); cannot detect colour.",
+      "valueB": "Detect colour and fine detail in bright light (photopic vision).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "number",
+      "label": "Relative Number in Retina",
+      "valueA": "Much more numerous (~120 million per eye).",
+      "valueB": "Fewer in number (~6 million per eye).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "pigment",
+      "label": "Photopigment",
+      "valueA": "Contains rhodopsin (visual purple).",
+      "valueB": "Contains iodopsin, with three types tuned to red, green, and blue light.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "location",
+      "label": "Distribution in Retina",
+      "valueA": "Concentrated in the peripheral retina.",
+      "valueB": "Concentrated in the fovea centralis, the point of sharpest vision.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The fovea centralis, packed almost entirely with cones, is why your sharpest, most colourful vision is exactly where you're directly looking.",
+    "memoryTrick": "Rods = night vision, no colour (rods 'run' in the dark). Cones = colour, daylight.",
+    "commonMisconception": "Colour blindness is not caused by a problem with rods — it results specifically from a deficiency or absence of one or more types of cones."
+  },
+  "lastVerified": "2026-09-05"
+}

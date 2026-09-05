@@ -1,0 +1,57 @@
+{
+  "id": "comp-skeletal-muscle-vs-smooth-muscle",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Skeletal Muscle"
+  },
+  "itemB": {
+    "name": "Smooth Muscle"
+  },
+  "overview": "Two of the three muscle types, differing in voluntary control, appearance under a microscope, and where they're found in the body.",
+  "genZNote": "Skeletal muscle: the one you consciously flex. Smooth muscle: the one working quietly in your organs without you ever thinking about it.",
+  "aspects": [
+    {
+      "id": "control",
+      "label": "Type of Control",
+      "valueA": "Voluntary — under conscious control.",
+      "valueB": "Involuntary — not under conscious control.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "appearance",
+      "label": "Microscopic Appearance",
+      "valueA": "Striated (banded) appearance, with multiple nuclei per cell.",
+      "valueB": "Non-striated (smooth) appearance, with a single central nucleus per cell.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "location",
+      "label": "Typical Location",
+      "valueA": "Attached to bones, enabling body movement.",
+      "valueB": "Found in the walls of internal organs like the stomach, intestines, and blood vessels.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "fatigue",
+      "label": "Fatigue Resistance",
+      "valueA": "Fatigues relatively quickly with sustained use.",
+      "valueB": "Fatigues slowly, suited for prolonged, sustained contraction.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Skeletal muscle's striations come from the highly organised arrangement of actin and myosin filaments, visible clearly under a microscope — a classic ID question.",
+    "memoryTrick": "Skeletal = striated and voluntary, attached to bone. Smooth = non-striated and involuntary, in organ walls.",
+    "commonMisconception": "Smooth muscle is not 'weaker' just because it's involuntary — it's simply built for sustained, low-fatigue contraction rather than powerful, quick movements."
+  },
+  "lastVerified": "2026-09-05"
+}

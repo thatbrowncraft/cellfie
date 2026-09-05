@@ -1,0 +1,49 @@
+{
+  "id": "comp-resting-potential-vs-action-potential",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology"
+  ],
+  "itemA": {
+    "name": "Resting Potential"
+  },
+  "itemB": {
+    "name": "Action Potential"
+  },
+  "overview": "Two electrical states of a neuron's membrane, one being its stable baseline and the other the brief electrical spike that carries a nerve impulse.",
+  "genZNote": "Resting potential: the neuron's calm baseline, charged and waiting. Action potential: the sudden electrical spike that fires off a signal.",
+  "aspects": [
+    {
+      "id": "voltage",
+      "label": "Typical Membrane Voltage",
+      "valueA": "Stable, around -70 mV (inside negative relative to outside).",
+      "valueB": "Rapidly reverses to about +30 to +40 mV at its peak, before returning to resting level.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "ion-movement",
+      "label": "Main Ion Movement",
+      "valueA": "Maintained mainly by the Na+/K+ pump and higher membrane permeability to K+ at rest.",
+      "valueB": "Rapid influx of Na+ ions causes depolarisation, followed by K+ efflux causing repolarisation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "trigger",
+      "label": "What Triggers It",
+      "valueA": "The neuron's default, unstimulated state.",
+      "valueB": "Triggered when a stimulus depolarises the membrane past a threshold level.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "An action potential is an 'all-or-nothing' event — once the threshold is crossed, the full spike fires regardless of how much stronger the stimulus is.",
+    "memoryTrick": "Resting = the calm, steady baseline. Action = the sudden active spike.",
+    "commonMisconception": "The action potential is not just a passive change in resting potential — it's an actively generated event requiring voltage-gated ion channels to open and close in sequence."
+  },
+  "lastVerified": "2026-09-05"
+}

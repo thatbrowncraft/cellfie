@@ -1,0 +1,57 @@
+{
+  "id": "comp-small-intestine-vs-large-intestine",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Small Intestine"
+  },
+  "itemB": {
+    "name": "Large Intestine"
+  },
+  "overview": "The two main sections of the intestine, split by their primary role — nutrient digestion/absorption versus water absorption and waste formation.",
+  "genZNote": "Small intestine: where the real digestion and nutrient pickup happens. Large intestine: where leftover water gets reclaimed and waste gets packaged.",
+  "aspects": [
+    {
+      "id": "main-function",
+      "label": "Main Function",
+      "valueA": "Completes digestion and absorbs most nutrients (glucose, amino acids, fats).",
+      "valueB": "Absorbs water and electrolytes, and forms/stores faeces.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "length-diameter",
+      "label": "Length vs Diameter",
+      "valueA": "Longer (about 6-7 metres) but narrower in diameter.",
+      "valueB": "Shorter (about 1.5 metres) but wider in diameter.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "subdivisions",
+      "label": "Subdivisions",
+      "valueA": "Duodenum, jejunum, ileum.",
+      "valueB": "Caecum, colon, rectum.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "surface-adaptation",
+      "label": "Surface Adaptation for Absorption",
+      "valueA": "Lined with villi and microvilli, greatly increasing surface area for absorption.",
+      "valueB": "Lacks villi; absorption is mainly of water via simple diffusion.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Despite being called 'large', the large intestine is actually shorter in length than the small intestine — the name refers to its greater diameter, a common exam trick.",
+    "memoryTrick": "Small intestine = small diameter, does the real digestive work. Large intestine = large diameter, mostly water recovery.",
+    "commonMisconception": "Very little actual digestion happens in the large intestine — its main jobs are water absorption and faeces formation, not breaking down nutrients."
+  },
+  "lastVerified": "2026-09-05"
+}

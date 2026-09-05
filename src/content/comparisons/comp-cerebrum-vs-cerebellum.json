@@ -1,0 +1,50 @@
+{
+  "id": "comp-cerebrum-vs-cerebellum",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Cerebrum"
+  },
+  "itemB": {
+    "name": "Cerebellum"
+  },
+  "overview": "Two major regions of the brain, with very different jobs — higher thought and voluntary control versus balance and coordination.",
+  "genZNote": "Cerebrum: the thinking, deciding, personality headquarters. Cerebellum: the balance and coordination backstage crew.",
+  "aspects": [
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Controls higher functions: thinking, memory, voluntary movement, sensory perception, personality.",
+      "valueB": "Coordinates balance, posture, and fine-tunes voluntary muscle movements.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "size",
+      "label": "Relative Size",
+      "valueA": "The largest part of the human brain.",
+      "valueB": "Smaller, located below and behind the cerebrum.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "damage-effect",
+      "label": "Effect of Damage",
+      "valueA": "Can affect memory, speech, personality, or specific sensory/motor functions depending on location.",
+      "valueB": "Typically causes loss of coordination and balance (ataxia), without affecting intelligence directly.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Cerebellar damage classically produces ataxia (a loss of coordinated movement) while leaving conscious thought and decision-making intact.",
+    "memoryTrick": "Cerebrum = the big thinker. Cerebellum = the 'little brain' fine-tuning movement and balance.",
+    "commonMisconception": "The cerebellum does not initiate voluntary movement — it only coordinates and fine-tunes movements that are initiated by the cerebrum's motor cortex."
+  },
+  "lastVerified": "2026-09-05"
+}

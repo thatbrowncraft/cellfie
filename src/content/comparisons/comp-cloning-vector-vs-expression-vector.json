@@ -1,0 +1,50 @@
+{
+  "id": "comp-cloning-vector-vs-expression-vector",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biotechnology",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "Cloning Vector"
+  },
+  "itemB": {
+    "name": "Expression Vector"
+  },
+  "overview": "Both are DNA vehicles used to carry a gene of interest into a host cell, but only one is built to actually make the gene's protein product.",
+  "genZNote": "Cloning vector: just a delivery van, drops off the gene and leaves. Expression vector: the delivery van plus a fully staffed factory to actually produce the protein.",
+  "aspects": [
+    {
+      "id": "purpose",
+      "label": "Main Purpose",
+      "valueA": "Simply carries and replicates a gene of interest inside a host, for storage or amplification.",
+      "valueB": "Carries the gene AND drives its transcription/translation into a functional protein.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "essential-elements",
+      "label": "Essential Elements Present",
+      "valueA": "Origin of replication and a selectable marker.",
+      "valueB": "Everything a cloning vector has, plus a promoter, ribosome-binding site, and other elements needed for gene expression.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "use-case",
+      "label": "Typical Use Case",
+      "valueA": "Amplifying/storing a gene for later use, such as building a genomic library.",
+      "valueB": "Producing a recombinant protein, such as insulin manufactured in bacteria.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Recombinant human insulin is made using an expression vector in E. coli — a landmark example frequently tested in biotechnology sections.",
+    "memoryTrick": "Cloning vector = copy and store. Expression vector = copy AND cook (make the protein).",
+    "commonMisconception": "Every expression vector is technically also a cloning vector — it just has extra features layered on top, not a totally separate category of molecule."
+  },
+  "lastVerified": "2026-09-05"
+}

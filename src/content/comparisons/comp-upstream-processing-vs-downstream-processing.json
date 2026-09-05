@@ -1,0 +1,50 @@
+{
+  "id": "comp-upstream-processing-vs-downstream-processing",
+  "domain": "laboratory-technique",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biotechnology",
+    "lab-technique"
+  ],
+  "itemA": {
+    "name": "Upstream Processing"
+  },
+  "itemB": {
+    "name": "Downstream Processing"
+  },
+  "overview": "The two broad stages of any industrial biotechnology production, split by whether the product is still being grown or is already being purified.",
+  "genZNote": "Upstream: growing the organism and getting it to make the product. Downstream: extracting, purifying, and packaging that product afterward.",
+  "aspects": [
+    {
+      "id": "stage",
+      "label": "Stage of Production",
+      "valueA": "Involves selecting the organism, media preparation, and fermentation/culturing to produce the desired biomolecule.",
+      "valueB": "Involves separation, purification, and formulation of the product after it has been produced.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "main-activities",
+      "label": "Main Activities",
+      "valueA": "Strain selection, media optimisation, bioreactor/fermenter operation.",
+      "valueB": "Filtration, centrifugation, chromatography, and formulation into a final, marketable product.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Growing genetically engineered bacteria in a bioreactor to produce insulin.",
+      "valueB": "Purifying and formulating that insulin into an injectable product.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Both stages together make up 'bioprocess technology' — a frequently tested biotechnology-industry concept, especially for products like insulin and vaccines.",
+    "memoryTrick": "Upstream = growing/making it. Downstream = cleaning/packaging it.",
+    "commonMisconception": "Downstream processing is not a minor afterthought — it often accounts for the majority of the total cost and complexity of producing a biotech product."
+  },
+  "lastVerified": "2026-09-05"
+}

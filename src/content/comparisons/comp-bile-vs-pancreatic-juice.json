@@ -1,0 +1,50 @@
+{
+  "id": "comp-bile-vs-pancreatic-juice",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Bile"
+  },
+  "itemB": {
+    "name": "Pancreatic Juice"
+  },
+  "overview": "Two digestive secretions that both act in the small intestine, but bile has no enzymes while pancreatic juice is enzyme-rich.",
+  "genZNote": "Bile: no enzymes, just breaks fat into tiny droplets for easier access. Pancreatic juice: the enzyme powerhouse that actually digests fats, proteins, and carbs.",
+  "aspects": [
+    {
+      "id": "enzyme-content",
+      "label": "Contains Digestive Enzymes?",
+      "valueA": "No — contains bile salts and pigments, no digestive enzymes.",
+      "valueB": "Yes — rich in enzymes like trypsin, amylase, and lipase.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "source",
+      "label": "Produced By",
+      "valueA": "Produced by the liver, stored and concentrated in the gallbladder.",
+      "valueB": "Produced by the pancreas.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "main-role",
+      "label": "Main Role",
+      "valueA": "Emulsifies fats, breaking large fat globules into smaller droplets to increase surface area for enzyme action.",
+      "valueB": "Chemically digests carbohydrates, proteins, and fats via its enzymes.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Bile doesn't chemically digest anything — its emulsifying action on fats is purely physical, a frequently tested distinction from actual enzymatic digestion.",
+    "memoryTrick": "Bile = emulsifies fat (no enzymes). Pancreatic juice = full enzyme toolkit.",
+    "commonMisconception": "Bile is not produced by the gallbladder — the gallbladder only stores and concentrates bile that the liver actually produces."
+  },
+  "lastVerified": "2026-09-05"
+}

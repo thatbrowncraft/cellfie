@@ -1,0 +1,50 @@
+{
+  "id": "comp-villi-vs-microvilli",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Villi"
+  },
+  "itemB": {
+    "name": "Microvilli"
+  },
+  "overview": "Two levels of surface-area-increasing folding in the small intestine, one visible to the naked eye and the other only under an electron microscope.",
+  "genZNote": "Villi: the intestine's finger-like carpet. Microvilli: the even tinier hairs on top of each of those fingers.",
+  "aspects": [
+    {
+      "id": "size-visibility",
+      "label": "Size and Visibility",
+      "valueA": "Finger-like projections visible with a light microscope, roughly 0.5-1.5 mm long.",
+      "valueB": "Microscopic projections on the surface of villi cells, visible only under an electron microscope.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "structure-level",
+      "label": "Structural Level",
+      "valueA": "Folds of the intestinal mucosa (multicellular structure).",
+      "valueB": "Extensions of the plasma membrane of a single intestinal epithelial cell.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "combined-name",
+      "label": "Combined Structure",
+      "valueA": "Collection of villi covering the intestinal lining.",
+      "valueB": "Microvilli on villi cells together form the 'brush border'.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Villi and microvilli together massively amplify the small intestine's absorptive surface area — often cited as increasing it several hundred-fold.",
+    "memoryTrick": "Villi = visible finger-like folds. Microvilli = the microscopic 'brush border' hairs on each villus cell.",
+    "commonMisconception": "Microvilli are not simply smaller versions of villi at the same structural level — they exist one level down, as membrane extensions of individual cells that make up each villus."
+  },
+  "lastVerified": "2026-09-05"
+}

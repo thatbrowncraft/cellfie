@@ -1,0 +1,51 @@
+{
+  "id": "comp-promoter-vs-operator",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "molecular-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Promoter"
+  },
+  "itemB": {
+    "name": "Operator"
+  },
+  "overview": "Two regulatory DNA sequences in an operon, one where RNA polymerase binds to start transcription and the other where a repressor can block it.",
+  "genZNote": "Promoter: where RNA polymerase parks and gets ready to go. Operator: the checkpoint gate that a repressor can slam shut.",
+  "aspects": [
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "The site where RNA polymerase binds to initiate transcription.",
+      "valueB": "The site where a repressor protein binds to block transcription.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "position",
+      "label": "Position Relative to Genes",
+      "valueA": "Located upstream of the structural genes, before the operator.",
+      "valueB": "Located between the promoter and the structural genes.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "bound-by",
+      "label": "Bound By",
+      "valueA": "Bound by RNA polymerase (and sigma factor in bacteria).",
+      "valueB": "Bound by a repressor protein (or sometimes an activator, depending on the system).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "In the lac operon, when lactose is absent, the repressor binds the operator and physically blocks RNA polymerase from transcribing the structural genes, even though the promoter is right next door.",
+    "memoryTrick": "Promoter = 'come on in', RNA polymerase's landing spot. Operator = the gate a repressor can lock.",
+    "commonMisconception": "The operator is not the same site as the promoter — they are adjacent but distinct sequences with opposite regulatory roles (enabling versus blocking transcription)."
+  },
+  "lastVerified": "2026-09-05"
+}

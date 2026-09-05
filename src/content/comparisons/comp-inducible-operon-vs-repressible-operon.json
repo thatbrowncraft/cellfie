@@ -1,0 +1,51 @@
+{
+  "id": "comp-inducible-operon-vs-repressible-operon",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "molecular-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Inducible Operon"
+  },
+  "itemB": {
+    "name": "Repressible Operon"
+  },
+  "overview": "Two types of operons distinguished by their default state and what kind of molecule flips that state.",
+  "genZNote": "Inducible operon: normally off, needs a substrate to switch it on. Repressible operon: normally on, needs a product to shut it off.",
+  "aspects": [
+    {
+      "id": "default-state",
+      "label": "Default State",
+      "valueA": "Normally switched OFF; turned ON by an inducer molecule.",
+      "valueB": "Normally switched ON; turned OFF by a corepressor molecule.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "typical-pathway",
+      "label": "Typical Metabolic Context",
+      "valueA": "Common in catabolic pathways, where the substrate itself induces the enzymes needed to break it down.",
+      "valueB": "Common in anabolic (biosynthetic) pathways, where the end product represses further synthesis.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "The lac operon, induced by lactose.",
+      "valueB": "The trp operon, repressed by tryptophan when it's already abundant.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The lac operon (inducible, catabolic) and trp operon (repressible, anabolic) are the two textbook examples almost always paired together in exam questions.",
+    "memoryTrick": "Inducible = OFF by default, substrate switches it ON. Repressible = ON by default, product switches it OFF.",
+    "commonMisconception": "'Repressible' doesn't mean the operon is normally off like an inducible one — it's actually the opposite, since a repressible operon starts out active and gets shut down only when its product builds up."
+  },
+  "lastVerified": "2026-09-05"
+}

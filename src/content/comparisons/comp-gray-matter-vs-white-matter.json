@@ -1,0 +1,56 @@
+{
+  "id": "comp-gray-matter-vs-white-matter",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology"
+  ],
+  "itemA": {
+    "name": "Gray Matter"
+  },
+  "itemB": {
+    "name": "White Matter"
+  },
+  "overview": "Two types of nervous tissue distinguished by composition and colour, reflecting their different roles in processing versus transmitting signals.",
+  "genZNote": "Gray matter: where the actual processing happens. White matter: the insulated cables carrying the signal between processing centres.",
+  "aspects": [
+    {
+      "id": "composition",
+      "label": "Main Composition",
+      "valueA": "Contains neuron cell bodies, dendrites, and unmyelinated fibres.",
+      "valueB": "Contains myelinated nerve fibres (axons) that connect different brain/spinal regions.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Site of synaptic processing and integration of information.",
+      "valueB": "Transmits electrical signals rapidly between different regions of gray matter.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "colour-reason",
+      "label": "Reason for Colour",
+      "valueA": "Appears grayish due to lack of myelin.",
+      "valueB": "Appears white due to the fatty myelin sheath around axons.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "location-in-brain-vs-cord",
+      "label": "Location Pattern",
+      "valueA": "Outer layer (cortex) in the brain, but inner (central) in the spinal cord.",
+      "valueB": "Inner region in the brain, but outer (peripheral) in the spinal cord.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Gray and white matter swap relative positions between the brain (gray outside, white inside) and the spinal cord (white outside, gray inside, forming a butterfly shape) — a classic diagram-based exam trap.",
+    "memoryTrick": "Gray matter = cell bodies, processing. White matter = myelinated wires, fast transmission.",
+    "commonMisconception": "White matter isn't 'inactive' tissue — it's essential for fast communication between different processing centres, not just passive wiring."
+  },
+  "lastVerified": "2026-09-05"
+}

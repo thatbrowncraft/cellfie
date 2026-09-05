@@ -1,0 +1,50 @@
+{
+  "id": "comp-selectable-marker-vs-reporter-gene",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biotechnology",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "Selectable Marker"
+  },
+  "itemB": {
+    "name": "Reporter Gene"
+  },
+  "overview": "Both are genes added to a vector to help confirm successful gene transfer, but they signal success in very different ways.",
+  "genZNote": "Selectable marker: kills off everyone who didn't get the gene. Reporter gene: lights up (sometimes literally) to show who did.",
+  "aspects": [
+    {
+      "id": "mechanism",
+      "label": "How Success Is Detected",
+      "valueA": "Confers resistance (e.g. to an antibiotic) so only successfully transformed cells survive selection.",
+      "valueB": "Produces an easily detectable, visible signal (colour, fluorescence, luminescence) in cells that took up the vector.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Ampicillin resistance gene (ampR).",
+      "valueB": "Green fluorescent protein (GFP) gene, or the lacZ gene (blue-white screening).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "what-happens-to-negatives",
+      "label": "Fate of Non-Transformed Cells",
+      "valueA": "Non-transformed cells are killed or fail to grow during selection.",
+      "valueB": "Non-transformed cells simply don't show the reporter signal, but aren't necessarily killed.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Blue-white screening using the lacZ reporter gene is a classic technique for visually distinguishing recombinant from non-recombinant bacterial colonies.",
+    "memoryTrick": "Selectable marker = survival test. Reporter gene = visible signal.",
+    "commonMisconception": "A selectable marker and a reporter gene are not mutually exclusive — a single vector often carries both, using one to select successful transformants and the other to confirm expression."
+  },
+  "lastVerified": "2026-09-05"
+}

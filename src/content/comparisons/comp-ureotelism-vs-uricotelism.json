@@ -1,0 +1,51 @@
+{
+  "id": "comp-ureotelism-vs-uricotelism",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "zoology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Ureotelism"
+  },
+  "itemB": {
+    "name": "Uricotelism"
+  },
+  "overview": "Two strategies for excreting nitrogenous waste, differing in the chemical form used and how much water that form requires.",
+  "genZNote": "Ureotelism: excreting waste as urea, needing a fair bit of water. Uricotelism: excreting it as uric acid, a water-saving strategy for animals that can't afford to lose fluid.",
+  "aspects": [
+    {
+      "id": "excreted-form",
+      "label": "Nitrogenous Waste Form",
+      "valueA": "Excretes nitrogenous waste mainly as urea.",
+      "valueB": "Excretes nitrogenous waste mainly as uric acid.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "water-requirement",
+      "label": "Water Requirement",
+      "valueA": "Requires a moderate amount of water to excrete urea in solution.",
+      "valueB": "Requires very little water, since uric acid is excreted as a semi-solid paste.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example-organism",
+      "label": "Example Organisms",
+      "valueA": "Humans and most other mammals, adult amphibians.",
+      "valueB": "Birds, reptiles, and insects — organisms needing to conserve water or reduce weight (as in flight).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Uricotelism is especially advantageous for egg-laying animals like birds and reptiles, since uric acid's low toxicity and low water need make it safe to store within a sealed egg.",
+    "memoryTrick": "Uricotelism = URIC acid, minimal water, common in birds/reptiles that can't afford water loss.",
+    "commonMisconception": "Ammonotelism (excreting waste as toxic ammonia, requiring lots of water) is a separate third strategy used by aquatic organisms like most fish — don't conflate it with ureotelism just because both involve more water than uricotelism."
+  },
+  "lastVerified": "2026-09-05"
+}

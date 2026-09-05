@@ -1,0 +1,50 @@
+{
+  "id": "comp-transformation-vs-transfection",
+  "domain": "molecular-biology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biotechnology",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "Transformation"
+  },
+  "itemB": {
+    "name": "Transfection"
+  },
+  "overview": "Both describe introducing foreign DNA into a cell, but the terms are conventionally split by whether the recipient is a bacterial/microbial cell or a eukaryotic cell.",
+  "genZNote": "Transformation: bacteria picking up new DNA off the street. Transfection: eukaryotic cells getting DNA delivered by a lab technician's careful method.",
+  "aspects": [
+    {
+      "id": "cell-type",
+      "label": "Recipient Cell Type",
+      "valueA": "Conventionally used for uptake of foreign DNA by bacterial or other microbial cells.",
+      "valueB": "Conventionally used for introduction of foreign DNA/RNA into eukaryotic (animal/plant) cells.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "method",
+      "label": "Typical Method",
+      "valueA": "Heat shock with calcium chloride treatment, or electroporation.",
+      "valueB": "Lipofection (lipid-based reagents), electroporation, or viral delivery.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "natural-occurrence",
+      "label": "Occurs Naturally?",
+      "valueA": "Can occur naturally in some bacteria (natural competence).",
+      "valueB": "Does not occur naturally in most eukaryotic cells — almost always an artificially induced lab technique.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Griffith's classic 1928 experiment demonstrating 'transformation' in bacteria is what gave the term its name and its historical significance in genetics.",
+    "memoryTrick": "Transformation = bacteria. Transfection = eukaryotic cells.",
+    "commonMisconception": "These terms are a convention, not a strict biological rule — some sources do use 'transformation' more loosely, but for exam purposes, stick to the bacteria-vs-eukaryote convention."
+  },
+  "lastVerified": "2026-09-05"
+}

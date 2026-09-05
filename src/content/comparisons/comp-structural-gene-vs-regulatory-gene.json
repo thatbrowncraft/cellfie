@@ -1,0 +1,50 @@
+{
+  "id": "comp-structural-gene-vs-regulatory-gene",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "molecular-biology"
+  ],
+  "itemA": {
+    "name": "Structural Gene"
+  },
+  "itemB": {
+    "name": "Regulatory Gene"
+  },
+  "overview": "Two categories of genes within an operon system, one coding for a functional protein and the other controlling whether that protein gets made.",
+  "genZNote": "Structural gene: actually codes for the working protein. Regulatory gene: codes for the protein that decides whether the structural gene gets switched on.",
+  "aspects": [
+    {
+      "id": "product",
+      "label": "Product Coded For",
+      "valueA": "Codes for enzymes or structural proteins that carry out the cell's actual metabolic work.",
+      "valueB": "Codes for a regulatory protein, such as a repressor, that controls the expression of structural genes.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "The lacZ, lacY, and lacA genes of the lac operon, coding for enzymes involved in lactose metabolism.",
+      "valueB": "The lacI gene, coding for the lac repressor protein.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "role-in-operon",
+      "label": "Role in the Operon",
+      "valueA": "The genes actually being turned on or off.",
+      "valueB": "The gene controlling whether those structural genes get turned on or off.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The lacI regulatory gene is technically located outside the lac operon itself, even though it directly controls it — a subtle but frequently tested detail.",
+    "memoryTrick": "Structural gene = does the work. Regulatory gene = controls whether the work happens.",
+    "commonMisconception": "The regulatory gene is not literally part of the operon it controls — in the classic lac operon example, lacI sits just outside the operon it regulates."
+  },
+  "lastVerified": "2026-09-05"
+}

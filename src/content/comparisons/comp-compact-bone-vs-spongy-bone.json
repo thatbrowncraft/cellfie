@@ -1,0 +1,49 @@
+{
+  "id": "comp-compact-bone-vs-spongy-bone",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology"
+  ],
+  "itemA": {
+    "name": "Compact Bone"
+  },
+  "itemB": {
+    "name": "Spongy Bone"
+  },
+  "overview": "Two types of bone tissue found in every bone, differing in density and internal structure.",
+  "genZNote": "Compact bone: dense, solid, the outer armour. Spongy bone: porous and lightweight, the inner honeycomb.",
+  "aspects": [
+    {
+      "id": "density",
+      "label": "Density / Structure",
+      "valueA": "Dense and solid, with a highly organised structure of osteons (Haversian systems).",
+      "valueB": "Porous, with a lattice-like network of trabeculae and open spaces.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "location",
+      "label": "Location in a Typical Bone",
+      "valueA": "Forms the hard outer shell of bones.",
+      "valueB": "Found in the inner core of bones, especially at the ends (epiphyses).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Provides strength and protection, resists bending/torsion.",
+      "valueB": "Provides structural support while keeping bone lightweight; often houses red bone marrow.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Spongy bone's open spaces are often where red bone marrow is found, the site of blood cell production (haematopoiesis).",
+    "memoryTrick": "Compact = dense and strong, on the outside. Spongy = porous and light, on the inside.",
+    "commonMisconception": "Spongy bone is not 'weak' or defective — its lattice structure is a deliberate design that provides support while significantly reducing overall bone weight."
+  },
+  "lastVerified": "2026-09-05"
+}

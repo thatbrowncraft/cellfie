@@ -1,0 +1,56 @@
+{
+  "id": "comp-cranial-nerves-vs-spinal-nerves",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology"
+  ],
+  "itemA": {
+    "name": "Cranial Nerves"
+  },
+  "itemB": {
+    "name": "Spinal Nerves"
+  },
+  "overview": "Two categories of peripheral nerves, distinguished by where they originate from the central nervous system.",
+  "genZNote": "Cranial nerves: direct lines straight out of the brain. Spinal nerves: lines that branch off along the spinal cord.",
+  "aspects": [
+    {
+      "id": "origin",
+      "label": "Origin",
+      "valueA": "Arise directly from the brain (brainstem mostly).",
+      "valueB": "Arise from the spinal cord.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "number-humans",
+      "label": "Number in Humans",
+      "valueA": "12 pairs.",
+      "valueB": "31 pairs.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "fiber-type",
+      "label": "Fibre Type",
+      "valueA": "Can be sensory, motor, or mixed, depending on the specific nerve.",
+      "valueB": "Almost all are mixed nerves, carrying both sensory and motor fibres.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Optic nerve (vision), vagus nerve (visceral control).",
+      "valueB": "Sciatic nerve, formed from spinal nerve roots in the lower back.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Humans have exactly 12 pairs of cranial nerves and 31 pairs of spinal nerves — both frequently tested counts.",
+    "memoryTrick": "Cranial = from the cranium (skull/brain). Spinal = from the spinal cord.",
+    "commonMisconception": "Not all cranial nerves are purely sensory or purely motor — several, like the vagus nerve, carry both sensory and motor fibres, similar to spinal nerves."
+  },
+  "lastVerified": "2026-09-05"
+}

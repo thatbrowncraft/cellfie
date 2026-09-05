@@ -1,0 +1,51 @@
+{
+  "id": "comp-blunt-ends-vs-sticky-ends",
+  "domain": "molecular-biology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biotechnology",
+    "molecular-biology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Blunt Ends"
+  },
+  "itemB": {
+    "name": "Sticky Ends"
+  },
+  "overview": "Two types of DNA fragment ends produced by restriction enzyme digestion, differing in whether they leave overhanging single strands.",
+  "genZNote": "Blunt ends: a clean, flat cut, no overhang. Sticky ends: a jagged cut leaving single-stranded overhangs that can grab a matching partner.",
+  "aspects": [
+    {
+      "id": "overhang",
+      "label": "Overhang Present?",
+      "valueA": "No overhang — both strands are cut at exactly the same position.",
+      "valueB": "Yes — a short single-stranded overhang is left on each fragment.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "ligation-ease",
+      "label": "Ease of Ligation",
+      "valueA": "Harder to join efficiently, since there's no complementary overhang to guide pairing.",
+      "valueB": "Easier and more efficient to join, since complementary overhangs base-pair before ligation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example-enzyme",
+      "label": "Example Enzyme",
+      "valueA": "SmaI.",
+      "valueB": "EcoRI, HindIII.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Sticky ends are strongly preferred in genetic engineering because their complementary overhangs make ligating a gene into a vector far more efficient.",
+    "memoryTrick": "Sticky ends 'stick' to their complementary partner before ligase seals them.",
+    "commonMisconception": "Blunt-end cutting restriction enzymes are not 'worse' or obsolete — they're still useful when a specific palindromic sticky-end site isn't available in the sequence of interest."
+  },
+  "lastVerified": "2026-09-05"
+}

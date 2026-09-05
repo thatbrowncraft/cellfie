@@ -1,0 +1,58 @@
+{
+  "id": "comp-myopia-vs-hypermetropia",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "sense-organs",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Myopia (Near-sightedness)"
+  },
+  "itemB": {
+    "name": "Hypermetropia (Far-sightedness)"
+  },
+  "overview": "Two common refractive errors of the eye, differing in where light rays focus relative to the retina and which corrective lens fixes them.",
+  "genZNote": "Myopia: distant things look blurry, close things are fine. Hypermetropia: the opposite problem entirely.",
+  "aspects": [
+    {
+      "id": "focus-point",
+      "label": "Where Light Focuses",
+      "valueA": "In front of the retina.",
+      "valueB": "Behind the retina.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "eyeball-shape",
+      "label": "Common Structural Cause",
+      "valueA": "Elongated eyeball, or excessive curvature of the cornea/lens.",
+      "valueB": "Shortened eyeball, or insufficiently curved cornea/lens.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "correction",
+      "label": "Corrective Lens Used",
+      "valueA": "Concave (diverging) lens.",
+      "valueB": "Convex (converging) lens.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "vision-affected",
+      "label": "Vision Affected",
+      "valueA": "Distant objects appear blurry; near vision is normal.",
+      "valueB": "Near objects appear blurry; distant vision is normal.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Myopia is corrected with a concave lens, hypermetropia with a convex lens — a very frequently tested pairing with ray diagrams.",
+    "memoryTrick": "Myopia = 'my-oh-so-close', can't see far. Hypermetropia = can't see stuff that's near.",
+    "commonMisconception": "Presbyopia (age-related loss of near focus, due to lens stiffening) is a separate condition from hypermetropia, even though both make near objects hard to see."
+  },
+  "lastVerified": "2026-09-05"
+}

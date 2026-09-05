@@ -1,0 +1,50 @@
+{
+  "id": "comp-mechanical-digestion-vs-chemical-digestion",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Mechanical Digestion"
+  },
+  "itemB": {
+    "name": "Chemical Digestion"
+  },
+  "overview": "Two complementary processes that break down food, one using physical force and the other using enzymes to break chemical bonds.",
+  "genZNote": "Mechanical digestion: physically ripping food into smaller pieces. Chemical digestion: enzymes breaking the actual molecular bonds.",
+  "aspects": [
+    {
+      "id": "method",
+      "label": "Method",
+      "valueA": "Physical breakdown of food into smaller pieces (chewing, churning) without changing its chemical structure.",
+      "valueB": "Enzymatic breakdown of large food molecules into simpler chemical units.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Chewing (mastication) in the mouth, churning in the stomach.",
+      "valueB": "Amylase breaking down starch into maltose.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "purpose",
+      "label": "Purpose",
+      "valueA": "Increases surface area for enzymes to act on more efficiently.",
+      "valueB": "Actually converts complex molecules into simpler, absorbable units.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Mechanical digestion doesn't change food chemically at all — its entire purpose is to increase surface area so chemical digestion can work faster and more completely.",
+    "memoryTrick": "Mechanical = breaking it into smaller pieces. Chemical = breaking the actual bonds.",
+    "commonMisconception": "Chewing alone does not digest starch — chemical digestion (starting with salivary amylase) is what actually begins breaking it down, even though it starts in the same place (the mouth)."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "comp-gene-therapy-vs-gene-editing",
+  "domain": "molecular-biology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biotechnology",
+    "genetics"
+  ],
+  "itemA": {
+    "name": "Gene Therapy"
+  },
+  "itemB": {
+    "name": "Gene Editing"
+  },
+  "overview": "Both aim to correct genetic problems, but gene therapy typically adds a working gene copy while gene editing directly changes the existing DNA sequence.",
+  "genZNote": "Gene therapy: adding a spare working copy of the part that's broken. Gene editing: actually going in and fixing the broken part itself.",
+  "aspects": [
+    {
+      "id": "approach",
+      "label": "Basic Approach",
+      "valueA": "Introduces a normal/functional copy of a gene into cells, usually without altering the existing faulty gene.",
+      "valueB": "Directly modifies the existing DNA sequence at a precise location (e.g. using CRISPR-Cas9).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "precision",
+      "label": "Precision of the Change",
+      "valueA": "Adds a new gene copy; often doesn't target a specific genomic location.",
+      "valueB": "Makes a precise, targeted change at a specific genomic site.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "ADA-SCID treatment using a viral vector to deliver a working ADA gene.",
+      "valueB": "CRISPR-Cas9 correcting the sickle-cell mutation directly in a patient's own DNA.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "ADA-SCID (Severe Combined Immunodeficiency) is the landmark first successful human gene therapy case, frequently cited in biotechnology sections.",
+    "memoryTrick": "Gene therapy = add a working copy. Gene editing = fix the actual sequence.",
+    "commonMisconception": "Gene editing tools like CRISPR are not automatically classified as gene therapy — the distinction matters for how the treatment is regulated and delivered."
+  },
+  "lastVerified": "2026-09-05"
+}

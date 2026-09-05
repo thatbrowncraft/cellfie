@@ -1,0 +1,50 @@
+{
+  "id": "comp-reflex-action-vs-voluntary-action",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Reflex Action"
+  },
+  "itemB": {
+    "name": "Voluntary Action"
+  },
+  "overview": "Two types of responses to a stimulus, differing in whether conscious brain involvement is needed before the response occurs.",
+  "genZNote": "Reflex action: your body reacts before your brain even finishes registering it. Voluntary action: you consciously decide, then act.",
+  "aspects": [
+    {
+      "id": "brain-involvement",
+      "label": "Conscious Brain Involvement",
+      "valueA": "Involuntary and rapid — typically processed at the spinal cord level, without waiting for conscious brain input.",
+      "valueB": "Requires conscious thought and decision-making, processed in the cerebrum.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "speed",
+      "label": "Speed of Response",
+      "valueA": "Very fast, since the pathway (reflex arc) bypasses higher brain processing.",
+      "valueB": "Slower, since it requires full cognitive processing before a response.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Pulling your hand away from a hot object before you consciously feel the pain.",
+      "valueB": "Deciding to pick up a cup of tea and drink it.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A reflex action occurs so quickly precisely because the signal is processed at the spinal cord, not routed all the way up to the brain first — a key mechanism-based exam point.",
+    "memoryTrick": "Reflex = fast, automatic, spinal cord shortcut. Voluntary = slow, deliberate, full brain involvement.",
+    "commonMisconception": "You do still consciously perceive the sensation (like pain) during a reflex — you simply become aware of it after the reflex movement has already happened, not before."
+  },
+  "lastVerified": "2026-09-05"
+}

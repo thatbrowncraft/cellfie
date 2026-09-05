@@ -1,0 +1,50 @@
+{
+  "id": "comp-sensory-neuron-vs-motor-neuron",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Sensory Neuron"
+  },
+  "itemB": {
+    "name": "Motor Neuron"
+  },
+  "overview": "Two functional types of neurons, distinguished by the direction information travels — toward the central nervous system or away from it.",
+  "genZNote": "Sensory neuron: carries the 'what's happening' report inward. Motor neuron: carries the 'do this' command outward.",
+  "aspects": [
+    {
+      "id": "direction",
+      "label": "Direction of Impulse",
+      "valueA": "Carries impulses from receptors toward the central nervous system (afferent).",
+      "valueB": "Carries impulses from the central nervous system to effectors like muscles/glands (efferent).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "also-called",
+      "label": "Also Known As",
+      "valueA": "Afferent neuron.",
+      "valueB": "Efferent neuron.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "A neuron carrying a 'hot surface' signal from skin to the spinal cord.",
+      "valueB": "A neuron carrying a 'contract' signal from the spinal cord to a hand muscle.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "In a reflex arc, the sequence is always: receptor → sensory neuron → relay/association neuron → motor neuron → effector — a heavily diagrammed exam sequence.",
+    "memoryTrick": "Sensory = Afferent = Arrives at the CNS. Motor = Efferent = Exits the CNS.",
+    "commonMisconception": "A single reflex arc pathway is not made of only sensory and motor neurons — most reflex arcs also involve at least one relay (interneuron) in between."
+  },
+  "lastVerified": "2026-09-05"
+}

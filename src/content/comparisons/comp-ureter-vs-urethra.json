@@ -1,0 +1,50 @@
+{
+  "id": "comp-ureter-vs-urethra",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Ureter"
+  },
+  "itemB": {
+    "name": "Urethra"
+  },
+  "overview": "Two similarly-named but very different tubes of the urinary system, easily confused because of how close their names sound.",
+  "genZNote": "Ureter: carries urine from kidney to bladder. Urethra: carries it from bladder to the outside.",
+  "aspects": [
+    {
+      "id": "connects",
+      "label": "What It Connects",
+      "valueA": "Connects each kidney to the urinary bladder.",
+      "valueB": "Connects the urinary bladder to the outside of the body.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "number",
+      "label": "Number in the Body",
+      "valueA": "Two ureters (one from each kidney).",
+      "valueB": "One urethra.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "length-by-sex",
+      "label": "Length Difference by Sex",
+      "valueA": "Roughly the same length in both sexes.",
+      "valueB": "Significantly shorter in females than in males, which is why females have a higher risk of urinary tract infections.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The urethra's shorter length in females is a frequently tested reason for their higher susceptibility to urinary tract infections (UTIs).",
+    "memoryTrick": "Ureter (with an 'e') carries urine from kidnEy. Urethra sounds like 'exit-thra' — carries urine out.",
+    "commonMisconception": "These two names are not interchangeable despite sounding similar — mixing them up is one of the most common spelling/concept errors in anatomy exams."
+  },
+  "lastVerified": "2026-09-05"
+}

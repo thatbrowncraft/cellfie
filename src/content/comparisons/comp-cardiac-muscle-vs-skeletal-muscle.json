@@ -1,0 +1,57 @@
+{
+  "id": "comp-cardiac-muscle-vs-skeletal-muscle",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Cardiac Muscle"
+  },
+  "itemB": {
+    "name": "Skeletal Muscle"
+  },
+  "overview": "Both muscle types are striated, but cardiac muscle is involuntary and uniquely built for continuous, rhythmic contraction.",
+  "genZNote": "Cardiac muscle: striated but works on autopilot, never taking a break. Skeletal muscle: striated and under your direct control.",
+  "aspects": [
+    {
+      "id": "control",
+      "label": "Type of Control",
+      "valueA": "Involuntary — contracts automatically, without conscious control.",
+      "valueB": "Voluntary — under conscious control.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "nucleus",
+      "label": "Nucleus per Cell",
+      "valueA": "Usually single, centrally located nucleus (uninucleate), with branching fibres.",
+      "valueB": "Multiple nuclei per cell (multinucleate), with unbranched fibres.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "intercalated-discs",
+      "label": "Special Structural Feature",
+      "valueA": "Contains intercalated discs connecting adjacent cells, allowing coordinated contraction.",
+      "valueB": "Lacks intercalated discs.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "fatigue-resistance",
+      "label": "Fatigue Resistance",
+      "valueA": "Highly resistant to fatigue — must work continuously throughout life.",
+      "valueB": "Fatigues relatively quickly with sustained heavy use.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Intercalated discs in cardiac muscle allow electrical signals to pass rapidly between cells, letting the heart contract as a single coordinated unit.",
+    "memoryTrick": "Both are striated, but cardiac = involuntary and tireless; skeletal = voluntary and fatigable.",
+    "commonMisconception": "Cardiac muscle is not simply 'smooth muscle with stripes' — it's a genuinely distinct third muscle type with its own unique cell structure (intercalated discs, branching)."
+  },
+  "lastVerified": "2026-09-05"
+}
