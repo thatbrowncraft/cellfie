@@ -1,0 +1,112 @@
+{
+  "id": "aeromonas-hydrophila",
+  "scientificName": "Aeromonas hydrophila",
+  "commonName": "Freshwater aeromonad",
+  "category": "bacteria",
+  "quickTags": [
+    "Waterborne pathogen",
+    "Oxidase positive",
+    "Opportunistic",
+    "Wound/GI infections"
+  ],
+  "genZNote": "The reason 'clean-looking' lake water and fish tanks aren't automatically safe for open wounds — it's an oxidase-positive Gram-negative rod that thrives in fresh water.",
+  "searchKeywords": [
+    "aeromonas",
+    "freshwater bacteria wound infection",
+    "fish tank bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Aeromonadales",
+    "family": "Aeromonadaceae",
+    "genus": "Aeromonas",
+    "species": "A. hydrophila"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.3-1 x 1-3.5 µm",
+    "sporeForming": false,
+    "capsule": "None significant",
+    "encapsulated": false,
+    "motility": "Motile via a single polar flagellum",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Fresh and brackish water, sediment, and moist soil worldwide",
+    "hostAssociation": "Environmental organism; opportunistic pathogen of humans, fish, and amphibians",
+    "environmentalOccurrence": "Common in lakes, rivers, ponds, and even chlorinated water systems and aquariums",
+    "reservoir": "Fresh/brackish water and aquatic animals"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Blood agar, MacConkey agar; selective Aeromonas media available",
+      "growthCharacteristics": "Facultative anaerobe, grows well at a wide temperature range (4-42°C)",
+      "colonyMorphology": "Large, smooth, often beta-hemolytic colonies on blood agar",
+      "hemolysis": "Beta-hemolytic (most strains)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Glucose fermentation",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Oxidase-positive Gram-negative rod, an important distinguishing feature from the oxidase-negative Enterobacterales it otherwise resembles biochemically",
+    "Beta-hemolytic colonies on blood agar",
+    "Classic exposure history involves freshwater contact — swimming, fishing injuries, leech therapy, or contaminated wounds near lakes/rivers",
+    "Can cause both wound infections and self-limited to severe gastroenteritis"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Wound and soft-tissue infections (often after freshwater exposure)",
+      "Gastroenteritis",
+      "Cellulitis, sometimes progressing to necrotizing fasciitis in immunocompromised hosts",
+      "Rare bacteremia"
+    ],
+    "virulenceFactors": [
+      "Aerolysin (pore-forming toxin)",
+      "Proteases",
+      "Motility/flagella"
+    ],
+    "transmission": "Freshwater/brackish water exposure to wounds, ingestion of contaminated water or food, medicinal leech therapy",
+    "epidemiology": "A well-known cause of infection after freshwater trauma (e.g., fishing hook injuries, near-drowning) and after medicinal leech use",
+    "labSignificance": "Oxidase positivity distinguishes it from morphologically similar Enterobacterales on routine biochemical panels"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Rod (bacillus)",
+    "keyBiochemicalReaction": "Oxidase positive; beta-hemolytic",
+    "importantDisease": "Freshwater wound infection; gastroenteritis",
+    "importantTest": "Oxidase test; exposure history to fresh/brackish water",
+    "distinguishingFeature": "Oxidase-positive Gram-negative rod strongly linked to freshwater exposure and medicinal leech therapy"
+  },
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Aeromonas Hydrophila\"",
+      "kind": "educational"
+    }
+  ]
+}

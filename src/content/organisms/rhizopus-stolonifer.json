@@ -1,0 +1,115 @@
+{
+  "id": "rhizopus-stolonifer",
+  "scientificName": "Rhizopus stolonifer",
+  "commonName": "Black bread mold",
+  "category": "fungi",
+  "quickTags": [
+    "Zygomycete",
+    "Aseptate hyphae",
+    "Bread mold",
+    "Opportunistic"
+  ],
+  "genZNote": "The fuzzy black mold on old bread — a classic teaching organism for aseptate (coenocytic) hyphae, and a reminder that not all fungi have septa.",
+  "searchKeywords": [
+    "black bread mold",
+    "rhizopus",
+    "zygomycetes",
+    "mucormycosis mold"
+  ],
+  "classification": {
+    "domain": "Eukarya",
+    "kingdom": "Fungi",
+    "phylum": "Mucoromycota",
+    "class": "Mucoromycetes",
+    "order": "Mucorales",
+    "family": "Rhizopodaceae",
+    "genus": "Rhizopus",
+    "species": "R. stolonifer"
+  },
+  "morphology": {
+    "shape": "Filamentous mold with rhizoids and sporangiophores",
+    "shapeCategory": "filamentous",
+    "arrangement": "Coenocytic (aseptate) hyphae with root-like rhizoids and stolons",
+    "arrangementCategory": "single",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Hyphae broad, ~10-15 µm wide",
+    "sporeForming": true,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Grows extremely rapidly, spreading via horizontal stolons that anchor with root-like rhizoids at contact points."
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "aseptate"
+    ],
+    "reproductiveStructures": [
+      "Sporangiophores",
+      "Sporangia containing sporangiospores",
+      "Rhizoids"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Decaying organic matter, especially bread, fruit, and vegetables",
+    "hostAssociation": "Free-living environmental mold; rare but serious opportunistic pathogen (mucormycosis) in immunocompromised or diabetic ketoacidosis patients",
+    "environmentalOccurrence": "Extremely common, fast-spreading household and food-spoilage mold",
+    "reservoir": "Decaying plant material, soil, indoor environments"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Lactophenol cotton blue mount",
+      "appearance": "Broad, ribbon-like aseptate hyphae with sporangiophores arising near rhizoids",
+      "arrangement": "Coenocytic mold"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar",
+      "growthCharacteristics": "Extremely fast-growing, can fill a plate within 2-3 days",
+      "colonyMorphology": "Cottony, white becoming gray-black as sporangia mature",
+      "pigmentation": "White to gray-black as sporangiospores mature"
+    },
+    "biochemicalTests": []
+  },
+  "identificationClues": [
+    "Broad, aseptate (coenocytic) hyphae distinguish the Mucorales from septate molds like Aspergillus and Penicillium",
+    "Distinctive rhizoids (root-like structures) at the base of sporangiophores, giving the genus its name",
+    "Extremely rapid, spreading colony growth — classic bread-mold behavior",
+    "In rare invasive disease, aseptate hyphae with wide-angle branching on tissue biopsy point toward mucormycosis, a life-threatening infection in diabetic ketoacidosis or severe immunosuppression"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Rare but life-threatening mucormycosis in diabetic ketoacidosis, neutropenia, or other severe immunosuppression"
+    ],
+    "virulenceFactors": [
+      "Rapid angioinvasive growth in susceptible hosts"
+    ],
+    "transmission": "Inhalation of environmental spores or wound contamination; not transmitted person-to-person",
+    "epidemiology": "Overwhelmingly an environmental spoilage organism; invasive disease is a rare but medically urgent exception",
+    "labSignificance": "Broad aseptate hyphae with wide-angle branching on tissue histopathology is a key differentiator from the narrow, septate, acute-angle branching of Aspergillus"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (eukaryote)",
+    "shape": "Filamentous mold (aseptate/coenocytic hyphae)",
+    "keyBiochemicalReaction": "Not applicable — identified morphologically",
+    "importantDisease": "Rare mucormycosis in diabetic ketoacidosis/immunosuppression",
+    "importantTest": "Microscopic aseptate hyphae with rhizoids; wide-angle branching on tissue biopsy",
+    "distinguishingFeature": "Classic aseptate (coenocytic) mold; the common black bread mold and an agent of mucormycosis in rare invasive disease"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "aspergillus-fumigatus",
+      "relationship": "commonly-confused"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Mucormycosis\"",
+      "kind": "educational"
+    }
+  ]
+}

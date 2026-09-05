@@ -1,0 +1,103 @@
+{
+  "id": "bacillus-thuringiensis",
+  "scientificName": "Bacillus thuringiensis",
+  "commonName": "Bt",
+  "category": "bacteria",
+  "quickTags": [
+    "Biopesticide",
+    "Endospore-former",
+    "Crystal toxin producer",
+    "Non-pathogenic to humans"
+  ],
+  "genZNote": "The bacterium behind 'Bt corn' and organic-approved insect sprays — it makes a crystal toxin that's lethal to caterpillars but harmless to us.",
+  "searchKeywords": [
+    "bt toxin",
+    "bt corn",
+    "biopesticide bacteria",
+    "cry toxin"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Bacillales",
+    "family": "Bacillaceae",
+    "genus": "Bacillus",
+    "species": "B. thuringiensis"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells or short chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~1-1.2 x 3-5 µm",
+    "sporeForming": true,
+    "capsule": "None typically",
+    "encapsulated": false,
+    "motility": "Motile via peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe",
+    "notes": "Produces a parasporal crystalline protein inclusion (Cry/delta-endotoxin) alongside its endospore, visible as a distinctive crystal under the microscope."
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, insect cadavers, plant surfaces",
+    "hostAssociation": "Not a human commensal or pathogen; insect-pathogenic in its target hosts",
+    "environmentalOccurrence": "Common soil bacterium worldwide; also formulated commercially as a biological insecticide",
+    "reservoir": "Soil and agricultural environments"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain; crystal (parasporal body) stain",
+      "appearance": "Gram-positive rods with oval endospores and a distinct parasporal crystal",
+      "arrangement": "Single cells or chains"
+    },
+    "culture": {
+      "media": "Nutrient agar, blood agar",
+      "growthCharacteristics": "Aerobic/facultative growth, forms spores under nutrient limitation",
+      "colonyMorphology": "Large, flat, spreading, dull-white colonies resembling B. cereus"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Hemolysis",
+        "result": "Often beta-hemolytic"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Genetically and phenotypically very close to Bacillus cereus, distinguished mainly by the parasporal crystal toxin it produces alongside its spore",
+    "The Cry (crystal) delta-endotoxin is specifically insecticidal, disrupting the gut lining of susceptible insect larvae after ingestion",
+    "Widely used as an organic-approved insecticide spray and as the source of Cry genes engineered into 'Bt' crops",
+    "Not considered a human pathogen under normal exposure, unlike its close relative B. cereus"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Bacillus (rod), endospore-forming",
+    "keyBiochemicalReaction": "Catalase positive; produces parasporal crystal (Cry toxin)",
+    "importantDisease": "None in humans — insect pathogen used as a biopesticide",
+    "importantTest": "Microscopic visualization of the parasporal crystal alongside the spore",
+    "distinguishingFeature": "Very close relative of B. cereus that makes an insecticidal crystal toxin, the basis of organic pest control and Bt-engineered crops"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "bacillus-cereus",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "bacillus-anthracis",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of Bacillus cereus group biology and Cry toxins",
+      "kind": "educational"
+    }
+  ]
+}

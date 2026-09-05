@@ -1,0 +1,114 @@
+{
+  "id": "chromobacterium-violaceum",
+  "scientificName": "Chromobacterium violaceum",
+  "commonName": "Violet pigment bacterium",
+  "category": "bacteria",
+  "quickTags": [
+    "Violet pigment (violacein)",
+    "Environmental organism",
+    "Rare opportunistic pathogen",
+    "Oxidase positive"
+  ],
+  "genZNote": "Produces violacein, a deep purple pigment so striking that this organism is basically a walking microbiology demo — usually harmless, but capable of a nasty infection in the right (wrong) circumstances.",
+  "searchKeywords": [
+    "violacein",
+    "purple bacteria",
+    "chromobacterium"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Betaproteobacteria",
+    "order": "Neisseriales",
+    "family": "Chromobacteriaceae",
+    "genus": "Chromobacterium",
+    "species": "C. violaceum"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.6-0.9 x 1.5-3.5 µm",
+    "sporeForming": false,
+    "capsule": "None significant",
+    "encapsulated": false,
+    "motility": "Motile via one polar and several lateral flagella",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil and water in tropical and subtropical regions",
+    "hostAssociation": "Free-living environmental organism; rare opportunistic pathogen in humans following wound contamination",
+    "environmentalOccurrence": "Widespread in warm freshwater and soil worldwide, especially in tropical climates",
+    "reservoir": "Soil and stagnant fresh water"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Blood agar, MacConkey agar",
+      "growthCharacteristics": "Facultative anaerobe, grows well at 20-37°C",
+      "colonyMorphology": "Distinctive violet-black colonies from violacein pigment; some strains are non-pigmented",
+      "pigmentation": "Deep violet (violacein) in pigmented strains; pigmentation can be lost or reduced with temperature/strain variation"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Catalase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Striking violet-black colony pigmentation from violacein, one of the most visually distinctive pigments in clinical/environmental microbiology",
+    "Oxidase-positive Gram-negative rod, distinguishing it from most Enterobacterales",
+    "Rare but potentially fulminant opportunistic infections follow contamination of wounds with soil or stagnant water, especially in warm climates",
+    "Non-pigmented strains exist and can be misidentified without biochemical confirmation"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Rare but severe soft-tissue infections, sepsis, and abscesses following wound contamination with contaminated soil/water"
+    ],
+    "virulenceFactors": [
+      "Violacein (also has antimicrobial/antioxidant properties)",
+      "Quorum-sensing-regulated virulence factors"
+    ],
+    "transmission": "Environmental exposure — contamination of skin wounds with soil or stagnant fresh water, particularly in tropical/subtropical regions",
+    "epidemiology": "Uncommon but associated with high mortality when it does cause invasive disease, especially in immunocompromised hosts",
+    "labSignificance": "Violet pigmentation plus oxidase positivity is a strong presumptive identification clue"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Rod (bacillus)",
+    "keyBiochemicalReaction": "Oxidase positive; violacein pigment production",
+    "importantDisease": "Rare severe wound/soft-tissue infection or sepsis (tropical climates)",
+    "importantTest": "Colony pigmentation (violacein); oxidase test",
+    "distinguishingFeature": "One of the most visually distinctive pigment-producing bacteria; usually environmental but capable of severe opportunistic disease"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "serratia-marcescens",
+      "relationship": "commonly-confused"
+    },
+    {
+      "id": "pseudomonas-aeruginosa",
+      "relationship": "commonly-confused"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Chromobacterium Violaceum\"",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "id": "bifidobacterium-bifidum",
+  "scientificName": "Bifidobacterium bifidum",
+  "commonName": "Bifid bacterium",
+  "category": "bacteria",
+  "quickTags": [
+    "Normal gut microbiota",
+    "Probiotic",
+    "Anaerobe",
+    "Y-shaped cells"
+  ],
+  "genZNote": "One of the first colonizers of the breastfed infant gut, and a probiotic label regular. Shaped like a tiny 'Y' under the microscope.",
+  "searchKeywords": [
+    "bifidobacteria",
+    "infant gut flora",
+    "probiotic bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Actinomycetota (Actinobacteria)",
+    "class": "Actinomycetes",
+    "order": "Bifidobacteriales",
+    "family": "Bifidobacteriaceae",
+    "genus": "Bifidobacterium",
+    "species": "B. bifidum"
+  },
+  "morphology": {
+    "shape": "Pleomorphic rod, often branched/bifid (Y- or V-shaped)",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "Single cells, V-forms, or clusters",
+    "arrangementCategory": "single",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "Variable, ~0.5-1.3 x 1.5-8 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate anaerobe",
+    "oxygenRequirementCategory": "obligate-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human and animal gastrointestinal tract",
+    "hostAssociation": "Major normal microbiota of the breastfed infant colon; persists at lower levels through adulthood",
+    "environmentalOccurrence": "Also found in fermented dairy products and probiotic supplements",
+    "reservoir": "Human gut microbiota"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive pleomorphic rods, often Y- or club-shaped",
+      "arrangement": "Singles, V-forms, clusters"
+    },
+    "culture": {
+      "media": "Selective anaerobic media (e.g., BSM, MRS with cysteine)",
+      "growthCharacteristics": "Strict anaerobe; requires reducing conditions",
+      "colonyMorphology": "Small, white to cream, convex colonies under anaerobic incubation"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "-"
+      },
+      {
+        "test": "Fructose-6-phosphate phosphoketolase (bifid shunt)",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Distinctive branched/bifid (Y-shaped) rod morphology under the microscope, unlike most Gram-positive rods",
+    "Strict anaerobe — will not grow with room air exposure",
+    "Ferments carbohydrates via the unique 'bifid shunt' (fructose-6-phosphate phosphoketolase pathway)",
+    "Dominant genus in the breastfed infant gut, supported by human milk oligosaccharides"
+  ],
+  "clinicalImportance": {
+    "diseases": [],
+    "transmission": "Vertically acquired from mother/environment during infancy; not a pathogen",
+    "epidemiology": "One of the best-studied beneficial gut commensals and probiotic organisms",
+    "labSignificance": "Rarely isolated in routine clinical workflows since it is not disease-associated; more relevant to microbiome and probiotic research"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Pleomorphic, often Y-shaped rod",
+    "keyBiochemicalReaction": "Bifid shunt (fructose-6-phosphate phosphoketolase) positive",
+    "importantDisease": "None — beneficial gut commensal/probiotic",
+    "importantTest": "Strict anaerobic growth requirement; characteristic branched morphology",
+    "distinguishingFeature": "Dominant early-life gut colonizer, especially in breastfed infants"
+  },
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, gut microbiota and probiotics overview",
+      "kind": "educational"
+    }
+  ]
+}

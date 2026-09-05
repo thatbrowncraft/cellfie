@@ -1,0 +1,101 @@
+{
+  "id": "rhizobium-leguminosarum",
+  "scientificName": "Rhizobium leguminosarum",
+  "commonName": "Root nodule bacterium",
+  "category": "bacteria",
+  "quickTags": [
+    "Nitrogen fixation",
+    "Plant symbiont",
+    "Non-pathogenic",
+    "Soil bacterium"
+  ],
+  "genZNote": "The reason legumes don't need nitrogen fertilizer — it moves into root nodules and converts atmospheric N2 into a form the plant can use, rent-free (well, in exchange for sugar).",
+  "searchKeywords": [
+    "nitrogen fixing bacteria",
+    "root nodule bacteria",
+    "legume symbiont"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Alphaproteobacteria",
+    "order": "Hyphomicrobiales",
+    "family": "Rhizobiaceae",
+    "genus": "Rhizobium",
+    "species": "R. leguminosarum"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus), pleomorphic in symbiotic state",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.5-0.9 x 1.2-3 µm",
+    "sporeForming": false,
+    "capsule": "Extracellular polysaccharide layer",
+    "encapsulated": false,
+    "motility": "Motile via flagella (free-living form)",
+    "motile": true,
+    "oxygenRequirement": "Obligate aerobe (microaerophilic within nodules)",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, and root nodules of leguminous plants (peas, beans, lentils, clover)",
+    "hostAssociation": "Symbiotic nitrogen-fixing partner of leguminous plants; not associated with humans or animals",
+    "environmentalOccurrence": "Widespread agricultural soil organism, host-specific to particular legume species/varieties",
+    "reservoir": "Soil and legume root nodules"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods; pleomorphic bacteroid forms inside nodules",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Yeast extract-mannitol agar (YEMA)",
+      "growthCharacteristics": "Aerobic, moderate growth rate",
+      "colonyMorphology": "Circular, convex, translucent to white, often mucoid (gummy) colonies from exopolysaccharide production"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Nitrogenase activity (acetylene reduction assay)",
+        "result": "+ (in symbiotic bacteroid form)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Forms root nodules on specific host legumes, visible as small swellings on the root system",
+    "Converts inert atmospheric nitrogen (N2) into ammonia via the nitrogenase enzyme complex, a process requiring an oxygen-poor microenvironment inside the nodule",
+    "Mucoid, gummy colonies on yeast-mannitol agar from exopolysaccharide production",
+    "Host-specific — different Rhizobium species/biovars nodulate different legume hosts"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Rod (bacillus)",
+    "keyBiochemicalReaction": "Nitrogenase-mediated nitrogen fixation",
+    "importantDisease": "None — beneficial plant symbiont",
+    "importantTest": "Root nodule formation on host legumes; acetylene reduction assay for nitrogenase activity",
+    "distinguishingFeature": "Classic biological nitrogen fixer, foundational to sustainable/legume agriculture"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "agrobacterium-tumefaciens",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "azotobacter-vinelandii",
+      "relationship": "similar-morphology"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of biological nitrogen fixation and rhizobia",
+      "kind": "educational"
+    }
+  ]
+}

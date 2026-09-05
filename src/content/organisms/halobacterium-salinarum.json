@@ -1,0 +1,89 @@
+{
+  "id": "halobacterium-salinarum",
+  "scientificName": "Halobacterium salinarum",
+  "commonName": "Salt-loving archaeon",
+  "category": "other",
+  "quickTags": [
+    "Archaea",
+    "Extreme halophile",
+    "Non-pathogenic",
+    "Pink/red pigment"
+  ],
+  "genZNote": "Turns salt evaporation ponds hot pink — it's an archaeon so committed to salty life that it needs near-saturated brine just to stay intact.",
+  "searchKeywords": [
+    "halophile archaea",
+    "salt loving bacteria",
+    "pink salt ponds"
+  ],
+  "classification": {
+    "domain": "Archaea",
+    "phylum": "Euryarchaeota",
+    "class": "Halobacteria",
+    "order": "Halobacteriales",
+    "family": "Halobacteriaceae",
+    "genus": "Halobacterium",
+    "species": "H. salinarum"
+  },
+  "morphology": {
+    "shape": "Rod (pleomorphic)",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~0.5-1 x 2-6 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile via polar flagella",
+    "motile": true,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Requires near-saturated salt concentrations (~20-30% NaCl) to maintain cell wall/membrane integrity; cells lyse in low-salt water. Contains bacteriorhodopsin, a light-driven proton pump, in its purple membrane patches."
+  },
+  "habitat": {
+    "naturalHabitat": "Hypersaline environments such as salt evaporation ponds, salt lakes, and salted foods",
+    "hostAssociation": "Free-living environmental organism, not human-associated",
+    "environmentalOccurrence": "Responsible for the characteristic pink-red color of many commercial solar salt ponds",
+    "reservoir": "Hypersaline water bodies"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not Gram-stained routinely; wet mount in high-salt buffer",
+      "appearance": "Pleomorphic rods, sometimes with a purple membrane visible",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Complex high-salt (~25% NaCl) media",
+      "growthCharacteristics": "Obligate aerobe requiring near-saturated salt concentrations; will not grow at low salinity",
+      "colonyMorphology": "Red-pink pigmented colonies from carotenoid (bacterioruberin) pigments",
+      "pigmentation": "Red-pink (bacterioruberin carotenoids)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Growth requirement for ~20-30% NaCl",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Absolute requirement for near-saturated salt concentrations — cells lyse if placed in ordinary low-salt water",
+    "Striking red-pink pigmentation from carotenoid pigments, responsible for the visible color of salt evaporation ponds worldwide",
+    "Contains bacteriorhodopsin, a light-driven proton pump studied as a classic model of light-energy conversion",
+    "An archaeon, not a bacterium, despite the misleading genus name 'Halobacterium'"
+  ],
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (archaeon)",
+    "shape": "Pleomorphic rod",
+    "keyBiochemicalReaction": "Obligate requirement for near-saturated NaCl",
+    "importantDisease": "None — non-pathogenic extremophile",
+    "importantTest": "Growth only in high-salt (~20-30% NaCl) media",
+    "distinguishingFeature": "Extreme halophile responsible for the pink color of salt evaporation ponds; a classic archaeal extremophile despite its bacterial-sounding name"
+  },
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of archaeal diversity and extremophiles",
+      "kind": "educational"
+    }
+  ]
+}

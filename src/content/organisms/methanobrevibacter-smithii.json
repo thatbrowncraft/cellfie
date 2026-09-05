@@ -1,0 +1,89 @@
+{
+  "id": "methanobrevibacter-smithii",
+  "scientificName": "Methanobrevibacter smithii",
+  "commonName": "Human gut methanogen",
+  "category": "other",
+  "quickTags": [
+    "Archaea",
+    "Methanogen",
+    "Normal gut microbiota",
+    "Anaerobic"
+  ],
+  "genZNote": "Not a bacterium at all — it's an archaeon living in the human gut, quietly converting hydrogen and CO2 into methane so your other gut microbes can work more efficiently.",
+  "searchKeywords": [
+    "methanogen",
+    "gut archaea",
+    "methanobrevibacter",
+    "human microbiome archaea"
+  ],
+  "classification": {
+    "domain": "Archaea",
+    "phylum": "Euryarchaeota",
+    "class": "Methanobacteria",
+    "order": "Methanobacteriales",
+    "family": "Methanobacteriaceae",
+    "genus": "Methanobrevibacter",
+    "species": "M. smithii"
+  },
+  "morphology": {
+    "shape": "Short rod to coccobacillus",
+    "shapeCategory": "coccobacillus",
+    "arrangement": "Single cells or short chains",
+    "arrangementCategory": "single",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~0.6-0.7 x 1-1.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate anaerobe",
+    "oxygenRequirementCategory": "obligate-anaerobe",
+    "notes": "An archaeon, not a bacterium — has a distinct cell wall (pseudopeptidoglycan) and unique archaeal membrane lipids; not meaningfully described by the bacterial Gram stain."
+  },
+  "habitat": {
+    "naturalHabitat": "Human and animal large intestine",
+    "hostAssociation": "The dominant archaeal member of the normal human gut microbiome in most people who harbor detectable methanogens",
+    "environmentalOccurrence": "Found almost exclusively within mammalian/human GI tracts, not free-living in soil or water",
+    "reservoir": "Human gut microbiota"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not Gram-stained in routine practice; identified via specialized anaerobic culture or molecular methods",
+      "appearance": "Short rods/coccobacilli",
+      "arrangement": "Single or short chains"
+    },
+    "culture": {
+      "media": "Specialized strict-anaerobic methanogen media (rarely performed in clinical labs)",
+      "growthCharacteristics": "Strict anaerobe; uses hydrogen and CO2 (or formate) to produce methane",
+      "colonyMorphology": "Not routinely characterized clinically"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Methanogenesis from H2/CO2",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "An archaeon, not a bacterium — belongs to an entirely separate domain of life with distinct cell wall chemistry and membrane lipids",
+    "Consumes hydrogen produced by fermenting gut bacteria and converts it, with CO2, into methane — helping maintain efficient fermentation by other gut microbes",
+    "Strict anaerobe, essentially never encountered outside the mammalian GI tract",
+    "Its abundance correlates with breath methane production, used clinically in some breath testing for GI motility/SIBO evaluation"
+  ],
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (archaeon)",
+    "shape": "Short rod/coccobacillus",
+    "keyBiochemicalReaction": "Methanogenesis from hydrogen and CO2",
+    "importantDisease": "None — normal gut archaeal commensal",
+    "importantTest": "Breath methane testing reflects its metabolic activity",
+    "distinguishingFeature": "The dominant archaeon of the human gut microbiome, illustrating that not every gut microbe is a bacterium"
+  },
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of the human gut microbiome and methanogenic archaea",
+      "kind": "educational"
+    }
+  ]
+}

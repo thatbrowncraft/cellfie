@@ -1,0 +1,110 @@
+{
+  "id": "streptomyces-griseus",
+  "scientificName": "Streptomyces griseus",
+  "commonName": "Soil actinomycete",
+  "category": "bacteria",
+  "quickTags": [
+    "Antibiotic producer",
+    "Filamentous",
+    "Soil organism",
+    "Earthy odor"
+  ],
+  "genZNote": "The organism that gave us streptomycin, and the reason freshly turned soil smells the way it does (geosmin).",
+  "searchKeywords": [
+    "streptomyces",
+    "soil actinomycete",
+    "streptomycin producer",
+    "geosmin"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Actinomycetota (Actinobacteria)",
+    "class": "Actinomycetes",
+    "order": "Kitasatosporales",
+    "family": "Streptomycetaceae",
+    "genus": "Streptomyces",
+    "species": "S. griseus"
+  },
+  "morphology": {
+    "shape": "Branching filamentous (mycelial)",
+    "shapeCategory": "filamentous",
+    "arrangement": "Branching hyphal network with aerial spore chains",
+    "arrangementCategory": "single",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "Filaments <1 µm diameter, extending several µm to mm",
+    "sporeForming": true,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile (spores can be dispersed passively)",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Forms a branching substrate mycelium plus aerial hyphae bearing chains of arthrospores, resembling a filamentous fungus at colony level despite being a true bacterium."
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, especially organically rich, well-aerated soils",
+    "hostAssociation": "Free-living environmental organism, not human-associated",
+    "environmentalOccurrence": "Extremely widespread in soil worldwide; a major producer of geosmin, the compound responsible for 'earthy' post-rain smell",
+    "reservoir": "Soil"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive branching filaments with aerial spore chains",
+      "arrangement": "Mycelial network"
+    },
+    "culture": {
+      "media": "Starch-casein agar, ISP media",
+      "growthCharacteristics": "Slow-growing aerobe; colonies mature over several days to weeks",
+      "colonyMorphology": "Dry, powdery, chalky colonies, often gray-green from spore pigmentation",
+      "pigmentation": "Gray to gray-green spore pigment; diffusible pigments vary by strain"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Acid-fast stain",
+        "result": "-"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Filamentous, branching colony morphology that looks more like a mold than typical bacteria — a classic teaching point for distinguishing actinomycetes",
+    "Dry, powdery, chalky colonies with gray to gray-green aerial spore mass",
+    "Produces the volatile compound geosmin, responsible for the smell of soil after rain",
+    "Historically important as the original source of streptomycin, the first effective antituberculosis antibiotic"
+  ],
+  "clinicalImportance": {
+    "diseases": [],
+    "transmission": "Not a human pathogen; environmental soil organism",
+    "epidemiology": "Not disease-associated — included for its enormous industrial/pharmaceutical importance",
+    "labSignificance": "Illustrates the Actinomycetota (actinomycete) group's fungus-like colony morphology despite being true bacteria"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Filamentous, branching (mycelial)",
+    "keyBiochemicalReaction": "Catalase positive; not acid-fast",
+    "importantDisease": "None — soil organism, source of streptomycin",
+    "importantTest": "Colony morphology resembling a mold; geosmin production",
+    "distinguishingFeature": "Original natural source of streptomycin; genus responsible for most of the world's naturally derived antibiotics"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "nocardia-asteroides",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "actinomyces-israelii",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of Actinomycetota and antibiotic-producing soil bacteria",
+      "kind": "educational"
+    }
+  ]
+}

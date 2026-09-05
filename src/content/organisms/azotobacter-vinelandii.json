@@ -1,0 +1,102 @@
+{
+  "id": "azotobacter-vinelandii",
+  "scientificName": "Azotobacter vinelandii",
+  "commonName": "Free-living nitrogen fixer",
+  "category": "bacteria",
+  "quickTags": [
+    "Free-living nitrogen fixation",
+    "Non-pathogenic",
+    "Soil bacterium",
+    "Cyst-forming"
+  ],
+  "genZNote": "Fixes nitrogen without needing a plant host at all — just does it out in the open soil, no symbiosis required.",
+  "searchKeywords": [
+    "free living nitrogen fixer",
+    "azotobacter",
+    "soil nitrogen fixation"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Pseudomonadales",
+    "family": "Pseudomonadaceae",
+    "genus": "Azotobacter",
+    "species": "A. vinelandii"
+  },
+  "morphology": {
+    "shape": "Large ovoid rod to coccus, pleomorphic",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "Single cells or pairs",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~1.5-2 x 2-4 µm (unusually large for a bacterium)",
+    "sporeForming": false,
+    "capsule": "Thick capsule; can form dormant cysts",
+    "encapsulated": true,
+    "motility": "Motile via peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Protects its oxygen-sensitive nitrogenase enzyme via an unusually high rate of respiration that keeps intracellular oxygen low, rather than by anaerobic sequestration."
+  },
+  "habitat": {
+    "naturalHabitat": "Neutral to alkaline soils and freshwater",
+    "hostAssociation": "Free-living; not symbiotic and not associated with humans/animals",
+    "environmentalOccurrence": "Common in agricultural soils; some strains marketed as biofertilizer inoculants",
+    "reservoir": "Soil"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative large pleomorphic rods/cocci",
+      "arrangement": "Single cells or pairs"
+    },
+    "culture": {
+      "media": "Nitrogen-free (Ashby's) medium",
+      "growthCharacteristics": "Aerobic; grows on nitrogen-free media by fixing its own atmospheric nitrogen",
+      "colonyMorphology": "Large, mucoid, often brown-black pigmented colonies from melanin-like pigment"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "+"
+      },
+      {
+        "test": "Growth on nitrogen-free medium",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Grows on nitrogen-free media, a defining diagnostic feature demonstrating free-living nitrogen fixation",
+    "Unusually large cell size for a bacterium; can form thick-walled dormant cysts resistant to desiccation",
+    "Some strains produce dark brown-black melanin-like pigment on aging cultures",
+    "Fixes nitrogen aerobically, unlike Rhizobium which relies on a low-oxygen nodule microenvironment"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Pleomorphic rod/coccus",
+    "keyBiochemicalReaction": "Growth on nitrogen-free medium (free-living nitrogen fixation)",
+    "importantDisease": "None — beneficial free-living soil organism",
+    "importantTest": "Ashby's nitrogen-free agar growth",
+    "distinguishingFeature": "Fixes atmospheric nitrogen aerobically without a plant host, unlike symbiotic Rhizobium"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "rhizobium-leguminosarum",
+      "relationship": "similar-morphology"
+    },
+    {
+      "id": "pseudomonas-putida",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of biological nitrogen fixation and rhizobia",
+      "kind": "educational"
+    }
+  ]
+}

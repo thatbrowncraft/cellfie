@@ -1,0 +1,97 @@
+{
+  "id": "streptococcus-thermophilus",
+  "scientificName": "Streptococcus thermophilus",
+  "commonName": "Yogurt streptococcus",
+  "category": "bacteria",
+  "quickTags": [
+    "Yogurt starter culture",
+    "Catalase negative",
+    "Non-pathogenic"
+  ],
+  "genZNote": "One half of the yogurt duo — it warms things up (literally, thermophilic) while Lactobacillus bulgaricus brings the tang.",
+  "searchKeywords": [
+    "yogurt bacteria",
+    "s thermophilus",
+    "dairy starter culture"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Streptococcaceae",
+    "genus": "Streptococcus",
+    "species": "S. thermophilus"
+  },
+  "morphology": {
+    "shape": "Coccus",
+    "shapeCategory": "coccus",
+    "arrangement": "Chains and pairs",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.7-0.9 µm",
+    "sporeForming": false,
+    "capsule": "None significant",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe (aerotolerant)",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Milk and dairy fermentations",
+    "hostAssociation": "Not part of normal human microbiota; used as a food-grade starter culture",
+    "environmentalOccurrence": "Industrially propagated for yogurt and some cheese production",
+    "reservoir": "Dairy starter culture stocks"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in chains",
+      "arrangement": "Chains and pairs"
+    },
+    "culture": {
+      "media": "M17 agar",
+      "growthCharacteristics": "Thermophilic; optimal growth around 40-45°C",
+      "colonyMorphology": "Small, translucent colonies",
+      "hemolysis": "Non-hemolytic (gamma)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "-"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Thrives at higher temperatures (~40-45°C) than most streptococci, hence 'thermophilus'",
+    "Catalase-negative, chain-forming coccus like other streptococci",
+    "Works symbiotically with Lactobacillus delbrueckii subsp. bulgaricus in traditional yogurt fermentation",
+    "Non-hemolytic and considered food-safe (GRAS status) — an important contrast to the pyogenic streptococci"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus (chains)",
+    "keyBiochemicalReaction": "Catalase negative; lactose fermenter",
+    "importantDisease": "None — food-grade organism, not a pathogen",
+    "importantTest": "Growth at 45°C; non-hemolytic",
+    "distinguishingFeature": "Thermophilic dairy starter culture, paired with L. bulgaricus to make yogurt"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "streptococcus-salivarius",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — food microbiology overview of dairy starter cultures",
+      "kind": "educational"
+    }
+  ]
+}

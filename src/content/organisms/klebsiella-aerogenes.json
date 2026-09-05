@@ -1,0 +1,123 @@
+{
+  "id": "klebsiella-aerogenes",
+  "scientificName": "Klebsiella aerogenes",
+  "commonName": "Aerogenes (formerly Enterobacter aerogenes)",
+  "category": "bacteria",
+  "quickTags": [
+    "Hospital-associated",
+    "Reclassified taxon",
+    "AmpC resistance risk",
+    "Motile Klebsiella"
+  ],
+  "genZNote": "Used to be filed under Enterobacter, then genomics said 'actually, that's a Klebsiella' — a good reminder that taxonomy keeps changing under clinicians' feet.",
+  "searchKeywords": [
+    "enterobacter aerogenes",
+    "klebsiella aerogenes",
+    "hospital gram negative rod"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Enterobacteriaceae",
+    "genus": "Klebsiella",
+    "species": "K. aerogenes"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.6-1 x 1.2-3 µm",
+    "sporeForming": false,
+    "capsule": "Thin capsule (less prominent than K. pneumoniae)",
+    "encapsulated": true,
+    "motility": "Motile via peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe",
+    "notes": "Unlike most other Klebsiella species, K. aerogenes is motile — historically its classification under Enterobacter reflected this."
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, water, and the human/animal gastrointestinal tract",
+    "hostAssociation": "Can be part of normal gut microbiota in small numbers; opportunistic nosocomial pathogen",
+    "environmentalOccurrence": "Found in soil, sewage, and hospital environments including sinks and equipment",
+    "reservoir": "Human GI tract, hospital surfaces/equipment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar, blood agar",
+      "growthCharacteristics": "Facultative anaerobe",
+      "colonyMorphology": "Mucoid, lactose-fermenting pink colonies on MacConkey agar"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Motility",
+        "result": "+"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "+"
+      },
+      {
+        "test": "Citrate",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Motile — an unusual feature that distinguishes it from most other Klebsiella species and reflects its former classification as Enterobacter aerogenes",
+    "Mucoid, lactose-fermenting colonies on MacConkey agar similar to other Enterobacterales",
+    "Chromosomal AmpC beta-lactamase can be induced, leading to resistance emerging during cephalosporin therapy",
+    "Recovered from the same hospital-associated infection sites (urine, blood, respiratory tract, wounds) as other Enterobacterales"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Urinary tract infections",
+      "Bloodstream infections",
+      "Ventilator-associated pneumonia",
+      "Wound infections",
+      "Healthcare-associated outbreaks"
+    ],
+    "virulenceFactors": [
+      "Capsule (less prominent than K. pneumoniae)",
+      "Biofilm formation",
+      "Inducible AmpC beta-lactamase"
+    ],
+    "transmission": "Nosocomial — contaminated hospital equipment, hands, and water sources, or endogenous gut flora translocation",
+    "epidemiology": "One of the SPICE/AmpC-producing organisms of concern, since resistance can emerge on therapy even when initial susceptibility testing looks favorable",
+    "labSignificance": "Motility is a helpful differentiator from other Klebsiella species when working through an unusual identification"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Motile; inducible AmpC beta-lactamase",
+    "importantDisease": "Nosocomial UTI, bacteremia, VAP",
+    "importantTest": "Motility test; AmpC induction concern with cephalosporin therapy",
+    "distinguishingFeature": "Reclassified from Enterobacter to Klebsiella based on genomic data; notably motile unlike most Klebsiella"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "klebsiella-pneumoniae",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "enterobacter-cloacae",
+      "relationship": "commonly-confused"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Enterobacter Infections\"",
+      "kind": "educational"
+    }
+  ]
+}

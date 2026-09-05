@@ -1,0 +1,89 @@
+{
+  "id": "deinococcus-radiodurans",
+  "scientificName": "Deinococcus radiodurans",
+  "commonName": "Conan the Bacterium",
+  "category": "bacteria",
+  "quickTags": [
+    "Extremophile",
+    "Radiation-resistant",
+    "Non-pathogenic",
+    "Pink pigment"
+  ],
+  "genZNote": "Nicknamed 'Conan the Bacterium' for surviving radiation doses that would shred human DNA thousands of times over — it just repairs the damage and keeps going.",
+  "searchKeywords": [
+    "radiation resistant bacteria",
+    "extremophile",
+    "conan the bacterium"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Deinococcota",
+    "class": "Deinococci",
+    "order": "Deinococcales",
+    "family": "Deinococcaceae",
+    "genus": "Deinococcus",
+    "species": "D. radiodurans"
+  },
+  "morphology": {
+    "shape": "Coccus",
+    "shapeCategory": "coccus",
+    "arrangement": "Pairs or tetrads",
+    "arrangementCategory": "pairs",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~1.5-3.5 µm diameter",
+    "sporeForming": false,
+    "capsule": "Thick cell envelope with multiple layers",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Despite staining Gram-positive, has an unusual multilayered cell envelope with features of both Gram-positive and Gram-negative cells."
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, dust, animal feces, and irradiated environments",
+    "hostAssociation": "Free-living environmental organism, not human-associated",
+    "environmentalOccurrence": "Found in dried foods, radioactive waste sites, and other extreme environments where its DNA-repair capability is favored",
+    "reservoir": "Soil and desiccated/irradiated environments"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in pairs or tetrads",
+      "arrangement": "Pairs/tetrads"
+    },
+    "culture": {
+      "media": "Tryptone-glucose-yeast (TGY) agar",
+      "growthCharacteristics": "Aerobic, slow-growing, forms distinctive pink/red colonies",
+      "colonyMorphology": "Smooth, convex, pink to red-pigmented colonies",
+      "pigmentation": "Pink to red carotenoid pigment (deinoxanthin)"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Extraordinary resistance to ionizing radiation, desiccation, and UV light due to highly efficient DNA double-strand break repair machinery",
+    "Characteristic pink-red carotenoid pigment (deinoxanthin) gives colonies a distinctive color",
+    "Forms pairs or tetrads of cocci with an unusual multilayered cell envelope",
+    "Not a pathogen — used as a research model for DNA repair and considered for bioremediation of radioactive waste"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-positive (atypical envelope)",
+    "shape": "Coccus (pairs/tetrads)",
+    "keyBiochemicalReaction": "Catalase positive; extreme radiation resistance",
+    "importantDisease": "None — non-pathogenic extremophile",
+    "importantTest": "Survival/growth after high-dose ionizing radiation exposure",
+    "distinguishingFeature": "One of the most radiation-resistant organisms known, prized as a DNA-repair model and bioremediation candidate"
+  },
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of extremophile bacteria and DNA repair mechanisms",
+      "kind": "educational"
+    }
+  ]
+}

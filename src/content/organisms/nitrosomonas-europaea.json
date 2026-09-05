@@ -1,0 +1,94 @@
+{
+  "id": "nitrosomonas-europaea",
+  "scientificName": "Nitrosomonas europaea",
+  "commonName": "Ammonia-oxidizing bacterium",
+  "category": "bacteria",
+  "quickTags": [
+    "Nitrogen cycle",
+    "Chemolithotroph",
+    "Non-pathogenic",
+    "Ammonia oxidizer"
+  ],
+  "genZNote": "Step one of nitrification: it eats ammonia for energy and hands off nitrite to Nitrobacter, keeping the whole nitrogen cycle (and your aquarium filter) running.",
+  "searchKeywords": [
+    "nitrifying bacteria",
+    "ammonia oxidizer",
+    "nitrogen cycle bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Betaproteobacteria",
+    "order": "Nitrosomonadales",
+    "family": "Nitrosomonadaceae",
+    "genus": "Nitrosomonas",
+    "species": "N. europaea"
+  },
+  "morphology": {
+    "shape": "Rod to ellipsoidal",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells or pairs",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.8-1.1 x 1-1.7 µm",
+    "sporeForming": false,
+    "capsule": "None significant",
+    "encapsulated": false,
+    "motility": "Motile via one or two polar/subpolar flagella",
+    "motile": true,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Chemolithoautotroph — obtains energy by oxidizing ammonia (NH3) to nitrite (NO2-) rather than from organic carbon."
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, freshwater, wastewater treatment systems, and aquarium/aquaculture biofilters",
+    "hostAssociation": "Free-living environmental organism, not human-associated",
+    "environmentalOccurrence": "Central to the first step of nitrification in soils, water treatment plants, and aquarium filtration",
+    "reservoir": "Soil, water, biofilters"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods/ellipsoids",
+      "arrangement": "Single cells or pairs"
+    },
+    "culture": {
+      "media": "Ammonium-mineral salts medium (no organic carbon)",
+      "growthCharacteristics": "Slow-growing obligate chemolithotroph; requires ammonia as sole energy source",
+      "colonyMorphology": "Rarely characterized by colony morphology; typically studied in liquid culture or biofilm"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Ammonia oxidation (nitrite production)",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Obtains all its energy from oxidizing ammonia to nitrite — will not grow on standard organic media",
+    "First step of the two-step nitrification process, handing nitrite to Nitrobacter-type organisms for the second step",
+    "Essential to municipal wastewater treatment nitrogen removal and to establishing a 'cycled' aquarium filter",
+    "Not associated with human or animal disease"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Rod/ellipsoidal",
+    "keyBiochemicalReaction": "Ammonia oxidation to nitrite (chemolithotrophy)",
+    "importantDisease": "None — environmental nitrogen-cycle organism",
+    "importantTest": "Obligate growth on ammonia as energy source; nitrite production",
+    "distinguishingFeature": "Performs the first step of nitrification (ammonia → nitrite), essential to the global nitrogen cycle and wastewater treatment"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "nitrobacter-winogradskyi",
+      "relationship": "same-laboratory-workflow"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of the nitrogen cycle and nitrifying bacteria",
+      "kind": "educational"
+    }
+  ]
+}

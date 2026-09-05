@@ -1,0 +1,112 @@
+{
+  "id": "mucor-spp",
+  "scientificName": "Mucor spp.",
+  "commonName": "Pin mold",
+  "category": "fungi",
+  "quickTags": [
+    "Zygomycete",
+    "Aseptate hyphae",
+    "Environmental mold",
+    "Opportunistic"
+  ],
+  "genZNote": "Rhizopus's less rooty cousin — same broad aseptate hyphae, same mucormycosis risk in the wrong host, just without the rhizoids.",
+  "searchKeywords": [
+    "mucor",
+    "pin mold",
+    "zygomycetes",
+    "mucormycosis"
+  ],
+  "classification": {
+    "domain": "Eukarya",
+    "kingdom": "Fungi",
+    "phylum": "Mucoromycota",
+    "class": "Mucoromycetes",
+    "order": "Mucorales",
+    "family": "Mucoraceae",
+    "genus": "Mucor",
+    "species": "Mucor spp."
+  },
+  "morphology": {
+    "shape": "Filamentous mold with erect sporangiophores",
+    "shapeCategory": "filamentous",
+    "arrangement": "Coenocytic (aseptate) hyphae; no rhizoids at sporangiophore base (key distinction from Rhizopus)",
+    "arrangementCategory": "single",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Hyphae broad, ~6-15 µm wide",
+    "sporeForming": true,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "aseptate"
+    ],
+    "reproductiveStructures": [
+      "Sporangiophores (unbranched or loosely branched)",
+      "Sporangia containing sporangiospores"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, decaying plant material, and animal dung",
+    "hostAssociation": "Free-living environmental mold; rare opportunistic pathogen (mucormycosis) in severely immunocompromised or diabetic ketoacidosis patients",
+    "environmentalOccurrence": "Common contaminant of soil, dust, and spoiled food",
+    "reservoir": "Soil, decaying organic matter"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Lactophenol cotton blue mount",
+      "appearance": "Broad aseptate hyphae with sporangiophores lacking rhizoids at the base",
+      "arrangement": "Coenocytic mold"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar",
+      "growthCharacteristics": "Fast-growing at room temperature",
+      "colonyMorphology": "Cottony, white to gray, becoming darker as sporangia mature"
+    },
+    "biochemicalTests": []
+  },
+  "identificationClues": [
+    "Broad, aseptate (coenocytic) hyphae, like Rhizopus, but Mucor lacks rhizoids at the base of its sporangiophores — the key microscopic distinguishing feature between the two genera",
+    "Fast-growing, cottony colonies typical of the Mucorales order",
+    "In tissue, wide-angle branching aseptate hyphae raise suspicion for mucormycosis, particularly in diabetic ketoacidosis or profound immunosuppression",
+    "Common environmental contaminant, only rarely clinically significant"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Rare but life-threatening mucormycosis in diabetic ketoacidosis or severe immunosuppression"
+    ],
+    "virulenceFactors": [
+      "Rapid angioinvasive growth in susceptible hosts"
+    ],
+    "transmission": "Inhalation of environmental spores or wound contamination; not transmitted person-to-person",
+    "epidemiology": "Overwhelmingly environmental; clinically significant disease is rare and occurs almost exclusively in specific high-risk hosts",
+    "labSignificance": "Absence of rhizoids at the sporangiophore base helps distinguish Mucor from Rhizopus on microscopy"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (eukaryote)",
+    "shape": "Filamentous mold (aseptate/coenocytic hyphae)",
+    "keyBiochemicalReaction": "Not applicable — identified morphologically",
+    "importantDisease": "Rare mucormycosis in diabetic ketoacidosis/immunosuppression",
+    "importantTest": "Microscopic aseptate hyphae without rhizoids (distinguishes from Rhizopus)",
+    "distinguishingFeature": "Aseptate Mucorales mold lacking the rhizoids that define Rhizopus; both are agents of mucormycosis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "rhizopus-stolonifer",
+      "relationship": "commonly-confused"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Mucormycosis\"",
+      "kind": "educational"
+    }
+  ]
+}

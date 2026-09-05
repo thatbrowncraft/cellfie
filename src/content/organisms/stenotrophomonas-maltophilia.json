@@ -1,0 +1,121 @@
+{
+  "id": "stenotrophomonas-maltophilia",
+  "scientificName": "Stenotrophomonas maltophilia",
+  "commonName": "S. malto",
+  "category": "bacteria",
+  "quickTags": [
+    "Hospital-associated",
+    "Intrinsically multidrug-resistant",
+    "Oxidase variable",
+    "Nosocomial"
+  ],
+  "genZNote": "Intrinsically resistant to most standard antibiotics before it even meets one — hospital microbiology treats it as a 'different rulebook' organism from the start.",
+  "searchKeywords": [
+    "stenotrophomonas",
+    "s malto",
+    "multidrug resistant gram negative"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Xanthomonadales",
+    "family": "Xanthomonadaceae",
+    "genus": "Stenotrophomonas",
+    "species": "S. maltophilia"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.5-1 x 1.5-4 µm",
+    "sporeForming": false,
+    "capsule": "None significant",
+    "encapsulated": false,
+    "motility": "Motile via multiple polar flagella",
+    "motile": true,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Water, soil, plant surfaces, and moist hospital environments",
+    "hostAssociation": "Environmental organism; opportunistic nosocomial pathogen, especially in immunocompromised or ventilated patients",
+    "environmentalOccurrence": "Frequently isolated from hospital water systems, sinks, ventilator equipment, and indwelling devices",
+    "reservoir": "Hospital water sources and contaminated medical equipment"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Blood agar, MacConkey agar (grows slowly)",
+      "growthCharacteristics": "Obligate aerobe, non-fermenter",
+      "colonyMorphology": "Smooth, lavender-green tinted colonies with an ammonia-like odor on some media",
+      "pigmentation": "Pale lavender-green tint on some media"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "Negative to weakly positive (variable, key distinguishing feature)"
+      },
+      {
+        "test": "DNase",
+        "result": "+"
+      },
+      {
+        "test": "Lysine decarboxylase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Oxidase-negative or only weakly positive, distinguishing it from most other non-fermenting Gram-negative rods like Pseudomonas",
+    "Intrinsically resistant to carbapenems and many other beta-lactams via a chromosomal metallo-beta-lactamase, making empiric therapy choices unusually narrow",
+    "Frequently recovered from respiratory secretions in ventilated or cystic fibrosis patients, though colonization vs. true infection can be hard to distinguish",
+    "Lavender-green tinted colonies with a distinctive ammonia-like smell on some media"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Ventilator-associated pneumonia",
+      "Bloodstream infections (especially catheter-associated)",
+      "Wound infections in immunocompromised patients",
+      "Respiratory colonization/infection in cystic fibrosis"
+    ],
+    "virulenceFactors": [
+      "Biofilm formation on medical devices",
+      "Intrinsic multidrug resistance (including carbapenem resistance)"
+    ],
+    "transmission": "Nosocomial — contaminated hospital water, equipment, and devices; not typically transmitted person-to-person",
+    "epidemiology": "An increasingly recognized cause of healthcare-associated infection in critically ill and immunocompromised patients, notable for its unusual intrinsic resistance profile",
+    "labSignificance": "Its oxidase-negative/weak result and intrinsic carbapenem resistance are key clues that separate it from Pseudomonas aeruginosa on an antibiogram"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Oxidase negative/weak; DNase positive",
+    "importantDisease": "Ventilator-associated pneumonia; catheter-associated bloodstream infection",
+    "importantTest": "Oxidase test; antibiogram showing intrinsic carbapenem resistance",
+    "distinguishingFeature": "Intrinsically multidrug-resistant nonfermenter recovered from hospital water/equipment, distinct from Pseudomonas by its oxidase result"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "pseudomonas-aeruginosa",
+      "relationship": "commonly-confused"
+    },
+    {
+      "id": "acinetobacter-baumannii",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Stenotrophomonas Maltophilia\"",
+      "kind": "educational"
+    }
+  ]
+}

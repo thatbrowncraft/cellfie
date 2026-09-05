@@ -1,0 +1,94 @@
+{
+  "id": "nitrobacter-winogradskyi",
+  "scientificName": "Nitrobacter winogradskyi",
+  "commonName": "Nitrite-oxidizing bacterium",
+  "category": "bacteria",
+  "quickTags": [
+    "Nitrogen cycle",
+    "Chemolithotroph",
+    "Non-pathogenic",
+    "Nitrite oxidizer"
+  ],
+  "genZNote": "Step two of nitrification: takes the nitrite Nitrosomonas made and finishes the job, oxidizing it to nitrate that plants can actually use.",
+  "searchKeywords": [
+    "nitrite oxidizing bacteria",
+    "nitrification",
+    "nitrobacter"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Alphaproteobacteria",
+    "order": "Hyphomicrobiales",
+    "family": "Nitrobacteraceae",
+    "genus": "Nitrobacter",
+    "species": "N. winogradskyi"
+  },
+  "morphology": {
+    "shape": "Rod to pear-shaped",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells, often budding",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.5-0.9 x 1-2 µm",
+    "sporeForming": false,
+    "capsule": "None significant",
+    "encapsulated": false,
+    "motility": "Non-motile or motile via a single polar flagellum",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Chemolithoautotroph that oxidizes nitrite (NO2-) to nitrate (NO3-) for energy; reproduces by budding."
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, freshwater, and wastewater treatment systems",
+    "hostAssociation": "Free-living environmental organism, not human-associated",
+    "environmentalOccurrence": "Performs the second step of nitrification alongside ammonia-oxidizers like Nitrosomonas",
+    "reservoir": "Soil, water, biofilters"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods, sometimes pear-shaped, budding",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Nitrite-mineral salts medium (no organic carbon)",
+      "growthCharacteristics": "Very slow-growing obligate chemolithotroph; requires nitrite as sole energy source",
+      "colonyMorphology": "Rarely characterized by colony morphology; typically studied in liquid culture"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Nitrite oxidation (nitrate production)",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Obtains energy by oxidizing nitrite to nitrate — will not grow on standard organic media",
+    "Completes the two-step nitrification process started by ammonia-oxidizers such as Nitrosomonas",
+    "Very slow growth rate compared to most heterotrophic bacteria, a key reason 'cycling' a new aquarium filter takes weeks",
+    "Not associated with human or animal disease"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Rod, sometimes pear-shaped",
+    "keyBiochemicalReaction": "Nitrite oxidation to nitrate (chemolithotrophy)",
+    "importantDisease": "None — environmental nitrogen-cycle organism",
+    "importantTest": "Obligate growth on nitrite as energy source; nitrate production",
+    "distinguishingFeature": "Performs the second step of nitrification (nitrite → nitrate), completing the cycle Nitrosomonas begins"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "nitrosomonas-europaea",
+      "relationship": "same-laboratory-workflow"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of the nitrogen cycle and nitrifying bacteria",
+      "kind": "educational"
+    }
+  ]
+}

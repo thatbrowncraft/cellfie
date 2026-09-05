@@ -1,0 +1,101 @@
+{
+  "id": "penicillium-chrysogenum",
+  "scientificName": "Penicillium chrysogenum",
+  "commonName": "Penicillin mold",
+  "category": "fungi",
+  "quickTags": [
+    "Antibiotic producer",
+    "Filamentous mold",
+    "Septate hyphae",
+    "Environmental"
+  ],
+  "genZNote": "The mold that quietly changed the 20th century — an industrially improved relative of the strain Fleming stumbled onto is still used to manufacture penicillin at scale.",
+  "searchKeywords": [
+    "penicillin mold",
+    "penicillium notatum",
+    "blue-green mold"
+  ],
+  "classification": {
+    "domain": "Eukarya",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Eurotiales",
+    "family": "Aspergillaceae",
+    "genus": "Penicillium",
+    "species": "P. chrysogenum"
+  },
+  "morphology": {
+    "shape": "Filamentous mold with brush-like (penicillus) conidiophores",
+    "shapeCategory": "filamentous",
+    "arrangement": "Branching septate hyphae bearing brush-shaped conidiophores",
+    "arrangementCategory": "single",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Hyphae ~2-4 µm wide",
+    "sporeForming": true,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Brush-shaped (penicillate) conidiophores",
+      "Conidia (blue-green spores)"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, decaying organic matter, and spoiled food",
+    "hostAssociation": "Free-living environmental mold; extremely rare cause of human infection except in severely immunocompromised hosts",
+    "environmentalOccurrence": "Common indoor and outdoor mold, notorious for growing on spoiled bread, fruit, and cheese",
+    "reservoir": "Soil, decaying plant material, indoor environments"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Lactophenol cotton blue mount",
+      "appearance": "Septate hyphae with characteristic brush-shaped (penicillus) conidiophores bearing chains of conidia",
+      "arrangement": "Branching filamentous mold"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar",
+      "growthCharacteristics": "Fast-growing mold at room temperature",
+      "colonyMorphology": "Velvety, blue-green colonies with a white border",
+      "pigmentation": "Blue-green conidial pigment"
+    },
+    "biochemicalTests": []
+  },
+  "identificationClues": [
+    "Classic 'brush-like' (penicillus) conidiophore structure under the microscope is the definitive identifying feature of the genus",
+    "Velvety blue-green colonies, easily recognized as the common mold on spoiled bread and citrus fruit",
+    "Historically and industrially significant as the source of the antibiotic penicillin",
+    "True human infection is extremely rare and essentially limited to profoundly immunocompromised patients"
+  ],
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (eukaryote)",
+    "shape": "Filamentous mold (septate hyphae)",
+    "keyBiochemicalReaction": "Not applicable — identified morphologically",
+    "importantDisease": "Essentially none in immunocompetent hosts; rare opportunistic infection possible",
+    "importantTest": "Microscopic brush-shaped conidiophore morphology",
+    "distinguishingFeature": "Original industrial source of penicillin, the first mass-produced antibiotic"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "aspergillus-fumigatus",
+      "relationship": "similar-morphology"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of Penicillium biology and penicillin discovery",
+      "kind": "educational"
+    }
+  ]
+}

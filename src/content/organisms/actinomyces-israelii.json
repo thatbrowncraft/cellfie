@@ -1,0 +1,114 @@
+{
+  "id": "actinomyces-israelii",
+  "scientificName": "Actinomyces israelii",
+  "commonName": "Actinomycosis agent",
+  "category": "bacteria",
+  "quickTags": [
+    "Normal oral flora",
+    "Anaerobic filamentous rod",
+    "Sulfur granules",
+    "Opportunistic"
+  ],
+  "genZNote": "Lives peacefully in everyone's gumline until dental trauma gives it a way in — then it forms the infamous 'sulfur granules.'",
+  "searchKeywords": [
+    "actinomycosis",
+    "sulfur granules",
+    "oral actinomyces"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Actinomycetota (Actinobacteria)",
+    "class": "Actinomycetes",
+    "order": "Actinomycetales",
+    "family": "Actinomycetaceae",
+    "genus": "Actinomyces",
+    "species": "A. israelii"
+  },
+  "morphology": {
+    "shape": "Branching filamentous rod",
+    "shapeCategory": "filamentous",
+    "arrangement": "Branching filaments, sometimes fragmenting into rods",
+    "arrangementCategory": "single",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "Thin filaments, variable length",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate anaerobe to microaerophile",
+    "oxygenRequirementCategory": "obligate-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human oral cavity, particularly gingival crevices and tonsillar crypts",
+    "hostAssociation": "Normal commensal of the human mouth, GI tract, and female genital tract in small numbers",
+    "environmentalOccurrence": "Not free-living in the environment; strictly host-associated",
+    "reservoir": "Endogenous human oral/GI flora"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive branching filamentous rods",
+      "arrangement": "Branching filaments"
+    },
+    "culture": {
+      "media": "Anaerobic blood agar, thioglycolate broth",
+      "growthCharacteristics": "Slow-growing strict anaerobe; may take a week or more",
+      "colonyMorphology": "Classic 'molar tooth' colonies on prolonged anaerobic culture"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "-"
+      },
+      {
+        "test": "Acid-fast stain",
+        "result": "-"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Yellow 'sulfur granules' in draining pus or tissue are a classic bedside clue (not actually sulfur — clumps of filamentous organism)",
+    "Gram-positive branching filaments, catalase-negative, distinguishing it from Nocardia (which is often catalase-positive and partially acid-fast)",
+    "Requires strict anaerobic conditions and prolonged incubation to culture",
+    "Disease typically follows dental work, trauma, or mucosal disruption that lets the normal oral commensal invade tissue"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Cervicofacial actinomycosis ('lumpy jaw')",
+      "Thoracic and abdominal actinomycosis (less common)",
+      "Pelvic actinomycosis (associated with IUD use)"
+    ],
+    "virulenceFactors": [
+      "Forms dense filamentous colonies (granules) that resist phagocytosis and antibiotic penetration"
+    ],
+    "transmission": "Endogenous — arises from the patient's own oral/GI flora after mucosal breach, not transmitted person-to-person",
+    "epidemiology": "Classically follows dental extraction, jaw trauma, or long-term intrauterine device use",
+    "labSignificance": "Not acid-fast, which helps distinguish actinomycosis from mycobacterial or nocardial disease on smear"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Branching filamentous rod",
+    "keyBiochemicalReaction": "Catalase negative; not acid-fast",
+    "importantDisease": "Cervicofacial actinomycosis ('lumpy jaw')",
+    "importantTest": "Sulfur granules on gross exam; anaerobic culture with 'molar tooth' colonies",
+    "distinguishingFeature": "Normal oral commensal that causes disease only after mucosal disruption — an endogenous, not exogenous, infection"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "nocardia-asteroides",
+      "relationship": "commonly-confused"
+    },
+    {
+      "id": "streptomyces-griseus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Actinomycosis\"",
+      "kind": "educational"
+    }
+  ]
+}

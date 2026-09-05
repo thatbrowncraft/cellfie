@@ -1,0 +1,123 @@
+{
+  "id": "saccharomyces-cerevisiae",
+  "scientificName": "Saccharomyces cerevisiae",
+  "commonName": "Baker's/brewer's yeast",
+  "category": "fungi",
+  "quickTags": [
+    "Budding yeast",
+    "Non-pathogenic",
+    "Industrial workhorse",
+    "Model organism"
+  ],
+  "genZNote": "The organism behind bread, beer, and half of molecular biology. If a eukaryotic genetics experiment exists, there's a good chance this yeast did it first.",
+  "searchKeywords": [
+    "baker's yeast",
+    "brewer's yeast",
+    "budding yeast",
+    "s cerevisiae",
+    "fermentation yeast"
+  ],
+  "classification": {
+    "domain": "Eukarya",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Saccharomycetes",
+    "order": "Saccharomycetales",
+    "family": "Saccharomycetaceae",
+    "genus": "Saccharomyces",
+    "species": "S. cerevisiae"
+  },
+  "morphology": {
+    "shape": "Oval to round budding cells",
+    "arrangement": "Single cells or budding pairs/short chains",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~5-10 µm diameter",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe (ferments in low O2, respires aerobically)",
+    "oxygenRequirementCategory": "facultative-anaerobe",
+    "notes": "Reproduces primarily by multilateral budding; can also form ascospores under nutrient-limited conditions."
+  },
+  "fungalDetails": {
+    "morphologicalType": "yeast",
+    "hyphae": [],
+    "reproductiveStructures": [
+      "Budding (blastoconidia)",
+      "Ascospores (4 per ascus, under stress/starvation)"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Fruit skins, plant surfaces, soil, and fermenting sugary substrates",
+    "hostAssociation": "Not part of normal human microbiota; occasionally an opportunistic pathogen in severely immunocompromised patients or from probiotic overuse",
+    "environmentalOccurrence": "Ubiquitous on ripe fruit and in wineries, bakeries, and breweries; the classic domesticated fermentation organism",
+    "reservoir": "Environmental/industrial — not a human commensal"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Wet mount or methylene blue",
+      "appearance": "Oval budding yeast cells, no true hyphae under normal growth",
+      "arrangement": "Single or budding cells"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar, YPD (yeast extract-peptone-dextrose)",
+      "growthCharacteristics": "Rapid growth at 25-30°C; ferments glucose to ethanol and CO2 under anaerobic conditions",
+      "colonyMorphology": "Smooth, creamy white to tan, dome-shaped colonies",
+      "pigmentation": "Non-pigmented (cream/white)",
+      "hemolysis": "Not applicable"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Glucose fermentation",
+        "result": "+"
+      },
+      {
+        "test": "Germ tube test",
+        "result": "-"
+      },
+      {
+        "test": "Urease",
+        "result": "-"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Oval budding cells with no true hyphae distinguish it from molds and from Candida's pseudohyphae",
+    "Vigorous fermentation of glucose (CO2 production) is the classic bread/beer/wine signature",
+    "Grows well on simple media at 25-30°C; not a fastidious organism",
+    "Germ tube negative — helps rule out Candida albicans if morphology is ambiguous"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Rare opportunistic fungemia in severely immunocompromised or ICU patients, sometimes linked to probiotic supplement use"
+    ],
+    "virulenceFactors": [],
+    "transmission": "Not typically transmitted person-to-person; rare infections arise from ingestion of probiotic supplements or catheter contamination",
+    "epidemiology": "Overwhelmingly a beneficial/industrial organism; clinical disease is a rare exception, not the rule",
+    "labSignificance": "Distinguishing from Candida species matters in the rare clinical isolate, since S. cerevisiae behaves very differently in susceptibility and significance"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (eukaryote)",
+    "shape": "Budding oval yeast",
+    "keyBiochemicalReaction": "Glucose fermentation to ethanol + CO2",
+    "importantDisease": "Rare opportunistic fungemia (exception, not the rule)",
+    "importantTest": "Germ tube negative; vigorous fermentation",
+    "distinguishingFeature": "The classic fermentation yeast of bread, beer, and wine; also the foundational eukaryotic model organism in genetics"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "candida-albicans",
+      "relationship": "commonly-confused"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — Molecular Biology of the Cell, yeast as a model organism",
+      "kind": "educational"
+    }
+  ]
+}

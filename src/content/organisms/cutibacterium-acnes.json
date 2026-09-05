@@ -1,0 +1,115 @@
+{
+  "id": "cutibacterium-acnes",
+  "scientificName": "Cutibacterium acnes",
+  "commonName": "Skin diphtheroid (formerly Propionibacterium acnes)",
+  "category": "bacteria",
+  "quickTags": [
+    "Normal skin microbiota",
+    "Anaerobic diphtheroid",
+    "Acne-associated",
+    "Device infections"
+  ],
+  "genZNote": "Lives quietly in everyone's pores until it doesn't — same organism as the acne one you've heard of, formerly filed under Propionibacterium.",
+  "searchKeywords": [
+    "propionibacterium acnes",
+    "p acnes",
+    "skin flora",
+    "acne bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Actinomycetota (Actinobacteria)",
+    "class": "Actinomycetes",
+    "order": "Propionibacteriales",
+    "family": "Propionibacteriaceae",
+    "genus": "Cutibacterium",
+    "species": "C. acnes"
+  },
+  "morphology": {
+    "shape": "Pleomorphic rod (diphtheroid)",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "Single cells, short chains, or clumps",
+    "arrangementCategory": "single",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.4-0.7 x 3-6 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Aerotolerant anaerobe (grows best anaerobically)",
+    "oxygenRequirementCategory": "obligate-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human skin, particularly sebaceous (oil) gland-rich areas",
+    "hostAssociation": "Major normal microbiota of adult human skin, hair follicles, and pilosebaceous units",
+    "environmentalOccurrence": "Restricted almost entirely to human skin habitats",
+    "reservoir": "Human skin"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive pleomorphic rods resembling diphtheroids",
+      "arrangement": "Singles, chains, clumps"
+    },
+    "culture": {
+      "media": "Anaerobic blood agar; extended incubation (5-14 days) often needed",
+      "growthCharacteristics": "Slow-growing anaerobe/aerotolerant organism",
+      "colonyMorphology": "Small, white to cream, convex colonies",
+      "hemolysis": "Usually non-hemolytic"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Indole",
+        "result": "Variable"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive pleomorphic 'diphtheroid' rod, easily mistaken for a skin contaminant in blood cultures",
+    "Slow growth and extended anaerobic incubation are needed to recover it reliably",
+    "Ubiquitous member of normal skin flora — its presence in a specimen doesn't automatically mean infection",
+    "Implicated in acne vulgaris pathogenesis and in indolent prosthetic joint/shunt/cardiac device infections"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Acne vulgaris (contributing factor)",
+      "Prosthetic joint infections",
+      "Shoulder implant infections",
+      "Cerebrospinal fluid shunt infections",
+      "Endocarditis (rare, device-associated)"
+    ],
+    "virulenceFactors": [
+      "Biofilm formation on implanted devices",
+      "Lipases contributing to follicular inflammation"
+    ],
+    "transmission": "Endogenous — arises from the patient's own skin flora rather than person-to-person spread",
+    "epidemiology": "Frequently dismissed as a contaminant in cultures, but a recognized true pathogen in indolent device- and implant-associated infections",
+    "labSignificance": "Distinguishing true infection from skin-flora contamination often requires multiple positive cultures or extended incubation"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Pleomorphic rod (diphtheroid)",
+    "keyBiochemicalReaction": "Catalase positive; slow anaerobic growth",
+    "importantDisease": "Acne vulgaris; prosthetic joint/device infections",
+    "importantTest": "Extended anaerobic culture (often 1-2 weeks)",
+    "distinguishingFeature": "Normal skin commensal that becomes clinically relevant mainly via implanted devices or acne"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "staphylococcus-epidermidis",
+      "relationship": "same-clinical-specimen"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Cutibacterium (Propionibacterium) Acnes\"",
+      "kind": "educational"
+    }
+  ]
+}

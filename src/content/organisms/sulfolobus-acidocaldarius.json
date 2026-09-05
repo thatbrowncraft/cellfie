@@ -1,0 +1,88 @@
+{
+  "id": "sulfolobus-acidocaldarius",
+  "scientificName": "Sulfolobus acidocaldarius",
+  "commonName": "Thermoacidophilic archaeon",
+  "category": "other",
+  "quickTags": [
+    "Archaea",
+    "Thermoacidophile",
+    "Non-pathogenic",
+    "Volcanic hot spring organism"
+  ],
+  "genZNote": "Lives happily in boiling-hot, battery-acid-pH volcanic springs — the kind of place that would dissolve almost anything else alive.",
+  "searchKeywords": [
+    "thermoacidophile",
+    "sulfolobus",
+    "volcanic hot spring archaea"
+  ],
+  "classification": {
+    "domain": "Archaea",
+    "phylum": "Thermoproteota (Crenarchaeota)",
+    "class": "Thermoprotei",
+    "order": "Sulfolobales",
+    "family": "Sulfolobaceae",
+    "genus": "Sulfolobus",
+    "species": "S. acidocaldarius"
+  },
+  "morphology": {
+    "shape": "Irregular coccus (lobed)",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~0.8-1 µm, irregularly lobed",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile to weakly motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Thrives at ~75-80°C and pH ~2-3, oxidizing elemental sulfur for energy in some strains."
+  },
+  "habitat": {
+    "naturalHabitat": "Acidic volcanic hot springs and sulfur-rich geothermal environments",
+    "hostAssociation": "Free-living environmental organism, not human-associated",
+    "environmentalOccurrence": "Found worldwide in geothermal areas such as Yellowstone's acidic sulfur springs",
+    "reservoir": "Acidic geothermal hot springs"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not Gram-stained routinely; specialized wet mount",
+      "appearance": "Irregular, lobed coccoid cells",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Specialized low-pH, high-temperature media",
+      "growthCharacteristics": "Grows optimally at ~75-80°C and pH ~2-3; will not grow at neutral pH or moderate temperature",
+      "colonyMorphology": "Not routinely characterized by colony morphology; studied mainly in liquid culture"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Growth at pH 2-3 and 75-80°C",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Requires both extreme heat (~75-80°C) and extreme acidity (pH ~2-3) simultaneously — a true thermoacidophile",
+    "Irregular, lobed coccoid cell shape distinguishes it microscopically from typical bacterial cocci",
+    "An archaeon studied as a model organism for understanding life's upper limits of temperature and pH tolerance",
+    "Not associated with any human or animal disease"
+  ],
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (archaeon)",
+    "shape": "Irregular, lobed coccus",
+    "keyBiochemicalReaction": "Growth requires high temperature (~75-80°C) and low pH (~2-3)",
+    "importantDisease": "None — non-pathogenic extremophile",
+    "importantTest": "Growth only under combined extreme heat and acidity",
+    "distinguishingFeature": "Classic thermoacidophilic archaeon from volcanic hot springs, illustrating the outer limits of habitable conditions for life"
+  },
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of archaeal diversity and extremophiles",
+      "kind": "educational"
+    }
+  ]
+}

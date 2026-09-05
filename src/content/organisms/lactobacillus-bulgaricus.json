@@ -1,0 +1,100 @@
+{
+  "id": "lactobacillus-bulgaricus",
+  "scientificName": "Lactobacillus delbrueckii subsp. bulgaricus",
+  "commonName": "Bulgarian yogurt bacillus",
+  "category": "bacteria",
+  "quickTags": [
+    "Yogurt starter culture",
+    "Aerotolerant anaerobe",
+    "Non-pathogenic"
+  ],
+  "genZNote": "The other half of the yogurt duo, and the one that actually makes it taste like yogurt by pumping out lactic acid.",
+  "searchKeywords": [
+    "l bulgaricus",
+    "bulgarian bacillus",
+    "yogurt bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Lactobacillaceae",
+    "genus": "Lactobacillus",
+    "species": "L. delbrueckii subsp. bulgaricus"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells or short chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-0.8 x 2-9 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Aerotolerant anaerobe (microaerophilic to anaerobic, tolerates some O2)",
+    "oxygenRequirementCategory": "microaerophile"
+  },
+  "habitat": {
+    "naturalHabitat": "Fermented milk products",
+    "hostAssociation": "Not a resident of normal human microbiota; used as a food-grade starter culture",
+    "environmentalOccurrence": "Industrially propagated worldwide for yogurt production",
+    "reservoir": "Dairy starter culture stocks"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive rods, sometimes slightly curved",
+      "arrangement": "Single or short chains"
+    },
+    "culture": {
+      "media": "MRS agar",
+      "growthCharacteristics": "Thermophilic (optimal ~40-45°C); produces large amounts of lactic acid",
+      "colonyMorphology": "Small, rough or smooth white colonies"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "-"
+      },
+      {
+        "test": "Lactic acid production",
+        "result": "+ (homofermentative)"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Gram-positive rod, catalase-negative — fits the general Lactobacillus profile",
+    "Homofermentative, high lactic-acid producer, giving yogurt its characteristic tang",
+    "Grows optimally near 45°C alongside Streptococcus thermophilus in traditional yogurt culture",
+    "Not associated with human disease in normal dietary use"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Catalase negative; homofermentative lactic acid production",
+    "importantDisease": "None — food-grade organism",
+    "importantTest": "Growth at 45°C on MRS agar",
+    "distinguishingFeature": "Partners with S. thermophilus as the classic yogurt starter culture pair"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "streptococcus-thermophilus",
+      "relationship": "same-laboratory-workflow"
+    },
+    {
+      "id": "lactobacillus-acidophilus",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — food microbiology overview of dairy starter cultures",
+      "kind": "educational"
+    }
+  ]
+}

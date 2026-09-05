@@ -1,0 +1,92 @@
+{
+  "id": "thermus-aquaticus",
+  "scientificName": "Thermus aquaticus",
+  "commonName": "Taq bacterium",
+  "category": "bacteria",
+  "quickTags": [
+    "Thermophile",
+    "Source of Taq polymerase",
+    "Non-pathogenic",
+    "Hot spring organism"
+  ],
+  "genZNote": "Without this hot-spring bacterium, PCR (and basically all of modern molecular diagnostics) wouldn't exist — its heat-stable polymerase is 'Taq' in every PCR kit.",
+  "searchKeywords": [
+    "taq polymerase source",
+    "hot spring bacteria",
+    "thermophile pcr"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Deinococcota",
+    "class": "Deinococci",
+    "order": "Thermales",
+    "family": "Thermaceae",
+    "genus": "Thermus",
+    "species": "T. aquaticus"
+  },
+  "morphology": {
+    "shape": "Rod, often forming long filaments",
+    "shapeCategory": "filamentous",
+    "arrangement": "Filamentous chains of rod-shaped cells",
+    "arrangementCategory": "chains",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.5-0.8 x 5-10 µm (filaments longer)",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Hot springs and other naturally occurring high-temperature aquatic environments",
+    "hostAssociation": "Free-living environmental organism, not human-associated",
+    "environmentalOccurrence": "First isolated from Yellowstone hot springs; grows optimally around 70°C",
+    "reservoir": "Geothermal hot springs"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods, often in filamentous chains",
+      "arrangement": "Filaments"
+    },
+    "culture": {
+      "media": "Specialized high-temperature media (e.g., Thermus medium)",
+      "growthCharacteristics": "Grows optimally at 65-72°C, will not grow at standard 37°C incubation",
+      "colonyMorphology": "Yellow to orange-pigmented colonies from carotenoid pigments",
+      "pigmentation": "Yellow-orange carotenoids"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "True thermophile — requires incubation near 70°C and will not grow at typical clinical-lab temperatures (37°C)",
+    "Yellow-orange pigmented colonies from carotenoid pigments",
+    "Source of Taq DNA polymerase, the heat-stable enzyme that made automated PCR possible",
+    "Not a human pathogen — purely of biotechnological/historical importance"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Rod, filamentous",
+    "keyBiochemicalReaction": "Catalase and oxidase positive; grows only at high temperature",
+    "importantDisease": "None — non-pathogenic thermophile",
+    "importantTest": "Growth restricted to ~65-72°C",
+    "distinguishingFeature": "Original natural source of Taq polymerase, the enzyme underlying modern PCR"
+  },
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of thermophilic bacteria and PCR history",
+      "kind": "educational"
+    }
+  ]
+}

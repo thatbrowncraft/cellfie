@@ -1,0 +1,121 @@
+{
+  "id": "burkholderia-cepacia",
+  "scientificName": "Burkholderia cepacia complex",
+  "commonName": "Cepacia",
+  "category": "bacteria",
+  "quickTags": [
+    "Hospital-associated",
+    "Cystic fibrosis pathogen",
+    "Intrinsically resistant",
+    "Nonfermenter"
+  ],
+  "genZNote": "One of the most feared organisms on a cystic fibrosis ward — not because it's common, but because once it colonizes, it's notoriously hard to clear and to treat.",
+  "searchKeywords": [
+    "b cepacia",
+    "burkholderia",
+    "cystic fibrosis bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Betaproteobacteria",
+    "order": "Burkholderiales",
+    "family": "Burkholderiaceae",
+    "genus": "Burkholderia",
+    "species": "B. cepacia complex"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.5-1 x 1.5-4 µm",
+    "sporeForming": false,
+    "capsule": "None significant",
+    "encapsulated": false,
+    "motility": "Motile via multiple polar flagella",
+    "motile": true,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "'Complex' refers to a group of at least ~20 closely related Burkholderia species that are difficult to distinguish by routine phenotypic testing."
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, water, and plant rhizospheres",
+    "hostAssociation": "Environmental organism; opportunistic pathogen especially significant in cystic fibrosis and chronic granulomatous disease patients",
+    "environmentalOccurrence": "Can survive in surprisingly nutrient-poor environments including some disinfectant solutions and distilled water",
+    "reservoir": "Hospital water sources, contaminated solutions/equipment, environmental soil/water"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "Selective Burkholderia cepacia agar (BCSA) recommended for CF respiratory specimens",
+      "growthCharacteristics": "Obligate aerobe, non-fermenter, slow-growing on some media",
+      "colonyMorphology": "Variable — smooth to rough, sometimes pigmented (yellow) colonies"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidase",
+        "result": "Variable (often weakly positive)"
+      },
+      {
+        "test": "Lysine decarboxylase",
+        "result": "+"
+      },
+      {
+        "test": "Oxidation of maltose/lactose",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Actually a complex of closely related species, requiring molecular methods for precise identification beyond the genus/complex level",
+    "Selective culture media (e.g., BCSA) are recommended when screening cystic fibrosis respiratory specimens, since it can be overgrown by other flora on standard media",
+    "Intrinsically resistant to many antibiotics including most aminoglycosides and polymyxins, narrowing treatment options significantly",
+    "Notorious for cross-infection between cystic fibrosis patients, leading to strict infection-control segregation policies"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Chronic pulmonary infection and 'cepacia syndrome' in cystic fibrosis patients",
+      "Infections in chronic granulomatous disease",
+      "Healthcare-associated bacteremia from contaminated solutions/equipment"
+    ],
+    "virulenceFactors": [
+      "Biofilm formation",
+      "Intrinsic resistance to multiple antibiotic classes",
+      "Cell-to-cell transmissibility among CF patients (certain epidemic strains)"
+    ],
+    "transmission": "Environmental exposure (contaminated water/solutions) and patient-to-patient transmission in cystic fibrosis care settings",
+    "epidemiology": "A defining organism in cystic fibrosis infection-control practice due to transmissibility between patients and association with accelerated lung function decline",
+    "labSignificance": "Selective media and molecular confirmation are often needed since routine biochemical panels can misidentify it"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Oxidizes maltose and lactose; variable oxidase",
+    "importantDisease": "Chronic pulmonary infection in cystic fibrosis ('cepacia syndrome')",
+    "importantTest": "Selective culture on Burkholderia cepacia agar; molecular confirmation",
+    "distinguishingFeature": "Intrinsically multidrug-resistant complex of species with major infection-control implications in cystic fibrosis care"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "pseudomonas-aeruginosa",
+      "relationship": "same-clinical-specimen"
+    },
+    {
+      "id": "stenotrophomonas-maltophilia",
+      "relationship": "commonly-confused"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Burkholderia Cepacia Complex\"",
+      "kind": "educational"
+    }
+  ]
+}
