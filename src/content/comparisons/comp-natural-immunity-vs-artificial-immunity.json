@@ -1,0 +1,50 @@
+{
+  "id": "comp-natural-immunity-vs-artificial-immunity",
+  "domain": "immunology",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Natural Immunity"
+  },
+  "itemB": {
+    "name": "Artificial Immunity"
+  },
+  "overview": "Immunity can be acquired either through everyday natural exposure or through deliberate medical intervention.",
+  "genZNote": "Natural immunity: your body handling things on its own. Artificial immunity: medicine giving your body a helping hand.",
+  "aspects": [
+    {
+      "id": "how-acquired",
+      "label": "How It's Acquired",
+      "valueA": "Acquired through natural exposure to a pathogen (infection) or transfer of antibodies (like mother to baby).",
+      "valueB": "Acquired through deliberate medical intervention such as vaccination or antiserum injection.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example-active",
+      "label": "Example (Active Form)",
+      "valueA": "Recovering from a chickenpox infection, gaining lifelong immunity.",
+      "valueB": "Getting a measles vaccine to trigger the same lifelong immunity artificially.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example-passive",
+      "label": "Example (Passive Form)",
+      "valueA": "A baby receiving antibodies through the placenta or breast milk.",
+      "valueB": "Receiving anti-venom or antiserum after a snakebite.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Both natural and artificial immunity can further be split into active (body makes its own antibodies) and passive (antibodies given ready-made).",
+    "memoryTrick": "Natural = life gives it to you. Artificial = medicine gives it to you.",
+    "commonMisconception": "Artificial immunity isn't 'fake' or weaker — a vaccine (artificial active immunity) can provide just as strong and lasting protection as a natural infection, often more safely."
+  },
+  "lastVerified": "2026-09-05"
+}

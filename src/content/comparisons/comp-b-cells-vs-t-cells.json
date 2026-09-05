@@ -1,0 +1,50 @@
+{
+  "id": "comp-b-cells-vs-t-cells",
+  "domain": "immunology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "B Cells"
+  },
+  "itemB": {
+    "name": "T Cells"
+  },
+  "overview": "The two main types of lymphocytes driving adaptive immunity, split by whether they fight pathogens using antibodies or direct cell action.",
+  "genZNote": "B cells: the antibody factory. T cells: the direct-action strike team.",
+  "aspects": [
+    {
+      "id": "immunity-type",
+      "label": "Type of Immunity Mediated",
+      "valueA": "Humoral immunity — produces antibodies.",
+      "valueB": "Cell-mediated immunity — directly attacks infected/abnormal cells or helps coordinate the response.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "maturation-site",
+      "label": "Site of Maturation",
+      "valueA": "Matures in the bone marrow.",
+      "valueB": "Matures in the thymus.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "effector-form",
+      "label": "Effector Form",
+      "valueA": "Differentiates into plasma cells, which secrete antibodies.",
+      "valueB": "Differentiates into helper T cells, cytotoxic T cells, or regulatory T cells.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "B for Bone marrow, T for Thymus — the classic mnemonic for where each lymphocyte matures.",
+    "memoryTrick": "B cells make antiBodies. T cells are the Thymus-trained fighters.",
+    "commonMisconception": "B cells don't directly kill infected cells — that job belongs to cytotoxic T cells; B cells fight via secreted antibodies instead."
+  },
+  "lastVerified": "2026-09-05"
+}

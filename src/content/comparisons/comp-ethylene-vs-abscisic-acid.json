@@ -1,0 +1,50 @@
+{
+  "id": "comp-ethylene-vs-abscisic-acid",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "plant-hormones"
+  ],
+  "itemA": {
+    "name": "Ethylene"
+  },
+  "itemB": {
+    "name": "Abscisic Acid"
+  },
+  "overview": "Both are stress- and ageing-associated plant hormones, but they trigger very different physical processes.",
+  "genZNote": "Ethylene: the ripening and 'let it fall' gas. Abscisic acid: the drought-and-dormancy hormone.",
+  "aspects": [
+    {
+      "id": "physical-state",
+      "label": "Physical State",
+      "valueA": "A gas at room temperature — the only gaseous plant hormone.",
+      "valueB": "A non-volatile organic acid.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "signature-role",
+      "label": "Signature Role",
+      "valueA": "Promotes fruit ripening, leaf/flower abscission (falling off), and senescence.",
+      "valueB": "Promotes seed dormancy and stomatal closure under water stress.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example-use",
+      "label": "Practical Example",
+      "valueA": "Used commercially to ripen fruits after harvest.",
+      "valueB": "Levels rise sharply in wilting or drought-stressed plants.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Ethylene is the only plant hormone that is a gas, which is why it can be applied to whole rooms of fruit for artificial ripening.",
+    "memoryTrick": "Ethylene = ripens and drops things. Abscisic acid = dormancy and drought defence, despite the misleading 'abscisic' name.",
+    "commonMisconception": "Abscisic acid does not actually cause leaf/fruit abscission directly in most modern understanding — that role belongs mainly to ethylene, despite abscisic acid's name."
+  },
+  "lastVerified": "2026-09-05"
+}

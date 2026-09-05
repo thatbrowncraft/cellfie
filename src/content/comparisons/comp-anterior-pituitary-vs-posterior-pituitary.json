@@ -1,0 +1,51 @@
+{
+  "id": "comp-anterior-pituitary-vs-posterior-pituitary",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "endocrine",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Anterior Pituitary"
+  },
+  "itemB": {
+    "name": "Posterior Pituitary"
+  },
+  "overview": "The two lobes of the pituitary gland, differing in whether they manufacture their own hormones or just release ones made elsewhere.",
+  "genZNote": "Anterior pituitary: its own hormone factory. Posterior pituitary: just a storage and release dock for hormones made in the hypothalamus.",
+  "aspects": [
+    {
+      "id": "hormone-origin",
+      "label": "Hormone Origin",
+      "valueA": "Synthesises its own hormones (e.g. GH, TSH, FSH, LH, prolactin, ACTH).",
+      "valueB": "Stores and releases hormones made by the hypothalamus (oxytocin, ADH) — does not synthesise them itself.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "tissue-type",
+      "label": "Tissue Type",
+      "valueA": "Glandular epithelial tissue.",
+      "valueB": "Neural tissue, an extension of the hypothalamus.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "control",
+      "label": "Control Mechanism",
+      "valueA": "Regulated by hypothalamic releasing and inhibiting hormones via a portal blood system.",
+      "valueB": "Regulated by direct nerve impulses from the hypothalamus.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Oxytocin and ADH are made in the hypothalamus but released from the posterior pituitary — a classic exam trap about where a hormone is 'made' versus 'released'.",
+    "memoryTrick": "Anterior = actually makes its own hormones. Posterior = just passes along the hypothalamus's hormones.",
+    "commonMisconception": "The posterior pituitary is often wrongly credited with producing ADH and oxytocin — production happens in the hypothalamus; the posterior pituitary only stores and releases them."
+  },
+  "lastVerified": "2026-09-05"
+}

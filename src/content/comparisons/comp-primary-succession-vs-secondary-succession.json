@@ -1,0 +1,50 @@
+{
+  "id": "comp-primary-succession-vs-secondary-succession",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Primary Succession"
+  },
+  "itemB": {
+    "name": "Secondary Succession"
+  },
+  "overview": "Both describe how an ecosystem develops over time, but they start from very different starting points — bare rock versus already-disturbed soil.",
+  "genZNote": "Primary succession starts from absolute zero, bare rock. Secondary succession gets a head start, soil's already there.",
+  "aspects": [
+    {
+      "id": "starting-point",
+      "label": "Starting Point",
+      "valueA": "Begins on a lifeless substrate with no soil, such as bare rock or a new volcanic island.",
+      "valueB": "Begins on a previously vegetated area that was disturbed, leaving soil intact (e.g. after a fire or flood).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "speed",
+      "label": "Speed of the Process",
+      "valueA": "Very slow, since soil must form first before larger plants can establish.",
+      "valueB": "Much faster, since soil and often a seed bank already exist.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Colonisation of bare rock after a volcanic eruption or glacial retreat.",
+      "valueB": "Regrowth of a forest after a wildfire or abandoned farmland.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Lichens are the classic pioneer species in primary succession, since they can grow directly on bare rock and begin soil formation.",
+    "memoryTrick": "Primary = starting from scratch, no soil. Secondary = starting over, soil already present.",
+    "commonMisconception": "Secondary succession is not automatically 'faster forever' — it's faster mainly in the early stages, thanks to pre-existing soil and surviving organisms."
+  },
+  "lastVerified": "2026-09-05"
+}

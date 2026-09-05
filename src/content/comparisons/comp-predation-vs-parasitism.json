@@ -1,0 +1,56 @@
+{
+  "id": "comp-predation-vs-parasitism",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology"
+  ],
+  "itemA": {
+    "name": "Predation"
+  },
+  "itemB": {
+    "name": "Parasitism"
+  },
+  "overview": "Both are interactions where one organism benefits at another's expense, but predation kills quickly while parasitism exploits slowly over time.",
+  "genZNote": "Predation: quick kill, dinner's served immediately. Parasitism: a slow, long-term freeload that usually doesn't kill outright.",
+  "aspects": [
+    {
+      "id": "outcome-for-victim",
+      "label": "Outcome for the Affected Organism",
+      "valueA": "The prey is typically killed immediately.",
+      "valueB": "The host is usually not killed outright, at least not immediately — the parasite depends on keeping it alive.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "size-relationship",
+      "label": "Typical Size Relationship",
+      "valueA": "Predator is usually larger than or comparable in size to its prey.",
+      "valueB": "Parasite is usually much smaller than its host.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "duration-of-contact",
+      "label": "Duration of Contact",
+      "valueA": "Brief contact — the interaction ends quickly with the kill.",
+      "valueB": "Prolonged, ongoing contact, often for the parasite's whole life cycle.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "A lion hunting and killing a deer.",
+      "valueB": "A tapeworm living inside a human intestine over months or years.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Predators generally play a role in regulating prey population size, while parasites more often affect the health of individual hosts without controlling population numbers as directly.",
+    "memoryTrick": "Predation = quick and fatal. Parasitism = slow and (usually) non-fatal.",
+    "commonMisconception": "Parasites don't always avoid killing their host — some parasites do eventually kill the host, particularly once transmission to a new host has already occurred."
+  },
+  "lastVerified": "2026-09-05"
+}

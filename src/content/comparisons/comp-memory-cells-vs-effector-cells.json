@@ -1,0 +1,49 @@
+{
+  "id": "comp-memory-cells-vs-effector-cells",
+  "domain": "immunology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology"
+  ],
+  "itemA": {
+    "name": "Memory Cells"
+  },
+  "itemB": {
+    "name": "Effector Cells"
+  },
+  "overview": "Both arise from activated lymphocytes, but one fights the infection right now while the other stands by for years in case it returns.",
+  "genZNote": "Effector cells: the ones fighting the battle today. Memory cells: the veterans standing by in case of a rematch.",
+  "aspects": [
+    {
+      "id": "timing-of-action",
+      "label": "When They Act",
+      "valueA": "Long-lived, remain inactive until the same antigen is encountered again, sometimes years later.",
+      "valueB": "Act immediately, carrying out the current immune response.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "lifespan",
+      "label": "Lifespan",
+      "valueA": "Long-lived, sometimes for decades.",
+      "valueB": "Short-lived — most die off after the infection is cleared.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Memory B cells and memory T cells that persist after a chickenpox infection.",
+      "valueB": "Plasma cells (secreting antibodies now) and active cytotoxic T cells (killing infected cells now).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Memory cells are exactly why the secondary immune response is faster and stronger than the primary one — they don't need to be re-created from scratch.",
+    "memoryTrick": "Effector cells = acting now. Memory cells = remembering for later.",
+    "commonMisconception": "Memory cells are not simply 'leftover' effector cells — they are a distinct, deliberately generated cell population meant specifically for long-term surveillance."
+  },
+  "lastVerified": "2026-09-05"
+}

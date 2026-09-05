@@ -1,0 +1,50 @@
+{
+  "id": "comp-population-vs-community",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Population"
+  },
+  "itemB": {
+    "name": "Community"
+  },
+  "overview": "A population is one species living together in an area; a community is all the different populations living and interacting together.",
+  "genZNote": "Population: everyone of the same species in the neighbourhood. Community: the whole neighbourhood, every species included.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "A group of individuals of the same species living in a specific area at the same time.",
+      "valueB": "All the populations of different species living and interacting together in a given area.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "scope",
+      "label": "Scope",
+      "valueA": "Single-species scope.",
+      "valueB": "Multi-species scope, including all their interactions.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "All the deer in a particular forest.",
+      "valueB": "All the deer, wolves, trees, and other species together in that same forest.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The ecological hierarchy runs: organism → population → community → ecosystem → biome → biosphere — a frequently tested sequence.",
+    "memoryTrick": "Population = one species. Community = many species together.",
+    "commonMisconception": "'Community' in ecology refers only to living organisms — it does not include the non-living (abiotic) environment, which is added in at the ecosystem level."
+  },
+  "lastVerified": "2026-09-05"
+}

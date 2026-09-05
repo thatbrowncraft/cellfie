@@ -1,0 +1,51 @@
+{
+  "id": "comp-gibberellin-vs-abscisic-acid",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "plant-hormones",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Gibberellin"
+  },
+  "itemB": {
+    "name": "Abscisic Acid"
+  },
+  "overview": "Two plant hormones with opposing roles in seed and bud dormancy — one wakes growth up, the other shuts it down.",
+  "genZNote": "Gibberellin: 'time to wake up and grow.' Abscisic acid: 'time to shut down and wait it out.'",
+  "aspects": [
+    {
+      "id": "dormancy-effect",
+      "label": "Effect on Dormancy",
+      "valueA": "Breaks seed and bud dormancy, promoting germination and growth.",
+      "valueB": "Induces and maintains seed/bud dormancy, and closes stomata under water stress.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "nickname",
+      "label": "Common Nickname",
+      "valueA": "Growth-promoting hormone.",
+      "valueB": "The 'stress hormone' of plants.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "stomata",
+      "label": "Effect on Stomata",
+      "valueA": "No major direct role in stomatal closure.",
+      "valueB": "Directly triggers stomatal closure during drought stress.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Abscisic acid is the primary hormone responsible for closing stomata during water stress, a key drought-response fact.",
+    "memoryTrick": "Gibberellin = go. Abscisic acid = stop/rest.",
+    "commonMisconception": "Abscisic acid is not just about dropping leaves (abscission) despite the name's origin — its main documented roles are dormancy and stress response, especially stomatal closure."
+  },
+  "lastVerified": "2026-09-05"
+}

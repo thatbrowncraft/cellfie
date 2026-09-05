@@ -1,0 +1,56 @@
+{
+  "id": "comp-igg-vs-igm",
+  "domain": "immunology",
+  "difficulty": "advanced",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology"
+  ],
+  "itemA": {
+    "name": "IgG"
+  },
+  "itemB": {
+    "name": "IgM"
+  },
+  "overview": "Two immunoglobulin classes distinguished by when they appear during an immune response and how they're structured.",
+  "genZNote": "IgM shows up first, in bulk, as the initial responder. IgG shows up later, more refined, and sticks around.",
+  "aspects": [
+    {
+      "id": "timing",
+      "label": "Timing of Appearance",
+      "valueA": "The main antibody of a secondary (later, memory-based) immune response.",
+      "valueB": "The first antibody produced during a primary immune response.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "structure",
+      "label": "Structural Form",
+      "valueA": "Monomer — a single Y-shaped unit, smaller in size.",
+      "valueB": "Pentamer — five Y-shaped units joined together, the largest antibody.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "placental-transfer",
+      "label": "Crosses the Placenta?",
+      "valueA": "Yes — provides passive immunity to the fetus/newborn.",
+      "valueB": "No — too large to cross the placenta.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "clinical-use",
+      "label": "Clinical Use",
+      "valueA": "Elevated IgG suggests a past or ongoing/chronic infection, or immune memory.",
+      "valueB": "Elevated IgM suggests a current, recent, or acute infection.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A positive IgM test is used clinically to indicate a recent/active infection, since it's the first antibody class produced.",
+    "memoryTrick": "IgM = 'M' for the massive pentamer, and the first Messenger of infection. IgG = the long-Guarding, later antibody.",
+    "commonMisconception": "IgG being the most abundant antibody in blood doesn't mean it's the first responder — IgM appears first in a primary response, IgG dominates afterward and in later exposures."
+  },
+  "lastVerified": "2026-09-05"
+}

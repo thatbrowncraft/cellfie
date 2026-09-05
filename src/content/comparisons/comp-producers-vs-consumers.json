@@ -1,0 +1,50 @@
+{
+  "id": "comp-producers-vs-consumers",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Producers"
+  },
+  "itemB": {
+    "name": "Consumers"
+  },
+  "overview": "The two broad functional roles in a food chain, split by whether an organism makes its own food or eats other organisms for it.",
+  "genZNote": "Producers: the ones who cook their own meals using sunlight. Consumers: everyone else, eating what's already been made.",
+  "aspects": [
+    {
+      "id": "energy-source",
+      "label": "Source of Energy/Food",
+      "valueA": "Make their own food through photosynthesis (or chemosynthesis).",
+      "valueB": "Obtain food by consuming other organisms.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "trophic-level",
+      "label": "Trophic Level",
+      "valueA": "Always occupy the first trophic level.",
+      "valueB": "Occupy the second trophic level and beyond (primary, secondary, tertiary consumers).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Green plants, algae, cyanobacteria.",
+      "valueB": "Herbivores (primary consumers), carnivores (secondary/tertiary consumers).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "All energy in most ecosystems ultimately traces back to producers capturing solar energy — the foundation of the entire food chain.",
+    "memoryTrick": "Producers make it. Consumers take it.",
+    "commonMisconception": "Decomposers are a separate functional category from consumers in many syllabi — they break down dead organic matter rather than consuming living organisms directly."
+  },
+  "lastVerified": "2026-09-05"
+}

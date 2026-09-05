@@ -1,0 +1,52 @@
+{
+  "id": "comp-fsh-vs-lh",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "endocrine",
+    "reproduction",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "FSH (Follicle-Stimulating Hormone)"
+  },
+  "itemB": {
+    "name": "LH (Luteinizing Hormone)"
+  },
+  "overview": "Both are gonadotropins from the anterior pituitary controlling reproduction, but they trigger different key events in the cycle.",
+  "genZNote": "FSH: gets the follicle growing. LH: delivers the final trigger for ovulation.",
+  "aspects": [
+    {
+      "id": "main-role-female",
+      "label": "Main Role in Females",
+      "valueA": "Stimulates growth and maturation of ovarian follicles.",
+      "valueB": "Triggers ovulation (the LH surge) and forms/maintains the corpus luteum.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "main-role-male",
+      "label": "Main Role in Males",
+      "valueA": "Stimulates Sertoli cells to support spermatogenesis.",
+      "valueB": "Stimulates Leydig cells to produce testosterone.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "timing-in-cycle",
+      "label": "Timing in Menstrual Cycle",
+      "valueA": "Rises in the early follicular phase.",
+      "valueB": "Peaks sharply mid-cycle (the LH surge), directly triggering ovulation.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The mid-cycle LH surge is the direct trigger for ovulation — a heavily tested detail in the menstrual cycle timeline.",
+    "memoryTrick": "FSH = Follicle-Stimulating (grows the follicle). LH = triggers ovulation (Luteinizing = forms the corpus luteum afterward).",
+    "commonMisconception": "FSH and LH are not sex-specific hormones — both are secreted in males and females, just acting on different target cells (Sertoli vs Leydig cells in males)."
+  },
+  "lastVerified": "2026-09-05"
+}

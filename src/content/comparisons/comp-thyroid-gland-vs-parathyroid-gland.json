@@ -1,0 +1,58 @@
+{
+  "id": "comp-thyroid-gland-vs-parathyroid-gland",
+  "domain": "biological-structure",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "endocrine",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Thyroid Gland"
+  },
+  "itemB": {
+    "name": "Parathyroid Glands"
+  },
+  "overview": "Two endocrine glands located near each other in the neck but controlling completely different things — metabolism versus calcium balance.",
+  "genZNote": "Thyroid: sets your body's overall metabolic pace. Parathyroid: quietly manages your blood calcium in the background.",
+  "aspects": [
+    {
+      "id": "hormone",
+      "label": "Main Hormone(s)",
+      "valueA": "Thyroxine (T4) and triiodothyronine (T3), plus calcitonin.",
+      "valueB": "Parathyroid hormone (PTH).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "main-function",
+      "label": "Main Function",
+      "valueA": "Regulates basal metabolic rate, growth, and development.",
+      "valueB": "Regulates blood calcium and phosphate levels.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "valueA": "A single butterfly-shaped gland at the front of the neck.",
+      "valueB": "Four small glands embedded on the back surface of the thyroid.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "calcium-effect",
+      "label": "Effect on Blood Calcium",
+      "valueA": "Calcitonin (from thyroid) lowers blood calcium.",
+      "valueB": "PTH raises blood calcium — the opposite effect to calcitonin.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Calcitonin (thyroid) and parathyroid hormone (parathyroid) have opposite effects on blood calcium — a frequently tested contrast pair.",
+    "memoryTrick": "Thyroid = metabolism. Parathyroid = calcium (think 'para' = alongside the thyroid, but a totally separate job).",
+    "commonMisconception": "The four parathyroid glands are not simply smaller parts of the thyroid gland — they are functionally and embryologically distinct organs that happen to sit on it."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "comp-embryo-vs-fetus",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "reproduction",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Embryo"
+  },
+  "itemB": {
+    "name": "Fetus"
+  },
+  "overview": "Two names for the developing human at different stages of pregnancy, marked by a shift from basic organ formation to growth and maturation.",
+  "genZNote": "Embryo: still under construction, organs being built. Fetus: construction's mostly done, now it's about growing and finishing details.",
+  "aspects": [
+    {
+      "id": "stage-window",
+      "label": "Developmental Window (Humans)",
+      "valueA": "From fertilisation up to about week 8 of pregnancy.",
+      "valueB": "From about week 9 of pregnancy until birth.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "main-process",
+      "label": "Main Process Occurring",
+      "valueA": "Organogenesis — the basic body plan and major organs are formed.",
+      "valueB": "Growth, maturation, and functional development of already-formed organs.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "recognizability",
+      "label": "Recognisable Human Features?",
+      "valueA": "Not yet clearly human-like in early stages.",
+      "valueB": "Recognisably human in form, with refining features.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Week 8-9 is the commonly used cutoff where 'embryo' officially becomes 'fetus' in human development terminology.",
+    "memoryTrick": "Embryo = early building phase. Fetus = later growing/finishing phase.",
+    "commonMisconception": "The embryo-to-fetus transition is not a sudden biological event — it's a terminology convention marking the shift from organ formation to growth."
+  },
+  "lastVerified": "2026-09-05"
+}

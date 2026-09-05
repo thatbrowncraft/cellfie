@@ -1,0 +1,50 @@
+{
+  "id": "comp-cortisol-vs-aldosterone",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "endocrine"
+  ],
+  "itemA": {
+    "name": "Cortisol"
+  },
+  "itemB": {
+    "name": "Aldosterone"
+  },
+  "overview": "Both are adrenal cortex hormones, but they belong to different classes with very different jobs — stress metabolism versus salt/water balance.",
+  "genZNote": "Cortisol handles your stress and blood sugar. Aldosterone handles your salt and water levels.",
+  "aspects": [
+    {
+      "id": "hormone-class",
+      "label": "Hormone Class",
+      "valueA": "A glucocorticoid.",
+      "valueB": "A mineralocorticoid.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "main-function",
+      "label": "Main Function",
+      "valueA": "Raises blood glucose, suppresses immune response, helps the body handle stress.",
+      "valueB": "Increases sodium reabsorption and potassium excretion in the kidney, raising blood pressure.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "regulation",
+      "label": "Main Regulator",
+      "valueA": "Controlled by ACTH from the anterior pituitary.",
+      "valueB": "Controlled mainly by the renin-angiotensin-aldosterone system, not ACTH.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Aldosterone is the key hormone of the renin-angiotensin-aldosterone system (RAAS), which regulates blood pressure via sodium and water retention.",
+    "memoryTrick": "Cortisol = stress and sugar. Aldosterone = salt (sodium) balance.",
+    "commonMisconception": "Cortisol's regulation is not primarily via RAAS like aldosterone — it is controlled through the hypothalamus-pituitary-adrenal (HPA) axis via ACTH."
+  },
+  "lastVerified": "2026-09-05"
+}

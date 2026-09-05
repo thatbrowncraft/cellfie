@@ -1,0 +1,50 @@
+{
+  "id": "comp-antigen-vs-antibody",
+  "domain": "immunology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Antigen"
+  },
+  "itemB": {
+    "name": "Antibody"
+  },
+  "overview": "An antigen is the foreign molecule that triggers an immune response; an antibody is the protein the immune system makes to specifically bind and neutralise it.",
+  "genZNote": "Antigen: the intruder's ID badge. Antibody: the security guard's custom-made handcuffs for that exact badge.",
+  "aspects": [
+    {
+      "id": "origin",
+      "label": "Origin",
+      "valueA": "Typically foreign — from a pathogen, allergen, or transplanted tissue.",
+      "valueB": "Produced by the host's own B cells/plasma cells in response to an antigen.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "chemical-nature",
+      "label": "Chemical Nature",
+      "valueA": "Usually a protein, polysaccharide, or glycoprotein on a pathogen or foreign substance.",
+      "valueB": "Always a protein (immunoglobulin).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Triggers the immune response by being recognised as foreign.",
+      "valueB": "Binds specifically to the antigen that triggered its production, neutralising or marking it for destruction.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "An antibody's specificity for its antigen is so precise that it's often compared to a lock-and-key or antigen-antibody complementary fit.",
+    "memoryTrick": "Antigen generates the response. Antibody is the response.",
+    "commonMisconception": "Not every antigen is foreign — self-antigens exist too, and the immune system mistakenly attacking them is what causes autoimmune disease."
+  },
+  "lastVerified": "2026-09-05"
+}

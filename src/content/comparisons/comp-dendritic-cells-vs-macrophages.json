@@ -1,0 +1,49 @@
+{
+  "id": "comp-dendritic-cells-vs-macrophages",
+  "domain": "immunology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology"
+  ],
+  "itemA": {
+    "name": "Dendritic Cells"
+  },
+  "itemB": {
+    "name": "Macrophages"
+  },
+  "overview": "Both are antigen-presenting cells that engulf pathogens, but dendritic cells specialise in kicking off the adaptive immune response.",
+  "genZNote": "Macrophages: the general clean-up-and-eat crew. Dendritic cells: the specialist that grabs evidence and rushes it to headquarters (the lymph node).",
+  "aspects": [
+    {
+      "id": "primary-role",
+      "label": "Primary Role",
+      "valueA": "The most effective and dedicated antigen-presenting cell, specialised for activating naive T cells.",
+      "valueB": "General-purpose phagocyte, mainly focused on engulfing and digesting pathogens/debris.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "location",
+      "label": "Typical Location",
+      "valueA": "Found in tissues exposed to the environment (skin, mucosa), then migrates to lymph nodes to present antigen.",
+      "valueB": "Distributed throughout tissues and blood, staying mostly local to clear pathogens/debris.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "t-cell-activation",
+      "label": "Efficiency at Activating Naive T Cells",
+      "valueA": "Highly efficient — considered the primary initiator of adaptive immune responses.",
+      "valueB": "Can present antigen, but far less efficient than dendritic cells at activating naive T cells.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Dendritic cells are often called the 'sentinels' of the immune system because they are the main bridge between innate and adaptive immunity.",
+    "memoryTrick": "Dendritic cells alert headquarters (lymph nodes). Macrophages mostly clean up on-site.",
+    "commonMisconception": "Macrophages are not useless for activating T cells — they simply aren't the primary initiators; dendritic cells hold that specialised role."
+  },
+  "lastVerified": "2026-09-05"
+}

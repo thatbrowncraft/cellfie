@@ -1,0 +1,49 @@
+{
+  "id": "comp-iga-vs-ige",
+  "domain": "immunology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology"
+  ],
+  "itemA": {
+    "name": "IgA"
+  },
+  "itemB": {
+    "name": "IgE"
+  },
+  "overview": "Two immunoglobulin classes with very specialised roles — mucosal defence versus allergic and anti-parasite response.",
+  "genZNote": "IgA: the security guard stationed at every mucosal doorway. IgE: the hair-trigger alarm behind allergic reactions.",
+  "aspects": [
+    {
+      "id": "main-role",
+      "label": "Main Role",
+      "valueA": "Provides mucosal immunity — found in saliva, tears, breast milk, and respiratory/gut secretions.",
+      "valueB": "Mediates allergic reactions and defence against parasitic worms (helminths).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "abundance",
+      "label": "Relative Abundance",
+      "valueA": "Second most abundant antibody class, especially concentrated at mucosal surfaces.",
+      "valueB": "Least abundant antibody class in normal circulation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "clinical-relevance",
+      "label": "Clinical Relevance",
+      "valueA": "Deficiency linked to recurrent respiratory/gut infections.",
+      "valueB": "Elevated levels linked to allergies, asthma, and parasitic infections.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Breast milk is especially rich in IgA, giving newborns passive mucosal immunity through breastfeeding.",
+    "memoryTrick": "IgA = mucosAl surfaces. IgE = allErgy and parasites.",
+    "commonMisconception": "IgE is not the most abundant antibody just because it's the most clinically talked-about in allergies — it's actually present in the smallest quantities of all antibody classes."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "comp-identical-twins-vs-fraternal-twins",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics",
+    "reproduction",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Identical (Monozygotic) Twins"
+  },
+  "itemB": {
+    "name": "Fraternal (Dizygotic) Twins"
+  },
+  "overview": "Two ways twins can form, differing in whether they come from one fertilised egg that splits, or two separately fertilised eggs.",
+  "genZNote": "Identical twins: one zygote that decided to become two. Fraternal twins: two separate eggs that just happened to share a due date.",
+  "aspects": [
+    {
+      "id": "origin",
+      "label": "Origin",
+      "valueA": "A single fertilised egg (zygote) that splits into two embryos early in development.",
+      "valueB": "Two separate eggs, each fertilised by a different sperm.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "genetic-similarity",
+      "label": "Genetic Similarity",
+      "valueA": "Genetically identical (same DNA).",
+      "valueB": "Genetically as similar as regular siblings (share about 50% of DNA on average).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "sex",
+      "label": "Sex of Twins",
+      "valueA": "Always the same sex.",
+      "valueB": "Can be the same sex or different sexes.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Monozygotic (identical) twins are always the same sex because they come from a single zygote; dizygotic (fraternal) twins can be either.",
+    "memoryTrick": "Mono = one zygote splits (identical). Di = two separate zygotes (fraternal).",
+    "commonMisconception": "Identical twins are not 100% identical in every trait later in life — environmental factors and epigenetic differences can still cause them to differ."
+  },
+  "lastVerified": "2026-09-05"
+}

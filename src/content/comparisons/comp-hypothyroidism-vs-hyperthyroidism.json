@@ -1,0 +1,51 @@
+{
+  "id": "comp-hypothyroidism-vs-hyperthyroidism",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "endocrine",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Hypothyroidism"
+  },
+  "itemB": {
+    "name": "Hyperthyroidism"
+  },
+  "overview": "Two opposite thyroid disorders, defined by whether the gland is producing too little or too much thyroid hormone.",
+  "genZNote": "Hypothyroidism: metabolism running in slow motion. Hyperthyroidism: metabolism stuck on fast forward.",
+  "aspects": [
+    {
+      "id": "hormone-level",
+      "label": "Thyroid Hormone Level",
+      "valueA": "Low levels of T3/T4.",
+      "valueB": "Excess levels of T3/T4.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "metabolic-rate",
+      "label": "Effect on Metabolic Rate",
+      "valueA": "Decreased metabolic rate — weight gain, fatigue, cold intolerance.",
+      "valueB": "Increased metabolic rate — weight loss, restlessness, heat intolerance.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example-condition",
+      "label": "Example Condition",
+      "valueA": "Iodine deficiency causing goitre; Hashimoto's thyroiditis.",
+      "valueB": "Graves' disease, an autoimmune condition causing overactive thyroid.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Simple goitre from iodine deficiency is technically a form of hypothyroidism where the gland enlarges while trying (and failing) to make enough hormone.",
+    "memoryTrick": "Hypo = too low, slow. Hyper = too high, fast.",
+    "commonMisconception": "A goitre (enlarged thyroid) doesn't automatically mean hyperthyroidism — it can occur in both hypo- and hyperthyroid states, depending on the underlying cause."
+  },
+  "lastVerified": "2026-09-05"
+}

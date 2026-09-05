@@ -1,0 +1,50 @@
+{
+  "id": "comp-biodegradable-vs-nonbiodegradable",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Biodegradable Substances"
+  },
+  "itemB": {
+    "name": "Non-Biodegradable Substances"
+  },
+  "overview": "The key difference is whether natural decomposers can break the substance down into simpler, harmless components.",
+  "genZNote": "Biodegradable: nature can break it down and recycle it. Non-biodegradable: nature just has to live with it, often for centuries.",
+  "aspects": [
+    {
+      "id": "decomposability",
+      "label": "Broken Down by Decomposers?",
+      "valueA": "Yes — broken down by microorganisms into simpler natural substances.",
+      "valueB": "No — resists microbial breakdown, persisting in the environment for long periods.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "environmental-persistence",
+      "label": "Environmental Persistence",
+      "valueA": "Breaks down relatively quickly, from days to a few years.",
+      "valueB": "Can persist for decades to centuries without breaking down.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Food waste, paper, cotton cloth.",
+      "valueB": "Plastic, glass, certain pesticides (like DDT).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "DDT is a classic exam example of a non-biodegradable pollutant that undergoes biomagnification up the food chain.",
+    "memoryTrick": "Biodegradable = decomposers can handle it. Non-biodegradable = decomposers are stumped.",
+    "commonMisconception": "Non-biodegradable does not mean 'never breaks down at all' — many such substances do eventually degrade, just over impractically long timescales (plastic can take hundreds of years)."
+  },
+  "lastVerified": "2026-09-05"
+}

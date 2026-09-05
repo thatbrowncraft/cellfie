@@ -1,0 +1,50 @@
+{
+  "id": "comp-community-vs-ecosystem",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Community"
+  },
+  "itemB": {
+    "name": "Ecosystem"
+  },
+  "overview": "A community includes only the living organisms interacting in an area; an ecosystem adds the non-living environment they interact with.",
+  "genZNote": "Community: the cast of living characters. Ecosystem: the cast plus the entire set and props (the physical environment) they interact with.",
+  "aspects": [
+    {
+      "id": "components",
+      "label": "Components Included",
+      "valueA": "Only biotic (living) components — all species populations in an area.",
+      "valueB": "Both biotic and abiotic components together, interacting as a functional unit.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "energy-flow-focus",
+      "label": "Focus on Energy/Matter Flow?",
+      "valueA": "Focuses mainly on species interactions and composition.",
+      "valueB": "Explicitly includes energy flow and nutrient cycling between organisms and their environment.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "All organisms living in a pond.",
+      "valueB": "The pond community plus its water, sunlight, temperature, and nutrient cycles, functioning together.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "An ecosystem is defined by the functional interaction between a community and its abiotic environment — this is the level at which energy flow and nutrient cycling are studied.",
+    "memoryTrick": "Community = just the living things. Ecosystem = living things + their physical environment, working as a system.",
+    "commonMisconception": "A 'community' does not include soil, water, or climate — those abiotic factors only enter the picture once you're talking about the ecosystem level."
+  },
+  "lastVerified": "2026-09-05"
+}

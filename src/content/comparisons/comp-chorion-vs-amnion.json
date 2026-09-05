@@ -1,0 +1,50 @@
+{
+  "id": "comp-chorion-vs-amnion",
+  "domain": "biological-structure",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "reproduction"
+  ],
+  "itemA": {
+    "name": "Chorion"
+  },
+  "itemB": {
+    "name": "Amnion"
+  },
+  "overview": "Two of the extra-embryonic membranes that protect and support the developing embryo, with different structural roles.",
+  "genZNote": "Chorion: the outer membrane that helps build the placenta. Amnion: the inner water balloon cushioning the baby.",
+  "aspects": [
+    {
+      "id": "position",
+      "label": "Position",
+      "valueA": "The outermost extra-embryonic membrane.",
+      "valueB": "The innermost membrane, directly surrounding the embryo/fetus.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "function",
+      "label": "Main Function",
+      "valueA": "Forms the fetal part of the placenta and contributes to gas/nutrient exchange with the mother.",
+      "valueB": "Encloses the amniotic fluid, cushioning and protecting the embryo from mechanical shock.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "fluid",
+      "label": "Associated Fluid",
+      "valueA": "Not directly fluid-filled itself.",
+      "valueB": "Encloses the amniotic cavity, filled with amniotic fluid.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Amniotic fluid sampling (amniocentesis) is a prenatal diagnostic technique that draws directly from the amnion's fluid-filled cavity.",
+    "memoryTrick": "Chorion contributes to the placenta (outer). Amnion holds the fluid cushion (inner).",
+    "commonMisconception": "The chorion and amnion are not the same membrane at different times — they are two distinct, simultaneously present extra-embryonic membranes."
+  },
+  "lastVerified": "2026-09-05"
+}

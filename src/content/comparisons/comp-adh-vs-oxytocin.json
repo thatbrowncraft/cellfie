@@ -1,0 +1,51 @@
+{
+  "id": "comp-adh-vs-oxytocin",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "endocrine",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "ADH (Antidiuretic Hormone)"
+  },
+  "itemB": {
+    "name": "Oxytocin"
+  },
+  "overview": "Both are made in the hypothalamus and released from the posterior pituitary, but they act on completely different target tissues.",
+  "genZNote": "ADH: keeps your body from losing too much water. Oxytocin: the 'labour and bonding' hormone.",
+  "aspects": [
+    {
+      "id": "target",
+      "label": "Main Target Organ",
+      "valueA": "Kidney (collecting duct) — increases water reabsorption.",
+      "valueB": "Uterus (contraction) and mammary glands (milk ejection).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "trigger",
+      "label": "Main Trigger for Release",
+      "valueA": "Increased blood osmolarity (dehydration) or decreased blood volume.",
+      "valueB": "Cervical stretching during childbirth, or suckling during breastfeeding.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "also-called",
+      "label": "Also Called",
+      "valueA": "Vasopressin.",
+      "valueB": "Sometimes called the 'love hormone' for its role in bonding.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Both ADH and oxytocin are synthesised by the hypothalamus and only stored/released by the posterior pituitary — a favourite exam trap.",
+    "memoryTrick": "ADH = anti-diuretic, saves water. Oxytocin = labour contractions and milk let-down.",
+    "commonMisconception": "ADH deficiency causes diabetes insipidus, not diabetes mellitus — a commonly confused pair of similarly-named conditions."
+  },
+  "lastVerified": "2026-09-05"
+}

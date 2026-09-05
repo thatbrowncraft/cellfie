@@ -1,0 +1,49 @@
+{
+  "id": "comp-allopatric-speciation-vs-sympatric-speciation",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "evolution"
+  ],
+  "itemA": {
+    "name": "Allopatric Speciation"
+  },
+  "itemB": {
+    "name": "Sympatric Speciation"
+  },
+  "overview": "Two modes of speciation, differing in whether a physical geographic barrier is involved in separating populations.",
+  "genZNote": "Allopatric: new species form because a mountain (or ocean) got in the way. Sympatric: new species form even while living in the very same area.",
+  "aspects": [
+    {
+      "id": "geographic-separation",
+      "label": "Geographic Separation Required?",
+      "valueA": "Yes — populations are physically separated by a geographic barrier (mountain, river, ocean).",
+      "valueB": "No — new species arise within the same geographic area, without physical separation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "mechanism",
+      "label": "Typical Mechanism",
+      "valueA": "Populations accumulate genetic differences independently until they can no longer interbreed.",
+      "valueB": "Reproductive isolation arises through other means, such as polyploidy, habitat specialisation, or behavioural differences.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Darwin's finches diverging on separate Galapagos islands.",
+      "valueB": "Polyploid plant species arising instantly within the same population as their parent species.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Sympatric speciation via instant polyploidy is common in plants, since a doubled chromosome number can immediately prevent successful interbreeding with the parent population.",
+    "memoryTrick": "Allopatric = 'other homeland' — different places. Sympatric = 'same homeland' — same place.",
+    "commonMisconception": "Sympatric speciation is not just a theoretical idea — polyploidy-driven sympatric speciation in plants is well-documented and relatively common."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "comp-auxin-vs-cytokinin",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "plant-hormones",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Auxin"
+  },
+  "itemB": {
+    "name": "Cytokinin"
+  },
+  "overview": "Two plant hormones that often work in opposition to control the balance between root and shoot growth.",
+  "genZNote": "Auxin says 'grow roots.' Cytokinin says 'grow shoots.' Together they negotiate the plant's whole shape.",
+  "aspects": [
+    {
+      "id": "main-role",
+      "label": "Main Role",
+      "valueA": "Promotes cell elongation, root initiation, and apical dominance.",
+      "valueB": "Promotes cell division (cytokinesis) and delays senescence (ageing) of leaves.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "root-shoot-ratio",
+      "label": "Effect on Root/Shoot Balance",
+      "valueA": "High auxin-to-cytokinin ratio favours root formation.",
+      "valueB": "High cytokinin-to-auxin ratio favours shoot/bud formation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "senescence",
+      "label": "Effect on Ageing",
+      "valueA": "Does not delay leaf senescence.",
+      "valueB": "Delays leaf senescence, keeping leaves green longer (the 'Richmond-Lang effect').",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "In tissue culture, the auxin:cytokinin ratio is deliberately manipulated to control whether a plant callus grows roots or shoots.",
+    "memoryTrick": "Cytokinin drives cytokinesis (cell division). Auxin drives elongation and roots.",
+    "commonMisconception": "Cytokinin doesn't act alone to promote shoots — it's the ratio between auxin and cytokinin, not the absolute amount of either, that determines the outcome."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "comp-estrogen-vs-progesterone",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "endocrine",
+    "reproduction",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Estrogen"
+  },
+  "itemB": {
+    "name": "Progesterone"
+  },
+  "overview": "Two key female sex hormones with complementary roles across the menstrual cycle and pregnancy.",
+  "genZNote": "Estrogen builds up the uterine lining. Progesterone maintains it once it's ready.",
+  "aspects": [
+    {
+      "id": "main-source",
+      "label": "Main Source",
+      "valueA": "Growing ovarian follicles (and placenta during pregnancy).",
+      "valueB": "Corpus luteum after ovulation (and placenta during pregnancy).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "endometrial-effect",
+      "label": "Effect on Endometrium",
+      "valueA": "Causes proliferation (thickening) of the uterine lining.",
+      "valueB": "Maintains the endometrium, preparing it for implantation (secretory phase).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "pregnancy-role",
+      "label": "Role in Pregnancy",
+      "valueA": "Supports growth of the uterus and mammary ducts.",
+      "valueB": "Maintains pregnancy by preventing uterine contractions and menstruation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "secondary-traits",
+      "label": "Secondary Sexual Characteristics",
+      "valueA": "Primarily responsible for female secondary sexual characteristics.",
+      "valueB": "Not primarily responsible for secondary sexual characteristics — its role is cycle/pregnancy maintenance.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A sharp fall in both estrogen and progesterone right before menstruation is what triggers the shedding of the endometrium.",
+    "memoryTrick": "Estrogen builds the house (endometrium). Progesterone keeps the house ready 'for gestation' (pro-gestation).",
+    "commonMisconception": "Progesterone is not made only during pregnancy — it's produced every cycle by the corpus luteum, pregnant or not."
+  },
+  "lastVerified": "2026-09-05"
+}

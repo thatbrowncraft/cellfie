@@ -1,0 +1,49 @@
+{
+  "id": "comp-founder-effect-vs-bottleneck-effect",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "evolution"
+  ],
+  "itemA": {
+    "name": "Founder Effect"
+  },
+  "itemB": {
+    "name": "Bottleneck Effect"
+  },
+  "overview": "Both are forms of genetic drift causing a sudden loss of genetic diversity, but they differ in how the small population arises.",
+  "genZNote": "Founder effect: a tiny group breaks away and starts fresh elsewhere. Bottleneck effect: a disaster wipes out most of an existing population, leaving a random few.",
+  "aspects": [
+    {
+      "id": "cause",
+      "label": "Cause",
+      "valueA": "A small group of individuals separates from a larger population to colonise a new area.",
+      "valueB": "A sudden environmental event (disaster, disease, hunting) drastically reduces an existing population's size.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "population-history",
+      "label": "Population History",
+      "valueA": "A brand-new population is established from a small founding group.",
+      "valueB": "The same original population survives, but with drastically reduced numbers and diversity.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "A few individuals colonising a remote island and founding a new isolated population.",
+      "valueB": "Cheetah populations today show low genetic diversity due to a past near-extinction bottleneck event.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Cheetahs are a famous real-world bottleneck effect example, showing dramatically reduced genetic diversity from a past population crash.",
+    "memoryTrick": "Founder effect = new colony started small. Bottleneck effect = existing population crashed down small.",
+    "commonMisconception": "Both effects reduce genetic diversity through random chance, not natural selection — that's exactly why they're classified under genetic drift, not adaptation."
+  },
+  "lastVerified": "2026-09-05"
+}

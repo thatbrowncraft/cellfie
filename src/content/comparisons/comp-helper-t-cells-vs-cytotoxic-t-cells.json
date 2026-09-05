@@ -1,0 +1,56 @@
+{
+  "id": "comp-helper-t-cells-vs-cytotoxic-t-cells",
+  "domain": "immunology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology"
+  ],
+  "itemA": {
+    "name": "Helper T Cells"
+  },
+  "itemB": {
+    "name": "Cytotoxic T Cells"
+  },
+  "overview": "Two types of T cells with different jobs — one coordinates the immune response, the other directly kills infected cells.",
+  "genZNote": "Helper T cells: the immune system's project managers. Cytotoxic T cells: the ones who actually pull the trigger.",
+  "aspects": [
+    {
+      "id": "main-role",
+      "label": "Main Role",
+      "valueA": "Coordinates and activates other immune cells (B cells, macrophages, cytotoxic T cells) by releasing cytokines.",
+      "valueB": "Directly kills infected, cancerous, or foreign cells.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "marker",
+      "label": "Surface Marker",
+      "valueA": "CD4+.",
+      "valueB": "CD8+.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "mhc-restriction",
+      "label": "MHC Restriction",
+      "valueA": "Recognises antigen presented on MHC class II.",
+      "valueB": "Recognises antigen presented on MHC class I.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "hiv-relevance",
+      "label": "Relevance to HIV",
+      "valueA": "The primary target of HIV, which is why HIV infection is so devastating to immunity.",
+      "valueB": "Not the primary target of HIV, though their function is eventually compromised as CD4+ helper T cells decline.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "HIV specifically targets CD4+ helper T cells, which is why a falling CD4 count is used to track AIDS progression.",
+    "memoryTrick": "Helper T = CD4, coordinates. Cytotoxic T = CD8, kills directly.",
+    "commonMisconception": "Cytotoxic T cells are not the same as natural killer (NK) cells — cytotoxic T cells are antigen-specific and part of adaptive immunity, while NK cells act non-specifically as part of innate immunity."
+  },
+  "lastVerified": "2026-09-05"
+}

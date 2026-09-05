@@ -1,0 +1,57 @@
+{
+  "id": "comp-vaccine-vs-antiserum",
+  "domain": "immunology",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Vaccine"
+  },
+  "itemB": {
+    "name": "Antiserum"
+  },
+  "overview": "Both are medical tools against infection, but a vaccine trains your immune system for the future while antiserum gives immediate, ready-made antibodies.",
+  "genZNote": "Vaccine: teaching your body to fish. Antiserum: just handing your body the fish right now, urgently.",
+  "aspects": [
+    {
+      "id": "mechanism",
+      "label": "Mechanism",
+      "valueA": "Contains a weakened/inactivated pathogen or its antigen, prompting the body to make its own antibodies (active immunity).",
+      "valueB": "Contains ready-made antibodies against a specific pathogen or toxin, providing immediate protection (passive immunity).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "onset",
+      "label": "Onset of Protection",
+      "valueA": "Slower onset — takes days to weeks to build full immunity.",
+      "valueB": "Immediate protection, since antibodies are already present.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "duration",
+      "label": "Duration of Protection",
+      "valueA": "Long-lasting, often for years, due to memory cell formation.",
+      "valueB": "Short-lived, since no memory cells are formed by the recipient.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "use-case",
+      "label": "Typical Use Case",
+      "valueA": "Preventive, given before exposure.",
+      "valueB": "Emergency/therapeutic, given after exposure — e.g. rabies or snake antivenom.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Antiserum provides immediate but temporary protection because it supplies antibodies directly, without triggering the recipient's own memory cell formation.",
+    "memoryTrick": "Vaccine = train your immune system for later. Antiserum = urgent antibody delivery right now.",
+    "commonMisconception": "Antiserum is not a substitute for vaccination — it offers no long-term memory response, so protection fades once the borrowed antibodies degrade."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "comp-follicular-phase-vs-luteal-phase",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "reproduction",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Follicular Phase"
+  },
+  "itemB": {
+    "name": "Luteal Phase"
+  },
+  "overview": "The two halves of the ovarian cycle, split by ovulation, each dominated by a different hormone.",
+  "genZNote": "Follicular phase: the build-up before the big event. Luteal phase: what happens after, corpus luteum in charge.",
+  "aspects": [
+    {
+      "id": "dominant-hormone",
+      "label": "Dominant Hormone",
+      "valueA": "Estrogen, rising as the follicle matures.",
+      "valueB": "Progesterone, secreted by the corpus luteum.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "main-event",
+      "label": "Main Event",
+      "valueA": "Growth and maturation of an ovarian follicle, ending in ovulation.",
+      "valueB": "Formation and function of the corpus luteum, preparing the endometrium for possible implantation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "duration-variability",
+      "label": "Cycle-Length Variability",
+      "valueA": "Variable in length — mainly responsible for differences in overall cycle length between people.",
+      "valueB": "Relatively fixed in length (~14 days), regardless of total cycle length.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The luteal phase length is remarkably consistent (~14 days) across people, while the follicular phase is what actually varies cycle length.",
+    "memoryTrick": "Follicular = before ovulation, follicle growing. Luteal = after ovulation, corpus luteum active.",
+    "commonMisconception": "Ovulation is not part of either phase — it's the dividing event between the follicular and luteal phases."
+  },
+  "lastVerified": "2026-09-05"
+}

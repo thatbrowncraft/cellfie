@@ -1,0 +1,57 @@
+{
+  "id": "comp-t3-vs-t4",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "endocrine"
+  ],
+  "itemA": {
+    "name": "T3 (Triiodothyronine)"
+  },
+  "itemB": {
+    "name": "T4 (Thyroxine)"
+  },
+  "overview": "The two thyroid hormones differ mainly in iodine content, potency, and how much of each the thyroid actually secretes.",
+  "genZNote": "T4: made in bulk, needs converting. T3: the more powerful, ready-to-use form.",
+  "aspects": [
+    {
+      "id": "iodine-atoms",
+      "label": "Number of Iodine Atoms",
+      "valueA": "3 iodine atoms.",
+      "valueB": "4 iodine atoms.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "potency",
+      "label": "Relative Potency",
+      "valueA": "About 3-5 times more biologically potent than T4.",
+      "valueB": "Less potent per molecule, but secreted in much larger quantities.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "secretion-amount",
+      "label": "Amount Secreted by Thyroid",
+      "valueA": "Secreted in smaller amounts directly by the thyroid.",
+      "valueB": "The major hormone secreted directly by the thyroid gland (about 90% of output).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "conversion",
+      "label": "Conversion",
+      "valueA": "Mostly produced by peripheral conversion of T4 in tissues like the liver.",
+      "valueB": "Converted to the more active T3 in peripheral tissues as needed.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Most T3 in the body doesn't come directly from the thyroid — it's produced by converting T4 in peripheral tissues.",
+    "memoryTrick": "T3 = 3 iodines, more potent. T4 = 4 iodines, the main one secreted.",
+    "commonMisconception": "T4 is not the 'inactive' hormone — it is biologically active on its own, just less potent than T3, and serves as a stable circulating reservoir."
+  },
+  "lastVerified": "2026-09-05"
+}

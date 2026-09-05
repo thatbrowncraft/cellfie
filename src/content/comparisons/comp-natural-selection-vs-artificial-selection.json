@@ -1,0 +1,57 @@
+{
+  "id": "comp-natural-selection-vs-artificial-selection",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "evolution",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Natural Selection"
+  },
+  "itemB": {
+    "name": "Artificial Selection"
+  },
+  "overview": "Both change a population's traits over generations by favouring certain individuals for reproduction, but one is driven by nature and the other by human choice.",
+  "genZNote": "Natural selection: the environment picks the winners. Artificial selection: humans play favourites on purpose.",
+  "aspects": [
+    {
+      "id": "selecting-agent",
+      "label": "Selecting Agent",
+      "valueA": "The natural environment — survival and reproductive success determine which traits persist.",
+      "valueB": "Humans deliberately choose which individuals breed, based on desired traits.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "goal",
+      "label": "Goal / Direction",
+      "valueA": "No conscious goal — simply favours traits that improve survival and reproduction in a given environment.",
+      "valueB": "Deliberately aimed at specific traits humans find useful or desirable.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Peppered moths becoming darker in polluted, sooty environments.",
+      "valueB": "Breeding dogs for specific traits, or crop plants for higher yield.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "speed",
+      "label": "Typical Speed",
+      "valueA": "Generally slower, occurring over many generations in the wild.",
+      "valueB": "Can be much faster, since humans apply strong, consistent selection pressure.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Darwin used artificial selection in domesticated animals and plants as key supporting evidence for how natural selection could work in the wild.",
+    "memoryTrick": "Natural = nature picks. Artificial = humans pick.",
+    "commonMisconception": "Artificial selection is not a fundamentally different mechanism from natural selection — both work by differential reproduction of certain traits, just with a different selecting agent."
+  },
+  "lastVerified": "2026-09-05"
+}

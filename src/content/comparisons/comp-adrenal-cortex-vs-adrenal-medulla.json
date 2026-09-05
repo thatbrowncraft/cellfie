@@ -1,0 +1,51 @@
+{
+  "id": "comp-adrenal-cortex-vs-adrenal-medulla",
+  "domain": "biological-structure",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "endocrine",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Adrenal Cortex"
+  },
+  "itemB": {
+    "name": "Adrenal Medulla"
+  },
+  "overview": "The two functionally distinct regions of the adrenal gland, one steroid-hormone-producing and the other a modified sympathetic nerve tissue.",
+  "genZNote": "Adrenal cortex: the slow-and-steady steroid factory on the outside. Adrenal medulla: the fast 'fight or flight' alarm bell at the core.",
+  "aspects": [
+    {
+      "id": "hormones",
+      "label": "Hormones Produced",
+      "valueA": "Corticosteroids: cortisol (glucocorticoid), aldosterone (mineralocorticoid), and some androgens.",
+      "valueB": "Catecholamines: adrenaline (epinephrine) and noradrenaline (norepinephrine).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "origin",
+      "label": "Embryonic Origin",
+      "valueA": "Derived from mesoderm.",
+      "valueB": "Derived from neural crest cells — essentially a modified sympathetic ganglion.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "response-speed",
+      "label": "Speed of Response",
+      "valueA": "Slower-acting, longer-duration effects.",
+      "valueB": "Rapid-acting, short-duration effects, central to the acute stress response.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "The adrenal medulla is developmentally a modified sympathetic ganglion, which is why adrenaline acts so similarly to a neurotransmitter.",
+    "memoryTrick": "Cortex = corticosteroids, slow. Medulla = fight-or-flight, fast.",
+    "commonMisconception": "Adrenaline is not made in the adrenal cortex — cortisol and adrenaline come from two structurally and developmentally distinct parts of the same gland."
+  },
+  "lastVerified": "2026-09-05"
+}

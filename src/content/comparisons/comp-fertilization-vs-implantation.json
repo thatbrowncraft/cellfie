@@ -1,0 +1,51 @@
+{
+  "id": "comp-fertilization-vs-implantation",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "reproduction",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Fertilization"
+  },
+  "itemB": {
+    "name": "Implantation"
+  },
+  "overview": "Two sequential events in early human development — sperm meeting egg, followed later by the resulting embryo attaching to the uterine wall.",
+  "genZNote": "Fertilization: the meet-cute between sperm and egg. Implantation: the embryo finally moving in and settling down.",
+  "aspects": [
+    {
+      "id": "what-happens",
+      "label": "What Happens",
+      "valueA": "Fusion of sperm and secondary oocyte to form a zygote.",
+      "valueB": "Attachment and embedding of the blastocyst into the endometrial lining.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "valueA": "Typically occurs in the ampulla of the fallopian tube.",
+      "valueB": "Occurs in the uterus.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "timing",
+      "label": "Approximate Timing",
+      "valueA": "Occurs within about 24 hours of ovulation.",
+      "valueB": "Occurs about 6-10 days after fertilisation.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Fertilisation happens in the fallopian tube, not the uterus — a very commonly tested location fact.",
+    "memoryTrick": "Fertilization = the union. Implantation = the settling in, days later, in a different location.",
+    "commonMisconception": "Pregnancy is not medically considered to have 'started' at fertilisation in most clinical definitions — implantation, several days later, is often used as the defining starting point."
+  },
+  "lastVerified": "2026-09-05"
+}

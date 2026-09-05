@@ -1,0 +1,49 @@
+{
+  "id": "comp-interferon-vs-interleukin",
+  "domain": "immunology",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology"
+  ],
+  "itemA": {
+    "name": "Interferon"
+  },
+  "itemB": {
+    "name": "Interleukin"
+  },
+  "overview": "Both are cytokines (signalling proteins) of the immune system, but they specialise in different jobs — antiviral defence versus communication between immune cells.",
+  "genZNote": "Interferon: shouts 'virus alert!' to neighbouring cells. Interleukin: the immune system's internal group chat between cells.",
+  "aspects": [
+    {
+      "id": "main-function",
+      "label": "Main Function",
+      "valueA": "Interferes with viral replication and alerts neighbouring cells to an antiviral state.",
+      "valueB": "Coordinates communication between white blood cells, regulating growth, differentiation, and activation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "trigger",
+      "label": "Main Trigger for Release",
+      "valueA": "Primarily released in response to viral infection.",
+      "valueB": "Released by various immune cells during infection, inflammation, or immune activation generally.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Interferon-alpha, used therapeutically for some viral infections and cancers.",
+      "valueB": "Interleukin-2 (IL-2), which stimulates T cell proliferation.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Interferons are named for their ability to 'interfere' with viral replication in nearby uninfected cells.",
+    "memoryTrick": "Interferon = interferes with viruses. Interleukin = inter-leukocyte (white blood cell) communication.",
+    "commonMisconception": "Interferons are not exclusively antiviral in effect — they also have roles in modulating the overall immune response and even some anti-tumour activity."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "comp-autoimmunity-vs-allergy",
+  "domain": "immunology",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "immunology"
+  ],
+  "itemA": {
+    "name": "Autoimmunity"
+  },
+  "itemB": {
+    "name": "Allergy"
+  },
+  "overview": "Both involve the immune system overreacting, but autoimmunity targets the body's own cells while allergy overreacts to a harmless external substance.",
+  "genZNote": "Autoimmunity: the immune system turning on its own team. Allergy: the immune system massively overreacting to something totally harmless.",
+  "aspects": [
+    {
+      "id": "target",
+      "label": "What's Targeted",
+      "valueA": "The body's own healthy cells and tissues (self-antigens).",
+      "valueB": "A normally harmless external substance (allergen) like pollen or dust.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Rheumatoid arthritis, type 1 diabetes, lupus.",
+      "valueB": "Hay fever, food allergies, asthma triggered by allergens.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "mechanism",
+      "label": "Underlying Mechanism",
+      "valueA": "Failure of self-tolerance — the immune system fails to distinguish self from non-self.",
+      "valueB": "An exaggerated (hypersensitivity) response to a normally non-threatening antigen.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Allergy is technically classified as Type I hypersensitivity, mediated by IgE — a direct link back to that immunoglobulin comparison.",
+    "memoryTrick": "Autoimmunity = attacking 'self'. Allergy = overreacting to something harmless from 'outside'.",
+    "commonMisconception": "Allergy is not the same thing as a normal immune response to infection — it's specifically an inappropriate, exaggerated reaction to something that poses no real threat."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "comp-native-species-vs-invasive-species",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Native Species"
+  },
+  "itemB": {
+    "name": "Invasive Species"
+  },
+  "overview": "Native species naturally belong to an ecosystem's history; invasive species are introduced from elsewhere and often disrupt the balance.",
+  "genZNote": "Native species: the original locals. Invasive species: uninvited outsiders that move in and start causing trouble.",
+  "aspects": [
+    {
+      "id": "origin",
+      "label": "Origin",
+      "valueA": "Naturally occurs in a region, having evolved there or arrived without human help over long timescales.",
+      "valueB": "Introduced to a new region, usually through human activity (intentional or accidental).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "ecosystem-effect",
+      "label": "Effect on Ecosystem",
+      "valueA": "Typically well-integrated, in balance with other native species.",
+      "valueB": "Often outcompetes native species for resources, disrupting the existing ecological balance.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Bengal tiger in the Indian subcontinent.",
+      "valueB": "Water hyacinth in Indian water bodies, introduced from South America.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Water hyacinth is one of the most commonly cited invasive species examples in Indian ecology exams, notorious for choking waterways.",
+    "memoryTrick": "Native = been there all along. Invasive = new arrival causing problems.",
+    "commonMisconception": "Not every introduced (non-native) species becomes invasive — many introduced species integrate without significant ecological harm; 'invasive' specifically implies harmful disruption."
+  },
+  "lastVerified": "2026-09-05"
+}

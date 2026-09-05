@@ -1,0 +1,58 @@
+{
+  "id": "comp-auxin-vs-gibberellin",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "plant-hormones",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Auxin"
+  },
+  "itemB": {
+    "name": "Gibberellin"
+  },
+  "overview": "Two major plant growth hormones with overlapping growth-promoting effects but very different signature roles.",
+  "genZNote": "Auxin: the hormone behind bending toward light. Gibberellin: the hormone behind sudden growth spurts.",
+  "aspects": [
+    {
+      "id": "signature-effect",
+      "label": "Signature Effect",
+      "valueA": "Promotes cell elongation and is central to phototropism and apical dominance.",
+      "valueB": "Promotes stem elongation (bolting) and breaks seed/bud dormancy.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "site-of-action",
+      "label": "Classic Site of Action",
+      "valueA": "Concentrated at the shoot tip, controlling directional growth.",
+      "valueB": "Especially active in stems, causing dramatic internode elongation.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "apical-dominance",
+      "label": "Role in Apical Dominance",
+      "valueA": "Directly responsible for suppressing lateral bud growth (apical dominance).",
+      "valueB": "Does not primarily control apical dominance.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "classic-experiment",
+      "label": "Classic Demonstration",
+      "valueA": "Discovered via Charles and Francis Darwin's coleoptile phototropism experiments.",
+      "valueB": "Discovered from studies on 'foolish seedling disease' in rice caused by the fungus Gibberella fujikuroi.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Gibberellin's discovery from a fungal disease of rice (bakanae) is a frequently asked history-of-science fact.",
+    "memoryTrick": "Auxin = bending toward light. Gibberellin = growing tall fast (bolting).",
+    "commonMisconception": "Auxin isn't only about phototropism — it also plays a major role in root initiation and fruit development."
+  },
+  "lastVerified": "2026-09-05"
+}

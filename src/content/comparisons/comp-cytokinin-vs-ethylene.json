@@ -1,0 +1,50 @@
+{
+  "id": "comp-cytokinin-vs-ethylene",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "rare",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "plant-hormones"
+  ],
+  "itemA": {
+    "name": "Cytokinin"
+  },
+  "itemB": {
+    "name": "Ethylene"
+  },
+  "overview": "Cytokinin promotes youthfulness and growth in plant tissue, while ethylene promotes ripening, ageing, and shedding.",
+  "genZNote": "Cytokinin keeps the leaf young. Ethylene tells the whole plant it's time to let go.",
+  "aspects": [
+    {
+      "id": "effect-on-senescence",
+      "label": "Effect on Senescence",
+      "valueA": "Delays senescence (ageing) of plant tissues.",
+      "valueB": "Promotes and accelerates senescence and abscission.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "state",
+      "label": "Physical State",
+      "valueA": "Solid, water-soluble compound.",
+      "valueB": "Gaseous hormone.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example Use",
+      "valueA": "Used to keep cut flowers fresh for longer.",
+      "valueB": "Used to trigger uniform ripening in commercial fruit storage.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Spraying cut flowers with cytokinin can measurably delay wilting by slowing senescence.",
+    "memoryTrick": "Cytokinin = keep it fresh. Ethylene = let it ripen and fall.",
+    "commonMisconception": "These two hormones aren't simply 'opposites' across the board — they can also act together, such as both influencing fruit development at different stages."
+  },
+  "lastVerified": "2026-09-05"
+}

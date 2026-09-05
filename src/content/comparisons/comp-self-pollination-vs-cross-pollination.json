@@ -1,0 +1,58 @@
+{
+  "id": "comp-self-pollination-vs-cross-pollination",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "reproduction",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Self-Pollination"
+  },
+  "itemB": {
+    "name": "Cross-Pollination"
+  },
+  "overview": "Two pollination strategies in flowering plants, differing in whether pollen comes from the same flower/plant or a different one.",
+  "genZNote": "Self-pollination: keeping it in the family. Cross-pollination: bringing in fresh genetic material from outside.",
+  "aspects": [
+    {
+      "id": "pollen-source",
+      "label": "Source of Pollen",
+      "valueA": "Pollen from the same flower or a genetically identical flower on the same plant.",
+      "valueB": "Pollen from a flower on a genetically different plant of the same species.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "genetic-variation",
+      "label": "Genetic Variation Produced",
+      "valueA": "Little to no new genetic variation; tends to increase homozygosity.",
+      "valueB": "Introduces new genetic combinations, increasing variation and often vigour.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "agent-requirement",
+      "label": "Requires External Agent?",
+      "valueA": "Does not require an external pollinating agent.",
+      "valueB": "Usually requires agents like wind, water, insects, or birds.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Pea plants (Mendel's chosen organism, mostly self-pollinating).",
+      "valueB": "Most flowering plants relying on insect or wind pollination.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Mendel deliberately chose the pea plant partly because it naturally self-pollinates, which made controlling his crosses much easier.",
+    "memoryTrick": "Self = same flower/plant. Cross = crosses over to a different plant.",
+    "commonMisconception": "Self-pollination is not automatically 'inferior' — it guarantees seed production even without pollinators, which is a major reproductive advantage in some environments."
+  },
+  "lastVerified": "2026-09-05"
+}

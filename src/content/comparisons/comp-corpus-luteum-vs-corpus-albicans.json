@@ -1,0 +1,50 @@
+{
+  "id": "comp-corpus-luteum-vs-corpus-albicans",
+  "domain": "biological-structure",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "physiology",
+    "reproduction"
+  ],
+  "itemA": {
+    "name": "Corpus Luteum"
+  },
+  "itemB": {
+    "name": "Corpus Albicans"
+  },
+  "overview": "Two successive structures formed in the ovary after ovulation, one hormonally active and the other its inactive scar-like remnant.",
+  "genZNote": "Corpus luteum: actively working, pumping out progesterone. Corpus albicans: retired, just scar tissue left behind.",
+  "aspects": [
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "An active, hormone-secreting structure producing progesterone (and some estrogen).",
+      "valueB": "A non-functional, fibrous scar tissue — has no hormonal activity.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "formed-from",
+      "label": "Formed From",
+      "valueA": "The ruptured follicle after ovulation.",
+      "valueB": "The degenerated corpus luteum, if pregnancy does not occur.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "fate-with-pregnancy",
+      "label": "Fate If Pregnancy Occurs",
+      "valueA": "Maintained and enlarged by hCG, continuing to support early pregnancy.",
+      "valueB": "Only forms if pregnancy does NOT occur — the corpus luteum degenerates into it.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "If fertilisation occurs, hCG from the developing embryo rescues the corpus luteum from degenerating into a corpus albicans.",
+    "memoryTrick": "Luteum = 'yellow body', active. Albicans = 'white body', dead scar tissue.",
+    "commonMisconception": "The corpus albicans does not secrete any hormones — once formed, it is functionally inert scar tissue."
+  },
+  "lastVerified": "2026-09-05"
+}

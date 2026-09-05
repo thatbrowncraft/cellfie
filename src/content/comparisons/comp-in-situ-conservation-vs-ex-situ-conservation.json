@@ -1,0 +1,50 @@
+{
+  "id": "comp-in-situ-conservation-vs-ex-situ-conservation",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ecology",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "In Situ Conservation"
+  },
+  "itemB": {
+    "name": "Ex Situ Conservation"
+  },
+  "overview": "Two conservation strategies, differing in whether species are protected within their natural habitat or moved elsewhere for protection.",
+  "genZNote": "In situ: protecting the species right where it naturally lives. Ex situ: relocating it somewhere safer, like a zoo or seed bank.",
+  "aspects": [
+    {
+      "id": "location",
+      "label": "Location of Conservation",
+      "valueA": "Within the organism's natural habitat.",
+      "valueB": "Outside the organism's natural habitat, in a controlled environment.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "National parks, wildlife sanctuaries, biosphere reserves.",
+      "valueB": "Zoos, botanical gardens, seed banks, cryopreservation facilities.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "ecosystem-benefit",
+      "label": "Broader Ecosystem Benefit",
+      "valueA": "Protects the entire ecosystem and all its interacting species, not just the target species.",
+      "valueB": "Protects specific target species/genetic material, but does not conserve the surrounding ecosystem.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "In situ conservation is generally preferred where possible because it preserves the entire ecosystem, not just the target species.",
+    "memoryTrick": "In situ = 'in place', stays in its own habitat. Ex situ = 'out of place', moved elsewhere.",
+    "commonMisconception": "Ex situ conservation is not a replacement for in situ efforts — it's typically used as a backup or supplement, especially for critically endangered species."
+  },
+  "lastVerified": "2026-09-05"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "comp-apomixis-vs-parthenocarpy",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "botany",
+    "reproduction",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Apomixis"
+  },
+  "itemB": {
+    "name": "Parthenocarpy"
+  },
+  "overview": "Both let a plant skip normal sexual steps, but apomixis produces seeds without fertilisation while parthenocarpy produces fruit without it.",
+  "genZNote": "Apomixis: seeds made the easy way, no fertilisation needed. Parthenocarpy: fruit forms, but skips making seeds altogether.",
+  "aspects": [
+    {
+      "id": "what-forms",
+      "label": "What Forms Without Fertilisation",
+      "valueA": "Seeds form asexually, genetically identical to the parent plant.",
+      "valueB": "Fruit develops without fertilisation, typically resulting in seedless fruit.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Seen in some Citrus and Mango varieties as a form of natural cloning.",
+      "valueB": "Seedless varieties like bananas and some grapes.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "commercial-use",
+      "label": "Commercial Importance",
+      "valueA": "Useful in plant breeding to fix hybrid vigour across generations without losing traits.",
+      "valueB": "Used to commercially produce seedless fruits, often triggered using growth hormones like auxin or gibberellin.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Apomixis is of major interest to plant breeders because it can lock in hybrid vigour (heterosis) in seeds, generation after generation, without cross-pollination.",
+    "memoryTrick": "Apomixis = asexual seeds. Parthenocarpy = 'virgin fruit', fruit without fertilisation.",
+    "commonMisconception": "Parthenocarpic fruit isn't necessarily from an apomictic plant — seedless bananas, for example, arise from parthenocarpy, not apomixis."
+  },
+  "lastVerified": "2026-09-05"
+}
