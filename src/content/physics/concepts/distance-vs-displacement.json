@@ -1,0 +1,55 @@
+{
+  "id": "concept-distance-vs-displacement",
+  "category": "concept",
+  "title": "Distance vs. Displacement",
+  "subcategory": "Mechanics — Motion in a Straight Line",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Motion in a Straight Line",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Distance is the total path length covered by a moving object. Displacement is the shortest straight-line change in position, from start point to end point, and has a direction.",
+  "explanation": "Distance is a scalar — it only has magnitude, and it can never decrease as motion continues (it just keeps accumulating). Displacement is a vector — it has both magnitude and direction, and it depends only on the initial and final positions, not on the path taken. If an object returns to its starting point, its displacement is zero even though the distance travelled is not. Distance is always greater than or equal to the magnitude of displacement; the two are equal only for straight-line motion in a single direction.",
+  "comparison": [
+    {
+      "aspect": "Type of quantity",
+      "left": "Distance: scalar (magnitude only)",
+      "right": "Displacement: vector (magnitude + direction)"
+    },
+    {
+      "aspect": "Depends on path?",
+      "left": "Yes — the actual path length matters",
+      "right": "No — only start and end position matter"
+    },
+    {
+      "aspect": "Can it be zero for a moving object?",
+      "left": "No, unless the object doesn't move at all",
+      "right": "Yes, if the object returns to its starting point"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming distance and displacement are always equal — they're only equal for one-directional straight-line motion.",
+    "Forgetting that displacement can be negative (direction-dependent) while distance cannot."
+  ],
+  "examples": [
+    "Walking 4 m east then 4 m west: distance = 8 m, displacement = 0 m.",
+    "Running one full lap of a circular track: distance = track circumference, displacement = 0."
+  ],
+  "genZNote": "Distance is your total step count. Displacement only cares where you ended up compared to where you started — it does not care about the scenic route.",
+  "searchKeywords": [
+    "scalar vs vector motion",
+    "path length",
+    "change in position"
+  ],
+  "relatedConcepts": [
+    "concept-speed-vs-velocity"
+  ],
+  "difficulty": "beginner"
+}

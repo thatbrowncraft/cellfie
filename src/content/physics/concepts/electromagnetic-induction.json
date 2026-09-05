@@ -1,0 +1,35 @@
+{
+  "id": "concept-electromagnetic-induction",
+  "category": "concept",
+  "title": "Electromagnetic Induction (Faraday's & Lenz's Laws)",
+  "subcategory": "Magnetism and EMI",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Electromagnetic Induction",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "A changing magnetic flux through a circuit induces an EMF in that circuit (Faraday's law); the induced current always flows in a direction that opposes the change causing it (Lenz's law).",
+  "explanation": "Faraday's law states the induced EMF equals the negative rate of change of magnetic flux through a circuit. The flux can change by varying the magnetic field strength, the area of the loop, or the angle between the field and the loop's normal. Lenz's law explains the negative sign: the induced current's direction always opposes the change in flux that produced it, which is a direct consequence of energy conservation — if it reinforced the change instead, energy would be created from nothing.",
+  "commonMisconceptions": [
+    "Thinking a steady (unchanging) magnetic field through a stationary loop induces a current — induction requires a CHANGING flux, not just the presence of a field.",
+    "Applying Lenz's law incorrectly by assuming the induced current opposes the field itself rather than the CHANGE in flux."
+  ],
+  "examples": [
+    "Moving a bar magnet into a coil induces a current that creates a magnetic field opposing the magnet's approach (Lenz's law in action)."
+  ],
+  "genZNote": "Lenz's law is physics being petty on purpose — the induced current's whole job is to fight back against whatever change caused it.",
+  "searchKeywords": [
+    "faraday's law",
+    "lenz's law",
+    "induced emf",
+    "magnetic flux"
+  ],
+  "difficulty": "intermediate"
+}

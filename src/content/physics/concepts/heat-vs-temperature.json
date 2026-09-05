@@ -1,0 +1,48 @@
+{
+  "id": "concept-heat-vs-temperature",
+  "category": "concept",
+  "title": "Heat vs. Temperature",
+  "subcategory": "Thermal Physics — Thermal Properties of Matter",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part II, Class 11 — Thermal Properties of Matter",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Temperature is a measure of the average kinetic energy of a substance's particles. Heat is the energy transferred between systems because of a temperature difference.",
+  "explanation": "Temperature is a state property — it describes the current condition of a system (how 'hot' it is on some scale). Heat, by contrast, is energy in transit: it only exists as heat while it's flowing from a hotter object to a cooler one, driven by the temperature difference between them. Once transferred, that energy becomes part of the receiving system's internal energy, not a stored quantity of 'heat.' Two objects can contain very different total thermal energy yet have the same temperature (e.g., a cup and a bathtub of water at the same temperature), since temperature doesn't depend on the amount of substance.",
+  "comparison": [
+    {
+      "aspect": "What it measures",
+      "left": "Temperature: average kinetic energy per particle",
+      "right": "Heat: energy transferred due to temperature difference"
+    },
+    {
+      "aspect": "Depends on amount of substance?",
+      "left": "No",
+      "right": "Yes — heat transferred scales with mass"
+    },
+    {
+      "aspect": "Unit",
+      "left": "Kelvin, Celsius",
+      "right": "Joule (energy unit)"
+    }
+  ],
+  "commonMisconceptions": [
+    "Using 'heat' and 'temperature' interchangeably in casual speech, e.g. saying an object 'has a lot of heat' when it actually has high temperature or high internal energy."
+  ],
+  "genZNote": "Temperature is a status update. Heat is the energy actually being sent between two systems.",
+  "searchKeywords": [
+    "thermal equilibrium",
+    "internal energy",
+    "specific heat capacity"
+  ],
+  "relatedFormulas": [],
+  "difficulty": "beginner"
+}

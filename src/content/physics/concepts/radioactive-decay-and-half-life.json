@@ -1,0 +1,38 @@
+{
+  "id": "concept-radioactive-decay-and-half-life",
+  "category": "concept",
+  "title": "Radioactive Decay and Half-Life",
+  "subcategory": "Modern Physics — Nuclei",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part II, Class 12 — Nuclei",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Unstable nuclei spontaneously transform into more stable ones by emitting radiation, at a rate that follows an exponential decay law characterized by a constant half-life.",
+  "explanation": "Radioactive decay is a random process at the level of any single nucleus, but for a large sample it follows a precise statistical law: the number of undecayed nuclei decreases exponentially with time. The half-life is the time required for exactly half of a given sample to decay — this value is constant for a given isotope regardless of the sample's size or how much has already decayed, which is a defining and often counterintuitive feature of exponential decay.",
+  "commonMisconceptions": [
+    "Assuming a sample is 'completely gone' after two half-lives — it's actually reduced to one quarter, since decay is exponential, not linear, and technically never reaches exactly zero.",
+    "Thinking half-life changes as a sample ages or as more of it decays — it is a fixed property of the isotope."
+  ],
+  "examples": [
+    "Carbon-14 dating relies on its known, fixed half-life (~5,730 years) to estimate the age of organic remains."
+  ],
+  "genZNote": "Half-life is the ultimate 'it's not you, it's just probability' — no nucleus knows when it'll decay, but the group behavior is completely predictable.",
+  "searchKeywords": [
+    "decay constant",
+    "carbon dating",
+    "exponential decay",
+    "radioactivity"
+  ],
+  "relatedBiologyConcepts": [
+    "saccharomyces-cerevisiae"
+  ],
+  "difficulty": "intermediate"
+}

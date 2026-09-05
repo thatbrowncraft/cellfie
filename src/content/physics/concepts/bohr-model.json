@@ -1,0 +1,35 @@
+{
+  "id": "concept-bohr-model",
+  "category": "concept",
+  "title": "Bohr Model of the Atom",
+  "subcategory": "Modern Physics — Atoms",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part II, Class 12 — Atoms",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Bohr proposed that electrons orbit the nucleus only in certain fixed, quantized energy levels, and that atoms emit or absorb light only when electrons jump between these levels.",
+  "explanation": "Bohr's model resolved a key problem with the earlier planetary (Rutherford) model: classically, an orbiting (accelerating) electron should continuously radiate energy and spiral into the nucleus, but atoms are stable. Bohr postulated that electrons can only occupy specific orbits where angular momentum is quantized, and that electrons don't radiate energy while in these stationary states. Light is emitted or absorbed only when an electron transitions between two allowed energy levels, with the photon's energy exactly equal to the energy difference between the levels — directly explaining the discrete line spectra observed for atoms like hydrogen, rather than the continuous spectra classical physics would predict.",
+  "commonMisconceptions": [
+    "Thinking the Bohr model is fully correct for all atoms — it works well only for single-electron (hydrogen-like) systems and was later superseded by quantum mechanical models for multi-electron atoms.",
+    "Forgetting that emission spectra are discrete lines, not continuous, because only specific energy jumps are allowed."
+  ],
+  "examples": [
+    "The hydrogen emission spectrum's distinct series (Lyman, Balmer, Paschen) correspond to electron transitions ending at specific energy levels."
+  ],
+  "genZNote": "Bohr basically told electrons 'you can only live on these specific floors of the building, no in-between.'",
+  "searchKeywords": [
+    "energy levels",
+    "quantized orbits",
+    "hydrogen spectrum",
+    "atomic model"
+  ],
+  "difficulty": "advanced"
+}

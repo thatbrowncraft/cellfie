@@ -1,0 +1,38 @@
+{
+  "id": "concept-photoelectric-effect",
+  "category": "concept",
+  "title": "Photoelectric Effect",
+  "subcategory": "Modern Physics — Dual Nature of Matter and Radiation",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part II, Class 12 — Dual Nature of Radiation and Matter",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "When light of sufficiently high frequency strikes a metal surface, electrons are emitted instantly, with the maximum kinetic energy of the emitted electrons depending on the light's frequency, not its intensity.",
+  "explanation": "Classical wave theory predicted that brighter (more intense) light should always eject electrons with more energy, and that there should be a time delay before emission at low intensity. Experiments showed neither is true: below a threshold frequency, no electrons are emitted no matter how intense the light; above the threshold, emission is instantaneous, and increasing intensity increases the NUMBER of electrons emitted (photocurrent), not their maximum kinetic energy. Einstein explained this by treating light as discrete photons, each with energy E = hf. Absorbing one photon can eject one electron only if the photon energy exceeds the metal's work function (the minimum energy needed to free an electron); any leftover energy becomes the electron's kinetic energy.",
+  "commonMisconceptions": [
+    "Assuming brighter light always means more energetic ejected electrons — intensity affects the NUMBER of photoelectrons, not their maximum kinetic energy, which depends only on frequency.",
+    "Forgetting the threshold frequency requirement — no amount of low-frequency light, however intense, will eject electrons if it's below the metal's threshold frequency."
+  ],
+  "examples": [
+    "Ultraviolet light ejecting electrons from a zinc plate, while visible light of the same intensity produces no photoemission because its frequency is below the threshold."
+  ],
+  "genZNote": "The photoelectric effect is where light stopped being 'just a wave' and physics had to admit it also acts like a bunch of tiny energy packets.",
+  "searchKeywords": [
+    "einstein photoelectric equation",
+    "work function",
+    "threshold frequency",
+    "photon energy"
+  ],
+  "relatedFormulas": [
+    "formula-de-broglie-wavelength"
+  ],
+  "difficulty": "advanced"
+}

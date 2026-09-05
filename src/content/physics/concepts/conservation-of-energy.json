@@ -1,0 +1,37 @@
+{
+  "id": "concept-conservation-of-energy",
+  "category": "concept",
+  "title": "Conservation of Mechanical Energy",
+  "subcategory": "Mechanics — Work, Energy and Power",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Work, Energy and Power",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "In the absence of non-conservative forces like friction, the total mechanical energy (kinetic + potential) of a system stays constant, even as it converts between the two forms.",
+  "explanation": "As an object moves under a conservative force (like gravity), energy continuously converts between kinetic and potential forms, but the sum stays fixed. A ball dropped from height loses potential energy exactly as fast as it gains kinetic energy. When non-conservative forces (friction, air resistance) act, mechanical energy is no longer conserved on its own — some is converted to heat/sound — but the broader principle, total energy conservation across all forms, always holds.",
+  "commonMisconceptions": [
+    "Applying 'conservation of mechanical energy' in situations with significant friction or air resistance without accounting for the energy lost to those forces.",
+    "Confusing 'conservation of mechanical energy' (a special case) with the universal 'conservation of energy' (which always holds, but may require tracking heat, sound, etc.)."
+  ],
+  "examples": [
+    "A pendulum swinging (ignoring air resistance): at the highest points, all energy is potential; at the lowest point, all energy is kinetic; the total stays constant throughout the swing."
+  ],
+  "genZNote": "Energy doesn't disappear, it just changes outfits — potential to kinetic and back, unless friction steals some for itself.",
+  "searchKeywords": [
+    "mechanical energy conservation",
+    "kinetic potential energy conversion"
+  ],
+  "relatedFormulas": [
+    "formula-kinetic-energy",
+    "formula-gravitational-potential-energy"
+  ],
+  "difficulty": "beginner"
+}

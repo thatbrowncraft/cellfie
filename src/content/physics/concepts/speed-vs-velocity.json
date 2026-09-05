@@ -1,0 +1,56 @@
+{
+  "id": "concept-speed-vs-velocity",
+  "category": "concept",
+  "title": "Speed vs. Velocity",
+  "subcategory": "Mechanics — Motion in a Straight Line",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Motion in a Straight Line",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Speed is the rate of change of distance with time (a scalar). Velocity is the rate of change of displacement with time (a vector).",
+  "explanation": "Because speed is built from distance and velocity is built from displacement, the same distinction carries over: speed is always positive (or zero) and never accounts for direction, while velocity carries a direction and can be positive, negative, or zero depending on the choice of reference direction. Average speed over a trip can differ from the magnitude of average velocity whenever the path isn't a straight line in one direction — average speed uses total distance divided by total time, while average velocity uses net displacement divided by total time.",
+  "comparison": [
+    {
+      "aspect": "Built from",
+      "left": "Speed: distance / time",
+      "right": "Velocity: displacement / time"
+    },
+    {
+      "aspect": "Type",
+      "left": "Scalar",
+      "right": "Vector"
+    },
+    {
+      "aspect": "Can be negative?",
+      "left": "No",
+      "right": "Yes, depending on chosen positive direction"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating 'average speed' and 'average velocity' as interchangeable numbers for round trips or curved paths."
+  ],
+  "examples": [
+    "A car completing a round trip has a nonzero average speed but zero average velocity (net displacement is zero)."
+  ],
+  "genZNote": "Speed tells you how fast. Velocity tells you how fast and which way — physics really said direction matters.",
+  "searchKeywords": [
+    "average speed",
+    "average velocity",
+    "instantaneous velocity"
+  ],
+  "relatedConcepts": [
+    "concept-distance-vs-displacement"
+  ],
+  "relatedFormulas": [
+    "formula-equations-of-motion"
+  ],
+  "difficulty": "beginner"
+}

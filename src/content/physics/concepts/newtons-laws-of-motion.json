@@ -1,0 +1,39 @@
+{
+  "id": "concept-newtons-laws-of-motion",
+  "category": "concept",
+  "title": "Newton's Laws of Motion",
+  "subcategory": "Mechanics — Laws of Motion",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Laws of Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "Newton's three laws describe how forces affect motion: an object resists changes to its motion (first law), force equals mass times acceleration (second law), and every force has an equal and opposite reaction force (third law).",
+  "explanation": "The first law (inertia) states that an object at rest stays at rest, and an object in motion stays in motion at constant velocity, unless acted on by a net external force — it defines what a force actually does (change motion) rather than what causes motion to continue. The second law quantifies this: net force equals mass times acceleration (F = ma), or more generally, the rate of change of momentum. The third law states that forces always come in pairs: if object A exerts a force on object B, object B exerts an equal and opposite force on object A — crucially, these two forces act on different objects, so they never cancel each other out for a single object's motion.",
+  "commonMisconceptions": [
+    "Thinking a constant force is needed to maintain constant velocity — in the absence of friction/resistance, no force is needed at all (first law).",
+    "Believing action-reaction pairs act on the same object and therefore cancel — they act on two different objects and never cancel for either one individually."
+  ],
+  "examples": [
+    "A book resting on a table: the table's normal force balances gravity, but the action-reaction pair for gravity is Earth pulling the book and the book pulling Earth — not the table's normal force."
+  ],
+  "genZNote": "Law 1: things are lazy. Law 2: push harder, accelerate more (unless it's heavy). Law 3: the universe always sends a reply.",
+  "searchKeywords": [
+    "inertia",
+    "f=ma",
+    "action reaction pair",
+    "law of motion"
+  ],
+  "relatedFormulas": [
+    "formula-newtons-second-law",
+    "formula-momentum"
+  ],
+  "difficulty": "beginner"
+}

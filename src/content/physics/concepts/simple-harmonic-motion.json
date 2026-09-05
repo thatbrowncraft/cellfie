@@ -1,0 +1,39 @@
+{
+  "id": "concept-simple-harmonic-motion",
+  "category": "concept",
+  "title": "Simple Harmonic Motion (SHM)",
+  "subcategory": "Oscillations and Waves",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part II, Class 11 — Oscillations",
+      "publisher": "NCERT"
+    }
+  ],
+  "summary": "SHM is periodic motion where the restoring force (and acceleration) is always directed toward a fixed equilibrium point and is directly proportional to the displacement from that point.",
+  "explanation": "In SHM, a = -ω²x: the acceleration is proportional to displacement x but points in the opposite direction (hence the negative sign), always pulling the object back toward equilibrium. This produces smooth, repeating sinusoidal motion characterized by amplitude (maximum displacement), time period (time for one complete cycle), and frequency (cycles per second). A simple pendulum (for small angles) and a mass on an ideal spring are the two classic NCERT examples of SHM.",
+  "commonMisconceptions": [
+    "Assuming all periodic/oscillatory motion is SHM — SHM specifically requires the restoring force to be directly proportional to displacement (a linear restoring force).",
+    "Forgetting that a simple pendulum only approximates SHM for small angular displacements."
+  ],
+  "examples": [
+    "Mass-spring system: restoring force F = -kx directly gives SHM.",
+    "Simple pendulum for small oscillation angles."
+  ],
+  "genZNote": "SHM is motion with main character energy — it always circles back to the same equilibrium point, no matter how far it strays.",
+  "searchKeywords": [
+    "shm",
+    "restoring force",
+    "amplitude frequency time period",
+    "pendulum"
+  ],
+  "relatedConcepts": [
+    "concept-conservation-of-energy"
+  ],
+  "difficulty": "intermediate"
+}
