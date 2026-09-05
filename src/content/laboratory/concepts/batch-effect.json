@@ -1,0 +1,42 @@
+{
+  "id": "concept-batch-effect",
+  "category": "concept",
+  "title": "Batch Effect",
+  "subcategory": "Analytical Performance",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "Systematic, non-biological variation in results that arises from technical differences between batches of an experiment — different reagent lots, different days, different instruments, or different operators — rather than from the actual biological or experimental conditions being studied.",
+  "explanation": "If samples from one experimental condition all happen to be processed in one batch, and samples from another condition are processed in a different batch, any batch-to-batch technical variation (a new reagent lot, a recalibrated instrument, a different operator's technique) becomes confounded with the biological comparison the experiment is actually trying to make — the analysis cannot fully separate 'this differs because of the biology' from 'this differs because of the batch.' The standard defenses are randomizing or balancing sample allocation across batches so that every condition is represented in every batch, and, where unavoidable batch structure remains, applying appropriate statistical batch-correction methods and always noting batch identity in the raw data and documentation.",
+  "comparison": [
+    {
+      "aspect": "Poor design",
+      "example": "All condition-A samples run on Monday with reagent lot 1; all condition-B samples run on Friday with reagent lot 2"
+    },
+    {
+      "aspect": "Balanced design",
+      "example": "Both condition A and condition B represented within each batch/day/lot, so batch variation affects both conditions equally"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming a clear difference between conditions must be biological, without first ruling out that the conditions were also separated by batch.",
+    "Only becoming aware of batch structure after the experiment is already complete, when it is far easier to design around than to statistically correct for after the fact."
+  ],
+  "relatedConcepts": [
+    "concept-confounding-variables-experimental-design",
+    "concept-biological-vs-technical-replicates"
+  ],
+  "searchKeywords": [
+    "batch effect",
+    "confounded batch",
+    "experimental batch design",
+    "reagent lot variation"
+  ],
+  "difficulty": "expert"
+}

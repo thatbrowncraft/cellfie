@@ -1,0 +1,41 @@
+{
+  "id": "concept-restriction-enzymes-sticky-blunt-ends",
+  "category": "concept",
+  "title": "Restriction Enzymes & Sticky vs. Blunt Ends",
+  "subcategory": "Molecular Biology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "Restriction enzymes are bacterial enzymes that cut double-stranded DNA at specific, sequence-defined recognition sites, and the way each enzyme cuts determines whether the resulting DNA fragment ends are 'sticky' (with short single-stranded overhangs that can base-pair with a complementary overhang) or 'blunt' (fully double-stranded, with no overhang).",
+  "explanation": "Restriction enzymes naturally evolved as part of bacterial restriction-modification systems that degrade invading foreign DNA (such as bacteriophage DNA) while the bacterium's own DNA is protected by methylation at the same recognition sites. In molecular cloning, this sequence-specific cutting is exploited to open both a vector and an insert at defined, predictable positions. Sticky-end cuts leave complementary single-stranded overhangs on the two resulting fragments, which can anneal to each other before ligation, generally making a subsequent ligation reaction more efficient and directional than working with blunt ends, which have no overhang to guide reannealing and rely on ligase joining the ends directly.",
+  "comparison": [
+    {
+      "aspect": "Sticky ends",
+      "example": "Short single-stranded overhang left after the cut; complementary sticky ends can base-pair before ligation, often improving ligation efficiency"
+    },
+    {
+      "aspect": "Blunt ends",
+      "example": "No overhang; the cut leaves two fully double-stranded ends, which ligate less efficiently and without directional bias from overhang complementarity"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming any two restriction enzymes' sticky ends are compatible with each other — only enzymes producing the same overhang sequence (not necessarily the same recognition site) will anneal together.",
+    "Forgetting that a vector cut with the same single enzyme at two sites can re-ligate to itself (recircularize) without an insert, which is why some cloning strategies use two different enzymes or include a dephosphorylation step."
+  ],
+  "relatedProtocols": [
+    "proto-restriction-digestion"
+  ],
+  "searchKeywords": [
+    "restriction enzyme",
+    "sticky ends",
+    "blunt ends",
+    "cloning cut sites"
+  ],
+  "difficulty": "advanced"
+}

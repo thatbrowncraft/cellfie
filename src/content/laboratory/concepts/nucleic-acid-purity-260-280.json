@@ -1,0 +1,45 @@
+{
+  "id": "concept-nucleic-acid-purity-260-280",
+  "category": "concept",
+  "title": "A260/A280 Ratio & Nucleic Acid Purity",
+  "subcategory": "Molecular Biology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "A spectrophotometric ratio used as a rough indicator of nucleic acid purity, comparing absorbance at 260 nm (where nucleic acids absorb strongly) to absorbance at 280 nm (where proteins, which commonly contaminate nucleic acid preps, absorb more strongly).",
+  "explanation": "DNA and RNA absorb UV light most strongly around 260 nm due to their aromatic bases, while proteins absorb more strongly around 280 nm due to aromatic amino acid residues; the ratio of these two readings gives a fast, indirect estimate of how much protein contamination remains in a nucleic acid preparation. A ratio around 1.8 is generally considered indicative of relatively pure DNA, and around 2.0 for pure RNA, though these are working guidelines rather than absolute cutoffs — a low ratio suggests protein or phenol contamination, while other contaminants (such as residual guanidine salts or organic solvents) can also distort the ratio without necessarily reflecting protein contamination specifically. The A260/A230 ratio is often checked alongside A260/A280 because it is more sensitive to a different set of common contaminants (e.g. residual chaotropic salts, phenol) that A260/A280 alone may not flag.",
+  "comparison": [
+    {
+      "aspect": "A260/A280 around 1.8",
+      "example": "Commonly considered indicative of relatively pure DNA (working guideline, not an absolute standard)"
+    },
+    {
+      "aspect": "A260/A280 around 2.0",
+      "example": "Commonly considered indicative of relatively pure RNA (working guideline, not an absolute standard)"
+    },
+    {
+      "aspect": "Low A260/A230",
+      "example": "Suggests residual chaotropic salt, phenol, or other organic contaminant, even when A260/A280 looks acceptable"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating the A260/A280 ratio alone as a complete purity assessment — it mainly flags protein contamination and can miss other common contaminants better indicated by A260/A230.",
+    "Assuming a good ratio guarantees the sample is free of PCR/enzymatic inhibitors, when some inhibitory contaminants do not strongly absorb at either 260 or 280 nm."
+  ],
+  "relatedEquipment": [
+    "equip-microvolume-spectrophotometer"
+  ],
+  "searchKeywords": [
+    "A260/A280 ratio",
+    "nucleic acid purity",
+    "DNA RNA spectrophotometric purity",
+    "A260/A230"
+  ],
+  "difficulty": "advanced"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "concept-si-units-lab-measurements",
+  "category": "concept",
+  "title": "Units & Measurement Conventions in the Lab",
+  "subcategory": "Foundational Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "The standard system of units (largely SI-derived) and conventions used to record volumes, masses, concentrations, and time in laboratory work, chosen for consistency and unambiguous communication between people and instruments.",
+  "explanation": "Laboratory measurements rely on a small consistent set of base units — grams for mass, liters (and sub-units: milliliters, microliters) for volume, moles for amount of substance, and derived units like molarity (mol/L) for concentration — plus consistent prefixes (milli-, micro-, nano-) that scale by factors of 1000. Using consistent units and always writing the unit alongside a number prevents a huge and common source of laboratory error: a value with no unit, or the wrong unit, can turn a correct calculation into a badly wrong reagent concentration or dose.",
+  "comparison": [
+    {
+      "aspect": "Mass",
+      "example": "g, mg, µg, ng — each 1000-fold smaller moving right"
+    },
+    {
+      "aspect": "Volume",
+      "example": "L, mL, µL, nL — each 1000-fold smaller moving right"
+    },
+    {
+      "aspect": "Amount of substance",
+      "example": "mol, mmol, µmol"
+    },
+    {
+      "aspect": "Concentration",
+      "example": "M (mol/L), mM, µM; also %w/v, %v/v for simpler working solutions"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming a value is 'obviously' in a certain unit because that's the unit usually used for that reagent — always confirm, since a decimal or unit-prefix slip (mg vs µg, mL vs µL) can be a 1000-fold error.",
+    "Treating %w/v and molarity as interchangeable without converting — they express concentration differently and are not numerically equal for the same solution."
+  ],
+  "relatedFormulas": [
+    "formula-molarity",
+    "formula-percent-wv"
+  ],
+  "searchKeywords": [
+    "SI units lab",
+    "unit conversion",
+    "milli micro nano",
+    "measurement conventions"
+  ],
+  "difficulty": "beginner"
+}

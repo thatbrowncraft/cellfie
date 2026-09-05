@@ -1,0 +1,43 @@
+{
+  "id": "concept-method-validation",
+  "category": "concept",
+  "title": "Method Validation",
+  "subcategory": "Laboratory Quality Systems",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "The documented process of demonstrating, with objective evidence, that a laboratory method actually performs as intended before it is used to generate results that will be reported or relied upon.",
+  "explanation": "A method that 'seems to work' in a few informal trials has not been validated — validation is a structured, documented evaluation of specific performance characteristics (commonly including accuracy, precision, specificity, linearity/range, LOD/LOQ, and robustness) against pre-defined acceptance criteria, carried out before the method is used for reportable results. Validation is distinct from routine quality control: QC confirms an already-validated method is still performing correctly on a given day, while validation is the one-time (or periodically repeated) exercise establishing that the method is fit for purpose in the first place. A method transferred to a new lab, instrument, or operator, or modified in any significant way, generally needs at least partial re-validation rather than simply inheriting the original validation.",
+  "comparison": [
+    {
+      "aspect": "Validation",
+      "example": "A structured, one-time (or periodic) study establishing that a method meets defined performance criteria before routine use"
+    },
+    {
+      "aspect": "Routine quality control",
+      "example": "Ongoing, per-run checks confirming an already-validated method continues to perform as expected"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating a method as validated simply because it produced reasonable-looking results a few times informally.",
+    "Assuming a method's original validation still applies unchanged after a significant change in instrument, reagent lot, operator, or protocol detail."
+  ],
+  "relatedConcepts": [
+    "concept-limit-of-detection-quantification",
+    "concept-quality-control-vs-quality-assurance",
+    "concept-reproducibility-repeatability"
+  ],
+  "searchKeywords": [
+    "method validation",
+    "assay validation",
+    "validation criteria",
+    "fit for purpose method"
+  ],
+  "difficulty": "expert"
+}

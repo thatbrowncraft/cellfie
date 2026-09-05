@@ -1,0 +1,44 @@
+{
+  "id": "concept-significant-figures",
+  "category": "concept",
+  "title": "Significant Figures & Measurement Uncertainty",
+  "subcategory": "Foundational Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "The convention of reporting a measured value only to the precision the measuring instrument or method can actually support, so that a recorded number does not imply more certainty than the measurement actually has.",
+  "explanation": "Every measuring instrument has a limit to how precisely it can resolve a value — a balance readable to 0.01 g cannot honestly report a mass to 0.0001 g. Significant figures are the convention for communicating that limit: recording extra digits beyond what an instrument can support misleads anyone using that number later, while rounding too aggressively throws away real information the instrument did capture. When combining numbers in a calculation (adding, multiplying), the result should generally be rounded to reflect the least-precise measurement that went into it, not reported with false extra precision from the arithmetic itself.",
+  "comparison": [
+    {
+      "aspect": "Reading a value from a graduated cylinder",
+      "example": "Estimate one digit beyond the smallest marked graduation, no more"
+    },
+    {
+      "aspect": "Reporting a calculated result",
+      "example": "Round to match the least-precise input measurement, not to whatever digits a calculator happens to display"
+    }
+  ],
+  "commonMisconceptions": [
+    "Reporting every digit a calculator displays, regardless of the precision of the original measurements that were entered.",
+    "Assuming more decimal places always means a 'more scientific' or more trustworthy result, even when the instrument used cannot actually support that precision."
+  ],
+  "relatedFormulas": [
+    "formula-standard-deviation"
+  ],
+  "relatedConcepts": [
+    "concept-accuracy-precision"
+  ],
+  "searchKeywords": [
+    "significant figures",
+    "measurement precision",
+    "rounding rules",
+    "instrument resolution"
+  ],
+  "difficulty": "beginner"
+}

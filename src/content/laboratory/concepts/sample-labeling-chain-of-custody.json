@@ -1,0 +1,41 @@
+{
+  "id": "concept-sample-labeling-chain-of-custody",
+  "category": "concept",
+  "title": "Sample Labeling & Chain of Custody",
+  "subcategory": "Foundational Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "The practice of uniquely and unambiguously identifying every sample, and, where required, documenting who handled it and when, so that a sample's identity and integrity can be traced from collection through to final result.",
+  "explanation": "An unlabeled or ambiguously labeled sample is effectively worthless no matter how carefully the rest of the work was done, since a result cannot be trusted back to a specific source. Good labeling includes a unique identifier, and often the date, and enough context (without necessarily crowding a small tube) to avoid confusion with any other sample in the same batch. In regulated, clinical, or forensic contexts, chain of custody extends this further — a documented, unbroken record of who collected, transferred, stored, and analyzed the sample at every step, so it can be shown that the sample was not tampered with, mixed up, or substituted along the way.",
+  "comparison": [
+    {
+      "aspect": "Routine research labeling",
+      "example": "Unique ID, date, and enough shorthand to trace back to the lab notebook entry describing the sample"
+    },
+    {
+      "aspect": "Chain-of-custody documentation",
+      "example": "A signed, dated record of every transfer of a sample between individuals or locations, with no gaps"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming a label is unnecessary because 'I'll remember which tube is which' — this fails as soon as more than a few samples are involved or more than one person handles them.",
+    "Treating chain of custody as only a legal/forensic concern — many clinical and regulated research contexts require it too."
+  ],
+  "relatedConcepts": [
+    "concept-lab-notebook-documentation"
+  ],
+  "searchKeywords": [
+    "sample labeling",
+    "chain of custody",
+    "sample identification",
+    "sample tracking"
+  ],
+  "difficulty": "beginner"
+}

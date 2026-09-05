@@ -1,0 +1,42 @@
+{
+  "id": "concept-statistical-power-effect-size",
+  "category": "concept",
+  "title": "Statistical Power & Effect Size",
+  "subcategory": "Experimental Design",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "Statistical power is the probability that a study will detect a real effect if one truly exists, given its sample size and the size of the effect itself; effect size is a measure of how large that real difference actually is, independent of sample size.",
+  "explanation": "A study with too few replicates (low power) can easily fail to detect a real, meaningful biological effect, producing a 'no significant difference' result that reflects insufficient sample size rather than a true absence of effect. Effect size matters alongside power because a very large sample can make even a tiny, practically meaningless difference statistically significant, while a small sample can miss even a substantial, practically important difference. Planning sample size in advance (a power analysis), using an expected or pilot-derived effect size, is the standard way to avoid both an underpowered study that misses real effects and an unnecessarily large study that wastes resources.",
+  "comparison": [
+    {
+      "aspect": "Underpowered study",
+      "example": "Too few replicates to reliably detect a real effect, risking a false 'no difference' conclusion"
+    },
+    {
+      "aspect": "Statistically significant but practically trivial",
+      "example": "A very large sample size making a tiny, biologically unimportant difference reach statistical significance"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating 'not statistically significant' as proof there is no real effect, without considering whether the study had enough power to detect one.",
+    "Equating statistical significance with practical or biological importance — the two are related but distinct."
+  ],
+  "relatedConcepts": [
+    "concept-reproducibility-repeatability",
+    "concept-biological-vs-technical-replicates"
+  ],
+  "searchKeywords": [
+    "statistical power",
+    "effect size",
+    "sample size planning",
+    "power analysis"
+  ],
+  "difficulty": "expert"
+}

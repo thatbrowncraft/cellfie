@@ -1,0 +1,41 @@
+{
+  "id": "concept-lab-notebook-documentation",
+  "category": "concept",
+  "title": "Laboratory Notebook & Documentation Practices",
+  "subcategory": "Foundational Concepts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "The practice of recording experimental work — what was done, when, by whom, with what materials, and what was observed — in a permanent, contemporaneous, and legible form that can be reviewed, reproduced, or defended later.",
+  "explanation": "A laboratory notebook exists to answer a simple but critical question months or years later: exactly what happened in this experiment, and could someone else repeat it? Good documentation is recorded at the time the work is done (not reconstructed from memory afterward), is legible and permanent (traditionally bound/paged, ink not pencil, corrections struck through rather than erased), and includes enough detail — reagent lots, instrument settings, exact steps taken — that another trained person could follow it and understand any deviations from a written protocol. This matters not only for reproducibility but, in regulated or intellectual-property contexts, as a dated record of what was actually done.",
+  "comparison": [
+    {
+      "aspect": "Contemporaneous record",
+      "example": "Recorded during/immediately after the work, not reconstructed later from memory"
+    },
+    {
+      "aspect": "Correction convention",
+      "example": "A single line struck through an error (still legible) with initials/date, rather than erasing or covering it"
+    }
+  ],
+  "commonMisconceptions": [
+    "Waiting until the end of the day (or later) to 'write up' the notebook from memory, rather than recording as work happens.",
+    "Erasing or fully obscuring a mistaken entry instead of striking it through — the original entry should usually remain legible."
+  ],
+  "relatedConcepts": [
+    "concept-reproducibility-repeatability"
+  ],
+  "searchKeywords": [
+    "lab notebook",
+    "documentation practices",
+    "contemporaneous record",
+    "experimental record keeping"
+  ],
+  "difficulty": "beginner"
+}

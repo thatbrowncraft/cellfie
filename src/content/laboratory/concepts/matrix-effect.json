@@ -1,0 +1,43 @@
+{
+  "id": "concept-matrix-effect",
+  "category": "concept",
+  "title": "Matrix Effect",
+  "subcategory": "Analytical Performance",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "The influence that components of a sample other than the analyte of interest (the 'matrix' — e.g. blood, soil, food homogenate) have on an assay's signal, which can cause the same true concentration of analyte to read differently depending on what it is dissolved or suspended in.",
+  "explanation": "A standard curve is typically built using purified analyte in a simple buffer, but real samples contain many other substances — proteins, lipids, pigments, salts — that can interfere with the detection chemistry, either suppressing or enhancing the signal relative to what the same analyte concentration would produce in the clean standard-curve matrix. This means a standard curve validated in one matrix does not automatically transfer to a different sample matrix without checking; the usual way to test for a matrix effect is a spike-and-recovery experiment, where a known amount of analyte is added to the actual sample matrix and the percentage recovered is compared to the expected value.",
+  "comparison": [
+    {
+      "aspect": "No significant matrix effect",
+      "example": "Spike-and-recovery in the real sample matrix returns close to 100% of the expected added analyte"
+    },
+    {
+      "aspect": "Significant matrix effect",
+      "example": "Spike-and-recovery returns substantially more or less than 100%, indicating the matrix is suppressing or enhancing signal"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming a standard curve built in clean buffer will behave identically when applied to a complex real-world sample matrix without verification.",
+    "Attributing an unexpected result entirely to biological variability when an unchecked matrix effect may be the actual cause."
+  ],
+  "relatedConcepts": [
+    "concept-standard-curve",
+    "concept-batch-effect",
+    "concept-method-validation"
+  ],
+  "searchKeywords": [
+    "matrix effect",
+    "spike and recovery",
+    "sample interference",
+    "assay matrix interference"
+  ],
+  "difficulty": "expert"
+}

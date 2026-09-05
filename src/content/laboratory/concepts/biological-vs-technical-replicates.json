@@ -1,0 +1,45 @@
+{
+  "id": "concept-biological-vs-technical-replicates",
+  "category": "concept",
+  "title": "Biological vs. Technical Replicates",
+  "subcategory": "Experimental Design",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "Two different kinds of repeated measurement used in experimental design, distinguished by what source of variability each one captures — biological replicates capture variability between independent biological samples, while technical replicates capture variability from the measurement process itself.",
+  "explanation": "A biological replicate is an independent biological sample — a separate culture, animal, or patient sample — repeated to capture true biological variability between independent instances. A technical replicate is the same biological sample measured multiple times (e.g. pipetted into three wells from one tube) to capture variability introduced by the measurement or assay process itself, such as pipetting error or instrument noise. Averaging technical replicates improves confidence in the measurement of a single biological sample, but it does not substitute for biological replicates — no number of technical replicates on one sample can tell you how that result would vary across different biological samples, which is usually the question an experiment is actually trying to answer.",
+  "comparison": [
+    {
+      "aspect": "Biological replicate",
+      "example": "Three independently grown bacterial cultures from three separate colonies, each processed and measured once"
+    },
+    {
+      "aspect": "Technical replicate",
+      "example": "One culture's lysate measured in triplicate wells on the same plate"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating three technical replicates of one biological sample as 'n=3' for statistical purposes — this measures assay precision, not biological variability, and inflates apparent statistical power.",
+    "Assuming tight agreement between technical replicates means the biological result itself is reliable — it only means the measurement of that one sample was consistent."
+  ],
+  "relatedFormulas": [
+    "formula-standard-error-of-mean",
+    "formula-cv"
+  ],
+  "relatedConcepts": [
+    "concept-reproducibility-repeatability"
+  ],
+  "searchKeywords": [
+    "biological replicate",
+    "technical replicate",
+    "experimental design replicates",
+    "n vs replicate count"
+  ],
+  "difficulty": "intermediate"
+}

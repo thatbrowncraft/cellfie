@@ -1,0 +1,41 @@
+{
+  "id": "concept-ppv-npv",
+  "category": "concept",
+  "title": "Positive & Negative Predictive Value (PPV/NPV)",
+  "subcategory": "Diagnostic Performance",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "The probability that a person actually has (PPV) or actually does not have (NPV) a condition, given their test result — the practical, real-world complement to sensitivity and specificity, which strongly depends on how common the condition is in the population being tested.",
+  "explanation": "Sensitivity and specificity are fixed properties of the test itself, but PPV and NPV answer the question a patient or clinician actually cares about: 'given this result, how likely is it correct?' — and that answer changes with disease prevalence. In a population where the condition is rare, even a highly specific test will produce a meaningful number of false positives relative to the small number of true positives, so PPV drops; the same test used in a high-prevalence population (e.g. a symptomatic clinic population rather than general screening) will have a much higher PPV. This is why the same diagnostic test can be described as 'reliable' in one context and 'prone to false positives' in another, without any change to the test itself.",
+  "comparison": [
+    {
+      "aspect": "PPV",
+      "example": "True positives / (True positives + False positives) — probability disease is truly present given a positive result"
+    },
+    {
+      "aspect": "NPV",
+      "example": "True negatives / (True negatives + False negatives) — probability disease is truly absent given a negative result"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming PPV and NPV are fixed properties of a test the way sensitivity/specificity are — they shift with the prevalence of the condition in the population being tested.",
+    "Applying a PPV calculated in one population (e.g. a high-risk clinical population) directly to a very different population (e.g. general low-risk screening) without adjustment."
+  ],
+  "relatedConcepts": [
+    "concept-sensitivity-specificity"
+  ],
+  "searchKeywords": [
+    "positive predictive value",
+    "negative predictive value",
+    "PPV NPV",
+    "prevalence effect on test result"
+  ],
+  "difficulty": "advanced"
+}

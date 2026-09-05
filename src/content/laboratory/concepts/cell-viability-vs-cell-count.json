@@ -1,0 +1,41 @@
+{
+  "id": "concept-cell-viability-vs-cell-count",
+  "category": "concept",
+  "title": "Cell Viability vs. Total Cell Count",
+  "subcategory": "Cell Biology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "Total cell count measures how many cells (living and dead combined) are present in a sample, while viability measures what fraction of those cells are actually alive — two related but distinct measurements that together give a more complete picture of a culture's condition than either alone.",
+  "explanation": "A dying culture can have a perfectly normal-looking total cell count while containing a large proportion of dead or dying cells, which would be missed by a raw count alone. Viability assays (such as trypan blue exclusion, which relies on an intact cell membrane excluding the dye while a compromised dead-cell membrane lets it in and stains the cell) distinguish live from dead cells within the same counted population, giving a viable cell count and a viability percentage alongside the total count. Both numbers matter for downstream work: total count for planning how many cells are available, and viability for judging whether the culture is healthy enough to use for a given application.",
+  "comparison": [
+    {
+      "aspect": "Total cell count",
+      "example": "All cells counted regardless of condition — a hemocytometer count of every cell in the grid squares"
+    },
+    {
+      "aspect": "Viability",
+      "example": "Percentage of counted cells that exclude a dye like trypan blue (intact membrane, considered live) versus those that take up the dye (compromised membrane, considered dead)"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming a normal total cell count means the culture is healthy, without checking viability.",
+    "Treating a viability assay based on membrane integrity as a perfect proxy for full cell health — a cell can have an intact membrane yet be metabolically compromised in ways that membrane-exclusion dyes do not detect."
+  ],
+  "relatedEquipment": [
+    "equip-hemocytometer"
+  ],
+  "searchKeywords": [
+    "cell viability",
+    "trypan blue exclusion",
+    "cell count vs viability",
+    "live dead cell staining"
+  ],
+  "difficulty": "intermediate"
+}

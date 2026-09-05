@@ -1,0 +1,42 @@
+{
+  "id": "concept-calibration-traceability",
+  "category": "concept",
+  "title": "Calibration & Traceability to Reference Standards",
+  "subcategory": "Laboratory Quality Systems",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "The practice of periodically checking and adjusting an instrument's readings against a known reference standard, and documenting an unbroken chain connecting that reference standard back to a recognized higher-level standard, so a measurement can be trusted to mean what it claims to mean.",
+  "explanation": "An uncalibrated instrument can drift over time — a balance that reads slightly heavy, a pipette that delivers slightly less than its dial setting — and without periodic calibration against a known reference, that drift is invisible until it produces an obviously wrong result. Traceability extends this idea: the reference standard used for calibration should itself be certified against a higher-level standard (ultimately tracing back to a national or international metrology standard), documented through an unbroken chain, so that a measurement made in one lab can be meaningfully compared to a measurement made in a different lab using a different instrument.",
+  "comparison": [
+    {
+      "aspect": "Calibration",
+      "example": "Checking a balance's readings against a certified calibration weight and adjusting if it has drifted"
+    },
+    {
+      "aspect": "Traceability",
+      "example": "That calibration weight itself carries a certificate tracing its certified mass back to a recognized national metrology standard"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming an instrument that 'seems to be working fine' does not need scheduled calibration checks — drift is often too gradual to notice without a reference comparison.",
+    "Using an uncertified or expired reference standard for calibration, which breaks the traceability chain even if the calibration procedure itself was followed correctly."
+  ],
+  "relatedConcepts": [
+    "concept-method-validation",
+    "concept-accuracy-precision"
+  ],
+  "searchKeywords": [
+    "instrument calibration",
+    "traceability",
+    "reference standard",
+    "calibration drift"
+  ],
+  "difficulty": "expert"
+}

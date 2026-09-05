@@ -1,0 +1,41 @@
+{
+  "id": "concept-sensitivity-specificity",
+  "category": "concept",
+  "title": "Diagnostic Sensitivity & Specificity",
+  "subcategory": "Diagnostic Performance",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "Two core performance measures of a diagnostic test: sensitivity is the proportion of truly positive individuals the test correctly identifies as positive, and specificity is the proportion of truly negative individuals the test correctly identifies as negative.",
+  "explanation": "A test with high sensitivity produces few false negatives, making it useful for ruling out disease when negative (a negative result is trustworthy). A test with high specificity produces few false positives, making it useful for ruling in disease when positive (a positive result is trustworthy). No test is perfect on both simultaneously in practice, and adjusting a test's decision threshold to improve one commonly worsens the other — this trade-off is a core consideration in choosing or interpreting a diagnostic test, particularly a screening test applied to a low-prevalence population.",
+  "comparison": [
+    {
+      "aspect": "Sensitivity",
+      "example": "True positives / (True positives + False negatives) — how well the test catches real cases"
+    },
+    {
+      "aspect": "Specificity",
+      "example": "True negatives / (True negatives + False positives) — how well the test correctly clears non-cases"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming a highly sensitive test result that comes back positive is automatically a reliable positive — sensitivity mainly informs how much to trust a negative result, not a positive one.",
+    "Ignoring disease prevalence when interpreting sensitivity/specificity — the same test's practical predictive value shifts substantially with how common the condition is in the population being tested."
+  ],
+  "relatedConcepts": [
+    "concept-ppv-npv"
+  ],
+  "searchKeywords": [
+    "sensitivity specificity",
+    "diagnostic test performance",
+    "false positive false negative",
+    "test accuracy characteristics"
+  ],
+  "difficulty": "advanced"
+}

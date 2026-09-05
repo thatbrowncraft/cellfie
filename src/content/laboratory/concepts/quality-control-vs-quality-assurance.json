@@ -1,0 +1,42 @@
+{
+  "id": "concept-quality-control-vs-quality-assurance",
+  "category": "concept",
+  "title": "Quality Control (QC) vs. Quality Assurance (QA)",
+  "subcategory": "Laboratory Quality Systems",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "Two related but distinct components of a laboratory quality system: quality control is the set of routine checks applied to individual runs/batches to catch problems as they happen, while quality assurance is the broader set of planned, systematic activities that build confidence the whole process will reliably produce correct results over time.",
+  "explanation": "QC is reactive and specific — a control sample run alongside a test batch, a calibration check on an instrument before use — designed to flag a problem with that specific run before results are reported. QA is proactive and systemic — training programs, standard operating procedures, equipment maintenance schedules, proficiency testing, document control — designed to prevent problems from arising in the first place and to give confidence in the process as a whole, not just a single run. A lab can pass every individual QC check on a given day and still have a serious underlying QA gap (e.g. an undocumented, unvalidated procedure) that eventually produces an error QC alone would not have caught.",
+  "comparison": [
+    {
+      "aspect": "Quality control (QC)",
+      "example": "Running a known positive and negative control alongside every batch of an assay"
+    },
+    {
+      "aspect": "Quality assurance (QA)",
+      "example": "A documented training and competency-assessment program, instrument maintenance schedule, and periodic proficiency testing"
+    }
+  ],
+  "commonMisconceptions": [
+    "Using 'QC' and 'QA' interchangeably — QC is a subset of activities within the broader QA system, not a synonym for it.",
+    "Assuming passing QC on every run guarantees the overall process is sound, when systemic issues (training, documentation, validation) live in the QA domain and aren't caught by routine QC alone."
+  ],
+  "relatedConcepts": [
+    "concept-positive-negative-controls",
+    "concept-method-validation"
+  ],
+  "searchKeywords": [
+    "quality control quality assurance",
+    "QC vs QA",
+    "lab quality system",
+    "proficiency testing"
+  ],
+  "difficulty": "advanced"
+}

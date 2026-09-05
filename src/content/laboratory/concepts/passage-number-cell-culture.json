@@ -1,0 +1,42 @@
+{
+  "id": "concept-passage-number-cell-culture",
+  "category": "concept",
+  "title": "Passage Number in Cell Culture",
+  "subcategory": "Cell Biology",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "A record of how many times a cell culture has been subcultured (split/transferred to fresh vessels), used to track how far removed a working culture is from its original source and, for many cell types, as a rough proxy for how much its properties may have drifted over time.",
+  "explanation": "Every time a culture is passaged, it goes through population expansion in an artificial environment, and over many passages this can select for subpopulations with subtly different growth characteristics or gene expression compared to earlier passages, and for finite-lifespan (non-immortalized) cultures, brings the culture closer to senescence. Tracking and reporting passage number lets other researchers judge whether results might be affected by this kind of culture drift, and most labs set a maximum passage number beyond which a given cell line is no longer used for experiments and a fresh, lower-passage stock is thawed instead.",
+  "comparison": [
+    {
+      "aspect": "Low passage number",
+      "example": "Closer to the original isolation/vial; generally considered to better represent the intended, characterized cell population"
+    },
+    {
+      "aspect": "High passage number",
+      "example": "Further removed from the original source; increased chance of phenotypic drift or (for finite-lifespan cultures) approaching senescence"
+    }
+  ],
+  "commonMisconceptions": [
+    "Assuming passage number does not matter for an immortalized line simply because it can, in principle, divide indefinitely — phenotypic drift can still occur with extended passaging even without a hard replicative limit.",
+    "Not recording passage number consistently, which makes it impossible later to judge whether an unexpected experimental result might be related to culture drift."
+  ],
+  "relatedConcepts": [
+    "concept-primary-vs-established-cell-lines",
+    "concept-cell-viability-vs-cell-count"
+  ],
+  "searchKeywords": [
+    "passage number",
+    "cell culture drift",
+    "subculturing cells",
+    "cell line senescence"
+  ],
+  "difficulty": "intermediate"
+}

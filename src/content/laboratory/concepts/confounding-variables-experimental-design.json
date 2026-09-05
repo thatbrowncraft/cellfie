@@ -1,0 +1,43 @@
+{
+  "id": "concept-confounding-variables-experimental-design",
+  "category": "concept",
+  "title": "Confounding Variables in Experimental Design",
+  "subcategory": "Experimental Design",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "A confounding variable is a factor that varies alongside the condition being tested and independently affects the outcome, making it impossible to tell whether an observed difference is due to the intended experimental variable or to the confound.",
+  "explanation": "A well-designed experiment aims to change only one variable of interest between groups while holding everything else as constant as possible; when something else also differs systematically between groups — a different reagent lot, a different day, a different operator, an uncontrolled temperature difference — and that something else can plausibly affect the outcome, it becomes a confounding variable, and any observed difference cannot be cleanly attributed to the intended variable alone. Confounding is generally best addressed at the design stage (randomization, controlling or matching for the suspected confound, running conditions in parallel rather than sequentially) rather than after the fact, since a confound baked into the data collection is often difficult or impossible to fully separate out statistically afterward.",
+  "comparison": [
+    {
+      "aspect": "Confounded design",
+      "example": "Treatment group cultured this week, control group cultured last week using a different reagent lot"
+    },
+    {
+      "aspect": "Controlled design",
+      "example": "Treatment and control groups run in parallel, same week, same reagent lot, differing only in the variable of interest"
+    }
+  ],
+  "commonMisconceptions": [
+    "Attributing an observed difference entirely to the intended experimental variable without checking whether anything else also differed systematically between groups.",
+    "Assuming a confound can always be corrected for statistically after data collection, when many confounds are better prevented through design than corrected afterward."
+  ],
+  "relatedConcepts": [
+    "concept-batch-effect",
+    "concept-biological-vs-technical-replicates",
+    "concept-statistical-power-effect-size"
+  ],
+  "searchKeywords": [
+    "confounding variable",
+    "experimental design confound",
+    "controlled experiment",
+    "confound vs variable of interest"
+  ],
+  "difficulty": "advanced"
+}

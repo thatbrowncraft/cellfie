@@ -1,0 +1,45 @@
+{
+  "id": "concept-limit-of-detection-quantification",
+  "category": "concept",
+  "title": "Limit of Detection (LOD) vs. Limit of Quantification (LOQ)",
+  "subcategory": "Analytical Performance",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/quantitative methods references (ASM, FDA BAM, CLSI)",
+      "publisher": "ASM/FDA/CLSI"
+    }
+  ],
+  "summary": "Two related but distinct analytical performance characteristics: the lowest amount of analyte that can be reliably distinguished from background (LOD), and the lowest amount that can be reliably and precisely measured, not merely detected (LOQ).",
+  "explanation": "LOD answers 'is the analyte present at all, above background noise?' — it is a detection threshold, not a measurement threshold. LOQ answers a stricter question: 'at what level can I trust the actual numeric value the assay reports, with acceptable precision and accuracy?' LOQ is always at or above LOD, because reliably quantifying a signal requires a stronger signal-to-noise ratio than merely detecting that something is present. Reporting a result below LOQ but above LOD as a specific number (rather than as 'detected, below quantifiable range') overstates the confidence that specific number deserves.",
+  "comparison": [
+    {
+      "aspect": "LOD",
+      "example": "Commonly estimated as blank mean + 3×SD of the blank"
+    },
+    {
+      "aspect": "LOQ",
+      "example": "Commonly estimated as blank mean + 10×SD of the blank (a larger multiplier, reflecting the stricter precision requirement)"
+    }
+  ],
+  "commonMisconceptions": [
+    "Treating LOD and LOQ as interchangeable — a result can be reliably detected without being reliably quantifiable.",
+    "Reporting a precise numeric value for a signal that falls between LOD and LOQ, implying more quantitative confidence than that range actually supports."
+  ],
+  "relatedFormulas": [
+    "formula-limit-of-detection"
+  ],
+  "relatedConcepts": [
+    "concept-method-validation",
+    "concept-standard-curve"
+  ],
+  "searchKeywords": [
+    "limit of detection",
+    "limit of quantification",
+    "LOD LOQ difference",
+    "assay sensitivity threshold"
+  ],
+  "difficulty": "advanced"
+}
