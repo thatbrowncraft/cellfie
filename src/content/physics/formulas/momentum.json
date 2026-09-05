@@ -1,0 +1,58 @@
+{
+  "id": "formula-momentum",
+  "category": "formula",
+  "title": "Linear Momentum",
+  "subcategory": "Mechanics — Laws of Motion",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Laws of Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Mechanics",
+  "expression": "p = mv",
+  "explanation": "Momentum is the product of an object's mass and velocity, and it's a vector quantity pointing in the same direction as the velocity. In an isolated system (no net external force), total momentum is conserved — this principle underlies the analysis of collisions and explosions, even when kinetic energy is not conserved (as in inelastic collisions).",
+  "variables": [
+    {
+      "symbol": "p",
+      "meaning": "Linear momentum",
+      "unit": "kg·m/s"
+    },
+    {
+      "symbol": "m",
+      "meaning": "Mass",
+      "unit": "kg"
+    },
+    {
+      "symbol": "v",
+      "meaning": "Velocity",
+      "unit": "m/s"
+    }
+  ],
+  "resultUnit": "kg·m/s",
+  "workedExample": {
+    "scenario": "A 2 kg ball moves at 3 m/s.",
+    "substitution": "p = (2)(3)",
+    "result": "p = 6 kg·m/s"
+  },
+  "commonMistakes": [
+    "Treating momentum as conserved for an individual object when external forces act on it — conservation applies to the TOTAL momentum of an isolated system.",
+    "Confusing momentum conservation with kinetic energy conservation — momentum is conserved in ALL collisions (elastic and inelastic); kinetic energy is only conserved in elastic collisions."
+  ],
+  "genZNote": "Momentum conservation is the one law that still holds even when energy 'goes missing' into heat/sound during a crash.",
+  "relatedConcepts": [
+    "concept-newtons-laws-of-motion"
+  ],
+  "searchKeywords": [
+    "conservation of momentum",
+    "impulse",
+    "collision"
+  ],
+  "difficulty": "beginner"
+}

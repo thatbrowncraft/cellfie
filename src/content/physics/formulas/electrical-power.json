@@ -1,0 +1,63 @@
+{
+  "id": "formula-electrical-power",
+  "category": "formula",
+  "title": "Electrical Power",
+  "subcategory": "Current Electricity",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Current Electricity",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Current Electricity",
+  "expression": "P = VI = I²R = V²/R",
+  "explanation": "Electrical power is the rate at which electrical energy is converted (usually to heat, light, or mechanical work) in a circuit element. The three equivalent forms let you compute power from whichever two of V, I, R are known, using Ohm's law to substitute between them.",
+  "variables": [
+    {
+      "symbol": "P",
+      "meaning": "Electrical power",
+      "unit": "W (watt)"
+    },
+    {
+      "symbol": "V",
+      "meaning": "Potential difference",
+      "unit": "V (volt)"
+    },
+    {
+      "symbol": "I",
+      "meaning": "Current",
+      "unit": "A (ampere)"
+    },
+    {
+      "symbol": "R",
+      "meaning": "Resistance",
+      "unit": "Ω (ohm)"
+    }
+  ],
+  "resultUnit": "W (watt)",
+  "workedExample": {
+    "scenario": "A device draws 2 A at 220 V.",
+    "substitution": "P = VI = 220 × 2",
+    "result": "P = 440 W"
+  },
+  "commonMistakes": [
+    "Using the wrong form of the power equation when only two of the three quantities (V, I, R) are actually known, instead of first solving for the missing one via Ohm's law.",
+    "Forgetting that P = I²R and P = V²/R require R to stay constant, which fails for non-ohmic devices."
+  ],
+  "genZNote": "Three formulas, one concept — power is just how fast electrical energy gets converted, however you choose to calculate it.",
+  "relatedFormulas": [
+    "formula-ohms-law"
+  ],
+  "searchKeywords": [
+    "electrical power formula",
+    "p=vi",
+    "wattage"
+  ],
+  "difficulty": "beginner"
+}

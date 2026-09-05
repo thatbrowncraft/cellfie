@@ -1,0 +1,61 @@
+{
+  "id": "formula-ohms-law",
+  "category": "formula",
+  "title": "Ohm's Law",
+  "subcategory": "Current Electricity",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Current Electricity",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Current Electricity",
+  "expression": "V = IR",
+  "explanation": "For an ohmic conductor held at constant physical conditions (especially constant temperature), the potential difference across it is directly proportional to the current flowing through it, with resistance as the constant of proportionality. Not all conductors obey Ohm's law under all conditions — devices like diodes and filament lamps at high temperature are notably non-ohmic, since their resistance itself changes with current/voltage.",
+  "variables": [
+    {
+      "symbol": "V",
+      "meaning": "Potential difference across the conductor",
+      "unit": "V (volt)"
+    },
+    {
+      "symbol": "I",
+      "meaning": "Current flowing through the conductor",
+      "unit": "A (ampere)"
+    },
+    {
+      "symbol": "R",
+      "meaning": "Resistance of the conductor",
+      "unit": "Ω (ohm)"
+    }
+  ],
+  "resultUnit": "Depends on which variable is solved for",
+  "conditions": [
+    "Applies to ohmic conductors under constant physical conditions (especially temperature)"
+  ],
+  "workedExample": {
+    "scenario": "A resistor with resistance 10 Ω has a current of 2 A flowing through it.",
+    "substitution": "V = (2)(10)",
+    "result": "V = 20 V"
+  },
+  "commonMistakes": [
+    "Applying V = IR blindly to non-ohmic devices (diodes, filament bulbs at varying temperature) where resistance is not constant.",
+    "Confusing resistance (a property of a specific conductor/object) with resistivity (an intrinsic material property independent of shape/size)."
+  ],
+  "genZNote": "Ohm's law works great — right up until the component stops behaving like a 'normal' conductor (looking at you, diodes).",
+  "relatedFormulas": [
+    "formula-electrical-power"
+  ],
+  "searchKeywords": [
+    "v=ir",
+    "resistance formula",
+    "ohmic conductor"
+  ],
+  "difficulty": "beginner"
+}

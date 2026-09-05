@@ -1,0 +1,58 @@
+{
+  "id": "formula-kinetic-energy",
+  "category": "formula",
+  "title": "Kinetic Energy",
+  "subcategory": "Mechanics — Work, Energy and Power",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Work, Energy and Power",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Mechanics",
+  "expression": "KE = ½mv²",
+  "explanation": "Kinetic energy is the energy an object possesses due to its motion, and it grows with the SQUARE of velocity — doubling speed quadruples kinetic energy, a frequently tested exam trap. It is always non-negative and is a scalar quantity.",
+  "variables": [
+    {
+      "symbol": "KE",
+      "meaning": "Kinetic energy",
+      "unit": "J (joule)"
+    },
+    {
+      "symbol": "m",
+      "meaning": "Mass",
+      "unit": "kg"
+    },
+    {
+      "symbol": "v",
+      "meaning": "Speed",
+      "unit": "m/s"
+    }
+  ],
+  "resultUnit": "J (joule)",
+  "workedExample": {
+    "scenario": "A 1000 kg car travels at 20 m/s.",
+    "substitution": "KE = ½ × 1000 × 20²",
+    "result": "KE = 200,000 J = 200 kJ"
+  },
+  "commonMistakes": [
+    "Forgetting the square on velocity — assuming kinetic energy scales linearly with speed rather than quadratically.",
+    "Using v as displacement or momentum by mistake in multi-step problems."
+  ],
+  "genZNote": "Double the speed, QUADRUPLE the kinetic energy — physics does not do linear scaling here, and exams love testing exactly that.",
+  "relatedConcepts": [
+    "concept-work-energy-theorem",
+    "concept-conservation-of-energy"
+  ],
+  "searchKeywords": [
+    "ke formula",
+    "energy of motion"
+  ],
+  "difficulty": "beginner"
+}

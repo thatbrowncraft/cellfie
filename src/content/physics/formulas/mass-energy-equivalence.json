@@ -1,0 +1,59 @@
+{
+  "id": "formula-mass-energy-equivalence",
+  "category": "formula",
+  "title": "Mass-Energy Equivalence and Nuclear Binding Energy",
+  "subcategory": "Modern Physics — Nuclei",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part II, Class 12 — Nuclei",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Modern Physics",
+  "expression": "E = mc²  (nuclear binding energy: ΔE = Δm·c², where Δm is the mass defect)",
+  "explanation": "Mass and energy are equivalent, related by the speed of light squared. In nuclear physics, the mass of a nucleus is always slightly LESS than the sum of the masses of its individual protons and neutrons — this difference (the mass defect) has been converted into the binding energy holding the nucleus together. Fission (splitting heavy nuclei) and fusion (combining light nuclei) both release energy when the resulting products have a greater total binding energy per nucleon than the starting material.",
+  "variables": [
+    {
+      "symbol": "E",
+      "meaning": "Energy",
+      "unit": "J"
+    },
+    {
+      "symbol": "m",
+      "meaning": "Mass (or mass defect Δm for binding energy)",
+      "unit": "kg"
+    },
+    {
+      "symbol": "c",
+      "meaning": "Speed of light in vacuum (≈3 × 10⁸ m/s)",
+      "unit": "m/s"
+    }
+  ],
+  "resultUnit": "J (joule), often converted to MeV in nuclear physics",
+  "workedExample": {
+    "scenario": "A nuclear reaction has a mass defect of 3.6 × 10⁻²⁸ kg.",
+    "substitution": "E = (3.6 × 10⁻²⁸)(3 × 10⁸)²",
+    "result": "E ≈ 3.24 × 10⁻¹¹ J (a very large energy release for such a tiny mass)"
+  },
+  "commonMistakes": [
+    "Forgetting to square the speed of light — a very common arithmetic error given how large c² is.",
+    "Confusing fission (heavy nucleus splits, used in current nuclear reactors) with fusion (light nuclei combine, powers the Sun) — both release energy but via opposite processes."
+  ],
+  "genZNote": "E = mc² is the reason a tiny bit of missing mass in a nucleus can translate into an enormous amount of energy — mass is just very concentrated energy.",
+  "relatedConcepts": [
+    "concept-radioactive-decay-and-half-life"
+  ],
+  "searchKeywords": [
+    "binding energy",
+    "mass defect",
+    "fission fusion",
+    "e=mc2"
+  ],
+  "difficulty": "advanced"
+}

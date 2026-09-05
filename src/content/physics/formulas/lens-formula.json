@@ -1,0 +1,59 @@
+{
+  "id": "formula-lens-formula",
+  "category": "formula",
+  "title": "Thin Lens Formula",
+  "subcategory": "Optics — Ray Optics",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Ray Optics and Optical Instruments",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Optics",
+  "expression": "1/v − 1/u = 1/f",
+  "explanation": "The thin lens formula relates the object distance (u), image distance (v), and focal length (f) for a thin lens, using the Cartesian sign convention (distances measured from the optical center, with distances in the direction of incident light taken as positive). A converging (convex) lens has a positive focal length; a diverging (concave) lens has a negative focal length.",
+  "variables": [
+    {
+      "symbol": "v",
+      "meaning": "Image distance from the lens",
+      "unit": "m (or cm, consistently)"
+    },
+    {
+      "symbol": "u",
+      "meaning": "Object distance from the lens",
+      "unit": "m (or cm, consistently)"
+    },
+    {
+      "symbol": "f",
+      "meaning": "Focal length of the lens",
+      "unit": "m (or cm, consistently)"
+    }
+  ],
+  "resultUnit": "Same length unit used for u and f",
+  "conditions": [
+    "Assumes a thin lens and paraxial rays (rays close to the principal axis); requires consistent sign convention throughout the calculation"
+  ],
+  "workedExample": {
+    "scenario": "An object is placed 30 cm from a convex lens of focal length 10 cm (u = -30 cm using Cartesian convention).",
+    "substitution": "1/v = 1/f + 1/u = 1/10 + 1/(-30) = 3/30 - 1/30 = 2/30",
+    "result": "v = 15 cm (a real image forms 15 cm from the lens)"
+  },
+  "commonMistakes": [
+    "Mixing sign conventions mid-calculation — the single most common source of errors in lens/mirror problems.",
+    "Forgetting that a diverging (concave) lens always has a negative focal length in the Cartesian convention."
+  ],
+  "genZNote": "The lens formula only works if you commit to ONE sign convention for the entire problem — switching halfway through is where most marks get lost.",
+  "searchKeywords": [
+    "1/v-1/u=1/f",
+    "lens equation",
+    "magnification",
+    "ray optics"
+  ],
+  "difficulty": "intermediate"
+}

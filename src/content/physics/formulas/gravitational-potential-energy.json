@@ -1,0 +1,65 @@
+{
+  "id": "formula-gravitational-potential-energy",
+  "category": "formula",
+  "title": "Gravitational Potential Energy (near Earth's surface)",
+  "subcategory": "Mechanics — Work, Energy and Power",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Work, Energy and Power",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Mechanics",
+  "expression": "PE = mgh",
+  "explanation": "This is the simplified form of gravitational potential energy valid close to Earth's surface, where the gravitational field strength g is approximately constant. PE is measured relative to an arbitrarily chosen reference height (h = 0) — only CHANGES in potential energy have unambiguous physical meaning, not the absolute value.",
+  "variables": [
+    {
+      "symbol": "PE",
+      "meaning": "Gravitational potential energy",
+      "unit": "J (joule)"
+    },
+    {
+      "symbol": "m",
+      "meaning": "Mass",
+      "unit": "kg"
+    },
+    {
+      "symbol": "g",
+      "meaning": "Acceleration due to gravity (≈9.8 m/s² near Earth's surface)",
+      "unit": "m/s²"
+    },
+    {
+      "symbol": "h",
+      "meaning": "Height above the chosen reference level",
+      "unit": "m"
+    }
+  ],
+  "resultUnit": "J (joule)",
+  "conditions": [
+    "Valid only for heights small compared to Earth's radius, where g can be treated as constant; use the general gravitational potential energy formula (-GMm/r) for large distances or astronomical scales"
+  ],
+  "workedExample": {
+    "scenario": "A 5 kg object is lifted 3 m above the ground.",
+    "substitution": "PE = 5 × 9.8 × 3",
+    "result": "PE = 147 J"
+  },
+  "commonMistakes": [
+    "Using PE = mgh at large distances from Earth (e.g. satellite altitudes), where the general gravitational PE formula is required instead.",
+    "Forgetting that only the CHANGE in height/PE matters for most problems, not an absolute reference point."
+  ],
+  "genZNote": "PE = mgh only works while you're basically still on Earth's doorstep — go to orbital distances and you need the 'real' gravitational PE formula instead.",
+  "relatedConcepts": [
+    "concept-conservation-of-energy"
+  ],
+  "searchKeywords": [
+    "potential energy formula",
+    "mgh"
+  ],
+  "difficulty": "beginner"
+}

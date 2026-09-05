@@ -1,0 +1,66 @@
+{
+  "id": "formula-coulombs-law",
+  "category": "formula",
+  "title": "Coulomb's Law",
+  "subcategory": "Electrostatics",
+  "ncertClass": [
+    "12"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Electric Charges and Fields",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Electrostatics",
+  "expression": "F = k·q₁q₂ / r²   (k = 1/(4πε₀) ≈ 9 × 10⁹ N·m²/C²)",
+  "explanation": "Coulomb's law describes the electrostatic force between two point charges: proportional to the product of the charges and inversely proportional to the square of the distance between them, exactly mirroring the mathematical form of Newton's law of gravitation. Like charges repel; unlike charges attract — the sign of the charges determines the direction, while the magnitude comes from the formula.",
+  "variables": [
+    {
+      "symbol": "F",
+      "meaning": "Electrostatic force between the charges",
+      "unit": "N"
+    },
+    {
+      "symbol": "k",
+      "meaning": "Coulomb's constant",
+      "unit": "N·m²/C²"
+    },
+    {
+      "symbol": "q₁, q₂",
+      "meaning": "Magnitudes of the two point charges",
+      "unit": "C (coulomb)"
+    },
+    {
+      "symbol": "r",
+      "meaning": "Distance between the charges",
+      "unit": "m"
+    }
+  ],
+  "resultUnit": "N (newton)",
+  "conditions": [
+    "Strictly applies to point charges (or spherically symmetric charge distributions treated as points); assumes a vacuum/air unless a medium's permittivity is specified"
+  ],
+  "workedExample": {
+    "scenario": "Two point charges of +2 μC and +3 μC are 0.5 m apart.",
+    "substitution": "F = (9 × 10⁹)(2 × 10⁻⁶)(3 × 10⁻⁶) / (0.5²)",
+    "result": "F ≈ 0.216 N (repulsive, since both charges are positive)"
+  },
+  "commonMistakes": [
+    "Forgetting to convert charge units (μC, nC) to coulombs before substituting.",
+    "Ignoring the medium — the formula's constant k changes if the charges are in a dielectric medium rather than vacuum/air."
+  ],
+  "genZNote": "Same shape as the gravity formula, completely different cast of characters — mass swapped for charge, and now repulsion is on the table.",
+  "relatedFormulas": [
+    "formula-universal-law-of-gravitation"
+  ],
+  "searchKeywords": [
+    "electrostatic force",
+    "point charge",
+    "coulomb constant"
+  ],
+  "difficulty": "intermediate"
+}

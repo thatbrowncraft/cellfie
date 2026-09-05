@@ -1,0 +1,72 @@
+{
+  "id": "formula-equations-of-motion",
+  "category": "formula",
+  "title": "Equations of Motion (Constant Acceleration)",
+  "subcategory": "Mechanics — Motion in a Straight Line",
+  "ncertClass": [
+    "11"
+  ],
+  "sourceType": "ncert-aligned",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Motion in a Straight Line",
+      "publisher": "NCERT"
+    }
+  ],
+  "domain": "Mechanics",
+  "expression": "v = u + at;  s = ut + ½at²;  v² = u² + 2as",
+  "explanation": "These three kinematic equations connect displacement, velocity, acceleration, and time for motion under CONSTANT acceleration only. Given any three of the five quantities (u, v, a, s, t), the other two can be found by choosing the equation that already contains the known three and the one unknown you need. They do not apply directly if acceleration is changing during the motion — in that case, calculus-based methods (or breaking motion into constant-acceleration segments) are needed instead.",
+  "variables": [
+    {
+      "symbol": "u",
+      "meaning": "Initial velocity",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "v",
+      "meaning": "Final velocity",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "a",
+      "meaning": "Constant acceleration",
+      "unit": "m/s²"
+    },
+    {
+      "symbol": "s",
+      "meaning": "Displacement",
+      "unit": "m"
+    },
+    {
+      "symbol": "t",
+      "meaning": "Time elapsed",
+      "unit": "s"
+    }
+  ],
+  "resultUnit": "Depends on which variable is being solved for (see above)",
+  "conditions": [
+    "Acceleration must be constant throughout the interval considered",
+    "Motion is typically along a straight line (one dimension)"
+  ],
+  "workedExample": {
+    "scenario": "A car starts from rest (u = 0) and accelerates at 2 m/s² for 5 s. Find its final velocity and the distance covered.",
+    "substitution": "v = 0 + (2)(5) = 10 m/s;  s = (0)(5) + ½(2)(5²) = 25 m",
+    "result": "Final velocity = 10 m/s; distance covered = 25 m"
+  },
+  "commonMistakes": [
+    "Applying these equations when acceleration is not constant (e.g. most real-world air resistance situations).",
+    "Mixing up sign conventions for deceleration — a decelerating object has negative acceleration relative to the chosen positive direction, which must be substituted consistently into all three equations."
+  ],
+  "genZNote": "Three equations, five variables, pick whichever equation already has the three you know and the one you want — it's a matching game, not a memory test.",
+  "relatedConcepts": [
+    "concept-speed-vs-velocity"
+  ],
+  "searchKeywords": [
+    "suvat equations",
+    "kinematics formulas",
+    "v=u+at"
+  ],
+  "difficulty": "beginner"
+}
