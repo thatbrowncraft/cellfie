@@ -1,0 +1,101 @@
+{
+  "id": "proto-autoclave-operation",
+  "category": "protocol",
+  "title": "Standard Autoclave Sterilization Cycle",
+  "subcategory": "Basic Laboratory Techniques",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    },
+    {
+      "label": "Biosafety in Microbiological and Biomedical Laboratories (BMBL)",
+      "publisher": "CDC/NIH",
+      "edition": "6th ed."
+    }
+  ],
+  "purpose": "To sterilize media, glassware, and biological waste using pressurized saturated steam, achieving reliable killing of vegetative cells, spores, and viruses.",
+  "principle": "Saturated steam under pressure reaches temperatures well above the boiling point of water at atmospheric pressure (commonly 121°C at approximately 15 psi above atmospheric), and this combination of elevated temperature, moisture, and holding time denatures proteins and nucleic acids throughout the load, achieving sterilization more reliably and quickly than dry heat alone.",
+  "requiredMaterials": [
+    "Autoclave-safe containers with loosened caps/vented closures",
+    "Autoclave indicator tape on every load",
+    "Secondary containment tray for liquids"
+  ],
+  "requiredReagents": [],
+  "equipment": [
+    "equip-autoclave",
+    "equip-sterilization-indicators"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Load items into the autoclave with adequate spacing to allow steam penetration throughout, using secondary containment for any liquid containers."
+    },
+    {
+      "step": 2,
+      "instruction": "Loosen caps or use vented closures on liquid containers to prevent pressure buildup and container rupture/implosion."
+    },
+    {
+      "step": 3,
+      "instruction": "Apply autoclave indicator tape to the load."
+    },
+    {
+      "step": 4,
+      "instruction": "Select the appropriate cycle (liquid vs. dry/waste cycle) and parameters (commonly 121°C for 15-30 minutes depending on load size and type) for the specific load."
+    },
+    {
+      "step": 5,
+      "instruction": "Start the cycle and allow it to complete fully, including the depressurization/cool-down phase, before opening the door."
+    },
+    {
+      "step": 6,
+      "instruction": "Confirm the indicator tape has changed color, and periodically confirm sterilization adequacy with a chemical integrator or biological indicator per facility schedule."
+    },
+    {
+      "step": 7,
+      "instruction": "Carefully remove the load, allowing hot liquids to cool before further handling, and tighten any loosened caps once cool."
+    }
+  ],
+  "observations": [
+    "Indicator tape shows the expected color change after the cycle.",
+    "Liquid media appears clear (unless intentionally colored/turbid) and free of visible contamination after cooling."
+  ],
+  "interpretation": "A completed cycle with a positive indicator change and, on periodic testing, a negative biological indicator result together support that sterilizing conditions were achieved; tape alone confirms exposure, not guaranteed sterility throughout the entire load.",
+  "criticalNotes": [
+    "Never seal liquid containers tightly before autoclaving — trapped steam pressure can cause violent container failure.",
+    "Allow the full depressurization cycle to finish before opening the door; opening early on a liquid cycle can cause violent boil-over from superheated liquid."
+  ],
+  "precautions": [
+    "Wear heat-resistant gloves and a face shield when removing hot loads.",
+    "Allow liquids to cool to a safe handling temperature before removing from secondary containment."
+  ],
+  "biosafetyNotes": [
+    "Confirm the correct cycle for biohazardous waste per facility biosafety procedures, since waste and media cycles may differ in time/temperature requirements."
+  ],
+  "limitations": [
+    "Overloading the chamber can prevent adequate steam penetration to items in the center of the load, resulting in incomplete sterilization despite an apparently normal cycle.",
+    "Some heat-labile reagents cannot be autoclaved and require filter sterilization instead."
+  ],
+  "relatedEquipment": [
+    "equip-autoclave",
+    "equip-sterilization-indicators"
+  ],
+  "relatedSafety": [
+    "safety-basic-autoclave-safety",
+    "safety-sterilization"
+  ],
+  "relatedConcepts": [
+    "concept-sterilization-vs-disinfection",
+    "concept-sterilization-indicators"
+  ],
+  "searchKeywords": [
+    "autoclave protocol",
+    "steam sterilization cycle",
+    "121C 15 minutes",
+    "media sterilization"
+  ],
+  "difficulty": "beginner"
+}

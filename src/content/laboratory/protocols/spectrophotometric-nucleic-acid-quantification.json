@@ -1,0 +1,78 @@
+{
+  "id": "proto-nucleic-acid-quantification",
+  "category": "protocol",
+  "title": "Spectrophotometric Nucleic Acid Quantification (A260)",
+  "subcategory": "Molecular Biology Laboratory",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To determine the concentration and purity of a DNA or RNA sample using UV absorbance, commonly performed immediately after a nucleic acid extraction or purification step.",
+  "principle": "Nucleic acids absorb UV light strongly at approximately 260 nm due to the aromatic rings of their bases, and absorbance at this wavelength is proportional to concentration over the instrument's linear range (per the Beer-Lambert relationship); comparing absorbance at 260 nm to readings at 280 nm and 230 nm gives working purity ratios that flag protein and other common contaminants, respectively.",
+  "requiredMaterials": [
+    "Microvolume spectrophotometer (or cuvette-based spectrophotometer with a UV-capable cuvette)",
+    "Lint-free wipes"
+  ],
+  "requiredReagents": [
+    "Blank buffer matching the sample's elution/dilution buffer"
+  ],
+  "equipment": [
+    "equip-microvolume-spectrophotometer",
+    "equip-micropipette"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Clean the instrument's measurement surface(s) and perform a blank measurement using the same buffer the sample is diluted or eluted in."
+    },
+    {
+      "step": 2,
+      "instruction": "Load the sample per the instrument's specific procedure and select the correct nucleic acid type (DNA vs. RNA) setting."
+    },
+    {
+      "step": 3,
+      "instruction": "Record the concentration and the A260/A280 and A260/A230 purity ratios reported by the instrument."
+    },
+    {
+      "step": 4,
+      "instruction": "Clean the measurement surface(s) immediately after the reading to prevent carryover into the next sample."
+    }
+  ],
+  "observations": [
+    "A concentration reading appropriate for the extraction method and starting material used.",
+    "A260/A280 near 1.8 (DNA) or 2.0 (RNA), and an acceptable A260/A230 ratio."
+  ],
+  "interpretation": "Concentration and purity ratios together inform whether the sample is suitable for a specific downstream application; low purity ratios suggest incomplete removal of protein, salts, or organic solvent during extraction, while an unexpectedly low or negative-looking ratio can also indicate instrument carryover from a previous sample or an incorrect blank.",
+  "criticalNotes": [
+    "Always blank with the correct matching buffer — a mismatched blank distorts both the reported concentration and the purity ratios.",
+    "Clean measurement surfaces thoroughly between every sample to prevent carryover contamination affecting the next reading."
+  ],
+  "precautions": [
+    "Handle any biological/nucleic acid sample per its risk assessment."
+  ],
+  "limitations": [
+    "UV absorbance-based quantification cannot distinguish DNA from RNA in a mixed sample, and cannot detect degradation (fragment size distribution) the way gel electrophoresis can.",
+    "Some PCR/enzymatic inhibitors do not strongly absorb at 260, 280, or 230 nm and will not be flagged by this method even in an otherwise 'pure'-looking sample."
+  ],
+  "relatedEquipment": [
+    "equip-microvolume-spectrophotometer"
+  ],
+  "relatedConcepts": [
+    "concept-nucleic-acid-purity-260-280"
+  ],
+  "relatedProtocols": [
+    "proto-dna-extraction"
+  ],
+  "searchKeywords": [
+    "A260 quantification",
+    "nucleic acid concentration measurement",
+    "nanodrop protocol",
+    "DNA RNA quantification"
+  ],
+  "difficulty": "advanced"
+}

@@ -1,0 +1,81 @@
+{
+  "id": "proto-restriction-digestion",
+  "category": "protocol",
+  "title": "Restriction Enzyme Digestion",
+  "subcategory": "Molecular Biology Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To cut DNA at specific, sequence-defined recognition sites using one or more restriction enzymes, for applications such as cloning, plasmid mapping, or confirming clone identity.",
+  "principle": "Each restriction enzyme recognizes a specific, usually short palindromic DNA sequence and cleaves the DNA backbone at or near that site, generating fragments whose number and sizes are predictable from the enzyme's recognition sequence and the sequence being digested — a basis both for cutting DNA in a controlled way for downstream cloning and for confirming a plasmid or fragment's identity by comparing observed fragment sizes to the expected digestion pattern.",
+  "requiredMaterials": [
+    "Purified plasmid or DNA fragment to be digested",
+    "Microcentrifuge tubes"
+  ],
+  "requiredReagents": [
+    "Restriction enzyme(s)",
+    "Enzyme-appropriate reaction buffer",
+    "Nuclease-free water"
+  ],
+  "equipment": [
+    "equip-micropipette",
+    "equip-water-bath"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Assemble the digestion reaction combining DNA, the appropriate reaction buffer at its correct working concentration, restriction enzyme(s), and nuclease-free water to the final reaction volume."
+    },
+    {
+      "step": 2,
+      "instruction": "Mix gently (avoid vortexing, which is unnecessary and can introduce bubbles) and briefly collect the reaction at the bottom of the tube."
+    },
+    {
+      "step": 3,
+      "instruction": "Incubate at the enzyme-specific optimal temperature (commonly 37°C for many common enzymes, though this varies) for the recommended time."
+    },
+    {
+      "step": 4,
+      "instruction": "If required by the enzyme, heat-inactivate the reaction at the specified temperature/time to stop digestion before downstream use."
+    },
+    {
+      "step": 5,
+      "instruction": "Analyze the digested DNA by agarose gel electrophoresis alongside an undigested control and a molecular weight ladder to confirm the expected fragment pattern."
+    }
+  ],
+  "observations": [
+    "Fragment sizes on the gel matching the pattern predicted from the known or expected sequence and enzyme recognition sites."
+  ],
+  "interpretation": "A digestion pattern matching prediction supports that the DNA has the expected sequence/construct; an unexpected pattern can indicate an incorrect clone, a sequence variant, star activity (non-specific cutting under suboptimal reaction conditions), or incomplete digestion.",
+  "criticalNotes": [
+    "Always include an undigested control on the same gel to distinguish true digestion products from an already-linear or nicked starting material.",
+    "Use the enzyme's specified buffer at its correct concentration — some enzymes show reduced specificity or 'star activity' (unintended cutting) under non-optimal buffer or glycerol conditions."
+  ],
+  "precautions": [
+    "Keep restriction enzymes on ice and add them last, and return them to proper storage promptly to preserve activity."
+  ],
+  "limitations": [
+    "Some enzymes are sensitive to DNA methylation status at or near their recognition site and may fail to cut methylated DNA from certain host strains.",
+    "Double digestions with two enzymes requiring incompatible optimal buffers may need a sequential digestion strategy rather than a single combined reaction."
+  ],
+  "relatedConcepts": [
+    "concept-restriction-enzymes-sticky-blunt-ends"
+  ],
+  "relatedProtocols": [
+    "proto-agarose-gel-electrophoresis",
+    "proto-plasmid-miniprep"
+  ],
+  "searchKeywords": [
+    "restriction digestion",
+    "restriction enzyme reaction",
+    "plasmid mapping",
+    "DNA cutting protocol"
+  ],
+  "difficulty": "advanced"
+}

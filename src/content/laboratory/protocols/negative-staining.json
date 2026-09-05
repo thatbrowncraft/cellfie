@@ -1,0 +1,84 @@
+{
+  "id": "proto-negative-stain",
+  "category": "protocol",
+  "title": "Negative Staining",
+  "subcategory": "Microbiology Laboratory",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To visualize bacterial cell size and shape with minimal distortion, particularly useful for cells or structures that are damaged or shrunk by heat-fixation and direct staining.",
+  "principle": "An acidic dye (such as nigrosin or India ink) carries a negative charge and is repelled by the also-negatively-charged bacterial cell surface, so the dye stains the background around the cells rather than the cells themselves; the unstained cells appear as bright, translucent shapes against a uniformly dark background, avoiding the heat-fixation step (and its associated shrinkage/distortion) required by most direct staining methods.",
+  "requiredMaterials": [
+    "Glass slides (grease-free)",
+    "Inoculating loop",
+    "Second slide (for the spreading technique) or coverslip"
+  ],
+  "requiredReagents": [
+    "Acidic stain such as nigrosin or India ink"
+  ],
+  "equipment": [
+    "equip-microscope-brightfield",
+    "equip-inoculating-loop"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Place a small drop of the stain near one end of a clean slide."
+    },
+    {
+      "step": 2,
+      "instruction": "Mix a loopful of bacterial culture into the stain drop."
+    },
+    {
+      "step": 3,
+      "instruction": "Using the edge of a second slide held at an angle, spread the mixture into a thin film across the slide (a technique similar to a blood smear), without heat-fixing."
+    },
+    {
+      "step": 4,
+      "instruction": "Air-dry completely without heat before examining."
+    },
+    {
+      "step": 5,
+      "instruction": "Examine under oil immersion, looking for translucent/unstained cells against the dark, stained background."
+    }
+  ],
+  "observations": [
+    "Bright, translucent bacterial cells of relatively natural size and shape, standing out clearly against a uniformly dark background."
+  ],
+  "interpretation": "Because no heat-fixation or harsh staining chemistry is applied directly to the cells, this method is considered to give a size and shape closer to the cell's natural, unstained appearance than heat-fixed stains, useful for accurate morphological assessment or for organisms prone to distortion by other methods.",
+  "criticalNotes": [
+    "Do not heat-fix the smear — the entire value of this method depends on avoiding the shrinkage/distortion that heat-fixation can cause."
+  ],
+  "precautions": [
+    "Follow standard aseptic technique when preparing the smear from a live culture.",
+    "Handle stain reagents per their safety data sheets."
+  ],
+  "biosafetyNotes": [
+    "Handle the source culture per its specific biosafety risk assessment."
+  ],
+  "limitations": [
+    "Provides morphological information only (size, shape, arrangement) and does not differentiate Gram reaction or other structural/staining-based characteristics.",
+    "A film spread too thick can obscure individual cells against the dense background stain."
+  ],
+  "relatedProtocols": [
+    "proto-capsule-stain",
+    "proto-simple-stain",
+    "proto-gram-stain"
+  ],
+  "relatedEquipment": [
+    "equip-microscope-brightfield"
+  ],
+  "searchKeywords": [
+    "negative stain",
+    "nigrosin stain",
+    "India ink stain bacteria",
+    "cell morphology stain"
+  ],
+  "difficulty": "intermediate"
+}

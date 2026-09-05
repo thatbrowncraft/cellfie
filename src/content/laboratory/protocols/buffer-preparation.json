@@ -1,0 +1,96 @@
+{
+  "id": "proto-buffer-preparation",
+  "category": "protocol",
+  "title": "Buffer Preparation & pH Adjustment",
+  "subcategory": "Basic Laboratory Techniques",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To prepare a buffer solution at a target pH that will resist pH change upon small additions of acid or base, for use in downstream assays, cell culture, or reagent preparation.",
+  "principle": "A buffer works best within about one pH unit of its component weak acid's pKa, where meaningful concentrations of both the weak acid and its conjugate base are present together (as described by the Henderson-Hasselbalch relationship) to absorb added H+ or OH- without a large pH swing.",
+  "requiredMaterials": [
+    "Volumetric flask or graduated cylinder",
+    "Weighing paper/boats",
+    "Stir bar and magnetic stirrer",
+    "Calibrated pH meter with appropriate electrode"
+  ],
+  "requiredReagents": [
+    "Buffer salt(s)/components appropriate to the target pH (chosen so the target pH falls near the component's pKa)",
+    "Concentrated acid and/or base for fine pH adjustment (e.g. HCl, NaOH)",
+    "Purified water"
+  ],
+  "equipment": [
+    "equip-balance-analytical",
+    "equip-magnetic-stirrer-hot-plate",
+    "equip-ph-meter",
+    "equip-volumetric-flasks"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Calibrate the pH meter using at least two standard buffers bracketing the target pH before beginning."
+    },
+    {
+      "step": 2,
+      "instruction": "Weigh out the buffer component(s) selected so the target pH falls near their pKa, and dissolve in roughly 80-90% of the final target volume of purified water while stirring."
+    },
+    {
+      "step": 3,
+      "instruction": "Insert the calibrated pH probe and monitor while adding small increments of acid or base to bring the solution to the target pH, allowing the reading to stabilize between additions."
+    },
+    {
+      "step": 4,
+      "instruction": "Once the target pH is reached, transfer to a volumetric flask and bring to final volume with purified water, mixing thoroughly."
+    },
+    {
+      "step": 5,
+      "instruction": "Recheck the final pH after bringing to volume, since dilution to the final volume can shift the reading slightly."
+    },
+    {
+      "step": 6,
+      "instruction": "Filter-sterilize or autoclave as appropriate for the intended use, and label with contents, concentration, pH, and preparation date."
+    }
+  ],
+  "observations": [
+    "Stable pH reading on the calibrated meter matching the target value after bringing to final volume."
+  ],
+  "interpretation": "A correctly prepared buffer holds its target pH stably and will resist small pH perturbations during subsequent use; a buffer that drifts noticeably in storage may indicate microbial contamination, CO2 absorption, or component instability.",
+  "criticalNotes": [
+    "Always calibrate the pH meter immediately before use — an uncalibrated or drifted probe gives a false sense of confidence in the reading.",
+    "Add acid/base incrementally near the target pH — overshooting requires adding the opposite reagent to correct, which increases ionic strength and dilutes the buffer components unnecessarily."
+  ],
+  "precautions": [
+    "Handle concentrated acids/bases per their safety data sheet.",
+    "Allow the pH probe adequate time to stabilize before reading, especially in viscous or poorly mixed solutions."
+  ],
+  "limitations": [
+    "A buffer chosen with a pKa far from the desired working pH will have poor buffering capacity even if adjusted to the correct pH on the day it is made.",
+    "Some buffer components are temperature-sensitive in their pKa, so pH adjusted at room temperature may differ slightly once the buffer is used at a different temperature (e.g. 4°C or 37°C)."
+  ],
+  "relatedFormulas": [
+    "formula-ph",
+    "formula-henderson-hasselbalch",
+    "formula-molarity"
+  ],
+  "relatedEquipment": [
+    "equip-ph-meter",
+    "equip-magnetic-stirrer-hot-plate",
+    "equip-balance-analytical"
+  ],
+  "relatedConcepts": [
+    "concept-si-units-lab-measurements"
+  ],
+  "searchKeywords": [
+    "buffer preparation",
+    "pH adjustment",
+    "making buffers",
+    "buffer solution protocol"
+  ],
+  "difficulty": "intermediate"
+}

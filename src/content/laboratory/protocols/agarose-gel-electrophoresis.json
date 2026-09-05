@@ -1,0 +1,91 @@
+{
+  "id": "proto-agarose-gel-electrophoresis",
+  "category": "protocol",
+  "title": "Agarose Gel Electrophoresis",
+  "subcategory": "Molecular Biology Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To separate DNA (or RNA) fragments by size for visualization, size estimation against a molecular weight ladder, or downstream extraction/purification of a specific band.",
+  "principle": "Under an applied electric field, the uniformly negatively charged DNA backbone migrates toward the positive electrode; the agarose gel matrix acts as a molecular sieve, so smaller fragments migrate faster and farther through the gel pores than larger fragments within a given run time, separating a mixed population of fragments into discrete size-based bands.",
+  "requiredMaterials": [
+    "Gel casting tray and well comb",
+    "Sample loading dye",
+    "Molecular weight ladder appropriate to the expected fragment size range"
+  ],
+  "requiredReagents": [
+    "Agarose powder",
+    "Electrophoresis running buffer (e.g. TAE or TBE)",
+    "Nucleic acid stain (e.g. an intercalating or safer alternative dye) added to the gel or post-stained"
+  ],
+  "equipment": [
+    "equip-gel-electrophoresis-apparatus",
+    "equip-micropipette"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Prepare an agarose gel of the appropriate percentage for the expected fragment size range (higher percentage for smaller fragments, lower for larger) by dissolving agarose powder in running buffer with heating."
+    },
+    {
+      "step": 2,
+      "instruction": "Add nucleic acid stain to the molten gel (or plan for post-staining) per the specific stain's instructions, then pour into the casting tray with a well comb in place and allow to solidify."
+    },
+    {
+      "step": 3,
+      "instruction": "Place the solidified gel into the electrophoresis chamber, submerged in running buffer, and carefully remove the comb."
+    },
+    {
+      "step": 4,
+      "instruction": "Mix samples with loading dye and load into wells, including a molecular weight ladder in at least one lane."
+    },
+    {
+      "step": 5,
+      "instruction": "Close the lid, confirm correct polarity, and run at the appropriate voltage until the dye front has migrated an appropriate distance."
+    },
+    {
+      "step": 6,
+      "instruction": "Visualize the gel under appropriate illumination (e.g. UV or blue light transilluminator matched to the stain used) and image/photograph the result."
+    }
+  ],
+  "observations": [
+    "Discrete bands migrating in proportion to fragment size, with the ladder providing size reference points.",
+    "A sharp, well-resolved dye front and minimal smearing in sample lanes."
+  ],
+  "interpretation": "Band size is estimated by comparing migration distance to the co-run molecular weight ladder; unexpected band sizes, smearing, or absence of expected bands can indicate degraded sample, incorrect reaction conditions, or a problem in an upstream step (e.g. a failed digestion or PCR).",
+  "criticalNotes": [
+    "Always run a molecular weight ladder alongside samples — band size cannot be reliably estimated without a size reference on the same gel.",
+    "Select gel percentage appropriate to the expected fragment size range before casting; the wrong percentage can leave the fragments of interest poorly resolved or run off the gel entirely."
+  ],
+  "precautions": [
+    "Never open the chamber lid or reach into the buffer while the power supply is running.",
+    "Handle any nucleic acid stain per its specific safety data sheet, and use appropriate UV eye protection when visualizing."
+  ],
+  "limitations": [
+    "Agarose gel electrophoresis provides only an approximate size estimate, not an exact molecular weight, and resolution decreases for very large or very similarly sized fragments.",
+    "This method does not by itself confirm sequence identity — only fragment size."
+  ],
+  "relatedEquipment": [
+    "equip-gel-electrophoresis-apparatus"
+  ],
+  "relatedSafety": [
+    "safety-electrical-safety",
+    "safety-chemical-safety"
+  ],
+  "relatedProtocols": [
+    "proto-restriction-digestion"
+  ],
+  "searchKeywords": [
+    "agarose gel electrophoresis",
+    "DNA gel run",
+    "molecular weight ladder",
+    "gel band visualization"
+  ],
+  "difficulty": "intermediate"
+}

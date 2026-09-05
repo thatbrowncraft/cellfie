@@ -1,0 +1,100 @@
+{
+  "id": "proto-plasmid-miniprep",
+  "category": "protocol",
+  "title": "Plasmid DNA Miniprep",
+  "subcategory": "Molecular Biology Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To rapidly isolate small-scale quantities of plasmid DNA from a bacterial culture, typically for screening clones or preparing DNA for downstream digestion, sequencing, or transformation.",
+  "principle": "Alkaline lysis selectively denatures both genomic and plasmid DNA along with cellular protein under high pH, and subsequent neutralization allows the smaller, covalently closed circular plasmid DNA to renature correctly and remain in solution, while the larger genomic DNA and precipitated protein/cell debris co-precipitate and can be pelleted away, after which the plasmid DNA is purified (commonly via a silica column) and eluted.",
+  "requiredMaterials": [
+    "Overnight bacterial culture carrying the plasmid of interest",
+    "Microcentrifuge tubes"
+  ],
+  "requiredReagents": [
+    "Resuspension buffer",
+    "Alkaline lysis buffer (containing NaOH and SDS)",
+    "Neutralization buffer",
+    "Column wash buffer(s) and elution buffer (or nuclease-free water)"
+  ],
+  "equipment": [
+    "equip-centrifuge",
+    "equip-microcentrifuge-tubes",
+    "equip-microvolume-spectrophotometer"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Pellet a small volume of overnight culture and discard the supernatant."
+    },
+    {
+      "step": 2,
+      "instruction": "Resuspend the pellet completely in resuspension buffer, ensuring no clumps remain."
+    },
+    {
+      "step": 3,
+      "instruction": "Add alkaline lysis buffer and mix gently by inversion (not vortexing, which can shear genomic DNA into fragments that co-purify with plasmid) and incubate briefly at room temperature."
+    },
+    {
+      "step": 4,
+      "instruction": "Add neutralization buffer and mix gently by inversion until a white precipitate (protein/genomic DNA/SDS complex) forms uniformly."
+    },
+    {
+      "step": 5,
+      "instruction": "Centrifuge to pellet the precipitate and transfer the clarified supernatant containing the plasmid DNA to a purification column."
+    },
+    {
+      "step": 6,
+      "instruction": "Wash the column per the method's instructions to remove residual salts and contaminants."
+    },
+    {
+      "step": 7,
+      "instruction": "Elute the purified plasmid DNA in elution buffer or nuclease-free water and quantify."
+    }
+  ],
+  "observations": [
+    "A visible, uniform white precipitate after neutralization.",
+    "A260-based yield and A260/A280 ratio appropriate for the culture volume and plasmid copy number used."
+  ],
+  "interpretation": "A clean elution with acceptable purity ratios and expected yield indicates a successful prep suitable for downstream digestion, sequencing, or transformation; low yield can reflect low plasmid copy number, an under-grown culture, or incomplete lysis, while poor purity ratios suggest incomplete washing.",
+  "criticalNotes": [
+    "Never vortex after adding alkaline lysis buffer — gentle inversion mixing prevents genomic DNA shearing that would otherwise contaminate the plasmid prep.",
+    "Do not exceed the recommended lysis incubation time, since prolonged exposure to alkaline lysis conditions can irreversibly denature the plasmid DNA and reduce yield/quality."
+  ],
+  "precautions": [
+    "Handle the alkaline lysis and neutralization buffers per their safety data sheets.",
+    "Discard the pelleted precipitate as biological/chemical waste per facility procedure."
+  ],
+  "biosafetyNotes": [
+    "Handle the starting bacterial culture per its biosafety risk assessment through the lysis step."
+  ],
+  "limitations": [
+    "Plasmid copy number varies significantly by origin of replication and host strain, directly affecting achievable yield.",
+    "This scale is intended for small-scale screening/downstream work, not for applications requiring large quantities of highly pure plasmid DNA (which use larger-scale maxi/megaprep methods)."
+  ],
+  "relatedProtocols": [
+    "proto-restriction-digestion",
+    "proto-bacterial-transformation"
+  ],
+  "relatedConcepts": [
+    "concept-nucleic-acid-purity-260-280"
+  ],
+  "relatedEquipment": [
+    "equip-centrifuge",
+    "equip-microvolume-spectrophotometer"
+  ],
+  "searchKeywords": [
+    "plasmid miniprep",
+    "alkaline lysis",
+    "plasmid DNA purification",
+    "clone screening prep"
+  ],
+  "difficulty": "advanced"
+}

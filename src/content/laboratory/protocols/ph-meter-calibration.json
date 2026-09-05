@@ -1,0 +1,84 @@
+{
+  "id": "proto-ph-meter-calibration",
+  "category": "protocol",
+  "title": "pH Meter Calibration",
+  "subcategory": "Basic Laboratory Techniques",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To verify and adjust a pH meter's readings against certified standard buffers before use, ensuring subsequent pH measurements are accurate.",
+  "principle": "A pH electrode's response can drift over time due to aging, contamination, or temperature changes; calibration against at least two standard buffers bracketing the expected working range establishes the correct slope and offset for the meter to apply to raw electrode readings.",
+  "requiredMaterials": [
+    "Calibrated thermometer (if the meter does not have automatic temperature compensation)",
+    "Wash bottle with purified water",
+    "Lint-free tissue"
+  ],
+  "requiredReagents": [
+    "At least two certified pH calibration standard buffers bracketing the expected sample pH (commonly pH 4, 7, and 10)"
+  ],
+  "equipment": [
+    "equip-ph-meter"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Rinse the electrode with purified water and gently blot (not wipe) dry."
+    },
+    {
+      "step": 2,
+      "instruction": "Immerse the electrode in the first calibration standard (commonly pH 7) and allow the reading to stabilize before confirming/accepting the calibration point per the meter's instructions."
+    },
+    {
+      "step": 3,
+      "instruction": "Rinse the electrode again, then repeat with a second standard bracketing the expected sample range (e.g. pH 4 for acidic samples or pH 10 for alkaline samples)."
+    },
+    {
+      "step": 4,
+      "instruction": "For a three-point calibration, repeat with the third standard."
+    },
+    {
+      "step": 5,
+      "instruction": "Rinse the electrode one final time before beginning sample measurements."
+    },
+    {
+      "step": 6,
+      "instruction": "Record the calibration date, standards used, and any displayed slope/offset value for quality documentation."
+    }
+  ],
+  "observations": [
+    "The meter accepts each calibration point within its expected tolerance and reports a slope value within the manufacturer's acceptable range."
+  ],
+  "interpretation": "A successful calibration with an acceptable slope value indicates the electrode is responding correctly across the tested pH range; a slope far outside the acceptable range, or difficulty stabilizing on a standard, suggests the electrode may need cleaning, reconditioning, or replacement.",
+  "criticalNotes": [
+    "Always rinse (not wipe with a dry tissue) the electrode between standards to avoid cross-contaminating the buffers.",
+    "Recalibrate at the start of each use session, or per the facility's defined schedule — do not rely on a calibration from a previous day."
+  ],
+  "precautions": [
+    "Never let the electrode's sensing bulb dry out; store it in the manufacturer-recommended storage solution between uses."
+  ],
+  "limitations": [
+    "Calibration standards themselves have a shelf life and can degrade once opened or contaminated — using an expired or contaminated standard produces a false calibration."
+  ],
+  "relatedEquipment": [
+    "equip-ph-meter"
+  ],
+  "relatedFormulas": [
+    "formula-ph"
+  ],
+  "relatedConcepts": [
+    "concept-calibration-traceability"
+  ],
+  "searchKeywords": [
+    "pH meter calibration",
+    "electrode calibration",
+    "buffer standards",
+    "pH probe maintenance"
+  ],
+  "difficulty": "beginner"
+}

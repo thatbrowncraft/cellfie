@@ -1,0 +1,86 @@
+{
+  "id": "proto-bradford-assay",
+  "category": "protocol",
+  "title": "Bradford Protein Assay",
+  "subcategory": "Protein & Biochemistry Laboratory",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To determine the total protein concentration of a sample using a rapid colorimetric dye-binding assay, commonly used to normalize sample loading before downstream techniques such as SDS-PAGE or an enzyme assay.",
+  "principle": "Coomassie Brilliant Blue G-250 dye shifts from a reddish-brown, unstable form to a stable blue form upon binding to protein (primarily through interactions with basic and aromatic amino acid residues), producing an absorbance shift at approximately 595 nm that is proportional to protein concentration over a defined working range, compared against a standard curve prepared from a protein of known concentration (commonly bovine serum albumin, BSA).",
+  "requiredMaterials": [
+    "Cuvettes or microplate",
+    "Serial dilution tubes for standards"
+  ],
+  "requiredReagents": [
+    "Bradford reagent (Coomassie dye solution)",
+    "Protein standard of known concentration (e.g. BSA) for the standard curve",
+    "Diluent matching the sample buffer where possible"
+  ],
+  "equipment": [
+    "equip-spectrophotometer",
+    "equip-micropipette"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Prepare a dilution series of the protein standard spanning the assay's linear working range, plus a diluent-only blank."
+    },
+    {
+      "step": 2,
+      "instruction": "Dilute unknown samples as needed to fall within the standard curve's working range."
+    },
+    {
+      "step": 3,
+      "instruction": "Add Bradford reagent to each standard, blank, and sample, mix, and incubate for the manufacturer-specified development time at room temperature, protected from prolonged light exposure."
+    },
+    {
+      "step": 4,
+      "instruction": "Measure absorbance at approximately 595 nm for all standards, blank, and samples."
+    },
+    {
+      "step": 5,
+      "instruction": "Generate a standard curve from the known standard concentrations and their absorbance readings, and calculate unknown sample concentrations from the curve, accounting for any dilution factor used."
+    }
+  ],
+  "observations": [
+    "A standard curve with good linearity (or expected curve shape) across the tested range.",
+    "Sample absorbance readings falling within the range spanned by the standards."
+  ],
+  "interpretation": "Sample protein concentration is read from the standard curve; readings falling outside the standard curve's tested range should be re-measured after appropriate dilution or concentration rather than extrapolated.",
+  "criticalNotes": [
+    "Always include samples within, not extrapolated beyond, the standard curve's tested range.",
+    "Be aware that some detergents and highly basic/acidic buffers can interfere with the Bradford reaction — matching sample and standard diluent where possible reduces this risk."
+  ],
+  "precautions": [
+    "Handle the Bradford reagent per its safety data sheet.",
+    "Read absorbance within the assay's specified time window, since the color can continue to develop or fade over time."
+  ],
+  "limitations": [
+    "Protein composition affects color yield, since the dye interacts preferentially with certain amino acid residues — a standard curve built with one reference protein (e.g. BSA) may not perfectly represent a sample protein with a very different amino acid composition.",
+    "This assay measures total protein and does not distinguish or quantify individual proteins within a mixture."
+  ],
+  "relatedEquipment": [
+    "equip-spectrophotometer"
+  ],
+  "relatedConcepts": [
+    "concept-standard-curve",
+    "concept-matrix-effect"
+  ],
+  "relatedProtocols": [
+    "proto-sds-page"
+  ],
+  "searchKeywords": [
+    "Bradford assay",
+    "protein quantification",
+    "Coomassie dye binding assay",
+    "BSA standard curve"
+  ],
+  "difficulty": "advanced"
+}

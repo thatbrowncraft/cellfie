@@ -1,0 +1,82 @@
+{
+  "id": "proto-capsule-stain",
+  "category": "protocol",
+  "title": "Capsule Staining",
+  "subcategory": "Microbiology Laboratory",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To visualize the polysaccharide (or, in some species, polypeptide) capsule surrounding certain bacterial cells, which does not take up most standard stains and is otherwise invisible by simple or Gram staining.",
+  "principle": "Bacterial capsules are largely non-ionic and resist most standard dyes, so capsule staining methods typically rely on staining the cell body and the background separately while leaving the capsule itself unstained, producing a clear halo around the cell against a contrasting background — a negative-staining approach rather than direct staining of the capsule material.",
+  "requiredMaterials": [
+    "Glass slides (grease-free)",
+    "Inoculating loop"
+  ],
+  "requiredReagents": [
+    "Background stain (e.g. an acidic dye such as Congo red or nigrosin, depending on method)",
+    "Cell body counterstain (e.g. crystal violet, depending on method)"
+  ],
+  "equipment": [
+    "equip-microscope-brightfield",
+    "equip-inoculating-loop"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Mix a loopful of the bacterial culture with the background stain directly on a slide, without heat-fixing (heat fixation can shrink or distort the capsule)."
+    },
+    {
+      "step": 2,
+      "instruction": "Spread the mixture into a thin film and air-dry without heat."
+    },
+    {
+      "step": 3,
+      "instruction": "Apply the cell body counterstain per the specific method's timing, then gently rinse and blot dry."
+    },
+    {
+      "step": 4,
+      "instruction": "Examine under oil immersion, looking for a clear, unstained halo (the capsule) surrounding stained cell bodies against the stained/contrasting background."
+    }
+  ],
+  "observations": [
+    "A distinct, clear zone (the capsule) surrounding stained bacterial cells against a darker, stained background."
+  ],
+  "interpretation": "Presence of a clear halo indicates a capsule-producing organism under the growth conditions tested; capsule expression can vary with growth conditions (e.g. specific media or growth phase), so a negative result under one set of conditions does not necessarily rule out capsule production under different conditions.",
+  "criticalNotes": [
+    "Avoid heat-fixing the smear — capsules are delicate and can shrink, distort, or be destroyed by heat, producing a false negative appearance."
+  ],
+  "precautions": [
+    "Follow standard aseptic technique when preparing the smear from a live culture.",
+    "Handle background/counterstain dyes per their safety data sheets."
+  ],
+  "biosafetyNotes": [
+    "Handle the source culture per its specific biosafety risk assessment, since capsule-forming organisms often include recognized pathogens."
+  ],
+  "limitations": [
+    "Capsule expression is frequently condition-dependent, so results should be interpreted alongside knowledge of the growth conditions used, not treated as a fixed, unconditional species trait.",
+    "This method visualizes the capsule as a halo but does not itself confirm its chemical composition."
+  ],
+  "relatedProtocols": [
+    "proto-gram-stain",
+    "proto-simple-stain"
+  ],
+  "relatedEquipment": [
+    "equip-microscope-brightfield"
+  ],
+  "relatedSafety": [
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "capsule stain",
+    "negative staining bacteria",
+    "polysaccharide capsule visualization",
+    "Congo red capsule"
+  ],
+  "difficulty": "advanced"
+}

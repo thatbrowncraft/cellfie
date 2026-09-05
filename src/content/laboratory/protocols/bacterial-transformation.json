@@ -1,0 +1,93 @@
+{
+  "id": "proto-bacterial-transformation",
+  "category": "protocol",
+  "title": "Bacterial Transformation (Heat Shock Method)",
+  "subcategory": "Molecular Biology Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To introduce plasmid DNA into chemically competent bacterial cells so that the bacteria take up and propagate the plasmid, commonly used after a cloning/ligation reaction to recover and screen clones.",
+  "principle": "Chemically competent cells have been treated to make their membranes transiently more permeable to DNA; a brief, precisely timed heat shock following a period of cold incubation with the plasmid DNA creates a thermal imbalance across the cell membrane that promotes DNA uptake, after which a brief recovery period in rich, non-selective medium allows the bacteria to begin expressing the plasmid's antibiotic resistance gene before being challenged with selective antibiotic on plates.",
+  "requiredMaterials": [
+    "Chemically competent bacterial cells (thawed on ice)",
+    "Pre-chilled microcentrifuge tubes",
+    "Selective agar plates (containing the appropriate antibiotic)"
+  ],
+  "requiredReagents": [
+    "Plasmid DNA (or ligation reaction product)",
+    "Rich recovery medium (e.g. SOC or LB broth, antibiotic-free)"
+  ],
+  "equipment": [
+    "equip-water-bath",
+    "equip-incubator",
+    "equip-micropipette"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Thaw competent cells on ice and add plasmid DNA (or ligation product), mixing gently without vortexing."
+    },
+    {
+      "step": 2,
+      "instruction": "Incubate the cell/DNA mixture on ice for the method-specified period to allow DNA to associate with the cell surface."
+    },
+    {
+      "step": 3,
+      "instruction": "Heat-shock the mixture in a precisely temperature-controlled water bath at the specified temperature for the specified, short duration (commonly on the order of 30-45 seconds), then immediately return to ice."
+    },
+    {
+      "step": 4,
+      "instruction": "Add pre-warmed, antibiotic-free recovery medium and incubate with shaking at the appropriate temperature for the recovery period, allowing resistance gene expression to begin."
+    },
+    {
+      "step": 5,
+      "instruction": "Plate an appropriate volume of the recovered culture onto selective agar containing the correct antibiotic."
+    },
+    {
+      "step": 6,
+      "instruction": "Incubate plates overnight (or per method) at the appropriate temperature and examine for colony growth."
+    }
+  ],
+  "observations": [
+    "Discrete, well-isolated colonies growing on the selective plate after overnight incubation, with an appropriate no-DNA negative control plate showing no or minimal growth."
+  ],
+  "interpretation": "Colony growth on the selective plate indicates successful uptake and expression of the plasmid's resistance marker; a lawn of growth on the no-DNA control suggests the antibiotic concentration or plate preparation may be inadequate, while very few or no colonies on the experimental plate can indicate low transformation efficiency, poor competent cell quality, or a problem with the DNA itself.",
+  "criticalNotes": [
+    "Heat shock timing and temperature are critical and enzyme/strain-specific — even small deviations can substantially reduce transformation efficiency.",
+    "Always include a no-DNA negative control plated on selective medium to confirm the antibiotic selection is functioning correctly."
+  ],
+  "precautions": [
+    "Keep competent cells on ice at all times before heat shock, and minimize the time spent out of the ice bath during setup.",
+    "Handle antibiotic-containing plates and stocks per standard chemical/biological safety practice."
+  ],
+  "biosafetyNotes": [
+    "Follow institutional biosafety guidance for the specific host strain and any inserted genetic material, including appropriate containment and disposal of transformed cultures and plates."
+  ],
+  "limitations": [
+    "Transformation efficiency varies substantially by competent cell preparation, plasmid size, and handling technique, and heat-shock transformation is generally less efficient than electroporation for some applications."
+  ],
+  "relatedProtocols": [
+    "proto-plasmid-miniprep",
+    "proto-streak-plate"
+  ],
+  "relatedMedia": [
+    "media-lb-agar",
+    "media-lb-broth"
+  ],
+  "relatedSafety": [
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "bacterial transformation",
+    "heat shock transformation",
+    "competent cells",
+    "plasmid uptake protocol"
+  ],
+  "difficulty": "advanced"
+}

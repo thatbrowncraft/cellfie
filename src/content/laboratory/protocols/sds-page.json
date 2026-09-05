@@ -1,0 +1,88 @@
+{
+  "id": "proto-sds-page",
+  "category": "protocol",
+  "title": "SDS-PAGE (Protein Gel Electrophoresis)",
+  "subcategory": "Protein & Biochemistry Laboratory",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To separate proteins within a mixed sample primarily by molecular weight, for applications such as assessing protein purity, estimating molecular weight, or preparing a sample for downstream Western blotting.",
+  "principle": "Sodium dodecyl sulfate (SDS) is an anionic detergent that denatures proteins and coats them with a roughly uniform negative charge proportional to their length, masking each protein's native charge and shape; under an applied electric field within a polyacrylamide gel matrix, this allows proteins to be separated almost entirely by size (smaller proteins migrating faster through the gel pores) rather than by native charge or conformation.",
+  "requiredMaterials": [
+    "Precast or hand-cast polyacrylamide gel of appropriate percentage for the expected protein size range",
+    "Protein molecular weight ladder",
+    "Heating block or water bath for sample denaturation"
+  ],
+  "requiredReagents": [
+    "SDS-PAGE sample/loading buffer (containing SDS and typically a reducing agent)",
+    "SDS-PAGE running buffer",
+    "Protein stain (e.g. Coomassie) for visualization if not proceeding directly to blotting"
+  ],
+  "equipment": [
+    "equip-gel-electrophoresis-apparatus",
+    "equip-micropipette"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Mix protein samples with SDS-PAGE sample buffer and denature by heating at the method-specified temperature and time."
+    },
+    {
+      "step": 2,
+      "instruction": "Assemble the gel in the electrophoresis chamber and fill with running buffer."
+    },
+    {
+      "step": 3,
+      "instruction": "Load denatured samples and a molecular weight ladder into the wells."
+    },
+    {
+      "step": 4,
+      "instruction": "Run at the appropriate voltage until the dye front reaches near the bottom of the gel."
+    },
+    {
+      "step": 5,
+      "instruction": "Either stain the gel directly (e.g. with Coomassie) to visualize total protein bands, or proceed to transfer for Western blotting."
+    }
+  ],
+  "observations": [
+    "Discrete protein bands migrating according to size relative to the co-run molecular weight ladder.",
+    "A sharp dye front indicating even migration across lanes."
+  ],
+  "interpretation": "Band position relative to the ladder gives an estimated molecular weight for each protein species present; unexpected band patterns, smearing, or missing bands can indicate sample degradation, incomplete denaturation, or overloading.",
+  "criticalNotes": [
+    "Always run a molecular weight ladder alongside samples on the same gel.",
+    "Ensure complete sample denaturation (correct heating time/temperature) — incomplete denaturation causes proteins to migrate anomalously and not by size alone."
+  ],
+  "precautions": [
+    "Handle acrylamide (in unpolymerized form, if casting gels by hand) as a neurotoxin per its safety data sheet.",
+    "Never open the chamber lid or reach into the buffer while the power supply is running."
+  ],
+  "limitations": [
+    "SDS-PAGE separates by apparent size under denaturing conditions and does not report native protein conformation, activity, or true native molecular weight for proteins that behave anomalously under SDS (e.g. some highly glycosylated or highly charged proteins).",
+    "Very similar-sized proteins may not be resolved from one another."
+  ],
+  "relatedProtocols": [
+    "proto-western-blot",
+    "proto-bradford-assay"
+  ],
+  "relatedEquipment": [
+    "equip-gel-electrophoresis-apparatus"
+  ],
+  "relatedSafety": [
+    "safety-electrical-safety",
+    "safety-chemical-safety"
+  ],
+  "searchKeywords": [
+    "SDS-PAGE",
+    "protein gel electrophoresis",
+    "polyacrylamide gel",
+    "protein molecular weight separation"
+  ],
+  "difficulty": "advanced"
+}

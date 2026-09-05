@@ -1,0 +1,87 @@
+{
+  "id": "proto-western-blot",
+  "category": "protocol",
+  "title": "Western Blotting (Immunoblotting)",
+  "subcategory": "Protein & Biochemistry Laboratory",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To detect a specific protein of interest within a complex mixture, following size separation, using an antibody-based detection system — commonly used to confirm protein expression, assess relative abundance, or evaluate post-translational modification-specific signals.",
+  "principle": "Proteins already separated by size via SDS-PAGE are transferred ('blotted') from the gel onto a solid membrane, which is then blocked to prevent non-specific antibody binding and probed with a primary antibody specific to the protein of interest, followed by a labeled secondary antibody that binds the primary antibody and generates a detectable signal (commonly chemiluminescent) localized only where the specific protein migrated on the original gel.",
+  "requiredMaterials": [
+    "Transfer membrane (e.g. nitrocellulose or PVDF)",
+    "Transfer apparatus/sandwich components",
+    "Blocking buffer",
+    "Wash buffer (e.g. TBST or PBST)"
+  ],
+  "requiredReagents": [
+    "Transfer buffer",
+    "Primary antibody specific to the protein of interest",
+    "Labeled secondary antibody matched to the primary antibody's host species",
+    "Detection substrate (e.g. chemiluminescent substrate matched to the secondary antibody's label)"
+  ],
+  "equipment": [
+    "equip-gel-electrophoresis-apparatus",
+    "equip-micropipette"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Following SDS-PAGE separation, assemble a transfer sandwich (gel, membrane, and supporting materials) per the transfer method being used."
+    },
+    {
+      "step": 2,
+      "instruction": "Transfer proteins from the gel onto the membrane using the appropriate transfer conditions (voltage/current and time)."
+    },
+    {
+      "step": 3,
+      "instruction": "Block the membrane in blocking buffer to prevent non-specific antibody binding in subsequent steps."
+    },
+    {
+      "step": 4,
+      "instruction": "Incubate the membrane with primary antibody diluted per the antibody's recommended conditions, then wash thoroughly to remove unbound antibody."
+    },
+    {
+      "step": 5,
+      "instruction": "Incubate with the appropriate labeled secondary antibody, then wash thoroughly again."
+    },
+    {
+      "step": 6,
+      "instruction": "Apply detection substrate and visualize/image the resulting signal, comparing band position to the molecular weight ladder transferred alongside the samples."
+    }
+  ],
+  "observations": [
+    "A signal localized at the expected molecular weight for the protein of interest, with minimal background elsewhere on the membrane."
+  ],
+  "interpretation": "Signal presence and relative intensity at the expected molecular weight support detection of the target protein; unexpected band sizes may indicate cross-reactivity, protein degradation, or post-translational modification, and should be interpreted alongside appropriate positive/negative controls and, where relevant, a loading control.",
+  "criticalNotes": [
+    "Include a loading control (e.g. a well-characterized housekeeping protein probed on the same membrane or a parallel sample) to help distinguish true expression differences from unequal sample loading.",
+    "Wash thoroughly and for the full recommended duration between antibody incubation steps — incomplete washing is a common cause of high background."
+  ],
+  "precautions": [
+    "Handle chemiluminescent detection substrates per their safety data sheets.",
+    "Dispose of used antibody solutions and membranes per facility waste procedures."
+  ],
+  "limitations": [
+    "Antibody specificity is not guaranteed — cross-reactivity with an off-target protein of similar size can produce a misleading band, and antibody validation (e.g. via a knockout/knockdown control) strengthens confidence in the result.",
+    "Western blotting is not inherently quantitative in the same rigorous sense as some other assays, and careful control of loading, transfer efficiency, and exposure time is needed for any comparative intensity claims."
+  ],
+  "relatedProtocols": [
+    "proto-sds-page",
+    "proto-bradford-assay"
+  ],
+  "relatedConcepts": [],
+  "searchKeywords": [
+    "Western blot",
+    "immunoblotting",
+    "antibody detection protein",
+    "chemiluminescent detection"
+  ],
+  "difficulty": "expert"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "proto-dna-extraction",
+  "category": "protocol",
+  "title": "Genomic DNA Extraction (General Workflow)",
+  "subcategory": "Molecular Biology Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To isolate genomic DNA from cells or tissue in a form pure and intact enough for downstream applications such as PCR, restriction digestion, or sequencing.",
+  "principle": "Cells are lysed to release their contents, proteins and other cellular debris are removed (through enzymatic digestion, salting-out, or binding to a silica matrix depending on the specific method), and the purified DNA is recovered by precipitation or elution, leaving behind RNA (if not also digested), protein, and lipid contaminants.",
+  "requiredMaterials": [
+    "Microcentrifuge tubes",
+    "Ice or cold block"
+  ],
+  "requiredReagents": [
+    "Lysis buffer (typically containing a detergent to disrupt membranes)",
+    "Proteinase K (or equivalent protease)",
+    "RNase A (if RNA-free DNA is required)",
+    "Wash and elution buffers appropriate to the extraction method (column-based, salting-out, or organic extraction)"
+  ],
+  "equipment": [
+    "equip-microcentrifuge-tubes",
+    "equip-water-bath",
+    "equip-microvolume-spectrophotometer"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Pellet or collect the starting cell/tissue material and resuspend in lysis buffer containing detergent and proteinase K."
+    },
+    {
+      "step": 2,
+      "instruction": "Incubate at the manufacturer- or method-specified temperature and time to allow complete cell lysis and protein digestion."
+    },
+    {
+      "step": 3,
+      "instruction": "If RNA-free DNA is required, treat with RNase A per the method's instructions."
+    },
+    {
+      "step": 4,
+      "instruction": "Remove protein and other contaminants using the chosen method's separation step (e.g. binding DNA to a silica column and washing, or a salting-out/precipitation step for non-column methods)."
+    },
+    {
+      "step": 5,
+      "instruction": "Elute or resuspend the purified DNA in an appropriate low-salt buffer or nuclease-free water."
+    },
+    {
+      "step": 6,
+      "instruction": "Quantify yield and assess purity (commonly via A260 and the A260/A280 and A260/A230 ratios) before proceeding to downstream applications."
+    }
+  ],
+  "observations": [
+    "A260-based concentration reading appropriate for the intended downstream use.",
+    "A260/A280 ratio near 1.8, consistent with low protein contamination."
+  ],
+  "interpretation": "Adequate yield combined with acceptable purity ratios indicates DNA suitable for most downstream molecular applications; low yield may reflect insufficient starting material or incomplete lysis, while poor purity ratios point to incomplete removal of protein or other contaminants.",
+  "criticalNotes": [
+    "Avoid vigorous vortexing of extracted genomic DNA, which can shear it into smaller fragments than intended for applications requiring high-molecular-weight DNA.",
+    "Ensure complete lysis and protein digestion before proceeding — incomplete lysis is a common cause of low yield."
+  ],
+  "precautions": [
+    "Handle proteinase K and lysis reagents per their safety data sheets.",
+    "Use nuclease-free consumables and reagents to avoid degrading the extracted DNA."
+  ],
+  "biosafetyNotes": [
+    "Handle starting material (cells/tissue) per its specific biosafety risk assessment through the lysis step."
+  ],
+  "limitations": [
+    "Extraction efficiency and purity vary meaningfully by starting material type (e.g. Gram-positive bacteria with thick cell walls, versus mammalian tissue) and may require method-specific modification.",
+    "Some extraction methods do not fully remove PCR inhibitors even when purity ratios look acceptable."
+  ],
+  "relatedConcepts": [
+    "concept-nucleic-acid-purity-260-280"
+  ],
+  "relatedEquipment": [
+    "equip-microvolume-spectrophotometer"
+  ],
+  "relatedFormulas": [],
+  "searchKeywords": [
+    "genomic DNA extraction",
+    "DNA isolation protocol",
+    "cell lysis DNA purification"
+  ],
+  "difficulty": "advanced"
+}

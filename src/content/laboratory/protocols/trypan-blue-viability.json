@@ -1,0 +1,80 @@
+{
+  "id": "proto-trypan-blue-viability",
+  "category": "protocol",
+  "title": "Trypan Blue Exclusion Viability Assay",
+  "subcategory": "Cell Biology Laboratory",
+  "sourceType": "standard-method",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To estimate the percentage of viable cells in a suspension by distinguishing cells with intact membranes from cells with compromised membranes, commonly performed alongside a hemocytometer cell count.",
+  "principle": "Trypan blue is a large, charged dye molecule that cannot cross an intact, healthy cell membrane but readily enters cells whose membrane integrity has been compromised (a common feature of dead or dying cells), staining them a visible blue while viable cells remain unstained (excluding the dye) and appear bright/refractile under brightfield microscopy.",
+  "requiredMaterials": [
+    "Hemocytometer",
+    "Light microscope"
+  ],
+  "requiredReagents": [
+    "Trypan blue solution (commonly 0.4%)"
+  ],
+  "equipment": [
+    "equip-hemocytometer",
+    "equip-microscope-brightfield",
+    "equip-micropipette"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Mix the cell suspension thoroughly, then combine a small aliquot with trypan blue solution at the method-specified ratio (commonly 1:1), noting the resulting dilution factor."
+    },
+    {
+      "step": 2,
+      "instruction": "Mix gently and load promptly into a hemocytometer, since prolonged exposure to trypan blue can itself begin to affect viable cells over time."
+    },
+    {
+      "step": 3,
+      "instruction": "Under the microscope, count both unstained (viable) and stained (non-viable) cells within the same defined grid squares, applying a consistent boundary-cell counting rule."
+    },
+    {
+      "step": 4,
+      "instruction": "Calculate total cell concentration, viable cell concentration, and percent viability, applying the dilution factor used."
+    }
+  ],
+  "observations": [
+    "Viable cells appear bright/refractile and exclude the dye; non-viable cells appear uniformly blue throughout."
+  ],
+  "interpretation": "Percent viability = (viable cell count / total cell count) × 100; a viability substantially below the expected range for a given cell type and culture stage may indicate culture stress, contamination, or a problem introduced during a preceding handling step (e.g. over-exposure to a detachment reagent).",
+  "criticalNotes": [
+    "Count promptly after adding trypan blue — waiting too long before counting can allow dye to begin entering cells that were initially viable, artificially lowering the apparent viability.",
+    "Apply the same boundary-cell counting rule consistently to both viable and non-viable populations."
+  ],
+  "precautions": [
+    "Handle any biological sample per its risk assessment.",
+    "Trypan blue is a stain and should be handled to avoid skin/eye contact and disposed of per facility procedures."
+  ],
+  "limitations": [
+    "Membrane-exclusion viability assays do not detect cells that are metabolically compromised but still have an intact membrane, so viability by this method can be an overestimate relative to some other viability measures.",
+    "Manual counting introduces operator variability, particularly at low total cell numbers."
+  ],
+  "relatedProtocols": [
+    "proto-hemocytometer-cell-counting",
+    "proto-mammalian-cell-passage"
+  ],
+  "relatedConcepts": [
+    "concept-cell-viability-vs-cell-count"
+  ],
+  "relatedEquipment": [
+    "equip-hemocytometer"
+  ],
+  "searchKeywords": [
+    "trypan blue assay",
+    "viability staining",
+    "dye exclusion test",
+    "live dead cell count"
+  ],
+  "difficulty": "intermediate"
+}

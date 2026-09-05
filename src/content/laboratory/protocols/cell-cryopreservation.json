@@ -1,0 +1,93 @@
+{
+  "id": "proto-cell-cryopreservation",
+  "category": "protocol",
+  "title": "Mammalian Cell Cryopreservation",
+  "subcategory": "Cell Biology Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To freeze and store viable cells long-term in liquid nitrogen (or equivalent ultra-low temperature storage), preserving a stock that can later be thawed and recovered for continued culture.",
+  "principle": "Water forming sharp ice crystals during freezing can physically rupture cell membranes and organelles; a cryoprotectant (commonly DMSO or glycerol) lowers the freezing point and promotes the formation of smaller, less damaging ice crystals, while a controlled, gradual cooling rate (commonly around -1°C per minute down to a low intermediate temperature) allows cells time to lose intracellular water osmotically before it can freeze internally, both of which substantially improve post-thaw viability compared to uncontrolled freezing.",
+  "requiredMaterials": [
+    "Cryovials",
+    "Controlled-rate freezing container or device (e.g. an isopropanol-based freezing container achieving an approximately -1°C/minute cooling rate)",
+    "Liquid nitrogen or ultra-low-temperature freezer for long-term storage"
+  ],
+  "requiredReagents": [
+    "Freezing medium containing an appropriate cryoprotectant (e.g. DMSO) in complete growth medium or serum"
+  ],
+  "equipment": [
+    "equip-laminar-flow-hood",
+    "equip-centrifuge",
+    "equip-hemocytometer"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Harvest a healthy, actively growing culture and determine cell concentration and viability."
+    },
+    {
+      "step": 2,
+      "instruction": "Centrifuge to pellet cells and resuspend in cold freezing medium at the target cell concentration per cryovial."
+    },
+    {
+      "step": 3,
+      "instruction": "Aliquot the cell suspension into labeled cryovials promptly, minimizing the time cells spend in cryoprotectant-containing medium at room/ambient temperature before freezing begins, since many cryoprotectants are toxic to cells with prolonged exposure at warmer temperatures."
+    },
+    {
+      "step": 4,
+      "instruction": "Place vials into a controlled-rate freezing container or device and transfer to a -80°C freezer (or the device's specified process) to achieve a gradual, controlled cooling rate."
+    },
+    {
+      "step": 5,
+      "instruction": "After the recommended time at -80°C, transfer vials to long-term liquid nitrogen (vapor or liquid phase) storage for extended preservation."
+    },
+    {
+      "step": 6,
+      "instruction": "Record vial identity, passage number, cell count, and storage location in the lab's inventory documentation."
+    }
+  ],
+  "observations": [
+    "Vials reach the target intermediate temperature at the intended controlled cooling rate before long-term storage."
+  ],
+  "interpretation": "Successful cryopreservation is ultimately confirmed by post-thaw viability and normal recovery when a vial is later thawed and cultured; poor post-thaw recovery can result from too slow or too fast a cooling rate, excessive cryoprotectant exposure time before freezing, or poor starting culture health.",
+  "criticalNotes": [
+    "Minimize the time cells spend in cryoprotectant-containing medium before the freezing process actually begins.",
+    "Use a controlled cooling rate rather than placing vials directly into liquid nitrogen or a -80°C freezer without a controlled-rate device, which typically freezes too quickly for good viability."
+  ],
+  "precautions": [
+    "Handle DMSO and other cryoprotectants per their safety data sheets, including skin contact precautions.",
+    "Use appropriate cryogenic personal protective equipment (insulated gloves, face/eye protection) when handling liquid nitrogen storage."
+  ],
+  "biosafetyNotes": [
+    "Follow institutional biosafety guidance for the specific cell line during freezing, labeling, and storage."
+  ],
+  "limitations": [
+    "Post-thaw recovery varies by cell type, and some cell types tolerate cryopreservation considerably better than others even with an identical protocol.",
+    "Cryoprotectant choice and concentration may need to be optimized per cell type rather than assumed universal."
+  ],
+  "relatedProtocols": [
+    "proto-mammalian-cell-passage",
+    "proto-trypan-blue-viability"
+  ],
+  "relatedEquipment": [
+    "equip-laminar-flow-hood",
+    "equip-centrifuge"
+  ],
+  "relatedSafety": [
+    "safety-chemical-safety"
+  ],
+  "searchKeywords": [
+    "cell cryopreservation",
+    "freezing cell lines",
+    "DMSO cryoprotectant",
+    "liquid nitrogen storage cells"
+  ],
+  "difficulty": "advanced"
+}

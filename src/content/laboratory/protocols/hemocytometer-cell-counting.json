@@ -1,0 +1,86 @@
+{
+  "id": "proto-hemocytometer-cell-counting",
+  "category": "protocol",
+  "title": "Cell Counting Using a Hemocytometer",
+  "subcategory": "Cell Biology Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To manually determine the concentration of cells in a suspension, commonly for seeding cultures at a defined density or reporting culture growth.",
+  "principle": "A hemocytometer's etched grid sits a precisely known distance beneath the coverslip, defining a chamber of known volume over each counting square; counting cells within a defined set of squares using a consistent boundary rule, and applying the chamber's known volume together with any dilution factor used, yields the concentration of the original suspension.",
+  "requiredMaterials": [
+    "Hemocytometer and coverslip, cleaned before use",
+    "Light microscope"
+  ],
+  "requiredReagents": [
+    "Trypan blue (if a combined count/viability assessment is desired)"
+  ],
+  "equipment": [
+    "equip-hemocytometer",
+    "equip-microscope-brightfield",
+    "equip-micropipette"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Mix the cell suspension thoroughly to ensure an even distribution before sampling."
+    },
+    {
+      "step": 2,
+      "instruction": "If assessing viability, mix an aliquot with trypan blue at the method-specified ratio and note this dilution factor."
+    },
+    {
+      "step": 3,
+      "instruction": "Mount the coverslip on the hemocytometer, confirming correct seating (visible Newton's rings)."
+    },
+    {
+      "step": 4,
+      "instruction": "Load a small volume into the loading channel by capillary action, avoiding overfilling."
+    },
+    {
+      "step": 5,
+      "instruction": "Under the microscope, count cells in a defined set of grid squares (commonly the four large corner squares), applying a consistent boundary-cell counting rule."
+    },
+    {
+      "step": 6,
+      "instruction": "Calculate the concentration using the hemocytometer's known chamber volume and any dilution factor applied."
+    }
+  ],
+  "observations": [
+    "A cell density within the hemocytometer's practical counting range (neither too sparse nor too crowded to count reliably) in each counted square."
+  ],
+  "interpretation": "The calculated concentration reflects the cell density of the original suspension; if paired with trypan blue, live (dye-excluding) and dead (dye-included) cells can be separately tallied to also report viability percentage.",
+  "criticalNotes": [
+    "Apply the same boundary-cell counting rule (which edges' touching cells are included) consistently across all counted squares to avoid systematic bias.",
+    "Recount if squares show excessive cell density or clumping, diluting the sample further if needed."
+  ],
+  "precautions": [
+    "Handle any biological sample per its risk assessment.",
+    "Clean the hemocytometer and coverslip immediately after use to prevent dried residue affecting future counts."
+  ],
+  "limitations": [
+    "Manual counting is subject to operator variability, and counting too few total cells increases statistical uncertainty in the resulting concentration estimate.",
+    "Clumped or unevenly distributed cells reduce counting accuracy regardless of technique."
+  ],
+  "relatedEquipment": [
+    "equip-hemocytometer",
+    "equip-microscope-brightfield"
+  ],
+  "relatedConcepts": [
+    "concept-cell-viability-vs-cell-count",
+    "concept-od-vs-cell-concentration"
+  ],
+  "searchKeywords": [
+    "hemocytometer counting",
+    "manual cell count protocol",
+    "trypan blue viability count",
+    "cell density measurement"
+  ],
+  "difficulty": "intermediate"
+}

@@ -1,0 +1,102 @@
+{
+  "id": "proto-mammalian-cell-passage",
+  "category": "protocol",
+  "title": "Mammalian Cell Culture Passaging (Subculturing)",
+  "subcategory": "Cell Biology Laboratory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "General microbiology/molecular biology laboratory manuals (ASM curriculum resources)",
+      "publisher": "ASM"
+    }
+  ],
+  "purpose": "To transfer a portion of an actively growing adherent (or suspension) cell culture into fresh medium and/or a new vessel, maintaining the culture before it becomes overcrowded and preserving cell health for continued experimental use.",
+  "principle": "Adherent cells attach to the culture vessel surface and, as they proliferate, eventually cover the available surface area (reaching confluence); beyond a certain confluence, nutrient depletion, waste accumulation, and contact inhibition (for many normal cell types) slow growth and can alter cell behavior, so cells are detached (commonly using a proteolytic enzyme such as trypsin to cleave the adhesion proteins holding them to the surface and to each other), diluted, and reseeded into fresh medium at a defined, lower density before this occurs.",
+  "requiredMaterials": [
+    "Sterile culture vessels",
+    "Serological pipettes",
+    "Hemocytometer (for counting cells to seed at a defined density)"
+  ],
+  "requiredReagents": [
+    "Pre-warmed complete growth medium",
+    "Detachment reagent (e.g. trypsin-EDTA) appropriate to the cell type",
+    "Sterile PBS or equivalent wash buffer"
+  ],
+  "equipment": [
+    "equip-laminar-flow-hood",
+    "equip-co2-incubator",
+    "equip-microscope-brightfield",
+    "equip-hemocytometer"
+  ],
+  "procedure": [
+    {
+      "step": 1,
+      "instruction": "Working in a biological safety cabinet, observe the culture under the microscope to confirm adequate confluence and healthy morphology before passaging."
+    },
+    {
+      "step": 2,
+      "instruction": "Remove spent medium and gently wash the cell layer with sterile wash buffer to remove residual serum, which can inhibit the detachment enzyme."
+    },
+    {
+      "step": 3,
+      "instruction": "Add the detachment reagent and incubate briefly at the appropriate temperature until cells round up and detach, confirmed visually under the microscope."
+    },
+    {
+      "step": 4,
+      "instruction": "Neutralize the detachment reagent with complete growth medium (containing serum, if applicable) and gently resuspend cells by pipetting."
+    },
+    {
+      "step": 5,
+      "instruction": "Count cells (e.g. via hemocytometer) if seeding at a specific density, then dilute into fresh medium in a new vessel at the desired seeding density."
+    },
+    {
+      "step": 6,
+      "instruction": "Return the vessel to the incubator at the appropriate temperature and CO2 level, and record the new passage number."
+    }
+  ],
+  "observations": [
+    "Cells detach and round up within the expected time after adding the detachment reagent.",
+    "Even cell distribution across the new vessel after seeding, with normal adherent morphology observed at the next check."
+  ],
+  "interpretation": "Successful passaging is indicated by normal attachment and morphology at the next observation; cells that fail to attach, show excessive rounding/detachment, or unusual morphology afterward may indicate over-exposure to the detachment reagent, contamination, or general culture stress.",
+  "criticalNotes": [
+    "Do not over-incubate with the detachment reagent — prolonged exposure can damage cell surface proteins and reduce viability.",
+    "Always neutralize the detachment reagent with serum-containing medium (or an appropriate inhibitor) before further handling."
+  ],
+  "precautions": [
+    "Work in a certified biological safety cabinet using aseptic technique throughout.",
+    "Handle any human- or animal-derived cell line per its specific biosafety risk assessment."
+  ],
+  "biosafetyNotes": [
+    "Follow institutional biosafety guidance for the specific cell line, including containment level and waste disposal requirements."
+  ],
+  "limitations": [
+    "Excessive passage number can lead to phenotypic drift in some cell lines, so tracking and limiting passage number per the lab's established policy is important for reproducibility.",
+    "Different cell types vary substantially in optimal seeding density, detachment reagent, and incubation time — this is a general workflow, not a universal fixed protocol."
+  ],
+  "relatedProtocols": [
+    "proto-trypan-blue-viability",
+    "proto-hemocytometer-cell-counting"
+  ],
+  "relatedConcepts": [
+    "concept-passage-number-cell-culture",
+    "concept-primary-vs-established-cell-lines"
+  ],
+  "relatedEquipment": [
+    "equip-laminar-flow-hood",
+    "equip-co2-incubator"
+  ],
+  "relatedSafety": [
+    "safety-bsc-vs-clean-bench",
+    "safety-aseptic-technique"
+  ],
+  "searchKeywords": [
+    "cell passaging",
+    "subculturing cells",
+    "trypsinization",
+    "mammalian cell culture maintenance"
+  ],
+  "difficulty": "advanced"
+}
