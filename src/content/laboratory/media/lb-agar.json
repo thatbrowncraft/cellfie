@@ -1,0 +1,99 @@
+{
+  "id": "media-lb-agar",
+  "category": "media",
+  "title": "Luria-Bertani (LB) Agar",
+  "abbreviation": "LB Agar",
+  "subcategory": "General Purpose Media",
+  "sourceType": "manufacturer-specific",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson",
+      "edition": "2nd ed."
+    }
+  ],
+  "classifications": [
+    "general-purpose",
+    "non-selective",
+    "non-differential"
+  ],
+  "purpose": "A general-purpose solid medium widely used in molecular biology and recombinant DNA work for cultivating Escherichia coli and many other non-fastidious bacteria, commonly combined with antibiotics for plasmid selection.",
+  "targetOrganisms": [
+    "Escherichia coli (routine cloning/expression strains)",
+    "Many non-fastidious heterotrophic bacteria generally"
+  ],
+  "formulations": [
+    {
+      "sourceLabel": "Typical Lennox/Miller-style LB formulation",
+      "reference": {
+        "label": "Difco & BBL Manual of Microbiological Culture Media",
+        "publisher": "Becton Dickinson"
+      },
+      "compositionPerLiter": [
+        {
+          "ingredient": "Tryptone",
+          "amount": "10 g"
+        },
+        {
+          "ingredient": "Yeast extract",
+          "amount": "5 g"
+        },
+        {
+          "ingredient": "Sodium chloride",
+          "amount": "5-10 g (varies by Lennox vs. Miller formulation)"
+        },
+        {
+          "ingredient": "Agar",
+          "amount": "15 g"
+        }
+      ],
+      "finalPh": {
+        "value": "approximately 7.0 ± 0.2",
+        "dependsOn": "specific manufacturer lot/formulation",
+        "reference": {
+          "label": "Difco & BBL Manual of Microbiological Culture Media",
+          "publisher": "Becton Dickinson"
+        }
+      }
+    }
+  ],
+  "preparationSummary": "Suspend the dehydrated powder (or combine components) in distilled/deionized water, heat with agitation to fully dissolve, sterilize, and cool to approximately 50°C before adding any heat-labile selective antibiotic and pouring plates.",
+  "sterilization": {
+    "value": "commonly autoclaved at 121°C for 15 minutes for typical batch volumes",
+    "dependsOn": "batch volume, container, and autoclave validation — not a universal setting for every load",
+    "reference": {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson"
+    }
+  },
+  "storage": "Store prepared plates refrigerated (commonly 2-8°C) in sealed bags to reduce dehydration, away from light; antibiotic-containing plates typically have a shorter usable shelf life than plain LB agar.",
+  "shelfLife": {
+    "value": "manufacturer-stated shelf life varies by product, and antibiotic-supplemented plates typically have a shorter usable life than plain plates",
+    "dependsOn": "specific product, antibiotic added, and storage conditions",
+    "unverified": true
+  },
+  "expectedAppearance": "Pale amber, clear to slightly opalescent gel when properly prepared.",
+  "qualityControl": "Confirm sterility (no growth on an uninoculated control plate) and, for antibiotic-supplemented plates, confirm that a known-resistant control strain grows and a known-sensitive strain does not before use in selection work.",
+  "reactions": [],
+  "manufacturerNotes": "Exact salt concentration differs between the Lennox (lower NaCl) and Miller (higher NaCl) formulations, which can affect osmotic stress on some strains — confirm which formulation a protocol assumes before substituting.",
+  "relatedProtocols": [
+    "proto-streak-plate",
+    "proto-spread-plate"
+  ],
+  "relatedEquipment": [
+    "equip-autoclave",
+    "equip-petri-dish"
+  ],
+  "relatedSafety": [
+    "safety-basic-autoclave-safety"
+  ],
+  "searchKeywords": [
+    "LB agar",
+    "Luria-Bertani",
+    "cloning plate media",
+    "plasmid selection agar"
+  ],
+  "difficulty": "intermediate"
+}

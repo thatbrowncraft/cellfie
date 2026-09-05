@@ -1,0 +1,99 @@
+{
+  "id": "media-chocolate-agar",
+  "category": "media",
+  "title": "Chocolate Agar",
+  "abbreviation": "CHOC",
+  "subcategory": "Enriched & Differential Media",
+  "sourceType": "manufacturer-specific",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson",
+      "edition": "2nd ed."
+    },
+    {
+      "label": "Clinical microbiology culture media references",
+      "publisher": "CLSI/ASM"
+    }
+  ],
+  "classifications": [
+    "enriched",
+    "non-selective"
+  ],
+  "purpose": "An enriched medium prepared by gently lysing red blood cells during heating (giving the medium its characteristic brown 'chocolate' color), which releases intracellular growth factors such as hemin (factor X) and NAD (factor V) needed by fastidious organisms that will not grow on unheated blood agar.",
+  "targetOrganisms": [
+    "Haemophilus influenzae",
+    "Neisseria gonorrhoeae",
+    "Neisseria meningitidis",
+    "Other fastidious organisms requiring X and/or V factor"
+  ],
+  "formulations": [
+    {
+      "sourceLabel": "Typical commercial chocolate agar base with 5-10% blood",
+      "reference": {
+        "label": "Difco & BBL Manual of Microbiological Culture Media",
+        "publisher": "Becton Dickinson"
+      },
+      "compositionPerLiter": [
+        {
+          "ingredient": "Tryptic soy agar (or equivalent enriched agar base)",
+          "amount": "per manufacturer base formulation"
+        },
+        {
+          "ingredient": "Sheep or horse blood (added and heated to lyse red cells)",
+          "amount": "commonly 5-10% v/v"
+        }
+      ],
+      "finalPh": {
+        "value": "approximately 7.3 ± 0.2 at 25°C",
+        "dependsOn": "specific manufacturer lot/formulation",
+        "reference": {
+          "label": "Difco & BBL Manual of Microbiological Culture Media",
+          "publisher": "Becton Dickinson"
+        }
+      }
+    }
+  ],
+  "preparationSummary": "Prepare a molten enriched agar base, add blood at the manufacturer-specified concentration, then heat gently and evenly (traditionally in a controlled water bath) with continuous mixing until the mixture turns a uniform chocolate-brown color, avoiding overheating which can destroy released growth factors.",
+  "sterilization": {
+    "value": "the agar base is autoclaved before blood is added; the blood-lysis heating step itself is a separate, carefully controlled process rather than a sterilization step",
+    "dependsOn": "manufacturer-specific base preparation instructions",
+    "reference": {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson"
+    }
+  },
+  "storage": "Store prepared plates refrigerated (commonly 2-8°C) in sealed bags, protected from light and dehydration.",
+  "shelfLife": {
+    "value": "manufacturer-stated shelf life varies by product and storage condition",
+    "dependsOn": "specific product and storage conditions",
+    "unverified": true
+  },
+  "expectedAppearance": "Uniform chocolate-brown, opaque agar surface with no visible intact red blood cells.",
+  "qualityControl": "Confirm sterility (no growth on an uninoculated control plate) and verify growth of a known fastidious quality-control organism (e.g. Haemophilus influenzae) before use in diagnostic work.",
+  "reactions": [],
+  "manufacturerNotes": "Unlike blood agar, chocolate agar does not show hemolysis reactions because the heating step already lyses the red cells — it is used for its enrichment properties, not for hemolytic differentiation.",
+  "relatedMedia": [
+    "media-blood-agar"
+  ],
+  "relatedProtocols": [
+    "proto-streak-plate"
+  ],
+  "relatedEquipment": [
+    "equip-autoclave",
+    "equip-water-bath",
+    "equip-co2-incubator"
+  ],
+  "relatedSafety": [
+    "safety-biological-waste"
+  ],
+  "searchKeywords": [
+    "chocolate agar",
+    "Haemophilus growth media",
+    "X and V factor",
+    "fastidious organism media"
+  ],
+  "difficulty": "advanced"
+}

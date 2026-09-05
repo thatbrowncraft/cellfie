@@ -1,0 +1,94 @@
+{
+  "id": "media-lb-broth",
+  "category": "media",
+  "title": "Luria-Bertani (LB) Broth",
+  "abbreviation": "LB Broth",
+  "subcategory": "General Purpose Media",
+  "sourceType": "manufacturer-specific",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson",
+      "edition": "2nd ed."
+    }
+  ],
+  "classifications": [
+    "general-purpose",
+    "non-selective",
+    "non-differential"
+  ],
+  "purpose": "A general-purpose liquid medium used to grow starter and overnight cultures, most commonly Escherichia coli, for downstream applications such as plasmid preparation, protein expression, or subculturing onto plates.",
+  "targetOrganisms": [
+    "Escherichia coli (routine cloning/expression strains)",
+    "Many non-fastidious heterotrophic bacteria generally"
+  ],
+  "formulations": [
+    {
+      "sourceLabel": "Typical Lennox/Miller-style LB formulation",
+      "reference": {
+        "label": "Difco & BBL Manual of Microbiological Culture Media",
+        "publisher": "Becton Dickinson"
+      },
+      "compositionPerLiter": [
+        {
+          "ingredient": "Tryptone",
+          "amount": "10 g"
+        },
+        {
+          "ingredient": "Yeast extract",
+          "amount": "5 g"
+        },
+        {
+          "ingredient": "Sodium chloride",
+          "amount": "5-10 g (varies by Lennox vs. Miller formulation)"
+        }
+      ],
+      "finalPh": {
+        "value": "approximately 7.0 ± 0.2",
+        "dependsOn": "specific manufacturer lot/formulation",
+        "reference": {
+          "label": "Difco & BBL Manual of Microbiological Culture Media",
+          "publisher": "Becton Dickinson"
+        }
+      }
+    }
+  ],
+  "preparationSummary": "Dissolve the components in distilled/deionized water, dispense into flasks or tubes, and sterilize before inoculation; add any heat-labile antibiotic only after the broth has cooled to a safe handling temperature.",
+  "sterilization": {
+    "value": "commonly autoclaved at 121°C for 15-20 minutes for typical batch volumes",
+    "dependsOn": "batch volume, container, and autoclave validation — not a universal setting for every load",
+    "reference": {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson"
+    }
+  },
+  "storage": "Store sterile, unopened broth at room temperature away from light; once opened or inoculated, use promptly rather than storing long-term.",
+  "shelfLife": {
+    "value": "manufacturer-stated shelf life varies by product and storage condition",
+    "dependsOn": "specific product and storage conditions",
+    "unverified": true
+  },
+  "expectedAppearance": "Pale amber, clear liquid when properly prepared and sterile; turbidity after inoculation indicates growth.",
+  "qualityControl": "Confirm sterility of an uninoculated control tube/flask before use in critical work.",
+  "reactions": [],
+  "manufacturerNotes": "Aeration (shaking speed, flask-to-volume ratio) strongly affects growth rate and yield in LB broth culture and should be kept consistent between experiments.",
+  "relatedProtocols": [
+    "proto-serial-dilution"
+  ],
+  "relatedEquipment": [
+    "equip-autoclave",
+    "equip-erlenmeyer-flasks"
+  ],
+  "relatedSafety": [
+    "safety-basic-autoclave-safety"
+  ],
+  "searchKeywords": [
+    "LB broth",
+    "Luria-Bertani broth",
+    "overnight culture",
+    "starter culture media"
+  ],
+  "difficulty": "intermediate"
+}

@@ -1,0 +1,134 @@
+{
+  "id": "media-xld-agar",
+  "category": "media",
+  "title": "Xylose Lysine Deoxycholate (XLD) Agar",
+  "abbreviation": "XLD",
+  "subcategory": "Selective & Differential Media",
+  "sourceType": "manufacturer-specific",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson",
+      "edition": "2nd ed."
+    },
+    {
+      "label": "FDA Bacteriological Analytical Manual (BAM)",
+      "publisher": "FDA"
+    }
+  ],
+  "classifications": [
+    "selective",
+    "differential"
+  ],
+  "purpose": "A selective and differential medium used to isolate and differentiate enteric pathogens, particularly Shigella and Salmonella species, from a mixed fecal or environmental sample based on sugar fermentation, lysine decarboxylation, and hydrogen sulfide production.",
+  "targetOrganisms": [
+    "Salmonella spp.",
+    "Shigella spp.",
+    "Other enteric Gram-negative rods"
+  ],
+  "formulations": [
+    {
+      "sourceLabel": "Typical commercial XLD formulation",
+      "reference": {
+        "label": "Difco & BBL Manual of Microbiological Culture Media",
+        "publisher": "Becton Dickinson"
+      },
+      "compositionPerLiter": [
+        {
+          "ingredient": "Xylose",
+          "amount": "3.75 g"
+        },
+        {
+          "ingredient": "L-lysine",
+          "amount": "5 g"
+        },
+        {
+          "ingredient": "Lactose",
+          "amount": "7.5 g"
+        },
+        {
+          "ingredient": "Sucrose",
+          "amount": "7.5 g"
+        },
+        {
+          "ingredient": "Sodium deoxycholate",
+          "amount": "2.5 g"
+        },
+        {
+          "ingredient": "Sodium thiosulfate",
+          "amount": "6.8 g"
+        },
+        {
+          "ingredient": "Ferric ammonium citrate",
+          "amount": "0.8 g"
+        },
+        {
+          "ingredient": "Phenol red",
+          "amount": "0.08 g"
+        },
+        {
+          "ingredient": "Agar",
+          "amount": "13.5 g"
+        }
+      ],
+      "finalPh": {
+        "value": "approximately 7.4 ± 0.2 at 25°C",
+        "dependsOn": "specific manufacturer lot/formulation",
+        "reference": {
+          "label": "Difco & BBL Manual of Microbiological Culture Media",
+          "publisher": "Becton Dickinson"
+        }
+      }
+    }
+  ],
+  "preparationSummary": "Suspend the dehydrated powder in distilled/deionized water and heat with agitation just until dissolved; XLD agar should not be autoclaved (prolonged heat degrades the selective and differential components), so it is typically boiled briefly and poured directly.",
+  "sterilization": {
+    "value": "not autoclaved — typically brought just to boiling to dissolve, per manufacturer instructions, since autoclaving degrades the medium's selective/differential performance",
+    "dependsOn": "specific manufacturer product instructions",
+    "reference": {
+      "label": "Difco & BBL Manual of Microbiological Culture Media",
+      "publisher": "Becton Dickinson"
+    }
+  },
+  "storage": "Store prepared plates refrigerated (commonly 2-8°C) in sealed bags, protected from light; XLD plates are generally used relatively soon after pouring.",
+  "shelfLife": {
+    "value": "manufacturer-stated shelf life varies by product and storage condition, and is typically shorter than simpler general-purpose media",
+    "dependsOn": "specific product and storage conditions",
+    "unverified": true
+  },
+  "expectedAppearance": "Translucent red/pink medium; colonies vary by organism (see reactions).",
+  "qualityControl": "Confirm sterility (no growth on an uninoculated control plate) and verify expected colony morphology/color with known reference organisms before use in diagnostic work.",
+  "reactions": [
+    {
+      "organismOrGroup": "Salmonella spp.",
+      "reaction": "Typically red/pink colonies with black centers (H2S production)"
+    },
+    {
+      "organismOrGroup": "Shigella spp.",
+      "reaction": "Typically red colonies without black centers (non-lysine-decarboxylating, non-H2S)"
+    },
+    {
+      "organismOrGroup": "Lactose/sucrose-fermenting coliforms (e.g. many E. coli strains)",
+      "reaction": "Typically yellow colonies (acid production from sugar fermentation)"
+    }
+  ],
+  "manufacturerNotes": "Interpretation depends on the interplay of sugar fermentation, lysine decarboxylation, and H2S production together — no single color change should be interpreted in isolation.",
+  "relatedMedia": [
+    "media-macconkey"
+  ],
+  "relatedProtocols": [
+    "proto-streak-plate"
+  ],
+  "relatedBiochemicalTests": [
+    "test-decarboxylase"
+  ],
+  "searchKeywords": [
+    "XLD agar",
+    "Salmonella Shigella isolation",
+    "enteric pathogen agar",
+    "stool culture media"
+  ],
+  "difficulty": "advanced"
+}
