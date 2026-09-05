@@ -1,0 +1,92 @@
+{
+  "id": "acetobacter-aceti",
+  "scientificName": "Acetobacter aceti",
+  "commonName": "Vinegar bacterium",
+  "category": "bacteria",
+  "quickTags": [
+    "Vinegar/acetic acid fermentation",
+    "Non-pathogenic",
+    "Obligate aerobe",
+    "Industrial organism"
+  ],
+  "genZNote": "Turns wine and cider into vinegar by oxidizing ethanol straight into acetic acid — one of the oldest 'biotechnology' processes humans have used, long before anyone knew bacteria were involved.",
+  "searchKeywords": [
+    "vinegar bacteria",
+    "acetic acid bacteria",
+    "acetobacter"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Alphaproteobacteria",
+    "order": "Acetobacterales",
+    "family": "Acetobacteraceae",
+    "genus": "Acetobacter",
+    "species": "A. aceti"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus), sometimes forming chains",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells or chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.6-0.8 x 1-3 µm",
+    "sporeForming": false,
+    "capsule": "None significant",
+    "encapsulated": false,
+    "motility": "Motile via peritrichous flagella (some strains) or non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe",
+    "notes": "Highly tolerant of acidic conditions, an adaptation to the acetic acid it produces."
+  },
+  "habitat": {
+    "naturalHabitat": "Flowers, fruit, and fermenting plant material",
+    "hostAssociation": "Free-living environmental organism, not human-associated",
+    "environmentalOccurrence": "Naturally present on fruit surfaces and in unpasteurized wine/cider, where it can spoil the product by continuing fermentation to vinegar",
+    "reservoir": "Fruit surfaces, fermenting beverages, industrial vinegar production tanks"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods, sometimes in chains",
+      "arrangement": "Single cells or chains"
+    },
+    "culture": {
+      "media": "Glucose-yeast extract-calcium carbonate agar (clear zones form around colonies from acid production)",
+      "growthCharacteristics": "Obligate aerobe; requires vigorous aeration industrially",
+      "colonyMorphology": "Small, smooth, often forms a clearing zone in calcium carbonate media from acid production"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Oxidation of ethanol to acetic acid",
+        "result": "+"
+      },
+      {
+        "test": "Catalase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Obligate aerobe that oxidizes ethanol directly to acetic acid — the biochemical basis of vinegar production and the reason open, aerated wine/cider spoils into vinegar",
+    "Highly acid-tolerant, allowing it to keep functioning even as the medium becomes increasingly acidic from its own metabolic byproduct",
+    "Clears calcium carbonate agar around colonies due to acid production, a classic diagnostic culture technique",
+    "Purely beneficial/industrial in the food production context; not a human pathogen"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Oxidizes ethanol to acetic acid",
+    "importantDisease": "None — industrial fermentation organism",
+    "importantTest": "Clearing zone on calcium carbonate agar from acid production",
+    "distinguishingFeature": "The classic vinegar bacterium, converting ethanol directly into acetic acid via obligate aerobic oxidation"
+  },
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of acetic acid bacteria and industrial fermentation",
+      "kind": "educational"
+    }
+  ]
+}

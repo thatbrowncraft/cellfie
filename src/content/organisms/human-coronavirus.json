@@ -1,0 +1,82 @@
+{
+  "id": "human-coronavirus",
+  "scientificName": "Human coronavirus (229E/OC43/NL63/HKU1)",
+  "commonName": "Common cold coronavirus",
+  "category": "virus",
+  "quickTags": [
+    "Enveloped RNA virus",
+    "Common cold",
+    "Seasonal"
+  ],
+  "genZNote": "The coronaviruses that were just background noise (the common cold) long before anyone had heard of SARS-CoV-2.",
+  "searchKeywords": [
+    "common cold coronavirus",
+    "229e",
+    "oc43",
+    "seasonal coronavirus"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Coronaviridae",
+    "genus": "Alphacoronavirus/Betacoronavirus (species-dependent)"
+  },
+  "morphology": {
+    "shape": "Enveloped, roughly spherical virion with club-shaped surface spike projections",
+    "size": "~120 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Helical nucleocapsid",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human upper respiratory tract epithelium",
+    "hostAssociation": "Humans are the primary host for these four endemic strains; infects ciliated respiratory epithelial cells",
+    "reservoir": "Infected humans, with seasonal circulation similar to other common cold viruses"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not applicable (electron microscopy shows characteristic crown-like spike projections in research settings)"
+    },
+    "culture": {
+      "growthCharacteristics": "Historically difficult to culture; multiplex PCR respiratory panels are the standard modern diagnostic method"
+    }
+  },
+  "identificationClues": [
+    "Refers to four endemic human coronavirus species (229E, OC43, NL63, HKU1) responsible for a significant fraction of common colds, distinct from SARS-CoV-2, MERS-CoV, and SARS-CoV-1",
+    "Enveloped RNA virus with the characteristic crown-like (corona) spike projections seen on electron microscopy",
+    "Typically causes mild, self-limited upper respiratory illness, though it can cause more severe lower respiratory disease in infants, the elderly, or immunocompromised patients",
+    "Detected via multiplex respiratory viral PCR panels rather than the specific SARS-CoV-2 assays used during the COVID-19 pandemic"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Common cold (upper respiratory tract infection)",
+      "Occasional bronchiolitis/pneumonia in infants, elderly, or immunocompromised patients"
+    ],
+    "transmission": "Respiratory droplets and contact with contaminated surfaces",
+    "epidemiology": "Endemic, seasonal circulation (typically winter) worldwide; together these four species cause roughly 10-30% of common colds",
+    "labSignificance": "Distinguishing endemic coronaviruses from SARS-CoV-2 requires specific PCR targeting, since symptoms alone cannot reliably differentiate them"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by multiplex respiratory PCR panel",
+    "importantDisease": "Common cold; occasional lower respiratory illness in vulnerable hosts",
+    "importantTest": "Multiplex respiratory viral PCR panel",
+    "distinguishingFeature": "The original, mild 'common cold' coronaviruses, distinct from the pandemic-associated SARS-CoV-2, SARS-CoV-1, and MERS-CoV"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "sars-cov-2",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Human Coronavirus Types",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/coronavirus/types.html"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "id": "candida-parapsilosis",
+  "scientificName": "Candida parapsilosis",
+  "category": "fungi",
+  "quickTags": [
+    "Common Candida species",
+    "Catheter/device-associated",
+    "Germ tube negative",
+    "Neonatal ICU"
+  ],
+  "genZNote": "The Candida species most at home on skin and catheters — it loves biofilms on central lines and IV fluids more than any other Candida species.",
+  "searchKeywords": [
+    "c parapsilosis",
+    "candidemia",
+    "central line candida"
+  ],
+  "classification": {
+    "domain": "Eukarya",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Saccharomycetes",
+    "order": "Saccharomycetales",
+    "family": "Debaryomycetaceae",
+    "genus": "Candida",
+    "species": "C. parapsilosis"
+  },
+  "morphology": {
+    "shape": "Oval to elongated budding yeast; forms pseudohyphae, not true hyphae",
+    "arrangement": "Budding cells, often in clusters",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~2.5-4 x 2.5-9 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "yeast",
+    "hyphae": [
+      "pseudohyphae"
+    ],
+    "reproductiveStructures": [
+      "Blastoconidia"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Human skin and subungual spaces; also environmental surfaces",
+    "hostAssociation": "Common skin commensal; opportunistic pathogen especially via intravascular devices",
+    "environmentalOccurrence": "Notable for surviving on hands and hospital surfaces and forming biofilms on plastic catheters and parenteral nutrition lines",
+    "reservoir": "Human skin, healthcare workers' hands, indwelling catheters"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Wet mount / Gram stain",
+      "appearance": "Budding yeast with pseudohyphae, no true hyphae",
+      "arrangement": "Budding clusters"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar; CHROMagar Candida",
+      "growthCharacteristics": "Grows well at 37°C, tolerates high glucose concentrations",
+      "colonyMorphology": "Smooth, glistening, cream-colored colonies",
+      "pigmentation": "Non-pigmented"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Germ tube",
+        "result": "-"
+      },
+      {
+        "test": "Growth in high-glucose parenteral fluids",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Germ tube negative and lacks true hyphae, forming only pseudohyphae",
+    "Strong tendency to form biofilms on plastic medical devices (catheters, prosthetic material) and to grow well in glucose-rich IV fluids/parenteral nutrition",
+    "A leading cause of candidemia in neonatal intensive care units and in patients with central venous catheters",
+    "Frequently associated with healthcare workers' hands as a transmission source, unlike most endogenous Candida infections"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Catheter-related candidemia",
+      "Neonatal candidiasis",
+      "Endocarditis (especially prosthetic valve, IV drug use)",
+      "Parenteral nutrition-associated infections"
+    ],
+    "virulenceFactors": [
+      "Strong biofilm formation on plastic surfaces",
+      "Growth in high-glucose solutions"
+    ],
+    "transmission": "Often exogenous — transmitted via contaminated hands, catheters, or IV fluids rather than purely endogenous overgrowth",
+    "epidemiology": "One of the most common non-albicans Candida species in neonates and in patients with central venous catheters",
+    "labSignificance": "Catheter removal is often necessary for cure given its strong biofilm-forming tendency"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (eukaryote)",
+    "shape": "Budding yeast, pseudohyphae only",
+    "keyBiochemicalReaction": "Germ tube negative",
+    "importantDisease": "Catheter-associated candidemia; neonatal candidiasis",
+    "importantTest": "Germ tube negative; biofilm/catheter association",
+    "distinguishingFeature": "Strongest biofilm-forming Candida species on plastic devices; classic neonatal ICU and catheter pathogen"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "candida-albicans",
+      "relationship": "commonly-confused"
+    },
+    {
+      "id": "candida-tropicalis",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Candidiasis\"",
+      "kind": "educational"
+    }
+  ]
+}

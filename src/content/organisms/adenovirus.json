@@ -1,0 +1,80 @@
+{
+  "id": "adenovirus",
+  "scientificName": "Human adenovirus",
+  "category": "virus",
+  "quickTags": [
+    "Non-enveloped DNA virus",
+    "Very common",
+    "Multiple disease presentations"
+  ],
+  "genZNote": "One virus, many jobs: pink eye, the common cold, croup, and stomach bugs can all trace back to different adenovirus types.",
+  "searchKeywords": [
+    "adenoviral conjunctivitis",
+    "pink eye virus",
+    "adenovirus pneumonia",
+    "pharyngoconjunctival fever"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Adenoviridae",
+    "genus": "Mastadenovirus"
+  },
+  "morphology": {
+    "shape": "Non-enveloped icosahedral virion with characteristic fiber projections",
+    "size": "~70-90 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "dna",
+    "genomeStrandedness": "dsdna",
+    "envelope": "non-enveloped",
+    "capsidSymmetry": "Icosahedral with penton fiber projections",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human respiratory, ocular, and gastrointestinal epithelium",
+    "hostAssociation": "Humans are the primary host and reservoir; over 50 serotypes cause a wide range of clinical syndromes",
+    "reservoir": "Infected humans; environmentally stable on surfaces and in water (including swimming pools)"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not applicable (electron microscopy only in research settings)",
+      "appearance": "Non-enveloped icosahedral capsid with distinctive fiber projections on EM"
+    },
+    "culture": {
+      "growthCharacteristics": "Grows in various cell lines producing a characteristic 'grape-like cluster' cytopathic effect"
+    }
+  },
+  "identificationClues": [
+    "Non-enveloped DNA virus — notably resistant to alcohol-based disinfectants and can survive on surfaces and in chlorinated pool water",
+    "Extremely broad clinical range depending on serotype: pharyngoconjunctival fever, epidemic keratoconjunctivitis, croup/bronchiolitis/pneumonia, and gastroenteritis (types 40/41)",
+    "Diagnosed by PCR or antigen testing; rapid antigen tests are commonly used for adenoviral conjunctivitis",
+    "A well-known cause of outbreaks in swimming pools, daycares, and military recruit barracks"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Pharyngoconjunctival fever",
+      "Epidemic keratoconjunctivitis",
+      "Common cold-like upper respiratory infection",
+      "Croup, bronchiolitis, pneumonia (especially in children)",
+      "Gastroenteritis (serotypes 40/41)",
+      "Hemorrhagic cystitis"
+    ],
+    "transmission": "Respiratory droplets, direct contact, fecal-oral route, and contaminated water (e.g., swimming pools) or fomites",
+    "epidemiology": "One of the most common causes of childhood respiratory illness and viral conjunctivitis worldwide; environmentally hardy compared to enveloped respiratory viruses",
+    "labSignificance": "Non-enveloped structure explains its relative resistance to alcohol-based hand sanitizers, an important infection-control teaching point"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by PCR/antigen testing",
+    "importantDisease": "Pharyngoconjunctival fever, epidemic keratoconjunctivitis, respiratory illness",
+    "importantTest": "PCR or rapid antigen testing",
+    "distinguishingFeature": "Non-enveloped DNA virus with unusually broad tissue tropism and environmental hardiness (resists alcohol-based disinfectants)"
+  },
+  "sources": [
+    {
+      "name": "CDC — Adenovirus",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/adenovirus/"
+    }
+  ]
+}

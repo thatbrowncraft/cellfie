@@ -1,0 +1,87 @@
+{
+  "id": "human-herpesvirus-6",
+  "scientificName": "Human betaherpesvirus 6",
+  "commonName": "Roseola virus (HHV-6)",
+  "category": "virus",
+  "quickTags": [
+    "Enveloped DNA virus",
+    "Roseola infantum",
+    "Nearly universal childhood infection",
+    "Latency in most adults"
+  ],
+  "genZNote": "By age 2, almost everyone has already had this one — it's the classic cause of roseola: days of high fever, then a rash right as the fever breaks.",
+  "searchKeywords": [
+    "hhv-6",
+    "roseola infantum",
+    "sixth disease",
+    "exanthem subitum"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Herpesviridae",
+    "genus": "Roseolovirus"
+  },
+  "morphology": {
+    "shape": "Enveloped icosahedral virion with tegument layer",
+    "size": "~200 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "dna",
+    "genomeStrandedness": "dsdna",
+    "envelope": "enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human salivary glands and T lymphocytes",
+    "hostAssociation": "Humans are the sole host; establishes lifelong latency after primary infection, typically in early childhood",
+    "reservoir": "Infected humans; shed in saliva even from asymptomatic adults, driving near-universal childhood exposure"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not applicable"
+    },
+    "culture": {
+      "growthCharacteristics": "Diagnosis is primarily clinical; PCR or serology used when confirmation is needed"
+    }
+  },
+  "identificationClues": [
+    "Classic presentation is roseola infantum (exanthem subitum, 'sixth disease'): several days of high fever in an otherwise well-appearing infant, followed by an abrupt rose-pink rash as the fever resolves",
+    "Nearly universal infection by age 2, usually via asymptomatic viral shedding in saliva from caregivers",
+    "Like other herpesviruses, establishes lifelong latency (in monocytes/T cells) after primary infection and can reactivate in immunocompromised hosts",
+    "A classically taught cause of febrile seizures in young children due to the abrupt high fevers it produces"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Roseola infantum (exanthem subitum)",
+      "Febrile seizures (associated)",
+      "Reactivation disease in immunocompromised/transplant patients (encephalitis, marrow suppression)"
+    ],
+    "transmission": "Saliva contact, typically from asymptomatically shedding caregivers/family members",
+    "epidemiology": "One of the most common viral infections of early childhood, with near-universal seroprevalence by age 2-3",
+    "labSignificance": "Usually a clinical diagnosis; PCR/serology reserved for atypical presentations or immunocompromised patients"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — usually a clinical diagnosis",
+    "importantDisease": "Roseola infantum (high fever followed by rash on defervescence)",
+    "importantTest": "Usually clinical; PCR/serology if needed",
+    "distinguishingFeature": "Nearly universal childhood herpesvirus infection; classic 'fever then rash' pattern distinguishes it from most other childhood exanthems (rash appears with fever)"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "cytomegalovirus",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "epstein-barr-virus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Roseola (Human Herpesvirus 6)",
+      "kind": "educational"
+    }
+  ]
+}

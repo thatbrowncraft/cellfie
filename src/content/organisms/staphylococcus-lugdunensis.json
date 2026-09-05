@@ -1,0 +1,120 @@
+{
+  "id": "staphylococcus-lugdunensis",
+  "scientificName": "Staphylococcus lugdunensis",
+  "category": "bacteria",
+  "quickTags": [
+    "Coagulase-negative staph",
+    "Behaves like S. aureus",
+    "Endocarditis risk",
+    "Skin commensal"
+  ],
+  "genZNote": "The coagulase-negative staph that didn't get the memo — clinically it acts far more like aggressive S. aureus than its mellow CoNS relatives.",
+  "searchKeywords": [
+    "s lugdunensis",
+    "aggressive cons",
+    "coagulase negative staph endocarditis"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Bacillales",
+    "family": "Staphylococcaceae",
+    "genus": "Staphylococcus",
+    "species": "S. lugdunensis"
+  },
+  "morphology": {
+    "shape": "Coccus",
+    "shapeCategory": "coccus",
+    "arrangement": "Clusters",
+    "arrangementCategory": "clusters",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-1.5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human skin, particularly the inguinal/perineal region",
+    "hostAssociation": "Normal skin commensal; opportunistic pathogen with unusually aggressive behavior for a coagulase-negative staph",
+    "environmentalOccurrence": "Human skin-associated; not a significant free-living environmental organism",
+    "reservoir": "Human skin flora"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in clusters",
+      "arrangement": "Clusters"
+    },
+    "culture": {
+      "media": "Blood agar",
+      "growthCharacteristics": "Facultative anaerobe",
+      "colonyMorphology": "Small, white to slightly yellow, sometimes beta-hemolytic colonies",
+      "hemolysis": "Often beta-hemolytic, unlike most other CoNS"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Coagulase",
+        "result": "-"
+      },
+      {
+        "test": "Ornithine decarboxylase",
+        "result": "+ (key distinguishing test)"
+      },
+      {
+        "test": "PYR test",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Coagulase-negative, but behaves clinically much like S. aureus — capable of native and prosthetic valve endocarditis, joint infections, and severe skin/soft-tissue infections",
+    "Positive ornithine decarboxylase test is a classic distinguishing feature from most other coagulase-negative staphylococci",
+    "Often beta-hemolytic on blood agar, another feature setting it apart from typical CoNS like S. epidermidis",
+    "Should not be dismissed as a 'contaminant' the way many other CoNS often are when isolated from blood cultures"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Infective endocarditis (native and prosthetic valve)",
+      "Prosthetic joint infections",
+      "Skin and soft-tissue infections",
+      "Bloodstream infections"
+    ],
+    "virulenceFactors": [
+      "Biofilm formation",
+      "Adhesins similar in aggressiveness to S. aureus"
+    ],
+    "transmission": "Endogenous skin flora; can seed bloodstream/heart valves after skin breach or device placement",
+    "epidemiology": "Increasingly recognized as a clinically significant CoNS, with a disease course and severity resembling S. aureus rather than typical benign CoNS contamination",
+    "labSignificance": "Ornithine decarboxylase positivity and beta-hemolysis distinguish it from other CoNS and flag it for more aggressive clinical attention"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus (clusters)",
+    "keyBiochemicalReaction": "Coagulase negative; ornithine decarboxylase positive",
+    "importantDisease": "Endocarditis; prosthetic joint infection",
+    "importantTest": "Ornithine decarboxylase test",
+    "distinguishingFeature": "The 'S. aureus of the coagulase-negative staphylococci' — unusually virulent for a CoNS, notably in endocarditis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "staphylococcus-aureus",
+      "relationship": "commonly-confused"
+    },
+    {
+      "id": "staphylococcus-epidermidis",
+      "relationship": "differential-identification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Staphylococcus Lugdunensis\"",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "id": "propionibacterium-freudenreichii",
+  "scientificName": "Propionibacterium freudenreichii",
+  "commonName": "Swiss cheese bacterium",
+  "category": "bacteria",
+  "quickTags": [
+    "Cheese fermentation",
+    "Propionic acid producer",
+    "Non-pathogenic",
+    "Anaerobic diphtheroid"
+  ],
+  "genZNote": "The organism responsible for both the holes and the nutty flavor in Swiss cheese — it eats the lactic acid other bacteria made and burps out CO2 gas bubbles as it goes.",
+  "searchKeywords": [
+    "swiss cheese holes bacteria",
+    "propionic acid fermentation",
+    "emmental bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Actinomycetota (Actinobacteria)",
+    "class": "Actinomycetes",
+    "order": "Propionibacteriales",
+    "family": "Propionibacteriaceae",
+    "genus": "Propionibacterium",
+    "species": "P. freudenreichii"
+  },
+  "morphology": {
+    "shape": "Pleomorphic rod (diphtheroid), sometimes branched",
+    "shapeCategory": "pleomorphic",
+    "arrangement": "Single cells, chains, V-forms, or clumps",
+    "arrangementCategory": "single",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-0.8 x 1-5 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Aerotolerant anaerobe",
+    "oxygenRequirementCategory": "obligate-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Dairy products, especially hard cheeses",
+    "hostAssociation": "Not part of normal human microbiota; used as a food-grade starter/ripening culture",
+    "environmentalOccurrence": "Central to the production of Swiss-type cheeses (Emmental, Gruyère) during the secondary fermentation/ripening stage",
+    "reservoir": "Dairy starter culture stocks"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive pleomorphic rods, diphtheroid morphology",
+      "arrangement": "Singles, chains, V-forms"
+    },
+    "culture": {
+      "media": "Sodium lactate agar or specialized propionibacteria media",
+      "growthCharacteristics": "Slow-growing aerotolerant anaerobe; ferments lactate to propionic acid, acetic acid, and CO2",
+      "colonyMorphology": "Small, cream to orange-tinted colonies"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "+"
+      },
+      {
+        "test": "Lactate fermentation to propionic acid + CO2",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Ferments lactic acid (produced earlier by starter lactic acid bacteria) into propionic acid, acetic acid, and CO2 — the propionic acid fermentation",
+    "The CO2 gas produced during this secondary fermentation forms the characteristic large 'eyes' (holes) of Swiss-type cheeses like Emmental",
+    "Contributes the characteristic nutty, sweet flavor notes of Swiss cheese as a byproduct of propionic acid fermentation",
+    "Distinct from the skin-associated Cutibacterium acnes (formerly also classified as Propionibacterium) — a useful point for avoiding confusion between the two genera"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Pleomorphic rod (diphtheroid)",
+    "keyBiochemicalReaction": "Propionic acid fermentation of lactate (produces CO2 + propionic acid + acetic acid)",
+    "importantDisease": "None — dairy fermentation organism",
+    "importantTest": "CO2 production causing characteristic cheese 'eyes'",
+    "distinguishingFeature": "Produces both the holes and the nutty flavor of Swiss-type cheeses via propionic acid fermentation of lactate"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "cutibacterium-acnes",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "streptococcus-thermophilus",
+      "relationship": "same-laboratory-workflow"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of dairy fermentation and propionic acid bacteria",
+      "kind": "educational"
+    }
+  ]
+}

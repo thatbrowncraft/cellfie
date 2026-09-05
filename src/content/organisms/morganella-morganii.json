@@ -1,0 +1,119 @@
+{
+  "id": "morganella-morganii",
+  "scientificName": "Morganella morganii",
+  "category": "bacteria",
+  "quickTags": [
+    "Hospital-associated",
+    "Urease positive",
+    "Swarming-related genus",
+    "Intrinsic resistance"
+  ],
+  "genZNote": "A quieter cousin of Proteus — same urease-positive, ammonia-producing lifestyle, but usually shows up in mixed or catheter-associated infections rather than headlining its own outbreak.",
+  "searchKeywords": [
+    "m morganii",
+    "morganella",
+    "hospital urinary tract infection bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Morganellaceae",
+    "genus": "Morganella",
+    "species": "M. morganii"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.6-0.7 x 1.2-2.5 µm",
+    "sporeForming": false,
+    "capsule": "None significant",
+    "encapsulated": false,
+    "motility": "Motile via peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human and animal GI tract, soil, and water",
+    "hostAssociation": "Can be part of normal gut microbiota in small numbers; opportunistic nosocomial pathogen",
+    "environmentalOccurrence": "Found in sewage, soil, and hospital environments",
+    "reservoir": "Human GI tract; hospital surfaces/catheters"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar, blood agar",
+      "growthCharacteristics": "Facultative anaerobe",
+      "colonyMorphology": "Non-lactose-fermenting, translucent colonies on MacConkey agar"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Urease",
+        "result": "+ (strongly positive)"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "-"
+      },
+      {
+        "test": "Phenylalanine deaminase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Strongly urease-positive, non-lactose-fermenting Gram-negative rod, placing it in the same biochemical family (Morganellaceae) as Proteus and Providencia",
+    "Positive phenylalanine deaminase test, shared with Proteus and Providencia, helps distinguish this group from other Enterobacterales",
+    "Chromosomal inducible AmpC beta-lactamase confers intrinsic resistance to several beta-lactams, similar to Enterobacter and Klebsiella aerogenes",
+    "Frequently isolated from hospital-acquired urinary tract infections, wound infections, and bacteremia, often as part of a polymicrobial infection"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Urinary tract infections (often catheter-associated)",
+      "Wound infections",
+      "Bacteremia",
+      "Neonatal sepsis (less common)"
+    ],
+    "virulenceFactors": [
+      "Urease (contributes to struvite stone formation, similar to Proteus)",
+      "Inducible AmpC beta-lactamase"
+    ],
+    "transmission": "Nosocomial — catheters, contaminated hospital environment, or endogenous gut flora translocation",
+    "epidemiology": "An underappreciated but not rare cause of hospital-associated infection, particularly in patients with indwelling urinary catheters or recent antibiotic exposure",
+    "labSignificance": "Urease positivity plus phenylalanine deaminase positivity groups it biochemically with Proteus/Providencia despite different clinical behavior"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Urease positive; phenylalanine deaminase positive",
+    "importantDisease": "Nosocomial UTI; wound infection",
+    "importantTest": "Urease test; phenylalanine deaminase test",
+    "distinguishingFeature": "Urease-positive Enterobacterales relative of Proteus/Providencia, notable for inducible AmpC resistance in hospital settings"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "proteus-mirabilis",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "klebsiella-aerogenes",
+      "relationship": "commonly-confused"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Morganella Morganii\"",
+      "kind": "educational"
+    }
+  ]
+}

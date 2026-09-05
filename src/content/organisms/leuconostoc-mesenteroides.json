@@ -1,0 +1,90 @@
+{
+  "id": "leuconostoc-mesenteroides",
+  "scientificName": "Leuconostoc mesenteroides",
+  "category": "bacteria",
+  "quickTags": [
+    "Heterofermentative lactic acid bacterium",
+    "Fermentation starter",
+    "Dextran producer",
+    "Non-pathogenic"
+  ],
+  "genZNote": "The unsung hero of sauerkraut and kimchi's first fermentation stage, and the industrial source of dextran, the sugar polymer used in blood plasma substitutes and chromatography beads.",
+  "searchKeywords": [
+    "leuconostoc",
+    "sauerkraut fermentation bacteria",
+    "dextran producing bacteria"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Bacilli",
+    "order": "Lactobacillales",
+    "family": "Leuconostocaceae",
+    "genus": "Leuconostoc",
+    "species": "L. mesenteroides"
+  },
+  "morphology": {
+    "shape": "Coccus, often elongated/lenticular",
+    "shapeCategory": "coccus",
+    "arrangement": "Pairs and chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.5-0.7 x 0.7-1.2 µm",
+    "sporeForming": false,
+    "capsule": "Extracellular dextran slime layer (strain-dependent)",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe (aerotolerant)",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Plant surfaces, fermenting vegetables, and dairy",
+    "hostAssociation": "Not part of normal human microbiota; used as a food-fermentation starter organism",
+    "environmentalOccurrence": "Naturally initiates fermentation of sauerkraut, kimchi, and some cheeses; industrially cultured for dextran production",
+    "reservoir": "Plant surfaces and fermenting food environments"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-positive cocci in pairs/chains",
+      "arrangement": "Pairs and chains"
+    },
+    "culture": {
+      "media": "MRS agar with sucrose",
+      "growthCharacteristics": "Facultative anaerobe; produces large, mucoid, dextran-slime colonies on sucrose-containing media",
+      "colonyMorphology": "Large, mucoid, glistening colonies from dextran slime production on sucrose media"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Catalase",
+        "result": "-"
+      },
+      {
+        "test": "Heterofermentative glucose fermentation (CO2, ethanol, lactic acid)",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Heterofermentative metabolism — produces CO2, ethanol, and lactic acid from glucose, unlike the purely lactic-acid-producing homofermentative lactobacilli",
+    "Produces copious extracellular dextran (a glucose polymer) when grown on sucrose, giving colonies a distinctive mucoid, slimy appearance",
+    "Initiates the first stage of vegetable fermentations like sauerkraut and kimchi, later succeeded by more acid-tolerant lactobacilli",
+    "Industrially cultured specifically for dextran production, used in blood plasma volume expanders and chromatography resin manufacturing"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Coccus (pairs/chains)",
+    "keyBiochemicalReaction": "Catalase negative; heterofermentative (CO2 + ethanol + lactic acid)",
+    "importantDisease": "None — food fermentation and industrial dextran-production organism",
+    "importantTest": "Mucoid dextran-slime colonies on sucrose media",
+    "distinguishingFeature": "Heterofermentative starter of vegetable fermentations (sauerkraut, kimchi) and the industrial source of dextran"
+  },
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of lactic acid bacteria in food fermentation",
+      "kind": "educational"
+    }
+  ]
+}

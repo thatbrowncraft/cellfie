@@ -1,0 +1,126 @@
+{
+  "id": "candida-tropicalis",
+  "scientificName": "Candida tropicalis",
+  "category": "fungi",
+  "quickTags": [
+    "Common Candida species",
+    "Germ tube negative",
+    "Opportunistic",
+    "Neutropenic patients"
+  ],
+  "genZNote": "Behind C. albicans, this is one of the most frequently isolated Candida species in bloodstream infections — especially in neutropenic and cancer patients.",
+  "searchKeywords": [
+    "c tropicalis",
+    "candidemia",
+    "non-albicans candida"
+  ],
+  "classification": {
+    "domain": "Eukarya",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Saccharomycetes",
+    "order": "Saccharomycetales",
+    "family": "Debaryomycetaceae",
+    "genus": "Candida",
+    "species": "C. tropicalis"
+  },
+  "morphology": {
+    "shape": "Oval budding yeast; forms true hyphae and pseudohyphae",
+    "arrangement": "Budding yeast cells with elongated pseudohyphae",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "~4-8 µm",
+    "sporeForming": false,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "yeast",
+    "hyphae": [
+      "pseudohyphae",
+      "true-hyphae"
+    ],
+    "reproductiveStructures": [
+      "Blastoconidia"
+    ],
+    "clinicalGroup": "opportunistic"
+  },
+  "habitat": {
+    "naturalHabitat": "Human GI tract, skin, and mucous membranes; also soil and water",
+    "hostAssociation": "Can be part of normal human mucosal microbiota in small numbers; opportunistic pathogen in immunocompromised hosts",
+    "environmentalOccurrence": "Common in hospital environments and on medical devices",
+    "reservoir": "Endogenous human flora; hospital surfaces/devices"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Wet mount / Gram stain",
+      "appearance": "Budding yeast with pseudohyphae and true hyphae",
+      "arrangement": "Budding cells"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar; CHROMagar Candida",
+      "growthCharacteristics": "Grows well at 37°C",
+      "colonyMorphology": "Smooth, cream colonies; blue-gray to purple on CHROMagar depending on brand",
+      "pigmentation": "Non-pigmented on standard media"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Germ tube",
+        "result": "-"
+      },
+      {
+        "test": "Chlamydospore formation",
+        "result": "-"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Germ tube negative, unlike C. albicans — a key first-line distinguishing test",
+    "One of the leading non-albicans Candida species causing bloodstream infections, especially in neutropenic and hematologic malignancy patients",
+    "Forms abundant pseudohyphae and true hyphae, unlike some other non-albicans species",
+    "Distinct colored colonies on CHROMagar Candida help distinguish it presumptively from other Candida species"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Candidemia/invasive candidiasis (especially in neutropenic and cancer patients)",
+      "Urinary tract infections",
+      "Mucosal candidiasis"
+    ],
+    "virulenceFactors": [
+      "Biofilm formation",
+      "Adhesins",
+      "Hyphal transition"
+    ],
+    "transmission": "Endogenous flora overgrowth or nosocomial transmission via hands/devices; not typically person-to-person outside healthcare settings",
+    "epidemiology": "One of the top non-albicans Candida species in candidemia globally, with a strong association with hematologic malignancy and neutropenia",
+    "labSignificance": "Germ tube negativity plus CHROMagar color and biochemical/molecular testing distinguish it from C. albicans and other non-albicans species"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (eukaryote)",
+    "shape": "Budding yeast with pseudohyphae/true hyphae",
+    "keyBiochemicalReaction": "Germ tube negative",
+    "importantDisease": "Candidemia, especially in neutropenic/oncology patients",
+    "importantTest": "Germ tube test; CHROMagar Candida",
+    "distinguishingFeature": "Leading non-albicans Candida species in bloodstream infections among neutropenic patients"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "candida-albicans",
+      "relationship": "commonly-confused"
+    },
+    {
+      "id": "candida-glabrata",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Candidiasis\"",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "coxsackievirus",
+  "scientificName": "Coxsackievirus",
+  "category": "virus",
+  "quickTags": [
+    "Non-enveloped RNA virus",
+    "Enterovirus",
+    "Hand-foot-mouth disease",
+    "Common in children"
+  ],
+  "genZNote": "The classic hand-foot-and-mouth disease virus of daycare outbreaks — small, hardy, and extremely good at spreading among kids.",
+  "searchKeywords": [
+    "hand foot mouth disease virus",
+    "herpangina virus",
+    "coxsackie"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Picornaviridae",
+    "genus": "Enterovirus"
+  },
+  "morphology": {
+    "shape": "Small, non-enveloped icosahedral virion",
+    "size": "~30 nm diameter"
+  },
+  "virusDetails": {
+    "genomeType": "rna",
+    "genomeStrandedness": "ssrna",
+    "envelope": "non-enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "cytoplasmic",
+    "transmissionRoute": "fecal-oral"
+  },
+  "habitat": {
+    "naturalHabitat": "Human gastrointestinal tract, with secondary spread to skin/mucosa and occasionally heart/CNS",
+    "hostAssociation": "Humans are the sole natural host and reservoir",
+    "reservoir": "Infected humans, particularly children in daycare/school settings"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not applicable"
+    },
+    "culture": {
+      "growthCharacteristics": "Can be cultured in specific cell lines; PCR of vesicle fluid, throat, or stool is now the standard diagnostic method"
+    }
+  },
+  "identificationClues": [
+    "Classic cause of hand-foot-and-mouth disease — vesicular lesions on the palms, soles, and oral mucosa, typically in young children",
+    "Also causes herpangina (painful vesicles/ulcers on the posterior oropharynx) and, less commonly, viral (aseptic) meningitis and myopericarditis",
+    "Non-enveloped RNA virus, environmentally hardy and resistant to alcohol-based hand sanitizers, spreading efficiently via the fecal-oral route and respiratory droplets/vesicle fluid",
+    "A member of the enterovirus genus, related to poliovirus and other picornaviruses"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Hand-foot-and-mouth disease",
+      "Herpangina",
+      "Viral (aseptic) meningitis",
+      "Myopericarditis (occasionally)"
+    ],
+    "transmission": "Fecal-oral route, respiratory droplets, and contact with vesicle fluid; highly contagious in daycare/school settings",
+    "epidemiology": "One of the most common causes of childhood exanthems worldwide, with seasonal peaks in summer and fall in temperate climates",
+    "labSignificance": "PCR of vesicle fluid, throat swab, or stool is now the standard diagnostic approach, having largely replaced viral culture"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by PCR",
+    "importantDisease": "Hand-foot-and-mouth disease; herpangina",
+    "importantTest": "PCR of vesicle fluid, throat swab, or stool",
+    "distinguishingFeature": "Classic non-enveloped enterovirus behind hand-foot-and-mouth disease, a hallmark pediatric exanthem"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "poliovirus",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "CDC — Hand, Foot, and Mouth Disease",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/hand-foot-mouth/"
+    }
+  ]
+}

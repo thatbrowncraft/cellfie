@@ -1,0 +1,98 @@
+{
+  "id": "clostridium-acetobutylicum",
+  "scientificName": "Clostridium acetobutylicum",
+  "commonName": "Weizmann organism",
+  "category": "bacteria",
+  "quickTags": [
+    "Industrial fermentation",
+    "Endospore-former",
+    "Obligate anaerobe",
+    "Historic biotech organism"
+  ],
+  "genZNote": "Fermented the acetone that helped make WWI-era explosives (via the ABE process) — one of the earliest large-scale industrial fermentation success stories, decades before 'biotech' was a word.",
+  "searchKeywords": [
+    "abe fermentation",
+    "acetone butanol ethanol",
+    "weizmann organism"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Bacillota (Firmicutes)",
+    "class": "Clostridia",
+    "order": "Eubacteriales",
+    "family": "Clostridiaceae",
+    "genus": "Clostridium",
+    "species": "C. acetobutylicum"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells or chains",
+    "arrangementCategory": "chains",
+    "gramReaction": "positive",
+    "acidFast": false,
+    "size": "~0.6-0.9 x 2.4-4.7 µm",
+    "sporeForming": true,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Motile via peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Obligate anaerobe",
+    "oxygenRequirementCategory": "obligate-anaerobe",
+    "notes": "Forms oval, subterminal endospores, often giving sporulating cells a swollen 'clostridial' appearance."
+  },
+  "habitat": {
+    "naturalHabitat": "Soil, decaying plant material, and the intestinal tracts of some animals",
+    "hostAssociation": "Free-living environmental organism, not typically a human pathogen",
+    "environmentalOccurrence": "Widespread in soil worldwide; historically cultured industrially at massive scale for solvent production",
+    "reservoir": "Soil"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain; endospore stain",
+      "appearance": "Gram-positive rods with oval subterminal endospores",
+      "arrangement": "Single cells or chains"
+    },
+    "culture": {
+      "media": "Reinforced clostridial medium (anaerobic)",
+      "growthCharacteristics": "Strict anaerobe; ferments carbohydrates to acetone, butanol, and ethanol (the ABE fermentation)",
+      "colonyMorphology": "Irregular, spreading colonies under strict anaerobic culture"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Acetone-butanol-ethanol (ABE) fermentation",
+        "result": "+"
+      },
+      {
+        "test": "Catalase",
+        "result": "-"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Strict anaerobe forming characteristic oval, subterminal endospores that swell the sporulating cell",
+    "Ferments sugars via the acetone-butanol-ethanol (ABE) pathway, historically used for large-scale industrial acetone and butanol production",
+    "Named the 'Weizmann organism' after Chaim Weizmann, who developed the industrial ABE fermentation process in the early 20th century",
+    "Not considered a human pathogen, unlike several other well-known Clostridium species"
+  ],
+  "examFacts": {
+    "gramReaction": "Gram-positive",
+    "shape": "Bacillus (rod), endospore-forming",
+    "keyBiochemicalReaction": "Acetone-butanol-ethanol (ABE) fermentation",
+    "importantDisease": "None — historic industrial solvent-fermentation organism",
+    "importantTest": "ABE fermentation products; endospore staining",
+    "distinguishingFeature": "The 'Weizmann organism' behind the historic industrial acetone-butanol-ethanol fermentation process"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "clostridium-perfringens",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — overview of Clostridium species and industrial fermentation history",
+      "kind": "educational"
+    }
+  ]
+}

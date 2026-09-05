@@ -1,0 +1,119 @@
+{
+  "id": "providencia-stuartii",
+  "scientificName": "Providencia stuartii",
+  "category": "bacteria",
+  "quickTags": [
+    "Hospital-associated",
+    "Catheter-associated UTI",
+    "Urease positive",
+    "Intrinsic resistance"
+  ],
+  "genZNote": "The Enterobacterales you meet almost exclusively through a long-term urinary catheter — it thrives on catheter biofilms more than almost anything else in this family.",
+  "searchKeywords": [
+    "providencia",
+    "catheter associated uti bacteria",
+    "long term catheter infection"
+  ],
+  "classification": {
+    "domain": "Bacteria",
+    "phylum": "Pseudomonadota (Proteobacteria)",
+    "class": "Gammaproteobacteria",
+    "order": "Enterobacterales",
+    "family": "Morganellaceae",
+    "genus": "Providencia",
+    "species": "P. stuartii"
+  },
+  "morphology": {
+    "shape": "Rod (bacillus)",
+    "shapeCategory": "bacillus",
+    "arrangement": "Single cells",
+    "arrangementCategory": "single",
+    "gramReaction": "negative",
+    "acidFast": false,
+    "size": "~0.6-0.8 x 1.5-2.5 µm",
+    "sporeForming": false,
+    "capsule": "None significant",
+    "encapsulated": false,
+    "motility": "Motile via peritrichous flagella",
+    "motile": true,
+    "oxygenRequirement": "Facultative anaerobe",
+    "oxygenRequirementCategory": "facultative-anaerobe"
+  },
+  "habitat": {
+    "naturalHabitat": "Human GI tract, soil, and water",
+    "hostAssociation": "Can be part of normal gut microbiota in small numbers; strongly associated with long-term indwelling urinary catheters",
+    "environmentalOccurrence": "Found in sewage and hospital environments, particularly long-term care facilities",
+    "reservoir": "Human GI tract; long-term urinary catheters and long-term care facility environments"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Gram stain",
+      "appearance": "Gram-negative rods",
+      "arrangement": "Single cells"
+    },
+    "culture": {
+      "media": "MacConkey agar, blood agar",
+      "growthCharacteristics": "Facultative anaerobe",
+      "colonyMorphology": "Non-lactose-fermenting, translucent colonies; may swarm slightly on some media"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Urease",
+        "result": "+"
+      },
+      {
+        "test": "Lactose fermentation",
+        "result": "-"
+      },
+      {
+        "test": "Phenylalanine deaminase",
+        "result": "+"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Urease-positive, non-lactose-fermenting Gram-negative rod in the same biochemical family (Morganellaceae) as Proteus and Morganella",
+    "One of the most strongly associated organisms with long-term indwelling urinary catheters, particularly in long-term care facility residents",
+    "Intrinsically resistant to several antibiotics including polymyxins and tigecycline, narrowing empiric therapy options",
+    "Urease activity contributes to catheter encrustation and blockage, similar to the mechanism seen with Proteus"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Catheter-associated urinary tract infections",
+      "Bacteremia (usually catheter-associated)",
+      "Catheter encrustation/blockage"
+    ],
+    "virulenceFactors": [
+      "Urease (catheter encrustation)",
+      "Biofilm formation on catheter surfaces",
+      "Intrinsic multidrug resistance"
+    ],
+    "transmission": "Nosocomial — associated overwhelmingly with long-term indwelling urinary catheters, particularly in long-term care settings",
+    "epidemiology": "A hallmark organism of chronic catheter-associated bacteriuria in long-term care facility residents",
+    "labSignificance": "Urease and phenylalanine deaminase positivity place it in the Proteus/Morganella/Providencia biochemical group; intrinsic resistance patterns matter for empiric therapy"
+  },
+  "examFacts": {
+    "gramReaction": "Gram-negative",
+    "shape": "Bacillus (rod)",
+    "keyBiochemicalReaction": "Urease positive; phenylalanine deaminase positive",
+    "importantDisease": "Long-term catheter-associated urinary tract infection",
+    "importantTest": "Urease test",
+    "distinguishingFeature": "The Enterobacterales species most strongly linked to long-term indwelling urinary catheters and long-term care facility residents"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "proteus-mirabilis",
+      "relationship": "same-broad-classification"
+    },
+    {
+      "id": "morganella-morganii",
+      "relationship": "same-broad-classification"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Providencia Stuartii\"",
+      "kind": "educational"
+    }
+  ]
+}

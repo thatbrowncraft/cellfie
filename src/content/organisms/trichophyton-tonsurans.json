@@ -1,0 +1,125 @@
+{
+  "id": "trichophyton-tonsurans",
+  "scientificName": "Trichophyton tonsurans",
+  "commonName": "Tinea capitis dermatophyte",
+  "category": "fungi",
+  "quickTags": [
+    "Dermatophyte",
+    "Endothrix hair invasion",
+    "Anthropophilic",
+    "Common in children"
+  ],
+  "genZNote": "The single most common cause of tinea capitis (scalp ringworm) in kids in much of the world — it invades the hair shaft from the inside out (endothrix).",
+  "searchKeywords": [
+    "tinea capitis fungus",
+    "ringworm scalp",
+    "t tonsurans"
+  ],
+  "classification": {
+    "domain": "Eukarya",
+    "kingdom": "Fungi",
+    "phylum": "Ascomycota",
+    "class": "Eurotiomycetes",
+    "order": "Onygenales",
+    "family": "Arthrodermataceae",
+    "genus": "Trichophyton",
+    "species": "T. tonsurans"
+  },
+  "morphology": {
+    "shape": "Filamentous mold with septate hyphae",
+    "arrangement": "Branching septate hyphae with microconidia along the hyphae",
+    "gramReaction": "not-applicable",
+    "acidFast": false,
+    "size": "Hyphae ~2-4 µm wide",
+    "sporeForming": true,
+    "capsule": "None",
+    "encapsulated": false,
+    "motility": "Non-motile",
+    "motile": false,
+    "oxygenRequirement": "Obligate aerobe",
+    "oxygenRequirementCategory": "obligate-aerobe"
+  },
+  "fungalDetails": {
+    "morphologicalType": "mold",
+    "hyphae": [
+      "septate"
+    ],
+    "reproductiveStructures": [
+      "Numerous microconidia along hyphae (teardrop/club-shaped)",
+      "Rare macroconidia"
+    ],
+    "clinicalGroup": "cutaneous"
+  },
+  "habitat": {
+    "naturalHabitat": "Human skin and hair (anthropophilic — adapted specifically to humans)",
+    "hostAssociation": "Exclusively infects humans; spread via direct contact or shared fomites (combs, hats, pillows)",
+    "environmentalOccurrence": "Can persist on fomites for extended periods, facilitating spread in households and schools",
+    "reservoir": "Infected humans and contaminated personal items"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "KOH prep of hair/skin scraping",
+      "appearance": "Endothrix arrangement — arthroconidia packed inside the hair shaft, not on its surface",
+      "arrangement": "Septate hyphae fragmenting into arthroconidia within the hair"
+    },
+    "culture": {
+      "media": "Sabouraud dextrose agar with antibiotics/cycloheximide",
+      "growthCharacteristics": "Slow-growing mold, 1-2+ weeks for mature colonies",
+      "colonyMorphology": "Suede-like to powdery, tan-brown to yellow colonies with a reddish-brown reverse pigment",
+      "pigmentation": "Tan-brown surface; reddish-brown reverse"
+    },
+    "biochemicalTests": [
+      {
+        "test": "Urease",
+        "result": "Variable/slow positive"
+      },
+      {
+        "test": "Hair perforation test",
+        "result": "Variable"
+      }
+    ]
+  },
+  "identificationClues": [
+    "Endothrix pattern of hair invasion (arthroconidia packed inside the hair shaft) seen on microscopy — the key feature distinguishing it from ectothrix dermatophytes like Microsporum canis",
+    "The leading cause of tinea capitis in many regions, especially among school-age children, often presenting with 'black dot' alopecia patches",
+    "Anthropophilic — transmitted human-to-human or via shared combs/hats/pillows rather than from animals",
+    "Does not fluoresce under Wood's lamp, unlike most Microsporum species — an important clinical bedside distinction"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Tinea capitis (scalp ringworm)",
+      "Tinea corporis (less commonly)"
+    ],
+    "transmission": "Direct person-to-person contact or via shared fomites (combs, hats, pillows, barber tools)",
+    "epidemiology": "One of the most common causes of tinea capitis worldwide, particularly prevalent among children in urban settings",
+    "labSignificance": "Endothrix hair invasion pattern and lack of Wood's lamp fluorescence distinguish it from Microsporum-caused tinea capitis"
+  },
+  "examFacts": {
+    "gramReaction": "Not Gram-typed (eukaryote)",
+    "shape": "Filamentous mold (septate hyphae)",
+    "keyBiochemicalReaction": "Not applicable — identified by microscopy/culture morphology",
+    "importantDisease": "Tinea capitis (scalp ringworm), especially in children",
+    "importantTest": "KOH prep showing endothrix hair invasion; no Wood's lamp fluorescence",
+    "distinguishingFeature": "Leading anthropophilic cause of tinea capitis with endothrix hair invasion, unlike the ectothrix, fluorescent Microsporum canis"
+  },
+  "relatedOrganisms": [
+    {
+      "id": "microsporum-canis",
+      "relationship": "differential-identification"
+    },
+    {
+      "id": "trichophyton-rubrum",
+      "relationship": "same-genus"
+    },
+    {
+      "id": "trichophyton-mentagrophytes",
+      "relationship": "same-genus"
+    }
+  ],
+  "sources": [
+    {
+      "name": "NCBI Bookshelf — StatPearls, \"Tinea Capitis\"",
+      "kind": "educational"
+    }
+  ]
+}

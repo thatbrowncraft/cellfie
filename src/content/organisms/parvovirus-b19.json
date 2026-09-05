@@ -1,0 +1,80 @@
+{
+  "id": "parvovirus-b19",
+  "scientificName": "Parvovirus B19",
+  "commonName": "Fifth disease virus",
+  "category": "virus",
+  "quickTags": [
+    "Non-enveloped DNA virus",
+    "Smallest human virus",
+    "Slapped cheek rash",
+    "Aplastic crisis risk"
+  ],
+  "genZNote": "One of the smallest viruses that infects humans, but it packs a punch — 'slapped cheek' rash in kids, and a real danger to anyone with chronic hemolytic anemia or a developing fetus.",
+  "searchKeywords": [
+    "fifth disease",
+    "slapped cheek syndrome",
+    "erythema infectiosum",
+    "b19"
+  ],
+  "classification": {
+    "domain": "N/A (virus)",
+    "family": "Parvoviridae",
+    "genus": "Erythroparvovirus"
+  },
+  "morphology": {
+    "shape": "Very small, non-enveloped icosahedral virion",
+    "size": "~18-26 nm diameter (one of the smallest human viruses)"
+  },
+  "virusDetails": {
+    "genomeType": "dna",
+    "genomeStrandedness": "ssdna",
+    "envelope": "non-enveloped",
+    "capsidSymmetry": "Icosahedral",
+    "replicationSite": "nuclear",
+    "transmissionRoute": "respiratory"
+  },
+  "habitat": {
+    "naturalHabitat": "Human bone marrow erythroid progenitor cells and respiratory tract",
+    "hostAssociation": "Humans are the sole natural host; specifically targets erythroid precursor cells via the P antigen receptor",
+    "reservoir": "Infected humans, particularly school-age children during outbreaks"
+  },
+  "labIdentification": {
+    "microscopy": {
+      "stain": "Not applicable"
+    },
+    "culture": {
+      "growthCharacteristics": "Does not grow in standard cell culture; diagnosis relies on serology (IgM/IgG) or PCR"
+    }
+  },
+  "identificationClues": [
+    "One of the smallest and structurally simplest viruses known to infect humans",
+    "Classic 'slapped cheek' facial rash (erythema infectiosum, fifth disease) in children, often followed by a lacy reticular rash on the trunk/limbs",
+    "Directly infects and lyses erythroid progenitor cells in bone marrow, which can precipitate transient aplastic crisis in patients with chronic hemolytic anemias (e.g., sickle cell disease)",
+    "Can cause fetal hydrops or fetal loss if a pregnant person is infected, due to severe fetal anemia — an important obstetric teaching point"
+  ],
+  "clinicalImportance": {
+    "diseases": [
+      "Erythema infectiosum (fifth disease)",
+      "Transient aplastic crisis (in chronic hemolytic anemia)",
+      "Fetal hydrops/fetal loss (in utero infection)",
+      "Arthropathy (especially in adults)",
+      "Chronic pure red cell aplasia (in immunocompromised patients)"
+    ],
+    "transmission": "Respiratory droplets, blood/blood products, and vertical (mother-to-fetus) transmission",
+    "epidemiology": "Common childhood infection with seasonal outbreaks, especially in schools; a well-recognized cause of complications in pregnancy and hemolytic anemia",
+    "labSignificance": "Serology (IgM for recent infection, IgG for past exposure) or PCR is used since it cannot be cultured by standard methods"
+  },
+  "examFacts": {
+    "keyBiochemicalReaction": "Not applicable — diagnosed by serology/PCR",
+    "importantDisease": "Fifth disease (erythema infectiosum); aplastic crisis in hemolytic anemia; fetal hydrops",
+    "importantTest": "Serology (IgM/IgG) or PCR",
+    "distinguishingFeature": "One of the smallest human viruses; directly attacks erythroid precursors, causing 'slapped cheek' rash and dangerous aplastic crises in susceptible hosts"
+  },
+  "sources": [
+    {
+      "name": "CDC — Parvovirus B19 (Fifth Disease)",
+      "kind": "educational",
+      "url": "https://www.cdc.gov/parvovirus-b19/"
+    }
+  ]
+}
