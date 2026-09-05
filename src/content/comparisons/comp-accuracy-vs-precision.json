@@ -1,0 +1,51 @@
+{
+  "id": "comp-accuracy-vs-precision",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "lab-technique",
+    "scientific-method",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Accuracy"
+  },
+  "itemB": {
+    "name": "Precision"
+  },
+  "overview": "Two different qualities of a measurement — one is about being close to the true value, the other about being consistent.",
+  "genZNote": "Accuracy: hitting the bullseye. Precision: hitting the same spot every time, bullseye or not.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "How close a measured value is to the true or accepted value.",
+      "valueB": "How close repeated measurements are to each other, regardless of the true value.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "independence",
+      "label": "Can You Have One Without the Other?",
+      "valueA": "Yes — you can be accurate on average but inconsistent (low precision).",
+      "valueB": "Yes — you can be very precise but consistently wrong (systematic error, low accuracy).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "A scale that reads 50.0g, 50.1g, 49.9g for a known 50g weight — accurate.",
+      "valueB": "A scale that reads 52.0g, 52.1g, 52.0g for a known 50g weight — precise but not accurate.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A classic viva question uses a dartboard analogy: accurate-and-precise hits the bullseye tightly; precise-but-not-accurate clusters tightly off-centre.",
+    "memoryTrick": "Accuracy = correctness. Precision = consistency.",
+    "commonMisconception": "High precision does not guarantee high accuracy — a consistently miscalibrated instrument gives precise but inaccurate readings."
+  },
+  "lastVerified": "2026-09-05"
+}

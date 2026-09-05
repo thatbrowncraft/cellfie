@@ -1,0 +1,50 @@
+{
+  "id": "comp-amino-acid-vs-protein",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Amino Acid"
+  },
+  "itemB": {
+    "name": "Protein"
+  },
+  "overview": "An amino acid is a single building block; a protein is the large, folded molecule built by linking many of them together.",
+  "genZNote": "Amino acid is one Lego brick. Protein is the finished Lego castle.",
+  "aspects": [
+    {
+      "id": "unit-vs-polymer",
+      "label": "Unit vs Polymer",
+      "valueA": "A single monomer unit containing an amino group, carboxyl group, and side chain (R group).",
+      "valueB": "A polymer of many amino acids joined by peptide bonds, folded into a specific 3D structure.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "number-of-types",
+      "label": "Diversity",
+      "valueA": "20 standard types found in proteins.",
+      "valueB": "Virtually unlimited combinations, since sequence and folding create huge structural diversity.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "function",
+      "label": "Function",
+      "valueA": "Serves as the raw material and, individually, as some signalling molecules or neurotransmitter precursors.",
+      "valueB": "Performs the actual biological function: catalysis, structure, transport, defence, etc.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "A protein's specific function depends on its 3D folded shape, which is ultimately dictated by its amino acid sequence.",
+    "memoryTrick": "Amino acids are letters; a protein is the whole sentence they spell out.",
+    "commonMisconception": "A chain of amino acids is not automatically a functional protein — it must fold correctly into its native 3D shape first."
+  },
+  "lastVerified": "2026-09-05"
+}

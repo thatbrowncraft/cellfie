@@ -1,0 +1,49 @@
+{
+  "id": "comp-apoenzyme-vs-holoenzyme",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry"
+  ],
+  "itemA": {
+    "name": "Apoenzyme"
+  },
+  "itemB": {
+    "name": "Holoenzyme"
+  },
+  "overview": "An apoenzyme is the inactive protein part alone; a holoenzyme is the complete, catalytically active enzyme with its cofactor attached.",
+  "genZNote": "Apoenzyme: the engine without fuel. Holoenzyme: engine plus fuel, ready to actually run.",
+  "aspects": [
+    {
+      "id": "activity",
+      "label": "Catalytic Activity",
+      "valueA": "Inactive on its own — the protein component alone.",
+      "valueB": "Fully active — the complete functional enzyme.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "composition",
+      "label": "Composition",
+      "valueA": "Protein portion only, lacking its non-protein cofactor/coenzyme.",
+      "valueB": "Apoenzyme + cofactor (or coenzyme) bound together.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Inactive carbonic anhydrase without its zinc ion.",
+      "valueB": "Carbonic anhydrase with its zinc ion bound, fully functional.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Holoenzyme = Apoenzyme + Cofactor is a direct, exam-friendly equation.",
+    "memoryTrick": "Holo = 'whole' — the complete, working enzyme.",
+    "commonMisconception": "An apoenzyme is not a different enzyme — it's the same protein, just missing its essential non-protein partner."
+  },
+  "lastVerified": "2026-09-05"
+}

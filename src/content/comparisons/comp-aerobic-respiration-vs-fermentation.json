@@ -1,0 +1,57 @@
+{
+  "id": "comp-aerobic-respiration-vs-fermentation",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Aerobic Respiration"
+  },
+  "itemB": {
+    "name": "Fermentation"
+  },
+  "overview": "Both extract energy from glucose, but only one uses oxygen and produces far more ATP.",
+  "genZNote": "Aerobic respiration is the full-fat energy plan with oxygen. Fermentation is the emergency backup plan when oxygen isn't around.",
+  "aspects": [
+    {
+      "id": "oxygen",
+      "label": "Oxygen Required?",
+      "valueA": "Yes, oxygen is the final electron acceptor.",
+      "valueB": "No, occurs without oxygen (anaerobic).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "atp-yield",
+      "label": "ATP Yield per Glucose",
+      "valueA": "About 36-38 ATP per glucose molecule.",
+      "valueB": "Only 2 ATP per glucose molecule (from glycolysis alone).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "end-product",
+      "label": "End Products",
+      "valueA": "Carbon dioxide and water.",
+      "valueB": "Lactic acid (in muscle/animal cells) or ethanol + CO2 (in yeast).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "location",
+      "label": "Cellular Location",
+      "valueA": "Glycolysis in cytoplasm; Krebs cycle and ETC in mitochondria.",
+      "valueB": "Occurs entirely in the cytoplasm.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Fermentation's low ATP yield is exactly why intense anaerobic exercise causes rapid muscle fatigue via lactic acid buildup.",
+    "memoryTrick": "Aerobic = 'air', needs oxygen, big ATP payout. Fermentation = no air, quick but tiny payout.",
+    "commonMisconception": "Fermentation is not simply 'anaerobic respiration' in the strict sense used in some syllabi — some define anaerobic respiration as using an alternate inorganic final electron acceptor, distinct from fermentation."
+  },
+  "lastVerified": "2026-09-05"
+}

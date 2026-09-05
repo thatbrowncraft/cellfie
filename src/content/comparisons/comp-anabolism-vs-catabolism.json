@@ -1,0 +1,50 @@
+{
+  "id": "comp-anabolism-vs-catabolism",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "biochemistry",
+    "ncert"
+  ],
+  "itemA": {
+    "name": "Anabolism"
+  },
+  "itemB": {
+    "name": "Catabolism"
+  },
+  "overview": "The two opposite arms of metabolism, one building complex molecules and the other breaking them down.",
+  "genZNote": "Anabolism: construction crew, building things up. Catabolism: demolition crew, tearing things down for parts and energy.",
+  "aspects": [
+    {
+      "id": "direction",
+      "label": "Direction of Reactions",
+      "valueA": "Builds larger, complex molecules from simpler ones.",
+      "valueB": "Breaks down larger, complex molecules into simpler ones.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "energy-change",
+      "label": "Energy Change",
+      "valueA": "Requires energy input (endergonic).",
+      "valueB": "Releases energy (exergonic).",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Protein synthesis from amino acids; photosynthesis.",
+      "valueB": "Cellular respiration breaking down glucose; digestion of food.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Metabolism as a whole is the sum of all anabolic and catabolic reactions happening in an organism at once.",
+    "memoryTrick": "Anabolism 'builds up' (think 'a-NA-bolism' sounds like adding). Catabolism 'breaks down' (think 'cata-strophe').",
+    "commonMisconception": "Anabolic and catabolic pathways for the same molecule (like glucose synthesis vs breakdown) are usually not simply the reverse of each other — they typically use different enzymes and steps to allow independent regulation."
+  },
+  "lastVerified": "2026-09-05"
+}

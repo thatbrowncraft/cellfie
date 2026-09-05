@@ -1,0 +1,57 @@
+{
+  "id": "comp-apoptosis-vs-necrosis",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "cell-biology",
+    "physiology"
+  ],
+  "itemA": {
+    "name": "Apoptosis"
+  },
+  "itemB": {
+    "name": "Necrosis"
+  },
+  "overview": "Both end in cell death, but one is a controlled, programmed process and the other is uncontrolled damage.",
+  "genZNote": "Apoptosis: the cell politely clocks out on schedule. Necrosis: the cell gets hit by a truck.",
+  "aspects": [
+    {
+      "id": "nature",
+      "label": "Nature of the Process",
+      "valueA": "Programmed, genetically regulated cell death ('cell suicide').",
+      "valueB": "Unplanned cell death caused by injury, infection, or lack of blood supply.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "inflammation",
+      "label": "Inflammatory Response",
+      "valueA": "No inflammation — cell contents are neatly packaged into apoptotic bodies and cleared by phagocytes.",
+      "valueB": "Causes inflammation, since cell contents leak out and damage surrounding tissue.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "energy-requirement",
+      "label": "Energy Requirement",
+      "valueA": "Requires ATP — it's an active, energy-consuming process.",
+      "valueB": "Passive process, can occur even without ATP.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "trigger",
+      "label": "Typical Trigger",
+      "valueA": "Normal development (e.g. loss of tail in tadpoles), damaged/unneeded cells, immune regulation.",
+      "valueB": "Trauma, toxins, infection, or ischemia (loss of blood supply).",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Apoptosis is essential in normal development, such as the removal of webbing between fingers in a human embryo.",
+    "memoryTrick": "Apoptosis = tidy, planned. Necrosis = messy, accidental.",
+    "commonMisconception": "Apoptosis is not 'a type of necrosis' or vice versa — they are mechanistically distinct pathways with opposite effects on surrounding tissue."
+  },
+  "lastVerified": "2026-09-05"
+}

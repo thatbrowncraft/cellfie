@@ -1,0 +1,56 @@
+{
+  "id": "comp-aneuploidy-vs-polyploidy",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "less-common",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "genetics"
+  ],
+  "itemA": {
+    "name": "Aneuploidy"
+  },
+  "itemB": {
+    "name": "Polyploidy"
+  },
+  "overview": "Both are abnormal chromosome numbers, but aneuploidy changes individual chromosomes while polyploidy multiplies whole chromosome sets.",
+  "genZNote": "Aneuploidy: one chromosome shows up uninvited or ghosts the party. Polyploidy: the whole squad multiplied.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Gain or loss of one or a few individual chromosomes from the normal diploid number.",
+      "valueB": "Gain of one or more complete extra sets of chromosomes (3n, 4n, etc.).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "cause",
+      "label": "Cause",
+      "valueA": "Nondisjunction — failure of chromosomes to separate properly during meiosis or mitosis.",
+      "valueB": "Failure of cytokinesis after chromosome duplication, or fusion of unreduced gametes.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Down syndrome (trisomy 21, 2n+1).",
+      "valueB": "Triploid (3n) watermelons, many polyploid crop plants like wheat.",
+      "isKeyDifference": false
+    },
+    {
+      "id": "occurrence",
+      "label": "Common In",
+      "valueA": "Well documented and often serious in animals/humans.",
+      "valueB": "Very common and often beneficial in plants; rare and usually lethal in animals.",
+      "isKeyDifference": false
+    }
+  ],
+  "overlay": {
+    "examHighYieldNote": "Down syndrome (trisomy 21) is the classic human aneuploidy example tested repeatedly in NEET.",
+    "memoryTrick": "Aneuploidy = a few chromosomes off. Polyploidy = whole extra sets.",
+    "commonMisconception": "Polyploidy is not automatically harmful — in plants it's often associated with larger size and hybrid vigour."
+  },
+  "lastVerified": "2026-09-05"
+}
