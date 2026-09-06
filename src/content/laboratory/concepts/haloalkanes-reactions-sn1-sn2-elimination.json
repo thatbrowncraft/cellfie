@@ -22,7 +22,9 @@
   ],
   "difficulty": "advanced",
   "subjectDomain": "chemistry",
-  "relatedConcepts": [],
+  "relatedConcepts": [
+    "concept-organic-nomenclature-and-electronic-effects"
+  ],
   "relatedFormulas": [
     "formula-empirical-and-molecular-formula"
   ],

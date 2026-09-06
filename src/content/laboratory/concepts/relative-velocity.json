@@ -1,0 +1,41 @@
+{
+  "id": "concept-relative-velocity",
+  "category": "concept",
+  "title": "Relative Velocity",
+  "subcategory": "Motion in a Plane — Relative Velocity",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Motion in a Plane",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "relative velocity",
+    "rain-man problem",
+    "river-boat problem",
+    "vector subtraction"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-scalars-and-vectors",
+    "concept-projectile-motion"
+  ],
+  "relatedFormulas": [],
+  "summary": "Relative velocity of A with respect to B is the vector difference vA − vB — what an observer moving WITH B would measure A's velocity to be.",
+  "explanation": "Velocity is always measured relative to some frame of reference; when two objects A and B are both moving, the velocity of A AS SEEN BY an observer moving with B (relative velocity of A with respect to B) is vAB = vA − vB, a VECTOR subtraction, not a scalar one. This single idea solves two classic NCERT problem types: the 'rain-man' problem (a person walking in rain must tilt their umbrella along the direction of the rain's velocity RELATIVE to themselves, vrain,man = vrain − vman, not along the rain's velocity relative to the ground), and the 'river-boat' problem (a boat crossing a river experiences a resultant velocity that is the vector sum of its own velocity relative to water and the water's velocity relative to the ground; to cross in minimum time, point the boat straight across, but to reach directly opposite the starting point, angle the boat upstream to cancel the current's drift). For two objects moving in the SAME direction, relative velocity is the straightforward difference of their speeds; for objects moving toward each other (opposite directions), relative velocity is the SUM of their speeds — a common exam distinction between 'approaching' and 'receding' cases. Relative velocity calculations reduce to ordinary vector addition/subtraction (using components along perpendicular axes when the two velocities aren't collinear), and are foundational for understanding both classical mechanics problems and, in modified form, the starting point for special relativity (where the simple vector-subtraction rule needs correction at speeds approaching light speed, a topic beyond NCERT Class 11).",
+  "commonMisconceptions": [
+    "Assuming relative velocity is found by simply subtracting speeds (magnitudes) regardless of direction — it is a full VECTOR subtraction; if the velocities aren't collinear, components must be resolved along perpendicular axes first.",
+    "In the umbrella/rain problem, tilting the umbrella along the rain's velocity relative to the GROUND rather than relative to the WALKING PERSON — the umbrella must be tilted along vrain,man, the rain's velocity as experienced by the moving person.",
+    "Believing 'minimum time to cross a river' and 'shortest path across a river' require the same boat heading — minimum TIME is achieved by pointing straight across (regardless of drift), while reaching directly opposite (shortest PATH) requires angling upstream to cancel the current."
+  ],
+  "examples": [
+    "A person walking at 4 km/h in rain falling vertically at 3 km/h must tilt their umbrella forward, in the direction of the rain's velocity relative to themselves (a vector combination of the two).",
+    "Two trains moving toward each other at 60 km/h and 40 km/h approach each other at a relative velocity of 100 km/h (speeds add since directions are opposite)."
+  ],
+  "genZNote": "Relative velocity is just view from someone else's seat — subtract their motion, see what's left."
+}

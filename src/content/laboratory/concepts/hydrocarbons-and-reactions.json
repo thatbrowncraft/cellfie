@@ -23,7 +23,8 @@
   "difficulty": "intermediate",
   "subjectDomain": "chemistry",
   "relatedConcepts": [
-    "concept-isomerism"
+    "concept-isomerism",
+    "concept-organic-nomenclature-and-electronic-effects"
   ],
   "relatedFormulas": [],
   "summary": "Alkanes (single bonds, saturated, relatively unreactive) undergo free-radical substitution; alkenes and alkynes (containing reactive π bonds) undergo addition reactions following Markovnikov's rule; and aromatic (benzene-type) compounds, despite unsaturation, preferentially undergo substitution due to their special ring stability.",

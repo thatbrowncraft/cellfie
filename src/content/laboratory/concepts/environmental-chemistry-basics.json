@@ -1,0 +1,41 @@
+{
+  "id": "concept-environmental-chemistry-basics",
+  "category": "concept",
+  "title": "Environmental Chemistry: Air, Water and Soil Pollution",
+  "subcategory": "Environmental Chemistry — Atmospheric Pollution, Water Pollution, Green Chemistry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 11 — Environmental Chemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "photochemical smog",
+    "greenhouse effect",
+    "BOD",
+    "eutrophication",
+    "green chemistry"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-redox-reactions"
+  ],
+  "relatedFormulas": [],
+  "summary": "Environmental chemistry studies how human activity introduces pollutants into air, water, and soil, and the resulting chemical processes (like photochemical smog formation or eutrophication) — with green chemistry offering a proactive, prevention-based alternative to end-of-pipe pollution control.",
+  "explanation": "TROPOSPHERIC (ground-level) pollution includes both GASEOUS pollutants (CO, SO₂, NOx, hydrocarbons, released mainly from vehicle exhaust and industrial combustion) and PARTICULATE matter; the GREENHOUSE EFFECT is the natural (and human-enhanced) trapping of infrared radiation by certain atmospheric gases (CO₂, CH₄, water vapour, and others) that absorb and re-radiate heat, keeping Earth's surface warmer than it would otherwise be — human activity (fossil fuel burning, deforestation) has significantly increased greenhouse gas concentrations, intensifying this natural effect (global warming). PHOTOCHEMICAL SMOG forms in sunlight through a complex series of reactions among nitrogen oxides (NOx) and unburnt hydrocarbons from vehicle exhaust, ultimately producing secondary pollutants including ozone (at ground level, harmful — distinct from the beneficial STRATOSPHERIC ozone layer, which absorbs harmful UV radiation) and peroxyacetyl nitrate (PAN), causing eye/respiratory irritation — this is chemically and mechanistically distinct from CLASSICAL (London-type/reducing) smog, which forms from smoke and SO₂ combined with fog in cold, humid conditions. STRATOSPHERIC OZONE DEPLETION is caused primarily by chlorofluorocarbons (CFCs, once widely used as refrigerants/propellants) which, upon reaching the stratosphere and being broken down by UV radiation, release chlorine radicals that catalytically destroy ozone molecules in a chain reaction (one chlorine atom can destroy many thousands of ozone molecules before being deactivated) — a fundamentally different process and concern from ground-level ozone pollution, despite both involving the same molecule. Water quality is commonly assessed using BIOCHEMICAL OXYGEN DEMAND (BOD) — the amount of oxygen required by microorganisms to biologically decompose organic matter in a water sample; a HIGH BOD indicates HEAVILY polluted water (more organic matter present, consuming more dissolved oxygen, potentially leaving too little oxygen for aquatic life). EUTROPHICATION is the excessive nutrient enrichment (especially nitrates/phosphates from agricultural runoff) of a water body, causing excessive algal growth that eventually depletes dissolved oxygen as the algae die and decompose, harming aquatic ecosystems. GREEN CHEMISTRY is a PREVENTIVE approach — designing chemical products/processes that reduce or eliminate the use/generation of hazardous substances from the very start (e.g., using safer solvents, catalytic rather than stoichiometric reagents, or biodegradable products), rather than treating pollution only after it has already been generated (the traditional 'end-of-pipe' control approach).",
+  "commonMisconceptions": [
+    "Confusing beneficial STRATOSPHERIC ozone (which protects against harmful UV radiation and whose depletion is a serious environmental concern) with harmful GROUND-LEVEL (tropospheric) ozone (a pollutant and component of photochemical smog) — same molecule, but entirely different location, source, and effect on health/environment.",
+    "Assuming HIGH BOD indicates CLEAN water — the opposite is true: a high BOD means a large amount of oxygen-demanding organic matter is present, indicating heavily polluted water, since more oxygen is being consumed by decomposer microorganisms.",
+    "Treating green chemistry as simply 'cleaning up pollution after it happens' — its defining principle is PREVENTION: designing processes from the outset to avoid generating hazardous waste at all, rather than just treating or removing pollutants after they've already been produced."
+  ],
+  "examples": [
+    "Photochemical smog, common in sunny, traffic-heavy cities, forms through sunlight-driven reactions of vehicle exhaust NOx and hydrocarbons, producing ground-level ozone and eye-irritating PAN.",
+    "Excess fertiliser runoff into a lake causes eutrophication: rapid algal bloom growth, followed by oxygen depletion as the algae die and decompose, harming fish and other aquatic life."
+  ],
+  "genZNote": "High BOD = bad news for the water — more organic junk means more oxygen getting used up."
+}

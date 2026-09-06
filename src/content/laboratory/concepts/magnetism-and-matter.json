@@ -1,0 +1,41 @@
+{
+  "id": "concept-magnetism-and-matter",
+  "category": "concept",
+  "title": "Magnetism and Matter: Bar Magnets and Magnetic Materials",
+  "subcategory": "Magnetism and Matter — Bar Magnet, Dia/Para/Ferromagnetism, Hysteresis",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Magnetism and Matter",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "magnetic dipole moment",
+    "diamagnetism",
+    "paramagnetism",
+    "ferromagnetism",
+    "hysteresis loop"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-magnetic-effects-of-current"
+  ],
+  "relatedFormulas": [],
+  "summary": "A bar magnet behaves like a magnetic dipole with a characteristic dipole moment; materials are classified as diamagnetic, paramagnetic, or ferromagnetic based on how their internal atomic magnetic moments respond to an external field.",
+  "explanation": "A bar magnet's magnetic field pattern closely resembles that of a solenoid or an equivalent magnetic dipole, characterised by a magnetic dipole moment m (pointing from south to north pole inside the magnet); like an electric dipole in an electric field, a bar magnet in an external magnetic field experiences zero net force (if the field is uniform) but a torque τ = m × B that tends to align it with the field — the working principle of a compass needle. DIAMAGNETIC materials (e.g. bismuth, copper, water) have atoms with NO net magnetic dipole moment on their own; when placed in an external field, they develop a small INDUCED moment OPPOSING the field (very weak repulsion), and they are weakly repelled by strong magnets — this property is temperature-independent. PARAMAGNETIC materials (e.g. aluminium, sodium, oxygen) have atoms with a small net magnetic moment due to unpaired electrons, but these moments are randomly oriented by thermal agitation in the absence of a field; an external field partially aligns them, causing weak ATTRACTION toward stronger field regions — susceptibility DECREASES with increasing temperature (Curie's law), since more thermal agitation disrupts alignment. FERROMAGNETIC materials (iron, cobalt, nickel) have strong, permanent atomic magnetic moments that spontaneously align in small regions called DOMAINS, even without an external field; an applied field causes domain alignment/growth, producing very strong magnetisation — above a critical temperature (the Curie temperature), thermal agitation destroys this domain structure and the material behaves merely paramagnetically. A ferromagnetic material's magnetisation lags behind the applied field as the field is cycled up and down, tracing out a HYSTERESIS LOOP; the area enclosed represents energy dissipated as heat per cycle — materials with a 'soft' (narrow) hysteresis loop and low retentivity (like soft iron) are preferred for electromagnets/transformer cores (low energy loss per cycle), while materials with a 'hard' (wide) loop and high retentivity (like steel/alnico) are preferred for permanent magnets (retain magnetisation strongly once magnetised).",
+  "commonMisconceptions": [
+    "Assuming all materials are either strongly magnetic or non-magnetic — most materials are weakly diamagnetic or paramagnetic, with only a few (iron, cobalt, nickel and some alloys) showing strong ferromagnetic behaviour.",
+    "Believing paramagnetic susceptibility is temperature-independent like diamagnetism — paramagnetic susceptibility specifically DECREASES with rising temperature (Curie's law), since thermal motion increasingly disrupts moment alignment; diamagnetism, in contrast, does not depend on temperature.",
+    "Choosing a 'hard' ferromagnetic material for an electromagnet core, or a 'soft' one for a permanent magnet — these choices are exactly backwards: soft magnetic materials suit temporary/AC applications (electromagnets, transformers) due to low hysteresis loss, while hard materials suit permanent magnets due to high retentivity."
+  ],
+  "examples": [
+    "A compass needle (a small permanent magnet) aligns with Earth's magnetic field due to the torque experienced by its magnetic dipole moment.",
+    "Soft iron is used in transformer cores (needs frequent, easy magnetisation reversal with low energy loss), while steel is preferred for making permanent bar magnets (retains magnetisation well after the external field is removed)."
+  ],
+  "genZNote": "Ferromagnetic domains: tiny magnetic cliques that all align once you apply enough peer pressure (a field)."
+}

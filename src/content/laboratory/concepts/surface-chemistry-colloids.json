@@ -1,0 +1,41 @@
+{
+  "id": "concept-surface-chemistry-colloids",
+  "category": "concept",
+  "title": "Surface Chemistry: Colloids and Their Properties",
+  "subcategory": "Surface Chemistry — Colloidal State, Tyndall Effect, Coagulation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Surface Chemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "colloid",
+    "Tyndall effect",
+    "Brownian motion",
+    "coagulation",
+    "emulsion"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-adsorption-types"
+  ],
+  "relatedFormulas": [],
+  "summary": "A colloid is an intermediate state between a true solution and a suspension, with particle sizes small enough to stay dispersed indefinitely (unlike a suspension) yet large enough to scatter light and be distinguished from a true solution (via the Tyndall effect).",
+  "explanation": "A colloidal system has dispersed particle size roughly between 1 nm and 1000 nm — larger than a true solution's particles (which are single ions/molecules, too small to scatter visible light) but smaller than a suspension's particles (which are large enough to settle out under gravity over time). This intermediate size is exactly why colloids show the TYNDALL EFFECT (visible scattering of a light beam passed through them, since particles are comparable in size to the wavelength of visible light) while true solutions do not (particles far too small to scatter light noticeably). Colloidal particles exhibit continuous, random, zig-zag motion called BROWNIAN MOTION, caused by the random, unequal bombardment of colloidal particles by the (much smaller, faster-moving) molecules of the dispersion medium from different sides at different times — this random motion is precisely what keeps colloidal particles permanently SUSPENDED (counteracting the pull of gravity that would otherwise cause them to settle, unlike a true suspension's larger particles). Colloids are classified by the physical states of the dispersed phase and dispersion medium: common examples include SOL (solid dispersed in liquid, e.g. paint), EMULSION (liquid dispersed in liquid, e.g. milk), FOAM (gas dispersed in liquid, e.g. shaving foam), and AEROSOL (solid or liquid dispersed in gas, e.g. fog, smoke) — each combination has a specific name. COAGULATION (or flocculation) is the process by which colloidal particles aggregate and settle out, typically caused by adding an electrolyte that neutralises the charge stabilising the colloidal particles (colloidal particles of the SAME type usually carry a similar, mutually-repelling charge, which is what normally keeps them from clumping together) — the HARDY-SCHULZE rule states that the coagulating power of an ion increases sharply with its CHARGE (a trivalent ion coagulates a colloid far more effectively than a monovalent ion of similar concentration). PROTECTIVE COLLOIDS (like gelatin) can be added to a lyophobic (solvent-hating, less stable) colloid to increase its stability, by coating the lyophobic particles with a protective lyophilic (solvent-loving) layer — this principle, quantified by the 'gold number', is used practically to stabilise various colloidal formulations, including in food and pharmaceutical products.",
+  "commonMisconceptions": [
+    "Assuming colloidal particles eventually settle out under gravity like a suspension's particles do — Brownian motion (constant random bombardment by solvent molecules) keeps colloidal particles genuinely suspended indefinitely under normal conditions, a key distinguishing feature from a true suspension.",
+    "Believing a true solution also shows the Tyndall effect — true solutions have particles far too small (single ions/molecules) to scatter visible light noticeably; the Tyndall effect is specifically diagnostic of the intermediate colloidal particle size range.",
+    "Assuming any electrolyte coagulates a colloid equally well regardless of its ionic charge — per the Hardy-Schulze rule, coagulating power increases sharply (not just modestly) with increasing ionic charge, so a small amount of a highly charged ion can be far more effective than a larger amount of a singly charged one."
+  ],
+  "examples": [
+    "A beam of light passed through milk (a colloid) is clearly visible from the side due to scattering (Tyndall effect), while the same beam passed through sugar solution (a true solution) is not visible.",
+    "Adding an electrolyte solution to a colloidal suspension of a precipitate (like As₂S₃ sol, which is negatively charged) causes coagulation, with trivalent cations like Al³⁺ coagulating it far more effectively than monovalent Na⁺, per the Hardy-Schulze rule."
+  ],
+  "genZNote": "Brownian motion: colloidal particles staying suspended purely by getting bumped around nonstop."
+}

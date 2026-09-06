@@ -1,0 +1,42 @@
+{
+  "id": "concept-cyclotron-and-mass-spectrometer",
+  "category": "concept",
+  "title": "Cyclotron and Mass Spectrometer",
+  "subcategory": "Moving Charges and Magnetism — Applications of Magnetic Force",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Moving Charges and Magnetism",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "cyclotron",
+    "mass spectrometer",
+    "velocity selector",
+    "cyclotron frequency"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-magnetic-effects-of-current"
+  ],
+  "relatedFormulas": [
+    "formula-biot-savart-law"
+  ],
+  "summary": "Both devices exploit the fact that a charged particle moving perpendicular to a magnetic field follows a circular path — a cyclotron uses this to progressively accelerate particles to high energy, while a mass spectrometer uses it to separate/identify particles by their mass-to-charge ratio.",
+  "explanation": "A charged particle moving perpendicular to a uniform magnetic field experiences a magnetic force that is always perpendicular to its velocity, causing it to move in a CIRCULAR path with radius r = mv/qB — this radius depends on the particle's mass, speed, and charge, as well as the field strength, a relationship both devices exploit for very different purposes. A CYCLOTRON uses this circular motion together with an alternating electric field applied across a small gap between two D-shaped electrodes ('dees'): the particle is accelerated each time it crosses the gap, spiralling outward to a larger radius as its speed increases, while a magnetic field keeps it curving back for another pass. Remarkably, the TIME for one full revolution stays constant even as speed and radius both increase (since r/v = m/qB is independent of v at non-relativistic speeds) — this is exactly why a FIXED-frequency alternating voltage can keep re-accelerating the particle correctly on every pass, without needing continuous adjustment. A cyclotron cannot accelerate particles to very high (relativistic) speeds, since relativistic mass increase eventually breaks the fixed-frequency assumption. A MASS SPECTROMETER uses a VELOCITY SELECTOR (crossed, perpendicular electric and magnetic fields, letting only particles of one specific velocity pass through undeflected, where qE = qvB) followed by a region with only a magnetic field, where particles curve into a circular arc with radius r = mv/qB — since v, q, and B are now fixed/known, the radius (measured by where the particle strikes a detector) directly reveals the particle's MASS, making this a precise tool for measuring atomic/molecular masses and identifying isotopes. Both devices fundamentally rely on the SAME physics (F = qvB, circular motion), but use it in opposite ways: a cyclotron uses a KNOWN mass/charge to reach an UNKNOWN final energy/speed, while a mass spectrometer uses a KNOWN speed to determine an UNKNOWN mass.",
+  "commonMisconceptions": [
+    "Assuming a cyclotron continuously accelerates a particle in a straight line — the particle actually spirals OUTWARD in a series of circular arcs of increasing radius, gaining speed only during the brief straight-line crossings of the gap between the dees.",
+    "Believing the time period of a cyclotron's circular motion changes significantly as the particle speeds up — remarkably, at non-relativistic speeds, this time period stays CONSTANT (independent of speed), which is precisely what allows the fixed-frequency alternating voltage to work correctly throughout the acceleration process.",
+    "Confusing the role of the velocity selector in a mass spectrometer — it selects particles of ONE specific speed (not a specific mass or charge) to pass through undeflected, by balancing electric and magnetic forces exactly."
+  ],
+  "examples": [
+    "Cyclotrons are used in hospitals to produce radioactive isotopes for medical imaging and in physics research to generate high-energy particle beams.",
+    "A mass spectrometer can distinguish carbon-12 from carbon-14 (isotopes of the same element with different mass) because they curve into circular paths of measurably different radii under the same magnetic field."
+  ],
+  "genZNote": "Cyclotron: same time per lap no matter how fast you're going — that's the whole trick that makes it work."
+}

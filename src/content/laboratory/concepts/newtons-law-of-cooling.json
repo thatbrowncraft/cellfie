@@ -1,0 +1,39 @@
+{
+  "id": "concept-newtons-law-of-cooling",
+  "category": "concept",
+  "title": "Newton's Law of Cooling",
+  "subcategory": "Thermal Properties of Matter — Heat Transfer, Rate of Cooling",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Thermal Properties of Matter",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Newton's law of cooling",
+    "rate of cooling",
+    "temperature difference"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-thermal-expansion-and-calorimetry"
+  ],
+  "relatedFormulas": [],
+  "summary": "A hot body cools at a rate proportional to the temperature difference between itself and its surroundings — valid only for small temperature differences and for cooling primarily by conduction/convection into still air, not radiation-dominated cooling at large temperature differences.",
+  "explanation": "Newton's law of cooling states that the RATE of loss of heat (or temperature) of a body is directly proportional to the difference in temperature between the body and its surroundings: −dT/dt ∝ (T − Ts), where T is the body's temperature and Ts is the surrounding (ambient) temperature. This gives an EXPONENTIAL approach of the body's temperature toward the surrounding temperature over time — cooling is fast initially (large temperature difference) and slows progressively as the body's temperature nears that of its surroundings. This law is an APPROXIMATION, strictly valid only for SMALL temperature differences between the body and its surroundings, and specifically for heat loss by conduction and convection (natural, not forced) — for very large temperature differences, or where radiation dominates heat loss (as described by the more general Stefan-Boltzmann law, where radiated power depends on T⁴, not simply ΔT), Newton's law becomes noticeably inaccurate. A practical experimental application: plotting a graph of a cooling body's temperature (or log of temperature excess) against time gives a curve whose shape/slope can be used to determine the specific heat capacity of a liquid by comparing cooling rates of the liquid alone versus the liquid plus a calorimeter, under matched conditions. This is a genuinely different, simpler relationship than the full radiative heat transfer laws — students should be careful not to over-apply Newton's law of cooling to situations (like very hot objects cooling by radiation into a cold vacuum) where it was never intended to apply.",
+  "commonMisconceptions": [
+    "Applying Newton's law of cooling to situations with a LARGE temperature difference, or where radiation dominates — the law is only a good approximation for SMALL temperature differences and non-radiative heat loss; large differences require the more accurate Stefan-Boltzmann (T⁴) radiation law instead.",
+    "Assuming a hot body cools at a constant rate over time — cooling rate actually DECREASES continuously as the temperature difference shrinks, giving an exponential-decay-shaped cooling curve, not a straight line.",
+    "Believing the law directly gives the body's TEMPERATURE as a function of time in a simple linear form — the underlying differential relationship (rate proportional to temperature difference) integrates to an EXPONENTIAL function of time, not linear."
+  ],
+  "examples": [
+    "A cup of hot coffee cools quickly at first (large temperature difference from room temperature) and much more slowly as it approaches room temperature.",
+    "Comparing the cooling curves of water alone and water plus an unknown liquid (of equal volume, under identical conditions) lets the specific heat of the unknown liquid be calculated relative to water's known value."
+  ],
+  "genZNote": "Newton's law of cooling: the bigger the temperature gap, the faster you lose heat — then it tapers off."
+}

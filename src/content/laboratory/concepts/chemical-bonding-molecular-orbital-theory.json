@@ -1,0 +1,40 @@
+{
+  "id": "concept-chemical-bonding-molecular-orbital-theory",
+  "category": "concept",
+  "title": "Molecular Orbital Theory and Bond Order",
+  "subcategory": "Chemical Bonding and Molecular Structure — Molecular Orbital Theory, Bond Order, Magnetic Behaviour",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Chemical Bonding and Molecular Structure",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "molecular orbital theory",
+    "bond order",
+    "bonding and antibonding orbitals",
+    "paramagnetic oxygen"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-chemical-bonding-and-vsepr"
+  ],
+  "relatedFormulas": [],
+  "summary": "Molecular Orbital Theory treats bonding electrons as occupying orbitals belonging to the WHOLE molecule (not localised between two specific atoms as in valence bond theory), successfully explaining phenomena — like oxygen's paramagnetism — that simpler bonding theories cannot.",
+  "explanation": "Molecular Orbital (MO) Theory proposes that when atomic orbitals combine, they form new MOLECULAR orbitals belonging to the entire molecule, not to any single atom — combining two atomic orbitals always produces TWO molecular orbitals: a lower-energy BONDING molecular orbital (formed by constructive/in-phase overlap, concentrating electron density BETWEEN the nuclei, stabilising the molecule) and a higher-energy ANTIBONDING molecular orbital (formed by destructive/out-of-phase overlap, with a node of zero electron density between the nuclei, destabilising the molecule if occupied). Electrons fill these molecular orbitals following the same rules as atomic orbitals (Aufbau principle — lowest energy first, Pauli exclusion principle, Hund's rule for degenerate orbitals) — this MO electronic configuration directly determines BOND ORDER: Bond order = ½(number of electrons in bonding MOs − number of electrons in antibonding MOs). A bond order of 1 corresponds to a single bond, 2 to a double bond, 3 to a triple bond, and a bond order of ZERO means the molecule/species CANNOT exist (predicted to be unstable) — this is exactly how MO theory correctly predicts that He₂ does not exist (bond order calculates to zero), something simple valence bond theory struggles to explain cleanly. MO theory's most celebrated success is correctly predicting that molecular OXYGEN (O₂) is PARAMAGNETIC (weakly attracted into a magnetic field, due to unpaired electrons) — filling oxygen's molecular orbitals correctly places TWO unpaired electrons in a pair of degenerate antibonding π* orbitals (following Hund's rule), giving a bond order of 2 (consistent with the commonly drawn O=O double bond) while ALSO correctly predicting paramagnetism. Simple Lewis structure/valence bond theory (which draws O=O with all electrons neatly paired) completely fails to predict this experimentally observed paramagnetism, making it one of the clearest, most frequently cited pieces of evidence supporting MO theory over simpler bonding pictures. Higher bond order generally corresponds to SHORTER bond length and GREATER bond dissociation energy (a stronger bond) — this is a useful, generally reliable trend for comparing the relative bond strength/stability of related diatomic species using their calculated bond orders.",
+  "commonMisconceptions": [
+    "Assuming valence bond theory (with its simple Lewis dot structures) always correctly predicts a molecule's properties — it notably FAILS to predict the paramagnetism of O₂ (predicting it should be diamagnetic, with all electrons paired), a key situation where molecular orbital theory succeeds where simpler theories don't.",
+    "Believing a bond order of zero simply means a 'very weak bond' — it specifically means the corresponding molecule/species is predicted to be entirely UNSTABLE and generally does not exist (as with the hypothetical He₂ molecule).",
+    "Forgetting that combining N atomic orbitals ALWAYS produces exactly N molecular orbitals (conservation of total orbital count) — two atomic orbitals combining must give exactly two molecular orbitals (one bonding, one antibonding), never just one or three."
+  ],
+  "examples": [
+    "O₂ is experimentally observed to be paramagnetic (attracted weakly into a magnetic field, visible when liquid oxygen is poured near strong magnet poles) — correctly predicted by MO theory due to two unpaired electrons in antibonding π* orbitals.",
+    "He₂ does not exist as a stable molecule because MO theory calculates its bond order to be exactly zero (equal numbers of electrons in bonding and antibonding orbitals, cancelling any net stabilisation)."
+  ],
+  "genZNote": "MO theory called it: O₂ has unpaired electrons hiding in antibonding orbitals — that's the paramagnetism plot twist."
+}

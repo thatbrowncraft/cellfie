@@ -1,0 +1,41 @@
+{
+  "id": "concept-law-of-mass-action-and-equilibrium-constant",
+  "category": "concept",
+  "title": "Law of Mass Action and the Equilibrium Constant",
+  "subcategory": "Equilibrium — Law of Mass Action, Kc, Kp, Reaction Quotient",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Equilibrium",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "law of mass action",
+    "equilibrium constant Kc",
+    "Kp",
+    "reaction quotient Q"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-le-chateliers-principle",
+    "concept-ionic-equilibrium-and-buffers"
+  ],
+  "relatedFormulas": [],
+  "summary": "At chemical equilibrium, the ratio of product concentrations to reactant concentrations (each raised to its stoichiometric power) is a constant, Kc (or Kp for gases); comparing the reaction quotient Q to K at any point tells you which direction the reaction will shift to reach equilibrium.",
+  "explanation": "The law of mass action (as refined into the modern equilibrium law) states that for a reversible reaction aA + bB ⇌ cC + dD at equilibrium, the ratio Kc = [C]^c[D]^d / [A]^a[B]^b is CONSTANT at a given temperature, regardless of the initial amounts of reactants/products used to reach that equilibrium state — Kc depends ONLY on temperature, not on initial concentrations, pressure (for a fixed temperature), or the presence of a catalyst (a catalyst speeds up the approach to equilibrium but does NOT change the equilibrium position or the value of K itself). For reactions involving gases, Kp (using partial pressures instead of concentrations) is often more convenient; Kp and Kc are related by Kp = Kc(RT)^Δn, where Δn is the change in moles of GAS (moles of gaseous products minus moles of gaseous reactants) — when Δn = 0, Kp = Kc exactly. The REACTION QUOTIENT Q has the exact same mathematical form as K, but uses concentrations/pressures at ANY given moment (not necessarily at equilibrium) — comparing Q to K tells you the direction a reaction will shift: if Q < K, the reaction proceeds FORWARD (more products form) to reach equilibrium; if Q > K, the reaction proceeds in REVERSE; if Q = K, the system is already at equilibrium with no net shift. A LARGE value of K (K >> 1) indicates the equilibrium lies far toward PRODUCTS (reaction goes nearly to completion); a SMALL value of K (K << 1) indicates equilibrium lies far toward REACTANTS (reaction barely proceeds forward) — this single number, once known, immediately tells you the general extent to which a reaction will proceed, without needing to solve the full equilibrium problem. Pure solids and pure liquids are NOT included in the equilibrium constant expression at all (their 'concentration'/activity is treated as a constant, effectively 1, since it doesn't meaningfully change during the reaction) — only gases and solutes in solution appear in the K expression, a very commonly tested simplification.",
+  "commonMisconceptions": [
+    "Believing the equilibrium constant changes if you start with different initial amounts of reactants — K is a fixed value at a given TEMPERATURE only; different starting amounts will reach different equilibrium concentrations, but the RATIO (K) calculated from those equilibrium concentrations will always be the same.",
+    "Including pure solids or pure liquids in the equilibrium constant expression — these are correctly OMITTED from Kc/Kp expressions entirely, since their effective concentration/activity doesn't change during the reaction.",
+    "Assuming a catalyst changes the value of the equilibrium constant or shifts the equilibrium position — a catalyst only speeds up how QUICKLY equilibrium is reached (by lowering activation energy for both forward and reverse reactions equally), never changing the final equilibrium position or K value itself."
+  ],
+  "examples": [
+    "For N₂ + 3H₂ ⇌ 2NH₃ (Haber process), if Q calculated from current concentrations is less than the known Kc at that temperature, the reaction will proceed further in the forward direction to produce more ammonia.",
+    "A reaction with Kc = 10¹⁵ at a given temperature proceeds essentially to completion (equilibrium strongly favours products), while one with Kc = 10⁻¹⁵ barely proceeds forward at all (equilibrium strongly favours reactants)."
+  ],
+  "genZNote": "K doesn't care how you got there — same starting materials, different ratios, same K every time at that temperature."
+}
