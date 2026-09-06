@@ -7,6 +7,7 @@ import { ALL_ELEMENTS, searchElements } from '../../core/periodic-table/registry
 import { ELEMENT_FAMILIES, MNEMONICS, PERIODIC_TRENDS, QUICK_MODES } from '../../core/periodic-table/reference'
 import { PeriodicTableGrid } from './components/PeriodicTableGrid'
 import { FilterBar, FILTER_OPTIONS } from './components/FilterBar'
+import { MemoryTricksSection } from './components/MemoryTricksSection'
 
 type QuickModeId = (typeof QUICK_MODES)[number]['id'] | null
 
@@ -249,6 +250,8 @@ export function PeriodicTablePage() {
           </CardBody>
         </Card>
       )}
+
+      {!isSearching && !quickMode && <MemoryTricksSection />}
     </div>
   )
 }
