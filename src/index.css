@@ -100,6 +100,16 @@
 /* Theme switch itself animates surface/text tokens, per §11. */
 html {
   transition: background-color var(--motion-page) var(--motion-ease-standard);
+
+  /* Mobile WebKit (iOS Safari / installed PWA) silently boosts font-size
+     inside narrow multi-column flex/grid layouts ("text inflation"),
+     independent of any font-size we set in JS/Tailwind. In the Quick
+     Recall grid (2 cols on phones) this pushed prompt text taller than
+     its own card, spilling past the rounded border instead of wrapping
+     inside it. Locking the adjustment to 100% stops that inflation while
+     leaving explicit sizing (incl. Large Text Mode's 118% below) untouched. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
