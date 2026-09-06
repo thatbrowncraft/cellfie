@@ -104,3 +104,59 @@ export interface MnemonicEntry {
   sequence: string[]
   mnemonic: string
 }
+
+/**
+ * Memory Tricks feature (core/periodic-table/memoryTricks.ts) — extends
+ * the Trend Guide with a dedicated memorization system. Kept as its own
+ * set of small interfaces rather than overloading `MnemonicEntry`
+ * because a "chunk" carries a range + optional pattern/sound hints that
+ * a plain family/period mnemonic doesn't need.
+ */
+export interface MemoryChunk {
+  id: string
+  /** e.g. "Elements 1–10" */
+  label: string
+  /** Inclusive atomic-number range, e.g. [1, 10]. */
+  range: [number, number]
+  /** Symbols in atomic-number order for this chunk. */
+  symbols: string[]
+  /** One original mnemonic sentence covering every symbol above, in order. */
+  mnemonic: string
+  /** Optional short note on why this chunk trips students up. */
+  note?: string
+}
+
+export interface FamilyMemoryCard {
+  id: string
+  /** e.g. "Group 1 — Alkali Metals" */
+  label: string
+  symbols: string[]
+  names: string[]
+  atomicNumbers: number[]
+  mnemonic: string
+  patternHint: string
+}
+
+export interface PeriodMemoryCard {
+  period: number
+  /** Atomic-number range covered by this period. */
+  range: [number, number]
+  symbols: string[]
+  /** Where this period gets hard (e.g. "the 10-wide d-block in the middle"). */
+  difficultPart?: string
+  /** How to reconstruct/recall this period quickly. */
+  recallTrick: string
+}
+
+export interface DifficultSequence {
+  id: string
+  label: string
+  symbols: string[]
+  /** Why these get mixed up + how to tell them apart. */
+  hook: string
+}
+
+export interface TeacherTrickCard {
+  id: string
+  text: string
+}
