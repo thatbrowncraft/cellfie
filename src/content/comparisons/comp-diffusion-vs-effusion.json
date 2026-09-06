@@ -1,0 +1,44 @@
+{
+  "id": "comp-diffusion-vs-effusion",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "states-of-matter",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Diffusion"
+  },
+  "itemB": {
+    "name": "Effusion"
+  },
+  "overview": "Diffusion is the spontaneous mixing of gas molecules throughout available space; effusion is the escape of gas molecules through a tiny pinhole into a vacuum or lower-pressure region — both follow Graham's law, but they describe different physical situations.",
+  "genZNote": "Diffusion: gases mingling freely. Effusion: gas molecules sneaking out one tiny hole at a time.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Spontaneous mixing/spreading of gas molecules through another gas or space.",
+      "valueB": "Escape of gas molecules through a small opening (pinhole) into a vacuum or region of lower pressure.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "requires-hole",
+      "label": "Requires a Tiny Opening?",
+      "valueA": "No — occurs freely through available space.",
+      "valueB": "Yes — specifically occurs through a small pinhole/orifice."
+    },
+    {
+      "id": "graham-law",
+      "label": "Governing Law",
+      "valueA": "Graham's law of diffusion.",
+      "valueB": "Graham's law of effusion (same mathematical form)."
+    }
+  ],
+  "lastVerified": "2026-09-05",
+  "subjectDomain": "chemistry"
+}

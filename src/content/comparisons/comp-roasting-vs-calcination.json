@@ -1,0 +1,45 @@
+{
+  "id": "comp-roasting-vs-calcination",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "metallurgy",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Roasting"
+  },
+  "itemB": {
+    "name": "Calcination"
+  },
+  "overview": "Both convert an ore to its oxide by heating, but roasting uses excess air on a sulphide ore, while calcination uses limited/no air on a carbonate or hydroxide ore.",
+  "genZNote": "Roasting: sulphide ore meets excess air. Calcination: carbonate ore heated with the air kept out.",
+  "aspects": [
+    {
+      "id": "ore-type",
+      "label": "Type of Ore Used On",
+      "valueA": "Typically applied to sulphide ores.",
+      "valueB": "Typically applied to carbonate or hydroxide ores.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "atmosphere",
+      "label": "Atmosphere Used",
+      "valueA": "Heated in excess/presence of air (oxygen).",
+      "valueB": "Heated in limited air or in its absence.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "byproduct",
+      "label": "Gas Released",
+      "valueA": "Releases SO₂.",
+      "valueB": "Releases CO₂ (from carbonates) or water vapour (from hydroxides)."
+    }
+  ],
+  "lastVerified": "2026-09-05",
+  "subjectDomain": "chemistry"
+}
