@@ -22,6 +22,14 @@ import { ComparisonCard } from './components/ComparisonCard'
 type DiscoveryFilter = 'all' | ComparisonDomain
 type DifficultyFilter = 'all' | ComparisonDifficulty
 type FrequencyFilter = 'all' | ComparisonFrequency
+type SubjectFilter = 'all' | 'biology' | 'chemistry' | 'physics'
+
+const SUBJECT_FILTER_LABELS: Record<SubjectFilter, string> = {
+  all: 'All',
+  biology: 'Biology',
+  chemistry: 'Chemistry',
+  physics: 'Physics'
+}
 
 /**
  * The full curated comparison catalog (brief §26/§27) — everything the
@@ -51,6 +59,20 @@ export function ExploreComparisonsPage() {
     (searchParams.get('difficulty') as DifficultyFilter) ?? 'all'
   )
   const [frequencyFilter, setFrequencyFilter] = useState<FrequencyFilter>('all')
+  const [subjectFilter, setSubjectFilter] = useState<SubjectFilter>('all')
+
+  // subjectDomain (Physics/Chemistry expansion, subject-filter brief) is
+  // deliberately coarser than the existing `domain` field above — `domain`
+  // already splits biology into many specific values (bacteriology,
+  // virology, immunology, etc.), so it doubles as the de facto "Biology"
+  // filter today. This adds one quick toggle for Physics/Chemistry without
+  // touching the `domain` enum or any of the ~123 existing comparisons.
+  const subjectDomainById = useMemo(
+    () => new Map(ALL_CURATED_COMPARISONS.map((c) => [c.id, c.subjectDomain ?? 'biology'] as const)),
+    []
+  )
+  const availableSubjects = useMemo(() => new Set(subjectDomainById.values()), [subjectDomainById])
+  const showSubjectFilter = availableSubjects.size > 1
 
   const domainOptions = useMemo(() => {
     const domainsInUse = new Set(ALL_CURATED_COMPARISONS.map((c) => c.domain))
@@ -91,7 +113,8 @@ export function ExploreComparisonsPage() {
       .filter((hit) => domainFilter === 'all' || hit.domain === domainFilter)
       .filter((hit) => difficultyFilter === 'all' || hit.difficulty === difficultyFilter)
       .filter((hit) => frequencyFilter === 'all' || hit.frequency === frequencyFilter)
-  }, [query, domainFilter, difficultyFilter, frequencyFilter])
+      .filter((hit) => subjectFilter === 'all' || subjectDomainById.get(hit.id) === subjectFilter)
+  }, [query, domainFilter, difficultyFilter, frequencyFilter, subjectFilter, subjectDomainById])
 
   // PWA layout-isolation fix — was `flex-col sm:flex-row`; see
   // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
@@ -147,6 +170,27 @@ export function ExploreComparisonsPage() {
           className={dropdownWidthClass}
         />
       </div>
+
+      {showSubjectFilter && (
+        <div className="mb-6 flex flex-wrap gap-2">
+          {(['all', 'biology', 'chemistry', 'physics'] as SubjectFilter[])
+            .filter((f) => f === 'all' || availableSubjects.has(f))
+            .map((f) => (
+              <button
+                key={f}
+                type="button"
+                onClick={() => setSubjectFilter(f)}
+                className={`rounded-full border px-3 py-1.5 font-ui text-caption font-medium transition-colors ${
+                  subjectFilter === f
+                    ? 'border-olive bg-olive/10 text-olive'
+                    : 'border-border-strong bg-surface text-ink-secondary hover:border-olive hover:text-olive'
+                }`}
+              >
+                {SUBJECT_FILTER_LABELS[f]}
+              </button>
+            ))}
+        </div>
+      )}
 
       {results.length === 0 ? (
         <EmptyState title="Nothing matches" description="Try a different search term or domain, or start a custom comparison." />
