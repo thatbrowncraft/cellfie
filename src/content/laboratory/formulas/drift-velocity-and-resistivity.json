@@ -1,0 +1,75 @@
+{
+  "id": "formula-drift-velocity-and-resistivity",
+  "category": "formula",
+  "title": "Drift Velocity and Resistivity Relations",
+  "subcategory": "Current Electricity",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Current Electricity",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "drift velocity",
+    "current",
+    "resistivity",
+    "resistance"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-current-electricity-fundamentals"
+  ],
+  "relatedFormulas": [
+    "formula-ohms-law"
+  ],
+  "domain": "Current Electricity",
+  "expression": "I = nAqvd  ;  R = ρL/A  ;  ρ = ρ₀[1 + α(T−T₀)]",
+  "explanation": "Current in terms of microscopic quantities: I = nAqvd (n = free charge carrier density, A = cross-sectional area, q = charge per carrier, vd = drift velocity). Resistance R = ρL/A shows resistance depends on BOTH the intrinsic material property resistivity ρ AND the conductor's geometry (length, area), while ρ itself depends only on the material and temperature. For most metals, resistivity increases nearly linearly with temperature via the temperature coefficient α.",
+  "variables": [
+    {
+      "symbol": "I",
+      "meaning": "Current",
+      "unit": "A"
+    },
+    {
+      "symbol": "n",
+      "meaning": "Free charge carrier density",
+      "unit": "per m³"
+    },
+    {
+      "symbol": "A",
+      "meaning": "Cross-sectional area",
+      "unit": "m²"
+    },
+    {
+      "symbol": "vd",
+      "meaning": "Drift velocity",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "ρ",
+      "meaning": "Resistivity",
+      "unit": "Ω·m"
+    },
+    {
+      "symbol": "α",
+      "meaning": "Temperature coefficient of resistivity",
+      "unit": "per K"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A copper wire of resistivity 1.7×10⁻⁸ Ω·m, length 2 m, area 1×10⁻⁶ m².",
+    "substitution": "R = (1.7×10⁻⁸ × 2) / (1×10⁻⁶)",
+    "result": "R = 0.034 Ω"
+  },
+  "commonMistakes": [
+    "Confusing resistivity (material property, Ω·m) with resistance (depends on geometry too, Ω) — a very common source of error when a wire is reshaped/stretched.",
+    "Assuming resistivity always increases with temperature — this holds for metals, but semiconductors show the OPPOSITE trend (resistivity decreases with rising temperature)."
+  ],
+  "genZNote": "Resistivity is the material's personality trait; resistance also cares about its shape."
+}

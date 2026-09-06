@@ -1,0 +1,67 @@
+{
+  "id": "formula-shm-time-period",
+  "category": "formula",
+  "title": "Time Period in Simple Harmonic Motion (Spring and Pendulum)",
+  "subcategory": "Oscillations",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Oscillations",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "simple harmonic motion",
+    "spring time period",
+    "simple pendulum time period"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-simple-harmonic-motion"
+  ],
+  "relatedFormulas": [],
+  "domain": "Oscillations",
+  "expression": "Spring-mass: T = 2π√(m/k)  ;  Simple pendulum: T = 2π√(L/g)",
+  "explanation": "For a mass-spring system undergoing SHM, time period depends on mass m and spring constant k, but NOT on amplitude — a stiffer spring (larger k) or smaller mass gives a shorter period (faster oscillation). For a simple pendulum (small-angle approximation, θ < ~10°), time period depends on the pendulum's length L and local gravitational acceleration g, but NOT on the mass of the bob or the amplitude of swing (for small angles) — this independence from amplitude is the defining feature of isochronism in SHM.",
+  "variables": [
+    {
+      "symbol": "T",
+      "meaning": "Time period",
+      "unit": "s"
+    },
+    {
+      "symbol": "m",
+      "meaning": "Mass attached to spring",
+      "unit": "kg"
+    },
+    {
+      "symbol": "k",
+      "meaning": "Spring constant",
+      "unit": "N/m"
+    },
+    {
+      "symbol": "L",
+      "meaning": "Length of pendulum",
+      "unit": "m"
+    },
+    {
+      "symbol": "g",
+      "meaning": "Acceleration due to gravity",
+      "unit": "m/s²"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A simple pendulum of length 1 m on Earth (g ≈ 9.8 m/s²).",
+    "substitution": "T = 2π√(1/9.8)",
+    "result": "T ≈ 2.01 s"
+  },
+  "commonMistakes": [
+    "Assuming a heavier pendulum bob swings slower — pendulum time period is independent of the bob's mass entirely.",
+    "Applying the simple pendulum formula for large swing angles — the T = 2π√(L/g) formula is only accurate for the small-angle approximation (typically under about 10°)."
+  ],
+  "genZNote": "Pendulum period doesn't care about the bob's mass — length and gravity are the only ones calling the shots."
+}

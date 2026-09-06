@@ -51,5 +51,6 @@
   "commonMistakes": [
     "Using the SOLUTE's mole fraction instead of the SOLVENT's mole fraction directly in the P = x·P° formula.",
     "Applying ideal Raoult's law behavior to a solution known to deviate significantly (e.g. due to strong hydrogen bonding between different components)."
-  ]
+  ],
+  "genZNote": "Raoult's law: vapour pressure is just mole fraction calling the shots."
 }

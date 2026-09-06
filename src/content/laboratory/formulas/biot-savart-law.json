@@ -1,0 +1,67 @@
+{
+  "id": "formula-biot-savart-law",
+  "category": "formula",
+  "title": "Biot-Savart Law and Force on a Moving Charge",
+  "subcategory": "Magnetism",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Moving Charges and Magnetism",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Biot-Savart law",
+    "magnetic field due to current",
+    "Lorentz force"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-magnetic-effects-of-current"
+  ],
+  "relatedFormulas": [],
+  "domain": "Moving Charges and Magnetism",
+  "expression": "dB = (μ₀/4π)(I dl × r̂)/r²  ;  F = qvB sinθ (Lorentz magnetic force)",
+  "explanation": "The Biot-Savart law gives the magnetic field produced by a small current element, proportional to current and inversely proportional to the square of distance from the element, with direction perpendicular to both the current direction and the line to the field point (right-hand rule). The magnetic force on a moving charge, F = qvB sinθ, is zero if the charge is at rest or moving parallel to B, and maximum when moving perpendicular to B; being always perpendicular to velocity, this force does no work on the charge.",
+  "variables": [
+    {
+      "symbol": "dB",
+      "meaning": "Magnetic field due to a small current element",
+      "unit": "T"
+    },
+    {
+      "symbol": "μ₀",
+      "meaning": "Permeability of free space",
+      "unit": "T·m/A"
+    },
+    {
+      "symbol": "I dl",
+      "meaning": "Current element (current × small length vector)",
+      "unit": "A·m"
+    },
+    {
+      "symbol": "F",
+      "meaning": "Magnetic force on a moving charge",
+      "unit": "N"
+    },
+    {
+      "symbol": "q, v, B",
+      "meaning": "Charge, velocity, magnetic field magnitude",
+      "unit": "C, m/s, T"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A charge of 2 C moving at 3 m/s perpendicular to a 0.5 T magnetic field.",
+    "substitution": "F = 2 × 3 × 0.5 × sin90°",
+    "result": "F = 3 N"
+  },
+  "commonMistakes": [
+    "Forgetting the sinθ factor — magnetic force is zero when velocity is parallel to B, a frequently tested special case.",
+    "Assuming magnetic force can change a charge's speed — it is always perpendicular to velocity, does zero work, and only changes direction, never speed."
+  ],
+  "genZNote": "Magnetic force only ever redirects you — it never speeds you up or slows you down."
+}

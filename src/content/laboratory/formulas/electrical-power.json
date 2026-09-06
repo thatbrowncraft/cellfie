@@ -56,5 +56,6 @@
   "commonMistakes": [
     "Using the wrong form of the power equation when only two of the three quantities (V, I, R) are actually known, instead of first solving for the missing one via Ohm's law.",
     "Forgetting that P = I²R and P = V²/R require R to stay constant, which fails for non-ohmic devices."
-  ]
+  ],
+  "genZNote": "Electrical power: volts and amps teaming up to tell you the wattage."
 }

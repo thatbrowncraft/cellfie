@@ -1,0 +1,70 @@
+{
+  "id": "formula-kohlrausch-law-molar-conductivity",
+  "category": "formula",
+  "title": "Kohlrausch's Law and Molar Conductivity",
+  "subcategory": "Electrochemistry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Electrochemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Kohlrausch's law",
+    "molar conductivity",
+    "limiting molar conductivity",
+    "weak electrolyte"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-electrochemistry-electrode-potential"
+  ],
+  "relatedFormulas": [
+    "formula-nernst-equation"
+  ],
+  "domain": "Electrochemistry",
+  "expression": "Λm = κ/C  ;  Λm°(weak electrolyte) = ν₊λ°₊ + ν₋λ°₋  (Kohlrausch's law of independent migration)",
+  "explanation": "Molar conductivity Λm is specific conductance κ divided by molar concentration C; it increases with dilution for all electrolytes, but a directly measurable limiting value Λm° (at infinite dilution) can only be found by extrapolation for STRONG electrolytes. For WEAK electrolytes, Kohlrausch's law of independent migration of ions is used instead: at infinite dilution, each ion migrates independently and contributes a fixed value regardless of its accompanying ion, so Λm° for a weak electrolyte can be calculated by combining known Λm° values of strong electrolytes containing the same ions.",
+  "variables": [
+    {
+      "symbol": "Λm",
+      "meaning": "Molar conductivity",
+      "unit": "S·cm²/mol"
+    },
+    {
+      "symbol": "κ",
+      "meaning": "Specific conductance",
+      "unit": "S/cm"
+    },
+    {
+      "symbol": "C",
+      "meaning": "Molar concentration",
+      "unit": "mol/cm³ (consistent with κ units)"
+    },
+    {
+      "symbol": "λ°₊, λ°₋",
+      "meaning": "Limiting molar conductivity of the cation and anion",
+      "unit": "S·cm²/mol"
+    },
+    {
+      "symbol": "ν₊, ν₋",
+      "meaning": "Number of cations/anions produced per formula unit",
+      "unit": "dimensionless"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Find Λm°(CH₃COOH) using Λm°(HCl), Λm°(CH₃COONa), and Λm°(NaCl) via Kohlrausch's law.",
+    "substitution": "Λm°(CH₃COOH) = Λm°(CH₃COONa) + Λm°(HCl) − Λm°(NaCl)",
+    "result": "This combination cancels out the common Na⁺ and Cl⁻ contributions, leaving just CH₃COO⁻ and H⁺ combined"
+  },
+  "commonMistakes": [
+    "Trying to find Λm° for a weak electrolyte by direct extrapolation of a Λm vs √C plot — weak electrolytes don't give a straight, easily-extrapolated line near infinite dilution (unlike strong electrolytes), so Kohlrausch's law combination method must be used instead.",
+    "Forgetting to account for the number of ions (ν₊, ν₋) produced per formula unit when combining values, especially for salts with unequal ion counts."
+  ],
+  "genZNote": "Weak electrolytes can't extrapolate their way to Λm° — Kohlrausch's law does the math trick instead."
+}

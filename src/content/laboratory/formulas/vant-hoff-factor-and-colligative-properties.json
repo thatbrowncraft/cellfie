@@ -1,0 +1,77 @@
+{
+  "id": "formula-vant-hoff-factor-and-colligative-properties",
+  "category": "formula",
+  "title": "Van't Hoff Factor and Colligative Property Formulas",
+  "subcategory": "Solutions",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Solutions",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "van't Hoff factor",
+    "colligative properties",
+    "freezing point depression",
+    "boiling point elevation",
+    "osmotic pressure"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-solutions-and-concentration-terms",
+    "concept-colligative-properties"
+  ],
+  "relatedFormulas": [
+    "formula-raoults-law"
+  ],
+  "domain": "Solutions",
+  "expression": "ΔTf = i·Kf·m  ;  ΔTb = i·Kb·m  ;  π = i·CRT",
+  "explanation": "Colligative properties depend only on the NUMBER of solute particles in solution, not their identity — freezing point depression, boiling point elevation, and osmotic pressure all include the van't Hoff factor i, which corrects for solutes that dissociate (i > 1, e.g. NaCl → i ≈ 2) or associate (i < 1, e.g. some carboxylic acids dimerising in non-polar solvents). For a non-electrolyte that neither dissociates nor associates, i = 1 exactly.",
+  "variables": [
+    {
+      "symbol": "ΔTf, ΔTb",
+      "meaning": "Freezing point depression, boiling point elevation",
+      "unit": "K"
+    },
+    {
+      "symbol": "Kf, Kb",
+      "meaning": "Molal freezing point depression / boiling point elevation constants",
+      "unit": "K·kg/mol"
+    },
+    {
+      "symbol": "m",
+      "meaning": "Molality of the solution",
+      "unit": "mol/kg"
+    },
+    {
+      "symbol": "i",
+      "meaning": "Van't Hoff factor",
+      "unit": "dimensionless"
+    },
+    {
+      "symbol": "π",
+      "meaning": "Osmotic pressure",
+      "unit": "atm or Pa"
+    },
+    {
+      "symbol": "C, R, T",
+      "meaning": "Molar concentration, gas constant, absolute temperature",
+      "unit": "mol/L, appropriate R units, K"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A 0.1 molal NaCl solution (fully dissociates, i ≈ 2), Kf(water) = 1.86 K·kg/mol.",
+    "substitution": "ΔTf = 2 × 1.86 × 0.1",
+    "result": "ΔTf = 0.372 K (freezing point lowered by this much more than a non-electrolyte at the same molality)"
+  },
+  "commonMistakes": [
+    "Forgetting the van't Hoff factor entirely for ionic solutes — this underestimates the actual colligative effect, since each formula unit produces multiple particles in solution.",
+    "Using molarity instead of molality in the freezing point depression/boiling point elevation formulas — these specifically require molality, since it doesn't change with temperature."
+  ],
+  "genZNote": "Van't Hoff factor: it's not about what the solute IS, it's about how many particles it splits into."
+}

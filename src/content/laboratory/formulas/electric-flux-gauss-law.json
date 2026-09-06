@@ -1,0 +1,64 @@
+{
+  "id": "formula-electric-flux-gauss-law",
+  "category": "formula",
+  "title": "Electric Flux and Gauss's Law",
+  "subcategory": "Electrostatics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Electric Charges and Fields",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "electric flux",
+    "Gauss's law",
+    "enclosed charge"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-electric-field-and-gauss-law"
+  ],
+  "relatedFormulas": [
+    "formula-coulombs-law"
+  ],
+  "domain": "Electric Charges and Fields",
+  "expression": "ΦE = ∮E·dA = qenclosed/ε₀",
+  "explanation": "Gauss's law relates the total electric flux through any closed surface to the net charge enclosed within it, independent of the surface's shape/size and independent of charges outside it. It is most useful as a calculation shortcut for highly symmetric charge distributions, where a Gaussian surface can be chosen so E is uniform and known everywhere on it.",
+  "variables": [
+    {
+      "symbol": "ΦE",
+      "meaning": "Electric flux through the closed surface",
+      "unit": "N·m²/C"
+    },
+    {
+      "symbol": "E",
+      "meaning": "Electric field",
+      "unit": "N/C"
+    },
+    {
+      "symbol": "qenclosed",
+      "meaning": "Net charge enclosed by the surface",
+      "unit": "C"
+    },
+    {
+      "symbol": "ε₀",
+      "meaning": "Permittivity of free space",
+      "unit": "C²/(N·m²)"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A charge of +5 μC is enclosed by an arbitrary closed surface.",
+    "substitution": "ΦE = 5×10⁻⁶ / (8.85×10⁻¹²)",
+    "result": "ΦE ≈ 5.65 × 10⁵ N·m²/C"
+  },
+  "commonMistakes": [
+    "Assuming flux depends on the surface's exact shape or size — for a fixed enclosed charge, flux through ANY closed surface is identical.",
+    "Including charges OUTSIDE the Gaussian surface in qenclosed — only charge strictly inside the closed surface counts, even though outside charges can still affect the field's local value/direction."
+  ],
+  "genZNote": "Gauss's law doesn't care about the shape of your surface — only what charge is trapped inside counts."
+}

@@ -54,5 +54,6 @@
   "commonMistakes": [
     "Using only the applied force instead of the NET force (forgetting to subtract friction, gravity components, etc.).",
     "Forgetting that F = ma assumes constant mass — variable-mass systems need the momentum form F = dp/dt instead."
-  ]
+  ],
+  "genZNote": "F = ma: force is just acceleration's way of asking for permission from mass."
 }

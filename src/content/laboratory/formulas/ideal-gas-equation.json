@@ -59,5 +59,6 @@
   "commonMistakes": [
     "Forgetting to convert Celsius to Kelvin before substituting into the equation — a very frequent and entirely avoidable error.",
     "Mixing R's value (0.0821 L·atm/mol·K) with pressure/volume units that don't match (e.g. using Pa and m³ with the atm-based R constant)."
-  ]
+  ],
+  "genZNote": "PV = nRT: the gas law that ties pressure, volume, and temperature into one tidy equation."
 }

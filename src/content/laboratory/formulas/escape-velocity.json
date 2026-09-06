@@ -1,0 +1,70 @@
+{
+  "id": "formula-escape-velocity",
+  "category": "formula",
+  "title": "Escape Velocity",
+  "subcategory": "Gravitation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Gravitation",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "escape velocity",
+    "gravitational binding",
+    "minimum launch speed"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-escape-velocity-and-satellites"
+  ],
+  "relatedFormulas": [
+    "formula-universal-law-of-gravitation",
+    "formula-orbital-velocity"
+  ],
+  "domain": "Gravitation",
+  "expression": "ve = √(2GM/R) = √(2gR)",
+  "explanation": "Escape velocity is the minimum speed needed at a planet's surface for an object to permanently escape its gravitational pull, found by setting total mechanical energy (KE + gravitational PE) at the surface equal to zero (just enough energy to reach infinity with zero leftover speed). It depends only on the planet's mass M and radius R (or equivalently its surface gravity g and R), NOT on the mass of the escaping object or its launch direction (ignoring atmospheric drag).",
+  "variables": [
+    {
+      "symbol": "ve",
+      "meaning": "Escape velocity",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "G",
+      "meaning": "Universal gravitational constant",
+      "unit": "N·m²/kg²"
+    },
+    {
+      "symbol": "M",
+      "meaning": "Mass of the planet",
+      "unit": "kg"
+    },
+    {
+      "symbol": "R",
+      "meaning": "Radius of the planet",
+      "unit": "m"
+    },
+    {
+      "symbol": "g",
+      "meaning": "Surface acceleration due to gravity",
+      "unit": "m/s²"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Earth: g ≈ 9.8 m/s², R ≈ 6.4 × 10⁶ m.",
+    "substitution": "ve = √(2 × 9.8 × 6.4×10⁶)",
+    "result": "ve ≈ 11.2 km/s"
+  },
+  "commonMistakes": [
+    "Assuming escape velocity depends on the mass of the escaping object — it cancels out entirely in the derivation and is independent of the escaping mass.",
+    "Confusing escape velocity with orbital velocity — orbital velocity at the same radius is always ve/√2, noticeably smaller."
+  ],
+  "genZNote": "11.2 km/s: Earth's official 'you may now leave' speed."
+}

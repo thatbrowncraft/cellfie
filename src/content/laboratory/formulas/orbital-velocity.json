@@ -1,0 +1,65 @@
+{
+  "id": "formula-orbital-velocity",
+  "category": "formula",
+  "title": "Orbital Velocity of a Satellite",
+  "subcategory": "Gravitation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Gravitation",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "orbital velocity",
+    "circular orbit",
+    "satellite speed"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-escape-velocity-and-satellites"
+  ],
+  "relatedFormulas": [
+    "formula-escape-velocity",
+    "formula-universal-law-of-gravitation"
+  ],
+  "domain": "Gravitation",
+  "expression": "vo = √(GM/r) = √(gR²/r)",
+  "explanation": "Orbital velocity is the speed needed to maintain a stable circular orbit at radius r, found by equating gravitational force to the required centripetal force: GMm/r² = mvo²/r. Orbital velocity DECREASES with increasing orbital radius (higher/farther satellites move slower), and at any given radius, vo = ve/√2 — always smaller than the escape velocity at that same radius.",
+  "variables": [
+    {
+      "symbol": "vo",
+      "meaning": "Orbital velocity",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "G",
+      "meaning": "Universal gravitational constant",
+      "unit": "N·m²/kg²"
+    },
+    {
+      "symbol": "M",
+      "meaning": "Mass of the central body (e.g. Earth)",
+      "unit": "kg"
+    },
+    {
+      "symbol": "r",
+      "meaning": "Orbital radius (from the centre of the central body)",
+      "unit": "m"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A satellite orbits Earth just above the surface (r ≈ R ≈ 6.4×10⁶ m, g ≈ 9.8 m/s²).",
+    "substitution": "vo = √(9.8 × (6.4×10⁶)² / 6.4×10⁶) = √(9.8 × 6.4×10⁶)",
+    "result": "vo ≈ 7.9 km/s (first cosmic velocity)"
+  },
+  "commonMistakes": [
+    "Using the planet's radius R when the satellite orbits at a much larger radius r above the surface — r must be measured from the centre of the planet to the satellite's actual orbit, not just the surface radius.",
+    "Confusing orbital velocity with escape velocity — they are related by a fixed factor of √2 at the same radius but represent different physical situations."
+  ],
+  "genZNote": "Orbital velocity is escape velocity's more chill sibling — always exactly √2 times slower."
+}

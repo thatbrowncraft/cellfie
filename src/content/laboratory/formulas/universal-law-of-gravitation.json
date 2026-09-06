@@ -53,5 +53,6 @@
   "commonMistakes": [
     "Forgetting that r is measured between the CENTERS of the masses, not their surfaces.",
     "Not squaring r — a very common arithmetic slip given the inverse-SQUARE relationship."
-  ]
+  ],
+  "genZNote": "Every mass is quietly pulling on every other mass, always, forever."
 }

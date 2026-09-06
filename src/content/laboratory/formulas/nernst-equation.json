@@ -72,5 +72,6 @@
   "commonMistakes": [
     "Using the natural log (ln) form's constants with a log₁₀ calculation, or vice versa, without converting correctly.",
     "Forgetting that n must match the number of electrons in the BALANCED overall cell reaction, not just one half-reaction."
-  ]
+  ],
+  "genZNote": "The Nernst equation: cell EMF adjusting in real time as concentrations drift from standard."
 }

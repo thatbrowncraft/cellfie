@@ -1,0 +1,65 @@
+{
+  "id": "formula-torque",
+  "category": "formula",
+  "title": "Torque (Moment of Force)",
+  "subcategory": "Rotational Mechanics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — System of Particles and Rotational Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "torque",
+    "moment of force",
+    "cross product",
+    "lever arm"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-centre-of-mass-and-torque"
+  ],
+  "relatedFormulas": [
+    "formula-angular-momentum"
+  ],
+  "domain": "System of Particles and Rotational Motion",
+  "expression": "τ = r × F = rF sinθ",
+  "explanation": "Torque measures the turning effect of a force about a chosen axis/point, equal to the cross product of the position vector r (from axis to point of force application) and the force F. Magnitude is rF sinθ, maximum when the force is applied perpendicular to r (θ = 90°) and zero when force is applied along r (θ = 0°, no turning effect at all). Direction is given by the right-hand rule, perpendicular to both r and F.",
+  "variables": [
+    {
+      "symbol": "τ",
+      "meaning": "Torque",
+      "unit": "N·m"
+    },
+    {
+      "symbol": "r",
+      "meaning": "Position vector from axis to point of force application",
+      "unit": "m"
+    },
+    {
+      "symbol": "F",
+      "meaning": "Applied force",
+      "unit": "N"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "Angle between r and F",
+      "unit": "degrees/radians"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A 10 N force is applied perpendicular to a 0.3 m wrench handle.",
+    "substitution": "τ = 0.3 × 10 × sin90°",
+    "result": "τ = 3 N·m"
+  },
+  "commonMistakes": [
+    "Applying force along the position vector (θ = 0°) and expecting a non-zero torque — this produces zero turning effect, regardless of force magnitude.",
+    "Forgetting torque units (N·m) look dimensionally like energy (J) but are conceptually different — never add or equate the two directly."
+  ],
+  "genZNote": "Torque's whole vibe: it's not the force, it's the distance from the axis that does the real work."
+}

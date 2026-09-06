@@ -1,0 +1,65 @@
+{
+  "id": "formula-work-done-by-a-force",
+  "category": "formula",
+  "title": "Work Done by a Force",
+  "subcategory": "Mechanics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Work, Energy and Power",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "work done",
+    "dot product",
+    "work-energy"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-work-energy-theorem"
+  ],
+  "relatedFormulas": [
+    "formula-kinetic-energy"
+  ],
+  "domain": "Work, Energy and Power",
+  "expression": "W = F·d·cosθ  (= F⃗ · d⃗)",
+  "explanation": "Work done by a constant force equals the product of the force magnitude, the displacement magnitude, and the cosine of the angle between them — only the component of force ALONG the displacement direction contributes. Work is a scalar (dot product of two vectors), and can be positive (force helps motion), negative (force opposes motion, e.g. friction), or zero (force perpendicular to displacement, e.g. gravity on a horizontally moving object, or no displacement at all).",
+  "variables": [
+    {
+      "symbol": "W",
+      "meaning": "Work done by the force",
+      "unit": "J (joule)"
+    },
+    {
+      "symbol": "F",
+      "meaning": "Magnitude of the applied force",
+      "unit": "N"
+    },
+    {
+      "symbol": "d",
+      "meaning": "Magnitude of displacement",
+      "unit": "m"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "Angle between force and displacement vectors",
+      "unit": "degrees/radians"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A 20 N force pulls a box 5 m along the ground at an angle of 60° to the ground.",
+    "substitution": "W = 20 × 5 × cos60°",
+    "result": "W = 20 × 5 × 0.5 = 50 J"
+  },
+  "commonMistakes": [
+    "Forgetting the cosθ factor and just multiplying F×d, ignoring the angle between force and displacement.",
+    "Assuming work is always positive — a force acting opposite to displacement (like friction) does NEGATIVE work.",
+    "Believing a force does work even with zero displacement — holding a heavy object stationary does zero work in the physics sense, however tiring it feels."
+  ],
+  "genZNote": "No displacement, no work — physics doesn't care how tired your arms are."
+}

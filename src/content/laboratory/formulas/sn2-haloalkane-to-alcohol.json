@@ -52,5 +52,6 @@
   "commonMistakes": [
     "Applying the SN2 mechanism to a TERTIARY haloalkane, where steric hindrance instead favors an SN1 mechanism (via a carbocation intermediate).",
     "Forgetting that SN2 proceeds with inversion of configuration (like an umbrella flipping inside out), which matters when the substrate is chiral."
-  ]
+  ],
+  "genZNote": "SN2: one clean backside attack, inversion guaranteed."
 }

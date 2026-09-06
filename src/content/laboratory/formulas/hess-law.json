@@ -41,5 +41,6 @@
   "commonMistakes": [
     "Forgetting to reverse the sign of ΔH when a given reaction step must be flipped to combine correctly into the target reaction.",
     "Forgetting to multiply ΔH by the same factor used to scale a reaction step's coefficients."
-  ]
+  ],
+  "genZNote": "Hess's law: however you get from reactants to products, the enthalpy change is the same."
 }

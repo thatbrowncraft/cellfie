@@ -1,0 +1,62 @@
+{
+  "id": "formula-wave-speed-and-doppler-effect",
+  "category": "formula",
+  "title": "Wave Speed and Doppler Effect Formula",
+  "subcategory": "Waves",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Waves",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "wave speed",
+    "Doppler effect",
+    "apparent frequency"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-wave-motion-and-doppler-effect"
+  ],
+  "relatedFormulas": [],
+  "domain": "Waves",
+  "expression": "v = fλ  ;  Doppler (sound): f' = f × (v ± vo)/(v ∓ vs)",
+  "explanation": "Basic wave speed relates frequency and wavelength: v = fλ. For the Doppler effect in sound, the apparent frequency f' depends on the relative motion of source and observer with respect to the medium: use + in the numerator when the observer moves TOWARD the source (and − when moving away), and − in the denominator when the source moves TOWARD the observer (and + when moving away) — approaching motion always tends to raise apparent frequency, receding motion lowers it.",
+  "variables": [
+    {
+      "symbol": "v",
+      "meaning": "Speed of the wave in the medium",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "f, f'",
+      "meaning": "True and apparent (observed) frequency",
+      "unit": "Hz"
+    },
+    {
+      "symbol": "λ",
+      "meaning": "Wavelength",
+      "unit": "m"
+    },
+    {
+      "symbol": "vo, vs",
+      "meaning": "Speed of observer and source relative to the medium",
+      "unit": "m/s"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A stationary observer hears an ambulance (source) approaching at 30 m/s, siren frequency 500 Hz, speed of sound 340 m/s.",
+    "substitution": "f' = 500 × 340 / (340 − 30)",
+    "result": "f' ≈ 548.4 Hz (higher pitch heard as it approaches)"
+  },
+  "commonMistakes": [
+    "Mixing up the sign convention — approaching motion should always raise the apparent frequency; if a calculation gives a lower frequency for an approaching source, a sign has been applied backwards.",
+    "Using the source's speed formula for the observer's motion or vice versa — they enter the equation in different places (numerator vs denominator) with different sign rules."
+  ],
+  "genZNote": "Doppler sign convention: approaching always bumps the pitch up, receding always brings it down — no exceptions."
+}

@@ -1,0 +1,68 @@
+{
+  "id": "formula-specific-and-latent-heat",
+  "category": "formula",
+  "title": "Specific Heat Capacity and Latent Heat",
+  "subcategory": "Thermal Properties",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Thermal Properties of Matter",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "specific heat capacity",
+    "latent heat",
+    "calorimetry",
+    "heat calculation"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-thermal-expansion-and-calorimetry"
+  ],
+  "relatedFormulas": [],
+  "domain": "Thermal Properties of Matter / Calorimetry",
+  "expression": "Q = msΔT  (temperature change)  ;  Q = mL  (phase change, constant temperature)",
+  "explanation": "Heat required to raise temperature (without a phase change) is Q = msΔT, where s is specific heat capacity — a material property describing how much heat is needed per unit mass per degree change. During a phase change (melting/boiling) at constant temperature, all supplied heat instead goes into breaking intermolecular bonds, given by Q = mL, where L is the latent heat (of fusion or vaporisation) — temperature stays constant throughout this phase.",
+  "variables": [
+    {
+      "symbol": "Q",
+      "meaning": "Heat energy",
+      "unit": "J"
+    },
+    {
+      "symbol": "m",
+      "meaning": "Mass",
+      "unit": "kg"
+    },
+    {
+      "symbol": "s",
+      "meaning": "Specific heat capacity",
+      "unit": "J/(kg·K)"
+    },
+    {
+      "symbol": "ΔT",
+      "meaning": "Temperature change",
+      "unit": "K or °C"
+    },
+    {
+      "symbol": "L",
+      "meaning": "Latent heat (fusion or vaporisation)",
+      "unit": "J/kg"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Heating 2 kg of water from 20°C to 100°C, then boiling it completely (Lv of water ≈ 2.26×10⁶ J/kg, s ≈ 4186 J/kg·K).",
+    "substitution": "Q1 = 2 × 4186 × 80 = 669,760 J ; Q2 = 2 × 2.26×10⁶ = 4,520,000 J",
+    "result": "Total Q ≈ 5.19 × 10⁶ J (boiling needs far more energy than heating!)"
+  },
+  "commonMistakes": [
+    "Using the specific heat formula (Q=msΔT) during a phase change, where temperature isn't actually changing — the correct formula there is Q=mL, with no ΔT term at all.",
+    "Forgetting boiling/vaporisation typically requires much more energy than simply heating the same mass of liquid across its full temperature range — a genuinely large numerical gap worth sanity-checking."
+  ],
+  "genZNote": "Boiling water takes way more energy than just heating it — the phase change is the real energy sink."
+}

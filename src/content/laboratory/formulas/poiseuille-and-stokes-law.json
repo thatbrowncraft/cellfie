@@ -1,0 +1,78 @@
+{
+  "id": "formula-poiseuille-and-stokes-law",
+  "category": "formula",
+  "title": "Poiseuille's Law and Stokes' Law",
+  "subcategory": "Fluid Mechanics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Mechanical Properties of Fluids",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "viscosity",
+    "Poiseuille's law",
+    "Stokes law",
+    "terminal velocity"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-fluid-mechanics-pressure-viscosity-surface-tension"
+  ],
+  "relatedFormulas": [],
+  "domain": "Mechanical Properties of Fluids",
+  "expression": "Poiseuille: V/t = πPr⁴/(8ηl)  ;  Stokes: F = 6πηrv  ;  Terminal velocity: vt = 2r²(ρ−σ)g / (9η)",
+  "explanation": "Poiseuille's law gives the volume flow rate of a viscous liquid through a narrow tube — strongly (fourth-power) dependent on tube radius, so even a small change in radius produces a large change in flow rate. Stokes' law gives the viscous drag force on a small sphere moving through a viscous fluid, proportional to radius, viscosity, and velocity. Combining Stokes' law with gravity and buoyancy gives terminal velocity — the constant maximum speed reached when the net force on a falling sphere becomes zero (weight = buoyant force + viscous drag).",
+  "variables": [
+    {
+      "symbol": "V/t",
+      "meaning": "Volume flow rate",
+      "unit": "m³/s"
+    },
+    {
+      "symbol": "P",
+      "meaning": "Pressure difference across the tube",
+      "unit": "Pa"
+    },
+    {
+      "symbol": "r",
+      "meaning": "Radius (tube or sphere, context-dependent)",
+      "unit": "m"
+    },
+    {
+      "symbol": "η",
+      "meaning": "Coefficient of viscosity",
+      "unit": "Pa·s"
+    },
+    {
+      "symbol": "l",
+      "meaning": "Length of the tube",
+      "unit": "m"
+    },
+    {
+      "symbol": "vt",
+      "meaning": "Terminal velocity",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "ρ, σ",
+      "meaning": "Density of the sphere and of the fluid",
+      "unit": "kg/m³"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A small steel ball falls through a viscous oil and reaches terminal velocity.",
+    "substitution": "At terminal velocity, weight = buoyant force + viscous drag: (4/3)πr³ρg = (4/3)πr³σg + 6πηrvt",
+    "result": "Solving gives vt = 2r²(ρ−σ)g / (9η)"
+  },
+  "commonMistakes": [
+    "Forgetting Poiseuille's flow rate depends on r⁴, not r² or r — a doubled radius increases flow rate 16-fold, not 4-fold, a frequent numerical-scaling error.",
+    "Omitting the buoyant force term when deriving terminal velocity — only weight minus BOTH buoyancy and viscous drag gives the correct zero-net-force condition."
+  ],
+  "genZNote": "Poiseuille's law: double the tube radius, flow rate doesn't double — it goes up sixteen times."
+}

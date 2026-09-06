@@ -1,0 +1,64 @@
+{
+  "id": "formula-power",
+  "category": "formula",
+  "title": "Power",
+  "subcategory": "Mechanics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Work, Energy and Power",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "power",
+    "rate of work",
+    "instantaneous power"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-work-energy-theorem"
+  ],
+  "relatedFormulas": [
+    "formula-work-done-by-a-force"
+  ],
+  "domain": "Work, Energy and Power",
+  "expression": "P = W/t   (instantaneous: P = F·v·cosθ)",
+  "explanation": "Power is the RATE at which work is done (or energy is transferred), P = W/t for average power over a time interval. Instantaneous power equals F·v·cosθ, the dot product of force and velocity — this is why the same amount of work done faster requires more power, even though the total energy transferred is identical. SI unit is the watt (1 W = 1 J/s); the commercial unit horsepower (1 hp ≈ 746 W) is also common for engines.",
+  "variables": [
+    {
+      "symbol": "P",
+      "meaning": "Power",
+      "unit": "W (watt)"
+    },
+    {
+      "symbol": "W",
+      "meaning": "Work done",
+      "unit": "J"
+    },
+    {
+      "symbol": "t",
+      "meaning": "Time taken",
+      "unit": "s"
+    },
+    {
+      "symbol": "F, v",
+      "meaning": "Force and velocity (for instantaneous power)",
+      "unit": "N, m/s"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A motor does 3000 J of work in 5 seconds.",
+    "substitution": "P = 3000 / 5",
+    "result": "P = 600 W"
+  },
+  "commonMistakes": [
+    "Confusing power (rate of doing work) with work/energy itself — power says nothing about total energy transferred, only how fast it's transferred.",
+    "Forgetting the cosθ term when computing instantaneous power from F and v that aren't in the same direction."
+  ],
+  "genZNote": "Same work, less time, way more power — it's all about the hustle speed."
+}

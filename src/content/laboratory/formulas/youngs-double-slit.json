@@ -1,0 +1,62 @@
+{
+  "id": "formula-youngs-double-slit",
+  "category": "formula",
+  "title": "Young's Double Slit Experiment: Fringe Width",
+  "subcategory": "Wave Optics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Wave Optics",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Young's double slit",
+    "fringe width",
+    "interference pattern"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-wave-optics-interference-diffraction-polarization"
+  ],
+  "relatedFormulas": [],
+  "domain": "Wave Optics",
+  "expression": "β = λD/d",
+  "explanation": "Fringe width (distance between two consecutive bright or two consecutive dark fringes) in Young's double slit experiment depends directly on wavelength λ and screen distance D, and inversely on slit separation d. This means: using longer-wavelength light, moving the screen farther away, or bringing the slits closer together all INCREASE fringe width (fringes more spread out and easier to observe).",
+  "variables": [
+    {
+      "symbol": "β",
+      "meaning": "Fringe width",
+      "unit": "m"
+    },
+    {
+      "symbol": "λ",
+      "meaning": "Wavelength of light used",
+      "unit": "m"
+    },
+    {
+      "symbol": "D",
+      "meaning": "Distance from slits to screen",
+      "unit": "m"
+    },
+    {
+      "symbol": "d",
+      "meaning": "Separation between the two slits",
+      "unit": "m"
+    }
+  ],
+  "workedExample": {
+    "scenario": "λ = 600 nm, D = 1 m, d = 0.5 mm.",
+    "substitution": "β = (600×10⁻⁹ × 1) / (0.5×10⁻³)",
+    "result": "β = 1.2 × 10⁻³ m = 1.2 mm"
+  },
+  "commonMistakes": [
+    "Forgetting to convert wavelength (usually given in nm) into metres before substituting — a very common unit-conversion slip.",
+    "Assuming fringe width is the same for all colours of light in white-light interference — different wavelengths (colours) give different fringe widths, causing coloured fringes except at the central maximum."
+  ],
+  "genZNote": "Bigger screen distance, wider fringes — Young's double slit rewards a little extra distance."
+}

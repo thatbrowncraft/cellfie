@@ -51,5 +51,6 @@
   "commonMistakes": [
     "Applying V = IR blindly to non-ohmic devices (diodes, filament bulbs at varying temperature) where resistance is not constant.",
     "Confusing resistance (a property of a specific conductor/object) with resistivity (an intrinsic material property independent of shape/size)."
-  ]
+  ],
+  "genZNote": "Ohm's law: V and I are proportional besties, as long as R stays constant."
 }

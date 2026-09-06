@@ -1,0 +1,66 @@
+{
+  "id": "formula-moment-of-inertia-common-shapes",
+  "category": "formula",
+  "title": "Moment of Inertia of Common Shapes",
+  "subcategory": "Rotational Mechanics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — System of Particles and Rotational Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "moment of inertia",
+    "solid sphere",
+    "solid cylinder",
+    "ring",
+    "parallel axis theorem"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-angular-momentum-and-moment-of-inertia"
+  ],
+  "relatedFormulas": [
+    "formula-angular-momentum"
+  ],
+  "domain": "System of Particles and Rotational Motion",
+  "expression": "I(ring)=MR² ; I(disc/solid cylinder)=½MR² ; I(solid sphere)=(2/5)MR² ; I(hollow sphere)=(2/3)MR² ; I(rod, centre)=(1/12)ML²",
+  "explanation": "Moment of inertia formulas for standard shapes about their natural symmetry axis, derived by integrating r² dm over the body. Mass distributed FARTHER from the axis (like a ring, all mass at radius R) gives a larger I than mass distributed closer/more toward the centre (like a solid sphere). The parallel axis theorem, I = Icm + Md², lets I about any parallel axis be found from I about the centre-of-mass axis plus Md² (d = distance between the two parallel axes); the perpendicular axis theorem (Iz = Ix + Iy) applies only to PLANAR (2D, lamina) bodies.",
+  "variables": [
+    {
+      "symbol": "M",
+      "meaning": "Total mass of the body",
+      "unit": "kg"
+    },
+    {
+      "symbol": "R",
+      "meaning": "Radius (for ring/disc/sphere)",
+      "unit": "m"
+    },
+    {
+      "symbol": "L",
+      "meaning": "Length (for a rod)",
+      "unit": "m"
+    },
+    {
+      "symbol": "d",
+      "meaning": "Distance between parallel axes (parallel axis theorem)",
+      "unit": "m"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A solid sphere of mass 2 kg and radius 0.5 m rotates about an axis through its centre.",
+    "substitution": "I = (2/5)(2)(0.5²)",
+    "result": "I = 0.2 kg·m²"
+  },
+  "commonMistakes": [
+    "Mixing up the moment of inertia formulas for a solid vs. hollow sphere, or a disc vs. a ring — these differ specifically because of HOW mass is distributed relative to the axis, a very common formula mix-up.",
+    "Applying the perpendicular axis theorem to a 3D (non-planar) body — it strictly applies only to flat, lamina (2D) objects."
+  ],
+  "genZNote": "Ring vs. solid disc, same mass and radius — the ring's mass is all camping out at the rim, so it wins on I."
+}

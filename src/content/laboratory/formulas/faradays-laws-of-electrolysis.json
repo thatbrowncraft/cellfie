@@ -63,5 +63,6 @@
   "commonMistakes": [
     "Using the wrong value of n — it must match the actual number of electrons in the specific electrode half-reaction, which differs by ion (e.g. n=1 for Ag⁺, n=2 for Cu²⁺, n=3 for Al³⁺).",
     "Forgetting to convert time into seconds if given in minutes or hours."
-  ]
+  ],
+  "genZNote": "Faraday's laws: the amount of stuff deposited is just charge doing chemistry."
 }

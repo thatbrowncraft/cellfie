@@ -1,0 +1,75 @@
+{
+  "id": "formula-mass-defect-and-binding-energy",
+  "category": "formula",
+  "title": "Mass Defect and Binding Energy",
+  "subcategory": "Nuclear Physics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Nuclei",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "mass defect",
+    "binding energy",
+    "mass-energy equivalence",
+    "nuclear stability"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-nuclear-physics-binding-energy-fission-fusion"
+  ],
+  "relatedFormulas": [
+    "formula-mass-energy-equivalence"
+  ],
+  "domain": "Nuclei",
+  "expression": "Δm = [Zmp + (A−Z)mn] − Mnucleus  ;  BE = Δmc²  ;  BE/A = binding energy per nucleon",
+  "explanation": "Mass defect Δm is the difference between the sum of masses of free, separate nucleons and the actual (always smaller) mass of the bound nucleus. This 'missing' mass was converted to energy released when the nucleons bound together, given by Einstein's relation BE = Δmc². Binding energy PER NUCLEON (BE/A) is the more meaningful stability measure, peaking near iron (A≈56) and explaining why both fission of heavy nuclei and fusion of light nuclei release energy.",
+  "variables": [
+    {
+      "symbol": "Δm",
+      "meaning": "Mass defect",
+      "unit": "kg or u (atomic mass units)"
+    },
+    {
+      "symbol": "Z",
+      "meaning": "Atomic number (number of protons)",
+      "unit": "dimensionless"
+    },
+    {
+      "symbol": "A",
+      "meaning": "Mass number (total nucleons)",
+      "unit": "dimensionless"
+    },
+    {
+      "symbol": "mp, mn",
+      "meaning": "Mass of a free proton, neutron",
+      "unit": "kg or u"
+    },
+    {
+      "symbol": "BE",
+      "meaning": "Binding energy",
+      "unit": "J or MeV"
+    },
+    {
+      "symbol": "c",
+      "meaning": "Speed of light",
+      "unit": "m/s"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A nucleus has a mass defect of 0.03 u (1 u ≈ 931.5 MeV/c²).",
+    "substitution": "BE = 0.03 × 931.5",
+    "result": "BE ≈ 27.9 MeV"
+  },
+  "commonMistakes": [
+    "Comparing TOTAL binding energy between nuclei of very different size to judge stability — the correct comparison is BINDING ENERGY PER NUCLEON, since total BE naturally grows with more nucleons regardless of actual stability.",
+    "Forgetting the convenient conversion 1 u ≈ 931.5 MeV/c² when working in atomic mass units, leading to unit errors in energy calculations."
+  ],
+  "genZNote": "That 'missing' mass didn't vanish — it became the binding energy holding the whole nucleus together."
+}

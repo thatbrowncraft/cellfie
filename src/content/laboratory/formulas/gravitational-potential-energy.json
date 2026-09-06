@@ -55,5 +55,6 @@
   "commonMistakes": [
     "Using PE = mgh at large distances from Earth (e.g. satellite altitudes), where the general gravitational PE formula is required instead.",
     "Forgetting that only the CHANGE in height/PE matters for most problems, not an absolute reference point."
-  ]
+  ],
+  "genZNote": "Gravitational PE: height's way of quietly storing energy for later."
 }

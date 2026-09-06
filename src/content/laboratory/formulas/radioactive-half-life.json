@@ -1,0 +1,70 @@
+{
+  "id": "formula-radioactive-half-life",
+  "category": "formula",
+  "title": "Radioactive Decay Law and Half-Life",
+  "subcategory": "Nuclear Physics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Nuclei",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "radioactive decay",
+    "half-life",
+    "decay constant",
+    "activity"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-radioactive-decay-and-half-life"
+  ],
+  "relatedFormulas": [
+    "formula-mass-defect-and-binding-energy"
+  ],
+  "domain": "Nuclei",
+  "expression": "N = N₀e^(−λt)  ;  T½ = 0.693/λ  ;  A = λN",
+  "explanation": "Radioactive decay follows a first-order exponential law: the number of undecayed nuclei N decreases exponentially with time, governed by the decay constant λ (probability of decay per unit time, characteristic of each radioactive isotope). Half-life T½ (time for exactly half the initial nuclei to decay) is related to λ by T½ = 0.693/λ, and — crucially — is INDEPENDENT of the amount of substance present, a defining feature of this first-order-like process. Activity A = λN is the number of decays per unit time, decreasing over time exactly as N does.",
+  "variables": [
+    {
+      "symbol": "N",
+      "meaning": "Number of undecayed nuclei at time t",
+      "unit": "dimensionless (count)"
+    },
+    {
+      "symbol": "N₀",
+      "meaning": "Initial number of nuclei",
+      "unit": "dimensionless (count)"
+    },
+    {
+      "symbol": "λ",
+      "meaning": "Decay constant",
+      "unit": "per s"
+    },
+    {
+      "symbol": "T½",
+      "meaning": "Half-life",
+      "unit": "s (or other time unit)"
+    },
+    {
+      "symbol": "A",
+      "meaning": "Activity (decay rate)",
+      "unit": "Bq (decays/s)"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A radioactive sample with half-life 10 days starts with N₀ nuclei; find the fraction remaining after 30 days.",
+    "substitution": "30 days = 3 half-lives, so fraction remaining = (1/2)³",
+    "result": "1/8 of the original nuclei remain after 30 days"
+  },
+  "commonMistakes": [
+    "Assuming half-life changes depending on how much sample is present — half-life is a fixed, constant property of the isotope, entirely independent of the initial quantity.",
+    "Using linear (rather than exponential) reasoning for decay over multiple half-lives — after n half-lives, the fraction remaining is (1/2)ⁿ, not a simple linear fraction."
+  ],
+  "genZNote": "Half-life doesn't care how much you started with — same isotope, same fixed decay clock, every time."
+}

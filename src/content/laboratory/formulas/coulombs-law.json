@@ -56,5 +56,6 @@
   "commonMistakes": [
     "Forgetting to convert charge units (μC, nC) to coulombs before substituting.",
     "Ignoring the medium — the formula's constant k changes if the charges are in a dielectric medium rather than vacuum/air."
-  ]
+  ],
+  "genZNote": "Coulomb's law: same shape as gravity's formula, just with charges instead of masses."
 }

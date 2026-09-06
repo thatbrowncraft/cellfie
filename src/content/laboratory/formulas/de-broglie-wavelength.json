@@ -62,5 +62,6 @@
   "commonMistakes": [
     "Computing a de Broglie wavelength for a macroscopic object and treating the (extremely tiny) result as physically significant.",
     "Confusing momentum p with kinetic energy when only KE is given — first convert KE to momentum via p = √(2mKE)."
-  ]
+  ],
+  "genZNote": "Every moving particle secretly has a wavelength — de Broglie really said 'everything's a wave.'"
 }

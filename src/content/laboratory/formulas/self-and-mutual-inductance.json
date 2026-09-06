@@ -1,0 +1,68 @@
+{
+  "id": "formula-self-and-mutual-inductance",
+  "category": "formula",
+  "title": "Self-Inductance and Mutual Inductance",
+  "subcategory": "Electromagnetic Induction",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Electromagnetic Induction",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "self inductance",
+    "mutual inductance",
+    "EMF induced",
+    "solenoid inductance"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-alternating-current-and-resonance"
+  ],
+  "relatedFormulas": [],
+  "domain": "Electromagnetic Induction",
+  "expression": "ε = −L(dI/dt)  (self)  ;  ε2 = −M(dI1/dt)  (mutual)  ;  L(solenoid) = μ₀n²Al",
+  "explanation": "Self-inductance L quantifies a coil's opposition to CHANGES in its own current — an induced EMF (by Lenz's law, opposing the change) is proportional to the rate of change of current in the same coil. Mutual inductance M quantifies how a changing current in one coil induces an EMF in a NEARBY, separate coil (the basis of transformers). For a long solenoid, L = μ₀n²Al depends on turns density squared, area, and length — showing why tightly-wound, long coils give large inductance.",
+  "variables": [
+    {
+      "symbol": "ε",
+      "meaning": "Induced EMF",
+      "unit": "V"
+    },
+    {
+      "symbol": "L",
+      "meaning": "Self-inductance",
+      "unit": "H (henry)"
+    },
+    {
+      "symbol": "M",
+      "meaning": "Mutual inductance",
+      "unit": "H"
+    },
+    {
+      "symbol": "n",
+      "meaning": "Number of turns per unit length",
+      "unit": "per m"
+    },
+    {
+      "symbol": "A, l",
+      "meaning": "Cross-sectional area and length of the solenoid",
+      "unit": "m², m"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A coil with L = 2 H has current changing at dI/dt = 5 A/s.",
+    "substitution": "ε = −2 × 5",
+    "result": "ε = −10 V (opposing the increase, per Lenz's law)"
+  },
+  "commonMistakes": [
+    "Forgetting the negative sign (Lenz's law) — the induced EMF always opposes the change causing it, not supports it.",
+    "Confusing self-inductance (EMF induced in the SAME coil) with mutual inductance (EMF induced in a DIFFERENT, nearby coil)."
+  ],
+  "genZNote": "Lenz's law: the induced EMF is always petty and opposes whatever change caused it."
+}

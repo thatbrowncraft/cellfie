@@ -1,0 +1,63 @@
+{
+  "id": "formula-surface-tension-excess-pressure",
+  "category": "formula",
+  "title": "Surface Tension and Excess Pressure",
+  "subcategory": "Fluid Mechanics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Mechanical Properties of Fluids",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "surface tension",
+    "excess pressure",
+    "soap bubble",
+    "liquid drop"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-fluid-mechanics-pressure-viscosity-surface-tension"
+  ],
+  "relatedFormulas": [],
+  "domain": "Mechanical Properties of Fluids",
+  "expression": "T = F/l ;  Excess pressure (drop) = 2T/r ;  Excess pressure (soap bubble) = 4T/r",
+  "explanation": "Surface tension T is the force per unit length acting along a liquid surface, tending to minimise surface area. Because a spherical liquid drop has ONE surface, the excess pressure inside it is 2T/r; a soap bubble has TWO surfaces (inner and outer film surfaces), so its excess pressure is double that of a drop of the same radius, 4T/r. Smaller radius means larger excess pressure — a smaller bubble/drop has higher internal pressure than a larger one of the same liquid.",
+  "variables": [
+    {
+      "symbol": "T",
+      "meaning": "Surface tension",
+      "unit": "N/m"
+    },
+    {
+      "symbol": "F",
+      "meaning": "Force along the surface",
+      "unit": "N"
+    },
+    {
+      "symbol": "l",
+      "meaning": "Length along which force acts",
+      "unit": "m"
+    },
+    {
+      "symbol": "r",
+      "meaning": "Radius of the drop/bubble",
+      "unit": "m"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A soap bubble of radius 1 cm, surface tension 0.03 N/m.",
+    "substitution": "ΔP = 4 × 0.03 / 0.01",
+    "result": "ΔP = 12 Pa"
+  },
+  "commonMistakes": [
+    "Using the drop formula (2T/r) for a soap bubble — a bubble has two surfaces, so it needs the doubled formula 4T/r, a very common exam trap.",
+    "Assuming larger drops have higher internal pressure — smaller radius actually means HIGHER excess pressure (inverse relationship)."
+  ],
+  "genZNote": "Soap bubbles have double the surface drama — literally two surfaces, double the excess pressure."
+}

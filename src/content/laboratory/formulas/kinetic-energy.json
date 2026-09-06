@@ -51,5 +51,6 @@
   "commonMistakes": [
     "Forgetting the square on velocity — assuming kinetic energy scales linearly with speed rather than quadratically.",
     "Using v as displacement or momentum by mistake in multi-step problems."
-  ]
+  ],
+  "genZNote": "Kinetic energy scales with the SQUARE of speed — double your speed, quadruple your KE."
 }

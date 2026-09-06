@@ -1,0 +1,63 @@
+{
+  "id": "formula-bernoulli-equation",
+  "category": "formula",
+  "title": "Bernoulli's Equation",
+  "subcategory": "Fluid Mechanics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Mechanical Properties of Fluids",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Bernoulli's equation",
+    "streamline flow",
+    "continuity equation",
+    "fluid dynamics"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-fluid-mechanics-pressure-viscosity-surface-tension"
+  ],
+  "relatedFormulas": [],
+  "domain": "Mechanical Properties of Fluids",
+  "expression": "P + ½ρv² + ρgh = constant   (along a streamline)",
+  "explanation": "Bernoulli's equation is a statement of energy conservation (work-energy theorem applied to fluid flow) for an ideal fluid — incompressible, non-viscous, and undergoing steady, streamline (laminar) flow. As a fluid speeds up (per the continuity equation A₁v₁ = A₂v₂ in a narrowing pipe), pressure must drop to keep the sum constant, and vice versa; height changes also trade off against pressure and speed.",
+  "variables": [
+    {
+      "symbol": "P",
+      "meaning": "Pressure at a point in the fluid",
+      "unit": "Pa"
+    },
+    {
+      "symbol": "ρ",
+      "meaning": "Density of the fluid",
+      "unit": "kg/m³"
+    },
+    {
+      "symbol": "v",
+      "meaning": "Flow speed at that point",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "h",
+      "meaning": "Height above a reference level",
+      "unit": "m"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Water flows through a horizontal pipe that narrows, speeding up from 1 m/s to 4 m/s.",
+    "substitution": "P1 + ½ρ(1)² = P2 + ½ρ(4)² (same height, h cancels)",
+    "result": "P1 − P2 = ½ρ(16−1) = 7.5ρ, so pressure drops significantly where the fluid speeds up"
+  },
+  "commonMistakes": [
+    "Applying Bernoulli's equation to a real, viscous, or turbulent flow and expecting exact results — its idealised assumptions (non-viscous, incompressible, streamline) don't strictly hold in such cases.",
+    "Believing higher speed always means higher pressure — Bernoulli's equation shows the OPPOSITE: at the same height, higher speed corresponds to LOWER pressure."
+  ],
+  "genZNote": "Bernoulli's whole deal: speed and pressure are in a strict trade-off, never both high at once."
+}

@@ -1,0 +1,49 @@
+{
+  "id": "formula-empirical-and-molecular-formula",
+  "category": "formula",
+  "title": "Empirical Formula and Molecular Formula Calculation",
+  "subcategory": "Basic Concepts of Chemistry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Some Basic Concepts of Chemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "empirical formula",
+    "molecular formula",
+    "percentage composition",
+    "molar mass"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-stoichiometry-and-limiting-reagent",
+    "concept-mole-concept"
+  ],
+  "relatedFormulas": [],
+  "domain": "Some Basic Concepts of Chemistry",
+  "expression": "n = (molecular formula mass) / (empirical formula mass)  ;  Molecular formula = n × (Empirical formula)",
+  "explanation": "Empirical formula gives the simplest whole-number ratio of atoms in a compound, found by converting percentage composition (or mass) of each element to moles, then dividing by the smallest mole value to get a simple ratio. Molecular formula is the ACTUAL number of atoms, always a whole-number multiple (n) of the empirical formula, found by dividing the compound's true molar mass by the empirical formula's mass.",
+  "variables": [
+    {
+      "symbol": "n",
+      "meaning": "Whole-number multiple relating empirical to molecular formula",
+      "unit": "dimensionless (integer)"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A compound is 40% C, 6.7% H, 53.3% O by mass, with molar mass ≈ 180 g/mol.",
+    "substitution": "Moles: C = 40/12 = 3.33, H = 6.7/1 = 6.7, O = 53.3/16 = 3.33. Ratio C:H:O = 1:2:1, empirical formula CH₂O (mass 30). n = 180/30 = 6",
+    "result": "Molecular formula = C₆H₁₂O₆ (glucose)"
+  },
+  "commonMistakes": [
+    "Stopping at the empirical formula and presenting it as the final molecular formula without checking against the given molar mass — the two are only the same when n = 1.",
+    "Rounding mole ratios incorrectly to the nearest whole number too early — small ratios like 1.5 should be doubled (to 3) rather than rounded to 2 or 1, to get true whole-number ratios."
+  ],
+  "genZNote": "Empirical formula is the simplified 'summary' — molecular formula is the actual, full-length version."
+}

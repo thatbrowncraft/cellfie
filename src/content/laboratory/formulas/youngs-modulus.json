@@ -1,0 +1,68 @@
+{
+  "id": "formula-youngs-modulus",
+  "category": "formula",
+  "title": "Young's Modulus",
+  "subcategory": "Properties of Matter",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Mechanical Properties of Solids",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Young's modulus",
+    "stress",
+    "strain",
+    "elastic modulus"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-elasticity-stress-and-strain"
+  ],
+  "relatedFormulas": [],
+  "domain": "Mechanical Properties of Solids",
+  "expression": "Y = (F/A) / (ΔL/L) = FL / (AΔL)",
+  "explanation": "Young's modulus is the ratio of longitudinal stress to longitudinal strain within a material's elastic limit, measuring its stiffness/resistance to stretching or compression along one dimension. A higher Y means the material is stiffer (small strain for a given stress) — steel has a much higher Y than rubber, which is why steel resists stretching far more for the same applied stress.",
+  "variables": [
+    {
+      "symbol": "Y",
+      "meaning": "Young's modulus",
+      "unit": "N/m² (Pa)"
+    },
+    {
+      "symbol": "F",
+      "meaning": "Applied force",
+      "unit": "N"
+    },
+    {
+      "symbol": "A",
+      "meaning": "Cross-sectional area",
+      "unit": "m²"
+    },
+    {
+      "symbol": "L",
+      "meaning": "Original length",
+      "unit": "m"
+    },
+    {
+      "symbol": "ΔL",
+      "meaning": "Extension/compression produced",
+      "unit": "m"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A wire of length 2 m, area 1×10⁻⁶ m², stretches by 1 mm under a 100 N force.",
+    "substitution": "Y = (100 × 2) / (1×10⁻⁶ × 1×10⁻³)",
+    "result": "Y = 2 × 10¹¹ N/m² (typical for steel)"
+  },
+  "commonMistakes": [
+    "Forgetting ΔL must be in the same length units as L before dividing (a common unit-conversion slip, e.g. mixing mm and m).",
+    "Assuming a material that stretches easily (large ΔL for small F) has a HIGH Young's modulus — actually the opposite: easy stretching means a LOW Y."
+  ],
+  "genZNote": "Steel's Young's modulus said 'I don't bend easily' — rubber's said the complete opposite."
+}

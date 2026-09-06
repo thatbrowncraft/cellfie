@@ -1,0 +1,60 @@
+{
+  "id": "formula-angular-momentum",
+  "category": "formula",
+  "title": "Angular Momentum",
+  "subcategory": "Rotational Mechanics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — System of Particles and Rotational Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "angular momentum",
+    "moment of inertia",
+    "conservation of angular momentum"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-angular-momentum-and-moment-of-inertia"
+  ],
+  "relatedFormulas": [
+    "formula-torque",
+    "formula-moment-of-inertia-common-shapes"
+  ],
+  "domain": "System of Particles and Rotational Motion",
+  "expression": "L = Iω   (or L = r × p for a single particle)",
+  "explanation": "Angular momentum is the rotational analogue of linear momentum: L = Iω for a rigid body rotating with angular velocity ω and moment of inertia I about the axis, or L = r × p for a single particle. When net external torque is zero, L is conserved — this single principle explains a spinning skater speeding up when pulling arms inward (I decreases, ω increases to keep L constant) and underlies Kepler's second law for orbiting planets.",
+  "variables": [
+    {
+      "symbol": "L",
+      "meaning": "Angular momentum",
+      "unit": "kg·m²/s"
+    },
+    {
+      "symbol": "I",
+      "meaning": "Moment of inertia about the axis",
+      "unit": "kg·m²"
+    },
+    {
+      "symbol": "ω",
+      "meaning": "Angular velocity",
+      "unit": "rad/s"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A skater with I = 4 kg·m² spinning at ω = 2 rad/s pulls arms in, reducing I to 1 kg·m².",
+    "substitution": "L is conserved: 4 × 2 = 1 × ω_new",
+    "result": "ω_new = 8 rad/s (spins four times faster)"
+  },
+  "commonMistakes": [
+    "Forgetting angular momentum conservation requires zero NET TORQUE, not zero net force — a central force (through the axis) produces no torque and still allows conservation.",
+    "Treating moment of inertia as constant like mass — it changes whenever mass redistributes relative to the axis, which is exactly what makes the skater example work."
+  ],
+  "genZNote": "Pull the arms in, watch the spin speed up — angular momentum conservation, no exceptions."
+}

@@ -54,5 +54,6 @@
   "commonMistakes": [
     "Using the volume of SOLVENT added instead of the final volume of SOLUTION — these are only the same in dilute approximations, not in general.",
     "Confusing molarity (mol/L of solution, temperature-dependent) with molality (mol/kg of solvent, temperature-independent) — a very common exam trap."
-  ]
+  ],
+  "genZNote": "Molarity: how many moles are crammed into each litre of solution."
 }

@@ -1,0 +1,65 @@
+{
+  "id": "formula-rate-law-and-half-life",
+  "category": "formula",
+  "title": "Integrated Rate Laws and Half-Life (Zero, First, Second Order)",
+  "subcategory": "Chemical Kinetics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Chemical Kinetics",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "integrated rate law",
+    "half-life",
+    "first order kinetics",
+    "zero order kinetics"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-chemical-kinetics-rate-law-and-order"
+  ],
+  "relatedFormulas": [
+    "formula-arrhenius-equation"
+  ],
+  "domain": "Chemical Kinetics",
+  "expression": "Zero order: [A] = [A]₀ − kt, T½ = [A]₀/2k  ;  First order: k = (1/t)ln([A]₀/[A]), T½ = 0.693/k",
+  "explanation": "Each reaction order has a distinct integrated rate law and half-life dependence. For a ZERO order reaction, concentration decreases linearly with time, and half-life is DIRECTLY proportional to initial concentration. For a FIRST order reaction, half-life is a CONSTANT, completely independent of initial concentration — this distinctive independence is the most reliable experimental signature used to identify a first-order process (like radioactive decay).",
+  "variables": [
+    {
+      "symbol": "[A], [A]₀",
+      "meaning": "Concentration at time t, and initial concentration",
+      "unit": "mol/L"
+    },
+    {
+      "symbol": "k",
+      "meaning": "Rate constant",
+      "unit": "depends on order (e.g. s⁻¹ for first order)"
+    },
+    {
+      "symbol": "t",
+      "meaning": "Time elapsed",
+      "unit": "s"
+    },
+    {
+      "symbol": "T½",
+      "meaning": "Half-life",
+      "unit": "s"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A first-order reaction has k = 0.0231 s⁻¹.",
+    "substitution": "T½ = 0.693 / 0.0231",
+    "result": "T½ ≈ 30 s (same regardless of starting concentration)"
+  },
+  "commonMistakes": [
+    "Assuming half-life is always constant regardless of order — this special independence from initial concentration is a UNIQUE signature of first-order kinetics only, not zero- or second-order.",
+    "Mixing up which order gives a straight-line plot with which variable — zero order gives a straight line for [A] vs t; first order for ln[A] vs t; second order for 1/[A] vs t."
+  ],
+  "genZNote": "First-order half-life doesn't care how much you started with — same clock, every single time."
+}

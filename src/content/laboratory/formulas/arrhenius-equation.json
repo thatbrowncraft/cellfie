@@ -58,5 +58,6 @@
   "commonMistakes": [
     "Forgetting T must be in Kelvin.",
     "Assuming a catalyst changes A significantly rather than its real effect: providing a lower-Ea pathway."
-  ]
+  ],
+  "genZNote": "Arrhenius equation: temperature's the ultimate rate-constant hype machine."
 }

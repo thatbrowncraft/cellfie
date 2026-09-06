@@ -49,5 +49,6 @@
   "commonMistakes": [
     "Mixing sign conventions mid-calculation — the single most common source of errors in lens/mirror problems.",
     "Forgetting that a diverging (concave) lens always has a negative focal length in the Cartesian convention."
-  ]
+  ],
+  "genZNote": "Lens formula sign convention: get it wrong once, and the whole answer flips."
 }

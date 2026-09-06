@@ -1,0 +1,70 @@
+{
+  "id": "formula-ac-impedance-and-resonance",
+  "category": "formula",
+  "title": "AC Impedance and Resonance Frequency",
+  "subcategory": "Alternating Current",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Alternating Current",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "impedance",
+    "resonance frequency",
+    "LCR circuit",
+    "reactance"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-alternating-current-and-resonance"
+  ],
+  "relatedFormulas": [
+    "formula-self-and-mutual-inductance"
+  ],
+  "domain": "Alternating Current",
+  "expression": "Z = √(R² + (XL−Xc)²)  ;  XL = ωL, Xc = 1/(ωC)  ;  ω₀ = 1/√(LC)",
+  "explanation": "Total impedance of a series LCR circuit combines resistance with the NET reactance (inductive minus capacitive, since they act 90° out of phase with each other and with opposite sign effect). At resonance (ω = ω₀ = 1/√(LC)), XL = Xc exactly, so they cancel, leaving Z = R (minimum impedance) and hence maximum current — the working principle behind tuning circuits.",
+  "variables": [
+    {
+      "symbol": "Z",
+      "meaning": "Total impedance",
+      "unit": "Ω"
+    },
+    {
+      "symbol": "R",
+      "meaning": "Resistance",
+      "unit": "Ω"
+    },
+    {
+      "symbol": "XL, Xc",
+      "meaning": "Inductive and capacitive reactance",
+      "unit": "Ω"
+    },
+    {
+      "symbol": "ω₀",
+      "meaning": "Resonance angular frequency",
+      "unit": "rad/s"
+    },
+    {
+      "symbol": "L, C",
+      "meaning": "Inductance and capacitance",
+      "unit": "H, F"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A series LCR circuit with L = 0.5 H, C = 8 μF.",
+    "substitution": "ω₀ = 1/√(0.5 × 8×10⁻⁶)",
+    "result": "ω₀ = 500 rad/s (resonance frequency)"
+  },
+  "commonMistakes": [
+    "Adding XL and Xc directly (like plain resistances) instead of subtracting them — they act 90° out of phase with each other, so they partially CANCEL, not add.",
+    "Forgetting impedance at resonance equals just R (minimum possible value, not zero) — current is maximum, not infinite, limited by the resistance present."
+  ],
+  "genZNote": "At resonance, inductive and capacitive reactance cancel out completely — only resistance is left standing."
+}

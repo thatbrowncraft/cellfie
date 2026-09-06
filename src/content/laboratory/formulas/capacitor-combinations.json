@@ -1,0 +1,52 @@
+{
+  "id": "formula-capacitor-combinations",
+  "category": "formula",
+  "title": "Capacitors in Series and Parallel",
+  "subcategory": "Electrostatics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Electrostatic Potential and Capacitance",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "capacitors in series",
+    "capacitors in parallel",
+    "equivalent capacitance"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-electric-potential-and-capacitance"
+  ],
+  "relatedFormulas": [],
+  "domain": "Electrostatic Potential and Capacitance",
+  "expression": "Series: 1/Ceq = 1/C1 + 1/C2 + ...  ;  Parallel: Ceq = C1 + C2 + ...",
+  "explanation": "Capacitors in SERIES share the same charge Q on each capacitor but the total voltage splits across them; their reciprocals add, giving an equivalent capacitance SMALLER than the smallest individual capacitor. Capacitors in PARALLEL share the same voltage across each but the total charge splits; their capacitances simply add, giving an equivalent capacitance LARGER than the largest individual capacitor. Note this is the OPPOSITE combination rule to resistors (where series adds directly and parallel uses reciprocals).",
+  "variables": [
+    {
+      "symbol": "Ceq",
+      "meaning": "Equivalent capacitance",
+      "unit": "F"
+    },
+    {
+      "symbol": "C1, C2",
+      "meaning": "Individual capacitances",
+      "unit": "F"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Two 4 μF capacitors connected in series, then the same two connected in parallel.",
+    "substitution": "Series: 1/Ceq = 1/4 + 1/4 = 1/2, so Ceq = 2 μF. Parallel: Ceq = 4 + 4",
+    "result": "Series Ceq = 2 μF ; Parallel Ceq = 8 μF"
+  },
+  "commonMistakes": [
+    "Applying the resistor combination rules directly to capacitors — capacitor series/parallel rules are exactly SWAPPED compared to resistors, a very frequent mix-up.",
+    "Forgetting that series capacitors share the same CHARGE (not voltage), while parallel capacitors share the same VOLTAGE (not charge)."
+  ],
+  "genZNote": "Capacitors flipped the resistor script — series adds like parallel resistors, and vice versa."
+}

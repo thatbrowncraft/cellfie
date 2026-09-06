@@ -61,5 +61,6 @@
   "commonMistakes": [
     "Applying these equations when acceleration is not constant (e.g. most real-world air resistance situations).",
     "Mixing up sign conventions for deceleration — a decelerating object has negative acceleration relative to the chosen positive direction, which must be substituted consistently into all three equations."
-  ]
+  ],
+  "genZNote": "The big three kinematics equations: motion's greatest-hits formulas."
 }

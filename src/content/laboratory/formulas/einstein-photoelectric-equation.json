@@ -1,0 +1,70 @@
+{
+  "id": "formula-einstein-photoelectric-equation",
+  "category": "formula",
+  "title": "Einstein's Photoelectric Equation",
+  "subcategory": "Modern Physics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Dual Nature of Radiation and Matter",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "photoelectric effect",
+    "work function",
+    "stopping potential",
+    "threshold frequency"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-photoelectric-effect"
+  ],
+  "relatedFormulas": [
+    "formula-de-broglie-wavelength"
+  ],
+  "domain": "Dual Nature of Radiation and Matter",
+  "expression": "hν = φ + KEmax  ;  KEmax = eV₀",
+  "explanation": "Einstein's photoelectric equation treats light as consisting of discrete photons (energy hν each); a photon striking a metal surface transfers ALL its energy to a single electron, part of which (φ, the work function) is used to free the electron from the metal, with any remaining energy becoming the electron's maximum kinetic energy. Below the threshold frequency (where hν = φ exactly), NO photoelectrons are emitted regardless of light intensity — this was the key evidence for light's particle nature that classical wave theory couldn't explain.",
+  "variables": [
+    {
+      "symbol": "h",
+      "meaning": "Planck's constant",
+      "unit": "J·s"
+    },
+    {
+      "symbol": "ν",
+      "meaning": "Frequency of incident light",
+      "unit": "Hz"
+    },
+    {
+      "symbol": "φ",
+      "meaning": "Work function of the metal",
+      "unit": "J or eV"
+    },
+    {
+      "symbol": "KEmax",
+      "meaning": "Maximum kinetic energy of emitted photoelectrons",
+      "unit": "J"
+    },
+    {
+      "symbol": "V₀",
+      "meaning": "Stopping potential",
+      "unit": "V"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Light of frequency 8×10¹⁴ Hz strikes a metal with work function 2 eV (≈3.2×10⁻¹⁹ J); h ≈ 6.63×10⁻³⁴ J·s.",
+    "substitution": "hν = 6.63×10⁻³⁴ × 8×10¹⁴ ≈ 5.3×10⁻¹⁹ J ; KEmax = 5.3×10⁻¹⁹ − 3.2×10⁻¹⁹",
+    "result": "KEmax ≈ 2.1×10⁻¹⁹ J"
+  },
+  "commonMistakes": [
+    "Assuming increasing light INTENSITY (rather than frequency) can produce photoemission below the threshold frequency — intensity only affects the NUMBER of photoelectrons emitted (once above threshold), never whether emission happens at all.",
+    "Forgetting maximum kinetic energy depends only on frequency (once above threshold), not on light intensity — a very frequently tested distinction."
+  ],
+  "genZNote": "Photoelectric effect: it's never about how bright the light is, only whether each photon brings enough energy."
+}

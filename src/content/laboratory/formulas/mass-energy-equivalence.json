@@ -52,5 +52,6 @@
   "commonMistakes": [
     "Forgetting to square the speed of light — a very common arithmetic error given how large c² is.",
     "Confusing fission (heavy nucleus splits, used in current nuclear reactors) with fusion (light nuclei combine, powers the Sun) — both release energy but via opposite processes."
-  ]
+  ],
+  "genZNote": "E = mc²: mass was secretly energy in disguise this whole time."
 }

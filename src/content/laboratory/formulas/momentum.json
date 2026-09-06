@@ -51,5 +51,6 @@
   "commonMistakes": [
     "Treating momentum as conserved for an individual object when external forces act on it — conservation applies to the TOTAL momentum of an isolated system.",
     "Confusing momentum conservation with kinetic energy conservation — momentum is conserved in ALL collisions (elastic and inelastic); kinetic energy is only conserved in elastic collisions."
-  ]
+  ],
+  "genZNote": "Momentum: mass and velocity, inseparable since forever."
 }
