@@ -182,6 +182,18 @@ export interface Comparison {
    */
   genZNote?: string
   lastVerified?: string
+  /**
+   * Subject/domain filter tag (Physics/Chemistry expansion, subject-filter
+   * brief) — mirrors `subjectDomain` on `core/laboratory/types.ts` exactly,
+   * same values, same default-to-'biology' convention. This is deliberately
+   * coarser than `domain` above: `domain` already splits biology into many
+   * specific values (bacteriology, virology, immunology, etc.), so a "Biology
+   * filter" there would mean checking many boxes. `subjectDomain` gives a
+   * single high-level toggle instead, without touching the existing `domain`
+   * enum or any of its ~120 existing curated comparisons. Optional and
+   * additive; absent means 'biology'.
+   */
+  subjectDomain?: 'biology' | 'chemistry' | 'physics'
 }
 
 export interface ComparisonSearchHit {
