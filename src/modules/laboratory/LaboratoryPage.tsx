@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import {
   BookOpen,
@@ -44,7 +44,7 @@ import {
   CALCULATOR_HUB_TAGLINE,
   UNIT_CONVERTER_TAGLINE
 } from '../../core/laboratory/microcopy'
-import type { LabDifficulty, LaboratoryCategory } from '../../core/laboratory/types'
+import type { LabDifficulty, LaboratoryCategory, LaboratoryContent } from '../../core/laboratory/types'
 import { useLiveQuery } from '../../core/db/useLiveQuery'
 import { listSavedLabItems } from '../../core/laboratory/savedItems'
 import type { SavedLabItemRecord } from '../../core/db'
@@ -492,31 +492,89 @@ function DifficultyGrid({
   )
 }
 
+type SubjectFilter = 'all' | 'biology' | 'chemistry' | 'physics'
+
+const SUBJECT_FILTER_LABELS: Record<SubjectFilter, string> = {
+  all: 'All',
+  biology: 'Biology',
+  chemistry: 'Chemistry',
+  physics: 'Physics'
+}
+
+/** Every pre-existing Laboratory item predates this field, so absence means biology — see `subjectDomain` doc comment in core/laboratory/types.ts. */
+function getSubjectDomain(item: LaboratoryContent): Exclude<SubjectFilter, 'all'> {
+  return item.subjectDomain ?? 'biology'
+}
+
 function ContentGrid({ category, onSelect }: { category: LaboratoryCategory; onSelect: (id: string) => void }) {
   const items = listByCategory(category)
   // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
   // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
   const gridColsClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
+  const [subjectFilter, setSubjectFilter] = useState<SubjectFilter>('all')
+
+  const availableSubjects = useMemo(() => {
+    const set = new Set<Exclude<SubjectFilter, 'all'>>()
+    items.forEach((item) => set.add(getSubjectDomain(item)))
+    return set
+  }, [items])
+
+  // Data-driven per brief §4: only render the filter row when this section
+  // actually mixes more than one subject. Sections that are entirely
+  // biology (Protocols, Media, Biochemical Tests, Biosafety, Equipment)
+  // never show it — no empty/pointless buttons.
+  const showSubjectFilter = availableSubjects.size > 1
+
+  const filteredItems = useMemo(() => {
+    if (subjectFilter === 'all') return items
+    return items.filter((item) => getSubjectDomain(item) === subjectFilter)
+  }, [items, subjectFilter])
+
   if (items.length === 0) return null
   return (
     <div>
       <Micro as="p" className="mb-3">
         {SECTION_TAGLINE[category]}
       </Micro>
-      <div className={`grid gap-4 ${gridColsClass}`}>
-        {items.map((item) => (
-          <Card key={item.id} interactive onClick={() => onSelect(item.id)}>
-            <CardBody className="flex flex-col gap-1">
-              <p className="font-display text-h3 font-medium text-ink-primary">{item.title}</p>
-              {item.subcategory && <p className="font-ui text-caption text-ink-tertiary">{item.subcategory}</p>}
-              <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{getItemTagline(item.id, category)}</p>
-            </CardBody>
-          </Card>
-        ))}
-      </div>
+      {showSubjectFilter && (
+        <div className="mb-4 flex flex-wrap gap-2">
+          {(['all', 'biology', 'chemistry', 'physics'] as SubjectFilter[])
+            .filter((f) => f === 'all' || availableSubjects.has(f))
+            .map((f) => (
+              <button
+                key={f}
+                type="button"
+                onClick={() => setSubjectFilter(f)}
+                className={`rounded-full border px-3 py-1.5 font-ui text-caption font-medium transition-colors ${
+                  subjectFilter === f
+                    ? 'border-olive bg-olive/10 text-olive'
+                    : 'border-border-strong bg-surface text-ink-secondary hover:border-olive hover:text-olive'
+                }`}
+              >
+                {SUBJECT_FILTER_LABELS[f]}
+              </button>
+            ))}
+        </div>
+      )}
+      {filteredItems.length === 0 ? (
+        <p className="font-ui text-caption text-ink-tertiary">No {SUBJECT_FILTER_LABELS[subjectFilter].toLowerCase()} items in this section yet.</p>
+      ) : (
+        <div className={`grid gap-4 ${gridColsClass}`}>
+          {filteredItems.map((item) => (
+            <Card key={item.id} interactive onClick={() => onSelect(item.id)}>
+              <CardBody className="flex flex-col gap-1">
+                <p className="font-display text-h3 font-medium text-ink-primary">{item.title}</p>
+                {item.subcategory && <p className="font-ui text-caption text-ink-tertiary">{item.subcategory}</p>}
+                <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{getItemTagline(item.id, category)}</p>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
+
 
 function CalculatorGrid({ onSelect }: { onSelect: (id: string) => void }) {
   // PWA layout-isolation fix — was `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`;
