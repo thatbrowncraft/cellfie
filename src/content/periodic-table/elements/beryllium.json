@@ -1,0 +1,47 @@
+{
+  "id": "element-beryllium",
+  "category": "element",
+  "atomicNumber": 4,
+  "symbol": "Be",
+  "name": "Beryllium",
+  "atomicMass": 9.012,
+  "elementCategory": "alkaline-earth-metal",
+  "elementCategoryLabel": "Alkaline Earth Metal",
+  "period": 2,
+  "block": "s",
+  "group": 2,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[He] 2s²",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "electronegativityPauling": 1.57,
+  "density": "1.85 g/cm³",
+  "meltingPointC": 1287,
+  "boilingPointC": 2469,
+  "discovery": {
+    "year": 1798,
+    "discoverer": "Louis-Nicolas Vauquelin"
+  },
+  "occurrence": "Found in beryl and emerald (beryllium aluminium silicates); rare in Earth's crust.",
+  "majorUses": [
+    "X-ray transmission windows",
+    "Aerospace alloys (lightweight, stiff)",
+    "Non-sparking tools for explosive environments"
+  ],
+  "safetyNotes": "Beryllium dust and compounds are highly toxic if inhaled and can cause chronic lung disease (berylliosis) — handled only with strict industrial controls.",
+  "notableCharacteristics": "Transparent to X-rays, which is why it's used as the window material in X-ray tubes.",
+  "ncertRelevance": [
+    "diagonal relationship (Be resembles Al)",
+    "small size and high polarizing power effects"
+  ],
+  "whyHere": "Its very small +2 ion has unusually high charge density for Group 2, which is exactly what drives its diagonal relationship with aluminium rather than typical alkaline-earth behaviour.",
+  "didYouKnow": "Emeralds and aquamarines are both beryllium minerals — the difference in colour comes from trace chromium versus iron impurities.",
+  "genZNote": "Small, stiff, and secretly the reason your emerald exists. Also the reason X-rays can see through windows.",
+  "relatedElements": [
+    "element-magnesium",
+    "element-lithium",
+    "element-aluminium"
+  ]
+}

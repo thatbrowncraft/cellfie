@@ -1,0 +1,47 @@
+{
+  "id": "element-aluminium",
+  "category": "element",
+  "atomicNumber": 13,
+  "symbol": "Al",
+  "name": "Aluminium",
+  "atomicMass": 26.982,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 3,
+  "block": "p",
+  "group": 13,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ne] 3s² 3p¹",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.61,
+  "density": "2.70 g/cm³",
+  "meltingPointC": 660.3,
+  "boilingPointC": 2519,
+  "discovery": {
+    "year": 1825,
+    "discoverer": "Hans Christian Ørsted"
+  },
+  "occurrence": "The most abundant metal in Earth's crust, mainly extracted from bauxite ore.",
+  "majorUses": [
+    "Aircraft and vehicle bodies (lightweight, strong)",
+    "Beverage cans and foil packaging",
+    "Electrical transmission cables"
+  ],
+  "notableCharacteristics": "Forms a microscopically thin, tough oxide layer instantly on exposure to air, which is exactly what protects it from further corrosion without needing paint.",
+  "ncertRelevance": [
+    "extraction by Hall-Héroult electrolysis process",
+    "amphoteric oxide behaviour",
+    "diagonal relationship with beryllium"
+  ],
+  "whyHere": "Three valence electrons let it form a stable +3 ion, and the resulting Al₂O₃ layer is so tightly bound to the metal surface that it self-seals against further oxygen exposure — the real secret behind aluminium's 'rust-proof' reputation.",
+  "didYouKnow": "Aluminium was once more precious than gold — Napoleon III reportedly reserved aluminium cutlery for his most honoured guests before the Hall-Héroult process made it cheap to produce.",
+  "genZNote": "Used to be fancier than gold, now it's your soda can. Glow-down or glow-up depends how you look at it.",
+  "relatedElements": [
+    "element-boron",
+    "element-gallium",
+    "element-silicon"
+  ]
+}

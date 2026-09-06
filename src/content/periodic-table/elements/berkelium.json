@@ -1,0 +1,45 @@
+{
+  "id": "element-berkelium",
+  "category": "element",
+  "atomicNumber": 97,
+  "symbol": "Bk",
+  "name": "Berkelium",
+  "atomicMass": 247,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f⁹ 7s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3",
+    "+4"
+  ],
+  "electronegativityPauling": 1.3,
+  "density": "14.78 g/cm³ (estimated)",
+  "meltingPointC": 1050,
+  "discovery": {
+    "year": 1949,
+    "discoverer": "Glenn T. Seaborg and team, University of California, Berkeley"
+  },
+  "occurrence": "Does not occur naturally; produced artificially in particle accelerators/reactors in gram-scale or smaller quantities.",
+  "majorUses": [
+    "No practical applications — used exclusively in nuclear physics research, including as a target material to synthesize even heavier superheavy elements like tennessine"
+  ],
+  "safetyNotes": "Intensely radioactive; only ever produced and studied in minute quantities under strict laboratory controls.",
+  "notableCharacteristics": "Named after Berkeley, California, home of the Lawrence Berkeley National Laboratory where it and several other transuranium elements were first synthesized.",
+  "ncertRelevance": [
+    "named after a research institution's home city",
+    "role in synthesizing heavier superheavy elements"
+  ],
+  "whyHere": "As a mid-series actinide with electrons filling further into the 5f subshell, berkelium is chemically similar to its lanthanide counterpart terbium, and its main scientific value today is as a bombardment target used to fuse together even heavier, more short-lived superheavy elements.",
+  "didYouKnow": "A rare, carefully guarded sample of berkelium-249 was used as the target material that, when bombarded with calcium ions, led to the successful synthesis of tennessine (element 117) in 2010.",
+  "genZNote": "Basically the periodic table's ammunition for making even heavier, weirder elements. Quietly essential to the whole superheavy-element project.",
+  "relatedElements": [
+    "element-curium",
+    "element-californium",
+    "element-terbium"
+  ]
+}

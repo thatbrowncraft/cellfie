@@ -1,0 +1,46 @@
+{
+  "id": "element-astatine",
+  "category": "element",
+  "atomicNumber": 85,
+  "symbol": "At",
+  "name": "Astatine",
+  "atomicMass": 210,
+  "elementCategory": "halogen",
+  "elementCategoryLabel": "Halogen",
+  "period": 6,
+  "block": "p",
+  "group": 17,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "-1",
+    "+1"
+  ],
+  "electronegativityPauling": 2.2,
+  "density": "~7 g/cm³ (estimated)",
+  "meltingPointC": 302,
+  "boilingPointC": 337,
+  "discovery": {
+    "year": 1940,
+    "discoverer": "Dale R. Corson, Kenneth Ross MacKenzie & Emilio Segrè"
+  },
+  "occurrence": "The rarest naturally occurring element on Earth — at any given moment, only a few grams exist in the entire planet's crust, from uranium/thorium decay chains.",
+  "majorUses": [
+    "Experimental targeted alpha-particle cancer therapy (astatine-211), still in research/clinical trial stages"
+  ],
+  "safetyNotes": "Intensely radioactive; its extreme rarity and short half-lives mean it's studied only in minute, carefully controlled quantities.",
+  "notableCharacteristics": "So scarce and short-lived (its most stable isotope has a half-life of just over 8 hours) that no one has ever seen a visible, bulk sample of astatine — its physical appearance is inferred rather than observed.",
+  "ncertRelevance": [
+    "rarest naturally occurring element",
+    "halogen family completion"
+  ],
+  "whyHere": "Named from the Greek 'astatos', meaning 'unstable', astatine sits at the bottom of the halogen group where increasing atomic size and radioactivity converge, making it too scarce and short-lived to behave like a normal, isolable halogen.",
+  "didYouKnow": "Astatine is so rare that scientists estimate less than 30 grams exist naturally on Earth at any given time, spread invisibly thin across the entire planet's crust — nobody has ever actually seen a visible piece of it.",
+  "genZNote": "So rare literally no human has ever seen a visible chunk of it. The periodic table's most elusive main character.",
+  "relatedElements": [
+    "element-iodine",
+    "element-bromine",
+    "element-polonium"
+  ]
+}

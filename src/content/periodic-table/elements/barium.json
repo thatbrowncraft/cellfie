@@ -1,0 +1,47 @@
+{
+  "id": "element-barium",
+  "category": "element",
+  "atomicNumber": 56,
+  "symbol": "Ba",
+  "name": "Barium",
+  "atomicMass": 137.33,
+  "elementCategory": "alkaline-earth-metal",
+  "elementCategoryLabel": "Alkaline Earth Metal",
+  "period": 6,
+  "block": "s",
+  "group": 2,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 6s²",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "electronegativityPauling": 0.89,
+  "density": "3.51 g/cm³",
+  "meltingPointC": 727,
+  "boilingPointC": 1897,
+  "discovery": {
+    "year": 1808,
+    "discoverer": "Humphry Davy"
+  },
+  "occurrence": "Found in the minerals barite and witherite; the pure metal reacts too readily with air/water to exist free.",
+  "majorUses": [
+    "Barium sulfate as an X-ray/CT contrast medium ('barium meal')",
+    "Drilling mud additive (barite, for its high density)",
+    "Green colouring in fireworks"
+  ],
+  "biologicalRelevance": "Barium sulfate is medically valuable specifically because, unlike other barium salts, it's insoluble and non-toxic, letting doctors safely outline the digestive tract on X-rays.",
+  "notableCharacteristics": "Named from the Greek 'barys' meaning 'heavy', reflecting the unusually high density of its main ore, barite.",
+  "ncertRelevance": [
+    "contrast medium chemistry",
+    "flame test colour"
+  ],
+  "whyHere": "Its two loosely-held 6s electrons are readily lost to form Ba²⁺, and the resulting compounds' high density and (in the case of the sulfate) low solubility are exactly why barium sulfate works so well as a safe, opaque X-ray contrast agent.",
+  "didYouKnow": "The soluble forms of barium are actually quite toxic, but doctors can safely have patients drink a 'barium meal' because barium sulfate specifically is so insoluble that essentially none of it gets absorbed into the bloodstream.",
+  "genZNote": "Toxic when soluble, totally fine when it's not. Chemistry's reminder that 'which compound' always matters.",
+  "relatedElements": [
+    "element-calcium",
+    "element-strontium",
+    "element-radium"
+  ]
+}

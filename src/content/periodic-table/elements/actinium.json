@@ -1,0 +1,47 @@
+{
+  "id": "element-actinium",
+  "category": "element",
+  "atomicNumber": 89,
+  "symbol": "Ac",
+  "name": "Actinium",
+  "atomicMass": 227,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 6d¹ 7s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.1,
+  "density": "10.07 g/cm³",
+  "meltingPointC": 1050,
+  "boilingPointC": 3200,
+  "discovery": {
+    "year": 1899,
+    "discoverer": "André-Louis Debierne"
+  },
+  "occurrence": "Extremely rare, found in trace amounts within uranium ores as a decay product.",
+  "majorUses": [
+    "Lends its name to the entire actinide series",
+    "Neutron source production (actinium-beryllium)",
+    "Experimental targeted alpha-therapy for cancer (actinium-225)"
+  ],
+  "safetyNotes": "Highly radioactive, requiring specialized shielding and handling even in the tiny quantities used in research.",
+  "notableCharacteristics": "Glows faintly with a pale blue light in the dark, similar to radium, because of its intense radioactivity — the origin of its name from the Greek 'aktinos', meaning 'ray' or 'beam'.",
+  "ncertRelevance": [
+    "actinide series naming",
+    "radioactive decay chain position"
+  ],
+  "whyHere": "As the element that gives the entire actinide series its name, actinium's single 6d electron marks the analogous starting point to lanthanum at the top of the f-block's second row, even though — like lanthanum — it isn't itself filling an f-orbital.",
+  "didYouKnow": "A gram of actinium glows visibly in the dark purely from its own radioactivity, releasing enough energy to excite the surrounding air, similar to (though even more intensely than) radium.",
+  "genZNote": "Gives its name to the whole actinide series while also glowing blue in the dark. Extra, but earned it.",
+  "relatedElements": [
+    "element-lanthanum",
+    "element-thorium",
+    "element-radium"
+  ]
+}

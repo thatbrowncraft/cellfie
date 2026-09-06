@@ -1,0 +1,46 @@
+{
+  "id": "element-bismuth",
+  "category": "element",
+  "atomicNumber": 83,
+  "symbol": "Bi",
+  "name": "Bismuth",
+  "atomicMass": 208.98,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 6,
+  "block": "p",
+  "group": 15,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p³",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3",
+    "+5"
+  ],
+  "electronegativityPauling": 2.02,
+  "density": "9.78 g/cm³",
+  "meltingPointC": 271.4,
+  "boilingPointC": 1564,
+  "discovery": {
+    "discoverer": "Known since the 15th century, long confused with lead and tin"
+  },
+  "occurrence": "Found natively and in sulfide/oxide ores, often as a by-product of lead, copper, and tin refining.",
+  "majorUses": [
+    "Pepto-Bismol and other stomach-soothing medications (bismuth subsalicylate)",
+    "Low-toxicity replacement for lead in solder, fishing weights, and ammunition",
+    "Decorative iridescent crystal displays (grown synthetically)"
+  ],
+  "notableCharacteristics": "For decades believed to be the heaviest stable, non-radioactive element, until 2003 measurements revealed it's actually extremely weakly radioactive, with a half-life over a billion times the current age of the universe.",
+  "ncertRelevance": [
+    "longest measured half-life of any radioactive isotope",
+    "non-toxic alternative to lead"
+  ],
+  "whyHere": "Bismuth's position at the very edge of nuclear stability means its main isotope decays, but so unbelievably slowly (a half-life over a billion times the universe's age) that it behaves as effectively stable for every practical chemical purpose.",
+  "didYouKnow": "Synthetically grown bismuth crystals form strikingly colourful, geometric, staircase-like structures purely from how the metal cools and oxidizes — a favourite among crystal-growing hobbyists precisely because it's non-toxic, unlike most heavy metals.",
+  "genZNote": "Technically radioactive but with a half-life longer than the universe is old, so basically not your problem. Also grows the prettiest rainbow crystals.",
+  "relatedElements": [
+    "element-lead",
+    "element-antimony",
+    "element-polonium"
+  ]
+}

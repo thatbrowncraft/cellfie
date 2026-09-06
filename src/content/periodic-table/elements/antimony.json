@@ -1,0 +1,48 @@
+{
+  "id": "element-antimony",
+  "category": "element",
+  "atomicNumber": 51,
+  "symbol": "Sb",
+  "name": "Antimony",
+  "atomicMass": 121.76,
+  "elementCategory": "metalloid",
+  "elementCategoryLabel": "Metalloid",
+  "period": 5,
+  "block": "p",
+  "group": 15,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p³",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+5",
+    "+3",
+    "-3"
+  ],
+  "electronegativityPauling": 2.05,
+  "density": "6.697 g/cm³",
+  "meltingPointC": 630.6,
+  "boilingPointC": 1587,
+  "discovery": {
+    "discoverer": "Known since antiquity"
+  },
+  "occurrence": "Found combined mainly in the mineral stibnite; historically used as a cosmetic (kohl eyeliner) and medicine.",
+  "majorUses": [
+    "Flame retardant additive (antimony trioxide)",
+    "Lead-antimony alloys for batteries and bullets",
+    "Semiconductor and infrared detector materials"
+  ],
+  "safetyNotes": "Antimony compounds are toxic with effects resembling arsenic poisoning, which historically caused confusion between the two in forensic cases.",
+  "notableCharacteristics": "Its chemical symbol, Sb, comes from its old Latin name 'stibium', unrelated to its English name.",
+  "ncertRelevance": [
+    "metalloid trends",
+    "Latin-derived chemical symbol mismatch"
+  ],
+  "whyHere": "With five valence electrons like nitrogen, phosphorus, and arsenic above it, antimony continues the family's trend toward metalloid character, its larger atomic size giving it more metallic lustre and conductivity than the lighter members.",
+  "didYouKnow": "Antimony sulfide (stibnite) was used as kohl eyeliner in ancient Egypt thousands of years before anyone understood it was a toxic heavy-metal compound.",
+  "genZNote": "Ancient Egyptian eyeliner ingredient with a Latin name that has nothing to do with its English one. Chaotic naming, iconic legacy.",
+  "relatedElements": [
+    "element-arsenic",
+    "element-bismuth",
+    "element-tin"
+  ]
+}

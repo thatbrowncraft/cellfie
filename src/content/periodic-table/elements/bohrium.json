@@ -1,0 +1,41 @@
+{
+  "id": "element-bohrium",
+  "category": "element",
+  "atomicNumber": 107,
+  "symbol": "Bh",
+  "name": "Bohrium",
+  "atomicMass": 270,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 7,
+  "block": "d",
+  "group": 7,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d⁵ 7s² (predicted)",
+  "commonOxidationStates": [
+    "+7"
+  ],
+  "density": "~37 g/cm³ (predicted)",
+  "discovery": {
+    "year": 1981,
+    "discoverer": "Peter Armbruster & Gottfried Münzenberg, GSI Darmstadt"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom, decaying within seconds.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; only ever produced and observed as single atoms.",
+  "notableCharacteristics": "Named after physicist Niels Bohr, whose atomic model laid the groundwork for understanding electron shell structure across the entire periodic table.",
+  "ncertRelevance": [
+    "named after Niels Bohr",
+    "predicted Group 7 chemistry"
+  ],
+  "whyHere": "Predicted to sit in Group 7 alongside manganese and rhenium, bohrium's expected +7 oxidation state chemistry follows the group trend, though only a handful of individual atoms have ever been chemically studied to test it.",
+  "didYouKnow": "Discovering and confirming bohrium required detecting a decay chain from a single atom that survives for only a fraction of a second before splitting apart — a level of experimental precision Niels Bohr himself never had access to.",
+  "genZNote": "Named after the guy whose atomic model you learn in high school, now representing an element nobody's ever seen more than one atom of at once.",
+  "relatedElements": [
+    "element-manganese",
+    "element-rhenium",
+    "element-seaborgium"
+  ]
+}

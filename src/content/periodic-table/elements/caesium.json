@@ -1,0 +1,50 @@
+{
+  "id": "element-caesium",
+  "category": "element",
+  "atomicNumber": 55,
+  "symbol": "Cs",
+  "name": "Caesium",
+  "atomicMass": 132.91,
+  "elementCategory": "alkali-metal",
+  "elementCategoryLabel": "Alkali Metal",
+  "period": 6,
+  "block": "s",
+  "group": 1,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 6s¹",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+1"
+  ],
+  "electronegativityPauling": 0.79,
+  "density": "1.93 g/cm³",
+  "meltingPointC": 28.5,
+  "boilingPointC": 671,
+  "discovery": {
+    "year": 1860,
+    "discoverer": "Robert Bunsen & Gustav Kirchhoff"
+  },
+  "occurrence": "Rare and dispersed, found in the mineral pollucite; melts nearly at room temperature.",
+  "majorUses": [
+    "Atomic clocks (defines the SI second)",
+    "Drilling fluids for oil and gas extraction",
+    "Photoelectric cell components"
+  ],
+  "notableCharacteristics": "Defines the SI second itself — one second is officially defined as 9,192,631,770 oscillations of radiation from a caesium-133 atom.",
+  "ncertRelevance": [
+    "SI unit definition",
+    "most electropositive stable element",
+    "alkali metal reactivity peak"
+  ],
+  "whyHere": "With its lone 6s electron the farthest of any stable alkali metal from the nucleus, caesium is the most electropositive and reactive stable element, exploding violently and immediately on contact with water.",
+  "didYouKnow": "The modern definition of a second isn't based on clocks or the Sun at all — it's defined by counting a precise number of oscillations in the microwave radiation emitted by caesium-133 atoms.",
+  "genZNote": "Defines what a 'second' even is. No pressure, just holding up all of modern timekeeping.",
+  "relatedElements": [
+    "element-rubidium",
+    "element-francium",
+    "element-barium"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-periodic-trends"
+  ]
+}

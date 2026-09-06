@@ -1,0 +1,47 @@
+{
+  "id": "element-americium",
+  "category": "element",
+  "atomicNumber": 95,
+  "symbol": "Am",
+  "name": "Americium",
+  "atomicMass": 243,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f⁷ 7s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.3,
+  "density": "12.0 g/cm³",
+  "meltingPointC": 1176,
+  "boilingPointC": 2607,
+  "discovery": {
+    "year": 1944,
+    "discoverer": "Glenn T. Seaborg and team"
+  },
+  "occurrence": "Does not occur naturally; produced artificially in nuclear reactors from plutonium.",
+  "majorUses": [
+    "Ionization-type household smoke detectors (americium-241 is the tiny radioactive source in most residential smoke alarms)",
+    "Industrial thickness gauges",
+    "Well-logging equipment for oil exploration"
+  ],
+  "safetyNotes": "Radioactive, though the extremely small amount used in a smoke detector (a fraction of a microgram) is considered safe under normal use and disposal guidelines.",
+  "notableCharacteristics": "Named after the Americas, following the same continent-naming logic that gave europium its name — and it's the actinide most people unknowingly have inside their own home.",
+  "ncertRelevance": [
+    "household smoke detector ionization chemistry",
+    "continent-naming convention"
+  ],
+  "whyHere": "Its half-filled 5f⁷ configuration gives americium extra electronic stability similar to europium's half-filled 4f⁷ shell, and its steady, predictable alpha-particle emission from that stable configuration is exactly what makes it reliable and safe enough for everyday smoke-detector use.",
+  "didYouKnow": "Most household ionization smoke detectors contain a tiny americium-241 source — meaning a genuine actinide element, the same broad family as plutonium, is quietly sitting on your ceiling right now.",
+  "genZNote": "There's a literal actinide on your ceiling right now if you have a smoke detector. Wild fact to sit with.",
+  "relatedElements": [
+    "element-plutonium",
+    "element-curium",
+    "element-europium"
+  ]
+}

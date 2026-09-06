@@ -1,0 +1,49 @@
+{
+  "id": "element-bromine",
+  "category": "element",
+  "atomicNumber": 35,
+  "symbol": "Br",
+  "name": "Bromine",
+  "atomicMass": 79.904,
+  "elementCategory": "halogen",
+  "elementCategoryLabel": "Halogen",
+  "period": 4,
+  "block": "p",
+  "group": 17,
+  "phaseAtRoomTemp": "liquid",
+  "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p⁵",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+1",
+    "+5",
+    "-1"
+  ],
+  "electronegativityPauling": 2.96,
+  "density": "3.10 g/cm³",
+  "meltingPointC": -7.2,
+  "boilingPointC": 58.8,
+  "discovery": {
+    "year": 1826,
+    "discoverer": "Antoine Balard"
+  },
+  "occurrence": "Found dissolved as bromide salts in seawater and salt lake brines (notably the Dead Sea).",
+  "majorUses": [
+    "Flame retardants",
+    "Photographic film (silver bromide)",
+    "Water treatment and pool sanitizers (as an alternative to chlorine)"
+  ],
+  "notableCharacteristics": "One of only two elements that are liquid at room temperature (the other being mercury), and it fumes off a dense, choking reddish-brown vapour.",
+  "ncertRelevance": [
+    "only nonmetal liquid at room temperature",
+    "halogen reactivity trend",
+    "extraction from seawater"
+  ],
+  "whyHere": "Sitting between the very reactive gaseous halogens above it and the solid iodine below, bromine's intermediate atomic size and intermolecular forces are exactly what makes it liquid rather than gas or solid at room temperature.",
+  "didYouKnow": "Bromine's name comes from the Greek 'bromos' meaning 'stench' — its vapour is famously and unpleasantly pungent, a smell you'd recognize instantly even without knowing the chemistry.",
+  "genZNote": "Named literally 'stench' in Greek. One of two elements that's just... liquid at room temp, for no reason anyone finds convenient.",
+  "relatedElements": [
+    "element-chlorine",
+    "element-iodine",
+    "element-fluorine"
+  ]
+}

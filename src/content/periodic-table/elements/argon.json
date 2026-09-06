@@ -1,0 +1,42 @@
+{
+  "id": "element-argon",
+  "category": "element",
+  "atomicNumber": 18,
+  "symbol": "Ar",
+  "name": "Argon",
+  "atomicMass": 39.95,
+  "elementCategory": "noble-gas",
+  "elementCategoryLabel": "Noble Gas",
+  "period": 3,
+  "block": "p",
+  "group": 18,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "[Ne] 3s² 3p⁶",
+  "commonValency": "0",
+  "density": "0.001784 g/cm³ (gas)",
+  "meltingPointC": -189.3,
+  "boilingPointC": -185.8,
+  "discovery": {
+    "year": 1894,
+    "discoverer": "Lord Rayleigh & William Ramsay"
+  },
+  "occurrence": "Third most abundant gas in the atmosphere (~0.93%), far more common in air than CO₂.",
+  "majorUses": [
+    "Inert shielding gas for welding",
+    "Filling incandescent and fluorescent light bulbs",
+    "Preserving documents and wine bottles from oxidation"
+  ],
+  "notableCharacteristics": "Its name comes from the Greek 'argos', meaning 'lazy' or 'inactive', a nod to its near-total chemical unreactivity.",
+  "ncertRelevance": [
+    "noble gas configuration",
+    "abundance in atmosphere versus other noble gases"
+  ],
+  "whyHere": "A full 3s² 3p⁶ octet leaves it with no drive to bond, and its relative abundance in air (versus rarer helium/neon) comes from being a stable end-product of potassium-40 radioactive decay in Earth's crust.",
+  "didYouKnow": "Argon makes up roughly 1% of every breath you take, yet it does absolutely nothing once inhaled or exhaled.",
+  "genZNote": "Named 'the lazy one' by ancient Greek logic. Fills lightbulbs and welding tanks without lifting an electron.",
+  "relatedElements": [
+    "element-neon",
+    "element-krypton",
+    "element-helium"
+  ]
+}

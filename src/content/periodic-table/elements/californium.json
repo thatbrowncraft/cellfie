@@ -1,0 +1,46 @@
+{
+  "id": "element-californium",
+  "category": "element",
+  "atomicNumber": 98,
+  "symbol": "Cf",
+  "name": "Californium",
+  "atomicMass": 251,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁰ 7s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.3,
+  "density": "15.1 g/cm³ (estimated)",
+  "meltingPointC": 900,
+  "discovery": {
+    "year": 1950,
+    "discoverer": "Glenn T. Seaborg and team, University of California, Berkeley"
+  },
+  "occurrence": "Does not occur naturally; produced artificially in nuclear reactors, though only in extremely small quantities worldwide.",
+  "majorUses": [
+    "Portable neutron source for oil-well logging and detecting metals/explosives",
+    "Starting neutron source to initiate some nuclear reactors",
+    "Cancer radiotherapy research (neutron brachytherapy)"
+  ],
+  "safetyNotes": "Intensely radioactive, and one of the most expensive substances on Earth by weight — produced in only milligram quantities globally per year.",
+  "notableCharacteristics": "One of the very few elements whose neutron-emission properties make it directly useful as a compact, portable neutron source, despite its extreme rarity and cost.",
+  "ncertRelevance": [
+    "practical neutron-source applications despite extreme rarity",
+    "named after a US state"
+  ],
+  "whyHere": "Californium-252 undergoes spontaneous fission at a notably higher rate than most heavy elements, continuously releasing a steady stream of neutrons without needing an external trigger — exactly the property that makes it useful as a compact neutron source despite being made in only milligram quantities worldwide.",
+  "didYouKnow": "Californium is so scarce and hard to make that a single gram has, at times, been priced at tens of millions of dollars, making it one of the most expensive materials ever produced by humans.",
+  "genZNote": "One of the most expensive substances humans have ever made, gram for gram. Also doubles as a portable neutron gun for oil rigs.",
+  "relatedElements": [
+    "element-berkelium",
+    "element-einsteinium",
+    "element-curium"
+  ]
+}

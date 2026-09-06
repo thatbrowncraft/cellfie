@@ -1,0 +1,48 @@
+{
+  "id": "element-boron",
+  "category": "element",
+  "atomicNumber": 5,
+  "symbol": "B",
+  "name": "Boron",
+  "atomicMass": 10.81,
+  "elementCategory": "metalloid",
+  "elementCategoryLabel": "Metalloid",
+  "period": 2,
+  "block": "p",
+  "group": 13,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[He] 2s² 2p¹",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 2.04,
+  "density": "2.34 g/cm³",
+  "meltingPointC": 2076,
+  "boilingPointC": 3927,
+  "discovery": {
+    "year": 1808,
+    "discoverer": "Joseph Louis Gay-Lussac & Louis Jacques Thénard"
+  },
+  "occurrence": "Found in borax and boric acid deposits, mostly from evaporated ancient lake beds.",
+  "majorUses": [
+    "Borosilicate glass (Pyrex)",
+    "Semiconductor doping",
+    "Neutron-absorbing control rods in nuclear reactors"
+  ],
+  "biologicalRelevance": "An essential trace nutrient for plants, needed for cell wall structure — its absence causes stunted, deformed growth.",
+  "notableCharacteristics": "Only three valence electrons but forms famously electron-deficient compounds like diborane (B₂H₆) that break the usual bonding rules.",
+  "ncertRelevance": [
+    "electron-deficient compounds",
+    "boron family trends",
+    "diagonal relationship (B resembles Si)"
+  ],
+  "whyHere": "With just three valence electrons in the p-block's first row, boron can't complete an octet through normal bonding alone — which is exactly why it forms unusual electron-deficient, three-centre-two-electron bonds.",
+  "didYouKnow": "Boron is the reason Pyrex glassware can go from freezer to oven without shattering — borosilicate glass barely expands when heated.",
+  "genZNote": "Three electrons short of a full house and somehow that's its whole personality. Chaotic bonding, glass-saving legacy.",
+  "relatedElements": [
+    "element-aluminium",
+    "element-carbon",
+    "element-silicon"
+  ]
+}

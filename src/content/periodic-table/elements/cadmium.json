@@ -1,0 +1,47 @@
+{
+  "id": "element-cadmium",
+  "category": "element",
+  "atomicNumber": 48,
+  "symbol": "Cd",
+  "name": "Cadmium",
+  "atomicMass": 112.41,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 5,
+  "block": "d",
+  "group": 12,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d¹⁰ 5s²",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "electronegativityPauling": 1.69,
+  "density": "8.65 g/cm³",
+  "meltingPointC": 321.1,
+  "boilingPointC": 767,
+  "discovery": {
+    "year": 1817,
+    "discoverer": "Friedrich Stromeyer"
+  },
+  "occurrence": "Found as an impurity in zinc ores, recovered as a by-product of zinc refining.",
+  "majorUses": [
+    "Rechargeable nickel-cadmium (NiCd) batteries (now largely phased out)",
+    "Corrosion-resistant electroplating",
+    "Pigments (cadmium yellow/red, now restricted)"
+  ],
+  "safetyNotes": "Highly toxic and carcinogenic with cumulative effects on kidneys and bones — 'itai-itai disease' in Japan was a documented mass cadmium-poisoning event from contaminated irrigation water.",
+  "notableCharacteristics": "Like zinc and mercury, its filled d-subshell makes its chemistry more main-group-like than a typical transition metal.",
+  "ncertRelevance": [
+    "toxicity case studies",
+    "borderline transition-metal classification"
+  ],
+  "whyHere": "With a completely filled 4d¹⁰ subshell in both metal and Cd²⁺ ion, cadmium shows little of the colour or variable oxidation chemistry typical of transition metals, placing it in the same 'borderline' group as zinc and mercury.",
+  "didYouKnow": "Cadmium pigments once gave artists' paints their vivid, stable yellows and reds, but many countries have restricted their use due to the metal's severe toxicity and environmental persistence.",
+  "genZNote": "Beautiful pigment, brutal toxicity. The periodic table's reminder that 'pretty' and 'safe' aren't the same thing.",
+  "relatedElements": [
+    "element-zinc",
+    "element-mercury",
+    "element-silver"
+  ]
+}

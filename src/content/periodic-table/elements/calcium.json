@@ -1,0 +1,48 @@
+{
+  "id": "element-calcium",
+  "category": "element",
+  "atomicNumber": 20,
+  "symbol": "Ca",
+  "name": "Calcium",
+  "atomicMass": 40.078,
+  "elementCategory": "alkaline-earth-metal",
+  "elementCategoryLabel": "Alkaline Earth Metal",
+  "period": 4,
+  "block": "s",
+  "group": 2,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 4s²",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "electronegativityPauling": 1.0,
+  "density": "1.55 g/cm³",
+  "meltingPointC": 842,
+  "boilingPointC": 1484,
+  "discovery": {
+    "year": 1808,
+    "discoverer": "Humphry Davy"
+  },
+  "occurrence": "Fifth most abundant element in Earth's crust, mainly as limestone, gypsum, and fluorite.",
+  "majorUses": [
+    "Cement and construction materials (as limestone/lime)",
+    "Dietary supplements for bone health",
+    "Steelmaking as a deoxidizer/desulfurizer"
+  ],
+  "biologicalRelevance": "The main structural mineral in bones and teeth (as calcium phosphate/hydroxyapatite), and its ion signalling triggers muscle contraction and blood clotting.",
+  "notableCharacteristics": "Reacts with water more gently than sodium or potassium, but still vigorously enough to produce visible hydrogen bubbles.",
+  "ncertRelevance": [
+    "extraction and uses of calcium compounds",
+    "hardness of water (calcium/magnesium salts)",
+    "biological role in bones"
+  ],
+  "whyHere": "Losing both 4s electrons gives calcium a stable argon-like Ca²⁺ core, and that ion's small, well-defined charge is exactly why it's so effective as a structural cross-linker in bone mineral and as a signalling trigger in muscle cells.",
+  "didYouKnow": "Your skeleton is constantly being rebuilt — the calcium in your bones today is fully replaced roughly every ten years through ongoing bone remodeling.",
+  "genZNote": "Building your skeleton one ion at a time since before you were born. The literal backbone of the operation.",
+  "relatedElements": [
+    "element-magnesium",
+    "element-strontium",
+    "element-barium"
+  ]
+}

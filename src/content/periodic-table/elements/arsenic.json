@@ -1,0 +1,48 @@
+{
+  "id": "element-arsenic",
+  "category": "element",
+  "atomicNumber": 33,
+  "symbol": "As",
+  "name": "Arsenic",
+  "atomicMass": 74.922,
+  "elementCategory": "metalloid",
+  "elementCategoryLabel": "Metalloid",
+  "period": 4,
+  "block": "p",
+  "group": 15,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p³",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+5",
+    "+3",
+    "-3"
+  ],
+  "electronegativityPauling": 2.18,
+  "density": "5.727 g/cm³",
+  "meltingPointC": 817,
+  "boilingPointC": 614,
+  "discovery": {
+    "discoverer": "Known since antiquity; first isolated by Albertus Magnus, c. 1250"
+  },
+  "occurrence": "Found combined in sulfide ores (arsenopyrite); also contaminates some groundwater supplies naturally.",
+  "majorUses": [
+    "Semiconductor doping (gallium arsenide)",
+    "Wood preservatives (historically, now restricted)",
+    "Historically used as a poison and, ironically, as a medicine"
+  ],
+  "safetyNotes": "Notoriously toxic — arsenic poisoning was a historically favoured (and hard-to-detect) method of murder before the Marsh test made it identifiable in the 1830s.",
+  "notableCharacteristics": "Sublimes directly from solid to gas rather than melting normally at standard pressure, which is why its 'boiling point' is actually listed lower than its melting behaviour under pressure.",
+  "ncertRelevance": [
+    "metalloid trends",
+    "toxicity and historical forensic detection"
+  ],
+  "whyHere": "With five valence electrons like nitrogen and phosphorus above it, arsenic can form both +3 and +5 compounds, but its larger, more polarizable atom pushes it toward metalloid behaviour and notably toxic biochemistry.",
+  "didYouKnow": "Arsenic poisoning went undetectable by any reliable chemical test until 1836, when the Marsh test was invented specifically to catch it — before that it was called 'inheritance powder' for how often it settled family disputes.",
+  "genZNote": "The original untraceable poison until chemistry caught up. Also, somehow, in your phone's semiconductors now.",
+  "relatedElements": [
+    "element-phosphorus",
+    "element-antimony",
+    "element-selenium"
+  ]
+}
