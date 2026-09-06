@@ -73,6 +73,12 @@ const ComparisonWorkspacePage = lazy(() =>
   import('../modules/comparison-studio/ComparisonWorkspacePage').then((m) => ({ default: m.ComparisonWorkspacePage }))
 )
 const NotesPage = lazy(() => import('../modules/notes/NotesPage').then((m) => ({ default: m.NotesPage })))
+const PeriodicTablePage = lazy(() =>
+  import('../modules/periodic-table/PeriodicTablePage').then((m) => ({ default: m.PeriodicTablePage }))
+)
+const ElementDetailPage = lazy(() =>
+  import('../modules/periodic-table/ElementDetailPage').then((m) => ({ default: m.ElementDetailPage }))
+)
 const SettingsPage = lazy(() =>
   import('../modules/settings/SettingsPage').then((m) => ({ default: m.SettingsPage }))
 )
@@ -120,6 +126,8 @@ export function AppRouter() {
           <Route path="/comparison/explore" element={<ExploreComparisonsPage />} />
           <Route path="/comparison/:id" element={<ComparisonWorkspacePage />} />
           <Route path="/notes" element={<NotesPage />} />
+          <Route path="/periodic-table" element={<PeriodicTablePage />} />
+          <Route path="/periodic-table/:elementId" element={<ElementDetailPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
