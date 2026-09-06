@@ -1,0 +1,55 @@
+{
+  "id": "comp-emf-vs-potential-difference",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "current-electricity",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "EMF (Electromotive Force)"
+  },
+  "itemB": {
+    "name": "Potential Difference"
+  },
+  "overview": "One is the cell's total 'push' when no current is drawn; the other is what's actually measurable across any two points once current flows.",
+  "genZNote": "EMF is the promise, potential difference is what actually shows up after the internal resistance takes its cut.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Energy supplied by the cell per unit charge, including work done against internal resistance.",
+      "valueB": "Energy difference per unit charge between two points in a circuit (external, across a component).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "when-measured",
+      "label": "When Equal to Terminal Voltage",
+      "valueA": "Equals terminal voltage only when no current is drawn (open circuit).",
+      "valueB": "Always less than EMF when current flows, due to voltage drop across internal resistance (V = ε − Ir).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "location",
+      "label": "Where It Applies",
+      "valueA": "A property of the source (cell/battery) as a whole.",
+      "valueB": "Can be measured between any two points in a circuit, not just across the source."
+    },
+    {
+      "id": "unit",
+      "label": "SI Unit",
+      "valueA": "Volt (V).",
+      "valueB": "Volt (V)."
+    }
+  ],
+  "lastVerified": "2026-09-05",
+  "subjectDomain": "physics",
+  "overlay": {
+    "examHighYieldNote": "V = ε − Ir is one of the most frequently tested current electricity relations.",
+    "commonMisconception": "Treating EMF and terminal voltage as always equal — they match only at zero current."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "comp-order-vs-molecularity",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "chemical-kinetics",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Order of Reaction"
+  },
+  "itemB": {
+    "name": "Molecularity"
+  },
+  "overview": "Order is an experimentally determined value from the rate law; molecularity is a theoretical count of colliding species in a single elementary step.",
+  "genZNote": "Order is what the lab data says. Molecularity is what theory says about one elementary step.",
+  "aspects": [
+    {
+      "id": "determination",
+      "label": "How Determined",
+      "valueA": "Found experimentally from rate data (never assumed from the equation).",
+      "valueB": "Deduced theoretically from the proposed elementary reaction mechanism.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "value-type",
+      "label": "Possible Values",
+      "valueA": "Can be zero, a fraction, or any positive number.",
+      "valueB": "Always a whole positive number (1, 2, rarely 3).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "applicability",
+      "label": "Applies To",
+      "valueA": "The overall (possibly multi-step) reaction.",
+      "valueB": "Only a single elementary step, never a complex multi-step reaction as a whole."
+    }
+  ],
+  "lastVerified": "2026-09-05",
+  "subjectDomain": "chemistry"
+}

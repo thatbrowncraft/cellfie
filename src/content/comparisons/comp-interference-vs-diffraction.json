@@ -1,0 +1,48 @@
+{
+  "id": "comp-interference-vs-diffraction",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "wave-optics",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Interference"
+  },
+  "itemB": {
+    "name": "Diffraction"
+  },
+  "overview": "Both arise from the superposition of waves, but interference involves a few discrete coherent sources while diffraction involves a continuous distribution of wavelets from one aperture/obstacle.",
+  "genZNote": "Interference is a small coherent squad; diffraction is a continuous wavelet crowd, and the fringe pattern shows it.",
+  "aspects": [
+    {
+      "id": "source",
+      "label": "Source of Waves",
+      "valueA": "Superposition of waves from two (or a few) coherent, discrete sources.",
+      "valueB": "Superposition of secondary wavelets from different points of the SAME wavefront (single slit/obstacle).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "fringe-pattern",
+      "label": "Fringe Pattern",
+      "valueA": "Fringes are equally spaced and of equal (or near-equal) intensity.",
+      "valueB": "A wide, bright central maximum, flanked by much dimmer, unequally spaced secondary maxima.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Classic Example",
+      "valueA": "Young's double-slit experiment.",
+      "valueB": "Single-slit diffraction pattern."
+    }
+  ],
+  "lastVerified": "2026-09-05",
+  "subjectDomain": "physics",
+  "overlay": {
+    "commonMisconception": "Treating interference and diffraction as unrelated phenomena rather than both being consequences of the superposition principle."
+  }
+}

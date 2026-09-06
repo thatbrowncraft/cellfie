@@ -1,0 +1,51 @@
+{
+  "id": "comp-strong-vs-weak-acid",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "ionic-equilibrium",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Strong Acid"
+  },
+  "itemB": {
+    "name": "Weak Acid"
+  },
+  "overview": "A strong acid ionizes essentially completely in water, while a weak acid ionizes only partially, establishing a dynamic equilibrium.",
+  "genZNote": "Strong acids give it all up in water. Weak acids only ionize part-time.",
+  "aspects": [
+    {
+      "id": "ionization",
+      "label": "Degree of Ionization",
+      "valueA": "Nearly 100% ionized in water.",
+      "valueB": "Only partially ionized (small degree of dissociation, α < 1).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "equilibrium",
+      "label": "Equilibrium Constant",
+      "valueA": "Ka is very large (essentially undefined/not meaningfully tabulated since reaction goes to completion).",
+      "valueB": "Ka has a small, measurable finite value.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "conductivity",
+      "label": "Electrical Conductivity (same concentration)",
+      "valueA": "High conductivity (more ions present).",
+      "valueB": "Lower conductivity (fewer ions present)."
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "HCl, H₂SO₄, HNO₃.",
+      "valueB": "CH₃COOH (acetic acid), HCN, H₂CO₃."
+    }
+  ],
+  "lastVerified": "2026-09-05",
+  "subjectDomain": "chemistry"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "comp-electric-field-vs-electric-potential",
+  "domain": "scientific-concept",
+  "difficulty": "advanced",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "electrostatics",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Electric Field"
+  },
+  "itemB": {
+    "name": "Electric Potential"
+  },
+  "overview": "One is a vector force-per-charge quantity; the other is a scalar energy-per-charge quantity, and the two are linked by a gradient relationship.",
+  "genZNote": "Electric field is the vector doing the pushing; potential is just the scalar scorecard of position.",
+  "aspects": [
+    {
+      "id": "definition",
+      "label": "Definition",
+      "valueA": "Force experienced per unit positive test charge at a point.",
+      "valueB": "Work done per unit positive charge in bringing it from infinity to that point.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "nature",
+      "label": "Vector or Scalar",
+      "valueA": "Vector quantity (has direction).",
+      "valueB": "Scalar quantity (no direction).",
+      "isKeyDifference": true
+    },
+    {
+      "id": "unit",
+      "label": "SI Unit",
+      "valueA": "N/C (equivalently V/m).",
+      "valueB": "Volt (V)."
+    },
+    {
+      "id": "relation",
+      "label": "Mathematical Relation",
+      "valueA": "E = −dV/dx (negative gradient of potential).",
+      "valueB": "V = −∫E·dx (line integral of the field)."
+    },
+    {
+      "id": "zero-condition",
+      "label": "Zero Value Implication",
+      "valueA": "Zero field means no force on a charge there, but potential can still be non-zero (e.g. inside a charged shell).",
+      "valueB": "Zero potential doesn't necessarily mean zero field at that point."
+    }
+  ],
+  "lastVerified": "2026-09-05",
+  "subjectDomain": "physics"
+}

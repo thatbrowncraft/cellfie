@@ -1,0 +1,44 @@
+{
+  "id": "comp-elastic-vs-inelastic-collision",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "work-energy-power",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Elastic Collision"
+  },
+  "itemB": {
+    "name": "Inelastic Collision"
+  },
+  "overview": "Both conserve momentum, but only elastic collisions also conserve total kinetic energy.",
+  "genZNote": "Momentum's always invited to the conservation party — kinetic energy only shows up if the collision's elastic.",
+  "aspects": [
+    {
+      "id": "momentum",
+      "label": "Momentum Conserved?",
+      "valueA": "Yes, always.",
+      "valueB": "Yes, always."
+    },
+    {
+      "id": "ke",
+      "label": "Kinetic Energy Conserved?",
+      "valueA": "Yes — total KE before equals total KE after.",
+      "valueB": "No — some KE converts to heat, sound, or deformation.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "example",
+      "label": "Real-World Closeness",
+      "valueA": "Collisions between hard billiard balls or gas molecules approximate this closely.",
+      "valueB": "A perfectly inelastic case is two objects sticking together after collision (maximum KE loss)."
+    }
+  ],
+  "lastVerified": "2026-09-05",
+  "subjectDomain": "physics"
+}

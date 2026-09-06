@@ -1,0 +1,44 @@
+{
+  "id": "comp-centripetal-vs-centrifugal-force",
+  "domain": "scientific-concept",
+  "difficulty": "intermediate",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "laws-of-motion",
+    "ncert-class-11"
+  ],
+  "itemA": {
+    "name": "Centripetal Force"
+  },
+  "itemB": {
+    "name": "Centrifugal Force"
+  },
+  "overview": "Centripetal force is a real, inward force in an inertial frame; centrifugal force is an outward pseudo-force that only appears in a rotating (non-inertial) reference frame.",
+  "genZNote": "Centripetal force is real and inward. Centrifugal force is just what it feels like from inside the spin.",
+  "aspects": [
+    {
+      "id": "reality",
+      "label": "Real or Pseudo Force?",
+      "valueA": "Real force, provided by tension/gravity/friction/normal reaction.",
+      "valueB": "Pseudo (fictitious) force, appears only in a rotating reference frame.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "direction",
+      "label": "Direction",
+      "valueA": "Directed towards the centre of the circular path.",
+      "valueB": "Directed away from the centre."
+    },
+    {
+      "id": "frame",
+      "label": "Reference Frame",
+      "valueA": "Observed from an inertial (non-rotating) frame.",
+      "valueB": "Only 'felt'/observed from within the rotating (non-inertial) frame."
+    }
+  ],
+  "lastVerified": "2026-09-05",
+  "subjectDomain": "physics"
+}

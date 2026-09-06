@@ -1,0 +1,47 @@
+{
+  "id": "comp-adsorption-vs-absorption",
+  "domain": "scientific-concept",
+  "difficulty": "basic",
+  "frequency": "frequently-tested",
+  "audience": [
+    "student"
+  ],
+  "tags": [
+    "surface-chemistry",
+    "ncert-class-12"
+  ],
+  "itemA": {
+    "name": "Adsorption"
+  },
+  "itemB": {
+    "name": "Absorption"
+  },
+  "overview": "Adsorption is a surface phenomenon where a substance accumulates only at the surface of another; absorption is a bulk phenomenon where it is distributed uniformly throughout.",
+  "genZNote": "Adsorption stays on the surface; absorption goes all the way in.",
+  "aspects": [
+    {
+      "id": "location",
+      "label": "Where It Occurs",
+      "valueA": "Only at the surface/interface of the adsorbent.",
+      "valueB": "Throughout the entire bulk/volume of the absorbing material.",
+      "isKeyDifference": true
+    },
+    {
+      "id": "rate",
+      "label": "Rate With Time",
+      "valueA": "Increases initially then reaches equilibrium as the surface saturates.",
+      "valueB": "Remains uniform throughout, since it is a bulk process."
+    },
+    {
+      "id": "example",
+      "label": "Example",
+      "valueA": "Gas molecules accumulating on activated charcoal's surface.",
+      "valueB": "Water being absorbed uniformly throughout a sponge."
+    }
+  ],
+  "lastVerified": "2026-09-05",
+  "subjectDomain": "chemistry",
+  "overlay": {
+    "memoryTrick": "Sorption (either process together) is called 'sorption' when it's unclear which of the two is occurring."
+  }
+}
