@@ -1,0 +1,57 @@
+{
+  "id": "formula-ostwald-dilution-law-and-degree-of-dissociation",
+  "category": "formula",
+  "title": "Ostwald's Dilution Law and Degree of Dissociation",
+  "subcategory": "Equilibrium",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Equilibrium",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Ostwald's dilution law",
+    "degree of dissociation",
+    "weak electrolyte"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-ionic-equilibrium-and-buffers"
+  ],
+  "relatedFormulas": [],
+  "domain": "Equilibrium",
+  "expression": "Ka = Cα²/(1−α)  ;  for small α: α ≈ √(Ka/C)",
+  "explanation": "Ostwald's dilution law relates a weak electrolyte's dissociation constant Ka to its degree of dissociation α (fraction of molecules ionised) and concentration C. For weak electrolytes with small α (α << 1), the approximation α ≈ √(Ka/C) shows degree of dissociation INCREASES as concentration DECREASES (i.e., dissociation increases on dilution) — consistent with Le Chatelier's principle, since dilution favours the side producing more particles (more ions).",
+  "variables": [
+    {
+      "symbol": "Ka",
+      "meaning": "Acid dissociation constant",
+      "unit": "depends on convention, often mol/L"
+    },
+    {
+      "symbol": "C",
+      "meaning": "Initial (analytical) concentration of the weak electrolyte",
+      "unit": "mol/L"
+    },
+    {
+      "symbol": "α",
+      "meaning": "Degree of dissociation (fraction ionised)",
+      "unit": "dimensionless (0 to 1)"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A weak acid with Ka = 1.8×10⁻⁵ at concentration 0.1 mol/L.",
+    "substitution": "α ≈ √(1.8×10⁻⁵ / 0.1)",
+    "result": "α ≈ 0.0134 (about 1.34% dissociated)"
+  },
+  "commonMistakes": [
+    "Assuming degree of dissociation stays constant regardless of concentration — for a weak electrolyte, α actually INCREASES as the solution is diluted (concentration decreases), per Ostwald's dilution law.",
+    "Applying the simplified approximation (α ≈ √(Ka/C)) when α is NOT small — the approximation (1−α ≈ 1) breaks down for more strongly dissociating weak electrolytes or very dilute solutions, requiring the full quadratic form instead."
+  ],
+  "genZNote": "Dilute a weak acid enough, and it dissociates more — Ostwald's law rewards giving it more room to ionise."
+}

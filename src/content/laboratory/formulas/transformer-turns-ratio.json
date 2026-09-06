@@ -1,0 +1,60 @@
+{
+  "id": "formula-transformer-turns-ratio",
+  "category": "formula",
+  "title": "Transformer Turns Ratio",
+  "subcategory": "Alternating Current",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Alternating Current",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "transformer",
+    "turns ratio",
+    "step-up transformer",
+    "step-down transformer"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-alternating-current-and-resonance"
+  ],
+  "relatedFormulas": [
+    "formula-self-and-mutual-inductance"
+  ],
+  "domain": "Alternating Current",
+  "expression": "Vs/Vp = Ns/Np = Ip/Is",
+  "explanation": "For an ideal (100% efficient, no losses) transformer, the ratio of secondary to primary voltage equals the ratio of secondary to primary number of turns, and — since power is conserved (VpIp = VsIs) — current has the INVERSE ratio: a step-up transformer (Ns > Np) increases voltage but proportionally decreases current, and a step-down transformer does the opposite.",
+  "variables": [
+    {
+      "symbol": "Vp, Vs",
+      "meaning": "Primary and secondary voltage",
+      "unit": "V"
+    },
+    {
+      "symbol": "Np, Ns",
+      "meaning": "Number of turns in primary and secondary coil",
+      "unit": "dimensionless"
+    },
+    {
+      "symbol": "Ip, Is",
+      "meaning": "Primary and secondary current",
+      "unit": "A"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A step-up transformer with Np = 100, Ns = 1000, primary voltage 220 V.",
+    "substitution": "Vs = 220 × (1000/100)",
+    "result": "Vs = 2200 V (current correspondingly decreases by the same factor of 10)"
+  },
+  "commonMistakes": [
+    "Assuming a step-up transformer increases both voltage AND current — an ideal transformer conserves power, so increasing voltage always comes with a proportional DECREASE in current, never an increase in both.",
+    "Applying the turns ratio formula to a transformer running on DC — transformers work only with ALTERNATING current, since they rely on a continuously CHANGING flux to induce EMF via mutual inductance; a steady DC current produces no changing flux and hence no induced EMF."
+  ],
+  "genZNote": "Step-up transformer: more voltage, less current — power's just getting redistributed, not created."
+}

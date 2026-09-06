@@ -1,0 +1,72 @@
+{
+  "id": "formula-centripetal-force-and-acceleration",
+  "category": "formula",
+  "title": "Centripetal Force and Acceleration",
+  "subcategory": "Circular Motion",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Motion in a Plane / Laws of Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "centripetal force",
+    "centripetal acceleration",
+    "banking angle"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-circular-motion"
+  ],
+  "relatedFormulas": [],
+  "domain": "Laws of Motion / Motion in a Plane",
+  "expression": "ac = v²/r = ω²r  ;  Fc = mv²/r  ;  Banking: tanθ = v²/(rg)",
+  "explanation": "Centripetal acceleration is directed toward the centre of a circular path, arising purely from the continuous change in velocity DIRECTION even at constant speed. Centripetal force is simply the net inward force (supplied by tension, friction, gravity, or the normal reaction, depending on context) required to produce this acceleration — it is not a separate, independent force in its own right. The banking angle formula gives the ideal angle at which a road/track should be tilted so that, at the design speed, the horizontal component of the normal force alone supplies exactly the needed centripetal force, without relying on friction.",
+  "variables": [
+    {
+      "symbol": "ac",
+      "meaning": "Centripetal acceleration",
+      "unit": "m/s²"
+    },
+    {
+      "symbol": "Fc",
+      "meaning": "Centripetal force",
+      "unit": "N"
+    },
+    {
+      "symbol": "v",
+      "meaning": "Speed",
+      "unit": "m/s"
+    },
+    {
+      "symbol": "r",
+      "meaning": "Radius of the circular path",
+      "unit": "m"
+    },
+    {
+      "symbol": "ω",
+      "meaning": "Angular velocity",
+      "unit": "rad/s"
+    },
+    {
+      "symbol": "θ",
+      "meaning": "Banking angle",
+      "unit": "degrees"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A 1000 kg car turns on a flat road at 10 m/s around a curve of radius 25 m.",
+    "substitution": "Fc = 1000 × 10² / 25",
+    "result": "Fc = 4000 N (must be supplied by friction on a flat road)"
+  },
+  "commonMistakes": [
+    "Treating centripetal force as an extra force to be added alongside gravity/tension/friction in a free-body diagram — it is simply the NAME given to the net inward component of the real forces already present, not an additional force.",
+    "Forgetting the banking angle formula assumes NO reliance on friction — at speeds other than the design speed, friction is still needed to prevent sliding, even on a banked road."
+  ],
+  "genZNote": "Centripetal force isn't a mystery fifth force — it's just tension, gravity, or friction doing double duty."
+}

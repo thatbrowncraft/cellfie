@@ -1,0 +1,58 @@
+{
+  "id": "formula-snells-law-and-critical-angle",
+  "category": "formula",
+  "title": "Snell's Law and Critical Angle for Total Internal Reflection",
+  "subcategory": "Ray Optics",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Ray Optics and Optical Instruments",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Snell's law",
+    "refractive index",
+    "critical angle",
+    "total internal reflection"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-ray-optics-mirrors-and-lenses"
+  ],
+  "relatedFormulas": [],
+  "domain": "Ray Optics and Optical Instruments",
+  "expression": "n₁sinθ₁ = n₂sinθ₂  ;  sinθc = n₂/n₁  (n₁ > n₂, denser to rarer)",
+  "explanation": "Snell's law relates the angles of incidence and refraction to the refractive indices of the two media, governing how much a light ray bends crossing an interface. The critical angle θc is the specific angle of incidence (only possible going from a denser to a rarer medium) at which the refracted ray grazes along the interface (refraction angle = 90°); beyond this angle of incidence, no refraction occurs at all and light undergoes total internal reflection instead.",
+  "variables": [
+    {
+      "symbol": "n₁, n₂",
+      "meaning": "Refractive indices of the first and second medium",
+      "unit": "dimensionless"
+    },
+    {
+      "symbol": "θ₁, θ₂",
+      "meaning": "Angle of incidence and angle of refraction",
+      "unit": "degrees"
+    },
+    {
+      "symbol": "θc",
+      "meaning": "Critical angle",
+      "unit": "degrees"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Light travels from glass (n = 1.5) to air (n = 1) — find the critical angle.",
+    "substitution": "sinθc = 1/1.5",
+    "result": "θc ≈ 41.8°"
+  },
+  "commonMistakes": [
+    "Trying to calculate a critical angle for light going from a rarer to a denser medium — total internal reflection (and hence a critical angle) is only possible when travelling from denser to rarer, never in the reverse direction.",
+    "Forgetting Snell's law uses the angle measured from the NORMAL to the surface, not from the surface itself — a very common geometric mix-up."
+  ],
+  "genZNote": "Past the critical angle, light just gives up trying to leave and bounces back instead."
+}

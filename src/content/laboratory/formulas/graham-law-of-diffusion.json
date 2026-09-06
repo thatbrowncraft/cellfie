@@ -1,0 +1,55 @@
+{
+  "id": "formula-graham-law-of-diffusion",
+  "category": "formula",
+  "title": "Graham's Law of Diffusion/Effusion",
+  "subcategory": "States of Matter",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — States of Matter",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Graham's law",
+    "rate of diffusion",
+    "rate of effusion",
+    "molar mass comparison"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-solutions-and-concentration-terms"
+  ],
+  "relatedFormulas": [
+    "formula-ideal-gas-equation"
+  ],
+  "domain": "States of Matter / Kinetic Theory",
+  "expression": "r1/r2 = √(M2/M1)  (at the same temperature and pressure)",
+  "explanation": "Graham's law states that the rate of diffusion (or effusion) of a gas is inversely proportional to the square root of its molar mass, at constant temperature and pressure — lighter gases diffuse/effuse faster than heavier gases. This follows directly from kinetic theory, since lighter molecules have a higher RMS speed at the same temperature (average kinetic energy is the same for all gases at a given T, so lower mass means higher speed).",
+  "variables": [
+    {
+      "symbol": "r1, r2",
+      "meaning": "Rate of diffusion/effusion of gas 1 and gas 2",
+      "unit": "any consistent rate unit"
+    },
+    {
+      "symbol": "M1, M2",
+      "meaning": "Molar mass of gas 1 and gas 2",
+      "unit": "g/mol"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Compare the diffusion rates of H₂ (M=2) and O₂ (M=32) at the same conditions.",
+    "substitution": "r(H₂)/r(O₂) = √(32/2) = √16",
+    "result": "H₂ diffuses 4 times faster than O₂"
+  },
+  "commonMistakes": [
+    "Forgetting the relationship is inverse and involves a SQUARE ROOT, not a direct or simple inverse ratio of molar masses — a very common calculation slip.",
+    "Applying Graham's law to compare gases at DIFFERENT temperatures or pressures — the law strictly assumes both gases are compared under the SAME temperature and pressure conditions."
+  ],
+  "genZNote": "Graham's law: lighter gas, faster escape — mass and speed are in an inverse square-root relationship."
+}

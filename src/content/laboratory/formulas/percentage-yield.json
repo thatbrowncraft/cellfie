@@ -1,0 +1,55 @@
+{
+  "id": "formula-percentage-yield",
+  "category": "formula",
+  "title": "Percentage Yield and Limiting Reagent Calculation",
+  "subcategory": "Basic Concepts of Chemistry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Some Basic Concepts of Chemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "percentage yield",
+    "theoretical yield",
+    "actual yield",
+    "limiting reagent"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-stoichiometry-and-limiting-reagent"
+  ],
+  "relatedFormulas": [
+    "formula-empirical-and-molecular-formula"
+  ],
+  "domain": "Some Basic Concepts of Chemistry",
+  "expression": "% Yield = (Actual yield / Theoretical yield) × 100",
+  "explanation": "Theoretical yield is the maximum possible product calculated purely from stoichiometry, based on the LIMITING reagent (never the excess reagent). Actual yield is what is genuinely obtained in a real experiment, always less than or equal to the theoretical yield due to side reactions, incomplete reactions, or handling losses. Percentage yield is a practical efficiency measure and should never legitimately exceed 100%.",
+  "variables": [
+    {
+      "symbol": "Actual yield",
+      "meaning": "Product mass/moles genuinely obtained experimentally",
+      "unit": "g or mol"
+    },
+    {
+      "symbol": "Theoretical yield",
+      "meaning": "Maximum possible product mass/moles calculated from the limiting reagent",
+      "unit": "g or mol"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A reaction's theoretical yield is 50 g of product; the experiment actually produces 42 g.",
+    "substitution": "% Yield = (42/50) × 100",
+    "result": "% Yield = 84%"
+  },
+  "commonMistakes": [
+    "Calculating theoretical yield using the EXCESS reagent instead of the LIMITING reagent — this always overstates the true maximum possible product.",
+    "Reporting a percentage yield above 100% as a genuine result — this signals an experimental/measurement error (e.g. impure or wet product), never a real 'better than theoretical' outcome."
+  ],
+  "genZNote": "Percentage yield: the honest report card on how close your real reaction got to its theoretical best."
+}
