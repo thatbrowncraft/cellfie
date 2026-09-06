@@ -1,0 +1,47 @@
+{
+  "id": "element-thulium",
+  "category": "element",
+  "atomicNumber": 69,
+  "symbol": "Tm",
+  "name": "Thulium",
+  "atomicMass": 168.93,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹³ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3",
+    "+2"
+  ],
+  "electronegativityPauling": 1.25,
+  "density": "9.32 g/cm³",
+  "meltingPointC": 1545,
+  "boilingPointC": 1950,
+  "discovery": {
+    "year": 1879,
+    "discoverer": "Per Teodor Cleve"
+  },
+  "occurrence": "The rarest naturally occurring lanthanide (excluding radioactive promethium), found in trace amounts in monazite ore.",
+  "majorUses": [
+    "Portable X-ray devices (thulium-170 isotope, doesn't require mains power)",
+    "Surgical and dental lasers",
+    "Euro banknote anti-counterfeiting (blue fluorescence)"
+  ],
+  "notableCharacteristics": "Named after 'Thule', an ancient, semi-mythical name for a land in the far north, continuing the Scandinavian naming pattern of the rare earths.",
+  "ncertRelevance": [
+    "rarest stable lanthanide",
+    "portable radiation source applications"
+  ],
+  "whyHere": "Its thirteen 4f electrons, just one short of a completely filled subshell, give thulium compounds distinctive optical absorption used in solid-state lasers, though its extreme rarity limits large-scale industrial use.",
+  "didYouKnow": "A thulium-170 based portable X-ray unit can be carried into the field and doesn't need an electrical power source to generate X-rays, unlike a conventional X-ray machine — useful for remote or battlefield medicine.",
+  "genZNote": "The rarest lanthanide that still ends up in portable X-ray machines. Scarce but doing real work.",
+  "relatedElements": [
+    "element-erbium",
+    "element-ytterbium",
+    "element-holmium"
+  ]
+}

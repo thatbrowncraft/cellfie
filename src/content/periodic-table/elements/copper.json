@@ -1,0 +1,51 @@
+{
+  "id": "element-copper",
+  "category": "element",
+  "atomicNumber": 29,
+  "symbol": "Cu",
+  "name": "Copper",
+  "atomicMass": 63.546,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 4,
+  "block": "d",
+  "group": 11,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d¹⁰ 4s¹",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+2",
+    "+1"
+  ],
+  "electronegativityPauling": 1.9,
+  "density": "8.96 g/cm³",
+  "meltingPointC": 1084.6,
+  "boilingPointC": 2562,
+  "discovery": {
+    "discoverer": "Known since prehistory (Copper Age)"
+  },
+  "occurrence": "One of the few metals that occurs naturally in a directly usable metallic form; also mined from sulfide ores like chalcopyrite.",
+  "majorUses": [
+    "Electrical wiring (excellent conductivity)",
+    "Plumbing pipes (corrosion-resistant, antimicrobial)",
+    "Bronze and brass alloys"
+  ],
+  "biologicalRelevance": "An essential trace nutrient required for iron metabolism and connective tissue formation, though it's toxic in excess (as in Wilson's disease).",
+  "notableCharacteristics": "One of only three metals with a natural colour other than silvery-grey (the others being gold and, arguably, osmium/caesium tints), thanks to how its electrons absorb visible light.",
+  "ncertRelevance": [
+    "extraction of copper (roasting sulfide ores)",
+    "electrical conductivity ranking (second only to silver)",
+    "copper's colour explained by electronic transitions"
+  ],
+  "whyHere": "Filling its 3d subshell completely and keeping just one 4s electron gives copper its excellent conductivity, since that lone, loosely bound 4s electron moves through the metal lattice with very little resistance.",
+  "didYouKnow": "Copper surfaces naturally kill many bacteria and viruses on contact within hours — hospitals have started using copper-alloy touch surfaces (door handles, bed rails) specifically for this antimicrobial effect.",
+  "genZNote": "Second-best conductor in existence and low-key antibacterial. The Statue of Liberty is literally wearing it.",
+  "relatedElements": [
+    "element-silver",
+    "element-gold",
+    "element-zinc"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-electrochemistry-electrode-potential"
+  ]
+}

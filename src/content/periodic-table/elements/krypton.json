@@ -1,0 +1,46 @@
+{
+  "id": "element-krypton",
+  "category": "element",
+  "atomicNumber": 36,
+  "symbol": "Kr",
+  "name": "Krypton",
+  "atomicMass": 83.798,
+  "elementCategory": "noble-gas",
+  "elementCategoryLabel": "Noble Gas",
+  "period": 4,
+  "block": "p",
+  "group": 18,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p⁶",
+  "commonValency": "0",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "electronegativityPauling": 3.0,
+  "density": "0.003749 g/cm³ (gas)",
+  "meltingPointC": -157.4,
+  "boilingPointC": -153.4,
+  "discovery": {
+    "year": 1898,
+    "discoverer": "William Ramsay & Morris Travers"
+  },
+  "occurrence": "Trace component of the atmosphere (about 1 part per million), extracted from liquefied air.",
+  "majorUses": [
+    "High-performance camera flash and stadium lighting",
+    "Energy-efficient window insulation gas fill",
+    "Laser technology (krypton fluoride excimer lasers)"
+  ],
+  "notableCharacteristics": "One of the few noble gases that can be coaxed into forming real compounds (like KrF₂) under extreme conditions, despite its 'inert' reputation.",
+  "ncertRelevance": [
+    "noble gas reactivity exceptions",
+    "krypton fluoride compounds"
+  ],
+  "whyHere": "Although its full octet makes bonding rare, krypton's larger, more loosely held outer electrons make it slightly more reactive than lighter noble gases — just enough to form unstable compounds like KrF₂ under extreme lab conditions.",
+  "didYouKnow": "From 1960 to 1983, the metre was officially defined using a specific wavelength of light emitted by krypton-86 atoms, before the definition switched to the speed of light instead.",
+  "genZNote": "Not actually Superman's home planet's namesake for chemistry reasons, but it did briefly define the entire metric system's metre.",
+  "relatedElements": [
+    "element-argon",
+    "element-xenon",
+    "element-neon"
+  ]
+}

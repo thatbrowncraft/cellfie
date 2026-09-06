@@ -1,0 +1,46 @@
+{
+  "id": "element-europium",
+  "category": "element",
+  "atomicNumber": 63,
+  "symbol": "Eu",
+  "name": "Europium",
+  "atomicMass": 151.96,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f⁷ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3",
+    "+2"
+  ],
+  "density": "5.24 g/cm³",
+  "meltingPointC": 826,
+  "boilingPointC": 1529,
+  "discovery": {
+    "year": 1901,
+    "discoverer": "Eugène-Anatole Demarçay"
+  },
+  "occurrence": "Found alongside other lanthanides but at especially low abundance, in monazite and bastnäsite ores.",
+  "majorUses": [
+    "Red and blue phosphors in older TV/monitor screens and LED lighting",
+    "Anti-counterfeiting ink on Euro banknotes (fluoresces under UV)",
+    "Doping agent for lasers"
+  ],
+  "notableCharacteristics": "Named directly after the continent of Europe, and its red-emitting phosphor compounds are why old CRT televisions could display a proper red colour at all.",
+  "ncertRelevance": [
+    "half-filled 4f⁷ stability",
+    "phosphor/luminescence applications"
+  ],
+  "whyHere": "A half-filled 4f⁷ subshell gives europium extra electronic stability, similar to the boost chromium and molybdenum get from half-filled d-shells, and its strong, sharp light emission from that configuration is exactly why it's prized as a phosphor.",
+  "didYouKnow": "Euro banknotes contain europium-based fluorescent compounds specifically as an anti-counterfeiting measure — genuine notes glow with a distinct pattern under UV light that's difficult to replicate.",
+  "genZNote": "Named after an entire continent and now it's the reason your euros glow under a blacklight. Anti-counterfeit legend.",
+  "relatedElements": [
+    "element-samarium",
+    "element-gadolinium",
+    "element-terbium"
+  ]
+}

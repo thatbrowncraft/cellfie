@@ -1,0 +1,41 @@
+{
+  "id": "element-seaborgium",
+  "category": "element",
+  "atomicNumber": 106,
+  "symbol": "Sg",
+  "name": "Seaborgium",
+  "atomicMass": 269,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 7,
+  "block": "d",
+  "group": 6,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d⁴ 7s² (predicted)",
+  "commonOxidationStates": [
+    "+6"
+  ],
+  "density": "~35 g/cm³ (predicted)",
+  "discovery": {
+    "year": 1974,
+    "discoverer": "Contested — claims by teams at Dubna, USSR and Berkeley, USA"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; produced and studied only as individual atoms with half-lives of seconds to minutes.",
+  "notableCharacteristics": "Named directly after Glenn T. Seaborg, the chemist behind the discovery of ten transuranium elements — making it one of the very few elements named after a scientist who was still alive at the time.",
+  "ncertRelevance": [
+    "named after a living scientist (rare exception)",
+    "predicted Group 6 chemistry"
+  ],
+  "whyHere": "Predicted to sit in Group 6 alongside tungsten and molybdenum, seaborgium's expected preference for a +6 oxidation state follows the same trend down that group, a prediction later single-atom chemistry experiments have broadly supported.",
+  "didYouKnow": "Seaborgium is one of the only elements ever named after a person who was still living at the time — Glenn Seaborg was reportedly delighted, joking that he could now tell his grandchildren to look him up in the periodic table.",
+  "genZNote": "Named after a scientist who was literally still alive to see it happen. Certified 'flowers while you can still smell them' moment.",
+  "relatedElements": [
+    "element-tungsten",
+    "element-molybdenum",
+    "element-dubnium"
+  ]
+}

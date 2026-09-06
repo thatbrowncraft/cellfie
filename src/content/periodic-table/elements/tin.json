@@ -1,0 +1,46 @@
+{
+  "id": "element-tin",
+  "category": "element",
+  "atomicNumber": 50,
+  "symbol": "Sn",
+  "name": "Tin",
+  "atomicMass": 118.71,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 5,
+  "block": "p",
+  "group": 14,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p²",
+  "commonValency": "4",
+  "commonOxidationStates": [
+    "+4",
+    "+2"
+  ],
+  "electronegativityPauling": 1.96,
+  "density": "7.31 g/cm³ (white tin)",
+  "meltingPointC": 231.9,
+  "boilingPointC": 2602,
+  "discovery": {
+    "discoverer": "Known since the Bronze Age"
+  },
+  "occurrence": "Mined mainly from cassiterite ore; historically alloyed with copper to make bronze, marking an entire age of human technology.",
+  "majorUses": [
+    "Solder for electronics",
+    "Tin plating on steel cans (protects against corrosion)",
+    "Bronze and pewter alloys"
+  ],
+  "notableCharacteristics": "Undergoes 'tin pest' at very cold temperatures, transforming from strong metallic white tin into brittle, crumbly grey tin powder — historically blamed for buttons on Napoleon's soldiers' coats disintegrating in the Russian winter.",
+  "ncertRelevance": [
+    "allotropy (white tin vs grey tin)",
+    "bronze age alloying history"
+  ],
+  "whyHere": "Tin's two common oxidation states, +2 and +4, come from its position straddling typical metal and metalloid behaviour, and its allotropic transformation at low temperature (tin pest) reflects a genuine structural phase change between two different crystal forms.",
+  "didYouKnow": "The 'tin pest' transformation from strong metal to crumbling powder in extreme cold is a real, documented phenomenon, historically theorized (though not conclusively proven) to have contributed to equipment failures during Napoleon's disastrous 1812 Russian campaign.",
+  "genZNote": "Turns into brittle dust if it gets too cold. Also the reason your soldered electronics stay connected.",
+  "relatedElements": [
+    "element-lead",
+    "element-germanium",
+    "element-silicon"
+  ]
+}

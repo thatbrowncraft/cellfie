@@ -1,0 +1,54 @@
+{
+  "id": "element-carbon",
+  "category": "element",
+  "atomicNumber": 6,
+  "symbol": "C",
+  "name": "Carbon",
+  "atomicMass": 12.011,
+  "elementCategory": "nonmetal",
+  "elementCategoryLabel": "Nonmetal",
+  "period": 2,
+  "block": "p",
+  "group": 14,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[He] 2s² 2p²",
+  "commonValency": "4",
+  "commonOxidationStates": [
+    "+4",
+    "+2",
+    "-4"
+  ],
+  "electronegativityPauling": 2.55,
+  "density": "2.267 g/cm³ (graphite)",
+  "meltingPointC": 3550,
+  "boilingPointC": 4027,
+  "discovery": {
+    "discoverer": "Known since prehistory (charcoal, soot)"
+  },
+  "occurrence": "Free as graphite, diamond, and coal; combined in every organic compound, carbonate rock, and atmospheric CO₂.",
+  "majorUses": [
+    "Steel-making (as an alloying element)",
+    "Graphite electrodes and pencil 'lead'",
+    "Diamond in cutting/abrasive tools"
+  ],
+  "biologicalRelevance": "The backbone element of every biomolecule you're made of — DNA, proteins, carbohydrates, and lipids all build on carbon's ability to form four stable bonds.",
+  "notableCharacteristics": "Its four valence electrons and small size let it catenate (bond to itself) into chains, rings, and sheets longer than any other element — the entire basis of organic chemistry.",
+  "ncertRelevance": [
+    "catenation",
+    "allotropes of carbon (diamond, graphite, fullerenes)",
+    "hydrocarbons",
+    "organic chemistry foundations"
+  ],
+  "whyHere": "Four valence electrons in a small second-shell atom means four strong, directional covalent bonds — enough versatility to build straight chains, branched chains, rings, and sheets, which no other element does at this scale.",
+  "didYouKnow": "Diamond and graphite are both pure carbon, but diamond's rigid 3-D bonding makes it the hardest natural material while graphite's flat sheets slide past each other, making it soft enough to write with.",
+  "genZNote": "Four bonding slots and somehow built all of organic chemistry with them. Absolute main-character energy, comes in diamond and pencil-lead flavors.",
+  "relatedElements": [
+    "element-silicon",
+    "element-nitrogen",
+    "element-hydrogen"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-hydrocarbons-and-reactions",
+    "concept-carbonyl-compounds-aldehydes-ketones-carboxylic-acids"
+  ]
+}

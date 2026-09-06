@@ -1,0 +1,47 @@
+{
+  "id": "element-rhenium",
+  "category": "element",
+  "atomicNumber": 75,
+  "symbol": "Re",
+  "name": "Rhenium",
+  "atomicMass": 186.21,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 6,
+  "block": "d",
+  "group": 7,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d⁵ 6s²",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+7",
+    "+4"
+  ],
+  "electronegativityPauling": 1.9,
+  "density": "21.02 g/cm³",
+  "meltingPointC": 3186,
+  "boilingPointC": 5596,
+  "discovery": {
+    "year": 1925,
+    "discoverer": "Walter Noddack, Ida Noddack & Otto Berg"
+  },
+  "occurrence": "One of the rarest elements in Earth's crust, found only in trace amounts within molybdenum ores.",
+  "majorUses": [
+    "Jet engine turbine blade superalloys (extreme heat resistance)",
+    "Catalysts for high-octane, lead-free gasoline production",
+    "Electrical contacts and thermocouples for very high temperatures"
+  ],
+  "notableCharacteristics": "One of the last stable elements to be discovered (1925), named after the Rhine river.",
+  "ncertRelevance": [
+    "among the last stable elements discovered",
+    "superalloy applications"
+  ],
+  "whyHere": "Its half-filled-adjacent 5d⁵ configuration gives rhenium exceptional strength and one of the highest melting points of any element, exactly the property that makes it indispensable in the hottest-running parts of jet engines.",
+  "didYouKnow": "Jet engine turbine blades routinely contain a few percent rhenium specifically because it lets the blades survive temperatures otherwise close to melting the metal itself.",
+  "genZNote": "One of the last stable elements ever found, and now it's the reason jet engines don't melt mid-flight. No pressure.",
+  "relatedElements": [
+    "element-manganese",
+    "element-technetium",
+    "element-tungsten"
+  ]
+}

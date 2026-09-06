@@ -1,0 +1,48 @@
+{
+  "id": "element-molybdenum",
+  "category": "element",
+  "atomicNumber": 42,
+  "symbol": "Mo",
+  "name": "Molybdenum",
+  "atomicMass": 95.95,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 5,
+  "block": "d",
+  "group": 6,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d⁵ 5s¹",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+6",
+    "+4"
+  ],
+  "electronegativityPauling": 2.16,
+  "density": "10.28 g/cm³",
+  "meltingPointC": 2623,
+  "boilingPointC": 4639,
+  "discovery": {
+    "year": 1781,
+    "discoverer": "Peter Jacob Hjelm"
+  },
+  "occurrence": "Mined mainly from molybdenite ore, often as a by-product of copper mining.",
+  "majorUses": [
+    "High-strength steel alloys (drill bits, armour plating)",
+    "Electrical contacts and furnace heating elements",
+    "Lubricant additive (molybdenum disulfide)"
+  ],
+  "biologicalRelevance": "An essential trace cofactor for enzymes like nitrogenase, which bacteria use to fix atmospheric nitrogen into forms plants can use — making it indirectly essential to the entire nitrogen cycle.",
+  "notableCharacteristics": "Has one of the highest melting points of any element, exceeded by only a handful of metals like tungsten and rhenium.",
+  "ncertRelevance": [
+    "nitrogenase enzyme cofactor role",
+    "steel alloying uses"
+  ],
+  "whyHere": "Like chromium above it, molybdenum's electron configuration favours a half-filled 4d⁵ 5s¹ arrangement for extra stability, and its strong metallic bonding is exactly why it survives extreme heat in alloys and furnace parts.",
+  "didYouKnow": "Molybdenum is the metal at the heart of nitrogenase, the enzyme certain soil bacteria use to break nitrogen's famously tough triple bond — without it, biological nitrogen fixation as we know it wouldn't happen.",
+  "genZNote": "The literal reason bacteria can fix nitrogen from air. No molybdenum, no nitrogen cycle, no you.",
+  "relatedElements": [
+    "element-chromium",
+    "element-tungsten",
+    "element-niobium"
+  ]
+}

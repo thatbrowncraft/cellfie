@@ -1,0 +1,52 @@
+{
+  "id": "element-oxygen",
+  "category": "element",
+  "atomicNumber": 8,
+  "symbol": "O",
+  "name": "Oxygen",
+  "atomicMass": 15.999,
+  "elementCategory": "nonmetal",
+  "elementCategoryLabel": "Nonmetal",
+  "period": 2,
+  "block": "p",
+  "group": 16,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "[He] 2s² 2p⁴",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "-2",
+    "-1"
+  ],
+  "electronegativityPauling": 3.44,
+  "density": "0.001429 g/cm³ (gas)",
+  "meltingPointC": -218.8,
+  "boilingPointC": -183.0,
+  "discovery": {
+    "year": 1774,
+    "discoverer": "Carl Wilhelm Scheele & Joseph Priestley (independently)"
+  },
+  "occurrence": "Makes up 21% of the atmosphere and is the most abundant element in Earth's crust by mass, mostly bound in silicates and water.",
+  "majorUses": [
+    "Cellular respiration/medical oxygen therapy",
+    "Steelmaking (oxygen-blown furnaces)",
+    "Combustion and rocket oxidizer"
+  ],
+  "biologicalRelevance": "The final electron acceptor in aerobic respiration — without it, your mitochondria can't generate ATP efficiently, which is why you can survive minutes without it but weeks without food.",
+  "notableCharacteristics": "Second most electronegative element after fluorine, and its diatomic form is unusual among stable molecules for having two unpaired electrons (making liquid O₂ visibly attracted to magnets).",
+  "ncertRelevance": [
+    "oxidation and reduction",
+    "allotropes (O₂ and O₃)",
+    "electron affinity trends"
+  ],
+  "whyHere": "Six valence electrons leave it two short of a stable octet, so it grabs electrons aggressively in bonding — explaining both its high electronegativity and its central role as the electron acceptor in combustion and respiration.",
+  "didYouKnow": "Liquid oxygen is pale blue and is one of the very few common liquids that's measurably paramagnetic — it gets pulled toward a strong magnet.",
+  "genZNote": "Keeps you alive and also keeps things on fire. Multitasking at a molecular level, unpaired electrons and all.",
+  "relatedElements": [
+    "element-sulfur",
+    "element-nitrogen",
+    "element-hydrogen"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-electrochemistry-electrode-potential"
+  ]
+}

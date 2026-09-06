@@ -1,0 +1,50 @@
+{
+  "id": "element-nitrogen",
+  "category": "element",
+  "atomicNumber": 7,
+  "symbol": "N",
+  "name": "Nitrogen",
+  "atomicMass": 14.007,
+  "elementCategory": "nonmetal",
+  "elementCategoryLabel": "Nonmetal",
+  "period": 2,
+  "block": "p",
+  "group": 15,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "[He] 2s² 2p³",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+5",
+    "+3",
+    "-3"
+  ],
+  "electronegativityPauling": 3.04,
+  "density": "0.001251 g/cm³ (gas)",
+  "meltingPointC": -210.0,
+  "boilingPointC": -195.8,
+  "discovery": {
+    "year": 1772,
+    "discoverer": "Daniel Rutherford"
+  },
+  "occurrence": "Makes up 78% of Earth's atmosphere as inert diatomic N₂ gas.",
+  "majorUses": [
+    "Ammonia and fertilizer production",
+    "Inert atmosphere for food packaging",
+    "Liquid nitrogen for cryopreservation"
+  ],
+  "biologicalRelevance": "Essential to every amino acid and nucleotide base — proteins and DNA cannot exist without it, and its fixation from the atmosphere is a bottleneck for all life.",
+  "notableCharacteristics": "The N≡N triple bond in N₂ gas is one of the strongest bonds known, which is exactly why atmospheric nitrogen is so hard to 'fix' into usable compounds.",
+  "ncertRelevance": [
+    "nitrogen family trends",
+    "ammonia synthesis (Haber process)",
+    "oxides of nitrogen"
+  ],
+  "whyHere": "Five valence electrons let it form a very stable triple bond as N₂, which explains both why it dominates the atmosphere unreactively and why converting it into ammonia industrially needs high pressure, heat, and a catalyst.",
+  "didYouKnow": "Despite being 78% of the air you breathe, nitrogen gas is so unreactive that most living things can't use it directly — they depend on bacteria that can break that triple bond.",
+  "genZNote": "78% of the air, 0% of the drama. Too stable to react with anything until industrial chemistry forces the issue.",
+  "relatedElements": [
+    "element-phosphorus",
+    "element-oxygen",
+    "element-carbon"
+  ]
+}

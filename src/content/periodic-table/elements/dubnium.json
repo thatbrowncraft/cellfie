@@ -1,0 +1,41 @@
+{
+  "id": "element-dubnium",
+  "category": "element",
+  "atomicNumber": 105,
+  "symbol": "Db",
+  "name": "Dubnium",
+  "atomicMass": 268,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 7,
+  "block": "d",
+  "group": 5,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d³ 7s² (predicted)",
+  "commonOxidationStates": [
+    "+5"
+  ],
+  "density": "~29 g/cm³ (predicted)",
+  "discovery": {
+    "year": 1968,
+    "discoverer": "Contested — claims by teams at Dubna, USSR and Berkeley, USA"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom, decaying within seconds.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive with half-lives measured in seconds to roughly an hour for its most stable known isotope.",
+  "notableCharacteristics": "Named after Dubna, Russia, home of the Joint Institute for Nuclear Research, one of the two rival laboratories most responsible for discovering the superheavy elements.",
+  "ncertRelevance": [
+    "named after a research institution's location",
+    "superheavy element naming disputes"
+  ],
+  "whyHere": "Predicted to sit in Group 5 alongside tantalum and niobium, dubnium's expected chemistry (favouring a +5 oxidation state) follows directly from its position, though confirming this experimentally requires painstaking single-atom chemistry techniques.",
+  "didYouKnow": "The 'Transfermium Wars' dispute over naming elements 104-109 between American and Soviet/Russian teams got so heated that IUPAC didn't issue final, internationally agreed names until 1997 — decades after some of these elements were first created.",
+  "genZNote": "Named after a Russian research city and caught in a decades-long international naming feud. Chemistry has drama too, apparently.",
+  "relatedElements": [
+    "element-tantalum",
+    "element-niobium",
+    "element-rutherfordium"
+  ]
+}

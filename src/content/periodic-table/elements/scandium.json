@@ -1,0 +1,49 @@
+{
+  "id": "element-scandium",
+  "category": "element",
+  "atomicNumber": 21,
+  "symbol": "Sc",
+  "name": "Scandium",
+  "atomicMass": 44.956,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 4,
+  "block": "d",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d¹ 4s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.36,
+  "density": "2.99 g/cm³",
+  "meltingPointC": 1541,
+  "boilingPointC": 2836,
+  "discovery": {
+    "year": 1879,
+    "discoverer": "Lars Fredrik Nilson"
+  },
+  "occurrence": "Widely dispersed in trace amounts across many minerals rather than concentrated in a single ore; genuinely rare and expensive to extract.",
+  "majorUses": [
+    "Aluminium-scandium alloys for aerospace/sports equipment (bike frames, baseball bats)",
+    "High-intensity 'metal halide' stadium lighting"
+  ],
+  "notableCharacteristics": "One of the first elements whose existence and properties Mendeleev predicted in advance (as 'eka-boron') before it was actually discovered.",
+  "ncertRelevance": [
+    "first transition series",
+    "d-block entry point",
+    "prediction from Mendeleev's periodic table"
+  ],
+  "whyHere": "It's the first element to place an electron in a 3d orbital, marking the true start of the d-block and the first transition series.",
+  "didYouKnow": "Mendeleev predicted scandium's atomic weight and properties years before its discovery, calling the missing element 'eka-boron' — the actual element matched his prediction remarkably closely.",
+  "genZNote": "Called it before it was cool. Mendeleev predicted this one existed before anyone had actually seen it.",
+  "relatedElements": [
+    "element-yttrium",
+    "element-titanium",
+    "element-aluminium"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-periodic-trends"
+  ]
+}

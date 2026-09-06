@@ -1,0 +1,46 @@
+{
+  "id": "element-neodymium",
+  "category": "element",
+  "atomicNumber": 60,
+  "symbol": "Nd",
+  "name": "Neodymium",
+  "atomicMass": 144.24,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f⁴ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.14,
+  "density": "7.01 g/cm³",
+  "meltingPointC": 1021,
+  "boilingPointC": 3074,
+  "discovery": {
+    "year": 1885,
+    "discoverer": "Carl Auer von Welsbach"
+  },
+  "occurrence": "Found alongside other rare-earths in monazite and bastnäsite ores; the most commercially important lanthanide by volume.",
+  "majorUses": [
+    "The strongest permanent magnets known (neodymium-iron-boron, NdFeB)",
+    "Laser crystals (Nd:YAG lasers, used in surgery and industry)",
+    "Purple glass tinting"
+  ],
+  "notableCharacteristics": "Neodymium magnets are so strong for their size that large ones pose a genuine safety hazard — they can snap together violently enough to break bones or pinch skin badly.",
+  "ncertRelevance": [
+    "strongest permanent magnet material",
+    "separation from didymium"
+  ],
+  "whyHere": "Its four unpaired 4f electrons align strongly within an iron-boron crystal lattice, and that magnetic alignment is exactly why neodymium-based magnets are the strongest permanent magnets currently manufactured.",
+  "didYouKnow": "Neodymium magnets are strong enough that safety guidelines warn against keeping large ones near pacemakers, credit cards, or your own fingers — snapping two together can cause real injuries.",
+  "genZNote": "Makes the strongest fridge magnets known to science. Also the reason your headphones are tiny but loud.",
+  "relatedElements": [
+    "element-praseodymium",
+    "element-samarium",
+    "element-iron"
+  ]
+}

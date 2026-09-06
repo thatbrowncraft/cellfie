@@ -1,0 +1,52 @@
+{
+  "id": "element-vanadium",
+  "category": "element",
+  "atomicNumber": 23,
+  "symbol": "V",
+  "name": "Vanadium",
+  "atomicMass": 50.942,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 4,
+  "block": "d",
+  "group": 5,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d³ 4s²",
+  "commonValency": "5",
+  "commonOxidationStates": [
+    "+5",
+    "+4",
+    "+3",
+    "+2"
+  ],
+  "electronegativityPauling": 1.63,
+  "density": "6.11 g/cm³",
+  "meltingPointC": 1910,
+  "boilingPointC": 3407,
+  "discovery": {
+    "year": 1801,
+    "discoverer": "Andrés Manuel del Río"
+  },
+  "occurrence": "Found combined in about 65 different minerals and in fossil fuel deposits; extracted mainly as a by-product of iron ore processing.",
+  "majorUses": [
+    "Vanadium steel alloys (tool steel, springs)",
+    "Catalyst in sulfuric acid manufacture (V₂O₅)",
+    "Vanadium redox flow batteries for grid energy storage"
+  ],
+  "notableCharacteristics": "Its compounds famously display a whole rainbow of colours depending on oxidation state — from violet (+2) to green (+3) to blue (+4) to yellow (+5).",
+  "ncertRelevance": [
+    "variable oxidation states",
+    "catalytic role in Contact process"
+  ],
+  "whyHere": "Vanadium has five accessible 3d/4s electrons, giving it an unusually wide range of stable oxidation states — which is exactly why its compounds shift through so many different colours in solution.",
+  "didYouKnow": "A single vanadium solution can be made to cycle through four different colours just by adding a reducing agent step by step — a classic 'rainbow tube' demonstration in inorganic chemistry.",
+  "genZNote": "One element, four oxidation states, an entire colour palette. The mood ring of the periodic table.",
+  "relatedElements": [
+    "element-chromium",
+    "element-niobium",
+    "element-titanium"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-coordination-compounds-and-cft"
+  ]
+}

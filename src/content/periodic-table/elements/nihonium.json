@@ -1,0 +1,42 @@
+{
+  "id": "element-nihonium",
+  "category": "element",
+  "atomicNumber": 113,
+  "symbol": "Nh",
+  "name": "Nihonium",
+  "atomicMass": 286,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 7,
+  "block": "p",
+  "group": 13,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹ (predicted)",
+  "commonOxidationStates": [
+    "+1",
+    "+3"
+  ],
+  "density": "~16 g/cm³ (predicted)",
+  "discovery": {
+    "year": 2004,
+    "discoverer": "Kosuke Morita and team, RIKEN, Japan"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; observed only as individual atoms with sub-second half-lives.",
+  "notableCharacteristics": "Named after Japan itself ('Nihon' is Japanese for Japan) — the first element named by and for an Asian country's research team.",
+  "ncertRelevance": [
+    "first element named after an Asian country",
+    "predicted Group 13 chemistry"
+  ],
+  "whyHere": "Predicted to sit in Group 13 below thallium, nihonium is expected to show a similarly variable preference between +1 and +3 oxidation states, following the trend of increasingly stable lower oxidation states down heavy p-block groups.",
+  "didYouKnow": "RIKEN's discovery of nihonium in 2004 (confirmed in 2015) made Japan the first Asian country to have the naming rights for a new chemical element, a point of considerable national scientific pride.",
+  "genZNote": "First element ever named by and for an Asian country. Japan earned this one after years of painstaking accelerator work.",
+  "relatedElements": [
+    "element-thallium",
+    "element-indium",
+    "element-copernicium"
+  ]
+}

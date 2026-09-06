@@ -1,0 +1,47 @@
+{
+  "id": "element-technetium",
+  "category": "element",
+  "atomicNumber": 43,
+  "symbol": "Tc",
+  "name": "Technetium",
+  "atomicMass": 97,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 5,
+  "block": "d",
+  "group": 7,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d⁵ 5s²",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+7",
+    "+4"
+  ],
+  "electronegativityPauling": 1.9,
+  "density": "11.0 g/cm³",
+  "meltingPointC": 2157,
+  "boilingPointC": 4265,
+  "discovery": {
+    "year": 1937,
+    "discoverer": "Carlo Perrier & Emilio Segrè"
+  },
+  "occurrence": "Not found naturally on Earth in any significant amount (all isotopes are radioactive and decay away); produced artificially in nuclear reactors.",
+  "majorUses": [
+    "Technetium-99m as the most widely used medical imaging radioisotope (bone/organ scans)",
+    "Corrosion-inhibitor research in steel"
+  ],
+  "safetyNotes": "Radioactive by nature, though the medically used isotope technetium-99m has a short half-life (~6 hours) specifically chosen to minimize patient radiation exposure.",
+  "notableCharacteristics": "The first element to be artificially produced rather than found in nature, which is exactly where its name comes from (Greek 'technetos', meaning artificial).",
+  "ncertRelevance": [
+    "first synthetic element",
+    "role in nuclear medicine imaging"
+  ],
+  "whyHere": "Sitting between stable manganese and rhenium, technetium has no stable isotopes at all — a gap in the 'valley of stability' that explains why it doesn't occur naturally despite fitting neatly into the periodic table's pattern.",
+  "didYouKnow": "Technetium-99m is injected into millions of patients a year for medical scans specifically because it decays quickly and safely after imaging is done — making the 'artificial' element indispensable to modern hospitals.",
+  "genZNote": "Man-made, radioactive, and somehow the backbone of medical imaging worldwide. Built different, literally.",
+  "relatedElements": [
+    "element-manganese",
+    "element-rhenium",
+    "element-ruthenium"
+  ]
+}

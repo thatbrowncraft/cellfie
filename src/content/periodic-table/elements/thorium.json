@@ -1,0 +1,50 @@
+{
+  "id": "element-thorium",
+  "category": "element",
+  "atomicNumber": 90,
+  "symbol": "Th",
+  "name": "Thorium",
+  "atomicMass": 232.04,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 6d² 7s²",
+  "commonValency": "4",
+  "commonOxidationStates": [
+    "+4"
+  ],
+  "electronegativityPauling": 1.3,
+  "density": "11.7 g/cm³",
+  "meltingPointC": 1750,
+  "boilingPointC": 4788,
+  "discovery": {
+    "year": 1828,
+    "discoverer": "Jöns Jacob Berzelius"
+  },
+  "occurrence": "More abundant in Earth's crust than uranium, found mainly in the mineral monazite alongside rare-earth elements.",
+  "majorUses": [
+    "Proposed alternative nuclear fuel (thorium reactors, potentially safer/more abundant than uranium)",
+    "Historically used in gas-mantle lighting (glowing incandescent fabric mesh)",
+    "High-temperature ceramic and welding-electrode alloys"
+  ],
+  "safetyNotes": "Radioactive, though its main isotope decays slowly enough (a half-life longer than the age of the universe) that bulk thorium is far less immediately hazardous than many other radioactive elements.",
+  "notableCharacteristics": "Named after Thor, the Norse god of thunder, and is being actively researched as a potentially safer, more abundant nuclear fuel alternative to uranium.",
+  "ncertRelevance": [
+    "thorium fuel cycle research",
+    "comparison to uranium as nuclear fuel"
+  ],
+  "whyHere": "With a slowly-decaying, very long half-life isotope as its dominant natural form, thorium is stable enough to handle in bulk yet still capable of sustaining a nuclear fission cycle when properly configured — exactly the combination researchers hope could make thorium reactors both safer and more sustainable than conventional uranium ones.",
+  "didYouKnow": "India, which holds one of the world's largest thorium reserves relative to its uranium reserves, has invested heavily in thorium-fuel-cycle nuclear reactor research as a long-term energy strategy.",
+  "genZNote": "Named after the god of thunder and might genuinely be the future of nuclear power. No pressure on this one either.",
+  "relatedElements": [
+    "element-actinium",
+    "element-protactinium",
+    "element-cerium"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-periodic-trends"
+  ]
+}

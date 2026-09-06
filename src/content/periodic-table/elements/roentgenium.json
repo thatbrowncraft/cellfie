@@ -1,0 +1,38 @@
+{
+  "id": "element-roentgenium",
+  "category": "element",
+  "atomicNumber": 111,
+  "symbol": "Rg",
+  "name": "Roentgenium",
+  "atomicMass": 282,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 7,
+  "block": "d",
+  "group": 11,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d⁹ 7s² (predicted)",
+  "density": "~22 g/cm³ (predicted)",
+  "discovery": {
+    "year": 1994,
+    "discoverer": "Peter Armbruster, Sigurd Hofmann and team, GSI Darmstadt"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; observed only as individual atoms with sub-second half-lives.",
+  "notableCharacteristics": "Named after Wilhelm Röntgen, discoverer of X-rays and the first-ever recipient of the Nobel Prize in Physics.",
+  "ncertRelevance": [
+    "named after the discoverer of X-rays",
+    "predicted Group 11 chemistry"
+  ],
+  "whyHere": "Predicted to sit in Group 11 below gold, roentgenium is theorized to show relativistic effects on its electrons even more extreme than gold's — potentially making it silvery rather than gold-coloured, though this has never been directly observed.",
+  "didYouKnow": "Because relativistic effects get stronger with heavier nuclei, theoretical chemists predict roentgenium might actually look silvery rather than gold-coloured like the element directly above it — a genuinely counterintuitive prediction nobody has enough atoms to test.",
+  "genZNote": "Predicted to NOT look gold-colored despite being right below gold, because relativity said so. Physics really said 'plot twist.'",
+  "relatedElements": [
+    "element-gold",
+    "element-silver",
+    "element-darmstadtium"
+  ]
+}

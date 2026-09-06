@@ -1,0 +1,49 @@
+{
+  "id": "element-gold",
+  "category": "element",
+  "atomicNumber": 79,
+  "symbol": "Au",
+  "name": "Gold",
+  "atomicMass": 196.97,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 6,
+  "block": "d",
+  "group": 11,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s¹",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+3",
+    "+1"
+  ],
+  "electronegativityPauling": 2.54,
+  "density": "19.30 g/cm³",
+  "meltingPointC": 1064.2,
+  "boilingPointC": 2856,
+  "discovery": {
+    "discoverer": "Known since prehistory"
+  },
+  "occurrence": "Found natively as nuggets and veins in quartz rock, and dispersed in seawater at extremely low concentration.",
+  "majorUses": [
+    "Jewellery and currency reserves",
+    "Corrosion-proof electrical connectors in electronics",
+    "Dental fillings and crowns (historically)"
+  ],
+  "notableCharacteristics": "One of only two metallic elements with a natural colour other than silvery-grey (the other being copper), a striking effect caused by relativistic quantum effects on its electrons that no simpler theory predicts.",
+  "ncertRelevance": [
+    "chemical inertness (noble metal)",
+    "relativistic explanation for gold's colour"
+  ],
+  "whyHere": "Gold's electrons move fast enough that relativistic effects noticeably shrink and reshape its outer orbitals, shifting which wavelengths of light it absorbs — a genuinely unusual quantum-relativistic explanation for why gold looks golden rather than silvery like nearly every other metal.",
+  "didYouKnow": "Explaining gold's colour actually requires Einstein's special relativity — its innermost electrons move fast enough that relativistic effects shift its light absorption into the blue range, making the reflected light look yellow-gold.",
+  "genZNote": "Doesn't oxidize easily, conducts well, and refuses to lose its shine. Also its whole colour needs actual relativity to explain. Icon behavior.",
+  "relatedElements": [
+    "element-silver",
+    "element-copper",
+    "element-platinum"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-electrochemistry-electrode-potential"
+  ]
+}

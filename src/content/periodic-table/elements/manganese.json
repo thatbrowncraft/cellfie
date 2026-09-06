@@ -1,0 +1,53 @@
+{
+  "id": "element-manganese",
+  "category": "element",
+  "atomicNumber": 25,
+  "symbol": "Mn",
+  "name": "Manganese",
+  "atomicMass": 54.938,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 4,
+  "block": "d",
+  "group": 7,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d⁵ 4s²",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+7",
+    "+4",
+    "+2"
+  ],
+  "electronegativityPauling": 1.55,
+  "density": "7.21 g/cm³",
+  "meltingPointC": 1246,
+  "boilingPointC": 2061,
+  "discovery": {
+    "year": 1774,
+    "discoverer": "Johan Gottlieb Gahn"
+  },
+  "occurrence": "Widely distributed in minerals, especially pyrolusite (MnO₂); also found in deep-ocean 'manganese nodules'.",
+  "majorUses": [
+    "Steel alloying (removes sulfur/oxygen impurities, adds hardness)",
+    "Dry cell battery cathodes (MnO₂)",
+    "Potassium permanganate as a disinfectant/oxidizer"
+  ],
+  "biologicalRelevance": "An essential trace nutrient and cofactor for enzymes involved in bone formation and antioxidant defence, though excess exposure is neurotoxic.",
+  "notableCharacteristics": "Shows possibly the widest range of oxidation states of any transition metal, from -3 to +7, visible in the vivid purple of permanganate (+7) versus the pale pink of Mn²⁺ salts.",
+  "ncertRelevance": [
+    "highest oxidation state +7 in KMnO₄",
+    "variable oxidation states",
+    "manganese nodules"
+  ],
+  "whyHere": "With five 3d electrons and two 4s electrons all somewhat similar in energy, manganese can lose anywhere from two to all seven outer electrons depending on the reaction, giving it the broadest oxidation-state range in its row.",
+  "didYouKnow": "Potassium permanganate's deep purple colour is so intense that a single gram can visibly tint around 1,000 litres of water.",
+  "genZNote": "Seven possible oxidation states and counting. Manganese really said 'why choose one number.'",
+  "relatedElements": [
+    "element-technetium",
+    "element-rhenium",
+    "element-iron"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-coordination-compounds-and-cft"
+  ]
+}

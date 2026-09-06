@@ -1,0 +1,45 @@
+{
+  "id": "element-praseodymium",
+  "category": "element",
+  "atomicNumber": 59,
+  "symbol": "Pr",
+  "name": "Praseodymium",
+  "atomicMass": 140.91,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f³ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.13,
+  "density": "6.77 g/cm³",
+  "meltingPointC": 931,
+  "boilingPointC": 3520,
+  "discovery": {
+    "year": 1885,
+    "discoverer": "Carl Auer von Welsbach"
+  },
+  "occurrence": "Found alongside other lanthanides in monazite and bastnäsite ores.",
+  "majorUses": [
+    "Rare-earth magnets (alloyed with neodymium)",
+    "Welder's/glassblower's protective goggle glass (filters yellow light)",
+    "Yellow-green glass and ceramic pigments"
+  ],
+  "notableCharacteristics": "Its name literally means 'green twin' in Greek, describing the pale green colour of its salts and its close relationship to neodymium (which it was separated from in 1885).",
+  "ncertRelevance": [
+    "separation of didymium into praseodymium and neodymium"
+  ],
+  "whyHere": "Its three unpaired 4f electrons give praseodymium's compounds their characteristic pale green colour, a signature f-block trait tied directly to how those inner electrons absorb specific wavelengths of visible light.",
+  "didYouKnow": "Praseodymium and neodymium were originally thought to be a single element called 'didymium' until 1885, when careful spectroscopy revealed it was actually two distinct elements hiding together.",
+  "genZNote": "Used to be mistaken for its own twin element for years. Now it's out here filtering welders' goggles solo.",
+  "relatedElements": [
+    "element-neodymium",
+    "element-cerium",
+    "element-lanthanum"
+  ]
+}

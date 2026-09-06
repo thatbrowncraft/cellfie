@@ -1,0 +1,45 @@
+{
+  "id": "element-francium",
+  "category": "element",
+  "atomicNumber": 87,
+  "symbol": "Fr",
+  "name": "Francium",
+  "atomicMass": 223,
+  "elementCategory": "alkali-metal",
+  "elementCategoryLabel": "Alkali Metal",
+  "period": 7,
+  "block": "s",
+  "group": 1,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 7s¹",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+1"
+  ],
+  "electronegativityPauling": 0.7,
+  "density": "~1.87 g/cm³ (estimated)",
+  "meltingPointC": 27,
+  "boilingPointC": 677,
+  "discovery": {
+    "year": 1939,
+    "discoverer": "Marguerite Perey"
+  },
+  "occurrence": "The rarest naturally occurring element after astatine — at any moment, less than an ounce is estimated to exist across the entire Earth's crust, from radioactive decay.",
+  "majorUses": [
+    "No practical applications — studied only for fundamental atomic physics research due to its extreme scarcity and radioactivity"
+  ],
+  "safetyNotes": "Intensely radioactive with a longest half-life of just 22 minutes, making it far too unstable to ever accumulate or handle in bulk.",
+  "notableCharacteristics": "The most electropositive and, alongside caesium, one of the most reactive elements ever isolated — theoretically the most reactive alkali metal, though its radioactivity prevents it from ever being studied in bulk quantity.",
+  "ncertRelevance": [
+    "extreme reactivity of Group 1 at the bottom of the table",
+    "radioactive decay/scarcity"
+  ],
+  "whyHere": "Sitting at the very bottom of Group 1, francium's single 7s electron is held more loosely by the nucleus than in any other stable or semi-stable alkali metal, which would in theory make it the most reactive of all — if it lasted long enough to react with anything before decaying.",
+  "didYouKnow": "Francium was discovered by Marguerite Perey while she was reanalyzing what her lab believed was an impure sample of actinium — she correctly identified a genuinely new, previously unknown decay product instead.",
+  "genZNote": "Theoretically the most reactive alkali metal ever, but decays too fast to actually prove it. All hype, no time.",
+  "relatedElements": [
+    "element-caesium",
+    "element-radium",
+    "element-astatine"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "element-tellurium",
+  "category": "element",
+  "atomicNumber": 52,
+  "symbol": "Te",
+  "name": "Tellurium",
+  "atomicMass": 127.6,
+  "elementCategory": "metalloid",
+  "elementCategoryLabel": "Metalloid",
+  "period": 5,
+  "block": "p",
+  "group": 16,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p⁴",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+6",
+    "+4",
+    "-2"
+  ],
+  "electronegativityPauling": 2.1,
+  "density": "6.24 g/cm³",
+  "meltingPointC": 449.5,
+  "boilingPointC": 988,
+  "discovery": {
+    "year": 1782,
+    "discoverer": "Franz-Joseph Müller von Reichenstein"
+  },
+  "occurrence": "Extremely rare in Earth's crust, recovered mainly as a by-product of copper refining.",
+  "majorUses": [
+    "Thermoelectric cooling devices (bismuth telluride)",
+    "Steel and copper alloying (improves machinability)",
+    "Solar panel material (cadmium telluride thin-film cells)"
+  ],
+  "safetyNotes": "Even tiny exposures cause 'tellurium breath', an intensely persistent garlic-like body odour that can last for weeks, making it one of chemistry's more socially memorable hazards.",
+  "notableCharacteristics": "Named after 'tellus', Latin for Earth, as a companion name to selenium (named for the Moon).",
+  "ncertRelevance": [
+    "thermoelectric applications",
+    "trace-exposure odour effect"
+  ],
+  "whyHere": "Sitting below selenium and sulfur, tellurium shares the -2/+4/+6 oxidation pattern of the group, but its much larger, more metallic atom gives it the thermoelectric and semiconducting behaviour that makes it valuable in solar cells.",
+  "didYouKnow": "Exposure to even microgram quantities of tellurium can cause a garlicky body odour lasting weeks, produced when the body metabolizes it into a volatile methylated compound — one of the most notorious 'occupational hazard' smells in chemistry.",
+  "genZNote": "Give it a breath and it'll haunt you with garlic smell for weeks. The clinginess is unmatched.",
+  "relatedElements": [
+    "element-selenium",
+    "element-polonium",
+    "element-antimony"
+  ]
+}

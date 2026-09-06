@@ -1,0 +1,54 @@
+{
+  "id": "element-iodine",
+  "category": "element",
+  "atomicNumber": 53,
+  "symbol": "I",
+  "name": "Iodine",
+  "atomicMass": 126.9,
+  "elementCategory": "halogen",
+  "elementCategoryLabel": "Halogen",
+  "period": 5,
+  "block": "p",
+  "group": 17,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p⁵",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+7",
+    "+5",
+    "+1",
+    "-1"
+  ],
+  "electronegativityPauling": 2.66,
+  "density": "4.93 g/cm³",
+  "meltingPointC": 113.7,
+  "boilingPointC": 184.3,
+  "discovery": {
+    "year": 1811,
+    "discoverer": "Bernard Courtois"
+  },
+  "occurrence": "Found in seawater, seaweed, and certain brine deposits; concentrated biologically by kelp and other marine algae.",
+  "majorUses": [
+    "Iodized table salt (prevents goitre/thyroid deficiency)",
+    "Antiseptic solutions (tincture of iodine, povidone-iodine)",
+    "Photographic and printing chemicals"
+  ],
+  "biologicalRelevance": "Essential for making thyroid hormones (thyroxine), which regulate metabolism throughout the body — dietary iodine deficiency is a leading preventable cause of intellectual disability worldwide.",
+  "notableCharacteristics": "Sublimes directly from solid to a striking violet vapour when heated, without passing through a visible liquid phase at normal pressure.",
+  "ncertRelevance": [
+    "sublimation demonstration",
+    "biological role in thyroid hormone",
+    "halogen trends"
+  ],
+  "whyHere": "Being the largest stable halogen, iodine's outer electrons are held more loosely than fluorine's or chlorine's, making it the least reactive and only solid halogen at room temperature, and giving it the striking violet colour of its vapour and solutions.",
+  "didYouKnow": "Iodine deficiency was so common historically that entire regions ('goitre belts') suffered widespread thyroid disease until salt iodization programs, starting in the 1920s, virtually eliminated the problem in many countries.",
+  "genZNote": "Turns straight from solid to purple smoke like a magic trick. Also quietly running your thyroid this whole time.",
+  "relatedElements": [
+    "element-bromine",
+    "element-chlorine",
+    "element-astatine"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-ionic-equilibrium-and-buffers"
+  ]
+}

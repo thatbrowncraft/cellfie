@@ -1,0 +1,49 @@
+{
+  "id": "element-silver",
+  "category": "element",
+  "atomicNumber": 47,
+  "symbol": "Ag",
+  "name": "Silver",
+  "atomicMass": 107.87,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 5,
+  "block": "d",
+  "group": 11,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d¹⁰ 5s¹",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+1"
+  ],
+  "electronegativityPauling": 1.93,
+  "density": "10.49 g/cm³",
+  "meltingPointC": 961.8,
+  "boilingPointC": 2162,
+  "discovery": {
+    "discoverer": "Known since prehistory"
+  },
+  "occurrence": "Occurs both natively and combined in ores like argentite; historically mined alongside lead and copper.",
+  "majorUses": [
+    "Jewellery and coinage",
+    "Photographic film (silver halides)",
+    "Electrical contacts and printed-circuit conductive inks (best electrical conductor of any element)"
+  ],
+  "biologicalRelevance": "Silver ions have antimicrobial properties, which is why colloidal silver and silver-coated wound dressings have long been used to prevent infection.",
+  "notableCharacteristics": "Has the highest electrical and thermal conductivity of any element, edging out even copper and gold.",
+  "ncertRelevance": [
+    "best electrical/thermal conductor",
+    "photographic chemistry (silver halides)"
+  ],
+  "whyHere": "Its single loosely-bound 5s electron over a filled 4d¹⁰ core moves through the metal lattice with minimal resistance, which is exactly why silver tops every other element for electrical and thermal conductivity.",
+  "didYouKnow": "Before digital photography, essentially all film photography depended on silver halide crystals darkening when exposed to light — silver was, quite literally, how the 20th century captured images.",
+  "genZNote": "Best conductor on the entire table, no exceptions. Also the reason old photographs exist at all.",
+  "relatedElements": [
+    "element-copper",
+    "element-gold",
+    "element-cadmium"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-electrochemistry-electrode-potential"
+  ]
+}

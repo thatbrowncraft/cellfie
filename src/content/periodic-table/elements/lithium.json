@@ -1,0 +1,50 @@
+{
+  "id": "element-lithium",
+  "category": "element",
+  "atomicNumber": 3,
+  "symbol": "Li",
+  "name": "Lithium",
+  "atomicMass": 6.94,
+  "elementCategory": "alkali-metal",
+  "elementCategoryLabel": "Alkali Metal",
+  "period": 2,
+  "block": "s",
+  "group": 1,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[He] 2s¹",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+1"
+  ],
+  "electronegativityPauling": 0.98,
+  "density": "0.534 g/cm³",
+  "meltingPointC": 180.5,
+  "boilingPointC": 1342,
+  "discovery": {
+    "year": 1817,
+    "discoverer": "Johan August Arfwedson"
+  },
+  "occurrence": "Found in igneous rocks and brine deposits (spodumene, petalite); never occurs free due to reactivity.",
+  "majorUses": [
+    "Lithium-ion batteries",
+    "Mood-stabilizing medication (lithium carbonate)",
+    "High-temperature lubricating greases"
+  ],
+  "biologicalRelevance": "Prescribed in controlled doses as a mood stabilizer for bipolar disorder — one of very few Group 1 metals with an actual pharmaceutical role.",
+  "notableCharacteristics": "Least dense metal and the lightest solid element.",
+  "ncertRelevance": [
+    "alkali metals",
+    "anomalous behaviour of lithium (diagonal relationship with magnesium)"
+  ],
+  "whyHere": "A single lone electron in the 2s orbital, far from the nucleus, is easy to lose — hence the +1 ion and classic Group 1 reactivity, though its small size makes it noticeably less reactive than sodium or potassium.",
+  "didYouKnow": "Lithium's small ionic size gives it a 'diagonal relationship' with magnesium, so it behaves more like Group 2 in several reactions than like its own group.",
+  "genZNote": "Group 1's quiet overachiever. Powers your phone by day, someone's mood stability by prescription.",
+  "relatedElements": [
+    "element-sodium",
+    "element-potassium",
+    "element-beryllium"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-electrochemistry-electrode-potential"
+  ]
+}

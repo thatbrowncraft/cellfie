@@ -1,0 +1,47 @@
+{
+  "id": "element-lead",
+  "category": "element",
+  "atomicNumber": 82,
+  "symbol": "Pb",
+  "name": "Lead",
+  "atomicMass": 207.2,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 6,
+  "block": "p",
+  "group": 14,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p²",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+4",
+    "+2"
+  ],
+  "electronegativityPauling": 2.33,
+  "density": "11.34 g/cm³",
+  "meltingPointC": 327.5,
+  "boilingPointC": 1749,
+  "discovery": {
+    "discoverer": "Known since antiquity"
+  },
+  "occurrence": "Mined mainly from galena (lead sulfide) ore; used by civilizations for thousands of years for pipes, pigments, and pewter.",
+  "majorUses": [
+    "Lead-acid car batteries",
+    "Radiation shielding (X-ray aprons, nuclear facilities)",
+    "Ammunition and historically, pipes and paint"
+  ],
+  "safetyNotes": "Highly toxic, especially to children's developing nervous systems — historical widespread use in paint, pipes, and petrol left a lasting public-health legacy that regulation has only partly undone.",
+  "notableCharacteristics": "Some historians controversially argue that widespread lead use in Roman aqueducts, cookware, and wine-sweetening contributed to health problems among the Roman elite, though this remains debated.",
+  "ncertRelevance": [
+    "toxicity and historical public-health impact",
+    "lead-acid battery chemistry"
+  ],
+  "whyHere": "Its heavy nucleus and dense, tightly packed atomic structure make lead extremely effective at absorbing and blocking ionizing radiation, exactly why it's the standard shielding material in X-ray rooms and nuclear facilities.",
+  "didYouKnow": "Leaded petrol, once used worldwide to boost engine performance, was phased out globally only in the early 2000s in most countries, after decades of evidence linking airborne lead exposure to lowered childhood IQ.",
+  "genZNote": "Ancient civilizations loved this stuff, way too much in hindsight. Also the reason X-ray aprons are so heavy.",
+  "relatedElements": [
+    "element-tin",
+    "element-thallium",
+    "element-bismuth"
+  ]
+}

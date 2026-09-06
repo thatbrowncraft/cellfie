@@ -1,0 +1,47 @@
+{
+  "id": "element-germanium",
+  "category": "element",
+  "atomicNumber": 32,
+  "symbol": "Ge",
+  "name": "Germanium",
+  "atomicMass": 72.63,
+  "elementCategory": "metalloid",
+  "elementCategoryLabel": "Metalloid",
+  "period": 4,
+  "block": "p",
+  "group": 14,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p²",
+  "commonValency": "4",
+  "commonOxidationStates": [
+    "+4",
+    "+2"
+  ],
+  "electronegativityPauling": 2.01,
+  "density": "5.323 g/cm³",
+  "meltingPointC": 938.3,
+  "boilingPointC": 2833,
+  "discovery": {
+    "year": 1886,
+    "discoverer": "Clemens Winkler"
+  },
+  "occurrence": "Rare and dispersed; recovered as a by-product of zinc ore processing and from certain coals.",
+  "majorUses": [
+    "Fiber-optic cable lenses and infrared optics",
+    "Early transistor technology (before silicon took over)",
+    "Solar cell substrates"
+  ],
+  "notableCharacteristics": "Was the semiconductor material used in the very first transistor in 1947, before the industry largely shifted to silicon.",
+  "ncertRelevance": [
+    "Mendeleev's eka-silicon prediction",
+    "semiconductor history"
+  ],
+  "whyHere": "Sitting directly below silicon with the same four valence electrons, germanium forms the same tetrahedral bonding network — and was in fact the material used to prove semiconductor transistor technology could work at all.",
+  "didYouKnow": "Clemens Winkler's discovery of germanium in 1886 confirmed Mendeleev's 'eka-silicon' prediction so exactly — atomic weight, density, and all — that it was one of the strongest early validations of the periodic table itself.",
+  "genZNote": "The OG transistor material before silicon stole the spotlight. Still out here in your fiber-optic cables.",
+  "relatedElements": [
+    "element-silicon",
+    "element-tin",
+    "element-gallium"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "element-sodium",
+  "category": "element",
+  "atomicNumber": 11,
+  "symbol": "Na",
+  "name": "Sodium",
+  "atomicMass": 22.99,
+  "elementCategory": "alkali-metal",
+  "elementCategoryLabel": "Alkali Metal",
+  "period": 3,
+  "block": "s",
+  "group": 1,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ne] 3s¹",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+1"
+  ],
+  "electronegativityPauling": 0.93,
+  "density": "0.971 g/cm³",
+  "meltingPointC": 97.8,
+  "boilingPointC": 883,
+  "discovery": {
+    "year": 1807,
+    "discoverer": "Humphry Davy"
+  },
+  "occurrence": "Never found free in nature; abundant combined as rock salt (NaCl), and dissolved in seawater.",
+  "majorUses": [
+    "Table salt and food preservation (as NaCl)",
+    "Street lighting (sodium-vapour lamps)",
+    "Heat-transfer coolant in some nuclear reactors"
+  ],
+  "biologicalRelevance": "The main positive ion outside your cells, essential for nerve impulse transmission and fluid balance — which is exactly why sports drinks and IV fluids contain it.",
+  "notableCharacteristics": "Soft enough to cut with a knife and reacts violently with water, fizzing across the surface and sometimes igniting the released hydrogen.",
+  "ncertRelevance": [
+    "alkali metal reactivity trend",
+    "electrolysis of molten NaCl (Down's process)",
+    "extraction of sodium"
+  ],
+  "whyHere": "A single, loosely-held 3s electron sitting outside a stable neon core is easy to strip away, which is exactly why sodium so readily forms Na⁺ and reacts explosively with water to release that electron's energy.",
+  "didYouKnow": "The characteristic yellow flame test colour of sodium is so intense it can mask the flame colours of other metals mixed in the same sample.",
+  "genZNote": "Soft metal that absolutely loses it around water. Chemistry's go-to example of 'do not mix these two things.'",
+  "relatedElements": [
+    "element-lithium",
+    "element-potassium",
+    "element-chlorine"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-electrochemistry-electrode-potential",
+    "clin-concept-lipid-electrolyte-analysis"
+  ]
+}

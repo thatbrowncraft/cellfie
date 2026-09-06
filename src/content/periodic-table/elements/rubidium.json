@@ -1,0 +1,46 @@
+{
+  "id": "element-rubidium",
+  "category": "element",
+  "atomicNumber": 37,
+  "symbol": "Rb",
+  "name": "Rubidium",
+  "atomicMass": 85.468,
+  "elementCategory": "alkali-metal",
+  "elementCategoryLabel": "Alkali Metal",
+  "period": 5,
+  "block": "s",
+  "group": 1,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 5s¹",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+1"
+  ],
+  "electronegativityPauling": 0.82,
+  "density": "1.532 g/cm³",
+  "meltingPointC": 39.3,
+  "boilingPointC": 688,
+  "discovery": {
+    "year": 1861,
+    "discoverer": "Robert Bunsen & Gustav Kirchhoff"
+  },
+  "occurrence": "Widely dispersed in trace amounts across potassium-bearing minerals; never concentrated enough for its own dedicated ore.",
+  "majorUses": [
+    "Atomic clocks (rubidium frequency standards)",
+    "Research in Bose-Einstein condensate physics",
+    "Specialty glass and fireworks (red-violet colour)"
+  ],
+  "notableCharacteristics": "Discovered using the then-new technique of flame spectroscopy, identified by two previously unknown dark-red spectral lines (hence the name, from Latin 'rubidus', deep red).",
+  "ncertRelevance": [
+    "discovery via spectroscopy",
+    "alkali metal reactivity trend"
+  ],
+  "whyHere": "With its lone 5s electron even farther from the nucleus than potassium's 4s electron, rubidium is even more reactive and easier to ionize, continuing the clear reactivity trend down Group 1.",
+  "didYouKnow": "Rubidium atoms cooled to nanokelvin temperatures were used to create the first-ever Bose-Einstein condensate in 1995, a feat that won its creators the 2001 Nobel Prize in Physics.",
+  "genZNote": "Discovered by literally looking at a flame through a prism. Also helped make matter act weird near absolute zero.",
+  "relatedElements": [
+    "element-potassium",
+    "element-caesium",
+    "element-strontium"
+  ]
+}

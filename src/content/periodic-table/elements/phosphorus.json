@@ -1,0 +1,50 @@
+{
+  "id": "element-phosphorus",
+  "category": "element",
+  "atomicNumber": 15,
+  "symbol": "P",
+  "name": "Phosphorus",
+  "atomicMass": 30.974,
+  "elementCategory": "nonmetal",
+  "elementCategoryLabel": "Nonmetal",
+  "period": 3,
+  "block": "p",
+  "group": 15,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ne] 3s² 3p³",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+5",
+    "+3",
+    "-3"
+  ],
+  "electronegativityPauling": 2.19,
+  "density": "1.82 g/cm³ (white)",
+  "meltingPointC": 44.1,
+  "boilingPointC": 280.5,
+  "discovery": {
+    "year": 1669,
+    "discoverer": "Hennig Brand"
+  },
+  "occurrence": "Never found free; combined in phosphate rock (apatite) and in every living cell's DNA and ATP.",
+  "majorUses": [
+    "Fertilizer production (superphosphates)",
+    "Matchstick heads (red phosphorus)",
+    "Flame retardants and detergent additives (historically)"
+  ],
+  "biologicalRelevance": "A structural component of DNA's backbone and of ATP, the molecule your cells use to store and transfer chemical energy — no phosphorus, no energy metabolism.",
+  "notableCharacteristics": "White phosphorus glows faintly in the dark (chemiluminescence, the origin of the word 'phosphorescence') and ignites spontaneously in air, so it's stored underwater.",
+  "ncertRelevance": [
+    "allotropes of phosphorus (white, red, black)",
+    "phosphorus family trends",
+    "role in nucleotides"
+  ],
+  "whyHere": "Five valence electrons like nitrogen above it, but a much larger atomic size means weaker pi-bonding, so phosphorus favours single-bonded, more complex structures like P₄ tetrahedra instead of a simple diatomic gas.",
+  "didYouKnow": "Hennig Brand discovered phosphorus in 1669 by boiling down thousands of litres of urine looking for gold — instead he isolated a glowing white waxy solid.",
+  "genZNote": "Discovered in urine, now it's in your DNA and your matchsticks. A genuine glow-up story.",
+  "relatedElements": [
+    "element-nitrogen",
+    "element-arsenic",
+    "element-sulfur"
+  ]
+}

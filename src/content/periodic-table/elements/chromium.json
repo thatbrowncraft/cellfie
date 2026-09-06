@@ -1,0 +1,53 @@
+{
+  "id": "element-chromium",
+  "category": "element",
+  "atomicNumber": 24,
+  "symbol": "Cr",
+  "name": "Chromium",
+  "atomicMass": 51.996,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 4,
+  "block": "d",
+  "group": 6,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d⁵ 4s¹",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+6",
+    "+3",
+    "+2"
+  ],
+  "electronegativityPauling": 1.66,
+  "density": "7.15 g/cm³",
+  "meltingPointC": 1907,
+  "boilingPointC": 2671,
+  "discovery": {
+    "year": 1797,
+    "discoverer": "Louis Nicolas Vauquelin"
+  },
+  "occurrence": "Mined mainly as chromite ore; named from the Greek 'chroma' (colour) for its vividly coloured compounds.",
+  "majorUses": [
+    "Chrome plating for corrosion-resistant shiny finishes",
+    "Stainless steel alloying (rust resistance)",
+    "Pigments (chrome yellow, chrome green)"
+  ],
+  "safetyNotes": "Hexavalent chromium (Cr⁶⁺) compounds are toxic and carcinogenic, unlike the much safer trivalent Cr³⁺ form your body actually needs in trace amounts.",
+  "notableCharacteristics": "Its electron configuration breaks the expected filling order — one electron jumps from 4s to 3d to give a more stable half-filled 3d⁵ set, a classic exception every chemistry student memorizes.",
+  "ncertRelevance": [
+    "exception to Aufbau principle (3d⁵4s¹ configuration)",
+    "variable oxidation states",
+    "toxicity of Cr(VI) vs Cr(III)"
+  ],
+  "whyHere": "A half-filled 3d⁵ subshell is unusually stable, so chromium 'steals' an electron from 4s to achieve it — the textbook exception to the normal electron-filling order.",
+  "didYouKnow": "Chrome plating isn't solid chromium — it's a microscopically thin layer over another metal, thin enough that the underlying metal's shape and weight barely change.",
+  "genZNote": "Broke the electron-filling rules just to be more stable. Also the reason your bike handlebars are shiny.",
+  "relatedElements": [
+    "element-molybdenum",
+    "element-tungsten",
+    "element-manganese"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-coordination-compounds-and-cft"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "element-platinum",
+  "category": "element",
+  "atomicNumber": 78,
+  "symbol": "Pt",
+  "name": "Platinum",
+  "atomicMass": 195.08,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 6,
+  "block": "d",
+  "group": 10,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d⁹ 6s¹",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+4",
+    "+2"
+  ],
+  "electronegativityPauling": 2.28,
+  "density": "21.45 g/cm³",
+  "meltingPointC": 1768.3,
+  "boilingPointC": 3825,
+  "discovery": {
+    "discoverer": "Known to pre-Columbian South American cultures; introduced to Europe by Antonio de Ulloa, 1748"
+  },
+  "occurrence": "Found natively and in nickel-copper ore deposits, concentrated in a handful of countries (mainly South Africa and Russia).",
+  "majorUses": [
+    "Catalytic converters",
+    "Jewellery (dense, tarnish-resistant)",
+    "Chemotherapy drugs (cisplatin and related platinum compounds)"
+  ],
+  "biologicalRelevance": "Platinum-based compounds like cisplatin are among the most widely used chemotherapy drugs, working by binding to and damaging cancer cell DNA to stop it replicating.",
+  "notableCharacteristics": "So chemically inert that it doesn't tarnish, oxidize, or corrode under almost any normal condition, which is exactly why it was chosen historically to define the standard kilogram and metre.",
+  "ncertRelevance": [
+    "catalytic converter chemistry",
+    "cisplatin's anticancer mechanism"
+  ],
+  "whyHere": "Its nearly-filled 5d⁹ subshell with just one 6s electron gives platinum unusually strong metallic bonding and chemical inertness, both of which are exactly why it resists tarnishing and why its compounds bind so tightly (and usefully) to cancer-cell DNA in cisplatin.",
+  "didYouKnow": "The original standard definitions of the kilogram and metre were physical platinum-iridium bars kept in France, chosen specifically because the alloy resists corrosion and dimensional change better than almost anything else.",
+  "genZNote": "So unreactive it used to physically define the kilogram. Also fights cancer as a chemo drug. Genuinely doing the most.",
+  "relatedElements": [
+    "element-palladium",
+    "element-gold",
+    "element-rhodium"
+  ]
+}

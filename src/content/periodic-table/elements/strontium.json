@@ -1,0 +1,47 @@
+{
+  "id": "element-strontium",
+  "category": "element",
+  "atomicNumber": 38,
+  "symbol": "Sr",
+  "name": "Strontium",
+  "atomicMass": 87.62,
+  "elementCategory": "alkaline-earth-metal",
+  "elementCategoryLabel": "Alkaline Earth Metal",
+  "period": 5,
+  "block": "s",
+  "group": 2,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 5s²",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "electronegativityPauling": 0.95,
+  "density": "2.64 g/cm³",
+  "meltingPointC": 777,
+  "boilingPointC": 1382,
+  "discovery": {
+    "year": 1790,
+    "discoverer": "Adair Crawford"
+  },
+  "occurrence": "Found in the minerals strontianite and celestine, named after the Scottish village of Strontian where it was first identified.",
+  "majorUses": [
+    "Red fireworks and flare colouring",
+    "Strontium-90 in radioisotope thermoelectric generators (historically)",
+    "Some osteoporosis medications"
+  ],
+  "safetyNotes": "Radioactive strontium-90, a fission by-product, is a serious fallout hazard because the body mistakes it for calcium and deposits it in bone.",
+  "notableCharacteristics": "Is the element responsible for the brilliant red colour in most fireworks displays.",
+  "ncertRelevance": [
+    "flame test colour",
+    "similarity to calcium in biological uptake"
+  ],
+  "whyHere": "Its chemistry closely tracks calcium's since both lose two electrons to form a stable +2 ion of similar size, which is exactly why radioactive strontium-90 gets mistakenly absorbed into bone in place of calcium.",
+  "didYouKnow": "Strontium is literally named after Strontian, a small village in Scotland, making it one of the very few elements named after a specific town rather than a scientist, myth, or property.",
+  "genZNote": "Named after a tiny Scottish village and now it's why fireworks are red. Small town, big pyrotechnic legacy.",
+  "relatedElements": [
+    "element-calcium",
+    "element-barium",
+    "element-rubidium"
+  ]
+}

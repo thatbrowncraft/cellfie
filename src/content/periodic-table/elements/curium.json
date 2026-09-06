@@ -1,0 +1,46 @@
+{
+  "id": "element-curium",
+  "category": "element",
+  "atomicNumber": 96,
+  "symbol": "Cm",
+  "name": "Curium",
+  "atomicMass": 247,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f⁷ 6d¹ 7s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.3,
+  "density": "13.51 g/cm³",
+  "meltingPointC": 1345,
+  "boilingPointC": 3110,
+  "discovery": {
+    "year": 1944,
+    "discoverer": "Glenn T. Seaborg and team"
+  },
+  "occurrence": "Does not occur naturally; produced artificially by bombarding plutonium with alpha particles.",
+  "majorUses": [
+    "Power source for the Alpha Particle X-ray Spectrometer aboard several Mars rovers (Curiosity, Perseverance)",
+    "Research into heavier synthetic element production"
+  ],
+  "safetyNotes": "Highly radioactive and radiotoxic; handled exclusively in specialized nuclear research facilities.",
+  "notableCharacteristics": "Named directly after Marie and Pierre Curie, honouring their foundational work on radioactivity — one of the very few elements named after two people at once.",
+  "ncertRelevance": [
+    "named jointly after Marie and Pierre Curie",
+    "planetary rover instrument power source"
+  ],
+  "whyHere": "Like americium, curium's electron arrangement near a half-filled 5f subshell gives it a fairly stable, predictable radioactive decay, which is exactly the steady alpha-particle output that instruments like the Mars rovers' X-ray spectrometers are engineered to use.",
+  "didYouKnow": "A small amount of curium-244 powers the X-ray spectrometer instrument on NASA's Curiosity and Perseverance Mars rovers, letting them analyze the chemical composition of Martian rocks from the surface.",
+  "genZNote": "Named after the Curies and now it's literally analyzing rocks on Mars. A genuinely worthy legacy.",
+  "relatedElements": [
+    "element-americium",
+    "element-berkelium",
+    "element-plutonium"
+  ]
+}

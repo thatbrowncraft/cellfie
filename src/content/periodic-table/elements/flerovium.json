@@ -1,0 +1,41 @@
+{
+  "id": "element-flerovium",
+  "category": "element",
+  "atomicNumber": 114,
+  "symbol": "Fl",
+  "name": "Flerovium",
+  "atomicMass": 289,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 7,
+  "block": "p",
+  "group": 14,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p² (predicted)",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "density": "~14 g/cm³ (predicted)",
+  "discovery": {
+    "year": 1998,
+    "discoverer": "Yuri Oganessian and team, Joint Institute for Nuclear Research, Dubna"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research, notably testing the 'island of stability' hypothesis"
+  ],
+  "safetyNotes": "Intensely radioactive, though some of its isotopes have unexpectedly longer half-lives (seconds, rather than milliseconds) than neighbouring superheavy elements.",
+  "notableCharacteristics": "Named after Georgy Flyorov, founder of the Dubna laboratory, and one of the key elements whose surprisingly longer half-lives support the theorized 'island of stability' for certain superheavy nuclei.",
+  "ncertRelevance": [
+    "island of stability hypothesis",
+    "predicted Group 14 chemistry (lead analogue)"
+  ],
+  "whyHere": "Predicted to sit in Group 14 below lead, flerovium's slightly longer-than-expected half-lives are exactly the kind of evidence physicists look for to support the 'island of stability' theory, which predicts certain 'magic number' proton/neutron combinations should resist decay unusually well.",
+  "didYouKnow": "While most superheavy elements decay in milliseconds, some flerovium isotopes survive for several seconds — a huge relative difference that's seen as tentative evidence for the long-theorized 'island of stability' among superheavy nuclei.",
+  "genZNote": "Lives noticeably longer than its superheavy neighbours, which is basically the periodic table's version of finding a plot-relevant clue. Island of stability, here we come.",
+  "relatedElements": [
+    "element-lead",
+    "element-tin",
+    "element-nihonium"
+  ]
+}

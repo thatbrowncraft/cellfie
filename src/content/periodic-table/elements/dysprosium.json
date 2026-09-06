@@ -1,0 +1,46 @@
+{
+  "id": "element-dysprosium",
+  "category": "element",
+  "atomicNumber": 66,
+  "symbol": "Dy",
+  "name": "Dysprosium",
+  "atomicMass": 162.5,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁰ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.22,
+  "density": "8.55 g/cm³",
+  "meltingPointC": 1412,
+  "boilingPointC": 2567,
+  "discovery": {
+    "year": 1886,
+    "discoverer": "Paul-Émile Lecoq de Boisbaudran"
+  },
+  "occurrence": "Found in low concentrations within monazite and xenotime ores; took Boisbaudran over 30 fractional-crystallization attempts to isolate.",
+  "majorUses": [
+    "Additive in neodymium magnets to improve heat resistance",
+    "Nuclear reactor control rods (high neutron absorption)",
+    "Data storage media (historically, magneto-optic discs)"
+  ],
+  "notableCharacteristics": "Its name comes from the Greek 'dysprositos', meaning 'hard to get', reflecting how difficult it was to separate from other rare-earths.",
+  "ncertRelevance": [
+    "difficulty of lanthanide separation",
+    "magnet performance additive role"
+  ],
+  "whyHere": "Its ten 4f electrons give dysprosium strong magnetic properties that remain stable at higher temperatures than neodymium's alone, which is exactly why a small amount of it is blended into neodymium magnets used in electric vehicle motors.",
+  "didYouKnow": "Dysprosium's name literally translates to 'hard to get' in Greek — its discoverer needed more than 30 rounds of a tedious separation process just to isolate a usable sample.",
+  "genZNote": "Named 'hard to get' and really committed to the bit — took over 30 tries to even isolate. Worth it though, EV motors need it.",
+  "relatedElements": [
+    "element-neodymium",
+    "element-holmium",
+    "element-terbium"
+  ]
+}

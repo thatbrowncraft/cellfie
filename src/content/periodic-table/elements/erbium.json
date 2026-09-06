@@ -1,0 +1,46 @@
+{
+  "id": "element-erbium",
+  "category": "element",
+  "atomicNumber": 68,
+  "symbol": "Er",
+  "name": "Erbium",
+  "atomicMass": 167.26,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹² 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.24,
+  "density": "9.07 g/cm³",
+  "meltingPointC": 1529,
+  "boilingPointC": 2868,
+  "discovery": {
+    "year": 1843,
+    "discoverer": "Carl Gustaf Mosander"
+  },
+  "occurrence": "Found in trace amounts within monazite and xenotime ores; another of the four Ytterby-named elements.",
+  "majorUses": [
+    "Erbium-doped fiber amplifiers (the backbone of long-distance internet fiber-optic cables)",
+    "Pink glass and ceramic glazes",
+    "Medical and dental lasers"
+  ],
+  "notableCharacteristics": "Erbium-doped optical fibers can amplify light signals directly without converting them to electricity first, which is exactly what makes global undersea internet cables possible over thousands of kilometres.",
+  "ncertRelevance": [
+    "fiber-optic signal amplification",
+    "Ytterby-named element group"
+  ],
+  "whyHere": "Erbium ions absorb and re-emit light at exactly the wavelength used in telecom fiber optics, so doping glass fiber with erbium lets a laser directly re-energize a fading light signal — the reason it underpins nearly all long-haul internet infrastructure.",
+  "didYouKnow": "Nearly every transoceanic internet cable relies on erbium-doped fiber amplifiers spaced along its length to boost the light signal — without erbium, today's global internet backbone wouldn't work the way it does.",
+  "genZNote": "Secretly the reason your internet works across oceans. The most slept-on infrastructure element there is.",
+  "relatedElements": [
+    "element-holmium",
+    "element-thulium",
+    "element-yttrium"
+  ]
+}

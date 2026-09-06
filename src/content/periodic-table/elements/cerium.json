@@ -1,0 +1,47 @@
+{
+  "id": "element-cerium",
+  "category": "element",
+  "atomicNumber": 58,
+  "symbol": "Ce",
+  "name": "Cerium",
+  "atomicMass": 140.12,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹ 5d¹ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+4",
+    "+3"
+  ],
+  "electronegativityPauling": 1.12,
+  "density": "6.77 g/cm³",
+  "meltingPointC": 798,
+  "boilingPointC": 3443,
+  "discovery": {
+    "year": 1803,
+    "discoverer": "Jöns Jacob Berzelius & Wilhelm Hisinger"
+  },
+  "occurrence": "The most abundant rare-earth element overall, more common in Earth's crust than copper.",
+  "majorUses": [
+    "Flint 'sparking' alloys for lighters (ferrocerium)",
+    "Glass polishing compounds",
+    "Catalytic converter and diesel fuel additives"
+  ],
+  "notableCharacteristics": "One of the very few lanthanides with a stable and useful +4 oxidation state alongside the typical +3, thanks to the extra stability of an empty 4f subshell in Ce⁴⁺.",
+  "ncertRelevance": [
+    "variable oxidation states among lanthanides",
+    "abundance despite 'rare earth' name"
+  ],
+  "whyHere": "Losing all four of its outer electrons (one 4f, one 5d, two 6s) leaves cerium with an empty, stable 4f⁰ configuration in the Ce⁴⁺ state, which is exactly why it — unlike most lanthanides — readily forms both +3 and +4 ions.",
+  "didYouKnow": "Despite the 'rare earth' label, cerium is more abundant in Earth's crust than copper, lead, or tin — 'rare earth' historically referred to how hard these elements were to separate from each other, not how scarce they are.",
+  "genZNote": "'Rare earth' is a total misnomer, cerium's more common than copper. It's just a nightmare to separate from its neighbours.",
+  "relatedElements": [
+    "element-lanthanum",
+    "element-praseodymium",
+    "element-thorium"
+  ]
+}

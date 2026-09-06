@@ -1,0 +1,42 @@
+{
+  "id": "element-neon",
+  "category": "element",
+  "atomicNumber": 10,
+  "symbol": "Ne",
+  "name": "Neon",
+  "atomicMass": 20.18,
+  "elementCategory": "noble-gas",
+  "elementCategoryLabel": "Noble Gas",
+  "period": 2,
+  "block": "p",
+  "group": 18,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "[He] 2s² 2p⁶",
+  "commonValency": "0",
+  "density": "0.0009 g/cm³ (gas)",
+  "meltingPointC": -248.6,
+  "boilingPointC": -246.1,
+  "discovery": {
+    "year": 1898,
+    "discoverer": "William Ramsay & Morris Travers"
+  },
+  "occurrence": "Trace component of the atmosphere, extracted by fractional distillation of liquid air.",
+  "majorUses": [
+    "Neon signage (glows red-orange when electrified)",
+    "Cryogenic refrigerant (cheaper than helium for some ranges)",
+    "High-voltage indicator lamps"
+  ],
+  "notableCharacteristics": "Its name comes from the Greek 'neos' meaning 'new' — it was found and identified within weeks of argon.",
+  "ncertRelevance": [
+    "noble gas configuration",
+    "why noble gases have very low boiling points"
+  ],
+  "whyHere": "A completely filled 2s² 2p⁶ octet means no unpaired electrons and essentially zero appetite for bonding, which is exactly why it stays a monatomic gas down to nearly absolute zero.",
+  "didYouKnow": "Neon signs don't actually all glow neon-orange — that colour is specific to neon gas itself; other 'neon' colours in shop signs are really different noble gases or fluorescent coatings.",
+  "genZNote": "The OG glow-up gas. Every 'neon sign' that's actually a different color owes neon an apology.",
+  "relatedElements": [
+    "element-helium",
+    "element-argon",
+    "element-fluorine"
+  ]
+}

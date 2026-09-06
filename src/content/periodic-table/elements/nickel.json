@@ -1,0 +1,48 @@
+{
+  "id": "element-nickel",
+  "category": "element",
+  "atomicNumber": 28,
+  "symbol": "Ni",
+  "name": "Nickel",
+  "atomicMass": 58.693,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 4,
+  "block": "d",
+  "group": 10,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d⁸ 4s²",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2",
+    "+3"
+  ],
+  "electronegativityPauling": 1.91,
+  "density": "8.908 g/cm³",
+  "meltingPointC": 1455,
+  "boilingPointC": 2913,
+  "discovery": {
+    "year": 1751,
+    "discoverer": "Axel Fredrik Cronstedt"
+  },
+  "occurrence": "Concentrated in Earth's core (thought to make up much of it alongside iron); mined from sulfide and laterite ores.",
+  "majorUses": [
+    "Stainless steel alloying",
+    "Rechargeable NiMH and older NiCd batteries",
+    "Coinage (many 'silver' coins are nickel alloys)"
+  ],
+  "safetyNotes": "Nickel is one of the most common causes of metal contact allergy, responsible for a large share of jewellery-related skin reactions.",
+  "notableCharacteristics": "One of the four ferromagnetic elements and, alongside iron, believed to make up the bulk of Earth's solid inner core.",
+  "ncertRelevance": [
+    "ferromagnetism",
+    "catalytic hydrogenation (Raney nickel)"
+  ],
+  "whyHere": "Its eight 3d electrons leave it just two short of a filled d-subshell, giving strong metallic bonding and the ferromagnetic alignment it shares with iron and cobalt.",
+  "didYouKnow": "Nickel is thought to make up a significant fraction of Earth's solid inner core alongside iron — the reason the core is often called the 'iron-nickel core'.",
+  "genZNote": "Quietly makes up Earth's core and also your 'silver' coins. Understated but structurally essential, literally.",
+  "relatedElements": [
+    "element-palladium",
+    "element-platinum",
+    "element-cobalt"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "element-radium",
+  "category": "element",
+  "atomicNumber": 88,
+  "symbol": "Ra",
+  "name": "Radium",
+  "atomicMass": 226,
+  "elementCategory": "alkaline-earth-metal",
+  "elementCategoryLabel": "Alkaline Earth Metal",
+  "period": 7,
+  "block": "s",
+  "group": 2,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 7s²",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "electronegativityPauling": 0.9,
+  "density": "5.5 g/cm³",
+  "meltingPointC": 700,
+  "boilingPointC": 1737,
+  "discovery": {
+    "year": 1898,
+    "discoverer": "Marie Curie & Pierre Curie"
+  },
+  "occurrence": "Found in trace amounts within uranium ores as a radioactive decay product; historically extracted at great effort from tonnes of pitchblende.",
+  "majorUses": [
+    "Historically used in glow-in-the-dark radium paint for watch dials (discontinued after severe worker poisonings)",
+    "Early radiotherapy for cancer (mostly replaced by safer isotopes today)"
+  ],
+  "safetyNotes": "Highly radioactive and chemically similar enough to calcium that it accumulates in bone, causing severe, often fatal illness — the 'Radium Girls' watch-dial painters of the 1920s became a landmark occupational-health tragedy.",
+  "notableCharacteristics": "Glows faintly blue-green in the dark due to its intense radioactivity exciting surrounding air and materials, which is exactly why it was (dangerously) used in early luminous paint.",
+  "ncertRelevance": [
+    "discovery by the Curies from pitchblende",
+    "Radium Girls occupational health case study"
+  ],
+  "whyHere": "Chemically behaving like a heavier calcium or barium due to its two easily-lost 7s electrons, radium gets mistakenly absorbed into bone in place of calcium, but its intense radioactivity there is exactly what made it so devastating to the workers who once handled it daily.",
+  "didYouKnow": "The 'Radium Girls', factory workers who painted watch dials with radium paint in the 1920s and were told to lick their brushes to a fine point, suffered severe radiation poisoning that led to landmark labour-safety lawsuits and reforms.",
+  "genZNote": "Used to be painted onto watches so people could tell time in the dark. The workers paid a brutal price for that glow.",
+  "relatedElements": [
+    "element-barium",
+    "element-calcium",
+    "element-actinium"
+  ]
+}

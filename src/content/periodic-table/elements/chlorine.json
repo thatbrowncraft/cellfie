@@ -1,0 +1,55 @@
+{
+  "id": "element-chlorine",
+  "category": "element",
+  "atomicNumber": 17,
+  "symbol": "Cl",
+  "name": "Chlorine",
+  "atomicMass": 35.45,
+  "elementCategory": "halogen",
+  "elementCategoryLabel": "Halogen",
+  "period": 3,
+  "block": "p",
+  "group": 17,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "[Ne] 3s² 3p⁵",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+1",
+    "+3",
+    "+5",
+    "+7",
+    "-1"
+  ],
+  "electronegativityPauling": 3.16,
+  "density": "0.003214 g/cm³ (gas)",
+  "meltingPointC": -101.5,
+  "boilingPointC": -34.0,
+  "discovery": {
+    "year": 1774,
+    "discoverer": "Carl Wilhelm Scheele"
+  },
+  "occurrence": "Never free in nature; abundant combined as rock salt and dissolved chloride ions in seawater.",
+  "majorUses": [
+    "Water disinfection and swimming pool sanitation",
+    "PVC plastic production",
+    "Bleaching agent in paper and textile industries"
+  ],
+  "biologicalRelevance": "As chloride ion, it's essential for stomach acid (HCl) production and fluid/electrolyte balance across cell membranes.",
+  "notableCharacteristics": "A pale yellow-green toxic gas that was used as a chemical weapon in World War I, yet in dilute controlled form it's what keeps drinking water safe from pathogens.",
+  "ncertRelevance": [
+    "preparation of chlorine (electrolysis, MnO₂ + HCl)",
+    "bleaching action",
+    "oxoacids of chlorine"
+  ],
+  "whyHere": "Seven valence electrons put it one short of a stable octet, so it reacts eagerly to gain that electron — powerful enough as an oxidizer to disinfect water, but also toxic enough to have been weaponized historically.",
+  "didYouKnow": "Chlorine gas is roughly 2.5 times denser than air, which is why it hugs the ground in a leak — a fact both WWI trench soldiers and modern chemical-safety protocols had to reckon with.",
+  "genZNote": "Useful disinfectant, terrifyingly reactive in the wrong context. Context is doing a lot of work there.",
+  "relatedElements": [
+    "element-fluorine",
+    "element-bromine",
+    "element-sodium"
+  ],
+  "relatedCellfieConcepts": [
+    "clin-concept-lipid-electrolyte-analysis"
+  ]
+}

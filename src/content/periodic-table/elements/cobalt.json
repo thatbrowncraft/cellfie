@@ -1,0 +1,51 @@
+{
+  "id": "element-cobalt",
+  "category": "element",
+  "atomicNumber": 27,
+  "symbol": "Co",
+  "name": "Cobalt",
+  "atomicMass": 58.933,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 4,
+  "block": "d",
+  "group": 9,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d⁷ 4s²",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+3",
+    "+2"
+  ],
+  "electronegativityPauling": 1.88,
+  "density": "8.90 g/cm³",
+  "meltingPointC": 1495,
+  "boilingPointC": 2927,
+  "discovery": {
+    "year": 1735,
+    "discoverer": "Georg Brandt"
+  },
+  "occurrence": "Found mainly as a by-product of nickel and copper mining; also concentrated in deep-sea polymetallic nodules.",
+  "majorUses": [
+    "Lithium-ion battery cathodes",
+    "Blue pigment in glass and ceramics (cobalt blue)",
+    "High-strength magnetic and jet-engine alloys"
+  ],
+  "biologicalRelevance": "The central metal atom in vitamin B12 (cobalamin), essential for red blood cell formation and nerve function — the only vitamin that contains a metal.",
+  "notableCharacteristics": "One of only four ferromagnetic elements, and its name comes from 'kobold', a mischievous goblin German miners blamed for ore that looked valuable but poisoned smelters with arsenic fumes.",
+  "ncertRelevance": [
+    "ferromagnetism",
+    "vitamin B12 metal cofactor"
+  ],
+  "whyHere": "Its seven 3d electrons support strong unpaired-electron alignment between neighbouring atoms, which is exactly what makes cobalt (like iron and nickel) ferromagnetic.",
+  "didYouKnow": "Vitamin B12 is the only vitamin known to contain a metal atom at its core — that metal is cobalt, which is where the vitamin's chemical name 'cobalamin' comes from.",
+  "genZNote": "Named after a goblin that miners blamed for cursed ore. Now it's the reason your EV battery works.",
+  "relatedElements": [
+    "element-iron",
+    "element-nickel",
+    "element-rhodium"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-coordination-compounds-and-cft"
+  ]
+}

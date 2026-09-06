@@ -1,0 +1,41 @@
+{
+  "id": "element-livermorium",
+  "category": "element",
+  "atomicNumber": 116,
+  "symbol": "Lv",
+  "name": "Livermorium",
+  "atomicMass": 293,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 7,
+  "block": "p",
+  "group": 16,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴ (predicted)",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "density": "~13 g/cm³ (predicted)",
+  "discovery": {
+    "year": 2000,
+    "discoverer": "Joint Russian-American team, Dubna & Lawrence Livermore National Laboratory"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; observed only as individual atoms with sub-second half-lives.",
+  "notableCharacteristics": "Named after Lawrence Livermore National Laboratory in California, the American half of the joint team that created it alongside the Dubna laboratory in Russia.",
+  "ncertRelevance": [
+    "predicted Group 16 chemistry (polonium analogue)",
+    "named after a US national laboratory"
+  ],
+  "whyHere": "Predicted to sit in Group 16 below polonium, livermorium is expected to continue that group's trend toward more metallic character at the bottom, though so few atoms have ever been made that direct chemical confirmation remains extremely limited.",
+  "didYouKnow": "Fewer than a hundred atoms of livermorium have likely ever been created across all experiments to date, each one detected purely by tracking its radioactive decay chain in the fraction of a second before it falls apart.",
+  "genZNote": "Probably fewer than 100 atoms of this have ever existed, total, across all of human history. That's not a lot of livermorium to go around.",
+  "relatedElements": [
+    "element-polonium",
+    "element-tellurium",
+    "element-moscovium"
+  ]
+}

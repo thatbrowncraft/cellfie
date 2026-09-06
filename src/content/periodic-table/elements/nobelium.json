@@ -1,0 +1,44 @@
+{
+  "id": "element-nobelium",
+  "category": "element",
+  "atomicNumber": 102,
+  "symbol": "No",
+  "name": "Nobelium",
+  "atomicMass": 259,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 7s²",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2",
+    "+3"
+  ],
+  "electronegativityPauling": 1.3,
+  "meltingPointC": 827,
+  "discovery": {
+    "year": 1958,
+    "discoverer": "Contested — claims by teams at Dubna, USSR and Berkeley, USA"
+  },
+  "occurrence": "Does not occur naturally; produced only by particle accelerator fusion reactions, a handful of atoms at a time.",
+  "majorUses": [
+    "No practical applications — pure nuclear physics research"
+  ],
+  "safetyNotes": "Intensely radioactive with extremely short half-lives (its most stable isotope lasts only a few minutes); never produced beyond individual atoms.",
+  "notableCharacteristics": "Named after Alfred Nobel and the Nobel Institute in Sweden, and its discovery was disputed between Soviet and American research teams during Cold War-era scientific rivalry, a pattern repeated for several nearby elements.",
+  "ncertRelevance": [
+    "Cold War-era discovery disputes among transfermium elements",
+    "extremely short-lived superheavy isotopes"
+  ],
+  "whyHere": "With a filled 5f¹⁴ subshell, nobelium is unusual among actinides for readily forming a stable +2 ion rather than the +3 typical of its neighbours, a quirk tied directly to the extra stability that filled f-subshell gives up.",
+  "didYouKnow": "The naming and discovery credit for nobelium was disputed for decades between Soviet and American laboratories, part of a broader 'Transfermium Wars' that IUPAC only formally resolved for several elements in 1997.",
+  "genZNote": "Caused an actual international science feud over who discovered it first. The Cold War really touched everything, apparently.",
+  "relatedElements": [
+    "element-mendelevium",
+    "element-lawrencium",
+    "element-ytterbium"
+  ]
+}

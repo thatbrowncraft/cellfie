@@ -1,0 +1,46 @@
+{
+  "id": "element-hafnium",
+  "category": "element",
+  "atomicNumber": 72,
+  "symbol": "Hf",
+  "name": "Hafnium",
+  "atomicMass": 178.49,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 6,
+  "block": "d",
+  "group": 4,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d² 6s²",
+  "commonValency": "4",
+  "commonOxidationStates": [
+    "+4"
+  ],
+  "electronegativityPauling": 1.3,
+  "density": "13.31 g/cm³",
+  "meltingPointC": 2233,
+  "boilingPointC": 4603,
+  "discovery": {
+    "year": 1923,
+    "discoverer": "Dirk Coster & George de Hevesy"
+  },
+  "occurrence": "Almost always found chemically bound together with zirconium, whose ores it closely resembles.",
+  "majorUses": [
+    "Nuclear reactor control rods (strongly absorbs neutrons, unlike chemically similar zirconium)",
+    "High-temperature superalloys for jet engines",
+    "Microprocessor gate insulators"
+  ],
+  "notableCharacteristics": "Chemically nearly identical to zirconium due to 'lanthanide contraction' (the f-block electrons before it shrink its atomic radius to match zirconium's almost exactly), yet the two have opposite nuclear behaviour — hafnium absorbs neutrons strongly while zirconium barely does.",
+  "ncertRelevance": [
+    "lanthanide contraction effect",
+    "opposite nuclear reactor roles versus zirconium"
+  ],
+  "whyHere": "Because fourteen filled 4f electrons contract its atomic radius (lanthanide contraction) down to almost exactly zirconium's size, hafnium mimics zirconium chemically — yet its very different nucleus makes it absorb neutrons strongly, the opposite of what reactor engineers need from zirconium cladding.",
+  "didYouKnow": "Hafnium was one of the last elements discovered by classical chemical methods, found by carefully studying X-ray spectra of zirconium ore samples rather than by any visible colour or reaction difference.",
+  "genZNote": "Chemically indistinguishable from zirconium but nuclear-wise, total opposite personality. Twins who disagree on everything that matters.",
+  "relatedElements": [
+    "element-zirconium",
+    "element-titanium",
+    "element-lutetium"
+  ]
+}

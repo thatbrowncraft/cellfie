@@ -1,0 +1,48 @@
+{
+  "id": "element-titanium",
+  "category": "element",
+  "atomicNumber": 22,
+  "symbol": "Ti",
+  "name": "Titanium",
+  "atomicMass": 47.867,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 4,
+  "block": "d",
+  "group": 4,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d² 4s²",
+  "commonValency": "4",
+  "commonOxidationStates": [
+    "+4",
+    "+3"
+  ],
+  "electronegativityPauling": 1.54,
+  "density": "4.506 g/cm³",
+  "meltingPointC": 1668,
+  "boilingPointC": 3287,
+  "discovery": {
+    "year": 1791,
+    "discoverer": "William Gregor"
+  },
+  "occurrence": "Ninth most abundant element in Earth's crust, mainly as the ores rutile and ilmenite.",
+  "majorUses": [
+    "Aerospace and jet engine components (strong, lightweight)",
+    "Surgical implants and joint replacements (biocompatible)",
+    "White pigment (titanium dioxide) in paint, sunscreen, food"
+  ],
+  "biologicalRelevance": "Titanium metal is biologically inert, which is exactly why it osseointegrates safely with bone in hip and dental implants without triggering rejection.",
+  "notableCharacteristics": "Has the best strength-to-weight ratio of any structural metal and resists corrosion so well it can sit in seawater indefinitely.",
+  "ncertRelevance": [
+    "extraction difficulties (Kroll process)",
+    "transition metal alloying uses"
+  ],
+  "whyHere": "Its four valence electrons across 3d and 4s orbitals allow strong, directional metallic bonding, which is exactly what gives titanium its unusual combination of low density and high strength.",
+  "didYouKnow": "Despite being so useful, titanium metal is difficult and expensive to extract because it reacts with oxygen, nitrogen, and carbon at high temperatures, so it must be processed by the costly Kroll process instead of simple smelting.",
+  "genZNote": "Strong, light, and won't rust in the ocean. The overachiever metal your hip replacement wishes it could brag about.",
+  "relatedElements": [
+    "element-zirconium",
+    "element-vanadium",
+    "element-iron"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "element-protactinium",
+  "category": "element",
+  "atomicNumber": 91,
+  "symbol": "Pa",
+  "name": "Protactinium",
+  "atomicMass": 231.04,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f² 6d¹ 7s²",
+  "commonValency": "5",
+  "commonOxidationStates": [
+    "+5",
+    "+4"
+  ],
+  "electronegativityPauling": 1.5,
+  "density": "15.37 g/cm³",
+  "meltingPointC": 1568,
+  "boilingPointC": 4027,
+  "discovery": {
+    "year": 1913,
+    "discoverer": "Kasimir Fajans & Oswald Helmuth Göhler"
+  },
+  "occurrence": "Extremely rare and found only in trace amounts within uranium ores as a decay product; one of the scarcest naturally occurring elements.",
+  "majorUses": [
+    "No significant practical applications — studied almost exclusively for nuclear physics and geological dating research"
+  ],
+  "safetyNotes": "Highly radioactive and toxic; one of the rarest and most expensive elements on Earth to obtain even in research quantities.",
+  "notableCharacteristics": "Its name means 'parent of actinium', since it decays into actinium — one of the few elements literally named for what it turns into rather than what it currently is.",
+  "ncertRelevance": [
+    "actinide decay chain relationships",
+    "extreme natural scarcity"
+  ],
+  "whyHere": "Sitting between thorium and uranium, protactinium's electrons begin genuinely filling the 5f subshell, marking a true transition point where actinide chemistry starts to diverge from the earlier, more lanthanide-like actinium and thorium.",
+  "didYouKnow": "Protactinium is so rare and difficult to extract that the world's entire known supply, painstakingly recovered from processing tonnes of uranium ore residue, amounts to only a few hundred grams.",
+  "genZNote": "Named after what it eventually decays into rather than what it currently is. Living life named after its own future.",
+  "relatedElements": [
+    "element-actinium",
+    "element-thorium",
+    "element-uranium"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "element-mendelevium",
+  "category": "element",
+  "atomicNumber": 101,
+  "symbol": "Md",
+  "name": "Mendelevium",
+  "atomicMass": 258,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹³ 7s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3",
+    "+2"
+  ],
+  "electronegativityPauling": 1.3,
+  "meltingPointC": 827,
+  "discovery": {
+    "year": 1955,
+    "discoverer": "Albert Ghiorso and team"
+  },
+  "occurrence": "Does not occur naturally; first produced by bombarding einsteinium with alpha particles, one atom at a time.",
+  "majorUses": [
+    "No practical applications — studied exclusively for fundamental nuclear chemistry research"
+  ],
+  "safetyNotes": "Intensely radioactive with very short half-lives; every sample ever made has consisted of only a handful of atoms.",
+  "notableCharacteristics": "Named after Dmitri Mendeleev, creator of the periodic table itself, and famously the first element ever identified from the production and detection of just a single atom at a time.",
+  "ncertRelevance": [
+    "named after Mendeleev, the periodic table's creator",
+    "one-atom-at-a-time detection milestone"
+  ],
+  "whyHere": "Discovered from literally one atom bombarded and detected via its radioactive decay signature rather than any bulk chemical test, mendelevium's discovery marked the point where element identification shifted entirely from chemistry-lab quantities to individual-atom nuclear physics.",
+  "didYouKnow": "Mendelevium's 1955 discovery is often cited as the first time a new chemical element was identified from the detection of a single atom, a technique that became standard for every synthetic element discovered afterward.",
+  "genZNote": "Discovered from a literal single atom. Also named after the guy who made the periodic table this whole list belongs to. Full circle moment.",
+  "relatedElements": [
+    "element-fermium",
+    "element-nobelium",
+    "element-einsteinium"
+  ]
+}

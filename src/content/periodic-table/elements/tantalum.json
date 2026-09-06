@@ -1,0 +1,46 @@
+{
+  "id": "element-tantalum",
+  "category": "element",
+  "atomicNumber": 73,
+  "symbol": "Ta",
+  "name": "Tantalum",
+  "atomicMass": 180.95,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 6,
+  "block": "d",
+  "group": 5,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d³ 6s²",
+  "commonValency": "5",
+  "commonOxidationStates": [
+    "+5"
+  ],
+  "electronegativityPauling": 1.5,
+  "density": "16.69 g/cm³",
+  "meltingPointC": 3017,
+  "boilingPointC": 5458,
+  "discovery": {
+    "year": 1802,
+    "discoverer": "Anders Gustaf Ekeberg"
+  },
+  "occurrence": "Found combined with niobium in the mineral coltan, a critical and often conflict-associated mineral resource in electronics supply chains.",
+  "majorUses": [
+    "Miniature capacitors in smartphones and laptops",
+    "Surgical implants (extremely biocompatible, corrosion-resistant)",
+    "High-temperature furnace and chemical-processing equipment"
+  ],
+  "notableCharacteristics": "Named after Tantalus from Greek mythology, whose eternal punishment was to stand in water he could never drink — a nod to how the metal resists almost every acid ('tantalizingly' unreactive).",
+  "ncertRelevance": [
+    "chemical inertness (resists aqua regia)",
+    "biocompatibility in surgical use"
+  ],
+  "whyHere": "Its oxide layer forms an extremely stable, tightly bound coating that resists attack from nearly all acids, making tantalum's chemical inertness so extreme it inspired its mythological namesake's unreachable water.",
+  "didYouKnow": "Tantalum resists corrosion so completely that it's virtually unaffected by boiling in most strong acids, including aqua regia — a rare feat matched by very few metals.",
+  "genZNote": "Named after a guy punished with water he could never drink, because tantalum basically ignores every acid thrown at it. Fitting flex.",
+  "relatedElements": [
+    "element-niobium",
+    "element-vanadium",
+    "element-tungsten"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "element-yttrium",
+  "category": "element",
+  "atomicNumber": 39,
+  "symbol": "Y",
+  "name": "Yttrium",
+  "atomicMass": 88.906,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 5,
+  "block": "d",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d¹ 5s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.22,
+  "density": "4.47 g/cm³",
+  "meltingPointC": 1526,
+  "boilingPointC": 3336,
+  "discovery": {
+    "year": 1794,
+    "discoverer": "Johan Gadolin"
+  },
+  "occurrence": "Found alongside rare-earth elements in minerals like xenotime, though chemically it behaves like a lanthanide despite sitting in the d-block.",
+  "majorUses": [
+    "Red phosphor in older CRT and LED displays",
+    "YAG (yttrium aluminium garnet) laser crystals",
+    "Superconducting ceramic components"
+  ],
+  "notableCharacteristics": "Named after Ytterby, a Swedish village that lends its name to no fewer than four elements (yttrium, ytterbium, terbium, and erbium).",
+  "ncertRelevance": [
+    "chemical similarity to lanthanides",
+    "rare-earth element grouping"
+  ],
+  "whyHere": "Its single 4d electron and similar ionic size to the lanthanides means it's chemically grouped with rare-earth elements in practice, even though it sits in the d-block by strict electron configuration.",
+  "didYouKnow": "The tiny Swedish village of Ytterby has an entire mine that gave its name to four different elements — yttrium, ytterbium, terbium, and erbium — an unmatched record for any single location.",
+  "genZNote": "One village, four elements named after it. Ytterby really said 'we're the periodic table's hometown now.'",
+  "relatedElements": [
+    "element-lanthanum",
+    "element-scandium",
+    "element-zirconium"
+  ]
+}

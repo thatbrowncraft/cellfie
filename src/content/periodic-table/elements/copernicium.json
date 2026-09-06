@@ -1,0 +1,41 @@
+{
+  "id": "element-copernicium",
+  "category": "element",
+  "atomicNumber": 112,
+  "symbol": "Cn",
+  "name": "Copernicium",
+  "atomicMass": 285,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 7,
+  "block": "d",
+  "group": 12,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² (predicted)",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "density": "~14 g/cm³ (predicted, solid)",
+  "discovery": {
+    "year": 1996,
+    "discoverer": "Sigurd Hofmann and team, GSI Darmstadt"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; observed only as individual atoms with sub-second to few-second half-lives.",
+  "notableCharacteristics": "Named after astronomer Nicolaus Copernicus, and theoretical predictions suggest it may be volatile enough to behave like a gas at room temperature, similar to its lighter relative mercury but even more extreme.",
+  "ncertRelevance": [
+    "predicted volatility/gas-like behaviour",
+    "named after Copernicus"
+  ],
+  "whyHere": "Sharing mercury's filled 6d¹⁰ 7s² configuration one row down, copernicium is predicted to show even weaker relativistic metallic bonding between atoms than mercury — extreme enough that some models suggest it could behave like a gas or extremely volatile liquid at room temperature.",
+  "didYouKnow": "Experiments studying copernicium atoms as they're created suggest they behave more like a noble gas than a typical metal, condensing onto cold detector surfaces the way radon would rather than the way mercury does.",
+  "genZNote": "Might genuinely act like a noble gas despite technically being a metal. Breaking periodic table stereotypes one atom at a time.",
+  "relatedElements": [
+    "element-mercury",
+    "element-zinc",
+    "element-roentgenium"
+  ]
+}

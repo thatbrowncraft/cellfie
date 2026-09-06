@@ -1,0 +1,46 @@
+{
+  "id": "element-gadolinium",
+  "category": "element",
+  "atomicNumber": 64,
+  "symbol": "Gd",
+  "name": "Gadolinium",
+  "atomicMass": 157.25,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f⁷ 5d¹ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.2,
+  "density": "7.90 g/cm³",
+  "meltingPointC": 1313,
+  "boilingPointC": 3273,
+  "discovery": {
+    "year": 1880,
+    "discoverer": "Jean Charles Galissard de Marignac"
+  },
+  "occurrence": "Found in gadolinite and monazite ores; named after the mineral gadolinite, itself named for chemist Johan Gadolin.",
+  "majorUses": [
+    "MRI contrast agent (gadolinium compounds enhance image clarity)",
+    "Neutron shielding in nuclear reactors (extremely high neutron absorption)",
+    "Magnetic refrigeration research"
+  ],
+  "notableCharacteristics": "One of only a handful of elements that are ferromagnetic near room temperature, alongside iron, cobalt, and nickel — though gadolinium loses this property just above normal room temperature.",
+  "ncertRelevance": [
+    "ferromagnetism among lanthanides",
+    "MRI contrast chemistry"
+  ],
+  "whyHere": "Its half-filled 4f⁷ plus one 5d electron gives an unusually strong, well-aligned magnetic moment, which is exactly why gadolinium is both ferromagnetic near room temperature and effective at altering the magnetic signal MRI machines detect.",
+  "didYouKnow": "Millions of MRI scans every year use an injected gadolinium-based contrast agent to make blood vessels and tumours show up more clearly — one of the very few lanthanides most people have actually had inside their body.",
+  "genZNote": "You've probably had this injected into you during an MRI and didn't even know it was a lanthanide. Wild.",
+  "relatedElements": [
+    "element-europium",
+    "element-terbium",
+    "element-yttrium"
+  ]
+}

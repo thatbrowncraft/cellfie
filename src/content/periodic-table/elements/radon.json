@@ -1,0 +1,46 @@
+{
+  "id": "element-radon",
+  "category": "element",
+  "atomicNumber": 86,
+  "symbol": "Rn",
+  "name": "Radon",
+  "atomicMass": 222,
+  "elementCategory": "noble-gas",
+  "elementCategoryLabel": "Noble Gas",
+  "period": 6,
+  "block": "p",
+  "group": 18,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁶",
+  "commonValency": "0",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "electronegativityPauling": 2.2,
+  "density": "0.00973 g/cm³ (gas)",
+  "meltingPointC": -71,
+  "boilingPointC": -61.7,
+  "discovery": {
+    "year": 1900,
+    "discoverer": "Friedrich Ernst Dorn"
+  },
+  "occurrence": "Formed continuously in soil and rock from the radioactive decay of uranium and thorium; can seep into basements and enclosed spaces.",
+  "majorUses": [
+    "Historically used in radiotherapy 'seeds' for cancer treatment (largely replaced by other isotopes today)",
+    "Geological/seismic monitoring (radon levels can shift before earthquakes)"
+  ],
+  "safetyNotes": "The second leading cause of lung cancer worldwide after smoking, since it's a radioactive gas that can accumulate to dangerous levels in poorly ventilated homes built on certain types of rock.",
+  "notableCharacteristics": "The heaviest naturally occurring noble gas and, unlike its lighter relatives, radioactive enough to pose a genuine, well-documented public-health hazard.",
+  "ncertRelevance": [
+    "radioactive decay series",
+    "public health/home radon monitoring"
+  ],
+  "whyHere": "As the heaviest common noble gas, radon's larger, more loosely held electron shells combined with an inherently unstable nucleus make it both slightly more chemically reactive than lighter noble gases and, more importantly, radioactive — the source of its real-world health risk.",
+  "didYouKnow": "Radon gas seeping up from underlying rock is responsible for an estimated tens of thousands of lung cancer deaths a year worldwide, which is why home radon testing kits are a routine recommendation in many countries.",
+  "genZNote": "Invisible, odourless, and quietly the second-biggest cause of lung cancer worldwide. The noble gas nobody invited but everyone's basement has.",
+  "relatedElements": [
+    "element-xenon",
+    "element-krypton",
+    "element-polonium"
+  ]
+}

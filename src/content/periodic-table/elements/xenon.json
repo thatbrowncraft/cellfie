@@ -1,0 +1,51 @@
+{
+  "id": "element-xenon",
+  "category": "element",
+  "atomicNumber": 54,
+  "symbol": "Xe",
+  "name": "Xenon",
+  "atomicMass": 131.29,
+  "elementCategory": "noble-gas",
+  "elementCategoryLabel": "Noble Gas",
+  "period": 5,
+  "block": "p",
+  "group": 18,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p⁶",
+  "commonValency": "0",
+  "commonOxidationStates": [
+    "+2",
+    "+4",
+    "+6"
+  ],
+  "electronegativityPauling": 2.6,
+  "density": "0.005894 g/cm³ (gas)",
+  "meltingPointC": -111.8,
+  "boilingPointC": -108.1,
+  "discovery": {
+    "year": 1898,
+    "discoverer": "William Ramsay & Morris Travers"
+  },
+  "occurrence": "The rarest stable noble gas in the atmosphere, present at less than 0.1 parts per million.",
+  "majorUses": [
+    "High-intensity xenon arc lamps (film projectors, car headlights)",
+    "Ion propulsion for spacecraft",
+    "General anaesthesia (rare, expensive niche use)"
+  ],
+  "notableCharacteristics": "The first noble gas ever shown to form a real, stable chemical compound (xenon hexafluoroplatinate, in 1962), which overturned the long-held belief that noble gases were completely inert.",
+  "ncertRelevance": [
+    "breakthrough noble gas compound formation",
+    "reactivity increases down Group 18"
+  ],
+  "whyHere": "Its much larger, more loosely held outer electrons make xenon far more polarizable than lighter noble gases, which is exactly what allowed chemist Neil Bartlett to force it into forming a genuine chemical bond in 1962, shattering the 'inert gas' assumption.",
+  "didYouKnow": "For over 60 years after noble gases were discovered, chemists assumed none of them could ever form compounds — until 1962, when xenon was successfully combined with platinum hexafluoride, rewriting a chunk of inorganic chemistry textbooks.",
+  "genZNote": "Broke the 'noble gases never react' rule after 60+ years of everyone assuming otherwise. The plot twist nobody saw coming.",
+  "relatedElements": [
+    "element-krypton",
+    "element-radon",
+    "element-argon"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-periodic-trends"
+  ]
+}

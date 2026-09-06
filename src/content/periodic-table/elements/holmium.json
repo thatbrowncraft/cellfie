@@ -1,0 +1,46 @@
+{
+  "id": "element-holmium",
+  "category": "element",
+  "atomicNumber": 67,
+  "symbol": "Ho",
+  "name": "Holmium",
+  "atomicMass": 164.93,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹¹ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.23,
+  "density": "8.80 g/cm³",
+  "meltingPointC": 1474,
+  "boilingPointC": 2700,
+  "discovery": {
+    "year": 1878,
+    "discoverer": "Marc Delafontaine & Jacques-Louis Soret"
+  },
+  "occurrence": "Found in trace amounts within monazite and gadolinite ores.",
+  "majorUses": [
+    "Highest-magnetic-strength pole pieces for the strongest man-made magnetic fields (used inside other magnets)",
+    "Yttrium-iron-garnet laser crystals used in medical/dental surgery",
+    "Glass and cubic zirconia colourant"
+  ],
+  "notableCharacteristics": "Has the highest magnetic permeability of any element, making it uniquely useful for concentrating magnetic flux inside the world's strongest electromagnets.",
+  "ncertRelevance": [
+    "highest magnetic permeability",
+    "laser applications"
+  ],
+  "whyHere": "Its eleven 4f electrons produce an unusually high magnetic permeability — meaning it channels and concentrates magnetic field lines more effectively than any other element — which is exactly why it's used inside the pole tips of the strongest laboratory magnets on Earth.",
+  "didYouKnow": "Holmium is named after Stockholm (its Latin name 'Holmia'), continuing the periodic table's tradition of Scandinavian-city-named rare earths.",
+  "genZNote": "Highest magnetic permeability of any element, full stop. Basically a magnet's favorite hype man.",
+  "relatedElements": [
+    "element-dysprosium",
+    "element-erbium",
+    "element-thulium"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "element-zirconium",
+  "category": "element",
+  "atomicNumber": 40,
+  "symbol": "Zr",
+  "name": "Zirconium",
+  "atomicMass": 91.224,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 5,
+  "block": "d",
+  "group": 4,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d² 5s²",
+  "commonValency": "4",
+  "commonOxidationStates": [
+    "+4"
+  ],
+  "electronegativityPauling": 1.33,
+  "density": "6.52 g/cm³",
+  "meltingPointC": 1855,
+  "boilingPointC": 4409,
+  "discovery": {
+    "year": 1789,
+    "discoverer": "Martin Heinrich Klaproth"
+  },
+  "occurrence": "Mined from the mineral zircon, which is also a popular gemstone (distinct from synthetic cubic zirconia).",
+  "majorUses": [
+    "Nuclear reactor fuel rod cladding (low neutron absorption)",
+    "Ceramic and refractory materials",
+    "Cubic zirconia gemstones (a different, synthetic zirconium compound)"
+  ],
+  "notableCharacteristics": "Its extremely low neutron-capture cross-section makes it almost transparent to neutrons, which is exactly why it's the standard cladding material around nuclear fuel rods.",
+  "ncertRelevance": [
+    "nuclear reactor material properties",
+    "zircon versus cubic zirconia distinction"
+  ],
+  "whyHere": "Its filled inner shells and small, stable +4 ion give it excellent chemical resistance to hot water and steam, which combined with its low neutron absorption is exactly why it's ideal for surrounding nuclear fuel without interfering with the reaction.",
+  "didYouKnow": "Cubic zirconia, the popular diamond alternative in jewellery, isn't actually made from zirconium metal at all — it's zirconium dioxide crystallized in a cubic structure, chemically distinct from the natural zircon gemstone.",
+  "genZNote": "Not the same as cubic zirconia but constantly gets the credit anyway. Also quietly protecting nuclear reactors.",
+  "relatedElements": [
+    "element-titanium",
+    "element-hafnium",
+    "element-yttrium"
+  ]
+}

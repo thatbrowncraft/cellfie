@@ -1,0 +1,47 @@
+{
+  "id": "element-polonium",
+  "category": "element",
+  "atomicNumber": 84,
+  "symbol": "Po",
+  "name": "Polonium",
+  "atomicMass": 209,
+  "elementCategory": "metalloid",
+  "elementCategoryLabel": "Metalloid",
+  "period": 6,
+  "block": "p",
+  "group": 16,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁴",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+4",
+    "+2"
+  ],
+  "electronegativityPauling": 2.0,
+  "density": "9.20 g/cm³",
+  "meltingPointC": 254,
+  "boilingPointC": 962,
+  "discovery": {
+    "year": 1898,
+    "discoverer": "Marie Curie & Pierre Curie"
+  },
+  "occurrence": "Extremely rare in nature, found only in trace amounts within uranium ores as a radioactive decay product.",
+  "majorUses": [
+    "Historically used as a heat source in radioisotope thermoelectric generators (Soviet space/lunar missions)",
+    "Anti-static brushes in industrial equipment (alpha-particle ionizers)"
+  ],
+  "safetyNotes": "One of the most lethally radiotoxic substances known if ingested or inhaled, made infamous by its use in the 2006 poisoning of former spy Alexander Litvinenko.",
+  "notableCharacteristics": "Marie Curie named it after her native homeland, Poland, making it the first element named to highlight a political cause (Polish independence, at a time Poland didn't exist as a sovereign state).",
+  "ncertRelevance": [
+    "discovery by the Curies",
+    "extreme alpha-emitter toxicity"
+  ],
+  "whyHere": "Every isotope of polonium is radioactive and it decays by emitting alpha particles powerful enough to be intensely damaging if the source ends up inside the body, which is exactly what made it both a useful compact heat source and a notorious poisoning agent.",
+  "didYouKnow": "Polonium was the first element Marie and Pierre Curie discovered while searching for the source of radioactivity in pitchblende ore, and Marie named it after Poland specifically to draw international attention to her homeland's lack of independence.",
+  "genZNote": "Named for political statement purposes by Marie Curie herself. Also, unfortunately, infamous as an actual assassination weapon. Heavy legacy either way.",
+  "relatedElements": [
+    "element-tellurium",
+    "element-bismuth",
+    "element-astatine"
+  ]
+}

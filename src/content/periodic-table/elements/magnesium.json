@@ -1,0 +1,48 @@
+{
+  "id": "element-magnesium",
+  "category": "element",
+  "atomicNumber": 12,
+  "symbol": "Mg",
+  "name": "Magnesium",
+  "atomicMass": 24.305,
+  "elementCategory": "alkaline-earth-metal",
+  "elementCategoryLabel": "Alkaline Earth Metal",
+  "period": 3,
+  "block": "s",
+  "group": 2,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ne] 3s²",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "electronegativityPauling": 1.31,
+  "density": "1.738 g/cm³",
+  "meltingPointC": 650,
+  "boilingPointC": 1090,
+  "discovery": {
+    "year": 1755,
+    "discoverer": "Joseph Black (recognized as an element); isolated 1808 by Humphry Davy"
+  },
+  "occurrence": "Abundant in seawater and minerals like dolomite and magnesite.",
+  "majorUses": [
+    "Lightweight alloys for aircraft and car parts",
+    "Fireworks and flares (brilliant white flame)",
+    "Antacid and laxative formulations (magnesium hydroxide/sulfate)"
+  ],
+  "biologicalRelevance": "The central metal ion in chlorophyll, making it essential for photosynthesis, and a cofactor for hundreds of enzymes in the human body including ones used in muscle and nerve function.",
+  "notableCharacteristics": "Burns with an extremely bright white flame hot enough to continue burning even underwater or in carbon dioxide.",
+  "ncertRelevance": [
+    "Grignard reagents",
+    "extraction of magnesium",
+    "biological role in chlorophyll"
+  ],
+  "whyHere": "Losing both 3s electrons gives it a stable neon-like Mg²⁺ ion, and that same eagerness to donate electrons is what makes it burn so fiercely and vividly.",
+  "didYouKnow": "Magnesium fires can't be put out with water or CO₂ extinguishers because burning magnesium reacts with both — sand or a Class D extinguisher is required instead.",
+  "genZNote": "Burns so bright it doesn't care what you throw at it. Also quietly running your chlorophyll and half your enzymes.",
+  "relatedElements": [
+    "element-beryllium",
+    "element-calcium",
+    "element-sodium"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "element-niobium",
+  "category": "element",
+  "atomicNumber": 41,
+  "symbol": "Nb",
+  "name": "Niobium",
+  "atomicMass": 92.906,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 5,
+  "block": "d",
+  "group": 5,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d⁴ 5s¹",
+  "commonValency": "5",
+  "commonOxidationStates": [
+    "+5"
+  ],
+  "electronegativityPauling": 1.6,
+  "density": "8.57 g/cm³",
+  "meltingPointC": 2477,
+  "boilingPointC": 4744,
+  "discovery": {
+    "year": 1801,
+    "discoverer": "Charles Hatchett"
+  },
+  "occurrence": "Found combined with tantalum in the mineral columbite-tantalite ('coltan'), a mineral of geopolitical importance for electronics manufacturing.",
+  "majorUses": [
+    "Superconducting magnet wire (MRI machines, particle accelerators)",
+    "Jet engine and rocket alloy additives",
+    "Jewellery (hypoallergenic, can be anodized colourfully)"
+  ],
+  "notableCharacteristics": "Was originally named 'columbium' and the two names co-existed for over a century before niobium was internationally standardized in 1949.",
+  "ncertRelevance": [
+    "superconductivity",
+    "historical naming dispute (columbium vs niobium)"
+  ],
+  "whyHere": "Its half-filled-adjacent 4d⁴ 5s¹ configuration supports strong metallic bonding, and alloyed with titanium it becomes one of the most practical superconductors — able to carry current with zero resistance at achievable cryogenic temperatures.",
+  "didYouKnow": "Niobium-titanium alloy wire is the actual superconducting material inside most MRI machines' magnets, carrying enormous current with zero electrical resistance once cooled by liquid helium.",
+  "genZNote": "Had an identity crisis (columbium vs niobium) for a hundred years. Now quietly runs your MRI's superconducting magnet.",
+  "relatedElements": [
+    "element-tantalum",
+    "element-vanadium",
+    "element-molybdenum"
+  ]
+}

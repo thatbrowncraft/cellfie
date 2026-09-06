@@ -1,0 +1,47 @@
+{
+  "id": "element-zinc",
+  "category": "element",
+  "atomicNumber": 30,
+  "symbol": "Zn",
+  "name": "Zinc",
+  "atomicMass": 65.38,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 4,
+  "block": "d",
+  "group": 12,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d¹⁰ 4s²",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2"
+  ],
+  "electronegativityPauling": 1.65,
+  "density": "7.14 g/cm³",
+  "meltingPointC": 419.5,
+  "boilingPointC": 907,
+  "discovery": {
+    "discoverer": "Known in ancient India/China; isolated in Europe by Andreas Sigismund Marggraf, 1746"
+  },
+  "occurrence": "Mined mainly from sphalerite (zinc sulfide) ore.",
+  "majorUses": [
+    "Galvanizing steel to prevent rust",
+    "Brass alloy component (with copper)",
+    "Dietary supplements and cold-lozenge formulations"
+  ],
+  "biologicalRelevance": "An essential trace nutrient involved in immune function, wound healing, and as a structural cofactor in 'zinc finger' proteins that regulate gene expression.",
+  "notableCharacteristics": "Technically borderline as a 'transition metal' since its d-subshell is completely full in both the metal and its common +2 ion — it forms no coloured compounds or variable oxidation states the way true transition metals do.",
+  "ncertRelevance": [
+    "debate over whether Zn/Cd/Hg count as true transition elements",
+    "galvanization",
+    "biological zinc-finger proteins"
+  ],
+  "whyHere": "With a fully filled 3d¹⁰ subshell in both its atom and its Zn²⁺ ion, zinc lacks the partially-filled d-orbitals that give true transition metals their colour and variable valency — which is exactly why some classifications leave it out of that group.",
+  "didYouKnow": "Zinc coatings (galvanization) protect steel even when scratched, because zinc corrodes preferentially and sacrifices itself before the iron underneath starts rusting.",
+  "genZNote": "Technically a transition metal, vibes like a main-group element. The identity crisis of the d-block.",
+  "relatedElements": [
+    "element-cadmium",
+    "element-mercury",
+    "element-copper"
+  ]
+}

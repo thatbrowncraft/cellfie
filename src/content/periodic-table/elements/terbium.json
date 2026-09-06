@@ -1,0 +1,45 @@
+{
+  "id": "element-terbium",
+  "category": "element",
+  "atomicNumber": 65,
+  "symbol": "Tb",
+  "name": "Terbium",
+  "atomicMass": 158.93,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f⁹ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "density": "8.23 g/cm³",
+  "meltingPointC": 1356,
+  "boilingPointC": 3230,
+  "discovery": {
+    "year": 1843,
+    "discoverer": "Carl Gustaf Mosander"
+  },
+  "occurrence": "Found in low concentrations in monazite and xenotime ores.",
+  "majorUses": [
+    "Green phosphors in energy-efficient lighting and displays",
+    "Terfenol-D magnetostrictive alloys (sonar, actuators)",
+    "Solid-state device doping"
+  ],
+  "notableCharacteristics": "One of the four elements named after the single Swedish village of Ytterby (alongside yttrium, ytterbium, and erbium).",
+  "ncertRelevance": [
+    "Ytterby-named element group",
+    "phosphor applications"
+  ],
+  "whyHere": "Its nine 4f electrons give terbium ions a distinctive green light emission when excited, the exact property exploited in energy-efficient green phosphor coatings.",
+  "didYouKnow": "Terbium is a key ingredient in Terfenol-D, an alloy that changes shape measurably in a magnetic field — a property called magnetostriction that's used in precision sonar transducers.",
+  "genZNote": "One of four elements from the same tiny Swedish village. Also makes alloys that change shape in magnetic fields, which is objectively cool.",
+  "relatedElements": [
+    "element-gadolinium",
+    "element-dysprosium",
+    "element-yttrium"
+  ]
+}

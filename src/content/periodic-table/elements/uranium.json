@@ -1,0 +1,49 @@
+{
+  "id": "element-uranium",
+  "category": "element",
+  "atomicNumber": 92,
+  "symbol": "U",
+  "name": "Uranium",
+  "atomicMass": 238.03,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f³ 6d¹ 7s²",
+  "commonValency": "6",
+  "commonOxidationStates": [
+    "+6",
+    "+4"
+  ],
+  "electronegativityPauling": 1.38,
+  "density": "19.1 g/cm³",
+  "meltingPointC": 1132,
+  "boilingPointC": 4131,
+  "discovery": {
+    "year": 1789,
+    "discoverer": "Martin Heinrich Klaproth"
+  },
+  "occurrence": "Found combined in uraninite (pitchblende) ore; the heaviest naturally occurring element found in significant quantities on Earth.",
+  "majorUses": [
+    "Nuclear reactor fuel (as enriched uranium-235)",
+    "Nuclear weapons (historically and currently)",
+    "Depleted uranium armour and armour-piercing ammunition (very high density)"
+  ],
+  "safetyNotes": "Both radiotoxic and chemically toxic as a heavy metal; enrichment and handling are tightly regulated worldwide under international nuclear non-proliferation frameworks.",
+  "notableCharacteristics": "Its fission — splitting a uranium-235 nucleus with a neutron to release enormous energy plus more neutrons — is the physical process behind both nuclear power plants and the first atomic bombs.",
+  "ncertRelevance": [
+    "nuclear fission process",
+    "isotope enrichment (U-235 vs U-238)",
+    "discovery and Klaproth's naming after the planet Uranus"
+  ],
+  "whyHere": "Uranium-235's nucleus is just unstable enough to split apart when struck by a neutron, releasing more neutrons and energy in a self-sustaining chain reaction — the exact physical mechanism that makes uranium usable as both a nuclear fuel and a weapon.",
+  "didYouKnow": "Klaproth named uranium after the planet Uranus, which had been discovered only eight years earlier in 1781 — making uranium the first element named after a planet.",
+  "genZNote": "Named after a planet discovered eight years earlier, then went on to literally split the atom. Overachiever, immediately.",
+  "relatedElements": [
+    "element-thorium",
+    "element-plutonium",
+    "element-neptunium"
+  ]
+}

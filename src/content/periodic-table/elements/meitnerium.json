@@ -1,0 +1,38 @@
+{
+  "id": "element-meitnerium",
+  "category": "element",
+  "atomicNumber": 109,
+  "symbol": "Mt",
+  "name": "Meitnerium",
+  "atomicMass": 278,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 7,
+  "block": "d",
+  "group": 9,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d⁷ 7s² (predicted)",
+  "density": "~37 g/cm³ (predicted)",
+  "discovery": {
+    "year": 1982,
+    "discoverer": "Peter Armbruster & Gottfried Münzenberg, GSI Darmstadt"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; observed only as individual atoms with half-lives of well under a second.",
+  "notableCharacteristics": "Named after Lise Meitner, the physicist who co-discovered nuclear fission but was controversially overlooked for the Nobel Prize awarded to her collaborator Otto Hahn.",
+  "ncertRelevance": [
+    "named after Lise Meitner",
+    "recognition of overlooked women in nuclear physics"
+  ],
+  "whyHere": "Predicted to sit in Group 9 alongside cobalt, rhodium, and iridium, meitnerium's expected chemistry follows that group's pattern, though its half-life is far too short for any oxidation-state chemistry to have been directly confirmed experimentally.",
+  "didYouKnow": "Lise Meitner was the physicist who correctly explained nuclear fission in 1938 but was excluded from the 1944 Nobel Prize in Chemistry given solely to her collaborator Otto Hahn — meitnerium's naming decades later is widely seen as a form of overdue recognition.",
+  "genZNote": "Named after the scientist who explained nuclear fission and then got snubbed for the Nobel Prize. This element is basically chemistry's way of saying sorry.",
+  "relatedElements": [
+    "element-cobalt",
+    "element-iridium",
+    "element-hassium"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "element-helium",
+  "category": "element",
+  "atomicNumber": 2,
+  "symbol": "He",
+  "name": "Helium",
+  "atomicMass": 4.003,
+  "elementCategory": "noble-gas",
+  "elementCategoryLabel": "Noble Gas",
+  "period": 1,
+  "block": "s",
+  "group": 18,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "1s²",
+  "commonValency": "0",
+  "density": "0.0001785 g/cm³ (gas)",
+  "meltingPointC": -272.2,
+  "boilingPointC": -268.9,
+  "discovery": {
+    "year": 1868,
+    "discoverer": "Pierre Janssen & Norman Lockyer (spectroscopically, in the Sun)"
+  },
+  "occurrence": "Second most abundant element in the universe; on Earth it's trapped in natural gas deposits from radioactive alpha decay of heavier elements.",
+  "majorUses": [
+    "Filling balloons and airships (non-flammable lift gas)",
+    "Cryogenic cooling for MRI magnets",
+    "Deep-sea diving gas mixtures (heliox)"
+  ],
+  "notableCharacteristics": "Lowest boiling point of any element and the only substance that cannot be solidified by cooling alone at normal pressure — it needs extra pressure too.",
+  "ncertRelevance": [
+    "noble gas configuration",
+    "why noble gases are chemically inert"
+  ],
+  "whyHere": "A completely filled 1s² shell gives it the stability every other atom is chasing — no unpaired electrons, no incentive to bond.",
+  "didYouKnow": "Helium was discovered in the Sun's spectrum 27 years before it was found on Earth — its name comes from 'helios', Greek for sun.",
+  "genZNote": "Found in the sun before it was found at home. Filled shell, filled ego, zero reactions.",
+  "relatedElements": [
+    "element-hydrogen",
+    "element-neon",
+    "element-argon"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "element-plutonium",
+  "category": "element",
+  "atomicNumber": 94,
+  "symbol": "Pu",
+  "name": "Plutonium",
+  "atomicMass": 244,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f⁶ 7s²",
+  "commonValency": "4",
+  "commonOxidationStates": [
+    "+4",
+    "+6"
+  ],
+  "electronegativityPauling": 1.28,
+  "density": "19.86 g/cm³",
+  "meltingPointC": 639.4,
+  "boilingPointC": 3228,
+  "discovery": {
+    "year": 1940,
+    "discoverer": "Glenn T. Seaborg and team"
+  },
+  "occurrence": "Found only in extremely trace amounts naturally; almost entirely produced artificially in nuclear reactors from uranium-238.",
+  "majorUses": [
+    "Nuclear weapons (the core material of the 'Fat Man' bomb dropped on Nagasaki)",
+    "Nuclear reactor fuel (mixed-oxide, MOX fuel)",
+    "Radioisotope power sources for deep-space probes (plutonium-238, e.g. Voyager, Curiosity rover)"
+  ],
+  "safetyNotes": "Extremely radiotoxic if inhaled or ingested, and its role in nuclear weapons makes it one of the most tightly controlled substances on Earth under international treaties.",
+  "notableCharacteristics": "Named after Pluto, continuing the pattern from Uranus and Neptune, even though Pluto was later reclassified as a dwarf planet — plutonium's name and classification never changed alongside it.",
+  "ncertRelevance": [
+    "role in nuclear weapons history",
+    "power source for deep space missions",
+    "planet-naming convention"
+  ],
+  "whyHere": "Plutonium-239's nucleus, like uranium-235's, is unstable enough to split readily under neutron bombardment, but it's produced rather than mined — created inside reactors when uranium-238 absorbs a neutron and decays, which is exactly why it became central to both nuclear weapons and nuclear power programmes.",
+  "didYouKnow": "NASA's Voyager 1 and 2 probes, launched in 1977 and still transmitting data from interstellar space, are powered by the slow radioactive decay heat of plutonium-238 — the same element type once made purely for weapons now quietly powers humanity's most distant machines.",
+  "genZNote": "Powers both nuclear bombs and the Voyager probes still phoning home from interstellar space. Wildest range of any element on this list.",
+  "relatedElements": [
+    "element-uranium",
+    "element-neptunium",
+    "element-americium"
+  ]
+}

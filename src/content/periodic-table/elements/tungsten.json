@@ -1,0 +1,47 @@
+{
+  "id": "element-tungsten",
+  "category": "element",
+  "atomicNumber": 74,
+  "symbol": "W",
+  "name": "Tungsten",
+  "atomicMass": 183.84,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 6,
+  "block": "d",
+  "group": 6,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d⁴ 6s²",
+  "commonValency": "6",
+  "commonOxidationStates": [
+    "+6",
+    "+4"
+  ],
+  "electronegativityPauling": 2.36,
+  "density": "19.25 g/cm³",
+  "meltingPointC": 3422,
+  "boilingPointC": 5555,
+  "discovery": {
+    "year": 1783,
+    "discoverer": "Juan José Elhuyar & Fausto Elhuyar"
+  },
+  "occurrence": "Mined from wolframite and scheelite ores; its chemical symbol W comes from 'wolfram', its older German name.",
+  "majorUses": [
+    "Incandescent light bulb filaments (historically)",
+    "Cutting tools and drill bits (tungsten carbide, extremely hard)",
+    "Radiation shielding and counterweights"
+  ],
+  "notableCharacteristics": "Has the highest melting point of any metal on the periodic table, which is exactly why it was the standard filament material in incandescent bulbs for over a century.",
+  "ncertRelevance": [
+    "highest melting point of any metal",
+    "tungsten carbide hardness"
+  ],
+  "whyHere": "Its six valence electrons across 5d and 6s orbitals support unusually strong metallic bonding throughout the lattice, which directly explains both tungsten's record-setting melting point and its extreme hardness in carbide form.",
+  "didYouKnow": "Tungsten's chemical symbol W has nothing to do with its English name — it comes from 'wolfram', an older German name referencing how the mineral wolframite was said to 'eat' tin like a wolf during smelting.",
+  "genZNote": "Highest melting point of any metal, period. Also has a symbol that doesn't match its name because German miners blamed a wolf.",
+  "relatedElements": [
+    "element-molybdenum",
+    "element-chromium",
+    "element-rhenium"
+  ]
+}

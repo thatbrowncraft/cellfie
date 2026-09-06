@@ -1,0 +1,46 @@
+{
+  "id": "element-lutetium",
+  "category": "element",
+  "atomicNumber": 71,
+  "symbol": "Lu",
+  "name": "Lutetium",
+  "atomicMass": 174.97,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d¹ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.27,
+  "density": "9.84 g/cm³",
+  "meltingPointC": 1663,
+  "boilingPointC": 3402,
+  "discovery": {
+    "year": 1907,
+    "discoverer": "Georges Urbain"
+  },
+  "occurrence": "The rarest and most expensive naturally-occurring lanthanide to isolate, found in trace amounts in monazite ore.",
+  "majorUses": [
+    "PET scan detector crystals (lutetium oxyorthosilicate scintillators)",
+    "Petroleum refining catalyst",
+    "Cancer treatment (lutetium-177 targeted radiotherapy)"
+  ],
+  "notableCharacteristics": "Sits at the very end of the lanthanide series and, with a full 4f¹⁴ subshell, is sometimes debated as technically belonging to the d-block rather than the f-block.",
+  "ncertRelevance": [
+    "boundary/classification debate at end of lanthanide series",
+    "PET imaging chemistry"
+  ],
+  "whyHere": "With its 4f subshell already completely filled and its one extra electron going into 5d, lutetium sits right at the boundary between the f-block and d-block, which is exactly why some periodic tables classify it as the first element of the third transition series instead.",
+  "didYouKnow": "Lutetium-177 is used in a targeted radiotherapy approach for certain cancers, where it's attached to a molecule that seeks out tumour cells specifically, delivering radiation with much less damage to surrounding healthy tissue.",
+  "genZNote": "Technically might not even belong in the lanthanide series depending who you ask. The block boundary's biggest argument starter.",
+  "relatedElements": [
+    "element-ytterbium",
+    "element-hafnium",
+    "element-yttrium"
+  ]
+}

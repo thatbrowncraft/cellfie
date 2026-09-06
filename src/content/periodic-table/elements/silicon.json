@@ -1,0 +1,48 @@
+{
+  "id": "element-silicon",
+  "category": "element",
+  "atomicNumber": 14,
+  "symbol": "Si",
+  "name": "Silicon",
+  "atomicMass": 28.085,
+  "elementCategory": "metalloid",
+  "elementCategoryLabel": "Metalloid",
+  "period": 3,
+  "block": "p",
+  "group": 14,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ne] 3s² 3p²",
+  "commonValency": "4",
+  "commonOxidationStates": [
+    "+4",
+    "-4"
+  ],
+  "electronegativityPauling": 1.9,
+  "density": "2.33 g/cm³",
+  "meltingPointC": 1414,
+  "boilingPointC": 3265,
+  "discovery": {
+    "year": 1824,
+    "discoverer": "Jöns Jacob Berzelius"
+  },
+  "occurrence": "Second most abundant element in Earth's crust after oxygen, almost entirely as silicate minerals and silica (sand).",
+  "majorUses": [
+    "Semiconductor chips and solar cells",
+    "Glass and ceramics manufacturing",
+    "Silicone rubbers and sealants"
+  ],
+  "notableCharacteristics": "Its four-bond tetrahedral bonding pattern mirrors carbon's, which is why silicon-based semiconductor technology underlies essentially every modern computer chip.",
+  "ncertRelevance": [
+    "metalloid properties",
+    "semiconductor behaviour",
+    "silicate structures"
+  ],
+  "whyHere": "Sitting directly below carbon with the same four valence electrons, silicon forms similar tetrahedral covalent networks — but its larger atomic size makes those bonds weaker and its conductivity intermediate, which is exactly the metalloid behaviour semiconductors rely on.",
+  "didYouKnow": "'Silicon Valley' is named for this element specifically because of the silicon-based semiconductor chips manufactured there starting in the 1970s.",
+  "genZNote": "Carbon's quieter sibling that ended up running every computer on Earth instead. Understated but everywhere.",
+  "relatedElements": [
+    "element-carbon",
+    "element-germanium",
+    "element-boron"
+  ]
+}

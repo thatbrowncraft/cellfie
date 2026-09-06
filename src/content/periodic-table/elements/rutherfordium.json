@@ -1,0 +1,41 @@
+{
+  "id": "element-rutherfordium",
+  "category": "element",
+  "atomicNumber": 104,
+  "symbol": "Rf",
+  "name": "Rutherfordium",
+  "atomicMass": 267,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 7,
+  "block": "d",
+  "group": 4,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d² 7s² (predicted)",
+  "commonOxidationStates": [
+    "+4"
+  ],
+  "density": "~23 g/cm³ (predicted)",
+  "discovery": {
+    "year": 1964,
+    "discoverer": "Contested — claims by teams at Dubna, USSR and Berkeley, USA"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion reactions, atom by atom, and decays within seconds.",
+  "majorUses": [
+    "No practical applications — pure nuclear/superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive with a half-life of only about a minute at best; every atom ever made has decayed almost immediately.",
+  "notableCharacteristics": "The first element beyond the actinide series (the start of the 6d transition series) and named after physicist Ernest Rutherford, who first modeled the nuclear structure of the atom.",
+  "ncertRelevance": [
+    "start of the superheavy transactinide elements",
+    "named after the founder of nuclear physics"
+  ],
+  "whyHere": "Marking the start of the 6d transition series just past the actinides, rutherfordium's chemistry has only been studied through a handful of individual atoms, but early results suggest it behaves broadly like a heavier hafnium, consistent with its position in Group 4.",
+  "didYouKnow": "Because only a tiny number of rutherfordium atoms have ever been created, chemists have had to study its chemical behaviour using techniques that track the decay and reactions of literally single atoms as they're produced.",
+  "genZNote": "Named after the guy who figured out atoms have nuclei, and we can basically only study this one atom at a time. Deeply on-brand.",
+  "relatedElements": [
+    "element-hafnium",
+    "element-dubnium",
+    "element-lawrencium"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "element-oganesson",
+  "category": "element",
+  "atomicNumber": 118,
+  "symbol": "Og",
+  "name": "Oganesson",
+  "atomicMass": 294,
+  "elementCategory": "noble-gas",
+  "elementCategoryLabel": "Noble Gas",
+  "period": 7,
+  "block": "p",
+  "group": 18,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶ (predicted)",
+  "density": "~7 g/cm³ (predicted, solid)",
+  "discovery": {
+    "year": 2002,
+    "discoverer": "Joint Russian-American team, Dubna & Lawrence Livermore National Laboratory"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, and only a handful of atoms have ever been detected.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research at the very edge of the current periodic table"
+  ],
+  "safetyNotes": "Intensely radioactive with an extremely short half-life (under a millisecond); never produced beyond single atoms.",
+  "notableCharacteristics": "Named after physicist Yuri Oganessian, one of the most prolific superheavy-element discoverers alive — and, unusually for a noble gas, it's theoretically predicted to be a solid at room temperature rather than a gas, due to extreme relativistic effects.",
+  "ncertRelevance": [
+    "heaviest element on the current periodic table",
+    "predicted solid noble gas, breaking the group's usual pattern"
+  ],
+  "whyHere": "Relativistic effects are so extreme at this atomic mass that oganesson's outer electrons are predicted to behave unusually reactively for a noble gas, and its atoms are expected to bind together strongly enough to form a solid at room temperature — a genuinely paradigm-breaking prediction for what's nominally Group 18.",
+  "didYouKnow": "Oganesson is the only element named after a person who was alive at the time of naming and directly involved in its own discovery — a distinction unlikely to be repeated for whichever element comes next.",
+  "genZNote": "The heaviest element we've got, predicted to be a weird reactive solid instead of a chill noble gas. Group 18's biggest plot twist, quite literally at the edge of the map.",
+  "relatedElements": [
+    "element-radon",
+    "element-xenon",
+    "element-tennessine"
+  ]
+}

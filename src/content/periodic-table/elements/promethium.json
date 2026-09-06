@@ -1,0 +1,45 @@
+{
+  "id": "element-promethium",
+  "category": "element",
+  "atomicNumber": 61,
+  "symbol": "Pm",
+  "name": "Promethium",
+  "atomicMass": 145,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f⁵ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "density": "7.26 g/cm³",
+  "meltingPointC": 1042,
+  "boilingPointC": 3000,
+  "discovery": {
+    "year": 1945,
+    "discoverer": "Jacob A. Marinsky, Lawrence E. Glendenin & Charles D. Coryell"
+  },
+  "occurrence": "Essentially absent in nature (all isotopes radioactive with short half-lives); produced artificially as a nuclear fission by-product.",
+  "majorUses": [
+    "Historically used in self-luminous paint and betavoltaic 'nuclear batteries'",
+    "Research into thickness-gauge radioactive sources"
+  ],
+  "safetyNotes": "Radioactive; handled only in shielded, controlled research and industrial settings.",
+  "notableCharacteristics": "Named after Prometheus, the Greek Titan who stole fire for humanity — a nod to both the promise and the danger of harnessing nuclear science.",
+  "ncertRelevance": [
+    "only lanthanide with no stable isotopes",
+    "gap in naturally occurring elements"
+  ],
+  "whyHere": "Promethium sits in a nuclear 'valley of instability' where every isotope is radioactive, making it — alongside technetium — one of only two elements below bismuth with no stable form at all, despite otherwise fitting neatly among its lanthanide neighbours.",
+  "didYouKnow": "Promethium was the last of the naturally-occurring-mass-range elements to be discovered, only identified in 1945 by chemists sifting through the fission products of a nuclear reactor.",
+  "genZNote": "Named after the guy who stole fire from the gods. Also the periodic table's reminder that not every gap gets filled naturally.",
+  "relatedElements": [
+    "element-neodymium",
+    "element-samarium",
+    "element-technetium"
+  ]
+}

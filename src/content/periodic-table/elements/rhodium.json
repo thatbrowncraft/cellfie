@@ -1,0 +1,46 @@
+{
+  "id": "element-rhodium",
+  "category": "element",
+  "atomicNumber": 45,
+  "symbol": "Rh",
+  "name": "Rhodium",
+  "atomicMass": 102.91,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 5,
+  "block": "d",
+  "group": 9,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d⁸ 5s¹",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 2.28,
+  "density": "12.41 g/cm³",
+  "meltingPointC": 1964,
+  "boilingPointC": 3695,
+  "discovery": {
+    "year": 1803,
+    "discoverer": "William Hyde Wollaston"
+  },
+  "occurrence": "Extremely rare, found in trace amounts within platinum ores and nickel ores.",
+  "majorUses": [
+    "Catalytic converters in vehicle exhaust systems",
+    "Reflective, tarnish-resistant plating for jewellery and mirrors",
+    "Nitric acid production catalyst"
+  ],
+  "notableCharacteristics": "One of the most expensive precious metals by weight, often priced well above gold and platinum due to its extreme rarity and heavy industrial demand.",
+  "ncertRelevance": [
+    "catalytic converter chemistry",
+    "platinum-group metal rarity"
+  ],
+  "whyHere": "Its resistance to oxidation and strong catalytic surface activity, both driven by tightly bound but chemically available d-electrons, are exactly why rhodium is prized for converting toxic exhaust gases into less harmful ones.",
+  "didYouKnow": "Rhodium's price has been so volatile that it's spiked to over ten times the price of gold per ounce during shortages driven by tightening vehicle emissions regulations worldwide.",
+  "genZNote": "Pricier than gold, mostly because your car's exhaust system needs it to not poison the atmosphere.",
+  "relatedElements": [
+    "element-cobalt",
+    "element-iridium",
+    "element-palladium"
+  ]
+}

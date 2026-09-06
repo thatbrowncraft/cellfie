@@ -1,0 +1,47 @@
+{
+  "id": "element-palladium",
+  "category": "element",
+  "atomicNumber": 46,
+  "symbol": "Pd",
+  "name": "Palladium",
+  "atomicMass": 106.42,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 5,
+  "block": "d",
+  "group": 10,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d¹⁰",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+2",
+    "+4"
+  ],
+  "electronegativityPauling": 2.2,
+  "density": "12.02 g/cm³",
+  "meltingPointC": 1554.9,
+  "boilingPointC": 2963,
+  "discovery": {
+    "year": 1803,
+    "discoverer": "William Hyde Wollaston"
+  },
+  "occurrence": "Found in nickel-copper ores and platinum-group deposits; also recycled significantly from old catalytic converters.",
+  "majorUses": [
+    "Catalytic converters",
+    "Multi-layer ceramic capacitors in electronics",
+    "Hydrogen purification and storage (absorbs up to 900 times its own volume of H₂)"
+  ],
+  "notableCharacteristics": "Can absorb an extraordinary volume of hydrogen gas into its metal lattice, making it useful for hydrogen storage and purification research.",
+  "ncertRelevance": [
+    "hydrogen absorption capacity",
+    "catalytic converter chemistry"
+  ],
+  "whyHere": "With a fully-filled 4d¹⁰ subshell and empty 5s orbital, palladium's unusual electron gaps let hydrogen atoms slip into its metal lattice easily, explaining its record-setting hydrogen absorption capacity.",
+  "didYouKnow": "A palm-sized block of palladium can absorb enough hydrogen gas to fill nearly 900 times its own volume, a property researchers are actively exploring for future hydrogen fuel storage.",
+  "genZNote": "Basically a hydrogen sponge disguised as a precious metal. Also cleans up your car's exhaust while it's at it.",
+  "relatedElements": [
+    "element-platinum",
+    "element-nickel",
+    "element-rhodium"
+  ]
+}

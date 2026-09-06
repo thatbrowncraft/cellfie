@@ -1,0 +1,38 @@
+{
+  "id": "element-darmstadtium",
+  "category": "element",
+  "atomicNumber": 110,
+  "symbol": "Ds",
+  "name": "Darmstadtium",
+  "atomicMass": 281,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 7,
+  "block": "d",
+  "group": 10,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d⁸ 7s² (predicted)",
+  "density": "~35 g/cm³ (predicted)",
+  "discovery": {
+    "year": 1994,
+    "discoverer": "Peter Armbruster, Sigurd Hofmann and team, GSI Darmstadt"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; observed only as individual atoms with sub-second half-lives.",
+  "notableCharacteristics": "Named after Darmstadt, Germany, home of the GSI laboratory responsible for discovering it and several neighbouring superheavy elements.",
+  "ncertRelevance": [
+    "predicted Group 10 chemistry (platinum analogue)",
+    "named after a research lab's home city"
+  ],
+  "whyHere": "Predicted to sit in Group 10 below platinum and palladium, darmstadtium is expected to show broadly similar noble-metal-like chemistry, though this remains largely theoretical given how few atoms have ever been produced.",
+  "didYouKnow": "GSI Darmstadt has been so productive at creating superheavy elements that it has multiple elements named directly or indirectly after its own city and researchers — darmstadtium being the most literal example.",
+  "genZNote": "One German lab basically has a whole neighbourhood of the periodic table named after it and its scientists at this point.",
+  "relatedElements": [
+    "element-platinum",
+    "element-palladium",
+    "element-meitnerium"
+  ]
+}

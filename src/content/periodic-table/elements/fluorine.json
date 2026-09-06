@@ -1,0 +1,48 @@
+{
+  "id": "element-fluorine",
+  "category": "element",
+  "atomicNumber": 9,
+  "symbol": "F",
+  "name": "Fluorine",
+  "atomicMass": 18.998,
+  "elementCategory": "halogen",
+  "elementCategoryLabel": "Halogen",
+  "period": 2,
+  "block": "p",
+  "group": 17,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "[He] 2s² 2p⁵",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "-1"
+  ],
+  "electronegativityPauling": 3.98,
+  "density": "0.001696 g/cm³ (gas)",
+  "meltingPointC": -219.6,
+  "boilingPointC": -188.1,
+  "discovery": {
+    "year": 1886,
+    "discoverer": "Henri Moissan"
+  },
+  "occurrence": "Found combined in fluorite and cryolite minerals; too reactive to exist free in nature.",
+  "majorUses": [
+    "Toothpaste and water fluoridation (cavity prevention)",
+    "Teflon (PTFE) non-stick coatings",
+    "Refrigerant gases (historically CFCs, now HFCs)"
+  ],
+  "biologicalRelevance": "In small controlled amounts it strengthens tooth enamel by converting hydroxyapatite into more acid-resistant fluorapatite — but it's toxic in excess.",
+  "notableCharacteristics": "The most electronegative element on the periodic table and reactive enough to attack glass, most metals, and even some noble gases under the right conditions.",
+  "ncertRelevance": [
+    "strongest oxidizing halogen",
+    "anomalous behaviour of fluorine among halogens",
+    "electronegativity trend peak"
+  ],
+  "whyHere": "Seven valence electrons in the smallest possible second-shell atom means it pulls bonding electrons harder than anything else on the table — the direct reason it tops both the electronegativity and reactivity charts.",
+  "didYouKnow": "Henri Moissan won the 1906 Nobel Prize partly for isolating fluorine, a task so dangerous that several chemists before him were poisoned or killed trying.",
+  "genZNote": "Most electronegative element there is. Wants everyone else's electrons and usually gets them.",
+  "relatedElements": [
+    "element-chlorine",
+    "element-bromine",
+    "element-oxygen"
+  ]
+}

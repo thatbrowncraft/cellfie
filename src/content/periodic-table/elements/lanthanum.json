@@ -1,0 +1,46 @@
+{
+  "id": "element-lanthanum",
+  "category": "element",
+  "atomicNumber": 57,
+  "symbol": "La",
+  "name": "Lanthanum",
+  "atomicMass": 138.91,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 5d¹ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.1,
+  "density": "6.15 g/cm³",
+  "meltingPointC": 920,
+  "boilingPointC": 3464,
+  "discovery": {
+    "year": 1839,
+    "discoverer": "Carl Gustaf Mosander"
+  },
+  "occurrence": "The most abundant of the rare-earth elements, found in monazite and bastnäsite ores.",
+  "majorUses": [
+    "Nickel-metal-hydride (NiMH) battery alloys (notably in hybrid car batteries)",
+    "Camera and telescope lens glass (high refractive index)",
+    "Catalytic cracking of petroleum"
+  ],
+  "notableCharacteristics": "Gives its name to the entire lanthanide series, even though it technically has zero electrons in an f-orbital itself, sitting just before the f-block truly begins filling.",
+  "ncertRelevance": [
+    "lanthanide series naming",
+    "rare-earth abundance"
+  ],
+  "whyHere": "Lanthanum's name comes from the Greek 'lanthanein', 'to lie hidden', because it was found concealed within a cerium sample — a fitting origin for the element that lends the entire hidden f-block series its name.",
+  "didYouKnow": "A single Toyota Prius battery pack has historically contained several kilograms of lanthanum, making hybrid-car demand a real driver of rare-earth mining.",
+  "genZNote": "Named 'the hidden one' and now hides inside literally every hybrid car battery. Still on brand.",
+  "relatedElements": [
+    "element-cerium",
+    "element-yttrium",
+    "element-actinium"
+  ]
+}

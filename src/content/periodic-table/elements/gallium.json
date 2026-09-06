@@ -1,0 +1,47 @@
+{
+  "id": "element-gallium",
+  "category": "element",
+  "atomicNumber": 31,
+  "symbol": "Ga",
+  "name": "Gallium",
+  "atomicMass": 69.723,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 4,
+  "block": "p",
+  "group": 13,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p¹",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.81,
+  "density": "5.91 g/cm³",
+  "meltingPointC": 29.8,
+  "boilingPointC": 2204,
+  "discovery": {
+    "year": 1875,
+    "discoverer": "Paul-Émile Lecoq de Boisbaudran"
+  },
+  "occurrence": "Rare and dispersed, found in trace amounts within zinc and aluminium ores.",
+  "majorUses": [
+    "LEDs and semiconductors (gallium arsenide, gallium nitride)",
+    "Low-melting alloys and thermometers",
+    "5G smartphone amplifier chips"
+  ],
+  "notableCharacteristics": "Melts at just below body temperature (29.8°C), so it turns to liquid metal sitting in your hand.",
+  "ncertRelevance": [
+    "prediction as Mendeleev's 'eka-aluminium'",
+    "low melting point anomaly",
+    "gallium arsenide semiconductors"
+  ],
+  "whyHere": "Its melting point sits far below neighbouring metals because its crystal structure bonds atoms in pairs rather than a dense uniform lattice, leaving unusually weak overall bonding for a metal.",
+  "didYouKnow": "Gallium was one of the elements Mendeleev predicted before its discovery, matching his 'eka-aluminium' prediction so precisely that he even corrected the density measurement of the actual discovered sample.",
+  "genZNote": "Melts in your hand like a magic trick. Also secretly running your 5G phone signal.",
+  "relatedElements": [
+    "element-aluminium",
+    "element-indium",
+    "element-germanium"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "element-iron",
+  "category": "element",
+  "atomicNumber": 26,
+  "symbol": "Fe",
+  "name": "Iron",
+  "atomicMass": 55.845,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 4,
+  "block": "d",
+  "group": 8,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d⁶ 4s²",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+3",
+    "+2"
+  ],
+  "electronegativityPauling": 1.83,
+  "density": "7.874 g/cm³",
+  "meltingPointC": 1538,
+  "boilingPointC": 2862,
+  "discovery": {
+    "discoverer": "Known since prehistory (Iron Age)"
+  },
+  "occurrence": "Second most abundant metal in Earth's crust and the dominant element of Earth's core; mined as hematite and magnetite ore.",
+  "majorUses": [
+    "Steel production (the backbone of construction and manufacturing)",
+    "Magnets and electromagnetic cores",
+    "Dietary iron supplements"
+  ],
+  "biologicalRelevance": "The central metal ion in haemoglobin, where it binds and releases oxygen in your blood — iron deficiency directly causes anaemia.",
+  "notableCharacteristics": "One of only four elements that are ferromagnetic at room temperature (the others being cobalt, nickel, and gadolinium).",
+  "ncertRelevance": [
+    "variable oxidation states (Fe²⁺/Fe³⁺)",
+    "haemoglobin structure",
+    "extraction in a blast furnace"
+  ],
+  "whyHere": "Commonly forming both Fe²⁺ and Fe³⁺ by losing either its 4s electrons alone or one 3d electron too, iron's flexible oxidation chemistry is exactly what lets haemoglobin's iron centre bind oxygen reversibly instead of reacting with it permanently.",
+  "didYouKnow": "The iron in your blood is recycled almost entirely from broken-down red blood cells — your body only needs to absorb about 1-2 mg of new dietary iron a day to replace natural losses.",
+  "genZNote": "Runs your blood's oxygen delivery system and also built the entire Iron Age. Multi-era legend.",
+  "relatedElements": [
+    "element-cobalt",
+    "element-ruthenium",
+    "element-manganese"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-coordination-compounds-and-cft",
+    "concept-electrochemistry-electrode-potential"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "element-iridium",
+  "category": "element",
+  "atomicNumber": 77,
+  "symbol": "Ir",
+  "name": "Iridium",
+  "atomicMass": 192.22,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 6,
+  "block": "d",
+  "group": 9,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d⁷ 6s²",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+4",
+    "+3"
+  ],
+  "electronegativityPauling": 2.2,
+  "density": "22.56 g/cm³",
+  "meltingPointC": 2446,
+  "boilingPointC": 4428,
+  "discovery": {
+    "year": 1803,
+    "discoverer": "Smithson Tennant"
+  },
+  "occurrence": "Extremely rare on Earth's surface but relatively more common in meteorites, giving it a famous geological role.",
+  "majorUses": [
+    "Spark plug electrodes (extremely corrosion and wear resistant)",
+    "Crucibles for growing high-purity crystals at extreme temperatures",
+    "Fountain pen nib tips (alloyed with osmium)"
+  ],
+  "notableCharacteristics": "A thin, unusually iridium-rich layer found worldwide in rock strata from 66 million years ago is the key evidence linking the dinosaur-extinction asteroid impact to that exact moment in Earth's history.",
+  "ncertRelevance": [
+    "K-Pg boundary asteroid impact evidence",
+    "extreme corrosion resistance"
+  ],
+  "whyHere": "Its extremely tight, unreactive electron shells make iridium one of the most corrosion-resistant metals known, which is why it survives largely unaltered even in ancient rock layers — including the globally-distributed iridium spike marking the asteroid impact 66 million years ago.",
+  "didYouKnow": "The worldwide 'iridium anomaly' layer in rock strata, unusually rich in iridium because asteroids carry far more of it than Earth's crust does, is the central physical evidence behind the theory that an asteroid impact ended the age of dinosaurs.",
+  "genZNote": "The actual smoking gun evidence for the asteroid that killed the dinosaurs. Quietly rewrote paleontology.",
+  "relatedElements": [
+    "element-osmium",
+    "element-rhodium",
+    "element-platinum"
+  ]
+}

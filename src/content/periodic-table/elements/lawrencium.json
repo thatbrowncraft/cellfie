@@ -1,0 +1,43 @@
+{
+  "id": "element-lawrencium",
+  "category": "element",
+  "atomicNumber": 103,
+  "symbol": "Lr",
+  "name": "Lawrencium",
+  "atomicMass": 262,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 7s² 7p¹ (predicted)",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.3,
+  "meltingPointC": 1627,
+  "discovery": {
+    "year": 1961,
+    "discoverer": "Albert Ghiorso and team, University of California, Berkeley"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure nuclear physics research, marking the end of the actinide series"
+  ],
+  "safetyNotes": "Intensely radioactive with a half-life of only a few minutes at most; never produced beyond single atoms.",
+  "notableCharacteristics": "The final element of the actinide series, named after Ernest Lawrence, inventor of the cyclotron particle accelerator that made discovering so many of the late actinides possible in the first place.",
+  "ncertRelevance": [
+    "marks the end of the actinide series",
+    "named after the inventor of the cyclotron"
+  ],
+  "whyHere": "Lawrencium's predicted electron configuration places its final electron in a 7p orbital rather than 5f or 6d, a genuinely debated point among chemists that mirrors the same classification argument as lutetium at the end of the lanthanide series.",
+  "didYouKnow": "Lawrencium closes out the actinide series exactly the way lutetium closes out the lanthanides, and both elements share the same unresolved debate over whether they truly belong in the f-block or the d-block.",
+  "genZNote": "The actinide series' final boss, named after the guy whose particle accelerator made half this list possible. Fitting sendoff.",
+  "relatedElements": [
+    "element-nobelium",
+    "element-lutetium",
+    "element-rutherfordium"
+  ]
+}

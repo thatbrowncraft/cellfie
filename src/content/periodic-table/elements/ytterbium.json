@@ -1,0 +1,47 @@
+{
+  "id": "element-ytterbium",
+  "category": "element",
+  "atomicNumber": 70,
+  "symbol": "Yb",
+  "name": "Ytterbium",
+  "atomicMass": 173.05,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3",
+    "+2"
+  ],
+  "electronegativityPauling": 1.1,
+  "density": "6.90 g/cm³",
+  "meltingPointC": 824,
+  "boilingPointC": 1196,
+  "discovery": {
+    "year": 1878,
+    "discoverer": "Jean Charles Galissard de Marignac"
+  },
+  "occurrence": "Found in trace amounts in monazite and xenotime ores; the third of four elements named after Ytterby.",
+  "majorUses": [
+    "Atomic clock research (ytterbium optical lattice clocks are among the most precise timekeeping devices ever built)",
+    "Stainless steel alloy strengthener",
+    "Portable X-ray sources"
+  ],
+  "notableCharacteristics": "Ytterbium-based optical atomic clocks are so precise they would neither gain nor lose a second over the age of the universe.",
+  "ncertRelevance": [
+    "fully-filled 4f¹⁴ subshell stability",
+    "next-generation atomic clock research"
+  ],
+  "whyHere": "Its completely filled 4f¹⁴ subshell gives ytterbium unusual electronic stability, and its extremely narrow, precise optical transition frequencies from that configuration are exactly why it's being explored as the basis for the world's most accurate next-generation atomic clocks.",
+  "didYouKnow": "Some of the most precise clocks ever built use ytterbium atoms cooled to near absolute zero and are accurate enough that they wouldn't drift by even a second over roughly 15 billion years.",
+  "genZNote": "Could keep perfect time longer than the universe has existed. No further comment necessary.",
+  "relatedElements": [
+    "element-thulium",
+    "element-lutetium",
+    "element-yttrium"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "element-fermium",
+  "category": "element",
+  "atomicNumber": 100,
+  "symbol": "Fm",
+  "name": "Fermium",
+  "atomicMass": 257,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹² 7s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.3,
+  "meltingPointC": 1527,
+  "discovery": {
+    "year": 1952,
+    "discoverer": "Albert Ghiorso and team"
+  },
+  "occurrence": "Does not occur naturally; discovered, like einsteinium, in hydrogen bomb test fallout, and now made only in accelerators/reactors atom-by-atom or in microgram amounts.",
+  "majorUses": [
+    "No practical applications — exists purely for fundamental nuclear and atomic physics research"
+  ],
+  "safetyNotes": "Intensely radioactive with short half-lives, produced and studied only in extremely controlled, minute quantities.",
+  "notableCharacteristics": "Named after physicist Enrico Fermi, who built the world's first nuclear reactor; the last actinide that can still be produced in weighable (though minuscule) quantities before heavier elements become truly atom-at-a-time science.",
+  "ncertRelevance": [
+    "named after Enrico Fermi",
+    "boundary point for weighable-quantity element production"
+  ],
+  "whyHere": "Fermium marks roughly the point where actinide production shifts from 'micrograms in a reactor' to 'a handful of individual atoms at a time' in particle accelerators, since its isotopes are both harder to make and more short-lived than the lighter actinides before it.",
+  "didYouKnow": "Like einsteinium, fermium was first identified in the radioactive debris of the 1952 Ivy Mike hydrogen bomb test, and both discoveries were kept classified by the U.S. government for years afterward.",
+  "genZNote": "Named after the guy who built the first nuclear reactor, discovered in bomb fallout right alongside einsteinium. Package deal of secrecy.",
+  "relatedElements": [
+    "element-einsteinium",
+    "element-mendelevium",
+    "element-curium"
+  ]
+}

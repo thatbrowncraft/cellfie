@@ -1,0 +1,48 @@
+{
+  "id": "element-thallium",
+  "category": "element",
+  "atomicNumber": 81,
+  "symbol": "Tl",
+  "name": "Thallium",
+  "atomicMass": 204.38,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 6,
+  "block": "p",
+  "group": 13,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p¹",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+3",
+    "+1"
+  ],
+  "electronegativityPauling": 1.62,
+  "density": "11.85 g/cm³",
+  "meltingPointC": 304,
+  "boilingPointC": 1473,
+  "discovery": {
+    "year": 1861,
+    "discoverer": "William Crookes"
+  },
+  "occurrence": "Found in trace amounts within sulfide ores; recovered as a by-product of lead, zinc, and copper smelting.",
+  "majorUses": [
+    "Historically used as rat poison and in cosmetics (now heavily restricted)",
+    "Infrared detector materials",
+    "High-refractive-index specialty glass"
+  ],
+  "safetyNotes": "So toxic and historically hard to detect that it earned the nickname 'the poisoner's poison' — tasteless, odourless, and symptoms resembling other illnesses delayed detection in many real poisoning cases.",
+  "notableCharacteristics": "Discovered via a bright green spectral line, which is where its name comes from (Greek 'thallos', meaning 'green shoot').",
+  "ncertRelevance": [
+    "discovery via spectroscopy",
+    "notorious toxicology case studies"
+  ],
+  "whyHere": "Its +1 oxidation state closely mimics potassium's ionic size and charge, which is exactly how thallium sneaks past the body's normal ion transport systems and into cells — the underlying reason for its severe, easily-disguised toxicity.",
+  "didYouKnow": "Because thallium is tasteless, odourless, and its poisoning symptoms resembled several other common illnesses, it went undetected in a number of historical murder cases before modern toxicology screening became standard.",
+  "genZNote": "Was the go-to secret poison for decades because nobody could taste, smell, or easily test for it. Properly villain-coded.",
+  "relatedElements": [
+    "element-indium",
+    "element-lead",
+    "element-gallium"
+  ]
+}

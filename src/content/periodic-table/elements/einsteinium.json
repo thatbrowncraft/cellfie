@@ -1,0 +1,44 @@
+{
+  "id": "element-einsteinium",
+  "category": "element",
+  "atomicNumber": 99,
+  "symbol": "Es",
+  "name": "Einsteinium",
+  "atomicMass": 252,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹¹ 7s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.3,
+  "density": "8.84 g/cm³ (estimated)",
+  "meltingPointC": 860,
+  "discovery": {
+    "year": 1952,
+    "discoverer": "Albert Ghiorso and team"
+  },
+  "occurrence": "Does not occur naturally; first identified in the radioactive fallout debris of the first hydrogen bomb test (Ivy Mike, 1952), later produced deliberately in reactors.",
+  "majorUses": [
+    "No practical applications — produced only in microgram quantities for fundamental nuclear science research"
+  ],
+  "safetyNotes": "Intensely radioactive; among the rarest and most tightly controlled synthetic elements, produced only in specialized national laboratories.",
+  "notableCharacteristics": "Named after Albert Einstein and was discovered by analyzing the debris from the first-ever thermonuclear (hydrogen bomb) explosion, a genuinely unusual discovery circumstance.",
+  "ncertRelevance": [
+    "discovered from thermonuclear test debris",
+    "extreme rarity of late actinides"
+  ],
+  "whyHere": "Formed only through the intense, sustained neutron flux of a nuclear explosion or dedicated high-flux reactor, einsteinium's very creation illustrates how far beyond ordinary nuclear reactions the late actinides sit — genuinely artificial elements built one neutron capture at a time.",
+  "didYouKnow": "Einsteinium was secretly discovered in 1952 from the fallout of the world's first hydrogen bomb test, but the discovery was classified and not published openly for several years due to Cold War secrecy.",
+  "genZNote": "Discovered in literal hydrogen bomb fallout and kept secret for years. The most dramatic origin story on this entire list.",
+  "relatedElements": [
+    "element-californium",
+    "element-fermium",
+    "element-curium"
+  ]
+}

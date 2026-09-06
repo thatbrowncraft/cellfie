@@ -1,0 +1,47 @@
+{
+  "id": "element-neptunium",
+  "category": "element",
+  "atomicNumber": 93,
+  "symbol": "Np",
+  "name": "Neptunium",
+  "atomicMass": 237,
+  "elementCategory": "actinide",
+  "elementCategoryLabel": "Actinide",
+  "period": 7,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f⁴ 6d¹ 7s²",
+  "commonValency": "5",
+  "commonOxidationStates": [
+    "+5",
+    "+4"
+  ],
+  "electronegativityPauling": 1.36,
+  "density": "20.45 g/cm³",
+  "meltingPointC": 644,
+  "boilingPointC": 3902,
+  "discovery": {
+    "year": 1940,
+    "discoverer": "Edwin McMillan & Philip Abelson"
+  },
+  "occurrence": "Found only in trace amounts naturally, as a product of uranium ore's neutron capture reactions; mainly produced artificially in nuclear reactors.",
+  "majorUses": [
+    "Radioisotope thermoelectric generators for deep-space missions (neptunium-237 based, in newer NASA plutonium-238 production chains)",
+    "Nuclear physics and safeguards research"
+  ],
+  "safetyNotes": "Radioactive and requires controlled handling; produced and monitored under nuclear non-proliferation oversight given its role in some nuclear fuel cycles.",
+  "notableCharacteristics": "The first transuranium element ever synthesized (the first element beyond uranium on the periodic table), continuing the 'named after planets' pattern since Neptune follows Uranus in the solar system.",
+  "ncertRelevance": [
+    "first transuranium element",
+    "planet-naming convention continuation"
+  ],
+  "whyHere": "Sitting one proton beyond uranium, neptunium was the first element ever created that doesn't occur in meaningful natural quantities on Earth, produced instead by bombarding uranium with neutrons — a milestone that opened the door to the entire transuranium era of the periodic table.",
+  "didYouKnow": "Neptunium's discovery in 1940 directly followed uranium's naming pattern — since Neptune is the next planet out from Uranus in the solar system, the newly created 'element 93' got an equally fitting name.",
+  "genZNote": "First-ever manufactured element beyond uranium. Basically opened the door for the entire back half of the periodic table.",
+  "relatedElements": [
+    "element-uranium",
+    "element-plutonium",
+    "element-americium"
+  ]
+}

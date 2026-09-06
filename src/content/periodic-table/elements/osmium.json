@@ -1,0 +1,48 @@
+{
+  "id": "element-osmium",
+  "category": "element",
+  "atomicNumber": 76,
+  "symbol": "Os",
+  "name": "Osmium",
+  "atomicMass": 190.23,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 6,
+  "block": "d",
+  "group": 8,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d⁶ 6s²",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+8",
+    "+4"
+  ],
+  "electronegativityPauling": 2.2,
+  "density": "22.59 g/cm³",
+  "meltingPointC": 3033,
+  "boilingPointC": 5012,
+  "discovery": {
+    "year": 1803,
+    "discoverer": "Smithson Tennant"
+  },
+  "occurrence": "Found in trace amounts alongside platinum ores, often paired with iridium in a natural alloy called osmiridium.",
+  "majorUses": [
+    "Fountain pen nib tips (extremely hard-wearing alloy with iridium)",
+    "Electrical contact points",
+    "Historically, filaments in early light bulbs"
+  ],
+  "safetyNotes": "Osmium tetroxide (OsO₄), formed when the metal is exposed to air, is highly toxic and can severely damage eyes and lungs, requiring careful handling in laboratories.",
+  "notableCharacteristics": "The densest naturally occurring element, packing more mass into the same volume than any other stable substance on Earth.",
+  "ncertRelevance": [
+    "densest natural element",
+    "osmium tetroxide toxicity"
+  ],
+  "whyHere": "Its compact atomic radius combined with a heavy nucleus and tightly packed crystal structure gives osmium the highest density of any naturally occurring element, edging out even iridium by a small margin.",
+  "didYouKnow": "Osmium is so dense that a cube of it just 10 cm on each side would weigh over 22.5 kilograms — nearly as heavy as a small child, in a block you could hold in two hands.",
+  "genZNote": "Densest natural element there is. Small package, unreasonably heavy consequences.",
+  "relatedElements": [
+    "element-iridium",
+    "element-ruthenium",
+    "element-platinum"
+  ]
+}

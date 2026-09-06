@@ -1,0 +1,42 @@
+{
+  "id": "element-moscovium",
+  "category": "element",
+  "atomicNumber": 115,
+  "symbol": "Mc",
+  "name": "Moscovium",
+  "atomicMass": 290,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 7,
+  "block": "p",
+  "group": 15,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³ (predicted)",
+  "commonOxidationStates": [
+    "+1",
+    "+3"
+  ],
+  "density": "~14 g/cm³ (predicted)",
+  "discovery": {
+    "year": 2003,
+    "discoverer": "Joint Russian-American team, Dubna & Lawrence Livermore National Laboratory"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; observed only as individual atoms with sub-second half-lives.",
+  "notableCharacteristics": "Named after Moscow Oblast, the region in Russia home to the Joint Institute for Nuclear Research at Dubna, in recognition of the lab's role in synthesizing many superheavy elements.",
+  "ncertRelevance": [
+    "predicted Group 15 chemistry (bismuth analogue)",
+    "named after a Russian region"
+  ],
+  "whyHere": "Predicted to sit in Group 15 below bismuth, moscovium is expected to show a similarly variable +1/+3 oxidation chemistry, continuing the trend of relativistic effects increasingly stabilizing lower oxidation states toward the bottom of heavy p-block groups.",
+  "didYouKnow": "Moscovium was created as part of the same joint Russian-American research collaboration at Dubna that also produced flerovium, livermorium, and tennessine — a rare case of Cold-War-rival nations co-discovering four elements together.",
+  "genZNote": "Made by a joint Russia-US science team, which is honestly kind of wholesome given the history. Four elements' worth of actual cooperation.",
+  "relatedElements": [
+    "element-bismuth",
+    "element-antimony",
+    "element-flerovium"
+  ]
+}

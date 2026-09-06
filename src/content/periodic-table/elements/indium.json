@@ -1,0 +1,46 @@
+{
+  "id": "element-indium",
+  "category": "element",
+  "atomicNumber": 49,
+  "symbol": "In",
+  "name": "Indium",
+  "atomicMass": 114.82,
+  "elementCategory": "post-transition-metal",
+  "elementCategoryLabel": "Post-Transition Metal",
+  "period": 5,
+  "block": "p",
+  "group": 13,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p¹",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3"
+  ],
+  "electronegativityPauling": 1.78,
+  "density": "7.31 g/cm³",
+  "meltingPointC": 156.6,
+  "boilingPointC": 2072,
+  "discovery": {
+    "year": 1863,
+    "discoverer": "Ferdinand Reich & Hieronymus Theodor Richter"
+  },
+  "occurrence": "Rare and dispersed, recovered mainly as a by-product of zinc ore processing.",
+  "majorUses": [
+    "Indium tin oxide (ITO) transparent conductive coatings on touchscreens and LCDs",
+    "Low-melting solder alloys",
+    "Semiconductor compounds (indium phosphide)"
+  ],
+  "notableCharacteristics": "Named for the brilliant indigo line it produces in a flame spectroscope, which is how it was discovered.",
+  "ncertRelevance": [
+    "discovery via spectroscopy",
+    "role in touchscreen technology"
+  ],
+  "whyHere": "Its softness and low melting point come from a metallic bonding structure weaker than its neighbours, and it's exactly this along with its transparent-conducting oxide form that makes it essential to every touchscreen you've ever tapped.",
+  "didYouKnow": "Nearly every smartphone, tablet, and flat-screen TV touchscreen relies on a thin transparent layer of indium tin oxide to sense your finger's location — indium's supply has become a genuine tech-industry concern.",
+  "genZNote": "You are literally touching indium right now if you're reading this on a touchscreen. No exceptions.",
+  "relatedElements": [
+    "element-gallium",
+    "element-thallium",
+    "element-tin"
+  ]
+}

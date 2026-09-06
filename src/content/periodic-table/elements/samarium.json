@@ -1,0 +1,47 @@
+{
+  "id": "element-samarium",
+  "category": "element",
+  "atomicNumber": 62,
+  "symbol": "Sm",
+  "name": "Samarium",
+  "atomicMass": 150.36,
+  "elementCategory": "lanthanide",
+  "elementCategoryLabel": "Lanthanide",
+  "period": 6,
+  "block": "f",
+  "group": 3,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Xe] 4f⁶ 6s²",
+  "commonValency": "3",
+  "commonOxidationStates": [
+    "+3",
+    "+2"
+  ],
+  "electronegativityPauling": 1.17,
+  "density": "7.52 g/cm³",
+  "meltingPointC": 1074,
+  "boilingPointC": 1794,
+  "discovery": {
+    "year": 1879,
+    "discoverer": "Paul-Émile Lecoq de Boisbaudran"
+  },
+  "occurrence": "Found alongside other lanthanides in monazite and samarskite ores (the latter lending it its name).",
+  "majorUses": [
+    "Samarium-cobalt permanent magnets (heat-resistant, used in aerospace/military)",
+    "Neutron-absorbing nuclear reactor control rods",
+    "Cancer radiotherapy (samarium-153 isotope)"
+  ],
+  "notableCharacteristics": "Was the first element named after a person (Vasili Samarsky-Bykhovets, a Russian mine official), via the mineral samarskite.",
+  "ncertRelevance": [
+    "first element indirectly named after a real person",
+    "rare-earth magnet applications"
+  ],
+  "whyHere": "Its six unpaired 4f electrons give strong magnetic behaviour that, when alloyed with cobalt, retains its magnetism at much higher temperatures than neodymium magnets — exactly why it's chosen for aerospace and military uses despite being pricier.",
+  "didYouKnow": "Samarium was the first element ever named, even indirectly, after a real living person — via the mineral samarskite, named for the mining engineer who supplied the sample it was isolated from.",
+  "genZNote": "First element with a person's name attached, even indirectly. Started the whole 'name it after someone' trend.",
+  "relatedElements": [
+    "element-neodymium",
+    "element-europium",
+    "element-cobalt"
+  ]
+}

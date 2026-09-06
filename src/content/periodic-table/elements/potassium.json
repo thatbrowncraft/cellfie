@@ -1,0 +1,51 @@
+{
+  "id": "element-potassium",
+  "category": "element",
+  "atomicNumber": 19,
+  "symbol": "K",
+  "name": "Potassium",
+  "atomicMass": 39.098,
+  "elementCategory": "alkali-metal",
+  "elementCategoryLabel": "Alkali Metal",
+  "period": 4,
+  "block": "s",
+  "group": 1,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 4s¹",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+1"
+  ],
+  "electronegativityPauling": 0.82,
+  "density": "0.862 g/cm³",
+  "meltingPointC": 63.4,
+  "boilingPointC": 759,
+  "discovery": {
+    "year": 1807,
+    "discoverer": "Humphry Davy"
+  },
+  "occurrence": "Never found free; combined in silicate minerals and extracted commercially from potash deposits.",
+  "majorUses": [
+    "Fertilizers (as potash)",
+    "Potassium chloride as a table-salt substitute",
+    "Photographic chemicals and soap manufacture"
+  ],
+  "biologicalRelevance": "The main positive ion inside your cells, essential for nerve signal transmission and heart rhythm — severe imbalance can literally stop a heartbeat.",
+  "notableCharacteristics": "Reacts even more violently with water than sodium does, often igniting the hydrogen gas it releases and burning with a lilac flame.",
+  "ncertRelevance": [
+    "alkali metal reactivity trend down the group",
+    "flame test colours",
+    "biological role in nerve impulses"
+  ],
+  "whyHere": "A lone 4s electron sitting even farther from the nucleus than sodium's 3s electron is even easier to lose, which is exactly why reactivity with water increases going down Group 1 from Li to Na to K.",
+  "didYouKnow": "Bananas are famously potassium-rich, but you'd need to eat roughly 6,000 of them at once to get a fatal dose — the 'banana equivalent dose' is a real (informal) radiation unit because potassium-40 is naturally radioactive.",
+  "genZNote": "Sodium's louder cousin. Reacts with water like it's personal, also the reason your heart keeps beat.",
+  "relatedElements": [
+    "element-sodium",
+    "element-rubidium",
+    "element-calcium"
+  ],
+  "relatedCellfieConcepts": [
+    "clin-concept-lipid-electrolyte-analysis"
+  ]
+}

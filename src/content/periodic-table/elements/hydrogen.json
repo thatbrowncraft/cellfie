@@ -1,0 +1,52 @@
+{
+  "id": "element-hydrogen",
+  "category": "element",
+  "atomicNumber": 1,
+  "symbol": "H",
+  "name": "Hydrogen",
+  "atomicMass": 1.008,
+  "elementCategory": "nonmetal",
+  "elementCategoryLabel": "Nonmetal",
+  "period": 1,
+  "block": "s",
+  "group": 1,
+  "phaseAtRoomTemp": "gas",
+  "electronConfiguration": "1s¹",
+  "commonValency": "1",
+  "commonOxidationStates": [
+    "+1",
+    "-1"
+  ],
+  "electronegativityPauling": 2.2,
+  "density": "0.00009 g/cm³ (gas)",
+  "meltingPointC": -259.1,
+  "boilingPointC": -252.9,
+  "discovery": {
+    "year": 1766,
+    "discoverer": "Henry Cavendish"
+  },
+  "occurrence": "The most abundant element in the universe (~75% of normal matter by mass); on Earth it's mostly locked up in water and hydrocarbons rather than free H₂.",
+  "majorUses": [
+    "Ammonia synthesis (Haber process)",
+    "Hydrogenation of vegetable oils",
+    "Rocket fuel (liquid H₂)"
+  ],
+  "biologicalRelevance": "The proton donor/acceptor in every acid-base reaction in your body, and it's literally half of every water molecule keeping your cells hydrated.",
+  "notableCharacteristics": "Only element whose atom has no neutron in its most common isotope (protium).",
+  "ncertRelevance": [
+    "periodic table position anomaly (placed in both Group 1 and sometimes Group 17)",
+    "acids and bases",
+    "hydrogen bonding"
+  ],
+  "whyHere": "One electron in a single 1s orbital means it can lose it (like Group 1) or gain one to complete a duplet (like a halogen) — which is exactly why it doesn't sit comfortably in either group.",
+  "didYouKnow": "Hydrogen has three naturally occurring isotopes — protium, deuterium, and tritium — and deuterium is heavy enough that 'heavy water' (D₂O) is measurably denser than normal water.",
+  "genZNote": "One proton, one electron, zero chill about which group it belongs to. Fuels stars and identity crises equally.",
+  "relatedElements": [
+    "element-helium",
+    "element-lithium",
+    "element-fluorine"
+  ],
+  "relatedCellfieConcepts": [
+    "concept-periodic-trends"
+  ]
+}

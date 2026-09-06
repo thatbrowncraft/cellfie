@@ -1,0 +1,43 @@
+{
+  "id": "element-tennessine",
+  "category": "element",
+  "atomicNumber": 117,
+  "symbol": "Ts",
+  "name": "Tennessine",
+  "atomicMass": 294,
+  "elementCategory": "halogen",
+  "elementCategoryLabel": "Halogen",
+  "period": 7,
+  "block": "p",
+  "group": 17,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵ (predicted)",
+  "commonOxidationStates": [
+    "-1",
+    "+1",
+    "+3"
+  ],
+  "density": "~7.2 g/cm³ (predicted)",
+  "discovery": {
+    "year": 2010,
+    "discoverer": "Joint Russian-American team, Dubna, Oak Ridge National Laboratory & Vanderbilt University"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; observed only as individual atoms with sub-second half-lives.",
+  "notableCharacteristics": "Named after the U.S. state of Tennessee, home to Oak Ridge National Laboratory and Vanderbilt University, key American partners in its discovery — and the second-heaviest halogen ever made, completing Group 17 up to element 117.",
+  "ncertRelevance": [
+    "predicted Group 17 chemistry (astatine analogue)",
+    "completes the halogen group's known members"
+  ],
+  "whyHere": "Predicted to sit in Group 17 below astatine, tennessine is expected to show even more metallic character than astatine given the trend of increasing metallic behaviour down heavy p-block groups — meaning the 'halogen' at the very bottom of its group may barely resemble chlorine or fluorine at all chemically.",
+  "didYouKnow": "Making tennessine required an extraordinarily rare berkelium-249 target, which had to be specially manufactured at Oak Ridge National Laboratory and shipped to Russia specifically for the bombardment experiment that created it.",
+  "genZNote": "A 'halogen' that's predicted to barely act like one at all because it's so heavy and relativistic. The group 17 rebel.",
+  "relatedElements": [
+    "element-astatine",
+    "element-iodine",
+    "element-livermorium"
+  ]
+}

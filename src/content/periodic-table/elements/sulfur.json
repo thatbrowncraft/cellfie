@@ -1,0 +1,49 @@
+{
+  "id": "element-sulfur",
+  "category": "element",
+  "atomicNumber": 16,
+  "symbol": "S",
+  "name": "Sulfur",
+  "atomicMass": 32.06,
+  "elementCategory": "nonmetal",
+  "elementCategoryLabel": "Nonmetal",
+  "period": 3,
+  "block": "p",
+  "group": 16,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ne] 3s² 3p⁴",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+6",
+    "+4",
+    "-2"
+  ],
+  "electronegativityPauling": 2.58,
+  "density": "2.07 g/cm³",
+  "meltingPointC": 115.2,
+  "boilingPointC": 444.6,
+  "discovery": {
+    "discoverer": "Known since antiquity"
+  },
+  "occurrence": "Found free as native sulfur near volcanic and hot-spring deposits, and combined in sulfide/sulfate minerals.",
+  "majorUses": [
+    "Sulfuric acid production (the world's most-manufactured industrial chemical)",
+    "Vulcanization of rubber",
+    "Fungicides and gunpowder"
+  ],
+  "biologicalRelevance": "Present in two amino acids (cysteine and methionine) and forms the disulfide bonds that hold protein structures like hair keratin together.",
+  "notableCharacteristics": "Exists in more allotropic forms than almost any other element, most commonly as bright yellow S₈ rings.",
+  "ncertRelevance": [
+    "allotropes of sulfur",
+    "sulfuric acid manufacture (Contact process)",
+    "oxidation states of sulfur"
+  ],
+  "whyHere": "Six valence electrons like oxygen above it, but a much larger atom favours forming S₈ ring structures rather than a simple diatomic gas, which is why sulfur is a yellow solid while oxygen is a colourless gas.",
+  "didYouKnow": "The disulfide bonds sulfur forms in keratin are literally what a perm or hair-straightening treatment breaks and reshapes chemically.",
+  "genZNote": "The reason your perm holds and your eggs smell weird. Underrated MVP of protein structure.",
+  "relatedElements": [
+    "element-oxygen",
+    "element-selenium",
+    "element-phosphorus"
+  ]
+}

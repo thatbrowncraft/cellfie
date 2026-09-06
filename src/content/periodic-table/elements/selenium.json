@@ -1,0 +1,49 @@
+{
+  "id": "element-selenium",
+  "category": "element",
+  "atomicNumber": 34,
+  "symbol": "Se",
+  "name": "Selenium",
+  "atomicMass": 78.971,
+  "elementCategory": "nonmetal",
+  "elementCategoryLabel": "Nonmetal",
+  "period": 4,
+  "block": "p",
+  "group": 16,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p⁴",
+  "commonValency": "2",
+  "commonOxidationStates": [
+    "+6",
+    "+4",
+    "-2"
+  ],
+  "electronegativityPauling": 2.55,
+  "density": "4.81 g/cm³ (gray)",
+  "meltingPointC": 221,
+  "boilingPointC": 685,
+  "discovery": {
+    "year": 1817,
+    "discoverer": "Jöns Jacob Berzelius"
+  },
+  "occurrence": "Rare, dispersed in sulfide ores and recovered mainly as a by-product of copper refining.",
+  "majorUses": [
+    "Photocopier and solar cell photoconductors",
+    "Glass decolorizing/red-tinting agent",
+    "Antidandruff shampoo (selenium sulfide)"
+  ],
+  "biologicalRelevance": "An essential trace nutrient and component of the antioxidant enzyme glutathione peroxidase, though the safe dose range is unusually narrow — both deficiency and excess cause health problems.",
+  "notableCharacteristics": "Its electrical conductivity changes dramatically when exposed to light, which is exactly what made it useful in early photocopiers and light meters.",
+  "ncertRelevance": [
+    "photoconductivity",
+    "trace nutrient with narrow safe range"
+  ],
+  "whyHere": "Named after the Greek moon goddess Selene (as a partner to tellurium, named for Earth), selenium sits just below sulfur and shares its tendency to form -2 and +6 states, but its greater atomic size gives it useful photoconductive behaviour sulfur lacks.",
+  "didYouKnow": "Selenium's conductivity increases measurably under light exposure, a property discovered by accident in 1873 when a technician noticed a selenium resistor behaved oddly on a sunny day — it kicked off the entire field of photoconductivity.",
+  "genZNote": "Named after the moon goddess and reacts to actual light. The most main-character origin story on this list.",
+  "relatedElements": [
+    "element-sulfur",
+    "element-tellurium",
+    "element-arsenic"
+  ]
+}

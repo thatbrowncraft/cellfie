@@ -1,0 +1,41 @@
+{
+  "id": "element-hassium",
+  "category": "element",
+  "atomicNumber": 108,
+  "symbol": "Hs",
+  "name": "Hassium",
+  "atomicMass": 270,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 7,
+  "block": "d",
+  "group": 8,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Rn] 5f¹⁴ 6d⁶ 7s² (predicted)",
+  "commonOxidationStates": [
+    "+8"
+  ],
+  "density": "~40 g/cm³ (predicted)",
+  "discovery": {
+    "year": 1984,
+    "discoverer": "Peter Armbruster & Gottfried Münzenberg, GSI Darmstadt"
+  },
+  "occurrence": "Does not occur naturally; produced only via particle accelerator fusion, atom by atom.",
+  "majorUses": [
+    "No practical applications — pure superheavy-element research"
+  ],
+  "safetyNotes": "Intensely radioactive; observed only as individual atoms with half-lives of a fraction of a second to roughly ten seconds.",
+  "notableCharacteristics": "Named after Hesse, the German state where the GSI Helmholtz Centre laboratory that discovered it is located.",
+  "ncertRelevance": [
+    "predicted Group 8 chemistry (osmium analogue)",
+    "named after a German state"
+  ],
+  "whyHere": "Predicted to sit in Group 8 directly below osmium, hassium is expected to be even denser than osmium if enough of it could ever be gathered, though so far chemists have only confirmed traces of osmium-like reactivity from single-atom experiments.",
+  "didYouKnow": "If enough hassium could somehow be collected in bulk, theoretical predictions suggest it could be the densest element in the entire periodic table, even denser than osmium — though nobody has ever made more than a few atoms at once to test this.",
+  "genZNote": "Predicted to be the densest element ever, if we could actually make more than a few atoms of it at a time. Forever a hypothetical heavyweight champion.",
+  "relatedElements": [
+    "element-osmium",
+    "element-ruthenium",
+    "element-bohrium"
+  ]
+}

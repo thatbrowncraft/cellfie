@@ -1,0 +1,47 @@
+{
+  "id": "element-ruthenium",
+  "category": "element",
+  "atomicNumber": 44,
+  "symbol": "Ru",
+  "name": "Ruthenium",
+  "atomicMass": 101.07,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 5,
+  "block": "d",
+  "group": 8,
+  "phaseAtRoomTemp": "solid",
+  "electronConfiguration": "[Kr] 4d⁷ 5s¹",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+4",
+    "+3"
+  ],
+  "electronegativityPauling": 2.2,
+  "density": "12.45 g/cm³",
+  "meltingPointC": 2334,
+  "boilingPointC": 4150,
+  "discovery": {
+    "year": 1844,
+    "discoverer": "Karl Ernst Claus"
+  },
+  "occurrence": "One of the rarest stable elements in Earth's crust, found in trace amounts alongside platinum ores.",
+  "majorUses": [
+    "Wear-resistant electrical contact alloys",
+    "Catalysts in the chemical industry (including some solar cell dyes)",
+    "Hard-disk-drive coating layers"
+  ],
+  "notableCharacteristics": "Named 'Ruthenia', the Latin name for Russia, since it was discovered from ores mined in the Ural Mountains.",
+  "ncertRelevance": [
+    "platinum-group metal properties",
+    "catalytic applications"
+  ],
+  "whyHere": "As a platinum-group metal, its d-electrons are tightly held in a dense, unreactive lattice, which is exactly why ruthenium resists corrosion so well and works effectively as a hard-wearing catalytic and electrical-contact material.",
+  "didYouKnow": "A tiny fraction of ruthenium added to platinum or palladium dramatically increases the alloy's hardness, which is why it's used to make pen nibs and electrical contacts that need to survive constant wear.",
+  "genZNote": "Named after Russia, hangs out with platinum, and somehow ends up in your fountain pen nib.",
+  "relatedElements": [
+    "element-osmium",
+    "element-iron",
+    "element-rhodium"
+  ]
+}

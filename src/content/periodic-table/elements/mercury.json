@@ -1,0 +1,48 @@
+{
+  "id": "element-mercury",
+  "category": "element",
+  "atomicNumber": 80,
+  "symbol": "Hg",
+  "name": "Mercury",
+  "atomicMass": 200.59,
+  "elementCategory": "transition-metal",
+  "elementCategoryLabel": "Transition Metal",
+  "period": 6,
+  "block": "d",
+  "group": 12,
+  "phaseAtRoomTemp": "liquid",
+  "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s²",
+  "commonValency": "multiple",
+  "commonOxidationStates": [
+    "+2",
+    "+1"
+  ],
+  "electronegativityPauling": 2.0,
+  "density": "13.53 g/cm³",
+  "meltingPointC": -38.8,
+  "boilingPointC": 356.7,
+  "discovery": {
+    "discoverer": "Known since antiquity"
+  },
+  "occurrence": "Found combined as the ore cinnabar (mercury sulfide); rarely found free in nature.",
+  "majorUses": [
+    "Older thermometers and barometers (now largely phased out)",
+    "Fluorescent and compact fluorescent light bulbs",
+    "Historically in dental amalgam fillings"
+  ],
+  "safetyNotes": "Highly toxic in both elemental vapour and organic (methylmercury) forms, causing serious neurological damage — which is exactly why its use in thermometers, batteries, and dental fillings has been steadily phased out worldwide.",
+  "notableCharacteristics": "The only metallic element that is liquid at standard room temperature, a direct result of relativistic effects weakening the metallic bonds between its atoms.",
+  "ncertRelevance": [
+    "only liquid metal at room temperature",
+    "relativistic explanation for low melting point",
+    "toxicity/Minamata disease case study"
+  ],
+  "whyHere": "Like gold, mercury's fast-moving inner electrons experience relativistic effects strongly, but in mercury's case this actually weakens the metallic bonding between neighbouring atoms so much that it fails to solidify at room temperature at all.",
+  "didYouKnow": "Minamata disease, a severe and sometimes fatal neurological illness first identified in Japan in the 1950s, was traced directly to industrial mercury pollution accumulating in fish that local communities relied on for food.",
+  "genZNote": "The metal that said 'solid state is optional.' Beautiful liquid shimmer, deeply not something to touch casually.",
+  "relatedElements": [
+    "element-cadmium",
+    "element-zinc",
+    "element-gold"
+  ]
+}
