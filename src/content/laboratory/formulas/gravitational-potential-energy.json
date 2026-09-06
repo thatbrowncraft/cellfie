@@ -1,0 +1,59 @@
+{
+  "id": "formula-gravitational-potential-energy",
+  "category": "formula",
+  "title": "Gravitational Potential Energy (near Earth's surface)",
+  "subcategory": "Mechanics — Work, Energy and Power",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Work, Energy and Power",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT Class 11 aligned.",
+  "searchKeywords": [
+    "potential energy formula",
+    "mgh"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-conservation-of-energy"
+  ],
+  "domain": "Mechanics",
+  "expression": "PE = mgh",
+  "explanation": "This is the simplified form of gravitational potential energy valid close to Earth's surface, where the gravitational field strength g is approximately constant. PE is measured relative to an arbitrarily chosen reference height (h = 0) — only CHANGES in potential energy have unambiguous physical meaning, not the absolute value. Result is expressed in J (joule). Conditions/assumptions: Valid only for heights small compared to Earth's radius, where g can be treated as constant; use the general gravitational potential energy formula (-GMm/r) for large distances or astronomical scales",
+  "variables": [
+    {
+      "symbol": "PE",
+      "meaning": "Gravitational potential energy",
+      "unit": "J (joule)"
+    },
+    {
+      "symbol": "m",
+      "meaning": "Mass",
+      "unit": "kg"
+    },
+    {
+      "symbol": "g",
+      "meaning": "Acceleration due to gravity (≈9.8 m/s² near Earth's surface)",
+      "unit": "m/s²"
+    },
+    {
+      "symbol": "h",
+      "meaning": "Height above the chosen reference level",
+      "unit": "m"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A 5 kg object is lifted 3 m above the ground.",
+    "substitution": "PE = 5 × 9.8 × 3",
+    "result": "PE = 147 J"
+  },
+  "commonMistakes": [
+    "Using PE = mgh at large distances from Earth (e.g. satellite altitudes), where the general gravitational PE formula is required instead.",
+    "Forgetting that only the CHANGE in height/PE matters for most problems, not an absolute reference point."
+  ]
+}

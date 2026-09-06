@@ -1,0 +1,58 @@
+{
+  "id": "formula-newtons-second-law",
+  "category": "formula",
+  "title": "Newton's Second Law (F = ma)",
+  "subcategory": "Mechanics — Laws of Motion",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Laws of Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT Class 11 aligned.",
+  "searchKeywords": [
+    "f=ma",
+    "net force",
+    "newton's second law"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-newtons-laws-of-motion"
+  ],
+  "relatedFormulas": [
+    "formula-momentum"
+  ],
+  "domain": "Mechanics",
+  "expression": "F = ma  (more generally, F = dp/dt)",
+  "explanation": "The net force acting on an object equals the product of its mass and the acceleration produced. This is the simplified form for constant mass; the more general form states that net force equals the rate of change of momentum, which also correctly handles situations where mass itself changes (e.g. a rocket burning fuel). Result is expressed in N (newton). Conditions/assumptions: F must be the NET force — the vector sum of all forces acting on the object, not any single applied force",
+  "variables": [
+    {
+      "symbol": "F",
+      "meaning": "Net external force acting on the object",
+      "unit": "N (newton)"
+    },
+    {
+      "symbol": "m",
+      "meaning": "Mass of the object",
+      "unit": "kg"
+    },
+    {
+      "symbol": "a",
+      "meaning": "Acceleration produced",
+      "unit": "m/s²"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A net force of 20 N acts on a 4 kg object.",
+    "substitution": "a = F / m = 20 / 4",
+    "result": "a = 5 m/s²"
+  },
+  "commonMistakes": [
+    "Using only the applied force instead of the NET force (forgetting to subtract friction, gravity components, etc.).",
+    "Forgetting that F = ma assumes constant mass — variable-mass systems need the momentum form F = dp/dt instead."
+  ]
+}

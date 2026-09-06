@@ -1,0 +1,57 @@
+{
+  "id": "formula-universal-law-of-gravitation",
+  "category": "formula",
+  "title": "Newton's Universal Law of Gravitation",
+  "subcategory": "Mechanics — Gravitation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Gravitation",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT Class 11 aligned.",
+  "searchKeywords": [
+    "law of gravitation",
+    "inverse square law",
+    "big g"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "domain": "Mechanics",
+  "expression": "F = Gm₁m₂ / r²",
+  "explanation": "Every pair of masses in the universe attracts each other with a force directly proportional to the product of their masses and inversely proportional to the square of the distance between their centers. This inverse-square relationship means the force drops off very quickly with distance — doubling the separation reduces the force to one quarter. Result is expressed in N (newton).",
+  "variables": [
+    {
+      "symbol": "F",
+      "meaning": "Gravitational force between the two masses",
+      "unit": "N"
+    },
+    {
+      "symbol": "G",
+      "meaning": "Universal gravitational constant (≈6.674 × 10⁻¹¹ N·m²/kg²)",
+      "unit": "N·m²/kg²"
+    },
+    {
+      "symbol": "m₁, m₂",
+      "meaning": "The two masses",
+      "unit": "kg"
+    },
+    {
+      "symbol": "r",
+      "meaning": "Distance between the centers of the two masses",
+      "unit": "m"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Two 10 kg masses are 2 m apart.",
+    "substitution": "F = (6.674 × 10⁻¹¹)(10)(10) / (2²)",
+    "result": "F ≈ 1.67 × 10⁻⁹ N (extremely small — gravity between everyday objects is negligible)"
+  },
+  "commonMistakes": [
+    "Forgetting that r is measured between the CENTERS of the masses, not their surfaces.",
+    "Not squaring r — a very common arithmetic slip given the inverse-SQUARE relationship."
+  ]
+}

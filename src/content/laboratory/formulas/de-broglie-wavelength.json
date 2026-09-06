@@ -1,0 +1,66 @@
+{
+  "id": "formula-de-broglie-wavelength",
+  "category": "formula",
+  "title": "de Broglie Wavelength",
+  "subcategory": "Modern Physics — Dual Nature of Matter",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part II, Class 12 — Dual Nature of Radiation and Matter",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT Class 12 aligned.",
+  "searchKeywords": [
+    "matter wave",
+    "wave particle duality",
+    "electron wavelength"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-photoelectric-effect",
+    "concept-bohr-model"
+  ],
+  "domain": "Modern Physics",
+  "expression": "λ = h / p = h / (mv)",
+  "explanation": "De Broglie proposed that all matter, not just light, has an associated wave nature, with wavelength inversely proportional to momentum. This wave nature is only practically observable for very small masses (like electrons); for macroscopic objects, the wavelength is so absurdly small it has no measurable effect, which is why everyday objects don't visibly display wave behavior. Result is expressed in m (meters).",
+  "variables": [
+    {
+      "symbol": "λ",
+      "meaning": "de Broglie wavelength",
+      "unit": "m"
+    },
+    {
+      "symbol": "h",
+      "meaning": "Planck's constant (≈6.626 × 10⁻³⁴ J·s)",
+      "unit": "J·s"
+    },
+    {
+      "symbol": "p",
+      "meaning": "Momentum of the particle",
+      "unit": "kg·m/s"
+    },
+    {
+      "symbol": "m",
+      "meaning": "Mass of the particle",
+      "unit": "kg"
+    },
+    {
+      "symbol": "v",
+      "meaning": "Velocity of the particle",
+      "unit": "m/s"
+    }
+  ],
+  "workedExample": {
+    "scenario": "An electron (mass ≈9.1 × 10⁻³¹ kg) moves at 2 × 10⁶ m/s.",
+    "substitution": "λ = (6.626 × 10⁻³⁴) / (9.1 × 10⁻³¹ × 2 × 10⁶)",
+    "result": "λ ≈ 3.64 × 10⁻¹⁰ m (about the size of an atom — measurable wave effects)"
+  },
+  "commonMistakes": [
+    "Computing a de Broglie wavelength for a macroscopic object and treating the (extremely tiny) result as physically significant.",
+    "Confusing momentum p with kinetic energy when only KE is given — first convert KE to momentum via p = √(2mKE)."
+  ]
+}
