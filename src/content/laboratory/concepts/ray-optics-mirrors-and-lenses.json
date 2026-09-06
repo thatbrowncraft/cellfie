@@ -1,0 +1,43 @@
+{
+  "id": "concept-ray-optics-mirrors-and-lenses",
+  "category": "concept",
+  "title": "Ray Optics: Reflection, Refraction, Mirrors and Lenses",
+  "subcategory": "Ray Optics and Optical Instruments — Mirrors, Lenses, Refraction, Total Internal Reflection",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Ray Optics and Optical Instruments",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "mirror formula",
+    "lens formula",
+    "refractive index",
+    "total internal reflection",
+    "power of a lens"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-wave-optics-interference-diffraction-polarization"
+  ],
+  "relatedFormulas": [
+    "formula-mirror-and-lens-magnification"
+  ],
+  "summary": "Ray optics treats light as travelling in straight lines (rays) that reflect off mirrors and refract (bend) when crossing between media of different refractive index, with sign-convention-based formulas predicting image position, nature and magnification.",
+  "explanation": "Reflection from mirrors follows the mirror formula 1/v + 1/u = 1/f (with the Cartesian sign convention: distances measured from the pole, distances in the direction of incident light taken positive), with a CONCAVE mirror's focal length taken negative and a CONVEX mirror's positive in that convention. Linear magnification m = −v/u tells both size ratio and orientation (negative m = inverted image). Refraction occurs because light changes speed crossing between media of different refractive index (n = c/v, always ≥ 1 for a medium relative to vacuum); Snell's law n₁sinθ₁ = n₂sinθ₂ governs the bending. Total internal reflection (TIR) occurs ONLY when light travels from a denser (higher n) to a rarer (lower n) medium at an angle of incidence GREATER than the critical angle θc (where sinθc = n₂/n₁, n₂ < n₁) — beyond this angle, 100% of light reflects back into the denser medium instead of refracting out. This is impossible in the reverse direction (rarer to denser). TIR is the working principle of optical fibres and explains the sparkle of a well-cut diamond. For thin lenses, the lens formula 1/v − 1/u = 1/f applies (same sign convention), with a CONVEX (converging) lens having positive f and a CONCAVE (diverging) lens negative f. Lens power P = 1/f (in metres), measured in dioptres (D) — this ADDITIVE property (net power of lenses in contact = sum of individual powers) is why spectacle prescriptions are given directly in dioptres. For a combination of lenses in contact, powers simply add: P = P₁ + P₂ + ...; this is far more convenient than combining focal lengths directly, which requires reciprocals.",
+  "commonMisconceptions": [
+    "Forgetting sign convention rules and plugging in magnitudes only — a wrongly signed u, v, or f is one of the single most common sources of error in ray optics numericals.",
+    "Believing total internal reflection can happen going from a rarer to a denser medium — TIR strictly requires travel from denser to rarer medium at an angle beyond the critical angle; the reverse direction never produces TIR no matter the angle.",
+    "Assuming a diverging (concave) lens can ever form a real, inverted, magnified image of a real object — a single concave lens always forms a virtual, erect, diminished image for a real object, regardless of object distance."
+  ],
+  "examples": [
+    "Optical fibres transmit light over long distances via repeated total internal reflection at the core-cladding boundary, with minimal loss.",
+    "A converging (convex) lens of power +2 D has focal length 0.5 m and can form a real, inverted image when the object is placed beyond its focus."
+  ],
+  "genZNote": "Total internal reflection: light said 'I'm not leaving this medium' and meant it — past the critical angle, there's no escape."
+}

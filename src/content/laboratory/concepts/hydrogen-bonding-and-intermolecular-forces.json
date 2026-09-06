@@ -1,0 +1,41 @@
+{
+  "id": "concept-hydrogen-bonding-and-intermolecular-forces",
+  "category": "concept",
+  "title": "Hydrogen Bonding and Intermolecular Forces",
+  "subcategory": "States of Matter / Chemical Bonding — Intermolecular Forces, Hydrogen Bonding",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — States of Matter; Chemical Bonding and Molecular Structure",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "hydrogen bonding",
+    "van der Waals forces",
+    "dipole-dipole interaction",
+    "London dispersion forces",
+    "boiling point trend"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-chemical-bonding-and-vsepr"
+  ],
+  "relatedFormulas": [],
+  "summary": "Intermolecular forces (much weaker than covalent/ionic bonds) determine physical properties like boiling point and viscosity; hydrogen bonding is a special, unusually strong dipole interaction that occurs only when H is bonded directly to a highly electronegative, small atom (F, O, N).",
+  "explanation": "Van der Waals forces is an umbrella term covering several types of weak, short-range intermolecular attractions: London dispersion forces (present in ALL molecules, arising from instantaneous, temporary dipoles due to electron motion — the ONLY intermolecular force in non-polar molecules, and the reason even noble gases can be liquefied); dipole-dipole forces (between polar molecules with permanent dipoles, stronger than dispersion forces alone for molecules of similar size); and dipole-induced dipole forces. Hydrogen bonding is a special, unusually strong type of dipole-dipole attraction that forms specifically when hydrogen is COVALENTLY bonded to a small, highly electronegative atom (F, O, or N only) — the resulting highly polarized H develops a strong partial positive charge that is then attracted to a lone pair on an electronegative atom (F, O, N) of a NEIGHBOURING molecule. Hydrogen bonding explains several 'anomalies': water's unusually high boiling point compared to H₂S (same group, but S is larger/less electronegative, no hydrogen bonding), ice being less dense than liquid water (the open, hexagonal hydrogen-bonded lattice in ice has more empty space than the more compact, less-ordered liquid), and the unusually high boiling points of HF, H₂O, and NH₃ compared to the trend expected from the rest of their respective groups (H-halides, H-chalcogens, H-pnictogens). Generally, stronger intermolecular forces correspond to higher boiling/melting points (more energy needed to separate molecules), higher viscosity, and higher surface tension.",
+  "commonMisconceptions": [
+    "Believing hydrogen bonding can occur whenever hydrogen is present in a molecule — it strictly requires H bonded DIRECTLY to F, O, or N (not to C, S, or other elements, whose electronegativity/size don't create a strong enough effect) to be called a true hydrogen bond.",
+    "Assuming London dispersion forces are negligible or absent in polar molecules — dispersion forces exist in EVERY molecule (polar or non-polar) and can even dominate total intermolecular attraction in large molecules, despite being individually weak.",
+    "Treating hydrogen bonds as comparable in strength to covalent or ionic bonds — hydrogen bonds are roughly 5-10% the strength of a typical covalent bond, though still much stronger than ordinary van der Waals forces."
+  ],
+  "examples": [
+    "Water (H₂O, extensive hydrogen bonding) boils at 100°C, while H₂S (same group, no hydrogen bonding) boils at −60°C, despite S being heavier than O.",
+    "DNA's double helix is held together partly by hydrogen bonds between complementary base pairs, allowing the strands to separate and rejoin during replication."
+  ],
+  "genZNote": "Hydrogen bonding: exclusive membership, F/O/N only — everyone else just gets regular van der Waals forces."
+}

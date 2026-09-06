@@ -49,5 +49,6 @@
   ],
   "examples": [
     "Physisorption: gas molecules weakly held on activated charcoal at low temperature. Chemisorption: hydrogen chemically bonding to a nickel catalyst surface during hydrogenation."
-  ]
+  ],
+  "genZNote": "Physisorption is a casual hangout on the surface; chemisorption is a committed bond."
 }

@@ -1,0 +1,44 @@
+{
+  "id": "concept-wave-optics-interference-diffraction-polarization",
+  "category": "concept",
+  "title": "Wave Optics: Interference, Diffraction and Polarization",
+  "subcategory": "Wave Optics — Young's Double Slit, Diffraction, Polarization",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Wave Optics",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Young's double slit experiment",
+    "interference",
+    "diffraction",
+    "polarization",
+    "coherent sources"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-ray-optics-mirrors-and-lenses",
+    "concept-wave-motion-and-doppler-effect"
+  ],
+  "relatedFormulas": [
+    "formula-youngs-double-slit"
+  ],
+  "summary": "Interference (from two coherent sources) and diffraction (bending of light around obstacles/through narrow openings) are both consequences of light's wave nature (superposition), while polarization — restricting a transverse wave's vibration to one plane — is possible only because light is a transverse wave, distinguishing it from longitudinal waves like sound.",
+  "explanation": "Young's double-slit experiment demonstrated that light shows interference: two coherent sources (constant phase relationship, same frequency — obtained in practice from a single source split into two, since two independent sources are never perfectly coherent) produce alternating bright (constructive interference, path difference = nλ) and dark (destructive interference, path difference = (n+½)λ) fringes on a screen, with fringe width β = λD/d (D = slit-to-screen distance, d = slit separation). Diffraction is the bending of waves around obstacles or spreading through narrow apertures, becoming significant when the aperture/obstacle size is comparable to the wavelength — this is why sound (long wavelength) diffracts noticeably around corners in everyday life, while light's diffraction (much shorter wavelength) is only obvious with very narrow slits. A single-slit diffraction pattern has a wide, bright central maximum flanked by much dimmer secondary maxima, distinctly different from the EQUALLY spaced, EQUALLY bright fringes of double-slit interference. Polarization restricts the vibration of a transverse wave's electric field to a single plane; since polarization is only possible for TRANSVERSE waves (not longitudinal), the fact that light can be polarized was itself historical evidence that light is a transverse wave. Malus's law gives the intensity after passing through a polaroid: I = I₀cos²θ, where θ is the angle between the polarizer's transmission axis and the incoming polarization direction. The key structural difference between interference and diffraction: interference results from a small (usually two) number of coherent sources with EQUAL intensity, EQUALLY spaced, EQUALLY bright fringes, while diffraction results from secondary wavelets from a continuous single slit/obstacle, with UNEQUAL width and UNEQUAL (rapidly decreasing) intensity of fringes.",
+  "commonMisconceptions": [
+    "Treating interference and diffraction as entirely separate/unrelated phenomena — both fundamentally arise from the superposition principle applied to waves; the distinction is more about the SOURCE configuration (few discrete coherent sources vs. a continuous distribution of wavelets from one aperture) than the underlying physics.",
+    "Assuming any two independent light bulbs can show a stable interference pattern — genuine sustained interference needs COHERENT sources (constant phase difference), which independent everyday sources never provide, since they emit light with a randomly varying phase.",
+    "Believing sound waves can be polarized just like light — polarization is possible only for TRANSVERSE waves; sound is longitudinal and cannot be polarized."
+  ],
+  "examples": [
+    "Young's double-slit experiment with monochromatic light produces evenly spaced bright and dark fringes on a screen — direct evidence of light's wave nature.",
+    "Polaroid sunglasses block strongly polarized glare (e.g., reflected off water or roads) because their transmission axis is oriented to reject that particular polarization direction."
+  ],
+  "genZNote": "Interference and diffraction: both wave superposition flexing, just with a different guest list of sources."
+}

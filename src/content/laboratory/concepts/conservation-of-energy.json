@@ -20,16 +20,20 @@
   "difficulty": "beginner",
   "subjectDomain": "physics",
   "relatedFormulas": [
+    "formula-gravitational-potential-energy",
     "formula-kinetic-energy",
-    "formula-gravitational-potential-energy"
+    "formula-work-done-by-a-force"
   ],
-  "summary": "In the absence of non-conservative forces like friction, the total mechanical energy (kinetic + potential) of a system stays constant, even as it converts between the two forms.",
-  "explanation": "As an object moves under a conservative force (like gravity), energy continuously converts between kinetic and potential forms, but the sum stays fixed. A ball dropped from height loses potential energy exactly as fast as it gains kinetic energy. When non-conservative forces (friction, air resistance) act, mechanical energy is no longer conserved on its own — some is converted to heat/sound — but the broader principle, total energy conservation across all forms, always holds.",
+  "summary": "In an isolated system, total energy is always conserved — it can change FORM (kinetic, potential, thermal, chemical, etc.) but the total amount never increases or decreases.",
+  "explanation": "The law of conservation of energy states that energy can neither be created nor destroyed, only converted from one form to another — for a system where only conservative forces (like gravity, spring force) do work, mechanical energy (KE + PE) specifically stays constant: Ei = Ef, i.e., KEi + PEi = KEf + PEf. This is why a frictionless pendulum or a ball in free fall (ignoring air resistance) can be analysed by simply equating total mechanical energy at any two points, without needing to track forces/time step by step — as the ball falls, PE converts to KE while the total stays fixed. When NON-conservative forces (like friction or air resistance) are present, mechanical energy is NOT conserved by itself — some mechanical energy converts to heat/sound, but TOTAL energy (mechanical + thermal + all other forms) is still always conserved; this is the broader, universally true statement, of which 'conservation of mechanical energy' is only a special case valid for conservative-force-only systems. A conservative force is one where work done depends only on initial and final position, NOT on the path taken (gravity, spring force, electrostatic force); a non-conservative force (friction, air drag) has path-dependent work, and by definition dissipates mechanical energy into other, less easily recoverable forms like heat. This principle underlies the FIRST LAW OF THERMODYNAMICS (a more general statement of energy conservation applied to heat/work/internal energy) and extends, via mass-energy equivalence (E = mc²), to nuclear processes where mass itself converts to energy.",
   "commonMisconceptions": [
-    "Applying 'conservation of mechanical energy' in situations with significant friction or air resistance without accounting for the energy lost to those forces.",
-    "Confusing 'conservation of mechanical energy' (a special case) with the universal 'conservation of energy' (which always holds, but may require tracking heat, sound, etc.)."
+    "Assuming mechanical energy alone is always conserved in every situation — it is only conserved when NON-conservative forces (like friction) are absent or negligible; otherwise, total energy (including heat generated) is what's actually conserved.",
+    "Believing energy 'lost' to friction has disappeared — it has merely converted into other forms (usually heat and sound), which are harder to recover as useful mechanical energy but are still fully accounted for in the total energy balance.",
+    "Treating conservation of energy and conservation of momentum as the same principle — they are two SEPARATE conservation laws that can each hold or not hold independently in a given collision (e.g. an inelastic collision conserves momentum but not kinetic energy)."
   ],
   "examples": [
-    "A pendulum swinging (ignoring air resistance): at the highest points, all energy is potential; at the lowest point, all energy is kinetic; the total stays constant throughout the swing."
-  ]
+    "A ball dropped from height h converts all its initial gravitational PE (mgh) into KE just before hitting the ground (ignoring air resistance), reaching speed v = √(2gh).",
+    "A roller coaster car at the top of a hill has maximum PE and minimum KE; as it descends, PE converts to KE, with the sum staying constant (ignoring friction and air resistance)."
+  ],
+  "genZNote": "Energy doesn't disappear, it just changes outfits — from potential to kinetic to heat and back."
 }

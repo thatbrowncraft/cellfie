@@ -1,0 +1,43 @@
+{
+  "id": "concept-gibbs-energy-and-spontaneity",
+  "category": "concept",
+  "title": "Entropy, Gibbs Energy and Spontaneity",
+  "subcategory": "Thermodynamics — Entropy, Gibbs Free Energy, Spontaneity",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Chemical Thermodynamics",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "entropy",
+    "Gibbs free energy",
+    "spontaneous process",
+    "second law of thermodynamics",
+    "enthalpy vs entropy"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-le-chateliers-principle"
+  ],
+  "relatedFormulas": [
+    "formula-hess-law"
+  ],
+  "summary": "Entropy measures the degree of disorder/randomness of a system; a process's spontaneity is decided not by enthalpy change alone but by Gibbs free energy change (ΔG = ΔH − TΔS), which combines both enthalpy and entropy effects, weighted by temperature.",
+  "explanation": "Entropy (S) is a measure of the randomness or disorder of a system's molecular arrangement; the second law of thermodynamics states that for any spontaneous process, the TOTAL entropy of the universe (system + surroundings) always increases (ΔSuniverse > 0). A common early misconception is that all spontaneous (exothermic) reactions release heat, i.e., that ΔH < 0 alone predicts spontaneity — this is not generally true; some spontaneous processes are endothermic (like ice melting above 0°C, or ammonium nitrate dissolving in water), driven instead by a large increase in entropy. Gibbs free energy change, ΔG = ΔH − TΔS, correctly combines BOTH effects and directly predicts spontaneity at constant temperature and pressure: ΔG < 0 means the process is spontaneous (feasible) in the forward direction; ΔG > 0 means non-spontaneous (spontaneous in reverse); ΔG = 0 means the system is at equilibrium. This gives four combinations: ΔH < 0, ΔS > 0 → always spontaneous (ΔG always negative); ΔH > 0, ΔS < 0 → never spontaneous (ΔG always positive); ΔH < 0, ΔS < 0 → spontaneous only at LOW temperature (TΔS term small); ΔH > 0, ΔS > 0 → spontaneous only at HIGH temperature (TΔS term dominates and outweighs positive ΔH). ΔG is also directly related to the equilibrium constant, ΔG° = −RT ln K, connecting thermodynamic feasibility to how far a reaction proceeds toward products at equilibrium.",
+  "commonMisconceptions": [
+    "Believing only exothermic reactions (ΔH < 0) can be spontaneous — many spontaneous processes are endothermic, driven by a sufficiently large positive ΔS that makes TΔS outweigh a positive ΔH.",
+    "Treating 'spontaneous' as meaning 'fast' — spontaneity (thermodynamic favourability, sign of ΔG) says nothing about the RATE of a reaction, which is a kinetics question; a spontaneous reaction can still be extremely slow (e.g. diamond converting to graphite).",
+    "Forgetting that the sign of ΔG for a temperature-dependent case (ΔH and ΔS same sign) can FLIP with temperature — a very common numerical exam trap in feasibility calculations."
+  ],
+  "examples": [
+    "Ice melting above 0°C is spontaneous and endothermic (ΔH > 0) — driven by the large positive entropy change (ΔS) as ordered solid becomes disordered liquid.",
+    "The Haber process (N₂ + 3H₂ ⇌ 2NH₃) has ΔS < 0 (gas moles decrease), so despite being exothermic it is favoured at LOWER temperature — a classic case where entropy opposes enthalpy."
+  ],
+  "genZNote": "ΔG is the real decision-maker — enthalpy alone doesn't get final say on whether a reaction happens."
+}

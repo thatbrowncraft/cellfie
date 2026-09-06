@@ -1,0 +1,42 @@
+{
+  "id": "concept-scalars-and-vectors",
+  "category": "concept",
+  "title": "Scalars and Vectors",
+  "subcategory": "Physical World & Units — Vectors",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Motion in a Plane",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "scalar quantity",
+    "vector quantity",
+    "vector addition",
+    "resultant",
+    "unit vector"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-distance-vs-displacement",
+    "concept-projectile-motion"
+  ],
+  "relatedFormulas": [],
+  "summary": "A scalar has only magnitude; a vector has both magnitude and direction, and vectors must be combined using vector algebra, not ordinary addition.",
+  "explanation": "A scalar quantity (mass, distance, speed, temperature, energy, time) is completely described by a number and a unit. A vector quantity (displacement, velocity, acceleration, force, momentum) needs a magnitude AND a direction to be fully specified. Because direction matters, vectors add by the triangle/parallelogram law rather than plain arithmetic: two vectors of magnitude 3 and 4 units can give a resultant anywhere from 1 to 7 depending on the angle between them (resultant R = √(A² + B² + 2AB cosθ)). A unit vector (magnitude 1, written with a cap, e.g. î, ĵ, k̂) specifies pure direction along the x, y, z axes, so any vector A can be written as A = Axî + Ayĵ + Azk̂. Vector subtraction is addition of the negative vector (−B reverses B's direction), and the dot product (scalar result, A·B = AB cosθ) versus cross product (vector result, |A×B| = AB sinθ, direction by the right-hand rule) are the two ways vectors combine to give physically meaningful scalar or vector outputs — work is a dot product, torque is a cross product.",
+  "commonMisconceptions": [
+    "Assuming two vectors always add like plain numbers (e.g. 3 + 4 = 7) — this is only true when they point in exactly the same direction; the angle between them changes the resultant.",
+    "Treating negative sign on a scalar-looking component as meaning 'negative magnitude' — for a vector it just means the component points opposite to the chosen positive axis.",
+    "Confusing the dot product (gives a scalar, used for work) with the cross product (gives a vector, used for torque and angular momentum)."
+  ],
+  "examples": [
+    "Two forces of 3 N and 4 N acting at right angles combine to a resultant of 5 N (3-4-5 triangle), not 7 N.",
+    "Displacement of 5 m east is a vector; distance travelled of 5 m has no direction attached and is a scalar."
+  ],
+  "genZNote": "Magnitude alone isn't enough — vectors need a whole GPS pin, not just a number."
+}

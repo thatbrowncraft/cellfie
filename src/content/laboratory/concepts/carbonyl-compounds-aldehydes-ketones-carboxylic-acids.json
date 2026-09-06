@@ -1,0 +1,41 @@
+{
+  "id": "concept-carbonyl-compounds-aldehydes-ketones-carboxylic-acids",
+  "category": "concept",
+  "title": "Aldehydes, Ketones and Carboxylic Acids",
+  "subcategory": "Aldehydes, Ketones and Carboxylic Acids — Nucleophilic Addition, Tests, Acidity",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 12 — Aldehydes, Ketones and Carboxylic Acids",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "nucleophilic addition",
+    "aldol condensation",
+    "Tollens test",
+    "carboxylic acid acidity",
+    "haloform reaction"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-alcohols-phenols-and-ethers"
+  ],
+  "relatedFormulas": [],
+  "summary": "Aldehydes and ketones share a reactive carbonyl group that undergoes nucleophilic addition (aldehydes generally more reactive than ketones), and can be distinguished by specific tests; carboxylic acids are significantly more acidic than either, due to strong resonance stabilisation of the carboxylate ion.",
+  "explanation": "The carbonyl carbon (C=O) is electrophilic (partial positive charge, since O is more electronegative), making both aldehydes (R-CHO) and ketones (R-CO-R') susceptible to NUCLEOPHILIC ADDITION reactions (e.g. with HCN, NaHSO₃, Grignard reagents, alcohols to form acetals). Aldehydes are generally MORE reactive toward nucleophilic addition than ketones, due to less steric hindrance (only one alkyl/aryl group instead of two) and less electron-donation (inductive effect) stabilising the carbonyl carbon's partial positive charge. Aldehydes and ketones are distinguished experimentally: Tollens' test (ammoniacal AgNO₃) gives a bright SILVER MIRROR with aldehydes (which are oxidised to carboxylic acids, reducing Ag⁺ to metallic Ag) but NO reaction with ketones (which lack that easily-oxidisable H on the carbonyl carbon); Fehling's test similarly gives a brick-red Cu₂O precipitate with (particularly aliphatic) aldehydes but not with ketones. Aldol condensation occurs when an aldehyde/ketone WITH an α-hydrogen reacts with a base, forming a β-hydroxy aldehyde/ketone (aldol) that often dehydrates further to give an α,β-unsaturated carbonyl compound — this requires an α-hydrogen to be present, so compounds lacking one (like benzaldehyde) cannot self-aldol-condense (though they can undergo the related Cannizzaro reaction instead, a disproportionation into an alcohol and a carboxylate, specific to aldehydes with NO α-hydrogen). The haloform (iodoform) reaction is a specific, useful test for a methyl ketone (CH₃-CO-R) or any compound oxidisable to one (like ethanol or acetaldehyde specifically, among alcohols) — it gives a distinctive yellow precipitate of iodoform (CHI₃) with I₂/NaOH. Carboxylic acids (R-COOH) are considerably MORE ACIDIC than alcohols or even phenols, because the carboxylate ion (RCOO⁻) is stabilised by resonance delocalisation of the negative charge equally over BOTH oxygen atoms — a more effective, symmetric resonance than phenoxide's ring delocalisation. Electron-withdrawing groups (like -Cl, -NO₂) near the -COOH group increase acidity further (inductive effect), while electron-donating alkyl groups decrease it.",
+  "commonMisconceptions": [
+    "Assuming ketones give a positive Tollens' or Fehling's test just like aldehydes — ketones consistently give a NEGATIVE result for both tests, since they lack the easily oxidisable hydrogen directly on the carbonyl carbon that aldehydes have.",
+    "Trying an aldol condensation on a carbonyl compound with NO α-hydrogen (like benzaldehyde) — such compounds cannot self-condense via the aldol pathway and instead follow the distinct Cannizzaro reaction (self-oxidation-reduction) when treated with concentrated base.",
+    "Ranking carboxylic acid acidity lower than or similar to phenol — carboxylic acids are substantially MORE acidic than phenols, because carboxylate resonance spreads charge symmetrically over two equivalent oxygens, a stronger stabilisation than phenoxide's ring delocalisation."
+  ],
+  "examples": [
+    "Acetaldehyde gives a positive iodoform test (yellow CHI₃ precipitate) because it's a methyl carbonyl-adjacent compound, while formaldehyde and acetone give characteristically different (formaldehyde negative, acetone positive) results based on their exact structure.",
+    "Benzaldehyde, having no α-hydrogen, undergoes the Cannizzaro reaction with concentrated NaOH, forming benzyl alcohol and sodium benzoate simultaneously."
+  ],
+  "genZNote": "No α-hydrogen? No aldol condensation for you — Cannizzaro's the only self-reaction option left."
+}

@@ -1,0 +1,42 @@
+{
+  "id": "concept-first-law-of-thermodynamics",
+  "category": "concept",
+  "title": "First Law of Thermodynamics and Thermodynamic Processes",
+  "subcategory": "Thermodynamics — First Law, Isothermal, Adiabatic, Cyclic Processes",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Thermodynamics",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "first law of thermodynamics",
+    "internal energy",
+    "isothermal process",
+    "adiabatic process",
+    "specific heat Cp Cv"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-thermal-expansion-and-calorimetry",
+    "concept-kinetic-theory-of-gases"
+  ],
+  "relatedFormulas": [],
+  "summary": "The first law of thermodynamics (a statement of energy conservation) says heat supplied to a system equals the increase in its internal energy plus the work done by it; the type of process (isothermal, adiabatic, isochoric, isobaric, cyclic) fixes which term dominates.",
+  "explanation": "The first law is ΔQ = ΔU + ΔW, where ΔQ is heat supplied to the system, ΔU is the change in internal energy (a state function — depends only on initial/final states, not the path taken), and ΔW is work done BY the system. It is essentially energy conservation applied to thermal systems: energy cannot be created or destroyed, only converted between heat, internal energy, and work. In an isothermal process (constant temperature, requires a good thermal conductor and infinitely slow/quasi-static change so heat can be exchanged), ΔU = 0 for an ideal gas, so all heat supplied converts entirely into work: ΔQ = ΔW. In an adiabatic process (no heat exchange with surroundings, ΔQ = 0, requires a perfect insulator or a very fast/sudden change so there's no time for heat exchange), ΔU = −ΔW: work done by the gas comes entirely at the expense of its internal energy, so an adiabatically expanding gas always cools. In an isochoric (constant volume) process, ΔW = 0 so ΔQ = ΔU entirely; in an isobaric (constant pressure) process, both terms are generally non-zero. In a cyclic process, the system returns to its initial state, so ΔU = 0 over the full cycle, meaning total heat supplied over the cycle equals total work done by the system — the basis of heat engines. The two specific heats of a gas, Cp (constant pressure) and Cv (constant volume), differ because at constant pressure some heat must additionally do expansion work; for an ideal gas, Cp − Cv = R (Mayer's relation).",
+  "commonMisconceptions": [
+    "Confusing an isothermal process (temperature constant, ΔU = 0) with an adiabatic process (no heat exchange, ΔQ = 0) — students often mix up which quantity is held at zero.",
+    "Thinking internal energy depends on the path taken between two states — it is a state function, so ΔU is the same regardless of the process connecting the same initial and final states; heat and work, however, ARE path-dependent.",
+    "Assuming Cp = Cv for a gas — they always differ (Cp > Cv) because heating at constant pressure requires extra energy to do expansion work, which constant-volume heating does not."
+  ],
+  "examples": [
+    "A gas expanding adiabatically (rapid expansion, no time for heat exchange) cools down noticeably, as seen when compressed gas from an aerosol can feels cold on release.",
+    "A Carnot engine's cycle alternates isothermal and adiabatic steps, returning the gas to its starting state each cycle (ΔU = 0 overall)."
+  ],
+  "genZNote": "First law of thermodynamics: energy's not disappearing, it's just switching lanes between heat, work, and internal energy."
+}

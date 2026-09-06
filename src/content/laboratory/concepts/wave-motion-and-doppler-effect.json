@@ -1,0 +1,43 @@
+{
+  "id": "concept-wave-motion-and-doppler-effect",
+  "category": "concept",
+  "title": "Wave Motion, Standing Waves and the Doppler Effect",
+  "subcategory": "Waves — Wave Motion, Superposition, Standing Waves, Doppler Effect",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Waves",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "transverse wave",
+    "longitudinal wave",
+    "standing wave",
+    "beats",
+    "Doppler effect"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-simple-harmonic-motion"
+  ],
+  "relatedFormulas": [
+    "formula-wave-speed-and-doppler-effect"
+  ],
+  "summary": "Waves transport energy (not matter) through a medium via oscillations; when two waves of the same frequency travel in opposite directions they superpose to form standing waves, and relative motion between source and observer shifts the perceived frequency (Doppler effect).",
+  "explanation": "A mechanical wave requires a medium and transfers energy via particle oscillations without net transport of matter. In a transverse wave (e.g. on a string), particles oscillate perpendicular to the direction of wave travel; in a longitudinal wave (e.g. sound), particles oscillate parallel to it, creating compressions and rarefactions. Wave speed v = fλ (frequency × wavelength) relates the two key wave descriptors. The principle of superposition says that when two or more waves overlap, the resultant displacement is simply the (vector) sum of individual displacements — this underlies both interference and standing waves. A standing (stationary) wave forms when two identical waves travel in opposite directions (e.g. an incident wave and its reflection) and superpose, producing fixed points of zero displacement (nodes) and maximum displacement (antinodes) that don't travel — unlike a travelling wave, no net energy flows past a node. Musical instruments (strings, air columns) rely on standing wave patterns to produce specific resonant frequencies (fundamental and overtones/harmonics). Beats arise when two waves of slightly different frequencies superpose, producing a periodic rise and fall in amplitude (loudness for sound) at a beat frequency = |f1 − f2| — used practically to tune musical instruments. The Doppler effect is the apparent change in frequency due to relative motion between source and observer: frequency appears higher when they approach each other, lower when receding — used in radar speed guns, medical ultrasound (blood flow), and astronomy (redshift indicating a receding galaxy).",
+  "commonMisconceptions": [
+    "Thinking a wave transports matter along with energy — particles of the medium oscillate about a fixed mean position; only the disturbance (energy/pattern) propagates.",
+    "Believing nodes are points of zero energy in a standing wave — nodes have zero DISPLACEMENT but the medium there still has kinetic energy transferred from neighbouring antinodes at certain instants (for a stretched string, actually zero velocity too; care depends on the specific wave type in exam context).",
+    "Assuming the Doppler shift requires the OBSERVER to be moving — a moving source alone (or both moving) produces the same qualitative frequency shift."
+  ],
+  "examples": [
+    "A guitar string plucked produces a standing wave with fixed nodes at both ends and a specific fundamental frequency depending on string length, tension, and mass per unit length.",
+    "An ambulance siren sounds higher-pitched as it approaches and lower-pitched as it moves away — the Doppler effect."
+  ],
+  "genZNote": "Doppler effect: the siren isn't actually changing pitch, your relative position is just being dramatic about it."
+}

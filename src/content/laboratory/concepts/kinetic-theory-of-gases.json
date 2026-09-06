@@ -1,0 +1,43 @@
+{
+  "id": "concept-kinetic-theory-of-gases",
+  "category": "concept",
+  "title": "Kinetic Theory of Gases",
+  "subcategory": "Kinetic Theory — Assumptions, Pressure, RMS Speed, Degrees of Freedom",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Kinetic Theory",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "kinetic theory of gases",
+    "rms speed",
+    "degrees of freedom",
+    "equipartition of energy",
+    "mean free path"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-first-law-of-thermodynamics"
+  ],
+  "relatedFormulas": [
+    "formula-ideal-gas-equation"
+  ],
+  "summary": "Kinetic theory explains the macroscopic behaviour of gases (pressure, temperature) as arising from the microscopic random motion and collisions of a huge number of molecules, connecting temperature directly to average molecular kinetic energy.",
+  "explanation": "Kinetic theory assumes gas molecules are point masses (negligible volume compared to the container), in constant random motion, undergoing perfectly elastic collisions with each other and the container walls, with no intermolecular forces except during collisions — assumptions that approximate real gases well only at low pressure and high temperature. Pressure arises from the continuous bombardment of molecules on the container walls; kinetic theory derives PV = (1/3)Nm⟨v²⟩, which, compared with the ideal gas equation PV = nRT, shows that average kinetic energy per molecule = (3/2)kBT — temperature is fundamentally a measure of the average translational kinetic energy of molecules, not a separate independent quantity. RMS speed vrms = √(3kBT/m) = √(3RT/M) is the square root of the mean of the squared speeds, always slightly larger than the average speed, because squaring gives more weight to faster molecules. The law of equipartition of energy assigns (1/2)kBT of energy to each independent degree of freedom (translational, rotational, vibrational) a molecule has: monatomic gases (3 translational DOF) have internal energy (3/2)RT per mole; diatomic gases (3 translational + 2 rotational, at ordinary temperatures) have (5/2)RT per mole — directly explaining why diatomic gases have higher specific heats than monatomic gases. Mean free path is the average distance a molecule travels between successive collisions — inversely related to molecular size and number density, explaining why diffusion is slow in gases despite very high molecular speeds (molecules constantly collide and change direction).",
+  "commonMisconceptions": [
+    "Believing gas molecules move in straight, uninterrupted lines over macroscopic distances — the very high collision frequency (short mean free path) means real molecular paths are extremely zig-zagged.",
+    "Thinking RMS speed is the same as average speed — mean of squares then square-rooted is always ≥ the plain average due to Cauchy-Schwarz-type weighting, a frequent numerical-comparison exam trap.",
+    "Applying the same specific heat/internal energy formula to monatomic and diatomic gases — the extra rotational degrees of freedom in diatomic molecules add extra energy terms per the equipartition theorem."
+  ],
+  "examples": [
+    "Helium (monatomic) and nitrogen (diatomic) at the same temperature have the same average translational KE, but nitrogen's total internal energy is higher because of its extra rotational degrees of freedom.",
+    "Perfume takes time to diffuse across a room despite molecules moving at hundreds of m/s, because of the very short mean free path between constant collisions."
+  ],
+  "genZNote": "Temperature is just molecules' average kinetic energy flexing — no thermometer magic involved."
+}

@@ -1,0 +1,41 @@
+{
+  "id": "concept-semiconductor-devices-and-logic-gates",
+  "category": "concept",
+  "title": "Semiconductor Devices: Diodes, Transistors and Logic Gates",
+  "subcategory": "Semiconductor Electronics — p-n Junction Applications, Transistor, Logic Gates",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Semiconductor Electronics: Materials, Devices and Simple Circuits",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "p-n junction diode",
+    "rectifier",
+    "transistor",
+    "logic gates",
+    "amplifier"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-semiconductors-and-pn-junction"
+  ],
+  "relatedFormulas": [],
+  "summary": "A p-n junction diode conducts easily in forward bias and blocks current in reverse bias, making it useful as a rectifier; a transistor (two back-to-back junctions) can amplify signals or act as a switch, and combinations of simple switching behaviour implement digital logic gates.",
+  "explanation": "A p-n junction diode, forward-biased (p-side connected to positive terminal), has its depletion region narrowed and conducts easily once past a small threshold voltage (~0.7 V for silicon, ~0.3 V for germanium); reverse-biased (p-side to negative terminal), the depletion region widens and only a negligible reverse saturation current flows — this asymmetric conduction is what makes a diode useful as a RECTIFIER, converting AC to (pulsating) DC. A half-wave rectifier uses one diode and passes only one half-cycle; a full-wave rectifier (using two or four diodes, e.g. a bridge rectifier) utilises both half-cycles, giving smoother, more efficient output. A bipolar junction transistor (BJT) has three regions (emitter, base, collector) forming two back-to-back p-n junctions (npn or pnp); in normal (active) operation, the emitter-base junction is forward-biased and the base-collector junction reverse-biased. A very thin, lightly doped base region lets most emitter current pass through to the collector, so a SMALL change in base current produces a LARGE change in collector current — this current gain is the basis of transistor AMPLIFICATION. A transistor can equally be operated as a SWITCH: fully OFF (cut-off region, negligible current) or fully ON (saturation region, maximum current), the basis of digital electronics, since these two states naturally map to binary 0 and 1. Logic gates implement Boolean operations using transistor switching: AND gate output is 1 only if ALL inputs are 1; OR gate output is 1 if ANY input is 1; NOT gate simply inverts a single input. NAND and NOR gates (AND/OR followed by NOT) are called 'universal gates' because either one alone can be used to build any other logic gate — a fact leveraged extensively in real digital circuit design.",
+  "commonMisconceptions": [
+    "Assuming a diode conducts equally well in both directions if enough voltage is applied — forward bias needs only a small threshold voltage to conduct strongly, while reverse bias blocks current up to a much higher 'breakdown voltage,' after which the diode can be damaged (except specially designed Zener diodes, which exploit controlled reverse breakdown deliberately).",
+    "Believing a transistor amplifies by literally 'creating' extra energy — amplification means a small input SIGNAL controls a much larger output current drawn from an external power supply; energy is not created, only controlled/redirected from the supply.",
+    "Mixing up which logic gate outputs 1 for which input combination — a very common exam slip, especially between AND vs. OR and their negated (NAND/NOR) counterparts."
+  ],
+  "examples": [
+    "A bridge rectifier circuit with four diodes converts household AC supply into pulsating DC, later smoothed by a capacitor filter.",
+    "NAND gates alone can be wired together to construct AND, OR, NOT, and any other logic gate — this is why NAND is called a universal gate."
+  ],
+  "genZNote": "A transistor's base current whispers, the collector current does all the shouting — that's amplification."
+}

@@ -1,0 +1,42 @@
+{
+  "id": "concept-d-and-f-block-elements",
+  "category": "concept",
+  "title": "d-Block and f-Block Elements: Transition Metals, Lanthanides and Actinides",
+  "subcategory": "d- and f-Block Elements — Transition Metal Properties, Lanthanide Contraction",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — The d- and f-Block Elements",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "transition elements",
+    "lanthanide contraction",
+    "variable oxidation states",
+    "interstitial compounds",
+    "catalytic property"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-coordination-compounds-and-cft",
+    "concept-atomic-structure-and-quantum-numbers"
+  ],
+  "relatedFormulas": [],
+  "summary": "Transition (d-block) elements show characteristic properties — variable oxidation states, coloured ions, catalytic activity, complex formation — all traceable to their partially filled d-orbitals; the lanthanide contraction (a f-block phenomenon) has significant knock-on effects for the size and chemistry of the elements that follow.",
+  "explanation": "Transition elements are defined as those having a partially filled d-subshell in the element or in any of its commonly formed ions (note: this is why Zn, Cd, Hg — with a fully filled d¹⁰ configuration in both the element AND all common ions — are technically NOT considered true transition elements despite being in the d-block). Characteristic transition metal properties, ALL traceable back to partially-filled d-orbitals: (1) VARIABLE oxidation states — because the energy gap between (n-1)d and ns electrons is small, multiple numbers of electrons can be lost with relatively similar ease; (2) COLOURED ions/compounds — from d-d electronic transitions (as in Crystal Field Theory) possible only with partially filled d-orbitals; (3) CATALYTIC activity — variable oxidation states let transition metals/ions form intermediate complexes and provide alternative, lower-activation-energy reaction pathways; (4) formation of numerous COMPLEX/coordination compounds — small ionic size, high charge, and available (n-1)d and ns/np orbitals favour accepting ligand lone pairs; (5) formation of INTERSTITIAL compounds — small non-metal atoms (H, C, N) can fit into the interstitial spaces (holes) of the transition metal's crystal lattice, often producing very hard, high-melting materials. Down the d-block, atomic/ionic radii first decrease (increasing nuclear charge) then level off/slightly increase near the end (increased electron-electron repulsion among the added d-electrons starts to counteract the nuclear charge increase). LANTHANIDE CONTRACTION is the steady, cumulative decrease in atomic/ionic radii across the lanthanide series (due to poor shielding by 4f electrons, so each added proton's charge is felt strongly), which is small per individual element but adds up significantly across the whole series. Its major consequence: the SECOND (4d) and THIRD (5d) transition series elements in the SAME group end up having remarkably SIMILAR atomic radii (rather than steadily increasing down the group as usually expected) — e.g. Zr (4d) and Hf (5d) are nearly identical in size and hence in chemical properties, making them notoriously difficult to separate.",
+  "commonMisconceptions": [
+    "Classifying Zn, Cd, and Hg as typical transition elements simply because they sit in the d-block of the periodic table — strictly, they are NOT considered transition elements since both the elements themselves and their common ions have a completely filled d¹⁰ configuration, lacking the partially-filled d-subshell that defines transition metal behaviour.",
+    "Assuming atomic radius increases smoothly and predictably down every group, including from the second to third transition series — lanthanide contraction specifically disrupts this expected trend, making 4d and 5d elements in the same group unusually close in size.",
+    "Attributing transition metals' catalytic ability to some vague 'reactivity' — the actual mechanism specifically relies on their ABILITY TO CHANGE OXIDATION STATE easily, letting them form temporary intermediate complexes with reactants."
+  ],
+  "examples": [
+    "Iron (Fe) shows multiple common oxidation states (+2, +3) and its compounds are used as catalysts (e.g. in the Haber process) precisely because of this variable valency.",
+    "Zirconium (Zr, period 5) and hafnium (Hf, period 6) have almost identical atomic radii due to lanthanide contraction, making them chemically very similar and hard to separate from each other."
+  ],
+  "genZNote": "Lanthanide contraction: 4f electrons shielding so poorly that Zr and Hf end up basically twins."
+}

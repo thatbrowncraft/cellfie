@@ -1,0 +1,44 @@
+{
+  "id": "concept-friction",
+  "category": "concept",
+  "title": "Friction",
+  "subcategory": "Laws of Motion — Friction",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Laws of Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "static friction",
+    "kinetic friction",
+    "coefficient of friction",
+    "rolling friction",
+    "angle of friction"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-newtons-laws-of-motion",
+    "concept-circular-motion"
+  ],
+  "relatedFormulas": [
+    "formula-newtons-second-law"
+  ],
+  "summary": "Friction is the opposing force at contact surfaces; static friction (up to a maximum) prevents motion from starting, kinetic friction acts once sliding occurs and is generally smaller than the maximum static value.",
+  "explanation": "Friction arises from microscopic irregularities and molecular attraction between two surfaces in contact, opposing relative sliding or the tendency to slide. Static friction fs adjusts itself (self-regulating) to exactly balance the applied force up to a maximum value fs(max) = μsN, where μs is the coefficient of static friction and N is the normal reaction; beyond this the object starts to slide. Once sliding, kinetic friction fk = μkN opposes the relative motion, and experimentally μk < μs for most surface pairs, which is why it takes more force to start moving an object than to keep it moving. Rolling friction (relevant to wheels/balls) is much smaller than sliding friction because deformation at the contact patch, not sliding, dominates — this is why wheels are more efficient than dragging. The angle of friction (tanλ = μs) is the angle the resultant of normal force and limiting friction makes with the normal, and equals the angle of repose — the maximum incline angle at which a body remains at rest without sliding.",
+  "commonMisconceptions": [
+    "Treating friction as a fixed force regardless of the applied force — static friction is variable and only reaches μsN at the verge of sliding.",
+    "Assuming kinetic friction depends on the contact area or the speed of sliding — to a good approximation it depends only on the normal force and the materials in contact (Coulomb's laws of friction), not on visible contact area.",
+    "Confusing angle of friction with angle of repose — they are numerically equal but describe different physical setups (friction triangle vs. an object resting on an incline)."
+  ],
+  "examples": [
+    "A block on a table needs a bigger push to start moving than to keep moving at constant velocity, because μs > μk.",
+    "Ball bearings replace sliding friction with much smaller rolling friction to reduce energy loss in machines."
+  ],
+  "genZNote": "Static friction really said 'I match your energy' — right up until it can't anymore."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "concept-electric-field-and-gauss-law",
+  "category": "concept",
+  "title": "Electric Field, Electric Flux and Gauss's Law",
+  "subcategory": "Electric Charges and Fields — Field, Flux, Gauss's Law",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Electric Charges and Fields",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "electric field",
+    "electric flux",
+    "Gauss's law",
+    "field lines",
+    "electric dipole"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-electric-potential-and-capacitance"
+  ],
+  "relatedFormulas": [
+    "formula-electric-flux-gauss-law",
+    "formula-coulombs-law"
+  ],
+  "summary": "Electric field is force per unit test charge at a point; electric flux measures field lines passing through a surface, and Gauss's law relates the total flux through any closed surface to the charge it encloses — a powerful shortcut for symmetric charge distributions.",
+  "explanation": "Electric field at a point is defined as E = F/q₀ (force per unit positive test charge, in the limit q₀ → 0 so the test charge doesn't disturb the source distribution), a vector field that can be visualised with field lines: they start on positive charges, end on negative charges, never cross, and their density indicates field strength. Electric flux through a surface, ΦE = ∮E·dA, measures the 'number' of field lines crossing that surface; it depends on the field, the surface area, and the angle between the field and the surface's normal. Gauss's law states ΦE (through any closed surface) = qenclosed/ε₀ — remarkably, this holds regardless of the size/shape of the closed (Gaussian) surface and regardless of charges OUTSIDE it (they contribute zero net flux). This is a general law (equivalent to Coulomb's law for static charges) but becomes an extremely efficient calculation shortcut when the charge distribution has high symmetry (spherical, cylindrical, planar) — letting you choose a Gaussian surface where E is uniform and either parallel or perpendicular everywhere. Applications: field due to an infinite line charge (E ∝ 1/r), an infinite plane sheet of charge (E is uniform, independent of distance from the sheet), and a uniformly charged spherical shell (E = 0 inside, behaves like a point charge at the centre for points outside). An electric dipole (two equal, opposite charges separated by a small distance) has a dipole moment p = q×2a (from −q to +q); its field falls off faster (∝1/r³ on the axial/equatorial line) than a single point charge's field (∝1/r²), and in a uniform external field, a dipole experiences zero net force but a torque τ = p×E that tends to align it with the field.",
+  "commonMisconceptions": [
+    "Believing Gauss's law only applies to symmetric charge distributions — it is universally true for ANY closed surface and ANY charge distribution; it is just most USEFUL for calculation when symmetry lets you simplify the flux integral.",
+    "Assuming charges outside the Gaussian surface don't affect the electric field at points on the surface — they still contribute to the field (and can affect its direction/uniformity), they simply contribute zero NET flux through the closed surface.",
+    "Treating field lines as real physical lines with mass or existence rather than a visualisation tool that always follows the rule 'no two field lines cross.'"
+  ],
+  "examples": [
+    "Inside a uniformly charged hollow spherical shell, the electric field is exactly zero everywhere, regardless of how the charge is distributed on the shell (as long as it's uniform/symmetric).",
+    "The field near an infinite charged plane sheet is the same at 1 cm or 1 km away, unlike a point charge's field which weakens with distance."
+  ],
+  "genZNote": "Gauss's law: forget every charge outside the surface — this closed surface only cares about what's inside."
+}

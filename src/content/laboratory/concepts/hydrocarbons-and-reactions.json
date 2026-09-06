@@ -1,0 +1,41 @@
+{
+  "id": "concept-hydrocarbons-and-reactions",
+  "category": "concept",
+  "title": "Hydrocarbons: Alkanes, Alkenes, Alkynes and Aromatic Compounds",
+  "subcategory": "Hydrocarbons — Alkanes, Alkenes, Alkynes, Aromaticity",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 11 — Hydrocarbons",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "alkane",
+    "alkene",
+    "alkyne",
+    "aromaticity",
+    "Markovnikov's rule"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-isomerism"
+  ],
+  "relatedFormulas": [],
+  "summary": "Alkanes (single bonds, saturated, relatively unreactive) undergo free-radical substitution; alkenes and alkynes (containing reactive π bonds) undergo addition reactions following Markovnikov's rule; and aromatic (benzene-type) compounds, despite unsaturation, preferentially undergo substitution due to their special ring stability.",
+  "explanation": "Alkanes (CnH2n+2, only C-C and C-H sigma bonds) are relatively unreactive ('paraffins' — little affinity) but undergo free-radical halogenation under UV light/heat via a chain mechanism (initiation, propagation, termination), giving a mixture of substitution products at different positions. Alkenes (CnH2n, one C=C double bond) and alkynes (CnH2n−2, one C≡C triple bond) are more reactive due to the exposed, electron-rich π bond(s), undergoing characteristic ADDITION reactions: addition of H₂ (hydrogenation, needs a catalyst like Ni/Pd/Pt), halogens (X₂, e.g. decolorising bromine water — a classic test for unsaturation), and hydrogen halides (HX). Markovnikov's rule (for unsymmetrical alkene + HX addition): the halogen (negative part) attaches to the MORE substituted carbon (the one with fewer H atoms already), because the reaction proceeds via the more stable carbocation intermediate (tertiary > secondary > primary in stability). The anti-Markovnikov (peroxide) effect reverses this specifically for HBr addition in the presence of peroxides, via a free-radical mechanism instead of the usual ionic one. Aromatic compounds (benzene and derivatives) have a special cyclic, planar, fully conjugated structure with delocalised π electrons obeying Hückel's rule (4n+2 π electrons), giving them unusual extra stability (aromaticity/resonance stabilisation). Despite having formal 'double bonds,' benzene strongly PREFERS electrophilic substitution reactions (nitration, halogenation, sulfonation, Friedel-Crafts) over addition, because addition would destroy the stabilising aromatic ring system, while substitution preserves it.",
+  "commonMisconceptions": [
+    "Expecting benzene to readily undergo addition reactions like a normal alkene, simply because it's drawn with three double bonds — benzene's special aromatic stability makes SUBSTITUTION strongly preferred, since addition would destroy the stabilising delocalised ring system.",
+    "Applying Markovnikov's rule blindly without checking for peroxides — in the specific presence of peroxides, HBr (only HBr, not HCl or HI) addition to an unsymmetrical alkene follows the ANTI-Markovnikov / peroxide (Kharasch) effect instead.",
+    "Assuming all hydrocarbons with the same general formula (e.g., all CnH2n) must be alkenes — cycloalkanes share the same general formula as alkenes but are saturated ring compounds with entirely different reactivity."
+  ],
+  "examples": [
+    "Bromine water is decolorised rapidly when shaken with an alkene (addition across the C=C) but stays orange-red with an alkane (no reaction) — a simple test to distinguish saturation from unsaturation.",
+    "Propene + HBr (no peroxide) gives 2-bromopropane as the major product (Markovnikov addition, Br on the more substituted carbon)."
+  ],
+  "genZNote": "Benzene said 'I'd rather substitute than lose my aromatic glow-up' — stability over reactivity, always."
+}

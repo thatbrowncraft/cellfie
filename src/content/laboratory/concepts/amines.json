@@ -1,0 +1,41 @@
+{
+  "id": "concept-amines",
+  "category": "concept",
+  "title": "Amines: Basicity, Preparation and Reactions",
+  "subcategory": "Amines — Basicity, Preparation, Diazonium Salts",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 12 — Amines",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "amine basicity",
+    "diazonium salt",
+    "Hinsberg test",
+    "Gabriel synthesis",
+    "aniline"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-hydrogen-bonding-and-intermolecular-forces"
+  ],
+  "relatedFormulas": [],
+  "summary": "Amines are basic due to the lone pair on nitrogen; basicity trends depend on a balance of electronic (inductive, resonance) and steric effects, aniline being notably less basic than aliphatic amines due to lone pair delocalisation into the aromatic ring.",
+  "explanation": "Amines act as bases (and nucleophiles) because of the lone pair of electrons on nitrogen, available to accept a proton (or donate to an electrophile). In the gas phase, basicity order among methylamines follows tertiary > secondary > primary (more alkyl groups donate more electron density inductively, stabilising the resulting ammonium cation); but in AQUEOUS solution, the observed order for simple alkyl amines is often secondary > primary > tertiary (or similar), because of a combination of inductive effect, steric hindrance to solvation, and how well the resulting cation is stabilised by hydrogen bonding with water — this solution-phase reordering is a well-known NCERT-level subtlety and common source of confusion. Aromatic amines like aniline (C₆H₅NH₂) are considerably LESS basic than ammonia or aliphatic amines, because the nitrogen's lone pair is delocalised (via resonance) into the aromatic ring, making it much less available to accept a proton; electron-withdrawing substituents on the ring (like -NO₂) decrease aniline's basicity further, while electron-donating groups (like -CH₃) increase it somewhat. The Hinsberg test distinguishes primary, secondary and tertiary amines using benzenesulfonyl chloride: a PRIMARY amine forms a sulfonamide product that is soluble in alkali (has an acidic N-H that can be deprotonated); a SECONDARY amine forms a sulfonamide that is INSOLUBLE in alkali (no acidic N-H remains after forming the disubstituted sulfonamide); a TERTIARY amine does not react with benzenesulfonyl chloride at all under these conditions. Gabriel phthalimide synthesis is used to prepare pure PRIMARY amines (avoiding over-alkylation issues that plague direct alkyl halide + ammonia reactions), but it cannot be used to prepare aromatic primary amines directly, since aryl halides don't undergo the required nucleophilic substitution step easily. Diazonium salts (ArN₂⁺X⁻), formed by treating an aromatic primary amine with HNO₂ (from NaNO₂ + HCl) at low temperature (0-5°C, since they're unstable and decompose above this), are extremely versatile intermediates for introducing a wide range of substituents onto an aromatic ring (via replacement reactions) that would otherwise be difficult or impossible to install directly.",
+  "commonMisconceptions": [
+    "Assuming amine basicity in aqueous solution follows the same simple order (tertiary > secondary > primary) as in the gas phase — aqueous-phase basicity is complicated by solvation/steric effects and often shows a DIFFERENT order for simple alkyl amines.",
+    "Believing aniline is a stronger base than aliphatic amines because it's still an amine — aniline is markedly WEAKER because the ring pulls the nitrogen lone pair into resonance delocalisation, making it far less available to bind H⁺.",
+    "Trying to prepare pure primary aromatic amines using Gabriel synthesis — this method works only for aliphatic primary amines, since aryl halides don't undergo the necessary nucleophilic substitution step with the phthalimide anion."
+  ],
+  "examples": [
+    "Aniline does not turn litmus blue as strongly as ammonia does, reflecting its much weaker basicity due to resonance delocalisation of the nitrogen lone pair.",
+    "Diazonium salts formed from aniline can be converted into a wide variety of substituted benzenes (like chlorobenzene, phenol, or benzonitrile) via well-known replacement reactions, making them a key synthetic intermediate."
+  ],
+  "genZNote": "Aniline's lone pair got recruited into the aromatic ring's resonance squad — less available for base duty now."
+}

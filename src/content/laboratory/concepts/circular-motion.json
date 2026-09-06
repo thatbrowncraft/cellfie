@@ -1,0 +1,44 @@
+{
+  "id": "concept-circular-motion",
+  "category": "concept",
+  "title": "Uniform Circular Motion",
+  "subcategory": "Laws of Motion / Motion in a Plane — Circular Motion",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Motion in a Plane / Laws of Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "centripetal force",
+    "centripetal acceleration",
+    "banking of roads",
+    "angular velocity",
+    "uniform circular motion"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-friction",
+    "concept-angular-momentum-and-moment-of-inertia"
+  ],
+  "relatedFormulas": [
+    "formula-equations-of-motion"
+  ],
+  "summary": "In uniform circular motion, speed stays constant but velocity direction keeps changing, requiring a constant centre-seeking (centripetal) acceleration v²/r supplied by a real, identifiable force.",
+  "explanation": "Even though speed is constant in uniform circular motion, velocity is not — its direction is continuously changing — so there must be an acceleration, directed towards the centre, called centripetal acceleration ac = v²/r = ω²r. Centripetal FORCE is not a new, separate kind of force; it is simply the name given to whatever real force (tension in a string, gravity for orbiting satellites, friction for a car turning, the normal reaction's horizontal component for a banked road) happens to supply this centre-directed acceleration, Fc = mv²/r. For a car on a level road, friction alone provides this force, limiting the safe turning speed; banking the road (tilting it at angle θ so tanθ = v²/rg) lets the horizontal component of the normal force contribute too, allowing higher safe speeds even with less reliance on friction. Angular velocity ω (rad/s) relates to linear speed by v = ωr, and time period T = 2π/ω = 2πr/v. 'Centrifugal force' — the outward force felt by an observer inside the rotating frame — is a pseudo-force that only appears in the non-inertial (rotating) reference frame; from outside (inertial frame), the object only ever experiences the real, inward centripetal force.",
+  "commonMisconceptions": [
+    "Believing centripetal force is an additional force alongside gravity/tension/friction — it is only a label for the net inward component that those real forces already provide.",
+    "Confusing centripetal force (real, inward, in an inertial frame) with centrifugal force (a pseudo-force that appears only in the rotating/non-inertial frame).",
+    "Forgetting that speed constant does not mean acceleration is zero in circular motion — direction change alone produces acceleration."
+  ],
+  "examples": [
+    "A stone whirled in a horizontal circle on a string: tension in the string supplies the centripetal force.",
+    "Banked race-track curves let cars turn safely at higher speeds than a flat road allows for the same friction."
+  ],
+  "genZNote": "Circular motion out here changing direction every second while insisting 'my speed never changed.'"
+}

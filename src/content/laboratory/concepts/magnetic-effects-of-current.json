@@ -1,0 +1,43 @@
+{
+  "id": "concept-magnetic-effects-of-current",
+  "category": "concept",
+  "title": "Magnetic Effects of Current: Biot-Savart Law and Ampere's Law",
+  "subcategory": "Moving Charges and Magnetism — Biot-Savart Law, Ampere's Law, Force on a Charge",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Moving Charges and Magnetism",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Biot-Savart law",
+    "Ampere's circuital law",
+    "Lorentz force",
+    "cyclotron",
+    "moving coil galvanometer"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-electric-field-and-gauss-law"
+  ],
+  "relatedFormulas": [
+    "formula-biot-savart-law"
+  ],
+  "summary": "Moving charges (currents) create magnetic fields, described at the small-element level by the Biot-Savart law and, for highly symmetric current distributions, more simply by Ampere's circuital law; a magnetic field in turn exerts a velocity-dependent force on moving charges and current-carrying conductors.",
+  "explanation": "The Biot-Savart law gives the magnetic field dB due to a small current element Idl at a point: dB = (μ₀/4π)(Idl × r̂)/r², proportional to current and inversely proportional to the square of distance, with direction given by the right-hand (or cross-product) rule — the magnetic analogue of Coulomb's law, but for a current ELEMENT rather than a point charge, and always perpendicular to both the current direction and the line to the point. Ampere's circuital law, ∮B·dl = μ₀Ienclosed, is the magnetic analogue of Gauss's law: exactly true always, but a genuine calculation shortcut only for highly symmetric current distributions (long straight wire, solenoid, toroid), where a suitable Amperian loop makes B uniform along the path. The Lorentz force on a moving charge is F = q(E + v×B); the magnetic part, F = qvB sinθ, is zero if the charge is at rest or moving along B, and maximum when moving perpendicular to B — this velocity-dependence is what distinguishes magnetic force fundamentally from the always-present electric force. Since magnetic force is always perpendicular to velocity, it does NO work on the charge, only changing its direction, not its speed. In a cyclotron, this property is used to accelerate charged particles in a spiral path using a fixed-frequency alternating voltage timed to the particle's circular motion — the cyclotron frequency f = qB/2πm is remarkably independent of the particle's speed or orbit radius (at non-relativistic speeds), which is what makes the fixed-frequency design work. A moving-coil galvanometer detects small currents via the torque a current-carrying coil experiences in a radial magnetic field (τ = NIAB), converted into an angular deflection measured against a calibrated scale.",
+  "commonMisconceptions": [
+    "Applying Ampere's law to a non-symmetric current arrangement expecting an easy answer — like Gauss's law, it is always true but only computationally useful when symmetry makes the line integral tractable.",
+    "Assuming magnetic force can change a charged particle's speed — it cannot; being always perpendicular to velocity, it does zero work and only changes direction (unlike an electric force, which can do work and change speed).",
+    "Forgetting that a charge moving PARALLEL to a magnetic field feels ZERO magnetic force (sinθ = 0 when θ = 0°), a frequently tested special case."
+  ],
+  "examples": [
+    "A long, straight current-carrying wire produces a magnetic field that circles around it, with magnitude decreasing as 1/r — found quickly via Ampere's law thanks to cylindrical symmetry.",
+    "In a cyclotron, protons spiral outward gaining energy each half-turn, but their time per revolution stays constant even as their speed and radius increase."
+  ],
+  "genZNote": "Magnetic force: does zero work, all vibes — just redirects you without ever changing your speed."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "concept-nuclear-physics-binding-energy-fission-fusion",
+  "category": "concept",
+  "title": "Nuclear Physics: Binding Energy, Fission and Fusion",
+  "subcategory": "Nuclei — Mass Defect, Binding Energy, Nuclear Fission and Fusion",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Nuclei",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "mass defect",
+    "binding energy per nucleon",
+    "nuclear fission",
+    "nuclear fusion",
+    "nuclear stability"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-radioactive-decay-and-half-life",
+    "concept-bohr-model"
+  ],
+  "relatedFormulas": [
+    "formula-mass-defect-and-binding-energy"
+  ],
+  "summary": "A nucleus's mass is always slightly less than the sum of its free constituent nucleons (mass defect); this 'missing' mass, converted via E = mc², is the binding energy holding the nucleus together, and its trend with mass number explains why both fission (heavy nuclei splitting) and fusion (light nuclei combining) release energy.",
+  "explanation": "The mass of a nucleus is always LESS than the sum of the masses of its individual free protons and neutrons — this difference, Δm (mass defect), represents the energy that was released when the nucleons bound together (and would need to be supplied to pull the nucleus apart again), converted via Einstein's mass-energy relation: Binding Energy = Δmc². Binding energy PER NUCLEON (BE/A) is the more physically meaningful quantity for comparing stability across different nuclei, since it accounts for nucleus size. Plotting BE/A against mass number A gives a curve that rises steeply for light nuclei, peaks around A ≈ 56 (iron, the most stable/tightly-bound nucleus per nucleon), then gradually decreases for heavier nuclei. This curve's shape explains both nuclear fission and fusion release energy, despite being opposite processes: a HEAVY nucleus (right side of the curve, lower BE/A) splitting into two MEDIUM nuclei (moving up toward the peak, higher BE/A) releases energy (fission, used in nuclear reactors and atomic bombs); LIGHT nuclei (left side, lower BE/A) combining into a slightly heavier nucleus (moving up toward the peak) also releases energy (fusion, the process powering the Sun and stars, and hydrogen bombs). Fusion requires extremely high temperatures (millions of kelvin) to overcome the strong mutual electrostatic (Coulomb) repulsion between positively charged nuclei before the short-range strong nuclear force can bind them — this is why fusion is far harder to sustain artificially on Earth than fission. A chain reaction (needed for a self-sustaining fission reactor or bomb) occurs when each fission event's released neutrons trigger further fissions in neighbouring nuclei; a moderator (like heavy water or graphite) slows fast neutrons to increase the probability of causing further fission in reactors.",
+  "commonMisconceptions": [
+    "Assuming heavier nuclei are always more stable/tightly bound simply because they contain more nucleons — stability (as measured by BE/A, not total BE) actually PEAKS around iron (A ≈ 56) and decreases for both very light and very heavy nuclei.",
+    "Believing fission and fusion release energy for opposite/unrelated reasons — both release energy for the SAME underlying reason: moving nuclei toward the peak (higher BE/A) of the stability curve, just approaching it from opposite sides.",
+    "Thinking mass is exactly conserved in nuclear reactions the way it is in ordinary chemical reactions — a measurable (if tiny) amount of mass is converted to energy in nuclear reactions, per E = mc², something negligible enough to ignore in chemistry but essential in nuclear physics."
+  ],
+  "examples": [
+    "Uranium-235 undergoing fission in a nuclear reactor splits into two medium-mass fragments plus neutrons, releasing a large amount of energy per event.",
+    "The Sun generates its energy via nuclear fusion, converting hydrogen nuclei into helium at extremely high core temperatures and pressures."
+  ],
+  "genZNote": "Iron-56 really said 'I peaked' — every nucleus is either trying to fuse up or fission down to match that vibe."
+}

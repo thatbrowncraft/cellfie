@@ -1,0 +1,45 @@
+{
+  "id": "concept-angular-momentum-and-moment-of-inertia",
+  "category": "concept",
+  "title": "Angular Momentum and Moment of Inertia",
+  "subcategory": "System of Particles and Rotational Motion — Angular Momentum, Moment of Inertia, Rolling",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — System of Particles and Rotational Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "angular momentum",
+    "moment of inertia",
+    "conservation of angular momentum",
+    "rolling motion",
+    "radius of gyration"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-centre-of-mass-and-torque",
+    "concept-conservation-of-energy"
+  ],
+  "relatedFormulas": [
+    "formula-angular-momentum",
+    "formula-moment-of-inertia-common-shapes"
+  ],
+  "summary": "Moment of inertia is a body's rotational analogue of mass (resistance to change in rotational motion); angular momentum (L = Iω) is conserved whenever no external torque acts, exactly mirroring linear momentum conservation.",
+  "explanation": "Moment of inertia I = Σmᵢrᵢ² measures how a body's mass is distributed relative to an axis of rotation — the farther the mass is from the axis, the larger I, and the harder it is to start or stop rotation about that axis. Unlike mass, I depends on both the amount of matter AND the chosen axis, so the same object has different I values about different axes. Angular momentum L = Iω (or L = r × p for a particle) is the rotational counterpart of linear momentum p = mv. Newton's second law in rotational form is τ = dL/dt: torque changes angular momentum exactly as force changes linear momentum. When net external torque is zero, angular momentum is conserved (L = constant) — this is why a spinning ice skater speeds up when pulling their arms in (I decreases, so ω increases to keep Iω constant) and why planets sweep out equal areas in equal times (Kepler's second law, a direct consequence of angular momentum conservation under gravity's central force). Rolling without slipping combines translation of the COM with rotation about the COM; total kinetic energy is KE = ½mv² + ½Iω², and for rolling, v = ωR links the two. The radius of gyration k is defined by I = Mk², an equivalent single distance from the axis at which the whole mass could be concentrated to give the same I.",
+  "commonMisconceptions": [
+    "Treating moment of inertia as a fixed property of an object like mass — it changes with the axis of rotation and with how mass is redistributed (arms in vs. out).",
+    "Forgetting the rolling-without-slipping condition v = ωR when combining translational and rotational kinetic energy — using it incorrectly is a very common numerical-problem trap.",
+    "Assuming angular momentum conservation requires zero net force — it only requires zero net TORQUE; a net force through the axis produces no torque and still allows L to be conserved."
+  ],
+  "examples": [
+    "A figure skater pulling their arms inward spins faster because their moment of inertia decreases while angular momentum stays constant.",
+    "A solid sphere rolling down an incline reaches the bottom faster than a hollow sphere of the same mass and radius, because its lower moment of inertia means less kinetic energy is 'used up' in rotation."
+  ],
+  "genZNote": "Pull your arms in, spin faster — angular momentum conservation is basically a built-in cheat code."
+}

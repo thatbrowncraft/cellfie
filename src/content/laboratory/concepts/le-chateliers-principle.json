@@ -31,5 +31,6 @@
   ],
   "examples": [
     "In the Haber process (N₂ + 3H₂ ⇌ 2NH₃), increasing pressure shifts equilibrium toward ammonia, since the product side has fewer gas moles (2 vs 4)."
-  ]
+  ],
+  "genZNote": "Equilibrium hates change and will always shift to undo whatever you just did."
 }

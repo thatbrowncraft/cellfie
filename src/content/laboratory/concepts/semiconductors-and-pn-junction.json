@@ -29,5 +29,6 @@
   ],
   "examples": [
     "A p-n junction diode allowing current to flow only when the p-side is connected to the higher potential (forward bias)."
-  ]
+  ],
+  "genZNote": "Doping a semiconductor is basically recruiting extra charge carriers to the team."
 }

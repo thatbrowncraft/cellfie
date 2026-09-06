@@ -1,0 +1,44 @@
+{
+  "id": "concept-thermal-expansion-and-calorimetry",
+  "category": "concept",
+  "title": "Thermal Expansion and Calorimetry",
+  "subcategory": "Thermal Properties of Matter — Thermal Expansion, Specific Heat, Calorimetry",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Thermal Properties of Matter",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "thermal expansion",
+    "specific heat capacity",
+    "latent heat",
+    "calorimetry",
+    "anomalous expansion of water"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-heat-vs-temperature",
+    "concept-first-law-of-thermodynamics"
+  ],
+  "relatedFormulas": [
+    "formula-specific-and-latent-heat"
+  ],
+  "summary": "Most substances expand on heating (linear, area, and volume expansion, governed by expansion coefficients); calorimetry uses the principle that heat lost by a hotter body equals heat gained by a cooler one, with specific heat and latent heat as the key quantities.",
+  "explanation": "Thermal expansion occurs because increased temperature raises average interatomic/intermolecular spacing. Linear expansion ΔL = LαΔT (α = coefficient of linear expansion), superficial/area expansion ΔA = AβΔT (β ≈ 2α), and volume expansion ΔV = VγΔT (γ ≈ 3α for isotropic solids) are all governed by these small material-specific coefficients. Water shows anomalous expansion between 0°C and 4°C: it CONTRACTS on heating in this range (density is maximum at 4°C), which is why ice forms at the top of a pond first, insulating the water below and letting aquatic life survive winters. Specific heat capacity s is the heat required to raise the temperature of unit mass by 1°C/1 K: Q = msΔT. Molar specific heat is the same idea per mole rather than per unit mass. Latent heat L is the heat absorbed or released during a phase change (melting, boiling) at CONSTANT temperature — Q = mL — which is why the temperature of melting ice stays at 0°C until all the ice has melted, even though heat is continuously being supplied. The principle of calorimetry (a direct consequence of energy conservation in an isolated system) states heat lost by hot substances = heat gained by cold substances when they're mixed in an insulated container, allowing unknown specific heats or final temperatures to be calculated.",
+  "commonMisconceptions": [
+    "Assuming all substances expand when heated across all temperature ranges — water between 0°C and 4°C is a well-known NCERT exception (anomalous expansion).",
+    "Believing temperature keeps rising while a substance melts or boils — during a phase change, all the supplied heat goes into latent heat (breaking intermolecular bonds), so temperature stays constant.",
+    "Mixing up specific heat (J/kg·K, needed to change temperature) with latent heat (J/kg, needed to change phase at constant temperature) — a very common numerical mix-up."
+  ],
+  "examples": [
+    "Railway tracks are laid with small gaps to allow for thermal expansion in summer, preventing buckling.",
+    "A pond freezes from the top down because water is densest at 4°C, so the coldest (near 0°C) water stays on top."
+  ],
+  "genZNote": "Ice forming on top while the water below stays liquid — water's anomalous 4°C phase is doing the most."
+}

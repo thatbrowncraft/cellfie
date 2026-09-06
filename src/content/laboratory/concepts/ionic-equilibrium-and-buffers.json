@@ -1,0 +1,42 @@
+{
+  "id": "concept-ionic-equilibrium-and-buffers",
+  "category": "concept",
+  "title": "Ionic Equilibrium, Buffers and Solubility Product",
+  "subcategory": "Equilibrium — Ionic Equilibrium, pH, Buffer Solutions, Ksp",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Equilibrium",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "ionic equilibrium",
+    "buffer solution",
+    "common ion effect",
+    "solubility product",
+    "Henderson-Hasselbalch equation"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-ph-and-poh",
+    "concept-le-chateliers-principle"
+  ],
+  "relatedFormulas": [],
+  "summary": "Weak acids/bases only partially ionize in water, establishing a dynamic equilibrium described by Ka/Kb; buffer solutions resist pH change by combining a weak acid/base with its conjugate, and the solubility product Ksp governs the equilibrium of a sparingly soluble salt with its dissolved ions.",
+  "explanation": "Strong acids/bases ionize essentially completely in water; weak acids/bases ionize only PARTIALLY, reaching a dynamic equilibrium characterised by the acid dissociation constant Ka (or base constant Kb) — a larger Ka means a stronger (more ionized) weak acid. Degree of dissociation α (fraction ionized) increases with dilution (Ostwald's dilution law), per Le Chatelier's principle. A buffer solution resists significant pH change when small amounts of acid or base are added; it is prepared from either a weak acid + its conjugate base (e.g., acetic acid + sodium acetate, an ACIDIC buffer) or a weak base + its conjugate acid (e.g., ammonium hydroxide + ammonium chloride, a BASIC buffer) — a mixture of a strong acid and strong base salt does NOT function as a buffer. The Henderson-Hasselbalch equation, pH = pKa + log([salt]/[acid]), lets buffer pH be calculated directly from the ratio of conjugate base to acid concentrations; buffer capacity is maximum when [salt] = [acid] (pH = pKa exactly). The COMMON ION EFFECT is the suppression of a weak electrolyte's ionization (or a sparingly soluble salt's dissolution) caused by adding a strong electrolyte that shares a common ion — e.g., adding sodium acetate to acetic acid suppresses the acid's ionization (shifting equilibrium left, per Le Chatelier's principle), which is exactly the mechanism buffers rely on. Solubility product Ksp applies to SPARINGLY soluble salts, e.g. AgCl ⇌ Ag⁺ + Cl⁻, Ksp = [Ag⁺][Cl⁻] at saturation; if the ionic product (using actual, non-equilibrium concentrations) EXCEEDS Ksp, precipitation occurs; if less than Ksp, more solid can dissolve; if equal, the solution is exactly saturated.",
+  "commonMisconceptions": [
+    "Believing any mixture of an acid and a base makes a buffer — a true buffer specifically needs a WEAK acid/base paired with its own conjugate (salt), not just any acid-base combination (mixing a strong acid with a strong base, for instance, does not buffer against pH change).",
+    "Confusing Ka (or Kb) — an EQUILIBRIUM constant for a weak electrolyte's own ionization — with Ksp, which specifically describes the equilibrium between an undissolved SOLID salt and its dissolved ions.",
+    "Assuming buffer pH changes drastically with dilution — because pH depends on the RATIO [salt]/[acid] (Henderson-Hasselbalch), diluting a buffer (which dilutes both terms equally) barely changes its pH, a key practical property of buffers."
+  ],
+  "examples": [
+    "Blood is buffered near pH 7.4 largely by the carbonic acid/bicarbonate (H₂CO₃/HCO₃⁻) system, resisting small pH swings from metabolic acids.",
+    "Adding NaCl (common ion Cl⁻) to a saturated AgCl solution shifts the solubility equilibrium, causing more AgCl to precipitate out (common ion effect on solubility)."
+  ],
+  "genZNote": "A buffer's whole personality: absorb the chaos, keep the pH looking calm and unbothered."
+}

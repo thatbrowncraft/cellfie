@@ -31,5 +31,6 @@
   ],
   "examples": [
     "A solution with pH 3 has 10 times more H⁺ ions than a solution with pH 4."
-  ]
+  ],
+  "genZNote": "pH and pOH are basically roommates — their sum is always fixed at 14 (at 25°C)."
 }

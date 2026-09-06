@@ -1,0 +1,41 @@
+{
+  "id": "concept-biomolecules",
+  "category": "concept",
+  "title": "Biomolecules: Carbohydrates, Proteins and Nucleic Acids",
+  "subcategory": "Biomolecules — Carbohydrates, Amino Acids, Proteins, Nucleic Acids",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 12 — Biomolecules",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "carbohydrate classification",
+    "amino acid",
+    "protein denaturation",
+    "nucleic acid structure",
+    "zwitterion"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-hydrogen-bonding-and-intermolecular-forces"
+  ],
+  "relatedFormulas": [],
+  "summary": "Biomolecules — carbohydrates, proteins (built from amino acids), and nucleic acids — each have characteristic structures whose function depends critically on non-covalent interactions like hydrogen bonding, which is why heat or pH extremes can permanently disrupt their structure (denaturation) without breaking their covalent backbone.",
+  "explanation": "Carbohydrates are classified by hydrolysis behaviour: MONOSACCHARIDES (like glucose, fructose) cannot be hydrolysed into simpler sugars; OLIGOSACCHARIDES (like sucrose, maltose — mainly disaccharides) hydrolyse into 2-10 monosaccharide units; POLYSACCHARIDES (like starch, cellulose, glycogen) hydrolyse into many monosaccharide units. Glucose exists in both open-chain and cyclic (pyranose ring) forms in solution, in dynamic equilibrium — this is why it can simultaneously give a positive Tollens'/Fehling's test (via the small equilibrium amount of open-chain aldehyde form) while spending most of its time as the cyclic form. Amino acids are the building blocks of proteins, each having both an acidic (-COOH) and a basic (-NH₂) group on the same molecule; in the solid state and in solution near neutral pH, an amino acid exists predominantly as a ZWITTERION (internal salt: -COO⁻ and -NH₃⁺ simultaneously on the same molecule), which is why amino acids have unusually high melting points and water solubility compared to simple organic acids/amines of similar size. Proteins have a hierarchy of structure: PRIMARY structure is just the sequence of amino acids linked by peptide bonds; SECONDARY structure (α-helix, β-pleated sheet) is a regular, repeating local shape held together by HYDROGEN BONDS between backbone C=O and N-H groups; TERTIARY structure is the overall 3D folding, stabilised by various side-chain interactions (hydrogen bonds, disulfide bridges, hydrophobic interactions, ionic bonds); QUATERNARY structure applies only when multiple polypeptide chains (subunits) assemble together (e.g. haemoglobin's four subunits). DENATURATION is the loss of a protein's secondary/tertiary/quaternary structure (and hence its biological function) caused by heat, extreme pH, or certain chemicals — critically, it disrupts only the WEAKER, non-covalent/secondary interactions (hydrogen bonds, etc.) holding the folded shape together, WITHOUT breaking the primary structure's covalent peptide bonds; this is why the process is often (though not always) irreversible for the protein's function, even though its basic chemical composition (amino acid sequence) remains intact. Nucleic acids (DNA, RNA) are polymers of nucleotides (a nitrogenous base + a pentose sugar + a phosphate group); DNA's double helix is held together by specific hydrogen bonding between complementary base pairs (A-T, G-C in DNA; A-U, G-C in RNA).",
+  "commonMisconceptions": [
+    "Assuming glucose exists purely as an open-chain aldehyde in solution — it actually exists predominantly in cyclic (pyranose) form, with only a small equilibrium fraction as the open-chain form, which is nonetheless enough to give positive aldehyde-specific tests.",
+    "Believing protein denaturation breaks the peptide (covalent) bonds of the primary structure — denaturation specifically disrupts the WEAKER secondary/tertiary/quaternary interactions (hydrogen bonds, etc.), leaving the primary amino acid sequence chemically intact.",
+    "Thinking of amino acids as existing mainly in their neutral, non-ionic drawn structure (H₂N-CHR-COOH) — near physiological/neutral pH, the ZWITTERION form (with both -NH₃⁺ and -COO⁻) is actually the dominant species."
+  ],
+  "examples": [
+    "Boiling an egg denatures its proteins (visible as the egg white turning from translucent liquid to opaque solid) without breaking down the amino acids themselves into smaller fragments.",
+    "DNA's two strands separate at high temperature (denaturation, useful in PCR) because heat disrupts the many hydrogen bonds between base pairs, without breaking the sugar-phosphate backbone's covalent bonds."
+  ],
+  "genZNote": "Amino acids are living their double life — acidic AND basic groups on the same molecule, zwitterion era."
+}

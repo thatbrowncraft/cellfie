@@ -1,0 +1,47 @@
+{
+  "id": "concept-fluid-mechanics-pressure-viscosity-surface-tension",
+  "category": "concept",
+  "title": "Fluid Mechanics: Pressure, Viscosity, Surface Tension and Bernoulli's Principle",
+  "subcategory": "Mechanical Properties of Fluids — Pressure, Viscosity, Surface Tension, Bernoulli",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Mechanical Properties of Fluids",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "Pascal's law",
+    "viscosity",
+    "surface tension",
+    "Bernoulli's principle",
+    "capillary rise",
+    "Reynolds number"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-elasticity-stress-and-strain"
+  ],
+  "relatedFormulas": [
+    "formula-bernoulli-equation",
+    "formula-surface-tension-excess-pressure",
+    "formula-poiseuille-and-stokes-law"
+  ],
+  "summary": "Fluids at rest transmit pressure equally in all directions (Pascal's law); fluids in motion trade pressure for speed along a streamline (Bernoulli's principle); viscosity resists relative flow between fluid layers, and surface tension makes a liquid surface behave like a stretched elastic membrane.",
+  "explanation": "Pascal's law states that pressure applied to an enclosed, incompressible fluid is transmitted equally and undiminished in all directions — the working principle of hydraulic lifts and brakes, where a small force on a small piston produces a large force on a larger piston (same pressure, different areas). Bernoulli's principle, derived from energy conservation for an ideal (non-viscous, incompressible, steady, streamline) flow, states that P + ½ρv² + ρgh stays constant along a streamline: where the fluid speeds up (e.g. in a narrowed pipe, per the continuity equation A₁v₁ = A₂v₂), pressure must drop, and vice versa. This explains the lift on an aircraft wing and why a shower curtain gets pulled inward. Viscosity is internal friction between adjacent fluid layers moving at different velocities; Newton's law of viscosity gives the viscous force as F = ηA(dv/dx), and Stokes' law (F = 6πηrv) gives the drag on a small sphere falling through a viscous fluid, which determines its terminal velocity. Surface tension arises because surface molecules experience a net inward pull (unlike bulk molecules, which are pulled equally in all directions), making the surface behave like a stretched membrane that minimises surface area — responsible for spherical droplets, capillary rise in a thin tube, and insects walking on water. Excess pressure inside a spherical liquid drop is 2T/r (T = surface tension), and inside a soap bubble (two surfaces) it is 4T/r. The Reynolds number distinguishes streamline (laminar, low Re) from turbulent (high Re) flow, marking where Bernoulli's ideal-flow assumptions start to break down.",
+  "commonMisconceptions": [
+    "Thinking Bernoulli's principle means 'faster fluid always has higher pressure' — it is the opposite: faster flow corresponds to LOWER pressure at the same height, for an ideal, incompressible, streamline flow.",
+    "Believing surface tension and viscosity describe the same phenomenon — surface tension is a surface-only effect from intermolecular attraction, while viscosity is a bulk-flow resistance between fluid layers.",
+    "Applying Bernoulli's equation to a real fluid with strong viscosity or turbulent flow without acknowledging that its idealised (non-viscous, streamline) assumptions no longer strictly hold."
+  ],
+  "examples": [
+    "A hydraulic car jack uses Pascal's law: a small force on a narrow piston lifts a car via a wide piston.",
+    "An aircraft wing's curved upper surface makes air travel faster over the top (lower pressure) than underneath (higher pressure), contributing to lift, per Bernoulli's principle.",
+    "Water rises up a thin capillary tube against gravity due to surface tension and adhesion to the glass."
+  ],
+  "genZNote": "Fast fluid, low pressure — Bernoulli really said speed comes at a cost."
+}

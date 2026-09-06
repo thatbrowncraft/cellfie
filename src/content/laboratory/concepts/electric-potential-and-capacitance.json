@@ -1,0 +1,43 @@
+{
+  "id": "concept-electric-potential-and-capacitance",
+  "category": "concept",
+  "title": "Electric Potential, Potential Energy and Capacitance",
+  "subcategory": "Electrostatic Potential and Capacitance",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Electrostatic Potential and Capacitance",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "electric potential",
+    "potential difference",
+    "capacitance",
+    "dielectric",
+    "equipotential surface"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-electric-field-and-gauss-law"
+  ],
+  "relatedFormulas": [
+    "formula-capacitor-combinations"
+  ],
+  "summary": "Electric potential is potential energy per unit charge, a scalar that decreases along the field's direction; capacitance measures a conductor's/capacitor's ability to store charge per unit potential difference, and inserting a dielectric always increases capacitance.",
+  "explanation": "Electric potential V at a point is defined as work done per unit positive charge in bringing it from infinity to that point (against the field), V = W/q — a SCALAR quantity, unlike the vector electric field, which makes potential calculations for complex charge arrangements much easier (superposition of scalars, not vectors). Potential difference between two points equals work done per unit charge in moving between them; the relation E = −dV/dx means electric field points in the direction of DECREASING potential, and is the negative gradient of potential. An equipotential surface has the same potential everywhere on it; the electric field is always perpendicular to equipotential surfaces, and no work is done moving a charge along one. Capacitance C = Q/V is the ratio of charge stored to potential difference; for a parallel plate capacitor, C = ε₀A/d (vacuum) — proportional to plate area, inversely proportional to separation. Inserting a dielectric between the plates increases capacitance by a factor K (the dielectric constant) because the dielectric partially cancels the field via induced polarization, C = Kε₀A/d. Capacitors in series (1/Ceq = 1/C1 + 1/C2 + ...) have the SAME charge on each but share the voltage, giving a smaller equivalent capacitance than the smallest individual one; capacitors in parallel (Ceq = C1 + C2 + ...) have the same voltage across each but share the charge, giving a larger equivalent capacitance than the largest individual one. Energy stored in a capacitor is U = ½CV² = ½QV = Q²/2C.",
+  "commonMisconceptions": [
+    "Assuming higher potential always means higher potential energy for any charge — it's true for POSITIVE charges (PE = qV), but a negative charge has LOWER potential energy at a point of higher potential.",
+    "Mixing up the series and parallel capacitance rules with the (opposite-looking) resistor rules — capacitors in series combine like resistors in parallel (reciprocals add), and capacitors in parallel combine like resistors in series (simple sum), a very common exam trap.",
+    "Believing a dielectric can only decrease or have no effect on capacitance — a dielectric ALWAYS increases capacitance (K > 1 always) compared to vacuum/air between the same plates."
+  ],
+  "examples": [
+    "The potential everywhere on the surface of a charged conductor in electrostatic equilibrium is the same (an equipotential), even if the conductor has an irregular shape.",
+    "Sliding a dielectric slab (like mica or glass) between capacitor plates while keeping the same charge increases capacitance and decreases the voltage across the plates."
+  ],
+  "genZNote": "Potential's the scalar softie — electric field is the vector doing all the heavy directional lifting."
+}

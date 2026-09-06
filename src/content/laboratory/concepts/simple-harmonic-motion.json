@@ -33,5 +33,6 @@
   "examples": [
     "Mass-spring system: restoring force F = -kx directly gives SHM.",
     "Simple pendulum for small oscillation angles."
-  ]
+  ],
+  "genZNote": "SHM: always getting pulled back toward the mean position, no matter how far you wander."
 }

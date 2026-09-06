@@ -1,0 +1,44 @@
+{
+  "id": "concept-projectile-motion",
+  "category": "concept",
+  "title": "Projectile Motion",
+  "subcategory": "Motion in a Plane — Projectile Motion",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Motion in a Plane",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "projectile",
+    "range",
+    "maximum height",
+    "time of flight",
+    "horizontal projectile"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-scalars-and-vectors",
+    "concept-circular-motion"
+  ],
+  "relatedFormulas": [
+    "formula-equations-of-motion"
+  ],
+  "summary": "A projectile undergoes independent, simultaneous horizontal (constant velocity) and vertical (constant acceleration g) motion, tracing a parabolic path.",
+  "explanation": "The key idea (Galileo's insight) is that horizontal and vertical motions of a projectile are completely independent of each other and can be analysed separately, then combined. For a projectile launched with speed u at angle θ above the horizontal: horizontal velocity ux = u cosθ stays constant throughout (no horizontal force, ignoring air resistance), while vertical velocity uy = u sinθ changes under gravity (a = −g). This gives three standard results: time of flight T = 2u sinθ/g, maximum height H = u²sin²θ/2g, and horizontal range R = u²sin2θ/g. Range is maximum at θ = 45°, and R is the same for complementary angles (e.g. 30° and 60°) since sin2θ has the same value for θ and (90°−θ). The path traced is a parabola: y = x tanθ − gx²/(2u²cos²θ). Air resistance, which real projectiles experience, is neglected in this NCERT-level treatment, so it strictly applies to motion in vacuum near Earth's surface.",
+  "commonMisconceptions": [
+    "Believing the horizontal velocity decreases as the projectile rises — it stays constant throughout the flight since gravity has no horizontal component.",
+    "Forgetting that maximum range at 45° assumes launch and landing at the same height; if launched from a height, the optimal angle is less than 45°.",
+    "Mixing up which trig function goes with which component — horizontal uses cosθ, vertical uses sinθ, a very common exam slip."
+  ],
+  "examples": [
+    "A ball kicked at 20 m/s at 30° to the horizontal lands back at the same height it was kicked from, after tracing a parabolic arc.",
+    "A bullet fired horizontally from a height and a bullet simply dropped from the same height hit the ground at the same time — vertical motion is identical in both cases."
+  ],
+  "genZNote": "Horizontal motion said 'not my problem' — gravity only handles the vertical drama."
+}

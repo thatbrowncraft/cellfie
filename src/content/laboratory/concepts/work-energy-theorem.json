@@ -24,15 +24,20 @@
     "concept-conservation-of-energy"
   ],
   "relatedFormulas": [
-    "formula-kinetic-energy"
+    "formula-kinetic-energy",
+    "formula-power",
+    "formula-work-done-by-a-force"
   ],
-  "summary": "The net work done on an object equals its change in kinetic energy.",
-  "explanation": "Work is done when a force causes displacement in the direction of the force (W = F·d·cosθ). The work-energy theorem connects this to motion: whenever a net force does work on an object, that work shows up entirely as a change in the object's kinetic energy — speeding it up if the work is positive, slowing it down if negative. This lets many problems be solved without ever computing acceleration or time directly, by tracking energy instead of forces and kinematics step by step.",
+  "summary": "The net work done on an object equals its change in kinetic energy — a direct shortcut linking force-based mechanics to energy, valid for any net force (constant or variable).",
+  "explanation": "Work is done when a force causes displacement, with only the component of force ALONG the displacement direction contributing: W = F·d·cosθ = F⃗·d⃗ (a dot product, since work is a scalar). The work-energy theorem states Wnet = ΔKE = KEfinal − KEinitial: whenever the NET force (the vector sum of all forces) does work on an object, that work shows up entirely as a change in kinetic energy — positive net work speeds the object up, negative net work slows it down. This holds for VARIABLE forces too (found via W = ∫F dx), not just constant ones, which is what makes it more broadly useful than plain kinematics equations in many problems. This theorem is a direct consequence of Newton's second law (F = ma) combined with the kinematic relation v² = u² + 2as — it isn't a separate law of nature, but a convenient RESTATEMENT that lets many problems be solved by tracking energy instead of stepping through force, acceleration, and time. Crucially, the theorem uses the NET work (sum of work done by ALL forces, including friction, gravity, normal force, applied force, etc.), not the work done by any single force in isolation — a very common point of confusion. Work done BY a specific force (like friction) equals the negative of the kinetic energy 'lost' to that force alone, but only the NET work across all forces equals the total ΔKE. SI unit of work and kinetic energy is the joule (J); work and energy share units precisely because the theorem equates them directly.",
   "commonMisconceptions": [
-    "Forgetting that only the component of force along the direction of displacement does work — a force perpendicular to motion (like the normal force during horizontal motion) does zero work.",
-    "Confusing work done BY a specific force with the NET work — the theorem uses net work done by all forces combined."
+    "Forgetting that only the component of force along the direction of displacement does work — a force perpendicular to motion (like the normal force during horizontal motion, or gravity on a horizontally moving object) does zero work.",
+    "Confusing work done BY a specific force with the NET work — the theorem uses net work done by all forces combined, not any single force's contribution alone.",
+    "Assuming the work-energy theorem only applies to constant forces — it holds equally for variable forces, using W = ∫F dx instead of the simple W = Fd cosθ."
   ],
   "examples": [
-    "A block sliding to a stop due to friction: the (negative) work done by friction equals the loss in the block's kinetic energy."
-  ]
+    "A block sliding to a stop due to friction: the (negative) work done by friction equals the loss in the block's kinetic energy.",
+    "A car accelerating from rest under the engine's driving force: the net work done by all forces (drive force minus friction/air resistance) equals the car's gain in kinetic energy."
+  ],
+  "genZNote": "Work-energy theorem: force and displacement team up, but only the aligned part of the force actually counts."
 }

@@ -1,0 +1,41 @@
+{
+  "id": "concept-solid-state-unit-cells-and-defects",
+  "category": "concept",
+  "title": "Solid State: Unit Cells, Packing and Crystal Defects",
+  "subcategory": "Solid State — Unit Cells, Packing Efficiency, Point Defects",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — The Solid State",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "unit cell",
+    "packing efficiency",
+    "coordination number",
+    "Schottky defect",
+    "Frenkel defect"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-chemical-bonding-and-vsepr"
+  ],
+  "relatedFormulas": [],
+  "summary": "Crystalline solids have a repeating three-dimensional arrangement described by a unit cell; different packing arrangements (simple cubic, bcc, fcc/ccp) give different packing efficiencies and coordination numbers, and real crystals always show some point defects that alter their properties.",
+  "explanation": "A unit cell is the smallest repeating three-dimensional block that, stacked in all directions, generates the entire crystal lattice. The three cubic unit cells are simple cubic (SC: atoms only at corners, coordination number 6, packing efficiency 52.4%), body-centred cubic (BCC: corners + one atom at the body centre, coordination number 8, packing efficiency 68%), and face-centred cubic (FCC, equivalent to cubic close packing/ccp: corners + one atom at each face centre, coordination number 12, packing efficiency 74% — the maximum possible for identical spheres). Close packing of identical spheres in two layers (hexagonal close packing, hcp, ABAB... stacking, or cubic close packing, ccp/fcc, ABCABC... stacking) both achieve the same maximum 74% packing efficiency and coordination number 12; they differ only in the STACKING SEQUENCE of layers, not in how tightly individual spheres pack within a layer. Point defects are imperfections at individual lattice sites in an otherwise real (non-ideal) crystal: a Schottky defect occurs when EQUAL numbers of cations and anions are missing from their lattice sites (maintaining electrical neutrality), typical of ionic solids where cation and anion sizes are similar (e.g. NaCl) — it DECREASES the density of the crystal. A Frenkel defect occurs when a smaller ion (usually the cation) leaves its normal site and occupies an interstitial position instead, typical when there's a large size difference between cation and anion (e.g. AgCl, ZnS) — it does NOT change the density of the crystal, since no ion actually leaves the crystal. Impurity defects (e.g. doping NaCl with SrCl₂) and non-stoichiometric defects (metal excess/deficiency, e.g. giving certain solids their colour or semiconducting behaviour) are also important — controlled doping is exactly how n-type and p-type semiconductors are engineered.",
+  "commonMisconceptions": [
+    "Assuming hcp and ccp have different packing efficiencies — both achieve the identical maximum 74% efficiency and coordination number 12; they differ only in the repeating sequence of layer stacking (ABAB vs ABCABC).",
+    "Believing all point defects reduce crystal density — a Schottky defect (missing ion PAIRS) does reduce density, but a Frenkel defect (ion merely displaced to an interstitial site, none actually missing) leaves density essentially UNCHANGED.",
+    "Mixing up which defect occurs in which type of ionic solid — Schottky defects favour similar-sized ions (like NaCl), while Frenkel defects favour a large size difference between cation and anion (like AgCl, allowing the small cation to fit into interstitial space)."
+  ],
+  "examples": [
+    "NaCl shows the Schottky defect because Na⁺ and Cl⁻ are relatively close in size, allowing whole ion PAIRS to be missing while keeping the crystal neutral.",
+    "AgCl shows the Frenkel defect because the small Ag⁺ ion can migrate into an interstitial site, leaving a vacancy at its original position but not leaving the crystal."
+  ],
+  "genZNote": "FCC and HCP both cap at 74% packing — it's giving 'different route, same maximum efficiency' energy."
+}

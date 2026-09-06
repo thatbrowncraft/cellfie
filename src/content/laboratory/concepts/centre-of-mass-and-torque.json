@@ -1,0 +1,44 @@
+{
+  "id": "concept-centre-of-mass-and-torque",
+  "category": "concept",
+  "title": "Centre of Mass and Torque",
+  "subcategory": "System of Particles and Rotational Motion — Centre of Mass, Torque",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — System of Particles and Rotational Motion",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "centre of mass",
+    "torque",
+    "moment of force",
+    "couple",
+    "equilibrium of rigid body"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-angular-momentum-and-moment-of-inertia",
+    "concept-scalars-and-vectors"
+  ],
+  "relatedFormulas": [
+    "formula-torque"
+  ],
+  "summary": "The centre of mass is the single point where a system's total mass can be imagined to be concentrated for describing its translational motion; torque is the rotational analogue of force, causing angular acceleration about a chosen axis.",
+  "explanation": "For a system of particles, the centre of mass (COM) is the mass-weighted average position, R = Σmᵢrᵢ / Σmᵢ; for a rigid body with uniform density and symmetric shape, it coincides with the geometric centre. The COM moves exactly as if all the mass of the system were concentrated there and all external forces acted at that point — internal forces (like an explosion's fragments or a person walking on a boat) never move the COM of an isolated system; only external forces can. Torque (moment of force) about a point, τ = r × F = rF sinθ, measures the turning effect of a force, and is maximum when the force is applied perpendicular to the position vector r (largest 'lever arm'). A rigid body is in mechanical equilibrium when both the net force is zero (translational equilibrium) AND the net torque about any point is zero (rotational equilibrium) — satisfying only one is not enough; a body can have zero net force yet still spin due to unbalanced torque (a 'couple'). A couple is a pair of equal, opposite, non-collinear forces producing pure rotation with zero net force but non-zero net torque, e.g. hands turning a steering wheel.",
+  "commonMisconceptions": [
+    "Assuming the centre of mass must lie inside the body's material — for a ring or hollow sphere, the COM is at the geometric centre, which lies in empty space.",
+    "Thinking zero net force automatically means a rigid body is fully in equilibrium — rotational equilibrium (zero net torque) is a separate, additional condition.",
+    "Applying force at any point and assuming it produces the same torque — torque depends on both the magnitude of force AND the perpendicular distance (lever arm) from the axis."
+  ],
+  "examples": [
+    "A high jumper's body can pass over the bar even while their centre of mass passes just under it, due to body curvature ('Fosbury flop').",
+    "Turning a steering wheel using two hands pushing in opposite directions is a classic couple — pure rotation with zero net translational force."
+  ],
+  "genZNote": "Torque said: it's not about how hard you push, it's about where you push. Distance matters."
+}

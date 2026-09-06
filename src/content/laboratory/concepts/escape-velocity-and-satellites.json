@@ -1,0 +1,45 @@
+{
+  "id": "concept-escape-velocity-and-satellites",
+  "category": "concept",
+  "title": "Escape Velocity, Orbital Velocity and Satellites",
+  "subcategory": "Gravitation — Escape Velocity, Satellites, Kepler's Laws",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Gravitation",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "escape velocity",
+    "orbital velocity",
+    "geostationary satellite",
+    "Kepler's laws",
+    "gravitational binding energy"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-centre-of-mass-and-torque"
+  ],
+  "relatedFormulas": [
+    "formula-escape-velocity",
+    "formula-orbital-velocity",
+    "formula-universal-law-of-gravitation"
+  ],
+  "summary": "Escape velocity is the minimum speed to permanently break free of a planet's gravity from its surface; orbital velocity is the (smaller) speed needed to maintain a stable circular orbit at a given height, and both follow from equating gravitational and kinetic/centripetal energy.",
+  "explanation": "Escape velocity ve is found by setting the total mechanical energy at the surface to zero (just enough kinetic energy to reach infinity with zero leftover speed): ½mve² = GMm/R, giving ve = √(2GM/R) = √(2gR). For Earth, ve ≈ 11.2 km/s, independent of the escaping object's mass and independent of launch direction (ignoring atmospheric drag). Orbital velocity vo for a satellite in a circular orbit of radius r is found by equating gravitational force to the required centripetal force: GMm/r² = mvo²/r, giving vo = √(GM/r) = √(gR²/r); notice vo = ve/√2 at the same radius, so orbital speed is always less than escape speed. A geostationary satellite orbits with the same angular velocity as Earth's rotation (period = 24 h), appears fixed over one point on the equator, and must be at a specific altitude (~36,000 km) — this height is not adjustable independent of the period, since the two are linked by Kepler's third law. Kepler's three laws (elliptical orbits with the Sun/planet at one focus; equal areas swept in equal times, a consequence of angular momentum conservation; T² ∝ r³) describe all gravitationally bound orbits, not just planets around the Sun. Total energy of a satellite in a bound orbit is negative (E = −GMm/2r); a body with zero or positive total energy is not bound and will escape rather than orbit.",
+  "commonMisconceptions": [
+    "Thinking escape velocity depends on the direction or angle of launch — for a given height it is a scalar minimum speed independent of direction (in the absence of air resistance).",
+    "Confusing escape velocity with orbital velocity, or assuming they're equal — orbital velocity is always ve/√2 at the same distance, noticeably smaller.",
+    "Believing any satellite placed above the equator becomes geostationary — geostationary status additionally requires the specific altitude that matches Earth's 24-hour rotation period, via Kepler's third law."
+  ],
+  "examples": [
+    "A rocket needs ~11.2 km/s at Earth's surface to escape Earth's gravity completely, ignoring air resistance.",
+    "Communication satellites are placed in geostationary orbit so ground antennas can stay fixed, pointing at one spot in the sky."
+  ],
+  "genZNote": "Escape velocity: the exact 'main character' speed you need to never look back at Earth."
+}

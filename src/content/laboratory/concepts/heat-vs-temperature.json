@@ -41,5 +41,6 @@
   ],
   "commonMisconceptions": [
     "Using 'heat' and 'temperature' interchangeably in casual speech, e.g. saying an object 'has a lot of heat' when it actually has high temperature or high internal energy."
-  ]
+  ],
+  "genZNote": "Temperature is a status update. Heat is the energy actually being sent."
 }

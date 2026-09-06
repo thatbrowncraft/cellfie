@@ -29,5 +29,6 @@
   ],
   "examples": [
     "Moving a bar magnet into a coil induces a current that creates a magnetic field opposing the magnet's approach (Lenz's law in action)."
-  ]
+  ],
+  "genZNote": "Change the flux, and the circuit fights back — that's Lenz's law being petty on purpose."
 }

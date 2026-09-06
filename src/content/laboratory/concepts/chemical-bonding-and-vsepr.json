@@ -29,5 +29,6 @@
   ],
   "examples": [
     "Methane (CH₄, sp³, no lone pairs): perfect tetrahedral, 109.5°. Water (H₂O, sp³, two lone pairs): bent, ~104.5°."
-  ]
+  ],
+  "genZNote": "Electron pairs are just trying to keep their distance — VSEPR is molecular social distancing."
 }

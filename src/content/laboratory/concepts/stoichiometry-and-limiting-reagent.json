@@ -1,0 +1,41 @@
+{
+  "id": "concept-stoichiometry-and-limiting-reagent",
+  "category": "concept",
+  "title": "Stoichiometry and Limiting Reagent",
+  "subcategory": "Some Basic Concepts of Chemistry — Stoichiometry, Limiting Reagent",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Some Basic Concepts of Chemistry",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "stoichiometry",
+    "limiting reagent",
+    "excess reagent",
+    "theoretical yield",
+    "percentage yield"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-mole-concept"
+  ],
+  "relatedFormulas": [],
+  "summary": "Stoichiometry uses a balanced equation's mole ratios to relate amounts of reactants and products; when reactants aren't in the exact stoichiometric ratio, the limiting reagent (fully consumed first) determines the maximum possible product.",
+  "explanation": "A balanced chemical equation's coefficients give the mole ratio in which reactants combine and products form — this ratio, not the mass ratio, is what stoichiometric calculations are built on, since moles directly count particles/formula units while mass depends on molar mass too. In practice, reactants are rarely mixed in exactly the stoichiometric ratio; the LIMITING REAGENT is whichever reactant gets completely used up first, and it alone determines the maximum amount of product that CAN form — any reactant left over is called the excess reagent. To identify the limiting reagent, divide the available moles of each reactant by its stoichiometric coefficient; the reactant giving the SMALLEST value is limiting. Theoretical yield is the maximum product mass/moles calculated purely from stoichiometry (assuming the reaction goes to completion with no losses); actual yield is what is really obtained in an experiment (always ≤ theoretical, due to side reactions, incomplete reactions, or losses during handling). Percentage yield = (actual yield/theoretical yield) × 100, a practical measure of a reaction's real-world efficiency. Related mole-based ideas — empirical formula (simplest whole-number ratio of atoms) versus molecular formula (actual number of atoms, an integer multiple of the empirical formula) — also depend entirely on correctly converting given masses/percentages to moles first.",
+  "commonMisconceptions": [
+    "Assuming the reactant present in the smaller MASS is automatically the limiting reagent — limiting reagent is decided by moles relative to the STOICHIOMETRIC RATIO, not by raw mass or even raw moles alone.",
+    "Calculating product amounts using the excess reagent's quantity instead of the limiting reagent's — this always overestimates the actual product formed.",
+    "Believing percentage yield can exceed 100% under ideal conditions — a value over 100% signals an experimental/measurement error (e.g. impure product, calculation mistake), never a genuinely 'better than theoretical' result."
+  ],
+  "examples": [
+    "If 2 mol H₂ reacts with 1 mol O₂ to form water (2H₂ + O₂ → 2H₂O), the reactants are in the exact stoichiometric ratio and both are fully consumed together.",
+    "Mixing 4 mol H₂ with 1 mol O₂ for the same reaction leaves O₂ as limiting (needs only 2 mol H₂), with 2 mol H₂ left unreacted (excess)."
+  ],
+  "genZNote": "Limiting reagent: the one reactant that ghosts the reaction early and ruins everyone else's plans."
+}

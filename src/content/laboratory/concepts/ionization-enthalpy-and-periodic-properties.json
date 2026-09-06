@@ -1,0 +1,42 @@
+{
+  "id": "concept-ionization-enthalpy-and-periodic-properties",
+  "category": "concept",
+  "title": "Ionization Enthalpy, Electron Gain Enthalpy and Electronegativity",
+  "subcategory": "Classification of Elements and Periodicity — Ionization Enthalpy, Electron Gain Enthalpy, Electronegativity",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 11 — Classification of Elements and Periodicity in Properties",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "ionization enthalpy",
+    "electron gain enthalpy",
+    "electronegativity",
+    "atomic radius trend",
+    "periodic properties"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-periodic-trends",
+    "concept-atomic-structure-and-quantum-numbers"
+  ],
+  "relatedFormulas": [],
+  "summary": "Ionization enthalpy (energy to remove an electron), electron gain enthalpy (energy change on adding an electron) and electronegativity (tendency to attract shared electrons) all broadly increase across a period and decrease down a group, with well-known exceptions tied to stable electron configurations.",
+  "explanation": "Ionization enthalpy (IE) is the minimum energy needed to remove the most loosely bound electron from an isolated gaseous atom — it INCREASES across a period (increasing nuclear charge pulls electrons in tighter, same shell) and DECREASES down a group (outer electron is farther from the nucleus and shielded by more inner shells, despite higher nuclear charge). Well-known exceptions: Be has higher IE than B (removing an electron from B's singly-occupied 2p disturbs a stable, fully-filled 2s² less than expected — the reverse logic, filled 2s² of Be is extra stable); N has higher IE than O (N's half-filled 2p³ is extra stable, and removing an electron from O's paired 2p electron is comparatively easier due to inter-electron repulsion in the paired orbital). Electron gain enthalpy is the energy CHANGE when an electron is added to a neutral gaseous atom; it is generally NEGATIVE (energy released, since the atom becomes more stable) and becomes MORE negative across a period (up to a point), but halogens have the most negative values (strong pull for one more electron to complete the octet), while noble gases have positive electron gain enthalpy (adding an electron to an already stable filled shell is unfavourable). Electronegativity (Pauling scale) measures an ATOM'S tendency to attract the shared pair of electrons in a covalent bond (unlike IE/electron gain enthalpy, which apply to isolated atoms) — it increases across a period and decreases down a group, with fluorine as the most electronegative element overall. Atomic and ionic radii DECREASE across a period (increasing effective nuclear charge pulls electrons closer in the same shell) and INCREASE down a group (a new shell is added each period).",
+  "commonMisconceptions": [
+    "Assuming ionization enthalpy increases perfectly smoothly across every period with no exceptions — the Be>B and N>O anomalies (from stable filled/half-filled subshell configurations) are specifically, frequently tested.",
+    "Confusing electron gain enthalpy (a property of isolated ATOMS in the gas phase) with electronegativity (a property specific to an atom WITHIN a bond, attracting shared electron density) — they correlate but are conceptually and numerically distinct quantities.",
+    "Believing noble gases have very negative electron gain enthalpy because they're 'unreactive' — the opposite is true: their already-stable, fully-filled configuration makes adding an electron energetically UNFAVOURABLE (positive electron gain enthalpy)."
+  ],
+  "examples": [
+    "Nitrogen (half-filled 2p³, extra stable) has a higher first ionization enthalpy than oxygen, despite oxygen being to its right in the period.",
+    "Fluorine's very high electronegativity (and chlorine's very negative electron gain enthalpy) both stem from the strong pull halogens exert on electrons to complete a stable octet."
+  ],
+  "genZNote": "Nitrogen's half-filled 2p³ said 'main character stability' and refused to give up an electron easily."
+}

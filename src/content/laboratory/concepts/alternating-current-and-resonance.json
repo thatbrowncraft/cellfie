@@ -1,0 +1,44 @@
+{
+  "id": "concept-alternating-current-and-resonance",
+  "category": "concept",
+  "title": "Alternating Current, Impedance and Resonance",
+  "subcategory": "Alternating Current — AC Circuits, Impedance, Resonance, Transformer",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 12 — Alternating Current",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "alternating current",
+    "impedance",
+    "resonance",
+    "power factor",
+    "transformer"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-electromagnetic-induction"
+  ],
+  "relatedFormulas": [
+    "formula-ac-impedance-and-resonance",
+    "formula-self-and-mutual-inductance"
+  ],
+  "summary": "In an AC circuit, resistors, inductors and capacitors respond differently to a changing current (inductors and capacitors introduce a phase difference between current and voltage), combining into a total 'impedance'; a series LCR circuit driven at its natural resonant frequency allows maximum current to flow.",
+  "explanation": "In a purely resistive AC circuit, current and voltage stay exactly in phase. In a purely inductive circuit, current LAGS voltage by 90° (inductors oppose CHANGE in current — di/dt — so their opposition, called inductive reactance XL = ωL, increases with frequency); in a purely capacitive circuit, current LEADS voltage by 90° (capacitive reactance Xc = 1/ωC decreases with frequency, since a capacitor charges/discharges more easily at low frequency). In a series LCR circuit, impedance Z = √(R² + (XL−Xc)²) combines all three effects, and current I = V/Z is generally out of phase with voltage by an angle φ where tanφ = (XL−Xc)/R. Average power dissipated is P = VrmsIrms cosφ, where cosφ is the 'power factor' — power is dissipated only in the resistive part; ideal inductors and capacitors, over a full cycle, dissipate NO net energy (they store and return it). Resonance occurs when XL = Xc (i.e., ω = ω₀ = 1/√(LC)), at which impedance is purely resistive and minimum (Z = R), so current is maximum — the basis of tuning a radio receiver to a specific station's frequency. A transformer uses electromagnetic induction (mutual inductance between primary and secondary coils sharing an iron core) to step voltage up or down: Vs/Vp = Ns/Np = Ip/Is (ideal, lossless transformer conserves power VpIp = VsIs), used to minimise transmission losses by transmitting electrical power at very high voltage (hence low current, low I²R loss) over long distances.",
+  "commonMisconceptions": [
+    "Assuming impedance simply adds like resistances in series (Z = R + XL + Xc) — because of the 90° phase differences, XL and Xc must be combined by SUBTRACTING them (since they're exactly out of phase with each other) before combining with R using the Pythagorean-like formula.",
+    "Believing an ideal inductor or capacitor dissipates power in an AC circuit — over a complete cycle they store and fully return energy, dissipating zero net average power; only resistance dissipates power.",
+    "Thinking a step-up transformer increases power — an ideal transformer conserves power exactly; a step-up in voltage always comes with a proportional step-DOWN in current."
+  ],
+  "examples": [
+    "A radio tuning circuit is adjusted (usually by varying capacitance) until the circuit resonates at the desired station's broadcast frequency, maximising signal current.",
+    "Power is transmitted over long distances at very high voltage (and correspondingly low current) specifically to reduce I²R heating losses in the transmission wires."
+  ],
+  "genZNote": "Inductor and capacitor: perpetually 90° out of sync, but resonance is when they finally cancel each other out."
+}

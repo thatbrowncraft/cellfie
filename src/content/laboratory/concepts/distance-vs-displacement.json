@@ -49,5 +49,6 @@
   "examples": [
     "Walking 4 m east then 4 m west: distance = 8 m, displacement = 0 m.",
     "Running one full lap of a circular track: distance = track circumference, displacement = 0."
-  ]
+  ],
+  "genZNote": "Distance tracks the whole journey's drama; displacement only cares where you ended up."
 }

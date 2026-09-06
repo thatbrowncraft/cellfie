@@ -22,16 +22,20 @@
   "difficulty": "beginner",
   "subjectDomain": "physics",
   "relatedFormulas": [
+    "formula-momentum",
     "formula-newtons-second-law",
-    "formula-momentum"
+    "formula-torque"
   ],
-  "summary": "Newton's three laws describe how forces affect motion: an object resists changes to its motion (first law), force equals mass times acceleration (second law), and every force has an equal and opposite reaction force (third law).",
-  "explanation": "The first law (inertia) states that an object at rest stays at rest, and an object in motion stays in motion at constant velocity, unless acted on by a net external force — it defines what a force actually does (change motion) rather than what causes motion to continue. The second law quantifies this: net force equals mass times acceleration (F = ma), or more generally, the rate of change of momentum. The third law states that forces always come in pairs: if object A exerts a force on object B, object B exerts an equal and opposite force on object A — crucially, these two forces act on different objects, so they never cancel each other out for a single object's motion.",
+  "summary": "Newton's three laws together describe how forces cause (or fail to cause) changes in motion: inertia resists change, force causes acceleration proportional to it, and every force has an equal, opposite reaction force on a different object.",
+  "explanation": "Newton's FIRST LAW (law of inertia) states that an object remains at rest, or in uniform motion in a straight line, unless acted upon by a net external force — this defines an INERTIAL frame of reference (one where the first law holds true) and establishes that force is needed to CHANGE motion, not to sustain it (a common intuitive error, since friction usually masks this in everyday experience). Newton's SECOND LAW quantifies this: F = ma (or more generally, F = dp/dt, force equals rate of change of momentum) — net force determines the RATE of change of velocity (acceleration), not velocity itself; a large force on a large mass can produce the same acceleration as a small force on a small mass. Newton's THIRD LAW states that for every action force, there is an equal and opposite reaction force — critically, these two forces act on TWO DIFFERENT objects (never on the same object), which is exactly why they never cancel each other out when analysing the motion of either object alone; they only appear to 'cancel' when looking at the combined system from outside. A frequent point of confusion: action-reaction pairs are NOT the same as a pair of balanced forces on a single object in equilibrium — balanced forces on one object (like weight and normal reaction on a resting book) are DIFFERENT types of forces acting on the SAME object, while a true action-reaction pair (like the book pushing down on the table and the table pushing up on the book with equal magnitude) always involves the SAME TYPE of force acting on two DIFFERENT objects. Applications include analysing systems of connected bodies (blocks connected by strings, pulleys), where free-body diagrams isolate each object and apply F = ma individually, with tension/normal forces linking the equations together.",
   "commonMisconceptions": [
-    "Thinking a constant force is needed to maintain constant velocity — in the absence of friction/resistance, no force is needed at all (first law).",
-    "Believing action-reaction pairs act on the same object and therefore cancel — they act on two different objects and never cancel for either one individually."
+    "Believing a constant force is needed to maintain constant velocity — Newton's first law says the opposite: NO net force is needed to sustain uniform velocity; a net force is needed only to CHANGE velocity (this intuitive confusion arises because everyday moving objects experience friction, which does require a counteracting force to maintain speed).",
+    "Confusing Newton's third law action-reaction pairs with a pair of BALANCED forces on a single object — action-reaction pairs act on two DIFFERENT objects and are of the SAME type/nature; balanced forces (like weight and normal force on a resting object) act on the SAME object and are typically of DIFFERENT types.",
+    "Assuming action and reaction forces cancel out and prevent any motion — they act on different objects, so each object still experiences its own share of net force from ALL forces acting specifically on IT, and can very well accelerate."
   ],
   "examples": [
-    "A book resting on a table: the table's normal force balances gravity, but the action-reaction pair for gravity is Earth pulling the book and the book pulling Earth — not the table's normal force."
-  ]
+    "A book resting on a table: gravity pulls the book down, the table pushes the book up (normal force) — these two forces balance on the SAME object (the book), but are NOT an action-reaction pair.",
+    "The true action-reaction pair for the book-table system is: the book pushes DOWN on the table (action) and the table pushes UP on the book (reaction) — equal, opposite, but acting on two different objects (book and table respectively, if you trace which force acts on which)."
+  ],
+  "genZNote": "Newton's third law: forces come in matching pairs, but they never hang out on the same object."
 }

@@ -1,0 +1,41 @@
+{
+  "id": "concept-coordination-compounds-and-cft",
+  "category": "concept",
+  "title": "Coordination Compounds: Nomenclature, Isomerism and Crystal Field Theory",
+  "subcategory": "Coordination Compounds — Ligands, Nomenclature, Isomerism, Crystal Field Theory",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part I, Class 12 — Coordination Compounds",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "coordination number",
+    "ligand",
+    "crystal field theory",
+    "coordination isomerism",
+    "chelate"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-d-and-f-block-elements"
+  ],
+  "relatedFormulas": [],
+  "summary": "A coordination compound has a central metal ion surrounded by ligands (electron-pair donors) forming coordinate bonds; crystal field theory explains d-orbital splitting caused by ligand field strength, accounting for coordination compounds' characteristic colours and magnetic behaviour.",
+  "explanation": "In a coordination compound, the central metal atom/ion is directly bonded to a fixed number of ligands (the coordination number) through COORDINATE (dative) bonds, where the ligand donates BOTH electrons of the shared pair. Ligands are classified by the number of donor atoms attached to the metal: monodentate (one donor atom, e.g. NH₃, Cl⁻), bidentate (two, e.g. ethylenediamine, oxalate), and polydentate (several, e.g. EDTA, which can bind through six donor atoms). A CHELATE is a ring structure formed when a polydentate ligand binds to a single metal ion through two or more donor atoms simultaneously; chelate complexes are generally MORE stable than analogous complexes with monodentate ligands (the 'chelate effect'), which is why EDTA is used to sequester unwanted metal ions in medicine and industry. Isomerism in coordination compounds includes: ionization isomerism (different ions produced in solution, e.g. [Co(NH₃)₅Br]SO₄ vs [Co(NH₃)₅SO₄]Br), coordination isomerism (in compounds with both cationic and anionic complex ions, ligands are distributed differently between the two metal centres), linkage isomerism (an ambidentate ligand like NO₂⁻ or SCN⁻ bonds through a different donor atom), and geometrical (cis-trans) and optical isomerism (for specific coordination geometries/numbers, especially octahedral and square planar). Crystal Field Theory (CFT) treats ligands as point negative charges that electrostatically repel the metal's d-orbitals; in an OCTAHEDRAL field, this repulsion splits the five degenerate d-orbitals into two sets — a higher-energy eg set (dz², dx²−y², pointing directly at ligands) and a lower-energy t2g set (dxy, dyz, dxz, pointing between ligands) — with the energy gap called crystal field splitting energy (Δo). Strong-field ligands (e.g. CN⁻, CO) cause LARGE splitting, often favouring low-spin (paired electron) configurations; weak-field ligands (e.g. halides, H₂O) cause small splitting, favouring high-spin configurations — this splitting, and the resulting d-d electronic transitions, is exactly what gives many transition metal complexes their characteristic COLOUR.",
+  "commonMisconceptions": [
+    "Assuming all transition metal complexes are automatically coloured — colour specifically requires PARTIALLY filled d-orbitals so d-d transitions are possible; d⁰ (e.g. Sc³⁺, Ti⁴⁺) and d¹⁰ (e.g. Zn²⁺, Cu⁺) complexes are typically colourless/white because there's no d-d transition possible.",
+    "Confusing a chelate (a polydentate ligand wrapping around ONE metal centre through multiple donor atoms) with simply having multiple separate monodentate ligands attached — chelation specifically requires the SAME ligand molecule binding through 2+ donor atoms.",
+    "Believing strong-field vs weak-field ligand strength can be guessed from charge alone — the actual ordering follows the empirically-derived spectrochemical series, which doesn't strictly correlate with ligand charge (e.g. neutral CO is a much stronger field ligand than the negatively charged halides)."
+  ],
+  "examples": [
+    "[Ni(CO)₄] is colourless because Ni in this complex is d¹⁰ (no d-d transition possible), while many other nickel complexes with partially filled d-orbitals are distinctly coloured.",
+    "EDTA forms a highly stable hexadentate chelate with metal ions like Ca²⁺ or Pb²⁺, used medically to treat heavy metal poisoning by safely sequestering the toxic metal ion."
+  ],
+  "genZNote": "Crystal field theory: ligands showing up and splitting the d-orbitals' friend group into two tiers."
+}

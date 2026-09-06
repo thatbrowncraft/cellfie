@@ -1,0 +1,41 @@
+{
+  "id": "concept-alcohols-phenols-and-ethers",
+  "category": "concept",
+  "title": "Alcohols, Phenols and Ethers",
+  "subcategory": "Alcohols, Phenols and Ethers — Acidity, Preparation, Reactions",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Chemistry Part II, Class 12 — Alcohols, Phenols and Ethers",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "phenol acidity",
+    "Lucas test",
+    "Williamson ether synthesis",
+    "dehydration of alcohols",
+    "esterification"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "chemistry",
+  "relatedConcepts": [
+    "concept-hydrogen-bonding-and-intermolecular-forces"
+  ],
+  "relatedFormulas": [],
+  "summary": "Phenols are significantly more acidic than alcohols because their conjugate base (phenoxide ion) is resonance-stabilised; alcohols undergo characteristic reactions like dehydration, oxidation and esterification, while ethers are prepared via Williamson synthesis and are comparatively less reactive.",
+  "explanation": "Phenol (C₆H₅OH) is markedly MORE ACIDIC than a typical alcohol (like ethanol) because its conjugate base, the phenoxide ion, is stabilised by RESONANCE — the negative charge on oxygen delocalises into the aromatic ring, spreading it out and lowering the ion's energy; alcohols lack this resonance stabilisation entirely for their alkoxide conjugate base, which keeps the full negative charge localised on oxygen. Electron-withdrawing substituents (like -NO₂) on the ring further increase phenol's acidity (by additional resonance/inductive stabilisation of the phenoxide), while electron-donating groups (like -OCH₃, alkyl groups) decrease it. The Lucas test distinguishes primary, secondary, and tertiary alcohols by their differing rates of reaction with Lucas reagent (conc. HCl + ZnCl₂, forming a cloudy alkyl chloride via SN1 for more substituted alcohols): tertiary alcohols react immediately (turbidity within minutes, forming the most stable carbocation), secondary alcohols react within about 5-10 minutes (warming may help), and primary alcohols show no visible reaction at room temperature. Alcohols undergo dehydration (loss of water, typically with conc. H₂SO₄ or H₃PO₄ and heat) to form alkenes, following Saytzeff's rule for the major product (more substituted alkene, since it's typically formed via a carbocation intermediate for secondary/tertiary alcohols); they also undergo oxidation, where a PRIMARY alcohol oxidises stepwise to an aldehyde then a carboxylic acid, a SECONDARY alcohol oxidises directly to a ketone (and no further, under normal conditions), and a TERTIARY alcohol resists oxidation entirely (no H atom available on the carbon bearing -OH). Esterification with a carboxylic acid (Fischer esterification, acid-catalysed) forms an ester + water. Ethers are prepared by Williamson ether synthesis: an alkoxide ion (from a sodium alkoxide) performs SN2 attack on a primary alkyl halide/tosylate, forming a new C-O-C ether linkage — this method works best with a PRIMARY halide (to favour SN2 over competing elimination, which becomes a problem with secondary/tertiary halides and a strong, small alkoxide base).",
+  "commonMisconceptions": [
+    "Assuming alcohols and phenols have comparable acidity simply because both have an -OH group — phenol is many orders of magnitude more acidic than a typical alcohol due to resonance stabilisation of the phenoxide ion, an effect alcohols entirely lack.",
+    "Expecting a tertiary alcohol to oxidise to a ketone or acid under ordinary oxidation conditions — a tertiary alcohol has NO hydrogen on the carbon bearing -OH, so it cannot be oxidised this way at all under normal conditions.",
+    "Trying Williamson synthesis with a bulky/tertiary alkyl halide and expecting good ether yield — this strongly favours competing ELIMINATION instead, since the strong alkoxide base/nucleophile struggles with SN2 on a hindered carbon."
+  ],
+  "examples": [
+    "Phenol reacts with aqueous NaOH to form sodium phenoxide (demonstrating its acidity), whereas ethanol does not react with NaOH under similar conditions.",
+    "Isopropanol (secondary alcohol) is oxidised by acidified potassium dichromate to acetone (a ketone), stopping there rather than proceeding to a carboxylic acid."
+  ],
+  "genZNote": "Phenoxide spreads the negative charge across the whole ring — that's resonance flexing, and it's why phenol's more acidic."
+}

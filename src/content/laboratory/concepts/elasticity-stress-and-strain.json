@@ -1,0 +1,43 @@
+{
+  "id": "concept-elasticity-stress-and-strain",
+  "category": "concept",
+  "title": "Elasticity, Stress and Strain",
+  "subcategory": "Mechanical Properties of Solids — Stress, Strain, Elastic Moduli",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Mechanical Properties of Solids",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT-aligned foundational coverage.",
+  "searchKeywords": [
+    "stress",
+    "strain",
+    "Young's modulus",
+    "Hooke's law",
+    "elastic limit"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-fluid-mechanics-pressure-viscosity-surface-tension"
+  ],
+  "relatedFormulas": [
+    "formula-youngs-modulus"
+  ],
+  "summary": "Stress is internal restoring force per unit area, strain is the fractional deformation produced; within the elastic limit the two are proportional (Hooke's law), and the proportionality constant is an elastic modulus specific to the type of deformation.",
+  "explanation": "When a deforming force is applied to a solid, internal restoring forces develop; stress = restoring force / area (unit: N/m² or Pa), while strain = change in dimension / original dimension (a dimensionless ratio). Hooke's law states that within the elastic limit, stress ∝ strain; the constant of proportionality is called the modulus of elasticity, and its type depends on the kind of stress: Young's modulus Y (longitudinal stress/longitudinal strain) for stretching/compressing a wire or rod, bulk modulus K (volumetric stress/volumetric strain) for uniform compression from all sides (its reciprocal is compressibility), and shear/rigidity modulus G (shearing stress/shearing strain) for a change of shape at constant volume. Beyond the elastic limit, the material no longer returns to its original shape when the force is removed (permanent/plastic deformation); beyond the fracture point, it breaks. A stress-strain curve visually captures the proportional (Hooke's law) region, the elastic limit, the yield point, and the fracture point. Elastic potential energy stored in a stretched wire is U = ½ × stress × strain × volume = ½Fx (for a spring-like linear system), which is why stretched or compressed elastic materials can do work when released. Steel has a much higher Young's modulus than rubber, meaning steel resists elastic deformation more strongly for the same stress — this is why steel is preferred structurally, while rubber's low Y and high elasticity make it suited to absorbing shocks.",
+  "commonMisconceptions": [
+    "Confusing stress (a cause, force per area) with pressure — both share units of Pa, but stress can have components along or perpendicular to a surface (shear vs normal), while pressure is always normal and, in a fluid, acts equally in all directions.",
+    "Assuming a material that stretches a lot (like rubber) has a high Young's modulus — actually the opposite: a large strain for small stress means a LOW modulus.",
+    "Treating strain as having units — it is a ratio of two lengths (or two volumes), hence dimensionless."
+  ],
+  "examples": [
+    "A steel wire supporting a load stretches only slightly (high Y), while a rubber band of similar dimensions stretches dramatically for the same force (low Y).",
+    "Beyond a metal wire's elastic limit, releasing the stretching force leaves it permanently longer than before — plastic deformation."
+  ],
+  "genZNote": "Hooke's law: stress and strain are proportional, right up until the material says 'I can't keep bouncing back.'"
+}

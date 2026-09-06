@@ -50,5 +50,6 @@
   ],
   "examples": [
     "A car completing a round trip has a nonzero average speed but zero average velocity (net displacement is zero)."
-  ]
+  ],
+  "genZNote": "Speed only knows the odometer; velocity also needs the compass."
 }

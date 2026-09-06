@@ -21,13 +21,20 @@
   ],
   "difficulty": "intermediate",
   "subjectDomain": "physics",
-  "summary": "Unstable nuclei spontaneously transform into more stable ones by emitting radiation, at a rate that follows an exponential decay law characterized by a constant half-life.",
-  "explanation": "Radioactive decay is a random process at the level of any single nucleus, but for a large sample it follows a precise statistical law: the number of undecayed nuclei decreases exponentially with time. The half-life is the time required for exactly half of a given sample to decay — this value is constant for a given isotope regardless of the sample's size or how much has already decayed, which is a defining and often counterintuitive feature of exponential decay.",
+  "summary": "Radioactive nuclei decay spontaneously and randomly, but the population as a whole follows a precise exponential decay law, characterised by a half-life that is entirely independent of how much material is present.",
+  "explanation": "Radioactive decay is a spontaneous, random process at the level of any INDIVIDUAL nucleus (impossible to predict exactly when any one specific nucleus will decay), but the BEHAVIOUR of a large population of nuclei is remarkably predictable, following the exponential decay law N = N₀e^(−λt), where λ (the decay constant) is a fixed probability of decay per unit time, characteristic of each specific radioactive isotope. Half-life T½ = 0.693/λ is the time taken for exactly HALF of any given sample to decay — critically, this is INDEPENDENT of the amount of substance present: whether you start with 1 gram or 1 kilogram of the same isotope, exactly half will have decayed after one half-life, a quarter of the original after two half-lives, an eighth after three, and so on ((1/2)ⁿ after n half-lives). This exponential, concentration-independent decay directly parallels first-order CHEMICAL kinetics (same mathematical form), but radioactive decay is a NUCLEAR process (unaffected by ordinary chemical/physical conditions like temperature, pressure, or chemical bonding, unlike chemical reaction rates which are strongly affected by these). Activity A = λN (number of decays per unit time, measured in becquerels, Bq, or the older unit curie, Ci) also decreases exponentially in exactly the same way as N itself, since it's directly proportional to the number of undecayed nuclei present at any moment. Radioactive decay comes in several types with distinct characteristics: alpha decay (emission of a helium nucleus, mass number decreases by 4, atomic number by 2), beta-minus decay (a neutron converts to a proton + electron + antineutrino, atomic number increases by 1, mass number unchanged), and gamma decay (emission of a high-energy photon, no change in mass or atomic number, usually following alpha/beta decay as the nucleus settles from an excited state to its ground state). Applications include radiocarbon dating (using carbon-14's known half-life to estimate the age of organic material) and medical radioisotope therapy/imaging.",
   "commonMisconceptions": [
-    "Assuming a sample is 'completely gone' after two half-lives — it's actually reduced to one quarter, since decay is exponential, not linear, and technically never reaches exactly zero.",
-    "Thinking half-life changes as a sample ages or as more of it decays — it is a fixed property of the isotope."
+    "Believing you can predict exactly WHEN a specific individual radioactive nucleus will decay — decay of any single nucleus is fundamentally random; only the STATISTICAL behaviour of a large population follows the precise exponential law.",
+    "Assuming half-life changes depending on the amount of sample present, or can be altered by external conditions like temperature/pressure — half-life is a fixed, intrinsic nuclear property of each isotope, entirely unaffected by such external, ordinary physical/chemical conditions (unlike chemical reaction rates).",
+    "Using linear reasoning across multiple half-lives (e.g., assuming 'zero' material remains after some finite number of half-lives) — mathematically, an exponential decay never reaches EXACTLY zero; after n half-lives, the fraction remaining is always (1/2)ⁿ, approaching but never precisely equalling zero."
   ],
   "examples": [
-    "Carbon-14 dating relies on its known, fixed half-life (~5,730 years) to estimate the age of organic remains."
+    "Carbon-14 (half-life ≈ 5,730 years) is used in radiocarbon dating: measuring the remaining fraction of C-14 in an organic sample lets scientists estimate its age, since the fraction remaining follows the precise exponential decay law.",
+    "After 3 half-lives of any radioactive sample, exactly 1/8 (12.5%) of the original radioactive nuclei remain, regardless of whether the isotope is carbon-14, uranium-238, or any other."
+  ],
+  "genZNote": "Radioactive decay: unpredictable one nucleus at a time, painfully predictable as a whole crowd.",
+  "relatedFormulas": [
+    "formula-mass-defect-and-binding-energy",
+    "formula-radioactive-half-life"
   ]
 }
