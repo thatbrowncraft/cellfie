@@ -24,12 +24,17 @@ export function RecallCard({ prompt, answer, className }: RecallCardProps) {
       onClick={() => setRevealed((v) => !v)}
       aria-pressed={revealed}
       className={cn(
-        'flex min-h-[64px] flex-col items-center justify-center gap-1 rounded-md border border-border bg-surface px-3 py-3 text-center transition-colors duration-micro hover:bg-surface-raised',
+        'flex h-full min-h-[64px] w-full flex-col items-center justify-center gap-1 rounded-md border border-border bg-surface px-3 py-3 text-center transition-colors duration-micro hover:bg-surface-raised',
         className
       )}
     >
       <span className="font-ui text-caption font-medium text-ink-tertiary">{revealed ? 'Answer' : 'Recall'}</span>
-      <span className={cn('font-body text-body', revealed ? 'text-olive' : 'text-ink-primary')}>
+      <span
+        className={cn(
+          'font-body text-body leading-snug break-words [overflow-wrap:anywhere]',
+          revealed ? 'text-olive' : 'text-ink-primary'
+        )}
+      >
         {revealed ? answer : prompt}
       </span>
       {!revealed && <ArrowsLeftRight size={12} className="text-ink-tertiary" aria-hidden />}

@@ -303,7 +303,7 @@ export function MemoryTricksSection() {
           </div>
 
           <Caption className="mt-4 block font-medium text-ink-secondary">Quick recall — tap to flip</Caption>
-          <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <div className="mt-2 grid grid-cols-2 items-stretch gap-2 sm:grid-cols-4">
             <RecallCard prompt="Element 17?" answer="Cl — Chlorine" />
             <RecallCard prompt="Atomic number of Potassium?" answer="19 — K" />
             <RecallCard prompt="Symbol Na is…" answer="Sodium (11)" />
