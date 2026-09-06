@@ -98,6 +98,20 @@ export interface LabContentMeta {
    * `item.subjectDomain ?? 'biology'`, never assume it's always present.
    */
   subjectDomain?: 'biology' | 'chemistry' | 'physics'
+  /**
+   * Cellfie's Gen Z personality layer for this Laboratory item (Physics +
+   * Chemistry knowledge-expansion brief) — mirrors `genZNote` on
+   * `core/comparison/types.ts` and `core/organisms/types.ts` exactly, for
+   * the same reason: a short, witty, scientifically-relevant memory hook,
+   * never a substitute for the formal `explanation`/`summary` content and
+   * never mixed into them. Optional and purely additive — absence means
+   * "no tagline written yet for this item", not an error. Existing
+   * pre-expansion content is untouched unless a note was added for it;
+   * consuming UI is free to render this later the same way it already
+   * renders `genZNote` on comparisons, but no existing detail component
+   * is changed as part of this content-only pass.
+   */
+  genZNote?: string
 }
 
 /** Cross-links use stable IDs only — never duplicated content (brief §14). Every array is optional; absence means "none recorded yet", not "none exist". */
