@@ -11,7 +11,8 @@ import {
   Highlighter,
   NotePencil,
   Scales,
-  Stack
+  Stack,
+  Atom
 } from '@phosphor-icons/react'
 import { DashboardLayout } from '../../shared/layouts'
 import { Button, Card, CardBody, EmptyState } from '../../shared/components'
@@ -26,6 +27,8 @@ import { getRecentlyViewedLabIds } from '../../core/laboratory/recentlyViewed'
 import { getRecentComparisons, type RecentComparisonEntry } from '../../core/comparison/recentlyViewed'
 import { COMPARISON_DOMAIN_LABELS } from '../../core/comparison/types'
 import type { LaboratoryCategory, LaboratoryContent } from '../../core/laboratory/types'
+import type { ElementProfile } from '../../core/periodic-table/types'
+import { getRecentlyViewedElementIds } from '../../core/periodic-table/recentlyViewed'
 import { useLocalStorage } from '../../shared/hooks'
 import { useBreakpointClass } from '../../shared/hooks/useMediaQuery'
 import { pickDashboardQuote } from '../../core/dashboard/quotes'
@@ -238,6 +241,11 @@ export function DashboardPage() {
     [],
     []
   )
+  const recentElementIds = useLiveQuery<string[]>(
+    () => getRecentlyViewedElementIds(MAX_PREVIEW_ITEMS),
+    [],
+    []
+  )
 
   const stats = useMemo(
     () => computeStatsFromRecords(items, highlights, notes, bookmarks, totalReadingSeconds),
@@ -317,6 +325,33 @@ export function DashboardPage() {
       cancelled = true
     }
   }, [recentLabIds])
+
+  // Same bundle-size remediation as the Organism/Lab blocks above,
+  // applied to core/periodic-table/registry.ts (see that file's own doc
+  // comment): that registry eagerly bundles all 118 element JSON files,
+  // so it's loaded dynamically here rather than statically imported into
+  // Dashboard's chunk. Lands in the same chunk the Periodic Table routes
+  // already use (shared, cached after first visit).
+  const [recentElements, setRecentElements] = useState<ElementProfile[]>([])
+  useEffect(() => {
+    if (recentElementIds.length === 0) {
+      setRecentElements([])
+      return
+    }
+    let cancelled = false
+    import('../../core/periodic-table/registry').then(({ getElementById }) => {
+      if (cancelled) return
+      setRecentElements(
+        recentElementIds
+          .map((id) => getElementById(id))
+          .filter((e): e is ElementProfile => Boolean(e))
+          .slice(0, MAX_PREVIEW_ITEMS)
+      )
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [recentElementIds])
 
   // Motivational quote (requested change #2) — picked once per Dashboard
   // visit/mount, avoiding an immediate repeat of whatever was shown last
@@ -551,6 +586,24 @@ export function DashboardPage() {
             emptyDescription="Comparisons you open or build in Comparison Studio will show up here."
             emptyActionLabel="Open Comparison Studio"
             onEmptyAction={() => navigate('/comparison')}
+          />
+
+          <PreviewSection
+            title="Periodic Table"
+            humor={DASHBOARD_HUMOR.periodicTable}
+            openLabel="Open Periodic Table"
+            onOpen={() => navigate('/periodic-table')}
+            items={recentElements.map((element) => ({
+              key: element.id,
+              title: `${element.symbol} — ${element.name}`,
+              subtitle: element.elementCategoryLabel,
+              onClick: () => navigate(`/periodic-table/${element.id}`)
+            }))}
+            emptyIcon={<Atom size={32} />}
+            emptyTitle="No elements explored yet"
+            emptyDescription="Open an element profile in the Periodic Table and it'll show up here next time."
+            emptyActionLabel="Browse Periodic Table"
+            onEmptyAction={() => navigate('/periodic-table')}
           />
         </DashboardLayout>
       </div>
