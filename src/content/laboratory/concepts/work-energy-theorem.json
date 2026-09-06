@@ -1,0 +1,38 @@
+{
+  "id": "concept-work-energy-theorem",
+  "category": "concept",
+  "title": "Work-Energy Theorem",
+  "subcategory": "Mechanics — Work, Energy and Power",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Physics Part I, Class 11 — Work, Energy and Power",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT Class 11 aligned.",
+  "searchKeywords": [
+    "work done by force",
+    "kinetic energy change",
+    "w=fd"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "physics",
+  "relatedConcepts": [
+    "concept-conservation-of-energy"
+  ],
+  "relatedFormulas": [
+    "formula-kinetic-energy"
+  ],
+  "summary": "The net work done on an object equals its change in kinetic energy.",
+  "explanation": "Work is done when a force causes displacement in the direction of the force (W = F·d·cosθ). The work-energy theorem connects this to motion: whenever a net force does work on an object, that work shows up entirely as a change in the object's kinetic energy — speeding it up if the work is positive, slowing it down if negative. This lets many problems be solved without ever computing acceleration or time directly, by tracking energy instead of forces and kinematics step by step.",
+  "commonMisconceptions": [
+    "Forgetting that only the component of force along the direction of displacement does work — a force perpendicular to motion (like the normal force during horizontal motion) does zero work.",
+    "Confusing work done BY a specific force with the NET work — the theorem uses net work done by all forces combined."
+  ],
+  "examples": [
+    "A block sliding to a stop due to friction: the (negative) work done by friction equals the loss in the block's kinetic energy."
+  ]
+}
