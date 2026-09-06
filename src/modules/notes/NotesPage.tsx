@@ -1,6 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { NotePencil, DownloadSimple, UploadSimple, PushPin, Highlighter, Bookmarks } from '@phosphor-icons/react'
+import { NotePencil, DownloadSimple, UploadSimple, PushPin, Highlighter, Bookmarks, Atom } from '@phosphor-icons/react'
 import { EmptyState, Button, SearchField, Dropdown, Card, CardBody } from '@/shared/components'
 import { useBreakpointClass, GRID_COLS_PRESETS } from '@/shared/hooks/useMediaQuery'
 import { db, type Highlight, type LibraryItem, type Note, type ReaderBookmark } from '@/core/db'
@@ -220,6 +220,14 @@ export function NotesPage() {
         </SectionTabButton>
         <SectionTabButton active={section === 'bookmarks'} onClick={() => setSection('bookmarks')} icon={<Bookmarks size={16} aria-hidden />}>
           Bookmarks
+        </SectionTabButton>
+        {/* Periodic Table (brief: "Build the Interactive Periodic Table") lives as its
+            own page/module (src/modules/periodic-table) rather than a fourth Section
+            here — its data shape (118 fixed element profiles) and interactions
+            (search/filter/grid) don't fit Notes' note/highlight/bookmark model, so
+            this tab is a link out rather than a new `section` value. */}
+        <SectionTabButton active={false} onClick={() => navigate('/periodic-table')} icon={<Atom size={16} aria-hidden />}>
+          Periodic Table
         </SectionTabButton>
       </div>
 
