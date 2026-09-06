@@ -88,6 +88,16 @@ export interface LabContentMeta {
   searchKeywords?: string[]
   /** Learning-progression tier for the "Learn by Difficulty" hub view (brief §3). Scientifically judged per item, never assigned just to fill the UI. */
   difficulty?: LabDifficulty
+  /**
+   * Subject/domain filter tag (Physics/Chemistry expansion, subject-filter
+   * brief). Optional and additive — absence means "biology" (the implicit
+   * default for every pre-existing Laboratory item, since Laboratory was
+   * exclusively biology/microbiology content before this field existed).
+   * Every existing JSON file is left untouched; only new Physics/Chemistry
+   * content sets this explicitly. Consumers should read it via
+   * `item.subjectDomain ?? 'biology'`, never assume it's always present.
+   */
+  subjectDomain?: 'biology' | 'chemistry' | 'physics'
 }
 
 /** Cross-links use stable IDs only — never duplicated content (brief §14). Every array is optional; absence means "none recorded yet", not "none exist". */
