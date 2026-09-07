@@ -73,7 +73,12 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}']
+        // 'pdf' added for the bundled Cellfie User Manual (public/manual) —
+        // Settings → Cellfie User Manual — so it precaches and reads
+        // offline like every other bundled asset, consistent with the
+        // app's local-first/offline-first principle. No other asset type
+        // in this list changed.
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2,pdf}']
         // Bundle-size remediation: a previous change here raised
         // maximumFileSizeToCacheInBytes to 5 MiB to paper over a 2.11 MB
         // main JS chunk (organism + laboratory content registries were
