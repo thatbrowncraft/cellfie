@@ -24,28 +24,28 @@ export function TopNav({ onMenuClick, onSearchClick, showMenuButton }: TopNavPro
         Skip to content
       </a>
 
-      <div className="flex items-center gap-3">
+      <div className="flex min-w-0 items-center gap-3">
         {showMenuButton && (
           <button
             onClick={onMenuClick}
             aria-label="Open navigation menu"
-            className="rounded-sm p-2 text-ink-secondary hover:bg-surface-raised hover:text-ink-primary"
+            className="shrink-0 rounded-sm p-2 text-ink-secondary hover:bg-surface-raised hover:text-ink-primary"
           >
             <List size={22} />
           </button>
         )}
-        <span className="font-display text-h3 font-semibold text-ink-primary">Cellfie</span>
+        <span className="min-w-0 truncate font-display text-h3 font-semibold text-ink-primary">Cellfie</span>
       </div>
 
-      <div className="flex items-center gap-2 sm:gap-4">
+      <div className="flex min-w-0 shrink items-center gap-2 sm:gap-4">
         <button
           onClick={onSearchClick}
-          className="flex items-center gap-2 rounded-sm border border-border bg-canvas px-3 py-2 text-ink-tertiary hover:border-border-strong"
+          className="flex min-w-0 shrink items-center gap-2 rounded-sm border border-border bg-canvas px-3 py-2 text-ink-tertiary hover:border-border-strong"
           aria-label="Open search (Ctrl+K)"
         >
-          <MagnifyingGlass size={18} />
-          <span className="hidden font-ui text-caption sm:inline">Search</span>
-          <kbd className="hidden rounded-sm border border-border-strong px-1.5 py-0.5 font-mono text-micro sm:inline">
+          <MagnifyingGlass size={18} className="shrink-0" />
+          <span className="hidden truncate font-ui text-caption sm:inline">Search</span>
+          <kbd className="hidden shrink-0 rounded-sm border border-border-strong px-1.5 py-0.5 font-mono text-micro sm:inline">
             ⌘K
           </kbd>
         </button>
