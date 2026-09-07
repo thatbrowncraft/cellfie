@@ -37,7 +37,7 @@ export function Tooltip({ label, children }: TooltipProps) {
         <span
           id="tooltip"
           role="tooltip"
-          className="pointer-events-none absolute -top-2 left-1/2 z-30 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded-sm bg-ink-primary px-3 py-2 font-ui text-caption text-canvas shadow-2"
+          className="pointer-events-none absolute -top-2 left-1/2 z-30 w-max max-w-[min(85vw,260px)] -translate-x-1/2 -translate-y-full break-words rounded-sm bg-ink-primary px-3 py-2 text-center font-ui text-caption text-canvas shadow-2"
         >
           {label}
         </span>
