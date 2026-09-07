@@ -122,6 +122,17 @@ body {
     color var(--motion-page) var(--motion-ease-standard);
 }
 
+/* App-wide text-overflow safety net. Cellfie's content legitimately
+   contains long unbroken strings — chemical/scientific names, organism
+   binomials, filenames, tags — that can be wider than a card, chip, or
+   column. This only changes what happens when a single "word" doesn't
+   fit its container: it wraps onto the next line instead of spilling
+   past the edge. It never touches normal word-by-word wrapping, so
+   ordinary text is unaffected and no layout looks any different. */
+h1, h2, h3, h4, h5, h6, p, span, a, button, label, li, td, th {
+  overflow-wrap: break-word;
+}
+
 /* Fraunces: headings only, per the design system's explicit rule (§3.1).
    Never applied to body copy. */
 h1, h2, h3, h4, .font-display {
@@ -181,11 +192,32 @@ h1, h2, h3, h4, .font-display {
 }
 
 /* ==========================================================================
-   Large Text Mode (§13) — scales the type scale 1.15–1.3x without
-   breaking layout. Toggled by adding data-large-text to <html>.
+   Text-size control (§13) — 5-level scale replacing the old binary
+   "Large text" toggle. Centered on Cellfie's ordinary default:
+
+     1 Smaller   2 Small   3 Default   4 Large   5 Larger
+       90%         95%       100%        118%      132%
+
+   Level 3 is unscaled (100%) — the app must look exactly as it always
+   has at this, the level everyone starts on. Level 4 reproduces the old
+   "Large text" ON state (118%) so that existing behavior carries over
+   unchanged. Every text-bearing element inherits `font-size` from
+   `html`/`rem`-relative Tailwind classes already, so scaling here scales
+   the whole app's type system in one place — icons sized in raw px are
+   unaffected since they aren't set in `em`/`rem`. Toggled by
+   `data-text-size="1".."5"` on `<html>` (core/theme/ThemeProvider.tsx).
    ========================================================================== */
-[data-large-text='true'] {
+[data-text-size='1'] {
+  font-size: 90%;
+}
+[data-text-size='2'] {
+  font-size: 95%;
+}
+[data-text-size='4'] {
   font-size: 118%;
+}
+[data-text-size='5'] {
+  font-size: 132%;
 }
 
 /* Custom scrollbar — quiet, warm-toned, not a default OS scrollbar slab */
