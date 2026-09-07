@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import type { PDFDocumentProxy } from 'pdfjs-dist'
 import { CaretLeft, CaretRight, MagnifyingGlassMinus, MagnifyingGlassPlus, X } from '@phosphor-icons/react'
 import { loadPdfDocument } from '@/core/pdf-engine'
+import { useReaderNavigationMode } from '@/core/reader-settings'
 import { ReaderCanvas, type FitMode } from '@/modules/library/reader/ReaderCanvas'
 import { EmptyState, Tooltip } from '@/shared/components'
 import { useFocusTrap } from '@/shared/hooks'
@@ -55,6 +56,12 @@ export function ManualReaderOverlay({ open, onClose }: ManualReaderOverlayProps)
   const containerRef = useRef<HTMLDivElement>(null)
   useFocusTrap(containerRef, open)
   const isStandalone = useIsStandalonePwa()
+  // Same universal Swipe/Scroll preference the Library reader (ReaderPage)
+  // honors — reader-settings/readerNavigationMode.ts is explicit that this
+  // is "universal across every book, never per-PDF", so the manual (which
+  // renders through the same ReaderCanvas) follows it too rather than
+  // hardcoding its own navigation behavior.
+  const [readerNavigationMode] = useReaderNavigationMode()
 
   const [doc, setDoc] = useState<PDFDocumentProxy | null>(null)
   const [loading, setLoading] = useState(true)
@@ -243,7 +250,16 @@ export function ManualReaderOverlay({ open, onClose }: ManualReaderOverlayProps)
         )}
 
         {!error && !loading && doc && (
-          <ReaderCanvas doc={doc} pageNumber={page} fitMode={fitMode} scale={scale} onScaleChange={setScale} onSwipeNext={goNext} onSwipePrev={goPrev} />
+          <ReaderCanvas
+            doc={doc}
+            pageNumber={page}
+            fitMode={fitMode}
+            scale={scale}
+            onScaleChange={setScale}
+            onSwipeNext={goNext}
+            onSwipePrev={goPrev}
+            navigationMode={readerNavigationMode}
+          />
         )}
       </div>
     </div>,
