@@ -1,571 +1,711 @@
 # 🧬 Cellfie
 
-### Your personal study space, built around your own books.
+### Your personal science learning space, built for curious brains. 🧪🧠
 
-Cellfie is a student-focused, offline-first study application designed to bring textbooks, study material, concepts, notes, revision, references, and practical learning tools into one organized place.
+Cellfie is a local-first science learning web app designed to bring your **books, concepts, organisms, laboratory knowledge, revision tools, calculations, and personal study data** into one place.
 
-Instead of switching between multiple PDFs, notebooks, browser tabs, reference books, and scattered study material, Cellfie lets students build their own personal study library and learn from it.
-
-The idea is simple:
-
-> **Your books first. Your learning, your way.**
-
-Cellfie is being developed with microbiology students in mind, but its core learning system is designed to work with any subject that can be represented through study material.
+No academic chaos. No hunting through 17 tabs. Just open Cellfie and study. 🤌🏽
 
 ---
 
-## 🎓 Why Cellfie?
+## ✨ What Cellfie Can Do
 
-Students often have their study material scattered across different places:
+Cellfie brings together:
 
-- 📚 Textbooks
-- 📄 PDFs
-- 📖 EPUB books
-- 📝 Personal notes
-- 🔬 Research papers
-- 🧪 Laboratory material
-- 🧠 Revision resources
-- 🔖 Important references
-- 📊 Comparison tables
-- 🦠 Organism information
-
-Finding one specific concept can mean opening several books and searching through each one separately.
-
-Cellfie is designed to bring that material together.
-
-A student can import their own books, create concepts they want to study, and let Cellfie search across their personal library for relevant material.
-
-The goal is **not to replace textbooks**.
-
-The goal is to make the student's own textbooks easier to search, connect, revise, and learn from.
+- 📚 Personal source library
+- 🏷️ Source tagging and concept extraction
+- 🧠 Main Concepts system
+- 📖 Multi-book learning
+- ✍️ Personal notes, highlights and favorites
+- 🧫 Organism Explorer
+- 🧪 Laboratory
+- ⚛️ Physics and Chemistry content
+- 📊 Comparison Studio
+- 🧮 Formula Hub and calculators
+- 🧬 Interactive Periodic Table
+- 🔎 Search
+- 🌐 Online Knowledge
+- 📦 My Library
+- 📈 Dashboard and study overview
+- 🗂️ Study Vault
+- 📱 Responsive mobile experience
+- 📘 Built-in Cellfie User Manual
+- ⚙️ Settings and personalization
 
 ---
 
-# ✨ What Cellfie Offers
+# 📚 Library
 
-## 📚 Library
+Your Library is where your own scientific sources live.
 
-The Library is the foundation of Cellfie.
+Add books, PDFs, references and other study material to build your personal source collection.
 
-Students can import their own study material and keep it organized inside the application.
+Cellfie keeps your personal sources separate from its curated app content so your own material remains **your own study layer**.
 
-Supported formats include:
+### What you can do
 
-- PDF
-- EPUB
-- XHTML
-- HTML
+- Add and manage sources
+- Organize sources with tags
+- Search your source collection
+- Use relevant sources during concept extraction
+- Keep your personal references available for study
+- Build a source collection around the subjects you actually study
 
-Imported books are processed locally and become part of the student's personal study library.
+---
 
-The same library can then be used by the concept system for searching and retrieving relevant study material.
+# 🏷️ Source Tags & Concept Extraction
+
+One of Cellfie's most important learning workflows is connecting your sources with the concepts you want to study.
+
+Instead of treating every source as equally relevant, you can give your sources meaningful tags.
+
+For example:
+
+**NCERT Biology Class 11**
+
+Possible tags:
+
+- Biology
+- Class 11
+- NCERT
+- Botany
+- Zoology
+- School
+- Exam
+
+A microbiology textbook could have:
+
+- Microbiology
+- Bacteriology
+- Laboratory
+- Medical Microbiology
+
+An organic chemistry textbook could have:
+
+- Chemistry
+- Organic Chemistry
+- Reactions
+- Mechanisms
+
+When you ask Cellfie about something such as **Gram staining**, those tags help identify which sources are actually relevant.
+
+A microbiology source makes sense.
+
+An unrelated organic chemistry textbook probably does not.
+
+### The basic flow
+
+**Add source → Tag source → Request concept → Relevant sources can be considered → Information is used where supported**
+
+Tags are therefore not just decoration. They help Cellfie understand **where it should look** when working with your personal sources.
+
+A good rule:
+
+> Don't tag a 900-page textbook with one lonely `science` tag. 😭
+
+Use broad subject, specific subject, class or level, topic, discipline, exam relevance, source type, or other meaningful context when useful.
+
+Cellfie can work with your personal library alongside its curated knowledge, without turning your entire library into one giant undifferentiated pile.
 
 ---
 
 # 🧠 Concepts
 
-Concepts are at the heart of Cellfie.
+The main **Concepts** system is its own learning space.
 
-A student can create or study concepts such as:
+This is different from the concept-style content that exists inside **Laboratory → Physics/Chemistry and other laboratory areas**.
 
-- DNA
-- Gram staining
-- Photosynthesis
-- PCR
-- ELISA
-- Antibiotic resistance
-- Bacterial genetics
-- Immunology
-- Biochemistry
-- Laboratory techniques
-- Any other topic they need to learn
+Main Concepts are designed around the actual concepts you choose to work with.
 
-When a concept is opened, Cellfie searches the student's uploaded library for relevant material.
+A concept can become a focused learning space containing the information, sources and study material connected to it.
 
-### Multi-book learning
+### Concept learning can include
 
-Cellfie is designed to consider **all relevant books in the student's library**, rather than automatically choosing one book.
+- Core concept explanations
+- Quick revision
+- Exam-focused learning
+- Memory aids
+- Supporting source material
+- Personal notes and study information
+
+Cellfie also contains rich curated lesson content for selected concepts, while your own source material can provide additional context where appropriate.
+
+---
+
+# 📖 Multi-Book Learning
+
+Science rarely lives inside one textbook.
+
+Cellfie is designed so a concept can be studied with information coming from multiple relevant sources.
 
 For example:
 
-### DNA
+**Gram staining**
 
-A student's library might contain:
+You might have:
 
-- Prescott's Microbiology
-- General Microbiology
-- Concepts of Biology
-- another microbiology reference
-- a molecular biology textbook
+- A microbiology textbook
+- A laboratory manual
+- A university reference book
+- Your own notes
 
-Different books may explain different parts of DNA.
-
-One may provide the basic definition.
-
-Another may explain structure.
-
-Another may discuss replication.
-
-Another may provide a microbiological or clinical perspective.
-
-Cellfie can bring relevant sections from those books together into the same concept view while attempting to reduce duplicate or incidental material.
-
-The student therefore gets a broader study view without manually searching every book.
+Instead of treating each book as an isolated island, Cellfie can bring relevant source material together around the concept you are studying.
 
 ---
 
-# 📖 Learn
+# ✍️ Personal Study Data
 
-Every concept has a dedicated learning space.
+Your study space is not just about reading.
 
-## Quick Revision
+Cellfie lets you build your own layer of knowledge around the material.
 
-A compact revision view for quickly refreshing a concept.
+You can work with:
 
-It is intended for situations where a student already knows the topic and wants to revise the important points without going through an entire textbook section again.
+- 📝 Notes
+- 🖍️ Highlights
+- ❤️ Favorites
+- 🔖 Saved items
+- 📚 Personal sources
+- 📈 Study progress
 
----
-
-## Core Concept
-
-The Core Concept is the main study area.
-
-Cellfie prioritizes the student's own uploaded books and retrieves relevant textbook sections from the library.
-
-The system is designed to preserve useful textbook structure such as:
-
-- headings
-- sections
-- explanations
-- source information
-- book references
-- page information where available
-
-The purpose is not to turn every concept into a generic generated answer.
-
-Instead, Cellfie should show the **actual useful material found in the student's own books**.
-
-When several books contain complementary information, the system can combine relevant sections into one study view.
+Your personal annotations and study data remain part of your local user-owned layer.
 
 ---
 
-## Exam Focus
+# 🧫 Organism Explorer
 
-A dedicated space for exam-oriented learning.
+Explore organisms through a dedicated scientific interface.
 
-This area can contain important:
+Organism Explorer gives you a structured place to discover and study biological organisms without mixing the experience into the rest of the application.
 
-- facts
-- distinctions
-- key points
-- common confusions
-- practical reminders
-- exam-relevant information
-
-Curated educational material can be used where appropriate without replacing the student's own source material.
-
----
-
-# ✏️ Personal Editing
-
-Cellfie is designed to let students make the study material their own.
-
-Study sections can support:
-
-**Edit → Modify → Save → Restore**
-
-The original material can remain available so students can restore it when needed.
-
-This allows students to:
-
-- simplify an explanation
-- add their own wording
-- correct a personal misunderstanding
-- create a more exam-friendly version
-- add additional study points
-
-Cellfie's extracted material and the student's personal edits remain distinguishable.
-
----
-
-# 📝 Study Notes
-
-Students can add their own notes directly to a concept.
-
-Notes are kept separate from Cellfie's extracted or curated content.
-
-This allows students to write:
-
-- personal explanations
-- questions
-- reminders
-- additional facts
-- exam tricks
-- connections to other topics
-- things they want to revise later
-
-Your notes stay yours.
-
----
-
-# 🧠 Memory Aids
-
-Every concept can also have a personal memory-aid area.
-
-Students can create their own:
-
-- mnemonics
-- memory tricks
-- associations
-- short reminders
-
-Cellfie does not need to invent these automatically.
-
-The idea is to give students a dedicated place to store the memory techniques that actually work for them.
-
----
-
-# 🔬 Scientific References
-
-Cellfie can connect concepts with structured scientific reference information.
-
-These references are kept separate from the student's uploaded books.
-
-This creates a clear learning hierarchy:
-
-### 1. 📚 Your uploaded books
-
-The student's own study material comes first.
-
-### 2. 🧠 Curated educational content
-
-Educational fallback material where appropriate.
-
-### 3. 🔬 Scientific references
-
-Structured scientific information that can supplement a concept.
-
-### 4. 📰 Research & Further Reading
-
-Scientific literature for students who want to explore the topic beyond their textbooks.
-
-Research articles should not silently replace the student's textbook material.
-
-They are an additional layer for deeper study.
-
----
-
-# 📰 Research & Further Reading
-
-Students can explore research related to a concept through a separate research section.
-
-This is useful when a student wants to move beyond textbook-level understanding and explore current scientific literature.
-
-Research material remains clearly separated from textbook-derived content.
-
----
-
-# 🦠 Organism Explorer
-
-Organism Explorer is designed for studying microorganisms and other organisms.
-
-It provides a dedicated space for organism-based learning instead of forcing students to repeatedly search through textbooks.
-
-The long-term goal is to connect organism information with:
-
-- classification
-- characteristics
-- related concepts
-- laboratory relevance
-- clinical relevance
-- study material
+It is designed to make organism-focused learning easier to navigate, compare and revisit.
 
 ---
 
 # 🧪 Laboratory
 
-The Laboratory section is intended for practical microbiology and laboratory-based learning.
+Laboratory is Cellfie's practical science space.
 
-It can support study around:
+It brings together scientific material that is useful for understanding laboratory-oriented subjects and techniques.
 
-- laboratory techniques
-- staining methods
-- diagnostic methods
-- microbiological procedures
-- practical concepts
-- interpretation
-- laboratory principles
+Laboratory includes structured content that can cover areas such as:
 
-The goal is to connect theoretical knowledge with practical laboratory understanding.
+- Concepts
+- Procedures
+- Reactions
+- Formulas
+- Practical knowledge
+- Scientific explanations
+- Clinical material
+- Physics
+- Chemistry
 
----
-
-# ⚖️ Comparison Studio
-
-Some topics are much easier to understand when placed side by side.
-
-Comparison Studio provides a dedicated space for comparative learning.
-
-Examples include:
-
-- Gram-positive vs Gram-negative
-- DNA vs RNA
-- Bacteria vs viruses
-- Aerobic vs anaerobic organisms
-- Simple stain vs differential stain
-- Culture vs staining
-- Similar laboratory techniques
-- Any two concepts that need direct comparison
-
-Instead of memorizing two separate paragraphs, students can see the differences together.
+The Laboratory filters help you find the type of scientific material you are looking for without creating an unnecessarily huge collection of categories.
 
 ---
 
-# 📝 Notes
+# ⚛️ Physics & Chemistry
 
-The Notes section provides a dedicated personal workspace for students.
+Physics and Chemistry have been expanded inside Laboratory with dedicated structured scientific content.
 
-Students can keep:
+### Physics
 
-- lecture notes
-- revision points
-- questions
-- personal explanations
-- reminders
-- study plans
-- additional information
+Physics content can include:
 
-Notes are independent from the imported textbook content.
+- Concepts
+- Formulas
+- Calculations
+- Scientific relationships
+- Revision material
+
+### Chemistry
+
+Chemistry content can include:
+
+- Concepts
+- Reactions
+- Formulas
+- Chemical relationships
+- Revision material
+
+These areas are part of the **Laboratory content system**.
+
+They are not the same thing as the separate top-level **Concepts** system.
+
+---
+
+# 📊 Comparison Studio
+
+Comparison Studio is built for the moments when two scientific things start looking suspiciously similar. 👀
+
+Compare scientific entities and concepts side by side to make differences and similarities easier to understand.
+
+Useful for:
+
+- Similar organisms
+- Related concepts
+- Scientific classifications
+- Structural differences
+- Functional differences
+- Revision
+- Exam preparation
+
+Instead of keeping the comparison inside your head:
+
+**put it on the screen.**
+
+---
+
+# 🧮 Formula Hub & Calculators
+
+Cellfie includes a dedicated space for formulas and calculations.
+
+Use it when you need to:
+
+- Find a relevant formula
+- Understand what a formula represents
+- Review variables and relationships
+- Perform supported calculations
+- Revise quantitative concepts
+
+The goal is not just:
+
+**"Here is a formula. Good luck."**
+
+It is to make quantitative science easier to actually use.
+
+---
+
+# 🧬 Interactive Periodic Table
+
+Cellfie now includes an interactive Periodic Table covering all **118 elements**.
+
+Select an element to explore its scientific information.
+
+Depending on the element and available content, this can include:
+
+- Atomic information
+- Groups and families
+- Valency
+- Oxidation states
+- Electron configuration
+- Periodic trends
+- Scientific notes
+- Gen-Z-friendly explanations
+- Memory aids and mnemonics
+
+The Periodic Table is designed as an actual learning tool rather than just a decorative grid of elements.
+
+You can explore the table, jump between elements, understand their relationships and use it as a revision companion.
+
+---
+
+# 🔎 Search
+
+Search is designed to help you find things across Cellfie without manually opening every section.
+
+Use it to discover available:
+
+- Concepts
+- Scientific content
+- Organisms
+- Laboratory material
+- Formulas
+- Other indexed app content
+
+Search is especially useful once your Cellfie library starts getting thicc. 😭📚
+
+---
+
+# 📦 My Library
+
+My Library is your personal space for saved and collected study material.
+
+It helps keep your own study activity organized separately from the application's curated content.
+
+Your saved items, personal sources and other user-owned material belong to your local study layer.
+
+---
+
+# 📈 Dashboard
+
+The Dashboard gives you a quick overview of your Cellfie study space.
+
+It acts as the starting point for getting back into your learning workflow without having to manually remember where everything lives.
+
+---
+
+# 🗂️ Study Vault
+
+Study Vault is your dedicated space for study-oriented material and saved learning content.
+
+It is intended to make revision and returning to previously collected material easier.
+
+Instead of letting useful study material disappear into random tabs and forgotten files:
+
+**vault it. 🔐**
+
+---
+
+# 🌐 Online Knowledge
+
+Cellfie can use reliable online scientific information when useful for selected knowledge tasks.
+
+Online knowledge works alongside the other knowledge layers rather than replacing them.
+
+Cellfie's knowledge architecture separates:
+
+### 1. Curated App Content
+
+Scientific content shipped with the application.
+
+This is maintained as structured content inside the Cellfie project.
+
+### 2. Your Source Library
+
+Books, PDFs and references that you personally add.
+
+These can be considered when you permit or select them for knowledge workflows.
+
+### 3. Your Personal Data
+
+Your:
+
+- Notes
+- Highlights
+- Favorites
+- Saved items
+- Study progress
+- Other local annotations
+
+This remains your personal study layer.
+
+The goal is to keep these layers distinct instead of pretending that everything is one giant database.
+
+---
+
+# 📘 Cellfie User Manual
+
+Cellfie includes its own built-in User Manual.
+
+You can access it from:
+
+**Settings → User Manual**
+
+The manual explains the application's major features, workflows and study approaches in one place.
+
+It is designed to be something you can actually read rather than a terrifying software contract. 😭🤌🏽
 
 ---
 
 # ⚙️ Settings
 
-Settings provide control over the student's Cellfie experience.
+Settings is where you can manage the Cellfie experience and access application information.
 
-The application is designed with mobile use, accessibility, appearance preferences, and other user settings in mind.
+It includes the built-in User Manual along with the other available application settings.
+
+The manual is intentionally available **inside Cellfie**, so you do not need to leave the app just to understand how something works.
 
 ---
 
-# 📱 Designed for Students
+# 📱 Mobile Experience
 
-Cellfie is designed to work across desktop and mobile screens.
+Cellfie is designed to work across screen sizes, including mobile devices.
 
-The application provides a consistent navigation system across the major sections:
+The mobile experience is built around a proper responsive layout rather than simply shrinking the desktop interface until everything becomes microscopic. 😭
 
-- Dashboard
-- Library
-- Concepts
-- Organism Explorer
-- Laboratory
-- Comparison Studio
+The goal is:
+
+**desktop when you're at your desk, mobile when you're actually studying from your phone.**
+
+---
+
+# ♿ Accessibility
+
+Cellfie aims to keep its interface readable, navigable and comfortable to use.
+
+This includes attention to:
+
+- Readable typography
+- Clear interface structure
+- Consistent controls
+- Responsive layouts
+- Understandable navigation
+- Visual hierarchy
+
+Accessibility is treated as part of the product experience, not as an afterthought.
+
+---
+
+# 🔐 Privacy & Local-First Design
+
+Cellfie follows a local-first approach.
+
+Your personal study data is designed to remain on your device rather than being treated as a remote account database by default.
+
+This includes your personal:
+
+- Sources
 - Notes
-- Settings
+- Highlights
+- Favorites
+- Saved material
+- Study progress
 
-On smaller screens, these sections remain accessible through the mobile navigation system.
-
-The goal is simple:
-
-**No important part of the app should disappear just because you're using a phone.**
+The architecture intentionally separates personal data from curated application content.
 
 ---
 
-# 🔒 Privacy & Local-First Design
+# 🧠 How Cellfie Thinks About Knowledge
 
-Cellfie follows a local-first approach wherever possible.
+Cellfie is built around a simple idea:
 
-Imported study material and personal study data are designed to remain on the student's device using browser-based storage.
+**Your science knowledge should have structure.**
 
-The core uploaded-book workflow does not require a paid AI subscription.
+A textbook is a source.
 
-The textbook retrieval pipeline works locally:
+A tag gives that source context.
 
-```text
-Your Book
-    ↓
-Local Import
-    ↓
-Text & Structure Extraction
-    ↓
-Local Indexing
-    ↓
-Concept Search
-    ↓
-Relevance Detection
-    ↓
-Section Matching
-    ↓
-Multi-Book Retrieval
-    ↓
-Deduplication
-    ↓
-Study View
-                 
-```
+A concept gives your learning a focus.
 
-The architecture keeps the student's personal library separate from external scientific resources.
+An annotation gives you a personal connection to the material.
+
+A comparison helps you distinguish related ideas.
+
+A laboratory space helps you apply scientific knowledge.
+
+A study vault helps you return to it.
+
+And your dashboard helps you see where you are.
+
+The goal is not to throw more information at you.
+
+The goal is to help you **find, understand, connect and remember it.**
+
+---
+
+# 🧪 A Typical Cellfie Study Flow
+
+### 📚 Starting from a textbook
+
+Add your textbook to Library.
+
+↓
+
+🏷️ Give it meaningful tags.
+
+↓
+
+🧠 Choose or work with a concept.
+
+↓
+
+🔎 Let relevant source context support the concept workflow.
+
+↓
+
+📖 Learn the concept.
+
+↓
+
+📝 Add your own notes.
+
+↓
+
+🖍️ Highlight important information.
+
+↓
+
+❤️ Save what you want to revisit.
+
+↓
+
+📊 Compare related concepts when necessary.
+
+↓
+
+🗂️ Keep useful material in your Study Vault.
+
+↓
+
+📈 Return later and continue studying.
+
+---
+
+# 💡 Quick Start
+
+If you're opening Cellfie for the first time:
+
+### 01. Explore the Dashboard
+
+Get familiar with the main study areas.
+
+### 02. Add a source
+
+Put one of your useful books or PDFs into Library.
+
+### 03. Tag it properly
+
+Give Cellfie enough context to know what the source is actually about.
+
+### 04. Explore Concepts
+
+Start with a concept you genuinely want to understand.
+
+### 05. Try Laboratory
+
+Explore practical science, Physics, Chemistry and related material.
+
+### 06. Open the Periodic Table
+
+Pick an element you know absolutely nothing about.
+
+Then somehow end up reading about five more. 😭
+
+### 07. Use Comparison Studio
+
+Whenever two concepts start blurring together, compare them.
+
+### 08. Save your useful stuff
+
+Notes, highlights, favorites and saved items become your personal study layer.
+
+---
+
+# 🧬 Cellfie Philosophy
+
+Cellfie is not meant to replace textbooks, teachers, laboratories or proper scientific references.
+
+It is a **study environment** that helps bring those things together.
+
+The idea is simple:
+
+> Learn from good sources.  
+> Organize them properly.  
+> Connect information through concepts.  
+> Make your own notes.  
+> Compare what needs comparing.  
+> Revise what matters.  
+> And make science feel a little less chaotic.
 
 ---
 
 # 🛠️ Technology
 
-Cellfie is built as a client-side web application using open-source and browser-based technologies.
+Cellfie is built as a modern web application with a local-first architecture.
 
-## Core Technologies
+The project uses:
 
-- ⚛️ React
-- 🔷 TypeScript
-- ⚡ Vite
-- 🗄️ Dexie
-- 💾 IndexedDB
-- 📄 PDF.js
-- 📚 EPUB processing
-- 🌐 XHTML / HTML parsing
-- 📱 Progressive Web App architecture
-- 🎨 Phosphor Icons
-- 🌿 Tailwind CSS
+- React
+- TypeScript
+- Vite
+- Dexie / IndexedDB
+- Vite PWA
+- Structured JSON content
+- Local SVG assets
+- Client-side search and retrieval
+- Responsive UI architecture
 
-## 💳 No Paid AI Dependency
-
-The core uploaded-book workflow does **not** depend on a paid AI API.
-
-Cellfie's local study pipeline is designed to work directly with the student's own imported material.
-
----
-
-# 🌱 Open Development
-
-Cellfie is an actively developed project.
-
-The application is being built incrementally, with each part of the study workflow being tested against real student use cases.
-
-## Current Development Areas
-
-- 📚 Multi-format book importing
-- 🔍 Local textbook search
-- 🧠 Multi-book concept retrieval
-- 📖 Textbook section detection
-- 📝 Personal editing
-- 🧠 Revision tools
-- 🔬 Scientific references
-- 🦠 Organism learning
-- 🧪 Laboratory learning
-- ⚖️ Comparison tools
-- 📴 Offline-first functionality
-- 📱 Mobile usability
-- ♿ Accessibility
-
-Some features are still under active development and may change as the application evolves.
+The application is designed so curated content, user sources and personal study data remain conceptually separate.
 
 ---
 
 # 🚀 Getting Started
 
-## Clone the Repository
+Clone the repository and install dependencies:
 
-`git clone https://github.com/thatbrowncraft/cellfie.git`
+~~~bash
+git clone https://github.com/thatbrowncraft/cellfie.git
+cd cellfie
+npm install
+~~~
 
-## Move Into the Project
+Start the development server:
 
-`cd cellfie`
+~~~bash
+npm run dev
+~~~
 
-## Install Dependencies
+Create a production build:
 
-`npm install`
-
-## Start the Development Server
-
-`npm run dev`
-
-Then open the local URL provided by Vite, usually:
-
-`http://localhost:5173`
+~~~bash
+npm run build
+~~~
 
 ---
 
-# 🏭 Production Build
+# 🌐 PWA
 
-## Create a Production Build
+Cellfie is built as a Progressive Web App.
 
-`npm run build`
+That means it can behave more like an installable application while still being delivered through the web.
 
-## Preview the Production Build
-
-`npm run preview`
+The project is configured for deployment through GitHub Pages.
 
 ---
 
 # 🧪 Development Status
 
-Cellfie is currently under active development.
+Cellfie is actively evolving.
 
-The application already includes the foundations for:
+Some parts of the application are polished and stable, while other areas continue to receive improvements, new content and refinement.
 
-- 📚 Personal book libraries
-- 📥 Multi-format importing
-- 🧠 Concept-based retrieval
-- 📖 Multi-book study material
-- 🔎 Textbook-aware section detection
-- 🧠 Core Concept
-- ⚡ Quick Revision
-- 🎯 Exam Focus
-- 🔬 Research references
-- 📝 Personal notes
-- 💡 Memory aids
-- ✏️ Editing and restoring study sections
-- 🦠 Organism exploration
-- 🧪 Laboratory learning
-- ⚖️ Comparison tools
-- 📱 Responsive navigation
-- 📲 PWA functionality
+Current development areas include continued work across:
 
-## 🔧 Areas Still Being Refined
-
-Some areas are still being refined, especially around:
-
-- Large-library processing
-- Extraction quality
-- Document structure
-- Retrieval accuracy
-- Multi-book synthesis
-- Mobile interaction
+- Scientific content
+- Knowledge workflows
+- Study experiences
+- UI polish
+- Mobile responsiveness
+- Search and retrieval
+- Learning tools
+- Accessibility
+- Overall application experience
 
 ---
 
-# 🤝 Contributions & Feedback
+# 🤝 Contributions
 
-Cellfie is currently being developed as a student-focused project.
+Cellfie is a personal science-learning project, but ideas, feedback, bug reports and thoughtful contributions are always welcome.
 
-Ideas, bug reports, usability feedback, and thoughtful suggestions are welcome.
+If you find something broken, confusing or unnecessarily annoying:
 
-If something feels:
+please say so.
 
-- confusing
-- slow
-- inaccurate
-- difficult to navigate
-- or simply annoying to use
+If you have an idea that could genuinely make scientific learning better:
 
-that feedback is useful.
-
-The whole point of Cellfie is to make studying easier.
+even better. 🧪
 
 ---
 
-# 📃 Why Cellfie Exists
+# 🤍 Why Cellfie Exists
 
-Studying should not mean opening twelve tabs, five PDFs, two notebooks, and then wondering where the one paragraph you actually needed disappeared to.
+Science is huge.
 
-Cellfie is being built to make that mess a little less messy.
+There are textbooks, lecture notes, papers, diagrams, formulas, organisms, reactions, procedures, classifications, exceptions, mnemonics and approximately 900 things that your professor casually expects you to remember. 😭
 
-### Bring your books. 📚
+Cellfie exists to make that mess feel more manageable.
 
-### Bring your notes. 📝
+Not by removing the complexity of science.
 
-### Bring your syllabus. 📖
+But by giving that complexity a place to live.
 
-### Bring your questions. ❓
+---
 
-## Cellfie helps you study from them.
+# 🧬 Made with curiosity
 
-🧬📚🤍
+Cellfie is created by **thatbrowncraft**.
+
+Built for people who ask:
+
+**"Wait... but why?"**
+
+and then accidentally spend three hours finding out. 🤌🏽🧪
+
+---
+
+## © thatbrowncraft
+
+Cellfie and its original application content are created and maintained by thatbrowncraft.
+
+Please respect the original project, content and assets.
