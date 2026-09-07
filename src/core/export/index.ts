@@ -94,7 +94,7 @@ export async function exportNotesAsMarkdown(notes?: Note[]): Promise<void> {
  *   None of it is data the user created or would recognize as "theirs" —
  *   including it would bloat the backup with re-derivable engine state,
  *   exactly the "temporary scanning state" the brief says to leave out.
- *   The genuinely user-facing preferences (theme, large text, reader
+ *   The genuinely user-facing preferences (theme, text size, reader
  *   navigation mode) live in localStorage, not this table, and are
  *   exported separately below as `preferences`.
  * - `organismImageBlobs` — raw image `Blob` bytes (the IndexedDB
@@ -121,8 +121,8 @@ const FIELD_STRIPPERS: Record<string, (row: Record<string, unknown>) => Record<s
   organismImages: ({ filePath: _filePath, blobId: _blobId, ...rest }) => rest
 }
 
-/** localStorage keys behind Settings' real, working preference controls (theme mode, large text, reader page-navigation) — see core/theme and core/reader-settings. */
-const PREFERENCE_KEYS = ['cellfie:theme-mode', 'cellfie:large-text', 'cellfie:reader-navigation-mode'] as const
+/** localStorage keys behind Settings' real, working preference controls (theme mode, text size, reader page-navigation) — see core/theme and core/reader-settings. */
+const PREFERENCE_KEYS = ['cellfie:theme-mode', 'cellfie:text-size', 'cellfie:reader-navigation-mode'] as const
 
 function readLocalPreferences(): Record<string, string> {
   const out: Record<string, string> = {}
