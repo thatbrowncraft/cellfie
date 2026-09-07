@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Sun, Moon, Monitor, TextAa, Download, Upload, ArrowsLeftRight, ArrowsDownUp, CheckCircle, Info } from '@phosphor-icons/react'
 import { ReadingLayout } from '../../shared/layouts'
 import { Button } from '../../shared/components'
-import { useTheme, type ThemeMode } from '../../core/theme'
+import { useTheme, type ThemeMode, type TextSizeLevel } from '../../core/theme'
 import { useReaderNavigationMode, type ReaderNavigationMode } from '../../core/reader-settings'
 import { cn } from '../../shared/utils/cn'
 import { exportJsonBackup } from '../../core/export'
@@ -14,6 +14,21 @@ const themeOptions: { mode: ThemeMode; label: string; icon: JSX.Element }[] = [
   { mode: 'system', label: 'System', icon: <Monitor size={20} /> },
   { mode: 'light', label: 'Light', icon: <Sun size={20} /> },
   { mode: 'dark', label: 'Dark', icon: <Moon size={20} /> }
+]
+
+/**
+ * Five-level text-size control (§13) — replaces the old binary "Large
+ * text" toggle. `glyphSize` only scales the decorative "A" icon inside
+ * each option button, as a visual size cue; it never touches real
+ * type — the actual scaling is the `data-text-size` CSS rule in
+ * index.css, applied to the whole app from core/theme.
+ */
+const textSizeOptions: { level: TextSizeLevel; label: string; ariaLabel: string; glyphSize: number }[] = [
+  { level: 1, label: 'Smaller', ariaLabel: 'Smaller text', glyphSize: 14 },
+  { level: 2, label: 'Small', ariaLabel: 'Small text', glyphSize: 16 },
+  { level: 3, label: 'Default', ariaLabel: 'Default text (current Cellfie size)', glyphSize: 18 },
+  { level: 4, label: 'Large', ariaLabel: 'Large text', glyphSize: 21 },
+  { level: 5, label: 'Larger', ariaLabel: 'Larger text', glyphSize: 24 }
 ]
 
 const readerNavigationOptions: { mode: ReaderNavigationMode; label: string; icon: JSX.Element; description: string }[] = [
@@ -32,7 +47,7 @@ const readerNavigationOptions: { mode: ReaderNavigationMode; label: string; icon
  * book/image files themselves never are).
  */
 export function SettingsPage() {
-  const { mode, setMode, largeText, setLargeText } = useTheme()
+  const { mode, setMode, textSize, setTextSize } = useTheme()
   const [readerNavigationMode, setReaderNavigationMode] = useReaderNavigationMode()
   const [importOpen, setImportOpen] = useState(false)
   const [aboutOpen, setAboutOpen] = useState(false)
@@ -92,33 +107,32 @@ export function SettingsPage() {
 
       <section className="mb-10">
         <h2 className="mb-1 font-display text-h2 font-medium text-ink-primary">Accessibility</h2>
-        <p className="mb-4 font-body text-body text-ink-secondary">
-          Scales the entire type scale by roughly 1.18× without breaking layout (§13).
+        <p className="mb-1 flex items-center gap-2 font-ui text-ui font-medium text-ink-primary">
+          <TextAa size={20} aria-hidden />
+          Text size
         </p>
-        <button
-          role="switch"
-          aria-checked={largeText}
-          onClick={() => setLargeText(!largeText)}
-          className="flex w-full items-center justify-between rounded-md border border-border bg-surface p-4"
-        >
-          <span className="flex items-center gap-3 font-ui text-ui font-medium text-ink-primary">
-            <TextAa size={20} />
-            Large text
-          </span>
-          <span
-            className={cn(
-              'relative h-6 w-11 rounded-full transition-colors duration-micro',
-              largeText ? 'bg-olive' : 'bg-border-strong'
-            )}
-          >
-            <span
+        <p className="mb-4 font-body text-body text-ink-secondary">Choose the reading size that feels comfortable. Default matches Cellfie's usual size.</p>
+        <div role="radiogroup" aria-label="Text size" className="flex gap-2">
+          {textSizeOptions.map((opt) => (
+            <button
+              key={opt.level}
+              type="button"
+              role="radio"
+              aria-checked={textSize === opt.level}
+              aria-label={opt.ariaLabel}
+              onClick={() => setTextSize(opt.level)}
               className={cn(
-                'absolute top-0.5 h-5 w-5 rounded-full bg-canvas transition-transform duration-micro',
-                largeText ? 'translate-x-5' : 'translate-x-0.5'
+                'flex min-w-0 flex-1 flex-col items-center gap-1.5 rounded-md border p-3 font-ui text-micro font-medium transition-colors duration-micro',
+                textSize === opt.level
+                  ? 'border-terracotta bg-surface-raised text-ink-primary'
+                  : 'border-border text-ink-secondary hover:bg-surface-raised'
               )}
-            />
-          </span>
-        </button>
+            >
+              <TextAa size={opt.glyphSize} aria-hidden />
+              {opt.label}
+            </button>
+          ))}
+        </div>
       </section>
 
       <section className="mb-10">
