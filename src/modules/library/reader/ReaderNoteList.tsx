@@ -33,7 +33,7 @@ export function ReaderNoteList({ notes, onOpen }: ReaderNoteListProps) {
           >
             <span className="flex w-full items-center gap-2 font-ui text-ui font-medium text-ink-primary">
               <NotePencil size={15} className="shrink-0 text-olive" aria-hidden />
-              <span className="truncate">{note.title}</span>
+              <span className="min-w-0 truncate">{note.title}</span>
               {note.page && <span className="shrink-0 font-ui text-micro text-ink-tertiary">p.{note.page}</span>}
             </span>
             {note.contentMarkdown.trim() && (
