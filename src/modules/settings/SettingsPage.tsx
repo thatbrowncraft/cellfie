@@ -67,15 +67,15 @@ export function SettingsPage() {
               aria-checked={readerNavigationMode === opt.mode}
               onClick={() => setReaderNavigationMode(opt.mode)}
               className={cn(
-                'flex flex-1 flex-col items-center gap-2 rounded-md border p-4 font-ui text-ui font-medium transition-colors duration-micro',
+                'flex min-w-0 flex-1 flex-col items-center gap-2 rounded-md border p-4 font-ui text-ui font-medium transition-colors duration-micro',
                 readerNavigationMode === opt.mode
                   ? 'border-terracotta bg-surface-raised text-ink-primary'
                   : 'border-border text-ink-secondary hover:bg-surface-raised'
               )}
             >
-              {opt.icon}
-              {opt.label}
-              <span className="text-center font-ui text-caption font-normal text-ink-tertiary">{opt.description}</span>
+              <span className="shrink-0">{opt.icon}</span>
+              <span className="w-full text-center">{opt.label}</span>
+              <span className="w-full text-center font-ui text-caption font-normal text-ink-tertiary">{opt.description}</span>
             </button>
           ))}
         </div>
@@ -92,14 +92,14 @@ export function SettingsPage() {
               aria-checked={mode === opt.mode}
               onClick={() => setMode(opt.mode)}
               className={cn(
-                'flex flex-1 flex-col items-center gap-2 rounded-md border p-4 font-ui text-ui font-medium transition-colors duration-micro',
+                'flex min-w-0 flex-1 flex-col items-center gap-2 rounded-md border p-4 font-ui text-ui font-medium transition-colors duration-micro',
                 mode === opt.mode
                   ? 'border-terracotta bg-surface-raised text-ink-primary'
                   : 'border-border text-ink-secondary hover:bg-surface-raised'
               )}
             >
-              {opt.icon}
-              {opt.label}
+              <span className="shrink-0">{opt.icon}</span>
+              <span className="w-full text-center">{opt.label}</span>
             </button>
           ))}
         </div>
@@ -112,7 +112,11 @@ export function SettingsPage() {
           Text size
         </p>
         <p className="mb-4 font-body text-body text-ink-secondary">Choose the reading size that feels comfortable. Default matches Cellfie's usual size.</p>
-        <div role="radiogroup" aria-label="Text size" className="flex gap-2">
+        <div
+          role="radiogroup"
+          aria-label="Text size"
+          className={cn('grid gap-2', textSize >= 4 ? 'grid-cols-3' : 'grid-cols-5')}
+        >
           {textSizeOptions.map((opt) => (
             <button
               key={opt.level}
@@ -122,14 +126,14 @@ export function SettingsPage() {
               aria-label={opt.ariaLabel}
               onClick={() => setTextSize(opt.level)}
               className={cn(
-                'flex min-w-0 flex-1 flex-col items-center gap-1.5 rounded-md border p-3 font-ui text-micro font-medium transition-colors duration-micro',
+                'flex min-w-0 flex-col items-center gap-1.5 rounded-md border p-3 font-ui text-micro font-medium transition-colors duration-micro',
                 textSize === opt.level
                   ? 'border-terracotta bg-surface-raised text-ink-primary'
                   : 'border-border text-ink-secondary hover:bg-surface-raised'
               )}
             >
-              <TextAa size={opt.glyphSize} aria-hidden />
-              {opt.label}
+              <TextAa size={opt.glyphSize} className="shrink-0" aria-hidden />
+              <span className="w-full break-words text-center leading-tight">{opt.label}</span>
             </button>
           ))}
         </div>
