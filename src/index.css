@@ -128,8 +128,19 @@ body {
    column. This only changes what happens when a single "word" doesn't
    fit its container: it wraps onto the next line instead of spilling
    past the edge. It never touches normal word-by-word wrapping, so
-   ordinary text is unaffected and no layout looks any different. */
-h1, h2, h3, h4, h5, h6, p, span, a, button, label, li, td, th {
+   ordinary text is unaffected and no layout looks any different.
+
+   `div` was missing from this list. Ordinary sentences still wrapped
+   fine anywhere (browsers always break at spaces first), but a run
+   with no spaces at all — e.g. the Periodic Table Teacher Trick's
+   "Ne→Ne...F→O→N→C→B→Be→Li→He→H" backwards-recall sequence, rendered
+   straight inside CalloutBox's plain content <div> — had no space to
+   break at and no overflow-wrap rule reaching that element, so it ran
+   past the card edge instead of wrapping. Adding `div` here is the fix:
+   normal text (which already wraps at spaces) is unaffected, and any
+   future unbroken sequence/formula/URL of unpredictable length now
+   gets the same last-resort wrap instead of overflowing. */
+h1, h2, h3, h4, h5, h6, p, span, a, button, label, li, td, th, div {
   overflow-wrap: break-word;
 }
 
