@@ -134,9 +134,9 @@ export function ImportMarkdownDialog({ open, onClose }: ImportMarkdownDialogProp
             <ul className="max-h-48 divide-y divide-border overflow-y-auto rounded-md border border-border bg-surface">
               {pending.map((note, i) => (
                 <li key={i} className="flex items-center justify-between gap-3 px-4 py-2">
-                  <span className="flex items-center gap-2 truncate font-ui text-ui text-ink-primary">
+                  <span className="flex min-w-0 items-center gap-2 truncate font-ui text-ui text-ink-primary">
                     <CheckCircle size={16} className="shrink-0 text-olive" aria-hidden />
-                    <span className="truncate">{note.title}</span>
+                    <span className="min-w-0 truncate">{note.title}</span>
                   </span>
                   {note.tags.length > 0 && (
                     <span className="shrink-0 font-ui text-caption text-ink-tertiary">
