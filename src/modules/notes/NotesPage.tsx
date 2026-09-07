@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from 'react'
+import { forwardRef, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { NotePencil, DownloadSimple, UploadSimple, PushPin, Highlighter, Bookmarks, Atom } from '@phosphor-icons/react'
 import { EmptyState, Button, SearchField, Dropdown, Card, CardBody } from '@/shared/components'
@@ -42,23 +42,27 @@ const groupOptions: { value: GroupBy; label: string }[] = [
   { value: 'subject', label: 'Grouped by subject' }
 ]
 
-function SectionTabButton({ active, onClick, icon, children }: { active: boolean; onClick: () => void; icon: ReactNode; children: ReactNode }) {
+const SectionTabButton = forwardRef<
+  HTMLButtonElement,
+  { active: boolean; onClick: () => void; icon: ReactNode; children: ReactNode }
+>(function SectionTabButton({ active, onClick, icon, children }, ref) {
   return (
     <button
+      ref={ref}
       type="button"
       onClick={onClick}
       aria-current={active ? 'page' : undefined}
       className={
         active
-          ? 'flex items-center gap-1.5 border-b-2 border-olive px-3 pb-2 font-ui text-ui font-medium text-ink-primary'
-          : 'flex items-center gap-1.5 border-b-2 border-transparent px-3 pb-2 font-ui text-ui text-ink-tertiary hover:text-ink-secondary'
+          ? 'flex shrink-0 items-center gap-1.5 whitespace-nowrap border-b-2 border-olive px-3 pb-2 font-ui text-ui font-medium text-ink-primary'
+          : 'flex shrink-0 items-center gap-1.5 whitespace-nowrap border-b-2 border-transparent px-3 pb-2 font-ui text-ui text-ink-tertiary hover:text-ink-secondary'
       }
     >
       {icon}
       {children}
     </button>
   )
-}
+})
 
 /**
  * Study Vault (Final Polish brief §08-12) — Sprint 2 §3/§4/§5's Notebook,
@@ -96,6 +100,17 @@ export function NotesPage() {
     else params.set('section', next)
     setSearchParams(params, { replace: true })
   }
+
+  // Study Vault tab-strip fix: the strip can be wider than the viewport
+  // (Notes/Highlights/Bookmarks/Periodic Table), so it scrolls
+  // horizontally within itself (see the `overflow-x-auto` row below)
+  // instead of being clipped by the page's own `overflow-hidden` (kept
+  // there for FloatingStudyParticles). This just keeps the selected tab
+  // scrolled into view whenever it changes.
+  const sectionTabRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+  useEffect(() => {
+    sectionTabRefs.current[section]?.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' })
+  }, [section])
 
   const notes = useLiveQuery<Note[]>(() => db.notes.toArray(), [], [])
   const items = useLiveQuery<LibraryItem[]>(() => db.libraryItems.toArray(), [], [])
@@ -211,14 +226,32 @@ export function NotesPage() {
         </p>
       </header>
 
-      <div className="mb-8 flex gap-1 border-b border-border">
-        <SectionTabButton active={section === 'notes'} onClick={() => setSection('notes')} icon={<NotePencil size={16} aria-hidden />}>
+      <div
+        className="mb-8 flex gap-1 overflow-x-auto border-b border-border"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
+        <SectionTabButton
+          ref={(el) => (sectionTabRefs.current.notes = el)}
+          active={section === 'notes'}
+          onClick={() => setSection('notes')}
+          icon={<NotePencil size={16} aria-hidden />}
+        >
           Notes
         </SectionTabButton>
-        <SectionTabButton active={section === 'highlights'} onClick={() => setSection('highlights')} icon={<Highlighter size={16} aria-hidden />}>
+        <SectionTabButton
+          ref={(el) => (sectionTabRefs.current.highlights = el)}
+          active={section === 'highlights'}
+          onClick={() => setSection('highlights')}
+          icon={<Highlighter size={16} aria-hidden />}
+        >
           Highlights
         </SectionTabButton>
-        <SectionTabButton active={section === 'bookmarks'} onClick={() => setSection('bookmarks')} icon={<Bookmarks size={16} aria-hidden />}>
+        <SectionTabButton
+          ref={(el) => (sectionTabRefs.current.bookmarks = el)}
+          active={section === 'bookmarks'}
+          onClick={() => setSection('bookmarks')}
+          icon={<Bookmarks size={16} aria-hidden />}
+        >
           Bookmarks
         </SectionTabButton>
         {/* Periodic Table (brief: "Build the Interactive Periodic Table") lives as its
@@ -398,9 +431,9 @@ function HighlightsSection({ navigate }: { navigate: ReturnType<typeof useNaviga
                 <CardBody className="flex flex-col gap-3">
                   <p className="border-l-2 border-olive pl-3 font-body text-body italic text-ink-primary">"{h.text || 'Highlighted text'}"</p>
                   {h.note && <p className="rounded-sm bg-surface-raised p-2 font-body text-caption text-ink-secondary">{h.note}</p>}
-                  <div className="mt-auto flex items-center justify-between text-micro text-ink-tertiary">
-                    <span className="truncate">{book ? book.title : 'Unknown book'}</span>
-                    {h.page && <span>Page {h.page}</span>}
+                  <div className="mt-auto flex items-center justify-between gap-2 text-micro text-ink-tertiary">
+                    <span className="min-w-0 truncate">{book ? book.title : 'Unknown book'}</span>
+                    {h.page && <span className="shrink-0">Page {h.page}</span>}
                   </div>
                 </CardBody>
               </Card>
@@ -464,9 +497,9 @@ function BookmarksSection({ navigate }: { navigate: ReturnType<typeof useNavigat
                     <Bookmarks size={20} />
                     <span className="truncate">{b.page ? `Page ${b.page}` : 'Bookmark'}</span>
                   </div>
-                  <div className="mt-auto flex items-center justify-between text-micro text-ink-tertiary">
-                    <span className="truncate">{book ? book.title : 'Unknown book'}</span>
-                    {b.page && <span>Page {b.page}</span>}
+                  <div className="mt-auto flex items-center justify-between gap-2 text-micro text-ink-tertiary">
+                    <span className="min-w-0 truncate">{book ? book.title : 'Unknown book'}</span>
+                    {b.page && <span className="shrink-0">Page {b.page}</span>}
                   </div>
                 </CardBody>
               </Card>
