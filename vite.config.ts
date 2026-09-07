@@ -73,12 +73,45 @@ export default defineConfig({
         ]
       },
       workbox: {
-        // 'pdf' added for the bundled Cellfie User Manual (public/manual) —
-        // Settings → Cellfie User Manual — so it precaches and reads
-        // offline like every other bundled asset, consistent with the
-        // app's local-first/offline-first principle. No other asset type
-        // in this list changed.
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2,pdf}']
+        // NOTE: 'pdf' was briefly added here to precache the bundled
+        // Cellfie User Manual (public/manual/cellfie-user-manual.pdf) at
+        // install time. That broke the build: the manual is 2.36 MB,
+        // over Workbox's default 2 MiB precache ceiling (see the
+        // bundle-size note below on why that ceiling is intentional and
+        // not just raised). Precaching was never actually necessary for
+        // this file anyway — ManualReaderOverlay.tsx only fetch()es it
+        // when the reader is opened (see MANUAL_PDF_URL there), so it's
+        // lazy by design already. runtimeCaching below gets the same
+        // "works offline after first read" outcome without touching the
+        // precache budget: CacheFirst stores it in its own named cache
+        // the first time someone opens the manual, and
+        // maximumFileSizeToCacheInBytes doesn't apply to runtime
+        // caching, only precaching.
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        runtimeCaching: [
+          {
+            // Matches the manual regardless of BASE_PATH (GitHub Pages
+            // subpath vs local "/"), since it checks the end of the
+            // pathname rather than the full URL.
+            urlPattern: ({ url }) => url.pathname.endsWith('/manual/cellfie-user-manual.pdf'),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'cellfie-manual',
+              expiration: {
+                maxEntries: 1,
+                // The manual ships as a static, versioned build asset —
+                // it only changes when the app is rebuilt/redeployed, at
+                // which point autoUpdate's service-worker refresh takes
+                // over anyway. A long age just avoids needless re-fetches
+                // of an otherwise-immutable file.
+                maxAgeSeconds: 60 * 60 * 24 * 365
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          }
+        ]
         // Bundle-size remediation: a previous change here raised
         // maximumFileSizeToCacheInBytes to 5 MiB to paper over a 2.11 MB
         // main JS chunk (organism + laboratory content registries were
