@@ -123,7 +123,7 @@ export function NewComparisonPage() {
     // makes "Build comparison" actually show something instead of a wall of
     // blank cells. Falls back to fully blank aspects for a fully custom
     // pair, exactly like before.
-    const aspects = await buildAspectsFromEntities(itemA, itemB, domain)
+    const aspects = await buildAspectsFromEntities(itemA, itemB)
     const record = await createCustomComparison({ domain, difficulty, frequency, itemA, itemB, aspects })
     // `openSource` (correction-pass Part 2/3/4) came from the landing search's "My Library"/"Online Knowledge" entity-pair buttons — forward it plus the first aspect id so ComparisonWorkspacePage can open the Fill-from-source dialog on the right tab immediately, instead of landing on a blank workspace that looks identical to plain "Build comparison."
     const openSource = searchParams.get('openSource')
