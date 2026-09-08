@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Books, CaretRight, Check, Globe, Sparkle, WarningCircle, WifiSlash, X } from '@phosphor-icons/react'
-import { Button, Dialog, Dropdown, EmptyState, ReferenceOnlyLink, type DropdownOption } from '../../../shared/components'
+import { Button, Dialog, Dropdown, EmptyState, Input, ReferenceOnlyLink, type DropdownOption } from '../../../shared/components'
 import { db, type LibraryItem } from '../../../core/db'
 import { useLiveQuery } from '../../../core/db/useLiveQuery'
 import { lookupComparisonTopicKnowledge, type ComparisonKnowledgeLookupResult } from '../../../core/comparison/knowledgeLayer'
@@ -25,6 +25,23 @@ interface AspectAcceptTarget {
 
 /** The special, non-aspect "Use for" destination — the comparison's own free-text Notes field. Kept as a distinct sentinel value (never a real aspect id) so the dropdown can offer it alongside every aspect row. */
 const NOTES_TARGET = '__notes__'
+
+/**
+ * Sentinel dropdown value for "+ Create new section" — never a real
+ * aspect id. Mirrors `ConceptOnlineKnowledgePanel.tsx`'s own
+ * `CREATE_NEW_SECTION` sentinel/interaction exactly (Concept Online
+ * Knowledge Enrichment brief): picking it swaps the dropdown for a
+ * plain title field, and the section is created — as a normal
+ * `ComparisonAspect` row on THIS comparison, via `onCreateAspect` below
+ * — at the moment the person applies their selected sentence(s), not
+ * before. No separate "custom sections" table is needed the way
+ * Concept's `conceptCustomSections` is: a comparison's custom section
+ * IS just another row in its existing `aspects` array (same shape,
+ * same persistence path, same edit/delete/reorder support in the
+ * workspace) — there is no built-in/custom distinction to track once
+ * the row exists.
+ */
+const CREATE_NEW_ASPECT_TARGET = '__create_new__'
 
 /**
  * Splits an excerpt into individually selectable sentences (Section
@@ -56,6 +73,8 @@ interface ComparisonEnrichmentPanelProps {
   overviewFilledB: boolean
   onUseForAspect: (target: AspectAcceptTarget) => void
   onAddAdditionalInfo: (target: AcceptTarget) => void
+  /** Creates a new custom aspect row on this comparison and returns its id — the "+ Create new section" destination, applied at the moment the person's selected sentence(s) are applied. See `CREATE_NEW_ASPECT_TARGET` above. */
+  onCreateAspect: (title: string) => Promise<string>
   /** Pre-fills and immediately re-runs a search that was interrupted (brief §22 "Resume search") — the resumed request is identical to what was in flight before, since a killed process can't hand back partial results. */
   resume?: ComparisonSearchSession
   onClose: () => void
@@ -98,6 +117,7 @@ export function ComparisonEnrichmentPanel({
   overviewFilledB,
   onUseForAspect,
   onAddAdditionalInfo,
+  onCreateAspect,
   resume,
   onClose
 }: ComparisonEnrichmentPanelProps) {
@@ -254,6 +274,7 @@ export function ComparisonEnrichmentPanel({
           attributionNotice={result.generalReference?.attributionNotice}
           aspects={aspects}
           overviewFilled={overviewFilled}
+          onCreateAspect={onCreateAspect}
           onApply={(aspectId, text) => {
             if (aspectId === NOTES_TARGET) onAddAdditionalInfo({ side, text, sourceLabel })
             else onUseForAspect({ side, aspectId, text, sourceLabel })
@@ -396,6 +417,7 @@ function ExcerptCard({
   attributionNotice,
   aspects,
   overviewFilled,
+  onCreateAspect,
   onApply
 }: {
   name: string
@@ -404,6 +426,7 @@ function ExcerptCard({
   attributionNotice?: string
   aspects: { id: string; label: string }[]
   overviewFilled: boolean
+  onCreateAspect: (title: string) => Promise<string>
   onApply: (aspectId: string, text: string) => void
 }) {
   const sentences = useMemo(() => splitIntoSentences(excerptText), [excerptText])
@@ -426,10 +449,14 @@ function ExcerptCard({
   const [selected, setSelected] = useState<boolean[]>(() => sentences.map(() => false))
   /** Which destination LABEL each sentence has already been sent to (`null` = not yet used). Once set, that sentence is locked out of further toggling/selection — see `toggle` and `applySelection` below. */
   const [usedFor, setUsedFor] = useState<(string | null)[]>(() => sentences.map(() => null))
+  /** Title typed into the "+ Create new section" field, and whether that create is currently in flight — same two pieces of state as `ConceptOnlineKnowledgePanel.tsx`'s `ExcerptCard`. */
+  const [newSectionTitle, setNewSectionTitle] = useState('')
+  const [creatingSection, setCreatingSection] = useState(false)
 
   const options: DropdownOption[] = [
     ...aspects.map((a) => ({ value: a.id, label: a.label })),
-    { value: NOTES_TARGET, label: 'Additional source information (Notes)' }
+    { value: NOTES_TARGET, label: 'Additional source information (Notes)' },
+    { value: CREATE_NEW_ASPECT_TARGET, label: '+ Create new section' }
   ]
   // Default target: the still-blank Overview row when one exists (matches the
   // old one-confident-mapping behavior), otherwise the comparison's first
@@ -451,11 +478,38 @@ function ExcerptCard({
     setSelected((prev) => prev.map((v, i) => (i === index ? !v : v)))
   }
 
-  function applySelection() {
+  /**
+   * Same "create at apply-time" sequencing as `ConceptOnlineKnowledgePanel.tsx`'s
+   * `ExcerptCard.applySelection`: choosing "+ Create new section" doesn't
+   * create anything by itself — only typing a title and applying does,
+   * so a person who opens the dropdown and picks something else never
+   * leaves behind an empty section. The new aspect is created first
+   * (via `onCreateAspect`, which appends it to this comparison's own
+   * `aspects` array — see `handleCreateAspect` in
+   * `ComparisonWorkspacePage.tsx`), then the pending sentence(s) are
+   * applied to it exactly like any other destination.
+   */
+  async function applySelection() {
     if (pendingIndices.length === 0) return
-    const targetLabel = options.find((o) => o.value === targetId)?.label ?? 'Notes'
-    onApply(targetId, pendingText)
-    setUsedFor((prev) => prev.map((v, i) => (pendingIndices.includes(i) ? targetLabel : v)))
+    let destinationId = targetId
+    let destinationLabel = options.find((o) => o.value === targetId)?.label ?? 'Notes'
+
+    if (targetId === CREATE_NEW_ASPECT_TARGET) {
+      const title = newSectionTitle.trim()
+      if (!title) return
+      setCreatingSection(true)
+      try {
+        destinationId = await onCreateAspect(title)
+      } finally {
+        setCreatingSection(false)
+      }
+      destinationLabel = title
+      setNewSectionTitle('')
+      setTargetId(destinationId)
+    }
+
+    onApply(destinationId, pendingText)
+    setUsedFor((prev) => prev.map((v, i) => (pendingIndices.includes(i) ? destinationLabel : v)))
     setSelected((prev) => prev.map((v, i) => (pendingIndices.includes(i) ? false : v)))
   }
 
@@ -511,8 +565,23 @@ function ExcerptCard({
           </p>
           <div className="flex flex-wrap items-end gap-2">
             <Dropdown label="Use for" options={options} value={targetId} onChange={setTargetId} />
-            <Button variant="tertiary" size="small" icon={<Check size={14} />} disabled={!pendingText} onClick={applySelection}>
-              Use selected text
+            {targetId === CREATE_NEW_ASPECT_TARGET && (
+              <Input
+                label="New section title"
+                value={newSectionTitle}
+                onChange={(e) => setNewSectionTitle(e.target.value)}
+                placeholder="e.g. Exam Shortcut"
+                className="max-w-[220px]"
+              />
+            )}
+            <Button
+              variant="tertiary"
+              size="small"
+              icon={<Check size={14} />}
+              disabled={!pendingText || creatingSection || (targetId === CREATE_NEW_ASPECT_TARGET && !newSectionTitle.trim())}
+              onClick={() => void applySelection()}
+            >
+              {creatingSection ? 'Creating section…' : 'Use selected text'}
             </Button>
           </div>
         </>
