@@ -1,0 +1,57 @@
+{
+  "id": "formula-ratio-proportion-and-partnership",
+  "category": "formula",
+  "title": "Ratio, Proportion and Partnership",
+  "subcategory": "Ratio, Proportion and Partnership",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "publisher": "Gujarat Subordinate Service Selection Board (GSSSB)"
+    }
+  ],
+  "scientificNotes": "General competitive-exam quantitative-aptitude topic; included to match the exam's Part A scope.",
+  "searchKeywords": [
+    "ratio and proportion",
+    "partnership profit sharing",
+    "compound ratio",
+    "mean proportional"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "aptitude",
+  "domain": "Quantitative Aptitude",
+  "expression": "If a:b = c:d then ad = bc (cross-multiplication)    Partnership: Profit share ∝ (Investment × Time period invested)",
+  "explanation": "A ratio a:b compares two quantities of the SAME kind/unit; a proportion states that two ratios are equal (a:b = c:d), which cross-multiplies to ad = bc — the basis for solving for an unknown term. When a quantity must be divided in a given ratio (e.g. split ₹600 in ratio 2:3:5), divide the total by the SUM of the ratio parts to find the value of 'one part', then multiply by each individual ratio term. PARTNERSHIP problems extend ratio logic to business profit-sharing: when partners invest DIFFERENT amounts for DIFFERENT durations, each partner's profit share is proportional to the PRODUCT of their investment and the time that investment was in the business (their 'capital-time'), not to investment alone — a partner who invests more for a shorter period may still earn less than one who invests less for a much longer period.",
+  "variables": [
+    {
+      "symbol": "a, b, c, d",
+      "meaning": "The four terms of a proportion, where a:b = c:d",
+      "unit": "any consistent unit"
+    },
+    {
+      "symbol": "Investment",
+      "meaning": "Capital contributed by a partner",
+      "unit": "currency"
+    },
+    {
+      "symbol": "Time period",
+      "meaning": "Duration for which that capital remained invested",
+      "unit": "months or years"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A invests ₹4000 for 12 months; B invests ₹6000 for 8 months. Total profit is ₹3400. Find each share.",
+    "substitution": "A's capital-time = 4000×12 = 48000. B's capital-time = 6000×8 = 48000. Ratio = 48000:48000 = 1:1",
+    "result": "Each partner gets ₹1700 — despite B investing more capital, equal time-weighted contribution means an equal split"
+  },
+  "commonMistakes": [
+    "Dividing partnership profit purely by the ratio of INVESTMENT amounts, ignoring how long each amount was invested — this only works if all partners invested for the SAME time period; otherwise capital-time (investment × duration) is the correct basis.",
+    "In dividing a total in a given ratio, dividing the total directly by one of the ratio terms instead of by the SUM of all ratio terms to find the value of 'one part' first."
+  ],
+  "genZNote": "Partnership profit-sharing isn't just about who put in more cash — it's about cash × how long it sat in the business, working.",
+  "relatedConcepts": [
+    "concept-number-systems-and-simplification"
+  ]
+}

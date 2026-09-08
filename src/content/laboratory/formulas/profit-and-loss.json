@@ -1,0 +1,64 @@
+{
+  "id": "formula-profit-and-loss",
+  "category": "formula",
+  "title": "Profit, Loss and Discount",
+  "subcategory": "Profit and Loss",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "publisher": "Gujarat Subordinate Service Selection Board (GSSSB)"
+    }
+  ],
+  "scientificNotes": "General competitive-exam quantitative-aptitude topic; included to match the exam's Part A scope.",
+  "searchKeywords": [
+    "profit percentage",
+    "loss percentage",
+    "cost price",
+    "selling price",
+    "marked price",
+    "discount"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "aptitude",
+  "domain": "Quantitative Aptitude",
+  "expression": "Profit % = ((SP − CP) / CP) × 100    Loss % = ((CP − SP) / CP) × 100    SP = MP × (1 − Discount%/100)",
+  "explanation": "Profit or loss is always calculated as a PERCENTAGE OF THE COST PRICE (CP), never of the selling price (SP) — this is the single most common source of error in profit-loss problems. Selling Price (SP) exceeding Cost Price (CP) gives a profit; SP below CP gives a loss. A separate, related chain: Marked Price (MP, the labelled/listed price) is reduced by a discount percentage to arrive at the actual Selling Price — so discount is calculated on MP, while profit/loss is calculated on CP; these are two DIFFERENT base quantities and must not be conflated.",
+  "variables": [
+    {
+      "symbol": "CP",
+      "meaning": "Cost price — what the seller paid to acquire/produce the item",
+      "unit": "currency"
+    },
+    {
+      "symbol": "SP",
+      "meaning": "Selling price — what the item is actually sold for",
+      "unit": "currency"
+    },
+    {
+      "symbol": "MP",
+      "meaning": "Marked price — the labelled/listed price before any discount",
+      "unit": "currency"
+    },
+    {
+      "symbol": "Discount%",
+      "meaning": "Percentage reduction from MP to reach SP",
+      "unit": "%"
+    }
+  ],
+  "workedExample": {
+    "scenario": "An item marked at ₹500 is sold at a 20% discount. Its cost price was ₹350. Find the profit percentage.",
+    "substitution": "SP = 500 × (1 − 0.20) = 400. Profit% = ((400 − 350)/350) × 100",
+    "result": "Profit % ≈ 14.29%"
+  },
+  "commonMistakes": [
+    "Calculating profit/loss percentage on the SELLING price instead of the COST price — the standard convention (and what these formulas assume) is always CP as the base.",
+    "Confusing 'marked price' with 'cost price' when computing discount versus profit — discount is off MP, profit/loss is relative to CP; treating them as the same base quantity gives a wrong final selling price or profit figure."
+  ],
+  "genZNote": "Profit % always clocks in relative to CP — MP is just the sticker price flexing before the discount does its thing.",
+  "relatedConcepts": [
+    "concept-number-systems-and-simplification"
+  ]
+}

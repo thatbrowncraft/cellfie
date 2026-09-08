@@ -1,0 +1,64 @@
+{
+  "id": "formula-arithmetic-and-geometric-progression",
+  "category": "formula",
+  "title": "Arithmetic and Geometric Progression",
+  "subcategory": "Arithmetic and Geometric Progression",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "publisher": "Gujarat Subordinate Service Selection Board (GSSSB)"
+    }
+  ],
+  "scientificNotes": "General competitive-exam quantitative-aptitude topic; included to match the exam's Part A scope.",
+  "searchKeywords": [
+    "AP nth term",
+    "GP nth term",
+    "sum of AP",
+    "sum of GP",
+    "common difference",
+    "common ratio"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "aptitude",
+  "domain": "Quantitative Aptitude",
+  "expression": "AP: aₙ = a + (n−1)d,  Sₙ = n/2 × [2a + (n−1)d]     GP: aₙ = a·r^(n−1),  Sₙ = a(rⁿ−1)/(r−1)  [r ≠ 1]",
+  "explanation": "An Arithmetic Progression (AP) has a CONSTANT DIFFERENCE (d) between consecutive terms (added each step); a Geometric Progression (GP) has a CONSTANT RATIO (r) between consecutive terms (multiplied each step) — recognising which pattern a sequence follows (subtraction stays constant → AP; division stays constant → GP) is the first and most important step, since applying an AP formula to a GP sequence (or vice versa) gives a completely wrong answer. The nth-term formula finds any individual term directly without listing all preceding terms; the sum formula totals the first n terms directly without adding them one by one. For an INFINITE GP with |r| < 1 (a proper fraction), the terms shrink toward zero and the sum converges to a finite value: S∞ = a/(1−r) — this special case appears often in recurring-decimal-to-fraction conversions and certain physics/finance series problems.",
+  "variables": [
+    {
+      "symbol": "a",
+      "meaning": "First term of the progression",
+      "unit": "any"
+    },
+    {
+      "symbol": "d",
+      "meaning": "Common difference (AP) — constant amount added each step",
+      "unit": "same as a"
+    },
+    {
+      "symbol": "r",
+      "meaning": "Common ratio (GP) — constant factor multiplied each step",
+      "unit": "unitless"
+    },
+    {
+      "symbol": "n",
+      "meaning": "Term number / number of terms summed",
+      "unit": "count"
+    }
+  ],
+  "workedExample": {
+    "scenario": "Find the sum of the first 10 terms of the AP 3, 7, 11, 15, ...",
+    "substitution": "a = 3, d = 4, n = 10. S₁₀ = 10/2 × [2(3) + (10−1)(4)] = 5 × [6 + 36]",
+    "result": "S₁₀ = 5 × 42 = 210"
+  },
+  "commonMistakes": [
+    "Assuming every numeric sequence must be either an AP or a GP — some sequences follow entirely different rules (e.g. squares, alternating operations); always verify the constant-difference or constant-ratio property on at least 3 consecutive terms before applying either formula.",
+    "Using the GP sum formula a(rⁿ−1)/(r−1) when r = 1 — this formula is undefined (division by zero) at r = 1, where the sum is instead simply Sₙ = a×n (every term is identical)."
+  ],
+  "genZNote": "AP grows by addition, GP grows by multiplication — mixing up which one you're looking at is the fastest way to get a beautifully wrong answer.",
+  "relatedConcepts": [
+    "concept-number-systems-and-simplification"
+  ]
+}

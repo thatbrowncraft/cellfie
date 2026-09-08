@@ -1,0 +1,57 @@
+{
+  "id": "formula-time-and-work",
+  "category": "formula",
+  "title": "Time and Work",
+  "subcategory": "Time and Work",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "publisher": "Gujarat Subordinate Service Selection Board (GSSSB)"
+    }
+  ],
+  "scientificNotes": "General competitive-exam quantitative-aptitude topic; included to match the exam's Part A scope.",
+  "searchKeywords": [
+    "work rate",
+    "combined work",
+    "man-days",
+    "pipes and cisterns"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "aptitude",
+  "domain": "Quantitative Aptitude",
+  "expression": "Work rate = 1 / (Time to complete alone)    Combined rate = sum of individual rates    Time together = 1 / (Combined rate)",
+  "explanation": "The standard technique treats the WHOLE job as '1 unit of work'; a person/machine that completes the job alone in T days has a work RATE of 1/T (job per day). When multiple agents work TOGETHER, their rates simply ADD (assuming they don't interfere with each other) — the combined time to finish is the reciprocal of the summed rate. For a 'PIPES AND CISTERNS' variant where one pipe fills and another drains, the draining pipe's rate is subtracted (treated as negative) rather than added. The same logic extends to 'man-days' problems: total work = (number of workers) × (number of days) × (rate per worker per day), which stays constant for a fixed job — letting you solve for any one unknown (workers, days, or efficiency) given the other two are changed.",
+  "variables": [
+    {
+      "symbol": "T",
+      "meaning": "Time taken by one person/machine to complete the job alone",
+      "unit": "days (or hours)"
+    },
+    {
+      "symbol": "Rate",
+      "meaning": "Fraction of the job completed per unit time",
+      "unit": "job/day"
+    },
+    {
+      "symbol": "Combined rate",
+      "meaning": "Sum of all individual rates (net, if some are draining/opposing)",
+      "unit": "job/day"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A can complete a job in 12 days, B in 18 days. Working together, how long will they take?",
+    "substitution": "Rate A = 1/12, Rate B = 1/18. Combined rate = 1/12 + 1/18 = 3/36 + 2/36 = 5/36",
+    "result": "Time together = 36/5 = 7.2 days"
+  },
+  "commonMistakes": [
+    "Averaging the two individual TIMES directly (e.g. (12+18)/2) instead of combining their RATES — time doesn't average this way; only rates (1/T) add linearly for simultaneous work.",
+    "Forgetting to subtract (not add) the rate of a pipe/agent working AGAINST the others (e.g. an outlet pipe draining a tank while inlet pipes fill it)."
+  ],
+  "genZNote": "Time and work problems are just 'convert everyone to a rate, add the rates, flip it back to time' — never average the raw days directly.",
+  "relatedConcepts": [
+    "concept-number-systems-and-simplification"
+  ]
+}

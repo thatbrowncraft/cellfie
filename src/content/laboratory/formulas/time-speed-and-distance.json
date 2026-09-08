@@ -1,0 +1,57 @@
+{
+  "id": "formula-time-speed-and-distance",
+  "category": "formula",
+  "title": "Time, Speed and Distance",
+  "subcategory": "Time, Speed and Distance",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "publisher": "Gujarat Subordinate Service Selection Board (GSSSB)"
+    }
+  ],
+  "scientificNotes": "General competitive-exam quantitative-aptitude topic; included to match the exam's Part A scope.",
+  "searchKeywords": [
+    "speed formula",
+    "relative speed",
+    "trains crossing",
+    "boats and streams"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "aptitude",
+  "domain": "Quantitative Aptitude",
+  "expression": "Distance = Speed × Time    Relative speed (opposite directions) = S1 + S2    Relative speed (same direction) = |S1 − S2|",
+  "explanation": "The core relationship Distance = Speed × Time underlies every variant. For two moving bodies, RELATIVE SPEED depends on direction: if moving TOWARD each other (opposite directions), relative speed is the SUM of their speeds (they close the gap faster together); if moving in the SAME direction, relative speed is the DIFFERENCE of their speeds (only the speed gap matters for one to catch up to/overtake the other). 'Trains crossing' problems additionally require adding the LENGTHS of the object(s) involved to the distance to be covered, since a train (or person) must cover its own length plus the other object's length to fully cross it. 'Boats and streams' problems use the same relative-speed logic: DOWNSTREAM speed = boat speed + stream speed (current helps); UPSTREAM speed = boat speed − stream speed (current hinders).",
+  "variables": [
+    {
+      "symbol": "S1, S2",
+      "meaning": "Individual speeds of the two moving bodies",
+      "unit": "e.g. km/h, m/s"
+    },
+    {
+      "symbol": "Distance",
+      "meaning": "Distance to be covered (plus combined lengths, for crossing problems)",
+      "unit": "consistent with speed's unit"
+    },
+    {
+      "symbol": "Time",
+      "meaning": "Time taken",
+      "unit": "consistent with speed's unit"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A 120 m train crosses a 180 m platform completely at a speed of 20 m/s. Find the time taken.",
+    "substitution": "Total distance to cover = train length + platform length = 120 + 180 = 300 m. Time = Distance/Speed = 300/20",
+    "result": "Time = 15 seconds"
+  },
+  "commonMistakes": [
+    "Forgetting to add the OTHER object's length (platform, bridge, or second train) to the distance when a train 'crosses' something — only crossing a single stationary point (like a pole) uses just the train's own length.",
+    "Using the sum of speeds for two bodies moving in the SAME direction (should be the difference), or the difference for bodies moving in opposite directions (should be the sum)."
+  ],
+  "genZNote": "Trains crossing a platform aren't just covering their own length — they've got to clear the WHOLE platform too, nose to tail.",
+  "relatedConcepts": [
+    "concept-number-systems-and-simplification"
+  ]
+}

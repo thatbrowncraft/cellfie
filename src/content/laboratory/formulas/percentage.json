@@ -1,0 +1,62 @@
+{
+  "id": "formula-percentage",
+  "category": "formula",
+  "title": "Percentage and Percentage Change",
+  "subcategory": "Percentage",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "publisher": "Gujarat Subordinate Service Selection Board (GSSSB)"
+    }
+  ],
+  "scientificNotes": "General competitive-exam quantitative-aptitude topic; included to match the exam's Part A scope.",
+  "searchKeywords": [
+    "percentage change",
+    "percentage increase",
+    "percentage decrease",
+    "successive percentage change"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "aptitude",
+  "domain": "Quantitative Aptitude",
+  "expression": "Percentage = (Part / Whole) × 100   [Percentage change = ((New − Old) / Old) × 100]",
+  "explanation": "A percentage expresses a quantity as a fraction of 100, making comparison across different totals straightforward. Percentage CHANGE compares a new value to an OLD (original) value — always divide by the OLD value, never the new one, since percentage change is defined relative to the starting point. For SUCCESSIVE percentage changes (e.g. a price rises 10% then falls 10%), the changes do NOT cancel out — they must be applied one after another to the running value, not added/subtracted directly, because the second percentage is taken of a DIFFERENT base than the first.",
+  "variables": [
+    {
+      "symbol": "Part",
+      "meaning": "The quantity being expressed as a percentage",
+      "unit": "same unit as Whole"
+    },
+    {
+      "symbol": "Whole",
+      "meaning": "The total/reference quantity",
+      "unit": "same unit as Part"
+    },
+    {
+      "symbol": "Old",
+      "meaning": "Original value before the change",
+      "unit": "any"
+    },
+    {
+      "symbol": "New",
+      "meaning": "Value after the change",
+      "unit": "same unit as Old"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A price of ₹200 rises by 10%, then the new price falls by 10%. Find the final price.",
+    "substitution": "After rise: 200 × 1.10 = 220. After fall: 220 × 0.90 = 198",
+    "result": "Final price = ₹198 (NOT back to ₹200 — a net 1% decrease)"
+  },
+  "commonMistakes": [
+    "Assuming a percentage increase followed by an equal percentage decrease returns to the original value — it does not, because the decrease is applied to the ALREADY-INCREASED (larger) value, so the net effect is always a decrease for equal-magnitude successive changes.",
+    "Computing percentage change by dividing the difference by the NEW value instead of the OLD (original) value."
+  ],
+  "genZNote": "Successive percentage changes don't cancel — a +10% then −10% still leaves you down 1%, because the second cut takes a bigger bite in absolute terms.",
+  "relatedConcepts": [
+    "concept-number-systems-and-simplification"
+  ]
+}

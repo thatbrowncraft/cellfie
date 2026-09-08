@@ -1,0 +1,57 @@
+{
+  "id": "formula-average",
+  "category": "formula",
+  "title": "Average (Arithmetic Mean)",
+  "subcategory": "Average",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "publisher": "Gujarat Subordinate Service Selection Board (GSSSB)"
+    }
+  ],
+  "scientificNotes": "General competitive-exam quantitative-aptitude topic; included to match the exam's Part A scope.",
+  "searchKeywords": [
+    "arithmetic mean",
+    "average speed",
+    "weighted average",
+    "average of a series"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "aptitude",
+  "domain": "Quantitative Aptitude",
+  "expression": "Average = (Sum of all values) / (Number of values)    Average speed (equal distances) = (2 × S1 × S2) / (S1 + S2)",
+  "explanation": "The average (arithmetic mean) is the sum of all observations divided by their count — it can shift substantially due to a single outlier, unlike the median. A classic exam trap is AVERAGE SPEED for a journey covered at different speeds over EQUAL distances (not equal times): the correct average speed is NOT the simple arithmetic mean of the two speeds, but the HARMONIC MEAN — because more TIME is spent travelling at the slower speed for the same distance, so the slower speed should (and does) pull the average down more than a simple mean would suggest.",
+  "variables": [
+    {
+      "symbol": "Sum",
+      "meaning": "Total of all individual values",
+      "unit": "any"
+    },
+    {
+      "symbol": "Number of values",
+      "meaning": "Count of observations averaged",
+      "unit": "count"
+    },
+    {
+      "symbol": "S1, S2",
+      "meaning": "Two different speeds used to cover the SAME distance each way",
+      "unit": "e.g. km/h"
+    }
+  ],
+  "workedExample": {
+    "scenario": "A car travels from A to B at 40 km/h and returns the same distance at 60 km/h. Find the average speed for the whole trip.",
+    "substitution": "Average speed = (2 × 40 × 60) / (40 + 60) = 4800/100",
+    "result": "Average speed = 48 km/h (NOT the simple mean, 50 km/h)"
+  },
+  "commonMistakes": [
+    "Taking the simple arithmetic mean of two speeds for an equal-DISTANCE journey — the correct average speed formula for equal distances is the harmonic-mean-based (2·S1·S2)/(S1+S2), since unequal TIME is spent at each speed.",
+    "Forgetting that a new value added to a group changes the average by an amount that depends on how far that value is from the OLD average, not on the value itself in isolation — useful for 'find the new average after including one more term' problems."
+  ],
+  "genZNote": "Average speed for equal distances isn't the polite middle-ground mean — the slower leg eats way more time, so it drags the average down harder than you'd expect.",
+  "relatedConcepts": [
+    "concept-number-systems-and-simplification"
+  ]
+}

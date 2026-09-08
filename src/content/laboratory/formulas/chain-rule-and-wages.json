@@ -1,0 +1,61 @@
+{
+  "id": "formula-chain-rule-and-wages",
+  "category": "formula",
+  "title": "Chain Rule, Work and Wages",
+  "subcategory": "Chain Rule and Wages",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "publisher": "Gujarat Subordinate Service Selection Board (GSSSB)"
+    }
+  ],
+  "scientificNotes": "General competitive-exam quantitative-aptitude topic; included to match the exam's Part A scope.",
+  "searchKeywords": [
+    "chain rule aptitude",
+    "wages and work distribution",
+    "direct and inverse variation"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "aptitude",
+  "domain": "Quantitative Aptitude",
+  "expression": "For direct variation: more of A → more of B, in same proportion. For inverse variation: more of A → less of B, in reciprocal proportion. Combined chain: (product of one set of quantities) / (product of corresponding quantities) held in fixed proportion.",
+  "explanation": "The CHAIN RULE generalises simple proportion to problems with MULTIPLE varying quantities linked together (e.g. workers, days, hours per day, and units of work, all changing simultaneously) — set up each pairwise relationship as either DIRECT variation (both quantities increase/decrease together, e.g. more workers → more work done in the same time) or INVERSE variation (one increases as the other decreases, e.g. more workers → FEWER days needed for the same work), then combine all the ratios into one equation and solve for the unknown. WAGES problems apply the same logic: wages earned are usually directly proportional to (number of workers) × (number of days worked) × (hours worked per day) for identical work — so if the total work and total wage pool are fixed, individual wage share follows the same 'capital-time'-style proportional split used in partnership problems, just substituting labour-time for capital-time.",
+  "variables": [
+    {
+      "symbol": "Workers",
+      "meaning": "Number of people/units doing the work",
+      "unit": "count"
+    },
+    {
+      "symbol": "Days",
+      "meaning": "Number of days worked",
+      "unit": "days"
+    },
+    {
+      "symbol": "Hours/day",
+      "meaning": "Working hours per day",
+      "unit": "hours"
+    },
+    {
+      "symbol": "Work",
+      "meaning": "Amount of work completed (often normalised to 1 job or given as a numeric quantity)",
+      "unit": "job-units"
+    }
+  ],
+  "workedExample": {
+    "scenario": "12 workers can complete a job in 8 days working 6 hours/day. How many days will 16 workers take, working 8 hours/day, for the SAME job?",
+    "substitution": "Total worker-hours fixed: 12×8×6 = 16×D×8 → D = (12×8×6)/(16×8)",
+    "result": "D = 4.5 days"
+  },
+  "commonMistakes": [
+    "Treating every quantity in a chain-rule problem as directly proportional — some relationships (like workers vs. days needed, for fixed total work) are INVERSELY proportional, and mislabelling the direction inverts the final answer.",
+    "Forgetting that when EFFICIENCY differs between workers (some problems specify one worker does 'twice the work' of another), a straight headcount ratio must instead be replaced with an efficiency-weighted ratio."
+  ],
+  "genZNote": "Chain rule is just proportion problems that decided to bring three or four friends along instead of coming solo — nail down direct vs inverse for EACH pair before combining.",
+  "relatedConcepts": [
+    "concept-number-systems-and-simplification"
+  ]
+}
