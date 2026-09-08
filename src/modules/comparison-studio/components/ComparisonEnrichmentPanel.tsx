@@ -503,7 +503,13 @@ function ExcerptCard({
       } finally {
         setCreatingSection(false)
       }
-      destinationLabel = title
+      // `onCreateAspect` may have resolved to an EXISTING aspect (the
+      // duplicate-title case — see `handleCreateAspect`'s dedup check
+      // in ComparisonWorkspacePage.tsx), in which case `options` already
+      // carries its real, canonical label from props. Only a genuinely
+      // new section (not yet reflected in this render's `aspects` prop)
+      // falls back to the just-typed title.
+      destinationLabel = options.find((o) => o.value === destinationId)?.label ?? title
       setNewSectionTitle('')
       setTargetId(destinationId)
     }
