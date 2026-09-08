@@ -45,5 +45,6 @@
     "population standard deviation",
     "spread"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "How much your data likes to wander."
 }

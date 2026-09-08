@@ -58,5 +58,6 @@
     "MCV formula",
     "microcytic macrocytic"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Forget to keep hematocrit as a percentage instead of a fraction and MCV quietly hands you a wrong answer with total confidence."
 }

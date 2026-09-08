@@ -37,5 +37,6 @@
     "average",
     "central tendency"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "The average that carries the whole data set."
 }

@@ -45,5 +45,6 @@
     "endpoint dilution",
     "serial dilution assay result"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "How dilute can it get before it taps out."
 }

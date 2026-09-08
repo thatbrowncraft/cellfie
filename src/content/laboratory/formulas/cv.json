@@ -40,5 +40,6 @@
     "relative variability",
     "cv percent"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Spread, but make it a percentage."
 }

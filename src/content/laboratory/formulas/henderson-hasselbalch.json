@@ -58,5 +58,6 @@
     "conjugate acid base ratio",
     "buffer preparation formula"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "The buffer math that keeps pH from spiraling."
 }

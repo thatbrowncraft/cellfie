@@ -61,5 +61,6 @@
     "hypochromia",
     "hemoglobin concentration per cell"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "MCHC asks how packed the hemoglobin is per cell, not how much total — mixing that up with MCH is the classic exam trap."
 }

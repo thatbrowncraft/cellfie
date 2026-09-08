@@ -49,5 +49,6 @@
     "replicate statistics",
     "error bars"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "How much your average can be trusted."
 }

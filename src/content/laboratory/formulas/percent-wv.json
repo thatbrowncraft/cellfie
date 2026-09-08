@@ -39,5 +39,6 @@
     "weight per volume",
     "percent solution"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Grams flexing per 100 mL."
 }

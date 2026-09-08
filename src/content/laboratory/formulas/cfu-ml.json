@@ -53,5 +53,6 @@
     "colony forming units",
     "viable count formula"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "The formula that turns dots into data."
 }

@@ -52,5 +52,6 @@
     "cfu per gram",
     "solid sample enumeration"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "CFU/mL’s sibling who deals with solids."
 }
