@@ -75,5 +75,6 @@
     "catalase negative",
     "hydrogen peroxide test"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Bubbles, but make it diagnostic."
 }

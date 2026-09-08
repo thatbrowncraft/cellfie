@@ -69,5 +69,6 @@
     "phenol red",
     "urea hydrolysis"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Turns pink when it's had enough urea."
 }

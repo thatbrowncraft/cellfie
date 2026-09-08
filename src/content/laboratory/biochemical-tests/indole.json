@@ -77,5 +77,6 @@
     "tryptophanase",
     "imvic"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Adds a red ring like it's signing its work."
 }

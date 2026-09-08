@@ -75,5 +75,6 @@
     "mixed acid fermentation",
     "mr-vp broth"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Stays red if the acid game is strong."
 }

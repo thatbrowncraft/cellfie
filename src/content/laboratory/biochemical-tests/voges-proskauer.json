@@ -75,5 +75,6 @@
     "acetoin",
     "butanediol fermentation"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Pink means it went the butanediol route instead."
 }

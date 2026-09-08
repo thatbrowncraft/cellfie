@@ -81,5 +81,6 @@
     "arginine dihydrolase",
     "moeller decarboxylase broth"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Strips the carboxyl, keeps the alkaline attitude."
 }
