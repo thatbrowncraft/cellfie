@@ -290,6 +290,37 @@ export function ComparisonWorkspacePage() {
     }
   }
 
+  /**
+   * "Enrich comparison" → "Use for" → "+ Create new section" (Concept
+   * Online Knowledge Enrichment brief, adapted here). Reuses the same
+   * two persistence paths `handleAddAspect` above already uses for a
+   * preset row — a custom section IS just another `ComparisonAspect`
+   * row, so no new table or database change is needed the way Concept's
+   * dedicated `conceptCustomSections` table was. The only difference
+   * from `handleAddAspect` is the id: a preset row keeps its stable
+   * preset id (e.g. `'principle'`) so re-adding the same preset later
+   * is a no-op-safe dedupe key, but a free-typed section name has no
+   * such stable id, so a fresh `crypto.randomUUID()` is generated here
+   * — guaranteed unique, and never collides with any current or future
+   * domain-preset id (see `domainPresets.ts`), so this can never be
+   * mistaken for one of the removed default sections later. Returns
+   * the new aspect's id so the enrichment panel can apply the
+   * just-selected excerpt to it immediately.
+   */
+  async function handleCreateAspect(title: string): Promise<string> {
+    if (!comparison) throw new Error('No comparison loaded')
+    const trimmed = title.trim()
+    const newAspect: ComparisonAspect = { id: crypto.randomUUID(), label: trimmed || 'Untitled section', valueA: '', valueB: '' }
+    const nextAspects = [...comparison.aspects, newAspect]
+    setComparison({ ...comparison, aspects: nextAspects })
+    if (isCurated) {
+      await upsertAspectOverride(id, newAspect)
+    } else {
+      await updateCustomAspects(id, nextAspects)
+    }
+    return newAspect.id
+  }
+
   async function handleSaveNotes() {
     if (!comparison) return
     setComparison({ ...comparison, notes: notesDraft })
@@ -552,6 +583,7 @@ export function ComparisonWorkspacePage() {
           overviewFilledB={Boolean(comparison.aspects.find((a) => a.id === 'overview')?.valueB)}
           onUseForAspect={({ side, aspectId, text, sourceLabel }) => acceptToAspect(aspectId, side, text, sourceLabel)}
           onAddAdditionalInfo={({ text, sourceLabel }) => appendAdditionalSourceInfo(text, sourceLabel)}
+          onCreateAspect={handleCreateAspect}
           resume={pendingSearch ?? undefined}
           onClose={() => {
             setShowEnrichPanel(false)
