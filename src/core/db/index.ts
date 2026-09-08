@@ -1080,6 +1080,85 @@ class CellfieDB extends Dexie {
       conceptCustomSections: 'id, conceptId, order, createdAt, [conceptId+order]',
       conceptOnlineKnowledgeEntries: 'id, conceptId, sectionKey, createdAt, [conceptId+sectionKey]'
     })
+    // v17 — Comparison Studio default-section cleanup. Every prior table/
+    // index is repeated unchanged; this version exists purely for its
+    // `.upgrade()` step, which fixes a bug where `buildAspectsFromEntities`
+    // (see core/comparison/entityAspectData.ts) mistakenly baked a
+    // comparison's *entire* domain aspect preset — not just the four
+    // universal built-in sections — into every newly created custom
+    // comparison. The list below mirrors the non-universal aspect ids
+    // that historically appeared across `DOMAIN_ASPECT_PRESETS` in
+    // core/comparison/domainPresets.ts (bacteriology's "Gram / Staining
+    // Reaction", "Cell Wall Structure", "Growth Requirements",
+    // "Identification" being the reported case, plus the equivalent ids
+    // from every other domain preset, since the same bug applied to all
+    // of them). It's a frozen snapshot taken for this one-time cleanup —
+    // it does not need to track domainPresets.ts going forward.
+    //
+    // Only rows on 'custom' saved comparisons are touched, and only when
+    // BOTH sides are genuinely empty (no valueA/valueB text and no
+    // noteA/noteB) — that combination is only possible for a row the
+    // buggy default-population path created and the user never filled
+    // in, edited, or enriched. Any row with real content on either side,
+    // from any source, is left exactly as-is, so no legitimate
+    // user-authored or enriched content is ever removed. Curated
+    // comparisons (sourceType 'curated') are untouched — they read their
+    // aspect list live from the shipped JSON in
+    // core/comparison/registry.ts, which this bug never touched.
+    this.version(17)
+      .stores({
+        libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+        collections: 'id, name, createdAt',
+        appSettings: 'key',
+        readerBookmarks: 'id, itemId, page, createdAt',
+        highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+        notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+        concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+        conceptSources:
+          'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+        conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+        conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+        conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+        conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+        conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
+        conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
+        savedOrganisms: 'organismId, savedAt',
+        organismImages: 'id, organismId, isPrimary, createdAt, [organismId+isPrimary]',
+        organismImageBlobs: 'id, createdAt',
+        savedLabItems: 'id, sourceType, savedAt, labContentId, libraryItemId',
+        savedComparisons: 'id, sourceType, favorite, updatedAt, curatedComparisonId',
+        conceptCustomSections: 'id, conceptId, order, createdAt, [conceptId+order]',
+        conceptOnlineKnowledgeEntries: 'id, conceptId, sectionKey, createdAt, [conceptId+sectionKey]'
+      })
+      .upgrade(async (tx) => {
+        const legacyDomainPresetIds = new Set([
+          'principle', 'target', 'specimen', 'key-reagents', 'detection-readout', 'sensitivity',
+          'specificity', 'time-required', 'controls', 'interpretation', 'common-artifacts', 'when-to-choose',
+          'morphology', 'cell-structure', 'gram-staining-reaction', 'biochemical-characteristics',
+          'habitat-reservoir', 'virulence-factors', 'pathogenicity', 'clinical-significance', 'identification',
+          'treatment-considerations', 'classification', 'clinical-relevance', 'laboratory-relevance',
+          'cell-wall-structure', 'growth-requirements', 'genome-type', 'envelope', 'replication-site',
+          'transmission', 'morphological-type', 'clinical-group', 'life-cycle-stage', 'transmission-route',
+          'diagnostic-stage', 'mechanism', 'cells-involved', 'response-timeline', 'target-molecule',
+          'turnaround-time', 'cost-considerations', 'purpose', 'composition', 'target-organisms',
+          'expected-appearance', 'temperature-pressure', 'equipment', 'duration', 'safety', 'waste-disposal',
+          'applications', 'risk-level', 'required-practices', 'containment-equipment', 'applicable-agents',
+          'function', 'location', 'examples', 'clinical-laboratory-relevance'
+        ])
+        const isBlank = (v: unknown) => typeof v !== 'string' || v.trim() === ''
+        const customRows = await tx.table('savedComparisons').where('sourceType').equals('custom').toArray()
+        await Promise.all(
+          customRows.map((row: SavedComparisonRecord) => {
+            if (!Array.isArray(row.aspects) || row.aspects.length === 0) return Promise.resolve()
+            const cleaned = row.aspects.filter((a) => {
+              if (!legacyDomainPresetIds.has(a.id)) return true
+              return !(isBlank(a.valueA) && isBlank(a.valueB) && isBlank(a.noteA) && isBlank(a.noteB))
+            })
+            if (cleaned.length === row.aspects.length) return Promise.resolve()
+            return tx.table('savedComparisons').update(row.id, { aspects: cleaned })
+          })
+        )
+      })
   }
 }
 
