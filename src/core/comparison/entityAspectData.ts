@@ -24,8 +24,8 @@
  */
 import { gramReactionLabels, type OrganismProfile } from '../organisms/types'
 import type { LaboratoryContent } from '../laboratory/types'
-import { getSuggestedAspects } from './domainPresets'
-import type { ComparisonAspect, ComparisonAspectSource, ComparisonDomain, ComparisonItemRef } from './types'
+import { UNIVERSAL_ASPECT_PRESET } from './domainPresets'
+import type { ComparisonAspect, ComparisonAspectSource, ComparisonItemRef } from './types'
 
 function joinList(items?: string[] | null, sep = '; '): string | undefined {
   if (!items || items.length === 0) return undefined
@@ -262,13 +262,23 @@ function sourceFor(entity: ResolvedEntity | undefined): ComparisonAspectSource[]
  * that entity, not that Cellfie skipped looking (the workspace's existing
  * "Fill from a source" action on empty cells covers that gap — brief §19).
  *
+ * Only the four universal built-in aspects (Overview, Key Distinguishing
+ * Feature, Primary Purpose, Limitations) are ever auto-created here.
+ * Domain-specific presets (e.g. bacteriology's Gram/Staining, Cell Wall
+ * Structure, Growth Requirements, Identification) are suggestions only —
+ * surfaced through the workspace's "+ Create new section" picker
+ * (`getSuggestedAspects`, used in ComparisonWorkspacePage) — and must
+ * never be baked into a new comparison's row list automatically. A new
+ * comparison should never show domain-specific rows the user didn't
+ * explicitly add.
+ *
  * Safe to call for a fully custom pair too (no `refId` on either side):
  * `resolveEntity` returns undefined for both, so every aspect just comes
  * back blank, identical to the previous behavior.
  */
-export async function buildAspectsFromEntities(itemA: ComparisonItemRef, itemB: ComparisonItemRef, domain: ComparisonDomain): Promise<ComparisonAspect[]> {
+export async function buildAspectsFromEntities(itemA: ComparisonItemRef, itemB: ComparisonItemRef): Promise<ComparisonAspect[]> {
   const [entityA, entityB] = await Promise.all([resolveEntity(itemA), resolveEntity(itemB)])
-  const preset = getSuggestedAspects(domain)
+  const preset = UNIVERSAL_ASPECT_PRESET
   return preset.map((p): ComparisonAspect => {
     const valueA = valueFor(entityA, p.id) ?? ''
     const valueB = valueFor(entityB, p.id) ?? ''
