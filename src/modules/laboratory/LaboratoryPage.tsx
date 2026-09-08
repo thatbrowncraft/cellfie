@@ -492,13 +492,14 @@ function DifficultyGrid({
   )
 }
 
-type SubjectFilter = 'all' | 'biology' | 'chemistry' | 'physics'
+type SubjectFilter = 'all' | 'biology' | 'chemistry' | 'physics' | 'aptitude'
 
 const SUBJECT_FILTER_LABELS: Record<SubjectFilter, string> = {
   all: 'All',
   biology: 'Biology',
   chemistry: 'Chemistry',
-  physics: 'Physics'
+  physics: 'Physics',
+  aptitude: 'Aptitude'
 }
 
 /** Every pre-existing Laboratory item predates this field, so absence means biology — see `subjectDomain` doc comment in core/laboratory/types.ts. */
@@ -538,7 +539,7 @@ function ContentGrid({ category, onSelect }: { category: LaboratoryCategory; onS
       </Micro>
       {showSubjectFilter && (
         <div className="mb-4 flex flex-wrap gap-2">
-          {(['all', 'biology', 'chemistry', 'physics'] as SubjectFilter[])
+          {(['all', 'biology', 'chemistry', 'physics', 'aptitude'] as SubjectFilter[])
             .filter((f) => f === 'all' || availableSubjects.has(f))
             .map((f) => (
               <button
