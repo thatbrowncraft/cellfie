@@ -302,12 +302,20 @@ const ITEM_TAGLINES: Record<string, string> = {
 }
 
 /**
- * Returns the bespoke line for a specific content id if one exists,
- * otherwise falls back to that category's section-level line so newly
- * added Tier 2+ content never renders without a tagline.
+ * Resolution order (Gen Z note correction pass): a curated item's own
+ * `genZNote` — read straight from its JSON — is the preferred source of
+ * its displayed line, since JSON is the natural source of truth for a
+ * curated item's personality note. `ITEM_TAGLINES` remains as a
+ * code-level fallback for legacy content, and `SECTION_TAGLINES` is the
+ * last-resort category-level fallback so newly added Tier 2+ content
+ * never renders without a line at all.
+ *
+ * `genZNote` is optional and passed in by the caller (rather than looked
+ * up here) so this module stays decoupled from the per-category content
+ * types in `core/laboratory/types.ts`.
  */
-export function getItemTagline(id: string, category: LaboratoryCategory): string {
-  return ITEM_TAGLINES[id] ?? SECTION_TAGLINES[category]
+export function getItemTagline(id: string, category: LaboratoryCategory, genZNote?: string): string {
+  return genZNote?.trim() || ITEM_TAGLINES[id] || SECTION_TAGLINES[category]
 }
 
 /** Calculators and the Unit Converter live outside `LaboratoryCategory` (they're tools, not content categories), so they get their own lookup with the same fallback shape. */
