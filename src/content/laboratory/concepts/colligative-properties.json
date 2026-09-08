@@ -1,7 +1,7 @@
 {
   "id": "concept-colligative-properties",
   "category": "concept",
-  "title": "Colligative Properties of Solutions",
+  "title": "Colligative Properties of Solutions and Abnormal Molar Mass",
   "subcategory": "Solutions",
   "sourceType": "educational-guidance",
   "version": "1.0",
@@ -17,7 +17,8 @@
     "van't hoff factor",
     "boiling point elevation",
     "freezing point depression",
-    "osmotic pressure"
+    "osmotic pressure",
+    "abnormal molar mass"
   ],
   "difficulty": "intermediate",
   "subjectDomain": "chemistry",
@@ -25,13 +26,15 @@
     "formula-raoults-law"
   ],
   "summary": "Colligative properties depend only on the NUMBER of solute particles present in a solution, not on their identity — they include relative lowering of vapour pressure, boiling point elevation, freezing point depression, and osmotic pressure.",
-  "explanation": "Adding a non-volatile solute to a solvent lowers the solvent's vapour pressure (Raoult's law), which in turn raises the boiling point (more energy needed to reach vapour pressure = atmospheric pressure) and lowers the freezing point. Osmotic pressure arises from solvent flow across a semipermeable membrane toward the more concentrated solution. Critically, all these effects scale with the TOTAL number of dissolved particles — which is why electrolytes that dissociate into multiple ions (like NaCl → Na⁺ + Cl⁻) show a larger effect per mole dissolved than non-electrolytes, captured by the van't Hoff factor (i).",
+  "explanation": "Adding a non-volatile solute to a solvent lowers the solvent's vapour pressure (Raoult's law), which in turn raises the boiling point (more energy needed to reach vapour pressure = atmospheric pressure) and lowers the freezing point. Osmotic pressure arises from solvent flow across a semipermeable membrane toward the more concentrated solution. Critically, all these effects scale with the TOTAL number of dissolved particles — which is why electrolytes that dissociate into multiple ions (like NaCl → Na⁺ + Cl⁻) show a larger effect per mole dissolved than non-electrolytes, captured by the van't Hoff factor (i). Because colligative properties depend only on the NUMBER of solute particles, measuring one of them experimentally (e.g. freezing point depression) and back-calculating a solute's molar mass via the standard formula gives an 'ABNORMAL' (i.e., apparently wrong) molar mass whenever the solute's actual particle count in solution differs from what a simple, non-interacting molecular formula would predict. If the solute DISSOCIATES into more particles (e.g. NaCl → Na⁺ + Cl⁻, doubling the particle count), the observed colligative effect is LARGER than expected, making the calculated molar mass come out LOWER than the true formula mass. If the solute ASSOCIATES — clumping together, e.g. acetic acid forming hydrogen-bonded dimers in a non-polar solvent like benzene, effectively halving the particle count — the observed colligative effect is SMALLER than expected, making the calculated molar mass come out HIGHER than the true formula mass. The van't Hoff factor, i = (observed colligative property) / (calculated colligative property assuming no dissociation/association) = (normal molar mass) / (observed/abnormal molar mass), quantifies and corrects for this: i > 1 signals dissociation, i < 1 signals association, and i = 1 signals neither (a genuinely non-electrolyte, non-associating solute).",
   "commonMisconceptions": [
     "Forgetting the van't Hoff factor for electrolytes — 1 mole of NaCl affects colligative properties roughly twice as much as 1 mole of glucose, since NaCl dissociates into 2 particles per formula unit.",
-    "Assuming colligative properties depend on WHICH solute is used — they depend only on particle count, not solute identity (as long as it's non-volatile and doesn't react with solvent)."
+    "Assuming colligative properties depend on WHICH solute is used — they depend only on particle count, not solute identity (as long as it's non-volatile and doesn't react with solvent).",
+    "Assuming an 'abnormal' molar mass measurement means the experiment was done incorrectly — it is actually a genuine, informative result revealing that the solute is dissociating (van't Hoff factor i > 1) or associating (i < 1) in that particular solvent, not an error to be discarded."
   ],
   "examples": [
-    "Salt lowers water's freezing point on icy roads — more dissolved ion particles mean a greater freezing point depression than the same molar amount of a non-dissociating solute would produce."
+    "Salt lowers water's freezing point on icy roads — more dissolved ion particles mean a greater freezing point depression than the same molar amount of a non-dissociating solute would produce.",
+    "Acetic acid dissolved in benzene shows an experimentally measured molar mass roughly DOUBLE its true formula mass, because acetic acid molecules pair up into hydrogen-bonded dimers in the non-polar benzene solvent, effectively halving the number of independent solute particles (van't Hoff factor i ≈ 0.5)."
   ],
   "genZNote": "Colligative properties don't care who you are, just how many of you showed up."
 }

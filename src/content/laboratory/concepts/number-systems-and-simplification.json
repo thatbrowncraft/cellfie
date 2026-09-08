@@ -1,0 +1,45 @@
+{
+  "id": "concept-number-systems-and-simplification",
+  "category": "concept",
+  "title": "Number Systems, Simplification and Algebra for Competitive Exams",
+  "subcategory": "Part A — Quantitative Aptitude (Number Systems, Simplification, Algebra)",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "publisher": "Gujarat Subordinate Service Selection Board (GSSSB)"
+    }
+  ],
+  "scientificNotes": "General competitive-exam quantitative topic; included to match the exam's Part A scope.",
+  "searchKeywords": [
+    "divisibility rules",
+    "LCM and HCF",
+    "BODMAS",
+    "algebraic identities",
+    "remainder theorem",
+    "number systems"
+  ],
+  "difficulty": "beginner",
+  "subjectDomain": "aptitude",
+  "relatedConcepts": [
+    "concept-reasoning-and-data-interpretation"
+  ],
+  "relatedFormulas": [
+    "formula-percentage",
+    "formula-average"
+  ],
+  "summary": "Number Systems and Simplification/Algebra together form the arithmetic foundation for every other quantitative-aptitude topic: divisibility and LCM/HCF rules let you quickly classify and combine numbers, BODMAS gives a single consistent order for evaluating any mixed expression, and a handful of standard algebraic identities let you simplify expressions and 'simplify to find X' problems far faster than direct expansion.",
+  "explanation": "The NUMBER SYSTEM is organised as natural numbers ⊂ whole numbers ⊂ integers ⊂ rational numbers ⊂ real numbers, with irrational numbers (non-terminating, non-repeating decimals like √2, π) completing the reals. DIVISIBILITY RULES give quick tests without doing full division: a number is divisible by 2 if its last digit is even; by 3 if the digit sum is divisible by 3; by 4 if its last TWO digits form a number divisible by 4; by 5 if it ends in 0 or 5; by 6 if divisible by both 2 and 3; by 8 if its last THREE digits are divisible by 8; by 9 if the digit sum is divisible by 9; by 11 if the difference between the sum of digits at odd places and the sum at even places is 0 or a multiple of 11. LCM (Least Common Multiple) and HCF (Highest Common Factor, also called GCD) are found via prime factorisation (LCM takes the HIGHEST power of every prime appearing in any number; HCF takes the LOWEST power of every prime common to ALL numbers) or the division method; critically, for any two numbers a and b: LCM(a,b) × HCF(a,b) = a × b — a shortcut that avoids computing one of the two directly once the other and the product are known. REMAINDER problems (a staple of number-system questions) are solved efficiently using MODULAR ARITHMETIC: to find the remainder of a large product or power when divided by n, reduce each factor modulo n FIRST, then multiply/exponentiate, then reduce again — this keeps the numbers small throughout instead of computing one enormous product. SIMPLIFICATION of a mixed arithmetic expression always follows BODMAS/PEMDAS order: Brackets, Of (i.e., multiplication expressed as 'of', e.g. '½ of 20'), Division, Multiplication, Addition, Subtraction — performed strictly left-to-right WITHIN each equal-precedence tier (division and multiplication are equal precedence, evaluated left-to-right in the order they appear, NOT division-always-before-multiplication). ALGEBRAIC IDENTITIES most useful for rapid simplification/'find the value' problems: (a+b)² = a²+2ab+b²; (a−b)² = a²−2ab+b²; a²−b² = (a+b)(a−b); (a+b)² + (a−b)² = 2(a²+b²) — this last identity is a favourite shortcut, letting you find a²+b² directly from (a+b) and (a−b) without ever solving for a and b individually, e.g. given a+b and ab, a²+b² = (a+b)² − 2ab needs no individual values of a or b at all. Recognising when a stated expression IS one of these identities in disguise (e.g. x² + 1/x² asked for, given x + 1/x) is usually the fastest path to the answer, far quicker than substituting numeric guesses.",
+  "commonMisconceptions": [
+    "Applying BODMAS strictly as 'Division always before Multiplication' because D appears before M in the acronym — division and multiplication are actually EQUAL precedence, evaluated strictly left-to-right in whichever order they appear in the expression (the same applies to addition and subtraction).",
+    "Computing LCM by taking the LOWEST power of each prime and HCF by taking the HIGHEST — this is backwards; LCM takes the HIGHEST power of every prime that appears anywhere, HCF takes the LOWEST power of primes common to every number.",
+    "Trying to solve for individual variables (like a and b) before using an algebraic identity, when the question only ever needs a combined expression (like a²+b² or ab) — this wastes time solving a system unnecessarily when a direct identity substitution gives the answer immediately."
+  ],
+  "examples": [
+    "Given a+b = 7 and ab = 10, find a²+b² without solving for a and b: a²+b² = (a+b)² − 2ab = 49 − 20 = 29 — solved in one line via the identity, versus solving a quadratic for a and b individually and then squaring both.",
+    "Finding the remainder when 7^45 is divided by 100 by cycling powers of 7 mod 100 (7¹=7, 7²=49, 7³=343→43, 7⁴=301→01, then the cycle of last-two-digits repeats every 4 powers) is far faster than computing 7^45 directly and dividing."
+  ],
+  "genZNote": "BODMAS's D-before-M placement in the acronym is a total mind trick — division and multiplication are actually ride-or-die equals, left to right."
+}

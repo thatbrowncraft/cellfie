@@ -1,0 +1,57 @@
+{
+  "id": "concept-principles-of-inheritance-and-variation",
+  "category": "concept",
+  "title": "Principles of Inheritance and Variation: Mendelian and Chromosomal Genetics",
+  "subcategory": "Genetics — Mendel's Laws, Chromosomal Theory, Sex Determination, Genetic Disorders",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Biology, Class 12",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT Class 12 aligned.",
+  "searchKeywords": [
+    "Mendel's laws",
+    "dihybrid cross",
+    "codominance",
+    "multiple alleles",
+    "sex determination",
+    "sex-linked inheritance",
+    "pedigree analysis",
+    "chromosomal disorders",
+    "mutation"
+  ],
+  "difficulty": "intermediate",
+  "subjectDomain": "biology",
+  "relatedConcepts": [
+    "concept-molecular-basis-of-inheritance",
+    "concept-human-reproduction"
+  ],
+  "comparison": [
+    {
+      "aspect": "Cross type",
+      "left": "Monohybrid cross (F2 ratio 3:1)",
+      "right": "Dihybrid cross (F2 ratio 9:3:3:1)"
+    },
+    {
+      "aspect": "Dominance pattern",
+      "left": "Incomplete dominance — heterozygote shows an INTERMEDIATE phenotype (e.g. pink Mirabilis flowers)",
+      "right": "Codominance — heterozygote shows BOTH parental phenotypes fully and simultaneously (e.g. AB blood group)"
+    }
+  ],
+  "summary": "Mendel's laws of dominance, segregation, and independent assortment — derived from monohybrid and dihybrid pea crosses — form the foundation of inheritance, later explained physically by the chromosomal theory; sex is determined by chromosome combinations (XX-XY in humans), and departures from simple Mendelian ratios (incomplete dominance, codominance, multiple alleles, linkage, sex-linkage, mutation) account for the fuller range of observed inheritance patterns and genetic disorders.",
+  "explanation": "Mendel's LAW OF DOMINANCE: in a heterozygote, one allele (dominant) masks the expression of the other (recessive); the F1 of a monohybrid cross between true-breeding parents is uniform and shows only the dominant trait. LAW OF SEGREGATION (purity of gametes): the two alleles of a gene separate from each other during gamete formation, so each gamete carries only ONE allele — this is why a monohybrid F1 self-cross (Tt × Tt) gives an F2 phenotypic ratio of 3:1 (dominant:recessive) and genotypic ratio 1:2:1. LAW OF INDEPENDENT ASSORTMENT: alleles of TWO DIFFERENT genes segregate independently of one another during gamete formation (valid strictly for genes on different chromosomes, or far apart on the same one) — a dihybrid cross (RrYy × RrYy) gives the classic F2 ratio 9:3:3:1. A TEST CROSS (crossing an individual of unknown genotype with a homozygous recessive) reveals whether that individual is homozygous or heterozygous dominant, based on the resulting offspring ratio. Beyond simple dominance: INCOMPLETE DOMINANCE gives a heterozygote an INTERMEDIATE phenotype (e.g., red × white Mirabilis jalapa → pink F1, with F2 ratio 1:2:1 matching the genotypic ratio exactly since phenotype and genotype ratios coincide); CODOMINANCE shows BOTH alleles' phenotypes fully and simultaneously in the heterozygote (e.g., AB blood group expresses both A and B antigens). MULTIPLE ALLELISM (e.g. the ABO blood group system, with three alleles IA, IB, i at one locus — IA and IB are codominant, both dominant over i) shows a single gene can have more than two allelic forms in a population, even though any individual carries only two. PLEIOTROPY is when a single gene affects MULTIPLE, seemingly unrelated phenotypic traits. The CHROMOSOMAL THEORY OF INHERITANCE (Sutton and Boveri) proposed that genes are located on chromosomes, later confirmed experimentally by Morgan's work on Drosophila sex-linked inheritance. LINKAGE is the tendency of genes located close together on the SAME chromosome to be inherited together (deviating from independent assortment); RECOMBINATION (via crossing over during meiosis I) breaks up linked gene combinations, and the recombination frequency between two genes is roughly proportional to the physical distance between them on the chromosome, forming the basis of genetic mapping. SEX DETERMINATION in humans follows the XX-XY system: females are XX (homogametic, all eggs carry X), males are XY (heterogametic — half of sperm carry X, half carry Y), so the FATHER's sperm determines the offspring's sex. SEX-LINKED INHERITANCE (genes on the X chromosome) shows characteristic crisscross inheritance patterns — e.g., haemophilia and red-green colour blindness are X-linked RECESSIVE conditions, far more common in males (who need only one copy of the recessive allele, having only one X) than in females (who need two copies). MUTATIONS are changes in DNA/chromosome structure or number — POINT mutations (single base change, e.g. sickle-cell anaemia's single amino-acid substitution) versus CHROMOSOMAL aberrations (deletion, duplication, inversion, translocation, or changes in whole chromosome NUMBER — aneuploidy/polyploidy). Common genetic disorders (exam-relevant): Down syndrome (trisomy of chromosome 21), Klinefelter syndrome (XXY, extra X in a male), Turner syndrome (XO, single X, female), sickle-cell anaemia (autosomal recessive, single base substitution in the beta-globin gene), thalassemia (autosomal recessive, reduced/absent globin chain synthesis), phenylketonuria (autosomal recessive, deficient enzyme causing phenylalanine accumulation). PEDIGREE ANALYSIS traces a trait through a family tree across generations to determine its inheritance pattern (dominant/recessive, autosomal/X-linked) WITHOUT needing controlled experimental crosses — essential for studying human inheritance.",
+  "commonMisconceptions": [
+    "Confusing incomplete dominance with codominance — incomplete dominance blends into a single INTERMEDIATE phenotype, while codominance shows BOTH parental phenotypes distinctly and simultaneously, not blended.",
+    "Thinking Mendel's law of independent assortment applies universally to any two genes — it strictly holds only for genes on different chromosomes (or far apart on the same chromosome); linked genes on the same chromosome deviate from this, inherited together more often than expected.",
+    "Assuming the mother determines a child's sex — in humans, the mother is homogametic (XX, all eggs carry X); it is the FATHER's sperm (carrying either X or Y) that determines offspring sex."
+  ],
+  "examples": [
+    "A colour-blind son born to two phenotypically normal parents indicates the mother is very likely a carrier (heterozygous, Xᶜx), since the X-linked recessive allele must have come from her (the father, XY, would need to himself be colour-blind to pass it on via his single X).",
+    "Crossing a plant of unknown genotype (dominant phenotype) with a homozygous recessive plant (a test cross) and getting a 1:1 phenotypic ratio in offspring reveals the unknown parent was heterozygous, not homozygous dominant."
+  ],
+  "genZNote": "Independent assortment has main character energy only when genes live on separate chromosomes — linked genes are basically inseparable besties."
+}

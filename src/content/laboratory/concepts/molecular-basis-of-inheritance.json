@@ -1,0 +1,45 @@
+{
+  "id": "concept-molecular-basis-of-inheritance",
+  "category": "concept",
+  "title": "Molecular Basis of Inheritance: DNA Replication, Transcription and Translation",
+  "subcategory": "Molecular Genetics — DNA Structure, Central Dogma, Gene Regulation",
+  "sourceType": "educational-guidance",
+  "version": "1.0",
+  "lastVerified": "2026-09",
+  "references": [
+    {
+      "label": "NCERT Biology, Class 12",
+      "publisher": "NCERT"
+    }
+  ],
+  "scientificNotes": "NCERT Class 12 aligned.",
+  "searchKeywords": [
+    "DNA replication",
+    "semiconservative replication",
+    "transcription",
+    "translation",
+    "genetic code",
+    "lac operon",
+    "central dogma",
+    "DNA fingerprinting",
+    "Human Genome Project"
+  ],
+  "difficulty": "advanced",
+  "subjectDomain": "biology",
+  "relatedConcepts": [
+    "concept-principles-of-inheritance-and-variation",
+    "concept-biotechnology-principles-and-processes"
+  ],
+  "summary": "DNA's double-helix structure enables semiconservative replication; the central dogma (DNA → RNA → protein) proceeds through transcription (RNA polymerase synthesising RNA from a DNA template) and translation (the ribosome reading mRNA codons via the genetic code to assemble a polypeptide), with gene expression itself regulated — as illustrated by the lac operon — so that genes are switched on only when their product is needed.",
+  "explanation": "DNA is a double helix of two ANTIPARALLEL polynucleotide strands, each a chain of nucleotides (a deoxyribose sugar + phosphate + one of four nitrogenous bases: adenine, guanine — purines; cytosine, thymine — pyrimidines), held together by hydrogen bonding between complementary base pairs (A=T via 2 hydrogen bonds, G≡C via 3 hydrogen bonds — this is why GC-rich DNA has a higher melting/denaturation temperature). DNA REPLICATION is SEMICONSERVATIVE (demonstrated by the Meselson-Stahl experiment using ¹⁵N/¹⁴N density-gradient centrifugation): each parental strand serves as a template for a new complementary strand, so each daughter DNA molecule retains ONE original (parental) strand and ONE newly synthesised strand. DNA polymerase synthesises new DNA only in the 5'→3' direction, which is why replication is CONTINUOUS on the leading strand (synthesised in the same direction as the replication fork opens) but DISCONTINUOUS on the lagging strand (synthesised in short Okazaki fragments, later joined by DNA ligase, in the direction opposite to fork movement). The CENTRAL DOGMA of molecular biology describes the normal flow of genetic information: DNA → RNA (transcription) → protein (translation) — though reverse transcription (RNA → DNA, seen in retroviruses like HIV) is a notable, exam-relevant exception. TRANSCRIPTION is catalysed by RNA polymerase, which binds a PROMOTER sequence, unwinds the DNA locally, and synthesises RNA complementary to the TEMPLATE strand (using the CODING/sense strand's sequence as a reference, since the RNA produced has the same sequence as the coding strand, with U replacing T), terminating at a specific terminator sequence. In eukaryotes, the primary transcript (hnRNA) undergoes processing — SPLICING (removal of non-coding INTRONS, joining of coding EXONS), 5' capping, and 3' polyadenylation — before export as mature mRNA; prokaryotic mRNA typically requires no such processing. The GENETIC CODE (the correspondence between mRNA codons and amino acids) has key defining properties: it is a TRIPLET code (61 codons specify 20 amino acids, plus 3 STOP codons: UAA, UAG, UGA); it is DEGENERATE (most amino acids are specified by more than one codon — a buffer against some mutations); it is UNAMBIGUOUS (each codon specifies only ONE amino acid); it is (nearly) UNIVERSAL (the same codon means essentially the same amino acid across almost all organisms, a discovery central to modern biotechnology); and it is read in a COMMALESS, non-overlapping fashion from a fixed START codon (AUG, which also codes for methionine). TRANSLATION occurs at the RIBOSOME: tRNA molecules, each charged with a specific amino acid, recognise mRNA codons via complementary ANTICODON base-pairing, and the ribosome catalyses peptide bond formation between successive amino acids as it moves along the mRNA, until a stop codon (recognised by release factors, not a tRNA) terminates the chain. GENE REGULATION is illustrated by the LAC OPERON in E. coli (an inducible operon): in the ABSENCE of lactose, a repressor protein binds the operator, blocking RNA polymerase and keeping the structural genes (lacZ, lacY, lacA, encoding lactose-metabolising enzymes) OFF; when lactose IS present, an inducer (allolactose) binds and inactivates the repressor, allowing transcription to proceed — a clear example of genes being expressed only when their product is actually needed, saving cellular energy. The HUMAN GENOME PROJECT sequenced essentially the entire human genome, revealing that protein-coding genes make up only a small fraction of total DNA, with vast stretches of non-coding, repetitive sequence. DNA FINGERPRINTING (VNTR/short tandem repeat analysis, developed by Alec Jeffreys) exploits highly variable non-coding repetitive DNA regions that differ between individuals (except identical twins) to identify people — used in forensics, paternity testing, and population/evolutionary studies.",
+  "commonMisconceptions": [
+    "Thinking the RNA polymerase uses the CODING (sense) strand as its template — it actually reads the TEMPLATE (antisense) strand; the RNA produced ends up matching the coding strand's sequence (with U instead of T), which is a common source of confusion.",
+    "Assuming a codon can specify more than one amino acid because the code is 'degenerate' — degeneracy means an amino acid can have MULTIPLE codons, but each individual codon still specifies only ONE amino acid (the code is unambiguous), never several.",
+    "Believing DNA replication produces one entirely new molecule and one entirely old (unchanged) molecule — semiconservative replication means EACH of the two daughter molecules is a hybrid, containing one old strand and one newly synthesised strand."
+  ],
+  "examples": [
+    "In the lac operon, adding lactose to the growth medium of E. coli rapidly switches ON transcription of the lactose-digesting enzymes, because the inducer inactivates the repressor that was blocking RNA polymerase.",
+    "DNA fingerprinting can distinguish any two unrelated individuals (but not identical twins) because the number of repeats in certain non-coding VNTR regions varies enormously between people, producing a unique banding pattern on gel electrophoresis."
+  ],
+  "genZNote": "The genetic code: degenerate but never ambiguous — an amino acid can have receipts from multiple codons, but each codon only ever calls one amino acid."
+}
