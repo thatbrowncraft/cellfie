@@ -68,5 +68,6 @@
     "fluorescence detection",
     "amplification curve"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "It's PCR that live-updates its own progress every cycle instead of making you wait for the gel to find out."
 }

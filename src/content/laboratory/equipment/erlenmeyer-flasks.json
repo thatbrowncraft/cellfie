@@ -19,5 +19,6 @@
     "Do not fill beyond roughly half capacity when the contents will be agitated (e.g. on a shaker), to avoid spillage/foaming issues."
   ],
   "relatedProtocols": [],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "The flask that doesn't spill on you out of spite."
 }

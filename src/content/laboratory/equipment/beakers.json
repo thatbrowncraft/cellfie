@@ -18,5 +18,6 @@
     "Not intended for precise volume measurement — use a graduated cylinder or volumetric flask when accuracy matters."
   ],
   "relatedProtocols": [],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Not for precision. Don't @ it."
 }

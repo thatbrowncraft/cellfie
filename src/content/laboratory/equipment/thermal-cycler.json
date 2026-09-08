@@ -57,5 +57,6 @@
     "conventional PCR instrument",
     "annealing temperature"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Heats, cools, repeats — no real-time gossip included."
 }

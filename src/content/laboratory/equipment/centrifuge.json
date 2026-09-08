@@ -63,5 +63,6 @@
     "pelleting",
     "centrifugation"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Spin class, but for cells."
 }

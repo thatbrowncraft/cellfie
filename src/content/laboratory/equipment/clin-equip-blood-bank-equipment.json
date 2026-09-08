@@ -68,5 +68,6 @@
     "component storage",
     "temperature monitoring"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Red cells chill in the fridge, platelets need to keep moving at room temp — the same cold-storage logic does not apply to both."
 }

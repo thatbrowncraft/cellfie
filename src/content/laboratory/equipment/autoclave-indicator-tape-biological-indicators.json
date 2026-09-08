@@ -60,5 +60,6 @@
     "sterilization verification",
     "spore strip test"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Tape says exposed. Spores say otherwise. Check both."
 }

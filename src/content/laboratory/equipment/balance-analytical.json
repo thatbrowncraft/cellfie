@@ -53,5 +53,6 @@
     "precision weighing",
     "load cell"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Weighs your reagents, judges your rounding."
 }

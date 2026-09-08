@@ -57,5 +57,6 @@
     "Neubauer chamber",
     "manual cell count"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "A grid that counts cells so you don't have to guess."
 }

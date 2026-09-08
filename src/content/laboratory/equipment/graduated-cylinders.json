@@ -19,5 +19,6 @@
     "Choose a cylinder sized close to the volume being measured — using a much larger cylinder for a small volume reduces reading precision."
   ],
   "relatedProtocols": [],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "The reasonable middle ground of measuring."
 }

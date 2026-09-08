@@ -70,5 +70,6 @@
     "automated differential",
     "scattergram"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Cells bumping through a tiny aperture change the current just enough for the analyzer to count and size every single one."
 }

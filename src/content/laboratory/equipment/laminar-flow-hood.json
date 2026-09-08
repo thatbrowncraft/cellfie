@@ -57,5 +57,6 @@
     "HEPA filtered airflow",
     "aseptic work area"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Protects the sample, not you — read the label."
 }

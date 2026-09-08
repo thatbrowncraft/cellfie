@@ -59,5 +59,6 @@
     "A260/A280",
     "DNA quantification instrument"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Reads your DNA's vibe in one microliter."
 }

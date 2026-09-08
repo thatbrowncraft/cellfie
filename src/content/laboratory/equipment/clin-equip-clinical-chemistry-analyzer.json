@@ -71,5 +71,6 @@
     "ion selective electrode",
     "reagent channel"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Same Beer-Lambert logic as a bench spectrophotometer, just running hundreds of reactions instead of the one you're watching."
 }

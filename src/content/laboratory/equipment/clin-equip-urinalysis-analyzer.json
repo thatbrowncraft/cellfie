@@ -67,5 +67,6 @@
     "automated sediment analysis",
     "urine chemistry analyzer"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "It's reading the same color-change strip you'd read by eye, just without getting bored around specimen number 200."
 }

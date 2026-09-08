@@ -57,5 +57,6 @@
     "stir bar",
     "buffer mixing heating"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Spins and heats, judges your stir bar choice."
 }
