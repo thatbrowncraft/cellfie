@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import { ArrowLeft, ArrowSquareOut, Globe, PencilSimple, Trash } from '@phosphor-icons/react'
-import { db, type Concept, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
+import { ArrowLeft, ArrowSquareOut, Globe, PencilSimple, Sparkle, Trash } from '@phosphor-icons/react'
+import { db, type Concept, type ConceptCustomSection, type ConceptRelation, type ConceptSource, type LibraryItem } from '@/core/db'
 import { useLiveQuery } from '@/core/db/useLiveQuery'
 import {
+  addOnlineKnowledgeEntry,
   backfillSourceRelevance,
   buildBookLesson,
   buildDetailedStudyModules,
@@ -11,7 +12,9 @@ import {
   buildResearchReadings,
   buildStudyOverviewSettled,
   computeConceptStats,
+  createCustomSection,
   deleteConcept,
+  deleteCustomSection,
   extractRelatedConceptsFromKnownPages,
   fetchEuropePmcArticles,
   fetchMeshClassification,
@@ -25,6 +28,7 @@ import {
   getSavedContextSelection,
   isLikelyOnline,
   libraryItemMatchesStudyContexts,
+  listCustomSections,
   saveContextSelection,
   scanLibraryForConcept,
   scanLibraryItemForConcepts,
@@ -48,6 +52,15 @@ import { EditableSection } from './components/EditableSection'
 import { ConceptFormDialog } from './components/ConceptFormDialog'
 import { ExamToolsPanel } from './components/ExamToolsPanel'
 import { MemoryAidCard } from './components/MemoryAidCard'
+import { ConceptOnlineKnowledgePanel, type ConceptSectionOption } from './components/ConceptOnlineKnowledgePanel'
+import { ConceptOnlineKnowledgeList } from './components/ConceptOnlineKnowledgeList'
+
+/** The three fixed Learn-tab sections, always offered as "Use for" destinations alongside any custom sections the person has created — see core/concepts/customSections.ts. */
+const FIXED_CONCEPT_SECTIONS: ConceptSectionOption[] = [
+  { id: 'quick-revision', label: 'Quick Revision' },
+  { id: 'core-concept', label: 'Core Concept' },
+  { id: 'exam-focus', label: 'Exam Focus' }
+]
 
 // Background Enrichment Correction — a rough, order-of-magnitude content
 // score used ONLY to decide whether a freshly rebuilt Core Concept
@@ -122,6 +135,38 @@ export function ConceptDetailPage() {
   const [connectionsView, setConnectionsView] = useState<'related' | 'mindmap'>('related')
 
   const concept = useLiveQuery<Concept | undefined>(() => (id ? db.concepts.get(id) : undefined), [id], undefined)
+
+  // Concept Online Knowledge Enrichment — the "Use for" destination list
+  // is the three fixed Learn-tab sections (above) plus any custom
+  // sections already created for THIS concept; never a hardcoded example
+  // list. See core/concepts/customSections.ts.
+  const [onlineKnowledgePanelOpen, setOnlineKnowledgePanelOpen] = useState(false)
+  const customSections = useLiveQuery<ConceptCustomSection[]>(
+    () => (concept ? listCustomSections(concept.id) : Promise.resolve([])),
+    [concept?.id],
+    []
+  )
+  const conceptSectionOptions: ConceptSectionOption[] = useMemo(
+    () => [...FIXED_CONCEPT_SECTIONS, ...customSections.map((s) => ({ id: s.id, label: s.title }))],
+    [customSections]
+  )
+
+  async function handleApplyOnlineKnowledge(excerpt: { sectionId: string; text: string; sourceName: string; sourceUrl: string; attributionNotice?: string }) {
+    if (!concept) return
+    await addOnlineKnowledgeEntry(concept.id, excerpt.sectionId, {
+      text: excerpt.text,
+      sourceName: excerpt.sourceName,
+      sourceUrl: excerpt.sourceUrl,
+      attributionNotice: excerpt.attributionNotice
+    })
+  }
+
+  async function handleCreateConceptSection(title: string): Promise<string> {
+    if (!concept) throw new Error('No concept loaded')
+    const section = await createCustomSection(concept.id, title)
+    return section.id
+  }
+
   const sources = useLiveQuery<ConceptSource[]>(
     () => (id ? db.conceptSources.where('conceptId').equals(id).toArray() : []),
     [id],
@@ -810,20 +855,33 @@ export function ConceptDetailPage() {
                     keeps whichever mode was active. Memory aid (below) is
                     deliberately OUTSIDE this switch, so it stays visible
                     no matter which mode is active. */}
-                <div className="flex gap-2 border-b border-border pb-3">
-                  <Button variant={studyMode === 'quick' ? 'primary' : 'secondary'} size="small" onClick={() => setStudyMode('quick')}>
-                    Quick Revision
-                  </Button>
-                  <Button
-                    variant={studyMode === 'detailed' ? 'primary' : 'secondary'}
-                    size="small"
-                    onClick={() => setStudyMode('detailed')}
-                  >
-                    Core Concept
-                  </Button>
-                  <Button variant={studyMode === 'exam' ? 'primary' : 'secondary'} size="small" onClick={() => setStudyMode('exam')}>
-                    Exam Focus
-                  </Button>
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border pb-3">
+                  <div className="flex gap-2">
+                    <Button variant={studyMode === 'quick' ? 'primary' : 'secondary'} size="small" onClick={() => setStudyMode('quick')}>
+                      Quick Revision
+                    </Button>
+                    <Button
+                      variant={studyMode === 'detailed' ? 'primary' : 'secondary'}
+                      size="small"
+                      onClick={() => setStudyMode('detailed')}
+                    >
+                      Core Concept
+                    </Button>
+                    <Button variant={studyMode === 'exam' ? 'primary' : 'secondary'} size="small" onClick={() => setStudyMode('exam')}>
+                      Exam Focus
+                    </Button>
+                  </div>
+                  {/* Concept Online Knowledge Enrichment — an explicit, on-demand
+                      search (Wikipedia prioritized alongside Europe PMC/NCBI
+                      Bookshelf/PubMed via the shared Knowledge Layer), never
+                      something that runs automatically. See
+                      core/concepts/knowledgeLayer.ts and
+                      ConceptOnlineKnowledgePanel.tsx. */}
+                  {concept && (
+                    <Button variant="tertiary" size="small" icon={<Sparkle size={15} />} onClick={() => setOnlineKnowledgePanelOpen(true)}>
+                      Online Knowledge
+                    </Button>
+                  )}
                 </div>
 
                 {/* Available Contexts — the student can choose one, several,
@@ -980,6 +1038,10 @@ export function ConceptDetailPage() {
                   <StudyNotesSection conceptId={concept.id} section="quick-revision" itemLabel="revision point" />
                 )}
 
+                {studyMode === 'quick' && concept && (
+                  <ConceptOnlineKnowledgeList conceptId={concept.id} sectionKey="quick-revision" />
+                )}
+
                 {/* Core Concept — Book-First Learning Engine, Phase 1.
                     Priority: (1) the person's own uploaded book, if it
                     actually discusses this concept (bookLesson.ts, built
@@ -1019,6 +1081,7 @@ export function ConceptDetailPage() {
                       <CuratedLessonView lesson={(bookLesson ?? curatedLesson)!} origin={bookLesson ? 'book' : 'curated'} />
                     </EditableSection>
                     <StudyNotesSection conceptId={concept.id} section="core-concept" itemLabel="study note" />
+                    <ConceptOnlineKnowledgeList conceptId={concept.id} sectionKey="core-concept" />
                   </div>
                 )}
 
@@ -1205,6 +1268,7 @@ export function ConceptDetailPage() {
                     </div>
 
                     {concept && <StudyNotesSection conceptId={concept.id} section="core-concept" itemLabel="study note" />}
+                    {concept && <ConceptOnlineKnowledgeList conceptId={concept.id} sectionKey="core-concept" />}
                   </div>
                 )}
 
@@ -1231,12 +1295,36 @@ export function ConceptDetailPage() {
                   </EditableSection>
                 )}
                 {studyMode === 'exam' && concept && <StudyNotesSection conceptId={concept.id} section="exam-focus" itemLabel="exam note" />}
+                {studyMode === 'exam' && concept && <ConceptOnlineKnowledgeList conceptId={concept.id} sectionKey="exam-focus" />}
 
                 {/* Memory aid — independent of study mode and of Exam
                     Focus/ExamToolsPanel. Reads/writes the existing
                     Concept.memoryAid field via the existing
                     updateConceptMemoryAid(), unchanged. */}
                 <MemoryAidCard concept={concept} />
+
+                {/* Concept Online Knowledge Enrichment — user-created custom
+                    Concept sections (created via "+ Create new section" in
+                    the Online Knowledge panel), each showing whatever
+                    excerpts have been applied to it. Independent of study
+                    mode, same as Memory Aid above — a custom section is a
+                    property of the whole Concept, not of one Learn mode. */}
+                {customSections.map((section) => (
+                  <div key={section.id} className="flex flex-col gap-2 rounded-md border border-border bg-surface p-5">
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{section.title}</h3>
+                      <button
+                        type="button"
+                        aria-label={`Delete section ${section.title}`}
+                        onClick={() => void deleteCustomSection(concept.id, section.id)}
+                        className="p-1 text-ink-tertiary hover:text-error"
+                      >
+                        <Trash size={14} />
+                      </button>
+                    </div>
+                    <ConceptOnlineKnowledgeList conceptId={concept.id} sectionKey={section.id} />
+                  </div>
+                ))}
 
                 {(firstAndLast.first || firstAndLast.last) && (
                   <div className={`grid gap-3 ${twoColGridClass}`}>
@@ -1449,6 +1537,17 @@ export function ConceptDetailPage() {
      </div>
 
       <ConceptFormDialog open={editOpen} onClose={() => setEditOpen(false)} concept={concept} />
+
+      {onlineKnowledgePanelOpen && (
+        <ConceptOnlineKnowledgePanel
+          conceptName={concept.name}
+          conceptId={concept.id}
+          sections={conceptSectionOptions}
+          onApply={(excerpt) => void handleApplyOnlineKnowledge(excerpt)}
+          onCreateSection={handleCreateConceptSection}
+          onClose={() => setOnlineKnowledgePanelOpen(false)}
+        />
+      )}
 
       <Dialog
         open={deleteOpen}
