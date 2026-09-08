@@ -95,5 +95,6 @@
     "cloning plate media",
     "plasmid selection agar"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "E. coli's home base for every cloning arc."
 }

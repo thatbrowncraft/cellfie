@@ -96,5 +96,6 @@
     "simmons citrate agar",
     "citrate slant"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Blue means yes, green means try again."
 }

@@ -75,5 +75,6 @@
     "liquid medium",
     "nutrient broth"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Nutrient Agar, but make it a smoothie."
 }

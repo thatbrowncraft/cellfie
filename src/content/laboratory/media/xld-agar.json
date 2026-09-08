@@ -130,5 +130,6 @@
     "enteric pathogen agar",
     "stool culture media"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Red with black centers means Salmonella showed up."
 }
