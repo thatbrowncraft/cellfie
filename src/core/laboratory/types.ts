@@ -96,8 +96,13 @@ export interface LabContentMeta {
    * Every existing JSON file is left untouched; only new Physics/Chemistry
    * content sets this explicitly. Consumers should read it via
    * `item.subjectDomain ?? 'biology'`, never assume it's always present.
+   *
+   * 'aptitude' was added alongside the Chemistry/Physics/Biology content
+   * sprint to tag the Reasoning & Data Interpretation / Quantitative
+   * Aptitude formulas and concepts requested for Laboratory's Part-A
+   * coverage — same additive, optional pattern as the other three values.
    */
-  subjectDomain?: 'biology' | 'chemistry' | 'physics'
+  subjectDomain?: 'biology' | 'chemistry' | 'physics' | 'aptitude'
   /**
    * Cellfie's Gen Z personality layer for this Laboratory item (Physics +
    * Chemistry knowledge-expansion brief) — mirrors `genZNote` on
