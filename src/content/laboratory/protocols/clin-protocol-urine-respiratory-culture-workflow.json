@@ -86,5 +86,6 @@
     "sputum quality screen",
     "significant bacteriuria"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Urine gets counted, sputum gets judged first — neither source is sterile, so both need an extra filter before 'growth' means anything."
 }

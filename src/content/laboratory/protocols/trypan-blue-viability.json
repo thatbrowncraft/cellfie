@@ -76,5 +76,6 @@
     "dye exclusion test",
     "live dead cell count"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Blue if you're not making it, clear if you are."
 }

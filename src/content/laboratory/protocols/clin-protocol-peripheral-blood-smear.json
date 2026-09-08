@@ -92,5 +92,6 @@
     "Romanowsky stain",
     "RBC morphology"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "The wedge technique's whole goal is a monolayer thin enough that no cell gets to hide behind another."
 }

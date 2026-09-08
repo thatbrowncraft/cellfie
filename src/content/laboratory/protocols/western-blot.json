@@ -83,5 +83,6 @@
     "antibody detection protein",
     "chemiluminescent detection"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "Antibodies snitching on one specific protein."
 }

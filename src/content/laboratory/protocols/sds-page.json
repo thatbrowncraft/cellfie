@@ -84,5 +84,6 @@
     "polyacrylamide gel",
     "protein molecular weight separation"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Denatures everything but the size hierarchy."
 }

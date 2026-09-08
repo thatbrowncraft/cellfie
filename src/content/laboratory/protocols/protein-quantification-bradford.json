@@ -82,5 +82,6 @@
     "Coomassie dye binding assay",
     "BSA standard curve"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Blue means protein. Bluer means more protein."
 }

@@ -77,5 +77,6 @@
     "plasmid mapping",
     "DNA cutting protocol"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Cuts exactly where the sequence says to."
 }

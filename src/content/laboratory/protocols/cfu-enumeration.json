@@ -87,5 +87,6 @@
     "colony counting",
     "plate count"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Counting dots so math can do the rest."
 }

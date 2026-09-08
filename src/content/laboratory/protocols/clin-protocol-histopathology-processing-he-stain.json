@@ -99,5 +99,6 @@
     "H&E stain",
     "tissue processing"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "Formalin buys the tissue time before it starts digesting itself — everything after that is just getting it thin enough to read."
 }

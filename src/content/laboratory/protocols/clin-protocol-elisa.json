@@ -97,5 +97,6 @@
     "colorimetric detection",
     "cutoff value"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Bind, wash, add substrate — ELISA turns an invisible binding event into a color you can actually put a number on."
 }

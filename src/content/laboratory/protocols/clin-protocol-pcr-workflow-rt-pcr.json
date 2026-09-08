@@ -99,5 +99,6 @@
     "thermal cycling",
     "amplicon contamination"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "Denature, anneal, extend, repeat — PCR is just doubling down on one tiny target until it's impossible to miss."
 }

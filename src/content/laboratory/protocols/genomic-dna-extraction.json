@@ -87,5 +87,6 @@
     "DNA isolation protocol",
     "cell lysis DNA purification"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Lyse, purify, hope the ratios look good."
 }

@@ -80,5 +80,6 @@
     "buffer standards",
     "pH probe maintenance"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Two points minimum, or the meter's just guessing."
 }

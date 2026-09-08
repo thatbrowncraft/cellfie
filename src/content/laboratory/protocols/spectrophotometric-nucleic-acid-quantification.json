@@ -74,5 +74,6 @@
     "nanodrop protocol",
     "DNA RNA quantification"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "One microliter, one very opinionated ratio."
 }

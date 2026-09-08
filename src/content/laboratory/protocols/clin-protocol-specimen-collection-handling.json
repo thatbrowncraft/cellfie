@@ -93,5 +93,6 @@
     "specimen labeling",
     "specimen stability"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "The clock starts the second the needle comes out — this protocol is a race against the sample quietly changing its own answer."
 }

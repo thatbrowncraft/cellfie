@@ -87,5 +87,6 @@
     "sedimentation technique",
     "fecal parasitology"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Flotation and sedimentation both exploit the same trick — make the parasite and the debris disagree on how dense they are."
 }

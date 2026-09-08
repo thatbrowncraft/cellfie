@@ -80,5 +80,6 @@
     "neutrophil lymphocyte monocyte",
     "left shift"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Every white cell type has its own signature shape and granule pattern — the differential is just learning to read the handwriting."
 }
