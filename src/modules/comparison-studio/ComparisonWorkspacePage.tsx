@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import {
   ArrowLeft,
@@ -66,6 +66,34 @@ export function ComparisonWorkspacePage() {
 
   const [loadState, setLoadState] = useState<LoadState>('loading')
   const [comparison, setComparison] = useState<(Comparison & { notes?: string }) | null>(null)
+  /**
+   * ROOT-CAUSE FIX ("new custom section falls back to Notes"): every
+   * mutation function below used to read the `comparison` state
+   * variable directly out of its own closure. That's fine for a
+   * function invoked fresh off a render (a plain button click), but
+   * `ComparisonEnrichmentPanel`'s "+ Create new section" flow calls
+   * `handleCreateAspect` and then, still inside that SAME click's
+   * `applySelection` execution, calls `onUseForAspect` → `acceptToAspect`
+   * — both closures were captured together, at the SAME render, before
+   * `handleCreateAspect`'s `setComparison` had a chance to produce a
+   * new render with a new `acceptToAspect` closure. So `acceptToAspect`
+   * was reading a `comparison` snapshot that didn't have the
+   * just-created aspect yet, its `.find` came back empty, and it fell
+   * through to the Notes fallback — even though the section really had
+   * just been created and really was already in the database.
+   *
+   * `comparisonRef` fixes this the standard React way: a ref is a
+   * single mutable object, not a per-render snapshot, so
+   * `comparisonRef.current` is always the latest value the instant
+   * it's written — regardless of which render's closure is doing the
+   * reading. Every mutation function now reads `comparisonRef.current`
+   * (never the bare `comparison` variable) and writes through
+   * `updateComparison` below, which updates the ref and the state
+   * together, atomically, every time. `comparison` (the state) is kept
+   * only for rendering — JSX still reads it normally, and it still
+   * drives re-renders exactly as before.
+   */
+  const comparisonRef = useRef<(Comparison & { notes?: string }) | null>(null)
   const [isCurated, setIsCurated] = useState(false)
   // The set of aspect ids that exist in the *shipped* curated JSON — distinguishes a real curated aspect (curated value protected, user layer is a separate note) from one the user added themselves on top of a curated comparison (fully user-owned, edited directly, same as a custom comparison's aspects). See userComparisons.ts's mergeCuratedWithOverlay for the matching write-side rule.
   const [curatedAspectIds, setCuratedAspectIds] = useState<Set<string>>(new Set())
@@ -80,13 +108,19 @@ export function ComparisonWorkspacePage() {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
   const [completed, setCompleted] = useState(false)
 
+  /** The one place `comparison` state is ever written — keeps `comparisonRef` and the state in sync on every update, so async chains reading the ref right after a write always see it. See `comparisonRef`'s doc comment above for why this exists. */
+  function updateComparison(next: (Comparison & { notes?: string }) | null) {
+    comparisonRef.current = next
+    setComparison(next)
+  }
+
   async function load() {
     setLoadState('loading')
     const curated = getCuratedComparisonById(id)
     if (curated) {
       const overlay = await findOverlayForCurated(id)
       const merged = mergeCuratedWithOverlay(curated, overlay)
-      setComparison(merged)
+      updateComparison(merged)
       setIsCurated(true)
       setCuratedAspectIds(new Set(curated.aspects.map((a) => a.id)))
       setNotesDraft(merged.notes ?? '')
@@ -109,7 +143,7 @@ export function ComparisonWorkspacePage() {
         aspects: record.aspects,
         notes: record.notes
       }
-      setComparison(custom)
+      updateComparison(custom)
       setIsCurated(false)
       setCuratedAspectIds(new Set())
       setNotesDraft(record.notes ?? '')
@@ -183,9 +217,10 @@ export function ComparisonWorkspacePage() {
   }
 
   async function persistAspectChange(aspectId: string, side: 'A' | 'B', value: string) {
-    if (!comparison) return
-    const nextAspects = comparison.aspects.map((a) => (a.id === aspectId ? { ...a, [side === 'A' ? 'valueA' : 'valueB']: value } : a))
-    setComparison({ ...comparison, aspects: nextAspects })
+    const current = comparisonRef.current
+    if (!current) return
+    const nextAspects = current.aspects.map((a) => (a.id === aspectId ? { ...a, [side === 'A' ? 'valueA' : 'valueB']: value } : a))
+    updateComparison({ ...current, aspects: nextAspects })
     const changed = nextAspects.find((a) => a.id === aspectId)!
     if (isCurated) {
       await upsertAspectOverride(id, changed)
@@ -196,18 +231,20 @@ export function ComparisonWorkspacePage() {
 
   /** Persists the user's own note for one side of an aspect — always a separate write from `persistAspectChange`/curated value, never a replacement (correction-pass Part 5/6/9). Only meaningful for curated comparisons; a custom comparison has no curated value to protect, so its aspects stay directly editable via `persistAspectChange`. */
   async function persistAspectNote(aspectId: string, side: 'A' | 'B', note: string) {
-    if (!comparison || !isCurated) return
-    const nextAspects = comparison.aspects.map((a) => (a.id === aspectId ? { ...a, [side === 'A' ? 'noteA' : 'noteB']: note } : a))
-    setComparison({ ...comparison, aspects: nextAspects })
+    const current = comparisonRef.current
+    if (!current || !isCurated) return
+    const nextAspects = current.aspects.map((a) => (a.id === aspectId ? { ...a, [side === 'A' ? 'noteA' : 'noteB']: note } : a))
+    updateComparison({ ...current, aspects: nextAspects })
     await upsertAspectNote(id, aspectId, side, note)
   }
 
   /** Appends to the comparison's own Notes (brief §9/§10: evidence that doesn't map confidently onto a specific aspect becomes "Additional source information" rather than an invented row value). Persists immediately rather than waiting for the separate "Save notes" action, since this text arrived from an explicit Accept, not free typing. */
   async function appendAdditionalSourceInfo(text: string, sourceLabel: string) {
-    if (!comparison) return
+    const current = comparisonRef.current
+    if (!current) return
     const addition = `${text}\n(${sourceLabel})`
-    const nextNotes = comparison.notes ? `${comparison.notes}\n\n${addition}` : addition
-    setComparison({ ...comparison, notes: nextNotes })
+    const nextNotes = current.notes ? `${current.notes}\n\n${addition}` : addition
+    updateComparison({ ...current, notes: nextNotes })
     setNotesDraft(nextNotes)
     if (isCurated) {
       const overlay = await saveCuratedComparison(id)
@@ -228,10 +265,19 @@ export function ComparisonWorkspacePage() {
    * already-filled row (e.g. accepting one sentence now, another later)
    * is additive evidence, never a silent overwrite of existing curated
    * content or a prior accept.
+   *
+   * Reads `comparisonRef.current` rather than the closed-over
+   * `comparison` variable — see `comparisonRef`'s doc comment above.
+   * This is the fix for the Notes-fallback bug: a freshly created
+   * custom section (`handleCreateAspect`, called immediately before
+   * this in the same "+ Create new section" apply) is now always found
+   * here, because the ref reflects that creation the instant it
+   * happens, not just once a future render's closure catches up.
    */
   async function acceptToAspect(aspectId: string, side: 'A' | 'B', text: string, sourceLabel: string) {
-    if (!comparison) return
-    const aspect = comparison.aspects.find((a) => a.id === aspectId)
+    const current = comparisonRef.current
+    if (!current) return
+    const aspect = current.aspects.find((a) => a.id === aspectId)
     if (!aspect) return appendAdditionalSourceInfo(text, sourceLabel)
     const existing = side === 'A' ? aspect.valueA : aspect.valueB
     const addition = `${text}\n(${sourceLabel})`
@@ -240,9 +286,10 @@ export function ComparisonWorkspacePage() {
   }
 
   async function handleToggleKeyDifference(aspectId: string) {
-    if (!comparison) return
-    const nextAspects = comparison.aspects.map((a) => (a.id === aspectId ? { ...a, isKeyDifference: !a.isKeyDifference } : a))
-    setComparison({ ...comparison, aspects: nextAspects })
+    const current = comparisonRef.current
+    if (!current) return
+    const nextAspects = current.aspects.map((a) => (a.id === aspectId ? { ...a, isKeyDifference: !a.isKeyDifference } : a))
+    updateComparison({ ...current, aspects: nextAspects })
     const changed = nextAspects.find((a) => a.id === aspectId)!
     if (isCurated) {
       await upsertAspectOverride(id, changed)
@@ -252,9 +299,10 @@ export function ComparisonWorkspacePage() {
   }
 
   async function handleRemoveAspect(aspectId: string) {
-    if (!comparison) return
-    const nextAspects = comparison.aspects.filter((a) => a.id !== aspectId)
-    setComparison({ ...comparison, aspects: nextAspects })
+    const current = comparisonRef.current
+    if (!current) return
+    const nextAspects = current.aspects.filter((a) => a.id !== aspectId)
+    updateComparison({ ...current, aspects: nextAspects })
     if (isCurated) {
       await hideCuratedAspect(id, aspectId)
     } else {
@@ -263,14 +311,15 @@ export function ComparisonWorkspacePage() {
   }
 
   async function handleMoveAspect(aspectId: string, direction: 'up' | 'down') {
-    if (!comparison) return
-    const index = comparison.aspects.findIndex((a) => a.id === aspectId)
+    const current = comparisonRef.current
+    if (!current) return
+    const index = current.aspects.findIndex((a) => a.id === aspectId)
     if (index === -1) return
     const swapWith = direction === 'up' ? index - 1 : index + 1
-    if (swapWith < 0 || swapWith >= comparison.aspects.length) return
-    const nextAspects = [...comparison.aspects]
+    if (swapWith < 0 || swapWith >= current.aspects.length) return
+    const nextAspects = [...current.aspects]
     ;[nextAspects[index], nextAspects[swapWith]] = [nextAspects[swapWith], nextAspects[index]]
-    setComparison({ ...comparison, aspects: nextAspects })
+    updateComparison({ ...current, aspects: nextAspects })
     // Reordering only ever persists for custom comparisons — a curated comparison's own aspect order stays as shipped; the overlay model (brief §13) tracks value/visibility overrides, not row order, keeping "what did the user actually change" simple and inspectable.
     if (!isCurated) {
       await updateCustomAspects(id, nextAspects)
@@ -278,16 +327,22 @@ export function ComparisonWorkspacePage() {
   }
 
   async function handleAddAspect(presetId: string, presetLabel: string) {
-    if (!comparison) return
+    const current = comparisonRef.current
+    if (!current) return
     const newAspect: ComparisonAspect = { id: presetId, label: presetLabel, valueA: '', valueB: '' }
-    const nextAspects = [...comparison.aspects, newAspect]
-    setComparison({ ...comparison, aspects: nextAspects })
+    const nextAspects = [...current.aspects, newAspect]
+    updateComparison({ ...current, aspects: nextAspects })
     setShowAddAspect(false)
     if (isCurated) {
       await upsertAspectOverride(id, newAspect)
     } else {
       await updateCustomAspects(id, nextAspects)
     }
+  }
+
+  /** Normalizes a section title for duplicate-detection purposes only — never for display, never persisted. Trims whitespace and lowercases, so "Function", " function ", and "FUNCTION" all resolve to the same existing section, while genuinely different titles ("Function" vs "Functional Group") never collapse into each other. */
+  function normalizeSectionTitle(title: string): string {
+    return title.trim().toLowerCase()
   }
 
   /**
@@ -300,19 +355,39 @@ export function ComparisonWorkspacePage() {
    * from `handleAddAspect` is the id: a preset row keeps its stable
    * preset id (e.g. `'principle'`) so re-adding the same preset later
    * is a no-op-safe dedupe key, but a free-typed section name has no
-   * such stable id, so a fresh `crypto.randomUUID()` is generated here
-   * — guaranteed unique, and never collides with any current or future
-   * domain-preset id (see `domainPresets.ts`), so this can never be
-   * mistaken for one of the removed default sections later. Returns
-   * the new aspect's id so the enrichment panel can apply the
-   * just-selected excerpt to it immediately.
+   * such stable id, so a fresh `crypto.randomUUID()` is generated for
+   * a genuinely new section — guaranteed unique, and never collides
+   * with any current or future domain-preset id (see
+   * `domainPresets.ts`), so this can never be mistaken for one of the
+   * removed default sections later.
+   *
+   * ROOT-CAUSE FIX (duplicate-section bug): this used to always create
+   * a fresh row, with no check for an existing one — so typing
+   * "Function" twice produced two separate "Function" rows. It now
+   * looks for an existing aspect (built-in or custom) whose
+   * `normalizeSectionTitle`-normalized label already matches before
+   * creating anything; if one exists, its id is returned directly and
+   * nothing new is written, so the caller's subsequent "apply selected
+   * text" lands on the SAME section instead of a duplicate. Reads
+   * `comparisonRef.current` (see its doc comment above) so this check
+   * is correct even when called back-to-back within the same
+   * enrichment session.
+   *
+   * Returns the resulting aspect's id (new or existing) so the
+   * enrichment panel can apply the just-selected excerpt to it
+   * immediately.
    */
   async function handleCreateAspect(title: string): Promise<string> {
-    if (!comparison) throw new Error('No comparison loaded')
+    const current = comparisonRef.current
+    if (!current) throw new Error('No comparison loaded')
     const trimmed = title.trim()
+    const normalized = normalizeSectionTitle(trimmed)
+    const existing = current.aspects.find((a) => normalizeSectionTitle(a.label) === normalized)
+    if (existing) return existing.id
+
     const newAspect: ComparisonAspect = { id: crypto.randomUUID(), label: trimmed || 'Untitled section', valueA: '', valueB: '' }
-    const nextAspects = [...comparison.aspects, newAspect]
-    setComparison({ ...comparison, aspects: nextAspects })
+    const nextAspects = [...current.aspects, newAspect]
+    updateComparison({ ...current, aspects: nextAspects })
     if (isCurated) {
       await upsertAspectOverride(id, newAspect)
     } else {
@@ -322,8 +397,9 @@ export function ComparisonWorkspacePage() {
   }
 
   async function handleSaveNotes() {
-    if (!comparison) return
-    setComparison({ ...comparison, notes: notesDraft })
+    const current = comparisonRef.current
+    if (!current) return
+    updateComparison({ ...current, notes: notesDraft })
     if (isCurated) {
       const overlay = await saveCuratedComparison(id)
       await setNotes(overlay.id, notesDraft)
