@@ -163,7 +163,7 @@ export function ClinicalDetailPage() {
           {item.subcategory ? ` · ${item.subcategory}` : ''}
         </p>
         <h1 className="mt-1 font-display text-display font-semibold text-ink-primary">{item.title}</h1>
-        <p className="mt-2 font-ui text-body-lg italic text-ink-tertiary">{getItemTagline(item.id, category)}</p>
+        <p className="mt-2 font-ui text-body-lg italic text-ink-tertiary">{getItemTagline(item.id, category, item.genZNote)}</p>
         {item.scientificNotes && <p className="mt-3 font-body text-caption text-ink-tertiary">{item.scientificNotes}</p>}
       </header>
 

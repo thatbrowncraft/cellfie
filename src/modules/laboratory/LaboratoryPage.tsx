@@ -482,7 +482,7 @@ function DifficultyGrid({
               <CardBody className="flex flex-col gap-1">
                 <p className="font-ui text-micro uppercase tracking-wide text-ink-tertiary">{CATEGORY_LABELS[item.category]}</p>
                 <p className="font-display text-h3 font-medium text-ink-primary">{item.title}</p>
-                <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{getItemTagline(item.id, item.category)}</p>
+                <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{getItemTagline(item.id, item.category, item.genZNote)}</p>
               </CardBody>
             </Card>
           ))}
@@ -565,7 +565,7 @@ function ContentGrid({ category, onSelect }: { category: LaboratoryCategory; onS
               <CardBody className="flex flex-col gap-1">
                 <p className="font-display text-h3 font-medium text-ink-primary">{item.title}</p>
                 {item.subcategory && <p className="font-ui text-caption text-ink-tertiary">{item.subcategory}</p>}
-                <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{getItemTagline(item.id, category)}</p>
+                <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{getItemTagline(item.id, category, item.genZNote)}</p>
               </CardBody>
             </Card>
           ))}
