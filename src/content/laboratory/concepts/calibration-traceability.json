@@ -38,5 +38,6 @@
     "reference standard",
     "calibration drift"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "Your instrument's receipts, all the way up the chain."
 }

@@ -37,5 +37,6 @@
     "false positive false negative",
     "test accuracy characteristics"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Catching every case vs. never crying wolf."
 }

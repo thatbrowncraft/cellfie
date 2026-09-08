@@ -41,5 +41,6 @@
     "known concentration series",
     "assay quantification"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "The ruler your unknowns get measured against."
 }

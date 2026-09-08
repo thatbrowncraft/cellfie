@@ -37,5 +37,6 @@
     "blunt ends",
     "cloning cut sites"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Sticky ends want to date. Blunt ends don't."
 }

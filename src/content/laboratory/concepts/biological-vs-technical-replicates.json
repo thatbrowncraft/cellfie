@@ -41,5 +41,6 @@
     "experimental design replicates",
     "n vs replicate count"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Three wells from one flask isn't three data points."
 }

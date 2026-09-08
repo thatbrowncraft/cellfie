@@ -40,5 +40,6 @@
     "rounding rules",
     "instrument resolution"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Only as precise as your instrument, no cap."
 }

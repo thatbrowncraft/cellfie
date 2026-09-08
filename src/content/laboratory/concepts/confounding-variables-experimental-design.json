@@ -39,5 +39,6 @@
     "controlled experiment",
     "confound vs variable of interest"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "The variable you forgot to control, wrecking your conclusion."
 }

@@ -55,5 +55,6 @@
     "Plasmodium identification",
     "parasitemia"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "Thick film finds the parasite, thin film tells you which one — one smear never does both jobs alone."
 }

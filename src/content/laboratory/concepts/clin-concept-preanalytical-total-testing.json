@@ -54,5 +54,6 @@
     "laboratory error sources",
     "specimen identification"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Most lab errors happen before the sample ever reaches the instrument — the fanciest analyzer can't fix a mislabeled tube."
 }

@@ -39,5 +39,6 @@
     "sample interference",
     "assay matrix interference"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "Your sample's background noise, quietly lying to you."
 }

@@ -41,5 +41,6 @@
     "DNA RNA spectrophotometric purity",
     "A260/A230"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "1.8 is the DNA purity flex, 2.0 is RNA's."
 }

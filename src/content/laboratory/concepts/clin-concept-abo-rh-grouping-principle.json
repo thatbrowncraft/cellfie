@@ -51,5 +51,6 @@
     "anti-B antibody",
     "Rh D antigen"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Whatever antigen you don't have on your cells, your plasma is already holding a grudge against it — that reciprocal grudge is the whole reverse-grouping check."
 }

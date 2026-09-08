@@ -39,5 +39,6 @@
     "validation criteria",
     "fit for purpose method"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "Proving it works before you trust a single result."
 }

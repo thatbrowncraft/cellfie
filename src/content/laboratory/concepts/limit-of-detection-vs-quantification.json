@@ -41,5 +41,6 @@
     "LOD LOQ difference",
     "assay sensitivity threshold"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Seeing it vs. trusting the number on it."
 }

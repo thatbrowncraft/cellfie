@@ -51,5 +51,6 @@
     "calibration verification validation",
     "internal quality control"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "Internal QC checks your work against yourself every single day; EQA checks it against everyone else, occasionally, without warning."
 }

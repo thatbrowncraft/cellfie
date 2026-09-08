@@ -37,5 +37,6 @@
     "PPV NPV",
     "prevalence effect on test result"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "The math that humbles a 'positive' result."
 }

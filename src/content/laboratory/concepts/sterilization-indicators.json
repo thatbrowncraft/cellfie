@@ -53,5 +53,6 @@
     "spore strip",
     "validation"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Proof of work, but for killing spores."
 }

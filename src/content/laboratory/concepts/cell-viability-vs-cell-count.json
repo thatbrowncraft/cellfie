@@ -37,5 +37,6 @@
     "cell count vs viability",
     "live dead cell staining"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Alive and counted are not the same headline."
 }

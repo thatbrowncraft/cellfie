@@ -38,5 +38,6 @@
     "bacteriostatic",
     "bactericidal"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Pause the growth vs. end it completely."
 }

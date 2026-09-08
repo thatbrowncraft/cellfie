@@ -55,5 +55,6 @@
     "compatibility testing",
     "unexpected antibody"
   ],
-  "difficulty": "advanced"
+  "difficulty": "advanced",
+  "genZNote": "Antibody screening asks if the patient has beef with any antigen in general; crossmatching asks if they specifically have beef with this one bag."
 }

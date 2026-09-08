@@ -41,5 +41,6 @@
     "specimen acceptability",
     "clotted specimen"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "A rejected specimen is the lab refusing to turn a bad sample into a confidently wrong result."
 }

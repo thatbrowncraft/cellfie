@@ -46,5 +46,6 @@
     "milli micro nano",
     "measurement conventions"
   ],
-  "difficulty": "beginner"
+  "difficulty": "beginner",
+  "genZNote": "Milli, micro, nano — mind the zeros."
 }

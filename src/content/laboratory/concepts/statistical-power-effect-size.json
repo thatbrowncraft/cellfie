@@ -38,5 +38,6 @@
     "sample size planning",
     "power analysis"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "Enough replicates to actually catch the truth."
 }

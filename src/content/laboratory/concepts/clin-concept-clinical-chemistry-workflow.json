@@ -52,5 +52,6 @@
     "photometric chemistry",
     "enzyme activity assay"
   ],
-  "difficulty": "intermediate"
+  "difficulty": "intermediate",
+  "genZNote": "Endpoint assays wait for the reaction to finish talking; kinetic assays care about how fast it's talking."
 }

@@ -38,5 +38,6 @@
     "experimental batch design",
     "reagent lot variation"
   ],
-  "difficulty": "expert"
+  "difficulty": "expert",
+  "genZNote": "When 'Monday's batch' becomes an uninvited variable."
 }
