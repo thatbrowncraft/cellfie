@@ -391,6 +391,53 @@ export interface ConceptSectionEdit {
 }
 
 /**
+ * Concept Online Knowledge Enrichment — a user-created Concept section,
+ * additional to the three fixed Learn-tab sections (Quick Revision /
+ * Core Concept / Exam Focus). Created only via the "+ Create new
+ * section" action inside the Concept Online Knowledge enrichment flow
+ * (see modules/concepts/components/ConceptOnlineKnowledgePanel.tsx) —
+ * this table intentionally does not replace or extend the fixed
+ * Learn-tab section model (`ConceptSectionEdit`/`ConceptStudyNote`);
+ * it is purely additive per-user data, scoped to one `conceptId`, and
+ * never written into curated repository content.
+ */
+export interface ConceptCustomSection {
+  id: string
+  conceptId: string
+  /** The person's own title, e.g. "DNA Replication". Never invented. */
+  title: string
+  order: number
+  createdAt: number
+}
+
+/**
+ * Concept Online Knowledge Enrichment — one sentence (or short run of
+ * sentences) the person explicitly selected from an Online Knowledge
+ * search result and applied to a Concept section, via the same
+ * select-sentences → "Use for" → Apply interaction Comparison Studio
+ * already uses (core/comparison/knowledgeLayer.ts,
+ * modules/comparison-studio/components/ComparisonEnrichmentPanel.tsx).
+ * `sectionKey` is either one of the three fixed Learn-tab section keys
+ * ('quick-revision' | 'core-concept' | 'exam-focus') or a
+ * `ConceptCustomSection.id` — this table doesn't care which, so a
+ * custom section works identically to a built-in one as an enrichment
+ * destination. Never auto-populated, never AI-written — `text` is
+ * always a direct excerpt the person chose, and `sourceName`/`sourceUrl`
+ * always trace back to the real provider that returned it (see
+ * core/knowledge/types.ts).
+ */
+export interface ConceptOnlineKnowledgeEntry {
+  id: string
+  conceptId: string
+  sectionKey: string
+  text: string
+  sourceName: string
+  sourceUrl: string
+  attributionNotice?: string
+  createdAt: number
+}
+
+/**
  * Sprint 4 Master Revision §20-§28, extended by the Organism Library /
  * Illustration System continuation (§19-§27) — a user's own local
  * image for one Organism Explorer profile (their microscope photo,
@@ -633,6 +680,8 @@ class CellfieDB extends Dexie {
   savedOrganisms!: Table<SavedOrganismRecord, string>
   savedLabItems!: Table<SavedLabItemRecord, string>
   savedComparisons!: Table<SavedComparisonRecord, string>
+  conceptCustomSections!: Table<ConceptCustomSection, string>
+  conceptOnlineKnowledgeEntries!: Table<ConceptOnlineKnowledgeEntry, string>
 
   constructor() {
     super('cellfie')
@@ -999,6 +1048,37 @@ class CellfieDB extends Dexie {
       organismImageBlobs: 'id, createdAt',
       savedLabItems: 'id, sourceType, savedAt, labContentId, libraryItemId',
       savedComparisons: 'id, sourceType, favorite, updatedAt, curatedComparisonId'
+    })
+    // v16 — Concept Online Knowledge Enrichment: adds `conceptCustomSections`
+    // and `conceptOnlineKnowledgeEntries` only, following the same additive
+    // pattern as every prior version. Every existing table/index above is
+    // repeated unchanged; no existing row in any table is touched by this
+    // upgrade. See both interfaces' own doc comments above for what each
+    // table is for and why neither replaces the existing
+    // `ConceptSectionEdit`/`ConceptStudyNote` section model.
+    this.version(16).stores({
+      libraryItems: 'id, title, documentType, indexingStatus, fileHash, createdAt, *collectionIds, *tags',
+      collections: 'id, name, createdAt',
+      appSettings: 'key',
+      readerBookmarks: 'id, itemId, page, createdAt',
+      highlights: 'id, itemId, page, color, createdAt, [itemId+page]',
+      notes: 'id, itemId, highlightId, pinned, favorite, createdAt, updatedAt, *tags',
+      concepts: 'id, normalizedName, manuallyCreated, lastSeenAt, createdAt, *tags, *aliases',
+      conceptSources:
+        'id, conceptId, libraryItemId, sourceType, sourceId, createdAt, [conceptId+sourceType], [conceptId+libraryItemId]',
+      conceptRelations: 'id, conceptAId, conceptBId, origin, createdAt, [conceptAId+conceptBId]',
+      conceptAssets: 'id, conceptId, kind, createdAt, [conceptId+kind]',
+      conceptMapNodes: 'id, conceptId, createdAt, [conceptId+createdAt]',
+      conceptMapEdges: 'id, conceptId, sourceNodeId, targetNodeId, createdAt, [conceptId+createdAt]',
+      conceptStudyNotes: 'id, conceptId, section, order, createdAt, [conceptId+section]',
+      conceptSectionEdits: 'id, conceptId, sectionKey, updatedAt, [conceptId+sectionKey]',
+      savedOrganisms: 'organismId, savedAt',
+      organismImages: 'id, organismId, isPrimary, createdAt, [organismId+isPrimary]',
+      organismImageBlobs: 'id, createdAt',
+      savedLabItems: 'id, sourceType, savedAt, labContentId, libraryItemId',
+      savedComparisons: 'id, sourceType, favorite, updatedAt, curatedComparisonId',
+      conceptCustomSections: 'id, conceptId, order, createdAt, [conceptId+order]',
+      conceptOnlineKnowledgeEntries: 'id, conceptId, sectionKey, createdAt, [conceptId+sectionKey]'
     })
   }
 }
