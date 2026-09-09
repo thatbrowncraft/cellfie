@@ -8,6 +8,7 @@ import {
   Fire,
   Flask,
   GitBranch,
+  GraduationCap,
   Highlighter,
   NotePencil,
   Scales,
@@ -29,6 +30,8 @@ import { COMPARISON_DOMAIN_LABELS } from '../../core/comparison/types'
 import type { LaboratoryCategory, LaboratoryContent } from '../../core/laboratory/types'
 import type { ElementProfile } from '../../core/periodic-table/types'
 import { getRecentlyViewedElementIds } from '../../core/periodic-table/recentlyViewed'
+import type { ExamSubject } from '../../core/exam-prep/types'
+import { getRecentlyViewedExamSubjectIds } from '../../core/exam-prep/recentlyViewed'
 import { useLocalStorage } from '../../shared/hooks'
 import { useBreakpointClass } from '../../shared/hooks/useMediaQuery'
 import { pickDashboardQuote } from '../../core/dashboard/quotes'
@@ -211,6 +214,14 @@ function formatDuration(totalSeconds: number): string {
  * is deliberately NOT the same thing as Saved Lab Items (a real,
  * permanent Dexie table — see core/laboratory/savedItems.ts — browsed
  * from inside Laboratory itself, never from Dashboard).
+ *
+ * Exam Prep's preview row is backed by core/exam-prep/recentlyViewed.ts —
+ * the exact same bounded, appSettings-backed "recent activity only"
+ * pattern as Periodic Table (a flat list of subject ids, since — like
+ * elements — there's currently only one content type to track). Opening
+ * either a subject page or a topic inside it records the same subject id,
+ * so Exam Prep participates in the existing Dashboard "recently viewed /
+ * continue exploring" ecosystem exactly like every other section here.
  */
 export function DashboardPage() {
   const navigate = useNavigate()
@@ -243,6 +254,11 @@ export function DashboardPage() {
   )
   const recentElementIds = useLiveQuery<string[]>(
     () => getRecentlyViewedElementIds(MAX_PREVIEW_ITEMS),
+    [],
+    []
+  )
+  const recentExamSubjectIds = useLiveQuery<string[]>(
+    () => getRecentlyViewedExamSubjectIds(MAX_PREVIEW_ITEMS),
     [],
     []
   )
@@ -352,6 +368,35 @@ export function DashboardPage() {
       cancelled = true
     }
   }, [recentElementIds])
+
+  // Same bundle-size remediation as the Organism/Lab/Periodic Table
+  // blocks above, applied to core/exam-prep/subjects.ts (which in turn
+  // statically imports core/exam-prep/registry.ts): only a handful of
+  // recently-viewed subject ids ever need resolving here, so the module
+  // is loaded dynamically on demand rather than statically imported into
+  // Dashboard's chunk — the default "/" route every user sees on first
+  // load. Lands in the same chunk the Exam Prep routes already use
+  // (shared, cached after first visit).
+  const [recentExamSubjects, setRecentExamSubjects] = useState<ExamSubject[]>([])
+  useEffect(() => {
+    if (recentExamSubjectIds.length === 0) {
+      setRecentExamSubjects([])
+      return
+    }
+    let cancelled = false
+    import('../../core/exam-prep/subjects').then(({ getExamSubjectById }) => {
+      if (cancelled) return
+      setRecentExamSubjects(
+        recentExamSubjectIds
+          .map((id) => getExamSubjectById(id))
+          .filter((s): s is ExamSubject => Boolean(s))
+          .slice(0, MAX_PREVIEW_ITEMS)
+      )
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [recentExamSubjectIds])
 
   // Motivational quote (requested change #2) — picked once per Dashboard
   // visit/mount, avoiding an immediate repeat of whatever was shown last
@@ -604,6 +649,24 @@ export function DashboardPage() {
             emptyDescription="Open an element profile in the Periodic Table and it'll show up here next time."
             emptyActionLabel="Browse Periodic Table"
             onEmptyAction={() => navigate('/periodic-table')}
+          />
+
+          <PreviewSection
+            title="Exam Prep"
+            humor={DASHBOARD_HUMOR.examPrep}
+            openLabel="Open Exam Prep"
+            onOpen={() => navigate('/exam-prep')}
+            items={recentExamSubjects.map((subject) => ({
+              key: subject.id,
+              title: subject.title,
+              subtitle: subject.shortDescription,
+              onClick: () => navigate(`/exam-prep/${subject.id}`)
+            }))}
+            emptyIcon={<GraduationCap size={32} />}
+            emptyTitle="No exam prep opened yet"
+            emptyDescription="Open a subject in Exam Prep and it'll show up here next time."
+            emptyActionLabel="Open Exam Prep"
+            onEmptyAction={() => navigate('/exam-prep')}
           />
         </DashboardLayout>
       </div>
