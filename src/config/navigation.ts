@@ -5,6 +5,7 @@ import {
   GitBranch,
   Bug,
   Flask,
+  GraduationCap,
   Scales,
   NotePencil,
   Gear
@@ -47,6 +48,11 @@ export interface NavItem {
  * pages for this foundation build: Dashboard, Library, Concepts, Organism
  * Explorer, Laboratory, Comparison Studio, Notes, Settings.
  *
+ * Exam Prep was added after Task 3 as a ninth top-level section, between
+ * Laboratory and Comparison Studio — a first-class, scalable home for
+ * competitive-exam syllabus content (Constitution of India today; more
+ * subjects can be added later purely as data — see `core/exam-prep/`).
+ *
  * "Concepts" is a placeholder home for what the SDD calls Learn + Concept
  * Explorer — kept as one route now so it can split into two routes later
  * without any redesign (the module folder, layout, and nav entry pattern
@@ -66,6 +72,7 @@ export const navItems: NavItem[] = [
   { path: '/concepts', label: 'Concepts', icon: GitBranch, inBottomNav: true },
   { path: '/organisms', label: 'Organism Explorer', navLabel: 'Organisms', icon: Bug, inBottomNav: true },
   { path: '/laboratory', label: 'Laboratory', icon: Flask, inBottomNav: true },
+  { path: '/exam-prep', label: 'Exam Prep', icon: GraduationCap, inBottomNav: true },
   { path: '/comparison', label: 'Comparison Studio', navLabel: 'Comparison', icon: Scales, inBottomNav: true },
   { path: '/notes', label: 'Study Vault', navLabel: 'Vault', icon: NotePencil, inBottomNav: true },
   { path: '/settings', label: 'Settings', icon: Gear, inBottomNav: true }

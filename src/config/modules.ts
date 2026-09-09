@@ -1,5 +1,5 @@
 import type { Icon } from '@phosphor-icons/react'
-import { BookOpen, GitBranch, Bug, Flask, Scales, Sparkle } from '@phosphor-icons/react'
+import { BookOpen, GitBranch, Bug, Flask, GraduationCap, Scales, Sparkle } from '@phosphor-icons/react'
 
 export type ModuleStatus = 'active' | 'optional-off'
 
@@ -47,6 +47,7 @@ export const moduleStatusList: ModuleStatusEntry[] = [
   { id: 'learn', label: 'Learn', icon: BookOpen, status: 'active', path: '/concepts' },
   { id: 'organism-explorer', label: 'Organism Explorer', icon: Bug, status: 'active', path: '/organisms' },
   { id: 'laboratory', label: 'Laboratory', icon: Flask, status: 'active', path: '/laboratory' },
+  { id: 'exam-prep', label: 'Exam Prep', icon: GraduationCap, status: 'active', path: '/exam-prep' },
   { id: 'concept-explorer', label: 'Concept Explorer', icon: GitBranch, status: 'active', path: '/concepts' },
   { id: 'comparison-studio', label: 'Comparison Studio', icon: Scales, status: 'active', path: '/comparison' },
   { id: 'ai', label: 'AI', icon: Sparkle, status: 'optional-off' }
