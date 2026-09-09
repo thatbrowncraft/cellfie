@@ -60,6 +60,15 @@ const CalculatorDetailPage = lazy(() =>
 const UnitConverterPage = lazy(() =>
   import('../modules/laboratory/UnitConverterPage').then((m) => ({ default: m.UnitConverterPage }))
 )
+const ExamPrepPage = lazy(() =>
+  import('../modules/exam-prep/ExamPrepPage').then((m) => ({ default: m.ExamPrepPage }))
+)
+const ExamPrepSubjectPage = lazy(() =>
+  import('../modules/exam-prep/ExamPrepSubjectPage').then((m) => ({ default: m.ExamPrepSubjectPage }))
+)
+const ExamPrepTopicPage = lazy(() =>
+  import('../modules/exam-prep/ExamPrepTopicPage').then((m) => ({ default: m.ExamPrepTopicPage }))
+)
 const ComparisonStudioPage = lazy(() =>
   import('../modules/comparison-studio/ComparisonStudioPage').then((m) => ({ default: m.ComparisonStudioPage }))
 )
@@ -121,6 +130,9 @@ export function AppRouter() {
           <Route path="/laboratory/clinical" element={<ClinicalLaboratoryPage />} />
           <Route path="/laboratory/clinical/:category/:id" element={<ClinicalDetailPage />} />
           <Route path="/laboratory/:category/:id" element={<LaboratoryDetailPage />} />
+          <Route path="/exam-prep" element={<ExamPrepPage />} />
+          <Route path="/exam-prep/:subjectId" element={<ExamPrepSubjectPage />} />
+          <Route path="/exam-prep/:subjectId/:topicId" element={<ExamPrepTopicPage />} />
           <Route path="/comparison" element={<ComparisonStudioPage />} />
           <Route path="/comparison/new" element={<NewComparisonPage />} />
           <Route path="/comparison/explore" element={<ExploreComparisonsPage />} />
