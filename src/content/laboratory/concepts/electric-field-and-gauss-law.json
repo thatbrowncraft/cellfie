@@ -1,8 +1,8 @@
 {
   "id": "concept-electric-field-and-gauss-law",
   "category": "concept",
-  "title": "Electric Field, Electric Flux and Gauss's Law",
-  "subcategory": "Electric Charges and Fields — Field, Flux, Gauss's Law",
+  "title": "Electric Charges and Fields",
+  "subcategory": "Electric Charges and Fields — Charge, Coulomb's Law, Field, Flux, Gauss's Law",
   "sourceType": "educational-guidance",
   "version": "1.0",
   "lastVerified": "2026-09",
@@ -24,7 +24,13 @@
     "electric flux",
     "Gauss's law",
     "field lines",
-    "electric dipole"
+    "electric dipole",
+    "electric charge",
+    "coulomb's law",
+    "conductors and insulators",
+    "superposition principle",
+    "continuous charge distribution",
+    "charge density"
   ],
   "difficulty": "advanced",
   "subjectDomain": "physics",
@@ -35,12 +41,36 @@
     "formula-electric-flux-gauss-law",
     "formula-coulombs-law"
   ],
-  "summary": "Electric field is force per unit test charge at a point; electric flux measures field lines passing through a surface, and Gauss's law relates the total flux through any closed surface to the charge it encloses — a powerful shortcut for symmetric charge distributions.",
+  "summary": "Electric charge is a conserved, quantized property that exerts an inverse-square Coulomb force; the electric field is force per unit test charge at a point, electric flux measures field lines passing through a surface, and Gauss's law relates the total flux through any closed surface to the charge it encloses — a powerful shortcut for symmetric charge distributions.",
   "explanation": "Electric field at a point is defined as E = F/q₀ (force per unit positive test charge, in the limit q₀ → 0 so the test charge doesn't disturb the source distribution), a vector field that can be visualised with field lines: they start on positive charges, end on negative charges, never cross, and their density indicates field strength. Electric flux through a surface, ΦE = ∮E·dA, measures the 'number' of field lines crossing that surface; it depends on the field, the surface area, and the angle between the field and the surface's normal. Gauss's law states ΦE (through any closed surface) = qenclosed/ε₀ — remarkably, this holds regardless of the size/shape of the closed (Gaussian) surface and regardless of charges OUTSIDE it (they contribute zero net flux). This is a general law (equivalent to Coulomb's law for static charges) but becomes an extremely efficient calculation shortcut when the charge distribution has high symmetry (spherical, cylindrical, planar) — letting you choose a Gaussian surface where E is uniform and either parallel or perpendicular everywhere. Applications: field due to an infinite line charge (E ∝ 1/r), an infinite plane sheet of charge (E is uniform, independent of distance from the sheet), and a uniformly charged spherical shell (E = 0 inside, behaves like a point charge at the centre for points outside). An electric dipole (two equal, opposite charges separated by a small distance) has a dipole moment p = q×2a (from −q to +q); its field falls off faster (∝1/r³ on the axial/equatorial line) than a single point charge's field (∝1/r²), and in a uniform external field, a dipole experiences zero net force but a torque τ = p×E that tends to align it with the field.",
   "explanationSections": [
     {
+      "heading": "Electric Charge and Its Basic Properties",
+      "body": "Electric charge is a fundamental, quantized property of matter: q = ne, where e ≈ 1.6×10⁻¹⁹ C is the elementary charge and n is an integer — charge can only occur in whole-number multiples of e, it never appears as an arbitrary fraction. Charge exists in two kinds, positive and negative; like charges repel, unlike charges attract. Charge is CONSERVED in any isolated system (the total charge before and after any process — chemical, nuclear, or simple transfer by rubbing — stays exactly constant) and ADDITIVE (the net charge of a system is just the algebraic sum of the individual charges present)."
+    },
+    {
+      "heading": "Conductors and Insulators",
+      "body": "Conductors (e.g. metals) contain free/mobile charge carriers (electrons) that redistribute instantly across the material in response to a nearby charge or field; insulators (dielectrics) have bound charges that cannot move freely, so any induced charge stays localized where it's produced. This distinction underlies charging by CONDUCTION (direct contact: charge transfers and then redistributes over the conductor) versus charging by INDUCTION (charge redistributes on a nearby conductor without any contact, driven purely by the external field, leaving opposite charges on the near and far sides while the conductor's total charge stays zero unless it is then earthed)."
+    },
+    {
+      "heading": "Coulomb's Law",
+      "body": "Coulomb's law gives the force between two point charges: F = k q₁q₂/r², with k = 1/(4πε₀) ≈ 9×10⁹ N·m²/C² in vacuum — directed along the line joining the two charges, repulsive for like charges and attractive for unlike charges. It is an inverse-square law, it obeys Newton's third law (equal and opposite force on each charge), and in a medium the force is reduced by the medium's relative permittivity (dielectric constant) εᵣ: F(medium) = F(vacuum)/εᵣ."
+    },
+    {
+      "heading": "Forces Between Multiple Charges",
+      "body": "For more than two charges, the net force on any one charge is the VECTOR SUM of the individual Coulomb forces from every other charge, each calculated as if that pair acted alone (the superposition principle) — no third charge's presence alters the force any other pair of charges exerts on each other, so each pairwise force is computed independently and then added as vectors."
+    },
+    {
       "heading": "Electric Field and Field Lines",
       "body": "Electric field at a point is defined as E = F/q₀ (force per unit positive test charge, in the limit q₀ → 0 so the test charge doesn't disturb the source distribution), a vector field that can be visualised with field lines: they start on positive charges, end on negative charges, never cross, and their density indicates field strength."
+    },
+    {
+      "heading": "Electric Dipole",
+      "body": "An electric dipole (two equal, opposite charges separated by a small distance) has a dipole moment p = q×2a (from −q to +q); its field falls off faster (∝1/r³ on the axial/equatorial line) than a single point charge's field (∝1/r²), and in a uniform external field, a dipole experiences zero net force but a torque τ = p×E that tends to align it with the field."
+    },
+    {
+      "heading": "Continuous Charge Distribution",
+      "body": "For charge spread continuously rather than as discrete points, it's described by a charge density: linear charge density λ (charge/length, e.g. a charged rod), surface charge density σ (charge/area, e.g. a charged plate), and volume charge density ρ (charge/volume, e.g. a charged sphere). The total charge is found by integrating the relevant density over the object's length/area/volume, and each small element dq (= λdl, σdA, or ρdV) is then treated as a point charge when computing the field or force it contributes."
     },
     {
       "heading": "Electric Flux and Gauss's Law",
@@ -49,18 +79,16 @@
     {
       "heading": "Applications of Gauss's Law",
       "body": "Field due to an infinite line charge (E ∝ 1/r), an infinite plane sheet of charge (E is uniform, independent of distance from the sheet), and a uniformly charged spherical shell (E = 0 inside, behaves like a point charge at the centre for points outside)."
-    },
-    {
-      "heading": "Electric Dipole",
-      "body": "An electric dipole (two equal, opposite charges separated by a small distance) has a dipole moment p = q×2a (from −q to +q); its field falls off faster (∝1/r³ on the axial/equatorial line) than a single point charge's field (∝1/r²), and in a uniform external field, a dipole experiences zero net force but a torque τ = p×E that tends to align it with the field."
     }
   ],
   "commonMisconceptions": [
+    "Thinking charge can take any arbitrary value — charge is QUANTIZED (always an integer multiple of e); a fractional multiple of e is never observed on an isolated free particle.",
     "Believing Gauss's law only applies to symmetric charge distributions — it is universally true for ANY closed surface and ANY charge distribution; it is just most USEFUL for calculation when symmetry lets you simplify the flux integral.",
     "Assuming charges outside the Gaussian surface don't affect the electric field at points on the surface — they still contribute to the field (and can affect its direction/uniformity), they simply contribute zero NET flux through the closed surface.",
     "Treating field lines as real physical lines with mass or existence rather than a visualisation tool that always follows the rule 'no two field lines cross.'"
   ],
   "examples": [
+    "Three point charges are arranged in a triangle: the net force on any one of them is found by computing the Coulomb force from each of the other two SEPARATELY (as if the third charge weren't there) and then adding the two force vectors — never by modifying either pairwise force for the third charge's presence.",
     "Inside a uniformly charged hollow spherical shell, the electric field is exactly zero everywhere, regardless of how the charge is distributed on the shell (as long as it's uniform/symmetric).",
     "The field near an infinite charged plane sheet is the same at 1 cm or 1 km away, unlike a point charge's field which weakens with distance."
   ],

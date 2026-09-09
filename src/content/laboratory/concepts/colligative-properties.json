@@ -18,7 +18,12 @@
     "boiling point elevation",
     "freezing point depression",
     "osmotic pressure",
-    "abnormal molar mass"
+    "abnormal molar mass",
+    "relative lowering of vapour pressure",
+    "elevation of boiling point",
+    "depression of freezing point",
+    "molar mass determination",
+    "van't Hoff factor"
   ],
   "difficulty": "intermediate",
   "subjectDomain": "chemistry",
@@ -36,5 +41,35 @@
     "Salt lowers water's freezing point on icy roads — more dissolved ion particles mean a greater freezing point depression than the same molar amount of a non-dissociating solute would produce.",
     "Acetic acid dissolved in benzene shows an experimentally measured molar mass roughly DOUBLE its true formula mass, because acetic acid molecules pair up into hydrogen-bonded dimers in the non-polar benzene solvent, effectively halving the number of independent solute particles (van't Hoff factor i ≈ 0.5)."
   ],
-  "genZNote": "Colligative properties don't care who you are, just how many of you showed up."
+  "genZNote": "Colligative properties don't care who you are, just how many of you showed up.",
+  "explanationSections": [
+    {
+      "heading": "The Four Colligative Properties",
+      "body": "Adding a non-volatile solute to a solvent produces four effects that depend only on the NUMBER of dissolved solute particles, not their identity — hence 'colligative' (from Latin, 'bound together'): relative lowering of vapour pressure, elevation of boiling point, depression of freezing point, and osmotic pressure. All four follow directly from the solute lowering the solvent's vapour pressure (Raoult's law)."
+    },
+    {
+      "heading": "Relative Lowering of Vapour Pressure",
+      "body": "For a non-volatile solute, the relative lowering of vapour pressure equals the solute's mole fraction: (p° − p)/p° = x(solute), where p° is the pure solvent's vapour pressure and p is the solution's vapour pressure. This is Raoult's law rearranged, and is itself used experimentally to determine a solute's molar mass from measured vapour pressures."
+    },
+    {
+      "heading": "Elevation of Boiling Point",
+      "body": "Boiling point elevation: ΔTb = Kb × m, where Kb is the molal boiling point elevation constant (ebullioscopic constant, specific to the solvent) and m is the solution's molality. Because the solvent's vapour pressure is lowered, a higher temperature is needed to raise it back to atmospheric pressure, so the boiling point rises."
+    },
+    {
+      "heading": "Depression of Freezing Point",
+      "body": "Freezing point depression: ΔTf = Kf × m, where Kf is the molal freezing point depression constant (cryoscopic constant, specific to the solvent) and m is the solution's molality. This is the principle behind salting icy roads and using antifreeze in a car's radiator."
+    },
+    {
+      "heading": "Osmotic Pressure",
+      "body": "Osmotic pressure arises from solvent flow across a semipermeable membrane toward the more concentrated solution, and is given by π = CRT (van't Hoff equation for dilute solutions), where C is the solution's molar concentration, R is the gas constant, and T is the absolute temperature. Osmotic pressure is measured at a fixed temperature and gives large, easily measurable pressure values even for very dilute solutions, making it the most sensitive colligative property for determining the molar mass of large molecules (e.g. polymers, proteins)."
+    },
+    {
+      "heading": "Determination of Molar Mass",
+      "body": "Any of the four colligative properties can be measured experimentally and used to back-calculate the solute's molar mass, since each formula (Δp/p°, ΔTb, ΔTf, or π) links the measured quantity to the number of moles of solute present for a known mass of solute and solvent. Osmotic pressure is generally preferred for high-molar-mass solutes (proteins, polymers) since it gives a measurable effect even at very low concentrations, where boiling-point/freezing-point changes would be too small to measure accurately."
+    },
+    {
+      "heading": "Van't Hoff Factor and Abnormal Molar Mass",
+      "body": "Because colligative properties depend only on the NUMBER of solute particles, measuring one experimentally and back-calculating molar mass via the standard formula gives an 'ABNORMAL' (i.e., apparently wrong) molar mass whenever the solute's actual particle count in solution differs from what a simple, non-interacting molecular formula would predict. If the solute DISSOCIATES into more particles (e.g. NaCl → Na⁺ + Cl⁻, doubling the particle count), the observed colligative effect is LARGER than expected, making the calculated molar mass come out LOWER than the true formula mass. If the solute ASSOCIATES — clumping together, e.g. acetic acid forming hydrogen-bonded dimers in a non-polar solvent like benzene, effectively halving the particle count — the observed colligative effect is SMALLER than expected, making the calculated molar mass come out HIGHER than the true formula mass. The van't Hoff factor, i = (observed colligative property) / (calculated colligative property assuming no dissociation/association) = (normal molar mass) / (observed/abnormal molar mass), quantifies and corrects for this: i > 1 signals dissociation, i < 1 signals association, and i = 1 signals neither (a genuinely non-electrolyte, non-associating solute)."
+    }
+  ]
 }
