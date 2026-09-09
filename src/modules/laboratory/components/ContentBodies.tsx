@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { ShieldWarning } from '@phosphor-icons/react'
 import { CalloutBox, Card, CardBody } from '@/shared/components'
 import { useBreakpointClass, GRID_COLS_PRESETS } from '@/shared/hooks/useMediaQuery'
-import type { BiochemicalTest, BiosafetyTopic, Equipment, Formula, LabConcept, Media, Protocol } from '@/core/laboratory/types'
+import type { BiochemicalTest, BiosafetyTopic, Equipment, Formula, LabConcept, LabConceptSection, Media, Protocol } from '@/core/laboratory/types'
 
 /**
  * Category-specific body renderers, extracted out of LaboratoryDetailPage
@@ -87,11 +87,44 @@ export function ProtocolBody({ item }: { item: Protocol }) {
   )
 }
 
+/**
+ * Renders one entry of `LabConcept.explanationSections`. A section with
+ * `subsections` renders each as its own labelled sub-block (h4-weight
+ * heading) under the section's h2 heading; a section with only `body`
+ * renders as plain prose, same as the pre-existing flat Explanation.
+ */
+function ConceptSection({ section }: { section: LabConceptSection }) {
+  return (
+    <div>
+      <h2 className="mb-2 font-display text-h3 font-medium text-ink-primary">{section.heading}</h2>
+      {section.body && <p className="font-body text-body text-ink-secondary">{section.body}</p>}
+      {section.subsections && section.subsections.length > 0 && (
+        <div className="mt-3 flex flex-col gap-3">
+          {section.subsections.map((sub, i) => (
+            <div key={i}>
+              <h3 className="mb-1 font-ui text-ui font-medium text-ink-primary">{sub.heading}</h3>
+              <p className="font-body text-body text-ink-secondary">{sub.body}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export function ConceptBody({ item }: { item: LabConcept }) {
   return (
     <>
       <Section title="Summary">{item.summary}</Section>
-      <Section title="Explanation">{item.explanation}</Section>
+      {item.explanationSections && item.explanationSections.length > 0 ? (
+        <div className="flex flex-col gap-5">
+          {item.explanationSections.map((section, i) => (
+            <ConceptSection key={i} section={section} />
+          ))}
+        </div>
+      ) : (
+        <Section title="Explanation">{item.explanation}</Section>
+      )}
       {item.comparison && item.comparison.length > 0 && (
         <Section title="Comparison">
           <div className="overflow-x-auto rounded-md border border-border">
