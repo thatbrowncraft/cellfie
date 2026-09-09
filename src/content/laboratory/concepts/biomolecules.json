@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Chemistry Part II, Class 12 — Biomolecules",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Chemistry Part II, Class 12 — Biomolecules"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT-aligned foundational coverage.",
   "searchKeywords": [
@@ -32,6 +38,71 @@
   "relatedFormulas": [],
   "summary": "Biomolecules — carbohydrates, proteins (built from amino acids), and nucleic acids — each have characteristic structures whose function depends critically on non-covalent interactions like hydrogen bonding, which is why heat or pH extremes can permanently disrupt their structure (denaturation) without breaking their covalent backbone.",
   "explanation": "Carbohydrates are classified by hydrolysis behaviour: MONOSACCHARIDES (like glucose, fructose) cannot be hydrolysed into simpler sugars; OLIGOSACCHARIDES (like sucrose, maltose — mainly disaccharides) hydrolyse into 2-10 monosaccharide units; POLYSACCHARIDES (like starch, cellulose, glycogen) hydrolyse into many monosaccharide units. Glucose exists in both open-chain and cyclic (pyranose ring) forms in solution, in dynamic equilibrium — this is why it can simultaneously give a positive Tollens'/Fehling's test (via the small equilibrium amount of open-chain aldehyde form) while spending most of its time as the cyclic form. Amino acids are the building blocks of proteins, each having both an acidic (-COOH) and a basic (-NH₂) group on the same molecule; in the solid state and in solution near neutral pH, an amino acid exists predominantly as a ZWITTERION (internal salt: -COO⁻ and -NH₃⁺ simultaneously on the same molecule), which is why amino acids have unusually high melting points and water solubility compared to simple organic acids/amines of similar size. Proteins have a hierarchy of structure: PRIMARY structure is just the sequence of amino acids linked by peptide bonds; SECONDARY structure (α-helix, β-pleated sheet) is a regular, repeating local shape held together by HYDROGEN BONDS between backbone C=O and N-H groups; TERTIARY structure is the overall 3D folding, stabilised by various side-chain interactions (hydrogen bonds, disulfide bridges, hydrophobic interactions, ionic bonds); QUATERNARY structure applies only when multiple polypeptide chains (subunits) assemble together (e.g. haemoglobin's four subunits). DENATURATION is the loss of a protein's secondary/tertiary/quaternary structure (and hence its biological function) caused by heat, extreme pH, or certain chemicals — critically, it disrupts only the WEAKER, non-covalent/secondary interactions (hydrogen bonds, etc.) holding the folded shape together, WITHOUT breaking the primary structure's covalent peptide bonds; this is why the process is often (though not always) irreversible for the protein's function, even though its basic chemical composition (amino acid sequence) remains intact. Nucleic acids (DNA, RNA) are polymers of nucleotides (a nitrogenous base + a pentose sugar + a phosphate group); DNA's double helix is held together by specific hydrogen bonding between complementary base pairs (A-T, G-C in DNA; A-U, G-C in RNA). ENZYMES are biological catalysts (almost all proteins) that dramatically speed up specific biochemical reactions by lowering the reaction's activation energy, without themselves being consumed. Enzyme action follows the 'lock and key' or induced-fit model: the substrate binds a specific ACTIVE SITE, whose shape (determined by the enzyme's tertiary structure) confers high specificity for that substrate. Enzyme activity is sensitive to temperature and pH — activity rises with temperature up to an OPTIMUM, beyond which the enzyme (a protein) denatures and activity collapses sharply, rather than continuing to rise; each enzyme also has an optimum pH outside which its activity falls. Some enzymes require non-protein helper molecules to function: a COFACTOR can be an inorganic ion (e.g. Zn²⁺, Mg²⁺) or an organic molecule; an organic cofactor that is loosely/transiently bound is a COENZYME (e.g. many B-vitamin derivatives, like NAD⁺ derived from niacin), while one that is tightly/permanently bound (often covalently) is a PROSTHETIC GROUP. An APOENZYME (the protein part alone, catalytically inactive) combines with its cofactor to form the active HOLOENZYME. Enzyme INHIBITORS reduce activity: COMPETITIVE inhibitors structurally resemble the substrate and compete directly for the active site (their effect can be overcome by adding excess substrate), while NON-COMPETITIVE inhibitors bind elsewhere on the enzyme, altering its shape (and hence active-site function) regardless of substrate concentration. VITAMINS are organic compounds required in small amounts in the diet (the body largely cannot synthesise them) for normal metabolism; they are classified by solubility, which directly determines how the body handles excess intake: FAT-SOLUBLE vitamins (A, D, E, K) are stored in adipose tissue and the liver, so excess intake can accumulate to TOXIC levels (hypervitaminosis) over time; WATER-SOLUBLE vitamins (B-complex, C) are NOT significantly stored, with any excess simply excreted in urine, making toxicity from these far less common but ALSO making regular dietary intake more important, since deficiency can develop more quickly (e.g. vitamin C deficiency causes scurvy; vitamin D deficiency causes rickets in children/osteomalacia in adults; vitamin A deficiency causes night blindness; vitamin B1/thiamine deficiency causes beriberi). HORMONES are chemical messengers, typically secreted directly into the bloodstream by ENDOCRINE (ductless) glands, that act on distant TARGET tissues/organs bearing the specific receptor for that hormone — unlike enzymes (which catalyse reactions locally, often repeatedly), hormones act at often minute concentrations and are eventually broken down/cleared, requiring continued secretion for a sustained effect. Hormones are chemically diverse: PROTEIN/PEPTIDE hormones (e.g. insulin) generally bind cell-SURFACE receptors (being relatively large/polar, they cannot cross the lipid membrane), triggering an intracellular second-messenger cascade; STEROID hormones (e.g. cortisol, estrogen — derived from cholesterol, lipophilic) can cross the cell membrane directly and typically bind INTRACELLULAR/nuclear receptors, often directly influencing gene transcription — this fundamental difference in receptor location explains characteristic differences in each hormone class's speed and duration of action.",
+  "explanationSections": [
+    {
+      "heading": "Carbohydrates",
+      "body": "Carbohydrates are classified by how far they hydrolyse: MONOSACCHARIDES (e.g. glucose, fructose) cannot be hydrolysed into simpler sugars at all; OLIGOSACCHARIDES (e.g. sucrose, maltose — mainly disaccharides) hydrolyse into 2–10 monosaccharide units; POLYSACCHARIDES (e.g. starch, cellulose, glycogen) hydrolyse into many monosaccharide units. Glucose exists in both open-chain and cyclic (pyranose ring) forms in solution, in dynamic equilibrium — this is why it can simultaneously give a positive Tollens'/Fehling's test (via the small equilibrium amount of open-chain aldehyde form) while spending most of its time as the cyclic form."
+    },
+    {
+      "heading": "Amino Acids",
+      "body": "Amino acids are the building blocks of proteins, each having both an acidic (-COOH) and a basic (-NH₂) group on the same molecule. In the solid state and in solution near neutral pH, an amino acid exists predominantly as a ZWITTERION (internal salt: -COO⁻ and -NH₃⁺ simultaneously on the same molecule), which is why amino acids have unusually high melting points and water solubility compared to simple organic acids/amines of similar size."
+    },
+    {
+      "heading": "Proteins",
+      "subsections": [
+        {
+          "heading": "Levels of Protein Structure",
+          "body": "Proteins have a hierarchy of structure: PRIMARY structure is just the sequence of amino acids linked by peptide bonds; SECONDARY structure (α-helix, β-pleated sheet) is a regular, repeating local shape held together by HYDROGEN BONDS between backbone C=O and N-H groups; TERTIARY structure is the overall 3D folding, stabilised by various side-chain interactions (hydrogen bonds, disulfide bridges, hydrophobic interactions, ionic bonds); QUATERNARY structure applies only when multiple polypeptide chains (subunits) assemble together (e.g. haemoglobin's four subunits)."
+        },
+        {
+          "heading": "Denaturation",
+          "body": "DENATURATION is the loss of a protein's secondary/tertiary/quaternary structure (and hence its biological function) caused by heat, extreme pH, or certain chemicals — critically, it disrupts only the WEAKER, non-covalent/secondary interactions (hydrogen bonds, etc.) holding the folded shape together, WITHOUT breaking the primary structure's covalent peptide bonds. This is why the process is often (though not always) irreversible for the protein's function, even though its basic chemical composition (amino acid sequence) remains intact."
+        }
+      ]
+    },
+    {
+      "heading": "Nucleic Acids",
+      "body": "Nucleic acids (DNA, RNA) are polymers of nucleotides (a nitrogenous base + a pentose sugar + a phosphate group). DNA's double helix is held together by specific hydrogen bonding between complementary base pairs (A-T, G-C in DNA; A-U, G-C in RNA)."
+    },
+    {
+      "heading": "Enzymes",
+      "subsections": [
+        {
+          "heading": "Basic Concept and Mechanism",
+          "body": "Enzymes are biological catalysts (almost all proteins) that dramatically speed up specific biochemical reactions by lowering the reaction's activation energy, without themselves being consumed. Enzyme action follows the 'lock and key' or induced-fit model: the substrate binds a specific ACTIVE SITE, whose shape (determined by the enzyme's tertiary structure) confers high specificity for that substrate."
+        },
+        {
+          "heading": "Factors Affecting Activity",
+          "body": "Enzyme activity is sensitive to temperature and pH — activity rises with temperature up to an OPTIMUM, beyond which the enzyme (a protein) denatures and activity collapses sharply, rather than continuing to rise; each enzyme also has an optimum pH outside which its activity falls."
+        },
+        {
+          "heading": "Cofactors and Coenzymes",
+          "body": "Some enzymes require non-protein helper molecules to function: a COFACTOR can be an inorganic ion (e.g. Zn²⁺, Mg²⁺) or an organic molecule; an organic cofactor that is loosely/transiently bound is a COENZYME (e.g. many B-vitamin derivatives, like NAD⁺ derived from niacin), while one that is tightly/permanently bound (often covalently) is a PROSTHETIC GROUP. An APOENZYME (the protein part alone, catalytically inactive) combines with its cofactor to form the active HOLOENZYME."
+        },
+        {
+          "heading": "Inhibition",
+          "body": "Enzyme INHIBITORS reduce activity: COMPETITIVE inhibitors structurally resemble the substrate and compete directly for the active site (their effect can be overcome by adding excess substrate), while NON-COMPETITIVE inhibitors bind elsewhere on the enzyme, altering its shape (and hence active-site function) regardless of substrate concentration."
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "body": "VITAMINS are organic compounds required in small amounts in the diet (the body largely cannot synthesise them) for normal metabolism; they are classified by solubility, which directly determines how the body handles excess intake. FAT-SOLUBLE vitamins (A, D, E, K) are stored in adipose tissue and the liver, so excess intake can accumulate to TOXIC levels (hypervitaminosis) over time. WATER-SOLUBLE vitamins (B-complex, C) are NOT significantly stored, with any excess simply excreted in urine, making toxicity from these far less common but ALSO making regular dietary intake more important, since deficiency can develop more quickly (e.g. vitamin C deficiency causes scurvy; vitamin D deficiency causes rickets in children/osteomalacia in adults; vitamin A deficiency causes night blindness; vitamin B1/thiamine deficiency causes beriberi)."
+    },
+    {
+      "heading": "Hormones",
+      "subsections": [
+        {
+          "heading": "Basic Concept",
+          "body": "Hormones are chemical messengers, typically secreted directly into the bloodstream by ENDOCRINE (ductless) glands, that act on distant TARGET tissues/organs bearing the specific receptor for that hormone — unlike enzymes (which catalyse reactions locally, often repeatedly), hormones act at often minute concentrations and are eventually broken down/cleared, requiring continued secretion for a sustained effect."
+        },
+        {
+          "heading": "Peptide vs Steroid Hormones",
+          "body": "Hormones are chemically diverse: PROTEIN/PEPTIDE hormones (e.g. insulin) generally bind cell-SURFACE receptors (being relatively large/polar, they cannot cross the lipid membrane), triggering an intracellular second-messenger cascade; STEROID hormones (e.g. cortisol, estrogen — derived from cholesterol, lipophilic) can cross the cell membrane directly and typically bind INTRACELLULAR/nuclear receptors, often directly influencing gene transcription — this fundamental difference in receptor location explains characteristic differences in each hormone class's speed and duration of action."
+        }
+      ]
+    }
+  ],
   "commonMisconceptions": [
     "Assuming glucose exists purely as an open-chain aldehyde in solution — it actually exists predominantly in cyclic (pyranose) form, with only a small equilibrium fraction as the open-chain form, which is nonetheless enough to give positive aldehyde-specific tests.",
     "Believing protein denaturation breaks the peptide (covalent) bonds of the primary structure — denaturation specifically disrupts the WEAKER secondary/tertiary/quaternary interactions (hydrogen bonds, etc.), leaving the primary amino acid sequence chemically intact.",

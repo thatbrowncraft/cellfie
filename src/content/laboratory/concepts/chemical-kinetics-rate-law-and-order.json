@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Chemistry Part I, Class 12 — Chemical Kinetics",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Chemistry Part I, Class 12 — Chemical Kinetics"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT-aligned foundational coverage.",
   "searchKeywords": [
@@ -31,6 +37,36 @@
   ],
   "summary": "The order of a reaction is an experimentally determined exponent in the rate law (which may or may not match stoichiometric coefficients), distinct from molecularity (a theoretical count of colliding species in an elementary step); rate constants are strongly temperature-dependent, as captured by the Arrhenius equation.",
   "explanation": "The rate law expresses reaction rate as Rate = k[A]^m[B]^n, where the exponents m and n (the order with respect to each reactant, and their sum the OVERALL order) must be determined EXPERIMENTALLY — they are NOT necessarily equal to the stoichiometric coefficients in the balanced equation (that equality holds only for a genuinely elementary single-step reaction). Order can be zero (rate independent of that reactant's concentration), a positive integer, or even a fraction, and can only be found from experimental rate data (initial rates method, integrated rate law fitting, or half-life method), never just by inspecting the balanced equation. Molecularity, by contrast, is a purely theoretical concept: the number of reactant species (atoms/ions/molecules) that must collide simultaneously in a single ELEMENTARY step to produce a reaction — it is always a whole positive number (1, 2, or rarely 3), and it applies only to a single elementary step, never to a complex multi-step overall reaction. For a first-order reaction, half-life t½ = 0.693/k is INDEPENDENT of initial concentration (constant regardless of how much reactant you start with) — a defining, frequently-tested characteristic distinguishing it from zero-order (t½ ∝ initial concentration) and second-order kinetics (t½ ∝ 1/initial concentration). A PSEUDO first-order reaction is one that is intrinsically higher order (e.g. genuinely second order, involving two reactants) but experimentally BEHAVES as first order because one reactant (e.g., water, in acid-catalysed ester hydrolysis) is present in such large excess that its concentration stays essentially constant throughout the reaction. The Arrhenius equation, k = Ae^(−Ea/RT), quantifies how strongly the rate constant increases with temperature; Ea (activation energy) is the minimum energy colliding molecules need to react, and a CATALYST works specifically by providing an alternative reaction pathway with LOWER activation energy (not by shifting equilibrium position, and not by being consumed in the reaction). COLLISION THEORY provides the physical picture underlying the Arrhenius equation: a reaction can only occur when reactant molecules COLLIDE, but not every collision is 'effective' (leads to product) — a collision must satisfy two conditions simultaneously: the colliding molecules must have combined kinetic energy AT LEAST equal to the activation energy (Ea), AND they must collide with the correct relative ORIENTATION (so that the right atoms/groups can actually interact and form/break the necessary bonds). This is formalised as Rate ∝ (collision frequency) × (fraction of collisions with energy ≥ Ea) × (steric/orientation probability factor, P) — most molecular collisions in a reacting mixture are actually INEFFECTIVE, either because they lack sufficient energy or because the orientation is wrong, which is exactly why a reaction proceeds far more slowly than the raw collision frequency alone would suggest. Increasing TEMPERATURE increases the rate primarily by increasing the FRACTION of molecules with energy ≥ Ea (following the Maxwell-Boltzmann energy distribution), rather than by significantly increasing the total collision frequency itself — this is a frequently tested distinction, since it explains why even a modest temperature rise (e.g. 10°C) can dramatically speed up a reaction despite barely changing the average molecular speed.",
+  "explanationSections": [
+    {
+      "heading": "The Rate Law",
+      "body": "The rate law expresses reaction rate as Rate = k[A]^m[B]^n, where the exponents m and n (the order with respect to each reactant, and their sum the OVERALL order) must be determined EXPERIMENTALLY — they are NOT necessarily equal to the stoichiometric coefficients in the balanced equation (that equality holds only for a genuinely elementary single-step reaction). Order can be zero (rate independent of that reactant's concentration), a positive integer, or even a fraction, and can only be found from experimental rate data (initial rates method, integrated rate law fitting, or half-life method), never just by inspecting the balanced equation."
+    },
+    {
+      "heading": "Molecularity vs Order",
+      "body": "Molecularity, by contrast, is a purely theoretical concept: the number of reactant species (atoms/ions/molecules) that must collide simultaneously in a single ELEMENTARY step to produce a reaction — it is always a whole positive number (1, 2, or rarely 3), and it applies only to a single elementary step, never to a complex multi-step overall reaction."
+    },
+    {
+      "heading": "Half-Life and Reaction Order",
+      "body": "For a first-order reaction, half-life t½ = 0.693/k is INDEPENDENT of initial concentration (constant regardless of how much reactant you start with) — a defining, frequently-tested characteristic distinguishing it from zero-order (t½ ∝ initial concentration) and second-order kinetics (t½ ∝ 1/initial concentration)."
+    },
+    {
+      "heading": "Pseudo First-Order Reactions",
+      "body": "A PSEUDO first-order reaction is one that is intrinsically higher order (e.g. genuinely second order, involving two reactants) but experimentally BEHAVES as first order because one reactant (e.g., water, in acid-catalysed ester hydrolysis) is present in such large excess that its concentration stays essentially constant throughout the reaction."
+    },
+    {
+      "heading": "Arrhenius Equation and Catalysts",
+      "body": "The Arrhenius equation, k = Ae^(−Ea/RT), quantifies how strongly the rate constant increases with temperature; Ea (activation energy) is the minimum energy colliding molecules need to react, and a CATALYST works specifically by providing an alternative reaction pathway with LOWER activation energy (not by shifting equilibrium position, and not by being consumed in the reaction)."
+    },
+    {
+      "heading": "Collision Theory",
+      "body": "COLLISION THEORY provides the physical picture underlying the Arrhenius equation: a reaction can only occur when reactant molecules COLLIDE, but not every collision is 'effective' (leads to product) — a collision must satisfy two conditions simultaneously: the colliding molecules must have combined kinetic energy AT LEAST equal to the activation energy (Ea), AND they must collide with the correct relative ORIENTATION (so that the right atoms/groups can actually interact and form/break the necessary bonds). This is formalised as Rate ∝ (collision frequency) × (fraction of collisions with energy ≥ Ea) × (steric/orientation probability factor, P) — most molecular collisions in a reacting mixture are actually INEFFECTIVE, either because they lack sufficient energy or because the orientation is wrong, which is exactly why a reaction proceeds far more slowly than the raw collision frequency alone would suggest."
+    },
+    {
+      "heading": "Effect of Temperature on Rate",
+      "body": "Increasing TEMPERATURE increases the rate primarily by increasing the FRACTION of molecules with energy ≥ Ea (following the Maxwell-Boltzmann energy distribution), rather than by significantly increasing the total collision frequency itself — this is a frequently tested distinction, since it explains why even a modest temperature rise (e.g. 10°C) can dramatically speed up a reaction despite barely changing the average molecular speed."
+    }
+  ],
   "commonMisconceptions": [
     "Assuming the order of a reaction can be read directly off the balanced chemical equation's stoichiometric coefficients — this is only valid for genuinely single-step ELEMENTARY reactions; for any multi-step mechanism, order must be found experimentally and can differ entirely from stoichiometry.",
     "Using 'order' and 'molecularity' as interchangeable terms — order is an experimental, sometimes fractional/zero quantity describing overall reaction kinetics, while molecularity is a theoretical, always-whole-number property of one specific elementary step.",

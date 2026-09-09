@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Chemistry Part I, Class 12 — Solutions",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Chemistry Part I, Class 12 — Solutions"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT-aligned foundational coverage.",
   "searchKeywords": [
@@ -30,6 +36,33 @@
   ],
   "summary": "Solution concentration can be expressed in several ways (molarity, molality, mole fraction, etc.), each with different temperature-dependence; Raoult's law predicts vapour pressure lowering for ideal solutions, with deviations pointing to specific intermolecular interaction changes.",
   "explanation": "Molarity (mol solute per litre of SOLUTION) is temperature-dependent because solution volume expands/contracts with temperature; molality (mol solute per kg of SOLVENT) and mole fraction (mol of a component / total mol of all components) are both temperature-INDEPENDENT, since they're based on mass or mole ratios rather than volume — this is exactly why molality is preferred for colligative property calculations across a temperature range. Raoult's law states that for an ideal solution, the partial vapour pressure of each volatile component is proportional to its mole fraction in the solution: pA = pA° × xA, where pA° is the vapour pressure of pure A. For a two-component ideal solution, total vapour pressure = pA° xA + pB° xB (a straight-line relationship with composition). An IDEAL solution obeys Raoult's law across the full composition range, requires solute-solvent interactions to be essentially identical in strength to solute-solute and solvent-solvent interactions, and has ΔHmixing = 0 and ΔVmixing = 0 (e.g., benzene + toluene, very similar molecules). Non-ideal solutions show deviations: POSITIVE deviation occurs when solute-solvent interactions are WEAKER than the pure-component interactions (molecules escape more easily than expected, so observed vapour pressure > Raoult's law prediction) — e.g., ethanol + acetone. NEGATIVE deviation occurs when solute-solvent interactions are STRONGER (e.g., new hydrogen bonding forms between unlike molecules), so observed vapour pressure < Raoult's law prediction — e.g., chloroform + acetone. Certain non-ideal mixtures with extreme deviation form an azeotrope — a mixture that boils at a constant temperature and distills over WITHOUT any change in composition, meaning it cannot be separated further by simple fractional distillation.",
+  "explanationSections": [
+    {
+      "heading": "Concentration Terms",
+      "body": "Molarity (mol solute per litre of SOLUTION) is temperature-dependent because solution volume expands/contracts with temperature; molality (mol solute per kg of SOLVENT) and mole fraction (mol of a component / total mol of all components) are both temperature-INDEPENDENT, since they're based on mass or mole ratios rather than volume — this is exactly why molality is preferred for colligative property calculations across a temperature range."
+    },
+    {
+      "heading": "Raoult's Law and Ideal Solutions",
+      "body": "Raoult's law states that for an ideal solution, the partial vapour pressure of each volatile component is proportional to its mole fraction in the solution: pA = pA° × xA, where pA° is the vapour pressure of pure A. For a two-component ideal solution, total vapour pressure = pA° xA + pB° xB (a straight-line relationship with composition). An IDEAL solution obeys Raoult's law across the full composition range, requires solute-solvent interactions to be essentially identical in strength to solute-solute and solvent-solvent interactions, and has ΔHmixing = 0 and ΔVmixing = 0 (e.g., benzene + toluene, very similar molecules)."
+    },
+    {
+      "heading": "Non-Ideal Solutions",
+      "subsections": [
+        {
+          "heading": "Positive Deviation",
+          "body": "POSITIVE deviation occurs when solute-solvent interactions are WEAKER than the pure-component interactions (molecules escape more easily than expected, so observed vapour pressure > Raoult's law prediction) — e.g., ethanol + acetone."
+        },
+        {
+          "heading": "Negative Deviation",
+          "body": "NEGATIVE deviation occurs when solute-solvent interactions are STRONGER (e.g., new hydrogen bonding forms between unlike molecules), so observed vapour pressure < Raoult's law prediction — e.g., chloroform + acetone."
+        },
+        {
+          "heading": "Azeotropes",
+          "body": "Certain non-ideal mixtures with extreme deviation form an azeotrope — a mixture that boils at a constant temperature and distills over WITHOUT any change in composition, meaning it cannot be separated further by simple fractional distillation."
+        }
+      ]
+    }
+  ],
   "commonMisconceptions": [
     "Using molarity interchangeably with molality in colligative property/temperature-dependent calculations — molarity changes with temperature (due to volume changes) while molality does not, making them non-interchangeable whenever temperature varies.",
     "Assuming positive deviation from Raoult's law means STRONGER intermolecular attraction between different components — it is actually the reverse: positive deviation signals WEAKER unlike-molecule interactions (compared to like-molecule interactions), letting molecules escape into vapour more easily than ideally predicted.",

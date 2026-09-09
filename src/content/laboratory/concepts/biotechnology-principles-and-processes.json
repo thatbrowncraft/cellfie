@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Biology, Class 12",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Biology, Class 12"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT Class 12 aligned. Cross-references existing Cellfie laboratory protocols for the corresponding hands-on techniques.",
   "searchKeywords": [
@@ -38,6 +44,32 @@
   ],
   "summary": "Genetic engineering (recombinant DNA technology) relies on three core tools — restriction enzymes to cut DNA at specific sequences, cloning vectors to carry and replicate a foreign DNA fragment inside a host, and a competent host cell to take up and express that recombinant DNA — combined into a defined workflow: isolate, cut, amplify/ligate, insert, then select for the rare cells that actually took up the desired recombinant construct.",
   "explanation": "Biotechnology, as legally/functionally defined, involves the use of biological systems or living organisms to make or modify products — the two core techniques underlying modern genetic engineering are (1) techniques that allow the alteration of the chemistry of genetic material (DNA/RNA) and its introduction into a host, and (2) techniques of maintaining that altered genetic material in the host, allowing its multiplication. RESTRICTION ENZYMES (a class of endonucleases, e.g. EcoRI) recognise and cut DNA at specific, short PALINDROMIC sequences, generating fragments with either 'sticky ends' (staggered cuts leaving short single-stranded overhangs that can base-pair with complementary overhangs — vastly preferred for cloning, since they anneal specifically) or 'blunt ends' (straight cuts, no overhang). A CLONING VECTOR (commonly a bacterial PLASMID, e.g. pBR322) is a self-replicating DNA molecule used to carry a foreign DNA insert into a host and ensure it is copied; essential vector features include an ORIGIN OF REPLICATION (ori — controls copy number), a SELECTABLE MARKER (e.g. an antibiotic-resistance gene, letting you distinguish transformed from non-transformed host cells by growing them on antibiotic-containing media), and a small number of unique RESTRICTION SITES (the multiple cloning site) for inserting foreign DNA — some vectors also feature INSERTIONAL INACTIVATION, where inserting foreign DNA into a marker gene disrupts (and thereby reports) successful insertion, distinguishing recombinants from self-ligated, empty vectors. The overall RECOMBINANT DNA TECHNOLOGY workflow: (1) isolate DNA (breaking open cells, removing proteins/RNA); (2) cut the DNA (and the vector) with the SAME restriction enzyme, producing complementary sticky ends; (3) ligate the fragment into the vector using DNA ligase (forming the recombinant DNA molecule); (4) introduce the recombinant DNA into a suitable HOST cell — made 'competent' to take up foreign DNA, e.g. via a calcium chloride treatment followed by a brief heat shock (bacterial transformation), or via physical methods like microinjection, gene gun (biolistics, used for plant cells), or disarmed viral/Agrobacterium vectors; (5) SELECT for the rare host cells that actually took up the recombinant DNA (using the vector's selectable marker) and, if needed, screen further to confirm the insert is present and correctly oriented; (6) express and harvest the desired gene product. PCR (polymerase chain reaction) allows in vitro AMPLIFICATION of a specific DNA sequence exponentially, using a heat-stable DNA polymerase (Taq polymerase, from the thermophilic bacterium Thermus aquaticus, chosen specifically because it survives the repeated high-temperature denaturation steps), two short primers flanking the target sequence, and repeated cycles of denaturation-annealing-extension — this is foundational to modern diagnostics, forensics, and cloning workflows. Once a desired gene product is being expressed at small scale, LARGE-SCALE production for pharmaceutical/industrial use is carried out in a BIOREACTOR (a vessel providing optimum conditions — temperature, pH, oxygen, substrate, agitation — for large-volume microbial/cell growth and product formation), followed by DOWNSTREAM PROCESSING — separating and purifying the product (via filtration, centrifugation, chromatography), formulating it with preservatives, and rigorous quality-control testing before it can be marketed.",
+  "explanationSections": [
+    {
+      "heading": "Core Techniques of Genetic Engineering",
+      "body": "Biotechnology, as legally/functionally defined, involves the use of biological systems or living organisms to make or modify products — the two core techniques underlying modern genetic engineering are (1) techniques that allow the alteration of the chemistry of genetic material (DNA/RNA) and its introduction into a host, and (2) techniques of maintaining that altered genetic material in the host, allowing its multiplication."
+    },
+    {
+      "heading": "Restriction Enzymes",
+      "body": "RESTRICTION ENZYMES (a class of endonucleases, e.g. EcoRI) recognise and cut DNA at specific, short PALINDROMIC sequences, generating fragments with either 'sticky ends' (staggered cuts leaving short single-stranded overhangs that can base-pair with complementary overhangs — vastly preferred for cloning, since they anneal specifically) or 'blunt ends' (straight cuts, no overhang)."
+    },
+    {
+      "heading": "Cloning Vectors",
+      "body": "A CLONING VECTOR (commonly a bacterial PLASMID, e.g. pBR322) is a self-replicating DNA molecule used to carry a foreign DNA insert into a host and ensure it is copied; essential vector features include an ORIGIN OF REPLICATION (ori — controls copy number), a SELECTABLE MARKER (e.g. an antibiotic-resistance gene, letting you distinguish transformed from non-transformed host cells by growing them on antibiotic-containing media), and a small number of unique RESTRICTION SITES (the multiple cloning site) for inserting foreign DNA — some vectors also feature INSERTIONAL INACTIVATION, where inserting foreign DNA into a marker gene disrupts (and thereby reports) successful insertion, distinguishing recombinants from self-ligated, empty vectors."
+    },
+    {
+      "heading": "Recombinant DNA Technology Workflow",
+      "body": "The overall RECOMBINANT DNA TECHNOLOGY workflow: (1) isolate DNA (breaking open cells, removing proteins/RNA); (2) cut the DNA (and the vector) with the SAME restriction enzyme, producing complementary sticky ends; (3) ligate the fragment into the vector using DNA ligase (forming the recombinant DNA molecule); (4) introduce the recombinant DNA into a suitable HOST cell — made 'competent' to take up foreign DNA, e.g. via a calcium chloride treatment followed by a brief heat shock (bacterial transformation), or via physical methods like microinjection, gene gun (biolistics, used for plant cells), or disarmed viral/Agrobacterium vectors; (5) SELECT for the rare host cells that actually took up the recombinant DNA (using the vector's selectable marker) and, if needed, screen further to confirm the insert is present and correctly oriented; (6) express and harvest the desired gene product."
+    },
+    {
+      "heading": "PCR",
+      "body": "PCR (polymerase chain reaction) allows in vitro AMPLIFICATION of a specific DNA sequence exponentially, using a heat-stable DNA polymerase (Taq polymerase, from the thermophilic bacterium Thermus aquaticus, chosen specifically because it survives the repeated high-temperature denaturation steps), two short primers flanking the target sequence, and repeated cycles of denaturation-annealing-extension — this is foundational to modern diagnostics, forensics, and cloning workflows."
+    },
+    {
+      "heading": "Large-Scale Production",
+      "body": "Once a desired gene product is being expressed at small scale, LARGE-SCALE production for pharmaceutical/industrial use is carried out in a BIOREACTOR (a vessel providing optimum conditions — temperature, pH, oxygen, substrate, agitation — for large-volume microbial/cell growth and product formation), followed by DOWNSTREAM PROCESSING — separating and purifying the product (via filtration, centrifugation, chromatography), formulating it with preservatives, and rigorous quality-control testing before it can be marketed."
+    }
+  ],
   "commonMisconceptions": [
     "Assuming any DNA cut can be directly joined to any other cut DNA — successful, specific ligation generally requires COMPLEMENTARY sticky ends, produced by cutting both the vector and the insert with the SAME restriction enzyme (or enzymes producing compatible overhangs).",
     "Thinking a selectable marker's job is to indicate the gene of interest is being expressed — its actual job is simpler: to distinguish host cells that took up the vector AT ALL (e.g. via antibiotic resistance) from those that did not, not to confirm correct insert expression.",

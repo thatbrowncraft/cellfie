@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Biology, Class 12",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Biology, Class 12"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT Class 12 aligned.",
   "searchKeywords": [
@@ -32,6 +38,41 @@
   ],
   "summary": "Human reproduction is sexual and viviparous: gametogenesis produces haploid sperm and ova in the primary sex organs, the menstrual cycle prepares the female reproductive tract for a potential pregnancy each month, and after internal fertilisation the zygote implants and develops through a placenta-supported pregnancy ending in parturition and lactation.",
   "explanation": "SPERMATOGENESIS occurs in the seminiferous tubules of the testis: a diploid spermatogonium undergoes mitotic multiplication, then one primary spermatocyte enters meiosis I to form two secondary spermatocytes (haploid, still with duplicated chromatids), which complete meiosis II to give four haploid spermatids; spermiogenesis then transforms spermatids into motile spermatozoa (each with an acrosome-capped head, midpiece packed with mitochondria for ATP, and a flagellum for motility). Sertoli cells nourish developing sperm and are regulated by FSH; Leydig cells (interstitial) secrete testosterone under LH stimulation. OOGENESIS begins in FETAL life: oogonia multiply and enter meiosis I but arrest at prophase I as primary oocytes (contained in primordial follicles) until puberty. Each month, one primary oocyte resumes meiosis I to form a secondary oocyte (large, retaining nearly all the cytoplasm) and a much smaller first polar body — the UNEQUAL cytoplasmic division ensures the future egg has enough reserves to support early development. The secondary oocyte arrests again at METAPHASE II and is released at ovulation; meiosis II is completed only IF fertilisation occurs, yielding the ovum and a second polar body. The MENSTRUAL CYCLE (~28 days) has three phases driven by the hypothalamus-pituitary-ovary-uterus axis: the MENSTRUAL phase (endometrium sheds, ~day 1-5, if no implantation occurred), the FOLLICULAR/PROLIFERATIVE phase (FSH drives follicle growth; the growing follicle secretes rising estrogen, which thickens the endometrium and triggers a LH surge around day 14), and the LUTEAL/SECRETORY phase (the ruptured follicle becomes the corpus luteum, secreting progesterone, which maintains the endometrium and prepares it for implantation; if no fertilisation occurs, the corpus luteum degenerates, progesterone falls, and menstruation begins the next cycle). FERTILISATION normally occurs in the AMPULLA of the fallopian tube: a sperm penetrates the corona radiata and zona pellucida, triggering the acrosome reaction and, after fusion, a cortical reaction that blocks polyspermy (fertilisation by more than one sperm). The resulting diploid zygote undergoes rapid mitotic cleavage as it travels toward the uterus, forming a morula and then a blastocyst (with an inner cell mass that becomes the embryo and an outer trophoblast that implants into the endometrium ~day 6-7). The placenta, formed from both trophoblast (fetal) and endometrial (maternal) tissue, is the site of nutrient/gas/waste exchange (via diffusion, NOT direct blood mixing) and also functions as an endocrine gland, secreting hCG (maintains the corpus luteum early in pregnancy — the hormone detected by pregnancy tests), estrogen, progesterone, and hPL. PARTURITION (childbirth) is triggered by neuroendocrine signals near full term, culminating in a positive-feedback loop of oxytocin from the posterior pituitary causing increasingly strong uterine (myometrial) contractions. LACTATION is stimulated by prolactin (milk production) and oxytocin (milk ejection reflex, triggered by suckling); colostrum, the first milk, is especially rich in antibodies (IgA) that provide passive immunity to the newborn.",
+  "explanationSections": [
+    {
+      "heading": "Spermatogenesis",
+      "body": "SPERMATOGENESIS occurs in the seminiferous tubules of the testis: a diploid spermatogonium undergoes mitotic multiplication, then one primary spermatocyte enters meiosis I to form two secondary spermatocytes (haploid, still with duplicated chromatids), which complete meiosis II to give four haploid spermatids; spermiogenesis then transforms spermatids into motile spermatozoa (each with an acrosome-capped head, midpiece packed with mitochondria for ATP, and a flagellum for motility). Sertoli cells nourish developing sperm and are regulated by FSH; Leydig cells (interstitial) secrete testosterone under LH stimulation."
+    },
+    {
+      "heading": "Oogenesis",
+      "body": "OOGENESIS begins in FETAL life: oogonia multiply and enter meiosis I but arrest at prophase I as primary oocytes (contained in primordial follicles) until puberty. Each month, one primary oocyte resumes meiosis I to form a secondary oocyte (large, retaining nearly all the cytoplasm) and a much smaller first polar body — the UNEQUAL cytoplasmic division ensures the future egg has enough reserves to support early development. The secondary oocyte arrests again at METAPHASE II and is released at ovulation; meiosis II is completed only IF fertilisation occurs, yielding the ovum and a second polar body."
+    },
+    {
+      "heading": "The Menstrual Cycle",
+      "body": "The MENSTRUAL CYCLE (~28 days) has three phases driven by the hypothalamus-pituitary-ovary-uterus axis: the MENSTRUAL phase (endometrium sheds, ~day 1-5, if no implantation occurred), the FOLLICULAR/PROLIFERATIVE phase (FSH drives follicle growth; the growing follicle secretes rising estrogen, which thickens the endometrium and triggers a LH surge around day 14), and the LUTEAL/SECRETORY phase (the ruptured follicle becomes the corpus luteum, secreting progesterone, which maintains the endometrium and prepares it for implantation; if no fertilisation occurs, the corpus luteum degenerates, progesterone falls, and menstruation begins the next cycle)."
+    },
+    {
+      "heading": "Fertilisation and Early Development",
+      "body": "FERTILISATION normally occurs in the AMPULLA of the fallopian tube: a sperm penetrates the corona radiata and zona pellucida, triggering the acrosome reaction and, after fusion, a cortical reaction that blocks polyspermy (fertilisation by more than one sperm). The resulting diploid zygote undergoes rapid mitotic cleavage as it travels toward the uterus, forming a morula and then a blastocyst (with an inner cell mass that becomes the embryo and an outer trophoblast that implants into the endometrium ~day 6-7)."
+    },
+    {
+      "heading": "The Placenta",
+      "body": "The placenta, formed from both trophoblast (fetal) and endometrial (maternal) tissue, is the site of nutrient/gas/waste exchange (via diffusion, NOT direct blood mixing) and also functions as an endocrine gland, secreting hCG (maintains the corpus luteum early in pregnancy — the hormone detected by pregnancy tests), estrogen, progesterone, and hPL."
+    },
+    {
+      "heading": "Parturition and Lactation",
+      "subsections": [
+        {
+          "heading": "Parturition",
+          "body": "PARTURITION (childbirth) is triggered by neuroendocrine signals near full term, culminating in a positive-feedback loop of oxytocin from the posterior pituitary causing increasingly strong uterine (myometrial) contractions."
+        },
+        {
+          "heading": "Lactation",
+          "body": "LACTATION is stimulated by prolactin (milk production) and oxytocin (milk ejection reflex, triggered by suckling); colostrum, the first milk, is especially rich in antibodies (IgA) that provide passive immunity to the newborn."
+        }
+      ]
+    }
+  ],
   "commonMisconceptions": [
     "Thinking oogenesis and spermatogenesis both produce four functional gametes per meiosis — spermatogenesis does, but oogenesis produces only ONE functional ovum plus polar bodies, due to highly unequal cytoplasmic division.",
     "Assuming maternal and fetal blood mix directly in the placenta — the two circulations remain separate, with exchange occurring across a thin diffusion barrier, not by direct blood mixing.",

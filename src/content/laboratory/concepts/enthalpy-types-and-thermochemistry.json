@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Chemistry Part I, Class 11 — Chemical Thermodynamics",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Chemistry Part I, Class 11 — Chemical Thermodynamics"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT-aligned foundational coverage.",
   "searchKeywords": [
@@ -30,6 +36,33 @@
   ],
   "summary": "Different named types of enthalpy change (formation, combustion, atomization, bond enthalpy, and others) each describe a specific, precisely-defined process, and Hess's law lets any reaction's overall enthalpy change be calculated by combining these standard values, regardless of the actual reaction pathway.",
   "explanation": "STANDARD ENTHALPY OF FORMATION (ΔfH°) is the enthalpy change when ONE MOLE of a compound is formed from its constituent ELEMENTS in their most stable (standard) states — by definition, the standard enthalpy of formation of any element in its most stable form is exactly ZERO (this is the reference point the whole scale is built on). STANDARD ENTHALPY OF COMBUSTION (ΔcH°) is the enthalpy change when ONE MOLE of a substance is completely burnt (combusted) in excess oxygen — always NEGATIVE (combustion is exothermic), and widely used to compare fuel values of different substances. BOND ENTHALPY (bond dissociation energy) is the energy required to break ONE MOLE of a specific bond in the GASEOUS state — for a molecule with more than one of the same type of bond (like the four C-H bonds in methane), a MEAN (average) bond enthalpy is used, since breaking each successive bond actually requires a slightly different amount of energy (the values are only exactly equal for a DIATOMIC molecule, where there's just one bond to consider). Bond enthalpies can be used to ESTIMATE reaction enthalpy: ΔH ≈ (sum of bond enthalpies broken in reactants) − (sum of bond enthalpies formed in products), though this only gives an approximate value since it uses average bond enthalpies rather than exact values for that specific molecular environment. ENTHALPY OF ATOMIZATION is the enthalpy change when ONE MOLE of a substance is converted completely into gaseous ATOMS — for a diatomic element like Cl₂, this equals HALF the bond dissociation enthalpy of the Cl-Cl bond (since one mole of Cl₂ produces TWO moles of Cl atoms), a subtle factor-of-two point that is frequently tested. HESS'S LAW (a direct consequence of enthalpy being a STATE FUNCTION) states that the total enthalpy change for a reaction is the SAME regardless of the number of steps or the specific pathway taken to get from reactants to products — this lets otherwise hard-to-measure enthalpy changes (like the enthalpy of formation of an unstable or hard-to-isolate compound) be calculated indirectly by combining a series of other, more easily measured reactions/enthalpy changes (formation, combustion, etc.) using simple algebraic addition/subtraction, as long as the combined equations correctly cancel to give the overall target reaction.",
+  "explanationSections": [
+    {
+      "heading": "Standard Enthalpy of Formation and Combustion",
+      "subsections": [
+        {
+          "heading": "Enthalpy of Formation",
+          "body": "STANDARD ENTHALPY OF FORMATION (ΔfH°) is the enthalpy change when ONE MOLE of a compound is formed from its constituent ELEMENTS in their most stable (standard) states — by definition, the standard enthalpy of formation of any element in its most stable form is exactly ZERO (this is the reference point the whole scale is built on)."
+        },
+        {
+          "heading": "Enthalpy of Combustion",
+          "body": "STANDARD ENTHALPY OF COMBUSTION (ΔcH°) is the enthalpy change when ONE MOLE of a substance is completely burnt (combusted) in excess oxygen — always NEGATIVE (combustion is exothermic), and widely used to compare fuel values of different substances."
+        }
+      ]
+    },
+    {
+      "heading": "Bond Enthalpy",
+      "body": "BOND ENTHALPY (bond dissociation energy) is the energy required to break ONE MOLE of a specific bond in the GASEOUS state — for a molecule with more than one of the same type of bond (like the four C-H bonds in methane), a MEAN (average) bond enthalpy is used, since breaking each successive bond actually requires a slightly different amount of energy (the values are only exactly equal for a DIATOMIC molecule, where there's just one bond to consider). Bond enthalpies can be used to ESTIMATE reaction enthalpy: ΔH ≈ (sum of bond enthalpies broken in reactants) − (sum of bond enthalpies formed in products), though this only gives an approximate value since it uses average bond enthalpies rather than exact values for that specific molecular environment."
+    },
+    {
+      "heading": "Enthalpy of Atomization",
+      "body": "ENTHALPY OF ATOMIZATION is the enthalpy change when ONE MOLE of a substance is converted completely into gaseous ATOMS — for a diatomic element like Cl₂, this equals HALF the bond dissociation enthalpy of the Cl-Cl bond (since one mole of Cl₂ produces TWO moles of Cl atoms), a subtle factor-of-two point that is frequently tested."
+    },
+    {
+      "heading": "Hess's Law",
+      "body": "HESS'S LAW (a direct consequence of enthalpy being a STATE FUNCTION) states that the total enthalpy change for a reaction is the SAME regardless of the number of steps or the specific pathway taken to get from reactants to products — this lets otherwise hard-to-measure enthalpy changes (like the enthalpy of formation of an unstable or hard-to-isolate compound) be calculated indirectly by combining a series of other, more easily measured reactions/enthalpy changes (formation, combustion, etc.) using simple algebraic addition/subtraction, as long as the combined equations correctly cancel to give the overall target reaction."
+    }
+  ],
   "commonMisconceptions": [
     "Confusing enthalpy of atomization of a DIATOMIC element (like Cl₂) with its bond dissociation enthalpy directly — atomization produces TWO moles of atoms per mole of Cl₂, so the atomization enthalpy is exactly HALF the Cl-Cl bond dissociation enthalpy, not equal to it.",
     "Assuming bond enthalpy calculations give an EXACT reaction enthalpy — they only give an ESTIMATE, since mean/average bond enthalpy values are used (the true energy of a specific bond varies slightly depending on its exact molecular environment).",

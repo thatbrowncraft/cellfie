@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Physics Part I, Class 12 — Semiconductor Electronics: Materials, Devices and Simple Circuits",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Physics Part I, Class 12 — Semiconductor Electronics: Materials, Devices and Simple Circuits"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT-aligned foundational coverage.",
   "searchKeywords": [
@@ -28,6 +34,37 @@
   "relatedFormulas": [],
   "summary": "A p-n junction diode conducts easily in forward bias and blocks current in reverse bias, making it useful as a rectifier; a transistor (two back-to-back junctions) can amplify signals or act as a switch, and combinations of simple switching behaviour implement digital logic gates.",
   "explanation": "A p-n junction diode, forward-biased (p-side connected to positive terminal), has its depletion region narrowed and conducts easily once past a small threshold voltage (~0.7 V for silicon, ~0.3 V for germanium); reverse-biased (p-side to negative terminal), the depletion region widens and only a negligible reverse saturation current flows — this asymmetric conduction is what makes a diode useful as a RECTIFIER, converting AC to (pulsating) DC. A half-wave rectifier uses one diode and passes only one half-cycle; a full-wave rectifier (using two or four diodes, e.g. a bridge rectifier) utilises both half-cycles, giving smoother, more efficient output. A bipolar junction transistor (BJT) has three regions (emitter, base, collector) forming two back-to-back p-n junctions (npn or pnp); in normal (active) operation, the emitter-base junction is forward-biased and the base-collector junction reverse-biased. A very thin, lightly doped base region lets most emitter current pass through to the collector, so a SMALL change in base current produces a LARGE change in collector current — this current gain is the basis of transistor AMPLIFICATION. A transistor can equally be operated as a SWITCH: fully OFF (cut-off region, negligible current) or fully ON (saturation region, maximum current), the basis of digital electronics, since these two states naturally map to binary 0 and 1. Logic gates implement Boolean operations using transistor switching: AND gate output is 1 only if ALL inputs are 1; OR gate output is 1 if ANY input is 1; NOT gate simply inverts a single input. NAND and NOR gates (AND/OR followed by NOT) are called 'universal gates' because either one alone can be used to build any other logic gate — a fact leveraged extensively in real digital circuit design.",
+  "explanationSections": [
+    {
+      "heading": "p-n Junction Diode",
+      "body": "A p-n junction diode, forward-biased (p-side connected to positive terminal), has its depletion region narrowed and conducts easily once past a small threshold voltage (~0.7 V for silicon, ~0.3 V for germanium); reverse-biased (p-side to negative terminal), the depletion region widens and only a negligible reverse saturation current flows — this asymmetric conduction is what makes a diode useful as a RECTIFIER, converting AC to (pulsating) DC."
+    },
+    {
+      "heading": "Rectifiers",
+      "body": "A half-wave rectifier uses one diode and passes only one half-cycle; a full-wave rectifier (using two or four diodes, e.g. a bridge rectifier) utilises both half-cycles, giving smoother, more efficient output."
+    },
+    {
+      "heading": "Bipolar Junction Transistor",
+      "subsections": [
+        {
+          "heading": "Structure and Operation",
+          "body": "A bipolar junction transistor (BJT) has three regions (emitter, base, collector) forming two back-to-back p-n junctions (npn or pnp); in normal (active) operation, the emitter-base junction is forward-biased and the base-collector junction reverse-biased."
+        },
+        {
+          "heading": "Amplification",
+          "body": "A very thin, lightly doped base region lets most emitter current pass through to the collector, so a SMALL change in base current produces a LARGE change in collector current — this current gain is the basis of transistor AMPLIFICATION."
+        },
+        {
+          "heading": "Transistor as a Switch",
+          "body": "A transistor can equally be operated as a SWITCH: fully OFF (cut-off region, negligible current) or fully ON (saturation region, maximum current), the basis of digital electronics, since these two states naturally map to binary 0 and 1."
+        }
+      ]
+    },
+    {
+      "heading": "Logic Gates",
+      "body": "Logic gates implement Boolean operations using transistor switching: AND gate output is 1 only if ALL inputs are 1; OR gate output is 1 if ANY input is 1; NOT gate simply inverts a single input. NAND and NOR gates (AND/OR followed by NOT) are called 'universal gates' because either one alone can be used to build any other logic gate — a fact leveraged extensively in real digital circuit design."
+    }
+  ],
   "commonMisconceptions": [
     "Assuming a diode conducts equally well in both directions if enough voltage is applied — forward bias needs only a small threshold voltage to conduct strongly, while reverse bias blocks current up to a much higher 'breakdown voltage,' after which the diode can be damaged (except specially designed Zener diodes, which exploit controlled reverse breakdown deliberately).",
     "Believing a transistor amplifies by literally 'creating' extra energy — amplification means a small input SIGNAL controls a much larger output current drawn from an external power supply; energy is not created, only controlled/redirected from the supply.",

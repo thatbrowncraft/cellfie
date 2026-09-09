@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Biology, Class 12",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Biology, Class 12"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT Class 12 aligned.",
   "searchKeywords": [
@@ -30,19 +36,80 @@
     "concept-molecular-basis-of-inheritance"
   ],
   "comparison": [
-    {
-      "aspect": "Immunity type",
-      "left": "Innate immunity — non-specific, present from birth (physical/physiological/cellular/cytokine barriers)",
-      "right": "Acquired (adaptive) immunity — specific, develops after exposure, shows memory (faster/stronger on re-exposure)"
-    },
-    {
-      "aspect": "Passive vs active immunity",
-      "left": "Active immunity — body produces its OWN antibodies (via infection or vaccination); slower onset, long-lasting memory",
-      "right": "Passive immunity — READY-MADE antibodies given directly (e.g. colostrum, antiserum); immediate protection, but short-lived, no memory"
-    }
+    [
+      [
+        "aspect",
+        "Immunity type"
+      ],
+      [
+        "left",
+        "Innate immunity — non-specific, present from birth (physical/physiological/cellular/cytokine barriers)"
+      ],
+      [
+        "right",
+        "Acquired (adaptive) immunity — specific, develops after exposure, shows memory (faster/stronger on re-exposure)"
+      ]
+    ],
+    [
+      [
+        "aspect",
+        "Passive vs active immunity"
+      ],
+      [
+        "left",
+        "Active immunity — body produces its OWN antibodies (via infection or vaccination); slower onset, long-lasting memory"
+      ],
+      [
+        "right",
+        "Passive immunity — READY-MADE antibodies given directly (e.g. colostrum, antiserum); immediate protection, but short-lived, no memory"
+      ]
+    ]
   ],
   "summary": "Human health depends on the immune system's layered defences (innate barriers plus specific, memory-forming acquired immunity), and disease arises from pathogens (bacterial, viral, protozoal, fungal, helminthic), immune dysfunction (allergy, autoimmunity, AIDS), uncontrolled cell division (cancer), or behavioural factors (drug and alcohol abuse) — each with distinct, exam-relevant mechanisms.",
   "explanation": "INNATE IMMUNITY is non-specific and present from birth, provided by physical barriers (skin, mucus membranes), physiological barriers (acidic stomach pH, saliva, tears), cellular barriers (phagocytes — neutrophils, macrophages; natural killer cells; eosinophils), and cytokine barriers (interferons, which protect uninfected cells from viral infection). ACQUIRED (adaptive) IMMUNITY is specific, develops upon exposure to a particular pathogen/antigen, and — crucially — shows IMMUNOLOGICAL MEMORY, meaning a second exposure triggers a faster, stronger response than the first. It has two arms: HUMORAL immunity (mediated by B-lymphocytes, which differentiate into plasma cells secreting ANTIBODIES — Y-shaped proteins with two heavy and two light chains, each with a constant region and a variable (antigen-binding) region) and CELL-MEDIATED immunity (mediated by T-lymphocytes — helper T cells coordinate the response, cytotoxic T cells directly kill infected/abnormal cells). ACTIVE immunity (the body makes its own antibodies, via natural infection or vaccination) is slower to develop but long-lasting due to memory cells; PASSIVE immunity (ready-made antibodies transferred in, e.g. via colostrum from mother to infant, or antiserum/antitoxin injections) gives IMMEDIATE protection but is short-lived, since no memory cells are generated. VACCINATION exploits active immunity's memory: a weakened/inactivated pathogen or its antigen is introduced, priming memory cells WITHOUT causing full disease, so a subsequent real infection is neutralised rapidly. COMMON DISEASES (exam-relevant pathogen-disease pairing): bacterial — typhoid (Salmonella typhi), pneumonia (Streptococcus pneumoniae); viral — common cold (rhinovirus); protozoal — malaria (Plasmodium, transmitted by female Anopheles mosquito — note the classic 'Plasmodium life cycle alternates between mosquito and human hosts'), amoebiasis (Entamoeba histolytica); helminthic — ascariasis (Ascaris, roundworm); fungal — ringworm (dermatophytic fungi, favoured by humid/sweaty skin conditions). ALLERGY is an exaggerated/hypersensitive immune response to normally harmless environmental antigens (allergens like dust, pollen), mediated largely by IgE antibodies triggering histamine release from mast cells — symptoms are treated with antihistamines. AUTOIMMUNITY occurs when the immune system fails to distinguish self from non-self and attacks the body's OWN tissues (e.g., rheumatoid arthritis attacking joint tissue). AIDS (Acquired Immunodeficiency Syndrome) is caused by HIV, a retrovirus that specifically infects and progressively destroys HELPER T CELLS (CD4+), crippling the ability to mount both humoral and cell-mediated responses and leaving the patient vulnerable to opportunistic infections; HIV is diagnosed via the ELISA test, which detects antibodies against viral proteins. CANCER is characterised by UNCONTROLLED, invasive cell division that ignores normal growth-regulation signals; unlike a benign tumour (which stays localised, does not invade neighbouring tissue), a MALIGNANT tumour undergoes METASTASIS — cancer cells break away, travel via blood/lymph, and establish secondary growths at distant sites, which is what makes cancer especially dangerous and hard to treat completely. Diagnostic methods include biopsy/histopathology, radiography (X-rays, CT, MRI), and molecular techniques (detecting tumour markers); treatment approaches include surgery, radiotherapy, and chemotherapy, often in combination. DRUG AND ALCOHOL ABUSE involves the use of substances (opioids, cannabinoids, coca alkaloids like cocaine, alcohol) that act on the nervous system (e.g. altering neurotransmitter activity), commonly leading to dependence/addiction (a compulsive urge to keep using despite harmful consequences) and tolerance (needing progressively larger doses for the same effect); adolescence is a particularly vulnerable period for the onset of substance abuse, often linked with peer pressure, curiosity, and the desire for social acceptance or to appear 'trendy'.",
+  "explanationSections": [
+    {
+      "heading": "Innate Immunity",
+      "body": "INNATE IMMUNITY is non-specific and present from birth, provided by physical barriers (skin, mucus membranes), physiological barriers (acidic stomach pH, saliva, tears), cellular barriers (phagocytes — neutrophils, macrophages; natural killer cells; eosinophils), and cytokine barriers (interferons, which protect uninfected cells from viral infection)."
+    },
+    {
+      "heading": "Acquired (Adaptive) Immunity",
+      "subsections": [
+        {
+          "heading": "Humoral vs Cell-Mediated Immunity",
+          "body": "ACQUIRED (adaptive) IMMUNITY is specific, develops upon exposure to a particular pathogen/antigen, and — crucially — shows IMMUNOLOGICAL MEMORY, meaning a second exposure triggers a faster, stronger response than the first. It has two arms: HUMORAL immunity (mediated by B-lymphocytes, which differentiate into plasma cells secreting ANTIBODIES — Y-shaped proteins with two heavy and two light chains, each with a constant region and a variable (antigen-binding) region) and CELL-MEDIATED immunity (mediated by T-lymphocytes — helper T cells coordinate the response, cytotoxic T cells directly kill infected/abnormal cells)."
+        },
+        {
+          "heading": "Active vs Passive Immunity",
+          "body": "ACTIVE immunity (the body makes its own antibodies, via natural infection or vaccination) is slower to develop but long-lasting due to memory cells; PASSIVE immunity (ready-made antibodies transferred in, e.g. via colostrum from mother to infant, or antiserum/antitoxin injections) gives IMMEDIATE protection but is short-lived, since no memory cells are generated."
+        },
+        {
+          "heading": "Vaccination",
+          "body": "VACCINATION exploits active immunity's memory: a weakened/inactivated pathogen or its antigen is introduced, priming memory cells WITHOUT causing full disease, so a subsequent real infection is neutralised rapidly."
+        }
+      ]
+    },
+    {
+      "heading": "Common Diseases",
+      "body": "Exam-relevant pathogen-disease pairing: bacterial — typhoid (Salmonella typhi), pneumonia (Streptococcus pneumoniae); viral — common cold (rhinovirus); protozoal — malaria (Plasmodium, transmitted by female Anopheles mosquito — note the classic 'Plasmodium life cycle alternates between mosquito and human hosts'), amoebiasis (Entamoeba histolytica); helminthic — ascariasis (Ascaris, roundworm); fungal — ringworm (dermatophytic fungi, favoured by humid/sweaty skin conditions)."
+    },
+    {
+      "heading": "Allergy and Autoimmunity",
+      "body": "ALLERGY is an exaggerated/hypersensitive immune response to normally harmless environmental antigens (allergens like dust, pollen), mediated largely by IgE antibodies triggering histamine release from mast cells — symptoms are treated with antihistamines. AUTOIMMUNITY occurs when the immune system fails to distinguish self from non-self and attacks the body's OWN tissues (e.g., rheumatoid arthritis attacking joint tissue)."
+    },
+    {
+      "heading": "AIDS",
+      "body": "AIDS (Acquired Immunodeficiency Syndrome) is caused by HIV, a retrovirus that specifically infects and progressively destroys HELPER T CELLS (CD4+), crippling the ability to mount both humoral and cell-mediated responses and leaving the patient vulnerable to opportunistic infections; HIV is diagnosed via the ELISA test, which detects antibodies against viral proteins."
+    },
+    {
+      "heading": "Cancer",
+      "body": "CANCER is characterised by UNCONTROLLED, invasive cell division that ignores normal growth-regulation signals; unlike a benign tumour (which stays localised, does not invade neighbouring tissue), a MALIGNANT tumour undergoes METASTASIS — cancer cells break away, travel via blood/lymph, and establish secondary growths at distant sites, which is what makes cancer especially dangerous and hard to treat completely. Diagnostic methods include biopsy/histopathology, radiography (X-rays, CT, MRI), and molecular techniques (detecting tumour markers); treatment approaches include surgery, radiotherapy, and chemotherapy, often in combination."
+    },
+    {
+      "heading": "Drug and Alcohol Abuse",
+      "body": "DRUG AND ALCOHOL ABUSE involves the use of substances (opioids, cannabinoids, coca alkaloids like cocaine, alcohol) that act on the nervous system (e.g. altering neurotransmitter activity), commonly leading to dependence/addiction (a compulsive urge to keep using despite harmful consequences) and tolerance (needing progressively larger doses for the same effect); adolescence is a particularly vulnerable period for the onset of substance abuse, often linked with peer pressure, curiosity, and the desire for social acceptance or to appear 'trendy'."
+    }
+  ],
   "commonMisconceptions": [
     "Assuming vaccination itself provides antibodies directly (like passive immunity) — vaccination actually triggers the body's OWN immune system to produce antibodies and memory cells (active immunity), which is why it provides long-lasting protection unlike a passive antiserum injection.",
     "Thinking any tumour is automatically cancerous — a BENIGN tumour grows locally and does not invade or spread; only a MALIGNANT tumour, capable of metastasis (spreading to distant sites via blood/lymph), is cancer in the strict sense.",

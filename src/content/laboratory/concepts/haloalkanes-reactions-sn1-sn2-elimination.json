@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Chemistry Part II, Class 12 — Haloalkanes and Haloarenes",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Chemistry Part II, Class 12 — Haloalkanes and Haloarenes"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT-aligned foundational coverage.",
   "searchKeywords": [
@@ -33,6 +39,37 @@
   ],
   "summary": "Haloalkanes undergo nucleophilic substitution via two competing mechanisms — SN2 (one-step, concerted, inversion of configuration, favoured for primary substrates) and SN1 (two-step via a carbocation, racemisation, favoured for tertiary substrates) — and can alternatively undergo elimination to form alkenes.",
   "explanation": "SN2 (bimolecular nucleophilic substitution) is a single-step, CONCERTED mechanism: the nucleophile attacks the carbon from the side directly OPPOSITE the leaving group (backside attack) while the leaving group departs simultaneously, passing through a single transition state — this necessarily causes INVERSION of configuration at that carbon (Walden inversion). SN2 is favoured by primary halides (least steric hindrance to backside attack), a strong nucleophile, and is SLOWED dramatically by increasing branching/bulk near the reacting carbon (tertiary halides essentially never undergo SN2). SN1 (unimolecular nucleophilic substitution) proceeds in TWO steps: slow, rate-determining ionisation of the substrate to form a planar carbocation intermediate, followed by fast attack of the nucleophile from either face. Since the intermediate is planar (nucleophile can attack from either side with near-equal probability), SN1 gives predominantly RACEMISATION (a mixture of both configurations) rather than clean inversion. SN1 is favoured by TERTIARY halides (most stable carbocation: tertiary > secondary > primary, due to hyperconjugation and inductive electron donation from alkyl groups), polar protic solvents (stabilise the ionic intermediate), and weaker nucleophiles. Rate for SN2 depends on BOTH substrate and nucleophile concentration (rate = k[substrate][Nu⁻], genuinely second order); rate for SN1 depends ONLY on substrate concentration (rate = k[substrate], first order), since the nucleophile isn't involved in the slow, rate-determining step. Haloalkanes can alternatively undergo ELIMINATION (dehydrohalogenation) with a strong base, losing HX to form an alkene; Saytzeff's rule states the MORE substituted (more stable) alkene is generally the major product when there's a choice of β-hydrogens to remove. Substitution and elimination are often competing pathways for the same substrate, and which dominates depends on the nucleophile/base's strength and bulk, and the substrate's structure (a bulky base favours elimination by being unable to easily attack a hindered carbon). POLYHALOGEN COMPOUNDS (containing more than one halogen atom per molecule) include several exam-relevant, real-world examples: chloroform (CHCl₃), once used as an anaesthetic, is now known to be slowly oxidised by atmospheric oxygen in light to form the toxic, corrosive gas phosgene (COCl₂) — which is exactly why chloroform bottles are stored in dark-coloured, air-tight containers filled up to the neck with a small amount of ethanol added, since ethanol converts any phosgene formed back into a harmless carbonate ester. Iodoform (CHI₃) has a characteristic antiseptic smell and was once used as an antiseptic dressing; its formation (the 'iodoform test', using I₂/NaOH) is a classic qualitative test for the presence of a CH₃-CO- group (methyl ketone) or a CH₃-CH(OH)- group (a secondary alcohol oxidisable to a methyl ketone) in an unknown organic compound. DDT (dichlorodiphenyltrichloroethane), once a widely used pesticide, is now recognised as an environmentally persistent, bioaccumulative pollutant (resistant to biodegradation, magnifying in concentration up food chains) and is banned or restricted in many countries. FREONS (chlorofluorocarbons, CFCs, e.g. CCl₂F₂) were widely used as refrigerants and aerosol propellants for their chemical stability and non-toxicity, but that very stability lets them persist long enough to reach the stratosphere, where UV radiation breaks them down to release chlorine radicals that catalytically destroy stratospheric ozone — the mechanism behind the ozone-layer depletion that led to their phase-out under the Montreal Protocol.",
+  "explanationSections": [
+    {
+      "heading": "SN2 Mechanism",
+      "body": "SN2 (bimolecular nucleophilic substitution) is a single-step, CONCERTED mechanism: the nucleophile attacks the carbon from the side directly OPPOSITE the leaving group (backside attack) while the leaving group departs simultaneously, passing through a single transition state — this necessarily causes INVERSION of configuration at that carbon (Walden inversion). SN2 is favoured by primary halides (least steric hindrance to backside attack), a strong nucleophile, and is SLOWED dramatically by increasing branching/bulk near the reacting carbon (tertiary halides essentially never undergo SN2)."
+    },
+    {
+      "heading": "SN1 Mechanism",
+      "body": "SN1 (unimolecular nucleophilic substitution) proceeds in TWO steps: slow, rate-determining ionisation of the substrate to form a planar carbocation intermediate, followed by fast attack of the nucleophile from either face. Since the intermediate is planar (nucleophile can attack from either side with near-equal probability), SN1 gives predominantly RACEMISATION (a mixture of both configurations) rather than clean inversion. SN1 is favoured by TERTIARY halides (most stable carbocation: tertiary > secondary > primary, due to hyperconjugation and inductive electron donation from alkyl groups), polar protic solvents (stabilise the ionic intermediate), and weaker nucleophiles."
+    },
+    {
+      "heading": "SN1 vs SN2 Kinetics",
+      "body": "Rate for SN2 depends on BOTH substrate and nucleophile concentration (rate = k[substrate][Nu⁻], genuinely second order); rate for SN1 depends ONLY on substrate concentration (rate = k[substrate], first order), since the nucleophile isn't involved in the slow, rate-determining step."
+    },
+    {
+      "heading": "Elimination Reactions",
+      "body": "Haloalkanes can alternatively undergo ELIMINATION (dehydrohalogenation) with a strong base, losing HX to form an alkene; Saytzeff's rule states the MORE substituted (more stable) alkene is generally the major product when there's a choice of β-hydrogens to remove. Substitution and elimination are often competing pathways for the same substrate, and which dominates depends on the nucleophile/base's strength and bulk, and the substrate's structure (a bulky base favours elimination by being unable to easily attack a hindered carbon)."
+    },
+    {
+      "heading": "Polyhalogen Compounds",
+      "subsections": [
+        {
+          "heading": "Chloroform and Iodoform",
+          "body": "Chloroform (CHCl₃), once used as an anaesthetic, is now known to be slowly oxidised by atmospheric oxygen in light to form the toxic, corrosive gas phosgene (COCl₂) — which is exactly why chloroform bottles are stored in dark-coloured, air-tight containers filled up to the neck with a small amount of ethanol added, since ethanol converts any phosgene formed back into a harmless carbonate ester. Iodoform (CHI₃) has a characteristic antiseptic smell and was once used as an antiseptic dressing; its formation (the 'iodoform test', using I₂/NaOH) is a classic qualitative test for the presence of a CH₃-CO- group (methyl ketone) or a CH₃-CH(OH)- group (a secondary alcohol oxidisable to a methyl ketone) in an unknown organic compound."
+        },
+        {
+          "heading": "DDT and Freons",
+          "body": "DDT (dichlorodiphenyltrichloroethane), once a widely used pesticide, is now recognised as an environmentally persistent, bioaccumulative pollutant (resistant to biodegradation, magnifying in concentration up food chains) and is banned or restricted in many countries. FREONS (chlorofluorocarbons, CFCs, e.g. CCl₂F₂) were widely used as refrigerants and aerosol propellants for their chemical stability and non-toxicity, but that very stability lets them persist long enough to reach the stratosphere, where UV radiation breaks them down to release chlorine radicals that catalytically destroy stratospheric ozone — the mechanism behind the ozone-layer depletion that led to their phase-out under the Montreal Protocol."
+        }
+      ]
+    }
+  ],
   "commonMisconceptions": [
     "Assuming SN1 and SN2 simply differ in speed, with no mechanistic distinction — they are fundamentally different PATHWAYS (one-step concerted vs. two-step via a carbocation), leading to different stereochemical outcomes (inversion vs. racemisation) and different rate law dependence, not just different rates.",
     "Believing tertiary halides react fastest via SN2 — the opposite is true: SN2 is fastest for PRIMARY halides (least steric hindrance) and essentially doesn't occur for tertiary halides, which instead favour SN1 (most stable carbocation).",

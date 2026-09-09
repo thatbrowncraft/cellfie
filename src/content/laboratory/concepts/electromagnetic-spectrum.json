@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Physics Part I, Class 12 — Electromagnetic Waves",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Physics Part I, Class 12 — Electromagnetic Waves"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT-aligned foundational coverage.",
   "searchKeywords": [
@@ -31,6 +37,24 @@
   "relatedFormulas": [],
   "summary": "Electromagnetic waves span an enormous range of wavelengths/frequencies (radio waves to gamma rays), all travelling at the same speed c in vacuum, differing only in wavelength/frequency and hence in how they interact with matter and in their practical applications.",
   "explanation": "DISPLACEMENT CURRENT was Maxwell's key theoretical addition needed to make Ampere's circuital law consistent in situations with a time-varying electric field, such as a charging capacitor: ordinary conduction current flows through the wires leading to a capacitor's plates, but NO actual charge physically crosses the gap between the plates — yet a magnetic field is still observed around that gap, exactly as if current WERE flowing there. Maxwell resolved this by proposing that a CHANGING ELECTRIC FIELD between the plates itself acts as a source of magnetic field, with an effective 'displacement current' Id = ε₀ (dΦE/dt) (proportional to the rate of change of electric flux) — this displacement current exactly compensates for the interrupted conduction current in the capacitor gap, keeping Ampere's law valid everywhere in the circuit, not just where a literal wire carries charge. This modification (the Ampere-Maxwell law) was the crucial missing piece that let Maxwell's equations predict self-sustaining ELECTROMAGNETIC WAVES: a changing electric field generates a magnetic field (via displacement current), and a changing magnetic field generates an electric field (via Faraday's law) — each changing field regenerating the other, propagating through space (even vacuum) without needing a medium. An electromagnetic (EM) wave consists of oscillating electric and magnetic fields, perpendicular to each other and to the direction of propagation (a TRANSVERSE wave), requiring NO medium to travel (unlike sound) and travelling through vacuum at the constant speed c = 1/√(μ₀ε₀) ≈ 3×10⁸ m/s, predicted directly by Maxwell's equations. The EM spectrum, in order of INCREASING frequency (decreasing wavelength): radio waves (longest wavelength, used in communication/broadcasting), microwaves (radar, microwave ovens, mobile communication), infrared (heating effects, thermal imaging, remote controls), visible light (the only range directly detectable by the human eye), ultraviolet (causes tanning/sunburn, used for sterilisation, absorbed largely by the ozone layer), X-rays (medical imaging, high penetrating power), and gamma rays (highest frequency/energy, emitted by radioactive nuclei, most penetrating and most dangerous to biological tissue). All EM waves travel at the SAME speed c in vacuum regardless of frequency/wavelength (v = fλ = c for all of them in vacuum), but they interact very differently with matter — higher frequency (hence higher photon energy, E = hf) generally means greater penetrating power and greater potential for biological/ionising damage, which is why gamma rays and X-rays require careful shielding while radio waves are harmless at ordinary intensities. Different regions of the spectrum are produced by different physical processes: radio waves from oscillating currents in an antenna/circuit, infrared from vibrating molecules/warm bodies, visible/UV light from atomic electronic transitions, X-rays from high-energy electron transitions or deceleration of fast electrons, and gamma rays from nuclear transitions/radioactive decay.",
+  "explanationSections": [
+    {
+      "heading": "Displacement Current",
+      "body": "DISPLACEMENT CURRENT was Maxwell's key theoretical addition needed to make Ampere's circuital law consistent in situations with a time-varying electric field, such as a charging capacitor: ordinary conduction current flows through the wires leading to a capacitor's plates, but NO actual charge physically crosses the gap between the plates — yet a magnetic field is still observed around that gap, exactly as if current WERE flowing there. Maxwell resolved this by proposing that a CHANGING ELECTRIC FIELD between the plates itself acts as a source of magnetic field, with an effective 'displacement current' Id = ε₀ (dΦE/dt) (proportional to the rate of change of electric flux) — this displacement current exactly compensates for the interrupted conduction current in the capacitor gap, keeping Ampere's law valid everywhere in the circuit, not just where a literal wire carries charge."
+    },
+    {
+      "heading": "Electromagnetic Waves",
+      "body": "This modification (the Ampere-Maxwell law) was the crucial missing piece that let Maxwell's equations predict self-sustaining ELECTROMAGNETIC WAVES: a changing electric field generates a magnetic field (via displacement current), and a changing magnetic field generates an electric field (via Faraday's law) — each changing field regenerating the other, propagating through space (even vacuum) without needing a medium. An electromagnetic (EM) wave consists of oscillating electric and magnetic fields, perpendicular to each other and to the direction of propagation (a TRANSVERSE wave), requiring NO medium to travel (unlike sound) and travelling through vacuum at the constant speed c = 1/√(μ₀ε₀) ≈ 3×10⁸ m/s, predicted directly by Maxwell's equations."
+    },
+    {
+      "heading": "The Electromagnetic Spectrum",
+      "body": "The EM spectrum, in order of INCREASING frequency (decreasing wavelength): radio waves (longest wavelength, used in communication/broadcasting), microwaves (radar, microwave ovens, mobile communication), infrared (heating effects, thermal imaging, remote controls), visible light (the only range directly detectable by the human eye), ultraviolet (causes tanning/sunburn, used for sterilisation, absorbed largely by the ozone layer), X-rays (medical imaging, high penetrating power), and gamma rays (highest frequency/energy, emitted by radioactive nuclei, most penetrating and most dangerous to biological tissue)."
+    },
+    {
+      "heading": "Speed, Penetration and Sources",
+      "body": "All EM waves travel at the SAME speed c in vacuum regardless of frequency/wavelength (v = fλ = c for all of them in vacuum), but they interact very differently with matter — higher frequency (hence higher photon energy, E = hf) generally means greater penetrating power and greater potential for biological/ionising damage, which is why gamma rays and X-rays require careful shielding while radio waves are harmless at ordinary intensities. Different regions of the spectrum are produced by different physical processes: radio waves from oscillating currents in an antenna/circuit, infrared from vibrating molecules/warm bodies, visible/UV light from atomic electronic transitions, X-rays from high-energy electron transitions or deceleration of fast electrons, and gamma rays from nuclear transitions/radioactive decay."
+    }
+  ],
   "commonMisconceptions": [
     "Assuming EM waves need a medium to travel, like sound does — EM waves are unique in requiring NO medium at all; they travel through vacuum, which is exactly how sunlight reaches Earth through space.",
     "Believing higher-wavelength (lower-frequency) EM waves like radio waves are somehow 'weaker' versions of visible light — different regions of the spectrum aren't weaker/stronger versions of each other, they are produced by entirely different physical mechanisms and interact with matter completely differently.",

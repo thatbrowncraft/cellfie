@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Physics Part I, Class 12 — Current Electricity",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Physics Part I, Class 12 — Current Electricity"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT-aligned foundational coverage.",
   "searchKeywords": [
@@ -31,6 +37,37 @@
   ],
   "summary": "Current arises from the slow net drift of free electrons superimposed on their fast random thermal motion; resistance depends on a material's resistivity, geometry, and — for most conductors — increases with temperature, while it can decrease for semiconductors.",
   "explanation": "Free electrons in a conductor move randomly at high speeds (~10⁵–10⁶ m/s) even with no applied field, but this motion averages to zero net displacement. Applying an electric field superimposes a small net drift velocity vd (~10⁻⁴ m/s, remarkably slow) opposite to the field (electrons are negative); current I = nAqvd (n = free electron density, A = cross-sectional area, q = electron charge). Ohm's law states V = IR for a conductor at constant physical conditions (temperature); resistance R = ρL/A, where resistivity ρ is an intrinsic material property (independent of the conductor's shape/size), while resistance itself DOES depend on length and area. Materials are classified as ohmic (V-I graph is a straight line through the origin — most metallic conductors at constant temperature) or non-ohmic (V-I graph is non-linear — diodes, thermistors, electrolytes), where a fixed 'resistance' isn't a meaningful single number across all conditions. For metals, resistivity increases with temperature (ρ = ρ₀[1 + α(T − T₀)], α > 0) because increased thermal vibration of the lattice ions disrupts the ordered drift of electrons, causing more frequent collisions. For semiconductors, resistivity DECREASES with increasing temperature, since more charge carriers become available as bonds break, an effect that dominates over increased collisions — the opposite trend to metals. Superconductors show a dramatic special case: resistivity drops abruptly to exactly zero below a critical temperature.",
+  "explanationSections": [
+    {
+      "heading": "Drift Velocity and Current",
+      "body": "Free electrons in a conductor move randomly at high speeds (~10⁵–10⁶ m/s) even with no applied field, but this motion averages to zero net displacement. Applying an electric field superimposes a small net drift velocity vd (~10⁻⁴ m/s, remarkably slow) opposite to the field (electrons are negative); current I = nAqvd (n = free electron density, A = cross-sectional area, q = electron charge)."
+    },
+    {
+      "heading": "Ohm's Law and Resistivity",
+      "body": "Ohm's law states V = IR for a conductor at constant physical conditions (temperature); resistance R = ρL/A, where resistivity ρ is an intrinsic material property (independent of the conductor's shape/size), while resistance itself DOES depend on length and area."
+    },
+    {
+      "heading": "Ohmic vs Non-Ohmic Materials",
+      "body": "Materials are classified as ohmic (V-I graph is a straight line through the origin — most metallic conductors at constant temperature) or non-ohmic (V-I graph is non-linear — diodes, thermistors, electrolytes), where a fixed 'resistance' isn't a meaningful single number across all conditions."
+    },
+    {
+      "heading": "Temperature Dependence of Resistivity",
+      "subsections": [
+        {
+          "heading": "Metals",
+          "body": "For metals, resistivity increases with temperature (ρ = ρ₀[1 + α(T − T₀)], α > 0) because increased thermal vibration of the lattice ions disrupts the ordered drift of electrons, causing more frequent collisions."
+        },
+        {
+          "heading": "Semiconductors",
+          "body": "For semiconductors, resistivity DECREASES with increasing temperature, since more charge carriers become available as bonds break, an effect that dominates over increased collisions — the opposite trend to metals."
+        },
+        {
+          "heading": "Superconductors",
+          "body": "Superconductors show a dramatic special case: resistivity drops abruptly to exactly zero below a critical temperature."
+        }
+      ]
+    }
+  ],
   "commonMisconceptions": [
     "Confusing resistivity (intrinsic material property, unit Ω·m) with resistance (depends on geometry too, unit Ω) — a common exam trap when a wire is stretched or cut, changing R but not ρ.",
     "Assuming ALL materials' resistance increases with temperature — semiconductors and insulators typically show a DECREASE in resistivity with rising temperature, opposite to metals.",

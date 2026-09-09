@@ -7,10 +7,16 @@
   "version": "1.0",
   "lastVerified": "2026-09",
   "references": [
-    {
-      "label": "NCERT Biology, Class 12",
-      "publisher": "NCERT"
-    }
+    [
+      [
+        "label",
+        "NCERT Biology, Class 12"
+      ],
+      [
+        "publisher",
+        "NCERT"
+      ]
+    ]
   ],
   "scientificNotes": "NCERT Class 12 aligned.",
   "searchKeywords": [
@@ -31,6 +37,28 @@
   ],
   "summary": "Reproductive health covers population control through contraception, prevention and management of sexually transmitted infections, and the diagnosis and treatment of infertility using assisted reproductive technologies (ART) such as IVF, ZIFT, and GIFT.",
   "explanation": "CONTRACEPTIVE METHODS fall into several classes: BARRIER methods (condoms, diaphragms, cervical caps) physically prevent sperm from reaching the ovum and, uniquely among contraceptives, also reduce STI transmission; IUDs (intrauterine devices — copper-releasing like CuT, or hormone-releasing like LNG-IUS) increase phagocytosis of sperm and/or release Cu²⁺ ions or hormone locally, and are long-acting but reversible; HORMONAL methods (combined oral pills, progestin-only pills, injectables like Depo-Provera, implants) primarily work by inhibiting ovulation (suppressing the LH surge) and thickening cervical mucus; SURGICAL methods (vasectomy — cutting/tying the vas deferens; tubectomy — cutting/tying the fallopian tubes) are permanent sterilisation methods that block gamete transport WITHOUT affecting hormone production or libido. Emergency contraceptive pills (high-dose hormonal) can be used within 72 hours of unprotected intercourse to prevent pregnancy, mainly by delaying/inhibiting ovulation. MEDICAL TERMINATION OF PREGNANCY (MTP), legally regulated, is used to end unwanted pregnancies or ones posing health risk; it carries higher risk if performed after the first trimester. SEXUALLY TRANSMITTED INFECTIONS (STIs, also called RTIs) include bacterial (gonorrhoea, syphilis, chlamydiasis), viral (genital herpes, HIV/AIDS, genital warts/HPV), and protozoal (trichomoniasis) infections — of the common STIs, only hepatitis B and genital herpes are NOT fully curable with current treatment; early diagnosis, prompt complete treatment, and avoiding multiple partners are the standard prevention strategies. INFERTILITY (inability to conceive despite unprotected intercourse for a defined period) can have male or female causes — structural, hormonal, or gamete-quality related — and is addressed through ASSISTED REPRODUCTIVE TECHNOLOGY (ART): IVF (in vitro fertilisation — fertilisation occurs OUTSIDE the body in a lab, and the resulting embryo is transferred into the uterus — this is 'test-tube baby' technology, more precisely ZIFT when the early embryo, up to 8 cells, is transferred into the fallopian tube, or IUT when a later-stage embryo is transferred directly into the uterus); GIFT (gamete intrafallopian transfer — an ovum from a donor is transferred into the fallopian tube of a female who cannot produce her own, WITHOUT fertilisation happening outside the body — a key distinction from IVF/ZIFT); ICSI (intracytoplasmic sperm injection — a single sperm is injected directly into the ovum's cytoplasm, used for severe male-factor infertility); artificial insemination (AI) — semen (from the husband or a donor) is artificially introduced into the vagina or uterus, bypassing issues like low sperm count or an inability to deposit semen naturally. AMNIOCENTESIS (a foetal-fluid test originally developed to detect chromosomal/genetic disorders prenatally) is legally BANNED in India for sex determination, since it has been widely misused for female foeticide — a critical exam-relevant legal/ethical point distinct from its legitimate diagnostic use.",
+  "explanationSections": [
+    {
+      "heading": "Contraceptive Methods",
+      "body": "CONTRACEPTIVE METHODS fall into several classes: BARRIER methods (condoms, diaphragms, cervical caps) physically prevent sperm from reaching the ovum and, uniquely among contraceptives, also reduce STI transmission; IUDs (intrauterine devices — copper-releasing like CuT, or hormone-releasing like LNG-IUS) increase phagocytosis of sperm and/or release Cu²⁺ ions or hormone locally, and are long-acting but reversible; HORMONAL methods (combined oral pills, progestin-only pills, injectables like Depo-Provera, implants) primarily work by inhibiting ovulation (suppressing the LH surge) and thickening cervical mucus; SURGICAL methods (vasectomy — cutting/tying the vas deferens; tubectomy — cutting/tying the fallopian tubes) are permanent sterilisation methods that block gamete transport WITHOUT affecting hormone production or libido. Emergency contraceptive pills (high-dose hormonal) can be used within 72 hours of unprotected intercourse to prevent pregnancy, mainly by delaying/inhibiting ovulation."
+    },
+    {
+      "heading": "Medical Termination of Pregnancy",
+      "body": "MEDICAL TERMINATION OF PREGNANCY (MTP), legally regulated, is used to end unwanted pregnancies or ones posing health risk; it carries higher risk if performed after the first trimester."
+    },
+    {
+      "heading": "Sexually Transmitted Infections",
+      "body": "SEXUALLY TRANSMITTED INFECTIONS (STIs, also called RTIs) include bacterial (gonorrhoea, syphilis, chlamydiasis), viral (genital herpes, HIV/AIDS, genital warts/HPV), and protozoal (trichomoniasis) infections — of the common STIs, only hepatitis B and genital herpes are NOT fully curable with current treatment; early diagnosis, prompt complete treatment, and avoiding multiple partners are the standard prevention strategies."
+    },
+    {
+      "heading": "Infertility and Assisted Reproductive Technology",
+      "body": "INFERTILITY (inability to conceive despite unprotected intercourse for a defined period) can have male or female causes — structural, hormonal, or gamete-quality related — and is addressed through ASSISTED REPRODUCTIVE TECHNOLOGY (ART): IVF (in vitro fertilisation — fertilisation occurs OUTSIDE the body in a lab, and the resulting embryo is transferred into the uterus — this is 'test-tube baby' technology, more precisely ZIFT when the early embryo, up to 8 cells, is transferred into the fallopian tube, or IUT when a later-stage embryo is transferred directly into the uterus); GIFT (gamete intrafallopian transfer — an ovum from a donor is transferred into the fallopian tube of a female who cannot produce her own, WITHOUT fertilisation happening outside the body — a key distinction from IVF/ZIFT); ICSI (intracytoplasmic sperm injection — a single sperm is injected directly into the ovum's cytoplasm, used for severe male-factor infertility); artificial insemination (AI) — semen (from the husband or a donor) is artificially introduced into the vagina or uterus, bypassing issues like low sperm count or an inability to deposit semen naturally."
+    },
+    {
+      "heading": "Amniocentesis and the Law",
+      "body": "AMNIOCENTESIS (a foetal-fluid test originally developed to detect chromosomal/genetic disorders prenatally) is legally BANNED in India for sex determination, since it has been widely misused for female foeticide — a critical exam-relevant legal/ethical point distinct from its legitimate diagnostic use."
+    }
+  ],
   "commonMisconceptions": [
     "Confusing GIFT with IVF — in GIFT, fertilisation happens INSIDE the body (in the fallopian tube) after transferring an ovum there; in IVF, fertilisation happens OUTSIDE the body, in a laboratory dish.",
     "Assuming all hormonal contraceptives and IUDs also protect against STIs — only barrier methods (like condoms) provide STI protection; hormonal pills and IUDs prevent pregnancy but not infection transmission.",
