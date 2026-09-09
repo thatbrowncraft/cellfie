@@ -1,10 +1,11 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, CaretRight, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, Card, CardBody, EmptyState } from '@/shared/components'
 import { getExamSubjectById } from '@/core/exam-prep/subjects'
 import { listTopicsForSubject } from '@/core/exam-prep/registry'
+import { recordExamSubjectViewed } from '@/core/exam-prep/recentlyViewed'
 import type { ExamSubjectId } from '@/core/exam-prep/types'
 
 /**
@@ -24,6 +25,14 @@ export function ExamPrepSubjectPage() {
     () => (subjectId ? listTopicsForSubject(subjectId as ExamSubjectId) : []),
     [subjectId]
   )
+
+  // Dashboard "Exam Prep" preview support — fire-and-forget, never blocks
+  // render. Same pattern as Organism/Lab/Element detail pages.
+  useEffect(() => {
+    if (subject) {
+      void recordExamSubjectViewed(subject.id)
+    }
+  }, [subject])
 
   if (!subject) {
     return (

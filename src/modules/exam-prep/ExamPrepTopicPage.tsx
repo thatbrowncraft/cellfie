@@ -1,10 +1,11 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, CaretRight, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, EmptyState } from '@/shared/components'
 import { getExamSubjectById } from '@/core/exam-prep/subjects'
 import { getExamTopicById } from '@/core/exam-prep/registry'
+import { recordExamSubjectViewed } from '@/core/exam-prep/recentlyViewed'
 import type { ExamSubjectId } from '@/core/exam-prep/types'
 import { ExamFocusView, ExamLessonView, ExamQuickRevisionView } from './components/ExamLessonView'
 
@@ -24,6 +25,16 @@ export function ExamPrepTopicPage() {
     () => (subjectId && topicId ? getExamTopicById(subjectId as ExamSubjectId, topicId) : undefined),
     [subjectId, topicId]
   )
+
+  // Dashboard "Exam Prep" preview support — recorded at the subject level
+  // (mirrors ExamPrepSubjectPage), so opening a topic bumps the same
+  // "Constitution of India" recent entry to the front instead of creating
+  // a separate per-topic entry. Fire-and-forget, never blocks render.
+  useEffect(() => {
+    if (subject && topic) {
+      void recordExamSubjectViewed(subject.id)
+    }
+  }, [subject, topic])
 
   if (!subject || !topic) {
     return (
