@@ -884,6 +884,37 @@ export function ConceptDetailPage() {
                   )}
                 </div>
 
+                {/* Concept Online Knowledge Enrichment — user-created custom
+                    Concept sections (created via "+ Create new section" in
+                    the Online Knowledge panel), each showing whatever
+                    excerpts have been applied to it. Rendered here, right
+                    below the Online Knowledge trigger and above the
+                    study-mode content, so a custom section reads as part of
+                    the Concept's learning content near the top of the page
+                    rather than as an afterthought below Memory Aid/First &
+                    Last Encountered. Independent of study mode — a custom
+                    section is a property of the whole Concept, not of one
+                    Learn mode. Ordering across multiple custom sections is
+                    governed by ConceptCustomSection.order (see
+                    core/concepts/customSections.ts), unrelated to this
+                    file's placement in the page. */}
+                {concept && customSections.map((section) => (
+                  <div key={section.id} className="flex flex-col gap-2 rounded-md border border-border bg-surface p-5">
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{section.title}</h3>
+                      <button
+                        type="button"
+                        aria-label={`Delete section ${section.title}`}
+                        onClick={() => void deleteCustomSection(concept.id, section.id)}
+                        className="p-1 text-ink-tertiary hover:text-error"
+                      >
+                        <Trash size={14} />
+                      </button>
+                    </div>
+                    <ConceptOnlineKnowledgeList conceptId={concept.id} sectionKey={section.id} />
+                  </div>
+                ))}
+
                 {/* Available Contexts — the student can choose one, several,
                     or all tagged contexts. Selection is URL-persisted and
                     changes only the local-library retrieval scope; it never
@@ -1302,29 +1333,6 @@ export function ConceptDetailPage() {
                     Concept.memoryAid field via the existing
                     updateConceptMemoryAid(), unchanged. */}
                 <MemoryAidCard concept={concept} />
-
-                {/* Concept Online Knowledge Enrichment — user-created custom
-                    Concept sections (created via "+ Create new section" in
-                    the Online Knowledge panel), each showing whatever
-                    excerpts have been applied to it. Independent of study
-                    mode, same as Memory Aid above — a custom section is a
-                    property of the whole Concept, not of one Learn mode. */}
-                {customSections.map((section) => (
-                  <div key={section.id} className="flex flex-col gap-2 rounded-md border border-border bg-surface p-5">
-                    <div className="flex items-center justify-between gap-2">
-                      <h3 className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{section.title}</h3>
-                      <button
-                        type="button"
-                        aria-label={`Delete section ${section.title}`}
-                        onClick={() => void deleteCustomSection(concept.id, section.id)}
-                        className="p-1 text-ink-tertiary hover:text-error"
-                      >
-                        <Trash size={14} />
-                      </button>
-                    </div>
-                    <ConceptOnlineKnowledgeList conceptId={concept.id} sectionKey={section.id} />
-                  </div>
-                ))}
 
                 {(firstAndLast.first || firstAndLast.last) && (
                   <div className={`grid gap-3 ${twoColGridClass}`}>
