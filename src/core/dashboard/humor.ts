@@ -22,5 +22,6 @@ export const DASHBOARD_HUMOR = {
   organisms: 'Tiny organisms. Massive syllabus energy.',
   lab: 'Because vibes are not a valid lab method.',
   comparisons: 'Let the microbes fight. You decide the winner.',
-  periodicTable: '118 elements, zero of them optional for the exam.'
+  periodicTable: '118 elements, zero of them optional for the exam.',
+  examPrep: 'The syllabus, minus the panic.'
 } as const
