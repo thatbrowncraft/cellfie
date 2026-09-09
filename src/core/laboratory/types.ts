@@ -162,10 +162,48 @@ export interface Protocol extends LabContentMeta, LabRelatedLinks {
 // from `core/concepts` which covers the user's Learn/Knowledge Layer)
 // ---------------------------------------------------------------------------
 
+/** One labelled sub-point inside a `LabConceptSection` (e.g. "Zwitterion" inside an "Amino Acids" section). Kept to heading+body only — no third nesting level — so a topic never turns into an arbitrary outline. */
+export interface LabConceptSubsection {
+  heading: string
+  body: string
+}
+
+/**
+ * One scientifically-coherent chunk of a concept's explanation (e.g.
+ * "Carbohydrates", "Enzymes", "Protein Structure"). Added for the
+ * Chemistry/Physics/Biology content-readability pass (Sept 2026): several
+ * curated concepts had grown into a single multi-thousand-character
+ * `explanation` paragraph covering many unrelated sub-topics, which is hard
+ * to scan or revise on a phone. This is purely additive — `explanation`
+ * remains the required, canonical full-text field (still used by
+ * Comparison Studio's "mechanism"/"overview" aspects and unaffected by this
+ * change); `explanationSections`, when present, is what the detail page
+ * renders instead of the flat paragraph. A topic with no readability
+ * problem is not required to add this field.
+ */
+export interface LabConceptSection {
+  /** Short heading naming the concept this chunk covers, e.g. "Carbohydrates" or "Enzyme Inhibition". */
+  heading: string
+  /** Prose for this section. Optional only when the section is purely a container for `subsections` (e.g. "Proteins" with subsections "Structure", "Denaturation"). */
+  body?: string
+  /** One level of labelled sub-points within this section (e.g. "Structure", "Denaturation" under "Proteins"). Not a general-purpose outline — only used where the topic's own sub-concepts warrant it. */
+  subsections?: LabConceptSubsection[]
+}
+
 export interface LabConcept extends LabContentMeta, LabRelatedLinks {
   category: 'concept'
   summary: string
   explanation: string
+  /**
+   * Optional structured breakdown of `explanation` into scientifically
+   * coherent sections (see `LabConceptSection`). When present, the detail
+   * page renders these instead of the flat `explanation` paragraph.
+   * `explanation` itself is left untouched either way — it stays the
+   * single source of truth other consumers (Comparison Studio, future
+   * search/export) read from, so this field can never drift out of sync
+   * by simply being additive rather than replacing anything.
+   */
+  explanationSections?: LabConceptSection[]
   /** For "X vs Y" comparison concepts (e.g. "CFU vs direct cell count"). Omitted for single-concept entries. */
   comparison?: { aspect: string; left: string; right: string }[]
   commonMisconceptions?: string[]
