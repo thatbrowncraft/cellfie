@@ -26,6 +26,24 @@
   ],
   "summary": "In an isolated system, total energy is always conserved — it can change FORM (kinetic, potential, thermal, chemical, etc.) but the total amount never increases or decreases.",
   "explanation": "The law of conservation of energy states that energy can neither be created nor destroyed, only converted from one form to another — for a system where only conservative forces (like gravity, spring force) do work, mechanical energy (KE + PE) specifically stays constant: Ei = Ef, i.e., KEi + PEi = KEf + PEf. This is why a frictionless pendulum or a ball in free fall (ignoring air resistance) can be analysed by simply equating total mechanical energy at any two points, without needing to track forces/time step by step — as the ball falls, PE converts to KE while the total stays fixed. When NON-conservative forces (like friction or air resistance) are present, mechanical energy is NOT conserved by itself — some mechanical energy converts to heat/sound, but TOTAL energy (mechanical + thermal + all other forms) is still always conserved; this is the broader, universally true statement, of which 'conservation of mechanical energy' is only a special case valid for conservative-force-only systems. A conservative force is one where work done depends only on initial and final position, NOT on the path taken (gravity, spring force, electrostatic force); a non-conservative force (friction, air drag) has path-dependent work, and by definition dissipates mechanical energy into other, less easily recoverable forms like heat. This principle underlies the FIRST LAW OF THERMODYNAMICS (a more general statement of energy conservation applied to heat/work/internal energy) and extends, via mass-energy equivalence (E = mc²), to nuclear processes where mass itself converts to energy.",
+  "explanationSections": [
+    {
+      "heading": "Conservation of Mechanical Energy",
+      "body": "The law of conservation of energy states that energy can neither be created nor destroyed, only converted from one form to another. For a system where only conservative forces (like gravity, spring force) do work, mechanical energy (KE + PE) specifically stays constant: Ei = Ef, i.e., KEi + PEi = KEf + PEf. This is why a frictionless pendulum or a ball in free fall (ignoring air resistance) can be analysed by simply equating total mechanical energy at any two points, without needing to track forces/time step by step — as the ball falls, PE converts to KE while the total stays fixed."
+    },
+    {
+      "heading": "Role of Non-Conservative Forces",
+      "body": "When NON-conservative forces (like friction or air resistance) are present, mechanical energy is NOT conserved by itself — some mechanical energy converts to heat/sound, but TOTAL energy (mechanical + thermal + all other forms) is still always conserved. This is the broader, universally true statement, of which 'conservation of mechanical energy' is only a special case valid for conservative-force-only systems."
+    },
+    {
+      "heading": "Conservative vs. Non-Conservative Forces",
+      "body": "A conservative force is one where work done depends only on initial and final position, NOT on the path taken (gravity, spring force, electrostatic force); a non-conservative force (friction, air drag) has path-dependent work, and by definition dissipates mechanical energy into other, less easily recoverable forms like heat."
+    },
+    {
+      "heading": "Broader Connections",
+      "body": "This principle underlies the first law of thermodynamics (a more general statement of energy conservation applied to heat/work/internal energy) and extends, via mass-energy equivalence (E = mc²), to nuclear processes where mass itself converts to energy."
+    }
+  ],
   "commonMisconceptions": [
     "Assuming mechanical energy alone is always conserved in every situation — it is only conserved when NON-conservative forces (like friction) are absent or negligible; otherwise, total energy (including heat generated) is what's actually conserved.",
     "Believing energy 'lost' to friction has disappeared — it has merely converted into other forms (usually heat and sound), which are harder to recover as useful mechanical energy but are still fully accounted for in the total energy balance.",

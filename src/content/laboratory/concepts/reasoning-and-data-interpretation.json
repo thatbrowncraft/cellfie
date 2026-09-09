@@ -29,6 +29,53 @@
   ],
   "summary": "The Reasoning & Data Interpretation section tests structured, non-subject-specific problem-solving: translating age/relation statements into equations, tracing family relationships through generations, reading Venn diagrams and DI tables/charts/graphs accurately, spotting visual patterns, and judging whether given data is even SUFFICIENT to answer a question — each skill has a small set of reliable techniques rather than a body of facts to memorise.",
   "explanation": "PROBLEMS ON AGES are algebra word problems in disguise: assign a variable to one person's CURRENT age, express every other stated age (present, past, or future) in terms of it using the given ratio/difference, and solve the resulting linear equation — the recurring trap is applying a stated ratio to the WRONG time point (present vs. 'x years ago' vs. 'x years hence'), so always re-anchor every age to the SAME reference year before writing the equation. BLOOD RELATION problems require carefully building a family tree/diagram from the stated relationships one clue at a time, rather than trying to hold the whole chain in your head — pay close attention to GENDER-SPECIFIC terms (e.g. 'mother's brother' = maternal uncle, distinct from 'father's brother' = paternal uncle) since the two are commonly swapped as a distractor. VENN DIAGRAMS visually represent set membership and overlap; for a two- or three-set problem, the key technique is filling in the diagram from the INSIDE OUT — start with the region of overlap common to ALL sets (given directly or derivable), then work outward to the pairwise-only overlaps, then the 'only this set' regions — rather than trying to compute the outer regions first. VISUAL/NON-VERBAL REASONING (figure series, pattern completion, mirror/water images, paper folding) is solved by identifying the SINGLE consistent transformation rule (rotation, reflection, addition/removal of an element, shading pattern) that explains EVERY step of a given sequence, then applying that exact rule to find the missing/next figure — options that satisfy only part of the pattern are deliberately included as distractors. ARITHMETIC REASONING covers direction sense (tracking net displacement and final direction after a series of turns/moves — best solved by sketching a simple coordinate path), coding-decoding (letter/number substitution patterns), series completion (identifying whether consecutive terms differ by a constant, a multiplying factor, or an alternating rule), and syllogisms (deducing what necessarily follows from two or more given statements, using Venn-diagram logic to check whether a conclusion is a GUARANTEED consequence, not just a plausible one). DATA INTERPRETATION (DI) questions present information as a table, bar/line graph, or pie chart and ask questions that require reading values accurately and performing straightforward arithmetic (percentages, ratios, averages) on them — the key exam skill is reading the AXIS LABELS, UNITS, and any 'in thousands/lakhs' scale note correctly before calculating, since a huge fraction of DI errors come from a units/scale misread rather than an arithmetic mistake. DATA SUFFICIENCY questions give a question followed by two (or more) numbered statements, and ask NOT for the actual answer but whether the given statement(s) are sufficient to determine it — the standard approach is to evaluate each statement STRICTLY INDEPENDENTLY first (can Statement 1 alone answer the question? can Statement 2 alone?) before ever considering them together, since combining prematurely is the single most common data-sufficiency error and can make an insufficient statement look sufficient by borrowing information it doesn't actually have on its own.",
+  "explanationSections": [
+    {
+      "heading": "Problems on Ages",
+      "body": "Problems on ages are algebra word problems in disguise: assign a variable to one person's CURRENT age, express every other stated age (present, past, or future) in terms of it using the given ratio/difference, and solve the resulting linear equation. The recurring trap is applying a stated ratio to the WRONG time point (present vs. 'x years ago' vs. 'x years hence'), so always re-anchor every age to the SAME reference year before writing the equation."
+    },
+    {
+      "heading": "Blood Relations",
+      "body": "Blood relation problems require carefully building a family tree/diagram from the stated relationships one clue at a time, rather than trying to hold the whole chain in your head. Pay close attention to GENDER-SPECIFIC terms (e.g. 'mother's brother' = maternal uncle, distinct from 'father's brother' = paternal uncle), since the two are commonly swapped as a distractor."
+    },
+    {
+      "heading": "Venn Diagrams",
+      "body": "Venn diagrams visually represent set membership and overlap. For a two- or three-set problem, the key technique is filling in the diagram from the INSIDE OUT — start with the region of overlap common to ALL sets (given directly or derivable), then work outward to the pairwise-only overlaps, then the 'only this set' regions — rather than trying to compute the outer regions first."
+    },
+    {
+      "heading": "Visual / Non-Verbal Reasoning",
+      "body": "Figure series, pattern completion, mirror/water images, and paper folding are solved by identifying the SINGLE consistent transformation rule (rotation, reflection, addition/removal of an element, shading pattern) that explains EVERY step of a given sequence, then applying that exact rule to find the missing/next figure. Options that satisfy only part of the pattern are deliberately included as distractors."
+    },
+    {
+      "heading": "Arithmetic Reasoning",
+      "subsections": [
+        {
+          "heading": "Direction Sense",
+          "body": "Tracking net displacement and final direction after a series of turns/moves is best solved by sketching a simple coordinate path rather than tracking the turns mentally."
+        },
+        {
+          "heading": "Coding-Decoding",
+          "body": "Coding-decoding covers letter/number substitution patterns — identify the consistent shift or rule applied to each letter/digit and apply it consistently across the whole word or number."
+        },
+        {
+          "heading": "Series Completion",
+          "body": "Series completion means identifying whether consecutive terms differ by a constant, a multiplying factor, or an alternating rule before predicting the next term."
+        },
+        {
+          "heading": "Syllogisms",
+          "body": "Syllogisms require deducing what necessarily follows from two or more given statements, using Venn-diagram logic to check whether a conclusion is a GUARANTEED consequence, not just a plausible one."
+        }
+      ]
+    },
+    {
+      "heading": "Data Interpretation",
+      "body": "Data Interpretation (DI) questions present information as a table, bar/line graph, or pie chart and ask questions that require reading values accurately and performing straightforward arithmetic (percentages, ratios, averages) on them. The key exam skill is reading the AXIS LABELS, UNITS, and any 'in thousands/lakhs' scale note correctly before calculating, since a huge fraction of DI errors come from a units/scale misread rather than an arithmetic mistake."
+    },
+    {
+      "heading": "Data Sufficiency",
+      "body": "Data Sufficiency questions give a question followed by two (or more) numbered statements, and ask NOT for the actual answer but whether the given statement(s) are sufficient to determine it. The standard approach is to evaluate each statement STRICTLY INDEPENDENTLY first (can Statement 1 alone answer the question? can Statement 2 alone?) before ever considering them together, since combining prematurely is the single most common data-sufficiency error and can make an insufficient statement look sufficient by borrowing information it doesn't actually have on its own."
+    }
+  ],
   "commonMisconceptions": [
     "In age problems, applying a given ratio (e.g. 'ratio of ages is 3:4') to the wrong time reference — a ratio stated as holding 'now' does not automatically hold '5 years ago' or '5 years hence'; each time point needs its own expression built from the same base variable.",
     "In data sufficiency, evaluating the two statements TOGETHER first — this can make an option look sufficient when Statement 1 or Statement 2 wouldn't actually be enough on its own, which is exactly what the question is testing; each statement must first be checked strictly alone.",

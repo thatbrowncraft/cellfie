@@ -22,6 +22,28 @@
   "subjectDomain": "chemistry",
   "summary": "A redox reaction always involves simultaneous oxidation (loss of electrons, increase in oxidation number) and reduction (gain of electrons, decrease in oxidation number) — one can never happen without the other in the same overall reaction.",
   "explanation": "Oxidation is the LOSS of electrons (or an increase in oxidation number); reduction is the GAIN of electrons (or a decrease in oxidation number) — these two processes always occur TOGETHER in a redox reaction, since electrons lost by one species must be gained by another (electrons don't simply disappear). The species that gets oxidized is called the REDUCING agent (it causes reduction of the other species by donating electrons, and in doing so is itself oxidized); the species that gets reduced is called the OXIDIZING agent (it causes oxidation of the other species by accepting electrons, and is itself reduced) — a frequent point of confusion, since the naming refers to the EFFECT on the OTHER species, not on itself. Oxidation number (or oxidation state) is a bookkeeping tool assigning a hypothetical charge to each atom in a compound/ion, based on a set of assignment rules (e.g., oxygen is usually −2, hydrogen usually +1, free elements are 0, the sum of oxidation numbers in a neutral compound is 0 and in an ion equals the ion's charge) — tracking CHANGES in oxidation number is how redox reactions are identified and balanced, even when electron transfer isn't visually obvious (as in many covalent/organic redox reactions). Balancing redox equations uses either the oxidation number method (equalize total increase and decrease in oxidation number) or the ion-electron (half-reaction) method (write and balance separate oxidation and reduction half-reactions for atoms, charge, and — in acidic/basic medium — H⁺/OH⁻ and H₂O, then combine so electrons lost equal electrons gained). Common exam pattern: disproportionation reactions are a special type of redox reaction where the SAME element, in the SAME starting oxidation state, is simultaneously oxidized AND reduced in different product molecules (e.g., Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ + H₂O, where chlorine, starting at 0, ends up partly at −1 and partly at +1).",
+  "explanationSections": [
+    {
+      "heading": "Oxidation and Reduction",
+      "body": "Oxidation is the LOSS of electrons (or an increase in oxidation number); reduction is the GAIN of electrons (or a decrease in oxidation number). These two processes always occur TOGETHER in a redox reaction, since electrons lost by one species must be gained by another (electrons don't simply disappear)."
+    },
+    {
+      "heading": "Oxidizing and Reducing Agents",
+      "body": "The species that gets oxidized is called the REDUCING agent (it causes reduction of the other species by donating electrons, and in doing so is itself oxidized); the species that gets reduced is called the OXIDIZING agent (it causes oxidation of the other species by accepting electrons, and is itself reduced). This is a frequent point of confusion, since the naming refers to the EFFECT on the OTHER species, not on itself."
+    },
+    {
+      "heading": "Oxidation Number",
+      "body": "Oxidation number (or oxidation state) is a bookkeeping tool assigning a hypothetical charge to each atom in a compound/ion, based on a set of assignment rules (e.g., oxygen is usually −2, hydrogen usually +1, free elements are 0, the sum of oxidation numbers in a neutral compound is 0 and in an ion equals the ion's charge). Tracking CHANGES in oxidation number is how redox reactions are identified and balanced, even when electron transfer isn't visually obvious (as in many covalent/organic redox reactions)."
+    },
+    {
+      "heading": "Balancing Redox Equations",
+      "body": "Balancing redox equations uses either the oxidation number method (equalize total increase and decrease in oxidation number) or the ion-electron (half-reaction) method (write and balance separate oxidation and reduction half-reactions for atoms, charge, and — in acidic/basic medium — H⁺/OH⁻ and H₂O, then combine so electrons lost equal electrons gained)."
+    },
+    {
+      "heading": "Disproportionation Reactions",
+      "body": "A common exam pattern: disproportionation reactions are a special type of redox reaction where the SAME element, in the SAME starting oxidation state, is simultaneously oxidized AND reduced in different product molecules (e.g., Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ + H₂O, where chlorine, starting at 0, ends up partly at −1 and partly at +1)."
+    }
+  ],
   "comparison": [
     {
       "aspect": "Electron change",
