@@ -1,0 +1,104 @@
+{
+  "id": "constitution-centre-state-relations",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 8,
+  "title": "Centre \u2013 State Government and their Relation",
+  "shortDescription": "Part XI (Articles 245\u2013263) \u2014 who legislates on what, who administers what, and who gets which share of the money.",
+  "genZNote": "India's federal system, but with the Centre keeping a heavier hand on the wheel than a textbook federation usually would.",
+  "sections": [
+    {
+      "id": "framework",
+      "heading": "Constitutional framework",
+      "body": "Centre-State relations are organised into three parts under Part XI and Part XII of the Constitution: legislative relations, administrative relations, and financial relations. India is often described as 'quasi-federal' or 'federal with a unitary bias' \u2014 there is a genuine division of powers, but several features (like a single, integrated judiciary, All India Services, and emergency provisions) tilt the balance towards the Centre when needed."
+    },
+    {
+      "id": "legislative-relations",
+      "heading": "Legislative Relations (Articles 245\u2013255)",
+      "body": "Parliament can make laws for the whole or any part of India; a State Legislature can make laws for the whole or any part of that State. The Seventh Schedule divides subjects into three lists.",
+      "table": {
+        "columnHeaders": ["List", "Who legislates & examples"],
+        "rows": [
+          ["Union List", "Parliament has exclusive power (~100 subjects) \u2014 e.g. defence, foreign affairs, banking, currency, railways."],
+          ["State List", "State Legislature has exclusive power (~61 subjects) \u2014 e.g. police, public order, public health, agriculture."],
+          ["Concurrent List", "Both Parliament and State Legislatures can legislate (~52 subjects) \u2014 e.g. education, forests, marriage and divorce, criminal law and procedure. In case of a conflict, the Union law prevails (Article 254), unless the State law has received the President's assent."]
+        ]
+      }
+    },
+    {
+      "id": "residuary-power",
+      "heading": "Residuary powers (Article 248)",
+      "body": "Subjects not mentioned in any of the three lists (residuary subjects, such as newer areas like cyber law) fall exclusively to Parliament \u2014 a deliberately Centre-favouring design choice compared to some other federations, where residuary power often rests with the states instead."
+    },
+    {
+      "id": "administrative-relations",
+      "heading": "Administrative Relations (Articles 256\u2013263)",
+      "bullets": [
+        "The Union can give directions to a State government to ensure compliance with Union laws (Article 256) and to ensure the exercise of the State's executive power does not impede the Union's executive power (Article 257).",
+        "All India Services (IAS, IPS, IFS) are common to both the Union and the States \u2014 recruited and trained centrally, but serving in State cadres, which strengthens administrative uniformity.",
+        "Article 262 \u2014 Parliament may provide for adjudication of any dispute relating to the waters of inter-State rivers or river valleys.",
+        "Article 263 \u2014 the President may establish an Inter-State Council to investigate and discuss subjects of common interest between the Union and the States, or among States."
+      ]
+    },
+    {
+      "id": "financial-relations",
+      "heading": "Financial Relations (Articles 268\u2013293)",
+      "bullets": [
+        "Some taxes are levied by the Union but collected and appropriated by the States (Article 268).",
+        "Some taxes are levied and collected by the Union but assigned to the States.",
+        "Some taxes are levied, collected, and distributed between the Union and the States (Article 270).",
+        "The Finance Commission (Article 280) is constituted every 5 years to recommend how net tax proceeds should be distributed between the Union and States, and among the States themselves.",
+        "Grants-in-aid to States are provided under Articles 275 and 282.",
+        "The GST Council, created by the 101st Amendment Act, 2016, brings the Union and States together to jointly decide GST rates and rules \u2014 a modern example of 'cooperative federalism' in the financial domain."
+      ]
+    },
+    {
+      "id": "cooperative-federalism",
+      "heading": "Cooperative federalism and the role of the Governor",
+      "body": "Institutions like the NITI Aayog (which replaced the Planning Commission in 2015) and the GST Council are meant to foster genuine collaboration between the Centre and States on policy and finance, rather than a purely top-down relationship. At the same time, the Governor \u2014 appointed by the Centre \u2014 plays a recurring role in Centre-State friction, particularly through the discretionary power to recommend President's Rule (Article 356) or to reserve State Bills for the President's consideration (Article 200)."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Part XI (Articles 245\u2013263) governs legislative and administrative relations between the Union and States; Part XII covers financial relations, built around the Union, State, and Concurrent Lists.",
+    "keyFacts": [
+      "Union List (~100 subjects, Parliament only), State List (~61 subjects, States only), Concurrent List (~52 subjects, both \u2014 Union law prevails on conflict, Article 254).",
+      "Residuary powers rest with Parliament (Article 248), not the States \u2014 unlike many other federations.",
+      "Finance Commission (Article 280) is constituted every 5 years to recommend tax-revenue distribution.",
+      "GST Council was created by the 101st Amendment Act, 2016."
+    ],
+    "keyTerms": ["Seventh Schedule", "Residuary powers", "Cooperative federalism", "All India Services"],
+    "commonConfusion": [
+      "In India, residuary power belongs to the CENTRE (Article 248) \u2014 a common exam trap is assuming it works like the US, where residuary power belongs to the states."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Article 254 resolves Concurrent List conflicts in favour of Union law, unless the State law has received the President's assent.",
+      "NITI Aayog replaced the Planning Commission in 2015.",
+      "The Inter-State Council (Article 263) is established by the President, not created automatically."
+    ],
+    "commonTraps": [
+      "Do not say the number of subjects in each list is fixed forever \u2014 the approximate counts (100/61/52) are commonly cited but subjects have shifted between lists over time via amendments.",
+      "Do not confuse the Finance Commission (Article 280, recommends TAX revenue distribution) with the GST Council (created by the 101st Amendment, decides GST rates/rules) \u2014 they are different bodies with different jobs."
+    ],
+    "mustRemember": [
+      "All India Services (IAS, IPS, IFS) are a key administrative-relations tool binding Union and States together.",
+      "Article 200 lets a Governor reserve a State Bill for the President's consideration \u2014 a frequent flashpoint in Centre-State relations."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Finance Commission",
+        "termB": "GST Council",
+        "distinction": "The Finance Commission (Article 280) is constituted every 5 years and recommends how tax proceeds are shared between Union and States. The GST Council (101st Amendment, 2016) is a standing body that jointly decides GST rates and rules."
+      }
+    ],
+    "possibleQuestions": [
+      "Where does residuary legislative power rest under the Indian Constitution?",
+      "Which Article resolves a conflict between a Union law and a State law on a Concurrent List subject?",
+      "Which constitutional amendment created the GST Council?"
+    ]
+  },
+  "sources": [
+    { "name": "Constitution of India \u2014 Part XI (Articles 245\u2013263) and Part XII (Articles 268\u2013293)", "kind": "educational" },
+    { "name": "NCERT, Indian Constitution at Work (Class XI Political Science)", "kind": "educational" }
+  ]
+}

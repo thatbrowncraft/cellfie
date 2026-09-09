@@ -1,0 +1,103 @@
+{
+  "id": "constitution-fundamental-duties",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 4,
+  "title": "Fundamental Duties",
+  "shortDescription": "Article 51A, Part IVA \u2014 the 11 civic duties added after Fundamental Rights, modelled on the erstwhile USSR.",
+  "genZNote": "The Constitution's fine print reminding citizens that rights come with a return favour.",
+  "sections": [
+    {
+      "id": "meaning-and-basis",
+      "heading": "Meaning and constitutional basis",
+      "body": "Fundamental Duties are listed in Article 51A, under Part IVA of the Constitution. They were added later \u2014 not part of the original 1950 Constitution \u2014 by the 42nd Amendment Act, 1976, on the recommendation of the Sardar Swaran Singh Committee. Unlike Part III (Rights) and Part IV (Directive Principles), Part IVA currently contains only this one Article."
+    },
+    {
+      "id": "origin-and-number",
+      "heading": "Origin and number of duties",
+      "bullets": [
+        "Inspired by Article 59 of the (then) USSR Constitution.",
+        "Originally 10 duties were added in 1976.",
+        "An 11th duty was added later by the 86th Amendment Act, 2002 \u2014 the duty of a parent or guardian to provide opportunities for education to their child (or ward) between the ages of 6 and 14. This pairs directly with Article 21A (Right to Education), added by the same amendment."
+      ]
+    },
+    {
+      "id": "the-duties",
+      "heading": "The 11 Fundamental Duties (Article 51A)",
+      "bullets": [
+        "Abide by the Constitution and respect its ideals, institutions, the National Flag, and the National Anthem.",
+        "Cherish and follow the noble ideals that inspired the national freedom struggle.",
+        "Uphold and protect the sovereignty, unity, and integrity of India.",
+        "Defend the country and render national service when called upon.",
+        "Promote harmony and the spirit of common brotherhood among all citizens, transcending religious, linguistic, and regional diversities; renounce practices derogatory to the dignity of women.",
+        "Value and preserve the rich heritage of the country's composite culture.",
+        "Protect and improve the natural environment, including forests, lakes, rivers, and wildlife, and have compassion for living creatures.",
+        "Develop scientific temper, humanism, and the spirit of inquiry and reform.",
+        "Safeguard public property and abjure violence.",
+        "Strive towards excellence in all spheres of individual and collective activity.",
+        "(Added 2002) A parent or guardian shall provide opportunities for education to their child/ward between 6 and 14 years of age."
+      ]
+    },
+    {
+      "id": "scope-and-importance",
+      "heading": "Scope and importance",
+      "body": "Fundamental Duties, like Directive Principles, are non-justiciable \u2014 there is no direct legal sanction in the Constitution for failing to perform them, and courts cannot force a citizen to comply. However, they are morally and civically significant, and some are indirectly enforced through ordinary legislation \u2014 for example, environmental protection laws draw on the duty in clause (g), and laws protecting national symbols draw on clause (a)."
+    },
+    {
+      "id": "rights-vs-duties",
+      "heading": "Distinction between Rights and Duties",
+      "table": {
+        "columnHeaders": ["Fundamental Rights", "Fundamental Duties"],
+        "rows": [
+          ["Part & Articles", "Part III, Articles 12\u201335", "Part IVA, Article 51A"],
+          ["Added", "Part of the original 1950 Constitution", "Added later, by the 42nd Amendment, 1976"],
+          ["Enforceability", "Justiciable \u2014 enforceable in court", "Non-justiciable \u2014 no direct legal sanction"],
+          ["Who it binds", "Mostly protects the individual against the State", "Binds the individual citizen"]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Fundamental Duties (Article 51A, Part IVA) are 11 non-justiciable civic duties of citizens, added by the 42nd Amendment (1976) and expanded by the 86th Amendment (2002).",
+    "keyFacts": [
+      "Recommended by the Sardar Swaran Singh Committee.",
+      "Modelled on Article 59 of the erstwhile USSR Constitution.",
+      "Originally 10 duties (1976); an 11th was added in 2002 (education duty for parents/guardians of children aged 6\u201314).",
+      "Part IVA currently has only one Article \u2014 Article 51A."
+    ],
+    "keyTerms": ["Sardar Swaran Singh Committee", "Article 51A", "Part IVA", "Non-justiciable"],
+    "commonConfusion": [
+      "Fundamental Duties were NOT in the original 1950 Constitution \u2014 they were inserted 26 years later, by the 42nd Amendment in 1976."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "42nd Amendment Act, 1976 added Fundamental Duties on the recommendation of the Sardar Swaran Singh Committee.",
+      "86th Amendment Act, 2002 added the 11th duty, paired with the new Article 21A (Right to Education).",
+      "Fundamental Duties were inspired by the Constitution of the erstwhile USSR."
+    ],
+    "commonTraps": [
+      "Do not say there are 10 Fundamental Duties \u2014 there are 11 since the 86th Amendment, 2002.",
+      "Do not confuse Part IVA (Fundamental Duties) with Part IV (Directive Principles) \u2014 they are separate Parts, added at different times, for different purposes."
+    ],
+    "mustRemember": [
+      "Fundamental Duties apply to citizens; they are not enforceable in court, unlike Fundamental Rights.",
+      "The 11th duty (education for children 6\u201314) directly mirrors Article 21A, a Fundamental Right added by the same 86th Amendment."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "42nd Amendment (1976)",
+        "termB": "86th Amendment (2002)",
+        "distinction": "The 42nd Amendment ORIGINALLY inserted Fundamental Duties (10 of them) via Article 51A. The 86th Amendment later ADDED the 11th duty and, separately, inserted Article 21A as a Fundamental Right."
+      }
+    ],
+    "possibleQuestions": [
+      "On whose recommendation were Fundamental Duties added to the Constitution?",
+      "Which amendment added the 11th Fundamental Duty, and what does it require?",
+      "Fundamental Duties were inspired by the Constitution of which country?"
+    ]
+  },
+  "sources": [
+    { "name": "Constitution of India — Part IVA, Article 51A", "kind": "educational" },
+    { "name": "NCERT, Indian Constitution at Work (Class XI Political Science)", "kind": "educational" }
+  ]
+}

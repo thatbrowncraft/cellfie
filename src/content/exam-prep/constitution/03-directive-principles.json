@@ -1,0 +1,95 @@
+{
+  "id": "constitution-dpsp",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 3,
+  "title": "Directive Principles of State Policy",
+  "shortDescription": "Part IV, Articles 36\u201351 \u2014 the State's welfare 'to-do list', not enforceable in court but fundamental in governance.",
+  "genZNote": "The government's vision board \u2014 not legally binding, but it's not allowed to just ignore it either.",
+  "sections": [
+    {
+      "id": "meaning-and-position",
+      "heading": "Meaning and constitutional position",
+      "body": "The Directive Principles of State Policy (DPSP) are contained in Part IV (Articles 36\u201351) of the Constitution and were borrowed from the Irish Constitution. Article 37 states that DPSPs 'shall not be enforceable by any court', but are nevertheless 'fundamental in the governance of the country', and it is the duty of the State to apply them in making laws. In short: not justiciable, but not optional either \u2014 they are the goals the State is meant to work towards."
+    },
+    {
+      "id": "purpose",
+      "heading": "Purpose",
+      "body": "While Fundamental Rights largely establish political democracy (protecting individual liberty from State overreach), the Directive Principles aim to establish social and economic democracy \u2014 building a genuine welfare state where the material conditions of life (livelihood, health, education) are also the State's responsibility, not just an absence of interference."
+    },
+    {
+      "id": "classification",
+      "heading": "Classification (a commonly used, exam-friendly grouping)",
+      "body": "The Constitution itself does not officially classify the DPSPs into these categories, but this three-way grouping (used widely in exam preparation) makes the long list far easier to organise and remember.",
+      "table": {
+        "columnHeaders": ["Type", "Focus & Examples"],
+        "rows": [
+          ["Socialistic", "Social and economic justice \u2014 e.g. Art 39 (equal pay, equitable distribution of resources), Art 41 (right to work/education in certain cases), Art 42 (maternity relief), Art 43 (a living wage)."],
+          ["Gandhian", "Reflects Gandhian ideals \u2014 e.g. Art 40 (organise village panchayats), Art 43 (promote cottage industries), Art 46 (promote educational/economic interests of SCs, STs, and OBCs), Art 47 (raise nutrition/public health, prohibit intoxicating drinks), Art 48 (organise agriculture/animal husbandry, prohibit cow slaughter)."],
+          ["Liberal-Intellectual", "Broadly liberal, modern-state ideals \u2014 e.g. Art 44 (a Uniform Civil Code), Art 45 (early childhood care/education), Art 48A (protect and improve environment, forests, wildlife), Art 49 (protect monuments/places of historic interest), Art 50 (separation of judiciary from the executive), Art 51 (promote international peace and security)."]
+        ]
+      }
+    },
+    {
+      "id": "relationship-with-fr",
+      "heading": "Relationship with Fundamental Rights",
+      "body": "This has been one of the most litigated relationships in Indian constitutional history \u2014 a favourite exam theme.",
+      "bullets": [
+        "Champakam Dorairajan case (1951) \u2014 held that in a conflict, Fundamental Rights prevail over Directive Principles.",
+        "Golaknath case (1967) \u2014 held Parliament cannot amend Fundamental Rights at all under Article 368.",
+        "24th Amendment (1971) \u2014 restored Parliament's power to amend any part of the Constitution, including Fundamental Rights.",
+        "Kesavananda Bharati case (1973) \u2014 overruled Golaknath; Parliament CAN amend Fundamental Rights, but not so as to damage the Constitution's 'basic structure'.",
+        "42nd Amendment (1976) \u2014 inserted Article 31C, giving laws implementing certain DPSPs (Articles 39(b) and (c)) primacy over Articles 14 and 19.",
+        "Minerva Mills case (1980) \u2014 struck down the part of the 42nd Amendment that gave ALL Directive Principles unconditional primacy over Fundamental Rights, restoring a 'harmony and balance' between the two."
+      ]
+    },
+    {
+      "id": "implementation",
+      "heading": "Implementation and significance",
+      "body": "Many landmark laws implement specific Directive Principles even though the Principles themselves cannot be enforced directly \u2014 for example, land reform and abolition of the zamindari system (Article 39), the 73rd and 74th Amendments strengthening panchayats and municipalities (Article 40), and the Right to Education Act, 2009 (which also led to Article 21A being added as a Fundamental Right, showing how a Directive Principle can eventually be elevated into an enforceable right)."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "DPSPs (Part IV, Articles 36\u201351) are non-justiciable but 'fundamental in governance' guidelines directing the State towards social and economic welfare.",
+    "keyFacts": [
+      "Borrowed from the Irish Constitution.",
+      "Article 37 \u2014 not enforceable in court, but fundamental in governance; duty of the State to apply them.",
+      "Common classification: Socialistic, Gandhian, Liberal-Intellectual (not an official constitutional classification).",
+      "Minerva Mills case (1980) restored balance between Fundamental Rights and DPSPs after the 42nd Amendment tilted it too far towards DPSPs."
+    ],
+    "keyTerms": ["Non-justiciable", "Article 31C", "Basic structure doctrine", "Welfare state"],
+    "commonConfusion": [
+      "Fundamental Rights are largely negative (restrain the State) and justiciable; DPSPs are largely positive (direct the State) and non-justiciable \u2014 don't mix up which one a court can actually enforce."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "DPSPs come from Part IV, Articles 36\u201351, and are inspired by the Irish Constitution.",
+      "Article 44 (Uniform Civil Code) and Article 40 (village panchayats) are two of the most frequently referenced individual DPSPs in exams.",
+      "Article 21A (Right to Education) began life as a Directive Principle idea before being made an enforceable Fundamental Right by the 86th Amendment."
+    ],
+    "commonTraps": [
+      "Do not say DPSPs are enforceable in court \u2014 Article 37 explicitly rules this out.",
+      "Do not confuse the sequence of cases: Golaknath (Parliament CANNOT touch FRs) came before Kesavananda Bharati (Parliament CAN, but not the basic structure)."
+    ],
+    "mustRemember": [
+      "Fundamental Rights vs DPSP: FR = political democracy, justiciable, largely restrains the State. DPSP = social/economic democracy, non-justiciable, directs the State.",
+      "Minerva Mills (1980) is the case that re-balanced FR and DPSP after the 42nd Amendment (1976) had tilted things towards DPSP primacy."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Fundamental Rights",
+        "termB": "Directive Principles",
+        "distinction": "Fundamental Rights are justiciable (enforceable in court) and aim at political democracy; Directive Principles are non-justiciable and aim at social and economic democracy."
+      }
+    ],
+    "possibleQuestions": [
+      "Which Article states that Directive Principles are not enforceable by any court?",
+      "Which case restored the balance between Fundamental Rights and Directive Principles after the 42nd Amendment?",
+      "From which country's Constitution were the Directive Principles borrowed?"
+    ]
+  },
+  "sources": [
+    { "name": "Constitution of India — Part IV (Articles 36\u201351)", "kind": "educational" },
+    { "name": "NCERT, Indian Constitution at Work (Class XI Political Science)", "kind": "educational" }
+  ]
+}

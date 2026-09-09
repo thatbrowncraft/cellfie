@@ -1,0 +1,124 @@
+{
+  "id": "constitution-judicial-system",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 9,
+  "title": "Judicial System of Indian Constitution",
+  "shortDescription": "A single, integrated judiciary topped by the Supreme Court \u2014 its jurisdiction, appointments, and the doctrine that keeps every other institution in check.",
+  "genZNote": "One judiciary, one hierarchy, and a Supreme Court with the final word on whether anything else in this app's own topics is even constitutional.",
+  "sections": [
+    {
+      "id": "structure",
+      "heading": "A single, integrated judiciary",
+      "body": "Unlike some federations that run separate Union and State court systems, India has ONE integrated judicial system: the Supreme Court at the top, High Courts below it for each State (or group of States), and subordinate courts below those. The Supreme Court is established under Article 124 (Part V) and High Courts under Article 214 (Part VI)."
+    },
+    {
+      "id": "supreme-court-composition",
+      "heading": "Supreme Court \u2014 composition and appointment",
+      "bullets": [
+        "Article 124 establishes the Supreme Court, consisting of the Chief Justice of India (CJI) and other judges; the sanctioned strength (originally 7 other judges) has been increased several times by Parliament and currently stands at 34 judges including the CJI.",
+        "Qualifications: a citizen of India who has been a High Court judge for at least 5 years, OR an advocate of a High Court for at least 10 years, OR is, in the President's opinion, a distinguished jurist.",
+        "Appointment: made by the President, following the 'collegium system' \u2014 a practice developed through the Second Judges Case (1993) and Third Judges Case (1998), where a collegium of the CJI and senior-most SC judges effectively recommends appointments.",
+        "The National Judicial Appointments Commission (NJAC), created by the 99th Amendment Act (2014) to replace the collegium, was struck down as unconstitutional by the Supreme Court in 2015 for violating judicial independence, part of the basic structure \u2014 so the collegium system continues.",
+        "Retirement age: 65 years. Tenure security (no fixed term, cannot be removed except by impeachment) protects judicial independence."
+      ]
+    },
+    {
+      "id": "supreme-court-removal",
+      "heading": "Supreme Court \u2014 removal of a judge",
+      "body": "A Supreme Court judge can be removed only by an order of the President, following an address by Parliament, passed in each House by a special majority (majority of total membership AND 2/3rd of members present and voting), on grounds of proved misbehaviour or incapacity (Article 124(4)) \u2014 a deliberately high bar, mirroring the President's own impeachment standard, to insulate judges from political pressure."
+    },
+    {
+      "id": "supreme-court-jurisdiction",
+      "heading": "Supreme Court \u2014 jurisdiction",
+      "table": {
+        "columnHeaders": ["Jurisdiction", "What it covers"],
+        "rows": [
+          ["Original (Article 131)", "Disputes directly between the Government of India and one or more States, or between States themselves \u2014 no other court can hear these."],
+          ["Writ (Article 32)", "Enforcement of Fundamental Rights \u2014 itself a Fundamental Right."],
+          ["Appellate (Articles 132\u2013134, 136)", "Appeals from High Courts in constitutional, civil, and criminal matters; Article 136 (Special Leave Petition) lets the Supreme Court grant leave to appeal from almost any court or tribunal in the country, at its own discretion."],
+          ["Advisory (Article 143)", "The President may refer a question of law or fact of public importance to the Supreme Court for its opinion; the opinion is advisory, not binding."]
+        ]
+      }
+    },
+    {
+      "id": "supreme-court-status",
+      "heading": "Supreme Court as guardian of the Constitution",
+      "bullets": [
+        "Article 129 \u2014 the Supreme Court is a 'court of record', meaning its proceedings and decisions are recorded for perpetual memory and it has the power to punish for its own contempt.",
+        "Article 141 \u2014 the law declared by the Supreme Court is binding on all courts within India."
+      ]
+    },
+    {
+      "id": "high-courts",
+      "heading": "High Courts",
+      "bullets": [
+        "Article 214 \u2014 there shall be a High Court for each State (one High Court can also serve more than one State/Union Territory).",
+        "Articles 216\u2013217 \u2014 judges are appointed by the President in consultation with the CJI, the Chief Justice of that High Court, and the Governor of the State.",
+        "Retirement age: 62 years (lower than the Supreme Court's 65).",
+        "Jurisdiction: original, appellate, and writ jurisdiction. Article 226 lets High Courts issue writs not only for enforcing Fundamental Rights but also for 'any other purpose' \u2014 making it WIDER in scope than the Supreme Court's Article 32, even though the Supreme Court sits higher in the hierarchy.",
+        "Article 227 \u2014 gives every High Court a power of superintendence over all courts and tribunals within its territorial jurisdiction."
+      ]
+    },
+    {
+      "id": "judicial-review-activism",
+      "heading": "Judicial Review, Judicial Activism, and PIL",
+      "body": "Judicial Review is the power of courts to examine the constitutional validity of legislative and executive actions, and to strike down anything inconsistent with the Constitution. It is implied from several Articles (13, 32, 131\u2013136, 226, 227, 245) and was confirmed as part of the Constitution's basic structure in the Kesavananda Bharati and Minerva Mills cases.\n\nJudicial Activism refers to courts taking a more proactive role in protecting rights and enforcing accountability, most visibly through Public Interest Litigation (PIL) \u2014 pioneered from the late 1970s by judges like Justice P.N. Bhagwati and Justice V.R. Krishna Iyer, who relaxed the traditional rule of 'locus standi' so that any public-spirited person (not only the directly affected party) could approach the court on behalf of those unable to do so themselves."
+    },
+    {
+      "id": "sc-vs-hc",
+      "heading": "Supreme Court vs. High Court",
+      "table": {
+        "columnHeaders": ["Supreme Court", "High Court"],
+        "rows": [
+          ["Writ jurisdiction", "Article 32 \u2014 only for Fundamental Rights", "Article 226 \u2014 for Fundamental Rights AND any other legal right (wider)"],
+          ["Retirement age", "65 years", "62 years"],
+          ["Position", "Apex court; its law binds all courts (Art 141)", "Below the Supreme Court in appeal hierarchy"]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "India has one integrated judiciary \u2014 the Supreme Court (Art 124) at the top and High Courts (Art 214) below \u2014 with judicial review as a confirmed part of the basic structure.",
+    "keyFacts": [
+      "Supreme Court retirement age: 65; High Court retirement age: 62.",
+      "Article 226 (High Court writ jurisdiction) is wider than Article 32 (Supreme Court) \u2014 it covers non-Fundamental legal rights too.",
+      "NJAC (99th Amendment, 2014) was struck down in 2015; the collegium system continues to govern judicial appointments.",
+      "Judges are removed only by parliamentary impeachment-style process on proved misbehaviour or incapacity (Article 124(4))."
+    ],
+    "keyTerms": ["Collegium system", "Special Leave Petition (Art 136)", "Locus standi", "Court of record"],
+    "commonConfusion": [
+      "Even though the Supreme Court sits above the High Courts, its own writ jurisdiction (Art 32) is narrower in subject matter than a High Court's (Art 226) \u2014 rank and jurisdictional breadth are two different things."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Second Judges Case (1993) and Third Judges Case (1998) together established the collegium system for judicial appointments.",
+      "The NJAC was struck down by the Supreme Court in 2015 as unconstitutional.",
+      "Article 136 (Special Leave Petition) gives the Supreme Court very wide discretionary appellate power over almost any court or tribunal decision."
+    ],
+    "commonTraps": [
+      "Do not say Article 32 is wider than Article 226 \u2014 it is the other way round; Article 226 also covers non-Fundamental legal rights, Article 32 covers only Fundamental Rights.",
+      "Do not confuse Supreme Court judges' retirement age (65) with High Court judges' retirement age (62)."
+    ],
+    "mustRemember": [
+      "The Supreme Court's advisory jurisdiction (Article 143) produces an opinion that is NOT binding on the President.",
+      "Justice P.N. Bhagwati and Justice V.R. Krishna Iyer are the names most associated with pioneering PIL and judicial activism in India."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Article 32",
+        "termB": "Article 226",
+        "distinction": "Article 32 (Supreme Court) is itself a Fundamental Right and covers only enforcement of Fundamental Rights. Article 226 (High Court) is not a Fundamental Right but has WIDER scope, covering Fundamental Rights plus any other legal right."
+      }
+    ],
+    "possibleQuestions": [
+      "Which two cases together established the collegium system for judicial appointments?",
+      "What is the retirement age of a Supreme Court judge, and how does it differ from a High Court judge's?",
+      "Which Article gives the Supreme Court its Special Leave Petition power?"
+    ]
+  },
+  "sources": [
+    { "name": "Constitution of India \u2014 Part V Chapter IV (Articles 124\u2013147) and Part VI Chapter V (Articles 214\u2013231)", "kind": "educational" },
+    { "name": "NCERT, Indian Constitution at Work (Class XI Political Science)", "kind": "educational" }
+  ]
+}

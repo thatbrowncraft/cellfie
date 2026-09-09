@@ -1,0 +1,157 @@
+{
+  "id": "constitution-fundamental-rights",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 2,
+  "title": "Fundamental Rights",
+  "shortDescription": "Part III, Articles 12\u201335 — the six baskets of rights every citizen can enforce directly in the Supreme Court.",
+  "genZNote": "Your constitutional 'don't mess with these' folder \u2014 with limits and conditions attached.",
+  "sections": [
+    {
+      "id": "what-and-basis",
+      "heading": "What are Fundamental Rights, and their basis",
+      "body": "Fundamental Rights are contained in Part III (Articles 12\u201335) of the Constitution, inspired mainly by the American Bill of Rights. Article 12 defines what counts as 'the State' for this Part, and Article 13 says any law inconsistent with these rights is void to the extent of that inconsistency. Unlike Directive Principles, Fundamental Rights are justiciable — a person can go straight to court to enforce them."
+    },
+    {
+      "id": "six-baskets",
+      "heading": "The six baskets, at a glance",
+      "table": {
+        "columnHeaders": ["Right", "Articles"],
+        "rows": [
+          ["Right to Equality", "14\u201318"],
+          ["Right to Freedom", "19\u201322"],
+          ["Right against Exploitation", "23\u201324"],
+          ["Right to Freedom of Religion", "25\u201328"],
+          ["Cultural and Educational Rights", "29\u201330"],
+          ["Right to Constitutional Remedies", "32"]
+        ]
+      }
+    },
+    {
+      "id": "right-to-equality",
+      "heading": "Right to Equality (Articles 14\u201318)",
+      "bullets": [
+        "Article 14 — Equality before law and equal protection of the laws, for any 'person' (not just citizens).",
+        "Article 15 — Prohibits discrimination on grounds of religion, race, caste, sex, or place of birth; allows special provisions for women, children, and socially/educationally backward classes.",
+        "Article 16 — Equality of opportunity in matters of public employment; permits reservation for backward classes not adequately represented in State services.",
+        "Article 17 — Abolishes 'untouchability' and forbids its practice in any form.",
+        "Article 18 — Abolishes titles (other than military/academic distinctions); the State cannot confer titles, and citizens cannot accept titles from a foreign State."
+      ]
+    },
+    {
+      "id": "right-to-freedom",
+      "heading": "Right to Freedom (Articles 19\u201322)",
+      "body": "Article 19 grants six freedoms to citizens: speech and expression; peaceful assembly (without arms); forming associations/unions/cooperatives; movement throughout India; residence and settlement anywhere in India; and practising any profession or carrying on any trade/business. All six are subject to 'reasonable restrictions' the State may impose by law (e.g. sovereignty and integrity of India, security of the State, public order, decency or morality, contempt of court, defamation, or incitement to an offence).",
+      "bullets": [
+        "Article 20 — Protection in respect of conviction for offences: no ex-post-facto law, no double jeopardy, no compulsion to be a witness against oneself.",
+        "Article 21 — Protection of life and personal liberty ('procedure established by law'); judicially expanded over time to include the right to privacy, a clean environment, livelihood, and more.",
+        "Article 21A — Right to free and compulsory education for children aged 6\u201314, added by the 86th Amendment Act, 2002.",
+        "Article 22 — Protection against arrest and detention in certain cases, including the right to be informed of grounds of arrest and to consult a lawyer."
+      ]
+    },
+    {
+      "id": "against-exploitation",
+      "heading": "Right against Exploitation (Articles 23\u201324)",
+      "bullets": [
+        "Article 23 — Prohibits traffic in human beings, begar (forced labour without payment), and other similar forms of forced labour.",
+        "Article 24 — Prohibits employing children below 14 years in factories, mines, or any other hazardous employment."
+      ]
+    },
+    {
+      "id": "freedom-of-religion",
+      "heading": "Right to Freedom of Religion (Articles 25\u201328)",
+      "bullets": [
+        "Article 25 — Freedom of conscience and the right to freely profess, practise, and propagate religion, subject to public order, morality, and health.",
+        "Article 26 — Freedom for religious denominations to manage their own religious affairs and institutions.",
+        "Article 27 — No person can be compelled to pay any tax whose proceeds are used to promote a particular religion.",
+        "Article 28 — No religious instruction in institutions wholly maintained by State funds (with exceptions for institutions established under an endowment/trust)."
+      ]
+    },
+    {
+      "id": "cultural-educational",
+      "heading": "Cultural and Educational Rights (Articles 29\u201330)",
+      "bullets": [
+        "Article 29 — Protects any section of citizens with a distinct language, script, or culture from being denied the right to conserve it; also bars denial of admission to State-maintained institutions on grounds of religion, race, caste, or language.",
+        "Article 30 — Gives all minorities (religious or linguistic) the right to establish and administer educational institutions of their choice."
+      ]
+    },
+    {
+      "id": "constitutional-remedies",
+      "heading": "Right to Constitutional Remedies (Article 32)",
+      "body": "Article 32 gives every person the right to move the Supreme Court directly for the enforcement of Fundamental Rights. Dr. B.R. Ambedkar called it the 'heart and soul' of the Constitution, because a right without a remedy would be meaningless. Article 226 gives High Courts a similar power — in fact a wider one, since it covers Fundamental Rights AND other legal rights (but Article 32 itself remains a Fundamental Right, so it cannot be suspended by ordinary legislation)."
+    },
+    {
+      "id": "writs",
+      "heading": "The five writs (Articles 32 and 226)",
+      "body": "A writ is a formal written order from a court. The Supreme Court (Article 32) and every High Court (Article 226) can issue five kinds of writs to enforce rights:",
+      "table": {
+        "columnHeaders": ["Writ", "Meaning"],
+        "rows": [
+          ["Habeas Corpus", "Latin for 'to have the body'; orders that a detained person be produced before the court and the legality of the detention examined \u2014 used to challenge illegal or arbitrary detention."],
+          ["Mandamus", "Latin for 'we command'; directs a public official, body, or lower court to perform a public duty it has failed or refused to perform."],
+          ["Prohibition", "Issued by a higher court to a lower court or tribunal, ordering it to stop proceedings that exceed its jurisdiction."],
+          ["Certiorari", "Issued to quash an order already passed by a lower court, tribunal, or authority acting beyond its jurisdiction or in violation of natural justice."],
+          ["Quo Warranto", "Latin for 'by what authority'; challenges a person's right to hold a public office they may not be legally entitled to."]
+        ]
+      }
+    },
+    {
+      "id": "scope-and-limits",
+      "heading": "Scope and limitations",
+      "bullets": [
+        "Most Fundamental Rights are available only to citizens (e.g. Articles 15, 16, 19, 29, 30); some are available to every 'person', citizen or not (e.g. Articles 14, 20, 21, 21A, 23, 25).",
+        "Fundamental Rights are not absolute — they are subject to reasonable restrictions the State can impose by law.",
+        "The original Right to Property (Article 31) was removed from Part III by the 44th Amendment Act, 1978, and now exists only as an ordinary legal right under Article 300A.",
+        "During a National Emergency (Article 352), the rights under Article 19 are automatically suspended, and other rights (except Articles 20 and 21, protected by the 44th Amendment) can be suspended under Articles 358\u2013359."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Fundamental Rights (Part III, Articles 12\u201335) are the justiciable rights every person or citizen can enforce directly in court, primarily via Article 32.",
+    "keyFacts": [
+      "Six baskets: Equality (14\u201318), Freedom (19\u201322), Against Exploitation (23\u201324), Freedom of Religion (25\u201328), Cultural & Educational (29\u201330), Constitutional Remedies (32).",
+      "Right to Property was removed from Part III by the 44th Amendment (1978) and is now Article 300A, a legal (not fundamental) right.",
+      "Article 21A (Right to Education) was added by the 86th Amendment, 2002.",
+      "Five writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto."
+    ],
+    "keyTerms": ["Justiciable", "Writ jurisdiction", "Reasonable restrictions", "Article 32"],
+    "commonConfusion": [
+      "Article 32 (Supreme Court) is itself a Fundamental Right; Article 226 (High Court) is not — but Article 226 is wider in scope since it also covers non-Fundamental legal rights."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Dr. B.R. Ambedkar called Article 32 the 'heart and soul' of the Constitution.",
+      "Article 17 abolishes untouchability; Article 18 abolishes titles.",
+      "Articles 20 and 21 cannot be suspended even during a National Emergency, thanks to the 44th Amendment."
+    ],
+    "commonTraps": [
+      "Do not say Right to Property is still a Fundamental Right \u2014 it was shifted out to Article 300A by the 44th Amendment, 1978.",
+      "Do not mix up which writ does what \u2014 Habeas Corpus is about a detained PERSON; Quo Warranto is about a public OFFICE; Certiorari QUASHES an existing order, Prohibition STOPS ongoing proceedings."
+    ],
+    "mustRemember": [
+      "Article 19's six freedoms apply to citizens only, and all six carry a 'reasonable restrictions' clause.",
+      "Article 21 ('life and personal liberty') has been judicially expanded far beyond its literal text through Supreme Court interpretation."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Article 32",
+        "termB": "Article 226",
+        "distinction": "Article 32 is itself a Fundamental Right and only covers enforcement of Fundamental Rights, via the Supreme Court. Article 226 is not a Fundamental Right, covers Fundamental Rights AND other legal rights, and is exercised by High Courts."
+      },
+      {
+        "termA": "Prohibition",
+        "termB": "Certiorari",
+        "distinction": "Prohibition is preventive \u2014 it stops proceedings before they conclude. Certiorari is corrective \u2014 it quashes an order already made."
+      }
+    ],
+    "possibleQuestions": [
+      "Which writ is used to challenge illegal detention of a person?",
+      "Which amendment removed the Right to Property from Fundamental Rights, and where does it exist now?",
+      "Which Article gives children aged 6\u201314 the right to free and compulsory education?"
+    ]
+  },
+  "sources": [
+    { "name": "Constitution of India — Part III (Articles 12\u201335)", "kind": "educational" },
+    { "name": "NCERT, Indian Constitution at Work (Class XI Political Science)", "kind": "educational" }
+  ]
+}

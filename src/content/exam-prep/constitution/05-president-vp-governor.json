@@ -1,0 +1,139 @@
+{
+  "id": "constitution-president-vp-governor",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 5,
+  "title": "President, Vice President and Governor",
+  "shortDescription": "The three constitutional heads \u2014 one at the Union, one waiting in the wings, one at every State \u2014 and how their powers actually differ.",
+  "genZNote": "Three job titles, three very different amounts of real power \u2014 spot the difference before the exam does.",
+  "sections": [
+    {
+      "id": "president-position-election",
+      "heading": "President \u2014 constitutional position and election",
+      "body": "Article 52 establishes the office of President of India. Article 53 vests the executive power of the Union in the President, but Article 74 requires a Council of Ministers headed by the Prime Minister to aid and advise the President \u2014 and that advice is binding. In practice, the President is the nominal (constitutional) head of State, while real executive power lies with the Council of Ministers.\n\nThe President is elected (Article 54) by an electoral college consisting of the elected members of both Houses of Parliament and the elected members of the Legislative Assemblies of States (and the Union Territories of Delhi and Puducherry). Nominated members of Parliament or State Assemblies do NOT vote. The election uses the system of proportional representation by means of the single transferable vote, with secret ballot (Article 55)."
+    },
+    {
+      "id": "president-qualifications-term",
+      "heading": "President \u2014 qualifications, term, oath",
+      "bullets": [
+        "Qualifications (Article 58): must be a citizen of India, at least 35 years old, and qualified for election as a member of the Lok Sabha; must not hold any office of profit.",
+        "Term (Article 56): 5 years from the date of taking office; eligible for re-election any number of times (Article 57).",
+        "Oath (Article 60): administered by the Chief Justice of India, or in their absence, the senior-most available Supreme Court judge."
+      ]
+    },
+    {
+      "id": "president-powers",
+      "heading": "President \u2014 powers",
+      "bullets": [
+        "Executive powers: appoints the Prime Minister and, on the PM's advice, other ministers, the Chief Justice and other judges, Governors, the Attorney General, and members of key constitutional bodies (Election Commission, UPSC, Finance Commission, CAG).",
+        "Legislative powers: summons and prorogues sessions of Parliament, can dissolve the Lok Sabha, addresses Parliament, and can promulgate Ordinances (Article 123) when Parliament is not in session \u2014 an Ordinance has the same force as an Act but must be approved by Parliament within 6 weeks of reassembling, or it lapses.",
+        "Financial powers: no Money Bill can be introduced in Parliament without the President's prior recommendation (Article 117); the Contingency Fund of India is at the President's disposal (Article 267); the Annual Financial Statement (Budget) is laid before Parliament in the President's name (Article 112).",
+        "Judicial powers: can grant pardons, reprieves, respites, or remissions of punishment, or suspend/remit/commute a sentence \u2014 including a death sentence \u2014 under Article 72; can seek the Supreme Court's advisory opinion on a question of law or fact under Article 143.",
+        "Emergency powers: can proclaim a National Emergency (Article 352), impose President's Rule in a State (Article 356), or declare a Financial Emergency (Article 360)."
+      ]
+    },
+    {
+      "id": "president-veto",
+      "heading": "President \u2014 veto power over Bills",
+      "body": "When a non-Money Bill passed by Parliament reaches the President (Article 111), three options are available:",
+      "table": {
+        "columnHeaders": ["Veto type", "What happens"],
+        "rows": [
+          ["Absolute veto", "The President withholds assent outright, and the Bill ends there \u2014 typically used for private members' Bills, or a Government Bill where the government has since changed."],
+          ["Suspensive veto", "The President returns the Bill (if it is not a Money Bill) for Parliament's reconsideration; if Parliament passes it again, with or without changes, the President must give assent."],
+          ["Pocket veto", "The President simply takes no action \u2014 neither assents, rejects, nor returns the Bill. The Constitution sets no time limit for this, famously used by President Zail Singh on the Indian Post Office (Amendment) Bill, 1986."]
+        ]
+      }
+    },
+    {
+      "id": "president-impeachment",
+      "heading": "President \u2014 impeachment",
+      "body": "The only way to remove a President before term is impeachment (Article 61), for 'violation of the Constitution'. A resolution to impeach may originate in EITHER House, must be signed by at least 1/4th of that House's total membership, and 14 days' advance notice must be given. It must then be passed by a special majority (2/3rd of the total membership) of that House, after which the charge is investigated by the other House, where the President has the right to appear/be represented. If the other House also passes the charge by a similar special majority, the President stands removed from that date."
+    },
+    {
+      "id": "vice-president",
+      "heading": "Vice President",
+      "bullets": [
+        "Article 63 \u2014 establishes the office of Vice President of India.",
+        "Article 64 \u2014 the Vice President is the ex-officio Chairman of the Rajya Sabha.",
+        "Article 65 \u2014 acts as President during a vacancy in the President's office (due to death, resignation, or removal) until a new President is elected.",
+        "Election (Article 66): by an electoral college consisting of members of BOTH Houses of Parliament only \u2014 unlike the President's election, State MLAs do NOT participate. Elected by proportional representation via single transferable vote.",
+        "Qualifications: citizen of India, at least 35 years old, qualified for election as a member of the Rajya Sabha; not holding any office of profit.",
+        "Term (Article 67): 5 years; can resign by writing to the President; can be removed by a resolution of the Rajya Sabha passed by a majority of all its then members, agreed to by the Lok Sabha \u2014 no formal impeachment process, unlike the President."
+      ]
+    },
+    {
+      "id": "governor",
+      "heading": "Governor",
+      "bullets": [
+        "Article 153 \u2014 there shall be a Governor for each State (the same person can be appointed Governor for two or more States, since the 7th Amendment, 1956).",
+        "Article 155 \u2014 the Governor is appointed by the President (not elected).",
+        "Article 156 \u2014 holds office during the pleasure of the President; normal term is 5 years, but can be removed or reassigned earlier.",
+        "Article 157 \u2014 qualifications: citizen of India, at least 35 years old.",
+        "Article 161 \u2014 pardoning power for offences against State law; unlike the President under Article 72, the Governor CANNOT pardon a death sentence.",
+        "Article 163\u2013164 \u2014 a Council of Ministers headed by the Chief Minister aids and advises the Governor, similar to the Union structure.",
+        "Discretionary powers (unique to the Governor, beyond what the President has): reserving a State Bill for the President's consideration (Article 200); recommending President's Rule in the State (Article 356); appointing a Chief Minister when no party has a clear majority; and deciding whether to dismiss a government that has lost its majority."
+      ]
+    },
+    {
+      "id": "comparisons",
+      "heading": "Quick comparisons",
+      "table": {
+        "columnHeaders": ["President", "Governor"],
+        "rows": [
+          ["How they get the job", "Elected by an electoral college (MPs + State MLAs)", "Appointed directly by the President"],
+          ["Death sentence pardon", "Can pardon a death sentence (Art 72)", "Cannot pardon a death sentence (Art 161)"],
+          ["Discretion", "Very limited personal discretion", "Has real discretionary powers (Art 356 recommendation, reserving Bills, hung-Assembly calls)"]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The President (Union) and Governor (State) are nominal executive heads acting on ministerial advice, elected/appointed differently, with the Vice President as ex-officio Rajya Sabha Chairman and presidential stand-in.",
+    "keyFacts": [
+      "President: elected by MPs + State MLAs (not nominated members); Governor: appointed by the President; Vice President: elected by MPs only.",
+      "President can pardon a death sentence (Art 72); Governor cannot (Art 161).",
+      "President removed only by impeachment (Art 61, special majority in both Houses); Vice President removed by a simpler Rajya Sabha resolution agreed to by Lok Sabha.",
+      "Three types of presidential veto: absolute, suspensive, pocket \u2014 none applies to Money Bills the same way (a Money Bill cannot be returned for reconsideration)."
+    ],
+    "keyTerms": ["Electoral college", "Single transferable vote", "Pocket veto", "Discretionary powers"],
+    "commonConfusion": [
+      "The President's discretion is very limited; the Governor, despite being appointed (not elected), actually has MORE real discretionary power in specific situations \u2014 this reversal is a classic exam trap."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "President's term: 5 years (Art 56); minimum age 35 (Art 58); oath administered by the CJI (Art 60).",
+      "Zail Singh's pocket veto on the Indian Post Office (Amendment) Bill, 1986 is the standard textbook example of a pocket veto.",
+      "The Vice President's election excludes State MLAs \u2014 only MPs (both Houses) form the electoral college."
+    ],
+    "commonTraps": [
+      "Do not say the Governor can pardon a death sentence \u2014 only the President can, under Article 72.",
+      "Do not confuse the President's impeachment (Article 61, special majority process in both Houses) with the Vice President's removal (a Rajya Sabha resolution agreed to by the Lok Sabha \u2014 much simpler, not called 'impeachment')."
+    ],
+    "mustRemember": [
+      "A Money Bill cannot receive a suspensive veto \u2014 the President can only assent or withhold assent, not return it.",
+      "The same person can be Governor of more than one State at once, since the 7th Amendment, 1956."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "President's election",
+        "termB": "Vice President's election",
+        "distinction": "President: electoral college = elected MPs + elected State MLAs. Vice President: electoral college = MPs of both Houses ONLY (no MLAs)."
+      },
+      {
+        "termA": "Suspensive veto",
+        "termB": "Pocket veto",
+        "distinction": "Suspensive veto actively returns the Bill for reconsideration; a pocket veto is inaction \u2014 the President simply never acts on the Bill, with no time limit specified in the Constitution."
+      }
+    ],
+    "possibleQuestions": [
+      "Who administers the oath of office to the President of India?",
+      "Which Article empowers the Governor to reserve a State Bill for the President's consideration?",
+      "How does the Vice President's electoral college differ from the President's?"
+    ]
+  },
+  "sources": [
+    { "name": "Constitution of India \u2014 Articles 52\u201378 (President), 63\u201371 (Vice President), 153\u2013167 (Governor)", "kind": "educational" },
+    { "name": "NCERT, Indian Constitution at Work (Class XI Political Science)", "kind": "educational" }
+  ]
+}

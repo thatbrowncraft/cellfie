@@ -1,0 +1,123 @@
+{
+  "id": "constitution-preamble",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 1,
+  "title": "Preamble of the Constitution",
+  "shortDescription": "The Constitution's own one-paragraph identity card — what India resolved to be, and who it belongs to.",
+  "genZNote": "India's constitutional bio: the whole identity card in one paragraph.",
+  "sections": [
+    {
+      "id": "what-is-it",
+      "heading": "What is the Preamble?",
+      "body": "The Preamble is the short introductory statement at the very start of the Constitution. It sets out the source of the Constitution's authority, its objectives, and the date it was adopted. It is often called the 'soul' or the 'identity card' of the Constitution because it summarises the philosophy the rest of the document is built on.\n\nIt was adopted on 26 November 1949 (the day the Constitution itself was adopted) and came into force on 26 January 1950, which is why 26 January is celebrated as Republic Day.",
+      "bullets": [
+        "Based on the 'Objectives Resolution' moved by Jawaharlal Nehru in the Constituent Assembly on 13 December 1946.",
+        "N.A. Palkhivala famously called it the 'identity card of the Constitution'.",
+        "The only part of the Constitution that has been amended just once so far — by the 42nd Amendment Act, 1976."
+      ]
+    },
+    {
+      "id": "source-and-position",
+      "heading": "Source and Constitutional Position",
+      "body": "Two separate Supreme Court cases settled how the Preamble fits into the Constitution — this pairing is a very common exam question.",
+      "table": {
+        "columnHeaders": ["Berubari Union Case (1960)", "Kesavananda Bharati Case (1973)"],
+        "rows": [
+          ["Held", "Preamble is NOT a part of the Constitution", "Preamble IS a part of the Constitution"],
+          ["Enforceability", "Cannot be enforced in a court of law", "Still not directly enforceable, but usable to interpret ambiguous provisions"],
+          ["Amendability", "Not addressed", "Can be amended under Article 368, but Parliament cannot alter its 'basic structure'"]
+        ]
+      }
+    },
+    {
+      "id": "we-the-people",
+      "heading": "\u2018We, the People of India\u2019",
+      "body": "This opening phrase establishes that the Constitution derives its authority from the people of India themselves, not from any external power (like the British Parliament) or from any single ruler. India is a republic that gives itself its own Constitution — popular sovereignty in one phrase."
+    },
+    {
+      "id": "sovereign",
+      "heading": "Sovereign",
+      "body": "India is internally and externally free — it has supreme authority over its own territory and is not subordinate to, or a dominion of, any other country. It can acquire or cede territory and make its own foreign policy decisions."
+    },
+    {
+      "id": "socialist",
+      "heading": "Socialist",
+      "body": "Added by the 42nd Amendment Act, 1976. Refers to 'democratic socialism' — achieving social and economic goals through peaceful, constitutional means (elections, legislation) rather than by abolishing private property or nationalising everything, unlike a purely Marxist/state-socialist model."
+    },
+    {
+      "id": "secular",
+      "heading": "Secular",
+      "body": "Also added by the 42nd Amendment Act, 1976 — though secularism was already implicit through Articles 25\u201328 (freedom of religion) even before the word was inserted. India's secularism means the State has no official religion and treats all religions with equal respect ('sarva dharma sambhava'), not a strict wall of separation between religion and State as in some other countries."
+    },
+    {
+      "id": "democratic",
+      "heading": "Democratic",
+      "body": "Covers both political and social democracy — the government derives its authority from the people through periodic, free and fair elections based on universal adult suffrage, and power is exercised through elected representatives accountable to the people."
+    },
+    {
+      "id": "republic",
+      "heading": "Republic",
+      "body": "The head of State (the President) is elected, directly or indirectly, for a fixed term — not a hereditary monarch. This is what distinguishes India from a state like the United Kingdom, which is democratic but not a republic."
+    },
+    {
+      "id": "justice-liberty-equality-fraternity",
+      "heading": "Justice, Liberty, Equality, Fraternity",
+      "bullets": [
+        "Justice — social, economic, and political — borrowed from the Russian Revolution; aims to remove inequality and give every citizen a fair share of opportunity, wealth, and status.",
+        "Liberty — of thought, expression, belief, faith, and worship — borrowed from the French Revolution; secured mainly through Fundamental Rights.",
+        "Equality — of status and of opportunity — no artificial, unjust discrimination between citizens.",
+        "Fraternity — a sense of common brotherhood, assuring the dignity of the individual and the unity and integrity of the Nation. 'Integrity' was also added by the 42nd Amendment, 1976."
+      ]
+    },
+    {
+      "id": "amendment",
+      "heading": "Amendment of the Preamble",
+      "body": "The Preamble has been amended only once — by the 42nd Amendment Act, 1976 — which inserted three words: 'Socialist', 'Secular', and 'Integrity' (the last changing 'unity of the Nation' to 'unity and integrity of the Nation'). No other change has ever been made to it."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Preamble is the Constitution's introductory statement of its source of authority, core values, and objectives, adopted 26 November 1949.",
+    "keyFacts": [
+      "Based on Nehru's Objectives Resolution (13 December 1946).",
+      "Amended only once — by the 42nd Amendment Act, 1976 (added 'Socialist', 'Secular', 'Integrity').",
+      "Berubari (1960): not part of the Constitution / not enforceable. Kesavananda Bharati (1973): IS part of the Constitution, but subject to the basic structure doctrine.",
+      "Six words describing India: Sovereign, Socialist, Secular, Democratic, Republic — plus the objectives Justice, Liberty, Equality, Fraternity."
+    ],
+    "keyTerms": ["Objectives Resolution", "Basic structure doctrine", "Democratic socialism", "Popular sovereignty"],
+    "commonConfusion": [
+      "Berubari vs Kesavananda Bharati is the single most-tested Preamble fact — remember Berubari said NOT a part; Kesavananda Bharati reversed that to IS a part.",
+      "'Secular' and 'Socialist' feel original but were both added later, by the 42nd Amendment in 1976 — the 1950 Preamble did not contain them."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "42nd Amendment Act, 1976 added exactly three words to the Preamble: Socialist, Secular, Integrity.",
+      "The Preamble has been amended only once in India's constitutional history.",
+      "N.A. Palkhivala called the Preamble the 'identity card of the Constitution'."
+    ],
+    "commonTraps": [
+      "Do not assume the Preamble lists 'Unity and Integrity' from the start — the original 1949 text said only 'Unity of the Nation'.",
+      "Do not confuse Berubari's ruling (not part of Constitution) with the current, later position established in Kesavananda Bharati (is part of Constitution)."
+    ],
+    "mustRemember": [
+      "Adopted: 26 November 1949. Enforced: 26 January 1950.",
+      "'Republic' means an elected head of State, not a hereditary monarch.",
+      "Justice traces to the Russian Revolution; Liberty, Equality, Fraternity trace to the French Revolution."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Sovereign",
+        "termB": "Republic",
+        "distinction": "Sovereign means free from external control over India as a nation; Republic means the head of State is elected, not hereditary."
+      }
+    ],
+    "possibleQuestions": [
+      "Which amendment inserted the words Socialist, Secular, and Integrity into the Preamble?",
+      "In which case did the Supreme Court hold that the Preamble is part of the Constitution?"
+    ]
+  },
+  "sources": [
+    { "name": "Constitution of India — Preamble (official text)", "kind": "educational" },
+    { "name": "NCERT, Indian Constitution at Work (Class XI Political Science)", "kind": "educational" }
+  ]
+}

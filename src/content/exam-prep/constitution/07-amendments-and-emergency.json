@@ -1,0 +1,121 @@
+{
+  "id": "constitution-amendments-emergency",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 7,
+  "title": "Constitutional Amendments and Emergency Provisions",
+  "shortDescription": "How the Constitution changes itself (Article 368), and the three emergencies that can temporarily reshape how India is governed.",
+  "genZNote": "One Article lets the Constitution rewrite parts of itself; three others let the Centre take the wheel when things go badly wrong.",
+  "sections": [
+    {
+      "id": "why-amendments",
+      "heading": "Why amendments are needed",
+      "body": "A Constitution has to stay usable as a country changes \u2014 new states get created, new rights get recognised, new institutions get needed. Article 368 gives Parliament the power to amend the Constitution, but deliberately makes it harder than passing an ordinary law, so the document stays stable rather than being rewritten on every change of government."
+    },
+    {
+      "id": "amendment-procedure",
+      "heading": "Amendment procedure \u2014 three routes",
+      "table": {
+        "columnHeaders": ["Route", "How it works & examples"],
+        "rows": [
+          ["Simple majority", "Some provisions can be changed like an ordinary law (majority of members present and voting) \u2014 e.g. creation/reorganisation of States, citizenship, elections. Not technically an 'amendment' under Article 368."],
+          ["Special majority (Art 368)", "Needs a majority of the TOTAL membership of each House, AND a 2/3rd majority of members present and voting in each House. Used for most provisions, e.g. Fundamental Rights, Directive Principles."],
+          ["Special majority + State ratification", "Same special majority as above, PLUS ratification by at least half of the State Legislatures, by simple majority. Reserved for provisions affecting the federal structure \u2014 e.g. election of the President, distribution of legislative powers between Union and States, representation of States in Parliament, and Article 368 itself."]
+        ]
+      }
+    },
+    {
+      "id": "basic-structure",
+      "heading": "The Basic Structure Doctrine",
+      "body": "This is the single most important constitutional-law concept in the amendment story, and one of the most frequently tested.",
+      "bullets": [
+        "Golaknath case (1967) \u2014 the Supreme Court held Parliament CANNOT amend Fundamental Rights at all under Article 368.",
+        "24th Amendment Act (1971) \u2014 Parliament responded by amending the Constitution to explicitly confirm its power to amend ANY part, including Fundamental Rights.",
+        "Kesavananda Bharati v. State of Kerala (1973) \u2014 the Supreme Court (by a wafer-thin 7\u20136 majority) overruled Golaknath: Parliament CAN amend any part of the Constitution, including Fundamental Rights, but cannot alter its 'basic structure' or 'basic features'.",
+        "Basic structure elements identified over time include: supremacy of the Constitution, rule of law, separation of powers, judicial review, federalism, secularism, the sovereign-democratic-republican character of India, free and fair elections, and the parliamentary system of government.",
+        "42nd Amendment Act (1976) \u2014 sometimes called the 'Mini Constitution' for its sheer scale of change; among other things it tried to place constitutional amendments beyond judicial review, and gave certain Directive Principles primacy over Fundamental Rights (Article 31C).",
+        "Minerva Mills case (1980) \u2014 struck down the parts of the 42nd Amendment that tried to place amendments beyond judicial review and gave unconditional DPSP primacy, holding that limited amending power and judicial review are themselves part of the basic structure.",
+        "44th Amendment Act (1978) \u2014 reversed several excesses of the 42nd Amendment (passed during the Emergency); removed the Right to Property from Part III (now Article 300A) and protected Articles 20 and 21 from suspension even during a National Emergency."
+      ]
+    },
+    {
+      "id": "emergency-overview",
+      "heading": "Emergency Provisions \u2014 overview (Part XVIII)",
+      "body": "The Constitution provides for three distinct kinds of emergency, each with a different trigger, approval process, and effect. This is a heavily favoured comparison topic in competitive exams."
+    },
+    {
+      "id": "national-emergency",
+      "heading": "National Emergency (Article 352)",
+      "bullets": [
+        "Grounds: war, external aggression, or armed rebellion. The original text said 'internal disturbance' instead of 'armed rebellion' \u2014 changed by the 44th Amendment Act, 1978, to make the ground more precise after the 1975 Emergency's misuse.",
+        "Proclaimed by the President, but only on the WRITTEN advice of the Cabinet (a 44th Amendment safeguard).",
+        "Must be approved by both Houses of Parliament within 1 month, by a special majority; once approved, it continues for 6 months at a time and can be extended indefinitely with repeated parliamentary approval.",
+        "Effect: the federal structure effectively becomes unitary \u2014 Parliament can legislate on State List subjects; the Lok Sabha's term can be extended by 1 year at a time; Fundamental Rights under Article 19 are automatically suspended; other rights (except Articles 20 and 21, protected since the 44th Amendment) can be suspended under Articles 358\u2013359.",
+        "Proclaimed three times: 1962 (China war), 1971 (Pakistan war), and 1975\u201377 (on grounds of 'internal disturbance' \u2014 the controversial Emergency)."
+      ]
+    },
+    {
+      "id": "presidents-rule",
+      "heading": "President's Rule / State Emergency (Article 356)",
+      "bullets": [
+        "Imposed when the President is satisfied \u2014 usually based on a Governor's report, or otherwise \u2014 that a State's government cannot be carried on in accordance with the Constitution.",
+        "Must be approved by both Houses of Parliament within 2 months, by simple majority; initially lasts 6 months, and can be extended up to a maximum of 3 years with parliamentary approval every 6 months (after the first year, extension requires either a National Emergency in operation, or the Election Commission certifying that elections cannot be held).",
+        "Effect: the Governor administers the State on the President's behalf; the State Legislative Assembly is dissolved or kept in suspended animation; Parliament legislates for the State.",
+        "S.R. Bommai case (1994) \u2014 the Supreme Court held that the imposition of Article 356 is subject to judicial review, significantly curbing its earlier misuse."
+      ]
+    },
+    {
+      "id": "financial-emergency",
+      "heading": "Financial Emergency (Article 360)",
+      "bullets": [
+        "Grounds: the financial stability or credit of India, or any part of its territory, is threatened.",
+        "Must be approved by both Houses of Parliament within 2 months, by simple majority; once approved, it continues indefinitely until revoked \u2014 there is no fixed maximum duration in the text.",
+        "Effect: the Union can direct States to observe specified canons of financial propriety, and can direct a reduction of salaries and allowances of persons serving the Union or a State, including judges of the Supreme Court and High Courts.",
+        "Has never been proclaimed in India's constitutional history to date."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Article 368 lets Parliament amend the Constitution (subject to the basic structure doctrine), while Part XVIII provides three kinds of emergency \u2014 National, State (President's Rule), and Financial.",
+    "keyFacts": [
+      "Basic structure doctrine: established in Kesavananda Bharati (1973), overruling Golaknath (1967).",
+      "National Emergency (Art 352): war/external aggression/armed rebellion; needs special majority approval within 1 month.",
+      "President's Rule (Art 356): failure of constitutional machinery in a State; simple majority approval within 2 months; max 3 years with conditions.",
+      "Financial Emergency (Art 360): never proclaimed so far in India."
+    ],
+    "keyTerms": ["Basic structure doctrine", "Special majority", "S.R. Bommai case", "Armed rebellion"],
+    "commonConfusion": [
+      "National Emergency needs a SPECIAL majority within 1 month; President's Rule and Financial Emergency need only a SIMPLE majority within 2 months \u2014 do not swap these."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "44th Amendment (1978) changed 'internal disturbance' to 'armed rebellion' as a ground for National Emergency.",
+      "S.R. Bommai (1994) made Article 356's use subject to judicial review.",
+      "Financial Emergency (Article 360) has never been invoked in India."
+    ],
+    "commonTraps": [
+      "Do not say Golaknath established the basic structure doctrine \u2014 it actually held Parliament could NOT amend Fundamental Rights at all; the basic structure doctrine itself came later, in Kesavananda Bharati (1973).",
+      "Do not say all Fundamental Rights are suspended during a National Emergency \u2014 Articles 20 and 21 are protected from suspension even then, since the 44th Amendment."
+    ],
+    "mustRemember": [
+      "President's Rule can run up to a maximum of 3 years, in 6-month extensions, subject to extra conditions after the first year.",
+      "A Financial Emergency, once approved, has no fixed maximum duration \u2014 it lasts until revoked."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "National Emergency (Art 352)",
+        "termB": "President's Rule (Art 356)",
+        "distinction": "National Emergency responds to war/aggression/armed rebellion threatening the whole country, needs SPECIAL majority approval within 1 month, and suspends Article 19 automatically. President's Rule responds to breakdown of constitutional machinery in ONE State, needs only SIMPLE majority approval within 2 months, and does not touch Fundamental Rights nationwide."
+      }
+    ],
+    "possibleQuestions": [
+      "Which case established the basic structure doctrine, and which earlier case did it overrule?",
+      "What is the maximum period for which President's Rule can be extended, and under what conditions?",
+      "Which ground for National Emergency was changed by the 44th Amendment, and to what?"
+    ]
+  },
+  "sources": [
+    { "name": "Constitution of India \u2014 Article 368 and Part XVIII (Articles 352\u2013360)", "kind": "educational" },
+    { "name": "NCERT, Indian Constitution at Work (Class XI Political Science)", "kind": "educational" }
+  ]
+}

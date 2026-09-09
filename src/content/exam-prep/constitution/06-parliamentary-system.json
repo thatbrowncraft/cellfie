@@ -1,0 +1,119 @@
+{
+  "id": "constitution-parliamentary-system",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 6,
+  "title": "Parliamentary System",
+  "shortDescription": "How Lok Sabha, Rajya Sabha, and the President work together \u2014 and how a Bill actually becomes a law.",
+  "genZNote": "Government has a group chat, but the PM and Council of Ministers still have to answer to the House.",
+  "sections": [
+    {
+      "id": "form-of-government",
+      "heading": "Parliamentary form of government",
+      "body": "India follows the British-style parliamentary system (as opposed to the American presidential system), where the executive (Council of Ministers) is drawn from, and remains accountable to, the legislature. Article 74 provides a Council of Ministers headed by the Prime Minister to aid and advise the President, whose advice is binding. Article 75(3) makes the Council of Ministers COLLECTIVELY responsible to the Lok Sabha \u2014 if the Lok Sabha passes a no-confidence motion, the entire Council of Ministers must resign, not just the minister concerned."
+    },
+    {
+      "id": "parliament-structure",
+      "heading": "Structure of Parliament",
+      "body": "Parliament consists of the President and two Houses \u2014 the Lok Sabha (House of the People) and the Rajya Sabha (Council of States). The President is not a member of either House but is an integral part of Parliament, since their assent is needed for every Bill to become law."
+    },
+    {
+      "id": "lok-sabha",
+      "heading": "Lok Sabha",
+      "bullets": [
+        "Directly elected by the people; the maximum strength fixed by the Constitution is 552 members.",
+        "Normal term: 5 years from its first sitting, unless dissolved earlier; the term can be extended by one year at a time during a National Emergency.",
+        "Presided over by the Speaker (elected by the House) and, in their absence, the Deputy Speaker.",
+        "A Money Bill can be introduced only in the Lok Sabha (Article 110)."
+      ]
+    },
+    {
+      "id": "rajya-sabha",
+      "heading": "Rajya Sabha",
+      "bullets": [
+        "Maximum strength fixed at 250 \u2014 up to 238 members representing States and Union Territories (elected indirectly by State Legislative Assemblies), plus 12 members nominated by the President for special knowledge/experience in literature, science, art, or social service (Article 80).",
+        "A permanent body \u2014 it is never dissolved; roughly one-third of its members retire every two years, giving each member a 6-year term.",
+        "The Vice President of India is the ex-officio Chairman; a Deputy Chairman is elected from among its own members."
+      ]
+    },
+    {
+      "id": "sessions",
+      "heading": "Sessions of Parliament",
+      "body": "Parliament is summoned by the President (Article 85), and the gap between the last sitting of one session and the first sitting of the next cannot exceed 6 months. In practice, there are usually three sessions each year: the Budget Session (February\u2013May), the Monsoon Session (July\u2013August), and the Winter Session (November\u2013December)."
+    },
+    {
+      "id": "legislative-procedure",
+      "heading": "Legislative procedure \u2014 types of Bills",
+      "table": {
+        "columnHeaders": ["Bill type", "Key rule"],
+        "rows": [
+          ["Ordinary Bill", "May originate in either House; needs a simple majority in both Houses and the President's assent, who may return it once for reconsideration."],
+          ["Money Bill (Article 110)", "Can be introduced ONLY in the Lok Sabha, and only with the President's prior recommendation. The Rajya Sabha can merely recommend changes within 14 days \u2014 the Lok Sabha is free to accept or reject those recommendations, and if the Rajya Sabha does not return the Bill within 14 days, it is deemed passed by both Houses in the form passed by the Lok Sabha. The Speaker's decision on whether a Bill is a Money Bill is final."],
+          ["Financial Bill", "Broader than a Money Bill \u2014 contains some matters listed in Article 110 alongside other, ordinary legislative provisions; procedurally treated more like an ordinary Bill in several respects."]
+        ]
+      }
+    },
+    {
+      "id": "joint-sitting",
+      "heading": "Joint Sitting (Article 108)",
+      "body": "If the two Houses reach a deadlock over an ordinary or financial Bill (one House passes it, the other rejects it, they disagree on amendments, or six months pass without action), the President may summon a joint sitting of both Houses, presided over by the Speaker of the Lok Sabha. The matter is then decided by a majority of the members of both Houses present and voting. A joint sitting is NOT available for Money Bills (which don't need one) or for Constitutional Amendment Bills under Article 368 (which has no joint-sitting provision at all). It has been used only three times in India's history: for the Dowry Prohibition Bill (1961), the Banking Service Commission (Repeal) Bill (1978), and the Prevention of Terrorism Act (POTA) Bill (2002)."
+    },
+    {
+      "id": "privileges-motions-committees",
+      "heading": "Privileges, motions, and committees",
+      "bullets": [
+        "Parliamentary privileges: freedom of speech within Parliament, immunity from court proceedings for anything said or any vote given inside the House, freedom from arrest in civil cases during a session (and a short period before/after), and the power to punish for breach of privilege or contempt of the House.",
+        "Key motions: a No-Confidence Motion (moved only in the Lok Sabha, against the Council of Ministers as a whole); a Censure Motion (against a specific minister/policy, must state reasons); a Calling Attention Motion (draws a minister's attention to an urgent public matter); an Adjournment Motion (an exceptional device to draw attention to a definite urgent matter of public importance).",
+        "Parliamentary committees such as the Public Accounts Committee, the Estimates Committee, and the Committee on Public Undertakings scrutinise government spending and performance in detail, on Parliament's behalf."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "India's Parliament (President + Lok Sabha + Rajya Sabha) runs a British-style parliamentary system where the Council of Ministers, headed by the PM, is collectively responsible to the Lok Sabha.",
+    "keyFacts": [
+      "Lok Sabha max strength: 552; Rajya Sabha max strength: 250 (238 elected + 12 nominated).",
+      "Money Bills can be introduced only in the Lok Sabha, and only on the President's recommendation.",
+      "Rajya Sabha is permanent \u2014 never dissolved; about 1/3rd of members retire every 2 years.",
+      "Joint sitting (Article 108) is presided over by the Speaker of the Lok Sabha, and has been used only 3 times ever."
+    ],
+    "keyTerms": ["Collective responsibility", "Money Bill", "Joint sitting", "No-confidence motion"],
+    "commonConfusion": [
+      "A Money Bill and a Financial Bill are not the same \u2014 a Money Bill covers ONLY the specific matters in Article 110; a Financial Bill can mix those matters with other, ordinary provisions."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The Speaker's decision on whether a Bill is a Money Bill is final and cannot be questioned in court.",
+      "A joint sitting has never been used for a Constitutional Amendment Bill or a Money Bill.",
+      "The Vice President is the ex-officio Chairman of the Rajya Sabha \u2014 not an elected member of it."
+    ],
+    "commonTraps": [
+      "Do not say a No-Confidence Motion can be moved in the Rajya Sabha \u2014 it can be moved only in the Lok Sabha, since only the Lok Sabha's confidence keeps the government in office.",
+      "Do not assume Rajya Sabha members serve a 5-year term like Lok Sabha members \u2014 Rajya Sabha members serve 6-year terms, staggered so roughly 1/3rd retire every 2 years."
+    ],
+    "mustRemember": [
+      "Gap between two Parliament sessions cannot exceed 6 months (Article 85).",
+      "If the Rajya Sabha does not act on a Money Bill within 14 days, it is deemed passed automatically."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "No-Confidence Motion",
+        "termB": "Censure Motion",
+        "distinction": "A No-Confidence Motion targets the entire Council of Ministers and needs no stated reasons; a Censure Motion targets a specific minister or policy and must state its reasons."
+      },
+      {
+        "termA": "Money Bill",
+        "termB": "Financial Bill",
+        "distinction": "A Money Bill deals ONLY with matters listed in Article 110 and can start only in the Lok Sabha with the President's prior recommendation. A Financial Bill mixes those matters with other legislative content and is treated closer to an ordinary Bill in several respects."
+      }
+    ],
+    "possibleQuestions": [
+      "In which House can a Money Bill be introduced?",
+      "Who presides over a joint sitting of both Houses of Parliament?",
+      "How many times has a joint sitting of Parliament been held, and for which Bills?"
+    ]
+  },
+  "sources": [
+    { "name": "Constitution of India \u2014 Articles 79\u2013122 (Parliament)", "kind": "educational" },
+    { "name": "NCERT, Indian Constitution at Work (Class XI Political Science)", "kind": "educational" }
+  ]
+}

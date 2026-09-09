@@ -1,0 +1,128 @@
+{
+  "id": "constitution-constitutional-bodies",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 10,
+  "title": "Constitutional Bodies",
+  "shortDescription": "Six independent institutions the Constitution itself creates \u2014 elections, recruitment, finance, audit, and legal advice.",
+  "genZNote": "The Constitution's own hand-picked watchdogs \u2014 can't be shut down by an ordinary law, only by amending the Constitution itself.",
+  "sections": [
+    {
+      "id": "constitutional-vs-statutory",
+      "heading": "Constitutional vs. Statutory Bodies",
+      "body": "This distinction is a favourite exam trap, so it's worth locking in first.",
+      "table": {
+        "columnHeaders": ["Constitutional Body", "Statutory Body"],
+        "rows": [
+          ["Created by", "A provision of the Constitution itself", "An ordinary Act of Parliament or a State Legislature"],
+          ["Can be abolished/changed by", "Only a constitutional amendment", "A simple legislative amendment or repeal"],
+          ["Examples", "Election Commission, UPSC, Finance Commission, CAG", "National Human Rights Commission, Central Vigilance Commission (both statutory); NITI Aayog (a non-statutory executive resolution body, neither constitutional nor an Act-based statutory body)"]
+        ]
+      }
+    },
+    {
+      "id": "election-commission",
+      "heading": "Election Commission of India (Article 324)",
+      "bullets": [
+        "Vested with the 'superintendence, direction and control' of elections to Parliament, State Legislatures, and the offices of President and Vice President.",
+        "A permanent, independent body functioning since 1950; originally a single-member body, it became multi-member in 1989 and now consists of the Chief Election Commissioner (CEC) plus 2 Election Commissioners.",
+        "Tenure: 6 years, or until the age of 65, whichever is earlier.",
+        "The CEC can be removed only in the same manner as a Supreme Court judge (parliamentary impeachment-style process); the other Election Commissioners can be removed by the President on the CEC's recommendation \u2014 giving the CEC more security of tenure than the other two."
+      ]
+    },
+    {
+      "id": "upsc-spsc",
+      "heading": "Union Public Service Commission and State Public Service Commissions (Articles 315\u2013323)",
+      "bullets": [
+        "UPSC conducts examinations for appointments to All India Services and Central Civil Services, and advises the Government on recruitment and disciplinary matters; the Chairman and members are appointed by the President.",
+        "Tenure: 6 years, or until the age of 65, whichever is earlier; removable by the President, but only after the Supreme Court, on a reference, holds an inquiry and reports misbehaviour (Article 317) \u2014 a safeguard for independence.",
+        "State Public Service Commissions (SPSCs) perform the equivalent role for State services; their members are appointed by the Governor, but \u2014 notably \u2014 can be removed ONLY by the President, not the Governor, even though the Governor appoints them. Tenure: 6 years, or until the age of 62."
+      ]
+    },
+    {
+      "id": "finance-commission",
+      "heading": "Finance Commission (Article 280)",
+      "body": "Constituted by the President every 5 years (or earlier if needed), consisting of a Chairman and 4 other members. Its core job is to recommend: (a) the distribution of net proceeds of taxes between the Union and the States, and among the States themselves; (b) the principles governing grants-in-aid to States; and (c) measures needed to strengthen the resources of Panchayats and Municipalities (added after the 73rd and 74th Amendments), to supplement their own funds."
+    },
+    {
+      "id": "cag",
+      "heading": "Comptroller and Auditor General of India (Articles 148\u2013151)",
+      "bullets": [
+        "Often called the 'guardian of the public purse' \u2014 audits all expenditure from the Consolidated Fund of India and of every State, and the accounts of many government companies and corporations.",
+        "Appointed by the President; tenure of 6 years, or until the age of 65, whichever is earlier.",
+        "Removed only in the same manner and on the same grounds as a Supreme Court judge.",
+        "Reports on the Union's accounts are submitted to the President, and on a State's accounts to that State's Governor; each report is then laid before the relevant legislature.",
+        "Dr. B.R. Ambedkar described the CAG as 'the most important officer under the Constitution'."
+      ]
+    },
+    {
+      "id": "attorney-general-advocate-general",
+      "heading": "Attorney General of India (Article 76) and Advocate General of a State (Article 165)",
+      "bullets": [
+        "The Attorney General is the highest law officer of the Union, appointed by the President, and must be qualified to be appointed a Supreme Court judge.",
+        "Unlike a typical full-time government law officer, the Attorney General is not a government servant and is permitted to engage in private legal practice; there is no fixed tenure \u2014 the office is held during the pleasure of the President.",
+        "The Attorney General has the right to speak and take part in proceedings of both Houses of Parliament (and their committees), but no right to vote there.",
+        "The Advocate General plays the equivalent role for a State, appointed by the Governor, and must be qualified to be appointed a High Court judge."
+      ]
+    },
+    {
+      "id": "at-a-glance",
+      "heading": "Constitutional bodies at a glance",
+      "table": {
+        "columnHeaders": ["Body", "Article & appointing authority"],
+        "rows": [
+          ["Election Commission", "Article 324 \u2014 members appointed by the President"],
+          ["UPSC", "Article 315 \u2014 Chairman/members appointed by the President"],
+          ["State PSC", "Article 315 \u2014 members appointed by the Governor, but removable only by the President"],
+          ["Finance Commission", "Article 280 \u2014 constituted by the President every 5 years"],
+          ["CAG", "Article 148 \u2014 appointed by the President"],
+          ["Attorney General", "Article 76 \u2014 appointed by the President"],
+          ["Advocate General (State)", "Article 165 \u2014 appointed by the Governor"]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Constitutional bodies (Election Commission, UPSC/SPSC, Finance Commission, CAG, Attorney General/Advocate General) are created directly by the Constitution and can be changed only by amending it.",
+    "keyFacts": [
+      "Election Commission (Art 324) became multi-member (CEC + 2 ECs) in 1989.",
+      "Finance Commission (Art 280) is constituted every 5 years by the President.",
+      "CAG (Art 148) is called the 'guardian of the public purse'; removed like a Supreme Court judge.",
+      "State PSC members are appointed by the Governor but removable only by the President."
+    ],
+    "keyTerms": ["Constitutional body", "Statutory body", "Article 280", "Consolidated Fund"],
+    "commonConfusion": [
+      "The National Human Rights Commission and NITI Aayog are commonly mistaken for constitutional bodies \u2014 neither is; the NHRC is statutory, and NITI Aayog is a non-statutory executive resolution body, not created by the Constitution at all."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Dr. B.R. Ambedkar called the CAG 'the most important officer under the Constitution'.",
+      "The Attorney General of India is not a full-time government servant and may engage in private practice \u2014 unusual for a top law officer.",
+      "A State Public Service Commission member is appointed by the Governor but can be removed only by the President, not the Governor."
+    ],
+    "commonTraps": [
+      "Do not classify the National Human Rights Commission (NHRC) as a constitutional body \u2014 it is statutory, created by an Act of Parliament (the Protection of Human Rights Act, 1993), not by the Constitution.",
+      "Do not say the CEC and other Election Commissioners have identical removal protection \u2014 only the CEC is protected like a Supreme Court judge; the other Election Commissioners are removed by the President on the CEC's recommendation."
+    ],
+    "mustRemember": [
+      "Election Commission, UPSC, SPSC, Finance Commission, CAG, Attorney General, and Advocate General are all constitutional bodies.",
+      "A constitutional body can be abolished or restructured only through a constitutional amendment \u2014 never by ordinary legislation."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Constitutional body",
+        "termB": "Statutory body",
+        "distinction": "A constitutional body (e.g. Election Commission, CAG) is created directly by the Constitution and needs a constitutional amendment to change; a statutory body (e.g. NHRC, CVC) is created by an ordinary Act and can be changed by ordinary legislation."
+      }
+    ],
+    "possibleQuestions": [
+      "Which Article establishes the Election Commission of India, and how is it composed today?",
+      "Who appoints the members of a State Public Service Commission, and who can remove them?",
+      "Name three constitutional bodies and the Articles that establish them."
+    ]
+  },
+  "sources": [
+    { "name": "Constitution of India \u2014 Articles 76, 148\u2013151, 165, 280, 315\u2013323, 324", "kind": "educational" },
+    { "name": "NCERT, Indian Constitution at Work (Class XI Political Science)", "kind": "educational" }
+  ]
+}
