@@ -1,0 +1,88 @@
+{
+  "id": "quant-partnership",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 9,
+  "title": "Partnership",
+  "shortDescription": "Profit splits by capital × time, not by capital alone — the moment one partner's money sits in the business for a different length of time, plain investment ratios stop working.",
+  "genZNote": "Money talks, but time gets a vote too. A partner's share is capital × time, not just capital — equal investment for less time isn't an equal share.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Profit share in a partnership is proportional to (Investment × Time period invested) for each partner — NOT to investment alone, unless every partner invested for exactly the same duration, in which case time cancels out of the ratio and investment alone is enough."
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example",
+      "steps": [
+        {
+          "name": "Set up capital-time products",
+          "explanation": "A invests ₹4000 for 12 months; B invests ₹6000 for 8 months. Total profit ₹3400. A's capital-time = 4000×12 = 48000. B's capital-time = 6000×8 = 48000.",
+          "purpose": "Convert each partner's contribution into a single comparable number."
+        },
+        {
+          "name": "Divide by the ratio",
+          "explanation": "Ratio = 48000:48000 = 1:1. Each partner gets 3400/2 = ₹1700.",
+          "purpose": "Despite B investing 50% more capital, the shorter duration exactly balances it out to an equal split."
+        }
+      ]
+    },
+    {
+      "id": "changing-investment",
+      "heading": "Partner Joining, Leaving, or Changing Investment",
+      "body": "If a partner's investment changes partway through the year (extra capital added, partial withdrawal, or a new partner joins later), split that partner's contribution into separate capital-time segments and add them — do not average the investment amount over the full period."
+    },
+    {
+      "id": "efficiency-weighting",
+      "heading": "When Efficiency Differs",
+      "body": "Some partnership problems (especially where 'sleeping' vs 'working' partners are involved) specify a partner does 'extra' work beyond capital contribution — treat that as a separate agreed share (often a fixed management fee taken off the top before splitting the remaining profit by capital-time) rather than folding it into the capital-time ratio."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Dividing profit purely by investment amount, ignoring duration — only valid when every partner invested for the same length of time.",
+        "Averaging a changed investment amount over the full period instead of splitting it into separate capital-time segments.",
+        "Forgetting to convert all time periods to the same unit (months vs years) before multiplying."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Always compute capital × time for each partner as the first step, even if the times look equal at first glance — read carefully for a mid-year change.",
+        "Simplify the capital-time ratio to its lowest terms before splitting the profit — smaller numbers reduce arithmetic mistakes."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Partnership profit splits in the ratio of (Investment × Time invested) for each partner, not investment alone, unless all durations are equal.",
+    "keyFacts": [
+      "Profit share ratio = capital₁×time₁ : capital₂×time₂ : ...",
+      "If all partners invest for the same duration, the time term cancels and capital ratio alone is correct.",
+      "A changed investment mid-period splits into separate capital-time segments added together."
+    ],
+    "keyTerms": ["Capital-time product", "Sleeping partner", "Working partner"],
+    "commonConfusion": [
+      "Equal capital does not mean equal share if the investment durations differ — and vice versa, unequal capital can still produce an equal share if durations offset the difference."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Profit ratio = capital × time for each partner, always — check whether durations are actually equal before simplifying to capital alone."
+    ],
+    "commonTraps": [
+      "Using investment ratio alone when durations actually differ.",
+      "Averaging instead of segmenting a mid-period investment change."
+    ],
+    "mustRemember": [
+      "Convert every time period to the same unit before multiplying by capital."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

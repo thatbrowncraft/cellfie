@@ -1,0 +1,91 @@
+{
+  "id": "quant-profit-loss",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 7,
+  "title": "Profit & Loss",
+  "shortDescription": "CP is what you paid, SP is what you got — every profit/loss percentage is measured against CP, and discount is measured against MP, never confuse the two bases.",
+  "genZNote": "CP is what you paid, SP is what you got. Everything else is just the drama between them — and that drama is always measured against CP, not SP.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Profit % = ((SP−CP)/CP) × 100. Loss % = ((CP−SP)/CP) × 100. The single fact that resolves most Profit & Loss confusion: profit or loss percentage is ALWAYS relative to Cost Price (CP), never to Selling Price (SP), even though SP is the more recently mentioned number in most problem statements."
+    },
+    {
+      "id": "mp-discount-chain",
+      "heading": "Marked Price → Discount → Selling Price",
+      "body": "Marked Price (MP) is the labelled/listed price. A discount percentage is applied to MP to get SP: SP = MP × (1 − Discount%/100). Profit/Loss is then calculated on THAT resulting SP against CP — discount and profit are two separate calculations on two different base quantities (MP for discount, CP for profit) chained together."
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example — Standard vs Fast Method",
+      "steps": [
+        {
+          "name": "Standard method",
+          "explanation": "An item marked at ₹500 is sold at a 20% discount; CP was ₹350. SP = 500 × 0.80 = 400. Profit% = ((400−350)/350) × 100 ≈ 14.29%.",
+          "purpose": "Direct two-step application: discount first, profit second."
+        },
+        {
+          "name": "Fast method for round numbers",
+          "explanation": "Once SP=400 is found via the ×0.8 shortcut (10% shortcut used twice, or 20% = ⅕ subtracted once), the profit fraction 50/350 = 1/7 ≈ 14.3% is faster to read off than a full percentage multiplication.",
+          "purpose": "Converts the final step into a simple fraction rather than a decimal percentage calculation."
+        }
+      ]
+    },
+    {
+      "id": "successive-discount",
+      "heading": "Successive Discounts",
+      "body": "Two successive discounts (e.g. 10% then 5%) do NOT simply add to 15% — they combine the same way as successive percentage changes: net discount = d1 + d2 − (d1×d2)/100. For 10% then 5%: 10 + 5 − 0.5 = 14.5%, not 15%."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Calculating profit/loss percentage on SP instead of CP — always CP is the base.",
+        "Treating MP and CP as the same base — discount is off MP, profit/loss is off CP; mixing them gives the wrong SP or profit figure.",
+        "Adding two successive discount percentages directly instead of using the successive-change formula.",
+        "Assuming 'no profit no loss' means SP=0 — it means SP=CP."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Before touching a formula, write down which quantity is CP, which is MP, and which is SP — most errors come from mixing these up under time pressure, not from arithmetic mistakes.",
+        "For successive discounts, use d1+d2−(d1d2/100) directly rather than applying each discount as a separate multiplication step when only the net % is asked."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Profit/Loss % is always calculated relative to Cost Price; discount is calculated relative to Marked Price — these are two separate bases chained together.",
+    "keyFacts": [
+      "Profit % = ((SP−CP)/CP) × 100.",
+      "SP = MP × (1 − Discount%/100).",
+      "Successive discounts combine as d1+d2−(d1×d2)/100, not by simple addition.",
+      "No profit no loss means SP = CP, not SP = 0."
+    ],
+    "keyTerms": ["Cost Price (CP)", "Selling Price (SP)", "Marked Price (MP)", "Discount"],
+    "commonConfusion": [
+      "Discount is off MP; profit/loss % is off CP — two different reference points in the same problem."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Profit/Loss % base is always CP, never SP.",
+      "Successive discounts use the same non-additive combination formula as successive percentage changes."
+    ],
+    "commonTraps": [
+      "Computing profit % on SP instead of CP.",
+      "Adding successive discount percentages directly."
+    ],
+    "mustRemember": [
+      "SP = MP × (1 − Discount%/100), then Profit% is calculated on THAT SP against CP — two chained steps, two different bases."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

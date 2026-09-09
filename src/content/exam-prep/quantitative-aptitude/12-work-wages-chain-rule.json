@@ -1,0 +1,94 @@
+{
+  "id": "quant-work-wages-chain-rule",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 12,
+  "title": "Work, Wages & Chain Rule",
+  "shortDescription": "Label every quantity as direct or inverse before you write a single equation — get the direction wrong and the chain rule flips your answer.",
+  "genZNote": "More workers, fewer days — that's inverse. More hours, more work — that's direct. Label each pair before you touch the numbers, or the chain rule will flip on you.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "The Chain Rule generalises simple proportion to problems with multiple linked quantities (workers, days, hours/day, units of work, wages) changing simultaneously. The essential first step: label each pairwise relationship as either DIRECT variation (both increase/decrease together) or INVERSE variation (one increases as the other decreases) BEFORE setting up any equation."
+    },
+    {
+      "id": "direct-vs-inverse",
+      "heading": "Direct vs. Inverse — How to Tell",
+      "bullets": [
+        "More workers, same work → FEWER days needed: inverse.",
+        "More hours worked per day → MORE work done in the same number of days: direct.",
+        "More days worked, same rate of pay per day → MORE total wages: direct.",
+        "More workers sharing a fixed total wage for the same job → LESS wage per individual worker: inverse."
+      ]
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example — Standard vs Fast Method",
+      "steps": [
+        {
+          "name": "Standard method",
+          "explanation": "12 workers complete a job in 8 days working 6 hours/day. How many days will 16 workers take, working 8 hours/day, for the same job? Total worker-hours is fixed: 12×8×6 = 16×D×8.",
+          "purpose": "Set total worker-hours (workers × days × hours) as a fixed quantity, since the total amount of work is unchanged."
+        },
+        {
+          "name": "Fast method — solve the ratio directly",
+          "explanation": "D = (12×8×6)/(16×8) = 576/128 = 4.5 days.",
+          "purpose": "Cancel common factors between numerator and denominator before multiplying out, to keep the numbers small."
+        }
+      ]
+    },
+    {
+      "id": "wages-and-work",
+      "heading": "Wages Proportional to Work Done",
+      "body": "If wages are shared among workers, the share is proportional to the AMOUNT of work each person actually contributes — which itself depends on their efficiency and the time/days they worked, not headcount alone. If workers have different efficiencies, replace a straight headcount ratio with an efficiency-weighted ratio (similar to the Partnership capital-time approach, but using efficiency×time instead of capital×time)."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Treating every quantity in a chain-rule problem as directly proportional — some relationships (like workers vs. days needed for fixed total work) are inversely proportional; mislabelling the direction inverts the final answer.",
+        "Forgetting that when efficiency differs between workers, a straight headcount ratio must be replaced with an efficiency-weighted one.",
+        "Not cancelling common factors before multiplying out a multi-quantity chain — this makes arithmetic errors far more likely."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Write direct/inverse labels next to every pair of changing quantities before setting up the equation — this single step prevents the most common chain-rule mistake.",
+        "Set up the problem as 'total work is fixed' (workers × days × hours = constant) whenever the same job is being completed under different conditions."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Chain Rule links multiple varying quantities via direct or inverse proportion; label each pairwise relationship before setting up the equation.",
+    "keyFacts": [
+      "Direct: both quantities increase/decrease together. Inverse: one increases as the other decreases.",
+      "Workers × Days × Hours/day = constant for a fixed total job.",
+      "Wages split by efficiency-weighted contribution when efficiency differs between workers."
+    ],
+    "keyTerms": ["Direct variation", "Inverse variation", "Chain rule", "Efficiency-weighted ratio"],
+    "commonConfusion": [
+      "More workers means fewer days (inverse) but more total wages paid overall for the same daily rate (direct) — two different relationships hiding in the same sentence."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Workers × Days × Hours/day = constant is the standard chain-rule setup for a fixed total job.",
+      "Efficiency differences require an efficiency-weighted ratio, not a plain headcount ratio."
+    ],
+    "commonTraps": [
+      "Mislabelling a direct relationship as inverse or vice versa.",
+      "Ignoring efficiency differences and using a plain headcount ratio to split wages."
+    ],
+    "mustRemember": [
+      "Label direct vs inverse for every pair of quantities before writing the equation."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

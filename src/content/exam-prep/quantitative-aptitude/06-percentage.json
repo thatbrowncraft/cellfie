@@ -1,0 +1,108 @@
+{
+  "id": "quant-percentage",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 6,
+  "title": "Percentage",
+  "shortDescription": "Fractions wearing a percentage costume — strip the costume with the fraction table, and successive changes never simply cancel.",
+  "genZNote": "Percentages are fractions wearing a tiny % costume. Strip the costume and the math gets easier — 33⅓% of something is just that thing divided by 3.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Percentage = (Part/Whole) × 100. The fastest exam approach almost always converts the percentage back to its fraction form first (using the toolkit table) rather than multiplying by a decimal — 25% of 480 as ¼ × 480 = 120 beats 0.25 × 480 for mental speed."
+    },
+    {
+      "id": "x-percent-of-y",
+      "heading": "x% of y = y% of x",
+      "body": "This identity turns an awkward percentage into an easy one by swapping which number plays which role. Example: 8% of 25 is awkward to picture directly, but 25% of 8 = 2 is instant — and both equal the same value.",
+      "bullets": [
+        "Use this whenever ONE of the two numbers is a 'nice' percentage (10, 20, 25, 50) even if the other isn't."
+      ]
+    },
+    {
+      "id": "successive-change",
+      "heading": "Successive Percentage Change — Does NOT Cancel",
+      "body": "Percentage change is always relative to the value at THAT step, not the original value — so a rise followed by an equal-magnitude fall does not return to the starting value. Apply each change to the running (already-changed) value, one after another.",
+      "steps": [
+        {
+          "name": "Worked example — standard method",
+          "explanation": "A price of ₹200 rises 10%, then the new price falls 10%. After rise: 200 × 1.10 = 220. After fall: 220 × 0.90 = 198.",
+          "purpose": "Step-by-step application to the running value."
+        },
+        {
+          "name": "Fast method — net % shortcut",
+          "explanation": "For two successive percentage changes a% and b% (with sign), net % change ≈ a + b + (a×b)/100. Here: 10 + (−10) + (10×−10)/100 = 0 − 1 = −1%.",
+          "purpose": "Gives the net −1% directly without computing the intermediate value — matches ₹198 from ₹200 (a 1% drop) in one line."
+        }
+      ]
+    },
+    {
+      "id": "reverse-percentage",
+      "heading": "Reverse Percentage",
+      "body": "When a value AFTER a percentage change is given and you need the ORIGINAL value, divide by (1 ± percentage) rather than trying to reverse-multiply. If a price increased 20% to become ₹360, the original = 360 / 1.20 = ₹300 — not 360 × 0.80, which is a common wrong shortcut."
+    },
+    {
+      "id": "percentage-points-vs-change",
+      "heading": "Percentage Points vs. Percentage Change",
+      "body": "If a rate moves from 20% to 25%, that is a rise of 5 PERCENTAGE POINTS, but a 25% relative INCREASE in the rate itself ((25−20)/20 × 100 = 25%). Exam questions deliberately mix these two phrasings — read carefully which one is actually being asked for."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Assuming a rise then an equal fall (or vice versa) cancels out — it never does for non-zero percentages; the net effect is always a decrease.",
+        "Computing percentage change by dividing by the NEW value instead of the OLD (original) value.",
+        "Reversing a percentage increase by subtracting the percentage instead of dividing by (1 + percentage) to recover the original value.",
+        "Confusing 'percentage points' difference with 'percentage change' — they answer different questions."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Convert percentages to fractions from the toolkit table wherever the percentage is a 'nice' one — it's almost always faster than decimal multiplication.",
+        "For successive changes, use the a+b+(ab/100) shortcut to get the net percentage directly when only the final net effect is needed.",
+        "For reverse-percentage questions, divide by (1 ± %) — never multiply by the complementary percentage."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Percentage = (Part/Whole) × 100; percentage change is always relative to the OLD value, and successive changes combine multiplicatively, not by addition.",
+    "keyFacts": [
+      "x% of y = y% of x.",
+      "Net of two successive % changes a and b ≈ a + b + (ab/100).",
+      "Reverse percentage: divide the final value by (1 ± %), don't subtract the percentage.",
+      "Percentage points ≠ percentage change — read which one the question means."
+    ],
+    "keyTerms": ["Percentage change", "Reverse percentage", "Percentage points", "Successive change"],
+    "commonConfusion": [
+      "A +10% then −10% change is a net −1%, not 0% — the second change acts on a different (already changed) base."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Successive % change formula: a + b + (ab/100), sign-aware.",
+      "Reverse percentage divides by (1 ± %); it never subtracts the percentage from the final value directly."
+    ],
+    "commonTraps": [
+      "Assuming equal-magnitude rise and fall cancel to zero net change.",
+      "Percentage change computed against the new value instead of the old value."
+    ],
+    "mustRemember": [
+      "x% of y always equals y% of x — swap to whichever number gives an easier fraction."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Percentage points",
+        "termB": "Percentage change",
+        "distinction": "20%→25% is a 5-percentage-point rise, but a 25% relative increase in the rate — the two numbers describe the same move differently."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

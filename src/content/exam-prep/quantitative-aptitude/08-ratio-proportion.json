@@ -1,0 +1,93 @@
+{
+  "id": "quant-ratio-proportion",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 8,
+  "title": "Ratio & Proportion",
+  "shortDescription": "Divide by the SUM of ratio parts, not by one term — the single habit that fixes most ratio-distribution mistakes.",
+  "genZNote": "A ratio is just a fraction that refuses to simplify itself. You do that part — find 'one part' by dividing by the total, then scale up.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "A ratio a:b compares two quantities of the SAME kind. A proportion states two ratios are equal (a:b = c:d), which cross-multiplies to ad = bc. The one habit that prevents almost every ratio-distribution mistake: when splitting a total in a given ratio, divide the TOTAL by the SUM of the ratio parts first to find the value of 'one part', then multiply by each individual part."
+    },
+    {
+      "id": "dividing-in-a-ratio",
+      "heading": "Dividing a Total in a Given Ratio",
+      "steps": [
+        {
+          "name": "Standard method",
+          "explanation": "Split ₹600 in the ratio 2:3:5. Sum of parts = 2+3+5 = 10. Value of one part = 600/10 = 60.",
+          "purpose": "Find the unit value first."
+        },
+        {
+          "name": "Fast method",
+          "explanation": "Multiply the unit value by each ratio term directly: 2×60=120, 3×60=180, 5×60=300 — check they sum back to 600 as a fast self-check.",
+          "purpose": "The sum-back check catches arithmetic slips in seconds, before submitting an answer."
+        }
+      ]
+    },
+    {
+      "id": "cross-multiplication",
+      "heading": "Cross-Multiplication for Unknown Terms",
+      "body": "If a:b = c:d, then ad = bc. Use this directly to solve for a missing term in a proportion rather than converting both sides to decimals first."
+    },
+    {
+      "id": "compound-ratio",
+      "heading": "Compound Ratios & Comparing Ratios",
+      "bullets": [
+        "Compound ratio: multiply corresponding terms of two or more ratios together, e.g. (a:b) compounded with (c:d) = ac:bd.",
+        "To compare two ratios quickly (e.g. is 3:4 bigger or smaller than 5:7?), cross-multiply: 3×7=21 vs 4×5=20 — since 21>20, 3:4 > 5:7. Faster than converting both to decimals."
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Dividing the total directly by one ratio term instead of by the SUM of all ratio terms first.",
+        "Forgetting to simplify a ratio to lowest terms before comparing it against another — an unsimplified ratio can look bigger or smaller than it actually is at a glance.",
+        "Mixing up units on the two sides of a ratio — a ratio only compares like quantities in the same unit."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Always find the value of 'one part' (total ÷ sum of parts) before computing individual shares.",
+        "Use cross-multiplication to compare or solve ratios instead of converting to decimals, especially with fractions."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "A ratio compares like quantities; dividing a total in a ratio means dividing by the SUM of the parts first, then scaling.",
+    "keyFacts": [
+      "One part = Total ÷ (sum of ratio terms).",
+      "a:b = c:d ⟺ ad = bc (cross-multiplication).",
+      "Compound ratio: multiply corresponding terms — (a:b) with (c:d) = ac:bd.",
+      "Compare ratios fast via cross-multiplication instead of converting to decimals."
+    ],
+    "keyTerms": ["Ratio", "Proportion", "Cross-multiplication", "Compound ratio"],
+    "commonConfusion": [
+      "Dividing a total by one ratio term instead of by the sum of all terms is the single most common ratio-distribution error."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "One part = Total ÷ sum of ratio terms — the core technique behind almost every ratio-distribution question.",
+      "Cross-multiplication compares or solves ratios faster than decimal conversion."
+    ],
+    "commonTraps": [
+      "Dividing by one ratio term instead of the sum of all terms.",
+      "Comparing unsimplified ratios directly without cross-multiplying or reducing first."
+    ],
+    "mustRemember": [
+      "Always sum the ratio parts first before dividing a total."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

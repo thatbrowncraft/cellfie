@@ -1,0 +1,91 @@
+{
+  "id": "quant-option-based-solving",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 13,
+  "title": "Option-Based Solving & Exam Strategy",
+  "shortDescription": "Sometimes the fastest way to solve a question is to stop solving it algebraically and test the options instead — but only when it's actually safe to.",
+  "genZNote": "The options aren't just the answer menu, they're free hints. Sometimes plugging one in is faster than solving for x at all — just know when that trick backfires.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "For many multiple-choice Quant questions, deriving the full algebraic solution isn't the only path to the answer — substituting an answer option back into the question, eliminating impossible options, or estimating can be faster. This is a strategy layer that sits on top of every topic above, not a replacement for understanding the underlying method."
+    },
+    {
+      "id": "techniques",
+      "heading": "The Techniques",
+      "bullets": [
+        "Back-solving / substitution: plug an answer option into the original condition and check if it satisfies it — start with the middle-valued option when options are ordered, since checking it tells you whether to try a bigger or smaller option next.",
+        "Elimination: rule out options that violate an obvious constraint (must be even, must be positive, must be a whole number, must be greater than a stated minimum) before testing any of the remaining ones.",
+        "Boundary checking: for 'at least / at most' style questions, test the boundary value first — it usually resolves whether the inequality is strict or inclusive.",
+        "Estimation: round the numbers and get an approximate answer when the actual options are spread far apart — no need for exact arithmetic if only one option is anywhere near your estimate.",
+        "Unit/parity/divisibility checks: if the answer must end in a specific digit, be even/odd, or be divisible by a given number, eliminate every option that fails that single check instantly."
+      ]
+    },
+    {
+      "id": "when-to-use",
+      "heading": "When TO Use Option-Based Solving",
+      "bullets": [
+        "The options are reasonably spread apart (estimation and back-solving are both safe here).",
+        "The direct algebraic method involves solving a quadratic, a system of equations, or several steps — substitution of a 'nice' option is often faster.",
+        "The question gives a condition that's easy to CHECK against a candidate value, even if it's hard to SOLVE directly (e.g. 'which of these satisfies both conditions')."
+      ]
+    },
+    {
+      "id": "when-not-to-use",
+      "heading": "When NOT to Use It",
+      "body": "Do not reach for option-based solving when the options are close together in value — small arithmetic slips can make the wrong option look right. Do not use it when checking each option individually would actually take LONGER than solving directly (e.g. a straightforward one-line formula application). Do not use estimation when a question demands an exact figure and the options are close enough that rounding could pick the wrong one."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Testing options in the order given instead of starting from the middle value when they're ordered — starting in the middle cuts the remaining search space in half with one check.",
+        "Forgetting to verify a back-solved option against ALL stated conditions, not just the first one that happens to match.",
+        "Using an option-based shortcut on a question that specifically asks 'which of the following is NOT a solution' — read the question direction carefully before eliminating."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Time-Management Strategy for the Full Quant Section",
+      "bullets": [
+        "Identify easy, familiar-pattern questions first and clear them before spending time on anything unfamiliar-looking.",
+        "Don't sink excessive time into one stubborn calculation — mark it and move on if a reliable shortcut isn't presenting itself within a reasonable number of attempts.",
+        "Use options intelligently on questions where back-solving or elimination is clearly faster than the algebraic route.",
+        "Estimate first when exact calculation isn't required to distinguish between well-spread options.",
+        "Do a final sanity check on any answer that came from a shortcut — a quick order-of-magnitude or parity check catches a wrong shortcut application before it costs the mark."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Option-based solving uses substitution, elimination, boundary checks, and estimation to reach an answer faster than full algebraic derivation — only when the options are safely spread apart.",
+    "keyFacts": [
+      "Start testing from the MIDDLE option when options are ordered — it halves the remaining search space.",
+      "Eliminate options that fail an obvious constraint (parity, sign, divisibility) before testing any in detail.",
+      "Estimation is safe only when options are well spread apart; switch to exact calculation when they're close."
+    ],
+    "keyTerms": ["Back-solving", "Elimination", "Boundary checking", "Estimation"],
+    "commonConfusion": [
+      "Option-based solving is a speed strategy layered on top of understanding a topic, not a substitute for knowing the underlying method."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Testing the middle option first when options are ordered is the single most useful option-based technique.",
+      "Parity/divisibility elimination can remove 2–3 options instantly on many Number System and Algebra questions."
+    ],
+    "commonTraps": [
+      "Using estimation when options are close together in value.",
+      "Testing options in given order instead of starting from the middle when they're ordered."
+    ],
+    "mustRemember": [
+      "Option-based solving is only safe when it's actually faster and the options are far enough apart to tolerate small errors."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

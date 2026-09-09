@@ -1,0 +1,147 @@
+{
+  "id": "quant-number-system",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 2,
+  "title": "Number System",
+  "shortDescription": "Divisibility, HCF/LCM, remainders and unit digits — the classification and shortcut toolkit almost every other Quant topic quietly leans on.",
+  "genZNote": "Numbers really said 'I have categories' and then made us memorise all of them. Here's the cheat-code version — five tools, reused forever.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Number System questions are rarely about the classification chart itself — they test whether you can quickly tell what a number IS (prime? divisible by 8? what remainder does it leave?) without doing full division every time. The exam-useful skill is five tools: divisibility rules, HCF/LCM by prime factorisation, the HCF×LCM shortcut, modular remainder reduction, and unit-digit/cyclicity patterns."
+    },
+    {
+      "id": "classification",
+      "heading": "Number Types — the 30-Second Version",
+      "bullets": [
+        "Natural numbers (1, 2, 3, ...) ⊂ Whole numbers (0, 1, 2, ...) ⊂ Integers (..., −1, 0, 1, ...) ⊂ Rational numbers (expressible as p/q) ⊂ Real numbers.",
+        "Irrational numbers (√2, π — non-terminating, non-repeating decimals) sit outside rationals but still inside reals.",
+        "Prime: exactly two factors (1 and itself). 2 is the only even prime. 1 is neither prime nor composite.",
+        "Composite: more than two factors."
+      ]
+    },
+    {
+      "id": "divisibility-rules",
+      "heading": "Divisibility Rules",
+      "table": {
+        "columnHeaders": ["Divisor", "Rule"],
+        "rows": [
+          ["2", "Last digit is even (0,2,4,6,8)"],
+          ["3", "Digit sum divisible by 3"],
+          ["4", "Last two digits form a number divisible by 4"],
+          ["5", "Last digit is 0 or 5"],
+          ["6", "Divisible by both 2 and 3"],
+          ["8", "Last three digits divisible by 8"],
+          ["9", "Digit sum divisible by 9"],
+          ["11", "Difference of (sum of digits at odd places) and (sum of digits at even places) is 0 or a multiple of 11"]
+        ]
+      }
+    },
+    {
+      "id": "hcf-lcm",
+      "heading": "HCF & LCM — Method and the Fast Shortcut",
+      "steps": [
+        {
+          "name": "Prime factorisation method",
+          "explanation": "Break every number into prime factors. LCM = product of the HIGHEST power of every prime appearing in ANY of the numbers. HCF = product of the LOWEST power of every prime common to ALL numbers.",
+          "purpose": "The reliable, always-works method — use when numbers are small enough to factorise quickly."
+        },
+        {
+          "name": "The a × b shortcut",
+          "explanation": "For any two numbers a and b: HCF(a,b) × LCM(a,b) = a × b. If you already have one of HCF/LCM and the product a×b, the other falls out by division — no need to factorise at all.",
+          "purpose": "Fastest exam path when the question gives you one of the two plus the numbers themselves."
+        }
+      ]
+    },
+    {
+      "id": "remainders-modular",
+      "heading": "Remainders — Reduce Before You Multiply",
+      "body": "For 'find the remainder when [large product or power] is divided by n', reduce EACH factor modulo n first, then multiply or exponentiate, then reduce again. This keeps every intermediate number small instead of building one enormous product you then have to divide.",
+      "bullets": [
+        "Example: remainder of (17 × 23) ÷ 5. 17 mod 5 = 2, 23 mod 5 = 3. 2 × 3 = 6, 6 mod 5 = 1. Remainder = 1 — no need to compute 17×23 = 391 at all."
+      ]
+    },
+    {
+      "id": "unit-digit-cyclicity",
+      "heading": "Unit Digit & Cyclicity of Powers",
+      "body": "The unit digit of aⁿ repeats in a cycle. Digits 0, 1, 5, 6 never change (cycle length 1). Digits 4, 9 cycle with length 2. Digits 2, 3, 7, 8 cycle with length 4. To find the unit digit of aⁿ: find the cycle length for a's unit digit, then compute n mod (cycle length) — using that remainder (or the cycle length itself if the remainder is 0) tells you which position in the cycle to read off.",
+      "steps": [
+        {
+          "name": "Worked example — standard method",
+          "explanation": "Find the unit digit of 7^45. Powers of 7 cycle every 4: 7¹=7, 7²=49, 7³=343, 7⁴=2401 → unit digits 7,9,3,1, repeating.",
+          "purpose": "Establish the cycle first."
+        },
+        {
+          "name": "Worked example — fast method",
+          "explanation": "45 mod 4 = 1, so 7^45 has the same unit digit as 7¹.",
+          "purpose": "Unit digit = 7 — found without computing anything close to 7^45."
+        }
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Taking the LOWEST prime power for LCM and the HIGHEST for HCF — it's the reverse: LCM wants highest, HCF wants lowest.",
+        "Applying the HCF×LCM = a×b shortcut to THREE or more numbers — it's only valid for exactly two numbers.",
+        "Forgetting that when n mod (cycle length) = 0, you use the LAST digit of the cycle, not a 'zeroth' position — e.g. 7^44: 44 mod 4 = 0, so use the 4th cycle digit (1), not treat it as undefined."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "For divisibility questions, apply the specific rule directly rather than doing long division — it's almost always faster.",
+        "For 'find the remainder' questions with large numbers, reduce modulo the divisor at every step rather than computing the full product/power first.",
+        "For unit-digit questions, find the cycle length (1, 2, or 4) for the base's last digit before doing anything else with the exponent."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Number System covers classifying numbers and applying divisibility, HCF/LCM, remainder, and unit-digit shortcuts instead of raw calculation.",
+    "keyFacts": [
+      "LCM: highest prime power present anywhere. HCF: lowest prime power common to all.",
+      "HCF(a,b) × LCM(a,b) = a × b — valid for exactly two numbers.",
+      "Reduce factors modulo n before multiplying/exponentiating for remainder questions.",
+      "Unit-digit cycle lengths: 0,1,5,6 → 1. 4,9 → 2. 2,3,7,8 → 4."
+    ],
+    "keyTerms": ["Prime factorisation", "Modular arithmetic", "Cyclicity", "HCF", "LCM"],
+    "commonConfusion": [
+      "1 is neither prime nor composite — a very common exam trap in 'how many primes between 1 and 20' style questions.",
+      "2 is the only even prime; every other even number is composite."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "HCF(a,b) × LCM(a,b) = a × b for any two numbers — reused constantly across Number System and Ratio problems.",
+      "Unit-digit cyclicity has exactly three cycle lengths to remember: 1, 2, and 4."
+    ],
+    "commonTraps": [
+      "Swapping which of LCM/HCF takes the highest vs lowest prime power.",
+      "Using the a×b = HCF×LCM shortcut on more than two numbers, where it does not hold."
+    ],
+    "mustRemember": [
+      "Divisibility by 11: alternating digit-sum difference must be 0 or a multiple of 11.",
+      "1 is neither prime nor composite; 2 is the only even prime."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "HCF",
+        "termB": "LCM",
+        "distinction": "HCF is the largest number dividing all given numbers (lowest common prime powers); LCM is the smallest number divisible by all given numbers (highest prime powers present anywhere)."
+      }
+    ],
+    "possibleQuestions": [
+      "Find the HCF and LCM of two numbers given their product and one of the two.",
+      "Find the remainder when a large power is divided by a small number.",
+      "Find the unit digit of a large power."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "quant-simplification-algebra",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 3,
+  "title": "Simplification & Algebra",
+  "shortDescription": "BODMAS order of operations plus the handful of algebraic identities that turn 'find the value' questions into one-line answers.",
+  "genZNote": "BODMAS's D-before-M placement in the acronym is a total mind trick. Division and multiplication are ride-or-die equals, left to right — no hierarchy between them at all.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Simplification is about applying one consistent order of operations correctly under time pressure; Algebra (at this exam's level) is mostly about recognising when a 'find the value' expression is secretly one of a handful of standard identities — which skips solving for individual variables entirely."
+    },
+    {
+      "id": "bodmas",
+      "heading": "BODMAS — the Real Rule",
+      "body": "Brackets, Of (multiplication expressed as 'of', e.g. ½ of 20), Division, Multiplication, Addition, Subtraction. The order in the acronym does NOT mean division always happens before multiplication, or addition always before subtraction — those two pairs are EQUAL precedence, evaluated strictly left to right in whichever order they appear in the expression.",
+      "bullets": [
+        "Example: 20 ÷ 4 × 2 = (20÷4) × 2 = 5 × 2 = 10 — NOT 20 ÷ (4×2) = 2.5. Left to right, not 'multiplication before division'."
+      ]
+    },
+    {
+      "id": "identities",
+      "heading": "Essential Algebraic Identities",
+      "table": {
+        "columnHeaders": ["Identity", "Expansion"],
+        "rows": [
+          ["(a+b)²", "a² + 2ab + b²"],
+          ["(a−b)²", "a² − 2ab + b²"],
+          ["a² − b²", "(a+b)(a−b)"],
+          ["(a+b)² + (a−b)²", "2(a² + b²)"],
+          ["(a+b)² − (a−b)²", "4ab"],
+          ["(a+b)³", "a³ + 3a²b + 3ab² + b³"],
+          ["(a−b)³", "a³ − 3a²b + 3ab² − b³"]
+        ]
+      }
+    },
+    {
+      "id": "when-identity-is-faster",
+      "heading": "Recognising an Identity in Disguise — Fast Method",
+      "steps": [
+        {
+          "name": "Standard method",
+          "explanation": "Given x + 1/x = 5, find x² + 1/x². The slow route: solve the quadratic x² − 5x + 1 = 0 for x, then square and add the reciprocal.",
+          "purpose": "Works, but involves solving a quadratic and handling irrational roots."
+        },
+        {
+          "name": "Fast exam method",
+          "explanation": "Square both sides directly: (x + 1/x)² = x² + 2 + 1/x² = 25, so x² + 1/x² = 25 − 2 = 23.",
+          "purpose": "One line, no quadratic, no individual value of x ever needed."
+        }
+      ]
+    },
+    {
+      "id": "combined-expression-shortcut",
+      "heading": "Never Solve for Individual Variables Unless Asked",
+      "body": "If a question gives you a+b and ab, and asks for a²+b², you do NOT need to find a and b individually. Use a²+b² = (a+b)² − 2ab directly. This single habit — checking whether the question only needs a combined expression rather than the individual variables — is the single biggest time-saver in exam Algebra."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Treating BODMAS's D-before-M as an actual precedence rule — they're equal, left to right.",
+        "Solving a full system of equations for individual variables when the question only asks for a combined expression an identity gives directly.",
+        "Sign errors when expanding (a−b)² or (a−b)³ — the alternating signs are easy to drop under time pressure; write out the full expansion once on scratch paper if unsure."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Scan any 'find the value' Algebra question for a matching identity before starting any expansion by hand.",
+        "In multi-operation Simplification expressions, resolve brackets fully first, then move strictly left to right through the remaining operators respecting only Brackets > Of > (Division/Multiplication, left to right) > (Addition/Subtraction, left to right)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Simplification applies one strict left-to-right order of operations (BODMAS); exam Algebra is mostly spotting standard identities to skip solving for individual variables.",
+    "keyFacts": [
+      "Division and multiplication are equal precedence, left to right — same for addition and subtraction.",
+      "a²+b² = (a+b)² − 2ab; a²−b² = (a+b)(a−b); (a+b)²+(a−b)² = 2(a²+b²).",
+      "x² + 1/x² from x + 1/x: square both sides, then subtract 2."
+    ],
+    "keyTerms": ["BODMAS", "Algebraic identity", "Combined expression"],
+    "commonConfusion": [
+      "BODMAS's letter order is not a strict precedence ladder for D/M and A/S — those pairs tie, and ties resolve left to right."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "(a+b)² − (a−b)² = 4ab is a fast route to 'find ab given a+b and a−b'.",
+      "Squaring x + 1/x (or x − 1/x) and subtracting/adding 2 is the standard fast route to x² + 1/x²."
+    ],
+    "commonTraps": [
+      "Applying D-before-M or A-before-S as strict precedence instead of left-to-right equal precedence.",
+      "Expanding a system fully to find individual variables when only a combined expression is asked."
+    ],
+    "mustRemember": [
+      "a² − b² = (a+b)(a−b) is the single most reused identity for fast factorisation.",
+      "Brackets and 'Of' always resolve before Division/Multiplication/Addition/Subtraction."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

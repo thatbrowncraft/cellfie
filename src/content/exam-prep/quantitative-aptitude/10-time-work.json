@@ -1,0 +1,90 @@
+{
+  "id": "quant-time-work",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 10,
+  "title": "Time & Work",
+  "shortDescription": "Nobody is actually 'working for 10 days' in the math — you're measuring work rates. Once you see that, add the rates instead of averaging the times.",
+  "genZNote": "Nobody is actually 'working for 10 days' in the question's math brain. We're measuring work rates. Once you see that, the question stops being scary.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Treat the whole job as '1 unit of work'. A person who completes it alone in T days has a work RATE of 1/T (job per day). When multiple agents work together, their RATES add — never average the TIMES directly."
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example — LCM Method",
+      "steps": [
+        {
+          "name": "Standard method (fractions)",
+          "explanation": "A finishes a job in 12 days, B in 18 days. Rate A = 1/12, Rate B = 1/18. Combined rate = 1/12+1/18 = 3/36+2/36 = 5/36. Time together = 36/5 = 7.2 days.",
+          "purpose": "Direct rate addition."
+        },
+        {
+          "name": "Fast method — assume total work = LCM",
+          "explanation": "Let total work = LCM(12,18) = 36 units. A's rate = 36/12 = 3 units/day. B's rate = 36/18 = 2 units/day. Combined = 5 units/day. Time = 36/5 = 7.2 days.",
+          "purpose": "Whole-number 'units' are easier to add mentally than fractions — same answer, less fraction arithmetic."
+        }
+      ]
+    },
+    {
+      "id": "efficiency-time-inverse",
+      "heading": "Efficiency ↔ Time — the Inverse Relationship",
+      "body": "Efficiency and time taken are inversely related: if A is twice as efficient as B, A takes HALF the time B takes for the same job. When a question gives an efficiency ratio, convert it to a time ratio by inverting it (or vice versa) before combining with other information."
+    },
+    {
+      "id": "pipes-and-cisterns",
+      "heading": "Pipes & Cisterns Variant",
+      "body": "An inlet pipe filling a tank has a positive rate; an outlet pipe draining it has a NEGATIVE rate. When pipes work together, subtract the draining pipe's rate rather than adding it — a very common sign error under time pressure."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Averaging the two individual TIMES directly (e.g. (12+18)/2) instead of combining RATES — only rates add linearly for simultaneous work.",
+        "Forgetting to SUBTRACT (not add) an outlet pipe's rate when it works against inlet pipes.",
+        "Applying an efficiency ratio as a time ratio without inverting it first."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Assume total work = LCM of the given individual times — this converts fraction addition into whole-number addition, which is faster and less error-prone under time pressure.",
+        "Watch for 'drains' / 'empties' / 'leak' language — that's the signal to subtract a rate instead of adding it."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Work rate = 1/(time alone); combined rate is the sum of individual rates (subtracting for anything working against the group); time together = 1/(combined rate).",
+    "keyFacts": [
+      "Rates add for simultaneous work; times never average directly.",
+      "Assume total work = LCM of given individual times to avoid fraction arithmetic.",
+      "Efficiency and time are inversely related — invert one to get the other.",
+      "An outlet/draining pipe's rate is subtracted, not added."
+    ],
+    "keyTerms": ["Work rate", "LCM method", "Efficiency ratio", "Pipes and cisterns"],
+    "commonConfusion": [
+      "Rates combine by addition; TIMES never do — averaging two completion times directly is always wrong."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Assuming total work = LCM of the given times converts the whole problem into whole-number 'units per day' arithmetic.",
+      "Efficiency ratio inverts to give the time ratio, and vice versa."
+    ],
+    "commonTraps": [
+      "Averaging individual completion times instead of adding rates.",
+      "Adding an outlet pipe's rate instead of subtracting it."
+    ],
+    "mustRemember": [
+      "Combined rate = sum of individual rates (subtract rates working against the group); time = 1/combined rate."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

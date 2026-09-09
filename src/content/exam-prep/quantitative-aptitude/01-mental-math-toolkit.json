@@ -1,0 +1,128 @@
+{
+  "id": "quant-mental-math-toolkit",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 1,
+  "title": "Mental Math & Calculation Shortcuts",
+  "shortDescription": "The calculation toolkit that sits underneath every other Quant topic — squares, fast multiplication, and percentage-fraction conversions you should recognise on sight.",
+  "genZNote": "This isn't a new topic, it's your calculator replacement. Learn these ten tricks once, reuse them in literally every question after this one.",
+  "sections": [
+    {
+      "id": "why-this-first",
+      "heading": "Why Start Here",
+      "body": "Every Quantitative Aptitude topic — Percentage, Profit & Loss, Time & Work, Ratio — eventually comes down to doing arithmetic fast under time pressure. The formulas you'll meet in each topic tell you WHAT to calculate; this page is about HOW to calculate it in your head instead of doing long multiplication on scratch paper. None of this is a substitute for understanding the concept. It's what you reach for once you already know what to compute and just need to compute it fast."
+    },
+    {
+      "id": "squares-near-bases",
+      "heading": "Squaring Numbers Near a Round Base",
+      "body": "For a number close to a round base (10, 50, 100), square the base and adjust using the difference — this avoids multiplying two two-digit numbers directly.",
+      "steps": [
+        {
+          "name": "Near 100: (100 ± d)²",
+          "explanation": "(100 + d)² = 10000 + 200d + d². Example: 104² = 10000 + 800 + 16 = 10816. Example: 97² = (100−3)² = 10000 − 600 + 9 = 9409.",
+          "purpose": "Turns a 3-digit multiplication into two additions."
+        },
+        {
+          "name": "Near 50: (50 ± d)²",
+          "explanation": "(50 + d)² = 2500 + 100d + d². Example: 53² = 2500 + 300 + 9 = 2809. Example: 47² = 2500 − 300 + 9 = 2209.",
+          "purpose": "Same idea, smaller base — useful when the number sits between 40 and 60."
+        },
+        {
+          "name": "Near 10: (10 ± d)²",
+          "explanation": "(10 + d)² = 100 + 20d + d². Example: 13² = 100 + 60 + 9 = 169.",
+          "purpose": "Fastest for two-digit numbers close to a multiple of 10."
+        }
+      ]
+    },
+    {
+      "id": "multiplication-shortcuts",
+      "heading": "Multiplication by Common Factors",
+      "bullets": [
+        "×5 → multiply by 10, then halve. 48 × 5 = 480 ÷ 2 = 240.",
+        "×25 → multiply by 100, then divide by 4. 68 × 25 = 6800 ÷ 4 = 1700.",
+        "×50 → multiply by 100, then halve. 84 × 50 = 8400 ÷ 2 = 4200.",
+        "×125 → multiply by 1000, then divide by 8. 32 × 125 = 32000 ÷ 8 = 4000.",
+        "×9 → multiply by 10, then subtract the number once. 47 × 9 = 470 − 47 = 423.",
+        "×11 (two-digit number) → split the digits and insert their sum in the middle. 45 × 11 → 4_(4+5)_5 = 495. If the middle sum exceeds 9, carry the extra digit left.",
+        "×99 → multiply by 100, then subtract the number once. 68 × 99 = 6800 − 68 = 6732.",
+        "×101 → multiply by 100, then add the number once. 68 × 101 = 6800 + 68 = 6868."
+      ]
+    },
+    {
+      "id": "fraction-percentage-table",
+      "heading": "Fraction ↔ Percentage Conversions Worth Memorising",
+      "table": {
+        "columnHeaders": ["Fraction", "Percentage"],
+        "rows": [
+          ["1/2", "50%"],
+          ["1/3", "33⅓%"],
+          ["2/3", "66⅔%"],
+          ["1/4", "25%"],
+          ["1/5", "20%"],
+          ["1/8", "12.5%"],
+          ["1/10", "10%"],
+          ["1/20", "5%"],
+          ["1/25", "4%"],
+          ["1/50", "2%"],
+          ["1/100", "1%"]
+        ],
+        "caption": "Recognising these on sight turns 'find 33⅓% of 246' into 'find ⅓ of 246' — division by 3, not a percentage calculation at all."
+      }
+    },
+    {
+      "id": "estimation-and-cancellation",
+      "heading": "Estimation & Cancelling Before You Multiply",
+      "bullets": [
+        "Cancel common factors between numerator and denominator BEFORE multiplying out — it keeps the numbers small the whole way through instead of building one huge product you then have to simplify.",
+        "When an option set is spread far apart (e.g. 420, 1050, 3200, 8000), you often only need the right order of magnitude, not the exact value — round each number to 1–2 significant figures and estimate.",
+        "Unit-digit check: for a multiplication or power question, you can eliminate options whose last digit doesn't match the last digit of your calculated result, without finishing the full calculation."
+      ]
+    },
+    {
+      "id": "when-not-to-use-shortcuts",
+      "heading": "When NOT to Rely on These",
+      "body": "Every shortcut here assumes exact values matter and the numbers actually fit the pattern (near a round base, a clean fraction, etc.). If the options are close together in value, estimation-based shortcuts can pick the wrong one — switch to the precise method. If a number doesn't sit near 10/50/100, forcing the near-base square trick just adds a slower detour; plain multiplication is faster at that point."
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Scan a calculation for a recognisable shortcut (round base, common fraction, ×5/×25/×125) before defaulting to standard multiplication or division.",
+        "Practise these until they're automatic — reaching for a trick and then fumbling it costs more time than just doing the direct calculation.",
+        "Keep the fraction–percentage table memorised cold; it's reused in nearly every Percentage, Profit & Loss, and Data Interpretation question."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "A toolkit of fast, exact mental-calculation techniques — near-base squaring, common-factor multiplication, and fraction-percentage equivalence — used across every other Quant topic.",
+    "keyFacts": [
+      "(100 ± d)² = 10000 ± 200d + d²; same pattern works for any round base.",
+      "×5 = ×10÷2. ×25 = ×100÷4. ×50 = ×100÷2. ×125 = ×1000÷8.",
+      "×11 on a two-digit number: split digits, insert their sum in the middle, carry if the sum exceeds 9.",
+      "1/3 = 33⅓%, 1/8 = 12.5%, 1/6 = 16⅔% — memorise the fraction-percentage table, don't recompute it each time."
+    ],
+    "keyTerms": ["Near-base squaring", "Unit-digit check", "Order-of-magnitude estimation"],
+    "commonConfusion": [
+      "These are calculation shortcuts, not solving methods — they speed up arithmetic you already know you need to do, they don't tell you which formula to apply."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The fraction-percentage table (halves, thirds, quarters, fifths, eighths) is reused across nearly every Percentage and Profit & Loss question.",
+      "×11 shortcut and ×5/×25/×125 shortcuts save real time on Simplification and Data Interpretation questions with large numbers."
+    ],
+    "commonTraps": [
+      "Forcing a near-base square trick on a number that isn't actually close to a round base — check the gap is small (single digit or low double digit) before using it.",
+      "Using estimation when the answer options are close together — estimation only works safely when options are well spread apart."
+    ],
+    "mustRemember": [
+      "1/3 = 33⅓%, 2/3 = 66⅔%, 1/8 = 12.5%, 1/6 = 16⅔%.",
+      "×9 = ×10 − original. ×99 = ×100 − original. ×101 = ×100 + original."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

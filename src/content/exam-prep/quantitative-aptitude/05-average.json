@@ -1,0 +1,100 @@
+{
+  "id": "quant-average",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 5,
+  "title": "Average",
+  "shortDescription": "Switch between total and average instead of adding values one by one — and know when 'average speed' secretly means harmonic mean.",
+  "genZNote": "Average is just Total wearing a disguise. Rip the disguise off — multiply back to Total — and half these questions solve themselves.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Average = (Sum of values) / (Number of values). The single most useful habit for exam Average questions is to flip this around: Total = Average × Number of items — most 'average' word problems are actually Total problems wearing a disguise."
+    },
+    {
+      "id": "core-technique",
+      "heading": "Total ↔ Average — the Core Technique",
+      "body": "Whenever a question mixes averages of different-sized groups (e.g. 'average of 10 numbers is 20, average of a different 5 numbers is 30, find the combined average'), convert every average to a total first, combine the totals, then divide by the combined count. Do not attempt to average the averages directly unless every group is the same size.",
+      "steps": [
+        {
+          "name": "Worked example",
+          "explanation": "10 numbers average 20 (total = 200). 5 numbers average 30 (total = 150). Combined average = (200+150)/(10+5) = 350/15.",
+          "purpose": "Convert to totals, combine, then divide — never average two averages of unequal-sized groups directly."
+        }
+      ]
+    },
+    {
+      "id": "replacement-problems",
+      "heading": "Replacement / Change-in-Average Shortcut",
+      "body": "When one value in a group is replaced by another, the average shifts by exactly (change in that one value) ÷ (number of items) — you don't need to recompute the whole total from scratch.",
+      "bullets": [
+        "Example: the average weight of 20 students is 55 kg. One student weighing 40 kg leaves and a new student joins, raising the average by 0.5 kg. New student's weight = 40 + (0.5 × 20) = 50 kg."
+      ]
+    },
+    {
+      "id": "average-speed-trap",
+      "heading": "Average Speed for Equal Distances — Not a Simple Mean",
+      "body": "For a journey covered at two different speeds over EQUAL distances (not equal times), the correct average speed is the harmonic-mean-based formula (2×S1×S2)/(S1+S2) — NOT the simple arithmetic mean (S1+S2)/2 — because more TIME is spent at the slower speed, pulling the true average down.",
+      "steps": [
+        {
+          "name": "Worked example",
+          "explanation": "A car travels A to B at 40 km/h and returns the same distance at 60 km/h. Simple (wrong) mean: (40+60)/2 = 50 km/h.",
+          "purpose": "Shows why the naive approach is tempting but wrong."
+        },
+        {
+          "name": "Correct method",
+          "explanation": "Average speed = (2×40×60)/(40+60) = 4800/100 = 48 km/h.",
+          "purpose": "The correct, exam-expected answer — always lower than the simple mean for unequal speeds over equal distances."
+        }
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Taking the simple arithmetic mean of two speeds for an equal-distance journey — use the harmonic-mean formula instead.",
+        "Averaging two group averages directly when the groups have different sizes — convert to totals first.",
+        "Forgetting that a single outlier can shift an average a lot; unlike the median, the average is sensitive to extreme values."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Whenever you see 'average', silently rewrite it as Total = Average × Count in your head before doing anything else.",
+        "Spot 'equal distance, different speeds' phrasing immediately — it's the exam's favourite average-speed trap."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Average = Total ÷ Count; most exam Average questions are solved fastest by converting to Total first.",
+    "keyFacts": [
+      "Total = Average × Number of items.",
+      "Change in average from a replacement = (change in value) ÷ (number of items).",
+      "Average speed for equal distances at different speeds = (2×S1×S2)/(S1+S2), not the simple mean."
+    ],
+    "keyTerms": ["Arithmetic mean", "Harmonic mean", "Replacement problem"],
+    "commonConfusion": [
+      "Equal-DISTANCE journeys need the harmonic-mean average-speed formula; equal-TIME journeys at different speeds DO average with a simple mean."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Convert every average to a total before combining groups of different sizes.",
+      "Equal-distance average speed = (2×S1×S2)/(S1+S2)."
+    ],
+    "commonTraps": [
+      "Using the simple mean for an equal-distance, different-speed journey.",
+      "Averaging averages of unequal-sized groups directly instead of via totals."
+    ],
+    "mustRemember": [
+      "Total = Average × Count — the single most reused rewrite in this topic."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

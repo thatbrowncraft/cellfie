@@ -1,0 +1,95 @@
+{
+  "id": "quant-ap-gp",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 4,
+  "title": "Arithmetic & Geometric Progression",
+  "shortDescription": "Spot the pattern first — constant difference means AP, constant ratio means GP — then apply the matching term and sum formulas.",
+  "genZNote": "AP adds the same thing every time, GP multiplies the same thing every time. Confuse the two and every formula after that is wrong — check the pattern before you touch a formula.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "The very first step in any progression question is recognising WHICH kind of sequence you're looking at — subtracting consecutive terms gives a constant in an AP; dividing consecutive terms gives a constant in a GP. Verify this on at least three consecutive terms before applying either formula, since not every sequence is one or the other."
+    },
+    {
+      "id": "ap-formulas",
+      "heading": "Arithmetic Progression — Formulas",
+      "bullets": [
+        "nth term: aₙ = a + (n−1)d, where a = first term, d = common difference.",
+        "Sum of n terms: Sₙ = n/2 × [2a + (n−1)d], equivalently Sₙ = n/2 × (first term + last term)."
+      ]
+    },
+    {
+      "id": "gp-formulas",
+      "heading": "Geometric Progression — Formulas",
+      "bullets": [
+        "nth term: aₙ = a·r^(n−1), where r = common ratio (r ≠ 0).",
+        "Sum of n terms: Sₙ = a(rⁿ−1)/(r−1) for r ≠ 1. When r = 1, every term is identical and Sₙ = a × n instead — the standard formula divides by zero at r=1."
+      ]
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example — Standard vs Fast Method",
+      "steps": [
+        {
+          "name": "Standard method",
+          "explanation": "Find S₁₀ for the AP 3, 7, 11, 15, ... First find a = 3, d = 4. Sₙ = n/2 × [2a + (n−1)d] = 10/2 × [6 + 9×4] = 5 × 42 = 210.",
+          "purpose": "Direct formula application."
+        },
+        {
+          "name": "Fast sanity-check method",
+          "explanation": "Sₙ = n/2 × (first term + last term). Last term a₁₀ = 3 + 9×4 = 39. S₁₀ = 10/2 × (3+39) = 5 × 42 = 210.",
+          "purpose": "Same answer via a second route — useful to double-check under exam pressure without redoing the full formula."
+        }
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Assuming every sequence must be an AP or a GP — sequences of squares, cubes, or alternating-rule sequences follow neither; always verify the constant-difference or constant-ratio property first.",
+        "Using the GP sum formula a(rⁿ−1)/(r−1) when r = 1 — undefined by division by zero; use Sₙ = a×n instead.",
+        "Mixing up d and r — d is subtracted/added (AP), r is multiplied/divided (GP); plugging a ratio into an AP formula or a difference into a GP formula silently gives a wrong answer with no error message."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Check the pattern (subtract vs divide) on the first 3 terms before choosing a formula — this single check prevents the most common progression mistake.",
+        "When only the first and last term plus n are given for an AP, Sₙ = n/2 × (first + last) is usually the fastest route — no need to find d first."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "AP has a constant additive difference between terms; GP has a constant multiplicative ratio — identify which before applying the term/sum formula.",
+    "keyFacts": [
+      "AP: aₙ = a + (n−1)d, Sₙ = n/2 × [2a + (n−1)d] = n/2 × (first + last).",
+      "GP: aₙ = a·r^(n−1), Sₙ = a(rⁿ−1)/(r−1) for r≠1; Sₙ = a×n when r=1."
+    ],
+    "keyTerms": ["Common difference (d)", "Common ratio (r)", "nth term", "Sum of n terms"],
+    "commonConfusion": [
+      "Not every numeric sequence is an AP or a GP — verify the pattern before assuming."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Sₙ = n/2 × (first term + last term) is often faster than the full AP sum formula when both endpoints are known.",
+      "GP sum formula breaks at r=1; the sequence becomes constant and Sₙ = a×n instead."
+    ],
+    "commonTraps": [
+      "Applying an AP formula to a sequence that is actually a GP (or vice versa) without checking the pattern first.",
+      "Forgetting the r=1 special case in GP sum questions."
+    ],
+    "mustRemember": [
+      "AP: constant difference. GP: constant ratio.",
+      "Verify the pattern on at least 3 consecutive terms before applying any formula."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

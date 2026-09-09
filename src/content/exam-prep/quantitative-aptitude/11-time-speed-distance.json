@@ -1,0 +1,102 @@
+{
+  "id": "quant-time-speed-distance",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 11,
+  "title": "Time, Speed & Distance",
+  "shortDescription": "Same direction subtracts, opposite direction adds — get the relative-speed rule backwards and every train/boat question after it collapses.",
+  "genZNote": "Moving toward each other? Speeds team up. Moving the same way? Only the gap between them matters. Mix those two up and the whole question falls apart.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Distance = Speed × Time underlies every variant in this topic. The main skill tested is correctly identifying which distance and which relative speed apply to the specific scenario described — trains crossing, boats in a stream, or two bodies moving toward/away from each other."
+    },
+    {
+      "id": "relative-speed",
+      "heading": "Relative Speed — the Direction Rule",
+      "bullets": [
+        "Moving TOWARD each other (opposite directions): relative speed = S1 + S2 — they close the gap faster together.",
+        "Moving in the SAME direction: relative speed = |S1 − S2| — only the speed GAP matters for one to catch up to the other."
+      ]
+    },
+    {
+      "id": "unit-conversion",
+      "heading": "Unit Conversion Shortcut",
+      "body": "km/h to m/s: multiply by 5/18. m/s to km/h: multiply by 18/5. Memorise 5/18 directly rather than doing the full unit-conversion derivation (×1000/3600) each time."
+    },
+    {
+      "id": "trains-worked-example",
+      "heading": "Worked Example — Trains Crossing",
+      "steps": [
+        {
+          "name": "Standard method",
+          "explanation": "A 120 m train crosses a 180 m platform completely at 20 m/s. Total distance to cover = train length + platform length = 120+180 = 300 m. Time = Distance/Speed = 300/20.",
+          "purpose": "Crossing a PLATFORM or another train adds both lengths together; crossing a single point (a pole, a standing person) uses ONLY the train's own length."
+        },
+        {
+          "name": "Result",
+          "explanation": "Time = 15 seconds.",
+          "purpose": "Confirms the total-distance setup was correct."
+        }
+      ]
+    },
+    {
+      "id": "boats-streams",
+      "heading": "Boats & Streams",
+      "bullets": [
+        "Downstream speed = boat speed + stream speed (they add, same as 'moving in the same direction' as the current).",
+        "Upstream speed = boat speed − stream speed.",
+        "Boat's own speed in still water = (Downstream + Upstream)/2. Stream speed = (Downstream − Upstream)/2 — both reused from the average-of-two-values pattern."
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Forgetting to add the OTHER object's length (platform, bridge, second train) to the distance when a train 'crosses' something — only crossing a single stationary point uses just the train's own length.",
+        "Using the SUM of speeds for two bodies moving in the SAME direction (should be the difference), or the DIFFERENCE for bodies moving in opposite directions (should be the sum).",
+        "Forgetting to convert units consistently — mixing km/h and m/s in the same calculation without converting first."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Before calculating, identify: (1) which distance actually needs to be covered, and (2) whether the two speeds should add or subtract based on direction.",
+        "Convert all speeds to the same unit immediately — this single step prevents most Time-Speed-Distance mistakes."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Distance = Speed × Time; relative speed adds for opposite directions and subtracts for the same direction.",
+    "keyFacts": [
+      "Opposite directions: relative speed = S1+S2. Same direction: relative speed = |S1−S2|.",
+      "km/h → m/s: ×5/18. m/s → km/h: ×18/5.",
+      "Crossing a platform/train: total distance = both lengths added. Crossing a pole/point: only the train's own length.",
+      "Boat speed (still water) = (Downstream+Upstream)/2. Stream speed = (Downstream−Upstream)/2."
+    ],
+    "keyTerms": ["Relative speed", "Downstream", "Upstream", "Unit conversion factor"],
+    "commonConfusion": [
+      "Same direction subtracts speeds; opposite direction adds them — easy to invert under pressure, always re-check the direction wording."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "5/18 (km/h→m/s) and 18/5 (m/s→km/h) should be memorised, not derived each time.",
+      "Train crossing a platform/train adds both lengths; crossing a point uses only its own length."
+    ],
+    "commonTraps": [
+      "Swapping the add/subtract rule for relative speed based on direction.",
+      "Forgetting to add the second object's length when crossing a platform or another train."
+    ],
+    "mustRemember": [
+      "Boat speed = (Downstream+Upstream)/2; Stream speed = (Downstream−Upstream)/2."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}
