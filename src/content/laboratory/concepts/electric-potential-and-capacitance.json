@@ -2,7 +2,7 @@
   "id": "concept-electric-potential-and-capacitance",
   "category": "concept",
   "title": "Electric Potential, Potential Energy and Capacitance",
-  "subcategory": "Electrostatic Potential and Capacitance",
+  "subcategory": "Electrostatic Potential and Capacitance — Potential, Potential Energy, Conductors, Dielectrics, Capacitance",
   "sourceType": "educational-guidance",
   "version": "1.0",
   "lastVerified": "2026-09",
@@ -18,7 +18,12 @@
     "potential difference",
     "capacitance",
     "dielectric",
-    "equipotential surface"
+    "equipotential surface",
+    "potential due to point charge",
+    "potential energy",
+    "electrostatics of conductors",
+    "polarisation",
+    "potential due to dipole"
   ],
   "difficulty": "advanced",
   "subjectDomain": "physics",
@@ -28,16 +33,72 @@
   "relatedFormulas": [
     "formula-capacitor-combinations"
   ],
-  "summary": "Electric potential is potential energy per unit charge, a scalar that decreases along the field's direction; capacitance measures a conductor's/capacitor's ability to store charge per unit potential difference, and inserting a dielectric always increases capacitance.",
+  "summary": "Electric potential is work done per unit charge in bringing a test charge from infinity, a scalar that decreases along the field's direction; a conductor in electrostatic equilibrium is always an equipotential with zero field inside, a dielectric's polarisation always increases capacitance, and capacitance measures a conductor's/capacitor's ability to store charge per unit potential difference.",
   "explanation": "Electric potential V at a point is defined as work done per unit positive charge in bringing it from infinity to that point (against the field), V = W/q — a SCALAR quantity, unlike the vector electric field, which makes potential calculations for complex charge arrangements much easier (superposition of scalars, not vectors). Potential difference between two points equals work done per unit charge in moving between them; the relation E = −dV/dx means electric field points in the direction of DECREASING potential, and is the negative gradient of potential. An equipotential surface has the same potential everywhere on it; the electric field is always perpendicular to equipotential surfaces, and no work is done moving a charge along one. Capacitance C = Q/V is the ratio of charge stored to potential difference; for a parallel plate capacitor, C = ε₀A/d (vacuum) — proportional to plate area, inversely proportional to separation. Inserting a dielectric between the plates increases capacitance by a factor K (the dielectric constant) because the dielectric partially cancels the field via induced polarization, C = Kε₀A/d. Capacitors in series (1/Ceq = 1/C1 + 1/C2 + ...) have the SAME charge on each but share the voltage, giving a smaller equivalent capacitance than the smallest individual one; capacitors in parallel (Ceq = C1 + C2 + ...) have the same voltage across each but share the charge, giving a larger equivalent capacitance than the largest individual one. Energy stored in a capacitor is U = ½CV² = ½QV = Q²/2C.",
   "commonMisconceptions": [
     "Assuming higher potential always means higher potential energy for any charge — it's true for POSITIVE charges (PE = qV), but a negative charge has LOWER potential energy at a point of higher potential.",
+    "Believing there can be a non-zero electric field INSIDE a conductor in electrostatic equilibrium — free charges instantly rearrange to cancel any internal field; the field inside is always exactly zero regardless of the conductor's shape or the external field applied.",
     "Mixing up the series and parallel capacitance rules with the (opposite-looking) resistor rules — capacitors in series combine like resistors in parallel (reciprocals add), and capacitors in parallel combine like resistors in series (simple sum), a very common exam trap.",
     "Believing a dielectric can only decrease or have no effect on capacitance — a dielectric ALWAYS increases capacitance (K > 1 always) compared to vacuum/air between the same plates."
   ],
   "examples": [
+    "The potential due to a dipole is exactly zero at every point on its equatorial line (perpendicular bisector), even though the electric field there is NOT zero — a reminder that zero potential does not mean zero field.",
     "The potential everywhere on the surface of a charged conductor in electrostatic equilibrium is the same (an equipotential), even if the conductor has an irregular shape.",
     "Sliding a dielectric slab (like mica or glass) between capacitor plates while keeping the same charge increases capacitance and decreases the voltage across the plates."
   ],
-  "genZNote": "Potential's the scalar softie — electric field is the vector doing all the heavy directional lifting."
+  "genZNote": "Potential's the scalar softie — electric field is the vector doing all the heavy directional lifting.",
+  "explanationSections": [
+    {
+      "heading": "Electric Potential",
+      "body": "Electric potential V at a point is defined as work done per unit positive charge in bringing it from infinity to that point (against the field), V = W/q — a SCALAR quantity, unlike the vector electric field, which makes potential calculations for complex charge arrangements much easier (superposition of scalars, not vectors). Potential difference between two points equals work done per unit charge in moving between them; the relation E = −dV/dx means electric field points in the direction of DECREASING potential, and is the negative gradient of potential."
+    },
+    {
+      "heading": "Potential Due to a Point Charge",
+      "body": "For an isolated point charge q, the potential at distance r is V = kq/r (k = 1/4πε₀), positive for a positive charge and negative for a negative one, falling off as 1/r (slower than the field's 1/r² fall-off, since potential is a scalar integral of the field)."
+    },
+    {
+      "heading": "Potential Due to an Electric Dipole",
+      "body": "A dipole's potential falls off faster than a single point charge's — as 1/r² rather than 1/r — because the two opposite charges' individual 1/r potentials nearly cancel at large distance. It is maximum on the dipole's AXIAL line and exactly zero everywhere on the EQUATORIAL line (perpendicular bisector of the dipole), since points on the equatorial line are equidistant from both +q and −q."
+    },
+    {
+      "heading": "Potential Due to a System of Charges",
+      "body": "Because potential is a scalar, the net potential at a point due to several charges is simply the ALGEBRAIC SUM of the potentials each charge would produce alone (V = ΣkQᵢ/rᵢ) — no angles or vector components are needed, unlike the equivalent field calculation."
+    },
+    {
+      "heading": "Equipotential Surfaces",
+      "body": "An equipotential surface has the same potential everywhere on it; the electric field is always perpendicular to equipotential surfaces, and no work is done moving a charge along one."
+    },
+    {
+      "heading": "Potential Energy of a System of Charges",
+      "body": "The potential energy of a pair of point charges is U = kq₁q₂/r — the work needed to assemble them from infinite separation. For more than two charges, the total potential energy is the sum of this expression over every distinct PAIR of charges in the system."
+    },
+    {
+      "heading": "Potential Energy in an External Field",
+      "body": "A charge q placed at a point of potential V (due to some external source) has potential energy U = qV; moving it between two points of potential V₁ and V₂ requires work W = q(V₂ − V₁), independent of the path taken since the electrostatic force is conservative."
+    },
+    {
+      "heading": "Electrostatics of Conductors",
+      "body": "In electrostatic equilibrium, a conductor has zero electric field everywhere INSIDE it (free charges rearrange until internal field cancels), all excess charge resides on its OUTER SURFACE, the surface itself is an equipotential, and the field just outside the surface is always perpendicular to it — any component along the surface would drive further charge flow until equilibrium is restored."
+    },
+    {
+      "heading": "Dielectrics and Polarisation",
+      "body": "A dielectric (insulator) placed in an external field becomes POLARISED: polar molecules (already possessing a dipole moment, e.g. water) align with the field, while non-polar molecules develop an INDUCED dipole moment. Either way, this produces a small internal field opposing the external one, reducing the NET field inside the dielectric — which is exactly why filling a capacitor with a dielectric increases its capacitance (more charge can be stored for the same applied voltage, since the opposing internal field partially cancels the plates' field)."
+    },
+    {
+      "heading": "Capacitors and Capacitance",
+      "body": "Capacitance C = Q/V is the ratio of charge stored to potential difference; for a parallel plate capacitor, C = ε₀A/d (vacuum) — proportional to plate area, inversely proportional to separation."
+    },
+    {
+      "heading": "Effect of Dielectric on Capacitance",
+      "body": "Inserting a dielectric between the plates increases capacitance by a factor K (the dielectric constant) because the dielectric partially cancels the field via induced polarization, C = Kε₀A/d."
+    },
+    {
+      "heading": "Combination of Capacitors",
+      "body": "Capacitors in series (1/Ceq = 1/C1 + 1/C2 + ...) have the SAME charge on each but share the voltage, giving a smaller equivalent capacitance than the smallest individual one; capacitors in parallel (Ceq = C1 + C2 + ...) have the same voltage across each but share the charge, giving a larger equivalent capacitance than the largest individual one."
+    },
+    {
+      "heading": "Energy Stored in a Capacitor",
+      "body": "Energy stored in a capacitor is U = ½CV² = ½QV = Q²/2C."
+    }
+  ]
 }

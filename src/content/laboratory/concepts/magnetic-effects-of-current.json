@@ -1,8 +1,8 @@
 {
   "id": "concept-magnetic-effects-of-current",
   "category": "concept",
-  "title": "Magnetic Effects of Current: Biot-Savart Law and Ampere's Law",
-  "subcategory": "Moving Charges and Magnetism — Biot-Savart Law, Ampere's Law, Force on a Charge",
+  "title": "Moving Charges and Magnetism: Biot-Savart Law, Ampere's Law and Magnetic Force",
+  "subcategory": "Moving Charges and Magnetism — Force on a Charge, Biot-Savart Law, Ampere's Law, Solenoid, Torque",
   "sourceType": "educational-guidance",
   "version": "1.0",
   "lastVerified": "2026-09",
@@ -18,7 +18,12 @@
     "Ampere's circuital law",
     "Lorentz force",
     "cyclotron",
-    "moving coil galvanometer"
+    "moving coil galvanometer",
+    "circular current loop",
+    "solenoid",
+    "force between parallel currents",
+    "torque on current loop",
+    "magnetic dipole moment"
   ],
   "difficulty": "advanced",
   "subjectDomain": "physics",
@@ -28,16 +33,56 @@
   "relatedFormulas": [
     "formula-biot-savart-law"
   ],
-  "summary": "Moving charges (currents) create magnetic fields, described at the small-element level by the Biot-Savart law and, for highly symmetric current distributions, more simply by Ampere's circuital law; a magnetic field in turn exerts a velocity-dependent force on moving charges and current-carrying conductors.",
+  "summary": "A magnetic field exerts a velocity-dependent (Lorentz) force on moving charges and a torque on current loops; moving charges (currents) in turn create magnetic fields, described at the small-element level by the Biot-Savart law and, for highly symmetric current distributions, more simply by Ampere's circuital law.",
   "explanation": "The Biot-Savart law gives the magnetic field dB due to a small current element Idl at a point: dB = (μ₀/4π)(Idl × r̂)/r², proportional to current and inversely proportional to the square of distance, with direction given by the right-hand (or cross-product) rule — the magnetic analogue of Coulomb's law, but for a current ELEMENT rather than a point charge, and always perpendicular to both the current direction and the line to the point. Ampere's circuital law, ∮B·dl = μ₀Ienclosed, is the magnetic analogue of Gauss's law: exactly true always, but a genuine calculation shortcut only for highly symmetric current distributions (long straight wire, solenoid, toroid), where a suitable Amperian loop makes B uniform along the path. The Lorentz force on a moving charge is F = q(E + v×B); the magnetic part, F = qvB sinθ, is zero if the charge is at rest or moving along B, and maximum when moving perpendicular to B — this velocity-dependence is what distinguishes magnetic force fundamentally from the always-present electric force. Since magnetic force is always perpendicular to velocity, it does NO work on the charge, only changing its direction, not its speed. In a cyclotron, this property is used to accelerate charged particles in a spiral path using a fixed-frequency alternating voltage timed to the particle's circular motion — the cyclotron frequency f = qB/2πm is remarkably independent of the particle's speed or orbit radius (at non-relativistic speeds), which is what makes the fixed-frequency design work. A moving-coil galvanometer detects small currents via the torque a current-carrying coil experiences in a radial magnetic field (τ = NIAB), converted into an angular deflection measured against a calibrated scale.",
   "commonMisconceptions": [
     "Applying Ampere's law to a non-symmetric current arrangement expecting an easy answer — like Gauss's law, it is always true but only computationally useful when symmetry makes the line integral tractable.",
     "Assuming magnetic force can change a charged particle's speed — it cannot; being always perpendicular to velocity, it does zero work and only changes direction (unlike an electric force, which can do work and change speed).",
-    "Forgetting that a charge moving PARALLEL to a magnetic field feels ZERO magnetic force (sinθ = 0 when θ = 0°), a frequently tested special case."
+    "Forgetting that a charge moving PARALLEL to a magnetic field feels ZERO magnetic force (sinθ = 0 when θ = 0°), a frequently tested special case.",
+    "Assuming two current-carrying wires always attract — they attract only when the currents flow in the SAME direction; opposite-direction currents REPEL, the reverse of the like/unlike rule for electric charges."
   ],
   "examples": [
     "A long, straight current-carrying wire produces a magnetic field that circles around it, with magnitude decreasing as 1/r — found quickly via Ampere's law thanks to cylindrical symmetry.",
-    "In a cyclotron, protons spiral outward gaining energy each half-turn, but their time per revolution stays constant even as their speed and radius increase."
+    "In a cyclotron, protons spiral outward gaining energy each half-turn, but their time per revolution stays constant even as their speed and radius increase.",
+    "Two parallel wires 1 m apart, each carrying exactly 1 A in the same direction, attract each other with a force of 2×10⁻⁷ N per metre of length — this is literally how the ampere itself is defined."
   ],
-  "genZNote": "Magnetic force: does zero work, all vibes — just redirects you without ever changing your speed."
+  "genZNote": "Magnetic force: does zero work, all vibes — just redirects you without ever changing your speed.",
+  "explanationSections": [
+    {
+      "heading": "Magnetic Force on a Moving Charge",
+      "body": "The Lorentz force on a moving charge is F = q(E + v×B); the magnetic part, F = qvB sinθ, is zero if the charge is at rest or moving along B, and maximum when moving perpendicular to B — this velocity-dependence is what distinguishes magnetic force fundamentally from the always-present electric force. Since magnetic force is always perpendicular to velocity, it does NO work on the charge, only changing its direction, not its speed."
+    },
+    {
+      "heading": "Motion in a Magnetic Field",
+      "body": "A charged particle moving perpendicular to a uniform magnetic field travels in a circle (the magnetic force supplies the centripetal force); if it also has a velocity component along B, the path becomes a helix. In a cyclotron, this circular motion is used to accelerate charged particles in a spiral path using a fixed-frequency alternating voltage timed to the particle's circular motion — the cyclotron frequency f = qB/2πm is remarkably independent of the particle's speed or orbit radius (at non-relativistic speeds), which is what makes the fixed-frequency design work."
+    },
+    {
+      "heading": "Biot-Savart Law",
+      "body": "The Biot-Savart law gives the magnetic field dB due to a small current element Idl at a point: dB = (μ₀/4π)(Idl × r̂)/r², proportional to current and inversely proportional to the square of distance, with direction given by the right-hand (or cross-product) rule — the magnetic analogue of Coulomb's law, but for a current ELEMENT rather than a point charge, and always perpendicular to both the current direction and the line to the point."
+    },
+    {
+      "heading": "Magnetic Field on the Axis of a Circular Current Loop",
+      "body": "Integrating the Biot-Savart law over a circular loop of radius R carrying current I gives the field on its axis at distance x from the centre: B = μ₀IR²/[2(R²+x²)^(3/2)], directed along the axis. At the centre itself (x = 0), this simplifies to B = μ₀I/2R — the standard result used as a building block for solenoid and coil problems."
+    },
+    {
+      "heading": "Ampere's Circuital Law",
+      "body": "Ampere's circuital law, ∮B·dl = μ₀Ienclosed, is the magnetic analogue of Gauss's law: exactly true always, but a genuine calculation shortcut only for highly symmetric current distributions (long straight wire, solenoid, toroid), where a suitable Amperian loop makes B uniform along the path."
+    },
+    {
+      "heading": "The Solenoid",
+      "body": "Inside a long, tightly-wound solenoid (n turns per unit length carrying current I), Ampere's law gives a uniform field B = μ₀nI parallel to the axis, essentially independent of position as long as you're well inside and away from the ends; the field just outside the solenoid is approximately zero. This uniform-field property is why solenoids are used to create controlled magnetic field regions in electromagnets and inductors."
+    },
+    {
+      "heading": "Force Between Two Parallel Currents; the Ampere",
+      "body": "Two long parallel wires carrying currents I₁ and I₂, separated by distance d, exert a force per unit length on each other of F/L = μ₀I₁I₂/(2πd) — currents in the SAME direction attract, currents in OPPOSITE directions repel (the reverse of like/unlike electric charges). This mutual force is used to define the SI base unit the ampere: one ampere is the constant current that, if maintained in two straight parallel infinite wires 1 metre apart in vacuum, produces a force of exactly 2×10⁻⁷ N per metre of length between them."
+    },
+    {
+      "heading": "Torque on a Current Loop; Magnetic Dipole",
+      "body": "A planar current loop of N turns, area A, carrying current I, behaves as a magnetic dipole with magnetic moment m = NIA (direction given by the right-hand rule, perpendicular to the loop's plane). In an external field B, the loop experiences zero net force but a torque τ = m×B = NIAB sinθ, which tends to rotate the loop until its moment aligns with B — the same principle by which a moving-coil galvanometer detects current."
+    },
+    {
+      "heading": "The Moving Coil Galvanometer",
+      "body": "A moving-coil galvanometer detects small currents via the torque a current-carrying coil experiences in a radial magnetic field (τ = NIAB), converted into an angular deflection measured against a calibrated scale."
+    }
+  ]
 }
