@@ -1,0 +1,131 @@
+{
+  "id": "english-adjectives-and-adverbs",
+  "subjectId": "english-language",
+  "syllabusOrder": 3,
+  "title": "Adjectives and Adverbs",
+  "shortDescription": "Describing words and their degrees — comparative/superlative rules, and the good/well trap that shows up in almost every exam.",
+  "genZNote": "Adjectives dress up nouns; adverbs dress up everything else. Mixing them up is the easiest way to lose an easy mark.",
+  "sections": [
+    {
+      "id": "core",
+      "heading": "Core concept: what each modifies",
+      "body": "An adjective modifies a noun or pronoun ('a BRIGHT idea'). An adverb modifies a verb ('spoke SOFTLY'), an adjective ('EXTREMELY bright'), or another adverb ('very SOFTLY'). The test is simple: find the word being described — if it's a noun/pronoun, you need an adjective; for anything else (an action, a quality, another description), you need an adverb."
+    },
+    {
+      "id": "formation",
+      "heading": "How adverbs are usually formed",
+      "bullets": [
+        "Most adverbs of manner = adjective + -ly: quick → quickly, careful → carefully.",
+        "Adjectives already ending in -ly (friendly, lovely, silly, lonely) do NOT get a second -ly to become adverbs — they don't have a natural adverb form and need a phrase instead ('in a friendly way').",
+        "Irregular pairs to memorise: good (adj) → well (adv); fast (adj/adv, same form); hard (adj/adv, same form — 'hardly' means 'barely', a different meaning entirely).",
+        "'Hardly', 'lately', 'nearly' look like simple -ly adverbs of 'hard/late/near' but carry different meanings — a classic exam trap."
+      ]
+    },
+    {
+      "id": "good-well",
+      "heading": "The good vs well trap",
+      "body": "'Good' is an adjective — it describes a noun: 'She is a good singer.' 'Well' is normally an adverb — it describes a verb: 'She sings well.' The trap: after verbs of health/senses (feel, look, smell, taste, sound), 'well' is used as an ADJECTIVE meaning 'in good health' — 'I feel well' (healthy), while 'I feel good' describes a positive emotional state. Both can be correct depending on the intended meaning, but 'She sings good' is always wrong — it needs the adverb 'well'."
+    },
+    {
+      "id": "degrees",
+      "heading": "Degrees of comparison",
+      "table": {
+        "columnHeaders": [
+          "Degree",
+          "Use",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Positive",
+            "Simple quality, no comparison",
+            "tall, beautiful"
+          ],
+          [
+            "Comparative",
+            "Comparing two things (+ than)",
+            "taller, more beautiful"
+          ],
+          [
+            "Superlative",
+            "Comparing three or more (the + -est/most)",
+            "tallest, most beautiful"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "comparison-rules",
+      "heading": "Comparison formation rules and traps",
+      "bullets": [
+        "One-syllable words: add -er/-est (tall → taller → tallest).",
+        "Two-syllable words ending in -y: change y to i, add -er/-est (happy → happier → happiest).",
+        "Longer words (3+ syllables, or many 2-syllable ones): use more/most instead of -er/-est (more beautiful, most intelligent).",
+        "Never double up: 'more taller' or 'most tallest' are both wrong — pick ONE comparison method.",
+        "Irregular forms to memorise: good/well → better → best; bad/badly → worse → worst; little → less → least; many/much → more → most; far → farther/further → farthest/furthest.",
+        "Absolute adjectives (unique, perfect, complete, dead, full) are traditionally NOT compared — 'more unique' is considered incorrect in formal/exam usage; something either is or isn't unique."
+      ]
+    },
+    {
+      "id": "comparative-usage",
+      "heading": "Using comparatives and superlatives correctly",
+      "bullets": [
+        "'Than' pairs with comparative degree; 'of/in' pairs with superlative: 'She is the tallest OF the three' / 'the tallest girl IN the class.'",
+        "When comparing exactly two things, use the comparative, not the superlative: 'Of the two books, this one is BETTER' (not 'best').",
+        "'As...as' is used for equal comparison: 'He is as tall as his brother.'"
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Adjectives modify nouns/pronouns; adverbs modify verbs, adjectives, or other adverbs — both change form across positive, comparative, and superlative degrees.",
+    "keyFacts": [
+      "Adjective 'good' → adverb 'well' (not 'goodly').",
+      "One-syllable words take -er/-est; longer words take more/most — never mix both.",
+      "Absolute adjectives (unique, perfect, complete) are not usually compared."
+    ],
+    "keyTerms": [
+      "Comparative",
+      "Superlative",
+      "Absolute adjective",
+      "Adverb of manner"
+    ],
+    "commonConfusion": [
+      "'Fast' is both adjective and adverb with the same spelling; 'hard' likewise, but 'hardly' means 'barely', not 'in a hard manner'."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'She sings well' is correct; 'she sings good' is not — verbs need adverbs.",
+      "For exactly two items, use the comparative ('the better of the two'), not the superlative."
+    ],
+    "commonTraps": [
+      "Double comparatives/superlatives: 'more better', 'most best'.",
+      "Treating friendly/lovely/silly as adverbs because they end in -ly — they are adjectives.",
+      "Comparing an absolute adjective: 'the most unique restaurant.'"
+    ],
+    "mustRemember": [
+      "Find what's being modified first: a noun needs an adjective, anything else usually needs an adverb."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Good",
+        "termB": "Well",
+        "distinction": "'Good' is an adjective describing a noun ('a good idea'); 'well' is an adverb describing a verb ('did well'), except after sense-verbs describing health ('I feel well')."
+      }
+    ],
+    "possibleQuestions": [
+      "Spot the error: 'This is the most unique painting I have ever seen.'",
+      "Choose the correct option: 'Of the two candidates, she is the ___ (better/best) qualified.'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "english-commonly-confused-words",
+  "subjectId": "english-language",
+  "syllabusOrder": 14,
+  "title": "Commonly Confused Words",
+  "shortDescription": "Look-alike, sound-alike word pairs that examiners love — each one taught with the distinction, not just two definitions side by side.",
+  "genZNote": "These words are basically grammar's identical twins. Learn the one tiny difference and you'll never mix them up again.",
+  "sections": [
+    {
+      "id": "affect-effect",
+      "heading": "affect vs effect",
+      "bullets": [
+        "'Affect' is (almost always) a VERB meaning 'to influence': 'The weather AFFECTED the match.'",
+        "'Effect' is (almost always) a NOUN meaning 'a result': 'The medicine had a positive EFFECT.'",
+        "Memory hook: Affect = Action (verb); Effect = End result (noun).",
+        "Trap: 'effect' can rarely be a verb meaning 'to bring about' ('to effect a change'), but this is uncommon and usually not the tested case."
+      ]
+    },
+    {
+      "id": "stationary-stationery",
+      "heading": "stationary vs stationery",
+      "bullets": [
+        "'Stationary' (with an A) is an ADJECTIVE meaning 'not moving': 'The car remained stationary.'",
+        "'Stationery' (with an E) is a NOUN meaning writing materials (paper, pens): 'She bought stationery for the office.'",
+        "Memory hook: stationEry has an E, like Envelope/pEn."
+      ]
+    },
+    {
+      "id": "principal-principle",
+      "heading": "principal vs principle",
+      "bullets": [
+        "'Principal' can be a NOUN (the head of a school) or an ADJECTIVE (main/most important): 'The PRINCIPAL reason', 'the college PRINCIPAL.'",
+        "'Principle' is always a NOUN meaning a fundamental rule or belief: 'He acted on PRINCIPLE.'",
+        "Memory hook: princiPAL is your PAL (a person); principLE is a ruLE."
+      ]
+    },
+    {
+      "id": "complement-compliment",
+      "heading": "complement vs compliment",
+      "bullets": [
+        "'Complement' means something that completes or goes well with something else: 'The scarf COMPLEMENTS her dress.'",
+        "'Compliment' means a polite expression of praise: 'He paid her a COMPLIMENT.'",
+        "Memory hook: complIment = I like to give praise; complEment completEs."
+      ]
+    },
+    {
+      "id": "more-pairs",
+      "heading": "More frequently confused pairs",
+      "bullets": [
+        "Lose (verb, to misplace/fail to win) vs Loose (adjective, not tight): 'Don't LOSE the LOOSE change.'",
+        "Its (possessive, 'belonging to it') vs It's (contraction of 'it is'): 'IT'S raining, so the dog is in ITS kennel.'",
+        "Than (used in comparisons) vs Then (referring to time/sequence): 'She is taller THAN him; THEN we left.'",
+        "Council (a group that governs/advises) vs Counsel (advice, or to advise): 'The town COUNCIL sought legal COUNSEL.'",
+        "Born (to be brought into life) vs Borne (past participle of 'bear', to carry/endure): 'She was BORN in 1990'; 'the cost was BORNE by the company.'",
+        "Elicit (to draw out a response) vs Illicit (illegal): 'The lawyer tried to ELICIT the truth about the ILLICIT deal.'",
+        "Adapt (to adjust) vs Adopt (to take on/take in): 'He ADAPTED to the new city and ADOPTED a stray dog.'"
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Commonly confused words look or sound similar but differ in meaning or part of speech — each pair is best learned through a distinguishing memory hook, not a plain definition.",
+    "keyFacts": [
+      "Affect = verb (to influence); Effect = noun (a result).",
+      "Its = possessive; It's = it is.",
+      "Principal = head/main; Principle = a rule or belief."
+    ],
+    "keyTerms": [
+      "Homophone",
+      "Confusable pair"
+    ],
+    "commonConfusion": [
+      "Nearly every pair on this page is, itself, the 'common confusion' — that is the entire point of the topic."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Affect/effect and its/it's are two of the single most frequently tested confusable pairs in all competitive English sections."
+    ],
+    "commonTraps": [
+      "Using 'effect' where a verb is needed, or 'affect' where a noun is needed.",
+      "Writing 'stationary' when referring to paper and pens (should be 'stationery')."
+    ],
+    "mustRemember": [
+      "Use the memory hooks (stationEry/Envelope, princiPAL/PAL) to recall spelling under exam pressure."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Affect",
+        "termB": "Effect",
+        "distinction": "'Affect' is a verb meaning to influence something. 'Effect' is a noun meaning the result of that influence."
+      },
+      {
+        "termA": "Its",
+        "termB": "It's",
+        "distinction": "'Its' shows possession ('the dog wagged its tail'). \"It's\" is a contraction of 'it is' or 'it has'."
+      }
+    ],
+    "possibleQuestions": [
+      "Choose the correct word: 'The heavy rain badly ___ (effected/affected) the crop yield.'",
+      "Choose the correct word: 'Please buy some ___ (stationary/stationery) from the shop.'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

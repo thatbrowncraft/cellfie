@@ -1,0 +1,128 @@
+{
+  "id": "english-prepositions",
+  "subjectId": "english-language",
+  "syllabusOrder": 6,
+  "title": "Prepositions",
+  "shortDescription": "Tiny connector words for time, place, and movement — plus the fixed pairs (depend ON, married TO) that examiners quiz word-for-word.",
+  "genZNote": "Prepositions don't follow logic, they follow habit. English decided some things a century ago and never explained why.",
+  "sections": [
+    {
+      "id": "time-place",
+      "heading": "Prepositions of time and place — the core set",
+      "table": {
+        "columnHeaders": [
+          "Preposition",
+          "Time use",
+          "Place use"
+        ],
+        "rows": [
+          [
+            "at",
+            "A precise point: at 5 o'clock, at noon, at night",
+            "A precise point: at the door, at the corner"
+          ],
+          [
+            "on",
+            "A day or date: on Monday, on 15 August",
+            "A surface: on the table, on the wall"
+          ],
+          [
+            "in",
+            "A longer period: in May, in 2024, in the morning",
+            "An enclosed/larger space: in the room, in Delhi"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "movement",
+      "heading": "Prepositions of movement/direction",
+      "bullets": [
+        "into — movement toward the inside: 'She walked INTO the room.'",
+        "onto — movement toward a surface: 'The cat jumped ONTO the roof.'",
+        "through — movement from one side to the other, passing inside: 'He walked THROUGH the tunnel.'",
+        "across — movement from one side to the other, over a surface: 'She swam ACROSS the river.'",
+        "towards — movement in the direction of, not necessarily arriving: 'He walked TOWARDS the station.'"
+      ]
+    },
+    {
+      "id": "fixed-combinations",
+      "heading": "Fixed preposition combinations (learn these as pairs, not by logic)",
+      "bullets": [
+        "depend ON, rely ON, insist ON, congratulate ON, base ON",
+        "married TO (a person) / married WITH (never correct — common trap), listen TO, belong TO, object TO, apologise TO (a person)",
+        "good AT, bad AT, expert AT/IN, skilled IN/AT",
+        "afraid OF, proud OF, aware OF, capable OF, fond OF, jealous OF, tired OF",
+        "different FROM (preferred in formal/Indian exam usage) — 'different THAN' is common in American usage but often marked wrong in Indian exams",
+        "angry WITH (a person) / angry AT (a situation/thing)",
+        "interested IN, participate IN, succeed IN, believe IN"
+      ]
+    },
+    {
+      "id": "confusing-pairs",
+      "heading": "Since / for / during — a common time-preposition trap",
+      "body": "'Since' is used with a specific STARTING POINT in time and pairs with the present perfect tense: 'I have lived here SINCE 2015.' 'For' is used with a DURATION/length of time: 'I have lived here FOR nine years.' 'During' is used with a specific period/event when something happens, but doesn't tell you the length: 'It rained DURING the match.' Exams frequently test since-vs-for by giving a sentence and asking which one correctly fits the blank."
+    },
+    {
+      "id": "dangling-prepositions",
+      "heading": "Other common preposition traps",
+      "bullets": [
+        "'Discuss' is never followed by 'about' — 'discuss the plan', NOT 'discuss about the plan' (this is one of the single most repeated exam errors).",
+        "'Reach' does not take 'at/to' before a place in standard usage — 'He reached the station', not 'reached to/at the station' (though 'reach at a decision/conclusion' is a set idiom, an exception).",
+        "'Comprise' is not followed by 'of' in strict formal usage — 'The committee comprises five members', not 'comprises OF five members'.",
+        "Sentences should not end with an unnecessary preposition in formal writing where it can be avoided, though this rule is far more flexible in modern usage than older grammar books suggest."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Prepositions show the relationship (time, place, direction, or a fixed idiomatic link) between a noun/pronoun and the rest of the sentence.",
+    "keyFacts": [
+      "at = point, on = surface/day, in = enclosed space/longer period.",
+      "Since = starting point (with present perfect); for = duration; during = within an event.",
+      "Fixed pairs like 'depend on', 'married to', 'different from' must be memorised, not derived logically."
+    ],
+    "keyTerms": [
+      "Preposition of time",
+      "Preposition of place",
+      "Fixed collocation"
+    ],
+    "commonConfusion": [
+      "'Discuss about' and 'reached to' are extremely common but incorrect — no preposition is needed after these verbs."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'Discuss the matter' is correct; 'discuss ABOUT the matter' is a very frequently tested error.",
+      "'Different FROM' is the Indian-exam-preferred form over 'different than'."
+    ],
+    "commonTraps": [
+      "Adding 'about' after discuss, or 'to/at' after reach.",
+      "Confusing since (point in time) with for (duration).",
+      "Writing 'married with' instead of 'married to'."
+    ],
+    "mustRemember": [
+      "Memorise fixed verb-preposition pairs as whole chunks (depend on, apologise to, afraid of) rather than translating literally."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Since",
+        "termB": "For",
+        "distinction": "'Since' names a starting point in time (since 2015, since Monday). 'For' names a duration or length (for two years, for a week)."
+      }
+    ],
+    "possibleQuestions": [
+      "Spot the error: 'We should discuss about this issue before the meeting.'",
+      "Fill in the blank: 'He has been working here ___ (since/for) five years.'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

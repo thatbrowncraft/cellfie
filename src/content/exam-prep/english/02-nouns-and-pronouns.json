@@ -1,0 +1,193 @@
+{
+  "id": "english-nouns-and-pronouns",
+  "subjectId": "english-language",
+  "syllabusOrder": 2,
+  "title": "Nouns and Pronouns",
+  "shortDescription": "Naming words and their stand-ins — countable vs uncountable, and every pronoun type that examiners love to test.",
+  "genZNote": "Nouns name the world; pronouns are the world's nicknames so you don't have to keep repeating yourself.",
+  "sections": [
+    {
+      "id": "noun-types",
+      "heading": "Types of nouns",
+      "table": {
+        "columnHeaders": [
+          "Type",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Common",
+            "city, book, teacher"
+          ],
+          [
+            "Proper",
+            "Mumbai, the Ganga, Monday"
+          ],
+          [
+            "Collective",
+            "team, jury, flock, committee"
+          ],
+          [
+            "Countable",
+            "chair(s), idea(s) — can be counted, take a/an and plural -s"
+          ],
+          [
+            "Uncountable",
+            "water, furniture, information, advice — no plural, no a/an"
+          ],
+          [
+            "Abstract",
+            "honesty, freedom, courage — an idea/quality, not a physical thing"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "countable-traps",
+      "heading": "Countable vs uncountable — the exam traps",
+      "bullets": [
+        "Uncountable nouns never take 'a/an' and never take a plural -s: say 'much information', never 'an information' or 'informations'.",
+        "Common uncountable nouns that LOOK plural or countable: advice, furniture, luggage, baggage, information, news, knowledge, equipment, homework, bread.",
+        "'News' looks plural but takes a SINGULAR verb: 'The news is good' (not 'are good').",
+        "Some nouns change meaning between countable and uncountable: 'a paper' (a newspaper/an exam paper) vs 'paper' (the material)."
+      ]
+    },
+    {
+      "id": "collective",
+      "heading": "Collective nouns — singular or plural verb?",
+      "bullets": [
+        "A collective noun (team, family, jury, committee, government) usually takes a SINGULAR verb when acting as one unit: 'The team is playing well.'",
+        "It can take a PLURAL verb when members are acting/thought of as individuals: 'The team are arguing among themselves.'",
+        "Indian competitive exams default to the singular-unit reading unless the sentence clearly signals individual disagreement."
+      ]
+    },
+    {
+      "id": "pronoun-types",
+      "heading": "Types of pronouns",
+      "table": {
+        "columnHeaders": [
+          "Type",
+          "Examples",
+          "Use"
+        ],
+        "rows": [
+          [
+            "Personal",
+            "I, you, he, she, it, we, they",
+            "Stands in for a specific person/thing"
+          ],
+          [
+            "Possessive",
+            "mine, yours, his, hers, ours, theirs",
+            "Shows ownership, used alone (not before a noun)"
+          ],
+          [
+            "Reflexive",
+            "myself, yourself, himself, themselves",
+            "Subject and object are the same person"
+          ],
+          [
+            "Relative",
+            "who, whom, whose, which, that",
+            "Introduces a relative clause, links back to a noun"
+          ],
+          [
+            "Demonstrative",
+            "this, that, these, those",
+            "Points to something specific"
+          ],
+          [
+            "Indefinite",
+            "someone, anybody, everyone, none, each",
+            "Refers to a non-specific person/thing"
+          ],
+          [
+            "Interrogative",
+            "who, whom, whose, which, what",
+            "Asks a question"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "who-whom-which-that",
+      "heading": "who / whom / which / that — how to choose",
+      "bullets": [
+        "'Who' refers to people and does the action (subject): 'the man who called'.",
+        "'Whom' refers to people and receives the action (object): 'the man whom I met' — quick test: if you can replace it with 'him', use 'whom'; if with 'he', use 'who'.",
+        "'Which' refers to things/animals, and introduces non-essential info often set off by commas: 'the book, which I bought yesterday, is great.'",
+        "'That' refers to people or things, and introduces essential info with NO comma: 'the book that I bought is great.'",
+        "A common exam error: using 'which' for a person, or 'that' after a comma."
+      ]
+    },
+    {
+      "id": "pronoun-agreement",
+      "heading": "Pronoun-antecedent agreement",
+      "bullets": [
+        "A pronoun must agree in number and gender with the noun it replaces (its 'antecedent'): 'Each student must submit HIS OR HER assignment' (not 'their', in strict formal usage, though 'their' as a gender-neutral singular is now widely accepted).",
+        "Indefinite pronouns like 'everyone', 'somebody', 'each' are grammatically singular, so the pronoun that refers back to them is traditionally singular too: 'Everyone should bring his/her own lunch.'",
+        "Watch for a pronoun with an unclear antecedent — 'Ravi told Sunil that he had passed' is ambiguous about who 'he' is; exams flag this as a sentence-improvement error."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Nouns name people/places/things/ideas; pronouns replace nouns — both come in several types that exams test through countability, collective-noun verb agreement, and who/whom/which/that choices.",
+    "keyFacts": [
+      "Uncountable nouns (advice, furniture, information, news) never take a/an or a plural -s.",
+      "Collective nouns take a singular verb as one unit, plural when members act individually.",
+      "who = subject/people, whom = object/people, which = things (non-essential), that = people or things (essential, no comma)."
+    ],
+    "keyTerms": [
+      "Countable",
+      "Uncountable",
+      "Collective noun",
+      "Antecedent",
+      "Relative pronoun"
+    ],
+    "commonConfusion": [
+      "'Advice' vs 'advise' — advice is the uncountable NOUN, advise is the VERB.",
+      "'News' looks plural but is grammatically singular."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'Furniture', 'information', 'advice', 'luggage', 'news' are uncountable — no plural, no 'a/an'.",
+      "The who/him, whom/he memory trick resolves most who-vs-whom questions instantly."
+    ],
+    "commonTraps": [
+      "Writing 'an informations' or 'furnitures' — both are uncountable and never pluralise.",
+      "Using 'which' to refer to a person instead of 'who'/'that'.",
+      "Treating 'the team are' as always wrong — it's correct when members act individually."
+    ],
+    "mustRemember": [
+      "Test who/whom by substituting he/him.",
+      "'That' clauses are essential (no comma); 'which' clauses are extra information (comma before)."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Who",
+        "termB": "Whom",
+        "distinction": "'Who' is a subject pronoun (does the action); 'whom' is an object pronoun (receives the action). Substitute he/him to test."
+      },
+      {
+        "termA": "Which",
+        "termB": "That",
+        "distinction": "'Which' adds non-essential info and is set off by commas; 'that' adds essential info with no comma and can refer to people or things."
+      }
+    ],
+    "possibleQuestions": [
+      "Identify the error: 'She gave me many advices about the interview.'",
+      "Choose the correct word: 'The jury ___ divided in its opinion.' (is/are)"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

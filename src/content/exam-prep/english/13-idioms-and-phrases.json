@@ -1,0 +1,122 @@
+{
+  "id": "english-idioms-and-phrases",
+  "subjectId": "english-language",
+  "syllabusOrder": 13,
+  "title": "Idioms and Phrases",
+  "shortDescription": "Fixed expressions whose meaning you cannot guess from the individual words — English's favourite way to set a trap.",
+  "genZNote": "Do not translate these literally. English loves setting traps with perfectly ordinary-looking words that mean something totally different together.",
+  "sections": [
+    {
+      "id": "what",
+      "heading": "Why idioms can't be translated word-by-word",
+      "body": "An idiom is a fixed group of words whose overall meaning is different from the literal meaning of each individual word — 'kick the bucket' has nothing to do with buckets; it means 'to die'. Because idioms are fixed expressions, exams test whether you know the CONVENTIONAL meaning, not whether you can logically deduce it from the words."
+    },
+    {
+      "id": "common-idioms",
+      "heading": "Frequently tested idioms",
+      "table": {
+        "columnHeaders": [
+          "Idiom",
+          "Meaning"
+        ],
+        "rows": [
+          [
+            "To beat around the bush",
+            "To avoid getting to the point"
+          ],
+          [
+            "To let the cat out of the bag",
+            "To reveal a secret accidentally"
+          ],
+          [
+            "Once in a blue moon",
+            "Very rarely"
+          ],
+          [
+            "To burn the midnight oil",
+            "To study/work late into the night"
+          ],
+          [
+            "To add fuel to the fire",
+            "To make a bad situation worse"
+          ],
+          [
+            "To hit the nail on the head",
+            "To describe exactly what is causing a situation"
+          ],
+          [
+            "A blessing in disguise",
+            "Something that seems bad but turns out good"
+          ],
+          [
+            "To turn a blind eye",
+            "To deliberately ignore something"
+          ],
+          [
+            "To be on cloud nine",
+            "To be extremely happy"
+          ],
+          [
+            "To bite the bullet",
+            "To face a difficult situation bravely"
+          ],
+          [
+            "To break the ice",
+            "To ease tension and start a conversation"
+          ],
+          [
+            "To call it a day",
+            "To stop working on something for the time being"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "strategy",
+      "heading": "How to approach idiom questions",
+      "bullets": [
+        "Never answer literally — if an option restates the individual words rather than the conventional meaning, it is almost always the wrong trap answer.",
+        "Idioms usually test MEANING recognition (match the idiom to its meaning) rather than requiring you to write the idiom yourself, so focus revision on meanings, not perfect recall of wording.",
+        "Group idioms by theme (secrecy, difficulty, happiness, anger, rarity) — this mirrors how they're often tested and makes revision faster.",
+        "Regional/contextual variation exists, but competitive exams test the standard, widely accepted meaning — don't overthink alternate readings."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Idioms are fixed expressions with a conventional meaning that cannot be worked out from the literal words, so they must be learned as whole units.",
+    "keyFacts": [
+      "Never interpret an idiom literally — the individual words are a decoy.",
+      "Idioms are best revised grouped by theme (secrecy, difficulty, happiness) rather than as a random list."
+    ],
+    "keyTerms": [
+      "Idiom",
+      "Figurative meaning",
+      "Literal meaning"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'Let the cat out of the bag' = reveal a secret; 'once in a blue moon' = very rarely — two of the most commonly tested idioms."
+    ],
+    "commonTraps": [
+      "Picking the option that describes the LITERAL scene in the idiom rather than its actual figurative meaning."
+    ],
+    "mustRemember": [
+      "If an idiom is unfamiliar, eliminate any answer option that just restates the words literally."
+    ],
+    "possibleQuestions": [
+      "Choose the meaning of the idiom 'to burn the midnight oil'.",
+      "Choose the correct idiom for 'to face a difficult situation with courage'."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

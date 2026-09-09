@@ -1,0 +1,214 @@
+{
+  "id": "english-tenses",
+  "subjectId": "english-language",
+  "syllabusOrder": 8,
+  "title": "Tenses",
+  "shortDescription": "All twelve tense forms sorted by time and completeness, with signal words that instantly tell you which one a sentence wants.",
+  "genZNote": "Twelve tenses sounds scary until you realise it's just 3 times times 4 aspects. English really said: tell me WHEN, or the sentence stays confusing.",
+  "sections": [
+    {
+      "id": "framework",
+      "heading": "The 3x4 framework",
+      "body": "English tense isn't twelve random forms to memorise separately — it's 3 TIMES (present, past, future) crossed with 4 ASPECTS (simple, continuous, perfect, perfect continuous). Once you see the grid, you only need to learn what each of the 4 aspects DOES, and then apply that same logic to all three times."
+    },
+    {
+      "id": "aspects",
+      "heading": "What each aspect means (applies across all three times)",
+      "table": {
+        "columnHeaders": [
+          "Aspect",
+          "Meaning",
+          "Present example"
+        ],
+        "rows": [
+          [
+            "Simple",
+            "A fact, habit, or single completed/future action",
+            "She writes every day."
+          ],
+          [
+            "Continuous",
+            "An action in progress at that time",
+            "She is writing right now."
+          ],
+          [
+            "Perfect",
+            "An action completed before a reference point, with present relevance",
+            "She has written the letter."
+          ],
+          [
+            "Perfect Continuous",
+            "An ongoing action that started earlier and continues up to a reference point",
+            "She has been writing since morning."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "present",
+      "heading": "Present tenses with signal words",
+      "table": {
+        "columnHeaders": [
+          "Tense",
+          "Structure",
+          "Signal words"
+        ],
+        "rows": [
+          [
+            "Present Simple",
+            "V1 / V1+s",
+            "always, usually, every day, never"
+          ],
+          [
+            "Present Continuous",
+            "am/is/are + V-ing",
+            "now, right now, at the moment, currently"
+          ],
+          [
+            "Present Perfect",
+            "has/have + V3",
+            "already, yet, just, ever, since, for"
+          ],
+          [
+            "Present Perfect Continuous",
+            "has/have been + V-ing",
+            "since, for, all day, lately"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "past",
+      "heading": "Past tenses with signal words",
+      "table": {
+        "columnHeaders": [
+          "Tense",
+          "Structure",
+          "Signal words"
+        ],
+        "rows": [
+          [
+            "Past Simple",
+            "V2",
+            "yesterday, last week, ago, in 2010"
+          ],
+          [
+            "Past Continuous",
+            "was/were + V-ing",
+            "while, when (interrupted action), at that time"
+          ],
+          [
+            "Past Perfect",
+            "had + V3",
+            "before, after, by the time, already (in past context)"
+          ],
+          [
+            "Past Perfect Continuous",
+            "had been + V-ing",
+            "for, since (before another past action)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "future",
+      "heading": "Future tenses with signal words",
+      "table": {
+        "columnHeaders": [
+          "Tense",
+          "Structure",
+          "Signal words"
+        ],
+        "rows": [
+          [
+            "Future Simple",
+            "will/shall + V1",
+            "tomorrow, next week, soon"
+          ],
+          [
+            "Future Continuous",
+            "will be + V-ing",
+            "at this time tomorrow, this time next year"
+          ],
+          [
+            "Future Perfect",
+            "will have + V3",
+            "by the time, by next year"
+          ],
+          [
+            "Future Perfect Continuous",
+            "will have been + V-ing",
+            "by the time...for (duration)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "common-confusion",
+      "heading": "The confusions that decide most tense questions",
+      "bullets": [
+        "Present Perfect vs Past Simple: use Present Perfect when the exact time isn't stated or the action connects to now ('I have finished my homework'); use Past Simple when a specific past time is given ('I finished my homework at 6 pm').",
+        "'Since' pairs with a POINT in time (since 2020, since Monday); 'for' pairs with a DURATION (for two years) — both usually go with a perfect tense, not simple past.",
+        "Past Perfect is used for the EARLIER of two past actions: 'The train had left BEFORE I reached the station' — had left happened first.",
+        "Never mix 'since' with simple past tense in the main clause — 'I am living here since 2015' is wrong; it must be 'I HAVE BEEN living here since 2015.'"
+      ]
+    },
+    {
+      "id": "if-when-time-clauses",
+      "heading": "A special exam trap: no future tense in time/conditional clauses",
+      "body": "In clauses starting with 'if', 'when', 'as soon as', 'before', 'after', 'until', English uses the PRESENT tense to talk about the future, even though the overall sentence is about a future event: 'I will call you WHEN I REACH home' (not 'will reach'). This is one of the most frequently tested tense-sequencing rules in competitive exams."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "English has 12 tense forms built from 3 times (present, past, future) crossed with 4 aspects (simple, continuous, perfect, perfect continuous), each triggered by specific signal words.",
+    "keyFacts": [
+      "Present Perfect connects a past action to now; Past Simple states a finished action at a specific past time.",
+      "'Since' = a point in time; 'for' = a duration — both usually pair with a perfect tense.",
+      "Time/conditional clauses (if, when, before, until) use present tense even for future meaning."
+    ],
+    "keyTerms": [
+      "Aspect",
+      "Signal word",
+      "Time clause",
+      "Sequence of tenses"
+    ],
+    "commonConfusion": [
+      "'I am living here since 2015' is a very common but incorrect construction — it must be present perfect continuous."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'I will call you when I reach home' — present tense in the time clause, even though the meaning is future.",
+      "Past Perfect marks the EARLIER of two past events; the later one stays in Past Simple."
+    ],
+    "commonTraps": [
+      "Using 'will' inside an 'if/when' clause: 'If it will rain, we will cancel' should be 'If it rains...'",
+      "Pairing 'since' with simple past instead of a perfect tense.",
+      "Using Past Simple for both events in a two-past-event sentence instead of Past Perfect for the earlier one."
+    ],
+    "mustRemember": [
+      "Signal words are the fastest way to identify the correct tense — train yourself to spot them first."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Present Perfect",
+        "termB": "Past Simple",
+        "distinction": "Present Perfect is used when the exact time is unstated or the result matters now ('I have lost my keys'). Past Simple is used with a specific, finished past time ('I lost my keys yesterday')."
+      }
+    ],
+    "possibleQuestions": [
+      "Choose the correct form: 'By the time we arrived, the movie ___ (already start).'",
+      "Spot the error: 'I will let you know as soon as I will get the results.'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

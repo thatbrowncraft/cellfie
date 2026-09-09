@@ -1,0 +1,101 @@
+{
+  "id": "english-conjunctions",
+  "subjectId": "english-language",
+  "syllabusOrder": 7,
+  "title": "Conjunctions",
+  "shortDescription": "The joining words that link ideas — coordinating, subordinating, and correlative pairs that must always come in twos.",
+  "genZNote": "Conjunctions are relationship counsellors for clauses — they decide if two ideas are equals, or if one depends on the other.",
+  "sections": [
+    {
+      "id": "types",
+      "heading": "Three types of conjunctions",
+      "table": {
+        "columnHeaders": [
+          "Type",
+          "Examples",
+          "Job"
+        ],
+        "rows": [
+          [
+            "Coordinating",
+            "and, but, or, nor, for, yet, so (FANBOYS)",
+            "Joins two equal/independent clauses or words"
+          ],
+          [
+            "Subordinating",
+            "because, although, since, if, when, while, unless",
+            "Joins a dependent clause to a main clause"
+          ],
+          [
+            "Correlative",
+            "either...or, neither...nor, not only...but also, both...and",
+            "Work in pairs to join balanced elements"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "correlative-rules",
+      "heading": "Correlative conjunctions — the matching-pair rule",
+      "bullets": [
+        "Correlative conjunctions must be followed by grammatically PARALLEL structures: 'She is not only intelligent but also hardworking' (adjective matches adjective), not 'not only intelligent but also she works hard.'",
+        "'Either...or' and 'neither...nor' pair options — with 'neither...nor', the verb agrees with the NEARER subject: 'Neither the teacher nor the students WERE ready' (were agrees with 'students').",
+        "Never mix correlative pairs: 'either...nor' or 'neither...or' are incorrect — 'either' pairs only with 'or', 'neither' pairs only with 'nor'."
+      ]
+    },
+    {
+      "id": "subordinating-traps",
+      "heading": "Subordinating conjunction traps",
+      "bullets": [
+        "'Although'/'though' should not be paired with 'but' in the same sentence — 'Although he was tired, he continued working' (not 'Although he was tired, BUT he continued').",
+        "'Because' should not be paired with 'so' in the same sentence for the same reason — pick one connector, not both, to avoid redundancy.",
+        "'Unless' already means 'if not' — saying 'unless...not' creates a double negative: 'Unless you don't hurry' is often wrong; it should be 'Unless you hurry.'"
+      ]
+    },
+    {
+      "id": "linking-words",
+      "heading": "Common linking/transition words (a light layer above conjunctions)",
+      "body": "Words like 'however', 'therefore', 'moreover', 'nevertheless', and 'consequently' are conjunctive adverbs, not true conjunctions — they connect ideas in meaning but need a semicolon or full stop before them when joining two independent clauses, not just a comma: 'It was raining; however, we continued the match' (semicolon, not comma, before 'however')."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Conjunctions join words, phrases, or clauses — coordinating (equal ideas), subordinating (dependent on a main clause), or correlative (matched pairs).",
+    "keyFacts": [
+      "FANBOYS = for, and, nor, but, or, yet, so — the coordinating conjunctions.",
+      "Correlative pairs (either/or, neither/nor, not only/but also) must never be mixed and must join parallel structures.",
+      "Don't double up 'although...but' or 'because...so' in one sentence."
+    ],
+    "keyTerms": [
+      "Coordinating conjunction",
+      "Subordinating conjunction",
+      "Correlative conjunction",
+      "Parallelism"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'Not only...but also' requires parallel grammatical structure on both sides.",
+      "With 'neither...nor', the verb agrees with the nearer subject."
+    ],
+    "commonTraps": [
+      "Writing 'Although he tried hard, but he failed' — redundant conjunction pairing.",
+      "Mismatching correlative pairs like 'either...nor'."
+    ],
+    "mustRemember": [
+      "Check both sides of a correlative conjunction for matching grammatical form."
+    ],
+    "possibleQuestions": [
+      "Spot the error: 'He is neither intelligent nor he is hardworking.' (should be 'nor hardworking' to keep parallel structure)"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

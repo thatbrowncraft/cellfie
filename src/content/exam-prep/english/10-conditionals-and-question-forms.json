@@ -1,0 +1,135 @@
+{
+  "id": "english-conditionals-and-question-forms",
+  "subjectId": "english-language",
+  "syllabusOrder": 10,
+  "title": "Conditionals, Question Forms, and Negation",
+  "shortDescription": "If-clauses that decide real vs imaginary outcomes, plus the question-tag and double-negative traps that sneak into error-spotting.",
+  "genZNote": "Conditionals are English's 'what if' machine — swap one tense and you flip a sentence from likely to purely hypothetical.",
+  "sections": [
+    {
+      "id": "conditionals",
+      "heading": "The four conditional types",
+      "table": {
+        "columnHeaders": [
+          "Type",
+          "If-clause tense",
+          "Main clause",
+          "Meaning"
+        ],
+        "rows": [
+          [
+            "Zero",
+            "Present simple",
+            "Present simple",
+            "General truth/fact: If you heat water, it boils."
+          ],
+          [
+            "First",
+            "Present simple",
+            "will + V1",
+            "Real, likely future possibility: If it rains, I will stay home."
+          ],
+          [
+            "Second",
+            "Past simple",
+            "would + V1",
+            "Unreal/hypothetical present or future: If I were rich, I would travel the world."
+          ],
+          [
+            "Third",
+            "Past perfect",
+            "would have + V3",
+            "Unreal past — something that didn't happen: If I had studied, I would have passed."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "conditional-traps",
+      "heading": "Conditional exam traps",
+      "bullets": [
+        "In Second Conditional, use 'WERE' for all subjects (I, he, she, it), not 'was' — 'If I WERE you...' is the traditional correct/formal form, though 'was' is common informally.",
+        "Never use 'will' inside the if-clause itself: 'If it will rain' is wrong; it should be 'If it rains.'",
+        "Third Conditional talks about a past that CANNOT be changed — mixing tenses (e.g., 'If I had studied, I would pass' instead of 'would have passed') is a frequent error.",
+        "Mixed conditionals exist (a past condition with a present result, or vice versa) but are less commonly tested at this level than the four standard types."
+      ]
+    },
+    {
+      "id": "question-forms",
+      "heading": "Question formation basics",
+      "bullets": [
+        "Yes/No questions invert the subject and the auxiliary/modal verb: 'She IS coming' → 'IS she coming?'; if there's no auxiliary, add 'do/does/did': 'She likes tea' → 'Does she like tea?'",
+        "Wh-questions (what, where, when, why, who, how) go: Wh-word + auxiliary + subject + main verb: 'Where IS she going?'",
+        "When 'who'/'what' IS the subject of the question, no auxiliary inversion is needed: 'WHO called you?' (not 'Who did call you?')."
+      ]
+    },
+    {
+      "id": "question-tags",
+      "heading": "Question tags — the pattern that trips people up",
+      "bullets": [
+        "A positive statement takes a NEGATIVE tag, and vice versa: 'She is coming, ISN'T she?' / 'He doesn't like tea, DOES he?'",
+        "The tag's auxiliary must match the main sentence's tense/auxiliary: 'They have finished, HAVEN'T they?'",
+        "After 'let's', the tag is always 'shall we': 'Let's go, SHALL we?'",
+        "After an imperative, the tag is usually 'will you': 'Close the door, WILL you?'"
+      ]
+    },
+    {
+      "id": "negation",
+      "heading": "Negation and the double-negative trap",
+      "bullets": [
+        "Standard English avoids double negatives: 'I don't have no money' is non-standard; it should be 'I don't have ANY money' or 'I have NO money.'",
+        "Words like 'hardly', 'scarcely', 'barely', 'never', 'no one' are already negative — pairing them with another negative word creates an unintended double negative: 'I can't hardly see' should be 'I can HARDLY see' or 'I CAN'T see.'",
+        "'Neither' pairs with 'nor', not 'or', to keep the negative sense consistent across a sentence."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Conditionals (zero, first, second, third) use different tense pairings to show fact, likely possibility, unreal present, or unreal past; question forms and negation have their own agreement and inversion rules.",
+    "keyFacts": [
+      "Never use 'will' inside an if-clause.",
+      "Second Conditional traditionally uses 'were' for all subjects.",
+      "A positive statement takes a negative question tag, and vice versa.",
+      "Words like hardly/scarcely/barely are already negative — don't double them up."
+    ],
+    "keyTerms": [
+      "Zero/First/Second/Third Conditional",
+      "Question tag",
+      "Double negative"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Third Conditional = had + V3 in the if-clause, would have + V3 in the main clause — for an unchangeable past.",
+      "'I can't hardly wait' is a double negative error; correct is 'I can hardly wait.'"
+    ],
+    "commonTraps": [
+      "Using 'will' in an if-clause.",
+      "Mismatched question tags (positive statement + positive tag).",
+      "Double negatives with hardly/scarcely/barely/no one."
+    ],
+    "mustRemember": [
+      "Match the conditional type to the intended reality: possible future (first), unreal now (second), unreal past (third)."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Second Conditional",
+        "termB": "Third Conditional",
+        "distinction": "Second Conditional imagines an unreal PRESENT/future ('If I were rich, I would travel'). Third Conditional imagines an unreal PAST that already happened differently ('If I had been rich, I would have travelled')."
+      }
+    ],
+    "possibleQuestions": [
+      "Spot the error: 'If I will have time, I will visit you.'",
+      "Add the correct question tag: 'You haven't finished your homework, ___?'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

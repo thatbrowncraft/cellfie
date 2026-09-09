@@ -1,0 +1,102 @@
+{
+  "id": "english-subject-verb-agreement",
+  "subjectId": "english-language",
+  "syllabusOrder": 9,
+  "title": "Subject-Verb Agreement",
+  "shortDescription": "The single highest-yield error-spotting rule in the whole syllabus — every pattern examiners hide the real subject behind.",
+  "genZNote": "The subject and verb are a duo act. If one goes singular, the other can't quietly switch teams behind its back.",
+  "sections": [
+    {
+      "id": "core-rule",
+      "heading": "The core rule",
+      "body": "A verb must agree in NUMBER (singular/plural) with its SUBJECT, not with any other noun that happens to sit near it. Most agreement errors in exams come from a long or unusual sentence hiding the true subject behind other nouns, phrases, or clauses — so the first job is always to strip the sentence down and ask: what is the REAL subject of this verb?"
+    },
+    {
+      "id": "intervening-phrases",
+      "heading": "Intervening phrases don't change the subject",
+      "bullets": [
+        "Phrases starting with 'along with', 'as well as', 'together with', 'accompanied by', 'in addition to' do NOT make the subject plural: 'The manager, along with his staff, IS attending the meeting' (manager = singular subject; staff is just extra information).",
+        "A phrase beginning with 'of' after the subject doesn't change its number: 'The quality of the products IS excellent' (subject is 'quality', not 'products')."
+      ]
+    },
+    {
+      "id": "either-neither-each",
+      "heading": "Either / Neither / Each / Every / indefinite pronouns",
+      "bullets": [
+        "'Either', 'neither', 'each', 'every', 'everyone', 'everybody', 'anyone', 'someone', 'nobody' are all grammatically SINGULAR, even when they sound like they refer to many people: 'Each of the students HAS submitted the assignment.'",
+        "'Either...or' / 'Neither...nor' — the verb agrees with the noun CLOSER to it: 'Neither the manager nor the employees WERE informed' (agrees with 'employees').",
+        "'Every' and 'each' before two nouns joined by 'and' still take a singular verb: 'Every boy and girl WAS present.'"
+      ]
+    },
+    {
+      "id": "collective-uncountable",
+      "heading": "Collective nouns, uncountable nouns, and plural-form singulars",
+      "bullets": [
+        "Collective nouns (team, family, jury, government) take a singular verb as one unit, plural when acting as separate individuals (see Nouns and Pronouns for detail).",
+        "Nouns plural in form but singular in meaning take a SINGULAR verb: news, mathematics, physics, economics, measles — 'Mathematics IS my favourite subject.'",
+        "Nouns like 'scissors', 'trousers', 'spectacles', 'pliers' are always treated as plural: 'The scissors ARE on the table' — with 'a pair of' before them, the verb stays singular ('A pair of scissors IS on the table')."
+      ]
+    },
+    {
+      "id": "tricky-subjects",
+      "heading": "Other tricky subject patterns",
+      "bullets": [
+        "Subjects joined by 'and' usually take a plural verb: 'Ram and Shyam ARE friends' — UNLESS they refer to a single person/idea: 'Bread and butter IS my breakfast' (one dish).",
+        "'A number of' + plural noun takes a PLURAL verb ('A number of students HAVE applied'); 'The number of' + plural noun takes a SINGULAR verb ('The number of students HAS increased').",
+        "Distances, amounts of money, and periods of time, when treated as a single unit, take a singular verb: 'Ten kilometres IS a long distance to walk.'",
+        "A sentence beginning with 'there is/are' or 'here is/are' — the verb agrees with the noun that FOLLOWS it, not with 'there/here': 'There ARE many reasons for this.'",
+        "Subjects joined by 'or' or 'nor' with no 'either/neither' still follow the nearer-noun rule."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The verb must agree in number with its true subject, no matter what other nouns, phrases, or clauses sit between them — the single most-tested error type in competitive English.",
+    "keyFacts": [
+      "'Along with', 'as well as', 'together with' don't pluralise the subject.",
+      "Each/every/either/neither/indefinite pronouns are singular even when they suggest many people.",
+      "'A number of' = plural verb; 'the number of' = singular verb.",
+      "'There is/are' agrees with the noun that follows, not with 'there'."
+    ],
+    "keyTerms": [
+      "Intervening phrase",
+      "Collective noun",
+      "Nearer-noun rule"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'The manager, along with his team, is attending' — singular, because 'along with' doesn't add to the subject.",
+      "'A number of students have applied' vs 'The number of applicants has increased' — opposite verb numbers despite looking similar."
+    ],
+    "commonTraps": [
+      "Matching the verb to the noun closest to it instead of the real subject when a phrase intervenes.",
+      "Treating 'each'/'every'/'either'/'neither' as plural because they imply multiple people.",
+      "Getting 'a number of' and 'the number of' backwards."
+    ],
+    "mustRemember": [
+      "Cross out prepositional phrases and 'along with/as well as' clauses mentally before checking subject-verb agreement.",
+      "With 'either...or'/'neither...nor', the verb always matches the nearer noun."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "A number of",
+        "termB": "The number of",
+        "distinction": "'A number of' means 'several/many' and takes a plural verb. 'The number of' refers to a specific count/figure and takes a singular verb."
+      }
+    ],
+    "possibleQuestions": [
+      "Spot the error: 'The quality of the mangoes are not good this year.'",
+      "Choose the correct verb: 'Neither the players nor the coach ___ (was/were) happy with the result.'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

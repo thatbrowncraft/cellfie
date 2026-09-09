@@ -1,0 +1,110 @@
+{
+  "id": "english-parts-of-speech",
+  "subjectId": "english-language",
+  "syllabusOrder": 1,
+  "title": "Parts of Speech",
+  "shortDescription": "The eight job-roles every English word plays in a sentence — the map you need before any other grammar topic makes sense.",
+  "genZNote": "Before you can spot an error, you need to know what job each word is doing. This is the org chart of a sentence.",
+  "sections": [
+    {
+      "id": "what",
+      "heading": "What is a part of speech?",
+      "body": "A part of speech is the grammatical role a word plays in a sentence, not a fixed label glued to the word forever. The same word can switch roles: 'water' is a noun in 'drink the water' but a verb in 'water the plants'. Exam questions on parts of speech almost always test this role-in-context, not a memorized dictionary tag."
+    },
+    {
+      "id": "eight",
+      "heading": "The eight parts of speech, at a glance",
+      "table": {
+        "columnHeaders": [
+          "Part of speech",
+          "Job"
+        ],
+        "rows": [
+          [
+            "Noun",
+            "Names a person, place, thing, or idea (Delhi, honesty, table)"
+          ],
+          [
+            "Pronoun",
+            "Replaces a noun to avoid repetition (he, they, which)"
+          ],
+          [
+            "Adjective",
+            "Describes/modifies a noun or pronoun (a tall building)"
+          ],
+          [
+            "Verb",
+            "Shows action or state of being (run, seem, is)"
+          ],
+          [
+            "Adverb",
+            "Modifies a verb, adjective, or another adverb (ran quickly)"
+          ],
+          [
+            "Preposition",
+            "Shows the relationship of a noun/pronoun to another word (on the table)"
+          ],
+          [
+            "Conjunction",
+            "Joins words, phrases, or clauses (and, but, because)"
+          ],
+          [
+            "Interjection",
+            "Expresses sudden feeling (Wow!, Alas!)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "identify",
+      "heading": "How to identify a word's part of speech in a sentence",
+      "bullets": [
+        "Look at the word's neighbours, not the word alone — 'light' is a noun ('turn on the light'), adjective ('a light bag'), and verb ('light the candle').",
+        "Ask what job it is doing right now: naming something → noun; describing a noun → adjective; showing action → verb.",
+        "A word ending in -ly is usually (not always) an adverb — 'friendly' is an exception, it's an adjective.",
+        "If it links two clauses, it's a conjunction; if it links a noun to the rest of the sentence via a relationship (in, on, at, by), it's a preposition."
+      ]
+    },
+    {
+      "id": "open-closed",
+      "heading": "Open class vs closed class",
+      "body": "Nouns, verbs, adjectives, and adverbs are 'open class' — new words keep entering the language ('to google', 'selfie'). Pronouns, prepositions, conjunctions, and articles are 'closed class' — the list is fixed and small, which is exactly why exams test them heavily: there are only so many prepositions to memorize, so questions can be very specific."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Parts of speech are the eight grammatical roles (noun, pronoun, adjective, verb, adverb, preposition, conjunction, interjection) a word can play depending on context.",
+    "keyFacts": [
+      "The same word can be a different part of speech depending on the sentence — always classify by function, not by memory.",
+      "Closed-class words (pronouns, prepositions, conjunctions, articles) are a fixed, small set — high-yield for exams.",
+      "Open-class words (nouns, verbs, adjectives, adverbs) keep growing as language evolves."
+    ],
+    "keyTerms": [
+      "Open class",
+      "Closed class",
+      "Function vs form"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "A word's part of speech is decided by its job in that specific sentence, not a fixed dictionary label.",
+      "There are exactly eight traditional parts of speech in English."
+    ],
+    "commonTraps": [
+      "Assuming a word is 'always' one part of speech — 'round', 'well', 'light', and 'fast' can each be multiple parts of speech.",
+      "Assuming every -ly word is an adverb ('friendly', 'lovely', 'lonely' are adjectives)."
+    ],
+    "mustRemember": [
+      "Identify part of speech from context first, then apply the rule for that part of speech."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

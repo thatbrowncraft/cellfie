@@ -1,0 +1,166 @@
+{
+  "id": "english-verbs-and-modals",
+  "subjectId": "english-language",
+  "syllabusOrder": 4,
+  "title": "Verbs and Modals",
+  "shortDescription": "Action words, linking verbs, and the modal verbs (can/could/must/should...) that carry meaning exams test constantly.",
+  "genZNote": "Verbs run the sentence engine. Modals are the engine's mood settings — possibility, obligation, permission, all in one small word.",
+  "sections": [
+    {
+      "id": "verb-types",
+      "heading": "Main verb categories",
+      "table": {
+        "columnHeaders": [
+          "Type",
+          "Example",
+          "Note"
+        ],
+        "rows": [
+          [
+            "Transitive",
+            "She reads THE BOOK.",
+            "Needs a direct object to complete its meaning"
+          ],
+          [
+            "Intransitive",
+            "The baby sleeps.",
+            "No object needed/possible"
+          ],
+          [
+            "Linking (copular)",
+            "She IS a doctor. / He SEEMS happy.",
+            "Connects subject to a description, not an action"
+          ],
+          [
+            "Auxiliary (helping)",
+            "She IS reading. / They HAVE gone.",
+            "Supports the main verb to form tense/voice/questions"
+          ],
+          [
+            "Modal auxiliary",
+            "You MUST leave. / She CAN swim.",
+            "Expresses ability, permission, obligation, possibility"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "linking-vs-action",
+      "heading": "Linking verbs vs action verbs — the adjective-after-verb trap",
+      "body": "After a linking verb (be, seem, become, appear, and sense-verbs like feel/look/smell/taste/sound when describing a state), you need an ADJECTIVE, not an adverb: 'The soup tastes GOOD' (not 'well', unless describing the sense of taste itself working properly). After an action verb, you generally need an adverb: 'He tasted the soup CAREFULLY.' The exam trick is telling whether the verb is being used as a linking verb (describing the subject) or an action verb (describing how something is done)."
+    },
+    {
+      "id": "modals",
+      "heading": "Common modal verbs and their core meanings",
+      "table": {
+        "columnHeaders": [
+          "Modal",
+          "Core meaning",
+          "Example"
+        ],
+        "rows": [
+          [
+            "can / could",
+            "Ability, permission (informal); could = past ability or polite request",
+            "She can swim. / Could you help me?"
+          ],
+          [
+            "may / might",
+            "Permission (formal), possibility; might = weaker possibility than may",
+            "You may leave. / It might rain."
+          ],
+          [
+            "must",
+            "Strong obligation, logical necessity/certainty",
+            "You must submit by Friday. / He must be tired (deduction)."
+          ],
+          [
+            "should / ought to",
+            "Advice, mild obligation, expectation",
+            "You should apologise."
+          ],
+          [
+            "will / would",
+            "Future intention/certainty; would = past habit, polite/conditional",
+            "I will call you. / He would visit every summer."
+          ],
+          [
+            "shall",
+            "Formal future (with I/we), suggestions/offers in questions",
+            "Shall we begin?"
+          ],
+          [
+            "need not / needn't",
+            "Absence of obligation (not the same as 'must not')",
+            "You needn't come if you're busy."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "modal-traps",
+      "heading": "Modal verb exam traps",
+      "bullets": [
+        "'Must not' means it is PROHIBITED; 'need not' means it is simply NOT REQUIRED — these are opposite in force and are a classic confusion pair.",
+        "Modals are never followed by 'to' + verb in their basic form: say 'can swim', never 'can to swim'; the exception is 'ought TO' and 'have TO', which behave like modals but do take 'to'.",
+        "Modals do not take -s in the third person: 'he can', never 'he cans'.",
+        "Two modals cannot be stacked together in standard English: 'might can' or 'must should' are incorrect."
+      ]
+    },
+    {
+      "id": "phrasal-and-forms",
+      "heading": "Verb forms and phrasal verbs, briefly",
+      "body": "Every regular verb has five forms an exam may test indirectly through tense questions: base (walk), -s form (walks), -ing form (walking), past (walked), past participle (walked). Irregular verbs (go/went/gone, eat/ate/eaten) must be memorised individually since they don't follow the -ed pattern. A phrasal verb combines a verb with a particle to create a new meaning distinct from the verb alone — 'give up' (quit) is not related in meaning to 'give'; exams sometimes test recognising the idiomatic meaning of common phrasal verbs like 'look after' (take care of), 'put off' (postpone), and 'run into' (meet unexpectedly)."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Verbs show action or state of being; modal auxiliary verbs (can, must, should, may...) attach to a main verb to express ability, permission, obligation, or possibility.",
+    "keyFacts": [
+      "Linking verbs are followed by an adjective describing the subject, not an adverb.",
+      "'Must not' = prohibited; 'need not' = simply not required — opposite meanings.",
+      "Modals never take -s or a following bare 'to' (except ought to, have to)."
+    ],
+    "keyTerms": [
+      "Transitive",
+      "Intransitive",
+      "Linking verb",
+      "Modal auxiliary",
+      "Phrasal verb"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'He can to speak English' is wrong — modals are followed directly by the base verb.",
+      "'You must not smoke here' (prohibited) is very different from 'You need not smoke here' (optional)."
+    ],
+    "commonTraps": [
+      "Confusing 'must not' with 'need not'.",
+      "Adding -s to a modal: 'she cans drive'.",
+      "Using an adverb after a linking verb: 'The cake tastes deliciously' should be 'tastes delicious'."
+    ],
+    "mustRemember": [
+      "Identify whether the verb links back to the subject (needs adjective) or describes an action (can take adverb)."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Must not",
+        "termB": "Need not",
+        "distinction": "'Must not' expresses prohibition (you are not allowed to). 'Need not' expresses absence of obligation (you are allowed to skip it, but it's not forbidden)."
+      }
+    ],
+    "possibleQuestions": [
+      "Spot the error: 'You needn't smoke in this compartment; it is a criminal offence.' (should be 'must not')",
+      "Choose the correct verb form after the linking verb: 'The milk has gone ___ (bad/badly).'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

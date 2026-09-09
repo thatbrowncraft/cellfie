@@ -1,0 +1,133 @@
+{
+  "id": "english-exam-question-patterns-and-strategy",
+  "subjectId": "english-language",
+  "syllabusOrder": 21,
+  "title": "Exam Question Patterns and Strategy",
+  "shortDescription": "How each English question TYPE is usually structured and how to approach it under time pressure — strategy, not predictions about exact future questions.",
+  "genZNote": "Same subject, different disguises every year. Learn the pattern behind the pattern and the disguise stops mattering.",
+  "sections": [
+    {
+      "id": "intro",
+      "heading": "Why 'pattern' rather than 'prediction'",
+      "body": "This section describes commonly tested QUESTION FORMATS and how to approach each one strategically — it does not, and cannot, predict the exact questions a future exam will contain. Treat every point here as 'commonly tested pattern', never as a guarantee."
+    },
+    {
+      "id": "format-strategy",
+      "heading": "Question format → what it tests → fastest approach",
+      "table": {
+        "columnHeaders": [
+          "Format",
+          "What it tests",
+          "Fastest approach"
+        ],
+        "rows": [
+          [
+            "Fill in the blank",
+            "Grammar rule or contextual vocabulary",
+            "Read the full sentence first; identify the missing word's job before looking at options"
+          ],
+          [
+            "Error spotting",
+            "A specific grammar-rule violation in one part",
+            "Run the agreement → tense → preposition → pronoun → article → parallelism checklist"
+          ],
+          [
+            "Sentence improvement",
+            "Best grammatical phrasing among near-identical options",
+            "Treat the original as a valid option; pick the most correct AND most natural phrasing"
+          ],
+          [
+            "Synonym/Antonym",
+            "Precise meaning and connotation, not just a rough match",
+            "Fix the word's exact sense/part of speech in context before comparing options"
+          ],
+          [
+            "One-word substitution",
+            "A precise single word for a descriptive phrase",
+            "Identify the theme (person/place/fear/study) and check root words (-phobia, -logy, -phile)"
+          ],
+          [
+            "Idioms and phrases",
+            "Conventional (not literal) meaning",
+            "Never choose an option that just restates the idiom's literal words"
+          ],
+          [
+            "Sentence rearrangement",
+            "Logical/chronological ordering and cohesion",
+            "Find the true opening sentence first via pronoun/connector clues, then build pairs"
+          ],
+          [
+            "Cloze test",
+            "Grammar + vocabulary sustained across a passage",
+            "Read the whole passage once before attempting any blank; keep tense/tone consistent"
+          ],
+          [
+            "Voice transformation",
+            "Correct passive/active conversion by tense",
+            "Identify the active sentence's exact tense before applying that tense's passive formula"
+          ],
+          [
+            "Narration transformation",
+            "Correct direct-to-indirect conversion rules",
+            "Identify sentence type (statement/question/command) before applying its specific template"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "time-management",
+      "heading": "General time-management strategy",
+      "bullets": [
+        "Attempt the question TYPES you're fastest at first (often vocabulary and one-word substitution, since they need recall rather than multi-step reasoning) to bank quick marks.",
+        "For error-spotting and sentence-improvement questions, don't over-analyse a sentence that 'sounds fine' after one careful checklist pass — extended hesitation rarely improves accuracy on these formats.",
+        "In cloze/rearrangement questions (which take longer to read), do them in one focused pass rather than switching back and forth with other questions, since re-establishing context costs time."
+      ]
+    },
+    {
+      "id": "elimination-strategy",
+      "heading": "Using elimination effectively",
+      "bullets": [
+        "Eliminate any option that is grammatically wrong FIRST, even if its meaning seems appealing — a grammar error disqualifies an option outright in most formats.",
+        "Among grammatically valid options, eliminate the one(s) that clash with the connotation, tense, or tone already established by the sentence/passage.",
+        "If exactly two options remain and both seem correct, re-check for a redundancy, parallelism, or preposition-collocation issue — these are the most common 'tie-breaker' differences examiners build in."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Each English question format tests a specific, recurring skill combination — recognising the format and applying its matching strategy is faster and more reliable than reading every question from scratch.",
+    "keyFacts": [
+      "Commonly tested pattern, not a guarantee of exact future content — never treat any 'expected question' claim as certain.",
+      "Elimination by grammar correctness first, then by tone/connotation fit, resolves most close-call questions."
+    ],
+    "keyTerms": [
+      "Question format",
+      "Elimination strategy",
+      "Time management"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Grammar correctness eliminates options faster and more reliably than trying to judge 'which sounds better' first."
+    ],
+    "commonTraps": [
+      "Spending equal time on every question type regardless of personal speed/accuracy on that format.",
+      "Treating any single practice question as evidence of exactly what will appear in the real exam."
+    ],
+    "mustRemember": [
+      "Match the question format to its known approach immediately, rather than solving each question as if seeing the format for the first time."
+    ],
+    "possibleQuestions": [
+      "This section is strategy-focused; practice applying its checklists to fresh questions in each format above rather than expecting fixed sample answers."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

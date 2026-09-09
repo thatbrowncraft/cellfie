@@ -1,0 +1,129 @@
+{
+  "id": "english-active-and-passive-voice",
+  "subjectId": "english-language",
+  "syllabusOrder": 18,
+  "title": "Active and Passive Voice",
+  "shortDescription": "Same action, different camera angle — a tense-by-tense conversion guide instead of one paragraph trying to cover all twelve tenses at once.",
+  "genZNote": "Active puts the doer in the spotlight. Passive turns the camera around to focus on who got acted upon instead.",
+  "sections": [
+    {
+      "id": "core",
+      "heading": "Core concept",
+      "body": "In the ACTIVE voice, the subject performs the action: 'The chef COOKED the meal.' In the PASSIVE voice, the subject receives the action, and the doer becomes optional (often introduced by 'by'): 'The meal WAS COOKED (by the chef).' The object of the active sentence becomes the subject of the passive sentence, and the original subject either moves into a 'by' phrase or is dropped entirely if unimportant or unknown."
+    },
+    {
+      "id": "tense-conversion",
+      "heading": "Passive voice formula by tense (subject + form of 'be' + past participle)",
+      "table": {
+        "columnHeaders": [
+          "Tense",
+          "Active example",
+          "Passive example"
+        ],
+        "rows": [
+          [
+            "Present Simple",
+            "He writes a letter.",
+            "A letter is written by him."
+          ],
+          [
+            "Present Continuous",
+            "He is writing a letter.",
+            "A letter is being written by him."
+          ],
+          [
+            "Present Perfect",
+            "He has written a letter.",
+            "A letter has been written by him."
+          ],
+          [
+            "Past Simple",
+            "He wrote a letter.",
+            "A letter was written by him."
+          ],
+          [
+            "Past Continuous",
+            "He was writing a letter.",
+            "A letter was being written by him."
+          ],
+          [
+            "Past Perfect",
+            "He had written a letter.",
+            "A letter had been written by him."
+          ],
+          [
+            "Future Simple",
+            "He will write a letter.",
+            "A letter will be written by him."
+          ],
+          [
+            "Modal (can/must/should)",
+            "He can write a letter.",
+            "A letter can be written by him."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "special-cases",
+      "heading": "Special conversion cases",
+      "bullets": [
+        "Questions: 'Did he write the letter?' → 'Was the letter written by him?' — the auxiliary still moves to the front.",
+        "Imperatives/commands: 'Close the door' → 'Let the door be closed.'",
+        "Sentences with two objects (indirect + direct): 'He gave her a book' can become either 'She was given a book (by him)' or 'A book was given to her (by him)' — both are valid passive forms.",
+        "Sentences with a modal + 'have': 'He must have finished the work' → 'The work must have been finished (by him).'"
+      ]
+    },
+    {
+      "id": "when-passive-fits",
+      "heading": "When passive voice is genuinely useful vs a trap",
+      "bullets": [
+        "Passive voice is preferred when the DOER is unknown, unimportant, or deliberately vague: 'The window was broken' (we don't know/care who).",
+        "Passive voice is preferred in formal/scientific writing to keep focus on the process: 'The solution was heated to 60°C.'",
+        "Passive voice is usually a weaker STYLE choice (not a grammar error) when the doer is known and important — exams sometimes ask you to recognise that a sentence would read better in active voice, which is a style judgement, not a hard rule.",
+        "Intransitive verbs (verbs with no object — sleep, arrive, happen) CANNOT be converted to passive voice at all, since there's no object to promote to subject."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Passive voice moves the object of an active sentence into the subject position, using the correct tense of 'be' plus the past participle, with the original doer optional in a 'by' phrase.",
+    "keyFacts": [
+      "The passive formula is always: subject (was the object) + correct form of 'be' + past participle (+ by + doer).",
+      "Questions keep the auxiliary at the front even after converting to passive.",
+      "Intransitive verbs (no object) cannot be made passive."
+    ],
+    "keyTerms": [
+      "Transitive verb",
+      "Past participle",
+      "Doer/agent"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The tense of the passive sentence must match the tense of the original active sentence exactly — only the 'be' form and word order change.",
+      "An intransitive verb like 'arrive' or 'happen' has no passive form."
+    ],
+    "commonTraps": [
+      "Getting the past participle wrong for irregular verbs (write → written, not writed).",
+      "Forgetting to shift the auxiliary to the front when converting a question to passive.",
+      "Trying to passivise an intransitive verb."
+    ],
+    "mustRemember": [
+      "Identify the tense of the active sentence FIRST, then apply that tense's specific passive formula."
+    ],
+    "possibleQuestions": [
+      "Convert to passive voice: 'They are building a new bridge.'",
+      "Convert to passive voice: 'Who broke the window?'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

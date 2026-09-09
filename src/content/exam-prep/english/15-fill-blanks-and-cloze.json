@@ -1,0 +1,80 @@
+{
+  "id": "english-fill-blanks-and-cloze",
+  "subjectId": "english-language",
+  "syllabusOrder": 15,
+  "title": "Fill in the Blanks and Cloze Tests",
+  "shortDescription": "The solving skill for gap-filling questions — reading for clues before options, and why cloze passages need a first read-through with no guessing.",
+  "genZNote": "The blank is not a mystery, it's a puzzle with clues hidden in plain sight. Read first, guess never.",
+  "sections": [
+    {
+      "id": "what-tested",
+      "heading": "What is actually being tested",
+      "body": "Fill-in-the-blank questions test grammar (correct tense/preposition/article), vocabulary (correct word for the context/connotation), or both together. A cloze test is a longer passage with MULTIPLE blanks, testing the same skills but requiring you to track the passage's overall meaning and tone across sentences, not just within one isolated sentence."
+    },
+    {
+      "id": "single-blank-strategy",
+      "heading": "Strategy for single-sentence fill-in-the-blanks",
+      "bullets": [
+        "Read the WHOLE sentence first, including anything after the blank — the clue is very often placed after the gap, not before it.",
+        "Identify what KIND of word is missing: a verb (check tense/agreement), a preposition (check the fixed collocation), a connector (check the logical relationship — contrast, cause, addition), or a content word (check meaning/connotation).",
+        "Look for signal words elsewhere in the sentence (already, since, unless, although) that lock in the correct tense or logical connector.",
+        "Eliminate options that are grammatically wrong FIRST, then choose the best fit in meaning among what's left."
+      ]
+    },
+    {
+      "id": "cloze-strategy",
+      "heading": "Strategy for cloze passages",
+      "bullets": [
+        "Read the ENTIRE passage once without trying to fill any blank — this builds the overall context and tone (formal/informal, positive/negative) that individual blanks depend on.",
+        "Solve the 'easy' blanks first (ones with an obvious grammar rule or an unambiguous meaning) — these often confirm the passage's tense/tone and make later blanks easier.",
+        "Watch for consistency: if the passage has established Past Simple narration, a later blank usually continues in the same tense unless a clear signal word says otherwise.",
+        "Re-read the completed passage at the end to check that all your chosen words make it flow logically — an answer that looks fine alone can still break the passage's overall sense."
+      ]
+    },
+    {
+      "id": "connector-blanks",
+      "heading": "A special high-yield case: logical connector blanks",
+      "body": "Many blanks (in cloze tests especially) are actually testing whether you can identify the logical relationship between two clauses/sentences: CONTRAST (however, although, whereas, nevertheless), CAUSE-EFFECT (because, therefore, consequently, as a result), ADDITION (moreover, furthermore, in addition), and CONDITION (if, unless, provided that). Identify the relationship in meaning FIRST, then pick the connector that matches it — this is far more reliable than guessing from the connector's 'feel'."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Fill-in-the-blank and cloze questions test grammar and vocabulary in context — solved by reading the full sentence/passage for clues before evaluating options.",
+    "keyFacts": [
+      "The clue to a blank is often placed AFTER it, not before.",
+      "Solve easier blanks first in a cloze passage to lock in tense/tone for the harder ones.",
+      "Identify the logical relationship (contrast, cause, addition, condition) before choosing a connector word."
+    ],
+    "keyTerms": [
+      "Cloze test",
+      "Logical connector",
+      "Context clue"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Reading the full sentence, especially what follows the blank, resolves most single-blank questions without needing to see the options first.",
+      "A cloze passage's established tense/tone almost always continues unless a clear signal word interrupts it."
+    ],
+    "commonTraps": [
+      "Filling a blank based only on the words immediately before it and ignoring the rest of the sentence.",
+      "Choosing an option that is grammatically fine in isolation but breaks the passage's established tense or tone."
+    ],
+    "mustRemember": [
+      "In a cloze passage, always do one full silent read before attempting any blank."
+    ],
+    "possibleQuestions": [
+      "Fill in the blank: 'She has been working here ___ 2019.' (since/for)",
+      "Choose the correct connector: 'He studied hard; ___, he failed the exam.' (however/therefore)"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

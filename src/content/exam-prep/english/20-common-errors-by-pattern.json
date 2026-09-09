@@ -1,0 +1,102 @@
+{
+  "id": "english-common-errors-by-pattern",
+  "subjectId": "english-language",
+  "syllabusOrder": 20,
+  "title": "Common Errors, Organized by Pattern",
+  "shortDescription": "A single reference sheet of WRONG → WHY → CORRECT, grouped by the same error patterns exams reuse year after year.",
+  "genZNote": "Exams recycle the same handful of traps in different costumes. Learn the pattern once, catch it every time it returns.",
+  "sections": [
+    {
+      "id": "agreement-errors",
+      "heading": "Agreement errors",
+      "bullets": [
+        "WRONG: 'Each of the boys have done their work.' → WHY: 'each' is singular. → CORRECT: 'Each of the boys HAS done his work.' MEMORY HOOK: each, every, either, neither = always singular.",
+        "WRONG: 'The number of accidents are increasing.' → WHY: 'the number of' takes a singular verb. → CORRECT: 'The number of accidents IS increasing.' MEMORY HOOK: 'A number' = many (plural); 'THE number' = one figure (singular)."
+      ]
+    },
+    {
+      "id": "article-errors",
+      "heading": "Article errors",
+      "bullets": [
+        "WRONG: 'He is an European.' → WHY: 'European' starts with a consonant SOUND ('yuro-'). → CORRECT: 'He is A European.' MEMORY HOOK: sound, not spelling, decides a/an.",
+        "WRONG: 'She plays the cricket every evening.' → WHY: games take no article. → CORRECT: 'She plays cricket every evening.' MEMORY HOOK: games = zero article; musical instruments = 'the'."
+      ]
+    },
+    {
+      "id": "preposition-errors",
+      "heading": "Preposition errors",
+      "bullets": [
+        "WRONG: 'We must discuss about this problem.' → WHY: 'discuss' already means 'talk about'; adding 'about' is redundant/non-standard. → CORRECT: 'We must discuss this problem.' MEMORY HOOK: discuss NEVER takes 'about'.",
+        "WRONG: 'He is married with an actress.' → WHY: 'married' pairs fixedly with 'to'. → CORRECT: 'He is married TO an actress.' MEMORY HOOK: married TO, not married WITH."
+      ]
+    },
+    {
+      "id": "tense-errors",
+      "heading": "Tense errors",
+      "bullets": [
+        "WRONG: 'I am living in this city since 2015.' → WHY: 'since' needs a perfect (not simple/continuous-only) tense. → CORRECT: 'I HAVE BEEN LIVING in this city since 2015.' MEMORY HOOK: since/for + present perfect (continuous).",
+        "WRONG: 'If it will rain, we will stay home.' → WHY: if-clauses use present tense for future meaning. → CORRECT: 'If it RAINS, we will stay home.' MEMORY HOOK: no 'will' inside if/when/before/until clauses."
+      ]
+    },
+    {
+      "id": "pronoun-errors",
+      "heading": "Pronoun errors",
+      "bullets": [
+        "WRONG: 'Everyone must submit their ID proof to him or her respective department.' → WHY: mismatched/mixed pronoun reference. → CORRECT: 'Everyone must submit HIS OR HER ID proof to HIS OR HER respective department' (or accepted modern usage: 'their...their', kept consistent). MEMORY HOOK: keep the same pronoun choice throughout a sentence.",
+        "WRONG: 'Ram told Shyam that he had lost his job.' (ambiguous 'he') → WHY: unclear antecedent. → CORRECT: Rephrase to name who lost the job directly: 'Ram told Shyam, \"I have lost my job.\"' MEMORY HOOK: if a pronoun could point to two people, the sentence needs rewriting, not just fixing."
+      ]
+    },
+    {
+      "id": "redundancy-parallelism-errors",
+      "heading": "Redundancy and parallelism errors",
+      "bullets": [
+        "WRONG: 'Please return back the book by tomorrow.' → WHY: 'return' already means 'go/give back'. → CORRECT: 'Please return the book by tomorrow.' MEMORY HOOK: return, revert, repeat never need 'back'/'again' attached.",
+        "WRONG: 'She likes reading, writing, and to paint.' → WHY: mixed grammatical forms in a list. → CORRECT: 'She likes reading, writing, and painting.' MEMORY HOOK: match the form of every item in a list."
+      ]
+    },
+    {
+      "id": "modifier-word-choice-errors",
+      "heading": "Modifier and word-choice errors",
+      "bullets": [
+        "WRONG: 'She sings good.' → WHY: a verb needs an adverb, not an adjective. → CORRECT: 'She sings WELL.' MEMORY HOOK: good describes a noun; well describes an action.",
+        "WRONG: 'This is the most unique idea I have heard.' → WHY: 'unique' is an absolute adjective; it can't be intensified. → CORRECT: 'This is a UNIQUE idea I have heard.' MEMORY HOOK: unique, perfect, complete = no 'more/most' before them."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The recurring exam error families — agreement, articles, prepositions, tense, pronoun reference, redundancy/parallelism, and modifier/word choice — repeat across papers in different sentences but the same underlying rule.",
+    "keyFacts": [
+      "Most 'spot the error' questions are a rephrasing of one of a small number of recurring rule violations.",
+      "Learning the WRONG → WHY → CORRECT → MEMORY HOOK chain for each pattern generalises to unfamiliar sentences testing the same rule."
+    ],
+    "keyTerms": [
+      "Error pattern",
+      "Memory hook"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'Discuss about', 'return back', 'married with', and 'each...have' are among the single most repeated wrong forms across competitive English papers."
+    ],
+    "commonTraps": [
+      "Treating every sentence as unique instead of matching it to a known error pattern first."
+    ],
+    "mustRemember": [
+      "Before assuming 'no error', actively test the sentence against each error-pattern family in turn."
+    ],
+    "possibleQuestions": [
+      "Spot the error and correct it: 'He returned back home late at night.'",
+      "Spot the error and correct it: 'Neither of the two options are correct.'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

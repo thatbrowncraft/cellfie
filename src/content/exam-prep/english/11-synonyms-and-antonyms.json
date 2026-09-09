@@ -1,0 +1,167 @@
+{
+  "id": "english-synonyms-and-antonyms",
+  "subjectId": "english-language",
+  "syllabusOrder": 11,
+  "title": "Synonyms and Antonyms",
+  "shortDescription": "Same-meaning and opposite-meaning words, taught through context and shades of meaning rather than a raw word list to cram.",
+  "genZNote": "Two words can mean 'almost' the same thing and still get you the wrong answer if you ignore the shade of meaning.",
+  "sections": [
+    {
+      "id": "core",
+      "heading": "Why exams test more than 'word = word'",
+      "body": "A synonym question rarely tests a pure one-to-one match — it tests which option fits the CONTEXT and CONNOTATION (positive/negative/neutral feeling) of the original word. 'Thin' can be replaced by 'slim' (positive connotation) or 'skinny' (often negative) — picking the wrong shade can be marked wrong even though both are technically synonyms."
+    },
+    {
+      "id": "connotation-examples",
+      "heading": "Connotation: same core meaning, different shade",
+      "table": {
+        "columnHeaders": [
+          "Neutral",
+          "Positive shade",
+          "Negative shade"
+        ],
+        "rows": [
+          [
+            "thin",
+            "slim, slender",
+            "skinny, scrawny"
+          ],
+          [
+            "curious",
+            "inquisitive",
+            "nosy"
+          ],
+          [
+            "confident",
+            "self-assured",
+            "arrogant"
+          ],
+          [
+            "frugal",
+            "economical",
+            "stingy, miserly"
+          ],
+          [
+            "unusual",
+            "unique, distinctive",
+            "weird, bizarre"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "antonym-approach",
+      "heading": "How to approach antonym questions",
+      "bullets": [
+        "First fix the exact SENSE of the word being used — 'grave' as an adjective (serious) has a different antonym (trivial) than 'grave' as a noun (burial place, no common antonym).",
+        "Watch for prefix-based antonyms as a trap: adding un-/in-/dis- to the given word is sometimes offered as a wrong option when a completely different root word is the better, more natural antonym (e.g. antonym of 'ancient' is better given as 'modern' than as an invented 'unancient').",
+        "Some words have more than one valid antonym depending on which meaning is intended — always match the antonym to the SAME sense used in the question."
+      ]
+    },
+    {
+      "id": "prefix-patterns",
+      "heading": "Common negative prefixes for building antonyms",
+      "table": {
+        "columnHeaders": [
+          "Prefix",
+          "Example",
+          "Antonym"
+        ],
+        "rows": [
+          [
+            "un-",
+            "happy",
+            "unhappy"
+          ],
+          [
+            "in-",
+            "correct",
+            "incorrect"
+          ],
+          [
+            "im-",
+            "possible",
+            "impossible"
+          ],
+          [
+            "dis-",
+            "honest",
+            "dishonest"
+          ],
+          [
+            "ir-",
+            "regular",
+            "irregular"
+          ],
+          [
+            "il-",
+            "legal",
+            "illegal"
+          ],
+          [
+            "mis-",
+            "understand",
+            "misunderstand"
+          ],
+          [
+            "non-",
+            "sense",
+            "nonsense"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "frequently-tested",
+      "heading": "Frequently tested synonym/antonym roots (learn as families, not single words)",
+      "bullets": [
+        "Benevolent (kind, generous) ↔ malevolent/malicious (wishing harm).",
+        "Candid/frank (honest, direct) ↔ evasive/cagey (avoiding directness).",
+        "Meticulous/scrupulous (very careful) ↔ careless/slipshod.",
+        "Verbose/loquacious (talkative, wordy) ↔ taciturn/reticent (quiet, saying little).",
+        "Abundant/plentiful (a lot of) ↔ scarce/meagre (very little).",
+        "Learning words as PAIRS or small FAMILIES like this is far more exam-efficient than memorising isolated words."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Synonym and antonym questions test not just similar/opposite meaning but the correct connotation and sense of the word as used in context.",
+    "keyFacts": [
+      "Connotation (positive/negative/neutral feel) can make a technically-correct synonym the wrong exam answer.",
+      "Fix the exact sense/part of speech of the word first, since some words have multiple unrelated meanings.",
+      "Negative prefixes (un-, in-, im-, dis-, ir-, il-, mis-, non-) are a fast way to recognise/build antonyms."
+    ],
+    "keyTerms": [
+      "Connotation",
+      "Denotation",
+      "Word family"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'Frugal' has a neutral/positive core meaning but shades toward 'stingy' only with strong negative framing.",
+      "Building antonyms by adding a negative prefix isn't always the best answer — a distinct root word is often more natural."
+    ],
+    "commonTraps": [
+      "Choosing a synonym with the right core meaning but the wrong emotional shade.",
+      "Ignoring that a word has multiple senses and picking an antonym for the wrong one."
+    ],
+    "mustRemember": [
+      "Read the sentence context (if given) before choosing between two close synonym options."
+    ],
+    "possibleQuestions": [
+      "Choose the word closest in meaning to 'meticulous'.",
+      "Choose the antonym of 'abundant' as used in: 'The region has abundant rainfall.'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

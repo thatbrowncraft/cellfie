@@ -1,0 +1,95 @@
+{
+  "id": "english-articles",
+  "subjectId": "english-language",
+  "syllabusOrder": 5,
+  "title": "Articles (a, an, the)",
+  "shortDescription": "The smallest words in English carry the biggest number of exam traps — sound-based rules, zero article, and the exceptions everyone forgets.",
+  "genZNote": "Three tiny words, endless ways to get them wrong. Master this and you've defused one of the exam's favourite landmines.",
+  "sections": [
+    {
+      "id": "basic",
+      "heading": "Indefinite vs definite articles",
+      "body": "'A' and 'an' are indefinite articles — used with a singular countable noun when it is not specific or is being mentioned for the first time ('I saw A dog'). 'The' is the definite article — used when the noun is specific, already known, or unique ('THE dog I saw yesterday'; 'THE sun'). Plural and uncountable nouns generally take no article when speaking in general ('Dogs are loyal', not 'The dogs are loyal', unless referring to specific dogs)."
+    },
+    {
+      "id": "a-vs-an",
+      "heading": "a vs an — it's about SOUND, not spelling",
+      "bullets": [
+        "Use 'an' before a word that begins with a VOWEL SOUND, not necessarily a vowel letter: an hour (silent h), an MBA (sounds like 'em'), an honest man.",
+        "Use 'a' before a word that begins with a CONSONANT SOUND, even if the letter is a vowel: a university (sounds like 'yoo'), a European trip (sounds like 'yuro'), a one-rupee coin (sounds like 'won').",
+        "This 'sound, not spelling' rule is one of the most repeated exam traps — always sound the word out before choosing a/an."
+      ]
+    },
+    {
+      "id": "the-uses",
+      "heading": "When to use 'the'",
+      "bullets": [
+        "Something unique in the world/context: the sun, the Prime Minister, the Constitution.",
+        "Superlatives and ordinal numbers: the best, the first, the tallest.",
+        "Rivers, oceans, seas, mountain ranges, groups of islands, deserts: the Ganga, the Himalayas, the Sahara — but NOT single mountains or lakes (Everest, Lake Victoria — no article).",
+        "Names of countries that are unions/plurals/have 'of' in them: the United States, the United Kingdom, the Republic of India — but NOT single-word country names (India, France).",
+        "Musical instruments: play THE guitar (but play chess/cricket — games take no article)."
+      ]
+    },
+    {
+      "id": "zero-article",
+      "heading": "Zero article (no article at all)",
+      "bullets": [
+        "General/plural or uncountable nouns speaking generally: 'Milk is nutritious', 'Books are our friends.'",
+        "Most proper nouns: names of people, cities, single countries, single mountains/lakes: Mumbai, India, Everest.",
+        "Names of languages and most academic subjects: 'She speaks French', 'He studies Physics.'",
+        "Meals, means of transport with 'by': breakfast, lunch; by bus, by train (but 'in THE bus' when referring to a specific bus).",
+        "Abstract nouns used generally: 'Honesty is the best policy' (no article before Honesty)."
+      ]
+    },
+    {
+      "id": "common-exceptions",
+      "heading": "Frequently tested exceptions",
+      "body": "'Go to school/college/church/bed/prison' takes no article when referring to the general PURPOSE of the place (studying, worship, sleeping, being an inmate); 'go to THE school' means physically going to the building for some other reason (e.g. to vote). Similarly, 'in hospital' (as a patient, British usage) vs 'in THE hospital' (visiting, or American usage) — Indian competitive exams generally follow the 'no article for purpose' pattern."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Articles (a, an, the) mark whether a noun is non-specific (a/an), specific (the), or general with no article at all — decided mainly by sound and context, not spelling.",
+    "keyFacts": [
+      "'A/an' is chosen by the SOUND that follows, not the letter — an hour, a university.",
+      "Rivers, mountain ranges, and multi-word/union country names take 'the'; single mountains and single-word country names don't.",
+      "General statements with plural or uncountable nouns take no article."
+    ],
+    "keyTerms": [
+      "Indefinite article",
+      "Definite article",
+      "Zero article"
+    ],
+    "commonConfusion": [
+      "'The Everest' and 'an university' are both classic wrong forms students write from habit."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'An hour', 'an honest man', 'an MBA' — all use 'an' due to a vowel SOUND despite consonant spelling in two of them.",
+      "'A European', 'a university', 'a one-eyed man' all use 'a' due to a consonant SOUND despite a vowel letter."
+    ],
+    "commonTraps": [
+      "Choosing a/an by looking only at the spelling of the next word instead of its sound.",
+      "Adding 'the' before a single-word country name or single mountain (the India, the Everest).",
+      "Forgetting 'the' before superlatives and ordinal numbers."
+    ],
+    "mustRemember": [
+      "Say the next word out loud in your head — vowel sound needs 'an', consonant sound needs 'a', regardless of spelling."
+    ],
+    "possibleQuestions": [
+      "Fill in the blank: 'She is ___ honest and ___ hardworking student.' (an, a)",
+      "Spot the error: 'He is going to school to attend the parents' meeting.' (needs THE school — it's not for the purpose of studying)"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

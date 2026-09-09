@@ -1,0 +1,174 @@
+{
+  "id": "english-one-word-substitutions",
+  "subjectId": "english-language",
+  "syllabusOrder": 12,
+  "title": "One-Word Substitutions",
+  "shortDescription": "Replacing a whole phrase with a single precise word — grouped by theme so you memorise patterns, not a random list.",
+  "genZNote": "Why use ten words when a very specific one exists? English hoards a single fancy word for almost every situation.",
+  "sections": [
+    {
+      "id": "what",
+      "heading": "What this tests",
+      "body": "A one-word substitution question gives a descriptive PHRASE and asks for the single word that means exactly that — e.g. 'a person who cannot read or write' = ILLITERATE. The skill here is not memorising a giant alphabetical list, but recognising the phrase's underlying THEME (a type of person, a type of place, a type of fear/love, a legal/medical term) so you can narrow down the answer even for an unfamiliar phrase."
+    },
+    {
+      "id": "people",
+      "heading": "People / professions / character types",
+      "table": {
+        "columnHeaders": [
+          "Phrase",
+          "One word"
+        ],
+        "rows": [
+          [
+            "One who loves books",
+            "Bibliophile"
+          ],
+          [
+            "One who has no money",
+            "Pauper"
+          ],
+          [
+            "One who studies the past through remains",
+            "Archaeologist"
+          ],
+          [
+            "One who is skilled with both hands equally",
+            "Ambidextrous"
+          ],
+          [
+            "One who does not believe in God",
+            "Atheist"
+          ],
+          [
+            "One who thinks only of themselves",
+            "Egoist / Egotist"
+          ],
+          [
+            "One who eats too much",
+            "Glutton"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "places-groups",
+      "heading": "Places / groups / collections",
+      "table": {
+        "columnHeaders": [
+          "Phrase",
+          "One word"
+        ],
+        "rows": [
+          [
+            "A place where orphans live",
+            "Orphanage"
+          ],
+          [
+            "A place where books are kept for reference/borrowing",
+            "Library"
+          ],
+          [
+            "A collection of ships",
+            "Fleet"
+          ],
+          [
+            "A group of lions",
+            "Pride"
+          ],
+          [
+            "A place where coins are made",
+            "Mint"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fear-love-study",
+      "heading": "Fear, love, and fields of study (a very high-yield family)",
+      "table": {
+        "columnHeaders": [
+          "Phrase",
+          "One word"
+        ],
+        "rows": [
+          [
+            "Fear of heights",
+            "Acrophobia"
+          ],
+          [
+            "Fear of enclosed spaces",
+            "Claustrophobia"
+          ],
+          [
+            "Fear of water",
+            "Hydrophobia"
+          ],
+          [
+            "Study of birds",
+            "Ornithology"
+          ],
+          [
+            "Study of ancient things/fossils",
+            "Palaeontology"
+          ],
+          [
+            "Love of one's country",
+            "Patriotism"
+          ],
+          [
+            "Love of mankind",
+            "Philanthropy"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "strategy",
+      "heading": "Strategy for unfamiliar substitution phrases",
+      "bullets": [
+        "Identify the THEME first: is the phrase describing a person, a fear, a study, a legal situation? This narrows the likely word family instantly.",
+        "Look for a Greek/Latin root hint inside the answer OPTIONS: '-phobia' = fear, '-logy' = study of, '-cide' = killing, '-phile' = love of.",
+        "If genuinely unsure, eliminate options that describe only PART of the phrase, not its full precise meaning — one-word substitution answers must match exactly, not approximately."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "One-word substitution replaces a descriptive phrase with the single precise word that captures its exact meaning, usually testable by recognising the phrase's theme and common Greek/Latin word roots.",
+    "keyFacts": [
+      "'-phobia' = fear of, '-logy' = study of, '-cide' = killing of, '-phile' = lover of — recognising these roots unlocks many unfamiliar words.",
+      "Group substitutions by theme (people, places, fears, studies) rather than memorising an unordered list."
+    ],
+    "keyTerms": [
+      "Root word",
+      "Thematic grouping"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Acrophobia (heights), claustrophobia (closed spaces), hydrophobia (water) are among the most frequently tested phobia words.",
+      "Bibliophile (loves books), philanthropist (loves/helps mankind), misanthrope (hates mankind) form a commonly tested contrast set."
+    ],
+    "commonTraps": [
+      "Choosing a word that is close but describes only part of the given phrase.",
+      "Confusing similarly-spelled roots, e.g. '-phile' (love) vs '-phobia' (fear)."
+    ],
+    "mustRemember": [
+      "When stuck, decode the root of each option rather than guessing blindly."
+    ],
+    "possibleQuestions": [
+      "One word for 'a person who is new to a profession': Novice/Amateur.",
+      "One word for 'government by the rich': Plutocracy."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

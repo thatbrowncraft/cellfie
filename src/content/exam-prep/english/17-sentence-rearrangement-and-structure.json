@@ -1,0 +1,99 @@
+{
+  "id": "english-sentence-rearrangement-and-structure",
+  "subjectId": "english-language",
+  "syllabusOrder": 17,
+  "title": "Sentence Rearrangement and Sentence Structure",
+  "shortDescription": "Putting jumbled parts back into logical order, plus the basic subject-verb-object skeleton every sentence is built on.",
+  "genZNote": "A jumbled sentence is a puzzle with a start piece and connector clues — find those two and the rest falls into place.",
+  "sections": [
+    {
+      "id": "sentence-types",
+      "heading": "The four sentence structures",
+      "table": {
+        "columnHeaders": [
+          "Type",
+          "Structure",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Simple",
+            "One independent clause",
+            "She reads novels."
+          ],
+          [
+            "Compound",
+            "Two+ independent clauses joined by a coordinating conjunction",
+            "She reads novels, and he watches films."
+          ],
+          [
+            "Complex",
+            "One independent clause + one or more dependent clauses",
+            "Although it was raining, she went for a walk."
+          ],
+          [
+            "Compound-Complex",
+            "Two+ independent clauses + at least one dependent clause",
+            "She went for a walk although it was raining, and he stayed home."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rearrangement-clues",
+      "heading": "Clues for solving jumbled sentence / paragraph questions",
+      "bullets": [
+        "Find the STARTER — the sentence that introduces the subject/topic without relying on a pronoun that refers back to something not yet mentioned; a sentence starting with 'This', 'It', 'He/She/They', 'However', or 'Therefore' is rarely the opening line.",
+        "Match PRONOUNS to their antecedents — a sentence using 'he' must come after the sentence that first names that person.",
+        "Follow CHRONOLOGY and CAUSE-EFFECT — an effect sentence must follow its cause sentence; a 'first...then...finally' sequence has an obvious internal order.",
+        "Use CONNECTOR WORDS as glue — 'however', 'therefore', 'in addition', 'for example' each signal a specific relationship to the sentence immediately before them.",
+        "Once you find a confirmed PAIR of sentences that must go together, treat that pair as a single block — this quickly narrows down the full order."
+      ]
+    },
+    {
+      "id": "phrase-vs-clause",
+      "heading": "Phrase vs clause — the small distinction behind structure questions",
+      "body": "A CLAUSE has both a subject and a verb ('because it was raining'); a PHRASE does not ('in spite of the rain'). Recognising this helps identify sentence type (simple/complex) and helps in error-detection questions that hinge on whether a group of words needs a comma, a conjunction, or is already a complete clause on its own."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Sentences are built from clauses in one of four patterns (simple, compound, complex, compound-complex); jumbled-sentence questions are solved by finding the true opening line, then following pronoun and connector clues.",
+    "keyFacts": [
+      "A sentence opening with 'This/It/He/She/They/However/Therefore' is rarely the true first sentence of a jumbled set.",
+      "A clause has a subject + verb; a phrase does not.",
+      "Connector words (however, therefore, for example) signal the exact logical link to the previous sentence."
+    ],
+    "keyTerms": [
+      "Independent clause",
+      "Dependent clause",
+      "Phrase",
+      "Connector"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Finding one confirmed pronoun-antecedent pair often cracks open the entire rearrangement order."
+    ],
+    "commonTraps": [
+      "Picking a sentence with a pronoun or connector as the opening line.",
+      "Ignoring chronological/cause-effect order in favour of only checking grammar."
+    ],
+    "mustRemember": [
+      "Identify the true starter sentence first; everything else locks into place around it."
+    ],
+    "possibleQuestions": [
+      "Arrange the jumbled sentences (P, Q, R, S) to form a coherent paragraph.",
+      "Identify the sentence type: 'Although he was late, he still managed to finish the race, and his team celebrated.'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

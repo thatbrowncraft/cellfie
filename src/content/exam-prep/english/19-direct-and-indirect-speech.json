@@ -1,0 +1,178 @@
+{
+  "id": "english-direct-and-indirect-speech",
+  "subjectId": "english-language",
+  "syllabusOrder": 19,
+  "title": "Direct and Indirect Speech",
+  "shortDescription": "Reporting what someone said — the full tense-backshift, pronoun, and time-word conversion table exam questions are built from.",
+  "genZNote": "Direct speech is the recording; indirect speech is you retelling it later, which means the tense clock usually has to rewind.",
+  "sections": [
+    {
+      "id": "core",
+      "heading": "Core concept",
+      "body": "Direct speech quotes a person's exact words in quotation marks: She said, \"I am tired.\" Indirect (reported) speech reports the same idea without quotation marks, usually changing tense, pronouns, and time/place words to fit the new context: She said (that) she was tired. The reporting verb ('said', 'told', 'asked') controls this because we are typically reporting from a LATER point in time than when the words were originally spoken."
+    },
+    {
+      "id": "tense-backshift",
+      "heading": "Tense backshift (when the reporting verb is in the past)",
+      "table": {
+        "columnHeaders": [
+          "Direct speech tense",
+          "Indirect speech tense"
+        ],
+        "rows": [
+          [
+            "Present Simple",
+            "Past Simple"
+          ],
+          [
+            "Present Continuous",
+            "Past Continuous"
+          ],
+          [
+            "Present Perfect",
+            "Past Perfect"
+          ],
+          [
+            "Past Simple",
+            "Past Perfect"
+          ],
+          [
+            "Past Continuous",
+            "Past Perfect Continuous"
+          ],
+          [
+            "will",
+            "would"
+          ],
+          [
+            "can",
+            "could"
+          ],
+          [
+            "may",
+            "might"
+          ],
+          [
+            "must",
+            "must / had to"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "time-place-changes",
+      "heading": "Time and place word changes",
+      "table": {
+        "columnHeaders": [
+          "Direct speech",
+          "Indirect speech"
+        ],
+        "rows": [
+          [
+            "now",
+            "then"
+          ],
+          [
+            "today",
+            "that day"
+          ],
+          [
+            "tomorrow",
+            "the next day / the following day"
+          ],
+          [
+            "yesterday",
+            "the day before / the previous day"
+          ],
+          [
+            "here",
+            "there"
+          ],
+          [
+            "this",
+            "that"
+          ],
+          [
+            "ago",
+            "before"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pronoun-changes",
+      "heading": "Pronoun changes",
+      "bullets": [
+        "First-person pronouns in the direct speech usually shift to match the SUBJECT of the reporting verb: He said, \"I am busy\" → He said (that) HE was busy.",
+        "Second-person pronouns usually shift to match the OBJECT of the reporting verb (if there is one): He said to me, \"You are late\" → He told ME (that) I was late.",
+        "Third-person pronouns generally stay the same, since they don't refer to either speaker."
+      ]
+    },
+    {
+      "id": "sentence-type-rules",
+      "heading": "Statements, questions, and commands each convert differently",
+      "bullets": [
+        "STATEMENTS: reporting verb 'say/tell' + (that) + backshifted clause: She said, \"I like tea\" → She said (that) she liked tea.",
+        "YES/NO QUESTIONS: reporting verb becomes 'asked/wanted to know' + IF/WHETHER + normal word order (not question word order): He said, \"Are you coming?\" → He asked IF I WAS COMING (not 'was I coming').",
+        "WH-QUESTIONS: reporting verb becomes 'asked' + the wh-word + normal word order, no auxiliary inversion: She said, \"Where do you live?\" → She asked WHERE I LIVED.",
+        "COMMANDS/REQUESTS: reporting verb becomes 'ordered/told/requested' + TO + base verb (no 'that'): He said, \"Close the door\" → He told me TO CLOSE the door; negative commands use 'not to': He said, \"Don't run\" → He told me NOT TO RUN."
+      ]
+    },
+    {
+      "id": "no-backshift-cases",
+      "heading": "When tense does NOT shift back",
+      "body": "If the reported statement is a universal truth or a still-currently-true fact, the tense is often kept in the present even in indirect speech: He said, \"The sun rises in the east\" → He said that the sun RISES in the east (not 'rose'). Similarly, if the reporting verb itself is in the present or future tense ('He says...', 'She will say...'), there is no backshift needed at all — the tense of the direct speech is simply kept as-is."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Reported (indirect) speech restates what someone said without quotation marks, generally shifting tense one step into the past, along with matching pronoun and time/place-word changes.",
+    "keyFacts": [
+      "Yes/no questions convert with 'if/whether' and normal word order, not question word order.",
+      "Commands convert to 'told/ordered + to + base verb'; negative commands use 'not to'.",
+      "Universal truths keep the present tense even when the reporting verb is in the past."
+    ],
+    "keyTerms": [
+      "Reporting verb",
+      "Backshift",
+      "Reported clause"
+    ],
+    "commonConfusion": [
+      "Keeping question word order ('asked if was I coming') instead of switching to statement word order ('asked if I was coming') is one of the most common indirect-speech errors."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'He asked if I was coming' is correct; 'he asked if was I coming' is not — indirect questions use statement word order.",
+      "A command converts to 'told/asked someone TO do something', dropping 'that' entirely."
+    ],
+    "commonTraps": [
+      "Forgetting to backshift the tense when the reporting verb is in the past.",
+      "Keeping question-style inversion inside a reported question.",
+      "Backshifting a universal truth unnecessarily."
+    ],
+    "mustRemember": [
+      "Identify the sentence type first (statement, yes/no question, wh-question, or command) — each has its own conversion template."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Direct speech",
+        "termB": "Indirect speech",
+        "distinction": "Direct speech quotes the exact original words in quotation marks. Indirect speech reports the meaning in the reporter's own words, without quotation marks, usually with tense/pronoun/time-word shifts."
+      }
+    ],
+    "possibleQuestions": [
+      "Convert to indirect speech: She said, \"I will finish the project tomorrow.\"",
+      "Convert to indirect speech: He said to me, \"Please close the window.\""
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "english-sentence-improvement-and-error-detection",
+  "subjectId": "english-language",
+  "syllabusOrder": 16,
+  "title": "Sentence Improvement and Error Detection",
+  "shortDescription": "How to actually spot the one wrong part of a sentence fast — a checklist approach instead of re-reading the whole thing five times.",
+  "genZNote": "You don't need to read the sentence five times. You need one system that checks the five places errors hide.",
+  "sections": [
+    {
+      "id": "what-tested",
+      "heading": "What these two question types test",
+      "body": "'Error detection' (or 'spotting errors') splits a sentence into parts (often underlined/bracketed) and asks which part contains a grammatical error, or if there's 'no error'. 'Sentence improvement' underlines one part of a sentence and gives alternative phrasings, asking which one is grammatically best. Both test the SAME underlying grammar knowledge — only the answer format differs."
+    },
+    {
+      "id": "checklist",
+      "heading": "A fast checklist to scan any sentence against",
+      "bullets": [
+        "SUBJECT-VERB AGREEMENT — does the verb match its real subject, especially across intervening phrases?",
+        "TENSE CONSISTENCY — do all the verbs in the sentence make sense together, and does any signal word (since, before, by the time) demand a specific tense?",
+        "PREPOSITIONS — check verbs known for fixed pairs (discuss, depend, married, different) for a wrong or missing preposition.",
+        "PRONOUNS — does every pronoun agree in number/gender with what it replaces, and is it clear which noun it refers to?",
+        "ARTICLES — is a/an/the missing, wrong, or unnecessarily added?",
+        "PARALLELISM — in a list or a correlative structure (not only...but also), do all items share the same grammatical form?",
+        "REDUNDANCY — is the same idea repeated unnecessarily ('return back', 'repeat again', 'each and every')?"
+      ]
+    },
+    {
+      "id": "redundancy",
+      "heading": "Redundancy — a very high-yield error type",
+      "bullets": [
+        "'Return back', 'repeat again', 'revert back', 'enter into', 'the reason is because', 'each and every', 'free gift', 'past history', 'final outcome' all repeat a meaning already implied by another word — the fix is to remove the redundant word.",
+        "'The reason is because...' should be 'The reason is that...' since 'reason' and 'because' both mean 'cause' — using both is redundant."
+      ]
+    },
+    {
+      "id": "parallelism",
+      "heading": "Parallelism in lists and comparisons",
+      "body": "When a sentence lists items or compares two things joined by 'and', 'or', 'but', or a correlative pair, all the items must share the SAME grammatical form: 'She likes swimming, running, and to cycle' is wrong — it should be 'swimming, running, and cycling' (all -ing forms) or 'to swim, to run, and to cycle' (all infinitives), not a mix of both."
+    },
+    {
+      "id": "approach",
+      "heading": "How to approach these questions efficiently under time pressure",
+      "bullets": [
+        "Read the sentence once for overall sense before checking any specific part — an error is sometimes only obvious once you see the whole sentence's logic.",
+        "Run the checklist above against the underlined/bracketed parts specifically, rather than the whole sentence, to save time.",
+        "For sentence improvement, treat the original phrasing as one of the options — don't assume it must be wrong just because a question is being asked.",
+        "If two options both seem grammatically correct, choose the one that is more CONCISE and NATURAL, since needless wordiness itself is sometimes the flaw being tested."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Error detection and sentence improvement both test the same core grammar knowledge — a checklist covering agreement, tense, prepositions, pronouns, articles, parallelism, and redundancy quickly locates the flaw.",
+    "keyFacts": [
+      "Redundant phrases (return back, repeat again, each and every) repeat a meaning already present in another word.",
+      "Items in a list or comparison must share the same grammatical form (parallelism).",
+      "The original phrasing can sometimes be the correct answer in sentence-improvement questions."
+    ],
+    "keyTerms": [
+      "Redundancy",
+      "Parallelism",
+      "Error spotting"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "'The reason is because' should be 'the reason is that' — a classic redundancy trap.",
+      "A list must keep the same grammatical form throughout: all -ing, or all infinitives, never mixed."
+    ],
+    "commonTraps": [
+      "Overlooking an error because the sentence 'sounds fine' when read quickly instead of checked against the grammar checklist.",
+      "Assuming the underlined part must always contain an error."
+    ],
+    "mustRemember": [
+      "Run through agreement, tense, preposition, pronoun, article, and parallelism checks in that order for speed."
+    ],
+    "possibleQuestions": [
+      "Spot the error: 'Each and every student were present for the annual function.'",
+      "Improve the sentence: 'He is good in mathematics and also good at science.'"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard English grammar reference (Wren & Martin / Oxford Practice Grammar tradition)",
+      "kind": "educational"
+    },
+    {
+      "name": "General competitive-exam English preparation conventions",
+      "kind": "educational"
+    }
+  ]
+}
