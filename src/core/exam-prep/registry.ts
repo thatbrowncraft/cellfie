@@ -57,21 +57,40 @@ function loadTopics(glob: Record<string, { default: unknown }>, subjectId: ExamS
   return topics.sort((a, b) => a.syllabusOrder - b.syllabusOrder)
 }
 
+// Vite's import.meta.glob requires a static string literal per call — one
+// glob per subject folder is unavoidable, but everything AFTER the glob
+// (validation, sorting, lookup-by-id) is fully generic below. Adding the
+// NEXT subject means adding one glob line here plus one entry in the
+// `SUBJECT_TOPICS` map — nothing else in this file, or in any page
+// component, needs to change (brief §47, "future scalability").
 const constitutionModules = import.meta.glob<{ default: unknown }>('/src/content/exam-prep/constitution/*.json', {
   eager: true
 })
+const quantitativeAptitudeModules = import.meta.glob<{ default: unknown }>(
+  '/src/content/exam-prep/quantitative-aptitude/*.json',
+  { eager: true }
+)
 
 export const CONSTITUTION_TOPICS: ExamTopic[] = loadTopics(constitutionModules, 'constitution-of-india')
+export const QUANTITATIVE_APTITUDE_TOPICS: ExamTopic[] = loadTopics(
+  quantitativeAptitudeModules,
+  'quantitative-aptitude'
+)
 
-const CONSTITUTION_BY_ID = new Map(CONSTITUTION_TOPICS.map((t) => [t.id, t]))
+const SUBJECT_TOPICS: Record<ExamSubjectId, ExamTopic[]> = {
+  'constitution-of-india': CONSTITUTION_TOPICS,
+  'quantitative-aptitude': QUANTITATIVE_APTITUDE_TOPICS
+}
+
+const SUBJECT_TOPICS_BY_ID: Record<ExamSubjectId, Map<string, ExamTopic>> = Object.fromEntries(
+  Object.entries(SUBJECT_TOPICS).map(([subjectId, topics]) => [subjectId, new Map(topics.map((t) => [t.id, t]))])
+) as Record<ExamSubjectId, Map<string, ExamTopic>>
 
 /** Every topic for a subject, in syllabus order. Returns an empty array for a subject with no content yet (e.g. a future subject added to `subjects.ts` before its folder is populated) rather than throwing. */
 export function listTopicsForSubject(subjectId: ExamSubjectId): ExamTopic[] {
-  if (subjectId === 'constitution-of-india') return CONSTITUTION_TOPICS
-  return []
+  return SUBJECT_TOPICS[subjectId] ?? []
 }
 
 export function getExamTopicById(subjectId: ExamSubjectId, id: string): ExamTopic | undefined {
-  if (subjectId === 'constitution-of-india') return CONSTITUTION_BY_ID.get(id)
-  return undefined
+  return SUBJECT_TOPICS_BY_ID[subjectId]?.get(id)
 }

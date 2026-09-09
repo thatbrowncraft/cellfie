@@ -27,7 +27,7 @@ import type {
 } from '@/core/concepts/curatedLessons/types'
 
 /** Every exam-prep subject Cellfie currently teaches. Add a new id here (and a matching folder under `src/content/exam-prep/`) to grow the section later — see `subjects.ts`. */
-export type ExamSubjectId = 'constitution-of-india'
+export type ExamSubjectId = 'constitution-of-india' | 'quantitative-aptitude'
 
 export interface ExamSubject {
   id: ExamSubjectId
