@@ -70,16 +70,22 @@ const quantitativeAptitudeModules = import.meta.glob<{ default: unknown }>(
   '/src/content/exam-prep/quantitative-aptitude/*.json',
   { eager: true }
 )
+const englishLanguageModules = import.meta.glob<{ default: unknown }>(
+  '/src/content/exam-prep/english/*.json',
+  { eager: true }
+)
 
 export const CONSTITUTION_TOPICS: ExamTopic[] = loadTopics(constitutionModules, 'constitution-of-india')
 export const QUANTITATIVE_APTITUDE_TOPICS: ExamTopic[] = loadTopics(
   quantitativeAptitudeModules,
   'quantitative-aptitude'
 )
+export const ENGLISH_LANGUAGE_TOPICS: ExamTopic[] = loadTopics(englishLanguageModules, 'english-language')
 
 const SUBJECT_TOPICS: Record<ExamSubjectId, ExamTopic[]> = {
   'constitution-of-india': CONSTITUTION_TOPICS,
-  'quantitative-aptitude': QUANTITATIVE_APTITUDE_TOPICS
+  'quantitative-aptitude': QUANTITATIVE_APTITUDE_TOPICS,
+  'english-language': ENGLISH_LANGUAGE_TOPICS
 }
 
 const SUBJECT_TOPICS_BY_ID: Record<ExamSubjectId, Map<string, ExamTopic>> = Object.fromEntries(

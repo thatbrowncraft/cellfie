@@ -31,6 +31,14 @@ export const EXAM_SUBJECTS: ExamSubject[] = [
       'Number System to Chain Rule — the full Part A maths syllabus, taught exam-first: the concept, the fast method, and when the fast method is actually safe to use.',
     genZNote: "Same maths you already half-know, minus the panic — this is the cheat-code layer on top of it.",
     icon: 'Calculator'
+  },
+  {
+    id: 'english-language',
+    title: 'English Language',
+    shortDescription:
+      'Grammar, vocabulary, sentence skills, voice & speech, and common errors — the full Part B English syllabus, broken into study-sized topics with quick revision and exam focus for each.',
+    genZNote: "The subject you think you already know until an exam asks you to explain WHY 'discuss about' is wrong.",
+    icon: 'Books'
   }
 ]
 
