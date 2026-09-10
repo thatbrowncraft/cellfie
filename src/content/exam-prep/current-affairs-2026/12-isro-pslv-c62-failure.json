@@ -1,0 +1,67 @@
+{
+  "id": "ca2026-isro-pslv-c62-failure",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 12,
+  "region": "india",
+  "category": "India ISRO & Space",
+  "eventDate": "2026-01-12",
+  "status": "failed",
+  "title": "ISRO's First 2026 Launch, PSLV-C62/EOS-N1, Fails to Reach Orbit",
+  "shortDescription": "PSLV-C62 lifted off on 12 January 2026 carrying the EOS-N1 (Anvesha) satellite and 14 co-passengers, but a third-stage deviation meant the payloads were lost — ISRO's second consecutive PSLV setback.",
+  "genZNote": "Liftoff ≠ mission success. Early headlines said 'successful launch' — the actual outcome, confirmed later, was FAILURE. Read status labels, not just the first headline.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "On 12 January 2026, ISRO launched the PSLV-C62 mission — the 64th flight of the Polar Satellite Launch Vehicle — from the Satish Dhawan Space Centre, Sriharikota, carrying the DRDO-built EOS-N1 (also called Anvesha) earth observation satellite plus 14 co-passenger payloads. The rocket lifted off successfully, but a deviation in the third stage meant the satellites failed to reach their intended sun-synchronous orbit — the mission is recorded as a FAILURE, ISRO's second consecutive PSLV setback."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Mission: PSLV-C62, 64th flight of the PSLV ('Workhorse of ISRO').",
+        "Primary payload: EOS-N1 (Anvesha), a DRDO-built earth observation satellite.",
+        "Launch: 10:17 AM IST, 12 January 2026, First Launch Pad, Satish Dhawan Space Centre.",
+        "Co-passengers: 14 domestic and international satellites, including contributions from Indian private firm Dhruva Space and a European re-entry demonstrator capsule (KID).",
+        "OUTCOME: Failure — a deviation in the rocket's third stage prevented the satellites from reaching orbit.",
+        "This followed an earlier PSLV setback (PSLV-C61, EOS-09) in 2025 — making it two consecutive PSLV failures."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "This is a good reminder that same-day news coverage of a launch ('successful liftoff') can differ from the confirmed final mission outcome once post-flight data is reviewed — exam questions on ISRO missions should be answered from the confirmed OUTCOME, not the initial headline."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "PSLV-C62, ISRO's first launch of 2026 (12 January), lifted off successfully but failed to place the EOS-N1 satellite into orbit due to a third-stage deviation.",
+    "keyFacts": [
+      "PSLV-C62 = 64th PSLV flight, launched 12 Jan 2026.",
+      "Primary payload: EOS-N1 (Anvesha), built by DRDO.",
+      "Final outcome: FAILURE (third-stage deviation).",
+      "Second consecutive PSLV failure (after PSLV-C61/EOS-09)."
+    ],
+    "keyTerms": ["PSLV (Polar Satellite Launch Vehicle)", "Sun-synchronous orbit", "Third-stage anomaly"],
+    "commonConfusion": [
+      "\"Successful liftoff\" (the rocket left the pad correctly) is not the same as \"successful mission\" (the payload reached its intended orbit) — this mission had the first without the second."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "EOS-N1 = DRDO-built; failed to reach orbit due to a PSLV third-stage deviation on 12 Jan 2026."
+    ],
+    "commonTraps": [
+      "Citing PSLV-C62 as a 'successful' 2026 ISRO mission based only on early liftoff reports."
+    ],
+    "mustRemember": [
+      "PSLV-C62/EOS-N1, 12 Jan 2026 — LAUNCHED but FAILED to reach orbit."
+    ]
+  },
+  "sources": [
+    {
+      "name": "The Hindu / Wikipedia (PSLV-C62) — mission outcome documentation",
+      "kind": "educational",
+      "url": "https://en.wikipedia.org/wiki/PSLV-C62"
+    }
+  ]
+}

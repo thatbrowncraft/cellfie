@@ -1,0 +1,65 @@
+{
+  "id": "ca2026-gujarat-industrial-investment-clearances",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 5,
+  "region": "gujarat",
+  "category": "Gujarat Economy & Development",
+  "eventDate": "2026-04-01",
+  "status": "completed",
+  "title": "Gujarat Clears ₹1,600 Crore Investment Across 23 Industrial Units",
+  "shortDescription": "A high-level committee chaired by Deputy CM Harsh Sanghvi approved eligibility certificates worth ₹1,600 crore for 23 industrial units, expected to create about 5,634 jobs.",
+  "genZNote": "Two schemes, one committee, one Deputy CM's name — Industrial Policy-2015 handled the ₹770 crore chunk, Atmanirbhar Gujarat Scheme-2022 handled the rest.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "On 1 April 2026, a high-level committee chaired by Gujarat Deputy Chief Minister Harsh Sanghvi approved final eligibility certificates extending financial assistance to 23 major industrial units across the state."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Under Industrial Policy-2015 (Incentives to Industries): ₹770.29 crore approved across 22 large units.",
+        "Under Atmanirbhar Gujarat Scheme-2022: ₹837.67 crore approved for a major unit in Panchmahal district.",
+        "Combined approvals expected to generate approximately 5,634 employment opportunities.",
+        "Incentive framework covers net SGST reimbursements, interest subsidies, and EPF reimbursements.",
+        "District-wise highlights: ₹186.77 crore (auto, Ahmedabad); ₹148.34 crore (textile/paper, Surat); ₹81.09 crore (metal/minerals, Gandhinagar)."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "This is a concrete example of Gujarat's industrial-incentive architecture (Industrial Policy-2015 and Atmanirbhar Gujarat Scheme-2022) actually disbursing approvals, connecting Gujarat's economic-policy GK to a dated, numbers-backed 2026 event."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Gujarat approved ₹1,600 crore in incentives across 23 industrial units in April 2026, expected to create about 5,634 jobs.",
+    "keyFacts": [
+      "Chaired by Deputy CM Harsh Sanghvi.",
+      "₹770.29 crore under Industrial Policy-2015; ₹837.67 crore under Atmanirbhar Gujarat Scheme-2022.",
+      "~5,634 jobs expected."
+    ],
+    "keyTerms": ["Industrial Policy-2015", "Atmanirbhar Gujarat Scheme-2022", "Eligibility certificate"],
+    "commonConfusion": [
+      "The two schemes cover different slices of the ₹1,600 crore total — don't merge their figures."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "₹1,600 crore across 23 units, ~5,634 jobs, chaired by Deputy CM Harsh Sanghvi."
+    ],
+    "commonTraps": [
+      "Attributing the full ₹1,600 crore to a single scheme rather than splitting it between the two named schemes."
+    ],
+    "mustRemember": [
+      "Industrial Policy-2015 → ₹770.29 crore. Atmanirbhar Gujarat Scheme-2022 → ₹837.67 crore."
+    ]
+  },
+  "sources": [
+    {
+      "name": "DeshGujarat — \"Gujarat Govt Clears ₹1,600 Crore Investment Proposals Across 23 Industrial Units\" (April 2026)",
+      "kind": "educational",
+      "url": "https://deshgujarat.com/2026/04/01/gujarat-govt-clears-%E2%82%B91600-crore-investment-proposals-across-23-industrial-units/"
+    }
+  ]
+}

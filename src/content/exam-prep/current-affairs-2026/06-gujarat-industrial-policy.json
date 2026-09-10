@@ -1,0 +1,62 @@
+{
+  "id": "ca2026-gujarat-industrial-policy",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 6,
+  "region": "gujarat",
+  "category": "Gujarat Economy & Development",
+  "eventDate": "2026-06-15",
+  "status": "announced",
+  "title": "Gujarat Industrial Policy 2026 Tied to 'Viksit Gujarat 2047'",
+  "shortDescription": "Gujarat's new Industrial Policy for 2026 is framed around the long-term 'Viksit Gujarat 2047' vision, extending the state's Vibrant Gujarat investment-promotion approach.",
+  "genZNote": "Vibrant Gujarat gets the MoUs signed; Viksit Gujarat 2047 is the 21-years-out promise those MoUs are supposed to add up to.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "In 2026, the Gujarat government positioned its Industrial Policy for growth and investment explicitly within the 'Viksit Gujarat 2047' framework — a long-term development vision echoing the Union government's 'Viksit Bharat 2047' goal, timed to India's 100th year of independence."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "The policy builds on the Vibrant Gujarat Global Summit platform used for investor outreach and MoU signings.",
+        "'Viksit Gujarat 2047' mirrors the Union government's 'Viksit Bharat 2047' — both targeted at India's centenary of independence.",
+        "Framed as continuing Gujarat's established industrial-incentive approach (seen in its 2015 and 2022 schemes) rather than replacing it outright."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "'Viksit Bharat 2047' is a recurring phrase across national government policy communication in 2026 (including the Union Budget) — recognising that Gujarat's own state-level framing echoes it helps connect state and national current affairs rather than treating them as unrelated facts."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Gujarat's 2026 Industrial Policy is framed around 'Viksit Gujarat 2047', mirroring the Union government's 'Viksit Bharat 2047' vision.",
+    "keyFacts": [
+      "Builds on the Vibrant Gujarat Global Summit platform.",
+      "'Viksit Gujarat 2047' echoes the national 'Viksit Bharat 2047' target year — India's centenary of independence."
+    ],
+    "keyTerms": ["Vibrant Gujarat", "Viksit Gujarat 2047", "Viksit Bharat 2047"],
+    "commonConfusion": [
+      "'Vibrant Gujarat' (the investment summit) and 'Viksit Gujarat 2047' (the long-term development vision) are related but distinct terms — don't use them interchangeably."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "2047 is the target year for both 'Viksit Bharat' (national) and 'Viksit Gujarat' (state) — India's 100th year of independence."
+    ],
+    "commonTraps": [
+      "Treating 'Vibrant Gujarat' and 'Viksit Gujarat 2047' as the same initiative."
+    ],
+    "mustRemember": [
+      "Viksit Gujarat 2047 = state-level echo of Viksit Bharat 2047, both targeting India's independence centenary."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Chief Minister's Office, Government of Gujarat — Industrial Policy 2026 / Viksit Gujarat 2047 (cmogujarat.gov.in, 2026)",
+      "kind": "educational",
+      "url": "https://cmogujarat.gov.in/en/latest-news/gujarat-industrial-policy-2026-viksit-gujarat-2047"
+    }
+  ]
+}

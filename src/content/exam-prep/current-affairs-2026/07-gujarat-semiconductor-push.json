@@ -1,0 +1,72 @@
+{
+  "id": "ca2026-gujarat-semiconductor-push",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 7,
+  "region": "gujarat",
+  "category": "Gujarat Science, Technology & Environment",
+  "eventDate": "2026-02-28",
+  "status": "ongoing",
+  "title": "Gujarat's Semiconductor Push: Micron Sanand Live, Dholera Fab Advancing",
+  "shortDescription": "PM Modi inaugurated Micron's Sanand chip-assembly plant in February 2026; Tata-PSMC's Dholera fab crossed 50% construction with trial production targeted for late 2026.",
+  "genZNote": "Micron is ONLINE, Dholera is STILL BUILDING — that ongoing/completed split is exactly the kind of exam trap this whole ISRO-style status label exists for.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "On 28 February 2026, Prime Minister Narendra Modi inaugurated Micron Technology's Assembly, Test, Marking and Packaging (ATMP) semiconductor facility in Sanand, Gujarat — the first operational plant of India's current semiconductor mission cycle. Meanwhile, the larger Tata Electronics–PSMC semiconductor fabrication (fab) plant at Dholera, Gujarat reached roughly 50% construction by mid-2026, with trial production targeted for late 2026."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Micron's Sanand ATMP plant: inaugurated 28 Feb 2026 by PM Modi — COMPLETED and operational.",
+        "A second Sanand-area semiconductor unit commenced operations 31 March 2026; Union Minister Ashwini Vaishnaw said four plants would be ready by 2026.",
+        "Tata Electronics–PSMC Dholera fab: ~₹91,000 crore project, 50,000 wafers/month capacity, ONGOING — around 50% complete as of mid-2026, trial production targeted late 2026.",
+        "Dholera Special Investment Region received SEZ notification on 9 April 2026.",
+        "In May 2026, two more units were approved: Crystal Matrix Limited (Dholera, Mini/Micro-LED & GaN) and Suchi Semicon (Surat, OSAT) — combined ₹3,936 crore, ~2,230 jobs.",
+        "Union Budget 2026-27 allocated ₹8,000 crore to the semiconductor mission and announced 'ISM 2.0' for semiconductor equipment and materials manufacturing."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "This directly links Gujarat's economic current affairs to the national India Semiconductor Mission and the Union Budget 2026-27 — a good example of a state-level fact and a national-level fact reinforcing each other in an exam question."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Micron's Sanand ATMP plant is operational (Feb 2026); the larger Tata-PSMC Dholera fab is still under construction, targeting trial production by late 2026.",
+    "keyFacts": [
+      "Micron Sanand ATMP — inaugurated 28 Feb 2026, COMPLETED.",
+      "Tata-PSMC Dholera fab — ONGOING, ~50% complete mid-2026, ~₹91,000 crore.",
+      "Dholera SIR got SEZ notification on 9 April 2026.",
+      "Union Budget 2026-27: ₹8,000 crore to the semiconductor mission; ISM 2.0 announced."
+    ],
+    "keyTerms": ["ATMP (Assembly, Test, Marking, Packaging)", "Fab (fabrication plant)", "India Semiconductor Mission (ISM) 2.0"],
+    "commonConfusion": [
+      "Micron's Sanand plant does ATMP (assembly/testing/packaging), NOT full chip fabrication — the actual fab is the separate, still-under-construction Tata-PSMC Dholera plant."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Micron Sanand = ATMP, operational since Feb 2026. Tata-PSMC Dholera = fab, still under construction in 2026."
+    ],
+    "commonTraps": [
+      "Assuming India's first semiconductor FAB (not just an assembly/testing plant) was already operational in 2026 — the Dholera fab was still under construction."
+    ],
+    "mustRemember": [
+      "ATMP ≠ fab: Sanand does the former (done), Dholera does the latter (ongoing)."
+    ]
+  },
+  "sources": [
+    {
+      "name": "ANI — \"India's first semiconductor fab in Gujarat's Dholera by 2028: Union Minister Ashwini Vaishnaw\" (March 2026)",
+      "kind": "educational",
+      "url": "https://www.aninews.in/news/business/indias-first-semiconductor-fab-in-gujarats-dholera-by-2028-union-minister-ashwini-vaishnaw20260331170609/"
+    },
+    {
+      "name": "IMARC Engineering — \"Semiconductor Manufacturing Expansion in India 2026\"",
+      "kind": "educational",
+      "url": "https://www.imarcengineering.com/news/semiconductor-manufacturing-in-india-expansion"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "ca2026-gujarat-cwg-2030-momentum",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 9,
+  "region": "gujarat",
+  "category": "Gujarat Sports & Awards",
+  "eventDate": "2026-08-02",
+  "status": "ongoing",
+  "title": "Ahmedabad's Commonwealth Games 2030 Build-Up Gathers Pace",
+  "shortDescription": "As Glasgow 2026 closed on 2 August, attention turned to Ahmedabad's preparations for the 2030 Centenary Commonwealth Games, alongside Gujarat hosting several 2026 international sporting events.",
+  "genZNote": "2026 in Glasgow, 2030 in Ahmedabad — Gujarat isn't the host YET, it's the host-in-training, and 2026 is full of practice runs.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "Ahmedabad (Amdavad) was ratified as host of the 2030 Centenary Commonwealth Games in late 2025. Through 2026, Gujarat has been visibly ramping up preparations — hosting a run of international sporting events and continuing infrastructure work at the Sardar Vallabhbhai Patel Sports Enclave — with the spotlight formally shifting toward Ahmedabad's build-up as the Glasgow 2026 Commonwealth Games concluded on 2 August 2026."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Ahmedabad's 2030 Games will be the CENTENARY edition (100 years since the first Commonwealth Games, Hamilton 1930) and India's second time hosting after New Delhi 2010.",
+        "Gujarat is scheduled to host multiple 2026 international events, including the Asian Weightlifting Championships and AFC U-17 Qualifiers, as part of its infrastructure ramp-up.",
+        "The Veer Savarkar Sports Complex has already hosted events like Commonwealth Weightlifting and Asian Aquatics Championships.",
+        "The Khel Mahakumbh grassroots sports programme recorded a record 71.30 lakh participants in 2025, with a 'Mini Khel Mahakumbh' held in Surat in January 2026.",
+        "Ahmedabad is also assessing feasibility for a future Olympic bid (targeting 2036), separate from the confirmed 2030 Commonwealth Games."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "This is a good example of the ANNOUNCED vs ONGOING vs COMPLETED distinction the exam wants: the 2030 host decision is already final (completed as a decision), but the actual Games and most of the infrastructure build-up remain ongoing through 2026 and beyond."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Ahmedabad will host the Centenary (2030) Commonwealth Games; through 2026 it is ramping up by hosting smaller international events and building sports infrastructure.",
+    "keyFacts": [
+      "2030 Commonwealth Games host: Ahmedabad (Amdavad), Gujarat — the Centenary edition.",
+      "India's second Commonwealth Games after New Delhi 2010.",
+      "Glasgow hosted the 2026 edition (concluded 2 August 2026) before the spotlight shifts to Ahmedabad.",
+      "Gujarat separately eyeing a future Olympic bid (target 2036)."
+    ],
+    "keyTerms": ["Centenary Commonwealth Games", "Sardar Vallabhbhai Patel Sports Enclave", "Khel Mahakumbh"],
+    "commonConfusion": [
+      "The 2030 Commonwealth Games (confirmed) and a possible 2036 Olympics bid (still exploratory) are two SEPARATE ambitions — don't merge them into one fact."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Ahmedabad 2030 = Centenary Commonwealth Games, India's second time hosting (after Delhi 2010)."
+    ],
+    "commonTraps": [
+      "Confusing the CONFIRMED 2030 Commonwealth Games host status with the still-EXPLORATORY 2036 Olympics ambition."
+    ],
+    "mustRemember": [
+      "Glasgow hosts 2026; Ahmedabad hosts the Centenary 2030 edition."
+    ]
+  },
+  "sources": [
+    {
+      "name": "World Athletics / Commonwealth Sport — Amdavad host confirmation coverage",
+      "kind": "educational",
+      "url": "https://worldathletics.org/news/news/amdavad-host-city-2030-commonwealth-games"
+    },
+    {
+      "name": "Business Today — WEF 2026 interview with Gujarat Deputy CM Harsh Sanghavi on sports infrastructure",
+      "kind": "educational"
+    }
+  ]
+}

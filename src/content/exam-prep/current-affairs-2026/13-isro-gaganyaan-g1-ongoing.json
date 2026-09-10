@@ -1,0 +1,67 @@
+{
+  "id": "ca2026-isro-gaganyaan-g1-ongoing",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 13,
+  "region": "india",
+  "category": "India ISRO & Space",
+  "eventDate": "2026-07-29",
+  "status": "ongoing",
+  "title": "Gaganyaan G1: Still ANNOUNCED/ONGOING, Not Yet Launched",
+  "shortDescription": "India's first uncrewed Gaganyaan test flight (G1), carrying the humanoid Vyommitra, remained in final preparation through mid-2026, with the target date having slipped from an earlier December 2025/March 2026 window to 'end-2026'.",
+  "genZNote": "This is the exam's favourite kind of trap card: as of the info available here, G1 has NOT flown yet. If an option says 'G1 successfully launched in 2026', check the date this claim is being made against.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "Gaganyaan-1 (G1), the first uncrewed test flight of ISRO's human-spaceflight programme, remained under final preparation through 2026 rather than having launched. ISRO progressively moved its target launch window — from an initially discussed December 2025 date, to March 2026, to \"end-2026\" as stated by ISRO Chairman Dr V. Narayanan in June 2026 — with the government telling Parliament in late July 2026 that key hardware and ground infrastructure were ready but assembly, integration, and testing of the Crew and Service Modules were still nearing completion."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "G1 will carry Vyommitra, a half-humanoid robot, to validate life-support, cabin, and re-entry systems ahead of a crewed flight.",
+        "Launch vehicle: Human-Rated LVM3 (HLVM3), from Satish Dhawan Space Centre.",
+        "STATUS as of the most recent 2026 update: ONGOING preparation, target 'end-2026' — NOT yet launched.",
+        "Two further uncrewed flights (G2, G3) are planned before the first CREWED Gaganyaan flight (H1), which is targeted for 2027.",
+        "Selected astronauts ('Gaganyatris') completed generic training at Glavkosmos, Russia, and are undergoing mission-specific training in Bengaluru.",
+        "The programme also underpins India's longer-term Bharatiya Antariksh Station (BAS) goal."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "Gaganyaan is one of the most exam-relevant ISRO programmes precisely because its target dates keep shifting — testing whether a candidate can correctly state a mission's CURRENT status (ongoing/announced) rather than assuming a high-profile programme must already be complete."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Gaganyaan G1, India's first uncrewed human-spaceflight test flight, was still in final preparation through mid-2026 (target: end-2026), not yet launched.",
+    "keyFacts": [
+      "G1 payload: Vyommitra (humanoid robot).",
+      "Launch vehicle: HLVM3.",
+      "Status: ONGOING preparation as of the most recent 2026 update — not launched.",
+      "First CREWED flight (H1) targeted for 2027; G2 and G3 uncrewed flights to follow G1."
+    ],
+    "keyTerms": ["Gaganyaan", "Vyommitra", "HLVM3", "Bharatiya Antariksh Station (BAS)"],
+    "commonConfusion": [
+      "G1 (uncrewed test) and H1 (first crewed flight) are different missions — G1 must succeed before H1 is attempted."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Vyommitra flies on the UNCREWED G1 test flight, not on the eventual crewed H1 mission."
+    ],
+    "commonTraps": [
+      "Assuming Gaganyaan G1 has already launched simply because it has been widely discussed and repeatedly scheduled."
+    ],
+    "mustRemember": [
+      "G1 status: ongoing preparation, target end-2026. Crewed H1: targeted 2027."
+    ]
+  },
+  "sources": [
+    {
+      "name": "DD India — \"Gaganyaan Mission advances as ISRO completes key systems, prepares for first uncrewed flight\" (July 2026)",
+      "kind": "educational",
+      "url": "https://ddindia.co.in/2026/07/gaganyaan-mission-advances-as-isro-completes-key-systems-prepares-for-first-uncrewed-flight/"
+    }
+  ]
+}

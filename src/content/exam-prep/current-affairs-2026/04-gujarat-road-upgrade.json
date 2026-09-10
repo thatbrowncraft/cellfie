@@ -1,0 +1,64 @@
+{
+  "id": "ca2026-gujarat-road-upgrade",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 4,
+  "region": "gujarat",
+  "category": "Gujarat Economy & Development",
+  "eventDate": "2026-04-01",
+  "status": "completed",
+  "title": "Gujarat Approves ₹3,400 Crore Rural Road Upgrade",
+  "shortDescription": "Gujarat sanctioned ₹3,400 crore to resurface over 5,700 km of non-plan roads across all 33 districts, covering roughly two-thirds of such roads statewide.",
+  "genZNote": "5,700 km, 33 districts, one number to remember: ₹3,400 crore — that's the whole card.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "On 1 April 2026, the Gujarat government approved ₹3,400 crore for the resurfacing of non-plan roads connecting villages across the state, announced by state spokesperson and minister Jitu Vaghani."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Over 5,700 km of roads to be resurfaced, across 2,342 individual works.",
+        "Coverage spans all 33 districts of Gujarat.",
+        "Expected to cover nearly 67% of the state's non-plan (village-connecting) roads.",
+        "Aimed at improving connectivity in remote and interior regions."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "Rural road connectivity is a recurring theme across Gujarat's development current affairs and ties to broader Indian infrastructure GK (e.g. PMGSY-style rural road schemes at the national level) — this is a state-level example of the same policy priority."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Gujarat approved ₹3,400 crore in April 2026 to resurface over 5,700 km of village-connecting roads across all 33 districts.",
+    "keyFacts": [
+      "₹3,400 crore sanctioned, 1 April 2026.",
+      "5,700+ km, 2,342 works, all 33 districts.",
+      "Covers ~67% of the state's non-plan roads."
+    ],
+    "keyTerms": ["Non-plan roads", "Rural connectivity"],
+    "commonConfusion": [
+      "This is a GUJARAT state scheme, not a Union government rural-roads scheme (like PMGSY) — keep the two separate in an MCQ."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "₹3,400 crore, 5,700+ km, all 33 districts — the three numbers most likely to be tested together."
+    ],
+    "commonTraps": [
+      "Confusing this Gujarat state-funded road scheme with a central government rural-roads programme."
+    ],
+    "mustRemember": [
+      "₹3,400 crore road upgrade = Gujarat, April 2026, 5,700+ km, 33 districts."
+    ]
+  },
+  "sources": [
+    {
+      "name": "DeshGujarat — \"Gujarat Govt Approves ₹3,400 Crore to Upgrade 5,700 km Roads\" (April 2026)",
+      "kind": "educational",
+      "url": "https://deshgujarat.com/2026/04/01/gujarat-govt-approves-%E2%82%B93400-crore-to-upgrade-5700-km-roads/"
+    }
+  ]
+}

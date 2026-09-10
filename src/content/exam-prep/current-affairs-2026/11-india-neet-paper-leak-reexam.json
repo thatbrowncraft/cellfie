@@ -1,0 +1,72 @@
+{
+  "id": "ca2026-india-neet-paper-leak-reexam",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 11,
+  "region": "india",
+  "category": "India Education & NEET",
+  "eventDate": "2026-05-03",
+  "status": "completed",
+  "title": "NEET UG 2026: Paper Leak, Cancellation & Re-Exam",
+  "shortDescription": "NTA cancelled the 3 May 2026 NEET UG exam over paper-leak allegations affecting over 20 lakh candidates; a re-exam ('Re-NEET 2026') was held on 21 June 2026 with a CBI probe ordered.",
+  "genZNote": "One exam, two exam dates, one CBI FIR — if a question mentions 'Re-NEET 2026', it's asking about THIS.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "NEET UG 2026, held on 3 May 2026, was cancelled by the National Testing Agency (NTA) after allegations that a leaked \"guess paper\" closely matched the actual question paper, including over 120 matching Biology questions. The Central Government ordered a CBI investigation, and NTA conducted a re-examination — \"Re-NEET 2026\" — on 21 June 2026."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Original exam date: 3 May 2026. Cancellation announced: 12 May 2026 (following CBI/agency review).",
+        "The CBI registered an FIR covering criminal conspiracy, cheating, and breach of trust.",
+        "Re-NEET 2026 held on 21 June 2026 — no fresh registration required, fees fully refunded for the cancelled attempt.",
+        "For the re-exam, NTA extended the exam window from 180 to 195 minutes (2:00 PM-5:15 PM) and increased rough-work pages in the question booklet from 2 to 4.",
+        "Over 20-24 lakh candidates were affected by the cancellation."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "NEET is the single largest medical entrance exam in India and a recurring GK/current-affairs topic — a cancellation and re-exam of this scale (and the resulting exam-format changes) is exactly the kind of concrete, dated development the exam's own Education & NEET category exists to test."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "NEET UG 2026 (3 May) was cancelled over a paper leak and re-conducted as 'Re-NEET 2026' on 21 June 2026, with the exam duration extended to 195 minutes.",
+    "keyFacts": [
+      "Original NEET UG 2026: 3 May 2026 — CANCELLED.",
+      "Re-NEET 2026: 21 June 2026 — conducted.",
+      "Exam duration extended: 180 → 195 minutes.",
+      "Rough-work pages increased: 2 → 4.",
+      "CBI FIR registered over the paper leak."
+    ],
+    "keyTerms": ["NTA (National Testing Agency)", "Re-NEET 2026", "CBI FIR"],
+    "commonConfusion": [
+      "3 May 2026 is the CANCELLED original date; 21 June 2026 is the actual RE-EXAM date — don't cite the wrong one as 'the' NEET 2026 date."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "195-minute duration and 4 rough-work pages are the two concrete format changes introduced for Re-NEET 2026."
+    ],
+    "commonTraps": [
+      "Citing 3 May 2026 as the date NEET UG 2026 was actually conducted — that attempt was cancelled."
+    ],
+    "mustRemember": [
+      "Re-NEET 2026 date: 21 June 2026. Cause: alleged question paper leak."
+    ]
+  },
+  "sources": [
+    {
+      "name": "National Testing Agency (NTA) — official NEET (UG) 2026 re-examination notices",
+      "kind": "educational",
+      "url": "https://neet.nta.nic.in/"
+    },
+    {
+      "name": "News on Air (Government of India) — NTA changes for NEET UG Re-Exam 2026 coverage (June 2026)",
+      "kind": "educational",
+      "url": "https://newsonair.gov.in/nta-introduces-exam-friendly-changes-in-neet-ug-2026-extends-duration-and-revises-layout/"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "ca2026-gujarat-ucc-bill",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 1,
+  "region": "gujarat",
+  "category": "Gujarat Government & Policies",
+  "eventDate": "2026-03-25",
+  "status": "completed",
+  "title": "Gujarat Uniform Civil Code Bill, 2026 Passed",
+  "shortDescription": "Gujarat becomes the second Indian state after Uttarakhand to enact a Uniform Civil Code, following a report by a committee headed by Justice Ranjana Prakash Desai.",
+  "genZNote": "Second state, same script as Uttarakhand — but the exam only cares that you know WHICH state was first and WHICH group got exempted.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "On 24–25 March 2026, the Gujarat Legislative Assembly passed the Gujarat Uniform Civil Code (UCC) Bill, 2026 by voice vote after a debate lasting more than seven hours, with the opposition Congress and AAP withholding support. The bill was tabled by Chief Minister Bhupendra Patel on the recommendation of a committee headed by retired Supreme Court Justice Ranjana Prakash Desai, which had collected over 20 lakh public suggestions before submitting its report in March 2026."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Gujarat is the SECOND state in India to enact a UCC, after Uttarakhand (which passed its UCC in February 2024).",
+        "The law creates one common legal framework for marriage, divorce, succession, adoption, and live-in relationships, applying irrespective of religion.",
+        "Marriages must be registered within 60 days; live-in relationships within 30 days — failure to register a marriage draws a penalty (reported up to ₹10,000), though the marriage itself isn't voided.",
+        "Polygamy and bigamy are banned outright, one spouse at a time for everyone.",
+        "Scheduled Tribes are explicitly EXEMPTED from the code, to protect their customary personal-law practices.",
+        "Deputy CM Harsh Sanghavi piloted the bill's defence in the Assembly alongside CM Patel."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "Article 44 of the Constitution directs the state to work toward a Uniform Civil Code as a Directive Principle — Gujarat's UCC is presented by the state government as a step toward that goal, and connects directly to the Constitution of India's DPSP chapter. It's also a live example of Centre-state and constitutional-bodies topics (a state exercising its legislative competence over personal law) intersecting with current, real-world implementation."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Gujarat passed its own Uniform Civil Code Bill in March 2026, becoming the second state after Uttarakhand to do so.",
+    "keyFacts": [
+      "Passed 24–25 March 2026 by voice vote after a 7+ hour debate.",
+      "Second state after Uttarakhand (UCC, Feb 2024).",
+      "Committee headed by Justice Ranjana Prakash Desai recommended the code.",
+      "Scheduled Tribes are exempted from the code."
+    ],
+    "keyTerms": ["Uniform Civil Code", "Article 44 (DPSP)", "Justice Ranjana Prakash Desai Committee"],
+    "commonConfusion": [
+      "Uttarakhand was first (2024), Gujarat is second (2026) — don't swap the order in an MCQ."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "State + order pairing: Uttarakhand (1st, 2024) → Gujarat (2nd, 2026).",
+      "The Desai Committee's recommendations formed the basis of Gujarat's bill.",
+      "Scheduled Tribes are exempted from the code's application."
+    ],
+    "commonTraps": [
+      "Assuming Gujarat was the first state to pass a UCC — it was second.",
+      "Assuming the UCC applies uniformly to every community in Gujarat without exception — Scheduled Tribes are carved out."
+    ],
+    "mustRemember": [
+      "Gujarat UCC, 2026 — passed 24–25 March 2026, second state after Uttarakhand, ST-exempted."
+    ]
+  },
+  "sources": [
+    {
+      "name": "DD News — \"Gujarat Assembly passes Uniform Civil Code Bill\" (March 2026)",
+      "kind": "educational",
+      "url": "https://ddnews.gov.in/en/gujarat-assembly-passes-uniform-civil-code-bill/"
+    },
+    {
+      "name": "PIB/DeshGujarat coverage of the Gujarat UCC Bill, 2026 passage",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ca2026-gujarat-renewable-energy-leader",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 8,
+  "region": "gujarat",
+  "category": "Gujarat Science, Technology & Environment",
+  "eventDate": "2026-03-31",
+  "status": "completed",
+  "title": "Gujarat Becomes India's Top Renewable Energy State",
+  "shortDescription": "As of 31 March 2026, Gujarat overtook Rajasthan to record the highest installed renewable energy capacity of any Indian state, per MNRE data.",
+  "genZNote": "Rajasthan still wins on solar alone — Gujarat wins because its wind numbers make up the difference. Don't just remember 'Gujarat is #1', remember why.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "As of 31 March 2026, Gujarat recorded the highest total installed renewable energy (RE) capacity of any Indian state, overtaking Rajasthan, according to data from the Ministry of New and Renewable Energy (MNRE). Gujarat added roughly 13,785 MW of RE capacity over the preceding year to take the lead."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Gujarat's combined solar + wind + hydro + bio installed capacity narrowly overtook Rajasthan's as of end-March 2026.",
+        "Gujarat's portfolio mix: strong in BOTH solar and wind; Rajasthan still leads India in solar capacity ALONE.",
+        "Kutch and Saurashtra regions (high solar irradiation, favourable wind corridors) are Gujarat's main renewable hubs.",
+        "The Khavda/Kutch hybrid renewable energy park is among the world's largest renewable energy projects under construction.",
+        "This builds toward India's national target of 500 GW of non-fossil energy capacity by 2030."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "This connects Gujarat's physical geography (Kutch's solar irradiation, coastal wind corridors — a Static GK fact) directly to a dated 2026 current-affairs ranking, which is exactly the kind of cross-topic link competitive exams like to test."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Gujarat overtook Rajasthan to become India's top state by total installed renewable energy capacity as of 31 March 2026.",
+    "keyFacts": [
+      "Gujarat overtook Rajasthan in COMBINED (solar+wind+other) RE capacity, effective 31 March 2026.",
+      "Rajasthan still leads India in solar capacity alone.",
+      "Gujarat's edge comes largely from its wind capacity."
+    ],
+    "keyTerms": ["MNRE (Ministry of New and Renewable Energy)", "Installed RE capacity", "500 GW non-fossil target (2030)"],
+    "commonConfusion": [
+      "Gujarat leads in COMBINED renewable capacity; Rajasthan still leads in SOLAR capacity specifically — these are two different rankings."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Gujarat = #1 in combined RE capacity (2026). Rajasthan = #1 in solar alone."
+    ],
+    "commonTraps": [
+      "Assuming Gujarat leads in solar capacity too — it doesn't; its lead comes from combining solar with a strong wind portfolio."
+    ],
+    "mustRemember": [
+      "Gujarat overtook Rajasthan in total RE capacity as of 31 March 2026, driven by wind."
+    ]
+  },
+  "sources": [
+    {
+      "name": "DeshGujarat — \"Gujarat Emerges as India's Largest Renewable Energy Producer\" (May 2026, citing MNRE data as of 31 March 2026)",
+      "kind": "educational",
+      "url": "https://deshgujarat.com/2026/05/06/gujarat-emerges-as-indias-largest-renewable-energy-producer/"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ca2026-india-padma-awards",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 15,
+  "region": "india",
+  "category": "India Sports & Awards",
+  "eventDate": "2026-01-25",
+  "status": "completed",
+  "title": "Padma Awards 2026: 131 Recipients Announced",
+  "shortDescription": "The Ministry of Home Affairs announced 131 Padma Awards on the eve of Republic Day 2026 — 5 Padma Vibhushan, 13 Padma Bhushan, and 113 Padma Shri, including 16 posthumous honours.",
+  "genZNote": "5-13-113. That split (Vibhushan-Bhushan-Shri) is the number combo most likely to actually show up as an MCQ.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "On 25 January 2026, the eve of India's 77th Republic Day, the Ministry of Home Affairs announced the Padma Awards 2026 list — 131 recipients approved by President Droupadi Murmu across the three Padma categories, recognising distinguished service in fields from art and public affairs to science, sports, and grassroots social work."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Total: 131 awardees — 5 Padma Vibhushan, 13 Padma Bhushan, 113 Padma Shri.",
+        "19 of the awardees are women; 16 honoured posthumously; 6 in the Foreigner/NRI/PIO/OCI category.",
+        "Notable named recipients widely reported include cricketer Rohit Sharma and actor Mammootty, among others across art, medicine, and public affairs.",
+        "A distinct set of 45 'unsung heroes' — grassroots workers in health, education, sanitation, and community welfare, including from Dalit, tribal, and remote communities — were highlighted within the list.",
+        "The three categories: Padma Vibhushan (exceptional and distinguished service), Padma Bhushan (distinguished service of a high order), Padma Shri (distinguished service in any field)."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "Padma Awards numbers (total count and the Vibhushan/Bhushan/Shri split) are a classic, easy-to-verify GK/current-affairs fact asked almost every year — this year's 131/5/13/113 split is the concrete number set to remember for 2026."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Padma Awards 2026: 131 recipients announced 25 January 2026 — 5 Padma Vibhushan, 13 Padma Bhushan, 113 Padma Shri.",
+    "keyFacts": [
+      "Announced: 25 January 2026 (eve of Republic Day).",
+      "Total: 131 — split 5 / 13 / 113 across Vibhushan / Bhushan / Shri.",
+      "19 women, 16 posthumous, 6 Foreigner/NRI/PIO/OCI recipients."
+    ],
+    "keyTerms": ["Padma Vibhushan", "Padma Bhushan", "Padma Shri", "Rashtriya Puraskar Portal"],
+    "commonConfusion": [
+      "Padma Awards are announced on Republic Day EVE (25 January) but formally conferred at ceremonies later in the year at Rashtrapati Bhavan — the announcement date and the conferral date are different."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "131 total: 5 Padma Vibhushan + 13 Padma Bhushan + 113 Padma Shri."
+    ],
+    "commonTraps": [
+      "Treating the announcement date (Republic Day eve) as the date the awards are formally conferred (a separate, later ceremony)."
+    ],
+    "mustRemember": [
+      "Padma Awards 2026: 131 total, announced 25 January 2026."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of Home Affairs — Padma Awards 2026 official list (25 January 2026)",
+      "kind": "educational",
+      "url": "https://www.mha.gov.in/sites/default/files/Padma_Awards2026W_25012026.pdf"
+    }
+  ]
+}

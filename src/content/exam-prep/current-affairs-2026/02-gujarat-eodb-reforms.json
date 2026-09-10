@@ -1,0 +1,64 @@
+{
+  "id": "ca2026-gujarat-eodb-reforms",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 2,
+  "region": "gujarat",
+  "category": "Gujarat Government & Policies",
+  "eventDate": "2026-02-06",
+  "status": "announced",
+  "title": "Gujarat's 2026 Ease of Doing Business Reforms",
+  "shortDescription": "Gujarat plans procedural reforms letting industrial leasehold land convert to freehold, easing education-sector certifications, and permitting EWS housing inside industrial areas.",
+  "genZNote": "Leasehold to freehold isn't just a real-estate term here — it's the government trying to make Gujarat's industrial land actually easy to own, not just occupy.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "In early February 2026, the Gujarat government announced a wide-ranging set of procedural reforms across departments to strengthen the state's Ease of Doing Business (EoDB) ecosystem, targeting industrial land rules and education-sector red tape in particular."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Industrial land: proposes converting leasehold plots to freehold, and permitting subleasing/transfer/sale to joint ventures and subsidiary companies.",
+        "Workforce welfare: considering allowing low-cost and Economically Weaker Section (EWS) housing within industrial areas.",
+        "Education: plans to remove the essentiality-certificate requirement, reduce mandatory certifications, and revise land-requirement norms for new private educational institutions.",
+        "Stated goal: boost MSME growth and make Gujarat's industrial zones more attractive to investors."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "Ease-of-doing-business reforms are a recurring GK theme tying into Gujarat's broader economic pitch (Vibrant Gujarat, Viksit Gujarat 2047) — this 2026 package is a concrete, dated example of that pitch translating into actual departmental rule changes rather than just summit announcements."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Gujarat announced procedural reforms in February 2026 to ease industrial land conversion and cut red tape for private educational institutions.",
+    "keyFacts": [
+      "Leasehold industrial plots to be convertible to freehold.",
+      "EWS/low-cost housing being considered within industrial areas.",
+      "Essentiality certificate requirement to be removed for private education institutions."
+    ],
+    "keyTerms": ["Ease of Doing Business (EoDB)", "Leasehold to freehold conversion", "Essentiality certificate"],
+    "commonConfusion": [
+      "This is a set of ANNOUNCED/proposed reforms as of February 2026, not yet a completed legislative act — keep that status distinction in mind."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The reform package spans industrial land rules AND private-education red tape in the same announcement."
+    ],
+    "commonTraps": [
+      "Treating this as a completed law rather than an announced set of departmental reforms."
+    ],
+    "mustRemember": [
+      "EoDB 2026 package: leasehold→freehold conversion + eased education-institution certification."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Elets eGov — \"Gujarat Government Plans Major Procedural Reforms to Boost Ease of Doing Business\" (February 2026)",
+      "kind": "educational",
+      "url": "https://egov.eletsonline.com/2026/02/gujarat-government-plans-major-procedural-reforms-to-boost-ease-of-doing-business/"
+    }
+  ]
+}

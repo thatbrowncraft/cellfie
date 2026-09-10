@@ -1,0 +1,68 @@
+{
+  "id": "ca2026-india-union-budget",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 10,
+  "region": "india",
+  "category": "India Economy",
+  "eventDate": "2026-02-01",
+  "status": "completed",
+  "title": "Union Budget 2026-27: Sitharaman's Ninth Consecutive Budget",
+  "shortDescription": "FM Nirmala Sitharaman presented a 'Yuva Shakti-driven' Budget on 1 February 2026, with a 4.3% fiscal deficit target, record defence allocation, and 'Semiconductor Mission 2.0'.",
+  "genZNote": "Three Kartavyas, one Budget — growth, capacity, and Sabka Sath Sabka Vikas. If an MCQ says 'Kartavya', it's this Budget.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "Finance Minister Nirmala Sitharaman presented the Union Budget 2026-27 in the Lok Sabha on 1 February 2026 — her ninth consecutive Union Budget. She described it as a \"Yuva Shakti-driven\" Budget guided by three self-described Kartavyas (duties): accelerating economic growth, building people's capacity, and ensuring Sabka Sath, Sabka Vikas (inclusive access to opportunity)."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "Fiscal deficit target for FY 2026-27: 4.3% of GDP.",
+        "Non-debt receipts estimated at ₹36.5 lakh crore; total expenditure at ₹53.5 lakh crore; capital expenditure ₹12.2 lakh crore.",
+        "Defence sector given an all-time-high allocation of ₹7.85 lakh crore.",
+        "'Semiconductor Mission 2.0' announced, alongside dedicated Rare Earth Corridors for mining, processing, and manufacturing.",
+        "'Biopharma Shakti' strategy proposed to position India as a global biomanufacturing hub.",
+        "Real GDP growth for 2025-26 estimated at 7.4% (Economic Survey 2026, presented 29 January 2026); nominal growth for 2026-27 projected around 8-10%."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "The Union Budget is one of the highest-yield current-affairs topics every year — numbers like the fiscal deficit target, defence allocation, and named new schemes ('Semiconductor Mission 2.0', 'Biopharma Shakti') are classic one-line MCQ fodder, and this Budget also directly links to Gujarat's semiconductor push."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Union Budget 2026-27, presented 1 February 2026 by FM Nirmala Sitharaman (her 9th consecutive Budget), targeted a 4.3% fiscal deficit and announced Semiconductor Mission 2.0.",
+    "keyFacts": [
+      "Presented 1 Feb 2026; 9th consecutive Budget by Sitharaman.",
+      "Fiscal deficit target: 4.3% of GDP.",
+      "Defence allocation: ₹7.85 lakh crore (all-time high).",
+      "New: Semiconductor Mission 2.0, Rare Earth Corridors, Biopharma Shakti."
+    ],
+    "keyTerms": ["Fiscal deficit", "Kartavya", "Semiconductor Mission 2.0", "Yuva Shakti"],
+    "commonConfusion": [
+      "The Economic Survey (29 Jan 2026) and the Budget (1 Feb 2026) are two separate, back-to-back documents — don't merge their dates."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Fiscal deficit 4.3% of GDP; capex ₹12.2 lakh crore; defence ₹7.85 lakh crore.",
+      "Semiconductor Mission 2.0 and Rare Earth Corridors are the flagship new-scheme names to remember."
+    ],
+    "commonTraps": [
+      "Mixing up the Economic Survey's date (29 Jan) with the Budget's date (1 Feb)."
+    ],
+    "mustRemember": [
+      "9th consecutive Budget by Nirmala Sitharaman, presented 1 February 2026."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Press Information Bureau (PIB) — Union Budget 2026-27 official highlights",
+      "kind": "educational",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2221455&lang=1&reg=3"
+    }
+  ]
+}

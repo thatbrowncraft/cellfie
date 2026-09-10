@@ -1,0 +1,65 @@
+{
+  "id": "ca2026-gujarat-budget-tourism-year",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 3,
+  "region": "gujarat",
+  "category": "Gujarat Economy & Development",
+  "eventDate": "2026-02-18",
+  "status": "completed",
+  "title": "Gujarat Budget 2026-27 Declares 'Gujarat Tourism Year'",
+  "shortDescription": "Finance Minister Kanu Desai's 2026-27 Budget declares 2026 'Gujarat Tourism Year', funding bus ports at Somnath and Ambaji, the Statue of Unity, and the Lothal maritime museum.",
+  "genZNote": "Somnath, Ambaji, Statue of Unity, Lothal — if it's a Gujarat heritage site and it got budget money in 2026, it's tourism-year current affairs.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "Presenting Gujarat's 2026-27 Budget, Finance Minister Kanu Desai declared 2026 as \"Gujarat Tourism Year\" and set out allocations to strengthen heritage, pilgrimage, and coastal tourism infrastructure across the state, alongside a new \"Wed in Gujarat\" destination-wedding promotional campaign."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "₹447 crore allocated for bus ports at Somnath and Ambaji, two of Gujarat's major pilgrimage centres.",
+        "₹236 crore allocated for infrastructure development at the Statue of Unity (Kevadia).",
+        "₹95 crore earmarked for the National Maritime Heritage Museum at Lothal, one of the Indus Valley Civilization's oldest port sites.",
+        "New \"Wed in Gujarat\" campaign launched to position the state as a wedding/destination-tourism hub."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "This budget item is a natural bridge to static GK: Lothal connects directly to Ancient India (Indus Valley Civilization port city), while Somnath and the Statue of Unity are recurring Gujarat-specific landmarks in tourism and culture questions. The 'Tourism Year' framing also ties Gujarat's economic-development current affairs to its heritage GK."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Gujarat's Budget 2026-27 declared 2026 'Gujarat Tourism Year', funding pilgrimage, heritage, and coastal tourism infrastructure.",
+    "keyFacts": [
+      "Finance Minister: Kanu Desai.",
+      "₹447 crore for Somnath and Ambaji bus ports.",
+      "₹236 crore for Statue of Unity infrastructure; ₹95 crore for the Lothal maritime museum."
+    ],
+    "keyTerms": ["Gujarat Tourism Year 2026", "Lothal", "Statue of Unity"],
+    "commonConfusion": [
+      "Lothal is an ANCIENT (Indus Valley) heritage site getting a MODERN (2026) museum allocation — don't confuse the site's age with the funding's date."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Gujarat declared 2026 as its official 'Tourism Year' in the 2026-27 state budget.",
+      "Lothal — one of the Indus Valley Civilization's oldest ports — received a dedicated 2026 museum allocation."
+    ],
+    "commonTraps": [
+      "Mixing up which allocation went to which site (Somnath/Ambaji vs Statue of Unity vs Lothal)."
+    ],
+    "mustRemember": [
+      "Gujarat Tourism Year 2026 — Kanu Desai, Budget 2026-27, Somnath/Ambaji/Statue of Unity/Lothal all funded."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Gujarat Finance Department — Budget 2026-27 coverage (newkerala.com, February 2026)",
+      "kind": "educational",
+      "url": "https://www.newkerala.com/news/a/from-lothal-somnath-gujarat-sets-out-tourism-roadmap-127.htm"
+    }
+  ]
+}

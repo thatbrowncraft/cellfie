@@ -1,0 +1,67 @@
+{
+  "id": "ca2026-india-renewable-energy-record",
+  "subjectId": "current-affairs-2026",
+  "syllabusOrder": 16,
+  "region": "india",
+  "category": "India Environment",
+  "eventDate": "2026-06-30",
+  "status": "completed",
+  "title": "India Adds Record 29 GW Solar & Wind Capacity in H1 2026",
+  "shortDescription": "India installed roughly 29 GW of new solar and wind capacity between January and June 2026, taking cumulative renewable capacity to about 288 GW, on track for the 500 GW non-fossil target by 2030.",
+  "genZNote": "288 GW cumulative, 500 GW target, 2030 deadline — three numbers, one sentence, done.",
+  "sections": [
+    {
+      "id": "what-happened",
+      "heading": "What Happened",
+      "body": "Between January and June 2026 (H1 2026), India added approximately 29 GW of new solar and wind power capacity — about 26 GW solar and roughly 3 GW wind — according to industry tracker JMK Research and Ministry of New and Renewable Energy (MNRE) data, pushing India's cumulative renewable energy capacity to around 288 GW."
+    },
+    {
+      "id": "key-facts",
+      "heading": "Key Facts",
+      "bullets": [
+        "H1 2026 additions: ~26 GW solar (up 43% year-on-year) + ~3 GW wind (down 16% year-on-year).",
+        "Cumulative installed RE capacity as of June 2026: ~288 GW.",
+        "Solar makes up around 56% of India's total installed RE capacity; wind about 20%.",
+        "Renewable energy accounted for a record ~55% share of India's electricity generation during this period.",
+        "Gujarat and Rajasthan together lead state-wise additions, together accounting for a large share of the national total.",
+        "National target: 500 GW of non-fossil-fuel capacity by 2030 (a COP26-era pledge)."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why It Matters",
+      "body": "This national-level renewable energy milestone pairs directly with the Gujarat-specific fact that Gujarat became India's top state for combined renewable capacity in 2026 — a good example of a state fact and a national fact reinforcing each other for revision."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "India added a record ~29 GW of solar and wind capacity in H1 2026, taking cumulative renewable capacity to ~288 GW, en route to a 500 GW non-fossil target by 2030.",
+    "keyFacts": [
+      "H1 2026: ~26 GW solar + ~3 GW wind added.",
+      "Cumulative RE capacity (June 2026): ~288 GW.",
+      "Renewable share of electricity generation: ~55% (record).",
+      "National target: 500 GW non-fossil capacity by 2030."
+    ],
+    "keyTerms": ["MNRE", "Non-fossil fuel capacity", "500 GW target (2030)"],
+    "commonConfusion": [
+      "The 288 GW figure is CUMULATIVE installed capacity to date; the 29 GW figure is only the NEW capacity added in the first half of 2026 — don't conflate the two."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "500 GW by 2030 is India's headline non-fossil capacity target — a COP26-era pledge repeated across many 2026 renewable-energy stories."
+    ],
+    "commonTraps": [
+      "Quoting the H1 2026 addition (~29 GW) as if it were the total cumulative capacity, instead of ~288 GW."
+    ],
+    "mustRemember": [
+      "Cumulative RE capacity ≈ 288 GW (June 2026); target 500 GW by 2030."
+    ]
+  },
+  "sources": [
+    {
+      "name": "JMK Research & Analytics — India H1 2026 solar and wind capacity report",
+      "kind": "educational",
+      "url": "https://jmkresearch.com/india-installs-record-26-gw-solar-and-3-gw-wind-capacity-in-h12026/"
+    }
+  ]
+}
