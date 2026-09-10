@@ -1,0 +1,97 @@
+{
+  "id": "reasoning-blood-relations",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 2,
+  "title": "Blood Relations",
+  "shortDescription": "Build the family tree one clue at a time — and watch gender-specific terms, the exam's favourite distractor.",
+  "genZNote": "Stop drawing the whole family tree in your head. Put the known person in the middle of the page and let each clue add a branch.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Blood relation problems are solved by physically building a family tree/diagram from the stated relationships ONE CLUE AT A TIME, rather than trying to hold the whole chain in your head. Pick one person as the centre, then add each relative as they're introduced."
+    },
+    {
+      "id": "gender-specific-terms",
+      "heading": "Gender-Specific Terms — the Main Trap",
+      "table": {
+        "columnHeaders": ["Relation phrase", "Who it means"],
+        "rows": [
+          ["Mother's brother", "Maternal uncle"],
+          ["Father's brother", "Paternal uncle"],
+          ["Mother's sister", "Maternal aunt"],
+          ["Father's sister", "Paternal aunt"],
+          ["Son of my uncle/aunt", "Cousin"],
+          ["Daughter of my father's sister", "Cousin (paternal aunt's child)"]
+        ],
+        "caption": "These distinctions are the single most common blood-relations distractor — the exam swaps 'mother's brother' for 'father's brother' expecting you to skip past it."
+      }
+    },
+    {
+      "id": "worked-approach",
+      "heading": "Worked Approach",
+      "steps": [
+        {
+          "name": "Pick a centre",
+          "explanation": "Choose the person the question ultimately asks about, or the first person mentioned, and place them in the middle of your scratch diagram.",
+          "purpose": "Gives every subsequent clue a fixed point of reference."
+        },
+        {
+          "name": "Add one relative per clue",
+          "explanation": "Process the clues strictly in the order given, adding one box/line to the diagram per clue, marking gender where stated.",
+          "purpose": "Prevents the chain from becoming ambiguous halfway through — build incrementally, don't jump ahead."
+        },
+        {
+          "name": "Read off the answer",
+          "explanation": "Once every clue is placed, trace the path from the centre to the person asked about and name the relationship using standard terms.",
+          "purpose": "The diagram makes the final relationship visually obvious instead of requiring you to re-trace the logic verbally."
+        }
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Swapping maternal and paternal relations because the gendered wording was skimmed too fast.",
+        "Trying to resolve the whole chain mentally instead of sketching it — this is where multi-clue questions go wrong under time pressure.",
+        "Assuming a relationship is symmetric (e.g. 'A is B's brother' does not automatically make B 'A's brother' if B could be female — B would be A's sister)."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Always sketch, even for a 3-clue question — the few seconds spent drawing save far more time than a mental mistake would cost.",
+        "Underline or circle every gendered word ('brother', 'sister', 'son', 'daughter') as you read the question, before starting the diagram."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Blood relation questions are solved by building a family-tree diagram one clue at a time, not by mental tracking.",
+    "keyFacts": [
+      "Mother's brother = maternal uncle. Father's brother = paternal uncle — the two are commonly swapped as a distractor.",
+      "Relationships are not automatically symmetric across gender — check who is male/female at each step."
+    ],
+    "keyTerms": ["Maternal", "Paternal", "Family tree diagram"],
+    "commonConfusion": [
+      "A relationship stated from one person's perspective does not automatically mirror the same word from the other person's perspective."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Gender-specific relation terms (maternal vs paternal) are the most-tested distractor in this topic."
+    ],
+    "commonTraps": [
+      "Skimming past gendered wording and swapping maternal/paternal relations."
+    ],
+    "mustRemember": [
+      "Build the family tree incrementally, one clue at a time — never try to hold the full chain in your head."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

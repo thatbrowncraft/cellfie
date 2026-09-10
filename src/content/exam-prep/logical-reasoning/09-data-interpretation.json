@@ -1,0 +1,93 @@
+{
+  "id": "reasoning-data-interpretation",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 9,
+  "title": "Data Interpretation",
+  "shortDescription": "Read the axis labels, units, and scale note before touching a single number — most DI errors are misreads, not arithmetic mistakes.",
+  "genZNote": "DI doesn't test your maths. It tests whether you actually read the 'in lakhs' footnote before calculating anything.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Data Interpretation questions present information as a table, bar/line graph, or pie chart and ask questions requiring accurate reading plus straightforward arithmetic (percentages, ratios, averages) on the values. The key skill is reading the AXIS LABELS, UNITS, and any 'in thousands/lakhs' scale note BEFORE calculating — a large share of DI errors come from a units/scale misread, not from the arithmetic itself."
+    },
+    {
+      "id": "reading-checklist",
+      "heading": "Before You Calculate Anything",
+      "bullets": [
+        "What does each axis represent, and in what unit?",
+        "Is there a scale multiplier note (e.g. 'values in ₹ lakhs' or 'in thousands')? Every value read off the chart must be multiplied by this before use.",
+        "For a pie chart, are the segments given in percentages or absolute values? A percentage segment needs the chart's stated total to convert to an absolute figure.",
+        "For a bar/line graph with two series, which line/bar colour or pattern corresponds to which label in the legend?"
+      ]
+    },
+    {
+      "id": "applying-quant-topics",
+      "heading": "DI Reuses Percentage, Ratio & Average — Not New Formulas",
+      "body": "DI rarely introduces a new calculation type — it reuses Percentage, Ratio, and Average from the Quantitative Aptitude topics, applied to values read off a chart instead of values given directly in text. If a DI question feels hard, the difficulty is almost always in reading the chart correctly, not in the underlying calculation."
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example — Pie Chart Percentage to Absolute",
+      "steps": [
+        {
+          "name": "Read the chart correctly",
+          "explanation": "A pie chart shows a company's total annual expenses of ₹50 lakh, with 'Salaries' as a 40% segment.",
+          "purpose": "Note both the segment percentage AND the stated total — you need both to get an absolute figure."
+        },
+        {
+          "name": "Calculate",
+          "explanation": "Salaries = 40% of ₹50 lakh = 0.40 × 50 = ₹20 lakh.",
+          "purpose": "Standard percentage-of-a-value calculation, once the correct total and percentage were both read off correctly."
+        }
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Forgetting to apply a stated scale multiplier ('in thousands', 'in lakhs') to a value read straight off a chart.",
+        "Reading a pie-chart percentage but forgetting it needs the chart's total to become an absolute figure.",
+        "Misreading which bar/line belongs to which legend entry in a multi-series chart.",
+        "Comparing two years'/categories' RAW values when the question actually asks for a percentage CHANGE between them, or vice versa."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Spend the first few seconds on any DI question reading the axis labels, legend, and scale note — before touching any number.",
+        "Once the chart is read correctly, apply the same Percentage/Ratio/Average techniques from those topics directly — don't look for a special 'DI formula' that doesn't exist."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "DI applies ordinary Percentage/Ratio/Average calculations to values read off a table or chart — most errors come from misreading units or scale, not arithmetic.",
+    "keyFacts": [
+      "Always check for a scale multiplier note ('in lakhs', 'in thousands') before using a value read off a chart.",
+      "A pie-chart percentage needs the chart's stated total to convert into an absolute value.",
+      "DI reuses Percentage, Ratio, and Average methods — it doesn't introduce new formulas."
+    ],
+    "keyTerms": ["Scale multiplier", "Pie chart segment", "Legend"],
+    "commonConfusion": [
+      "A pie-chart segment given as a percentage is not usable directly as an absolute value until multiplied by the chart's stated total."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Most DI mistakes are units/scale misreads, not arithmetic mistakes — read the chart carefully before calculating."
+    ],
+    "commonTraps": [
+      "Skipping the scale-multiplier note on a chart before using its values."
+    ],
+    "mustRemember": [
+      "DI questions reuse Percentage/Ratio/Average methods on chart-read values — no separate DI-specific formula exists."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "reasoning-syllogism-venn",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 6,
+  "title": "Syllogism & Venn Diagrams",
+  "shortDescription": "Don't trust the vibes, trust the circles — draw the sets and check whether a conclusion is GUARANTEED, not just plausible.",
+  "genZNote": "Don't trust the vibes. Trust the circles — a conclusion that just sounds right isn't the same as one the diagram actually forces.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "A syllogism gives two or more statements and asks what necessarily follows. The reliable method is Venn-diagram logic: draw circles for each set, apply each statement as a constraint on how the circles overlap, then check whether a proposed conclusion is TRUE IN EVERY POSSIBLE diagram consistent with the statements — not just one plausible-looking diagram."
+    },
+    {
+      "id": "statement-types",
+      "heading": "The Four Standard Statement Types",
+      "table": {
+        "columnHeaders": ["Statement", "Venn meaning"],
+        "rows": [
+          ["All A are B", "Circle A is entirely inside circle B"],
+          ["No A is B", "Circles A and B do not overlap at all"],
+          ["Some A are B", "Circles A and B overlap at least partially (exact extent unknown)"],
+          ["Some A are not B", "Part of circle A lies outside circle B (exact extent unknown)"]
+        ]
+      }
+    },
+    {
+      "id": "venn-technique",
+      "heading": "Two/Three-Set Venn Technique — Inside Out",
+      "body": "For a two- or three-set problem, fill the diagram from the INSIDE OUT: start with the region of overlap common to ALL sets (given directly or derivable), then work outward to the pairwise-only overlaps, then the 'only this set' outer regions — rather than trying to compute the outer regions first, which compounds errors since they are typically derived by subtracting the already-found overlaps from each set's total."
+    },
+    {
+      "id": "guaranteed-vs-possible",
+      "heading": "Guaranteed vs. Merely Possible",
+      "body": "The exam trap in syllogisms is a conclusion that COULD be true in some diagram but isn't FORCED to be true in every diagram consistent with the given statements. 'Some A are B' and 'Some A are not B' both leave real ambiguity about how much of A overlaps B — a conclusion that assumes a specific, unstated overlap amount is not a guaranteed conclusion, even if it sounds reasonable."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Accepting a conclusion that's merely consistent with the statements rather than strictly forced by them.",
+        "Assuming 'Some A are B' implies 'Some A are not B' (or the reverse) — 'some' statements don't fix the boundary, so both could still be true or the overlap could even be complete.",
+        "Combining statements about DIFFERENT pairs of sets into a conclusion about a THIRD, indirectly related pair without a valid chaining statement connecting them."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Draw at least one diagram that satisfies every given statement, then actively try to draw an ALTERNATIVE diagram that still satisfies the statements but breaks the proposed conclusion — if you can, the conclusion is not guaranteed.",
+        "Fill overlapping regions from the inside out for any multi-set Venn diagram question, whether it's a syllogism or a data-interpretation-style set problem."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Syllogisms are checked with Venn-diagram logic: a conclusion only counts if it holds in EVERY diagram consistent with the given statements, not just one.",
+    "keyFacts": [
+      "All A are B: A entirely inside B. No A is B: no overlap. Some A are B: partial overlap. Some A are not B: part of A outside B.",
+      "Fill multi-set Venn regions from the inside out — central overlap first, then pairwise, then exclusive regions.",
+      "'Some' statements leave the overlap boundary undetermined — don't assume more than is stated."
+    ],
+    "keyTerms": ["Syllogism", "Venn diagram", "Guaranteed conclusion"],
+    "commonConfusion": [
+      "A conclusion that is merely possible under the given statements is not the same as one that is logically guaranteed by them."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Try to draw a counter-example diagram before accepting a conclusion as guaranteed — this single check catches most wrong answers."
+    ],
+    "commonTraps": [
+      "Treating 'some' as implying a specific partial (not full, not zero) overlap when it actually leaves that open."
+    ],
+    "mustRemember": [
+      "Fill Venn regions inside-out: central overlap, then pairwise, then exclusive regions."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

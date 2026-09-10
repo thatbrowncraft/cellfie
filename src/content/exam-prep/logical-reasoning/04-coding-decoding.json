@@ -1,0 +1,87 @@
+{
+  "id": "reasoning-coding-decoding",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 4,
+  "title": "Coding-Decoding",
+  "shortDescription": "Find the ONE consistent shift or substitution rule from the given example, then apply it letter-by-letter or digit-by-digit to the new word.",
+  "genZNote": "It's not a secret code, it's a pattern with trust issues. Find the shift once, apply it everywhere — the code never changes mid-question.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Coding-decoding questions give an example pairing (a word coded into letters/numbers) and ask you to apply the SAME rule to a new word. The method: compare each letter/digit position between the original and the coded version to find the consistent transformation (a fixed alphabetical shift, a reversal, a substitution table), then apply that exact rule — not a guessed variation — to the new input."
+    },
+    {
+      "id": "common-rule-types",
+      "heading": "Common Rule Types",
+      "bullets": [
+        "Fixed alphabetical shift: every letter moves forward or backward by the same fixed number of positions (e.g. A→D, B→E is a +3 shift).",
+        "Reversal: the letters of the word are coded in reverse order, sometimes combined with a shift.",
+        "Position-based substitution: each letter is replaced by its numeric position in the alphabet (A=1, B=2, ...), sometimes with an added/subtracted constant.",
+        "Symbol/number substitution table: each letter maps to a specific symbol or digit given directly in the question, with no arithmetic pattern — just read the table."
+      ]
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example",
+      "steps": [
+        {
+          "name": "Find the rule from the example",
+          "explanation": "If CAT is coded as DBU, compare position by position: C→D (+1), A→B (+1), T→U (+1). The rule is a uniform +1 alphabetical shift.",
+          "purpose": "Confirm the SAME shift applies to every letter before trusting the rule — a rule that only fits one letter isn't the real rule."
+        },
+        {
+          "name": "Apply it to the new word",
+          "explanation": "Code DOG using the same +1 shift: D→E, O→P, G→H. DOG codes to EPH.",
+          "purpose": "Mechanical application of the confirmed rule — no re-guessing needed."
+        }
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Assuming a shift found for one or two letters applies to the whole word without checking every letter — a rule must hold consistently across ALL letters of the example.",
+        "Forgetting to wrap around the alphabet (after Z comes A again) for a shift that would otherwise run past Z.",
+        "Missing a reversal combined with a shift — always check if the coded letters are also in reverse order of the original word."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Write the original word and its code directly above/below each other, letter aligned with letter, before looking for the pattern — this makes a shift or reversal visually obvious.",
+        "Verify the rule against every letter in the given example before applying it to the new word; a rule confirmed on only 1 of 3 letters is not yet confirmed."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Coding-decoding finds one consistent letter/digit transformation rule from a given example and applies it unchanged to a new word.",
+    "keyFacts": [
+      "Common rule types: fixed alphabetical shift, reversal, position-number substitution, or a given symbol table.",
+      "A shift must be verified across every letter of the example before being trusted.",
+      "Alphabet shifts wrap around after Z back to A."
+    ],
+    "keyTerms": ["Alphabetical shift", "Reversal coding", "Position substitution"],
+    "commonConfusion": [
+      "A pattern that fits only part of the example word is not yet a confirmed rule — check every letter."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Aligning the original and coded word letter-by-letter makes the transformation rule visually obvious."
+    ],
+    "commonTraps": [
+      "Trusting a shift confirmed on only part of the example word."
+    ],
+    "mustRemember": [
+      "Confirm the rule against every letter of the given example before applying it to a new word."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

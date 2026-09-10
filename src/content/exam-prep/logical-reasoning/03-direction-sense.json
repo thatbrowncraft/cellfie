@@ -1,0 +1,88 @@
+{
+  "id": "reasoning-direction-sense",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 3,
+  "title": "Direction Sense",
+  "shortDescription": "Sketch a coordinate path instead of tracking turns in your head — net displacement and final facing direction come straight off the drawing.",
+  "genZNote": "North is the main character. Everything else is just trying to figure out where it went — sketch the path, don't narrate it.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Direction sense questions describe a sequence of turns and movements, then ask for the final direction, the net displacement, or the shortest distance back to the start. The reliable method is to sketch a simple coordinate path (treat North as +y, East as +x) rather than tracking turns mentally."
+    },
+    {
+      "id": "turn-rules",
+      "heading": "Turning Rules",
+      "bullets": [
+        "Facing North: a right turn faces East, a left turn faces West.",
+        "Facing East: a right turn faces South, a left turn faces North.",
+        "Facing South: a right turn faces West, a left turn faces East.",
+        "Facing West: a right turn faces North, a left turn faces South.",
+        "A 180° turn (or two successive same-direction 90° turns) reverses the current facing entirely."
+      ]
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example",
+      "steps": [
+        {
+          "name": "Plot the path",
+          "explanation": "A walks 5 km North, turns right, walks 3 km, turns right again, walks 5 km. Plot on a grid: start (0,0) → (0,5) after walking North → facing East now, walk 3 km → (3,5) → facing South now (right turn from East), walk 5 km → (3,0).",
+          "purpose": "Each turn and distance becomes a simple coordinate step — no need to visualise the whole path in your head."
+        },
+        {
+          "name": "Read off the answer",
+          "explanation": "Final position (3,0) vs start (0,0): straight-line distance = 3 km, due East of the start point.",
+          "purpose": "The displacement and direction are read directly off the two coordinate points."
+        }
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Confusing 'turns right' with 'turns to face right of the reader's view' instead of the walker's own current facing direction — always rotate relative to the walker's current heading, not a fixed compass view.",
+        "Forgetting that two consecutive right (or left) turns amount to a full reversal, and treating it as still facing perpendicular to the original direction.",
+        "Computing distance travelled (sum of all leg lengths) when the question actually asks for straight-line displacement from start to end, or vice versa."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Always sketch on scratch paper with North as up — even a rough grid prevents directional errors.",
+        "Re-read whether the question wants final direction, straight-line displacement, or total distance walked — these are three different answers from the same path."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Direction sense questions are solved by plotting turns and distances on a simple coordinate grid rather than tracking them mentally.",
+    "keyFacts": [
+      "Right/left turns rotate relative to the walker's CURRENT facing direction, not a fixed compass view.",
+      "Two same-direction 90° turns equal a full 180° reversal.",
+      "Straight-line displacement and total distance walked are different quantities — check which one is asked."
+    ],
+    "keyTerms": ["Displacement", "Bearing", "Coordinate path"],
+    "commonConfusion": [
+      "Turning right always means right relative to where the person is currently facing, not a fixed map direction."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Plotting each leg on a North-up coordinate grid removes almost all direction-tracking errors."
+    ],
+    "commonTraps": [
+      "Answering with total path length when straight-line displacement was asked, or vice versa."
+    ],
+    "mustRemember": [
+      "Right/left turns are always relative to the walker's current facing direction."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

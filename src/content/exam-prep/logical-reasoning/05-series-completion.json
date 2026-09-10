@@ -1,0 +1,77 @@
+{
+  "id": "reasoning-series-completion",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 5,
+  "title": "Series Completion (Number & Figure)",
+  "shortDescription": "Check whether consecutive terms differ by a constant, a multiplying factor, or an alternating rule before guessing the next term.",
+  "genZNote": "A series is just a pattern that hasn't introduced itself yet. Check difference, then ratio, then alternating — in that order, every time.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Series completion means identifying the single rule that generates every term, then applying it to find the missing/next term. Check, in order: is the difference between consecutive terms constant (arithmetic)? Is the ratio constant (geometric)? Does the rule alternate between two operations? Is it based on squares/cubes of position?"
+    },
+    {
+      "id": "checklist",
+      "heading": "The Checklist, in Order",
+      "bullets": [
+        "1. Constant difference (AP-style): 3, 7, 11, 15 → +4 each time.",
+        "2. Constant ratio (GP-style): 2, 6, 18, 54 → ×3 each time.",
+        "3. Alternating rule: 2, 5, 3, 6, 4, 7 → alternately +3 and −2 (two interleaved patterns).",
+        "4. Position-based (squares/cubes/primes): 1, 4, 9, 16, 25 → squares of 1,2,3,4,5.",
+        "5. Difference-of-differences: if the first differences aren't constant, check if THEY form their own constant-difference or constant-ratio series (second-order pattern)."
+      ]
+    },
+    {
+      "id": "figure-series",
+      "heading": "Figure Series — the Visual Version",
+      "body": "For a series of shapes/figures rather than numbers, identify the SINGLE consistent transformation (rotation by a fixed angle, an added or removed element, a shading change, a reflection) that explains EVERY step from one figure to the next, then apply that exact transformation to find the missing figure. Options that satisfy only part of the transformation are deliberately included as distractors — verify a candidate answer against the FULL rule, not just one visible feature."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Stopping at the first pattern that fits 2 terms without checking it against ALL given terms.",
+        "Missing an alternating two-rule series and forcing a single constant difference/ratio onto it.",
+        "In figure series, picking an option that matches the rotation but not the shading (or vice versa) — the correct option must satisfy every part of the identified rule simultaneously."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Run through the checklist (difference → ratio → alternating → position-based) in order rather than guessing randomly.",
+        "For figure series, describe the transformation in words first ('rotates 90° clockwise and adds one dot') before scanning the options — this prevents being misled by an option that's only partially correct."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Series completion identifies one consistent generating rule — constant difference, constant ratio, alternating, or position-based — and applies it to find the missing term.",
+    "keyFacts": [
+      "Check constant difference first, then constant ratio, then alternating rules, then position-based patterns.",
+      "A figure-series rule must explain EVERY step in the given sequence, not just the last one.",
+      "Distractor options in figure series typically satisfy only part of the correct transformation."
+    ],
+    "keyTerms": ["Arithmetic series", "Geometric series", "Alternating series", "Second-order difference"],
+    "commonConfusion": [
+      "A pattern that fits the first two terms isn't confirmed until it also fits every remaining given term."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Running difference → ratio → alternating → position-based in that fixed order catches almost every number-series type quickly."
+    ],
+    "commonTraps": [
+      "Forcing a single-rule pattern onto what is actually an alternating two-rule series."
+    ],
+    "mustRemember": [
+      "Verify any candidate rule against ALL given terms, not just the first two."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

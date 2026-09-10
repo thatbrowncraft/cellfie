@@ -1,0 +1,87 @@
+{
+  "id": "reasoning-problems-on-ages",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 1,
+  "title": "Problems on Ages",
+  "shortDescription": "Algebra word problems wearing a family costume — anchor every age to the same reference year before writing a single equation.",
+  "genZNote": "Age problems aren't about age at all. They're algebra cosplaying as a family reunion — one variable, one timeline, done.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Every 'problems on ages' question is a linear-equation word problem. Assign a variable to ONE person's CURRENT age, express every other stated age (present, past, or future) in terms of that same variable using the given ratio or difference, then solve the resulting equation."
+    },
+    {
+      "id": "the-anchor-rule",
+      "heading": "The Anchor Rule — Same Reference Year, Every Time",
+      "body": "The single most common mistake in this topic is applying a ratio or difference stated for ONE time point (e.g. 'present ages are in ratio 3:4') to a DIFFERENT time point (e.g. '5 years ago') without re-deriving it. A ratio that holds now does not automatically hold 5 years ago or 5 years hence — each time point needs its own expression built from the same base variable."
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example",
+      "steps": [
+        {
+          "name": "Set up the variable",
+          "explanation": "'5 years ago, A was twice as old as B. In 5 years, A will be 1.5 times as old as B. Find their present ages.' Let A's age 5 years ago = x, so B's age 5 years ago = x/2.",
+          "purpose": "Anchor both people's ages to the SAME past reference point using one variable."
+        },
+        {
+          "name": "Express present and future ages",
+          "explanation": "Present ages: A = x+5, B = x/2+5. In 5 years: A = x+10, B = x/2+10.",
+          "purpose": "Every age is now expressed in terms of the single variable x, correctly re-anchored at each time point."
+        },
+        {
+          "name": "Solve",
+          "explanation": "Second condition: x+10 = 1.5 × (x/2+10). Solve this single linear equation for x, then compute present ages from x+5 and x/2+5.",
+          "purpose": "One equation, one unknown — because every age was correctly tied back to the same base variable."
+        }
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Applying a ratio stated 'now' to a past or future time point without adjusting it.",
+        "Using two different variables for two people's current ages when a single shared variable (from the ratio) would need only one.",
+        "Forgetting that 'X years ago' means subtracting X from present age, and 'X years hence' means adding X — mixing the sign is a frequent slip."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Write out present, past, and future ages for every person as expressions of ONE variable before forming any equation — resist the urge to jump straight to solving.",
+        "Re-read which time point each given ratio or difference actually refers to before using it."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Age problems are linear-equation word problems — one variable, every stated age re-anchored to the same time point.",
+    "keyFacts": [
+      "Assign a variable to one person's current (or a stated reference) age, then express all others in terms of it.",
+      "A ratio or difference stated for one time point does not automatically hold at another — re-derive it.",
+      "'X years ago' subtracts X from present age; 'X years hence' adds X."
+    ],
+    "keyTerms": ["Reference year", "Present age", "Age ratio"],
+    "commonConfusion": [
+      "A stated present-age ratio cannot be reused unchanged for a past or future time point."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Every age problem reduces to one linear equation once all ages are expressed via a single shared variable."
+    ],
+    "commonTraps": [
+      "Reusing a present-time ratio at a different time point without re-deriving it."
+    ],
+    "mustRemember": [
+      "Anchor every stated age to the same reference year using one variable before writing the equation."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

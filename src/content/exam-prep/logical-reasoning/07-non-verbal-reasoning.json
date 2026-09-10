@@ -1,0 +1,92 @@
+{
+  "id": "reasoning-non-verbal",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 7,
+  "title": "Non-Verbal Reasoning: Mirror, Water & Paper Folding",
+  "shortDescription": "Mirror flips left-right, water flips up-down, paper folding punches through every layer — three different transformations, easy to tell apart once you name them.",
+  "genZNote": "Mirror image, water image, paper folding — three different party tricks, three different rules. Name which trick you're looking at before you pick an option.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Each of these three question types applies a SPECIFIC, different geometric transformation to a figure. Misidentifying which transformation is being asked for is the main source of wrong answers — the fastest fix is naming the transformation before scanning the options."
+    },
+    {
+      "id": "mirror-image",
+      "heading": "Mirror Image",
+      "body": "A mirror image reflects the figure LEFT-TO-RIGHT across a vertical line (as if a mirror were held vertically along one edge of the figure) — like reading the figure in a mirror placed to its side. Numbers and letters typically appear reversed left-to-right; positions of elements swap left and right, but top and bottom stay the same."
+    },
+    {
+      "id": "water-image",
+      "heading": "Water Image",
+      "body": "A water image reflects the figure TOP-TO-BOTTOM across a horizontal line — as if the figure were reflected in still water below it. Top and bottom swap; left and right stay the same. This is the transformation most often confused with mirror image, since both are 'reflections' but across perpendicular axes."
+    },
+    {
+      "id": "paper-folding",
+      "heading": "Paper Folding & Punching",
+      "body": "A paper-folding question shows a sheet folded one or more times, then punched with a hole (or a shape cut out), and asks what the sheet looks like unfolded. The technique: work BACKWARDS from the last fold to the first, mirroring the punched hole's position across each fold line in reverse order — every fold line the hole crosses adds a mirrored hole on the other side of that line once unfolded."
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example — Paper Folding",
+      "steps": [
+        {
+          "name": "Identify the fold sequence",
+          "explanation": "A square sheet is folded in half vertically, then in half horizontally, then punched with one hole near a corner of the small folded square.",
+          "purpose": "Note both fold lines and their order — you'll undo them in reverse."
+        },
+        {
+          "name": "Unfold in reverse order",
+          "explanation": "Undo the horizontal fold first: the single hole becomes two holes, mirrored across the horizontal fold line. Then undo the vertical fold: each of those two holes becomes two more, mirrored across the vertical fold line — four holes total.",
+          "purpose": "Each fold you undo doubles the hole count via a mirror reflection across that specific fold line."
+        }
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Confusing mirror image (left-right flip) with water image (top-bottom flip) — always check which axis the question specifies or implies.",
+        "Undoing paper folds in the same order they were made instead of in REVERSE order.",
+        "Forgetting that a fold line the hole does NOT cross doesn't add a mirrored hole across that particular line."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Name the transformation type out loud/in your head ('this is a water image — top-bottom flip') before looking at the answer options.",
+        "For paper folding, count the number of folds; the final unfolded hole count is often (but not always, depending on hole position relative to fold lines) a power of 2 related to the fold count — use this as a quick sanity check on your answer."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Mirror image flips left-right, water image flips top-bottom, and paper folding requires undoing folds in reverse order, mirroring the punched hole across each fold line.",
+    "keyFacts": [
+      "Mirror image: reflects left-right, top/bottom unchanged.",
+      "Water image: reflects top-bottom, left/right unchanged.",
+      "Paper folding: unfold in REVERSE order of folding, mirroring the hole across each fold line as you go."
+    ],
+    "keyTerms": ["Mirror image", "Water image", "Paper folding"],
+    "commonConfusion": [
+      "Mirror and water images are both 'reflections' but across perpendicular axes — one flips left-right, the other flips top-bottom."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Paper folding is always undone in reverse order of how the folds were made."
+    ],
+    "commonTraps": [
+      "Mixing up which axis mirror image vs water image reflects across."
+    ],
+    "mustRemember": [
+      "Name the transformation type before scanning the answer options."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

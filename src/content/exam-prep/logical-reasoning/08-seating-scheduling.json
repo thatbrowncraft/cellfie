@@ -1,0 +1,102 @@
+{
+  "id": "reasoning-seating-scheduling",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 8,
+  "title": "Seating Arrangement & Scheduling",
+  "shortDescription": "Place the strongest clue first and let the rest of the seating chart expose itself — a fixed process beats juggling every clue at once.",
+  "genZNote": "Place the strongest clue first. Let the rest of the seating chart expose itself — you're not solving a mystery, you're filling in a grid.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Seating arrangement and scheduling puzzles give a set of entities (people, events) and a list of clues about their relative positions, then ask for the full arrangement or specific facts about it. Both are solved with the same fixed process: identify the entities, find the FIXED clues, draw a base layout, place the strongest constraints first, resolve what's left, then verify every clue against the finished arrangement."
+    },
+    {
+      "id": "the-process",
+      "heading": "The Solving Process",
+      "steps": [
+        {
+          "name": "Identify entities and the layout shape",
+          "explanation": "List every person/event to be placed, and note the shape of the arrangement (straight line, circle facing inward/outward, a table with a fixed number of seats).",
+          "purpose": "Establishes exactly what needs to be placed and the geometry the clues will refer to."
+        },
+        {
+          "name": "Find the FIXED clues first",
+          "explanation": "Scan the clues for any that pin an entity to an absolute position ('X sits at one end', 'Y is third from the left') — place these on the diagram before anything relative.",
+          "purpose": "Fixed clues give you a stable skeleton to build the rest of the arrangement around."
+        },
+        {
+          "name": "Place the strongest relative constraints",
+          "explanation": "Among the remaining clues, apply the ones that most narrow the possibilities first — e.g. 'immediately to the left of' is stronger than 'somewhere to the left of'.",
+          "purpose": "Strong constraints eliminate the most possibilities per clue, converging on the answer faster."
+        },
+        {
+          "name": "Resolve remaining positions",
+          "explanation": "Use the weaker, more general clues to fill in whatever positions are still open, by elimination against what's already placed.",
+          "purpose": "By this point, most seats should already be constrained enough that only one or two options remain per seat."
+        },
+        {
+          "name": "Verify every clue",
+          "explanation": "Once the arrangement is complete, re-check it against EVERY given clue, not just the ones used to build it.",
+          "purpose": "Catches an arrangement that satisfies most clues but silently violates one that wasn't actively used during construction."
+        }
+      ]
+    },
+    {
+      "id": "circular-arrangement-note",
+      "heading": "Circular Arrangements — Facing Direction Matters",
+      "body": "For a circular arrangement, always establish whether people are facing INWARD (toward the centre) or OUTWARD (away from the centre) before applying 'left' and 'right' clues — the same physical seat is to a person's left in one facing direction and to their right in the other."
+    },
+    {
+      "id": "scheduling-note",
+      "heading": "Scheduling — Use a Timeline/Table",
+      "body": "For scheduling puzzles (who does what on which day/slot), draw a simple timeline or grid with days/slots as columns and entities as rows, and fill it in the same fixed-clues-first order as seating arrangements — the same process applies, just on a linear timeline instead of a seating layout."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Starting with the vaguest clue instead of the most specific/fixed one, leading to multiple valid-looking arrangements that only get disambiguated much later.",
+        "In circular arrangements, applying left/right without first fixing whether everyone faces inward or outward.",
+        "Finishing the arrangement without checking it against every original clue — an early-used clue can be silently contradicted later without you noticing."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Always sketch the layout (line, circle, grid) rather than tracking positions purely verbally.",
+        "Process clues in order of how much they constrain the arrangement — fixed position clues first, then strong relative clues, then weak ones — not in the order they happen to be written."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Seating and scheduling puzzles are solved by fixing absolute-position clues first, then applying the strongest relative clues, resolving the rest, and verifying against every clue.",
+    "keyFacts": [
+      "Order of attack: entities & layout → fixed clues → strongest relative clues → remaining positions by elimination → full verification.",
+      "In circular arrangements, establish inward vs outward facing before applying left/right clues.",
+      "Scheduling puzzles use the same process on a timeline/grid instead of a seating layout."
+    ],
+    "keyTerms": ["Fixed clue", "Relative clue", "Circular arrangement", "Facing direction"],
+    "commonConfusion": [
+      "The same seat is a person's left in one facing direction and their right in the other — facing direction must be settled first."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Fixed absolute-position clues should always be placed before any relative clue."
+    ],
+    "commonTraps": [
+      "Applying left/right in a circular arrangement before fixing inward/outward facing."
+    ],
+    "mustRemember": [
+      "Verify the completed arrangement against every original clue, not just the ones used to build it."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}

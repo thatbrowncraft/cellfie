@@ -1,0 +1,87 @@
+{
+  "id": "reasoning-data-sufficiency",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 10,
+  "title": "Data Sufficiency",
+  "shortDescription": "The question isn't 'what's the answer' — it's 'do you even have enough receipts to find it'. Check each statement alone before letting them team up.",
+  "genZNote": "Data sufficiency's whole vibe: it's not asking 'what's the answer', it's asking 'do you even have enough receipts to answer'. Don't let the statements team up before you've checked them solo.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "A Data Sufficiency question gives a question followed by two (or more) numbered statements, and asks NOT for the actual answer but whether the given statement(s) are SUFFICIENT to determine it. The standard approach: evaluate each statement STRICTLY INDEPENDENTLY first — can Statement 1 alone answer the question? Can Statement 2 alone? — before ever considering them together."
+    },
+    {
+      "id": "the-independence-rule",
+      "heading": "Why Independence Comes First",
+      "body": "Combining the statements prematurely is the single most common data-sufficiency error, because it can make an insufficient statement look sufficient by borrowing information it doesn't actually have on its own. Checking each statement alone first is what the question is actually designed to test."
+    },
+    {
+      "id": "worked-example",
+      "heading": "Worked Example",
+      "steps": [
+        {
+          "name": "Check Statement 1 alone",
+          "explanation": "Question: find a rectangle's area. Statement 1: the perimeter is 40 cm. Alone, this is NOT sufficient — infinitely many length/breadth combinations share the same perimeter, each giving a different area.",
+          "purpose": "Establish Statement 1's sufficiency status in complete isolation from Statement 2."
+        },
+        {
+          "name": "Check Statement 2 alone",
+          "explanation": "Statement 2: the ratio of length to breadth is 3:2. Alone, this is also NOT sufficient — the ratio fixes the shape but not the absolute size, so area is still undetermined.",
+          "purpose": "Same independence check, now for Statement 2."
+        },
+        {
+          "name": "Check them together",
+          "explanation": "Perimeter + ratio together DO pin down both dimensions exactly, so the area becomes determinable — sufficient only when combined, not from either statement alone.",
+          "purpose": "Combining is the LAST step, only after both statements failed independently."
+        }
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Evaluating the two statements together FIRST, which can make an option look sufficient when neither statement is actually enough on its own — exactly the distinction the question is testing.",
+        "Concluding a statement is sufficient just because it seems 'related' or 'relevant' to the question, without actually checking whether it pins down a single, unique answer.",
+        "Forgetting that 'sufficient' means the statement determines a UNIQUE answer — a statement that narrows the possibilities but still leaves more than one valid answer is not sufficient."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy",
+      "bullets": [
+        "Always test Statement 1 alone, then Statement 2 alone, and only THEN test them together — in that fixed order, every time.",
+        "Ask 'does this pin down exactly ONE answer?' rather than 'does this help?' — helpful is not the same as sufficient."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Data Sufficiency asks whether given statements determine a UNIQUE answer — always test each statement alone before testing them together.",
+    "keyFacts": [
+      "Test Statement 1 alone, then Statement 2 alone, then together — in that fixed order.",
+      "Combining statements before checking them independently is the most common data-sufficiency error.",
+      "'Sufficient' means the statement(s) pin down exactly one answer, not merely that they're relevant."
+    ],
+    "keyTerms": ["Sufficiency", "Independent evaluation", "Unique answer"],
+    "commonConfusion": [
+      "A statement being relevant or helpful to the question is not the same as it being sufficient to determine a unique answer."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The independence check (each statement alone, before combining) is the entire skill this topic tests."
+    ],
+    "commonTraps": [
+      "Combining the two statements before checking either one alone."
+    ],
+    "mustRemember": [
+      "Sufficient = determines a unique answer, not merely 'helps' or 'is related'."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
+      "kind": "educational"
+    }
+  ]
+}
