@@ -23,6 +23,7 @@ Cellfie brings together:
 - 📊 Comparison Studio
 - 🧮 Formula Hub and calculators
 - 🧬 Interactive Periodic Table
+- ✒️ Exam-prep
 - 🔎 Search
 - 🌐 Online Knowledge
 - 📦 My Library
@@ -297,6 +298,100 @@ Depending on the element and available content, this can include:
 The Periodic Table is designed as an actual learning tool rather than just a decorative grid of elements.
 
 You can explore the table, jump between elements, understand their relationships and use it as a revision companion.
+
+---
+
+## 📚 Exam Prep
+
+**Exam Prep** is Cellfie's dedicated competitive-exam preparation hub, built to turn the syllabus into structured, revision-friendly learning instead of throwing students into giant textbook walls. 🧠✨
+
+It currently brings together:
+
+- 🇮🇳 **Constitution of India**
+  - Preamble
+  - Fundamental Rights
+  - Directive Principles of State Policy
+  - Fundamental Duties
+  - President, Vice President & Governor
+  - Parliamentary System
+  - Constitutional Amendments & Emergency Provisions
+  - Centre-State Relations
+  - Judicial System
+  - Constitutional Bodies
+
+- ✍️ **English**
+  - Grammar
+  - Vocabulary
+  - Sentence Skills
+  - Common Errors
+  - Synonyms & Antonyms
+  - Idioms & Phrases
+  - One-Word Substitutions
+  - Active & Passive Voice
+  - Direct & Indirect Speech
+  - Sentence Improvement, Rearrangement & related exam patterns
+
+- 🔢 **Quantitative Aptitude**
+  - Number Systems
+  - Simplification & Algebra
+  - Arithmetic concepts
+  - Formula-based problem solving
+  - Fast calculation methods
+  - Mental-math tricks and exam shortcuts
+  - Estimation, approximation, option elimination and time-saving approaches
+
+- 🧩 **Logical Reasoning & General Intelligence**
+  - Coding-Decoding
+  - Blood Relations
+  - Direction Sense
+  - Syllogisms
+  - Number/Letter Series
+  - Mirror & Water Images
+  - Paper Folding
+  - Pattern Matching
+  - Seating Arrangements
+  - Scheduling
+  - Logical Venn Diagrams
+  - Analytical puzzles
+
+- 🌍 **General Knowledge & Static GK**
+  - Indian History & Culture
+  - Ancient, Medieval & Modern India
+  - Art & Architecture
+  - Indian & World Geography
+  - Physical, Political & Economic Geography
+  - Basic Indian Economy
+  - Five-Year Plans
+  - National Budgets
+  - Other exam-relevant static knowledge
+
+- 📰 **Current Affairs · 2026**
+  - Gujarat-first current affairs
+  - India-focused developments
+  - Government policies & schemes
+  - Education & NEET-related updates
+  - ISRO & space developments
+  - Science & technology
+  - Economy
+  - Sports & awards
+  - Important appointments, events and national/international developments
+  - Focused strictly on **2026**, with Gujarat given priority
+
+### 🧠 Built for Revision, Not Textbook Overload
+
+Exam Prep topics are organized into meaningful sections and subsections so students can learn concepts, revise key facts, spot common traps and retain important information without getting buried under huge paragraphs.
+
+Where useful, topics include:
+
+**Concept → Key Facts → Examples → Shortcuts → Exam Traps → Quick Revision → 🧠 Gen Z Memory Hook**
+
+Each curated topic gets its own contextual Gen Z-style memory aid, making revision a little less painful and a lot more memorable. 😭🤝
+
+### 🎯 Syllabus-Focused
+
+Exam Prep is designed around the competitive-exam syllabus used for Cellfie's target learners, while keeping the content structured enough to expand with additional subjects and exam-specific material over time.
+
+> **Study smart. Revise faster. Get less cooked by the syllabus. 🫡📚**
 
 ---
 
