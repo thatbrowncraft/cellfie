@@ -33,6 +33,7 @@ export type ExamSubjectId =
   | 'english-language'
   | 'logical-reasoning'
   | 'general-knowledge'
+  | 'current-affairs-2026'
 
 export interface ExamSubject {
   id: ExamSubjectId
@@ -42,6 +43,15 @@ export interface ExamSubject {
   /** A Phosphor icon name, resolved by the consuming component — kept as a string so this file stays free of UI-library imports (mirrors `config/subjects.registry.ts`'s pattern). */
   icon: string
 }
+
+/**
+ * Current Affairs 2026 status flag — distinguishes a mission/scheme that
+ * was only announced or is still in progress from one that actually
+ * happened (or, per the brief, actually failed). Optional and only
+ * meaningful for `current-affairs-2026` topics; every other subject
+ * leaves it unset.
+ */
+export type CurrentAffairsStatus = 'announced' | 'ongoing' | 'completed' | 'failed'
 
 export interface ExamTopic {
   /** Stable id, e.g. "constitution-preamble". Never reused across subjects. */
@@ -58,6 +68,20 @@ export interface ExamTopic {
   quickRevision: QuickRevisionSummary
   examFocus: ExamFocusSummary
   sources: LessonSource[]
+  /**
+   * Current-Affairs-only metadata, all optional so every other subject's
+   * topic files are untouched. When `region` is set, `ExamPrepSubjectPage`
+   * groups the subject's topics by region (Gujarat first, per the brief)
+   * instead of rendering one flat list — see that component for the
+   * fallback behaviour when `region` is absent.
+   */
+  region?: 'gujarat' | 'india'
+  /** Landing-page category chip, e.g. "Government & Policies", "ISRO & Space". Free text, not a closed enum — the brief is explicit that categories should reflect what genuinely has 2026 content, not a fixed taxonomy. */
+  category?: string
+  /** ISO date (YYYY-MM-DD) of the actual event/announcement — NOT the publication date. Used for the "Current Affairs • 2026" date chip. */
+  eventDate?: string
+  /** See `CurrentAffairsStatus` — only set for items where "did this actually happen yet" is itself part of the exam-relevant fact (e.g. ISRO missions). */
+  status?: CurrentAffairsStatus
 }
 
 export type { LessonSection, LessonSource, QuickRevisionSummary, ExamFocusSummary }

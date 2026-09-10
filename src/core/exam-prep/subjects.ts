@@ -4,13 +4,13 @@
  * `config/subjects.registry.ts`'s "subjects are data, not code").
  *
  * "Constitution of India", "Quantitative Aptitude", "English Language",
- * "Logical Reasoning & General Intelligence", and "General Knowledge &
- * Static GK" are seeded — Current Affairs is deliberately NOT added as
- * an empty placeholder subject here (brief: "do not fabricate empty fake
- * content for subjects that are not implemented yet" — Current Affairs
- * specifically needs a dynamic source, not a static JSON file, and
- * hasn't been built yet). Adding the next subject later means appending
- * one entry here plus a matching topic folder under
+ * "Logical Reasoning & General Intelligence", "General Knowledge &
+ * Static GK", and "Current Affairs 2026" are seeded. Current Affairs is
+ * a CURATED, hand-researched 2026-only dataset — not the live/dynamic
+ * Knowledge Layer architecture (that's a separate, later task; see
+ * `current-affairs-2026`'s topic files for the "curated, not live"
+ * framing shown to the user). Adding the next subject later means
+ * appending one entry here plus a matching topic folder under
  * `src/content/exam-prep/<subject-id>/` — nothing about the landing
  * page, the subject page, or the topic page needs to change.
  */
@@ -57,6 +57,14 @@ export const EXAM_SUBJECTS: ExamSubject[] = [
       'History, Geography, and Economy — the stable, exam-tested facts and timelines that don\u2019t change week to week (Current Affairs is a separate, dynamic layer, coming later).',
     genZNote: "Static GK is the GK that isn't going anywhere — learn it once, it stays true.",
     icon: 'Globe'
+  },
+  {
+    id: 'current-affairs-2026',
+    title: 'Current Affairs \u2022 2026',
+    shortDescription:
+      'Gujarat first, India second \u2014 a curated set of verified 2026 events researched and written for this exam, not a live feed. Every item is dated and sourced; nothing here updates automatically.',
+    genZNote: "Today's headline can become tomorrow's MCQ \u2014 this is the 2026 shortlist worth actually remembering.",
+    icon: 'Newspaper'
   }
 ]
 
