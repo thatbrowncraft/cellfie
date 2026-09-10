@@ -74,6 +74,14 @@ const englishLanguageModules = import.meta.glob<{ default: unknown }>(
   '/src/content/exam-prep/english/*.json',
   { eager: true }
 )
+const logicalReasoningModules = import.meta.glob<{ default: unknown }>(
+  '/src/content/exam-prep/logical-reasoning/*.json',
+  { eager: true }
+)
+const generalKnowledgeModules = import.meta.glob<{ default: unknown }>(
+  '/src/content/exam-prep/general-knowledge/*.json',
+  { eager: true }
+)
 
 export const CONSTITUTION_TOPICS: ExamTopic[] = loadTopics(constitutionModules, 'constitution-of-india')
 export const QUANTITATIVE_APTITUDE_TOPICS: ExamTopic[] = loadTopics(
@@ -81,11 +89,15 @@ export const QUANTITATIVE_APTITUDE_TOPICS: ExamTopic[] = loadTopics(
   'quantitative-aptitude'
 )
 export const ENGLISH_LANGUAGE_TOPICS: ExamTopic[] = loadTopics(englishLanguageModules, 'english-language')
+export const LOGICAL_REASONING_TOPICS: ExamTopic[] = loadTopics(logicalReasoningModules, 'logical-reasoning')
+export const GENERAL_KNOWLEDGE_TOPICS: ExamTopic[] = loadTopics(generalKnowledgeModules, 'general-knowledge')
 
 const SUBJECT_TOPICS: Record<ExamSubjectId, ExamTopic[]> = {
   'constitution-of-india': CONSTITUTION_TOPICS,
   'quantitative-aptitude': QUANTITATIVE_APTITUDE_TOPICS,
-  'english-language': ENGLISH_LANGUAGE_TOPICS
+  'english-language': ENGLISH_LANGUAGE_TOPICS,
+  'logical-reasoning': LOGICAL_REASONING_TOPICS,
+  'general-knowledge': GENERAL_KNOWLEDGE_TOPICS
 }
 
 const SUBJECT_TOPICS_BY_ID: Record<ExamSubjectId, Map<string, ExamTopic>> = Object.fromEntries(
