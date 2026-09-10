@@ -1,0 +1,104 @@
+{
+  "id": "gk-art-culture-architecture",
+  "subjectId": "general-knowledge",
+  "syllabusOrder": 3,
+  "title": "Art, Culture & Architecture of India",
+  "shortDescription": "Match the monument to the style and the dynasty — most architecture questions are really a dynasty-identification question in disguise.",
+  "genZNote": "Every monument is basically a dynasty's business card. Learn the style, and you can guess who built it even without the name attached.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Architecture questions in static GK usually test the pairing of a famous structure with its architectural STYLE and the dynasty/period that built it — recognising the style (rock-cut caves, temple towers, Indo-Islamic domes and arches) narrows down the era even without recalling the exact name."
+    },
+    {
+      "id": "architectural-styles",
+      "heading": "Major Architectural Styles",
+      "table": {
+        "columnHeaders": ["Style", "Key features & examples"],
+        "rows": [
+          ["Rock-cut architecture", "Caves carved directly into rock — Ajanta and Ellora Caves (Buddhist, Hindu, Jain)"],
+          ["Dravidian temple style", "Tall stepped towers (gopuram) over the entrance, found in South Indian temples"],
+          ["Nagara temple style", "Curved tower (shikhara) over the sanctum, found in North Indian temples"],
+          ["Indo-Islamic architecture", "Domes, arches, minarets — Qutub Minar, Delhi; developed under the Delhi Sultanate and Mughals"],
+          ["Mughal architecture", "Symmetry, gardens, white marble inlay — Taj Mahal, Red Fort, Fatehpur Sikri"]
+        ]
+      }
+    },
+    {
+      "id": "unesco-sites",
+      "heading": "Frequently Tested Sites",
+      "bullets": [
+        "Taj Mahal, Agra — white marble mausoleum built by Shah Jahan for Mumtaz Mahal; UNESCO World Heritage Site.",
+        "Ajanta & Ellora Caves, Maharashtra — rock-cut Buddhist, Hindu, and Jain monuments; UNESCO World Heritage Sites.",
+        "Qutub Minar, Delhi — tall minaret begun under the Delhi Sultanate (Qutb-ud-din Aibak).",
+        "Khajuraho Temples, Madhya Pradesh — Nagara-style temples known for intricate sculptural work."
+      ]
+    },
+    {
+      "id": "performing-arts",
+      "heading": "Classical Dance Forms & Their States",
+      "table": {
+        "columnHeaders": ["Dance form", "State of origin"],
+        "rows": [
+          ["Bharatanatyam", "Tamil Nadu"],
+          ["Kathak", "Uttar Pradesh"],
+          ["Kathakali", "Kerala"],
+          ["Odissi", "Odisha"],
+          ["Kuchipudi", "Andhra Pradesh"],
+          ["Manipuri", "Manipur"]
+        ]
+      }
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Mixing up Dravidian (South Indian, gopuram towers) and Nagara (North Indian, shikhara towers) temple styles.",
+        "Attributing a classical dance form to the wrong state — each of the major classical forms has one clearly associated state of origin.",
+        "Confusing Indo-Islamic architecture (Delhi Sultanate era) with Mughal architecture (a later, related but distinct style with more symmetry and marble inlay work)."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Fast Recall Hooks",
+      "bullets": [
+        "Gopuram = South (Dravidian). Shikhara = North (Nagara).",
+        "Taj Mahal = Shah Jahan = Mughal = Agra.",
+        "Ajanta & Ellora = rock-cut caves = Maharashtra."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Indian art, culture, and architecture GK centres on matching monuments and art forms to their style and region/dynasty of origin.",
+    "keyFacts": [
+      "Dravidian style: tall gopuram towers, South India. Nagara style: shikhara towers, North India.",
+      "Taj Mahal (Agra) built by Shah Jahan; a Mughal architecture landmark.",
+      "Ajanta and Ellora Caves (Maharashtra) are rock-cut architecture, UNESCO World Heritage Sites.",
+      "Classical dance forms each map to one state: Bharatanatyam (Tamil Nadu), Kathak (Uttar Pradesh), Kathakali (Kerala), Odissi (Odisha)."
+    ],
+    "keyTerms": ["Gopuram", "Shikhara", "Rock-cut architecture", "Indo-Islamic architecture"],
+    "commonConfusion": [
+      "Dravidian and Nagara temple towers are both 'temple towers' but differ clearly in shape and region — gopuram (South) vs shikhara (North)."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Taj Mahal: Shah Jahan, Agra, Mughal architecture, UNESCO World Heritage Site.",
+      "Each major classical dance form maps to exactly one state of origin."
+    ],
+    "commonTraps": [
+      "Confusing Dravidian and Nagara temple styles.",
+      "Misattributing a classical dance form to the wrong state."
+    ],
+    "mustRemember": [
+      "Ajanta & Ellora = rock-cut caves, Maharashtra."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT Fine Arts / History textbooks (Indian Art and Culture)",
+      "kind": "educational"
+    }
+  ]
+}

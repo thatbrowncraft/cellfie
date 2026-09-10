@@ -1,0 +1,100 @@
+{
+  "id": "gk-indian-economy-basics",
+  "subjectId": "general-knowledge",
+  "syllabusOrder": 6,
+  "title": "Indian Economy — Basic Concepts & Five-Year Plans",
+  "shortDescription": "Economic jargon looks scary until you translate it into plain language — GDP, fiscal policy, and the Five-Year Plan numbering are mostly just vocabulary.",
+  "genZNote": "Economic jargon looks scary until you translate it into normal human language. GDP is just 'everything the country made, add it up'.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Static-GK Economy questions mostly test DEFINITIONS (what GDP/GNP/fiscal deficit mean), INSTITUTIONS (RBI, NITI Aayog, and their roles), and the Five-Year Plan sequence/numbering — not live statistics, which change constantly and belong to Current Affairs instead."
+    },
+    {
+      "id": "basic-terms",
+      "heading": "Basic Terms",
+      "table": {
+        "columnHeaders": ["Term", "Meaning"],
+        "rows": [
+          ["GDP (Gross Domestic Product)", "Total value of all goods and services produced WITHIN a country's borders in a period, regardless of who produced them"],
+          ["GNP (Gross National Product)", "GDP plus net income earned by the country's residents from abroad, minus income earned by foreigners domestically"],
+          ["Fiscal deficit", "The gap between the government's total expenditure and its total revenue (excluding borrowings), in a given year"],
+          ["Direct tax", "Levied directly on income/wealth of the payer, e.g. income tax — cannot be shifted to someone else"],
+          ["Indirect tax", "Levied on goods/services, e.g. GST — can be passed on from seller to buyer"],
+          ["Inflation", "A general, sustained rise in the price level of goods and services over time"]
+        ]
+      }
+    },
+    {
+      "id": "five-year-plans",
+      "heading": "Five-Year Plans — the Sequence",
+      "body": "India's Five-Year Plans were formulated by the Planning Commission, starting with the First Five-Year Plan (1951–56). The Planning Commission was replaced by the NITI Aayog (National Institution for Transforming India) in January 2015, after which the Five-Year Plan system was discontinued in favour of other planning approaches.",
+      "bullets": [
+        "First Five-Year Plan (1951–56): focused on agriculture and irrigation, including major dam projects.",
+        "The Planning Commission (est. 1950) drafted and oversaw the Five-Year Plans until its replacement.",
+        "NITI Aayog (2015) replaced the Planning Commission with a more advisory, cooperative-federalism-oriented role rather than the older centralised planning model."
+      ]
+    },
+    {
+      "id": "key-institutions",
+      "heading": "Key Economic Institutions",
+      "bullets": [
+        "Reserve Bank of India (RBI) — India's central bank, responsible for monetary policy, currency issuance, and regulating the banking system.",
+        "NITI Aayog — policy think tank/advisory body that replaced the Planning Commission in 2015.",
+        "Securities and Exchange Board of India (SEBI) — regulates the securities/stock markets.",
+        "Comptroller and Auditor General (CAG) — audits government accounts and expenditure (a constitutional body, also covered under the Constitution's constitutional bodies)."
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Confusing GDP (produced within the country's borders) with GNP (includes residents' income from abroad) — the distinction is about WHO earned it and WHERE, not just a synonym pair.",
+        "Assuming direct and indirect taxes can be told apart by amount or importance — the real distinction is whether the tax burden can be shifted to someone else (indirect) or not (direct).",
+        "Treating NITI Aayog as simply a renamed Planning Commission with the same powers — it has a distinctly more advisory, less centrally-directive role."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Fast Recall Hooks",
+      "bullets": [
+        "First Five-Year Plan: 1951–56, agriculture and irrigation focus.",
+        "Planning Commission (1950) → NITI Aayog (Jan 2015) — note the year of the switch.",
+        "GDP = produced within borders. GNP = GDP + net income from abroad."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Indian Economy static GK covers core definitions (GDP, GNP, fiscal deficit, direct/indirect tax), the Five-Year Plan sequence, and key institutions like the RBI and NITI Aayog.",
+    "keyFacts": [
+      "GDP: value of goods/services produced within the country. GNP: GDP + net income from abroad.",
+      "First Five-Year Plan: 1951–56, focused on agriculture and irrigation.",
+      "Planning Commission (1950) was replaced by NITI Aayog in January 2015.",
+      "Direct tax cannot be shifted to another party; indirect tax can be passed on (e.g. GST)."
+    ],
+    "keyTerms": ["GDP", "GNP", "Fiscal deficit", "NITI Aayog", "Direct tax", "Indirect tax"],
+    "commonConfusion": [
+      "GDP and GNP are not synonyms — GNP adds net income earned abroad by residents and subtracts income earned domestically by foreigners."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "NITI Aayog replaced the Planning Commission in January 2015, ending the Five-Year Plan system.",
+      "First Five-Year Plan (1951–56) focused on agriculture and irrigation."
+    ],
+    "commonTraps": [
+      "Treating GDP and GNP as interchangeable terms.",
+      "Assuming NITI Aayog has the same centralised planning powers as the old Planning Commission."
+    ],
+    "mustRemember": [
+      "Direct tax = on the payer's own income/wealth, non-transferable. Indirect tax = on goods/services, transferable (e.g. GST)."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT Economics textbooks (Class 9–12, Indian Economic Development)",
+      "kind": "educational"
+    }
+  ]
+}

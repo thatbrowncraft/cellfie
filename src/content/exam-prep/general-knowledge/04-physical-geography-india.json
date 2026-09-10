@@ -1,0 +1,99 @@
+{
+  "id": "gk-physical-geography-india",
+  "subjectId": "general-knowledge",
+  "syllabusOrder": 4,
+  "title": "Physical Geography of India",
+  "shortDescription": "Mountains, rivers, and climate zones — the physical map that most political and economic geography questions quietly assume you already know.",
+  "genZNote": "Maps aren't decoration, they're the cheat sheet for where everything decided to happen — learn the physical map once, reuse it everywhere.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Physical Geography questions test the major mountain ranges, river systems, and climate/soil zones of India, and how they relate to each other (e.g. which rivers originate in which mountains). This forms the base map that Political and Economic Geography questions build on."
+    },
+    {
+      "id": "mountain-ranges",
+      "heading": "Major Mountain Ranges",
+      "bullets": [
+        "The Himalayas — northern boundary of India, the world's youngest and highest mountain range, source of the major North Indian rivers (Ganga, Yamuna, Brahmaputra).",
+        "The Western Ghats — run along India's western coast, source of many peninsular rivers flowing west (e.g. parts of the Narmada and Tapi systems); a UNESCO-recognised biodiversity hotspot.",
+        "The Eastern Ghats — run along India's eastern coast, generally lower and more discontinuous than the Western Ghats.",
+        "The Aravalli Range — one of the oldest mountain ranges in the world, running through Rajasthan, Haryana, and Delhi."
+      ]
+    },
+    {
+      "id": "river-systems",
+      "heading": "River Systems",
+      "table": {
+        "columnHeaders": ["River", "Origin & note"],
+        "rows": [
+          ["Ganga", "Originates in the Himalayas (Gangotri glacier); the most significant North Indian river system"],
+          ["Yamuna", "Himalayan-origin tributary of the Ganga; flows through Delhi and Agra"],
+          ["Brahmaputra", "Originates in Tibet, enters India through Arunachal Pradesh and flows through Assam"],
+          ["Narmada", "Rises in the Amarkantak plateau (Madhya Pradesh); one of the few major Indian rivers flowing westward into the Arabian Sea"],
+          ["Tapi (Tapti)", "Rises in the Satpura Range; flows westward through Gujarat into the Arabian Sea, roughly parallel to the Narmada"],
+          ["Godavari", "Rises in Maharashtra; largest peninsular river, flows east into the Bay of Bengal"],
+          ["Krishna & Kaveri", "Peninsular rivers flowing east into the Bay of Bengal, both rising in the Western Ghats"]
+        ]
+      }
+    },
+    {
+      "id": "climate-and-soil",
+      "heading": "Climate & Soil Zones — the Basics",
+      "bullets": [
+        "India has a monsoon climate — the Southwest Monsoon (June–September) brings the majority of the country's annual rainfall.",
+        "Alluvial soil dominates the Indo-Gangetic plains, formed by river deposits, and is highly fertile for agriculture.",
+        "Black (regur) soil, found across the Deccan Plateau (including much of Gujarat and Maharashtra), is derived from volcanic (basalt) rock and is well suited to cotton cultivation.",
+        "Red and laterite soils are common in parts of peninsular India, generally less fertile than alluvial soil."
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Confusing river origin (where it rises) with the direction it flows — most major peninsular rivers (Godavari, Krishna, Kaveri) flow EAST into the Bay of Bengal, while the Narmada and Tapi are notable exceptions flowing WEST into the Arabian Sea.",
+        "Mixing up the Western Ghats (India's west coast, source of west-flowing rivers) with the Eastern Ghats (east coast, more discontinuous).",
+        "Assuming all Himalayan rivers behave the same way — the Brahmaputra originates in Tibet, not within India, unlike the Ganga and Yamuna."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Fast Recall Hooks",
+      "bullets": [
+        "Narmada and Tapi are the two major exceptions that flow WEST — nearly every other major peninsular river flows east.",
+        "Black/regur soil = Deccan Plateau = cotton. Alluvial soil = Indo-Gangetic plains = general agriculture."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Physical Geography of India covers the Himalayas and peninsular mountain ranges, the major river systems and their flow directions, and the country's main climate and soil zones.",
+    "keyFacts": [
+      "Himalayas: source of Ganga, Yamuna, Brahmaputra (via Tibet).",
+      "Narmada and Tapi are the two major rivers flowing WEST into the Arabian Sea; most other major peninsular rivers flow east.",
+      "Southwest Monsoon (June–September) brings most of India's annual rainfall.",
+      "Black/regur soil (Deccan Plateau, volcanic origin) suits cotton; alluvial soil (Indo-Gangetic plains) is the most fertile general-purpose soil."
+    ],
+    "keyTerms": ["Himalayas", "Western Ghats", "Alluvial soil", "Regur (black) soil", "Southwest Monsoon"],
+    "commonConfusion": [
+      "Narmada and Tapi flow west; almost every other major peninsular river (Godavari, Krishna, Kaveri) flows east — this exception is frequently tested."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Narmada and Tapi are the standout west-flowing exceptions among India's major rivers.",
+      "Black (regur) soil on the Deccan Plateau is associated with cotton cultivation."
+    ],
+    "commonTraps": [
+      "Assuming all major Indian rivers flow east, missing the Narmada/Tapi exception."
+    ],
+    "mustRemember": [
+      "Southwest Monsoon (June–September) is India's principal rainy season."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT Geography textbooks (India — Physical Geography)",
+      "kind": "educational"
+    }
+  ]
+}

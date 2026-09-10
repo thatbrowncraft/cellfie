@@ -1,0 +1,95 @@
+{
+  "id": "gk-modern-india-freedom-struggle",
+  "subjectId": "general-knowledge",
+  "syllabusOrder": 2,
+  "title": "Modern India — Freedom Struggle & Nation-Building",
+  "shortDescription": "1857 to 1947 in one clean timeline — the movements, leaders, and turning points that show up in nearly every static-GK paper.",
+  "genZNote": "The freedom struggle isn't one long story, it's a decades-long group project with a LOT of turning points — learn the timeline, then the names attached to each one.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Modern India questions test the sequence of major events between 1857 and 1947, the movements/leaders associated with each phase, and a handful of key dates. Anchor everything to the timeline first — most questions are really asking 'what came before/after what'."
+    },
+    {
+      "id": "timeline",
+      "heading": "Key Timeline",
+      "table": {
+        "columnHeaders": ["Year", "Event"],
+        "rows": [
+          ["1857", "Revolt of 1857 (First War of Independence) against East India Company rule"],
+          ["1885", "Indian National Congress (INC) founded"],
+          ["1905", "Partition of Bengal — sparked the Swadeshi Movement"],
+          ["1919", "Jallianwala Bagh massacre at Amritsar"],
+          ["1920", "Non-Cooperation Movement launched by Gandhi"],
+          ["1930", "Dandi March / Salt Satyagraha"],
+          ["1942", "Quit India Movement launched"],
+          ["1947", "Independence and Partition of India"]
+        ]
+      }
+    },
+    {
+      "id": "key-figures",
+      "heading": "Key Figures & Their Associated Movements",
+      "bullets": [
+        "Mahatma Gandhi — Non-Cooperation Movement (1920), Salt Satyagraha/Dandi March (1930), Quit India Movement (1942); philosophy of non-violent civil disobedience (satyagraha).",
+        "Bal Gangadhar Tilak — prominent early nationalist leader, associated with the Swadeshi Movement era.",
+        "Subhas Chandra Bose — formed the Indian National Army (INA) to fight for independence through armed resistance, a distinct approach from Gandhi's non-violence.",
+        "Bhagat Singh — revolutionary associated with armed resistance against British rule in the late 1920s."
+      ]
+    },
+    {
+      "id": "partition-and-independence",
+      "heading": "Partition & Independence",
+      "body": "India became independent on 15 August 1947, simultaneously partitioned into India and Pakistan. The Constitution of India was adopted on 26 November 1949 and came into force on 26 January 1950 — this three-year gap between independence and the Constitution coming into force is a commonly tested distinction."
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Confusing the date India became independent (15 August 1947) with the date the Constitution came into force (26 January 1950) — these are different events, roughly 2.5 years apart.",
+        "Mixing up the order of major movements — Non-Cooperation (1920) came before the Salt Satyagraha (1930), which came before Quit India (1942).",
+        "Attributing the INA to Gandhi's non-violent approach — it was Subhas Chandra Bose's distinct armed-resistance initiative."
+      ]
+    },
+    {
+      "id": "quick-revision-hooks",
+      "heading": "Fast Recall Hooks",
+      "bullets": [
+        "1857 revolt → 1885 INC founded → 1919 Jallianwala Bagh → 1920 Non-Cooperation → 1930 Dandi March → 1942 Quit India → 1947 Independence.",
+        "Independence Day (15 Aug 1947) ≠ Republic Day (26 Jan 1950, when the Constitution came into force)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Modern India covers the sequence of events and leaders from the 1857 revolt through independence in 1947.",
+    "keyFacts": [
+      "1857: Revolt against East India Company rule. 1885: Indian National Congress founded.",
+      "1920 Non-Cooperation Movement, 1930 Salt Satyagraha, 1942 Quit India Movement — in that order.",
+      "India became independent on 15 August 1947; the Constitution came into force on 26 January 1950.",
+      "Subhas Chandra Bose led the Indian National Army, a distinct armed-resistance approach from Gandhi's non-violence."
+    ],
+    "keyTerms": ["Satyagraha", "Swadeshi Movement", "Indian National Army (INA)", "Partition"],
+    "commonConfusion": [
+      "Independence Day (15 Aug 1947) and Republic Day (26 Jan 1950) are commonly confused — independence came first, the Constitution took effect over two years later."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "1857 revolt, 1885 INC founding, 1920/1930/1942 Gandhi-led movements, and 1947 independence are the most-tested dates in this topic."
+    ],
+    "commonTraps": [
+      "Confusing Independence Day with Republic Day.",
+      "Misordering the Non-Cooperation, Salt Satyagraha, and Quit India movements."
+    ],
+    "mustRemember": [
+      "India: independent 15 Aug 1947; Constitution in force 26 Jan 1950 (Republic Day)."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT History textbooks (Class 8, 12 — Modern India / Freedom Struggle)",
+      "kind": "educational"
+    }
+  ]
+}

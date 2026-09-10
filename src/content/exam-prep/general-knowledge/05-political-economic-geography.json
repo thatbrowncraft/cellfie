@@ -1,0 +1,100 @@
+{
+  "id": "gk-political-economic-geography",
+  "subjectId": "general-knowledge",
+  "syllabusOrder": 5,
+  "title": "Political & Economic Geography",
+  "shortDescription": "States, capitals, and borders on one side; resources, crops, and industry belts on the other — two different maps of the same country.",
+  "genZNote": "Political geography is 'who owns this square'. Economic geography is 'what does this square actually produce'. Learn them as two separate overlays on the same map.",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Political Geography tests state/UT boundaries, capitals, and neighbouring countries. Economic Geography tests where key resources, crops, and industries are concentrated. Both build on the physical map (mountains, rivers, climate) covered separately — a region's economic activity is rarely random, it follows its physical geography."
+    },
+    {
+      "id": "states-uts",
+      "heading": "States & Union Territories — the Basics",
+      "body": "India currently has 28 states and 8 Union Territories, following the 2019 reorganisation that split the former state of Jammu & Kashmir into the Union Territories of Jammu & Kashmir and Ladakh. Static-GK questions on this topic typically ask for a state's capital, its neighbouring states, or which country it borders (for border states)."
+    },
+    {
+      "id": "neighbouring-countries",
+      "heading": "India's Neighbouring Countries",
+      "bullets": [
+        "Land borders: Pakistan, China, Nepal, Bhutan, Bangladesh, Myanmar, and Afghanistan (a short border via the Pakistan-administered region).",
+        "Sri Lanka and Maldives are neighbouring countries reached by sea, not land border.",
+        "Gujarat itself borders Pakistan (to the northwest, via the Rann of Kutch) and the Arabian Sea (to the west) — a locally relevant fact for a Gujarat-based exam."
+      ]
+    },
+    {
+      "id": "economic-geography",
+      "heading": "Economic Geography — Resources & Crops",
+      "table": {
+        "columnHeaders": ["Resource/Crop", "Leading region(s)"],
+        "rows": [
+          ["Cotton", "Deccan Plateau black-soil belt — Gujarat, Maharashtra"],
+          ["Tea", "Assam, West Bengal (Darjeeling), and parts of South India (Nilgiris)"],
+          ["Coal", "Jharkhand, Odisha, Chhattisgarh — major coal-bearing states"],
+          ["Iron ore", "Odisha, Jharkhand, Chhattisgarh"],
+          ["Petroleum & natural gas", "Offshore western coast (Mumbai High), Gujarat, Assam"]
+        ]
+      }
+    },
+    {
+      "id": "port-cities",
+      "heading": "Major Ports",
+      "bullets": [
+        "Kandla (Deendayal) Port and Mundra Port — major ports on Gujarat's coastline.",
+        "Jawaharlal Nehru Port (Nhava Sheva) — near Mumbai, one of India's busiest container ports.",
+        "Chennai Port and Visakhapatnam Port — major east-coast ports."
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Confusing a land-bordering neighbour with a sea-only neighbour — Sri Lanka and Maldives do not share a land border with India.",
+        "Assuming resource distribution is uniform — coal/iron ore are concentrated in a specific eastern belt (Jharkhand-Odisha-Chhattisgarh), not spread evenly across the country.",
+        "Mixing up state capitals, especially for states that changed or have unusual capital arrangements."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Fast Recall Hooks",
+      "bullets": [
+        "28 states, 8 Union Territories (post-2019 J&K/Ladakh split).",
+        "Coal-iron belt = Jharkhand, Odisha, Chhattisgarh. Cotton belt = Deccan black soil = Gujarat, Maharashtra."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Political Geography covers state/UT boundaries and neighbouring countries; Economic Geography covers where key resources, crops, and industries are concentrated.",
+    "keyFacts": [
+      "India has 28 states and 8 Union Territories after the 2019 J&K reorganisation.",
+      "Land borders: Pakistan, China, Nepal, Bhutan, Bangladesh, Myanmar; Sri Lanka and Maldives are sea-only neighbours.",
+      "Coal and iron ore are concentrated in Jharkhand, Odisha, and Chhattisgarh.",
+      "Cotton is concentrated in the Deccan black-soil belt — Gujarat and Maharashtra."
+    ],
+    "keyTerms": ["Union Territory", "Land border", "Resource belt"],
+    "commonConfusion": [
+      "Sri Lanka and Maldives are often mistakenly listed as land-bordering neighbours — they are reached only by sea."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "28 states, 8 Union Territories is the current count following the 2019 J&K/Ladakh reorganisation.",
+      "Gujarat borders Pakistan and the Arabian Sea, and is a major cotton and petroleum region."
+    ],
+    "commonTraps": [
+      "Treating Sri Lanka or Maldives as land-bordering neighbours of India."
+    ],
+    "mustRemember": [
+      "Coal/iron belt: Jharkhand, Odisha, Chhattisgarh."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT Geography textbooks (India — Political and Economic Geography)",
+      "kind": "educational"
+    }
+  ]
+}

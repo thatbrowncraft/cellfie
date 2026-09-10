@@ -1,0 +1,99 @@
+{
+  "id": "gk-ancient-medieval-india",
+  "subjectId": "general-knowledge",
+  "syllabusOrder": 1,
+  "title": "Ancient & Medieval India",
+  "shortDescription": "From the Indus Valley to the Mughals — the period ladder and the handful of dynasties/rulers every static-GK paper circles back to.",
+  "genZNote": "History is humanity's longest group chat. Learn the timeline before memorising the receipts (dates, names, dynasties).",
+  "sections": [
+    {
+      "id": "core-idea",
+      "heading": "Core Idea",
+      "body": "Static GK history questions are almost always period-and-dynasty identification: which ruler belonged to which dynasty, what they're known for, and roughly when. Build the period ladder first (Indus Valley → Vedic → Mauryan → Gupta → early medieval regional kingdoms → Delhi Sultanate → Mughals), then hang the well-known facts onto it."
+    },
+    {
+      "id": "ancient-period",
+      "heading": "Ancient India — Key Periods",
+      "table": {
+        "columnHeaders": ["Period", "Known for"],
+        "rows": [
+          ["Indus Valley Civilization (c. 2500–1900 BCE)", "Urban planning, drainage systems, sites like Harappa and Mohenjo-daro"],
+          ["Vedic Period (c. 1500–600 BCE)", "Composition of the Vedas, early Sanskrit society"],
+          ["Mauryan Empire (c. 322–185 BCE)", "Chandragupta Maurya founded it; Ashoka's edicts and spread of Buddhism"],
+          ["Gupta Empire (c. 320–550 CE)", "Often called a 'Golden Age' — advances in mathematics, astronomy, and the arts"]
+        ]
+      }
+    },
+    {
+      "id": "medieval-period",
+      "heading": "Medieval India — Key Periods",
+      "table": {
+        "columnHeaders": ["Period", "Known for"],
+        "rows": [
+          ["Delhi Sultanate (1206–1526)", "Series of Turkic/Afghan dynasties (Slave, Khilji, Tughlaq, Sayyid, Lodi) ruling from Delhi"],
+          ["Vijayanagara Empire (1336–1646)", "Major South Indian power, known for temple architecture and trade"],
+          ["Mughal Empire (1526–1857, nominal)", "Founded by Babur; peak under Akbar, Jahangir, Shah Jahan (Taj Mahal), Aurangzeb"]
+        ]
+      }
+    },
+    {
+      "id": "must-know-figures",
+      "heading": "Must-Know Figures",
+      "bullets": [
+        "Ashoka — Mauryan emperor, adopted Buddhism after the Kalinga war, known for edicts inscribed on pillars and rocks across the empire.",
+        "Akbar — Mughal emperor known for administrative reforms and religious tolerance policies (e.g. abolition of the jizya tax on non-Muslims).",
+        "Shah Jahan — commissioned the Taj Mahal at Agra as a mausoleum for his wife Mumtaz Mahal."
+      ]
+    },
+    {
+      "id": "common-traps",
+      "heading": "Common Traps",
+      "bullets": [
+        "Confusing the Mauryan and Gupta empires' timelines — Mauryan is centuries earlier (c. 322 BCE) than Gupta (c. 320 CE).",
+        "Mixing up which Mughal emperor is associated with which monument — Shah Jahan (Taj Mahal) is the most commonly tested pairing.",
+        "Treating the Delhi Sultanate as a single dynasty — it was a sequence of five distinct dynasties over roughly three centuries."
+      ]
+    },
+    {
+      "id": "exam-strategy",
+      "heading": "Exam Strategy — Fast Recall Hooks",
+      "bullets": [
+        "Period ladder: Indus Valley → Vedic → Mauryan → Gupta → Delhi Sultanate → Mughals.",
+        "Ashoka = Mauryan, post-Kalinga Buddhism. Akbar = Mughal, religious tolerance. Shah Jahan = Mughal, Taj Mahal."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Ancient and Medieval India covers the period ladder from the Indus Valley Civilization through the Mughal Empire, and the rulers/dynasties associated with each period.",
+    "keyFacts": [
+      "Indus Valley Civilization: c. 2500–1900 BCE, known for urban planning at sites like Harappa and Mohenjo-daro.",
+      "Mauryan Empire founded by Chandragupta Maurya; Ashoka adopted Buddhism after the Kalinga war.",
+      "Gupta Empire (c. 320–550 CE) is often called a 'Golden Age' of Indian science and arts.",
+      "Delhi Sultanate (1206–1526): five dynasties — Slave, Khilji, Tughlaq, Sayyid, Lodi.",
+      "Mughal Empire founded by Babur (1526); Shah Jahan built the Taj Mahal."
+    ],
+    "keyTerms": ["Indus Valley Civilization", "Mauryan Empire", "Gupta Empire", "Delhi Sultanate", "Mughal Empire"],
+    "commonConfusion": [
+      "Mauryan (BCE) and Gupta (CE) empires are often confused for being close in time — they're separated by roughly five centuries."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Ashoka adopted Buddhism after the Kalinga war and spread it via edicts on pillars and rocks.",
+      "The Delhi Sultanate comprised five dynasties: Slave, Khilji, Tughlaq, Sayyid, Lodi."
+    ],
+    "commonTraps": [
+      "Confusing Mauryan and Gupta empire timelines.",
+      "Misattributing a Mughal monument to the wrong emperor."
+    ],
+    "mustRemember": [
+      "Shah Jahan built the Taj Mahal; Akbar is known for religious tolerance and administrative reform."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT History textbooks (Class 6–12, Ancient and Medieval India)",
+      "kind": "educational"
+    }
+  ]
+}
