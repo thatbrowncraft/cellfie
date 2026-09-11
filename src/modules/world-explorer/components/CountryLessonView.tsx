@@ -13,11 +13,23 @@
  * Visual language matches `ExamLessonView` and `CuratedLessonView`
  * exactly, so this still feels native to Cellfie rather than a bolted
  * -on feature.
+ *
+ * Sections render as individually collapsible cards (World Explorer
+ * content brief: "visually clean, collapsible ... easy to scan on
+ * mobile") in the canonical order from `core/world-explorer/sectionMeta`,
+ * regardless of the order a given country's JSON happens to list them
+ * in. A country with 7 sections and a country with 20 render through
+ * the exact same component — depth differs, structure doesn't.
  */
+import { useState, type ReactNode } from 'react'
+import { CaretDown } from '@phosphor-icons/react'
 import { ComparisonTable as DesignComparisonTable } from '@/shared/components'
+import { cn } from '@/shared/utils/cn'
+import { sortSectionsForDisplay } from '@/core/world-explorer/sectionMeta'
 import type { ExamFocusSummary, LessonSection, QuickRevisionSummary, CountryProfile } from '@/core/world-explorer/types'
 
-function SectionBody({ section }: { section: LessonSection }) {
+/** Exported so `WorldExplorerTopicPage` can render one country's section body inside its own per-country card — same rendering rules (bullets/body/steps/table), no duplicated logic. */
+export function SectionBody({ section }: { section: LessonSection }) {
   return (
     <>
       {section.body && (
@@ -99,10 +111,55 @@ function SectionBody({ section }: { section: LessonSection }) {
   )
 }
 
+/**
+ * A single collapsible card — same visual card language as before
+ * (`rounded-md border border-border bg-surface`), now with a tappable
+ * header so a 15-section country doesn't turn into an endless scroll.
+ * Controlled from the parent so an "Expand all" / "Collapse all"
+ * toggle can drive every card at once.
+ */
+function CollapsibleCard({
+  id,
+  heading,
+  isOpen,
+  onToggle,
+  children
+}: {
+  id: string
+  heading: string
+  isOpen: boolean
+  onToggle: () => void
+  children: ReactNode
+}) {
+  return (
+    <div className="rounded-md border border-border bg-surface">
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls={`country-section-${id}`}
+        onClick={onToggle}
+        className="flex w-full items-center justify-between gap-3 p-5 text-left"
+      >
+        <h3 className="font-ui text-ui font-semibold text-ink-primary">{heading}</h3>
+        <CaretDown
+          size={18}
+          className={cn('shrink-0 text-ink-tertiary transition-transform duration-micro ease-standard', isOpen && 'rotate-180')}
+          aria-hidden
+        />
+      </button>
+      {isOpen && (
+        <div id={`country-section-${id}`} className="flex flex-col gap-2 px-5 pb-5">
+          {children}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export function CountryQuickRevisionView({ title, quickRevision }: { title: string; quickRevision: QuickRevisionSummary }) {
   return (
     <div className="rounded-md border border-border bg-surface p-5">
-      <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Quick revision — {title}</h3>
+      <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">⚡ Quick revision — {title}</h3>
       <p className="mb-3 font-body text-body font-medium text-ink-primary">{quickRevision.oneLineDefinition}</p>
 
       {quickRevision.keyFacts.length > 0 && (
@@ -146,7 +203,7 @@ export function CountryQuickRevisionView({ title, quickRevision }: { title: stri
 export function CountryExamFocusView({ title, examFocus }: { title: string; examFocus: ExamFocusSummary }) {
   return (
     <div className="rounded-md border border-border bg-surface p-5">
-      <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Exam focus — {title}</h3>
+      <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">🎯 Why it matters for exams — {title}</h3>
 
       <h4 className="mb-1 font-ui text-caption font-semibold text-ink-secondary">High-yield facts</h4>
       <ul className="mb-3 list-disc space-y-1 pl-5 font-body text-body text-ink-primary">
@@ -199,6 +256,16 @@ export function CountryExamFocusView({ title, examFocus }: { title: string; exam
   )
 }
 
+/** Brief §"Gen Z Memory Hook" — the compact, country-specific memory line, surfaced as its own card at the end of the revision flow (it also appears as a tagline near the country name; repeating it here is deliberate — it's the very last thing a student sees before moving on). */
+export function CountryMemoryHookView({ genZNote }: { genZNote: string }) {
+  return (
+    <div className="rounded-md border border-terracotta/40 bg-surface p-5">
+      <h3 className="mb-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">🧠 Memory hook</h3>
+      <p className="font-ui text-body-lg italic text-ink-primary">{genZNote}</p>
+    </div>
+  )
+}
+
 /** Brief §7 — a clear, non-intrusive educational-use notice, shown once per country profile rather than as a legal-page-style banner. */
 export function EducationalUseNotice() {
   return (
@@ -213,15 +280,58 @@ export function EducationalUseNotice() {
 }
 
 export function CountryLessonView({ profile }: { profile: CountryProfile }) {
+  const orderedSections = sortSectionsForDisplay(profile.sections)
+  const [openIds, setOpenIds] = useState<Set<string>>(new Set())
+
+  function toggle(id: string) {
+    setOpenIds((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) {
+        next.delete(id)
+      } else {
+        next.add(id)
+      }
+      return next
+    })
+  }
+
+  function expandAll() {
+    setOpenIds(new Set(orderedSections.map((s) => s.id)))
+  }
+
+  function collapseAll() {
+    setOpenIds(new Set())
+  }
+
+  const allOpen = openIds.size === orderedSections.length && orderedSections.length > 0
+
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3">
       <EducationalUseNotice />
 
-      {profile.sections.map((section) => (
-        <div key={section.id} className="rounded-md border border-border bg-surface p-5">
-          <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{section.heading}</h3>
+      <div className="flex items-center justify-between">
+        <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+          {orderedSections.length} section{orderedSections.length === 1 ? '' : 's'}
+        </p>
+        <button
+          type="button"
+          onClick={allOpen ? collapseAll : expandAll}
+          className="font-ui text-micro font-medium text-terracotta hover:underline"
+        >
+          {allOpen ? 'Collapse all' : 'Expand all'}
+        </button>
+      </div>
+
+      {orderedSections.map((section) => (
+        <CollapsibleCard
+          key={section.id}
+          id={section.id}
+          heading={section.heading}
+          isOpen={openIds.has(section.id)}
+          onToggle={() => toggle(section.id)}
+        >
           <SectionBody section={section} />
-        </div>
+        </CollapsibleCard>
       ))}
 
       <div className="rounded-md border border-border bg-surface p-5">
