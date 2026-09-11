@@ -24,6 +24,7 @@ Cellfie brings together:
 - 🧮 Formula Hub and calculators
 - 🧬 Interactive Periodic Table
 - ✒️ Exam-prep
+- 🗺️ World-explorer 
 - 🔎 Search
 - 🌐 Online Knowledge
 - 📦 My Library
@@ -392,6 +393,44 @@ Each curated topic gets its own contextual Gen Z-style memory aid, making revisi
 Exam Prep is designed around the competitive-exam syllabus used for Cellfie's target learners, while keeping the content structured enough to expand with additional subjects and exam-specific material over time.
 
 > **Study smart. Revise faster. Get less cooked by the syllabus. 🫡📚**
+
+---
+
+## 🌍 World Explorer
+
+• Interactive globe for exploring countries and the world
+
+• Rotate, drag, zoom and search the globe
+
+• Tap or select countries to open their profiles
+
+• Multiple globe views, including Dark Scientific and Real World styles
+
+• Explore geography, people & culture, government and society
+
+• Learn about medical and scientific developments
+
+• Discover global relations and each country's relationship with India
+
+• Explore major industries, imports, exports and trade
+
+• See what each country is known for
+
+• Current-affairs connections where relevant
+
+• Exam-focused facts for competitive-exam preparation
+
+• Quick Revision sections for faster recall
+
+• 🧠 Country-specific Gen Z memory hooks
+
+• Mobile and desktop friendly
+
+• Designed to work offline where possible
+
+• Educational, structured and student-friendly
+
+**Explore the world. Connect the facts. Learn beyond the syllabus. 🌍**
 
 ---
 
