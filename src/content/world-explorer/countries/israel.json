@@ -1,0 +1,124 @@
+{
+  "id": "israel",
+  "name": "Israel",
+  "genZNote": "Israel revived Hebrew from a mostly liturgical, 'read but not spoken' language into the everyday tongue of millions in under a century — a linguistic comeback so rare that it's basically the one example every linguistics course points to.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A small country in West Asia on the eastern shore of the Mediterranean Sea, bordered by Lebanon, Syria, Jordan, and Egypt.",
+        "Diverse terrain within a small area: Mediterranean coastal plains, the Negev desert in the south, and the Jordan Rift Valley including the Dead Sea, Earth's lowest point on land.",
+        "Home to Jerusalem, a city held sacred by Judaism, Christianity, and Islam."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Hebrew is the primary official language; the revival of Hebrew as an everyday spoken language in the 19th-20th centuries is a globally notable linguistic achievement.",
+        "Predominantly Jewish-majority population alongside significant Arab (including Muslim, Christian, and Druze) minority communities.",
+        "A society built substantially through waves of Jewish immigration ('Aliyah') from diverse global communities after the state's founding in 1948."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary democracy with a President as ceremonial head of state and a Prime Minister as head of government, governed through the Knesset (unicameral parliament).",
+        "Established in 1948 following a United Nations partition plan for British Mandate Palestine, an event still central to the ongoing Israeli-Palestinian conflict.",
+        "Has no single written constitution, instead governed through a series of 'Basic Laws' with constitutional status."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A global leader in technology innovation, often called the 'Start-Up Nation' for its extremely high density of tech startups relative to population.",
+        "Major contributions to agricultural technology, particularly drip irrigation, pioneered to support farming in arid conditions.",
+        "Strong biotechnology, cybersecurity, and defence technology sectors, with close research links between its universities, military, and private industry."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Maintains a close strategic and defence partnership with the United States, its most significant international ally.",
+        "The Israeli-Palestinian conflict remains a central and long-running focus of Middle Eastern geopolitics and international diplomacy.",
+        "Established formal diplomatic relations with several Arab states through the 2020 Abraham Accords, alongside long-standing peace treaties with Egypt (1979) and Jordan (1994)."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Israel established full diplomatic relations in 1992 and now share a 'Strategic Partnership', with defence and technology cooperation as central pillars.",
+        "Israel is a major supplier of defence equipment and technology to India, including missile defence systems and drones.",
+        "Growing cooperation in agricultural technology (drip irrigation, precision farming) and water management, areas of particular relevance to Indian agriculture."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A highly developed, innovation-driven economy despite limited natural resources, strong in technology, defence, agriculture, and pharmaceuticals.",
+        "Global leader in venture capital investment per capita and technology startup creation.",
+        "Major exporter of cut diamonds, high-tech equipment, and agricultural technology."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being called the 'Start-Up Nation' for its exceptional technology entrepreneurship density.",
+        "Pioneering drip irrigation and other arid-land agricultural technologies.",
+        "The historic revival of Hebrew as a modern spoken language.",
+        "Being at the centre of the long-running Israeli-Palestinian conflict and broader Middle East diplomacy."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Israel is a parliamentary democracy on the eastern Mediterranean, established in 1948, known globally for technology innovation and central to Middle East geopolitics.",
+    "keyFacts": [
+      "Capital: Jerusalem (contested; most embassies historically in Tel Aviv). Currency: Israeli New Shekel.",
+      "Parliamentary democracy; unicameral Knesset; governed via Basic Laws rather than one written constitution.",
+      "Established in 1948 following a UN partition plan.",
+      "Known as the 'Start-Up Nation' for its technology sector."
+    ],
+    "keyTerms": [
+      "Knesset",
+      "Aliyah",
+      "Abraham Accords",
+      "Start-Up Nation"
+    ],
+    "commonConfusion": [
+      "Israel has no single formal written constitution — it is governed through a series of 'Basic Laws' that function with constitutional status."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Israel: parliamentary democracy, established 1948, Knesset as its parliament.",
+      "Global tech innovation leader ('Start-Up Nation'); pioneered drip irrigation.",
+      "India-Israel: full diplomatic relations since 1992; major defence and agri-tech partnership."
+    ],
+    "commonTraps": [
+      "Assuming Israel has a single written constitution — it relies on Basic Laws instead.",
+      "Overlooking that India-Israel diplomatic relations only formally began in 1992, despite older informal contacts."
+    ],
+    "mustRemember": [
+      "Israel: parliamentary democracy since 1948, Start-Up Nation, key India defence/agri-tech partner since 1992."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Israel Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "United Nations — historical partition plan background",
+      "kind": "educational",
+      "url": "https://www.un.org/"
+    }
+  ]
+}

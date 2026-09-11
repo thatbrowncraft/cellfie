@@ -1,0 +1,123 @@
+{
+  "id": "norway",
+  "name": "Norway",
+  "genZNote": "Norway turned North Sea oil money into the world's largest sovereign wealth fund — worth well over a trillion dollars — and still consistently ranks among the happiest countries on Earth, which is a genuinely rare combo of 'resource-rich' and 'well-governed.'",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Occupies the western part of the Scandinavian Peninsula in Northern Europe, famous for its dramatic fjords carved by ancient glaciers.",
+        "Has an extremely long, deeply indented coastline and includes Arctic territories, experiencing the midnight sun in summer and polar night in winter in its northern regions.",
+        "Sparsely populated relative to its area, with most people living along the southern coast, including the capital Oslo."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Norwegian is the official language; the culture reflects a strong connection to nature, outdoor activities ('friluftsliv'), and Viking-era historical heritage.",
+        "Known for a strong social-democratic tradition and consistently ranks among the world's happiest and most gender-equal countries.",
+        "Traditional Sami indigenous culture is present in the northern regions, with recognised indigenous rights and cultural institutions."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary constitutional monarchy; the King is a ceremonial head of state, while an elected Prime Minister and the Storting (parliament) govern.",
+        "Chose not to join the European Union in two separate referendums (1972 and 1994), though it participates in the EU single market through the European Economic Area (EEA).",
+        "Manages its vast oil wealth through the Government Pension Fund Global (its sovereign wealth fund), one of the largest in the world, designed to benefit future generations."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A global leader in hydropower and, increasingly, offshore wind and other renewable energy technologies, despite its wealth being built on oil and gas.",
+        "Advanced maritime and offshore engineering expertise, developed initially for North Sea oil extraction and now applied to green shipping technology.",
+        "Strong public health outcomes supported by a well-funded universal healthcare system funded substantially by oil revenues."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A NATO founding member (1949) but not an EU member, participating in the EU single market through the European Economic Area (EEA) instead.",
+        "Awards the Nobel Peace Prize in Oslo, per Alfred Nobel's will, giving it a distinct role in that global institution.",
+        "An active contributor to international peace mediation efforts and development aid, disproportionate to its small population size."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Norway cooperate closely on ocean/blue economy initiatives, renewable energy, and maritime technology through a dedicated bilateral Ocean Dialogue.",
+        "Norway's sovereign wealth fund is a significant portfolio investor in publicly listed Indian companies.",
+        "Growing collaboration on fisheries management, shipping, and green maritime technology, areas where Norway has world-leading expertise."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A wealthy economy built substantially on North Sea oil and natural gas exports, managed through the world's largest sovereign wealth fund.",
+        "A major global exporter of seafood (particularly salmon) and maritime/shipping services.",
+        "Increasingly investing oil-derived wealth into renewable energy and green shipping technology for long-term economic diversification."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Dramatic fjords and Viking heritage.",
+        "Managing the world's largest sovereign wealth fund, built from oil revenues.",
+        "Consistently ranking among the world's happiest and most gender-equal countries.",
+        "Awarding the Nobel Peace Prize in Oslo."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Norway is a wealthy Scandinavian parliamentary constitutional monarchy, a NATO founder but not an EU member, known for its fjords and the world's largest sovereign wealth fund.",
+    "keyFacts": [
+      "Capital: Oslo. Currency: Norwegian Krone.",
+      "Parliamentary constitutional monarchy; King ceremonial, Prime Minister governs.",
+      "Not an EU member (rejected membership twice); participates via the EEA instead.",
+      "Manages the world's largest sovereign wealth fund, built from oil and gas revenues."
+    ],
+    "keyTerms": [
+      "Fjords",
+      "Storting",
+      "EEA",
+      "Government Pension Fund Global"
+    ],
+    "commonConfusion": [
+      "Norway is a NATO founding member but has never joined the European Union — it accesses the EU single market through the separate EEA agreement instead."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Norway: parliamentary constitutional monarchy; NATO founder; not an EU member (uses EEA).",
+      "Manages the world's largest sovereign wealth fund from oil/gas revenues.",
+      "India-Norway: Ocean Dialogue on blue economy; Norway's wealth fund invests significantly in Indian equities."
+    ],
+    "commonTraps": [
+      "Assuming Norway is an EU member because it's a wealthy Western European nation — it is not.",
+      "Confusing Norway's Nobel Peace Prize role with Sweden hosting the other Nobel Prizes."
+    ],
+    "mustRemember": [
+      "Norway: constitutional monarchy, NATO founder outside the EU, world's largest sovereign wealth fund, India ocean/blue-economy partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Norway Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Norges Bank Investment Management — Government Pension Fund Global",
+      "kind": "educational"
+    }
+  ]
+}

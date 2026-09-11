@@ -1,0 +1,123 @@
+{
+  "id": "canada",
+  "name": "Canada",
+  "genZNote": "Canada is the world's second-largest country by area but has most of its population squeezed within about 150 km of the US border — basically one giant, sparsely populated country with almost everyone living in a thin southern strip.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The world's second-largest country by total area, spanning six time zones, bordered only by the United States (the world's longest international land border).",
+        "Contains vast boreal forests, the Rocky Mountains, the Canadian Shield, and Arctic territories in the north, alongside the Great Lakes shared with the US.",
+        "The overwhelming majority of Canada's population lives within about 150 km of the southern US border, leaving much of the country's northern territory very sparsely populated."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "English and French are both official languages, with French predominant in Quebec, reflecting Canada's British and French colonial history.",
+        "Officially embraces multiculturalism as government policy, with large and growing immigrant communities from around the world, including a significant Indian diaspora.",
+        "Indigenous peoples (First Nations, Inuit, and Métis) have distinct rights and cultures recognised in Canada's Constitution, alongside ongoing reconciliation efforts."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal parliamentary constitutional monarchy; the British monarch is head of state (represented domestically by a Governor General), while an elected Prime Minister leads the government.",
+        "Composed of 10 provinces and 3 territories, each with significant autonomous powers under Canada's federal system.",
+        "Gained full legislative independence from the UK through the 1982 Constitution Act (patriation of the Constitution), while retaining the monarchy as a ceremonial link."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Discovered insulin (Banting and Best, 1921) at the University of Toronto, one of medicine's most significant lifesaving breakthroughs, still crucial for diabetes treatment worldwide.",
+        "A global leader in universal public healthcare policy, providing a widely studied model of publicly funded health insurance.",
+        "Strong in aerospace, artificial intelligence research (Toronto and Montreal are major global AI research hubs), and natural resource extraction technology."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A G7 and G20 member, and a founding member of NATO, with deep economic and security integration with the United States.",
+        "A member of the Commonwealth of Nations, reflecting its historical ties to Britain, while maintaining an independent foreign policy.",
+        "An active contributor to UN peacekeeping missions historically, and a significant voice in international climate and multilateral diplomacy."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Canada share deep people-to-people ties through one of the world's largest Indian diaspora communities outside India, particularly of Punjabi origin.",
+        "Significant trade, education (Canada is a top destination for Indian international students), and investment ties exist despite periodic diplomatic friction over issues connected to Khalistani separatist activity in Canada.",
+        "Both countries continue to engage on trade agreement negotiations and economic cooperation despite periods of strained diplomatic relations."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A highly developed, resource-rich economy strong in energy (oil sands, natural gas), mining, agriculture, and technology.",
+        "Deeply integrated with the US economy through extensive cross-border trade and the USMCA (US-Mexico-Canada Agreement) trade pact.",
+        "A major global exporter of crude oil, potash (a key fertiliser input), and agricultural products like wheat and canola."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Vast natural landscapes, national parks, and being the world's second-largest country by area.",
+        "The discovery of insulin, a landmark global medical breakthrough.",
+        "Being home to one of the world's largest Indian diaspora communities.",
+        "Multiculturalism as an official national policy."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Canada is a federal parliamentary constitutional monarchy and the world's second-largest country by area, a G7 nation with deep economic ties to the US and one of the world's largest Indian diaspora communities.",
+    "keyFacts": [
+      "Capital: Ottawa. Currency: Canadian Dollar.",
+      "Federal parliamentary constitutional monarchy; British monarch is head of state.",
+      "World's second-largest country by area; population concentrated near the US border.",
+      "Discovered insulin (Banting and Best, 1921) at the University of Toronto."
+    ],
+    "keyTerms": [
+      "Governor General",
+      "Patriation (1982)",
+      "USMCA",
+      "First Nations"
+    ],
+    "commonConfusion": [
+      "Canada's head of state is the British monarch (represented by a Governor General), NOT the Prime Minister — the Prime Minister is head of government only."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Canada: federal parliamentary constitutional monarchy; capital Ottawa; world's 2nd-largest country by area.",
+      "Insulin was discovered in Canada (Banting and Best, 1921, University of Toronto).",
+      "India-Canada: one of the world's largest Indian diaspora communities; strong education and trade ties amid periodic diplomatic friction."
+    ],
+    "commonTraps": [
+      "Assuming Canada's Prime Minister is head of state — the British monarch holds that role, represented by the Governor General.",
+      "Confusing Canada's 1982 Constitution patriation with full independence — Canada was already self-governing well before that."
+    ],
+    "mustRemember": [
+      "Canada: G7 constitutional monarchy, insulin's discovery site, deep India diaspora and education ties, USMCA-integrated with the US economy."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Canada Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Canada — official portal",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": "morocco",
+  "name": "Morocco",
+  "genZNote": "Morocco sits just 14 km from Europe across the Strait of Gibraltar — close enough that on a clear day you can see Spain from its coast — making it the classic geography-exam example of two continents almost, but not quite, touching.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in northwestern Africa (the Maghreb region), bordered by Algeria and the Western Sahara territory, with coastlines on both the Atlantic Ocean and Mediterranean Sea.",
+        "Separated from Spain by only the narrow Strait of Gibraltar (about 14 km at its narrowest point) at its northern tip.",
+        "Diverse terrain including the Atlas Mountains, the Sahara Desert in the south, and fertile agricultural plains along the Atlantic coast."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Arabic and Berber (Tamazight) are both official languages, reflecting Morocco's deep indigenous Amazigh (Berber) heritage alongside Arab influence; French remains widely used in business and education.",
+        "A predominantly Muslim country with a rich architectural and artistic heritage blending Arab, Berber, Andalusian, and French colonial influences.",
+        "Famous for its historic walled cities (medinas), including Fez and Marrakech, and traditional crafts like carpet weaving and leatherwork."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A constitutional monarchy where the King holds significant executive powers alongside an elected Prime Minister and bicameral Parliament.",
+        "The Alaouite dynasty has ruled Morocco since the 17th century, giving it one of the longest-reigning royal families in the world.",
+        "Gained independence from French and Spanish colonial rule in 1956, though the disputed status of Western Sahara remains an unresolved territorial issue."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A growing regional hub for renewable energy, particularly the Noor Ouarzazate Solar Complex, one of the world's largest concentrated solar power plants.",
+        "Developing automotive and aerospace manufacturing sectors, positioning Morocco as an increasingly significant industrial hub for Africa and Europe.",
+        "Strong phosphate mining and processing industry, given Morocco's position holding a large share of the world's known phosphate reserves (essential for fertiliser production)."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A key African and Arab world diplomatic bridge, rejoining the African Union in 2017 after decades of absence over the Western Sahara dispute.",
+        "Maintains close historical and economic ties with France and Spain, given colonial-era history and geographic proximity.",
+        "Joined the 2020 Abraham Accords, normalising relations with Israel alongside several other Arab states."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Morocco maintain warm relations, with Morocco being a critical supplier of phosphates and phosphoric acid, essential raw materials for India's fertiliser industry.",
+        "Growing cooperation in agriculture, renewable energy, and pharmaceuticals.",
+        "Morocco has historically supported India's position on several international issues, and the two countries maintain regular high-level diplomatic engagement."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Holds a very large share of the world's known phosphate reserves, a critical raw material for global fertiliser production.",
+        "A growing manufacturing hub for automobiles and aerospace components, alongside a robust tourism and textile export sector.",
+        "A regional leader in renewable energy, particularly large-scale solar power projects."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Historic walled cities (medinas) of Fez and Marrakech.",
+        "Holding a dominant share of the world's phosphate reserves.",
+        "The Noor Ouarzazate Solar Complex, one of the world's largest solar power plants.",
+        "Being a key gateway between Africa, Europe, and the Arab world."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Morocco is a constitutional monarchy in northwestern Africa, close to Europe via the Strait of Gibraltar, and a critical global supplier of phosphates for fertiliser.",
+    "keyFacts": [
+      "Capital: Rabat. Currency: Moroccan Dirham.",
+      "Constitutional monarchy; Alaouite dynasty has ruled since the 17th century.",
+      "Holds a dominant share of the world's known phosphate reserves.",
+      "Home to one of the world's largest solar power plants (Noor Ouarzazate)."
+    ],
+    "keyTerms": [
+      "Maghreb",
+      "Alaouite dynasty",
+      "Western Sahara",
+      "Abraham Accords"
+    ],
+    "commonConfusion": [
+      "Morocco's largest city is Casablanca, but its capital is Rabat — a common point of confusion."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Morocco: constitutional monarchy, capital Rabat, Alaouite dynasty since the 17th century.",
+      "Dominant global phosphate reserve holder — critical for fertiliser production.",
+      "India-Morocco: key phosphate/phosphoric acid supplier for India's fertiliser industry."
+    ],
+    "commonTraps": [
+      "Assuming Casablanca is Morocco's capital — it is Rabat.",
+      "Overlooking the unresolved Western Sahara territorial dispute when discussing Morocco's borders."
+    ],
+    "mustRemember": [
+      "Morocco: constitutional monarchy, top phosphate supplier for India's fertiliser sector, major solar-energy investor, Africa-Europe-Arab bridge."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Morocco Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Morocco — official portal",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "ghana",
+  "name": "Ghana",
+  "genZNote": "Ghana was the first sub-Saharan African country to gain independence from colonial rule (1957) — Kwame Nkrumah's declaration became the spark that lit the entire continent's decolonisation wave over the following decades.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in West Africa on the Gulf of Guinea, bordered by Côte d'Ivoire, Burkina Faso, and Togo.",
+        "Features tropical coastal plains, forested regions in the south, and savanna in the north, with Lake Volta — one of the world's largest artificial lakes — as a major feature.",
+        "Historically known as the 'Gold Coast' during the colonial era, reflecting its significant gold resources."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "English is the official language, alongside numerous indigenous languages including Akan, Ewe, and Ga, reflecting Ghana's ethnic diversity.",
+        "Known for vibrant Kente cloth weaving, a traditional textile with deep cultural and historical significance, alongside rich drumming and dance traditions.",
+        "A significant site of historical memory around the transatlantic slave trade, with coastal forts like Cape Coast Castle serving as major heritage and reconciliation tourism sites."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A presidential republic and one of Africa's most stable multi-party democracies, with regular peaceful transfers of power since the 1990s.",
+        "The first sub-Saharan African country to gain independence from colonial rule, in 1957, under founding leader Kwame Nkrumah, inspiring a wave of decolonisation across the continent.",
+        "Known as the 'Gold Coast' under British colonial rule before adopting the name Ghana at independence, referencing the ancient Ghana Empire."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A regional leader in public health initiatives, including successful national health insurance scheme models studied by other developing nations.",
+        "Growing technology and fintech startup ecosystem in Accra, alongside traditional strengths in agricultural science (cocoa research).",
+        "Historic gold and, more recently, oil (offshore Jubilee field) extraction industries underpin significant portions of scientific and engineering investment."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding member of the Organisation of African Unity (predecessor to today's African Union) and a symbol of pan-Africanism under Kwame Nkrumah's leadership.",
+        "Widely regarded as one of the most politically stable democracies in West Africa, playing an active role in regional peacekeeping and mediation.",
+        "An active member of ECOWAS, promoting West African regional economic integration."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Ghana maintain warm relations dating to the shared Non-Aligned Movement era, with Ghana being one of India's key West African trade and development partners.",
+        "India has extended significant lines of credit to Ghana for infrastructure, agriculture, and rural electrification projects.",
+        "Growing Indian private investment in Ghana's pharmaceutical, automotive assembly, and agro-processing sectors."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "One of the world's largest producers and exporters of cocoa, alongside significant gold and, more recently, offshore oil production.",
+        "A growing West African hub for technology and financial services, alongside traditional agricultural export strength.",
+        "Historically known for the 'Gold Coast' name reflecting centuries of gold trade significance."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the first sub-Saharan African nation to gain independence (1957).",
+        "Being one of the world's top cocoa producers.",
+        "Kente cloth and vibrant traditional textile heritage.",
+        "Historic coastal slave-trade forts, now major heritage tourism and reconciliation sites."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Ghana is a stable West African presidential republic and multi-party democracy, the first sub-Saharan African nation to gain independence, and a top global cocoa producer.",
+    "keyFacts": [
+      "Capital: Accra. Currency: Ghanaian Cedi.",
+      "Presidential republic; one of Africa's most stable multi-party democracies.",
+      "First sub-Saharan African country to gain independence, in 1957, under Kwame Nkrumah.",
+      "One of the world's largest cocoa producers."
+    ],
+    "keyTerms": [
+      "Gold Coast",
+      "Kwame Nkrumah",
+      "Pan-Africanism",
+      "Kente cloth"
+    ],
+    "commonConfusion": [
+      "Ghana was called the 'Gold Coast' under British colonial rule — it adopted the name 'Ghana' at independence in 1957, referencing the ancient, historically unrelated Ghana Empire further north."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Ghana: presidential republic, capital Accra, first sub-Saharan African nation to gain independence (1957).",
+      "Top global cocoa producer; formerly known as the 'Gold Coast'.",
+      "India-Ghana: Non-Aligned Movement-era ties; India extends development credit lines for infrastructure and agriculture."
+    ],
+    "commonTraps": [
+      "Assuming the modern nation of Ghana is a direct continuation of the ancient Ghana Empire — the name was adopted symbolically at independence.",
+      "Overlooking Ghana's reputation as one of Africa's most stable democracies when discussing regional political stability."
+    ],
+    "mustRemember": [
+      "Ghana: first sub-Saharan African independence (1957), stable democracy, top cocoa producer, longstanding India development partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Ghana Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "African Union — historical background on decolonisation",
+      "kind": "educational",
+      "url": "https://au.int/"
+    }
+  ]
+}

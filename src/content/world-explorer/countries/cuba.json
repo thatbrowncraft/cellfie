@@ -1,0 +1,124 @@
+{
+  "id": "cuba",
+  "name": "Cuba",
+  "genZNote": "Cuba has run a Communist one-party state literally 90 miles off the coast of Florida since 1959 — a small island nation that became the single most defining Cold War flashpoint in the Western Hemisphere, from the Bay of Pigs to the Missile Crisis.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The largest island in the Caribbean, located just south of Florida, USA, with a long, narrow shape and extensive coastline.",
+        "Predominantly flat to gently rolling terrain with fertile plains historically dedicated to sugarcane and tobacco cultivation, and mountain ranges in the southeast.",
+        "Tropical climate, prone to Atlantic hurricanes, given its location within the Caribbean hurricane belt."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Spanish is the official language; the culture reflects a rich blend of Spanish colonial, African (brought via the slave trade), and indigenous Taíno influences.",
+        "World-renowned for its music (son, salsa, mambo) and dance traditions, alongside a strong literary and artistic heritage.",
+        "Baseball is the most popular national sport, a cultural legacy connected to Cuba's historical ties with the United States before the 1959 revolution."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A single-party socialist republic governed by the Communist Party of Cuba since the 1959 revolution led by Fidel Castro, which overthrew the Batista government.",
+        "Cuba operates a centrally planned economy alongside gradually expanding private enterprise reforms introduced in recent years.",
+        "Subject to a long-standing US trade embargo since the early 1960s, a central and enduring feature of its international economic relations."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Globally renowned for its healthcare system and medical training, exporting large numbers of doctors on international humanitarian missions to other developing countries.",
+        "Achieved notably strong public health outcomes (life expectancy, doctor-to-population ratio) despite its modest income level, a widely studied development case.",
+        "Developed its own domestically produced COVID-19 vaccines (e.g., Abdala, Soberana), a notable achievement for a small, sanctioned economy."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Has faced a comprehensive US trade embargo since the early 1960s, significantly shaping its economic development and international alliances.",
+        "Historically closely allied with the Soviet Union during the Cold War, and more recently with Venezuela, China, and Russia.",
+        "Played a central role in several major Cold War flashpoints, including the 1961 Bay of Pigs invasion and the 1962 Cuban Missile Crisis."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Cuba have maintained friendly relations since 1959, rooted in shared participation in the Non-Aligned Movement.",
+        "India has periodically extended humanitarian and medical assistance to Cuba, and the two countries collaborate on pharmaceutical and biotechnology research exchange.",
+        "Trade remains modest, constrained partly by the long-standing US embargo's effect on Cuba's broader international economic engagement."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A centrally planned economy historically dependent on sugar exports, now increasingly reliant on tourism, remittances, and medical service exports.",
+        "The long-standing US trade embargo has significantly constrained Cuba's access to international trade, finance, and technology.",
+        "Gradual market-oriented reforms in recent years have expanded small-scale private enterprise ('cuentapropismo')."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The 1959 Cuban Revolution led by Fidel Castro and Che Guevara.",
+        "A globally admired public healthcare and medical training system despite economic sanctions.",
+        "Vibrant music traditions including son, salsa, and mambo.",
+        "The 1962 Cuban Missile Crisis, a defining Cold War confrontation."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Cuba is a single-party socialist republic in the Caribbean, governed by the Communist Party since the 1959 revolution, known for its healthcare system and long-standing US trade embargo.",
+    "keyFacts": [
+      "Capital: Havana. Currency: Cuban Peso.",
+      "Single-party socialist republic under the Communist Party since the 1959 revolution.",
+      "Subject to a comprehensive US trade embargo since the early 1960s.",
+      "Globally recognised for its healthcare system and medical missions abroad."
+    ],
+    "keyTerms": [
+      "Cuban Revolution",
+      "US embargo",
+      "Cuentapropismo",
+      "Bay of Pigs"
+    ],
+    "commonConfusion": [
+      "The Cuban Missile Crisis (1962) and the Bay of Pigs invasion (1961) are two separate Cold War events — the invasion came first and failed, the missile crisis followed a year later."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Cuba: single-party socialist republic since the 1959 revolution; capital Havana.",
+      "Long-standing US trade embargo since the early 1960s; central Cold War flashpoint (Bay of Pigs 1961, Missile Crisis 1962).",
+      "India-Cuba: friendly ties since 1959 via the Non-Aligned Movement; periodic medical/humanitarian cooperation."
+    ],
+    "commonTraps": [
+      "Confusing the 1961 Bay of Pigs invasion with the 1962 Cuban Missile Crisis — distinct events a year apart.",
+      "Assuming Cuba's economy is purely state-run today — gradual private enterprise reforms have been introduced in recent years."
+    ],
+    "mustRemember": [
+      "Cuba: socialist republic since 1959, US-embargoed, healthcare/medical-mission leader, longstanding Non-Aligned Movement partner with India."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Cuba Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Pan American Health Organization — Cuba health system background",
+      "kind": "scientific",
+      "url": "https://www.paho.org/"
+    }
+  ]
+}

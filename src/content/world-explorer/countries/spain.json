@@ -1,0 +1,123 @@
+{
+  "id": "spain",
+  "name": "Spain",
+  "genZNote": "Spain's empire was once so vast that 'the sun never set' on it — and today that legacy lives on in the fact that Spanish is an official language across roughly 20 countries, mostly on a completely different continent.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Occupies most of the Iberian Peninsula in Southwestern Europe, bordered by Portugal, France, and Andorra, with coastlines on the Atlantic and Mediterranean.",
+        "Diverse terrain including the central Meseta plateau, the Pyrenees mountains bordering France, and the Canary and Balearic Island groups.",
+        "Includes territories in North Africa (Ceuta and Melilla) bordering Morocco, a source of occasional diplomatic sensitivity."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Spanish (Castilian) is the national official language, alongside co-official regional languages including Catalan, Basque, and Galician.",
+        "Strong regional identities, particularly in Catalonia and the Basque Country, which have distinct languages, culture, and periodic autonomy/independence movements.",
+        "Globally influential culture through flamenco music and dance, bullfighting traditions, and world-renowned art (Picasso, Dalí, Velázquez, Gaudí's architecture)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary constitutional monarchy; the King is head of state while an elected Prime Minister leads the government, under the 1978 democratic Constitution.",
+        "Transitioned to democracy after the death of dictator Francisco Franco in 1975, following decades of authoritarian rule.",
+        "Composed of 17 autonomous communities with varying degrees of self-governance, including highly autonomous regions like Catalonia and the Basque Country."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A significant contributor to renewable energy technology, particularly solar and wind power engineering.",
+        "Home to strong pharmaceutical and biomedical research institutions, alongside a globally respected public healthcare system.",
+        "Historic global exploration legacy (backing Columbus's voyages) that reshaped global trade and cultural exchange from the late 15th century onward."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding-era member of the European Union (joined 1986) and a NATO member, playing an active role in European policy.",
+        "Maintains deep cultural, linguistic, and economic ties across Latin America through its colonial-era Spanish-speaking legacy.",
+        "An active participant in Mediterranean and North African regional diplomacy given its geographic proximity to Morocco."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Spain maintain a growing 'Strategic Partnership', with expanding cooperation in renewable energy, infrastructure, defence, and trade.",
+        "Spanish companies have invested significantly in Indian renewable energy and infrastructure projects, particularly solar power.",
+        "Growing tourism, cultural, and educational exchange between the two countries in recent years."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A major European economy strong in tourism, automotive manufacturing, renewable energy, and agriculture (notably olive oil, wine, and citrus).",
+        "One of the world's most visited countries for tourism, with iconic destinations including Barcelona, Madrid, and the Balearic Islands.",
+        "A global leader in renewable energy infrastructure, particularly wind and solar power generation."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Flamenco music and dance, and a rich artistic heritage (Picasso, Dalí, Gaudí).",
+        "Being one of the world's most visited tourist destinations.",
+        "A historic global colonial and exploratory legacy that spread the Spanish language across the Americas.",
+        "Strong renewable energy engineering and infrastructure investment."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Spain is a Southwestern European parliamentary constitutional monarchy on the Iberian Peninsula, a democracy since 1978 with deep global linguistic and cultural influence via its colonial history.",
+    "keyFacts": [
+      "Capital: Madrid. Currency: Euro.",
+      "Parliamentary constitutional monarchy under the 1978 Constitution.",
+      "Transitioned to democracy in 1975 after Franco's death ended decades of dictatorship.",
+      "17 autonomous communities, including highly autonomous Catalonia and the Basque Country."
+    ],
+    "keyTerms": [
+      "Iberian Peninsula",
+      "Autonomous Communities",
+      "Meseta",
+      "Flamenco"
+    ],
+    "commonConfusion": [
+      "Spain's regional languages (Catalan, Basque, Galician) are co-official in their respective regions alongside Castilian Spanish — they are not dialects of Spanish."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Spain: parliamentary constitutional monarchy since 1978; democracy restored after Franco's 1975 death.",
+      "17 autonomous communities; Catalonia and Basque Country have strong autonomy movements.",
+      "India-Spain: Strategic Partnership; major Spanish investment in Indian renewable energy."
+    ],
+    "commonTraps": [
+      "Assuming Spanish is the only official language in Spain — Catalan, Basque, and Galician are co-official regionally.",
+      "Confusing Spain's constitutional monarchy with an absolute one — the King's role is largely ceremonial."
+    ],
+    "mustRemember": [
+      "Spain: constitutional monarchy since 1978, regionally diverse (Catalonia/Basque autonomy), key India renewable energy investor."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Spain Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Spain — official portal",
+      "kind": "educational"
+    }
+  ]
+}

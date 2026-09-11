@@ -1,0 +1,123 @@
+{
+  "id": "thailand",
+  "name": "Thailand",
+  "genZNote": "Thailand is the only Southeast Asian country never colonised by a European power — it literally means 'Land of the Free' — and it's been running on the same royal-Buddhist cultural backbone for centuries while still being one of the region's biggest tourism and manufacturing hubs.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in mainland Southeast Asia, bordered by Myanmar, Laos, Cambodia, and Malaysia, with coastlines on the Gulf of Thailand and the Andaman Sea.",
+        "The fertile Chao Phraya River basin in the central plains is the historic agricultural and population heartland, including the capital Bangkok.",
+        "Tropical monsoon climate with mountainous, forested terrain in the north and popular island/beach regions in the south."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Thai is the official language; Theravada Buddhism is practiced by the large majority of the population and deeply shapes daily life, festivals, and architecture (ornate wats/temples).",
+        "The monarchy holds deep cultural reverence, and the Thai king is a central, highly respected national symbol.",
+        "Famous for its cuisine (balancing sweet, sour, salty, spicy flavours), Muay Thai martial arts, and major festivals like Songkran (Thai New Year water festival)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A constitutional monarchy with a parliamentary system; the King is head of state while an elected Prime Minister and National Assembly govern.",
+        "The only Southeast Asian nation never formally colonised by a European power, historically credited to skilful diplomacy between British and French colonial spheres.",
+        "Has experienced numerous military coups and periods of military-influenced government through its modern history, alongside periods of democratic governance."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A regional hub for medical tourism, known for high-quality, affordable private healthcare and hospital infrastructure.",
+        "Strong agricultural science base supporting its position as one of the world's largest rice exporters.",
+        "Growing automotive and electronics manufacturing sector, sometimes called the 'Detroit of Asia' for vehicle assembly."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding member of ASEAN and one of Southeast Asia's most tourism-dependent and internationally connected economies.",
+        "Maintains close ties with both the United States (a treaty ally) and China, balancing relationships as part of its historical non-aligned diplomatic tradition.",
+        "An active participant in regional economic and security groupings across the Indo-Pacific."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Thailand share deep civilisational links through the historic spread of Buddhism and Hindu culture (Thai royal ceremonies still use Brahmin priests and Sanskrit-rooted terms).",
+        "Part of India's 'Act East' policy and the BIMSTEC regional grouping alongside other Bay of Bengal nations.",
+        "Growing trade, tourism, and connectivity cooperation, including discussions on the India-Myanmar-Thailand trilateral highway."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A major manufacturing and export economy, particularly strong in automobiles, electronics, and agricultural products.",
+        "One of the world's largest rice exporters, along with significant exports of rubber, seafood, and processed foods.",
+        "Tourism is a major economic pillar, drawing millions of visitors annually to destinations like Bangkok, Phuket, and Chiang Mai."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Never having been colonised by a European power in Southeast Asia.",
+        "World-renowned Buddhist temples, cuisine, and tourism destinations.",
+        "Being a major global rice exporter and Southeast Asian manufacturing hub.",
+        "Muay Thai and a deeply respected constitutional monarchy."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Thailand is a Southeast Asian constitutional monarchy, historically never colonised, known for Buddhist culture, tourism, and manufacturing.",
+    "keyFacts": [
+      "Capital: Bangkok. Currency: Thai Baht.",
+      "Constitutional monarchy with a parliamentary system.",
+      "One of the world's largest rice exporters.",
+      "Founding ASEAN member; part of India's Act East policy and BIMSTEC."
+    ],
+    "keyTerms": [
+      "Theravada Buddhism",
+      "BIMSTEC",
+      "Act East Policy",
+      "Muay Thai"
+    ],
+    "commonConfusion": [
+      "Thailand is a constitutional monarchy, not an absolute one — an elected government and parliament run day-to-day affairs."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Thailand: only Southeast Asian country never colonised by a European power.",
+      "Founding ASEAN member; key BIMSTEC partner for India's Act East policy.",
+      "One of the world's top rice exporters; major automobile manufacturing hub."
+    ],
+    "commonTraps": [
+      "Assuming Thailand is a republic — it is a constitutional monarchy.",
+      "Confusing BIMSTEC (Bay of Bengal grouping) with ASEAN membership scope."
+    ],
+    "mustRemember": [
+      "Thailand: constitutional monarchy, Buddhist-majority, rice/auto export powerhouse, key BIMSTEC and Act East partner for India."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Thailand Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "ASEAN Secretariat — official portal",
+      "kind": "educational"
+    }
+  ]
+}

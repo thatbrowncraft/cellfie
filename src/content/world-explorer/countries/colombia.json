@@ -1,0 +1,124 @@
+{
+  "id": "colombia",
+  "name": "Colombia",
+  "genZNote": "Colombia is the only South American country with coastlines on both the Pacific and the Caribbean — and after decades defined by internal armed conflict, its 2016 peace agreement with the FARC became one of the most closely studied peace processes in modern history.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in the northwest of South America, uniquely positioned with coastlines on both the Pacific Ocean and the Caribbean Sea.",
+        "The Andes Mountains split into three ranges within Colombia, creating dramatic terrain alongside Amazon rainforest in the south and Caribbean coastal plains in the north.",
+        "One of the most biodiverse countries in the world relative to its size, home to an extraordinary range of ecosystems from coast to rainforest to high-altitude páramo grasslands."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Spanish is the official language; the culture blends Indigenous, Spanish colonial, and African influences, particularly along its Caribbean and Pacific coasts.",
+        "Globally influential in literature through Nobel laureate Gabriel García Márquez, a pioneer of the 'magical realism' literary genre.",
+        "Renowned for cumbia and vallenato music traditions, and as a major centre of Latin American visual art (Fernando Botero)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A unitary presidential republic with a President as head of state and government, and a bicameral Congress.",
+        "Experienced decades of internal armed conflict involving government forces, paramilitary groups, and guerrilla organisations (notably the FARC), significantly shaping modern national history.",
+        "Signed a landmark 2016 peace agreement with the FARC guerrilla group, ending over 50 years of armed conflict, a widely studied global peace process."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A significant regional hub for biodiversity research given its position as one of the world's most biodiverse nations.",
+        "Growing pharmaceutical manufacturing and medical tourism sector, particularly for cosmetic and dental procedures.",
+        "Strong agricultural science base supporting its position as a leading global coffee producer, with protected-origin certification for Colombian coffee."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "An OECD member since 2020, reflecting significant recent economic and institutional development.",
+        "A close US security and trade partner, historically tied to counter-narcotics cooperation given the country's role in global cocaine production.",
+        "A founding member of the Pacific Alliance trade bloc alongside Chile, Mexico, and Peru."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Colombia maintain growing relations, with cooperation expanding in pharmaceuticals, IT services, and agricultural technology.",
+        "Colombia is an important source of coffee and emeralds, while trade in Indian pharmaceuticals and vehicles to Colombia has been growing.",
+        "Both countries have engaged in growing cultural exchange and periodic high-level diplomatic visits in recent years."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A major global coffee producer and exporter, alongside significant oil, coal, and emerald production.",
+        "An OECD member with a growing, diversifying economy strong in flowers (a major global cut-flower exporter), textiles, and services.",
+        "Historically associated with cocaine production, an issue central to decades of internal conflict and US counter-narcotics cooperation."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The 2016 peace agreement ending over 50 years of armed conflict with the FARC.",
+        "World-renowned coffee production and export.",
+        "Gabriel García Márquez and the 'magical realism' literary tradition.",
+        "Being one of the most biodiverse countries in the world."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Colombia is a unitary presidential republic in northwestern South America with coasts on both the Pacific and Caribbean, known for its 2016 FARC peace agreement, coffee, and biodiversity.",
+    "keyFacts": [
+      "Capital: Bogotá. Currency: Colombian Peso.",
+      "Unitary presidential republic; bicameral Congress.",
+      "2016 peace agreement ended over 50 years of armed conflict with the FARC.",
+      "OECD member since 2020; major global coffee producer."
+    ],
+    "keyTerms": [
+      "FARC",
+      "Magical realism",
+      "Pacific Alliance",
+      "Páramo"
+    ],
+    "commonConfusion": [
+      "Colombia is the only South American country with coastlines on both the Pacific Ocean and the Caribbean Sea — a distinctive geographic fact worth remembering."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Colombia: unitary presidential republic, capital Bogotá, coasts on both Pacific and Caribbean.",
+      "2016 peace agreement with FARC ended 50+ years of conflict; OECD member since 2020.",
+      "India-Colombia: growing trade in coffee, emeralds, pharmaceuticals; expanding diplomatic engagement."
+    ],
+    "commonTraps": [
+      "Assuming Colombia has only a Caribbean coast — it also has a significant Pacific coastline.",
+      "Confusing the FARC peace agreement (2016) with the broader, longer history of Colombia's internal conflict."
+    ],
+    "mustRemember": [
+      "Colombia: dual-coast nation, 2016 FARC peace deal, OECD member, top coffee exporter, growing India trade partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Colombia Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "United Nations — Colombia peace process background",
+      "kind": "educational",
+      "url": "https://www.un.org/"
+    }
+  ]
+}

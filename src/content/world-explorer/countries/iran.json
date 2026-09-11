@@ -1,0 +1,124 @@
+{
+  "id": "iran",
+  "name": "Iran",
+  "genZNote": "Iran was Persia until 1935 — same ancient civilization that gave the world Cyrus the Great and the Persian Empire, now running as an Islamic Republic where an elected President shares power with an unelected Supreme Leader, which is a genuinely unique governance structure worth remembering for exams.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A large West/Central Asian country bordered by Iraq, Turkey, Azerbaijan, Armenia, Turkmenistan, Afghanistan, and Pakistan, with coastlines on the Caspian Sea and the Persian Gulf/Gulf of Oman.",
+        "Predominantly mountainous and arid, featuring the Zagros and Alborz mountain ranges and large central desert basins.",
+        "Sits along the strategically vital Strait of Hormuz, through which a large share of the world's traded oil passes."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Persian (Farsi) is the official language; Iran's culture reflects a continuous civilizational tradition stretching back to the ancient Persian Empire.",
+        "Predominantly Shia Muslim, distinguishing it religiously from most of its Sunni-majority Arab neighbours.",
+        "Renowned for Persian poetry (Hafez, Rumi, Ferdowsi), carpet weaving, miniature painting, and a rich architectural and calendar tradition (the Persian solar calendar)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "An Islamic Republic with a unique dual structure: an elected President and Parliament handle government administration, while an unelected Supreme Leader holds ultimate authority over the military, judiciary, and major state policy.",
+        "Established after the 1979 Islamic Revolution, which overthrew the Western-backed monarchy (the Shah) and ended over two millennia of Persian monarchical tradition.",
+        "Governed under Islamic (Sharia) principles alongside a formal constitution and elected institutions."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Has developed a notably advanced domestic pharmaceutical, biotechnology, and nuclear science base despite decades of international sanctions.",
+        "Historically significant contributions to science and mathematics through medieval Persian scholars (e.g., Al-Khwarizmi's algebra legacy, though from the wider Persianate world).",
+        "Its nuclear programme has been a central focus of international diplomacy, including the 2015 Joint Comprehensive Plan of Action (JCPOA) nuclear deal."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Subject to extensive Western, particularly US, sanctions over its nuclear programme and regional activities.",
+        "A major regional power in West Asia, with significant influence in Iraq, Syria, Lebanon, and Yemen through allied groups and partnerships.",
+        "Founding OPEC member with some of the world's largest proven oil and natural gas reserves."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Iran share historic civilizational ties through Persian language and cultural influence on Indian art, cuisine, and Mughal-era architecture.",
+        "India has developed and operates the Chabahar Port in Iran, a strategic project providing India access to Afghanistan and Central Asia bypassing Pakistan.",
+        "Bilateral trade has been constrained at times by international sanctions on Iran, though energy and connectivity cooperation remain important areas of engagement."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Holds some of the world's largest proven oil and natural gas reserves, though international sanctions have significantly constrained export revenues.",
+        "A diversified economy for the region, with significant agriculture, automotive manufacturing, and petrochemical industries.",
+        "The Chabahar Port project with India is a key infrastructure initiative aimed at boosting regional trade connectivity."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Its ancient Persian civilizational heritage, including Persepolis and a continuous cultural tradition of over 2,500 years.",
+        "The 1979 Islamic Revolution and its unique dual governance structure (elected government + Supreme Leader).",
+        "Holding some of the world's largest oil and gas reserves.",
+        "Persian poetry, carpets, and architecture as major cultural exports."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Iran is a West/Central Asian Islamic Republic with an ancient Persian civilizational heritage, governed through a unique dual structure of elected government and an unelected Supreme Leader.",
+    "keyFacts": [
+      "Capital: Tehran. Currency: Iranian Rial.",
+      "Islamic Republic since the 1979 Revolution; dual power structure (President + Supreme Leader).",
+      "Formerly known internationally as Persia until 1935.",
+      "Holds some of the world's largest oil and natural gas reserves."
+    ],
+    "keyTerms": [
+      "Islamic Republic",
+      "Supreme Leader",
+      "JCPOA",
+      "Strait of Hormuz"
+    ],
+    "commonConfusion": [
+      "Iran's President is directly elected but is NOT the highest authority — the unelected Supreme Leader holds ultimate power over the military, judiciary, and key policy."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Iran: Islamic Republic since 1979; dual structure of elected President/Parliament and unelected Supreme Leader.",
+      "Formerly called Persia; holds vast oil and gas reserves; founding OPEC member.",
+      "India-Iran: India developed and operates Chabahar Port for access to Afghanistan/Central Asia bypassing Pakistan."
+    ],
+    "commonTraps": [
+      "Assuming Iran's elected President is the top authority — the Supreme Leader holds ultimate power.",
+      "Confusing Iran (Persian, Shia-majority) with its Arab, largely Sunni-majority neighbours."
+    ],
+    "mustRemember": [
+      "Iran: Persian civilization, Islamic Republic since 1979, dual power structure, key India Chabahar Port partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Iran Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "United Nations — JCPOA background",
+      "kind": "educational",
+      "url": "https://www.un.org/"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": "germany",
+  "name": "Germany",
+  "genZNote": "Germany rebuilt itself from a divided, war-shattered nation into Europe's biggest economy in a few decades — the 'Wirtschaftswunder' (economic miracle) is basically the textbook case study for how fast a country can recover with the right institutions.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in Central Europe, bordered by nine countries — more neighbours than any other European nation — including France, Poland, and the Netherlands.",
+        "Terrain ranges from flat northern plains along the North and Baltic Seas to the Alps in the south, with the Rhine and Danube as major rivers.",
+        "Historically divided into East and West Germany from 1949 until reunification in 1990 following the fall of the Berlin Wall in 1989."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "German is the official language; the country has a globally influential tradition in philosophy, classical music (Beethoven, Bach), and literature (Goethe).",
+        "Strong regional cultural identities persist across its 16 federal states (Länder), each with distinct traditions and dialects.",
+        "A deep national reckoning with its 20th-century history, particularly the Holocaust and Nazi era, strongly shapes contemporary civic culture and education."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal parliamentary republic; the Chancellor is head of government (elected by the Bundestag), while the President serves a largely ceremonial head-of-state role.",
+        "Composed of 16 federal states (Länder), each with significant autonomous powers, reflecting a strong tradition of federalism.",
+        "Reunified in 1990 after nearly 45 years of Cold War division between democratic West Germany and communist East Germany."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A global leader in engineering, automotive technology (Volkswagen, BMW, Mercedes-Benz), and industrial manufacturing ('Mittelstand' small-and-medium enterprises).",
+        "Home to world-renowned research institutions (Max Planck Society, Fraunhofer Institutes) and numerous Nobel laureates across the sciences.",
+        "A major global pharmaceutical and biotechnology hub; BioNTech's mRNA COVID-19 vaccine (developed with Pfizer) was a landmark recent contribution."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Europe's largest economy and a founding member of the European Union, playing a central leadership role in EU policy.",
+        "A NATO member and key transatlantic security partner, though historically cautious about military deployments given its 20th-century history.",
+        "A major driver of the Eurozone's monetary and economic policy given the scale of its economy."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Germany share a 'Strategic Partnership', with Germany being one of India's largest European trade partners and sources of foreign investment.",
+        "Strong cooperation in renewable energy, skilled labour migration, vocational training, and advanced manufacturing/engineering technology transfer.",
+        "Germany has been a long-standing partner in India's industrial and infrastructure development since the early decades after Indian independence."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "The largest economy in Europe and a global manufacturing and export powerhouse, especially in automobiles, machinery, and chemicals.",
+        "Home to globally leading companies including Volkswagen, Siemens, BASF, and SAP.",
+        "A strong exporter nation with a persistent trade surplus, underpinned by high-value engineering and industrial goods."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Post-WWII reunification (1990) and its post-war economic transformation ('Wirtschaftswunder').",
+        "World-leading automotive and precision engineering industries.",
+        "Being the largest and most influential economy within the European Union.",
+        "A deep and reflective public reckoning with its Nazi-era history."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Germany is Europe's largest economy and a federal parliamentary republic, reunified in 1990 after Cold War division, and a founding EU member state.",
+    "keyFacts": [
+      "Capital: Berlin. Currency: Euro.",
+      "Federal parliamentary republic; Chancellor is head of government, President is ceremonial head of state.",
+      "Reunified in 1990 after ~45 years of division between West and East Germany.",
+      "Europe's largest economy; global leader in automobiles and engineering."
+    ],
+    "keyTerms": [
+      "Bundestag",
+      "Länder",
+      "Wirtschaftswunder",
+      "Reunification"
+    ],
+    "commonConfusion": [
+      "Germany's Chancellor, not the President, is the head of government and holds real executive power — the President's role is largely ceremonial."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Germany: federal parliamentary republic; Chancellor leads government; reunified 1990.",
+      "Europe's largest economy; founding EU member; automotive/engineering global leader.",
+      "India-Germany: Strategic Partnership; major EU trade/investment partner, strong in renewable energy and vocational training cooperation."
+    ],
+    "commonTraps": [
+      "Confusing Germany's ceremonial President with its actual head of government, the Chancellor.",
+      "Assuming German reunification happened at the same time as the fall of the Berlin Wall — the Wall fell in 1989, formal reunification followed in 1990."
+    ],
+    "mustRemember": [
+      "Germany: federal republic, EU's largest economy, reunified 1990, major India trade/tech/skills partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Germany Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Federal Government of Germany — official portal",
+      "kind": "educational"
+    }
+  ]
+}

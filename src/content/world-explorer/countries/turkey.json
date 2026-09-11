@@ -1,0 +1,124 @@
+{
+  "id": "turkey",
+  "name": "Turkey",
+  "genZNote": "Turkey (officially Türkiye) is the one country genuinely on two continents at once — Istanbul literally straddles Europe and Asia across the Bosphorus Strait, which is why it's every geography exam's favourite 'transcontinental country' example.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A transcontinental country with territory in both Southeast Europe (East Thrace) and West Asia (Anatolia), separated by the Bosphorus Strait, Sea of Marmara, and Dardanelles.",
+        "Istanbul, its largest city, is the world's most notable example of a city spanning two continents.",
+        "Diverse terrain including the Anatolian plateau, extensive coastlines on the Mediterranean, Aegean, and Black Seas, and mountainous eastern regions."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Turkish is the official language; the culture blends Central Asian Turkic heritage, Islamic tradition, and centuries of Ottoman and Byzantine influence.",
+        "Predominantly Muslim, with a constitutionally secular state framework established by modern Turkey's founder, Mustafa Kemal Atatürk.",
+        "Rich culinary and artistic traditions, including Turkish cuisine, carpet weaving, and Ottoman-era architecture (e.g., the Hagia Sophia, Blue Mosque)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A presidential republic; the modern secular republic was founded in 1923 by Mustafa Kemal Atatürk after the collapse of the Ottoman Empire.",
+        "Shifted from a parliamentary to an executive presidential system following a 2017 constitutional referendum.",
+        "Straddles the geopolitical space between Europe and the Islamic world, historically a candidate for European Union membership since 1987, though accession talks have long stalled."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A significant regional hub for medical tourism, particularly hair transplants, dental care, and cosmetic surgery.",
+        "Growing domestic defence industry, including drone technology (Bayraktar) that has drawn significant international attention.",
+        "Strong textile, automotive, and construction engineering sectors supporting a diversified industrial base."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A NATO member since 1952, occupying a strategically critical position bridging Europe, Asia, and the Middle East.",
+        "A long-standing EU candidate country, though full membership negotiations have stalled for decades over various political and human rights concerns.",
+        "Plays an active regional role in Middle Eastern, Caucasus, and Central Asian affairs, including involvement in Syria and support for Azerbaijan."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India-Turkey relations have historically been complex, shaped in part by Turkey's vocal diplomatic support for Pakistan's position on Kashmir at international forums.",
+        "Despite political friction, trade and commercial ties between the two countries have continued to grow, including in construction, textiles, and defence-adjacent sectors.",
+        "India sent significant humanitarian and disaster-relief assistance to Turkey following the devastating 2023 earthquakes, reflecting people-to-people goodwill despite governmental friction."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A large, diversified emerging economy strong in textiles, automotive manufacturing, construction, and increasingly defence technology (drones).",
+        "A major global tourism destination, leveraging its historical and coastal attractions.",
+        "Strategically positioned as a transit hub for energy pipelines connecting Central Asia and the Middle East to Europe."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the world's most notable transcontinental country, spanning Europe and Asia.",
+        "Istanbul's Hagia Sophia and Ottoman-era architectural heritage.",
+        "A long-standing NATO member and EU candidate country.",
+        "Its rapidly growing domestic defence drone industry (Bayraktar)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Turkey (Türkiye) is a transcontinental presidential republic spanning Europe and Asia, a NATO member and long-standing EU candidate rooted in Ottoman and Atatürk-era secular republican history.",
+    "keyFacts": [
+      "Capital: Ankara (not Istanbul). Currency: Turkish Lira.",
+      "Presidential republic since a 2017 constitutional shift from a parliamentary system.",
+      "Modern secular republic founded in 1923 by Mustafa Kemal Atatürk.",
+      "NATO member since 1952; long-standing EU candidate country."
+    ],
+    "keyTerms": [
+      "Bosphorus Strait",
+      "Atatürk",
+      "NATO",
+      "Transcontinental"
+    ],
+    "commonConfusion": [
+      "Turkey's capital is Ankara, NOT Istanbul — Istanbul is the largest city and historic Ottoman capital, but Ankara has been the political capital since 1923."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Turkey: transcontinental country (Europe + Asia); capital Ankara, not Istanbul.",
+      "NATO member since 1952; long-standing EU candidate country.",
+      "India-Turkey: relations complicated by Turkey's support for Pakistan on Kashmir at international forums, despite growing trade ties."
+    ],
+    "commonTraps": [
+      "Assuming Istanbul is Turkey's capital — it is Ankara.",
+      "Overlooking Turkey's shift from a parliamentary to a presidential system after the 2017 referendum."
+    ],
+    "mustRemember": [
+      "Turkey: transcontinental NATO/EU-candidate republic, capital Ankara, complex India ties over Kashmir diplomacy."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Turkey Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "NATO — official portal, member profile",
+      "kind": "educational",
+      "url": "https://www.nato.int/"
+    }
+  ]
+}

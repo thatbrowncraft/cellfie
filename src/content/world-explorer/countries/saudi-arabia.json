@@ -1,0 +1,123 @@
+{
+  "id": "saudi-arabia",
+  "name": "Saudi Arabia",
+  "genZNote": "Saudi Arabia holds Islam's two holiest cities (Mecca and Medina) and roughly a sixth of the world's proven oil reserves — one nation quietly running both the religious centre of gravity for over a billion Muslims and a huge chunk of the global energy market.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Occupies most of the Arabian Peninsula in West Asia, bordered by Jordan, Iraq, Kuwait, Qatar, Bahrain (via causeway), the UAE, Oman, and Yemen.",
+        "Dominated by vast desert terrain, including the Rub' al Khali (Empty Quarter), one of the largest continuous sand deserts in the world.",
+        "Home to Islam's two holiest cities, Mecca and Medina, making it the destination for the annual Hajj pilgrimage."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Arabic is the official language; Islam (specifically its role as custodian of Islam's holiest sites) is central to national identity and legal/social life.",
+        "Traditional Bedouin heritage, hospitality customs, and tribal social structures remain culturally significant alongside rapid modernisation.",
+        "Recent social reforms under 'Vision 2030' have expanded women's rights (including the right to drive, from 2018) and opened up entertainment and tourism sectors."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "An absolute monarchy ruled by the House of Saud, with the King as both head of state and head of government; there is no elected national legislature, though a royally-appointed Consultative Assembly (Shura Council) advises on policy.",
+        "Governed under Islamic law (Sharia) as its legal framework, with the Quran and Sunnah serving as the country's constitution.",
+        "Pursuing an ambitious economic and social transformation plan, 'Vision 2030', to diversify away from oil dependence."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Investing heavily in advanced healthcare infrastructure and biotechnology as part of Vision 2030 economic diversification.",
+        "Hosts King Abdullah University of Science and Technology (KAUST), a major research university attracting international scientific talent.",
+        "Developing large-scale renewable energy and green hydrogen projects (e.g., NEOM) alongside its traditional oil and gas sector."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A G20 member and the de facto leader of OPEC, giving it major influence over global oil markets and prices.",
+        "A key strategic partner of the United States in the Middle East, while also expanding relations with China, Russia, and other major powers.",
+        "Plays a central diplomatic role in the Islamic world as custodian of Mecca and Medina and a founding member of the Organisation of Islamic Cooperation (OIC)."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Saudi Arabia share a 'Strategic Partnership', with Saudi Arabia being one of India's top crude oil suppliers and a major source of remittances from the large Indian expatriate workforce.",
+        "Saudi Arabia hosts millions of Indian workers, making the bilateral labour and remittance relationship one of India's most significant globally.",
+        "Growing investment ties, with Saudi sovereign wealth funds investing in Indian infrastructure and technology sectors, alongside cooperation on counter-terrorism and defence."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "The world's largest oil exporter historically, with petroleum accounting for the majority of government revenue and exports, though Vision 2030 aims to diversify this.",
+        "Aramco, the state oil company, is one of the world's most valuable and highest-revenue companies.",
+        "Growing investment in tourism, entertainment, mega-projects (like NEOM), and renewable energy as part of economic diversification."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being home to Islam's two holiest cities, Mecca and Medina, and hosting the annual Hajj pilgrimage.",
+        "Holding some of the world's largest proven oil reserves and leading OPEC.",
+        "Vision 2030 — an ambitious economic and social reform and diversification programme.",
+        "Being a major destination for the large Indian expatriate workforce."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Saudi Arabia is an absolute monarchy on the Arabian Peninsula, custodian of Islam's holiest sites and a leading global oil power pursuing Vision 2030 diversification.",
+    "keyFacts": [
+      "Capital: Riyadh. Currency: Saudi Riyal.",
+      "Absolute monarchy ruled by the House of Saud; governed under Islamic law.",
+      "Home to Mecca and Medina, Islam's two holiest cities.",
+      "Leading OPEC member and historically the world's largest oil exporter."
+    ],
+    "keyTerms": [
+      "Vision 2030",
+      "OPEC",
+      "Sharia",
+      "Hajj"
+    ],
+    "commonConfusion": [
+      "Saudi Arabia has a Shura Council for consultation, but it is appointed, not elected — the country has no elected national legislature."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Saudi Arabia: absolute monarchy, capital Riyadh, custodian of Mecca and Medina.",
+      "Leading OPEC member; historically world's top oil exporter.",
+      "India-Saudi: major crude oil supplier to India and top source of remittances via large Indian expatriate workforce."
+    ],
+    "commonTraps": [
+      "Assuming Saudi Arabia has an elected parliament — the Shura Council is appointed, not elected.",
+      "Confusing OPEC leadership influence with sole control of global oil prices — many other factors and producers matter too."
+    ],
+    "mustRemember": [
+      "Saudi Arabia: absolute monarchy, Mecca/Medina custodian, OPEC leader, key India oil/remittance partner via Vision 2030 reforms."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Saudi Arabia Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Kingdom of Saudi Arabia — Vision 2030 official portal",
+      "kind": "educational"
+    }
+  ]
+}

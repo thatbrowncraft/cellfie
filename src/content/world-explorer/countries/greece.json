@@ -1,0 +1,123 @@
+{
+  "id": "greece",
+  "name": "Greece",
+  "genZNote": "Greece invented democracy, the Olympics, and Western philosophy's opening arguments — basically every 'first' box in a Western civilization course traces back to a small set of city-states here, which is why it's called the cradle of Western civilization.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in Southeastern Europe on the Balkan Peninsula, with an extraordinarily long coastline and thousands of islands scattered across the Aegean and Ionian Seas.",
+        "Predominantly mountainous terrain, including Mount Olympus, mythologically home of the ancient Greek gods and the country's highest peak.",
+        "Mediterranean climate with hot, dry summers, making it a major beach and island tourism destination."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Greek is the official language, with a continuous linguistic and literary tradition stretching back thousands of years to ancient Greek civilization.",
+        "The birthplace of Western philosophy (Socrates, Plato, Aristotle), democracy, theatre, and the Olympic Games (first held in ancient Olympia in 776 BCE).",
+        "Predominantly Greek Orthodox Christian, with religious tradition deeply woven into national identity and cultural festivals."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary republic with a President as ceremonial head of state and a Prime Minister as head of government, established after the monarchy was abolished by referendum in 1974.",
+        "Widely credited as the birthplace of democracy, with ancient Athens' direct democratic assembly seen as a foundational model for modern representative government.",
+        "Experienced a severe sovereign debt crisis (2009-2018) that led to major EU/IMF bailout programmes and significant economic austerity measures."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Historic birthplace of Western medicine through Hippocrates, whose ethical principles still underpin the modern medical 'Hippocratic Oath'.",
+        "Ancient Greek scholars made foundational contributions to mathematics (Euclid, Pythagoras) and astronomy (Ptolemy, Aristarchus).",
+        "A significant modern shipping and maritime engineering industry, with Greek-owned vessels forming one of the largest merchant shipping fleets in the world."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A European Union and NATO member, and the modern host and origin of the Olympic Games tradition, including hosting the 2004 Athens Olympics.",
+        "Has a long-standing, complex relationship with neighbouring Turkey, including disputes over Aegean Sea territorial boundaries and Cyprus.",
+        "Plays a strategically significant role for the EU and NATO given its location bordering the Balkans, Turkey, and the Eastern Mediterranean."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Greece elevated relations to a 'Strategic Partnership' in 2023, with growing defence, shipping, and infrastructure cooperation.",
+        "Both countries share ancient civilizational depth, with historic contact dating to Alexander the Great's campaigns into northwestern India (326 BCE), a notable shared historical reference point.",
+        "Greek shipping expertise and India's shipbuilding ambitions offer growing areas of maritime cooperation."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A services-driven economy heavily reliant on tourism and shipping, alongside agriculture (olives, olive oil, wine).",
+        "Owns one of the world's largest merchant shipping fleets by tonnage, a historically significant national industry.",
+        "Recovering steadily from its 2009-2018 sovereign debt crisis, with tourism remaining the primary growth driver."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the birthplace of democracy, philosophy, and the Olympic Games.",
+        "Ancient monuments including the Parthenon and Acropolis in Athens.",
+        "Owning one of the world's largest merchant shipping fleets.",
+        "Thousands of scenic Aegean and Ionian islands as major tourism destinations."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Greece is a Southeastern European parliamentary republic, the historic birthplace of democracy and philosophy, an EU/NATO member and major global shipping power.",
+    "keyFacts": [
+      "Capital: Athens. Currency: Euro.",
+      "Parliamentary republic since the monarchy's abolition by referendum in 1974.",
+      "Birthplace of democracy, philosophy (Socrates, Plato, Aristotle), and the Olympic Games.",
+      "Owns one of the world's largest merchant shipping fleets."
+    ],
+    "keyTerms": [
+      "Acropolis",
+      "Hippocratic Oath",
+      "Aegean Sea",
+      "Olympiad"
+    ],
+    "commonConfusion": [
+      "Ancient Greek civilization (city-states like Athens and Sparta) predates the modern Greek nation-state by over two millennia — they are historically continuous but politically distinct."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Greece: parliamentary republic since 1974; birthplace of democracy and the Olympics.",
+      "EU/NATO member; one of the world's largest merchant shipping fleets.",
+      "India-Greece: Strategic Partnership since 2023; historic link via Alexander the Great's 326 BCE campaign into India."
+    ],
+    "commonTraps": [
+      "Assuming modern Greece has been a continuous single political state since antiquity — it emerged as a modern nation only in the 19th century.",
+      "Confusing Greece's sovereign debt crisis (2009-2018) with its ancient historical legacy."
+    ],
+    "mustRemember": [
+      "Greece: democracy's birthplace, EU/NATO member, global shipping power, Strategic Partner with India since 2023."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Greece Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Greece — official portal",
+      "kind": "educational"
+    }
+  ]
+}

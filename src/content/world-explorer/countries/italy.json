@@ -1,0 +1,124 @@
+{
+  "id": "italy",
+  "name": "Italy",
+  "genZNote": "Italy is shaped like a boot kicking a ball (Sicily) into the Mediterranean — and inside that boot sits the Vatican, an entire separate sovereign country, making Italy the only nation on Earth with another country fully inside its capital city.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A boot-shaped peninsula in Southern Europe extending into the Mediterranean Sea, including the major islands of Sicily and Sardinia.",
+        "Dominated by the Apennine mountain range running the length of the peninsula, with the Alps forming its northern border, and active volcanoes (Vesuvius, Etna) in the south.",
+        "Uniquely contains two entirely separate sovereign microstates within its borders: Vatican City (inside Rome) and San Marino."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Italian is the official language; the country is a global centre of Western art, architecture, and cuisine, home to more UNESCO World Heritage Sites than any other nation.",
+        "The Roman Catholic Church has deep historical ties to Italy, with Vatican City (an independent state) located within Rome.",
+        "Renowned globally for its Renaissance art and architecture heritage (Michelangelo, Leonardo da Vinci) and regionally diverse culinary traditions."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary republic with a President as ceremonial head of state and a Prime Minister as head of government, established in 1946 after a referendum abolished the monarchy.",
+        "Traces its political and legal heritage to ancient Rome, the Roman Republic, and Roman Empire, foundational to much of Western law and governance concepts.",
+        "Composed of 20 regions with varying degrees of administrative autonomy."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Historic centre of Renaissance-era scientific advancement, including Galileo Galilei's foundational contributions to astronomy and physics.",
+        "Strong automotive and industrial design sectors (Ferrari, Fiat, Pirelli) alongside advanced fashion and manufacturing engineering.",
+        "Home to significant pharmaceutical manufacturing and a long medical education tradition dating to some of Europe's oldest universities (e.g., University of Bologna, founded 1088)."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding member of the European Union and NATO, and a G7 member — one of the world's most industrialised economies.",
+        "Plays an active diplomatic role in Mediterranean and North African affairs given its geographic position.",
+        "Home to Vatican City, giving it a unique diplomatic relationship with the Holy See, an independent sovereign entity with global religious influence."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Italy share warm relations elevated to a 'Strategic Partnership', with strong cooperation in trade, defence, and renewable energy.",
+        "Italy is a significant source of foreign investment and a trade partner in machinery, fashion, and automotive sectors.",
+        "Growing collaboration on renewable energy technology, cultural exchange, and space cooperation between the two countries."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "One of the world's largest manufacturing economies, particularly strong in fashion, automotive design, machinery, and food/wine exports.",
+        "A top global tourism destination, drawing millions annually to sites like Rome, Venice, and Florence.",
+        "Home to a strong network of small and medium-sized specialised manufacturing enterprises across its regions."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Having the world's largest number of UNESCO World Heritage Sites.",
+        "Renaissance art and architecture, and ancient Roman heritage.",
+        "World-leading fashion houses and automotive design (Ferrari, Gucci, Prada).",
+        "Hosting Vatican City, the world's smallest sovereign state, within Rome."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Italy is a Southern European parliamentary republic with deep Roman and Renaissance heritage, a founding EU/NATO/G7 member, and home to the world's most UNESCO World Heritage Sites.",
+    "keyFacts": [
+      "Capital: Rome. Currency: Euro.",
+      "Parliamentary republic since 1946, after a referendum ended the monarchy.",
+      "Home to Vatican City, an independent sovereign state within Rome.",
+      "World's highest number of UNESCO World Heritage Sites."
+    ],
+    "keyTerms": [
+      "Vatican City",
+      "Renaissance",
+      "Apennines",
+      "Holy See"
+    ],
+    "commonConfusion": [
+      "Vatican City is a fully independent sovereign state, NOT part of Italy, even though it sits geographically inside Rome."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Italy: parliamentary republic since 1946; founding EU/NATO/G7 member.",
+      "Home to the most UNESCO World Heritage Sites of any country.",
+      "India-Italy: Strategic Partnership; strong trade in fashion, machinery, automotive; growing renewable energy cooperation."
+    ],
+    "commonTraps": [
+      "Assuming Vatican City is administratively part of Italy — it is a separate sovereign state.",
+      "Confusing Italy's founding as a unified nation-state (19th century) with its current republican government (1946)."
+    ],
+    "mustRemember": [
+      "Italy: parliamentary republic, Roman/Renaissance heritage, top UNESCO site count, growing India trade/renewable energy partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Italy Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "UNESCO — World Heritage List",
+      "kind": "educational",
+      "url": "https://whc.unesco.org/"
+    }
+  ]
+}

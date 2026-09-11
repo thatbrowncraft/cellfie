@@ -1,0 +1,115 @@
+{
+  "id": "ukraine",
+  "name": "Ukraine",
+  "genZNote": "Ukraine is Europe's largest country by area entirely within Europe, historically called the 'breadbasket of Europe' for its vast fertile farmland — and since 2022 it's also become the defining test case in current-affairs exams for territorial sovereignty and international law.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The largest country entirely within Europe by land area, bordered by Russia, Belarus, Poland, Slovakia, Hungary, Romania, and Moldova, with a Black Sea coastline.",
+        "Dominated by vast, extremely fertile black-soil ('chernozem') plains, historically earning it the nickname 'the breadbasket of Europe'.",
+        "The Dnipro River is the country's major waterway, running through the capital, Kyiv."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Ukrainian is the official language, a distinct East Slavic language with its own literary tradition, alongside a significant Russian-speaking population in parts of the country.",
+        "Predominantly Orthodox Christian, with religious institutions playing a significant role in national identity, particularly amid recent political shifts away from Russian church affiliation.",
+        "Rich folk-art traditions, including elaborately decorated Easter eggs (pysanky) and embroidered clothing (vyshyvanka), central to national cultural identity."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A semi-presidential republic with a directly elected President and a Prime Minister-led government, alongside a unicameral parliament (Verkhovna Rada).",
+        "Gained independence from the Soviet Union in 1991 following its dissolution, later undergoing major pro-democracy movements including the 2004 Orange Revolution and 2014 Euromaidan protests.",
+        "Since February 2022, has been under full-scale invasion by Russia, a war that has become a central focus of global diplomacy, sanctions regimes, and international humanitarian response."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Not currently a member of the EU or NATO, though it formally applied for EU membership in 2022 and was granted EU candidate status the same year.",
+        "Has received extensive military, financial, and humanitarian support from the United States, European Union, and other Western allies since Russia's 2022 invasion.",
+        "The war has caused a major global grain and energy supply disruption, given Ukraine's and Russia's significant roles in global wheat and fertiliser exports."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Ukraine maintain diplomatic relations dating to 1992, with India importing sunflower oil and, historically, defence equipment components from Ukraine.",
+        "India evacuated thousands of its citizens, largely medical students, from Ukraine in 2022 through 'Operation Ganga' following the outbreak of war.",
+        "India has maintained a policy of neutrality regarding the Russia-Ukraine conflict, calling for dialogue and diplomacy while continuing trade and humanitarian assistance to Ukraine."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Historically one of the world's largest exporters of wheat, corn, and sunflower oil, given its exceptionally fertile agricultural land.",
+        "Also historically significant in steel production and aerospace/defence manufacturing (a legacy of Soviet-era industrial infrastructure).",
+        "The economy has been severely disrupted by the ongoing war since 2022, with major reconstruction and international financial support needs."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being one of the world's largest historical grain and sunflower oil exporters — 'the breadbasket of Europe'.",
+        "The ongoing war with Russia since February 2022, a central issue in contemporary global geopolitics.",
+        "The 2004 Orange Revolution and 2014 Euromaidan pro-democracy movements.",
+        "Rich folk-art traditions including pysanky (decorated eggs) and vyshyvanka embroidery."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Ukraine is the largest country entirely within Europe, a semi-presidential republic and historic 'breadbasket of Europe' currently facing a full-scale Russian invasion since February 2022.",
+    "keyFacts": [
+      "Capital: Kyiv. Currency: Ukrainian Hryvnia.",
+      "Semi-presidential republic; independent since the 1991 Soviet collapse.",
+      "Granted EU candidate status in 2022; not currently an EU or NATO member.",
+      "Historically one of the world's largest wheat and sunflower oil exporters."
+    ],
+    "keyTerms": [
+      "Chernozem",
+      "Euromaidan",
+      "Verkhovna Rada",
+      "Breadbasket of Europe"
+    ],
+    "commonConfusion": [
+      "Ukraine has EU candidate status (granted 2022) but is NOT yet a full EU member, and remains outside NATO — these are distinct stages, not the same thing."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Ukraine: semi-presidential republic, independent since 1991, largest country entirely within Europe.",
+      "Historic 'breadbasket of Europe'; granted EU candidate status in 2022.",
+      "India-Ukraine: India ran 'Operation Ganga' (2022) to evacuate citizens; India maintains a neutral diplomatic stance on the war."
+    ],
+    "commonTraps": [
+      "Assuming Ukraine is already an EU or NATO member — it holds only EU candidate status as of 2022.",
+      "Confusing the 2004 Orange Revolution with the 2014 Euromaidan protests — these are two distinct pro-democracy movements a decade apart."
+    ],
+    "mustRemember": [
+      "Ukraine: 'breadbasket of Europe', semi-presidential republic, EU candidate since 2022, under Russian invasion since Feb 2022; India ran Operation Ganga evacuation."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Ukraine Relations and Operation Ganga",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "United Nations — Ukraine crisis background",
+      "kind": "educational",
+      "url": "https://www.un.org/"
+    }
+  ]
+}

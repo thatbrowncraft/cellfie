@@ -1,0 +1,123 @@
+{
+  "id": "vietnam",
+  "name": "Vietnam",
+  "genZNote": "Vietnam is shaped like a giant 'S' stretching along the South China Sea — and just like that shape suggests, it's bent through French colonial rule, a defining 20th-century war, and a rapid modern manufacturing boom without ever losing its own thread.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A long, S-shaped country on the eastern Indochina Peninsula, bordered by China, Laos, and Cambodia, with an extensive South China Sea coastline.",
+        "Features the fertile Red River Delta in the north and Mekong River Delta in the south, both major agricultural regions, connected by a narrow central strip.",
+        "Tropical monsoon climate with significant regional variation from north to south."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Vietnamese is the official language, written using a Latin-based script (Quốc Ngữ) introduced during the colonial period, unusual among East/Southeast Asian nations.",
+        "Culture blends Confucian, Buddhist, and Taoist influences with strong French colonial-era architectural and culinary legacies (seen in dishes like bánh mì and cà phê sữa đá).",
+        "Strong emphasis on family, ancestor veneration, and community, with Tết (Lunar New Year) as the most important festival."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A single-party socialist republic led by the Communist Party of Vietnam, with a National Assembly and collective leadership structure.",
+        "Reunified in 1975 after decades of conflict, including the Vietnam War, following earlier French colonial rule that ended in 1954.",
+        "Introduced major market-oriented economic reforms ('Đổi Mới') from 1986, transforming from a centrally planned to a socialist-oriented market economy."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Rapidly growing electronics manufacturing base, hosting major global supply chains for companies like Samsung and increasingly Apple suppliers.",
+        "Public health system achieved notable gains in reducing infectious disease burden and improving maternal/child health indicators over recent decades.",
+        "Expanding renewable energy investment, particularly in solar and wind power."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "An active ASEAN member and increasingly important player in global manufacturing supply chains as companies diversify beyond China.",
+        "Maintains complex but stabilising relations with China (a major trade partner but also a South China Sea territorial rival) and deepening ties with the US.",
+        "Pursues a foreign policy sometimes described as 'bamboo diplomacy' — flexible and balanced among major powers."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Vietnam share a 'Comprehensive Strategic Partnership', with strong defence cooperation including training and naval cooperation.",
+        "Historical ties trace back to ancient trade links and shared Buddhist heritage, including the ancient Cham civilization's Hindu-influenced temples (e.g., My Son).",
+        "Part of India's Act East policy, with growing trade, oil exploration cooperation in the South China Sea, and cultural exchange."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "One of the fastest-growing manufacturing economies in Asia, benefiting from global supply-chain diversification away from China ('China+1' strategy).",
+        "Major exporter of electronics, textiles, footwear, and agricultural products (notably coffee — the world's second-largest producer — and rice).",
+        "Growing foreign direct investment, especially from South Korea, Japan, and increasingly the United States."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Rapid post-reform ('Đổi Mới') economic transformation into a major manufacturing hub.",
+        "Being the world's second-largest coffee producer.",
+        "Its complex 20th-century history including the Vietnam War and reunification.",
+        "UNESCO World Heritage sites like Ha Long Bay and Hoi An."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Vietnam is a single-party socialist republic in Southeast Asia that has transformed into a major manufacturing economy since its 1986 market reforms.",
+    "keyFacts": [
+      "Capital: Hanoi. Currency: Vietnamese Dong.",
+      "Single-party state led by the Communist Party of Vietnam.",
+      "'Đổi Mới' reforms (from 1986) opened the economy to market forces.",
+      "World's second-largest coffee producer."
+    ],
+    "keyTerms": [
+      "Đổi Mới",
+      "Bamboo diplomacy",
+      "China+1",
+      "Quốc Ngữ script"
+    ],
+    "commonConfusion": [
+      "Vietnam uses a Latin-based alphabet (Quốc Ngữ), not Chinese characters, despite historical Chinese cultural influence."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Vietnam: single-party socialist republic; capital Hanoi; Đổi Mới reforms began 1986.",
+      "World's second-largest coffee producer after Brazil.",
+      "India-Vietnam: Comprehensive Strategic Partnership; part of India's Act East policy."
+    ],
+    "commonTraps": [
+      "Assuming Vietnam is a multi-party democracy — it is a single-party socialist state.",
+      "Confusing Vietnam's script (Latin-based) with Chinese characters."
+    ],
+    "mustRemember": [
+      "Vietnam: fast-growing manufacturing hub, Đổi Mới reforms, top coffee exporter, key Act East and defence partner for India."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Vietnam Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "ASEAN Secretariat — official portal",
+      "kind": "educational"
+    }
+  ]
+}

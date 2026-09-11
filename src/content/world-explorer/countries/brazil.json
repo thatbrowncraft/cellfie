@@ -1,0 +1,123 @@
+{
+  "id": "brazil",
+  "name": "Brazil",
+  "genZNote": "Brazil is so big it borders every South American country except Chile and Ecuador — and it's the only major nation on the continent where Portuguese, not Spanish, is spoken, a direct legacy of a 1494 treaty that split the 'New World' between two European kingdoms.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The largest country in South America by both area and population, home to the majority of the Amazon Rainforest, the world's largest tropical rainforest.",
+        "Borders every South American country except Chile and Ecuador, with an extensive Atlantic coastline.",
+        "Home to the Amazon River, the world's largest river by discharge volume, and vast biodiversity across multiple distinct ecosystems (Amazon, Cerrado savanna, Pantanal wetlands)."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Portuguese is the official language, making Brazil the only major Portuguese-speaking nation in the Americas, a legacy of the 1494 Treaty of Tordesillas dividing colonial claims.",
+        "A highly multicultural society shaped by Indigenous, Portuguese colonial, African (via the historic slave trade), and later European and Asian immigrant influences.",
+        "World-renowned for Carnival celebrations, samba music, and football, which holds a central place in national identity and global sporting success."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal presidential republic composed of 26 states and a Federal District, with a President serving as both head of state and government.",
+        "Gained independence from Portugal in 1822, and transitioned from monarchy to republic in 1889 and later from military rule (1964-1985) to full democracy.",
+        "Brasília, a purpose-built modernist capital city inaugurated in 1960, was designed to encourage development of the country's interior."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A significant hub for tropical disease research and biodiversity science, given the scale and ecological importance of the Amazon.",
+        "Home to Embraer, one of the world's largest aircraft manufacturers, reflecting a strong aerospace engineering sector.",
+        "Advanced agricultural science (Embrapa) transformed vast tropical savanna (Cerrado) into some of the world's most productive farmland, a globally studied agricultural technology success."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding BRICS member (alongside Brazil, Russia, India, China, and now expanded membership) and G20 member, representing Latin America's largest economy and voice on the global stage.",
+        "Plays a central role in Amazon rainforest conservation diplomacy, given its stewardship of the majority of this globally critical carbon sink.",
+        "A leading voice in Latin American regional organisations including Mercosur and a vocal advocate for UN Security Council reform."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Brazil are both founding BRICS members and share a 'Strategic Partnership', collaborating closely on pharmaceuticals, agriculture, biofuels, and defence.",
+        "Brazil is a major global producer of generic pharmaceuticals and biofuels (ethanol), areas of significant cooperation potential with India.",
+        "Both countries are part of the IBSA Dialogue Forum (India-Brazil-South Africa), advocating jointly for reform of global governance institutions like the UN Security Council."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Latin America's largest economy, a major global exporter of soybeans, beef, coffee, iron ore, and sugar/ethanol.",
+        "Home to Embraer (aircraft manufacturing) and a globally significant agribusiness sector built on Cerrado savanna agricultural technology.",
+        "A member of BRICS and Mercosur, playing a central role in South American regional economic integration."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Hosting the majority of the Amazon Rainforest, a globally critical ecosystem and carbon sink.",
+        "Carnival, samba, and being a football (soccer) powerhouse with the most FIFA World Cup titles.",
+        "Being Latin America's largest economy and a founding BRICS member.",
+        "Purpose-built modernist capital city, Brasília."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Brazil is South America's largest country, a federal presidential republic and founding BRICS member, home to most of the Amazon Rainforest and the only Portuguese-speaking nation in the Americas.",
+    "keyFacts": [
+      "Capital: Brasília. Currency: Brazilian Real.",
+      "Federal presidential republic; 26 states plus a Federal District.",
+      "Home to the majority of the Amazon Rainforest and Amazon River.",
+      "Founding BRICS member; Latin America's largest economy."
+    ],
+    "keyTerms": [
+      "Amazon Rainforest",
+      "Treaty of Tordesillas",
+      "BRICS",
+      "Mercosur"
+    ],
+    "commonConfusion": [
+      "Brazil's official language is Portuguese, not Spanish — a direct legacy of the 1494 Treaty of Tordesillas dividing South America between Portugal and Spain."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Brazil: federal presidential republic; capital Brasília; only major Portuguese-speaking nation in the Americas.",
+      "Hosts the majority of the Amazon Rainforest; founding BRICS member; Latin America's largest economy.",
+      "India-Brazil: BRICS and IBSA partners; cooperate on pharmaceuticals, biofuels, agriculture, and UNSC reform advocacy."
+    ],
+    "commonTraps": [
+      "Assuming Brazil speaks Spanish like most of Latin America — it speaks Portuguese.",
+      "Confusing Brazil's capital (Brasília) with its most famous cities (Rio de Janeiro, São Paulo)."
+    ],
+    "mustRemember": [
+      "Brazil: Portuguese-speaking, Amazon steward, founding BRICS/IBSA member, top agri-exporter, key India strategic partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Brazil Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "BRICS and IBSA Dialogue Forum — official documentation",
+      "kind": "educational"
+    }
+  ]
+}

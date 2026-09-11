@@ -1,0 +1,123 @@
+{
+  "id": "portugal",
+  "name": "Portugal",
+  "genZNote": "Portugal kicked off the Age of Exploration before any other European power, and that one small country's voyages are the reason Portuguese is spoken from Brazil to Goa to Mozambique — a genuinely outsized global linguistic footprint for its size.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located on the western edge of the Iberian Peninsula in Southwestern Europe, bordered only by Spain, with an extensive Atlantic coastline.",
+        "Includes the autonomous Atlantic archipelagos of the Azores and Madeira, both popular tourism and volcanic-geology destinations.",
+        "Mediterranean/Atlantic climate with mountainous terrain in the north and flatter plains in the south."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Portuguese is the official language, now spoken by over 250 million people worldwide as a legacy of Portugal's historic maritime empire.",
+        "Known for Fado music (a melancholic traditional musical genre recognised by UNESCO), maritime heritage, and a strong Catholic cultural tradition.",
+        "One of Europe's oldest continuously defined nation-states, with borders largely unchanged since the 13th century."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A semi-presidential parliamentary republic, with a directly elected President sharing power with a Prime Minister who leads day-to-day government.",
+        "Ended nearly five decades of authoritarian rule (the Estado Novo regime) through the peaceful 1974 Carnation Revolution, restoring democracy.",
+        "Pioneered the Age of Exploration in the 15th century under figures like Henry the Navigator, establishing one of history's first global maritime empires."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Growing renewable energy sector, particularly wind and solar power, as part of an ambitious clean-energy transition.",
+        "A rising European technology and startup hub, with Lisbon hosting major international tech events like the Web Summit.",
+        "Historic contributions to maritime navigation science and cartography during its Age of Exploration."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding-era European Union member (joined 1986) and NATO founding member (1949).",
+        "Leads the Community of Portuguese Language Countries (CPLP), maintaining cultural and economic ties across former colonies including Brazil, Angola, Mozambique, and Goa's historical Portuguese heritage in India.",
+        "Maintains a historically significant maritime and exploratory legacy that shaped global trade routes for centuries."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Portugal share deep historical ties through Goa, Daman, and Diu, which were Portuguese colonial territories until their integration into India in 1961.",
+        "Portuguese cultural and architectural influence remains strongly visible in Goa today, alongside Konkani-Portuguese linguistic and culinary heritage.",
+        "Modern relations have significantly warmed, with a growing 'Strategic Partnership' focused on technology, mobility agreements, and trade."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A services-oriented economy strong in tourism, textiles, cork production (Portugal is the world's largest cork producer), and increasingly technology startups.",
+        "A growing renewable energy exporter and innovator, alongside traditional exports of wine (Port wine) and footwear.",
+        "Benefits significantly from EU structural funds and a growing digital nomad and tech investment inflow to Lisbon and Porto."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Pioneering the Age of Exploration under Henry the Navigator.",
+        "Being the world's largest cork producer and a major Port wine exporter.",
+        "Fado music and a rich maritime historical heritage.",
+        "Historic and continuing ties to Goa and other former Portuguese territories in India."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Portugal is a semi-presidential parliamentary republic on the Iberian Peninsula, a pioneer of the Age of Exploration and founding EU/NATO member with historic ties to Goa in India.",
+    "keyFacts": [
+      "Capital: Lisbon. Currency: Euro.",
+      "Semi-presidential parliamentary republic; democracy restored via the 1974 Carnation Revolution.",
+      "Pioneered the Age of Exploration under Henry the Navigator in the 15th century.",
+      "Former colonial ruler of Goa, Daman, and Diu, integrated into India in 1961."
+    ],
+    "keyTerms": [
+      "Carnation Revolution",
+      "Age of Exploration",
+      "CPLP",
+      "Fado"
+    ],
+    "commonConfusion": [
+      "Goa, Daman, and Diu were integrated into India in 1961 through police/military action, well after India's 1947 independence — Portugal did not recognise the transfer for over a decade afterward."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Portugal: semi-presidential republic; democracy restored via 1974 Carnation Revolution.",
+      "Pioneered Age of Exploration (Henry the Navigator); world's largest cork producer.",
+      "India-Portugal: Goa/Daman/Diu were Portuguese territories until 1961; now a warming Strategic Partnership."
+    ],
+    "commonTraps": [
+      "Assuming Goa became part of India in 1947 with the rest of the country — it remained under Portuguese rule until 1961.",
+      "Confusing Portugal's Carnation Revolution (1974, ended dictatorship) with Spain's separate democratic transition (1975)."
+    ],
+    "mustRemember": [
+      "Portugal: Age of Exploration pioneer, founding EU/NATO member, historic Goa connection, warming Strategic Partnership with India."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Portugal Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Portugal — official portal",
+      "kind": "educational"
+    }
+  ]
+}

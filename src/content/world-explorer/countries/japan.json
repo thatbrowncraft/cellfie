@@ -1,0 +1,128 @@
+{
+  "id": "japan",
+  "name": "Japan",
+  "genZNote": "Japan runs on 'ma' — the art of the meaningful pause — which is basically why bullet trains arrive on the second, gardens have empty space on purpose, and Godzilla is technically a metaphor for nuclear trauma wearing a costume.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "An archipelago of over 6,800 islands in East Asia, with four main islands: Honshu, Hokkaido, Kyushu, and Shikoku.",
+        "Mountainous and heavily forested (about 70% of land), with very limited flat land, which is why most of the roughly 124 million people are concentrated in narrow coastal plains.",
+        "Sits on the Pacific Ring of Fire, making it one of the most earthquake- and tsunami-prone countries on Earth; also has active volcanoes, including Mount Fuji.",
+        "Distinct seasons and a variety of climates from subarctic Hokkaido to subtropical Okinawa."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Japanese is the national language; the culture blends deep Shinto and Buddhist traditions with a globally influential modern pop culture (anime, manga, video games).",
+        "Known for concepts like 'omotenashi' (wholehearted hospitality), a strong group-harmony ('wa') ethic, and meticulous craftsmanship across everything from cuisine to manufacturing.",
+        "Traditional arts — tea ceremony, ikebana, kabuki, sumo — coexist with cutting-edge technology and design in daily life.",
+        "One of the world's most rapidly aging societies, which shapes major social and economic policy debates."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary constitutional monarchy: the Emperor is a symbolic head of state with no political power, while an elected Prime Minister and the National Diet (Japan's bicameral parliament) run the government.",
+        "The 1947 post-war Constitution's Article 9 renounces war and the right to maintain offensive armed forces, a defining and often-debated feature of Japanese governance.",
+        "Administratively divided into 47 prefectures."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A global leader in robotics, electronics, and precision engineering, and home to major Nobel laureates in physics, chemistry, and medicine.",
+        "Pioneered high-speed rail technology with the Shinkansen (bullet train), operational since 1964.",
+        "Strong in regenerative medicine — Shinya Yamanaka's induced pluripotent stem cell (iPSC) research (Nobel Prize, 2012) was a landmark global contribution.",
+        "JAXA (Japan Aerospace Exploration Agency) runs an active space programme, including asteroid sample-return missions (Hayabusa)."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A G7 and G20 member, and the world's third-largest economy by nominal GDP.",
+        "A key US security ally in the Indo-Pacific, and an active member of the Quad grouping alongside India, the US, and Australia.",
+        "Plays a major role in international development assistance (ODA) across Asia and Africa."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Japan share a 'Special Strategic and Global Partnership', with regular annual summit-level dialogue.",
+        "Japan is a major source of foreign direct investment and concessional development loans to India, notably funding the Mumbai-Ahmedabad bullet train (using Shinkansen technology) and Delhi Metro.",
+        "Both countries are members of the Quad, reflecting shared strategic interest in a free and open Indo-Pacific.",
+        "Strong people-to-people and industrial ties, especially in automobiles (Suzuki-Maruti) and infrastructure."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A high-tech, export-driven economy strong in automobiles, electronics, machinery, and precision instruments (Toyota, Sony, Panasonic, Nintendo).",
+        "Imports most of its energy and raw materials, as Japan has very limited domestic natural resources.",
+        "One of the world's largest holders of foreign assets and a major source of overseas development investment."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being a global technology and robotics leader while preserving deep traditional culture.",
+        "The Shinkansen bullet train and extremely punctual, efficient public transport.",
+        "Anime, manga, and video games as major cultural exports.",
+        "High life expectancy and one of the world's most rapidly aging populations.",
+        "Mount Fuji and a UNESCO-rich cultural heritage."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Japan is an East Asian island nation combining a technologically advanced economy with deep traditional culture, governed as a parliamentary constitutional monarchy.",
+    "keyFacts": [
+      "Capital: Tokyo. Currency: Japanese Yen.",
+      "Parliamentary constitutional monarchy; Emperor is symbolic head of state.",
+      "Article 9 of its Constitution renounces war and offensive militarisation.",
+      "Member of G7, G20, and the Quad (with India, US, Australia)."
+    ],
+    "keyTerms": [
+      "Shinkansen",
+      "Article 9",
+      "Quad",
+      "Ring of Fire"
+    ],
+    "commonConfusion": [
+      "Japan's Emperor is a symbolic figurehead, NOT a ruling monarch — actual executive power rests with the elected Prime Minister and Diet."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Japan: parliamentary constitutional monarchy; capital Tokyo; currency Yen.",
+      "Member of Quad along with India, US, Australia — key for India's Indo-Pacific strategy.",
+      "Funded India's Mumbai-Ahmedabad bullet train using Shinkansen technology."
+    ],
+    "commonTraps": [
+      "Assuming Japan's Emperor holds real political power — he does not, under the 1947 Constitution.",
+      "Confusing Japan's Article 9 (renounces war) with having no defence force at all — it maintains Self-Defense Forces."
+    ],
+    "mustRemember": [
+      "Japan: G7/G20/Quad member, tech and robotics leader, key India infrastructure and strategic partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Japan Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Japan — official portal",
+      "kind": "educational"
+    }
+  ]
+}

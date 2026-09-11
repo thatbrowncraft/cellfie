@@ -1,0 +1,124 @@
+{
+  "id": "switzerland",
+  "name": "Switzerland",
+  "genZNote": "Switzerland has stayed neutral through both World Wars while still hosting the Red Cross, dozens of UN agencies, and most global diplomacy in Geneva — proof that 'neutral' doesn't mean 'irrelevant,' it means 'everyone trusts you enough to meet there.'",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A landlocked country in Central Europe, bordered by Germany, France, Italy, Austria, and Liechtenstein, dominated by the Alps mountain range.",
+        "Home to numerous glacial lakes (Geneva, Lucerne, Zurich) and is a major source of several major European rivers, including the Rhine and Rhône.",
+        "Divided into 26 cantons, many with strong local autonomy reflecting the country's linguistic and cultural diversity."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Has four official languages — German, French, Italian, and Romansh — reflecting its position at the crossroads of major European cultures.",
+        "Known for a strong direct democracy tradition, with frequent national referendums on major policy issues.",
+        "Renowned globally for precision watchmaking, chocolate, and a culture of quality craftsmanship."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal republic with a unique collective executive: a seven-member Federal Council governs collegially, with the presidency rotating annually among its members.",
+        "Maintains a long-standing policy of armed neutrality, having not participated in an international war for over two centuries.",
+        "Known for extensive direct democracy, where citizens can call binding referendums on a wide range of national and cantonal policy questions."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Home to CERN, the world's largest particle physics laboratory, where the Higgs boson was confirmed and the World Wide Web was invented.",
+        "A global pharmaceutical powerhouse, home to Novartis and Roche, two of the world's largest pharmaceutical and biotechnology companies.",
+        "Consistently ranks among the world's most innovative countries, with strong investment in research and development relative to GDP."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Not a European Union or NATO member, maintaining its historic policy of neutrality, though closely integrated with the EU through bilateral agreements.",
+        "Hosts the European headquarters of the United Nations in Geneva, along with the International Committee of the Red Cross and numerous other international organisations.",
+        "A global centre for international diplomacy, arbitration, and banking given its neutral status and stability."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Switzerland maintain long-standing friendly relations, with Switzerland being a source of significant investment and advanced pharmaceutical and precision manufacturing technology.",
+        "Both countries cooperate through the European Free Trade Association (EFTA), with a landmark EFTA-India trade agreement signed in 2024 covering investment and trade expansion.",
+        "Switzerland has historically been a significant location for Indian banking and financial matters, a subject of periodic bilateral discussion on financial transparency."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A wealthy, highly specialised economy strong in pharmaceuticals, precision instruments, banking/finance, and luxury watchmaking.",
+        "Home to major global companies including Nestlé, Novartis, Roche, and UBS.",
+        "A global financial centre known for banking, insurance, and wealth management services."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Long-standing political neutrality and hosting major international diplomatic institutions in Geneva.",
+        "World-class precision watchmaking and chocolate.",
+        "CERN and major global pharmaceutical companies (Novartis, Roche).",
+        "Extensive direct democracy through frequent national referendums."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Switzerland is a neutral, federal, direct-democratic republic in the Alps, home to CERN and major global diplomatic institutions in Geneva, though not an EU or NATO member.",
+    "keyFacts": [
+      "Capital: Bern. Currency: Swiss Franc.",
+      "Federal republic with a rotating seven-member collective executive (Federal Council).",
+      "Four official languages: German, French, Italian, Romansh.",
+      "Hosts CERN and the UN's European headquarters in Geneva; historically neutral, not in EU or NATO."
+    ],
+    "keyTerms": [
+      "Federal Council",
+      "Cantons",
+      "CERN",
+      "Direct democracy"
+    ],
+    "commonConfusion": [
+      "Switzerland is NOT a member of the European Union or NATO, despite being geographically central to Europe — it maintains a historic policy of armed neutrality."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Switzerland: federal republic, rotating Federal Council presidency, capital Bern.",
+      "Not an EU or NATO member; maintains armed neutrality; hosts UN Geneva HQ and CERN.",
+      "India-Switzerland: EFTA-India trade agreement signed 2024; strong pharma/precision-manufacturing ties."
+    ],
+    "commonTraps": [
+      "Assuming Switzerland is an EU member because it's in Europe — it is not, and uses its own currency (Swiss Franc).",
+      "Confusing Switzerland's rotating collective presidency with a single powerful head of state."
+    ],
+    "mustRemember": [
+      "Switzerland: neutral federal republic, CERN/Geneva diplomacy hub, EFTA-India trade deal (2024), major pharma partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Switzerland Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "CERN — official portal",
+      "kind": "scientific",
+      "url": "https://home.cern/"
+    }
+  ]
+}

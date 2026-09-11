@@ -1,0 +1,123 @@
+{
+  "id": "poland",
+  "name": "Poland",
+  "genZNote": "Poland was wiped off the map entirely for 123 years (1795-1918), partitioned between three empires, and still came back as a functioning, thriving nation — a genuinely remarkable comeback story that anchors most of its national identity today.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in Central Europe, bordered by Germany, the Czech Republic, Slovakia, Ukraine, Belarus, Lithuania, Russia (Kaliningrad exclave), and the Baltic Sea.",
+        "Predominantly flat lowland terrain (part of the North European Plain), with the Carpathian and Sudeten mountains along its southern border.",
+        "Historically a strategically vulnerable location on the flat plains between Western Europe and Russia, shaping much of its turbulent history."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Polish is the official language; the country is predominantly Roman Catholic, with the Church playing a historically significant role in national identity and resistance to communist rule.",
+        "Home to a rich cultural heritage including composer Frédéric Chopin and scientist Marie Curie (Skłodowska), and a strong literary tradition with several Nobel laureates.",
+        "National identity is deeply shaped by the memory of historical partitions, WWII devastation, and the peaceful Solidarity movement that helped end communist rule."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary republic with a President as head of state and a Prime Minister as head of government, alongside a bicameral parliament (Sejm and Senate).",
+        "Was partitioned and erased from the map between 1795 and 1918, divided among Russia, Prussia, and Austria, before regaining independence after WWI.",
+        "The Solidarity trade union movement, led by Lech Wałęsa in the 1980s, played a pivotal role in the peaceful transition from communist rule to democracy."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Home to Marie Curie (Skłodowska), a pioneering physicist/chemist and two-time Nobel laureate for research on radioactivity.",
+        "A growing hub for IT outsourcing, software development, and engineering services within the European Union.",
+        "Strong manufacturing base in automotive parts, electronics assembly, and increasingly renewable energy technology."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A European Union and NATO member, playing an increasingly prominent role in European security policy, especially regarding Russia and Ukraine.",
+        "Has taken in a very large number of Ukrainian refugees and provided significant support to Ukraine following Russia's 2022 invasion.",
+        "One of the EU's fastest-growing major economies since joining in 2004, an economic transformation success story."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Poland share diplomatic relations dating back to India's independence, with historical goodwill tracing to Poland's WWII-era refugee children being sheltered in India (notably in Balachadi, Gujarat).",
+        "Growing trade and investment ties, particularly in IT services, manufacturing, and defence-related cooperation.",
+        "Poland serves as a growing gateway for Indian businesses seeking access to Central European and EU markets."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "One of the EU's fastest-growing economies since joining in 2004, with strong manufacturing, IT services, and agricultural sectors.",
+        "A major manufacturing base for automotive parts and electronics within European supply chains.",
+        "Growing renewable energy investment alongside a historically coal-dependent energy sector undergoing gradual transition."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "A remarkable historical resilience, having been partitioned off the map for over a century and rebuilt after WWII devastation.",
+        "The Solidarity movement's pivotal role in ending communist rule in Eastern Europe.",
+        "Producing Marie Curie and Frédéric Chopin.",
+        "One of the EU's fastest-growing economies since 2004."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Poland is a Central European parliamentary republic, an EU/NATO member known for its historical resilience, the Solidarity movement, and rapid post-2004 economic growth.",
+    "keyFacts": [
+      "Capital: Warsaw. Currency: Polish Złoty.",
+      "Parliamentary republic; bicameral parliament (Sejm and Senate).",
+      "Was partitioned and erased from the map 1795-1918.",
+      "Joined the EU in 2004; one of its fastest-growing economies since."
+    ],
+    "keyTerms": [
+      "Solidarity movement",
+      "Sejm",
+      "Partitions of Poland",
+      "Lech Wałęsa"
+    ],
+    "commonConfusion": [
+      "Poland's currency is the Złoty, not the Euro — despite EU membership, Poland has not adopted the Eurozone currency."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Poland: parliamentary republic; EU/NATO member; capital Warsaw; currency Złoty (not Euro).",
+      "Was partitioned off the map 1795-1918; Solidarity movement (1980s) helped end communist rule.",
+      "India-Poland: historic WWII goodwill via Polish refugee children sheltered in Balachadi, Gujarat."
+    ],
+    "commonTraps": [
+      "Assuming Poland uses the Euro — it retains the Złoty despite EU membership.",
+      "Confusing Poland's 1795-1918 partition period with its later WWII occupation — these are distinct historical episodes."
+    ],
+    "mustRemember": [
+      "Poland: EU/NATO member, historic partition/Solidarity legacy, growing India IT/trade partner, WWII-era Balachadi refugee link."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Poland Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Poland — official portal",
+      "kind": "educational"
+    }
+  ]
+}

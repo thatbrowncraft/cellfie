@@ -1,0 +1,123 @@
+{
+  "id": "france",
+  "name": "France",
+  "genZNote": "France gave the world the metre, the modern human rights vocabulary via 1789, and the EU's founding push — it's basically the country most likely to show up as the answer whenever an exam asks 'where did this globally standard idea originate?'",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The largest country in Western Europe by area, bordered by Belgium, Germany, Switzerland, Italy, Spain, and several microstates, with coastlines on the Atlantic, English Channel, and Mediterranean.",
+        "Diverse terrain including the Alps and Pyrenees mountain ranges, the fertile Paris Basin, and extensive river systems (Seine, Loire, Rhône, Garonne).",
+        "Includes overseas territories and departments (e.g., French Guiana, Réunion, Martinique) spread across multiple continents."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "French is the official language; the country has a globally influential cultural tradition in art, philosophy, cuisine, fashion, and cinema.",
+        "The 1789 French Revolution's ideals of 'Liberté, Égalité, Fraternité' (Liberty, Equality, Fraternity) remain central to French national identity.",
+        "Strong tradition of secularism ('laïcité') formally separating religion from public institutions, a distinctive feature of French governance."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A semi-presidential republic (Fifth Republic, since 1958) with a directly elected President sharing executive power with a Prime Minister, and a bicameral Parliament.",
+        "One of the five permanent members of the UN Security Council, and a recognised nuclear power.",
+        "Administratively divided into regions and departments, with a strong tradition of centralised governance from Paris."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A major global centre of scientific research, home to institutions like the Pasteur Institute (pioneering microbiology and vaccine research since Louis Pasteur's era) and CNRS.",
+        "World leader in nuclear energy generation as a share of its electricity mix, and strong in aerospace engineering (Airbus is a major Franco-European venture).",
+        "Numerous French Nobel laureates across physics, chemistry, and medicine, including foundational contributions to radioactivity research (Marie and Pierre Curie)."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding member of the European Union and NATO, and a permanent UN Security Council member with veto power.",
+        "Maintains significant global influence through 'La Francophonie', the international organisation of French-speaking nations and regions.",
+        "A key military and diplomatic power in Europe, Africa (given historical colonial ties), and the Indo-Pacific (through overseas territories like Réunion and French Polynesia)."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and France share a 'Strategic Partnership' dating to 1998, with defence cooperation as a major pillar, including the Rafale fighter jet deal and Scorpène submarine collaboration.",
+        "France strongly supports India's Indo-Pacific strategy and has been a key partner in India's civil nuclear energy programme (Jaitapur project) and space cooperation.",
+        "Historic ties trace back to French colonial-era Pondicherry (Puducherry), which retains French cultural influence today."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "One of the world's largest economies, strong in aerospace, automobiles, luxury goods, pharmaceuticals, and agriculture.",
+        "A world leader in nuclear power generation and a major global tourism destination, consistently among the world's most visited countries.",
+        "Major exporter of aircraft (via Airbus), wine, and high-end fashion and luxury goods."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The 1789 French Revolution and its lasting global influence on democratic and human rights ideals.",
+        "Global leadership in fashion, cuisine, and the arts (Paris as a cultural capital).",
+        "Being one of the world's most visited tourist destinations.",
+        "A key defence and strategic partner for India (Rafale jets, submarines, nuclear cooperation)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "France is a semi-presidential republic in Western Europe, a founding EU/NATO member and UN Security Council permanent member with deep global cultural and strategic influence.",
+    "keyFacts": [
+      "Capital: Paris. Currency: Euro.",
+      "Semi-presidential republic; current system is the Fifth Republic (since 1958).",
+      "Permanent UN Security Council member and recognised nuclear power.",
+      "Key India defence partner: Rafale jets, Scorpène submarines, Jaitapur nuclear project."
+    ],
+    "keyTerms": [
+      "Fifth Republic",
+      "Laïcité",
+      "La Francophonie",
+      "Rafale"
+    ],
+    "commonConfusion": [
+      "France's 'semi-presidential' system means the directly elected President shares executive power with a Prime Minister — it is not a purely presidential system like the US."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "France: semi-presidential Fifth Republic since 1958; permanent UNSC member.",
+      "Founding EU and NATO member; global cultural and diplomatic power via La Francophonie.",
+      "India-France: Strategic Partnership since 1998; Rafale jets, Scorpène submarines, Jaitapur nuclear project."
+    ],
+    "commonTraps": [
+      "Assuming France is a purely presidential system like the US — power is shared with a Prime Minister.",
+      "Forgetting France is a recognised nuclear weapons state and permanent UNSC member."
+    ],
+    "mustRemember": [
+      "France: Fifth Republic, UNSC permanent member, EU/NATO founder, top India defence and nuclear partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-France Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of France — official portal",
+      "kind": "educational"
+    }
+  ]
+}

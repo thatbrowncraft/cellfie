@@ -1,0 +1,123 @@
+{
+  "id": "argentina",
+  "name": "Argentina",
+  "genZNote": "Argentina stretches so far south that Ushuaia, its southernmost city, calls itself 'the End of the World' — the country spans nearly the entire length of South America, from subtropical north to Patagonian glaciers and the edge of Antarctica.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The second-largest country in South America by area, stretching from subtropical regions in the north to the sub-Antarctic Tierra del Fuego in the far south.",
+        "Home to the vast Pampas grasslands (a globally significant agricultural region), the Andes mountains along its western border with Chile, and Patagonia's glaciers and steppes in the south.",
+        "Ushuaia, its southernmost major city, is often called 'the End of the World' and serves as a gateway for Antarctic expeditions."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Spanish is the official language; the culture reflects strong European (particularly Italian and Spanish) immigrant influence alongside indigenous heritage.",
+        "The birthplace of tango music and dance, which originated in Buenos Aires and became a globally recognised cultural export.",
+        "Football holds deep cultural significance, with Argentina among the most successful national teams in World Cup history, and figures like Diego Maradona and Lionel Messi as global icons."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal presidential republic composed of 23 provinces and an autonomous capital city (Buenos Aires), modelled significantly on the US constitutional structure.",
+        "Experienced periods of military dictatorship, notably 1976-1983, followed by a return to sustained democratic governance.",
+        "Has faced repeated economic crises and high inflation over recent decades, a persistent challenge for governance and policy."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Has produced multiple Nobel laureates in science, including in physiology/medicine and chemistry, reflecting a strong scientific research tradition.",
+        "A major centre for nuclear energy research and technology in Latin America, with an advanced civilian nuclear power programme.",
+        "Strong biotechnology and agricultural science base, supporting its position as a major global grain and soy exporter."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A G20 member and a founding member of Mercosur, the South American regional trade bloc.",
+        "Maintains a long-standing sovereignty dispute with the United Kingdom over the Falkland Islands (Islas Malvinas), including the 1982 Falklands War.",
+        "An active participant in Antarctic research and governance, given its geographic proximity and territorial claims in the region."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Argentina share warm relations, with cooperation growing in agriculture, pharmaceuticals, and lithium/critical mineral supply (Argentina holds significant lithium reserves).",
+        "Argentina is an important source of edible oils (soybean oil) for India, a significant trade relationship.",
+        "Both countries collaborate on nuclear energy cooperation and space research, alongside growing investment ties."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A major global exporter of soybeans, beef, wheat, and other agricultural products from its fertile Pampas region.",
+        "Holds significant lithium reserves as part of South America's 'lithium triangle', a resource of growing global strategic importance for battery technology.",
+        "Has experienced chronic high inflation and periodic sovereign debt crises, significant recurring economic policy challenges."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Tango music and dance, originating in Buenos Aires.",
+        "Football greatness, including World Cup titles and icons like Maradona and Messi.",
+        "The Pampas grasslands and being a major global grain/beef exporter.",
+        "Patagonia's dramatic glaciers and landscapes."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Argentina is a federal presidential republic in South America, home to tango and world-class football, a major agricultural exporter facing recurring economic challenges.",
+    "keyFacts": [
+      "Capital: Buenos Aires. Currency: Argentine Peso.",
+      "Federal presidential republic; 23 provinces plus the autonomous capital.",
+      "Birthplace of tango; multiple football World Cup titles.",
+      "Holds major lithium reserves as part of South America's 'lithium triangle'."
+    ],
+    "keyTerms": [
+      "Pampas",
+      "Tango",
+      "Falklands/Malvinas dispute",
+      "Lithium triangle"
+    ],
+    "commonConfusion": [
+      "The Falkland Islands (Islas Malvinas) dispute is with the United Kingdom, not with a South American neighbour — it led to the 1982 Falklands War."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Argentina: federal presidential republic, capital Buenos Aires, birthplace of tango.",
+      "Major soybean/beef exporter; holds significant lithium reserves (lithium triangle).",
+      "India-Argentina: growing trade in edible oils and lithium/critical minerals; nuclear energy cooperation."
+    ],
+    "commonTraps": [
+      "Confusing the Falklands/Malvinas dispute (Argentina vs UK) with a dispute involving a South American neighbour.",
+      "Assuming Argentina's economic struggles reflect all of South America — its chronic inflation is a distinctive national challenge."
+    ],
+    "mustRemember": [
+      "Argentina: tango/football culture, Pampas agri-exporter, lithium triangle member, growing India trade in oils/minerals."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Argentina Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Argentina — official portal",
+      "kind": "educational"
+    }
+  ]
+}

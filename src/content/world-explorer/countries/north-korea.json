@@ -1,0 +1,115 @@
+{
+  "id": "north-korea",
+  "name": "North Korea",
+  "genZNote": "North Korea runs on its own calendar (Year 1 = 1912, Kim Il Sung's birth) and its own time zone experiments — it's less a country you visit for vacation and more a case study every geopolitics exam loves to ask about.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Occupies the northern half of the Korean Peninsula in East Asia, bordered by South Korea across the DMZ, and by China and a short stretch of Russia to the north.",
+        "Mostly mountainous and forested terrain, with major population centres and industry concentrated in western coastal plains around the capital, Pyongyang.",
+        "Temperate climate with cold, dry winters influenced by Siberian air masses."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Korean is the official language; culture and public life are heavily shaped by the state ideology of Juche (self-reliance) and the cult of personality around the ruling Kim family.",
+        "Traditional Korean customs, cuisine, and festivals are practiced, but public cultural expression is tightly controlled and centrally organised by the state.",
+        "Mass performances, state media, and monuments to the Kim family are prominent features of public life."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A single-party state under the Workers' Party of Korea, with power concentrated in the Kim family since the country's founding in 1948.",
+        "Officially named the Democratic People's Republic of Korea (DPRK); described by most international observers as one of the world's most closed and tightly controlled societies.",
+        "The economy and society are organised around a centrally planned, state-directed model with the military given priority ('Songun', military-first policy)."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Technically still at war with South Korea, as the 1953 Korean War ended in an armistice, not a peace treaty.",
+        "Subject to extensive United Nations Security Council sanctions over its nuclear weapons and ballistic missile programmes.",
+        "China is by far North Korea's most significant diplomatic and economic partner; Russia ties have also grown in recent years."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India maintains formal diplomatic relations with North Korea, but the relationship is limited in scope compared to India's ties with South Korea.",
+        "India has historically supported denuclearisation of the Korean Peninsula and complies with UN sanctions restricting trade and technology transfers with North Korea.",
+        "There is little significant trade or cultural exchange between the two countries at present."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A centrally planned economy, heavily sanctioned internationally, with limited transparency about its actual economic performance.",
+        "China is the overwhelming majority trade partner, given the extent of international sanctions on North Korea.",
+        "Known international revenue sources reportedly include mineral exports, overseas labour, and, according to international investigators, cyber-enabled financial theft."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being one of the world's most isolated and tightly state-controlled countries.",
+        "An active nuclear weapons and ballistic missile programme, a major focus of international diplomacy and sanctions.",
+        "The Juche ideology of self-reliance and the multi-generational Kim family leadership.",
+        "The Korean Demilitarized Zone (DMZ) separating it from South Korea."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "North Korea (DPRK) is a single-party, centrally planned East Asian state under Kim family leadership, internationally sanctioned over its nuclear programme.",
+    "keyFacts": [
+      "Capital: Pyongyang. Currency: North Korean Won.",
+      "Single-party state under the Workers' Party of Korea; ruled by the Kim family since 1948.",
+      "Technically still at war with South Korea (1953 armistice, no peace treaty).",
+      "Subject to extensive UN sanctions over nuclear/missile programmes."
+    ],
+    "keyTerms": [
+      "Juche",
+      "DPRK",
+      "Songun",
+      "DMZ"
+    ],
+    "commonConfusion": [
+      "North Korea's official name is the Democratic People's Republic of Korea — it is not a liberal democracy despite the name."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "North Korea: single-party state, capital Pyongyang, Juche ideology, Kim family rule since 1948.",
+      "Still technically at war with South Korea; 1953 agreement was an armistice.",
+      "Heavily sanctioned by the UNSC over nuclear weapons and missile tests."
+    ],
+    "commonTraps": [
+      "Assuming 'Democratic' in its official name reflects its actual system of government.",
+      "Confusing North Korea's isolation with having no international relations at all — China remains a major partner."
+    ],
+    "mustRemember": [
+      "North Korea: isolated, sanctioned, single-party nuclear state; China is its key partner; still formally at war with South Korea."
+    ]
+  },
+  "sources": [
+    {
+      "name": "United Nations — Security Council sanctions on DPRK",
+      "kind": "educational",
+      "url": "https://www.un.org/"
+    },
+    {
+      "name": "Ministry of External Affairs, Government of India — bilateral brief",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    }
+  ]
+}

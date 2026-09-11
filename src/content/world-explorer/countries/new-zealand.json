@@ -1,0 +1,123 @@
+{
+  "id": "new-zealand",
+  "name": "New Zealand",
+  "genZNote": "New Zealand was the first country in the world to give women the right to vote (1893) — a small, remote island nation that keeps quietly leading on progressive firsts, from suffrage to some of the earliest nuclear-free zone policies in the Pacific.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "An island nation in the southwestern Pacific Ocean, made up of two main islands (North and South Island) and numerous smaller islands.",
+        "Highly geologically active, sitting on the Pacific Ring of Fire, with significant volcanic and geothermal activity, alongside dramatic fjords and the Southern Alps mountain range.",
+        "One of the last major landmasses settled by humans, with Polynesian Māori voyagers arriving around 1250-1300 CE, followed by European settlement from the 17th-18th centuries."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "English, Māori, and New Zealand Sign Language are all official languages, reflecting a strong bicultural national identity between Māori and European (Pākehā) heritage.",
+        "The 1840 Treaty of Waitangi between the British Crown and Māori chiefs is considered the country's founding constitutional document, still central to ongoing rights and reconciliation discussions.",
+        "Rugby (particularly the All Blacks national team and their haka ritual) holds deep cultural and national significance."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary constitutional monarchy; the British monarch is head of state (represented by a Governor-General), while an elected Prime Minister leads the government.",
+        "Was the first self-governing nation in the world to grant women the right to vote, in 1893, a landmark global first for suffrage.",
+        "Maintains a strong nuclear-free policy, refusing entry to nuclear-powered or nuclear-armed vessels since the mid-1980s, a distinctive and long-standing national security stance."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Home to Ernest Rutherford, the 'father of nuclear physics', a New Zealand-born Nobel laureate whose work laid foundations for atomic science.",
+        "A global leader in agricultural science and biotechnology, particularly in dairy farming and pastoral livestock management techniques.",
+        "Strong in geothermal energy technology, given its significant volcanic geology, generating a large share of domestic renewable electricity."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A member of the Commonwealth of Nations and maintains close security and trade ties with Australia through their long-standing 'Closer Economic Relations' agreement.",
+        "An active participant in Pacific regional diplomacy and a significant contributor to Pacific Islands development cooperation.",
+        "Known internationally for an independent foreign policy stance, including its distinctive nuclear-free zone policy."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and New Zealand maintain warm relations, with a growing Indian diaspora forming one of the country's largest and fastest-growing immigrant communities.",
+        "Growing trade and education ties, with New Zealand a popular destination for Indian international students.",
+        "Both countries collaborate on agricultural technology exchange, particularly dairy farming techniques relevant to India's dairy sector."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "An agriculture-driven economy, one of the world's largest dairy exporters, alongside significant meat, wool, and horticultural exports.",
+        "Tourism is a major economic pillar, drawing visitors to its dramatic natural landscapes, famously used as filming locations for major international productions.",
+        "A globally significant exporter of geothermal energy technology and expertise."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the first country to grant women the right to vote (1893).",
+        "The All Blacks rugby team and the haka.",
+        "Dramatic natural landscapes, including fjords and geothermal features.",
+        "A long-standing nuclear-free zone policy."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "New Zealand is a Pacific island parliamentary constitutional monarchy, the first country to grant women's suffrage (1893), known for its bicultural Māori-European identity and nuclear-free policy.",
+    "keyFacts": [
+      "Capital: Wellington (not Auckland). Currency: New Zealand Dollar.",
+      "Parliamentary constitutional monarchy; British monarch is head of state.",
+      "First self-governing nation to grant women the vote, in 1893.",
+      "Maintains a long-standing nuclear-free zone policy since the mid-1980s."
+    ],
+    "keyTerms": [
+      "Treaty of Waitangi",
+      "Haka",
+      "Nuclear-free policy",
+      "Pākehā"
+    ],
+    "commonConfusion": [
+      "New Zealand's capital is Wellington, not Auckland — Auckland is the largest city, but Wellington has been the capital since 1865."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "New Zealand: parliamentary constitutional monarchy; capital Wellington; first nation to grant women's suffrage (1893).",
+      "Nuclear-free zone policy since the mid-1980s; 1840 Treaty of Waitangi is its founding constitutional document.",
+      "India-New Zealand: growing Indian diaspora and student population; agricultural (dairy) technology cooperation."
+    ],
+    "commonTraps": [
+      "Assuming Auckland is New Zealand's capital — it is Wellington.",
+      "Confusing New Zealand's 1893 suffrage milestone with other countries' later women's voting rights dates."
+    ],
+    "mustRemember": [
+      "New Zealand: first women's suffrage nation (1893), nuclear-free policy, Treaty of Waitangi foundation, growing India diaspora/education ties."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-New Zealand Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of New Zealand — official portal",
+      "kind": "educational"
+    }
+  ]
+}

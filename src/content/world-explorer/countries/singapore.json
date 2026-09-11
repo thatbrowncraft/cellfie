@@ -1,0 +1,123 @@
+{
+  "id": "singapore",
+  "name": "Singapore",
+  "genZNote": "Singapore is a country, a city, and an island all at the same time — it went from a small colonial trading post to one of the world's richest, cleanest, most efficient nations in about two generations, which is basically the ultimate exam-answer example of 'good governance.'",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A small island city-state in Southeast Asia at the southern tip of the Malay Peninsula, connected to Malaysia by causeways and strategically positioned on the Strait of Malacca.",
+        "One of the smallest countries in the world by land area, with extensive land reclamation used to expand its usable territory over decades.",
+        "Tropical rainforest climate with no distinct seasons; densely urbanised with very limited natural resources."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "A multicultural society with Chinese, Malay, Indian, and Eurasian communities; has four official languages — English, Mandarin, Malay, and Tamil.",
+        "English is the main language of administration, business, and education, reflecting its role as a global financial hub.",
+        "Known for strict public order laws and cleanliness rules, alongside a vibrant hawker-centre food culture recognised by UNESCO as intangible cultural heritage."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary republic with a President as head of state and a Prime Minister as head of government; has been governed continuously by the People's Action Party (PAP) since independence in 1965.",
+        "Gained full independence in 1965 after a brief merger with Malaysia (1963-65), following earlier British colonial rule.",
+        "Known globally for efficient, low-corruption public administration and long-term economic planning."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A leading global hub for biomedical research, pharmaceutical manufacturing, and clinical trials, anchored by its Biopolis research campus.",
+        "Home to world-class hospitals and a major medical tourism industry known for advanced specialist care.",
+        "A global financial technology (fintech) and digital innovation hub, with strong government investment in R&D."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding ASEAN member and one of the world's most important global trade and financial hubs, given its position on the Strait of Malacca.",
+        "Maintains strong ties with major powers while pursuing a careful policy of neutrality and multilateral engagement.",
+        "Hosts major international summits and is headquarters to numerous multinational corporations' Asia-Pacific operations."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Singapore share a 'Strategic Partnership' with deep trade, investment, and defence cooperation; Singapore is one of the largest sources of foreign direct investment into India.",
+        "Home to a significant ethnic Indian community (notably Tamil, one of Singapore's four official languages), reflecting deep historical migration links.",
+        "Both countries collaborate closely on fintech, digital payments (UPI-PayNow linkage), and naval defence exercises."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A highly developed, trade- and services-driven economy built on finance, shipping/logistics, electronics manufacturing, and biomedical sciences.",
+        "One of the world's busiest transshipment ports, given its strategic position on major East-West shipping lanes.",
+        "Ranks among the most competitive and least corrupt economies globally, attracting extensive foreign investment."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being one of the world's most efficient, prosperous, and orderly city-states.",
+        "One of the world's busiest ports and a top global financial hub.",
+        "The Marina Bay Sands and Gardens by the Bay skyline.",
+        "Being governed by the same party (PAP) continuously since 1965."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Singapore is a small, highly developed Southeast Asian city-state and global financial/trade hub, a parliamentary republic governed by the PAP since 1965.",
+    "keyFacts": [
+      "Capital: Singapore (city-state). Currency: Singapore Dollar.",
+      "Parliamentary republic; independent since 1965 after separating from Malaysia.",
+      "Four official languages: English, Mandarin, Malay, Tamil.",
+      "One of the world's busiest transshipment ports and top financial hubs."
+    ],
+    "keyTerms": [
+      "City-state",
+      "PAP",
+      "Strait of Malacca",
+      "Biopolis"
+    ],
+    "commonConfusion": [
+      "Singapore is a sovereign city-state, not a special administrative city within another country — it is fully independent."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Singapore: city-state, parliamentary republic, independent since 1965; capital is the city itself.",
+      "Major global financial and shipping hub on the Strait of Malacca.",
+      "India-Singapore: Strategic Partnership; a top FDI source for India; UPI-PayNow digital payment linkage."
+    ],
+    "commonTraps": [
+      "Assuming Singapore is part of Malaysia — it separated and became fully independent in 1965.",
+      "Forgetting Tamil is one of its four official languages, reflecting its Indian diaspora."
+    ],
+    "mustRemember": [
+      "Singapore: island city-state, global trade/finance hub, key India investment and fintech partner, four official languages."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Singapore Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "ASEAN Secretariat — official portal",
+      "kind": "educational"
+    }
+  ]
+}

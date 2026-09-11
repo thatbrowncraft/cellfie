@@ -1,0 +1,124 @@
+{
+  "id": "sweden",
+  "name": "Sweden",
+  "genZNote": "Sweden gave the world the Nobel Prize itself — funded by dynamite inventor Alfred Nobel's fortune — which is a genuinely wild origin story for the award now considered the highest honour in science, literature, and peace.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The largest Nordic country by area, located in Northern Europe on the Scandinavian Peninsula, bordered by Norway and Finland.",
+        "Features extensive forests, over 100,000 lakes, and a long Baltic Sea coastline, with Arctic regions in the north experiencing the midnight sun and polar night.",
+        "Most of the population is concentrated in the southern third of the country, around cities like Stockholm, Gothenburg, and Malmö."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Swedish is the official language; the culture strongly emphasises 'lagom' (a balanced, 'just the right amount' approach to life) and 'fika' (a social coffee-break tradition).",
+        "Known globally for progressive social policies, gender equality initiatives, and a strong tradition of design minimalism (IKEA is a global cultural export).",
+        "A significant global music export nation, particularly in pop production (ABBA, and Sweden's outsized influence on global pop songwriting)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary constitutional monarchy; the King is a purely ceremonial head of state with no political power, while an elected Prime Minister and Riksdag (parliament) govern.",
+        "Known for its extensive welfare state model, providing universal healthcare, education, and social security funded through high taxation.",
+        "Maintained military non-alignment for over two centuries before joining NATO in 2024 following Russia's invasion of Ukraine."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Home to the Nobel Prize (funded by Alfred Nobel's estate), one of the world's most prestigious recognitions in science, literature, and peace.",
+        "A global leader in telecommunications technology (Ericsson) and has produced numerous scientific breakthroughs in medicine and physics.",
+        "Strong in green technology and industrial innovation, including major investment in fossil-free steel production."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A European Union member and, since 2024, a NATO member, ending over 200 years of military non-alignment in response to regional security shifts.",
+        "Historically an active mediator in international conflicts and a major contributor to international humanitarian and development aid.",
+        "Home to the Nobel Prize ceremonies (except the Peace Prize, awarded in Norway), giving it significant global scientific and cultural visibility."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Sweden share an 'Innovation Partnership', with strong cooperation in clean technology, sustainable urban development, and advanced manufacturing.",
+        "Swedish companies (Ericsson, Volvo, IKEA, H&M) have a significant, long-standing commercial presence in India.",
+        "Both countries collaborate closely on climate action and industrial decarbonisation technologies, an area of shared strategic interest."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A highly developed, innovation-driven economy strong in telecommunications, automotive engineering, furniture design, and green technology.",
+        "Major global companies include Ericsson, Volvo, IKEA, H&M, and Spotify (a major digital/tech export).",
+        "A leader in sustainability-focused industrial innovation, including fossil-free steel and battery technology development."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The Nobel Prize, funded by Alfred Nobel's estate.",
+        "Progressive social welfare policies and gender equality initiatives.",
+        "Global brands like IKEA, Volvo, H&M, and Spotify.",
+        "Ending over two centuries of military non-alignment by joining NATO in 2024."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Sweden is a Nordic parliamentary constitutional monarchy known for its welfare state model, the Nobel Prize, and major global brands, having joined NATO in 2024.",
+    "keyFacts": [
+      "Capital: Stockholm. Currency: Swedish Krona.",
+      "Parliamentary constitutional monarchy; King is ceremonial, Prime Minister governs.",
+      "Home to the Nobel Prize, funded by Alfred Nobel's estate.",
+      "Joined NATO in 2024, ending over 200 years of military non-alignment."
+    ],
+    "keyTerms": [
+      "Lagom",
+      "Fika",
+      "Riksdag",
+      "Nobel Prize"
+    ],
+    "commonConfusion": [
+      "The Nobel Peace Prize is awarded in Oslo, Norway — all other Nobel Prizes are awarded in Stockholm, Sweden, per Alfred Nobel's will."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Sweden: parliamentary constitutional monarchy; capital Stockholm; joined NATO in 2024.",
+      "Home to the Nobel Prize (except the Peace Prize, awarded in Norway).",
+      "India-Sweden: Innovation Partnership; strong clean-tech and sustainable manufacturing cooperation."
+    ],
+    "commonTraps": [
+      "Assuming all Nobel Prizes are awarded in Sweden — the Peace Prize is awarded in Oslo, Norway.",
+      "Forgetting Sweden's long-standing military non-alignment ended only in 2024 with NATO membership."
+    ],
+    "mustRemember": [
+      "Sweden: constitutional monarchy, Nobel Prize home, NATO member since 2024, key India clean-tech Innovation Partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Sweden Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "The Nobel Prize — official portal",
+      "kind": "educational",
+      "url": "https://www.nobelprize.org/"
+    }
+  ]
+}

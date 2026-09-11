@@ -1,0 +1,124 @@
+{
+  "id": "ethiopia",
+  "name": "Ethiopia",
+  "genZNote": "Ethiopia is the only African country never colonised by a European power (briefly occupied by Italy, 1936-41, but never formally colonised) — and it runs on its own calendar that's roughly 7-8 years 'behind' the Gregorian one, so it's genuinely a different year there right now.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in the Horn of Africa, landlocked and bordered by Eritrea, Djibouti, Somalia, Kenya, South Sudan, and Sudan.",
+        "Dominated by the Ethiopian Highlands, a rugged plateau region split by the Great Rift Valley, giving it a much cooler climate than typical for its tropical latitude.",
+        "Source of the Blue Nile, one of the two main tributaries feeding into the Nile River, making it strategically significant for regional water politics."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Amharic is the official working language, though Ethiopia is home to over 80 ethnic groups and languages, reflecting extraordinary cultural diversity.",
+        "Uses its own Ethiopian calendar (roughly 7-8 years behind the Gregorian calendar) and its own time-keeping system, distinct cultural features tied to its unique historical isolation.",
+        "One of the oldest Christian nations in the world, with the Ethiopian Orthodox Church tracing its roots to the 4th century CE, alongside a significant Muslim population."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal parliamentary republic composed of ethnically-based regional states, with a President as ceremonial head of state and a Prime Minister leading government.",
+        "The only African country never formally colonised by a European power, successfully repelling an Italian invasion attempt at the Battle of Adwa in 1896.",
+        "Has experienced significant internal conflict in recent years, notably the 2020-2022 Tigray War, which caused a major humanitarian crisis."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Believed to be the birthplace of coffee (the Coffea arabica plant), a globally significant contribution to agricultural and cultural history.",
+        "Home to significant paleoanthropological discoveries, including 'Lucy' (Australopithecus afarensis), one of the most important early hominid fossils ever found.",
+        "Growing investment in renewable hydropower, notably the Grand Ethiopian Renaissance Dam (GERD) on the Blue Nile, Africa's largest hydroelectric project."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Hosts the headquarters of the African Union in Addis Ababa, making it a central diplomatic hub for African continental affairs.",
+        "The Grand Ethiopian Renaissance Dam (GERD) has created significant regional tension with downstream nations Egypt and Sudan over Nile water rights.",
+        "A founding member of the United Nations and historically a symbol of African independence and resistance to colonialism."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Ethiopia maintain long-standing friendly relations, with India providing significant lines of credit for infrastructure, sugar, and textile industry development.",
+        "A notable Indian private-sector presence exists in Ethiopian floriculture (cut flower) and manufacturing sectors.",
+        "Ethiopian Airlines and Indian carriers maintain strong connectivity, supporting growing trade and people-to-people links."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "One of Africa's fastest-growing economies in recent years, though still among the world's lower-income nations by per-capita GDP.",
+        "Agriculture, especially coffee production, remains central to the economy alongside a growing manufacturing and textile sector.",
+        "The Grand Ethiopian Renaissance Dam is central to Ethiopia's plans to become a major regional electricity exporter."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the only African country never formally colonised by a European power.",
+        "Being the likely birthplace of coffee.",
+        "Hosting the African Union headquarters in Addis Ababa.",
+        "The 'Lucy' fossil discovery and its unique Ethiopian calendar system."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Ethiopia is a landlocked Horn of Africa federal parliamentary republic, the only African nation never colonised, and host to the African Union headquarters.",
+    "keyFacts": [
+      "Capital: Addis Ababa. Currency: Ethiopian Birr.",
+      "Federal parliamentary republic with ethnically-based regional states.",
+      "Only African country never formally colonised (repelled Italy at the Battle of Adwa, 1896).",
+      "Believed birthplace of coffee; hosts the African Union headquarters."
+    ],
+    "keyTerms": [
+      "Ethiopian calendar",
+      "Battle of Adwa",
+      "African Union",
+      "GERD (Grand Ethiopian Renaissance Dam)"
+    ],
+    "commonConfusion": [
+      "Ethiopia was briefly occupied by Italy (1936-1941) during WWII, but this was a temporary wartime occupation, not formal colonisation — Ethiopia remained the only African nation never colonised in the classic sense."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Ethiopia: federal parliamentary republic; never formally colonised; hosts African Union HQ in Addis Ababa.",
+      "Believed birthplace of coffee; site of the 'Lucy' fossil discovery.",
+      "India-Ethiopia: long-standing development credit lines; strong floriculture and textile investment presence."
+    ],
+    "commonTraps": [
+      "Assuming Ethiopia was colonised because of its brief WWII-era Italian occupation (1936-41) — it was never formally colonised.",
+      "Confusing the Ethiopian calendar's year count with the Gregorian calendar used internationally."
+    ],
+    "mustRemember": [
+      "Ethiopia: never colonised, coffee's likely birthplace, African Union host, Lucy fossil site, key India development-aid partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Ethiopia Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "African Union — official portal",
+      "kind": "educational",
+      "url": "https://au.int/"
+    }
+  ]
+}

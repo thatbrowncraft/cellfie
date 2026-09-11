@@ -1,0 +1,115 @@
+{
+  "id": "iraq",
+  "name": "Iraq",
+  "genZNote": "Iraq sits on ancient Mesopotamia, 'the land between two rivers' — the Tigris and Euphrates — where writing, cities, and law codes were invented millennia ago, which makes it one of the true starting points of recorded human civilization.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in West Asia, historically known as Mesopotamia ('land between the rivers'), centred on the Tigris and Euphrates river system.",
+        "Borders Iran, Turkey, Syria, Jordan, Saudi Arabia, and Kuwait, with a very short coastline on the Persian Gulf.",
+        "Terrain ranges from fertile river plains in the centre and south to mountains in the north (Kurdistan region) and desert in the west."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Arabic and Kurdish are both official languages, reflecting Iraq's major Arab and Kurdish population groups, alongside smaller minorities.",
+        "Home to some of the world's oldest civilizations — Sumer, Akkad, Babylon, and Assyria all flourished in ancient Mesopotamia.",
+        "Predominantly Muslim, split between Shia and Sunni communities, a divide that has significantly shaped modern Iraqi politics."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal parliamentary republic, with a President as head of state and a Prime Minister as head of government, established after the fall of Saddam Hussein's regime in 2003.",
+        "The Kurdistan Region in the north has significant autonomous self-governance within the federal Iraqi state.",
+        "Has experienced significant instability and conflict in recent decades, including the 2003 US-led invasion, sectarian conflict, and the fight against ISIS (2014-2017)."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding member of OPEC, with oil forming the overwhelming majority of government revenue.",
+        "Balances relationships between the United States, Iran (which holds significant political influence in Iraq), and neighbouring Arab states.",
+        "Member of the Arab League and United Nations, working to rebuild international standing after decades of conflict and sanctions."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "Iraq is one of India's top crude oil suppliers, making energy trade the cornerstone of the bilateral relationship.",
+        "India evacuated thousands of its citizens from Iraq during periods of conflict (e.g., 'Operation Raahat'-type responses), reflecting a historically significant Indian expatriate presence.",
+        "Ancient trade and cultural links between Mesopotamia and the Indian subcontinent date back millennia through Indus Valley-Mesopotamian trade contacts."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "An oil-dependent economy, with petroleum exports accounting for the vast majority of government revenue and GDP.",
+        "Reconstruction and infrastructure development remain major economic priorities following decades of conflict.",
+        "Agriculture along the Tigris-Euphrates river system remains historically and economically significant despite reduced water flows in recent decades."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the historical heart of ancient Mesopotamia, birthplace of writing, the wheel, and some of the earliest cities and law codes (e.g., the Code of Hammurabi).",
+        "Major global crude oil reserves and OPEC membership.",
+        "Significant 21st-century conflicts, including the 2003 invasion and the fight against ISIS.",
+        "The historically and archaeologically significant ancient city of Babylon."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Iraq is a West Asian federal parliamentary republic built on the historic land of Mesopotamia, a major OPEC oil producer working to rebuild after decades of conflict.",
+    "keyFacts": [
+      "Capital: Baghdad. Currency: Iraqi Dinar.",
+      "Federal parliamentary republic since 2003; Kurdistan Region has autonomous status.",
+      "Historic heart of ancient Mesopotamia (Sumer, Babylon, Assyria).",
+      "Founding OPEC member; major oil exporter."
+    ],
+    "keyTerms": [
+      "Mesopotamia",
+      "Kurdistan Region",
+      "Code of Hammurabi",
+      "OPEC"
+    ],
+    "commonConfusion": [
+      "Iraq's modern political system (federal parliamentary republic) dates only from 2003, after the fall of Saddam Hussein — not to be confused with its much older ancient Mesopotamian civilizations."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Iraq: federal parliamentary republic since 2003; historic Mesopotamia; capital Baghdad.",
+      "Founding OPEC member; oil dominates government revenue.",
+      "India-Iraq: one of India's top crude oil suppliers."
+    ],
+    "commonTraps": [
+      "Confusing ancient Mesopotamian history with Iraq's modern 2003-era political system.",
+      "Assuming Iraq is ethnically/linguistically homogeneous — Arabic and Kurdish are both official languages."
+    ],
+    "mustRemember": [
+      "Iraq: Mesopotamian heartland, federal republic since 2003, OPEC founder, major India oil supplier."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Iraq Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "United Nations — Iraq country background",
+      "kind": "educational",
+      "url": "https://www.un.org/"
+    }
+  ]
+}

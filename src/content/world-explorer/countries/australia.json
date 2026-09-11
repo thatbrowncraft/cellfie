@@ -1,0 +1,123 @@
+{
+  "id": "australia",
+  "name": "Australia",
+  "genZNote": "Australia is the only country that's also an entire continent — and it's home to more venomous snake species than anywhere else on Earth, plus a marsupial-dominated ecosystem that evolved in near-total isolation for tens of millions of years.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The world's smallest continent and sixth-largest country by area, surrounded by the Indian and Pacific Oceans.",
+        "Predominantly arid or semi-arid ('the Outback'), with the vast majority of its population concentrated in coastal cities, especially in the southeast.",
+        "Home to unique ecosystems including the Great Barrier Reef, the world's largest coral reef system, and extensive desert interior."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "English is the de facto national language; Indigenous Australian (Aboriginal and Torres Strait Islander) cultures represent one of the world's oldest continuous living cultures, dating back over 60,000 years.",
+        "A highly multicultural society built substantially through post-WWII immigration from Europe, and more recently from Asia, including a significant and growing Indian diaspora.",
+        "Sport (cricket, Australian Rules football, rugby, swimming) holds a central place in national identity and culture."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal parliamentary constitutional monarchy; the British monarch is head of state (represented by a Governor-General), while an elected Prime Minister leads the government.",
+        "Composed of six states and several territories, each with significant self-governing powers under Australia's federal system.",
+        "Federated as a single nation in 1901, uniting previously separate British colonies into the Commonwealth of Australia."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A significant global contributor to medical research, including the development of the cervical cancer vaccine (Gardasil) and cochlear implant technology.",
+        "Home to world-class astronomical research facilities, benefiting from clear, dark southern-hemisphere skies.",
+        "Strong mining engineering and resource extraction technology, given its position as a major global exporter of minerals."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A member of the Quad (alongside India, the US, and Japan) and AUKUS (with the US and UK), reflecting its central role in Indo-Pacific security.",
+        "A member of the Commonwealth of Nations and a close security ally of the United States.",
+        "An active participant in Pacific regional diplomacy and a significant contributor to international development assistance in the Pacific Islands region."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Australia share a 'Comprehensive Strategic Partnership', with both countries members of the Quad grouping focused on a free and open Indo-Pacific.",
+        "Home to a large and rapidly growing Indian diaspora, and Australia is a top destination for Indian international students.",
+        "A landmark India-Australia trade agreement (ECTA, 2022) has significantly boosted bilateral trade, alongside strong critical minerals and defence cooperation."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A highly developed, resource-rich economy strong in mining exports (iron ore, coal, lithium, natural gas), agriculture, and education services.",
+        "One of the world's largest exporters of iron ore and coal, key inputs for global steel and energy production.",
+        "A major destination for international education, particularly for Indian and Chinese students, forming a significant services export sector."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the only country that is also an entire continent.",
+        "Unique wildlife including kangaroos, koalas, and the world's largest coral reef system (the Great Barrier Reef).",
+        "Being a member of the Quad alongside India, and a top destination for Indian students.",
+        "One of the world's oldest continuous Indigenous cultures."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Australia is a federal parliamentary constitutional monarchy that is also the world's only country-continent, a Quad member and major trade/education partner for India.",
+    "keyFacts": [
+      "Capital: Canberra (not Sydney). Currency: Australian Dollar.",
+      "Federal parliamentary constitutional monarchy; British monarch is head of state.",
+      "Federated in 1901, uniting separate British colonies.",
+      "Member of the Quad (with India, US, Japan) and AUKUS (with US, UK)."
+    ],
+    "keyTerms": [
+      "Quad",
+      "AUKUS",
+      "Outback",
+      "Great Barrier Reef"
+    ],
+    "commonConfusion": [
+      "Australia's capital is Canberra, not Sydney or Melbourne — Canberra was purpose-built as a compromise capital between the two larger rival cities."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Australia: federal parliamentary constitutional monarchy; capital Canberra; federated in 1901.",
+      "Quad member with India, US, Japan; also part of AUKUS with US and UK.",
+      "India-Australia: Comprehensive Strategic Partnership; ECTA trade agreement (2022); top destination for Indian students."
+    ],
+    "commonTraps": [
+      "Assuming Sydney is Australia's capital — it is Canberra.",
+      "Confusing Australia's Quad membership (with India, US, Japan) with its separate AUKUS pact (with US, UK only)."
+    ],
+    "mustRemember": [
+      "Australia: country-continent, federal constitutional monarchy, Quad/AUKUS member, ECTA trade partner and top study destination for India."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Australia Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Australia — official portal",
+      "kind": "educational"
+    }
+  ]
+}

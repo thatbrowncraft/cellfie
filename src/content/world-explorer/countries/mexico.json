@@ -1,0 +1,123 @@
+{
+  "id": "mexico",
+  "name": "Mexico",
+  "genZNote": "Mexico City is literally sinking — built on a drained Aztec lakebed, parts of it sink up to 40cm a year — while above ground the country still runs on a living blend of Aztec and Mayan heritage layered under Spanish colonial architecture.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in North America, bordered by the United States to the north and Belize and Guatemala to the south, with coastlines on both the Pacific Ocean and Gulf of Mexico.",
+        "Diverse terrain including central highland plateaus, the Sierra Madre mountain ranges, tropical southern rainforests, and northern deserts.",
+        "Mexico City, built atop the drained ancient Aztec capital of Tenochtitlan's lakebed, is one of the world's largest and most populous metropolitan areas."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Spanish is the dominant language, though Mexico has no single official national language and recognises over 60 indigenous languages, reflecting deep pre-Columbian heritage.",
+        "Home to major ancient civilizations including the Aztec and Maya, whose pyramids, calendars, and cultural traditions remain deeply woven into national identity.",
+        "Globally influential cuisine (recognised by UNESCO as intangible cultural heritage), vibrant traditions like Día de los Muertos (Day of the Dead), and mariachi music."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal presidential republic composed of 31 states and Mexico City (a federal entity), modelled significantly on the US constitutional structure.",
+        "Gained independence from Spain in 1821 after a prolonged war, following nearly three centuries of Spanish colonial rule.",
+        "The Institutional Revolutionary Party (PRI) dominated Mexican politics for over 70 years (1929-2000) before the country transitioned to genuine multi-party democratic competition."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A significant global pharmaceutical manufacturing base and growing medical tourism destination, particularly for dental and cosmetic care from the US.",
+        "Strong automotive and aerospace manufacturing sectors integrated closely with US and Canadian supply chains (USMCA).",
+        "Ancient Mesoamerican civilizations made notable advances in astronomy, mathematics (including an early concept of zero), and calendar systems."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A G20 member and a key partner in the USMCA (US-Mexico-Canada Agreement), deeply integrated with the North American economy.",
+        "Manages a complex, high-volume relationship with the United States around trade, migration, and border security.",
+        "An active member of the OECD and a significant voice in Latin American regional diplomacy."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Mexico maintain a 'Privileged Partnership', with growing trade in pharmaceuticals, automobiles, and information technology services.",
+        "Mexico is an important gateway for Indian companies seeking access to North American markets via the USMCA framework.",
+        "Growing cultural and educational exchange, alongside cooperation in renewable energy and space research."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A major manufacturing hub tightly integrated with the US and Canadian economies through USMCA, especially in automobiles and electronics ('maquiladora' export manufacturing).",
+        "One of the world's largest producers of silver, alongside significant oil production and agricultural exports (avocados, tequila).",
+        "A major global tourism destination, particularly along its Caribbean and Pacific coastlines (e.g., Cancún)."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Ancient Aztec and Maya civilizations and their pyramids and calendars.",
+        "Globally influential cuisine and traditions like Día de los Muertos.",
+        "Being one of the world's largest silver producers.",
+        "Deep manufacturing integration with the US and Canada through USMCA."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Mexico is a North American federal presidential republic with deep Aztec and Maya heritage, tightly integrated with the US and Canadian economies through USMCA.",
+    "keyFacts": [
+      "Capital: Mexico City. Currency: Mexican Peso.",
+      "Federal presidential republic; 31 states plus Mexico City.",
+      "Independent from Spain since 1821; PRI dominated politics 1929-2000.",
+      "World's largest silver producer; deeply integrated into USMCA manufacturing."
+    ],
+    "keyTerms": [
+      "USMCA",
+      "Maquiladora",
+      "Día de los Muertos",
+      "Tenochtitlan"
+    ],
+    "commonConfusion": [
+      "Mexico has no single constitutionally designated official language — Spanish is dominant in practice, but over 60 indigenous languages are also legally recognised."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Mexico: federal presidential republic, capital Mexico City, independent since 1821.",
+      "World's largest silver producer; core USMCA manufacturing partner with the US and Canada.",
+      "India-Mexico: Privileged Partnership; Mexico serves as an India gateway to North American markets."
+    ],
+    "commonTraps": [
+      "Assuming Spanish is Mexico's sole official language by law — it has no single official language, though Spanish dominates.",
+      "Confusing modern Mexico's political history (independence 1821, PRI era 1929-2000) with its much older Aztec/Maya civilizational history."
+    ],
+    "mustRemember": [
+      "Mexico: Aztec/Maya heritage, federal republic since 1821, USMCA manufacturing hub, top silver producer, growing India trade gateway."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Mexico Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Mexico — official portal",
+      "kind": "educational"
+    }
+  ]
+}

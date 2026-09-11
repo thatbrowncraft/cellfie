@@ -1,0 +1,115 @@
+{
+  "id": "kuwait",
+  "name": "Kuwait",
+  "genZNote": "Kuwait's National Assembly is the oldest elected parliament in the Gulf Arab states — proof that even in a region known for absolute monarchies, Kuwait carved out its own distinctly more participatory political tradition decades ago.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A small country at the northern tip of the Persian Gulf, bordered by Iraq and Saudi Arabia.",
+        "Almost entirely flat desert terrain with very limited arable land and fresh water, relying heavily on desalination.",
+        "Kuwait City, the capital, sits on a natural deep-water harbour that has long made it a significant trading port."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Arabic is the official language; Islam is the state religion, and traditional Gulf Arab and Bedouin customs remain influential.",
+        "A large expatriate population, including a significant South Asian and Indian community, forms the majority of Kuwait's overall population.",
+        "Historic pearl-diving and seafaring traditions, along with a strong contemporary literary and press culture relative to regional neighbours."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A constitutional emirate with the Al Sabah family as the ruling dynasty; the Emir is head of state, and Kuwait has the Gulf region's oldest directly elected National Assembly (parliament).",
+        "Known for a relatively more open political and press environment compared to some neighbouring Gulf monarchies, though the Emir retains significant powers.",
+        "Was invaded and occupied by Iraq in 1990, leading to the Gulf War and a US-led international coalition that restored Kuwaiti sovereignty in 1991."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding member of OPEC and a significant oil exporter, though smaller in scale than Saudi Arabia or the UAE.",
+        "Maintains close security ties with the United States following the 1990-91 Gulf War, and plays an active mediating role in regional Gulf diplomacy.",
+        "Member of the Gulf Cooperation Council (GCC) and Arab League."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Kuwait share long-standing relations, with Kuwait being an important source of crude oil imports for India and a significant destination for Indian expatriate workers.",
+        "Kuwait's currency, the Kuwaiti Dinar, is among the highest-valued currencies in the world, making remittances from Indian workers economically significant.",
+        "Cooperation has grown in defence, investment, and labour welfare, with periodic high-level visits strengthening ties."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "An oil-dependent economy, with petroleum exports historically accounting for the majority of government revenue.",
+        "Kuwait Investment Authority is one of the world's oldest and largest sovereign wealth funds, diversifying oil wealth into global investments.",
+        "Efforts underway to diversify the economy, including growing trade, logistics, and financial services sectors."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Having the Gulf region's oldest elected National Assembly.",
+        "The 1990-91 Gulf War, following Iraq's invasion and subsequent liberation of Kuwait.",
+        "One of the world's oldest and largest sovereign wealth funds (Kuwait Investment Authority).",
+        "The Kuwaiti Dinar being among the world's highest-valued currencies."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Kuwait is a constitutional emirate at the head of the Persian Gulf, known for the Gulf region's oldest elected parliament and its role in the 1990-91 Gulf War.",
+    "keyFacts": [
+      "Capital: Kuwait City. Currency: Kuwaiti Dinar (among the world's highest-valued currencies).",
+      "Constitutional emirate ruled by the Al Sabah family; has the Gulf's oldest elected National Assembly.",
+      "Invaded by Iraq in 1990; liberated by a US-led coalition in 1991 (Gulf War).",
+      "Founding OPEC member."
+    ],
+    "keyTerms": [
+      "National Assembly",
+      "Gulf War",
+      "Kuwait Investment Authority",
+      "GCC"
+    ],
+    "commonConfusion": [
+      "Kuwait's 1990-91 Gulf War refers to Iraq's invasion and subsequent liberation — not to be confused with the later 2003 Iraq War."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Kuwait: constitutional emirate, capital Kuwait City, Al Sabah ruling family.",
+      "Gulf region's oldest elected National Assembly; founding OPEC member.",
+      "India-Kuwait: major crude oil supplier to India, large Indian expatriate workforce."
+    ],
+    "commonTraps": [
+      "Confusing the 1990-91 Gulf War (Iraq's invasion of Kuwait) with the 2003 Iraq War.",
+      "Assuming all Gulf monarchies lack elected legislatures — Kuwait's National Assembly is a notable exception."
+    ],
+    "mustRemember": [
+      "Kuwait: constitutional emirate with Gulf's oldest parliament, 1990-91 Gulf War history, key India oil/labour partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Kuwait Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "United Nations — Gulf War historical record",
+      "kind": "educational",
+      "url": "https://www.un.org/"
+    }
+  ]
+}

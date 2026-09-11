@@ -1,0 +1,124 @@
+{
+  "id": "philippines",
+  "name": "Philippines",
+  "genZNote": "The Philippines is 7,600+ islands strong and spent over 300 years under Spain followed by decades under the US — which is exactly why it's the only major Asian nation that's both majority Catholic AND has English as an official, widely spoken language.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "An archipelago of over 7,600 islands in Southeast Asia, grouped into three main island groups: Luzon, Visayas, and Mindanao.",
+        "Located on the Pacific Ring of Fire, making it highly prone to typhoons, earthquakes, and volcanic activity.",
+        "Tropical maritime climate, with the capital Manila located on the largest island, Luzon."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Filipino (based on Tagalog) and English are both official languages, a legacy of Spanish and later American colonial rule.",
+        "The only majority Roman Catholic nation in Asia, a lasting legacy of over three centuries of Spanish colonisation.",
+        "Known for strong family-centred social values, vibrant fiesta traditions, and globally influential overseas Filipino worker (OFW) communities."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A presidential republic modelled closely on the US system, with a President as head of state and government and a bicameral Congress.",
+        "Ruled by Spain for over 300 years, then by the United States from 1898, before gaining full independence in 1946.",
+        "The 1986 'People Power Revolution' peacefully ended the Marcos dictatorship and restored democratic governance."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A major global source of skilled healthcare professionals, particularly nurses, who work extensively abroad while supporting a growing domestic healthcare sector.",
+        "Active in disaster-resilience science and engineering given its high exposure to typhoons and earthquakes.",
+        "Growing business process outsourcing (BPO) and IT services sector, leveraging widespread English proficiency."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding ASEAN member and a treaty ally of the United States, with close historical and defence ties.",
+        "Involved in ongoing South China Sea territorial disputes with China, particularly around the West Philippine Sea.",
+        "A major source of global remittance income through its large overseas worker population."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and the Philippines maintain warm, growing relations, with cooperation expanding in defence (including the BrahMos missile deal, a landmark Indian defence export), trade, and IT services.",
+        "Both countries share strong English-language business process outsourcing industries, creating some economic parallels and cooperation potential.",
+        "Part of India's outreach under the Act East policy and growing Indo-Pacific security cooperation."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A services-driven economy strong in business process outsourcing (BPO), electronics assembly, and remittances from overseas Filipino workers.",
+        "Major exporter of electronics components, coconut products, and agricultural goods.",
+        "Remittances from overseas workers form one of the largest shares of GDP among major economies globally."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being Asia's only majority Roman Catholic nation.",
+        "A globally significant overseas workforce and remittance economy.",
+        "World-class beaches and biodiversity, including the Tubbataha Reefs.",
+        "The 1986 People Power Revolution as a landmark peaceful pro-democracy movement.",
+        "A major recent defence customer for India's BrahMos missile system."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Philippines is a Southeast Asian archipelagic presidential republic, Asia's only majority Catholic nation, with deep historical Spanish and American colonial influence.",
+    "keyFacts": [
+      "Capital: Manila. Currency: Philippine Peso.",
+      "Presidential republic modelled on the US system.",
+      "Independent from the US in 1946, after over 300 years of Spanish rule.",
+      "Asia's only majority Roman Catholic country."
+    ],
+    "keyTerms": [
+      "People Power Revolution",
+      "OFW (Overseas Filipino Worker)",
+      "BPO",
+      "West Philippine Sea"
+    ],
+    "commonConfusion": [
+      "The Philippines' two official languages are Filipino and English — Spanish, though historically dominant, is not a current official language."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Philippines: presidential republic, capital Manila, independent from the US in 1946.",
+      "Asia's only majority Catholic nation, due to over 300 years of Spanish rule.",
+      "India-Philippines: BrahMos missile deal is a landmark Indian defence export."
+    ],
+    "commonTraps": [
+      "Assuming Spanish is still an official language — it is not; Filipino and English are.",
+      "Confusing the Philippines' South China Sea dispute area (West Philippine Sea) terminology with China's claims."
+    ],
+    "mustRemember": [
+      "Philippines: Catholic-majority, US-modelled presidential republic, major BPO/remittance economy, BrahMos missile customer."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Philippines Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "ASEAN Secretariat — official portal",
+      "kind": "educational"
+    }
+  ]
+}

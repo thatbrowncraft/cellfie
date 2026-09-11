@@ -1,0 +1,123 @@
+{
+  "id": "south-africa",
+  "name": "South Africa",
+  "genZNote": "South Africa has THREE capital cities (Pretoria, Cape Town, Bloemfontein) splitting executive, legislative, and judicial power across different regions — a genuinely unique compromise that echoes its complicated, negotiated path out of apartheid.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located at the southern tip of Africa, bordered by Namibia, Botswana, Zimbabwe, Mozambique, and Eswatini, and entirely surrounding the independent kingdom of Lesotho.",
+        "Diverse terrain including the interior plateau (highveld), the dramatic Drakensberg mountain range, and coastlines on both the Atlantic and Indian Oceans.",
+        "Uniquely has three capital cities dividing government functions: Pretoria (executive), Cape Town (legislative), and Bloemfontein (judicial)."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Has 12 official languages (as of 2023, after Sign Language was added), reflecting its extraordinary ethnic and cultural diversity, often called the 'Rainbow Nation'.",
+        "Diverse population includes Black African, White (Afrikaner and English-descended), Coloured (mixed-race), and Indian/Asian communities, each with distinct histories.",
+        "Nelson Mandela is a globally revered symbol of the country's transition from apartheid to democracy and reconciliation."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary republic with a President serving as both head of state and government, elected by the National Assembly rather than directly by voters.",
+        "Ended the apartheid system of institutionalised racial segregation in 1994 through the country's first fully democratic elections, won by Nelson Mandela's African National Congress (ANC).",
+        "The Truth and Reconciliation Commission, chaired by Archbishop Desmond Tutu, became a globally studied model for addressing historical injustice through public testimony rather than only punishment."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Performed the world's first successful human-to-human heart transplant in 1967, led by South African surgeon Dr. Christiaan Barnard.",
+        "Africa's most industrially and scientifically advanced economy, with strong mining engineering, astronomy (hosting part of the Square Kilometre Array radio telescope), and biomedical research.",
+        "Led globally influential research and public health responses to the HIV/AIDS epidemic, given the scale of its domestic public health challenge."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A member of the G20 and the only African member of the BRICS grouping (alongside Brazil, Russia, India, China).",
+        "A regional leader in the African Union and Southern African Development Community (SADC).",
+        "Internationally recognised for its post-apartheid reconciliation model, though it continues to face significant domestic inequality challenges."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and South Africa share a 'Strategic Partnership' and are both BRICS members, with deep historical ties dating to Mahatma Gandhi's formative years of activism in South Africa (1893-1914).",
+        "Home to a significant ethnic Indian community, particularly in Durban, tracing back to 19th-century indentured labour migration.",
+        "Both countries collaborate closely on global governance reform, including advocacy for UN Security Council reform and Global South solidarity."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Africa's most industrialised economy, historically built on mining (gold, platinum, diamonds), alongside manufacturing, finance, and agriculture.",
+        "Home to the Johannesburg Stock Exchange, Africa's largest, and a well-developed financial services sector.",
+        "Faces significant economic challenges including high unemployment and energy supply (electricity/load-shedding) constraints."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Nelson Mandela and the peaceful end of apartheid in 1994.",
+        "Being the only African member of BRICS and G20.",
+        "The world's first human heart transplant (1967).",
+        "Deep historical links to Mahatma Gandhi's early activism."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "South Africa is a parliamentary republic at Africa's southern tip, famous for ending apartheid in 1994 under Nelson Mandela, and the only African member of BRICS and G20.",
+    "keyFacts": [
+      "Capitals: Pretoria (executive), Cape Town (legislative), Bloemfontein (judicial). Currency: South African Rand.",
+      "Parliamentary republic; President elected by the National Assembly.",
+      "Ended apartheid in 1994 with Nelson Mandela's ANC winning the first fully democratic elections.",
+      "Only African member of BRICS and G20."
+    ],
+    "keyTerms": [
+      "Apartheid",
+      "Rainbow Nation",
+      "Truth and Reconciliation Commission",
+      "BRICS"
+    ],
+    "commonConfusion": [
+      "South Africa's President is elected by the National Assembly (parliament), NOT directly by popular vote — this distinguishes its system from many other presidential republics."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "South Africa: parliamentary republic with three capital cities; ended apartheid in 1994.",
+      "Only African BRICS and G20 member.",
+      "India-South Africa: BRICS partners; deep historical link via Gandhi's 1893-1914 activism there; large Indian-origin community in Durban."
+    ],
+    "commonTraps": [
+      "Assuming South Africa's President is directly elected by voters — the National Assembly elects the President.",
+      "Confusing South Africa's three-capital system as three separate seats of full government — each city handles a distinct branch (executive/legislative/judicial)."
+    ],
+    "mustRemember": [
+      "South Africa: post-apartheid 'Rainbow Nation', only African BRICS/G20 member, three capitals, deep Gandhi-era link with India."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-South Africa Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "BRICS — official documentation",
+      "kind": "educational"
+    }
+  ]
+}

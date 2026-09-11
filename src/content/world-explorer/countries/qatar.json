@@ -1,0 +1,114 @@
+{
+  "id": "qatar",
+  "name": "Qatar",
+  "genZNote": "Qatar is a country roughly the size of a small Indian state that hosted the entire FIFA World Cup 2022 — natural gas wealth turned a small peninsula into one of the highest GDP-per-capita nations on Earth in a single generation.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A small peninsula extending into the Persian Gulf from the Arabian Peninsula, bordered only by Saudi Arabia by land.",
+        "Predominantly flat, arid desert terrain with a hot climate and very limited fresh water and arable land.",
+        "The capital, Doha, is home to a rapidly developed, modern skyline built largely on natural gas wealth."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Arabic is the official language; Islam is the state religion, and traditional Bedouin and Gulf Arab customs remain culturally significant.",
+        "One of the highest ratios of foreign expatriate workers to citizens in the world, with expatriates forming the large majority of the population.",
+        "Traditional falconry, dhow sailing, and pearl-diving heritage remain culturally important despite the country's rapid modernisation."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "An absolute monarchy (emirate) ruled by the Al Thani family, with the Emir as head of state; a partially elected Shura Council advises on legislation.",
+        "One of the wealthiest countries in the world by per-capita income, driven almost entirely by natural gas exports.",
+        "Hosted the 2022 FIFA World Cup, the first in the Middle East, involving massive infrastructure investment."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A major global player in energy diplomacy as one of the world's largest exporters of liquefied natural gas (LNG).",
+        "Home to the influential Al Jazeera media network and hosts a major US military base (Al Udeid), giving it significant regional diplomatic weight.",
+        "Recovered from a 2017-2021 diplomatic blockade by several Gulf neighbours, after which relations were restored."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Qatar share a 'Strategic Partnership', with Qatar being a major supplier of liquefied natural gas (LNG) to India.",
+        "Home to a large Indian expatriate community, one of the largest expatriate groups in Qatar, contributing significantly to remittances.",
+        "Cooperation has grown in trade, investment, and labour welfare, especially highlighted during World Cup-related infrastructure projects employing many Indian workers."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "One of the world's top exporters of liquefied natural gas (LNG), which underpins its extremely high per-capita income.",
+        "Economy is diversifying into finance, sports, tourism, and logistics beyond hydrocarbons.",
+        "Sovereign wealth fund (Qatar Investment Authority) is a major global investor across real estate, sports clubs, and technology."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Hosting the 2022 FIFA World Cup, the first Middle Eastern country to do so.",
+        "Being one of the world's largest LNG exporters and having among the highest per-capita incomes globally.",
+        "The influential Al Jazeera global news network.",
+        "A very large expatriate workforce relative to its citizen population."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Qatar is a small, extremely wealthy Gulf Arab emirate and one of the world's largest LNG exporters, ruled as an absolute monarchy by the Al Thani family.",
+    "keyFacts": [
+      "Capital: Doha. Currency: Qatari Riyal.",
+      "Absolute monarchy (emirate) ruled by the Al Thani family.",
+      "One of the world's top exporters of liquefied natural gas (LNG).",
+      "Hosted the 2022 FIFA World Cup."
+    ],
+    "keyTerms": [
+      "LNG",
+      "Emirate",
+      "Al Jazeera",
+      "Qatar Investment Authority"
+    ],
+    "commonConfusion": [
+      "Qatar's wealth is driven overwhelmingly by natural gas, not oil, distinguishing its economic base from some other Gulf states."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Qatar: absolute monarchy (emirate), capital Doha, ruled by Al Thani family.",
+      "One of the world's largest LNG exporters; hosted 2022 FIFA World Cup.",
+      "India-Qatar: major LNG supplier to India; large Indian expatriate community."
+    ],
+    "commonTraps": [
+      "Assuming Qatar's wealth is primarily oil-based — it is primarily natural gas (LNG).",
+      "Forgetting Qatar experienced a Gulf diplomatic blockade (2017-2021) before ties were restored."
+    ],
+    "mustRemember": [
+      "Qatar: LNG-rich emirate, hosted 2022 World Cup, major India labour/energy partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Qatar Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of Qatar — official portal",
+      "kind": "educational"
+    }
+  ]
+}

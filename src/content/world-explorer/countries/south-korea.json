@@ -1,0 +1,124 @@
+{
+  "id": "south-korea",
+  "name": "South Korea",
+  "genZNote": "South Korea went from post-war poverty to K-pop, K-dramas, and Samsung phones in one human lifetime — economists literally call it 'the Miracle on the Han River,' and yes, that's a real technical term, not just a compliment.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Occupies the southern half of the Korean Peninsula in East Asia, bordered by North Korea across the heavily fortified Demilitarized Zone (DMZ).",
+        "Predominantly mountainous and hilly terrain, with major cities concentrated on coastal plains, especially around the capital Seoul.",
+        "Temperate climate with four distinct seasons; surrounded by the Yellow Sea, East Sea (Sea of Japan), and Korea Strait."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Korean is the official language, written in the Hangul script created under King Sejong the Great in the 15th century — celebrated as a highly logical, purpose-designed alphabet.",
+        "Confucian values around family, education, and respect for hierarchy strongly shape social life alongside a globally dominant modern pop culture (K-pop, K-dramas, Korean cinema).",
+        "Highly competitive education culture, reflected in intense entrance-exam pressure and among the world's highest tertiary education rates."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A presidential republic with a single-chamber National Assembly; the President is both head of state and government, elected for a single five-year term.",
+        "Transitioned from military-backed authoritarian rule to full democracy through pro-democracy movements culminating in direct presidential elections from 1987.",
+        "Divided into provinces and special/metropolitan cities, including the capital Seoul."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A world leader in semiconductor manufacturing (Samsung, SK Hynix) and consumer electronics, alongside advanced shipbuilding and automotive industries (Hyundai, Kia).",
+        "Rapidly expanded biotechnology and biosimilar pharmaceutical manufacturing, becoming a major global hub for contract biomanufacturing.",
+        "One of the most internet- and broadband-connected societies in the world, with early and extensive 5G rollout."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A G20 member and one of the world's most successful post-war development stories, often called the 'Miracle on the Han River'.",
+        "Maintains a close security alliance with the United States, including stationed US troops, due to the unresolved state of war with North Korea (only an armistice, not a peace treaty, was signed in 1953).",
+        "Active member of the OECD and a major contributor to international development assistance."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and South Korea share a 'Special Strategic Partnership', with growing defence, trade, and technology cooperation.",
+        "Korean conglomerates (Samsung, Hyundai, LG) are major investors and manufacturers in India, including large electronics and automobile plants.",
+        "Ancient cultural links are traced through the legend of Princess Suriratna (Heo Hwang-ok) of Ayodhya, said to have married a Korean king — commemorated by a memorial in Gimhae, South Korea.",
+        "Cooperation has expanded in shipbuilding, defence equipment, and critical technologies."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A highly advanced, export-oriented economy dominated by large conglomerates ('chaebols') like Samsung, Hyundai, and LG.",
+        "Global leader in semiconductors, memory chips, smartphones, shipbuilding, and automobiles.",
+        "Imports most raw materials and energy, relying on high-value manufactured exports to sustain trade."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The 'Miracle on the Han River' — rapid economic transformation from post-war poverty to a developed, high-tech economy.",
+        "Global cultural exports: K-pop, K-dramas, and Korean cinema (including the Oscar-winning film Parasite).",
+        "World-leading semiconductor and electronics industries.",
+        "The Korean Demilitarized Zone (DMZ), one of the most heavily fortified borders in the world."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "South Korea is a highly developed East Asian presidential republic known for its rapid post-war economic rise and global cultural influence.",
+    "keyFacts": [
+      "Capital: Seoul. Currency: South Korean Won.",
+      "Presidential republic; single five-year presidential term.",
+      "Armistice (not peace treaty) with North Korea signed in 1953; DMZ separates the two.",
+      "Global leader in semiconductors, shipbuilding, and consumer electronics."
+    ],
+    "keyTerms": [
+      "Chaebol",
+      "Hangul",
+      "DMZ",
+      "Miracle on the Han River"
+    ],
+    "commonConfusion": [
+      "South Korea and North Korea are technically still at war — the 1953 agreement was an armistice, not a formal peace treaty."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "South Korea: presidential republic; capital Seoul; currency Won; single 5-year presidential term.",
+      "Global semiconductor leader — Samsung and SK Hynix are central to world chip supply.",
+      "India-South Korea: Special Strategic Partnership; major Korean investment via Samsung, Hyundai, LG."
+    ],
+    "commonTraps": [
+      "Mixing up North and South Korea's political systems — South Korea is a democracy, North Korea is a single-party state.",
+      "Assuming the Korean War formally ended — it did not; only an armistice was signed."
+    ],
+    "mustRemember": [
+      "South Korea: chaebol-driven tech/manufacturing powerhouse, presidential republic, major India partner in electronics and defence."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-South Korea Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "OECD — Korea country profile",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "chile",
+  "name": "Chile",
+  "genZNote": "Chile is a ribbon of a country — over 4,300 km long but rarely more than 200 km wide — squeezed between the Andes and the Pacific, which is exactly why it holds nearly every climate zone on Earth within one national border.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "An extremely long, narrow country running along South America's western Pacific coast, bordered by Peru, Bolivia, and Argentina, squeezed between the Andes Mountains and the Pacific Ocean.",
+        "Spans an extraordinary range of climates due to its length, from the extremely arid Atacama Desert in the north to glaciers and fjords in Patagonia in the south.",
+        "Highly prone to earthquakes, sitting on the Pacific Ring of Fire; has experienced some of the most powerful earthquakes ever recorded."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Spanish is the official language; the culture reflects Spanish colonial heritage blended with indigenous Mapuche traditions, particularly in the south.",
+        "Home to Easter Island (Rapa Nui), a Chilean territory famous for its monumental moai statues, a UNESCO World Heritage Site.",
+        "A strong literary tradition, having produced two Nobel laureates in Literature: Gabriela Mistral and Pablo Neruda."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A unitary presidential republic with a President as head of state and government, and a bicameral National Congress.",
+        "Experienced a military dictatorship under General Augusto Pinochet (1973-1990) following a coup, before returning to democratic governance.",
+        "Widely regarded as one of the most politically and economically stable countries in Latin America in recent decades."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Home to some of the world's most advanced astronomical observatories (e.g., ALMA, Vera Rubin Observatory) due to the Atacama Desert's exceptionally clear, dry skies.",
+        "A global leader in lithium production, part of South America's 'lithium triangle', critical for battery and renewable energy technology.",
+        "Advanced seismology and earthquake engineering research, given its high exposure to major seismic events."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A member of the OECD, reflecting its status as one of Latin America's most economically developed nations.",
+        "An active participant in Pacific Rim trade groupings, including the CPTPP (Comprehensive and Progressive Agreement for Trans-Pacific Partnership).",
+        "A founding member of Mercosur's associated framework and active in regional South American diplomacy, particularly the Pacific Alliance trade bloc."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Chile signed a Preferential Trade Agreement, expanded over the years, supporting growing bilateral trade, particularly in copper (Chile is the world's largest copper producer) and lithium.",
+        "Both countries collaborate on space research and astronomy, given Chile's world-class observatory infrastructure in the Atacama Desert.",
+        "Growing pharmaceutical and agricultural trade ties, alongside periodic high-level diplomatic exchange."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "The world's largest producer and exporter of copper, a resource central to its economy and global industrial supply chains.",
+        "A major global lithium producer, part of the strategically important 'lithium triangle' alongside Argentina and Bolivia.",
+        "One of Latin America's most open, trade-oriented economies, with numerous free trade agreements worldwide."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the world's largest copper producer.",
+        "The Atacama Desert, one of the driest places on Earth and a world-class astronomical observation site.",
+        "Easter Island (Rapa Nui) and its iconic moai statues.",
+        "Being one of Latin America's most economically stable, OECD-member nations."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Chile is a long, narrow unitary presidential republic on South America's Pacific coast, the world's largest copper producer and an OECD member known for the Atacama Desert.",
+    "keyFacts": [
+      "Capital: Santiago. Currency: Chilean Peso.",
+      "Unitary presidential republic; bicameral National Congress.",
+      "World's largest copper producer; major lithium producer.",
+      "OECD member; one of Latin America's most stable, developed economies."
+    ],
+    "keyTerms": [
+      "Atacama Desert",
+      "Lithium triangle",
+      "Rapa Nui (Easter Island)",
+      "CPTPP"
+    ],
+    "commonConfusion": [
+      "Chile's extreme length (over 4,300 km) but narrow width (rarely over 200 km) gives it an unusually wide range of climates within a single country — a distinctive geography exam point."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Chile: unitary presidential republic, capital Santiago, world's largest copper producer.",
+      "Home to the Atacama Desert and world-class astronomical observatories; OECD member.",
+      "India-Chile: Preferential Trade Agreement; major copper/lithium trade and growing astronomy cooperation."
+    ],
+    "commonTraps": [
+      "Assuming Chile is federal like Argentina or Brazil — it is a unitary state.",
+      "Confusing Chile's 'lithium triangle' membership (with Argentina and Bolivia) with sole ownership of global lithium reserves."
+    ],
+    "mustRemember": [
+      "Chile: unitary republic, top copper/lithium producer, Atacama astronomy hub, OECD member, India PTA trade partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Chile Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "European Southern Observatory — ALMA/Atacama facilities",
+      "kind": "scientific",
+      "url": "https://www.eso.org/"
+    }
+  ]
+}

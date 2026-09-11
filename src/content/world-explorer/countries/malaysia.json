@@ -1,0 +1,123 @@
+{
+  "id": "malaysia",
+  "name": "Malaysia",
+  "genZNote": "Malaysia is split in two by the South China Sea — Peninsular Malaysia and Borneo's East Malaysia — which is a perfect metaphor for the country itself: one nation holding together Malay, Chinese, and Indian communities, three major religions, and the Petronas Towers, all at once.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Made up of two geographically separated regions: Peninsular Malaysia (bordering Thailand) and East Malaysia on the island of Borneo (bordering Indonesia and Brunei), separated by the South China Sea.",
+        "Tropical rainforest climate, with Borneo's rainforests among the oldest and most biodiverse in the world.",
+        "The capital, Kuala Lumpur, is home to the Petronas Twin Towers, once the world's tallest buildings."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "A multi-ethnic society of Malay, Chinese, and Indian communities alongside indigenous groups, especially in Borneo; Malay (Bahasa Malaysia) is the national language.",
+        "Islam is the official religion (practiced by the Malay-majority population), while Buddhism, Christianity, and Hinduism are also widely practiced, reflecting its ethnic diversity.",
+        "Famous for its diverse cuisine blending Malay, Chinese, and Indian culinary traditions, and major festivals celebrated across communities (Hari Raya, Chinese New Year, Deepavali)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal constitutional monarchy with a unique rotating monarchy: the King (Yang di-Pertuan Agong) is elected every five years from among the hereditary rulers of nine Malay states.",
+        "A parliamentary democracy with an elected Prime Minister and bicameral Parliament handling day-to-day governance.",
+        "Composed of 13 states and 3 federal territories, including Kuala Lumpur."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A significant regional hub for electronics and semiconductor assembly and testing, integrated into global tech supply chains.",
+        "Growing halal pharmaceutical and biotechnology industry, leveraging its position as a majority-Muslim nation with advanced manufacturing capability.",
+        "Strong palm oil-derived biofuel and renewable feedstock research given its position as a top global palm oil producer."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding-era ASEAN member and one of Southeast Asia's more diversified, trade-oriented economies.",
+        "Maintains an active role in the Organisation of Islamic Cooperation (OIC) and Commonwealth of Nations, reflecting its historical British colonial ties.",
+        "Balances relationships between major powers, with strong trade links to China, the US, and neighbouring ASEAN states."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "Home to a significant ethnic Indian (largely Tamil-origin) community, forming a deep, longstanding people-to-people bond with India.",
+        "India and Malaysia share an 'Enhanced Strategic Partnership' with growing trade, defence, and palm oil trade ties (Malaysia is a top source of India's palm oil imports).",
+        "Cultural links are reflected in Hindu temples, Deepavali celebrations, and strong diaspora business and cultural connections."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A diversified, upper-middle-income economy built on electronics manufacturing, palm oil, natural gas, and rubber.",
+        "One of the world's top two palm oil producers and exporters, alongside Indonesia.",
+        "A significant regional financial and logistics hub, especially through its Islamic finance industry."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The Petronas Twin Towers and Kuala Lumpur's modern skyline.",
+        "A unique multi-ethnic, multi-religious society across Malay, Chinese, and Indian communities.",
+        "Being one of the world's top two palm oil producers.",
+        "Borneo's ancient rainforests and rich biodiversity."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Malaysia is a multi-ethnic Southeast Asian federal constitutional monarchy with a unique rotating kingship, split between Peninsular Malaysia and Borneo.",
+    "keyFacts": [
+      "Capital: Kuala Lumpur. Currency: Malaysian Ringgit.",
+      "Federal constitutional monarchy; King elected every 5 years from 9 hereditary state rulers.",
+      "One of the world's top two palm oil producers.",
+      "Significant ethnic Indian community; strong India cultural and trade ties."
+    ],
+    "keyTerms": [
+      "Yang di-Pertuan Agong",
+      "Bumiputera",
+      "ASEAN",
+      "Petronas Towers"
+    ],
+    "commonConfusion": [
+      "Malaysia's monarch is elected on rotation among state rulers every five years — it is not a single hereditary line like most monarchies."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Malaysia: federal constitutional monarchy with a uniquely rotating, elected kingship.",
+      "One of the world's top two palm oil producers, alongside Indonesia.",
+      "India-Malaysia: Enhanced Strategic Partnership; large ethnic Indian diaspora."
+    ],
+    "commonTraps": [
+      "Assuming Malaysia's monarchy is hereditary in a single family — it rotates among 9 state rulers.",
+      "Confusing Malaysia's two separated regions (Peninsular and Borneo/East Malaysia)."
+    ],
+    "mustRemember": [
+      "Malaysia: rotating constitutional monarchy, top palm oil producer, deep India diaspora and trade links via Tamil-origin community."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Malaysia Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "ASEAN Secretariat — official portal",
+      "kind": "educational"
+    }
+  ]
+}

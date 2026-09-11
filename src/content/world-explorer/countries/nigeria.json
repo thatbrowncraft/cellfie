@@ -1,0 +1,124 @@
+{
+  "id": "nigeria",
+  "name": "Nigeria",
+  "genZNote": "Nigeria is Africa's most populous country AND its largest economy — and 'Nollywood', its film industry, actually produces more movies per year than Hollywood, which surprises almost everyone the first time they hear it.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in West Africa on the Gulf of Guinea, bordered by Benin, Niger, Chad, and Cameroon.",
+        "Diverse terrain ranging from coastal mangrove swamps and tropical rainforest in the south to savanna in the north, with the Niger and Benue Rivers as major waterways.",
+        "Africa's most populous country, with over 200 million people and more than 250 distinct ethnic groups."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "English is the official language, alongside major indigenous languages including Hausa, Yoruba, and Igbo, reflecting its ethnic diversity.",
+        "Roughly evenly split between a Muslim-majority north and a Christian-majority south, a divide that significantly shapes national politics.",
+        "Home to Nollywood, one of the world's largest film industries by volume of output, and a globally influential Afrobeats music scene."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal presidential republic composed of 36 states and a Federal Capital Territory (Abuja), modelled partly on the US federal system.",
+        "Gained independence from British colonial rule in 1960, and experienced periods of military rule interspersed with democratic governance through much of its post-independence history.",
+        "Returned to sustained civilian democratic rule in 1999 after decades of intermittent military governments."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Africa's largest economy and a growing hub for technology startups ('Silicon Lagoon' in Lagos), particularly in fintech.",
+        "Significant public health challenges and successes, including its declaration as free of wild poliovirus by the WHO in 2020, a major public health milestone.",
+        "Growing pharmaceutical manufacturing capacity aimed at reducing reliance on imported medicines across West Africa."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Africa's largest economy by GDP and most populous nation, giving it significant regional and continental influence.",
+        "A founding member of the Economic Community of West African States (ECOWAS) and an influential voice in African Union affairs.",
+        "A major contributor to UN peacekeeping missions and regional security efforts, including combating the Boko Haram insurgency in its northeast."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Nigeria maintain a 'Strategic Partnership', with Nigeria being one of India's largest trading partners in Africa, particularly for crude oil imports.",
+        "A significant Indian business community has operated in Nigeria for decades, especially in manufacturing, pharmaceuticals, and textiles.",
+        "India has extended lines of credit and development assistance to Nigeria across infrastructure, healthcare, and agriculture sectors."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Africa's largest economy, historically dependent on oil and gas exports, though increasingly diversifying into technology, agriculture, and entertainment (Nollywood, Afrobeats).",
+        "A major global crude oil producer and OPEC member, though facing challenges from oil theft, pipeline vandalism, and the need for economic diversification.",
+        "A rapidly growing fintech and startup ecosystem, attracting significant international venture capital investment."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being Africa's most populous nation and largest economy.",
+        "Nollywood, one of the world's largest film industries by output.",
+        "Afrobeats music's major global cultural influence.",
+        "Being a major OPEC oil producer and growing African tech/fintech hub."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Nigeria is Africa's most populous country and largest economy, a federal presidential republic in West Africa known for oil production, Nollywood, and Afrobeats music.",
+    "keyFacts": [
+      "Capital: Abuja (largest city: Lagos). Currency: Nigerian Naira.",
+      "Federal presidential republic; 36 states plus the Federal Capital Territory.",
+      "Africa's most populous nation and largest economy by GDP.",
+      "Major OPEC oil producer; home to Nollywood, a top global film industry by output."
+    ],
+    "keyTerms": [
+      "Nollywood",
+      "ECOWAS",
+      "Boko Haram",
+      "Afrobeats"
+    ],
+    "commonConfusion": [
+      "Nigeria's capital is Abuja, not Lagos — Lagos is the largest city and commercial capital, but Abuja became the official capital in 1991."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Nigeria: federal presidential republic; capital Abuja; Africa's most populous nation and largest economy.",
+      "Major OPEC oil producer; home to Nollywood (top film industry by output) and Afrobeats music.",
+      "India-Nigeria: Strategic Partnership; major crude oil trade partner for India in Africa."
+    ],
+    "commonTraps": [
+      "Assuming Lagos is Nigeria's capital — it is Abuja, since 1991.",
+      "Assuming Nigeria is religiously/ethnically homogeneous — it has a roughly even Muslim-north/Christian-south split and 250+ ethnic groups."
+    ],
+    "mustRemember": [
+      "Nigeria: Africa's largest economy/population, capital Abuja, OPEC member, Nollywood/Afrobeats cultural powerhouse, key India oil partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Nigeria Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "World Health Organization — Africa polio-free declaration (2020)",
+      "kind": "scientific",
+      "url": "https://www.who.int/"
+    }
+  ]
+}

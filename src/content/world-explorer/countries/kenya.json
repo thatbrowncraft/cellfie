@@ -1,0 +1,124 @@
+{
+  "id": "kenya",
+  "name": "Kenya",
+  "genZNote": "Kenya's Great Rift Valley is literally where some of the oldest human ancestor fossils have been found — earning East Africa the nickname 'the cradle of humankind' — and it's also where the modern safari and wildlife-conservation tourism model was essentially born.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in East Africa on the Indian Ocean, bordered by Somalia, Ethiopia, South Sudan, Uganda, and Tanzania, and crossed by the Equator.",
+        "The Great Rift Valley runs through the country, home to significant fossil discoveries of early human ancestors and diverse wildlife.",
+        "Home to Mount Kenya, the second-highest peak in Africa, and extensive savanna grasslands supporting world-famous wildlife reserves (Maasai Mara)."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Swahili and English are both official languages, alongside dozens of indigenous ethnic languages reflecting Kenya's diverse ethnic composition (including Kikuyu, Luo, and Maasai communities).",
+        "The Maasai people are internationally recognised for their distinctive traditional dress, culture, and close relationship with wildlife conservation areas.",
+        "Kenya has produced some of the world's most successful long-distance runners, a source of major national pride and global sporting recognition."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A presidential republic with a bicameral Parliament, gained independence from British colonial rule in 1963 under founding leader Jomo Kenyatta.",
+        "Adopted a new Constitution in 2010 that significantly devolved power to 47 newly created county governments, a major governance reform.",
+        "A regional leader in East Africa, hosting the UN's only major headquarters (UNEP and UN-Habitat) located in the Global South, in Nairobi."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A pioneer in mobile money technology through M-Pesa, one of the world's most successful and widely studied mobile financial inclusion systems.",
+        "A significant hub for wildlife conservation science and research, given its globally important national parks and reserves.",
+        "Home to Nairobi's growing technology startup ecosystem, sometimes nicknamed the 'Silicon Savannah'."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A regional diplomatic and economic hub for East Africa, hosting UN agency headquarters (UNEP, UN-Habitat) in Nairobi, a rare distinction for a Global South city.",
+        "A founding member of the East African Community (EAC), promoting regional economic integration.",
+        "An active contributor to regional peacekeeping and mediation efforts across East Africa and the Horn of Africa."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Kenya share a 'Strategic Partnership', with a historically significant Indian-origin community in Kenya dating to railway construction during British colonial rule.",
+        "Growing trade, investment, and development cooperation, particularly in pharmaceuticals, IT, and infrastructure.",
+        "India has extended lines of credit to Kenya for infrastructure and agricultural development projects."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "East Africa's largest and most diversified economy, strong in agriculture (tea, coffee, horticulture exports), tourism, and financial technology.",
+        "A pioneer and global leader in mobile money adoption through M-Pesa, transforming financial inclusion domestically and regionally.",
+        "Tourism, centred on wildlife safaris and coastal destinations, is a major source of foreign exchange revenue."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "World-famous wildlife safaris, particularly in the Maasai Mara.",
+        "Producing some of the world's greatest long-distance runners.",
+        "Pioneering mobile money technology through M-Pesa.",
+        "The Great Rift Valley and significant early human fossil discoveries."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Kenya is an East African presidential republic on the Equator, a regional economic and diplomatic hub known for wildlife tourism, distance running, and mobile money innovation.",
+    "keyFacts": [
+      "Capital: Nairobi. Currency: Kenyan Shilling.",
+      "Presidential republic; independence from Britain in 1963 under Jomo Kenyatta.",
+      "2010 Constitution devolved power to 47 county governments.",
+      "Pioneered mobile money via M-Pesa; hosts UN agency headquarters (UNEP, UN-Habitat) in Nairobi."
+    ],
+    "keyTerms": [
+      "M-Pesa",
+      "Great Rift Valley",
+      "Maasai Mara",
+      "East African Community"
+    ],
+    "commonConfusion": [
+      "Kenya hosting UN agency headquarters (UNEP, UN-Habitat) in Nairobi is unusual — most UN headquarters are located in the Global North (New York, Geneva, Vienna)."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Kenya: presidential republic, independent since 1963; 2010 Constitution devolved power to 47 counties.",
+      "Pioneered mobile money (M-Pesa); hosts UNEP/UN-Habitat headquarters in Nairobi.",
+      "India-Kenya: Strategic Partnership; historic Indian-origin community from colonial-era railway construction."
+    ],
+    "commonTraps": [
+      "Assuming all UN agency headquarters are in developed nations — Nairobi hosts UNEP and UN-Habitat.",
+      "Confusing Kenya's 2010 constitutional devolution with full federalism — Kenya remains a unitary state with devolved counties."
+    ],
+    "mustRemember": [
+      "Kenya: East African hub, M-Pesa pioneer, hosts UNEP/UN-Habitat, 47 devolved counties, historic Indian diaspora link via railways."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Kenya Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "United Nations Environment Programme — Nairobi headquarters",
+      "kind": "educational",
+      "url": "https://www.unep.org/"
+    }
+  ]
+}

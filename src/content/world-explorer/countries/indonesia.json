@@ -1,0 +1,125 @@
+{
+  "id": "indonesia",
+  "name": "Indonesia",
+  "genZNote": "Indonesia is so spread out across 17,000+ islands that it spans three time zones — it's basically proof that a country can be an archipelago the size of a continent and still hold together as the world's third-largest democracy.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The world's largest archipelagic country, made up of over 17,000 islands spanning Southeast Asia, including Java, Sumatra, Borneo (Kalimantan), Sulawesi, and part of New Guinea (Papua).",
+        "Sits on the Pacific Ring of Fire, giving it one of the highest concentrations of active volcanoes in the world and frequent seismic activity.",
+        "Home to some of the world's most biodiverse tropical rainforests, though facing significant deforestation pressure.",
+        "Building a new capital city, Nusantara, on Borneo, intended to replace the sinking, congested Jakarta."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "The world's most populous Muslim-majority country, though officially a secular state recognising six religions and hundreds of ethnic groups and languages.",
+        "Bahasa Indonesia is the unifying national language; the national motto 'Bhinneka Tunggal Ika' ('Unity in Diversity') reflects its extraordinary ethnic and linguistic diversity.",
+        "Rich traditional arts include Javanese and Balinese gamelan music, batik textiles (a UNESCO-recognised craft), and wayang shadow puppetry."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A presidential republic and the world's third-largest democracy by population, with a directly elected President and a bicameral legislature.",
+        "Adheres to 'Pancasila', its official state ideology of five principles including belief in one God, humanitarianism, unity, democracy, and social justice.",
+        "Highly decentralised administratively, with power devolved to provinces following the fall of the Suharto regime in 1998."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Home to major biodiversity research given its rainforest and marine ecosystems, contributing to global conservation science.",
+        "Growing pharmaceutical and vaccine manufacturing base, including state-owned Bio Farma, a significant regional vaccine producer.",
+        "Prone to major natural disasters (earthquakes, tsunamis, volcanic eruptions), driving strong national expertise in disaster-response science."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A G20 member and the largest economy in Southeast Asia; founding member and de facto leader of ASEAN.",
+        "Pursues a long-standing foreign policy of non-alignment, dating back to hosting the 1955 Bandung Conference of newly independent Asian and African nations.",
+        "Plays an active role in international Islamic diplomacy as the world's most populous Muslim-majority nation."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Indonesia share a 'Comprehensive Strategic Partnership' and centuries-old cultural and religious links through the historic spread of Hinduism and Buddhism across the archipelago.",
+        "Bali retains a Hindu-majority population and temple culture directly descended from ancient Indian religious influence, a point of deep cultural connection.",
+        "Growing defence cooperation and trade ties, with India importing coal and palm oil, and both countries collaborating within the G20 and Indo-Pacific frameworks."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Southeast Asia's largest economy, driven by natural resources (coal, palm oil, nickel), manufacturing, and a large domestic consumer market.",
+        "The world's largest producer and exporter of palm oil, and a major global nickel producer, crucial for electric-vehicle battery supply chains.",
+        "A founding ASEAN member benefiting from regional trade integration and growing foreign investment in manufacturing."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the world's largest archipelago and most populous Muslim-majority country.",
+        "Bali's unique Hindu culture and world-famous beaches and temples.",
+        "Leading global producer of palm oil and nickel.",
+        "Ancient Buddhist and Hindu monuments such as Borobudur and Prambanan.",
+        "Being a founding member and leading voice of ASEAN."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Indonesia is the world's largest archipelagic nation and most populous Muslim-majority country, governed as a presidential republic and leading ASEAN member.",
+    "keyFacts": [
+      "Capital: moving from Jakarta to Nusantara (Borneo). Currency: Indonesian Rupiah.",
+      "Official state ideology: Pancasila (five founding principles).",
+      "World's largest palm oil producer and a major nickel exporter.",
+      "Founding member of ASEAN; host of the 1955 Bandung Conference."
+    ],
+    "keyTerms": [
+      "Pancasila",
+      "Bhinneka Tunggal Ika",
+      "Ring of Fire",
+      "ASEAN"
+    ],
+    "commonConfusion": [
+      "Indonesia is a secular state with a Muslim-majority population, not an Islamic state — Pancasila recognises multiple religions."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Indonesia: presidential republic, world's largest archipelago, capital relocating to Nusantara.",
+      "Founding ASEAN member; hosted the 1955 Bandung Conference of Non-Aligned nations.",
+      "World's largest palm oil producer; major nickel exporter (key for EV batteries)."
+    ],
+    "commonTraps": [
+      "Assuming Indonesia is officially an Islamic state — it is constitutionally pluralist under Pancasila.",
+      "Confusing Bali's Hindu-majority culture with the country's overall Muslim-majority demographic."
+    ],
+    "mustRemember": [
+      "Indonesia: ASEAN leader, world's biggest archipelago, palm oil/nickel giant, deep historic Hindu-Buddhist links with India via Bali and ancient temples."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Indonesia Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "ASEAN Secretariat — official portal",
+      "kind": "educational"
+    }
+  ]
+}

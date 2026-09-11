@@ -1,0 +1,124 @@
+{
+  "id": "egypt",
+  "name": "Egypt",
+  "genZNote": "Egypt built the Great Pyramid of Giza over 4,500 years ago and it's still the only surviving Ancient Wonder of the World — the Nile literally created a civilization so advanced, so early, that modern engineers still study how they pulled it off.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in northeastern Africa (with the Sinai Peninsula extending into Asia), making it a transcontinental country bridging Africa and the Middle East.",
+        "Dominated by the Nile River, whose narrow fertile valley and delta support the overwhelming majority of Egypt's population amid otherwise vast desert.",
+        "Home to the Suez Canal, one of the world's most strategically vital shipping routes connecting the Mediterranean and Red Seas."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Arabic is the official language; the culture blends ancient Pharaonic heritage with a predominantly Muslim, Arab identity and a significant Coptic Christian minority.",
+        "Home to some of the world's most iconic ancient monuments, including the Pyramids of Giza, the Sphinx, and the temples of Luxor and Karnak.",
+        "Cairo is one of the largest and most historically significant cities in the Arab and African worlds, a longstanding centre of Islamic scholarship (Al-Azhar University)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A presidential republic with a President as head of state and government, alongside an elected House of Representatives.",
+        "One of the world's oldest continuous civilizations, with a documented history spanning over 5,000 years through Ancient Egyptian dynasties.",
+        "Experienced major political upheaval during the 2011 Arab Spring uprising, which led to significant political transitions in the years following."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Ancient Egyptian civilization made foundational contributions to early medicine, surgery, mathematics, and monumental engineering.",
+        "Home to significant modern archaeological and Egyptology research, alongside a growing university and scientific research base.",
+        "The Grand Egyptian Museum, one of the world's largest archaeological museums, reflects major state investment in heritage and tourism-linked science."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Controls the Suez Canal, one of the world's most economically and strategically vital waterways for global maritime trade.",
+        "A founding member of the Arab League and a significant diplomatic power in Middle Eastern and North African affairs.",
+        "Maintains a long-standing peace treaty with Israel (1979), the first Arab state to do so, and plays an active mediating role in regional conflicts, particularly involving Gaza."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Egypt share a 'Strategic Partnership' with historically deep ties dating to the Non-Aligned Movement, co-founded by Egypt's Gamal Abdel Nasser and India's Jawaharlal Nehru.",
+        "Growing trade and defence cooperation, alongside increased Indian investment following Egypt's economic liberalisation efforts.",
+        "The Suez Canal is strategically vital for Indian trade with Europe, making Egypt an important logistics and maritime partner."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "An economy driven significantly by tourism (built on its ancient heritage sites), Suez Canal transit revenues, remittances, and natural gas.",
+        "Agriculture along the Nile remains historically and economically significant, alongside a growing manufacturing and textile sector.",
+        "Faces ongoing economic reform challenges, including currency stabilisation and reducing public debt."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The Pyramids of Giza — the only surviving Ancient Wonder of the World — and the Sphinx.",
+        "The Suez Canal, a globally critical shipping route.",
+        "Being one of the world's oldest continuous civilizations.",
+        "Co-founding the Non-Aligned Movement alongside India."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Egypt is a transcontinental presidential republic in northeastern Africa, home to one of the world's oldest civilizations and the strategically vital Suez Canal.",
+    "keyFacts": [
+      "Capital: Cairo. Currency: Egyptian Pound.",
+      "Presidential republic; major political transition following the 2011 Arab Spring.",
+      "Home to the Pyramids of Giza, the only surviving Ancient Wonder of the World.",
+      "Controls the Suez Canal, a critical global shipping route."
+    ],
+    "keyTerms": [
+      "Suez Canal",
+      "Non-Aligned Movement",
+      "Pharaonic civilization",
+      "Arab Spring"
+    ],
+    "commonConfusion": [
+      "Egypt is transcontinental — its Sinai Peninsula lies in Asia, while the rest of the country is in Africa — making it a bridge between the two continents."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Egypt: presidential republic, capital Cairo, controls the strategically vital Suez Canal.",
+      "Co-founded the Non-Aligned Movement with India (Nasser-Nehru).",
+      "First Arab state to sign a peace treaty with Israel (1979)."
+    ],
+    "commonTraps": [
+      "Assuming Egypt is entirely within Africa — the Sinai Peninsula lies in Asia.",
+      "Confusing the Suez Canal (Egypt) with the Panama Canal — different oceans, different continents connected."
+    ],
+    "mustRemember": [
+      "Egypt: ancient civilization, Suez Canal controller, Non-Aligned Movement co-founder with India, first Arab-Israel peace treaty (1979)."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Egypt Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "UNESCO — World Heritage List, Egypt entries",
+      "kind": "educational",
+      "url": "https://whc.unesco.org/"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": "netherlands",
+  "name": "Netherlands",
+  "genZNote": "Roughly a quarter of the Netherlands sits below sea level — the country has spent centuries literally building itself out of the sea with dikes and windmills, making 'God made the world, but the Dutch made the Netherlands' a genuinely earned saying.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A small, low-lying country in Northwestern Europe on the North Sea, bordered by Germany and Belgium, with roughly a quarter of its land area below sea level.",
+        "Famous for its extensive network of dikes, polders (reclaimed land), and windmills historically used for water management and drainage.",
+        "One of the most densely populated countries in the world, with flat terrain well-suited to cycling infrastructure and agriculture."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Dutch is the official language; the country has a long tradition of religious and social tolerance and progressive social policies.",
+        "Home to world-renowned artistic heritage, including Golden Age painters Rembrandt and Vermeer, and modern masters like Van Gogh.",
+        "Cycling is deeply embedded in daily culture, supported by extensive dedicated cycling infrastructure nationwide."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary constitutional monarchy; the King is head of state while an elected Prime Minister leads the government, with a bicameral States-General as parliament.",
+        "Historically a major seafaring and colonial power through the Dutch East India Company (VOC), one of the first major multinational trading corporations.",
+        "Known for a strong consensus-based political culture ('polder model') that emphasises negotiation and compromise across social groups."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A world leader in water management engineering, hydraulic infrastructure, and flood-control technology, expertise it exports globally.",
+        "Home to advanced semiconductor equipment manufacturing (ASML, a critical global supplier of chip-making machines) and strong agricultural technology (a top global agri-exporter despite its small size).",
+        "Strong biomedical and pharmaceutical research base, alongside globally respected universities and research institutions."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding member of the European Union and NATO, and host to major international institutions including the International Court of Justice at The Hague.",
+        "Historically influential as a major global trading and colonial power, with lasting cultural and economic links to former colonies including Indonesia and Suriname.",
+        "An active advocate for international law and multilateralism, reflected in The Hague's role as a global centre for international justice."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and the Netherlands share a 'Strategic Partnership', with the Netherlands being one of India's largest sources of foreign direct investment via Dutch holding companies.",
+        "Strong cooperation in water management technology, agriculture, and horticulture, areas of direct relevance to Indian agricultural modernisation.",
+        "Rotterdam serves as a major European gateway port for Indian trade with Europe."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A highly developed, trade-oriented economy; the Port of Rotterdam is one of the largest and busiest ports in Europe.",
+        "A surprisingly major global agricultural exporter (second only to the US in agricultural export value) despite its small size, driven by advanced greenhouse and farming technology.",
+        "Home to major multinational companies (Shell, Philips, ASML, Unilever) and a significant global financial and logistics hub."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Its extensive water management engineering and land reclaimed from the sea (polders).",
+        "Tulips, windmills, and Golden Age art (Rembrandt, Vermeer).",
+        "Being the world's second-largest agricultural exporter by value despite its small size.",
+        "Hosting the International Court of Justice at The Hague."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Netherlands is a low-lying Northwestern European parliamentary constitutional monarchy, a founding EU/NATO member famous for water management engineering and global trade.",
+    "keyFacts": [
+      "Capital: Amsterdam (seat of government: The Hague). Currency: Euro.",
+      "Parliamentary constitutional monarchy; bicameral States-General parliament.",
+      "About a quarter of its land lies below sea level, managed via dikes and polders.",
+      "World's second-largest agricultural exporter by value despite its small size."
+    ],
+    "keyTerms": [
+      "Polder model",
+      "VOC (Dutch East India Company)",
+      "Randstad",
+      "The Hague"
+    ],
+    "commonConfusion": [
+      "Amsterdam is the Netherlands' constitutional capital, but the seat of government, parliament, and most embassies is actually The Hague."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Netherlands: parliamentary constitutional monarchy; capital Amsterdam, government seat The Hague.",
+      "World's 2nd-largest agricultural exporter by value; global water-management engineering leader.",
+      "India-Netherlands: Strategic Partnership; major FDI source for India via Dutch holding companies; Rotterdam is a key EU trade gateway."
+    ],
+    "commonTraps": [
+      "Confusing Amsterdam (constitutional capital) with The Hague (actual seat of government and international courts).",
+      "Assuming the Netherlands' small size limits its agricultural export power — it ranks second globally by value."
+    ],
+    "mustRemember": [
+      "Netherlands: constitutional monarchy, water-engineering leader, top agri-exporter, major India FDI and trade gateway via Rotterdam."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Netherlands Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Government of the Netherlands — official portal",
+      "kind": "educational"
+    }
+  ]
+}
