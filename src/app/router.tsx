@@ -75,6 +75,9 @@ const WorldExplorerPage = lazy(() =>
 const CountryDetailPage = lazy(() =>
   import('../modules/world-explorer/CountryDetailPage').then((m) => ({ default: m.CountryDetailPage }))
 )
+const WorldExplorerTopicPage = lazy(() =>
+  import('../modules/world-explorer/WorldExplorerTopicPage').then((m) => ({ default: m.WorldExplorerTopicPage }))
+)
 const ComparisonStudioPage = lazy(() =>
   import('../modules/comparison-studio/ComparisonStudioPage').then((m) => ({ default: m.ComparisonStudioPage }))
 )
@@ -142,6 +145,9 @@ export function AppRouter() {
               dynamic one at the same position regardless of declaration order, so
               this ordering is for human readability, not routing correctness. */}
           <Route path="/exam-prep/world-explorer" element={<WorldExplorerPage />} />
+          {/* Static "topic" segment, same reasoning as "world-explorer" above — declared
+              before the dynamic :countryId route for readability, not correctness. */}
+          <Route path="/exam-prep/world-explorer/topic/:topicId" element={<WorldExplorerTopicPage />} />
           <Route path="/exam-prep/world-explorer/:countryId" element={<CountryDetailPage />} />
           <Route path="/exam-prep/:subjectId" element={<ExamPrepSubjectPage />} />
           <Route path="/exam-prep/:subjectId/:topicId" element={<ExamPrepTopicPage />} />
