@@ -49,6 +49,7 @@ import { useLiveQuery } from '../../core/db/useLiveQuery'
 import { listSavedLabItems } from '../../core/laboratory/savedItems'
 import type { SavedLabItemRecord } from '../../core/db'
 import { LabSourcesPanel } from './components/LabSourcesPanel'
+import { LaboratoryFloatingParticles } from './components/LaboratoryFloatingParticles'
 import { SavedLabItemsSection } from './components/SavedLabItemsSection'
 
 type SectionId = LaboratoryCategory | 'calculators' | 'unit-converter' | 'saved'
@@ -215,7 +216,11 @@ export function LaboratoryPage() {
         </>
       }
     >
-      <div className="flex flex-col gap-6">
+      <div className="relative flex flex-col gap-6 overflow-hidden">
+        {/* Hub-view only (brief precedent: same "hub/category views only, never a detail/content grid" restriction OrganismExplorerBackground already uses) — kept off the denser search-results/content-grid/calculator states so it never competes with a busier layout. */}
+        {isHub && <LaboratoryFloatingParticles />}
+
+        <div className="relative z-[1] flex flex-col gap-6">
         <header>
           <h1 className="font-display text-h1 font-semibold text-ink-primary">Laboratory</h1>
           <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{LAB_HUB_TAGLINE}</p>
@@ -291,6 +296,7 @@ export function LaboratoryPage() {
             />
           </div>
         )}
+        </div>
       </div>
     </LaboratoryLayout>
   )
