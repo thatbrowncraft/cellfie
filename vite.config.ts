@@ -88,6 +88,17 @@ export default defineConfig({
         // maximumFileSizeToCacheInBytes doesn't apply to runtime
         // caching, only precaching.
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        // World Explorer's Real World globe lazy-loads country boundary
+        // data (`world-atlas` + `topojson-client`, see
+        // core/world-explorer/geo/loadWorldAtlas.ts) only when someone
+        // actually switches to that globe style — most installs may
+        // never touch it. Precaching it anyway at install time would
+        // silently grow every user's install size for a feature they
+        // might not use, so it's excluded here and given the exact same
+        // "cache after first real use" treatment as the manual PDF
+        // below, via `build.rollupOptions.output.manualChunks` naming
+        // it predictably enough to match here.
+        globIgnores: ['**/geo-world-atlas-*.js'],
         runtimeCaching: [
           {
             // Matches the manual regardless of BASE_PATH (GitHub Pages
@@ -104,6 +115,24 @@ export default defineConfig({
                 // which point autoUpdate's service-worker refresh takes
                 // over anyway. A long age just avoids needless re-fetches
                 // of an otherwise-immutable file.
+                maxAgeSeconds: 60 * 60 * 24 * 365
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          {
+            // The Real World globe's country-boundary data chunk — see
+            // the globIgnores note above. Cached on first use, same as
+            // the manual PDF, so the globe still works fully offline
+            // after that one initial load.
+            urlPattern: ({ url }) => /\/geo-world-atlas-[^/]+\.js$/.test(url.pathname),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'cellfie-geo-data',
+              expiration: {
+                maxEntries: 1,
                 maxAgeSeconds: 60 * 60 * 24 * 365
               },
               cacheableResponse: {
@@ -133,6 +162,20 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
+    }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        // Named specifically so the Workbox `globIgnores`/`runtimeCaching`
+        // patterns above can target this chunk by its filename — see the
+        // comment on `globIgnores` for why it's excluded from precache.
+        manualChunks(id) {
+          if (id.includes('world-atlas') || id.includes('topojson-client')) {
+            return 'geo-world-atlas'
+          }
+        }
+      }
     }
   }
 })
