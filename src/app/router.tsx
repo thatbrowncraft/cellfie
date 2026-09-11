@@ -69,6 +69,12 @@ const ExamPrepSubjectPage = lazy(() =>
 const ExamPrepTopicPage = lazy(() =>
   import('../modules/exam-prep/ExamPrepTopicPage').then((m) => ({ default: m.ExamPrepTopicPage }))
 )
+const WorldExplorerPage = lazy(() =>
+  import('../modules/world-explorer/WorldExplorerPage').then((m) => ({ default: m.WorldExplorerPage }))
+)
+const CountryDetailPage = lazy(() =>
+  import('../modules/world-explorer/CountryDetailPage').then((m) => ({ default: m.CountryDetailPage }))
+)
 const ComparisonStudioPage = lazy(() =>
   import('../modules/comparison-studio/ComparisonStudioPage').then((m) => ({ default: m.ComparisonStudioPage }))
 )
@@ -131,6 +137,12 @@ export function AppRouter() {
           <Route path="/laboratory/clinical/:category/:id" element={<ClinicalDetailPage />} />
           <Route path="/laboratory/:category/:id" element={<LaboratoryDetailPage />} />
           <Route path="/exam-prep" element={<ExamPrepPage />} />
+          {/* Static "world-explorer" segment declared before the dynamic :subjectId
+              routes below — React Router v6 ranks a static path segment above a
+              dynamic one at the same position regardless of declaration order, so
+              this ordering is for human readability, not routing correctness. */}
+          <Route path="/exam-prep/world-explorer" element={<WorldExplorerPage />} />
+          <Route path="/exam-prep/world-explorer/:countryId" element={<CountryDetailPage />} />
           <Route path="/exam-prep/:subjectId" element={<ExamPrepSubjectPage />} />
           <Route path="/exam-prep/:subjectId/:topicId" element={<ExamPrepTopicPage />} />
           <Route path="/comparison" element={<ComparisonStudioPage />} />
