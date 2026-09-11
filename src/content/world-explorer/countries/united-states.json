@@ -1,0 +1,107 @@
+{
+  "id": "united-states",
+  "name": "United States",
+  "genZNote": "50 states, 1 Constitution older than most countries' entire existence, 3 branches of government that are SUPPOSED to check each other — separation of powers, the origin story.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A federal republic in North America comprising 50 states plus Washington, D.C. (the federal capital district); Alaska and Hawaii are non-contiguous states.",
+        "Spans a huge range of geography: Rocky Mountains, Great Plains, Mississippi River system, and coastlines on both the Atlantic and Pacific Oceans.",
+        "Major cities: Washington, D.C. (capital), New York City (largest city, financial hub), Los Angeles, Chicago."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "English is the dominant language (no official federal language); the country is highly multicultural, built substantially through immigration.",
+        "Home to Hollywood (Los Angeles), a globally dominant film and entertainment industry, and Silicon Valley's technology culture."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal presidential constitutional republic under the US Constitution (1787, the world's oldest still-functioning written national constitution).",
+        "Three-branch separation of powers: Executive (President), Legislative (bicameral Congress — Senate + House of Representatives), Judicial (Supreme Court).",
+        "50 states each retain significant autonomy under the federal system."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Home to NASA, a pioneer of crewed spaceflight (Apollo Moon landings) and major current space exploration programmes.",
+        "Leading centre for biomedical research (e.g. NIH) and a major hub for pharmaceutical and biotechnology innovation.",
+        "Silicon Valley is a global centre for computing, internet, and AI research and development."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A founding member of the United Nations and NATO; hosts UN Headquarters in New York City.",
+        "Member of the G7 and G20; a Quad member alongside India, Japan, and Australia."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "Often described as a 'Comprehensive Global Strategic Partnership' — covering defence, trade, technology, and education cooperation.",
+        "The US is one of India's largest trading partners, and hosts a very large Indian-American diaspora, prominent in technology and academia.",
+        "Both are Quad members alongside Japan and Australia, cooperating on Indo-Pacific security and other shared priorities."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "The world's largest economy by nominal GDP, with services, technology, finance, and manufacturing as major sectors.",
+        "The US Dollar is the world's primary reserve currency, used widely in international trade and finance."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Hollywood, Silicon Valley, NASA's space programme, and being the world's largest economy.",
+        "The Statue of Liberty, the Grand Canyon, and a federal constitutional system widely studied as a model of separation of powers."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The United States is a federal presidential constitutional republic of 50 states in North America, the world's largest economy by nominal GDP.",
+    "keyFacts": [
+      "Capital: Washington, D.C. Currency: US Dollar.",
+      "Constitution: 1787, the world's oldest still-functioning written national constitution.",
+      "Three branches: Executive (President), Legislative (Congress), Judicial (Supreme Court).",
+      "Quad member alongside India, Japan, and Australia."
+    ],
+    "keyTerms": ["Separation of powers", "Federal republic", "Quad"],
+    "commonConfusion": [
+      "New York City is the LARGEST US city and financial hub, but Washington, D.C. is the CAPITAL — a commonly mixed-up pair."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "US Constitution (1787) is the world's oldest still-functioning written national constitution.",
+      "Three-branch separation of powers: Executive, Legislative, Judicial."
+    ],
+    "commonTraps": [
+      "Naming New York City as the US capital instead of Washington, D.C."
+    ],
+    "mustRemember": [
+      "US = federal republic, 50 states, Quad member with India, Japan, Australia."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-US Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    }
+  ]
+}

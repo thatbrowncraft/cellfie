@@ -1,0 +1,104 @@
+{
+  "id": "china",
+  "name": "China",
+  "genZNote": "One-party, one Great Wall visible-from-space myth (actually debunked, but the wall itself is very real and very long) — China's scale breaks intuition at every level.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The world's third or fourth-largest country by area (commonly cited alongside the US, depending on how disputed territories are counted), bordering 14 countries including India, Russia, and Pakistan.",
+        "Major rivers: Yangtze (longest in Asia) and Yellow River (Huang He), historically central to Chinese civilization.",
+        "The Great Wall of China, built and extended over centuries, is a UNESCO World Heritage Site and among the most recognisable structures on Earth.",
+        "Capital: Beijing; largest city and financial hub: Shanghai."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Mandarin Chinese (Putonghua) is the official language; the country is the world's most populous alongside India, with 56 officially recognised ethnic groups (Han Chinese being the majority).",
+        "One of the world's oldest continuous civilizations, with a documented history spanning several millennia.",
+        "The Forbidden City (Beijing) and the Terracotta Army (Xi'an) are major UNESCO World Heritage Sites."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A one-party socialist republic governed by the Communist Party of China (CPC); the National People's Congress is the highest organ of state power.",
+        "The President serves as head of state; the Premier heads the State Council (government).",
+        "Comprises 23 provinces, 5 autonomous regions, 4 municipalities, and 2 special administrative regions (Hong Kong, Macau)."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A major global manufacturing base for pharmaceuticals and medical devices, alongside significant biotechnology research investment.",
+        "An active national space programme (China National Space Administration), including crewed missions to its own Tiangong space station and lunar exploration (Chang'e missions)."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A permanent member of the UN Security Council; member of the G20, BRICS, and the Shanghai Cooperation Organisation (SCO).",
+        "The world's second-largest economy by nominal GDP and the largest by some purchasing-power measures."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "body": "India and China are the world's two most populous countries and share a long land border, along with a complex relationship spanning trade, historical ties, and periodic border-related tensions in the Himalayan region. Both are members of BRICS and the SCO, cooperating on some multilateral platforms even where bilateral issues remain unresolved. This profile keeps to factual, neutral description rather than commentary on specific disputes."
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "The world's largest exporter of goods, often called the 'world's factory' for its manufacturing scale.",
+        "A major trading partner for most countries globally, including India, despite periodic trade-policy friction."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The Great Wall, the Terracotta Army, and being the world's largest manufacturing exporter.",
+        "A permanent UN Security Council seat and the world's second-largest economy."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "China is a one-party socialist republic in East Asia, the world's most populous country alongside India and its second-largest economy.",
+    "keyFacts": [
+      "Capital: Beijing. Currency: Renminbi (Yuan).",
+      "Governed by the Communist Party of China; National People's Congress is the highest state organ.",
+      "Permanent UN Security Council member; member of G20, BRICS, SCO.",
+      "23 provinces, 5 autonomous regions, 4 municipalities, 2 special administrative regions (Hong Kong, Macau)."
+    ],
+    "keyTerms": ["Communist Party of China (CPC)", "National People's Congress", "Special Administrative Region"],
+    "commonConfusion": [
+      "Hong Kong and Macau are SPECIAL ADMINISTRATIVE REGIONS of China, not provinces — they retain distinct legal/economic systems."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "China is a permanent UN Security Council member — one of only five.",
+      "Hong Kong and Macau are Special Administrative Regions, not ordinary provinces."
+    ],
+    "commonTraps": [
+      "Treating Hong Kong/Macau as ordinary provinces rather than Special Administrative Regions."
+    ],
+    "mustRemember": [
+      "China: one-party socialist republic, CPC-governed, permanent UNSC member."
+    ]
+  },
+  "sources": [
+    {
+      "name": "United Nations — Member States and UN Security Council composition",
+      "kind": "educational",
+      "url": "https://www.un.org/securitycouncil/content/current-members"
+    }
+  ]
+}

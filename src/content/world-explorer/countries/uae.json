@@ -1,0 +1,98 @@
+{
+  "id": "uae",
+  "name": "United Arab Emirates",
+  "genZNote": "Seven emirates, one federation, one very large Indian diaspora — the UAE and Gujarat have been trading partners since long before 'Vibrant Gujarat' was a summit name.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located on the Arabian Peninsula, bordering Saudi Arabia and Oman, along the Persian Gulf and Gulf of Oman.",
+        "A federation of seven emirates: Abu Dhabi (capital), Dubai, Sharjah, Ajman, Umm Al Quwain, Fujairah, and Ras Al Khaimah.",
+        "Mostly desert terrain, with major coastal cities built up through rapid modern development."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Arabic is the official language; English is widely used in business given the country's large expatriate population.",
+        "Emiratis are a minority within their own country — the UAE has one of the world's highest expatriate-to-citizen population ratios, with a very large Indian community, including many from Gujarat and Kerala."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federation of seven absolute monarchies (emirates), each ruled by its own Emir; the President is traditionally the Ruler of Abu Dhabi.",
+        "Formed in 1971 when six emirates federated (Ras Al Khaimah joined in 1972) after the end of British protection treaties."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Member of the United Nations, the Gulf Cooperation Council (GCC), and the Organisation of Islamic Cooperation (OIC).",
+        "Hosted the COP28 UN Climate Change Conference in Dubai (2023), a notable recent global-diplomacy moment."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "The UAE is one of India's largest trading partners, and India-UAE signed a Comprehensive Economic Partnership Agreement (CEPA) that came into force in 2022.",
+        "Home to one of the largest overseas Indian communities in the world, with especially strong Gujarati- and Kerala-origin populations in Dubai and Sharjah.",
+        "Significant remittance flows from Indian workers in the UAE form an important part of bilateral economic ties."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Historically built on oil and gas exports; has diversified heavily into trade, tourism, aviation (Dubai and Abu Dhabi as major hubs), finance, and real estate.",
+        "Dubai is a major global re-export and logistics hub connecting Asia, Europe, and Africa.",
+        "A significant destination for Indian exports and a source of crude oil imports for India."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The Burj Khalifa (world's tallest building) in Dubai, rapid modern urban development, and being a major global aviation/trade hub.",
+        "A large Indian diaspora and close economic ties with India via the CEPA trade agreement."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The UAE is a federation of seven emirates on the Arabian Peninsula, formed in 1971, and one of India's largest trading partners.",
+    "keyFacts": [
+      "Capital: Abu Dhabi. Currency: UAE Dirham.",
+      "Federation formed: 1971 (six emirates; Ras Al Khaimah joined 1972).",
+      "India-UAE CEPA trade agreement came into force in 2022.",
+      "Home to one of the world's largest overseas Indian communities."
+    ],
+    "keyTerms": ["Emirate", "GCC", "CEPA (Comprehensive Economic Partnership Agreement)"],
+    "commonConfusion": [
+      "Abu Dhabi is the UAE's CAPITAL; Dubai is its largest and most internationally famous city — the two are often mixed up."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "UAE = 7 emirates, federated in 1971; Abu Dhabi is the capital, not Dubai.",
+      "India-UAE CEPA came into force in 2022 — a frequently tested trade-agreement fact."
+    ],
+    "commonTraps": [
+      "Naming Dubai as the UAE's capital instead of Abu Dhabi."
+    ],
+    "mustRemember": [
+      "UAE formed in 1971 from 7 emirates; large Indian/Gujarati diaspora; CEPA with India since 2022."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-UAE Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    }
+  ]
+}

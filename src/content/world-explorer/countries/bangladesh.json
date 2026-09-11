@@ -1,0 +1,98 @@
+{
+  "id": "bangladesh",
+  "name": "Bangladesh",
+  "genZNote": "Born in 1971, mostly delta, world's biggest mangrove forest next door — Bangladesh is proof that a young country and ancient geography can absolutely coexist.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in South Asia, almost entirely surrounded by India (west, north, east) with a short border with Myanmar in the southeast and the Bay of Bengal to the south.",
+        "Sits mostly on the Ganges-Brahmaputra-Meghna river delta — one of the world's largest river deltas.",
+        "Home to the Sundarbans, the world's largest mangrove forest, shared with India, a UNESCO World Heritage Site.",
+        "Capital: Dhaka; major port: Chittagong."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Bengali (Bangla) is the official language — the 1952 Bengali Language Movement is a foundational national memory, commemorated as International Mother Language Day (21 February).",
+        "Rich tradition of Bengali literature, music, and the Baul folk-music tradition (UNESCO Intangible Cultural Heritage)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary republic; unicameral Parliament (Jatiya Sangsad).",
+        "Became independent in 1971 after the Bangladesh Liberation War, separating from Pakistan (having earlier separated from India during 1947 Partition as East Pakistan)."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Member of the United Nations, SAARC, and the Commonwealth of Nations.",
+        "A major contributor of personnel to UN peacekeeping missions worldwide."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India supported Bangladesh's independence movement in 1971; the two countries share deep historical, linguistic, and cultural ties (especially with West Bengal).",
+        "Extensive river-sharing arrangements exist between the two countries, given the transboundary Ganges-Brahmaputra river system.",
+        "India is a major trading partner and source of development-related credit lines for Bangladesh."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "One of the world's largest garment/textile exporters — ready-made garments are the dominant export sector.",
+        "Agriculture (notably jute and rice) and remittances from overseas workers are also significant to the economy."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The Sundarbans mangrove forest, the Ganges delta, and being one of the world's top garment exporters.",
+        "The 1971 Liberation War and its 1952 Language Movement, both central to national identity."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Bangladesh is a South Asian parliamentary republic on the Ganges-Brahmaputra delta, independent since 1971 after separating from Pakistan.",
+    "keyFacts": [
+      "Capital: Dhaka. Currency: Bangladeshi Taka.",
+      "Independence: 1971 (Bangladesh Liberation War), after being East Pakistan since the 1947 Partition.",
+      "Home to the Sundarbans, the world's largest mangrove forest (shared with India).",
+      "One of the world's largest ready-made garment exporters."
+    ],
+    "keyTerms": ["Bangladesh Liberation War (1971)", "Sundarbans", "Ganges-Brahmaputra Delta"],
+    "commonConfusion": [
+      "Bangladesh separated from Pakistan in 1971 — a SECOND partition, distinct from the original 1947 Partition of British India."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Bangladesh's 1971 independence war and India's role in supporting it are frequently tested facts.",
+      "The Sundarbans is shared between India and Bangladesh — don't attribute it to only one country."
+    ],
+    "commonTraps": [
+      "Confusing the 1947 Partition (creating East and West Pakistan) with the 1971 Liberation War (East Pakistan becoming independent Bangladesh)."
+    ],
+    "mustRemember": [
+      "Bangladesh = former East Pakistan, independent since 1971."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Bangladesh Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    }
+  ]
+}

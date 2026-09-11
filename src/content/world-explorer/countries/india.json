@@ -1,0 +1,116 @@
+{
+  "id": "india",
+  "name": "India",
+  "genZNote": "28 states, 1 Constitution, 22 scheduled languages, and somehow it all runs on one election machine every five years. India really said 'unity in diversity' and meant it literally.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Seventh-largest country by area, on the Indian subcontinent in South Asia, bordered by Pakistan, China, Nepal, Bhutan, Bangladesh, and Myanmar, with sea neighbours Sri Lanka and Maldives.",
+        "The Himalayas form the northern boundary; the Indo-Gangetic Plain (Ganga, Yamuna, Brahmaputra) dominates the north; the Deccan Plateau covers most of peninsular India.",
+        "28 states and 8 Union Territories (following the 2019 Jammu & Kashmir reorganisation into J&K and Ladakh).",
+        "Major cities: New Delhi (capital), Mumbai (financial capital), Bengaluru, Chennai, Kolkata, Ahmedabad, Hyderabad."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "22 scheduled languages under the Constitution's Eighth Schedule; Hindi and English are the two official languages of the Union government.",
+        "Birthplace of four major world religions: Hinduism, Buddhism, Jainism, and Sikhism.",
+        "40+ UNESCO World Heritage Sites, including the Taj Mahal, Ajanta & Ellora Caves, and Khajuraho Temples.",
+        "Classical dance forms (Bharatanatyam, Kathak, Kathakali, Odissi) and a globally influential film industry centred on Mumbai (Hindi cinema)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A sovereign, socialist, secular, democratic republic under a parliamentary system, per the Constitution of India (adopted 26 Nov 1949, in force 26 Jan 1950).",
+        "Bicameral Parliament: Lok Sabha (directly elected lower house) and Rajya Sabha (upper house, representing states).",
+        "President is the constitutional head of state; the Prime Minister, backed by the Lok Sabha majority, heads the government.",
+        "World's largest democracy by population, holding the largest-scale general elections on Earth."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Home to ISRO (Indian Space Research Organisation) — notable for Chandrayaan-3's south-pole Moon landing (2023) and a cost-efficient space programme.",
+        "One of the world's largest producers of generic medicines, often called the 'pharmacy of the world'.",
+        "Extensive public vaccination infrastructure, notably scaled up during the COVID-19 pandemic (Covishield/Covaxin manufacturing).",
+        "Major IT and software services hub, with Bengaluru and Hyderabad as leading technology centres."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Founding member of the Non-Aligned Movement; a member of the United Nations, G20, BRICS, SAARC, and the Commonwealth of Nations.",
+        "A Quad (Quadrilateral Security Dialogue) member alongside the United States, Japan, and Australia.",
+        "Regularly participates in international climate commitments, including a 2030 non-fossil-fuel energy capacity target announced around COP26."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "One of the world's largest and fastest-growing major economies by GDP, with services, IT, agriculture, and manufacturing as core sectors.",
+        "Major exports: petroleum products, pharmaceuticals, IT services, textiles, gems and jewellery, engineering goods.",
+        "The 'Make in India' initiative and the India Semiconductor Mission are recent efforts to expand domestic manufacturing, including chip assembly and fabrication."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The Taj Mahal, Himalayan mountaineering, Bollywood, yoga, spices, and a globally influential IT services industry.",
+        "ISRO's cost-efficient space missions; being the world's most populous country and largest democracy."
+      ]
+    },
+    {
+      "id": "current-affairs-connection",
+      "heading": "📰 Current Affairs Connection (2026)",
+      "body": "For up-to-date, curated 2026 developments involving India — the Union Budget 2026-27, ISRO missions, NEET updates, and more — see Cellfie's Current Affairs 2026 module, which is kept as its own dated, sourced section rather than duplicated here."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "India is a parliamentary democratic republic in South Asia, the world's most populous country and largest democracy, with 28 states and 8 Union Territories.",
+    "keyFacts": [
+      "Capital: New Delhi. Currency: Indian Rupee (₹). Constitution in force: 26 January 1950.",
+      "28 states, 8 Union Territories.",
+      "22 scheduled languages; Hindi and English are the two official Union languages.",
+      "Founding member of NAM; member of G20, BRICS, SAARC, Commonwealth, and the Quad."
+    ],
+    "keyTerms": ["Parliamentary republic", "Scheduled languages", "Union Territory", "Quad"],
+    "commonConfusion": [
+      "India's Constitution was ADOPTED on 26 November 1949 but came INTO FORCE on 26 January 1950 (Republic Day) — two different dates."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "28 states, 8 Union Territories (post-2019 J&K/Ladakh reorganisation).",
+      "Constitution: adopted 26 Nov 1949, in force 26 Jan 1950.",
+      "22 scheduled languages under the Eighth Schedule."
+    ],
+    "commonTraps": [
+      "Confusing India's independence date (15 Aug 1947) with the Constitution's commencement date (26 Jan 1950).",
+      "Assuming Hindi is India's sole official language — English shares official status at the Union level."
+    ],
+    "mustRemember": [
+      "India: parliamentary democratic republic, bicameral Parliament (Lok Sabha + Rajya Sabha), President as head of state."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — About India",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "NCERT Social Science textbooks (Geography, Political Science)",
+      "kind": "educational"
+    }
+  ]
+}

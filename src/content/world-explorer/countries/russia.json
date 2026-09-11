@@ -1,0 +1,108 @@
+{
+  "id": "russia",
+  "name": "Russia",
+  "genZNote": "Spans 11 time zones and two continents at once — Russia's map alone is basically a geography exam question.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The world's largest country by area, spanning Eastern Europe and Northern Asia across 11 time zones.",
+        "The Ural Mountains are traditionally considered the geographic boundary between European and Asian Russia.",
+        "Lake Baikal, in Siberia, is the world's deepest freshwater lake and a UNESCO World Heritage Site.",
+        "Capital: Moscow; second city: St. Petersburg."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Russian is the official language; the country is ethnically diverse, with over 190 recognised ethnic groups.",
+        "A major contributor to world literature (Tolstoy, Dostoevsky), classical music (Tchaikovsky), and ballet.",
+        "The Moscow Kremlin and Red Square are UNESCO World Heritage Sites."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal semi-presidential republic; the President is head of state, the Prime Minister heads the government.",
+        "Bicameral Federal Assembly: State Duma (lower house) and Federation Council (upper house).",
+        "Formed as the Russian Federation following the dissolution of the Soviet Union in 1991."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A pioneering space power — launched Sputnik 1 (1957, first artificial satellite) and sent Yuri Gagarin (1961, first human in space) via the Soviet-era space programme.",
+        "Roscosmos, its space agency, remains a key partner in the International Space Station programme."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A permanent member of the UN Security Council; member of BRICS and the Shanghai Cooperation Organisation (SCO).",
+        "One of the world's largest producers and exporters of oil and natural gas."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Russia describe their ties as a 'Special and Privileged Strategic Partnership', with roots going back to the Soviet era.",
+        "Long-standing defence cooperation, including major defence equipment supply and joint development programmes (e.g. the BrahMos missile, jointly developed with India).",
+        "Energy trade (notably crude oil) has grown significantly as part of the bilateral economic relationship."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Heavily reliant on natural resource exports — oil, natural gas, and minerals form the backbone of its export economy.",
+        "A major global arms exporter, alongside the US, France, and China."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the world's largest country by area, spanning 11 time zones across Europe and Asia.",
+        "Pioneering achievements in space exploration (Sputnik, Gagarin) and a long-standing strategic partnership with India."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Russia is the world's largest country by area, a federal semi-presidential republic spanning Europe and Asia, and a long-standing strategic partner of India.",
+    "keyFacts": [
+      "Capital: Moscow. Currency: Russian Ruble.",
+      "World's largest country by area, spanning 11 time zones.",
+      "Permanent UN Security Council member; formed in 1991 after the Soviet Union's dissolution.",
+      "India-Russia ties: 'Special and Privileged Strategic Partnership'."
+    ],
+    "keyTerms": ["Permanent UN Security Council member", "BRICS", "BrahMos"],
+    "commonConfusion": [
+      "The Soviet Union dissolved in 1991 — Russia (the Russian Federation) is its main successor state, not identical to it."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Russia is a permanent UN Security Council member and spans 11 time zones — the largest country by area on Earth.",
+      "BrahMos is a jointly developed India-Russia missile system, a frequently tested India-Russia defence-cooperation fact."
+    ],
+    "commonTraps": [
+      "Treating 'Soviet Union' and 'Russia' as fully interchangeable — Russia is the largest successor state after the USSR's 1991 dissolution, not the same entity."
+    ],
+    "mustRemember": [
+      "Russia: permanent UNSC member, world's largest country by area, 'Special and Privileged Strategic Partnership' with India."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Russia Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    }
+  ]
+}

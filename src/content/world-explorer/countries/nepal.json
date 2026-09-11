@@ -1,0 +1,101 @@
+{
+  "id": "nepal",
+  "name": "Nepal",
+  "genZNote": "Home to 8 of the world's 10 highest peaks and an open border with India — Nepal really said 'mountains AND easy travel', pick both.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A landlocked Himalayan country between India (south, east, west) and China/Tibet (north).",
+        "Home to Mount Everest (Sagarmatha), the world's highest peak, on the border with Tibet, plus 7 other of the world's 10 highest mountains.",
+        "Terrain ranges from the Terai plains in the south to the high Himalayas in the north.",
+        "Capital: Kathmandu, in the Kathmandu Valley."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Nepali is the official language; the country is religiously and culturally diverse, with a Hindu-majority population and a significant Buddhist heritage.",
+        "Lumbini, in southern Nepal, is the birthplace of Gautama Buddha and a UNESCO World Heritage Site.",
+        "The Kathmandu Valley itself holds multiple UNESCO-listed monument zones (temples, stupas, palace squares)."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal democratic republic since 2008, when the 240-year-old Shah monarchy was abolished following a Constituent Assembly vote.",
+        "The current Constitution was promulgated in 2015, establishing Nepal as a secular, federal republic with 7 provinces.",
+        "Head of state: President; head of government: Prime Minister; unicameral Federal Parliament's lower house is the House of Representatives."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Member of the United Nations and SAARC (headquartered relationships across South Asia).",
+        "Maintains close ties with both India and China, its only two neighbours, balancing relations with each."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Nepal share an open border allowing free movement of citizens, a distinctive feature of the relationship.",
+        "The 1950 Indo-Nepal Treaty of Peace and Friendship underpins close diplomatic, security, and economic ties.",
+        "India is one of Nepal's largest trading partners and a major source of hydropower cooperation and infrastructure investment."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Tourism (mountaineering, trekking, pilgrimage) is a major economic pillar, alongside agriculture and remittances from Nepali workers abroad.",
+        "Significant hydropower potential from its mountain rivers, with growing hydroelectric cooperation with India."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Mount Everest and Himalayan mountaineering/trekking tourism.",
+        "Lumbini (Buddha's birthplace) and the Kathmandu Valley's temple architecture.",
+        "An open border and treaty-based close relationship with India."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Nepal is a landlocked Himalayan federal democratic republic between India and China, home to Mount Everest and Lumbini.",
+    "keyFacts": [
+      "Capital: Kathmandu. Currency: Nepalese Rupee.",
+      "Became a federal democratic republic in 2008; current Constitution promulgated in 2015 (7 provinces).",
+      "Lumbini is the birthplace of Gautama Buddha.",
+      "Open border with India, governed by the 1950 Indo-Nepal Treaty of Peace and Friendship."
+    ],
+    "keyTerms": ["Federal democratic republic", "Lumbini", "Indo-Nepal Treaty of 1950"],
+    "commonConfusion": [
+      "Everest sits on the Nepal-Tibet (China) border, not entirely within one country — both share the peak."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Nepal became a republic in 2008, ending the Shah monarchy; its current Constitution dates to 2015.",
+      "The India-Nepal open border is a distinctive, frequently tested feature of the relationship."
+    ],
+    "commonTraps": [
+      "Assuming Nepal is still a monarchy — it became a federal republic in 2008."
+    ],
+    "mustRemember": [
+      "Lumbini = Buddha's birthplace, in Nepal, a UNESCO World Heritage Site."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Nepal Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    }
+  ]
+}

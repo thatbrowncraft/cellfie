@@ -1,0 +1,95 @@
+{
+  "id": "pakistan",
+  "name": "Pakistan",
+  "genZNote": "1947, same independence season as India, completely different constitutional path since. Two countries, one shared birthday week — August 14 and 15.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Located in South Asia, bordered by India (east), Afghanistan and Iran (west), and China (north, via the Karakoram range).",
+        "The Indus River and its tributaries form the country's agricultural backbone, flowing from the Himalayas/Karakoram to the Arabian Sea.",
+        "K2, the world's second-highest peak, sits in Pakistan's Karakoram Range.",
+        "Major cities: Islamabad (capital), Karachi (largest city, main port), Lahore, Faisalabad."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Urdu and English are the official languages; Punjabi, Sindhi, Pashto, and Balochi are widely spoken regional languages.",
+        "Culturally rooted in South Asian and Islamic traditions, sharing much of its Mughal-era architectural heritage with India.",
+        "Mohenjo-daro, an Indus Valley Civilization site, is a UNESCO World Heritage Site in Sindh province."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A federal parliamentary Islamic republic; the President is head of state, the Prime Minister heads the government.",
+        "Bicameral legislature: National Assembly (lower house) and Senate (upper house).",
+        "Formed in 1947 through the Partition of British India, becoming independent on 14 August 1947."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Member of the United Nations, SAARC, and the Organisation of Islamic Cooperation (OIC).",
+        "A long-standing strategic partnership with China, including projects under the China-Pakistan Economic Corridor (CPEC)."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "body": "India and Pakistan share a complex bilateral relationship shaped by their shared 1947 Partition history, including unresolved disputes over Jammu & Kashmir. Diplomatic, trade, and people-to-people ties have varied significantly over different periods. This profile keeps to factual, neutral description rather than commentary on any specific dispute."
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A textile- and agriculture-driven economy; cotton, textiles, and rice are among its major exports.",
+        "Karachi is the country's principal seaport and commercial hub."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "K2 and the Karakoram mountain range, Mohenjo-daro's Indus Valley ruins, and cricket as a major national sport.",
+        "Shared Partition history with India, marking both countries' independence in August 1947."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Pakistan is a federal parliamentary Islamic republic in South Asia, formed in 1947 through the Partition of British India.",
+    "keyFacts": [
+      "Capital: Islamabad. Currency: Pakistani Rupee. Independence: 14 August 1947 (one day before India).",
+      "Home to K2, the world's second-highest mountain.",
+      "Mohenjo-daro (Indus Valley Civilization) is a UNESCO World Heritage Site in Pakistan."
+    ],
+    "keyTerms": ["Partition of 1947", "CPEC", "Indus Valley Civilization"],
+    "commonConfusion": [
+      "Pakistan's independence (14 August 1947) is one day BEFORE India's (15 August 1947) — a commonly mixed-up date pair."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "K2 is located in Pakistan, not Nepal — a common mix-up with Everest (Nepal/China border).",
+      "Mohenjo-daro, an Indus Valley Civilization site, is in Pakistan (Sindh province), not India."
+    ],
+    "commonTraps": [
+      "Assuming all Indus Valley Civilization sites are in India — Mohenjo-daro and Harappa are both in present-day Pakistan.",
+      "Mixing up Pakistan's and India's independence dates."
+    ],
+    "mustRemember": [
+      "Pakistan formed via the 1947 Partition of British India; independence 14 August 1947."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT History textbooks (Partition of India, 1947)",
+      "kind": "educational"
+    }
+  ]
+}

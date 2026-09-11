@@ -1,0 +1,97 @@
+{
+  "id": "sri-lanka",
+  "name": "Sri Lanka",
+  "genZNote": "One island, two official languages, ancient stupas older than most empires — Sri Lanka's history didn't wait for anyone else's timeline.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "An island nation in the Indian Ocean, just southeast of India across the Palk Strait/Gulf of Mannar.",
+        "Central highlands with tea-growing hill country; coastal plains ring the island.",
+        "Official capital: Sri Jayawardenepura Kotte (seat of Parliament); Colombo is the commercial capital and largest city."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Sinhala and Tamil are the two official languages; the population is majority Sinhalese-Buddhist, with significant Tamil-Hindu, Muslim, and Christian communities.",
+        "Anuradhapura and Polonnaruwa, ancient royal capitals, are UNESCO World Heritage Sites with well-preserved Buddhist stupas and ruins.",
+        "The Sigiriya rock fortress is another major UNESCO-listed heritage site."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A unitary semi-presidential republic; the President is both head of state and head of government, alongside a Prime Minister and unicameral Parliament.",
+        "Independence from British rule in 1948; was known as Ceylon until renamed Sri Lanka in 1972."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Member of the United Nations, SAARC, and the Commonwealth of Nations.",
+        "Strategically positioned along major Indian Ocean shipping lanes, making it a focus of regional maritime and infrastructure interest."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Sri Lanka share close cultural and religious ties, particularly through Buddhism and Tamil linguistic connections with Tamil Nadu.",
+        "India has provided significant economic and development assistance to Sri Lanka, including support during Sri Lanka's 2022 economic crisis.",
+        "The Palk Strait fishing-rights issue is a recurring bilateral topic between the two countries' coastal communities."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Tea (Ceylon Tea), textiles/garments, and tourism are major economic sectors.",
+        "The Port of Colombo is a key transshipment hub in the Indian Ocean."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Ceylon Tea, ancient Buddhist heritage sites (Anuradhapura, Polonnaruwa, Sigiriya), and Indian Ocean maritime trade significance."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Sri Lanka is an island nation off India's southeastern coast, a unitary semi-presidential republic known for ancient Buddhist heritage and tea exports.",
+    "keyFacts": [
+      "Official capital: Sri Jayawardenepura Kotte. Commercial capital: Colombo. Currency: Sri Lankan Rupee.",
+      "Independence from Britain: 1948. Renamed from Ceylon to Sri Lanka: 1972.",
+      "Official languages: Sinhala and Tamil.",
+      "UNESCO sites: Anuradhapura, Polonnaruwa, Sigiriya."
+    ],
+    "keyTerms": ["Ceylon", "Palk Strait", "Sinhala-Tamil"],
+    "commonConfusion": [
+      "Sri Lanka's official (Kotte) and commercial (Colombo) capitals are different cities — a frequently tested distinction."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Was known as Ceylon until renamed Sri Lanka in 1972.",
+      "Two official languages: Sinhala and Tamil."
+    ],
+    "commonTraps": [
+      "Naming Colombo as THE capital without noting it's the commercial capital, while Sri Jayawardenepura Kotte is the official/administrative one."
+    ],
+    "mustRemember": [
+      "Sri Lanka = former Ceylon, island neighbour of India, independent since 1948."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Sri Lanka Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    }
+  ]
+}

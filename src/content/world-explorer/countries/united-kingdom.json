@@ -1,0 +1,100 @@
+{
+  "id": "united-kingdom",
+  "name": "United Kingdom",
+  "genZNote": "One monarch, four constituent nations, zero written single-document constitution — the UK really said 'we'll just wing it with centuries of precedent' and made it work.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "Made up of four constituent nations — England, Scotland, Wales, and Northern Ireland — off the northwest coast of mainland Europe.",
+        "Capital: London, also the largest city and a major global financial centre.",
+        "Northern Ireland shares its only land border with the Republic of Ireland; the rest of the UK is surrounded by sea."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "English is the dominant language; Welsh, Scottish Gaelic, and Irish also hold official/recognised status in their respective nations.",
+        "Historic centre of English literature (Shakespeare) and the birthplace of the Industrial Revolution.",
+        "Stonehenge and the Tower of London are among its UNESCO World Heritage Sites."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A parliamentary constitutional monarchy — the Monarch is head of state (a largely ceremonial role today), while the Prime Minister leads the government.",
+        "Uses an UNCODIFIED constitution — no single written document, but a body of statutes, conventions, and common law.",
+        "Bicameral Parliament: House of Commons (elected) and House of Lords (largely appointed/hereditary).",
+        "Scotland, Wales, and Northern Ireland each have varying degrees of devolved government."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "A permanent member of the UN Security Council; a founding NATO member and member of the G7 and G20.",
+        "Head of the Commonwealth of Nations, a voluntary association of mostly former British territories, including India."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India was under British colonial rule until independence in 1947; the two countries now describe their ties as a 'Comprehensive Strategic Partnership'.",
+        "Home to a large and long-established Indian diaspora, with deep historical, cultural, and economic links.",
+        "The UK and India have negotiated a Free Trade Agreement, part of deepening post-Brexit trade ties between the two."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "A services-driven economy, with London as one of the world's leading financial centres.",
+        "Left the European Union in 2020 ('Brexit'), reshaping its trade relationships with both the EU and other partners."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Being the origin of the Industrial Revolution, parliamentary democracy as a governance model, and the Commonwealth of Nations.",
+        "London's status as a global financial and cultural capital."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The United Kingdom is a parliamentary constitutional monarchy of four nations, with an uncodified constitution and a former colonial relationship with India.",
+    "keyFacts": [
+      "Capital: London. Currency: Pound Sterling.",
+      "Four constituent nations: England, Scotland, Wales, Northern Ireland.",
+      "Uncodified constitution — no single written constitutional document.",
+      "Left the EU in 2020 (Brexit); permanent UN Security Council member."
+    ],
+    "keyTerms": ["Uncodified constitution", "Devolution", "Commonwealth of Nations"],
+    "commonConfusion": [
+      "The UK's constitution is UNCODIFIED (no single document) — a common exam trap, since most countries (including India) have a codified written constitution."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The UK has an uncodified constitution — one of very few major democracies without a single written constitutional document.",
+      "The UK is Head of the Commonwealth of Nations, which India is also a member of."
+    ],
+    "commonTraps": [
+      "Assuming every parliamentary democracy has a single written constitution — the UK is the classic exception."
+    ],
+    "mustRemember": [
+      "UK = 4 nations, uncodified constitution, permanent UNSC member, former colonial ruler of India (independence 1947)."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-UK Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    }
+  ]
+}
