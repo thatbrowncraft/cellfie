@@ -42,12 +42,12 @@ export const GLOBE_COUNTRIES: GlobeCountry[] = [
   { id: 'india', name: 'India', lat: 28.6139, lon: 77.209, continent: 'Asia', capital: 'New Delhi', currency: 'Indian Rupee (₹)', flagEmoji: '🇮🇳', languages: ['Hindi', 'English', '21 other scheduled languages'], hasDeepProfile: true },
   { id: 'pakistan', name: 'Pakistan', lat: 33.6844, lon: 73.0479, continent: 'Asia', capital: 'Islamabad', currency: 'Pakistani Rupee', flagEmoji: '🇵🇰', languages: ['Urdu', 'English'], hasDeepProfile: true },
   { id: 'nepal', name: 'Nepal', lat: 27.7172, lon: 85.324, continent: 'Asia', capital: 'Kathmandu', currency: 'Nepalese Rupee', flagEmoji: '🇳🇵', languages: ['Nepali'], hasDeepProfile: true },
-  { id: 'bhutan', name: 'Bhutan', lat: 27.4728, lon: 89.639, continent: 'Asia', capital: 'Thimphu', currency: 'Ngultrum', flagEmoji: '🇧🇹', languages: ['Dzongkha'], hasDeepProfile: false },
+  { id: 'bhutan', name: 'Bhutan', lat: 27.4728, lon: 89.639, continent: 'Asia', capital: 'Thimphu', currency: 'Ngultrum', flagEmoji: '🇧🇹', languages: ['Dzongkha'], hasDeepProfile: true },
   { id: 'bangladesh', name: 'Bangladesh', lat: 23.8103, lon: 90.4125, continent: 'Asia', capital: 'Dhaka', currency: 'Bangladeshi Taka', flagEmoji: '🇧🇩', languages: ['Bengali'], hasDeepProfile: true },
   { id: 'sri-lanka', name: 'Sri Lanka', officialName: 'Democratic Socialist Republic of Sri Lanka', lat: 6.9271, lon: 79.8612, continent: 'Asia', capital: 'Sri Jayawardenepura Kotte (official) / Colombo (commercial)', currency: 'Sri Lankan Rupee', flagEmoji: '🇱🇰', languages: ['Sinhala', 'Tamil'], hasDeepProfile: true },
-  { id: 'maldives', name: 'Maldives', lat: 4.1755, lon: 73.5093, continent: 'Asia', capital: 'Malé', currency: 'Maldivian Rufiyaa', flagEmoji: '🇲🇻', languages: ['Dhivehi'], hasDeepProfile: false },
-  { id: 'afghanistan', name: 'Afghanistan', lat: 34.5553, lon: 69.2075, continent: 'Asia', capital: 'Kabul', currency: 'Afghan Afghani', flagEmoji: '🇦🇫', languages: ['Pashto', 'Dari'], hasDeepProfile: false },
-  { id: 'myanmar', name: 'Myanmar', lat: 19.7633, lon: 96.0785, continent: 'Asia', capital: 'Naypyidaw', currency: 'Myanmar Kyat', flagEmoji: '🇲🇲', languages: ['Burmese'], hasDeepProfile: false },
+  { id: 'maldives', name: 'Maldives', lat: 4.1755, lon: 73.5093, continent: 'Asia', capital: 'Malé', currency: 'Maldivian Rufiyaa', flagEmoji: '🇲🇻', languages: ['Dhivehi'], hasDeepProfile: true },
+  { id: 'afghanistan', name: 'Afghanistan', lat: 34.5553, lon: 69.2075, continent: 'Asia', capital: 'Kabul', currency: 'Afghan Afghani', flagEmoji: '🇦🇫', languages: ['Pashto', 'Dari'], hasDeepProfile: true },
+  { id: 'myanmar', name: 'Myanmar', lat: 19.7633, lon: 96.0785, continent: 'Asia', capital: 'Naypyidaw', currency: 'Myanmar Kyat', flagEmoji: '🇲🇲', languages: ['Burmese'], hasDeepProfile: true },
 
   // --- East & Southeast Asia ---
   { id: 'china', name: 'China', officialName: "People's Republic of China", lat: 39.9042, lon: 116.4074, continent: 'Asia', capital: 'Beijing', currency: 'Renminbi (Yuan)', flagEmoji: '🇨🇳', languages: ['Mandarin Chinese'], hasDeepProfile: true },
