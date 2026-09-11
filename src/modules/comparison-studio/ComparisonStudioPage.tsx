@@ -20,6 +20,7 @@ import { getComparisonTagline } from '../../core/comparison/microcopy'
 import { getRecentComparisons, type RecentComparisonEntry } from '../../core/comparison/recentlyViewed'
 import { resolveComparisonSearch, type UnifiedSearchResult } from '../../core/comparison/unifiedSearch'
 import { ComparisonCard } from './components/ComparisonCard'
+import { ComparisonFloatingParticles } from './components/ComparisonFloatingParticles'
 
 type SavedTab = 'saved' | 'favorites' | 'custom'
 type SourceMode = 'my-library' | 'online'
@@ -189,7 +190,10 @@ export function ComparisonStudioPage() {
   })
 
   return (
-    <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
+    <div className="relative mx-auto max-w-content overflow-hidden px-4 py-8 sm:px-6 sm:py-10 md:px-8">
+      <ComparisonFloatingParticles />
+
+      <div className="relative z-[1]">
       <header className="mb-6 text-center sm:text-left">
         <h1 className="font-display text-display font-semibold text-ink-primary">Comparison Studio</h1>
         <p className="mx-auto mt-2 max-w-2xl font-body text-body-lg text-ink-secondary sm:mx-0">
@@ -335,6 +339,7 @@ export function ComparisonStudioPage() {
           ]}
         />
       </section>
+      </div>
     </div>
   )
 }
