@@ -73,6 +73,77 @@
       "id": "current-affairs-connection",
       "heading": "📰 Current Affairs Connection (2026)",
       "body": "For up-to-date, curated 2026 developments involving India — the Union Budget 2026-27, ISRO missions, NEET updates, and more — see Cellfie's Current Affairs 2026 module, which is kept as its own dated, sourced section rather than duplicated here."
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Indian Rupee (₹, INR), issued and regulated by the Reserve Bank of India (RBI), the central bank founded in 1935.",
+        "One of the world's largest and fastest-growing major economies, with services (especially IT), agriculture, and manufacturing as the three broad pillars.",
+        "Major industries: information technology and software services, textiles, pharmaceuticals, automobiles, steel, and agriculture (India is among the largest producers of milk, rice, wheat, and sugarcane).",
+        "Natural resources include coal, iron ore, and a large arable land base that supports its agricultural sector."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to four global biodiversity hotspots: the Himalayas, the Western Ghats, the Indo-Burma region, and Sundaland (Nicobar Islands).",
+        "The Sundarbans (shared with Bangladesh) is the world's largest mangrove forest and a Bengal tiger habitat, protected under Project Tiger (started 1973).",
+        "Major ecosystems range from Himalayan alpine zones and the Thar Desert to tropical rainforests in the Western Ghats and Northeast, plus extensive coastal and marine ecosystems along its ~7,500 km coastline.",
+        "Faces environmental challenges including air pollution in major cities, water stress, and glacial retreat in the Himalayas, alongside growing renewable-energy and afforestation efforts."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Ancient period: one of the world's oldest continuous civilizations, tracing back to the Indus Valley Civilization (c. 2500 BCE) and later Vedic, Mauryan, and Gupta empires.",
+        "Colonial period: came under British Crown rule in 1858 (after over a century of East India Company control), following the 1857 revolt.",
+        "Independence: gained independence from British rule on 15 August 1947, alongside the Partition that created Pakistan.",
+        "Republic: became a sovereign republic when its Constitution came into force on 26 January 1950, now celebrated annually as Republic Day."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1950: Constitution of India comes into force, establishing a sovereign democratic republic.",
+        "1956: States Reorganisation Act redraws internal state boundaries largely along linguistic lines.",
+        "1991: Landmark economic liberalisation reforms open India's economy to global trade and investment.",
+        "2019: Jammu and Kashmir is reorganised into two Union Territories (Jammu & Kashmir, and Ladakh), following the reading down of Article 370's special provisions.",
+        "2017: The Goods and Services Tax (GST) reform unifies most indirect taxes into a single nationwide tax system."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "ISRO (Indian Space Research Organisation), founded in 1969, runs one of the world's most cost-efficient space programmes.",
+        "Chandrayaan-3 (2023) made India the first country to land near the Moon's south pole and the fourth to achieve a soft lunar landing overall.",
+        "Aditya-L1 (launched 2023) is India's first dedicated solar observation mission, studying the Sun from the Sun-Earth L1 point.",
+        "The Digital India and India Stack initiatives (including the Aadhaar digital identity system and UPI real-time payments) have driven large-scale digital public infrastructure."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Cricket is the most widely followed sport; India has won the Cricket World Cup multiple times and hosts the globally popular Indian Premier League (IPL).",
+        "Chess has seen a recent surge, with Indian players including a teenage World Chess Champion (2024) reflecting a broader boom in the sport.",
+        "Mumbai's Hindi film industry ('Bollywood') is one of the world's largest film industries by number of films produced annually.",
+        "40+ UNESCO World Heritage Sites, including the Taj Mahal, and classical arts such as Bharatanatyam, Kathak, and Hindustani/Carnatic classical music, recognised internationally."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the United Nations (1945) and the Non-Aligned Movement.",
+        "Member of the G20, BRICS, SAARC, the Commonwealth of Nations, and the Shanghai Cooperation Organisation (SCO).",
+        "A Quad (Quadrilateral Security Dialogue) member alongside the United States, Japan, and Australia.",
+        "Active participant in WHO, UNESCO, WTO, and the World Bank/IMF, and a long-standing contributor to UN peacekeeping missions."
+      ]
     }
   ],
   "quickRevision": {
@@ -83,7 +154,12 @@
       "22 scheduled languages; Hindi and English are the two official Union languages.",
       "Founding member of NAM; member of G20, BRICS, SAARC, Commonwealth, and the Quad."
     ],
-    "keyTerms": ["Parliamentary republic", "Scheduled languages", "Union Territory", "Quad"],
+    "keyTerms": [
+      "Parliamentary republic",
+      "Scheduled languages",
+      "Union Territory",
+      "Quad"
+    ],
     "commonConfusion": [
       "India's Constitution was ADOPTED on 26 November 1949 but came INTO FORCE on 26 January 1950 (Republic Day) — two different dates."
     ]
