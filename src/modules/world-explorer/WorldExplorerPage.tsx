@@ -1,10 +1,13 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, CaretRight } from '@phosphor-icons/react'
 import { Button, Card, CardBody, SearchField } from '@/shared/components'
 import { GLOBE_COUNTRIES, searchGlobeCountries } from '@/core/world-explorer/countries'
 import { countCountryProfiles } from '@/core/world-explorer/registry'
+import { DEFAULT_GLOBE_STYLE, type GlobeStyleId } from '@/core/world-explorer/globeStyle'
+import { getSavedGlobeStyle, saveGlobeStyle } from '@/core/world-explorer/globeStylePreference'
 import { Globe } from './components/Globe'
+import { GlobeStyleSelector } from './components/GlobeStyleSelector'
 import { EducationalUseNotice } from './components/CountryLessonView'
 
 /**
@@ -18,6 +21,26 @@ export function WorldExplorerPage() {
   const navigate = useNavigate()
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [query, setQuery] = useState('')
+  const [globeStyle, setGlobeStyle] = useState<GlobeStyleId>(DEFAULT_GLOBE_STYLE)
+
+  // Load the last-saved Globe Style once on mount. Not blocking — the
+  // globe renders immediately in the default 'dark' style and swaps
+  // over the moment the saved preference resolves, rather than holding
+  // up the page behind a Dexie read.
+  useEffect(() => {
+    let cancelled = false
+    getSavedGlobeStyle().then((style) => {
+      if (!cancelled) setGlobeStyle(style)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  function handleStyleChange(style: GlobeStyleId) {
+    setGlobeStyle(style)
+    void saveGlobeStyle(style)
+  }
 
   const selected = useMemo(() => GLOBE_COUNTRIES.find((c) => c.id === selectedId) ?? null, [selectedId])
   const searchResults = useMemo(() => searchGlobeCountries(query).slice(0, 8), [query])
@@ -50,7 +73,8 @@ export function WorldExplorerPage() {
 
       <Card>
         <CardBody className="flex flex-col items-center gap-4">
-          <Globe selectedCountryId={selectedId} onSelectCountry={setSelectedId} />
+          <GlobeStyleSelector value={globeStyle} onChange={handleStyleChange} />
+          <Globe selectedCountryId={selectedId} onSelectCountry={setSelectedId} style={globeStyle} />
 
           <div className="w-full max-w-sm">
             <SearchField placeholder="Or find a country by name…" onChange={setQuery} />
