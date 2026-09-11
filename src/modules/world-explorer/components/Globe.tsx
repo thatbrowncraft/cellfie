@@ -175,12 +175,48 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
     }))
   }, [scale])
 
-  const endDrag = useCallback((e: React.PointerEvent<SVGSVGElement>) => {
+  const clearDrag = useCallback((e: React.PointerEvent<SVGSVGElement>) => {
     if (dragState.current?.pointerId === e.pointerId) {
       dragState.current = null
     }
     lastInteractionAt.current = performance.now()
   }, [])
+
+  // Selection now happens here, on pointerup, instead of via onClick
+  // handlers on individual marker/landmass elements.
+  //
+  // ROOT CAUSE of "selected country traces/jumps while rotating": with
+  // `setPointerCapture` on the element under pointerdown, pointerup is
+  // reliably re-targeted to that captured element — but the browser's
+  // synthetic "click" event that follows is a separate compatibility
+  // event, and its target is resolved by a fresh hit-test at the
+  // pointer's release position, not by pointer capture. That's a real,
+  // documented cross-browser inconsistency (most inconsistent on
+  // Android WebView/Chrome). A drag that starts on one country and, a
+  // frame or two after crossing the tap-vs-drag threshold, releases a
+  // few pixels over a NEIGHBOURING marker or landmass shape could fire
+  // a click on that neighbour instead of the one originally pressed —
+  // which looks exactly like the selection "jumping" or "tracing"
+  // between countries, and explains why it showed up most around
+  // Australia/Oceania, where markers sit closer together on screen.
+  //
+  // Fixing it here removes the ambiguity entirely: we do our own
+  // hit-test with `document.elementFromPoint` at the exact release
+  // coordinates (unaffected by pointer capture), find the nearest
+  // `data-globe-country`-tagged element, and select THAT — a single,
+  // deterministic code path for mouse and touch alike. Selection is
+  // still keyed by stable country id (`data-globe-country`), never by
+  // raw pointer position; only the "which element is under the pointer
+  // right now" hit-test uses coordinates, exactly once, at release.
+  const handlePointerUp = useCallback((e: React.PointerEvent<SVGSVGElement>) => {
+    const wasTap = lastDragDistanceRef.current <= DRAG_TAP_THRESHOLD_PX
+    clearDrag(e)
+    if (!wasTap) return
+    if (typeof document === 'undefined') return
+    const target = document.elementFromPoint(e.clientX, e.clientY)
+    const countryId = target instanceof Element ? target.closest('[data-globe-country]')?.getAttribute('data-globe-country') : null
+    if (countryId) onSelectCountry(countryId)
+  }, [clearDrag, onSelectCountry])
 
   const handleWheel = useCallback((e: React.WheelEvent<SVGSVGElement>) => {
     e.preventDefault()
@@ -227,8 +263,9 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
   // enclave cut out of it) render correctly as real holes.
   const landmassPaths = useMemo(() => {
     if (style !== 'real' || !landmasses) return []
+    const seenCountryIds = new Set<string>()
     return landmasses
-      .map((feature) => {
+      .map((feature, index) => {
         const includedSegments: string[] = []
         let depthSum = 0
         let depthCount = 0
@@ -248,22 +285,34 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
         }
 
         if (includedSegments.length === 0) return null
+
+        // Defensive dedupe: if more than one raw landmass feature ever
+        // resolved to the same Cellfie country id (a data anomaly — e.g.
+        // an external territory sharing its parent's ISO code), only the
+        // FIRST is treated as selectable/highlightable. Two different
+        // on-screen shapes both claiming to BE the selected country is
+        // exactly what would look like the selection "jumping" between
+        // shapes as the globe rotates, so this closes that off at the
+        // source regardless of whether it can currently occur with the
+        // shipped dataset.
+        let countryId = feature.countryId
+        if (countryId) {
+          if (seenCountryIds.has(countryId)) {
+            countryId = null
+          } else {
+            seenCountryIds.add(countryId)
+          }
+        }
+
         return {
-          feature,
+          key: `landmass-${index}`,
+          countryId,
           d: includedSegments.join(' '),
           opacity: Math.max(0.4, depthCount > 0 ? depthSum / depthCount : 1)
         }
       })
-      .filter((entry): entry is { feature: WorldLandmassFeature; d: string; opacity: number } => entry !== null)
+      .filter((entry): entry is { key: string; countryId: string | null; d: string; opacity: number } => entry !== null)
   }, [style, landmasses, rotation, radius, center])
-
-  function handleLandmassClick(feature: WorldLandmassFeature) {
-    // Same drag-vs-tap guard as `handleMarkerClick` — a landmass shape
-    // is a much bigger hit target than a marker dot, so this matters
-    // here if anything more than it does there.
-    if (lastDragDistanceRef.current > DRAG_TAP_THRESHOLD_PX) return
-    if (feature.countryId) onSelectCountry(feature.countryId)
-  }
 
   function splitVisibleRuns(points: { x: number; y: number; visible: boolean }[]): string[] {
     const runs: string[] = []
@@ -280,15 +329,6 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
     return runs
   }
 
-  function handleMarkerClick(id: string) {
-    // `dragState` is already cleared by the time this fires — pointerup
-    // (which clears it) always precedes the synthetic click event, so
-    // checking `dragState.current` here would never catch a drag.
-    // `lastDragDistanceRef` persists across that boundary instead.
-    if (lastDragDistanceRef.current > DRAG_TAP_THRESHOLD_PX) return
-    onSelectCountry(id)
-  }
-
   return (
     <div className="flex flex-col items-center gap-3">
       <svg
@@ -299,8 +339,8 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
         className="w-full max-w-[360px] touch-none select-none"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
-        onPointerUp={endDrag}
-        onPointerCancel={endDrag}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={clearDrag}
         onWheel={handleWheel}
       >
         <defs>
@@ -308,10 +348,11 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
             <stop offset="0%" stopColor="var(--color-surface-raised, #2a3330)" />
             <stop offset="100%" stopColor="var(--color-surface, #1c2422)" />
           </radialGradient>
-          {/* Real World style's ocean — a separate gradient rather than recoloring `globe-sphere` in place, so the Dark Scientific style (still using `globe-sphere` above) is provably untouched by this addition. */}
+          {/* Real World style's ocean — a separate gradient rather than recoloring `globe-sphere` in place, so the Dark Scientific style (still using `globe-sphere` above) is provably untouched by this addition.
+              Brightened from the original (#3d7ea6 → #1f4a63) — the previous stops read as dark/muted on Android, per the contrast bug report — while staying a restrained, believable ocean blue rather than an oversaturated one. */}
           <radialGradient id="globe-ocean" cx="35%" cy="30%" r="75%">
-            <stop offset="0%" stopColor="#3d7ea6" />
-            <stop offset="100%" stopColor="#1f4a63" />
+            <stop offset="0%" stopColor="#6fb8e0" />
+            <stop offset="100%" stopColor="#2f6f95" />
           </radialGradient>
         </defs>
 
@@ -338,24 +379,31 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
           </g>
         )}
 
-        {/* Real World country landmasses — see the `landmassPaths` doc comment above for the visibility/simplification tradeoffs. */}
+        {/* Real World country landmasses — see the `landmassPaths` doc comment above for the visibility/simplification tradeoffs.
+            Contrast pass: land now renders as a deeper, more defined green
+            (hardcoded here rather than the shared `fill-olive` design
+            token, which stays untouched for the rest of the app) at
+            higher opacity, AND every country — not just the selected one —
+            gets a thin border stroke. Previously only the selected country
+            had any stroke at all, so two unselected neighbouring countries
+            rendered with the exact same fill and no line between them,
+            which is why boundaries "disappeared into the land color" per
+            the bug report. */}
         {style === 'real' &&
-          landmassPaths.map(({ feature, d, opacity }) => {
-            const isSelected = Boolean(feature.countryId) && feature.countryId === selectedCountryId
+          landmassPaths.map(({ key, countryId, d, opacity }) => {
+            const isSelected = Boolean(countryId) && countryId === selectedCountryId
             return (
               <path
-                key={feature.countryId ?? d.slice(0, 24)}
+                key={key}
+                data-globe-country={countryId ?? undefined}
                 d={d}
                 fillRule="evenodd"
                 opacity={opacity}
-                className={cn(
-                  isSelected ? 'fill-terracotta text-terracotta' : 'fill-olive',
-                  feature.countryId ? 'cursor-pointer' : 'cursor-default'
-                )}
-                fillOpacity={isSelected ? 0.85 : 0.55}
-                stroke={isSelected ? 'currentColor' : 'none'}
-                strokeWidth={isSelected ? 1.5 : 0}
-                onClick={() => handleLandmassClick(feature)}
+                className={cn(countryId ? 'cursor-pointer' : 'cursor-default')}
+                fill={isSelected ? 'var(--color-highlight-terracotta)' : '#356b3c'}
+                fillOpacity={isSelected ? 0.9 : 0.8}
+                stroke={isSelected ? 'var(--color-highlight-terracotta)' : 'rgba(255, 255, 255, 0.32)'}
+                strokeWidth={isSelected ? 1.5 : 0.6}
               />
             )
           })}
@@ -371,9 +419,9 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
           return (
             <g
               key={country.id}
+              data-globe-country={country.id}
               transform={`translate(${center + p.x}, ${center + p.y})`}
               opacity={subdued ? nearLimbFade * 0.5 : nearLimbFade}
-              onClick={() => handleMarkerClick(country.id)}
               className="cursor-pointer"
             >
               {isSelected && <circle r={dotRadius + 4} fill="none" stroke="currentColor" className="text-terracotta" strokeWidth={1.5} />}
