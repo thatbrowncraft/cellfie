@@ -5,7 +5,13 @@ import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, EmptyState } from '@/shared/components'
 import { getGlobeCountryById } from '@/core/world-explorer/countries'
 import { getCountryProfile } from '@/core/world-explorer/registry'
-import { CountryExamFocusView, CountryLessonView, CountryQuickRevisionView, EducationalUseNotice } from './components/CountryLessonView'
+import {
+  CountryExamFocusView,
+  CountryLessonView,
+  CountryMemoryHookView,
+  CountryQuickRevisionView,
+  EducationalUseNotice
+} from './components/CountryLessonView'
 
 /**
  * World Explorer — country detail page. One reusable page renders
@@ -82,6 +88,7 @@ export function CountryDetailPage() {
       </header>
 
       <section className="mb-6 grid grid-cols-2 gap-3 rounded-md border border-border bg-surface p-5 sm:grid-cols-4">
+        <p className="col-span-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary sm:col-span-4">🌍 At a glance</p>
         <AtAGlanceItem label="Capital" value={country.capital} />
         <AtAGlanceItem label="Continent" value={country.continent} />
         <AtAGlanceItem label="Currency" value={country.currency} />
@@ -93,6 +100,7 @@ export function CountryDetailPage() {
           <CountryLessonView profile={profile} />
           <CountryQuickRevisionView title={profile.name} quickRevision={profile.quickRevision} />
           <CountryExamFocusView title={profile.name} examFocus={profile.examFocus} />
+          <CountryMemoryHookView genZNote={profile.genZNote} />
         </div>
       ) : (
         <div className="flex flex-col gap-4">

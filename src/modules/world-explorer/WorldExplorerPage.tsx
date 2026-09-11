@@ -1,14 +1,21 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft, CaretRight } from '@phosphor-icons/react'
-import { Button, Card, CardBody, SearchField } from '@/shared/components'
+import { ArrowLeft, ArrowSquareOut, CaretRight } from '@phosphor-icons/react'
+import { Button, Card, CardBody, EmptyState, SearchField } from '@/shared/components'
 import { GLOBE_COUNTRIES, searchGlobeCountries } from '@/core/world-explorer/countries'
-import { countCountryProfiles } from '@/core/world-explorer/registry'
+import { countCountryProfiles, getCountryProfile } from '@/core/world-explorer/registry'
+import { TOPIC_CATALOG } from '@/core/world-explorer/sectionMeta'
 import { DEFAULT_GLOBE_STYLE, type GlobeStyleId } from '@/core/world-explorer/globeStyle'
 import { getSavedGlobeStyle, saveGlobeStyle } from '@/core/world-explorer/globeStylePreference'
 import { Globe } from './components/Globe'
 import { GlobeStyleSelector } from './components/GlobeStyleSelector'
-import { EducationalUseNotice } from './components/CountryLessonView'
+import {
+  CountryExamFocusView,
+  CountryLessonView,
+  CountryMemoryHookView,
+  CountryQuickRevisionView,
+  EducationalUseNotice
+} from './components/CountryLessonView'
 
 /**
  * World Explorer — landing page. The globe is the primary entry point
@@ -43,6 +50,7 @@ export function WorldExplorerPage() {
   }
 
   const selected = useMemo(() => GLOBE_COUNTRIES.find((c) => c.id === selectedId) ?? null, [selectedId])
+  const selectedProfile = useMemo(() => (selected ? getCountryProfile(selected.id) : undefined), [selected])
   const searchResults = useMemo(() => searchGlobeCountries(query).slice(0, 8), [query])
   const deepProfileCount = countCountryProfiles()
 
@@ -103,27 +111,76 @@ export function WorldExplorerPage() {
         </CardBody>
       </Card>
 
-      <div className="mt-4">
+      {/* Topic-first browsing — the flip side of the country-first globe flow above. Pick "Economy" once and see it for every curated country at once, instead of tapping through 58 country pages. */}
+      <section className="mt-6">
+        <h2 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">📚 Or browse by topic, across every country</h2>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          {TOPIC_CATALOG.map((topic) => (
+            <button
+              key={topic.id}
+              type="button"
+              onClick={() => navigate(`/exam-prep/world-explorer/topic/${topic.id}`)}
+              className="rounded-md border border-border bg-surface px-3 py-3 text-left font-ui text-caption font-medium text-ink-primary transition-colors duration-micro hover:bg-surface-raised"
+            >
+              {topic.label}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <div className="mt-6">
         {selected ? (
-          <Card interactive onClick={() => navigate(`/exam-prep/world-explorer/${selected.id}`)}>
-            <CardBody className="flex items-center justify-between gap-4">
-              <div>
-                <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{selected.continent}</p>
-                <p className="font-display text-h3 font-medium text-ink-primary">
-                  {selected.flagEmoji} {selected.name}
-                </p>
-                <p className="font-body text-caption text-ink-secondary">
-                  Capital: {selected.capital} · {selected.currency}
-                </p>
-              </div>
-              <Button variant="secondary" size="small">
-                View profile
-              </Button>
-            </CardBody>
-          </Card>
+          <div className="flex flex-col gap-4">
+            {/* Selected-country header — identity strip, not a navigation card. Learning content now lives right below instead of behind a tap-through. */}
+            <Card>
+              <CardBody className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{selected.continent}</p>
+                  <p className="font-display text-h3 font-medium text-ink-primary">
+                    {selected.flagEmoji} {selected.name}
+                  </p>
+                  {selectedProfile?.genZNote && (
+                    <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{selectedProfile.genZNote}</p>
+                  )}
+                </div>
+                <Button
+                  variant="tertiary"
+                  size="small"
+                  icon={<ArrowSquareOut size={16} />}
+                  onClick={() => navigate(`/exam-prep/world-explorer/${selected.id}`)}
+                >
+                  Full page
+                </Button>
+              </CardBody>
+            </Card>
+
+            <section className="grid grid-cols-2 gap-3 rounded-md border border-border bg-surface p-5 sm:grid-cols-4">
+              <p className="col-span-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary sm:col-span-4">
+                🌍 At a glance
+              </p>
+              <AtAGlanceItem label="Capital" value={selected.capital} />
+              <AtAGlanceItem label="Continent" value={selected.continent} />
+              <AtAGlanceItem label="Currency" value={selected.currency} />
+              <AtAGlanceItem label="Language(s)" value={selected.languages.join(', ')} />
+            </section>
+
+            {selectedProfile ? (
+              <>
+                <CountryLessonView profile={selectedProfile} />
+                <CountryQuickRevisionView title={selectedProfile.name} quickRevision={selectedProfile.quickRevision} />
+                <CountryExamFocusView title={selectedProfile.name} examFocus={selectedProfile.examFocus} />
+                <CountryMemoryHookView genZNote={selectedProfile.genZNote} />
+              </>
+            ) : (
+              <EmptyState
+                title="Deeper profile coming soon"
+                description={`${selected.name} is on the globe with its core facts above, but its full Geography / Culture / Government / India-relations profile hasn't been curated yet.`}
+              />
+            )}
+          </div>
         ) : (
           <p className="px-1 text-center font-body text-caption text-ink-tertiary">
-            Tap a country on the globe to preview it here.
+            Tap a country on the globe to explore it here.
           </p>
         )}
       </div>
@@ -131,6 +188,15 @@ export function WorldExplorerPage() {
       <p className="mt-6 text-center font-ui text-micro text-ink-tertiary">
         {GLOBE_COUNTRIES.length} countries on the globe · {deepProfileCount} with a full curated profile so far
       </p>
+    </div>
+  )
+}
+
+function AtAGlanceItem({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{label}</p>
+      <p className="font-body text-body font-medium text-ink-primary">{value}</p>
     </div>
   )
 }
