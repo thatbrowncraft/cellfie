@@ -1,0 +1,113 @@
+{
+  "id": "maldives",
+  "name": "Maldives",
+  "genZNote": "Maldives is Earth's sea-level canary — its highest natural point is barely taller than a speed bump, and a past president once held a full cabinet meeting underwater in scuba gear just to make that point on camera.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "An archipelago of roughly 1,192 coral islands grouped into 26 natural atolls in the Indian Ocean, southwest of India and Sri Lanka.",
+        "The lowest-lying country on Earth, with an average ground elevation of about 1.5 metres above sea level — making it exceptionally vulnerable to rising sea levels.",
+        "Only about 200 of its islands are inhabited; many others are dedicated resort islands or uninhabited."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Dhivehi is the national language, written in the distinctive Thaana script.",
+        "Sunni Islam is the state religion, and Maldivian law requires citizenship to be linked to being Muslim.",
+        "Culture blends South Asian, Arab, and East African influences, shaped by the islands' long history as an Indian Ocean trading crossroads."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A presidential republic since 1968, when the centuries-old sultanate was abolished following a referendum.",
+        "Unicameral legislature: the People's Majlis.",
+        "Administratively divided into atolls, each with its own local council."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "A global focal point for climate-change and sea-level-rise science, given its extreme low-lying geography.",
+        "Notable for coral reef research and marine conservation, given the ecological importance of its reef systems to both biodiversity and coastal protection.",
+        "Investing in land reclamation and elevated infrastructure (such as the artificial island of Hulhumalé) as adaptation measures to rising seas."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Member of the United Nations, SAARC, and the Commonwealth of Nations (rejoined in 2020 after a period outside it).",
+        "A leading international voice on climate change and small-island-state vulnerability, including at UN climate conferences.",
+        "Maintains close ties with regional and Gulf partners for trade, tourism investment, and infrastructure financing."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India has historically been a first responder to the Maldives in crises — notably Operation Cactus (1988), when Indian forces helped repel an attempted coup.",
+        "India's 'Neighbourhood First' policy and SAGAR (Security and Growth for All in the Region) vision place the Maldives as a key Indian Ocean partner for maritime security and development assistance.",
+        "Operation Neer (2014) saw India rush emergency drinking water to Malé during a water crisis.",
+        "The relationship has seen periods of political strain (including a 2023-24 'India Out' domestic political campaign in the Maldives), alongside continuing economic and development cooperation."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Tourism, centred on luxury overwater resorts, is by far the largest sector and main source of government revenue and foreign exchange.",
+        "Fishing, especially tuna, is the second major traditional economic activity.",
+        "As a small island nation, the Maldives imports the large majority of its food, fuel, and construction materials."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Luxury overwater bungalow resorts and world-class diving and snorkelling on coral reefs.",
+        "Being the world's lowest-lying country, and a leading global voice on climate-change vulnerability and adaptation.",
+        "A largely tourism-dependent economy built on a chain of coral atolls."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Maldives is a low-lying Indian Ocean archipelago of coral atolls, a presidential republic since 1968, and the world's lowest-lying country by elevation.",
+    "keyFacts": [
+      "Capital: Malé. Currency: Maldivian Rufiyaa. Language: Dhivehi.",
+      "About 1,192 coral islands across 26 atolls; average elevation ~1.5 m.",
+      "Became a republic in 1968, ending the historic sultanate.",
+      "Tourism is the dominant economic sector."
+    ],
+    "keyTerms": ["Atoll", "Thaana script", "SAGAR (India's Indian Ocean policy)"],
+    "commonConfusion": [
+      "The Maldives is a REPUBLIC (since 1968), not a monarchy — it is sometimes mixed up with Gulf monarchies due to shared Islamic identity."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "World's lowest-lying country; average elevation ~1.5 metres — a frequently tested climate-vulnerability fact.",
+      "Became a republic in 1968; capital Malé; official language Dhivehi.",
+      "India's Operation Cactus (1988) and Operation Neer (2014) are key India-Maldives assistance episodes."
+    ],
+    "commonTraps": [
+      "Confusing the Maldives with other Indian Ocean island nations (e.g. Seychelles, Mauritius) — the Maldives is specifically the lowest-lying and closest to India/Sri Lanka."
+    ],
+    "mustRemember": [
+      "Maldives: 1,192-island coral atoll republic, lowest country on Earth, tourism-driven economy, close but sometimes strained relationship with India."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Maldives Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    }
+  ]
+}

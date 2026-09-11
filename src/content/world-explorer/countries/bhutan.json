@@ -1,0 +1,120 @@
+{
+  "id": "bhutan",
+  "name": "Bhutan",
+  "genZNote": "Bhutan looked at GDP and said 'no thanks' — it measures itself in Gross National Happiness instead, and its constitution literally mandates keeping 60% of the country under forest cover, forever.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A small, landlocked Himalayan kingdom in South Asia, sandwiched between India to the south, east, and west, and China (Tibet Autonomous Region) to the north.",
+        "Entirely mountainous terrain, ranging from subtropical plains in the south to high Himalayan peaks (including Gangkhar Puensum, one of the world's highest unclimbed mountains) in the north.",
+        "The world's only carbon-negative country — its forests absorb more carbon than the nation emits — and the Constitution requires at least 60% forest cover to be maintained at all times."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Dzongkha is the national language; Vajrayana Buddhism is the dominant religion and shapes daily life, architecture, and festivals.",
+        "Famous for prioritising Gross National Happiness (GNH) over GDP as a guiding development philosophy, formalised into government policy since the 1970s.",
+        "Distinctive fortress-monasteries called dzongs serve as both administrative and religious centres in every district.",
+        "National dress — the gho for men and kira for women — is required in schools, government offices, and formal settings."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "A constitutional monarchy since 2008, when King Jigme Singye Wangchuck voluntarily transferred power from an absolute to a constitutional monarchy — a rare case of a monarch initiating his own reduction in power.",
+        "The King (Druk Gyalpo, 'Dragon King') is head of state; a bicameral Parliament (National Assembly and National Council) and an elected government handle day-to-day governance.",
+        "Divided into 20 dzongkhags (districts), each administered around its historic dzong."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Healthcare and education are constitutionally guaranteed as free public services, reflecting the GNH policy framework.",
+        "A recognised model in environmental and conservation science, with strict logging limits and a national commitment to remaining carbon-negative.",
+        "Hydropower engineering is the country's main technical/scientific sector, with river-fed plants supplying both domestic power and export electricity to India."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Member of the United Nations, SAARC, and BIMSTEC.",
+        "Notably does not maintain formal diplomatic relations with any of the five permanent UN Security Council members (China, France, Russia, UK, USA) — one of very few countries in this position — and has diplomatic ties with a comparatively small number of nations overall.",
+        "Foreign and defence policy has historically been closely coordinated with India under the Bhutan-India Friendship Treaty."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India and Bhutan share a uniquely close 'special relationship', formalised by the Treaty of Friendship (1949, revised 2007), with India as Bhutan's largest development partner and trading partner by far.",
+        "India funds and assists major Bhutanese hydropower projects, and imports the resulting electricity — a cornerstone of the bilateral economic relationship.",
+        "The Bhutanese Ngultrum is pegged 1:1 to the Indian Rupee, and the Rupee is widely accepted within Bhutan.",
+        "The 2017 Doklam standoff, near the India-Bhutan-China tri-junction, underscored India's strategic role in supporting Bhutan's territorial interests."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "Hydropower exports to India are the backbone of the economy, alongside agriculture, forestry, and a small but growing tourism sector.",
+        "Tourism follows a deliberate 'high value, low volume' policy: visitors pay a Sustainable Development Fee, keeping numbers controlled rather than maximised.",
+        "As a small, landlocked economy, Bhutan depends heavily on India for trade routes, imports, and market access."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Gross National Happiness as a national development philosophy, in place of GDP-only growth metrics.",
+        "Being the world's only carbon-negative country, with constitutionally protected forest cover.",
+        "Paro Taktsang (the 'Tiger's Nest' monastery), built into a cliffside above the Paro valley.",
+        "A tightly managed, high-value tourism model rather than mass tourism."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Bhutan is a small, landlocked Himalayan constitutional monarchy between India and China, known for prioritising Gross National Happiness and remaining carbon-negative.",
+    "keyFacts": [
+      "Capital: Thimphu. Currency: Ngultrum (pegged 1:1 to the Indian Rupee).",
+      "Became a constitutional monarchy in 2008, transitioning voluntarily from absolute monarchy.",
+      "Constitution mandates a minimum of 60% forest cover.",
+      "No formal diplomatic relations with any UNSC permanent member."
+    ],
+    "keyTerms": ["Gross National Happiness (GNH)", "Dzongkha", "Dzong", "Druk Gyalpo"],
+    "commonConfusion": [
+      "Bhutan is a CONSTITUTIONAL monarchy since 2008, not an absolute one — the shift was voluntary, initiated by the King himself, not forced by revolution."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Bhutan: only carbon-negative country in the world; 60% forest cover is a constitutional requirement.",
+      "Constitutional monarchy since 2008; capital Thimphu; currency Ngultrum pegged to INR.",
+      "Bhutan-India Treaty of Friendship: signed 1949, revised 2007."
+    ],
+    "commonTraps": [
+      "Assuming Bhutan uses GDP as its primary development metric — it deliberately emphasises Gross National Happiness instead.",
+      "Confusing Bhutan's currency (Ngultrum) with India's Rupee — they are pegged 1:1, but are distinct currencies."
+    ],
+    "mustRemember": [
+      "Bhutan: Himalayan constitutional monarchy, GNH philosophy, carbon-negative, hydropower-dependent economy tightly linked to India."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Bhutan Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "Royal Government of Bhutan — official portal",
+      "kind": "educational"
+    }
+  ]
+}

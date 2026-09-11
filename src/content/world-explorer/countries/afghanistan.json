@@ -1,0 +1,117 @@
+{
+  "id": "afghanistan",
+  "name": "Afghanistan",
+  "genZNote": "Afghanistan has been called the 'graveyard of empires' — Persians, Greeks, Mongols, British, Soviets, and the US-led coalition all learned the same lesson about its mountains the hard way.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "A landlocked, mountainous country at the crossroads of Central and South Asia, dominated by the Hindu Kush mountain range.",
+        "Borders Pakistan, Iran, Turkmenistan, Uzbekistan, Tajikistan, and a narrow strip touching China (the Wakhan Corridor).",
+        "Mostly arid to semi-arid climate, with harsh winters in mountainous regions and hot summers in lower valleys."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "A multi-ethnic country, with Pashtun and Tajik as the largest groups alongside Hazara, Uzbek, and others; Pashto and Dari are the two official languages.",
+        "Islam is the overwhelmingly dominant religion and shapes law and daily life.",
+        "Historically a key Silk Road crossroads, with a long history of trade and cultural exchange between Persia, Central Asia, and South Asia."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "Since August 2021, the country has been governed by the Taliban under the self-declared 'Islamic Emirate of Afghanistan', following the collapse of the previous internationally-backed republic.",
+        "As of this profile, no country has formally recognised the Islamic Emirate as Afghanistan's legitimate government, though several states (including China, Pakistan, and Russia) have deepened working diplomatic ties; Russia became the first state to formally recognise it, in July 2025.",
+        "Afghanistan's seat at the United Nations continues to be held by a representative appointed under the earlier republic, not by the Taliban authorities.",
+        "Severe restrictions on women's education, employment, and public life have been imposed since 2021 and remain a major focus of international criticism."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Decades of conflict have significantly constrained scientific and medical infrastructure; the country relies heavily on international humanitarian and health assistance.",
+        "Public health challenges are compounded by displacement, economic crisis, and restrictions affecting women's access to healthcare and to work as health professionals.",
+        "Afghanistan has ancient traditions in mining and craftsmanship (notably lapis lazuli extraction, mined here for millennia and traded across the ancient world)."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "UN member state; its formal UN representation remains contested given the lack of international recognition of the Taliban government.",
+        "Neighbouring and regional powers (Pakistan, China, Russia, Central Asian states) engage pragmatically on security, trade, and refugee issues without extending full diplomatic recognition, with the notable exception of Russia's 2025 recognition.",
+        "Large Afghan refugee populations remain in Pakistan and Iran, making migration and border issues central to regional diplomacy."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India has historically invested heavily in Afghan infrastructure, education, and development projects (including the Afghan Parliament building and the Salma Dam).",
+        "India does not formally recognise the Taliban government but has maintained a technical/humanitarian presence and engaged in limited practical contact, including humanitarian aid shipments (wheat, medicines, vaccines) since 2021.",
+        "Relations are shaped by India's broader regional-security concerns, including cross-border militancy originating in the Afghanistan-Pakistan region."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "One of the world's poorest and most aid-dependent economies, severely affected by decades of war, the 2021 political transition, and the subsequent withdrawal of much international development funding.",
+        "Agriculture (including fruits, nuts, and — controversially — opium poppy cultivation) is a major part of the rural economy.",
+        "Believed to hold substantial untapped mineral resources (copper, lithium, rare earths), though large-scale extraction has been limited by insecurity and lack of infrastructure."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "The Hindu Kush mountains and a long history as a strategic crossroads of empires and trade routes.",
+        "Decades of continuous conflict, including the Soviet-Afghan War (1979-1989) and the post-2001 US-led war, followed by the Taliban's 2021 return to power.",
+        "Ancient lapis lazuli mining and Silk Road heritage sites, including Bamiyan (once home to the Buddhas of Bamiyan, destroyed by the Taliban in 2001)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Afghanistan is a landlocked, mountainous Central/South Asian country, governed since August 2021 by the Taliban under a self-declared Islamic Emirate not formally recognised by most of the world.",
+    "keyFacts": [
+      "Capital: Kabul. Currency: Afghan Afghani. Official languages: Pashto and Dari.",
+      "Taliban retook power in August 2021; Russia became the first state to formally recognise the government, in July 2025.",
+      "Afghanistan's UN seat is still held by a representative from the pre-2021 republic.",
+      "Dominated by the Hindu Kush mountain range; landlocked, bordering six countries."
+    ],
+    "keyTerms": ["Islamic Emirate of Afghanistan", "Hindu Kush", "Wakhan Corridor"],
+    "commonConfusion": [
+      "As of this profile, most of the world does NOT formally recognise the Taliban government, even where countries maintain practical diplomatic/embassy-level contact — recognition and engagement are not the same thing."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Taliban regained control of Afghanistan in August 2021; Russia (July 2025) is, as of this profile, the only state to have formally recognised the government.",
+      "Capital Kabul; official languages Pashto and Dari; landlocked, dominated by the Hindu Kush.",
+      "India does not formally recognise the Taliban government but has sent humanitarian aid since 2021."
+    ],
+    "commonTraps": [
+      "Assuming a country hosting a Taliban-appointed diplomat (e.g. China accrediting one in 2023) means formal recognition — it generally does not, unless explicitly stated as such."
+    ],
+    "mustRemember": [
+      "Afghanistan: landlocked, mountainous, Taliban-governed since 2021, largely unrecognised internationally, historic Silk Road crossroads."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Afghanistan Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "United Nations — Afghanistan country information",
+      "kind": "educational"
+    }
+  ]
+}

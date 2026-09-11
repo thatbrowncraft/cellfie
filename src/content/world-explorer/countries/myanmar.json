@@ -1,0 +1,118 @@
+{
+  "id": "myanmar",
+  "name": "Myanmar",
+  "genZNote": "Myanmar changed its own name from 'Burma' in 1989, and depending who you ask internationally, either name is still in use — a small naming dispute that quietly tells you a lot about the country's contested politics.",
+  "sections": [
+    {
+      "id": "geography",
+      "heading": "🗺️ Geography",
+      "bullets": [
+        "The largest country in mainland Southeast Asia, bordering India and Bangladesh to the west, China to the north and east, and Laos and Thailand to the east.",
+        "Geography ranges from the Himalayan foothills in the north to the fertile Irrawaddy River delta and a long Bay of Bengal / Andaman Sea coastline in the south.",
+        "Historically also known as Burma; the ruling authorities renamed the country Myanmar in 1989, a change not universally adopted internationally."
+      ]
+    },
+    {
+      "id": "people-culture",
+      "heading": "🗣️ People & Culture",
+      "bullets": [
+        "Burmese is the official language; the country is highly ethnically diverse, with the Bamar majority alongside Shan, Karen, Rakhine, Rohingya, and many other groups.",
+        "Theravada Buddhism is the majority religion and central to cultural life, visible in thousands of pagodas across the country, including the Shwedagon Pagoda in Yangon.",
+        "Home to one of the world's longest-running internal armed conflicts, with numerous ethnic armed organisations active in border regions for decades."
+      ]
+    },
+    {
+      "id": "government-society",
+      "heading": "🏛️ Government & Society",
+      "bullets": [
+        "The military (the Tatmadaw) seized power in a coup on 1 February 2021, ousting the elected civilian government led by Aung San Suu Kyi's National League for Democracy (NLD), which had won the 2020 election.",
+        "The junta held multi-phase parliamentary elections in December 2025-January 2026, under a state of emergency, with major opposition parties (including the NLD) banned; independent observers, the UN, and several democracies widely characterised the vote as neither free nor fair.",
+        "In April 2026, parliament elected junta leader Senior General Min Aung Hlaing as president, installing a nominally civilian administration while the military retains effective control.",
+        "Civil conflict between the military and a range of ethnic armed organisations and pro-democracy resistance forces has continued since the 2021 coup, with the junta controlling only part of the country's territory."
+      ]
+    },
+    {
+      "id": "medical-scientific",
+      "heading": "🧬 Medical & Scientific Developments",
+      "bullets": [
+        "Ongoing conflict and political instability have significantly strained healthcare infrastructure and access, particularly in contested border regions.",
+        "The country's biodiversity — including the Irrawaddy dolphin and extensive teak forests — has made it a focus of regional conservation and forestry science.",
+        "Displacement and instability have driven a significant loss of skilled professionals, including in medicine and science, in the years since the coup."
+      ]
+    },
+    {
+      "id": "global-relations",
+      "heading": "🌐 Global Relations",
+      "bullets": [
+        "Member of the United Nations and ASEAN (Association of Southeast Asian Nations), though ASEAN has restricted the junta's participation in some official summits since the coup.",
+        "China has provided significant diplomatic and economic backing to the military government, viewing stability in Myanmar as important to its regional infrastructure and border interests.",
+        "Western democracies and the EU have generally maintained sanctions and limited engagement with the junta, citing human rights concerns and the 2021 coup."
+      ]
+    },
+    {
+      "id": "india-relations",
+      "heading": "🇮🇳 Relations with India",
+      "bullets": [
+        "India shares a long land border and cultural/historical ties with Myanmar, and pursues pragmatic engagement with the ruling authorities, partly driven by concerns over cross-border insurgency, refugee flows, and connectivity projects.",
+        "India has invested in connectivity infrastructure such as the Kaladan Multi-Modal Transit Transport Project, intended to link India's northeast with Myanmar's Sittwe port.",
+        "Myanmar is a key partner in India's 'Act East' policy, linking South Asia with Southeast Asia."
+      ]
+    },
+    {
+      "id": "trade-economy",
+      "heading": "📦 Trade & Economy",
+      "bullets": [
+        "The economy has suffered severe disruption since the 2021 coup, with sanctions, conflict, and capital flight sharply affecting growth and investment.",
+        "Key sectors include agriculture (notably rice), natural gas exports, timber, and gemstones (Myanmar is a major global source of jade and rubies).",
+        "China remains a dominant trade and investment partner, including for energy pipelines and border trade."
+      ]
+    },
+    {
+      "id": "known-for",
+      "heading": "⭐ What It's Known For",
+      "bullets": [
+        "Thousands of Buddhist pagodas, most famously the Shwedagon Pagoda in Yangon and the temple plains of Bagan.",
+        "A prolonged pro-democracy struggle, symbolised internationally by Aung San Suu Kyi and the National League for Democracy.",
+        "Major global source of jade and rubies, and significant natural gas reserves.",
+        "One of the world's longest-running internal armed conflicts, involving numerous ethnic armed organisations."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Myanmar (formerly Burma) is the largest mainland Southeast Asian country, currently under military-dominated rule following a 2021 coup and a widely disputed 2025-26 election.",
+    "keyFacts": [
+      "Capital: Naypyidaw. Currency: Myanmar Kyat. Official language: Burmese.",
+      "Military coup: 1 February 2021, ousting Aung San Suu Kyi's elected NLD government.",
+      "Junta-run elections held December 2025-January 2026; widely criticised as neither free nor fair.",
+      "Min Aung Hlaing became president via parliament in April 2026, under continued military control."
+    ],
+    "keyTerms": ["Tatmadaw (military)", "National League for Democracy (NLD)", "Kaladan Multi-Modal Transit Transport Project"],
+    "commonConfusion": [
+      "Myanmar's CAPITAL is Naypyidaw, not Yangon — Yangon is the largest city and former capital, but the capital was relocated to Naypyidaw in 2005."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Military coup: 1 February 2021; capital Naypyidaw (not Yangon, the former capital and largest city).",
+      "Min Aung Hlaing became president in April 2026 following a junta-run, widely disputed election.",
+      "India's Kaladan Multi-Modal Transit Transport Project connects India's northeast to Myanmar's Sittwe port, part of India's 'Act East' policy."
+    ],
+    "commonTraps": [
+      "Assuming Myanmar's 2025-26 elections restored full civilian democratic rule — international observers and the UN widely disputed the vote's legitimacy, and the military retains effective control."
+    ],
+    "mustRemember": [
+      "Myanmar: largest mainland SE Asian country, military-controlled since the 2021 coup, major jade/ruby/natural gas exporter, key India 'Act East' partner."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, Government of India — India-Myanmar Relations",
+      "kind": "educational",
+      "url": "https://www.mea.gov.in/"
+    },
+    {
+      "name": "United Nations — Myanmar country information",
+      "kind": "educational"
+    }
+  ]
+}
