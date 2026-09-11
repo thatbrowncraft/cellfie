@@ -57,3 +57,13 @@ export function getCountryProfile(id: string): CountryProfile | undefined {
 export function countCountryProfiles(): number {
   return COUNTRY_PROFILES.size
 }
+
+/**
+ * Every curated CountryProfile, for cross-country "browse by topic"
+ * views (see `modules/world-explorer/WorldExplorerTopicPage.tsx`) that
+ * need to scan all 58 profiles for a given section id at once rather
+ * than looking one country up at a time.
+ */
+export function getAllCountryProfiles(): CountryProfile[] {
+  return Array.from(COUNTRY_PROFILES.values())
+}
