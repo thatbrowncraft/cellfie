@@ -1,0 +1,126 @@
+{
+  "id": "io-who",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 3,
+  "title": "WHO — World Health Organization",
+  "shortDescription": "The UN's health agency: how it's governed, what it actually does, and how it's structured across regions.",
+  "genZNote": "Global health's actual chain of command — not just 'the vaccine people'.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "Full Form, Establishment, Headquarters",
+      "bullets": [
+        "Full form: World Health Organization.",
+        "Established: 7 April 1948 (celebrated annually as World Health Day) — its constitution had been adopted the year before, in 1946.",
+        "Headquarters: Geneva, Switzerland.",
+        "A UN specialized agency for international public health — not a UN programme/fund."
+      ]
+    },
+    {
+      "id": "objective",
+      "heading": "Objective",
+      "body": "WHO's constitution states its objective as 'the attainment by all peoples of the highest possible level of health' — defining health broadly as 'a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity'."
+    },
+    {
+      "id": "structure",
+      "heading": "Governance Structure",
+      "table": {
+        "columnHeaders": [
+          "Role"
+        ],
+        "rows": [
+          [
+            "World Health Assembly (WHA)",
+            "WHO's supreme decision-making body — all member states, meets annually in Geneva; sets policy, approves the budget, elects the Director-General."
+          ],
+          [
+            "Executive Board",
+            "Gives effect to WHA decisions and policies; members are technically qualified health experts nominated by elected member states, serving 3-year terms."
+          ],
+          [
+            "Director-General",
+            "WHO's chief technical and administrative officer, appointed by the WHA on the Executive Board's nomination, for a 5-year renewable term."
+          ],
+          [
+            "Regional Offices",
+            "Six regional offices (Africa, Americas, South-East Asia, Europe, Eastern Mediterranean, Western Pacific) — India falls under the South-East Asia Region, headquartered in New Delhi."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "functions",
+      "heading": "Major Functions",
+      "bullets": [
+        "Global disease surveillance and outbreak response coordination.",
+        "Setting international health standards and norms (e.g. the International Health Regulations, IHR 2005 — the legal framework for responding to public health emergencies of international concern).",
+        "Vaccination/immunization programmes and technical guidance (e.g. the Expanded Programme on Immunization).",
+        "Declaring 'Public Health Emergencies of International Concern' (PHEIC) — the highest level of global health alert under the IHR.",
+        "Running normative programmes on non-communicable diseases, maternal/child health, mental health, and essential medicines (the WHO Model List of Essential Medicines)."
+      ]
+    },
+    {
+      "id": "india-connection",
+      "heading": "WHO and India",
+      "bullets": [
+        "India is a founding member of WHO (1948) and hosts the WHO Regional Office for South-East Asia in New Delhi.",
+        "India was certified polio-free by WHO in 2014, following the last wild poliovirus case in January 2011.",
+        "WHO has recognized several India-led global health initiatives, including the push for traditional medicine collaboration (WHO Global Centre for Traditional Medicine, established in Jamnagar, Gujarat)."
+      ]
+    },
+    {
+      "id": "current-leadership",
+      "heading": "Current Leadership (time-sensitive — verify before an exam)",
+      "body": "Dr Tedros Adhanom Ghebreyesus (Ethiopia) has served as WHO Director-General since 2017, re-elected for a second term beginning August 2022; the WHO's next Director-General election cycle is scheduled for 2026–2027. Because this is a role that changes, always cross-check the current holder close to your exam date rather than memorising a name as permanent."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "WHO is the UN's specialized health agency, established 1948, headquartered in Geneva, governed by the World Health Assembly and an Executive Board, and headed by a Director-General.",
+    "keyFacts": [
+      "Established 7 April 1948 — celebrated as World Health Day.",
+      "HQ: Geneva. Six regional offices; India is under the South-East Asia Region (New Delhi).",
+      "Supreme body: World Health Assembly (WHA). Executive arm: Director-General.",
+      "International Health Regulations (IHR 2005) govern PHEIC declarations.",
+      "India declared polio-free by WHO in 2014."
+    ],
+    "keyTerms": [
+      "World Health Assembly",
+      "Executive Board",
+      "International Health Regulations",
+      "PHEIC",
+      "Essential Medicines List"
+    ],
+    "commonConfusion": [
+      "WHO is a specialized agency (independent, UN-linked by agreement) — it is not a UN programme/fund like UNICEF or UNDP."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "WHO founded 1948, HQ Geneva, World Health Day = 7 April.",
+      "India falls under WHO's South-East Asia Region, headquartered in New Delhi.",
+      "India certified polio-free by WHO in 2014."
+    ],
+    "commonTraps": [
+      "Do not confuse the World Health Assembly (WHO's policy-setting body) with the Executive Board (which implements WHA decisions) — the WHA is the supreme body, not the Board.",
+      "Don't treat WHO's regional office location (New Delhi) as WHO's global headquarters — that's Geneva."
+    ],
+    "mustRemember": [
+      "WHO's founding objective: 'the highest possible level of health' for all peoples.",
+      "PHEIC declarations are made under the legal authority of the International Health Regulations (2005)."
+    ],
+    "possibleQuestions": [
+      "In which year was WHO established, and where is its headquarters?",
+      "Which WHO regional office covers India, and where is it headquartered?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "WHO Constitution and Governance (who.int)",
+      "kind": "educational"
+    },
+    {
+      "name": "International Health Regulations (2005), WHO",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "io-security-strategic-organizations",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 10,
+  "title": "Security & Strategic Organizations — NATO, INTERPOL, IAEA, OPCW",
+  "shortDescription": "The bodies that police borders, nuclear material, chemical weapons, and international crime — each with a genuinely different mandate.",
+  "genZNote": "Four very different jobs: defend a border, catch a criminal, watch a reactor, sniff out a chemical weapon.",
+  "sections": [
+    {
+      "id": "nato",
+      "heading": "NATO — North Atlantic Treaty Organization",
+      "bullets": [
+        "Established: 4 April 1949, by the North Atlantic Treaty, signed in Washington, D.C.",
+        "Headquarters: Brussels, Belgium.",
+        "Core principle: Article 5 — collective defence; an armed attack against one member is treated as an attack against all.",
+        "Originally a Cold War counterweight to Soviet influence; has expanded eastward several times since 1949, most recently admitting Finland (2023) and Sweden (2024).",
+        "India is not a member and has no formal alliance relationship with NATO."
+      ]
+    },
+    {
+      "id": "interpol",
+      "heading": "INTERPOL — International Criminal Police Organization",
+      "bullets": [
+        "Established: 1923 (as the International Criminal Police Commission; renamed INTERPOL in 1956).",
+        "Headquarters: Lyon, France.",
+        "INTERPOL is NOT a supranational police force — it has no power to arrest; it enables police forces in member countries to share information and coordinate, notably through 'Red Notices' (international alerts to locate/provisionally arrest a person pending extradition).",
+        "One of the largest international organizations by membership — nearly 200 member countries, more than the UN itself in raw member count terms (a frequently tested fact)."
+      ]
+    },
+    {
+      "id": "iaea",
+      "heading": "IAEA — International Atomic Energy Agency",
+      "bullets": [
+        "Established: 1957, under its own statute — a 'related organization' to the UN, reporting to the General Assembly and Security Council, NOT a UN specialized agency.",
+        "Headquarters: Vienna, Austria.",
+        "Mandate: promote the peaceful use of nuclear energy while working to prevent its use for military purposes — sometimes summarised as 'Atoms for Peace' (the 1953 speech that inspired its creation).",
+        "IAEA safeguards/inspections are central to the global nuclear non-proliferation regime, working alongside (but organizationally separate from) the Nuclear Non-Proliferation Treaty (NPT, 1968)."
+      ]
+    },
+    {
+      "id": "opcw",
+      "heading": "OPCW — Organisation for the Prohibition of Chemical Weapons",
+      "bullets": [
+        "Established: 1997, to implement the Chemical Weapons Convention (CWC, opened for signature 1993, entered into force 1997).",
+        "Headquarters: The Hague, Netherlands.",
+        "Verifies the destruction of chemical weapons stockpiles and investigates alleged chemical-weapons use.",
+        "Awarded the Nobel Peace Prize in 2013 for its work eliminating chemical weapons."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "NATO (collective defence), INTERPOL (police cooperation), IAEA (nuclear safeguards), and OPCW (chemical-weapons elimination) are the core security/strategic bodies exams test, each with a distinct, non-overlapping mandate.",
+    "keyFacts": [
+      "NATO: 1949, HQ Brussels — Article 5 collective defence.",
+      "INTERPOL: 1923 (renamed 1956), HQ Lyon — coordinates, does not arrest directly.",
+      "IAEA: 1957, HQ Vienna — a UN 'related organization', not a specialized agency.",
+      "OPCW: 1997, HQ The Hague — implements the Chemical Weapons Convention; 2013 Nobel Peace Prize."
+    ],
+    "keyTerms": [
+      "Article 5",
+      "Red Notice",
+      "Safeguards",
+      "Chemical Weapons Convention"
+    ],
+    "commonConfusion": [
+      "INTERPOL cannot itself arrest anyone — a Red Notice is a request/alert to member police forces, not an international arrest warrant.",
+      "IAEA is a UN-related organization, NOT a UN specialized agency — unlike WHO, ILO, or UNESCO."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "NATO founded by the North Atlantic Treaty, 1949; HQ Brussels.",
+      "IAEA reports directly to the UN GA/Security Council as a 'related organization', HQ Vienna, est. 1957.",
+      "OPCW implements the Chemical Weapons Convention and won the 2013 Nobel Peace Prize."
+    ],
+    "commonTraps": [
+      "Do not classify IAEA as a specialized agency in a precise-terminology question — it is explicitly a 'related organization'.",
+      "Do not assume INTERPOL membership requires UN membership — INTERPOL membership numbers and UN membership numbers are calculated independently and don't map one-to-one."
+    ],
+    "mustRemember": [
+      "NATO's foundational clause: Article 5, collective defence.",
+      "OPCW implements the CWC (1993 signed / 1997 in force)."
+    ],
+    "possibleQuestions": [
+      "Which international body issues 'Red Notices', and what is their actual legal effect?",
+      "Is the IAEA a UN specialized agency? What is its correct classification?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "North Atlantic Treaty, 1949 (nato.int)",
+      "kind": "educational"
+    },
+    {
+      "name": "IAEA — About Us (iaea.org)",
+      "kind": "educational"
+    }
+  ]
+}

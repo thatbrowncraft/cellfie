@@ -1,0 +1,123 @@
+{
+  "id": "io-types-of-bodies",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 1,
+  "title": "International Organization, Regional Body, Grouping, Forum, Treaty — What's the Difference?",
+  "shortDescription": "The classification exams actually test: organization vs grouping vs forum vs treaty vs specialized agency, before you meet a single acronym.",
+  "genZNote": "Learn the categories first — otherwise G20 and WTO start feeling like the same kind of thing, and they're really not.",
+  "sections": [
+    {
+      "id": "why-this-matters",
+      "heading": "Why This Topic Comes First",
+      "body": "Competitive exams don't just ask 'what is the UN' — they ask questions that only make sense once you know WHAT KIND of body something is. Is BRICS an organization or a grouping? Is the Quad a treaty alliance? Is the Commonwealth the same category as the EU? Getting the category right is often the actual question, dressed up as a one-line MCQ."
+    },
+    {
+      "id": "the-categories",
+      "heading": "The Core Categories",
+      "bullets": [
+        "International (Intergovernmental) Organization — a permanent body created by a treaty between states, with its own charter, headquarters, staff, and legal personality. Example: the United Nations, WHO, WTO.",
+        "Specialized Agency — an independent international organization that has a formal working relationship with the UN through an agreement with ECOSOC, but is NOT part of the UN Secretariat and has its own membership and budget. Example: WHO, ILO, IMF, World Bank, UNESCO, ICAO.",
+        "UN Programme / Fund — created directly by a UN General Assembly resolution, reports to the GA/ECOSOC, and is funded mainly by voluntary contributions rather than a treaty of its own. Example: UNDP, UNICEF, UNEP, WFP, UNHCR.",
+        "Related Organization — works closely with the UN system but is fully autonomous and not a specialized agency. Example: IAEA (reports to the GA and Security Council under its own statute, not a specialized agency).",
+        "Regional Organization — membership is limited to states of a specific geographic region, and the mandate is usually broad (political, economic, security). Example: ASEAN, SAARC, African Union, European Union.",
+        "International Grouping / Forum — a loose, often informal coalition of countries that meets periodically to coordinate policy, usually WITHOUT a founding treaty, permanent headquarters, or full-time staff of its own. Example: G7, G20, BRICS, Quad.",
+        "Treaty / Convention / Agreement — a legally binding written agreement between states on a specific subject. It creates obligations but is not, by itself, an organization — though a treaty can ESTABLISH one (the UN Charter is a treaty that established the UN).",
+        "Alliance — a body focused specifically on collective defence/security commitments. Example: NATO is both a treaty (the North Atlantic Treaty, 1949) and the permanent organization it created."
+      ]
+    },
+    {
+      "id": "quick-test",
+      "heading": "The Quick Test You Can Apply",
+      "table": {
+        "caption": "Ask these three questions about any body an exam mentions",
+        "columnHeaders": [
+          "Does it have permanent HQ + staff?",
+          "Category"
+        ],
+        "rows": [
+          [
+            "Yes",
+            "Yes",
+            "International Organization (or a Specialized Agency if UN-linked)"
+          ],
+          [
+            "No",
+            "No",
+            "Grouping or Forum (e.g. G20, BRICS, Quad)"
+          ],
+          [
+            "Yes",
+            "No (just an agreement)",
+            "Treaty/Agreement (may later create an organization)"
+          ],
+          [
+            "Limited to one region",
+            "Usually yes",
+            "Regional Organization"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "common-misfits",
+      "heading": "Bodies Exams Love to Mislabel",
+      "bullets": [
+        "G20 is a FORUM, not an organization — it has no charter, no permanent secretariat, and no standing headquarters; the host country rotates every year and runs it for that year only.",
+        "BRICS is a GROUPING — informal, no treaty, no headquarters, though it has since spun off a genuine institution: the New Development Bank (NDB), headquartered in Shanghai.",
+        "The Commonwealth is a voluntary ASSOCIATION of mostly-former British territories with a genuine Secretariat (in London) — closer to an organization than G20/BRICS are, but membership is symbolic/cultural rather than treaty-bound the way the EU is.",
+        "IAEA is NOT a UN specialized agency — it is a 'related organization' that reports directly to the UN General Assembly and Security Council under its own 1957 statute.",
+        "NATO is both a treaty (1949 North Atlantic Treaty) AND the permanent military-political organization that treaty created — it's correct to call it either, in context."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "An international organization has a treaty, charter, permanent headquarters and staff; a grouping/forum (like G20 or BRICS) has none of those and runs on rotating chairmanship and summits.",
+    "keyFacts": [
+      "Specialized agencies (WHO, ILO, IMF, World Bank, UNESCO) are linked to the UN by agreement but are legally independent, with their own membership and budgets.",
+      "UN programmes/funds (UNDP, UNICEF, UNEP) are created by GA resolution and report to the GA/ECOSOC — they are not separate treaty organizations.",
+      "IAEA is a 'related organization', not a specialized agency.",
+      "G20 and BRICS are groupings with no charter and no permanent HQ; the NDB (BRICS-created) IS a real treaty-based institution."
+    ],
+    "keyTerms": [
+      "Specialized agency",
+      "UN programme/fund",
+      "Related organization",
+      "Regional organization",
+      "Grouping/forum",
+      "Treaty"
+    ],
+    "commonConfusion": [
+      "Don't call G20 or BRICS an 'organization' in an answer that's checking precise terminology — they are groupings/forums.",
+      "A treaty and the organization it creates are related but not identical — the North Atlantic Treaty (1949) created NATO; the treaty itself isn't 'NATO'."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Specialized agency = independent org with a UN linkage agreement; UN programme/fund = created directly by GA resolution.",
+      "G20 and BRICS have no charter and no permanent secretariat of their own — chairmanship rotates yearly.",
+      "IAEA reports to the UN GA and Security Council directly, as a 'related organization', not as a specialized agency."
+    ],
+    "commonTraps": [
+      "Exams sometimes list G20 alongside 'organizations' like WTO/IMF in the same MCQ — the distractor usually tests whether you know G20 has no treaty basis.",
+      "Do not assume every UN-linked body is a 'specialized agency' — UNICEF, UNDP, UNEP are programmes/funds, not specialized agencies."
+    ],
+    "mustRemember": [
+      "Treaty/charter + permanent HQ + staff = organization. No treaty, rotating chair, periodic summits only = grouping/forum.",
+      "The New Development Bank is the one genuine treaty-based institution to come out of the BRICS grouping."
+    ],
+    "possibleQuestions": [
+      "Which of the following is NOT a UN specialized agency: WHO / UNICEF / ILO / UNESCO?",
+      "G20 is best classified as a(n): Specialized agency / Regional organization / International forum / Treaty organization?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Charter of the United Nations",
+      "kind": "educational"
+    },
+    {
+      "name": "United Nations System — Agencies, Funds, Programmes and Related Organizations (un.org)",
+      "kind": "educational"
+    }
+  ]
+}

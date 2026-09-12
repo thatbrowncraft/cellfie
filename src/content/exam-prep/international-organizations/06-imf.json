@@ -1,0 +1,115 @@
+{
+  "id": "io-imf",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 6,
+  "title": "IMF — International Monetary Fund",
+  "shortDescription": "Bretton Woods' monetary watchdog: surveillance, lending, SDRs, and exactly how it differs from the World Bank.",
+  "genZNote": "The IMF checks your economy's vitals; the World Bank funds your economy's gym membership.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "Full Form, Bretton Woods Background, Headquarters",
+      "bullets": [
+        "Full form: International Monetary Fund.",
+        "Origin: created at the Bretton Woods Conference (Bretton Woods, New Hampshire, USA, July 1944), alongside the World Bank (then the IBRD) — both are sometimes called the 'Bretton Woods Twins'.",
+        "Began financial operations: 1947.",
+        "Headquarters: Washington, D.C., USA.",
+        "A UN specialized agency, but functionally and financially independent — funded by member quotas, not the UN budget."
+      ]
+    },
+    {
+      "id": "objectives-functions",
+      "heading": "Objectives and Functions",
+      "bullets": [
+        "Promote international monetary cooperation and exchange rate stability.",
+        "Surveillance — monitoring member economies and the global economy, issuing regular assessments (e.g. the World Economic Outlook).",
+        "Lending — providing financial support to countries facing balance-of-payments problems, usually attached to policy-reform conditions.",
+        "Technical assistance and capacity development for member countries' fiscal, monetary and financial institutions."
+      ]
+    },
+    {
+      "id": "sdr-quota",
+      "heading": "Special Drawing Rights (SDR) and Quota System",
+      "body": "The Special Drawing Right (SDR) is an international reserve asset created by the IMF (1969) to supplement member countries' official reserves — its value is set daily from a basket of major currencies (US dollar, euro, Chinese renminbi, Japanese yen, British pound). It is NOT a currency itself and cannot be used directly for private transactions — only between IMF members and certain official holders.\n\nEach member is assigned a 'quota', broadly based on its relative size in the world economy. Quotas determine a member's maximum financial commitment to the IMF, its voting power, and its access to IMF financing — larger economies have larger quotas and correspondingly larger voting shares."
+    },
+    {
+      "id": "governance",
+      "heading": "Governance",
+      "bullets": [
+        "Board of Governors — the highest decision-making body, one governor per member (usually the finance minister or central bank governor).",
+        "Executive Board — conducts day-to-day business; 24 executive directors represent member countries or constituencies.",
+        "Managing Director — by convention, always a European; the Managing Director chairs the Executive Board and is IMF's chief of staff."
+      ]
+    },
+    {
+      "id": "india-imf",
+      "heading": "IMF and India",
+      "bullets": [
+        "India is a founding member of the IMF (1945).",
+        "India famously borrowed from the IMF in 1991 amid a severe balance-of-payments crisis, accepting conditional economic reforms that catalysed India's 1991 liberalization.",
+        "India has since become a net creditor/contributor rather than a borrower, and has periodically supported increased quota/voting shares for emerging economies."
+      ]
+    },
+    {
+      "id": "current-leadership",
+      "heading": "Current Leadership (verified)",
+      "body": "Kristalina Georgieva (Bulgaria) has been IMF Managing Director since October 2019 — by the informal convention that has held since Bretton Woods, the IMF's head is European while the World Bank's head is American."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The IMF is the Bretton Woods institution (1944, operational 1947, HQ Washington D.C.) that promotes monetary cooperation and exchange-rate stability through surveillance and balance-of-payments lending.",
+    "keyFacts": [
+      "Created at Bretton Woods, July 1944; began operations 1947. HQ: Washington, D.C.",
+      "SDR = IMF's international reserve asset (since 1969) — not a currency for private use.",
+      "Quota size determines a member's voting power and financing access.",
+      "India borrowed from IMF in 1991, triggering the 1991 economic liberalization reforms.",
+      "Current MD: Kristalina Georgieva (Bulgaria), since October 2019 — MD is by convention always European."
+    ],
+    "keyTerms": [
+      "Bretton Woods",
+      "Special Drawing Rights (SDR)",
+      "Quota",
+      "Balance of payments",
+      "Surveillance"
+    ],
+    "commonConfusion": [
+      "SDR is a reserve asset/unit of account, NOT a currency you can spend directly — don't call it 'IMF's currency'."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "IMF and World Bank both trace to the Bretton Woods Conference, July 1944 — the 'Bretton Woods Twins'.",
+      "By convention: IMF Managing Director is European; World Bank President is American.",
+      "India's 1991 IMF loan directly preceded India's economic liberalization reforms."
+    ],
+    "commonTraps": [
+      "Don't confuse IMF's role (short-term monetary/balance-of-payments stability) with the World Bank's role (long-term development financing).",
+      "SDR value is a basket of currencies (USD, EUR, RMB, JPY, GBP) — it is not pegged to gold or any single currency."
+    ],
+    "mustRemember": [
+      "IMF quota = financial commitment + voting power + access to financing, all in one number.",
+      "IMF began financial operations in 1947, though it was created in 1944."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "IMF",
+        "termB": "World Bank",
+        "distinction": "IMF focuses on short-term monetary/exchange-rate stability and balance-of-payments support; World Bank focuses on long-term development financing and poverty reduction. Both were born at Bretton Woods (1944)."
+      }
+    ],
+    "possibleQuestions": [
+      "At which conference were the IMF and World Bank created, and in which year?",
+      "What does SDR stand for, and what is it NOT (a common trap)?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "IMF Factsheet — The IMF and the SDR (imf.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "IMF Governance Structure (imf.org)",
+      "kind": "educational"
+    }
+  ]
+}

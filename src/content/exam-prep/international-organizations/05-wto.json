@@ -1,0 +1,135 @@
+{
+  "id": "io-wto",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 5,
+  "title": "WTO — World Trade Organization",
+  "shortDescription": "GATT's successor: rules-based global trade, dispute settlement, and how WTO actually differs from a trade agreement.",
+  "genZNote": "The referee for world trade — GATT was the practice league, WTO is the real one.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "Full Form, Establishment, Predecessor",
+      "bullets": [
+        "Full form: World Trade Organization.",
+        "Established: 1 January 1995, as the successor to GATT (General Agreement on Tariffs and Trade, 1948) following the Uruguay Round of negotiations (1986–1994).",
+        "Headquarters: Geneva, Switzerland.",
+        "Key structural difference from GATT: GATT was only a provisional multilateral agreement with a small secretariat; WTO is a full permanent organization with legal personality, its own charter (the Marrakesh Agreement), and binding dispute settlement."
+      ]
+    },
+    {
+      "id": "objectives-principles",
+      "heading": "Objectives and Core Principles",
+      "bullets": [
+        "Objective: ensure trade flows as smoothly, predictably and freely as possible by administering trade agreements, providing a forum for negotiations, and settling disputes.",
+        "Most-Favoured-Nation (MFN) treatment: a trade advantage granted to one member must be granted to all WTO members equally (with specific, defined exceptions like free trade areas and customs unions).",
+        "National Treatment: imported and locally produced goods should be treated equally once the imported goods have entered the market.",
+        "Reciprocity, transparency, and special/differential treatment for developing countries are the other guiding principles."
+      ]
+    },
+    {
+      "id": "structure",
+      "heading": "Structure",
+      "table": {
+        "columnHeaders": [
+          "Role"
+        ],
+        "rows": [
+          [
+            "Ministerial Conference",
+            "WTO's top decision-making body — all members, meets at least once every two years."
+          ],
+          [
+            "General Council",
+            "Conducts WTO's regular business between Ministerial Conferences; also convenes as the Dispute Settlement Body and the Trade Policy Review Body."
+          ],
+          [
+            "Director-General",
+            "Heads the WTO Secretariat; oversees day-to-day administration, has largely managerial/advisory (not policy-making) authority since decisions are member-driven."
+          ],
+          [
+            "Dispute Settlement Body (DSB)",
+            "Handles trade disputes between members through a structured, rules-based process — widely seen as WTO's most powerful and distinctive feature versus GATT."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "india-wto",
+      "heading": "WTO and India",
+      "bullets": [
+        "India is a founding member of the WTO (1995) and was also an original GATT contracting party (from 1948).",
+        "India has frequently negotiated on behalf of developing countries on issues like agricultural subsidies, food security stockholding, and special safeguard mechanisms.",
+        "India has both filed and defended WTO disputes — trade remedy and agriculture-subsidy cases are recurring themes."
+      ]
+    },
+    {
+      "id": "current-leadership",
+      "heading": "Current Leadership (verified)",
+      "body": "Dr Ngozi Okonjo-Iweala (Nigeria) has been WTO Director-General since March 2021 — the first woman and first African to hold the post."
+    },
+    {
+      "id": "terminology",
+      "heading": "Important Terminology",
+      "bullets": [
+        "Ministerial Conference — the top WTO decision-making event, not to be confused with the annual World Economic Forum (Davos), which is unrelated.",
+        "Dumping — exporting a product at a price lower than its normal value in the home market; WTO rules allow importing countries to impose anti-dumping duties in response.",
+        "Doha Development Round — the (still incomplete) round of WTO trade negotiations launched in 2001, focused on developing-country concerns."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The WTO is the permanent, rules-based global trade organization (est. 1995, HQ Geneva) that succeeded GATT, built around MFN treatment, national treatment, and binding dispute settlement.",
+    "keyFacts": [
+      "Established 1 January 1995, successor to GATT (1948), after the Uruguay Round (1986–1994).",
+      "HQ: Geneva. Top body: Ministerial Conference (meets ≥ once every 2 years).",
+      "India: founding WTO member (1995) and original GATT signatory (1948).",
+      "Current DG: Ngozi Okonjo-Iweala (Nigeria), since March 2021 — first woman, first African DG."
+    ],
+    "keyTerms": [
+      "MFN treatment",
+      "National treatment",
+      "Dispute Settlement Body",
+      "Doha Development Round",
+      "Uruguay Round"
+    ],
+    "commonConfusion": [
+      "GATT was an agreement administered ad hoc; WTO is a full permanent organization with legal personality — they are related, not identical."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "WTO established 1 Jan 1995, HQ Geneva, successor to GATT (1948).",
+      "MFN and National Treatment are WTO's two foundational non-discrimination principles.",
+      "Ngozi Okonjo-Iweala: first woman and first African WTO Director-General (since 2021)."
+    ],
+    "commonTraps": [
+      "Do not confuse the WTO Ministerial Conference with the UN General Assembly or with Davos/WEF — separate bodies entirely.",
+      "GATT (1948) is the predecessor AGREEMENT, not a prior name for the same organization — WTO is structurally a new, permanent organization."
+    ],
+    "mustRemember": [
+      "MFN = equal trade treatment among WTO members; National Treatment = equal treatment of imported vs domestic goods once inside the market.",
+      "Uruguay Round (1986–1994) created the WTO."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "GATT",
+        "termB": "WTO",
+        "distinction": "GATT (1948) was a provisional multilateral trade agreement with a small ad hoc secretariat; WTO (1995) is a full permanent organization with legal personality and binding dispute settlement."
+      }
+    ],
+    "possibleQuestions": [
+      "In which year was the WTO established, and which agreement did it succeed?",
+      "What is the Most-Favoured-Nation principle in WTO law?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Understanding the WTO (wto.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "Marrakesh Agreement Establishing the WTO, 1994",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "id": "io-india-and-international-organizations",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 15,
+  "title": "India and International Organizations — A Consolidated View",
+  "shortDescription": "Every India-specific fact from this subject, gathered in one place — founding memberships, hosted offices, and status types, neutral and factual.",
+  "genZNote": "The India cheat-sheet: where India is a founder, where it's just a guest, and where it actually runs the building.",
+  "sections": [
+    {
+      "id": "founding-memberships",
+      "heading": "Where India Is a Founding Member",
+      "bullets": [
+        "United Nations (1945) — India signed the Charter even before independence.",
+        "IMF and World Bank (1945/44) — founding member of both Bretton Woods institutions.",
+        "WHO (1948), UNESCO, WTO (1995, and an original GATT signatory from 1948), FAO, ILO, ICAO (1944).",
+        "SAARC (1985) and BIMSTEC (1997) — founding member of both South Asian regional groupings.",
+        "Asian Development Bank (1966) and, later, the New Development Bank (BRICS-founded, 2014/15)."
+      ]
+    },
+    {
+      "id": "later-joiner",
+      "heading": "Where India Joined Later (Not a Founder)",
+      "bullets": [
+        "SCO — India became a full member only in 2017, alongside Pakistan, in the same expansion round (SCO itself was established in 2001).",
+        "AIIB — India is the largest borrower and second-largest shareholder (after China), though not a 'founder' in the same sense as a 1940s institution — AIIB itself only began operating in 2016."
+      ]
+    },
+    {
+      "id": "non-member-partnerships",
+      "heading": "Where India Is a Partner, Not a Member",
+      "bullets": [
+        "ASEAN — Dialogue Partner and Strategic Partner, NOT a full member.",
+        "OECD — 'Key Partner' country, NOT a member.",
+        "European Union, Gulf Cooperation Council, African Union — Strategic Partnerships / cooperation frameworks, no membership category applies (India is not geographically part of any of these regions).",
+        "NATO — no formal relationship; India is not a member and is not seeking membership."
+      ]
+    },
+    {
+      "id": "hosted-offices",
+      "heading": "International Offices Hosted in India",
+      "bullets": [
+        "WHO Regional Office for South-East Asia — New Delhi.",
+        "WHO Global Centre for Traditional Medicine — Jamnagar, Gujarat (established as a WHO knowledge hub for traditional medicine)."
+      ]
+    },
+    {
+      "id": "peacekeeping-leadership",
+      "heading": "Contributions and Milestones",
+      "bullets": [
+        "India has historically been among the largest troop- and police-contributing countries to UN peacekeeping operations, going back to the 1950s.",
+        "India accepted IMF conditional lending in 1991 during a severe balance-of-payments crisis — a pivotal moment that preceded India's economic liberalization reforms.",
+        "India was declared polio-free by WHO in 2014.",
+        "India hosted the G20 presidency in 2023 (New Delhi Summit), during which the African Union was admitted as a permanent G20 member.",
+        "India continues to seek permanent UN Security Council membership, primarily through the G4 grouping alongside Brazil, Germany, and Japan — this remains an aspiration, not an achieved status, and should be stated as such."
+      ]
+    },
+    {
+      "id": "membership-status-master-table",
+      "heading": "Master Reference — India's Status, Body by Body",
+      "table": {
+        "columnHeaders": [
+          "India's Status"
+        ],
+        "rows": [
+          [
+            "UN",
+            "Founding member (1945)"
+          ],
+          [
+            "IMF / World Bank",
+            "Founding member (1945/44)"
+          ],
+          [
+            "WHO / UNESCO / WTO / FAO / ILO / ICAO",
+            "Founding / original member"
+          ],
+          [
+            "SAARC / BIMSTEC",
+            "Founding member"
+          ],
+          [
+            "SCO",
+            "Full member since 2017 (not a founder)"
+          ],
+          [
+            "AIIB",
+            "Major shareholder / largest borrower (not founder in the historical sense; AIIB itself est. 2016)"
+          ],
+          [
+            "NDB (BRICS Bank)",
+            "Founding member"
+          ],
+          [
+            "ASEAN",
+            "Dialogue Partner (NOT a full member)"
+          ],
+          [
+            "OECD",
+            "Key Partner (NOT a member)"
+          ],
+          [
+            "EU / GCC / African Union",
+            "Strategic partnership only (no membership category applies)"
+          ],
+          [
+            "NATO",
+            "No relationship"
+          ],
+          [
+            "UNSC permanent seat",
+            "Aspirant (via G4), not an achieved status"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "India is a founding member of the UN, IMF, World Bank, WHO, WTO, SAARC and BIMSTEC, a later-joining full member of the SCO (2017), and a partner (not member) of ASEAN, the OECD, and the EU.",
+    "keyFacts": [
+      "Founding member: UN, IMF, World Bank, WHO, WTO/GATT, FAO, ILO, ICAO, SAARC, BIMSTEC, NDB.",
+      "Later full member (not founder): SCO (2017, alongside Pakistan).",
+      "Partner, not member: ASEAN (Dialogue Partner), OECD (Key Partner), EU/GCC/AU (Strategic Partnership only).",
+      "Hosts WHO's South-East Asia Regional Office (New Delhi) and the WHO Global Centre for Traditional Medicine (Jamnagar).",
+      "India is a UNSC permanent-seat ASPIRANT via the G4 (with Brazil, Germany, Japan) — not an achieved status."
+    ],
+    "keyTerms": [
+      "Founding member",
+      "Dialogue Partner",
+      "Key Partner",
+      "Strategic Partnership",
+      "G4"
+    ],
+    "commonConfusion": [
+      "Being a major shareholder/borrower (AIIB) is not the same as being a treaty 'founding member' in the historical Bretton-Woods sense — keep these distinct in an answer.",
+      "India's UNSC permanent seat is a sought status, not a current fact — never state it as already achieved."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "India: founding UN, IMF, World Bank, WHO, WTO/GATT member; founding SAARC and BIMSTEC member.",
+      "India joined SCO as a full member only in 2017 — not a founder (SCO est. 2001).",
+      "India is an ASEAN Dialogue Partner, NOT a full member — one of the most repeated exam traps in this whole subject."
+    ],
+    "commonTraps": [
+      "Do not state India has a UNSC permanent seat — it is a candidate/aspirant via the G4, not a current member.",
+      "Do not conflate 'Key Partner' (OECD) or 'Dialogue Partner' (ASEAN) with full membership."
+    ],
+    "mustRemember": [
+      "India's 1991 IMF loan is the fact most often linked to India's economic liberalization story.",
+      "India was declared polio-free by WHO in 2014."
+    ],
+    "possibleQuestions": [
+      "Is India a founding member of the SCO? If not, when did it join?",
+      "What is India's official relationship status with the OECD?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of External Affairs, India — India and the World (mea.gov.in)",
+      "kind": "educational"
+    },
+    {
+      "name": "United Nations Member States (un.org)",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "id": "io-science-culture-organizations",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 13,
+  "title": "Science, Aviation, Maritime & Communication Agencies — WIPO, ICAO, IMO, ITU, WMO",
+  "shortDescription": "The specialized agencies that quietly run the technical rules behind planes, ships, patents, weather forecasts, and phone networks.",
+  "genZNote": "The agencies nobody thinks about until their flight, phone signal, or patent depends on one of them.",
+  "sections": [
+    {
+      "id": "wipo",
+      "heading": "WIPO — World Intellectual Property Organization",
+      "bullets": [
+        "Established: 1967 (became a UN specialized agency in 1974); headquartered in Geneva, Switzerland.",
+        "Administers major global IP treaties (e.g. the Paris Convention for industrial property, the Berne Convention for copyright) and international filing systems like the Patent Cooperation Treaty (PCT) and the Madrid System for trademarks.",
+        "Publishes the annual Global Innovation Index jointly with other partners."
+      ]
+    },
+    {
+      "id": "icao",
+      "heading": "ICAO — International Civil Aviation Organization",
+      "bullets": [
+        "Established: 1944, by the Chicago Convention; headquartered in Montreal, Canada.",
+        "Sets international standards for aviation safety, security, efficiency, and environmental protection — the reason flight rules are broadly consistent worldwide.",
+        "Distinct from IATA (International Air Transport Association), which is an INDUSTRY BODY representing airlines, not an intergovernmental organization."
+      ]
+    },
+    {
+      "id": "imo",
+      "heading": "IMO — International Maritime Organization",
+      "bullets": [
+        "Established: 1948 (originally IMCO, renamed IMO in 1982); headquartered in London, UK.",
+        "Sets international standards for shipping safety, security, and prevention of marine pollution from ships (e.g. the MARPOL convention).",
+        "The only UN specialized agency headquartered in the United Kingdom."
+      ]
+    },
+    {
+      "id": "itu",
+      "heading": "ITU — International Telecommunication Union",
+      "bullets": [
+        "Established: 1865 (as the International Telegraph Union) — the OLDEST intergovernmental organization in the entire UN system, predating the UN by 80 years; became a UN specialized agency in 1947.",
+        "Headquarters: Geneva, Switzerland.",
+        "Allocates global radio spectrum and satellite orbits, and sets international telecommunication standards."
+      ]
+    },
+    {
+      "id": "wmo",
+      "heading": "WMO — World Meteorological Organization",
+      "bullets": [
+        "Established: 1950 (successor to the International Meteorological Organization, founded 1873); headquartered in Geneva, Switzerland.",
+        "Coordinates global meteorological, hydrological, and climate observation and research — co-founded the IPCC with UNEP in 1988."
+      ]
+    },
+    {
+      "id": "summary-table",
+      "heading": "Quick Reference",
+      "table": {
+        "columnHeaders": [
+          "Domain",
+          "HQ",
+          "Established"
+        ],
+        "rows": [
+          [
+            "WIPO",
+            "Intellectual property",
+            "Geneva",
+            "1967 (UN agency 1974)"
+          ],
+          [
+            "ICAO",
+            "Civil aviation",
+            "Montreal",
+            "1944"
+          ],
+          [
+            "IMO",
+            "Shipping/maritime",
+            "London",
+            "1948"
+          ],
+          [
+            "ITU",
+            "Telecommunications",
+            "Geneva",
+            "1865 (oldest IGO)"
+          ],
+          [
+            "WMO",
+            "Meteorology/climate",
+            "Geneva",
+            "1950"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "WIPO (IP), ICAO (aviation), IMO (shipping), ITU (telecom), and WMO (weather/climate) are UN specialized agencies that set the technical global standards for their respective domains.",
+    "keyFacts": [
+      "ITU (1865) is the oldest intergovernmental organization in existence, predating the UN by 80 years.",
+      "IMO (London) is the only UN specialized agency headquartered in the UK.",
+      "ICAO's founding treaty is the Chicago Convention (1944).",
+      "WMO co-founded the IPCC with UNEP in 1988."
+    ],
+    "keyTerms": [
+      "Chicago Convention",
+      "MARPOL",
+      "Patent Cooperation Treaty",
+      "Madrid System"
+    ],
+    "commonConfusion": [
+      "ICAO (intergovernmental, sets binding aviation standards) is not the same as IATA (an airline industry trade association) — don't merge the two."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ITU (1865) is the oldest IGO in existence — a very frequently tested 'oldest organization' fact.",
+      "IMO is the only UN specialized agency headquartered in London.",
+      "WIPO administers the Patent Cooperation Treaty and Madrid System."
+    ],
+    "commonTraps": [
+      "Do not confuse ICAO (intergovernmental standard-setter) with IATA (airline trade body) — a classic exam distractor pair.",
+      "Do not assume every 'oldest organization' answer is the UN or the Red Cross — ITU (1865) predates both as an intergovernmental body."
+    ],
+    "mustRemember": [
+      "ICAO founding treaty: Chicago Convention, 1944.",
+      "IMO's key pollution-prevention treaty: MARPOL."
+    ],
+    "possibleQuestions": [
+      "Which is the oldest intergovernmental organization in the world?",
+      "Which UN specialized agency is headquartered in London?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ITU — History (itu.int)",
+      "kind": "educational"
+    },
+    {
+      "name": "ICAO — About ICAO (icao.int)",
+      "kind": "educational"
+    }
+  ]
+}

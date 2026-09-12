@@ -1,0 +1,136 @@
+{
+  "id": "io-environment-climate-organizations",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 11,
+  "title": "Environment & Climate — UNEP, UNFCCC, IPCC, Green Climate Fund",
+  "shortDescription": "The organization that runs environmental policy, the treaty framework it sits inside, and the science body that isn't an organization at all.",
+  "genZNote": "One org, one treaty framework, one science panel, one fund — memorise which is which and traps mostly disappear.",
+  "sections": [
+    {
+      "id": "unep",
+      "heading": "UNEP — United Nations Environment Programme",
+      "bullets": [
+        "Established: 1972, following the Stockholm Conference on the Human Environment (the first major global environment summit).",
+        "Headquarters: Nairobi, Kenya — the only major UN body headquartered in a developing country / the Global South.",
+        "A UN PROGRAMME (created by GA resolution, funded via the UN system), not a specialized agency — coordinates the UN's environmental activities and helps develop international environmental policy."
+      ]
+    },
+    {
+      "id": "unfccc",
+      "heading": "UNFCCC — UN Framework Convention on Climate Change",
+      "bullets": [
+        "A TREATY, not an organization — adopted at the 1992 Rio Earth Summit, entered into force 1994.",
+        "It created the annual 'Conference of the Parties' (COP) meetings — COP is the treaty's governing/decision-making event, not a separate body.",
+        "Two major agreements were negotiated under the UNFCCC umbrella: the Kyoto Protocol (1997, binding emissions targets for developed countries) and the Paris Agreement (2015, adopted at COP21, nationally determined contributions for all parties).",
+        "The UNFCCC Secretariat is headquartered in Bonn, Germany."
+      ]
+    },
+    {
+      "id": "ipcc",
+      "heading": "IPCC — Intergovernmental Panel on Climate Change",
+      "bullets": [
+        "Established: 1988, jointly by UNEP and WMO (World Meteorological Organization) — a scientific ASSESSMENT BODY, not a policy-making or treaty organization.",
+        "Headquartered administratively at WMO's Geneva offices (it has no independent standalone HQ building in the way a full organization does).",
+        "Its job: synthesize and assess climate science for policymakers through periodic 'Assessment Reports' — it does not itself set targets or negotiate agreements; that's the UNFCCC/COP's job.",
+        "Shared the 2007 Nobel Peace Prize with Al Gore."
+      ]
+    },
+    {
+      "id": "gcf",
+      "heading": "Green Climate Fund (GCF)",
+      "bullets": [
+        "Established: 2010, under the UNFCCC framework, to help developing countries with climate mitigation/adaptation financing.",
+        "Headquarters: Songdo, Incheon, South Korea.",
+        "Distinct from the IPCC (science) and UNFCCC (treaty framework) — the GCF is specifically the FINANCING mechanism."
+      ]
+    },
+    {
+      "id": "distinction",
+      "heading": "The Distinction Exams Actually Want",
+      "table": {
+        "columnHeaders": [
+          "What kind of thing is it?"
+        ],
+        "rows": [
+          [
+            "UNEP",
+            "UN Programme (organization) — coordinates environmental policy"
+          ],
+          [
+            "UNFCCC",
+            "Treaty/Convention — created the COP process"
+          ],
+          [
+            "IPCC",
+            "Scientific assessment body — no policy authority"
+          ],
+          [
+            "Green Climate Fund",
+            "Financing mechanism under the UNFCCC"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "UNEP is the UN's environment programme (1972, Nairobi); the UNFCCC is the 1992 treaty that created the COP process; the IPCC is the UNEP/WMO scientific assessment body (1988); the Green Climate Fund is the UNFCCC's financing arm (2010).",
+    "keyFacts": [
+      "UNEP: 1972, HQ Nairobi — the only major UN body HQ'd in the developing world.",
+      "UNFCCC: treaty, adopted 1992 (Rio), in force 1994; Secretariat in Bonn; created the COP.",
+      "IPCC: 1988, jointly by UNEP + WMO — assesses science, does not set policy.",
+      "Kyoto Protocol (1997) and Paris Agreement (2015, COP21) were both negotiated under UNFCCC.",
+      "Green Climate Fund: 2010, HQ Songdo, South Korea."
+    ],
+    "keyTerms": [
+      "COP (Conference of the Parties)",
+      "Nationally Determined Contributions",
+      "Assessment Report",
+      "Kyoto Protocol",
+      "Paris Agreement"
+    ],
+    "commonConfusion": [
+      "UNFCCC is a TREATY; UNEP is an ORGANIZATION — don't call UNFCCC an 'agency'.",
+      "IPCC does not negotiate or set emissions targets — that happens at COP under the UNFCCC; IPCC only assesses the science."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "UNEP HQ is Nairobi — the only major UN body headquartered in the Global South.",
+      "IPCC was jointly established by UNEP and WMO in 1988.",
+      "Paris Agreement adopted at COP21 (2015); Kyoto Protocol adopted 1997 — both under the UNFCCC."
+    ],
+    "commonTraps": [
+      "Do not confuse the IPCC (science) with the UNFCCC (treaty/negotiation framework) — a very frequently tested distinction.",
+      "COP is not a separate organization — it is the UNFCCC's own governing conference."
+    ],
+    "mustRemember": [
+      "UNEP est. 1972 after the Stockholm Conference. UNFCCC adopted 1992 at the Rio Earth Summit.",
+      "Green Climate Fund is the financing mechanism, separate from the science (IPCC) and the treaty (UNFCCC)."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "UNFCCC",
+        "termB": "IPCC",
+        "distinction": "UNFCCC is the binding treaty framework under which countries negotiate climate commitments (via COP); IPCC is a scientific body that assesses climate research and has no negotiating or policy-setting role."
+      }
+    ],
+    "possibleQuestions": [
+      "Which two bodies jointly established the IPCC, and in which year?",
+      "Where is the UNEP headquartered, and why is that fact often highlighted?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "UNEP — About UNEP (unep.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "UNFCCC — Process and Meetings (unfccc.int)",
+      "kind": "educational"
+    },
+    {
+      "name": "IPCC — About the IPCC (ipcc.ch)",
+      "kind": "educational"
+    }
+  ]
+}

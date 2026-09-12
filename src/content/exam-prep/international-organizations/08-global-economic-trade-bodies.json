@@ -1,0 +1,134 @@
+{
+  "id": "io-global-economic-trade-bodies",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 8,
+  "title": "Other Major Global Economic & Trade Bodies",
+  "shortDescription": "OECD, OPEC, UNCTAD, BIS, and the regional development banks that keep showing up in exam questions.",
+  "genZNote": "The economic organizations that don't fit neatly into 'UN agency' or 'Bretton Woods twin' — but still get asked about constantly.",
+  "sections": [
+    {
+      "id": "oecd",
+      "heading": "OECD — Organisation for Economic Co-operation and Development",
+      "bullets": [
+        "Established 1961 (successor to the OEEC, which coordinated Marshall Plan aid after WWII); headquartered in Paris.",
+        "A group of mostly high-income, market-economy countries that coordinate economic policy and publish widely-used comparative data/reports (e.g. PISA education rankings).",
+        "India is NOT a member of the OECD, though it engages as a 'Key Partner' country."
+      ]
+    },
+    {
+      "id": "opec",
+      "heading": "OPEC and OPEC+",
+      "bullets": [
+        "OPEC — Organization of the Petroleum Exporting Countries — established 1960 at the Baghdad Conference; headquartered in Vienna, Austria.",
+        "Coordinates petroleum policy among major oil-exporting members to stabilize oil markets and secure member revenues.",
+        "OPEC+ is a broader, informal coalition of OPEC members plus other major oil-exporting non-members (e.g. Russia) that coordinates production levels jointly — OPEC+ is NOT a formal treaty organization the way OPEC itself is."
+      ]
+    },
+    {
+      "id": "unctad",
+      "heading": "UNCTAD — UN Conference on Trade and Development",
+      "body": "Established 1964 as a UN General Assembly body (a programme, not a specialized agency), headquartered in Geneva. UNCTAD focuses on integrating developing countries into the world economy, particularly on trade, investment, and development finance issues — it is the UN's own trade-and-development voice, distinct from the WTO, which is an independent treaty organization outside the UN system."
+    },
+    {
+      "id": "other-bodies",
+      "heading": "Other High-Value Bodies",
+      "table": {
+        "columnHeaders": [
+          "Focus",
+          "HQ"
+        ],
+        "rows": [
+          [
+            "World Customs Organization (WCO)",
+            "Harmonizes customs procedures and classification (the HS commodity code system) worldwide.",
+            "Brussels"
+          ],
+          [
+            "Bank for International Settlements (BIS)",
+            "'Central bank for central banks' — fosters cooperation among national central banks and monetary authorities.",
+            "Basel"
+          ],
+          [
+            "Financial Stability Board (FSB)",
+            "Monitors and makes recommendations on the global financial system, set up after the 2008 financial crisis.",
+            "Basel"
+          ],
+          [
+            "Asian Development Bank (ADB)",
+            "Regional development bank for Asia-Pacific; India is a founding member (1966).",
+            "Manila"
+          ],
+          [
+            "Asian Infrastructure Investment Bank (AIIB)",
+            "China-initiated multilateral development bank focused on infrastructure; India is the largest borrower and second-largest shareholder after China.",
+            "Beijing"
+          ],
+          [
+            "New Development Bank (NDB)",
+            "Founded by the BRICS grouping (2014/2015) to fund infrastructure and sustainable development in emerging economies.",
+            "Shanghai"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "exam-angle",
+      "heading": "The Exam Angle on These Bodies",
+      "bullets": [
+        "Headquarters city is the single most commonly tested fact for this whole group — learn the table above by HQ city first.",
+        "India's membership status varies sharply across this list: OECD (not a member, Key Partner), ADB (founding member), AIIB (major shareholder/borrower), NDB (founding member) — do not assume uniform membership across 'similar-sounding' bodies.",
+        "UNCTAD vs WTO is a classic confusion pair: UNCTAD is a UN body advocating for developing countries' trade interests; WTO is an independent treaty organization that actually administers binding trade rules."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Beyond IMF/World Bank/WTO, global economic governance also runs through bodies like OECD, OPEC, UNCTAD, BIS, and the regional development banks (ADB, AIIB, NDB).",
+    "keyFacts": [
+      "OECD (1961, Paris) — India is a Key Partner, not a member.",
+      "OPEC (1960, Vienna) vs OPEC+ (informal, broader coalition including Russia).",
+      "UNCTAD (1964, Geneva) — a UN body, distinct from the independent WTO.",
+      "BIS (Basel) — 'central bank for central banks'.",
+      "ADB (Manila) — India founding member; AIIB (Beijing) — India major shareholder/borrower; NDB (Shanghai) — BRICS-founded."
+    ],
+    "keyTerms": [
+      "OECD",
+      "OPEC+",
+      "UNCTAD",
+      "Bank for International Settlements",
+      "Financial Stability Board"
+    ],
+    "commonConfusion": [
+      "OPEC (a formal organization) and OPEC+ (an informal wider coalition) are not the same thing — Russia is in OPEC+ but not OPEC.",
+      "India's membership varies across ADB/AIIB/NDB/OECD — never assume the same status applies to all 'similar' bodies."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "OECD HQ: Paris. OPEC HQ: Vienna. UNCTAD HQ: Geneva. BIS HQ: Basel. ADB HQ: Manila. AIIB HQ: Beijing. NDB HQ: Shanghai.",
+      "India is NOT an OECD member but IS a founding member of ADB and NDB, and a major shareholder in AIIB.",
+      "UNCTAD is a UN programme; WTO is an independent treaty organization — they are not the same kind of body."
+    ],
+    "commonTraps": [
+      "Don't assume OPEC+ has the same membership as OPEC — OPEC+ includes non-OPEC oil exporters like Russia.",
+      "Don't confuse BIS (central-bank cooperation) with IMF (member-state monetary support) — different mandates."
+    ],
+    "mustRemember": [
+      "AIIB: China largest shareholder, India second-largest.",
+      "NDB: founded by BRICS (Brazil, Russia, India, China, South Africa)."
+    ],
+    "possibleQuestions": [
+      "Where is the headquarters of the Asian Infrastructure Investment Bank?",
+      "Is India a member of the OECD?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "OECD — About (oecd.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "Asian Infrastructure Investment Bank — Members (aiib.org)",
+      "kind": "educational"
+    }
+  ]
+}

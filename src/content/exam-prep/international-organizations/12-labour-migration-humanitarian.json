@@ -1,0 +1,177 @@
+{
+  "id": "io-labour-migration-humanitarian",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 12,
+  "title": "Labour, Migration & Humanitarian Bodies — ILO, IOM, UNHCR, UNICEF, UNDP, WFP, FAO",
+  "shortDescription": "Seven bodies that look similar on the surface — agency vs programme vs fund status is the actual thing being tested here.",
+  "genZNote": "Same UN family, seven different job descriptions — refugees, children, food, hunger, work, migration, development.",
+  "sections": [
+    {
+      "id": "ilo",
+      "heading": "ILO — International Labour Organization",
+      "bullets": [
+        "Established: 1919, under the Treaty of Versailles — making it the OLDEST body in this list, predating the UN itself (it later became the UN's first specialized agency, in 1946).",
+        "Headquarters: Geneva, Switzerland.",
+        "A UN specialized agency (not a programme/fund) — unique for its 'tripartite' structure: governments, employers, and workers' representatives all sit at the table.",
+        "Sets international labour standards through Conventions and Recommendations; won the Nobel Peace Prize in 1969."
+      ]
+    },
+    {
+      "id": "iom",
+      "heading": "IOM — International Organization for Migration",
+      "bullets": [
+        "Established: 1951; became a 'related organization' of the UN system in 2016 (it operated independently for decades before formally joining the UN family).",
+        "Headquarters: Geneva, Switzerland.",
+        "The leading intergovernmental body working on migration — assists migrants, displaced persons, and governments on migration policy and humanitarian response."
+      ]
+    },
+    {
+      "id": "unhcr",
+      "heading": "UNHCR — UN High Commissioner for Refugees",
+      "bullets": [
+        "Established: 1950, by UN General Assembly resolution — a UN PROGRAMME, not a specialized agency.",
+        "Headquarters: Geneva, Switzerland.",
+        "Mandate: protect refugees, forcibly displaced people, and stateless persons, and help find lasting solutions (resettlement, return, local integration).",
+        "Won the Nobel Peace Prize twice (1954 and 1981)."
+      ]
+    },
+    {
+      "id": "unicef",
+      "heading": "UNICEF — UN Children's Fund",
+      "bullets": [
+        "Established: 1946 (originally for post-WWII emergency relief for children in Europe; mandate broadened in 1953 to all children worldwide).",
+        "Headquarters: New York, USA.",
+        "A UN FUND (created by GA resolution, funded almost entirely by voluntary contributions) — works on child health, nutrition, education, and protection worldwide."
+      ]
+    },
+    {
+      "id": "undp",
+      "heading": "UNDP — UN Development Programme",
+      "bullets": [
+        "Established: 1965, headquartered in New York.",
+        "A UN PROGRAMME — the UN's global development network, coordinating on poverty reduction, governance, and (notably) publishing the annual Human Development Report and Human Development Index (HDI)."
+      ]
+    },
+    {
+      "id": "wfp",
+      "heading": "WFP — World Food Programme",
+      "bullets": [
+        "Established: 1961, headquartered in Rome, Italy.",
+        "A UN PROGRAMME — the world's largest humanitarian organization addressing hunger, delivering food assistance in emergencies and working on long-term food security.",
+        "Won the Nobel Peace Prize in 2020."
+      ]
+    },
+    {
+      "id": "fao",
+      "heading": "FAO — Food and Agriculture Organization",
+      "bullets": [
+        "Established: 1945, headquartered in Rome, Italy.",
+        "A UN specialized agency — leads international efforts to defeat hunger and improve agriculture, forestry, and fisheries globally.",
+        "Publishes the widely-cited 'State of Food Security and Nutrition in the World' report; distinct from WFP, which does the on-the-ground food DELIVERY."
+      ]
+    },
+    {
+      "id": "classification-table",
+      "heading": "Agency vs Programme vs Fund — At a Glance",
+      "table": {
+        "columnHeaders": [
+          "Classification",
+          "HQ"
+        ],
+        "rows": [
+          [
+            "ILO",
+            "Specialized agency (1919/1946)",
+            "Geneva"
+          ],
+          [
+            "FAO",
+            "Specialized agency (1945)",
+            "Rome"
+          ],
+          [
+            "IOM",
+            "Related organization (UN family since 2016)",
+            "Geneva"
+          ],
+          [
+            "UNHCR",
+            "UN programme (1950)",
+            "Geneva"
+          ],
+          [
+            "UNICEF",
+            "UN fund (1946)",
+            "New York"
+          ],
+          [
+            "UNDP",
+            "UN programme (1965)",
+            "New York"
+          ],
+          [
+            "WFP",
+            "UN programme (1961)",
+            "Rome"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "ILO and FAO are UN specialized agencies; UNHCR, UNICEF, UNDP and WFP are UN programmes/funds created by GA resolution; IOM is a UN-related organization — same UN family, four different legal statuses.",
+    "keyFacts": [
+      "ILO (1919) is the oldest body here, older than the UN itself; tripartite structure (govt + employers + workers).",
+      "FAO and WFP are both Rome-headquartered but do different jobs: FAO = policy/research, WFP = on-ground food delivery.",
+      "UNHCR (refugees) est. 1950; UNICEF (children) est. 1946; UNDP (development) est. 1965 — all UN programmes/funds, HQ'd differently.",
+      "IOM only formally joined the UN system as a related organization in 2016, despite existing since 1951."
+    ],
+    "keyTerms": [
+      "Tripartite structure",
+      "Specialized agency",
+      "UN programme",
+      "UN fund",
+      "Related organization"
+    ],
+    "commonConfusion": [
+      "FAO (agency, policy/research) and WFP (programme, direct food delivery) are both Rome-based and both about food — but their classification and role are different.",
+      "IOM existed since 1951 but only became UN-affiliated in 2016 — don't assume its UN membership date equals its founding date."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ILO: 1919 (Treaty of Versailles), Geneva — oldest of this group, Nobel Peace Prize 1969.",
+      "FAO and WFP both HQ'd in Rome but FAO is a specialized agency while WFP is a programme.",
+      "UNDP publishes the Human Development Index (HDI) annually."
+    ],
+    "commonTraps": [
+      "Do not call UNICEF or UNHCR a 'specialized agency' — both are UN funds/programmes, a distinct legal category.",
+      "Do not assume IOM has been a UN body since its founding — it joined formally only in 2016."
+    ],
+    "mustRemember": [
+      "ILO's defining feature: tripartite structure (government + employer + worker representation).",
+      "WFP won the Nobel Peace Prize in 2020; UNHCR won it in 1954 and 1981; ILO won it in 1969."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "FAO",
+        "termB": "WFP",
+        "distinction": "FAO (specialized agency, 1945) works on agricultural policy, research, and long-term food security; WFP (programme, 1961) physically delivers food assistance during emergencies."
+      }
+    ],
+    "possibleQuestions": [
+      "Which UN body is the OLDEST — ILO, FAO, UNICEF, or UNDP?",
+      "Is UNICEF a UN specialized agency? If not, what is it correctly classified as?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ILO — About the ILO (ilo.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "United Nations System Organization Chart (un.org)",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "io-unesco",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 4,
+  "title": "UNESCO — Education, Science, Culture, Communication",
+  "shortDescription": "What UNESCO actually is as an organization — not just the source of 'World Heritage Site' headlines.",
+  "genZNote": "UNESCO isn't a heritage-sites list — it's the org behind the list.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "Full Form, Establishment, Headquarters",
+      "bullets": [
+        "Full form: United Nations Educational, Scientific and Cultural Organization.",
+        "Established: 16 November 1945 (its constitution was signed that day in London); began operating from 1946.",
+        "Headquarters: Paris, France.",
+        "A UN specialized agency — legally independent, linked to the UN through an agreement, like WHO."
+      ]
+    },
+    {
+      "id": "objectives",
+      "heading": "Objectives and Mandate Areas",
+      "bullets": [
+        "Contribute to peace and security by promoting collaboration through education, science, culture, and communication/information — the founding idea (from its constitution) that 'since wars begin in the minds of men, it is in the minds of men that the defences of peace must be constructed'.",
+        "Education — universal access, literacy, teacher training, Education for Sustainable Development.",
+        "Natural sciences — including the Man and the Biosphere Programme (biosphere reserves) and ocean/water science.",
+        "Social and human sciences — human rights, ethics of science and technology.",
+        "Culture — protection and promotion of cultural heritage and diversity.",
+        "Communication and information — press freedom, media development, access to information."
+      ]
+    },
+    {
+      "id": "world-heritage",
+      "heading": "UNESCO and World Heritage",
+      "body": "UNESCO administers the World Heritage Convention (1972), under which the World Heritage Committee inscribes sites of 'Outstanding Universal Value' onto the World Heritage List, in three categories: Cultural, Natural, and Mixed sites. Separately, UNESCO also maintains lists for Intangible Cultural Heritage (traditions, performing arts, rituals) and a Memory of the World register (documentary heritage), plus a Biosphere Reserves network under its Man and the Biosphere (MAB) Programme — these are distinct designations with distinct criteria, not the same list."
+    },
+    {
+      "id": "india-connection",
+      "heading": "UNESCO and India",
+      "bullets": [
+        "India has a large number of UNESCO World Heritage Sites across Cultural, Natural, and Mixed categories, reflecting its long civilizational history and biodiversity.",
+        "India has entries on the Intangible Cultural Heritage list (e.g. Kumbh Mela, Yoga, Durga Puja) distinct from the World Heritage Sites list.",
+        "India has Biosphere Reserves recognized under UNESCO's MAB Programme, separate again from the World Heritage list."
+      ]
+    },
+    {
+      "id": "current-leadership",
+      "heading": "Current Leadership (time-sensitive)",
+      "body": "Khaled El-Enany (Egypt) became UNESCO's Director-General in November 2025, succeeding Audrey Azoulay — the first UNESCO Director-General from an Arab country. Because leadership changes, don't hard-memorise a single name as permanent; verify close to your exam."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "UNESCO is the UN specialized agency for education, science, culture and communication, established 1945, headquartered in Paris, best known for administering the World Heritage Convention.",
+    "keyFacts": [
+      "Established 16 November 1945. HQ: Paris.",
+      "Administers the World Heritage Convention (1972) — Cultural, Natural, Mixed site categories.",
+      "Maintains SEPARATE lists: World Heritage Sites, Intangible Cultural Heritage, Memory of the World, Biosphere Reserves (MAB Programme).",
+      "Khaled El-Enany (Egypt) became Director-General in November 2025."
+    ],
+    "keyTerms": [
+      "World Heritage Convention",
+      "Outstanding Universal Value",
+      "Intangible Cultural Heritage",
+      "Man and the Biosphere Programme"
+    ],
+    "commonConfusion": [
+      "A 'Biosphere Reserve' and a 'World Heritage Site' are different UNESCO designations with different criteria — don't treat them as interchangeable.",
+      "'Intangible Cultural Heritage' (traditions/practices) is a separate list from the 'World Heritage List' (physical sites)."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "UNESCO established 1945, HQ Paris — a UN specialized agency, not a UN programme.",
+      "World Heritage sites fall into three categories: Cultural, Natural, Mixed.",
+      "UNESCO's founding line: wars begin 'in the minds of men' — defences of peace must be built there too."
+    ],
+    "commonTraps": [
+      "Don't confuse a World Heritage Site with an Intangible Cultural Heritage entry — these are separate UNESCO lists with separate nomination processes.",
+      "Don't assume every famous Indian heritage item is a 'World Heritage Site' — some are Intangible Cultural Heritage or Biosphere Reserve designations instead."
+    ],
+    "mustRemember": [
+      "UNESCO's four core mandate areas: education, natural/social sciences, culture, communication & information.",
+      "The World Heritage Convention year: 1972."
+    ],
+    "possibleQuestions": [
+      "In which year was UNESCO established, and where is its headquarters?",
+      "What are the three categories of UNESCO World Heritage Sites?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Constitution of UNESCO (unesco.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "UNESCO World Heritage Convention, 1972 (whc.unesco.org)",
+      "kind": "educational"
+    }
+  ]
+}

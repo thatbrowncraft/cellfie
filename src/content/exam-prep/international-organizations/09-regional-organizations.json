@@ -1,0 +1,223 @@
+{
+  "id": "io-regional-organizations",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 9,
+  "title": "Regional Organizations — SAARC, ASEAN, EU, AU, BIMSTEC and More",
+  "shortDescription": "Membership, headquarters, and founding years for the major regional blocs — the section exams mine hardest for one-line facts.",
+  "genZNote": "Same question format every time: who's in it, since when, headquartered where — just with a new acronym.",
+  "sections": [
+    {
+      "id": "saarc",
+      "heading": "SAARC — South Asian Association for Regional Cooperation",
+      "bullets": [
+        "Established: 8 December 1985, in Dhaka.",
+        "Headquarters (Secretariat): Kathmandu, Nepal.",
+        "8 members: India, Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan, Maldives, Afghanistan (joined 2007).",
+        "Objective: accelerate economic and social development through regional cooperation in South Asia.",
+        "SAARC summits have been irregular in recent years due to India-Pakistan tensions; India has since emphasised BIMSTEC as an alternative regional platform."
+      ]
+    },
+    {
+      "id": "asean",
+      "heading": "ASEAN — Association of Southeast Asian Nations",
+      "bullets": [
+        "Established: 8 August 1967, by the Bangkok Declaration — founding members: Indonesia, Malaysia, Philippines, Singapore, Thailand.",
+        "Headquarters (Secretariat): Jakarta, Indonesia.",
+        "10 members today (expanded to include Brunei, Vietnam, Laos, Myanmar, Cambodia).",
+        "India holds an ASEAN 'Dialogue Partner' status (since 1992, elevated to full Dialogue Partner in 1996) and a 'Strategic Partnership' — India is NOT a full ASEAN member.",
+        "India–ASEAN cooperation is formalised through India's 'Act East Policy'."
+      ]
+    },
+    {
+      "id": "eu",
+      "heading": "European Union (EU)",
+      "bullets": [
+        "Evolved from the European Coal and Steel Community (1951) and European Economic Community (1957); formally established as the 'European Union' by the Maastricht Treaty, which took effect 1 November 1993.",
+        "Headquarters: Brussels, Belgium (main EU institutions); other key institutions are in Luxembourg and Strasbourg.",
+        "27 member states (post-Brexit — the UK left the EU in January 2020).",
+        "A genuine supranational union: members share a common market, and most (not all) share a common currency, the euro, used by the 'Eurozone' subset of members.",
+        "Not all EU members use the euro, and not all European countries are EU members — these are three separate/overlapping groups (EU, Eurozone, 'Europe' as a continent)."
+      ]
+    },
+    {
+      "id": "au",
+      "heading": "African Union (AU)",
+      "bullets": [
+        "Established: 2002, replacing the earlier Organisation of African Unity (OAU, founded 1963).",
+        "Headquarters: Addis Ababa, Ethiopia.",
+        "55 member states — essentially all of Africa.",
+        "The African Union was admitted as a permanent member of the G20 in 2023, alongside the European Union — both are regional-bloc members of G20, not country members."
+      ]
+    },
+    {
+      "id": "bimstec",
+      "heading": "BIMSTEC — Bay of Bengal Initiative",
+      "bullets": [
+        "Established: 1997 (originally BIST-EC with 4 members; renamed BIMSTEC after Myanmar joined).",
+        "Headquarters (Secretariat): Dhaka, Bangladesh.",
+        "7 members: India, Bangladesh, Bhutan, Myanmar, Nepal, Sri Lanka, Thailand.",
+        "Notably bridges South Asia and Southeast Asia — and, unlike SAARC, excludes Pakistan, which is one reason India has increasingly prioritised BIMSTEC."
+      ]
+    },
+    {
+      "id": "sco",
+      "heading": "SCO — Shanghai Cooperation Organisation",
+      "bullets": [
+        "Established: 2001 (evolved from the 'Shanghai Five' grouping formed in 1996).",
+        "Headquarters (Secretariat): Beijing, China.",
+        "Founding members: China, Russia, Kazakhstan, Kyrgyzstan, Tajikistan, Uzbekistan.",
+        "India and Pakistan became full members in 2017 — both joined together in the same expansion round.",
+        "Focus: regional security cooperation (originally counter-terrorism/border issues), later broadened to economic cooperation."
+      ]
+    },
+    {
+      "id": "gcc",
+      "heading": "Gulf Cooperation Council (GCC)",
+      "bullets": [
+        "Established: 1981.",
+        "Headquarters: Riyadh, Saudi Arabia.",
+        "6 members: Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, Oman.",
+        "Focus: economic, security, and social cooperation among Gulf Arab monarchies; India has a strategic partnership with the GCC given the large Indian expatriate population and energy trade ties in the region."
+      ]
+    },
+    {
+      "id": "others",
+      "heading": "Other Regional Bodies Worth Knowing",
+      "table": {
+        "columnHeaders": [
+          "HQ",
+          "Established",
+          "Note"
+        ],
+        "rows": [
+          [
+            "NATO — North Atlantic Treaty Organization",
+            "Brussels, Belgium",
+            "1949",
+            "Military-political alliance; collective defence under Article 5 of the founding treaty."
+          ],
+          [
+            "Arab League",
+            "Cairo, Egypt",
+            "1945",
+            "22 Arab member states; political/economic cooperation."
+          ],
+          [
+            "Organization of American States (OAS)",
+            "Washington, D.C.",
+            "1948",
+            "Political/economic cooperation across the Americas."
+          ],
+          [
+            "Pacific Islands Forum (PIF)",
+            "Suva, Fiji",
+            "1971",
+            "Political and economic cooperation among Pacific Island states."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "membership-status-warning",
+      "heading": "Membership vs Observer/Dialogue Status — The Real Exam Trap",
+      "body": "Exams routinely test whether India is a FULL member, DIALOGUE PARTNER, OBSERVER, or has no formal status at all with a given regional body — these are not interchangeable categories.",
+      "table": {
+        "columnHeaders": [
+          "India's actual status"
+        ],
+        "rows": [
+          [
+            "SAARC",
+            "Full member (founding)"
+          ],
+          [
+            "BIMSTEC",
+            "Full member (founding)"
+          ],
+          [
+            "SCO",
+            "Full member (since 2017)"
+          ],
+          [
+            "ASEAN",
+            "Dialogue Partner + Strategic Partner (NOT a full member)"
+          ],
+          [
+            "EU",
+            "No membership category applies (not a regional member, but has a Strategic Partnership)"
+          ],
+          [
+            "GCC",
+            "No membership category applies (Strategic Partnership only)"
+          ],
+          [
+            "African Union",
+            "No membership category applies (not an African state)"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Regional organizations limit membership to states of one geographic region — from SAARC (South Asia, 1985) and ASEAN (Southeast Asia, 1967) to the EU (Europe) and AU (Africa, 2002) — each with its own founding year, HQ, and membership rules.",
+    "keyFacts": [
+      "SAARC: 1985, HQ Kathmandu, 8 members including Afghanistan (2007).",
+      "ASEAN: 1967, HQ Jakarta, 10 members — India is a Dialogue Partner, NOT a full member.",
+      "EU: Maastricht Treaty in force Nov 1993, HQ Brussels, 27 members post-Brexit; Eurozone ≠ EU membership.",
+      "AU: 2002 (replaced OAU, 1963), HQ Addis Ababa; AU became a permanent G20 member in 2023.",
+      "BIMSTEC: 1997, HQ Dhaka, 7 members, excludes Pakistan.",
+      "SCO: 2001, HQ Beijing; India & Pakistan both joined as full members in 2017."
+    ],
+    "keyTerms": [
+      "Full member",
+      "Dialogue Partner",
+      "Observer status",
+      "Strategic Partnership",
+      "Eurozone"
+    ],
+    "commonConfusion": [
+      "India is a Dialogue Partner of ASEAN, not a full member — a very common exam trap.",
+      "Being 'in Europe' geographically is not the same as being an EU member, and being an EU member is not the same as using the euro (Eurozone)."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "SAARC (1985, Kathmandu) has 8 members; BIMSTEC (1997, Dhaka) has 7 and excludes Pakistan.",
+      "India and Pakistan both became full SCO members in 2017, in the same expansion.",
+      "African Union became a permanent G20 member in 2023, alongside the European Union."
+    ],
+    "commonTraps": [
+      "Do not upgrade India's ASEAN 'Dialogue Partner' status to full membership — it is explicitly NOT a member.",
+      "Do not confuse GCC membership (6 Gulf monarchies) with the broader Arab League (22 members) — GCC is a subset-flavoured but organizationally separate body."
+    ],
+    "mustRemember": [
+      "SAARC HQ: Kathmandu. ASEAN HQ: Jakarta. AU HQ: Addis Ababa. SCO HQ: Beijing. BIMSTEC HQ: Dhaka. GCC HQ: Riyadh.",
+      "NATO's collective-defence clause is Article 5 of the North Atlantic Treaty (1949)."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "SAARC",
+        "termB": "BIMSTEC",
+        "distinction": "SAARC (1985) covers South Asia including Pakistan and Afghanistan; BIMSTEC (1997) bridges South and Southeast Asia and excludes Pakistan — India has increasingly prioritised BIMSTEC."
+      }
+    ],
+    "possibleQuestions": [
+      "What is India's membership status with ASEAN?",
+      "In which year did India and Pakistan become full members of the SCO?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "SAARC Secretariat — About SAARC (saarc-sec.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "ASEAN — Overview and External Relations (asean.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "Ministry of External Affairs, India — Bilateral/Regional Relations (mea.gov.in)",
+      "kind": "educational"
+    }
+  ]
+}

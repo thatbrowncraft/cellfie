@@ -1,0 +1,314 @@
+{
+  "id": "io-exam-quick-revision",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 16,
+  "title": "International Organizations — Consolidated Exam Revision",
+  "shortDescription": "Every headquarters, founding year, and classification from this subject in one compact, last-minute revision sheet.",
+  "genZNote": "The night-before-the-exam page — every HQ, every year, every trap, zero fluff.",
+  "sections": [
+    {
+      "id": "hq-master-table",
+      "heading": "Headquarters — Master Table",
+      "table": {
+        "columnHeaders": [
+          "Headquarters City"
+        ],
+        "rows": [
+          [
+            "United Nations",
+            "New York"
+          ],
+          [
+            "ICJ",
+            "The Hague"
+          ],
+          [
+            "WHO",
+            "Geneva"
+          ],
+          [
+            "UNESCO",
+            "Paris"
+          ],
+          [
+            "WTO",
+            "Geneva"
+          ],
+          [
+            "IMF / World Bank",
+            "Washington, D.C."
+          ],
+          [
+            "ILO / ITU / WMO / WIPO",
+            "Geneva"
+          ],
+          [
+            "FAO / WFP",
+            "Rome"
+          ],
+          [
+            "ICAO",
+            "Montreal"
+          ],
+          [
+            "IMO",
+            "London"
+          ],
+          [
+            "IAEA",
+            "Vienna"
+          ],
+          [
+            "OPCW",
+            "The Hague"
+          ],
+          [
+            "INTERPOL",
+            "Lyon"
+          ],
+          [
+            "NATO",
+            "Brussels"
+          ],
+          [
+            "UNEP",
+            "Nairobi"
+          ],
+          [
+            "UNFCCC Secretariat",
+            "Bonn"
+          ],
+          [
+            "Green Climate Fund",
+            "Songdo, South Korea"
+          ],
+          [
+            "SAARC",
+            "Kathmandu"
+          ],
+          [
+            "ASEAN",
+            "Jakarta"
+          ],
+          [
+            "African Union",
+            "Addis Ababa"
+          ],
+          [
+            "BIMSTEC",
+            "Dhaka"
+          ],
+          [
+            "SCO",
+            "Beijing"
+          ],
+          [
+            "GCC",
+            "Riyadh"
+          ],
+          [
+            "OECD",
+            "Paris"
+          ],
+          [
+            "OPEC",
+            "Vienna"
+          ],
+          [
+            "UNCTAD",
+            "Geneva"
+          ],
+          [
+            "BIS",
+            "Basel"
+          ],
+          [
+            "ADB",
+            "Manila"
+          ],
+          [
+            "AIIB",
+            "Beijing"
+          ],
+          [
+            "NDB",
+            "Shanghai"
+          ],
+          [
+            "Commonwealth Secretariat",
+            "London"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "founding-years",
+      "heading": "Founding Years — Master Table",
+      "table": {
+        "columnHeaders": [
+          "Established"
+        ],
+        "rows": [
+          [
+            "ITU (oldest IGO in existence)",
+            "1865"
+          ],
+          [
+            "ILO",
+            "1919"
+          ],
+          [
+            "Arab League",
+            "1945"
+          ],
+          [
+            "World Bank / IMF (Bretton Woods)",
+            "1944"
+          ],
+          [
+            "UN / FAO / UNESCO",
+            "1945"
+          ],
+          [
+            "WHO",
+            "1948"
+          ],
+          [
+            "ICAO",
+            "1944"
+          ],
+          [
+            "IMO (as IMCO)",
+            "1948"
+          ],
+          [
+            "NATO",
+            "1949"
+          ],
+          [
+            "OAS",
+            "1948"
+          ],
+          [
+            "OPEC",
+            "1960"
+          ],
+          [
+            "OECD",
+            "1961"
+          ],
+          [
+            "G77",
+            "1964"
+          ],
+          [
+            "ADB",
+            "1966"
+          ],
+          [
+            "WIPO",
+            "1967"
+          ],
+          [
+            "UNEP",
+            "1972"
+          ],
+          [
+            "WTO (succeeding GATT, 1948)",
+            "1995"
+          ],
+          [
+            "EU (as 'European Union')",
+            "1993"
+          ],
+          [
+            "SAARC",
+            "1985"
+          ],
+          [
+            "ASEAN",
+            "1967"
+          ],
+          [
+            "African Union (replacing OAU, 1963)",
+            "2002"
+          ],
+          [
+            "BIMSTEC",
+            "1997"
+          ],
+          [
+            "SCO",
+            "2001"
+          ],
+          [
+            "G20 (leaders'-level)",
+            "2008"
+          ],
+          [
+            "NDB",
+            "2014/2015"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "classification-recap",
+      "heading": "Classification Recap",
+      "bullets": [
+        "UN specialized agencies: WHO, UNESCO, ILO, FAO, WTO is NOT a UN specialized agency (it's a fully independent treaty organization outside the UN system) — a very common trap.",
+        "UN programmes/funds: UNDP, UNICEF, UNEP, WFP, UNHCR.",
+        "UN-related organizations (not specialized agencies): IAEA, IOM.",
+        "Groupings/forums with no charter or permanent HQ: G7, G20, BRICS, Quad, IBSA.",
+        "Bodies with a genuine Secretariat despite being informal associations: Commonwealth of Nations."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "This is the compiled reference: every headquarters city, founding year, and agency/programme/forum classification covered across the International Organizations subject.",
+    "keyFacts": [
+      "ITU (1865) = oldest existing intergovernmental organization.",
+      "WTO is NOT a UN specialized agency — it sits fully outside the UN system as an independent treaty organization.",
+      "IAEA and IOM are 'related organizations', not specialized agencies.",
+      "G7/G20/BRICS/Quad/IBSA have no charter and no permanent secretariat."
+    ],
+    "keyTerms": [
+      "Specialized agency",
+      "UN programme/fund",
+      "Related organization",
+      "Grouping/forum"
+    ],
+    "commonConfusion": [
+      "Students very often assume WTO is a UN specialized agency because it 'feels' like one — it is legally independent of the UN system entirely."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "WTO is outside the UN specialized-agency system entirely — an independent treaty organization.",
+      "ITU (1865) predates the UN by 80 years and is the oldest IGO in existence.",
+      "G20's 2023 New Delhi Summit (India's presidency) admitted the African Union as a permanent member."
+    ],
+    "commonTraps": [
+      "Never list WTO alongside WHO/ILO/FAO as a 'UN specialized agency' in a precise classification question.",
+      "Do not confuse IMO (International Maritime Organization, London) with ICAO (aviation, Montreal) — both are transport-mode-specific UN agencies but cover different modes entirely."
+    ],
+    "mustRemember": [
+      "When in doubt on classification, apply the three-question test from this subject's first topic: charter? permanent HQ+staff? UN-linked by treaty?",
+      "Headquarters-city facts are the single most repeated MCQ format across this entire subject — the master table above is the highest-yield page in this section."
+    ],
+    "possibleQuestions": [
+      "Which of the following is NOT a UN specialized agency: WHO / WTO / ILO / FAO?",
+      "Arrange in chronological order of establishment: WHO, UN, ITU, WTO."
+    ]
+  },
+  "sources": [
+    {
+      "name": "United Nations System Organization Chart (un.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "WTO — Understanding the WTO: Basics (wto.org)",
+      "kind": "educational"
+    }
+  ]
+}

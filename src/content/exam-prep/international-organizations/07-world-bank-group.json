@@ -1,0 +1,126 @@
+{
+  "id": "io-world-bank-group",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 7,
+  "title": "World Bank Group — Five Institutions, Not One",
+  "shortDescription": "IBRD, IDA, IFC, MIGA, ICSID — what each one actually does, and how they fit together as the 'World Bank Group'.",
+  "genZNote": "‘World Bank gives loans’ is the shallow answer — it's actually five different institutions doing five different jobs.",
+  "sections": [
+    {
+      "id": "origin",
+      "heading": "Origin and Purpose",
+      "body": "Like the IMF, the World Bank traces to the Bretton Woods Conference of July 1944. It started as a single institution — the IBRD — created to help finance the reconstruction of Europe after WWII, then shifted focus toward development financing for poorer countries as Europe recovered. Over time, four more institutions were added, together forming what is now called the 'World Bank Group'. Headquarters: Washington, D.C."
+    },
+    {
+      "id": "five-institutions",
+      "heading": "The Five Institutions",
+      "table": {
+        "columnHeaders": [
+          "What it does",
+          "Established"
+        ],
+        "rows": [
+          [
+            "IBRD — International Bank for Reconstruction and Development",
+            "Lends to middle-income and creditworthy low-income governments at near-market rates.",
+            "1944"
+          ],
+          [
+            "IDA — International Development Association",
+            "Gives interest-free/very-low-interest loans and grants to the world's poorest countries.",
+            "1960"
+          ],
+          [
+            "IFC — International Finance Corporation",
+            "Invests in and lends to PRIVATE-sector companies in developing countries — the Group's private-sector arm.",
+            "1956"
+          ],
+          [
+            "MIGA — Multilateral Investment Guarantee Agency",
+            "Provides political-risk insurance/guarantees to encourage foreign direct investment into developing countries.",
+            "1988"
+          ],
+          [
+            "ICSID — International Centre for Settlement of Investment Disputes",
+            "Provides facilities for arbitration/conciliation of investment disputes between governments and foreign investors.",
+            "1966"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "what-people-mean",
+      "heading": "What 'The World Bank' Usually Means",
+      "body": "In everyday and exam usage, 'the World Bank' usually refers to IBRD + IDA together — the two institutions that lend directly to GOVERNMENTS for development. IFC, MIGA, and ICSID serve more specialized functions (private-sector investment, investment insurance, and dispute arbitration respectively) and are less often what a general question is pointing at, but exams do test the distinction directly."
+    },
+    {
+      "id": "india-worldbank",
+      "heading": "World Bank and India",
+      "bullets": [
+        "India is a founding member of the World Bank (1944) and has historically been one of IDA's largest borrowers, later 'graduating' toward IBRD-level and blend financing as its economy grew.",
+        "The World Bank has financed major Indian infrastructure, health, and rural-development programmes over decades.",
+        "IFC has been active in India's private sector, including renewable energy and financial-inclusion investments."
+      ]
+    },
+    {
+      "id": "current-leadership",
+      "heading": "Current Leadership (verified)",
+      "body": "Ajay Banga (born in India, US citizen) has been President of the World Bank Group since June 2023 — by the informal Bretton Woods convention, the World Bank President is traditionally American (a US nominee), while the IMF Managing Director is traditionally European."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The World Bank Group is five Bretton Woods-linked institutions (IBRD, IDA, IFC, MIGA, ICSID) that together finance development, private investment, political-risk insurance, and investment-dispute arbitration.",
+    "keyFacts": [
+      "Traces to Bretton Woods, July 1944 (with IMF). HQ: Washington, D.C.",
+      "'The World Bank' in common usage = IBRD + IDA (government lending).",
+      "IFC = private sector; MIGA = investment-risk insurance; ICSID = investment-dispute arbitration.",
+      "Current President: Ajay Banga, since June 2023 (traditionally an American nominee)."
+    ],
+    "keyTerms": [
+      "IBRD",
+      "IDA",
+      "IFC",
+      "MIGA",
+      "ICSID"
+    ],
+    "commonConfusion": [
+      "'World Bank' and 'World Bank Group' are often used loosely as synonyms, but strictly the 'Group' is all five institutions together, while 'World Bank' proper is just IBRD + IDA."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Five World Bank Group institutions: IBRD (1944), IFC (1956), IDA (1960), ICSID (1966), MIGA (1988).",
+      "IDA lends to the poorest countries on near-zero-interest terms; IBRD lends to middle-income/creditworthy countries at near-market rates.",
+      "World Bank President traditionally American; IMF Managing Director traditionally European."
+    ],
+    "commonTraps": [
+      "Do not say IFC lends to governments — it invests in and lends to PRIVATE companies, unlike IBRD/IDA.",
+      "Do not confuse ICSID (investment dispute arbitration) with the WTO's Dispute Settlement Body (trade disputes between states) — different subject matter entirely."
+    ],
+    "mustRemember": [
+      "IBRD + IDA = what most people mean by 'the World Bank'.",
+      "IMF vs World Bank: IMF = short-term monetary stability; World Bank = long-term development financing."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "IFC",
+        "termB": "MIGA",
+        "distinction": "IFC directly invests in/lends to private companies in developing countries; MIGA instead insures foreign investors against political risk — it doesn't lend or invest directly."
+      }
+    ],
+    "possibleQuestions": [
+      "Which World Bank Group institution provides interest-free loans to the poorest countries?",
+      "Which institution handles arbitration of investor-state disputes within the World Bank Group?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "World Bank Group — About Us (worldbank.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "ICSID — About ICSID (icsid.worldbank.org)",
+      "kind": "educational"
+    }
+  ]
+}

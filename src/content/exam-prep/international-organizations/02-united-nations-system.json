@@ -1,0 +1,161 @@
+{
+  "id": "io-united-nations-system",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 2,
+  "title": "The United Nations — Origin, Charter, and the Six Principal Organs",
+  "shortDescription": "Why the UN exists, what the Charter set up, and how the six principal organs actually divide the work.",
+  "genZNote": "One founding document, six organs, one job: stop 1945 from happening again.",
+  "sections": [
+    {
+      "id": "origin",
+      "heading": "Origin and Historical Background",
+      "body": "The United Nations was created in the aftermath of the Second World War to prevent another global conflict — a direct successor to the League of Nations, which had failed to stop that war. The name 'United Nations' was first used in the Declaration by United Nations (1 January 1942), when 26 states fighting the Axis powers pledged to continue fighting together.\n\nThe UN Charter was drafted at the San Francisco Conference (April–June 1945) and signed on 26 June 1945 by 50 founding countries (Poland signed later, becoming the 51st). It entered into force on 24 October 1945, once ratified by the five permanent Security Council members and a majority of other signatories — 24 October is celebrated worldwide as United Nations Day."
+    },
+    {
+      "id": "charter-purposes",
+      "heading": "The UN Charter — Purposes and Principles",
+      "bullets": [
+        "Maintain international peace and security.",
+        "Develop friendly relations among nations based on equal rights and self-determination.",
+        "Achieve international cooperation in solving economic, social, cultural and humanitarian problems, and promote human rights.",
+        "Be a centre for harmonizing the actions of nations in attaining these common ends.",
+        "Key principle: sovereign equality of all member states, and non-interference in the domestic affairs of states (Article 2)."
+      ]
+    },
+    {
+      "id": "basics",
+      "heading": "Headquarters, Membership, Languages",
+      "bullets": [
+        "Headquarters: New York City, USA (on international territory); other major UN offices are in Geneva, Vienna, and Nairobi.",
+        "Membership: 193 member states — open to all 'peace-loving states' that accept Charter obligations. South Sudan (2011) is the most recent member to join.",
+        "Six official languages: Arabic, Chinese, English, French, Russian, Spanish. English and French are the two working languages of the Secretariat."
+      ]
+    },
+    {
+      "id": "six-organs",
+      "heading": "The Six Principal Organs",
+      "table": {
+        "columnHeaders": [
+          "What it actually does"
+        ],
+        "rows": [
+          [
+            "General Assembly (GA)",
+            "The main deliberative body — all 193 members, one vote each. Debates and recommends on any matter within the Charter's scope; approves the UN budget; elects non-permanent Security Council members."
+          ],
+          [
+            "Security Council (UNSC)",
+            "Primary responsibility for international peace and security. 15 members — 5 permanent (with veto) + 10 non-permanent (2-year elected terms). Only UNSC decisions are binding on all member states."
+          ],
+          [
+            "Economic and Social Council (ECOSOC)",
+            "Coordinates the UN's economic, social and related work, including many specialized agencies and functional commissions. 54 members elected by the GA for 3-year terms."
+          ],
+          [
+            "International Court of Justice (ICJ)",
+            "The UN's principal judicial organ, seated at The Hague, Netherlands (the only principal organ not based in New York). Settles legal disputes between states and gives advisory opinions."
+          ],
+          [
+            "Secretariat",
+            "The UN's administrative/executive arm, headed by the Secretary-General, carrying out the day-to-day work mandated by the other organs."
+          ],
+          [
+            "Trusteeship Council",
+            "Originally supervised trust territories moving toward self-government/independence. Suspended operations in 1994 once the last trust territory (Palau) became independent — it still formally exists but no longer meets routinely."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "security-council-detail",
+      "heading": "Security Council — Structure and Veto",
+      "bullets": [
+        "5 permanent members (the 'P5'): United States, United Kingdom, France, Russia, China — each holds veto power over substantive resolutions.",
+        "10 non-permanent members elected by the General Assembly for 2-year terms, with regional-seat allocation; 5 are elected each year and cannot be immediately re-elected.",
+        "A 'procedural' vote needs 9 of 15 votes; a 'substantive' vote also needs 9 of 15, but any single P5 'No' vote blocks it (the veto) — a P5 abstention does NOT block a resolution.",
+        "India has been a long-standing candidate for permanent UNSC membership (via the G4 grouping with Brazil, Germany, Japan) but UNSC reform/expansion has not yet been agreed."
+      ]
+    },
+    {
+      "id": "secretary-general",
+      "heading": "The Secretary-General",
+      "body": "The Secretary-General is the UN's chief administrative officer, appointed by the General Assembly on the Security Council's recommendation, for a renewable 5-year term. The post is often described as 'equal parts diplomat and advocate, civil servant and CEO'. António Guterres of Portugal has served as Secretary-General since 2017 (his second term runs through 31 December 2026); the process to select his successor is normally decided by the General Assembly the year before the term ends — a name to watch, not memorise as fixed, since this changes."
+    },
+    {
+      "id": "peacekeeping-sdgs",
+      "heading": "Peacekeeping, Development, and the SDGs",
+      "bullets": [
+        "UN peacekeeping is not explicitly named in the Charter — it's often called a 'Chapter VI½' activity, between peaceful dispute settlement (Chapter VI) and enforcement action (Chapter VII).",
+        "Peacekeepers are informally called 'Blue Helmets'; troops and police are contributed voluntarily by member states, with India historically among the largest troop-contributing countries.",
+        "The Sustainable Development Goals (17 goals, adopted 2015, target year 2030) replaced the earlier Millennium Development Goals (2000–2015) as the UN's global development framework."
+      ]
+    },
+    {
+      "id": "india-and-un",
+      "heading": "India and the UN",
+      "bullets": [
+        "India is a founding member of the UN (1945), having signed the Charter even before independence.",
+        "India has consistently been among the largest contributors of troops and police to UN peacekeeping operations since the 1950s.",
+        "India has served multiple terms as a non-permanent Security Council member and continues to seek permanent membership through UNSC reform."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The UN is the post-WWII intergovernmental organization (Charter signed 26 June 1945, in force 24 October 1945) built around six principal organs to maintain peace, promote cooperation, and protect human rights.",
+    "keyFacts": [
+      "HQ: New York. 193 member states. 6 official languages.",
+      "UN Charter signed 26 June 1945 (San Francisco); in force 24 October 1945 (UN Day).",
+      "UNSC: 5 permanent (veto) + 10 non-permanent (2-year term) members.",
+      "ICJ is the only principal organ seated outside New York — at The Hague.",
+      "Trusteeship Council suspended operations in 1994; formally still exists."
+    ],
+    "keyTerms": [
+      "Charter",
+      "P5 veto",
+      "ECOSOC",
+      "Blue Helmets",
+      "Chapter VI½",
+      "Sustainable Development Goals"
+    ],
+    "commonConfusion": [
+      "A Security Council 'abstention' by a P5 member does NOT block a resolution — only an actual 'No' vote (veto) does.",
+      "Don't confuse 'suspended' with 'abolished' for the Trusteeship Council — it technically still exists as a principal organ."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "UN Charter: signed 26 June 1945, entered into force 24 October 1945 — 51 founding members.",
+      "ICJ is seated at The Hague, not New York — the only principal organ outside UN Headquarters.",
+      "South Sudan (2011) is the most recently admitted UN member state."
+    ],
+    "commonTraps": [
+      "Do not say the UNSC has 15 permanent members — only 5 are permanent; 10 rotate.",
+      "Do not assume the Secretary-General has a fixed, unchangeable identity for exam purposes — always check the current term/date if the question is time-sensitive."
+    ],
+    "mustRemember": [
+      "Six principal organs: GA, UNSC, ECOSOC, ICJ, Secretariat, Trusteeship Council.",
+      "India is a founding member of the UN (1945) and a leading historical troop contributor to peacekeeping."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "UN specialized agency",
+        "termB": "UN programme/fund",
+        "distinction": "A specialized agency (WHO, ILO) is legally independent with its own charter/budget, linked to the UN by agreement. A programme/fund (UNDP, UNICEF) is created directly by a GA resolution and reports to the GA/ECOSOC."
+      }
+    ],
+    "possibleQuestions": [
+      "Which is the only principal organ of the UN not headquartered in New York?",
+      "How many members does the UN Security Council have, and how many are permanent?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Charter of the United Nations (un.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "United Nations — Main Organs (un.org)",
+      "kind": "educational"
+    }
+  ]
+}

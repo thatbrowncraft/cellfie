@@ -1,0 +1,120 @@
+{
+  "id": "io-international-groupings-forums",
+  "subjectId": "international-organizations",
+  "syllabusOrder": 14,
+  "title": "International Groupings & Forums — G7, G20, BRICS, Quad, IBSA, Commonwealth",
+  "shortDescription": "No charters, no permanent HQs, no fixed staff — just summits, rotating chairs, and real influence.",
+  "genZNote": "These aren't organizations with an office — they're recurring group chats between world leaders that occasionally reshape policy.",
+  "sections": [
+    {
+      "id": "g7",
+      "heading": "G7 — Group of Seven",
+      "bullets": [
+        "Members: Canada, France, Germany, Italy, Japan, United Kingdom, United States (+ the European Union participates as a non-enumerated member).",
+        "Originated as the G6 in 1975 (finance-focused meeting after the 1973 oil crisis); became G7 when Canada joined in 1976. Was briefly the G8 with Russia's inclusion (1998–2014); Russia was excluded after its 2014 annexation of Crimea, reverting the group to G7.",
+        "No charter, no permanent secretariat — an informal forum of major advanced economies; the presidency (and host country) rotates annually."
+      ]
+    },
+    {
+      "id": "g20",
+      "heading": "G20 — Group of Twenty",
+      "bullets": [
+        "Established: 1999, initially as a forum for finance ministers/central bank governors after the Asian financial crisis; elevated to a leaders'-level summit from 2008, after the global financial crisis.",
+        "19 countries + the European Union + the African Union (admitted as a permanent member in 2023) — together representing around 85% of global GDP and roughly two-thirds of the world's population.",
+        "No charter, no permanent secretariat — the presidency rotates yearly among members, and that year's host runs the summit and sets the agenda ('troika' support from the previous/next host is informal custom).",
+        "India held the G20 presidency in 2023, hosting the New Delhi Summit — during which the African Union was admitted as a permanent member."
+      ]
+    },
+    {
+      "id": "brics",
+      "heading": "BRICS",
+      "bullets": [
+        "Original members: Brazil, Russia, India, China, South Africa (South Africa added in 2010/2011, converting 'BRIC' to 'BRICS').",
+        "The term 'BRIC' was originally coined by economist Jim O'Neill (Goldman Sachs, 2001) as an investment-outlook label — it started as an economic ACRONYM before it became a real diplomatic grouping.",
+        "Expanded from 2024 to include new members (e.g. Egypt, Ethiopia, Iran, UAE — with membership composition subject to continuing change; verify the current full list close to your exam, since this has kept expanding).",
+        "No charter, no permanent secretariat — an informal grouping, though it has spun off one genuine treaty-based institution: the New Development Bank (NDB), headquartered in Shanghai."
+      ]
+    },
+    {
+      "id": "quad",
+      "heading": "Quad — Quadrilateral Security Dialogue",
+      "bullets": [
+        "Members: India, United States, Japan, Australia.",
+        "Originated informally in 2007 (following the 2004 Indian Ocean tsunami relief coordination), lapsed, then was revived in 2017 amid shared Indo-Pacific strategic interests.",
+        "An informal strategic dialogue — NOT a treaty alliance (unlike NATO) and has no permanent secretariat; meets through leader-level and ministerial summits."
+      ]
+    },
+    {
+      "id": "ibsa",
+      "heading": "IBSA Dialogue Forum",
+      "bullets": [
+        "Members: India, Brazil, South Africa — three large democracies across three different continents (Asia, South America, Africa).",
+        "Established: 2003, as a coordination forum among developing-country democracies on South-South cooperation.",
+        "Distinct from BRICS: IBSA is smaller (3 members, all democracies) and predates BRICS' expanded form; the two groupings overlap in membership (India and South Africa are in both) but are separate forums."
+      ]
+    },
+    {
+      "id": "g77-commonwealth",
+      "heading": "G77 and the Commonwealth",
+      "bullets": [
+        "G77 (Group of 77) — established 1964, the largest intergovernmental grouping of developing countries at the UN (now over 130 members, despite the '77' in the name reflecting its founding member count); coordinates developing-country positions in UN negotiations.",
+        "Commonwealth of Nations — a voluntary association of mostly former British Empire territories, with a genuine Secretariat headquartered in London (Marlborough House); 56 members. Unlike G7/G20/BRICS, it does have a standing Secretariat, making it structurally closer to an 'association' than a pure informal forum."
+      ]
+    },
+    {
+      "id": "classification-recap",
+      "heading": "Why This Whole Category Is Its Own Exam Trap",
+      "body": "Every grouping/forum in this topic lacks a founding treaty and a permanent headquarters-with-staff — that's precisely what makes them groupings/forums rather than organizations, per the classification framework in this subject's first topic. The Commonwealth is the partial exception, since it does maintain a genuine Secretariat, which is why some sources describe it as an 'association' rather than a pure forum."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "G7, G20, BRICS, Quad, and IBSA are informal groupings/forums — no charter, no permanent HQ, rotating chairmanship — distinct from treaty-based international organizations.",
+    "keyFacts": [
+      "G7: 1975/76 origin, 7 members + EU; briefly G8 with Russia (1998–2014).",
+      "G20: leaders'-level since 2008; AU admitted as permanent member in 2023 at India's New Delhi presidency.",
+      "BRICS: Brazil, Russia, India, China, South Africa (since 2010/11); term coined by Jim O'Neill in 2001; expanded further from 2024.",
+      "Quad: India, US, Japan, Australia — revived 2017; not a treaty alliance.",
+      "IBSA: India, Brazil, South Africa — established 2003, distinct from BRICS.",
+      "Commonwealth has a genuine Secretariat (London) unlike G7/G20/BRICS/Quad."
+    ],
+    "keyTerms": [
+      "Rotating presidency",
+      "Troika",
+      "New Development Bank",
+      "South-South cooperation"
+    ],
+    "commonConfusion": [
+      "IBSA and BRICS overlap (India, South Africa are in both) but are separate, differently-founded groupings — don't merge them.",
+      "The Commonwealth has a real Secretariat, unlike G7/G20/BRICS/Quad, which do not."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "India hosted the G20 presidency in 2023 (New Delhi Summit) — the summit where the African Union was admitted as a permanent G20 member.",
+      "'BRIC' was coined by Jim O'Neill (Goldman Sachs) in 2001, before it became an actual diplomatic grouping.",
+      "Quad members: India, US, Japan, Australia — revived in 2017."
+    ],
+    "commonTraps": [
+      "None of G7/G20/BRICS/Quad/IBSA has a founding treaty or permanent secretariat — do not describe any of them as having a 'charter'.",
+      "Russia was part of G8 (1998–2014) but was removed after 2014 — do not list Russia as a current G7 member."
+    ],
+    "mustRemember": [
+      "G20 = 19 countries + EU + AU (since 2023).",
+      "BRICS' one real institutional offspring: the New Development Bank (Shanghai)."
+    ],
+    "possibleQuestions": [
+      "Which organization was admitted as a permanent G20 member in 2023, and at which summit?",
+      "Who coined the term 'BRIC', and in what context?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "G20 — About the G20 (g20.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "Ministry of External Affairs, India — G20 New Delhi Summit 2023 (mea.gov.in)",
+      "kind": "educational"
+    }
+  ]
+}
