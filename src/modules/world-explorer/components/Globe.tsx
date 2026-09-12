@@ -407,7 +407,47 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
             <stop offset="0%" stopColor="#7cbfe6" />
             <stop offset="100%" stopColor="#2c6a90" />
           </radialGradient>
+
+          {/* Lightweight "looks more 3D" pass, Real style only — see the
+              three overlay layers below for how these are used. All
+              three share the same cx/cy (35%,30%) as `globe-sphere` and
+              `globe-ocean` above, so the implied light source has
+              always been up-and-to-the-left in this app; these just make
+              it visible instead of leaving it implicit in the base
+              gradients. Because each is defined relative to the sphere's
+              own `cx`/`cy`/`r` (not fixed page coordinates), they rotate
+              and scale with the globe automatically — there's no extra
+              state to keep in sync, and nothing can make the lighting
+              "slide independently" of the sphere. */}
+          <radialGradient id="globe-specular" cx="32%" cy="26%" r="55%">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity={0.4} />
+            <stop offset="45%" stopColor="#ffffff" stopOpacity={0.12} />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity={0} />
+          </radialGradient>
+          <radialGradient id="globe-vignette" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stopColor="#08130f" stopOpacity={0} />
+            <stop offset="72%" stopColor="#08130f" stopOpacity={0} />
+            <stop offset="100%" stopColor="#08130f" stopOpacity={0.4} />
+          </radialGradient>
+          <radialGradient id="globe-atmosphere" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#9fd3f0" stopOpacity={0} />
+            <stop offset="90%" stopColor="#9fd3f0" stopOpacity={0} />
+            <stop offset="97%" stopColor="#9fd3f0" stopOpacity={0.4} />
+            <stop offset="100%" stopColor="#9fd3f0" stopOpacity={0} />
+          </radialGradient>
         </defs>
+
+        {/* Atmosphere glow — Real style only, drawn BEFORE the sphere so
+            it only ever shows as a thin bright ring just outside the
+            sphere's own edge, never over the geography itself. A pure
+            gradient (no blur filter) — cheap, and avoids the perf/paint
+            cost of a real Gaussian blur on Android. `pointerEvents="none"`
+            throughout this whole enhancement pass so `elementFromPoint`
+            (the country tap hit-test added in the selection fix) always
+            sees straight through to the actual landmass/marker beneath. */}
+        {style === 'real' && (
+          <circle cx={center} cy={center} r={radius * 1.05} fill="url(#globe-atmosphere)" pointerEvents="none" />
+        )}
 
         {/* Sphere body */}
         <circle
@@ -460,6 +500,27 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
               />
             )
           })}
+
+        {/* Curvature/lighting pass, Real style only — two overlays, both
+            purely decorative (`pointerEvents="none"`) and both clipped to
+            the sphere's own circle so they can never bleed outside it or
+            enlarge the apparent globe:
+              1. A soft specular highlight (upper-left, matching the same
+                 light-source position used by every gradient on this
+                 globe) using `mixBlendMode: 'screen'` so it brightens
+                 what's underneath instead of flattening it to white —
+                 country colours and boundaries stay legible through it.
+              2. A gentle vignette darkening the outer ~28% of the disc,
+                 which reads as the sphere curving away from the viewer
+                 near the limb — layered on top of (not instead of) the
+                 existing per-country depth-based fade already computed
+                 in `landmassPaths`' `opacity`, not a replacement for it. */}
+        {style === 'real' && (
+          <>
+            <circle cx={center} cy={center} r={radius} fill="url(#globe-specular)" pointerEvents="none" style={{ mixBlendMode: 'screen' }} />
+            <circle cx={center} cy={center} r={radius} fill="url(#globe-vignette)" pointerEvents="none" />
+          </>
+        )}
 
         {/* Country markers — kept in every style as the guaranteed-reliable tap target (search results and the Real World style's occasional unmatched/edge-of-limb polygon both rely on this still working), just visually subdued once real landmasses are doing the main visual work. */}
         {markers.map(({ country, p }) => {
