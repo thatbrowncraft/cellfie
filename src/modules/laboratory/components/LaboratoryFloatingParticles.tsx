@@ -39,30 +39,37 @@ interface Particle {
 }
 
 const PARTICLES: Particle[] = [
-  { id: 'flask-1', top: '5%', left: '90%', size: 26, colorClassName: 'text-terracotta', opacity: 0.3, duration: 16, delay: 0, motion: 'bob', kind: 'flask', mobileVisible: true },
-  { id: 'tube-1', top: '10%', left: '6%', size: 22, colorClassName: 'text-olive', opacity: 0.3, duration: 14, delay: 0.5, motion: 'sidleSide', kind: 'testTube', mobileVisible: true },
-  { id: 'droplet-1', top: '7%', left: '46%', size: 14, colorClassName: 'text-sage', opacity: 0.34, duration: 12, delay: 0.2, motion: 'driftUp', kind: 'droplet', mobileVisible: true },
-  { id: 'dot-1', top: '16%', left: '30%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 11, delay: 0.8, motion: 'spin', kind: 'dot' },
+  { id: 'flask-1', top: '5%', left: '90%', size: 26, colorClassName: 'text-terracotta', opacity: 0.54, duration: 16, delay: 0, motion: 'bob', kind: 'flask', mobileVisible: true },
+  { id: 'tube-1', top: '10%', left: '6%', size: 22, colorClassName: 'text-olive', opacity: 0.54, duration: 14, delay: 0.5, motion: 'sidleSide', kind: 'testTube', mobileVisible: true },
+  { id: 'droplet-1', top: '7%', left: '46%', size: 14, colorClassName: 'text-sage', opacity: 0.58, duration: 12, delay: 0.2, motion: 'driftUp', kind: 'droplet', mobileVisible: true },
+  { id: 'dot-1', top: '16%', left: '30%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.6, duration: 11, delay: 0.8, motion: 'spin', kind: 'dot', mobileVisible: true },
+  { id: 'beaker-1a', top: '3%', left: '68%', size: 22, colorClassName: 'text-sage', opacity: 0.52, duration: 15, delay: 0.3, motion: 'driftDown', kind: 'beaker', mobileVisible: true },
 
-  { id: 'petri-1', top: '22%', left: '94%', size: 24, colorClassName: 'text-olive', opacity: 0.3, duration: 18, delay: 1.0, motion: 'driftDown', kind: 'petriDish', mobileVisible: true },
-  { id: 'beaker-1', top: '28%', left: '4%', size: 24, colorClassName: 'text-sage', opacity: 0.3, duration: 15, delay: 0.3, motion: 'bob', kind: 'beaker' },
-  { id: 'molecule-1', top: '20%', left: '66%', size: 24, colorClassName: 'text-terracotta', opacity: 0.28, duration: 19, delay: 1.4, motion: 'spin', kind: 'molecule', mobileVisible: true },
-  { id: 'pipette-1', top: '32%', left: '54%', size: 22, colorClassName: 'text-ink-tertiary', opacity: 0.26, duration: 17, delay: 0.6, motion: 'sidleSide', kind: 'pipette' },
+  { id: 'petri-1', top: '22%', left: '94%', size: 24, colorClassName: 'text-olive', opacity: 0.54, duration: 18, delay: 1.0, motion: 'driftDown', kind: 'petriDish', mobileVisible: true },
+  { id: 'beaker-1', top: '28%', left: '4%', size: 24, colorClassName: 'text-sage', opacity: 0.54, duration: 15, delay: 0.3, motion: 'bob', kind: 'beaker', mobileVisible: true },
+  { id: 'molecule-1', top: '20%', left: '66%', size: 24, colorClassName: 'text-terracotta', opacity: 0.5, duration: 19, delay: 1.4, motion: 'spin', kind: 'molecule', mobileVisible: true },
+  { id: 'pipette-1', top: '32%', left: '54%', size: 22, colorClassName: 'text-ink-tertiary', opacity: 0.5, duration: 17, delay: 0.6, motion: 'sidleSide', kind: 'pipette', mobileVisible: true },
+  { id: 'droplet-1b', top: '24%', left: '20%', size: 12, colorClassName: 'text-sage', opacity: 0.58, duration: 13, delay: 1.6, motion: 'driftUp', kind: 'droplet', mobileVisible: true },
 
-  { id: 'tube-2', top: '44%', left: '92%', size: 22, colorClassName: 'text-terracotta', opacity: 0.3, duration: 15, delay: 0.9, motion: 'driftUp', kind: 'testTube' },
-  { id: 'flask-2', top: '48%', left: '10%', size: 26, colorClassName: 'text-olive', opacity: 0.3, duration: 18, delay: 0.4, motion: 'bob', kind: 'flask', mobileVisible: true },
-  { id: 'droplet-2', top: '40%', left: '38%', size: 14, colorClassName: 'text-sage', opacity: 0.34, duration: 13, delay: 1.2, motion: 'driftDown', kind: 'droplet' },
-  { id: 'dot-2', top: '52%', left: '76%', size: 7, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 12, delay: 0.1, motion: 'sidleSide', kind: 'dot', mobileVisible: true },
+  { id: 'tube-2', top: '44%', left: '92%', size: 22, colorClassName: 'text-terracotta', opacity: 0.54, duration: 15, delay: 0.9, motion: 'driftUp', kind: 'testTube', mobileVisible: true },
+  { id: 'flask-2', top: '48%', left: '10%', size: 26, colorClassName: 'text-olive', opacity: 0.54, duration: 18, delay: 0.4, motion: 'bob', kind: 'flask', mobileVisible: true },
+  { id: 'droplet-2', top: '40%', left: '38%', size: 14, colorClassName: 'text-sage', opacity: 0.58, duration: 13, delay: 1.2, motion: 'driftDown', kind: 'droplet', mobileVisible: true },
+  { id: 'dot-2', top: '52%', left: '76%', size: 7, colorClassName: 'text-ink-tertiary', opacity: 0.6, duration: 12, delay: 0.1, motion: 'sidleSide', kind: 'dot', mobileVisible: true },
+  { id: 'molecule-1b', top: '36%', left: '82%', size: 20, colorClassName: 'text-terracotta', opacity: 0.5, duration: 16, delay: 2.0, motion: 'bob', kind: 'molecule', mobileVisible: true },
 
-  { id: 'petri-2', top: '60%', left: '20%', size: 22, colorClassName: 'text-olive', opacity: 0.3, duration: 16, delay: 0.7, motion: 'spin', kind: 'petriDish' },
-  { id: 'beaker-2', top: '66%', left: '86%', size: 24, colorClassName: 'text-sage', opacity: 0.3, duration: 19, delay: 1.5, motion: 'bob', kind: 'beaker', mobileVisible: true },
-  { id: 'molecule-2', top: '64%', left: '48%', size: 24, colorClassName: 'text-terracotta', opacity: 0.28, duration: 15, delay: 0.5, motion: 'driftUp', kind: 'molecule' },
-  { id: 'pipette-2', top: '72%', left: '6%', size: 22, colorClassName: 'text-ink-tertiary', opacity: 0.26, duration: 17, delay: 0.3, motion: 'sidleSide', kind: 'pipette', mobileVisible: true },
+  { id: 'petri-2', top: '60%', left: '20%', size: 22, colorClassName: 'text-olive', opacity: 0.54, duration: 16, delay: 0.7, motion: 'spin', kind: 'petriDish', mobileVisible: true },
+  { id: 'beaker-2', top: '66%', left: '86%', size: 24, colorClassName: 'text-sage', opacity: 0.54, duration: 19, delay: 1.5, motion: 'bob', kind: 'beaker', mobileVisible: true },
+  { id: 'molecule-2', top: '64%', left: '48%', size: 24, colorClassName: 'text-terracotta', opacity: 0.5, duration: 15, delay: 0.5, motion: 'driftUp', kind: 'molecule', mobileVisible: true },
+  { id: 'pipette-2', top: '72%', left: '6%', size: 22, colorClassName: 'text-ink-tertiary', opacity: 0.5, duration: 17, delay: 0.3, motion: 'sidleSide', kind: 'pipette', mobileVisible: true },
+  { id: 'tube-2b', top: '58%', left: '60%', size: 20, colorClassName: 'text-olive', opacity: 0.52, duration: 14, delay: 1.9, motion: 'driftDown', kind: 'testTube', mobileVisible: true },
 
-  { id: 'tube-3', top: '82%', left: '58%', size: 22, colorClassName: 'text-olive', opacity: 0.3, duration: 20, delay: 1.6, motion: 'driftDown', kind: 'testTube' },
-  { id: 'flask-3', top: '88%', left: '92%', size: 24, colorClassName: 'text-terracotta', opacity: 0.3, duration: 18, delay: 0.6, motion: 'bob', kind: 'flask', mobileVisible: true },
-  { id: 'dot-3', top: '92%', left: '14%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 12, delay: 1.1, motion: 'spin', kind: 'dot' },
-  { id: 'droplet-3', top: '95%', left: '38%', size: 14, colorClassName: 'text-sage', opacity: 0.34, duration: 14, delay: 0.2, motion: 'sidleSide', kind: 'droplet', mobileVisible: true }
+  { id: 'tube-3', top: '82%', left: '58%', size: 22, colorClassName: 'text-olive', opacity: 0.54, duration: 20, delay: 1.6, motion: 'driftDown', kind: 'testTube', mobileVisible: true },
+  { id: 'flask-3', top: '88%', left: '92%', size: 24, colorClassName: 'text-terracotta', opacity: 0.54, duration: 18, delay: 0.6, motion: 'bob', kind: 'flask', mobileVisible: true },
+  { id: 'dot-3', top: '92%', left: '14%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.6, duration: 12, delay: 1.1, motion: 'spin', kind: 'dot', mobileVisible: true },
+  { id: 'droplet-3', top: '95%', left: '38%', size: 14, colorClassName: 'text-sage', opacity: 0.58, duration: 14, delay: 0.2, motion: 'sidleSide', kind: 'droplet', mobileVisible: true },
+  { id: 'petri-3', top: '78%', left: '30%', size: 20, colorClassName: 'text-olive', opacity: 0.52, duration: 17, delay: 2.2, motion: 'bob', kind: 'petriDish', mobileVisible: true },
+  { id: 'beaker-3', top: '86%', left: '4%', size: 20, colorClassName: 'text-sage', opacity: 0.52, duration: 15, delay: 0.9, motion: 'driftUp', kind: 'beaker', mobileVisible: true },
+  { id: 'pipette-3', top: '46%', left: '68%', size: 18, colorClassName: 'text-ink-tertiary', opacity: 0.5, duration: 16, delay: 2.5, motion: 'sidleSide', kind: 'pipette', mobileVisible: true }
 ]
 
 const ANIMATION_NAME: Record<Motion, string> = {
