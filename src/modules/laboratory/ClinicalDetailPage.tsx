@@ -204,7 +204,9 @@ export function ClinicalDetailPage() {
           <h2 className="font-display text-h3 font-medium text-ink-primary">Sources</h2>
           <div>
             <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-              <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Cellfie Reference</p>
+              {item.references.length > 0 && (
+                <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Cellfie Reference</p>
+              )}
               {isSaved ? (
                 <span className="flex items-center gap-1.5 font-ui text-micro font-medium text-olive">
                   <BookmarkSimple size={14} weight="fill" aria-hidden />
@@ -219,15 +221,17 @@ export function ClinicalDetailPage() {
                 </Button>
               )}
             </div>
-            <ul className="space-y-1 font-body text-caption text-ink-secondary">
-              {item.references.map((r, i) => (
-                <li key={i}>
-                  {r.label}
-                  {r.publisher ? ` — ${r.publisher}` : ''}
-                  {r.edition ? ` (${r.edition})` : ''}
-                </li>
-              ))}
-            </ul>
+            {item.references.length > 0 && (
+              <ul className="space-y-1 font-body text-caption text-ink-secondary">
+                {item.references.map((r, i) => (
+                  <li key={i}>
+                    {r.label}
+                    {r.publisher ? ` — ${r.publisher}` : ''}
+                    {r.edition ? ` (${r.edition})` : ''}
+                  </li>
+                ))}
+              </ul>
+            )}
             <p className="mt-2 font-ui text-micro text-ink-tertiary">
               Source type: {item.sourceType.replace(/-/g, ' ')} · Version {item.version} · Last verified {item.lastVerified}
             </p>
