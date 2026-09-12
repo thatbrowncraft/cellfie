@@ -78,6 +78,14 @@ const CountryDetailPage = lazy(() =>
 const WorldExplorerTopicPage = lazy(() =>
   import('../modules/world-explorer/WorldExplorerTopicPage').then((m) => ({ default: m.WorldExplorerTopicPage }))
 )
+const MaritimeWorldPage = lazy(() =>
+  import('../modules/world-explorer/maritime/MaritimeWorldPage').then((m) => ({ default: m.MaritimeWorldPage }))
+)
+const MaritimeEntityDetailPage = lazy(() =>
+  import('../modules/world-explorer/maritime/MaritimeEntityDetailPage').then((m) => ({
+    default: m.MaritimeEntityDetailPage
+  }))
+)
 const ComparisonStudioPage = lazy(() =>
   import('../modules/comparison-studio/ComparisonStudioPage').then((m) => ({ default: m.ComparisonStudioPage }))
 )
@@ -148,6 +156,12 @@ export function AppRouter() {
           {/* Static "topic" segment, same reasoning as "world-explorer" above — declared
               before the dynamic :countryId route for readability, not correctness. */}
           <Route path="/exam-prep/world-explorer/topic/:topicId" element={<WorldExplorerTopicPage />} />
+          {/* Static "maritime" segment, same reasoning as "world-explorer"/"topic" above.
+              Its own :category/:entityId child route is two path segments deep, so it
+              can never collide with the single-segment :countryId route below regardless
+              of declaration order — listed first here purely for readability. */}
+          <Route path="/exam-prep/world-explorer/maritime" element={<MaritimeWorldPage />} />
+          <Route path="/exam-prep/world-explorer/maritime/:category/:entityId" element={<MaritimeEntityDetailPage />} />
           <Route path="/exam-prep/world-explorer/:countryId" element={<CountryDetailPage />} />
           <Route path="/exam-prep/:subjectId" element={<ExamPrepSubjectPage />} />
           <Route path="/exam-prep/:subjectId/:topicId" element={<ExamPrepTopicPage />} />
