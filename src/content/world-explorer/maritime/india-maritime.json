@@ -1,0 +1,79 @@
+{
+  "id": "india-maritime",
+  "category": "india-maritime",
+  "name": "India & the Oceans",
+  "genZNote": "India has a 7,500+ km coastline touching two seas and one ocean at once — most of the country's oil, trade and even its islands all trace back to that one geographic fact.",
+  "sections": [
+    {
+      "id": "coastline-and-position",
+      "heading": "🇮🇳 India's Coastline & Position",
+      "bullets": [
+        "India has a coastline of roughly 7,500 km, touching the Arabian Sea to the west, the Bay of Bengal to the east, and opening south into the wider Indian Ocean.",
+        "Coastal states/UTs include Gujarat, Maharashtra, Goa, Karnataka, Kerala, Tamil Nadu, Andhra Pradesh, Odisha, West Bengal, and the union territories of Daman & Diu, Puducherry, Lakshadweep, and Andaman & Nicobar Islands.",
+        "India's peninsular shape gives it a central position within the Indian Ocean, which is a major reason the ocean carries India's name."
+      ]
+    },
+    {
+      "id": "ports-and-islands",
+      "heading": "⚓ Major Ports & Islands",
+      "bullets": [
+        "Key west-coast ports: Mumbai (JNPT), Mundra, Kandla, Kochi. Key east-coast ports: Chennai, Visakhapatnam, Kolkata/Haldia, Paradip.",
+        "Lakshadweep — a coral atoll island group in the Arabian Sea — is important for marine biodiversity and tourism.",
+        "The Andaman & Nicobar Islands, in the Bay of Bengal near the Strait of Malacca approach, give India a strategic vantage point over one of the world's busiest shipping lanes."
+      ]
+    },
+    {
+      "id": "trade-and-neighbours",
+      "heading": "🚢 Trade & Maritime Neighbours",
+      "bullets": [
+        "The large majority of India's international trade by volume moves by sea, through both the Arabian Sea (Gulf energy imports, Africa, Europe via Suez) and the Bay of Bengal (Southeast/East Asia trade, see the maritime routes section).",
+        "Close maritime relationships: Sri Lanka and the Maldives (Indian Ocean island neighbours), Bangladesh and Myanmar (Bay of Bengal), Pakistan (Arabian Sea boundary), Gulf countries (Oman, UAE, Saudi Arabia — energy trade), and Indonesia/Thailand/Malaysia (Southeast Asia trade via the Strait of Malacca).",
+        "India-Sri Lanka maritime ties are especially close given the shallow, shared Palk Strait and Gulf of Mannar waters between them."
+      ]
+    },
+    {
+      "id": "fisheries-and-biodiversity",
+      "heading": "🐠 Fisheries & Marine Biodiversity",
+      "bullets": [
+        "India has a large coastal and marine fishing sector supporting millions of livelihoods, particularly along Kerala, Tamil Nadu, Gujarat and West Bengal.",
+        "Notable marine biodiversity zones: the Gulf of Mannar Marine National Park (Tamil Nadu), Lakshadweep's coral reefs, and the Sundarbans mangrove forest shared with Bangladesh.",
+        "India maintains a network of marine protected areas aimed at conserving coral reefs, mangroves and coastal fisheries."
+      ]
+    },
+    {
+      "id": "science-and-blue-economy",
+      "heading": "🔬 Marine Science & the Blue Economy",
+      "bullets": [
+        "Key Indian institutions working on ocean science include the Ministry of Earth Sciences, the National Institute of Oceanography (NIO), and the Indian National Centre for Ocean Information Services (INCOIS), which provides ocean forecasts and tsunami/cyclone warnings.",
+        "India also operates seasonal research stations in Antarctica as part of its polar/Southern Ocean scientific programme, run under the Ministry of Earth Sciences.",
+        "'Blue economy' refers to the sustainable use of ocean resources for growth — covering maritime trade, fisheries, marine tourism, offshore energy and marine biotechnology — and has become an explicit part of India's economic planning discussions.",
+        "Coastal disaster preparedness (cyclone warning systems, tsunami early-warning networks) is an important applied outcome of India's ocean science investment, especially for the cyclone-prone Bay of Bengal coast."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "India has a roughly 7,500 km coastline on the Arabian Sea and Bay of Bengal, sits centrally within the Indian Ocean, and depends on sea trade for the bulk of its imports and exports.",
+    "keyFacts": [
+      "~7,500 km coastline; borders Arabian Sea (west) and Bay of Bengal (east).",
+      "Key ports: JNPT, Mundra, Kandla (west); Chennai, Visakhapatnam, Kolkata (east).",
+      "Lakshadweep (Arabian Sea) and Andaman & Nicobar (Bay of Bengal) are its major island territories.",
+      "INCOIS provides India's ocean/cyclone/tsunami forecasting."
+    ],
+    "keyTerms": ["INCOIS", "National Institute of Oceanography", "Blue economy", "Andaman & Nicobar Islands"],
+    "commonConfusion": ["Lakshadweep sits in the Arabian Sea (west); Andaman & Nicobar sits in the Bay of Bengal (east) — don't swap them."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "India's coastline ≈ 7,500 km, spans Arabian Sea + Bay of Bengal.",
+      "INCOIS = India's ocean forecasting/tsunami-cyclone warning agency.",
+      "Andaman & Nicobar Islands sit near the Strait of Malacca's western approach — strategic significance."
+    ],
+    "commonTraps": ["Don't confuse the Ministry of Earth Sciences' ocean/Antarctic research role with the Ministry of External Affairs' diplomatic role in maritime relations — they're separate functions."],
+    "mustRemember": ["India = ~7,500 km coastline, two seas, central Indian Ocean position, sea-borne majority of trade."]
+  },
+  "sources": [
+    { "name": "Ministry of Earth Sciences, Government of India", "kind": "scientific", "url": "https://moes.gov.in/" },
+    { "name": "Ministry of Ports, Shipping and Waterways, Government of India", "kind": "educational" },
+    { "name": "Indian National Centre for Ocean Information Services (INCOIS)", "kind": "scientific", "url": "https://incois.gov.in/" }
+  ]
+}

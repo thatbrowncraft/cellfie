@@ -1,0 +1,167 @@
+[
+  {
+    "id": "jnpt-mumbai",
+    "name": "Jawaharlal Nehru Port (JNPT)",
+    "country": "India",
+    "location": "Navi Mumbai, Maharashtra",
+    "nearbyWater": "Arabian Sea",
+    "mainFunction": "India's largest container port",
+    "commodities": ["containers", "machinery", "textiles", "chemicals"],
+    "regionalImportance": "India's principal container gateway on the west coast",
+    "routeConnection": "India-Gulf and India-Europe (via Suez) routes"
+  },
+  {
+    "id": "mundra-port",
+    "name": "Mundra Port",
+    "country": "India",
+    "location": "Kutch, Gujarat",
+    "nearbyWater": "Arabian Sea (Gulf of Kutch)",
+    "mainFunction": "Largest private port in India; container and bulk cargo",
+    "commodities": ["containers", "crude oil", "coal", "agricultural products"],
+    "regionalImportance": "Gujarat's principal deep-water commercial port",
+    "routeConnection": "India-Gulf route"
+  },
+  {
+    "id": "kandla-deendayal-port",
+    "name": "Deendayal Port (Kandla)",
+    "country": "India",
+    "location": "Kutch, Gujarat",
+    "nearbyWater": "Arabian Sea (Gulf of Kutch)",
+    "mainFunction": "Major bulk cargo port",
+    "commodities": ["salt", "petroleum products", "food grains", "fertilisers"],
+    "regionalImportance": "One of India's oldest major ports, key for Gujarat's trade",
+    "routeConnection": "India-Gulf route"
+  },
+  {
+    "id": "kochi-port",
+    "name": "Kochi Port",
+    "country": "India",
+    "location": "Kochi, Kerala",
+    "nearbyWater": "Arabian Sea",
+    "mainFunction": "Container and passenger port",
+    "commodities": ["containers", "spices", "seafood exports"],
+    "regionalImportance": "Kerala's main port, historic spice-trade hub",
+    "routeConnection": "India-Gulf and India-Southeast Asia routes"
+  },
+  {
+    "id": "chennai-port",
+    "name": "Chennai Port",
+    "country": "India",
+    "location": "Chennai, Tamil Nadu",
+    "nearbyWater": "Bay of Bengal",
+    "mainFunction": "Major container and automobile export port",
+    "commodities": ["containers", "vehicles", "petroleum products"],
+    "regionalImportance": "Tamil Nadu's principal port, major auto-export hub",
+    "routeConnection": "India-Southeast Asia route"
+  },
+  {
+    "id": "vizag-port",
+    "name": "Visakhapatnam Port",
+    "country": "India",
+    "location": "Visakhapatnam, Andhra Pradesh",
+    "nearbyWater": "Bay of Bengal",
+    "mainFunction": "Major bulk cargo port",
+    "commodities": ["iron ore", "coal", "petroleum products"],
+    "regionalImportance": "One of India's oldest and deepest east-coast ports",
+    "routeConnection": "India-Southeast Asia route"
+  },
+  {
+    "id": "kolkata-haldia-port",
+    "name": "Kolkata (Syama Prasad Mookerjee) Port & Haldia",
+    "country": "India",
+    "location": "Kolkata/Haldia, West Bengal",
+    "nearbyWater": "Bay of Bengal (via the Hooghly river)",
+    "mainFunction": "River port serving eastern India",
+    "commodities": ["containers", "iron ore", "fertilisers"],
+    "regionalImportance": "Gateway for eastern India, Nepal, and Bhutan's sea trade",
+    "routeConnection": "India-Southeast Asia route"
+  },
+  {
+    "id": "paradip-port",
+    "name": "Paradip Port",
+    "country": "India",
+    "location": "Odisha",
+    "nearbyWater": "Bay of Bengal",
+    "mainFunction": "Major bulk cargo port",
+    "commodities": ["iron ore", "coal", "petroleum products"],
+    "regionalImportance": "Key port for Odisha's mineral exports",
+    "routeConnection": "India-Southeast Asia route"
+  },
+  {
+    "id": "port-of-singapore",
+    "name": "Port of Singapore",
+    "country": "Singapore",
+    "location": "Singapore",
+    "nearbyWater": "Strait of Malacca / South China Sea",
+    "mainFunction": "World's leading transshipment hub",
+    "commodities": ["containers", "petroleum products", "electronics"],
+    "regionalImportance": "Sits at the mouth of the Strait of Malacca, one of the world's busiest ports",
+    "routeConnection": "India-Southeast Asia route; global East-West trade"
+  },
+  {
+    "id": "port-of-rotterdam",
+    "name": "Port of Rotterdam",
+    "country": "Netherlands",
+    "location": "Rotterdam, Netherlands",
+    "nearbyWater": "North Sea",
+    "mainFunction": "Europe's largest port",
+    "commodities": ["containers", "crude oil", "chemicals"],
+    "regionalImportance": "Main entry point for goods into continental Europe",
+    "routeConnection": "Suez/Europe-Asia route"
+  },
+  {
+    "id": "port-of-jeddah",
+    "name": "Jeddah Islamic Port",
+    "country": "Saudi Arabia",
+    "location": "Jeddah, Saudi Arabia",
+    "nearbyWater": "Red Sea",
+    "mainFunction": "Saudi Arabia's principal Red Sea port",
+    "commodities": ["containers", "petroleum products", "food imports"],
+    "regionalImportance": "Major Red Sea trade and pilgrimage-logistics hub",
+    "routeConnection": "Suez/Europe-Asia route"
+  },
+  {
+    "id": "port-said",
+    "name": "Port Said",
+    "country": "Egypt",
+    "location": "Port Said, Egypt",
+    "nearbyWater": "Mediterranean Sea (Suez Canal's northern end)",
+    "mainFunction": "Container transshipment hub at the Suez Canal's Mediterranean entrance",
+    "commodities": ["containers", "petroleum products"],
+    "regionalImportance": "Gateway port for Suez Canal traffic",
+    "routeConnection": "Suez/Europe-Asia route"
+  },
+  {
+    "id": "shanghai-port",
+    "name": "Port of Shanghai",
+    "country": "China",
+    "location": "Shanghai, China",
+    "nearbyWater": "East China Sea",
+    "mainFunction": "World's busiest container port by volume",
+    "commodities": ["containers", "electronics", "machinery"],
+    "regionalImportance": "China's principal gateway for export manufacturing",
+    "routeConnection": "Trans-Pacific route; India-Southeast Asia/East Asia trade"
+  },
+  {
+    "id": "port-of-los-angeles",
+    "name": "Port of Los Angeles / Long Beach",
+    "country": "United States",
+    "location": "California, United States",
+    "nearbyWater": "Pacific Ocean",
+    "mainFunction": "Busiest port complex in the Americas",
+    "commodities": ["containers", "consumer goods", "machinery"],
+    "regionalImportance": "Primary U.S. entry point for East Asian trade",
+    "routeConnection": "Trans-Pacific route"
+  },
+  {
+    "id": "port-of-colon",
+    "name": "Port of Colon",
+    "country": "Panama",
+    "location": "Colon, Panama",
+    "nearbyWater": "Caribbean Sea (Panama Canal's Atlantic entrance)",
+    "mainFunction": "Major transshipment hub at the Panama Canal's Atlantic end",
+    "commodities": ["containers", "consumer goods"],
+    "regionalImportance": "Key gateway for Atlantic-Pacific canal traffic",
+    "routeConnection": "Panama Canal route"
+  }
+]
