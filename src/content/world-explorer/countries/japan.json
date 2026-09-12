@@ -185,5 +185,13 @@
       "name": "Government of Japan — official portal",
       "kind": "educational"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "pacific-ocean"
+    ],
+    "routes": [
+      "trans-pacific-route"
+    ]
+  }
 }

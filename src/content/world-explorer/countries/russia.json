@@ -169,5 +169,19 @@
       "kind": "educational",
       "url": "https://www.mea.gov.in/"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "arctic-ocean",
+      "pacific-ocean"
+    ],
+    "seas": [
+      "black-sea",
+      "baltic-sea",
+      "caspian-sea"
+    ],
+    "chokepoints": [
+      "bosporus"
+    ]
+  }
 }

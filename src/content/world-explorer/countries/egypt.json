@@ -179,5 +179,17 @@
       "kind": "educational",
       "url": "https://whc.unesco.org/"
     }
-  ]
+  ],
+  "maritime": {
+    "seas": [
+      "red-sea",
+      "mediterranean-sea"
+    ],
+    "chokepoints": [
+      "suez-canal"
+    ],
+    "routes": [
+      "suez-europe-asia-route"
+    ]
+  }
 }

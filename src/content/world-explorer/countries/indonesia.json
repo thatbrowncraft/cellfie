@@ -181,5 +181,22 @@
       "name": "ASEAN Secretariat — official portal",
       "kind": "educational"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "indian-ocean",
+      "pacific-ocean"
+    ],
+    "seas": [
+      "south-china-sea"
+    ],
+    "chokepoints": [
+      "strait-of-malacca",
+      "sunda-strait",
+      "lombok-strait"
+    ],
+    "routes": [
+      "india-southeast-asia-route"
+    ]
+  }
 }

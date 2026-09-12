@@ -167,5 +167,13 @@
       "name": "Government of Qatar — official portal",
       "kind": "educational"
     }
-  ]
+  ],
+  "maritime": {
+    "chokepoints": [
+      "strait-of-hormuz"
+    ],
+    "routes": [
+      "india-gulf-route"
+    ]
+  }
 }

@@ -147,5 +147,17 @@
       "kind": "educational",
       "url": "https://www.mea.gov.in/"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "indian-ocean"
+    ],
+    "seas": [
+      "bay-of-bengal",
+      "arabian-sea"
+    ],
+    "chokepoints": [
+      "palk-strait"
+    ]
+  }
 }

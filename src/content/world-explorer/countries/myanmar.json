@@ -167,5 +167,19 @@
       "name": "United Nations — Myanmar country information",
       "kind": "educational"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "indian-ocean"
+    ],
+    "seas": [
+      "bay-of-bengal"
+    ],
+    "chokepoints": [
+      "strait-of-malacca"
+    ],
+    "routes": [
+      "india-southeast-asia-route"
+    ]
+  }
 }

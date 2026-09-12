@@ -171,5 +171,16 @@
       "name": "ASEAN Secretariat — official portal",
       "kind": "educational"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "pacific-ocean"
+    ],
+    "seas": [
+      "south-china-sea"
+    ],
+    "routes": [
+      "trans-pacific-route"
+    ]
+  }
 }

@@ -148,5 +148,16 @@
       "kind": "educational",
       "url": "https://www.mea.gov.in/"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "indian-ocean"
+    ],
+    "seas": [
+      "bay-of-bengal"
+    ],
+    "routes": [
+      "india-southeast-asia-route"
+    ]
+  }
 }

@@ -167,5 +167,21 @@
       "kind": "educational",
       "url": "https://www.mea.gov.in/"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "atlantic-ocean",
+      "pacific-ocean",
+      "arctic-ocean"
+    ],
+    "seas": [
+      "caribbean-sea"
+    ],
+    "chokepoints": [
+      "panama-canal"
+    ],
+    "routes": [
+      "trans-pacific-route"
+    ]
+  }
 }

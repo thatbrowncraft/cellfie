@@ -177,5 +177,16 @@
       "name": "Government of the Netherlands — official portal",
       "kind": "educational"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "atlantic-ocean"
+    ],
+    "seas": [
+      "north-sea"
+    ],
+    "routes": [
+      "suez-europe-asia-route"
+    ]
+  }
 }

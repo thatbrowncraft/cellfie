@@ -178,5 +178,15 @@
       "kind": "educational",
       "url": "https://www.nato.int/"
     }
-  ]
+  ],
+  "maritime": {
+    "seas": [
+      "black-sea",
+      "mediterranean-sea"
+    ],
+    "chokepoints": [
+      "bosporus",
+      "dardanelles"
+    ]
+  }
 }

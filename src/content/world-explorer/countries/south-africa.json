@@ -180,5 +180,15 @@
       "name": "BRICS — official documentation",
       "kind": "educational"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "atlantic-ocean",
+      "indian-ocean",
+      "southern-ocean"
+    ],
+    "routes": [
+      "cape-of-good-hope-route"
+    ]
+  }
 }

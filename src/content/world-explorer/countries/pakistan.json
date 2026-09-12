@@ -153,5 +153,19 @@
       "name": "NCERT History textbooks (Partition of India, 1947)",
       "kind": "educational"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "indian-ocean"
+    ],
+    "seas": [
+      "arabian-sea"
+    ],
+    "chokepoints": [
+      "strait-of-hormuz"
+    ],
+    "routes": [
+      "india-gulf-route"
+    ]
+  }
 }

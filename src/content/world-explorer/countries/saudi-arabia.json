@@ -178,5 +178,17 @@
       "name": "Kingdom of Saudi Arabia — Vision 2030 official portal",
       "kind": "educational"
     }
-  ]
+  ],
+  "maritime": {
+    "seas": [
+      "red-sea"
+    ],
+    "chokepoints": [
+      "bab-el-mandeb",
+      "suez-canal"
+    ],
+    "routes": [
+      "suez-europe-asia-route"
+    ]
+  }
 }

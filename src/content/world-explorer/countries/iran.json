@@ -178,5 +178,17 @@
       "kind": "educational",
       "url": "https://www.un.org/"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "indian-ocean"
+    ],
+    "seas": [
+      "arabian-sea",
+      "caspian-sea"
+    ],
+    "chokepoints": [
+      "strait-of-hormuz"
+    ]
+  }
 }

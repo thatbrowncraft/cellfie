@@ -163,5 +163,13 @@
       "kind": "educational",
       "url": "https://www.mea.gov.in/"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "indian-ocean"
+    ],
+    "seas": [
+      "arabian-sea"
+    ]
+  }
 }

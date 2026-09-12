@@ -188,5 +188,11 @@
       "name": "NCERT Social Science textbooks (Geography, Political Science)",
       "kind": "educational"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": ["indian-ocean"],
+    "seas": ["arabian-sea", "bay-of-bengal"],
+    "chokepoints": ["strait-of-hormuz", "strait-of-malacca", "palk-strait"],
+    "routes": ["india-gulf-route", "india-southeast-asia-route", "suez-europe-asia-route"]
+  }
 }

@@ -160,5 +160,13 @@
       "kind": "educational",
       "url": "https://www.un.org/"
     }
-  ]
+  ],
+  "maritime": {
+    "chokepoints": [
+      "strait-of-hormuz"
+    ],
+    "routes": [
+      "india-gulf-route"
+    ]
+  }
 }

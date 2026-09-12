@@ -169,5 +169,10 @@
       "kind": "educational",
       "url": "https://www.unep.org/"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "indian-ocean"
+    ]
+  }
 }

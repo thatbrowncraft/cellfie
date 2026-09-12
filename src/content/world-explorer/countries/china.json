@@ -165,5 +165,20 @@
       "kind": "educational",
       "url": "https://www.un.org/securitycouncil/content/current-members"
     }
-  ]
+  ],
+  "maritime": {
+    "oceans": [
+      "pacific-ocean"
+    ],
+    "seas": [
+      "south-china-sea"
+    ],
+    "chokepoints": [
+      "strait-of-malacca"
+    ],
+    "routes": [
+      "trans-pacific-route",
+      "india-southeast-asia-route"
+    ]
+  }
 }
