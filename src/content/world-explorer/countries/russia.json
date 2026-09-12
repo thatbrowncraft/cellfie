@@ -71,6 +71,67 @@
         "Being the world's largest country by area, spanning 11 time zones across Europe and Asia.",
         "Pioneering achievements in space exploration (Sputnik, Gagarin) and a long-standing strategic partnership with India."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Russian Ruble (RUB).",
+        "The world's largest country by land area, spanning eleven time zones, with an economy heavily reliant on oil, natural gas, and mineral exports.",
+        "A major global supplier of energy resources, notably natural gas to European markets."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to Siberia's vast taiga, the world's largest forest biome.",
+        "Lake Baikal is the world's deepest and oldest freshwater lake, holding roughly a fifth of the planet's unfrozen fresh water.",
+        "Significant Arctic territory and permafrost regions are highly sensitive to climate change."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Traces statehood to Kievan Rus' and the later Tsardom and Empire of Russia.",
+        "The 1917 Revolution ended tsarist rule and led to the founding of the Soviet Union.",
+        "The USSR dissolved in 1991, giving rise to the Russian Federation and several other independent states."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1917 Revolution ended monarchy and established Soviet rule.",
+        "1991 dissolution of the USSR created the modern Russian Federation.",
+        "The 1993 Constitution established a semi-presidential system of government."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Roscosmos is one of the pioneering space agencies — launched Sputnik in 1957, the first artificial satellite, and sent Yuri Gagarin as the first human in space in 1961.",
+        "Continues to operate crewed missions to the International Space Station via Soyuz spacecraft."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Strong tradition in classical ballet, centred on the Bolshoi Theatre, and classical literature including Tolstoy and Dostoevsky.",
+        "Hosted the 2014 Sochi Winter Olympics and the 2018 FIFA World Cup.",
+        "Chess has deep cultural roots and a long history of world-champion players."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "A permanent member of the UN Security Council.",
+        "Member of BRICS and the Shanghai Cooperation Organisation (SCO); suspended from the G8 (now G7) in 2014."
+      ]
     }
   ],
   "quickRevision": {
@@ -81,7 +142,11 @@
       "Permanent UN Security Council member; formed in 1991 after the Soviet Union's dissolution.",
       "India-Russia ties: 'Special and Privileged Strategic Partnership'."
     ],
-    "keyTerms": ["Permanent UN Security Council member", "BRICS", "BrahMos"],
+    "keyTerms": [
+      "Permanent UN Security Council member",
+      "BRICS",
+      "BrahMos"
+    ],
     "commonConfusion": [
       "The Soviet Union dissolved in 1991 — Russia (the Russian Federation) is its main successor state, not identical to it."
     ]

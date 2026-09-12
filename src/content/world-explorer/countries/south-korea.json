@@ -76,6 +76,67 @@
         "World-leading semiconductor and electronics industries.",
         "The Korean Demilitarized Zone (DMZ), one of the most heavily fortified borders in the world."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: South Korean Won (KRW).",
+        "A highly advanced, export-driven economy — one of the original 'Four Asian Tigers' — strong in electronics, shipbuilding, and automobiles.",
+        "Home to major global technology firms including Samsung and LG."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "A mountainous peninsula with clearly defined four seasons.",
+        "A notable post-war reforestation success story after widespread deforestation during the Korean War era.",
+        "Growing investment in green technology and renewable energy."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Ancient kingdoms were unified under the Joseon Dynasty, which ruled from 1392 to 1897.",
+        "Endured Japanese colonial rule from 1910 to 1945.",
+        "Divided into North and South Korea after World War II, followed by the Korean War (1950-1953)."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1948 founding of the Republic of Korea.",
+        "Rapid industrialization occurred under authoritarian rule during the 1960s-80s.",
+        "The 1987 democratization movement led to direct presidential elections and the current constitutional framework."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Korea Aerospace Research Institute (KARI) developed the Nuri (KSLV-II), a domestically built space launch vehicle.",
+        "A global leader in semiconductors, electronics, and 5G telecommunications technology."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Taekwondo originated in Korea and is an official Olympic sport.",
+        "Hosted the 1988 Seoul Summer Olympics and the 2018 PyeongChang Winter Olympics.",
+        "K-pop and Korean cinema and television dramas (the 'Hallyu' wave) have major global cultural influence."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN, G20, and OECD.",
+        "Hosts United States Forces Korea under a mutual defence treaty; active in APEC and regional East Asian cooperation."
+      ]
     }
   ],
   "quickRevision": {

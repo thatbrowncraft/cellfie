@@ -75,6 +75,69 @@
         "The Pampas grasslands and being a major global grain/beef exporter.",
         "Patagonia's dramatic glaciers and landscapes."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Argentine Peso (ARS), issued by the Central Bank of Argentina (BCRA).",
+        "Economy centred on agriculture — a major global exporter of soybeans, corn, wheat, and beef.",
+        "Has experienced repeated episodes of high inflation and currency instability over recent decades.",
+        "Wine (notably Malbec) and lithium (part of South America's 'lithium triangle') are growing export sectors."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Spans dramatic ecological extremes: the Pampas grasslands, Patagonian steppe and glaciers, and subtropical wetlands in the north.",
+        "Co-hosts Iguazú Falls with Brazil, one of the world's largest waterfall systems and a UNESCO World Heritage Site.",
+        "Los Glaciares National Park protects the Perito Moreno Glacier, one of the few advancing glaciers in the world."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Colonized by Spain; declared independence in 1816.",
+        "20th century marked by recurring military coups, including the 1976-1983 military dictatorship and its 'Dirty War' of state repression.",
+        "Fought the Falklands/Malvinas War with the United Kingdom in 1982 over the disputed South Atlantic islands.",
+        "Returned to civilian democratic rule in 1983, which has continued since."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1853 Constitution established a federal republic, modelled partly on the US Constitution.",
+        "1994 constitutional reform allowed presidential re-election and granted Buenos Aires city autonomous status.",
+        "Transition from military dictatorship back to democracy in 1983 remains a key modern turning point."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "CONAE (Comisión Nacional de Actividades Espaciales) runs Argentina's satellite programme, including the SAOCOM Earth-observation satellites.",
+        "Strong biotechnology and agri-tech sector, including early adoption of genetically modified crop technology."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is a national passion — three-time FIFA World Cup champions (1978, 1986, 2022), home to Diego Maradona and Lionel Messi.",
+        "Tango originated in Buenos Aires and is recognised by UNESCO as Intangible Cultural Heritage.",
+        "Jorge Luis Borges is one of the most influential writers in Spanish-language literature."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of Mercosur (South American trade bloc) and the Organization of American States (OAS).",
+        "Member of the UN and the G20; not a permanent UN Security Council member."
+      ]
     }
   ],
   "quickRevision": {

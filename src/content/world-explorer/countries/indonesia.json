@@ -77,6 +77,66 @@
         "Ancient Buddhist and Hindu monuments such as Borobudur and Prambanan.",
         "Being a founding member and leading voice of ASEAN."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Indonesian Rupiah (IDR).",
+        "Southeast Asia's largest economy, driven by natural resources (palm oil, coal, nickel), manufacturing, and a large domestic consumer market.",
+        "One of the world's top producers of palm oil and a major nickel exporter, critical to global battery supply chains."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "The world's largest archipelago, comprising more than 17,000 islands.",
+        "Among the most biodiverse countries on Earth, home to orangutans, Komodo dragons, and extensive coral reefs.",
+        "Faces significant deforestation and peatland-conservation challenges alongside growing conservation efforts."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Under Dutch colonial rule for over three centuries as the Dutch East Indies.",
+        "Independence was proclaimed in 1945 and formally recognised by the Netherlands in 1949.",
+        "A founding leader of the Non-Aligned Movement alongside India in the 1950s-60s."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1945 Constitution adopted at independence remains the foundational legal document, with later amendments.",
+        "The 'Reformasi' era after 1998 ended decades of authoritarian rule under President Suharto, introducing direct presidential elections and greater regional autonomy."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "The National Research and Innovation Agency (BRIN, incorporating the former LAPAN) leads satellite and space research.",
+        "One of Southeast Asia's largest and fastest-growing digital-economy and fintech markets."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Badminton is a national strength, with multiple Olympic and World Championship titles.",
+        "Borobudur and Prambanan are UNESCO World Heritage-listed ancient temple complexes.",
+        "Batik textile art is recognised by UNESCO as Intangible Cultural Heritage."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of ASEAN (Association of Southeast Asian Nations).",
+        "Member of the UN, G20, and the Non-Aligned Movement; the world's most populous Muslim-majority country."
+      ]
     }
   ],
   "quickRevision": {

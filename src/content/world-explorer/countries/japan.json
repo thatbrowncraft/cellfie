@@ -80,6 +80,67 @@
         "High life expectancy and one of the world's most rapidly aging populations.",
         "Mount Fuji and a UNESCO-rich cultural heritage."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Japanese Yen (JPY).",
+        "One of the world's largest economies, known for advanced manufacturing in automobiles, electronics, and robotics.",
+        "Leading exports include automobiles, precision machinery, and electronic components."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "A mountainous, seismically active archipelago with distinct four-season ecosystems.",
+        "Frequent earthquakes and typhoons have driven strong disaster-resilience engineering and building practices.",
+        "Successful post-war reforestation restored much of the country's forest cover."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Ruled by imperial dynasties and a system of shoguns for centuries.",
+        "The Meiji Restoration of 1868 rapidly modernized Japan's economy, military, and institutions.",
+        "Defeat in World War II led to a new constitution and a remarkable post-war economic transformation."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1947 Constitution, adopted after World War II, established a parliamentary constitutional monarchy with the Emperor as a symbolic head of state.",
+        "Article 9 of the Constitution renounces war as a sovereign right of the nation.",
+        "Rapid post-war industrial growth is often called the 'Japanese economic miracle'."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Japan Aerospace Exploration Agency (JAXA) is notable for the Hayabusa asteroid-sample-return missions.",
+        "A global leader in robotics, consumer electronics, and precision engineering."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Sumo wrestling is a traditional national sport, alongside strong modern participation in baseball and football.",
+        "Hosted the Summer Olympics in 1964 and 2020, and the Winter Olympics in 1972 and 1998.",
+        "Anime, manga, and traditional arts such as origami and the tea ceremony are globally influential."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN, G7, G20, and APEC.",
+        "A major financial contributor to UN peacekeeping and development funding, though not a permanent UN Security Council member."
+      ]
     }
   ],
   "quickRevision": {

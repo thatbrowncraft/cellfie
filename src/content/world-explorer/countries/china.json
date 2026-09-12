@@ -67,6 +67,67 @@
         "The Great Wall, the Terracotta Army, and being the world's largest manufacturing exporter.",
         "A permanent UN Security Council seat and the world's second-largest economy."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Renminbi, denominated in Yuan (CNY), issued by the People's Bank of China.",
+        "World's second-largest economy by nominal GDP and the largest manufacturing base globally.",
+        "Leading exporter of electronics, machinery, and textiles; a dominant player in global supply chains."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Ecologically diverse, spanning the high-altitude Tibetan Plateau, temperate north, and subtropical south.",
+        "Home to the giant panda, a global conservation icon protected through dedicated reserves.",
+        "Has undertaken large-scale reforestation and renewable-energy investment alongside continuing air- and water-pollution challenges."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "One of the world's oldest continuous civilizations, with a succession of imperial dynasties spanning millennia.",
+        "The Qing dynasty, China's last imperial dynasty, ended in 1912 with the founding of the Republic of China.",
+        "The People's Republic of China was established in 1949 following the Chinese Civil War."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1949 founding of the People's Republic of China under the Communist Party of China.",
+        "1978 economic reforms under Deng Xiaoping opened China to market-oriented growth ('Reform and Opening-up').",
+        "1997 and 1999 handovers returned Hong Kong (from the UK) and Macau (from Portugal) as Special Administrative Regions."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "China National Space Administration (CNSA) operates the Tiangong crewed space station and the Chang'e series of lunar missions.",
+        "A global manufacturing and technology hub, with major strengths in electric vehicles, telecommunications, and renewable-energy equipment."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Traditional strengths in table tennis, badminton, and gymnastics.",
+        "Hosted both the 2008 Beijing Summer Olympics and the 2022 Beijing Winter Olympics — the first city to host both.",
+        "Rich heritage in calligraphy, silk production, and porcelain, with a history spanning thousands of years."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "A permanent member of the UN Security Council.",
+        "Member of the G20 and BRICS; co-founder and leading member of the Shanghai Cooperation Organisation (SCO)."
+      ]
     }
   ],
   "quickRevision": {
@@ -77,7 +138,11 @@
       "Permanent UN Security Council member; member of G20, BRICS, SCO.",
       "23 provinces, 5 autonomous regions, 4 municipalities, 2 special administrative regions (Hong Kong, Macau)."
     ],
-    "keyTerms": ["Communist Party of China (CPC)", "National People's Congress", "Special Administrative Region"],
+    "keyTerms": [
+      "Communist Party of China (CPC)",
+      "National People's Congress",
+      "Special Administrative Region"
+    ],
     "commonConfusion": [
       "Hong Kong and Macau are SPECIAL ADMINISTRATIVE REGIONS of China, not provinces — they retain distinct legal/economic systems."
     ]

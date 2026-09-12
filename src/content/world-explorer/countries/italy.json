@@ -75,6 +75,67 @@
         "World-leading fashion houses and automotive design (Ferrari, Gucci, Prada).",
         "Hosting Vatican City, the world's smallest sovereign state, within Rome."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Euro (EUR).",
+        "A major manufacturing and design economy, with global strengths in automobiles, fashion, and machinery.",
+        "Tourism is a significant economic driver, underpinned by extensive cultural and historical heritage."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "The Alps and Apennine mountain ranges dominate the terrain, alongside a long Mediterranean coastline.",
+        "Home to active volcanoes including Vesuvius and Etna.",
+        "Numerous UNESCO World Heritage Sites combine natural and cultural significance."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Heart of the ancient Roman Empire and later the birthplace of the Renaissance.",
+        "Unified as a single nation-state in 1861 under the Kingdom of Italy (the Risorgimento).",
+        "Became a republic in 1946 after a referendum ended the monarchy following World War II."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1861 unification created the Kingdom of Italy from previously separate states.",
+        "1946 referendum abolished the monarchy and established the Italian Republic.",
+        "The 1948 Constitution created a parliamentary republic with a largely ceremonial President."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Agenzia Spaziale Italiana (ASI) is a major contributor to European Space Agency missions.",
+        "Strengths in automotive engineering (Ferrari, Fiat) and industrial design."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Birthplace of the Renaissance, home to Leonardo da Vinci and Michelangelo.",
+        "A four-time FIFA World Cup champion.",
+        "Home to the Colosseum, Vatican City, and the canals of Venice — among the world's most-visited heritage sites."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the European Union and NATO.",
+        "Member of the G7 and G20; hosts the headquarters of the UN's Food and Agriculture Organization (FAO) in Rome."
+      ]
     }
   ],
   "quickRevision": {

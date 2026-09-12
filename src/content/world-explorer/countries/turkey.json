@@ -75,6 +75,64 @@
         "A long-standing NATO member and EU candidate country.",
         "Its rapidly growing domestic defence drone industry (Bayraktar)."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Turkish Lira (TRY).",
+        "A large economy bridging Europe and Asia, with strengths in manufacturing, textiles, tourism, and agriculture.",
+        "Istanbul serves as a major regional financial and trade hub."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Diverse geography spanning Anatolian plateaus, a long Mediterranean and Aegean coastline, and the volcanic landscapes of Cappadocia.",
+        "Located on major fault lines, making the country highly seismically active."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Successor state to the Ottoman Empire, which ruled for over 600 years across a vast territory.",
+        "The Republic of Turkey was founded in 1923 by Mustafa Kemal Atatürk after the empire's collapse following World War I."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1923 founding of the secular republic under Atatürk's sweeping reforms, including a new legal code and script change.",
+        "A 2017 constitutional referendum shifted the system of government from parliamentary to presidential."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Turkish Space Agency, established in 2018, pursues satellite and lunar-mission ambitions.",
+        "A strong domestic defence-technology industry, notably in drone manufacturing."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is the most popular sport nationwide.",
+        "Istanbul's Hagia Sophia and the ancient city of Ephesus are major UNESCO World Heritage sites.",
+        "Whirling dervishes and Ottoman-era architecture reflect a rich cultural heritage."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of NATO, the UN, G20, and the OECD.",
+        "A long-standing candidate for European Union membership; also a member of the Organisation of Islamic Cooperation."
+      ]
     }
   ],
   "quickRevision": {

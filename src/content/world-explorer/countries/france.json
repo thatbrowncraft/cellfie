@@ -75,6 +75,68 @@
         "Being one of the world's most visited tourist destinations.",
         "A key defence and strategic partner for India (Rafale jets, submarines, nuclear cooperation)."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Euro (EUR), adopted for cash transactions in 2002.",
+        "A major global economy with strengths in aerospace, luxury goods, automobiles, and agriculture.",
+        "The world's most-visited country by international tourist arrivals."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Diverse landscapes spanning the Alps, the Pyrenees, and a long Mediterranean and Atlantic coastline.",
+        "Relies heavily on nuclear power, giving it one of the lowest carbon-intensity electricity grids among major economies.",
+        "Home to several UNESCO biosphere reserves and national parks."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Traces statehood to the medieval Frankish kingdoms and the eventual Kingdom of France.",
+        "The French Revolution of 1789 ended absolute monarchy and reshaped ideas of citizenship and republicanism worldwide.",
+        "Multiple republics have followed since, with the current Fifth Republic established in 1958."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1789 Revolution ended the absolute monarchy of the Ancien Régime.",
+        "1958 Constitution founded the Fifth Republic under President Charles de Gaulle, creating a semi-presidential system.",
+        "A founding member of the European Coal and Steel Community (1951), the direct precursor to the European Union."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Centre National d'Études Spatiales (CNES) is a founding pillar of the European Space Agency.",
+        "The Guiana Space Centre in French Guiana serves as Europe's primary spaceport.",
+        "Strong aerospace-engineering base, home to Airbus's major operations."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Home to the Tour de France and the Cannes Film Festival, both globally significant cultural events.",
+        "Won the FIFA World Cup in 1998 and 2018.",
+        "The Louvre, Eiffel Tower, and Palace of Versailles are among the world's most-visited cultural landmarks."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "A permanent member of the UN Security Council.",
+        "Founding member of the European Union and NATO; member of the G7 and G20."
+      ]
     }
   ],
   "quickRevision": {

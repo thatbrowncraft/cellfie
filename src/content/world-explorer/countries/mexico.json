@@ -75,6 +75,67 @@
         "Being one of the world's largest silver producers.",
         "Deep manufacturing integration with the US and Canada through USMCA."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Mexican Peso (MXN).",
+        "One of the largest economies in Latin America, with strong manufacturing (automotive, electronics) closely tied to trade with the US and Canada under the USMCA agreement.",
+        "A major exporter of vehicles, electronics, and crude oil."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Ranks among the world's most biodiverse countries.",
+        "Hosts UNESCO-protected monarch butterfly overwintering sites in its central highlands.",
+        "Ecosystems range from northern deserts to tropical rainforest in the south."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Home to ancient Mesoamerican civilizations, including the Maya and Aztec.",
+        "Conquered by Spain in the 16th century; achieved independence in 1821 after a decade-long war.",
+        "The Mexican Revolution (1910-1920) reshaped the modern state and its political institutions."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1821 independence from Spain ended three centuries of colonial rule.",
+        "The 1917 Constitution, born from the Mexican Revolution, remains in force and was notably progressive for its era, including labor and land-reform provisions.",
+        "A federal presidential republic."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Agencia Espacial Mexicana (AEM) supports satellite and space-research initiatives.",
+        "A growing aerospace-manufacturing sector supplies global supply chains, particularly for North America."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is the most popular sport nationwide.",
+        "Home to a rich muralist art tradition, including Diego Rivera and Frida Kahlo.",
+        "Chichén Itzá and Teotihuacán are major UNESCO World Heritage archaeological sites; Día de los Muertos (Day of the Dead) is UNESCO-recognised Intangible Cultural Heritage."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN, G20, and OECD.",
+        "Part of the USMCA trade agreement with the United States and Canada; a founding member of the Pacific Alliance."
+      ]
     }
   ],
   "quickRevision": {

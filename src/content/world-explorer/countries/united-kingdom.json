@@ -63,6 +63,66 @@
         "Being the origin of the Industrial Revolution, parliamentary democracy as a governance model, and the Commonwealth of Nations.",
         "London's status as a global financial and cultural capital."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Pound Sterling (GBP).",
+        "A major global financial centre, anchored by the City of London, with strengths in services, finance, and creative industries."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Predominantly temperate landscapes with an extensive, varied coastline.",
+        "A strong tradition of national-park and heritage conservation.",
+        "A global leader in offshore wind-energy development."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Formed through the union of England, Scotland, Wales, and later Northern Ireland.",
+        "Built a vast global empire from the 17th to 20th centuries.",
+        "Underwent significant decolonization after World War II, reshaping its role in the world."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "Operates under an unwritten constitution built on statutes, common law, and convention rather than a single codified document.",
+        "The 1707 Acts of Union joined the Kingdoms of England and Scotland.",
+        "A constitutional monarchy with a parliamentary system; the 2016 Brexit referendum led to the UK formally leaving the European Union in 2020."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "UK Space Agency supports satellite manufacturing and launch initiatives.",
+        "A global leader in life sciences and artificial-intelligence research, home to organisations such as DeepMind."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Birthplace of football, rugby, and cricket, each now played worldwide.",
+        "Shakespeare and the Beatles are among its most globally influential cultural exports.",
+        "Stonehenge and the Tower of London are major UNESCO World Heritage sites."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "A permanent member of the UN Security Council.",
+        "Founding member of NATO and head of the Commonwealth of Nations; member of the G7 and G20."
+      ]
     }
   ],
   "quickRevision": {
@@ -73,7 +133,11 @@
       "Uncodified constitution — no single written constitutional document.",
       "Left the EU in 2020 (Brexit); permanent UN Security Council member."
     ],
-    "keyTerms": ["Uncodified constitution", "Devolution", "Commonwealth of Nations"],
+    "keyTerms": [
+      "Uncodified constitution",
+      "Devolution",
+      "Commonwealth of Nations"
+    ],
     "commonConfusion": [
       "The UK's constitution is UNCODIFIED (no single document) — a common exam trap, since most countries (including India) have a codified written constitution."
     ]

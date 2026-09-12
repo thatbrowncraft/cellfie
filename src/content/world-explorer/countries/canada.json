@@ -75,6 +75,67 @@
         "Being home to one of the world's largest Indian diaspora communities.",
         "Multiculturalism as an official national policy."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Canadian Dollar (CAD).",
+        "Resource-rich economy — a major exporter of crude oil, natural gas, timber, and minerals — alongside strong manufacturing and services sectors.",
+        "Automobiles and machinery are leading manufactured exports, closely tied to trade with the United States."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to vast boreal forests, among the largest intact forest ecosystems on Earth.",
+        "Contains a significant share of the world's freshwater reserves, including the Great Lakes.",
+        "Banff National Park (established 1885) was Canada's first national park; the country maintains an extensive protected-areas network."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Indigenous peoples have inhabited the land for thousands of years before European contact.",
+        "French and later British colonization shaped the territory's development.",
+        "Confederation in 1867 united several British colonies into the Dominion of Canada."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1867 British North America Act founded the Dominion of Canada as a federation.",
+        "1982 Constitution Act patriated the constitution from the UK and added the Canadian Charter of Rights and Freedoms.",
+        "A federal parliamentary constitutional monarchy, with the British monarch as head of state."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Canadian Space Agency is known for the Canadarm robotic-arm systems used on the Space Shuttle and the International Space Station.",
+        "Strong artificial-intelligence research hubs in Toronto and Montréal."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Ice hockey is the national winter sport and a major cultural touchstone.",
+        "Hosted the 1988 Calgary and 2010 Vancouver Winter Olympics.",
+        "A globally influential film and music industry has produced many internationally recognised artists."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN, G7, G20, NATO, and the Commonwealth of Nations.",
+        "A founding member of the Arctic Council, reflecting its significant Arctic territory."
+      ]
     }
   ],
   "quickRevision": {

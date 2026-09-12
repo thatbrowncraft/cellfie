@@ -75,6 +75,65 @@
         "Vision 2030 — an ambitious economic and social reform and diversification programme.",
         "Being a major destination for the large Indian expatriate workforce."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Saudi Riyal (SAR), pegged to the US Dollar.",
+        "Historically the world's largest oil exporter; 'Vision 2030' is driving diversification into tourism, technology, and entertainment.",
+        "Home to Aramco, one of the world's largest oil-producing companies."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Predominantly arid desert terrain, including the Rub' al Khali (Empty Quarter), one of the largest continuous sand deserts on Earth.",
+        "Red Sea coral reefs support growing marine-conservation and eco-tourism initiatives under Vision 2030."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Unified as the modern Kingdom of Saudi Arabia in 1932 by Abdulaziz ibn Saud.",
+        "Home to Islam's two holiest cities, Mecca and Medina, making it central to the annual Hajj pilgrimage."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1932 unification created the modern kingdom from previously separate regions.",
+        "Governed under Islamic law (Sharia), with the Basic Law of Governance (1992) serving as a constitutional framework.",
+        "An absolute monarchy led by the House of Saud."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Saudi Space Agency oversees satellite and space-research programmes.",
+        "Large-scale investment in giga-projects such as NEOM, part of the broader Vision 2030 economic diversification plan."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Growing global visibility through investment in football and esports.",
+        "Al-Hijr (Mada'in Salih) is a UNESCO World Heritage archaeological site of the ancient Nabataean civilization.",
+        "Rich Najdi and Hijazi cultural traditions reflect the country's regional diversity."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN and G20; hosts the headquarters of the Organisation of Islamic Cooperation (OIC).",
+        "A founding member of OPEC and the Gulf Cooperation Council (GCC)."
+      ]
     }
   ],
   "quickRevision": {

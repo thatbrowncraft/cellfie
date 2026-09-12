@@ -75,6 +75,69 @@
         "Being a member of the Quad alongside India, and a top destination for Indian students.",
         "One of the world's oldest continuous Indigenous cultures."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Australian Dollar (AUD).",
+        "Resource-driven economy — a top global exporter of iron ore, coal, and natural gas, alongside strong agriculture and services sectors.",
+        "One of the world's largest gold producers and a major wool exporter."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to the Great Barrier Reef, the world's largest coral reef system and a UNESCO World Heritage Site.",
+        "Exceptional marsupial biodiversity found almost nowhere else, including kangaroos, koalas, and wombats.",
+        "Vast arid 'Outback' interior; faces significant bushfire risk and is a leader in bushfire-management research.",
+        "Extensive network of national parks and marine protected areas."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Aboriginal and Torres Strait Islander peoples have the world's longest continuous living culture, dating back over 60,000 years.",
+        "British colonization began in 1788 with the First Fleet's arrival at Sydney Cove.",
+        "Six British colonies federated into the Commonwealth of Australia on 1 January 1901."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1901 Federation under the Australian Constitution created a federal parliamentary system.",
+        "A constitutional monarchy — the British monarch is head of state, represented locally by a Governor-General.",
+        "1967 referendum overwhelmingly approved counting Aboriginal Australians in the census and allowing federal laws for them."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Australian Space Agency established in 2018 to coordinate national space activities.",
+        "Hosts major radio astronomy infrastructure, including the Parkes Observatory and part of the Square Kilometre Array project.",
+        "Strong innovation in mining technology and renewable energy (notably rooftop solar adoption)."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Strong sporting culture across cricket, rugby, swimming, and Australian Rules Football.",
+        "The Sydney Opera House is a UNESCO World Heritage-listed architectural icon.",
+        "Hosted the 2000 Sydney Summer Olympics."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN, G20, APEC, and the Commonwealth of Nations.",
+        "Part of the Quad (Quadrilateral Security Dialogue) alongside India, the US, and Japan, and the AUKUS security partnership with the US and UK."
+      ]
     }
   ],
   "quickRevision": {

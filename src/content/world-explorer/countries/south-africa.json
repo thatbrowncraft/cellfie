@@ -75,6 +75,67 @@
         "The world's first human heart transplant (1967).",
         "Deep historical links to Mahatma Gandhi's early activism."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: South African Rand (ZAR).",
+        "The most industrialized economy in Africa, with strengths in mining (gold, platinum, diamonds) and financial services.",
+        "Johannesburg serves as the continent's leading financial hub."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Exceptional biodiversity, home to the 'Big Five' wildlife and Kruger National Park, one of Africa's largest game reserves.",
+        "The Cape Floristic Region is a UNESCO World Heritage biodiversity hotspot with extraordinary plant diversity.",
+        "Faces significant water-scarcity challenges in parts of the country."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Colonized by the Dutch and later the British from the 17th century onward.",
+        "The apartheid system of institutionalized racial segregation was formalized in 1948.",
+        "Apartheid was dismantled through negotiations in the early 1990s; Nelson Mandela became the first democratically elected president in 1994."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1994 marked the end of apartheid and the first democratic, all-race elections.",
+        "The 1996 Constitution is widely regarded as one of the world's most progressive, with an extensive Bill of Rights.",
+        "A parliamentary republic with three capital cities (Pretoria, Cape Town, and Bloemfontein)."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "South African National Space Agency (SANSA) supports satellite and Earth-observation programmes.",
+        "A key partner in the Square Kilometre Array (SKA), one of the world's largest radio-telescope projects."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Rugby and cricket are hugely popular national sports.",
+        "Hosted the 2010 FIFA World Cup, the first held on the African continent.",
+        "Rich musical traditions, including artists like Miriam Makeba, reflect the country's multicultural heritage."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the African Union.",
+        "Member of the UN, G20, BRICS, and the Commonwealth of Nations; a leading voice for the African continent in global forums."
+      ]
     }
   ],
   "quickRevision": {

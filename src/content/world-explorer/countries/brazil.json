@@ -75,6 +75,67 @@
         "Being Latin America's largest economy and a founding BRICS member.",
         "Purpose-built modernist capital city, Brasília."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Brazilian Real (BRL).",
+        "Largest economy in South America, led by agribusiness (soybeans, coffee, beef, sugarcane), mining (iron ore), and manufacturing.",
+        "Among the world's top producers and exporters of coffee, soybeans, and orange juice."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Holds the majority of the Amazon Rainforest, the world's largest tropical rainforest and a critical global carbon sink.",
+        "The Pantanal is the world's largest tropical wetland, hosting exceptional wildlife biodiversity.",
+        "Faces significant deforestation pressure alongside major conservation and reforestation initiatives."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Colonized by Portugal from 1500; became the seat of the Portuguese Empire in 1808 when the royal court relocated there.",
+        "Declared independence in 1822, initially as the Empire of Brazil under a monarchy.",
+        "Became a republic in 1889; a military dictatorship ruled from 1964 to 1985 before a return to democracy."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1988 Constitution, known as the 'Citizen Constitution', was adopted after the end of military rule, establishing a federal presidential republic.",
+        "Brasília, a purpose-built planned capital, replaced Rio de Janeiro as the capital in 1960."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Instituto Nacional de Pesquisas Espaciais (INPE) leads space research; the Alcântara Launch Center is used for satellite launches.",
+        "Embrapa (Brazilian Agricultural Research Corporation) is a global leader in tropical agriculture research.",
+        "A pioneer in biofuel technology, producing ethanol from sugarcane at large scale."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is a defining national passion — a record five-time FIFA World Cup champion, home to Pelé.",
+        "Carnival and samba are globally recognised cultural exports centred on Rio de Janeiro.",
+        "Hosted the 2014 FIFA World Cup and the 2016 Summer Olympics."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding UN member; part of BRICS, the G20, and Mercosur.",
+        "A vocal advocate for reform and a permanent seat on the UN Security Council."
+      ]
     }
   ],
   "quickRevision": {

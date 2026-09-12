@@ -70,6 +70,66 @@
         "Hollywood, Silicon Valley, NASA's space programme, and being the world's largest economy.",
         "The Statue of Liberty, the Grand Canyon, and a federal constitutional system widely studied as a model of separation of powers."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: US Dollar (USD), the world's primary reserve currency.",
+        "The world's largest economy by nominal GDP, with strengths spanning technology, finance, agriculture, and manufacturing."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Vast ecological diversity, from Arctic Alaska to subtropical Florida.",
+        "Yellowstone, established in 1872, was the world's first national park; the US maintains an extensive National Park System.",
+        "Significant biodiversity across its varied climate zones, from deserts to temperate rainforest."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "British colonization began in the early 1600s along the Atlantic coast.",
+        "Independence was declared in 1776 following the Revolutionary War.",
+        "Westward expansion and the Civil War (1861-1865), which ended slavery, shaped the 19th-century nation; emerged as a global superpower after World War II."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1776 Declaration of Independence formally broke from British rule.",
+        "The 1787 Constitution, in effect since 1789, established a federal presidential republic with a system of checks and balances.",
+        "27 constitutional amendments have followed, including the abolition of slavery (13th Amendment, 1865) and women's suffrage (19th Amendment, 1920)."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "NASA led the Apollo Moon-landing programme, achieving the first crewed lunar landing in 1969, and continues exploration through the Artemis programme.",
+        "A global leader in technology innovation, centred on Silicon Valley, and in private spaceflight through companies such as SpaceX."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "American football, basketball, and baseball are the most popular national sports.",
+        "Hollywood is a globally dominant centre of film and entertainment production.",
+        "The Statue of Liberty and Grand Canyon are among its most iconic landmarks; has hosted the Olympic Games multiple times."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "A permanent member of the UN Security Council, which is headquartered in New York City.",
+        "Founding member of NATO; member of the G7 and G20."
+      ]
     }
   ],
   "quickRevision": {
@@ -80,7 +140,11 @@
       "Three branches: Executive (President), Legislative (Congress), Judicial (Supreme Court).",
       "Quad member alongside India, Japan, and Australia."
     ],
-    "keyTerms": ["Separation of powers", "Federal republic", "Quad"],
+    "keyTerms": [
+      "Separation of powers",
+      "Federal republic",
+      "Quad"
+    ],
     "commonConfusion": [
       "New York City is the LARGEST US city and financial hub, but Washington, D.C. is the CAPITAL — a commonly mixed-up pair."
     ]

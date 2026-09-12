@@ -75,6 +75,67 @@
         "Being the largest and most influential economy within the European Union.",
         "A deep and reflective public reckoning with its Nazi-era history."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Euro (EUR).",
+        "Europe's largest economy, renowned for manufacturing and precision engineering — automobiles, industrial machinery, and chemicals are leading exports.",
+        "A global leader in exporting high-value manufactured goods relative to its population size."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Extensive forests, notably the Black Forest, and major river systems including the Rhine and Danube.",
+        "A global leader in renewable-energy transition, known domestically as the 'Energiewende'.",
+        "Strong recycling and circular-economy systems among the most developed in the world."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Unified as a single nation-state in 1871 under Prussian leadership.",
+        "Central to both World Wars in the 20th century; divided into East and West Germany during the Cold War.",
+        "Reunified in 1990 following the fall of the Berlin Wall in 1989."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1949 Basic Law (Grundgesetz) founded the Federal Republic of Germany (West Germany).",
+        "1990 reunification merged East Germany into the Federal Republic under the existing Basic Law framework.",
+        "A federal parliamentary republic, with a Chancellor as head of government and a largely ceremonial President as head of state."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "German Aerospace Center (DLR) is a major contributor to European Space Agency missions.",
+        "A global leader in automotive engineering and 'Industry 4.0' advanced manufacturing and automation."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is hugely popular; a four-time FIFA World Cup champion.",
+        "Rich classical-music heritage, home to composers including Bach and Beethoven.",
+        "The Brandenburg Gate and Cologne Cathedral are iconic national landmarks."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the European Union and NATO.",
+        "Member of the G7 and G20; one of the largest financial contributors to the UN's regular budget."
+      ]
     }
   ],
   "quickRevision": {
