@@ -67,7 +67,12 @@
       "AP: aₙ = a + (n−1)d, Sₙ = n/2 × [2a + (n−1)d] = n/2 × (first + last).",
       "GP: aₙ = a·r^(n−1), Sₙ = a(rⁿ−1)/(r−1) for r≠1; Sₙ = a×n when r=1."
     ],
-    "keyTerms": ["Common difference (d)", "Common ratio (r)", "nth term", "Sum of n terms"],
+    "keyTerms": [
+      "Common difference (d)",
+      "Common ratio (r)",
+      "nth term",
+      "Sum of n terms"
+    ],
     "commonConfusion": [
       "Not every numeric sequence is an AP or a GP — verify the pattern before assuming."
     ]
@@ -86,10 +91,5 @@
       "Verify the pattern on at least 3 consecutive terms before applying any formula."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

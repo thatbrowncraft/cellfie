@@ -64,7 +64,12 @@
       "Successive discounts combine as d1+d2−(d1×d2)/100, not by simple addition.",
       "No profit no loss means SP = CP, not SP = 0."
     ],
-    "keyTerms": ["Cost Price (CP)", "Selling Price (SP)", "Marked Price (MP)", "Discount"],
+    "keyTerms": [
+      "Cost Price (CP)",
+      "Selling Price (SP)",
+      "Marked Price (MP)",
+      "Discount"
+    ],
     "commonConfusion": [
       "Discount is off MP; profit/loss % is off CP — two different reference points in the same problem."
     ]
@@ -82,10 +87,5 @@
       "SP = MP × (1 − Discount%/100), then Profit% is calculated on THAT SP against CP — two chained steps, two different bases."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

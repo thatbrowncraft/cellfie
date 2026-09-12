@@ -67,7 +67,12 @@
       "Workers × Days × Hours/day = constant for a fixed total job.",
       "Wages split by efficiency-weighted contribution when efficiency differs between workers."
     ],
-    "keyTerms": ["Direct variation", "Inverse variation", "Chain rule", "Efficiency-weighted ratio"],
+    "keyTerms": [
+      "Direct variation",
+      "Inverse variation",
+      "Chain rule",
+      "Efficiency-weighted ratio"
+    ],
     "commonConfusion": [
       "More workers means fewer days (inverse) but more total wages paid overall for the same daily rate (direct) — two different relationships hiding in the same sentence."
     ]
@@ -85,10 +90,5 @@
       "Label direct vs inverse for every pair of quantities before writing the equation."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

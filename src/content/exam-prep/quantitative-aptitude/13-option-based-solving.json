@@ -64,7 +64,12 @@
       "Eliminate options that fail an obvious constraint (parity, sign, divisibility) before testing any in detail.",
       "Estimation is safe only when options are well spread apart; switch to exact calculation when they're close."
     ],
-    "keyTerms": ["Back-solving", "Elimination", "Boundary checking", "Estimation"],
+    "keyTerms": [
+      "Back-solving",
+      "Elimination",
+      "Boundary checking",
+      "Estimation"
+    ],
     "commonConfusion": [
       "Option-based solving is a speed strategy layered on top of understanding a topic, not a substitute for knowing the underlying method."
     ]
@@ -82,10 +87,5 @@
       "Option-based solving is only safe when it's actually faster and the options are far enough apart to tolerate small errors."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

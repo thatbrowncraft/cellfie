@@ -66,7 +66,12 @@
       "Compound ratio: multiply corresponding terms — (a:b) with (c:d) = ac:bd.",
       "Compare ratios fast via cross-multiplication instead of converting to decimals."
     ],
-    "keyTerms": ["Ratio", "Proportion", "Cross-multiplication", "Compound ratio"],
+    "keyTerms": [
+      "Ratio",
+      "Proportion",
+      "Cross-multiplication",
+      "Compound ratio"
+    ],
     "commonConfusion": [
       "Dividing a total by one ratio term instead of by the sum of all terms is the single most common ratio-distribution error."
     ]
@@ -84,10 +89,5 @@
       "Always sum the ratio parts first before dividing a total."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

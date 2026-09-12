@@ -74,7 +74,12 @@
       "Reverse percentage: divide the final value by (1 ± %), don't subtract the percentage.",
       "Percentage points ≠ percentage change — read which one the question means."
     ],
-    "keyTerms": ["Percentage change", "Reverse percentage", "Percentage points", "Successive change"],
+    "keyTerms": [
+      "Percentage change",
+      "Reverse percentage",
+      "Percentage points",
+      "Successive change"
+    ],
     "commonConfusion": [
       "A +10% then −10% change is a net −1%, not 0% — the second change acts on a different (already changed) base."
     ]
@@ -99,10 +104,5 @@
       }
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

@@ -62,7 +62,11 @@
       "If all partners invest for the same duration, the time term cancels and capital ratio alone is correct.",
       "A changed investment mid-period splits into separate capital-time segments added together."
     ],
-    "keyTerms": ["Capital-time product", "Sleeping partner", "Working partner"],
+    "keyTerms": [
+      "Capital-time product",
+      "Sleeping partner",
+      "Working partner"
+    ],
     "commonConfusion": [
       "Equal capital does not mean equal share if the investment durations differ — and vice versa, unequal capital can still produce an equal share if durations offset the difference."
     ]
@@ -79,10 +83,5 @@
       "Convert every time period to the same unit before multiplying by capital."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

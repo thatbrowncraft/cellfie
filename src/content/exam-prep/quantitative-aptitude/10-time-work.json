@@ -63,7 +63,12 @@
       "Efficiency and time are inversely related — invert one to get the other.",
       "An outlet/draining pipe's rate is subtracted, not added."
     ],
-    "keyTerms": ["Work rate", "LCM method", "Efficiency ratio", "Pipes and cisterns"],
+    "keyTerms": [
+      "Work rate",
+      "LCM method",
+      "Efficiency ratio",
+      "Pipes and cisterns"
+    ],
     "commonConfusion": [
       "Rates combine by addition; TIMES never do — averaging two completion times directly is always wrong."
     ]
@@ -81,10 +86,5 @@
       "Combined rate = sum of individual rates (subtract rates working against the group); time = 1/combined rate."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

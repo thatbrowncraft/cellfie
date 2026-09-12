@@ -75,7 +75,12 @@
       "Crossing a platform/train: total distance = both lengths added. Crossing a pole/point: only the train's own length.",
       "Boat speed (still water) = (Downstream+Upstream)/2. Stream speed = (Downstream−Upstream)/2."
     ],
-    "keyTerms": ["Relative speed", "Downstream", "Upstream", "Unit conversion factor"],
+    "keyTerms": [
+      "Relative speed",
+      "Downstream",
+      "Upstream",
+      "Unit conversion factor"
+    ],
     "commonConfusion": [
       "Same direction subtracts speeds; opposite direction adds them — easy to invert under pressure, always re-check the direction wording."
     ]
@@ -93,10 +98,5 @@
       "Boat speed = (Downstream+Upstream)/2; Stream speed = (Downstream−Upstream)/2."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }
