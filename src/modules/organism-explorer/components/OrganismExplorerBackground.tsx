@@ -1,13 +1,35 @@
 import { useReducedMotion } from '@/shared/hooks'
 
 /**
- * Organism Explorer redesign §16-§17 — a medium-opacity field of
- * floating microbiology motifs that continuously rise from bottom to top behind the Explorer's hub/category
- * views only (never the organism detail page, never any other module).
- * Deliberately restricted to bacteria, fungi, and virus shapes — no
- * protozoa decorations here (§16) — and kept visually subtle without disappearing: medium opacity,
- * `pointer-events-none`, `aria-hidden`, and never affecting layout or
- * causing horizontal scroll (the parent keeps `overflow-hidden`).
+ * Organism Explorer redesign §16-§17 — a field of floating microbiology
+ * motifs that continuously rise from bottom to top behind the
+ * Explorer's hub/category views only (never the organism detail page,
+ * never any other module). Deliberately restricted to bacteria, fungi,
+ * and virus shapes — no protozoa decorations here (§16).
+ *
+ * Bug fix (visual-polish follow-up — "nothing is there to float"): an
+ * earlier pass made three changes that combined to make this component
+ * render as effectively nothing on a normal glance at the page, even
+ * though it was mounted and running correctly:
+ *   1. Durations of 46-64s + delays up to 47s meant most items were
+ *      still sitting at their initial (opacity: 0, off-screen) keyframe
+ *      for the first 30-45+ seconds after the page loads.
+ *   2. Peak opacity was only ~0.27-0.32 (the static per-item opacity is
+ *      multiplied by the keyframe's animated opacity, which peaks at 1)
+ *      — already faint, and worse against a warm cream background with
+ *      muted olive/sage tones that sit close to it in lightness.
+ *   3. The rise travels up to 125vh, while the actual hub-view
+ *      container this renders inside is only as tall as its real
+ *      content (well under one viewport on most phones) — so for most
+ *      of each cycle the shape was travelling through space the
+ *      `overflow-hidden` parent had already clipped away.
+ * Fixed by tightening delays to a 0-9s spread (something is visible
+ * within a few seconds of opening the page), raising opacity to a
+ * genuinely visible-but-still-subtle 0.5-0.62, and roughly halving the
+ * travel distance so shapes spend most of their cycle inside the
+ * container's actual visible box instead of outside it. Durations are
+ * also pulled back from 46-64s to a still-slow-and-calm 22-32s so a
+ * full rise is observable without a minutes-long wait.
  *
  * Reuses the same reduced-motion convention as the Dashboard's
  * `FloatingScienceLayer`: when `prefers-reduced-motion: reduce` is set,
@@ -29,25 +51,34 @@ interface FloatingItem {
 }
 
 const ITEMS: FloatingItem[] = [
-  // Existing items slowed down by doubling duration values
-  { id: 'rod-1', bottom: '-8%', left: '90%', size: 30, colorClassName: 'text-olive', opacity: 0.32, duration: 52, delay: 0, motion: 'rise', kind: 'rod' },
-  { id: 'cocci-1', bottom: '-14%', left: '7%', size: 25, colorClassName: 'text-sage', opacity: 0.29, duration: 46, delay: 3, motion: 'rise', kind: 'coccusCluster' },
-  { id: 'virus-1', bottom: '-5%', left: '48%', size: 24, colorClassName: 'text-terracotta', opacity: 0.31, duration: 58, delay: 8, motion: 'rise', kind: 'virusParticle' },
-  { id: 'hypha-1', bottom: '-18%', left: '84%', size: 31, colorClassName: 'text-sage', opacity: 0.27, duration: 62, delay: 12, motion: 'rise', kind: 'hypha' },
-  { id: 'spiral-1', bottom: '-10%', left: '15%', size: 26, colorClassName: 'text-olive', opacity: 0.30, duration: 54, delay: 16, motion: 'rise', kind: 'spiral' },
-  { id: 'yeast-1', bottom: '-12%', left: '67%', size: 23, colorClassName: 'text-terracotta', opacity: 0.30, duration: 48, delay: 20, motion: 'rise', kind: 'buddingYeast' },
-  { id: 'rod-2', bottom: '-20%', left: '34%', size: 28, colorClassName: 'text-olive', opacity: 0.28, duration: 60, delay: 24, motion: 'rise', kind: 'rod' },
-  { id: 'virus-2', bottom: '-7%', left: '79%', size: 24, colorClassName: 'text-terracotta', opacity: 0.30, duration: 56, delay: 28, motion: 'rise', kind: 'virusParticle' },
-  { id: 'cocci-2', bottom: '-16%', left: '55%', size: 24, colorClassName: 'text-sage', opacity: 0.27, duration: 50, delay: 32, motion: 'rise', kind: 'coccusCluster' },
-  { id: 'hypha-2', bottom: '-11%', left: '21%', size: 29, colorClassName: 'text-sage', opacity: 0.28, duration: 64, delay: 36, motion: 'rise', kind: 'hypha' },
-  { id: 'spiral-2', bottom: '-15%', left: '94%', size: 24, colorClassName: 'text-olive', opacity: 0.30, duration: 58, delay: 40, motion: 'rise', kind: 'spiral' },
-  // New bacteria, fungi, and virus items
-  { id: 'vibrio-1', bottom: '-9%', left: '42%', size: 26, colorClassName: 'text-olive', opacity: 0.29, duration: 53, delay: 7, motion: 'rise', kind: 'vibrio' },
-  { id: 'spore-1', bottom: '-13%', left: '72%', size: 27, colorClassName: 'text-sage', opacity: 0.28, duration: 61, delay: 15, motion: 'rise', kind: 'spore' },
-  { id: 'phage-1', bottom: '-6%', left: '27%', size: 28, colorClassName: 'text-terracotta', opacity: 0.31, duration: 57, delay: 22, motion: 'rise', kind: 'phage' },
-  { id: 'vibrio-2', bottom: '-17%', left: '60%', size: 25, colorClassName: 'text-olive', opacity: 0.30, duration: 49, delay: 34, motion: 'rise', kind: 'vibrio' },
-  { id: 'spore-2', bottom: '-11%', left: '3%', size: 28, colorClassName: 'text-sage', opacity: 0.27, duration: 63, delay: 43, motion: 'rise', kind: 'spore' },
-  { id: 'phage-2', bottom: '-19%', left: '88%', size: 26, colorClassName: 'text-terracotta', opacity: 0.29, duration: 55, delay: 47, motion: 'rise', kind: 'phage' }
+  { id: 'rod-1', bottom: '-4%', left: '90%', size: 30, colorClassName: 'text-olive', opacity: 0.56, duration: 26, delay: 0, motion: 'rise', kind: 'rod' },
+  { id: 'cocci-1', bottom: '-7%', left: '7%', size: 25, colorClassName: 'text-sage', opacity: 0.52, duration: 24, delay: 0.6, motion: 'rise', kind: 'coccusCluster' },
+  { id: 'virus-1', bottom: '-3%', left: '48%', size: 24, colorClassName: 'text-terracotta', opacity: 0.58, duration: 29, delay: 1.4, motion: 'rise', kind: 'virusParticle' },
+  { id: 'hypha-1', bottom: '-9%', left: '84%', size: 31, colorClassName: 'text-sage', opacity: 0.5, duration: 31, delay: 2.1, motion: 'rise', kind: 'hypha' },
+  { id: 'spiral-1', bottom: '-5%', left: '15%', size: 26, colorClassName: 'text-olive', opacity: 0.54, duration: 27, delay: 2.8, motion: 'rise', kind: 'spiral' },
+  { id: 'yeast-1', bottom: '-6%', left: '67%', size: 23, colorClassName: 'text-terracotta', opacity: 0.56, duration: 23, delay: 3.5, motion: 'rise', kind: 'buddingYeast' },
+  { id: 'rod-2', bottom: '-10%', left: '34%', size: 28, colorClassName: 'text-olive', opacity: 0.52, duration: 30, delay: 4.2, motion: 'rise', kind: 'rod' },
+  { id: 'virus-2', bottom: '-3%', left: '79%', size: 24, colorClassName: 'text-terracotta', opacity: 0.56, duration: 28, delay: 4.9, motion: 'rise', kind: 'virusParticle' },
+  { id: 'cocci-2', bottom: '-8%', left: '55%', size: 24, colorClassName: 'text-sage', opacity: 0.5, duration: 25, delay: 5.6, motion: 'rise', kind: 'coccusCluster' },
+  { id: 'hypha-2', bottom: '-5%', left: '21%', size: 29, colorClassName: 'text-sage', opacity: 0.52, duration: 32, delay: 6.3, motion: 'rise', kind: 'hypha' },
+  { id: 'spiral-2', bottom: '-7%', left: '94%', size: 24, colorClassName: 'text-olive', opacity: 0.56, duration: 29, delay: 7.0, motion: 'rise', kind: 'spiral' },
+  { id: 'vibrio-1', bottom: '-4%', left: '42%', size: 26, colorClassName: 'text-olive', opacity: 0.54, duration: 26, delay: 0.9, motion: 'rise', kind: 'vibrio' },
+  { id: 'spore-1', bottom: '-6%', left: '72%', size: 27, colorClassName: 'text-sage', opacity: 0.5, duration: 31, delay: 1.9, motion: 'rise', kind: 'spore' },
+  { id: 'phage-1', bottom: '-3%', left: '27%', size: 28, colorClassName: 'text-terracotta', opacity: 0.58, duration: 28, delay: 3.0, motion: 'rise', kind: 'phage' },
+  { id: 'vibrio-2', bottom: '-8%', left: '60%', size: 25, colorClassName: 'text-olive', opacity: 0.54, duration: 24, delay: 4.6, motion: 'rise', kind: 'vibrio' },
+  { id: 'spore-2', bottom: '-5%', left: '3%', size: 28, colorClassName: 'text-sage', opacity: 0.5, duration: 32, delay: 6.0, motion: 'rise', kind: 'spore' },
+  { id: 'phage-2', bottom: '-9%', left: '88%', size: 26, colorClassName: 'text-terracotta', opacity: 0.54, duration: 27, delay: 8.5, motion: 'rise', kind: 'phage' },
+  // Added for density — user feedback was "barely one visible" per section
+  { id: 'rod-3', bottom: '-6%', left: '12%', size: 24, colorClassName: 'text-olive', opacity: 0.52, duration: 25, delay: 1.2, motion: 'rise', kind: 'rod' },
+  { id: 'cocci-3', bottom: '-4%', left: '38%', size: 22, colorClassName: 'text-sage', opacity: 0.5, duration: 30, delay: 2.4, motion: 'rise', kind: 'coccusCluster' },
+  { id: 'virus-3', bottom: '-7%', left: '63%', size: 22, colorClassName: 'text-terracotta', opacity: 0.56, duration: 27, delay: 3.6, motion: 'rise', kind: 'virusParticle' },
+  { id: 'hypha-3', bottom: '-5%', left: '9%', size: 27, colorClassName: 'text-sage', opacity: 0.5, duration: 33, delay: 5.1, motion: 'rise', kind: 'hypha' },
+  { id: 'spiral-3', bottom: '-8%', left: '50%', size: 23, colorClassName: 'text-olive', opacity: 0.54, duration: 28, delay: 0.4, motion: 'rise', kind: 'spiral' },
+  { id: 'yeast-2', bottom: '-4%', left: '96%', size: 21, colorClassName: 'text-terracotta', opacity: 0.56, duration: 24, delay: 6.8, motion: 'rise', kind: 'buddingYeast' },
+  { id: 'vibrio-3', bottom: '-6%', left: '19%', size: 24, colorClassName: 'text-olive', opacity: 0.52, duration: 29, delay: 7.6, motion: 'rise', kind: 'vibrio' },
+  { id: 'spore-3', bottom: '-9%', left: '77%', size: 25, colorClassName: 'text-sage', opacity: 0.5, duration: 31, delay: 9.2, motion: 'rise', kind: 'spore' },
+  { id: 'phage-3', bottom: '-3%', left: '31%', size: 25, colorClassName: 'text-terracotta', opacity: 0.56, duration: 26, delay: 5.4, motion: 'rise', kind: 'phage' },
+  { id: 'rod-4', bottom: '-7%', left: '58%', size: 23, colorClassName: 'text-olive', opacity: 0.52, duration: 30, delay: 8.0, motion: 'rise', kind: 'rod' }
 ]
 
 function ShapeGlyph({ item }: { item: FloatingItem }) {
@@ -152,21 +183,21 @@ export function OrganismExplorerBackground() {
       <style>{`
         @keyframes cellfie-organism-rise {
           0% {
-            transform: translate3d(0, 18vh, 0) rotate(-2deg);
+            transform: translate3d(0, 10vh, 0) rotate(-2deg);
             opacity: 0;
           }
-          8% {
+          4% {
             opacity: 1;
           }
           50% {
-            transform: translate3d(18px, -48vh, 0) rotate(5deg);
+            transform: translate3d(14px, -22vh, 0) rotate(5deg);
             opacity: 1;
           }
           92% {
             opacity: 0.9;
           }
           100% {
-            transform: translate3d(-14px, -125vh, 0) rotate(-4deg);
+            transform: translate3d(-10px, -55vh, 0) rotate(-4deg);
             opacity: 0;
           }
         }
