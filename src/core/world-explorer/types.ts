@@ -72,6 +72,22 @@ export interface CountryProfile {
   quickRevision: QuickRevisionSummary
   examFocus: ExamFocusSummary
   sources: LessonSource[]
+  /**
+   * Optional cross-link into the "Oceans & Maritime World" layer
+   * (`core/world-explorer/maritime/`) — brief §20: "connect naturally
+   * with the existing country profiles... do NOT duplicate huge amounts
+   * of content inside every country JSON, prefer reusable structured
+   * ocean/sea data". Every id here must match a real entry in that
+   * registry; `CountryDetailPage` only renders a maritime card when
+   * this field is present, so leaving it out of a country's JSON is
+   * always safe — no country is required to have one.
+   */
+  maritime?: {
+    oceans?: string[]
+    seas?: string[]
+    chokepoints?: string[]
+    routes?: string[]
+  }
 }
 
 export type { LessonSection, LessonSource, QuickRevisionSummary, ExamFocusSummary }
