@@ -1,0 +1,58 @@
+{
+  "id": "strait-of-hormuz",
+  "category": "chokepoint",
+  "name": "Strait of Hormuz",
+  "genZNote": "A big chunk of the world's oil passes through a gap narrow enough that it makes the news every time there's regional tension. That's Hormuz.",
+  "sections": [
+    {
+      "id": "location-and-connection",
+      "heading": "🚨 Location & What It Connects",
+      "bullets": [
+        "A natural strait between Iran to the north and Oman (via its Musandam exclave) to the south.",
+        "Connects the Persian Gulf to the Gulf of Oman, and from there to the Arabian Sea and the wider Indian Ocean.",
+        "One of the narrowest points ships have to pass through on this route — narrow enough that shipping lanes are tightly regulated within it."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "⚓ Why It Matters",
+      "bullets": [
+        "The single most important oil chokepoint in the world by volume — a very large share of the world's seaborne crude oil exports passes through it, mostly from Gulf producers (Saudi Arabia, Iraq, UAE, Kuwait, Qatar, Iran).",
+        "Any disruption here has an outsized effect on global oil prices, which is why it is closely watched during periods of regional tension.",
+        "Nearby countries: Iran, Oman, and (further along the Gulf) Saudi Arabia, UAE, Qatar, Kuwait, Bahrain, Iraq."
+      ]
+    },
+    {
+      "id": "india-connection",
+      "heading": "🇮🇳 India Connection",
+      "bullets": [
+        "The majority of India's crude oil imports from the Gulf pass through the Strait of Hormuz on their way across the Arabian Sea to Indian ports.",
+        "Any disruption to shipping through Hormuz is a direct energy-security concern for India, given how much of its oil supply transits this one point."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Strait of Hormuz connects the Persian Gulf to the Gulf of Oman/Arabian Sea, and is the world's single most important oil-shipping chokepoint.",
+    "keyFacts": [
+      "Between Iran and Oman.",
+      "Connects the Persian Gulf to the Gulf of Oman and Arabian Sea.",
+      "World's most important chokepoint for seaborne oil trade.",
+      "Most of India's Gulf oil imports pass through it."
+    ],
+    "keyTerms": ["Persian Gulf", "Gulf of Oman", "Seaborne oil trade"],
+    "commonConfusion": ["Don't confuse the Strait of Hormuz (Persian Gulf exit) with the Strait of Malacca (a completely different chokepoint near Southeast Asia)."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Hormuz connects Persian Gulf ↔ Gulf of Oman ↔ Arabian Sea.",
+      "Between Iran and Oman.",
+      "World's #1 oil chokepoint by volume."
+    ],
+    "commonTraps": ["A strait is a natural channel — don't call Hormuz a canal (canals like Suez/Panama are man-made)."],
+    "mustRemember": ["Hormuz = Persian Gulf's only sea exit; world's top oil chokepoint; critical for India's energy imports."]
+  },
+  "sources": [
+    { "name": "U.S. Energy Information Administration — World Oil Transit Chokepoints", "kind": "scientific" },
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" }
+  ]
+}

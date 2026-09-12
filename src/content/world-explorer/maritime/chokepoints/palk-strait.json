@@ -1,0 +1,58 @@
+{
+  "id": "palk-strait",
+  "category": "chokepoint",
+  "name": "Palk Strait",
+  "genZNote": "Palk Strait is the one on this list you could almost swim across on a map — India and Sri Lanka are that close here, connected by shallow water and a shared fishing dispute.",
+  "sections": [
+    {
+      "id": "location-and-connection",
+      "heading": "🚨 Location & What It Connects",
+      "bullets": [
+        "A shallow strait between Tamil Nadu (India) and northern Sri Lanka.",
+        "Connects the Bay of Bengal to the Gulf of Mannar (and onward to the Arabian Sea/Indian Ocean), lying between mainland India and Sri Lanka.",
+        "Too shallow for large ocean-going vessels — it's a small-craft and fishing route, not a major cargo shipping lane."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "⚓ Why It Matters",
+      "bullets": [
+        "Best known for the Adam's Bridge (Rama's Bridge) chain of shoals between India and Sri Lanka, and for cross-border fishing activity by fishermen from both countries.",
+        "A recurring subject of India-Sri Lanka discussions around fishing rights, given how narrow and shared the waters are.",
+        "Unlike every other chokepoint in this section, it matters for regional/local reasons rather than global shipping volume."
+      ]
+    },
+    {
+      "id": "india-connection",
+      "heading": "🇮🇳 India Connection",
+      "bullets": [
+        "Directly between India (Tamil Nadu) and Sri Lanka — one of India's closest maritime neighbor relationships, geographically speaking.",
+        "Relevant to India's coastal fishing communities in Tamil Nadu and to India-Sri Lanka bilateral maritime discussions."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Palk Strait is a shallow strait between Tamil Nadu, India, and northern Sri Lanka, important for regional fishing rather than global shipping.",
+    "keyFacts": [
+      "Between Tamil Nadu (India) and northern Sri Lanka.",
+      "Connects the Bay of Bengal to the Gulf of Mannar.",
+      "Too shallow for large ocean-going vessels.",
+      "Site of the Adam's Bridge (Rama's Bridge) shoal chain."
+    ],
+    "keyTerms": ["Adam's Bridge", "Gulf of Mannar", "India-Sri Lanka fishing rights"],
+    "commonConfusion": ["Don't lump the Palk Strait in with global chokepoints like Hormuz or Malacca by trade volume — its significance is regional, not global."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Palk Strait: between Tamil Nadu and Sri Lanka.",
+      "Connects Bay of Bengal to the Gulf of Mannar.",
+      "Adam's Bridge (Rama's Bridge) lies within it."
+    ],
+    "commonTraps": ["A shallow strait can still be exam-relevant for reasons other than shipping volume — here it's fishing rights and bilateral relations."],
+    "mustRemember": ["Palk Strait = India-Sri Lanka's shared, shallow strait; Adam's Bridge; fishing-rights significance."]
+  },
+  "sources": [
+    { "name": "Ministry of External Affairs, Government of India", "kind": "educational", "url": "https://www.mea.gov.in/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

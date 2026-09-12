@@ -1,0 +1,50 @@
+{
+  "id": "bosporus",
+  "category": "chokepoint",
+  "name": "Bosporus",
+  "genZNote": "The Bosporus runs right through the middle of Istanbul — it's probably the only major shipping chokepoint you can watch from a city café.",
+  "sections": [
+    {
+      "id": "location-and-connection",
+      "heading": "🚨 Location & What It Connects",
+      "bullets": [
+        "A natural strait running through Istanbul, Turkey, separating Europe from Asia.",
+        "Connects the Black Sea to the Sea of Marmara, which then connects (via the Dardanelles) to the Aegean Sea and the wider Mediterranean.",
+        "One of the narrowest straits used for major international shipping anywhere in the world."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "⚓ Why It Matters",
+      "bullets": [
+        "The only sea route in or out of the Black Sea — all Black Sea-region trade (Russian and Ukrainian grain, oil, and other goods) must pass through it.",
+        "Runs directly through a major city (Istanbul), making navigation and safety management especially complex compared to most other chokepoints.",
+        "Governed by the Montreux Convention (1936), an international treaty regulating naval passage through the strait."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Bosporus is a narrow strait through Istanbul connecting the Black Sea to the Sea of Marmara, the only sea route out of the Black Sea.",
+    "keyFacts": [
+      "Runs through Istanbul, Turkey; separates Europe and Asia.",
+      "Connects the Black Sea to the Sea of Marmara.",
+      "Only sea outlet from the Black Sea.",
+      "Governed by the Montreux Convention (1936)."
+    ],
+    "keyTerms": ["Sea of Marmara", "Montreux Convention", "Istanbul"],
+    "commonConfusion": ["The Bosporus and the Dardanelles are two separate straits with the Sea of Marmara between them — together they form the Black Sea's route to the Mediterranean."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Bosporus = Istanbul strait connecting Black Sea ↔ Sea of Marmara.",
+      "Only sea route out of the Black Sea.",
+      "Regulated by the Montreux Convention (1936)."
+    ],
+    "commonTraps": ["Don't confuse the order: Black Sea → Bosporus → Sea of Marmara → Dardanelles → Mediterranean/Aegean."],
+    "mustRemember": ["Bosporus = Black Sea's only exit, runs through Istanbul, governed by the Montreux Convention."]
+  },
+  "sources": [
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

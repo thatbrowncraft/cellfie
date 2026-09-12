@@ -1,0 +1,50 @@
+{
+  "id": "dardanelles",
+  "category": "chokepoint",
+  "name": "Dardanelles",
+  "genZNote": "The Dardanelles is the Bosporus's other half — together they're the two-strait combo that lets the Black Sea reach the rest of the world.",
+  "sections": [
+    {
+      "id": "location-and-connection",
+      "heading": "🚨 Location & What It Connects",
+      "bullets": [
+        "A natural strait in north-western Turkey, separating the European Gallipoli Peninsula from Asian mainland Turkey.",
+        "Connects the Sea of Marmara (and, beyond it via the Bosporus, the Black Sea) to the Aegean Sea and the wider Mediterranean.",
+        "Historically significant as the site of the Gallipoli campaign during World War I."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "⚓ Why It Matters",
+      "bullets": [
+        "Forms the southern half of the two-strait route (Bosporus + Dardanelles) that is the Black Sea's only connection to open ocean shipping.",
+        "Also governed by the Montreux Convention (1936), the same treaty that regulates the Bosporus.",
+        "Important for grain and energy shipments leaving the Black Sea region bound for the Mediterranean and beyond."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Dardanelles is a strait in north-western Turkey linking the Sea of Marmara to the Aegean Sea, the southern half of the Black Sea's route to the Mediterranean.",
+    "keyFacts": [
+      "In north-western Turkey, near the Gallipoli Peninsula.",
+      "Connects the Sea of Marmara to the Aegean Sea/Mediterranean.",
+      "Forms a pair with the Bosporus — together, the Black Sea's only sea route out.",
+      "Also governed by the Montreux Convention (1936)."
+    ],
+    "keyTerms": ["Gallipoli", "Sea of Marmara", "Montreux Convention"],
+    "commonConfusion": ["Bosporus = Black Sea end; Dardanelles = Mediterranean/Aegean end. Sea of Marmara sits between the two."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Dardanelles connects Sea of Marmara ↔ Aegean Sea/Mediterranean.",
+      "Forms the Black Sea's two-strait exit route together with the Bosporus.",
+      "Site of the WWI Gallipoli campaign."
+    ],
+    "commonTraps": ["Exam trap: naming only 'the Bosporus' as the Black Sea's route to the Mediterranean without also naming the Dardanelles — both straits are required."],
+    "mustRemember": ["Dardanelles = southern half of the Black Sea's two-strait exit; near Gallipoli."]
+  },
+  "sources": [
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

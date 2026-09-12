@@ -1,0 +1,57 @@
+{
+  "id": "suez-canal",
+  "category": "chokepoint",
+  "name": "Suez Canal",
+  "genZNote": "One container ship got stuck sideways in the Suez Canal for six days in 2021 and it held up an estimated tens of billions of dollars of trade a day — that's how much rides on this one canal.",
+  "sections": [
+    {
+      "id": "location-and-connection",
+      "heading": "🚨 Location & What It Connects",
+      "bullets": [
+        "An artificial, man-made canal in Egypt — not a natural strait — connecting the Mediterranean Sea to the Red Sea.",
+        "Opened in 1869, it removed the need to sail around the entire African continent to travel between Europe and Asia.",
+        "Owned and operated by Egypt through the Suez Canal Authority."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "⚓ Why It Matters",
+      "bullets": [
+        "One of the world's most important shipping shortcuts — a large share of global trade, including a significant portion of world container traffic and oil shipments, passes through it.",
+        "The main alternative when it's unavailable or congested is the much longer route around Africa's Cape of Good Hope, which adds significant time and fuel cost.",
+        "A 2021 blockage by a grounded container ship (the Ever Given) is a widely cited real-world example of how disruptive a Suez closure can be to global trade."
+      ]
+    },
+    {
+      "id": "india-connection",
+      "heading": "🇮🇳 India Connection",
+      "bullets": [
+        "A meaningful share of India's trade with Europe moves through the Suez Canal, making it an important route for Indian exports and imports on the western side of the country."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Suez Canal is a man-made canal in Egypt connecting the Mediterranean Sea to the Red Sea, avoiding the long route around Africa.",
+    "keyFacts": [
+      "Man-made canal, opened 1869, located in Egypt.",
+      "Connects the Mediterranean Sea to the Red Sea.",
+      "Alternative route when unavailable: around Africa's Cape of Good Hope.",
+      "2021 Ever Given grounding is a well-known real-world disruption example."
+    ],
+    "keyTerms": ["Suez Canal Authority", "Cape of Good Hope route", "Ever Given (2021)"],
+    "commonConfusion": ["The Suez Canal is a CANAL (man-made), not a strait — straits like Bab-el-Mandeb and Hormuz are naturally occurring channels."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Suez Canal: man-made, opened 1869, Egypt, connects Mediterranean ↔ Red Sea.",
+      "Alternative when blocked: Cape of Good Hope route around Africa.",
+      "2021 Ever Given incident is a frequently cited exam example of chokepoint disruption."
+    ],
+    "commonTraps": ["Canal vs. strait: Suez and Panama are canals (built); Hormuz, Malacca, Bab-el-Mandeb, Bosporus, Dardanelles are straits (natural)."],
+    "mustRemember": ["Suez Canal = Egypt's man-made Mediterranean-Red Sea shortcut, critical for Europe-Asia trade."]
+  },
+  "sources": [
+    { "name": "Suez Canal Authority", "kind": "educational", "url": "https://www.suezcanal.gov.eg/" },
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "strait-of-malacca",
+  "category": "chokepoint",
+  "name": "Strait of Malacca",
+  "genZNote": "Basically every ship going between the Indian Ocean and East Asia funnels through here — it's the busiest strait on Earth by traffic, not by width.",
+  "sections": [
+    {
+      "id": "location-and-connection",
+      "heading": "🚨 Location & What It Connects",
+      "bullets": [
+        "A long strait between the Malay Peninsula (Malaysia) to the north-east and the Indonesian island of Sumatra to the south-west.",
+        "Connects the Andaman Sea/Indian Ocean to the South China Sea/Pacific Ocean.",
+        "One of the busiest shipping lanes in the world by number of vessel transits, though not the busiest by cargo value at every point along it."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "⚓ Why It Matters",
+      "bullets": [
+        "The main sea route linking the Indian Ocean (and everything beyond it — the Middle East, Europe, East Africa) to East Asia (China, Japan, South Korea).",
+        "Singapore sits right at its south-eastern mouth and is one of the world's busiest transshipment ports partly because of this location.",
+        "Nearby/bordering countries: Malaysia, Indonesia, Singapore."
+      ]
+    },
+    {
+      "id": "india-connection",
+      "heading": "🇮🇳 India Connection",
+      "bullets": [
+        "India's trade with East and Southeast Asia largely moves through the Strait of Malacca, making it strategically important to India's 'Act East' trade and connectivity goals.",
+        "India's Andaman & Nicobar Islands sit close to the strait's western approach, giving India a natural vantage point over this route."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Strait of Malacca, between Malaysia and Sumatra, links the Indian Ocean to the South China Sea and is one of the world's busiest shipping lanes.",
+    "keyFacts": [
+      "Between the Malay Peninsula and Sumatra (Indonesia).",
+      "Connects the Indian Ocean (via the Andaman Sea) to the South China Sea/Pacific.",
+      "Singapore sits at its south-eastern mouth.",
+      "Key route for India's trade with East/Southeast Asia."
+    ],
+    "keyTerms": ["Andaman Sea", "Singapore", "Act East (India)"],
+    "commonConfusion": ["Don't confuse the Strait of Malacca (Indian Ocean ↔ South China Sea) with the Sunda or Lombok Straits — those are alternative, less-used routes further south through Indonesia."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Malacca connects Indian Ocean ↔ South China Sea.",
+      "Between Malaysia and Sumatra (Indonesia); Singapore at its mouth.",
+      "One of the busiest straits in the world by vessel traffic."
+    ],
+    "commonTraps": ["A blockage or heavy congestion at Malacca is why alternate routes like the Sunda and Lombok Straits get discussed as backups — know that relationship."],
+    "mustRemember": ["Malacca = Indian Ocean's gateway to East Asia; Singapore's strategic location comes from sitting right at its mouth."]
+  },
+  "sources": [
+    { "name": "U.S. Energy Information Administration — World Oil Transit Chokepoints", "kind": "scientific" },
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" }
+  ]
+}

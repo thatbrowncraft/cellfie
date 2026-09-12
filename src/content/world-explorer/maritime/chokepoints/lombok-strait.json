@@ -1,0 +1,50 @@
+{
+  "id": "lombok-strait",
+  "category": "chokepoint",
+  "name": "Lombok Strait",
+  "genZNote": "Lombok is the deep-water workaround — too big for Malacca's shallow limits, some of the largest tankers reroute all the way here instead.",
+  "sections": [
+    {
+      "id": "location-and-connection",
+      "heading": "🚨 Location & What It Connects",
+      "bullets": [
+        "A strait between the Indonesian islands of Bali and Lombok.",
+        "Connects the Java Sea/Flores Sea area to the Indian Ocean, further east and south than the Sunda Strait.",
+        "Deeper than both the Strait of Malacca and the Sunda Strait, which matters for one specific type of ship."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "⚓ Why It Matters",
+      "bullets": [
+        "Its greater depth makes it usable by very large crude carriers (VLCCs) that are too deep-drafted to safely pass through the shallower Strait of Malacca.",
+        "An important alternative route for oil tankers moving between the Middle East and East Asia when draft restrictions matter.",
+        "Also lies along the Wallace Line, a notable biogeographic boundary separating distinct Asian and Australian wildlife zones."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Lombok Strait, between Bali and Lombok, is a deep-water Indonesian passage used by large tankers too deep-drafted for the Strait of Malacca.",
+    "keyFacts": [
+      "Between Bali and Lombok, Indonesia.",
+      "Connects the Indian Ocean to Indonesia's inner seas.",
+      "Deeper than Malacca and Sunda — used by very large crude carriers (VLCCs).",
+      "Lies along the Wallace Line (a biogeographic boundary)."
+    ],
+    "keyTerms": ["VLCC (very large crude carrier)", "Wallace Line", "Draft restriction"],
+    "commonConfusion": ["Depth is the key differentiator here — Lombok isn't chosen for being shorter, but for being deep enough for ships Malacca can't handle."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Lombok Strait: between Bali and Lombok; deepest of the Indonesian alternative straits.",
+      "Used by VLCCs too large for the Strait of Malacca.",
+      "Sits along the Wallace Line."
+    ],
+    "commonTraps": ["Don't confuse 'deepest' (Lombok) with 'busiest' (Malacca) — they're chosen for different reasons."],
+    "mustRemember": ["Lombok Strait = the deep-draft alternative to Malacca for the largest tankers."]
+  },
+  "sources": [
+    { "name": "U.S. Energy Information Administration — World Oil Transit Chokepoints", "kind": "scientific" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

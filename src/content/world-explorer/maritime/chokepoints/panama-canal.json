@@ -1,0 +1,50 @@
+{
+  "id": "panama-canal",
+  "category": "chokepoint",
+  "name": "Panama Canal",
+  "genZNote": "The Panama Canal uses a system of locks to literally lift ships up and over land — it's basically an elevator for cargo ships.",
+  "sections": [
+    {
+      "id": "location-and-connection",
+      "heading": "🚨 Location & What It Connects",
+      "bullets": [
+        "An artificial, man-made canal across Panama in Central America, using a system of locks to raise and lower ships over the isthmus.",
+        "Connects the Atlantic Ocean (via the Caribbean Sea) to the Pacific Ocean.",
+        "Opened in 1914; operated by the Panama Canal Authority, an agency of the Panamanian government."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "⚓ Why It Matters",
+      "bullets": [
+        "Removes the need to sail all the way around South America's Cape Horn to move between the Atlantic and Pacific.",
+        "Critical for trade between East Asia and the U.S. East Coast, and between Europe and the Americas' Pacific coast.",
+        "Its lock-based capacity is a real constraint — periods of low water levels in the canal's reservoirs have caused ship-transit restrictions in recent years, a good example of how a chokepoint's capacity itself can become a limiting factor."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Panama Canal is a man-made, lock-based canal across Panama connecting the Atlantic and Pacific Oceans.",
+    "keyFacts": [
+      "Man-made canal, opened 1914, located in Panama.",
+      "Connects Atlantic Ocean (via Caribbean Sea) to Pacific Ocean.",
+      "Uses a system of locks to lift ships over the isthmus.",
+      "Alternative route when unavailable: around South America's Cape Horn."
+    ],
+    "keyTerms": ["Panama Canal Authority", "Locks", "Cape Horn route"],
+    "commonConfusion": ["Cape Horn (South America, alternative to Panama) is a different landmark from the Cape of Good Hope (Africa, alternative to Suez) — don't mix them up."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Panama Canal: man-made, opened 1914, uses locks, connects Atlantic ↔ Pacific.",
+      "Alternative when unavailable: Cape Horn route around South America.",
+      "Water-level constraints on its locks are a real, current capacity limitation."
+    ],
+    "commonTraps": ["Don't confuse the Panama Canal's lock system with a simple sea-level cut — ships are physically raised and lowered, unlike the Suez Canal which is sea-level."],
+    "mustRemember": ["Panama Canal = Central America's Atlantic-Pacific shortcut, lock-operated, man-made."]
+  },
+  "sources": [
+    { "name": "Panama Canal Authority", "kind": "educational", "url": "https://pancanal.com/" },
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "sunda-strait",
+  "category": "chokepoint",
+  "name": "Sunda Strait",
+  "genZNote": "When Malacca gets too crowded (or too risky), Sunda is Indonesia's own backup lane — same idea, different island gap.",
+  "sections": [
+    {
+      "id": "location-and-connection",
+      "heading": "🚨 Location & What It Connects",
+      "bullets": [
+        "A strait between the Indonesian islands of Java and Sumatra.",
+        "Connects the Java Sea (and the wider Indonesian archipelago/Pacific side) to the Indian Ocean, offering an alternative to the Strait of Malacca further north.",
+        "Narrower and shallower than Malacca, which limits it mostly to smaller vessels rather than the largest container ships and tankers."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "⚓ Why It Matters",
+      "bullets": [
+        "A secondary route between the Indian Ocean and the South China Sea/Pacific side of Indonesia, used when Malacca is congested or as a shorter option for regional traffic.",
+        "Entirely within Indonesian waters, unlike Malacca which is shared among Malaysia, Indonesia and Singapore.",
+        "Sits near the volcanic island of Krakatoa, historically significant for a major 19th-century eruption."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Sunda Strait, between Java and Sumatra, is a secondary Indonesian route linking the Indian Ocean to the Java Sea, an alternative to the Strait of Malacca.",
+    "keyFacts": [
+      "Between Java and Sumatra, Indonesia.",
+      "Connects the Indian Ocean to the Java Sea.",
+      "An alternative to the more heavily used Strait of Malacca.",
+      "Shallower/narrower — limits large vessel use."
+    ],
+    "keyTerms": ["Java Sea", "Krakatoa", "Alternative route"],
+    "commonConfusion": ["Sunda Strait is entirely within Indonesia, unlike Malacca which is shared among three countries."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Sunda Strait: between Java and Sumatra; Indian Ocean ↔ Java Sea.",
+      "Alternative to the Strait of Malacca.",
+      "Too shallow/narrow for the largest vessels."
+    ],
+    "commonTraps": ["Don't assume Sunda can substitute fully for Malacca — its depth limits it to smaller ships."],
+    "mustRemember": ["Sunda Strait = Indonesia's own Malacca alternative, Java-Sumatra gap."]
+  },
+  "sources": [
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

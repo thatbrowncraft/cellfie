@@ -1,0 +1,57 @@
+{
+  "id": "bab-el-mandeb",
+  "category": "chokepoint",
+  "name": "Bab-el-Mandeb",
+  "genZNote": "The name literally means 'Gate of Grief' in Arabic — a fitting name for a strait this narrow carrying this much of the world's Europe-Asia trade.",
+  "sections": [
+    {
+      "id": "location-and-connection",
+      "heading": "🚨 Location & What It Connects",
+      "bullets": [
+        "A narrow strait between Djibouti/Eritrea (the Horn of Africa) to the west and Yemen (the Arabian Peninsula) to the east.",
+        "Connects the Red Sea to the Gulf of Aden and onward to the Arabian Sea/Indian Ocean.",
+        "The name is Arabic for 'Gate of Tears' or 'Gate of Grief', reflecting its historical reputation as a difficult, dangerous passage."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "⚓ Why It Matters",
+      "bullets": [
+        "The southern gateway to the Red Sea and the Suez Canal — a major share of Europe-Asia shipping, including oil and container trade, passes through it.",
+        "Djibouti has become a significant hub near this chokepoint, hosting several countries' naval facilities because of the strait's strategic importance.",
+        "Nearby countries: Djibouti, Eritrea, Yemen."
+      ]
+    },
+    {
+      "id": "india-connection",
+      "heading": "🇮🇳 India Connection",
+      "bullets": [
+        "India's trade with Europe and parts of Africa via the Suez Canal route passes through Bab-el-Mandeb, making it relevant to India's western trade corridor alongside the Strait of Hormuz."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Bab-el-Mandeb is a narrow strait between the Horn of Africa and Yemen, linking the Red Sea to the Gulf of Aden and the Indian Ocean.",
+    "keyFacts": [
+      "Between Djibouti/Eritrea and Yemen.",
+      "Connects the Red Sea to the Gulf of Aden/Arabian Sea.",
+      "Name means 'Gate of Tears/Grief' in Arabic.",
+      "Key link in the Europe-Asia Suez Canal trade route."
+    ],
+    "keyTerms": ["Gulf of Aden", "Horn of Africa", "Suez Canal route"],
+    "commonConfusion": ["Bab-el-Mandeb and the Suez Canal are two separate points on the SAME overall Europe-Asia route — Bab-el-Mandeb is the southern strait, Suez is the northern canal."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Bab-el-Mandeb connects Red Sea ↔ Gulf of Aden ↔ Indian Ocean.",
+      "Between the Horn of Africa (Djibouti/Eritrea) and Yemen.",
+      "Southern 'gate' of the Red Sea/Suez Canal shipping route."
+    ],
+    "commonTraps": ["Don't mix up Bab-el-Mandeb (a natural strait) with the Suez Canal (a man-made canal) — they're different structures on the same route."],
+    "mustRemember": ["Bab-el-Mandeb = Red Sea's southern gateway; critical link for Europe-Asia trade via Suez."]
+  },
+  "sources": [
+    { "name": "U.S. Energy Information Administration — World Oil Transit Chokepoints", "kind": "scientific" },
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" }
+  ]
+}
