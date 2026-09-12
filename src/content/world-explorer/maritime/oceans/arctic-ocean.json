@@ -1,0 +1,72 @@
+{
+  "id": "arctic-ocean",
+  "category": "ocean",
+  "name": "Arctic Ocean",
+  "genZNote": "The Arctic is the smallest, coldest ocean — and the one changing fastest, because its sea ice is melting quickly enough to open up shipping routes that didn't reliably exist a generation ago.",
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "🌊 Location & Extent",
+      "bullets": [
+        "The smallest and shallowest of the major oceans, centred roughly on the North Pole.",
+        "Largely covered by sea ice for much of the year, though the ice-covered extent has been shrinking over recent decades.",
+        "Connects to the Pacific Ocean through the narrow Bering Strait and to the Atlantic Ocean through the wider waters around Greenland and Norway."
+      ]
+    },
+    {
+      "id": "bordering-regions",
+      "heading": "🗺️ Countries With Coastlines On It",
+      "bullets": [
+        "The five \"Arctic coastal states\": Russia, Canada, the United States (via Alaska), Norway, and Denmark (via Greenland).",
+        "Iceland, Sweden and Finland are also Arctic Council members though not all have a direct Arctic Ocean coastline.",
+        "No country owns the Arctic Ocean itself — coastal states hold exclusive economic zones extending from their coastlines, with some areas still under international negotiation."
+      ]
+    },
+    {
+      "id": "trade-and-strategic-importance",
+      "heading": "🚢 Trade, Resources & Strategic Importance",
+      "bullets": [
+        "The Northern Sea Route (along Russia's Arctic coast) and the Northwest Passage (through Canada's Arctic archipelago) are increasingly discussed as shorter alternatives to traditional Europe-Asia shipping lanes, though both remain seasonal and ice-dependent.",
+        "Believed to hold significant untapped oil, gas and mineral resources beneath the seabed, which is part of why Arctic territorial claims are strategically sensitive.",
+        "The Arctic Council is the main intergovernmental forum for cooperation among Arctic states.",
+        "Shrinking sea ice is gradually making Arctic shipping routes more viable for longer parts of the year, with real economic and environmental trade-offs."
+      ]
+    },
+    {
+      "id": "ecology-and-environment",
+      "heading": "🐻‍❄️ Marine Ecology & Environmental Concerns",
+      "bullets": [
+        "Supports a distinct cold-water ecosystem: polar bears, seals, walruses, narwhals and Arctic seabirds, many dependent on sea ice for hunting or breeding.",
+        "Warming in the Arctic is occurring faster than the global average, a phenomenon known as Arctic amplification.",
+        "Shrinking summer sea-ice extent is one of the most visible, widely tracked indicators of global climate change.",
+        "Increased shipping and resource extraction interest raises concerns about oil-spill risk and habitat disruption in a slow-to-recover cold-water environment."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Arctic Ocean is Earth's smallest and shallowest ocean, centred on the North Pole and bordered by five Arctic coastal states.",
+    "keyFacts": [
+      "Smallest, shallowest major ocean; centred on the North Pole.",
+      "Five Arctic coastal states: Russia, Canada, USA, Norway, Denmark (Greenland).",
+      "Northern Sea Route and Northwest Passage are emerging seasonal shipping lanes.",
+      "Warming faster than the global average (Arctic amplification)."
+    ],
+    "keyTerms": ["Northern Sea Route", "Northwest Passage", "Arctic Council", "Arctic amplification"],
+    "commonConfusion": [
+      "The Northern Sea Route (via Russia) and the Northwest Passage (via Canada) are two different routes — don't merge them into one."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Smallest, shallowest ocean; centred on North Pole.",
+      "Five Arctic coastal states; Arctic Council is the main cooperation forum.",
+      "Sea-ice shrinkage is opening seasonal shipping routes."
+    ],
+    "commonTraps": ["Don't assume Arctic shipping routes are open year-round — both major routes remain seasonal and ice-dependent."],
+    "mustRemember": ["Arctic Ocean = smallest/shallowest; 5 coastal states; Northern Sea Route + Northwest Passage; fastest-warming ocean region."]
+  },
+  "sources": [
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" },
+    { "name": "Arctic Council", "kind": "educational", "url": "https://arctic-council.org/" }
+  ]
+}

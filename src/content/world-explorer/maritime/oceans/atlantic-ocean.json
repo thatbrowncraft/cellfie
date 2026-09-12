@@ -1,0 +1,88 @@
+{
+  "id": "atlantic-ocean",
+  "category": "ocean",
+  "name": "Atlantic Ocean",
+  "genZNote": "The Atlantic is the ocean of \"old trade routes\" — Europe, Africa and the Americas have been shipping stuff across it for centuries. Second biggest ocean, first in historical shipping drama.",
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "🌊 Location & Extent",
+      "bullets": [
+        "The second-largest ocean, running roughly north-south between the Americas to the west and Europe/Africa to the east.",
+        "Connects to the Arctic Ocean in the north and the Southern Ocean in the south.",
+        "Narrower than the Pacific — historically the shortest sea route between Europe and the Americas.",
+        "Split informally into the North Atlantic and South Atlantic."
+      ]
+    },
+    {
+      "id": "bordering-regions",
+      "heading": "🗺️ Countries With Coastlines On It",
+      "bullets": [
+        "Western Europe: United Kingdom, Ireland, France, Spain, Portugal, and the Nordic countries via the North Sea/Norwegian Sea.",
+        "West Africa: Morocco, Senegal, Nigeria, South Africa's Atlantic-facing coast, and others along the African west coast.",
+        "North America: Canada's east coast and the entire U.S. eastern seaboard.",
+        "South America: Brazil, Argentina, and other countries along South America's eastern coast.",
+        "The Caribbean nations sit at the Atlantic's western edge, connected through the Caribbean Sea."
+      ]
+    },
+    {
+      "id": "seas-and-features",
+      "heading": "🌐 Connected Seas & Notable Features",
+      "bullets": [
+        "Major connected seas: Mediterranean Sea, Caribbean Sea, North Sea, Baltic Sea (all covered as their own entries).",
+        "The Gulf Stream, a major warm current, moderates the climate of Western Europe.",
+        "The Sargasso Sea — a unique region defined by ocean currents rather than land — sits within the North Atlantic.",
+        "The Mid-Atlantic Ridge, an underwater mountain range, runs down the middle of the ocean floor."
+      ]
+    },
+    {
+      "id": "trade-and-economy",
+      "heading": "🚢 Trade & Economic Significance",
+      "bullets": [
+        "One of the world's busiest trade oceans, linking Europe, Africa and the Americas.",
+        "Major exports moving across it: European machinery and manufactured goods, African minerals and agricultural products, American grain, vehicles and energy products.",
+        "Key ports: Rotterdam (Europe's largest), New York/New Jersey, Santos (Brazil), Lagos.",
+        "The Suez Canal (linking the Mediterranean/Atlantic side to the Indian Ocean/Red Sea) and the Panama Canal (linking to the Pacific) both extend the Atlantic's trade reach without physically being part of it."
+      ]
+    },
+    {
+      "id": "ecology-and-environment",
+      "heading": "🐠 Marine Ecology & Environmental Concerns",
+      "bullets": [
+        "Supports major fisheries, historically including cod off Newfoundland and the North Sea — both now managed under strict quotas after past overfishing.",
+        "Sargasso Sea seaweed rafts provide unique nursery habitat for eels and juvenile fish found nowhere else.",
+        "Ocean acidification and warming affect coral and shellfish populations along both coasts.",
+        "The Gulf Stream's stability is closely watched by climate scientists because of its role in regional climate patterns."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Atlantic Ocean is Earth's second-largest ocean, separating the Americas from Europe and Africa, and the historic heart of transatlantic trade.",
+    "keyFacts": [
+      "Second-largest ocean, connects Europe/Africa with the Americas.",
+      "Gulf Stream moderates Western Europe's climate.",
+      "Mid-Atlantic Ridge runs down the ocean floor.",
+      "Rotterdam is Europe's largest port."
+    ],
+    "keyTerms": ["Gulf Stream", "Sargasso Sea", "Mid-Atlantic Ridge", "Transatlantic trade"],
+    "commonConfusion": [
+      "The Sargasso Sea has no land borders at all — it's defined purely by ocean currents, unlike every other named sea in this app."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Second-largest ocean; connects Europe, Africa and the Americas.",
+      "Gulf Stream — major warm current affecting European climate.",
+      "Sargasso Sea — a current-bounded sea with no coastline."
+    ],
+    "commonTraps": [
+      "Don't call the Sargasso Sea a country-bordered sea — it genuinely has none.",
+      "The Panama and Suez Canals connect the Atlantic to other oceans but are not themselves part of the Atlantic."
+    ],
+    "mustRemember": ["Atlantic = second-largest; Gulf Stream; historic transatlantic trade; Rotterdam as Europe's key port."]
+  },
+  "sources": [
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" },
+    { "name": "IOC-UNESCO — Ocean literacy resources", "kind": "educational" }
+  ]
+}

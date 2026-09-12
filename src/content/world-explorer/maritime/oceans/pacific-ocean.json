@@ -1,0 +1,89 @@
+{
+  "id": "pacific-ocean",
+  "category": "ocean",
+  "name": "Pacific Ocean",
+  "genZNote": "The Pacific is so big that Asia, the Americas AND Australia all get a coastline on it and there's still room left over. One ocean, three continents' worth of trade routes.",
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "🌊 Location & Extent",
+      "bullets": [
+        "The largest and deepest ocean on Earth, stretching from the Arctic in the north to the Southern Ocean in the south, and from Asia/Australia in the west to the Americas in the east.",
+        "Covers roughly a third of the Earth's surface — larger than all the continents combined.",
+        "Home of the Mariana Trench, the deepest known point in any ocean.",
+        "Divided informally into the North Pacific and South Pacific by the equator."
+      ]
+    },
+    {
+      "id": "bordering-regions",
+      "heading": "🗺️ Countries With Coastlines On It",
+      "bullets": [
+        "East Asia: China, Japan, South Korea, North Korea, Taiwan.",
+        "Southeast Asia: Philippines, Indonesia, Vietnam, Malaysia (through connected seas).",
+        "Oceania: Australia, New Zealand, Papua New Guinea, Fiji, and the smaller Pacific Island nations (Samoa, Tonga, Kiribati, and others).",
+        "The Americas: the entire west coast — Canada, the United States, Mexico, and the Pacific-facing countries of Central and South America (Peru, Chile, Colombia, Ecuador).",
+        "Countries are described here as having coastlines ON the Pacific, not \"surrounding\" it — a more geographically careful phrasing for an ocean this size."
+      ]
+    },
+    {
+      "id": "seas-and-features",
+      "heading": "🌐 Connected Seas & Notable Features",
+      "bullets": [
+        "Major connected seas: South China Sea, East China Sea, Sea of Japan, Coral Sea, Tasman Sea, Sea of Okhotsk.",
+        "The Pacific \"Ring of Fire\" — a horseshoe of volcanoes and earthquake zones — runs along most of its rim.",
+        "Thousands of islands, from large ones (New Guinea, Japan's main islands) to small coral atolls across Micronesia, Melanesia and Polynesia.",
+        "The Panama Canal (see the Strait/Canal entries) links the Pacific to the Atlantic on the American side."
+      ]
+    },
+    {
+      "id": "trade-and-economy",
+      "heading": "🚢 Trade & Economic Significance",
+      "bullets": [
+        "Carries the largest share of global container shipping traffic — trans-Pacific routes connect East Asian manufacturing (China, Japan, South Korea) with North American consumer markets.",
+        "Major exports moving across it: electronics, machinery, vehicles, and consumer goods from East Asia; agricultural products and raw materials from the Americas and Oceania.",
+        "Home to some of the world's busiest container ports: Shanghai, Singapore (via connected seas), Shenzhen, Busan, Los Angeles/Long Beach.",
+        "APEC (Asia-Pacific Economic Cooperation) is the major regional trade forum built around this ocean."
+      ]
+    },
+    {
+      "id": "ecology-and-environment",
+      "heading": "🐠 Marine Ecology & Environmental Concerns",
+      "bullets": [
+        "Contains the Coral Triangle (around Indonesia, the Philippines and Papua New Guinea) — the single richest marine biodiversity zone on Earth.",
+        "The Great Barrier Reef, off Australia's Coral Sea coast, is the world's largest coral reef system.",
+        "The Great Pacific Garbage Patch — a large accumulation zone of floating plastic debris between Hawaii and California — is a well-documented plastic-pollution hotspot.",
+        "Warming Pacific waters drive El Niño/La Niña cycles, which affect weather and fisheries far beyond the ocean itself."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Pacific Ocean is Earth's largest and deepest ocean, bordered by Asia, Oceania and the Americas, and central to global trans-Pacific trade.",
+    "keyFacts": [
+      "Largest and deepest ocean; contains the Mariana Trench.",
+      "Bordered by East Asia, Southeast Asia, Oceania, and the Americas.",
+      "Ring of Fire runs around most of its rim.",
+      "Coral Triangle = richest marine biodiversity zone on Earth."
+    ],
+    "keyTerms": ["Ring of Fire", "Mariana Trench", "Coral Triangle", "Trans-Pacific trade"],
+    "commonConfusion": [
+      "The Pacific isn't \"surrounded\" by any single region — treat East Asia, Oceania and the Americas as three separate coastlines on the same ocean, not one continuous ring of countries."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Largest and deepest ocean on Earth; roughly a third of Earth's surface.",
+      "Mariana Trench — deepest known oceanic point.",
+      "Coral Triangle: Indonesia, Philippines, Papua New Guinea region."
+    ],
+    "commonTraps": [
+      "Don't confuse the Ring of Fire (a seismic/volcanic zone) with a trade route or a current.",
+      "The Panama Canal connects the Pacific and Atlantic — it is a canal, not a strait (no naturally occurring channel)."
+    ],
+    "mustRemember": ["Pacific Ocean = largest + deepest; Ring of Fire; Coral Triangle; trans-Pacific trade backbone."]
+  },
+  "sources": [
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" },
+    { "name": "IOC-UNESCO — Ocean literacy resources", "kind": "educational" },
+    { "name": "FAO — Fisheries and aquaculture regional data", "kind": "scientific" }
+  ]
+}

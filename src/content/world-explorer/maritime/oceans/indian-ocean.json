@@ -1,0 +1,88 @@
+{
+  "id": "indian-ocean",
+  "category": "ocean",
+  "name": "Indian Ocean",
+  "genZNote": "India isn't just a country ON the Indian Ocean — it sits right in the middle of it, like the whole ocean is named after the one country that can't avoid it. Geography flex, honestly.",
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "🌊 Location & Extent",
+      "bullets": [
+        "The third-largest ocean, bounded by Africa to the west, Asia to the north, and Australia to the east, opening into the Southern Ocean below.",
+        "The only major ocean named after a single country — a reflection of India's central position within it, not a claim of ownership.",
+        "Unlike the Pacific and Atlantic, it is mostly closed off in the north by the Asian landmass, which shapes its unique monsoon-driven current system."
+      ]
+    },
+    {
+      "id": "bordering-regions",
+      "heading": "🗺️ Countries With Coastlines On It",
+      "bullets": [
+        "East Africa: Somalia, Kenya, Tanzania, Mozambique, South Africa's Indian Ocean coast, and island nations Madagascar, Mauritius, Seychelles.",
+        "Middle East: Oman, Yemen (via the Arabian Sea/Gulf of Aden), the UAE and other Gulf states (via the Arabian Sea).",
+        "South Asia: India, Pakistan, Sri Lanka, Bangladesh, Maldives.",
+        "Southeast Asia: Indonesia, Thailand, Myanmar (via the Bay of Bengal and Andaman Sea).",
+        "Australia's western and southern coasts."
+      ]
+    },
+    {
+      "id": "seas-and-features",
+      "heading": "🌐 Connected Seas & Notable Features",
+      "bullets": [
+        "Major connected seas: Arabian Sea, Bay of Bengal, Red Sea (via the Gulf of Aden), Andaman Sea.",
+        "The only ocean with a fully monsoon-reversing current system — surface currents flip direction seasonally with the monsoon winds, unlike any other ocean.",
+        "Major island groups: Madagascar, Sri Lanka, the Maldives, the Seychelles, and India's own Andaman & Nicobar and Lakshadweep islands.",
+        "The Strait of Hormuz and Bab-el-Mandeb sit at its northwestern edges, and the Strait of Malacca at its eastern edge — three of the world's most strategically important chokepoints."
+      ]
+    },
+    {
+      "id": "trade-and-strategic-importance",
+      "heading": "🚢 Trade & Strategic Importance",
+      "bullets": [
+        "Carries a huge share of the world's oil trade — tankers from the Gulf pass through the Strait of Hormuz and across the Arabian Sea toward Asia, Europe and beyond.",
+        "The main sea route between Europe and East Asia runs through it, via the Red Sea/Suez Canal on one end and the Strait of Malacca on the other.",
+        "For India specifically, the Indian Ocean carries the majority of its trade by volume — energy imports from the Gulf, and exports/imports with East Africa, Southeast Asia and beyond.",
+        "The Indian Ocean Rim Association (IORA) is the main regional cooperation body built around this ocean, with India as a key member."
+      ]
+    },
+    {
+      "id": "ecology-and-environment",
+      "heading": "🐠 Marine Ecology & Environmental Concerns",
+      "bullets": [
+        "Home to extensive coral reef systems around the Maldives, Lakshadweep, Sri Lanka and the Red Sea, along with mangrove belts across the Sundarbans (India/Bangladesh) and East Africa.",
+        "Warming waters have caused repeated coral bleaching events in the Maldives, Lakshadweep and around the Chagos Archipelago.",
+        "Monsoon-driven upwelling supports major fisheries along the Arabian Sea coast and off East Africa.",
+        "Rising sea levels are a direct existential concern for low-lying island nations in this ocean, especially the Maldives."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Indian Ocean is Earth's third-largest ocean, bounded by Africa, Asia and Australia, with India at its geographic and strategic centre.",
+    "keyFacts": [
+      "Third-largest ocean; only ocean named after one country.",
+      "Only ocean with a fully monsoon-reversing current system.",
+      "Major connected seas: Arabian Sea, Bay of Bengal, Red Sea (via Gulf of Aden), Andaman Sea.",
+      "IORA (Indian Ocean Rim Association) is the key regional body."
+    ],
+    "keyTerms": ["Monsoon currents", "IORA", "Strait of Hormuz", "Strait of Malacca"],
+    "commonConfusion": [
+      "The Indian Ocean isn't \"India's ocean\" territorially — it's simply named for India's central position; many countries share its coastline and trade routes."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Third-largest ocean; borders Africa, Asia, Australia; opens south into the Southern Ocean.",
+      "Only ocean with monsoon-reversing surface currents.",
+      "Three critical chokepoints sit at its edges: Hormuz, Bab-el-Mandeb, Malacca."
+    ],
+    "commonTraps": [
+      "Don't assume every East African or Southeast Asian country borders the Indian Ocean directly — some connect only through a marginal sea.",
+      "IORA is a cooperation body, not a defence alliance — don't confuse it with the Quad."
+    ],
+    "mustRemember": ["Indian Ocean = 3rd largest; India-centred; monsoon currents; Hormuz + Bab-el-Mandeb + Malacca at its edges."]
+  },
+  "sources": [
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" },
+    { "name": "Indian Ocean Rim Association (IORA)", "kind": "educational", "url": "https://www.iora.int/" },
+    { "name": "Ministry of External Affairs, Government of India", "kind": "educational", "url": "https://www.mea.gov.in/" }
+  ]
+}

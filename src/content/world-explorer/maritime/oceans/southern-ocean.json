@@ -1,0 +1,72 @@
+{
+  "id": "southern-ocean",
+  "category": "ocean",
+  "name": "Southern Ocean",
+  "genZNote": "The Southern Ocean is the quiet one — no countries actually border it (Antarctica isn't a country), but it basically runs the planet's climate system from the back office.",
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "🌊 Location & Extent",
+      "bullets": [
+        "Encircles Antarctica, generally defined as the waters south of 60°S latitude, though some definitions extend it further north to the Antarctic Convergence.",
+        "The most recently formally recognised of the major oceans — many older atlases folded it into the southern Pacific, Atlantic and Indian Oceans instead.",
+        "The only ocean that completely encircles the globe without hitting a landmass, at the latitude of the Drake Passage and beyond."
+      ]
+    },
+    {
+      "id": "bordering-regions",
+      "heading": "🗺️ What Borders It",
+      "bullets": [
+        "Antarctica is its only landmass border — Antarctica is a continent, not a sovereign country, governed under the Antarctic Treaty System rather than owned by any nation.",
+        "No country has a permanent population on its coastline; several countries (including India) operate seasonal scientific research stations on Antarctica.",
+        "The Drake Passage, between South America's Cape Horn and the Antarctic Peninsula, is its narrowest and most turbulent crossing point."
+      ]
+    },
+    {
+      "id": "trade-and-strategic-importance",
+      "heading": "🚢 Trade, Research & Strategic Importance",
+      "bullets": [
+        "Carries essentially no commercial shipping trade — it's far too remote, cold and rough for regular commercial routes.",
+        "Its main human activity is scientific research: climate science, glaciology, and Antarctic marine biology.",
+        "The Antarctic Circumpolar Current, the world's largest ocean current by volume transported, flows uninterrupted around Antarctica and links the Pacific, Atlantic and Indian Oceans.",
+        "India operates Antarctic research stations (see the India Maritime profile) as part of its scientific presence here."
+      ]
+    },
+    {
+      "id": "ecology-and-environment",
+      "heading": "🐧 Marine Ecology & Environmental Concerns",
+      "bullets": [
+        "Extremely rich in krill — tiny crustaceans that form the base of a food web supporting whales, seals, penguins and seabirds.",
+        "Some of the most pristine, least human-disturbed marine ecosystems on Earth, though increasingly monitored for the effects of warming and sea-ice loss.",
+        "Antarctic sea-ice extent is one of the most closely watched indicators in global climate science.",
+        "Regulated commercial krill fishing exists under international agreements (CCAMLR) designed to prevent overexploitation of this foundational species."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Southern Ocean encircles Antarctica south of roughly 60°S and drives the Antarctic Circumpolar Current, the world's largest ocean current.",
+    "keyFacts": [
+      "Encircles Antarctica; most recently recognised major ocean.",
+      "No country borders it directly — Antarctica is not a sovereign nation.",
+      "Antarctic Circumpolar Current links the Pacific, Atlantic and Indian Oceans.",
+      "Krill-based food web supports whales, seals and penguins."
+    ],
+    "keyTerms": ["Antarctic Circumpolar Current", "Drake Passage", "CCAMLR", "Krill"],
+    "commonConfusion": [
+      "Don't list any country as \"bordering\" the Southern Ocean the way you would for other oceans — Antarctica has no sovereign owner."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Southern Ocean = waters around Antarctica, roughly south of 60°S.",
+      "Antarctic Circumpolar Current — largest ocean current by volume, flows uninterrupted around the globe.",
+      "Governed under the Antarctic Treaty System, not any single country."
+    ],
+    "commonTraps": ["Don't confuse the Antarctic Treaty System (governance of the continent) with CCAMLR (marine resource management)."],
+    "mustRemember": ["Southern Ocean = around Antarctica; Antarctic Circumpolar Current; krill-based ecosystem; no sovereign coastal country."]
+  },
+  "sources": [
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" },
+    { "name": "Secretariat of the Antarctic Treaty", "kind": "educational", "url": "https://www.ats.aq/" }
+  ]
+}
