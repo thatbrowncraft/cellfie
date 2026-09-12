@@ -97,7 +97,15 @@ const CHOKEPOINTS = buildCategoryMap(chokepointModules, 'chokepoint')
 const ROUTES = buildCategoryMap(routeModules, 'route')
 const ECOSYSTEMS = buildCategoryMap(ecosystemModules, 'ecosystem')
 
-const CATEGORY_MAPS: Record<MaritimeCategory, Map<string, MaritimeProfile>> = {
+// `CATEGORY_MAPS` intentionally only covers the 5 registry-backed
+// categories — `'india-maritime'` is a single fixed profile handled
+// separately by `getIndiaMaritimeProfile()` below, not a folder of many
+// entries, so it never gets its own Map here. `Partial<...>` (rather
+// than a full `Record`) reflects that honestly instead of forcing a
+// placeholder 6th entry that would never be populated; the `?? []`
+// fallbacks below are what actually make an `'india-maritime'` lookup
+// through this generic path resolve to "nothing", not a crash.
+const CATEGORY_MAPS: Partial<Record<MaritimeCategory, Map<string, MaritimeProfile>>> = {
   ocean: OCEANS,
   sea: SEAS,
   chokepoint: CHOKEPOINTS,
@@ -118,11 +126,13 @@ const PORTS: MaritimePort[] = (() => {
 })()
 
 export function getMaritimeProfile(category: MaritimeCategory, id: string): MaritimeProfile | undefined {
-  return CATEGORY_MAPS[category].get(id)
+  return CATEGORY_MAPS[category]?.get(id)
 }
 
 export function getAllMaritimeProfiles(category: MaritimeCategory): MaritimeProfile[] {
-  return Array.from(CATEGORY_MAPS[category].values()).sort((a, b) => a.name.localeCompare(b.name))
+  const map = CATEGORY_MAPS[category]
+  if (!map) return []
+  return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name))
 }
 
 export function getIndiaMaritimeProfile(): MaritimeProfile | null {
