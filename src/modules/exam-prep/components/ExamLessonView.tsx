@@ -218,19 +218,21 @@ export function ExamLessonView({ topic }: { topic: ExamTopic }) {
         </div>
       ))}
 
-      <div className="rounded-md border border-border bg-surface p-5">
-        <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Sources this lesson is informed by</h3>
-        <div className="flex flex-col gap-2">
-          {topic.sources.map((source, i) => (
-            <span key={i} className="font-body text-caption text-ink-secondary">
-              {source.name}
-              <span className="ml-2 rounded-full bg-surface-raised px-2 py-0.5 font-ui text-micro uppercase tracking-wide text-ink-tertiary">
-                {source.kind === 'educational' ? 'Educational' : 'Scientific'}
+      {topic.sources.length > 0 && (
+        <div className="rounded-md border border-border bg-surface p-5">
+          <h3 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">Sources this lesson is informed by</h3>
+          <div className="flex flex-col gap-2">
+            {topic.sources.map((source, i) => (
+              <span key={i} className="font-body text-caption text-ink-secondary">
+                {source.name}
+                <span className="ml-2 rounded-full bg-surface-raised px-2 py-0.5 font-ui text-micro uppercase tracking-wide text-ink-tertiary">
+                  {source.kind === 'educational' ? 'Educational' : 'Scientific'}
+                </span>
               </span>
-            </span>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
