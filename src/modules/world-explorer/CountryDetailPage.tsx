@@ -12,6 +12,7 @@ import {
   CountryQuickRevisionView,
   EducationalUseNotice
 } from './components/CountryLessonView'
+import { MaritimeCrossLinks } from './maritime/components/MaritimeCrossLinks'
 
 /**
  * World Explorer — country detail page. One reusable page renders
@@ -98,6 +99,7 @@ export function CountryDetailPage() {
       {profile ? (
         <div className="flex flex-col gap-6">
           <CountryLessonView profile={profile} />
+          {profile.maritime && <MaritimeCrossLinks maritime={profile.maritime} />}
           <CountryQuickRevisionView title={profile.name} quickRevision={profile.quickRevision} />
           <CountryExamFocusView title={profile.name} examFocus={profile.examFocus} />
           <CountryMemoryHookView genZNote={profile.genZNote} />

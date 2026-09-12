@@ -9,6 +9,7 @@ import { DEFAULT_GLOBE_STYLE, type GlobeStyleId } from '@/core/world-explorer/gl
 import { getSavedGlobeStyle, saveGlobeStyle } from '@/core/world-explorer/globeStylePreference'
 import { Globe } from './components/Globe'
 import { GlobeStyleSelector } from './components/GlobeStyleSelector'
+import { MaritimeCrossLinks } from './maritime/components/MaritimeCrossLinks'
 import {
   CountryExamFocusView,
   CountryLessonView,
@@ -128,6 +129,20 @@ export function WorldExplorerPage() {
         </div>
       </section>
 
+      {/* Entry point into the "Oceans & Maritime World" educational layer — an
+          extension of World Explorer (oceans, seas, chokepoints, routes,
+          marine ecology), not a separate app. See core/world-explorer/maritime/. */}
+      <section className="mt-4">
+        <button
+          type="button"
+          onClick={() => navigate('/exam-prep/world-explorer/maritime')}
+          className="flex w-full items-center justify-between gap-3 rounded-md border border-border bg-surface px-4 py-3 text-left transition-colors duration-micro hover:bg-surface-raised"
+        >
+          <span className="font-ui text-caption font-medium text-ink-primary">🌊 Explore Oceans & Maritime World</span>
+          <CaretRight size={16} className="text-ink-tertiary" aria-hidden />
+        </button>
+      </section>
+
       <div className="mt-6">
         {selected ? (
           <div className="flex flex-col gap-4">
@@ -167,6 +182,7 @@ export function WorldExplorerPage() {
             {selectedProfile ? (
               <>
                 <CountryLessonView profile={selectedProfile} />
+                {selectedProfile.maritime && <MaritimeCrossLinks maritime={selectedProfile.maritime} />}
                 <CountryQuickRevisionView title={selectedProfile.name} quickRevision={selectedProfile.quickRevision} />
                 <CountryExamFocusView title={selectedProfile.name} examFocus={selectedProfile.examFocus} />
                 <CountryMemoryHookView genZNote={selectedProfile.genZNote} />
