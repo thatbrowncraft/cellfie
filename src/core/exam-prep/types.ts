@@ -34,6 +34,8 @@ export type ExamSubjectId =
   | 'logical-reasoning'
   | 'general-knowledge'
   | 'current-affairs-2026'
+  | 'international-organizations'
+  | 'iso'
 
 export interface ExamSubject {
   id: ExamSubjectId

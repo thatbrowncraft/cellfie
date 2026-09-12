@@ -65,6 +65,22 @@ export const EXAM_SUBJECTS: ExamSubject[] = [
       'Gujarat first, India second \u2014 a curated set of verified 2026 events researched and written for this exam, not a live feed. Every item is dated and sourced; nothing here updates automatically.',
     genZNote: "Today's headline can become tomorrow's MCQ \u2014 this is the 2026 shortlist worth actually remembering.",
     icon: 'Newspaper'
+  },
+  {
+    id: 'international-organizations',
+    title: 'International Organizations',
+    shortDescription:
+      'UN system to G20 \u2014 the world\u2019s institutions explained properly: what each one actually does, how it\u2019s structured, how India fits in, and the traps exams love to set with membership and mandate.',
+    genZNote: "The world has a whole org chart \u2014 this is you finally learning who reports to whom.",
+    icon: 'Buildings'
+  },
+  {
+    id: 'iso',
+    title: 'ISO',
+    shortDescription:
+      'Standards, certification and the numbers that actually matter \u2014 ISO 9001 to ISO 17025, explained with the lab and science context Cellfie already teaches, not a bare list of codes to memorise.',
+    genZNote: "\u2018Trust me bro\u2019 is not a quality management system \u2014 ISO is.",
+    icon: 'SealCheck'
   }
 ]
 

@@ -86,6 +86,11 @@ const currentAffairs2026Modules = import.meta.glob<{ default: unknown }>(
   '/src/content/exam-prep/current-affairs-2026/*.json',
   { eager: true }
 )
+const internationalOrganizationsModules = import.meta.glob<{ default: unknown }>(
+  '/src/content/exam-prep/international-organizations/*.json',
+  { eager: true }
+)
+const isoModules = import.meta.glob<{ default: unknown }>('/src/content/exam-prep/iso/*.json', { eager: true })
 
 export const CONSTITUTION_TOPICS: ExamTopic[] = loadTopics(constitutionModules, 'constitution-of-india')
 export const QUANTITATIVE_APTITUDE_TOPICS: ExamTopic[] = loadTopics(
@@ -99,6 +104,11 @@ export const CURRENT_AFFAIRS_2026_TOPICS: ExamTopic[] = loadTopics(
   currentAffairs2026Modules,
   'current-affairs-2026'
 )
+export const INTERNATIONAL_ORGANIZATIONS_TOPICS: ExamTopic[] = loadTopics(
+  internationalOrganizationsModules,
+  'international-organizations'
+)
+export const ISO_TOPICS: ExamTopic[] = loadTopics(isoModules, 'iso')
 
 const SUBJECT_TOPICS: Record<ExamSubjectId, ExamTopic[]> = {
   'constitution-of-india': CONSTITUTION_TOPICS,
@@ -106,7 +116,9 @@ const SUBJECT_TOPICS: Record<ExamSubjectId, ExamTopic[]> = {
   'english-language': ENGLISH_LANGUAGE_TOPICS,
   'logical-reasoning': LOGICAL_REASONING_TOPICS,
   'general-knowledge': GENERAL_KNOWLEDGE_TOPICS,
-  'current-affairs-2026': CURRENT_AFFAIRS_2026_TOPICS
+  'current-affairs-2026': CURRENT_AFFAIRS_2026_TOPICS,
+  'international-organizations': INTERNATIONAL_ORGANIZATIONS_TOPICS,
+  iso: ISO_TOPICS
 }
 
 const SUBJECT_TOPICS_BY_ID: Record<ExamSubjectId, Map<string, ExamTopic>> = Object.fromEntries(
