@@ -1,0 +1,59 @@
+{
+  "id": "deep-sea-open-ocean",
+  "category": "ecosystem",
+  "name": "Deep-Sea & Open-Ocean Ecosystems",
+  "genZNote": "We've mapped more of the Moon's surface in detail than we have of the deep ocean floor — most of this ecosystem is still genuinely unexplored.",
+  "sections": [
+    {
+      "id": "open-ocean-basics",
+      "heading": "🌊 The Open Ocean (Pelagic Zone)",
+      "bullets": [
+        "The vast water column away from coastlines and the seafloor, divided into zones by depth and light penetration (sunlit surface layer, twilight zone, and the permanently dark deep zone).",
+        "Most open-ocean life depends, directly or indirectly, on phytoplankton — microscopic, photosynthesizing organisms that form the base of the entire marine food web.",
+        "Plankton also produce a very large share of the world's oxygen through photosynthesis, making them globally significant beyond just feeding fish."
+      ]
+    },
+    {
+      "id": "deep-sea-basics",
+      "heading": "🔬 The Deep Sea",
+      "bullets": [
+        "Below the reach of sunlight, deep-sea life depends on food sinking down from above, or in a few remarkable cases, chemosynthesis — bacteria producing energy from chemicals rather than light, found around hydrothermal vents.",
+        "Hydrothermal vents host entire ecosystems (tube worms, unique crustaceans) that don't depend on sunlight at all — one of the most significant discoveries in marine biology.",
+        "Extreme pressure, cold, and darkness make the deep sea one of the least explored environments on Earth, despite covering most of the planet's surface."
+      ]
+    },
+    {
+      "id": "food-webs-and-fisheries",
+      "heading": "🐟 Food Webs & Fisheries",
+      "bullets": [
+        "Marine food webs generally run: phytoplankton → zooplankton → small fish → larger predatory fish/marine mammals, with energy lost at each step.",
+        "Major global fisheries (tuna, sardines, anchovies) depend on productive open-ocean zones, often linked to nutrient upwelling near coastlines.",
+        "Overfishing pressure on open-ocean predator species (like tuna and sharks) is a widely tracked global conservation concern."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Open-ocean and deep-sea ecosystems range from sunlit surface waters powered by phytoplankton to permanently dark deep zones, some powered by chemosynthesis at hydrothermal vents.",
+    "keyFacts": [
+      "Phytoplankton form the base of the open-ocean food web and produce much of the world's oxygen.",
+      "Deep sea = below sunlight penetration; depends on sinking food or chemosynthesis.",
+      "Hydrothermal vents host ecosystems independent of sunlight.",
+      "Food web: phytoplankton → zooplankton → small fish → larger predators."
+    ],
+    "keyTerms": ["Phytoplankton", "Chemosynthesis", "Hydrothermal vents", "Pelagic zone"],
+    "commonConfusion": ["Chemosynthesis (chemical-energy-based, found at vents) is distinct from photosynthesis (light-based, found near the surface) — don't conflate them."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Phytoplankton = base of the marine food web; major global oxygen producer.",
+      "Hydrothermal vent ecosystems run on chemosynthesis, not photosynthesis.",
+      "Deep sea remains one of Earth's least-explored environments."
+    ],
+    "commonTraps": ["Don't assume all deep-sea life depends on surface sunlight indirectly — vent ecosystems are a genuine exception."],
+    "mustRemember": ["Open ocean = phytoplankton-powered food web; deep sea = sinking food + rare chemosynthesis at vents."]
+  },
+  "sources": [
+    { "name": "NOAA Ocean Exploration", "kind": "scientific", "url": "https://www.noaa.gov/" },
+    { "name": "IOC-UNESCO — Ocean literacy resources", "kind": "educational" }
+  ]
+}

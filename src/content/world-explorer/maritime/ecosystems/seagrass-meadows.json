@@ -1,0 +1,59 @@
+{
+  "id": "seagrass-meadows",
+  "category": "ecosystem",
+  "name": "Seagrass Meadows",
+  "genZNote": "Seagrass is the one true flowering plant that fully moved into the ocean — not algae, not coral, an actual plant with roots, living entirely underwater.",
+  "sections": [
+    {
+      "id": "what-they-are",
+      "heading": "🌱 What Seagrass Is",
+      "bullets": [
+        "True flowering plants (not algae or seaweed) that grow fully submerged in shallow coastal waters, rooted in sand or mud.",
+        "Form dense underwater meadows in sheltered bays, lagoons and shallow coastal shelves worldwide, from the tropics to temperate coasts."
+      ]
+    },
+    {
+      "id": "why-they-matter",
+      "heading": "🐠 Why Seagrass Matters",
+      "bullets": [
+        "Provide nursery habitat for juvenile fish, shrimp and other species, similar in role to mangroves but in fully submerged shallow water.",
+        "Stabilise seafloor sediment with their root systems, reducing coastal erosion.",
+        "Store carbon efficiently in their root systems and the sediment beneath them — another major 'blue carbon' ecosystem alongside mangroves.",
+        "Support globally significant grazers, most famously dugongs and sea turtles, which feed directly on seagrass."
+      ]
+    },
+    {
+      "id": "threats",
+      "heading": "⚠️ Threats",
+      "bullets": [
+        "Sensitive to reduced light from water pollution and sediment runoff, since they need sunlight to photosynthesize like any plant.",
+        "Damaged by coastal development, dredging, and boat-anchor damage.",
+        "Global seagrass cover has declined significantly over past decades, making it one of the least visible but most threatened coastal ecosystems."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Seagrass meadows are underwater flowering plants that stabilise sediment, store blue carbon, and provide nursery habitat and food for species like dugongs and turtles.",
+    "keyFacts": [
+      "True flowering plants, not algae — grow rooted underwater.",
+      "Provide nursery habitat and stabilise coastal sediment.",
+      "A major 'blue carbon' ecosystem alongside mangroves.",
+      "Key food source for dugongs and sea turtles."
+    ],
+    "keyTerms": ["Blue carbon", "Dugong", "Nursery habitat"],
+    "commonConfusion": ["Seagrass is a true plant (with roots and flowers); seaweed/algae are not plants in the same botanical sense — don't conflate the two."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Seagrass = true flowering plant, fully submerged.",
+      "Major blue-carbon ecosystem alongside mangroves.",
+      "Primary food source for dugongs and sea turtles."
+    ],
+    "commonTraps": ["Don't call seagrass 'seaweed' — seaweed is algae, seagrass is a flowering plant with true roots."],
+    "mustRemember": ["Seagrass = underwater plant meadows; blue carbon storage; dugong/turtle food source."]
+  },
+  "sources": [
+    { "name": "UNEP — Blue carbon ecosystems overview", "kind": "educational", "url": "https://www.unep.org/" },
+    { "name": "IOC-UNESCO — Ocean literacy resources", "kind": "educational" }
+  ]
+}

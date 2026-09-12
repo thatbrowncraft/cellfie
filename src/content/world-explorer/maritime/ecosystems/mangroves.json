@@ -1,0 +1,60 @@
+{
+  "id": "mangroves",
+  "category": "ecosystem",
+  "name": "Mangroves",
+  "genZNote": "Mangroves are the trees that decided regular land wasn't a big enough challenge and learned to grow directly in salty tidal water instead.",
+  "sections": [
+    {
+      "id": "what-they-are",
+      "heading": "🌿 What Mangroves Are",
+      "bullets": [
+        "Salt-tolerant trees and shrubs that grow in the intertidal zone along tropical and subtropical coastlines, where land meets sea.",
+        "Adapted with specialised root systems (prop roots, pneumatophores) that let them stand in waterlogged, low-oxygen soil and filter out much of the salt they take up.",
+        "Form dense coastal forests that trap sediment and build up land over time."
+      ]
+    },
+    {
+      "id": "where-and-importance",
+      "heading": "🌍 Where They Occur & Why They Matter",
+      "bullets": [
+        "The Sundarbans (India-Bangladesh) is the world's largest single mangrove forest.",
+        "Also extensive along coastlines in Indonesia, Southeast Asia generally, East Africa, and parts of Central/South America.",
+        "Act as a natural buffer that reduces the force of storm surges and cyclones on coastal communities.",
+        "Serve as nursery habitat for many fish and shellfish species that later move into open reef or ocean environments as adults."
+      ]
+    },
+    {
+      "id": "carbon-and-threats",
+      "heading": "🌡️ Carbon Storage & Threats",
+      "bullets": [
+        "Store carbon at a notably high rate per unit area compared with many other ecosystems, often called 'blue carbon' — a growing focus of climate policy.",
+        "Widely cleared historically for aquaculture (especially shrimp farming), coastal development, and agriculture.",
+        "Restoration programs in several countries, including India, now specifically target mangrove replanting for both coastal protection and carbon storage."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Mangroves are salt-tolerant coastal forests that protect shorelines, store large amounts of 'blue carbon', and serve as nursery habitat for marine life.",
+    "keyFacts": [
+      "Grow in the intertidal zone of tropical/subtropical coasts.",
+      "Sundarbans (India-Bangladesh) = world's largest mangrove forest.",
+      "Provide storm-surge protection and fish nursery habitat.",
+      "Store 'blue carbon' at high rates per unit area."
+    ],
+    "keyTerms": ["Blue carbon", "Sundarbans", "Nursery habitat", "Pneumatophores"],
+    "commonConfusion": ["Mangroves and coral reefs are different ecosystems that often occur near each other, not the same habitat type."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Sundarbans = world's largest mangrove forest, shared by India and Bangladesh.",
+      "Mangroves = coastal protection + carbon storage ('blue carbon') + fish nursery.",
+      "Major historic threat: clearance for shrimp aquaculture."
+    ],
+    "commonTraps": ["Don't confuse mangrove 'blue carbon' storage with general ocean carbon absorption — it specifically refers to coastal vegetated ecosystems (mangroves, seagrass, salt marsh)."],
+    "mustRemember": ["Mangroves = coastal buffer + blue carbon + nursery habitat; Sundarbans is the headline example."]
+  },
+  "sources": [
+    { "name": "UNEP — Mangrove ecosystems overview", "kind": "educational", "url": "https://www.unep.org/" },
+    { "name": "FAO — Mangrove forest data", "kind": "scientific" }
+  ]
+}

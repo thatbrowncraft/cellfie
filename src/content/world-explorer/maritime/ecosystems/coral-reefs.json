@@ -1,0 +1,62 @@
+{
+  "id": "coral-reefs",
+  "category": "ecosystem",
+  "name": "Coral Reefs",
+  "genZNote": "Coral reefs cover less than 1% of the ocean floor but support about a quarter of all known marine species — the most disproportionately important real estate on Earth.",
+  "sections": [
+    {
+      "id": "what-they-are",
+      "heading": "🪸 What Coral Reefs Are",
+      "bullets": [
+        "Built by colonies of tiny animals called coral polyps, which secrete calcium carbonate skeletons that accumulate into reef structures over long timescales.",
+        "Most reef-building corals live in a mutually beneficial partnership with microscopic algae (zooxanthellae) living in their tissue, which provide the coral with food through photosynthesis and give reefs their vivid colour.",
+        "Reefs form mainly in warm, shallow, clear, nutrient-poor tropical waters, which is why they're concentrated in a band around the equator."
+      ]
+    },
+    {
+      "id": "where-and-biodiversity",
+      "heading": "🌍 Major Reef Regions",
+      "bullets": [
+        "The Coral Triangle (Indonesia, Philippines, Papua New Guinea, Malaysia, Timor-Leste, Solomon Islands) is the world's richest reef biodiversity zone.",
+        "Australia's Great Barrier Reef is the largest single reef system on Earth.",
+        "The Red Sea's reefs (Egypt, Sudan, Saudi Arabia) are notably resilient to warm water.",
+        "India's reef systems include Lakshadweep, the Gulf of Mannar, and parts of the Andaman & Nicobar Islands.",
+        "The Mesoamerican Reef (Mexico, Belize, Guatemala, Honduras) is the world's second-largest barrier reef system."
+      ]
+    },
+    {
+      "id": "threats",
+      "heading": "⚠️ Threats",
+      "bullets": [
+        "Coral bleaching: when stressed by unusually warm water, corals expel their algae partners and turn white, and can die if warm conditions persist.",
+        "Ocean acidification (from the ocean absorbing excess atmospheric CO2) makes it harder for corals to build their calcium carbonate skeletons.",
+        "Physical damage from destructive fishing, coastal development, and unsustainable tourism.",
+        "Because reefs grow so slowly, recovery from severe bleaching or damage can take decades."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Coral reefs are structures built by colonial polyps in partnership with algae, forming the ocean's most biodiverse ecosystems despite covering under 1% of the seafloor.",
+    "keyFacts": [
+      "Built by coral polyps + symbiotic algae (zooxanthellae).",
+      "Support roughly a quarter of all known marine species.",
+      "Coral Triangle = richest reef biodiversity zone.",
+      "Coral bleaching = stress response to warm water, algae expelled."
+    ],
+    "keyTerms": ["Zooxanthellae", "Coral bleaching", "Ocean acidification", "Coral Triangle"],
+    "commonConfusion": ["Bleached coral isn't automatically dead — it can recover if favorable conditions return quickly enough."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Coral reefs: <1% of seafloor, ~25% of marine species.",
+      "Zooxanthellae = symbiotic algae giving coral its food and colour.",
+      "Coral Triangle and Great Barrier Reef are the two most cited major reef regions."
+    ],
+    "commonTraps": ["Bleaching ≠ death — it's a stress response; prolonged stress is what causes coral death."],
+    "mustRemember": ["Coral reefs = tiny footprint, massive biodiversity; threatened by warming and acidification."]
+  },
+  "sources": [
+    { "name": "NOAA Coral Reef Conservation Program", "kind": "scientific", "url": "https://www.noaa.gov/" },
+    { "name": "IOC-UNESCO — Ocean literacy resources", "kind": "educational" }
+  ]
+}
