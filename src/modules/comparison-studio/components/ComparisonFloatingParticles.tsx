@@ -39,30 +39,37 @@ interface Particle {
 }
 
 const PARTICLES: Particle[] = [
-  { id: 'arrow-1', top: '5%', left: '88%', size: 26, colorClassName: 'text-terracotta', opacity: 0.3, duration: 15, delay: 0, motion: 'sidleSide', kind: 'arrow', mobileVisible: true },
-  { id: 'split-1', top: '10%', left: '6%', size: 24, colorClassName: 'text-olive', opacity: 0.3, duration: 17, delay: 0.5, motion: 'spin', kind: 'splitCircle', mobileVisible: true },
-  { id: 'linked-1', top: '8%', left: '46%', size: 20, colorClassName: 'text-sage', opacity: 0.32, duration: 13, delay: 1.0, motion: 'bob', kind: 'linkedDots', mobileVisible: true },
-  { id: 'dot-1', top: '16%', left: '30%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 11, delay: 0.3, motion: 'driftUp', kind: 'dot' },
+  { id: 'arrow-1', top: '5%', left: '88%', size: 26, colorClassName: 'text-terracotta', opacity: 0.54, duration: 15, delay: 0, motion: 'sidleSide', kind: 'arrow', mobileVisible: true },
+  { id: 'split-1', top: '10%', left: '6%', size: 24, colorClassName: 'text-olive', opacity: 0.54, duration: 17, delay: 0.5, motion: 'spin', kind: 'splitCircle', mobileVisible: true },
+  { id: 'linked-1', top: '8%', left: '46%', size: 20, colorClassName: 'text-sage', opacity: 0.58, duration: 13, delay: 1.0, motion: 'bob', kind: 'linkedDots', mobileVisible: true },
+  { id: 'dot-1', top: '16%', left: '30%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.6, duration: 11, delay: 0.3, motion: 'driftUp', kind: 'dot', mobileVisible: true },
+  { id: 'plusminus-1a', top: '3%', left: '66%', size: 18, colorClassName: 'text-sage', opacity: 0.56, duration: 14, delay: 0.6, motion: 'driftDown', kind: 'plusMinus', mobileVisible: true },
 
-  { id: 'balance-1', top: '22%', left: '94%', size: 26, colorClassName: 'text-olive', opacity: 0.3, duration: 19, delay: 0.8, motion: 'driftDown', kind: 'balance', mobileVisible: true },
-  { id: 'plusminus-1', top: '28%', left: '4%', size: 20, colorClassName: 'text-terracotta', opacity: 0.32, duration: 14, delay: 0.4, motion: 'bob', kind: 'plusMinus' },
-  { id: 'arrow-2', top: '20%', left: '66%', size: 24, colorClassName: 'text-sage', opacity: 0.28, duration: 16, delay: 1.4, motion: 'spin', kind: 'arrow', mobileVisible: true },
-  { id: 'split-2', top: '32%', left: '54%', size: 22, colorClassName: 'text-olive', opacity: 0.28, duration: 18, delay: 0.6, motion: 'sidleSide', kind: 'splitCircle' },
+  { id: 'balance-1', top: '22%', left: '94%', size: 26, colorClassName: 'text-olive', opacity: 0.54, duration: 19, delay: 0.8, motion: 'driftDown', kind: 'balance', mobileVisible: true },
+  { id: 'plusminus-1', top: '28%', left: '4%', size: 20, colorClassName: 'text-terracotta', opacity: 0.56, duration: 14, delay: 0.4, motion: 'bob', kind: 'plusMinus', mobileVisible: true },
+  { id: 'arrow-2', top: '20%', left: '66%', size: 24, colorClassName: 'text-sage', opacity: 0.5, duration: 16, delay: 1.4, motion: 'spin', kind: 'arrow', mobileVisible: true },
+  { id: 'split-2', top: '32%', left: '54%', size: 22, colorClassName: 'text-olive', opacity: 0.5, duration: 18, delay: 0.6, motion: 'sidleSide', kind: 'splitCircle', mobileVisible: true },
+  { id: 'linked-1b', top: '24%', left: '20%', size: 18, colorClassName: 'text-terracotta', opacity: 0.58, duration: 15, delay: 1.7, motion: 'driftUp', kind: 'linkedDots', mobileVisible: true },
 
-  { id: 'linked-2', top: '44%', left: '90%', size: 20, colorClassName: 'text-terracotta', opacity: 0.32, duration: 15, delay: 0.9, motion: 'driftUp', kind: 'linkedDots' },
-  { id: 'balance-2', top: '48%', left: '10%', size: 26, colorClassName: 'text-olive', opacity: 0.3, duration: 18, delay: 0.3, motion: 'bob', kind: 'balance', mobileVisible: true },
-  { id: 'dot-2', top: '40%', left: '38%', size: 7, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 12, delay: 1.2, motion: 'driftDown', kind: 'dot' },
-  { id: 'plusminus-2', top: '52%', left: '76%', size: 20, colorClassName: 'text-sage', opacity: 0.32, duration: 12, delay: 0.1, motion: 'sidleSide', kind: 'plusMinus', mobileVisible: true },
+  { id: 'linked-2', top: '44%', left: '90%', size: 20, colorClassName: 'text-terracotta', opacity: 0.58, duration: 15, delay: 0.9, motion: 'driftUp', kind: 'linkedDots', mobileVisible: true },
+  { id: 'balance-2', top: '48%', left: '10%', size: 26, colorClassName: 'text-olive', opacity: 0.54, duration: 18, delay: 0.3, motion: 'bob', kind: 'balance', mobileVisible: true },
+  { id: 'dot-2', top: '40%', left: '38%', size: 7, colorClassName: 'text-ink-tertiary', opacity: 0.6, duration: 12, delay: 1.2, motion: 'driftDown', kind: 'dot', mobileVisible: true },
+  { id: 'plusminus-2', top: '52%', left: '76%', size: 20, colorClassName: 'text-sage', opacity: 0.56, duration: 12, delay: 0.1, motion: 'sidleSide', kind: 'plusMinus', mobileVisible: true },
+  { id: 'arrow-2b', top: '36%', left: '82%', size: 20, colorClassName: 'text-terracotta', opacity: 0.52, duration: 16, delay: 2.1, motion: 'bob', kind: 'arrow', mobileVisible: true },
 
-  { id: 'arrow-3', top: '60%', left: '20%', size: 24, colorClassName: 'text-terracotta', opacity: 0.3, duration: 17, delay: 0.7, motion: 'spin', kind: 'arrow' },
-  { id: 'split-3', top: '66%', left: '86%', size: 22, colorClassName: 'text-sage', opacity: 0.28, duration: 19, delay: 1.5, motion: 'bob', kind: 'splitCircle', mobileVisible: true },
-  { id: 'linked-3', top: '64%', left: '48%', size: 20, colorClassName: 'text-olive', opacity: 0.32, duration: 15, delay: 0.5, motion: 'driftUp', kind: 'linkedDots' },
-  { id: 'balance-3', top: '72%', left: '6%', size: 24, colorClassName: 'text-terracotta', opacity: 0.3, duration: 17, delay: 0.3, motion: 'sidleSide', kind: 'balance', mobileVisible: true },
+  { id: 'arrow-3', top: '60%', left: '20%', size: 24, colorClassName: 'text-terracotta', opacity: 0.54, duration: 17, delay: 0.7, motion: 'spin', kind: 'arrow', mobileVisible: true },
+  { id: 'split-3', top: '66%', left: '86%', size: 22, colorClassName: 'text-sage', opacity: 0.5, duration: 19, delay: 1.5, motion: 'bob', kind: 'splitCircle', mobileVisible: true },
+  { id: 'linked-3', top: '64%', left: '48%', size: 20, colorClassName: 'text-olive', opacity: 0.58, duration: 15, delay: 0.5, motion: 'driftUp', kind: 'linkedDots', mobileVisible: true },
+  { id: 'balance-3', top: '72%', left: '6%', size: 24, colorClassName: 'text-terracotta', opacity: 0.54, duration: 17, delay: 0.3, motion: 'sidleSide', kind: 'balance', mobileVisible: true },
+  { id: 'split-3b', top: '58%', left: '60%', size: 18, colorClassName: 'text-olive', opacity: 0.5, duration: 14, delay: 1.9, motion: 'driftDown', kind: 'splitCircle', mobileVisible: true },
 
-  { id: 'plusminus-3', top: '82%', left: '58%', size: 20, colorClassName: 'text-olive', opacity: 0.32, duration: 20, delay: 1.6, motion: 'driftDown', kind: 'plusMinus' },
-  { id: 'arrow-4', top: '88%', left: '92%', size: 24, colorClassName: 'text-sage', opacity: 0.3, duration: 18, delay: 0.6, motion: 'bob', kind: 'arrow', mobileVisible: true },
-  { id: 'dot-3', top: '92%', left: '14%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 12, delay: 1.1, motion: 'spin', kind: 'dot' },
-  { id: 'split-4', top: '95%', left: '38%', size: 22, colorClassName: 'text-terracotta', opacity: 0.28, duration: 14, delay: 0.2, motion: 'sidleSide', kind: 'splitCircle', mobileVisible: true }
+  { id: 'plusminus-3', top: '82%', left: '58%', size: 20, colorClassName: 'text-olive', opacity: 0.56, duration: 20, delay: 1.6, motion: 'driftDown', kind: 'plusMinus', mobileVisible: true },
+  { id: 'arrow-4', top: '88%', left: '92%', size: 24, colorClassName: 'text-sage', opacity: 0.54, duration: 18, delay: 0.6, motion: 'bob', kind: 'arrow', mobileVisible: true },
+  { id: 'dot-3', top: '92%', left: '14%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.6, duration: 12, delay: 1.1, motion: 'spin', kind: 'dot', mobileVisible: true },
+  { id: 'split-4', top: '95%', left: '38%', size: 22, colorClassName: 'text-terracotta', opacity: 0.5, duration: 14, delay: 0.2, motion: 'sidleSide', kind: 'splitCircle', mobileVisible: true },
+  { id: 'balance-3b', top: '78%', left: '30%', size: 18, colorClassName: 'text-olive', opacity: 0.52, duration: 17, delay: 2.4, motion: 'bob', kind: 'balance', mobileVisible: true },
+  { id: 'linked-4', top: '86%', left: '4%', size: 18, colorClassName: 'text-terracotta', opacity: 0.56, duration: 15, delay: 0.9, motion: 'driftUp', kind: 'linkedDots', mobileVisible: true },
+  { id: 'plusminus-4', top: '46%', left: '68%', size: 18, colorClassName: 'text-sage', opacity: 0.56, duration: 16, delay: 2.6, motion: 'sidleSide', kind: 'plusMinus', mobileVisible: true }
 ]
 
 const ANIMATION_NAME: Record<Motion, string> = {
