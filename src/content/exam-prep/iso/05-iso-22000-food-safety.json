@@ -1,0 +1,94 @@
+{
+  "id": "iso-22000-food-safety",
+  "subjectId": "iso",
+  "syllabusOrder": 5,
+  "title": "ISO 22000 — Food Safety Management, and How It Relates to HACCP",
+  "shortDescription": "A full food-safety management system that BUILDS ON HACCP rather than replacing it — a distinction exams test directly.",
+  "genZNote": "HACCP finds the danger points on the line; ISO 22000 makes sure the whole kitchen actually runs like it means it.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "What ISO 22000 Is",
+      "body": "ISO 22000 specifies requirements for a Food Safety Management System (FSMS) for any organization in the food chain — from primary producers and processors to transporters, storage providers, retailers, and food-service/packaging companies. First published in 2005; the current edition is ISO 22000:2018. It is certifiable, and it is built on the High Level Structure shared with ISO 9001/14001/45001, making integration with other management systems easier."
+    },
+    {
+      "id": "haccp-relationship",
+      "heading": "ISO 22000 and HACCP — Not the Same Thing",
+      "bullets": [
+        "HACCP (Hazard Analysis and Critical Control Points) is a SYSTEMATIC METHOD for identifying, evaluating, and controlling food-safety hazards at specific points in a food process — it is a technique/tool, not a full management system standard, and it is NOT an ISO standard itself.",
+        "ISO 22000 is a full MANAGEMENT SYSTEM STANDARD that explicitly incorporates HACCP principles as one of its core technical components, wrapped inside a broader organizational framework (leadership commitment, planning, resource management, documented information, internal audit, management review, continual improvement).",
+        "In short: HACCP tells you WHERE the hazards are and how to control them technically; ISO 22000 tells you how the WHOLE ORGANIZATION must be run so that hazard control actually works reliably, every day, and keeps improving."
+      ]
+    },
+    {
+      "id": "key-concepts",
+      "heading": "Key Concepts",
+      "bullets": [
+        "Food chain — covers every stage from primary production (farming, fishing) through to final consumption, recognising that food safety hazards can enter at any stage.",
+        "Prerequisite Programmes (PRPs) — basic environmental and operational conditions necessary to maintain a hygienic food-chain environment (e.g. cleaning schedules, pest control, personnel hygiene) — these underpin HACCP, they don't replace it.",
+        "Critical Control Point (CCP) — a step at which control CAN be applied and is ESSENTIAL to prevent or eliminate a food-safety hazard, or reduce it to an acceptable level (the core HACCP concept, incorporated into ISO 22000).",
+        "Hazard — a biological, chemical, or physical agent in food, or the condition of food, with the potential to cause an adverse health effect."
+      ]
+    },
+    {
+      "id": "who-uses-it",
+      "heading": "Applicability",
+      "body": "ISO 22000 is deliberately written to apply to organizations of any size and any position in the food chain — a small farm and a multinational packaged-food manufacturer can both be certified against it, unlike some narrower, sector-specific food-safety schemes."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "ISO 22000 is a certifiable Food Safety Management System standard that incorporates HACCP principles within a broader organizational management framework, applicable anywhere in the food chain.",
+    "keyFacts": [
+      "First published 2005; current edition ISO 22000:2018.",
+      "HACCP = a hazard-control METHOD/TOOL, not an ISO standard and not a full management system.",
+      "ISO 22000 = a full FSMS standard that incorporates HACCP as a technical component.",
+      "Applies across the whole food chain — from primary production to final consumption."
+    ],
+    "keyTerms": [
+      "Food Safety Management System (FSMS)",
+      "HACCP",
+      "Prerequisite Programmes (PRPs)",
+      "Critical Control Point (CCP)"
+    ],
+    "commonConfusion": [
+      "HACCP is NOT itself an ISO standard, and it is not a full management system — it's a hazard-analysis method that ISO 22000 builds upon.",
+      "Do not treat 'ISO 22000 certified' and 'HACCP certified' as identical claims — they test different scopes (whole management system vs a specific hazard-control method)."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ISO 22000 incorporates HACCP principles but is broader than HACCP — a full FSMS, not just a hazard-analysis method.",
+      "HACCP itself is not an ISO-published standard.",
+      "Current edition: ISO 22000:2018."
+    ],
+    "commonTraps": [
+      "Do not state that HACCP and ISO 22000 are interchangeable or identical — HACCP is a component technique within ISO 22000's broader system.",
+      "Do not restrict ISO 22000's applicability to food manufacturers only — it applies across the entire food chain, including transport, storage, and packaging suppliers."
+    ],
+    "mustRemember": [
+      "CCP = a step where control is essential to prevent/reduce a hazard — the technical core inherited from HACCP.",
+      "PRPs are the hygiene/operational baseline that HACCP and ISO 22000 both depend on."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "HACCP",
+        "termB": "ISO 22000",
+        "distinction": "HACCP is a specific hazard-analysis and control-point METHOD, not itself an ISO standard; ISO 22000 is a full, certifiable Food Safety Management System standard that incorporates HACCP principles within it."
+      }
+    ],
+    "possibleQuestions": [
+      "Is HACCP itself an ISO standard?",
+      "What does ISO 22000 incorporate as one of its core technical components?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO 22000:2018 — Food safety management systems — Requirements",
+      "kind": "educational"
+    },
+    {
+      "name": "FAO/WHO Codex Alimentarius — HACCP Principles",
+      "kind": "educational"
+    }
+  ]
+}

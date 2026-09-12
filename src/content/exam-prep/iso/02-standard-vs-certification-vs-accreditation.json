@@ -1,0 +1,134 @@
+{
+  "id": "iso-standard-vs-certification-vs-accreditation",
+  "subjectId": "iso",
+  "syllabusOrder": 2,
+  "title": "Standard vs Certification vs Accreditation — The Single Biggest ISO Exam Trap",
+  "shortDescription": "ISO writes the rulebook. It does not check your homework. Someone else does that — and someone else checks THEM.",
+  "genZNote": "Vibes are not a quality-control method — and neither is assuming ISO personally certifies every factory on Earth.",
+  "sections": [
+    {
+      "id": "the-core-trap",
+      "heading": "The Core Misconception to Avoid",
+      "body": "A huge number of exam-takers (and honestly, a huge number of working professionals) believe 'ISO certifies companies'. IT DOES NOT. ISO's entire job stops at PUBLISHING a standard. Everything after that — checking whether an organization actually follows the standard, and issuing a certificate saying so — is done by separate, independent bodies. This single distinction is one of the most consistently tested ISO facts in competitive exams."
+    },
+    {
+      "id": "four-layer-system",
+      "heading": "The Four-Layer System",
+      "table": {
+        "columnHeaders": [
+          "Who does it",
+          "What it produces"
+        ],
+        "rows": [
+          [
+            "1. Standard-setting",
+            "ISO (and national bodies like BIS, which adopt/adapt ISO standards)",
+            "A published document defining requirements (e.g. ISO 9001)"
+          ],
+          [
+            "2. Certification",
+            "Independent CERTIFICATION BODIES (private companies, e.g. Bureau Veritas, SGS, TUV, or national bodies' certification arms)",
+            "A certificate stating an organization conforms to a standard"
+          ],
+          [
+            "3. Accreditation",
+            "National ACCREDITATION BODIES (e.g. NABCB in India, part of the Quality Council of India)",
+            "Formal recognition that a given certification body is itself competent to issue certificates"
+          ],
+          [
+            "4. Regulation (where applicable)",
+            "Government regulators",
+            "Legal requirement to hold a specific certification, in specific sectors only"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "key-definitions",
+      "heading": "Key Definitions",
+      "bullets": [
+        "Standard — a documented set of requirements, specifications, or guidelines developed by consensus, intended for common and repeated use.",
+        "Technical Specification — similar to a standard but published without requiring the same full consensus level — often used for emerging areas where full consensus isn't yet possible.",
+        "Conformity — the fulfilment of a specified requirement (i.e., actually meeting the standard's criteria).",
+        "Certification (third-party conformity assessment) — an independent body's written assurance that a product, process, system, or person meets specified requirements.",
+        "Accreditation — formal, independent recognition that a certification/testing/inspection body is competent to carry out specific conformity-assessment tasks.",
+        "Audit — a systematic, independent examination to determine whether activities comply with planned arrangements (i.e., whether a management system standard is actually being followed in practice).",
+        "Management system — the set of interrelated policies, processes and procedures an organization uses to achieve its objectives (e.g. a Quality Management System under ISO 9001)."
+      ]
+    },
+    {
+      "id": "types-of-standards",
+      "heading": "Types of ISO Standards",
+      "bullets": [
+        "Management system standards — define requirements for HOW an organization runs a system (e.g. ISO 9001 for quality, ISO 14001 for environment).",
+        "Product standards — define technical requirements for a specific product (e.g. dimensions, safety features).",
+        "Process standards — define requirements for how a specific process should be carried out.",
+        "Terminology/vocabulary standards — standardize definitions and terms used across an industry (e.g. ISO 9000, which defines the vocabulary the ISO 9001 family uses)."
+      ]
+    },
+    {
+      "id": "why-the-distinction-matters",
+      "heading": "Why This Distinction Is the Actual Exam Trap",
+      "bullets": [
+        "'ISO certified' is a common phrase, but strictly it should mean 'certified BY AN INDEPENDENT BODY as conforming to an ISO standard' — ISO itself issues no certificates.",
+        "A certification body's own legitimacy depends on ITS accreditation — an unaccredited certification body can still issue a certificate, but it carries far less credibility.",
+        "This is why 'NABL-accredited laboratory' (a lab accredited BY NABL) and 'ISO 17025 certified laboratory' are talking about two connected but distinct facts: which standard it follows, and who confirmed it follows that standard."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "ISO develops standards; independent certification bodies certify organizations against those standards; accreditation bodies certify that the certification bodies themselves are competent — three separate layers, not one.",
+    "keyFacts": [
+      "ISO does NOT certify any company, product, or person, anywhere, ever.",
+      "Certification = done by independent certification bodies (private companies or national bodies' certification arms).",
+      "Accreditation = a check on the certification body's own competence, done by a national accreditation body.",
+      "In India: NABCB (under the Quality Council of India) is the national accreditation body; NABL is the specific accreditation body for testing/calibration/medical laboratories."
+    ],
+    "keyTerms": [
+      "Certification body",
+      "Accreditation body",
+      "Conformity assessment",
+      "Management system standard"
+    ],
+    "commonConfusion": [
+      "'ISO certified' is shorthand — ISO itself never certifies; an independent, ideally accredited, certification body does.",
+      "Certification (checking an organization) and accreditation (checking a certification body) are two different layers, not synonyms."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ISO writes standards. It does NOT certify companies — independent certification bodies do that.",
+      "Accreditation bodies check the competence of certification bodies — a layer ABOVE certification, not a substitute for it.",
+      "A management system standard (e.g. ISO 9001) defines HOW an organization runs a system; a product standard defines requirements for a specific product."
+    ],
+    "commonTraps": [
+      "Never write or imply 'ISO certifies companies' — this is the single most commonly tested ISO misconception.",
+      "Do not use 'certification' and 'accreditation' interchangeably — accreditation is specifically about certifying the certifiers."
+    ],
+    "mustRemember": [
+      "Four-layer chain: Standard (ISO) → Certification (certification body) → Accreditation (accreditation body) → Regulation (government, where applicable).",
+      "ISO standards are voluntary by default; they become mandatory only via specific law or contract."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Certification",
+        "termB": "Accreditation",
+        "distinction": "Certification is a body's assessment of an ORGANIZATION against a standard; accreditation is a higher-level assessment of whether that CERTIFICATION BODY itself is competent to do the certifying."
+      }
+    ],
+    "possibleQuestions": [
+      "Does ISO itself certify companies as compliant with its standards?",
+      "What is the difference between a certification body and an accreditation body?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO — Certification (iso.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "ISO/IEC 17000:2020 — Conformity assessment vocabulary and general principles",
+      "kind": "educational"
+    }
+  ]
+}

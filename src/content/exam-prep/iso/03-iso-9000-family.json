@@ -1,0 +1,124 @@
+{
+  "id": "iso-9000-family",
+  "subjectId": "iso",
+  "syllabusOrder": 3,
+  "title": "The ISO 9000 Family — Quality Management Systems",
+  "shortDescription": "ISO 9000 (vocabulary), ISO 9001 (the certifiable standard), and ISO 9004 (going beyond compliance) — three documents, one family.",
+  "genZNote": "Quality systems said: vibes are not a quality-control method.",
+  "sections": [
+    {
+      "id": "family-overview",
+      "heading": "Three Documents, Three Different Jobs",
+      "table": {
+        "columnHeaders": [
+          "Purpose",
+          "Can you get certified against it?"
+        ],
+        "rows": [
+          [
+            "ISO 9000",
+            "Defines the fundamental concepts, principles, and VOCABULARY used across the whole 9000 family.",
+            "No — it's a definitions/vocabulary document"
+          ],
+          [
+            "ISO 9001",
+            "Specifies actual REQUIREMENTS for a Quality Management System (QMS) that an organization must meet.",
+            "Yes — this is the certifiable standard"
+          ],
+          [
+            "ISO 9004",
+            "Guidance for achieving SUSTAINED SUCCESS beyond basic ISO 9001 compliance.",
+            "No — it's guidance, not a certifiable requirements standard"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "iso-9001-core",
+      "heading": "ISO 9001 — What It Actually Requires",
+      "body": "ISO 9001 specifies requirements for a Quality Management System where an organization needs to demonstrate its ability to consistently provide products/services that meet customer and applicable regulatory requirements, and aims to enhance customer satisfaction. It is the world's most widely used and most-certified management system standard, applicable to any organization regardless of size, sector, or product."
+    },
+    {
+      "id": "core-concepts",
+      "heading": "Core Concepts Behind ISO 9001",
+      "bullets": [
+        "Process approach — managing activities as interrelated processes that function as a coherent system, rather than isolated departments.",
+        "Risk-based thinking — proactively identifying and addressing risks and opportunities rather than only reacting after something goes wrong (formally embedded since the 2015 revision).",
+        "Continual improvement — the organization must actively work to improve the QMS over time (often using a Plan-Do-Check-Act, PDCA, cycle), not just maintain a static baseline.",
+        "Documentation — 'documented information' (the 2015-revision term, replacing older 'documents and records' language) must be maintained where the standard requires it, and retained as evidence of conformity.",
+        "Internal audit — the organization must periodically audit its own QMS to check it still conforms to the standard and its own procedures, ahead of any external certification audit.",
+        "Corrective action — when something doesn't conform, the organization must investigate the cause and take action to prevent recurrence, not just fix the immediate symptom.",
+        "Management responsibility (now 'leadership' in the 2015 structure) — top management must be actively, demonstrably involved in the QMS, not delegate it entirely."
+      ]
+    },
+    {
+      "id": "high-level-structure",
+      "heading": "High Level Structure (Annex SL)",
+      "body": "Since a major structural overhaul, ISO 9001 (like ISO 14001, ISO 45001, ISO 27001, and other modern management-system standards) follows a common 'High Level Structure' with identical core clause numbering and shared terminology. This deliberate harmonization is WHY organizations find it comparatively easy to run an 'integrated management system' combining quality (9001), environment (14001), and safety (45001) together — the clause structures line up."
+    },
+    {
+      "id": "who-uses-it",
+      "heading": "Who Uses ISO 9001",
+      "bullets": [
+        "Manufacturing companies, service providers, and increasingly laboratories and healthcare-adjacent organizations use ISO 9001 as a baseline quality framework.",
+        "It is sector-neutral — unlike ISO 15189 (medical laboratories specifically) or ISO 13485 (medical devices specifically), ISO 9001 makes no assumptions about what the organization actually produces."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The ISO 9000 family covers quality management: ISO 9000 defines vocabulary, ISO 9001 specifies certifiable QMS requirements, and ISO 9004 offers guidance for sustained success beyond basic compliance.",
+    "keyFacts": [
+      "Only ISO 9001 is certifiable within the family — ISO 9000 (vocabulary) and ISO 9004 (guidance) are not.",
+      "ISO 9001 is the world's most widely certified management-system standard.",
+      "Core concepts: process approach, risk-based thinking, continual improvement (PDCA), documented information, internal audit, corrective action, leadership involvement.",
+      "ISO 9001 follows the same 'High Level Structure' (Annex SL) as ISO 14001 and ISO 45001, enabling integrated management systems."
+    ],
+    "keyTerms": [
+      "Quality Management System (QMS)",
+      "Process approach",
+      "Risk-based thinking",
+      "PDCA cycle",
+      "Annex SL / High Level Structure"
+    ],
+    "commonConfusion": [
+      "ISO 9000 and ISO 9001 are NOT the same document — 9000 is vocabulary/concepts, 9001 is the certifiable requirements standard.",
+      "ISO 9004 is guidance, not a requirements standard — you cannot be 'ISO 9004 certified'."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Only ISO 9001 in the 9000 family is certifiable; ISO 9000 and ISO 9004 are not.",
+      "'Risk-based thinking' was formally embedded into ISO 9001 in its 2015 revision.",
+      "Shared High Level Structure (Annex SL) across ISO 9001/14001/45001 enables integrated management systems."
+    ],
+    "commonTraps": [
+      "Do not say a company is 'ISO 9000 certified' — the correct phrasing is 'ISO 9001 certified'; 9000 itself has no certifiable requirements.",
+      "Do not confuse 'process approach' (managing interrelated processes) with 'process standard' (a standard for a specific technical process) — different concepts entirely."
+    ],
+    "mustRemember": [
+      "ISO 9001 requires top management involvement — quality cannot be fully delegated away from leadership.",
+      "Internal audits happen BEFORE external certification audits, as a self-check."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "ISO 9000",
+        "termB": "ISO 9001",
+        "distinction": "ISO 9000 defines quality-management vocabulary and fundamental concepts; ISO 9001 specifies the actual, certifiable requirements an organization's QMS must meet."
+      }
+    ],
+    "possibleQuestions": [
+      "Which document in the ISO 9000 family can an organization actually be certified against?",
+      "What does 'risk-based thinking' mean in the context of ISO 9001?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO 9001:2015 — Quality management systems — Requirements",
+      "kind": "educational"
+    },
+    {
+      "name": "ISO — Quality Management (iso.org)",
+      "kind": "educational"
+    }
+  ]
+}

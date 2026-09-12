@@ -1,0 +1,170 @@
+{
+  "id": "iso-fundamentals",
+  "subjectId": "iso",
+  "syllabusOrder": 1,
+  "title": "What Is ISO? Origin, Structure, and How Standards Actually Get Made",
+  "shortDescription": "The organization behind the numbers — how ISO is governed, how a standard is actually written, and how ISO differs from IEC and ITU.",
+  "genZNote": "Before memorising a single standard number, know the org that writes them — it's a big deal.",
+  "sections": [
+    {
+      "id": "full-form-history",
+      "heading": "Full Form and Historical Background",
+      "body": "ISO stands for the International Organization for Standardization. It was founded in 1947, when delegates from 25 countries met in London and agreed to create a new international organization 'to facilitate the international coordination and unification of industrial standards'. It began operations later that year, headquartered in Geneva, Switzerland.\n\nA commonly misunderstood point: 'ISO' is NOT an acronym of its English name (which would be 'IOS') — it comes from the Greek word 'isos', meaning 'equal'. This was a deliberate choice so the organization would have the same short name in every language, rather than a different acronym per country."
+    },
+    {
+      "id": "what-iso-is",
+      "heading": "What ISO Actually Is",
+      "bullets": [
+        "ISO is a non-governmental international organization — its members are NATIONAL STANDARDS BODIES, not countries or governments directly.",
+        "It is the world's largest developer of voluntary international standards, spanning nearly every industry: technology, food safety, agriculture, healthcare, manufacturing, and more.",
+        "ISO standards are voluntary by default — they become mandatory only when a government, regulator, or contract specifically requires compliance with one."
+      ]
+    },
+    {
+      "id": "membership-structure",
+      "heading": "Membership and Governance Structure",
+      "table": {
+        "columnHeaders": [
+          "Role"
+        ],
+        "rows": [
+          [
+            "Member bodies",
+            "One national standards body per country (e.g. BIS for India, ANSI for the USA, BSI for the UK) — the only category with full voting rights."
+          ],
+          [
+            "General Assembly",
+            "ISO's top governance body — meets annually, sets overall strategic direction."
+          ],
+          [
+            "ISO Council",
+            "Governs ISO between General Assembly meetings — oversees the Council, technical management, and finances."
+          ],
+          [
+            "Technical Management Board (TMB)",
+            "Oversees the ~250 Technical Committees (TCs) that actually draft standards."
+          ],
+          [
+            "Technical Committees & Working Groups",
+            "Where standards are actually written — experts nominated by national member bodies, organized by subject area (e.g. TC 34 for food products)."
+          ],
+          [
+            "Central Secretariat",
+            "ISO's full-time staff in Geneva, coordinating the technical committee system and publishing finished standards."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "how-a-standard-is-made",
+      "heading": "How an International Standard Is Actually Developed",
+      "bullets": [
+        "A need for a standard is proposed (often by an industry, a national body, or a consumer/regulatory concern).",
+        "A relevant Technical Committee (or a new one) takes it up, forming a Working Group of nominated technical experts from member countries.",
+        "Successive drafts move through defined stages (Working Draft → Committee Draft → Draft International Standard → Final Draft International Standard) with national-body review and voting at each stage.",
+        "Final approval requires a CONSENSUS among participating national bodies — not simple majority — which is why ISO standards take years to develop but carry broad legitimacy.",
+        "Once published, every ISO standard is systematically reviewed roughly every 5 years and either confirmed, revised, or withdrawn — a standard is never a permanently frozen document."
+      ]
+    },
+    {
+      "id": "iso-vs-iec-vs-itu",
+      "heading": "ISO vs IEC vs ITU",
+      "table": {
+        "caption": "Three separate international standards bodies, often confused",
+        "columnHeaders": [
+          "ISO",
+          "IEC",
+          "ITU"
+        ],
+        "rows": [
+          [
+            "Scope",
+            "Almost all fields except electrical/electronic engineering",
+            "Electrical, electronic, and related technologies",
+            "Telecommunications and radio/ICT specifically"
+          ],
+          [
+            "Founded",
+            "1947",
+            "1906 (older than ISO)",
+            "1865 (oldest of the three, and the oldest IGO in existence)"
+          ],
+          [
+            "Members",
+            "National standards bodies",
+            "National electrotechnical committees",
+            "Governments AND private-sector members"
+          ],
+          [
+            "Status",
+            "Non-treaty international NGO",
+            "Non-treaty international NGO",
+            "A UN specialized agency (unlike ISO and IEC)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "why-it-matters-for-cellfie",
+      "heading": "Why This Belongs in a Science/Lab Learning App",
+      "body": "For science, laboratory, and biotechnology students specifically, ISO standards define the quality frameworks that real labs and research environments actually operate under — from ISO 15189 for medical laboratories to ISO/IEC 17025 for testing/calibration labs. This subject connects the general-competitive-exam version of 'what is ISO' with the practical version a laboratory professional or researcher will actually encounter."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "ISO (International Organization for Standardization) is a non-governmental federation of national standards bodies, founded 1947 and headquartered in Geneva, that develops voluntary international standards by technical-committee consensus.",
+    "keyFacts": [
+      "Founded 1947, HQ Geneva. 'ISO' comes from the Greek 'isos' (equal), not an English acronym.",
+      "Members are NATIONAL STANDARDS BODIES (e.g. BIS for India), not governments directly.",
+      "Standards are developed by Technical Committees through a multi-stage, consensus-based drafting process.",
+      "Every ISO standard is reviewed roughly every 5 years and confirmed, revised, or withdrawn.",
+      "IEC (1906) predates ISO; ITU (1865) predates both and is a UN specialized agency, unlike ISO/IEC."
+    ],
+    "keyTerms": [
+      "National standards body",
+      "Technical Committee",
+      "Consensus",
+      "General Assembly",
+      "Central Secretariat"
+    ],
+    "commonConfusion": [
+      "'ISO' is not an acronym of the organization's English name — it's derived from the Greek 'isos' (equal), deliberately chosen to be language-neutral.",
+      "ISO standards are voluntary by default; they become mandatory only when adopted into law/regulation or required by a contract."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ISO founded 1947, HQ Geneva — a non-governmental organization, NOT a UN agency.",
+      "'ISO' derives from the Greek 'isos' (equal), not the initials of its English name.",
+      "ISO standards require CONSENSUS among national bodies to be approved, not a simple majority vote."
+    ],
+    "commonTraps": [
+      "Do not call ISO a 'UN agency' — unlike ITU, ISO is an independent non-governmental organization.",
+      "Do not assume ISO membership is by 'country' — it's specifically by each country's NATIONAL STANDARDS BODY."
+    ],
+    "mustRemember": [
+      "ISO standards are reviewed roughly every 5 years and can be revised or withdrawn.",
+      "IEC (1906, electrical/electronic) and ITU (1865, telecom, UN agency) are ISO's closest 'sibling' bodies but cover different scopes."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "ISO",
+        "termB": "IEC",
+        "distinction": "ISO covers almost all fields except electrical/electronic engineering, which is IEC's domain — the two often jointly publish standards (e.g. ISO/IEC 17025, ISO/IEC 27001) where subject matter overlaps."
+      }
+    ],
+    "possibleQuestions": [
+      "What does the name 'ISO' actually derive from?",
+      "Who are ISO's members — countries, companies, or national standards bodies?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO — About Us / Our Story (iso.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "ISO — Standards Development Process (iso.org)",
+      "kind": "educational"
+    }
+  ]
+}

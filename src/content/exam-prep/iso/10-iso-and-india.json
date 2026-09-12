@@ -1,0 +1,113 @@
+{
+  "id": "iso-and-india",
+  "subjectId": "iso",
+  "syllabusOrder": 10,
+  "title": "ISO and India — BIS, NABL, and the National Standards Ecosystem",
+  "shortDescription": "How ISO's international standards actually connect to India's own standards and accreditation bodies — and why BIS, NABL, and NABCB are not the same thing.",
+  "genZNote": "ISO writes the world's rulebook; BIS adapts it for India; NABL checks who's actually following it.",
+  "sections": [
+    {
+      "id": "bis",
+      "heading": "BIS — Bureau of Indian Standards",
+      "bullets": [
+        "India's NATIONAL STANDARDS BODY — India's representative member at ISO (and at IEC), established under the Bureau of Indian Standards Act, 1986 (BIS itself traces back to the earlier Indian Standards Institution, founded 1947).",
+        "Headquartered in New Delhi.",
+        "Develops Indian Standards (IS), often by adopting or adapting relevant ISO/IEC international standards to Indian conditions, and administers product certification (the ISI mark) and the Hallmarking scheme for precious metals.",
+        "BIS is the body that ADOPTS/ADAPTS international standards for India — it does not itself write ISO's international standards, though its experts do participate in ISO technical committees."
+      ]
+    },
+    {
+      "id": "accreditation-ecosystem",
+      "heading": "India's Accreditation Ecosystem",
+      "table": {
+        "columnHeaders": [
+          "Role"
+        ],
+        "rows": [
+          [
+            "Quality Council of India (QCI)",
+            "An apex national body (set up as a public-private partnership) that houses several accreditation boards, including NABCB."
+          ],
+          [
+            "NABCB — National Accreditation Board for Certification Bodies",
+            "Accredits CERTIFICATION bodies (those that certify organizations against management-system standards like ISO 9001, ISO 14001, ISO 45001, ISO 22000, ISO/IEC 27001)."
+          ],
+          [
+            "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+            "Accredits TESTING, CALIBRATION, and MEDICAL laboratories specifically — i.e. the body relevant to ISO/IEC 17025 and ISO 15189 accreditation in India."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "do-not-merge",
+      "heading": "Do Not Merge These Roles",
+      "bullets": [
+        "BIS sets/adapts STANDARDS for India and runs its own certification schemes (like the ISI mark) — it is India's national standards body, comparable to ISO membership status.",
+        "NABL accredits LABORATORIES specifically (testing, calibration, medical) against ISO/IEC 17025 and ISO 15189 — it does not set standards itself.",
+        "NABCB accredits CERTIFICATION BODIES that certify organizations against management-system standards like ISO 9001 — a different layer again from NABL's laboratory-specific role.",
+        "A laboratory can be 'NABL-accredited' (meaning NABL has confirmed its competence against ISO/IEC 17025 or ISO 15189) — this is separate from BIS product certification and separate again from NABCB's role certifying management-system certification bodies."
+      ]
+    },
+    {
+      "id": "conformity-chain-india",
+      "heading": "The Full Chain, India Edition",
+      "body": "ISO (writes the international standard) → BIS (adopts/adapts it as an Indian Standard, and participates in ISO's technical committees) → an independent certification body (certifies a specific organization against the standard) → NABCB or NABL (accredits that certification/testing body as competent to do so). Government regulation, where it applies, then mandates specific certifications in specific regulated sectors (e.g. certain electronics, toys, and food-contact materials require BIS certification by law in India)."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "BIS is India's national standards body (ISO/IEC member for India); NABL accredits testing/calibration/medical laboratories; NABCB accredits certification bodies for management-system standards — three distinct roles in India's conformity ecosystem.",
+    "keyFacts": [
+      "BIS: India's ISO/IEC member body, HQ New Delhi, established under the BIS Act, 1986 (predecessor: Indian Standards Institution, 1947).",
+      "NABL: accredits testing, calibration, and medical laboratories (relevant to ISO/IEC 17025 and ISO 15189).",
+      "NABCB: accredits certification bodies for management-system standards (relevant to ISO 9001, 14001, 45001, 22000, 27001).",
+      "Both NABL and NABCB operate under the Quality Council of India (QCI)."
+    ],
+    "keyTerms": [
+      "Bureau of Indian Standards (BIS)",
+      "NABL",
+      "NABCB",
+      "Quality Council of India",
+      "ISI mark"
+    ],
+    "commonConfusion": [
+      "BIS sets/adapts standards and runs its OWN certification (ISI mark); NABL and NABCB are ACCREDITATION bodies for OTHER certifiers/labs — do not merge BIS's role with NABL's or NABCB's."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "BIS is India's representative national standards body at ISO — established under the BIS Act, 1986.",
+      "NABL accredits laboratories; NABCB accredits certification bodies — these are two separate accreditation streams under QCI.",
+      "'NABL-accredited' relates specifically to ISO/IEC 17025 (testing/calibration) or ISO 15189 (medical) laboratory accreditation."
+    ],
+    "commonTraps": [
+      "Do not say 'BIS accredits laboratories' — that is NABL's role; BIS sets/adapts standards and runs its own product certification (ISI mark).",
+      "Do not say 'NABL certifies companies against ISO 9001' — NABCB, not NABL, is the accreditation body relevant to management-system certification bodies."
+    ],
+    "mustRemember": [
+      "BIS traces back to the Indian Standards Institution (1947), formalised as BIS under the 1986 Act.",
+      "NABL and NABCB both sit under the Quality Council of India (QCI)."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "NABL",
+        "termB": "NABCB",
+        "distinction": "NABL accredits testing, calibration, and medical LABORATORIES (ISO/IEC 17025, ISO 15189); NABCB accredits CERTIFICATION BODIES that certify organizations against management-system standards like ISO 9001."
+      }
+    ],
+    "possibleQuestions": [
+      "Which Indian body is ISO's national member for India?",
+      "What is the difference between NABL and NABCB?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Bureau of Indian Standards — About Us (bis.gov.in)",
+      "kind": "educational"
+    },
+    {
+      "name": "Quality Council of India — NABL and NABCB (qcin.org)",
+      "kind": "educational"
+    }
+  ]
+}

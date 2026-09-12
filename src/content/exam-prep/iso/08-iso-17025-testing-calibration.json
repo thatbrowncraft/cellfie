@@ -1,0 +1,143 @@
+{
+  "id": "iso-17025-testing-calibration",
+  "subjectId": "iso",
+  "syllabusOrder": 8,
+  "title": "ISO/IEC 17025 — Testing and Calibration Laboratories",
+  "shortDescription": "The standard for general testing/calibration labs — and the precise comparison to ISO 15189 that exams love to ask for.",
+  "genZNote": "Your lab result needs evidence, traceability and competence, not 'trust me bro.'",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "What It Is and Who It's For",
+      "bullets": [
+        "Full title: 'General requirements for the competence of testing and calibration laboratories.'",
+        "Applies broadly to TESTING laboratories (chemical, materials, environmental, food, microbiology outside a clinical context, etc.) and CALIBRATION laboratories — deliberately NOT limited to any one industry, unlike ISO 15189's medical-specific focus.",
+        "Jointly published by ISO and IEC (hence 'ISO/IEC 17025'), first issued 1999, current edition ISO/IEC 17025:2017."
+      ]
+    },
+    {
+      "id": "core-requirements",
+      "heading": "Core Requirements",
+      "bullets": [
+        "Impartiality — the laboratory's activities must be carried out impartially, structurally and behaviourally protected from commercial, financial, or other pressures that could compromise judgement.",
+        "Competence — personnel must be demonstrably competent for the specific tests/calibrations they perform.",
+        "Validity of results — methods must be validated as fit for purpose, and measurement uncertainty must be evaluated and reported where relevant.",
+        "Measurement traceability — calibration results must be traceable to the International System of Units (SI) through an unbroken chain of calibrations.",
+        "Impartiality and confidentiality together with technical competence are what distinguish an accredited testing/calibration lab from one that simply claims to follow good practice."
+      ]
+    },
+    {
+      "id": "management-and-technical",
+      "heading": "Two Categories of Requirements",
+      "bullets": [
+        "Management requirements — organizational structure, document control, corrective/preventive action, internal audit, management review — broadly similar in spirit to ISO 9001's management-system elements.",
+        "Technical requirements — personnel competence, facilities/environmental conditions, equipment, measurement traceability, sampling, and handling of test/calibration items — the technical substance specific to lab work."
+      ]
+    },
+    {
+      "id": "comparison-table",
+      "heading": "ISO 15189 vs ISO/IEC 17025 — The Comparison Exams Actually Want",
+      "table": {
+        "caption": "Two related but distinct laboratory-competence standards",
+        "columnHeaders": [
+          "ISO 15189",
+          "ISO/IEC 17025"
+        ],
+        "rows": [
+          [
+            "Scope",
+            "Medical/clinical laboratories only",
+            "Any testing or calibration laboratory, any sector"
+          ],
+          [
+            "Core focus",
+            "Patient safety, clinical result quality",
+            "General measurement validity and traceability"
+          ],
+          [
+            "Structure specific to it",
+            "Pre-examination / examination / post-examination phases",
+            "Management requirements + Technical requirements"
+          ],
+          [
+            "Typical labs using it",
+            "Pathology, microbiology, haematology, biochemistry (clinical)",
+            "Materials testing, environmental testing, calibration labs, non-clinical microbiology"
+          ],
+          [
+            "India accreditation body",
+            "NABL (medical testing accreditation programme)",
+            "NABL (testing & calibration accreditation programme)"
+          ],
+          [
+            "Publisher",
+            "ISO alone",
+            "ISO and IEC jointly"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "not-interchangeable",
+      "heading": "Why These Are Not Interchangeable",
+      "body": "A materials-testing laboratory would seek ISO/IEC 17025 accreditation, not ISO 15189, because its work has nothing to do with patient specimens or clinical interpretation. Conversely, a hospital pathology lab uses ISO 15189 specifically because it needs the patient-safety and clinical-phase requirements that a general testing standard doesn't cover. A lab that does BOTH clinical testing and general calibration work could, in principle, be accredited against both standards for their respective scopes — they are not mutually exclusive, just scoped differently."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "ISO/IEC 17025 sets general competence requirements for testing and calibration laboratories of any kind, distinguished from ISO 15189's medical-laboratory-specific scope by its broader applicability and its management+technical requirement structure.",
+    "keyFacts": [
+      "Jointly published by ISO and IEC; current edition ISO/IEC 17025:2017; first issued 1999.",
+      "Applies to any testing/calibration lab, not limited to medical/clinical contexts.",
+      "Core pillars: impartiality, competence, validity of results, measurement traceability to SI units.",
+      "Structured around Management requirements + Technical requirements, unlike ISO 15189's three-phase (pre/examination/post) structure.",
+      "In India, NABL accredits labs against both ISO/IEC 17025 (testing/calibration) and ISO 15189 (medical) — under separate accreditation programmes."
+    ],
+    "keyTerms": [
+      "Impartiality",
+      "Measurement uncertainty",
+      "Traceability to SI units",
+      "Management requirements",
+      "Technical requirements"
+    ],
+    "commonConfusion": [
+      "ISO/IEC 17025 and ISO 15189 are sibling standards but scoped differently — a materials-testing lab needs 17025, a clinical pathology lab needs 15189.",
+      "Traceability under 17025 is specifically to the SI unit system — not just 'traceable to some reference', but to internationally recognised measurement units."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ISO/IEC 17025 applies broadly to testing/calibration labs; ISO 15189 applies specifically to medical laboratories.",
+      "ISO/IEC 17025 is jointly published by ISO and IEC; current edition 2017.",
+      "Both standards are, in India, accredited through NABL — but under separate, distinct accreditation programmes."
+    ],
+    "commonTraps": [
+      "Do not say ISO/IEC 17025 is 'the medical lab standard' — that is ISO 15189's job specifically.",
+      "Do not conflate 'measurement uncertainty' (a quantified doubt range around a result) with 'measurement error' (an actual deviation) — 17025 requires evaluating/reporting the former."
+    ],
+    "mustRemember": [
+      "17025's two requirement categories: Management requirements and Technical requirements.",
+      "Impartiality is a structural/behavioural requirement under 17025, protecting against commercial or financial pressure on results."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "ISO 15189",
+        "termB": "ISO/IEC 17025",
+        "distinction": "ISO 15189 is scoped specifically to medical/clinical laboratories and structured around the pre-examination/examination/post-examination phases; ISO/IEC 17025 applies to any testing or calibration laboratory and is structured around management + technical requirements."
+      }
+    ],
+    "possibleQuestions": [
+      "Which ISO/IEC standard applies to a general materials-testing laboratory — 15189 or 17025?",
+      "What are the two broad categories of requirements in ISO/IEC 17025?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO/IEC 17025:2017 — General requirements for the competence of testing and calibration laboratories",
+      "kind": "educational"
+    },
+    {
+      "name": "NABL — Testing and Calibration Laboratories Accreditation (nabl-india.org)",
+      "kind": "educational"
+    }
+  ]
+}

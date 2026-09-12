@@ -1,0 +1,141 @@
+{
+  "id": "iso-other-key-standards",
+  "subjectId": "iso",
+  "syllabusOrder": 9,
+  "title": "Other High-Value ISO Standards — 13485, 50001, 31000, 19011, and the 17000 Family",
+  "shortDescription": "The next tier of standards worth knowing cold: medical devices, energy, risk, auditing, and conformity-assessment vocabulary.",
+  "genZNote": "The standards that don't headline the syllabus but absolutely headline the answer key.",
+  "sections": [
+    {
+      "id": "iso-13485",
+      "heading": "ISO 13485 — Medical Devices Quality Management",
+      "bullets": [
+        "Full title: 'Medical devices — Quality management systems — Requirements for regulatory purposes.'",
+        "Specifies QMS requirements for organizations involved in the design, production, installation, and servicing of MEDICAL DEVICES specifically — not general products.",
+        "Structurally based on ISO 9001 but with medical-device-specific additions around risk management, regulatory compliance, and traceability of devices (crucial for recalls).",
+        "Certifiable — often a prerequisite for regulatory approval/market access for medical devices in many countries.",
+        "Do not confuse with ISO 15189 — ISO 13485 is about manufacturing/servicing the DEVICE; ISO 15189 is about running the LABORATORY that uses devices to test patient samples."
+      ]
+    },
+    {
+      "id": "iso-50001",
+      "heading": "ISO 50001 — Energy Management Systems",
+      "bullets": [
+        "Specifies requirements for an Energy Management System (EnMS), helping organizations systematically improve energy performance, efficiency, and consumption.",
+        "Uses the same High Level Structure/continual-improvement pattern as ISO 9001/14001/45001.",
+        "Distinct from ISO 14001: 14001 covers an organization's overall environmental impact broadly; 50001 focuses specifically and deeply on energy use and efficiency."
+      ]
+    },
+    {
+      "id": "iso-31000",
+      "heading": "ISO 31000 — Risk Management Guidelines",
+      "bullets": [
+        "Provides principles, framework, and a process for managing risk — applicable to any organization, any type of risk, any sector.",
+        "Important distinction: ISO 31000 is GUIDANCE, not a requirements standard — it is NOT certifiable, unlike ISO 9001/14001/45001/27001.",
+        "'Risk-based thinking', embedded across many other modern ISO management-system standards, draws conceptually on the principles ISO 31000 lays out."
+      ]
+    },
+    {
+      "id": "iso-19011",
+      "heading": "ISO 19011 — Guidelines for Auditing Management Systems",
+      "bullets": [
+        "Provides guidance on how to plan and conduct audits of management systems (quality, environmental, safety, etc.) — covering audit principles, programme management, and auditor competence.",
+        "Also GUIDANCE, not a certifiable requirements standard — organizations use it to design good internal (and sometimes external) audit practices, but you cannot be 'ISO 19011 certified'."
+      ]
+    },
+    {
+      "id": "17000-family",
+      "heading": "The ISO/IEC 17000 Family — Conformity Assessment",
+      "table": {
+        "columnHeaders": [
+          "Covers"
+        ],
+        "rows": [
+          [
+            "ISO/IEC 17000",
+            "Vocabulary and general principles of conformity assessment — the definitions used across this whole family."
+          ],
+          [
+            "ISO/IEC 17020",
+            "Requirements for bodies performing INSPECTION (as distinct from testing or certification)."
+          ],
+          [
+            "ISO/IEC 17021",
+            "Requirements for bodies providing AUDIT AND CERTIFICATION of management systems (i.e. the requirements a certification body itself must meet)."
+          ],
+          [
+            "ISO/IEC 17025",
+            "Requirements for testing and calibration LABORATORIES (covered in its own topic in this subject)."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "iso-10001-10002",
+      "heading": "ISO 10001 and ISO 10002 — Customer Satisfaction",
+      "bullets": [
+        "ISO 10001 — guidelines for codes of conduct for customer satisfaction (setting clear, honest expectations upfront).",
+        "ISO 10002 — guidelines for complaints handling within organizations.",
+        "Both are guidance documents that support, but sit outside, the core ISO 9001 certifiable requirements."
+      ]
+    },
+    {
+      "id": "certifiable-vs-guidance-recap",
+      "heading": "Certifiable vs Guidance-Only — Quick Recap Across This Whole Topic",
+      "bullets": [
+        "Certifiable (you CAN be certified against these): ISO 9001, ISO 14001, ISO 45001, ISO 22000, ISO/IEC 27001, ISO 15189, ISO/IEC 17025, ISO 13485, ISO 50001.",
+        "Guidance only (NOT certifiable): ISO 9000, ISO 9004, ISO 31000, ISO 19011, ISO 10001, ISO 10002."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Beyond the headline standards, ISO 13485 (medical devices), ISO 50001 (energy), ISO 31000 (risk guidance), ISO 19011 (audit guidance), and the ISO/IEC 17000 conformity-assessment family round out the high-value standards worth knowing.",
+    "keyFacts": [
+      "ISO 13485: medical DEVICE manufacturing QMS — distinct from ISO 15189 (medical LABORATORY operation).",
+      "ISO 50001: energy management — narrower and deeper than ISO 14001's broad environmental scope.",
+      "ISO 31000 and ISO 19011 are GUIDANCE documents — neither is certifiable.",
+      "ISO/IEC 17020 = inspection bodies; ISO/IEC 17021 = certification bodies for management systems; ISO/IEC 17025 = testing/calibration labs — three different conformity-assessment actors."
+    ],
+    "keyTerms": [
+      "ISO 13485",
+      "ISO 50001",
+      "ISO 31000",
+      "ISO 19011",
+      "ISO/IEC 17020",
+      "ISO/IEC 17021"
+    ],
+    "commonConfusion": [
+      "ISO 13485 (device manufacturing) and ISO 15189 (medical lab operation) are both 'medical' but govern completely different activities.",
+      "ISO 31000 and ISO 19011 are guidance, not certifiable requirements standards — unlike most other standards in this subject."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ISO 31000 (risk) and ISO 19011 (audit guidance) are NOT certifiable — a frequently tested exception to the 'you can be ISO certified' pattern.",
+      "ISO/IEC 17021 sets requirements for CERTIFICATION bodies themselves — i.e. the standard that governs the auditors of other standards.",
+      "ISO 13485 is structurally based on ISO 9001 but adds medical-device-specific regulatory and traceability requirements."
+    ],
+    "commonTraps": [
+      "Do not say an organization is 'ISO 31000 certified' or 'ISO 19011 certified' — both are guidance documents only.",
+      "Do not confuse ISO/IEC 17020 (inspection bodies) with ISO/IEC 17025 (testing/calibration laboratories) — different conformity-assessment activities entirely."
+    ],
+    "mustRemember": [
+      "ISO 50001 is about energy specifically, not general environmental impact (that's ISO 14001's job).",
+      "ISO 13485 vs ISO 15189: device manufacturing vs laboratory operation — do not merge them."
+    ],
+    "possibleQuestions": [
+      "Which of these is NOT certifiable: ISO 9001 / ISO 31000 / ISO 14001 / ISO/IEC 27001?",
+      "What is the key difference between ISO 13485 and ISO 15189?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO 13485:2016 — Medical devices — Quality management systems",
+      "kind": "educational"
+    },
+    {
+      "name": "ISO 31000:2018 — Risk management — Guidelines",
+      "kind": "educational"
+    }
+  ]
+}

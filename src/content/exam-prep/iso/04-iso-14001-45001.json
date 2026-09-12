@@ -1,0 +1,126 @@
+{
+  "id": "iso-14001-45001",
+  "subjectId": "iso",
+  "syllabusOrder": 4,
+  "title": "ISO 14001 (Environment) and ISO 45001 (Occupational Health & Safety)",
+  "shortDescription": "The two management-system standards that protect the planet and the people working on it — separate standards, same High Level Structure.",
+  "genZNote": "14001 keeps the planet in the room; 45001 keeps the people in it too.",
+  "sections": [
+    {
+      "id": "iso-14001",
+      "heading": "ISO 14001 — Environmental Management System",
+      "bullets": [
+        "Specifies requirements for an Environmental Management System (EMS) that an organization can use to enhance its environmental performance.",
+        "Central concepts: environmental ASPECTS (elements of an organization's activities that can interact with the environment, e.g. emissions, waste, water use) and environmental IMPACTS (the actual change to the environment caused by those aspects).",
+        "Requires organizations to identify applicable legal/regulatory COMPLIANCE obligations relevant to their environmental aspects, and to actually meet them — not simply be 'environmentally aware' in a general sense.",
+        "Like ISO 9001, it's built around continual improvement of environmental performance, not a one-time fix.",
+        "Certifiable — an organization can be independently certified as ISO 14001 compliant."
+      ]
+    },
+    {
+      "id": "iso-45001",
+      "heading": "ISO 45001 — Occupational Health and Safety Management System",
+      "bullets": [
+        "The first ISO standard specifically for occupational health and safety (OH&S) management systems — published 2018, replacing the earlier, non-ISO standard OHSAS 18001.",
+        "Central concepts: HAZARD (a source with the potential to cause injury/ill health) and RISK (the combination of the likelihood of a hazard-related event and the severity of resulting injury/ill health).",
+        "A distinguishing feature versus many other management-system standards: it explicitly requires WORKER PARTICIPATION and consultation in developing and maintaining the OH&S system, not just top-down policy.",
+        "Like ISO 14001 and ISO 9001, it follows continual improvement principles and the shared High Level Structure.",
+        "Certifiable — organizations can be independently certified as ISO 45001 compliant."
+      ]
+    },
+    {
+      "id": "comparison",
+      "heading": "14001 vs 45001 — Side by Side",
+      "table": {
+        "columnHeaders": [
+          "ISO 14001",
+          "ISO 45001"
+        ],
+        "rows": [
+          [
+            "Focus",
+            "Environmental performance",
+            "Worker health and safety"
+          ],
+          [
+            "Key concept pair",
+            "Aspect → Impact",
+            "Hazard → Risk"
+          ],
+          [
+            "Published",
+            "1996 (current edition 2015)",
+            "2018 (replaced OHSAS 18001)"
+          ],
+          [
+            "Distinctive requirement",
+            "Legal/regulatory compliance obligations for environmental aspects",
+            "Explicit worker participation and consultation"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "lab-relevance",
+      "heading": "Relevance to Laboratory and Biosafety Contexts",
+      "body": "Both standards matter directly in laboratory settings: ISO 14001 governs how a lab manages chemical waste, effluent, and environmental discharge; ISO 45001 governs how a lab manages hazards like biological agents, sharps, and chemical exposure for its own staff. Neither replaces sector-specific biosafety guidance — they provide the MANAGEMENT SYSTEM framework around which biosafety practices operate."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "ISO 14001 is the certifiable Environmental Management System standard (aspect → impact); ISO 45001 is the certifiable Occupational Health & Safety Management System standard (hazard → risk), both built on continual improvement.",
+    "keyFacts": [
+      "ISO 14001 current edition: 2015. Central pair of terms: environmental aspect vs environmental impact.",
+      "ISO 45001 published 2018, replacing OHSAS 18001 (which was not an ISO standard). Central pair: hazard vs risk.",
+      "ISO 45001 uniquely requires explicit WORKER PARTICIPATION in the OH&S system.",
+      "Both standards share the same High Level Structure as ISO 9001."
+    ],
+    "keyTerms": [
+      "Environmental aspect",
+      "Environmental impact",
+      "Hazard",
+      "Risk",
+      "Worker participation",
+      "OHSAS 18001"
+    ],
+    "commonConfusion": [
+      "OHSAS 18001 was a British-originated standard, NOT an ISO standard — ISO 45001 (2018) is its true ISO replacement.",
+      "An 'aspect' (14001) and a 'hazard' (45001) are structurally parallel concepts but for different domains — don't swap the terminology between the two standards."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ISO 45001 (2018) replaced OHSAS 18001, which was never itself an ISO standard.",
+      "ISO 14001's defining term pair: aspect (cause) → impact (effect on environment).",
+      "ISO 45001's defining term pair: hazard (potential source of harm) → risk (likelihood × severity)."
+    ],
+    "commonTraps": [
+      "Do not call OHSAS 18001 an 'ISO standard' — it predates and is distinct from ISO 45001.",
+      "Do not use 'aspect' and 'hazard' interchangeably across the two standards — they belong to different frameworks (environment vs safety)."
+    ],
+    "mustRemember": [
+      "ISO 45001 explicitly requires WORKER PARTICIPATION, a feature not emphasised the same way in ISO 9001 or ISO 14001.",
+      "Both 14001 and 45001 are independently certifiable, like 9001."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "ISO 14001",
+        "termB": "ISO 45001",
+        "distinction": "ISO 14001 manages an organization's impact ON the environment; ISO 45001 manages risks TO the health and safety of the organization's own workers."
+      }
+    ],
+    "possibleQuestions": [
+      "Which ISO standard replaced OHSAS 18001, and in which year?",
+      "What are the two central linked concepts in ISO 14001?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO 14001:2015 — Environmental management systems — Requirements",
+      "kind": "educational"
+    },
+    {
+      "name": "ISO 45001:2018 — Occupational health and safety management systems — Requirements",
+      "kind": "educational"
+    }
+  ]
+}

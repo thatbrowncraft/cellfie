@@ -1,0 +1,96 @@
+{
+  "id": "iso-27001-information-security",
+  "subjectId": "iso",
+  "syllabusOrder": 6,
+  "title": "ISO/IEC 27001 — Information Security Management",
+  "shortDescription": "Confidentiality, integrity, availability — the three-word core of the standard behind 'ISO certified' data security claims.",
+  "genZNote": "Your data's three basic rights: nobody unauthorized sees it, nobody quietly changes it, and it's actually there when you need it.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "What It Is",
+      "bullets": [
+        "Full reference: ISO/IEC 27001 — jointly published by ISO and IEC, since information security spans both organizational and technical/electrotechnical territory.",
+        "Specifies requirements for an Information Security Management System (ISMS) — a systematic approach to managing sensitive information so it stays secure.",
+        "First published 2005; current edition ISO/IEC 27001:2022.",
+        "Part of the broader ISO/IEC 27000 family, which includes related standards like ISO/IEC 27002 (a detailed code of practice for security controls, used alongside 27001)."
+      ]
+    },
+    {
+      "id": "cia-triad",
+      "heading": "The Core Objective — the 'CIA Triad'",
+      "bullets": [
+        "Confidentiality — ensuring information is accessible only to those authorised to access it.",
+        "Integrity — safeguarding the accuracy and completeness of information and processing methods (i.e. no unauthorized or accidental alteration).",
+        "Availability — ensuring authorised users have access to information and associated assets when they actually need it."
+      ]
+    },
+    {
+      "id": "risk-and-controls",
+      "heading": "Risk-Based Approach and Controls",
+      "body": "Like the other modern management-system standards, ISO/IEC 27001 is built around identifying information-security RISKS relevant to the organization's specific context, then selecting and implementing appropriate CONTROLS to treat those risks — it does not mandate one fixed universal security setup for every organization. The standard's Annex A lists a reference set of controls (spanning organizational, people, physical, and technological categories) that organizations select from based on their own risk assessment — not every control applies to every organization."
+    },
+    {
+      "id": "organizational-context",
+      "heading": "Organizational Context and Continual Improvement",
+      "bullets": [
+        "Requires the organization to understand its own internal/external context and the needs/expectations of interested parties (customers, regulators, employees) before designing its ISMS.",
+        "Follows the same continual-improvement, High Level Structure pattern as ISO 9001/14001/45001 — an ISMS is never a one-time setup.",
+        "Certifiable — organizations can be independently certified as ISO/IEC 27001 compliant, which is increasingly required in cloud-services, fintech, and data-processing contracts."
+      ]
+    },
+    {
+      "id": "connection-to-digital-life",
+      "heading": "Why This Shows Up Outside IT Departments",
+      "body": "ISO/IEC 27001 certification has become a common vendor-assessment requirement well beyond traditional 'IT companies' — hospitals, laboratories, and research institutions handling sensitive patient or research data increasingly need it too, since data security has become part of overall organizational trustworthiness, not a separate concern bolted onto a lab's core quality system."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "ISO/IEC 27001 is the certifiable Information Security Management System standard, built around protecting the Confidentiality, Integrity, and Availability (CIA) of information through a risk-based approach.",
+    "keyFacts": [
+      "Jointly published by ISO and IEC — hence 'ISO/IEC 27001', not just 'ISO 27001' in strict citation.",
+      "Current edition: ISO/IEC 27001:2022; first published 2005.",
+      "Core objective: the CIA triad — Confidentiality, Integrity, Availability.",
+      "Annex A provides a reference set of security controls, selected based on the organization's own risk assessment — not a one-size-fits-all checklist."
+    ],
+    "keyTerms": [
+      "Information Security Management System (ISMS)",
+      "CIA triad",
+      "Risk assessment",
+      "Annex A controls",
+      "ISO/IEC 27002"
+    ],
+    "commonConfusion": [
+      "ISO/IEC 27001 (the certifiable requirements standard) and ISO/IEC 27002 (a detailed code of practice for controls, used alongside it) are related but distinct documents."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The CIA triad — Confidentiality, Integrity, Availability — is the core objective of ISO/IEC 27001.",
+      "ISO/IEC 27001 is jointly issued by ISO and IEC, unlike single-body standards such as ISO 9001.",
+      "Current edition: ISO/IEC 27001:2022."
+    ],
+    "commonTraps": [
+      "Do not write it as simply 'ISO 27001' in a precise-citation context — the correct designation is 'ISO/IEC 27001' since IEC co-publishes it.",
+      "Do not confuse 'Availability' (authorised access when needed) with 'Integrity' (accuracy/no unauthorized change) — both are frequently swapped in distractor options."
+    ],
+    "mustRemember": [
+      "Annex A controls are SELECTED based on risk assessment — not every organization applies every control.",
+      "ISO/IEC 27001 follows the same High Level Structure as ISO 9001/14001/45001, enabling integrated management systems."
+    ],
+    "possibleQuestions": [
+      "What do the three letters in the 'CIA triad' (as used in ISO/IEC 27001) stand for?",
+      "Why is the standard designated 'ISO/IEC 27001' rather than just 'ISO 27001'?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO/IEC 27001:2022 — Information security management systems — Requirements",
+      "kind": "educational"
+    },
+    {
+      "name": "ISO — Information Security Management (iso.org)",
+      "kind": "educational"
+    }
+  ]
+}

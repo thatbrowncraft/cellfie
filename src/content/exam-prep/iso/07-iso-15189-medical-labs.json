@@ -1,0 +1,94 @@
+{
+  "id": "iso-15189-medical-labs",
+  "subjectId": "iso",
+  "syllabusOrder": 7,
+  "title": "ISO 15189 — Medical Laboratories: Requirements for Quality and Competence",
+  "shortDescription": "The standard written specifically for medical/pathology labs — patient results, not just generic testing.",
+  "genZNote": "Medical labs need receipts for competence, not just confidence.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "What It Is and Who It's For",
+      "bullets": [
+        "Full title: 'Medical laboratories — Requirements for quality and competence.'",
+        "Written SPECIFICALLY for medical/clinical/pathology laboratories — pathology, microbiology, biochemistry, haematology, immunology, and molecular diagnostics labs that produce results used directly in patient care.",
+        "Combines general laboratory-competence requirements (similar territory to ISO/IEC 17025) with medical-specific requirements around patient safety, sample handling, and clinical interpretation."
+      ]
+    },
+    {
+      "id": "the-three-phases",
+      "heading": "Pre-Examination, Examination, Post-Examination",
+      "bullets": [
+        "Pre-examination (pre-analytical) phase — everything from the clinician's test request through patient preparation, sample collection, handling, and transport to the lab. A huge share of real-world lab errors happen here, before testing even begins.",
+        "Examination (analytical) phase — the actual testing process: methods, equipment, reagents, and the technical performance of the test itself.",
+        "Post-examination (post-analytical) phase — result review, interpretation, authorization, and reporting back to the requesting clinician, including how urgent/critical results are communicated."
+      ]
+    },
+    {
+      "id": "personnel-and-equipment",
+      "heading": "Personnel Competence and Equipment",
+      "bullets": [
+        "Requires documented evidence that laboratory personnel are competent for the specific tasks they perform — not just generally qualified, but specifically assessed on the actual test/method they run.",
+        "Requires equipment to be properly calibrated, maintained, and where relevant, its performance verified before being used for patient testing.",
+        "Requires measurement/result TRACEABILITY — the ability to link a reported result back through an unbroken chain of calibrations to a recognised reference."
+      ]
+    },
+    {
+      "id": "quality-assurance",
+      "heading": "Quality Assurance and Reporting",
+      "bullets": [
+        "Internal quality control (running known controls alongside patient samples to catch problems in real time) and External Quality Assessment / Proficiency Testing (comparing the lab's results against other labs via an outside scheme) are both required elements.",
+        "Continual improvement — the lab must have a process to identify nonconformities, investigate root causes, and improve — the same principle running through every modern ISO management-system standard.",
+        "Results must be reported in a way that is clear, accurate, and includes information needed for correct clinical interpretation — not just a raw number."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "ISO 15189 sets quality and competence requirements specifically for medical laboratories, covering the pre-examination, examination, and post-examination phases of patient testing.",
+    "keyFacts": [
+      "Written specifically for medical/clinical/pathology laboratories, unlike the more general ISO/IEC 17025.",
+      "Three core phases: pre-examination (pre-analytical), examination (analytical), post-examination (post-analytical).",
+      "Requires documented personnel competence for specific tasks, equipment calibration/traceability, and both internal QC and external proficiency testing.",
+      "In India, medical laboratory accreditation against ISO 15189 is carried out through NABL."
+    ],
+    "keyTerms": [
+      "Pre-examination phase",
+      "Examination phase",
+      "Post-examination phase",
+      "Traceability",
+      "External Quality Assessment (EQA)"
+    ],
+    "commonConfusion": [
+      "ISO 15189 is specific to MEDICAL laboratories — a general testing/calibration lab (e.g. a materials-testing lab) would instead use ISO/IEC 17025."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ISO 15189's three phases: pre-examination, examination, post-examination — a frequently tested sequence.",
+      "ISO 15189 combines general lab-competence requirements with medical-specific patient-safety requirements.",
+      "In India, NABL accredits medical laboratories against ISO 15189."
+    ],
+    "commonTraps": [
+      "Do not use ISO 15189 and ISO/IEC 17025 interchangeably — 15189 is medical-lab-specific; see the next topic's comparison table for the precise distinction.",
+      "Do not skip the pre-examination phase when listing ISO 15189's scope — most real-world lab errors occur here, not during testing itself."
+    ],
+    "mustRemember": [
+      "'Traceability' in ISO 15189 means linking a result back through calibrations to a recognised reference standard.",
+      "Both internal quality control AND external proficiency testing are required — one alone is not sufficient."
+    ],
+    "possibleQuestions": [
+      "What are the three phases of testing covered by ISO 15189?",
+      "Which accreditation body accredits medical laboratories against ISO 15189 in India?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO 15189:2022 — Medical laboratories — Requirements for quality and competence",
+      "kind": "educational"
+    },
+    {
+      "name": "NABL — Medical Testing Laboratory Accreditation (nabl-india.org)",
+      "kind": "educational"
+    }
+  ]
+}

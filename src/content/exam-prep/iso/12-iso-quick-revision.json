@@ -1,0 +1,195 @@
+{
+  "id": "iso-quick-revision",
+  "subjectId": "iso",
+  "syllabusOrder": 12,
+  "title": "ISO — Consolidated Exam Revision Sheet",
+  "shortDescription": "Every standard number, what it means, and its one-line memory aid — the last page you read before the exam.",
+  "genZNote": "The night-before-the-exam page for ISO — every number, every meaning, zero fluff.",
+  "sections": [
+    {
+      "id": "standards-master-table",
+      "heading": "Standard Number → Meaning — Master Table",
+      "table": {
+        "columnHeaders": [
+          "One-line meaning",
+          "Certifiable?"
+        ],
+        "rows": [
+          [
+            "ISO 9000",
+            "Quality management vocabulary/concepts",
+            "No"
+          ],
+          [
+            "ISO 9001",
+            "Quality Management System requirements",
+            "Yes"
+          ],
+          [
+            "ISO 9004",
+            "Guidance for sustained success beyond 9001",
+            "No"
+          ],
+          [
+            "ISO 14001",
+            "Environmental Management System requirements",
+            "Yes"
+          ],
+          [
+            "ISO 45001",
+            "Occupational Health & Safety Management System requirements",
+            "Yes"
+          ],
+          [
+            "ISO 22000",
+            "Food Safety Management System requirements (incorporates HACCP)",
+            "Yes"
+          ],
+          [
+            "ISO/IEC 27001",
+            "Information Security Management System requirements (CIA triad)",
+            "Yes"
+          ],
+          [
+            "ISO 15189",
+            "Medical laboratory quality and competence requirements",
+            "Yes (accreditation)"
+          ],
+          [
+            "ISO/IEC 17025",
+            "Testing and calibration laboratory competence requirements",
+            "Yes (accreditation)"
+          ],
+          [
+            "ISO 13485",
+            "Medical device manufacturing QMS requirements",
+            "Yes"
+          ],
+          [
+            "ISO 50001",
+            "Energy Management System requirements",
+            "Yes"
+          ],
+          [
+            "ISO 31000",
+            "Risk management guidelines",
+            "No"
+          ],
+          [
+            "ISO 19011",
+            "Guidelines for auditing management systems",
+            "No"
+          ],
+          [
+            "ISO/IEC 17000",
+            "Conformity assessment vocabulary",
+            "No"
+          ],
+          [
+            "ISO/IEC 17020",
+            "Requirements for inspection bodies",
+            "Yes (accreditation)"
+          ],
+          [
+            "ISO/IEC 17021",
+            "Requirements for management-system certification bodies",
+            "Yes (accreditation)"
+          ],
+          [
+            "ISO 10001",
+            "Guidelines for customer-satisfaction codes of conduct",
+            "No"
+          ],
+          [
+            "ISO 10002",
+            "Guidelines for complaints handling",
+            "No"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "families-recap",
+      "heading": "Standard Families Recap",
+      "bullets": [
+        "9000 family — quality (9000 vocabulary, 9001 requirements, 9004 guidance).",
+        "14000 family — environment (headline standard: 14001).",
+        "45000 family — occupational health & safety (headline standard: 45001).",
+        "17000 family — conformity assessment (17000 vocabulary, 17020 inspection, 17021 certification bodies, 17025 testing/calibration labs)."
+      ]
+    },
+    {
+      "id": "organizations-recap",
+      "heading": "Organizations Recap",
+      "bullets": [
+        "ISO — international standard-writer, founded 1947, HQ Geneva, members are national standards bodies.",
+        "IEC — electrical/electronic standards, founded 1906, co-publishes with ISO where scopes overlap (17025, 27001).",
+        "ITU — telecom standards, founded 1865, a UN specialized agency (unlike ISO/IEC).",
+        "BIS — India's national standards body, adapts ISO/IEC standards, HQ New Delhi.",
+        "NABL — accredits India's testing/calibration/medical laboratories.",
+        "NABCB — accredits India's management-system certification bodies."
+      ]
+    },
+    {
+      "id": "terminology-recap",
+      "heading": "Terminology Recap",
+      "bullets": [
+        "Standard vs Technical Specification — a standard requires full consensus; a technical specification does not (used for emerging areas).",
+        "Conformity — actually meeting a standard's requirements.",
+        "Certification — third-party confirmation an organization conforms.",
+        "Accreditation — confirmation that a certification/testing body is itself competent.",
+        "Audit — a systematic check of whether a system actually follows what it claims to follow.",
+        "Management system — the interrelated policies/processes an organization uses to run toward its objectives."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "This is the compiled reference sheet for every ISO standard number, organization, and term covered across the ISO subject.",
+    "keyFacts": [
+      "Certifiable standards: 9001, 14001, 45001, 22000, 27001, 13485, 50001 (plus accreditation-based 15189, 17025, 17020, 17021).",
+      "Guidance-only, non-certifiable: 9000, 9004, 31000, 19011, 17000, 10001, 10002.",
+      "17000 family = conformity assessment; 9000 family = quality; 14000 family = environment; 45000 family = OH&S."
+    ],
+    "keyTerms": [
+      "Standard",
+      "Technical Specification",
+      "Conformity",
+      "Certification",
+      "Accreditation",
+      "Audit",
+      "Management system"
+    ],
+    "commonConfusion": [
+      "Guidance documents (9004, 31000, 19011, 10001, 10002) are the ones most often mistakenly described as 'certifiable' — they are not."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The master table above is the single highest-yield reference page in the ISO subject — headquarters/founding-year facts for the parent organizations, and certifiable-vs-not status for every standard, in one place.",
+      "17000-family standards (17020, 17021, 17025) each govern a different type of conformity-assessment BODY — inspection, certification, and laboratory testing respectively.",
+      "ISO/IEC co-publishes standards only where scope crosses into electrical/electronic/technology territory (17025, 27001) — most ISO standards (9001, 14001, 45001, 22000, 15189) are ISO-only."
+    ],
+    "commonTraps": [
+      "Do not assume every standard number in this list is certifiable — check the table's 'Certifiable?' column before answering.",
+      "Do not forget that ISO/IEC 17025 and ISO/IEC 27001 carry the 'ISO/IEC' prefix specifically because IEC co-publishes them."
+    ],
+    "mustRemember": [
+      "When a question gives you a standard number you don't recognise, first ask: quality (9xxx), environment (14xxx), safety (45xxx), or conformity assessment (17xxx)? — the number range itself is a strong clue.",
+      "The four-layer chain — standard → certification → accreditation → regulation — resolves most remaining confusion."
+    ],
+    "possibleQuestions": [
+      "Which ISO standards in this subject are guidance-only and NOT certifiable?",
+      "Match each standard number to its correct one-line meaning."
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO — Standards Catalogue (iso.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "ISO/IEC 17000:2020 — Conformity assessment vocabulary and general principles",
+      "kind": "educational"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "iso-exam-traps",
+  "subjectId": "iso",
+  "syllabusOrder": 11,
+  "title": "ISO Exam Traps — Every Confusion Pair in One Place",
+  "shortDescription": "Every 'these two sound the same but aren't' pair from this subject, collected into one dedicated traps sheet.",
+  "genZNote": "If two ISO things sound like synonyms, they're probably this page's next entry.",
+  "sections": [
+    {
+      "id": "trap-list",
+      "heading": "The Full Trap List",
+      "table": {
+        "caption": "Read each row as 'don't confuse A with B'",
+        "columnHeaders": [
+          "...with this",
+          "The actual distinction"
+        ],
+        "rows": [
+          [
+            "ISO",
+            "A certification body",
+            "ISO writes standards; it never certifies any company, product, or person itself."
+          ],
+          [
+            "Certification",
+            "Accreditation",
+            "Certification checks an ORGANIZATION against a standard; accreditation checks a CERTIFICATION BODY's own competence to do that."
+          ],
+          [
+            "ISO",
+            "BIS",
+            "ISO is the international standards body; BIS is India's national standards body and ISO's India member — BIS adapts, it doesn't replace, ISO."
+          ],
+          [
+            "BIS",
+            "NABL",
+            "BIS sets/adapts standards and runs its own product certification (ISI mark); NABL accredits testing/calibration/medical laboratories — different jobs entirely."
+          ],
+          [
+            "ISO 9001",
+            "ISO 9000",
+            "9001 is the certifiable requirements standard; 9000 is only the vocabulary/concepts document — not certifiable."
+          ],
+          [
+            "ISO 15189",
+            "ISO/IEC 17025",
+            "15189 is medical-laboratory-specific (pre/examination/post phases); 17025 is general testing/calibration lab competence (management + technical requirements)."
+          ],
+          [
+            "ISO 22000",
+            "HACCP",
+            "HACCP is a hazard-control METHOD, not an ISO standard; ISO 22000 is a full, certifiable Food Safety Management System that incorporates HACCP as one component."
+          ],
+          [
+            "ISO 14001",
+            "ISO 45001",
+            "14001 manages an organization's impact ON the environment (aspect → impact); 45001 manages risks TO its own workers (hazard → risk)."
+          ],
+          [
+            "ISO",
+            "IEC",
+            "ISO covers almost all fields except electrical/electronic engineering, which is IEC's domain — they co-publish standards like ISO/IEC 17025 and 27001 where scopes overlap."
+          ],
+          [
+            "A management system standard",
+            "A product standard",
+            "A management system standard (e.g. ISO 9001) defines HOW an organization runs a system; a product standard defines technical requirements for a specific PRODUCT."
+          ],
+          [
+            "Testing laboratory",
+            "Medical laboratory",
+            "A testing lab (materials, environmental, general) seeks ISO/IEC 17025 accreditation; a medical/clinical lab seeks ISO 15189 accreditation."
+          ],
+          [
+            "ISO 31000 / ISO 19011",
+            "Certifiable standards like ISO 9001",
+            "31000 (risk) and 19011 (audit guidance) are GUIDANCE documents — you cannot be 'certified' against either one."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "the-one-rule",
+      "heading": "If You Only Remember One Rule From This Whole Subject",
+      "body": "ISO develops standards. Independent certification bodies certify organizations against those standards. Accreditation bodies certify that the certification bodies are themselves competent. Government regulation, where it exists, decides whether following a standard is optional or mandatory. Four separate layers — and almost every ISO exam trap is really just a version of mixing up which layer a fact belongs to."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "This topic is a consolidated list of the confusion pairs across the ISO subject — each one traces back to mixing up standard-setting, certification, and accreditation, or mixing up two similarly-scoped standards.",
+    "keyFacts": [
+      "ISO never certifies anyone — certification bodies do, and accreditation bodies check the certification bodies.",
+      "BIS (standards) and NABL (laboratory accreditation) are different roles in India's ecosystem.",
+      "9000 (vocabulary) vs 9001 (requirements); 15189 (medical labs) vs 17025 (general labs); 14001 (environment) vs 45001 (worker safety) are the three most common standard-vs-standard trap pairs."
+    ],
+    "keyTerms": [
+      "Standard",
+      "Certification",
+      "Accreditation",
+      "Regulation"
+    ],
+    "commonConfusion": [
+      "Every row of the trap table above is, by definition, a common confusion — treat the whole table as this topic's confusion list."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The four-layer chain (standard → certification → accreditation → regulation) resolves almost every ISO exam trap when applied directly.",
+      "Standard-vs-standard traps (9000/9001, 15189/17025, 14001/45001, ISO 22000/HACCP) are the second most common trap category after the certification/accreditation confusion."
+    ],
+    "commonTraps": [
+      "Treat every row in the trap table as independently testable — exams often ask these as direct 'A vs B, what's the difference' questions.",
+      "Don't assume a trap pair is 'basically the same thing' just because the names sound similar — that similarity is exactly what the question is testing."
+    ],
+    "mustRemember": [
+      "When stuck between two similar-sounding ISO facts, ask: which LAYER (standard/certification/accreditation/regulation) does each belong to, and which SCOPE (medical vs general, environment vs safety) does each cover?"
+    ],
+    "possibleQuestions": [
+      "Explain the difference between certification and accreditation with an example.",
+      "A hospital pathology lab and a materials-testing lab each want lab accreditation — which ISO standard does each pursue?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO — Certification (iso.org)",
+      "kind": "educational"
+    },
+    {
+      "name": "Quality Council of India — NABL and NABCB (qcin.org)",
+      "kind": "educational"
+    }
+  ]
+}
