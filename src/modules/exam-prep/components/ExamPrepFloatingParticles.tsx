@@ -52,30 +52,38 @@ interface Particle {
 }
 
 const PARTICLES: Particle[] = [
-  { id: 'book-1', top: '5%', left: '88%', size: 26, colorClassName: 'text-olive', opacity: 0.3, duration: 16, delay: 0, motion: 'bob', kind: 'book', mobileVisible: true },
-  { id: 'question-1', top: '9%', left: '8%', size: 20, colorClassName: 'text-terracotta', opacity: 0.32, duration: 13, delay: 0.5, motion: 'spin', kind: 'questionMark', mobileVisible: true },
-  { id: 'pencil-1', top: '14%', left: '48%', size: 24, colorClassName: 'text-ink-tertiary', opacity: 0.28, duration: 18, delay: 1.0, motion: 'sidleSide', kind: 'pencil' },
-  { id: 'dot-1', top: '7%', left: '32%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 11, delay: 0.2, motion: 'driftUp', kind: 'dot', mobileVisible: true },
+  { id: 'book-1', top: '5%', left: '88%', size: 26, colorClassName: 'text-olive', opacity: 0.54, duration: 16, delay: 0, motion: 'bob', kind: 'book', mobileVisible: true },
+  { id: 'question-1', top: '9%', left: '8%', size: 20, colorClassName: 'text-terracotta', opacity: 0.56, duration: 13, delay: 0.5, motion: 'spin', kind: 'questionMark', mobileVisible: true },
+  { id: 'pencil-1', top: '14%', left: '48%', size: 24, colorClassName: 'text-ink-tertiary', opacity: 0.5, duration: 18, delay: 1.0, motion: 'sidleSide', kind: 'pencil', mobileVisible: true },
+  { id: 'dot-1', top: '7%', left: '32%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.6, duration: 11, delay: 0.2, motion: 'driftUp', kind: 'dot', mobileVisible: true },
+  { id: 'ruler-1', top: '3%', left: '65%', size: 22, colorClassName: 'text-sage', opacity: 0.52, duration: 15, delay: 0.7, motion: 'sidleSide', kind: 'pen', mobileVisible: true },
 
-  { id: 'check-1', top: '22%', left: '92%', size: 20, colorClassName: 'text-sage', opacity: 0.32, duration: 14, delay: 0.8, motion: 'driftDown', kind: 'checkMark', mobileVisible: true },
-  { id: 'glyph-pi', top: '26%', left: '4%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.36, duration: 17, delay: 1.3, motion: 'bob', kind: 'glyph', label: 'π', mobileVisible: true },
-  { id: 'grad-cap-1', top: '30%', left: '66%', size: 26, colorClassName: 'text-terracotta', opacity: 0.3, duration: 19, delay: 0.4, motion: 'spin', kind: 'graduationCap' },
-  { id: 'paper-1', top: '20%', left: '58%', size: 22, colorClassName: 'text-olive', opacity: 0.26, duration: 15, delay: 1.6, motion: 'sidleSide', kind: 'paper' },
+  { id: 'check-1', top: '22%', left: '92%', size: 20, colorClassName: 'text-sage', opacity: 0.56, duration: 14, delay: 0.8, motion: 'driftDown', kind: 'checkMark', mobileVisible: true },
+  { id: 'glyph-pi', top: '26%', left: '4%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.58, duration: 17, delay: 1.3, motion: 'bob', kind: 'glyph', label: 'π', mobileVisible: true },
+  { id: 'grad-cap-1', top: '30%', left: '66%', size: 26, colorClassName: 'text-terracotta', opacity: 0.54, duration: 19, delay: 0.4, motion: 'spin', kind: 'graduationCap', mobileVisible: true },
+  { id: 'paper-1', top: '20%', left: '58%', size: 22, colorClassName: 'text-olive', opacity: 0.5, duration: 15, delay: 1.6, motion: 'sidleSide', kind: 'paper', mobileVisible: true },
+  { id: 'dot-2a', top: '24%', left: '20%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.6, duration: 12, delay: 0.9, motion: 'spin', kind: 'dot', mobileVisible: true },
 
-  { id: 'pen-1', top: '42%', left: '10%', size: 24, colorClassName: 'text-olive', opacity: 0.3, duration: 18, delay: 0.9, motion: 'driftUp', kind: 'pen', mobileVisible: true },
-  { id: 'book-2', top: '46%', left: '90%', size: 24, colorClassName: 'text-sage', opacity: 0.3, duration: 15, delay: 0.3, motion: 'bob', kind: 'book' },
-  { id: 'glyph-sigma', top: '38%', left: '78%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.36, duration: 16, delay: 1.1, motion: 'driftDown', kind: 'glyph', label: '∑', mobileVisible: true },
-  { id: 'dot-2', top: '50%', left: '42%', size: 7, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 12, delay: 0.1, motion: 'sidleSide', kind: 'dot' },
+  { id: 'pen-1', top: '42%', left: '10%', size: 24, colorClassName: 'text-olive', opacity: 0.54, duration: 18, delay: 0.9, motion: 'driftUp', kind: 'pen', mobileVisible: true },
+  { id: 'book-2', top: '46%', left: '90%', size: 24, colorClassName: 'text-sage', opacity: 0.54, duration: 15, delay: 0.3, motion: 'bob', kind: 'book', mobileVisible: true },
+  { id: 'glyph-sigma', top: '38%', left: '78%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.58, duration: 16, delay: 1.1, motion: 'driftDown', kind: 'glyph', label: '∑', mobileVisible: true },
+  { id: 'dot-2', top: '50%', left: '42%', size: 7, colorClassName: 'text-ink-tertiary', opacity: 0.6, duration: 12, delay: 0.1, motion: 'sidleSide', kind: 'dot', mobileVisible: true },
+  { id: 'question-1b', top: '36%', left: '30%', size: 18, colorClassName: 'text-terracotta', opacity: 0.56, duration: 15, delay: 1.8, motion: 'bob', kind: 'questionMark', mobileVisible: true },
 
-  { id: 'question-2', top: '58%', left: '94%', size: 18, colorClassName: 'text-terracotta', opacity: 0.3, duration: 14, delay: 0.6, motion: 'spin', kind: 'questionMark' },
-  { id: 'pencil-2', top: '64%', left: '16%', size: 24, colorClassName: 'text-ink-tertiary', opacity: 0.28, duration: 19, delay: 1.4, motion: 'bob', kind: 'pencil', mobileVisible: true },
-  { id: 'check-2', top: '62%', left: '56%', size: 20, colorClassName: 'text-sage', opacity: 0.32, duration: 15, delay: 0.7, motion: 'driftUp', kind: 'checkMark' },
-  { id: 'glyph-percent', top: '70%', left: '80%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.36, duration: 17, delay: 0.2, motion: 'sidleSide', kind: 'glyph', label: '%', mobileVisible: true },
+  { id: 'question-2', top: '58%', left: '94%', size: 18, colorClassName: 'text-terracotta', opacity: 0.56, duration: 14, delay: 0.6, motion: 'spin', kind: 'questionMark', mobileVisible: true },
+  { id: 'pencil-2', top: '64%', left: '16%', size: 24, colorClassName: 'text-ink-tertiary', opacity: 0.5, duration: 19, delay: 1.4, motion: 'bob', kind: 'pencil', mobileVisible: true },
+  { id: 'check-2', top: '62%', left: '56%', size: 20, colorClassName: 'text-sage', opacity: 0.56, duration: 15, delay: 0.7, motion: 'driftUp', kind: 'checkMark', mobileVisible: true },
+  { id: 'glyph-percent', top: '70%', left: '80%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.58, duration: 17, delay: 0.2, motion: 'sidleSide', kind: 'glyph', label: '%', mobileVisible: true },
+  { id: 'book-2b', top: '56%', left: '30%', size: 22, colorClassName: 'text-olive', opacity: 0.52, duration: 17, delay: 1.2, motion: 'sidleSide', kind: 'book', mobileVisible: true },
 
-  { id: 'paper-2', top: '80%', left: '5%', size: 22, colorClassName: 'text-olive', opacity: 0.26, duration: 20, delay: 1.5, motion: 'driftDown', kind: 'paper' },
-  { id: 'pen-2', top: '86%', left: '64%', size: 24, colorClassName: 'text-terracotta', opacity: 0.3, duration: 18, delay: 0.5, motion: 'bob', kind: 'pen', mobileVisible: true },
-  { id: 'dot-3', top: '92%', left: '90%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.35, duration: 12, delay: 1.0, motion: 'spin', kind: 'dot' },
-  { id: 'book-3', top: '94%', left: '34%', size: 24, colorClassName: 'text-sage', opacity: 0.28, duration: 15, delay: 0.3, motion: 'sidleSide', kind: 'book', mobileVisible: true }
+  { id: 'paper-2', top: '80%', left: '5%', size: 22, colorClassName: 'text-olive', opacity: 0.5, duration: 20, delay: 1.5, motion: 'driftDown', kind: 'paper', mobileVisible: true },
+  { id: 'pen-2', top: '86%', left: '64%', size: 24, colorClassName: 'text-terracotta', opacity: 0.54, duration: 18, delay: 0.5, motion: 'bob', kind: 'pen', mobileVisible: true },
+  { id: 'dot-3', top: '92%', left: '90%', size: 6, colorClassName: 'text-ink-tertiary', opacity: 0.6, duration: 12, delay: 1.0, motion: 'spin', kind: 'dot', mobileVisible: true },
+  { id: 'book-3', top: '94%', left: '34%', size: 24, colorClassName: 'text-sage', opacity: 0.52, duration: 15, delay: 0.3, motion: 'sidleSide', kind: 'book', mobileVisible: true },
+  { id: 'grad-cap-2', top: '78%', left: '48%', size: 22, colorClassName: 'text-terracotta', opacity: 0.52, duration: 18, delay: 2.0, motion: 'driftUp', kind: 'graduationCap', mobileVisible: true },
+  { id: 'question-3', top: '88%', left: '12%', size: 16, colorClassName: 'text-terracotta', opacity: 0.56, duration: 13, delay: 0.4, motion: 'bob', kind: 'questionMark', mobileVisible: true },
+  { id: 'glyph-x2', top: '46%', left: '20%', size: 14, colorClassName: 'text-ink-tertiary', opacity: 0.58, duration: 16, delay: 1.7, motion: 'sidleSide', kind: 'glyph', label: 'x²', mobileVisible: true },
+  { id: 'check-3', top: '32%', left: '90%', size: 18, colorClassName: 'text-sage', opacity: 0.56, duration: 14, delay: 2.3, motion: 'driftDown', kind: 'checkMark', mobileVisible: true }
 ]
 
 const ANIMATION_NAME: Record<Motion, string> = {
