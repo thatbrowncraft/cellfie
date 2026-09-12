@@ -1,0 +1,63 @@
+{
+  "id": "baltic-sea",
+  "category": "sea",
+  "name": "Baltic Sea",
+  "genZNote": "The Baltic is one of the least salty seas on Earth — so many rivers pour fresh water in, and its exit to the ocean is so narrow, that it barely tastes like a sea at all.",
+  "sections": [
+    {
+      "id": "location",
+      "heading": "🌊 Location & Ocean Connection",
+      "bullets": [
+        "A largely enclosed sea in Northern Europe, surrounded by the Scandinavian Peninsula and continental Northern/Eastern Europe.",
+        "Connects to the North Sea (and the wider Atlantic) through the narrow Danish straits."
+      ]
+    },
+    {
+      "id": "bordering-countries",
+      "heading": "🗺️ Countries Bordering It",
+      "bullets": ["Sweden, Finland, Russia, Estonia, Latvia, Lithuania, Poland, Germany, and Denmark."]
+    },
+    {
+      "id": "ports-and-routes",
+      "heading": "🚢 Ports & Trade Routes",
+      "bullets": [
+        "Major ports: Gdansk (Poland), Gothenburg (Sweden), Helsinki (Finland), St. Petersburg (Russia).",
+        "A key regional trade route for Northern and Eastern Europe, especially for timber, machinery and energy products.",
+        "Heavily used for regional ferry and short-sea shipping networks connecting Scandinavia to continental Europe."
+      ]
+    },
+    {
+      "id": "economy-ecology",
+      "heading": "🐠 Economic & Ecological Significance",
+      "bullets": [
+        "One of the least saline seas in the world because of heavy freshwater inflow from surrounding rivers and its narrow, shallow connection to the ocean.",
+        "Prone to seasonal oxygen-depletion ('dead zones') caused by nutrient runoff (eutrophication) from surrounding agricultural land.",
+        "Supported by strong regional cooperation (through bodies like HELCOM) aimed at reducing pollution and restoring its ecological health."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Baltic Sea is a largely enclosed, low-salinity sea in Northern Europe, connected to the North Sea only through the narrow Danish straits.",
+    "keyFacts": [
+      "Borders Sweden, Finland, Russia, the Baltic states, Poland, Germany, Denmark.",
+      "One of the least saline seas due to heavy freshwater inflow.",
+      "Connects to the North Sea via the narrow Danish straits.",
+      "Prone to eutrophication-driven dead zones."
+    ],
+    "keyTerms": ["Danish straits", "Eutrophication", "HELCOM"],
+    "commonConfusion": ["The Baltic Sea and the North Sea are two different seas, connected only by narrow straits — not one continuous body."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Baltic Sea = low-salinity, largely enclosed sea in Northern Europe.",
+      "Connects to North Sea via the narrow Danish straits.",
+      "Faces eutrophication-driven oxygen-depletion issues."
+    ],
+    "commonTraps": ["Don't assume the Baltic has ocean-typical salinity — it's notably less salty than most seas."],
+    "mustRemember": ["Baltic Sea = Northern Europe's low-salinity regional sea, narrow exit via Danish straits."]
+  },
+  "sources": [
+    { "name": "HELCOM — Baltic Marine Environment Protection Commission", "kind": "educational", "url": "https://helcom.fi/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "red-sea",
+  "category": "sea",
+  "name": "Red Sea",
+  "genZNote": "The Red Sea is the narrow hallway between the Indian Ocean and the Mediterranean — block it (or the Suez Canal at its end) and a huge chunk of world trade has to take the long way round Africa.",
+  "sections": [
+    {
+      "id": "location",
+      "heading": "🌊 Location & Ocean Connection",
+      "bullets": [
+        "A long, narrow sea between north-eastern Africa and the Arabian Peninsula.",
+        "Connects to the Indian Ocean in the south through the Bab-el-Mandeb strait and the Gulf of Aden, and to the Mediterranean Sea in the north through the Suez Canal."
+      ]
+    },
+    {
+      "id": "bordering-countries",
+      "heading": "🗺️ Countries Bordering It",
+      "bullets": [
+        "Egypt, Sudan, Eritrea, Djibouti on the African side; Saudi Arabia, Yemen and Jordan (a short coastline) on the Arabian side; Israel has a small coastline at its northern tip (Gulf of Aqaba)."
+      ]
+    },
+    {
+      "id": "ports-and-routes",
+      "heading": "🚢 Ports & Trade Routes",
+      "bullets": [
+        "Major ports: Jeddah (Saudi Arabia), Port Sudan, Suez and Safaga (Egypt), Djibouti (also a major regional hub near Bab-el-Mandeb).",
+        "The Red Sea-Suez Canal corridor is the primary shortcut between Europe/the Mediterranean and Asia — the alternative is the much longer route around Africa's Cape of Good Hope.",
+        "Carries a major share of global container and energy shipping between Europe and Asia."
+      ]
+    },
+    {
+      "id": "economy-ecology",
+      "heading": "🐠 Economic & Ecological Significance",
+      "bullets": [
+        "Known for exceptionally warm, salty water and some of the world's most well-preserved coral reefs, particularly off Egypt's Sinai coast and Sudan.",
+        "High salinity is due to high evaporation rates and limited freshwater inflow (no major rivers empty into it).",
+        "A globally significant recreational diving and marine-tourism destination because of its reef biodiversity and clear water."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Red Sea is a narrow sea between north-east Africa and the Arabian Peninsula, linking the Indian Ocean (via Bab-el-Mandeb) to the Mediterranean (via the Suez Canal).",
+    "keyFacts": [
+      "Links Indian Ocean to Mediterranean via Bab-el-Mandeb and the Suez Canal.",
+      "Borders Egypt, Sudan, Eritrea, Djibouti, Saudi Arabia, Yemen.",
+      "Very high salinity; no major rivers flow into it.",
+      "Rich, well-preserved coral reefs."
+    ],
+    "keyTerms": ["Suez Canal", "Bab-el-Mandeb", "Gulf of Aqaba"],
+    "commonConfusion": ["The Red Sea and the Suez Canal are different things — the Red Sea is a natural sea, the Suez Canal is a man-made waterway at its northern end."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Red Sea connects Indian Ocean (via Bab-el-Mandeb) to Mediterranean (via Suez Canal).",
+      "Very high salinity — high evaporation, no major river inflow.",
+      "Key Europe-Asia shipping shortcut."
+    ],
+    "commonTraps": ["Don't say the Red Sea 'is' the Suez Canal — the canal is a separate, connected structure."],
+    "mustRemember": ["Red Sea = Europe-Asia shipping shortcut via Suez; extremely saline; major reef ecosystem."]
+  },
+  "sources": [
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

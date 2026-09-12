@@ -1,0 +1,67 @@
+{
+  "id": "mediterranean-sea",
+  "category": "sea",
+  "name": "Mediterranean Sea",
+  "genZNote": "Three continents (Europe, Africa, Asia) all touch the Mediterranean at once — it's less a sea and more a shared backyard pool for half the Old World.",
+  "sections": [
+    {
+      "id": "location",
+      "heading": "🌊 Location & Ocean Connection",
+      "bullets": [
+        "A large sea almost entirely enclosed by land, between Europe to the north, Africa to the south, and Asia (the Levant/Turkey) to the east.",
+        "Connects to the Atlantic Ocean through the Strait of Gibraltar in the west, to the Red Sea via the Suez Canal in the south-east, and to the Black Sea via the Bosporus and Dardanelles straits in the north-east."
+      ]
+    },
+    {
+      "id": "bordering-countries",
+      "heading": "🗺️ Countries Bordering It",
+      "bullets": [
+        "Europe: Spain, France, Italy, Greece, Croatia, and other southern European states.",
+        "North Africa: Morocco, Algeria, Tunisia, Libya, Egypt.",
+        "Western Asia: Turkey, Syria, Lebanon, Israel."
+      ]
+    },
+    {
+      "id": "ports-and-routes",
+      "heading": "🚢 Ports & Trade Routes",
+      "bullets": [
+        "Major ports: Valencia and Algeciras (Spain), Marseille (France), Genoa (Italy), Piraeus (Greece), Alexandria (Egypt), Port Said (Egypt, at the Suez Canal's Mediterranean end).",
+        "The main entry/exit point for Europe-Asia trade moving through the Suez Canal.",
+        "One of the busiest cruise-tourism regions in the world alongside its cargo traffic."
+      ]
+    },
+    {
+      "id": "economy-ecology",
+      "heading": "🐠 Economic & Ecological Significance",
+      "bullets": [
+        "Considered a biodiversity hotspot with high numbers of species found nowhere else, despite covering less than 1% of the world's ocean surface.",
+        "Heavily affected by overfishing, plastic pollution and shipping traffic due to its enclosed shape and dense coastal population.",
+        "Warming faster than the global ocean average, which is affecting native marine species and allowing warmer-water species to migrate in through the Suez Canal (a process called Lessepsian migration)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Mediterranean Sea is a largely enclosed sea between Europe, Africa and Asia, linked to the Atlantic (Gibraltar), the Red Sea (Suez Canal) and the Black Sea (Bosporus/Dardanelles).",
+    "keyFacts": [
+      "Touches Europe, Africa and Asia.",
+      "Connects to Atlantic via Gibraltar, Red Sea via Suez Canal, Black Sea via Bosporus/Dardanelles.",
+      "Major biodiversity hotspot despite small size.",
+      "Key ports: Marseille, Genoa, Piraeus, Alexandria."
+    ],
+    "keyTerms": ["Strait of Gibraltar", "Lessepsian migration", "Suez Canal"],
+    "commonConfusion": ["The Mediterranean connects to the Black Sea through TWO straits in sequence — the Dardanelles then the Bosporus (with the Sea of Marmara between them) — not one single strait."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Mediterranean touches 3 continents: Europe, Africa, Asia.",
+      "Gibraltar links it to the Atlantic; Suez Canal links it to the Red Sea.",
+      "Bosporus + Dardanelles (either side of the Sea of Marmara) link it to the Black Sea."
+    ],
+    "commonTraps": ["Don't merge the Bosporus and Dardanelles into a single strait — they're two separate straits with the Sea of Marmara between them."],
+    "mustRemember": ["Mediterranean = Europe + Africa + Asia meeting point; Gibraltar, Suez, Bosporus/Dardanelles as its three exits."]
+  },
+  "sources": [
+    { "name": "UNEP — Mediterranean Action Plan", "kind": "educational", "url": "https://www.unep.org/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "north-sea",
+  "category": "sea",
+  "name": "North Sea",
+  "genZNote": "The North Sea quietly powers a chunk of Europe — oil and gas platforms out there have been part of the continent's energy story for decades.",
+  "sections": [
+    {
+      "id": "location",
+      "heading": "🌊 Location & Ocean Connection",
+      "bullets": [
+        "A sea of the Atlantic Ocean between Great Britain to the west and continental North-Western Europe to the east.",
+        "Connects to the Atlantic Ocean directly in the north and to the Baltic Sea via the Danish straits in the east."
+      ]
+    },
+    {
+      "id": "bordering-countries",
+      "heading": "🗺️ Countries Bordering It",
+      "bullets": ["United Kingdom, Norway, Denmark, Germany, the Netherlands, Belgium, and France (a short northern coastline)."]
+    },
+    {
+      "id": "ports-and-routes",
+      "heading": "🚢 Ports & Trade Routes",
+      "bullets": [
+        "Rotterdam (Netherlands), one of the world's largest ports, sits right at its southern edge.",
+        "Other major ports: Antwerp (Belgium), Hamburg (Germany, via the Elbe), and Felixstowe (UK).",
+        "One of the busiest seas in the world for both cargo shipping and offshore energy infrastructure."
+      ]
+    },
+    {
+      "id": "economy-ecology",
+      "heading": "🐠 Economic & Ecological Significance",
+      "bullets": [
+        "A historically major fishing ground, particularly for cod and herring, now managed under strict EU/UK fisheries quotas after decades of overfishing pressure.",
+        "Contains significant offshore oil and gas fields that have supplied a large share of the UK's and Norway's energy for decades.",
+        "Increasingly important for offshore wind energy, with some of the world's largest offshore wind farms built in its shallow waters."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The North Sea is a busy Atlantic sea between Great Britain and North-Western Europe, historically important for fishing and oil/gas, now also a major offshore wind hub.",
+    "keyFacts": [
+      "Borders UK, Norway, Denmark, Germany, Netherlands, Belgium, France.",
+      "Rotterdam sits at its southern edge — one of the world's largest ports.",
+      "Major historic fishing ground; major offshore oil/gas region.",
+      "Growing offshore wind energy hub."
+    ],
+    "keyTerms": ["Rotterdam", "Offshore wind", "Fisheries quotas"],
+    "commonConfusion": ["The North Sea and the Baltic Sea are separate seas connected by the narrow Danish straits, not the same body of water."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "North Sea = between UK and North-Western Europe.",
+      "Rotterdam (world's largest European port) sits at its southern edge.",
+      "Historic oil/gas region, now also major for offshore wind."
+    ],
+    "commonTraps": ["Don't merge the North Sea's oil/gas history with the Arctic's untapped resource potential — they're geographically distinct regions."],
+    "mustRemember": ["North Sea = UK/NW Europe's key sea; Rotterdam; oil/gas + offshore wind."]
+  },
+  "sources": [
+    { "name": "Port of Rotterdam Authority", "kind": "educational", "url": "https://www.portofrotterdam.com/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

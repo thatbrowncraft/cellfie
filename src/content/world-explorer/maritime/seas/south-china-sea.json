@@ -1,0 +1,65 @@
+{
+  "id": "south-china-sea",
+  "category": "sea",
+  "name": "South China Sea",
+  "genZNote": "The South China Sea carries a wildly disproportionate share of the world's shipping for how often you actually hear it mentioned outside the news about territorial disputes.",
+  "sections": [
+    {
+      "id": "location",
+      "heading": "🌊 Location & Ocean Connection",
+      "bullets": [
+        "A marginal sea of the Pacific Ocean, bounded by mainland Southeast Asia to the west, the Philippines to the east, and southern China/Taiwan to the north.",
+        "Connects to the Strait of Malacca (and onward to the Indian Ocean) in the southwest, making it the middle link in the main Europe/Middle East–East Asia sea route."
+      ]
+    },
+    {
+      "id": "bordering-countries",
+      "heading": "🗺️ Countries Bordering It",
+      "bullets": [
+        "China, Taiwan, the Philippines, Vietnam, Malaysia, Brunei, Indonesia (its northern waters) and Singapore (at its south-western edge near the Strait of Malacca)."
+      ]
+    },
+    {
+      "id": "ports-and-routes",
+      "heading": "🚢 Ports & Trade Routes",
+      "bullets": [
+        "One of the world's busiest sea lanes by shipping volume, carrying a very large share of global trade between East Asia and the rest of the world.",
+        "Major ports on or near it: Singapore, Ho Chi Minh City, Manila, Hong Kong, Guangzhou/Shenzhen.",
+        "It is the essential middle segment connecting the Strait of Malacca to the wider Pacific shipping network used by China, Japan and South Korea."
+      ]
+    },
+    {
+      "id": "economy-ecology-and-disputes",
+      "heading": "🐠 Ecology & Notable Geopolitical Facts",
+      "bullets": [
+        "Contains rich fishing grounds and significant offshore oil and gas reserves, along with extensive coral reef systems around the Spratly and Paracel Islands.",
+        "Subject to overlapping territorial claims among several bordering countries — an important, sensitive geopolitical topic that is presented here only as a geographic fact, not a political judgement.",
+        "Its coral reefs face pressure from land reclamation, warming waters and overfishing."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The South China Sea is a marginal sea of the Pacific Ocean between mainland Southeast Asia, the Philippines and China, and one of the world's busiest shipping lanes.",
+    "keyFacts": [
+      "Marginal sea of the Pacific Ocean.",
+      "Borders China, Taiwan, Philippines, Vietnam, Malaysia, Brunei, Indonesia, Singapore.",
+      "Connects the Strait of Malacca to the wider Pacific shipping network.",
+      "Contains the Spratly and Paracel Island groups."
+    ],
+    "keyTerms": ["Strait of Malacca", "Spratly Islands", "Paracel Islands"],
+    "commonConfusion": ["The South China Sea and the East China Sea are two different seas — the South China Sea is further south, near Southeast Asia, not near Japan/Korea."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "South China Sea = marginal sea of the Pacific, borders Southeast Asia + China + Philippines.",
+      "Links the Strait of Malacca to East Asia's Pacific shipping routes.",
+      "Spratly and Paracel Islands are within it."
+    ],
+    "commonTraps": ["Don't confuse it with the East China Sea, which sits between China, Japan and South Korea."],
+    "mustRemember": ["South China Sea = key middle link between the Strait of Malacca and East Asia's ports."]
+  },
+  "sources": [
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

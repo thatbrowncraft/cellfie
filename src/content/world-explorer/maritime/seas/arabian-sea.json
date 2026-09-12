@@ -1,0 +1,65 @@
+{
+  "id": "arabian-sea",
+  "category": "sea",
+  "name": "Arabian Sea",
+  "genZNote": "The Arabian Sea is basically India's west-coast front door — Mumbai, Gujarat's ports, and the entire Gulf oil trade all funnel through it.",
+  "sections": [
+    {
+      "id": "location",
+      "heading": "🌊 Location & Ocean Connection",
+      "bullets": [
+        "A north-western arm of the Indian Ocean, bounded by India to the east, Pakistan and Iran to the north, and the Arabian Peninsula to the west.",
+        "Connects to the Gulf of Aden (and onward to the Red Sea via Bab-el-Mandeb) in the northwest, and to the Persian Gulf via the Gulf of Oman and the Strait of Hormuz."
+      ]
+    },
+    {
+      "id": "bordering-countries",
+      "heading": "🗺️ Countries Bordering It",
+      "bullets": [
+        "India (Gujarat, Maharashtra, Goa, Karnataka, Kerala coastlines), Pakistan, Iran (partly, via the Gulf of Oman approach), Oman, Yemen, and the Maldives lie within or near it.",
+        "Somalia's coastline is often grouped with the wider Arabian Sea/Indian Ocean region for trade purposes."
+      ]
+    },
+    {
+      "id": "ports-and-routes",
+      "heading": "🚢 Ports & Trade Routes",
+      "bullets": [
+        "Major ports: Mumbai (Jawaharlal Nehru Port/JNPT) and Mundra/Kandla in Gujarat on the Indian side; Karachi and Gwadar in Pakistan; Salalah in Oman.",
+        "Carries the bulk of India's crude oil imports from the Gulf, along with container trade to East Africa and the Gulf states.",
+        "The route from the Gulf to India across the Arabian Sea is one of the busiest energy-trade corridors in the world."
+      ]
+    },
+    {
+      "id": "economy-ecology",
+      "heading": "🐠 Economic & Ecological Significance",
+      "bullets": [
+        "Supports major fisheries along India's west coast, particularly for mackerel, sardines and shrimp.",
+        "Monsoon-driven upwelling brings nutrient-rich water to the surface, supporting these fisheries seasonally.",
+        "Increasingly studied for oxygen-minimum-zone expansion, a marine ecological concern linked to warming waters."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Arabian Sea is a north-western arm of the Indian Ocean between India, Pakistan, Iran and the Arabian Peninsula, central to India's western trade and energy imports.",
+    "keyFacts": [
+      "Part of the Indian Ocean; borders India's west coast, Pakistan, Iran, Oman, Yemen.",
+      "Connects onward to the Persian Gulf (via Hormuz) and the Red Sea (via Bab-el-Mandeb/Gulf of Aden).",
+      "Major Indian ports: JNPT (Mumbai), Mundra, Kandla."
+    ],
+    "keyTerms": ["JNPT", "Gulf of Oman", "Monsoon upwelling"],
+    "commonConfusion": ["The Arabian Sea is a sea, not the Persian Gulf — the Gulf is a separate, smaller body reached via the Strait of Hormuz."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Arabian Sea = NW arm of the Indian Ocean; India's west coast, Pakistan, Iran, Arabian Peninsula.",
+      "JNPT (Mumbai) is India's busiest container port on this coast.",
+      "Connects to the Persian Gulf via the Strait of Hormuz."
+    ],
+    "commonTraps": ["Don't call it the same body of water as the Persian Gulf — they connect but are distinct."],
+    "mustRemember": ["Arabian Sea = India's west-coast energy and trade gateway to the Gulf."]
+  },
+  "sources": [
+    { "name": "Ministry of Ports, Shipping and Waterways, Government of India", "kind": "educational" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "black-sea",
+  "category": "sea",
+  "name": "Black Sea",
+  "genZNote": "The Black Sea only gets to the rest of the world's oceans through one exit — the Bosporus — which makes that one strait a genuine geopolitical chokepoint.",
+  "sections": [
+    {
+      "id": "location",
+      "heading": "🌊 Location & Ocean Connection",
+      "bullets": [
+        "An almost entirely enclosed sea between south-eastern Europe and western Asia (the Caucasus/Anatolia).",
+        "Its only outlet to the world's oceans is through the Bosporus strait into the Sea of Marmara, then the Dardanelles strait into the Mediterranean."
+      ]
+    },
+    {
+      "id": "bordering-countries",
+      "heading": "🗺️ Countries Bordering It",
+      "bullets": ["Turkey, Bulgaria, Romania, Ukraine, Russia, and Georgia."]
+    },
+    {
+      "id": "ports-and-routes",
+      "heading": "🚢 Ports & Trade Routes",
+      "bullets": [
+        "Major ports: Constanta (Romania), Odesa (Ukraine), Novorossiysk (Russia), Istanbul (on the Bosporus, technically at the Black Sea's exit).",
+        "A key export route for grain from Ukraine and Russia, and for oil moving from Russian and Caucasus pipelines to world markets.",
+        "Because it has only one exit, Black Sea shipping is entirely dependent on safe passage through the Bosporus."
+      ]
+    },
+    {
+      "id": "economy-ecology",
+      "heading": "🐠 Economic & Ecological Significance",
+      "bullets": [
+        "Has a distinctive layered water structure — oxygen-rich surface water sits above a much larger, oxygen-free (anoxic) deep layer, one of the largest anoxic basins in the world.",
+        "Supports significant fisheries in its surface waters, though these have been affected by pollution and invasive species over past decades.",
+        "A major route for both grain and energy exports makes it strategically significant well beyond its size."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Black Sea is an almost fully enclosed sea between south-eastern Europe and western Asia, reaching world oceans only via the Bosporus and Dardanelles.",
+    "keyFacts": [
+      "Borders Turkey, Bulgaria, Romania, Ukraine, Russia, Georgia.",
+      "Only exit to open ocean: Bosporus → Sea of Marmara → Dardanelles → Mediterranean.",
+      "Major grain and oil export route.",
+      "Has a large anoxic (oxygen-free) deep-water layer."
+    ],
+    "keyTerms": ["Bosporus", "Anoxic layer", "Sea of Marmara"],
+    "commonConfusion": ["The Black Sea's only sea outlet is the Bosporus — it does not connect directly to the Caspian Sea, which is a separate, landlocked body of water."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Black Sea's only ocean access: Bosporus → Marmara → Dardanelles → Mediterranean.",
+      "Major grain export route (Ukraine, Russia).",
+      "Has one of the world's largest anoxic (oxygen-free) deep-water zones."
+    ],
+    "commonTraps": ["Don't confuse the Black Sea with the Caspian Sea — the Caspian is fully landlocked with no ocean outlet at all."],
+    "mustRemember": ["Black Sea = enclosed sea, single exit via the Bosporus, major grain/energy export route."]
+  },
+  "sources": [
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

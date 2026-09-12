@@ -1,0 +1,67 @@
+{
+  "id": "caribbean-sea",
+  "category": "sea",
+  "name": "Caribbean Sea",
+  "genZNote": "The Caribbean Sea is the Panama Canal's front porch — most Atlantic-Pacific traffic passes right through or past it on the way to the canal.",
+  "sections": [
+    {
+      "id": "location",
+      "heading": "🌊 Location & Ocean Connection",
+      "bullets": [
+        "A sea of the western Atlantic Ocean, bounded by Central America to the west, South America to the south, and the arc of Caribbean island nations to the north and east.",
+        "Connects to the Gulf of Mexico in the northwest and, via the Panama Canal, to the Pacific Ocean."
+      ]
+    },
+    {
+      "id": "bordering-countries",
+      "heading": "🗺️ Countries Bordering It",
+      "bullets": [
+        "Central America: Mexico (partly), Belize, Honduras, Nicaragua, Costa Rica, Panama.",
+        "South America: Colombia, Venezuela.",
+        "Island nations: Cuba, Jamaica, Haiti, the Dominican Republic, Puerto Rico, Trinidad and Tobago, and many smaller island states."
+      ]
+    },
+    {
+      "id": "ports-and-routes",
+      "heading": "🚢 Ports & Trade Routes",
+      "bullets": [
+        "The Panama Canal, at its south-western edge, is one of the most strategically important waterways in the world, linking the Atlantic and Pacific Oceans.",
+        "Major ports: Colon (Panama), Cartagena (Colombia), Kingston (Jamaica), and San Juan (Puerto Rico).",
+        "A major hub for cruise tourism as well as cargo shipping, given its role as a Panama Canal approach route."
+      ]
+    },
+    {
+      "id": "economy-ecology",
+      "heading": "🐠 Economic & Ecological Significance",
+      "bullets": [
+        "Home to significant coral reef systems, particularly around the Mesoamerican Reef (Mexico/Belize/Guatemala/Honduras) — the second-largest barrier reef system in the world after Australia's Great Barrier Reef.",
+        "A major tourism economy for many bordering island nations, closely tied to reef health and beach ecosystems.",
+        "Vulnerable to hurricanes, which regularly form or intensify over its warm waters."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Caribbean Sea is a sea of the western Atlantic between Central America, South America and the Caribbean islands, leading into the Panama Canal.",
+    "keyFacts": [
+      "Sea of the western Atlantic Ocean.",
+      "Borders Central America, northern South America, and Caribbean island nations.",
+      "Panama Canal sits at its south-western edge.",
+      "Mesoamerican Reef — world's second-largest barrier reef system."
+    ],
+    "keyTerms": ["Panama Canal", "Mesoamerican Reef", "Gulf of Mexico"],
+    "commonConfusion": ["The Caribbean Sea and the Gulf of Mexico are adjacent but distinct bodies of water, not the same sea."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Caribbean Sea = western Atlantic; borders Central America, South America, Caribbean islands.",
+      "Panama Canal connects it (and the Atlantic) to the Pacific.",
+      "Mesoamerican Reef = second-largest barrier reef system on Earth."
+    ],
+    "commonTraps": ["Don't call the Panama Canal a strait — it's an artificial, engineered canal, not a natural strait."],
+    "mustRemember": ["Caribbean Sea = Panama Canal's Atlantic-side approach; major reef and tourism region."]
+  },
+  "sources": [
+    { "name": "Panama Canal Authority", "kind": "educational", "url": "https://pancanal.com/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

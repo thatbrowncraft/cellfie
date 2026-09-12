@@ -1,0 +1,62 @@
+{
+  "id": "caspian-sea",
+  "category": "sea",
+  "name": "Caspian Sea",
+  "genZNote": "The Caspian is the one on this list that isn't actually connected to the ocean at all — it's the world's largest inland body of water, sea in name only.",
+  "sections": [
+    {
+      "id": "location",
+      "heading": "🌊 Location & a Geographic Correction",
+      "bullets": [
+        "The world's largest inland body of water, between south-eastern Europe and Central Asia — despite the name, it is fully landlocked and has no connection to any ocean.",
+        "Whether it counts as a 'sea' or the world's largest lake is a genuinely debated classification — this app lists it here as a named 'sea' for completeness, while noting it does not connect to open ocean water like every other entry in this section."
+      ]
+    },
+    {
+      "id": "bordering-countries",
+      "heading": "🗺️ Countries Bordering It",
+      "bullets": ["Russia, Kazakhstan, Turkmenistan, Iran, and Azerbaijan."]
+    },
+    {
+      "id": "resources-and-routes",
+      "heading": "🚢 Resources & Regional Trade",
+      "bullets": [
+        "Holds major oil and natural gas reserves beneath its seabed, making it economically important to all five bordering countries.",
+        "Used for regional shipping and ferry routes between bordering countries, though entirely separate from global ocean shipping networks.",
+        "Baku (Azerbaijan) is its most significant port city."
+      ]
+    },
+    {
+      "id": "ecology",
+      "heading": "🐟 Ecological Significance",
+      "bullets": [
+        "Historically famous for Caspian Sea sturgeon and caviar production, though sturgeon populations have declined sharply due to overfishing and habitat pressure.",
+        "Its water level has been observed shrinking in recent decades, an ongoing environmental concern for the bordering countries."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Caspian Sea is the world's largest inland body of water, fully landlocked between Russia, Kazakhstan, Turkmenistan, Iran and Azerbaijan.",
+    "keyFacts": [
+      "World's largest inland body of water; fully landlocked.",
+      "Borders Russia, Kazakhstan, Turkmenistan, Iran, Azerbaijan.",
+      "Major oil and gas reserves.",
+      "Historically significant for sturgeon/caviar."
+    ],
+    "keyTerms": ["Landlocked", "Sturgeon", "Baku"],
+    "commonConfusion": ["Despite its name, the Caspian Sea has NO connection to any ocean — don't group it with the Black Sea or Mediterranean's connected-sea network."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Caspian Sea = world's largest inland/landlocked water body.",
+      "Bordered by 5 countries: Russia, Kazakhstan, Turkmenistan, Iran, Azerbaijan.",
+      "Rich in oil and gas reserves."
+    ],
+    "commonTraps": ["A common exam trap: assuming every 'Sea' connects to the ocean — the Caspian is the clearest counterexample."],
+    "mustRemember": ["Caspian Sea = landlocked, world's largest inland water body, no ocean access."]
+  },
+  "sources": [
+    { "name": "World Bank — Caspian region overview", "kind": "educational", "url": "https://www.worldbank.org/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "bay-of-bengal",
+  "category": "sea",
+  "name": "Bay of Bengal",
+  "genZNote": "The Bay of Bengal is India's link to Southeast Asia — it's the reason India's 'Act East' trade policy actually has a sea route to act on.",
+  "sections": [
+    {
+      "id": "location",
+      "heading": "🌊 Location & Ocean Connection",
+      "bullets": [
+        "The largest bay in the world, a north-eastern arm of the Indian Ocean bounded by India and Sri Lanka to the west, Bangladesh to the north, and Myanmar and the Andaman Islands to the east.",
+        "Connects southward into the open Indian Ocean and, via the Andaman Sea, toward the Strait of Malacca and Southeast Asia."
+      ]
+    },
+    {
+      "id": "bordering-countries",
+      "heading": "🗺️ Countries Bordering It",
+      "bullets": [
+        "India (Odisha, Andhra Pradesh, Tamil Nadu, West Bengal coastlines), Bangladesh, Myanmar, Sri Lanka, and Thailand (at its south-eastern edge)."
+      ]
+    },
+    {
+      "id": "ports-and-routes",
+      "heading": "🚢 Ports & Trade Routes",
+      "bullets": [
+        "Major ports: Chennai, Visakhapatnam, Kolkata/Haldia and Paradip on India's east coast; Chittagong in Bangladesh; Yangon in Myanmar.",
+        "A key route for India's trade with Southeast Asia and East Asia, and the maritime leg of India's connectivity projects with Myanmar and Bangladesh (e.g. the Kaladan Multi-Modal Transit Transport Project).",
+        "The Sittwe port project in Myanmar is a notable India-backed connectivity initiative in this region."
+      ]
+    },
+    {
+      "id": "economy-ecology",
+      "heading": "🐠 Economic & Ecological Significance",
+      "bullets": [
+        "Home to the Sundarbans, the world's largest mangrove forest, shared between India and Bangladesh at the mouth of the Ganges-Brahmaputra delta.",
+        "One of the world's most cyclone-prone regions — the Bay regularly generates tropical cyclones affecting India, Bangladesh and Myanmar.",
+        "Supports major fisheries and is an important region for offshore oil and gas exploration on India's east coast."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Bay of Bengal is the world's largest bay, a north-eastern arm of the Indian Ocean linking India's east coast to Bangladesh, Myanmar and Southeast Asia.",
+    "keyFacts": [
+      "World's largest bay; part of the Indian Ocean.",
+      "Borders India's east coast, Bangladesh, Myanmar, Sri Lanka.",
+      "Home to the Sundarbans mangrove forest (India-Bangladesh).",
+      "Highly cyclone-prone region."
+    ],
+    "keyTerms": ["Sundarbans", "Kaladan project", "Andaman Sea"],
+    "commonConfusion": ["The Bay of Bengal is a bay, not a strait or gulf — it's geographically an arm of the ocean, not a narrow connecting channel."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "World's largest bay; India, Bangladesh, Myanmar, Sri Lanka border it.",
+      "Sundarbans mangroves sit at its northern edge.",
+      "Major cyclone-generating region for the Indian subcontinent."
+    ],
+    "commonTraps": ["Don't confuse the Bay of Bengal (India's EAST coast) with the Arabian Sea (India's WEST coast)."],
+    "mustRemember": ["Bay of Bengal = India's east-coast gateway to Southeast Asia; Sundarbans; cyclone-prone."]
+  },
+  "sources": [
+    { "name": "Ministry of Earth Sciences, Government of India", "kind": "scientific" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}
