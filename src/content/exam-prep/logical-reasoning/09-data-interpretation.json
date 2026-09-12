@@ -68,7 +68,11 @@
       "A pie-chart percentage needs the chart's stated total to convert into an absolute value.",
       "DI reuses Percentage, Ratio, and Average methods — it doesn't introduce new formulas."
     ],
-    "keyTerms": ["Scale multiplier", "Pie chart segment", "Legend"],
+    "keyTerms": [
+      "Scale multiplier",
+      "Pie chart segment",
+      "Legend"
+    ],
     "commonConfusion": [
       "A pie-chart segment given as a percentage is not usable directly as an absolute value until multiplied by the chart's stated total."
     ]
@@ -84,10 +88,5 @@
       "DI questions reuse Percentage/Ratio/Average methods on chart-read values — no separate DI-specific formula exists."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

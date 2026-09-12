@@ -15,12 +15,27 @@
       "id": "statement-types",
       "heading": "The Four Standard Statement Types",
       "table": {
-        "columnHeaders": ["Statement", "Venn meaning"],
+        "columnHeaders": [
+          "Statement",
+          "Venn meaning"
+        ],
         "rows": [
-          ["All A are B", "Circle A is entirely inside circle B"],
-          ["No A is B", "Circles A and B do not overlap at all"],
-          ["Some A are B", "Circles A and B overlap at least partially (exact extent unknown)"],
-          ["Some A are not B", "Part of circle A lies outside circle B (exact extent unknown)"]
+          [
+            "All A are B",
+            "Circle A is entirely inside circle B"
+          ],
+          [
+            "No A is B",
+            "Circles A and B do not overlap at all"
+          ],
+          [
+            "Some A are B",
+            "Circles A and B overlap at least partially (exact extent unknown)"
+          ],
+          [
+            "Some A are not B",
+            "Part of circle A lies outside circle B (exact extent unknown)"
+          ]
         ]
       }
     },
@@ -59,7 +74,11 @@
       "Fill multi-set Venn regions from the inside out — central overlap first, then pairwise, then exclusive regions.",
       "'Some' statements leave the overlap boundary undetermined — don't assume more than is stated."
     ],
-    "keyTerms": ["Syllogism", "Venn diagram", "Guaranteed conclusion"],
+    "keyTerms": [
+      "Syllogism",
+      "Venn diagram",
+      "Guaranteed conclusion"
+    ],
     "commonConfusion": [
       "A conclusion that is merely possible under the given statements is not the same as one that is logically guaranteed by them."
     ]
@@ -75,10 +94,5 @@
       "Fill Venn regions inside-out: central overlap, then pairwise, then exclusive regions."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

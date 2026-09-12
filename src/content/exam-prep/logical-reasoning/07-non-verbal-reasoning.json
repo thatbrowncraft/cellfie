@@ -67,7 +67,11 @@
       "Water image: reflects top-bottom, left/right unchanged.",
       "Paper folding: unfold in REVERSE order of folding, mirroring the hole across each fold line as you go."
     ],
-    "keyTerms": ["Mirror image", "Water image", "Paper folding"],
+    "keyTerms": [
+      "Mirror image",
+      "Water image",
+      "Paper folding"
+    ],
     "commonConfusion": [
       "Mirror and water images are both 'reflections' but across perpendicular axes — one flips left-right, the other flips top-bottom."
     ]
@@ -83,10 +87,5 @@
       "Name the transformation type before scanning the answer options."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

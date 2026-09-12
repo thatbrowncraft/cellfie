@@ -63,7 +63,11 @@
       "Two same-direction 90° turns equal a full 180° reversal.",
       "Straight-line displacement and total distance walked are different quantities — check which one is asked."
     ],
-    "keyTerms": ["Displacement", "Bearing", "Coordinate path"],
+    "keyTerms": [
+      "Displacement",
+      "Bearing",
+      "Coordinate path"
+    ],
     "commonConfusion": [
       "Turning right always means right relative to where the person is currently facing, not a fixed map direction."
     ]
@@ -79,10 +83,5 @@
       "Right/left turns are always relative to the walker's current facing direction."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

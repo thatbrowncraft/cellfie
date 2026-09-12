@@ -52,7 +52,12 @@
       "A figure-series rule must explain EVERY step in the given sequence, not just the last one.",
       "Distractor options in figure series typically satisfy only part of the correct transformation."
     ],
-    "keyTerms": ["Arithmetic series", "Geometric series", "Alternating series", "Second-order difference"],
+    "keyTerms": [
+      "Arithmetic series",
+      "Geometric series",
+      "Alternating series",
+      "Second-order difference"
+    ],
     "commonConfusion": [
       "A pattern that fits the first two terms isn't confirmed until it also fits every remaining given term."
     ]
@@ -68,10 +73,5 @@
       "Verify any candidate rule against ALL given terms, not just the first two."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

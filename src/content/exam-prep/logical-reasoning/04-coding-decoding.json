@@ -62,7 +62,11 @@
       "A shift must be verified across every letter of the example before being trusted.",
       "Alphabet shifts wrap around after Z back to A."
     ],
-    "keyTerms": ["Alphabetical shift", "Reversal coding", "Position substitution"],
+    "keyTerms": [
+      "Alphabetical shift",
+      "Reversal coding",
+      "Position substitution"
+    ],
     "commonConfusion": [
       "A pattern that fits only part of the example word is not yet a confirmed rule — check every letter."
     ]
@@ -78,10 +82,5 @@
       "Confirm the rule against every letter of the given example before applying it to a new word."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

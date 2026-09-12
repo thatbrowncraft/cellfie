@@ -62,7 +62,11 @@
       "Combining statements before checking them independently is the most common data-sufficiency error.",
       "'Sufficient' means the statement(s) pin down exactly one answer, not merely that they're relevant."
     ],
-    "keyTerms": ["Sufficiency", "Independent evaluation", "Unique answer"],
+    "keyTerms": [
+      "Sufficiency",
+      "Independent evaluation",
+      "Unique answer"
+    ],
     "commonConfusion": [
       "A statement being relevant or helpful to the question is not the same as it being sufficient to determine a unique answer."
     ]
@@ -78,10 +82,5 @@
       "Sufficient = determines a unique answer, not merely 'helps' or 'is related'."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

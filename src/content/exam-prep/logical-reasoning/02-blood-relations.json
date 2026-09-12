@@ -15,14 +15,35 @@
       "id": "gender-specific-terms",
       "heading": "Gender-Specific Terms — the Main Trap",
       "table": {
-        "columnHeaders": ["Relation phrase", "Who it means"],
+        "columnHeaders": [
+          "Relation phrase",
+          "Who it means"
+        ],
         "rows": [
-          ["Mother's brother", "Maternal uncle"],
-          ["Father's brother", "Paternal uncle"],
-          ["Mother's sister", "Maternal aunt"],
-          ["Father's sister", "Paternal aunt"],
-          ["Son of my uncle/aunt", "Cousin"],
-          ["Daughter of my father's sister", "Cousin (paternal aunt's child)"]
+          [
+            "Mother's brother",
+            "Maternal uncle"
+          ],
+          [
+            "Father's brother",
+            "Paternal uncle"
+          ],
+          [
+            "Mother's sister",
+            "Maternal aunt"
+          ],
+          [
+            "Father's sister",
+            "Paternal aunt"
+          ],
+          [
+            "Son of my uncle/aunt",
+            "Cousin"
+          ],
+          [
+            "Daughter of my father's sister",
+            "Cousin (paternal aunt's child)"
+          ]
         ],
         "caption": "These distinctions are the single most common blood-relations distractor — the exam swaps 'mother's brother' for 'father's brother' expecting you to skip past it."
       }
@@ -72,7 +93,11 @@
       "Mother's brother = maternal uncle. Father's brother = paternal uncle — the two are commonly swapped as a distractor.",
       "Relationships are not automatically symmetric across gender — check who is male/female at each step."
     ],
-    "keyTerms": ["Maternal", "Paternal", "Family tree diagram"],
+    "keyTerms": [
+      "Maternal",
+      "Paternal",
+      "Family tree diagram"
+    ],
     "commonConfusion": [
       "A relationship stated from one person's perspective does not automatically mirror the same word from the other person's perspective."
     ]
@@ -88,10 +113,5 @@
       "Build the family tree incrementally, one clue at a time — never try to hold the full chain in your head."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }

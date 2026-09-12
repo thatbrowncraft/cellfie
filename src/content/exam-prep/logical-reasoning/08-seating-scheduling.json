@@ -77,7 +77,12 @@
       "In circular arrangements, establish inward vs outward facing before applying left/right clues.",
       "Scheduling puzzles use the same process on a timeline/grid instead of a seating layout."
     ],
-    "keyTerms": ["Fixed clue", "Relative clue", "Circular arrangement", "Facing direction"],
+    "keyTerms": [
+      "Fixed clue",
+      "Relative clue",
+      "Circular arrangement",
+      "Facing direction"
+    ],
     "commonConfusion": [
       "The same seat is a person's left in one facing direction and their right in the other — facing direction must be settled first."
     ]
@@ -93,10 +98,5 @@
       "Verify the completed arrangement against every original clue, not just the ones used to build it."
     ]
   },
-  "sources": [
-    {
-      "name": "GSSSB Laboratory Assistant Detailed Syllabus, Part A (Advt. 327/2025-26)",
-      "kind": "educational"
-    }
-  ]
+  "sources": []
 }
