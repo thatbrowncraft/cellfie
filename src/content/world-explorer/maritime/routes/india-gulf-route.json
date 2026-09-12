@@ -1,0 +1,50 @@
+{
+  "id": "india-gulf-route",
+  "category": "route",
+  "name": "India ↔ Gulf Maritime Route",
+  "genZNote": "This is India's most-used sea route and it's basically an energy lifeline — most of the oil that keeps the country running arrives this way.",
+  "sections": [
+    {
+      "id": "route-path",
+      "heading": "🛳️ Route Path",
+      "bullets": [
+        "Gulf ports (Saudi Arabia, UAE, Qatar, Kuwait, Oman, Iraq) → Strait of Hormuz → Arabian Sea → Indian west-coast ports (Mumbai/JNPT, Mundra, Kandla, Kochi).",
+        "One of the shortest and most heavily used of India's international maritime routes because of its geographic proximity."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "📦 Why It Matters",
+      "bullets": [
+        "Carries the bulk of India's crude oil and LNG imports.",
+        "Also a major route for Indian exports of refined petroleum products, engineering goods, and food products moving the other way toward the Gulf.",
+        "The Gulf region is also home to a very large Indian expatriate population, which drives significant passenger and remittance-linked economic activity alongside cargo trade.",
+        "India-UAE and India-Saudi Arabia trade relationships are heavily built on this maritime corridor."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The India-Gulf maritime route connects India's west coast to Gulf ports via the Strait of Hormuz and Arabian Sea, carrying most of India's oil imports.",
+    "keyFacts": [
+      "Path: Gulf ports → Strait of Hormuz → Arabian Sea → India's west coast.",
+      "India's primary crude oil and LNG import route.",
+      "Major Indian export route for refined petroleum and engineering goods.",
+      "Underpins large Gulf-India expatriate and remittance flows."
+    ],
+    "keyTerms": ["Strait of Hormuz", "LNG imports", "JNPT"],
+    "commonConfusion": ["This route is distinct from India's Southeast Asia route — different ocean side of India (west coast/Arabian Sea vs. east coast/Bay of Bengal)."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "India-Gulf route passes through the Strait of Hormuz.",
+      "Primary route for India's oil/LNG imports.",
+      "Key ports: JNPT, Mundra, Kandla (India side)."
+    ],
+    "commonTraps": ["Don't confuse this route's chokepoint (Hormuz) with the Southeast Asia route's chokepoint (Malacca)."],
+    "mustRemember": ["India-Gulf route = India's energy lifeline via the Arabian Sea and Strait of Hormuz."]
+  },
+  "sources": [
+    { "name": "Ministry of Petroleum and Natural Gas, Government of India", "kind": "educational" },
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "suez-europe-asia-route",
+  "category": "route",
+  "name": "Europe ↔ Asia Route via Suez",
+  "genZNote": "This is the route that made the whole world realize how much global trade depends on one canal, back when a single stuck ship jammed it in 2021.",
+  "sections": [
+    {
+      "id": "route-path",
+      "heading": "🛳️ Route Path",
+      "bullets": [
+        "European ports (Rotterdam, Hamburg, Marseille) → Mediterranean Sea → Suez Canal → Red Sea → Bab-el-Mandeb → Gulf of Aden/Arabian Sea → onward to India, Southeast Asia and East Asia via the Strait of Malacca.",
+        "The shortest sea route between Europe and Asia — the only alternative when it's disrupted is sailing all the way around Africa's Cape of Good Hope."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "📦 Why It Matters",
+      "bullets": [
+        "Carries a very large share of world container trade and a meaningful share of world oil trade between Europe/the Middle East and Asia.",
+        "Passes through two chokepoints in sequence — the Suez Canal and Bab-el-Mandeb — making it sensitive to disruption at either point.",
+        "India's trade with Europe substantially uses this route, making both Suez and Bab-el-Mandeb strategically relevant to Indian trade even though neither lies within Indian waters."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Suez route is the shortest sea path between Europe and Asia, passing through the Mediterranean, Suez Canal, Red Sea and Bab-el-Mandeb.",
+    "keyFacts": [
+      "Path: Europe → Mediterranean → Suez Canal → Red Sea → Bab-el-Mandeb → Indian Ocean → Asia.",
+      "Shortest Europe-Asia sea route.",
+      "Alternative when disrupted: around Africa's Cape of Good Hope.",
+      "Passes through two chokepoints: Suez Canal and Bab-el-Mandeb."
+    ],
+    "keyTerms": ["Suez Canal", "Bab-el-Mandeb", "Cape of Good Hope route"],
+    "commonConfusion": ["This route passes through TWO chokepoints, not one — don't name only the Suez Canal and forget Bab-el-Mandeb."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Suez route = shortest Europe-Asia sea path.",
+      "Chokepoints along it: Suez Canal, Bab-el-Mandeb.",
+      "Alternative route: Cape of Good Hope (around Africa)."
+    ],
+    "commonTraps": ["The 2021 Ever Given grounding disrupted the Suez Canal specifically — a good example of a single-chokepoint failure affecting this whole route."],
+    "mustRemember": ["Suez route = Europe-Asia's shortest link; two chokepoints (Suez + Bab-el-Mandeb); Cape route is the fallback."]
+  },
+  "sources": [
+    { "name": "Suez Canal Authority", "kind": "educational", "url": "https://www.suezcanal.gov.eg/" },
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" }
+  ]
+}

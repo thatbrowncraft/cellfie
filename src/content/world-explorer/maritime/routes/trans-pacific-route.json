@@ -1,0 +1,49 @@
+{
+  "id": "trans-pacific-route",
+  "category": "route",
+  "name": "Trans-Pacific Route",
+  "genZNote": "This is the route your phone probably took to get to you — East Asia's factories to North America's ports, container ship after container ship.",
+  "sections": [
+    {
+      "id": "route-path",
+      "heading": "🛳️ Route Path",
+      "bullets": [
+        "East Asian ports (Shanghai, Shenzhen, Busan, Yokohama) → across the open Pacific Ocean → North American west-coast ports (Los Angeles/Long Beach, Vancouver, Seattle).",
+        "A more southerly extension continues to Latin American Pacific ports."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "📦 Why It Matters",
+      "bullets": [
+        "One of the highest-volume trade lanes in the world, carrying electronics, machinery, apparel, and consumer goods from East Asian manufacturing hubs to North American markets.",
+        "Los Angeles/Long Beach together form one of the busiest port complexes in the world largely because of this route.",
+        "Doesn't rely on any single strait or canal chokepoint the way the Suez or Gulf routes do — its main constraint is simply the sheer distance and time of an open-ocean crossing."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Trans-Pacific route connects East Asian manufacturing ports to North America's Pacific coast, one of the highest-volume trade lanes in the world.",
+    "keyFacts": [
+      "Path: East Asia → open Pacific Ocean → North America's west coast.",
+      "Extremely high-volume electronics/consumer-goods trade lane.",
+      "Los Angeles/Long Beach is a key destination port complex.",
+      "No single chokepoint — main constraint is open-ocean distance."
+    ],
+    "keyTerms": ["Los Angeles/Long Beach", "APEC", "Container trade"],
+    "commonConfusion": ["Unlike the Suez or Gulf routes, this one has no strait/canal bottleneck to name — its defining feature is scale, not a chokepoint."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Trans-Pacific route: East Asia ↔ North America's west coast.",
+      "One of the world's highest-volume container trade lanes.",
+      "No major strait/canal chokepoint along it."
+    ],
+    "commonTraps": ["Don't try to assign a chokepoint to this route — that's the point of contrast with Suez/Gulf/Malacca routes."],
+    "mustRemember": ["Trans-Pacific route = East Asia-North America's biggest, chokepoint-free trade lane."]
+  },
+  "sources": [
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" },
+    { "name": "APEC Secretariat", "kind": "educational", "url": "https://www.apec.org/" }
+  ]
+}

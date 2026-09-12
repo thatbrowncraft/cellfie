@@ -1,0 +1,49 @@
+{
+  "id": "cape-of-good-hope-route",
+  "category": "route",
+  "name": "Cape of Good Hope Route",
+  "genZNote": "This is the 'okay fine, we'll go the long way' route — slower and more expensive than Suez, but it doesn't depend on any single canal or strait staying open.",
+  "sections": [
+    {
+      "id": "route-path",
+      "heading": "🛳️ Route Path",
+      "bullets": [
+        "European or American Atlantic ports → down the Atlantic Ocean, around South Africa's Cape of Good Hope → into the Indian Ocean → onward to India, Southeast Asia and East Asia.",
+        "The historic route used before the Suez Canal opened in 1869, and still the fallback whenever Suez or the Red Sea route is unavailable or too risky."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "📦 Why It Matters",
+      "bullets": [
+        "Adds significant extra distance and time compared with the Suez route, which increases fuel costs and shipping times for goods moving between Europe and Asia.",
+        "Becomes commercially important during periods when the Suez Canal or Red Sea route faces disruption, congestion, or security concerns.",
+        "Passes major South African ports such as Durban and Cape Town, which benefit economically when more traffic shifts to this route."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Cape of Good Hope route goes around South Africa to connect the Atlantic and Indian Oceans, serving as the historic and current fallback to the Suez Canal.",
+    "keyFacts": [
+      "Path: Atlantic Ocean → around South Africa's Cape of Good Hope → Indian Ocean.",
+      "Historic Europe-Asia route before the Suez Canal (1869).",
+      "Modern fallback when the Suez/Red Sea route is disrupted.",
+      "Longer and more expensive than the Suez route."
+    ],
+    "keyTerms": ["Cape of Good Hope", "Durban", "Suez Canal (pre-1869 comparison)"],
+    "commonConfusion": ["Don't confuse the Cape of Good Hope (Africa, alternative to Suez) with Cape Horn (South America, alternative to Panama) — they solve different route problems."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Cape of Good Hope route: fallback to the Suez Canal, goes around Africa.",
+      "Longer/costlier but avoids Suez Canal/Red Sea chokepoints entirely.",
+      "Was the standard Europe-Asia route before 1869."
+    ],
+    "commonTraps": ["Africa's Cape of Good Hope ≠ South America's Cape Horn — same 'go around the continent' idea, two different oceans and two different canals being avoided."],
+    "mustRemember": ["Cape of Good Hope route = the long way around Africa, used when Suez isn't an option."]
+  },
+  "sources": [
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" },
+    { "name": "NOAA — Ocean facts", "kind": "scientific", "url": "https://www.noaa.gov/" }
+  ]
+}

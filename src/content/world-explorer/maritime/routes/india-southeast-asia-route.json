@@ -1,0 +1,49 @@
+{
+  "id": "india-southeast-asia-route",
+  "category": "route",
+  "name": "India ↔ Southeast Asia Maritime Route",
+  "genZNote": "This is the sea-route version of India's 'Act East' policy — you can't pivot east without an actual sea lane to do it through.",
+  "sections": [
+    {
+      "id": "route-path",
+      "heading": "🛳️ Route Path",
+      "bullets": [
+        "India's east-coast ports (Chennai, Visakhapatnam, Kolkata) → Bay of Bengal → Andaman Sea (past India's Andaman & Nicobar Islands) → Strait of Malacca → South China Sea / Southeast Asian ports (Singapore, Port Klang, Ho Chi Minh City, Bangkok).",
+        "India's Andaman & Nicobar Islands sit close to this route's western approach to the Strait of Malacca."
+      ]
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "📦 Why It Matters",
+      "bullets": [
+        "The maritime backbone of India's trade with ASEAN countries — machinery, textiles, pharmaceuticals and agricultural products move along it, alongside electronics and manufactured goods moving toward India.",
+        "Central to India's 'Act East' policy, which aims to deepen economic and strategic ties with Southeast and East Asia.",
+        "Also connects onward toward East Asia (China, Japan, South Korea) via the South China Sea, making it relevant to India's broader Indo-Pacific trade."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The India-Southeast Asia route runs from India's east coast through the Bay of Bengal and Strait of Malacca to ASEAN ports, underpinning India's Act East trade policy.",
+    "keyFacts": [
+      "Path: India's east coast → Bay of Bengal → Strait of Malacca → Southeast Asia.",
+      "Backbone of India-ASEAN trade.",
+      "Central to India's 'Act East' policy.",
+      "Andaman & Nicobar Islands sit near this route's western approach."
+    ],
+    "keyTerms": ["Act East policy", "ASEAN", "Strait of Malacca"],
+    "commonConfusion": ["This route uses India's EAST coast (Bay of Bengal side) — don't mix it up with the west-coast Gulf route."]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "India-Southeast Asia route passes through the Strait of Malacca.",
+      "Supports India's 'Act East' policy.",
+      "Key Indian ports: Chennai, Visakhapatnam, Kolkata."
+    ],
+    "commonTraps": ["Don't state this route bypasses the Strait of Malacca — it is the essential link along the way."],
+    "mustRemember": ["India-Southeast Asia route = Bay of Bengal + Malacca corridor underpinning Act East."]
+  },
+  "sources": [
+    { "name": "Ministry of External Affairs, Government of India — Act East Policy", "kind": "educational", "url": "https://www.mea.gov.in/" },
+    { "name": "IMO — International shipping routes overview", "kind": "educational", "url": "https://www.imo.org/" }
+  ]
+}
