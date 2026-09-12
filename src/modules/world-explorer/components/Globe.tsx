@@ -272,15 +272,68 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
 
         for (const ring of feature.rings) {
           const projected = ring.map(([lon, lat]) => project(lat, lon, rotation, radius))
-          const visibleCount = projected.filter((p) => p.visible).length
-          if (projected.length === 0 || visibleCount / projected.length < 0.5) continue
+          if (projected.length === 0) continue
 
-          includedSegments.push(
-            projected.map((p, i) => `${i === 0 ? 'M' : 'L'} ${(center + p.x).toFixed(1)},${(center + p.y).toFixed(1)}`).join(' ') + ' Z'
-          )
+          // ROOT CAUSE of a selected country (e.g. Australia) suddenly
+          // ballooning to cover a huge chunk of the visible sphere: an
+          // orthographic projection maps the FAR hemisphere onto the
+          // very same 2D disc as the near one — a point exactly
+          // antipodal to the view centre projects to (0,0), i.e. dead
+          // centre of the globe, not off to some conveniently offscreen
+          // location. The old code decided whether to draw a ring
+          // whole-or-nothing based on whether a MAJORITY of its points
+          // were visible, then joined every point (including the
+          // minority still on the far side) with straight `L` lines.
+          // So a ring that was, say, 80% visible would still draw a
+          // line from a real coastline point stright through to a
+          // back-side vertex that had projected near the centre of the
+          // disc — exactly the "country expands across most of the
+          // globe" artifact in the bug report.
+          //
+          // Fix: split each ring into runs of CONSECUTIVE visible
+          // points only, and never draw a line between a visible and a
+          // non-visible vertex. Each run becomes its own closed
+          // sub-path. This is a straight-chord approximation of the
+          // true horizon clip (a proper spherical polygon clip would
+          // curve along the limb instead of cutting a straight line
+          // across it) — visually indistinguishable for the common
+          // case of a mostly-visible country with only its extreme tip
+          // near the limb, and it can never connect to a wildly
+          // mis-projected far-side point.
+          const runs: { x: number; y: number; depth: number }[][] = []
+          let current: { x: number; y: number; depth: number }[] = []
           for (const p of projected) {
-            depthSum += p.depth
-            depthCount += 1
+            if (p.visible) {
+              current.push({ x: p.x, y: p.y, depth: p.depth })
+            } else if (current.length > 0) {
+              runs.push(current)
+              current = []
+            }
+          }
+          if (current.length > 0) runs.push(current)
+
+          // A ring's point array isn't circularly closed by the split
+          // above — if the ring both starts AND ends visible, that's
+          // one continuous visible arc that got cut in two purely
+          // because of where the array happens to start. Splice the
+          // trailing run onto the front of the leading one so it draws
+          // as the single unbroken shape it actually is.
+          if (runs.length > 1 && projected[0]?.visible && projected[projected.length - 1]?.visible) {
+            const first = runs.shift()
+            const last = runs.pop()
+            if (first && last) runs.push([...last, ...first])
+          }
+
+          for (const run of runs) {
+            // A 1-2 point sliver isn't a meaningful fillable area.
+            if (run.length < 3) continue
+            includedSegments.push(
+              run.map((p, i) => `${i === 0 ? 'M' : 'L'} ${(center + p.x).toFixed(1)},${(center + p.y).toFixed(1)}`).join(' ') + ' Z'
+            )
+            for (const p of run) {
+              depthSum += p.depth
+              depthCount += 1
+            }
           }
         }
 
@@ -349,10 +402,10 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
             <stop offset="100%" stopColor="var(--color-surface, #1c2422)" />
           </radialGradient>
           {/* Real World style's ocean — a separate gradient rather than recoloring `globe-sphere` in place, so the Dark Scientific style (still using `globe-sphere` above) is provably untouched by this addition.
-              Brightened from the original (#3d7ea6 → #1f4a63) — the previous stops read as dark/muted on Android, per the contrast bug report — while staying a restrained, believable ocean blue rather than an oversaturated one. */}
+              Brightened from the original (#3d7ea6 → #1f4a63) — the previous stops read as dark/muted on Android, per the contrast bug report — while staying a restrained, believable ocean blue rather than an oversaturated one. Nudged slightly brighter again per follow-up feedback ("contrast can still be improved slightly"). */}
           <radialGradient id="globe-ocean" cx="35%" cy="30%" r="75%">
-            <stop offset="0%" stopColor="#6fb8e0" />
-            <stop offset="100%" stopColor="#2f6f95" />
+            <stop offset="0%" stopColor="#7cbfe6" />
+            <stop offset="100%" stopColor="#2c6a90" />
           </radialGradient>
         </defs>
 
@@ -400,9 +453,9 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
                 fillRule="evenodd"
                 opacity={opacity}
                 className={cn(countryId ? 'cursor-pointer' : 'cursor-default')}
-                fill={isSelected ? 'var(--color-highlight-terracotta)' : '#356b3c'}
-                fillOpacity={isSelected ? 0.9 : 0.8}
-                stroke={isSelected ? 'var(--color-highlight-terracotta)' : 'rgba(255, 255, 255, 0.32)'}
+                fill={isSelected ? 'var(--color-highlight-terracotta)' : '#2f5c38'}
+                fillOpacity={isSelected ? 0.9 : 0.85}
+                stroke={isSelected ? 'var(--color-highlight-terracotta)' : 'rgba(255, 255, 255, 0.4)'}
                 strokeWidth={isSelected ? 1.5 : 0.6}
               />
             )
