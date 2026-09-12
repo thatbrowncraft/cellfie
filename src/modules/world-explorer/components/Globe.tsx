@@ -104,6 +104,65 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
   const lastInteractionAt = useRef<number>(0)
   const lastDragDistanceRef = useRef(0)
   const rafRef = useRef<number | null>(null)
+
+  // --- Drag-render coalescing (Android lag fix) -----------------------
+  //
+  // ROOT CAUSE of the Real globe visually trailing the finger: every
+  // native `pointermove` was calling `setRotation` directly, and each
+  // one of THOSE re-renders re-ran the `landmassPaths` memo below —
+  // reprojecting every country's boundary rings and rebuilding every
+  // SVG path string. A touchscreen can emit several pointermove events
+  // within a single animation frame's time budget; the Dark globe (no
+  // landmasses, just ~58 cheap marker dots) could absorb that fine, but
+  // Real mode's per-event cost was high enough that renders started
+  // backing up behind the input queue — by the time frame N's render
+  // finally committed, the finger was already several events ahead of
+  // it. That backlog IS the "globe responds a few moments after the
+  // finger" symptom; it's not that any single render was too slow to
+  // ever catch up, it's that multiple full landmass re-renders were
+  // being forced per frame instead of one.
+  //
+  // Fix: `pointermove` no longer touches React state at all. It updates
+  // `pendingRotationRef` (a plain ref — free) and ensures exactly one
+  // `requestAnimationFrame` is scheduled. That rAF callback is the only
+  // thing that ever calls `setRotation`, and it always reads whatever
+  // is CURRENTLY in the ref — i.e. the latest finger position at the
+  // moment the browser is ready to paint — so any intermediate
+  // pointermove events that arrived earlier in the same frame are
+  // naturally superseded rather than each triggering their own render.
+  // This is the same "coalesce to latest, render once per frame"
+  // pattern used by the idle-rotation loop above, just applied to
+  // drag input instead of a timer.
+  const pendingRotationRef = useRef<Rotation | null>(null)
+  const committedRotationRef = useRef<Rotation>(rotation)
+  const dragFrameRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    committedRotationRef.current = rotation
+  }, [rotation])
+
+  // Belt-and-suspenders: if the component unmounts mid-drag (route
+  // change while a finger is still down), don't leave a stray rAF
+  // callback trying to setRotation on an unmounted component.
+  useEffect(() => {
+    return () => {
+      if (dragFrameRef.current !== null) cancelAnimationFrame(dragFrameRef.current)
+    }
+  }, [])
+
+  const flushDragFrame = useCallback(() => {
+    dragFrameRef.current = null
+    if (pendingRotationRef.current) {
+      setRotation(pendingRotationRef.current)
+    }
+  }, [])
+
+  const cancelDragFrame = useCallback(() => {
+    if (dragFrameRef.current !== null) {
+      cancelAnimationFrame(dragFrameRef.current)
+      dragFrameRef.current = null
+    }
+  }, [])
   const prefersReducedMotion = useMemo(
     () => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,
     []
@@ -144,6 +203,11 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
   const handlePointerDown = useCallback((e: React.PointerEvent<SVGSVGElement>) => {
     ;(e.target as Element).setPointerCapture?.(e.pointerId)
     lastDragDistanceRef.current = 0
+    // Fresh drag: forget any pending coalesced rotation from a previous
+    // (already-ended) drag so the first move of this one bases its delta
+    // on the actual current, committed rotation.
+    cancelDragFrame()
+    pendingRotationRef.current = null
     dragState.current = {
       pointerId: e.pointerId,
       startX: e.clientX,
@@ -153,7 +217,7 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
       moved: 0
     }
     lastInteractionAt.current = performance.now()
-  }, [])
+  }, [cancelDragFrame])
 
   const handlePointerMove = useCallback((e: React.PointerEvent<SVGSVGElement>) => {
     const drag = dragState.current
@@ -168,19 +232,34 @@ export function Globe({ selectedCountryId, onSelectCountry, style = DEFAULT_GLOB
 
     // Degrees-per-pixel scales down as the globe is zoomed in, so drag
     // speed always feels proportional to the globe's on-screen size.
+    // NOTE: this is pure math on refs — no setRotation here. See the
+    // "Drag-render coalescing" comment above `dragState` for why.
     const degreesPerPixel = 0.4 / scale
-    setRotation((prev) => ({
-      lambda: normalizeLambda(prev.lambda - dx * degreesPerPixel),
-      phi: clampPhi(prev.phi - dy * degreesPerPixel)
-    }))
-  }, [scale])
+    const base = pendingRotationRef.current ?? committedRotationRef.current
+    pendingRotationRef.current = {
+      lambda: normalizeLambda(base.lambda - dx * degreesPerPixel),
+      phi: clampPhi(base.phi - dy * degreesPerPixel)
+    }
+    if (dragFrameRef.current === null) {
+      dragFrameRef.current = requestAnimationFrame(flushDragFrame)
+    }
+  }, [scale, flushDragFrame])
 
   const clearDrag = useCallback((e: React.PointerEvent<SVGSVGElement>) => {
     if (dragState.current?.pointerId === e.pointerId) {
       dragState.current = null
     }
     lastInteractionAt.current = performance.now()
-  }, [])
+    // Commit the final coalesced position immediately on release/cancel
+    // rather than waiting for whatever rAF happened to be in flight —
+    // the drag is over, so there's no more benefit to deferring it, and
+    // this guarantees the very last bit of finger movement isn't lost.
+    cancelDragFrame()
+    if (pendingRotationRef.current) {
+      setRotation(pendingRotationRef.current)
+      pendingRotationRef.current = null
+    }
+  }, [cancelDragFrame])
 
   // Selection now happens here, on pointerup, instead of via onClick
   // handlers on individual marker/landmass elements.
