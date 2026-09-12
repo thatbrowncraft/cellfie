@@ -75,6 +75,57 @@
         "Hosting the African Union headquarters in Addis Ababa.",
         "The 'Lucy' fossil discovery and its unique Ethiopian calendar system."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Ethiopian Birr (ETB).",
+        "One of Africa's fastest-growing economies in recent years, driven by agriculture (notably coffee, believed to have originated here) and infrastructure investment.",
+        "Addis Ababa serves as a major diplomatic hub for the African continent."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "The Ethiopian Highlands form one of Africa's largest mountainous regions, often called the 'Roof of Africa'.",
+        "Home to unique wildlife such as the Ethiopian wolf and Gelada baboon, found nowhere else."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "One of the oldest independent nations in the world, with ancient roots including the Kingdom of Aksum.",
+        "Notably resisted European colonization, decisively defeating Italy at the Battle of Adwa in 1896.",
+        "Emperor Haile Selassie ruled for much of the 20th century until a 1974 revolution ended the monarchy."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1974 revolution ended centuries of imperial rule.",
+        "A 1995 Constitution established a federal system organized along ethnic-linguistic lines, a distinctive feature of Ethiopian governance."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "World-renowned in long-distance running, having produced numerous Olympic and World Championship gold medallists.",
+        "The rock-hewn churches of Lalibela are a UNESCO World Heritage Site.",
+        "Believed to be the birthplace of coffee, central to its cultural coffee-ceremony tradition."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Hosts the headquarters of the African Union in Addis Ababa.",
+        "Founding member of the UN and a long-standing leader in African regional diplomacy."
+      ]
     }
   ],
   "quickRevision": {

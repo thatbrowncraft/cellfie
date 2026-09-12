@@ -75,6 +75,64 @@
         "Consistently ranking among the world's happiest and most gender-equal countries.",
         "Awarding the Nobel Peace Prize in Oslo."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Norwegian Krone (NOK).",
+        "A major oil and natural gas exporter, using revenues to fund one of the world's largest sovereign wealth funds.",
+        "Also a global leader in hydropower generation and seafood exports."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Famous for dramatic fjords, glaciers, and extensive Arctic territory including the Svalbard archipelago.",
+        "A global leader in electric-vehicle adoption and renewable-energy use, with nearly all domestic electricity from hydropower."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "A major Viking-era seafaring and trading power from the 8th-11th centuries.",
+        "United with Denmark and later Sweden for centuries before gaining full independence in 1905."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1814 Constitution (Eidsvoll Constitution) is among the oldest still in effect in the world.",
+        "1905 peaceful dissolution of the union with Sweden established full Norwegian independence as a constitutional monarchy."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Andøya Space Center supports satellite launches from northern Norway; a leader in maritime and offshore engineering technology.",
+        "Hosts the Svalbard Global Seed Vault, a secure backup of the world's crop diversity."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "A dominant force in Winter Olympic sports, particularly cross-country skiing and biathlon.",
+        "The Nobel Peace Prize is awarded annually in Oslo.",
+        "Edvard Munch's 'The Scream' is among the most recognisable works in art history."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of NATO; not a member of the European Union but closely integrated via the European Economic Area.",
+        "Member of the UN and a major contributor to international development aid relative to its population."
+      ]
     }
   ],
   "quickRevision": {

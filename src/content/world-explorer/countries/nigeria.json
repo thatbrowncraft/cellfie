@@ -75,6 +75,56 @@
         "Afrobeats music's major global cultural influence.",
         "Being a major OPEC oil producer and growing African tech/fintech hub."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Nigerian Naira (NGN).",
+        "Africa's most populous country and one of its largest economies, heavily reliant on oil exports alongside a rapidly growing technology and entertainment sector (Nollywood, fintech)."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Ecosystems range from Niger Delta mangroves and rainforest in the south to savanna in the north.",
+        "The Niger Delta faces significant environmental challenges linked to oil extraction."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Home to historic kingdoms and empires, including the Benin Empire and the Sokoto Caliphate.",
+        "Became a British colony/protectorate before gaining independence in 1960.",
+        "Endured a civil war (the Biafran War, 1967-1970) shortly after independence."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1960 independence from Britain; became a republic in 1963.",
+        "Experienced repeated military coups before transitioning to sustained civilian democratic rule in 1999 under the Fourth Republic."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is the most popular sport; the national team has won multiple Africa Cup of Nations titles.",
+        "Nollywood is one of the world's largest film industries by output.",
+        "Afrobeats music, pioneered by artists like Fela Kuti, has major global cultural influence."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the African Union and ECOWAS (Economic Community of West African States).",
+        "Member of the UN and the Commonwealth of Nations; a significant contributor to UN and regional peacekeeping."
+      ]
     }
   ],
   "quickRevision": {

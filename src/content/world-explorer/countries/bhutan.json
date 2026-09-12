@@ -77,6 +77,55 @@
         "Paro Taktsang (the 'Tiger's Nest' monastery), built into a cliffside above the Paro valley.",
         "A tightly managed, high-value tourism model rather than mass tourism."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Ngultrum (BTN), pegged to the Indian Rupee.",
+        "A small economy centred on hydropower (exported mainly to India), agriculture, and tourism.",
+        "Famous for measuring national progress via 'Gross National Happiness' rather than GDP alone."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Constitutionally mandated to maintain at least 60% forest cover; one of the few carbon-negative countries in the world.",
+        "Himalayan biodiversity hotspot, home to the elusive snow leopard and red panda."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Unified as a state in the 17th century under the Zhabdrung Ngawang Namgyal.",
+        "Maintained close ties with British India and later independent India; never colonized."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "Transitioned peacefully from an absolute to a constitutional monarchy in 2008 under King Jigme Khesar Namgyel Wangchuck.",
+        "2008 Constitution introduced a parliamentary democracy alongside the monarchy."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Archery is the national sport, deeply woven into cultural festivals.",
+        "Its Buddhist monastic culture and dzong (fortress-monastery) architecture are internationally distinctive."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN and SAARC.",
+        "Maintains especially close diplomatic and economic ties with India, its principal development partner."
+      ]
     }
   ],
   "quickRevision": {
@@ -87,7 +136,12 @@
       "Constitution mandates a minimum of 60% forest cover.",
       "No formal diplomatic relations with any UNSC permanent member."
     ],
-    "keyTerms": ["Gross National Happiness (GNH)", "Dzongkha", "Dzong", "Druk Gyalpo"],
+    "keyTerms": [
+      "Gross National Happiness (GNH)",
+      "Dzongkha",
+      "Dzong",
+      "Druk Gyalpo"
+    ],
     "commonConfusion": [
       "Bhutan is a CONSTITUTIONAL monarchy since 2008, not an absolute one — the shift was voluntary, initiated by the King himself, not forced by revolution."
     ]

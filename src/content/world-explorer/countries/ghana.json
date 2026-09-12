@@ -75,6 +75,56 @@
         "Kente cloth and vibrant traditional textile heritage.",
         "Historic coastal slave-trade forts, now major heritage tourism and reconciliation sites."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Ghanaian Cedi (GHS).",
+        "A major producer of cocoa and gold; one of Africa's fastest-growing economies in recent years.",
+        "Discovered significant offshore oil reserves in the late 2000s."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Coastal savanna in the south transitions to tropical forest and northern savanna.",
+        "Home to Kakum National Park's rainforest canopy walkway and significant biodiversity."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Became the first Sub-Saharan African country to gain independence from colonial rule, in 1957, under Kwame Nkrumah.",
+        "A historic centre of the transatlantic slave trade, with coastal forts now preserved as UNESCO World Heritage Sites."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1957 independence made Ghana a symbol of the broader African independence movement.",
+        "The 1992 Constitution established the Fourth Republic, ending a period of military rule and founding today's stable multi-party democracy."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is the most popular sport, with the national team ('Black Stars') a regular African and World Cup contender.",
+        "Kente cloth weaving is a globally recognised cultural textile art.",
+        "Cape Coast and Elmina Castles are preserved as UNESCO World Heritage Sites documenting the slave trade."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the African Union and the Non-Aligned Movement.",
+        "Member of the UN and the Commonwealth of Nations; a significant contributor to UN peacekeeping missions."
+      ]
     }
   ],
   "quickRevision": {

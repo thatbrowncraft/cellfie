@@ -75,6 +75,57 @@
         "Vibrant music traditions including son, salsa, and mambo.",
         "The 1962 Cuban Missile Crisis, a defining Cold War confrontation."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Cuban Peso (CUP).",
+        "A centrally planned economy historically reliant on sugar exports, now diversified toward tourism, medical services, and remittances.",
+        "Has faced a long-standing US trade embargo since the early 1960s."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "The largest island in the Caribbean, with extensive coral reefs and mangrove ecosystems.",
+        "Relatively low industrialization has preserved significant biodiversity, including many endemic species."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Spanish colony until independence following the Spanish-American War in 1898.",
+        "The 1959 Cuban Revolution, led by Fidel Castro, established a socialist government that remains in power in a modified form.",
+        "The 1962 Cuban Missile Crisis was a pivotal Cold War confrontation centred on Cuba."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1959 Revolution ended the Batista government and established one-party socialist rule.",
+        "A new Constitution was adopted in 2019, retaining the one-party system while introducing limited economic and political adjustments."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Baseball is the national sport, with Cuba historically a global powerhouse.",
+        "Renowned for son and salsa music traditions; Old Havana is a UNESCO World Heritage Site.",
+        "Has a globally recognised medical-training and healthcare-diplomacy programme."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN and the Non-Aligned Movement.",
+        "Long excluded from the Organization of American States due to Cold War-era tensions with the US."
+      ]
     }
   ],
   "quickRevision": {

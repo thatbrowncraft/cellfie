@@ -75,6 +75,56 @@
         "Being one of the world's top two palm oil producers.",
         "Borneo's ancient rainforests and rich biodiversity."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Malaysian Ringgit (MYR).",
+        "A diversified upper-middle-income economy, strong in electronics manufacturing, palm oil, and natural gas.",
+        "One of the world's largest exporters of palm oil and semiconductors."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to some of the world's oldest rainforests, spanning Peninsular Malaysia and Borneo (Sabah and Sarawak).",
+        "Rich biodiversity includes orangutans and pygmy elephants in Borneo; faces palm-oil-related deforestation pressures alongside conservation initiatives."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "A historic hub of maritime trade in Southeast Asia; came under British colonial administration.",
+        "Achieved independence in 1957 (as Malaya) and formed the Federation of Malaysia in 1963, uniting Malaya, Singapore, Sabah, and Sarawak (Singapore separated in 1965)."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1957 independence; 1963 formation of the Federation of Malaysia.",
+        "A federal constitutional monarchy with a rotating monarchy (Yang di-Pertuan Agong) elected among state rulers every five years — a distinctive feature of its system."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Badminton is a major national sport with strong international success.",
+        "The Petronas Twin Towers in Kuala Lumpur were once the world's tallest buildings.",
+        "A multicultural society blending Malay, Chinese, and Indian traditions, reflected in its cuisine and festivals."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of ASEAN.",
+        "Member of the UN, the Commonwealth of Nations, and the Organisation of Islamic Cooperation."
+      ]
     }
   ],
   "quickRevision": {

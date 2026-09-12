@@ -75,6 +75,64 @@
         "CERN and major global pharmaceutical companies (Novartis, Roche).",
         "Extensive direct democracy through frequent national referendums."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Swiss Franc (CHF), widely regarded as one of the world's most stable currencies.",
+        "A global hub for banking and finance, precision manufacturing (watches), and pharmaceuticals.",
+        "Consistently ranks among the world's wealthiest countries by GDP per capita."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Dominated by the Alps, with extensive glaciers, though glacial retreat due to climate change is a growing concern.",
+        "Strong environmental-protection tradition, including extensive recycling and public-transport systems."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Traces its origins to a 1291 confederation of alpine cantons resisting external control.",
+        "Has maintained a policy of armed neutrality since 1815, avoiding involvement in both World Wars."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "A federal republic with a distinctive system of direct democracy, where citizens frequently vote on referenda at the national level.",
+        "The 1848 Constitution created the modern federal state; a unique rotating seven-member Federal Council serves as the collective head of state."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Home to CERN, the world's largest particle-physics laboratory, near Geneva.",
+        "A global leader in precision engineering, pharmaceuticals, and financial technology."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Hosts the headquarters of numerous international sports federations, including FIFA and the IOC.",
+        "World-renowned for precision watchmaking (Rolex, Omega, Swatch).",
+        "Home to notable alpine ski resorts and mountaineering heritage (the Matterhorn)."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Hosts the European headquarters of the United Nations in Geneva, alongside numerous international organisations (WHO, WTO, ICRC).",
+        "Not a member of the EU; joined the UN only in 2002, reflecting its historic neutrality."
+      ]
     }
   ],
   "quickRevision": {

@@ -66,6 +66,55 @@
         "One of the world's oldest and largest sovereign wealth funds (Kuwait Investment Authority).",
         "The Kuwaiti Dinar being among the world's highest-valued currencies."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Kuwaiti Dinar (KWD), among the highest-valued currencies in the world.",
+        "Economy is overwhelmingly oil-dependent, with some of the world's largest proven oil reserves.",
+        "Maintains one of the largest sovereign wealth funds globally."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Predominantly flat desert terrain with a coastline on the Persian Gulf.",
+        "Faces extreme summer heat and water scarcity, relying heavily on desalination."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Historically a trading and pearling port on the Persian Gulf.",
+        "Became independent from British protection in 1961; invaded by Iraq in 1990, triggering the Gulf War and liberation in 1991."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1961 independence from Britain.",
+        "The 1962 Constitution established a hybrid system combining a hereditary emirate with an elected National Assembly, one of the more participatory systems in the Gulf."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is the most popular sport regionally.",
+        "Traditional dhow shipbuilding and pearl-diving heritage reflect its Gulf maritime history."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of OPEC and the Gulf Cooperation Council (GCC).",
+        "Member of the UN and the Arab League; the 1990-91 Gulf War was fought over its liberation from Iraqi occupation."
+      ]
     }
   ],
   "quickRevision": {

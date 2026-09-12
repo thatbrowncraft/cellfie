@@ -66,6 +66,63 @@
         "The influential Al Jazeera global news network.",
         "A very large expatriate workforce relative to its citizen population."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Qatari Riyal (QAR).",
+        "One of the world's highest GDP-per-capita economies, driven by vast natural gas reserves — among the largest in the world.",
+        "Pursuing economic diversification into finance, sports, and tourism ahead of an eventual decline in hydrocarbon reliance."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "A small, flat desert peninsula in the Persian Gulf with limited freshwater resources, relying heavily on desalination.",
+        "Coastal and marine ecosystems support conservation efforts for species like the hawksbill turtle."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Historically a pearling and fishing economy before the discovery of oil and gas transformed it in the 20th century.",
+        "Became fully independent from British protection in 1971."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1971 independence from Britain.",
+        "An absolute monarchy (emirate) under the Al Thani family; a 2003 Constitution formalized governance structures while retaining the monarchy's central role."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Qatar operates its own satellite programme (Es'hailSat) for regional broadcasting.",
+        "Home to Al Jazeera, a globally influential media network launched in 1996."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Hosted the 2022 FIFA World Cup, the first Arab and Middle Eastern country to do so.",
+        "The Museum of Islamic Art in Doha is a globally recognised cultural institution."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of OPEC and the Gulf Cooperation Council (GCC).",
+        "Member of the UN and the Arab League; plays an active role as a diplomatic mediator in regional conflicts."
+      ]
     }
   ],
   "quickRevision": {

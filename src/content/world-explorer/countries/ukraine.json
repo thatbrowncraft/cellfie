@@ -66,6 +66,66 @@
         "The 2004 Orange Revolution and 2014 Euromaidan pro-democracy movements.",
         "Rich folk-art traditions including pysanky (decorated eggs) and vyshyvanka embroidery."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Ukrainian Hryvnia (UAH).",
+        "Historically known as a major grain producer ('the breadbasket of Europe'), a top global exporter of wheat, corn, and sunflower oil.",
+        "Economy has been severely disrupted by Russia's full-scale invasion beginning in 2022."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Vast fertile steppe (chernozem/black-soil) region underpins its agricultural strength.",
+        "The Carpathian Mountains in the west and the Dnipro River are major geographic features."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Traces roots to Kievan Rus', a medieval East Slavic state.",
+        "Was part of the Russian Empire and later the Soviet Union; declared independence in 1991 following the USSR's dissolution.",
+        "Faced Russian annexation of Crimea in 2014 and a full-scale Russian invasion beginning in February 2022."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1991 independence following the collapse of the Soviet Union.",
+        "The 2014 'Euromaidan' revolution ousted a pro-Russian president and reoriented the country toward closer ties with the EU and the West.",
+        "Has been under martial law and active conflict since Russia's 2022 invasion."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "State Space Agency of Ukraine has a long Soviet-era heritage in rocket engineering, including the Yuzhmash design bureau.",
+        "Developed significant domestic drone and defence technology, especially since 2022."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football and gymnastics are traditional strengths.",
+        "Kyiv's Saint Sophia Cathedral is a UNESCO World Heritage Site.",
+        "Ukrainian folk traditions, including pysanka (decorated eggs) and vyshyvanka embroidery, are internationally recognised cultural symbols."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN; a candidate for EU membership since 2022.",
+        "Not a NATO member, though seeking membership; has received significant military and humanitarian support from Western allies since 2022."
+      ]
     }
   ],
   "quickRevision": {

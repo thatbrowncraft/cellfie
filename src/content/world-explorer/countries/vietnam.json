@@ -75,6 +75,64 @@
         "Its complex 20th-century history including the Vietnam War and reunification.",
         "UNESCO World Heritage sites like Ha Long Bay and Hoi An."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Vietnamese Đồng (VND).",
+        "One of Southeast Asia's fastest-growing economies, driven by manufacturing exports (electronics, textiles) and increasing foreign investment.",
+        "A major global exporter of coffee and rice."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Ha Long Bay's limestone karst islands are a UNESCO World Heritage natural site.",
+        "The Mekong Delta in the south is a vital and ecologically rich agricultural region, facing climate and saltwater-intrusion challenges."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "A history of resisting foreign domination, including a millennium of Chinese rule and later French colonization.",
+        "Divided into North and South Vietnam after 1954; the Vietnam War (1955-1975) ended with reunification under communist rule in 1975."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1975 reunification of North and South Vietnam under the Communist Party.",
+        "The 1986 'Đổi Mới' (Renovation) reforms introduced market-oriented economic policies while retaining one-party political rule."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Vietnam National Space Center supports satellite development and remote-sensing research.",
+        "A rapidly growing electronics-manufacturing hub, attracting major global technology supply chains."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football has a passionate national following, with growing regional success.",
+        "Hoi An Ancient Town and the Complex of Hué Monuments are UNESCO World Heritage Sites.",
+        "Áo dài traditional dress and Vietnamese cuisine (phở, bánh mì) are internationally recognised cultural exports."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of ASEAN.",
+        "Member of the UN and APEC; has developed close economic ties with both the US and China despite historic conflicts with both."
+      ]
     }
   ],
   "quickRevision": {

@@ -60,6 +60,56 @@
       "bullets": [
         "Ceylon Tea, ancient Buddhist heritage sites (Anuradhapura, Polonnaruwa, Sigiriya), and Indian Ocean maritime trade significance."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Sri Lankan Rupee (LKR).",
+        "Economy historically centred on tea, garments, and tourism; experienced a severe economic and debt crisis in 2022."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Exceptional biodiversity for its size, including rainforests, and is a globally recognised biodiversity hotspot.",
+        "Home to significant Asian elephant and leopard populations; Sinharaja Forest Reserve is a UNESCO World Heritage Site."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Home to ancient Sinhalese kingdoms with a Buddhist heritage dating back over two millennia.",
+        "Colonized successively by the Portuguese, Dutch, and British; gained independence from Britain in 1948.",
+        "Endured a prolonged civil war (1983-2009) between the government and Tamil separatist forces."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1948 independence from Britain.",
+        "The 1972 and 1978 Constitutions reshaped governance, with the latter introducing an executive presidency; the 2009 end of the civil war marked a major turning point."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Cricket is the most popular sport; Sri Lanka won the Cricket World Cup in 1996.",
+        "Ancient cities Anuradhapura and Polonnaruwa, along with Sigiriya rock fortress, are UNESCO World Heritage Sites.",
+        "Ceylon tea remains a globally recognised export brand."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of SAARC and the Non-Aligned Movement.",
+        "Member of the UN and the Commonwealth of Nations."
+      ]
     }
   ],
   "quickRevision": {
@@ -70,7 +120,11 @@
       "Official languages: Sinhala and Tamil.",
       "UNESCO sites: Anuradhapura, Polonnaruwa, Sigiriya."
     ],
-    "keyTerms": ["Ceylon", "Palk Strait", "Sinhala-Tamil"],
+    "keyTerms": [
+      "Ceylon",
+      "Palk Strait",
+      "Sinhala-Tamil"
+    ],
     "commonConfusion": [
       "Sri Lanka's official (Kotte) and commercial (Colombo) capitals are different cities — a frequently tested distinction."
     ]

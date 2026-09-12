@@ -59,6 +59,64 @@
         "K2 and the Karakoram mountain range, Mohenjo-daro's Indus Valley ruins, and cricket as a major national sport.",
         "Shared Partition history with India, marking both countries' independence in August 1947."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Pakistani Rupee (PKR).",
+        "An agriculture- and textile-driven economy, with cotton and rice among its leading exports.",
+        "The China-Pakistan Economic Corridor (CPEC) is a major infrastructure investment initiative."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to K2, the world's second-highest mountain, and extensive glacial systems in the north.",
+        "The Indus River system is central to the country's agriculture and ecology, facing water-scarcity and climate-vulnerability challenges."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Created in 1947 through the Partition of British India as a homeland for South Asian Muslims.",
+        "East Pakistan separated in 1971 to become Bangladesh after a war involving India."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1947 independence and Partition from India.",
+        "The 1973 Constitution established a federal parliamentary republic; the country has alternated between civilian and military rule several times since independence."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Space and Upper Atmosphere Research Commission (SUPARCO) leads national satellite and space-research efforts.",
+        "A significant nuclear-technology programme, having conducted nuclear tests in 1998."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Cricket is the most popular sport; Pakistan won the Cricket World Cup in 1992.",
+        "Squash has historically been a major strength, with Pakistani players dominating the sport for decades.",
+        "The Mohenjo-daro archaeological site is a UNESCO World Heritage Site from the ancient Indus Valley Civilization."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of SAARC and the Organisation of Islamic Cooperation.",
+        "Member of the UN; a significant contributor to UN peacekeeping missions."
+      ]
     }
   ],
   "quickRevision": {
@@ -68,7 +126,11 @@
       "Home to K2, the world's second-highest mountain.",
       "Mohenjo-daro (Indus Valley Civilization) is a UNESCO World Heritage Site in Pakistan."
     ],
-    "keyTerms": ["Partition of 1947", "CPEC", "Indus Valley Civilization"],
+    "keyTerms": [
+      "Partition of 1947",
+      "CPEC",
+      "Indus Valley Civilization"
+    ],
     "commonConfusion": [
       "Pakistan's independence (14 August 1947) is one day BEFORE India's (15 August 1947) — a commonly mixed-up date pair."
     ]

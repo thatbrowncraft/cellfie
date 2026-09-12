@@ -61,6 +61,64 @@
         "The Burj Khalifa (world's tallest building) in Dubai, rapid modern urban development, and being a major global aviation/trade hub.",
         "A large Indian diaspora and close economic ties with India via the CEPA trade agreement."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: UAE Dirham (AED), pegged to the US Dollar.",
+        "Built on oil wealth, now diversified into finance, tourism, aviation, and trade; Dubai is a major global logistics and business hub.",
+        "Home to some of the world's tallest buildings and largest ports and airports."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Predominantly arid desert terrain with a Persian Gulf coastline; relies heavily on desalination for freshwater.",
+        "Pursuing large-scale renewable-energy and afforestation projects as part of economic diversification."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Formed in 1971 as a federation of seven emirates (including Abu Dhabi and Dubai) after independence from British protection.",
+        "Transformed rapidly from a modest trading and pearling economy into a global business hub following oil discoveries."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1971 founding of the federation of seven emirates.",
+        "A federal system with each emirate retaining significant autonomy; governed by a Supreme Council of Rulers, with the President traditionally from Abu Dhabi."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "UAE Space Agency achieved a landmark with the Hope Probe reaching Mars orbit in 2021, making the UAE the first Arab nation to reach Mars.",
+        "Home to ambitious futuristic infrastructure projects and a growing renewable-energy sector."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Hosts major international sporting and business events, including Formula 1 and global expos (Expo 2020 Dubai).",
+        "The Burj Khalifa in Dubai is the world's tallest building.",
+        "The Sheikh Zayed Grand Mosque in Abu Dhabi is an internationally recognised architectural landmark."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the Gulf Cooperation Council (GCC) and OPEC.",
+        "Member of the UN and the Arab League; increasingly active in global diplomacy and trade partnerships."
+      ]
     }
   ],
   "quickRevision": {
@@ -71,7 +129,11 @@
       "India-UAE CEPA trade agreement came into force in 2022.",
       "Home to one of the world's largest overseas Indian communities."
     ],
-    "keyTerms": ["Emirate", "GCC", "CEPA (Comprehensive Economic Partnership Agreement)"],
+    "keyTerms": [
+      "Emirate",
+      "GCC",
+      "CEPA (Comprehensive Economic Partnership Agreement)"
+    ],
     "commonConfusion": [
       "Abu Dhabi is the UAE's CAPITAL; Dubai is its largest and most internationally famous city — the two are often mixed up."
     ]

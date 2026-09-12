@@ -75,6 +75,65 @@
         "The historic revival of Hebrew as a modern spoken language.",
         "Being at the centre of the long-running Israeli-Palestinian conflict and broader Middle East diplomacy."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Israeli New Shekel (ILS).",
+        "A globally significant technology hub, often called the 'Start-Up Nation' for its dense concentration of tech companies and venture capital.",
+        "Advanced sectors include cybersecurity, agri-tech, and pharmaceuticals despite limited natural resources."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Geographically diverse for its small size, from the Negev Desert in the south to Mediterranean coastline and the Sea of Galilee.",
+        "A global pioneer in water-management technology, including drip irrigation and desalination."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "The historic homeland of the Jewish people, with roots tracing back thousands of years.",
+        "The modern State of Israel was established in 1948 following a UN partition plan for the British Mandate of Palestine.",
+        "Has been involved in multiple wars and remains central to the unresolved Israeli-Palestinian conflict."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1948 Declaration of Independence established the modern state.",
+        "Operates without a single written constitution, governed instead by a series of Basic Laws; a parliamentary democracy with the Knesset as its legislature."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Israel Space Agency has launched domestically built satellites; a global leader in cybersecurity and semiconductor technology.",
+        "Home to a dense innovation ecosystem producing numerous globally used technologies."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Judo and swimming are notable Olympic strengths.",
+        "Jerusalem's Old City, sacred to Judaism, Christianity, and Islam, is a UNESCO World Heritage Site.",
+        "Tel Aviv is internationally recognised for its concentration of Bauhaus/International Style architecture."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN and the OECD.",
+        "Maintains close strategic and defence ties with the United States."
+      ]
     }
   ],
   "quickRevision": {

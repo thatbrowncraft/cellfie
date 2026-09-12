@@ -75,6 +75,56 @@
         "Gabriel García Márquez and the 'magical realism' literary tradition.",
         "Being one of the most biodiverse countries in the world."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Colombian Peso (COP).",
+        "A major coffee producer and exporter, alongside significant oil, coal, and flower exports.",
+        "One of the fastest-growing economies in Latin America in recent decades."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "One of the most biodiverse countries on Earth, home to a share of the Amazon Rainforest and unique páramo highland ecosystems.",
+        "The Coffee Cultural Landscape is a UNESCO World Heritage Site."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Part of Spanish colonial rule until independence in 1819 under Simón Bolívar.",
+        "Experienced decades of internal armed conflict involving guerrilla groups (notably FARC), which signed a landmark peace agreement with the government in 2016."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1991 Constitution modernized the country's governance framework and expanded citizens' rights.",
+        "The 2016 peace accord with FARC marked a major turning point after over five decades of conflict."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football and cycling are hugely popular, with Colombian cyclists winning major international races including the Tour de France.",
+        "Nobel laureate author Gabriel García Márquez, a pioneer of magical realism, is globally celebrated.",
+        "Cartagena's walled colonial city is a UNESCO World Heritage Site."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN, OECD, and the Pacific Alliance.",
+        "A close security and trade partner of the United States in Latin America."
+      ]
     }
   ],
   "quickRevision": {

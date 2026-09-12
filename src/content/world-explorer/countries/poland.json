@@ -75,6 +75,64 @@
         "Producing Marie Curie and Frédéric Chopin.",
         "One of the EU's fastest-growing economies since 2004."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Polish Złoty (PLN).",
+        "One of the fastest-growing economies in the European Union since joining in 2004, with strong manufacturing and IT-services sectors."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to the Białowieża Forest, one of the last and largest remaining primeval forests in Europe, shared with Belarus.",
+        "The Baltic Sea coastline and Tatra Mountains offer diverse ecosystems."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "A significant medieval and early-modern European power, later partitioned and erased from the map for over a century by neighbouring empires (1795-1918).",
+        "Regained independence in 1918; devastated during World War II, including the Holocaust and Nazi occupation.",
+        "Fell under Soviet-aligned communist rule after WWII until the Solidarity movement helped end communism in 1989."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1918 regained independence after over a century of partition.",
+        "1989 Solidarity-led transition ended communist rule, leading to democratic elections and a market economy; the 1997 Constitution established the current parliamentary republic."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Polish Space Agency (POLSA) supports growing participation in European Space Agency programmes.",
+        "A significant and growing IT-outsourcing and software-development hub in Central Europe."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Nicolaus Copernicus, who proposed the heliocentric model of the solar system, was Polish.",
+        "Volleyball and football are especially popular national sports.",
+        "The historic centres of Kraków and Warsaw are UNESCO World Heritage Sites."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the EU and NATO.",
+        "Member of the UN; has played a significant regional role supporting Ukraine following Russia's 2022 invasion."
+      ]
     }
   ],
   "quickRevision": {

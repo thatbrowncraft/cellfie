@@ -75,6 +75,64 @@
         "Global brands like IKEA, Volvo, H&M, and Spotify.",
         "Ending over two centuries of military non-alignment by joining NATO in 2024."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Swedish Krona (SEK).",
+        "A highly innovative, export-driven economy with global strengths in engineering, automotive (Volvo), and telecommunications (Ericsson).",
+        "Known for a strong welfare-state model funded through comparatively high taxation."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Extensive forests and thousands of lakes cover much of the country; a global leader in recycling and waste-to-energy systems.",
+        "Strong policy commitment to carbon neutrality and renewable energy."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "A major Viking-era and later 17th-century European military power.",
+        "Has maintained a policy of military non-alignment for over two centuries, avoiding involvement in both World Wars."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "A constitutional monarchy with a parliamentary system; the monarch holds a purely ceremonial role.",
+        "Joined NATO in 2024, ending its long-standing policy of military non-alignment following Russia's invasion of Ukraine."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Swedish Space Corporation operates the Esrange Space Center, used for satellite and rocket launches, including planned orbital launch capability.",
+        "Home to globally influential technology companies including Spotify and Ericsson."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "The Nobel Prize ceremonies (except the Peace Prize) are held annually in Stockholm.",
+        "ABBA and other Swedish pop acts have had major global cultural influence.",
+        "Strong performance in ice hockey and cross-country skiing internationally."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the EU; joined NATO in 2024.",
+        "Member of the UN; historically a major contributor to international development aid and UN peacekeeping."
+      ]
     }
   ],
   "quickRevision": {

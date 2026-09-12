@@ -75,6 +75,64 @@
         "Being a major global rice exporter and Southeast Asian manufacturing hub.",
         "Muay Thai and a deeply respected constitutional monarchy."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Thai Baht (THB).",
+        "A major manufacturing and tourism-driven economy in Southeast Asia, strong in automobiles, electronics, and agriculture (notably rice exports).",
+        "Bangkok is a major regional business and tourism hub."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Diverse ecosystems from northern mountains to southern tropical islands and coral reefs.",
+        "Faces marine-conservation challenges balancing tourism growth with reef and coastline protection."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "The only Southeast Asian country never colonized by a European power, historically known as Siam.",
+        "Renamed Thailand in 1939; has experienced numerous military coups alongside periods of constitutional monarchy governance."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1932 revolution ended absolute monarchy, establishing a constitutional monarchy.",
+        "Has had numerous constitutions and military coups since, reflecting recurring tension between military, monarchy, and elected government."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Geo-Informatics and Space Technology Development Agency (GISTDA) leads national satellite programmes.",
+        "A significant regional hub for automotive manufacturing, often called the 'Detroit of Asia'."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Muay Thai (Thai boxing) is the national martial art, practised worldwide.",
+        "The historic city of Ayutthaya and Sukhothai are UNESCO World Heritage Sites.",
+        "Buddhist temples (wats) and the Grand Palace in Bangkok are iconic cultural landmarks."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of ASEAN.",
+        "Member of the UN and APEC; a close long-standing ally of the United States in Southeast Asia."
+      ]
     }
   ],
   "quickRevision": {

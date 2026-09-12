@@ -75,6 +75,62 @@
         "The Noor Ouarzazate Solar Complex, one of the world's largest solar power plants.",
         "Being a key gateway between Africa, Europe, and the Arab world."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Moroccan Dirham (MAD).",
+        "A diversified economy with strengths in agriculture, phosphate mining (holding the world's largest reserves), automotive manufacturing, and tourism."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Spans the Atlas Mountains, Mediterranean coast, and the edge of the Sahara Desert.",
+        "Home to unique argan forests (a UNESCO biosphere reserve), source of the globally exported argan oil."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Home to ancient Berber (Amazigh) civilizations and later Arab-Islamic dynasties.",
+        "Became a French and Spanish protectorate in the early 20th century; regained independence in 1956."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1956 independence from France and Spain.",
+        "A constitutional monarchy; the 2011 Constitution, adopted amid the Arab Spring, expanded the powers of the elected government relative to the monarchy."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Moroccan Royal Centre for Remote Sensing supports satellite and space-research activity.",
+        "A regional leader in renewable energy, notably the Noor Ouarzazate solar power complex, one of the world's largest concentrated solar plants."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football achieved historic success, becoming the first African and Arab team to reach a FIFA World Cup semi-final (2022).",
+        "The medina of Fez and the city of Marrakech are UNESCO World Heritage Sites renowned for their architecture and craftsmanship."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN, the Arab League, and the African Union (which it rejoined in 2017).",
+        "Maintains close economic and political ties with the European Union."
+      ]
     }
   ],
   "quickRevision": {

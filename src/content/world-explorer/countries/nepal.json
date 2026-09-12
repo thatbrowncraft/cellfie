@@ -64,6 +64,55 @@
         "Lumbini (Buddha's birthplace) and the Kathmandu Valley's temple architecture.",
         "An open border and treaty-based close relationship with India."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Nepalese Rupee (NPR), pegged to the Indian Rupee.",
+        "Tourism (especially mountaineering) and agriculture are central to the economy; remittances from workers abroad form a large share of national income."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to Mount Everest, the world's highest peak, and eight of the world's fourteen 8,000-metre mountains.",
+        "Chitwan National Park protects significant populations of the one-horned rhinoceros and Bengal tiger."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Unified as a single kingdom in the 18th century by Prithvi Narayan Shah.",
+        "Never colonized by a foreign power; ended a decade-long Maoist insurgency in 2006, leading to the abolition of the monarchy in 2008."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "2008 abolition of the 240-year-old monarchy established Nepal as a federal democratic republic.",
+        "The 2015 Constitution formalized federalism, dividing the country into seven provinces."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Mountaineering and trekking define its global reputation, centred on the Himalayas and Everest.",
+        "Lumbini, the birthplace of the Buddha, is a UNESCO World Heritage pilgrimage site.",
+        "Kathmandu Valley's ancient temple squares are also UNESCO-listed."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of SAARC; member of the UN.",
+        "A significant contributor of Gurkha soldiers to international military forces historically and troops to UN peacekeeping missions."
+      ]
     }
   ],
   "quickRevision": {
@@ -74,7 +123,11 @@
       "Lumbini is the birthplace of Gautama Buddha.",
       "Open border with India, governed by the 1950 Indo-Nepal Treaty of Peace and Friendship."
     ],
-    "keyTerms": ["Federal democratic republic", "Lumbini", "Indo-Nepal Treaty of 1950"],
+    "keyTerms": [
+      "Federal democratic republic",
+      "Lumbini",
+      "Indo-Nepal Treaty of 1950"
+    ],
     "commonConfusion": [
       "Everest sits on the Nepal-Tibet (China) border, not entirely within one country — both share the peak."
     ]

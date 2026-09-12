@@ -75,6 +75,64 @@
         "Easter Island (Rapa Nui) and its iconic moai statues.",
         "Being one of Latin America's most economically stable, OECD-member nations."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Chilean Peso (CLP).",
+        "A leading global copper producer and exporter; also a major exporter of lithium, wine, and fruit.",
+        "One of Latin America's most stable and open economies."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Extraordinary geographic range, from the Atacama Desert (one of the driest places on Earth) to Patagonian glaciers and fjords in the south.",
+        "The Atacama's clear skies make it a global hub for astronomical observatories."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Spanish colonization followed by independence in 1818.",
+        "Endured a military dictatorship under Augusto Pinochet from 1973 to 1990 after a coup against President Salvador Allende.",
+        "Returned to democracy in 1990."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1973 military coup ended democratic rule; 1980 Constitution was adopted under the dictatorship.",
+        "1990 transition restored democratic governance; recent years have seen sustained public debate and referenda over rewriting the Pinochet-era constitution."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Hosts some of the world's most advanced astronomical observatories (including ALMA and the under-construction Extremely Large Telescope) due to the Atacama's exceptional sky clarity.",
+        "A growing renewable-energy hub, leveraging abundant solar and wind resources."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football and tennis are especially popular; the men's national football team has won multiple Copa América titles.",
+        "Nobel laureate poets Pablo Neruda and Gabriela Mistral are celebrated internationally."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN, OECD, and APEC.",
+        "A founding member of the Pacific Alliance trade bloc."
+      ]
     }
   ],
   "quickRevision": {

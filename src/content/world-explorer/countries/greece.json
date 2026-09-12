@@ -75,6 +75,65 @@
         "Owning one of the world's largest merchant shipping fleets.",
         "Thousands of scenic Aegean and Ionian islands as major tourism destinations."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Euro (EUR).",
+        "Tourism and shipping are central pillars of the economy, alongside agriculture.",
+        "Operates one of the world's largest merchant shipping fleets."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Comprises thousands of islands across the Aegean and Ionian Seas alongside a mountainous mainland.",
+        "Mediterranean ecosystems support unique flora, with several UNESCO biosphere reserves."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Birthplace of Western philosophy, democracy, and the Olympic Games in antiquity.",
+        "Fell under Ottoman rule for centuries before winning independence in 1830 after a long war of independence.",
+        "A founding pillar of European civilization, with continuous cultural influence for over two millennia."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1830 independence from the Ottoman Empire established the modern Greek state.",
+        "Became a republic in 1974 after a referendum abolished the monarchy, following the fall of a military dictatorship (1967-1974)."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Hellenic Space Agency coordinates national participation in European Space Agency programmes.",
+        "Historic contributions to mathematics and science (Pythagoras, Archimedes, Euclid) underpin its modern STEM education tradition."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Birthplace of the ancient Olympic Games; hosted the first modern Olympics in Athens in 1896 and again in 2004.",
+        "The Acropolis and Parthenon are globally iconic ancient monuments.",
+        "Greek mythology and classical drama remain foundational to Western literature and theatre."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the United Nations; member of the EU and NATO.",
+        "A key strategic partner in the Eastern Mediterranean and Balkans."
+      ]
     }
   ],
   "quickRevision": {

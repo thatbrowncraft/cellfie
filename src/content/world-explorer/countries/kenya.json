@@ -75,6 +75,55 @@
         "Pioneering mobile money technology through M-Pesa.",
         "The Great Rift Valley and significant early human fossil discoveries."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Kenyan Shilling (KES).",
+        "East Africa's largest economy, driven by agriculture (tea, coffee, horticulture), tourism, and a growing technology/fintech sector.",
+        "Nairobi is a major regional financial and tech hub, home to the pioneering mobile-money system M-Pesa."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to the Maasai Mara, part of the wider Serengeti ecosystem famous for the annual wildebeest migration.",
+        "Mount Kenya, Africa's second-highest peak, is a UNESCO World Heritage Site."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "British colony until achieving independence in 1963 under founding president Jomo Kenyatta.",
+        "The Mau Mau uprising in the 1950s was a pivotal independence movement against colonial rule."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1963 independence from Britain; became a republic in 1964.",
+        "The 2010 Constitution introduced major reforms, including devolved county governments and an expanded Bill of Rights."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "World-renowned in long-distance running, producing numerous Olympic and marathon champions.",
+        "Rich Maasai and Swahili cultural heritage along the coast and interior."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the African Union; hosts UN-Habitat and UNEP headquarters in Nairobi.",
+        "Member of the UN and the Commonwealth of Nations; a key East African regional diplomatic and security hub."
+      ]
     }
   ],
   "quickRevision": {

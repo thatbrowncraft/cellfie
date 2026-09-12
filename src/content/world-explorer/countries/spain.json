@@ -75,6 +75,63 @@
         "A historic global colonial and exploratory legacy that spread the Spanish language across the Americas.",
         "Strong renewable energy engineering and infrastructure investment."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Euro (EUR).",
+        "A major European economy with strengths in tourism (one of the world's most-visited countries), automobiles, and renewable energy."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Diverse landscapes including the Pyrenees, Mediterranean coastline, and semi-arid interior plateaus.",
+        "A global leader in solar and wind power generation capacity."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Unified as a kingdom in the late 15th century under Ferdinand and Isabella, the same year Columbus's voyage began Spanish exploration of the Americas.",
+        "Built one of history's largest global empires; endured a civil war (1936-1939) followed by the Franco dictatorship until 1975."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1975 death of Franco led to a peaceful transition to democracy.",
+        "The 1978 Constitution established a parliamentary constitutional monarchy and devolved significant autonomy to Spain's regions."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Instituto Nacional de Técnica Aeroespacial (INTA) supports national space activities within the European Space Agency framework.",
+        "Home to significant renewable-energy engineering and infrastructure innovation."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is central to national culture, with a FIFA World Cup title (2010) and globally dominant clubs.",
+        "Flamenco is recognised by UNESCO as Intangible Cultural Heritage.",
+        "Antoni Gaudí's Sagrada Família and other works in Barcelona are UNESCO World Heritage Sites."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the EU and NATO.",
+        "Member of the UN and the G20; maintains close cultural and economic ties with Latin America."
+      ]
     }
   ],
   "quickRevision": {

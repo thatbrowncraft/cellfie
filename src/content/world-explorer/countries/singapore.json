@@ -75,6 +75,64 @@
         "The Marina Bay Sands and Gardens by the Bay skyline.",
         "Being governed by the same party (PAP) continuously since 1965."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Singapore Dollar (SGD).",
+        "A global financial and trade hub with one of the world's busiest ports; transformed from a low-income country to a high-income economy within decades.",
+        "Strong in finance, logistics, and advanced manufacturing (semiconductors, biotech)."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "A small, densely urbanized island nation with an ambitious 'City in a Garden' approach integrating greenery into urban planning.",
+        "Gardens by the Bay is a globally recognised example of sustainable urban ecological design."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Founded as a British trading post in 1819 by Sir Stamford Raffles.",
+        "Joined the Federation of Malaysia in 1963 but separated in 1965 to become a fully independent city-state."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1965 independence, initially forced by separation from Malaysia.",
+        "Developed rapidly under a dominant-party parliamentary system led for decades by the People's Action Party, prioritizing economic growth and strict governance."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Office for Space Technology and Industry supports a growing satellite and space-technology sector.",
+        "A global leader in smart-city technology, biotechnology research, and financial-technology innovation."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Hosts the Singapore Grand Prix, Formula 1's first night race.",
+        "A multicultural society blending Chinese, Malay, Indian, and Western influences, reflected in its cuisine and festivals.",
+        "Singapore Botanic Gardens is a UNESCO World Heritage Site."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of ASEAN.",
+        "Member of the UN, APEC, and the Commonwealth of Nations; a key global financial and shipping hub."
+      ]
     }
   ],
   "quickRevision": {

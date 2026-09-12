@@ -66,6 +66,56 @@
         "Significant 21st-century conflicts, including the 2003 invasion and the fight against ISIS.",
         "The historically and archaeologically significant ancient city of Babylon."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Iraqi Dinar (IQD).",
+        "Economy heavily dependent on oil exports, which fund the majority of government revenue.",
+        "Recovering agricultural sector historically centred on the fertile land between the Tigris and Euphrates rivers."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Part of the historic Mesopotamian floodplain between the Tigris and Euphrates rivers.",
+        "The Mesopotamian Marshes in the south, partially restored after being drained in the 1990s, are a UNESCO World Heritage wetland ecosystem."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Part of ancient Mesopotamia, often called the 'Cradle of Civilization', home to the Sumerians, Babylonians, and Assyrians.",
+        "Became an independent kingdom in 1932 after British mandate rule; became a republic in 1958.",
+        "Endured wars including the Iran-Iraq War (1980s), the 1991 Gulf War, and the 2003 US-led invasion that toppled Saddam Hussein."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1958 revolution ended the monarchy and established a republic.",
+        "The 2005 Constitution, adopted after the 2003 invasion, established a federal parliamentary democracy."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is the most popular sport; the national team won the AFC Asian Cup in 2007.",
+        "Home to ancient Babylon and Ur, among the world's most significant archaeological sites."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the Arab League and OPEC.",
+        "Member of the UN and the Organisation of Islamic Cooperation."
+      ]
     }
   ],
   "quickRevision": {

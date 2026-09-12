@@ -76,6 +76,57 @@
         "The 1986 People Power Revolution as a landmark peaceful pro-democracy movement.",
         "A major recent defence customer for India's BrahMos missile system."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Philippine Peso (PHP).",
+        "A services-driven economy, globally significant in business-process outsourcing (BPO) and call centres; remittances from overseas Filipino workers are a major income source.",
+        "Agriculture (notably rice and coconut) remains important, especially in rural areas."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "An archipelago of over 7,000 islands with exceptional marine biodiversity, part of the 'Coral Triangle'.",
+        "The Tubbataha Reefs Natural Park is a UNESCO World Heritage marine protected area.",
+        "Highly vulnerable to typhoons and volcanic activity, given its location on the Pacific 'Ring of Fire'."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Colonized by Spain for over 300 years, then ceded to the United States after the 1898 Spanish-American War.",
+        "Gained independence from the US in 1946 after Japanese occupation during World War II."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1946 independence from the United States.",
+        "The 1986 'People Power Revolution' peacefully ended the Marcos dictatorship; the 1987 Constitution restored democratic governance."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Basketball is the most popular sport nationwide, a legacy of American influence.",
+        "The Banaue Rice Terraces are a UNESCO World Heritage Site, built by hand over 2,000 years ago.",
+        "A globally significant source of seafarers, staffing a large share of the world's merchant shipping crews."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of ASEAN.",
+        "Member of the UN; maintains a long-standing mutual defence treaty with the United States."
+      ]
     }
   ],
   "quickRevision": {

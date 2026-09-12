@@ -75,6 +75,64 @@
         "Being the world's second-largest agricultural exporter by value despite its small size.",
         "Hosting the International Court of Justice at The Hague."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Euro (EUR).",
+        "A highly developed, trade-oriented economy; Rotterdam is one of the world's largest and busiest ports.",
+        "A global leader in agricultural technology and exports despite its small land area."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Famous for extensive land reclaimed from the sea (polders) and an advanced system of dikes and water-management infrastructure.",
+        "A global pioneer in flood-control engineering and, more recently, cycling-friendly urban planning."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Rose to prominence during the 17th-century 'Dutch Golden Age' as a major global maritime and trading power.",
+        "Formed the Dutch Republic after gaining independence from Spanish rule in the 16th-17th centuries."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "A constitutional monarchy with a parliamentary system of government.",
+        "1815 Kingdom of the Netherlands was established after the Napoleonic era; has since evolved into a modern parliamentary democracy."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Netherlands Space Office supports European Space Agency collaboration.",
+        "Home to ASML, a global leader in semiconductor lithography equipment critical to the world's chip industry."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football and speed skating are major national sporting strengths.",
+        "Home to renowned painters including Rembrandt and Vincent van Gogh.",
+        "Amsterdam's canal ring is a UNESCO World Heritage Site."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the EU and NATO.",
+        "Hosts the International Court of Justice and International Criminal Court in The Hague."
+      ]
     }
   ],
   "quickRevision": {

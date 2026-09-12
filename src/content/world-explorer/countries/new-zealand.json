@@ -75,6 +75,64 @@
         "Dramatic natural landscapes, including fjords and geothermal features.",
         "A long-standing nuclear-free zone policy."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: New Zealand Dollar (NZD).",
+        "An agriculture-driven economy, among the world's largest dairy and wool exporters, alongside a strong tourism sector."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Renowned for unique, isolated biodiversity, including the flightless kiwi bird and diverse endemic flora.",
+        "Extensive national park system; a global leader in ecological restoration and predator-control conservation programmes."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Settled by Polynesian Māori centuries before European contact.",
+        "The 1840 Treaty of Waitangi between the British Crown and Māori chiefs is the founding document of the modern nation.",
+        "Became fully independent within the Commonwealth in the 20th century."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1840 Treaty of Waitangi remains central to the country's constitutional and legal framework.",
+        "A constitutional monarchy with a parliamentary system; in 1893 became the first self-governing country in the world to grant women the right to vote."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Home to Rocket Lab, a private company launching orbital rockets from New Zealand, making it one of the few countries with an active orbital launch site.",
+        "Strong biotechnology and agri-tech research sector."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Rugby is central to national identity, with the All Blacks among the most successful international teams in the sport.",
+        "Māori culture, including the haka and traditional carving, has strong global recognition.",
+        "Fiordland and other national parks are prominent UNESCO-recognised natural landscapes."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN, the Commonwealth of Nations, and APEC.",
+        "Maintains a long-standing nuclear-free policy and close ties with Australia and Pacific Island nations."
+      ]
     }
   ],
   "quickRevision": {

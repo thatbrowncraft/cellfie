@@ -75,6 +75,64 @@
         "Fado music and a rich maritime historical heritage.",
         "Historic and continuing ties to Goa and other former Portuguese territories in India."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Euro (EUR).",
+        "A services- and tourism-driven economy, with historic strengths in textiles, cork production (the world's leading producer), and wine."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Atlantic coastline and the Douro Valley wine region, a UNESCO World Heritage cultural landscape.",
+        "The Azores and Madeira archipelagos host distinct volcanic island ecosystems."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "One of Europe's oldest nation-states, with borders largely unchanged since the 13th century.",
+        "Led early European maritime exploration in the 15th-16th centuries, building a global empire including Brazil, Goa, and Macau.",
+        "The 1974 Carnation Revolution peacefully ended a decades-long authoritarian dictatorship."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1974 Carnation Revolution ended the Estado Novo dictatorship and led to rapid decolonization.",
+        "The 1976 Constitution established the current parliamentary democratic republic."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Portuguese Space Agency supports European Space Agency collaboration, including a spaceport initiative in the Azores.",
+        "A notable historical legacy in maritime navigation technology from the Age of Discoveries."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is central to national identity, with Cristiano Ronaldo among its most famous athletes.",
+        "Fado music is recognised by UNESCO as Intangible Cultural Heritage.",
+        "Lisbon's Belém Tower and Jerónimos Monastery are UNESCO World Heritage Sites tied to the Age of Discoveries."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of NATO; member of the EU.",
+        "Maintains historic ties with its former colonies through the Community of Portuguese Language Countries (CPLP), which includes Brazil."
+      ]
     }
   ],
   "quickRevision": {

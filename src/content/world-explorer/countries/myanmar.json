@@ -76,6 +76,55 @@
         "Major global source of jade and rubies, and significant natural gas reserves.",
         "One of the world's longest-running internal armed conflicts, involving numerous ethnic armed organisations."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Myanmar Kyat (MMK).",
+        "An agriculture-based economy (notably rice) with significant natural-resource wealth including jade, gems, and natural gas.",
+        "Development has been constrained by decades of political instability and international sanctions."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to extensive teak forests and the Irrawaddy River, central to the country's ecology and agriculture.",
+        "Significant biodiversity in its northern mountainous regions bordering the Himalayas."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Ruled by successive Burmese kingdoms before becoming a British colony in the 19th century.",
+        "Gained independence in 1948; has experienced repeated periods of military rule since a 1962 coup."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1948 independence from Britain.",
+        "A gradual, partial transition toward civilian democratic governance began around 2011 but was reversed by a military coup in February 2021."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Traditional Burmese martial art Lethwei and Buddhist pagoda architecture (notably Bagan's thousands of ancient temples) are culturally significant.",
+        "Bagan is a UNESCO World Heritage Site with one of the world's densest concentrations of Buddhist temples."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of ASEAN and the UN.",
+        "Its military government has faced significant international scrutiny and sanctions following the 2021 coup."
+      ]
     }
   ],
   "quickRevision": {
@@ -86,7 +135,11 @@
       "Junta-run elections held December 2025-January 2026; widely criticised as neither free nor fair.",
       "Min Aung Hlaing became president via parliament in April 2026, under continued military control."
     ],
-    "keyTerms": ["Tatmadaw (military)", "National League for Democracy (NLD)", "Kaladan Multi-Modal Transit Transport Project"],
+    "keyTerms": [
+      "Tatmadaw (military)",
+      "National League for Democracy (NLD)",
+      "Kaladan Multi-Modal Transit Transport Project"
+    ],
     "commonConfusion": [
       "Myanmar's CAPITAL is Naypyidaw, not Yangon — Yangon is the largest city and former capital, but the capital was relocated to Naypyidaw in 2005."
     ]

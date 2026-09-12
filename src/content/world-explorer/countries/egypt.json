@@ -75,6 +75,65 @@
         "Being one of the world's oldest continuous civilizations.",
         "Co-founding the Non-Aligned Movement alongside India."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Egyptian Pound (EGP).",
+        "Economy driven by the Suez Canal (a critical global shipping route), tourism, agriculture along the Nile, and natural gas.",
+        "One of the largest economies in Africa and the Arab world."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Dominated by desert, with the Nile River and its delta supporting the vast majority of the population.",
+        "The Red Sea coast hosts globally significant coral reefs and diving ecosystems."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Home to one of the world's oldest civilizations, with a continuous history spanning over 5,000 years.",
+        "Came under British influence in the 19th century before gaining full independence in 1952 following a military coup.",
+        "President Gamal Abdel Nasser nationalized the Suez Canal in 1956, a defining moment of post-colonial assertion."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1952 revolution ended the monarchy and established a republic.",
+        "The 2011 Arab Spring protests led to the ouster of longtime President Hosni Mubarak; a new constitutional order followed in subsequent years."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Egyptian Space Agency coordinates satellite and space-research programmes.",
+        "Home to major archaeological-preservation technology efforts, including 3D-scanning of ancient monuments."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Football is the most popular sport, with a historically dominant national and club record in Africa.",
+        "The Pyramids of Giza and the Sphinx are among the most recognisable ancient monuments in the world.",
+        "Cairo is a major centre of Arabic film, music, and literature."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of the Arab League and the African Union.",
+        "Member of the UN and the Organisation of Islamic Cooperation; controls the strategically vital Suez Canal."
+      ]
     }
   ],
   "quickRevision": {

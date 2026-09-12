@@ -75,6 +75,64 @@
         "Holding some of the world's largest oil and gas reserves.",
         "Persian poetry, carpets, and architecture as major cultural exports."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Iranian Rial (IRR).",
+        "Holds among the world's largest oil and natural gas reserves, though international sanctions have significantly constrained trade.",
+        "A large domestic manufacturing base alongside agriculture and petrochemicals."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Geographically diverse, from the Caspian Sea coast's lush forests to the arid Dasht-e Kavir and Dasht-e Lut deserts.",
+        "Faces serious water-scarcity and desertification challenges in parts of the country."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Home to the ancient Persian Empire, one of history's largest and most influential empires.",
+        "The Pahlavi monarchy ruled through much of the 20th century until the 1979 Islamic Revolution established the Islamic Republic."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1979 Islamic Revolution overthrew the monarchy and established the Islamic Republic of Iran.",
+        "The 1979 Constitution created a unique system combining elected institutions with clerical oversight under a Supreme Leader."
+      ]
+    },
+    {
+      "id": "space-innovation",
+      "heading": "🚀 Space, Innovation & Modern Development",
+      "bullets": [
+        "Iranian Space Agency has launched domestically built satellites; maintains an active missile and space-launch programme.",
+        "A significant regional centre for pharmaceutical and nuclear-technology research."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Wrestling and weightlifting are traditional national strengths with a strong Olympic record.",
+        "Persian poetry (Hafez, Rumi, Ferdowsi) and Persian carpets are globally celebrated cultural exports.",
+        "Persepolis and Isfahan's Naqsh-e Jahan Square are major UNESCO World Heritage Sites."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of OPEC; member of the UN and the Shanghai Cooperation Organisation (SCO).",
+        "A leading member of the Organisation of Islamic Cooperation."
+      ]
     }
   ],
   "quickRevision": {

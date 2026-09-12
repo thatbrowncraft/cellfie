@@ -75,6 +75,56 @@
         "Being the world's lowest-lying country, and a leading global voice on climate-change vulnerability and adaptation.",
         "A largely tourism-dependent economy built on a chain of coral atolls."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Maldivian Rufiyaa (MVR).",
+        "Tourism, centred on luxury island resorts, is the dominant economic sector, alongside fishing.",
+        "Among the smallest economies in Asia by population, but with high per-capita tourism revenue."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "The world's lowest-lying country, made up of coral atolls, with an average elevation of about 1.5 metres above sea level.",
+        "Extremely vulnerable to sea-level rise; a global advocate for climate action and marine conservation.",
+        "Home to extensive coral reef ecosystems supporting rich marine biodiversity."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "A historic Indian Ocean trading hub; converted to Islam in the 12th century.",
+        "Became independent from British protection in 1965; became a republic in 1968."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1965 independence from Britain; 1968 abolished the monarchy to become a republic.",
+        "The 2008 Constitution introduced multi-party democratic elections after decades of single-party rule."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Traditional Bodu Beru drumming and dance reflect its Indian Ocean cultural heritage.",
+        "A globally recognised luxury eco-tourism destination."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN and SAARC.",
+        "A prominent voice in international climate-change forums due to its existential vulnerability to sea-level rise."
+      ]
     }
   ],
   "quickRevision": {
@@ -85,7 +135,11 @@
       "Became a republic in 1968, ending the historic sultanate.",
       "Tourism is the dominant economic sector."
     ],
-    "keyTerms": ["Atoll", "Thaana script", "SAGAR (India's Indian Ocean policy)"],
+    "keyTerms": [
+      "Atoll",
+      "Thaana script",
+      "SAGAR (India's Indian Ocean policy)"
+    ],
     "commonConfusion": [
       "The Maldives is a REPUBLIC (since 1968), not a monarchy — it is sometimes mixed up with Gulf monarchies due to shared Islamic identity."
     ]

@@ -75,6 +75,58 @@
         "Decades of continuous conflict, including the Soviet-Afghan War (1979-1989) and the post-2001 US-led war, followed by the Taliban's 2021 return to power.",
         "Ancient lapis lazuli mining and Silk Road heritage sites, including Bamiyan (once home to the Buddhas of Bamiyan, destroyed by the Taliban in 2001)."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Afghani (AFN).",
+        "One of the world's least developed economies, historically reliant on agriculture (wheat, fruits, nuts) and remittances.",
+        "Holds significant untapped mineral resources, including copper, iron ore, and lithium deposits."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Rugged, mountainous terrain dominated by the Hindu Kush range.",
+        "Faces severe environmental stress from decades of conflict, deforestation, and drought.",
+        "Wakhan Corridor in the northeast hosts rare snow leopard habitat."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "A historic crossroads on the Silk Road between Central and South Asia.",
+        "Endured Soviet occupation (1979-1989), followed by civil war and Taliban rule from the 1990s.",
+        "US-led intervention began in 2001; foreign forces withdrew in 2021, after which the Taliban returned to power."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "A 2004 Constitution established an Islamic republic after the fall of the first Taliban government.",
+        "The Taliban regained control of the country in August 2021, ending the republic and reimposing strict Islamic governance."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Cricket has grown rapidly in popularity, with the national team competing internationally.",
+        "Rich Persian and Central Asian cultural heritage, including poetry and carpet weaving.",
+        "The Buddhas of Bamiyan, though destroyed in 2001, remain a globally recognised historical and cultural loss."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Member of the UN and the South Asian Association for Regional Cooperation (SAARC).",
+        "Its post-2021 Taliban government is not formally recognised by most of the international community."
+      ]
     }
   ],
   "quickRevision": {
@@ -85,7 +137,11 @@
       "Afghanistan's UN seat is still held by a representative from the pre-2021 republic.",
       "Dominated by the Hindu Kush mountain range; landlocked, bordering six countries."
     ],
-    "keyTerms": ["Islamic Emirate of Afghanistan", "Hindu Kush", "Wakhan Corridor"],
+    "keyTerms": [
+      "Islamic Emirate of Afghanistan",
+      "Hindu Kush",
+      "Wakhan Corridor"
+    ],
     "commonConfusion": [
       "As of this profile, most of the world does NOT formally recognise the Taliban government, even where countries maintain practical diplomatic/embassy-level contact — recognition and engagement are not the same thing."
     ]

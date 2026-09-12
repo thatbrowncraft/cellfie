@@ -61,6 +61,56 @@
         "The Sundarbans mangrove forest, the Ganges delta, and being one of the world's top garment exporters.",
         "The 1971 Liberation War and its 1952 Language Movement, both central to national identity."
       ]
+    },
+    {
+      "id": "currency-economy",
+      "heading": "💰 Currency & Economy",
+      "bullets": [
+        "Currency: Bangladeshi Taka (BDT).",
+        "One of the world's largest garment/textile exporters, a major driver of its rapidly growing economy.",
+        "Agriculture (notably rice and jute) remains central to rural livelihoods."
+      ]
+    },
+    {
+      "id": "ecology-environment",
+      "heading": "🌿 Ecology & Environment",
+      "bullets": [
+        "Home to the Sundarbans, the world's largest mangrove forest, shared with India, and a Bengal tiger habitat.",
+        "A low-lying delta nation highly vulnerable to flooding and sea-level rise, driving major climate-adaptation efforts."
+      ]
+    },
+    {
+      "id": "history",
+      "heading": "📜 History & Major Turning Points",
+      "bullets": [
+        "Part of British India until 1947, then East Pakistan.",
+        "Achieved independence from Pakistan in 1971 after the Bangladesh Liberation War, with significant support from India."
+      ]
+    },
+    {
+      "id": "political-constitutional-changes",
+      "heading": "🏛️ Major Political & Constitutional Changes",
+      "bullets": [
+        "1971 independence from Pakistan founded the modern state.",
+        "The 1972 Constitution established a parliamentary republic; the country has since experienced periods of both civilian and military-backed rule."
+      ]
+    },
+    {
+      "id": "sports-arts-recognition",
+      "heading": "🏅 Sports, Arts & Global Recognition",
+      "bullets": [
+        "Cricket is the most popular sport, with passionate nationwide following.",
+        "Recognised for its role in microfinance innovation (Grameen Bank, Nobel Peace Prize 2006).",
+        "Rich Bengali literary and musical tradition, sharing heritage with West Bengal, India."
+      ]
+    },
+    {
+      "id": "international-organizations",
+      "heading": "🌐 International Organizations & Important Memberships",
+      "bullets": [
+        "Founding member of SAARC; member of the UN and the Commonwealth of Nations.",
+        "A leading contributor of troops to UN peacekeeping missions worldwide."
+      ]
     }
   ],
   "quickRevision": {
@@ -71,7 +121,11 @@
       "Home to the Sundarbans, the world's largest mangrove forest (shared with India).",
       "One of the world's largest ready-made garment exporters."
     ],
-    "keyTerms": ["Bangladesh Liberation War (1971)", "Sundarbans", "Ganges-Brahmaputra Delta"],
+    "keyTerms": [
+      "Bangladesh Liberation War (1971)",
+      "Sundarbans",
+      "Ganges-Brahmaputra Delta"
+    ],
     "commonConfusion": [
       "Bangladesh separated from Pakistan in 1971 — a SECOND partition, distinct from the original 1947 Partition of British India."
     ]
