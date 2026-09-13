@@ -7,6 +7,7 @@ import { getExamSubjectById } from '@/core/exam-prep/subjects'
 import { listTopicsForSubject } from '@/core/exam-prep/registry'
 import { recordExamSubjectViewed } from '@/core/exam-prep/recentlyViewed'
 import type { ExamSubjectId, ExamTopic } from '@/core/exam-prep/types'
+import { resolveExamPrepAssetPath } from '@/shared/utils/resolveExamPrepAssetPath'
 
 /**
  * Human Anatomy landing groups (brief: "group chapters into Foundations /
@@ -61,7 +62,7 @@ function TopicCard({ topic, label, onClick }: { topic: ExamTopic; label?: string
         {topic.illustration && (
           <div className="mb-2 h-28 w-full overflow-hidden rounded-md border border-border bg-surface-raised">
             <img
-              src={topic.illustration.src}
+              src={resolveExamPrepAssetPath(topic.illustration.src)}
               alt=""
               aria-hidden="true"
               className="h-full w-full object-contain"
