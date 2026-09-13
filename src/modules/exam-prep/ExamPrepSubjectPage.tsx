@@ -6,7 +6,94 @@ import { Button, Card, CardBody, EmptyState } from '@/shared/components'
 import { getExamSubjectById } from '@/core/exam-prep/subjects'
 import { listTopicsForSubject } from '@/core/exam-prep/registry'
 import { recordExamSubjectViewed } from '@/core/exam-prep/recentlyViewed'
-import type { ExamSubjectId } from '@/core/exam-prep/types'
+import type { ExamSubjectId, ExamTopic } from '@/core/exam-prep/types'
+
+/**
+ * Human Anatomy landing groups (brief: "group chapters into Foundations /
+ * Body Systems / Organs & Senses / Final Revision instead of one flat
+ * list"). Scoped to a single topic-id → group lookup used ONLY when
+ * `subjectId === 'human-anatomy'` — every other subject keeps the plain
+ * flat grid (or the existing region-grouped layout for Current Affairs)
+ * exactly as before. A topic id not present here (e.g. a future chapter
+ * added before this map is updated) safely falls into "More topics"
+ * rather than disappearing.
+ */
+const HUMAN_ANATOMY_GROUPS: { label: string; topicIds: string[] }[] = [
+  { label: 'Foundations', topicIds: ['anatomy-overview', 'anatomical-terminology'] },
+  {
+    label: 'Body Systems',
+    topicIds: [
+      'cardiovascular-system',
+      'respiratory-system',
+      'digestive-system',
+      'nervous-system',
+      'skeletal-system',
+      'muscular-system',
+      'urinary-system',
+      'endocrine-system',
+      'lymphatic-immune-system',
+      'reproductive-system',
+      'integumentary-system'
+    ]
+  },
+  {
+    label: 'Organs & Senses',
+    topicIds: ['major-internal-organs', 'eye', 'ear', 'nose-olfactory-system', 'tongue-taste']
+  },
+  { label: 'Final Revision', topicIds: ['human-anatomy-quick-revision'] }
+]
+
+/**
+ * One topic card, reused by the flat grid, the Current-Affairs region
+ * groups, and the Human Anatomy chapter groups. `label` is whatever
+ * small caption line each layout wants above the title (syllabus
+ * index, category/date, or nothing).
+ *
+ * The thumbnail uses `object-contain` (never `object-cover`) — cropping
+ * an anatomy illustration to fill a fixed-height box can cut off the
+ * very labels the person needs to read, so the full diagram always
+ * stays visible on a neutral background instead.
+ */
+function TopicCard({ topic, label, onClick }: { topic: ExamTopic; label?: string; onClick: () => void }) {
+  return (
+    <Card interactive onClick={onClick}>
+      <CardBody className="flex flex-col gap-1">
+        {topic.illustration && (
+          <div className="mb-2 h-28 w-full overflow-hidden rounded-md border border-border bg-surface-raised">
+            <img
+              src={topic.illustration.src}
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-contain"
+            />
+          </div>
+        )}
+        {label && (
+          <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{label}</p>
+        )}
+        <p className="font-display text-h3 font-medium text-ink-primary">{topic.title}</p>
+        <p className="font-body text-caption text-ink-secondary">{topic.shortDescription}</p>
+        <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{topic.genZNote}</p>
+      </CardBody>
+    </Card>
+  )
+}
+
+function groupHumanAnatomyTopics(topics: ExamTopic[]) {
+  const byId = new Map(topics.map((t) => [t.id, t]))
+  const used = new Set<string>()
+  const groups = HUMAN_ANATOMY_GROUPS.map((g) => {
+    const items = g.topicIds.map((id) => byId.get(id)).filter((t): t is ExamTopic => Boolean(t))
+    items.forEach((t) => used.add(t.id))
+    return { label: g.label, items }
+  }).filter((g) => g.items.length > 0)
+
+  const leftover = topics.filter((t) => !used.has(t.id))
+  if (leftover.length > 0) {
+    groups.push({ label: 'More Topics', items: leftover })
+  }
+  return groups
+}
 
 /**
  * Exam Prep — subject page. Lists every topic loaded for this subject
@@ -31,6 +118,11 @@ export function ExamPrepSubjectPage() {
   const topics = useMemo(
     () => (subjectId ? listTopicsForSubject(subjectId as ExamSubjectId) : []),
     [subjectId]
+  )
+  const isHumanAnatomy = subject?.id === 'human-anatomy'
+  const anatomyGroups = useMemo(
+    () => (isHumanAnatomy ? groupHumanAnatomyTopics(topics) : []),
+    [isHumanAnatomy, topics]
   )
   const isRegionGrouped = topics.some((t) => t.region)
   const regionGroups = useMemo(() => {
@@ -101,6 +193,23 @@ export function ExamPrepSubjectPage() {
           title="No topics yet"
           description="Content for this subject hasn't been added yet."
         />
+      ) : isHumanAnatomy ? (
+        <div className="flex flex-col gap-8">
+          {anatomyGroups.map((group) => (
+            <section key={group.label}>
+              <h2 className="mb-3 font-display text-h3 font-semibold text-ink-primary">{group.label}</h2>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {group.items.map((topic) => (
+                  <TopicCard
+                    key={topic.id}
+                    topic={topic}
+                    onClick={() => navigate(`/exam-prep/${subject.id}/${topic.id}`)}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
       ) : isRegionGrouped ? (
         <div className="flex flex-col gap-8">
           {regionGroups.map((group) => (
@@ -108,16 +217,12 @@ export function ExamPrepSubjectPage() {
               <h2 className="mb-3 font-display text-h3 font-semibold text-ink-primary">{group.label}</h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 {group.items.map((topic) => (
-                  <Card key={topic.id} interactive onClick={() => navigate(`/exam-prep/${subject.id}/${topic.id}`)}>
-                    <CardBody className="flex flex-col gap-1">
-                      <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                        {[topic.category, topic.eventDate].filter(Boolean).join(' \u00b7 ') || 'Current Affairs'}
-                      </p>
-                      <p className="font-display text-h3 font-medium text-ink-primary">{topic.title}</p>
-                      <p className="font-body text-caption text-ink-secondary">{topic.shortDescription}</p>
-                      <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{topic.genZNote}</p>
-                    </CardBody>
-                  </Card>
+                  <TopicCard
+                    key={topic.id}
+                    topic={topic}
+                    label={[topic.category, topic.eventDate].filter(Boolean).join(' \u00b7 ') || 'Current Affairs'}
+                    onClick={() => navigate(`/exam-prep/${subject.id}/${topic.id}`)}
+                  />
                 ))}
               </div>
             </section>
@@ -126,16 +231,12 @@ export function ExamPrepSubjectPage() {
       ) : (
         <div className="grid gap-4 sm:grid-cols-2">
           {topics.map((topic, i) => (
-            <Card key={topic.id} interactive onClick={() => navigate(`/exam-prep/${subject.id}/${topic.id}`)}>
-              <CardBody className="flex flex-col gap-1">
-                <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
-                  {i + 1}. Syllabus topic
-                </p>
-                <p className="font-display text-h3 font-medium text-ink-primary">{topic.title}</p>
-                <p className="font-body text-caption text-ink-secondary">{topic.shortDescription}</p>
-                <p className="mt-1 font-ui text-caption italic text-ink-tertiary">{topic.genZNote}</p>
-              </CardBody>
-            </Card>
+            <TopicCard
+              key={topic.id}
+              topic={topic}
+              label={`${i + 1}. Syllabus topic`}
+              onClick={() => navigate(`/exam-prep/${subject.id}/${topic.id}`)}
+            />
           ))}
         </div>
       )}

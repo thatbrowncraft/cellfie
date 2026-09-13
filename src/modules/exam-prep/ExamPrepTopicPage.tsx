@@ -8,6 +8,7 @@ import { getExamTopicById } from '@/core/exam-prep/registry'
 import { recordExamSubjectViewed } from '@/core/exam-prep/recentlyViewed'
 import type { ExamSubjectId } from '@/core/exam-prep/types'
 import { ExamFocusView, ExamLessonView, ExamQuickRevisionView } from './components/ExamLessonView'
+import { AnatomyQuizBlock } from './components/AnatomyBlocks'
 
 /**
  * Exam Prep — topic detail page. One reusable page renders every
@@ -93,6 +94,10 @@ export function ExamPrepTopicPage() {
         <ExamLessonView topic={topic} />
         <ExamQuickRevisionView title={topic.title} quickRevision={topic.quickRevision} />
         <ExamFocusView title={topic.title} examFocus={topic.examFocus} />
+        {/* Additive: only renders for topics that carry structured
+            `anatomy.questions` (currently Human Anatomy chapters).
+            Every other subject's topic page is unchanged. */}
+        <AnatomyQuizBlock title={topic.title} questions={topic.anatomy?.questions} illustration={topic.illustration} />
       </div>
     </div>
   )
