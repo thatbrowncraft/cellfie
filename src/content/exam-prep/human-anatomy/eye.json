@@ -1,0 +1,202 @@
+{
+    "id": "eye",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 14,
+    "title": "Eye",
+    "shortDescription": "Every labelled part of the eye and the basic pathway light travels to become vision.",
+    "genZNote": "Helps you see the world — one clear pathway from light to signal.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/eye.png",
+        "alt": "Labelled cross-section illustration of the eye",
+        "caption": "Eye — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "cornea",
+                "name": "Cornea",
+                "description": "Clear, curved front surface of the eye.",
+                "function": "Does most of the eye's light bending (refraction)."
+            },
+            {
+                "id": "iris",
+                "name": "Iris",
+                "description": "Colored ring of muscle around the pupil.",
+                "function": "Controls pupil size, regulating how much light enters."
+            },
+            {
+                "id": "pupil",
+                "name": "Pupil",
+                "description": "The dark opening at the center of the iris.",
+                "function": "The actual opening light passes through."
+            },
+            {
+                "id": "lens",
+                "name": "Lens",
+                "description": "Transparent structure behind the iris.",
+                "function": "Fine-tunes focus by changing shape (accommodation)."
+            },
+            {
+                "id": "retina",
+                "name": "Retina",
+                "description": "Light-sensitive layer lining the back of the eye.",
+                "function": "Converts light into neural signals via photoreceptors (rods and cones)."
+            },
+            {
+                "id": "fovea",
+                "name": "Fovea",
+                "description": "Small pit in the retina's center.",
+                "function": "Area of sharpest vision, packed densely with cones."
+            },
+            {
+                "id": "optic-nerve",
+                "name": "Optic nerve",
+                "description": "Nerve leaving the back of the eye.",
+                "function": "Carries visual signals from the retina to the brain."
+            },
+            {
+                "id": "sclera",
+                "name": "Sclera",
+                "description": "Tough white outer coat of the eyeball.",
+                "function": "Protects and maintains the eye's shape."
+            },
+            {
+                "id": "ciliary-body",
+                "name": "Ciliary body",
+                "description": "Ring of tissue behind the iris.",
+                "function": "Controls the lens's shape and produces aqueous humor."
+            }
+        ],
+        "pathways": [
+            {
+                "title": "Basic Vision Pathway",
+                "steps": [
+                    "Light enters through the cornea",
+                    "Passes through the pupil (size set by the iris)",
+                    "Focused by the lens",
+                    "Strikes the retina (photoreceptors)",
+                    "Signal travels via the optic nerve",
+                    "Processed by the occipital lobe of the brain"
+                ]
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Cornea",
+                "termB": "Lens",
+                "distinction": "The cornea does most of the eye's fixed light-bending; the lens fine-tunes focus by changing shape."
+            },
+            {
+                "termA": "Retina",
+                "termB": "Fovea",
+                "distinction": "The retina is the whole light-sensitive layer; the fovea is a small, especially sharp-vision pit within it."
+            }
+        ],
+        "questions": [
+            {
+                "id": "eye-q1",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled eye illustration, which structure controls how much light enters by adjusting pupil size?",
+                "options": [
+                    "Cornea",
+                    "Iris",
+                    "Lens",
+                    "Retina"
+                ],
+                "correctIndex": 1,
+                "explanation": "The iris is the colored muscular ring that controls pupil size, regulating light entry.",
+                "optionNotes": [
+                    "Bends light but does not control pupil size.",
+                    "Correct.",
+                    "Fine-tunes focus, not pupil size.",
+                    "Converts light to signals, doesn't control light entry."
+                ]
+            },
+            {
+                "id": "eye-q2",
+                "type": "structure-to-function",
+                "prompt": "Which nerve carries visual signals from the eye to the brain?",
+                "options": [
+                    "Olfactory nerve",
+                    "Optic nerve",
+                    "Auditory nerve",
+                    "Trigeminal nerve"
+                ],
+                "correctIndex": 1,
+                "explanation": "The optic nerve carries signals from the retina's photoreceptors to the brain's visual processing areas.",
+                "optionNotes": [
+                    "Carries smell signals, not vision.",
+                    "Correct.",
+                    "Carries hearing/balance signals, not vision.",
+                    "Carries facial sensory/motor signals, not vision specifically."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "structures",
+            "heading": "Structures of the Eye",
+            "bullets": [
+                "Cornea — clear front surface; does most of the eye's light bending (refraction).",
+                "Iris — the colored ring of muscle that controls pupil size.",
+                "Pupil — the opening in the iris that light passes through.",
+                "Lens — fine-tunes focus by changing shape.",
+                "Sclera — the tough white outer coat of the eyeball.",
+                "Ciliary body — muscle that changes the lens's shape for focusing.",
+                "Retina — the light-sensitive layer at the back of the eye that converts light into nerve signals.",
+                "Fovea — a small pit in the retina with the sharpest vision, densely packed with cone cells.",
+                "Optic nerve — carries visual signals from the retina to the brain."
+            ]
+        },
+        {
+            "id": "vision-pathway",
+            "heading": "Basic Pathway of Vision",
+            "body": "Light enters through the cornea → passes through the pupil (its size set by the iris) → is fine-focused by the lens → forms an image on the retina → the retina converts light into electrical signals → the optic nerve carries these signals to the brain for interpretation."
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The eye focuses light onto the retina, which converts it into signals the optic nerve carries to the brain.",
+        "keyFacts": [
+            "The cornea provides most of the eye's focusing power; the lens fine-tunes it.",
+            "The iris controls pupil size, regulating how much light enters.",
+            "The retina, not the lens, actually converts light into nerve signals.",
+            "The fovea is the retina's region of sharpest vision."
+        ],
+        "keyTerms": [
+            "Cornea",
+            "Retina",
+            "Optic nerve",
+            "Fovea",
+            "Ciliary body"
+        ],
+        "commonConfusion": [
+            "Cornea (fixed, does most of the focusing) is often confused with lens (adjustable, fine-tunes focus)."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "Light-to-signal conversion happens at the retina, not at the lens or cornea.",
+            "The fovea is the point of sharpest central vision."
+        ],
+        "commonTraps": [
+            "Don't say the lens does most of the eye's refraction — the cornea contributes more focusing power overall."
+        ],
+        "mustRemember": [
+            "Pathway: cornea → pupil (via iris) → lens → retina → optic nerve → brain."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

@@ -1,0 +1,256 @@
+{
+    "id": "skeletal-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 7,
+    "title": "Skeletal System",
+    "shortDescription": "Major bones from skull to fibula, the axial/appendicular split, and what the skeleton actually does besides \"hold you up\".",
+    "genZNote": "Support. Protect. Move. Three jobs, one scaffold.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/skeletal.png",
+        "alt": "Labelled illustration of the human skeleton showing major bones",
+        "caption": "Skeletal System — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "skull",
+                "name": "Skull",
+                "description": "Bony structure of the head, part of the axial skeleton.",
+                "function": "Protects the brain and supports the face."
+            },
+            {
+                "id": "clavicle",
+                "name": "Clavicle (collarbone)",
+                "description": "Long bone connecting the sternum to the shoulder.",
+                "function": "Supports the shoulder and transmits force from the arm to the trunk skeleton."
+            },
+            {
+                "id": "rib-cage",
+                "name": "Rib cage",
+                "description": "Curved bones enclosing the thoracic cavity, part of the axial skeleton.",
+                "function": "Protects the heart and lungs."
+            },
+            {
+                "id": "vertebral-column",
+                "name": "Vertebral column",
+                "description": "The spine; part of the axial skeleton.",
+                "function": "Protects the spinal cord and supports the body's posture."
+            },
+            {
+                "id": "pelvis",
+                "name": "Pelvis",
+                "description": "Basin-shaped bone structure, part of the appendicular skeleton's girdle.",
+                "function": "Supports body weight and protects pelvic organs."
+            },
+            {
+                "id": "humerus",
+                "name": "Humerus",
+                "description": "Long bone of the upper arm, part of the appendicular skeleton.",
+                "function": "Forms the shoulder and elbow joints."
+            },
+            {
+                "id": "radius",
+                "name": "Radius",
+                "description": "One of the two forearm bones (thumb side).",
+                "function": "Works with the ulna to allow forearm rotation."
+            },
+            {
+                "id": "ulna",
+                "name": "Ulna",
+                "description": "One of the two forearm bones (pinky side).",
+                "function": "Forms the main hinge of the elbow joint."
+            },
+            {
+                "id": "femur",
+                "name": "Femur",
+                "description": "The thigh bone; the longest bone in the body.",
+                "function": "Bears body weight and forms the hip and knee joints."
+            },
+            {
+                "id": "tibia",
+                "name": "Tibia (shin bone)",
+                "description": "Larger of the two lower leg bones.",
+                "function": "Bears most of the body's weight below the knee."
+            },
+            {
+                "id": "fibula",
+                "name": "Fibula",
+                "description": "Thinner of the two lower leg bones.",
+                "function": "Provides muscle attachment and ankle stability, bears little body weight."
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Axial skeleton",
+                "termB": "Appendicular skeleton",
+                "distinction": "Axial skeleton = skull, vertebral column, rib cage (the body's main axis); appendicular skeleton = limbs and their girdles."
+            },
+            {
+                "termA": "Tendon",
+                "termB": "Ligament",
+                "distinction": "A tendon connects muscle to bone; a ligament connects bone to bone."
+            }
+        ],
+        "questions": [
+            {
+                "id": "skel-q1",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled skeletal illustration, which bone is the longest in the human body?",
+                "options": [
+                    "Humerus",
+                    "Tibia",
+                    "Femur",
+                    "Fibula"
+                ],
+                "correctIndex": 2,
+                "explanation": "The femur (thigh bone) is the longest and strongest bone in the human body.",
+                "optionNotes": [
+                    "Upper arm bone, shorter than the femur.",
+                    "Lower leg bone, shorter than the femur.",
+                    "Correct.",
+                    "The thinner lower-leg bone, not the longest."
+                ]
+            },
+            {
+                "id": "skel-q2",
+                "type": "common-confusion",
+                "prompt": "Which structure connects muscle to bone?",
+                "options": [
+                    "Ligament",
+                    "Tendon",
+                    "Cartilage",
+                    "Periosteum"
+                ],
+                "correctIndex": 1,
+                "explanation": "A tendon connects muscle to bone; a ligament connects bone to bone.",
+                "optionNotes": [
+                    "Connects bone to bone, not muscle to bone.",
+                    "Correct.",
+                    "Cushions joints, doesn't connect muscle to bone.",
+                    "The membrane covering bone, not a muscle-to-bone connector."
+                ]
+            },
+            {
+                "id": "skel-q3",
+                "type": "organ-to-system",
+                "prompt": "Which group does the rib cage belong to?",
+                "options": [
+                    "Appendicular skeleton",
+                    "Axial skeleton",
+                    "Neither",
+                    "Muscular system"
+                ],
+                "correctIndex": 1,
+                "explanation": "The rib cage, along with the skull and vertebral column, forms the axial skeleton — the body's central axis.",
+                "optionNotes": [
+                    "Appendicular refers to limbs and girdles, not the rib cage.",
+                    "Correct.",
+                    "It is part of the axial skeleton.",
+                    "The rib cage is bone, part of the skeletal system, not the muscular system."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "major-bones",
+            "heading": "Major Bones (as labelled)",
+            "bullets": [
+                "Skull — protects the brain.",
+                "Clavicle (collarbone) — connects the arm to the trunk.",
+                "Rib cage — protects the heart and lungs.",
+                "Vertebral column — protects the spinal cord, supports the trunk.",
+                "Pelvis — supports body weight, protects lower organs.",
+                "Humerus — upper arm bone.",
+                "Radius and ulna — forearm bones.",
+                "Femur — thigh bone, the longest and strongest bone in the body.",
+                "Tibia and fibula — lower leg bones."
+            ]
+        },
+        {
+            "id": "axial-vs-appendicular",
+            "heading": "Axial vs. Appendicular Skeleton",
+            "table": {
+                "columnHeaders": [
+                    "Axial skeleton",
+                    "Appendicular skeleton"
+                ],
+                "rows": [
+                    [
+                        "Includes",
+                        "Skull, vertebral column, rib cage",
+                        "Limbs (arms, legs) and their girdles (shoulder, pelvis)"
+                    ],
+                    [
+                        "Main role",
+                        "Protects central organs (brain, spinal cord, heart, lungs)",
+                        "Enables movement and manipulation"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "functions",
+            "heading": "Functions of the Skeleton",
+            "bullets": [
+                "Support — provides the body's structural framework.",
+                "Protection — shields vital organs (skull → brain, rib cage → heart/lungs).",
+                "Movement — bones act as levers that muscles pull on at joints.",
+                "Mineral storage — bones store calcium and phosphate.",
+                "Blood cell production — bone marrow produces red blood cells, white blood cells, and platelets."
+            ]
+        },
+        {
+            "id": "joints",
+            "heading": "Joints",
+            "body": "A joint is where two or more bones meet. Major types include hinge joints (elbow, knee — movement in one plane), ball-and-socket joints (shoulder, hip — movement in multiple directions), and pivot joints (neck — rotation)."
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The skeletal system is the bony framework that supports, protects, and enables movement of the body, and also stores minerals and produces blood cells.",
+        "keyFacts": [
+            "Axial skeleton = skull, vertebral column, rib cage; appendicular skeleton = limbs and their girdles.",
+            "The femur is the longest and strongest bone in the human body.",
+            "Bone marrow produces blood cells — a function often forgotten alongside support/protection/movement.",
+            "Radius and ulna are forearm bones; tibia and fibula are their lower-leg equivalents."
+        ],
+        "keyTerms": [
+            "Axial skeleton",
+            "Appendicular skeleton",
+            "Bone marrow",
+            "Joint",
+            "Ligament"
+        ],
+        "commonConfusion": [
+            "Radius/ulna (forearm) are often mixed up with tibia/fibula (lower leg) since they play analogous roles in different limbs.",
+            "\"Skeleton protects organs\" and \"skeleton produces blood cells\" are separate functions students often merge into one."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "The femur is the body's longest and strongest bone.",
+            "Bone marrow, not the bone's hard shell, is responsible for blood cell production."
+        ],
+        "commonTraps": [
+            "Don't classify the shoulder/pelvic girdles as part of the axial skeleton — they belong to the appendicular skeleton along with the limbs.",
+            "Ball-and-socket joints (shoulder, hip) allow far more movement directions than hinge joints (elbow, knee) — don't mix these up in identification questions."
+        ],
+        "mustRemember": [
+            "Five functions: support, protection, movement, mineral storage, blood cell production.",
+            "Axial = central axis of the body; appendicular = the \"appendages\" (limbs)."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

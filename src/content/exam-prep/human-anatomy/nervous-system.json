@@ -1,0 +1,244 @@
+{
+    "id": "nervous-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 6,
+    "title": "Nervous System",
+    "shortDescription": "The brain's major regions, the spinal cord, and the central vs. peripheral divide that organizes the whole system.",
+    "genZNote": "Your body's control center — one command HQ (CNS) and a nationwide wiring network (PNS).",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/nervous.png",
+        "alt": "Labelled illustration of the brain, spinal cord, and peripheral nerves",
+        "caption": "Nervous System — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "cerebrum",
+                "name": "Cerebrum",
+                "description": "The largest part of the brain, divided into four lobes.",
+                "function": "Reasoning, voluntary movement, sensory processing, personality."
+            },
+            {
+                "id": "cerebellum",
+                "name": "Cerebellum",
+                "description": "Smaller, densely-folded structure beneath the cerebrum.",
+                "function": "Balance and coordinated movement.",
+                "highYield": "Often confused with the cerebrum by name — very different jobs."
+            },
+            {
+                "id": "brainstem",
+                "name": "Brainstem",
+                "description": "Connects the brain to the spinal cord.",
+                "function": "Controls involuntary vital functions: breathing, heart rate, blood pressure."
+            },
+            {
+                "id": "spinal-cord",
+                "name": "Spinal cord",
+                "description": "Long bundle of nerve tissue running through the vertebral column.",
+                "function": "Relays signals between the brain and the rest of the body; can trigger reflexes independently of the brain."
+            },
+            {
+                "id": "peripheral-nerves",
+                "name": "Peripheral nerves",
+                "description": "Nerves branching outside the brain and spinal cord.",
+                "function": "Carry sensory signals to the CNS and motor signals from the CNS to the body."
+            }
+        ],
+        "pathways": [
+            {
+                "title": "Sensory-to-Motor Signal Pathway",
+                "steps": [
+                    "Stimulus",
+                    "Sensory (afferent) neuron",
+                    "Central nervous system (brain/spinal cord)",
+                    "Motor (efferent) neuron",
+                    "Muscle or gland response"
+                ]
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "CNS",
+                "termB": "PNS",
+                "distinction": "CNS = brain + spinal cord (the processing center); PNS = all nerves outside the CNS (carries signals to and from it)."
+            },
+            {
+                "termA": "Cerebrum",
+                "termB": "Cerebellum",
+                "distinction": "Cerebrum handles thought and voluntary movement; cerebellum handles balance and coordination."
+            },
+            {
+                "termA": "Sympathetic nervous system",
+                "termB": "Parasympathetic nervous system",
+                "distinction": "Sympathetic prepares the body for stress/action (fight-or-flight); parasympathetic calms the body and supports digestion/rest."
+            }
+        ],
+        "questions": [
+            {
+                "id": "nerv-q1",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled brain illustration, which structure is mainly responsible for balance and coordinated movement?",
+                "options": [
+                    "Cerebrum",
+                    "Cerebellum",
+                    "Brainstem",
+                    "Spinal cord"
+                ],
+                "correctIndex": 1,
+                "explanation": "The cerebellum, not the cerebrum, is primarily responsible for balance and coordinated movement.",
+                "optionNotes": [
+                    "Handles reasoning and voluntary movement initiation, not balance itself.",
+                    "Correct.",
+                    "Controls involuntary vital functions like breathing and heart rate.",
+                    "Relays signals and handles reflexes, not overall balance."
+                ]
+            },
+            {
+                "id": "nerv-q2",
+                "type": "common-confusion",
+                "prompt": "Which nervous system division is the autonomic nervous system actually part of?",
+                "options": [
+                    "Central nervous system",
+                    "Peripheral nervous system",
+                    "Neither — it is separate from both",
+                    "Both equally"
+                ],
+                "correctIndex": 1,
+                "explanation": "The autonomic nervous system is part of the PNS, even though it is regulated by the brain — a very commonly tested trap.",
+                "optionNotes": [
+                    "A common but incorrect assumption.",
+                    "Correct.",
+                    "It is a subdivision of the PNS, not separate from it.",
+                    "It's specifically part of the PNS."
+                ]
+            },
+            {
+                "id": "nerv-q3",
+                "type": "function-to-structure",
+                "prompt": "Which type of neuron carries signals TOWARD the central nervous system?",
+                "options": [
+                    "Motor (efferent) neuron",
+                    "Sensory (afferent) neuron",
+                    "Interneuron only",
+                    "Reflex neuron"
+                ],
+                "correctIndex": 1,
+                "explanation": "Sensory (afferent) neurons carry signals toward the CNS; motor (efferent) neurons carry signals away from it.",
+                "optionNotes": [
+                    "Carries signals AWAY from the CNS, the opposite direction.",
+                    "Correct.",
+                    "Interneurons connect neurons within the CNS, not the general afferent pathway.",
+                    "“Reflex neuron” is not the standard term for this direction of signal."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "brain-regions",
+            "heading": "Major Brain Regions",
+            "bullets": [
+                "Cerebrum — the largest part; higher functions such as thought, voluntary movement, sensory processing, and language.",
+                "Cerebellum — coordinates balance, posture, and fine motor movement.",
+                "Brainstem — connects the brain to the spinal cord; controls vital automatic functions like breathing and heart rate.",
+                "Spinal cord — the main pathway carrying signals between the brain and the rest of the body; also handles reflexes directly."
+            ]
+        },
+        {
+            "id": "cns-vs-pns",
+            "heading": "Central vs. Peripheral Nervous System",
+            "table": {
+                "columnHeaders": [
+                    "Central Nervous System (CNS)",
+                    "Peripheral Nervous System (PNS)"
+                ],
+                "rows": [
+                    [
+                        "Made of",
+                        "Brain and spinal cord",
+                        "All nerves outside the brain and spinal cord"
+                    ],
+                    [
+                        "Role",
+                        "Processing and decision-making",
+                        "Carrying signals to and from the CNS"
+                    ],
+                    [
+                        "Includes",
+                        "Cerebrum, cerebellum, brainstem, spinal cord",
+                        "Sensory and motor nerves, autonomic nervous system"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "neurons-and-signals",
+            "heading": "Neurons, Synapses, and Reflexes",
+            "bullets": [
+                "Sensory (afferent) neurons — carry signals from the body toward the CNS.",
+                "Motor (efferent) neurons — carry signals from the CNS to muscles/glands.",
+                "Synapse — the junction where one neuron passes a signal to the next, usually via chemical neurotransmitters.",
+                "Reflex arc — a fast, automatic response (e.g. pulling a hand off something hot) that can act via the spinal cord alone, without waiting for the brain to process it first."
+            ]
+        },
+        {
+            "id": "autonomic-ns",
+            "heading": "Autonomic Nervous System",
+            "body": "The autonomic nervous system controls involuntary functions (heart rate, digestion, breathing rate) and has two opposing branches: the sympathetic branch (\"fight or flight\", raises alertness and heart rate) and the parasympathetic branch (\"rest and digest\", calms the body down)."
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The nervous system is the body's control and communication network, split into the CNS (brain, spinal cord) and PNS (all other nerves).",
+        "keyFacts": [
+            "Cerebrum handles higher thought; cerebellum handles balance/coordination; brainstem handles vital automatic functions.",
+            "CNS = brain + spinal cord; PNS = everything else (sensory + motor + autonomic nerves).",
+            "A reflex arc can bypass the brain, acting through the spinal cord for speed.",
+            "Sympathetic = fight or flight; parasympathetic = rest and digest."
+        ],
+        "keyTerms": [
+            "Neuron",
+            "Synapse",
+            "Reflex arc",
+            "Sympathetic",
+            "Parasympathetic"
+        ],
+        "commonConfusion": [
+            "Cerebrum (thought, voluntary movement) is frequently confused with cerebellum (balance, coordination) — similar names, very different jobs.",
+            "Sensory neurons carry signals TO the CNS; motor neurons carry signals FROM the CNS — a commonly reversed pair."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "The cerebellum, not the cerebrum, is primarily responsible for balance and coordinated movement.",
+            "A reflex arc can trigger a response through the spinal cord before the brain even registers the stimulus."
+        ],
+        "commonTraps": [
+            "Don't place the autonomic nervous system entirely in the CNS — it is part of the PNS, though it's regulated by the brain.",
+            "Brainstem controls involuntary vital functions (breathing, heart rate) — don't confuse this with cerebrum's voluntary control."
+        ],
+        "mustRemember": [
+            "CNS = brain + spinal cord. PNS = all nerves outside the CNS.",
+            "Afferent (sensory) = toward CNS; efferent (motor) = away from CNS."
+        ],
+        "confusedTerms": [
+            {
+                "termA": "Sympathetic nervous system",
+                "termB": "Parasympathetic nervous system",
+                "distinction": "Sympathetic prepares the body for stress/action (fight-or-flight); parasympathetic calms the body and supports digestion/rest."
+            }
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

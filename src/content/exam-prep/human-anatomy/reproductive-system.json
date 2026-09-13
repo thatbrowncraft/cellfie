@@ -1,0 +1,227 @@
+{
+    "id": "reproductive-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 12,
+    "title": "Reproductive System",
+    "shortDescription": "Male and female reproductive structures, kept strictly biological and educational, with the labelled HD illustration.",
+    "genZNote": "Creates tomorrow — the one chapter with two separate but parallel structure lists.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/reproductive.png",
+        "alt": "Labelled illustration comparing male and female reproductive structures",
+        "caption": "Reproductive System — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "testis",
+                "name": "Testis",
+                "description": "Paired male gonads.",
+                "function": "Produce sperm and testosterone."
+            },
+            {
+                "id": "epididymis",
+                "name": "Epididymis",
+                "description": "Coiled tube on top of each testis.",
+                "function": "Stores and matures sperm."
+            },
+            {
+                "id": "vas-deferens",
+                "name": "Vas deferens",
+                "description": "Muscular tube from the epididymis.",
+                "function": "Carries mature sperm toward the urethra during ejaculation."
+            },
+            {
+                "id": "seminal-vesicle",
+                "name": "Seminal vesicle",
+                "description": "Gland behind the bladder.",
+                "function": "Produces fluid that nourishes sperm, forming part of semen."
+            },
+            {
+                "id": "prostate-gland",
+                "name": "Prostate gland",
+                "description": "Gland surrounding the urethra below the bladder.",
+                "function": "Produces additional fluid that supports sperm."
+            },
+            {
+                "id": "penis-urethra-m",
+                "name": "Urethra (male)",
+                "description": "Shared tube for urine and semen in males.",
+                "function": "Carries urine or semen out of the body."
+            },
+            {
+                "id": "ovary",
+                "name": "Ovary",
+                "description": "Paired female gonads.",
+                "function": "Produce eggs (ova) and secrete estrogen and progesterone."
+            },
+            {
+                "id": "fallopian-tube",
+                "name": "Fallopian tube",
+                "description": "Tube connecting each ovary to the uterus.",
+                "function": "Site of fertilization; carries the egg toward the uterus."
+            },
+            {
+                "id": "uterus",
+                "name": "Uterus",
+                "description": "Muscular organ in the pelvis.",
+                "function": "Site where a fertilized egg implants and develops during pregnancy."
+            },
+            {
+                "id": "cervix",
+                "name": "Cervix",
+                "description": "Lower, narrow part of the uterus.",
+                "function": "Connects the uterus to the vagina; opens during childbirth."
+            },
+            {
+                "id": "vagina",
+                "name": "Vagina",
+                "description": "Muscular canal from the cervix to outside the body.",
+                "function": "Birth canal; receives the penis during intercourse."
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Vas deferens",
+                "termB": "Fallopian tube",
+                "distinction": "Vas deferens carries sperm from the epididymis toward the urethra (male); the fallopian tube carries an egg from the ovary toward the uterus (female) — functionally parallel but structurally distinct."
+            },
+            {
+                "termA": "Ovary",
+                "termB": "Testis",
+                "distinction": "Ovaries produce eggs and estrogen/progesterone; testes produce sperm and testosterone — the corresponding male and female gonads."
+            }
+        ],
+        "questions": [
+            {
+                "id": "repro-q1",
+                "type": "structure-to-function",
+                "prompt": "Where does fertilization normally take place?",
+                "options": [
+                    "Uterus",
+                    "Fallopian tube",
+                    "Cervix",
+                    "Ovary"
+                ],
+                "correctIndex": 1,
+                "explanation": "Fertilization normally occurs in the fallopian tube, after which the fertilized egg travels to the uterus to implant.",
+                "optionNotes": [
+                    "The egg implants and develops here, but fertilization happens earlier.",
+                    "Correct.",
+                    "Connects the uterus to the vagina, not the fertilization site.",
+                    "Eggs are released from here, but fertilization happens further along the tube."
+                ]
+            },
+            {
+                "id": "repro-q2",
+                "type": "structure-to-function",
+                "prompt": "Which structure stores and matures sperm before ejaculation?",
+                "options": [
+                    "Vas deferens",
+                    "Epididymis",
+                    "Seminal vesicle",
+                    "Prostate gland"
+                ],
+                "correctIndex": 1,
+                "explanation": "The epididymis, a coiled tube atop each testis, stores and matures sperm before it travels through the vas deferens.",
+                "optionNotes": [
+                    "Carries mature sperm, doesn't store/mature it.",
+                    "Correct.",
+                    "Adds nourishing fluid, doesn't store/mature sperm.",
+                    "Adds fluid to semen, doesn't store/mature sperm."
+                ]
+            },
+            {
+                "id": "repro-q3",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled reproductive illustration, which structure connects the uterus to the vagina?",
+                "options": [
+                    "Fallopian tube",
+                    "Ovary",
+                    "Cervix",
+                    "Uterus"
+                ],
+                "correctIndex": 2,
+                "explanation": "The cervix is the lower, narrow part of the uterus that connects it to the vagina.",
+                "optionNotes": [
+                    "Connects the ovary to the uterus, not the uterus to the vagina.",
+                    "Produces eggs, doesn't connect to the vagina.",
+                    "Correct.",
+                    "The uterus itself is the organ above the cervix, not the connector."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "male-structures",
+            "heading": "Male Reproductive Structures",
+            "bullets": [
+                "Testis — produces sperm and testosterone.",
+                "Epididymis — stores and matures sperm after production.",
+                "Vas deferens — carries sperm from the epididymis toward the urethra.",
+                "Seminal vesicle — contributes fluid to semen.",
+                "Prostate gland — adds fluid that nourishes and helps transport sperm.",
+                "Urethra — carries semen (and, separately, urine) out of the body.",
+                "Penis — the external organ through which the urethra opens."
+            ]
+        },
+        {
+            "id": "female-structures",
+            "heading": "Female Reproductive Structures",
+            "bullets": [
+                "Ovary — produces eggs (ova) and secretes estrogen and progesterone.",
+                "Fallopian tube — carries the egg from the ovary toward the uterus; the usual site of fertilization.",
+                "Uterus — where a fertilized egg implants and a fetus develops.",
+                "Cervix — the narrow lower end of the uterus, opening into the vagina.",
+                "Vagina — the muscular canal connecting the cervix to the outside of the body."
+            ]
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The reproductive system consists of the male structures that produce and deliver sperm and the female structures that produce eggs and support pregnancy.",
+        "keyFacts": [
+            "Sperm pathway: testis → epididymis → vas deferens → urethra.",
+            "Fertilization normally occurs in the fallopian tube, not the uterus itself.",
+            "The prostate and seminal vesicles both add fluid to semen, distinct from sperm production itself.",
+            "The cervix is the lower opening of the uterus into the vagina."
+        ],
+        "keyTerms": [
+            "Testis",
+            "Epididymis",
+            "Ovary",
+            "Fallopian tube",
+            "Uterus"
+        ],
+        "commonConfusion": [
+            "Testis (produces sperm) is often confused with epididymis (only stores/matures sperm, does not produce it).",
+            "Fertilization site (fallopian tube) is commonly mistaken for implantation site (uterus) — they are two different steps in two different places."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "Sperm is produced in the testis, but matured and stored in the epididymis before travelling through the vas deferens.",
+            "The egg is normally fertilized in the fallopian tube, then travels to the uterus for implantation."
+        ],
+        "commonTraps": [
+            "Don't say the ovary is where fertilization happens — the ovary only releases the egg.",
+            "Urethra in males carries both urine and semen (never both at once); this is a frequently tested cross-system fact."
+        ],
+        "mustRemember": [
+            "Male path: testis → epididymis → vas deferens → urethra.",
+            "Female path: ovary → fallopian tube (fertilization) → uterus (implantation) → cervix → vagina."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

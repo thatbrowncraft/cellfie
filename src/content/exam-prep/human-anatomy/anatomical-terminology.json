@@ -1,0 +1,223 @@
+{
+    "id": "anatomical-terminology",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 2,
+    "title": "Anatomical Terminology",
+    "shortDescription": "The directional vocabulary every anatomy question is written in — superior, inferior, medial, lateral, and the rest, with paired examples.",
+    "genZNote": "This is the app's directional \"grammar\" — get it wrong and every diagram question after it goes wrong too.",
+    "anatomy": {
+        "comparisons": [
+            {
+                "termA": "Superior",
+                "termB": "Inferior",
+                "distinction": "Superior = toward the head/upper; inferior = toward the feet/lower."
+            },
+            {
+                "termA": "Anterior",
+                "termB": "Posterior",
+                "distinction": "Anterior (ventral) = toward the front; posterior (dorsal) = toward the back."
+            },
+            {
+                "termA": "Medial",
+                "termB": "Lateral",
+                "distinction": "Medial = toward the body's midline; lateral = away from the midline."
+            },
+            {
+                "termA": "Proximal",
+                "termB": "Distal",
+                "distinction": "Proximal = closer to the trunk/point of attachment; distal = farther from it (limb-specific terms)."
+            },
+            {
+                "termA": "Superficial",
+                "termB": "Deep",
+                "distinction": "Superficial = closer to the body surface; deep = farther from the surface."
+            }
+        ],
+        "questions": [
+            {
+                "id": "term-q1",
+                "type": "mcq",
+                "prompt": "The elbow is ___ to the wrist.",
+                "options": [
+                    "Distal",
+                    "Proximal",
+                    "Medial",
+                    "Superficial"
+                ],
+                "correctIndex": 1,
+                "explanation": "The elbow is closer to the trunk than the wrist, making it proximal to the wrist.",
+                "optionNotes": [
+                    "Distal would describe the wrist relative to the elbow, not the reverse.",
+                    "Correct.",
+                    "Medial/lateral describe distance from the midline, not along a limb.",
+                    "Superficial/deep describe depth, not position along a limb."
+                ]
+            },
+            {
+                "id": "term-q2",
+                "type": "true-false",
+                "prompt": "True or False: A sagittal plane divides the body into anterior and posterior parts.",
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "correctIndex": 1,
+                "explanation": "False — a sagittal plane divides the body into left and right parts. The frontal (coronal) plane divides anterior and posterior."
+            },
+            {
+                "id": "term-q3",
+                "type": "common-confusion",
+                "prompt": "Which pair of terms describes nearness to the body surface, not up/down position?",
+                "options": [
+                    "Superior/inferior",
+                    "Anterior/posterior",
+                    "Superficial/deep",
+                    "Proximal/distal"
+                ],
+                "correctIndex": 2,
+                "explanation": "Superficial/deep describe depth relative to the body's surface, independent of up/down or front/back position.",
+                "optionNotes": [
+                    "Describes up/down position.",
+                    "Describes front/back position.",
+                    "Correct.",
+                    "Describes distance along a limb from the trunk."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "why-terminology",
+            "heading": "Why Standard Terms Matter",
+            "body": "Words like \"above\" or \"below\" change meaning depending on body posture. Standard anatomical terms are always relative to the anatomical position, so a description stays accurate no matter how a person is actually lying or standing when examined."
+        },
+        {
+            "id": "directional-terms",
+            "heading": "Directional Terms",
+            "table": {
+                "columnHeaders": [
+                    "Term",
+                    "Meaning",
+                    "Example"
+                ],
+                "rows": [
+                    [
+                        "Superior",
+                        "Toward the head / upper",
+                        "The heart is superior to the stomach."
+                    ],
+                    [
+                        "Inferior",
+                        "Toward the feet / lower",
+                        "The stomach is inferior to the heart."
+                    ],
+                    [
+                        "Anterior (ventral)",
+                        "Toward the front",
+                        "The sternum is anterior to the spine."
+                    ],
+                    [
+                        "Posterior (dorsal)",
+                        "Toward the back",
+                        "The spine is posterior to the sternum."
+                    ],
+                    [
+                        "Medial",
+                        "Toward the midline of the body",
+                        "The nose is medial to the eyes."
+                    ],
+                    [
+                        "Lateral",
+                        "Away from the midline",
+                        "The eyes are lateral to the nose."
+                    ],
+                    [
+                        "Proximal",
+                        "Closer to the point of attachment / trunk",
+                        "The elbow is proximal to the wrist."
+                    ],
+                    [
+                        "Distal",
+                        "Farther from the point of attachment / trunk",
+                        "The wrist is distal to the elbow."
+                    ],
+                    [
+                        "Superficial",
+                        "Closer to the body surface",
+                        "Skin is superficial to muscle."
+                    ],
+                    [
+                        "Deep",
+                        "Farther from the body surface",
+                        "Bone is deep to muscle."
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "regional-terms",
+            "heading": "Regional and Movement Terms (brief)",
+            "bullets": [
+                "Axial region — head, neck, trunk (the body's main axis).",
+                "Appendicular region — the limbs (arms and legs) and their girdles.",
+                "Flexion — decreasing the angle at a joint; extension — increasing it.",
+                "Abduction — moving a limb away from the midline; adduction — moving it toward the midline."
+            ]
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "Anatomical terminology is a fixed set of directional and regional terms, always defined relative to the standard anatomical position.",
+        "keyFacts": [
+            "Proximal/distal are only used for limbs, relative to where they attach to the trunk.",
+            "Anterior = ventral, posterior = dorsal (the term pairs are interchangeable in most contexts).",
+            "Superficial/deep describe depth relative to the body surface, not up/down position."
+        ],
+        "keyTerms": [
+            "Superior",
+            "Inferior",
+            "Medial",
+            "Lateral",
+            "Proximal",
+            "Distal",
+            "Superficial",
+            "Deep"
+        ],
+        "commonConfusion": [
+            "Medial/lateral are relative to the body's own midline, not to any other structure — the nose is medial regardless of which side of the face you compare it to.",
+            "Proximal and distal are frequently confused with superior/inferior — proximal/distal is specifically about distance from the trunk along a limb."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "Anterior = ventral and posterior = dorsal are exact synonym pairs used interchangeably in exams.",
+            "\"The elbow is ___ to the wrist\" style fill-in-the-blank questions test proximal/distal specifically."
+        ],
+        "commonTraps": [
+            "Don't apply proximal/distal to the trunk or head — they only make sense for limb structures.",
+            "\"Superficial\" does not mean \"unimportant\" in anatomy — it strictly means closer to the surface."
+        ],
+        "mustRemember": [
+            "Ten paired terms: superior/inferior, anterior/posterior, medial/lateral, proximal/distal, superficial/deep.",
+            "All directional terms are defined relative to anatomical position, not the observer's own orientation."
+        ],
+        "confusedTerms": [
+            {
+                "termA": "Medial",
+                "termB": "Proximal",
+                "distinction": "Medial is about nearness to the body's midline; proximal is about nearness to a limb's point of attachment to the trunk."
+            }
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

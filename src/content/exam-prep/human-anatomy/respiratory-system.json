@@ -1,0 +1,234 @@
+{
+    "id": "respiratory-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 4,
+    "title": "Respiratory System",
+    "shortDescription": "The full air pathway from nose to alveoli, the two lungs, the diaphragm, and how gas exchange actually happens.",
+    "genZNote": "One straight pipe from your nose to a bunch of tiny balloons — that's the whole chapter.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/respiratory.png",
+        "alt": "Labelled illustration of the lungs, trachea, bronchi, and diaphragm",
+        "caption": "Lungs (Respiratory System) — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "trachea",
+                "name": "Trachea",
+                "description": "The windpipe; a tube reinforced with cartilage rings, below the larynx.",
+                "function": "Carries air from the larynx down toward the bronchi."
+            },
+            {
+                "id": "right-bronchus",
+                "name": "Right bronchus",
+                "description": "Branch of the trachea entering the right lung.",
+                "function": "Shorter, wider, and more vertical than the left bronchus.",
+                "highYield": "Its shape is why inhaled foreign objects more often lodge in the right lung."
+            },
+            {
+                "id": "left-bronchus",
+                "name": "Left bronchus",
+                "description": "Branch of the trachea entering the left lung.",
+                "function": "Carries air into the left lung; narrower and more angled than the right."
+            },
+            {
+                "id": "bronchioles",
+                "name": "Bronchioles",
+                "description": "Progressively smaller branching airways inside each lung.",
+                "function": "Distribute air deep into the lung tissue toward the alveoli."
+            },
+            {
+                "id": "alveoli",
+                "name": "Alveoli",
+                "description": "Tiny grape-like air sacs at the end of the bronchioles.",
+                "function": "Site of gas exchange between air and blood.",
+                "highYield": "Their huge combined surface area and thin walls (one cell thick) are what make efficient gas exchange possible."
+            },
+            {
+                "id": "diaphragm",
+                "name": "Diaphragm",
+                "description": "Dome-shaped muscle beneath the lungs, separating the thoracic and abdominal cavities.",
+                "function": "Contracts and flattens to draw air into the lungs (inhalation); relaxes to help push air out (exhalation)."
+            },
+            {
+                "id": "right-lung",
+                "name": "Right lung",
+                "description": "The larger of the two lungs.",
+                "function": "Divided into three lobes; site of gas exchange on the right side."
+            },
+            {
+                "id": "left-lung",
+                "name": "Left lung",
+                "description": "The smaller of the two lungs.",
+                "function": "Divided into two lobes, leaving room for the heart."
+            }
+        ],
+        "pathways": [
+            {
+                "title": "Air Pathway",
+                "steps": [
+                    "Nose",
+                    "Pharynx",
+                    "Larynx",
+                    "Trachea",
+                    "Bronchi",
+                    "Bronchioles",
+                    "Alveoli"
+                ]
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Right lung",
+                "termB": "Left lung",
+                "distinction": "The right lung has three lobes and is larger; the left lung has two lobes, leaving space for the heart."
+            },
+            {
+                "termA": "Bronchi",
+                "termB": "Bronchioles",
+                "distinction": "Bronchi are the larger branching airways right after the trachea; bronchioles are their much smaller, more numerous continuations."
+            }
+        ],
+        "questions": [
+            {
+                "id": "resp-q1",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled respiratory illustration, where does actual gas exchange with the blood take place?",
+                "options": [
+                    "Trachea",
+                    "Bronchi",
+                    "Alveoli",
+                    "Diaphragm"
+                ],
+                "correctIndex": 2,
+                "explanation": "Alveoli are the tiny air sacs where oxygen and carbon dioxide are exchanged with the surrounding capillaries.",
+                "optionNotes": [
+                    "Just an air passageway, no gas exchange occurs here.",
+                    "Still a large airway, only conducts air.",
+                    "Correct — the actual exchange surface.",
+                    "A muscle that drives breathing, not a gas-exchange site."
+                ]
+            },
+            {
+                "id": "resp-q2",
+                "type": "organ-to-system",
+                "prompt": "The diaphragm belongs primarily to which system's mechanics, even though it's a muscle?",
+                "options": [
+                    "Muscular system only",
+                    "Respiratory system's breathing mechanism",
+                    "Digestive system",
+                    "Skeletal system"
+                ],
+                "correctIndex": 1,
+                "explanation": "Although it is a muscle, the diaphragm's contraction and relaxation directly drive inhalation and exhalation, making it central to respiratory mechanics.",
+                "optionNotes": [
+                    "It's muscle tissue, but its featured role here is driving breathing.",
+                    "Correct.",
+                    "Sits near, but is not part of, the digestive tract.",
+                    "Not a skeletal structure."
+                ]
+            },
+            {
+                "id": "resp-q3",
+                "type": "mcq",
+                "prompt": "Which airway is wider, shorter, and more vertical — making it the more common site for an inhaled foreign object to lodge?",
+                "options": [
+                    "Left bronchus",
+                    "Right bronchus",
+                    "Trachea",
+                    "Larynx"
+                ],
+                "correctIndex": 1,
+                "explanation": "The right bronchus is shorter, wider, and more vertically aligned with the trachea than the left, so inhaled objects are statistically more likely to end up there.",
+                "optionNotes": [
+                    "The left bronchus is narrower and more angled.",
+                    "Correct.",
+                    "The trachea is the main windpipe before it branches, not a bronchus.",
+                    "The larynx is the voice box, above the trachea."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "structures",
+            "heading": "Structures of the Airway",
+            "bullets": [
+                "Nose / nasal cavity — filters, warms, and humidifies incoming air.",
+                "Pharynx — shared passage for air and food.",
+                "Larynx — the voice box; also directs air into the trachea and food into the esophagus.",
+                "Trachea — the windpipe; a rigid tube reinforced with cartilage rings.",
+                "Bronchi — the trachea splits into a right and left bronchus, one per lung.",
+                "Bronchioles — smaller branching airways inside each lung.",
+                "Alveoli — tiny air sacs at the end of the bronchioles, the actual site of gas exchange."
+            ]
+        },
+        {
+            "id": "lungs-and-diaphragm",
+            "heading": "Lungs and the Diaphragm",
+            "body": "The right lung has three lobes and the left lung has two (making room for the heart). The diaphragm is the dome-shaped muscle beneath the lungs; it contracts and flattens during inhalation, expanding the chest cavity, and relaxes during exhalation."
+        },
+        {
+            "id": "air-pathway",
+            "heading": "Air Pathway",
+            "body": "Nose → nasal cavity → pharynx → larynx → trachea → bronchi → bronchioles → alveoli."
+        },
+        {
+            "id": "gas-exchange",
+            "heading": "Gas Exchange and Transport",
+            "bullets": [
+                "Inspiration — diaphragm and intercostal muscles contract, chest volume increases, air flows in.",
+                "Expiration — diaphragm relaxes, chest volume decreases, air flows out.",
+                "Gas exchange — oxygen diffuses from alveoli into the surrounding capillaries; carbon dioxide diffuses the opposite way, from blood into the alveoli to be exhaled.",
+                "Oxygen is carried in the blood mainly bound to hemoglobin in red blood cells; most carbon dioxide travels as bicarbonate ion in the plasma."
+            ]
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The respiratory system moves air along a branching pathway to the alveoli, where oxygen and carbon dioxide are exchanged with the blood.",
+        "keyFacts": [
+            "Air pathway: nose → nasal cavity → pharynx → larynx → trachea → bronchi → bronchioles → alveoli.",
+            "Right lung has 3 lobes; left lung has 2 (to accommodate the heart).",
+            "Gas exchange happens only at the alveoli, not in the trachea or bronchi.",
+            "The diaphragm contracting causes inhalation, not exhalation."
+        ],
+        "keyTerms": [
+            "Alveoli",
+            "Diaphragm",
+            "Inspiration",
+            "Expiration",
+            "Pleura"
+        ],
+        "commonConfusion": [
+            "Pharynx (shared air/food passage) is often confused with larynx (voice box, air only, below the pharynx).",
+            "Diaphragm contraction = inhalation, not exhalation — a frequently reversed exam fact."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "The right lung has three lobes, the left has two — asymmetry caused by the heart's position.",
+            "Alveoli are the only site of gas exchange in the entire respiratory tract."
+        ],
+        "commonTraps": [
+            "Don't place gas exchange at the bronchi or trachea — only the alveoli (and their surrounding capillaries) exchange gases.",
+            "The trachea splits into bronchi, not directly into bronchioles."
+        ],
+        "mustRemember": [
+            "Full air pathway: nose → nasal cavity → pharynx → larynx → trachea → bronchi → bronchioles → alveoli.",
+            "Oxygen travels bound to hemoglobin; carbon dioxide travels mostly as bicarbonate."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

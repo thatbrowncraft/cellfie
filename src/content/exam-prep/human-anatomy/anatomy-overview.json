@@ -1,0 +1,286 @@
+{
+    "id": "anatomy-overview",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 1,
+    "title": "Anatomy Overview",
+    "shortDescription": "What anatomy and physiology actually study, the levels of body organization, and the major organ systems — the map before the territory.",
+    "genZNote": "Before you learn any organ by name, learn the zoom levels the body is built at.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/body-systems-overview.png",
+        "alt": "Overview illustration of eight major human body systems: cardiovascular, respiratory, digestive, nervous, skeletal, muscular, urinary, and reproductive",
+        "caption": "Body Systems Overview — Cellfie Human Anatomy"
+    },
+    "sections": [
+        {
+            "id": "anatomy-vs-physiology",
+            "heading": "Anatomy vs. Physiology",
+            "body": "Anatomy is the study of the structure of the body and the relationships between its parts — what things look like, where they sit, and how they're built. Physiology is the study of function — how those structures actually work and keep the body alive.\n\nThe two are always taught together because structure and function are inseparable: the shape of the small intestine (long, folded, lined with villi) exists because of what it needs to do (absorb nutrients).",
+            "bullets": [
+                "Anatomy = structure (\"what is it, where is it\").",
+                "Physiology = function (\"what does it do, how does it work\").",
+                "Gross anatomy studies structures visible to the naked eye; microscopic anatomy (histology) studies tissues and cells under a microscope."
+            ]
+        },
+        {
+            "id": "levels-of-organization",
+            "heading": "Levels of Structural Organization",
+            "body": "The human body is organized into a hierarchy, from the simplest to the most complex level. Each level builds on the one below it.",
+            "steps": [
+                {
+                    "name": "Chemical level",
+                    "explanation": "Atoms combine to form molecules (e.g. water, proteins, DNA).",
+                    "purpose": "The basic chemical building blocks of everything alive."
+                },
+                {
+                    "name": "Cellular level",
+                    "explanation": "Molecules combine to form cells — the smallest unit of life.",
+                    "purpose": "Cells carry out the basic functions of life (metabolism, reproduction, response)."
+                },
+                {
+                    "name": "Tissue level",
+                    "explanation": "Groups of similar cells performing a common function (epithelial, connective, muscle, nervous tissue).",
+                    "purpose": "Tissues are the working material organs are built from."
+                },
+                {
+                    "name": "Organ level",
+                    "explanation": "Two or more tissue types working together for a specific function (e.g. the heart, stomach, kidney).",
+                    "purpose": "Organs perform complex, specific jobs no single tissue could do alone."
+                },
+                {
+                    "name": "Organ system level",
+                    "explanation": "Organs that work together for a broader purpose (e.g. the digestive system).",
+                    "purpose": "Systems coordinate multiple organs toward one shared physiological goal."
+                },
+                {
+                    "name": "Organism level",
+                    "explanation": "All the organ systems functioning together as one living being.",
+                    "purpose": "The whole, living human body."
+                }
+            ]
+        },
+        {
+            "id": "anatomical-position",
+            "heading": "Anatomical Position and Body Planes",
+            "body": "Anatomical position is the universal reference posture used to describe body locations without ambiguity: standing upright, facing forward, feet flat and together, arms at the sides, palms facing forward.\n\nBody planes are imaginary flat surfaces used to section the body for description and imaging.",
+            "bullets": [
+                "Sagittal plane — divides the body into left and right parts.",
+                "Midsagittal (median) plane — a sagittal plane exactly down the midline, giving equal left and right halves.",
+                "Frontal (coronal) plane — divides the body into anterior (front) and posterior (back) parts.",
+                "Transverse (horizontal/axial) plane — divides the body into superior (upper) and inferior (lower) parts."
+            ]
+        },
+        {
+            "id": "body-cavities",
+            "heading": "Body Cavities",
+            "body": "The body has two main sets of internal cavities that house and protect the organs (viscera).",
+            "table": {
+                "columnHeaders": [
+                    "Cavity",
+                    "Location",
+                    "Major contents"
+                ],
+                "rows": [
+                    [
+                        "Cranial cavity",
+                        "Inside the skull",
+                        "Brain"
+                    ],
+                    [
+                        "Vertebral (spinal) cavity",
+                        "Inside the vertebral column",
+                        "Spinal cord"
+                    ],
+                    [
+                        "Thoracic cavity",
+                        "Chest, above the diaphragm",
+                        "Heart, lungs, esophagus (split into two pleural cavities + the mediastinum)"
+                    ],
+                    [
+                        "Abdominal cavity",
+                        "Below the diaphragm to the pelvic brim",
+                        "Stomach, liver, intestines, kidneys, spleen, pancreas"
+                    ],
+                    [
+                        "Pelvic cavity",
+                        "Basin formed by the hip bones",
+                        "Bladder, rectum, reproductive organs"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "major-organ-systems",
+            "heading": "The Major Organ Systems",
+            "bullets": [
+                "Cardiovascular — heart, blood vessels, blood; transports gases, nutrients, hormones, waste.",
+                "Respiratory — lungs, airway; gas exchange (oxygen in, carbon dioxide out).",
+                "Digestive — GI tract, liver, pancreas; breaks down food, absorbs nutrients.",
+                "Nervous — brain, spinal cord, nerves; control and communication.",
+                "Skeletal — bones, joints; support, protection, movement, mineral storage.",
+                "Muscular — skeletal, smooth, and cardiac muscle; movement and heat production.",
+                "Urinary — kidneys, ureters, bladder, urethra; waste removal, fluid/electrolyte balance.",
+                "Endocrine — hormone-secreting glands; chemical regulation.",
+                "Lymphatic/Immune — lymph nodes, spleen, thymus; defense and fluid return.",
+                "Reproductive — gonads and associated organs; reproduction.",
+                "Integumentary — skin, hair, nails; protection, temperature regulation, sensation."
+            ]
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "Anatomy studies body structure, physiology studies body function, and both are organized from the chemical level up to the whole organism.",
+        "keyFacts": [
+            "Six levels of organization: chemical → cellular → tissue → organ → organ system → organism.",
+            "Anatomical position: standing, facing forward, arms at sides, palms forward.",
+            "Three main planes: sagittal (left/right), frontal/coronal (front/back), transverse (upper/lower).",
+            "The dorsal (cranial + vertebral) and ventral (thoracic + abdominopelvic) cavities are the two main body cavity groups."
+        ],
+        "keyTerms": [
+            "Gross anatomy",
+            "Histology",
+            "Homeostasis",
+            "Midsagittal plane",
+            "Viscera"
+        ],
+        "commonConfusion": [
+            "A sagittal plane divides left/right; a frontal (coronal) plane divides front/back — these two are the most commonly swapped in exams.",
+            "\"Abdominal cavity\" and \"pelvic cavity\" are often tested as one combined \"abdominopelvic cavity\" — know both the split and the combined name."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "There are exactly six levels of structural organization, always given in the same order.",
+            "Midsagittal = exact midline; any other left/right cut is just \"sagittal\" (parasagittal)."
+        ],
+        "commonTraps": [
+            "Don't confuse anatomy (structure) with physiology (function) when a question asks which term applies to a description of \"how\" something works.",
+            "Transverse plane is horizontal, not vertical — it separates top from bottom, not left from right."
+        ],
+        "mustRemember": [
+            "Chemical → Cellular → Tissue → Organ → Organ system → Organism.",
+            "Four basic tissue types: epithelial, connective, muscle, nervous."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ],
+    "anatomy": {
+        "structures": [
+            {
+                "id": "cell",
+                "name": "Cell",
+                "description": "The smallest structural and functional unit of life; the building block every tissue is made from.",
+                "function": "Carries out metabolism, reproduction, and response to stimuli at the smallest scale of the body.",
+                "highYield": "Every level above this one (tissue, organ, system) is just cells organized at increasing scale."
+            },
+            {
+                "id": "tissue",
+                "name": "Tissue",
+                "description": "A group of similar cells working together for a common function.",
+                "function": "Four basic types: epithelial, connective, muscle, and nervous tissue.",
+                "highYield": "An organ is never made of one tissue type alone — it's always two or more tissues combined."
+            },
+            {
+                "id": "organ",
+                "name": "Organ",
+                "description": "Two or more tissue types working together for a specific, complex job (e.g. the heart, stomach, kidney).",
+                "function": "Performs a job no single tissue could do alone."
+            },
+            {
+                "id": "organ-system",
+                "name": "Organ system",
+                "description": "A group of organs that work together toward one broad physiological goal (e.g. the digestive system).",
+                "function": "Coordinates multiple organs toward one shared purpose."
+            }
+        ],
+        "pathways": [
+            {
+                "title": "Levels of Structural Organization",
+                "steps": [
+                    "Chemical level — atoms combine into molecules",
+                    "Cellular level — molecules combine into cells",
+                    "Tissue level — cells combine into tissues",
+                    "Organ level — tissues combine into organs",
+                    "Organ system level — organs combine into systems",
+                    "Organism level — all systems function together"
+                ]
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Anatomy",
+                "termB": "Physiology",
+                "distinction": "Anatomy studies structure (what it is, where it is); physiology studies function (what it does, how it works)."
+            },
+            {
+                "termA": "Sagittal plane",
+                "termB": "Frontal (coronal) plane",
+                "distinction": "Sagittal divides the body into left and right; frontal divides it into front (anterior) and back (posterior)."
+            },
+            {
+                "termA": "Gross anatomy",
+                "termB": "Histology",
+                "distinction": "Gross anatomy studies structures visible to the naked eye; histology studies tissues and cells under a microscope."
+            }
+        ],
+        "questions": [
+            {
+                "id": "overview-q1",
+                "type": "mcq",
+                "prompt": "Which term describes the study of body structure, as opposed to function?",
+                "options": [
+                    "Physiology",
+                    "Anatomy",
+                    "Histology",
+                    "Homeostasis"
+                ],
+                "correctIndex": 1,
+                "explanation": "Anatomy is the study of structure — what a body part is and where it sits. Physiology studies function.",
+                "optionNotes": [
+                    "Physiology is the study of function, the opposite pairing.",
+                    "Correct — anatomy = structure.",
+                    "Histology is the microscopic study of tissues, a sub-field of anatomy, not the general term.",
+                    "Homeostasis is a stable internal state, a physiological concept, not a field of study."
+                ]
+            },
+            {
+                "id": "overview-q2",
+                "type": "mcq",
+                "prompt": "Put these in correct order, smallest to largest: Tissue, Organ, Cell, Organ system.",
+                "options": [
+                    "Cell → Tissue → Organ → Organ system",
+                    "Tissue → Cell → Organ → Organ system",
+                    "Organ → Tissue → Cell → Organ system",
+                    "Cell → Organ → Tissue → Organ system"
+                ],
+                "correctIndex": 0,
+                "explanation": "The hierarchy always runs chemical → cellular → tissue → organ → organ system → organism, so the smallest-to-largest order here is Cell → Tissue → Organ → Organ system.",
+                "optionNotes": [
+                    "Correct — matches the fixed hierarchy of structural organization.",
+                    "Tissue cannot come before cell — tissues are made of cells.",
+                    "Organ cannot come before tissue — organs are made of tissues.",
+                    "Organ cannot come before tissue in the hierarchy."
+                ]
+            },
+            {
+                "id": "overview-q3",
+                "type": "true-false",
+                "prompt": "True or False: A frontal (coronal) plane divides the body into left and right halves.",
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "correctIndex": 1,
+                "explanation": "False — that's the sagittal plane. The frontal (coronal) plane divides the body into anterior (front) and posterior (back) parts."
+            }
+        ]
+    }
+}

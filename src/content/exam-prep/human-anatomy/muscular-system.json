@@ -1,0 +1,237 @@
+{
+    "id": "muscular-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 8,
+    "title": "Muscular System",
+    "shortDescription": "The three muscle types and the major labelled skeletal muscles that move the body.",
+    "genZNote": "Muscles don't push — they only pull. Every movement is a contraction working against something.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/muscular.png",
+        "alt": "Labelled illustration of the major muscles of the human body",
+        "caption": "Muscular System — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "sternocleidomastoid",
+                "name": "Sternocleidomastoid",
+                "description": "Muscle running along the side of the neck.",
+                "function": "Rotates and flexes the neck."
+            },
+            {
+                "id": "deltoid",
+                "name": "Deltoid",
+                "description": "Rounded muscle capping the shoulder.",
+                "function": "Raises and rotates the arm."
+            },
+            {
+                "id": "pectoralis-major",
+                "name": "Pectoralis major",
+                "description": "Large fan-shaped chest muscle.",
+                "function": "Moves the shoulder joint; flexes and rotates the arm."
+            },
+            {
+                "id": "biceps-brachii",
+                "name": "Biceps brachii",
+                "description": "Muscle on the front of the upper arm.",
+                "function": "Flexes the elbow and rotates the forearm."
+            },
+            {
+                "id": "rectus-abdominis",
+                "name": "Rectus abdominis",
+                "description": "Vertical muscle running down the front of the abdomen.",
+                "function": "Flexes the trunk; supports posture (the “six-pack” muscle)."
+            },
+            {
+                "id": "quadriceps-femoris",
+                "name": "Quadriceps femoris",
+                "description": "Group of four muscles on the front of the thigh.",
+                "function": "Extends the knee."
+            },
+            {
+                "id": "hamstrings",
+                "name": "Hamstrings",
+                "description": "Group of muscles on the back of the thigh.",
+                "function": "Flexes the knee and extends the hip."
+            },
+            {
+                "id": "gastrocnemius",
+                "name": "Gastrocnemius",
+                "description": "Large calf muscle.",
+                "function": "Plantar-flexes the foot (points the toes down), powers walking and jumping."
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Skeletal muscle",
+                "termB": "Smooth muscle",
+                "distinction": "Skeletal muscle is voluntary and attached to bone (movement); smooth muscle is involuntary and lines internal organs and vessels."
+            },
+            {
+                "termA": "Skeletal muscle",
+                "termB": "Cardiac muscle",
+                "distinction": "Skeletal muscle is voluntary and attaches to bone; cardiac muscle is involuntary and found only in the heart."
+            },
+            {
+                "termA": "Tendon",
+                "termB": "Muscle",
+                "distinction": "A tendon is the tough connective-tissue cord that anchors a muscle to bone; the muscle itself is the contractile tissue that generates movement."
+            }
+        ],
+        "questions": [
+            {
+                "id": "musc-q1",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled muscular illustration, which muscle group is on the front of the thigh and extends the knee?",
+                "options": [
+                    "Hamstrings",
+                    "Quadriceps femoris",
+                    "Gastrocnemius",
+                    "Deltoid"
+                ],
+                "correctIndex": 1,
+                "explanation": "The quadriceps femoris sits on the front of the thigh and extends the knee; the hamstrings, on the back of the thigh, do the opposite (flex the knee).",
+                "optionNotes": [
+                    "On the back of the thigh, flexes rather than extends the knee.",
+                    "Correct.",
+                    "A calf muscle, not a thigh muscle.",
+                    "A shoulder muscle, unrelated to the knee."
+                ]
+            },
+            {
+                "id": "musc-q2",
+                "type": "common-confusion",
+                "prompt": "Which muscle type is involuntary and found only in the heart?",
+                "options": [
+                    "Skeletal muscle",
+                    "Smooth muscle",
+                    "Cardiac muscle",
+                    "Cardiac and smooth muscle equally"
+                ],
+                "correctIndex": 2,
+                "explanation": "Cardiac muscle is involuntary and unique to the heart. Smooth muscle is also involuntary but is found in organs and vessels, not the heart.",
+                "optionNotes": [
+                    "Skeletal muscle is voluntary.",
+                    "Involuntary, but found in organs/vessels, not the heart specifically.",
+                    "Correct.",
+                    "Only cardiac muscle is heart-specific."
+                ]
+            },
+            {
+                "id": "musc-q3",
+                "type": "true-false",
+                "prompt": "True or False: Smooth muscle is under voluntary control.",
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "correctIndex": 1,
+                "explanation": "False — smooth muscle (found in organs like the stomach and blood vessels) is involuntary, unlike skeletal muscle."
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "major-labelled-muscles",
+            "heading": "Major Labelled Muscles",
+            "bullets": [
+                "Sternocleidomastoid — neck, rotates and flexes the head.",
+                "Deltoid — shoulder, lifts and rotates the arm.",
+                "Pectoralis major — chest, moves the arm across the body.",
+                "Biceps brachii — front of upper arm, flexes the elbow.",
+                "Rectus abdominis — abdomen (\"the abs\"), flexes the trunk.",
+                "External oblique — side of abdomen, rotates and bends the trunk.",
+                "Quadriceps femoris — front of thigh, extends the knee.",
+                "Hamstrings — back of thigh, flexes the knee.",
+                "Gastrocnemius — calf, points the foot downward (plantarflexion)."
+            ]
+        },
+        {
+            "id": "three-muscle-types",
+            "heading": "The Three Types of Muscle Tissue",
+            "table": {
+                "columnHeaders": [
+                    "Type",
+                    "Control",
+                    "Location / role"
+                ],
+                "rows": [
+                    [
+                        "Skeletal muscle",
+                        "Voluntary",
+                        "Attached to bones via tendons; produces body movement"
+                    ],
+                    [
+                        "Smooth muscle",
+                        "Involuntary",
+                        "Walls of internal organs (stomach, intestines, blood vessels)"
+                    ],
+                    [
+                        "Cardiac muscle",
+                        "Involuntary",
+                        "Heart wall only; contracts rhythmically without conscious control"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "contraction-and-tendons",
+            "heading": "Muscle Contraction and Tendons",
+            "body": "Skeletal muscles are attached to bones by tendons (tough, fibrous connective tissue). Muscles can only pull, never push — they contract to move a bone at a joint, then rely on an opposing muscle to move the bone back the other way (an antagonistic pair, e.g. biceps and triceps)."
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The muscular system produces movement through contraction, using three muscle types: skeletal (voluntary), smooth (involuntary, organ walls), and cardiac (involuntary, heart only).",
+        "keyFacts": [
+            "Only skeletal muscle is under voluntary/conscious control.",
+            "Cardiac muscle is found exclusively in the heart wall.",
+            "Muscles connect to bone via tendons, not ligaments (ligaments connect bone to bone).",
+            "Muscles work in antagonistic pairs since they can only pull, not push."
+        ],
+        "keyTerms": [
+            "Tendon",
+            "Antagonistic pair",
+            "Skeletal muscle",
+            "Smooth muscle",
+            "Cardiac muscle"
+        ],
+        "commonConfusion": [
+            "Tendons (muscle-to-bone) are commonly confused with ligaments (bone-to-bone).",
+            "Smooth muscle (organ walls, involuntary) is sometimes confused with skeletal muscle simply because both can be described as \"striated\" vs \"non-striated\" incorrectly — only skeletal and cardiac muscle are striated; smooth muscle is not."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "Cardiac muscle is the only muscle type found solely in one organ — the heart.",
+            "Skeletal muscle is voluntary; smooth and cardiac muscle are both involuntary."
+        ],
+        "commonTraps": [
+            "Don't say muscles can \"push\" bones — they only contract and pull; opposing muscles are needed to reverse a movement.",
+            "Tendon vs. ligament: tendon = muscle-to-bone, ligament = bone-to-bone. This pairing is heavily tested."
+        ],
+        "mustRemember": [
+            "Three muscle types: skeletal (voluntary), smooth (involuntary, organs), cardiac (involuntary, heart).",
+            "Muscles attach to bone via tendons and act in antagonistic pairs."
+        ],
+        "confusedTerms": [
+            {
+                "termA": "Tendon",
+                "termB": "Ligament",
+                "distinction": "A tendon connects muscle to bone; a ligament connects bone to bone at a joint."
+            }
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

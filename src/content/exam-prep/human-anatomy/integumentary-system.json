@@ -1,0 +1,200 @@
+{
+    "id": "integumentary-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 13,
+    "title": "Integumentary System (Skin)",
+    "shortDescription": "The skin's three layers, hair, and glands, and the system's roles in protection, temperature regulation, and sensation.",
+    "genZNote": "Protects, regulates, and senses — your largest organ, doing three jobs at once.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/skin.png",
+        "alt": "Labelled cross-section illustration of the skin showing epidermis, dermis, hypodermis, hair follicle, and glands",
+        "caption": "Skin (Integumentary System) — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "epidermis",
+                "name": "Epidermis",
+                "description": "Outermost layer of the skin.",
+                "function": "Provides a waterproof, protective barrier."
+            },
+            {
+                "id": "dermis",
+                "name": "Dermis",
+                "description": "Middle layer of the skin, beneath the epidermis.",
+                "function": "Contains hair follicles, sweat and sebaceous glands, nerve endings, and blood vessels."
+            },
+            {
+                "id": "hypodermis",
+                "name": "Hypodermis (subcutaneous layer)",
+                "description": "Deepest layer, mostly fat.",
+                "function": "Insulates the body and cushions underlying structures."
+            },
+            {
+                "id": "hair-follicle",
+                "name": "Hair follicle",
+                "description": "Structure in the dermis that produces a hair shaft.",
+                "function": "Grows and anchors each hair."
+            },
+            {
+                "id": "sebaceous-gland",
+                "name": "Sebaceous gland",
+                "description": "Gland attached to a hair follicle.",
+                "function": "Secretes sebum (oil) to lubricate skin and hair."
+            },
+            {
+                "id": "sweat-gland",
+                "name": "Sweat gland",
+                "description": "Coiled gland in the dermis.",
+                "function": "Produces sweat for evaporative cooling."
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Epidermis",
+                "termB": "Dermis",
+                "distinction": "The epidermis is the thin, protective outer layer; the dermis beneath it holds glands, follicles, nerves, and blood vessels."
+            },
+            {
+                "termA": "Sebaceous gland",
+                "termB": "Sweat gland",
+                "distinction": "Sebaceous glands secrete oil (sebum) to lubricate skin/hair; sweat glands secrete watery sweat for cooling."
+            }
+        ],
+        "questions": [
+            {
+                "id": "integ-q1",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled skin illustration, which layer is mostly fat and provides insulation?",
+                "options": [
+                    "Epidermis",
+                    "Dermis",
+                    "Hypodermis",
+                    "Sebaceous gland"
+                ],
+                "correctIndex": 2,
+                "explanation": "The hypodermis, the deepest layer, is mostly fat and insulates the body while cushioning deeper structures.",
+                "optionNotes": [
+                    "Thin, protective outer layer, not fat-based.",
+                    "Contains glands and follicles, not primarily fat.",
+                    "Correct.",
+                    "A gland within the dermis, not a full layer."
+                ]
+            },
+            {
+                "id": "integ-q2",
+                "type": "structure-to-function",
+                "prompt": "Which gland secretes oil to lubricate skin and hair?",
+                "options": [
+                    "Sweat gland",
+                    "Sebaceous gland",
+                    "Thyroid gland",
+                    "Adrenal gland"
+                ],
+                "correctIndex": 1,
+                "explanation": "Sebaceous glands secrete sebum (oil); sweat glands instead secrete watery sweat for cooling.",
+                "optionNotes": [
+                    "Produces watery sweat, not oil.",
+                    "Correct.",
+                    "An endocrine gland in the neck, unrelated to skin.",
+                    "An endocrine gland above the kidney, unrelated to skin."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "skin-layers",
+            "heading": "The Three Layers of Skin",
+            "table": {
+                "columnHeaders": [
+                    "Layer",
+                    "Depth",
+                    "Key feature"
+                ],
+                "rows": [
+                    [
+                        "Epidermis",
+                        "Outermost",
+                        "Waterproof, protective outer barrier; contains no blood vessels"
+                    ],
+                    [
+                        "Dermis",
+                        "Middle",
+                        "Contains hair follicles, sweat glands, sebaceous glands, blood vessels, nerve endings"
+                    ],
+                    [
+                        "Hypodermis (subcutaneous layer)",
+                        "Innermost",
+                        "Fat storage and insulation, anchors skin to underlying tissue"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "hair-and-glands",
+            "heading": "Hair and Glands",
+            "bullets": [
+                "Hair follicle — the structure in the dermis from which a hair shaft grows.",
+                "Hair shaft — the visible part of the hair above the skin surface.",
+                "Sebaceous gland — secretes sebum (oil) that lubricates skin and hair.",
+                "Sweat gland — produces sweat for evaporative cooling."
+            ]
+        },
+        {
+            "id": "functions",
+            "heading": "Functions",
+            "bullets": [
+                "Protection — barrier against pathogens, water loss, and physical damage.",
+                "Temperature regulation — sweating cools the body; blood vessels in the dermis constrict/dilate to conserve or release heat.",
+                "Sensation — nerve endings in the dermis detect touch, pressure, temperature, and pain."
+            ]
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The integumentary system (skin, hair, glands) protects the body, regulates temperature, and provides sensation.",
+        "keyFacts": [
+            "Three layers, outer to inner: epidermis, dermis, hypodermis.",
+            "The epidermis has no blood vessels of its own.",
+            "Sebaceous glands produce oil (sebum); sweat glands produce sweat — different secretions, different purposes.",
+            "The hypodermis is mainly fat, providing insulation and cushioning."
+        ],
+        "keyTerms": [
+            "Epidermis",
+            "Dermis",
+            "Hypodermis",
+            "Sebaceous gland",
+            "Sweat gland"
+        ],
+        "commonConfusion": [
+            "Sebaceous glands (oil) are often confused with sweat glands (water-based sweat) — different fluids, different functions."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "The epidermis is avascular (has no blood supply); nutrients diffuse up from the dermis below it.",
+            "Hair follicles and both gland types sit in the dermis, not the epidermis."
+        ],
+        "commonTraps": [
+            "Don't assume the epidermis contains blood vessels — only the dermis does.",
+            "Don't merge sebaceous and sweat gland functions — one lubricates, the other cools."
+        ],
+        "mustRemember": [
+            "Layer order (outer to inner): epidermis → dermis → hypodermis.",
+            "Three main functions: protection, temperature regulation, sensation."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

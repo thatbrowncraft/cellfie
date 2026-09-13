@@ -1,0 +1,213 @@
+{
+    "id": "lymphatic-immune-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 11,
+    "title": "Lymphatic & Immune System",
+    "shortDescription": "Lymph, lymph nodes, the spleen and thymus, and the innate vs. adaptive immunity split — an introductory, exam-oriented chapter.",
+    "genZNote": "Your body's drainage system doubles as its security team.",
+    "anatomy": {
+        "structures": [
+            {
+                "id": "lymph-nodes",
+                "name": "Lymph nodes",
+                "description": "Small bean-shaped structures along lymphatic vessels.",
+                "function": "Filter lymph and house immune cells that respond to pathogens."
+            },
+            {
+                "id": "spleen",
+                "name": "Spleen",
+                "description": "Organ in the upper left abdomen.",
+                "function": "Filters blood, recycles old red blood cells, and houses immune cells."
+            },
+            {
+                "id": "thymus",
+                "name": "Thymus",
+                "description": "Gland in the chest, most active in childhood.",
+                "function": "Site of T-cell maturation."
+            },
+            {
+                "id": "tonsils",
+                "name": "Tonsils",
+                "description": "Lymphatic tissue at the back of the throat.",
+                "function": "Trap and help destroy pathogens entering through the mouth or nose."
+            },
+            {
+                "id": "lymphatic-vessels",
+                "name": "Lymphatic vessels",
+                "description": "Network of thin vessels running alongside blood vessels.",
+                "function": "Return leaked fluid (lymph) from tissues back to the bloodstream."
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Innate immunity",
+                "termB": "Adaptive immunity",
+                "distinction": "Innate immunity is fast, general, and present from birth; adaptive immunity is slower, pathogen-specific, and builds memory."
+            },
+            {
+                "termA": "T cells",
+                "termB": "B cells",
+                "distinction": "T cells mature in the thymus and directly attack infected cells; B cells mature in bone marrow and produce antibodies."
+            },
+            {
+                "termA": "Lymph nodes",
+                "termB": "Spleen",
+                "distinction": "Lymph nodes filter lymph fluid; the spleen filters blood."
+            }
+        ],
+        "questions": [
+            {
+                "id": "lymph-q1",
+                "type": "common-confusion",
+                "prompt": "Which type of immunity is pathogen-specific and builds long-term memory?",
+                "options": [
+                    "Innate immunity",
+                    "Adaptive immunity",
+                    "Both equally",
+                    "Neither"
+                ],
+                "correctIndex": 1,
+                "explanation": "Adaptive immunity is slower to activate but is pathogen-specific and forms memory cells for faster future responses.",
+                "optionNotes": [
+                    "Fast and general, but not pathogen-specific and has no memory.",
+                    "Correct.",
+                    "Only adaptive immunity has memory.",
+                    "Adaptive immunity clearly has memory."
+                ]
+            },
+            {
+                "id": "lymph-q2",
+                "type": "organ-to-system",
+                "prompt": "Which organ filters blood (not lymph) and recycles old red blood cells?",
+                "options": [
+                    "Lymph nodes",
+                    "Spleen",
+                    "Thymus",
+                    "Tonsils"
+                ],
+                "correctIndex": 1,
+                "explanation": "The spleen filters blood and recycles old red blood cells; lymph nodes filter lymph fluid instead.",
+                "optionNotes": [
+                    "Filters lymph, not blood.",
+                    "Correct.",
+                    "Matures T-cells, doesn't filter blood.",
+                    "Traps pathogens at the throat, doesn't filter blood."
+                ]
+            },
+            {
+                "id": "lymph-q3",
+                "type": "structure-to-function",
+                "prompt": "Where do T cells mature?",
+                "options": [
+                    "Spleen",
+                    "Bone marrow",
+                    "Thymus",
+                    "Lymph nodes"
+                ],
+                "correctIndex": 2,
+                "explanation": "T cells mature in the thymus (hence the name “T” cell). B cells mature in bone marrow.",
+                "optionNotes": [
+                    "Filters blood, isn't the maturation site for T cells.",
+                    "This is where B cells mature.",
+                    "Correct.",
+                    "Filter lymph, but aren't the maturation site."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lymphatic-structures",
+            "heading": "Lymphatic Structures",
+            "bullets": [
+                "Lymph — the clear fluid that leaks from blood vessels into tissues and is collected by the lymphatic system.",
+                "Lymphatic vessels — carry lymph back toward the bloodstream, running alongside blood vessels.",
+                "Lymph nodes — small, bean-shaped structures that filter lymph and house immune cells that attack pathogens.",
+                "Spleen — filters blood, recycles old red blood cells, and stores immune cells.",
+                "Thymus — matures T-cells (see Endocrine chapter for its hormonal role).",
+                "Tonsils — lymphatic tissue in the throat that helps trap pathogens entering via the mouth/nose."
+            ]
+        },
+        {
+            "id": "immunity-types",
+            "heading": "Innate vs. Adaptive Immunity",
+            "table": {
+                "columnHeaders": [
+                    "Innate immunity",
+                    "Adaptive immunity"
+                ],
+                "rows": [
+                    [
+                        "Speed",
+                        "Immediate, present from birth",
+                        "Slower, develops after exposure"
+                    ],
+                    [
+                        "Specificity",
+                        "General (same response to any pathogen)",
+                        "Highly specific to a particular pathogen"
+                    ],
+                    [
+                        "Memory",
+                        "None",
+                        "Yes — enables faster response on re-exposure"
+                    ],
+                    [
+                        "Key cells",
+                        "White blood cells such as phagocytes",
+                        "Lymphocytes (T-cells, B-cells)"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "wbcs",
+            "heading": "White Blood Cells",
+            "body": "White blood cells (leukocytes) are the immune system's main cellular defenders, circulating in blood and lymph and concentrating at lymph nodes and the spleen to detect and destroy pathogens."
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The lymphatic system drains excess tissue fluid back into the blood and works closely with the immune system's lymph nodes, spleen, and thymus to fight infection.",
+        "keyFacts": [
+            "Lymph nodes filter lymph fluid and are packed with immune cells.",
+            "The spleen filters blood, not lymph — a commonly tested distinction.",
+            "Innate immunity is fast and general; adaptive immunity is slower but specific and has memory.",
+            "The thymus matures T-cells and is most active in childhood."
+        ],
+        "keyTerms": [
+            "Lymph",
+            "Lymph node",
+            "Spleen",
+            "Innate immunity",
+            "Adaptive immunity"
+        ],
+        "commonConfusion": [
+            "Lymph nodes filter lymph; the spleen filters blood — students often assume both filter the same fluid."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "Only adaptive immunity produces immune memory, which is why vaccines work.",
+            "The spleen recycles old red blood cells in addition to its immune role."
+        ],
+        "commonTraps": [
+            "Don't say lymph nodes filter blood — they filter lymph fluid; the spleen is the one that filters blood."
+        ],
+        "mustRemember": [
+            "Lymph nodes → filter lymph. Spleen → filters blood. Thymus → matures T-cells.",
+            "Innate = fast/general/no memory. Adaptive = slow/specific/has memory."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

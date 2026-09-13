@@ -1,0 +1,327 @@
+{
+    "id": "major-internal-organs",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 18,
+    "title": "Major Internal Organs",
+    "shortDescription": "A dedicated organ-by-organ reference — heart, lungs, liver, stomach, intestines, pancreas, kidney, and brain — each with location, structure, function, and a high-yield fact.",
+    "genZNote": "Small organs. Big responsibilities. This is the quick-reference chapter for all of them in one place.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/major-organs-strip.png",
+        "alt": "Labelled illustrations of the liver, stomach, small intestine, large intestine, pancreas, kidney, and brain, side by side",
+        "caption": "Major Internal Organs — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "organ-liver",
+                "name": "Liver",
+                "description": "Upper right abdomen; right and left lobes, dual blood supply (hepatic artery + portal vein).",
+                "function": "Produces bile, processes/stores nutrients, detoxifies blood.",
+                "highYield": "Receives blood from two sources: the hepatic artery (oxygen-rich) and the portal vein (nutrient-rich).",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/liver.png",
+                    "alt": "Labelled illustration of the liver"
+                }
+            },
+            {
+                "id": "organ-stomach",
+                "name": "Stomach",
+                "description": "Upper left abdomen; cardia, fundus, body, pylorus, with rugae (internal folds).",
+                "function": "Churns food with acid and enzymes to form chyme.",
+                "highYield": "Digests but does not absorb most nutrients — that's mainly the small intestine's job.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/stomach.png",
+                    "alt": "Labelled illustration of the stomach"
+                }
+            },
+            {
+                "id": "organ-small-intestine",
+                "name": "Small intestine",
+                "description": "Duodenum, jejunum, ileum.",
+                "function": "Main site of digestion and nutrient absorption in the GI tract.",
+                "highYield": "Villi and microvilli massively increase surface area for absorption.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/small-intestine.png",
+                    "alt": "Labelled illustration of the small intestine"
+                }
+            },
+            {
+                "id": "organ-large-intestine",
+                "name": "Large intestine",
+                "description": "Cecum through rectum, with the appendix attached near the cecum.",
+                "function": "Absorbs water/electrolytes and forms/stores stool.",
+                "highYield": "Absorbs water, not nutrients — nutrient absorption is mostly finished before material reaches it.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/large-intestine.png",
+                    "alt": "Labelled illustration of the large intestine"
+                }
+            },
+            {
+                "id": "organ-pancreas",
+                "name": "Pancreas",
+                "description": "Behind the stomach; head, body, tail, draining through the pancreatic duct.",
+                "function": "Dual role: exocrine (digestive enzymes) and endocrine (insulin/glucagon).",
+                "highYield": "Endocrine cells are clustered in the Islets of Langerhans.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/pancreas.png",
+                    "alt": "Labelled illustration of the pancreas"
+                }
+            },
+            {
+                "id": "organ-kidney",
+                "name": "Kidney",
+                "description": "Renal cortex, renal medulla, renal pelvis; supplied by the renal artery, drained by the renal vein and ureter.",
+                "function": "Filters blood, maintains fluid/electrolyte balance, forms urine.",
+                "highYield": "The nephron, not the whole kidney, is the actual filtering unit — about a million per kidney.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/kidney.png",
+                    "alt": "Labelled illustration of the kidney"
+                }
+            },
+            {
+                "id": "organ-brain",
+                "name": "Brain",
+                "description": "Frontal, parietal, temporal, occipital lobes, plus cerebellum and brainstem.",
+                "function": "Reasoning, sensory processing, movement, vision, memory, and vital-function control, split across regions.",
+                "highYield": "The frontal lobe governs voluntary movement/reasoning; the occipital lobe governs vision.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/brain.png",
+                    "alt": "Labelled illustration of the brain"
+                }
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Liver",
+                "termB": "Gallbladder",
+                "distinction": "The liver produces bile; the gallbladder only stores and concentrates it (gallbladder is covered in the Digestive System chapter)."
+            },
+            {
+                "termA": "Small intestine",
+                "termB": "Large intestine",
+                "distinction": "Small intestine absorbs nutrients; large intestine mainly absorbs water and forms stool — one of the most frequently tested pairings."
+            },
+            {
+                "termA": "Stomach",
+                "termB": "Small intestine",
+                "distinction": "The stomach mainly digests (churns, adds acid/enzymes); the small intestine is where most actual nutrient absorption happens."
+            }
+        ],
+        "questions": [
+            {
+                "id": "organs-q1",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled organ illustration, which organ has a dual blood supply from the hepatic artery and the portal vein?",
+                "options": [
+                    "Stomach",
+                    "Liver",
+                    "Pancreas",
+                    "Kidney"
+                ],
+                "correctIndex": 1,
+                "explanation": "The liver uniquely receives blood from both the hepatic artery (oxygen-rich) and the portal vein (nutrient-rich, from the intestines).",
+                "optionNotes": [
+                    "Doesn't have this dual-supply relationship.",
+                    "Correct.",
+                    "Supplied by pancreatic vessels, not this dual system.",
+                    "Supplied by the renal artery, a single main source."
+                ]
+            },
+            {
+                "id": "organs-q2",
+                "type": "organ-to-system",
+                "prompt": "Which organ performs BOTH an exocrine (digestive enzyme) and an endocrine (hormone) function?",
+                "options": [
+                    "Liver",
+                    "Stomach",
+                    "Pancreas",
+                    "Kidney"
+                ],
+                "correctIndex": 2,
+                "explanation": "The pancreas releases digestive enzymes into the small intestine (exocrine) and insulin/glucagon into the blood (endocrine) — two separate roles of one organ.",
+                "optionNotes": [
+                    "Has metabolic/bile roles, but not this specific exocrine+endocrine combination.",
+                    "Purely digestive (exocrine-like), no hormone-secreting role.",
+                    "Correct.",
+                    "Filters blood and has some hormonal signaling, but not this classic dual exocrine/endocrine pairing."
+                ]
+            },
+            {
+                "id": "organs-q3",
+                "type": "structure-to-function",
+                "prompt": "Which region of the brain is primarily responsible for processing vision?",
+                "options": [
+                    "Frontal lobe",
+                    "Parietal lobe",
+                    "Temporal lobe",
+                    "Occipital lobe"
+                ],
+                "correctIndex": 3,
+                "explanation": "The occipital lobe, at the back of the brain, is primarily responsible for processing visual information.",
+                "optionNotes": [
+                    "Handles reasoning and voluntary movement.",
+                    "Handles touch and spatial awareness.",
+                    "Handles hearing, memory, and language comprehension.",
+                    "Correct."
+                ]
+            },
+            {
+                "id": "organs-q4",
+                "type": "common-confusion",
+                "prompt": "Which organ mainly absorbs water and forms stool, rather than absorbing nutrients?",
+                "options": [
+                    "Small intestine",
+                    "Large intestine",
+                    "Stomach",
+                    "Pancreas"
+                ],
+                "correctIndex": 1,
+                "explanation": "The large intestine mainly absorbs water and electrolytes and forms/stores stool; nutrient absorption is mostly finished in the small intestine before material reaches it.",
+                "optionNotes": [
+                    "This is the main nutrient-absorption site, not water-only.",
+                    "Correct.",
+                    "Digests food, doesn't absorb water on this scale.",
+                    "Neither absorbs water nor forms stool."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "liver",
+            "heading": "Liver",
+            "body": "Location: upper right side of the abdomen. Structure: divided into a right lobe and left lobe, supplied by the hepatic artery and portal vein, draining bile via the bile duct (which connects to the gallbladder).",
+            "bullets": [
+                "Function — produces bile, processes and stores nutrients absorbed from the gut, detoxifies the blood.",
+                "High-yield fact — the liver receives blood from two sources: the hepatic artery (oxygen-rich) and the portal vein (nutrient-rich, from the intestines).",
+                "Common confusion — the liver produces bile; the gallbladder only stores and concentrates it."
+            ]
+        },
+        {
+            "id": "stomach",
+            "heading": "Stomach",
+            "body": "Location: upper left abdomen, between the esophagus and small intestine. Structure: cardia (entry region), fundus (upper dome), body (main region), pylorus (exit region), with rugae (internal folds) that allow expansion.",
+            "bullets": [
+                "Function — churns food and mixes it with acid and digestive enzymes to form chyme.",
+                "High-yield fact — stomach acid (hydrochloric acid) also kills many ingested pathogens.",
+                "Common confusion — the stomach digests but does not absorb most nutrients; that job belongs mainly to the small intestine."
+            ]
+        },
+        {
+            "id": "small-intestine",
+            "heading": "Small Intestine",
+            "body": "Structure: three sections — duodenum (first, receives bile and pancreatic enzymes), jejunum (middle, main absorption site), ileum (last, absorbs remaining nutrients and vitamin B12).",
+            "bullets": [
+                "Function — the main site of digestion and nutrient absorption in the entire GI tract.",
+                "High-yield fact — villi and microvilli lining the small intestine massively increase its surface area for absorption.",
+                "Common confusion — duodenum, jejunum, and ileum are three regions of one continuous organ, not three separate organs."
+            ]
+        },
+        {
+            "id": "large-intestine",
+            "heading": "Large Intestine",
+            "body": "Structure: cecum → ascending colon → transverse colon → descending colon → sigmoid colon → rectum, with the appendix attached near the cecum.",
+            "bullets": [
+                "Function — absorbs water and electrolytes from remaining digestive waste and forms/stores stool.",
+                "High-yield fact — the appendix has no confirmed essential digestive role in humans, though it may host beneficial gut bacteria.",
+                "Common confusion — the large intestine absorbs water, not nutrients — nutrient absorption is mostly finished by the time material reaches it."
+            ]
+        },
+        {
+            "id": "pancreas",
+            "heading": "Pancreas",
+            "body": "Location: behind the stomach. Structure: head, body, and tail, draining through the pancreatic duct.",
+            "bullets": [
+                "Function — dual role: exocrine (digestive enzymes released into the small intestine) and endocrine (insulin and glucagon released into the blood).",
+                "High-yield fact — the endocrine cells of the pancreas are clustered in the Islets of Langerhans.",
+                "Common confusion — the pancreas' digestive-enzyme role and its blood-sugar-hormone role are two separate functions of the same organ, not the same process."
+            ]
+        },
+        {
+            "id": "kidney",
+            "heading": "Kidney",
+            "body": "Structure: renal cortex (outer), renal medulla (inner), renal pelvis (collects urine), supplied by the renal artery and drained by the renal vein and ureter.",
+            "bullets": [
+                "Function — filters waste from blood, maintains fluid and electrolyte balance, forms urine.",
+                "High-yield fact — the nephron, not the whole kidney, is the actual filtering unit; each kidney contains roughly a million nephrons.",
+                "Common confusion — see the dedicated Urinary System chapter for the full filtration process."
+            ]
+        },
+        {
+            "id": "brain",
+            "heading": "Brain",
+            "body": "Structure: frontal, parietal, temporal, and occipital lobes of the cerebrum, plus the cerebellum and brainstem.",
+            "table": {
+                "columnHeaders": [
+                    "Lobe",
+                    "Main function"
+                ],
+                "rows": [
+                    [
+                        "Frontal lobe",
+                        "Reasoning, planning, voluntary movement, personality"
+                    ],
+                    [
+                        "Parietal lobe",
+                        "Processing touch, spatial awareness"
+                    ],
+                    [
+                        "Temporal lobe",
+                        "Hearing, memory, language comprehension"
+                    ],
+                    [
+                        "Occipital lobe",
+                        "Vision processing"
+                    ]
+                ]
+            }
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "This chapter is a single-page reference for seven major organs — liver, stomach, small intestine, large intestine, pancreas, kidney, and brain — each with location, structure, and function.",
+        "keyFacts": [
+            "Liver: makes bile, processes nutrients, detoxifies blood. Gallbladder (not covered here) only stores bile.",
+            "Small intestine has three regions: duodenum, jejunum, ileum — main site of absorption.",
+            "Large intestine's job is water absorption and stool formation, not nutrient absorption.",
+            "Pancreas has both a digestive (enzymes) and hormonal (insulin/glucagon) function."
+        ],
+        "keyTerms": [
+            "Hepatic portal vein",
+            "Rugae",
+            "Villi",
+            "Islets of Langerhans",
+            "Nephron"
+        ],
+        "commonConfusion": [
+            "Liver vs. gallbladder — production (liver) vs. storage (gallbladder) of bile.",
+            "Small intestine (absorbs nutrients) vs. large intestine (absorbs water) — a very commonly tested pairing."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "The liver has a dual blood supply: hepatic artery (oxygen) and portal vein (nutrients from the gut).",
+            "The pancreas performs both exocrine (enzymes) and endocrine (hormones) functions.",
+            "The frontal lobe governs voluntary movement and reasoning; the occipital lobe governs vision."
+        ],
+        "commonTraps": [
+            "Don't credit nutrient absorption to the large intestine — it mainly absorbs water.",
+            "Don't confuse the pancreas' two separate roles (digestive enzymes vs. blood-sugar hormones)."
+        ],
+        "mustRemember": [
+            "Eight organs covered: liver, stomach, small intestine, large intestine, pancreas, kidney, brain (plus heart and lungs from their own chapters)."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

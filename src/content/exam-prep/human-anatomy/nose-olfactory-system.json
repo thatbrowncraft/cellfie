@@ -1,0 +1,150 @@
+{
+    "id": "nose-olfactory-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 16,
+    "title": "Nose & Olfactory System",
+    "shortDescription": "The nasal structures involved in smell, and the basic pathway from odor molecule to brain.",
+    "genZNote": "Helps you smell — a short pathway most people never think about until it's blocked.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/nose.png",
+        "alt": "Labelled cross-section illustration of the nose and olfactory system",
+        "caption": "Nose (Olfactory System) — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "nasal-cavity",
+                "name": "Nasal cavity",
+                "description": "The main air space inside the nose.",
+                "function": "Warms, humidifies, and filters incoming air; houses olfactory receptors."
+            },
+            {
+                "id": "nasal-conchae",
+                "name": "Nasal conchae (turbinates)",
+                "description": "Curved bony shelves inside the nasal cavity.",
+                "function": "Increase surface area to warm, humidify, and filter air."
+            },
+            {
+                "id": "olfactory-bulb",
+                "name": "Olfactory bulb",
+                "description": "Structure at the base of the brain, above the nasal cavity.",
+                "function": "Receives signals from olfactory nerves and relays them for processing."
+            },
+            {
+                "id": "olfactory-nerves",
+                "name": "Olfactory nerves",
+                "description": "Nerve fibers running from receptors in the nasal cavity to the olfactory bulb.",
+                "function": "Carry smell signals to the brain."
+            }
+        ],
+        "pathways": [
+            {
+                "title": "Basic Smell Pathway",
+                "steps": [
+                    "Odor molecules enter the nasal cavity",
+                    "Bind to olfactory receptors",
+                    "Signal travels via olfactory nerves",
+                    "Reaches the olfactory bulb",
+                    "Processed by the brain"
+                ]
+            }
+        ],
+        "questions": [
+            {
+                "id": "nose-q1",
+                "type": "structure-to-function",
+                "prompt": "Which structures increase the nasal cavity's surface area to warm and filter air?",
+                "options": [
+                    "Olfactory bulb",
+                    "Nasal conchae",
+                    "Olfactory nerves",
+                    "Eustachian tube"
+                ],
+                "correctIndex": 1,
+                "explanation": "The nasal conchae (turbinates) are curved bony shelves that increase surface area for warming, humidifying, and filtering air.",
+                "optionNotes": [
+                    "Processes smell signals, not airflow surface area.",
+                    "Correct.",
+                    "Carries smell signals, doesn't affect airflow surface area.",
+                    "Part of the ear, unrelated to the nose."
+                ]
+            },
+            {
+                "id": "nose-q2",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled nose illustration, which structure directly receives signals from the olfactory nerves?",
+                "options": [
+                    "Nasal cavity",
+                    "Nasal conchae",
+                    "Olfactory bulb",
+                    "Pharynx"
+                ],
+                "correctIndex": 2,
+                "explanation": "The olfactory bulb receives signals from the olfactory nerves and relays them toward the brain for processing.",
+                "optionNotes": [
+                    "The space where odor molecules first enter, not the receiving structure.",
+                    "Increases surface area, doesn't receive nerve signals directly.",
+                    "Correct.",
+                    "Part of the throat, unrelated to olfactory signaling."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "structures",
+            "heading": "Structures",
+            "bullets": [
+                "Nasal cavity — the main air-filled space behind the nose.",
+                "Nasal conchae (turbinates) — ridged structures that increase surface area to warm, humidify, and filter incoming air.",
+                "Olfactory bulb — sits at the base of the brain, just above the nasal cavity; the first relay point for smell signals.",
+                "Olfactory nerves — carry smell signals from receptors in the nasal cavity to the olfactory bulb."
+            ]
+        },
+        {
+            "id": "smell-pathway",
+            "heading": "Basic Smell Pathway",
+            "body": "Odor molecules enter the nasal cavity → bind to olfactory receptors → olfactory nerves carry the signal → olfactory bulb relays it → the brain interprets the signal as a specific smell."
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The olfactory system detects airborne odor molecules in the nasal cavity and relays that information via the olfactory nerves and bulb to the brain.",
+        "keyFacts": [
+            "Nasal conchae increase surface area to warm, filter, and humidify air.",
+            "The olfactory bulb is the first brain structure to receive smell signals.",
+            "Smell receptors sit in the lining of the nasal cavity."
+        ],
+        "keyTerms": [
+            "Nasal conchae",
+            "Olfactory bulb",
+            "Olfactory nerve"
+        ],
+        "commonConfusion": [
+            "Nasal conchae (air conditioning of incoming air) is sometimes confused with the olfactory receptors themselves (smell detection) — they serve different roles in the same cavity."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "The olfactory bulb sits directly above the nasal cavity, close to the brain — one reason smell is so closely linked to memory and emotion."
+        ],
+        "commonTraps": [
+            "Don't confuse the nasal conchae's air-conditioning role with the actual smell-detection role of olfactory receptors."
+        ],
+        "mustRemember": [
+            "Pathway: odor molecules → nasal cavity receptors → olfactory nerves → olfactory bulb → brain."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

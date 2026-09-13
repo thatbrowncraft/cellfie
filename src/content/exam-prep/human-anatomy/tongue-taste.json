@@ -1,0 +1,171 @@
+{
+    "id": "tongue-taste",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 17,
+    "title": "Tongue & Taste",
+    "shortDescription": "The four types of papillae on the tongue and how they contribute to taste perception.",
+    "genZNote": "Helps you taste — four types of tiny bumps doing four different jobs.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/tongue.png",
+        "alt": "Labelled illustration of the tongue showing the four papillae types",
+        "caption": "Tongue (Taste) — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "fungiform-papillae",
+                "name": "Fungiform papillae",
+                "description": "Mushroom-shaped bumps scattered mostly on the front/sides of the tongue.",
+                "function": "Contain taste buds; associated with sweet taste."
+            },
+            {
+                "id": "foliate-papillae",
+                "name": "Foliate papillae",
+                "description": "Ridge-like folds on the sides of the tongue.",
+                "function": "Contain taste buds; associated with sour taste."
+            },
+            {
+                "id": "circumvallate-papillae",
+                "name": "Circumvallate papillae",
+                "description": "Large papillae arranged in a V-shape at the back of the tongue.",
+                "function": "Contain taste buds; associated with bitter taste."
+            },
+            {
+                "id": "filiform-papillae",
+                "name": "Filiform papillae",
+                "description": "Thin, cone-shaped papillae covering most of the tongue's surface.",
+                "function": "Provide mechanical/texture sensation.",
+                "highYield": "Filiform papillae generally lack taste buds — they give texture, not taste."
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Filiform papillae",
+                "termB": "Fungiform / foliate / circumvallate papillae",
+                "distinction": "Filiform papillae give mechanical/texture sensation and generally lack taste buds; the other three types all contain taste buds."
+            }
+        ],
+        "questions": [
+            {
+                "id": "tongue-q1",
+                "type": "common-confusion",
+                "prompt": "Which type of papillae generally lacks taste buds?",
+                "options": [
+                    "Fungiform papillae",
+                    "Foliate papillae",
+                    "Circumvallate papillae",
+                    "Filiform papillae"
+                ],
+                "correctIndex": 3,
+                "explanation": "Filiform papillae provide texture/mechanical sensation and generally lack taste buds, unlike the other three papillae types.",
+                "optionNotes": [
+                    "Contains taste buds.",
+                    "Contains taste buds.",
+                    "Contains taste buds.",
+                    "Correct — texture only, generally no taste buds."
+                ]
+            },
+            {
+                "id": "tongue-q2",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled tongue illustration, which large, V-shaped papillae sit at the back of the tongue?",
+                "options": [
+                    "Fungiform papillae",
+                    "Filiform papillae",
+                    "Circumvallate papillae",
+                    "Foliate papillae"
+                ],
+                "correctIndex": 2,
+                "explanation": "Circumvallate papillae are the large papillae arranged in a V-shape toward the back of the tongue.",
+                "optionNotes": [
+                    "Scattered on the front/sides, not V-shaped at the back.",
+                    "Cover most of the tongue's surface, not arranged in a V.",
+                    "Correct.",
+                    "Ridge-like folds on the sides, not V-shaped at the back."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "papillae-types",
+            "heading": "Types of Papillae",
+            "table": {
+                "columnHeaders": [
+                    "Papillae type",
+                    "Location",
+                    "Role"
+                ],
+                "rows": [
+                    [
+                        "Fungiform papillae",
+                        "Scattered across the tongue's surface (front-associated)",
+                        "Contain taste buds; associated with sweet taste in common teaching diagrams"
+                    ],
+                    [
+                        "Foliate papillae",
+                        "Sides of the tongue",
+                        "Contain taste buds; associated with sour taste in common teaching diagrams"
+                    ],
+                    [
+                        "Circumvallate papillae",
+                        "Back of the tongue, in a V-shaped row",
+                        "Largest papillae; associated with bitter taste in common teaching diagrams"
+                    ],
+                    [
+                        "Filiform papillae",
+                        "Covering most of the tongue's surface",
+                        "No taste buds; provide texture/friction to help move food, not taste"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "taste-perception",
+            "heading": "Taste Perception",
+            "body": "Taste buds, embedded within fungiform, foliate, and circumvallate papillae, contain receptor cells that detect dissolved chemicals from food. Modern physiology recognizes that most taste buds can detect the basic taste qualities (sweet, sour, salty, bitter, umami) rather than each papillae type being strictly limited to one taste — but the papillae-to-taste associations shown in classic teaching diagrams remain a commonly tested simplification."
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The tongue's papillae house taste buds (except filiform papillae, which are purely textural) that detect dissolved food chemicals as taste.",
+        "keyFacts": [
+            "Filiform papillae have no taste buds — their role is purely mechanical/textural.",
+            "Circumvallate papillae are the largest and sit at the back of the tongue in a V-shaped row.",
+            "Fungiform, foliate, and circumvallate papillae all contain taste buds."
+        ],
+        "keyTerms": [
+            "Papillae",
+            "Taste bud",
+            "Fungiform",
+            "Circumvallate",
+            "Filiform"
+        ],
+        "commonConfusion": [
+            "Filiform papillae are the one type without taste buds — a frequently tested exception among the four papillae types."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "Filiform papillae provide texture/grip, not taste — the only papillae type without taste buds."
+        ],
+        "commonTraps": [
+            "Don't assume all four papillae types detect taste — filiform papillae do not."
+        ],
+        "mustRemember": [
+            "Four papillae types: fungiform, foliate, circumvallate, filiform (texture only, no taste buds)."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

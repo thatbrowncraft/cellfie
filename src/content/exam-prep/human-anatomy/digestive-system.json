@@ -1,0 +1,228 @@
+{
+    "id": "digestive-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 5,
+    "title": "Digestive System",
+    "shortDescription": "The full food pathway from mouth to anus, plus the liver, gallbladder, and pancreas working alongside it.",
+    "genZNote": "One long tube plus three helper organs dumping enzymes into it — that's digestion in a sentence.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/digestive.png",
+        "alt": "Labelled illustration of the digestive system: liver, gallbladder, stomach, pancreas, small and large intestine",
+        "caption": "Digestive System — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "esophagus",
+                "name": "Esophagus",
+                "description": "Muscular tube connecting the throat to the stomach.",
+                "function": "Moves swallowed food to the stomach via rhythmic muscle contractions (peristalsis)."
+            },
+            {
+                "id": "stomach",
+                "name": "Stomach",
+                "description": "J-shaped muscular sac in the upper abdomen.",
+                "function": "Churns food with acid and enzymes to form chyme."
+            },
+            {
+                "id": "liver",
+                "name": "Liver",
+                "description": "Large gland in the upper right abdomen.",
+                "function": "Produces bile; processes nutrients; detoxifies blood.",
+                "highYield": "The liver makes bile; the gallbladder only stores and concentrates it."
+            },
+            {
+                "id": "gallbladder",
+                "name": "Gallbladder",
+                "description": "Small pouch beneath the liver.",
+                "function": "Stores and concentrates bile until it's needed for digestion."
+            },
+            {
+                "id": "pancreas",
+                "name": "Pancreas",
+                "description": "Gland behind the stomach.",
+                "function": "Releases digestive enzymes into the small intestine (exocrine) and insulin/glucagon into the blood (endocrine)."
+            },
+            {
+                "id": "small-intestine",
+                "name": "Small intestine",
+                "description": "Long, coiled tube; duodenum, jejunum, ileum.",
+                "function": "Main site of digestion and nutrient absorption."
+            },
+            {
+                "id": "large-intestine",
+                "name": "Large intestine",
+                "description": "Wider, shorter tube; cecum through rectum.",
+                "function": "Absorbs water and electrolytes; forms and stores stool."
+            },
+            {
+                "id": "rectum",
+                "name": "Rectum",
+                "description": "Final section of the large intestine.",
+                "function": "Stores stool before elimination."
+            }
+        ],
+        "pathways": [
+            {
+                "title": "Food Pathway",
+                "steps": [
+                    "Mouth",
+                    "Esophagus",
+                    "Stomach",
+                    "Small intestine",
+                    "Large intestine",
+                    "Rectum",
+                    "Anus"
+                ]
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Liver",
+                "termB": "Gallbladder",
+                "distinction": "The liver produces bile; the gallbladder only stores and concentrates it."
+            },
+            {
+                "termA": "Small intestine",
+                "termB": "Large intestine",
+                "distinction": "The small intestine is the main site of nutrient absorption; the large intestine mainly absorbs water and forms stool."
+            },
+            {
+                "termA": "Mechanical digestion",
+                "termB": "Chemical digestion",
+                "distinction": "Mechanical digestion physically breaks food apart (chewing, churning); chemical digestion uses enzymes/acid to break down molecules."
+            }
+        ],
+        "questions": [
+            {
+                "id": "dig-q1",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled digestive illustration, which organ stores and concentrates bile rather than producing it?",
+                "options": [
+                    "Liver",
+                    "Gallbladder",
+                    "Pancreas",
+                    "Stomach"
+                ],
+                "correctIndex": 1,
+                "explanation": "The gallbladder stores and concentrates bile that is produced by the liver.",
+                "optionNotes": [
+                    "Produces bile, does not merely store it.",
+                    "Correct.",
+                    "Produces digestive enzymes and hormones, not bile.",
+                    "Digests food mechanically/chemically, doesn't store bile."
+                ]
+            },
+            {
+                "id": "dig-q2",
+                "type": "organ-to-system",
+                "prompt": "Which organ has both a digestive (exocrine) role and a hormonal (endocrine) role?",
+                "options": [
+                    "Liver",
+                    "Gallbladder",
+                    "Pancreas",
+                    "Small intestine"
+                ],
+                "correctIndex": 2,
+                "explanation": "The pancreas releases digestive enzymes into the small intestine (exocrine) and insulin/glucagon into the blood (endocrine) — two separate functions of the same organ.",
+                "optionNotes": [
+                    "Has metabolic and bile-production roles, but not a hormone-secreting endocrine role like the pancreas.",
+                    "Purely storage, no hormonal role.",
+                    "Correct.",
+                    "Absorbs nutrients but does not secrete hormones into the blood."
+                ]
+            },
+            {
+                "id": "dig-q3",
+                "type": "true-false",
+                "prompt": "True or False: The large intestine is the main site of nutrient absorption.",
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "correctIndex": 1,
+                "explanation": "False — the small intestine is the main site of nutrient absorption. The large intestine mainly absorbs water and forms stool."
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "gi-tract-organs",
+            "heading": "Organs of the GI Tract",
+            "bullets": [
+                "Mouth — mechanical breakdown (chewing) begins, saliva starts chemical digestion of starch.",
+                "Esophagus — muscular tube that moves food to the stomach via peristalsis.",
+                "Stomach — churns food and mixes it with acid and enzymes into a semi-liquid (chyme).",
+                "Small intestine — the main site of digestion and nutrient absorption.",
+                "Large intestine — absorbs water and forms stool.",
+                "Rectum and anus — store and expel waste."
+            ]
+        },
+        {
+            "id": "accessory-organs",
+            "heading": "Accessory Organs",
+            "bullets": [
+                "Liver — produces bile, processes absorbed nutrients, detoxifies the blood.",
+                "Gallbladder — stores and concentrates bile, releases it into the small intestine when needed for fat digestion.",
+                "Pancreas — produces digestive enzymes (for carbohydrates, proteins, and fats) released into the small intestine."
+            ]
+        },
+        {
+            "id": "digestion-and-absorption",
+            "heading": "Mechanical vs. Chemical Digestion, and Absorption",
+            "body": "Mechanical digestion is the physical breakdown of food into smaller pieces (chewing, churning) — it does not change the chemical structure of food. Chemical digestion uses enzymes to break large molecules (carbohydrates, proteins, fats) into smaller absorbable units.\n\nAbsorption is the movement of digested nutrients from the small intestine into the bloodstream, mainly through finger-like projections called villi that greatly increase surface area."
+        },
+        {
+            "id": "food-pathway",
+            "heading": "Food Pathway",
+            "body": "Mouth → esophagus → stomach → small intestine → large intestine → rectum → anus."
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The digestive system breaks food down mechanically and chemically along the GI tract, absorbs nutrients, and eliminates waste, aided by the liver, gallbladder, and pancreas.",
+        "keyFacts": [
+            "Food pathway: mouth → esophagus → stomach → small intestine → large intestine → rectum → anus.",
+            "The liver makes bile; the gallbladder stores it; the pancreas supplies digestive enzymes.",
+            "Most nutrient absorption happens in the small intestine, not the large intestine.",
+            "The large intestine mainly absorbs water and forms/stores stool."
+        ],
+        "keyTerms": [
+            "Peristalsis",
+            "Chyme",
+            "Bile",
+            "Villi",
+            "Enzyme"
+        ],
+        "commonConfusion": [
+            "The gallbladder does not make bile — it only stores and concentrates bile that the liver makes.",
+            "Absorption (small intestine) is often confused with water reabsorption/stool formation (large intestine) — these are two different organs' jobs."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "The liver produces bile; the gallbladder is only a storage organ for it.",
+            "The pancreas has a digestive role (enzymes into the small intestine) separate from its endocrine role (insulin, glucagon)."
+        ],
+        "commonTraps": [
+            "Don't say the stomach absorbs most nutrients — that job belongs mainly to the small intestine.",
+            "Mechanical digestion changes food's size/shape only; chemical digestion changes its chemical composition."
+        ],
+        "mustRemember": [
+            "Food pathway: mouth → esophagus → stomach → small intestine → large intestine → rectum → anus.",
+            "Three accessory organs: liver, gallbladder, pancreas — none of them are part of the actual food tube."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

@@ -1,0 +1,327 @@
+{
+    "id": "cardiovascular-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 3,
+    "title": "Cardiovascular System",
+    "shortDescription": "The heart's four chambers, major vessels, and the full blood-flow loop from body to lungs and back — with the labelled HD heart illustration.",
+    "genZNote": "One loop, four chambers, memorize the flow order and the rest of the chapter falls into place.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/heart.png",
+        "alt": "Labelled illustration of the human heart showing all four chambers, major vessels, and blood flow direction",
+        "caption": "Human Heart — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "right-atrium",
+                "name": "Right atrium",
+                "description": "Upper right chamber of the heart.",
+                "function": "Receives deoxygenated blood returning from the body via the venae cavae.",
+                "highYield": "Receiving chamber — atria always receive, ventricles always pump out."
+            },
+            {
+                "id": "right-ventricle",
+                "name": "Right ventricle",
+                "description": "Lower right chamber of the heart.",
+                "function": "Pumps deoxygenated blood to the lungs via the pulmonary artery."
+            },
+            {
+                "id": "left-atrium",
+                "name": "Left atrium",
+                "description": "Upper left chamber of the heart.",
+                "function": "Receives oxygenated blood returning from the lungs via the pulmonary veins."
+            },
+            {
+                "id": "left-ventricle",
+                "name": "Left ventricle",
+                "description": "Lower left chamber of the heart; the thickest-walled chamber.",
+                "function": "Pumps oxygenated blood out to the entire body via the aorta.",
+                "highYield": "Thickest wall of all four chambers — it works against the highest resistance."
+            },
+            {
+                "id": "septum",
+                "name": "Septum",
+                "description": "Muscular wall dividing the heart into right and left sides.",
+                "function": "Keeps oxygenated and deoxygenated blood from mixing."
+            },
+            {
+                "id": "aorta",
+                "name": "Aorta",
+                "description": "The body's largest artery, leaving the left ventricle.",
+                "function": "Carries oxygenated blood from the heart to the whole body."
+            },
+            {
+                "id": "superior-vena-cava",
+                "name": "Superior vena cava",
+                "description": "Large vein entering the right atrium from above.",
+                "function": "Returns deoxygenated blood from the upper body to the heart."
+            },
+            {
+                "id": "inferior-vena-cava",
+                "name": "Inferior vena cava",
+                "description": "Large vein entering the right atrium from below.",
+                "function": "Returns deoxygenated blood from the lower body to the heart."
+            },
+            {
+                "id": "pulmonary-artery",
+                "name": "Pulmonary artery",
+                "description": "Vessel leaving the right ventricle toward the lungs.",
+                "function": "Carries deoxygenated blood to the lungs for gas exchange.",
+                "highYield": "The one artery in the body that carries deoxygenated blood."
+            },
+            {
+                "id": "pulmonary-veins",
+                "name": "Pulmonary veins",
+                "description": "Vessels entering the left atrium from the lungs.",
+                "function": "Carry oxygenated blood from the lungs back to the heart.",
+                "highYield": "The one set of veins in the body that carry oxygenated blood."
+            },
+            {
+                "id": "heart-valves",
+                "name": "Heart valves",
+                "description": "Tricuspid, mitral (bicuspid), pulmonary, and aortic valves.",
+                "function": "Prevent backflow, keeping blood moving in one direction only."
+            }
+        ],
+        "pathways": [
+            {
+                "title": "Blood Flow Pathway",
+                "steps": [
+                    "Body",
+                    "Venae cavae",
+                    "Right atrium",
+                    "Right ventricle",
+                    "Pulmonary artery",
+                    "Lungs",
+                    "Pulmonary veins",
+                    "Left atrium",
+                    "Left ventricle",
+                    "Aorta",
+                    "Body"
+                ]
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Pulmonary artery",
+                "termB": "Pulmonary vein",
+                "distinction": "Pulmonary artery carries deoxygenated blood from the heart to the lungs; pulmonary vein carries oxygenated blood from the lungs to the heart — the exception to the usual artery/vein rule."
+            },
+            {
+                "termA": "Atrium",
+                "termB": "Ventricle",
+                "distinction": "Atria are the upper, receiving chambers; ventricles are the lower, pumping chambers."
+            },
+            {
+                "termA": "Pulmonary circulation",
+                "termB": "Systemic circulation",
+                "distinction": "Pulmonary circulation is the heart-to-lungs-and-back loop for gas exchange; systemic circulation is the heart-to-body-and-back loop for delivery."
+            }
+        ],
+        "questions": [
+            {
+                "id": "cardio-q1",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled heart illustration, which chamber pumps oxygenated blood out to the whole body?",
+                "options": [
+                    "Right atrium",
+                    "Right ventricle",
+                    "Left atrium",
+                    "Left ventricle"
+                ],
+                "correctIndex": 3,
+                "explanation": "The left ventricle has the thickest wall and pumps oxygenated blood out through the aorta to the entire body.",
+                "optionNotes": [
+                    "Receives blood from the body, does not pump it out to the body.",
+                    "Pumps blood to the lungs, not the body.",
+                    "Receives oxygenated blood from the lungs, does not pump it out.",
+                    "Correct — the left ventricle pumps oxygenated blood via the aorta to the whole body."
+                ]
+            },
+            {
+                "id": "cardio-q2",
+                "type": "structure-to-function",
+                "prompt": "Which vessel carries deoxygenated blood, unlike every other artery in the body?",
+                "options": [
+                    "Aorta",
+                    "Pulmonary artery",
+                    "Pulmonary vein",
+                    "Superior vena cava"
+                ],
+                "correctIndex": 1,
+                "explanation": "The pulmonary artery is the one artery that carries deoxygenated blood, from the right ventricle to the lungs.",
+                "optionNotes": [
+                    "Carries oxygenated blood, as arteries usually do.",
+                    "Correct — the exception to the rule.",
+                    "This is a vein, and it carries oxygenated blood, the exception on the vein side.",
+                    "This is a vein, not an artery."
+                ]
+            },
+            {
+                "id": "cardio-q3",
+                "type": "mcq",
+                "prompt": "Why is the left ventricle's wall thicker than the right ventricle's?",
+                "options": [
+                    "It holds more blood",
+                    "It pumps blood to the whole body, a much longer/higher-resistance circuit than the lungs",
+                    "It contains the heart's valves",
+                    "It receives blood directly from the aorta"
+                ],
+                "correctIndex": 1,
+                "explanation": "The left ventricle must generate enough pressure to push blood through the entire systemic circulation, so its muscular wall is thicker than the right ventricle's, which only pumps to the nearby lungs.",
+                "optionNotes": [
+                    "Chamber wall thickness relates to workload, not blood volume.",
+                    "Correct.",
+                    "Valves sit at chamber openings, not inside the wall itself.",
+                    "The left ventricle pumps INTO the aorta, it doesn't receive blood from it."
+                ]
+            },
+            {
+                "id": "cardio-q4",
+                "type": "true-false",
+                "prompt": "True or False: The septum allows a small, healthy amount of mixing between oxygenated and deoxygenated blood.",
+                "options": [
+                    "True",
+                    "False"
+                ],
+                "correctIndex": 1,
+                "explanation": "False — the septum's job is to completely separate the two sides, so oxygenated and deoxygenated blood never mix under normal conditions."
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "location-and-chambers",
+            "heading": "Heart Location and Chambers",
+            "body": "The heart sits in the mediastinum, between the lungs, slightly tilted toward the left side of the chest. It is divided by a muscular wall, the septum, into a right side and a left side, each with an upper chamber (atrium) and a lower chamber (ventricle) — four chambers total.",
+            "bullets": [
+                "Right atrium — receives deoxygenated blood returning from the body via the venae cavae.",
+                "Right ventricle — pumps deoxygenated blood to the lungs via the pulmonary artery.",
+                "Left atrium — receives oxygenated blood returning from the lungs via the pulmonary veins.",
+                "Left ventricle — pumps oxygenated blood out to the whole body via the aorta; its wall is the thickest, since it works against the highest resistance."
+            ]
+        },
+        {
+            "id": "major-vessels",
+            "heading": "Major Vessels of the Heart",
+            "table": {
+                "columnHeaders": [
+                    "Vessel",
+                    "Carries",
+                    "Direction"
+                ],
+                "rows": [
+                    [
+                        "Superior vena cava",
+                        "Deoxygenated blood from the upper body",
+                        "Into right atrium"
+                    ],
+                    [
+                        "Inferior vena cava",
+                        "Deoxygenated blood from the lower body",
+                        "Into right atrium"
+                    ],
+                    [
+                        "Pulmonary artery",
+                        "Deoxygenated blood",
+                        "Right ventricle → lungs"
+                    ],
+                    [
+                        "Pulmonary veins",
+                        "Oxygenated blood",
+                        "Lungs → left atrium"
+                    ],
+                    [
+                        "Aorta",
+                        "Oxygenated blood",
+                        "Left ventricle → whole body"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "structure-function",
+            "heading": "Structure → Function",
+            "bullets": [
+                "Heart valves (tricuspid, mitral/bicuspid, pulmonary, aortic) → prevent backflow, keeping blood moving in one direction.",
+                "Septum → keeps oxygenated and deoxygenated blood from mixing between the two sides.",
+                "Coronary arteries → supply the heart's own muscle (myocardium) with oxygenated blood.",
+                "Thick left-ventricle wall → generates enough pressure to push blood through the entire systemic circuit."
+            ]
+        },
+        {
+            "id": "blood-flow-pathway",
+            "heading": "Blood Flow Pathway",
+            "body": "Body → superior/inferior vena cava → right atrium → right ventricle → pulmonary artery → lungs → pulmonary veins → left atrium → left ventricle → aorta → body.\n\nThis single loop actually contains two circuits: pulmonary circulation (heart ↔ lungs, for gas exchange) and systemic circulation (heart ↔ rest of body, for delivery). Coronary circulation is the small branch that feeds the heart muscle itself."
+        },
+        {
+            "id": "vessels-and-blood",
+            "heading": "Arteries, Veins, Capillaries, and Blood",
+            "bullets": [
+                "Arteries — carry blood away from the heart, thick muscular walls to handle high pressure.",
+                "Veins — carry blood back to the heart, thinner walls, contain valves to prevent backflow.",
+                "Capillaries — microscopic vessels where actual gas and nutrient exchange with tissue happens.",
+                "Blood components — plasma (liquid), red blood cells (oxygen transport), white blood cells (immunity), platelets (clotting)."
+            ]
+        },
+        {
+            "id": "cycle-pressure-pulse",
+            "heading": "Cardiac Cycle, Blood Pressure, and Pulse",
+            "body": "The cardiac cycle is one complete heartbeat: systole (contraction, chambers pump blood out) followed by diastole (relaxation, chambers refill). Blood pressure is recorded as systolic over diastolic (e.g. 120/80 mmHg). Pulse is the rhythmic expansion of an artery felt at the surface, caused by each ventricular contraction — it reflects heart rate."
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The cardiovascular system is the heart-and-vessel loop that circulates blood to deliver oxygen and nutrients and remove waste.",
+        "keyFacts": [
+            "Four chambers: right atrium, right ventricle, left atrium, left ventricle.",
+            "Right side of the heart handles deoxygenated blood; left side handles oxygenated blood.",
+            "Blood flow order: body → vena cava → right atrium → right ventricle → pulmonary artery → lungs → pulmonary veins → left atrium → left ventricle → aorta → body.",
+            "The left ventricle has the thickest wall of all four chambers."
+        ],
+        "keyTerms": [
+            "Systole",
+            "Diastole",
+            "Myocardium",
+            "Pulmonary circulation",
+            "Systemic circulation"
+        ],
+        "commonConfusion": [
+            "Pulmonary artery carries deoxygenated blood (unlike every other artery in the body) and pulmonary veins carry oxygenated blood (unlike every other vein) — this is the most commonly tested exception.",
+            "\"Atrium\" (receiving chamber, upper) is often confused with \"ventricle\" (pumping chamber, lower)."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "Pulmonary vessels are the exception to the \"arteries carry oxygenated blood\" rule — pulmonary artery = deoxygenated, pulmonary vein = oxygenated.",
+            "The left ventricle's wall is thicker than the right ventricle's because it pumps blood to the entire body, not just the nearby lungs."
+        ],
+        "commonTraps": [
+            "Don't reverse the blood flow order — right side always comes before the lungs, left side always comes after.",
+            "Blood pressure notation is systolic/diastolic, not the reverse."
+        ],
+        "mustRemember": [
+            "Full flow: body → vena cava → RA → RV → pulmonary artery → lungs → pulmonary veins → LA → LV → aorta → body.",
+            "Coronary arteries feed the heart muscle itself, not the chambers' blood contents."
+        ],
+        "confusedTerms": [
+            {
+                "termA": "Pulmonary circulation",
+                "termB": "Systemic circulation",
+                "distinction": "Pulmonary circulation is the heart-to-lungs-and-back loop for gas exchange; systemic circulation is the heart-to-body-and-back loop for delivery."
+            }
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

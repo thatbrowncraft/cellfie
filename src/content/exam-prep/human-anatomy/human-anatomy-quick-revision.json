@@ -1,0 +1,270 @@
+{
+    "id": "human-anatomy-quick-revision",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 19,
+    "title": "Human Anatomy Quick Revision",
+    "shortDescription": "A one-page, 10-second review of every system and organ covered in this subject — the final pass before an exam.",
+    "genZNote": "The whole subject, compressed into one last scroll before you close the app.",
+    "anatomy": {
+        "comparisons": [
+            {
+                "termA": "Ureter",
+                "termB": "Urethra",
+                "distinction": "Ureter = kidney to bladder (x2); urethra = bladder out of the body (x1)."
+            },
+            {
+                "termA": "Insulin",
+                "termB": "Glucagon",
+                "distinction": "Insulin lowers blood glucose; glucagon raises it."
+            },
+            {
+                "termA": "PTH",
+                "termB": "Calcitonin",
+                "distinction": "PTH raises blood calcium; calcitonin lowers it."
+            },
+            {
+                "termA": "Tendon",
+                "termB": "Ligament",
+                "distinction": "Tendon = muscle to bone; ligament = bone to bone."
+            },
+            {
+                "termA": "Pulmonary artery",
+                "termB": "Pulmonary vein",
+                "distinction": "Pulmonary artery carries deoxygenated blood; pulmonary vein carries oxygenated blood — the exception to the usual rule."
+            },
+            {
+                "termA": "CNS",
+                "termB": "PNS",
+                "distinction": "CNS = brain + spinal cord; PNS = all nerves outside the CNS."
+            }
+        ],
+        "questions": [
+            {
+                "id": "final-q1",
+                "type": "mcq",
+                "prompt": "Which chamber of the heart pumps oxygenated blood to the whole body?",
+                "options": [
+                    "Right atrium",
+                    "Right ventricle",
+                    "Left atrium",
+                    "Left ventricle"
+                ],
+                "correctIndex": 3,
+                "explanation": "The left ventricle pumps oxygenated blood into the aorta and out to the body.",
+                "optionNotes": [
+                    "Receives blood from the body.",
+                    "Pumps to the lungs.",
+                    "Receives blood from the lungs.",
+                    "Correct."
+                ]
+            },
+            {
+                "id": "final-q2",
+                "type": "common-confusion",
+                "prompt": "Which structure carries urine from the bladder OUT of the body?",
+                "options": [
+                    "Ureter",
+                    "Urethra",
+                    "Renal pelvis",
+                    "Renal vein"
+                ],
+                "correctIndex": 1,
+                "explanation": "The urethra carries urine out of the body; ureters carry urine from kidney to bladder.",
+                "optionNotes": [
+                    "Kidney to bladder, not bladder to outside.",
+                    "Correct.",
+                    "Inside the kidney, collects urine.",
+                    "Carries blood, not urine."
+                ]
+            },
+            {
+                "id": "final-q3",
+                "type": "gland-to-hormone",
+                "prompt": "Which gland secretes calcitonin?",
+                "options": [
+                    "Parathyroid glands",
+                    "Thyroid gland",
+                    "Adrenal glands",
+                    "Pancreas"
+                ],
+                "correctIndex": 1,
+                "explanation": "The thyroid gland secretes calcitonin (lowers blood calcium), alongside T3/T4. The parathyroid glands secrete PTH (raises blood calcium).",
+                "optionNotes": [
+                    "Secretes PTH, the opposite-effect hormone.",
+                    "Correct.",
+                    "Secretes cortisol/aldosterone/adrenaline, not calcitonin.",
+                    "Secretes insulin/glucagon, not calcitonin."
+                ]
+            },
+            {
+                "id": "final-q4",
+                "type": "common-confusion",
+                "prompt": "Which connective structure attaches muscle to bone?",
+                "options": [
+                    "Ligament",
+                    "Tendon",
+                    "Cartilage",
+                    "Periosteum"
+                ],
+                "correctIndex": 1,
+                "explanation": "A tendon connects muscle to bone; a ligament connects bone to bone.",
+                "optionNotes": [
+                    "Bone to bone.",
+                    "Correct.",
+                    "Cushions joints.",
+                    "Covers the bone surface."
+                ]
+            },
+            {
+                "id": "final-q5",
+                "type": "structure-to-function",
+                "prompt": "Which nervous-system division includes only the brain and spinal cord?",
+                "options": [
+                    "Peripheral nervous system",
+                    "Central nervous system",
+                    "Autonomic nervous system",
+                    "Somatic nervous system"
+                ],
+                "correctIndex": 1,
+                "explanation": "The CNS is made up of the brain and spinal cord; everything else (all nerves) is the PNS.",
+                "optionNotes": [
+                    "Nerves outside the brain/spinal cord.",
+                    "Correct.",
+                    "A subdivision of the PNS.",
+                    "A subdivision of the PNS."
+                ]
+            },
+            {
+                "id": "final-q6",
+                "type": "hormone-to-function",
+                "prompt": "Which hormone LOWERS blood glucose?",
+                "options": [
+                    "Glucagon",
+                    "Insulin",
+                    "Cortisol",
+                    "Adrenaline"
+                ],
+                "correctIndex": 1,
+                "explanation": "Insulin lowers blood glucose. Glucagon, cortisol, and adrenaline all tend to raise it.",
+                "optionNotes": [
+                    "Raises blood glucose.",
+                    "Correct.",
+                    "Tends to raise blood glucose during stress.",
+                    "Tends to raise blood glucose during fight-or-flight."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "systems-review",
+            "heading": "Body Systems — 10-Second Review",
+            "bullets": [
+                "Cardiovascular — heart pumps blood in one loop: body → RA → RV → lungs → LA → LV → body.",
+                "Respiratory — nose → pharynx → larynx → trachea → bronchi → bronchioles → alveoli (gas exchange).",
+                "Digestive — mouth → esophagus → stomach → small intestine → large intestine → rectum → anus, plus liver/gallbladder/pancreas.",
+                "Nervous — CNS (brain + spinal cord) processes; PNS carries signals to/from it.",
+                "Skeletal — axial (skull, spine, ribs) + appendicular (limbs); support, protection, movement, minerals, blood cells.",
+                "Muscular — skeletal (voluntary), smooth (organs), cardiac (heart only).",
+                "Urinary — kidney filters blood via nephrons → ureter → bladder → urethra.",
+                "Endocrine — hypothalamus → pituitary → target glands, all via hormones and negative feedback.",
+                "Lymphatic/Immune — lymph nodes filter lymph; spleen filters blood; innate (fast) vs. adaptive (specific, has memory) immunity.",
+                "Reproductive — male: testis → epididymis → vas deferens → urethra. Female: ovary → fallopian tube → uterus → cervix → vagina.",
+                "Integumentary — epidermis (outer) → dermis (glands, follicles, nerves) → hypodermis (fat)."
+            ]
+        },
+        {
+            "id": "organs-and-senses-review",
+            "heading": "Organs and Senses — 10-Second Review",
+            "bullets": [
+                "Eye — cornea → pupil (iris) → lens → retina → optic nerve → brain.",
+                "Ear — pinna → ear canal → eardrum → ossicles → cochlea (hearing) / semicircular canals (balance).",
+                "Nose — odor molecules → nasal cavity receptors → olfactory nerves → olfactory bulb → brain.",
+                "Tongue — fungiform, foliate, circumvallate papillae have taste buds; filiform papillae give texture only.",
+                "Liver — produces bile, processes nutrients, detoxifies blood (gallbladder only stores bile).",
+                "Kidney — nephron is the filtering unit; filtration → reabsorption → secretion → urine."
+            ]
+        },
+        {
+            "id": "most-confused-pairs",
+            "heading": "The Most Commonly Confused Pairs in This Subject",
+            "table": {
+                "columnHeaders": [
+                    "Term A",
+                    "Term B",
+                    "Distinction"
+                ],
+                "rows": [
+                    [
+                        "Ureter",
+                        "Urethra",
+                        "Ureter = kidney to bladder (x2); urethra = bladder out of the body (x1)."
+                    ],
+                    [
+                        "Insulin",
+                        "Glucagon",
+                        "Insulin lowers blood glucose; glucagon raises it."
+                    ],
+                    [
+                        "PTH",
+                        "Calcitonin",
+                        "PTH raises blood calcium; calcitonin lowers it."
+                    ],
+                    [
+                        "Tendon",
+                        "Ligament",
+                        "Tendon = muscle to bone; ligament = bone to bone."
+                    ],
+                    [
+                        "Pulmonary artery",
+                        "Pulmonary vein",
+                        "Pulmonary artery carries deoxygenated blood; pulmonary vein carries oxygenated blood — the exception to the usual rule."
+                    ]
+                ]
+            }
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "A single consolidated summary of every Human Anatomy chapter's most important, most-tested fact.",
+        "keyFacts": [
+            "Eleven body systems: cardiovascular, respiratory, digestive, nervous, skeletal, muscular, urinary, endocrine, lymphatic/immune, reproductive, integumentary.",
+            "Four senses covered individually: eye, ear, nose, tongue — plus skin as a sensory organ within the integumentary system.",
+            "The five most commonly confused term-pairs across the whole subject: ureter/urethra, insulin/glucagon, PTH/calcitonin, tendon/ligament, pulmonary artery/vein."
+        ],
+        "keyTerms": [
+            "Homeostasis",
+            "Nephron",
+            "Negative feedback",
+            "Villi",
+            "Ossicles"
+        ],
+        "commonConfusion": [
+            "Treat this page as a final check, not a first read — each fact here is explained in full in its own chapter."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "Pulmonary vessels are the one exception to \"arteries = oxygenated, veins = deoxygenated\".",
+            "PTH and calcitonin have opposite effects on blood calcium; insulin and glucagon have opposite effects on blood glucose.",
+            "Ureter (kidney → bladder) vs. urethra (bladder → outside) is one of the most frequently tested spelling-and-function pairs."
+        ],
+        "commonTraps": [
+            "Don't rely on this page alone for a first-time read of any topic — it deliberately omits explanation in favor of the bare fact."
+        ],
+        "mustRemember": [
+            "Revisit the individual chapter for any bullet here that doesn't immediately make sense — this page assumes the full lesson has already been read once."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

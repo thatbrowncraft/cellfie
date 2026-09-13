@@ -1,0 +1,550 @@
+{
+    "id": "endocrine-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 10,
+    "title": "Endocrine System",
+    "shortDescription": "Every major hormone-secreting gland — hypothalamus to testes/ovaries — with location, key hormones, and function, using the labelled HD endocrine illustration.",
+    "genZNote": "Small glands. Big effects. Ten glands, one shared vocabulary of hormones and feedback loops.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/endocrine-overview.png",
+        "alt": "Labelled whole-body illustration showing the location of every major endocrine gland",
+        "caption": "Endocrine System Overview — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "hypothalamus",
+                "name": "Hypothalamus",
+                "description": "Base of the brain; links the nervous and endocrine systems.",
+                "function": "Controls the pituitary gland via releasing/inhibiting hormones; produces ADH and oxytocin (released by the posterior pituitary).",
+                "highYield": "ADH and oxytocin are MADE in the hypothalamus, only RELEASED by the posterior pituitary.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/hypothalamus.png",
+                    "alt": "Labelled illustration of the hypothalamus"
+                }
+            },
+            {
+                "id": "pituitary-gland",
+                "name": "Pituitary gland",
+                "description": "Hangs below the hypothalamus via the infundibulum; the “master gland.”",
+                "function": "Anterior lobe: GH, TSH, ACTH, FSH, LH, Prolactin. Posterior lobe: releases ADH and oxytocin.",
+                "highYield": "Called the master gland because it controls several other endocrine glands.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/pituitary.png",
+                    "alt": "Labelled illustration of the pituitary gland"
+                }
+            },
+            {
+                "id": "pineal-gland",
+                "name": "Pineal gland",
+                "description": "Deep within the brain.",
+                "function": "Secretes melatonin, regulating the sleep-wake cycle and circadian rhythm.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/pineal.png",
+                    "alt": "Labelled illustration of the pineal gland"
+                }
+            },
+            {
+                "id": "thyroid-gland",
+                "name": "Thyroid gland",
+                "description": "Butterfly-shaped gland in the neck, wrapped around the trachea.",
+                "function": "Secretes T3/T4 (metabolism, growth) and calcitonin (lowers blood calcium).",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/thyroid.png",
+                    "alt": "Labelled illustration of the thyroid gland"
+                }
+            },
+            {
+                "id": "parathyroid-glands",
+                "name": "Parathyroid glands",
+                "description": "Four small glands on the back of the thyroid.",
+                "function": "Secrete parathyroid hormone (PTH), which raises blood calcium — the opposite effect of calcitonin.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/parathyroid.png",
+                    "alt": "Labelled illustration of the parathyroid glands"
+                }
+            },
+            {
+                "id": "thymus",
+                "name": "Thymus",
+                "description": "In the chest, most active in childhood.",
+                "function": "Site of T-cell (T-lymphocyte) maturation; important for immune development.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/thymus.png",
+                    "alt": "Labelled illustration of the thymus"
+                }
+            },
+            {
+                "id": "adrenal-glands",
+                "name": "Adrenal glands",
+                "description": "Sit atop each kidney; cortex (outer) and medulla (inner) regions.",
+                "function": "Cortex: cortisol, aldosterone, androgens. Medulla: adrenaline and noradrenaline (fight-or-flight).",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/adrenal.png",
+                    "alt": "Labelled illustration of the adrenal glands"
+                }
+            },
+            {
+                "id": "pancreas-endocrine",
+                "name": "Pancreas (endocrine role)",
+                "description": "Islets of Langerhans, scattered through the pancreas.",
+                "function": "Insulin lowers blood glucose; glucagon raises it.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/pancreas-endocrine.png",
+                    "alt": "Labelled illustration of the pancreas' endocrine role"
+                }
+            },
+            {
+                "id": "ovaries",
+                "name": "Ovaries",
+                "description": "Paired female gonads.",
+                "function": "Secrete estrogen and progesterone; regulate the menstrual cycle and female secondary sexual characteristics.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/ovaries.png",
+                    "alt": "Labelled illustration of the ovaries"
+                }
+            },
+            {
+                "id": "testes",
+                "name": "Testes",
+                "description": "Paired male gonads.",
+                "function": "Secrete testosterone; drive sperm production and male secondary sexual characteristics.",
+                "image": {
+                    "src": "/exam-prep/human-anatomy/panels/testes.png",
+                    "alt": "Labelled illustration of the testes"
+                }
+            }
+        ],
+        "hormoneTable": [
+            {
+                "gland": "Hypothalamus",
+                "hormone": "TRH, CRH, GnRH (releasing); GHIH, dopamine (inhibiting)",
+                "function": "Signal the anterior pituitary to release or withhold its hormones",
+                "target": "Anterior pituitary"
+            },
+            {
+                "gland": "Hypothalamus (made) / Posterior pituitary (released)",
+                "hormone": "ADH (vasopressin)",
+                "function": "Increases water reabsorption by the kidneys",
+                "target": "Kidneys"
+            },
+            {
+                "gland": "Hypothalamus (made) / Posterior pituitary (released)",
+                "hormone": "Oxytocin",
+                "function": "Uterine contraction during labor; milk let-down",
+                "target": "Uterus, mammary glands"
+            },
+            {
+                "gland": "Anterior pituitary",
+                "hormone": "TSH",
+                "function": "Stimulates the thyroid to release T3/T4",
+                "target": "Thyroid gland"
+            },
+            {
+                "gland": "Anterior pituitary",
+                "hormone": "ACTH",
+                "function": "Stimulates the adrenal cortex to release cortisol",
+                "target": "Adrenal cortex"
+            },
+            {
+                "gland": "Anterior pituitary",
+                "hormone": "FSH",
+                "function": "Stimulates egg/sperm development",
+                "target": "Ovaries / testes"
+            },
+            {
+                "gland": "Anterior pituitary",
+                "hormone": "LH",
+                "function": "Triggers ovulation; stimulates testosterone production",
+                "target": "Ovaries / testes"
+            },
+            {
+                "gland": "Anterior pituitary",
+                "hormone": "GH",
+                "function": "Stimulates growth of bone and tissue",
+                "target": "Whole body"
+            },
+            {
+                "gland": "Pineal gland",
+                "hormone": "Melatonin",
+                "function": "Regulates the sleep-wake cycle",
+                "target": "Whole body / brain"
+            },
+            {
+                "gland": "Thyroid gland",
+                "hormone": "T3 / T4 (thyroxine)",
+                "function": "Regulates metabolism, growth, and body temperature",
+                "target": "Whole body"
+            },
+            {
+                "gland": "Thyroid gland",
+                "hormone": "Calcitonin",
+                "function": "Lowers blood calcium",
+                "target": "Bone"
+            },
+            {
+                "gland": "Parathyroid glands",
+                "hormone": "PTH",
+                "function": "Raises blood calcium",
+                "target": "Bone, kidneys, intestine"
+            },
+            {
+                "gland": "Adrenal cortex",
+                "hormone": "Cortisol",
+                "function": "Stress response; raises blood glucose; suppresses inflammation",
+                "target": "Whole body"
+            },
+            {
+                "gland": "Adrenal cortex",
+                "hormone": "Aldosterone",
+                "function": "Increases sodium (and water) retention by the kidneys",
+                "target": "Kidneys"
+            },
+            {
+                "gland": "Adrenal medulla",
+                "hormone": "Adrenaline / noradrenaline",
+                "function": "Immediate fight-or-flight response",
+                "target": "Heart, blood vessels, muscles"
+            },
+            {
+                "gland": "Pancreas",
+                "hormone": "Insulin",
+                "function": "Lowers blood glucose",
+                "target": "Liver, muscle, fat cells"
+            },
+            {
+                "gland": "Pancreas",
+                "hormone": "Glucagon",
+                "function": "Raises blood glucose",
+                "target": "Liver"
+            },
+            {
+                "gland": "Ovaries",
+                "hormone": "Estrogen, progesterone",
+                "function": "Regulate menstrual cycle; support pregnancy",
+                "target": "Uterus, breast tissue"
+            },
+            {
+                "gland": "Testes",
+                "hormone": "Testosterone",
+                "function": "Drives sperm production and male secondary sexual characteristics",
+                "target": "Reproductive tissue, whole body"
+            }
+        ],
+        "pathways": [
+            {
+                "title": "Hormonal Feedback — Hypothalamic-Pituitary-Thyroid Axis",
+                "steps": [
+                    "Hypothalamus",
+                    "TRH",
+                    "Anterior pituitary",
+                    "TSH",
+                    "Thyroid gland",
+                    "T3 / T4 released into blood",
+                    "Negative feedback signals hypothalamus and pituitary to slow down"
+                ]
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Insulin",
+                "termB": "Glucagon",
+                "distinction": "Insulin lowers blood glucose; glucagon raises it. Both come from the pancreas' Islets of Langerhans."
+            },
+            {
+                "termA": "PTH",
+                "termB": "Calcitonin",
+                "distinction": "PTH (parathyroid) raises blood calcium; calcitonin (thyroid) lowers it."
+            },
+            {
+                "termA": "T3/T4",
+                "termB": "TSH",
+                "distinction": "T3/T4 are the thyroid's own hormones; TSH is the pituitary hormone that signals the thyroid to release them."
+            },
+            {
+                "termA": "ADH",
+                "termB": "Aldosterone",
+                "distinction": "ADH acts directly on the kidney to reabsorb water; aldosterone acts on the kidney to reabsorb sodium (water follows)."
+            },
+            {
+                "termA": "FSH",
+                "termB": "LH",
+                "distinction": "FSH stimulates egg/sperm development; LH triggers ovulation and stimulates testosterone production."
+            },
+            {
+                "termA": "Cortisol",
+                "termB": "Adrenaline",
+                "distinction": "Cortisol (adrenal cortex) is a slower, longer-lasting stress hormone; adrenaline (adrenal medulla) is the immediate fight-or-flight response."
+            }
+        ],
+        "questions": [
+            {
+                "id": "endo-q1",
+                "type": "gland-to-hormone",
+                "prompt": "Which gland secretes insulin and glucagon?",
+                "options": [
+                    "Thyroid gland",
+                    "Adrenal glands",
+                    "Pancreas",
+                    "Pituitary gland"
+                ],
+                "correctIndex": 2,
+                "explanation": "The pancreas' Islets of Langerhans secrete insulin (lowers blood glucose) and glucagon (raises blood glucose).",
+                "optionNotes": [
+                    "Secretes T3/T4 and calcitonin, not insulin/glucagon.",
+                    "Secretes cortisol and adrenaline, not insulin/glucagon.",
+                    "Correct.",
+                    "Secretes GH, TSH, ACTH, FSH, LH, prolactin — not insulin/glucagon."
+                ]
+            },
+            {
+                "id": "endo-q2",
+                "type": "hormone-to-function",
+                "prompt": "What is the main effect of parathyroid hormone (PTH)?",
+                "options": [
+                    "Lowers blood calcium",
+                    "Raises blood calcium",
+                    "Lowers blood glucose",
+                    "Raises blood glucose"
+                ],
+                "correctIndex": 1,
+                "explanation": "PTH raises blood calcium — the opposite effect of calcitonin, which lowers it.",
+                "optionNotes": [
+                    "That's calcitonin's effect, not PTH's.",
+                    "Correct.",
+                    "That's insulin's effect on glucose, unrelated to PTH.",
+                    "That's glucagon's effect on glucose, unrelated to PTH."
+                ]
+            },
+            {
+                "id": "endo-q3",
+                "type": "common-confusion",
+                "prompt": "Which statement about ADH and oxytocin is correct?",
+                "options": [
+                    "Both are produced AND released by the posterior pituitary",
+                    "Both are produced in the hypothalamus and released by the posterior pituitary",
+                    "Both are produced by the anterior pituitary",
+                    "Both are produced in the thyroid"
+                ],
+                "correctIndex": 1,
+                "explanation": "ADH and oxytocin are synthesized in the hypothalamus and only released from the posterior pituitary — a very commonly tested trap.",
+                "optionNotes": [
+                    "The posterior pituitary only releases them, it does not produce them.",
+                    "Correct.",
+                    "The anterior pituitary produces GH, TSH, ACTH, FSH, LH, prolactin — not ADH/oxytocin.",
+                    "The thyroid produces T3/T4 and calcitonin, unrelated to ADH/oxytocin."
+                ]
+            },
+            {
+                "id": "endo-q4",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled endocrine illustration, which gland is described as “the master gland”?",
+                "options": [
+                    "Hypothalamus",
+                    "Pituitary gland",
+                    "Thyroid gland",
+                    "Pancreas"
+                ],
+                "correctIndex": 1,
+                "explanation": "The pituitary gland is called the master gland because several of its hormones control other endocrine glands.",
+                "optionNotes": [
+                    "Controls the pituitary but isn't itself called the master gland.",
+                    "Correct.",
+                    "Regulated BY pituitary hormones, not the master gland itself.",
+                    "Regulates blood sugar, not other glands."
+                ]
+            },
+            {
+                "id": "endo-q5",
+                "type": "mcq",
+                "prompt": "Which hormone pair has genuinely opposite effects on blood calcium?",
+                "options": [
+                    "Insulin and glucagon",
+                    "PTH and calcitonin",
+                    "ADH and aldosterone",
+                    "FSH and LH"
+                ],
+                "correctIndex": 1,
+                "explanation": "PTH raises blood calcium while calcitonin lowers it — a direct opposite pair specific to calcium regulation.",
+                "optionNotes": [
+                    "This pair regulates blood glucose, not calcium.",
+                    "Correct.",
+                    "Both influence kidney reabsorption, but of water/sodium, not calcium.",
+                    "Both relate to reproduction, not calcium."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "what-are-hormones",
+            "heading": "What Are Hormones and Endocrine Glands?",
+            "body": "Hormones are chemical messengers released directly into the bloodstream by endocrine glands, traveling to distant target tissues to regulate their activity. Unlike the nervous system, which sends fast electrical signals along dedicated nerve fibers, the endocrine system sends slower, longer-lasting chemical signals throughout the whole body via blood.\n\nHormonal regulation typically works through negative feedback: rising levels of a hormone (or the effect it produces) signal the gland to slow down secretion, keeping the body in homeostasis (a stable internal state)."
+        },
+        {
+            "id": "hypothalamus",
+            "heading": "Hypothalamus",
+            "body": "Location: base of the brain, links the nervous and endocrine systems. It controls the pituitary gland, maintains homeostasis, and regulates hunger, thirst, body temperature, and circadian (sleep-wake) rhythms.",
+            "bullets": [
+                "Releasing/inhibiting hormones — e.g. TRH, CRH, GnRH signal the pituitary to release its own hormones; GHIH (somatostatin) and dopamine inhibit release.",
+                "Produces ADH and oxytocin, which travel to and are released from the posterior pituitary.",
+                "High-yield fact: ADH and oxytocin are made in the hypothalamus but released from the posterior pituitary, not made there."
+            ]
+        },
+        {
+            "id": "pituitary-gland",
+            "heading": "Pituitary Gland — \"The Master Gland\"",
+            "body": "Location: hangs below the hypothalamus via the infundibulum. Often called the master gland because several of its hormones control other endocrine glands.",
+            "table": {
+                "columnHeaders": [
+                    "Anterior pituitary hormones",
+                    "Posterior pituitary hormones"
+                ],
+                "rows": [
+                    [
+                        "GH, TSH, ACTH, FSH, LH, Prolactin",
+                        "ADH, Oxytocin (both synthesized in the hypothalamus, released here)"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "pineal-thyroid-parathyroid",
+            "heading": "Pineal, Thyroid, and Parathyroid Glands",
+            "bullets": [
+                "Pineal gland — deep in the brain; secretes melatonin, which regulates the sleep-wake cycle and circadian rhythm.",
+                "Thyroid gland — in the neck; secretes thyroxine (T4) and triiodothyronine (T3), which regulate metabolism, growth, and development, plus calcitonin, which helps lower blood calcium.",
+                "Parathyroid glands — small glands on the thyroid; secrete parathyroid hormone (PTH), which increases blood calcium (the opposite effect of calcitonin)."
+            ]
+        },
+        {
+            "id": "thymus-adrenal",
+            "heading": "Thymus and Adrenal Glands",
+            "body": "Thymus — located in the chest; important for immune development, specifically T-cell (T-lymphocyte) maturation; most active in childhood.\n\nAdrenal glands sit atop each kidney and have two functionally distinct regions:",
+            "table": {
+                "columnHeaders": [
+                    "Adrenal cortex",
+                    "Adrenal medulla"
+                ],
+                "rows": [
+                    [
+                        "Hormones",
+                        "Cortisol, aldosterone, adrenal androgens",
+                        "Adrenaline (epinephrine), noradrenaline (norepinephrine)"
+                    ],
+                    [
+                        "Main role",
+                        "Metabolism, blood pressure, salt/water balance",
+                        "Immediate stress response (fight-or-flight)"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "pancreas-gonads",
+            "heading": "Pancreas, Ovaries, and Testes",
+            "bullets": [
+                "Pancreas (endocrine role) — the Islets of Langerhans secrete insulin (lowers blood glucose) and glucagon (raises blood glucose), maintaining blood sugar homeostasis.",
+                "Ovaries — secrete estrogen and progesterone; regulate the menstrual cycle, support pregnancy, and develop female secondary sexual characteristics.",
+                "Testes — secrete testosterone; drive sperm production and male secondary sexual characteristics."
+            ]
+        },
+        {
+            "id": "hormone-comparisons",
+            "heading": "Commonly Confused Hormone Pairs",
+            "table": {
+                "columnHeaders": [
+                    "Hormone A",
+                    "Hormone B",
+                    "Key distinction"
+                ],
+                "rows": [
+                    [
+                        "Insulin",
+                        "Glucagon",
+                        "Insulin lowers blood glucose; glucagon raises it."
+                    ],
+                    [
+                        "PTH",
+                        "Calcitonin",
+                        "PTH increases blood calcium; calcitonin lowers it."
+                    ],
+                    [
+                        "T3/T4",
+                        "TSH",
+                        "T3/T4 are the thyroid's own hormones; TSH is the pituitary hormone that tells the thyroid to release them."
+                    ]
+                ]
+            }
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The endocrine system is a network of glands that release hormones into the blood to regulate growth, metabolism, reproduction, and homeostasis.",
+        "keyFacts": [
+            "Hypothalamus → pituitary → target gland → hormone → target tissue → effect, with negative feedback regulating each loop.",
+            "ADH and oxytocin are made in the hypothalamus but released from the posterior pituitary.",
+            "Insulin lowers blood glucose; glucagon raises it — both come from the pancreas' Islets of Langerhans.",
+            "PTH raises blood calcium; calcitonin lowers it."
+        ],
+        "keyTerms": [
+            "Hormone",
+            "Negative feedback",
+            "Islets of Langerhans",
+            "Master gland",
+            "Homeostasis"
+        ],
+        "commonConfusion": [
+            "PTH vs. calcitonin have opposite effects on blood calcium and are one of the most commonly swapped exam facts.",
+            "Insulin vs. glucagon are opposite in effect on blood glucose but easy to mix up by name alone."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "The pituitary gland is called the \"master gland\" because it regulates several other endocrine glands.",
+            "Melatonin (pineal gland) is the hormone associated with circadian rhythm and the sleep-wake cycle.",
+            "Cortisol (adrenal cortex) and adrenaline (adrenal medulla) both relate to stress but are released from different regions with different response speeds."
+        ],
+        "commonTraps": [
+            "Don't say the posterior pituitary \"produces\" ADH and oxytocin — it only releases hormones made in the hypothalamus.",
+            "Don't confuse the pancreas' endocrine role (insulin/glucagon) with its separate digestive/exocrine role (enzymes)."
+        ],
+        "mustRemember": [
+            "Ten glands: hypothalamus, pituitary, pineal, thyroid, parathyroid, thymus, adrenal, pancreas, ovaries, testes.",
+            "Negative feedback is the general mechanism keeping hormone levels balanced."
+        ],
+        "confusedTerms": [
+            {
+                "termA": "PTH",
+                "termB": "Calcitonin",
+                "distinction": "PTH (parathyroid) increases blood calcium; calcitonin (thyroid) decreases blood calcium."
+            },
+            {
+                "termA": "Insulin",
+                "termB": "Glucagon",
+                "distinction": "Insulin lowers blood glucose by promoting uptake/storage; glucagon raises blood glucose by promoting release from storage."
+            }
+        ],
+        "possibleQuestions": [
+            "Which gland produces cortisol?",
+            "Which hormone decreases blood glucose?",
+            "Which hormone is associated with the circadian rhythm?"
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        },
+        {
+            "name": "Endocrine System illustration",
+            "kind": "educational"
+        }
+    ]
+}

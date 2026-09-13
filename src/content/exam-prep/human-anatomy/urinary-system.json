@@ -1,0 +1,252 @@
+{
+    "id": "urinary-system",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 9,
+    "title": "Urinary System",
+    "shortDescription": "The kidneys' internal structure, the nephron's role, and the full path from blood filtration to urine excretion.",
+    "genZNote": "Filter today for a healthier tomorrow — the kidneys are the body's water and waste managers.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/urinary.png",
+        "alt": "Labelled illustration of the urinary system: adrenal glands, kidneys, ureters, bladder, and urethra",
+        "caption": "Urinary System — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "kidney",
+                "name": "Kidney",
+                "description": "Paired, bean-shaped organs behind the abdominal cavity.",
+                "function": "Filter blood and form urine."
+            },
+            {
+                "id": "renal-cortex",
+                "name": "Renal cortex",
+                "description": "Outer region of the kidney.",
+                "function": "Contains most of the nephrons' filtering structures."
+            },
+            {
+                "id": "renal-medulla",
+                "name": "Renal medulla",
+                "description": "Inner region of the kidney.",
+                "function": "Contains structures that concentrate urine."
+            },
+            {
+                "id": "renal-pelvis",
+                "name": "Renal pelvis",
+                "description": "Funnel-shaped area inside the kidney.",
+                "function": "Collects urine before it drains into the ureter."
+            },
+            {
+                "id": "renal-artery",
+                "name": "Renal artery",
+                "description": "Vessel bringing blood into the kidney.",
+                "function": "Delivers blood to be filtered."
+            },
+            {
+                "id": "renal-vein",
+                "name": "Renal vein",
+                "description": "Vessel carrying filtered blood away from the kidney.",
+                "function": "Returns filtered blood to circulation."
+            },
+            {
+                "id": "ureter",
+                "name": "Ureter",
+                "description": "Tube running from each kidney to the bladder.",
+                "function": "Carries urine from the kidney to the bladder.",
+                "highYield": "Kidney → bladder — there are two of these, one per kidney."
+            },
+            {
+                "id": "urinary-bladder",
+                "name": "Urinary bladder",
+                "description": "Muscular sac in the pelvis.",
+                "function": "Stores urine until elimination."
+            },
+            {
+                "id": "urethra",
+                "name": "Urethra",
+                "description": "Single tube from the bladder to outside the body.",
+                "function": "Carries urine out of the body.",
+                "highYield": "Bladder → outside the body — only one, unlike the paired ureters."
+            }
+        ],
+        "pathways": [
+            {
+                "title": "Urine Formation and Excretion",
+                "steps": [
+                    "Filtration (blood → nephron)",
+                    "Reabsorption (useful substances → back to blood)",
+                    "Secretion (extra waste → into urine)",
+                    "Urine → ureter → bladder → urethra → out of the body"
+                ]
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Ureter",
+                "termB": "Urethra",
+                "distinction": "Ureters (x2) carry urine from each kidney to the bladder; the urethra (x1) carries urine from the bladder out of the body."
+            },
+            {
+                "termA": "Filtration",
+                "termB": "Reabsorption",
+                "distinction": "Filtration moves substances from blood into the nephron; reabsorption moves useful substances back from the nephron into the blood — opposite directions."
+            }
+        ],
+        "questions": [
+            {
+                "id": "urin-q1",
+                "type": "common-confusion",
+                "prompt": "Which structure carries urine OUT of the body?",
+                "options": [
+                    "Ureter",
+                    "Urethra",
+                    "Renal pelvis",
+                    "Renal vein"
+                ],
+                "correctIndex": 1,
+                "explanation": "The urethra carries urine from the bladder out of the body. Ureters carry urine from the kidneys to the bladder.",
+                "optionNotes": [
+                    "Carries urine from kidney to bladder, not out of the body.",
+                    "Correct.",
+                    "Collects urine inside the kidney before the ureter.",
+                    "Carries filtered blood, not urine."
+                ]
+            },
+            {
+                "id": "urin-q2",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled kidney illustration, which region is the outer layer that contains most of the filtering structures?",
+                "options": [
+                    "Renal medulla",
+                    "Renal cortex",
+                    "Renal pelvis",
+                    "Ureter"
+                ],
+                "correctIndex": 1,
+                "explanation": "The renal cortex is the kidney's outer region and contains most of the nephrons' filtering structures.",
+                "optionNotes": [
+                    "The inner region, involved in concentrating urine.",
+                    "Correct.",
+                    "Collects already-formed urine, doesn't filter.",
+                    "Carries urine away from the kidney, doesn't filter."
+                ]
+            },
+            {
+                "id": "urin-q3",
+                "type": "mcq",
+                "prompt": "What is the correct order of urine formation?",
+                "options": [
+                    "Reabsorption → Filtration → Secretion",
+                    "Filtration → Reabsorption → Secretion",
+                    "Secretion → Filtration → Reabsorption",
+                    "Filtration → Secretion → Reabsorption"
+                ],
+                "correctIndex": 1,
+                "explanation": "Urine formation proceeds filtration → reabsorption → secretion, fine-tuning the final composition of urine at each step.",
+                "optionNotes": [
+                    "Reabsorption cannot happen before filtration has occurred.",
+                    "Correct order.",
+                    "Filtration must come first.",
+                    "Reabsorption comes before secretion in the correct sequence."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "structures",
+            "heading": "Structures of the Urinary System",
+            "bullets": [
+                "Kidneys — a pair of bean-shaped organs that filter blood and form urine.",
+                "Renal cortex — the kidney's outer region.",
+                "Renal medulla — the kidney's inner region.",
+                "Renal pelvis — the funnel-shaped area that collects urine before it leaves the kidney.",
+                "Nephron — the kidney's microscopic functional unit, where filtration actually happens.",
+                "Renal artery and renal vein — bring blood to and from each kidney.",
+                "Ureters — tubes carrying urine from each kidney to the bladder.",
+                "Urinary bladder — stores urine until elimination.",
+                "Urethra — the tube through which urine leaves the body."
+            ]
+        },
+        {
+            "id": "urine-formation",
+            "heading": "How Urine Is Formed",
+            "steps": [
+                {
+                    "name": "Filtration",
+                    "explanation": "Blood pressure forces water, salts, glucose, and waste out of the blood and into the nephron.",
+                    "purpose": "Separates small dissolved substances from blood cells and large proteins, which stay in the blood."
+                },
+                {
+                    "name": "Reabsorption",
+                    "explanation": "Useful substances (glucose, most water, needed ions) are reabsorbed back into the blood from the nephron.",
+                    "purpose": "Prevents the body from losing nutrients it still needs."
+                },
+                {
+                    "name": "Secretion",
+                    "explanation": "Additional waste products and excess ions are actively added into the forming urine from the blood.",
+                    "purpose": "Fine-tunes the final composition of urine, including pH balance."
+                }
+            ]
+        },
+        {
+            "id": "pathway-and-roles",
+            "heading": "Pathway and Roles",
+            "body": "Blood → kidney → urine, i.e. blood enters the kidney, is filtered by nephrons, and the waste-containing fluid becomes urine, which travels kidney → ureter → bladder → urethra → out of the body.\n\nBeyond waste removal, the kidneys regulate fluid balance (how much water the body retains) and electrolyte balance (sodium, potassium, and other ion levels)."
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The urinary system filters blood through the kidneys' nephrons to remove waste and excess fluid as urine, which passes through the ureters, bladder, and urethra.",
+        "keyFacts": [
+            "The nephron is the functional unit of the kidney, where filtration, reabsorption, and secretion occur.",
+            "Urine pathway: kidney → ureter → bladder → urethra.",
+            "Each kidney has an outer renal cortex and inner renal medulla, draining into the renal pelvis.",
+            "The kidneys regulate both waste removal and fluid/electrolyte balance."
+        ],
+        "keyTerms": [
+            "Nephron",
+            "Filtration",
+            "Reabsorption",
+            "Secretion",
+            "Renal pelvis"
+        ],
+        "commonConfusion": [
+            "Ureter (kidney → bladder) is easily confused with urethra (bladder → outside the body) due to their similar names.",
+            "Filtration (removing substances from blood into the nephron) is often confused with reabsorption (returning useful substances back to blood) — they move in opposite directions."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "Ureters carry urine FROM the kidneys TO the bladder; the urethra carries urine OUT of the bladder.",
+            "Glucose is normally fully reabsorbed and should not appear in healthy urine."
+        ],
+        "commonTraps": [
+            "Don't mix up \"ureter\" and \"urethra\" — spelling and function are both commonly tested together.",
+            "Filtration happens in the nephron's glomerulus, not directly in the renal pelvis."
+        ],
+        "mustRemember": [
+            "Urine formation order: filtration → reabsorption → secretion.",
+            "Full pathway: blood → nephron (kidney) → ureter → bladder → urethra → out."
+        ],
+        "confusedTerms": [
+            {
+                "termA": "Ureter",
+                "termB": "Urethra",
+                "distinction": "Ureters connect each kidney to the bladder; the urethra is the single tube that carries urine from the bladder out of the body."
+            }
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}

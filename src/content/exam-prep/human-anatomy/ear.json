@@ -1,0 +1,204 @@
+{
+    "id": "ear",
+    "subjectId": "human-anatomy",
+    "syllabusOrder": 15,
+    "title": "Ear",
+    "shortDescription": "The outer, middle, and inner ear structures, and how they enable both hearing and balance.",
+    "genZNote": "Helps you hear and balance — one organ, two completely different jobs.",
+    "illustration": {
+        "src": "/exam-prep/human-anatomy/panels/ear.png",
+        "alt": "Labelled cross-section illustration of the ear",
+        "caption": "Ear — Cellfie Human Anatomy"
+    },
+    "anatomy": {
+        "structures": [
+            {
+                "id": "pinna",
+                "name": "Pinna",
+                "description": "The visible outer part of the ear.",
+                "function": "Collects and funnels sound waves into the ear canal."
+            },
+            {
+                "id": "ear-canal",
+                "name": "Ear canal",
+                "description": "Tube leading from the pinna to the eardrum.",
+                "function": "Channels sound waves toward the eardrum."
+            },
+            {
+                "id": "eardrum",
+                "name": "Eardrum (tympanic membrane)",
+                "description": "Thin membrane at the end of the ear canal.",
+                "function": "Vibrates in response to sound waves."
+            },
+            {
+                "id": "malleus",
+                "name": "Malleus",
+                "description": "First of the three ossicles (middle ear bones).",
+                "function": "Transmits vibration from the eardrum to the incus."
+            },
+            {
+                "id": "incus",
+                "name": "Incus",
+                "description": "Middle ossicle.",
+                "function": "Passes vibration from the malleus to the stapes."
+            },
+            {
+                "id": "stapes",
+                "name": "Stapes",
+                "description": "Smallest bone in the body; last of the three ossicles.",
+                "function": "Transmits vibration into the cochlea."
+            },
+            {
+                "id": "cochlea",
+                "name": "Cochlea",
+                "description": "Spiral, fluid-filled structure in the inner ear.",
+                "function": "Converts vibrations into neural signals for hearing."
+            },
+            {
+                "id": "semicircular-canals",
+                "name": "Semicircular canals",
+                "description": "Three fluid-filled loops in the inner ear.",
+                "function": "Detect head rotation and movement, maintaining balance."
+            },
+            {
+                "id": "eustachian-tube",
+                "name": "Eustachian tube",
+                "description": "Tube connecting the middle ear to the throat.",
+                "function": "Equalizes air pressure between the middle ear and the outside environment."
+            }
+        ],
+        "comparisons": [
+            {
+                "termA": "Cochlea",
+                "termB": "Semicircular canals",
+                "distinction": "The cochlea converts vibrations into hearing signals; the semicircular canals detect rotation/movement for balance."
+            },
+            {
+                "termA": "Malleus, incus, stapes",
+                "termB": "Cochlea",
+                "distinction": "The three ossicles mechanically transmit vibration through the middle ear; the cochlea then converts that vibration into a neural signal in the inner ear."
+            }
+        ],
+        "questions": [
+            {
+                "id": "ear-q1",
+                "type": "diagram-identification",
+                "useIllustration": true,
+                "prompt": "In the labelled ear illustration, which structure detects head rotation for balance, not hearing?",
+                "options": [
+                    "Cochlea",
+                    "Semicircular canals",
+                    "Eardrum",
+                    "Eustachian tube"
+                ],
+                "correctIndex": 1,
+                "explanation": "The semicircular canals detect rotation and movement of the head, contributing to balance, while the cochlea handles hearing.",
+                "optionNotes": [
+                    "Handles hearing, not balance.",
+                    "Correct.",
+                    "Vibrates with sound, part of the hearing pathway.",
+                    "Equalizes pressure, unrelated to balance detection."
+                ]
+            },
+            {
+                "id": "ear-q2",
+                "type": "mcq",
+                "prompt": "What is the correct order of the three ossicles, from the eardrum inward?",
+                "options": [
+                    "Stapes → Incus → Malleus",
+                    "Malleus → Incus → Stapes",
+                    "Incus → Malleus → Stapes",
+                    "Malleus → Stapes → Incus"
+                ],
+                "correctIndex": 1,
+                "explanation": "Vibration travels malleus → incus → stapes, from the eardrum toward the cochlea.",
+                "optionNotes": [
+                    "Reversed order.",
+                    "Correct.",
+                    "Incorrect order.",
+                    "Incorrect order."
+                ]
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "structures",
+            "heading": "Structures of the Ear",
+            "bullets": [
+                "Pinna — the visible outer ear; collects sound.",
+                "Ear canal — channels sound waves toward the eardrum.",
+                "Eardrum (tympanic membrane) — vibrates in response to sound waves.",
+                "Malleus, incus, stapes — three tiny middle-ear bones (ossicles) that amplify and relay vibrations.",
+                "Cochlea — the fluid-filled, spiral inner-ear structure that converts vibrations into nerve signals for hearing.",
+                "Semicircular canals — inner-ear structures that detect head rotation and movement, key to balance.",
+                "Eustachian tube — connects the middle ear to the throat, equalizing air pressure."
+            ]
+        },
+        {
+            "id": "hearing-and-balance",
+            "heading": "Hearing vs. Balance",
+            "table": {
+                "columnHeaders": [
+                    "Hearing",
+                    "Balance"
+                ],
+                "rows": [
+                    [
+                        "Key structure",
+                        "Cochlea",
+                        "Semicircular canals"
+                    ],
+                    [
+                        "Mechanism",
+                        "Sound vibrations converted to nerve signals",
+                        "Fluid movement detects head position/rotation"
+                    ]
+                ]
+            }
+        }
+    ],
+    "quickRevision": {
+        "oneLineDefinition": "The ear enables hearing via the cochlea and balance via the semicircular canals, with sound first amplified by the outer and middle ear structures.",
+        "keyFacts": [
+            "Sound path: pinna → ear canal → eardrum → ossicles (malleus, incus, stapes) → cochlea.",
+            "The cochlea converts sound vibrations into nerve signals; it is not involved in balance.",
+            "Semicircular canals, not the cochlea, are responsible for balance.",
+            "The Eustachian tube equalizes pressure between the middle ear and the throat."
+        ],
+        "keyTerms": [
+            "Ossicles",
+            "Cochlea",
+            "Semicircular canals",
+            "Eustachian tube",
+            "Tympanic membrane"
+        ],
+        "commonConfusion": [
+            "Cochlea (hearing) and semicircular canals (balance) are both inner-ear structures but serve entirely different senses."
+        ]
+    },
+    "examFocus": {
+        "highYieldFacts": [
+            "The three ossicles, in order, are malleus, incus, then stapes.",
+            "Balance is a function of the semicircular canals, not the cochlea."
+        ],
+        "commonTraps": [
+            "Don't assign balance to the cochlea — it is purely for hearing."
+        ],
+        "mustRemember": [
+            "Sound pathway: pinna → ear canal → eardrum → malleus → incus → stapes → cochlea → brain."
+        ]
+    },
+    "sources": [
+        {
+            "name": "OpenStax Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e"
+        },
+        {
+            "name": "National Cancer Institute SEER Training — Anatomy & Physiology",
+            "kind": "educational",
+            "url": "https://training.seer.cancer.gov/anatomy/"
+        }
+    ]
+}
