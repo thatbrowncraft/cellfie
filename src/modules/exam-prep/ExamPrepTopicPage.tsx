@@ -95,9 +95,14 @@ export function ExamPrepTopicPage() {
         <ExamQuickRevisionView title={topic.title} quickRevision={topic.quickRevision} />
         <ExamFocusView title={topic.title} examFocus={topic.examFocus} />
         {/* Additive: only renders for topics that carry structured
-            `anatomy.questions` (currently Human Anatomy chapters).
+            `anatomy.questions` or `visualData.questions` (Human Anatomy
+            and Healthcare Quality & Accreditation chapters so far).
             Every other subject's topic page is unchanged. */}
-        <AnatomyQuizBlock title={topic.title} questions={topic.anatomy?.questions} illustration={topic.illustration} />
+        <AnatomyQuizBlock
+          title={topic.title}
+          questions={topic.anatomy?.questions ?? topic.visualData?.questions}
+          illustration={topic.illustration}
+        />
       </div>
     </div>
   )

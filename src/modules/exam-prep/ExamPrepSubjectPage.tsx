@@ -10,16 +10,20 @@ import type { ExamSubjectId, ExamTopic } from '@/core/exam-prep/types'
 import { resolveExamPrepAssetPath } from '@/shared/utils/resolveExamPrepAssetPath'
 
 /**
- * Human Anatomy landing groups (brief: "group chapters into Foundations /
- * Body Systems / Organs & Senses / Final Revision instead of one flat
- * list"). Scoped to a single topic-id → group lookup used ONLY when
- * `subjectId === 'human-anatomy'` — every other subject keeps the plain
- * flat grid (or the existing region-grouped layout for Current Affairs)
- * exactly as before. A topic id not present here (e.g. a future chapter
- * added before this map is updated) safely falls into "More topics"
- * rather than disappearing.
+ * Landing-page topic grouping (brief: "group chapters into labelled
+ * sections instead of one flat list"). A subject opts in by adding an
+ * entry to `TOPIC_GROUPS_BY_SUBJECT` below; every subject without one
+ * keeps the plain flat grid (or the existing region-grouped layout for
+ * Current Affairs) exactly as before. A topic id not present in a
+ * subject's group list (e.g. a new chapter added before the map is
+ * updated) safely falls into "More topics" rather than disappearing.
  */
-const HUMAN_ANATOMY_GROUPS: { label: string; topicIds: string[] }[] = [
+interface TopicGroupDef {
+  label: string
+  topicIds: string[]
+}
+
+const HUMAN_ANATOMY_GROUPS: TopicGroupDef[] = [
   { label: 'Foundations', topicIds: ['anatomy-overview', 'anatomical-terminology'] },
   {
     label: 'Body Systems',
@@ -43,6 +47,58 @@ const HUMAN_ANATOMY_GROUPS: { label: string; topicIds: string[] }[] = [
   },
   { label: 'Final Revision', topicIds: ['human-anatomy-quick-revision'] }
 ]
+
+/**
+ * Healthcare Quality & Accreditation landing groups — same "grouped
+ * chapters instead of one flat list" treatment as Human Anatomy above,
+ * via the same generic `TOPIC_GROUPS_BY_SUBJECT` mechanism.
+ */
+const HEALTHCARE_ACCREDITATION_GROUPS: TopicGroupDef[] = [
+  {
+    label: 'Foundations',
+    topicIds: ['quality-accreditation-fundamentals', 'accreditation-vs-certification-vs-registration']
+  },
+  {
+    label: 'Laboratory Accreditation',
+    topicIds: [
+      'nabl',
+      'nabl-medical-laboratories',
+      'iso-15189',
+      'iso-17025',
+      'laboratory-quality-management-system',
+      'nabl-accreditation-process'
+    ]
+  },
+  {
+    label: 'Healthcare Accreditation',
+    topicIds: ['nabh', 'nabh-hospital-accreditation', 'nabh-standards-patient-safety', 'hospital-quality-management']
+  },
+  {
+    label: 'Quality Systems',
+    topicIds: [
+      'qci-accreditation-ecosystem',
+      'iso-standards-healthcare-laboratories',
+      'international-accreditation-bodies',
+      'quality-indicators-continuous-improvement',
+      'audits-assessments-nonconformities',
+      'documentation-quality-records',
+      'laboratory-safety-risk-quality'
+    ]
+  },
+  { label: 'Revision', topicIds: ['accreditation-quick-revision'] }
+]
+
+/**
+ * Any subject whose landing page should group its topics under labelled
+ * sections (instead of one flat syllabus-order grid) gets an entry here.
+ * Adding the next grouped subject means adding one `TopicGroupDef[]`
+ * above and one line here — `groupTopicsByDefinition` and the render
+ * branch below are already fully generic.
+ */
+const TOPIC_GROUPS_BY_SUBJECT: Partial<Record<ExamSubjectId, TopicGroupDef[]>> = {
+  'human-anatomy': HUMAN_ANATOMY_GROUPS,
+  'healthcare-quality-accreditation': HEALTHCARE_ACCREDITATION_GROUPS
+}
 
 /**
  * One topic card, reused by the flat grid, the Current-Affairs region
@@ -80,14 +136,16 @@ function TopicCard({ topic, label, onClick }: { topic: ExamTopic; label?: string
   )
 }
 
-function groupHumanAnatomyTopics(topics: ExamTopic[]) {
+function groupTopicsByDefinition(topics: ExamTopic[], groupDefs: TopicGroupDef[]) {
   const byId = new Map(topics.map((t) => [t.id, t]))
   const used = new Set<string>()
-  const groups = HUMAN_ANATOMY_GROUPS.map((g) => {
-    const items = g.topicIds.map((id) => byId.get(id)).filter((t): t is ExamTopic => Boolean(t))
-    items.forEach((t) => used.add(t.id))
-    return { label: g.label, items }
-  }).filter((g) => g.items.length > 0)
+  const groups = groupDefs
+    .map((g) => {
+      const items = g.topicIds.map((id) => byId.get(id)).filter((t): t is ExamTopic => Boolean(t))
+      items.forEach((t) => used.add(t.id))
+      return { label: g.label, items }
+    })
+    .filter((g) => g.items.length > 0)
 
   const leftover = topics.filter((t) => !used.has(t.id))
   if (leftover.length > 0) {
@@ -120,10 +178,11 @@ export function ExamPrepSubjectPage() {
     () => (subjectId ? listTopicsForSubject(subjectId as ExamSubjectId) : []),
     [subjectId]
   )
-  const isHumanAnatomy = subject?.id === 'human-anatomy'
-  const anatomyGroups = useMemo(
-    () => (isHumanAnatomy ? groupHumanAnatomyTopics(topics) : []),
-    [isHumanAnatomy, topics]
+  const groupDefs = subject ? TOPIC_GROUPS_BY_SUBJECT[subject.id] : undefined
+  const isGrouped = Boolean(groupDefs)
+  const definedGroups = useMemo(
+    () => (groupDefs ? groupTopicsByDefinition(topics, groupDefs) : []),
+    [groupDefs, topics]
   )
   const isRegionGrouped = topics.some((t) => t.region)
   const regionGroups = useMemo(() => {
@@ -194,9 +253,9 @@ export function ExamPrepSubjectPage() {
           title="No topics yet"
           description="Content for this subject hasn't been added yet."
         />
-      ) : isHumanAnatomy ? (
+      ) : isGrouped ? (
         <div className="flex flex-col gap-8">
-          {anatomyGroups.map((group) => (
+          {definedGroups.map((group) => (
             <section key={group.label}>
               <h2 className="mb-3 font-display text-h3 font-semibold text-ink-primary">{group.label}</h2>
               <div className="grid gap-4 sm:grid-cols-2">
