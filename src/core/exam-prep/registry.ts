@@ -95,6 +95,10 @@ const humanAnatomyModules = import.meta.glob<{ default: unknown }>(
   '/src/content/exam-prep/human-anatomy/*.json',
   { eager: true }
 )
+const healthcareQualityAccreditationModules = import.meta.glob<{ default: unknown }>(
+  '/src/content/exam-prep/healthcare-quality-accreditation/*.json',
+  { eager: true }
+)
 
 export const CONSTITUTION_TOPICS: ExamTopic[] = loadTopics(constitutionModules, 'constitution-of-india')
 export const QUANTITATIVE_APTITUDE_TOPICS: ExamTopic[] = loadTopics(
@@ -114,6 +118,10 @@ export const INTERNATIONAL_ORGANIZATIONS_TOPICS: ExamTopic[] = loadTopics(
 )
 export const ISO_TOPICS: ExamTopic[] = loadTopics(isoModules, 'iso')
 export const HUMAN_ANATOMY_TOPICS: ExamTopic[] = loadTopics(humanAnatomyModules, 'human-anatomy')
+export const HEALTHCARE_QUALITY_ACCREDITATION_TOPICS: ExamTopic[] = loadTopics(
+  healthcareQualityAccreditationModules,
+  'healthcare-quality-accreditation'
+)
 
 const SUBJECT_TOPICS: Record<ExamSubjectId, ExamTopic[]> = {
   'constitution-of-india': CONSTITUTION_TOPICS,
@@ -124,7 +132,8 @@ const SUBJECT_TOPICS: Record<ExamSubjectId, ExamTopic[]> = {
   'current-affairs-2026': CURRENT_AFFAIRS_2026_TOPICS,
   'international-organizations': INTERNATIONAL_ORGANIZATIONS_TOPICS,
   iso: ISO_TOPICS,
-  'human-anatomy': HUMAN_ANATOMY_TOPICS
+  'human-anatomy': HUMAN_ANATOMY_TOPICS,
+  'healthcare-quality-accreditation': HEALTHCARE_QUALITY_ACCREDITATION_TOPICS
 }
 
 const SUBJECT_TOPICS_BY_ID: Record<ExamSubjectId, Map<string, ExamTopic>> = Object.fromEntries(

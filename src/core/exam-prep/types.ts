@@ -37,6 +37,7 @@ export type ExamSubjectId =
   | 'international-organizations'
   | 'iso'
   | 'human-anatomy'
+  | 'healthcare-quality-accreditation'
 
 export interface ExamSubject {
   id: ExamSubjectId
@@ -98,6 +99,19 @@ export interface ExamTopic {
    * been upgraded yet.
    */
   anatomy?: AnatomyData
+  /**
+   * Same `AnatomyData` shape as `anatomy` above (structure grid, pathway
+   * flow, "commonly confused" comparison cards, self-test quiz) under a
+   * subject-neutral name — for any subject other than Human Anatomy that
+   * wants the same reusable study blocks (e.g. Healthcare Quality &
+   * Accreditation's accreditation-journey flows, NABL-vs-NABH comparison
+   * cards, and MCQs). Kept as a genuinely separate field rather than
+   * renaming `anatomy` so none of the existing Human Anatomy content
+   * files need to change. `ExamLessonView`/`ExamPrepTopicPage` read
+   * `topic.anatomy ?? topic.visualData` — a topic only ever sets one of
+   * the two.
+   */
+  visualData?: AnatomyData
   /**
    * Current-Affairs-only metadata, all optional so every other subject's
    * topic files are untouched. When `region` is set, `ExamPrepSubjectPage`

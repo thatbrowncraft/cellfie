@@ -89,6 +89,14 @@ export const EXAM_SUBJECTS: ExamSubject[] = [
       'Body systems, major organs, and the senses — taught with full HD labelled illustrations, structure/function breakdowns, and exam facts for every chapter.',
     genZNote: 'Know the structures. Understand the systems. Ace the diagram questions.',
     icon: 'Person'
+  },
+  {
+    id: 'healthcare-quality-accreditation',
+    title: 'Healthcare Quality & Accreditation',
+    shortDescription:
+      'NABL \u2022 NABH \u2022 ISO \u2022 QCI & Global Healthcare Standards \u2014 what accreditation actually demonstrates, who provides it, and how laboratories and hospitals prove competence, safety, and continual improvement.',
+    genZNote: "Everyone memorises the full forms. This is you actually understanding who accredits whom, and why it matters.",
+    icon: 'SealCheck'
   }
 ]
 
