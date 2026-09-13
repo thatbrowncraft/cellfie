@@ -1,0 +1,140 @@
+{
+  "id": "nabh",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 8,
+  "title": "NABH",
+  "shortDescription": "India's accreditation body for hospitals and healthcare providers — how it differs fundamentally from NABL, and what it actually assesses.",
+  "genZNote": "Same parent body as NABL. Completely different job.",
+  "sections": [
+    {
+      "id": "what-is-nabh",
+      "heading": "What Is NABH?",
+      "body": "NABH — the National Accreditation Board for Hospitals & Healthcare Providers — is India's accreditation body for hospitals and other healthcare organisations. Like NABL, it is a constituent board of the Quality Council of India (QCI) — but it accredits a completely different kind of organisation, against completely different standards."
+    },
+    {
+      "id": "nabl-vs-nabh",
+      "heading": "NABL vs. NABH — Don't Merge These",
+      "body": "This is the single most important distinction in this entire subject.",
+      "table": {
+        "columnHeaders": [
+          "NABL",
+          "NABH"
+        ],
+        "rows": [
+          [
+            "Laboratories and lab-adjacent conformity assessment programmes",
+            "Hospitals and healthcare organisations/providers"
+          ],
+          [
+            "Assesses against ISO/IEC 17025 or ISO 15189",
+            "Assesses against NABH's own hospital/healthcare-specific standards"
+          ],
+          [
+            "Focus: technical competence of testing/examination",
+            "Focus: patient safety, patient-centred care, and healthcare quality"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "nabh-focus",
+      "heading": "What NABH Actually Focuses On",
+      "bullets": [
+        "Patient safety — systematically reducing the risk of harm to patients during care.",
+        "Patient-centred care — organising care processes around the patient's rights, needs, and experience, not just clinical convenience.",
+        "Continuous quality improvement — the same PDCA-style closed loop used across this subject, applied to hospital processes.",
+        "Assessment and accreditation of hospitals, as well as certification programmes for other healthcare service types (e.g. smaller facilities, specific departments) — NABH runs more than one programme track depending on the facility's size and type."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "NABH is India's accreditation body for hospitals and healthcare organisations — a constituent board of QCI, focused on patient safety and healthcare quality, entirely distinct from NABL's laboratory-accreditation role.",
+    "keyFacts": [
+      "NABH = National Accreditation Board for Hospitals & Healthcare Providers.",
+      "NABH, like NABL, is a constituent board of QCI.",
+      "NABH accredits healthcare ORGANISATIONS (hospitals and related providers); NABL accredits LABORATORIES.",
+      "NABH runs more than one programme track for different facility sizes/types, not a single one-size-fits-all standard."
+    ],
+    "keyTerms": [
+      "NABH",
+      "Patient safety",
+      "Patient-centred care",
+      "Continuous quality improvement",
+      "Healthcare organisation"
+    ],
+    "commonConfusion": [
+      "NABL and NABH share a parent (QCI) and a similar-sounding name, but accredit entirely different kinds of organisations against entirely different standards — they are never the same accreditation."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "NABH and NABL are both constituent boards of QCI — siblings, not the same organisation.",
+      "NABH's core focus areas are patient safety, patient-centred care, and continuous quality improvement."
+    ],
+    "commonTraps": [
+      "Using 'NABL' and 'NABH' interchangeably in writing — examiners specifically test this distinction."
+    ],
+    "mustRemember": [
+      "NABL → laboratories. NABH → hospitals/healthcare organisations. Same parent (QCI), different domain."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "NABL",
+        "termB": "NABH",
+        "distinction": "NABL accredits laboratories (testing, calibration, medical) against ISO/IEC 17025 or ISO 15189. NABH accredits hospitals and healthcare organisations against its own hospital/healthcare standards. Both are constituent boards of QCI."
+      }
+    ],
+    "possibleQuestions": [
+      "A hospital wants to improve patient safety, infection control, medication management and patient rights through a healthcare accreditation framework. Which organisation is relevant, and why not NABL?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABH — National Accreditation Board for Hospitals & Healthcare Providers",
+      "kind": "educational",
+      "url": "https://www.nabh.co/"
+    },
+    {
+      "name": "Quality Council of India (QCI)",
+      "kind": "educational",
+      "url": "https://www.qcin.org/"
+    }
+  ],
+  "visualData": {
+    "comparisons": [
+      {
+        "termA": "NABL",
+        "termB": "NABH",
+        "distinction": "NABL accredits laboratories against ISO/IEC 17025 or ISO 15189. NABH accredits hospitals and healthcare organisations against its own patient-safety-focused standards. Both sit under QCI, but cover entirely different domains."
+      }
+    ],
+    "questions": [
+      {
+        "id": "nabh-q1",
+        "type": "mcq",
+        "prompt": "NABH is a constituent board of which organisation?",
+        "options": [
+          "Ministry of Health and Family Welfare",
+          "Quality Council of India (QCI)",
+          "World Health Organization",
+          "Medical Council of India"
+        ],
+        "correctIndex": 1,
+        "explanation": "NABH, like NABL, is a constituent board of QCI."
+      },
+      {
+        "id": "nabh-q2",
+        "type": "mcq",
+        "prompt": "Scenario: A hospital wants to improve patient safety, infection control, medication management, and patient rights through a healthcare accreditation framework. Which organisation is relevant?",
+        "options": [
+          "NABL",
+          "NABH",
+          "BIS",
+          "ISO directly"
+        ],
+        "correctIndex": 1,
+        "explanation": "NABH is specifically the healthcare-organisation accreditation body — NABL accredits laboratories, not hospitals."
+      }
+    ]
+  }
+}

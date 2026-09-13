@@ -1,0 +1,161 @@
+{
+  "id": "audits-assessments-nonconformities",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 17,
+  "title": "Audits, Assessments & Nonconformities",
+  "shortDescription": "Internal vs external checks, and what actually happens when something doesn't conform — without inventing classification rules that don't universally apply.",
+  "genZNote": "Finding a gap isn't the failure. Not fixing it is.",
+  "sections": [
+    {
+      "id": "check-types",
+      "heading": "Internal Audit, External Assessment, Surveillance, Reassessment",
+      "table": {
+        "columnHeaders": [
+          "Check type",
+          "Who performs it",
+          "When it happens"
+        ],
+        "rows": [
+          [
+            "Internal audit",
+            "The organisation's own trained internal auditors",
+            "Planned, recurring, self-initiated"
+          ],
+          [
+            "External assessment",
+            "The accreditation/certification body's assessors",
+            "Initial accreditation, and periodically thereafter"
+          ],
+          [
+            "Surveillance",
+            "The accreditation/certification body",
+            "Shorter, periodic checks during the validity period"
+          ],
+          [
+            "Reassessment",
+            "The accreditation/certification body",
+            "Full-depth check before the accreditation period ends, to renew it"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "nonconformity-workflow",
+      "heading": "Handling a Nonconformity",
+      "body": "Important nuance: exact classification systems (e.g. how 'major' vs 'minor' nonconformities are defined) can vary by accreditation programme and by the specific accrediting body's own procedures — never assume one universal classification applies everywhere. The underlying workflow, however, is consistent.",
+      "steps": [
+        {
+          "name": "Correction",
+          "explanation": "The immediate fix to the specific instance found — stops the immediate problem.",
+          "purpose": "Addresses what happened right now, not why it happened."
+        },
+        {
+          "name": "Root cause analysis",
+          "explanation": "Investigating WHY the nonconformity occurred at a systemic level.",
+          "purpose": "Without this step, the same gap will likely recur elsewhere."
+        },
+        {
+          "name": "Corrective action",
+          "explanation": "A systemic change addressing the root cause, so the same nonconformity doesn't recur.",
+          "purpose": "This is what actually prevents repeat findings."
+        },
+        {
+          "name": "Effectiveness verification",
+          "explanation": "Confirming, after enough time has passed, that the corrective action actually worked.",
+          "purpose": "A corrective action that was never verified is just an assumption."
+        }
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Audits and assessments (internal, external, surveillance, reassessment) are the checking mechanisms of an accreditation system; when a gap (nonconformity) is found, it moves through correction, root cause analysis, corrective action, and effectiveness verification — with exact classification rules varying by programme.",
+    "keyFacts": [
+      "Internal audit is self-initiated by the organisation; external assessment is performed by the accreditation/certification body.",
+      "Surveillance is a shorter periodic check; reassessment is a full-depth renewal check.",
+      "Correction fixes the immediate instance; corrective action fixes the systemic root cause.",
+      "Major/minor nonconformity classification varies by accreditation programme — it is not a single universal system."
+    ],
+    "keyTerms": [
+      "Internal audit",
+      "External assessment",
+      "Surveillance",
+      "Reassessment",
+      "Nonconformity",
+      "Correction",
+      "Corrective action",
+      "Root cause analysis",
+      "Effectiveness verification"
+    ],
+    "commonConfusion": [
+      "Correction and corrective action are often used as if they mean the same thing — correction fixes THIS instance; corrective action fixes the SYSTEM so it doesn't happen again."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Correction = fix the instance. Corrective action = fix the system.",
+      "Effectiveness verification is the final, often-skipped step — confirming the corrective action actually worked."
+    ],
+    "commonTraps": [
+      "Assuming a single fixed 'major vs minor' nonconformity classification applies across all accreditation programmes — it varies by programme."
+    ],
+    "mustRemember": [
+      "Correction → Root cause analysis → Corrective action → Effectiveness verification."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Correction",
+        "termB": "Corrective action",
+        "distinction": "Correction is the immediate fix to the specific nonconformity found. Corrective action is the systemic change addressing the root cause, so the same nonconformity doesn't recur elsewhere."
+      },
+      {
+        "termA": "Internal audit",
+        "termB": "External assessment",
+        "distinction": "Internal audit is performed by the organisation's own trained auditors, self-initiated. External assessment is performed by the accreditation or certification body itself."
+      }
+    ],
+    "possibleQuestions": [
+      "Explain the difference between correction and corrective action with an example.",
+      "Why can't nonconformity classification (major/minor) be assumed to be identical across all accreditation programmes?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    },
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "audit-q1",
+        "type": "mcq",
+        "prompt": "A lab immediately re-runs a failed test to give the correct result to the clinician. This is an example of:",
+        "options": [
+          "Corrective action",
+          "Correction",
+          "Preventive action",
+          "Surveillance"
+        ],
+        "correctIndex": 1,
+        "explanation": "This fixes the immediate instance — that's a correction. Preventing recurrence system-wide would be corrective action."
+      },
+      {
+        "id": "audit-q2",
+        "type": "true-false",
+        "prompt": "True or False: The classification of nonconformities as 'major' or 'minor' is identical across every accreditation programme.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correctIndex": 1,
+        "explanation": "Classification systems can vary by accreditation programme and accrediting body — there is no single universal rule."
+      }
+    ]
+  }
+}

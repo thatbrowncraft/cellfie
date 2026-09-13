@@ -1,0 +1,139 @@
+{
+  "id": "nabh-standards-patient-safety",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 10,
+  "title": "NABH Standards & Patient Safety",
+  "shortDescription": "How NABH's ten chapters translate into everyday hospital workflows — identification, medication safety, infection control, consent, and how an incident actually gets handled.",
+  "genZNote": "Patient safety isn't a chapter you read once. It's a workflow that runs every single shift.",
+  "sections": [
+    {
+      "id": "core-patient-safety-elements",
+      "heading": "Core Patient-Safety Elements",
+      "bullets": [
+        "Patient identification — using at least two identifiers before any procedure, medication, or sample collection, to prevent wrong-patient errors.",
+        "Medication safety — controls at prescribing, dispensing, and administration to prevent errors, especially with look-alike/sound-alike drugs and high-risk medications.",
+        "Infection prevention and control — hand hygiene, sterilisation, surveillance, and (current focus) antimicrobial stewardship.",
+        "Informed consent and patient rights — patients understand and agree to procedures, and know their rights within the care process.",
+        "Communication and clinical documentation — accurate handover and record-keeping, since most safety failures involve a communication gap somewhere.",
+        "Emergency care readiness — defined processes and trained staff for time-critical situations."
+      ]
+    },
+    {
+      "id": "incident-to-improvement",
+      "heading": "From Incident to Improvement",
+      "body": "When something goes wrong — or nearly goes wrong — hospitals don't just document it and move on. There's a defined workflow connecting the event to a system-level fix.",
+      "steps": [
+        {
+          "name": "Incident occurs or is identified",
+          "explanation": "An adverse event, near-miss, or sentinel event (a serious, often preventable event causing significant harm) happens or is caught.",
+          "purpose": "The trigger for the entire safety-improvement cycle."
+        },
+        {
+          "name": "Incident reporting",
+          "explanation": "The event is documented through the hospital's incident-reporting system, often with a no-blame culture to encourage honest reporting.",
+          "purpose": "You can't fix what isn't reported."
+        },
+        {
+          "name": "Investigation and risk management",
+          "explanation": "Root cause analysis (RCA) identifies the underlying system failure, not just the individual action.",
+          "purpose": "Prevents 'blame the person' fixes that don't actually stop recurrence."
+        },
+        {
+          "name": "Corrective action and monitoring",
+          "explanation": "A system-level fix is implemented and its effectiveness is tracked through quality indicators over time.",
+          "purpose": "Closes the loop — the same corrective-action pattern used across this entire subject."
+        }
+      ]
+    },
+    {
+      "id": "quality-experience",
+      "heading": "Quality Indicators and Patient Experience",
+      "body": "NABH tracks both objective quality indicators (infection rates, medication error rates) and subjective patient experience (satisfaction, communication quality) — they are related but distinct, and both matter for accreditation."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "NABH's patient-safety standards translate into concrete hospital workflows — identification, medication safety, infection control, consent, and a defined incident-to-corrective-action cycle.",
+    "keyFacts": [
+      "Patient identification requires at least two identifiers before high-risk actions.",
+      "A sentinel event is a serious, often preventable event causing significant patient harm.",
+      "Root cause analysis targets the SYSTEM failure, not just the individual who made the error.",
+      "Patient safety (objective harm prevention) and patient experience/satisfaction (subjective perception) are related but distinct measures."
+    ],
+    "keyTerms": [
+      "Patient identification",
+      "Sentinel event",
+      "Root cause analysis (RCA)",
+      "Incident reporting",
+      "Informed consent",
+      "Patient experience"
+    ],
+    "commonConfusion": [
+      "Patient safety and patient satisfaction are often assumed to move together, but a patient can report high satisfaction despite an undetected safety lapse, or low satisfaction despite technically safe care — they are measured and managed separately."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Two-identifier patient identification is a foundational, cross-cutting safety requirement.",
+      "RCA targets systems, not individuals — this is central to a genuine no-blame safety culture.",
+      "Sentinel events specifically denote serious, often preventable harm — not every incident is a sentinel event."
+    ],
+    "commonTraps": [
+      "Assuming an incident-reporting culture exists to assign blame — it's designed to surface system gaps."
+    ],
+    "mustRemember": [
+      "Incident → Report → Investigate (RCA) → Corrective action → Monitor — the same closed loop, applied to patient safety."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Patient safety",
+        "termB": "Patient satisfaction",
+        "distinction": "Patient safety measures objective freedom from preventable harm; patient satisfaction measures the patient's subjective experience of care. A hospital can score well on one and poorly on the other."
+      }
+    ],
+    "possibleQuestions": [
+      "Describe the workflow from a reported incident to a system-level corrective action in a hospital setting."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABH — National Accreditation Board for Hospitals & Healthcare Providers",
+      "kind": "educational",
+      "url": "https://www.nabh.co/"
+    }
+  ],
+  "visualData": {
+    "comparisons": [
+      {
+        "termA": "Patient safety",
+        "termB": "Patient satisfaction",
+        "distinction": "Patient safety is about objectively preventing harm; patient satisfaction is about the patient's subjective experience of care. Both are tracked, but they are not the same measure."
+      }
+    ],
+    "questions": [
+      {
+        "id": "nabh-safety-q1",
+        "type": "mcq",
+        "prompt": "Root cause analysis (RCA) after an incident is primarily aimed at:",
+        "options": [
+          "Identifying which staff member to discipline",
+          "Identifying the underlying system failure that allowed the incident",
+          "Closing the incident report as quickly as possible",
+          "Avoiding regulatory scrutiny"
+        ],
+        "correctIndex": 1,
+        "explanation": "RCA targets systemic causes, not individual blame — central to an effective patient-safety culture."
+      },
+      {
+        "id": "nabh-safety-q2",
+        "type": "true-false",
+        "prompt": "True or False: High patient satisfaction scores guarantee that patient safety standards are being met.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correctIndex": 1,
+        "explanation": "Satisfaction and safety are related but distinct — a patient can be satisfied without an underlying safety lapse being detected."
+      }
+    ]
+  }
+}

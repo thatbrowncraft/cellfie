@@ -1,0 +1,192 @@
+{
+  "id": "quality-accreditation-fundamentals",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 1,
+  "title": "Quality & Accreditation Fundamentals",
+  "shortDescription": "The vocabulary every other chapter assumes you already have — quality, competence, conformity assessment, and the difference between accreditation, certification, registration, and inspection.",
+  "genZNote": "Before you learn NABL or NABH by name, learn what ‘demonstrating competence’ even means.",
+  "sections": [
+    {
+      "id": "what-is-quality",
+      "heading": "Quality, and the Words Built On It",
+      "body": "Quality, in this context, is not a vague ‘good product’ feeling — it is a measurable, defined level of fitness for purpose. Everything else in this subject is a system built to check, prove, and improve that fitness.\n\nQuality assurance (QA) is the planned set of activities that build confidence a result will be correct before it's even produced — SOPs, training, calibrated equipment. Quality control (QC) is the actual checking done alongside the work itself — running a known control sample alongside a patient sample. Quality management is the umbrella system that plans, coordinates, and reviews both. Quality improvement is what happens when data from all of the above is used to make the system better, not just to catch today's error.",
+      "bullets": [
+        "Quality assurance = prevention, built in before the work happens.",
+        "Quality control = detection, checked during/after the work.",
+        "Quality management = the whole coordinated system above both.",
+        "Quality improvement = using QA/QC data to raise the baseline, not just catch one bad run."
+      ]
+    },
+    {
+      "id": "conformity-assessment-terms",
+      "heading": "The Conformity Assessment Vocabulary",
+      "body": "‘Conformity assessment’ is the umbrella term ISO uses for any activity that determines whether a product, process, system, person, or body meets specified requirements. Accreditation, certification, registration, and inspection are all different flavours of conformity assessment — they differ in WHO is being assessed and WHO does the assessing.",
+      "bullets": [
+        "Standard — a documented set of requirements, agreed by a recognised body (e.g. ISO/IEC 17025).",
+        "Competence — the demonstrated ability to consistently do the work correctly, not just a claim of it.",
+        "Scope of accreditation — the exact list of tests/services a lab or hospital is accredited FOR; accreditation is never a blanket ‘this place is good’ stamp.",
+        "Assessment — the formal on-site/document evaluation an accreditation or certification body performs.",
+        "Audit — a systematic check against a standard or a system's own procedures; can be internal (self-check) or external.",
+        "Inspection — examination of a product, process, or service, followed by a judgement of conformity, usually without the ongoing surveillance cycle accreditation/certification carry."
+      ]
+    },
+    {
+      "id": "accreditation-vs-others",
+      "heading": "Accreditation vs. Certification vs. Registration vs. Inspection",
+      "body": "This single table is the most exam-relevant thing in this chapter — almost every subsequent chapter assumes you can place NABL, NABH, and ISO correctly on it.",
+      "table": {
+        "columnHeaders": [
+          "Concept",
+          "What it demonstrates",
+          "Typical example",
+          "Who performs it"
+        ],
+        "rows": [
+          [
+            "Accreditation",
+            "A body's technical COMPETENCE to perform a specific activity (testing, calibration, examination, inspection, certification)",
+            "A medical lab accredited to ISO 15189 by NABL",
+            "An accreditation body (NABL, NABH)"
+          ],
+          [
+            "Certification",
+            "Conformity of a management system, product, or person to a standard",
+            "A hospital's ISO 9001 quality-management certificate",
+            "A certification body (itself usually accredited by an accreditation body)"
+          ],
+          [
+            "Registration",
+            "A simple, often voluntary, listing/recording that an entity exists or meets a basic administrative requirement",
+            "A lab ‘registered’ with a government department",
+            "A registering authority (not necessarily a technical assessment)"
+          ],
+          [
+            "Inspection",
+            "A one-time or periodic examination against defined criteria, with a pass/fail or graded judgement",
+            "A regulatory inspection of a pharmacy",
+            "An inspection body or regulator"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Accreditation is formal recognition of a body's demonstrated technical competence to do a specific job — not a generic quality badge, and not the same as certification, registration, or inspection.",
+    "keyFacts": [
+      "Quality assurance prevents errors before they happen; quality control catches them during/after.",
+      "Conformity assessment is the umbrella term covering accreditation, certification, registration, and inspection.",
+      "Accreditation always has a defined SCOPE — never a blanket stamp of approval.",
+      "Accreditation assesses competence to DO something; certification usually assesses conformity of a system/product/person to a standard."
+    ],
+    "keyTerms": [
+      "Quality assurance",
+      "Quality control",
+      "Conformity assessment",
+      "Competence",
+      "Scope of accreditation",
+      "Accreditation",
+      "Certification",
+      "Registration",
+      "Inspection"
+    ],
+    "commonConfusion": [
+      "‘Certified lab’ and ‘accredited lab’ are used loosely in everyday speech, but a lab is accredited by NABL and may separately hold an ISO 9001 certification for its management system — the two are not interchangeable."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Accreditation demonstrates COMPETENCE to perform a specific technical activity, within a defined scope.",
+      "Certification demonstrates CONFORMITY of a management system, product, or person to a standard.",
+      "An accreditation body itself is assessed against ISO/IEC 17011 (requirements for accreditation bodies)."
+    ],
+    "commonTraps": [
+      "Assuming accreditation and certification are synonyms — exams frequently test the exact distinction.",
+      "Forgetting that accreditation is scope-limited — a lab accredited for one test is not automatically accredited for another."
+    ],
+    "mustRemember": [
+      "QA = prevention (before). QC = detection (during/after).",
+      "Conformity assessment is the umbrella; accreditation/certification/registration/inspection sit under it."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Quality assurance",
+        "termB": "Quality control",
+        "distinction": "QA is the planned, preventive system (SOPs, training, calibration schedules); QC is the actual checking activity done alongside the work (running controls, checking a result before release)."
+      },
+      {
+        "termA": "Accreditation",
+        "termB": "Certification",
+        "distinction": "Accreditation assesses a body's competence to perform a technical activity; certification assesses conformity of a system, product, or person to a standard — and certification bodies are often themselves accredited."
+      }
+    ],
+    "possibleQuestions": [
+      "Differentiate between accreditation, certification, and registration with one example each.",
+      "Why is scope of accreditation important, and what happens if a lab tests outside its accredited scope?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Quality Council of India (QCI)",
+      "kind": "educational",
+      "url": "https://www.qcin.org/"
+    },
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    }
+  ],
+  "visualData": {
+    "comparisons": [
+      {
+        "termA": "Quality assurance",
+        "termB": "Quality control",
+        "distinction": "QA is preventive and planned (SOPs, training, calibration); QC is the actual checking done during or after the work (running control samples, verifying a result)."
+      },
+      {
+        "termA": "Accreditation",
+        "termB": "Certification",
+        "distinction": "Accreditation = competence to perform a specific technical activity, assessed by an accreditation body. Certification = conformity of a system/product/person to a standard, assessed by a certification body."
+      }
+    ],
+    "questions": [
+      {
+        "id": "qaf-q1",
+        "type": "mcq",
+        "prompt": "Which of these best describes ‘scope of accreditation’?",
+        "options": [
+          "The overall reputation of a laboratory",
+          "The exact list of tests/services a body is accredited to perform",
+          "The number of years a lab has been operating",
+          "The certificate number issued to a lab"
+        ],
+        "correctIndex": 1,
+        "explanation": "Accreditation is never a blanket approval — it always applies to a defined, listed scope of activities."
+      },
+      {
+        "id": "qaf-q2",
+        "type": "mcq",
+        "prompt": "A hospital's ISO 9001 quality-management system is assessed by an external body and found conformant. This is an example of:",
+        "options": [
+          "Accreditation",
+          "Certification",
+          "Registration",
+          "Inspection"
+        ],
+        "correctIndex": 1,
+        "explanation": "Assessing conformity of a management system to a standard is certification, not accreditation."
+      },
+      {
+        "id": "qaf-q3",
+        "type": "true-false",
+        "prompt": "True or False: Quality control activities happen BEFORE the test is performed, to prevent errors.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correctIndex": 1,
+        "explanation": "That describes quality ASSURANCE. Quality control happens during/after the work, as a check."
+      }
+    ]
+  }
+}

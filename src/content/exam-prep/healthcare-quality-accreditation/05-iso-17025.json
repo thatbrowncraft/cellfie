@@ -1,0 +1,144 @@
+{
+  "id": "iso-17025",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 5,
+  "title": "ISO/IEC 17025",
+  "shortDescription": "The standard behind every NABL-accredited testing and calibration laboratory — competence, impartiality, and the general requirements every non-medical lab is assessed against.",
+  "genZNote": "If a lab tests materials, products, or measures things (not human specimens), this is its standard.",
+  "sections": [
+    {
+      "id": "purpose",
+      "heading": "Purpose and Scope",
+      "body": "ISO/IEC 17025, ‘General requirements for the competence of testing and calibration laboratories’, is the international standard accreditation bodies (including NABL) use to accredit testing and calibration laboratories — everything from chemical/material testing to instrument calibration, excluding medical laboratories (which use ISO 15189 instead). The current edition is ISO/IEC 17025:2017."
+    },
+    {
+      "id": "core-requirements",
+      "heading": "Core Requirements",
+      "bullets": [
+        "Competence — personnel, methods, and equipment demonstrably capable of producing valid results.",
+        "Impartiality — the lab's results and judgements must not be influenced by commercial or other pressure.",
+        "Confidentiality — client information and results are protected.",
+        "Resources — suitable personnel, facilities, equipment, and environmental conditions.",
+        "Methods — validated/verified test and calibration methods, appropriately selected for the work.",
+        "Sampling and handling of test/calibration items — controlled from receipt to disposal.",
+        "Technical records and reporting — records that allow a result to be reconstructed, and reports that meet defined content requirements.",
+        "Quality management, nonconforming work, corrective action, internal audits, management review, and continual improvement — the same closed-loop cycle used throughout this subject."
+      ]
+    },
+    {
+      "id": "iso15189-vs-17025",
+      "heading": "ISO 15189 vs. ISO/IEC 17025",
+      "table": {
+        "columnHeaders": [
+          "ISO 15189",
+          "ISO/IEC 17025"
+        ],
+        "rows": [
+          [
+            "Medical laboratories examining human specimens",
+            "Testing and calibration laboratories (non-medical)"
+          ],
+          [
+            "Adds clinical/patient-centred requirements (consent, critical results, clinical advice)",
+            "General competence requirements, no clinical/patient dimension"
+          ],
+          [
+            "2022 is current edition",
+            "2017 is current edition"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "ISO/IEC 17025 is the international standard for the general competence of testing and calibration laboratories — the standard NABL uses for non-medical labs. Current edition: 2017.",
+    "keyFacts": [
+      "Current edition is ISO/IEC 17025:2017.",
+      "Covers testing laboratories AND calibration laboratories under one standard.",
+      "Impartiality and confidentiality are explicit, named requirements — not just implied good practice.",
+      "ISO 15189's 2022 structure was deliberately aligned to match ISO/IEC 17025:2017's format."
+    ],
+    "keyTerms": [
+      "ISO/IEC 17025",
+      "Impartiality",
+      "Confidentiality",
+      "Technical records",
+      "Testing laboratory",
+      "Calibration laboratory"
+    ],
+    "commonConfusion": [
+      "A calibration lab and a testing lab are both accredited under the SAME standard (ISO/IEC 17025) — they are two NABL programmes sharing one standard, not two different standards."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ISO/IEC 17025:2017 is the current edition.",
+      "Impartiality and confidentiality are standalone named requirements in this standard.",
+      "Testing labs and calibration labs share this one standard — the split is by NABL programme, not by ISO standard."
+    ],
+    "commonTraps": [
+      "Applying ISO/IEC 17025 to a medical/diagnostic laboratory — that's ISO 15189's territory.",
+      "Assuming testing and calibration labs need different standards — they don't."
+    ],
+    "mustRemember": [
+      "ISO/IEC 17025 → testing and calibration labs (non-medical). ISO 15189 → medical labs."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Testing laboratory",
+        "termB": "Calibration laboratory",
+        "distinction": "Both are accredited under ISO/IEC 17025. Testing labs determine properties of a sample/product; calibration labs establish the accuracy of measuring instruments against traceable references."
+      }
+    ],
+    "possibleQuestions": [
+      "A testing laboratory performs analytical testing and wants accreditation based on competence requirements. Which standard is relevant?",
+      "Name two requirements unique to ISO/IEC 17025 that aren't emphasised the same way in general quality standards."
+    ]
+  },
+  "sources": [
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    },
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    },
+    {
+      "name": "Cellfie's own ISO subject (Exam Prep → ISO) — for standard-by-standard depth",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "iso17025-q1",
+        "type": "mcq",
+        "prompt": "A testing laboratory performs analytical testing and wants accreditation based on competence requirements. Which standard is relevant?",
+        "options": [
+          "ISO 15189",
+          "ISO 17034",
+          "ISO/IEC 17025",
+          "ISO 9001"
+        ],
+        "correctIndex": 2,
+        "explanation": "ISO/IEC 17025 is the general competence standard for testing and calibration laboratories."
+      },
+      {
+        "id": "iso17025-q2",
+        "type": "mcq",
+        "prompt": "Which requirement in ISO/IEC 17025 specifically addresses freedom from commercial or other pressure influencing lab results?",
+        "options": [
+          "Confidentiality",
+          "Impartiality",
+          "Traceability",
+          "Method validation"
+        ],
+        "correctIndex": 1,
+        "explanation": "Impartiality is a standalone, explicitly named requirement in ISO/IEC 17025."
+      }
+    ]
+  }
+}

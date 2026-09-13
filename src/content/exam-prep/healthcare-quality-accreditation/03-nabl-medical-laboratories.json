@@ -1,0 +1,171 @@
+{
+  "id": "nabl-medical-laboratories",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 3,
+  "title": "NABL for Medical Laboratories",
+  "shortDescription": "The most exam-relevant chapter for microbiology and clinical-lab students — the pre-examination, examination, and post-examination process, and everything a medical lab must control to earn and keep accreditation.",
+  "genZNote": "This is the chapter where ‘accreditation’ stops being an abstract word and becomes your actual daily bench routine.",
+  "sections": [
+    {
+      "id": "what-is-medical-lab",
+      "heading": "What Is a Medical Laboratory, and Why Does Accreditation Matter?",
+      "body": "A medical laboratory examines materials derived from the human body — blood, urine, tissue, swabs — to provide information for diagnosis, monitoring, treatment, and prevention of disease. Because clinical decisions are made directly on a lab's results, an error here has a direct patient-safety consequence, not just a quality-metric one.\n\nAccreditation to ISO 15189 gives an independent, ongoing check that a lab's people, equipment, methods, and processes are competent — not a one-time inspection, but a maintained state."
+    },
+    {
+      "id": "three-phase-process",
+      "heading": "The Three-Phase Examination Process",
+      "body": "ISO 15189 and NABL both structure a medical lab's work into three phases. Nearly every quality-control concept in this chapter attaches to one of these three.",
+      "steps": [
+        {
+          "name": "Pre-examination",
+          "explanation": "Everything before the sample is actually tested: patient/sample identification, correct sample collection, proper transport and storage, and request handling.",
+          "purpose": "Most laboratory errors worldwide happen here, not during testing itself — a mislabelled sample can never be fixed by a perfect test."
+        },
+        {
+          "name": "Examination",
+          "explanation": "The actual testing: applying validated/verified methods, running internal quality control alongside patient samples, using calibrated equipment and controlled reagents.",
+          "purpose": "This is where analytical accuracy and precision are actually produced."
+        },
+        {
+          "name": "Post-examination",
+          "explanation": "Result validation, interpretation, timely reporting, flagging and communicating critical results, and appropriate storage/retention of samples and records.",
+          "purpose": "A correct result that's reported late, to the wrong person, or without a critical-value alert can still harm the patient."
+        }
+      ]
+    },
+    {
+      "id": "quality-control-in-practice",
+      "heading": "Quality Control & Quality Assurance on the Bench",
+      "bullets": [
+        "Internal quality control (IQC) — running known control materials alongside patient samples, every run, to catch drift before it reaches a patient result.",
+        "External quality assessment (EQA) / proficiency testing (PT) — periodically testing a sample of unknown value sent by an outside provider, to compare your lab's result against peer labs.",
+        "Equipment management — calibration, maintenance, and performance verification on a defined schedule, with records.",
+        "Reagent management — correct storage, lot tracking, and expiry control.",
+        "Method verification/validation — confirming a method performs as claimed (verification) or establishing its performance from scratch (validation) before it's used on patients.",
+        "Personnel competence — documented training, assessment, and periodic re-assessment of every person performing or authorising a result.",
+        "Traceability and measurement uncertainty — results traceable to recognised reference standards where applicable, with a documented understanding of how much uncertainty a measurement carries."
+      ]
+    },
+    {
+      "id": "nonconformity-and-risk",
+      "heading": "Nonconforming Work, Corrective Action, and Risk",
+      "body": "When something doesn't meet requirements — a failed control, a complaint, an equipment fault — it's nonconforming work. The lab must contain it (stop it reaching a patient report), investigate the root cause, take corrective action so it doesn't recur, and verify that the action actually worked. Risk management sits alongside this proactively: identifying what COULD go wrong in a process before it does, and controlling it in advance rather than only reacting after an error."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "NABL accredits medical laboratories against ISO 15189, assessing competence across the pre-examination, examination, and post-examination phases of patient testing.",
+    "keyFacts": [
+      "IQC checks precision/accuracy during routine testing; EQA/PT compares a lab's performance against outside peer labs.",
+      "Most pre-analytical errors occur before the sample is ever tested — identification and collection are critical control points.",
+      "Method verification confirms an existing method works as claimed; method validation establishes a new/modified method's performance from scratch.",
+      "Nonconforming work must be contained, investigated, corrected, and the correction's effectiveness verified."
+    ],
+    "keyTerms": [
+      "Pre-examination",
+      "Examination",
+      "Post-examination",
+      "IQC",
+      "EQA/PT",
+      "Critical result",
+      "Method verification",
+      "Method validation",
+      "Traceability",
+      "Measurement uncertainty",
+      "Nonconforming work"
+    ],
+    "commonConfusion": [
+      "IQC checks the lab's OWN ongoing performance run-to-run. EQA/PT checks the lab's performance AGAINST other labs, using an outside provider's samples — they are complementary, not substitutes for each other."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The three-phase process (pre-examination → examination → post-examination) is the backbone of ISO 15189 and NABL medical-lab assessment.",
+      "IQC is internal and continuous; EQA/PT is external and periodic.",
+      "Critical result reporting is a post-examination requirement with direct patient-safety weight."
+    ],
+    "commonTraps": [
+      "Assuming quality control only applies during testing — pre- and post-examination steps are assessed just as heavily.",
+      "Confusing method verification (confirming an existing method) with method validation (establishing a new one)."
+    ],
+    "mustRemember": [
+      "Sample identification and collection errors (pre-examination) are the single most common source of lab error.",
+      "IQC = internal, ongoing. EQA/PT = external, periodic, peer-compared."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Internal quality control (IQC)",
+        "termB": "External quality assessment / proficiency testing (EQA/PT)",
+        "distinction": "IQC uses the lab's own control materials, run alongside patient samples, to monitor day-to-day precision. EQA/PT uses samples from an outside provider to compare the lab's results against other participating laboratories."
+      }
+    ],
+    "possibleQuestions": [
+      "Explain the three-phase examination process with one quality risk from each phase.",
+      "A medical laboratory wants to demonstrate competence in its examination processes end-to-end. Which accreditation framework is most directly relevant, and why?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    },
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    }
+  ],
+  "visualData": {
+    "pathways": [
+      {
+        "title": "The Examination Process, Start to Finish",
+        "steps": [
+          "Request received — correct patient and test identified",
+          "Sample collected, labelled, and transported under proper conditions (Pre-examination)",
+          "Sample tested with validated methods, IQC run alongside (Examination)",
+          "Result reviewed, validated, and critical values flagged (Post-examination)",
+          "Report issued to the requesting clinician, with records retained"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "id": "nabl-med-q1",
+        "type": "mcq",
+        "prompt": "A mislabelled blood sample reaches the lab. Which phase of the examination process does this error belong to?",
+        "options": [
+          "Pre-examination",
+          "Examination",
+          "Post-examination",
+          "None — labelling is outside the examination process"
+        ],
+        "correctIndex": 0,
+        "explanation": "Sample identification and collection are pre-examination activities — and the single most common source of laboratory error."
+      },
+      {
+        "id": "nabl-med-q2",
+        "type": "mcq",
+        "prompt": "Running a known control sample alongside every batch of patient samples is an example of:",
+        "options": [
+          "External quality assessment",
+          "Internal quality control",
+          "Method validation",
+          "Proficiency testing"
+        ],
+        "correctIndex": 1,
+        "explanation": "This is IQC — an internal, ongoing check run by the lab itself."
+      },
+      {
+        "id": "nabl-med-q3",
+        "type": "true-false",
+        "prompt": "True or False: Method verification and method validation mean exactly the same thing.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correctIndex": 1,
+        "explanation": "Verification confirms an already-established method performs as claimed in your lab; validation establishes the performance of a new or modified method from scratch."
+      }
+    ]
+  }
+}

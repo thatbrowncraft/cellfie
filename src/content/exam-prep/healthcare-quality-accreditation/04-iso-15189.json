@@ -1,0 +1,136 @@
+{
+  "id": "iso-15189",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 4,
+  "title": "ISO 15189",
+  "shortDescription": "The standard NABL actually assesses medical laboratories against — what it requires, why it's structured the way it is, and how it differs from ISO/IEC 17025.",
+  "genZNote": "Every medical lab's NABL certificate has this exact standard's name printed on it. Know what it actually covers.",
+  "sections": [
+    {
+      "id": "what-is-iso15189",
+      "heading": "What ISO 15189 Is",
+      "body": "ISO 15189, ‘Medical laboratories — Requirements for quality and competence’, is the international standard NABL (and equivalent accreditation bodies worldwide) use to assess medical laboratories. The current edition is ISO 15189:2022, which replaced the ISO 15189:2012 edition — exams should treat 2022 as current and 2012 as the historical/previous edition. The 2022 edition also folded in point-of-care testing (POCT) requirements that previously sat in a separate standard, and restructured itself to align with ISO/IEC 17025:2017's format.",
+      "bullets": [
+        "Applies to: medical laboratories developing their own management systems and demonstrating competence.",
+        "Also applicable to point-of-care testing (POCT), since the 2022 edition.",
+        "Used by accreditation bodies (like NABL) as the criteria for accrediting medical laboratories."
+      ]
+    },
+    {
+      "id": "what-it-covers",
+      "heading": "What the Standard Actually Requires",
+      "body": "ISO 15189 combines general quality-management requirements with technical/medical-specific competence requirements, covering the full patient-testing journey in student-friendly terms:",
+      "bullets": [
+        "Personnel — documented competence, training, and authorisation for every role.",
+        "Facilities and environment — conditions suitable for the work performed (temperature, safety, space).",
+        "Equipment, reagents, and consumables — selection, calibration, maintenance, and acceptance criteria.",
+        "Pre-examination, examination, and post-examination processes — the same three phases covered in the NABL Medical Laboratories chapter.",
+        "Information management — how patient and quality data are handled, protected, and retained.",
+        "Risk management — identifying and controlling risks to patients and to result quality, aligned with dedicated risk-management standards for laboratories.",
+        "Nonconforming work, corrective action, and continual improvement — the same closed-loop cycle running throughout this subject."
+      ]
+    },
+    {
+      "id": "scope-note",
+      "heading": "Where This Sits in Cellfie",
+      "body": "Cellfie's ISO subject (Exam Prep → ISO) has a full standalone chapter walking through ISO 15189 clause-by-clause for anyone studying ISO generally. This chapter deliberately stays shorter and keeps its focus on why NABL uses this specific standard to accredit medical laboratories — the accreditation angle, not the full standard-mechanics angle."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "ISO 15189 is the international standard for medical laboratory quality and competence — the exact standard NABL assesses medical laboratories against. Current edition: ISO 15189:2022 (replaces the 2012 edition).",
+    "keyFacts": [
+      "Current edition is ISO 15189:2022 — the 2012 edition is now historical/superseded.",
+      "The 2022 edition integrated point-of-care testing (POCT) requirements directly into the standard.",
+      "ISO 15189's 2022 structure was aligned with ISO/IEC 17025:2017's format.",
+      "ISO 15189 applies specifically to laboratories examining materials derived from the human body."
+    ],
+    "keyTerms": [
+      "ISO 15189",
+      "Medical laboratory",
+      "Point-of-care testing (POCT)",
+      "Competence",
+      "Current edition vs historical edition"
+    ],
+    "commonConfusion": [
+      "ISO 15189 (medical laboratories) and ISO/IEC 17025 (testing/calibration laboratories) are structurally similar and both used by NABL — but they apply to different kinds of laboratories and are never interchangeable."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ISO 15189:2022 is the current edition; ISO 15189:2012 is historical.",
+      "NABL accredits MEDICAL laboratories specifically against ISO 15189, not ISO/IEC 17025.",
+      "POCT is now covered within ISO 15189 itself (since 2022), not a separate standard."
+    ],
+    "commonTraps": [
+      "Citing ISO 15189:2012 as current in an exam — always check which edition a question implies.",
+      "Applying ISO 15189 to a general testing lab (chemical/environmental) instead of ISO/IEC 17025."
+    ],
+    "mustRemember": [
+      "ISO 15189 → medical laboratories. ISO/IEC 17025 → testing and calibration laboratories."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "ISO 15189",
+        "termB": "ISO/IEC 17025",
+        "distinction": "ISO 15189 covers medical laboratories examining human specimens for diagnosis/treatment. ISO/IEC 17025 covers general testing and calibration laboratories. Both are used by NABL, for different laboratory types."
+      }
+    ],
+    "possibleQuestions": [
+      "Which standard is primarily associated with the competence of medical laboratories?",
+      "What changed in ISO 15189's 2022 edition compared to 2012?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    },
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    },
+    {
+      "name": "Cellfie's own ISO subject (Exam Prep → ISO) — for standard-by-standard depth",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "comparisons": [
+      {
+        "termA": "ISO 15189",
+        "termB": "ISO/IEC 17025",
+        "distinction": "ISO 15189 is for medical laboratories (human specimen examination); ISO/IEC 17025 is for general testing and calibration laboratories. NABL uses both, for different accreditation programmes."
+      }
+    ],
+    "questions": [
+      {
+        "id": "iso15189-q1",
+        "type": "mcq",
+        "prompt": "Which standard is primarily associated with competence of medical laboratories?",
+        "options": [
+          "ISO 15189",
+          "ISO 17034",
+          "ISO/IEC 17025",
+          "ISO/IEC 17043"
+        ],
+        "correctIndex": 0,
+        "explanation": "ISO 15189 is specifically the medical laboratories standard; the others cover reference materials, general testing/calibration, and proficiency testing respectively."
+      },
+      {
+        "id": "iso15189-q2",
+        "type": "mcq",
+        "prompt": "What is the CURRENT edition of ISO 15189?",
+        "options": [
+          "ISO 15189:2003",
+          "ISO 15189:2012",
+          "ISO 15189:2022",
+          "There is no fixed edition"
+        ],
+        "correctIndex": 2,
+        "explanation": "ISO 15189:2022 is the current, fourth edition, replacing 2012."
+      }
+    ]
+  }
+}

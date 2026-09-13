@@ -1,0 +1,132 @@
+{
+  "id": "international-accreditation-bodies",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 14,
+  "title": "International Accreditation Bodies",
+  "shortDescription": "The international cooperation layer that makes an NABL or NABH accreditation mean something beyond India's borders — with one major, very recent structural change.",
+  "genZNote": "Accreditation bodies get accredited too, in a sense — this is that layer.",
+  "sections": [
+    {
+      "id": "current-vs-historical",
+      "heading": "Current vs. Historical — A Major Recent Change",
+      "body": "Until recently, two separate international cooperation bodies existed: the International Laboratory Accreditation Cooperation (ILAC), covering laboratory and inspection accreditation, and the International Accreditation Forum (IAF), covering management-system and product certification accreditation. As of 1 January 2026, these have been brought together into a single new organisation: Global Accreditation Cooperation Incorporated (GACI). Treat ILAC and IAF as HISTORICAL/legacy names for what is now unified under GACI — current material should refer to GACI, while understanding ILAC/IAF for older references."
+    },
+    {
+      "id": "regional-and-healthcare",
+      "heading": "Regional and Healthcare-Specific Bodies",
+      "bullets": [
+        "APAC (Asia Pacific Accreditation Cooperation) — the regional accreditation cooperation body for laboratory and certification accreditation across the Asia-Pacific region; NABL's regional-level mutual recognition partner.",
+        "ISQua (International Society for Quality in Health Care) — operates in a different layer entirely: rather than accrediting individual hospitals, ISQua evaluates and recognises HEALTHCARE ACCREDITATION PROGRAMMES and standards themselves (a form of meta-accreditation). NABH's own standards have gone through this kind of external evaluation against ISQua's guidelines."
+      ]
+    },
+    {
+      "id": "three-layers",
+      "heading": "Don't Confuse These Three Layers",
+      "table": {
+        "columnHeaders": [
+          "Layer",
+          "Example",
+          "What it actually does"
+        ],
+        "rows": [
+          [
+            "Accreditation body",
+            "NABL, NABH",
+            "Directly accredits individual laboratories or hospitals"
+          ],
+          [
+            "Accreditation cooperation",
+            "GACI (current), formerly ILAC/IAF; APAC (regional)",
+            "Creates mutual recognition arrangements BETWEEN national accreditation bodies — doesn't accredit individual labs/hospitals itself"
+          ],
+          [
+            "Healthcare accreditation organisation",
+            "ISQua",
+            "Evaluates and recognises healthcare accreditation PROGRAMMES/standards themselves, not individual hospitals"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "International accreditation cooperation now runs primarily through Global Accreditation Cooperation Incorporated (GACI, formed 1 January 2026 from the earlier ILAC and IAF), alongside regional bodies like APAC and healthcare-specific meta-accreditation via ISQua.",
+    "keyFacts": [
+      "GACI (Global Accreditation Cooperation Incorporated) formed on 1 January 2026, merging ILAC and IAF.",
+      "ILAC (laboratories/inspection) and IAF (management systems/product certification) are now historical/legacy names for what GACI unifies.",
+      "APAC is the regional (Asia-Pacific) accreditation cooperation body.",
+      "ISQua evaluates healthcare accreditation programmes/standards themselves, not individual hospitals directly."
+    ],
+    "keyTerms": [
+      "GACI",
+      "ILAC (historical)",
+      "IAF (historical)",
+      "APAC",
+      "ISQua",
+      "Mutual recognition arrangement (MRA)"
+    ],
+    "commonConfusion": [
+      "An accreditation cooperation body (GACI/APAC) does not itself accredit individual laboratories or hospitals — it creates mutual recognition between NATIONAL accreditation bodies like NABL and NABH."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "GACI is current (from 1 Jan 2026); ILAC and IAF are historical/legacy names for the two bodies it merged.",
+      "ISQua works at the level of accreditation PROGRAMMES, not individual hospitals — a distinct layer from NABH itself."
+    ],
+    "commonTraps": [
+      "Citing ILAC or IAF as currently separate, active bodies without noting the GACI merger.",
+      "Confusing an accreditation cooperation body with an accreditation body — cooperation bodies don't accredit individual labs/hospitals."
+    ],
+    "mustRemember": [
+      "Accreditation body (NABL/NABH) ≠ Accreditation cooperation (GACI/APAC) ≠ Healthcare accreditation organisation (ISQua) — three distinct layers."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Accreditation body",
+        "termB": "Accreditation cooperation",
+        "distinction": "An accreditation body (NABL, NABH) directly accredits individual laboratories or hospitals. An accreditation cooperation body (GACI, APAC) creates mutual recognition between different countries' accreditation bodies — it doesn't accredit individual labs or hospitals itself."
+      }
+    ],
+    "possibleQuestions": [
+      "What replaced ILAC and IAF, and when did this change take effect?",
+      "How does ISQua's role differ from NABH's role in healthcare accreditation?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "intl-acc-q1",
+        "type": "mcq",
+        "prompt": "As of 1 January 2026, ILAC and IAF have been brought together into which single organisation?",
+        "options": [
+          "Quality Council of India (QCI)",
+          "Global Accreditation Cooperation Incorporated (GACI)",
+          "Asia Pacific Accreditation Cooperation (APAC)",
+          "International Society for Quality in Health Care (ISQua)"
+        ],
+        "correctIndex": 1,
+        "explanation": "GACI was established on 1 January 2026, unifying the earlier work of ILAC and IAF."
+      },
+      {
+        "id": "intl-acc-q2",
+        "type": "mcq",
+        "prompt": "ISQua's role in healthcare accreditation is best described as:",
+        "options": [
+          "Directly accrediting individual hospitals worldwide",
+          "Evaluating and recognising healthcare accreditation programmes/standards themselves",
+          "Setting India's national quality policy",
+          "Replacing NABH in India"
+        ],
+        "correctIndex": 1,
+        "explanation": "ISQua operates at the meta level — evaluating accreditation programmes and standards, not accrediting individual hospitals directly."
+      }
+    ]
+  }
+}

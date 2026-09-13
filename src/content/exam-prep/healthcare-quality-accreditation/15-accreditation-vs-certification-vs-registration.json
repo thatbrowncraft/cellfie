@@ -1,0 +1,167 @@
+{
+  "id": "accreditation-vs-certification-vs-registration",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 15,
+  "title": "Accreditation vs Certification vs Registration",
+  "shortDescription": "The deepest possible dive into the single distinction this entire subject keeps coming back to — six related concepts, one table, and the traps built around them.",
+  "genZNote": "If you only remember one table from this whole subject, make it this one.",
+  "sections": [
+    {
+      "id": "the-full-table",
+      "heading": "The Full Comparison",
+      "table": {
+        "columnHeaders": [
+          "Concept",
+          "What it demonstrates",
+          "Typical example",
+          "Who performs it"
+        ],
+        "rows": [
+          [
+            "Accreditation",
+            "A body's technical COMPETENCE to perform a specific activity, within a defined scope",
+            "NABL accrediting a medical laboratory against ISO 15189",
+            "An accreditation body (NABL, NABH)"
+          ],
+          [
+            "Certification",
+            "Conformity of a management system, product, or person to a specific standard",
+            "A hospital's ISO 9001 certificate",
+            "A certification body (often itself accredited)"
+          ],
+          [
+            "Registration",
+            "A basic administrative listing or recording, often without independent technical assessment",
+            "A laboratory registered with a local regulatory department",
+            "A registering authority"
+          ],
+          [
+            "Inspection",
+            "A one-time or periodic examination against defined criteria, with a pass/fail or graded outcome",
+            "A food-safety inspection of a facility",
+            "An inspection body or regulator"
+          ],
+          [
+            "Audit",
+            "Systematic verification against a standard or the organisation's own documented procedures",
+            "An internal audit of a lab's SOP compliance",
+            "Internal auditors, or an external audit team"
+          ],
+          [
+            "Assessment",
+            "The formal evaluation activity accreditation/certification bodies use to make their decision",
+            "NABL's on-site technical assessment of a laboratory",
+            "Trained assessors appointed by the accreditation/certification body"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "why-the-hierarchy-matters",
+      "heading": "Why the Layering Matters",
+      "body": "Notice the layering: a certification BODY can itself be accredited (by a body like NABCB). An accreditation body's own competence is, in turn, benchmarked against ISO/IEC 17017/17011-type requirements for accreditation bodies themselves, and recognised through international cooperation (GACI, APAC). Accreditation sits structurally 'above' certification in this sense — it's often the mechanism that gives certification its credibility in the first place."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Accreditation, certification, registration, inspection, audit, and assessment are six related but distinct conformity-assessment activities, differing in what they demonstrate and who performs them.",
+    "keyFacts": [
+      "Accreditation = competence to perform an activity, within a defined scope.",
+      "Certification = conformity of a system/product/person to a standard.",
+      "Registration = a basic administrative listing, often without independent technical assessment.",
+      "A certification body can itself be accredited — accreditation often underpins certification's credibility."
+    ],
+    "keyTerms": [
+      "Accreditation",
+      "Certification",
+      "Registration",
+      "Inspection",
+      "Audit",
+      "Assessment"
+    ],
+    "commonConfusion": [
+      "People often use 'accredited', 'certified', and 'registered' as interchangeable praise words in everyday speech — in an exam context, each has a precise, distinct technical meaning."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Accreditation bodies can accredit certification bodies — the two concepts nest, they don't compete.",
+      "Registration is generally the lowest-assurance of the six concepts — often no independent technical assessment at all."
+    ],
+    "commonTraps": [
+      "Treating registration as equivalent in rigour to accreditation — registration is typically administrative, not a competence assessment.",
+      "Assuming inspection includes ongoing surveillance the way accreditation/certification do — inspection is often a single point-in-time judgement."
+    ],
+    "mustRemember": [
+      "Accreditation → competence. Certification → conformity. Registration → administrative listing. Inspection → point-in-time judgement."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Accreditation",
+        "termB": "Certification",
+        "distinction": "Accreditation assesses a body's COMPETENCE to perform a technical activity. Certification assesses CONFORMITY of a system, product, or person to a standard. Certification bodies are themselves often accredited."
+      },
+      {
+        "termA": "Registration",
+        "termB": "Accreditation",
+        "distinction": "Registration is typically a basic administrative listing, often without independent technical assessment. Accreditation involves ongoing, assessed technical competence evaluation."
+      }
+    ],
+    "possibleQuestions": [
+      "Differentiate accreditation, certification, registration, and inspection with one real-world example each.",
+      "Why can a certification body itself be accredited? What does that add?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "Quality Council of India (QCI)",
+      "kind": "educational",
+      "url": "https://www.qcin.org/"
+    },
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "avc-q1",
+        "type": "mcq",
+        "prompt": "Which best demonstrates 'certification' rather than 'accreditation'?",
+        "options": [
+          "NABL assessing a lab's competence against ISO 15189",
+          "An external body confirming a hospital's ISO 9001 quality-management system conforms to the standard",
+          "A regulator inspecting a pharmacy once a year",
+          "A lab being listed in a government registry"
+        ],
+        "correctIndex": 1,
+        "explanation": "Confirming conformity of a management system to a standard is certification."
+      },
+      {
+        "id": "avc-q2",
+        "type": "mcq",
+        "prompt": "Which of the six concepts (accreditation, certification, registration, inspection, audit, assessment) typically involves the LEAST independent technical assessment?",
+        "options": [
+          "Accreditation",
+          "Certification",
+          "Registration",
+          "Assessment"
+        ],
+        "correctIndex": 2,
+        "explanation": "Registration is often a basic administrative listing, without the technical competence evaluation accreditation/certification require."
+      },
+      {
+        "id": "avc-q3",
+        "type": "true-false",
+        "prompt": "True or False: A certification body can itself be accredited by an accreditation body.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correctIndex": 0,
+        "explanation": "Yes — accreditation bodies like NABCB accredit certification bodies, adding a layer of independently verified credibility."
+      }
+    ]
+  }
+}

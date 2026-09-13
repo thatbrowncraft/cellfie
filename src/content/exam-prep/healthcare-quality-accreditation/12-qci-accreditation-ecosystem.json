@@ -1,0 +1,137 @@
+{
+  "id": "qci-accreditation-ecosystem",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 12,
+  "title": "QCI & Accreditation Ecosystem",
+  "shortDescription": "The parent organisation behind NABL and NABH — and why 'QCI accredits hospitals' or 'NABL accredits hospitals' are both wrong in exactly the same way.",
+  "genZNote": "QCI is the umbrella. NABL and NABH are two of the poles holding it up — not each other.",
+  "sections": [
+    {
+      "id": "what-is-qci",
+      "heading": "What Is QCI?",
+      "body": "The Quality Council of India (QCI) is an autonomous national body set up to establish and operate an accreditation structure in the country, set up under the Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce and Industry. QCI itself doesn't perform individual laboratory or hospital assessments — it operates THROUGH a set of constituent boards, each responsible for a distinct accreditation domain."
+    },
+    {
+      "id": "qci-structure",
+      "heading": "QCI's Constituent Boards",
+      "body": "Do not imply that NABL and NABH are the same organisation — they are two separate boards under the same parent.",
+      "table": {
+        "columnHeaders": [
+          "Board",
+          "What it accredits"
+        ],
+        "rows": [
+          [
+            "NABL",
+            "Laboratories — testing, calibration, medical, PT providers, reference material producers, biobanks"
+          ],
+          [
+            "NABH",
+            "Hospitals and other healthcare organisations/providers"
+          ],
+          [
+            "NABCB",
+            "Certification bodies (the bodies that certify management systems and products against standards like ISO 9001)"
+          ],
+          [
+            "Other constituent boards",
+            "QCI also includes boards covering areas such as education/training and broader quality promotion — outside this subject's scope, but worth knowing QCI's structure isn't limited to just NABL and NABH"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "why-it-matters",
+      "heading": "Why the Ecosystem View Matters",
+      "body": "Seeing NABL and NABH as siblings under QCI — rather than as competitors or the same body — resolves most of the confusion students have with this subject. If a question is about a LABORATORY'S competence, NABL is in play. If it's about a HOSPITAL or healthcare ORGANISATION'S quality and safety, NABH is in play. QCI is the answer only when a question is specifically about India's overall accreditation infrastructure, not about a specific lab or hospital."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Quality Council of India (QCI) is the autonomous parent body operating India's accreditation structure through constituent boards — including NABL (laboratories) and NABH (hospitals/healthcare organisations), which are siblings, not the same organisation.",
+    "keyFacts": [
+      "QCI is set up under DPIIT, Ministry of Commerce and Industry.",
+      "QCI does not itself assess individual labs or hospitals — its constituent boards do.",
+      "NABL and NABH are both constituent boards of QCI, but accredit entirely different domains.",
+      "NABCB is another QCI constituent board, accrediting certification bodies (not labs or hospitals directly)."
+    ],
+    "keyTerms": [
+      "QCI",
+      "Constituent board",
+      "NABL",
+      "NABH",
+      "NABCB"
+    ],
+    "commonConfusion": [
+      "QCI, NABL, and NABH are three distinct organisations in a parent-child relationship (QCI is the parent; NABL and NABH are two of its children) — never describe any two of them as the same body."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "QCI is the parent umbrella; NABL, NABH, and NABCB are among its constituent boards.",
+      "NABL and NABH are siblings under QCI, not the same organisation and not each accrediting the other's domain."
+    ],
+    "commonTraps": [
+      "Saying 'QCI accredits laboratories' — QCI operates the ecosystem; NABL is the board that actually accredits labs."
+    ],
+    "mustRemember": [
+      "QCI → parent. NABL → laboratories. NABH → hospitals/healthcare organisations. NABCB → certification bodies."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "NABL",
+        "termB": "NABH",
+        "distinction": "Both are constituent boards of QCI. NABL accredits laboratories; NABH accredits hospitals and healthcare organisations. Neither accredits the other's domain."
+      }
+    ],
+    "possibleQuestions": [
+      "Explain the relationship between QCI, NABL, and NABH with a simple hierarchy."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Quality Council of India (QCI)",
+      "kind": "educational",
+      "url": "https://www.qcin.org/"
+    },
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    },
+    {
+      "name": "NABH — National Accreditation Board for Hospitals & Healthcare Providers",
+      "kind": "educational",
+      "url": "https://www.nabh.co/"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "qci-q1",
+        "type": "mcq",
+        "prompt": "Which of these correctly describes the relationship between QCI, NABL, and NABH?",
+        "options": [
+          "NABL and NABH are the same organisation under a different name",
+          "QCI is a constituent board of NABL",
+          "NABL and NABH are both constituent boards of QCI",
+          "NABH is a constituent board of NABL"
+        ],
+        "correctIndex": 2,
+        "explanation": "QCI is the parent body; NABL and NABH are two of its constituent boards, covering different domains."
+      },
+      {
+        "id": "qci-q2",
+        "type": "mcq",
+        "prompt": "Which QCI constituent board accredits certification bodies (the bodies that certify management systems like ISO 9001)?",
+        "options": [
+          "NABL",
+          "NABH",
+          "NABCB",
+          "BIS"
+        ],
+        "correctIndex": 2,
+        "explanation": "NABCB — the National Accreditation Board for Certification Bodies — is the QCI board covering this domain."
+      }
+    ]
+  }
+}

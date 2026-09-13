@@ -1,0 +1,103 @@
+{
+  "id": "laboratory-safety-risk-quality",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 19,
+  "title": "Laboratory Safety, Risk & Quality",
+  "shortDescription": "Where accreditation and everyday lab safety meet — risk assessment, PPE, waste management, and incident reporting, viewed specifically through the quality-and-accreditation lens.",
+  "genZNote": "A lab that's unsafe for its own staff isn't a lab an accreditation body will trust with a patient's sample either.",
+  "sections": [
+    {
+      "id": "scope-note",
+      "heading": "Scope of This Chapter",
+      "body": "This chapter connects laboratory safety to accreditation and quality specifically — it is not a full biosafety course. For detailed biosafety technique, PPE use, and hazard-specific practice, see Cellfie's dedicated laboratory content."
+    },
+    {
+      "id": "safety-quality-link",
+      "heading": "How Safety Feeds Into Accreditation",
+      "bullets": [
+        "Biosafety and risk assessment — identifying hazards (biological, chemical) before they cause harm, exactly the same proactive logic as quality risk management.",
+        "PPE and exposure management — controls that protect staff, assessed as part of a lab's overall competence and resource adequacy.",
+        "Waste management — correct segregation and disposal of biomedical/chemical waste, a documented, auditable process.",
+        "Equipment and chemical safety — safe handling and storage, overlapping directly with the equipment/reagent management covered under Laboratory QMS.",
+        "Incident reporting — the same reporting-investigation-corrective action loop used for quality nonconformities applies equally to safety incidents.",
+        "Emergency preparedness — documented, trained-for response plans, assessed the same way any other competence is assessed."
+      ]
+    },
+    {
+      "id": "shared-logic",
+      "heading": "The Shared Logic",
+      "body": "Notice that laboratory safety uses the exact same tools this whole subject has already taught: risk identification before harm occurs (preventive/risk-based action), documented procedures (the QMS hierarchy), and a reporting-to-corrective-action loop when something goes wrong. Safety isn't a separate system bolted onto quality — in an accredited lab, it's quality management applied to the people doing the work, not just the results they produce."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Laboratory safety and accreditation share the same underlying logic — proactive risk identification, documented procedures, and an incident-to-corrective-action loop — applied to protecting staff and the work environment, not just result quality.",
+    "keyFacts": [
+      "Biosafety risk assessment uses the same preventive logic as quality risk management.",
+      "Incident reporting for safety events follows the same investigation-to-corrective-action loop as quality nonconformities.",
+      "Equipment and chemical safety overlap directly with the equipment/reagent management already covered under Laboratory QMS.",
+      "This chapter is deliberately scoped to the QUALITY + RISK + ACCREDITATION angle, not full biosafety technique."
+    ],
+    "keyTerms": [
+      "Biosafety",
+      "Risk assessment",
+      "PPE",
+      "Waste management",
+      "Incident reporting",
+      "Emergency preparedness"
+    ],
+    "commonConfusion": []
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Laboratory safety is assessed as part of accreditation — it isn't separate from a lab's demonstrated competence.",
+      "The safety-incident workflow mirrors the quality-nonconformity workflow: report, investigate, correct, verify."
+    ],
+    "commonTraps": [
+      "Treating lab safety as unrelated to accreditation — a lab's resource/environment competence explicitly includes safety controls."
+    ],
+    "mustRemember": [
+      "Safety risk management and quality risk management use the same proactive, before-the-fact logic."
+    ],
+    "confusedTerms": [],
+    "possibleQuestions": [
+      "Explain how a laboratory's biosafety incident-reporting process mirrors its quality nonconformity process."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "labsafety-q1",
+        "type": "mcq",
+        "prompt": "Laboratory safety risk assessment and quality risk management share which underlying principle?",
+        "options": [
+          "Both are purely reactive, addressing problems only after they occur",
+          "Both proactively identify risk before harm/error occurs",
+          "They are unrelated systems in an accredited lab",
+          "Only safety risk assessment is required for accreditation"
+        ],
+        "correctIndex": 1,
+        "explanation": "Both apply the same proactive, before-the-fact risk identification logic."
+      },
+      {
+        "id": "labsafety-q2",
+        "type": "mcq",
+        "prompt": "A safety incident in an accredited laboratory should be handled using a workflow most similar to:",
+        "options": [
+          "Ignoring it if no one was harmed",
+          "The same report → investigate → corrective action → verify loop used for quality nonconformities",
+          "A completely separate, unrelated safety-only process with no quality linkage",
+          "Immediate loss of accreditation"
+        ],
+        "correctIndex": 1,
+        "explanation": "Safety incidents follow the same underlying investigation-to-corrective-action loop as quality nonconformities."
+      }
+    ]
+  }
+}

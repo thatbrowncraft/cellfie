@@ -1,0 +1,292 @@
+{
+  "id": "accreditation-quick-revision",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 20,
+  "title": "Accreditation Quick Revision",
+  "shortDescription": "Every full form, every 'who does what', and every commonly confused pair from this entire subject, in one place for the night before an exam.",
+  "genZNote": "You've done the reading. This is the page you actually open at 11pm before the exam.",
+  "sections": [
+    {
+      "id": "full-forms",
+      "heading": "Full Forms",
+      "table": {
+        "columnHeaders": [
+          "Abbreviation",
+          "Full form"
+        ],
+        "rows": [
+          [
+            "NABL",
+            "National Accreditation Board for Testing and Calibration Laboratories"
+          ],
+          [
+            "NABH",
+            "National Accreditation Board for Hospitals & Healthcare Providers"
+          ],
+          [
+            "NABCB",
+            "National Accreditation Board for Certification Bodies"
+          ],
+          [
+            "QCI",
+            "Quality Council of India"
+          ],
+          [
+            "ISO",
+            "International Organization for Standardization"
+          ],
+          [
+            "GACI",
+            "Global Accreditation Cooperation Incorporated (current, from 1 Jan 2026; unifies the earlier ILAC and IAF)"
+          ],
+          [
+            "APAC",
+            "Asia Pacific Accreditation Cooperation"
+          ],
+          [
+            "ISQua",
+            "International Society for Quality in Health Care"
+          ],
+          [
+            "KPI",
+            "Key Performance Indicator"
+          ],
+          [
+            "SOP",
+            "Standard Operating Procedure"
+          ],
+          [
+            "CAPA",
+            "Corrective Action and Preventive Action"
+          ],
+          [
+            "QMS",
+            "Quality Management System"
+          ],
+          [
+            "IQC",
+            "Internal Quality Control"
+          ],
+          [
+            "EQA/PT",
+            "External Quality Assessment / Proficiency Testing"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "who-does-what",
+      "heading": "Who Does What?",
+      "bullets": [
+        "NABL → laboratory and lab-adjacent conformity assessment accreditation programmes (testing, calibration, medical, PT providers, reference material producers, biobanks).",
+        "NABH → healthcare accreditation/certification programmes for hospitals and other healthcare organisations.",
+        "QCI → the national quality infrastructure ecosystem; the parent body operating through NABL, NABH, NABCB, and other constituent boards.",
+        "ISO → develops the international standards (15189, 17025, etc.) that accreditation bodies assess against.",
+        "GACI (current) / APAC → international and regional accreditation cooperation, creating mutual recognition between national accreditation bodies.",
+        "ISQua → evaluates and recognises healthcare accreditation programmes/standards themselves, at the meta level."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "This subject's entire map: QCI is the parent; NABL accredits laboratories and NABH accredits healthcare organisations under it; ISO supplies the standards both assess against; GACI/APAC provide international/regional recognition; and ISQua evaluates healthcare accreditation programmes themselves.",
+    "keyFacts": [
+      "NABL and NABH are siblings under QCI — never the same organisation.",
+      "ISO 15189 (medical labs) and ISO/IEC 17025 (testing/calibration labs) are the two standards NABL uses most.",
+      "GACI (from 1 Jan 2026) is current; ILAC and IAF are the historical bodies it unified.",
+      "Accreditation = competence. Certification = conformity. Registration = administrative listing."
+    ],
+    "keyTerms": [
+      "NABL",
+      "NABH",
+      "QCI",
+      "NABCB",
+      "ISO 15189",
+      "ISO/IEC 17025",
+      "GACI",
+      "APAC",
+      "ISQua",
+      "KPI",
+      "SOP",
+      "CAPA",
+      "QMS",
+      "IQC",
+      "EQA/PT",
+      "PDCA"
+    ],
+    "commonConfusion": [
+      "NABL vs NABH — labs vs healthcare organisations, siblings under QCI.",
+      "ISO 15189 vs ISO/IEC 17025 — medical labs vs testing/calibration labs.",
+      "Accreditation vs certification — competence vs conformity.",
+      "IQC vs EQA/PT — internal/ongoing vs external/peer-compared.",
+      "Correction vs corrective action — fixing the instance vs fixing the system.",
+      "Document vs record — describes how vs evidence of what happened.",
+      "Audit vs assessment — self/systematic check vs the formal accreditation-body evaluation.",
+      "Quality assurance vs quality control — preventive vs during/after checking.",
+      "Patient safety vs patient satisfaction — objective harm prevention vs subjective experience.",
+      "KPI vs quality indicator — the prioritised, targeted subset vs any measurable quality element."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "QCI → NABL (labs) + NABH (hospitals) + NABCB (certification bodies) + other boards — all siblings, not the same body.",
+      "GACI is the current international accreditation-cooperation body (from 1 Jan 2026), replacing the separate ILAC and IAF.",
+      "NABH Hospital Standards: 6th Edition is current (from 1 Jan 2025); infection-control chapter is now IPC, was HIC in the 5th Edition."
+    ],
+    "commonTraps": [
+      "Mixing up NABL and NABH in a written answer — always state which domain (lab vs hospital) a question is actually about.",
+      "Citing an outdated standard edition (ISO 15189:2012, NABH 5th Edition, ILAC/IAF as still separate) as if it were current."
+    ],
+    "mustRemember": [
+      "Every board sits under QCI. Every standard maps to a specific TYPE of body. Every improvement follows Plan-Do-Check-Act."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "NABL",
+        "termB": "NABH",
+        "distinction": "NABL = laboratories. NABH = hospitals/healthcare organisations. Siblings under QCI."
+      },
+      {
+        "termA": "ISO 15189",
+        "termB": "ISO/IEC 17025",
+        "distinction": "ISO 15189 = medical laboratories. ISO/IEC 17025 = testing/calibration laboratories."
+      },
+      {
+        "termA": "Accreditation",
+        "termB": "Certification",
+        "distinction": "Accreditation = competence to perform an activity. Certification = conformity of a system/product/person to a standard."
+      }
+    ],
+    "possibleQuestions": [
+      "Draw the full accreditation ecosystem map from QCI down to individual laboratories/hospitals.",
+      "List five commonly confused term pairs from this subject and explain the distinction in one line each."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Quality Council of India (QCI)",
+      "kind": "educational",
+      "url": "https://www.qcin.org/"
+    },
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    },
+    {
+      "name": "NABH — National Accreditation Board for Hospitals & Healthcare Providers",
+      "kind": "educational",
+      "url": "https://www.nabh.co/"
+    },
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    }
+  ],
+  "visualData": {
+    "comparisons": [
+      {
+        "termA": "NABL",
+        "termB": "NABH",
+        "distinction": "NABL = laboratories (ISO/IEC 17025, ISO 15189). NABH = hospitals/healthcare organisations. Both are constituent boards of QCI."
+      },
+      {
+        "termA": "ISO 15189",
+        "termB": "ISO/IEC 17025",
+        "distinction": "ISO 15189 = medical laboratories. ISO/IEC 17025 = testing and calibration laboratories."
+      },
+      {
+        "termA": "Accreditation",
+        "termB": "Certification",
+        "distinction": "Accreditation = competence to perform an activity, within a defined scope. Certification = conformity of a system, product, or person to a standard."
+      },
+      {
+        "termA": "IQC",
+        "termB": "EQA/PT",
+        "distinction": "IQC is internal and continuous, run by the lab itself. EQA/PT is external and periodic, comparing the lab against peer laboratories."
+      },
+      {
+        "termA": "Correction",
+        "termB": "Corrective action",
+        "distinction": "Correction fixes the immediate instance. Corrective action fixes the systemic root cause so it doesn't recur."
+      },
+      {
+        "termA": "Document",
+        "termB": "Record",
+        "distinction": "A document describes how something should be done and is revised over time. A record is evidence of what was actually done and is preserved, not edited."
+      },
+      {
+        "termA": "Audit",
+        "termB": "Assessment",
+        "distinction": "An audit is a systematic check (often internal) against a standard or procedure. An assessment is the formal evaluation an accreditation/certification body performs to make its decision."
+      },
+      {
+        "termA": "Quality assurance",
+        "termB": "Quality control",
+        "distinction": "QA is preventive, planned before the work (SOPs, training). QC is the actual checking done during/after the work."
+      },
+      {
+        "termA": "Patient safety",
+        "termB": "Patient satisfaction",
+        "distinction": "Patient safety is objective freedom from preventable harm. Patient satisfaction is the patient's subjective experience of care."
+      },
+      {
+        "termA": "KPI",
+        "termB": "Quality indicator",
+        "distinction": "Every KPI is a quality indicator, but a KPI is specifically the subset an organisation has prioritised and set a target for."
+      }
+    ],
+    "questions": [
+      {
+        "id": "qrev-q1",
+        "type": "mcq",
+        "prompt": "QCI, NABL, and NABH — which relationship is correct?",
+        "options": [
+          "NABL and NABH are the same body",
+          "QCI is a board under NABL",
+          "NABL and NABH are both constituent boards of QCI",
+          "NABH accredits laboratories"
+        ],
+        "correctIndex": 2,
+        "explanation": "QCI is the parent; NABL and NABH are two of its constituent boards, covering labs and healthcare organisations respectively."
+      },
+      {
+        "id": "qrev-q2",
+        "type": "mcq",
+        "prompt": "Which pair correctly matches standard to laboratory type?",
+        "options": [
+          "ISO 15189 → testing labs; ISO/IEC 17025 → medical labs",
+          "ISO 15189 → medical labs; ISO/IEC 17025 → testing/calibration labs",
+          "Both apply only to medical labs",
+          "Neither applies to NABL-accredited labs"
+        ],
+        "correctIndex": 1,
+        "explanation": "ISO 15189 is for medical laboratories; ISO/IEC 17025 is for testing and calibration laboratories."
+      },
+      {
+        "id": "qrev-q3",
+        "type": "mcq",
+        "prompt": "What replaced ILAC and IAF as of 1 January 2026?",
+        "options": [
+          "APAC",
+          "ISQua",
+          "Global Accreditation Cooperation Incorporated (GACI)",
+          "NABCB"
+        ],
+        "correctIndex": 2,
+        "explanation": "GACI unified the earlier work of ILAC and IAF into one organisation."
+      },
+      {
+        "id": "qrev-q4",
+        "type": "true-false",
+        "prompt": "True or False: Registration typically involves the same level of independent technical competence assessment as accreditation.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correctIndex": 1,
+        "explanation": "Registration is generally a basic administrative listing; accreditation involves ongoing, assessed technical competence evaluation."
+      }
+    ]
+  }
+}

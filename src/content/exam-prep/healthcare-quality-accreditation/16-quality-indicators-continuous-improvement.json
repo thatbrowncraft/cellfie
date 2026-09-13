@@ -1,0 +1,154 @@
+{
+  "id": "quality-indicators-continuous-improvement",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 16,
+  "title": "Quality Indicators & Continuous Improvement",
+  "shortDescription": "The PDCA cycle and the vocabulary of ongoing improvement — indicator, target, benchmark, trend — applied to a lab example and a hospital example.",
+  "genZNote": "Plan, Do, Check, Act. Four words, and basically the whole philosophy of this subject.",
+  "sections": [
+    {
+      "id": "vocabulary",
+      "heading": "The Vocabulary of Improvement",
+      "bullets": [
+        "Quality indicator — a measurable element used to track quality over time.",
+        "Target — the specific value an organisation aims to reach for an indicator.",
+        "Benchmark — a reference point, often an external best-practice value, used for comparison.",
+        "Trend — the direction an indicator is moving over multiple time periods, not just one snapshot.",
+        "Monitoring — the ongoing act of tracking an indicator.",
+        "Variance — the gap between actual performance and the target or expected value.",
+        "Corrective action — fixing an identified problem after it occurs.",
+        "Preventive/risk-based action — acting on a potential problem BEFORE it occurs, based on identified risk."
+      ]
+    },
+    {
+      "id": "pdca-explained",
+      "heading": "The PDCA Cycle",
+      "body": "Plan-Do-Check-Act is the underlying improvement logic running through nearly every process in this subject — NABL's accreditation cycle, NABH's incident-to-improvement workflow, and hospital quality management from Chapter 11 are all specific applications of this same generic pattern.",
+      "steps": [
+        {
+          "name": "Plan",
+          "explanation": "Identify a problem or improvement opportunity, and plan a specific change to address it.",
+          "purpose": "Nothing gets fixed by accident — the change has to be deliberately designed."
+        },
+        {
+          "name": "Do",
+          "explanation": "Implement the planned change, ideally on a small/controlled scale first.",
+          "purpose": "Tests the change before committing to it fully."
+        },
+        {
+          "name": "Check",
+          "explanation": "Measure whether the change actually produced the intended result.",
+          "purpose": "Separates 'we made a change' from 'the change worked'."
+        },
+        {
+          "name": "Act",
+          "explanation": "If it worked, standardise and scale it. If not, adjust the plan and cycle again.",
+          "purpose": "Turns a successful trial into the new normal — or sends you back to Plan with better information."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "heading": "Two Worked Examples",
+      "body": "Laboratory example: a lab notices its turnaround time for a critical test is trending upward (variance from target). It PLANS a workflow change, DOES it on the night shift first, CHECKS whether turnaround time actually improved, and ACTS by rolling it out to all shifts once confirmed.\n\nHospital example: a hospital's surgical site infection rate benchmark is being missed. It PLANS a revised pre-operative antiseptic protocol, DOES a pilot on one surgical ward, CHECKS the infection rate on that ward over the following weeks, and ACTS by extending the protocol hospital-wide once the data confirms improvement."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Continuous improvement in laboratories and hospitals runs on the Plan-Do-Check-Act (PDCA) cycle, applied to measurable quality indicators tracked against targets, benchmarks, and trends over time.",
+    "keyFacts": [
+      "PDCA = Plan, Do, Check, Act — a repeating cycle, not a one-time sequence.",
+      "A benchmark is typically an external reference point; a target is the organisation's own internal goal.",
+      "Trend requires multiple data points over time — a single measurement can't show a trend.",
+      "Corrective action responds to a problem that already occurred; preventive/risk-based action addresses a risk before it does."
+    ],
+    "keyTerms": [
+      "PDCA",
+      "Quality indicator",
+      "Target",
+      "Benchmark",
+      "Trend",
+      "Variance",
+      "Corrective action",
+      "Preventive action"
+    ],
+    "commonConfusion": [
+      "Corrective action and preventive/risk-based action are often blurred together — corrective action responds to something that has already happened; preventive action addresses a risk before it materialises."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "PDCA is a CYCLE — 'Act' typically feeds back into a new 'Plan', not a stopping point.",
+      "A target is internally set; a benchmark is typically an external comparison point."
+    ],
+    "commonTraps": [
+      "Treating PDCA as a one-time linear project rather than a repeating cycle.",
+      "Confusing corrective action (after the fact) with preventive/risk-based action (before the fact)."
+    ],
+    "mustRemember": [
+      "Plan → Do → Check → Act → back to Plan."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Corrective action",
+        "termB": "Preventive / risk-based action",
+        "distinction": "Corrective action addresses a problem that has already occurred, to stop it recurring. Preventive/risk-based action addresses an identified risk before any problem has occurred."
+      }
+    ],
+    "possibleQuestions": [
+      "Apply the PDCA cycle to a quality problem in either a laboratory or a hospital setting, with a concrete example at each stage."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Quality Council of India (QCI)",
+      "kind": "educational",
+      "url": "https://www.qcin.org/"
+    },
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    }
+  ],
+  "visualData": {
+    "pathways": [
+      {
+        "title": "The PDCA Cycle",
+        "steps": [
+          "Plan — identify the problem, design a specific change",
+          "Do — implement the change, ideally on a small scale first",
+          "Check — measure whether it actually worked",
+          "Act — standardise if successful, or adjust and cycle again"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "id": "pdca-q1",
+        "type": "mcq",
+        "prompt": "In the PDCA cycle, what comes immediately after 'Do'?",
+        "options": [
+          "Plan",
+          "Check",
+          "Act",
+          "Monitor"
+        ],
+        "correctIndex": 1,
+        "explanation": "The cycle runs Plan → Do → Check → Act."
+      },
+      {
+        "id": "pdca-q2",
+        "type": "mcq",
+        "prompt": "A hospital sees its surgical infection rate rising and revises its pre-op protocol as a pilot on one ward before rolling it out further. This pilot stage corresponds to which PDCA phase?",
+        "options": [
+          "Plan",
+          "Do",
+          "Check",
+          "Act"
+        ],
+        "correctIndex": 1,
+        "explanation": "Piloting the implemented change on a controlled scale is the 'Do' phase."
+      }
+    ]
+  }
+}

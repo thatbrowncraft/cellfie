@@ -1,0 +1,144 @@
+{
+  "id": "laboratory-quality-management-system",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 6,
+  "title": "Laboratory Quality Management System",
+  "shortDescription": "The document hierarchy and operational backbone every accredited lab runs on — from quality policy down to the individual record.",
+  "genZNote": "Every accreditation standard eventually asks the same question: show me the system, not just the result.",
+  "sections": [
+    {
+      "id": "what-is-a-qms",
+      "heading": "What a Laboratory QMS Actually Is",
+      "body": "A Quality Management System (QMS) is the coordinated set of policies, processes, procedures, and records a laboratory uses to consistently meet quality requirements and improve over time. Accreditation doesn't just check whether today's result was correct — it checks whether the SYSTEM that produced it is reliable enough to keep producing correct results."
+    },
+    {
+      "id": "document-hierarchy",
+      "heading": "The Document Hierarchy",
+      "body": "Every accredited lab's documentation follows roughly the same top-down structure — broader intent at the top, specific evidence at the bottom.",
+      "bullets": [
+        "Quality policy — the lab's top-level commitment to quality, set by management.",
+        "Quality objectives — specific, measurable targets that operationalise the policy.",
+        "Quality manual (where applicable) — describes the QMS itself and how it meets the standard's requirements.",
+        "SOPs (Standard Operating Procedures) — step-by-step instructions for how a specific activity is done.",
+        "Work instructions — finer-grained detail for a specific task or piece of equipment, where an SOP alone isn't enough.",
+        "Forms — blank templates used to capture data as work is performed.",
+        "Records — forms once filled in; the actual evidence that the work happened, and how."
+      ]
+    },
+    {
+      "id": "system-controls",
+      "heading": "Keeping the System Under Control",
+      "bullets": [
+        "Document control and version control — only the current, approved version of any document should ever be in use.",
+        "Record control — records must be legible, retrievable, protected, and retained for a defined period.",
+        "Personnel competency — tracked and re-verified, not assumed to be permanent.",
+        "Equipment calibration and maintenance — scheduled, documented, and traceable.",
+        "Reagent control — storage conditions, lot tracking, expiry management.",
+        "Environmental conditions — monitored where they affect result validity (temperature, humidity, contamination control).",
+        "Internal audits and management review — the lab checking itself, and leadership formally reviewing whether the whole system is working.",
+        "Corrective action and continual improvement — closing the loop when something goes wrong, and improving even when nothing has."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "A laboratory Quality Management System is the coordinated hierarchy of policy, procedures, and records that lets a lab consistently meet quality requirements — accreditation assesses the system, not just individual results.",
+    "keyFacts": [
+      "Document hierarchy runs: Quality policy → Objectives → (Quality manual) → SOPs → Work instructions → Forms → Records.",
+      "A form is blank; a record is that same form filled in — evidence the work actually happened.",
+      "Document control ensures only the current approved version of any procedure is in use.",
+      "Management review and internal audit are both required, ongoing system checks — not one-time steps."
+    ],
+    "keyTerms": [
+      "Quality policy",
+      "Quality objectives",
+      "SOP",
+      "Work instruction",
+      "Form",
+      "Record",
+      "Document control",
+      "Management review",
+      "Internal audit"
+    ],
+    "commonConfusion": [
+      "A form and a record are often used loosely as the same word — a form is the blank template; a record is that form once filled in, and it's the record (not the blank form) that serves as evidence during an assessment."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The document hierarchy always narrows from broad intent (policy) to specific evidence (records).",
+      "SOPs describe HOW an activity is done; work instructions add finer task-level detail where needed.",
+      "Management review and internal audits are distinct: internal audit checks conformance; management review evaluates the system's overall effectiveness and direction."
+    ],
+    "commonTraps": [
+      "Treating 'document' and 'record' as interchangeable — they occupy different, specific positions in the hierarchy (covered fully in the Documentation & Quality Records chapter)."
+    ],
+    "mustRemember": [
+      "Quality Policy → Objectives → SOPs → Work Instructions → Forms → Records — know this order."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "SOP",
+        "termB": "Work instruction",
+        "distinction": "An SOP is a step-by-step procedure for an activity; a work instruction gives finer-grained, often equipment- or task-specific detail beyond what the SOP covers."
+      }
+    ],
+    "possibleQuestions": [
+      "Draw and explain the laboratory quality-system document hierarchy from policy to record."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    },
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    }
+  ],
+  "visualData": {
+    "pathways": [
+      {
+        "title": "The Quality System Document Hierarchy",
+        "steps": [
+          "Quality policy — the lab's top-level commitment",
+          "Quality objectives — specific measurable targets",
+          "Procedures / SOPs — how each activity is done",
+          "Work instructions — finer task-level detail",
+          "Forms — blank templates to capture data",
+          "Records — completed forms; the actual evidence"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "id": "lqms-q1",
+        "type": "mcq",
+        "prompt": "Which comes immediately after 'Quality objectives' in the standard document hierarchy?",
+        "options": [
+          "Records",
+          "Procedures / SOPs",
+          "Forms",
+          "Work instructions"
+        ],
+        "correctIndex": 1,
+        "explanation": "The hierarchy runs Policy → Objectives → SOPs → Work instructions → Forms → Records."
+      },
+      {
+        "id": "lqms-q2",
+        "type": "mcq",
+        "prompt": "What is the key difference between a 'form' and a 'record'?",
+        "options": [
+          "There is no difference",
+          "A form is blank; a record is a form that has been filled in",
+          "A record is blank; a form is a completed record",
+          "Forms are electronic, records are paper"
+        ],
+        "correctIndex": 1,
+        "explanation": "A form is the template; once filled in during actual work, it becomes a record — the evidence."
+      }
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "id": "hospital-quality-management",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 11,
+  "title": "Hospital Quality Management",
+  "shortDescription": "How hospitals actually measure and improve quality — KPIs, clinical audits, mortality review, and the problem-to-improvement cycle underneath all of it.",
+  "genZNote": "A hospital can't improve what it doesn't measure — this is the measuring part.",
+  "sections": [
+    {
+      "id": "quality-indicators-kpis",
+      "heading": "Quality Indicators and KPIs",
+      "bullets": [
+        "Quality indicator — a measurable element of care used to assess quality (e.g. surgical site infection rate).",
+        "KPI (Key Performance Indicator) — a quality indicator specifically chosen as a priority target for an organisation, often tied to a numeric goal.",
+        "Clinical audit — a systematic review of clinical practice against defined criteria, to identify gaps in care delivery.",
+        "Infection indicators, medication errors, and patient safety events — commonly tracked, high-priority indicator categories.",
+        "Mortality review — structured review of deaths to identify preventable factors and system learnings.",
+        "Patient satisfaction and patient experience — tracked alongside clinical indicators, not instead of them."
+      ]
+    },
+    {
+      "id": "problem-to-improvement",
+      "heading": "From Problem to Improvement",
+      "body": "Hospital quality management follows a consistent analytical path from a raw problem to an actual system-level fix — this is the same underlying logic as root cause analysis, generalised beyond individual incidents to ongoing performance data.",
+      "steps": [
+        {
+          "name": "Problem",
+          "explanation": "A quality gap is identified — through data, a complaint, or an audit finding.",
+          "purpose": "The starting trigger for the entire improvement cycle."
+        },
+        {
+          "name": "Data",
+          "explanation": "Relevant data is gathered — indicator trends, audit results, incident reports.",
+          "purpose": "Improvement decisions must be evidence-based, not assumption-based."
+        },
+        {
+          "name": "Analysis",
+          "explanation": "The data is analysed to understand the pattern, scale, and contributing factors.",
+          "purpose": "Separates a one-off blip from a genuine systemic issue."
+        },
+        {
+          "name": "Root cause",
+          "explanation": "The underlying, system-level cause is identified — not just the immediate trigger.",
+          "purpose": "Fixing symptoms without the root cause guarantees recurrence."
+        },
+        {
+          "name": "Corrective action",
+          "explanation": "A specific action is implemented to address the root cause.",
+          "purpose": "Turns analysis into an actual operational change."
+        },
+        {
+          "name": "Monitoring",
+          "explanation": "The indicator is tracked after the change, to see if it actually moved.",
+          "purpose": "Confirms the fix worked — don't assume, verify."
+        },
+        {
+          "name": "Improvement",
+          "explanation": "Sustained, monitored gains are locked into the new standard of practice.",
+          "purpose": "Completes the loop — this becomes the new baseline, not a one-time win."
+        }
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Hospital quality management runs on measurable indicators (KPIs, clinical audits, mortality review, patient experience) fed through a Problem → Data → Analysis → Root cause → Corrective action → Monitoring → Improvement cycle.",
+    "keyFacts": [
+      "A KPI is a quality indicator specifically prioritised as an organisational target.",
+      "Clinical audit compares actual practice against defined criteria — it's a comparison exercise, not just data collection.",
+      "Mortality review looks specifically for PREVENTABLE factors, not just cause of death.",
+      "The improvement cycle always ends in monitoring — a fix isn't complete until its effect is verified."
+    ],
+    "keyTerms": [
+      "Quality indicator",
+      "KPI",
+      "Clinical audit",
+      "Mortality review",
+      "Root cause",
+      "Corrective action",
+      "Monitoring"
+    ],
+    "commonConfusion": [
+      "Every KPI is a quality indicator, but not every quality indicator is a KPI — a KPI is specifically one an organisation has prioritised and set a target for."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The Problem → Data → Analysis → Root cause → Corrective action → Monitoring → Improvement sequence is the core hospital quality-improvement logic.",
+      "Mortality review specifically targets preventability, not just cause-of-death recording."
+    ],
+    "commonTraps": [
+      "Treating 'quality indicator' and 'KPI' as identical terms — KPI is the prioritised subset."
+    ],
+    "mustRemember": [
+      "Every improvement claim needs a monitoring step afterward — without it, you don't actually know if the fix worked."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Quality indicator",
+        "termB": "KPI",
+        "distinction": "A quality indicator is any measurable element of care quality. A KPI is a quality indicator an organisation has specifically prioritised as a target, usually with a numeric goal attached."
+      }
+    ],
+    "possibleQuestions": [
+      "Walk through the Problem-to-Improvement cycle using a hospital infection-rate example."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABH — National Accreditation Board for Hospitals & Healthcare Providers",
+      "kind": "educational",
+      "url": "https://www.nabh.co/"
+    }
+  ],
+  "visualData": {
+    "pathways": [
+      {
+        "title": "Hospital Quality Improvement Cycle",
+        "steps": [
+          "Problem identified",
+          "Data gathered",
+          "Analysis of pattern and scale",
+          "Root cause identified",
+          "Corrective action implemented",
+          "Monitoring of the indicator afterward",
+          "Sustained improvement locked in as new baseline"
+        ]
+      }
+    ],
+    "comparisons": [
+      {
+        "termA": "Quality indicator",
+        "termB": "KPI",
+        "distinction": "Every KPI is a quality indicator, but a KPI is specifically the subset an organisation has prioritised and set a target for."
+      }
+    ],
+    "questions": [
+      {
+        "id": "hqm-q1",
+        "type": "mcq",
+        "prompt": "What distinguishes a KPI from a general quality indicator?",
+        "options": [
+          "KPIs are only used in laboratories, not hospitals",
+          "A KPI is a quality indicator specifically prioritised by the organisation, often with a numeric target",
+          "There is no real difference",
+          "KPIs are only tracked once a year"
+        ],
+        "correctIndex": 1,
+        "explanation": "A KPI is the prioritised, targeted subset of quality indicators."
+      },
+      {
+        "id": "hqm-q2",
+        "type": "mcq",
+        "prompt": "Mortality review in a hospital quality-management context is primarily focused on identifying:",
+        "options": [
+          "The exact medical cause of death",
+          "Preventable factors and system-level learnings",
+          "Insurance claim eligibility",
+          "Staff scheduling gaps"
+        ],
+        "correctIndex": 1,
+        "explanation": "Mortality review looks specifically for preventability and system learning, not just clinical cause of death."
+      }
+    ]
+  }
+}

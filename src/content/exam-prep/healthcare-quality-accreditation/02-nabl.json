@@ -1,0 +1,162 @@
+{
+  "id": "nabl",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 2,
+  "title": "NABL",
+  "shortDescription": "India's accreditation body for testing, calibration, and medical laboratories — what it accredits, how, and why lab competence (not just ‘being a lab’) is the whole point.",
+  "genZNote": "NABL doesn't check if your lab exists. It checks if your lab can be trusted.",
+  "sections": [
+    {
+      "id": "what-is-nabl",
+      "heading": "What Is NABL?",
+      "body": "NABL — the National Accreditation Board for Testing and Calibration Laboratories — is India's accreditation body for laboratories. It is a constituent board of the Quality Council of India (QCI), operating under the Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce and Industry, Government of India.\n\nNABL does not run laboratories, and it does not test samples itself. Its job is to independently assess whether a laboratory is technically competent to perform specific tests, calibrations, or examinations — and to keep checking that competence over time."
+    },
+    {
+      "id": "nabl-programmes",
+      "heading": "NABL's Accreditation Programmes — Not Interchangeable",
+      "body": "NABL runs several distinct accreditation programmes. Each accredits a different KIND of conformity assessment body, against a different standard — mixing these up is one of the most common exam traps in this subject.",
+      "bullets": [
+        "Testing laboratories — accredited against ISO/IEC 17025; test physical, chemical, biological, or other properties of a sample.",
+        "Calibration laboratories — also accredited against ISO/IEC 17025; establish the accuracy of measuring instruments against traceable references.",
+        "Medical laboratories — accredited against ISO 15189; perform examinations on human specimens for diagnosis, treatment, and prevention of disease. This is the category microbiology and clinical-lab students should know best.",
+        "Proficiency testing (PT) providers — organise inter-laboratory comparison programmes that check whether different labs get the same result on the same sample.",
+        "Reference material producers (RMPs) — produce the certified reference materials labs use to calibrate and validate their own methods.",
+        "Biobanks — accredited for the competence to collect, process, store, and distribute biological material and associated data for research/diagnostic use."
+      ]
+    },
+    {
+      "id": "accreditation-vs-registration-labs",
+      "heading": "Accreditation vs. Simple Laboratory Registration",
+      "body": "A lab can be legally ‘registered’ with a government or regulatory department without ever being independently assessed for technical competence. NABL accreditation is a much higher bar: it involves document review, an on-site technical assessment by trained assessors, and ongoing surveillance — not a one-time administrative listing."
+    },
+    {
+      "id": "assessment-cycle",
+      "heading": "Assessment, Surveillance, and Reassessment",
+      "steps": [
+        {
+          "name": "Initial assessment",
+          "explanation": "A team of NABL-appointed technical assessors evaluates the lab's management system and technical competence against the applicable standard (ISO/IEC 17025 or ISO 15189), for its declared scope.",
+          "purpose": "Confirms the lab is competent before accreditation is granted."
+        },
+        {
+          "name": "Surveillance",
+          "explanation": "Periodic, shorter assessments during the accreditation validity period, checking that competence hasn't slipped.",
+          "purpose": "Accreditation is a continuing state, not a one-time certificate."
+        },
+        {
+          "name": "Reassessment",
+          "explanation": "A full assessment repeated before the accreditation's validity period ends, to renew it.",
+          "purpose": "Ensures the lab is re-evaluated at full depth, not just spot-checked forever."
+        }
+      ]
+    },
+    {
+      "id": "international-recognition",
+      "heading": "International Recognition",
+      "body": "NABL is a signatory to mutual recognition arrangements through international and regional accreditation cooperation bodies (covered in full in the International Accreditation Bodies chapter). This is what lets an NABL-accredited test report carry international credibility — the accrediting system itself has been checked and recognised, not just the individual lab."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "NABL is India's accreditation body for testing, calibration, and medical laboratories — a constituent board of QCI — assessing labs against ISO/IEC 17025 or ISO 15189 depending on the programme.",
+    "keyFacts": [
+      "NABL = National Accreditation Board for Testing and Calibration Laboratories.",
+      "NABL is a constituent board of the Quality Council of India (QCI).",
+      "Testing and calibration labs → ISO/IEC 17025. Medical laboratories → ISO 15189.",
+      "NABL also accredits PT providers, reference material producers, and biobanks — distinct programmes, not sub-types of ‘testing lab’."
+    ],
+    "keyTerms": [
+      "NABL",
+      "QCI",
+      "Testing laboratory",
+      "Calibration laboratory",
+      "Medical laboratory",
+      "Proficiency testing provider",
+      "Reference material producer",
+      "Biobank"
+    ],
+    "commonConfusion": [
+      "NABL accredits laboratories and related conformity assessment bodies. NABH (a separate board) accredits hospitals and healthcare organisations — they are not the same body and do not accredit each other's domain."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "NABL is a constituent board of QCI, not an independent standalone ministry body.",
+      "Medical laboratories are accredited to ISO 15189; testing/calibration laboratories to ISO/IEC 17025.",
+      "NABL's accreditation programmes for PT providers, RMPs, and biobanks are separate from its lab-accreditation programmes."
+    ],
+    "commonTraps": [
+      "Treating ‘NABL-accredited’ as one single category — always ask which programme/standard applies.",
+      "Confusing accreditation (ongoing, assessed) with registration (often a one-time administrative step)."
+    ],
+    "mustRemember": [
+      "NABL → laboratories and lab-adjacent conformity assessment bodies (testing, calibration, medical, PT, RMP, biobank).",
+      "NABH → hospitals and healthcare providers (next chapter)."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "NABL",
+        "termB": "NABH",
+        "distinction": "NABL accredits laboratories (testing, calibration, medical) and related bodies. NABH accredits hospitals and other healthcare organisations. Both are constituent boards of QCI, but they cover entirely different domains."
+      }
+    ],
+    "possibleQuestions": [
+      "List NABL's accreditation programmes and the standard each is assessed against.",
+      "What is the difference between NABL accreditation and simple laboratory registration?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    },
+    {
+      "name": "Quality Council of India (QCI)",
+      "kind": "educational",
+      "url": "https://www.qcin.org/"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "nabl-q1",
+        "type": "mcq",
+        "prompt": "NABL is a constituent board of which organisation?",
+        "options": [
+          "Ministry of Health and Family Welfare",
+          "Quality Council of India (QCI)",
+          "Bureau of Indian Standards (BIS)",
+          "World Health Organization (WHO)"
+        ],
+        "correctIndex": 1,
+        "explanation": "NABL operates as a constituent board of QCI, under DPIIT, Ministry of Commerce and Industry."
+      },
+      {
+        "id": "nabl-q2",
+        "type": "mcq",
+        "prompt": "A laboratory that produces certified reference materials used by other labs for calibration would seek NABL accreditation as a:",
+        "options": [
+          "Testing laboratory",
+          "Calibration laboratory",
+          "Reference material producer",
+          "Proficiency testing provider"
+        ],
+        "correctIndex": 2,
+        "explanation": "Reference material producers (RMPs) are their own distinct NABL accreditation programme."
+      },
+      {
+        "id": "nabl-q3",
+        "type": "mcq",
+        "prompt": "Scenario: A diagnostic laboratory wants to demonstrate its competence in performing examinations on human blood and urine samples. Which NABL programme is most directly relevant?",
+        "options": [
+          "Testing laboratory accreditation (ISO/IEC 17025)",
+          "Calibration laboratory accreditation (ISO/IEC 17025)",
+          "Medical laboratory accreditation (ISO 15189)",
+          "Proficiency testing provider accreditation"
+        ],
+        "correctIndex": 2,
+        "explanation": "Examinations on human specimens for diagnosis fall under NABL's medical laboratory programme, assessed against ISO 15189."
+      }
+    ]
+  }
+}

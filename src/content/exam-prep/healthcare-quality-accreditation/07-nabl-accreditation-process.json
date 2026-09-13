@@ -1,0 +1,158 @@
+{
+  "id": "nabl-accreditation-process",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 7,
+  "title": "NABL Accreditation Process",
+  "shortDescription": "The general journey a laboratory goes through to become — and stay — NABL accredited, from choosing a programme to ongoing surveillance.",
+  "genZNote": "Accreditation isn't a certificate you get once. It's a status you keep proving.",
+  "sections": [
+    {
+      "id": "the-journey",
+      "heading": "The Accreditation Journey",
+      "body": "While exact timelines, fees, and document formats can change over time and are set by NABL's current official procedures (never memorise a fixed number here — always check NABL's current guidance), the GENERAL shape of the journey is stable and exam-relevant."
+    },
+    {
+      "id": "process-detail",
+      "heading": "Stage by Stage",
+      "steps": [
+        {
+          "name": "Select the applicable accreditation programme",
+          "explanation": "The lab identifies which programme fits its work — testing, calibration, medical, PT provider, RMP, or biobank.",
+          "purpose": "Different programmes assess against different standards (ISO/IEC 17025 vs ISO 15189, etc.)."
+        },
+        {
+          "name": "Define scope",
+          "explanation": "The lab specifies exactly which tests/calibrations/examinations it wants accredited — accreditation is never granted as a blanket approval.",
+          "purpose": "Assessors only evaluate competence for what's actually declared in scope."
+        },
+        {
+          "name": "Application and document review",
+          "explanation": "The lab submits its application along with quality manual/SOPs; NABL reviews these documents before any on-site visit.",
+          "purpose": "Catches major gaps before committing assessor time to an on-site visit."
+        },
+        {
+          "name": "Assessment",
+          "explanation": "A team of NABL-appointed technical assessors evaluates the lab on-site (or through applicable assessment stages) against the standard, for the declared scope.",
+          "purpose": "This is the core technical competence check."
+        },
+        {
+          "name": "Nonconformities, if identified",
+          "explanation": "Any gap between what the lab does and what the standard requires is raised as a nonconformity.",
+          "purpose": "Nonconformities aren't a failure state — they're the normal mechanism for identifying gaps."
+        },
+        {
+          "name": "Corrective action",
+          "explanation": "The lab investigates the root cause of each nonconformity and implements and evidences a fix.",
+          "purpose": "Accreditation isn't withheld for having gaps; it's withheld for not fixing them."
+        },
+        {
+          "name": "Decision",
+          "explanation": "NABL's accreditation decision-making process reviews the assessment findings and corrective actions to decide on granting accreditation.",
+          "purpose": "Kept independent from the assessment team itself, for impartiality."
+        },
+        {
+          "name": "Accreditation",
+          "explanation": "The lab is granted accreditation for its defined scope, valid for a defined period.",
+          "purpose": "This is a STATUS, not a one-time award — it must be actively maintained."
+        },
+        {
+          "name": "Surveillance / reassessment",
+          "explanation": "Ongoing periodic checks (surveillance) and full reassessment before the accreditation period ends, per NABL's applicable current requirements.",
+          "purpose": "Confirms competence is maintained, not just present on assessment day."
+        }
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "NABL accreditation follows a general journey — programme selection, scope definition, application, assessment, correction of any nonconformities, a decision, and then ongoing surveillance/reassessment — with exact timelines and fees set by NABL's current official procedures.",
+    "keyFacts": [
+      "Scope is defined by the laboratory BEFORE assessment, and assessors evaluate only against that declared scope.",
+      "Nonconformities are a normal, expected part of the process — not an automatic failure.",
+      "The accreditation decision is kept separate from the assessment team, for impartiality.",
+      "Accreditation must be actively maintained through surveillance and periodic reassessment — it is not permanent."
+    ],
+    "keyTerms": [
+      "Scope",
+      "Application",
+      "Assessment",
+      "Nonconformity",
+      "Corrective action",
+      "Accreditation decision",
+      "Surveillance",
+      "Reassessment"
+    ],
+    "commonConfusion": []
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "The general accreditation journey is stable across programmes even though exact timelines/fees change over time — never memorise a fixed number.",
+      "Accreditation is a maintained STATUS via surveillance and reassessment, not a one-time certificate."
+    ],
+    "commonTraps": [
+      "Assuming a nonconformity automatically means accreditation is refused — it triggers corrective action, not automatic failure."
+    ],
+    "mustRemember": [
+      "Order: Programme selection → Scope → Application/document review → Assessment → Nonconformities/corrective action → Decision → Accreditation → Surveillance/reassessment."
+    ],
+    "confusedTerms": [],
+    "possibleQuestions": [
+      "Outline the general stages of the NABL accreditation process for a new applicant laboratory."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    },
+    {
+      "name": "Quality Council of India (QCI)",
+      "kind": "educational",
+      "url": "https://www.qcin.org/"
+    }
+  ],
+  "visualData": {
+    "pathways": [
+      {
+        "title": "The NABL Accreditation Journey",
+        "steps": [
+          "Laboratory selects applicable accreditation programme",
+          "Scope of accreditation defined",
+          "Application and document review",
+          "On-site technical assessment",
+          "Nonconformities identified, if any",
+          "Corrective action taken and verified",
+          "Independent accreditation decision",
+          "Accreditation granted",
+          "Ongoing surveillance and periodic reassessment"
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "id": "nabl-proc-q1",
+        "type": "mcq",
+        "prompt": "In the NABL accreditation process, WHO makes the final accreditation decision?",
+        "options": [
+          "The same assessors who conducted the on-site assessment",
+          "A separate decision-making process, kept independent of the assessment team",
+          "The laboratory's own quality manager",
+          "The Ministry of Commerce and Industry directly"
+        ],
+        "correctIndex": 1,
+        "explanation": "Keeping the decision separate from the assessment team preserves impartiality."
+      },
+      {
+        "id": "nabl-proc-q2",
+        "type": "true-false",
+        "prompt": "True or False: A nonconformity found during assessment automatically means the laboratory is denied accreditation.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correctIndex": 1,
+        "explanation": "Nonconformities trigger corrective action, not automatic denial — they're a normal, expected part of the process."
+      }
+    ]
+  }
+}

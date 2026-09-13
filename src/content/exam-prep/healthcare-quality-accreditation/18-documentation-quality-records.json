@@ -1,0 +1,143 @@
+{
+  "id": "documentation-quality-records",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 18,
+  "title": "Documentation & Quality Records",
+  "shortDescription": "SOP, policy, procedure, form, record — the exact vocabulary accreditation assessors use, and the one comparison (document vs record) that trips up almost everyone.",
+  "genZNote": "If it isn't written down and controlled, as far as an assessor is concerned, it didn't happen.",
+  "sections": [
+    {
+      "id": "documentation-vocabulary",
+      "heading": "Documentation Vocabulary",
+      "bullets": [
+        "Policy — a high-level statement of intent set by management.",
+        "Procedure / SOP — the defined way an activity is actually carried out, step by step.",
+        "Work instruction — finer detail for a specific task, beyond what the SOP covers.",
+        "Form — a blank template used to capture information during work.",
+        "Document control — the system ensuring only the current, approved version of any document is in circulation.",
+        "Revision and approval — controlled changes to a document, each approved before use.",
+        "Distribution — ensuring the right people have access to the current version.",
+        "Obsolete documents — superseded versions, which must be clearly marked/removed from active use (though sometimes retained for historical reference).",
+        "Retention — how long records must be kept, per the applicable requirement.",
+        "Traceability — the ability to trace a result or decision back through the records that produced it."
+      ]
+    },
+    {
+      "id": "document-vs-record",
+      "heading": "Document vs. Record",
+      "table": {
+        "columnHeaders": [
+          "Document",
+          "Record"
+        ],
+        "rows": [
+          [
+            "Describes HOW something should be done (policy, SOP, work instruction, blank form)",
+            "Provides EVIDENCE of what was actually done (a completed form, a signed report, a calibration certificate)"
+          ],
+          [
+            "Can be revised and re-approved over time",
+            "Once created, is not edited — corrections are made through defined, traceable methods, not by altering the original"
+          ],
+          [
+            "Subject to document control (version control)",
+            "Subject to record control (retention, protection, retrievability)"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "A document describes how something should be done and is version-controlled; a record is the evidence of what was actually done and, once created, is preserved rather than edited.",
+    "keyFacts": [
+      "Document control ensures only the current approved version is in circulation.",
+      "A record, once created, is not edited — corrections follow a defined, traceable method.",
+      "Retention periods for records are set by the applicable accreditation requirement, not chosen arbitrarily by the lab.",
+      "Traceability means a result or decision can be traced back through the chain of records that produced it."
+    ],
+    "keyTerms": [
+      "Policy",
+      "SOP",
+      "Work instruction",
+      "Form",
+      "Record",
+      "Document control",
+      "Retention",
+      "Traceability"
+    ],
+    "commonConfusion": [
+      "A 'form' and a 'record' look identical once filled in, but they are conceptually different: the blank form is a controlled DOCUMENT; the completed form becomes a protected RECORD."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Documents are revised and re-approved; records, once made, are preserved rather than edited.",
+      "A completed form is a record; the blank template is a document."
+    ],
+    "commonTraps": [
+      "Editing a record directly to fix a mistake, instead of using a controlled correction method that preserves the original entry."
+    ],
+    "mustRemember": [
+      "Document → describes how. Record → evidence of what was actually done."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Document",
+        "termB": "Record",
+        "distinction": "A document (policy, SOP, form) describes how something should be done and can be revised. A record is evidence of what was actually done, and once created is preserved rather than edited."
+      }
+    ],
+    "possibleQuestions": [
+      "Explain the difference between a document and a record, using an SOP and a completed test report as examples."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    },
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    }
+  ],
+  "visualData": {
+    "comparisons": [
+      {
+        "termA": "Document",
+        "termB": "Record",
+        "distinction": "A document describes HOW something should be done and can be revised (policy, SOP, blank form). A record is evidence of WHAT was actually done and, once created, is preserved rather than edited."
+      }
+    ],
+    "questions": [
+      {
+        "id": "doc-q1",
+        "type": "mcq",
+        "prompt": "A completed, signed calibration certificate for a piece of equipment is best classified as a:",
+        "options": [
+          "Document",
+          "Record",
+          "Policy",
+          "Work instruction"
+        ],
+        "correctIndex": 1,
+        "explanation": "It's evidence of what was actually done — a record, not a revisable document."
+      },
+      {
+        "id": "doc-q2",
+        "type": "mcq",
+        "prompt": "Which of these IS revised and re-approved over time, unlike a record?",
+        "options": [
+          "A signed test report",
+          "An SOP",
+          "A completed control-chart entry",
+          "A calibration certificate"
+        ],
+        "correctIndex": 1,
+        "explanation": "An SOP is a document — subject to version control and re-approval as procedures change."
+      }
+    ]
+  }
+}

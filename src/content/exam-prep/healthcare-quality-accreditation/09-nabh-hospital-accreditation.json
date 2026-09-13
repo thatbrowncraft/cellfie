@@ -1,0 +1,144 @@
+{
+  "id": "nabh-hospital-accreditation",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 9,
+  "title": "NABH Hospital Accreditation",
+  "shortDescription": "The ten chapters every NABH-accredited hospital is assessed against — current (6th Edition) naming, with the one major rename exams love to test.",
+  "genZNote": "Ten chapters. One of them changed its name recently. That's exactly the kind of thing an exam asks.",
+  "sections": [
+    {
+      "id": "edition-note",
+      "heading": "Current Edition — Read This First",
+      "body": "NABH's Hospital Accreditation Standards are periodically revised. The 5th Edition (2020) is now the HISTORICAL/previous edition. The 6th Edition became effective from 1 January 2025 and is CURRENT for new accreditation applications. The most exam-relevant change: the infection-control chapter was renamed from 'Hospital Infection Control (HIC)' in the 5th Edition to 'Infection Prevention and Control (IPC)' in the 6th Edition — same domain, updated name and scope. Both editions keep the same overall count of ten chapters."
+    },
+    {
+      "id": "ten-areas",
+      "heading": "The Ten Standard Areas (Current — 6th Edition Naming)",
+      "body": "Each area covers a distinct domain of hospital functioning, assessed through detailed objective elements underneath it.",
+      "bullets": [
+        "Access, Assessment and Continuity of Care (AAC) — the patient's entire journey from arrival/registration through assessment, care planning, and discharge or transfer. Exam fact: this is typically one of the largest, most objective-element-dense chapters. Common confusion: students conflate this with 'Care of Patients' — AAC is about the JOURNEY and process flow, COP is about the clinical care content itself.",
+        "Care of Patients (COP) — clinical care processes and protocols: how patients are actually treated, from routine care to high-risk procedures. Why it matters: this is where clinical protocol adherence is directly assessed.",
+        "Management of Medication (MOM) — the full medication lifecycle: prescribing, storage, dispensing, administration, and monitoring for errors. Exam fact: medication error prevention (e.g. look-alike/sound-alike drug controls) sits squarely here.",
+        "Patient Rights and Education (PRE) — informed consent, patient rights, grievance mechanisms, and patient/family education about their own care. Common confusion: PRE is about RIGHTS and EDUCATION, not clinical content — that's COP's job.",
+        "Infection Prevention and Control (IPC) — renamed from 'Hospital Infection Control (HIC)' in the 6th Edition; covers surveillance, hand hygiene, sterilisation, and (per the 6th Edition update) dedicated antimicrobial stewardship requirements. Exam fact: know BOTH names — IPC is current, HIC is what older material/5th-Edition questions may still call it.",
+        "Patient Safety and Quality Improvement (PSQ) — the hospital's systematic patient-safety programme: incident reporting, quality indicators, sentinel event review, and improvement cycles.",
+        "Responsibilities of Management (ROM) — governance, leadership accountability, and organisational planning for quality and safety.",
+        "Facilities Management and Safety (FMS) — the physical environment: fire safety, utilities, equipment safety, and emergency preparedness for the building/infrastructure itself.",
+        "Human Resource Management (HRM) — credentialing, training, competency assessment, and staff records — proving the PEOPLE are qualified, not just the processes.",
+        "Information Management System (IMS) — medical record-keeping, data security, and (a 6th Edition emphasis) digital health/EMR integration."
+      ]
+    },
+    {
+      "id": "common-confusion-note",
+      "heading": "A Note on Common Confusion Across Chapters",
+      "body": "Students frequently mix up AAC (process/journey) with COP (clinical content), and PRE (rights/education) with COP (clinical care) — the safest way to keep them straight is to ask: is this about the PATH the patient takes, the RIGHTS/INFORMATION they receive, or the actual CLINICAL CARE given? That question maps cleanly onto AAC, PRE, and COP respectively."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "NABH's Hospital Accreditation Standards are organised into ten chapters covering the full scope of hospital functioning — currently the 6th Edition (effective 1 January 2025), which renamed the infection-control chapter from HIC to IPC.",
+    "keyFacts": [
+      "Current: NABH Hospital Accreditation Standards, 6th Edition, effective 1 January 2025.",
+      "Historical: 5th Edition (2020) — do not present as current.",
+      "The infection-control chapter is now IPC (Infection Prevention and Control); it was HIC (Hospital Infection Control) in the 5th Edition.",
+      "Ten chapters, both editions: AAC, COP, MOM, PRE, IPC/HIC, PSQ, ROM, FMS, HRM, IMS."
+    ],
+    "keyTerms": [
+      "AAC",
+      "COP",
+      "MOM",
+      "PRE",
+      "IPC",
+      "PSQ",
+      "ROM",
+      "FMS",
+      "HRM",
+      "IMS",
+      "6th Edition",
+      "5th Edition"
+    ],
+    "commonConfusion": [
+      "AAC vs. COP — AAC is the patient's journey/process flow; COP is the actual clinical care content.",
+      "IPC vs. HIC — same chapter, IPC is the current (6th Edition) name, HIC is the historical (5th Edition) name."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "6th Edition is current (from 1 Jan 2025); 5th Edition (2020) is historical.",
+      "IPC replaced HIC as the infection-control chapter's name in the 6th Edition.",
+      "Both editions retain ten chapters covering the same overall domains."
+    ],
+    "commonTraps": [
+      "Writing 'HIC' as if it's the current chapter name — check which edition a question is set in.",
+      "Confusing AAC (process/journey) with COP (clinical content)."
+    ],
+    "mustRemember": [
+      "AAC → COP → MOM → PRE → IPC → PSQ → ROM → FMS → HRM → IMS — ten chapters, current 6th Edition names."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "AAC (Access, Assessment and Continuity of Care)",
+        "termB": "COP (Care of Patients)",
+        "distinction": "AAC is about the patient's journey and process flow through the hospital; COP is about the actual clinical care and treatment protocols given."
+      },
+      {
+        "termA": "IPC (current)",
+        "termB": "HIC (historical)",
+        "distinction": "Same chapter, different edition names — Infection Prevention and Control (6th Edition, current) was called Hospital Infection Control (5th Edition, historical)."
+      }
+    ],
+    "possibleQuestions": [
+      "List the ten NABH hospital standard chapters using current (6th Edition) naming.",
+      "What changed between the 5th and 6th Edition NABH hospital standards regarding infection control?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "NABH — National Accreditation Board for Hospitals & Healthcare Providers",
+      "kind": "educational",
+      "url": "https://www.nabh.co/"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "nabh-hosp-q1",
+        "type": "mcq",
+        "prompt": "What is the CURRENT name of the NABH chapter that covers infection surveillance, hand hygiene, and antimicrobial stewardship?",
+        "options": [
+          "Hospital Infection Control (HIC)",
+          "Infection Prevention and Control (IPC)",
+          "Patient Safety and Quality Improvement (PSQ)",
+          "Facilities Management and Safety (FMS)"
+        ],
+        "correctIndex": 1,
+        "explanation": "IPC is the 6th Edition (current) name; HIC was the 5th Edition (historical) name for the same domain."
+      },
+      {
+        "id": "nabh-hosp-q2",
+        "type": "mcq",
+        "prompt": "Which chapter covers the patient's journey from arrival/registration through assessment, care planning, and discharge?",
+        "options": [
+          "Care of Patients (COP)",
+          "Access, Assessment and Continuity of Care (AAC)",
+          "Patient Rights and Education (PRE)",
+          "Information Management System (IMS)"
+        ],
+        "correctIndex": 1,
+        "explanation": "AAC covers the process/journey; COP covers the actual clinical care content given along that journey."
+      },
+      {
+        "id": "nabh-hosp-q3",
+        "type": "mcq",
+        "prompt": "The NABH Hospital Accreditation Standards, 6th Edition, became effective from:",
+        "options": [
+          "1 January 2020",
+          "1 January 2025",
+          "1 January 2026",
+          "It has no fixed effective date"
+        ],
+        "correctIndex": 1,
+        "explanation": "The 6th Edition became effective for new accreditation applications from 1 January 2025."
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "id": "iso-standards-healthcare-laboratories",
+  "subjectId": "healthcare-quality-accreditation",
+  "syllabusOrder": 13,
+  "title": "ISO Standards in Healthcare & Laboratories",
+  "shortDescription": "A reference map of the ISO standards that show up across NABL's accreditation programmes — what each one applies to and why.",
+  "genZNote": "NABL's programme list from Chapter 2 wasn't random — each programme maps to one of these standards.",
+  "sections": [
+    {
+      "id": "reference-table",
+      "heading": "Standard → Applies To → Purpose",
+      "body": "This deliberately mirrors the programme list from the NABL chapter — each NABL accreditation programme is built on one of these standards.",
+      "table": {
+        "columnHeaders": [
+          "Standard",
+          "Applies to",
+          "Purpose"
+        ],
+        "rows": [
+          [
+            "ISO 15189",
+            "Medical laboratories",
+            "Requirements for quality and competence in examining human specimens for diagnosis, treatment, and prevention of disease."
+          ],
+          [
+            "ISO/IEC 17025",
+            "Testing and calibration laboratories",
+            "General requirements for the competence of laboratories performing testing or calibration (non-medical)."
+          ],
+          [
+            "ISO/IEC 17043",
+            "Proficiency testing (PT) providers",
+            "Requirements for the competence of organisations running inter-laboratory comparison programmes."
+          ],
+          [
+            "ISO 17034",
+            "Reference material producers",
+            "Requirements for the competence of bodies producing certified reference materials used by other laboratories."
+          ],
+          [
+            "ISO 20387",
+            "Biobanks",
+            "Requirements for the competence, quality, and impartiality of organisations that collect, store, and distribute biological material and data."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "why-a-family",
+      "heading": "Why These Exist as a Family",
+      "body": "Rather than one generic 'lab standard', ISO deliberately built separate standards for each distinct KIND of conformity assessment body a laboratory ecosystem needs — a testing lab, a reference material producer, and a biobank are competent at genuinely different things, so each gets requirements tailored to what it actually does. This is exactly why NABL runs separate accreditation programmes rather than one blanket 'laboratory' accreditation."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "A family of ISO standards — ISO 15189, ISO/IEC 17025, ISO/IEC 17043, ISO 17034, and ISO 20387 — each sets competence requirements for a distinct kind of laboratory-ecosystem body, and each maps directly to one of NABL's accreditation programmes.",
+    "keyFacts": [
+      "ISO 15189 → medical laboratories. ISO/IEC 17025 → testing/calibration laboratories.",
+      "ISO/IEC 17043 → proficiency testing providers (the bodies that run EQA/PT schemes).",
+      "ISO 17034 → reference material producers. ISO 20387 → biobanks.",
+      "Each standard exists because these bodies do genuinely different technical work — not as arbitrary separate paperwork."
+    ],
+    "keyTerms": [
+      "ISO 15189",
+      "ISO/IEC 17025",
+      "ISO/IEC 17043",
+      "ISO 17034",
+      "ISO 20387"
+    ],
+    "commonConfusion": [
+      "ISO/IEC 17043 (proficiency testing PROVIDERS — the organisation running the scheme) is easily confused with a laboratory simply PARTICIPATING in a PT scheme, which is just part of that lab's own quality assurance under its own standard."
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Five standards, five distinct laboratory-ecosystem roles: medical labs, testing/calibration labs, PT providers, RMPs, biobanks.",
+      "This standard family maps one-to-one onto NABL's accreditation programme list from the NABL chapter."
+    ],
+    "commonTraps": [
+      "Assuming one universal 'ISO lab standard' exists — the correct standard depends entirely on the TYPE of body being accredited."
+    ],
+    "mustRemember": [
+      "Medical → 15189. Testing/calibration → 17025. PT providers → 17043. Reference materials → 17034. Biobanks → 20387."
+    ],
+    "confusedTerms": [],
+    "possibleQuestions": [
+      "Match each ISO standard to the type of laboratory-ecosystem body it applies to."
+    ]
+  },
+  "sources": [
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "kind": "educational",
+      "url": "https://www.iso.org/"
+    },
+    {
+      "name": "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+      "kind": "educational",
+      "url": "https://www.nabl-india.org/"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "iso-fam-q1",
+        "type": "mcq",
+        "prompt": "Which standard applies specifically to organisations producing certified reference materials for other laboratories?",
+        "options": [
+          "ISO 15189",
+          "ISO/IEC 17025",
+          "ISO 17034",
+          "ISO 20387"
+        ],
+        "correctIndex": 2,
+        "explanation": "ISO 17034 covers reference material producers specifically."
+      },
+      {
+        "id": "iso-fam-q2",
+        "type": "mcq",
+        "prompt": "Which standard applies to organisations that run inter-laboratory proficiency testing schemes?",
+        "options": [
+          "ISO/IEC 17043",
+          "ISO 20387",
+          "ISO 15189",
+          "ISO/IEC 17025"
+        ],
+        "correctIndex": 0,
+        "explanation": "ISO/IEC 17043 sets competence requirements for proficiency testing PROVIDERS."
+      }
+    ]
+  }
+}
