@@ -23,6 +23,7 @@ import { useId, useState } from 'react'
 import { ArrowsOut, Check, Info, X as XIcon } from '@phosphor-icons/react'
 import { Dialog, IllustrationFrame } from '@/shared/components'
 import { cn } from '@/shared/utils/cn'
+import { resolveExamPrepAssetPath } from '@/shared/utils/resolveExamPrepAssetPath'
 import type {
   AnatomyComparison,
   AnatomyHormoneRow,
@@ -46,11 +47,12 @@ interface AnatomyIllustrationPanelProps {
 
 export function AnatomyIllustrationPanel({ src, alt, caption, className }: AnatomyIllustrationPanelProps) {
   const [open, setOpen] = useState(false)
+  const resolvedSrc = resolveExamPrepAssetPath(src)
 
   return (
     <div className={cn('flex flex-col items-center gap-2', className)}>
       <div className="relative w-full max-w-xl">
-        <IllustrationFrame src={src} alt={alt} caption={caption} className="w-full" />
+        <IllustrationFrame src={resolvedSrc} alt={alt} caption={caption} className="w-full" />
         <button
           type="button"
           onClick={() => setOpen(true)}
@@ -62,7 +64,7 @@ export function AnatomyIllustrationPanel({ src, alt, caption, className }: Anato
       </div>
 
       <Dialog open={open} onClose={() => setOpen(false)} title={caption} size="lg">
-        <img src={src} alt={alt} className="max-h-[75vh] w-full rounded-md object-contain" />
+        <img src={resolvedSrc} alt={alt} className="max-h-[75vh] w-full rounded-md object-contain" />
         <p className="mt-3 font-body text-caption text-ink-secondary">
           Original labelled reference — use this view to study every structure before self-testing below.
         </p>
@@ -90,7 +92,11 @@ export function AnatomyStructureGrid({ structures }: { structures?: AnatomyStruc
         {structures.map((s) => (
           <div key={s.id} className="overflow-hidden rounded-sm border border-border bg-surface-raised">
             {s.image && (
-              <img src={s.image.src} alt={s.image.alt} className="h-32 w-full border-b border-border object-contain bg-surface" />
+              <img
+                src={resolveExamPrepAssetPath(s.image.src)}
+                alt={s.image.alt}
+                className="h-32 w-full border-b border-border object-contain bg-surface"
+              />
             )}
             <div className="p-3">
               <p className="font-ui text-ui font-semibold text-ink-primary">{s.name}</p>
@@ -239,7 +245,11 @@ function QuestionCard({
 
       {question.useIllustration && illustration && (
         <div className="mb-3 overflow-hidden rounded-md border border-border bg-surface-raised">
-          <img src={illustration.src} alt={illustration.alt} className="max-h-56 w-full object-contain" />
+          <img
+            src={resolveExamPrepAssetPath(illustration.src)}
+            alt={illustration.alt}
+            className="max-h-56 w-full object-contain"
+          />
         </div>
       )}
 
