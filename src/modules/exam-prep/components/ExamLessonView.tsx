@@ -209,7 +209,10 @@ export function ExamFocusView({ title, examFocus }: { title: string; examFocus: 
 }
 
 export function ExamLessonView({ topic }: { topic: ExamTopic }) {
-  const anatomy = topic.anatomy
+  // A topic only ever sets one of the two — `anatomy` for Human Anatomy
+  // content, `visualData` for any other subject reusing the same
+  // structure/pathway/comparison blocks (see `core/exam-prep/types.ts`).
+  const anatomy = topic.anatomy ?? topic.visualData
 
   return (
     <div className="flex flex-col gap-4">
