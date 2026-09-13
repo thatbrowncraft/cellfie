@@ -18,6 +18,13 @@
  */
 import { ComparisonTable as DesignComparisonTable } from '@/shared/components'
 import type { ExamFocusSummary, ExamTopic, LessonSection, QuickRevisionSummary } from '@/core/exam-prep/types'
+import {
+  AnatomyComparisonGrid,
+  AnatomyHormoneTable,
+  AnatomyIllustrationPanel,
+  AnatomyPathwayFlow,
+  AnatomyStructureGrid
+} from './AnatomyBlocks'
 
 function SectionBody({ section }: { section: LessonSection }) {
   return (
@@ -202,14 +209,36 @@ export function ExamFocusView({ title, examFocus }: { title: string; examFocus: 
 }
 
 export function ExamLessonView({ topic }: { topic: ExamTopic }) {
+  const anatomy = topic.anatomy
+
   return (
     <div className="flex flex-col gap-4">
       <div className="rounded-md border border-terracotta/40 bg-surface-raised px-4 py-2.5">
         <p className="font-ui text-caption font-medium text-ink-secondary">
-          Cellfie study content — a curated Exam Prep lesson, informed by the Constitution's own text and standard
-          educational sources (listed below), not auto-generated.
+          Cellfie study content — a curated Exam Prep lesson, informed by verified educational and scientific
+          sources (listed below), not auto-generated.
         </p>
       </div>
+
+      {/* Visual hierarchy for a visually-led subject (Human Anatomy):
+          illustration → structure identification/function → pathway →
+          comparisons → detailed explanation (sections) → sources. A
+          topic with no `anatomy` data (every other subject) simply
+          renders the illustration, if any, followed by its sections
+          exactly as before — nothing below is new for it. */}
+      {topic.illustration && (
+        <AnatomyIllustrationPanel
+          src={topic.illustration.src}
+          alt={topic.illustration.alt}
+          caption={topic.illustration.caption}
+          className="mx-auto w-full max-w-xl"
+        />
+      )}
+
+      <AnatomyStructureGrid structures={anatomy?.structures} />
+      <AnatomyPathwayFlow pathways={anatomy?.pathways} />
+      <AnatomyComparisonGrid comparisons={anatomy?.comparisons} />
+      <AnatomyHormoneTable rows={anatomy?.hormoneTable} />
 
       {topic.sections.map((section) => (
         <div key={section.id} className="rounded-md border border-border bg-surface p-5">
