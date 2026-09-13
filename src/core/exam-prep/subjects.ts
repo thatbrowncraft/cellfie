@@ -81,6 +81,14 @@ export const EXAM_SUBJECTS: ExamSubject[] = [
       'Standards, certification and the numbers that actually matter \u2014 ISO 9001 to ISO 17025, explained with the lab and science context Cellfie already teaches, not a bare list of codes to memorise.',
     genZNote: "\u2018Trust me bro\u2019 is not a quality management system \u2014 ISO is.",
     icon: 'SealCheck'
+  },
+  {
+    id: 'human-anatomy',
+    title: 'Human Anatomy',
+    shortDescription:
+      'Body systems, major organs, and the senses — taught with full HD labelled illustrations, structure/function breakdowns, and exam facts for every chapter.',
+    genZNote: 'Know the structures. Understand the systems. Ace the diagram questions.',
+    icon: 'Person'
   }
 ]
 

@@ -36,6 +36,7 @@ export type ExamSubjectId =
   | 'current-affairs-2026'
   | 'international-organizations'
   | 'iso'
+  | 'human-anatomy'
 
 export interface ExamSubject {
   id: ExamSubjectId
@@ -71,6 +72,33 @@ export interface ExamTopic {
   examFocus: ExamFocusSummary
   sources: LessonSource[]
   /**
+   * Optional primary illustration for this topic — used by Human Anatomy
+   * (and any future visually-led subject). Deliberately optional and
+   * separate from `sections`: it is a single supplied, unmodified HD
+   * asset (never AI-generated, never redrawn), rendered once at the top
+   * of the lesson via `IllustrationFrame`. When absent, the topic simply
+   * renders with no image slot — `IllustrationFrame` already has a
+   * graceful "no illustration" state, so nothing here ever fabricates a
+   * placeholder image.
+   */
+  illustration?: {
+    /** Path under `public/`, e.g. "/exam-prep/human-anatomy/human-anatomy-systems.png". */
+    src: string
+    alt: string
+    caption: string
+  }
+  /**
+   * Optional structured anatomy data — see `AnatomyData` above. Only
+   * `human-anatomy` topics set this; every other subject's topic files
+   * are untouched and simply never populate it. Rendered by
+   * `ExamLessonView` (structures/pathways/comparisons/hormone table)
+   * and by a small quiz block on `ExamPrepTopicPage` (questions) —
+   * both render nothing at all when a field is absent, so this can be
+   * adopted chapter-by-chapter without breaking any topic that hasn't
+   * been upgraded yet.
+   */
+  anatomy?: AnatomyData
+  /**
    * Current-Affairs-only metadata, all optional so every other subject's
    * topic files are untouched. When `region` is set, `ExamPrepSubjectPage`
    * groups the subject's topics by region (Gujarat first, per the brief)
@@ -84,6 +112,103 @@ export interface ExamTopic {
   eventDate?: string
   /** See `CurrentAffairsStatus` — only set for items where "did this actually happen yet" is itself part of the exam-relevant fact (e.g. ISRO missions). */
   status?: CurrentAffairsStatus
+}
+
+/**
+ * Anatomy-specific structured data — additive-only extension for the
+ * Human Anatomy subject (and any future visually-led subject). Every
+ * field is optional so `ExamTopic` stays exactly as-is for every other
+ * subject; nothing here changes `isValidTopic` in `registry.ts` or the
+ * shape any existing topic file already has.
+ *
+ * This is deliberately NOT a redesign of `LessonSection` — prose,
+ * tables, and steps still belong there. `anatomy` only carries the
+ * pieces a plain lesson section can't express well: a structure/function
+ * card grid, a directional pathway, a side-by-side comparison grid, a
+ * gland→hormone reference table, and structured quiz questions that a
+ * component can actually render as an interactive card, not prose that
+ * merely mentions a question exists.
+ */
+export interface AnatomyStructure {
+  /** Stable id within the topic, e.g. "right-atrium". */
+  id: string
+  name: string
+  description: string
+  function?: string
+  /** One compact exam-relevant fact about this specific structure — optional, kept separate from the general topic-level `examFocus`. */
+  highYield?: string
+  /**
+   * Optional per-structure illustration — a specific crop of the
+   * supplied HD artwork showing just this structure (e.g. the Liver
+   * card's own panel, not the whole multi-organ collage). Only set
+   * where a genuinely distinct panel exists in the source artwork;
+   * never a generated or redrawn image. Falls back to no image (not a
+   * placeholder) when absent, same pattern as the topic-level
+   * `illustration`.
+   */
+  image?: { src: string; alt: string }
+}
+
+export interface AnatomyPathway {
+  title: string
+  /** Ordered steps of a biological pathway (blood flow, air pathway, hormonal feedback, etc.) — rendered as a directional flow, not a bullet list. */
+  steps: string[]
+}
+
+export interface AnatomyComparison {
+  termA: string
+  termB: string
+  distinction: string
+}
+
+/** One row of a gland → hormone → function → target reference table (Endocrine System's dedicated hormone table). */
+export interface AnatomyHormoneRow {
+  gland: string
+  hormone: string
+  function: string
+  target: string
+}
+
+export type AnatomyQuestionType =
+  | 'mcq'
+  | 'true-false'
+  | 'structure-to-function'
+  | 'function-to-structure'
+  | 'gland-to-hormone'
+  | 'hormone-to-function'
+  | 'organ-to-system'
+  | 'diagram-identification'
+  | 'common-confusion'
+
+export interface AnatomyQuestion {
+  id: string
+  type: AnatomyQuestionType
+  prompt: string
+  /**
+   * Only set (true) for a diagram-identification question — reuses this
+   * topic's own `illustration` as the reference image. Never a separate
+   * or fabricated image, and never implies pixel-level highlighting
+   * (no coordinate data exists for the supplied artwork, per the asset
+   * rule — identification questions are text-option based, anchored to
+   * the visible labelled diagram).
+   */
+  useIllustration?: boolean
+  options: string[]
+  correctIndex: number
+  explanation: string
+  /**
+   * Optional one-line reason each option is right/wrong, same order and
+   * length as `options`. Rendered after answering, alongside `explanation`.
+   */
+  optionNotes?: string[]
+}
+
+export interface AnatomyData {
+  structures?: AnatomyStructure[]
+  pathways?: AnatomyPathway[]
+  comparisons?: AnatomyComparison[]
+  hormoneTable?: AnatomyHormoneRow[]
+  questions?: AnatomyQuestion[]
 }
 
 export type { LessonSection, LessonSource, QuickRevisionSummary, ExamFocusSummary }
