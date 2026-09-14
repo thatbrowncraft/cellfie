@@ -19,7 +19,17 @@ export function TopNav({ onMenuClick, onSearchClick, showMenuButton }: TopNavPro
   const online = useOnlineStatus()
 
   return (
-    <header role="banner" className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-surface px-4 sm:px-6">
+    <header
+      role="banner"
+      // Top safe-area inset — mirrors BottomNav's `pb-[env(safe-area-inset-bottom)]`.
+      // `h-16` alone would sit flush against a notch/camera-cutout/status-bar
+      // area on an edge-to-edge standalone PWA launch (viewport-fit=cover in
+      // index.html). Height grows by exactly the inset and padding-top absorbs
+      // that same amount, so the visible 4rem (h-16) content band is unchanged
+      // and `env(safe-area-inset-top, 0px)` falls back to 0 on devices with no
+      // cutout — nothing shifts there.
+      className="sticky top-0 z-30 flex h-[calc(4rem+env(safe-area-inset-top))] items-center justify-between border-b border-border bg-surface px-4 pt-[env(safe-area-inset-top)] sm:px-6"
+    >
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
