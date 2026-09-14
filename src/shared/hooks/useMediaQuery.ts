@@ -236,3 +236,18 @@ export const GRID_COLS_PRESETS = {
   twoThree: { mobile: 'grid-cols-2', tablet: 'grid-cols-3', desktop: 'grid-cols-3', wide: 'grid-cols-3' },
   oneTwo: { mobile: 'grid-cols-1', tablet: 'grid-cols-2', desktop: 'grid-cols-2', wide: 'grid-cols-2' }
 } as const satisfies Record<string, Partial<Record<Breakpoint, string>> & { mobile: string }>
+
+/**
+ * Page-container padding preset for `useBreakpointClass`, covering the
+ * repeated `px-4 py-8 sm:px-6 sm:py-10 md:px-8`-style raw breakpoint
+ * pattern used as the outer wrapper on most route pages. Mirrors
+ * `GRID_COLS_PRESETS` above for the same reason: a raw `sm:`/`md:` class
+ * still reads the browser's own (untrustworthy, inside an installed
+ * standalone PWA) layout-viewport width, bypassing `useBreakpoint()`'s
+ * standalone-aware result. Only introduced where a page's raw padding
+ * classes were being actively converted — this does not retrofit every
+ * page that still uses the raw pattern elsewhere in the app.
+ */
+export const PAGE_PADDING_PRESETS = {
+  default: { mobile: 'px-4 py-8', tablet: 'px-6 py-10', desktop: 'px-8 py-10', wide: 'px-8 py-10' }
+} as const satisfies Record<string, Partial<Record<Breakpoint, string>> & { mobile: string }>
