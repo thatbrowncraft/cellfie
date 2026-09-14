@@ -49,6 +49,24 @@ export default defineConfig({
         // app session.
         start_url: './?pwa=1',
         scope: '.',
+        // Explicit stable `id`, resolved the same way as `scope` above:
+        // relative to the manifest's own URL, not the document URL. Left
+        // unset, the spec default for `id` is `start_url` itself — which
+        // here includes the "?pwa=1" launch marker as part of the app's
+        // identity. That's fragile: if that marker or any other query
+        // param on start_url ever changes, the installed app's identity
+        // changes with it, and platforms that dedupe/update installs by
+        // `id` (Android's WebAPK install flow, PWABuilder's packaging)
+        // would treat it as a different app rather than an update to
+        // this one. Setting `id: '.'` decouples identity from that query
+        // string entirely — it resolves to this directory root, exactly
+        // like `scope`, and stays constant across deploys regardless of
+        // what start_url's query params do. Not an absolute path like
+        // "/cellfie/" on purpose, since BASE_PATH (see top of file) is
+        // dynamic per deploy target and the relative form already works
+        // correctly under the GitHub Pages project-site subpath without
+        // hardcoding the repo name here.
+        id: '.',
         icons: [
           // Real 192/512 PNGs, required for Android to treat an
           // "Add to Home Screen" install as a genuine WebAPK (standalone
