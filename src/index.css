@@ -120,22 +120,6 @@ body {
   transition:
     background-color var(--motion-page) var(--motion-ease-standard),
     color var(--motion-page) var(--motion-ease-standard);
-
-  /* Pre-APK polish: the viewport meta tag's maximum-scale/user-scalable
-     stops pinch-zoom on browsers that respect it, but Android Chrome
-     still honors a double-tap gesture as an accidental page-zoom
-     trigger independent of that meta tag. `manipulation` removes only
-     that double-tap-to-zoom + delays-before-gesture behavior — it does
-     NOT set `pan-x`/`pan-y` restrictions, so normal one-finger
-     scrolling (vertical page scroll, horizontal carousels, reader swipe
-     navigation) is completely unaffected. Scoped to `body` rather than
-     `*` so it never overrides a more specific touch-action a component
-     sets for its own gesture handling (e.g. MindMapStudio's canvas,
-     which deliberately needs `touch-action: none` for its own pan/zoom/
-     drag — see that component). Buttons, links, text selection, and the
-     full-size image viewer (a normal Dialog + <img>, no custom touch
-     handling of its own) all keep their default touch behavior. */
-  touch-action: manipulation;
 }
 
 /* App-wide text-overflow safety net. Cellfie's content legitimately
