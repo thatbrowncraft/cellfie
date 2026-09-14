@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, ArrowSquareOut, CaretRight } from '@phosphor-icons/react'
 import { Button, Card, CardBody, EmptyState, SearchField } from '@/shared/components'
+import { useBreakpointClass, GRID_COLS_PRESETS, PAGE_PADDING_PRESETS } from '@/shared/hooks/useMediaQuery'
 import { GLOBE_COUNTRIES, searchGlobeCountries } from '@/core/world-explorer/countries'
 import { countCountryProfiles, getCountryProfile } from '@/core/world-explorer/registry'
 import { TOPIC_CATALOG } from '@/core/world-explorer/sectionMeta'
@@ -55,8 +56,22 @@ export function WorldExplorerPage() {
   const searchResults = useMemo(() => searchGlobeCountries(query).slice(0, 8), [query])
   const deepProfileCount = countCountryProfiles()
 
+  // PWA layout-isolation fix — was `px-4 py-8 sm:px-6 sm:py-10 md:px-8`,
+  // `grid-cols-2 sm:grid-cols-3`, `grid-cols-2 sm:grid-cols-4`, and
+  // `col-span-2 sm:col-span-4`; see `useBreakpointClass` in
+  // shared/hooks/useMediaQuery.ts for why.
+  const pagePaddingClass = useBreakpointClass(PAGE_PADDING_PRESETS.default)
+  const topicGridClass = useBreakpointClass(GRID_COLS_PRESETS.twoThree)
+  const atAGlanceGridClass = useBreakpointClass(GRID_COLS_PRESETS.twoFour)
+  const atAGlanceLabelSpanClass = useBreakpointClass({
+    mobile: 'col-span-2',
+    tablet: 'col-span-4',
+    desktop: 'col-span-4',
+    wide: 'col-span-4'
+  })
+
   return (
-    <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
+    <div className={`mx-auto max-w-content ${pagePaddingClass}`}>
       <nav aria-label="Breadcrumbs" className="mb-4 flex items-center gap-1 font-ui text-caption text-ink-tertiary">
         <button type="button" onClick={() => navigate('/exam-prep')} className="hover:text-ink-secondary hover:underline">
           Exam Prep
@@ -115,7 +130,7 @@ export function WorldExplorerPage() {
       {/* Topic-first browsing — the flip side of the country-first globe flow above. Pick "Economy" once and see it for every curated country at once, instead of tapping through 58 country pages. */}
       <section className="mt-6">
         <h2 className="mb-3 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">📚 Or browse by topic, across every country</h2>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+        <div className={`grid gap-2 ${topicGridClass}`}>
           {TOPIC_CATALOG.map((topic) => (
             <button
               key={topic.id}
@@ -169,8 +184,8 @@ export function WorldExplorerPage() {
               </CardBody>
             </Card>
 
-            <section className="grid grid-cols-2 gap-3 rounded-md border border-border bg-surface p-5 sm:grid-cols-4">
-              <p className="col-span-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary sm:col-span-4">
+            <section className={`grid gap-3 rounded-md border border-border bg-surface p-5 ${atAGlanceGridClass}`}>
+              <p className={`font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary ${atAGlanceLabelSpanClass}`}>
                 🌍 At a glance
               </p>
               <AtAGlanceItem label="Capital" value={selected.capital} />

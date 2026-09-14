@@ -4,6 +4,7 @@ import { ArrowLeft, CaretDown, CaretRight, WarningCircle } from '@phosphor-icons
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, EmptyState } from '@/shared/components'
 import { cn } from '@/shared/utils/cn'
+import { useBreakpointClass, PAGE_PADDING_PRESETS } from '@/shared/hooks/useMediaQuery'
 import { getGlobeCountryById } from '@/core/world-explorer/countries'
 import { getAllCountryProfiles } from '@/core/world-explorer/registry'
 import { getTopicCatalogEntry } from '@/core/world-explorer/sectionMeta'
@@ -34,6 +35,9 @@ export function WorldExplorerTopicPage() {
   const { topicId } = useParams<{ topicId: string }>()
   const navigate = useNavigate()
   const [openIds, setOpenIds] = useState<Set<string>>(new Set())
+  // PWA layout-isolation fix — was `px-4 py-8 sm:px-6 sm:py-10 md:px-8`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const pagePaddingClass = useBreakpointClass(PAGE_PADDING_PRESETS.default)
 
   const topic = topicId ? getTopicCatalogEntry(topicId) : undefined
 
@@ -93,7 +97,7 @@ export function WorldExplorerTopicPage() {
   }
 
   return (
-    <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
+    <div className={`mx-auto max-w-content ${pagePaddingClass}`}>
       <nav aria-label="Breadcrumbs" className="mb-4 flex items-center gap-1 font-ui text-caption text-ink-tertiary">
         <button type="button" onClick={() => navigate('/exam-prep')} className="hover:text-ink-secondary hover:underline">
           Exam Prep

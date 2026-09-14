@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, CaretRight, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, EmptyState } from '@/shared/components'
+import { useBreakpointClass, GRID_COLS_PRESETS, PAGE_PADDING_PRESETS } from '@/shared/hooks/useMediaQuery'
 import { getGlobeCountryById } from '@/core/world-explorer/countries'
 import { getCountryProfile } from '@/core/world-explorer/registry'
 import {
@@ -32,6 +33,18 @@ export function CountryDetailPage() {
   const country = useMemo(() => (countryId ? getGlobeCountryById(countryId) : undefined), [countryId])
   const profile = useMemo(() => (countryId ? getCountryProfile(countryId) : undefined), [countryId])
 
+  // PWA layout-isolation fix — was `px-4 py-8 sm:px-6 sm:py-10 md:px-8`,
+  // `grid-cols-2 sm:grid-cols-4`, and `col-span-2 sm:col-span-4`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const pagePaddingClass = useBreakpointClass(PAGE_PADDING_PRESETS.default)
+  const atAGlanceGridClass = useBreakpointClass(GRID_COLS_PRESETS.twoFour)
+  const atAGlanceLabelSpanClass = useBreakpointClass({
+    mobile: 'col-span-2',
+    tablet: 'col-span-4',
+    desktop: 'col-span-4',
+    wide: 'col-span-4'
+  })
+
   if (!country) {
     return (
       <EmptyStateLayout>
@@ -50,7 +63,7 @@ export function CountryDetailPage() {
   }
 
   return (
-    <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
+    <div className={`mx-auto max-w-content ${pagePaddingClass}`}>
       <nav aria-label="Breadcrumbs" className="mb-4 flex items-center gap-1 font-ui text-caption text-ink-tertiary">
         <button type="button" onClick={() => navigate('/exam-prep')} className="hover:text-ink-secondary hover:underline">
           Exam Prep
@@ -88,8 +101,8 @@ export function CountryDetailPage() {
         {profile?.genZNote && <p className="mt-2 font-ui text-body-lg italic text-ink-tertiary">{profile.genZNote}</p>}
       </header>
 
-      <section className="mb-6 grid grid-cols-2 gap-3 rounded-md border border-border bg-surface p-5 sm:grid-cols-4">
-        <p className="col-span-2 font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary sm:col-span-4">🌍 At a glance</p>
+      <section className={`mb-6 grid gap-3 rounded-md border border-border bg-surface p-5 ${atAGlanceGridClass}`}>
+        <p className={`font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary ${atAGlanceLabelSpanClass}`}>🌍 At a glance</p>
         <AtAGlanceItem label="Capital" value={country.capital} />
         <AtAGlanceItem label="Continent" value={country.continent} />
         <AtAGlanceItem label="Currency" value={country.currency} />
