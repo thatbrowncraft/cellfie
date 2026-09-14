@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, CaretRight } from '@phosphor-icons/react'
 import { Button } from '@/shared/components'
+import { useBreakpointClass, GRID_COLS_PRESETS, PAGE_PADDING_PRESETS } from '@/shared/hooks/useMediaQuery'
 import {
   getAllMaritimeProfiles,
   getAllPorts,
@@ -40,8 +41,14 @@ export function MaritimeWorldPage() {
     return map
   }, [])
 
+  // PWA layout-isolation fix — was `px-4 py-8 sm:px-6 sm:py-10 md:px-8`
+  // and `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3`; see
+  // `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const pagePaddingClass = useBreakpointClass(PAGE_PADDING_PRESETS.default)
+  const categoryGridClass = useBreakpointClass(GRID_COLS_PRESETS.oneTwoThree)
+
   return (
-    <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
+    <div className={`mx-auto max-w-content ${pagePaddingClass}`}>
       <nav aria-label="Breadcrumbs" className="mb-4 flex items-center gap-1 font-ui text-caption text-ink-tertiary">
         <button type="button" onClick={() => navigate('/exam-prep')} className="hover:text-ink-secondary hover:underline">
           Exam Prep
@@ -100,7 +107,7 @@ export function MaritimeWorldPage() {
                 {meta.emoji} {meta.label}
               </h2>
               <p className="mt-1 font-body text-body text-ink-secondary">{meta.blurb}</p>
-              <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <div className={`mt-3 grid gap-3 ${categoryGridClass}`}>
                 {list.map((entry) => (
                   <button
                     key={entry.id}

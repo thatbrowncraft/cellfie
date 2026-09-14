@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, CaretRight, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '@/shared/layouts'
 import { Button, EmptyState } from '@/shared/components'
+import { useBreakpointClass, PAGE_PADDING_PRESETS } from '@/shared/hooks/useMediaQuery'
 import { getIndiaMaritimeProfile, getMaritimeProfile } from '@/core/world-explorer/maritime/registry'
 import type { MaritimeCategory } from '@/core/world-explorer/maritime/types'
 import {
@@ -27,6 +28,9 @@ const VALID_CATEGORIES: MaritimeCategory[] = ['ocean', 'sea', 'chokepoint', 'rou
 export function MaritimeEntityDetailPage() {
   const { category, entityId } = useParams<{ category: string; entityId: string }>()
   const navigate = useNavigate()
+  // PWA layout-isolation fix — was `px-4 py-8 sm:px-6 sm:py-10 md:px-8`;
+  // see `useBreakpointClass` in shared/hooks/useMediaQuery.ts for why.
+  const pagePaddingClass = useBreakpointClass(PAGE_PADDING_PRESETS.default)
 
   const isValidCategory = (c: string | undefined): c is MaritimeCategory =>
     !!c && (VALID_CATEGORIES as string[]).includes(c)
@@ -55,7 +59,7 @@ export function MaritimeEntityDetailPage() {
   }
 
   return (
-    <div className="mx-auto max-w-content px-4 py-8 sm:px-6 sm:py-10 md:px-8">
+    <div className={`mx-auto max-w-content ${pagePaddingClass}`}>
       <nav aria-label="Breadcrumbs" className="mb-4 flex items-center gap-1 font-ui text-caption text-ink-tertiary">
         <button type="button" onClick={() => navigate('/exam-prep')} className="hover:text-ink-secondary hover:underline">
           Exam Prep
