@@ -74,6 +74,45 @@ export function AnatomyIllustrationPanel({ src, alt, caption, className }: Anato
 }
 
 /* ------------------------------------------------------------------ */
+/* Compact zoomable illustration — same full-size Dialog mechanism as   */
+/* AnatomyIllustrationPanel above, sized for the smaller content        */
+/* illustrations (structure/organ/gland/diagram images inside cards)    */
+/* that previously had no way to view their labels at a readable size.  */
+/* Icon-only corner control (no label) so it fits a compact card        */
+/* thumbnail without a "giant button underneath every image."           */
+/* ------------------------------------------------------------------ */
+
+interface ZoomableIllustrationProps {
+  src: string
+  alt: string
+  title?: string
+  className?: string
+  imgClassName?: string
+}
+
+function ZoomableIllustration({ src, alt, title, className, imgClassName }: ZoomableIllustrationProps) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div className={cn('relative', className)}>
+      <img src={src} alt={alt} className={imgClassName} />
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label={`View full size: ${alt}`}
+        className="absolute right-1.5 top-1.5 inline-flex items-center justify-center rounded-full border border-border-strong bg-canvas/90 p-1.5 text-ink-secondary shadow-1 transition-colors duration-micro hover:bg-surface-raised"
+      >
+        <ArrowsOut size={13} aria-hidden />
+      </button>
+
+      <Dialog open={open} onClose={() => setOpen(false)} title={title ?? alt} size="lg">
+        <img src={src} alt={alt} className="max-h-[75vh] w-full rounded-md object-contain" />
+      </Dialog>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
 /* Structure identification + structure → function grid                */
 /* ------------------------------------------------------------------ */
 
@@ -92,10 +131,12 @@ export function AnatomyStructureGrid({ structures }: { structures?: AnatomyStruc
         {structures.map((s) => (
           <div key={s.id} className="overflow-hidden rounded-sm border border-border bg-surface-raised">
             {s.image && (
-              <img
+              <ZoomableIllustration
                 src={resolveExamPrepAssetPath(s.image.src)}
                 alt={s.image.alt}
-                className="h-32 w-full border-b border-border object-contain bg-surface"
+                title={s.name}
+                className="border-b border-border bg-surface"
+                imgClassName="h-32 w-full object-contain"
               />
             )}
             <div className="p-3">
@@ -244,13 +285,13 @@ function QuestionCard({
       <p className="mb-3 font-ui text-caption font-medium text-ink-tertiary">Question {index + 1}</p>
 
       {question.useIllustration && illustration && (
-        <div className="mb-3 overflow-hidden rounded-md border border-border bg-surface-raised">
-          <img
-            src={resolveExamPrepAssetPath(illustration.src)}
-            alt={illustration.alt}
-            className="max-h-56 w-full object-contain"
-          />
-        </div>
+        <ZoomableIllustration
+          src={resolveExamPrepAssetPath(illustration.src)}
+          alt={illustration.alt}
+          title={illustration.caption}
+          className="mb-3 overflow-hidden rounded-md border border-border bg-surface-raised"
+          imgClassName="max-h-56 w-full object-contain"
+        />
       )}
 
       <p id={groupId} className="mb-3 font-body text-body font-medium text-ink-primary">
