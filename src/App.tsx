@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from './core/theme'
 import { AppRouter } from './app/router'
 import { useStandaloneViewportScaleFix } from './shared/hooks'
+import { useRequestPersistentStorage } from './core/storage-persistence'
 
 /**
  * App — top-level composition root. ThemeProvider wraps everything so
@@ -21,6 +22,12 @@ export function App() {
   // which route loads first, and is a guaranteed no-op for every normal
   // browser tab and desktop browser.
   useStandaloneViewportScaleFix()
+
+  // Best-effort request to keep Cellfie's local data (Dexie + OPFS) out
+  // of the browser's storage-eviction-under-pressure pool. Feature-
+  // detected, silent on denial, fires once and never blocks or nags —
+  // see core/storage-persistence for the full reasoning.
+  useRequestPersistentStorage()
 
   return (
     <ThemeProvider>
