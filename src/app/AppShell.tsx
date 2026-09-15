@@ -11,6 +11,9 @@ import { cn } from '../shared/utils/cn'
 // TEMPORARY — on-device PWA diagnostic badge, see the file itself for why
 // and when to remove it (shared/components/PwaDebugBadge.tsx).
 import { PwaDebugBadge } from '../shared/components/PwaDebugBadge'
+// TEMPORARY — pre-APK viewport/zoom diagnostic, see the file itself for why
+// and when to remove it (shared/components/ViewportDiagnosticOverlay.tsx).
+import { ViewportDiagnosticOverlay } from '../shared/components/ViewportDiagnosticOverlay'
 import { searchEverything, type SearchResultGroup } from '../core/search'
 import { runAutoConceptCleanup, purgeAutomaticScientificRelations } from '../core/concepts'
 import { NoteEditorDialog } from '../modules/notes/components/NoteEditorDialog'
@@ -20,6 +23,14 @@ import { NoteEditorDialog } from '../modules/notes/components/NoteEditorDialog'
 // false otherwise now that the mobile-lock fix is confirmed working, so
 // it stops covering the bottom nav labels day-to-day.
 const SHOW_PWA_DEBUG_BADGE = false
+
+// Flip this to true to bring the viewport/zoom diagnostic on-screen while
+// confirming the pinch-zoom fix on a real device (see
+// docs/viewport-zoom-fix.md); leave it false once confirmed working, and
+// then delete this line, the import above, and
+// shared/components/ViewportDiagnosticOverlay.tsx +
+// shared/hooks/useViewportDiagnostics.ts entirely.
+const SHOW_VIEWPORT_DIAGNOSTIC = false
 
 interface AppShellProps {
   children: ReactNode
@@ -137,6 +148,7 @@ export function AppShell({ children }: AppShellProps) {
       />
       <NoteEditorDialog open={quickCaptureOpen} onClose={() => setQuickCaptureOpen(false)} />
       {SHOW_PWA_DEBUG_BADGE && <PwaDebugBadge />}
+      {SHOW_VIEWPORT_DIAGNOSTIC && <ViewportDiagnosticOverlay />}
     </div>
   )
 }
