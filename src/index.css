@@ -110,6 +110,36 @@ html {
      leaving explicit sizing (incl. Large Text Mode's 118% below) untouched. */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+
+  /* Pre-APK viewport/zoom stability fix — see docs/viewport-zoom-fix.md.
+     Cellfie's own viewport meta (index.html) was already correct
+     (`width=device-width, initial-scale=1`), but nothing was stopping a
+     genuine two-finger pinch gesture from scaling the *whole page* the
+     normal browser way — that gesture, not a CSS/layout bug, was what
+     made text/cards balloon and not reliably settle back until refresh.
+
+     `touch-action: pan-x pan-y;` — NOT `manipulation` — is the fix.
+     `manipulation` is commonly assumed to disable pinch-zoom; per spec
+     it's actually shorthand for "pan-x pan-y pinch-zoom", i.e. it still
+     ALLOWS pinch-zoom and only removes double-tap-to-zoom. Explicitly
+     listing only the two pan axes is what excludes pinch-zoom (and
+     double-tap-zoom) while leaving normal vertical/horizontal scrolling
+     completely intact — nothing here touches `overflow` or scroll
+     behavior, only which multi-touch gestures the browser is allowed to
+     interpret as page transforms.
+
+     This intentionally applies everywhere (not just the installed
+     standalone PWA), matching the ask for Cellfie to behave like an
+     app rather than a zoomable webpage even in an ordinary mobile
+     browser tab. It does not affect desktop (mouse/trackpad input isn't
+     touch-action-governed) and does not affect the dedicated full-size
+     image viewer (AnatomyIllustrationPanel / ZoomableIllustration's
+     Dialog), which renders a larger `<img>` rather than offering its
+     own pinch-to-zoom gesture — there is nothing here for this rule to
+     conflict with. Cellfie's existing 5-level text-size control
+     (`data-text-size`, below) remains the accessible way to enlarge
+     content instead of page pinch-zoom. */
+  touch-action: pan-x pan-y;
 }
 
 body {
@@ -120,6 +150,12 @@ body {
   transition:
     background-color var(--motion-page) var(--motion-ease-standard),
     color var(--motion-page) var(--motion-ease-standard);
+
+  /* See the touch-action note on `html` above — repeated here since some
+     mobile WebKit/Blink versions resolve touch-action from the nearest
+     ancestor with an explicit value rather than reliably inheriting from
+     `html`, and `body` is the next ancestor up from every page's content. */
+  touch-action: pan-x pan-y;
 }
 
 /* App-wide text-overflow safety net. Cellfie's content legitimately
