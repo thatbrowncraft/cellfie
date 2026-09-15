@@ -52,6 +52,21 @@ import { useIsStandalonePwa } from './useMediaQuery'
  * ordinary Chrome tab (whether or not Request Desktop Site is on) and
  * every desktop browser — none of those ever get a `zoom` style
  * written to `<html>`.
+ *
+ * RELATIONSHIP TO THE PRE-APK PINCH-ZOOM FIX (see
+ * docs/viewport-zoom-fix.md and the `touch-action` rule in index.css):
+ * before that fix, a user's own pinch gesture inside the installed app
+ * could also move `visualViewport.scale` away from 1 — indistinguishable
+ * here from the Request-Desktop-Site case this hook targets — so a
+ * live in-progress pinch could get "corrected" by this effect and end
+ * up compounding with the browser's own native pinch-zoom instead of
+ * the two settling back to 1 together, which is what made the zoomed
+ * state so hard to shake without a full refresh. `touch-action: pan-x
+ * pan-y` in index.css now prevents that gesture from changing scale in
+ * the first place, so the only remaining way this effect's trigger
+ * condition can fire is the actual 980px scenario it was written for.
+ * This file's own logic is unchanged — the fix lives entirely in the
+ * CSS, not here.
  */
 export function useStandaloneViewportScaleFix() {
   const isStandalone = useIsStandalonePwa()
