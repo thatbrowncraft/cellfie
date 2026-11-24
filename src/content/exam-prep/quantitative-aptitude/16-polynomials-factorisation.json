@@ -1,0 +1,113 @@
+{
+  "id": "quant-polynomials-factorisation",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 16,
+  "title": "Polynomials and Factorisation",
+  "shortDescription": "Degree, zeroes, remainder and factor theorems, identities and factorisation techniques.",
+  "genZNote": "Factor first, panic never. The remainder theorem is the 10-second shortcut examiners forget you know.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "Polynomial Basics",
+      "bullets": [
+        "Polynomial in x: aₙxⁿ + … + a₁x + a₀; degree = highest power; zero p(a) = 0 means (x − a) is a factor.",
+        "Remainder theorem: remainder of p(x) ÷ (x − a) is p(a). Example: p(x) = x³ − 2x² + x − 3 divided by (x − 1) → p(1) = −3.",
+        "Factor theorem: (x − a) is a factor iff p(a) = 0.",
+        "Relations for quadratic ax² + bx + c: sum of zeros = −b/a; product = c/a."
+      ]
+    },
+    {
+      "id": "identities",
+      "heading": "Identities",
+      "bullets": [
+        "a² − b² = (a + b)(a − b); a³ + b³ = (a + b)(a² − ab + b²); a³ − b³ = (a − b)(a² + ab + b²).",
+        "a² + b² + c² − ab − bc − ca = ½[(a − b)² + (b − c)² + (c − a)²]; if a + b + c = 0 then a³ + b³ + c³ = 3abc.",
+        "If x + 1/x = k: x² + 1/x² = k² − 2; x³ + 1/x³ = k³ − 3k. For k = 3 → 7 and 18."
+      ]
+    },
+    {
+      "id": "factorise",
+      "heading": "Factorisation Methods",
+      "bullets": [
+        "Common factor; grouping; splitting the middle term: x² − 5x + 6 = (x − 2)(x − 3).",
+        "Using identities; trial for cubic using factor theorem (try ±1, ±2).",
+        "Check by expansion."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Polynomials are factored using common factors, splitting, identities and the factor/remainder theorems.",
+    "keyFacts": [
+      "Remainder = p(a).",
+      "a + b + c = 0 → a³ + b³ + c³ = 3abc.",
+      "x + 1/x = 3 → x² + 1/x² = 7."
+    ],
+    "keyTerms": [
+      "Degree",
+      "Zero",
+      "Remainder theorem",
+      "Factor theorem",
+      "Identity"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Sum of zeros = −b/a."
+    ],
+    "commonTraps": [
+      "Do not forget sign errors in splitting."
+    ],
+    "mustRemember": [
+      "Try x = ±1 first."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard quantitative aptitude reference (R.S. Aggarwal, Quantitative Aptitude)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "quant-polynomials-factorisation-q1",
+        "type": "mcq",
+        "prompt": "Remainder when x³ − 2x² + x − 3 is divided by (x − 1):",
+        "options": [
+          "−3",
+          "−2",
+          "0",
+          "3"
+        ],
+        "correctIndex": 0,
+        "explanation": "p(1) = 1 − 2 + 1 − 3 = −3."
+      },
+      {
+        "id": "quant-polynomials-factorisation-q2",
+        "type": "mcq",
+        "prompt": "If x + 1/x = 3, x² + 1/x² =",
+        "options": [
+          "5",
+          "7",
+          "9",
+          "11"
+        ],
+        "correctIndex": 1,
+        "explanation": "9 − 2."
+      },
+      {
+        "id": "quant-polynomials-factorisation-q3",
+        "type": "mcq",
+        "prompt": "x² − 5x + 6 =",
+        "options": [
+          "(x − 1)(x − 6)",
+          "(x − 2)(x − 3)",
+          "(x + 2)(x + 3)",
+          "(x − 2)(x + 3)"
+        ],
+        "correctIndex": 1,
+        "explanation": "Product 6, sum −5."
+      }
+    ]
+  }
+}

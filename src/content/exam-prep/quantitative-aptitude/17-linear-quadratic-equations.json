@@ -1,0 +1,106 @@
+{
+  "id": "quant-linear-quadratic-equations",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 17,
+  "title": "Pair of Linear Equations in Two Variables and Quadratic Equations",
+  "shortDescription": "Solving by substitution/elimination, consistency conditions, discriminant and root relations.",
+  "genZNote": "Two lines either meet once, never, or are the same line. A quadratic's discriminant tells you the plot twist before you solve.",
+  "sections": [
+    {
+      "id": "linear",
+      "heading": "Pair of Linear Equations",
+      "bullets": [
+        "Forms: a₁x + b₁y = c₁ and a₂x + b₂y = c₂.",
+        "Unique solution if a₁/a₂ ≠ b₁/b₂; no solution if a₁/a₂ = b₁/b₂ ≠ c₁/c₂; infinitely many if all three ratios equal.",
+        "Methods: substitution, elimination, cross-multiplication x = (b₁c₂ − b₂c₁)/(a₁b₂ − a₂b₁).",
+        "Example: 2x + 3y = 12 and x − y = 1 → x = 3, y = 2."
+      ]
+    },
+    {
+      "id": "quad",
+      "heading": "Quadratic Equations",
+      "bullets": [
+        "ax² + bx + c = 0 (a ≠ 0); roots = [−b ± √(b² − 4ac)]/2a; D = b² − 4ac.",
+        "D > 0 two distinct real roots; D = 0 equal roots; D < 0 no real roots.",
+        "Sum of roots = −b/a; product = c/a. Equation with roots α, β: x² − (α + β)x + αβ = 0.",
+        "Example: 2x² − 5x + 2 = 0 → D = 9, roots 2 and 1/2; sum 5/2.",
+        "Word problems: speed/time, areas, consecutive numbers lead to quadratics — reject negative lengths or time."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Linear pairs are classified by coefficient ratios; quadratics by the discriminant and root relations.",
+    "keyFacts": [
+      "Unique solution when a₁/a₂ ≠ b₁/b₂.",
+      "D = b² − 4ac.",
+      "Sum = −b/a; product = c/a."
+    ],
+    "keyTerms": [
+      "Consistent",
+      "Discriminant",
+      "Root",
+      "Elimination",
+      "Substitution"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "D < 0 → no real roots."
+    ],
+    "commonTraps": [
+      "Do not accept negative values for physical quantities."
+    ],
+    "mustRemember": [
+      "Check discriminant first."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard quantitative aptitude reference (R.S. Aggarwal, Quantitative Aptitude)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "quant-linear-quadratic-equations-q1",
+        "type": "mcq",
+        "prompt": "Roots of 2x² − 5x + 2 = 0 are:",
+        "options": [
+          "1, 2",
+          "2, 1/2",
+          "−2, −1/2",
+          "1/2, 1/2"
+        ],
+        "correctIndex": 1,
+        "explanation": "D = 9; (5 ± 3)/4."
+      },
+      {
+        "id": "quant-linear-quadratic-equations-q2",
+        "type": "mcq",
+        "prompt": "Solution of 2x + 3y = 12 and x − y = 1:",
+        "options": [
+          "(2, 3)",
+          "(3, 2)",
+          "(4, 1)",
+          "(1, 0)"
+        ],
+        "correctIndex": 1,
+        "explanation": "2(3) + 3(2) = 12."
+      },
+      {
+        "id": "quant-linear-quadratic-equations-q3",
+        "type": "mcq",
+        "prompt": "If D = 0 the roots are:",
+        "options": [
+          "Real and equal",
+          "Imaginary",
+          "Real and distinct",
+          "Undefined"
+        ],
+        "correctIndex": 0,
+        "explanation": "Repeated root."
+      }
+    ]
+  }
+}

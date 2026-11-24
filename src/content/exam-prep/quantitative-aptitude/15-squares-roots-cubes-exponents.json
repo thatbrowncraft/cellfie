@@ -1,0 +1,114 @@
+{
+  "id": "quant-squares-roots-cubes-exponents",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 15,
+  "title": "Squares, Square Roots, Cubes, Cube Roots and Exponents",
+  "shortDescription": "Perfect squares/cubes, root methods, unit-digit patterns, exponent laws and surds.",
+  "genZNote": "Memorise squares to 30 and cubes to 15 once — they save more time than any shortcut.",
+  "sections": [
+    {
+      "id": "squares",
+      "heading": "Squares and Square Roots",
+      "bullets": [
+        "(a ± b)² = a² ± 2ab + b²; (a + b)(a − b) = a² − b².",
+        "Perfect squares end in 0, 1, 4, 5, 6 or 9 — never in 2, 3, 7, 8.",
+        "Square root by prime factorisation or division method; for 4-digit squares, use unit digit and nearest square. √1764 = 42.",
+        "Sum of first n squares = n(n + 1)(2n + 1)/6; sum of first n odd numbers = n²."
+      ]
+    },
+    {
+      "id": "cubes",
+      "heading": "Cubes and Cube Roots",
+      "bullets": [
+        "Cube root unit digit mapping: last digit of cube 1→1, 8→2, 7→3, 4→4, 5→5, 6→6, 3→7, 2→8, 9→9. ∛2744 = 14.",
+        "(a + b)³ = a³ + 3a²b + 3ab² + b³; a³ + b³ = (a + b)(a² − ab + b²).",
+        "Sum of first n cubes = [n(n + 1)/2]²."
+      ]
+    },
+    {
+      "id": "exp",
+      "heading": "Exponents and Surds",
+      "bullets": [
+        "aᵐ·aⁿ = aᵐ⁺ⁿ; aᵐ/aⁿ = aᵐ⁻ⁿ; (aᵐ)ⁿ = aᵐⁿ; a⁰ = 1; a⁻ⁿ = 1/aⁿ; a^(p/q) = (qth root of a)ᵖ.",
+        "Unit digit cycles: 2, 3, 7, 8 repeat in 4s; 4 and 9 in 2s; 0, 1, 5, 6 fixed. Example: 7¹²³ → cycle 7, 9, 3, 1; 123 mod 4 = 3 → 3.",
+        "Surds: rationalise by multiplying by the conjugate: 1/(√a + √b) = (√a − √b)/(a − b)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Squares, cubes and exponents rely on memorised values, identities and unit-digit patterns for speed.",
+    "keyFacts": [
+      "Squares never end in 2, 3, 7, 8.",
+      "Unit-digit cycles of 4.",
+      "√1764 = 42; ∛2744 = 14.",
+      "a⁰ = 1."
+    ],
+    "keyTerms": [
+      "Perfect square",
+      "Surd",
+      "Conjugate",
+      "Exponent",
+      "Unit digit"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Sum of first n odd numbers = n²."
+    ],
+    "commonTraps": [
+      "Do not forget negative exponents flip the fraction."
+    ],
+    "mustRemember": [
+      "Cycle length 4 for 2, 3, 7, 8."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard quantitative aptitude reference (R.S. Aggarwal, Quantitative Aptitude)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "quant-squares-roots-cubes-exponents-q1",
+        "type": "mcq",
+        "prompt": "Unit digit of 7¹²³:",
+        "options": [
+          "1",
+          "3",
+          "7",
+          "9"
+        ],
+        "correctIndex": 1,
+        "explanation": "123 mod 4 = 3 → third in cycle 7, 9, 3, 1."
+      },
+      {
+        "id": "quant-squares-roots-cubes-exponents-q2",
+        "type": "mcq",
+        "prompt": "√1764 =",
+        "options": [
+          "38",
+          "42",
+          "44",
+          "46"
+        ],
+        "correctIndex": 1,
+        "explanation": "42² = 1764."
+      },
+      {
+        "id": "quant-squares-roots-cubes-exponents-q3",
+        "type": "mcq",
+        "prompt": "∛2744 =",
+        "options": [
+          "12",
+          "14",
+          "16",
+          "18"
+        ],
+        "correctIndex": 1,
+        "explanation": "14³ = 2744."
+      }
+    ]
+  }
+}

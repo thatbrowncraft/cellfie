@@ -1,0 +1,115 @@
+{
+  "id": "quant-simple-compound-interest",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 14,
+  "title": "Simple and Compound Interest",
+  "shortDescription": "SI, CI, annual/half-yearly compounding, difference formulas and growth rules.",
+  "genZNote": "SI is a straight line; CI is a snowball. Know the 2-year difference shortcut and half-yearly switch and you're done.",
+  "sections": [
+    {
+      "id": "si",
+      "heading": "Simple Interest",
+      "bullets": [
+        "SI = P × R × T / 100; Amount A = P + SI.",
+        "Time for money to become k times at SI: T = (k − 1) × 100 / R. Doubling at 10% takes 10 years.",
+        "Example: ₹5,000 at 8% for 3 years → SI = 5000 × 8 × 3 / 100 = ₹1,200."
+      ]
+    },
+    {
+      "id": "ci",
+      "heading": "Compound Interest",
+      "bullets": [
+        "A = P(1 + R/100)ⁿ; CI = A − P.",
+        "Half-yearly: rate R/2, periods 2n. Quarterly: R/4, 4n.",
+        "Different rates for successive years: A = P(1 + r₁)(1 + r₂)…",
+        "Rule of 72: doubling time ≈ 72 / R (years) at compound rate R%."
+      ]
+    },
+    {
+      "id": "diff",
+      "heading": "CI − SI Shortcuts",
+      "bullets": [
+        "For 2 years: CI − SI = P(R/100)². Example: ₹10,000 at 10% → 10,000 × 0.01 = ₹100 (CI ₹2,100, SI ₹2,000).",
+        "For 3 years: CI − SI = P(r)²(3 + r) with r = R/100.",
+        "Equal annual instalments and loans: treat with present-value discounting; if CI and SI are given for 2 years, SI per year = SI/2 and rate = (CI − SI) / (SI/2) × 100.",
+        "Population growth, depreciation and bacteria use the same compound formula (depreciation uses 1 − R/100)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Simple interest grows linearly on principal; compound interest grows on principal plus accumulated interest.",
+    "keyFacts": [
+      "SI = PRT/100.",
+      "A = P(1 + R/100)ⁿ.",
+      "2-year CI − SI = P(R/100)².",
+      "Half-yearly → R/2 and 2n."
+    ],
+    "keyTerms": [
+      "Principal",
+      "Amount",
+      "Compounding",
+      "Rate",
+      "Depreciation"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "CI for year 1 equals SI for year 1."
+    ],
+    "commonTraps": [
+      "Do not forget to halve the rate and double the time for half-yearly."
+    ],
+    "mustRemember": [
+      "2-year difference formula."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard quantitative aptitude reference (R.S. Aggarwal, Quantitative Aptitude)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "quant-simple-compound-interest-q1",
+        "type": "mcq",
+        "prompt": "SI on ₹5,000 at 8% for 3 years:",
+        "options": [
+          "₹1,000",
+          "₹1,200",
+          "₹1,400",
+          "₹1,600"
+        ],
+        "correctIndex": 1,
+        "explanation": "5000×8×3/100."
+      },
+      {
+        "id": "quant-simple-compound-interest-q2",
+        "type": "mcq",
+        "prompt": "CI − SI on ₹4,000 at 5% for 2 years:",
+        "options": [
+          "₹5",
+          "₹10",
+          "₹15",
+          "₹20"
+        ],
+        "correctIndex": 1,
+        "explanation": "4000 × 0.05² = 10."
+      },
+      {
+        "id": "quant-simple-compound-interest-q3",
+        "type": "mcq",
+        "prompt": "Half-yearly compounding at 12% p.a. uses rate and periods per year:",
+        "options": [
+          "12%, 1",
+          "6%, 2",
+          "3%, 4",
+          "6%, 1"
+        ],
+        "correctIndex": 1,
+        "explanation": "Rate halves; periods double."
+      }
+    ]
+  }
+}

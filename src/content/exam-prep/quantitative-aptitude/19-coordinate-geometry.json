@@ -1,0 +1,116 @@
+{
+  "id": "quant-coordinate-geometry",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 19,
+  "title": "Coordinate Geometry",
+  "shortDescription": "Distance, section formula, midpoint, centroid, area of triangle, slope and line conditions.",
+  "genZNote": "Geometry with an address system: every point is (x, y), every formula is arithmetic.",
+  "sections": [
+    {
+      "id": "formulas",
+      "heading": "Core Formulas",
+      "bullets": [
+        "Distance between (x₁, y₁) and (x₂, y₂) = √[(x₂ − x₁)² + (y₂ − y₁)²]; distance from origin = √(x² + y²).",
+        "Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2); internal section m : n = ((mx₂ + nx₁)/(m + n), (my₂ + ny₁)/(m + n)).",
+        "Centroid of a triangle = ((x₁ + x₂ + x₃)/3, (y₁ + y₂ + y₃)/3).",
+        "Area of triangle = ½|x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)|; collinear if area = 0."
+      ]
+    },
+    {
+      "id": "lines",
+      "heading": "Lines and Slopes",
+      "bullets": [
+        "Slope m = (y₂ − y₁)/(x₂ − x₁) = tan θ.",
+        "Equation forms: y = mx + c; point-slope y − y₁ = m(x − x₁); intercept form x/a + y/b = 1.",
+        "Parallel lines: m₁ = m₂; perpendicular: m₁m₂ = −1.",
+        "Quadrants: I (+,+), II (−,+), III (−,−), IV (+,−)."
+      ]
+    },
+    {
+      "id": "ex",
+      "heading": "Worked Ideas",
+      "bullets": [
+        "Distance (1, 2) to (4, 6) = 5.",
+        "Midpoint of (2, 3) and (8, 7) = (5, 5).",
+        "Area of triangle (0, 0), (4, 0), (0, 3) = 6.",
+        "Centroid of (1, 2), (3, 4), (5, 6) = (3, 4)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Coordinate geometry uses algebraic formulas for distance, division of segments, areas and line relationships.",
+    "keyFacts": [
+      "Distance formula.",
+      "Section formula.",
+      "Perpendicular: m₁m₂ = −1.",
+      "Collinear: area = 0."
+    ],
+    "keyTerms": [
+      "Slope",
+      "Midpoint",
+      "Centroid",
+      "Section formula",
+      "Collinear"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Centroid divides median 2 : 1."
+    ],
+    "commonTraps": [
+      "Do not mix up x and y order."
+    ],
+    "mustRemember": [
+      "Area = 0 → collinear."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard quantitative aptitude reference (R.S. Aggarwal, Quantitative Aptitude)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "quant-coordinate-geometry-q1",
+        "type": "mcq",
+        "prompt": "Distance between (1, 2) and (4, 6):",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "7"
+        ],
+        "correctIndex": 2,
+        "explanation": "√(9 + 16)."
+      },
+      {
+        "id": "quant-coordinate-geometry-q2",
+        "type": "mcq",
+        "prompt": "Midpoint of (2, 3) and (8, 7):",
+        "options": [
+          "(5, 5)",
+          "(6, 4)",
+          "(4, 5)",
+          "(10, 10)"
+        ],
+        "correctIndex": 0,
+        "explanation": "Average of coordinates."
+      },
+      {
+        "id": "quant-coordinate-geometry-q3",
+        "type": "mcq",
+        "prompt": "Slopes of two perpendicular lines have product:",
+        "options": [
+          "1",
+          "0",
+          "−1",
+          "2"
+        ],
+        "correctIndex": 2,
+        "explanation": "m₁m₂ = −1."
+      }
+    ]
+  }
+}

@@ -32,6 +32,17 @@
       ]
     },
     {
+      "id": "mean-median-mode",
+      "heading": "Mean, Median and Mode (Statistics View)",
+      "body": "Average is the arithmetic mean. For raw data: Median = middle value after sorting (for an even count, the mean of the two middle values); Mode = most frequent value. Example: 5, 6, 7, 8, 8, 8, 9 → mean = 51/7 ≈ 7.29, median = 8, mode = 8.",
+      "bullets": [
+        "Empirical relation for moderately skewed data: Mode = 3 × Median − 2 × Mean (mean 12, median 11 → mode 9).",
+        "Grouped data: Median = L + [(N/2 − cf)/f] × h; Mode = L + [(f₁ − f₀)/(2f₁ − f₀ − f₂)] × h (L = lower limit of the median/modal class, h = class width, cf = cumulative frequency before it).",
+        "Adding a constant to every value shifts mean, median and mode by that constant; multiplying scales all three.",
+        "Mean is affected by outliers; median is not; mode can be absent or multiple (bimodal)."
+      ]
+    },
+    {
       "id": "average-speed-trap",
       "heading": "Average Speed for Equal Distances — Not a Simple Mean",
       "body": "For a journey covered at two different speeds over EQUAL distances (not equal times), the correct average speed is the harmonic-mean-based formula (2×S1×S2)/(S1+S2) — NOT the simple arithmetic mean (S1+S2)/2 — because more TIME is spent at the slower speed, pulling the true average down.",

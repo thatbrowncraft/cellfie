@@ -1,0 +1,150 @@
+{
+  "id": "quant-trigonometry",
+  "subjectId": "quantitative-aptitude",
+  "syllabusOrder": 20,
+  "title": "Trigonometry",
+  "shortDescription": "Ratios, standard angles, identities, complementary angles, heights and distances.",
+  "genZNote": "SOH-CAH-TOA plus one table. Once 30°, 45°, 60° are in your head, half the paper is free marks.",
+  "sections": [
+    {
+      "id": "ratios",
+      "heading": "Ratios and Standard Values",
+      "body": "sin = opposite/hypotenuse; cos = adjacent/hypotenuse; tan = opposite/adjacent; cosec, sec, cot are reciprocals.",
+      "table": {
+        "caption": "Standard angles",
+        "columnHeaders": [
+          "θ",
+          "sin",
+          "cos",
+          "tan"
+        ],
+        "rows": [
+          [
+            "0°",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "30°",
+            "1/2",
+            "√3/2",
+            "1/√3"
+          ],
+          [
+            "45°",
+            "1/√2",
+            "1/√2",
+            "1"
+          ],
+          [
+            "60°",
+            "√3/2",
+            "1/2",
+            "√3"
+          ],
+          [
+            "90°",
+            "1",
+            "0",
+            "undefined"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "identities",
+      "heading": "Identities",
+      "bullets": [
+        "sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ; 1 + cot²θ = cosec²θ.",
+        "Complementary angles: sin(90° − θ) = cos θ; tan(90° − θ) = cot θ.",
+        "tan θ = sin θ/cos θ.",
+        "Example: sin30°·cos60° + cos30°·sin60° = 1/4 + 3/4 = 1."
+      ]
+    },
+    {
+      "id": "hd",
+      "heading": "Heights and Distances",
+      "bullets": [
+        "Angle of elevation: line of sight above horizontal; depression: below horizontal.",
+        "tan θ = height / horizontal distance. Tower: 30° elevation at 30 m → height = 30 tan 30° = 10√3 ≈ 17.3 m.",
+        "Draw a right triangle; label known and unknown; use tan for height/base problems; for two observation points set two equations."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Trigonometry relates angles of right triangles to side ratios and solves height and distance problems.",
+    "keyFacts": [
+      "sin²θ + cos²θ = 1.",
+      "sin 30° = 1/2; tan 45° = 1; cos 60° = 1/2.",
+      "tan θ = height/distance."
+    ],
+    "keyTerms": [
+      "Sine",
+      "Cosine",
+      "Tangent",
+      "Elevation",
+      "Complementary angle"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "sin(90° − θ) = cos θ."
+    ],
+    "commonTraps": [
+      "Do not mix degrees and radians."
+    ],
+    "mustRemember": [
+      "Memorise the 5 standard angles."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard quantitative aptitude reference (R.S. Aggarwal, Quantitative Aptitude)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "quant-trigonometry-q1",
+        "type": "mcq",
+        "prompt": "sin 30° · cos 60° + cos 30° · sin 60° =",
+        "options": [
+          "0",
+          "1/2",
+          "1",
+          "√3"
+        ],
+        "correctIndex": 2,
+        "explanation": "1/4 + 3/4."
+      },
+      {
+        "id": "quant-trigonometry-q2",
+        "type": "mcq",
+        "prompt": "tan 45° =",
+        "options": [
+          "0",
+          "1/√3",
+          "1",
+          "√3"
+        ],
+        "correctIndex": 2,
+        "explanation": "Standard value."
+      },
+      {
+        "id": "quant-trigonometry-q3",
+        "type": "mcq",
+        "prompt": "If sin θ = 3/5, cos θ =",
+        "options": [
+          "3/4",
+          "4/5",
+          "5/4",
+          "4/3"
+        ],
+        "correctIndex": 1,
+        "explanation": "3-4-5 triangle."
+      }
+    ]
+  }
+}
