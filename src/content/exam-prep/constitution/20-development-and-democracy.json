@@ -1,0 +1,123 @@
+{
+  "id": "constitution-development-and-democracy",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 20,
+  "title": "Development and Democracy",
+  "shortDescription": "Concepts of development, human development, India's approach, welfare schemes and sustainable development.",
+  "genZNote": "Is democracy good for development? India's answer: growth AND rights AND welfare. This chapter links everything to real schemes.",
+  "sections": [
+    {
+      "id": "concepts",
+      "heading": "What Development Means",
+      "bullets": [
+        "Economic growth (GDP) vs development (people's well-being); Human Development Index (UNDP): life expectancy, education and per-capita income.",
+        "Amartya Sen: \"Development as Freedom\" — expanding capabilities and freedoms.",
+        "Debate: do democracies grow slower or faster? India's experience shows democratic accountability can drive welfare and inclusion."
+      ]
+    },
+    {
+      "id": "india",
+      "heading": "India's Approach",
+      "bullets": [
+        "Mixed economy and planning (Planning Commission 1950–2014; replaced by NITI Aayog on 1 January 2015); economic reforms of 1991 (LPG).",
+        "Welfare/rights legislation: MGNREGA (2005), RTE (2009), NFSA (2013), RTI (2005).",
+        "Directive Principles act as the development blueprint; decentralised planning via local bodies.",
+        "Sustainable Development Goals (2015, 17 goals by 2030) guide targets; India sits in the \"medium human development\" group — check the latest HDR."
+      ]
+    },
+    {
+      "id": "tension",
+      "heading": "Tensions and Movements",
+      "bullets": [
+        "Displacement and environment: Narmada Bachao Andolan (Sardar Sarovar on the Narmada, Gujarat) and Chipko highlight development versus livelihood debates.",
+        "Inclusive growth: reducing regional and social inequality, empowering women and marginalised groups.",
+        "Participatory development: gram sabhas, social audits and cooperatives (Amul model in Gujarat)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Development in a democracy aims at growth with equity, rights and participation, guided by constitutional values and welfare policies.",
+    "keyFacts": [
+      "NITI Aayog replaced Planning Commission (2015).",
+      "HDI = health, education, income.",
+      "SDGs: 17 goals, 2030.",
+      "MGNREGA 2005; NFSA 2013."
+    ],
+    "keyTerms": [
+      "Human development",
+      "Sustainable development",
+      "NITI Aayog",
+      "Inclusive growth",
+      "SDG"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Sen: capability approach."
+    ],
+    "commonTraps": [
+      "Do not equate GDP growth with development."
+    ],
+    "mustRemember": [
+      "HDI components."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT, Indian Constitution at Work (Class XI Political Science)",
+      "kind": "educational"
+    },
+    {
+      "name": "Constitution of India (official text), Legislative Department",
+      "kind": "educational",
+      "url": "https://legislative.gov.in"
+    },
+    {
+      "name": "M. Laxmikanth, Indian Polity",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "constitution-development-and-democracy-q1",
+        "type": "mcq",
+        "prompt": "NITI Aayog replaced the Planning Commission on:",
+        "options": [
+          "1 Jan 2015",
+          "15 Aug 2014",
+          "26 Jan 2015",
+          "1 Apr 2014"
+        ],
+        "correctIndex": 0,
+        "explanation": "2015."
+      },
+      {
+        "id": "constitution-development-and-democracy-q2",
+        "type": "mcq",
+        "prompt": "HDI does NOT include:",
+        "options": [
+          "Life expectancy",
+          "Education",
+          "Per-capita income",
+          "Forest cover"
+        ],
+        "correctIndex": 3,
+        "explanation": "HDI uses health, education and income."
+      },
+      {
+        "id": "constitution-development-and-democracy-q3",
+        "type": "mcq",
+        "prompt": "\"Development as Freedom\" was written by:",
+        "options": [
+          "Amartya Sen",
+          "Manmohan Singh",
+          "Raghuram Rajan",
+          "Jagdish Bhagwati"
+        ],
+        "correctIndex": 0,
+        "explanation": "Amartya Sen (1999)."
+      }
+    ]
+  }
+}

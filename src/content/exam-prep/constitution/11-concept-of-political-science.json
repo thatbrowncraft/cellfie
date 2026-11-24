@@ -1,0 +1,153 @@
+{
+  "id": "constitution-concept-of-political-science",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 11,
+  "title": "Concept of Political Science",
+  "shortDescription": "What political science studies: state, power, sovereignty, theories of the state and forms of government.",
+  "genZNote": "Politics isn't just elections — it's who gets power, how they keep it and why anyone obeys. This chapter is the vocabulary pack for everything else.",
+  "sections": [
+    {
+      "id": "def",
+      "heading": "Meaning and Scope",
+      "bullets": [
+        "Political science studies the state, government, power, politics and public policy; Aristotle is called the father of political science (\"Man is a political animal\").",
+        "Branches: political theory, comparative politics, public administration, international relations, political economy.",
+        "Indian roots: Kautilya's Arthashastra (statecraft), Ashokan edicts, ideas of dharma and rajdharma."
+      ]
+    },
+    {
+      "id": "state",
+      "heading": "State, Nation and Sovereignty",
+      "body": "Theories of origin of the state: divine right, force, social contract (Hobbes, Locke, Rousseau), evolutionary/historical.",
+      "table": {
+        "caption": "Key concepts",
+        "columnHeaders": [
+          "Concept",
+          "Meaning"
+        ],
+        "rows": [
+          [
+            "State",
+            "Population + territory + government + sovereignty"
+          ],
+          [
+            "Nation",
+            "A community with shared identity, history or culture"
+          ],
+          [
+            "Government",
+            "Agency that exercises state authority"
+          ],
+          [
+            "Sovereignty",
+            "Supreme authority — internal (within territory) and external (independence)"
+          ],
+          [
+            "Power, authority, legitimacy",
+            "Ability to influence; recognised right to command; acceptance by the governed"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "forms",
+      "heading": "Forms and Systems of Government",
+      "bullets": [
+        "Monarchy, oligarchy, democracy; unitary vs federal; parliamentary vs presidential.",
+        "India: sovereign, socialist, secular, democratic republic with a parliamentary federal system (Preamble).",
+        "Separation of powers: legislature, executive, judiciary (Montesquieu)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Political science is the systematic study of the state, power and government, including how authority is justified and organised.",
+    "keyFacts": [
+      "State = population, territory, government, sovereignty.",
+      "Aristotle: father of political science.",
+      "Social contract: Hobbes, Locke, Rousseau."
+    ],
+    "keyTerms": [
+      "State",
+      "Nation",
+      "Sovereignty",
+      "Legitimacy",
+      "Social contract"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Nation ≠ State."
+    ],
+    "commonTraps": [
+      "Do not call government and state the same thing."
+    ],
+    "mustRemember": [
+      "Four elements of the state."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "State",
+        "termB": "Government",
+        "distinction": "The state is permanent and sovereign; governments change."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT, Indian Constitution at Work (Class XI Political Science)",
+      "kind": "educational"
+    },
+    {
+      "name": "Constitution of India (official text), Legislative Department",
+      "kind": "educational",
+      "url": "https://legislative.gov.in"
+    },
+    {
+      "name": "M. Laxmikanth, Indian Polity",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "constitution-concept-of-political-science-q1",
+        "type": "mcq",
+        "prompt": "Which is NOT an essential element of the state?",
+        "options": [
+          "Population",
+          "Territory",
+          "Sovereignty",
+          "Religion"
+        ],
+        "correctIndex": 3,
+        "explanation": "The four elements are population, territory, government and sovereignty."
+      },
+      {
+        "id": "constitution-concept-of-political-science-q2",
+        "type": "mcq",
+        "prompt": "\"Man is a political animal\" is attributed to:",
+        "options": [
+          "Plato",
+          "Aristotle",
+          "Hobbes",
+          "Locke"
+        ],
+        "correctIndex": 1,
+        "explanation": "Aristotle."
+      },
+      {
+        "id": "constitution-concept-of-political-science-q3",
+        "type": "mcq",
+        "prompt": "Social contract theorists include:",
+        "options": [
+          "Hobbes, Locke, Rousseau",
+          "Marx, Engels",
+          "Kautilya",
+          "Montesquieu only"
+        ],
+        "correctIndex": 0,
+        "explanation": "The classic trio."
+      }
+    ]
+  }
+}

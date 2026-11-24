@@ -1,0 +1,158 @@
+{
+  "id": "constitution-rights-and-citizenship",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 14,
+  "title": "Rights and Citizenship",
+  "shortDescription": "Types of rights, human rights, statutory rights and constitutional provisions on citizenship (Articles 5–11) and the Citizenship Act, 1955.",
+  "genZNote": "A right is a claim that society recognises; citizenship is the membership card that unlocks some of them.",
+  "sections": [
+    {
+      "id": "rights",
+      "heading": "Rights — Types and Sources",
+      "bullets": [
+        "Natural/moral rights vs legal and constitutional rights; civil, political, economic, social and cultural rights.",
+        "UDHR adopted 10 December 1948; India's statutory body: National Human Rights Commission (Protection of Human Rights Act, 1993).",
+        "Constitutional right (not fundamental): property under Art. 300A after the 44th Amendment (1978).",
+        "Statutory rights: Right to Information Act, 2005; right to education is a fundamental right under Art. 21A (86th Amendment, 2002).",
+        "Some rights (Arts. 15, 16, 19, 29, 30) are available only to citizens; others (Arts. 14, 20–22, 25) to all persons."
+      ]
+    },
+    {
+      "id": "citizen",
+      "heading": "Citizenship — Constitution and Act",
+      "body": "The Citizenship Act, 1955 provides five modes of acquisition: birth, descent, registration, naturalisation and incorporation of territory; loss by renunciation, termination (voluntary foreign acquisition) and deprivation. Naturalisation generally needs 12 years of residence (the Citizenship (Amendment) Act, 2019 reduced it to 5 years for certain persecuted minorities from Afghanistan, Bangladesh and Pakistan who entered before 31 December 2014). India has single citizenship and does not permit dual citizenship; Overseas Citizen of India (OCI) status is not citizenship.",
+      "table": {
+        "caption": "Articles 5–11",
+        "columnHeaders": [
+          "Article",
+          "Provision"
+        ],
+        "rows": [
+          [
+            "5",
+            "Citizens at commencement of the Constitution"
+          ],
+          [
+            "6",
+            "Migrants from Pakistan"
+          ],
+          [
+            "7",
+            "Migrants to Pakistan who returned"
+          ],
+          [
+            "8",
+            "Persons of Indian origin residing abroad"
+          ],
+          [
+            "9",
+            "Voluntary acquisition of foreign citizenship ends Indian citizenship"
+          ],
+          [
+            "10",
+            "Continuance of citizenship"
+          ],
+          [
+            "11",
+            "Parliament may regulate citizenship by law"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "birth",
+      "heading": "Citizenship by Birth — Timeline",
+      "bullets": [
+        "Born in India between 26 Jan 1950 and 1 July 1987: citizen by birth.",
+        "Between 1 July 1987 and 3 Dec 2004: at least one parent a citizen.",
+        "After 3 Dec 2004: both parents citizens, or one parent citizen and the other not an illegal migrant.",
+        "Figures and rules change — verify against the current text before an exam."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Rights are legally recognised claims; Indian citizenship is governed by Articles 5–11 and the Citizenship Act, 1955.",
+    "keyFacts": [
+      "Arts. 5–11 Part II.",
+      "Citizenship Act, 1955; amended 1986, 2003, 2019.",
+      "Single citizenship; OCI ≠ citizenship.",
+      "Art. 21A: education right (86th Amendment)."
+    ],
+    "keyTerms": [
+      "Citizenship",
+      "Naturalisation",
+      "OCI",
+      "Statutory right",
+      "Human rights"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Art. 300A: property is a constitutional right."
+    ],
+    "commonTraps": [
+      "Do not say India allows dual citizenship."
+    ],
+    "mustRemember": [
+      "Five modes of acquiring citizenship."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT, Indian Constitution at Work (Class XI Political Science)",
+      "kind": "educational"
+    },
+    {
+      "name": "Constitution of India (official text), Legislative Department",
+      "kind": "educational",
+      "url": "https://legislative.gov.in"
+    },
+    {
+      "name": "M. Laxmikanth, Indian Polity",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "constitution-rights-and-citizenship-q1",
+        "type": "mcq",
+        "prompt": "Citizenship provisions are in which Part of the Constitution?",
+        "options": [
+          "I",
+          "II",
+          "III",
+          "IV"
+        ],
+        "correctIndex": 1,
+        "explanation": "Part II, Articles 5–11."
+      },
+      {
+        "id": "constitution-rights-and-citizenship-q2",
+        "type": "mcq",
+        "prompt": "Right to property is now:",
+        "options": [
+          "Fundamental right",
+          "Constitutional right under Art. 300A",
+          "Directive principle",
+          "Duty"
+        ],
+        "correctIndex": 1,
+        "explanation": "44th Amendment."
+      },
+      {
+        "id": "constitution-rights-and-citizenship-q3",
+        "type": "mcq",
+        "prompt": "Which is NOT a mode of acquiring citizenship under the 1955 Act?",
+        "options": [
+          "Birth",
+          "Descent",
+          "Marriage alone",
+          "Naturalisation"
+        ],
+        "correctIndex": 2,
+        "explanation": "Marriage alone does not confer citizenship."
+      }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "id": "constitution-elections-in-india",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 18,
+  "title": "Elections in India",
+  "shortDescription": "Election Commission, legislation, electoral system, EVM/VVPAT/NOTA, delimitation and reforms.",
+  "genZNote": "Largest election on earth, one rulebook: Article 324, two RP Acts and a Commission that doesn't take sides.",
+  "sections": [
+    {
+      "id": "framework",
+      "heading": "Constitutional and Legal Framework",
+      "bullets": [
+        "Part XV (Arts. 324–329); Art. 324 vests superintendence, direction and control of elections in the Election Commission of India (CEC + Election Commissioners); Art. 326: universal adult suffrage (18 years since the 61st Amendment, 1988).",
+        "Representation of the People Act, 1950 (electoral rolls, allocation of seats) and 1951 (conduct of elections, qualifications and disqualifications, corrupt practices).",
+        "Appointment: the CEC and Other ECs (Appointment, Conditions of Service and Term of Office) Act, 2023 — selection committee of the PM, Leader of Opposition and a Union Cabinet Minister; term 6 years or until 65.",
+        "State Election Commissions conduct panchayat and municipal elections."
+      ]
+    },
+    {
+      "id": "system",
+      "heading": "Electoral System and Technology",
+      "bullets": [
+        "First-past-the-post (single-member constituencies) for Lok Sabha and Vidhan Sabha; proportional representation by single transferable vote for President, Vice-President, Rajya Sabha and Legislative Councils.",
+        "Lok Sabha: 543 elected seats; Rajya Sabha: 250 (12 nominated); Anglo-Indian nominations ended by the 104th Amendment (2019).",
+        "EVMs used nationwide since 2004; VVPAT introduced from 2013; NOTA from 2013 (PUCL v Union of India).",
+        "Model Code of Conduct applies from announcement of the schedule; security deposits exist for candidates; sentence of two years or more disqualifies a convicted legislator (RPA s.8(3), Lily Thomas, 2013)."
+      ]
+    },
+    {
+      "id": "delim",
+      "heading": "Delimitation and Reforms",
+      "bullets": [
+        "Delimitation Commission redraws constituencies; the seat allocation among states is frozen until the first Census after 2026 (84th Amendment).",
+        "Women's reservation: Nari Shakti Vandan Adhiniyam (106th Amendment, 2023) — 33% seats in Lok Sabha and Assemblies, to be implemented after delimitation.",
+        "National Voters' Day: 25 January; SVEEP promotes voter education.",
+        "\"One Nation, One Election\" proposals are under parliamentary consideration — check the current status."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Elections are conducted by the independent Election Commission under Article 324, using FPTP with universal adult suffrage and a framework of statutes and codes.",
+    "keyFacts": [
+      "Art. 324 ECI; Art. 326 universal suffrage.",
+      "RPA 1950 vs 1951.",
+      "NOTA: 2013.",
+      "Lok Sabha 543 elected seats."
+    ],
+    "keyTerms": [
+      "Election Commission",
+      "FPTP",
+      "NOTA",
+      "VVPAT",
+      "Delimitation"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Voting age lowered to 18 by 61st Amendment."
+    ],
+    "commonTraps": [
+      "Do not say ECI conducts panchayat elections."
+    ],
+    "mustRemember": [
+      "Art. 324."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "RPA 1950",
+        "termB": "RPA 1951",
+        "distinction": "1950: rolls and seats; 1951: conduct, qualifications and offences."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT, Indian Constitution at Work (Class XI Political Science)",
+      "kind": "educational"
+    },
+    {
+      "name": "Constitution of India (official text), Legislative Department",
+      "kind": "educational",
+      "url": "https://legislative.gov.in"
+    },
+    {
+      "name": "M. Laxmikanth, Indian Polity",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "constitution-elections-in-india-q1",
+        "type": "mcq",
+        "prompt": "Superintendence of elections is vested in the ECI under:",
+        "options": [
+          "Art. 315",
+          "Art. 324",
+          "Art. 326",
+          "Art. 356"
+        ],
+        "correctIndex": 1,
+        "explanation": "Article 324."
+      },
+      {
+        "id": "constitution-elections-in-india-q2",
+        "type": "mcq",
+        "prompt": "NOTA was introduced following the Supreme Court judgment in:",
+        "options": [
+          "PUCL v Union of India (2013)",
+          "Kesavananda Bharati",
+          "Maneka Gandhi",
+          "Shah Bano"
+        ],
+        "correctIndex": 0,
+        "explanation": "2013."
+      },
+      {
+        "id": "constitution-elections-in-india-q3",
+        "type": "mcq",
+        "prompt": "Voting age was reduced to 18 by the:",
+        "options": [
+          "42nd Amendment",
+          "44th Amendment",
+          "61st Amendment",
+          "73rd Amendment"
+        ],
+        "correctIndex": 2,
+        "explanation": "1988."
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "constitution-party-system-in-india",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 17,
+  "title": "Nature of Party System in India",
+  "shortDescription": "Features of the multi-party system, recognition criteria, Tenth Schedule and party finance.",
+  "genZNote": "One party ruled for decades, then coalitions, then dominance again — India's party system is multi-party with plot twists. Know the criteria and the anti-defection law.",
+  "sections": [
+    {
+      "id": "nature",
+      "heading": "Nature of the Party System",
+      "bullets": [
+        "India has a multi-party system with national and state parties; the \"Congress system\" (dominant-party phase until 1967), coalition era after 1989, and later dominance of a party/alliance in elections.",
+        "Functions: aggregating interests, forming governments, opposition, mobilisation, policy formulation.",
+        "Registration of parties under Section 29A of the Representation of the People Act, 1951; recognition and symbols under the Election Symbols (Reservation and Allotment) Order, 1968."
+      ]
+    },
+    {
+      "id": "recog",
+      "heading": "Recognition and Anti-Defection",
+      "bullets": [
+        "National party (ECI criteria): recognised as a state party in four or more states; or 6% valid votes in four or more states in a Lok Sabha/assembly election plus 4 Lok Sabha seats; or 2% of Lok Sabha seats (11) from at least three states. State party criteria are lower.",
+        "Tenth Schedule (52nd Amendment, 1985): disqualification for defection; 91st Amendment (2003) removed the \"one-third split\" exemption — a merger needs two-thirds of the legislature party; presiding officer decides (Kihoto Hollohan, 1992: subject to judicial review).",
+        "Party finance: donations through electoral bonds were struck down by the Supreme Court in February 2024; transparency and disclosure remain key issues.",
+        "National party list changes after elections — check the latest ECI notification."
+      ]
+    },
+    {
+      "id": "issues",
+      "heading": "Challenges",
+      "body": "Dynastic politics, money power, criminalisation, lack of internal democracy, personality-centred parties and defections; responses include ECI directions, disclosure of criminal antecedents and electoral reforms."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "India has a competitive multi-party system regulated by ECI recognition rules and the Tenth Schedule against defection.",
+    "keyFacts": [
+      "Section 29A RPA 1951 registration.",
+      "Tenth Schedule: 52nd Amendment (1985); 91st (2003).",
+      "Symbols Order, 1968.",
+      "Electoral bonds struck down in 2024."
+    ],
+    "keyTerms": [
+      "Multi-party system",
+      "National party",
+      "Anti-defection",
+      "Symbols Order",
+      "Coalition"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Merger needs two-thirds of legislature party."
+    ],
+    "commonTraps": [
+      "Do not say the Tenth Schedule bars all floor-crossing without exceptions."
+    ],
+    "mustRemember": [
+      "52nd and 91st."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT, Indian Constitution at Work (Class XI Political Science)",
+      "kind": "educational"
+    },
+    {
+      "name": "Constitution of India (official text), Legislative Department",
+      "kind": "educational",
+      "url": "https://legislative.gov.in"
+    },
+    {
+      "name": "M. Laxmikanth, Indian Polity",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "constitution-party-system-in-india-q1",
+        "type": "mcq",
+        "prompt": "Anti-defection law is in the:",
+        "options": [
+          "Ninth Schedule",
+          "Tenth Schedule",
+          "Eleventh Schedule",
+          "Twelfth Schedule"
+        ],
+        "correctIndex": 1,
+        "explanation": "Added by the 52nd Amendment."
+      },
+      {
+        "id": "constitution-party-system-in-india-q2",
+        "type": "mcq",
+        "prompt": "Who decides disqualification under the Tenth Schedule?",
+        "options": [
+          "President",
+          "Presiding officer",
+          "ECI",
+          "Supreme Court only"
+        ],
+        "correctIndex": 1,
+        "explanation": "Speaker/Chairman, subject to judicial review."
+      },
+      {
+        "id": "constitution-party-system-in-india-q3",
+        "type": "mcq",
+        "prompt": "Registration of political parties is under Section 29A of:",
+        "options": [
+          "RPA 1950",
+          "RPA 1951",
+          "Companies Act",
+          "Tenth Schedule"
+        ],
+        "correctIndex": 1,
+        "explanation": "Representation of the People Act, 1951."
+      }
+    ]
+  }
+}

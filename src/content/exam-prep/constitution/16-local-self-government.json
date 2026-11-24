@@ -1,0 +1,165 @@
+{
+  "id": "constitution-local-self-government",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 16,
+  "title": "Government at Local Level — Institutions of Local Self-Government",
+  "shortDescription": "Panchayati Raj (73rd Amendment) and Urban Local Bodies (74th Amendment), committees and Gujarat context.",
+  "genZNote": "The third tier of government — closest to your gali, your tap and your ration shop. Two amendments, two schedules, a lot of easy marks.",
+  "sections": [
+    {
+      "id": "hist",
+      "heading": "Evolution",
+      "bullets": [
+        "Balwantrai Mehta Committee (1957): three-tier Panchayati Raj; Rajasthan (Nagaur, 2 Oct 1959) first state to adopt it.",
+        "Ashok Mehta Committee (1977): two-tier system; L. M. Singhvi and Thungon committees recommended constitutional status.",
+        "73rd Amendment (Part IX, Arts. 243–243O) in force 24 April 1993 — now observed as National Panchayati Raj Day; 74th Amendment (Part IX-A, Arts. 243P–243ZG) in force 1 June 1993."
+      ]
+    },
+    {
+      "id": "features",
+      "heading": "Key Provisions",
+      "body": "Gram Sabha (Art. 243A) is the body of all registered voters in a village. If a local body is dissolved, fresh elections must be held within 6 months. PESA (1996) extends Panchayat provisions to Fifth Schedule areas. Local government is a State subject (List II).",
+      "table": {
+        "caption": "73rd vs 74th",
+        "columnHeaders": [
+          "Feature",
+          "Panchayats (73rd)",
+          "Municipalities (74th)"
+        ],
+        "rows": [
+          [
+            "Schedule",
+            "11th — 29 subjects",
+            "12th — 18 subjects"
+          ],
+          [
+            "Structure",
+            "Gram, intermediate, district (small states may skip intermediate)",
+            "Nagar Panchayat, Municipal Council, Municipal Corporation"
+          ],
+          [
+            "Elections",
+            "Direct, every 5 years; State Election Commission (243K / 243ZA)",
+            "Same"
+          ],
+          [
+            "Reservation",
+            "SC/ST proportional; at least 1/3 women (states may exceed)",
+            "Same"
+          ],
+          [
+            "Finance",
+            "State Finance Commission every 5 years",
+            "Same"
+          ],
+          [
+            "Planning",
+            "District Planning Committee",
+            "District Planning Committee and Metropolitan Planning Committee"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "guj",
+      "heading": "Gujarat Context",
+      "bullets": [
+        "Gujarat has a three-tier Panchayati Raj governed by the Gujarat Panchayats Act, 1993 (gram, taluka and district panchayats); urban bodies by the Gujarat Municipalities Act, 1963 and the Gujarat Provincial Municipal Corporations Act, 1949.",
+        "Gujarat has increased women's reservation in local bodies beyond one-third (to 50%) — verify the latest provision.",
+        "Local bodies elections are conducted by the State Election Commission, Gujarat."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Local self-government institutions were given constitutional status by the 73rd and 74th Amendments, creating rural and urban local bodies with regular elections and finance commissions.",
+    "keyFacts": [
+      "73rd: Part IX, 11th Schedule (29 subjects).",
+      "74th: Part IX-A, 12th Schedule (18 subjects).",
+      "24 April 1993: Panchayati Raj in force.",
+      "SFC every 5 years."
+    ],
+    "keyTerms": [
+      "Gram Sabha",
+      "Panchayati Raj",
+      "State Election Commission",
+      "State Finance Commission",
+      "PESA"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Nagaur, Rajasthan: first Panchayati Raj."
+    ],
+    "commonTraps": [
+      "Do not swap 11th and 12th schedules."
+    ],
+    "mustRemember": [
+      "29 and 18 subjects."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "11th Schedule",
+        "termB": "12th Schedule",
+        "distinction": "11th: panchayats, 29 subjects; 12th: municipalities, 18 subjects."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT, Indian Constitution at Work (Class XI Political Science)",
+      "kind": "educational"
+    },
+    {
+      "name": "Constitution of India (official text), Legislative Department",
+      "kind": "educational",
+      "url": "https://legislative.gov.in"
+    },
+    {
+      "name": "M. Laxmikanth, Indian Polity",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "constitution-local-self-government-q1",
+        "type": "mcq",
+        "prompt": "The 73rd Amendment relates to:",
+        "options": [
+          "Municipalities",
+          "Panchayats",
+          "Cooperatives",
+          "Anti-defection"
+        ],
+        "correctIndex": 1,
+        "explanation": "Part IX."
+      },
+      {
+        "id": "constitution-local-self-government-q2",
+        "type": "mcq",
+        "prompt": "12th Schedule contains how many subjects?",
+        "options": [
+          "18",
+          "29",
+          "12",
+          "24"
+        ],
+        "correctIndex": 0,
+        "explanation": "Urban local bodies — 18 subjects."
+      },
+      {
+        "id": "constitution-local-self-government-q3",
+        "type": "mcq",
+        "prompt": "First state to adopt Panchayati Raj:",
+        "options": [
+          "Gujarat",
+          "Rajasthan",
+          "Maharashtra",
+          "Kerala"
+        ],
+        "correctIndex": 1,
+        "explanation": "Nagaur, 2 Oct 1959."
+      }
+    ]
+  }
+}

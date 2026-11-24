@@ -1,0 +1,158 @@
+{
+  "id": "constitution-indian-democracy-challenges-and-response",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 19,
+  "title": "Indian Democracy — Challenges and Responses",
+  "shortDescription": "Communalism, corruption, criminalisation, inequality and institutional responses.",
+  "genZNote": "Every democracy has bugs. India's strength is the patches — RTI, Lokpal, ECI rules and PIL.",
+  "sections": [
+    {
+      "id": "challenges",
+      "heading": "Challenges",
+      "bullets": [
+        "Communalism, casteism, regionalism and identity conflicts; poverty, inequality and illiteracy.",
+        "Corruption, criminalisation of politics and the role of money in elections; defections and weak internal party democracy.",
+        "Insurgency and extremism; gender inequality; misinformation and polarisation in media.",
+        "Capacity gaps in institutions and pendency of cases."
+      ]
+    },
+    {
+      "id": "responses",
+      "heading": "Institutional and Legal Responses",
+      "table": {
+        "caption": "Reform tools",
+        "columnHeaders": [
+          "Tool",
+          "Note"
+        ],
+        "rows": [
+          [
+            "Right to Information Act, 2005",
+            "Transparency and accountability"
+          ],
+          [
+            "Lokpal and Lokayuktas Act, 2013",
+            "Anti-corruption ombudsman; Lokpal began functioning in 2019"
+          ],
+          [
+            "Whistle Blowers Protection Act, 2014",
+            "Protection for disclosures"
+          ],
+          [
+            "Judicial activism / PIL",
+            "Courts widened access to justice"
+          ],
+          [
+            "Electoral reforms",
+            "Affidavits of criminal antecedents (ADR, 2002), NOTA, VVPAT, Model Code"
+          ],
+          [
+            "Anti-defection law",
+            "Tenth Schedule"
+          ],
+          [
+            "Decentralisation",
+            "73rd/74th Amendments"
+          ],
+          [
+            "Women's reservation",
+            "Nari Shakti Vandan Adhiniyam 2023"
+          ],
+          [
+            "Voter awareness",
+            "SVEEP, National Voters' Day, 25 January"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "civil",
+      "heading": "Role of Citizens and Civil Society",
+      "body": "Free media, social movements, voter participation, social audits and civic education strengthen democracy; the Constitution's Fundamental Duties emphasise responsible citizenship."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Indian democracy faces social, political and institutional challenges that are met through legal reforms, judicial review, transparency laws and citizen participation.",
+    "keyFacts": [
+      "RTI 2005; Lokpal Act 2013; Whistle Blowers Act 2014.",
+      "ADR 2002: disclosure of criminal antecedents.",
+      "National Voters' Day: 25 Jan."
+    ],
+    "keyTerms": [
+      "PIL",
+      "RTI",
+      "Lokpal",
+      "Criminalisation",
+      "SVEEP"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Lokpal began in 2019."
+    ],
+    "commonTraps": [
+      "Do not say RTI is a fundamental right by name — it flows from Art. 19(1)(a)."
+    ],
+    "mustRemember": [
+      "Reform → statute mapping."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT, Indian Constitution at Work (Class XI Political Science)",
+      "kind": "educational"
+    },
+    {
+      "name": "Constitution of India (official text), Legislative Department",
+      "kind": "educational",
+      "url": "https://legislative.gov.in"
+    },
+    {
+      "name": "M. Laxmikanth, Indian Polity",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "constitution-indian-democracy-challenges-and-response-q1",
+        "type": "mcq",
+        "prompt": "Right to Information Act was enacted in:",
+        "options": [
+          "2001",
+          "2005",
+          "2008",
+          "2013"
+        ],
+        "correctIndex": 1,
+        "explanation": "RTI Act, 2005."
+      },
+      {
+        "id": "constitution-indian-democracy-challenges-and-response-q2",
+        "type": "mcq",
+        "prompt": "Lokpal and Lokayuktas Act year:",
+        "options": [
+          "2005",
+          "2011",
+          "2013",
+          "2019"
+        ],
+        "correctIndex": 2,
+        "explanation": "Enacted 2013."
+      },
+      {
+        "id": "constitution-indian-democracy-challenges-and-response-q3",
+        "type": "mcq",
+        "prompt": "Public Interest Litigation widened:",
+        "options": [
+          "Access to justice",
+          "Taxation",
+          "Defence",
+          "Trade"
+        ],
+        "correctIndex": 0,
+        "explanation": "Locus standi relaxed."
+      }
+    ]
+  }
+}

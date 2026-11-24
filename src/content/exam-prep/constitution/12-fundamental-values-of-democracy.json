@@ -1,0 +1,117 @@
+{
+  "id": "constitution-fundamental-values-of-democracy",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 12,
+  "title": "Fundamental Values of Democracy",
+  "shortDescription": "Liberty, equality, justice, fraternity, rule of law and how Indian democracy embodies them.",
+  "genZNote": "Democracy is more than voting day. It's a bundle of values — and the Preamble hands them to you in four words.",
+  "sections": [
+    {
+      "id": "values",
+      "heading": "Core Values",
+      "bullets": [
+        "Liberty (freedom of thought, expression, belief, faith, worship); Equality (of status and opportunity); Justice (social, economic, political); Fraternity (dignity of individual and unity and integrity of the nation) — all in the Preamble.",
+        "Rule of law, pluralism, participation, accountability, transparency and dignity.",
+        "Abraham Lincoln's definition: government of the people, by the people, for the people."
+      ]
+    },
+    {
+      "id": "forms",
+      "heading": "Forms of Democracy and Features",
+      "bullets": [
+        "Direct (referendum, assembly) vs indirect/representative (India).",
+        "Features: free and fair periodic elections, universal adult franchise (Art. 326), independent judiciary, free press, protection of minorities, constitutional limits on power.",
+        "Political equality: \"one person, one vote, one value\"."
+      ]
+    },
+    {
+      "id": "amb",
+      "heading": "Ambedkar on Social Democracy",
+      "body": "In his closing speech (25 November 1949) Dr. B. R. Ambedkar warned that political democracy cannot last unless it rests on social democracy — liberty, equality and fraternity as an inseparable trinity — and that India faced a contradiction between political equality and social and economic inequality."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Democratic values — liberty, equality, justice and fraternity — guide Indian governance and are embedded in the Preamble.",
+    "keyFacts": [
+      "Art. 326: universal adult suffrage.",
+      "Fraternity assures dignity and unity.",
+      "Ambedkar: political + social democracy."
+    ],
+    "keyTerms": [
+      "Liberty",
+      "Equality",
+      "Justice",
+      "Fraternity",
+      "Rule of law"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Universal adult suffrage at 18 (61st Amendment, 1988)."
+    ],
+    "commonTraps": [
+      "Do not confuse republic with democracy — both are in the Preamble."
+    ],
+    "mustRemember": [
+      "Liberty–equality–fraternity trinity."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT, Indian Constitution at Work (Class XI Political Science)",
+      "kind": "educational"
+    },
+    {
+      "name": "Constitution of India (official text), Legislative Department",
+      "kind": "educational",
+      "url": "https://legislative.gov.in"
+    },
+    {
+      "name": "M. Laxmikanth, Indian Polity",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "constitution-fundamental-values-of-democracy-q1",
+        "type": "mcq",
+        "prompt": "Universal adult suffrage is provided by:",
+        "options": [
+          "Article 324",
+          "Article 326",
+          "Article 21",
+          "Article 19"
+        ],
+        "correctIndex": 1,
+        "explanation": "Article 326."
+      },
+      {
+        "id": "constitution-fundamental-values-of-democracy-q2",
+        "type": "mcq",
+        "prompt": "Fraternity in the Preamble assures:",
+        "options": [
+          "Dignity of the individual and unity of the nation",
+          "Profit",
+          "Property",
+          "Religion"
+        ],
+        "correctIndex": 0,
+        "explanation": "Wording of the Preamble."
+      },
+      {
+        "id": "constitution-fundamental-values-of-democracy-q3",
+        "type": "mcq",
+        "prompt": "Lincoln defined democracy as government:",
+        "options": [
+          "Of the people, by the people, for the people",
+          "Of the elite",
+          "By the army",
+          "By the judiciary"
+        ],
+        "correctIndex": 0,
+        "explanation": "Gettysburg Address."
+      }
+    ]
+  }
+}

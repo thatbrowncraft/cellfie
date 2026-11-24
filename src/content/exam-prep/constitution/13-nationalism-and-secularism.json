@@ -1,0 +1,119 @@
+{
+  "id": "constitution-nationalism-and-secularism",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 13,
+  "title": "Nationalism and Secularism",
+  "shortDescription": "Indian nationalism, constitutional secularism, Articles 25–30 and key cases.",
+  "genZNote": "India's secularism isn't 'religion banished' — it's 'state keeps equal distance'. That nuance is the exam's favourite twist.",
+  "sections": [
+    {
+      "id": "nat",
+      "heading": "Nationalism",
+      "bullets": [
+        "Civic (shared citizenship and constitution) vs ethnic nationalism; Indian nationalism emerged through the anti-colonial movement and stresses unity in diversity.",
+        "Gandhi, Nehru and Tagore offered inclusive and critical views of nationalism; the Constitution protects national unity through fraternity and Fundamental Duties (Art. 51A: respect the Constitution, national flag and anthem; uphold sovereignty, unity and integrity).",
+        "Challenges: communal and sectarian politics, regional disparities, migration and identity conflicts."
+      ]
+    },
+    {
+      "id": "sec",
+      "heading": "Secularism in India",
+      "bullets": [
+        "The word \"secular\" was added to the Preamble by the 42nd Amendment (1976), though secularism was already present in the Articles.",
+        "Articles 25–28: freedom of conscience and free profession of religion, religious denominations' affairs, no tax for promoting a religion (Art. 27), no compulsory religious instruction in state-funded institutions (Art. 28).",
+        "Articles 29–30: cultural and educational rights of minorities; Articles 14–16: equality and non-discrimination.",
+        "Indian model: principled distance — the state may intervene for reform (e.g. temple entry, social welfare under Art. 25(2)) and supports all religions equally, unlike strict separation in some Western models.",
+        "Judicial position: S. R. Bommai v. Union of India (1994) held secularism to be part of the basic structure."
+      ]
+    },
+    {
+      "id": "comm",
+      "heading": "Communalism",
+      "body": "Communalism is politics that treats religious identity as the basis of political interests; it is the main threat to constitutional secularism and is addressed through law, education and political practice."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Indian nationalism is inclusive and civic, and constitutional secularism means equal respect to all religions with principled state distance.",
+    "keyFacts": [
+      "\"Secular\" added by 42nd Amendment, 1976.",
+      "Bommai (1994): secularism is basic structure.",
+      "Arts. 25–28 freedom of religion; 29–30 minority rights."
+    ],
+    "keyTerms": [
+      "Civic nationalism",
+      "Principled distance",
+      "Communalism",
+      "Minority rights",
+      "Basic structure"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Art. 27: no tax proceeds for religion."
+    ],
+    "commonTraps": [
+      "Do not say India follows strict separation."
+    ],
+    "mustRemember": [
+      "Bommai 1994."
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT, Indian Constitution at Work (Class XI Political Science)",
+      "kind": "educational"
+    },
+    {
+      "name": "Constitution of India (official text), Legislative Department",
+      "kind": "educational",
+      "url": "https://legislative.gov.in"
+    },
+    {
+      "name": "M. Laxmikanth, Indian Polity",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "constitution-nationalism-and-secularism-q1",
+        "type": "mcq",
+        "prompt": "The word \"secular\" entered the Preamble through the:",
+        "options": [
+          "42nd Amendment",
+          "44th Amendment",
+          "52nd Amendment",
+          "73rd Amendment"
+        ],
+        "correctIndex": 0,
+        "explanation": "1976."
+      },
+      {
+        "id": "constitution-nationalism-and-secularism-q2",
+        "type": "mcq",
+        "prompt": "Which Article protects cultural and educational rights of minorities?",
+        "options": [
+          "25",
+          "28",
+          "29–30",
+          "32"
+        ],
+        "correctIndex": 2,
+        "explanation": "Articles 29 and 30."
+      },
+      {
+        "id": "constitution-nationalism-and-secularism-q3",
+        "type": "mcq",
+        "prompt": "S. R. Bommai case concerned:",
+        "options": [
+          "Secularism and federalism / President's Rule",
+          "Right to privacy",
+          "Reservation",
+          "Election symbols"
+        ],
+        "correctIndex": 0,
+        "explanation": "It affirmed secularism as basic structure."
+      }
+    ]
+  }
+}

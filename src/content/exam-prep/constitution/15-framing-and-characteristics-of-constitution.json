@@ -1,0 +1,172 @@
+{
+  "id": "constitution-framing-and-characteristics-of-constitution",
+  "subjectId": "constitution-of-india",
+  "syllabusOrder": 15,
+  "title": "Framing of the Constitution and Its Characteristics",
+  "shortDescription": "Constituent Assembly, Drafting Committee, sources borrowed and salient features.",
+  "genZNote": "2 years, 11 months, 18 days: that's how long it took to write India's rulebook. Know who chaired what and what we borrowed from where.",
+  "sections": [
+    {
+      "id": "framing",
+      "heading": "Making of the Constitution",
+      "bullets": [
+        "Constituent Assembly formed under the Cabinet Mission Plan, 1946; first met on 9 December 1946 (Sachchidananda Sinha as provisional president); Dr. Rajendra Prasad elected permanent president on 11 December 1946.",
+        "Objectives Resolution moved by Jawaharlal Nehru on 13 December 1946, adopted 22 January 1947.",
+        "Drafting Committee set up 29 August 1947 with Dr. B. R. Ambedkar as Chairman; Constitution adopted 26 November 1949 and came into force 26 January 1950 (Republic Day, Purna Swaraj Day link of 1930).",
+        "Took about 2 years, 11 months and 18 days; originally 395 Articles, 22 Parts and 8 Schedules; today commonly cited as about 448 Articles, 25 Parts and 12 Schedules."
+      ]
+    },
+    {
+      "id": "sources",
+      "heading": "Borrowed Features",
+      "table": {
+        "caption": "Sources",
+        "columnHeaders": [
+          "Source",
+          "Feature"
+        ],
+        "rows": [
+          [
+            "Government of India Act, 1935",
+            "Federal scheme, office of Governor, emergency, Public Service Commissions"
+          ],
+          [
+            "British",
+            "Parliamentary system, rule of law, single citizenship, bicameralism"
+          ],
+          [
+            "United States",
+            "Fundamental Rights, judicial review, independence of judiciary, Vice-President"
+          ],
+          [
+            "Ireland",
+            "Directive Principles, nomination to Rajya Sabha"
+          ],
+          [
+            "Canada",
+            "Federation with strong Centre, residuary powers"
+          ],
+          [
+            "Australia",
+            "Concurrent List, freedom of trade"
+          ],
+          [
+            "Germany (Weimar)",
+            "Suspension of Fundamental Rights during emergency"
+          ],
+          [
+            "USSR",
+            "Fundamental Duties"
+          ],
+          [
+            "France",
+            "Republic, liberty-equality-fraternity"
+          ],
+          [
+            "South Africa",
+            "Procedure for amendment"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "features",
+      "heading": "Salient Characteristics",
+      "bullets": [
+        "Longest written constitution; blend of rigidity and flexibility (Art. 368); federal with unitary bias; parliamentary democracy; fundamental rights with directive principles; independent integrated judiciary; secular; universal adult franchise; single citizenship; emergency provisions; basic structure doctrine (Kesavananda Bharati, 1973)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The Constitution was framed by the Constituent Assembly (1946–49) and combines borrowed features with original adaptations into a federal parliamentary democracy.",
+    "keyFacts": [
+      "Drafting Committee chaired by Ambedkar.",
+      "Adopted 26 Nov 1949; in force 26 Jan 1950.",
+      "Objectives Resolution: 13 Dec 1946.",
+      "Fundamental Duties: USSR; DPSP: Ireland."
+    ],
+    "keyTerms": [
+      "Constituent Assembly",
+      "Drafting Committee",
+      "Objectives Resolution",
+      "Basic structure",
+      "Federal"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Rajendra Prasad: president of the Assembly."
+    ],
+    "commonTraps": [
+      "Do not say Nehru chaired the Drafting Committee."
+    ],
+    "mustRemember": [
+      "Borrowing table."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Adopted",
+        "termB": "Came into force",
+        "distinction": "Adopted 26 Nov 1949; came into force 26 Jan 1950."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "NCERT, Indian Constitution at Work (Class XI Political Science)",
+      "kind": "educational"
+    },
+    {
+      "name": "Constitution of India (official text), Legislative Department",
+      "kind": "educational",
+      "url": "https://legislative.gov.in"
+    },
+    {
+      "name": "M. Laxmikanth, Indian Polity",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "constitution-framing-and-characteristics-of-constitution-q1",
+        "type": "mcq",
+        "prompt": "Chairman of the Drafting Committee:",
+        "options": [
+          "Rajendra Prasad",
+          "B. R. Ambedkar",
+          "Nehru",
+          "Patel"
+        ],
+        "correctIndex": 1,
+        "explanation": "Ambedkar."
+      },
+      {
+        "id": "constitution-framing-and-characteristics-of-constitution-q2",
+        "type": "mcq",
+        "prompt": "Directive Principles were borrowed from:",
+        "options": [
+          "USA",
+          "Ireland",
+          "Canada",
+          "Australia"
+        ],
+        "correctIndex": 1,
+        "explanation": "Irish Constitution."
+      },
+      {
+        "id": "constitution-framing-and-characteristics-of-constitution-q3",
+        "type": "mcq",
+        "prompt": "The Constitution came into force on:",
+        "options": [
+          "15 Aug 1947",
+          "26 Nov 1949",
+          "26 Jan 1950",
+          "2 Oct 1950"
+        ],
+        "correctIndex": 2,
+        "explanation": "Republic Day."
+      }
+    ]
+  }
+}
