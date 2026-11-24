@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeft, CaretRight, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '@/shared/layouts'
-import { Button, Card, CardBody, EmptyState } from '@/shared/components'
+import { Accordion, Button, Card, CardBody, EmptyState } from '@/shared/components'
 import { getExamSubjectById } from '@/core/exam-prep/subjects'
 import { listTopicsForSubject } from '@/core/exam-prep/registry'
 import { recordExamSubjectViewed } from '@/core/exam-prep/recentlyViewed'
@@ -90,43 +90,43 @@ const HEALTHCARE_ACCREDITATION_GROUPS: TopicGroupDef[] = [
 
 const FOOD_SAFETY_GROUPS: TopicGroupDef[] = [
   {
-    label: 'Unit 01 \u00b7 Food Laws, Regulations, Certification & Development Schemes (30 marks)',
+    label: 'Unit 01 \u00b7 Food Laws, Regulations, Certification & Development Schemes',
     topicIds: ['fsft-food-laws-regulatory-regime', 'fsft-fssai', 'fsft-codex-global-scenario', 'fsft-fss-act-rules-regulations', 'fsft-adulteration-misbranding', 'fsft-certification-bis-agmark', 'fsft-food-safety-authorities-product-standards']
   },
   {
-    label: 'Unit 02 \u00b7 Introduction to Basic Food Science (20 marks)',
+    label: 'Unit 02 \u00b7 Introduction to Basic Food Science',
     topicIds: ['fsft-history-traditional-foods', 'fsft-fortification-eat-right', 'fsft-carbohydrates', 'fsft-proteins', 'fsft-fats-lipids', 'fsft-vitamins', 'fsft-minerals', 'fsft-enzymes', 'fsft-digestion-absorption-fibre', 'fsft-metabolic-pathways', 'fsft-physical-properties-colloids', 'fsft-acid-base-buffer-chemical-properties']
   },
   {
-    label: 'Unit 03 \u00b7 Food Microbiology & Food Biotechnology (15 marks)',
+    label: 'Unit 03 \u00b7 Food Microbiology & Food Biotechnology',
     topicIds: ['fsft-micro-characteristics-classification', 'fsft-micro-physiology-growth', 'fsft-food-poisoning-foodborne-toxins', 'fsft-microbial-techniques-rapid-methods', 'fsft-food-fermentation-fermented-products', 'fsft-spoilage-animal-foods', 'fsft-spoilage-plant-foods-canned', 'fsft-gmo-enzyme-protein-engineering', 'fsft-fermentation-preservation-alternative-food']
   },
   {
-    label: 'Unit 04 \u00b7 Food & Nutrition (5 marks)',
+    label: 'Unit 04 \u00b7 Food & Nutrition',
     topicIds: ['fsft-food-nutrition-balanced-diet-rda', 'fsft-nutritional-assessment-malnutrition', 'fsft-nutrition-health-programmes-india', 'fsft-macro-micronutrient-deficiency-diseases']
   },
   {
-    label: 'Unit 05 \u00b7 Food Preservation, Packaging & Storage (5 marks)',
+    label: 'Unit 05 \u00b7 Food Preservation, Packaging & Storage',
     topicIds: ['fsft-preservation-principles-methods', 'fsft-food-packaging-types-evaluation', 'fsft-packaging-laws-novel-technologies', 'fsft-food-storage-structures-practices']
   },
   {
-    label: 'Unit 06 \u00b7 Agricultural Science (5 marks)',
+    label: 'Unit 06 \u00b7 Agricultural Science',
     topicIds: ['fsft-agriculture-status-farming-systems', 'fsft-crops-cropping-horticulture-agroforestry', 'fsft-livestock-aquaculture-integrated-enterprises']
   },
   {
-    label: 'Unit 07 \u00b7 Food Safety, Quality Control, Hygiene & Standards (15 marks)',
+    label: 'Unit 07 \u00b7 Food Safety, Quality Control, Hygiene & Standards',
     topicIds: ['fsft-food-safety-definition-scope-standards', 'fsft-food-hazards-risk-management', 'fsft-hygiene-sanitation-food-service', 'fsft-prp-ghp-gmp-ssop', 'fsft-haccp', 'fsft-iso-series-tqm-fsms']
   },
   {
-    label: 'Unit 08 \u00b7 Animal Product Processing (5 marks)',
+    label: 'Unit 08 \u00b7 Animal Product Processing',
     topicIds: ['fsft-meat-composition-slaughter-curing', 'fsft-fish-poultry-processing', 'fsft-egg-characteristics', 'fsft-milk-composition-products-overview', 'fsft-milk-adulterants-detection']
   },
   {
-    label: 'Unit 09 \u00b7 Dairy Science (10 marks)',
+    label: 'Unit 09 \u00b7 Dairy Science',
     topicIds: ['fsft-milk-science', 'fsft-dairy-unit-operations', 'fsft-dairy-product-technology', 'fsft-indigenous-dairy-products', 'fsft-dairy-quality-packaging-hygiene']
   },
   {
-    label: 'Unit 10 \u00b7 Food Processing Technology (10 marks)',
+    label: 'Unit 10 \u00b7 Food Processing Technology',
     topicIds: ['fsft-membrane-nonthermal-technologies', 'fsft-nutraceuticals-functional-junk-foods', 'fsft-thermal-processing-pasteurisation-canning', 'fsft-concentration-dehydration-freezing-fermentation-irradiation-additives', 'fsft-aseptic-hurdle-hydrostatic-microwave', 'fsft-innovative-thermal-ohmic-dielectric-ir-induction']
   },
 ]
@@ -142,6 +142,37 @@ const TOPIC_GROUPS_BY_SUBJECT: Partial<Record<ExamSubjectId, TopicGroupDef[]>> =
   'human-anatomy': HUMAN_ANATOMY_GROUPS,
   'healthcare-quality-accreditation': HEALTHCARE_ACCREDITATION_GROUPS,
   'food-safety-food-technology': FOOD_SAFETY_GROUPS
+}
+
+/**
+ * Subjects whose groups render as expandable chapters (each group shows
+ * only its title until opened, then reveals its own topics) instead of
+ * every topic being visible at once. Opt-in, so Human Anatomy and
+ * Healthcare Quality & Accreditation keep their existing always-open
+ * grouped layout.
+ */
+const COLLAPSIBLE_GROUP_SUBJECTS: ReadonlySet<ExamSubjectId> = new Set<ExamSubjectId>(['food-safety-food-technology'])
+
+/**
+ * Remembers which unit was open when a topic was tapped, so Back from the
+ * lesson returns to that unit instead of a fully collapsed list. Per-tab
+ * convenience only — every read/write is guarded, and the page works the
+ * same without it.
+ */
+const lastOpenUnitKey = (subjectId: string) => `cellfie:exam-prep:last-open-unit:${subjectId}`
+function readLastOpenUnit(subjectId: string): string | undefined {
+  try {
+    return window.sessionStorage.getItem(lastOpenUnitKey(subjectId)) ?? undefined
+  } catch {
+    return undefined
+  }
+}
+function writeLastOpenUnit(subjectId: string, unitId: string) {
+  try {
+    window.sessionStorage.setItem(lastOpenUnitKey(subjectId), unitId)
+  } catch {
+    /* storage unavailable — Back simply returns to the collapsed list */
+  }
 }
 
 /**
@@ -224,6 +255,7 @@ export function ExamPrepSubjectPage() {
   )
   const groupDefs = subject ? TOPIC_GROUPS_BY_SUBJECT[subject.id] : undefined
   const isGrouped = Boolean(groupDefs)
+  const isCollapsible = Boolean(subject && COLLAPSIBLE_GROUP_SUBJECTS.has(subject.id))
   const definedGroups = useMemo(
     () => (groupDefs ? groupTopicsByDefinition(topics, groupDefs) : []),
     [groupDefs, topics]
@@ -296,6 +328,31 @@ export function ExamPrepSubjectPage() {
           icon={<WarningCircle size={32} />}
           title="No topics yet"
           description="Content for this subject hasn't been added yet."
+        />
+      ) : isGrouped && isCollapsible ? (
+        <Accordion
+          defaultOpenId={readLastOpenUnit(subject.id)}
+          items={definedGroups.map((group, i) => {
+            const unitId = `unit-${i + 1}`
+            return {
+              id: unitId,
+              title: group.label,
+              content: (
+                <div className="grid gap-4 pt-1 sm:grid-cols-2">
+                  {group.items.map((topic) => (
+                    <TopicCard
+                      key={topic.id}
+                      topic={topic}
+                      onClick={() => {
+                        writeLastOpenUnit(subject.id, unitId)
+                        navigate(`/exam-prep/${subject.id}/${topic.id}`)
+                      }}
+                    />
+                  ))}
+                </div>
+              )
+            }
+          })}
         />
       ) : isGrouped ? (
         <div className="flex flex-col gap-8">
