@@ -1,8 +1,8 @@
 import { useEffect, useMemo } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, CaretRight, WarningCircle } from '@phosphor-icons/react'
 import { EmptyStateLayout } from '@/shared/layouts'
-import { Accordion, Button, Card, CardBody, EmptyState } from '@/shared/components'
+import { Button, Card, CardBody, EmptyState } from '@/shared/components'
 import { getExamSubjectById } from '@/core/exam-prep/subjects'
 import { listTopicsForSubject } from '@/core/exam-prep/registry'
 import { recordExamSubjectViewed } from '@/core/exam-prep/recentlyViewed'
@@ -145,34 +145,36 @@ const TOPIC_GROUPS_BY_SUBJECT: Partial<Record<ExamSubjectId, TopicGroupDef[]>> =
 }
 
 /**
- * Subjects whose groups render as expandable chapters (each group shows
- * only its title until opened, then reveals its own topics) instead of
- * every topic being visible at once. Opt-in, so Human Anatomy and
- * Healthcare Quality & Accreditation keep their existing always-open
- * grouped layout.
+ * Subjects whose groups are navigated as chapters: the subject page lists
+ * one card per unit (same card style as every other subject's topic
+ * list), and opening a unit (`?unit=N`) lists only that unit's topic
+ * cards. Opt-in, so Human Anatomy and Healthcare Quality & Accreditation
+ * keep their existing grouped layout.
  */
-const COLLAPSIBLE_GROUP_SUBJECTS: ReadonlySet<ExamSubjectId> = new Set<ExamSubjectId>(['food-safety-food-technology'])
+const CHAPTER_NAV_SUBJECTS: ReadonlySet<ExamSubjectId> = new Set<ExamSubjectId>(['food-safety-food-technology'])
 
-/**
- * Remembers which unit was open when a topic was tapped, so Back from the
- * lesson returns to that unit instead of a fully collapsed list. Per-tab
- * convenience only — every read/write is guarded, and the page works the
- * same without it.
- */
-const lastOpenUnitKey = (subjectId: string) => `cellfie:exam-prep:last-open-unit:${subjectId}`
-function readLastOpenUnit(subjectId: string): string | undefined {
-  try {
-    return window.sessionStorage.getItem(lastOpenUnitKey(subjectId)) ?? undefined
-  } catch {
-    return undefined
-  }
+/** Splits "Unit 01 \u00b7 Title" into its caption ("Unit 01") and title. */
+function splitUnitLabel(label: string): { caption: string; title: string } {
+  const i = label.indexOf(' \u00b7 ')
+  return i === -1 ? { caption: '', title: label } : { caption: label.slice(0, i), title: label.slice(i + 3) }
 }
-function writeLastOpenUnit(subjectId: string, unitId: string) {
-  try {
-    window.sessionStorage.setItem(lastOpenUnitKey(subjectId), unitId)
-  } catch {
-    /* storage unavailable — Back simply returns to the collapsed list */
-  }
+
+/** One unit card — same Card/typography as `TopicCard`, so units look like every other subject's list. */
+function UnitCard({ label, count, onClick }: { label: string; count: number; onClick: () => void }) {
+  const { caption, title } = splitUnitLabel(label)
+  return (
+    <Card interactive onClick={onClick}>
+      <CardBody className="flex flex-col gap-1">
+        {caption && (
+          <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">{caption}</p>
+        )}
+        <p className="font-display text-h3 font-medium text-ink-primary">{title}</p>
+        <p className="font-body text-caption text-ink-secondary">
+          {count} {count === 1 ? 'topic' : 'topics'}
+        </p>
+      </CardBody>
+    </Card>
+  )
 }
 
 /**
@@ -255,11 +257,16 @@ export function ExamPrepSubjectPage() {
   )
   const groupDefs = subject ? TOPIC_GROUPS_BY_SUBJECT[subject.id] : undefined
   const isGrouped = Boolean(groupDefs)
-  const isCollapsible = Boolean(subject && COLLAPSIBLE_GROUP_SUBJECTS.has(subject.id))
+  const isChapterNav = Boolean(subject && CHAPTER_NAV_SUBJECTS.has(subject.id))
+  const [searchParams] = useSearchParams()
   const definedGroups = useMemo(
     () => (groupDefs ? groupTopicsByDefinition(topics, groupDefs) : []),
     [groupDefs, topics]
   )
+  // `?unit=N` (1-based) opens one unit's topic list; absent/invalid → the unit list.
+  const openUnitNumber = isChapterNav ? Number(searchParams.get('unit')) : 0
+  const openUnit = Number.isInteger(openUnitNumber) ? definedGroups[openUnitNumber - 1] : undefined
+  const openUnitParts = openUnit ? splitUnitLabel(openUnit.label) : undefined
   const isRegionGrouped = topics.some((t) => t.region)
   const regionGroups = useMemo(() => {
     if (!isRegionGrouped) return []
@@ -305,13 +312,41 @@ export function ExamPrepSubjectPage() {
           Exam Prep
         </button>
         <CaretRight size={12} aria-hidden />
-        <span className="font-medium text-ink-primary">{subject.title}</span>
+        {openUnitParts ? (
+          <>
+            <button
+              type="button"
+              onClick={() => navigate(`/exam-prep/${subject.id}`)}
+              className="hover:text-ink-secondary hover:underline"
+            >
+              {subject.title}
+            </button>
+            <CaretRight size={12} aria-hidden />
+            <span className="font-medium text-ink-primary">{openUnitParts.caption || openUnitParts.title}</span>
+          </>
+        ) : (
+          <span className="font-medium text-ink-primary">{subject.title}</span>
+        )}
       </nav>
 
-      <Button variant="tertiary" size="small" icon={<ArrowLeft size={16} />} onClick={() => navigate('/exam-prep')} className="mb-4">
+      <Button
+        variant="tertiary"
+        size="small"
+        icon={<ArrowLeft size={16} />}
+        onClick={() => navigate(openUnitParts ? `/exam-prep/${subject.id}` : '/exam-prep')}
+        className="mb-4"
+      >
         Back
       </Button>
 
+      {openUnitParts ? (
+        <header className="mb-8">
+          <p className="font-ui text-micro font-medium uppercase tracking-wide text-ink-tertiary">
+            {subject.title} · {openUnitParts.caption}
+          </p>
+          <h1 className="mt-1 font-display text-display font-semibold text-ink-primary">{openUnitParts.title}</h1>
+        </header>
+      ) : (
       <header className="mb-8">
         <h1 className="font-display text-display font-semibold text-ink-primary">{subject.title}</h1>
         <p className="mt-2 max-w-2xl font-body text-body text-ink-secondary">{subject.shortDescription}</p>
@@ -322,6 +357,7 @@ export function ExamPrepSubjectPage() {
           </p>
         )}
       </header>
+      )}
 
       {topics.length === 0 ? (
         <EmptyState
@@ -329,31 +365,28 @@ export function ExamPrepSubjectPage() {
           title="No topics yet"
           description="Content for this subject hasn't been added yet."
         />
-      ) : isGrouped && isCollapsible ? (
-        <Accordion
-          defaultOpenId={readLastOpenUnit(subject.id)}
-          items={definedGroups.map((group, i) => {
-            const unitId = `unit-${i + 1}`
-            return {
-              id: unitId,
-              title: group.label,
-              content: (
-                <div className="grid gap-4 pt-1 sm:grid-cols-2">
-                  {group.items.map((topic) => (
-                    <TopicCard
-                      key={topic.id}
-                      topic={topic}
-                      onClick={() => {
-                        writeLastOpenUnit(subject.id, unitId)
-                        navigate(`/exam-prep/${subject.id}/${topic.id}`)
-                      }}
-                    />
-                  ))}
-                </div>
-              )
-            }
-          })}
-        />
+      ) : isChapterNav && openUnit ? (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {openUnit.items.map((topic, i) => (
+            <TopicCard
+              key={topic.id}
+              topic={topic}
+              label={`${i + 1}. Syllabus topic`}
+              onClick={() => navigate(`/exam-prep/${subject.id}/${topic.id}`)}
+            />
+          ))}
+        </div>
+      ) : isChapterNav ? (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {definedGroups.map((group, i) => (
+            <UnitCard
+              key={group.label}
+              label={group.label}
+              count={group.items.length}
+              onClick={() => navigate(`/exam-prep/${subject.id}?unit=${i + 1}`)}
+            />
+          ))}
+        </div>
       ) : isGrouped ? (
         <div className="flex flex-col gap-8">
           {definedGroups.map((group) => (
