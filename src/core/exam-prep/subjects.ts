@@ -22,7 +22,7 @@ export const EXAM_SUBJECTS: ExamSubject[] = [
     id: 'constitution-of-india',
     title: 'Constitution of India',
     shortDescription:
-      'Preamble to Constitutional Bodies — the full Part B syllabus, broken into study-sized topics with quick revision and exam focus for each.',
+      'Preamble to Constitutional Bodies — the full syllabus, broken into study-sized topics with quick revision and exam focus for each.',
     genZNote: "Know the rulebook before the MCQs start throwing Article numbers at you.",
     icon: 'Scroll'
   },
@@ -30,7 +30,7 @@ export const EXAM_SUBJECTS: ExamSubject[] = [
     id: 'quantitative-aptitude',
     title: 'Quantitative Aptitude',
     shortDescription:
-      'Number System to Chain Rule — the full Part A maths syllabus, taught exam-first: the concept, the fast method, and when the fast method is actually safe to use.',
+      'Number System to Chain Rule — the full maths syllabus, taught exam-first: the concept, the fast method, and when the fast method is actually safe to use.',
     genZNote: "Same maths you already half-know, minus the panic — this is the cheat-code layer on top of it.",
     icon: 'Calculator'
   },
@@ -38,7 +38,7 @@ export const EXAM_SUBJECTS: ExamSubject[] = [
     id: 'english-language',
     title: 'English Language',
     shortDescription:
-      'Grammar, vocabulary, sentence skills, voice & speech, and common errors — the full Part B English syllabus, broken into study-sized topics with quick revision and exam focus for each.',
+      'Grammar, vocabulary, sentence skills, voice & speech, and common errors — the full English syllabus, broken into study-sized topics with quick revision and exam focus for each.',
     genZNote: "The subject you think you already know until an exam asks you to explain WHY 'discuss about' is wrong.",
     icon: 'Books'
   },
@@ -102,7 +102,7 @@ export const EXAM_SUBJECTS: ExamSubject[] = [
     id: 'food-safety-food-technology',
     title: 'Food Safety & Food Technology',
     shortDescription:
-      'Food laws and FSSAI to dairy science and processing technology \u2014 the full Part B technical syllabus for the Food Safety Officer exam in ten units, with tables, exam facts and MCQs for every topic.',
+      'Food laws and FSSAI to dairy science and processing technology \u2014 the full technical syllabus in ten units, with tables, exam facts and MCQs for every topic.',
     genZNote: 'From the label on your chips to the law behind it \u2014 this is the whole farm-to-fork story, no cap, and every unit is exam-ready.',
     icon: 'ForkKnife'
   }
