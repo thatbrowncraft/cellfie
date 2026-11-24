@@ -1,0 +1,157 @@
+{
+  "id": "reasoning-logical-sequence-of-words",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 13,
+  "title": "Logical Sequence of Words",
+  "shortDescription": "Arrange given words in a meaningful order: process, size, time, hierarchy and dictionary order.",
+  "genZNote": "Arrange the words the way life arranges them — seed before tree, FIR before verdict. Logic, not vocabulary.",
+  "sections": [
+    {
+      "id": "types",
+      "heading": "Common Basis of Ordering",
+      "table": {
+        "caption": "Order types",
+        "columnHeaders": [
+          "Basis",
+          "Example order"
+        ],
+        "rows": [
+          [
+            "Natural process",
+            "Seed → Sapling → Plant → Tree → Fruit"
+          ],
+          [
+            "Time",
+            "Second → Minute → Hour → Day → Week → Month"
+          ],
+          [
+            "Size/ quantity",
+            "Atom → Molecule → Cell → Tissue → Organ"
+          ],
+          [
+            "Hierarchy",
+            "Constable → Inspector → DSP → SP → DGP"
+          ],
+          [
+            "Procedure/legal",
+            "FIR → Investigation → Arrest → Trial → Judgement"
+          ],
+          [
+            "Dictionary",
+            "Alphabetical order by first differing letter"
+          ],
+          [
+            "Education/career",
+            "Primary → Secondary → Graduation → Job"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "method",
+      "heading": "Method",
+      "steps": [
+        {
+          "name": "Identify the theme",
+          "explanation": "What do all words have in common?",
+          "purpose": "Select the correct basis."
+        },
+        {
+          "name": "Find the first and last",
+          "explanation": "Decide start and end events.",
+          "purpose": "Reduces options."
+        },
+        {
+          "name": "Eliminate options",
+          "explanation": "Check each given sequence against the chain.",
+          "purpose": "Fast marking."
+        },
+        {
+          "name": "Re-read result",
+          "explanation": "Confirm every adjacent pair is logical.",
+          "purpose": "Avoid slips."
+        }
+      ]
+    },
+    {
+      "id": "dict",
+      "heading": "Dictionary Order Tips",
+      "body": "Compare letters one at a time from the left; a shorter word precedes when it is a prefix (e.g. \"Act\" before \"Action\"). For words with the same first letter use the second letter, and so on."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Logical sequence of words requires ordering items by a natural, temporal, hierarchical or alphabetical basis.",
+    "keyFacts": [
+      "Identify the theme first.",
+      "Alphabet order compares left to right.",
+      "Process order starts with the origin."
+    ],
+    "keyTerms": [
+      "Sequence",
+      "Hierarchy",
+      "Process",
+      "Dictionary order",
+      "Chronology"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Prefix words come first in a dictionary."
+    ],
+    "commonTraps": [
+      "Do not rely on first impression; check each pair."
+    ],
+    "mustRemember": [
+      "Start–end first."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-logical-sequence-of-words-q1",
+        "type": "mcq",
+        "prompt": "Arrange logically: 1 Fruit 2 Seed 3 Plant 4 Flower",
+        "options": [
+          "2,3,4,1",
+          "2,4,3,1",
+          "3,2,4,1",
+          "4,3,2,1"
+        ],
+        "correctIndex": 0,
+        "explanation": "Seed → Plant → Flower → Fruit."
+      },
+      {
+        "id": "reasoning-logical-sequence-of-words-q2",
+        "type": "mcq",
+        "prompt": "Which word comes first in a dictionary?",
+        "options": [
+          "Brush",
+          "Brash",
+          "Brass",
+          "Brew"
+        ],
+        "correctIndex": 2,
+        "explanation": "Brass < Brash < Brew < Brush (compare letters)."
+      },
+      {
+        "id": "reasoning-logical-sequence-of-words-q3",
+        "type": "mcq",
+        "prompt": "Correct police process order starts with:",
+        "options": [
+          "Verdict",
+          "FIR",
+          "Arrest",
+          "Appeal"
+        ],
+        "correctIndex": 1,
+        "explanation": "An FIR starts the process."
+      }
+    ]
+  }
+}

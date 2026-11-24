@@ -1,0 +1,128 @@
+{
+  "id": "reasoning-missing-character",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 14,
+  "title": "Insert the Missing Character",
+  "shortDescription": "Find the missing number or letter in rows, columns, grids, triangles and circles.",
+  "genZNote": "Every puzzle grid has a secret rule. Check rows, then columns, then diagonals — the rule usually shows up in the first two.",
+  "sections": [
+    {
+      "id": "rules",
+      "heading": "Common Rules",
+      "bullets": [
+        "Row/column sum or product (e.g. 2, 3, 6 → 2 × 3 = 6; 4, 5, 20 → 4 × 5 = 20; so 3, 4, ? = 12).",
+        "Squares or cubes of numbers; difference of squares.",
+        "Middle number = sum/difference/product of outer numbers.",
+        "Circle/triangle puzzles: sum of three outer numbers = centre, or sum of opposite numbers constant.",
+        "Letter puzzles: convert letters to positions (A = 1 … Z = 26) and apply arithmetic.",
+        "Alternating rules: odd and even positions follow different patterns."
+      ]
+    },
+    {
+      "id": "method",
+      "heading": "Step-by-Step",
+      "steps": [
+        {
+          "name": "Check one complete row/column",
+          "explanation": "It shows the operation.",
+          "purpose": "Find the pattern."
+        },
+        {
+          "name": "Test the same rule on another line",
+          "explanation": "Confirms it.",
+          "purpose": "Avoid false patterns."
+        },
+        {
+          "name": "Test cross-links",
+          "explanation": "Diagonals, square/cube of centre.",
+          "purpose": "For tricky ones."
+        },
+        {
+          "name": "Apply to the blank",
+          "explanation": "Calculate.",
+          "purpose": "Finish."
+        }
+      ]
+    },
+    {
+      "id": "ex",
+      "heading": "Examples",
+      "body": "Grid rows (2, 3, 6), (4, 5, 20), (3, 4, ?): rule product of first two → 12. Triangle with outer numbers 5, 6, 7 and centre 18 → sum. Letters: A, C, F, J, ? → gaps +2, +3, +4, so next is O (15)."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Missing character problems hide an arithmetic or positional rule common to rows, columns or figures.",
+    "keyFacts": [
+      "Row/column rule first.",
+      "Letters ↔ numbers (A = 1).",
+      "Alternating patterns possible."
+    ],
+    "keyTerms": [
+      "Pattern",
+      "Matrix",
+      "Position value",
+      "Alternation",
+      "Rule"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "A rule must hold for every complete line."
+    ],
+    "commonTraps": [
+      "Do not apply a rule validated only once."
+    ],
+    "mustRemember": [
+      "Test the rule on a second line."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-missing-character-q1",
+        "type": "mcq",
+        "prompt": "2, 3, 6; 4, 5, 20; 3, 4, ? →",
+        "options": [
+          "7",
+          "10",
+          "12",
+          "14"
+        ],
+        "correctIndex": 2,
+        "explanation": "Product of first two = third."
+      },
+      {
+        "id": "reasoning-missing-character-q2",
+        "type": "mcq",
+        "prompt": "A, C, F, J, ? →",
+        "options": [
+          "M",
+          "N",
+          "O",
+          "P"
+        ],
+        "correctIndex": 2,
+        "explanation": "Gaps +2, +3, +4 → +5 gives O."
+      },
+      {
+        "id": "reasoning-missing-character-q3",
+        "type": "mcq",
+        "prompt": "Triangle outer numbers 4, 6, 8 give centre 18. For 5, 7, 9 centre = ?",
+        "options": [
+          "19",
+          "21",
+          "24",
+          "27"
+        ],
+        "correctIndex": 1,
+        "explanation": "Sum of outer numbers."
+      }
+    ]
+  }
+}

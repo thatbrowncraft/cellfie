@@ -1,0 +1,139 @@
+{
+  "id": "reasoning-proofs-in-mathematics",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 21,
+  "title": "Proofs in Mathematics",
+  "shortDescription": "Direct proof, contradiction, contrapositive, induction and counterexamples.",
+  "genZNote": "Proof questions are logic questions in a lab coat: if p then q — and what survives when you flip it.",
+  "sections": [
+    {
+      "id": "methods",
+      "heading": "Proof Methods",
+      "table": {
+        "caption": "Methods",
+        "columnHeaders": [
+          "Method",
+          "Idea",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Direct",
+            "Assume p, derive q",
+            "Sum of two even numbers is even"
+          ],
+          [
+            "Contrapositive",
+            "Prove ¬q → ¬p",
+            "If n² even then n even"
+          ],
+          [
+            "Contradiction",
+            "Assume the opposite, reach impossibility",
+            "√2 is irrational"
+          ],
+          [
+            "Induction",
+            "Base case + step (k → k + 1)",
+            "1 + 2 + … + n = n(n + 1)/2"
+          ],
+          [
+            "Counterexample",
+            "One case disproves a universal claim",
+            "\"All primes are odd\" fails at 2"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "logic",
+      "heading": "Conditionals and Related Statements",
+      "bullets": [
+        "Statement p → q; converse q → p; inverse ¬p → ¬q; contrapositive ¬q → ¬p.",
+        "A statement and its contrapositive are logically equivalent; converse and inverse are equivalent to each other but not to the original.",
+        "Example: \"If it rains, the road is wet\" → contrapositive \"If the road is not wet, it did not rain\".",
+        "Quantifiers: \"for all\" is disproved by one counterexample; \"there exists\" is proved by one example."
+      ]
+    },
+    {
+      "id": "ex",
+      "heading": "Quick Proofs",
+      "body": "Even + even: 2a + 2b = 2(a + b), even. Induction base n = 1: 1 = 1·2/2 true; step: add (k + 1) to k(k + 1)/2 to get (k + 1)(k + 2)/2."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Mathematical proofs use logical deduction; the main styles are direct, contrapositive, contradiction, induction and counterexample.",
+    "keyFacts": [
+      "Contrapositive ≡ original.",
+      "Converse ≢ original.",
+      "One counterexample kills a universal claim."
+    ],
+    "keyTerms": [
+      "Contrapositive",
+      "Converse",
+      "Induction",
+      "Contradiction",
+      "Counterexample"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "√2 irrational is the standard contradiction proof."
+    ],
+    "commonTraps": [
+      "Do not treat the converse as proof of the original."
+    ],
+    "mustRemember": [
+      "p → q ≡ ¬q → ¬p."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-proofs-in-mathematics-q1",
+        "type": "mcq",
+        "prompt": "Contrapositive of \"If p then q\" is:",
+        "options": [
+          "If q then p",
+          "If not p then not q",
+          "If not q then not p",
+          "p and q"
+        ],
+        "correctIndex": 2,
+        "explanation": "¬q → ¬p."
+      },
+      {
+        "id": "reasoning-proofs-in-mathematics-q2",
+        "type": "mcq",
+        "prompt": "To disprove \"all primes are odd\" use:",
+        "options": [
+          "Induction",
+          "Counterexample (2)",
+          "Contradiction",
+          "Direct proof"
+        ],
+        "correctIndex": 1,
+        "explanation": "2 is an even prime."
+      },
+      {
+        "id": "reasoning-proofs-in-mathematics-q3",
+        "type": "mcq",
+        "prompt": "Mathematical induction needs:",
+        "options": [
+          "Base case and inductive step",
+          "Only base case",
+          "Only a step",
+          "A counterexample"
+        ],
+        "correctIndex": 0,
+        "explanation": "Both parts."
+      }
+    ]
+  }
+}

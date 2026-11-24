@@ -1,0 +1,111 @@
+{
+  "id": "reasoning-logical-mathematical-analytical-ability",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 22,
+  "title": "Logical and Mathematical Analytical Ability",
+  "shortDescription": "Puzzle-style reasoning: handshakes, pigeonhole, weighing problems, truth-tellers and counting logic.",
+  "genZNote": "The 'think, don't compute' chapter — counting tricks and logic gates that turn long problems into one line.",
+  "sections": [
+    {
+      "id": "count",
+      "heading": "Counting Tricks",
+      "bullets": [
+        "Handshakes among n people: n(n − 1)/2 (10 people → 45).",
+        "Matches in a knock-out tournament with n teams: n − 1; league (everyone plays everyone): n(n − 1)/2.",
+        "Pigeonhole principle: if n + 1 items go in n boxes, some box has two (13 people → two share a birth month).",
+        "Number of diagonals of an n-gon: n(n − 3)/2."
+      ]
+    },
+    {
+      "id": "puzzle",
+      "heading": "Logic Puzzles",
+      "bullets": [
+        "Truth-teller (always true) and liar (always false): test each assumption for consistency.",
+        "Weighing problems: 9 identical-looking coins with one heavier → 2 weighings on a balance; 12 coins (heavier or lighter unknown) → 3 weighings.",
+        "Number properties: divisibility rules, parity, remainders.",
+        "Scheduling/ordering puzzles: build a table; eliminate impossible options."
+      ]
+    },
+    {
+      "id": "method",
+      "heading": "Approach",
+      "body": "Convert text into tables or equations, apply parity/divisibility/remainder reasoning, use extreme-case or small-case testing to guess a pattern, then verify."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Analytical-ability questions combine counting principles, logic puzzles and number reasoning rather than heavy calculation.",
+    "keyFacts": [
+      "Handshakes n(n − 1)/2.",
+      "Knock-out matches n − 1.",
+      "Pigeonhole principle.",
+      "Diagonals n(n − 3)/2."
+    ],
+    "keyTerms": [
+      "Pigeonhole",
+      "Handshake",
+      "Truth-teller",
+      "Parity",
+      "Weighing"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Test small cases to find patterns."
+    ],
+    "commonTraps": [
+      "Do not double count handshakes."
+    ],
+    "mustRemember": [
+      "Knock-out: n − 1 matches."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-logical-mathematical-analytical-ability-q1",
+        "type": "mcq",
+        "prompt": "Handshakes among 10 people:",
+        "options": [
+          "20",
+          "45",
+          "90",
+          "100"
+        ],
+        "correctIndex": 1,
+        "explanation": "10 × 9/2."
+      },
+      {
+        "id": "reasoning-logical-mathematical-analytical-ability-q2",
+        "type": "mcq",
+        "prompt": "Matches in a knock-out tournament with 32 teams:",
+        "options": [
+          "16",
+          "31",
+          "32",
+          "64"
+        ],
+        "correctIndex": 1,
+        "explanation": "n − 1 = 31."
+      },
+      {
+        "id": "reasoning-logical-mathematical-analytical-ability-q3",
+        "type": "mcq",
+        "prompt": "Minimum people to ensure two share a birth month:",
+        "options": [
+          "12",
+          "13",
+          "24",
+          "365"
+        ],
+        "correctIndex": 1,
+        "explanation": "Pigeonhole: 13."
+      }
+    ]
+  }
+}

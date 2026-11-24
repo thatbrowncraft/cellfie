@@ -1,0 +1,145 @@
+{
+  "id": "reasoning-analogy",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 15,
+  "title": "Word, Numerical and General Analogy",
+  "shortDescription": "Find the relationship in a given pair and apply it to another — words, numbers and letters.",
+  "genZNote": "Analogy is 'same relationship, new pair'. Say the relationship out loud as a sentence before you choose.",
+  "sections": [
+    {
+      "id": "word",
+      "heading": "Word Analogy Types",
+      "table": {
+        "caption": "Relationships",
+        "columnHeaders": [
+          "Type",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Synonym/Antonym",
+            "Big : Large; Hot : Cold"
+          ],
+          [
+            "Part–whole",
+            "Wheel : Car"
+          ],
+          [
+            "Tool–user",
+            "Scalpel : Surgeon"
+          ],
+          [
+            "Cause–effect",
+            "Fire : Smoke"
+          ],
+          [
+            "Place–object",
+            "Doctor : Hospital"
+          ],
+          [
+            "Product–source",
+            "Milk : Cow"
+          ],
+          [
+            "Degree/intensity",
+            "Warm : Hot"
+          ],
+          [
+            "Study of",
+            "Zoology : Animals"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "num",
+      "heading": "Numerical and Letter Analogy",
+      "bullets": [
+        "Squares/cubes: 3 : 9 :: 5 : 25; 4 : 64 :: 5 : 125.",
+        "Operations on both terms: (a, b) → a² + b, a × b, a + b etc.",
+        "Letter analogy: use alphabet positions; reverse alphabet pairs sum to 27 (A–Z, B–Y).",
+        "Example: CAT : ECV (each +2) :: DOG : FQI."
+      ]
+    },
+    {
+      "id": "general",
+      "heading": "General Analogy",
+      "body": "Includes profession–tool, country–capital (India : New Delhi), author–book, units (Length : Metre), symbols and function pairs. Always check the direction of the relationship (A : B vs B : A) and the grammatical type."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Analogy questions test whether you can identify the exact relationship between a pair and carry it to a new pair.",
+    "keyFacts": [
+      "State the relationship as a sentence.",
+      "Reverse-alphabet pairs sum to 27.",
+      "Check direction of relationship."
+    ],
+    "keyTerms": [
+      "Analogy",
+      "Relationship",
+      "Part–whole",
+      "Cause–effect",
+      "Letter series"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Squares and cubes appear often."
+    ],
+    "commonTraps": [
+      "Do not pick a related but not identical relationship."
+    ],
+    "mustRemember": [
+      "A : B :: C : ? means same relationship."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-analogy-q1",
+        "type": "mcq",
+        "prompt": "Doctor : Hospital :: Teacher : ?",
+        "options": [
+          "School",
+          "Book",
+          "Student",
+          "Class"
+        ],
+        "correctIndex": 0,
+        "explanation": "Place where they work."
+      },
+      {
+        "id": "reasoning-analogy-q2",
+        "type": "mcq",
+        "prompt": "3 : 27 :: 4 : ?",
+        "options": [
+          "16",
+          "48",
+          "64",
+          "81"
+        ],
+        "correctIndex": 2,
+        "explanation": "Cube of the number."
+      },
+      {
+        "id": "reasoning-analogy-q3",
+        "type": "mcq",
+        "prompt": "CAT : ECV :: DOG : ?",
+        "options": [
+          "FQI",
+          "FPH",
+          "EPI",
+          "FQJ"
+        ],
+        "correctIndex": 0,
+        "explanation": "Each letter shifts by +2."
+      }
+    ]
+  }
+}

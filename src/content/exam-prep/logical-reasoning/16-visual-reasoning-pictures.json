@@ -1,0 +1,115 @@
+{
+  "id": "reasoning-visual-reasoning-pictures",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 16,
+  "title": "Picture-Based General Logical Reasoning (Visual Reasoning)",
+  "shortDescription": "Counting figures, embedded figures, pattern completion, dice and cubes — beyond mirror/water/paper-folding.",
+  "genZNote": "No words, just shapes. Counting systematically beats staring — and the painted-cube formula is a free mark.",
+  "sections": [
+    {
+      "id": "count",
+      "heading": "Counting Figures",
+      "bullets": [
+        "Triangles in a triangle with base divided into n segments joined to apex: n(n + 1)/2.",
+        "Squares in an n × n grid: n(n + 1)(2n + 1)/6 (8 × 8 chessboard → 204).",
+        "Rectangles (including squares) in an m × n grid: C(m + 1, 2) × C(n + 1, 2) = [m(m + 1)/2] × [n(n + 1)/2].",
+        "Method: count by size/category (single, double, triple, etc.) to avoid missing or repeating."
+      ]
+    },
+    {
+      "id": "dice",
+      "heading": "Dice and Cubes",
+      "bullets": [
+        "Standard dice: opposite faces sum to 7 (1–6, 2–5, 3–4).",
+        "Two positions of a die with a common face: the non-common faces are adjacent; use them to find opposite faces.",
+        "Painted cube of side n cut into unit cubes: 3 faces painted = 8; 2 faces = 12(n − 2); 1 face = 6(n − 2)²; no face = (n − 2)³.",
+        "Example: 4 × 4 × 4 cube → 3 faces: 8; 2 faces: 24; 1 face: 24; 0 faces: 8."
+      ]
+    },
+    {
+      "id": "pattern",
+      "heading": "Pattern, Series and Embedded Figures",
+      "bullets": [
+        "Figure series: track rotation (clockwise/anticlockwise, 45°/90°), shifting positions, increasing/decreasing elements, shading and symbol alternation.",
+        "Embedded figure: the given shape is hidden inside a complex shape in the same size and orientation.",
+        "Figure completion/matrix: rules apply across rows and columns; look at number of elements, shading and lines.",
+        "Mirror and water images and paper folding are in the Non-Verbal Reasoning lesson."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Visual reasoning uses systematic counting, dice/cube rules and pattern tracking to solve picture-based problems.",
+    "keyFacts": [
+      "Triangles: n(n + 1)/2 for one apex.",
+      "Painted cubes: 8, 12(n − 2), 6(n − 2)², (n − 2)³.",
+      "Dice opposite sum = 7."
+    ],
+    "keyTerms": [
+      "Embedded figure",
+      "Painted cube",
+      "Opposite face",
+      "Rotation",
+      "Counting"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "8×8 chessboard has 204 squares."
+    ],
+    "commonTraps": [
+      "Do not assume dice opposite faces are always 7 — only standard dice."
+    ],
+    "mustRemember": [
+      "Count in categories."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-visual-reasoning-pictures-q1",
+        "type": "mcq",
+        "prompt": "In a 4×4×4 painted cube cut into 1 cm cubes, cubes with exactly one painted face:",
+        "options": [
+          "8",
+          "16",
+          "24",
+          "32"
+        ],
+        "correctIndex": 2,
+        "explanation": "6 × (4 − 2)² = 24."
+      },
+      {
+        "id": "reasoning-visual-reasoning-pictures-q2",
+        "type": "mcq",
+        "prompt": "Triangles in a figure with apex and base divided into 4 parts:",
+        "options": [
+          "6",
+          "8",
+          "10",
+          "12"
+        ],
+        "correctIndex": 2,
+        "explanation": "4 × 5 / 2 = 10."
+      },
+      {
+        "id": "reasoning-visual-reasoning-pictures-q3",
+        "type": "mcq",
+        "prompt": "On a standard die opposite to 2 is:",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "correctIndex": 2,
+        "explanation": "Opposite faces sum to 7."
+      }
+    ]
+  }
+}

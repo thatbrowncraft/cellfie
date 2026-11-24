@@ -1,0 +1,127 @@
+{
+  "id": "reasoning-mathematical-modelling",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 20,
+  "title": "Mathematical Modelling",
+  "shortDescription": "Turn a real situation into equations, solve it and interpret the result.",
+  "genZNote": "Word problem → equation → answer → 'does this make sense?' That last step is where marks hide.",
+  "sections": [
+    {
+      "id": "steps",
+      "heading": "The Modelling Cycle",
+      "steps": [
+        {
+          "name": "Define the problem and variables",
+          "explanation": "Identify unknowns and units.",
+          "purpose": "Clarity."
+        },
+        {
+          "name": "Build the model",
+          "explanation": "Write equations or inequalities (linear, proportional, break-even).",
+          "purpose": "Translate reality."
+        },
+        {
+          "name": "Solve",
+          "explanation": "Use algebra or arithmetic.",
+          "purpose": "Get numbers."
+        },
+        {
+          "name": "Interpret and validate",
+          "explanation": "Check units, reasonableness and constraints.",
+          "purpose": "Avoid absurd answers."
+        }
+      ]
+    },
+    {
+      "id": "ex",
+      "heading": "Typical Models",
+      "bullets": [
+        "Linear cost model: Cost = fixed + rate × units. Taxi: ₹50 + ₹12/km; 8 km → ₹146.",
+        "Break-even: units = fixed cost ÷ (price − variable cost). Fixed ₹12,000, price ₹50, variable ₹30 → 600 units.",
+        "Rate/work/mixture and proportion models.",
+        "Growth models: simple vs compound; inequality constraints for budgets and capacity.",
+        "Optimisation idea: choose the best option under constraints (e.g. cheapest combination of packs)."
+      ]
+    },
+    {
+      "id": "tips",
+      "heading": "Exam Tips",
+      "body": "Define variables explicitly; check dimensional consistency; if two unknowns, form two equations; use trial values to verify; round only at the end."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Mathematical modelling represents a real-world problem with variables and equations so it can be solved and interpreted.",
+    "keyFacts": [
+      "Cycle: define, build, solve, validate.",
+      "Cost = fixed + variable × units.",
+      "Break-even = fixed ÷ margin."
+    ],
+    "keyTerms": [
+      "Model",
+      "Variable",
+      "Break-even",
+      "Constraint",
+      "Validation"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Always interpret the answer in context."
+    ],
+    "commonTraps": [
+      "Do not skip units."
+    ],
+    "mustRemember": [
+      "Fixed + variable."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-mathematical-modelling-q1",
+        "type": "mcq",
+        "prompt": "Taxi fare ₹50 + ₹12/km. Fare for 8 km:",
+        "options": [
+          "₹96",
+          "₹146",
+          "₹150",
+          "₹156"
+        ],
+        "correctIndex": 1,
+        "explanation": "50 + 96 = 146."
+      },
+      {
+        "id": "reasoning-mathematical-modelling-q2",
+        "type": "mcq",
+        "prompt": "Fixed cost 12,000; price 50; variable cost 30. Break-even units:",
+        "options": [
+          "400",
+          "500",
+          "600",
+          "800"
+        ],
+        "correctIndex": 2,
+        "explanation": "12,000/20."
+      },
+      {
+        "id": "reasoning-mathematical-modelling-q3",
+        "type": "mcq",
+        "prompt": "The last step of the modelling cycle is:",
+        "options": [
+          "Define variables",
+          "Validation/interpretation",
+          "Solving",
+          "Rounding"
+        ],
+        "correctIndex": 1,
+        "explanation": "Check the result in context."
+      }
+    ]
+  }
+}

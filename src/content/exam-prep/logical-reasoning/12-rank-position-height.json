@@ -1,0 +1,113 @@
+{
+  "id": "reasoning-rank-position-height",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 12,
+  "title": "Rank, Position and Height Ordering",
+  "shortDescription": "Ranks from top and bottom, total counts, left/right positions and height/weight comparison arrangements.",
+  "genZNote": "'12th from top' and '18th from bottom' sound like two different people — they're the same person. One formula, zero stress.",
+  "sections": [
+    {
+      "id": "rank",
+      "heading": "Rank Formulas",
+      "bullets": [
+        "Total = rank from top + rank from bottom − 1.",
+        "Rank from bottom = total − rank from top + 1.",
+        "Persons between A and B (A ahead of B) = rank of B − rank of A − 1.",
+        "Position from left/right in a row: total = left position + right position − 1.",
+        "If two people swap places and rank changes, difference gives people between them.",
+        "Example: Ravi is 12th from top and 18th from bottom → total = 12 + 18 − 1 = 29."
+      ]
+    },
+    {
+      "id": "height",
+      "heading": "Height and Order Comparisons",
+      "bullets": [
+        "Write relations as a chain with symbols: A > B > C means A is taller than B who is taller than C.",
+        "Use \">\" for \"taller than\", \"<\" for \"shorter than\"; combine statements sharing a common person.",
+        "Questions: who is tallest/shortest, who is in the middle, how many are taller than X.",
+        "Order of ranks in exams: rank from top counted from the highest scorer; \"rank from last\" counted from lowest.",
+        "If information is insufficient to compare two people directly, the answer is \"cannot be determined\"."
+      ]
+    },
+    {
+      "id": "ex",
+      "heading": "Example",
+      "body": "Five friends: P is taller than Q but shorter than R. S is taller than R but shorter than T. Order from tallest: T > S > R > P > Q. Shortest: Q; middle: R."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Rank problems rely on total = top + bottom − 1; height-ordering problems chain comparative statements into one sequence.",
+    "keyFacts": [
+      "Total = top + bottom − 1.",
+      "Between = difference − 1.",
+      "Chain A > B > C helps with comparisons."
+    ],
+    "keyTerms": [
+      "Rank from top",
+      "Rank from bottom",
+      "Chain",
+      "Between",
+      "Position"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Always add 1 back when converting between top and bottom ranks."
+    ],
+    "commonTraps": [
+      "Do not count the two named persons among \"between\"."
+    ],
+    "mustRemember": [
+      "Total = T + B − 1."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-rank-position-height-q1",
+        "type": "mcq",
+        "prompt": "A is 8th from top and 23rd from bottom. Total students:",
+        "options": [
+          "29",
+          "30",
+          "31",
+          "32"
+        ],
+        "correctIndex": 1,
+        "explanation": "8 + 23 − 1 = 30."
+      },
+      {
+        "id": "reasoning-rank-position-height-q2",
+        "type": "mcq",
+        "prompt": "In a row of 40, Rita is 14th from left. Her position from right:",
+        "options": [
+          "25",
+          "26",
+          "27",
+          "28"
+        ],
+        "correctIndex": 2,
+        "explanation": "40 − 14 + 1 = 27."
+      },
+      {
+        "id": "reasoning-rank-position-height-q3",
+        "type": "mcq",
+        "prompt": "If P > Q and Q > R, then:",
+        "options": [
+          "R is taller than P",
+          "P is taller than R",
+          "Cannot say",
+          "Q is tallest"
+        ],
+        "correctIndex": 1,
+        "explanation": "Transitive chain."
+      }
+    ]
+  }
+}

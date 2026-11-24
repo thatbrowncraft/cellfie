@@ -1,0 +1,135 @@
+{
+  "id": "reasoning-statement-and-prediction",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 23,
+  "title": "Statement and Prediction (Assumption, Conclusion, Course of Action, Inference)",
+  "shortDescription": "Evaluate statements: implicit assumptions, valid conclusions, sensible actions and predictions.",
+  "genZNote": "These are not opinion questions — only what the statement forces counts. Extreme words (all, only, never) are usually the trap.",
+  "sections": [
+    {
+      "id": "types",
+      "heading": "Question Types",
+      "body": "Example: Statement — \"Please use the stairs; the lift is under maintenance.\" Assumption I: The lift cannot be used now — implicit, valid. Assumption II: Everyone prefers stairs — not implied.",
+      "table": {
+        "caption": "Types and rules",
+        "columnHeaders": [
+          "Type",
+          "Rule"
+        ],
+        "rows": [
+          [
+            "Assumption",
+            "Implicit, unstated supposition that must hold for the statement to make sense"
+          ],
+          [
+            "Conclusion/Inference",
+            "Follows definitely from the statement; no outside knowledge"
+          ],
+          [
+            "Course of action",
+            "Practical, relevant, solves/mitigates the problem; not extreme"
+          ],
+          [
+            "Strong/weak argument",
+            "Strong = relevant, specific, universal-impact; weak = trivial, emotional, irrelevant"
+          ],
+          [
+            "Prediction",
+            "Likely outcome supported by the statement and common sense; avoid certainty claims"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "tips",
+      "heading": "Strategy",
+      "bullets": [
+        "Take the statement as true; ignore real-world facts unless asked.",
+        "\"Definitely true/false\", \"probably true/false\" options: choose probabilistic wording when the statement allows but does not force.",
+        "Extreme words (all, only, never, always) usually make an option wrong.",
+        "For course of action, prefer measured steps (investigate, review, fix) over drastic ones.",
+        "For arguments, check whether the reason is directly relevant to the proposal."
+      ]
+    },
+    {
+      "id": "pred",
+      "heading": "Prediction Reasoning",
+      "body": "Predictions rest on trends or conditions in the statement: \"Rain is forecast; roads are waterlogged\" → delays likely. Avoid answers needing facts not stated."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Statement-based reasoning evaluates what is implicit, what follows, what action is sensible and what outcome is likely from a given statement.",
+    "keyFacts": [
+      "Assumption is implicit; conclusion must follow.",
+      "Extreme words usually wrong.",
+      "Course of action must be practical and relevant."
+    ],
+    "keyTerms": [
+      "Assumption",
+      "Conclusion",
+      "Course of action",
+      "Inference",
+      "Prediction"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Take the statement as true."
+    ],
+    "commonTraps": [
+      "Do not import outside knowledge."
+    ],
+    "mustRemember": [
+      "Beware extreme words."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-statement-and-prediction-q1",
+        "type": "mcq",
+        "prompt": "An assumption is:",
+        "options": [
+          "A stated fact",
+          "An implicit supposition underlying the statement",
+          "A conclusion",
+          "A course of action"
+        ],
+        "correctIndex": 1,
+        "explanation": "It is unstated."
+      },
+      {
+        "id": "reasoning-statement-and-prediction-q2",
+        "type": "mcq",
+        "prompt": "Which words usually signal a weak option?",
+        "options": [
+          "often",
+          "some",
+          "only/all/never",
+          "may"
+        ],
+        "correctIndex": 2,
+        "explanation": "Extreme words overstate."
+      },
+      {
+        "id": "reasoning-statement-and-prediction-q3",
+        "type": "mcq",
+        "prompt": "A good course of action is:",
+        "options": [
+          "Drastic and immediate",
+          "Practical and relevant",
+          "Irrelevant",
+          "Emotional"
+        ],
+        "correctIndex": 1,
+        "explanation": "It should solve or mitigate the problem."
+      }
+    ]
+  }
+}

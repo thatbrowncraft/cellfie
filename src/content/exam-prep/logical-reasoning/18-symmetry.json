@@ -1,0 +1,160 @@
+{
+  "id": "reasoning-symmetry",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 18,
+  "title": "Symmetry",
+  "shortDescription": "Lines of symmetry, rotational symmetry and symmetric letters/figures.",
+  "genZNote": "Fold it, flip it, rotate it — symmetry is just 'does it still look the same?'",
+  "sections": [
+    {
+      "id": "lines",
+      "heading": "Lines of Symmetry",
+      "body": "A line of symmetry divides a figure into two mirror-image halves. Rotational symmetry order is the number of times it looks the same in a 360° turn.",
+      "table": {
+        "caption": "Shapes",
+        "columnHeaders": [
+          "Figure",
+          "Lines of symmetry",
+          "Rotational order"
+        ],
+        "rows": [
+          [
+            "Equilateral triangle",
+            "3",
+            "3"
+          ],
+          [
+            "Isosceles triangle",
+            "1",
+            "1"
+          ],
+          [
+            "Scalene triangle",
+            "0",
+            "1"
+          ],
+          [
+            "Square",
+            "4",
+            "4"
+          ],
+          [
+            "Rectangle",
+            "2",
+            "2"
+          ],
+          [
+            "Rhombus",
+            "2",
+            "2"
+          ],
+          [
+            "Parallelogram",
+            "0",
+            "2"
+          ],
+          [
+            "Circle",
+            "Infinite",
+            "Infinite"
+          ],
+          [
+            "Regular n-gon",
+            "n",
+            "n"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "letters",
+      "heading": "Symmetric Letters",
+      "bullets": [
+        "Vertical-axis symmetry: A, H, I, M, O, T, U, V, W, X, Y.",
+        "Horizontal-axis symmetry: B, C, D, E, H, I, K, O, X.",
+        "Both: H, I, O, X.",
+        "Point (rotational) symmetry: H, I, N, O, S, X, Z."
+      ]
+    },
+    {
+      "id": "use",
+      "heading": "Applications",
+      "body": "Questions ask to complete a figure so it is symmetric about a dotted line, count lines of symmetry, or identify the mirror partner. Check each point's distance from the axis; mirror images are laterally inverted (see Non-Verbal Reasoning for mirror/water images)."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Symmetry tests whether a figure maps onto itself under reflection or rotation.",
+    "keyFacts": [
+      "Square has 4 lines; rectangle 2; circle infinite.",
+      "H, I, O, X are symmetric both ways.",
+      "Parallelogram has no line of symmetry."
+    ],
+    "keyTerms": [
+      "Line of symmetry",
+      "Rotational symmetry",
+      "Reflection",
+      "Axis",
+      "Order"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Rhombus lines are its diagonals."
+    ],
+    "commonTraps": [
+      "Do not count a rectangle's diagonals as symmetry lines."
+    ],
+    "mustRemember": [
+      "Regular n-gon → n lines."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-symmetry-q1",
+        "type": "mcq",
+        "prompt": "Lines of symmetry in a rectangle:",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "correctIndex": 1,
+        "explanation": "Two midlines."
+      },
+      {
+        "id": "reasoning-symmetry-q2",
+        "type": "mcq",
+        "prompt": "Letter with both vertical and horizontal symmetry:",
+        "options": [
+          "A",
+          "B",
+          "H",
+          "T"
+        ],
+        "correctIndex": 2,
+        "explanation": "H."
+      },
+      {
+        "id": "reasoning-symmetry-q3",
+        "type": "mcq",
+        "prompt": "Parallelogram has how many lines of symmetry?",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "4"
+        ],
+        "correctIndex": 0,
+        "explanation": "None."
+      }
+    ]
+  }
+}

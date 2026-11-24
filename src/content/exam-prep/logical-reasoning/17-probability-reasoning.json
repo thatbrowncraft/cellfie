@@ -1,0 +1,128 @@
+{
+  "id": "reasoning-probability-reasoning",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 17,
+  "title": "Probability",
+  "shortDescription": "Sample space, events, addition and multiplication rules; dice, coins and cards.",
+  "genZNote": "Probability is just 'how many ways I like ÷ how many ways exist'. The exam only changes the costume: coins, dice, cards, balls.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "Core Rules",
+      "bullets": [
+        "P(E) = favourable outcomes ÷ total outcomes; 0 ≤ P ≤ 1; P(not E) = 1 − P(E).",
+        "Addition: P(A or B) = P(A) + P(B) − P(A and B); mutually exclusive: P(A and B) = 0.",
+        "Independent events: P(A and B) = P(A) × P(B).",
+        "Conditional: P(A|B) = P(A and B)/P(B).",
+        "With replacement keeps probabilities constant; without replacement changes totals.",
+        "Combinations: nCr = n!/(r!(n − r)!) for selection problems."
+      ]
+    },
+    {
+      "id": "stand",
+      "heading": "Standard Spaces",
+      "body": "Examples: sum 8 with two dice → 5/36. At least one head in two coins → 3/4. King or heart from a pack → (4 + 13 − 1)/52 = 16/52 = 4/13.",
+      "table": {
+        "caption": "Reference sample spaces",
+        "columnHeaders": [
+          "Object",
+          "Facts"
+        ],
+        "rows": [
+          [
+            "Coin",
+            "2 outcomes; n coins → 2ⁿ"
+          ],
+          [
+            "Die",
+            "6 outcomes; two dice → 36; sum 7 has 6 ways"
+          ],
+          [
+            "Cards",
+            "52 cards; 26 red, 26 black; 13 per suit; 12 face cards; 4 aces"
+          ],
+          [
+            "Balls in bag",
+            "Choose using nCr"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Probability measures the likelihood of an event as favourable outcomes divided by total outcomes, with rules for combining events.",
+    "keyFacts": [
+      "P(E) = favourable/total.",
+      "P(A∪B) = P(A) + P(B) − P(A∩B).",
+      "Two dice: 36 outcomes.",
+      "Independent: multiply."
+    ],
+    "keyTerms": [
+      "Sample space",
+      "Mutually exclusive",
+      "Independent",
+      "Conditional probability",
+      "nCr"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "\"At least one\" = 1 − P(none)."
+    ],
+    "commonTraps": [
+      "Do not double count overlaps like king of hearts."
+    ],
+    "mustRemember": [
+      "Complement trick."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-probability-reasoning-q1",
+        "type": "mcq",
+        "prompt": "Probability of a sum of 7 on two dice:",
+        "options": [
+          "1/12",
+          "1/9",
+          "1/6",
+          "1/4"
+        ],
+        "correctIndex": 2,
+        "explanation": "6 of 36 outcomes."
+      },
+      {
+        "id": "reasoning-probability-reasoning-q2",
+        "type": "mcq",
+        "prompt": "Probability of drawing a king or a heart from a pack:",
+        "options": [
+          "4/13",
+          "17/52",
+          "1/4",
+          "1/2"
+        ],
+        "correctIndex": 0,
+        "explanation": "16/52."
+      },
+      {
+        "id": "reasoning-probability-reasoning-q3",
+        "type": "mcq",
+        "prompt": "Probability of at least one head in two tosses:",
+        "options": [
+          "1/4",
+          "1/2",
+          "3/4",
+          "1"
+        ],
+        "correctIndex": 2,
+        "explanation": "1 − P(no head) = 1 − 1/4."
+      }
+    ]
+  }
+}

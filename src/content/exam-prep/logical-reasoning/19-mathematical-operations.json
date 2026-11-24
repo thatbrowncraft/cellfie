@@ -1,0 +1,110 @@
+{
+  "id": "reasoning-mathematical-operations",
+  "subjectId": "logical-reasoning",
+  "syllabusOrder": 19,
+  "title": "Mathematical Operations",
+  "shortDescription": "Symbol substitution, defined operators, interchanges and BODMAS with coded signs.",
+  "genZNote": "Same maths, new costumes: plus becomes times, minus becomes divide. Translate first, calculate second.",
+  "sections": [
+    {
+      "id": "sub",
+      "heading": "Symbol Substitution",
+      "body": "Replace the coded symbols with their real operations first, then apply BODMAS (Brackets, Orders, Division/Multiplication, Addition/Subtraction). Example: If + means ×, − means ÷, × means −, ÷ means +, then 8 + 6 − 3 × 2 ÷ 4 becomes 8 × 6 ÷ 3 − 2 + 4 = 16 − 2 + 4 = 18."
+    },
+    {
+      "id": "def",
+      "heading": "Defined Operators",
+      "bullets": [
+        "If a ⊕ b = 2a + b, then 3 ⊕ 4 = 10.",
+        "If a * b = a² − b, then 4 * 3 = 13.",
+        "Nested: evaluate brackets first (a ⊕ b) ⊕ c.",
+        "Check whether the operator is commutative before swapping terms."
+      ]
+    },
+    {
+      "id": "swap",
+      "heading": "Interchange and Equation Balancing",
+      "bullets": [
+        "Interchange of signs/numbers: make the swap on the given equation and verify the equality.",
+        "Find the correct signs for a statement such as 6 ? 3 ? 2 = 4.",
+        "Missing operator: try ÷ and × first; use trial combinations.",
+        "Use BODMAS carefully: multiplication and division before addition/subtraction from left to right."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Mathematical operations questions re-define symbols or operators and test BODMAS under the new definitions.",
+    "keyFacts": [
+      "Translate symbols first.",
+      "BODMAS order.",
+      "Evaluate brackets first."
+    ],
+    "keyTerms": [
+      "BODMAS",
+      "Operator",
+      "Substitution",
+      "Interchange",
+      "Commutative"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Do not apply BODMAS before translating."
+    ],
+    "commonTraps": [
+      "Do not assume a defined operator is commutative."
+    ],
+    "mustRemember": [
+      "Translate then solve."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Standard competitive-exam reasoning reference (R.S. Aggarwal, Verbal & Non-Verbal Reasoning)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "reasoning-mathematical-operations-q1",
+        "type": "mcq",
+        "prompt": "If + means ×, − means ÷, × means −, ÷ means +, then 8 + 6 − 3 × 2 ÷ 4 =",
+        "options": [
+          "16",
+          "18",
+          "20",
+          "22"
+        ],
+        "correctIndex": 1,
+        "explanation": "8×6÷3−2+4 = 18."
+      },
+      {
+        "id": "reasoning-mathematical-operations-q2",
+        "type": "mcq",
+        "prompt": "If a * b = 2a + b, then 3 * 4 =",
+        "options": [
+          "8",
+          "9",
+          "10",
+          "11"
+        ],
+        "correctIndex": 2,
+        "explanation": "2×3 + 4 = 10."
+      },
+      {
+        "id": "reasoning-mathematical-operations-q3",
+        "type": "mcq",
+        "prompt": "Value of 12 ÷ 3 + 4 × 2 =",
+        "options": [
+          "12",
+          "10",
+          "14",
+          "8"
+        ],
+        "correctIndex": 0,
+        "explanation": "4 + 8 = 12."
+      }
+    ]
+  }
+}
