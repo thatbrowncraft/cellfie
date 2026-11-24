@@ -1,0 +1,152 @@
+{
+  "id": "fsft-micro-characteristics-classification",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 20,
+  "title": "Microorganisms in Food — General Characteristics, Classification and Morphology",
+  "shortDescription": "Bacteria, yeasts, moulds, viruses and parasites: how they differ in structure, size and importance to food.",
+  "genZNote": "Microbes are tiny, everywhere, and low-key running your kitchen. Gram +ve vs Gram −ve is their personality test.",
+  "sections": [
+    {
+      "id": "groups",
+      "heading": "Major Groups",
+      "table": {
+        "caption": "Microbial groups in food",
+        "columnHeaders": [
+          "Group",
+          "Cell type / size",
+          "Food relevance"
+        ],
+        "rows": [
+          [
+            "Bacteria",
+            "Prokaryote, 0.5–5 µm",
+            "Spoilage, pathogens, starter cultures"
+          ],
+          [
+            "Yeasts",
+            "Eukaryote, unicellular fungi, 3–10 µm",
+            "Bread, beer, wine; spoilage of juices and sugary foods"
+          ],
+          [
+            "Moulds",
+            "Multicellular filamentous fungi",
+            "Spoilage, mycotoxins, cheese ripening"
+          ],
+          [
+            "Viruses",
+            "Acellular, 20–300 nm",
+            "Norovirus, hepatitis A — need host; do not multiply in food"
+          ],
+          [
+            "Protozoa/helminths",
+            "Parasites",
+            "Giardia, Cryptosporidium, Taenia (undercooked meat)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "morph",
+      "heading": "Bacterial Morphology",
+      "bullets": [
+        "Shapes: cocci (spherical), bacilli (rods), spirilla/vibrios (curved/spiral); arrangements: chains (Streptococcus), clusters (Staphylococcus), diplo.",
+        "Gram stain separates Gram-positive (thick peptidoglycan; Staphylococcus, Bacillus, Clostridium, Listeria, Lactobacillus) from Gram-negative (outer membrane with LPS; Salmonella, E. coli, Vibrio, Pseudomonas).",
+        "Structures: cell wall, cytoplasmic membrane, flagella (motility), pili, capsule/slime, endospores (Bacillus, Clostridium — heat-resistant survival forms).",
+        "Fungal morphology: yeast buds; mould hyphae/mycelium with spores (conidia)."
+      ]
+    },
+    {
+      "id": "classification",
+      "heading": "Classification and Nomenclature",
+      "bullets": [
+        "Binomial nomenclature (Genus species); Bergey's Manual for bacteria.",
+        "Classified by morphology, Gram reaction, oxygen need (aerobe, anaerobe, facultative), temperature (psychrophile, mesophile, thermophile), nutrition and genetics (16S rRNA).",
+        "Food microbes are also grouped by role: spoilage, pathogenic, beneficial (starter, probiotic) and indicator organisms (coliforms, Enterobacteriaceae, E. coli)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Food microorganisms include bacteria, yeasts, moulds, viruses and parasites classified by structure, staining and physiology, and by their role as spoilers, pathogens or beneficial agents.",
+    "keyFacts": [
+      "Bacteria are prokaryotes; yeasts/moulds eukaryotes.",
+      "Gram +ve: thick peptidoglycan; Gram −ve: LPS outer membrane.",
+      "Endospores: Bacillus and Clostridium.",
+      "Viruses do not grow in food."
+    ],
+    "keyTerms": [
+      "Gram stain",
+      "Endospore",
+      "Hypha",
+      "Coliform",
+      "Bergey's Manual"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Endospores survive boiling; destroyed by autoclaving 121 °C."
+    ],
+    "commonTraps": [
+      "Do not say viruses multiply in food."
+    ],
+    "mustRemember": [
+      "Spore formers: Bacillus, Clostridium."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Jay: Modern Food Microbiology",
+      "kind": "educational"
+    },
+    {
+      "name": "FAO/WHO — Microbiological Risk Assessment Series",
+      "kind": "educational"
+    },
+    {
+      "name": "Frazier & Westhoff: Food Microbiology",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-micro-characteristics-classification-q1",
+        "type": "mcq",
+        "prompt": "Which genus forms heat-resistant endospores?",
+        "options": [
+          "Salmonella",
+          "Clostridium",
+          "Escherichia",
+          "Vibrio"
+        ],
+        "correctIndex": 1,
+        "explanation": "Clostridium and Bacillus."
+      },
+      {
+        "id": "fsft-micro-characteristics-classification-q2",
+        "type": "mcq",
+        "prompt": "Gram-negative bacteria possess:",
+        "options": [
+          "Thick peptidoglycan only",
+          "Outer membrane with LPS",
+          "No cell wall",
+          "Chitin wall"
+        ],
+        "correctIndex": 1,
+        "explanation": "Outer membrane with lipopolysaccharide."
+      },
+      {
+        "id": "fsft-micro-characteristics-classification-q3",
+        "type": "mcq",
+        "prompt": "Which cannot multiply in food?",
+        "options": [
+          "Yeast",
+          "Mould",
+          "Virus",
+          "Bacterium"
+        ],
+        "correctIndex": 2,
+        "explanation": "Viruses need living host cells."
+      }
+    ]
+  }
+}

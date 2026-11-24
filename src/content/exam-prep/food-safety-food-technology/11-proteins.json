@@ -1,0 +1,139 @@
+{
+  "id": "fsft-proteins",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 11,
+  "title": "Proteins — Structure, Classification and Functions",
+  "shortDescription": "Amino acids, peptide bonds, protein quality scoring and what proteins do in the body and in food.",
+  "genZNote": "Proteins are the body's builders — and also why dough stretches and egg whites turn solid. Same molecules, different mood.",
+  "sections": [
+    {
+      "id": "structure",
+      "heading": "Chemical Structure",
+      "bullets": [
+        "Building blocks: 20 standard amino acids with amino, carboxyl and variable R groups; joined by peptide bonds.",
+        "Primary (sequence), secondary (α-helix, β-sheet), tertiary (3-D folding, disulphide bonds) and quaternary (subunits) structures.",
+        "Nine essential amino acids in adults: histidine, isoleucine, leucine, lysine, methionine, phenylalanine, threonine, tryptophan, valine.",
+        "Isoelectric point (pI): net charge zero, minimum solubility — casein precipitates at pH 4.6."
+      ]
+    },
+    {
+      "id": "class",
+      "heading": "Classification",
+      "table": {
+        "caption": "Protein types",
+        "columnHeaders": [
+          "Basis",
+          "Types / examples"
+        ],
+        "rows": [
+          [
+            "Composition",
+            "Simple (albumin, globulin, glutelin), conjugated (casein–phosphoprotein, haemoglobin), derived (peptones)"
+          ],
+          [
+            "Shape",
+            "Fibrous (collagen, keratin), globular (albumin, enzymes)"
+          ],
+          [
+            "Nutritional quality",
+            "Complete (milk, egg), partially incomplete (wheat — lysine limiting), incomplete (gelatin, zein)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "quality",
+      "heading": "Protein Quality and Food Behaviour",
+      "bullets": [
+        "Measures: PER (rat growth), BV, NPU, chemical/amino acid score, PDCAAS and the newer DIAAS (digestible indispensable amino acid score).",
+        "Protein analysis: Kjeldahl nitrogen × 6.25 (milk 6.38; wheat 5.7); Biuret and Lowry colorimetric methods; ninhydrin for free amino acids.",
+        "Denaturation (heat, acid, salt, shear) unfolds proteins without breaking peptide bonds — egg white sets, milk curdles.",
+        "Functional properties: gelation, emulsification (casein), foaming (egg albumen), water binding (meat), dough formation (gluten: glutenin + gliadin).",
+        "Needs: functions include growth/repair, enzymes, hormones, antibodies, transport; 4 kcal/g; ICMR 2020 RDA about 0.8–1.0 g/kg ideal body weight (reference man ~54 g/day, woman ~46 g/day)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Proteins are polymers of amino acids linked by peptide bonds whose sequence and folding determine function, nutritional quality and food functionality.",
+    "keyFacts": [
+      "9 essential amino acids for adults.",
+      "Peptide bond joins –COOH of one to –NH2 of next.",
+      "Kjeldahl factor 6.25 (milk 6.38).",
+      "Lysine limiting in cereals; methionine in pulses."
+    ],
+    "keyTerms": [
+      "Peptide bond",
+      "Denaturation",
+      "PDCAAS",
+      "Isoelectric point",
+      "Gluten"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Casein ≈ 80% of milk protein; whey ≈ 20%.",
+      "Cereal + pulse combination gives a balanced amino acid profile."
+    ],
+    "commonTraps": [
+      "Denaturation does not break peptide bonds.",
+      "Do not call collagen globular — it is fibrous."
+    ],
+    "mustRemember": [
+      "Lysine: limiting in cereals."
+    ]
+  },
+  "sources": [
+    {
+      "name": "ICMR–NIN Nutrient Requirements for Indians (RDA 2020)",
+      "kind": "scientific",
+      "url": "https://www.nin.res.in"
+    },
+    {
+      "name": "Lehninger Principles of Biochemistry",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-proteins-q1",
+        "type": "mcq",
+        "prompt": "Limiting amino acid in most cereals is:",
+        "options": [
+          "Methionine",
+          "Lysine",
+          "Tryptophan",
+          "Valine"
+        ],
+        "correctIndex": 1,
+        "explanation": "Cereals are low in lysine; pulses are low in methionine."
+      },
+      {
+        "id": "fsft-proteins-q2",
+        "type": "mcq",
+        "prompt": "The nitrogen-to-protein factor commonly used is:",
+        "options": [
+          "4.38",
+          "5.7",
+          "6.25",
+          "7.25"
+        ],
+        "correctIndex": 2,
+        "explanation": "Kjeldahl N × 6.25 (specific factors for milk and wheat)."
+      },
+      {
+        "id": "fsft-proteins-q3",
+        "type": "mcq",
+        "prompt": "Which is NOT essential for adults?",
+        "options": [
+          "Leucine",
+          "Valine",
+          "Glycine",
+          "Lysine"
+        ],
+        "correctIndex": 2,
+        "explanation": "Glycine is non-essential."
+      }
+    ]
+  }
+}

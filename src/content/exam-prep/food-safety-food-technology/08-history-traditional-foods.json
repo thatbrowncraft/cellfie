@@ -1,0 +1,158 @@
+{
+  "id": "fsft-history-traditional-foods",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 8,
+  "title": "History of Food, Food Preservation and Traditional Foods",
+  "shortDescription": "From fire and fermentation to canning and irradiation — plus why traditional Indian foods still matter.",
+  "genZNote": "Your pickle is a 5,000-year-old science experiment that actually worked. History of food = history of 'how do we stop this from rotting?'",
+  "sections": [
+    {
+      "id": "history",
+      "heading": "Milestones in Food and Preservation",
+      "body": "Preservation always attacks one or more of: microbial growth, enzyme activity, chemical (oxidative) change and pest damage — via heat, cold, water removal, acidity, salt/sugar, smoke, chemicals or irradiation.",
+      "table": {
+        "caption": "Timeline",
+        "columnHeaders": [
+          "Era / date",
+          "Development"
+        ],
+        "rows": [
+          [
+            "Prehistoric",
+            "Fire, cooking, sun-drying, smoking, salting"
+          ],
+          [
+            "~10,000 BCE",
+            "Agriculture and animal domestication; storage in pits and pots"
+          ],
+          [
+            "Ancient Egypt, India, China",
+            "Fermentation (bread, beer, curd, soy), pickling, honey and oil preservation"
+          ],
+          [
+            "1795–1810",
+            "Nicolas Appert: heat-processing food in sealed glass bottles; Napoleon's prize"
+          ],
+          [
+            "1810",
+            "Peter Durand: tin can"
+          ],
+          [
+            "1860s",
+            "Louis Pasteur: microbes cause spoilage; pasteurization"
+          ],
+          [
+            "Late 1800s",
+            "Mechanical refrigeration; commercial freezing (Clarence Birdseye, 1920s quick-freezing)"
+          ],
+          [
+            "20th century",
+            "HACCP (NASA/Pillsbury, 1960s), irradiation, aseptic packaging, modified atmosphere"
+          ],
+          [
+            "21st century",
+            "High-pressure processing, pulsed electric fields, cold plasma, precision fermentation"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "traditional",
+      "heading": "Traditional Foods and Why They Matter",
+      "bullets": [
+        "Fermented staples (idli, dosa, dhokla, dahi, kanji, handia, kimchi analogues) improve digestibility, B-vitamin content and shelf life, and carry beneficial microbes.",
+        "Millets (jowar, bajra, ragi — \"Shree Anna\"), pulses, ghee, jaggery, turmeric, local leafy greens: nutrient-dense, climate-resilient, low glycaemic load when unrefined. 2023 was the International Year of Millets (proposed by India).",
+        "Preservation traditions: sun-drying (papad, vadi), pickling (achar), salting, sugar syrups (murabba), smoking, oil-sealing.",
+        "Traditional processing also shows nutrient science: soaking/sprouting reduce phytates and raise bioavailability; combining cereal + pulse improves protein quality (complementary amino acids).",
+        "Regional Gujarati examples: thepla, khichdi–kadhi, dhokla, khakhra, undhiyu, handvo — fermented/dry foods suited to long storage and travel."
+      ]
+    },
+    {
+      "id": "gi",
+      "heading": "Protecting Food Heritage",
+      "body": "Geographical Indication (GI) tags (Geographical Indications of Goods Act, 1999), FSSAI's \"Eat Right\" and local-food promotion, and recognition of traditional knowledge protect authenticity and livelihoods; but traditional foods still need modern hygiene (GHP) to be safe."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Food preservation evolved from drying, salting and fermentation to heat-processing, refrigeration and non-thermal technologies, while traditional foods offer nutrition, sustainability and cultural value.",
+    "keyFacts": [
+      "Appert (1795–1810) founded canning; Durand patented the tin can.",
+      "Pasteur linked spoilage to microbes.",
+      "Fermentation improves digestibility, vitamins and keeping quality.",
+      "2023: International Year of Millets."
+    ],
+    "keyTerms": [
+      "Appert",
+      "Pasteurization",
+      "Fermentation",
+      "GI tag",
+      "Millets"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Nicolas Appert = \"father of canning\".",
+      "Complementary proteins: cereal + pulse."
+    ],
+    "commonTraps": [
+      "Do not credit Pasteur with inventing canning."
+    ],
+    "mustRemember": [
+      "Appert → canning; Pasteur → pasteurization."
+    ]
+  },
+  "sources": [
+    {
+      "name": "FAO — Food Preservation and History",
+      "kind": "educational",
+      "url": "https://www.fao.org"
+    },
+    {
+      "name": "ICMR–NIN Dietary Guidelines for Indians",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-history-traditional-foods-q1",
+        "type": "mcq",
+        "prompt": "Who is regarded as the father of canning?",
+        "options": [
+          "Louis Pasteur",
+          "Nicolas Appert",
+          "Peter Durand",
+          "Clarence Birdseye"
+        ],
+        "correctIndex": 1,
+        "explanation": "Appert showed heat-sealed food in bottles could be preserved."
+      },
+      {
+        "id": "fsft-history-traditional-foods-q2",
+        "type": "mcq",
+        "prompt": "International Year of Millets was observed in:",
+        "options": [
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "correctIndex": 2,
+        "explanation": "The UN declared 2023, proposed by India."
+      },
+      {
+        "id": "fsft-history-traditional-foods-q3",
+        "type": "mcq",
+        "prompt": "Soaking and sprouting of pulses mainly help by:",
+        "options": [
+          "Adding fat",
+          "Reducing antinutrients like phytate",
+          "Raising pH",
+          "Increasing sodium"
+        ],
+        "correctIndex": 1,
+        "explanation": "They reduce phytates and improve mineral availability."
+      }
+    ]
+  }
+}

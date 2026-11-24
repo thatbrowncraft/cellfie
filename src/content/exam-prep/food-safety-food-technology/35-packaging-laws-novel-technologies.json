@@ -1,0 +1,152 @@
+{
+  "id": "fsft-packaging-laws-novel-technologies",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 35,
+  "title": "Packaging Laws, Packaged Commodities Rules and Novel Packaging Technologies",
+  "shortDescription": "FSSAI packaging regulations, Legal Metrology rules and modified-atmosphere, active and intelligent packaging.",
+  "genZNote": "The label, the pack and the law have to agree. FSSAI says what's inside, Legal Metrology says how much — two rulebooks, one packet.",
+  "sections": [
+    {
+      "id": "laws",
+      "heading": "Legal Framework",
+      "bullets": [
+        "FSS (Packaging) Regulations, 2018: materials must be food-grade, comply with BIS standards, specify permitted plastics, print inks and recycling conditions; reuse of containers restricted (e.g. only specified food contact reuse).",
+        "FSS (Labelling and Display) Regulations, 2020: mandatory labelling content and font rules.",
+        "Legal Metrology (Packaged Commodities) Rules, 2011: name/address of manufacturer/packer/importer, generic name, net quantity, month and year of manufacture or packing, MRP inclusive of all taxes, consumer-care details, and unit sale price for specified items.",
+        "Plastic Waste Management Rules, 2016 (amended): thickness, EPR; BIS standards for packaging (e.g. for packaged drinking water bottles).",
+        "Consumer Protection Act, 2019: penalties for misleading information."
+      ]
+    },
+    {
+      "id": "novel",
+      "heading": "Novel Packaging Technologies",
+      "body": "Recent developments: sustainable and recyclable mono-materials, smart labels with QR/blockchain traceability, retort pouches, high-barrier PET and active antimicrobials. Regulatory approval and migration testing remain essential.",
+      "table": {
+        "caption": "Novel packaging",
+        "columnHeaders": [
+          "Type",
+          "Principle",
+          "Example"
+        ],
+        "rows": [
+          [
+            "MAP",
+            "Replace air with gas mix (N2, CO2, low O2)",
+            "Cut salads, meat"
+          ],
+          [
+            "Vacuum",
+            "Remove oxygen",
+            "Cheese, cured meat"
+          ],
+          [
+            "Active packaging",
+            "Releases/absorbs substances",
+            "Oxygen scavengers, ethylene absorbers, moisture absorbers, antimicrobial films"
+          ],
+          [
+            "Intelligent packaging",
+            "Monitors condition",
+            "Time–temperature indicators, freshness (pH/amine) indicators, RFID"
+          ],
+          [
+            "Nano-packaging",
+            "Nanocomposites for barrier",
+            "Nano-clay films"
+          ],
+          [
+            "Edible/biodegradable films",
+            "Chitosan, starch, PLA",
+            "Fruit coatings"
+          ],
+          [
+            "Aseptic packaging",
+            "Sterile fill into sterile pack",
+            "UHT milk cartons"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Packaging laws combine food-safety, labelling and metrology requirements; novel technologies extend shelf life by controlling atmosphere or monitoring condition.",
+    "keyFacts": [
+      "Legal Metrology (PC) Rules, 2011: MRP inclusive of all taxes.",
+      "FSS Packaging Regulations, 2018.",
+      "MAP uses gas mixes; active packaging uses scavengers.",
+      "Time–temperature indicators are intelligent packaging."
+    ],
+    "keyTerms": [
+      "MAP",
+      "Active packaging",
+      "Intelligent packaging",
+      "Legal Metrology",
+      "EPR"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Legal Metrology regulates net quantity declarations."
+    ],
+    "commonTraps": [
+      "Do not say FSSAI regulates MRP declarations."
+    ],
+    "mustRemember": [
+      "MAP ≠ vacuum."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Potter & Hotchkiss: Food Science",
+      "kind": "scientific"
+    },
+    {
+      "name": "FSSAI Regulations",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-packaging-laws-novel-technologies-q1",
+        "type": "mcq",
+        "prompt": "MRP and net quantity declarations fall under:",
+        "options": [
+          "FSSAI",
+          "Legal Metrology (PC) Rules",
+          "BIS",
+          "AGMARK"
+        ],
+        "correctIndex": 1,
+        "explanation": "Packaged Commodities Rules 2011."
+      },
+      {
+        "id": "fsft-packaging-laws-novel-technologies-q2",
+        "type": "mcq",
+        "prompt": "An oxygen scavenger sachet is an example of:",
+        "options": [
+          "Intelligent",
+          "Active packaging",
+          "Aseptic",
+          "Edible film"
+        ],
+        "correctIndex": 1,
+        "explanation": "It absorbs oxygen."
+      },
+      {
+        "id": "fsft-packaging-laws-novel-technologies-q3",
+        "type": "mcq",
+        "prompt": "A time–temperature indicator is:",
+        "options": [
+          "Active packaging",
+          "Intelligent packaging",
+          "Aseptic packing",
+          "Lamination"
+        ],
+        "correctIndex": 1,
+        "explanation": "It reports condition."
+      }
+    ]
+  }
+}

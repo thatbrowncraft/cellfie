@@ -1,0 +1,159 @@
+{
+  "id": "fsft-agriculture-status-farming-systems",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 37,
+  "title": "Status of Agriculture in India, Farming Systems and Livelihoods",
+  "shortDescription": "Where Indian agriculture stands today, traditional vs modern farming systems and what a farming system consists of.",
+  "genZNote": "Agriculture isn't just crops — it's soil, water, animals, markets and people all in one system. Think ecosystem, not field.",
+  "sections": [
+    {
+      "id": "status",
+      "heading": "Status of Agriculture",
+      "bullets": [
+        "Agriculture and allied sectors employ roughly 45% of India's workforce and contribute about 15–18% of GVA (check the latest Economic Survey).",
+        "India is a leading producer of milk, pulses, spices, jute, and the second largest producer of rice, wheat, fruits, vegetables and cotton.",
+        "Challenges: small and fragmented holdings (average ~1.1 ha), monsoon dependence, soil degradation, water stress, price volatility and post-harvest losses.",
+        "Policy anchors: MSP, PM-KISAN, PMFBY crop insurance, e-NAM, Soil Health Card, PMKSY irrigation, FPO scheme, Digital Agriculture Mission."
+      ]
+    },
+    {
+      "id": "systems",
+      "heading": "Types of Farming Systems",
+      "table": {
+        "caption": "Farming systems",
+        "columnHeaders": [
+          "System",
+          "Features"
+        ],
+        "rows": [
+          [
+            "Subsistence",
+            "Family consumption, low inputs"
+          ],
+          [
+            "Shifting (jhum)",
+            "Slash-and-burn in hill/tribal regions, short cultivation, long fallow"
+          ],
+          [
+            "Commercial/plantation",
+            "Market-oriented; tea, coffee, rubber"
+          ],
+          [
+            "Mixed and integrated (IFS)",
+            "Crops + livestock + fishery recycling resources"
+          ],
+          [
+            "Organic and natural farming",
+            "Biological inputs; zero-budget natural farming promoted in Gujarat and elsewhere"
+          ],
+          [
+            "Precision and conservation agriculture",
+            "Sensors/GPS, minimum tillage, residue retention, crop rotation"
+          ],
+          [
+            "Dryland, rainfed and irrigated",
+            "Water availability drives practices"
+          ],
+          [
+            "Protected cultivation",
+            "Greenhouses, polyhouses, hydroponics"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "components",
+      "heading": "Components and Livelihood Systems",
+      "bullets": [
+        "Components of a farming system: soil, water, crops, livestock, trees/horticulture, fisheries, labour, capital, technology and markets; interactions create nutrient recycling and risk spreading.",
+        "Farming-based livelihood systems: crop production, dairying, poultry, goat rearing, fish farming, agroforestry, processing and marketing; seasonal pluriactivity and off-farm income.",
+        "Sustainability: soil health, water-use efficiency, diversification, climate-smart practices."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Indian agriculture combines traditional and modern farming systems; farming systems integrate crops, livestock and allied enterprises to sustain rural livelihoods.",
+    "keyFacts": [
+      "Shifting cultivation: jhum.",
+      "IFS recycles resources.",
+      "Average holding ~1.1 ha.",
+      "e-NAM, PMFBY, PM-KISAN are core schemes."
+    ],
+    "keyTerms": [
+      "Farming system",
+      "IFS",
+      "Jhum",
+      "Precision agriculture",
+      "Livelihood"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Natural farming minimises external inputs."
+    ],
+    "commonTraps": [
+      "Do not equate shifting cultivation with commercial farming."
+    ],
+    "mustRemember": [
+      "IFS = crop + livestock + fish + trees."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of Agriculture & Farmers Welfare",
+      "kind": "educational",
+      "url": "https://agricoop.gov.in"
+    },
+    {
+      "name": "Economic Survey of India — Agriculture chapter",
+      "kind": "educational"
+    },
+    {
+      "name": "ICAR Handbook of Agriculture",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-agriculture-status-farming-systems-q1",
+        "type": "mcq",
+        "prompt": "Shifting cultivation in north-east India is called:",
+        "options": [
+          "Jhum",
+          "Podu",
+          "Kharif",
+          "Rotation"
+        ],
+        "correctIndex": 0,
+        "explanation": "Jhum."
+      },
+      {
+        "id": "fsft-agriculture-status-farming-systems-q2",
+        "type": "mcq",
+        "prompt": "An integrated farming system aims to:",
+        "options": [
+          "Monocrop",
+          "Recycle resources between enterprises",
+          "Avoid livestock",
+          "Use only chemicals"
+        ],
+        "correctIndex": 1,
+        "explanation": "Waste of one component becomes input for another."
+      },
+      {
+        "id": "fsft-agriculture-status-farming-systems-q3",
+        "type": "mcq",
+        "prompt": "e-NAM stands for:",
+        "options": [
+          "National Agriculture Market",
+          "Electronic National Agriculture Market",
+          "Eastern NAM",
+          "Export NAM"
+        ],
+        "correctIndex": 1,
+        "explanation": "Electronic National Agriculture Market."
+      }
+    ]
+  }
+}

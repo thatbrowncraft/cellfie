@@ -1,0 +1,143 @@
+{
+  "id": "fsft-nutraceuticals-functional-junk-foods",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 57,
+  "title": "Nutraceuticals, Functional Foods and Junk Foods",
+  "shortDescription": "Health-promoting foods and supplements and the regulatory framework; contrast with HFSS junk foods.",
+  "genZNote": "Nutraceuticals are food-as-medicine with a legal caveat; junk food is the 'food-like product' that gave us HFSS. Know the line between them.",
+  "sections": [
+    {
+      "id": "defs",
+      "heading": "Definitions",
+      "body": "Indian framework: FSS (Health Supplements, Nutraceuticals, Food for Special Dietary Use, Food for Special Medical Purpose, Functional Food and Novel Food) Regulations, 2016; Advertising and Claims Regulations, 2018 control health claims.",
+      "table": {
+        "caption": "Terms",
+        "columnHeaders": [
+          "Term",
+          "Meaning",
+          "Examples"
+        ],
+        "rows": [
+          [
+            "Nutraceutical",
+            "Food or part of food with medical or health benefit (term coined by Stephen DeFelice, 1989)",
+            "Omega-3 capsules, curcumin extracts, probiotics"
+          ],
+          [
+            "Functional food",
+            "Food offering benefits beyond basic nutrition, usually in a food form",
+            "Probiotic yoghurt, oats with β-glucan, fortified juices"
+          ],
+          [
+            "Probiotic / Prebiotic / Synbiotic",
+            "Live microbes / substrate for them / combination",
+            "Lactobacillus, inulin"
+          ],
+          [
+            "Health supplement and FSDU",
+            "Regulated product categories",
+            "Vitamins, proteins, formulae"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "bioactives",
+      "heading": "Bioactive Compounds",
+      "bullets": [
+        "Polyphenols and flavonoids (antioxidants); carotenoids (lycopene, lutein); glucosinolates; phytosterols (cholesterol lowering); omega-3 fatty acids; dietary fibre/β-glucan; probiotics; peptides.",
+        "Evidence: health claims must be scientifically substantiated; \"cure\" claims are prohibited."
+      ]
+    },
+    {
+      "id": "junk",
+      "heading": "Junk Foods (HFSS)",
+      "bullets": [
+        "High in fat, sugar and salt and low in micronutrients/fibre: chips, sugary beverages, confectionery, instant noodles, fast-food items.",
+        "Health links: obesity, type 2 diabetes, hypertension, dental caries, NAFLD.",
+        "Policy: FSSAI regulation on safe food and balanced diets for children in schools (restricting HFSS foods in school canteens and within about 50 m of schools), front-of-pack labelling proposals, trans-fat limits, Eat Right India messages on reducing fat, sugar and salt."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Nutraceuticals and functional foods deliver health benefits beyond basic nutrition under specific regulations, while junk foods are energy-dense, nutrient-poor products linked to chronic disease.",
+    "keyFacts": [
+      "Nutraceutical term: DeFelice, 1989.",
+      "FSS Regulations on nutraceuticals: 2016.",
+      "Probiotics: live microbes.",
+      "HFSS = high fat, sugar, salt."
+    ],
+    "keyTerms": [
+      "Nutraceutical",
+      "Functional food",
+      "Probiotic",
+      "Prebiotic",
+      "HFSS"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Cure claims are not allowed."
+    ],
+    "commonTraps": [
+      "Do not equate supplements with medicines."
+    ],
+    "mustRemember": [
+      "Prebiotic feeds probiotics."
+    ]
+  },
+  "sources": [
+    {
+      "name": "FSS (Health Supplements, Nutraceuticals…) Regulations, 2016",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    },
+    {
+      "name": "WHO — Healthy diet",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-nutraceuticals-functional-junk-foods-q1",
+        "type": "mcq",
+        "prompt": "Probiotics are:",
+        "options": [
+          "Live beneficial microorganisms",
+          "Indigestible fibres",
+          "Preservatives",
+          "Toxins"
+        ],
+        "correctIndex": 0,
+        "explanation": "Live microbes conferring benefit."
+      },
+      {
+        "id": "fsft-nutraceuticals-functional-junk-foods-q2",
+        "type": "mcq",
+        "prompt": "Inulin is a:",
+        "options": [
+          "Probiotic",
+          "Prebiotic",
+          "Vitamin",
+          "Protein"
+        ],
+        "correctIndex": 1,
+        "explanation": "Fermentable fibre."
+      },
+      {
+        "id": "fsft-nutraceuticals-functional-junk-foods-q3",
+        "type": "mcq",
+        "prompt": "HFSS stands for:",
+        "options": [
+          "High Fat Sugar Salt",
+          "High Fibre Soluble Starch",
+          "Healthy Foods Safe Standard",
+          "Honey Fat Salt Sugar"
+        ],
+        "correctIndex": 0,
+        "explanation": "Junk-food descriptor."
+      }
+    ]
+  }
+}

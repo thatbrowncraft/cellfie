@@ -1,0 +1,141 @@
+{
+  "id": "fsft-food-nutrition-balanced-diet-rda",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 29,
+  "title": "Food, Nutrition, Balanced Diet and Recommended Dietary Allowances",
+  "shortDescription": "Functions, classification and sources of nutrients, plus how RDAs and balanced diets are defined.",
+  "genZNote": "Food is what you eat, nutrition is what your body does with it. RDA is a group goal, not your personal minimum — that's the exam trap.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "Food and Nutrition",
+      "bullets": [
+        "Nutrition: the science of nutrients and how the body ingests, digests, absorbs, uses and excretes them. Nutrients: macronutrients (carbohydrate, protein, fat; plus water), micronutrients (vitamins, minerals) and non-nutrients (fibre, phytochemicals).",
+        "Functions of food: physiological (energy, body-building, protective/regulatory), social and psychological.",
+        "Classification: by function — energy-giving (cereals, fats, sugars), body-building (pulses, milk, eggs, meat, fish), protective (fruits, vegetables, milk); ICMR-NIN uses food groups (cereals and millets, pulses, vegetables, fruits, milk and products, flesh foods, nuts and oilseeds, fats and oils).",
+        "Energy values: carbohydrate and protein 4 kcal/g, fat 9 kcal/g, alcohol 7 kcal/g."
+      ]
+    },
+    {
+      "id": "rda",
+      "heading": "RDA and Related Terms",
+      "body": "India: ICMR–NIN revised Recommended Dietary Allowances and Estimated Average Requirements (2020) for reference man 65 kg and reference woman 55 kg; the \"Dietary Guidelines for Indians\" (2024) offers 17 guidelines and \"MyPlate for the Day\". Requirements vary with age, sex, physiological state (pregnancy, lactation), and activity (sedentary, moderate, heavy).",
+      "table": {
+        "caption": "Dietary reference terms",
+        "columnHeaders": [
+          "Term",
+          "Meaning"
+        ],
+        "rows": [
+          [
+            "EAR",
+            "Estimated Average Requirement — meets the needs of 50% of a healthy group"
+          ],
+          [
+            "RDA",
+            "EAR + 2 SD — meets needs of ~97–98% of healthy individuals in a group; a planning goal, not an individual minimum"
+          ],
+          [
+            "AI",
+            "Adequate Intake — when data are insufficient for an RDA"
+          ],
+          [
+            "UL",
+            "Tolerable Upper Intake Level"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "balanced",
+      "heading": "Balanced Diet",
+      "bullets": [
+        "A diet supplying all nutrients in adequate amounts and proportions for health, with a little reserve.",
+        "Principles: variety across food groups, energy matching expenditure, protein quality via cereal–pulse combinations, adequate fruit and vegetables, limiting sugar, salt (<5 g/day) and saturated/trans fat.",
+        "Typical energy distribution: carbohydrates ~45–60% (WHO up to 75%), protein 10–15%, fat 20–30%.",
+        "Meal planning tools: food exchange lists, food pyramids, MyPlate."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "A balanced diet supplies adequate energy and all nutrients in proportion, and RDAs are population-level intake targets set by expert bodies such as ICMR–NIN.",
+    "keyFacts": [
+      "4-4-9 kcal/g; alcohol 7.",
+      "RDA = EAR + 2 SD.",
+      "ICMR–NIN RDA 2020; Dietary Guidelines 2024 (17 guidelines).",
+      "Salt limit <5 g/day."
+    ],
+    "keyTerms": [
+      "RDA",
+      "EAR",
+      "Balanced diet",
+      "Macronutrient",
+      "MyPlate"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "RDA is not a minimum requirement for every individual."
+    ],
+    "commonTraps": [
+      "Do not equate RDA with EAR."
+    ],
+    "mustRemember": [
+      "RDA covers ~97% of a group."
+    ]
+  },
+  "sources": [
+    {
+      "name": "ICMR–NIN Nutrient Requirements and RDA for Indians, 2020",
+      "kind": "scientific",
+      "url": "https://www.nin.res.in"
+    },
+    {
+      "name": "WHO Healthy Diet Fact Sheet",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-food-nutrition-balanced-diet-rda-q1",
+        "type": "mcq",
+        "prompt": "RDA is calculated as:",
+        "options": [
+          "EAR − 2 SD",
+          "EAR + 2 SD",
+          "EAR × 2",
+          "AI + UL"
+        ],
+        "correctIndex": 1,
+        "explanation": "It covers almost all healthy people in a group."
+      },
+      {
+        "id": "fsft-food-nutrition-balanced-diet-rda-q2",
+        "type": "mcq",
+        "prompt": "Energy from fat per gram:",
+        "options": [
+          "4 kcal",
+          "7 kcal",
+          "9 kcal",
+          "12 kcal"
+        ],
+        "correctIndex": 2,
+        "explanation": "Fat provides 9 kcal/g."
+      },
+      {
+        "id": "fsft-food-nutrition-balanced-diet-rda-q3",
+        "type": "mcq",
+        "prompt": "ICMR–NIN Dietary Guidelines for Indians (2024) contain how many guidelines?",
+        "options": [
+          "10",
+          "12",
+          "15",
+          "17"
+        ],
+        "correctIndex": 3,
+        "explanation": "Seventeen guidelines."
+      }
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "id": "fsft-food-poisoning-foodborne-toxins",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 22,
+  "title": "Food Poisoning, Foodborne Diseases and Food Toxins",
+  "shortDescription": "Infection vs intoxication vs toxico-infection — and the pathogens exams love.",
+  "genZNote": "Same plate, three ways to get sick: infection, intoxication, toxico-infection. The exam loves asking which bug uses which mechanism.",
+  "sections": [
+    {
+      "id": "types",
+      "heading": "Mechanisms",
+      "bullets": [
+        "Food infection: ingestion of live pathogens that multiply in the gut (Salmonella, Shigella, Campylobacter, Listeria, Vibrio).",
+        "Food intoxication: ingestion of preformed toxin (Staphylococcus aureus enterotoxin, Clostridium botulinum, Bacillus cereus emetic).",
+        "Toxico-infection: pathogen multiplies and releases toxin in gut (C. perfringens, enterotoxigenic E. coli, V. cholerae, B. cereus diarrhoeal)."
+      ]
+    },
+    {
+      "id": "table",
+      "heading": "Key Pathogens",
+      "table": {
+        "caption": "Pathogen snapshot",
+        "columnHeaders": [
+          "Organism",
+          "Typical foods",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "Salmonella",
+            "Poultry, eggs, milk",
+            "Infection; 6–72 h; fever"
+          ],
+          [
+            "Staphylococcus aureus",
+            "Cream foods, handled foods",
+            "Enterotoxin heat-stable; 1–6 h; vomiting"
+          ],
+          [
+            "Clostridium botulinum",
+            "Improperly canned low-acid foods",
+            "Neurotoxin; anaerobic; spores heat-resistant; toxin destroyed by boiling"
+          ],
+          [
+            "Clostridium perfringens",
+            "Meat, gravies held warm",
+            "Toxico-infection; 8–22 h"
+          ],
+          [
+            "Bacillus cereus",
+            "Fried rice, starches",
+            "Emetic (toxin) vs diarrhoeal"
+          ],
+          [
+            "Listeria monocytogenes",
+            "Soft cheeses, ready-to-eat foods",
+            "Grows at 4 °C; risk to pregnancy"
+          ],
+          [
+            "E. coli O157:H7",
+            "Undercooked beef, raw produce",
+            "Shiga toxin; HUS"
+          ],
+          [
+            "Vibrio cholerae/parahaemolyticus",
+            "Water, seafood",
+            "Cholera toxin; marine"
+          ],
+          [
+            "Campylobacter jejuni",
+            "Poultry",
+            "Common gastroenteritis; Guillain–Barré"
+          ],
+          [
+            "Norovirus, Hepatitis A",
+            "Shellfish, produce, handlers",
+            "Viral; hand hygiene"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "toxins",
+      "heading": "Food Toxins",
+      "bullets": [
+        "Mycotoxins: aflatoxin B1 (Aspergillus flavus on groundnuts, maize; liver carcinogen; aflatoxin M1 in milk), ochratoxin A, patulin (apple juice), fumonisins, ergot alkaloids.",
+        "Marine toxins: ciguatera, paralytic/diarrhoeic shellfish poisoning; scombroid histamine from spoiled tuna/mackerel.",
+        "Plant toxins: solanine (green potato), cyanogenic glycosides (cassava, bitter almond), lathyrism toxin, hemagglutinins in raw kidney beans.",
+        "Bacterial exotoxins and endotoxins; chemical contaminants such as heavy metals (Pb, Hg, Cd, As) and pesticides.",
+        "Prevention: temperature control, hygiene, proper cooking (core 70–75 °C), segregation and safe water; \"danger zone\" for growth roughly 5–60 °C."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Foodborne illness arises from infection, preformed toxin or toxico-infection by bacteria, viruses, parasites, fungi and chemicals.",
+    "keyFacts": [
+      "Staph toxin is heat-stable.",
+      "C. botulinum is anaerobic; toxin is neurotoxin.",
+      "Aflatoxin B1 — Aspergillus flavus; hepatocarcinogen.",
+      "Danger zone ~5–60 °C."
+    ],
+    "keyTerms": [
+      "Intoxication",
+      "Toxico-infection",
+      "Enterotoxin",
+      "Aflatoxin",
+      "Scombroid"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Staphylococcus: preformed toxin, rapid onset.",
+      "Listeria: cold growth."
+    ],
+    "commonTraps": [
+      "Do not classify Salmonella as intoxication.",
+      "Do not say reheating removes Staph toxin."
+    ],
+    "mustRemember": [
+      "Botulism: canned low-acid foods."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Food infection",
+        "termB": "Food intoxication",
+        "distinction": "Infection needs live organisms; intoxication needs only preformed toxin."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "Jay: Modern Food Microbiology",
+      "kind": "educational"
+    },
+    {
+      "name": "FAO/WHO — Microbiological Risk Assessment Series",
+      "kind": "educational"
+    },
+    {
+      "name": "Frazier & Westhoff: Food Microbiology",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-food-poisoning-foodborne-toxins-q1",
+        "type": "mcq",
+        "prompt": "A preformed heat-stable toxin typically causes illness from:",
+        "options": [
+          "Salmonella",
+          "Staphylococcus aureus",
+          "Shigella",
+          "Campylobacter"
+        ],
+        "correctIndex": 1,
+        "explanation": "Enterotoxin withstands cooking."
+      },
+      {
+        "id": "fsft-food-poisoning-foodborne-toxins-q2",
+        "type": "mcq",
+        "prompt": "Aflatoxin is produced by:",
+        "options": [
+          "Aspergillus flavus",
+          "Penicillium roqueforti",
+          "Candida",
+          "Rhizopus"
+        ],
+        "correctIndex": 0,
+        "explanation": "A. flavus and A. parasiticus."
+      },
+      {
+        "id": "fsft-food-poisoning-foodborne-toxins-q3",
+        "type": "mcq",
+        "prompt": "Which causes a toxico-infection?",
+        "options": [
+          "C. perfringens",
+          "C. botulinum",
+          "S. aureus",
+          "B. cereus emetic"
+        ],
+        "correctIndex": 0,
+        "explanation": "Toxin forms in the gut."
+      }
+    ]
+  }
+}

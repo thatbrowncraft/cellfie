@@ -1,0 +1,160 @@
+{
+  "id": "fsft-dairy-unit-operations",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 52,
+  "title": "Dairy Processing Unit Operations — Separation, Standardisation, Pasteurisation, Sterilisation, Homogenisation, Concentration",
+  "shortDescription": "The core dairy-plant operations with the principles and numbers examiners use.",
+  "genZNote": "Receive, clean, split, set, heat, break up, concentrate — dairy plant's daily routine. LTLT vs HTST vs UHT numbers = easy marks.",
+  "sections": [
+    {
+      "id": "flow",
+      "heading": "Flow and Operations",
+      "body": "Pearson square example: to standardise 100 kg milk of 4.5% fat to 3.0% using skim milk of 0.05% fat, mix in the ratio (4.5 − 3.0) : (3.0 − 0.05) of skim : milk = 1.5 : 2.95.",
+      "table": {
+        "caption": "Unit operations",
+        "columnHeaders": [
+          "Operation",
+          "Principle / conditions"
+        ],
+        "rows": [
+          [
+            "Reception and platform tests",
+            "Temperature, sensory, COB (clot on boiling), alcohol test, acidity, fat/SNF, adulterants"
+          ],
+          [
+            "Chilling",
+            "Cool promptly to ≤ 4–5 °C"
+          ],
+          [
+            "Clarification / separation",
+            "Centrifugal force; disc-bowl separator; Stokes' law; skim and cream"
+          ],
+          [
+            "Standardisation",
+            "Adjust fat/SNF to a standard; Pearson square method"
+          ],
+          [
+            "Pasteurisation",
+            "LTLT 63 °C/30 min; HTST 72 °C/15 s; check by alkaline phosphatase test (negative)"
+          ],
+          [
+            "UHT / sterilisation",
+            "UHT 135–150 °C for a few seconds with aseptic packing; in-bottle sterilisation 110–120 °C for 10–20 min"
+          ],
+          [
+            "Homogenisation",
+            "Force through valve at ~150–250 bar (two-stage possible); reduces fat globules <1–2 µm, prevents creaming"
+          ],
+          [
+            "Concentration",
+            "Evaporation under vacuum at lower temperature (multiple-effect/falling-film evaporators); membrane processes also used"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "why",
+      "heading": "Why Each Step Exists",
+      "bullets": [
+        "Pasteurisation kills vegetative pathogens (e.g. Coxiella burnetii, Mycobacterium) without major quality loss; phosphatase test confirms; peroxidase test shows overheating.",
+        "UHT milk is commercially sterile and can be stored at ambient temperature for months in aseptic packs.",
+        "Homogenisation improves stability, mouthfeel and whiteness but increases susceptibility to light-induced oxidation.",
+        "Concentration reduces transport and drying cost and increases shelf life."
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "Exam Notes",
+      "bullets": [
+        "Order of conditions: LTLT lowest temperature, longest time; UHT highest, shortest.",
+        "Separation: lighter fat moves inward; skim leaves at the periphery.",
+        "Cleaning-in-place cycles protect plant hygiene (see Dairy Quality lesson)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Dairy unit operations convert raw milk into safe, stable, standardised ingredients using separation, heat treatment, homogenisation and concentration.",
+    "keyFacts": [
+      "HTST 72 °C/15 s; LTLT 63 °C/30 min.",
+      "UHT 135–150 °C.",
+      "Homogenisation 150–250 bar.",
+      "Pearson square for standardisation."
+    ],
+    "keyTerms": [
+      "Pasteurisation",
+      "UHT",
+      "Homogenisation",
+      "Standardisation",
+      "Stokes' law"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Phosphatase negative means adequate pasteurisation."
+    ],
+    "commonTraps": [
+      "Do not say pasteurised milk is sterile."
+    ],
+    "mustRemember": [
+      "LTLT 63/30; HTST 72/15."
+    ]
+  },
+  "sources": [
+    {
+      "name": "De Sa: Dairy Science and Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "Walstra: Dairy Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "FSS (Food Products Standards) Regulations, 2011 — Dairy",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-dairy-unit-operations-q1",
+        "type": "mcq",
+        "prompt": "HTST pasteurisation conditions are:",
+        "options": [
+          "63 °C/30 min",
+          "72 °C/15 s",
+          "100 °C/10 min",
+          "135 °C/2 s"
+        ],
+        "correctIndex": 1,
+        "explanation": "High-temperature short-time."
+      },
+      {
+        "id": "fsft-dairy-unit-operations-q2",
+        "type": "mcq",
+        "prompt": "Homogenisation primarily prevents:",
+        "options": [
+          "Souring",
+          "Creaming",
+          "Boiling",
+          "Foaming"
+        ],
+        "correctIndex": 1,
+        "explanation": "Smaller fat globules."
+      },
+      {
+        "id": "fsft-dairy-unit-operations-q3",
+        "type": "mcq",
+        "prompt": "UHT milk is packaged:",
+        "options": [
+          "Aseptically",
+          "Not packaged",
+          "Unsealed",
+          "Frozen"
+        ],
+        "correctIndex": 0,
+        "explanation": "Sterile fill in sterile packs."
+      }
+    ]
+  }
+}

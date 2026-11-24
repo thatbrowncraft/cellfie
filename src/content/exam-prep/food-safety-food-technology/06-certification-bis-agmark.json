@@ -1,0 +1,151 @@
+{
+  "id": "fsft-certification-bis-agmark",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 6,
+  "title": "Food Certification, Auditing, Accrediting Bodies, BIS and AGMARK",
+  "shortDescription": "How a product or business earns a recognised mark: who certifies, who audits and who accredits the certifiers.",
+  "genZNote": "Certification = 'I passed'. Accreditation = 'and I'm allowed to grade you'. Mix them up and the examiner wins.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "Standard, Certification, Accreditation",
+      "body": "Procedure for system certification: application → document review (stage 1) → on-site audit (stage 2) → nonconformity closure → certificate (typically 3-year cycle) → annual surveillance audits → recertification. See also the ISO lessons (ISO 22000, ISO fundamentals).",
+      "table": {
+        "caption": "Three different things",
+        "columnHeaders": [
+          "Term",
+          "Meaning",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Standard",
+            "Specified requirements",
+            "IS 1166 (butter), ISO 22000"
+          ],
+          [
+            "Certification",
+            "Third-party attestation that product/system conforms",
+            "BIS ISI mark; ISO 22000 certificate"
+          ],
+          [
+            "Accreditation",
+            "Formal recognition of the competence of a certification body or lab",
+            "NABCB accredits certifiers; NABL accredits labs"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "auditing",
+      "heading": "Food Auditing",
+      "bullets": [
+        "First-party (internal), second-party (customer) and third-party (independent) audits.",
+        "FSSAI Food Safety Auditing Regulations, 2018 allow recognised auditing agencies and Food Safety Auditors to verify FBOs, including mandatory/specific audits for high-risk categories.",
+        "Hygiene rating schemes and Eat Right Station/Campus certifications also rely on third-party audits.",
+        "Audit findings are classified as major or minor nonconformities; corrective action and verification follow.",
+        "NABCB (under QCI) accredits certification bodies for ISO 22000 and FSSC 22000; NABL accredits testing/calibration labs under ISO/IEC 17025; internationally, IAF and ILAC mutual recognition arrangements underpin acceptance."
+      ]
+    },
+    {
+      "id": "bis",
+      "heading": "Bureau of Indian Standards (BIS)",
+      "body": "BIS is the National Standards Body under the Bureau of Indian Standards Act, 2016 (in force 2017), replacing the BIS Act, 1986. It descends from the Indian Standards Institution (1947) and works under the Ministry of Consumer Affairs, Food & Public Distribution. Schemes: Product Certification (ISI mark, Certification Marks Licence), Compulsory Registration Scheme (electronics), Hallmarking (gold, silver), management system certification. Food examples: packaged drinking water and natural mineral water standards (IS 14543, IS 13428), dairy and other product specifications; the ISI mark signals licensed conformity to an Indian Standard."
+    },
+    {
+      "id": "agmark",
+      "heading": "AGMARK",
+      "body": "AGMARK is the certification mark for agricultural commodities graded for quality under the Agricultural Produce (Grading and Marking) Act, 1937. It is administered by the Directorate of Marketing and Inspection (DMI), Ministry of Agriculture & Farmers Welfare, with headquarters at Faridabad and a Central AGMARK Laboratory at Nagpur. Covered commodities include pulses, cereals, spices, vegetable oils, ghee, honey, eggs and fruits; grades such as Special/General or Grade 1/2 reflect purity and composition. Unlike FSSAI, AGMARK is a voluntary quality-grading mark (some commodities were historically compulsory for export)."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Certification is third-party attestation of conformity; accreditation attests the competence of the certifier; BIS and AGMARK are Indian quality marks for industrial/food products and agricultural commodities respectively.",
+    "keyFacts": [
+      "BIS Act, 2016; ISI mark; Ministry of Consumer Affairs, Food & Public Distribution.",
+      "AGMARK: Act of 1937; DMI; Faridabad; CAL Nagpur.",
+      "NABCB accredits certification bodies; NABL accredits labs.",
+      "System certificates run in 3-year cycles with surveillance audits."
+    ],
+    "keyTerms": [
+      "Certification",
+      "Accreditation",
+      "ISI mark",
+      "AGMARK",
+      "NABCB"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "BIS = standards + certification; AGMARK = grading of agri-commodities.",
+      "FSSAI licence is the legal necessity; BIS/AGMARK are quality marks."
+    ],
+    "commonTraps": [
+      "Do not say BIS or AGMARK replaces an FSSAI licence.",
+      "Do not say NABL accredits ISO 22000 certifiers — that is NABCB."
+    ],
+    "mustRemember": [
+      "AGMARK: 1937; ISI: BIS; NABCB: certifiers."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Certification",
+        "termB": "Accreditation",
+        "distinction": "Certification attests conformity of a product/system; accreditation attests competence of the certifier."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "Bureau of Indian Standards",
+      "kind": "educational",
+      "url": "https://www.bis.gov.in"
+    },
+    {
+      "name": "Directorate of Marketing & Inspection (AGMARK)",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-certification-bis-agmark-q1",
+        "type": "mcq",
+        "prompt": "AGMARK operates under which Act?",
+        "options": [
+          "PFA Act 1954",
+          "Agricultural Produce (Grading and Marking) Act 1937",
+          "Legal Metrology Act 2009",
+          "BIS Act 2016"
+        ],
+        "correctIndex": 1,
+        "explanation": "It was enacted in 1937 for grading and marking of agricultural produce."
+      },
+      {
+        "id": "fsft-certification-bis-agmark-q2",
+        "type": "mcq",
+        "prompt": "Which body accredits certification bodies in India?",
+        "options": [
+          "BIS",
+          "NABCB",
+          "NABL",
+          "FSSAI"
+        ],
+        "correctIndex": 1,
+        "explanation": "NABCB under QCI accredits certification bodies."
+      },
+      {
+        "id": "fsft-certification-bis-agmark-q3",
+        "type": "mcq",
+        "prompt": "The ISI mark is associated with:",
+        "options": [
+          "AGMARK",
+          "BIS",
+          "Codex",
+          "FSSAI"
+        ],
+        "correctIndex": 1,
+        "explanation": "ISI mark = BIS product certification."
+      }
+    ]
+  }
+}

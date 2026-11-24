@@ -1,0 +1,164 @@
+{
+  "id": "fsft-microbial-techniques-rapid-methods",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 23,
+  "title": "Microbial Techniques, Culture Media, SPC/TPC and Rapid Detection Methods",
+  "shortDescription": "How labs count, grow and detect microbes in food, from plate counts to PCR.",
+  "genZNote": "If you can't count it, you can't control it. SPC, CFU, MPN — lab-speak for 'how many microbes are living rent-free in this sample?'",
+  "sections": [
+    {
+      "id": "basic",
+      "heading": "Basic Techniques",
+      "bullets": [
+        "Sterilisation: autoclave 121 °C, 15 psi, 15–20 min; hot-air oven 160–170 °C for 1–2 h; membrane filtration for heat-labile liquids; flaming for loops.",
+        "Sampling and serial (ten-fold) dilution in peptone/saline; pure culture by streak, pour or spread plates; incubation typically 35–37 °C for mesophiles.",
+        "Staining: simple, Gram, spore (Schaeffer–Fulton), capsule; microscopy.",
+        "Culture media: complex vs defined; liquid, semi-solid or solid with agar (~1.5%); enriched, selective, differential and transport media."
+      ]
+    },
+    {
+      "id": "media",
+      "heading": "Common Media",
+      "table": {
+        "caption": "Media and use",
+        "columnHeaders": [
+          "Medium",
+          "Purpose"
+        ],
+        "rows": [
+          [
+            "Plate Count Agar (PCA)",
+            "Standard plate count of aerobic mesophiles"
+          ],
+          [
+            "MacConkey / VRBA / EMB",
+            "Coliforms and Enterobacteria (lactose fermenters)"
+          ],
+          [
+            "XLD / Bismuth sulfite",
+            "Salmonella"
+          ],
+          [
+            "Baird-Parker",
+            "Staphylococcus aureus"
+          ],
+          [
+            "TCBS",
+            "Vibrio"
+          ],
+          [
+            "PDA / DRBC",
+            "Yeasts and moulds"
+          ],
+          [
+            "MRS",
+            "Lactobacilli"
+          ],
+          [
+            "BGLB broth + MPN",
+            "Coliforms by most probable number"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "counts",
+      "heading": "SPC and TPC",
+      "body": "Standard Plate Count (SPC; also called Aerobic Plate Count) and Total Plate Count (TPC) estimate viable aerobic mesophilic bacteria as colony-forming units (CFU) per g or mL. Choose plates with 30–300 colonies; CFU/mL = colonies × dilution factor ÷ volume plated. SPC reflects hygiene, temperature abuse and shelf life but not pathogens. Direct counts include the Breed smear (milk), Howard mould count, and total counts by microscope; MPN estimates coliforms where plate counts are impractical."
+    },
+    {
+      "id": "rapid",
+      "heading": "Rapid Methods",
+      "bullets": [
+        "Molecular: PCR/real-time PCR, DNA probes, microarrays, whole-genome sequencing for outbreak tracing.",
+        "Immunological: ELISA, lateral-flow strips, immunomagnetic separation.",
+        "Metabolic/physical: ATP bioluminescence (hygiene monitoring), impedance, chromogenic media, Petrifilm, flow cytometry, biosensors.",
+        "Advantages: time (hours vs days); limitation: need confirmation, can detect dead cells (DNA), cost."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Food microbiology laboratories use sterilisation, dilution, culture media and plate counts (SPC/TPC) for enumeration, supported by rapid molecular, immunological and metabolic methods.",
+    "keyFacts": [
+      "Autoclave: 121 °C, 15 psi.",
+      "Count plates with 30–300 colonies.",
+      "PCA for SPC; XLD for Salmonella.",
+      "PCR and ELISA are rapid methods."
+    ],
+    "keyTerms": [
+      "SPC",
+      "CFU",
+      "MPN",
+      "Selective medium",
+      "ATP bioluminescence"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "CFU = colonies × dilution ÷ volume."
+    ],
+    "commonTraps": [
+      "SPC does not detect pathogens specifically."
+    ],
+    "mustRemember": [
+      "30–300 colonies per plate."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Jay: Modern Food Microbiology",
+      "kind": "educational"
+    },
+    {
+      "name": "FAO/WHO — Microbiological Risk Assessment Series",
+      "kind": "educational"
+    },
+    {
+      "name": "Frazier & Westhoff: Food Microbiology",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-microbial-techniques-rapid-methods-q1",
+        "type": "mcq",
+        "prompt": "Autoclaving typically uses:",
+        "options": [
+          "100 °C, 5 min",
+          "121 °C, 15 psi",
+          "160 °C, 15 min",
+          "80 °C, 1 h"
+        ],
+        "correctIndex": 1,
+        "explanation": "Standard steam sterilisation."
+      },
+      {
+        "id": "fsft-microbial-techniques-rapid-methods-q2",
+        "type": "mcq",
+        "prompt": "A countable plate in SPC has:",
+        "options": [
+          "1–10",
+          "30–300",
+          "500–1000",
+          "Any number"
+        ],
+        "correctIndex": 1,
+        "explanation": "Statistical counting range."
+      },
+      {
+        "id": "fsft-microbial-techniques-rapid-methods-q3",
+        "type": "mcq",
+        "prompt": "Which method detects microbial ATP?",
+        "options": [
+          "PCR",
+          "Bioluminescence",
+          "Gram stain",
+          "MPN"
+        ],
+        "correctIndex": 1,
+        "explanation": "Used for hygiene swab tests."
+      }
+    ]
+  }
+}

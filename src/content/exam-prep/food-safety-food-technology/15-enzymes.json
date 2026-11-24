@@ -1,0 +1,149 @@
+{
+  "id": "fsft-enzymes",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 15,
+  "title": "Enzymes — Structure, Classification and Functions",
+  "shortDescription": "Biological catalysts: how they work, how they are classified and why food technologists use them.",
+  "genZNote": "Enzymes are the cheat codes of biology — same reaction, millions of times faster. Know the six EC classes and you're ahead of the meta.",
+  "sections": [
+    {
+      "id": "basics",
+      "heading": "Structure and Mechanism",
+      "bullets": [
+        "Enzymes are mostly globular proteins (some RNA) that lower activation energy; the active site binds substrate (lock-and-key, induced-fit models).",
+        "Cofactors: metal ions; coenzymes (NAD+, FAD, CoA — derived from vitamins); holoenzyme = apoenzyme + cofactor.",
+        "Michaelis–Menten kinetics: Vmax and Km (substrate concentration at half Vmax; low Km = high affinity).",
+        "Factors: temperature (optimum ~37 °C in animals; denature above), pH (pepsin ~2, trypsin ~8), substrate/enzyme concentration, inhibitors (competitive, non-competitive)."
+      ]
+    },
+    {
+      "id": "class",
+      "heading": "Classification (EC system)",
+      "table": {
+        "caption": "Six classes",
+        "columnHeaders": [
+          "Class",
+          "Reaction",
+          "Food example"
+        ],
+        "rows": [
+          [
+            "1 Oxidoreductases",
+            "Redox",
+            "Polyphenol oxidase (browning), glucose oxidase"
+          ],
+          [
+            "2 Transferases",
+            "Group transfer",
+            "Transaminases"
+          ],
+          [
+            "3 Hydrolases",
+            "Hydrolysis",
+            "Amylase, lipase, protease, lactase, pectinase"
+          ],
+          [
+            "4 Lyases",
+            "Non-hydrolytic cleavage",
+            "Pectate lyase"
+          ],
+          [
+            "5 Isomerases",
+            "Isomerisation",
+            "Glucose isomerase (HFCS)"
+          ],
+          [
+            "6 Ligases",
+            "Joining with ATP",
+            "DNA ligase"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "food",
+      "heading": "Enzymes in Food Technology",
+      "bullets": [
+        "Rennet/chymosin: cheese; lactase: lactose-free milk; α-amylase and glucoamylase: glucose syrups; invertase: confectionery; pectinase: juice clarification; papain/bromelain: meat tenderisation; catalase/peroxidase blanching indicators.",
+        "Blanching (steam/hot water) inactivates peroxidase/catalase to stop enzymatic deterioration during frozen storage.",
+        "Immobilised enzymes (adsorption, entrapment, covalent binding) allow reuse."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Enzymes are biological catalysts, usually proteins, that accelerate specific reactions and are widely exploited in food processing and analysis.",
+    "keyFacts": [
+      "Six EC classes.",
+      "Km: substrate concentration at ½ Vmax.",
+      "Peroxidase is a blanching indicator.",
+      "Rennet (chymosin) clots milk."
+    ],
+    "keyTerms": [
+      "Active site",
+      "Cofactor",
+      "Km",
+      "Immobilisation",
+      "Blanching"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Glucose isomerase converts glucose to fructose (HFCS)."
+    ],
+    "commonTraps": [
+      "Enzymes are not consumed in the reaction."
+    ],
+    "mustRemember": [
+      "Hydrolases = largest group in food use."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Lehninger Principles of Biochemistry",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-enzymes-q1",
+        "type": "mcq",
+        "prompt": "Pepsin works best at:",
+        "options": [
+          "pH 2",
+          "pH 7",
+          "pH 9",
+          "pH 12"
+        ],
+        "correctIndex": 0,
+        "explanation": "Gastric pH ~1.5–2."
+      },
+      {
+        "id": "fsft-enzymes-q2",
+        "type": "mcq",
+        "prompt": "Glucose isomerase is used to produce:",
+        "options": [
+          "Maltose",
+          "High-fructose corn syrup",
+          "Lactose",
+          "Starch"
+        ],
+        "correctIndex": 1,
+        "explanation": "HFCS is made by isomerising glucose to fructose."
+      },
+      {
+        "id": "fsft-enzymes-q3",
+        "type": "mcq",
+        "prompt": "Polyphenol oxidase causes:",
+        "options": [
+          "Rancidity",
+          "Enzymatic browning",
+          "Souring",
+          "Gelation"
+        ],
+        "correctIndex": 1,
+        "explanation": "It oxidises phenolics to melanins."
+      }
+    ]
+  }
+}

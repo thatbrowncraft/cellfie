@@ -1,0 +1,162 @@
+{
+  "id": "fsft-nutrition-health-programmes-india",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 31,
+  "title": "Nutrition and Health Programmes in India — MDMP, ICDS, NFSM and More",
+  "shortDescription": "Mid-Day Meal / PM POSHAN, ICDS/Poshan 2.0, National Food Security Mission and related schemes.",
+  "genZNote": "Which scheme feeds whom? ICDS, PM POSHAN, NFSA, NFSM — four acronyms, four different audiences. Sort them and the table is yours.",
+  "sections": [
+    {
+      "id": "table",
+      "heading": "Key Programmes",
+      "body": "Gujarat examples: Mukhyamantri Matrushakti Yojana and Poshan Sudha for mothers; Amul-led dairy cooperatives; PM POSHAN is implemented in Gujarat through the school meal system. Verify names and entitlements against current notifications.",
+      "table": {
+        "caption": "Programme snapshot",
+        "columnHeaders": [
+          "Programme",
+          "Target group",
+          "Core features"
+        ],
+        "rows": [
+          [
+            "MDMP → PM POSHAN",
+            "School children (Balvatika, classes 1–8 in government/aided schools)",
+            "Hot cooked meal: norms of ~450 kcal/12 g protein (primary) and ~700 kcal/20 g protein (upper primary); started 1995; renamed PM POSHAN in 2021"
+          ],
+          [
+            "ICDS (1975) → Saksham Anganwadi & POSHAN 2.0",
+            "Children 0–6 years, pregnant and lactating women, adolescent girls",
+            "Six services: supplementary nutrition, pre-school education, immunisation, health check-up, referral services, nutrition & health education; delivered via Anganwadi centres"
+          ],
+          [
+            "POSHAN Abhiyaan (2018)",
+            "Children, women, adolescents",
+            "Convergence, technology (Poshan Tracker), targets for stunting, anaemia and low birth weight"
+          ],
+          [
+            "National Food Security Act, 2013",
+            "Priority households and Antyodaya",
+            "Subsidised foodgrains through TPDS; maternity benefit; PMGKAY free grain"
+          ],
+          [
+            "National Food Security Mission (2007–08)",
+            "Farmers",
+            "Production-side mission to increase rice, wheat, pulses (later coarse cereals/nutri-cereals, oilseeds) — an agricultural, not feeding, scheme"
+          ],
+          [
+            "Anemia Mukt Bharat (2018)",
+            "6 months–19 years, women",
+            "6×6×6 strategy: six age groups, six interventions, six institutional mechanisms"
+          ],
+          [
+            "National Iodine Deficiency Disorders Control Programme",
+            "All",
+            "Universal salt iodisation"
+          ],
+          [
+            "Vitamin A prophylaxis",
+            "Children 9 months–5 years",
+            "Bi-annual doses"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "notes",
+      "heading": "Exam Notes",
+      "bullets": [
+        "Two different \"food security\" items: the National Food Security Act (entitlement) vs the National Food Security Mission (production).",
+        "ICDS began on 2 October 1975; Mission Poshan 2.0 (2021–26) integrates Anganwadi services and Poshan Abhiyaan.",
+        "Fortified rice is being supplied through schemes (rollout by 2024).",
+        "Rashtriya Poshan Maah: September; National Nutrition Week: 1–7 September."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "India combines school feeding, early-childhood nutrition, subsidised grains, anaemia and micronutrient programmes and production-side missions to tackle hunger and malnutrition.",
+    "keyFacts": [
+      "ICDS: 2 Oct 1975, six services.",
+      "MDMP → PM POSHAN (2021).",
+      "NFSA 2013 vs NFSM 2007–08.",
+      "Anemia Mukt Bharat: 6×6×6."
+    ],
+    "keyTerms": [
+      "MDMP",
+      "ICDS",
+      "POSHAN Abhiyaan",
+      "NFSA",
+      "NFSM"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "PM POSHAN covers Balvatika and classes 1–8."
+    ],
+    "commonTraps": [
+      "Do not mix NFSA (entitlement) with NFSM (production)."
+    ],
+    "mustRemember": [
+      "ICDS six services."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "NFSA",
+        "termB": "NFSM",
+        "distinction": "NFSA is a legal entitlement to subsidised grain; NFSM is an agricultural production mission."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of Education — PM POSHAN",
+      "kind": "educational"
+    },
+    {
+      "name": "Ministry of Women & Child Development — Poshan 2.0",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-nutrition-health-programmes-india-q1",
+        "type": "mcq",
+        "prompt": "ICDS was launched in:",
+        "options": [
+          "1975",
+          "1985",
+          "1995",
+          "2005"
+        ],
+        "correctIndex": 0,
+        "explanation": "2 October 1975."
+      },
+      {
+        "id": "fsft-nutrition-health-programmes-india-q2",
+        "type": "mcq",
+        "prompt": "MDMP was renamed in 2021 as:",
+        "options": [
+          "Poshan Abhiyaan",
+          "PM POSHAN",
+          "Saksham",
+          "Anemia Mukt"
+        ],
+        "correctIndex": 1,
+        "explanation": "PM POSHAN."
+      },
+      {
+        "id": "fsft-nutrition-health-programmes-india-q3",
+        "type": "mcq",
+        "prompt": "National Food Security Mission mainly aims to:",
+        "options": [
+          "Free school meals",
+          "Increase crop production",
+          "Fortify rice",
+          "Control prices"
+        ],
+        "correctIndex": 1,
+        "explanation": "It is a production mission."
+      }
+    ]
+  }
+}

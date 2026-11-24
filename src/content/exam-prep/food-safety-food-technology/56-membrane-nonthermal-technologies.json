@@ -1,0 +1,151 @@
+{
+  "id": "fsft-membrane-nonthermal-technologies",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 56,
+  "title": "Non-Thermal Technologies — Microfiltration, Ultrafiltration, Reverse Osmosis, HPP, Ultra-High-Voltage Electric Fields and Cold Plasma",
+  "shortDescription": "Membrane separation and emerging non-thermal processes: principles, parameters and applications.",
+  "genZNote": "Non-thermal = treat the food without cooking it. Gentle on flavour, ruthless on microbes. Pore size order is MF > UF > NF > RO.",
+  "sections": [
+    {
+      "id": "membrane",
+      "heading": "Membrane Processes",
+      "body": "RO requires pressure higher than the osmotic pressure (typically tens of bars); fouling and concentration polarisation affect flux; CIP is essential.",
+      "table": {
+        "caption": "Pressure-driven membranes",
+        "columnHeaders": [
+          "Process",
+          "Pore size / cut-off",
+          "Retains",
+          "Food use"
+        ],
+        "rows": [
+          [
+            "Microfiltration (MF)",
+            "~0.1–10 µm",
+            "Bacteria, fat globules, spores",
+            "Cold sterilisation of milk and beer, clarification (low-heat ESL milk)"
+          ],
+          [
+            "Ultrafiltration (UF)",
+            "~0.001–0.1 µm (1–500 kDa)",
+            "Proteins, macromolecules",
+            "Whey protein concentrate, milk protein concentrates, juice clarification, cheese yield"
+          ],
+          [
+            "Nanofiltration (NF)",
+            "~1 nm",
+            "Divalent ions, small organics",
+            "Partial demineralisation, desalting"
+          ],
+          [
+            "Reverse osmosis (RO)",
+            "<0.001 µm",
+            "Almost all solutes; only water passes",
+            "Concentrating milk/juice without heat, desalination, packaged water"
+          ],
+          [
+            "Electrodialysis",
+            "Ion-exchange membranes",
+            "Ions",
+            "Whey demineralisation"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "hpp",
+      "heading": "High Pressure Processing, PEF/Ultra-High-Voltage Fields and Cold Plasma",
+      "bullets": [
+        "HPP (hydrostatic pressure): 300–600 MPa for minutes, isostatic and quasi-instantaneous throughout the food; inactivates vegetative cells, yeasts, moulds, viruses; spores are resistant unless combined with heat; used for juices, guacamole, ready meals, meat; packs must be flexible.",
+        "Pulsed electric fields / ultra-high-voltage electric fields: short high-voltage pulses (kV/cm) cause electroporation of microbial membranes; suitable for pumpable liquids (juices, milk); non-thermal at low temperature.",
+        "Cold plasma: ionised gas (reactive oxygen/nitrogen species, UV photons, charged particles) at near-ambient temperature; surface decontamination of fresh produce, grains, packaging; research/commercial emerging; effects on lipid oxidation and regulation still being studied.",
+        "Common advantages: fresh-like flavour, nutrients retained; limits: cost, validation, not for all foods, regulatory approval as novel processes."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Non-thermal technologies such as membrane separation, high pressure, pulsed electric fields and cold plasma inactivate microbes or separate components with minimal heat.",
+    "keyFacts": [
+      "MF removes bacteria; UF concentrates proteins.",
+      "RO passes only water.",
+      "HPP 300–600 MPa.",
+      "PEF causes electroporation."
+    ],
+    "keyTerms": [
+      "Microfiltration",
+      "Ultrafiltration",
+      "Reverse osmosis",
+      "HPP",
+      "Cold plasma"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "HPP is isostatic."
+    ],
+    "commonTraps": [
+      "Do not say HPP kills bacterial spores easily."
+    ],
+    "mustRemember": [
+      "Pore size: MF > UF > NF > RO."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Fellows: Food Processing Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "Rahman: Handbook of Food Preservation",
+      "kind": "educational"
+    },
+    {
+      "name": "FSSAI Regulations",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-membrane-nonthermal-technologies-q1",
+        "type": "mcq",
+        "prompt": "Which membrane process retains proteins but passes lactose and salts?",
+        "options": [
+          "Reverse osmosis",
+          "Ultrafiltration",
+          "Microfiltration",
+          "Electrodialysis"
+        ],
+        "correctIndex": 1,
+        "explanation": "UF cut-off passes small solutes."
+      },
+      {
+        "id": "fsft-membrane-nonthermal-technologies-q2",
+        "type": "mcq",
+        "prompt": "Typical HPP pressure range:",
+        "options": [
+          "0.1–1 MPa",
+          "10–50 MPa",
+          "300–600 MPa",
+          "1000–2000 MPa"
+        ],
+        "correctIndex": 2,
+        "explanation": "Commercial range."
+      },
+      {
+        "id": "fsft-membrane-nonthermal-technologies-q3",
+        "type": "mcq",
+        "prompt": "Cold plasma generates:",
+        "options": [
+          "Reactive species at low temperature",
+          "Microwaves only",
+          "X-rays",
+          "Ultrasonic waves"
+        ],
+        "correctIndex": 0,
+        "explanation": "ROS/RNS."
+      }
+    ]
+  }
+}

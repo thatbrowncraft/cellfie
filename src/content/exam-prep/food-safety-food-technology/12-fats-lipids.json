@@ -1,0 +1,146 @@
+{
+  "id": "fsft-fats-lipids",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 12,
+  "title": "Fats and Lipids — Structure, Classification and Functions",
+  "shortDescription": "Triglycerides, fatty acids, rancidity and the numbers (iodine, saponification, peroxide) that characterise oils.",
+  "genZNote": "Fat isn't the villain, the plot twist is WHICH fat and how oxidised it got. Iodine value, peroxide value — learn the receipts.",
+  "sections": [
+    {
+      "id": "structure",
+      "heading": "Structure and Classification",
+      "bullets": [
+        "Triglyceride = glycerol + 3 fatty acids (ester bonds). Others: phospholipids (lecithin), sterols (cholesterol), waxes, glycolipids.",
+        "Fatty acids: saturated (no double bond), monounsaturated (oleic), polyunsaturated (linoleic ω-6, α-linolenic ω-3); essential fatty acids are linoleic and α-linolenic acid. EPA/DHA come from fish/algae.",
+        "Trans fats: formed in partial hydrogenation; raise LDL and lower HDL; limited by FSSAI.",
+        "Melting behaviour: more unsaturation and shorter chains → lower melting point; ghee/butter contain short-chain acids."
+      ]
+    },
+    {
+      "id": "constants",
+      "heading": "Chemical Constants",
+      "table": {
+        "caption": "Oil/fat quality numbers",
+        "columnHeaders": [
+          "Value",
+          "Indicates"
+        ],
+        "rows": [
+          [
+            "Iodine value",
+            "Degree of unsaturation (higher = more double bonds)"
+          ],
+          [
+            "Saponification value",
+            "Average chain length (higher = shorter chains)"
+          ],
+          [
+            "Acid value / FFA",
+            "Hydrolytic rancidity"
+          ],
+          [
+            "Peroxide value",
+            "Primary oxidation — early rancidity"
+          ],
+          [
+            "Reichert–Meissl value",
+            "Volatile water-soluble fatty acids — butter fat is high"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rancidity",
+      "heading": "Functions, Rancidity and Processing",
+      "bullets": [
+        "Energy 9 kcal/g; carrier of vitamins A, D, E, K; essential fatty acids; satiety; cell membranes; insulation.",
+        "Hydrolytic rancidity (lipase, moisture) → free fatty acids; oxidative rancidity (O2, light, metals) → peroxides → aldehydes and ketones; prevent using antioxidants (tocopherol, BHA, BHT, TBHQ), low temperature and opaque packaging.",
+        "Refining: degumming, neutralisation, bleaching, deodorisation; hydrogenation converts liquid oil to semi-solid fat (vanaspati).",
+        "Smoke point: temperature at which oil visibly smokes; frying oil limit TPC (total polar compounds) 25% in India.",
+        "Intake advice (Indian guidelines): fat roughly 20–30% of energy with limited saturated and trans fats."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Lipids are water-insoluble biomolecules — mainly triglycerides — that supply concentrated energy, essential fatty acids and fat-soluble vitamins.",
+    "keyFacts": [
+      "Essential fatty acids: linoleic (ω-6), α-linolenic (ω-3).",
+      "9 kcal/g.",
+      "Iodine value measures unsaturation.",
+      "Rancidity: hydrolytic vs oxidative."
+    ],
+    "keyTerms": [
+      "Triglyceride",
+      "Iodine value",
+      "Peroxide value",
+      "Hydrogenation",
+      "Trans fat"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Frying oil TPC limit 25%.",
+      "Vanaspati production involves hydrogenation."
+    ],
+    "commonTraps": [
+      "Do not say saponification value measures unsaturation."
+    ],
+    "mustRemember": [
+      "Iodine value ↔ unsaturation; saponification value ↔ chain length."
+    ]
+  },
+  "sources": [
+    {
+      "name": "ICMR–NIN Nutrient Requirements for Indians (RDA 2020)",
+      "kind": "scientific",
+      "url": "https://www.nin.res.in"
+    },
+    {
+      "name": "FSSAI Trans Fat Regulations",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-fats-lipids-q1",
+        "type": "mcq",
+        "prompt": "Iodine value indicates:",
+        "options": [
+          "Chain length",
+          "Degree of unsaturation",
+          "Free fatty acids",
+          "Moisture"
+        ],
+        "correctIndex": 1,
+        "explanation": "More double bonds absorb more iodine."
+      },
+      {
+        "id": "fsft-fats-lipids-q2",
+        "type": "mcq",
+        "prompt": "Trans fats are mainly formed during:",
+        "options": [
+          "Refining",
+          "Partial hydrogenation",
+          "Freezing",
+          "Fermentation"
+        ],
+        "correctIndex": 1,
+        "explanation": "Partial hydrogenation creates trans isomers."
+      },
+      {
+        "id": "fsft-fats-lipids-q3",
+        "type": "mcq",
+        "prompt": "Which fatty acid is an ω-3 essential fatty acid?",
+        "options": [
+          "Oleic",
+          "Linoleic",
+          "α-Linolenic",
+          "Palmitic"
+        ],
+        "correctIndex": 2,
+        "explanation": "ALA is ω-3."
+      }
+    ]
+  }
+}

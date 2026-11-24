@@ -1,0 +1,164 @@
+{
+  "id": "fsft-food-fermentation-fermented-products",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 24,
+  "title": "Food Fermentation, Fermented Food Products and Beverages",
+  "shortDescription": "Starter cultures, the biochemistry of fermentation and a tour of fermented foods.",
+  "genZNote": "Fermentation is controlled spoilage with a good PR team. Idli batter, dahi, vinegar — all microbes doing free labour.",
+  "sections": [
+    {
+      "id": "basic",
+      "heading": "Principles",
+      "bullets": [
+        "Fermentation: microbial/enzymatic conversion of carbohydrates to acids, alcohol or gas under (mostly) anaerobic conditions; improves safety (acid, alcohol, bacteriocins), flavour, digestibility and nutrients (B vitamins).",
+        "Lactic acid bacteria (LAB): Lactobacillus, Lactococcus, Streptococcus thermophilus, Leuconostoc, Pediococcus.",
+        "Yeasts: Saccharomyces cerevisiae (alcoholic fermentation, leavening); moulds: Aspergillus oryzae (koji), Rhizopus oligosporus (tempeh); acetic acid bacteria: Acetobacter (vinegar); Propionibacterium (Swiss cheese eyes).",
+        "Starter cultures (single, multiple, mixed; mesophilic vs thermophilic); backslopping in traditional practice."
+      ]
+    },
+    {
+      "id": "foods",
+      "heading": "Products",
+      "body": "Beverage steps: beer (malting, mashing, boiling with hops, fermentation); wine (crushing, fermentation, ageing); distilled spirits require distillation. FSSAI sets standards for alcoholic beverages and non-alcoholic fermented drinks; fermented foods are permitted when safe and labelled correctly.",
+      "table": {
+        "caption": "Fermented foods",
+        "columnHeaders": [
+          "Product",
+          "Organisms",
+          "Substrate"
+        ],
+        "rows": [
+          [
+            "Curd/Dahi, yoghurt",
+            "Lactococcus, Streptococcus thermophilus, L. bulgaricus",
+            "Milk"
+          ],
+          [
+            "Idli, dosa, dhokla",
+            "Leuconostoc mesenteroides and yeasts",
+            "Rice/urad or chickpea batter"
+          ],
+          [
+            "Cheese",
+            "LAB + rennet; moulds in some",
+            "Milk"
+          ],
+          [
+            "Bread",
+            "Saccharomyces cerevisiae",
+            "Dough"
+          ],
+          [
+            "Sauerkraut, kimchi, pickles",
+            "LAB",
+            "Vegetables, brine"
+          ],
+          [
+            "Wine, beer, toddy",
+            "Yeast",
+            "Grape juice, malt, palm sap"
+          ],
+          [
+            "Vinegar",
+            "Yeast then Acetobacter",
+            "Alcohol"
+          ],
+          [
+            "Soy sauce, miso, tempeh",
+            "Aspergillus, Rhizopus",
+            "Soybean"
+          ],
+          [
+            "Kefir, kombucha",
+            "Mixed yeast+bacteria",
+            "Milk, sweet tea"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Food fermentation uses microorganisms to transform raw materials into products with improved flavour, safety, shelf life and nutrition.",
+    "keyFacts": [
+      "Idli: Leuconostoc + yeast.",
+      "Vinegar: yeast → alcohol → acetic acid by Acetobacter.",
+      "Tempeh: Rhizopus oligosporus.",
+      "Koji: Aspergillus oryzae."
+    ],
+    "keyTerms": [
+      "Starter culture",
+      "LAB",
+      "Koji",
+      "Tempeh",
+      "Homofermentative"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Homofermentative LAB produce mainly lactic acid."
+    ],
+    "commonTraps": [
+      "Do not confuse fermentation with spoilage."
+    ],
+    "mustRemember": [
+      "Swiss cheese holes: Propionibacterium."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Jay: Modern Food Microbiology",
+      "kind": "educational"
+    },
+    {
+      "name": "FAO/WHO — Microbiological Risk Assessment Series",
+      "kind": "educational"
+    },
+    {
+      "name": "Frazier & Westhoff: Food Microbiology",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-food-fermentation-fermented-products-q1",
+        "type": "mcq",
+        "prompt": "Vinegar is produced by:",
+        "options": [
+          "Lactobacillus",
+          "Acetobacter",
+          "Rhizopus",
+          "Penicillium"
+        ],
+        "correctIndex": 1,
+        "explanation": "Acetic acid bacteria oxidise ethanol."
+      },
+      {
+        "id": "fsft-food-fermentation-fermented-products-q2",
+        "type": "mcq",
+        "prompt": "Tempeh is made using:",
+        "options": [
+          "Rhizopus oligosporus",
+          "Aspergillus oryzae",
+          "Saccharomyces",
+          "Leuconostoc"
+        ],
+        "correctIndex": 0,
+        "explanation": "Soy fermented by Rhizopus."
+      },
+      {
+        "id": "fsft-food-fermentation-fermented-products-q3",
+        "type": "mcq",
+        "prompt": "Beer fermentation primarily involves:",
+        "options": [
+          "Bacteria",
+          "Yeast",
+          "Virus",
+          "Mould"
+        ],
+        "correctIndex": 1,
+        "explanation": "Saccharomyces."
+      }
+    ]
+  }
+}

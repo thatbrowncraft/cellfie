@@ -1,0 +1,179 @@
+{
+  "id": "fsft-vitamins",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 13,
+  "title": "Vitamins — Classification, Functions and Metabolism",
+  "shortDescription": "Fat- and water-soluble vitamins, sources, losses in cooking, and coenzyme roles.",
+  "genZNote": "Vitamins are tiny but non-negotiable NPCs: miss one and a very specific disease logs in. Match vitamin → disease and you're golden.",
+  "sections": [
+    {
+      "id": "classes",
+      "heading": "Classification and Key Roles",
+      "table": {
+        "caption": "Vitamins at a glance",
+        "columnHeaders": [
+          "Vitamin",
+          "Key function",
+          "Good sources",
+          "Deficiency"
+        ],
+        "rows": [
+          [
+            "A (retinol)",
+            "Vision, epithelium, immunity",
+            "Liver, milk, carrots (β-carotene)",
+            "Night blindness, xerophthalmia"
+          ],
+          [
+            "D",
+            "Calcium/phosphate absorption",
+            "Sunlight, fish oils, fortified milk",
+            "Rickets, osteomalacia"
+          ],
+          [
+            "E",
+            "Antioxidant",
+            "Vegetable oils, nuts",
+            "Haemolysis (rare)"
+          ],
+          [
+            "K",
+            "Clotting factors",
+            "Green leafy vegetables",
+            "Bleeding"
+          ],
+          [
+            "B1 thiamine",
+            "Carbohydrate metabolism (TPP)",
+            "Whole grains, pulses",
+            "Beriberi"
+          ],
+          [
+            "B2 riboflavin",
+            "FAD/FMN",
+            "Milk, eggs",
+            "Ariboflavinosis"
+          ],
+          [
+            "B3 niacin",
+            "NAD/NADP",
+            "Cereals, meat",
+            "Pellagra"
+          ],
+          [
+            "B6",
+            "Amino acid metabolism",
+            "Meat, banana",
+            "Neuropathy"
+          ],
+          [
+            "B9 folate",
+            "One-carbon transfer, DNA",
+            "Leafy greens",
+            "Megaloblastic anaemia, NTD"
+          ],
+          [
+            "B12",
+            "Methylmalonyl-CoA, RBCs",
+            "Animal foods only",
+            "Pernicious anaemia"
+          ],
+          [
+            "C",
+            "Collagen, antioxidant, iron absorption",
+            "Amla, citrus",
+            "Scurvy"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "metabolism",
+      "heading": "Absorption, Metabolism and Losses",
+      "bullets": [
+        "Fat-soluble (A, D, E, K) need bile and dietary fat for absorption; stored in liver/adipose; toxicity possible (A, D). Water-soluble (B, C) are not stored (except B12 in liver) and are excreted.",
+        "Vitamin D is synthesised in skin by UVB and activated by liver and kidney to calcitriol.",
+        "Vitamin B12 absorption requires intrinsic factor from the stomach.",
+        "Losses: vitamin C (heat, oxidation, leaching), thiamine (heat, alkali, sulphite), riboflavin (light), folate (heat); retain by steaming, minimal water, covering containers.",
+        "Avidin in raw egg white binds biotin; polished-rice diets cause thiamine deficiency."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Vitamins are organic micronutrients required in small amounts as coenzymes and regulators; deficiency causes specific diseases.",
+    "keyFacts": [
+      "Fat-soluble: A, D, E, K.",
+      "B12 exists only in animal foods (and fortified foods).",
+      "Vitamin C aids non-heme iron absorption.",
+      "Pellagra: dermatitis, diarrhoea, dementia."
+    ],
+    "keyTerms": [
+      "Coenzyme",
+      "Retinol",
+      "Intrinsic factor",
+      "Beriberi",
+      "Scurvy"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Vitamin K is synthesised by gut bacteria in part."
+    ],
+    "commonTraps": [
+      "Do not say vitamin C is fat-soluble."
+    ],
+    "mustRemember": [
+      "A night blindness; D rickets; B1 beriberi; B3 pellagra; C scurvy."
+    ]
+  },
+  "sources": [
+    {
+      "name": "ICMR–NIN Nutrient Requirements for Indians (RDA 2020)",
+      "kind": "scientific",
+      "url": "https://www.nin.res.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-vitamins-q1",
+        "type": "mcq",
+        "prompt": "Beriberi results from deficiency of:",
+        "options": [
+          "Thiamine",
+          "Niacin",
+          "Riboflavin",
+          "Cobalamin"
+        ],
+        "correctIndex": 0,
+        "explanation": "B1 deficiency."
+      },
+      {
+        "id": "fsft-vitamins-q2",
+        "type": "mcq",
+        "prompt": "Which vitamin is required for blood clotting?",
+        "options": [
+          "A",
+          "D",
+          "E",
+          "K"
+        ],
+        "correctIndex": 3,
+        "explanation": "Vitamin K carboxylates clotting factors."
+      },
+      {
+        "id": "fsft-vitamins-q3",
+        "type": "mcq",
+        "prompt": "Intrinsic factor is needed for absorption of:",
+        "options": [
+          "Folate",
+          "B12",
+          "Vitamin C",
+          "Niacin"
+        ],
+        "correctIndex": 1,
+        "explanation": "Secreted by gastric parietal cells."
+      }
+    ]
+  }
+}

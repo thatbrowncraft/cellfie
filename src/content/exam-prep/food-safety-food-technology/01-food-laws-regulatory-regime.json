@@ -1,0 +1,182 @@
+{
+  "id": "fsft-food-laws-regulatory-regime",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 1,
+  "title": "National Food Laws, Standards and India's Food Regulatory Regime",
+  "shortDescription": "How India moved from a patchwork of eight food laws to one integrated framework — and who regulates what today.",
+  "genZNote": "Eight laws, eight inspectors, zero vibes. 2006 said 'one law to rule them all' — know who got merged and who runs the show now.",
+  "sections": [
+    {
+      "id": "why-laws",
+      "heading": "Why Food Laws Exist",
+      "body": "Food is a trust good: a consumer cannot see pathogens, adulterants or false nutrition claims. Food law therefore does three jobs — (1) protects health (safety), (2) prevents fraud (honest labelling, composition standards), and (3) enables trade (predictable, science-based standards). Modern law is built on risk analysis rather than on case-by-case prohibition."
+    },
+    {
+      "id": "pre-2006",
+      "heading": "The Pre-2006 Patchwork",
+      "body": "Problems: multiple ministries, overlapping licences, no single science-based standard-setter and little emphasis on prevention. The FSS Act, 2006 repealed/subsumed all of the above.",
+      "table": {
+        "caption": "Laws merged into the FSS Act, 2006",
+        "columnHeaders": [
+          "Earlier law / order",
+          "Main subject"
+        ],
+        "rows": [
+          [
+            "Prevention of Food Adulteration Act, 1954 (PFA)",
+            "General adulteration and standards (the main law for ~50 years)"
+          ],
+          [
+            "Fruit Products Order, 1955",
+            "Fruit/vegetable products licensing"
+          ],
+          [
+            "Meat Food Products Order, 1973",
+            "Meat products"
+          ],
+          [
+            "Vegetable Oil Products (Control) Order, 1947",
+            "Vanaspati/vegetable oils"
+          ],
+          [
+            "Edible Oils Packaging (Regulation) Order, 1998",
+            "Packing of edible oils"
+          ],
+          [
+            "Solvent Extracted Oil, De-Oiled Meal and Edible Flour (Control) Order, 1967",
+            "Solvent-extracted oils/meal/flour"
+          ],
+          [
+            "Milk and Milk Products Order, 1992",
+            "Dairy licensing"
+          ],
+          [
+            "Other orders under the Essential Commodities Act, 1955 relating to food",
+            "Residual food controls"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "regime",
+      "heading": "Who Regulates What Today",
+      "bullets": [
+        "FSSAI (Ministry of Health & Family Welfare) — standards, licensing framework, food-safety regulation for all food business operators.",
+        "State Food Safety Commissioners and Designated Officers — licensing, inspection and enforcement within the state.",
+        "Legal Metrology (Ministry of Consumer Affairs) — packaged commodity declarations such as net quantity and MRP.",
+        "BIS — voluntary/compulsory Indian Standards and ISI certification for specified products.",
+        "Dept. of Marketing & Inspection (Agriculture) — AGMARK grading under the Agricultural Produce (Grading and Marking) Act, 1937.",
+        "APEDA, MPEDA, Spices Board, Tea/Coffee Boards — commodity export promotion/quality; FSSAI remains the safety regulator.",
+        "FCI/CWC/WDRA — grain procurement, storage and warehouse regulation."
+      ]
+    },
+    {
+      "id": "related-laws",
+      "heading": "Other Laws That Touch Food",
+      "bullets": [
+        "Consumer Protection Act, 2019 — consumer remedies, CCPA, product liability, misleading advertising.",
+        "Legal Metrology Act, 2009 and Packaged Commodities Rules, 2011.",
+        "Essential Commodities Act, 1955 — stock/price control of notified items.",
+        "Bharatiya Nyaya Sanhita, 2023 — adulteration of food or drink (s.274) and sale of noxious food (s.275) replaced IPC ss.272–273.",
+        "Environment Protection Act, 1986 (GEAC and GM organisms); Atomic Energy rules for food irradiation; Insecticides Act, 1968 (pesticide registration).",
+        "Regulatory details change by notification; treat figures here as exam-standard knowledge and confirm against the current FSSAI/Gazette text before relying on them professionally."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "India's food-law framework is an integrated, risk-based system led by the FSS Act, 2006, with complementary laws for consumer protection, weights and measures, grading and standards.",
+    "keyFacts": [
+      "FSS Act, 2006 integrated eight earlier food laws/orders into one statute.",
+      "PFA Act, 1954 was the main predecessor.",
+      "FSSAI under MoHFW is the apex food-safety regulator.",
+      "AGMARK (grading), BIS (standards), Legal Metrology (declarations) remain separate but complementary."
+    ],
+    "keyTerms": [
+      "Food law",
+      "PFA Act 1954",
+      "FSS Act 2006",
+      "Risk analysis",
+      "Subsumed laws"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "FSS Act, 2006 repealed PFA Act 1954, FPO 1955, MFPO 1973, MMPO 1992 and others.",
+      "Integration under a single regulator was the central reform.",
+      "BNS ss.274–275 now carry the criminal-law adulteration provisions."
+    ],
+    "commonTraps": [
+      "Do not say PFA Act 1954 is still the operating law — it was repealed.",
+      "Do not treat BIS or AGMARK as food-safety regulators; they are quality/standard schemes."
+    ],
+    "mustRemember": [
+      "Single reference point: FSSAI under MoHFW.",
+      "Number of laws merged: eight (PFA + seven orders)."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "FSSAI",
+        "termB": "Legal Metrology",
+        "distinction": "FSSAI regulates food safety, composition and food-specific labelling; Legal Metrology regulates weights, measures and commercial declarations on all packaged goods."
+      }
+    ],
+    "possibleQuestions": [
+      "Name three laws subsumed by the FSS Act, 2006.",
+      "Which ministry administers FSSAI?"
+    ]
+  },
+  "sources": [
+    {
+      "name": "FSSAI Act and Regulations",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    },
+    {
+      "name": "Ministry of Health & Family Welfare — Food Safety legislation",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-food-laws-regulatory-regime-q1",
+        "type": "mcq",
+        "prompt": "Which Act was the main food-adulteration law in India before 2006?",
+        "options": [
+          "Consumer Protection Act, 1986",
+          "Prevention of Food Adulteration Act, 1954",
+          "Essential Commodities Act, 1955",
+          "Drugs and Cosmetics Act, 1940"
+        ],
+        "correctIndex": 1,
+        "explanation": "PFA Act, 1954 governed adulteration until the FSS Act, 2006 replaced it."
+      },
+      {
+        "id": "fsft-food-laws-regulatory-regime-q2",
+        "type": "mcq",
+        "prompt": "The FSS Act, 2006 integrated how many earlier food-related laws/orders?",
+        "options": [
+          "Three",
+          "Five",
+          "Eight",
+          "Twelve"
+        ],
+        "correctIndex": 2,
+        "explanation": "The Act consolidated eight earlier food laws and orders (PFA Act plus seven orders)."
+      },
+      {
+        "id": "fsft-food-laws-regulatory-regime-q3",
+        "type": "mcq",
+        "prompt": "Which authority handles packaged-commodity declarations such as net quantity and MRP?",
+        "options": [
+          "FSSAI",
+          "BIS",
+          "Legal Metrology",
+          "APEDA"
+        ],
+        "correctIndex": 2,
+        "explanation": "Legal Metrology (Packaged Commodities) Rules govern such declarations; FSSAI governs food safety/labelling content."
+      }
+    ]
+  }
+}

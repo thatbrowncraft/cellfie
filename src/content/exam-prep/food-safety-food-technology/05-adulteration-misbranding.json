@@ -1,0 +1,184 @@
+{
+  "id": "fsft-adulteration-misbranding",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 5,
+  "title": "Food Adulteration, Misbranding and Common Adulterants",
+  "shortDescription": "Legal definitions, labelling rules and a field guide to common adulterants with their simple tests.",
+  "genZNote": "Adulteration is cheating with chemistry, misbranding is cheating with a label. Spot the sus ingredient, name the test, collect the marks.",
+  "sections": [
+    {
+      "id": "adulteration",
+      "heading": "Adulteration — Concept",
+      "body": "Adulteration is the intentional or negligent addition of an inferior, harmful or foreign substance, or the removal of a valuable constituent, so that food becomes below the quality demanded. The FSS Act treats adulterants separately from substandard food: substandard food is unsafe-free but fails standards; unsafe food can cause harm. Types: intentional (economic fraud), incidental (poor handling, pesticide residues) and metallic contamination."
+    },
+    {
+      "id": "misbranding",
+      "heading": "Misbranding and Labelling",
+      "body": "Misbranded food includes food whose label is false/misleading, carries claims not permitted, omits mandatory particulars, or imitates another food. The FSS (Labelling and Display) Regulations, 2020 require: name of food, ingredient list (descending order by weight), nutritional information, veg/non-veg logo, additive declaration, FBO name and address with FSSAI licence number, net quantity, lot/batch number, date of manufacture or packing, best before/expiry, country of origin for imports, and allergen declaration.",
+      "bullets": [
+        "Veg logo: green filled circle inside a green-outlined square; non-veg: brown filled triangle inside a brown-outlined square.",
+        "Misleading advertisement and unsubstantiated claims fall under s.53; Advertising and Claims Regulations, 2018 apply."
+      ]
+    },
+    {
+      "id": "adulterants",
+      "heading": "Common Adulterants and Simple Tests",
+      "body": "FSSAI's DART booklet (Detect Adulteration with Rapid Test) lists such quick tests; they are screening, not legal proof.",
+      "table": {
+        "caption": "Field guide",
+        "columnHeaders": [
+          "Food",
+          "Adulterant",
+          "Simple indication/test"
+        ],
+        "rows": [
+          [
+            "Milk",
+            "Water; starch; urea; detergent; neutralisers",
+            "Lactometer; iodine → blue (starch); DMAB yellow (urea)"
+          ],
+          [
+            "Turmeric",
+            "Metanil yellow; lead chromate",
+            "Conc. HCl → pink/violet (metanil)"
+          ],
+          [
+            "Chilli powder",
+            "Brick powder; Sudan dye",
+            "Sink in water; coloured streaks in oil/solvent"
+          ],
+          [
+            "Black pepper",
+            "Dried papaya seeds",
+            "Float in alcohol"
+          ],
+          [
+            "Mustard oil",
+            "Argemone oil (epidemic dropsy)",
+            "Nitric acid → orange-red"
+          ],
+          [
+            "Honey",
+            "Sugar syrup",
+            "Flame test on cotton wick; thumb test"
+          ],
+          [
+            "Tea",
+            "Used/coloured leaves",
+            "Wet paper stain"
+          ],
+          [
+            "Pulses",
+            "Kesari dal; metanil yellow",
+            "Visual; HCl test"
+          ],
+          [
+            "Ghee / butter",
+            "Vanaspati; mashed potato",
+            "BR reading; iodine for starch"
+          ],
+          [
+            "Sugar/salt/flour",
+            "Chalk, washing soda, iron filings",
+            "Effervescence with acid; magnet"
+          ],
+          [
+            "Fruits",
+            "Calcium carbide ripening; wax",
+            "Banned; FSSAI regulation prohibits carbide"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Adulteration lowers food quality or safety through added/removed substances; misbranding misleads through labelling or advertising — both are offences under the FSS Act, 2006.",
+    "keyFacts": [
+      "Adulterant penalties: s.57 — up to ₹2 lakh (non-hazardous) or ₹10 lakh (hazardous).",
+      "Misbranding: s.52 up to ₹3 lakh; misleading advertisement: s.53 up to ₹10 lakh.",
+      "Argemone oil → epidemic dropsy; Kesari dal → lathyrism.",
+      "Calcium carbide for ripening is prohibited."
+    ],
+    "keyTerms": [
+      "Adulterant",
+      "Misbranding",
+      "Argemone oil",
+      "Metanil yellow",
+      "DART"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "IPC ss.272–273 are now BNS ss.274–275.",
+      "Non-veg logo = brown triangle in square."
+    ],
+    "commonTraps": [
+      "Substandard ≠ adulterated ≠ unsafe.",
+      "A home test can only be a screening indication."
+    ],
+    "mustRemember": [
+      "Argemone → dropsy; Kesari → lathyrism; carbide → banned ripening."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Substandard food",
+        "termB": "Unsafe food",
+        "distinction": "Substandard fails prescribed standards; unsafe food is injurious to health (s.59)."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "FSSAI — DART and Labelling & Display Regulations, 2020",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    },
+    {
+      "name": "FSS Act, 2006",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-adulteration-misbranding-q1",
+        "type": "mcq",
+        "prompt": "Epidemic dropsy is caused by adulteration of mustard oil with:",
+        "options": [
+          "Mineral oil",
+          "Argemone oil",
+          "Castor oil",
+          "Palm oil"
+        ],
+        "correctIndex": 1,
+        "explanation": "Argemone oil contains sanguinarine, which causes dropsy."
+      },
+      {
+        "id": "fsft-adulteration-misbranding-q2",
+        "type": "mcq",
+        "prompt": "Lathyrism is associated with adulteration of pulses with:",
+        "options": [
+          "Khesari dal",
+          "Moong dal",
+          "Masoor dal",
+          "Soy"
+        ],
+        "correctIndex": 0,
+        "explanation": "Lathyrus sativus contains β-ODAP neurotoxin."
+      },
+      {
+        "id": "fsft-adulteration-misbranding-q3",
+        "type": "mcq",
+        "prompt": "The non-vegetarian logo in India is a:",
+        "options": [
+          "Green circle",
+          "Brown triangle in a square",
+          "Red square",
+          "Black circle"
+        ],
+        "correctIndex": 1,
+        "explanation": "Brown triangle inside brown-outlined square."
+      }
+    ]
+  }
+}

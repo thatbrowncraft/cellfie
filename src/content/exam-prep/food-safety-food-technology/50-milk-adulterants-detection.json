@@ -1,0 +1,187 @@
+{
+  "id": "fsft-milk-adulterants-detection",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 50,
+  "title": "Milk Adulterants and Their Detection",
+  "shortDescription": "Common milk adulterants, why they are used and the simple and laboratory tests used to detect them.",
+  "genZNote": "Milk adulteration tests are mini chemistry labs in a test tube. Starch → iodine, neutraliser → rosolic acid — match the sus ingredient to its test.",
+  "sections": [
+    {
+      "id": "table",
+      "heading": "Adulterants and Tests",
+      "body": "FSSAI's DART and mobile \"Food Safety on Wheels\" labs support quick screening; legal action requires analysis by a notified laboratory.",
+      "table": {
+        "caption": "Milk adulteration guide",
+        "columnHeaders": [
+          "Adulterant",
+          "Purpose",
+          "Detection"
+        ],
+        "rows": [
+          [
+            "Water",
+            "Volume",
+            "Lactometer reading low; freezing point above −0.512 °C; lower SNF"
+          ],
+          [
+            "Starch / flour",
+            "Raise SNF/body",
+            "Iodine solution → blue colour"
+          ],
+          [
+            "Urea",
+            "Raise non-protein nitrogen/SNF",
+            "DMAB reagent (yellow); urease/indicator strips"
+          ],
+          [
+            "Detergent",
+            "Synthetic milk emulsifier",
+            "Foam test; methylene blue/ bromocresol methods"
+          ],
+          [
+            "Neutralisers (NaHCO3, NaOH)",
+            "Hide acidity",
+            "Rosolic acid test (rose red)"
+          ],
+          [
+            "Hydrogen peroxide",
+            "Preservative",
+            "Vanadium pentoxide → pink/orange"
+          ],
+          [
+            "Formalin",
+            "Preservative",
+            "Ferric chloride + conc. H2SO4 violet ring; Hehner test"
+          ],
+          [
+            "Cane sugar",
+            "Raise SNF/ sweetness",
+            "Resorcinol–HCl test"
+          ],
+          [
+            "Salt",
+            "Raise density/ taste",
+            "Silver nitrate–potassium chromate test"
+          ],
+          [
+            "Vegetable oil/synthetic milk",
+            "Substitute fat",
+            "Fatty acid profile; BR reading; chromatography"
+          ],
+          [
+            "Skim milk powder",
+            "Raise SNF",
+            "Compositional ratios"
+          ],
+          [
+            "Melamine",
+            "Fake protein",
+            "LC-MS/ELISA (China 2008 scandal)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "lactometer",
+      "heading": "Lactometer and Fat Tests",
+      "bullets": [
+        "Lactometer (Quevenne type) reads density; corrected lactometer reading (CLR) accounts for temperature; adulteration by water lowers it, skimming raises it.",
+        "Gerber method for fat: sulphuric acid + amyl alcohol, centrifuge, read butyrometer.",
+        "Milk analysers (ultrasonic, infrared) give fat/SNF/protein quickly; reference methods: Kjeldahl (protein), Rose–Gottlieb (fat)."
+      ]
+    },
+    {
+      "id": "health",
+      "heading": "Health Effects and Legal Position",
+      "bullets": [
+        "Urea, detergents, formalin and hydrogen peroxide pose acute and chronic risks; melamine caused renal failure in infants.",
+        "Penalties follow FSS Act ss.51–59 depending on adulterant and harm; milk and milk products also fall under FSSAI standards."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Milk is adulterated to increase volume, solids or keeping quality; simple chemical tests and laboratory analysis detect adulterants.",
+    "keyFacts": [
+      "Starch + iodine → blue.",
+      "Rosolic acid detects neutralisers.",
+      "Gerber test measures fat.",
+      "Melamine scandal: China 2008."
+    ],
+    "keyTerms": [
+      "Lactometer",
+      "DMAB",
+      "Rosolic acid",
+      "Gerber test",
+      "Synthetic milk"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Water adds lowers lactometer reading."
+    ],
+    "commonTraps": [
+      "Do not say home tests are legal proof."
+    ],
+    "mustRemember": [
+      "Starch test = iodine."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Lawrie: Meat Science",
+      "kind": "scientific"
+    },
+    {
+      "name": "Hui: Handbook of Food Science, Technology and Engineering",
+      "kind": "educational"
+    },
+    {
+      "name": "FSS (Food Products Standards) Regulations, 2011",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-milk-adulterants-detection-q1",
+        "type": "mcq",
+        "prompt": "Iodine solution turning milk blue indicates:",
+        "options": [
+          "Urea",
+          "Starch",
+          "Neutraliser",
+          "Salt"
+        ],
+        "correctIndex": 1,
+        "explanation": "Starch-iodine complex."
+      },
+      {
+        "id": "fsft-milk-adulterants-detection-q2",
+        "type": "mcq",
+        "prompt": "Rosolic acid test detects:",
+        "options": [
+          "Neutralisers",
+          "Water",
+          "Formalin",
+          "Sugar"
+        ],
+        "correctIndex": 0,
+        "explanation": "Detects carbonates/bicarbonates."
+      },
+      {
+        "id": "fsft-milk-adulterants-detection-q3",
+        "type": "mcq",
+        "prompt": "Gerber method measures:",
+        "options": [
+          "Protein",
+          "Fat",
+          "Lactose",
+          "Ash"
+        ],
+        "correctIndex": 1,
+        "explanation": "Butyrometer reading of fat."
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "id": "fsft-thermal-processing-pasteurisation-canning",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 58,
+  "title": "Thermal Processing, Pasteurisation and Canning",
+  "shortDescription": "Heat-processing kinetics, blanching, pasteurisation and the canning sequence including process validation.",
+  "genZNote": "Heat does the killing, kinetics decide how much. D, z, F0 are the receipts for every canned food on the shelf.",
+  "sections": [
+    {
+      "id": "kinetics",
+      "heading": "Thermal Death Kinetics",
+      "bullets": [
+        "D-value: time at a given temperature for 90% reduction; z-value: temperature rise to reduce D tenfold; F-value: equivalent time at reference temperature (F0 at 121.1 °C, z = 10 °C for low-acid foods).",
+        "Botulinum cook: 12D reduction of C. botulinum spores (about F0 ≈ 3 min minimum); spoilage organisms often require higher F0.",
+        "Heat penetration: conduction (solid foods), convection (liquids); cold-spot determination, come-up time, headspace and can size influence process time."
+      ]
+    },
+    {
+      "id": "past",
+      "heading": "Pasteurisation and Blanching",
+      "bullets": [
+        "Pasteurisation targets vegetative pathogens and enzymes: milk 63 °C/30 min or 72 °C/15 s; juices 85–95 °C hot fill for acid foods; eggs and others per standards.",
+        "Blanching: 70–100 °C steam/hot water for 1–10 min to inactivate peroxidase/catalase, remove air, soften tissue and fix colour before canning/freezing."
+      ]
+    },
+    {
+      "id": "canning",
+      "heading": "Canning Sequence",
+      "steps": [
+        {
+          "name": "Preparation",
+          "explanation": "Washing, grading, peeling, cutting, blanching.",
+          "purpose": "Removes soil and enzymes."
+        },
+        {
+          "name": "Filling and exhausting",
+          "explanation": "Fill with brine/syrup leaving headspace; exhaust to remove air and form vacuum.",
+          "purpose": "Reduces oxidation and can strain."
+        },
+        {
+          "name": "Seaming",
+          "explanation": "Double seam for hermetic closure.",
+          "purpose": "Prevents recontamination."
+        },
+        {
+          "name": "Retorting",
+          "explanation": "Low-acid foods: pressure at ~115–121 °C; acid foods (pH ≤ 4.6): boiling water.",
+          "purpose": "Commercial sterility."
+        },
+        {
+          "name": "Cooling and storage",
+          "explanation": "Chlorinated-water cooling; dry, cool store.",
+          "purpose": "Avoids thermophilic spoilage and leakage."
+        }
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Thermal processing uses controlled heat–time combinations, validated by D, z and F values, to inactivate microbes and enzymes and give safe, shelf-stable foods.",
+    "keyFacts": [
+      "12D botulinum cook.",
+      "Low-acid foods need pressure retort.",
+      "Blanching inactivates peroxidase.",
+      "Double seam gives hermetic closure."
+    ],
+    "keyTerms": [
+      "D-value",
+      "z-value",
+      "F0",
+      "Blanching",
+      "Retort"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "pH 4.6 boundary."
+    ],
+    "commonTraps": [
+      "Do not assume canned = sterile of all spores in acid food; they rely on acid."
+    ],
+    "mustRemember": [
+      "F0 at 121.1 °C, z 10 °C."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Fellows: Food Processing Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "Rahman: Handbook of Food Preservation",
+      "kind": "educational"
+    },
+    {
+      "name": "FSSAI Regulations",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-thermal-processing-pasteurisation-canning-q1",
+        "type": "mcq",
+        "prompt": "The reference temperature for F0 is:",
+        "options": [
+          "100 °C",
+          "115 °C",
+          "121.1 °C",
+          "135 °C"
+        ],
+        "correctIndex": 2,
+        "explanation": "250 °F."
+      },
+      {
+        "id": "fsft-thermal-processing-pasteurisation-canning-q2",
+        "type": "mcq",
+        "prompt": "Blanching is mainly done to:",
+        "options": [
+          "Add flavour",
+          "Inactivate enzymes",
+          "Sterilise cans",
+          "Add salt"
+        ],
+        "correctIndex": 1,
+        "explanation": "Peroxidase/catalase inactivation."
+      },
+      {
+        "id": "fsft-thermal-processing-pasteurisation-canning-q3",
+        "type": "mcq",
+        "prompt": "Acid foods (pH ≤ 4.6) may be processed in:",
+        "options": [
+          "Boiling water",
+          "Pressure cooker only",
+          "Radiation only",
+          "Freezers"
+        ],
+        "correctIndex": 0,
+        "explanation": "Spore germination is inhibited."
+      }
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "id": "fsft-acid-base-buffer-chemical-properties",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 19,
+  "title": "Acid–Base–Buffer Properties and Chemical Properties of Food",
+  "shortDescription": "pH, buffering, and the reactions (browning, oxidation, hydrolysis) that change food chemistry.",
+  "genZNote": "pH decides what grows, what sets and what tastes sour. Maillard vs caramelisation is the classic trap — one needs amino acids, one just needs heat and sugar.",
+  "sections": [
+    {
+      "id": "ph",
+      "heading": "Acidity, pH and Buffers",
+      "bullets": [
+        "pH = −log[H+]; food classes: low-acid (pH > 4.6), acid (pH ≤ 4.6) — 4.6 is the critical boundary for C. botulinum spore germination in canning.",
+        "Buffer = weak acid + conjugate base resisting pH change (Henderson–Hasselbalch: pH = pKa + log [A−]/[HA]). Food buffers: citrate, phosphate, lactate, proteins (milk buffers at pH 6.6–6.8).",
+        "Titratable acidity (as lactic/citric acid) differs from pH; both are measured in dairy and juices.",
+        "Applications: curdling at pH 4.6 (casein), pectin gel at pH ~3.0–3.5, leavening agents (baking soda + acid), acidification as a hurdle.",
+        "Typical pH: lemon 2.2–2.4; tomato ~4.3; milk 6.6–6.8; egg white 7.6→9.2 on ageing; meat post-rigor 5.4–5.6."
+      ]
+    },
+    {
+      "id": "chem",
+      "heading": "Chemical Properties and Reactions",
+      "body": "Pigments: chlorophyll (green), carotenoids (orange-yellow; provitamin A), anthocyanins (red-blue), flavonoids and betalains (beetroot). Flavour compounds arise from reactions among sugars, amino acids and lipids.",
+      "table": {
+        "caption": "Key reactions",
+        "columnHeaders": [
+          "Reaction",
+          "Cause",
+          "Effect"
+        ],
+        "rows": [
+          [
+            "Maillard browning",
+            "Reducing sugar + amino group, heat",
+            "Colour, flavour; acrylamide risk"
+          ],
+          [
+            "Caramelisation",
+            "Sugar heated >~120 °C",
+            "Brown colour/flavour"
+          ],
+          [
+            "Enzymatic browning",
+            "PPO + phenols + O2",
+            "Cut apples/potatoes; stop with acid, blanching, antioxidants"
+          ],
+          [
+            "Lipid oxidation",
+            "O2, light, metals",
+            "Rancid off-flavours"
+          ],
+          [
+            "Hydrolysis",
+            "Water, acid or enzyme",
+            "Sugar/starch/protein/fat breakdown"
+          ],
+          [
+            "Pigment changes",
+            "pH/heat",
+            "Chlorophyll → pheophytin (olive green); anthocyanins pH-sensitive; carotenoids stable"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "pH and buffering govern microbial safety, protein functionality and sensory quality, while Maillard, oxidative and enzymatic reactions drive chemical change in foods.",
+    "keyFacts": [
+      "4.6 is the acid/low-acid boundary.",
+      "Maillard needs reducing sugar + amino group.",
+      "Casein isoelectric pH 4.6."
+    ],
+    "keyTerms": [
+      "pH",
+      "Buffer",
+      "Titratable acidity",
+      "Maillard reaction",
+      "Caramelisation"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Henderson–Hasselbalch equation defines buffer pH."
+    ],
+    "commonTraps": [
+      "Do not confuse Maillard (needs amino acids) with caramelisation (sugar only)."
+    ],
+    "mustRemember": [
+      "Acid food pH ≤ 4.6."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Fennema's Food Chemistry",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-acid-base-buffer-chemical-properties-q1",
+        "type": "mcq",
+        "prompt": "Foods with pH below 4.6 are classified as:",
+        "options": [
+          "Low-acid",
+          "Acid",
+          "Neutral",
+          "Alkaline"
+        ],
+        "correctIndex": 1,
+        "explanation": "They inhibit C. botulinum growth."
+      },
+      {
+        "id": "fsft-acid-base-buffer-chemical-properties-q2",
+        "type": "mcq",
+        "prompt": "Browning that needs amino groups and reducing sugars is:",
+        "options": [
+          "Caramelisation",
+          "Maillard reaction",
+          "Enzymatic browning",
+          "Photolysis"
+        ],
+        "correctIndex": 1,
+        "explanation": "Maillard involves amines and reducing sugars."
+      },
+      {
+        "id": "fsft-acid-base-buffer-chemical-properties-q3",
+        "type": "mcq",
+        "prompt": "Milk resists pH change mainly because of:",
+        "options": [
+          "Fat",
+          "Proteins and phosphates",
+          "Vitamins",
+          "Water"
+        ],
+        "correctIndex": 1,
+        "explanation": "Casein, whey proteins and phosphate buffer milk."
+      }
+    ]
+  }
+}

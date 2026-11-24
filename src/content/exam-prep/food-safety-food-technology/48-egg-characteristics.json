@@ -1,0 +1,151 @@
+{
+  "id": "fsft-egg-characteristics",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 48,
+  "title": "Eggs — Physical, Chemical, Nutritional and Functional Characteristics",
+  "shortDescription": "Structure, composition, grading and quality tests, and why eggs perform so many jobs in food.",
+  "genZNote": "The egg is nature's multi-tool: foam, glue, emulsifier, gel. Yolk lecithin makes mayo; white proteins make meringue.",
+  "sections": [
+    {
+      "id": "physical",
+      "heading": "Physical Structure and Quality",
+      "bullets": [
+        "Parts: shell (~94–95% CaCO3, cuticle, pores), shell membranes, albumen (thick and thin), yolk (vitelline membrane), chalazae, air cell.",
+        "Weight ~50–60 g (approx. 58% albumen, 30% yolk, 11% shell).",
+        "Quality tests: candling (air-cell size, yolk shadow, blood spots), Haugh unit (albumen height vs weight), yolk index, specific gravity, floatation test.",
+        "On storage: air cell enlarges, albumen thins and pH rises from ~7.6 to ~9.2, so older eggs float more."
+      ]
+    },
+    {
+      "id": "chem",
+      "heading": "Chemical and Nutritional Composition",
+      "body": "Egg protein has the highest biological value among common foods; moderate intake is compatible with healthy diets, subject to individual lipid status.",
+      "table": {
+        "caption": "Egg composition",
+        "columnHeaders": [
+          "Part",
+          "Water",
+          "Protein",
+          "Lipid",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "Whole egg",
+            "~75%",
+            "~12–13%",
+            "~10–11%",
+            "Complete protein, B12, A, D, choline"
+          ],
+          [
+            "Albumen",
+            "~88%",
+            "~10–11% (ovalbumin, ovotransferrin, ovomucoid, lysozyme, avidin)",
+            "Trace",
+            "Contains antimicrobial lysozyme; avidin binds biotin"
+          ],
+          [
+            "Yolk",
+            "~50%",
+            "~16%",
+            "~32% (triglycerides, phospholipids such as lecithin, cholesterol ~185–210 mg/egg)",
+            "Carotenoids give colour; iron, vitamins"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "func",
+      "heading": "Functional Properties",
+      "bullets": [
+        "Foaming (albumen) for meringues and cakes; emulsifying (yolk lecithin) for mayonnaise; coagulation/gelation (white sets ~60–65 °C, yolk ~65–70 °C) for custards and binding; leavening; clarifying (consommé); colouring and glazing.",
+        "Safety: Salmonella in/on eggs; avoid raw egg dishes; pasteurised liquid egg; refrigerate; cook until firm."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Eggs are nutrient-dense foods whose structure and chemistry give them multifunctional roles in cooking and food manufacture.",
+    "keyFacts": [
+      "Albumen pH rises on storage 7.6→9.2.",
+      "Lecithin in yolk emulsifies.",
+      "Haugh unit measures freshness.",
+      "Avidin binds biotin."
+    ],
+    "keyTerms": [
+      "Haugh unit",
+      "Candling",
+      "Ovalbumin",
+      "Lecithin",
+      "Coagulation"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Yolk has the lipids; albumen has the protein."
+    ],
+    "commonTraps": [
+      "Do not say egg shells are mostly protein — mostly calcium carbonate."
+    ],
+    "mustRemember": [
+      "Mayonnaise: yolk lecithin."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Lawrie: Meat Science",
+      "kind": "scientific"
+    },
+    {
+      "name": "Hui: Handbook of Food Science, Technology and Engineering",
+      "kind": "educational"
+    },
+    {
+      "name": "FSS (Food Products Standards) Regulations, 2011",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-egg-characteristics-q1",
+        "type": "mcq",
+        "prompt": "Haugh unit is used to judge:",
+        "options": [
+          "Shell colour",
+          "Egg freshness/albumen quality",
+          "Yolk colour",
+          "Egg size"
+        ],
+        "correctIndex": 1,
+        "explanation": "Based on albumen height and egg weight."
+      },
+      {
+        "id": "fsft-egg-characteristics-q2",
+        "type": "mcq",
+        "prompt": "Which egg component is the emulsifier in mayonnaise?",
+        "options": [
+          "Ovalbumin",
+          "Lecithin",
+          "Lysozyme",
+          "Avidin"
+        ],
+        "correctIndex": 1,
+        "explanation": "Phospholipid in yolk."
+      },
+      {
+        "id": "fsft-egg-characteristics-q3",
+        "type": "mcq",
+        "prompt": "Albumen pH increases because of loss of:",
+        "options": [
+          "CO2",
+          "Water",
+          "O2",
+          "Nitrogen"
+        ],
+        "correctIndex": 0,
+        "explanation": "CO2 escapes through the shell."
+      }
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "id": "fsft-indigenous-dairy-products",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 54,
+  "title": "Indigenous (Traditional) Dairy Products",
+  "shortDescription": "Dahi, paneer, khoa, rasgulla and other Indian milk sweets: principles and technology.",
+  "genZNote": "Indian dairy sweets are applied food science: acid, heat, patience. Paneer vs chhana vs khoa — know which one gets pressed and which gets cooked down.",
+  "sections": [
+    {
+      "id": "table",
+      "heading": "Product Principles",
+      "body": "Gujarat note: Amul butter, ghee, shrikhand, basundi and cheese reflect large-scale modernisation of traditional recipes; the Anand model of cooperatives shaped India's dairy sector.",
+      "table": {
+        "caption": "Indian dairy products",
+        "columnHeaders": [
+          "Product",
+          "Basis",
+          "Key technology"
+        ],
+        "rows": [
+          [
+            "Dahi/curd, lassi, chhash, shrikhand, misti doi",
+            "Fermented milk",
+            "LAB culture; strained curd + sugar = shrikhand"
+          ],
+          [
+            "Paneer",
+            "Acid-coagulated, pressed",
+            "Heat 85–90 °C milk, add citric acid or lactic acid, drain, press"
+          ],
+          [
+            "Chhana",
+            "Acid-heat coagulated, not pressed",
+            "Base for rasgulla, sandesh"
+          ],
+          [
+            "Khoa / mawa",
+            "Heat-desiccated milk",
+            "Heating with stirring to ~ 55–70% solids; base for peda, burfi, gulab jamun"
+          ],
+          [
+            "Rasgulla",
+            "Chhana balls in sugar syrup",
+            "Kneaded chhana cooked in syrup; spongy structure"
+          ],
+          [
+            "Peda, burfi, kalakand",
+            "Khoa-based sweets",
+            "Khoa + sugar"
+          ],
+          [
+            "Rabri, basundi, kulfi",
+            "Concentrated milk products",
+            "Evaporation, with kulfi frozen"
+          ],
+          [
+            "Ghee, makkhan",
+            "Fat products",
+            "Desi method from dahi or cream"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "tech",
+      "heading": "Technological Notes",
+      "bullets": [
+        "Khoa types: pindi, dhap, danedar depending on acidity and heating.",
+        "Paneer yield ~ 16–20% from buffalo milk; sold in vacuum packs; FSSAI standard: moisture ≤ 70% and milk fat ≥ 50% of dry matter.",
+        "Quality issues: hard texture (over-heating), rubbery paneer, sandiness, microbial spoilage due to high moisture.",
+        "Mechanisation: continuous khoa makers, paneer presses, aseptic packing, MAP.",
+        "Regulation: FSSAI standards for each product; hygiene via GMP/HACCP."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Indigenous dairy products use acid coagulation, heat desiccation and fermentation to create traditional foods that are increasingly industrialised.",
+    "keyFacts": [
+      "Paneer: acid-coagulated and pressed.",
+      "Chhana is not pressed.",
+      "Khoa is heat-desiccated milk.",
+      "Shrikhand: strained dahi + sugar."
+    ],
+    "keyTerms": [
+      "Paneer",
+      "Chhana",
+      "Khoa",
+      "Shrikhand",
+      "Rasgulla"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Rasgulla base: chhana."
+    ],
+    "commonTraps": [
+      "Do not say paneer is made using rennet like cheese — acid."
+    ],
+    "mustRemember": [
+      "Paneer vs chhana: press."
+    ]
+  },
+  "sources": [
+    {
+      "name": "De Sa: Dairy Science and Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "Walstra: Dairy Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "FSS (Food Products Standards) Regulations, 2011 — Dairy",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-indigenous-dairy-products-q1",
+        "type": "mcq",
+        "prompt": "Paneer is coagulated using:",
+        "options": [
+          "Acid and heat",
+          "Rennet only",
+          "Fermentation only",
+          "Alcohol"
+        ],
+        "correctIndex": 0,
+        "explanation": "Citric or lactic acid with heat."
+      },
+      {
+        "id": "fsft-indigenous-dairy-products-q2",
+        "type": "mcq",
+        "prompt": "Khoa is produced by:",
+        "options": [
+          "Freezing",
+          "Heat desiccation of milk",
+          "Acid-heat coagulation",
+          "Fermentation"
+        ],
+        "correctIndex": 1,
+        "explanation": "Evaporation by heating."
+      },
+      {
+        "id": "fsft-indigenous-dairy-products-q3",
+        "type": "mcq",
+        "prompt": "Which is a fermented milk product?",
+        "options": [
+          "Dahi",
+          "Khoa",
+          "Ghee",
+          "Paneer"
+        ],
+        "correctIndex": 0,
+        "explanation": "LAB fermentation."
+      }
+    ]
+  }
+}

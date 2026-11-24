@@ -1,0 +1,141 @@
+{
+  "id": "fsft-physical-properties-colloids",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 18,
+  "title": "Physical Properties of Food and Colloidal Systems",
+  "shortDescription": "Water activity, rheology, colour and the physics of emulsions, gels and foams.",
+  "genZNote": "Texture is physics you can taste. Water activity is the real boss of microbes — not 'how wet' the food looks.",
+  "sections": [
+    {
+      "id": "physical",
+      "heading": "Physical Properties",
+      "bullets": [
+        "Water activity aw: ratio of vapour pressure of food to pure water; it, not total moisture, governs microbial growth — most bacteria need aw > 0.91, yeasts > 0.88, moulds > 0.80; xerophilic moulds/osmophilic yeasts down to ~0.60.",
+        "Viscosity and rheology: Newtonian (water, oil), pseudoplastic/shear-thinning (ketchup), dilatant, plastic (butter), thixotropic.",
+        "Texture attributes: hardness, adhesiveness, cohesiveness, springiness, chewiness (Texture Profile Analysis).",
+        "Colour measurement: CIE L*a*b*; density, specific heat, thermal conductivity influence processing design.",
+        "Glass transition and crystallisation matter in dried and frozen foods."
+      ]
+    },
+    {
+      "id": "colloids",
+      "heading": "Colloidal Systems",
+      "body": "Colloids have particles ~1 nm–1 µm, scatter light (Tyndall effect), show Brownian motion and need stabilisers: emulsifiers (lecithin, mono/diglycerides) lower interfacial tension, hydrocolloids (pectin, xanthan, guar, gelatin, carrageenan, agar) thicken or gel. Instability: creaming, coalescence, flocculation, syneresis.",
+      "table": {
+        "caption": "Food colloids",
+        "columnHeaders": [
+          "Type",
+          "Dispersed in continuous",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Sol",
+            "Solid in liquid",
+            "Starch dispersion, soup"
+          ],
+          [
+            "Gel",
+            "Liquid in solid network",
+            "Jelly, curd, paneer"
+          ],
+          [
+            "Emulsion o/w",
+            "Oil in water",
+            "Milk, mayonnaise"
+          ],
+          [
+            "Emulsion w/o",
+            "Water in oil",
+            "Butter, margarine"
+          ],
+          [
+            "Foam",
+            "Gas in liquid",
+            "Whipped cream, egg-white foam"
+          ],
+          [
+            "Solid foam",
+            "Gas in solid",
+            "Bread, ice cream (partly)"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Physical properties such as water activity, rheology and colloidal state determine food stability, texture and processing behaviour.",
+    "keyFacts": [
+      "aw bacteria >0.91; yeasts >0.88; moulds >0.80.",
+      "Milk is an o/w emulsion; butter is w/o.",
+      "Tyndall effect shows colloids."
+    ],
+    "keyTerms": [
+      "Water activity",
+      "Rheology",
+      "Emulsion",
+      "Gel",
+      "Syneresis"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Hydrocolloids: pectin, xanthan, guar, agar."
+    ],
+    "commonTraps": [
+      "Water content and water activity are not the same."
+    ],
+    "mustRemember": [
+      "Butter w/o; milk o/w."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Fennema's Food Chemistry",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-physical-properties-colloids-q1",
+        "type": "mcq",
+        "prompt": "Which is a water-in-oil emulsion?",
+        "options": [
+          "Milk",
+          "Mayonnaise",
+          "Butter",
+          "Cream soup"
+        ],
+        "correctIndex": 2,
+        "explanation": "Butter has water droplets in fat."
+      },
+      {
+        "id": "fsft-physical-properties-colloids-q2",
+        "type": "mcq",
+        "prompt": "Microbial growth is governed chiefly by:",
+        "options": [
+          "Total moisture",
+          "Water activity",
+          "Density",
+          "Colour"
+        ],
+        "correctIndex": 1,
+        "explanation": "aw measures available water."
+      },
+      {
+        "id": "fsft-physical-properties-colloids-q3",
+        "type": "mcq",
+        "prompt": "Syneresis is:",
+        "options": [
+          "Whey separation from a gel",
+          "Gas formation",
+          "Oxidation",
+          "Browning"
+        ],
+        "correctIndex": 0,
+        "explanation": "Liquid exudes from a gel."
+      }
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "id": "fsft-spoilage-animal-foods",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 25,
+  "title": "Food Spoilage — Milk, Meat, Poultry and Fish",
+  "shortDescription": "What spoils animal foods, which organisms are responsible and how to recognise each pattern.",
+  "genZNote": "High protein, high water, neutral pH — animal foods are basically a microbial all-you-can-eat. Learn each food's usual suspect.",
+  "sections": [
+    {
+      "id": "milk",
+      "heading": "Milk and Milk Products",
+      "bullets": [
+        "Souring by lactic acid bacteria (Lactococcus lactis) ferments lactose; gas by coliforms; proteolysis and bitterness by psychrotrophic Pseudomonas/Bacillus enzymes that survive heat; ropiness by Alcaligenes viscolactis; sweet curdling by Bacillus.",
+        "Moulds spoil butter and cheese surface; yeasts in sweetened condensed milk and cream.",
+        "Control: cold chain, pasteurization, hygiene, UHT/aseptic."
+      ]
+    },
+    {
+      "id": "meat",
+      "heading": "Meat, Poultry and Fish",
+      "bullets": [
+        "Meat: Pseudomonas (slime, off-odours aerobically), Lactobacillus/Brochothrix in vacuum packs (souring, greening), moulds on dried/cured meat; proteolysis and rancidity produce off-flavours.",
+        "Poultry: Pseudomonas, Salmonella, Campylobacter risk; spoilage visible as slime at ~10^7–10^8 CFU/cm².",
+        "Fish: high water, neutral pH, delicate flesh; TMAO reduced to trimethylamine (TMA, \"fishy odour\") by Shewanella and Pseudomonas; histamine formation in scombroid fish; rapid rigor/ autolysis; TVB-N and K value are freshness indices.",
+        "Control: chilling at 0 °C with ice, freezing at ≤ −18 °C, vacuum/MAP, salting/smoking, curing, canning."
+      ]
+    },
+    {
+      "id": "table",
+      "heading": "At a Glance",
+      "table": {
+        "caption": "Spoilage signs",
+        "columnHeaders": [
+          "Food",
+          "Typical organisms",
+          "Sign"
+        ],
+        "rows": [
+          [
+            "Milk",
+            "Lactococcus, coliforms, Bacillus",
+            "Sour, gas, ropy, sweet curdle"
+          ],
+          [
+            "Meat",
+            "Pseudomonas, Lactobacillus",
+            "Slime, greening"
+          ],
+          [
+            "Fish",
+            "Shewanella, Pseudomonas",
+            "TMA odour"
+          ],
+          [
+            "Eggs",
+            "Pseudomonas, Proteus",
+            "Green/black rot"
+          ],
+          [
+            "Butter",
+            "Moulds, Pseudomonas",
+            "Rancid, surface mould"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Animal foods spoil rapidly because of their high moisture, nutrients and near-neutral pH; spoilage patterns depend on food type, storage temperature and packaging.",
+    "keyFacts": [
+      "Fish odour: TMA from TMAO.",
+      "Aerobic meat spoilage: Pseudomonas.",
+      "Milk souring: lactic acid bacteria.",
+      "Histamine: scombroid fish."
+    ],
+    "keyTerms": [
+      "TMA",
+      "Psychrotroph",
+      "Rope spoilage",
+      "Brochothrix",
+      "TVB-N"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Pasteurization does not stop later psychrotroph enzyme spoilage if raw milk was poor."
+    ],
+    "commonTraps": [
+      "Do not say all spoilage microbes are pathogens."
+    ],
+    "mustRemember": [
+      "Fish smell = trimethylamine."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Jay: Modern Food Microbiology",
+      "kind": "educational"
+    },
+    {
+      "name": "FAO/WHO — Microbiological Risk Assessment Series",
+      "kind": "educational"
+    },
+    {
+      "name": "Frazier & Westhoff: Food Microbiology",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-spoilage-animal-foods-q1",
+        "type": "mcq",
+        "prompt": "Trimethylamine formation in fish is due to reduction of:",
+        "options": [
+          "TMAO",
+          "Histidine",
+          "Urea",
+          "Glycogen"
+        ],
+        "correctIndex": 0,
+        "explanation": "Bacteria reduce TMAO to TMA."
+      },
+      {
+        "id": "fsft-spoilage-animal-foods-q2",
+        "type": "mcq",
+        "prompt": "Aerobic slime on refrigerated meat is mostly caused by:",
+        "options": [
+          "Pseudomonas",
+          "Clostridium",
+          "Norovirus",
+          "Bifidobacterium"
+        ],
+        "correctIndex": 0,
+        "explanation": "Pseudomonas dominates aerobic chilled spoilage."
+      },
+      {
+        "id": "fsft-spoilage-animal-foods-q3",
+        "type": "mcq",
+        "prompt": "Milk souring is chiefly due to:",
+        "options": [
+          "Lactic acid bacteria",
+          "Moulds",
+          "Viruses",
+          "Yeasts only"
+        ],
+        "correctIndex": 0,
+        "explanation": "LAB ferment lactose to lactic acid."
+      }
+    ]
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "id": "fsft-dairy-quality-packaging-hygiene",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 55,
+  "title": "Dairy Quality Control, Chemical Quality Assurance, Packaging, Hygiene and Adulteration Detection",
+  "shortDescription": "Quality systems for dairy: tests, contaminants, packaging technologies and plant hygiene including CIP.",
+  "genZNote": "Dairy QC is where 'looks fine' gets audited by a lab. CIP = clean without disassembling, alkali first and acid after.",
+  "sections": [
+    {
+      "id": "qc",
+      "heading": "Quality Control and Chemical Quality Assurance",
+      "bullets": [
+        "Platform tests: temperature, odour, COB, alcohol test, acidity, fat/SNF (milk analysers), density, adulterant spot tests, antibiotics.",
+        "Laboratory microbiology: SPC, coliforms, thermodurics, yeast and mould, pathogens by PCR; process checks: phosphatase, peroxidase, turbidity (sterilised milk).",
+        "Chemical quality assurance: antibiotic residues (β-lactam tests), pesticide and heavy-metal residues, aflatoxin M1 (FSSAI limit 0.5 µg/kg milk), melamine, adulterants; sensory evaluation by scorecards; HACCP and ISO 22000/9001 for plants.",
+        "Adulteration detection: see Milk Adulterants lesson; confirm with FTIR/ultrasonic analysers and reference methods; legal samples are tested at notified labs."
+      ]
+    },
+    {
+      "id": "pack",
+      "heading": "Dairy Packaging Technologies",
+      "bullets": [
+        "Pasteurised milk: polyethylene (LDPE/LLDPE) pouches, PET/HDPE bottles; UHT: aseptic multilayer cartons (paperboard, PE, aluminium foil) with sterile filling; glass bottles for premium milk; tubs and cups for dahi; foil/laminates for ghee, butter, paneer; vacuum packs and MAP for cheese.",
+        "Light protection: riboflavin sensitises photo-oxidation, giving off-flavours — use opaque packs.",
+        "Requirements: food-grade materials, complete labelling, cold chain for pasteurised products."
+      ]
+    },
+    {
+      "id": "hygiene",
+      "heading": "Dairy Hygiene Practices",
+      "steps": [
+        {
+          "name": "Pre-rinse",
+          "explanation": "Water flush of residue.",
+          "purpose": "Removes bulk soil."
+        },
+        {
+          "name": "Alkaline wash",
+          "explanation": "0.5–1.5% NaOH-based detergent at ~70–80 °C.",
+          "purpose": "Dissolves fat/protein."
+        },
+        {
+          "name": "Intermediate rinse",
+          "explanation": "Water.",
+          "purpose": "Prevents chemical carry-over."
+        },
+        {
+          "name": "Acid wash",
+          "explanation": "0.5–1% nitric or phosphoric acid.",
+          "purpose": "Removes milkstone/minerals."
+        },
+        {
+          "name": "Final rinse and sanitise",
+          "explanation": "Potable water; sanitiser if required.",
+          "purpose": "Reduces residual microbes."
+        }
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Dairy quality assurance combines raw-milk testing, process verification, residue control, protective packaging and rigorous plant hygiene such as CIP.",
+    "keyFacts": [
+      "Aflatoxin M1 limit in milk: 0.5 µg/kg.",
+      "CIP: alkali then acid wash.",
+      "Riboflavin causes light-induced oxidation.",
+      "Phosphatase and peroxidase tests are process checks."
+    ],
+    "keyTerms": [
+      "CIP",
+      "Aflatoxin M1",
+      "Thermoduric bacteria",
+      "Milkstone",
+      "Aseptic carton"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Peroxidase negative indicates overheating."
+    ],
+    "commonTraps": [
+      "Do not mix aflatoxin B1 (feed) with M1 (milk)."
+    ],
+    "mustRemember": [
+      "CIP: alkali for organic soil; acid for minerals."
+    ]
+  },
+  "sources": [
+    {
+      "name": "De Sa: Dairy Science and Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "Walstra: Dairy Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "FSS (Food Products Standards) Regulations, 2011 — Dairy",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-dairy-quality-packaging-hygiene-q1",
+        "type": "mcq",
+        "prompt": "Milkstone is removed using:",
+        "options": [
+          "Acid wash",
+          "Alkali only",
+          "Cold water only",
+          "Sugar"
+        ],
+        "correctIndex": 0,
+        "explanation": "Mineral deposits dissolve in acid."
+      },
+      {
+        "id": "fsft-dairy-quality-packaging-hygiene-q2",
+        "type": "mcq",
+        "prompt": "Aflatoxin M1 appears in milk from cow's intake of:",
+        "options": [
+          "Aflatoxin B1 contaminated feed",
+          "Antibiotics",
+          "Salt",
+          "Water"
+        ],
+        "correctIndex": 0,
+        "explanation": "Metabolised from B1."
+      },
+      {
+        "id": "fsft-dairy-quality-packaging-hygiene-q3",
+        "type": "mcq",
+        "prompt": "Light exposure of milk mainly degrades:",
+        "options": [
+          "Lactose",
+          "Riboflavin and fat flavour",
+          "Calcium",
+          "Iron"
+        ],
+        "correctIndex": 1,
+        "explanation": "Photo-oxidation produces off-flavours."
+      }
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "id": "fsft-food-safety-definition-scope-standards",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 40,
+  "title": "Food Safety — Definition, Scope, Importance, Standards and Affecting Factors",
+  "shortDescription": "What food safety means, why it matters economically and publicly, and what factors threaten it along the farm-to-fork chain.",
+  "genZNote": "Safe food is the baseline — quality, nutrition and aesthetics are the glow-up that only works after that. Five Keys to Safer Food is your cheat sheet.",
+  "sections": [
+    {
+      "id": "def",
+      "heading": "Definition and Scope",
+      "body": "Food safety is the assurance that food will not cause harm to the consumer when prepared and/or eaten according to its intended use (Codex). It covers hazards from primary production, processing, storage, transport, retail and food service up to the consumer (\"farm to fork\"). Food safety differs from food security (availability/access), food quality (sensory and nutritional attributes) and food defence (intentional harm)."
+    },
+    {
+      "id": "importance",
+      "heading": "Importance",
+      "bullets": [
+        "WHO estimates hundreds of millions of foodborne illnesses and over a hundred thousand deaths yearly, with a high burden in low-income settings; unsafe food also worsens malnutrition.",
+        "Economic cost: lost productivity, healthcare costs, recalls, trade rejections; trust and brand loss.",
+        "Legal duty: FSS Act s.26 (FBO responsibility), s.27 (liability)."
+      ]
+    },
+    {
+      "id": "standards",
+      "heading": "Standards and Affecting Factors",
+      "bullets": [
+        "Standards: legal (FSS regulations), voluntary (BIS, Codex, ISO 22000, BRCGS/SQF/FSSC 22000), and customer specifications.",
+        "Factors: raw material quality, pesticide/antibiotic residues, water and ice quality, temperature control, personnel health and hygiene, equipment design and cleaning, cross-contamination, pest control, packaging and storage, transport, consumer handling.",
+        "Emerging: antimicrobial resistance, climate-linked mycotoxins, e-commerce food delivery, novel foods, food fraud.",
+        "WHO Five Keys to Safer Food: keep clean, separate raw and cooked, cook thoroughly, keep food at safe temperatures, use safe water and raw materials."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Food safety ensures food will not harm consumers when prepared and eaten as intended, achieved through standards, hygiene and management systems across the chain.",
+    "keyFacts": [
+      "Farm-to-fork approach.",
+      "WHO Five Keys to Safer Food.",
+      "World Food Safety Day: 7 June.",
+      "FBO responsible under FSS Act s.26."
+    ],
+    "keyTerms": [
+      "Food safety",
+      "Food defence",
+      "Food fraud",
+      "Farm to fork",
+      "Five Keys"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Food safety ≠ food security."
+    ],
+    "commonTraps": [
+      "Do not use food quality and food safety interchangeably."
+    ],
+    "mustRemember": [
+      "Five Keys: clean, separate, cook, safe temperature, safe water."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Food safety",
+        "termB": "Food security",
+        "distinction": "Safety: not harmful; security: available and accessible."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "Codex General Principles of Food Hygiene (CXC 1-1969)",
+      "kind": "educational",
+      "url": "https://www.fao.org/fao-who-codexalimentarius"
+    },
+    {
+      "name": "FSS (Licensing & Registration) Regulations, 2011 — Schedule 4",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-food-safety-definition-scope-standards-q1",
+        "type": "mcq",
+        "prompt": "The WHO Five Keys to Safer Food include:",
+        "options": [
+          "Keep clean",
+          "Add preservatives",
+          "Use irradiation",
+          "Fry always"
+        ],
+        "correctIndex": 0,
+        "explanation": "Keep clean, separate, cook thoroughly, safe temperatures, safe water/raw materials."
+      },
+      {
+        "id": "fsft-food-safety-definition-scope-standards-q2",
+        "type": "mcq",
+        "prompt": "Food defence refers to:",
+        "options": [
+          "Hunger relief",
+          "Protection from intentional contamination",
+          "Pest control",
+          "Storage"
+        ],
+        "correctIndex": 1,
+        "explanation": "Intentional adulteration/tampering."
+      },
+      {
+        "id": "fsft-food-safety-definition-scope-standards-q3",
+        "type": "mcq",
+        "prompt": "Responsibility for compliance rests with:",
+        "options": [
+          "Consumer",
+          "FBO",
+          "Court",
+          "NGO"
+        ],
+        "correctIndex": 1,
+        "explanation": "Section 26."
+      }
+    ]
+  }
+}

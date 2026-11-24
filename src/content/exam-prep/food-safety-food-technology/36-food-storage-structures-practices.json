@@ -1,0 +1,122 @@
+{
+  "id": "fsft-food-storage-structures-practices",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 36,
+  "title": "Food Storage — Structures, Practices and Storage Environment",
+  "shortDescription": "Warehouses, silos and cold storage; storage pests; temperature, humidity and gas control.",
+  "genZNote": "Storage is preservation with a roof. Moisture, temperature, pests — the three boss fights every godown has to beat.",
+  "sections": [
+    {
+      "id": "structures",
+      "heading": "Storage Structures",
+      "bullets": [
+        "Traditional: kothi, bamboo bins, mud bins, earthen pots, Bukhari.",
+        "Modern: godowns/warehouses, CAP (cover and plinth) for bulk, steel and concrete silos, hermetic storage, cold storage for perishables, CA (controlled atmosphere) rooms.",
+        "Institutions: FCI, Central Warehousing Corporation (CWC), State Warehousing Corporations; WDRA regulates warehouses and negotiable warehouse receipts.",
+        "Design needs: dry, rodent- and bird-proof, ventilated, damp-proof floor, dunnage, stack-height limits."
+      ]
+    },
+    {
+      "id": "environment",
+      "heading": "Storage Environment and Interaction",
+      "bullets": [
+        "Safe moisture: roughly ≤ 12% for cereals (lower for oilseeds and pulses) — grain is hygroscopic and equilibrates with air humidity.",
+        "Temperature and RH drive respiration, heating and mould; insects multiply at 25–35 °C.",
+        "Storage pests: rice weevil, red flour beetle, lesser grain borer, khapra beetle, pulse beetle, Angoumois grain moth, rats; control by hygiene, FIFO/FEFO, fumigation (phosphine), controlled atmosphere, inert dusts.",
+        "Cold storage: potatoes ~2–4 °C, apples 0–4 °C, bananas at about 13–14 °C (chilling injury below); ethylene control; CA lowers O2 and raises CO2 to slow respiration.",
+        "Interactions: odour absorption, moisture migration, hot spots, mycotoxin build-up, nutrient loss (vitamin C), sprouting/greening in potatoes."
+      ]
+    },
+    {
+      "id": "practice",
+      "heading": "Good Storage Practices",
+      "bullets": [
+        "Segregate by commodity and batch; maintain traceability and stock rotation.",
+        "Monitor temperature, humidity, pest activity; use calibrated data loggers.",
+        "Hazard control in line with GHP/GMP: cleaning schedules, pest-control logs, no unauthorised chemicals near food.",
+        "Cold chain: pre-cooling, reefer transport, consistent temperature to avoid condensation."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Food storage safeguards quality by controlling structure, temperature, humidity, gas composition and pests throughout the storage period.",
+    "keyFacts": [
+      "CAP, silo, godown, cold store.",
+      "Safe grain moisture ~12%.",
+      "Phosphine is the common grain fumigant.",
+      "CA storage: low O2, high CO2."
+    ],
+    "keyTerms": [
+      "CAP storage",
+      "FIFO/FEFO",
+      "Fumigation",
+      "Chilling injury",
+      "WDRA"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Methyl bromide is restricted under the Montreal Protocol."
+    ],
+    "commonTraps": [
+      "Do not store bananas at 0–4 °C."
+    ],
+    "mustRemember": [
+      "Khapra beetle: major quarantine pest."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Potter & Hotchkiss: Food Science",
+      "kind": "scientific"
+    },
+    {
+      "name": "FSSAI Regulations",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-food-storage-structures-practices-q1",
+        "type": "mcq",
+        "prompt": "Which pest is quarantine-significant in stored grain?",
+        "options": [
+          "Khapra beetle",
+          "Housefly",
+          "Honeybee",
+          "Earthworm"
+        ],
+        "correctIndex": 0,
+        "explanation": "Trogoderma granarium."
+      },
+      {
+        "id": "fsft-food-storage-structures-practices-q2",
+        "type": "mcq",
+        "prompt": "CA storage involves:",
+        "options": [
+          "Lowering oxygen and raising CO2",
+          "Raising oxygen",
+          "Adding salt",
+          "Sunlight"
+        ],
+        "correctIndex": 0,
+        "explanation": "It slows respiration."
+      },
+      {
+        "id": "fsft-food-storage-structures-practices-q3",
+        "type": "mcq",
+        "prompt": "Negotiable warehouse receipts are regulated by:",
+        "options": [
+          "FSSAI",
+          "WDRA",
+          "BIS",
+          "AGMARK"
+        ],
+        "correctIndex": 1,
+        "explanation": "Warehousing Development and Regulatory Authority."
+      }
+    ]
+  }
+}

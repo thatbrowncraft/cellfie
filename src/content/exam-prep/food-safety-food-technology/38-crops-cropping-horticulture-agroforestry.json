@@ -1,0 +1,142 @@
+{
+  "id": "fsft-crops-cropping-horticulture-agroforestry",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 38,
+  "title": "Crops, Cropping Systems, Horticulture and Agroforestry",
+  "shortDescription": "Seasons, cropping patterns, horticultural crops and tree-based systems.",
+  "genZNote": "Kharif, Rabi, Zaid — farming's three seasons and a lot of easy 1-mark pickups. Add trees on farms and you've got agroforestry.",
+  "sections": [
+    {
+      "id": "seasons",
+      "heading": "Crops and Seasons",
+      "body": "Crop groups: cereals, millets, pulses, oilseeds, fibre, sugar, fodder, plantation, spices, horticultural. Gujarat leads in groundnut, cotton, castor, cumin, isabgol among others (check yearly figures).",
+      "table": {
+        "caption": "Cropping seasons",
+        "columnHeaders": [
+          "Season",
+          "Period",
+          "Crops"
+        ],
+        "rows": [
+          [
+            "Kharif",
+            "June–October (monsoon)",
+            "Rice, maize, jowar, bajra, cotton, groundnut, soybean, tur"
+          ],
+          [
+            "Rabi",
+            "October–March (winter)",
+            "Wheat, barley, gram, mustard, pea, linseed"
+          ],
+          [
+            "Zaid",
+            "March–June",
+            "Watermelon, cucumber, moong, fodder"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "cropping",
+      "heading": "Cropping Systems",
+      "bullets": [
+        "Monocropping, multiple cropping, double cropping, sequential cropping, relay cropping, intercropping (mixed vs row), crop rotation (e.g. cereal–legume), ratoon cropping.",
+        "Benefits: soil fertility (legumes fix nitrogen), pest breaks, risk spreading; indices: cropping intensity and land-equivalent ratio."
+      ]
+    },
+    {
+      "id": "horti",
+      "heading": "Horticultural Crops and Agroforestry",
+      "bullets": [
+        "Horticulture: fruits, vegetables, flowers, spices, plantation crops, medicinal plants; high value per unit area; India is among the top fruit and vegetable producers.",
+        "Post-harvest handling: harvesting maturity, grading, pre-cooling, packing, cold chain.",
+        "Agroforestry: trees with crops/livestock — agri-silviculture, silvopasture, agri-horticulture, boundary plantation, windbreaks/shelterbelts, home-gardens; India's National Agroforestry Policy (2014) was the first of its kind in the world.",
+        "Benefits: carbon sequestration, fodder, fuelwood, shade and income diversification."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Crops are grown in seasonal and intensive systems; horticulture and agroforestry diversify farm income and ecological services.",
+    "keyFacts": [
+      "Kharif June–Oct; Rabi Oct–Mar; Zaid Mar–Jun.",
+      "Legumes fix nitrogen.",
+      "National Agroforestry Policy: 2014."
+    ],
+    "keyTerms": [
+      "Cropping intensity",
+      "Relay cropping",
+      "Silvopasture",
+      "Zaid",
+      "Windbreak"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Rice and cotton are kharif; wheat and gram are rabi."
+    ],
+    "commonTraps": [
+      "Do not mix intercropping with mixed cropping."
+    ],
+    "mustRemember": [
+      "Zaid: summer."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of Agriculture & Farmers Welfare",
+      "kind": "educational",
+      "url": "https://agricoop.gov.in"
+    },
+    {
+      "name": "Economic Survey of India — Agriculture chapter",
+      "kind": "educational"
+    },
+    {
+      "name": "ICAR Handbook of Agriculture",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-crops-cropping-horticulture-agroforestry-q1",
+        "type": "mcq",
+        "prompt": "Which is a rabi crop?",
+        "options": [
+          "Rice",
+          "Wheat",
+          "Cotton",
+          "Bajra"
+        ],
+        "correctIndex": 1,
+        "explanation": "Wheat is sown in winter."
+      },
+      {
+        "id": "fsft-crops-cropping-horticulture-agroforestry-q2",
+        "type": "mcq",
+        "prompt": "Silvopasture combines:",
+        "options": [
+          "Trees + pasture/livestock",
+          "Crops + fish",
+          "Fish + ducks",
+          "Only trees"
+        ],
+        "correctIndex": 0,
+        "explanation": "Trees with forage and animals."
+      },
+      {
+        "id": "fsft-crops-cropping-horticulture-agroforestry-q3",
+        "type": "mcq",
+        "prompt": "National Agroforestry Policy was launched in:",
+        "options": [
+          "2004",
+          "2009",
+          "2014",
+          "2019"
+        ],
+        "correctIndex": 2,
+        "explanation": "2014."
+      }
+    ]
+  }
+}

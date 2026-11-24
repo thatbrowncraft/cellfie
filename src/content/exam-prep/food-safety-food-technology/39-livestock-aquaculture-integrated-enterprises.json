@@ -1,0 +1,147 @@
+{
+  "id": "fsft-livestock-aquaculture-integrated-enterprises",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 39,
+  "title": "Livestock Systems, Aquaculture, Integrated Fish Farming and Value Chains",
+  "shortDescription": "Dairy, piggery, goat, poultry and duck systems; fish-integrated farming; enterprises and value chains for farmers.",
+  "genZNote": "The pond, the pen and the processing unit are one business plan. Integrated farming = one farm's waste is another's free input.",
+  "sections": [
+    {
+      "id": "livestock",
+      "heading": "Livestock Systems",
+      "body": "Key concerns: feed and fodder, housing, health, breeding, biosecurity and market linkage.",
+      "table": {
+        "caption": "Livestock snapshot",
+        "columnHeaders": [
+          "System",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "Dairy",
+            "Indigenous breeds (Gir, Sahiwal, Red Sindhi), crossbreds (Jersey/HF crosses), buffaloes (Murrah, Jaffarabadi, Banni, Mehsana); Amul cooperative (Anand, 1946) and NDDB's Operation Flood (1970) made India the largest milk producer"
+          ],
+          [
+            "Piggery",
+            "Fast breeders, feed efficiency, manure; breeds like large white Yorkshire"
+          ],
+          [
+            "Goat",
+            "Hardy, low-input; Jamunapari, Barbari, Surti, Kutchi"
+          ],
+          [
+            "Poultry",
+            "Layer and broiler enterprises; backyard poultry; breeds like White Leghorn (layers), Vencobb"
+          ],
+          [
+            "Duckery",
+            "Khaki Campbell, Indian Runner; suited to wet areas"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "aqua",
+      "heading": "Aquaculture and Integrated Systems",
+      "bullets": [
+        "Freshwater aquaculture of Indian major carps (catla, rohu, mrigal) and exotic carps in polyculture; shrimp and prawn culture; brackish-water systems.",
+        "Duck/poultry-cum-fish: droppings fertilise the pond and ducks control weeds/insects, lowering feed and fertiliser costs.",
+        "Dairy-cum-fish and piggery-cum-fish: manure/wash-water feeds plankton, supporting fish growth; need stocking and manuring control to protect water quality.",
+        "Benefits: resource recycling, higher income per unit area, diversified risk."
+      ]
+    },
+    {
+      "id": "enterprises",
+      "heading": "Enterprises and Value Chains",
+      "bullets": [
+        "Scale: micro/small/medium/large enterprises (MSME limits revised in 2020: micro ≤ ₹1 crore investment and ≤ ₹5 crore turnover; small ≤ ₹10 crore/₹50 crore; medium ≤ ₹50 crore/₹250 crore).",
+        "Value chain: inputs → production → aggregation → processing → storage → transport → marketing. Secondary enterprises: milling, dairy processing, pickles, jaggery, fish drying, feed units.",
+        "Institutions and schemes: FPOs, cooperatives (Amul model), e-NAM, PMFME for micro food enterprises, PM Kisan Sampada Yojana, PLI for food processing, Agriculture Infrastructure Fund."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Livestock, aquaculture and integrated systems, supported by processing enterprises and value chains, strengthen farmer incomes and nutrition.",
+    "keyFacts": [
+      "Operation Flood (1970); Amul founded 1946 at Anand.",
+      "Duck-cum-fish uses duck droppings as pond manure.",
+      "Indian major carps: catla, rohu, mrigal."
+    ],
+    "keyTerms": [
+      "Polyculture",
+      "Value chain",
+      "FPO",
+      "Operation Flood",
+      "PMFME"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "India: largest milk producer."
+    ],
+    "commonTraps": [
+      "Do not say Jaffarabadi is a cow breed — it is a buffalo."
+    ],
+    "mustRemember": [
+      "Amul 1946; Verghese Kurien."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Ministry of Agriculture & Farmers Welfare",
+      "kind": "educational",
+      "url": "https://agricoop.gov.in"
+    },
+    {
+      "name": "Economic Survey of India — Agriculture chapter",
+      "kind": "educational"
+    },
+    {
+      "name": "ICAR Handbook of Agriculture",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-livestock-aquaculture-integrated-enterprises-q1",
+        "type": "mcq",
+        "prompt": "Which is an Indian major carp?",
+        "options": [
+          "Common carp",
+          "Catla",
+          "Tilapia",
+          "Pangas"
+        ],
+        "correctIndex": 1,
+        "explanation": "Catla, rohu and mrigal are Indian major carps."
+      },
+      {
+        "id": "fsft-livestock-aquaculture-integrated-enterprises-q2",
+        "type": "mcq",
+        "prompt": "Operation Flood was started in:",
+        "options": [
+          "1950",
+          "1970",
+          "1990",
+          "2010"
+        ],
+        "correctIndex": 1,
+        "explanation": "1970 by NDDB."
+      },
+      {
+        "id": "fsft-livestock-aquaculture-integrated-enterprises-q3",
+        "type": "mcq",
+        "prompt": "Jaffarabadi is a:",
+        "options": [
+          "Goat breed",
+          "Buffalo breed",
+          "Cow breed",
+          "Pig breed"
+        ],
+        "correctIndex": 1,
+        "explanation": "It originates in Gujarat."
+      }
+    ]
+  }
+}

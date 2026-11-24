@@ -1,0 +1,146 @@
+{
+  "id": "fsft-innovative-thermal-ohmic-dielectric-ir-induction",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 61,
+  "title": "Innovative Thermal Technologies — Ohmic, Dielectric, Infrared and Induction Heating",
+  "shortDescription": "Electrical, electromagnetic and radiant heating methods and where each fits.",
+  "genZNote": "Why heat food slowly from outside when you can make it heat itself from inside? Ohmic, RF, IR, induction — same goal, different electricity mood.",
+  "sections": [
+    {
+      "id": "table",
+      "heading": "Comparison",
+      "body": "Compared to conventional heating, these methods shorten process time, reduce thermal damage and improve energy efficiency, but need capital, process control and validation for food safety.",
+      "table": {
+        "caption": "Heating technologies",
+        "columnHeaders": [
+          "Technology",
+          "Mechanism",
+          "Typical use",
+          "Key points"
+        ],
+        "rows": [
+          [
+            "Ohmic heating",
+            "Electric current passes directly through food (Joule heating); depends on electrical conductivity",
+            "Pumpable foods with particles, juices, eggs, purees; aseptic processing",
+            "Rapid, uniform; electrodes and conductivity matter; no hot surfaces"
+          ],
+          [
+            "Dielectric heating (RF & microwave)",
+            "Dipole rotation and ion conduction in an alternating electromagnetic field; RF at 13.56/27.12 MHz",
+            "Drying, thawing, pasteurisation, post-baking",
+            "Volumetric; RF penetrates deeper than microwaves"
+          ],
+          [
+            "Infrared heating",
+            "Radiant energy absorbed at the surface (wavelengths ~0.76–1000 µm)",
+            "Baking, roasting, drying, blanching, surface pasteurisation",
+            "Fast surface heating, limited penetration"
+          ],
+          [
+            "Induction heating",
+            "Alternating magnetic field induces eddy currents in a metallic vessel or package",
+            "Cooking vessels, retort/aseptic heating, can sealing, thermal processing of liquids",
+            "Fast, efficient, safe cool-top heat"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "notes",
+      "heading": "Exam Notes",
+      "bullets": [
+        "Ohmic: food acts as a resistor — higher salt content increases conductivity.",
+        "Dielectric loss factor determines heating rate; moisture and salt influence it.",
+        "Infrared heating is mostly a surface effect; microwave and RF are volumetric.",
+        "Induction heating requires a ferromagnetic/conductive material.",
+        "These are called innovative thermal technologies because heat is generated in situ rather than transferred slowly by conduction/convection."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Ohmic, dielectric, infrared and induction heating generate heat directly in or near the food using electricity, enabling fast and efficient thermal processing.",
+    "keyFacts": [
+      "Ohmic = Joule heating through food.",
+      "RF 13.56/27.12 MHz; microwave 915/2450 MHz.",
+      "Infrared: surface heating.",
+      "Induction: eddy currents in metal."
+    ],
+    "keyTerms": [
+      "Joule heating",
+      "Dielectric",
+      "Infrared",
+      "Induction",
+      "Loss factor"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Ohmic depends on electrical conductivity."
+    ],
+    "commonTraps": [
+      "Do not say infrared penetrates deeply."
+    ],
+    "mustRemember": [
+      "Ohmic: current through food."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Fellows: Food Processing Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "Rahman: Handbook of Food Preservation",
+      "kind": "educational"
+    },
+    {
+      "name": "FSSAI Regulations",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-innovative-thermal-ohmic-dielectric-ir-induction-q1",
+        "type": "mcq",
+        "prompt": "Ohmic heating works by:",
+        "options": [
+          "Passing electric current through food",
+          "Radiant surface heating",
+          "Hot air",
+          "Steam only"
+        ],
+        "correctIndex": 0,
+        "explanation": "Joule heating."
+      },
+      {
+        "id": "fsft-innovative-thermal-ohmic-dielectric-ir-induction-q2",
+        "type": "mcq",
+        "prompt": "Which method heats mainly the surface?",
+        "options": [
+          "Ohmic",
+          "Microwave",
+          "Infrared",
+          "RF"
+        ],
+        "correctIndex": 2,
+        "explanation": "Limited penetration."
+      },
+      {
+        "id": "fsft-innovative-thermal-ohmic-dielectric-ir-induction-q3",
+        "type": "mcq",
+        "prompt": "Induction heating requires:",
+        "options": [
+          "Conductive/metallic material",
+          "Water",
+          "Vacuum",
+          "Light"
+        ],
+        "correctIndex": 0,
+        "explanation": "Eddy currents in a conductor."
+      }
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "id": "fsft-concentration-dehydration-freezing-fermentation-irradiation-additives",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 59,
+  "title": "Concentration, Dehydration, Freezing, Fermentation, Irradiation and Food Additives",
+  "shortDescription": "Preservation methods by water removal, cold, microbes, radiation and chemistry — with the additive classes exams expect.",
+  "genZNote": "Remove water, remove heat, or add something clever — that's the whole chapter. Additive classes are the sneaky high-yield part.",
+  "sections": [
+    {
+      "id": "dry",
+      "heading": "Concentration and Dehydration",
+      "bullets": [
+        "Concentration: evaporation (single/multiple-effect, falling film, vacuum), freeze concentration, membrane (RO); applications: condensed milk, juices, tomato paste.",
+        "Dehydration: sun/solar, hot-air tray/tunnel/cabinet, drum, spray, fluidised-bed, vacuum and freeze-drying (sublimation under vacuum; best quality, high cost); lowers aw below ~0.6–0.7 for stability.",
+        "Drying curve: constant-rate then falling-rate periods; case hardening, browning and nutrient loss are risks."
+      ]
+    },
+    {
+      "id": "freeze",
+      "heading": "Freezing",
+      "bullets": [
+        "Slow freezing forms large ice crystals damaging cells; quick/IQF freezing forms small crystals, retaining texture. Storage ≤ −18 °C; cryogenic (liquid nitrogen) freezing is fastest.",
+        "Freezer burn (sublimation), recrystallisation and thawing drip are quality defects; blanch vegetables before freezing."
+      ]
+    },
+    {
+      "id": "irrad",
+      "heading": "Fermentation and Irradiation",
+      "bullets": [
+        "Fermentation: see microbiology lessons — acid/alcohol produce preservation.",
+        "Irradiation: ionising radiation (gamma from Co-60 or Cs-137, electron beams up to 10 MeV, X-rays up to 5 MeV); Radura symbol; low dose (<1 kGy) for sprout inhibition of potatoes/onions (0.03–0.15 kGy) and insect disinfestation, medium dose (1–10 kGy) for radurisation/radicidation (reducing spoilage and pathogens), high dose (>10 kGy) for sterilisation of special foods. Codex accepts overall average dose up to 10 kGy; India regulates irradiation of foods (Atomic Energy and FSSAI rules; BARC leads technology). Foods do not become radioactive at permitted energies."
+      ]
+    },
+    {
+      "id": "add",
+      "heading": "Food Additives",
+      "body": "INS numbers (Codex International Numbering System) identify additives; ADI (JECFA) sets safe daily intake. Prohibited in India: potassium bromate in bread, certain colours, Rhodamine B.",
+      "table": {
+        "caption": "Additive classes",
+        "columnHeaders": [
+          "Class",
+          "Examples"
+        ],
+        "rows": [
+          [
+            "Preservatives (Class I / II)",
+            "Salt, sugar; benzoates, sorbates, sulphites, nitrite, nisin"
+          ],
+          [
+            "Antioxidants",
+            "Ascorbic acid, tocopherols, BHA, BHT, TBHQ"
+          ],
+          [
+            "Emulsifiers and stabilisers",
+            "Lecithin, mono/diglycerides, pectin, xanthan, guar, CMC, carrageenan, agar, gelatin"
+          ],
+          [
+            "Colours",
+            "Natural (turmeric, caramel, anthocyanins); eight permitted synthetic dyes in India (Ponceau 4R, Carmoisine, Erythrosine, Tartrazine, Sunset Yellow FCF, Indigo Carmine, Brilliant Blue FCF, Fast Green FCF)"
+          ],
+          [
+            "Sweeteners",
+            "Aspartame, saccharin, acesulfame-K, sucralose, neotame, stevia glycosides"
+          ],
+          [
+            "Flavour enhancers",
+            "MSG (INS 621)"
+          ],
+          [
+            "Acidity regulators and anticaking agents",
+            "Citric acid; calcium silicate"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Concentration, drying, freezing, fermentation, irradiation and additives preserve foods by reducing water, temperature, microbial activity or by chemical stabilisation.",
+    "keyFacts": [
+      "Quick freezing = small crystals.",
+      "Irradiation ≤10 kGy overall (Codex).",
+      "8 permitted synthetic colours in India.",
+      "Freeze-drying works by sublimation."
+    ],
+    "keyTerms": [
+      "IQF",
+      "Sublimation",
+      "Radura",
+      "INS number",
+      "ADI"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Radiation does not make food radioactive at permitted energies."
+    ],
+    "commonTraps": [
+      "Do not say irradiation is cooking."
+    ],
+    "mustRemember": [
+      "Potatoes sprout inhibition 0.03–0.15 kGy."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Fellows: Food Processing Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "Rahman: Handbook of Food Preservation",
+      "kind": "educational"
+    },
+    {
+      "name": "FSSAI Regulations",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-concentration-dehydration-freezing-fermentation-irradiation-additives-q1",
+        "type": "mcq",
+        "prompt": "Freeze-drying works by:",
+        "options": [
+          "Evaporation at 100 °C",
+          "Sublimation under vacuum",
+          "Sun drying",
+          "Boiling"
+        ],
+        "correctIndex": 1,
+        "explanation": "Ice → vapour."
+      },
+      {
+        "id": "fsft-concentration-dehydration-freezing-fermentation-irradiation-additives-q2",
+        "type": "mcq",
+        "prompt": "Radura symbol identifies:",
+        "options": [
+          "Irradiated food",
+          "Organic food",
+          "Veg food",
+          "Fortified food"
+        ],
+        "correctIndex": 0,
+        "explanation": "Irradiation logo."
+      },
+      {
+        "id": "fsft-concentration-dehydration-freezing-fermentation-irradiation-additives-q3",
+        "type": "mcq",
+        "prompt": "MSG's INS number is:",
+        "options": [
+          "621",
+          "102",
+          "330",
+          "200"
+        ],
+        "correctIndex": 0,
+        "explanation": "INS 621."
+      }
+    ]
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "id": "fsft-digestion-absorption-fibre",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 16,
+  "title": "Digestion, Absorption and Dietary Fibre",
+  "shortDescription": "Where each nutrient is digested and absorbed, and why fibre matters.",
+  "genZNote": "Digestion is a relay race: mouth → stomach → small intestine → colon. Know who passes the baton to whom and where it all gets absorbed.",
+  "sections": [
+    {
+      "id": "digestion",
+      "heading": "Digestive Chemistry",
+      "table": {
+        "caption": "Sites and enzymes",
+        "columnHeaders": [
+          "Site",
+          "Key secretion",
+          "Action"
+        ],
+        "rows": [
+          [
+            "Mouth",
+            "Salivary α-amylase, lingual lipase",
+            "Starch → maltose/dextrins"
+          ],
+          [
+            "Stomach",
+            "HCl (pH 1.5–2), pepsin, gastric lipase",
+            "Protein denaturation → peptides"
+          ],
+          [
+            "Duodenum",
+            "Bile (emulsifies fat), pancreatic amylase, lipase, trypsin, chymotrypsin",
+            "Main digestion"
+          ],
+          [
+            "Brush border",
+            "Maltase, sucrase, lactase, peptidases",
+            "Final hydrolysis"
+          ],
+          [
+            "Large intestine",
+            "Microbiota",
+            "Fermentation of fibre → SCFA; water/electrolyte absorption"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "absorption",
+      "heading": "Absorption",
+      "bullets": [
+        "Glucose and galactose: SGLT1 sodium-dependent active transport; fructose: GLUT5 facilitated.",
+        "Amino acids and di/tripeptides: active transport into portal blood.",
+        "Fats: bile micelles → enterocytes → chylomicrons → lymph (lacteals); short-chain fatty acids go directly to portal blood.",
+        "Water-soluble vitamins and minerals absorbed in small intestine; B12 in terminal ileum; iron in duodenum.",
+        "Villi and microvilli provide ~200 m² surface."
+      ]
+    },
+    {
+      "id": "fibre",
+      "heading": "Dietary Fibre",
+      "bullets": [
+        "Non-digestible plant carbohydrates and lignin. Soluble (pectin, β-glucan, gums, inulin): slows glucose absorption, lowers LDL; insoluble (cellulose, lignin): bulks stool and speeds transit.",
+        "Fermentation by colonic bacteria yields short-chain fatty acids (butyrate) that nourish colonocytes.",
+        "Sources: whole grains, millets, pulses, fruits, vegetables.",
+        "Recommended: about 25–40 g/day (ICMR 2020: ~40 g per 2000 kcal); increase gradually with water.",
+        "Excess fibre/phytates can reduce mineral absorption."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Digestion hydrolyses macronutrients into absorbable units mainly in the small intestine, while dietary fibre resists digestion and is fermented in the colon with metabolic benefits.",
+    "keyFacts": [
+      "Most digestion/absorption: small intestine.",
+      "Bile emulsifies fat; lipase digests it.",
+      "Fats absorbed as chylomicrons via lymph.",
+      "Fibre: soluble vs insoluble."
+    ],
+    "keyTerms": [
+      "Micelle",
+      "Chylomicron",
+      "SGLT1",
+      "Brush border",
+      "SCFA"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Pepsin is secreted as pepsinogen, activated by HCl."
+    ],
+    "commonTraps": [
+      "Do not say bile contains digestive enzymes — it emulsifies."
+    ],
+    "mustRemember": [
+      "Starch digestion starts in mouth; protein in stomach; fat mostly in duodenum."
+    ]
+  },
+  "sources": [
+    {
+      "name": "ICMR–NIN Nutrient Requirements for Indians (RDA 2020)",
+      "kind": "scientific",
+      "url": "https://www.nin.res.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-digestion-absorption-fibre-q1",
+        "type": "mcq",
+        "prompt": "Fats are absorbed into the body mainly as:",
+        "options": [
+          "Chylomicrons through lymph",
+          "Glucose",
+          "Amino acids",
+          "Micelles in portal blood only"
+        ],
+        "correctIndex": 0,
+        "explanation": "Chylomicrons enter lacteals."
+      },
+      {
+        "id": "fsft-digestion-absorption-fibre-q2",
+        "type": "mcq",
+        "prompt": "Which fibre type lowers blood cholesterol?",
+        "options": [
+          "Cellulose",
+          "Soluble fibre (pectin, β-glucan)",
+          "Lignin",
+          "None"
+        ],
+        "correctIndex": 1,
+        "explanation": "Soluble fibre binds bile acids."
+      },
+      {
+        "id": "fsft-digestion-absorption-fibre-q3",
+        "type": "mcq",
+        "prompt": "Salivary amylase digests:",
+        "options": [
+          "Fat",
+          "Protein",
+          "Starch",
+          "Fibre"
+        ],
+        "correctIndex": 2,
+        "explanation": "α-amylase begins starch digestion."
+      }
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "id": "fsft-milk-composition-products-overview",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 49,
+  "title": "Milk — Composition, Properties and Processed Products (Overview)",
+  "shortDescription": "Milk constituents and a map of concentrated, dried, fermented products, cream, ice cream, butter and cheese.",
+  "genZNote": "Milk is a solution, an emulsion AND a suspension at the same time. Casein vs whey is the first level of this boss fight.",
+  "sections": [
+    {
+      "id": "comp",
+      "heading": "Composition and Properties",
+      "body": "Physical: density about 1.028–1.034 g/mL; pH 6.6–6.8; freezing point about −0.52 to −0.55 °C; titratable acidity 0.13–0.17% lactic acid; buffalo milk has more fat and total solids than cow milk. FSSAI categories include cow, buffalo, toned, double toned, standardised and full-cream milk.",
+      "table": {
+        "caption": "Cow milk (approx.)",
+        "columnHeaders": [
+          "Constituent",
+          "Percent",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "Water",
+            "~87%",
+            ""
+          ],
+          [
+            "Fat",
+            "3.5–5%",
+            "Fat globules 0.1–15 µm in MFGM"
+          ],
+          [
+            "Protein",
+            "~3.2–3.5%",
+            "Casein ~80% (micelles), whey ~20%"
+          ],
+          [
+            "Lactose",
+            "~4.8–5%",
+            "Milk sugar"
+          ],
+          [
+            "Minerals/ash",
+            "~0.7%",
+            "Ca, P, K"
+          ],
+          [
+            "Others",
+            "—",
+            "Vitamins, enzymes"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "products",
+      "heading": "Processed Products",
+      "table": {
+        "caption": "Product map",
+        "columnHeaders": [
+          "Product",
+          "How made",
+          "Key point"
+        ],
+        "rows": [
+          [
+            "Evaporated / condensed milk",
+            "Evaporation of water; sugar added in sweetened condensed milk",
+            "Shelf-stable"
+          ],
+          [
+            "Dried milk (WMP, SMP)",
+            "Spray or roller drying",
+            "Very low moisture (≤ ~4%)"
+          ],
+          [
+            "Fermented milk (dahi, yoghurt, lassi)",
+            "LAB fermentation",
+            "Probiotic potential"
+          ],
+          [
+            "Cream",
+            "Separation by centrifugal force",
+            "Fat ≥ 25% in FSSAI \"cream\" category; half cream ~12%"
+          ],
+          [
+            "Butter",
+            "Churning cream",
+            "≥ 80% fat"
+          ],
+          [
+            "Cheese",
+            "Coagulation, whey drainage, ripening",
+            "Rennet vs acid"
+          ],
+          [
+            "Ice cream",
+            "Freezing and whipping mix",
+            "Overrun incorporates air"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "note",
+      "heading": "How This Connects",
+      "body": "This lesson gives the overview required under Animal Product Processing. Unit 9 (Dairy Science) treats the chemistry, unit operations and technology in depth; adulterants and detection are in the next lesson."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Milk is a complex colloidal fluid whose components can be separated, concentrated, fermented or dried to create a wide range of dairy products.",
+    "keyFacts": [
+      "Casein 80%, whey 20%.",
+      "Cow milk pH 6.6–6.8.",
+      "Butter ≥ 80% fat.",
+      "Freezing point ~−0.54 °C."
+    ],
+    "keyTerms": [
+      "Casein micelle",
+      "MFGM",
+      "SNF",
+      "Overrun",
+      "Lactose"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "SNF = total solids minus fat."
+    ],
+    "commonTraps": [
+      "Do not say whey proteins precipitate with rennet — casein does."
+    ],
+    "mustRemember": [
+      "Milk freezing point check detects added water."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Lawrie: Meat Science",
+      "kind": "scientific"
+    },
+    {
+      "name": "Hui: Handbook of Food Science, Technology and Engineering",
+      "kind": "educational"
+    },
+    {
+      "name": "FSS (Food Products Standards) Regulations, 2011",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-milk-composition-products-overview-q1",
+        "type": "mcq",
+        "prompt": "Major milk protein is:",
+        "options": [
+          "Casein",
+          "Albumin",
+          "Collagen",
+          "Zein"
+        ],
+        "correctIndex": 0,
+        "explanation": "~80%."
+      },
+      {
+        "id": "fsft-milk-composition-products-overview-q2",
+        "type": "mcq",
+        "prompt": "Milk pH is about:",
+        "options": [
+          "4.6",
+          "6.6–6.8",
+          "7.8",
+          "8.5"
+        ],
+        "correctIndex": 1,
+        "explanation": "Slightly acidic."
+      },
+      {
+        "id": "fsft-milk-composition-products-overview-q3",
+        "type": "mcq",
+        "prompt": "Butter fat percentage minimum:",
+        "options": [
+          "60",
+          "70",
+          "80",
+          "90"
+        ],
+        "correctIndex": 2,
+        "explanation": "80% in FSSAI standard."
+      }
+    ]
+  }
+}

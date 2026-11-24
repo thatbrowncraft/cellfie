@@ -1,0 +1,156 @@
+{
+  "id": "fsft-food-packaging-types-evaluation",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 34,
+  "title": "Food Packaging — Concept, Types and Evaluation of Packaging Materials",
+  "shortDescription": "What packaging does, material by material, and how its performance is tested.",
+  "genZNote": "Packaging is the last preservation step and the first thing you judge. WVTR and OTR just tell you how well it blocks water and air.",
+  "sections": [
+    {
+      "id": "concept",
+      "heading": "Concept and Functions",
+      "bullets": [
+        "Functions: containment, protection (physical, chemical, microbial), communication (labelling), convenience and marketing.",
+        "Levels: primary (touches food), secondary (groups packs), tertiary (transport, pallets).",
+        "Food contact materials must be safe and inert: limits on migration of components into food; overall migration limit commonly 10 mg/dm² or 60 mg/kg food (verify current standard)."
+      ]
+    },
+    {
+      "id": "types",
+      "heading": "Materials and Properties",
+      "body": "Package forms: cans, bottles, pouches, retort pouches, cartons, trays, aseptic cartons, bag-in-box, sachets.",
+      "table": {
+        "caption": "Packaging materials",
+        "columnHeaders": [
+          "Material",
+          "Strengths",
+          "Limits / examples"
+        ],
+        "rows": [
+          [
+            "Glass",
+            "Inert, transparent, reusable",
+            "Heavy, brittle; bottles, jars"
+          ],
+          [
+            "Metal",
+            "Tinplate/aluminium; barrier to light, gas; canning",
+            "Corrosion, lacquers required"
+          ],
+          [
+            "Paper & board",
+            "Cheap, printable, recyclable",
+            "Poor barrier; cartons, wrappers"
+          ],
+          [
+            "Plastics",
+            "PET, HDPE, LDPE, PP, PVC, PS; flexible, light",
+            "Gas/moisture permeation varies; recycling codes 1–7"
+          ],
+          [
+            "Laminates/multilayer",
+            "Combine barriers (e.g. Tetra Pak: paperboard + PE + aluminium foil)",
+            "Hard to recycle"
+          ],
+          [
+            "Edible/biodegradable",
+            "PLA, starch films",
+            "Developing"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "eval",
+      "heading": "Evaluating Packaging",
+      "bullets": [
+        "Barrier: water vapour transmission rate (WVTR), oxygen transmission rate (OTR).",
+        "Mechanical: tensile strength, burst, tear, puncture, seal strength, drop and compression tests.",
+        "Chemical safety: overall and specific migration, heavy metals, residual monomers; sensory taint and odour.",
+        "Shelf-life and compatibility testing (accelerated); seam integrity of cans (double seam); leak tests.",
+        "Environmental: recyclability, extended producer responsibility under Plastic Waste Management Rules."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Food packaging protects, preserves and communicates; material choice and testing ensure safety, barrier performance and compliance.",
+    "keyFacts": [
+      "Primary/secondary/tertiary packaging.",
+      "Migration limits.",
+      "WVTR and OTR measure barrier.",
+      "Tetra Pak = paperboard, polyethylene and aluminium."
+    ],
+    "keyTerms": [
+      "Migration",
+      "WVTR",
+      "OTR",
+      "Laminate",
+      "Retort pouch"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Recycling code 1 = PET; 2 = HDPE; 5 = PP."
+    ],
+    "commonTraps": [
+      "Do not say glass is permeable to gas."
+    ],
+    "mustRemember": [
+      "Aseptic carton layers."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Potter & Hotchkiss: Food Science",
+      "kind": "scientific"
+    },
+    {
+      "name": "FSSAI Regulations",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-food-packaging-types-evaluation-q1",
+        "type": "mcq",
+        "prompt": "WVTR measures:",
+        "options": [
+          "Oxygen permeability",
+          "Water vapour permeability",
+          "Seal strength",
+          "Light"
+        ],
+        "correctIndex": 1,
+        "explanation": "Water vapour transmission rate."
+      },
+      {
+        "id": "fsft-food-packaging-types-evaluation-q2",
+        "type": "mcq",
+        "prompt": "PET has recycling code:",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "5"
+        ],
+        "correctIndex": 0,
+        "explanation": "Code 1."
+      },
+      {
+        "id": "fsft-food-packaging-types-evaluation-q3",
+        "type": "mcq",
+        "prompt": "A multilayer carton often includes:",
+        "options": [
+          "Only paper",
+          "Paperboard, polyethylene, aluminium",
+          "Glass",
+          "Tin only"
+        ],
+        "correctIndex": 1,
+        "explanation": "Barrier layers."
+      }
+    ]
+  }
+}

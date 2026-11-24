@@ -1,0 +1,140 @@
+{
+  "id": "fsft-micro-physiology-growth",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 21,
+  "title": "Microbial Physiology, Nutrition, Growth and Reproduction",
+  "shortDescription": "What microbes need, how they multiply and which factors control their growth in food.",
+  "genZNote": "Control the growth levers — temperature, pH, water, oxygen — and you control the microbe. Basically parental controls for bacteria.",
+  "sections": [
+    {
+      "id": "nutrition",
+      "heading": "Nutrition and Physiology",
+      "bullets": [
+        "Requirements: carbon, nitrogen, energy, minerals, vitamins, water. Types: autotroph/heterotroph; phototroph/chemotroph.",
+        "Oxygen classes: obligate aerobes (Pseudomonas, Bacillus, moulds), obligate anaerobes (Clostridium), facultative (E. coli, Staphylococcus, yeast), microaerophiles (Campylobacter).",
+        "Temperature classes: psychrophile (grow at ≤ 0–5 °C), psychrotroph (grow at refrigeration but optimum higher, e.g. Listeria, Pseudomonas), mesophile (20–45 °C; most pathogens), thermophile (45–80 °C).",
+        "Energy production by respiration or fermentation; homofermentative LAB yield mostly lactic acid, heterofermentative produce lactic acid, CO2 and ethanol/acetate."
+      ]
+    },
+    {
+      "id": "growth",
+      "heading": "Growth and Reproduction",
+      "bullets": [
+        "Bacteria reproduce by binary fission; generation time may be ~20 min (E. coli) under ideal conditions; yeasts bud; moulds produce spores; viruses replicate inside host.",
+        "Growth curve: lag (adaptation), log/exponential (maximum rate), stationary (nutrient limitation, toxin production), decline/death.",
+        "Growth in food: N = N0·2^n (n = generations).",
+        "Spores germinate when heat-activated and conditions suit; vegetative cells are destroyed by pasteurization."
+      ]
+    },
+    {
+      "id": "factors",
+      "heading": "Intrinsic and Extrinsic Factors",
+      "body": "Cardinal temperatures (minimum, optimum, maximum) differ by species. Most spoilage and pathogenic bacteria grow best at neutral pH and aw > 0.95; this explains the importance of refrigeration, acidification and drying.",
+      "table": {
+        "caption": "Controlling growth (hurdles)",
+        "columnHeaders": [
+          "Factor",
+          "Examples"
+        ],
+        "rows": [
+          [
+            "Intrinsic",
+            "pH, water activity, nutrients, redox potential, natural antimicrobials (lysozyme, lactoperoxidase), biological structure"
+          ],
+          [
+            "Extrinsic",
+            "Storage temperature, relative humidity, gas atmosphere"
+          ],
+          [
+            "Implicit / process",
+            "Heat, preservatives, packaging, competition among microbes"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Microbial growth in food depends on nutrients, oxygen, temperature, pH and water activity, following a lag–log–stationary–decline pattern, and is controlled by manipulating these factors.",
+    "keyFacts": [
+      "Binary fission; lag, log, stationary, decline.",
+      "Psychrotrophs grow at refrigeration (Listeria).",
+      "Facultative anaerobes grow with or without oxygen.",
+      "Most pathogens are mesophiles."
+    ],
+    "keyTerms": [
+      "Generation time",
+      "Lag phase",
+      "Psychrotroph",
+      "Facultative",
+      "Hurdle"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Exponential growth: 2^n."
+    ],
+    "commonTraps": [
+      "Do not say refrigeration stops all growth — psychrotrophs grow."
+    ],
+    "mustRemember": [
+      "Listeria grows at 4 °C."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Jay: Modern Food Microbiology",
+      "kind": "educational"
+    },
+    {
+      "name": "FAO/WHO — Microbiological Risk Assessment Series",
+      "kind": "educational"
+    },
+    {
+      "name": "Frazier & Westhoff: Food Microbiology",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-micro-physiology-growth-q1",
+        "type": "mcq",
+        "prompt": "Phase of maximum growth rate is the:",
+        "options": [
+          "Lag",
+          "Log",
+          "Stationary",
+          "Death"
+        ],
+        "correctIndex": 1,
+        "explanation": "Exponential phase."
+      },
+      {
+        "id": "fsft-micro-physiology-growth-q2",
+        "type": "mcq",
+        "prompt": "Listeria monocytogenes is a:",
+        "options": [
+          "Psychrotroph",
+          "Thermophile",
+          "Obligate aerobe only",
+          "Virus"
+        ],
+        "correctIndex": 0,
+        "explanation": "It grows under refrigeration."
+      },
+      {
+        "id": "fsft-micro-physiology-growth-q3",
+        "type": "mcq",
+        "prompt": "Obligate anaerobes include:",
+        "options": [
+          "Pseudomonas",
+          "Clostridium",
+          "Aspergillus",
+          "Yeast"
+        ],
+        "correctIndex": 1,
+        "explanation": "Clostridium species need no oxygen."
+      }
+    ]
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "id": "fsft-fish-poultry-processing",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 47,
+  "title": "Fish and Poultry Processing",
+  "shortDescription": "Fish freshness, handling and preservation; poultry slaughter-line steps and quality.",
+  "genZNote": "Fish goes off in hours, chicken in days — both need an obsessive cold chain. TMA = fishy smell, remember the villain.",
+  "sections": [
+    {
+      "id": "fish",
+      "heading": "Fish Processing",
+      "bullets": [
+        "Composition: water 65–80%, protein 15–20%, oils rich in EPA/DHA.",
+        "Handling: bleed/gut, wash, ice (0 °C) quickly; rigor then autolysis then bacterial spoilage.",
+        "Freshness indices: eye, gills, texture, odour, TVB-N, TMA, K-value, histamine for scombroid species.",
+        "Processing: chilling, freezing (−18 °C or below; individually quick frozen), canning (tuna, sardine), drying and salting (Bombay duck), smoking, surimi, fish sauce, fish meal and oil, chitin from crustacean shells.",
+        "Safety: Vibrio, Listeria, histamine, parasites (Anisakis), heavy metals."
+      ]
+    },
+    {
+      "id": "poultry",
+      "heading": "Poultry Processing",
+      "steps": [
+        {
+          "name": "Receiving and stunning",
+          "explanation": "Birds rested, shackled, stunned.",
+          "purpose": "Humane slaughter."
+        },
+        {
+          "name": "Bleeding and scalding",
+          "explanation": "Scald ~50–60 °C depending on soft or hard scald.",
+          "purpose": "Loosens feathers."
+        },
+        {
+          "name": "Defeathering and evisceration",
+          "explanation": "Mechanical pickers; removal of viscera with inspection.",
+          "purpose": "Hygienic dressing."
+        },
+        {
+          "name": "Chilling",
+          "explanation": "Air or water chilling to ≤ 4 °C.",
+          "purpose": "Limits microbial growth."
+        },
+        {
+          "name": "Grading, cutting, packing",
+          "explanation": "Weight and quality grading; MAP or vacuum.",
+          "purpose": "Shelf-life extension."
+        }
+      ]
+    },
+    {
+      "id": "qc",
+      "heading": "Quality and Safety",
+      "bullets": [
+        "Poultry carries Salmonella and Campylobacter: avoid cross-contamination; cook to core 74 °C.",
+        "Broilers reach slaughter weight at ~5–7 weeks; layers are for eggs.",
+        "Value-added products: sausages, nuggets, marinated cuts; additives and cures regulated by FSSAI."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Fish and poultry are highly perishable and require rapid chilling, hygienic dressing and controlled processing to preserve quality and safety.",
+    "keyFacts": [
+      "Fish: ice at 0 °C; TMA and TVB-N indices.",
+      "Poultry scald 50–60 °C.",
+      "Cook poultry to 74 °C core."
+    ],
+    "keyTerms": [
+      "TVB-N",
+      "Scalding",
+      "Surimi",
+      "Evisceration",
+      "Histamine"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Surimi = fish protein paste."
+    ],
+    "commonTraps": [
+      "Do not rinse raw poultry as a safety measure."
+    ],
+    "mustRemember": [
+      "Scombroid → histamine."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Lawrie: Meat Science",
+      "kind": "scientific"
+    },
+    {
+      "name": "Hui: Handbook of Food Science, Technology and Engineering",
+      "kind": "educational"
+    },
+    {
+      "name": "FSS (Food Products Standards) Regulations, 2011",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-fish-poultry-processing-q1",
+        "type": "mcq",
+        "prompt": "Scombroid poisoning is due to:",
+        "options": [
+          "Histamine",
+          "Aflatoxin",
+          "Solanine",
+          "Nitrite"
+        ],
+        "correctIndex": 0,
+        "explanation": "Histidine decarboxylation in spoiled fish."
+      },
+      {
+        "id": "fsft-fish-poultry-processing-q2",
+        "type": "mcq",
+        "prompt": "Surimi is:",
+        "options": [
+          "Fermented fish",
+          "Washed fish protein concentrate",
+          "Fish oil",
+          "Dried fish"
+        ],
+        "correctIndex": 1,
+        "explanation": "Used in crab-stick analogues."
+      },
+      {
+        "id": "fsft-fish-poultry-processing-q3",
+        "type": "mcq",
+        "prompt": "Poultry chilling target:",
+        "options": [
+          "≤ 4 °C",
+          "10 °C",
+          "20 °C",
+          "37 °C"
+        ],
+        "correctIndex": 0,
+        "explanation": "Rapid chilling."
+      }
+    ]
+  }
+}

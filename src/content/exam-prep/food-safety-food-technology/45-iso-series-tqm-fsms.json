@@ -1,0 +1,158 @@
+{
+  "id": "fsft-iso-series-tqm-fsms",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 45,
+  "title": "ISO Series, TQM, FSMS and ISO 22000:2005, Global Food Safety Management Systems",
+  "shortDescription": "Quality and safety management systems: ISO 9001/22000 family, TQM tools and GFSI-benchmarked schemes. (Cross-reference: Exam Prep → ISO.)",
+  "genZNote": "Syllabus says ISO 22000:2005, reality says 2018. Know both versions — it's the 'spot the outdated info' trap examiners love.",
+  "sections": [
+    {
+      "id": "2005",
+      "heading": "ISO 22000:2005 (Historical Syllabus Wording)",
+      "body": "ISO 22000:2005 \"Food safety management systems — Requirements for any organization in the food chain\" combined four elements: interactive communication, system management, prerequisite programmes and HACCP principles. Structure: clauses 4 FSMS, 5 Management responsibility, 6 Resource management, 7 Planning and realisation of safe products, 8 Validation, verification and improvement of the FSMS. It introduced the terms PRP and operational PRP and linked HACCP to ISO 9001-style management. The syllabus names this edition; ISO 22000:2005 was superseded by ISO 22000:2018, which adopts the High Level Structure (10 clauses), PDCA at two levels, risk-based thinking and clearer OPRP/CCP distinction. For application, remember the current standard is 2018 (see ISO lesson ISO 22000 for details)."
+    },
+    {
+      "id": "family",
+      "heading": "ISO and Related Series",
+      "table": {
+        "caption": "Standards",
+        "columnHeaders": [
+          "Standard",
+          "Subject"
+        ],
+        "rows": [
+          [
+            "ISO 9001",
+            "Quality management system"
+          ],
+          [
+            "ISO 22000 (and ISO/TS 22002-1)",
+            "FSMS and PRPs for food manufacturing"
+          ],
+          [
+            "ISO 22005",
+            "Traceability"
+          ],
+          [
+            "ISO 14001 / 45001",
+            "Environmental / OH&S management"
+          ],
+          [
+            "ISO/IEC 17025 / ISO 15189",
+            "Testing-calibration / medical laboratories"
+          ],
+          [
+            "FSSC 22000",
+            "ISO 22000 + ISO/TS 22002 + additional requirements; GFSI-benchmarked"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "tqm",
+      "heading": "TQM",
+      "bullets": [
+        "Total Quality Management: organisation-wide, customer-focused continual improvement; pioneers Deming (PDCA, 14 points), Juran (quality trilogy), Crosby (zero defects).",
+        "Tools: PDCA, Pareto, fishbone, check sheets, control charts, 5S, Kaizen, Six Sigma.",
+        "Food application: complaints analysis, process capability, supplier management."
+      ]
+    },
+    {
+      "id": "global",
+      "heading": "Global Food Safety Management Systems",
+      "bullets": [
+        "GFSI (founded 2000) benchmarks schemes: BRCGS, SQF, FSSC 22000, IFS, Global G.A.P. (farm level), CanadaGAP.",
+        "Retailers require GFSI-recognised certification; audits are third party, annual or semi-annual with unannounced options.",
+        "Codex General Principles + HACCP form the technical basis of all these systems."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Food safety management standards combine PRPs, HACCP and management-system elements (ISO 22000), supported by TQM principles and GFSI-benchmarked global schemes.",
+    "keyFacts": [
+      "ISO 22000:2005 four elements.",
+      "ISO 22000:2018 replaced it.",
+      "FSSC 22000 is GFSI-benchmarked.",
+      "TQM: Deming, Juran, Crosby."
+    ],
+    "keyTerms": [
+      "FSMS",
+      "ISO 22000",
+      "FSSC 22000",
+      "TQM",
+      "GFSI"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "ISO 22000 includes HACCP principles; HACCP is not an ISO standard."
+    ],
+    "commonTraps": [
+      "Do not say ISO 22000:2005 is the current edition."
+    ],
+    "mustRemember": [
+      "2005 → 2018; GFSI 2000."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "HACCP",
+        "termB": "ISO 22000",
+        "distinction": "HACCP is a hazard-control method; ISO 22000 is a full management system including HACCP principles."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "ISO 22000 — Food safety management systems",
+      "kind": "educational",
+      "url": "https://www.iso.org"
+    },
+    {
+      "name": "GFSI Benchmarking Requirements",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-iso-series-tqm-fsms-q1",
+        "type": "mcq",
+        "prompt": "Which is not an element of ISO 22000:2005?",
+        "options": [
+          "Interactive communication",
+          "PRPs",
+          "HACCP principles",
+          "Cost accounting"
+        ],
+        "correctIndex": 3,
+        "explanation": "The four elements are communication, system management, PRPs, HACCP."
+      },
+      {
+        "id": "fsft-iso-series-tqm-fsms-q2",
+        "type": "mcq",
+        "prompt": "GFSI stands for:",
+        "options": [
+          "Global Food Safety Initiative",
+          "General Food Standards Index",
+          "Global Farm Safety Institute",
+          "Government Food Safety Inspection"
+        ],
+        "correctIndex": 0,
+        "explanation": "It benchmarks private food safety schemes."
+      },
+      {
+        "id": "fsft-iso-series-tqm-fsms-q3",
+        "type": "mcq",
+        "prompt": "PDCA cycle is associated with:",
+        "options": [
+          "Deming",
+          "Pillsbury",
+          "Codex",
+          "Appert"
+        ],
+        "correctIndex": 0,
+        "explanation": "Plan–Do–Check–Act."
+      }
+    ]
+  }
+}

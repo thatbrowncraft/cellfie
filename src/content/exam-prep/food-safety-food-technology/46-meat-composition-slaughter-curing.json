@@ -1,0 +1,145 @@
+{
+  "id": "fsft-meat-composition-slaughter-curing",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 46,
+  "title": "Meat — Composition, Types, Slaughtering, Tenderisation and Curing",
+  "shortDescription": "Muscle structure, post-mortem changes, slaughter steps, tenderisation and curing chemistry.",
+  "genZNote": "Meat science is a plot of glycogen, pH and time. Rigor mortis → ageing → tender meat — don't skip the waiting period.",
+  "sections": [
+    {
+      "id": "comp",
+      "heading": "Composition and Types",
+      "bullets": [
+        "Lean meat: water ~70–75%, protein ~19–22%, fat variable (1–20%+), ash ~1%; muscle proteins: myofibrillar (actin, myosin), sarcoplasmic (myoglobin), stromal (collagen, elastin).",
+        "Types: beef/carabeef (cattle/buffalo), mutton (sheep), chevon (goat), pork, poultry, game; red vs white meat depends on myoglobin.",
+        "Meat inspection (ante- and post-mortem) and hygienic slaughter in licensed slaughterhouses; rules under the Prevention of Cruelty to Animals (Slaughter House) Rules, 2001 and FSS regulations."
+      ]
+    },
+    {
+      "id": "slaughter",
+      "heading": "Slaughtering and Post-Mortem Changes",
+      "steps": [
+        {
+          "name": "Pre-slaughter rest and ante-mortem inspection",
+          "explanation": "Rest and water reduce stress and glycogen loss.",
+          "purpose": "Better meat quality."
+        },
+        {
+          "name": "Stunning and bleeding",
+          "explanation": "Rapid humane stunning followed by sticking and bleeding.",
+          "purpose": "Reduces suffering and blood content."
+        },
+        {
+          "name": "Dressing, evisceration, inspection, chilling",
+          "explanation": "Skinning, removing offal, carcass wash, chill to ≤ 4 °C.",
+          "purpose": "Control microbes."
+        },
+        {
+          "name": "Rigor mortis",
+          "explanation": "Glycogen → lactic acid; pH falls from ~7 to 5.4–5.6; ATP depletion locks actin–myosin.",
+          "purpose": "Meat is tough at rigor."
+        },
+        {
+          "name": "Ageing/conditioning",
+          "explanation": "Hold at 0–4 °C (beef 7–14 days) so endogenous proteases (calpains, cathepsins) tenderise.",
+          "purpose": "Resolution of rigor."
+        }
+      ]
+    },
+    {
+      "id": "tender",
+      "heading": "Tenderisation and Curing",
+      "bullets": [
+        "Tenderisation: ageing, enzymes (papain, bromelain, ficin), mechanical (pounding, blade tenderisation), electrical stimulation, calcium chloride injection, marinating in acid.",
+        "Quality defects: PSE (pale, soft, exudative) pork from rapid pH drop at high temperature; DFD (dark, firm, dry) beef from low glycogen.",
+        "Curing: salt, nitrite/nitrate, sugar, ascorbate/erythorbate and phosphates; nitrite forms nitrosomyoglobin (pink) and inhibits Clostridium botulinum; methods: dry, wet (brine), injection; smoking adds flavour and antimicrobial action.",
+        "Residual nitrite is regulated; nitrosamine formation is a concern."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Meat quality depends on muscle composition, hygienic slaughter, post-mortem pH decline and subsequent conditioning, tenderisation and curing.",
+    "keyFacts": [
+      "Post-rigor pH ~5.4–5.6.",
+      "Papain tenderises meat.",
+      "PSE in pork; DFD in beef.",
+      "Nitrite fixes colour and inhibits C. botulinum."
+    ],
+    "keyTerms": [
+      "Rigor mortis",
+      "Ageing",
+      "PSE",
+      "DFD",
+      "Curing"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Rigor resolves with ageing."
+    ],
+    "commonTraps": [
+      "Do not cook or cut meat in pre-rigor and expect tenderness."
+    ],
+    "mustRemember": [
+      "Papain: papaya enzyme."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Lawrie: Meat Science",
+      "kind": "scientific"
+    },
+    {
+      "name": "Hui: Handbook of Food Science, Technology and Engineering",
+      "kind": "educational"
+    },
+    {
+      "name": "FSS (Food Products Standards) Regulations, 2011",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-meat-composition-slaughter-curing-q1",
+        "type": "mcq",
+        "prompt": "Rigor mortis is caused by depletion of:",
+        "options": [
+          "ATP",
+          "Vitamin C",
+          "Chloride",
+          "Iron"
+        ],
+        "correctIndex": 0,
+        "explanation": "Cross-bridges remain locked without ATP."
+      },
+      {
+        "id": "fsft-meat-composition-slaughter-curing-q2",
+        "type": "mcq",
+        "prompt": "Which enzyme from papaya tenderises meat?",
+        "options": [
+          "Bromelain",
+          "Papain",
+          "Ficin",
+          "Pepsin"
+        ],
+        "correctIndex": 1,
+        "explanation": "Papain."
+      },
+      {
+        "id": "fsft-meat-composition-slaughter-curing-q3",
+        "type": "mcq",
+        "prompt": "PSE condition is mainly in:",
+        "options": [
+          "Beef",
+          "Pork",
+          "Mutton",
+          "Fish"
+        ],
+        "correctIndex": 1,
+        "explanation": "Pale soft exudative pork."
+      }
+    ]
+  }
+}

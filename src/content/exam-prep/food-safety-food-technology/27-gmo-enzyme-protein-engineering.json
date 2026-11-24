@@ -1,0 +1,110 @@
+{
+  "id": "fsft-gmo-enzyme-protein-engineering",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 27,
+  "title": "Genetically Modified Organisms, Enzyme and Protein Engineering",
+  "shortDescription": "What GMOs are, how they are regulated in India, and how enzymes and proteins are redesigned for industry.",
+  "genZNote": "Edit the gene, change the crop — then deal with the regulator. India's GM story is short: Bt cotton yes, most else is still in the waiting room.",
+  "sections": [
+    {
+      "id": "gmo",
+      "heading": "GMOs in Food",
+      "bullets": [
+        "GMO: organism whose genome has been altered by recombinant DNA (transgene insertion, gene editing). Examples: Bt cotton/maize (Bacillus thuringiensis toxin), herbicide-tolerant soybean, golden rice (β-carotene), Flavr Savr tomato (first commercial GM food, 1994), recombinant chymosin for cheese (1990).",
+        "Techniques: Agrobacterium-mediated transfer, gene gun, CRISPR-Cas9; markers and promoters.",
+        "India: GEAC (under the Ministry of Environment, Forest and Climate Change) approves GM organisms; Bt cotton (2002) is the only GM crop approved for commercial cultivation; GM mustard environmental release was cleared by GEAC in 2022 but is under judicial review; the Supreme Court in 2024 asked for a national policy on GM crops. FSSAI regulates GM foods in the food chain and labelling is being operationalised — verify current rules.",
+        "Debate: benefits (yield, pest resistance, nutrition) vs concerns (allergenicity, gene flow, biodiversity, labelling and trade)."
+      ]
+    },
+    {
+      "id": "enzyme",
+      "heading": "Enzyme and Protein Engineering",
+      "bullets": [
+        "Aims: improve activity, stability (heat/pH), specificity or reduce inhibition.",
+        "Methods: rational design (site-directed mutagenesis), directed evolution (random mutation + screening; Nobel Prize in Chemistry 2018 to Frances Arnold), recombinant expression in E. coli, Bacillus, Aspergillus, Pichia.",
+        "Immobilisation: adsorption, entrapment, covalent binding, cross-linking, encapsulation for reuse (e.g. glucose isomerase for HFCS; lactase for lactose-free milk).",
+        "Applications: cheese (recombinant chymosin), detergents, baking (xylanase), brewing, low-lactose dairy, de-bittering, protein hydrolysates and bioactive peptides; engineered proteins for texture (heme proteins in plant-based meat)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "GMOs and engineered enzymes and proteins apply recombinant DNA and protein design to improve crops and food processing under biosafety regulation.",
+    "keyFacts": [
+      "GEAC approves GMOs in India.",
+      "Bt cotton (2002) only commercial GM crop.",
+      "Directed evolution: 2018 Nobel (Arnold).",
+      "Recombinant chymosin: first GM enzyme in food."
+    ],
+    "keyTerms": [
+      "Transgene",
+      "GEAC",
+      "CRISPR",
+      "Directed evolution",
+      "Immobilisation"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Golden rice has β-carotene."
+    ],
+    "commonTraps": [
+      "Do not say Bt brinjal is cultivated in India — a moratorium applies."
+    ],
+    "mustRemember": [
+      "GEAC: MoEFCC."
+    ]
+  },
+  "sources": [
+    {
+      "name": "GEAC — MoEFCC",
+      "kind": "educational"
+    },
+    {
+      "name": "FSSAI — GM Foods",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-gmo-enzyme-protein-engineering-q1",
+        "type": "mcq",
+        "prompt": "GEAC functions under which ministry?",
+        "options": [
+          "Agriculture",
+          "Health",
+          "Environment, Forest and Climate Change",
+          "Food Processing"
+        ],
+        "correctIndex": 2,
+        "explanation": "It is under MoEFCC."
+      },
+      {
+        "id": "fsft-gmo-enzyme-protein-engineering-q2",
+        "type": "mcq",
+        "prompt": "Directed evolution is associated with:",
+        "options": [
+          "Frances Arnold",
+          "Norman Borlaug",
+          "Gregor Mendel",
+          "Louis Pasteur"
+        ],
+        "correctIndex": 0,
+        "explanation": "Arnold shared the 2018 Chemistry Nobel."
+      },
+      {
+        "id": "fsft-gmo-enzyme-protein-engineering-q3",
+        "type": "mcq",
+        "prompt": "Bt in Bt cotton stands for:",
+        "options": [
+          "Bacillus thuringiensis",
+          "Brassica tumefaciens",
+          "Biotech",
+          "Beta toxin"
+        ],
+        "correctIndex": 0,
+        "explanation": "The Bt gene comes from B. thuringiensis."
+      }
+    ]
+  }
+}

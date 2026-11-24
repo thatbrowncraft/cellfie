@@ -1,0 +1,156 @@
+{
+  "id": "fsft-metabolic-pathways",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 17,
+  "title": "Metabolic Pathways — Carbohydrate, Lipid, Protein, Vitamin and Mineral Metabolism",
+  "shortDescription": "The energy-yielding and biosynthetic pathways in one connected map.",
+  "genZNote": "Metabolism is the group project where everyone hands off to acetyl-CoA. Know which step happens where and how much ATP it pays.",
+  "sections": [
+    {
+      "id": "carbs",
+      "heading": "Carbohydrate Metabolism",
+      "table": {
+        "caption": "Key pathways",
+        "columnHeaders": [
+          "Pathway",
+          "Location",
+          "Highlights"
+        ],
+        "rows": [
+          [
+            "Glycolysis",
+            "Cytosol",
+            "Glucose → 2 pyruvate; net 2 ATP, 2 NADH"
+          ],
+          [
+            "PDH reaction",
+            "Mitochondria",
+            "Pyruvate → acetyl-CoA"
+          ],
+          [
+            "TCA cycle",
+            "Mitochondrial matrix",
+            "Per acetyl-CoA: 3 NADH, 1 FADH2, 1 GTP/ATP, 2 CO2"
+          ],
+          [
+            "Oxidative phosphorylation",
+            "Inner mitochondrial membrane",
+            "Most ATP (~30–32 per glucose)"
+          ],
+          [
+            "Gluconeogenesis",
+            "Liver/kidney",
+            "Makes glucose from lactate, glycerol, amino acids"
+          ],
+          [
+            "Glycogenesis/glycogenolysis",
+            "Liver/muscle",
+            "Store/mobilise glucose"
+          ],
+          [
+            "Pentose phosphate pathway",
+            "Cytosol",
+            "NADPH and ribose-5-phosphate"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "lipid",
+      "heading": "Lipid Metabolism",
+      "bullets": [
+        "β-oxidation of fatty acids in mitochondria yields acetyl-CoA, NADH and FADH2 (palmitate ≈ 106 ATP net).",
+        "Lipogenesis in the fed state; lipolysis by hormone-sensitive lipase in the fasting state.",
+        "Ketone bodies (acetoacetate, β-hydroxybutyrate) from excess acetyl-CoA in starvation/uncontrolled diabetes.",
+        "Cholesterol synthesis (HMG-CoA reductase — statin target); lipoproteins: chylomicrons, VLDL, LDL, HDL."
+      ]
+    },
+    {
+      "id": "protein",
+      "heading": "Protein, Vitamin and Mineral Metabolism",
+      "bullets": [
+        "Transamination (PLP/B6) moves amino groups; oxidative deamination releases ammonia; the urea cycle in liver converts ammonia to urea.",
+        "Glucogenic vs ketogenic amino acids; nitrogen balance (positive in growth/pregnancy).",
+        "Vitamins as coenzymes: B1 (TPP) in PDH, B2 (FAD), B3 (NAD), B5 (CoA), B7 (biotin carboxylation), B6 (transamination), B9/B12 (one-carbon and methylmalonyl).",
+        "Minerals: Mg/Mn as cofactors, Fe in cytochromes, Zn in dehydrogenases, I in thyroid hormone regulating basal metabolism.",
+        "Fed vs fasted state: insulin promotes storage, glucagon/adrenaline mobilise."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Metabolism is the integrated set of catabolic and anabolic pathways that convert nutrients into energy (ATP), storage forms and structural components.",
+    "keyFacts": [
+      "Glycolysis net 2 ATP.",
+      "TCA per acetyl-CoA: 3 NADH, 1 FADH2, 1 GTP.",
+      "Urea cycle in liver.",
+      "Ketone bodies in starvation."
+    ],
+    "keyTerms": [
+      "ATP",
+      "Glycolysis",
+      "TCA cycle",
+      "β-oxidation",
+      "Urea cycle"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Insulin lowers blood glucose; glucagon raises it."
+    ],
+    "commonTraps": [
+      "Do not say TCA occurs in cytosol."
+    ],
+    "mustRemember": [
+      "Glycolysis: cytosol; TCA: matrix."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Lehninger Principles of Biochemistry",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-metabolic-pathways-q1",
+        "type": "mcq",
+        "prompt": "Glycolysis takes place in the:",
+        "options": [
+          "Mitochondria",
+          "Cytosol",
+          "Nucleus",
+          "Ribosome"
+        ],
+        "correctIndex": 1,
+        "explanation": "Glycolysis occurs in cytoplasm."
+      },
+      {
+        "id": "fsft-metabolic-pathways-q2",
+        "type": "mcq",
+        "prompt": "Urea is produced in the:",
+        "options": [
+          "Kidney",
+          "Liver",
+          "Muscle",
+          "Pancreas"
+        ],
+        "correctIndex": 1,
+        "explanation": "The urea cycle is hepatic."
+      },
+      {
+        "id": "fsft-metabolic-pathways-q3",
+        "type": "mcq",
+        "prompt": "Ketone bodies are formed mainly from:",
+        "options": [
+          "Excess acetyl-CoA",
+          "Glycogen",
+          "Lactose",
+          "Fibre"
+        ],
+        "correctIndex": 0,
+        "explanation": "Fat oxidation produces acetyl-CoA beyond TCA capacity."
+      }
+    ]
+  }
+}

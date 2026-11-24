@@ -1,0 +1,206 @@
+{
+  "id": "fsft-fss-act-rules-regulations",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 4,
+  "title": "Food Safety and Standards Act, 2006 — Rules and Regulations, 2011, Penalties",
+  "shortDescription": "The statute, the 2011 Rules and Regulations, the enforcement hierarchy and the penalty ladder — heavily examined.",
+  "genZNote": "Section numbers are boring until they're 5-mark freebies. Learn the penalty ladder from 'extraneous matter' all the way to 'unsafe food' — it's the plot of this chapter.",
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "Objectives and Principles",
+      "body": "The FSS Act, 2006 (enforced August 2011) aims to consolidate food laws, establish FSSAI, set science-based standards and regulate manufacture, storage, distribution, sale and import. Section 18 states the guiding principles: risk analysis, precaution where evidence is incomplete, transparency and consumer protection. Section 26 makes the Food Business Operator responsible for compliance; Section 27 fixes liability of manufacturers, packers, wholesalers, distributors and sellers."
+    },
+    {
+      "id": "rules",
+      "heading": "Rules and Regulations, 2011",
+      "bullets": [
+        "FSS Rules, 2011 — procedural: adjudication, appeals, sampling, prosecution, Food Safety Appellate Tribunal.",
+        "Licensing and Registration of Food Businesses Regulations, 2011.",
+        "Food Products Standards and Food Additives Regulations, 2011 — standards for dairy, cereals, meat, fats, beverages and additives.",
+        "Packaging and Labelling Regulations, 2011 (later replaced by Labelling & Display Regulations, 2020 and Packaging Regulations, 2018).",
+        "Prohibition and Restriction on Sales Regulations, 2011; Contaminants, Toxins and Residues Regulations, 2011; Laboratory and Sample Analysis Regulations, 2011."
+      ]
+    },
+    {
+      "id": "hierarchy",
+      "heading": "Enforcement Hierarchy",
+      "table": {
+        "caption": "Authorities under the Act",
+        "columnHeaders": [
+          "Authority",
+          "Role"
+        ],
+        "rows": [
+          [
+            "Commissioner of Food Safety (s.30)",
+            "Head of state food-safety administration; prohibits/orders in public interest"
+          ],
+          [
+            "Designated Officer (s.36)",
+            "Issues/cancels licences, ensures sampling, sanctions prosecution"
+          ],
+          [
+            "Food Safety Officer (s.37–38)",
+            "Inspects, draws samples, seizes, sends to Food Analyst"
+          ],
+          [
+            "Food Analyst (s.45–46)",
+            "Analyses samples and reports"
+          ],
+          [
+            "Adjudicating Officer (s.68, ADM rank)",
+            "Imposes civil penalties"
+          ],
+          [
+            "Food Safety Appellate Tribunal (s.70); High Court",
+            "Appeals"
+          ],
+          [
+            "Special Courts (s.74)",
+            "Criminal offences, trial"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "penalties",
+      "heading": "Penalty Ladder (approximate maxima)",
+      "body": "Regulatory details change by notification; treat figures here as exam-standard knowledge and confirm against the current FSSAI/Gazette text before relying on them professionally.",
+      "table": {
+        "caption": "Selected penalties",
+        "columnHeaders": [
+          "Offence (section)",
+          "Penalty"
+        ],
+        "rows": [
+          [
+            "Substandard food (s.51)",
+            "Up to ₹5 lakh"
+          ],
+          [
+            "Misbranded food (s.52)",
+            "Up to ₹3 lakh"
+          ],
+          [
+            "Misleading advertisement (s.53)",
+            "Up to ₹10 lakh"
+          ],
+          [
+            "Extraneous matter (s.54)",
+            "Up to ₹1 lakh"
+          ],
+          [
+            "Failure to comply with FSO directions (s.55)",
+            "Up to ₹2 lakh"
+          ],
+          [
+            "Unhygienic processing (s.56)",
+            "Up to ₹1 lakh"
+          ],
+          [
+            "Adulterant, non-hazardous / hazardous (s.57)",
+            "Up to ₹2 lakh / up to ₹10 lakh"
+          ],
+          [
+            "Unsafe food (s.59)",
+            "Up to 6 months (no injury) … up to 6 years (grievous injury); death: minimum 7 years to life and fine not less than ₹10 lakh"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "The FSS Act, 2006 is the principal statute creating FSSAI and a risk-based framework of standards, licensing, enforcement and graded penalties for food businesses.",
+    "keyFacts": [
+      "Operational August 2011 with Rules and Regulations, 2011.",
+      "s.26: FBO responsible; s.27 liability chain; s.18 risk analysis.",
+      "s.59 unsafe food is the gravest offence; death → life imprisonment possible.",
+      "Adjudicating Officer is of ADM rank."
+    ],
+    "keyTerms": [
+      "Section 59",
+      "Food Safety Officer",
+      "Designated Officer",
+      "Adjudicating Officer",
+      "Appellate Tribunal"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Order: FSO samples → Food Analyst → Designated Officer → prosecution/adjudication.",
+      "Hazardous adulterant penalty up to ₹10 lakh (s.57)."
+    ],
+    "commonTraps": [
+      "Do not confuse FSO (field officer) with Designated Officer (licensing and prosecution sanction).",
+      "Do not give older PFA Act penalties for FSS Act offences."
+    ],
+    "mustRemember": [
+      "s.30 Commissioner; s.36 Designated Officer; s.37 FSO; s.68 Adjudicating Officer; s.70 Tribunal."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Food Safety Officer",
+        "termB": "Designated Officer",
+        "distinction": "FSO samples and inspects; Designated Officer licenses, reviews reports and sanctions prosecution."
+      }
+    ],
+    "possibleQuestions": [
+      "Define unsafe food and state the maximum punishment where death results."
+    ]
+  },
+  "sources": [
+    {
+      "name": "FSS Act, 2006 and FSS Rules, 2011",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    },
+    {
+      "name": "FSSAI Compendium of Regulations",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-fss-act-rules-regulations-q1",
+        "type": "mcq",
+        "prompt": "Penalty for misleading advertisement under the FSS Act is up to:",
+        "options": [
+          "₹1 lakh",
+          "₹3 lakh",
+          "₹5 lakh",
+          "₹10 lakh"
+        ],
+        "correctIndex": 3,
+        "explanation": "Section 53 provides up to ₹10 lakh."
+      },
+      {
+        "id": "fsft-fss-act-rules-regulations-q2",
+        "type": "mcq",
+        "prompt": "Who draws food samples from premises under the Act?",
+        "options": [
+          "Food Analyst",
+          "Food Safety Officer",
+          "Adjudicating Officer",
+          "Commissioner"
+        ],
+        "correctIndex": 1,
+        "explanation": "FSOs inspect and draw samples; Food Analysts test them."
+      },
+      {
+        "id": "fsft-fss-act-rules-regulations-q3",
+        "type": "mcq",
+        "prompt": "Section 26 of the Act places responsibility for compliance on:",
+        "options": [
+          "Consumers",
+          "Food Business Operators",
+          "FSSAI Chairperson",
+          "Courts"
+        ],
+        "correctIndex": 1,
+        "explanation": "Section 26 deals with responsibilities of the FBO."
+      }
+    ]
+  }
+}

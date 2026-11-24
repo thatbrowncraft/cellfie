@@ -1,0 +1,152 @@
+{
+  "id": "fsft-spoilage-plant-foods-canned",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 26,
+  "title": "Food Spoilage — Cereals, Pulses, Oils, Fruits, Vegetables and Canned Foods",
+  "shortDescription": "Mould, insects, enzymes and canning failures: the full spoilage map for plant foods.",
+  "genZNote": "Dry foods fail by mould, wet foods by bacteria, cans by sneaky spore-formers. Flat sour vs hard swell is the question that keeps coming back.",
+  "sections": [
+    {
+      "id": "cereals",
+      "heading": "Cereals, Pulses and Oils",
+      "bullets": [
+        "Cereals/pulses: moulds (Aspergillus, Penicillium, Fusarium) when moisture is high; mycotoxins; bread ropiness by Bacillus subtilis/licheniformis; insects and rodents (weevils, borers, khapra beetle).",
+        "Oils: hydrolytic rancidity (lipase from moulds/bacteria) and oxidative rancidity (O2, light, metals).",
+        "Control: dry to safe moisture (about 12% for cereals, lower for oilseeds/pulses), fumigation, hermetic or cold storage, antioxidants."
+      ]
+    },
+    {
+      "id": "fruitveg",
+      "heading": "Fruits and Vegetables",
+      "bullets": [
+        "Fruits: acidic, so yeasts and moulds dominate — Penicillium (blue/green mould, patulin), Botrytis (grey mould), Rhizopus (soft rot).",
+        "Vegetables: higher pH — bacterial soft rot (Erwinia, Pseudomonas) and fungal rots; enzymatic softening by pectinases; physiological damage (chilling injury, ethylene-triggered ripening, bruising).",
+        "Control: low temperature, controlled atmosphere, sanitising washes, minimal handling, drying, canning and freezing."
+      ]
+    },
+    {
+      "id": "canned",
+      "heading": "Spoilage of Canned Foods",
+      "body": "Can swells: flipper, springer, soft swell, hard swell. Underprocessing, leaker contamination and thermophilic growth in warm storage are the three main causes. The commercial sterility concept (12D botulinum cook) guides low-acid canning.",
+      "table": {
+        "caption": "Canned-food spoilage",
+        "columnHeaders": [
+          "Type",
+          "Cause",
+          "Appearance"
+        ],
+        "rows": [
+          [
+            "Flat sour",
+            "Bacillus (thermophile, e.g. Geobacillus stearothermophilus); low-acid foods",
+            "No gas; can flat; sour taste"
+          ],
+          [
+            "Thermophilic anaerobe (hard swell)",
+            "Clostridium thermosaccharolyticum",
+            "Gas; can bulges"
+          ],
+          [
+            "Putrefactive anaerobe",
+            "Clostridium sporogenes",
+            "Gas, H2S odour, swelling"
+          ],
+          [
+            "Acid food spoilage",
+            "Bacillus coagulans (tomato juice), Clostridium pasteurianum",
+            "Flat sour or swell"
+          ],
+          [
+            "Leakage",
+            "Post-process contamination via defective seams or cooling water",
+            "Variable"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Spoilage of plant foods arises from moulds, bacteria, enzymes, insects and physiological changes, and canned-food spoilage reflects thermal underprocessing or leakage.",
+    "keyFacts": [
+      "Flat sour: Bacillus, no gas.",
+      "Hard swell: gas-forming anaerobes.",
+      "Penicillium → patulin.",
+      "Rope: Bacillus in bread."
+    ],
+    "keyTerms": [
+      "Flat sour",
+      "Hard swell",
+      "Rancidity",
+      "Leaker",
+      "Commercial sterility"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Low-acid canned foods need pressure retorting; acid foods can be hot-filled."
+    ],
+    "commonTraps": [
+      "Do not say flat sour produces gas."
+    ],
+    "mustRemember": [
+      "Flat sour = acid, no swelling."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Jay: Modern Food Microbiology",
+      "kind": "educational"
+    },
+    {
+      "name": "FAO/WHO — Microbiological Risk Assessment Series",
+      "kind": "educational"
+    },
+    {
+      "name": "Frazier & Westhoff: Food Microbiology",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-spoilage-plant-foods-canned-q1",
+        "type": "mcq",
+        "prompt": "Flat sour spoilage is typically caused by:",
+        "options": [
+          "Bacillus stearothermophilus",
+          "Clostridium botulinum",
+          "Salmonella",
+          "Lactobacillus"
+        ],
+        "correctIndex": 0,
+        "explanation": "It produces acid without gas."
+      },
+      {
+        "id": "fsft-spoilage-plant-foods-canned-q2",
+        "type": "mcq",
+        "prompt": "Rope spoilage in bread is due to:",
+        "options": [
+          "Bacillus subtilis",
+          "Rhizopus",
+          "Saccharomyces",
+          "Listeria"
+        ],
+        "correctIndex": 0,
+        "explanation": "Bacillus spores survive baking."
+      },
+      {
+        "id": "fsft-spoilage-plant-foods-canned-q3",
+        "type": "mcq",
+        "prompt": "Oxidative rancidity of oils is promoted by:",
+        "options": [
+          "Cold",
+          "Oxygen and light",
+          "Antioxidants",
+          "Hermetic seal"
+        ],
+        "correctIndex": 1,
+        "explanation": "Light and oxygen accelerate oxidation."
+      }
+    ]
+  }
+}

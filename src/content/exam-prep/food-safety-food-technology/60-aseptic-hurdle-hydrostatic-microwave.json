@@ -1,0 +1,127 @@
+{
+  "id": "fsft-aseptic-hurdle-hydrostatic-microwave",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 60,
+  "title": "Aseptic Preservation, Hurdle Technology, Hydrostatic Pressure Technology and Microwave Processing",
+  "shortDescription": "Sterile fill, combining barriers, pressure-based processing and microwave heating.",
+  "genZNote": "Sterilise the food and the pack separately, then marry them in a clean room. Hurdle tech is just 'many small barriers beat one big wall'.",
+  "sections": [
+    {
+      "id": "aseptic",
+      "heading": "Aseptic Preservation",
+      "bullets": [
+        "Product is sterilised (UHT/HTST, ohmic), cooled and filled into pre-sterilised containers in a sterile environment, then hermetically sealed.",
+        "Packaging sterilised by hydrogen peroxide, steam or radiation; Tetra Pak and Elopak are widely used cartons; products: UHT milk, juices, soups, tofu, purees; shelf life months at ambient temperature.",
+        "Benefits: better colour/flavour than in-container sterilisation; critical control: sterile zone integrity, seal integrity and flow-through heat treatment validation."
+      ]
+    },
+    {
+      "id": "hurdle",
+      "heading": "Hurdle Technology",
+      "bullets": [
+        "Concept by Leistner: combining several mild preservation factors (hurdles) — temperature, aw, pH, redox, preservatives, competitive flora, packaging — so microbes cannot overcome all of them (hurdle effect, metabolic exhaustion).",
+        "Examples: Indian pickles (salt, acid, oil), intermediate-moisture foods, minimally processed fruits (mild heat + acid + MAP + cold).",
+        "Advantage: retain nutrition and sensory quality; requires careful design and validation."
+      ]
+    },
+    {
+      "id": "hpp",
+      "heading": "Hydrostatic Pressure Technology",
+      "body": "Hydrostatic (isostatic) high-pressure processing exposes packaged foods to ~300–600 MPa in a water-filled vessel; pressure transmits uniformly regardless of shape (Le Chatelier's principle) so there is no thermal gradient. It inactivates vegetative microbes and some enzymes; spores need pressure-assisted thermal sterilisation (PATS). Unit operation details are in the Non-Thermal lesson."
+    },
+    {
+      "id": "mw",
+      "heading": "Microwave Processing",
+      "bullets": [
+        "Frequencies: 2450 MHz (domestic) and 915 MHz (industrial); heating arises from dipolar rotation of water and ionic conduction.",
+        "Features: rapid volumetric heating, uneven heating (hot/cold spots), poor browning; uses: tempering, drying, pasteurisation/sterilisation of packaged foods, cooking.",
+        "Safety: use microwave-safe packaging; metals cause arcing; stir/stand time equalises temperature."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Aseptic processing, hurdle technology, hydrostatic pressure and microwave heating are advanced ways to preserve foods with improved quality retention.",
+    "keyFacts": [
+      "Aseptic: sterile product + sterile pack.",
+      "Hurdle concept: Leistner.",
+      "Microwaves: 2450 and 915 MHz.",
+      "HPP isostatic."
+    ],
+    "keyTerms": [
+      "Aseptic filling",
+      "Hurdle effect",
+      "Isostatic",
+      "Dipolar rotation",
+      "Cold spots"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Microwave heating is volumetric but non-uniform."
+    ],
+    "commonTraps": [
+      "Do not say microwaves heat from outside only."
+    ],
+    "mustRemember": [
+      "Leistner = hurdle."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Fellows: Food Processing Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "Rahman: Handbook of Food Preservation",
+      "kind": "educational"
+    },
+    {
+      "name": "FSSAI Regulations",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-aseptic-hurdle-hydrostatic-microwave-q1",
+        "type": "mcq",
+        "prompt": "Hurdle technology was proposed by:",
+        "options": [
+          "Leistner",
+          "Appert",
+          "Pasteur",
+          "Codex"
+        ],
+        "correctIndex": 0,
+        "explanation": "Lothar Leistner."
+      },
+      {
+        "id": "fsft-aseptic-hurdle-hydrostatic-microwave-q2",
+        "type": "mcq",
+        "prompt": "Domestic microwave oven frequency:",
+        "options": [
+          "915 MHz",
+          "2450 MHz",
+          "13.56 MHz",
+          "50 Hz"
+        ],
+        "correctIndex": 1,
+        "explanation": "2.45 GHz."
+      },
+      {
+        "id": "fsft-aseptic-hurdle-hydrostatic-microwave-q3",
+        "type": "mcq",
+        "prompt": "Aseptic processing requires:",
+        "options": [
+          "Sterile product and sterile package",
+          "Frozen storage",
+          "Preservatives",
+          "Irradiation"
+        ],
+        "correctIndex": 0,
+        "explanation": "Both are sterile."
+      }
+    ]
+  }
+}

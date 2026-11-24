@@ -1,0 +1,149 @@
+{
+  "id": "fsft-nutritional-assessment-malnutrition",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 30,
+  "title": "Assessment of Nutritional Status and Malnutrition",
+  "shortDescription": "ABCD of assessment, anthropometric indices and the causes and prevention of malnutrition.",
+  "genZNote": "If it can't be measured, it can't be fixed — ABCD is the nutrition audit. Stunting = long-term, wasting = recent. Don't swap them.",
+  "sections": [
+    {
+      "id": "abcd",
+      "heading": "Techniques of Assessment",
+      "table": {
+        "caption": "ABCD (+E)",
+        "columnHeaders": [
+          "Method",
+          "Examples"
+        ],
+        "rows": [
+          [
+            "Anthropometric",
+            "Weight, height/length, BMI, MUAC, head/chest circumference, skinfold, waist–hip ratio"
+          ],
+          [
+            "Biochemical",
+            "Haemoglobin, serum retinol, ferritin, albumin, urinary iodine"
+          ],
+          [
+            "Clinical",
+            "Physical signs: Bitot's spots, goitre, oedema, angular stomatitis"
+          ],
+          [
+            "Dietary",
+            "24-hour recall, food frequency questionnaire, weighed intake, food balance sheets"
+          ],
+          [
+            "Ecological/vital statistics",
+            "Mortality, morbidity, food availability, socio-economic factors"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "indices",
+      "heading": "Anthropometric Indices",
+      "bullets": [
+        "Weight-for-age → underweight; height-for-age → stunting (chronic); weight-for-height → wasting (acute); each < −2 SD of WHO Child Growth Standards.",
+        "MUAC 6–59 months: <11.5 cm = severe acute malnutrition (SAM), 11.5–12.5 cm = moderate; BMI adults: <18.5 underweight, 18.5–24.9 normal, ≥25 overweight (Asian cut-offs: ≥23 overweight, ≥27.5 obese in WHO Asia-Pacific).",
+        "Kwashiorkor: protein deficiency with oedema, flaky-paint dermatosis, fatty liver; Marasmus: severe energy deficit, wasting, \"old-man\" face; marasmic kwashiorkor combines both."
+      ]
+    },
+    {
+      "id": "causes",
+      "heading": "Causes and Prevention of Malnutrition",
+      "bullets": [
+        "Causes: inadequate food and poverty, poor feeding and weaning practices, infections (diarrhoea, worms), low maternal education, lack of sanitation/safe water, low birth weight, food insecurity and climate shocks.",
+        "Prevention: first 1000 days (exclusive breastfeeding for 6 months, timely complementary feeding), growth monitoring, immunisation, micronutrient supplementation and fortification, safe water and sanitation, social safety nets (PDS, ICDS, PM POSHAN), nutrition education, treatment of SAM at Nutrition Rehabilitation Centres.",
+        "Double burden: stunting/anaemia alongside overweight and NCDs. NFHS-5 (2019–21): stunting ~35.5%, wasting ~19.3%, underweight ~32.1% among under-5 children (check later surveys)."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Nutritional status is assessed through anthropometric, biochemical, clinical and dietary methods, and malnutrition is prevented through dietary, health, sanitation and social interventions.",
+    "keyFacts": [
+      "Stunting = chronic; wasting = acute.",
+      "SAM: MUAC <11.5 cm.",
+      "Kwashiorkor = oedema; marasmus = wasting.",
+      "Exclusive breastfeeding up to 6 months."
+    ],
+    "keyTerms": [
+      "Stunting",
+      "Wasting",
+      "MUAC",
+      "Z-score",
+      "SAM"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "First 1000 days are critical."
+    ],
+    "commonTraps": [
+      "Do not confuse stunting with wasting."
+    ],
+    "mustRemember": [
+      "MUAC cut-offs: <11.5 cm and 11.5–12.5 cm."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Kwashiorkor",
+        "termB": "Marasmus",
+        "distinction": "Kwashiorkor: protein deficiency with oedema; marasmus: overall energy deficiency with severe wasting and no oedema."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "ICMR–NIN Nutrient Requirements and RDA for Indians, 2020",
+      "kind": "scientific",
+      "url": "https://www.nin.res.in"
+    },
+    {
+      "name": "WHO Child Growth Standards",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-nutritional-assessment-malnutrition-q1",
+        "type": "mcq",
+        "prompt": "Low height-for-age indicates:",
+        "options": [
+          "Wasting",
+          "Stunting",
+          "Overweight",
+          "Anaemia"
+        ],
+        "correctIndex": 1,
+        "explanation": "Chronic undernutrition."
+      },
+      {
+        "id": "fsft-nutritional-assessment-malnutrition-q2",
+        "type": "mcq",
+        "prompt": "Oedema with fatty liver is characteristic of:",
+        "options": [
+          "Marasmus",
+          "Kwashiorkor",
+          "Rickets",
+          "Scurvy"
+        ],
+        "correctIndex": 1,
+        "explanation": "Protein deficiency."
+      },
+      {
+        "id": "fsft-nutritional-assessment-malnutrition-q3",
+        "type": "mcq",
+        "prompt": "MUAC below 11.5 cm in a child (6–59 months) indicates:",
+        "options": [
+          "Normal",
+          "Moderate",
+          "Severe acute malnutrition",
+          "Obesity"
+        ],
+        "correctIndex": 2,
+        "explanation": "SAM threshold."
+      }
+    ]
+  }
+}

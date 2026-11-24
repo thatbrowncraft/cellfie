@@ -1,0 +1,150 @@
+{
+  "id": "fsft-haccp",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 44,
+  "title": "HACCP — Hazard Analysis and Critical Control Points",
+  "shortDescription": "The seven principles, twelve application steps, CCP decision logic and worked examples.",
+  "genZNote": "HACCP: what can go wrong, where do you stop it, prove you stopped it. Seven principles, one logic chain — learn the order.",
+  "sections": [
+    {
+      "id": "history",
+      "heading": "Origin and Idea",
+      "body": "HACCP was developed in the 1960s by Pillsbury with NASA and the US Army Natick Labs to ensure safe space food; it is a preventive, science-based system recommended by Codex and required by many national regulations. In India, FSSAI Schedule 4 and licensing conditions expect HACCP-based food safety systems for specified categories; ISO 22000 incorporates HACCP principles (see the ISO lessons for the standard itself)."
+    },
+    {
+      "id": "principles",
+      "heading": "Seven Principles",
+      "steps": [
+        {
+          "name": "1 Conduct hazard analysis",
+          "explanation": "Identify hazards and control measures at each step.",
+          "purpose": "Decide what is significant."
+        },
+        {
+          "name": "2 Determine CCPs",
+          "explanation": "Use decision tree/risk logic.",
+          "purpose": "Find control points essential to safety."
+        },
+        {
+          "name": "3 Establish critical limits",
+          "explanation": "Measurable limits e.g. 72 °C for 15 s, pH ≤ 4.6.",
+          "purpose": "Boundaries between safe and unsafe."
+        },
+        {
+          "name": "4 Monitoring",
+          "explanation": "Continuous or frequent measurement and recording.",
+          "purpose": "Prove control."
+        },
+        {
+          "name": "5 Corrective actions",
+          "explanation": "Pre-defined actions on deviation.",
+          "purpose": "Restore control and handle product."
+        },
+        {
+          "name": "6 Verification",
+          "explanation": "Validation, audit, calibration, testing.",
+          "purpose": "Confirm the plan works."
+        },
+        {
+          "name": "7 Documentation and records",
+          "explanation": "Plan, logs, training.",
+          "purpose": "Evidence."
+        }
+      ]
+    },
+    {
+      "id": "steps",
+      "heading": "Twelve Codex Steps and Examples",
+      "bullets": [
+        "Preliminary tasks: assemble team, describe product, identify intended use, construct and confirm flow diagram, then apply the seven principles.",
+        "Example CCP — milk pasteurization: hazard pathogens; critical limit 72 °C for 15 s; monitor temperature chart; deviation → divert flow/repasteurise; verification by alkaline phosphatase test.",
+        "Example CCP — canning: retort time/temperature; metal detection for foreign matter.",
+        "CCP vs OPRP: a CCP has a critical limit and is essential for control; OPRPs are control measures with action criteria managed within PRPs (ISO 22000 terminology).",
+        "HACCP limits: does not replace GMP/PRPs, requires trained team and management commitment."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "HACCP is a systematic preventive approach that identifies, evaluates and controls significant food-safety hazards at critical control points.",
+    "keyFacts": [
+      "7 principles; 12 steps.",
+      "Pasteurization: 72 °C/15 s CCP.",
+      "Critical limits must be measurable.",
+      "Verification includes validation and audits."
+    ],
+    "keyTerms": [
+      "CCP",
+      "Critical limit",
+      "Corrective action",
+      "Verification",
+      "Decision tree"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Developed by Pillsbury/NASA."
+    ],
+    "commonTraps": [
+      "Do not say HACCP replaces PRPs.",
+      "Do not claim HACCP is an ISO standard."
+    ],
+    "mustRemember": [
+      "Principle order: analysis, CCP, limits, monitoring, corrective action, verification, records."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Codex General Principles of Food Hygiene (CXC 1-1969)",
+      "kind": "educational",
+      "url": "https://www.fao.org/fao-who-codexalimentarius"
+    },
+    {
+      "name": "FSS (Licensing & Registration) Regulations, 2011 — Schedule 4",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-haccp-q1",
+        "type": "mcq",
+        "prompt": "How many principles does HACCP have?",
+        "options": [
+          "5",
+          "7",
+          "9",
+          "12"
+        ],
+        "correctIndex": 1,
+        "explanation": "Seven principles."
+      },
+      {
+        "id": "fsft-haccp-q2",
+        "type": "mcq",
+        "prompt": "A critical limit is:",
+        "options": [
+          "A measurable boundary for a CCP",
+          "A target price",
+          "A legal penalty",
+          "A shelf-life label"
+        ],
+        "correctIndex": 0,
+        "explanation": "It separates acceptable from unacceptable."
+      },
+      {
+        "id": "fsft-haccp-q3",
+        "type": "mcq",
+        "prompt": "HACCP was developed in collaboration with:",
+        "options": [
+          "NASA",
+          "WHO",
+          "FAO",
+          "BIS"
+        ],
+        "correctIndex": 0,
+        "explanation": "Pillsbury and NASA."
+      }
+    ]
+  }
+}

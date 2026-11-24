@@ -1,0 +1,154 @@
+{
+  "id": "fsft-codex-global-scenario",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 3,
+  "title": "Codex Alimentarius Commission and the Global Food Safety Scenario",
+  "shortDescription": "The FAO/WHO body whose standards anchor world trade, plus the international architecture of food safety.",
+  "genZNote": "Codex is the world's group chat for 'is this food safe enough to sell?' — not binding, but WTO treats it like the group admin.",
+  "sections": [
+    {
+      "id": "codex",
+      "heading": "Codex Alimentarius Commission (CAC)",
+      "body": "Codex Alimentarius (\"food code\") was established in 1963 by FAO and WHO to protect consumer health and ensure fair practices in the food trade. The Commission meets annually; the Secretariat is hosted by FAO in Rome. India has been a member since 1964, and FSSAI is the National Codex Contact Point. Codex standards are voluntary but are recognised as the reference for food safety under the WTO SPS Agreement, so national rules that deviate need scientific justification."
+    },
+    {
+      "id": "outputs",
+      "heading": "What Codex Produces",
+      "bullets": [
+        "Commodity standards (e.g. milk, cereals, fruit juices) and general standards (labelling, additives — GSFA, contaminants — GSCTFF).",
+        "Codes of practice, notably the General Principles of Food Hygiene (CXC 1-1969) which contains the HACCP annex.",
+        "Maximum Residue Limits (MRLs) for pesticides and veterinary drugs and guidelines for risk analysis.",
+        "Scientific advice arrives from independent expert bodies: JECFA (additives/contaminants/veterinary drugs), JMPR (pesticide residues) and JEMRA (microbiological risk)."
+      ]
+    },
+    {
+      "id": "global",
+      "heading": "Global Food-Safety Architecture",
+      "body": "Global trends: rising foodborne disease burden in low- and middle-income countries, emphasis on traceability, allergen control, antimicrobial resistance, food fraud and climate-driven contaminants. WHO celebrates World Food Safety Day on 7 June.",
+      "table": {
+        "caption": "Who does what internationally",
+        "columnHeaders": [
+          "Body",
+          "Role"
+        ],
+        "rows": [
+          [
+            "FAO",
+            "Food security, agriculture, co-parent of Codex"
+          ],
+          [
+            "WHO",
+            "Health, foodborne disease burden; INFOSAN emergency network"
+          ],
+          [
+            "WTO — SPS and TBT Agreements",
+            "Trade rules; science-based measures; Codex as benchmark"
+          ],
+          [
+            "WOAH (formerly OIE) / IPPC",
+            "Animal-health and plant-health standard setters under SPS"
+          ],
+          [
+            "GFSI",
+            "Benchmarks private schemes (BRCGS, SQF, FSSC 22000, IFS)"
+          ],
+          [
+            "ISO",
+            "Management standards such as ISO 22000 and ISO 9001"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Codex Alimentarius is the joint FAO/WHO collection of internationally adopted food standards, guidelines and codes of practice that protect health and facilitate fair trade.",
+    "keyFacts": [
+      "Established 1963 by FAO and WHO; Secretariat in Rome.",
+      "India joined in 1964; FSSAI is the Codex Contact Point.",
+      "WTO SPS Agreement treats Codex as the food-safety benchmark.",
+      "CXC 1-1969: General Principles of Food Hygiene incl. HACCP.",
+      "World Food Safety Day: 7 June."
+    ],
+    "keyTerms": [
+      "Codex",
+      "SPS Agreement",
+      "JECFA",
+      "JMPR",
+      "INFOSAN"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Codex standards are voluntary guidance but trade-relevant through WTO SPS.",
+      "JECFA = additives/contaminants; JMPR = pesticide residues."
+    ],
+    "commonTraps": [
+      "Do not confuse Codex (standards) with WTO (trade rules) or WHO alone.",
+      "Codex is NOT a binding treaty."
+    ],
+    "mustRemember": [
+      "1963, FAO+WHO, Rome; India 1964."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "JECFA",
+        "termB": "JMPR",
+        "distinction": "JECFA covers food additives, contaminants and veterinary drug residues; JMPR covers pesticide residues."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "Codex Alimentarius — FAO/WHO",
+      "kind": "educational",
+      "url": "https://www.fao.org/fao-who-codexalimentarius"
+    },
+    {
+      "name": "WTO SPS Agreement",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-codex-global-scenario-q1",
+        "type": "mcq",
+        "prompt": "Codex Alimentarius Commission was established in:",
+        "options": [
+          "1945",
+          "1963",
+          "1986",
+          "2006"
+        ],
+        "correctIndex": 1,
+        "explanation": "FAO and WHO set up the Commission in 1963."
+      },
+      {
+        "id": "fsft-codex-global-scenario-q2",
+        "type": "mcq",
+        "prompt": "Which expert body evaluates pesticide residues for Codex?",
+        "options": [
+          "JECFA",
+          "JMPR",
+          "JEMRA",
+          "INFOSAN"
+        ],
+        "correctIndex": 1,
+        "explanation": "Joint FAO/WHO Meeting on Pesticide Residues."
+      },
+      {
+        "id": "fsft-codex-global-scenario-q3",
+        "type": "mcq",
+        "prompt": "Under the WTO SPS Agreement, which body is the reference for food-safety standards?",
+        "options": [
+          "ISO",
+          "Codex",
+          "OIE",
+          "IMF"
+        ],
+        "correctIndex": 1,
+        "explanation": "Codex standards are the reference points for food safety measures."
+      }
+    ]
+  }
+}

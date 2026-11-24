@@ -1,0 +1,152 @@
+{
+  "id": "fsft-carbohydrates",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 10,
+  "title": "Carbohydrates — Structure, Classification and Functions",
+  "shortDescription": "From glucose rings to starch granules: how sugars behave in the body and in food processing.",
+  "genZNote": "Starch is just glucose holding hands in two different styles. Straight line = amylose, branchy chaos = amylopectin.",
+  "sections": [
+    {
+      "id": "structure",
+      "heading": "Chemical Structure",
+      "body": "Carbohydrates are polyhydroxy aldehydes or ketones (or compounds yielding them on hydrolysis), with the general formula Cx(H2O)y for most. Glucose (aldose) and fructose (ketose) both are C6H12O6 but isomers; in solution they exist mostly as ring (pyranose/furanose) forms with α/β anomers. Glycosidic bonds join units."
+    },
+    {
+      "id": "class",
+      "heading": "Classification",
+      "table": {
+        "caption": "Carbohydrate classes",
+        "columnHeaders": [
+          "Class",
+          "Examples",
+          "Bond / note"
+        ],
+        "rows": [
+          [
+            "Monosaccharides",
+            "Glucose, fructose, galactose, ribose",
+            "Reducing; fructose is the sweetest natural sugar"
+          ],
+          [
+            "Disaccharides",
+            "Sucrose (glucose+fructose, non-reducing), lactose (glucose+galactose, milk), maltose (glucose+glucose)",
+            "α-1,2 / β-1,4 / α-1,4"
+          ],
+          [
+            "Oligosaccharides",
+            "Raffinose, stachyose, FOS",
+            "Fermented by gut bacteria; gas from pulses"
+          ],
+          [
+            "Polysaccharides — starch",
+            "Amylose (α-1,4 linear, ~20–30%), amylopectin (α-1,4 with α-1,6 branches)",
+            "Plant energy reserve"
+          ],
+          [
+            "Glycogen",
+            "Highly branched α-1,4/α-1,6",
+            "Animal reserve in liver/muscle"
+          ],
+          [
+            "Cellulose / hemicellulose / pectin / gums",
+            "β-1,4 glucan etc.",
+            "Dietary fibre"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "functions",
+      "heading": "Functions and Food Behaviour",
+      "bullets": [
+        "Energy: 4 kcal/g; brain and RBCs depend on glucose; protein-sparing effect.",
+        "Glycaemic index (GI) ranks foods by blood-glucose rise relative to glucose; low-GI examples include pulses and whole grains.",
+        "Gelatinisation: starch granules swell and thicken on heating in water; retrogradation on cooling causes staling.",
+        "Maillard browning (reducing sugar + amino group) and caramelisation (sugars alone at high heat) create colour and flavour.",
+        "Reducing sugars give positive Benedict's/Fehling's tests; sucrose does not until hydrolysed (inversion).",
+        "Lactose intolerance: lactase deficiency → bloating/diarrhoea; hence fermented dairy is tolerated better."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Carbohydrates are polyhydroxy aldehydes/ketones and their polymers that serve as the body's main energy source and as functional ingredients (sweeteners, thickeners, fibre).",
+    "keyFacts": [
+      "Sucrose is non-reducing; maltose and lactose are reducing.",
+      "Amylose = linear α-1,4; amylopectin = branched with α-1,6.",
+      "4 kcal/g.",
+      "Cellulose has β-1,4 bonds that humans cannot digest."
+    ],
+    "keyTerms": [
+      "Glycosidic bond",
+      "Amylose",
+      "Gelatinisation",
+      "Glycaemic index",
+      "Inversion"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Honey is mainly fructose + glucose.",
+      "Invert sugar = glucose + fructose from sucrose hydrolysis."
+    ],
+    "commonTraps": [
+      "Do not say fructose is an aldose — it is a ketose."
+    ],
+    "mustRemember": [
+      "Lactose = glucose + galactose."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Fennema's Food Chemistry",
+      "kind": "educational"
+    },
+    {
+      "name": "ICMR–NIN Dietary Guidelines",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-carbohydrates-q1",
+        "type": "mcq",
+        "prompt": "Which sugar is non-reducing?",
+        "options": [
+          "Glucose",
+          "Lactose",
+          "Maltose",
+          "Sucrose"
+        ],
+        "correctIndex": 3,
+        "explanation": "Its anomeric carbons are involved in the glycosidic bond."
+      },
+      {
+        "id": "fsft-carbohydrates-q2",
+        "type": "mcq",
+        "prompt": "Branching points in amylopectin are linked by:",
+        "options": [
+          "α-1,4",
+          "α-1,6",
+          "β-1,4",
+          "β-1,6"
+        ],
+        "correctIndex": 1,
+        "explanation": "Branches occur through α-1,6 bonds."
+      },
+      {
+        "id": "fsft-carbohydrates-q3",
+        "type": "mcq",
+        "prompt": "Lactose is composed of:",
+        "options": [
+          "Glucose + glucose",
+          "Glucose + fructose",
+          "Glucose + galactose",
+          "Fructose + galactose"
+        ],
+        "correctIndex": 2,
+        "explanation": "Milk sugar = glucose + galactose."
+      }
+    ]
+  }
+}

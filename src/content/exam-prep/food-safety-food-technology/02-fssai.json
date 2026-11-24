@@ -1,0 +1,181 @@
+{
+  "id": "fsft-fssai",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 2,
+  "title": "FSSAI — Structure, Functions and Responsibilities",
+  "shortDescription": "The Food Safety and Standards Authority of India: constitution, powers, schemes and what it does on the ground.",
+  "genZNote": "FSSAI is the main character: it writes the rules, hands out the licences and drops the 'Sahi Bhojan, Behtar Jeevan' slogan. Lock in its who/what/when.",
+  "sections": [
+    {
+      "id": "establishment",
+      "heading": "Establishment and Constitution",
+      "body": "FSSAI was established under Section 4 of the Food Safety and Standards Act, 2006 (the Authority was set up in 2008; the Act and 2011 Regulations became operational in August 2011). It is administered by the Ministry of Health & Family Welfare with headquarters in New Delhi and regional offices across the country. The Food Authority consists of a Chairperson and twenty-two members (one-third women), supported by a Chief Executive Officer (CEO), a Central Advisory Committee and Scientific Panels and the Scientific Committee."
+    },
+    {
+      "id": "functions",
+      "heading": "Core Functions and Duties",
+      "bullets": [
+        "Frame Regulations laying down standards and guidelines for articles of food and specify enforcement procedures (Section 16).",
+        "Lay down guidelines for accreditation of certification bodies and laboratories, and recognise labs and referral labs.",
+        "Provide scientific advice and technical support to Government, collect and collate data on consumption, contamination, residues and emerging risks.",
+        "Create an information network, promote general awareness, and contribute to international technical standards (Codex).",
+        "Licensing and registration framework for food business operators (FBOs); import clearance of food through authorised officers at ports.",
+        "Training programmes such as FoSTaC (Food Safety Training and Certification)."
+      ]
+    },
+    {
+      "id": "schemes",
+      "heading": "Flagship Initiatives (exam favourites)",
+      "table": {
+        "caption": "FSSAI programmes",
+        "columnHeaders": [
+          "Initiative",
+          "What it is"
+        ],
+        "rows": [
+          [
+            "Eat Right India (2018)",
+            "Movement for safe, healthy and sustainable food: \"Sahi Bhojan, Behtar Jeevan\""
+          ],
+          [
+            "FoSTaC",
+            "Mandatory-trained Food Safety Supervisors in licensed FBOs"
+          ],
+          [
+            "Food Safety on Wheels",
+            "Mobile testing labs for on-the-spot screening and awareness"
+          ],
+          [
+            "Hygiene Rating / Eat Right Station, Campus, School",
+            "Third-party audited recognition of hygienic food outlets and institutions"
+          ],
+          [
+            "Jaivik Bharat logo",
+            "Organic food mark under the Organic Food Regulations, 2017"
+          ],
+          [
+            "Fortified+F logo",
+            "Identifier for fortified staples (rice, wheat flour, oil, milk, salt)"
+          ],
+          [
+            "RUCO",
+            "Repurpose Used Cooking Oil into biodiesel — limit total polar compounds (TPC) 25%"
+          ],
+          [
+            "Food Safety Connect / Food Safety Mitra",
+            "Consumer complaint/engagement platforms and training volunteers"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "licensing",
+      "heading": "Licensing and Registration (threshold logic)",
+      "body": "Under the FSS (Licensing and Registration of Food Businesses) Regulations, 2011, petty operators with turnover up to ₹12 lakh register; businesses above that need a State Licence up to ₹20 crore turnover (subject to capacity criteria), and a Central Licence above that or for categories such as importers, central-government premises and certain large manufacturers. Every FBO must display the 14-digit licence/registration number on invoices and labels. Regulatory details change by notification; treat figures here as exam-standard knowledge and confirm against the current FSSAI/Gazette text before relying on them professionally."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "FSSAI is the statutory apex body under the FSS Act, 2006 that frames food standards, regulates manufacture, storage, distribution, sale and import of food, and promotes safe and wholesome food.",
+    "keyFacts": [
+      "Section 4 of FSS Act, 2006; HQ New Delhi; under MoHFW.",
+      "Food Authority: Chairperson + 22 members; executive head is the CEO.",
+      "Eat Right India launched in 2018; slogan \"Sahi Bhojan, Behtar Jeevan\".",
+      "Licence number on label is 14 digits."
+    ],
+    "keyTerms": [
+      "FSSAI",
+      "Section 16",
+      "FoSTaC",
+      "Eat Right India",
+      "FBO"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "FSSAI = standard-setter + regulator; enforcement is mostly by State authorities.",
+      "Registration up to ₹12 lakh turnover; State licence up to ₹20 crore; Central licence above.",
+      "FSSAI is the National Codex Contact Point for India."
+    ],
+    "commonTraps": [
+      "Do not say FSSAI itself inspects every shop — State Commissioners/Designated Officers/FSOs do.",
+      "Registration ≠ licence: they differ by turnover/capacity."
+    ],
+    "mustRemember": [
+      "14-digit licence number; \"Sahi Bhojan, Behtar Jeevan\"."
+    ],
+    "confusedTerms": [
+      {
+        "termA": "Registration",
+        "termB": "Licence",
+        "distinction": "Registration is for petty FBOs (turnover up to ₹12 lakh); licences (State/Central) are for larger operations."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "FSSAI — Food Authority and Functions",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    },
+    {
+      "name": "FSS Act, 2006 — Sections 4 and 16",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-fssai-q1",
+        "type": "mcq",
+        "prompt": "FSSAI was constituted under which section of the FSS Act, 2006?",
+        "options": [
+          "Section 2",
+          "Section 4",
+          "Section 16",
+          "Section 30"
+        ],
+        "correctIndex": 1,
+        "explanation": "Section 4 provides for establishment of the Food Authority."
+      },
+      {
+        "id": "fsft-fssai-q2",
+        "type": "mcq",
+        "prompt": "The slogan of the Eat Right India movement is:",
+        "options": [
+          "Jago Grahak Jago",
+          "Sahi Bhojan, Behtar Jeevan",
+          "Swasth Bharat",
+          "Poshan Bhi, Padhai Bhi"
+        ],
+        "correctIndex": 1,
+        "explanation": "Eat Right India: Sahi Bhojan, Behtar Jeevan."
+      },
+      {
+        "id": "fsft-fssai-q3",
+        "type": "mcq",
+        "prompt": "FoSTaC primarily aims at:",
+        "options": [
+          "Labelling disputes",
+          "Training and certifying food safety supervisors",
+          "Export promotion",
+          "Pesticide registration"
+        ],
+        "correctIndex": 1,
+        "explanation": "Food Safety Training and Certification trains food handlers/supervisors."
+      },
+      {
+        "id": "fsft-fssai-q4",
+        "type": "mcq",
+        "prompt": "Who is the executive head of FSSAI?",
+        "options": [
+          "Minister of Health",
+          "Chairperson",
+          "CEO",
+          "Commissioner of Food Safety"
+        ],
+        "correctIndex": 2,
+        "explanation": "The CEO is the chief executive of the Authority."
+      }
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "id": "fsft-hygiene-sanitation-food-service",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 42,
+  "title": "Hygiene and Sanitation in Food Service — Contamination, Waste, Pests and Personnel",
+  "shortDescription": "Sources of contamination, cleaning and sanitising, waste disposal, pest and rodent control and personnel hygiene.",
+  "genZNote": "Most outbreaks start with hands, hot-holding or hidden pests. Hygiene chapter = the boring bits that prevent the dramatic headlines.",
+  "sections": [
+    {
+      "id": "contam",
+      "heading": "Sources of Contamination and Control",
+      "bullets": [
+        "Sources: raw materials, people, air, water, equipment, pests, packaging, cross-contamination between raw and cooked.",
+        "Control: colour-coded boards/knives, separation of raw and ready-to-eat, one-way flow, potable water, cleaning-in-place, correct temperature (cold ≤ 5 °C; hot ≥ 60 °C; danger zone ~5–60 °C), FIFO/FEFO stock rotation.",
+        "Cleaning vs sanitising vs disinfection: clean removes soil; sanitise reduces microbes to safe levels (chlorine, quaternary ammonium, peracetic acid, hot water ≥ 82 °C); verify with swabs or ATP tests."
+      ]
+    },
+    {
+      "id": "waste",
+      "heading": "Waste Disposal and Pest Control",
+      "bullets": [
+        "Waste: covered bins, frequent removal, separate wet/dry/hazardous, drain traps, composting; used cooking oil to authorised RUCO collectors.",
+        "Pests: flies, cockroaches, rodents, birds, stored-product insects. Integrated Pest Management: prevention (proofing, hygiene), monitoring (traps, fly killers), physical control (air curtains, screens), chemical control only by licensed operators with records and no food contact.",
+        "Rodent control: seal entry points, baiting stations, keep stores off floor."
+      ]
+    },
+    {
+      "id": "personnel",
+      "heading": "Personnel Hygiene",
+      "bullets": [
+        "Handwashing: wet, soap, scrub ~20 seconds, rinse, dry with disposable towel; after toilet, handling raw food, waste or phones.",
+        "Clean uniforms, hair covering, no jewellery, nails short; gloves are not a substitute for handwashing.",
+        "Medical fitness: annual medical examination and vaccination (e.g. typhoid) for food handlers per FSSAI Schedule 4; exclusion of staff with diarrhoea, vomiting, jaundice, infected wounds.",
+        "Training: FoSTaC-certified Food Safety Supervisor."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Hygiene and sanitation in food service combine cross-contamination control, cleaning, pest and waste management and strict personnel hygiene to prevent foodborne illness.",
+    "keyFacts": [
+      "Danger zone ~5–60 °C.",
+      "Handwash ~20 seconds.",
+      "IPM controls pests.",
+      "Annual medical exam for handlers."
+    ],
+    "keyTerms": [
+      "Cross-contamination",
+      "Sanitiser",
+      "IPM",
+      "FoSTaC",
+      "ATP test"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Cleaning ≠ sanitising."
+    ],
+    "commonTraps": [
+      "Do not rely on gloves alone."
+    ],
+    "mustRemember": [
+      "Colour-coding prevents cross-contamination."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Codex General Principles of Food Hygiene (CXC 1-1969)",
+      "kind": "educational",
+      "url": "https://www.fao.org/fao-who-codexalimentarius"
+    },
+    {
+      "name": "FSS (Licensing & Registration) Regulations, 2011 — Schedule 4",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-hygiene-sanitation-food-service-q1",
+        "type": "mcq",
+        "prompt": "Sanitising means:",
+        "options": [
+          "Removing visible soil",
+          "Reducing microbes to safe levels",
+          "Adding spices",
+          "Freezing"
+        ],
+        "correctIndex": 1,
+        "explanation": "It follows cleaning."
+      },
+      {
+        "id": "fsft-hygiene-sanitation-food-service-q2",
+        "type": "mcq",
+        "prompt": "Danger zone for bacterial growth approx:",
+        "options": [
+          "−18 to 0 °C",
+          "5–60 °C",
+          "80–100 °C",
+          "100–121 °C"
+        ],
+        "correctIndex": 1,
+        "explanation": "Rapid growth range."
+      },
+      {
+        "id": "fsft-hygiene-sanitation-food-service-q3",
+        "type": "mcq",
+        "prompt": "IPM prioritises:",
+        "options": [
+          "Poisons first",
+          "Prevention and monitoring",
+          "Ignoring pests",
+          "Only traps"
+        ],
+        "correctIndex": 1,
+        "explanation": "Chemical use is last resort."
+      }
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "id": "fsft-fortification-eat-right",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 9,
+  "title": "Food Fortification and Eat Right Challenges in India",
+  "shortDescription": "Why fortification works, how FSSAI regulates it, and the double burden Eat Right India is trying to solve.",
+  "genZNote": "India's got hidden hunger AND rising obesity at the same time — fortification and Eat Right are the plot-twist fix.",
+  "sections": [
+    {
+      "id": "terms",
+      "heading": "Fortification Vocabulary",
+      "body": "Mass fortification suits widely eaten, centrally processed staples (salt, wheat flour, rice, edible oil, milk). The FSS (Fortification of Foods) Regulations, 2018 specify levels; products carry the \"+F\" logo. Salt iodisation began in the 1960s–70s for goitre control; Universal Salt Iodisation is the long-running programme. Fortified rice has been integrated into government schemes (ICDS, PM POSHAN, PDS) with a national rollout by 2024.",
+      "table": {
+        "caption": "Do not mix these up",
+        "columnHeaders": [
+          "Term",
+          "Meaning",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Fortification",
+            "Adding micronutrients that may or may not be naturally present",
+            "Iron/folic acid/B12 in rice; vitamin A & D in milk and oil"
+          ],
+          [
+            "Enrichment",
+            "Restoring nutrients lost in processing",
+            "Refined wheat flour with B vitamins"
+          ],
+          [
+            "Biofortification",
+            "Breeding crops for higher nutrient content",
+            "High-iron bajra, zinc rice"
+          ],
+          [
+            "Double fortified salt",
+            "Iodine + iron",
+            "Public programmes"
+          ],
+          [
+            "Supplementation",
+            "Giving nutrients as tablets/syrup",
+            "IFA tablets, vitamin A doses"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "eatright",
+      "heading": "Eat Right India — Aspects and Challenges",
+      "bullets": [
+        "Launched in 2018: three pillars — Eat Safe, Eat Healthy, Eat Sustainably.",
+        "Challenge 1 — double burden: undernutrition (stunting, wasting, anaemia) coexists with overweight, diabetes and hypertension; NFHS-5 (2019–21) reported stunting ~35.5% and anaemia ~57% among women 15–49 (check for newer NFHS rounds).",
+        "Challenge 2 — ultra-processed/HFSS foods, sugar-sweetened beverages, high salt; \"Eat Right\" encourages reduction of fat, sugar and salt.",
+        "Challenge 3 — industrial trans fat: FSSAI limited trans fat to 2% of oils/fats; WHO called for global elimination.",
+        "Challenge 4 — adulteration and unsafe street food: Clean Street Food Hubs, hygiene ratings, FoSTaC.",
+        "Challenge 5 — food waste and sustainability: Save Food, Share Food; RUCO for used cooking oil.",
+        "Tools: Eat Right Campus, Station, School, Workplace; Eat Right Mela; Hygiene Rating; school safe-food regulations restricting HFSS foods near schools."
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "Limits of Fortification",
+      "body": "Fortification supplements — it does not replace dietary diversity; excess intake (e.g. preformed vitamin A, iron in thalassaemia/sickle cell conditions) needs caution, and levels must be monitored through market surveillance."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Fortification adds micronutrients to staple foods to prevent deficiency, while Eat Right India promotes safe, healthy and sustainable diets amid a double burden of malnutrition.",
+    "keyFacts": [
+      "Eat Right India: 2018; pillars Eat Safe, Healthy, Sustainably.",
+      "FSS (Fortification of Foods) Regulations, 2018; \"+F\" logo.",
+      "Iodised salt, fortified rice/wheat/oil/milk are key vehicles.",
+      "Industrial trans fat limit: 2% in oils/fats."
+    ],
+    "keyTerms": [
+      "Fortification",
+      "Enrichment",
+      "Biofortification",
+      "Double burden",
+      "+F logo"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Enrichment restores lost nutrients; fortification adds new ones.",
+      "Fortified rice via PDS, ICDS and PM POSHAN."
+    ],
+    "commonTraps": [
+      "Do not call high-iron bajra \"fortified\" — it is biofortified."
+    ],
+    "mustRemember": [
+      "Eat Right India = 2018; trans fat ≤2%."
+    ]
+  },
+  "sources": [
+    {
+      "name": "FSSAI — Food Fortification Resource Centre",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    },
+    {
+      "name": "ICMR–NIN",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-fortification-eat-right-q1",
+        "type": "mcq",
+        "prompt": "Adding iron and folic acid to rice at the mill is an example of:",
+        "options": [
+          "Enrichment",
+          "Fortification",
+          "Biofortification",
+          "Adulteration"
+        ],
+        "correctIndex": 1,
+        "explanation": "Micronutrients not natural to rice at that level are added."
+      },
+      {
+        "id": "fsft-fortification-eat-right-q2",
+        "type": "mcq",
+        "prompt": "Breeding crops for higher zinc content is:",
+        "options": [
+          "Fortification",
+          "Supplementation",
+          "Biofortification",
+          "Enrichment"
+        ],
+        "correctIndex": 2,
+        "explanation": "Biofortification occurs at plant-breeding level."
+      },
+      {
+        "id": "fsft-fortification-eat-right-q3",
+        "type": "mcq",
+        "prompt": "Eat Right India does NOT include which pillar?",
+        "options": [
+          "Eat Safe",
+          "Eat Healthy",
+          "Eat Sustainably",
+          "Eat Cheap"
+        ],
+        "correctIndex": 3,
+        "explanation": "The three pillars are safe, healthy, sustainable."
+      }
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "id": "fsft-preservation-principles-methods",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 33,
+  "title": "Food Preservation — Principles, Methods, Thermal and Non-Thermal Technology",
+  "shortDescription": "Why food spoils, the principles of preservation and a map of thermal and non-thermal methods.",
+  "genZNote": "Preservation is just convincing microbes, enzymes and oxygen to wait outside. D, z, F values are how you measure the bouncer.",
+  "sections": [
+    {
+      "id": "principles",
+      "heading": "Principles of Preservation",
+      "bullets": [
+        "Prevention or delay of microbial decomposition (keep out, remove, hinder growth, kill).",
+        "Prevention or delay of self-decomposition (enzyme inactivation, antioxidants).",
+        "Prevention of damage by insects, animals and mechanical forces.",
+        "Hurdle approach: combine several mild barriers (temperature, aw, pH, preservatives, packaging)."
+      ]
+    },
+    {
+      "id": "methods",
+      "heading": "Methods at a Glance",
+      "body": "Thermal metrics: D-value (time at a temperature to reduce microbes tenfold), z-value (temperature change to alter D tenfold), F-value (lethality equivalent, F0 at 121.1 °C with z = 10 °C). The 12D \"botulinum cook\" is the minimum for low-acid canned foods; pH 4.6 separates low-acid (pressure retort) from acid foods.",
+      "table": {
+        "caption": "Preservation map",
+        "columnHeaders": [
+          "Mechanism",
+          "Methods",
+          "Key facts"
+        ],
+        "rows": [
+          [
+            "High temperature (thermal)",
+            "Blanching, pasteurization, sterilisation, canning, UHT, aseptic",
+            "Pasteurization 63 °C/30 min or 72 °C/15 s; commercial sterility 121 °C"
+          ],
+          [
+            "Low temperature",
+            "Chilling (0–5 °C), freezing (−18 °C or below), cold chain",
+            "Freezing stops growth; does not kill all microbes"
+          ],
+          [
+            "Water removal",
+            "Sun/solar/mechanical drying, freeze-drying, evaporation",
+            "Lowers aw"
+          ],
+          [
+            "Osmotic",
+            "Salting, sugar (jam, preserves), pickling in brine",
+            "High solute concentration"
+          ],
+          [
+            "Acidification/fermentation",
+            "Vinegar, LAB fermentation",
+            "pH below ~4.6"
+          ],
+          [
+            "Chemical preservatives",
+            "Class I: salt, sugar, spices, vinegar; Class II: benzoic, sorbic, SO2/sulphites, nitrite, propionates, nisin",
+            "Under FSSAI rules; permitted levels"
+          ],
+          [
+            "Irradiation",
+            "Gamma, electron beam, X-ray",
+            "Up to 10 kGy overall average dose per Codex"
+          ],
+          [
+            "Non-thermal",
+            "HPP, PEF, UV, cold plasma, ultrasound, membrane filtration",
+            "Retain fresh quality"
+          ],
+          [
+            "Packaging-based",
+            "Vacuum, MAP, CAP, active packaging",
+            "Gas/atmosphere control"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "nonthermal",
+      "heading": "Thermal vs Non-Thermal",
+      "bullets": [
+        "Thermal: reliable and cheap, may degrade vitamins, flavour and texture.",
+        "Non-thermal (high pressure, pulsed electric fields, UV, cold plasma, irradiation, ultrasonics, membrane filtration): retain freshness but need capital, validation and regulatory approval.",
+        "Selecting a method depends on food type, target microbe/enzyme, desired shelf life, cost and regulations. See Unit 10 for technology detail."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Food preservation applies physical, chemical and biological methods to delay microbial, enzymatic and chemical spoilage and ensure safety and shelf life.",
+    "keyFacts": [
+      "D, z and F values.",
+      "12D botulinum cook.",
+      "Class I vs Class II preservatives.",
+      "Freezing ≤ −18 °C."
+    ],
+    "keyTerms": [
+      "D-value",
+      "z-value",
+      "Hurdle",
+      "Class II preservative",
+      "Commercial sterility"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "pH 4.6 divides acid and low-acid foods."
+    ],
+    "commonTraps": [
+      "Do not say freezing sterilises food."
+    ],
+    "mustRemember": [
+      "Pasteurization 72 °C/15 s."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Potter & Hotchkiss: Food Science",
+      "kind": "scientific"
+    },
+    {
+      "name": "FSSAI Regulations",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-preservation-principles-methods-q1",
+        "type": "mcq",
+        "prompt": "The 12D process refers to reducing spores of:",
+        "options": [
+          "Salmonella",
+          "Clostridium botulinum",
+          "E. coli",
+          "Listeria"
+        ],
+        "correctIndex": 1,
+        "explanation": "The botulinum cook."
+      },
+      {
+        "id": "fsft-preservation-principles-methods-q2",
+        "type": "mcq",
+        "prompt": "Which is a Class II preservative?",
+        "options": [
+          "Salt",
+          "Sugar",
+          "Benzoic acid",
+          "Vinegar"
+        ],
+        "correctIndex": 2,
+        "explanation": "Class II includes benzoates, sorbates, sulphites."
+      },
+      {
+        "id": "fsft-preservation-principles-methods-q3",
+        "type": "mcq",
+        "prompt": "Freezing temperature for frozen food storage:",
+        "options": [
+          "0 °C",
+          "−5 °C",
+          "−18 °C or below",
+          "4 °C"
+        ],
+        "correctIndex": 2,
+        "explanation": "Standard frozen storage."
+      }
+    ]
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "id": "fsft-prp-ghp-gmp-ssop",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 43,
+  "title": "Prerequisite Programmes — PRPs, GHPs, GMPs and SSOPs",
+  "shortDescription": "The hygiene foundation underneath HACCP and FSMS.",
+  "genZNote": "No HACCP plan survives a dirty kitchen. PRPs, GHP, GMP and SSOPs are the foundation — skip them and the whole building leans.",
+  "sections": [
+    {
+      "id": "terms",
+      "heading": "What Each Term Means",
+      "body": "FSSAI Schedule 4 of the Licensing Regulations prescribes GHP/GMP requirements: Part II for general manufacturers/processors, Part I for petty FBOs, Part III for catering/food service, with additional parts for specific categories (e.g. milk and milk products, meat) and for transport and storage.",
+      "table": {
+        "caption": "PRP family",
+        "columnHeaders": [
+          "Term",
+          "Meaning",
+          "Example"
+        ],
+        "rows": [
+          [
+            "PRP",
+            "Basic conditions/activities to maintain a hygienic environment",
+            "Cleaning, pest control, training, supplier approval, calibration"
+          ],
+          [
+            "GHP",
+            "Good Hygiene Practices — hygiene measures across the chain (Codex CXC 1-1969)",
+            "Handwashing, water quality"
+          ],
+          [
+            "GMP",
+            "Good Manufacturing Practices — factory design, equipment, process control, documentation",
+            "Layout, material flow"
+          ],
+          [
+            "SSOP",
+            "Sanitation Standard Operating Procedures — written, site-specific cleaning/sanitation procedures with monitoring",
+            "Daily line cleaning with checklists"
+          ],
+          [
+            "GAP / GVP",
+            "Good Agricultural / Veterinary Practices",
+            "On-farm hygiene"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "elements",
+      "heading": "Core Elements",
+      "bullets": [
+        "Premises and equipment: layout, flooring, ventilation, lighting, hygienic design.",
+        "Water and ice quality, air, waste management, pest control.",
+        "Personnel hygiene, training and medical checks.",
+        "Supplier control, receiving, storage and transport; allergen control; traceability and recall.",
+        "Calibration, maintenance and cleaning schedules; documentation and records.",
+        "Verification through internal audits, swabs and product testing."
+      ]
+    },
+    {
+      "id": "relation",
+      "heading": "Relation to HACCP",
+      "body": "PRPs control general hygiene hazards; HACCP controls process-specific significant hazards at CCPs. Weak PRPs cause HACCP plans to have too many CCPs; strong PRPs allow HACCP to focus. ISO 22000 distinguishes PRPs, operational PRPs (OPRPs) and CCPs — see the ISO lessons."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "PRPs (GHP, GMP, SSOP and related programmes) are the basic hygiene conditions required before HACCP can be effective.",
+    "keyFacts": [
+      "SSOP: written cleaning procedures.",
+      "Schedule 4 of FSSAI licensing regulations.",
+      "PRPs precede HACCP."
+    ],
+    "keyTerms": [
+      "PRP",
+      "GHP",
+      "GMP",
+      "SSOP",
+      "OPRP"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "SSOP is site-specific; GMP is general."
+    ],
+    "commonTraps": [
+      "Do not treat PRPs as optional."
+    ],
+    "mustRemember": [
+      "PRP → OPRP → CCP."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Codex General Principles of Food Hygiene (CXC 1-1969)",
+      "kind": "educational",
+      "url": "https://www.fao.org/fao-who-codexalimentarius"
+    },
+    {
+      "name": "FSS (Licensing & Registration) Regulations, 2011 — Schedule 4",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-prp-ghp-gmp-ssop-q1",
+        "type": "mcq",
+        "prompt": "SSOP stands for:",
+        "options": [
+          "Standard Sanitation Operating Practice",
+          "Sanitation Standard Operating Procedures",
+          "Safe Standard Operating Plan",
+          "Standard Safety Operation Procedure"
+        ],
+        "correctIndex": 1,
+        "explanation": "Sanitation SOPs."
+      },
+      {
+        "id": "fsft-prp-ghp-gmp-ssop-q2",
+        "type": "mcq",
+        "prompt": "HACCP effectiveness depends on:",
+        "options": [
+          "PRPs",
+          "Colour of building",
+          "Advertising",
+          "Brand"
+        ],
+        "correctIndex": 0,
+        "explanation": "PRPs provide the foundation."
+      },
+      {
+        "id": "fsft-prp-ghp-gmp-ssop-q3",
+        "type": "mcq",
+        "prompt": "GMP primarily covers:",
+        "options": [
+          "Manufacturing premises, equipment and process control",
+          "Only labelling",
+          "Only marketing",
+          "Only exports"
+        ],
+        "correctIndex": 0,
+        "explanation": "Design and operational controls."
+      }
+    ]
+  }
+}

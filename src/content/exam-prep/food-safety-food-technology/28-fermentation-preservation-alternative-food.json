@@ -1,0 +1,154 @@
+{
+  "id": "fsft-fermentation-preservation-alternative-food",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 28,
+  "title": "Fermentation as Preservation and Alternative Food Production",
+  "shortDescription": "Biopreservation, bacteriocins and the new protein sources: single-cell protein, precision fermentation, cultured meat and more.",
+  "genZNote": "The next burger might be grown, not raised. Alt-protein is the future-of-food flex — know SCP, precision fermentation and cultivated meat.",
+  "sections": [
+    {
+      "id": "bp",
+      "heading": "Fermentation and Preservation",
+      "bullets": [
+        "Fermentation preserves by acid (pH drop), alcohol, competition, bacteriocins (nisin — permitted food preservative; pediocin), hydrogen peroxide and reuterin.",
+        "Biopreservation: protective cultures and bacteriophages to control Listeria, Salmonella.",
+        "Examples: pickles, sauerkraut, yoghurt, fermented sausages and fish sauces; hurdle effect with salt and low aw."
+      ]
+    },
+    {
+      "id": "alt",
+      "heading": "Alternative Food Production",
+      "body": "Drivers: land and water pressure, climate emissions, animal welfare, food security. Challenges: cost, consumer acceptance, allergenicity, scale-up, labelling and regulatory approval — FSSAI Novel Food rules apply in India.",
+      "table": {
+        "caption": "Alternatives",
+        "columnHeaders": [
+          "Approach",
+          "Idea",
+          "Example"
+        ],
+        "rows": [
+          [
+            "Single-cell protein (SCP)",
+            "Microbial biomass as protein",
+            "Spirulina, Chlorella, Fusarium venenatum mycoprotein (Quorn)"
+          ],
+          [
+            "Precision fermentation",
+            "Microbes produce specific proteins/fats",
+            "Recombinant whey, egg proteins, heme"
+          ],
+          [
+            "Cultivated (cell-based) meat",
+            "Animal cells grown in bioreactors",
+            "Approved in a few countries; not yet approved in India"
+          ],
+          [
+            "Plant-based analogues",
+            "Protein extrusion",
+            "Soy/pea burgers, plant milks"
+          ],
+          [
+            "Insects",
+            "Edible insects",
+            "Crickets, mealworms"
+          ],
+          [
+            "Algae and seaweed",
+            "Omega-3, protein",
+            "Microalgae oils"
+          ],
+          [
+            "Controlled-environment farming",
+            "Hydroponics, vertical farms",
+            "Leafy greens"
+          ],
+          [
+            "3D food printing",
+            "Layer-by-layer shaping",
+            "Personalised nutrition"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Fermentation extends shelf life and creates diverse foods, while alternative food-production technologies use microbes, cells and controlled environments to supply protein and nutrients sustainably.",
+    "keyFacts": [
+      "Nisin is a bacteriocin from Lactococcus lactis.",
+      "SCP: Spirulina, Chlorella, mycoprotein.",
+      "Precision fermentation uses engineered microbes."
+    ],
+    "keyTerms": [
+      "Bacteriocin",
+      "SCP",
+      "Precision fermentation",
+      "Cultivated meat",
+      "Novel food"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Quorn is mycoprotein (Fusarium venenatum)."
+    ],
+    "commonTraps": [
+      "Do not call plant-based meat \"cultivated meat\"."
+    ],
+    "mustRemember": [
+      "Nisin → biopreservative."
+    ]
+  },
+  "sources": [
+    {
+      "name": "FAO — Edible Insects and Future Foods",
+      "kind": "educational",
+      "url": "https://www.fao.org"
+    },
+    {
+      "name": "FSSAI Novel Food",
+      "kind": "educational"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-fermentation-preservation-alternative-food-q1",
+        "type": "mcq",
+        "prompt": "Nisin is:",
+        "options": [
+          "Antibiotic for humans",
+          "Bacteriocin used as preservative",
+          "Colour",
+          "Sweetener"
+        ],
+        "correctIndex": 1,
+        "explanation": "Produced by Lactococcus lactis."
+      },
+      {
+        "id": "fsft-fermentation-preservation-alternative-food-q2",
+        "type": "mcq",
+        "prompt": "Quorn is an example of:",
+        "options": [
+          "Cultivated meat",
+          "Mycoprotein SCP",
+          "Insect protein",
+          "Algal oil"
+        ],
+        "correctIndex": 1,
+        "explanation": "Fusarium venenatum."
+      },
+      {
+        "id": "fsft-fermentation-preservation-alternative-food-q3",
+        "type": "mcq",
+        "prompt": "Cell-based meat is grown in:",
+        "options": [
+          "Fields",
+          "Bioreactors",
+          "Greenhouses",
+          "Ponds"
+        ],
+        "correctIndex": 1,
+        "explanation": "Cells proliferate in bioreactors."
+      }
+    ]
+  }
+}

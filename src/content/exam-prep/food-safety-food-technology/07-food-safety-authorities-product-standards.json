@@ -1,0 +1,146 @@
+{
+  "id": "fsft-food-safety-authorities-product-standards",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 7,
+  "title": "Duties of Food Safety Authorities and Food Product Standards",
+  "shortDescription": "What authorities must do under the Act and how product standards (identity, composition, quality) are fixed and read.",
+  "genZNote": "A food standard is basically a job description for milk, butter, honey. Authority checks if it's actually doing the job — no cap.",
+  "sections": [
+    {
+      "id": "duties",
+      "heading": "Duties and Responsibilities",
+      "bullets": [
+        "FSSAI: frame regulations, scientific panels, risk-based surveillance, enforcement guidance, import control (s.16).",
+        "Commissioner of Food Safety: prepare annual surveillance plan, ensure efficient implementation, license enforcement, prohibit in public interest.",
+        "Designated Officer: licence grant/suspension/cancellation, appoint inspectors, ensure analysis, sanction prosecution.",
+        "Food Safety Officer: inspect with a warrant of authority, serve improvement notices, draw samples in four parts, seal, seize unsafe food and send to a notified lab.",
+        "Food Analyst: report within 14 days.",
+        "FBOs: comply with Schedule 4 hygiene, maintain traceability and records, initiate recall of unsafe food."
+      ]
+    },
+    {
+      "id": "standards",
+      "heading": "Food Product Standards",
+      "body": "Standards in the Food Products Standards and Food Additives Regulations, 2011 define identity (what the food is), composition (minimum/maximum constituents), contaminants and microbial limits.",
+      "table": {
+        "caption": "Examples of identity standards",
+        "columnHeaders": [
+          "Product",
+          "Key requirement (verify current text)"
+        ],
+        "rows": [
+          [
+            "Cow milk",
+            "≥3.2% fat and ≥8.3% SNF"
+          ],
+          [
+            "Buffalo milk",
+            "≥5.0% fat and ≥9.0% SNF"
+          ],
+          [
+            "Toned milk",
+            "≥3.0% fat, ≥8.5% SNF"
+          ],
+          [
+            "Butter",
+            "≥80% milk fat, ≤16% moisture"
+          ],
+          [
+            "Honey",
+            "Moisture ≤22%; sucrose limit; HMF limit"
+          ],
+          [
+            "Edible oils",
+            "Free fatty acids, peroxide value limits"
+          ],
+          [
+            "Packaged water",
+            "Chemical/microbiological limits; BIS/FSSAI requirement"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "how",
+      "heading": "How Standards Are Made",
+      "body": "Draft by Scientific Panels → Scientific Committee review → Food Authority approval → pre-publication in the Gazette for public objections (not less than 30 days) → final notification. Standards use risk assessment, Codex benchmarks, consumption data and enforceability. Section 22 covers special foods (health supplements, nutraceuticals, FSDU), and a Proprietary Food/Novel Food route is available subject to approval."
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Food safety authorities are legally bound to plan, inspect, sample, license and prosecute within defined duties, and standards specify identity, composition and quality of each food.",
+    "keyFacts": [
+      "FSO draws samples in four parts; Food Analyst reports within 14 days.",
+      "Standards: Scientific Panel → Scientific Committee → Authority → draft in Gazette → final.",
+      "Cow milk min 3.2% fat/8.3% SNF; butter ≥80% fat."
+    ],
+    "keyTerms": [
+      "Identity",
+      "Composition",
+      "Gazette notification",
+      "Improvement notice",
+      "Recall"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Draft regulations are pre-published for objections (minimum 30 days under the Act).",
+      "Standards also fix additive and contaminant limits."
+    ],
+    "commonTraps": [
+      "Do not mix Food Analyst (tests) with FSO (collects)."
+    ],
+    "mustRemember": [
+      "Standards: FSS (Food Products Standards and Food Additives) Regulations, 2011."
+    ]
+  },
+  "sources": [
+    {
+      "name": "FSSAI Regulations Compendium",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-food-safety-authorities-product-standards-q1",
+        "type": "mcq",
+        "prompt": "A food sample is generally divided into how many parts by the FSO?",
+        "options": [
+          "Two",
+          "Three",
+          "Four",
+          "Five"
+        ],
+        "correctIndex": 2,
+        "explanation": "The sample is divided into four parts: one goes to the Food Analyst; the rest are kept under the Designated Officer's custody for appeal/referral analysis."
+      },
+      {
+        "id": "fsft-food-safety-authorities-product-standards-q2",
+        "type": "mcq",
+        "prompt": "Minimum milk fat in cow milk as per FSSAI standards:",
+        "options": [
+          "2.5%",
+          "3.2%",
+          "4.5%",
+          "5.0%"
+        ],
+        "correctIndex": 1,
+        "explanation": "Cow milk: 3.2% fat and 8.3% SNF minimum."
+      },
+      {
+        "id": "fsft-food-safety-authorities-product-standards-q3",
+        "type": "mcq",
+        "prompt": "Minimum milk fat in butter:",
+        "options": [
+          "60%",
+          "70%",
+          "80%",
+          "90%"
+        ],
+        "correctIndex": 2,
+        "explanation": "Butter ≥ 80% milk fat."
+      }
+    ]
+  }
+}

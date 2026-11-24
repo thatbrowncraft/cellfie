@@ -1,0 +1,167 @@
+{
+  "id": "fsft-minerals",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 14,
+  "title": "Minerals — Macro and Trace Elements",
+  "shortDescription": "Functions, sources, bioavailability and deficiencies of key minerals.",
+  "genZNote": "Calcium builds the squad, iron carries the oxygen, iodine runs the thermostat. Minerals = background cast that hold everything up.",
+  "sections": [
+    {
+      "id": "table",
+      "heading": "Key Minerals",
+      "table": {
+        "caption": "Minerals",
+        "columnHeaders": [
+          "Mineral",
+          "Function",
+          "Sources",
+          "Deficiency / excess"
+        ],
+        "rows": [
+          [
+            "Calcium",
+            "Bones, clotting, muscles",
+            "Milk, ragi, leafy greens",
+            "Rickets/osteoporosis"
+          ],
+          [
+            "Phosphorus",
+            "Bones, ATP",
+            "Cereals, milk",
+            "Rare"
+          ],
+          [
+            "Iron",
+            "Haemoglobin, myoglobin",
+            "Jaggery, leafy greens, liver",
+            "Anaemia"
+          ],
+          [
+            "Iodine",
+            "Thyroid hormones",
+            "Iodised salt, seafood",
+            "Goitre, cretinism"
+          ],
+          [
+            "Zinc",
+            "Enzymes, immunity",
+            "Nuts, pulses",
+            "Growth retardation"
+          ],
+          [
+            "Fluorine",
+            "Teeth enamel",
+            "Water",
+            "Dental/skeletal fluorosis (excess)"
+          ],
+          [
+            "Sodium/Potassium",
+            "Fluid balance, nerves",
+            "Salt; fruits",
+            "Hypertension (excess Na)"
+          ],
+          [
+            "Selenium",
+            "Antioxidant enzymes",
+            "Cereals",
+            "Keshan disease"
+          ],
+          [
+            "Copper, Mn, Cr, Mo",
+            "Enzyme cofactors",
+            "Varied",
+            "—"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "bio",
+      "heading": "Bioavailability and Metabolism",
+      "bullets": [
+        "Heme iron (animal) absorbs better than non-heme iron; vitamin C enhances and phytates/tannins/calcium inhibit non-heme iron absorption.",
+        "Calcium absorption needs vitamin D; oxalates (spinach) and phytates reduce it.",
+        "Iodine from salt: WHO target salt iodisation; excess salt (>5 g/day advised limit) raises blood pressure.",
+        "Homeostasis: parathyroid hormone and calcitonin control blood calcium; hepcidin regulates iron.",
+        "Indian relevance: iron-deficiency anaemia is widespread (Anemia Mukt Bharat); fluorosis occurs in some groundwater areas, including parts of Gujarat; ICMR 2020 RDA for iron is higher for women of reproductive age."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Minerals are inorganic nutrients needed for structure, fluid balance and enzymatic functions; macro-minerals are needed in larger amounts than trace elements.",
+    "keyFacts": [
+      "Heme iron absorbed better than non-heme iron.",
+      "Iodine deficiency → goitre.",
+      "Excess fluoride → fluorosis.",
+      "WHO advises <5 g salt/day."
+    ],
+    "keyTerms": [
+      "Bioavailability",
+      "Heme iron",
+      "Phytate",
+      "Fluorosis",
+      "Goitre"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Vitamin C enhances non-heme iron absorption."
+    ],
+    "commonTraps": [
+      "Do not say iron is mainly absorbed in the large intestine — duodenum/jejunum."
+    ],
+    "mustRemember": [
+      "Iodine–thyroid; iron–Hb; Ca–bone."
+    ]
+  },
+  "sources": [
+    {
+      "name": "ICMR–NIN Nutrient Requirements for Indians (RDA 2020)",
+      "kind": "scientific",
+      "url": "https://www.nin.res.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-minerals-q1",
+        "type": "mcq",
+        "prompt": "Which mineral deficiency causes goitre?",
+        "options": [
+          "Iron",
+          "Iodine",
+          "Zinc",
+          "Calcium"
+        ],
+        "correctIndex": 1,
+        "explanation": "Iodine is needed for thyroxine."
+      },
+      {
+        "id": "fsft-minerals-q2",
+        "type": "mcq",
+        "prompt": "Iron absorption is enhanced by:",
+        "options": [
+          "Tannins",
+          "Phytates",
+          "Vitamin C",
+          "Oxalates"
+        ],
+        "correctIndex": 2,
+        "explanation": "Ascorbic acid reduces ferric to ferrous."
+      },
+      {
+        "id": "fsft-minerals-q3",
+        "type": "mcq",
+        "prompt": "Excess fluoride in drinking water causes:",
+        "options": [
+          "Goitre",
+          "Fluorosis",
+          "Scurvy",
+          "Rickets"
+        ],
+        "correctIndex": 1,
+        "explanation": "Chronic excess leads to fluorosis."
+      }
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "id": "fsft-milk-science",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 51,
+  "title": "Milk Science — Chemistry, Physical Properties, Microbiology and Composition Factors",
+  "shortDescription": "Milk chemistry, physical constants, microbial quality and what changes milk composition.",
+  "genZNote": "Four lenses on one liquid: chemistry, physics, microbes, and the cow. Strippings have the most fat — fun fact that's also an MCQ.",
+  "sections": [
+    {
+      "id": "chem",
+      "heading": "Milk Chemistry",
+      "bullets": [
+        "Lipids: ~98% triglycerides in fat globules wrapped by MFGM (phospholipids, proteins); high short-chain fatty acids (butyric) give butter flavour and high Reichert–Meissl value.",
+        "Proteins: caseins (αs1, αs2, β, κ) form calcium-phosphate-stabilised micelles; κ-casein stabilises micelles and is cleaved by chymosin; whey proteins (β-lactoglobulin, α-lactalbumin) are heat-sensitive.",
+        "Lactose: reducing disaccharide; Maillard browning with proteins on heating; lactose crystallisation in condensed milk causes sandiness.",
+        "Minerals: colloidal calcium phosphate; enzymes: alkaline phosphatase (pasteurization indicator), lipase, lactoperoxidase, catalase, plasmin; vitamins A, B2, B12."
+      ]
+    },
+    {
+      "id": "physical",
+      "heading": "Physical Properties",
+      "table": {
+        "caption": "Typical values",
+        "columnHeaders": [
+          "Property",
+          "Value"
+        ],
+        "rows": [
+          [
+            "pH",
+            "6.6–6.8"
+          ],
+          [
+            "Specific gravity (15.5 °C)",
+            "1.026–1.032"
+          ],
+          [
+            "Freezing point",
+            "About −0.512 to −0.55 °C"
+          ],
+          [
+            "Boiling point",
+            "~100.17 °C"
+          ],
+          [
+            "Titratable acidity",
+            "0.13–0.17% lactic acid"
+          ],
+          [
+            "Viscosity",
+            "~2 cP at 20 °C"
+          ],
+          [
+            "Conductivity",
+            "Increases in mastitic milk"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "micro",
+      "heading": "Milk Microbiology and Composition Factors",
+      "bullets": [
+        "Raw milk is nearly sterile in a healthy udder; contamination comes from teats, equipment, water, air and handling. Spoilage: Lactococcus, coliforms, psychrotrophs; pathogens: Salmonella, Listeria, E. coli, Brucella, Mycobacterium bovis; thermoduric survivors of pasteurization (Micrococcus, Bacillus).",
+        "Quality tests: SPC, coliform count, MBRT (methylene blue reduction time), resazurin test, somatic cell count (> 2–5 lakh/mL indicates mastitis).",
+        "Composition factors: species and breed (Jersey high fat), individual animal, stage of lactation (colostrum is protein/immunoglobulin rich), feed and season, age, milking interval and completeness (strippings are fat rich), mastitis and other disease."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Milk science integrates the chemistry, physical constants, microbial quality and biological factors that determine milk behaviour in processing.",
+    "keyFacts": [
+      "κ-casein stabilises micelles.",
+      "Phosphatase test indicates pasteurization.",
+      "MBRT assesses bacterial load.",
+      "Strippings have highest fat."
+    ],
+    "keyTerms": [
+      "MFGM",
+      "Casein micelle",
+      "MBRT",
+      "Somatic cell count",
+      "Alkaline phosphatase"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Colostrum: rich in immunoglobulins."
+    ],
+    "commonTraps": [
+      "Do not say whey proteins are heat stable."
+    ],
+    "mustRemember": [
+      "MBRT: faster decolourisation = more bacteria."
+    ]
+  },
+  "sources": [
+    {
+      "name": "De Sa: Dairy Science and Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "Walstra: Dairy Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "FSS (Food Products Standards) Regulations, 2011 — Dairy",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-milk-science-q1",
+        "type": "mcq",
+        "prompt": "Which enzyme indicates adequate pasteurization?",
+        "options": [
+          "Alkaline phosphatase",
+          "Lipase",
+          "Catalase",
+          "Plasmin"
+        ],
+        "correctIndex": 0,
+        "explanation": "Inactivated at pasteurization temperature."
+      },
+      {
+        "id": "fsft-milk-science-q2",
+        "type": "mcq",
+        "prompt": "Milk protein cleaved by rennet:",
+        "options": [
+          "κ-casein",
+          "β-lactoglobulin",
+          "Albumin",
+          "Lactoferrin"
+        ],
+        "correctIndex": 0,
+        "explanation": "Releases caseinomacropeptide."
+      },
+      {
+        "id": "fsft-milk-science-q3",
+        "type": "mcq",
+        "prompt": "High somatic cell count indicates:",
+        "options": [
+          "Mastitis",
+          "Pasteurization",
+          "Adulteration with water",
+          "Rancidity"
+        ],
+        "correctIndex": 0,
+        "explanation": "Udder infection."
+      }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "id": "fsft-macro-micronutrient-deficiency-diseases",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 32,
+  "title": "Macro and Micronutrient Deficiency Diseases and Their Prevention",
+  "shortDescription": "Protein-energy malnutrition, vitamin and mineral deficiency diseases with signs and public-health control.",
+  "genZNote": "Match the nutrient to the disease to the sign — it's a dating app for deficiencies. Night blindness swipes right on vitamin A.",
+  "sections": [
+    {
+      "id": "macro",
+      "heading": "Macronutrient Deficiencies",
+      "bullets": [
+        "Protein–energy malnutrition (PEM): kwashiorkor, marasmus; prevention through breastfeeding, complementary foods, energy-dense and protein-rich diets.",
+        "Essential fatty acid deficiency: dry scaly skin, poor growth.",
+        "Dietary fibre/excess issues: constipation; excess energy: obesity."
+      ]
+    },
+    {
+      "id": "micro",
+      "heading": "Micronutrient Deficiency Diseases",
+      "body": "Control approaches: dietary diversification, fortification, supplementation, public-health measures (deworming, sanitation), education and surveillance. Hidden hunger refers to micronutrient deficiency without obvious calorie lack.",
+      "table": {
+        "caption": "Deficiency map",
+        "columnHeaders": [
+          "Nutrient",
+          "Disease / sign",
+          "Prevention"
+        ],
+        "rows": [
+          [
+            "Vitamin A",
+            "Night blindness, Bitot's spots, xerophthalmia, keratomalacia",
+            "Prophylaxis, dark green leafy vegetables, orange fruit, fortified oil"
+          ],
+          [
+            "Vitamin D",
+            "Rickets (children), osteomalacia (adults)",
+            "Sunlight, fortified milk"
+          ],
+          [
+            "Thiamine",
+            "Beriberi",
+            "Unpolished cereals, pulses"
+          ],
+          [
+            "Riboflavin",
+            "Cheilosis, angular stomatitis",
+            "Milk, eggs"
+          ],
+          [
+            "Niacin",
+            "Pellagra",
+            "Balanced cereal–pulse diet"
+          ],
+          [
+            "Folate",
+            "Megaloblastic anaemia, neural-tube defects",
+            "Folic acid supplementation"
+          ],
+          [
+            "B12",
+            "Pernicious anaemia",
+            "Animal foods, supplements"
+          ],
+          [
+            "Vitamin C",
+            "Scurvy (bleeding gums)",
+            "Amla, citrus"
+          ],
+          [
+            "Iron",
+            "Anaemia",
+            "IFA tablets, fortification, dietary diversity"
+          ],
+          [
+            "Iodine",
+            "Goitre, cretinism",
+            "Iodised salt"
+          ],
+          [
+            "Zinc",
+            "Growth failure, diarrhoea susceptibility",
+            "Zinc with ORS"
+          ],
+          [
+            "Calcium",
+            "Rickets/osteoporosis",
+            "Milk, ragi"
+          ],
+          [
+            "Fluoride (excess)",
+            "Fluorosis",
+            "Safe water"
+          ]
+        ]
+      }
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Deficiency diseases arise when macronutrient or micronutrient intake is inadequate; each has characteristic signs and targeted prevention strategies.",
+    "keyFacts": [
+      "Night blindness = vitamin A.",
+      "Beriberi = B1; pellagra = B3.",
+      "Goitre = iodine.",
+      "Hidden hunger = micronutrient deficiency."
+    ],
+    "keyTerms": [
+      "Xerophthalmia",
+      "Rickets",
+      "Pellagra",
+      "Goitre",
+      "Hidden hunger"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Zinc is used with ORS in childhood diarrhoea."
+    ],
+    "commonTraps": [
+      "Do not match scurvy with vitamin D."
+    ],
+    "mustRemember": [
+      "Pellagra: 3 Ds — dermatitis, diarrhoea, dementia."
+    ]
+  },
+  "sources": [
+    {
+      "name": "ICMR–NIN Nutrient Requirements and RDA for Indians, 2020",
+      "kind": "scientific",
+      "url": "https://www.nin.res.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-macro-micronutrient-deficiency-diseases-q1",
+        "type": "mcq",
+        "prompt": "Bitot's spots indicate deficiency of:",
+        "options": [
+          "A",
+          "B1",
+          "C",
+          "D"
+        ],
+        "correctIndex": 0,
+        "explanation": "Vitamin A."
+      },
+      {
+        "id": "fsft-macro-micronutrient-deficiency-diseases-q2",
+        "type": "mcq",
+        "prompt": "Pellagra is caused by deficiency of:",
+        "options": [
+          "Niacin",
+          "Thiamine",
+          "Folate",
+          "Iron"
+        ],
+        "correctIndex": 0,
+        "explanation": "Vitamin B3."
+      },
+      {
+        "id": "fsft-macro-micronutrient-deficiency-diseases-q3",
+        "type": "mcq",
+        "prompt": "Cretinism is linked to:",
+        "options": [
+          "Iodine deficiency in pregnancy/infancy",
+          "Iron",
+          "Calcium",
+          "Vitamin K"
+        ],
+        "correctIndex": 0,
+        "explanation": "Thyroid hormone deficiency affects brain development."
+      }
+    ]
+  }
+}

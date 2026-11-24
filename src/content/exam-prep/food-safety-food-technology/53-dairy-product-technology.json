@@ -1,0 +1,144 @@
+{
+  "id": "fsft-dairy-product-technology",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 53,
+  "title": "Product Technology — Fluid Milk, Cream, Butter, Ghee, Cheese, Ice Cream and Dried Milk",
+  "shortDescription": "How major dairy products are manufactured and what controls their quality.",
+  "genZNote": "Every dairy product is just fat, protein and water rearranged. Churn it, curdle it, freeze it, dry it — different outfits, same milk.",
+  "sections": [
+    {
+      "id": "fluid",
+      "heading": "Fluid Milk, Cream and Butter",
+      "bullets": [
+        "Fluid milk: toned, double-toned, standardised, full-cream, flavoured, UHT; FSSAI fat/SNF norms: toned 3.0% fat and 8.5% SNF; double toned 1.5%/9.0%; full cream 6.0%/9.0% (verify current text).",
+        "Cream: separation then standardisation (25% fat category), pasteurisation, cooling and optional ripening.",
+        "Butter: cream pasteurised, cooled/aged, churned (phase inversion from o/w to w/o), buttermilk drained, washed, worked and salted; product ≥ 80% fat, ≤ 16% moisture, salt ≤ 3% (table butter).",
+        "Ghee: butter/cream heated to remove moisture and brown solids (desi, creamery butter, direct cream, pre-stratification methods); ≥ 99.5% fat and very low moisture; flavour from lactones and carbonyls."
+      ]
+    },
+    {
+      "id": "cheese",
+      "heading": "Cheese",
+      "steps": [
+        {
+          "name": "Standardise and pasteurise milk",
+          "explanation": "Set casein:fat ratio.",
+          "purpose": "Consistent yield."
+        },
+        {
+          "name": "Add starter and rennet",
+          "explanation": "LAB acidify; chymosin cleaves κ-casein to form curd.",
+          "purpose": "Coagulation."
+        },
+        {
+          "name": "Cut, cook, drain whey",
+          "explanation": "Controls moisture.",
+          "purpose": "Texture type."
+        },
+        {
+          "name": "Cheddar, salt, press",
+          "explanation": "Cheddaring knits curd; salt adds flavour and preserves.",
+          "purpose": "Body and shelf life."
+        },
+        {
+          "name": "Ripen",
+          "explanation": "Proteolysis/lipolysis; Propionibacterium makes eyes in Swiss; moulds in blue cheese.",
+          "purpose": "Flavour."
+        }
+      ]
+    },
+    {
+      "id": "ice",
+      "heading": "Ice Cream and Dried Milk",
+      "bullets": [
+        "Ice cream: mix of milk fat, SNF, sugar, stabiliser, emulsifier; pasteurise (e.g. 68.3 °C/30 min or 79.4 °C/25 s), homogenise, age 4–24 h at 4 °C, freeze with air incorporation (overrun = increase in volume ÷ volume of mix × 100) to −5/−6 °C, then harden at about −25 to −30 °C. Frozen dessert uses vegetable fat and is a separate FSSAI category.",
+        "Dried milk: concentrate then spray-dry (hot air ~150–250 °C inlet, product temperature much lower) or roller-dry; instantising by agglomeration; moisture ≤ ~4% for whole milk powder; packing in nitrogen-flushed barrier packs to prevent oxidation."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Dairy product technology applies controlled heating, coagulation, churning, freezing and drying to convert milk into diverse products.",
+    "keyFacts": [
+      "Butter ≥ 80% fat; churning inverts the emulsion.",
+      "Chymosin cleaves κ-casein.",
+      "Overrun = air incorporated in ice cream.",
+      "Spray drying common for milk powder."
+    ],
+    "keyTerms": [
+      "Churning",
+      "Cheddaring",
+      "Overrun",
+      "Spray drying",
+      "Ripening"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Ghee is nearly pure fat."
+    ],
+    "commonTraps": [
+      "Do not confuse cheese ripening with milk ageing."
+    ],
+    "mustRemember": [
+      "Swiss eyes: Propionibacterium."
+    ]
+  },
+  "sources": [
+    {
+      "name": "De Sa: Dairy Science and Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "Walstra: Dairy Technology",
+      "kind": "educational"
+    },
+    {
+      "name": "FSS (Food Products Standards) Regulations, 2011 — Dairy",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-dairy-product-technology-q1",
+        "type": "mcq",
+        "prompt": "Overrun in ice cream refers to:",
+        "options": [
+          "Air incorporated",
+          "Sugar level",
+          "Fat loss",
+          "Protein"
+        ],
+        "correctIndex": 0,
+        "explanation": "Volume increase due to air."
+      },
+      {
+        "id": "fsft-dairy-product-technology-q2",
+        "type": "mcq",
+        "prompt": "Cheese curd formation involves enzyme:",
+        "options": [
+          "Rennet/chymosin",
+          "Amylase",
+          "Lipase",
+          "Pepsin"
+        ],
+        "correctIndex": 0,
+        "explanation": "Rennet."
+      },
+      {
+        "id": "fsft-dairy-product-technology-q3",
+        "type": "mcq",
+        "prompt": "Spray drying produces:",
+        "options": [
+          "Milk powder",
+          "Butter",
+          "Ghee",
+          "Cheese"
+        ],
+        "correctIndex": 0,
+        "explanation": "Dried milk."
+      }
+    ]
+  }
+}

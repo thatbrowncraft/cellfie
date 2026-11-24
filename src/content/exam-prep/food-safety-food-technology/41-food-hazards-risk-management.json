@@ -1,0 +1,145 @@
+{
+  "id": "fsft-food-hazards-risk-management",
+  "subjectId": "food-safety-food-technology",
+  "syllabusOrder": 41,
+  "title": "Hazards and Risks — Physical, Chemical, Biological and Management of Hazards",
+  "shortDescription": "Hazard types, risk analysis and the control measures that bring risk down.",
+  "genZNote": "Hazard = what can hurt you. Risk = how likely and how bad. Examiners love testing whether you know the difference.",
+  "sections": [
+    {
+      "id": "hazards",
+      "heading": "Types of Hazards",
+      "body": "Allergens commonly declared: cereals containing gluten, crustaceans, eggs, fish, peanuts, soybeans, milk, tree nuts and sulphites (≥10 mg/kg).",
+      "table": {
+        "caption": "Hazard classes",
+        "columnHeaders": [
+          "Class",
+          "Examples",
+          "Controls"
+        ],
+        "rows": [
+          [
+            "Biological",
+            "Pathogenic bacteria, viruses, parasites, mycotoxins",
+            "Heat treatment, temperature control, hygiene, acidification"
+          ],
+          [
+            "Chemical",
+            "Pesticide/vet-drug residues, heavy metals (Pb, Hg, Cd, As), additives overuse, allergens, cleaning-chemical residues, acrylamide, 3-MCPD",
+            "Supplier approval, MRLs, allergen control, correct chemical storage"
+          ],
+          [
+            "Physical",
+            "Glass, metal, stone, wood, bone, plastic, hair",
+            "Sieves, magnets, metal detectors, X-ray, GMP, glass policy"
+          ],
+          [
+            "Radiological/ allergenic",
+            "Radionuclides; undeclared allergens",
+            "Source control, labelling"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "risk",
+      "heading": "Risk Analysis",
+      "bullets": [
+        "Codex risk analysis has three parts: risk assessment (hazard identification, hazard characterisation, exposure assessment, risk characterisation), risk management and risk communication.",
+        "Risk = likelihood × severity; use risk matrices to prioritise.",
+        "Reference values: ADI (acceptable daily intake), TDI, MRL (maximum residue limit), ALARA principle for contaminants."
+      ]
+    },
+    {
+      "id": "mgmt",
+      "heading": "Management of Hazards",
+      "bullets": [
+        "Prevention first: PRPs, supplier verification, specifications, hygienic design.",
+        "Control: critical control points with critical limits, monitoring and corrective action (HACCP).",
+        "Verification and validation: testing, audits, calibration, review.",
+        "Contingency: traceability, withdrawal and recall plans, crisis management."
+      ]
+    }
+  ],
+  "quickRevision": {
+    "oneLineDefinition": "Hazards are biological, chemical or physical agents with potential to harm; risk analysis and layered controls manage them to acceptable levels.",
+    "keyFacts": [
+      "Three hazard classes: biological, chemical, physical.",
+      "Risk analysis: assessment, management, communication.",
+      "ADI and MRL are safety reference values."
+    ],
+    "keyTerms": [
+      "Hazard",
+      "Risk",
+      "ADI",
+      "MRL",
+      "ALARA"
+    ]
+  },
+  "examFocus": {
+    "highYieldFacts": [
+      "Allergens are chemical (protein) hazards for sensitive individuals."
+    ],
+    "commonTraps": [
+      "Do not say hazard and risk mean the same."
+    ],
+    "mustRemember": [
+      "Risk = likelihood × severity."
+    ]
+  },
+  "sources": [
+    {
+      "name": "Codex General Principles of Food Hygiene (CXC 1-1969)",
+      "kind": "educational",
+      "url": "https://www.fao.org/fao-who-codexalimentarius"
+    },
+    {
+      "name": "FSS (Licensing & Registration) Regulations, 2011 — Schedule 4",
+      "kind": "educational",
+      "url": "https://fssai.gov.in"
+    }
+  ],
+  "visualData": {
+    "questions": [
+      {
+        "id": "fsft-food-hazards-risk-management-q1",
+        "type": "mcq",
+        "prompt": "Risk analysis does NOT include:",
+        "options": [
+          "Risk assessment",
+          "Risk management",
+          "Risk communication",
+          "Risk avoidance only"
+        ],
+        "correctIndex": 3,
+        "explanation": "The three components are assessment, management, communication."
+      },
+      {
+        "id": "fsft-food-hazards-risk-management-q2",
+        "type": "mcq",
+        "prompt": "Glass fragments are a:",
+        "options": [
+          "Biological hazard",
+          "Chemical hazard",
+          "Physical hazard",
+          "Radiological"
+        ],
+        "correctIndex": 2,
+        "explanation": "Physical."
+      },
+      {
+        "id": "fsft-food-hazards-risk-management-q3",
+        "type": "mcq",
+        "prompt": "ADI relates to:",
+        "options": [
+          "Pesticide MRL only",
+          "Daily safe intake of a substance",
+          "Pasteurisation",
+          "Shelf life"
+        ],
+        "correctIndex": 1,
+        "explanation": "Acceptable daily intake."
+      }
+    ]
+  }
+}
