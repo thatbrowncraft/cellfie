@@ -97,6 +97,14 @@ export const EXAM_SUBJECTS: ExamSubject[] = [
       'NABL \u2022 NABH \u2022 ISO \u2022 QCI & Global Healthcare Standards \u2014 what accreditation actually demonstrates, who provides it, and how laboratories and hospitals prove competence, safety, and continual improvement.',
     genZNote: "Everyone memorises the full forms. This is you actually understanding who accredits whom, and why it matters.",
     icon: 'SealCheck'
+  },
+  {
+    id: 'food-safety-food-technology',
+    title: 'Food Safety & Food Technology',
+    shortDescription:
+      'Food laws and FSSAI to dairy science and processing technology \u2014 the full Part B technical syllabus for the Food Safety Officer exam in ten units, with tables, exam facts and MCQs for every topic.',
+    genZNote: 'From the label on your chips to the law behind it \u2014 this is the whole farm-to-fork story, no cap, and every unit is exam-ready.',
+    icon: 'ForkKnife'
   }
 ]
 

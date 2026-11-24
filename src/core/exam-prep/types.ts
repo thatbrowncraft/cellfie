@@ -38,6 +38,7 @@ export type ExamSubjectId =
   | 'iso'
   | 'human-anatomy'
   | 'healthcare-quality-accreditation'
+  | 'food-safety-food-technology'
 
 export interface ExamSubject {
   id: ExamSubjectId

@@ -99,6 +99,10 @@ const healthcareQualityAccreditationModules = import.meta.glob<{ default: unknow
   '/src/content/exam-prep/healthcare-quality-accreditation/*.json',
   { eager: true }
 )
+const foodSafetyFoodTechnologyModules = import.meta.glob<{ default: unknown }>(
+  '/src/content/exam-prep/food-safety-food-technology/*.json',
+  { eager: true }
+)
 
 export const CONSTITUTION_TOPICS: ExamTopic[] = loadTopics(constitutionModules, 'constitution-of-india')
 export const QUANTITATIVE_APTITUDE_TOPICS: ExamTopic[] = loadTopics(
@@ -122,6 +126,10 @@ export const HEALTHCARE_QUALITY_ACCREDITATION_TOPICS: ExamTopic[] = loadTopics(
   healthcareQualityAccreditationModules,
   'healthcare-quality-accreditation'
 )
+export const FOOD_SAFETY_FOOD_TECHNOLOGY_TOPICS: ExamTopic[] = loadTopics(
+  foodSafetyFoodTechnologyModules,
+  'food-safety-food-technology'
+)
 
 const SUBJECT_TOPICS: Record<ExamSubjectId, ExamTopic[]> = {
   'constitution-of-india': CONSTITUTION_TOPICS,
@@ -133,7 +141,8 @@ const SUBJECT_TOPICS: Record<ExamSubjectId, ExamTopic[]> = {
   'international-organizations': INTERNATIONAL_ORGANIZATIONS_TOPICS,
   iso: ISO_TOPICS,
   'human-anatomy': HUMAN_ANATOMY_TOPICS,
-  'healthcare-quality-accreditation': HEALTHCARE_QUALITY_ACCREDITATION_TOPICS
+  'healthcare-quality-accreditation': HEALTHCARE_QUALITY_ACCREDITATION_TOPICS,
+  'food-safety-food-technology': FOOD_SAFETY_FOOD_TECHNOLOGY_TOPICS
 }
 
 const SUBJECT_TOPICS_BY_ID: Record<ExamSubjectId, Map<string, ExamTopic>> = Object.fromEntries(
