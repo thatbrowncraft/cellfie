@@ -88,6 +88,49 @@ const HEALTHCARE_ACCREDITATION_GROUPS: TopicGroupDef[] = [
   { label: 'Revision', topicIds: ['accreditation-quick-revision'] }
 ]
 
+const FOOD_SAFETY_GROUPS: TopicGroupDef[] = [
+  {
+    label: 'Unit 01 \u00b7 Food Laws, Regulations, Certification & Development Schemes (30 marks)',
+    topicIds: ['fsft-food-laws-regulatory-regime', 'fsft-fssai', 'fsft-codex-global-scenario', 'fsft-fss-act-rules-regulations', 'fsft-adulteration-misbranding', 'fsft-certification-bis-agmark', 'fsft-food-safety-authorities-product-standards']
+  },
+  {
+    label: 'Unit 02 \u00b7 Introduction to Basic Food Science (20 marks)',
+    topicIds: ['fsft-history-traditional-foods', 'fsft-fortification-eat-right', 'fsft-carbohydrates', 'fsft-proteins', 'fsft-fats-lipids', 'fsft-vitamins', 'fsft-minerals', 'fsft-enzymes', 'fsft-digestion-absorption-fibre', 'fsft-metabolic-pathways', 'fsft-physical-properties-colloids', 'fsft-acid-base-buffer-chemical-properties']
+  },
+  {
+    label: 'Unit 03 \u00b7 Food Microbiology & Food Biotechnology (15 marks)',
+    topicIds: ['fsft-micro-characteristics-classification', 'fsft-micro-physiology-growth', 'fsft-food-poisoning-foodborne-toxins', 'fsft-microbial-techniques-rapid-methods', 'fsft-food-fermentation-fermented-products', 'fsft-spoilage-animal-foods', 'fsft-spoilage-plant-foods-canned', 'fsft-gmo-enzyme-protein-engineering', 'fsft-fermentation-preservation-alternative-food']
+  },
+  {
+    label: 'Unit 04 \u00b7 Food & Nutrition (5 marks)',
+    topicIds: ['fsft-food-nutrition-balanced-diet-rda', 'fsft-nutritional-assessment-malnutrition', 'fsft-nutrition-health-programmes-india', 'fsft-macro-micronutrient-deficiency-diseases']
+  },
+  {
+    label: 'Unit 05 \u00b7 Food Preservation, Packaging & Storage (5 marks)',
+    topicIds: ['fsft-preservation-principles-methods', 'fsft-food-packaging-types-evaluation', 'fsft-packaging-laws-novel-technologies', 'fsft-food-storage-structures-practices']
+  },
+  {
+    label: 'Unit 06 \u00b7 Agricultural Science (5 marks)',
+    topicIds: ['fsft-agriculture-status-farming-systems', 'fsft-crops-cropping-horticulture-agroforestry', 'fsft-livestock-aquaculture-integrated-enterprises']
+  },
+  {
+    label: 'Unit 07 \u00b7 Food Safety, Quality Control, Hygiene & Standards (15 marks)',
+    topicIds: ['fsft-food-safety-definition-scope-standards', 'fsft-food-hazards-risk-management', 'fsft-hygiene-sanitation-food-service', 'fsft-prp-ghp-gmp-ssop', 'fsft-haccp', 'fsft-iso-series-tqm-fsms']
+  },
+  {
+    label: 'Unit 08 \u00b7 Animal Product Processing (5 marks)',
+    topicIds: ['fsft-meat-composition-slaughter-curing', 'fsft-fish-poultry-processing', 'fsft-egg-characteristics', 'fsft-milk-composition-products-overview', 'fsft-milk-adulterants-detection']
+  },
+  {
+    label: 'Unit 09 \u00b7 Dairy Science (10 marks)',
+    topicIds: ['fsft-milk-science', 'fsft-dairy-unit-operations', 'fsft-dairy-product-technology', 'fsft-indigenous-dairy-products', 'fsft-dairy-quality-packaging-hygiene']
+  },
+  {
+    label: 'Unit 10 \u00b7 Food Processing Technology (10 marks)',
+    topicIds: ['fsft-membrane-nonthermal-technologies', 'fsft-nutraceuticals-functional-junk-foods', 'fsft-thermal-processing-pasteurisation-canning', 'fsft-concentration-dehydration-freezing-fermentation-irradiation-additives', 'fsft-aseptic-hurdle-hydrostatic-microwave', 'fsft-innovative-thermal-ohmic-dielectric-ir-induction']
+  },
+]
+
 /**
  * Any subject whose landing page should group its topics under labelled
  * sections (instead of one flat syllabus-order grid) gets an entry here.
@@ -97,7 +140,8 @@ const HEALTHCARE_ACCREDITATION_GROUPS: TopicGroupDef[] = [
  */
 const TOPIC_GROUPS_BY_SUBJECT: Partial<Record<ExamSubjectId, TopicGroupDef[]>> = {
   'human-anatomy': HUMAN_ANATOMY_GROUPS,
-  'healthcare-quality-accreditation': HEALTHCARE_ACCREDITATION_GROUPS
+  'healthcare-quality-accreditation': HEALTHCARE_ACCREDITATION_GROUPS,
+  'food-safety-food-technology': FOOD_SAFETY_GROUPS
 }
 
 /**
